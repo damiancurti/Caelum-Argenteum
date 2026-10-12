@@ -563,6 +563,9 @@ class CaelumFirstPersonView : Object play
             ? GetDefaultByType("CaelumGauntletGuardFrames").FindStateByString(String.Format("Tier%d", Clamp(Tier,1,3)))
             : Pose(kind, Tier, phase);
         if (pose == null) { Hide(user); return; }
+        State appearancePose=gauntletGuard?pose:CaelumAppearanceHands.Composed(user,kind,Tier,phase,pose);
+        bool bareComposition=appearancePose!=pose;
+        pose=appearancePose;
         let view = user.player.GetPSprite(LAYER);
         if (view == null) return;
         if (view.CurState != pose) view.SetState(pose);
@@ -574,6 +577,11 @@ class CaelumFirstPersonView : Object play
         view.bCVarFast = false;
         view.bInterpolate = true;
         view.pivot = Pivot(kind, Tier, phase);
+        if(bareComposition)
+        {
+            view.bPivotPercent=false;
+            view.pivot=CaelumAppearanceHands.ComposedPivot(kind,phase);
+        }
         // Lienzo 320×200 y offset (160,32); el desplazamiento de Select/Deselect
         // acompaña al arma nativa y no introduce otra espera de jugabilidad.
         double dx=0, dy=0, rotation=0;

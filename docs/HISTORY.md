@@ -1,6 +1,75 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## 5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11
+
+Author acceptance, 2026-10-12: CA148-01 (origin 5.2.13 / #148) passed
+without qualifications, including the completed face/hair extension. The author
+confirmed all tests passed and requested PR201 merge and issue closure. The
+confirmed entry is removed from pending_test.txt; the tracked queue is empty.
+This supersedes the pending status recorded in the delivery chronology below.
+The earlier intermittent cursor observation remains evidence; acceptance does
+not establish a runtime cursor fix. No new version for acceptance of this patch.
+
+The author requested prepared race/sex variants, simple clothes without weapons,
+finite race-specific skin/fur tones, wolf/bear/puma/jaguar Beast Men, RGB Caelith,
+automatic sex voices and modular sprites. The existing-game editor may change
+tone and beast form. First-person hands were added to scope; gloves depend on
+actual equipped gear. Python technical sprite processing was explicitly allowed.
+
+The implementation uses saved appearance revision 1, native menus/GetSpriteTexture,
+shared modular TEXTURES and existing equipment layer anchors. Preview state
+walking is UI-only. Old profiles initialize tone/form zero once; global defaults
+cannot replace them. Corpse appearance is separate from the live identity.
+
+Validation found and corrected sprite lookup scope, hand masking, walking arm
+seams, physical-height scaling, fallback pivots, shield phase changes and stale
+editor confirmation after load. Fixture-only failures and final evidence remain
+in assets/validation_5213/RESULTS.md. Deterministic generation matched all 3,355
+outputs. Static checks, isolated engine probes and agent-operated native clicks
+are distinguished from author acceptance: CA148-01 is still outstanding.
+The final official PK3 passes the native matrix; all 9,712 members match the
+tested package. Keep-awake released at 2026-10-12T01:18:08Z (UTC); power plan
+unchanged. No GZDoom test process remains running.
+
+Prior delivery: acceptance commit 4b54ac81 and PR200 merge 74c31ca5 complete #195;
+the issue is closed. No earlier accepted tests are reopened by this patch.
+Delivery: art/resources commit b6874a48, runtime/evidence commit 345c710e, pushed
+on issue148-appearance-preview. Draft PR201 links #148 and awaits CA148-01.
+
+Author feedback, 2026-10-11: the cursor was invisible in the creator, MainMenu
+and Options in fullscreen; clicks still worked and Alt+Enter restored it.
+A first cursor-reinitialization probe was confounded by a video-mode change.
+In the isolated repeat, with Alt+Enter disabled only for that disposable run,
+the author reported that the cursor was already visible from startup. Neither
+probe establishes a cursor fix. Runtime and user settings remain unchanged;
+CA148-01 stays pending. The test runner now supports a true title-screen start:
+GZDoom's -skill argument also starts a map, so title tests omit it and +map.
+Evidence: the cursor follow-up in assets/validation_5213/RESULTS.md.
+
+The author subsequently requested at least four faces and four hairstyles for
+humans, goblins and Caelith, with black/brown/blonde/redhead/gray/white hair for
+all three. Face, hairstyle and hair color may also change during a game. This
+extends #148. The extension now uses revision-2 saved choices, four faces/four
+hairstyles per humanoid sex and six catalog hair colors. A separate visual head
+shares the body's profile/death snapshot and seven reusable anchor groups,
+avoiding the native frame-index overflow of full body combinations. There are
+96,768 small head textures, 12,096 frames and 3,840 reusable PNG modules.
+Repeated detail generation matched 3,843 output files byte for byte.
+
+The extension's native checks cover the complete texture catalog, creator and
+editor transfers, current/revision-1 saves, restart and a round trip through the
+hub. Tests exposed and corrected a restored duplicate head; cross-review also
+identified interpolation/floor clipping and native sprite-sort requirements.
+MAPINFO fixes the map's sort order without changing the global preference.
+Agent-operated mouse/keyboard checks and crouch/attack/layout captures are
+recorded separately from author visual acceptance in validation_5213/RESULTS.md.
+CA148-01 includes the new options and remains pending; no merge is authorized.
+The author explicitly requested a dedicated sprite-art specification document.
+SPRITE_ART_DIRECTION.md now owns that brief and is linked from AGENTS/ASSETS;
+the validator includes it in the versioned canonical document set. Version stays
+5.2.13 because this is the same unaccepted patch.
 
 ## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
 

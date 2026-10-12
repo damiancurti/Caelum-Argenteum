@@ -3,6 +3,8 @@
 class CaelumCreationDraft : Object ui
 {
     int Page, Race, FirstClass, SecondClass, Sex, HeightChoice;
+    int SkinTone, BeastForm;
+    int Face, HairStyle, HairColor;
     int SelectedLayer, SelectedAttribute;
     int Personality[4];
     int LayerBonus[4];
@@ -47,10 +49,40 @@ class CaelumCharacterSettings : StaticEventHandler
     override void InterfaceProcess(ConsoleEvent e)
     {
         if (e.Name == "ca_identity_committed") Draft = null;
+        if (e.Name == "ca_appearance_discard")
+        {
+            let editor=CaelumAppearanceMenu(Menu.GetCurrentMenu());
+            if(editor!=null){editor.EditSubject=null;editor.EditProfile=null;editor.Close();}
+        }
+    }
+
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca_appearance_commit")return;
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        if(!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete)return;
+        let profile=CaelumCharacterIdentity.Profile(user);
+        if(profile==null || profile.AppearanceEditSerial!=e.Args[2]
+            || !CaelumAppearance.ValidPacked(e.Args[0],e.Args[1]))return;
+        // Una sola escritura confirmada; cancelar sólo descarta el borrador UI.
+        profile.SkinTone=e.Args[0];
+        int packed=e.Args[1];
+        if(profile.Race==CaelumConstants.RACE_BEAST_MAN)profile.BeastForm=packed%CaelumAppearance.FORM_COUNT;
+        else
+        {
+            packed/=CaelumAppearance.FORM_COUNT;
+            profile.Face=packed%CaelumAppearance.FACE_COUNT;
+            packed/=CaelumAppearance.FACE_COUNT;
+            profile.HairStyle=packed%CaelumAppearance.HAIR_COUNT;
+            profile.HairColor=packed/CaelumAppearance.HAIR_COUNT;
+        }
+        profile.AppearanceEditSerial++;
+        user.UpdateWorldCarbineVisual();
     }
 
     override void WorldLoaded(WorldEvent e)
     {
+        if(consoleplayer>=0)EventHandler.SendInterfaceEvent(consoleplayer,"ca_appearance_discard");
         if (!e.IsSaveGame) return;
         // Cada jugador limpia su propio puente; la carga no puede confirmar
         // por accidente un borrador pendiente de una partida nueva.
@@ -62,6 +94,7 @@ class CaelumCharacterSettings : StaticEventHandler
             {
                 user.ClearNewCharacterDraftReady();
                 CaelumCharacterIdentity.Ensure(user);
+                user.UpdateWorldCarbineVisual();
             }
         }
     }

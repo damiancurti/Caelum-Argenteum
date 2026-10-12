@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## Issue #148 - Native cosmetics and preview (5.2.13)
+
+Implemented modular race/sex/skin/fur appearance, wolf/bear/puma/jaguar forms,
+saved cosmetic editing, native preview and equipment-dependent first-person
+hands. Author decisions and supported/missing asset matrix are in SYSTEMS/ASSETS.
+Scope excludes a full new animation set, wardrobe, respec and new voice bank.
+Sources/generators are retained and deterministic. Isolated engine checks cover
+creation, editor transactions, old/current saves, restart, travel and gloves.
+Evidence: assets/validation_5213/RESULTS.md. CA148-01 passed author acceptance
+on 2026-10-12; PR201 merge and #148 closure are authorized.
+Author reported an invisible cursor in fullscreen MainMenu, Options and creator,
+with working clicks and recovery after Alt+Enter. The isolated repeat began with
+a visible cursor; identify a reproducible trigger before choosing a runtime fix.
+PR200/#195 are merged/closed following the prior explicit acceptance.
+Author extension: four faces and four hairstyles for each human/goblin/Caelith
+sex, six natural hair colors for all three races, all editable in-game. Follow
+the requested dedicated SPRITE_ART_DIRECTION.md before further generation;
+modular integration is implemented, with revision-2 persistence and native
+head/body composition. Agent evidence is in RESULTS; final author tests passed.
+The earlier cursor report remains historical evidence, without a runtime fix.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)
 

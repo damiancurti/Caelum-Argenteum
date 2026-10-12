@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-082 - Modular sprite actors must share render and hub lifecycles
+
+Status/evidence: ENGINE-VERIFIED for composition, native crouch, save/load,
+restart and hub travel; CODE-VERIFIED for mirror/portal visibility. #148 / 5.2.13,
+2026-10-11. Baseline: 29823b17 plus the face/hair extension; GZDoom 4.14.2/Vulkan.
+
+A full body/face/hair/color product exceeds the native 16-bit sprite-frame index.
+Separate visual heads avoid that product, but must follow the body's native
+render behavior. SpriteOffset is already in world units: multiply the shared
+pose displacement by scale once. Keep view-specific residuals in TEXTURES offsets.
+Copy Prev after SetOrigin so teleport interpolation cannot leave the head behind;
+copy FloorClip and reproduce P_CheckPlayerSprite's effective crouch scale without
+compressing an authored crouch twice. MASTERNOSEE hides the own-view module while
+retaining reflected/portal views according to native renderer code.
+
+Equal-depth sprites use SpawnOrder, reversed by compat_spritesort. The Caelum
+MAPINFO AddDefaultMap override forces the normal order without changing the
+global CVar. Native captures and effective flags confirm that global true does
+not clip the head behind shoulders; the override persists after loading and
+hub travel. Finally, a restored hub can rebind an old module's Master to the
+travelling pawn. Destroy any module that is no longer body.AppearanceHead.
+The failing details-travel-01 and passing details-travel-02 retain this regression.
+
+Reproduction/evidence: assets/validation_5213/details.zs, details-world.cfg,
+details-poses.cfg, details-travel.cfg and RESULTS.md. Source references:
+g4.14.2 p_user.cpp (P_CheckPlayerSprite), hw_sprites.cpp (Process/visibility),
+hw_drawlist.cpp (CompareSprites), g_mapinfo.cpp (MITYPE_COMPATFLAG), g_level.cpp
+(GetCompatibility). No physical mirror capture or GPU benchmark is claimed.
+Author visual acceptance remains CA148-01.
+
 ## CA-KP-081 - Validate contact work through native movement and lazy state initialization
 
 Status/evidence: ENGINE-VERIFIED, #194 / 5.2.11, 2026-10-11.
@@ -1976,6 +2006,15 @@ deck/rows/health, with the ordinary one engine resume tic before menu pause;
 closing returns to menuactive=0 with no frozen-control flag. See
 [4.37.13 evidence](../assets/validation_43713/RESULTS.json). This does not claim
 arbitrary serialized menu objects can be restored or bypass scope separation.
+
+Related #148 evidence (5.2.13, ENGINE-VERIFIED): appearance editor drafts validate
+both pawn and profile pointers, life/creation state and the expected edit serial
+at confirmation. A serial alone is insufficient when another profile has the
+same serial. WorldLoaded discards a visible editor; native save loading can also
+clear UI references itself. `retained-03` and `replaced-01` distinguish those
+cases in assets/validation_5213. A null retained UI reference after load is not a
+failed invalidation. Never infer successful disposal solely from a zero failure
+counter when a fixture printed a separate FAIL line.
 
 ## CA-KP-008 — Changed map geometry prevents old saves from loading
 

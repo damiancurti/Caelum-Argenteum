@@ -71,7 +71,9 @@ class CaelumPlayerCharacter : Object play
             || user.CharacterProfile.Sex < CaelumConstants.SEX_MALE
             || user.CharacterProfile.Sex > CaelumConstants.SEX_FEMALE
             || user.CharacterProfile.HeightChoice < CaelumConstants.HEIGHT_SHORT
-            || user.CharacterProfile.HeightChoice > CaelumConstants.HEIGHT_TALL)
+            || user.CharacterProfile.HeightChoice > CaelumConstants.HEIGHT_TALL
+            || !CaelumAppearance.Valid(user.CharacterProfile.SkinTone,user.CharacterProfile.BeastForm)
+            || !CaelumAppearance.ValidDetails(user.CharacterProfile.Face,user.CharacterProfile.HairStyle,user.CharacterProfile.HairColor))
         {
             return false;
         }
@@ -128,6 +130,12 @@ class CaelumPlayerCharacter : Object play
         user.CharacterProfile.HeightChoice = user.ReadNewCharacterDraft(
             "ca_newchar_height", CaelumConstants.HEIGHT_NORMAL
         );
+        user.CharacterProfile.EnsureAppearance();
+        user.CharacterProfile.SkinTone=user.ReadNewCharacterDraft("ca_newchar_skintone",0);
+        user.CharacterProfile.BeastForm=user.ReadNewCharacterDraft("ca_newchar_beastform",0);
+        user.CharacterProfile.Face=user.ReadNewCharacterDraft("ca_newchar_face",0);
+        user.CharacterProfile.HairStyle=user.ReadNewCharacterDraft("ca_newchar_hairstyle",0);
+        user.CharacterProfile.HairColor=user.ReadNewCharacterDraft("ca_newchar_haircolor",0);
         for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
         {
             user.CharacterAllocation.LayerBonus[layer] = user.ReadNewCharacterLayer(layer);
@@ -325,6 +333,7 @@ class CaelumPlayerCharacter : Object play
                 if(migrateGrowth && oldAir>0)
                     user.UnderwaterAirRecoveryDebt*=user.DerivedStats.MaximumAir/oldAir;
             }
+            user.UpdateWorldCarbineVisual();
         }
     }
 

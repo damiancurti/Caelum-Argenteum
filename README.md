@@ -6,17 +6,32 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.12.** Obtain and update the complete repository, validate
+**Current release: 5.2.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.2.12 applies [#195](https://github.com/damiancurti/Caelum-Argenteum/issues/195):
-the bull accelerates to 10 m/s in one second, follows its target and cushions its
-own horizontal impacts without doubling collision mass. Mansion residents use
-finite owned tools, charged melee attacks and their approved personalities.
-[Native evidence](assets/validation_5212/RESULTS.md); the author accepted CA195-01
-on 2026-10-11 without qualifications. The [author test queue](pending_test.txt) is empty.
-Delivery: [PR200](https://github.com/damiancurti/Caelum-Argenteum/pull/200),
-branch `issue195-bull-balance`, committed and pushed; merge and issue closure authorized.
+5.2.13 implements [#148](https://github.com/damiancurti/Caelum-Argenteum/issues/148):
+modular race/sex appearance, finite skin/fur tones, four Beast Man forms, native
+character preview and saved cosmetic editing. First-person hands follow skin/fur
+and actual equipped gloves. Open **Options > Player Setup > Appearance** in a
+game to edit tone/form, face, hairstyle and hair color. Humans, goblins and
+Caelith each have four faces and four hairstyles per sex, with six hair colors.
+Voices remain automatic by saved sex.
+[Asset coverage](docs/ASSETS.md) and [validation evidence](assets/validation_5213/RESULTS.md)
+describe the supported shared poses and tests. CA148-01 passed on 2026-10-12;
+the author authorized [PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201)
+merge and issue closure. No #148 author checks remain pending.
+Author testing reported an intermittent invisible cursor in fullscreen menus;
+clicks still work and Alt+Enter restored visibility. The isolated repeat started
+with a visible cursor. The final author test set passed; no runtime cursor fix
+is inferred from that acceptance.
+The author-requested [sprite art direction](docs/SPRITE_ART_DIRECTION.md) defines
+the visual brief. Reusable head/hair modules keep the expanded catalog within
+the engine's sprite-frame limit.
+
+5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
+biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;
+[PR200](https://github.com/damiancurti/Caelum-Argenteum/pull/200) merged as
+74c31ca5 and the issue is closed. Evidence remains in assets/validation_5212.
 
 5.2.11 collision energy and the 5.2.10 ranged amendment are author-accepted.
 PR198/PR199 are merged; #192/#194 are closed. Their original evidence remains
@@ -104,7 +119,7 @@ console. Existing saves migrate without changing progress or equipment.
 [Evidence](assets/validation_520/RESULTS.md); CA147-01 passed author acceptance
 on 2026-10-11; PR176 is merged and #147 closed. At that acceptance the author test queue was empty;
 the four confirmations are recorded under their originating releases in HISTORY.
-Appearance/preview expansion remains #148. PR171/PR174/PR175 are merged and
+Appearance/preview 5.2.13 passed author acceptance on 2026-10-12. PR171/PR174/PR175 are merged and
 issues #164/#172/#173 closed, with author acceptance recorded in HISTORY.
 
 5.1.20 adds MAP06 bedroom/bathroom doors without replacing map geometry or old

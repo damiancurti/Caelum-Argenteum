@@ -60,6 +60,10 @@ class CaelumPlayer : DoomPlayer
     double HUDActiveWeaponNoticeRemaining;
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
+    CaelumCharacterProfile AppearanceDeathProfile;
+    CaelumAppearanceHead AppearanceHead;
+    int AppearancePose;
+    bool AppearanceHasGloves,AppearanceDeathGloves;
     bool DebugAttributesAt75;
     bool DebugAttributesAt100;
     int DebugPanelPage;
@@ -769,54 +773,54 @@ class CaelumPlayer : DoomPlayer
     States
     {
     Spawn:
-        DOID A 10;
+        DOID A 10 UpdateWorldCarbineVisual;
         Goto IdleBreathing;
     See:
-        DOWK AB 4;
+        DOWK AB 4 UpdateWorldCarbineVisual;
         Loop;
     Missile:
-        DOMI CDEFGHIJ 2;
+        DOMI CDEFGHIJ 2 UpdateWorldCarbineVisual;
         Goto Spawn;
     Melee:
-        DOMI KLMNOPQ 2;
+        DOMI KLMNOPQ 2 UpdateWorldCarbineVisual;
         Goto Spawn;
     Pain:
-        DOMI A 4;
-        DOMI A 4 A_Pain;
+        DOMI A 4 UpdateWorldCarbineVisual;
+        DOMI A 4 { A_Pain(); UpdateWorldCarbineVisual(); }
         Goto Spawn;
     Death:
-        DOMI S 8;
-        DOMI T 8 A_PlayerScream;
-        DOMI U 8;
-        DOMI V 8 A_NoBlocking;
-        DOMI WXY 8;
-        DOMI Z -1;
+        DOMI S 8 UpdateWorldCarbineVisual;
+        DOMI T 8 { A_PlayerScream(); UpdateWorldCarbineVisual(); }
+        DOMI U 8 UpdateWorldCarbineVisual;
+        DOMI V 8 { A_NoBlocking(); UpdateWorldCarbineVisual(); }
+        DOMI WXY 8 UpdateWorldCarbineVisual;
+        DOMI Z -1 UpdateWorldCarbineVisual;
         Stop;
     XDeath:
         Goto Death;
     Raise:
-        DOMI ZYXWVUTS 5;
+        DOMI ZYXWVUTS 5 UpdateWorldCarbineVisual;
         Goto Spawn;
     RestSeated:
-        RSDO A -1;
+        RSDO A -1 UpdateWorldCarbineVisual;
         Stop;
     RestLying:
-        RSDO B -1;
+        RSDO B -1 UpdateWorldCarbineVisual;
         Stop;
     CrouchIdle:
-        RSDO C -1;
+        RSDO C -1 UpdateWorldCarbineVisual;
         Stop;
     CrouchWalk:
-        RSDO DEFG 6;
+        RSDO DEFG 6 UpdateWorldCarbineVisual;
         Loop;
 
     // Estados nuevos al final: conservan los índices de partidas anteriores.
     IdleBreathing:
-        DOID AAA 10;
-        DOID BBBB 10;
+        DOID AAA 10 UpdateWorldCarbineVisual;
+        DOID BBBB 10 UpdateWorldCarbineVisual;
         Goto Spawn;
     Run:
-        DORN ABCD 3;
+        DORN ABCD 3 UpdateWorldCarbineVisual;
         Loop;
     }
 
@@ -6245,6 +6249,8 @@ class CaelumPlayer : DoomPlayer
             EnsureWeaponFamilySelectors();
         }
 
+        UpdateWorldCarbineVisual();
+
         if (!HealthResourceInitialized)
         {
             // A newly created or respawned player begins at full calculated
@@ -7596,6 +7602,12 @@ class CaelumPlayer : DoomPlayer
         CaelumUtilityStaff.EndEmission(self);
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         CaelumBreathing.StopAudio(self);
+        if(CharacterProfile!=null)
+        {
+            AppearanceDeathProfile=new("CaelumCharacterProfile");
+            AppearanceDeathProfile.CopyFrom(CharacterProfile);
+            AppearanceDeathGloves=CaelumAppearanceHands.HasGloves(self);
+        }
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
     }
 
@@ -9089,10 +9101,16 @@ class CaelumPlayer : DoomPlayer
 
     void UpdateWorldCarbineVisual()
     {
+        if(CurState==null)return;
+        sprite=CurState.sprite;
+        frame=CurState.Frame;
+        // El motor compara crouchsprite con el sprite final, no con el estado.
+        crouchsprite=sprite==GetSpriteIndex("RSDO") && frame>=2 ? sprite : 0;
         CaelumCarbineWorld.Apply(self,WeaponModel!=null && WeaponModel.Equipped
             && CaelumRangedRules.IsFirearm(WeaponModel.WeaponType),
             Vel.XY.Length()>0.01,level.time<WorldCarbineShotUntil,
             RangedReloadActive ? RangedReloadRemainingSeconds : 0,RangedReloadTotalSeconds);
+        CaelumAppearance.Apply(self);
     }
 
     override void PlayAttacking()

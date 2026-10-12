@@ -130,6 +130,9 @@ class CaelumDerivedStats : Object
         return 1.0 + 0.2 * Clamp(tier, 1, 7);
     }
 
+    double GetActorHeightForTier(int tier)
+    { return 56.0 * GetHeightMetersForTier(tier) / 1.8; }
+
     void SetEquipmentWeights(
         double newArmorWeight,
         double newShieldWeight,
@@ -214,7 +217,7 @@ class CaelumDerivedStats : Object
         BaseMassMultiplier = BaseMass / 100.0;
         BodyHeightMeters = GetHeightMetersForTier(SizeTier);
         double sizeFactor = BodyHeightMeters / 1.8;
-        ActorHeight = 56.0 * sizeFactor;
+        ActorHeight = GetActorHeightForTier(SizeTier);
         ActorRadius = 16.0 * sizeFactor;
 
         MaximumHealth = CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE

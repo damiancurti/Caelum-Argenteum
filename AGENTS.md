@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -21,7 +21,7 @@ values, recipes, and design decisions live in the canonical documents in
 | Path | Contents |
 | --- | --- |
 | `src/` | Everything packaged into the PK3: maps (`maps/`), ZScript code (`caelum/`, `impactphysics/`, `crafting/`), sprites, models, fonts, sounds, music, graphics, and license notices. |
-| `docs/` | Canonical documentation: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`; working documents `CONTEXT.md` and `TASKS.md`; engineering guides `GZDOOM_DEVELOPMENT.md` and `KNOWN_PITFALLS.md`; generated `DOCUMENT_INDEX.md`. |
+| `docs/` | Canonical documentation: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`, `SPRITE_ART_DIRECTION.md`; working documents `CONTEXT.md` and `TASKS.md`; engineering guides `GZDOOM_DEVELOPMENT.md` and `KNOWN_PITFALLS.md`; generated `DOCUMENT_INDEX.md`. |
 | `assets/` | Art and audio sources, climate data, first-person views, optional generators (`generators/`), manifests, and validation records. Not packaged at runtime. |
 | `build/` | Regenerable PK3 (`caelum_argenteum_dev.pk3`), rebuilt with `build_dev.ps1`. |
 | `archive/` | Known backups of previous versions, kept for recovery. |
@@ -38,6 +38,7 @@ are optional editing utilities; their outputs are already in `src/`.
 | Game rules: controls, combat, crafting, economy, Box, survival, dialogue | `docs/SYSTEMS.md` |
 | Story, canon, MAP01 specification, and implementation boundaries | `docs/MAP01.txt` |
 | Audio, art, first-person views, attributions, and generators | `docs/ASSETS.md` |
+| Artistic brief before generating/editing sprites; faces, hair, palettes and visual review | `docs/SPRITE_ART_DIRECTION.md` |
 | History of decisions and previous documents | `docs/HISTORY.md` |
 | Installation, build, and summarized status | `README.md` |
 | Quick summary before reading the rest | `docs/CONTEXT.md` |
@@ -216,7 +217,7 @@ policy.
 
 ## Current-version convention
 
-README declares `Current release:`. AGENTS and all seven documents in `docs/`
+README declares `Current release:`. AGENTS and all eight versioned documents in `docs/`
 declare `Documentation version:` within their opening 1,000 characters, with
 optional Markdown bold formatting. All current markers must agree and use
 MAJOR.MINOR.PATCH with an optional lowercase letter for author-requested

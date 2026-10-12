@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## Saved cosmetics and native preview - 5.2.13 / #148
+
+The native creator includes Appearance after Height. It offers three skin/fur
+tones per race and wolf, bear, puma or jaguar form for Beast Men. Caelith use
+red/green/blue; humans and goblins use natural skin tones; beast tones remain
+within the selected animal's natural palette. These are cosmetic choices.
+Humans, goblins and Caelith also offer four faces and four hairstyles for each
+sex: short/long straight and short/long curly. All three share black, brown,
+blonde, redhead, gray and white hair colors.
+
+Options > Player Setup > Appearance edits tone, Beast Man form where applicable,
+and humanoid face/hairstyle/hair color in an existing game. Race, sex, height,
+professions, personality, allocations, equipment
+and resources remain authoritative saved gameplay data. Back/Escape cancels;
+Confirm/Enter commits once against the profile revision. Loading or replacing
+the pawn invalidates the editor. Global skin/color/new-character defaults never
+replace a committed profile. AppearanceRevision 2 initializes missing face,
+hairstyle and hair color to option 0 once. Revision-1 saves keep their tone/form;
+pre-appearance saves also initialize tone/form 0. Subsequent binds/copies preserve
+all selections. The edit serial rejects stale confirmations independently of
+the schema revision.
+
+The preview uses native GetSpriteTexture and the same modular world sprite,
+rotation and physical-height scale as the saved character. It is a UI object,
+not an actor: stepping its visual states executes no gameplay actions or sounds.
+Arrow keys and clickable controls select options; PageUp/PageDown rotate;
+Backspace switches standing/walking. Sex/height/summary also show the preview.
+
+First-person bare hands follow saved skin/fur. An owned, equipped Hands-slot
+armor item selects the existing glove art; broken gloves remain worn, while
+boxed/unequipped items do not supply gloves. Giant gauntlets keep their own art.
+Modular weapon/shield layers, pivots, timings, ammunition and attack rules remain
+unchanged. Corpses snapshot their appearance independently at death. Player
+pain/breathing sounds remain automatic by saved sex; no voice selector or new
+animal recordings are introduced. Asset coverage and limitations: ASSETS.
+
+This supersedes the appearance deferral in the historical #147 matrix below.
+Evidence: assets/validation_5213/RESULTS.md. Author check CA148-01 passed on 2026-10-12.
 
 ## Bull charge, resident tools and personality - 5.2.12 / #195
 
