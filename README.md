@@ -19,6 +19,8 @@ capture transitions passed author check CA204-01 on 2026-10-12.
 [Evidence and limits](assets/validation_5216/RESULTS.md); setup is under
 [Build and run](#build-and-run). No outstanding #204 author checks.
 Accepted delivery: [PR205](https://github.com/damiancurti/Caelum-Argenteum/pull/205).
+The checkout follow-up refreshes the LANGUAGE index fingerprint for Git's
+canonical LF source, preserving all text and indexed locations.
 
 5.2.15 implements [#150](https://github.com/damiancurti/Caelum-Argenteum/issues/150):
 native UI/HUD/message scaling, configurable crosshair and a bilingual

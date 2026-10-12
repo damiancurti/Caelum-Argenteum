@@ -13,6 +13,10 @@ Accepted delivery: PR205. The author requested commit, push, issue closure and
 PR merge; no author checks remain. Lower-level engine/driver diagnosis is not
 claimed as completed.
 
+The post-merge checkout follow-up refreshes the LANGUAGE index's source hash
+from canonical LF bytes. No text, key, location or gameplay change; evidence
+is retained in assets/validation_5216/checkout-followup.json.
+
 ## Issue #150 - Readability and comfort (5.2.15)
 
 Implemented shared UI/HUD/message scaling, restored native crosshair, native
