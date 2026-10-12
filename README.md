@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.14.** Obtain and update the complete repository, validate
+**Current release: 5.2.15.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.15 implements [#150](https://github.com/damiancurti/Caelum-Argenteum/issues/150):
+native UI/HUD/message scaling, configurable crosshair and a bilingual
+**Options > Readability and comfort** section. Existing motion preferences keep
+combat unchanged. **Journal > Notices** retains the last 20 complete messages;
+recent notices wrap on the HUD. Global preferences survive character loads.
+[Technical evidence and limits](assets/validation_5215/RESULTS.md) distinguish
+engine checks from author acceptance: CA150-01 passed on 2026-10-12 without
+qualifications. No #150 checks remain in [pending_test.txt](pending_test.txt).
+Accepted delivery: [PR203](https://github.com/damiancurti/Caelum-Argenteum/pull/203).
 
 5.2.14 implements [#149](https://github.com/damiancurti/Caelum-Argenteum/issues/149):
 native grouped controls and binding-aware English/Spanish hints. Open
@@ -20,7 +30,7 @@ conflict is removed only by that preset/reset; marking remains remappable.
 Hints list all normal bindings, or a localized unbound label. Native double
 bindings remain preserved; GZDoom 4.14.2 does not expose them to ZScript hints.
 [PR202](https://github.com/damiancurti/Caelum-Argenteum/pull/202),
-[evidence and limitations](assets/validation_5214/RESULTS.md); CA149-01 passed author acceptance on 2026-10-12. PR202 merge/closure authorized;
+[evidence and limitations](assets/validation_5214/RESULTS.md); CA149-01 passed author acceptance on 2026-10-12. PR202 merged b36ef830; #149 closed;
 no #149 author checks remain in [pending_test.txt](pending_test.txt).
 
 5.2.13/#148 is accepted: modular race/sex appearance, native character preview,

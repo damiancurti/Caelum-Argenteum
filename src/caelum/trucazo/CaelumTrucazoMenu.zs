@@ -195,7 +195,7 @@ class CaelumTrucazoMenu : ListMenu
     }
     // Dibujo en coordenadas virtuales: las cartas nunca se deforman para llenar
     // una relación de pantalla distinta. El puntero invierte esta misma proyección.
-    static double UIScale() {return Min(Screen.GetWidth()/800.0,Screen.GetHeight()/600.0);}
+    static double UIScale() {return Min(double(CaelumPresentation.UIScale()),CaelumPresentation.Fit(800,600));}
     static double UILeft() {return (Screen.GetWidth()-800*UIScale())/2;}
     static double UITop() {return (Screen.GetHeight()-600*UIScale())/2;}
     static void Text(double x,double y,String value,int color=Font.CR_WHITE)

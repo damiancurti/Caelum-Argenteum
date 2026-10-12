@@ -1947,7 +1947,7 @@ class CaelumJournalOverlay : EventHandler
             || (localPlayer.player.ConversationNPC != null && localPlayer.player.ConversationNPC.bInConversation)) return;
         if(localPlayer.HUDInteractionHint!="")
         {
-            DrawCenteredText(SmallFont,Font.CR_GOLD,320,214,localPlayer.HUDInteractionHint);
+            CaelumPresentation.InteractionHint(SmallFont,localPlayer.HUDInteractionHint);
             return;
         }
         let gates = ThinkerIterator.Create("CaelumSewerTravelGate");
@@ -1966,7 +1966,7 @@ class CaelumJournalOverlay : EventHandler
             nearest = gate;
         }
         if (nearest == null) return;
-        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 214,
+        CaelumPresentation.InteractionHint(SmallFont,
             String.Format(StringTable.Localize("CA_SEWER_TRAVEL_HINT", false),
                 StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(nearest.ConnectionId), false)));
     }
@@ -2107,7 +2107,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawRest(CaelumPlayer localPlayer, CaelumRestState rest)
     {
-        Screen.Dim(0x05070A, 0.12, 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.12);
         DrawPanel(16.0, 12.0, 608.0, 116.0);
         DrawCenteredText(TextFont, Font.CR_GOLD, 320, 18,
             StringTable.Localize(CaelumRestRules.ModeKey(rest.Mode), false));
@@ -2147,7 +2147,7 @@ class CaelumJournalOverlay : EventHandler
     ui void DrawCityTrade(CaelumPlayer user)
     {
         let trade=user.CityTrade;
-        Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
         DrawPanel(16,12,608,336);
         DrawCenteredText(TitleFont,Font.CR_GOLD,320,20,StringTable.Localize(user.PalomoMerchantTitleKey,false));
         DrawTextLine(TextFont,Font.CR_GOLD,42,60,StringTable.Localize(trade.Selling ? "CA_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_BUY",false));
@@ -2184,8 +2184,7 @@ class CaelumJournalOverlay : EventHandler
         if(localPlayer.CityTrade!=null){DrawCityTrade(localPlayer);return;}
         bool legacyMerchant = localPlayer.PalomoMerchantTitleKey.Length() == 0
             || localPlayer.PalomoMerchantTitleKey == "CA_PALOMO_MERCHANT_TITLE";
-        Screen.Dim(0x05070A, 0.92, 0, 0,
-            Screen.GetWidth(), Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
         DrawPanel(16.0, 12.0, 608.0, 336.0);
         DrawCenteredText(
             TitleFont, Font.CR_GOLD, 320.0, 20.0,
@@ -2322,7 +2321,7 @@ class CaelumJournalOverlay : EventHandler
     {
         let available = plan.Available;
         let needed = plan.Needed;
-        Screen.Dim(0x05070A, 0.92, 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
         DrawPanel(16, 12, 608, 336);
         DrawCenteredText(TitleFont, Font.CR_GOLD, 320, 24, StringTable.Localize("CA_JOURNEY_PLAN", false));
         String destination = StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(
@@ -3089,7 +3088,7 @@ class CaelumJournalOverlay : EventHandler
         if (currentPage == 2 && CaelumScheduleCalendar.IsOpen())
         { CaelumScheduleCalendar.Draw(self, localPlayer); return; }
 
-        Screen.Dim(0x05070A, 0.92, 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
         DrawPanel(16.0, 12.0, 608.0, 336.0);
         DrawCenteredText(TitleFont, Font.CR_GOLD, 320.0, 16.0,
             StringTable.Localize("CA_JOURNAL_TITLE", false));

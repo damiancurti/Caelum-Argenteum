@@ -38,15 +38,9 @@ class CaelumCompass : Object ui
     }
     static double Scale()
     {
-        // Respetar los controles nativos de escala; limitar al espacio evita
-        // recortes en ventanas pequeñas o escalas manuales muy grandes.
-        double fit = Min(Screen.GetWidth() / CaelumCompassLayout.CANVAS_WIDTH,
-            Screen.GetHeight() / CaelumCompassLayout.CANVAS_HEIGHT);
-        let factor = CVar.GetCVar("hud_scalefactor");
-        let manual = CVar.GetCVar("hud_scale");
-        double chosen = manual != null && manual.GetInt() > 0 ? manual.GetInt() * 0.5 : fit;
-        return Clamp(chosen * (factor == null ? 1.0 : factor.GetFloat()), fit * 0.5, fit * 2.0);
+        Vector2 scale=CaelumPresentation.HUDScale();return scale.X/2.0;
     }
+
     static bool Visible(CaelumPlayer user)
     {
         if (user == null || user.player == null || user.health <= 0 || menuactive != 0

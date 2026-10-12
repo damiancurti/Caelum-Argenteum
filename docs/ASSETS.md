@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
+
+## 5.2.15 - Presentation scaling and native feedback (#150)
+
+No new art/audio assets. Existing HUD frames, thermal bands, outlines, icons,
+card art and character previews are scaled through their shared presentation
+adapter; first-person sprites retain their native bob and action poses.
+The native crosshair uses engine-provided artwork without copying it into src.
+Fonts and English/Spanish text retain their sources in LANGUAGE and the
+localization index. The new notice history stores text, not rendered images.
+Reproducible native fixtures, captures, source hashes and limits are retained in
+assets/validation_5215. CA150-01 passed author visual/comfort acceptance on
+2026-10-12 without qualifications.
 
 ## 5.2.14 - Native control presentation and test sources (#149)
 

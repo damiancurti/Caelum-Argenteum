@@ -1,11 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
 
-**Current 5.2.14 / #149:** native control groups and actual-binding hints.
-Approved defaults include M automap; custom/cleared controls survive startup/load.
-Preset/reset removes the map-only M mark conflict. Evidence validation_5214;
-CA149-01 accepted 2026-10-12; PR202 merge authorized. Input support boundaries: SYSTEMS.
+**Current 5.2.15 / #150 accepted:** shared native UI/HUD/message scales, native crosshair
+and comfort options; saved last-20 Journal notice history approved by author.
+Combat/#137 unchanged. CA150-01 passed 2026-10-12; author queue empty.
+Evidence: validation_5215. Native limits: SYSTEMS. Accepted delivery: PR203.
+**5.2.14 / #149 accepted:** CA149-01 passed 2026-10-12, PR202 merged b36ef830,
+issue closed. Grouped native controls/hints; M automap. Evidence validation_5214.
 
 **5.2.13 / #148 accepted:** CA148-01 passed 2026-10-12; PR201 merged b21e0632,
 issue closed. Modular appearance, preview/editor and equipped-glove hands;
@@ -45,7 +47,7 @@ Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
 The author authorized all four merges/closures. At that acceptance the author test queue was empty;
-HISTORY records each confirmation. Next roadmap: #148; #149/#150 stay separate.
+HISTORY records each confirmation. Current roadmap: #150; prior #148/#149 accepted.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.
@@ -154,11 +156,8 @@ and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
 acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
 legacy limits: SYSTEMS. Port and #17 export are author-accepted.
 
-**4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
-Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
-gates absorb 10/20/30%, with Constitution 0 and Toughness 25/50/75.
-Native combat/siege and save migration pass. Tables: SYSTEMS; evidence:
-assets/validation_43623. Author confirmed all three checks passed 2026-09-28; merge authorized.
+**4.36.23 / #52 accepted:** former Toughness rules and native evidence are
+preserved in HISTORY/SYSTEMS and validation_43623; #188 supersedes that balance.
 
 **4.36.22 / #34:** revised Palomo/Voice/companion narrative, secondary-wind
 sprite freeze fix and legacy dialogue migration passed author acceptance

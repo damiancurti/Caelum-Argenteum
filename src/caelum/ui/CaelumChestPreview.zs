@@ -165,7 +165,7 @@ class CaelumChestPreview : StaticEventHandler
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
         if(preview==null || !preview.IsOpen())return;
         let font=Font.GetFont("CaelumSmall");
-        Screen.Dim(0x05070A,0.94,0,0,Screen.GetWidth(),Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.94);
         DrawLine(Font.GetFont("CaelumDisplay"),Font.CR_GOLD,28,StringTable.Localize("CA_CHEST_PREVIEW_TITLE",false));
         DrawLine(font,Font.CR_GRAY,60,preview.Materials?preview.Allocation:StringTable.Localize("CA_CHEST_PREVIEW_UNCLAIMED",false));
         double y=88;

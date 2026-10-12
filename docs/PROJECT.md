@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
+
+## 5.2.15 - Native readability and comfort (#150)
+
+Shared presentation scaling now covers the custom HUD (including thermal),
+messages, Journal/inventory/live panels, creator/preview and card menus.
+The native crosshair is restored with its context rules and preferences.
+A bilingual options group exposes existing scale, crosshair and motion options.
+Author-approved notification overflow uses recent complete HUD messages plus a
+saved, scrollable last-20 history in the Journal. Camera/weapon bob remains
+native; accepted combat and #137 feedback are unchanged. Global presentation
+preferences remain separate from saved identity. Native evidence and limits:
+assets/validation_5215/RESULTS.md. CA150-01 passed author acceptance on
+2026-10-12 without qualifications; the author requested PR203 merge and #150
+closure. No author checks remain. #149/PR202 are closed/merged.
 
 ## 5.2.14 - Grouped native controls and current hints (#149)
 
@@ -11,7 +25,7 @@ owned by GZDoom. Actual normal bindings resolve in bilingual UI text.
 Explicit native reset applies the seven approved Caelum defaults, including M
 for automap; first-launch setup uses the same catalogue. Startup/load preserves
 custom and cleared bindings. No powers, balance or exploration features added.
-Evidence: assets/validation_5214/RESULTS.md. CA149-01 passed author acceptance on 2026-10-12; PR202 merge authorized. #148 is complete: PR201 merged b21e0632 and issue closed.
+Evidence: assets/validation_5214/RESULTS.md. CA149-01 passed author acceptance on 2026-10-12; PR202 merged b36ef830 and #149 closed. #148 is complete: PR201 merged b21e0632 and issue closed.
 
 ## 5.2.13 - Native saved cosmetics and character preview (#148)
 

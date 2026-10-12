@@ -8,6 +8,8 @@ class CaelumNotificationInbox : Inventory
     int RemainingTics[LIMIT];
     String ExtractionText;
     int ExtractionRemainingTics;
+    int HistoryRevision, HistoryCount;
+    String HistoryText[LIMIT];
 
     Default
     {
@@ -35,6 +37,8 @@ class CaelumNotificationInbox : Inventory
 
     void Add(String message, int duration)
     {
+        EnsureHistory();
+        Remember(message);
         if (Count == LIMIT) RemoveAt(0);
         Text[Count] = message;
         RemainingTics[Count] = duration;
@@ -44,12 +48,28 @@ class CaelumNotificationInbox : Inventory
     override void Tick()
     {
         Super.Tick();
+        EnsureHistory();
         if (ExtractionRemainingTics > 0) ExtractionRemainingTics--;
         for (int i = Count - 1; i >= 0; i--)
         {
             RemainingTics[i]--;
             if (RemainingTics[i] <= 0) RemoveAt(i);
         }
+    }
+
+    void Remember(String message)
+    {
+        if(HistoryCount==LIMIT)
+        {for(int i=0;i<LIMIT-1;i++)HistoryText[i]=HistoryText[i+1];HistoryCount--;}
+        HistoryText[HistoryCount++]=message;
+    }
+    void EnsureHistory()
+    {
+        // Revisión aditiva e idempotente: los saves previos conservan sus avisos.
+        if(HistoryRevision>=1)return;
+        HistoryCount=0;
+        for(int i=0;i<Count;i++)Remember(Text[i]);
+        HistoryRevision=1;
     }
 }
 
@@ -103,10 +123,9 @@ class CaelumNotifications : Object
         let font = Font.GetFont("CaelumText");
         if (font == null) return;
         // Un solo aviso renovable y centrado; nunca acumula una columna sobre la mira.
-        Screen.DrawText(font, Font.CR_GOLD, 320.0 - font.StringWidth(inbox.ExtractionText) * 0.5,
-            180.0 - font.GetHeight() * 0.5, inbox.ExtractionText,
-            DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true, DTA_SHADOW, true);
+        Vector2 scale=CaelumPresentation.MessageScale();
+        CaelumPresentation.CenterMessage(font,Font.CR_GOLD,inbox.ExtractionText,
+            Screen.GetHeight()/2-font.GetHeight()*scale.Y/2);
     }
 
     static clearscope String EssenceKey(int essence)
@@ -213,32 +232,43 @@ class CaelumNotifications : Object
         return total;
     }
 
-    static ui void Draw(CaelumPlayer user, Font font)
+    static ui void Draw(CaelumPlayer user, Font font,double minimumY=0)
     {
+        if(menuactive!=Menu.Off)return;
         let inbox = CaelumNotificationInbox(user.FindInventory("CaelumNotificationInbox"));
         if (inbox == null || inbox.Count == 0 || font == null) return;
-        // Dos columnas de diez entradas: se lee hacia abajo y luego a la
-        // derecha. Cada entrada reserva dos renglones; el panel termina antes
-        // de Lucidez/Vida/Aire y deja libre el centro y el sello lateral.
-        double textScale = Min(2.0, 20.0 / Max(1, font.GetHeight()));
-        double lineHeight = Ceil(font.GetHeight() * textScale) + 1.0;
-        double entryHeight = lineHeight * 2.0 + 2.0;
-        for (int index = 0; index < inbox.Count; index++)
+        // Escala de mensajes del motor; nunca encoger texto para llenar cupos.
+        // El historial conserva las entradas que no caben en el aviso temporal.
+        Vector2 scale=CaelumPresentation.MessageScale(), hud=CaelumPresentation.HUDScale();
+        double x=CaelumCompass.Visible(user)?CaelumCompassLayout.NOTIFY_LEFT*CaelumCompass.Scale():16.0;
+        double width=Screen.GetWidth()*0.45-x;
+        double top=Max(12.0,minimumY);
+        if(CVar.GetCVar("con_notifytime").GetFloat()>0)
+            top+=Clamp(CVar.GetCVar("con_notifylines").GetInt(),0,4)*18*scale.Y;
+        double bottom=Screen.GetHeight()-140*hud.Y;
+        double lineHeight=(font.GetHeight()+2)*scale.Y;
+        double y=top;
+        bool overflow=false;
+        for(int index=inbox.Count-1;index>=0;index--)
         {
-            int column = index / 10;
-            int row = index % 10;
-            double x = column == 0 ? CaelumCompass.NotificationLeft(user) : 706.0;
-            int width = column == 0 ? int(CaelumCompassLayout.NOTIFY_RIGHT - x) : 430;
-            let lines = font.BreakLines(CaelumInputHints.Resolve(inbox.Text[index]), int(width / textScale));
-            for (int line = 0; line < Min(2, lines.Count()); line++)
-            {
-                String text = lines.StringAt(line);
-                if (line == 1 && lines.Count() > 2) text = text.Left(Max(0, text.Length() - 3)) .. "...";
-                Screen.DrawText(font, Font.CR_WHITE, x, 12.0 + row * entryHeight + line * lineHeight, text,
-                    DTA_VIRTUALWIDTHF, 1280.0, DTA_VIRTUALHEIGHTF, 720.0,
-                    DTA_SCALEX, textScale, DTA_SCALEY, textScale,
-                    DTA_KEEPRATIO, true, DTA_SHADOW, true);
-            }
+            let lines=font.BreakLines(CaelumInputHints.Resolve(inbox.Text[index]),Max(1,int(width/scale.X)));
+            double needed=(lines.Count()+1)*lineHeight;
+            if(y+needed>bottom)
+            {overflow=true;lines.Destroy();break;}
+            for(int line=0;line<lines.Count();line++)
+                Screen.DrawText(font,Font.CR_WHITE,x,y+line*lineHeight,lines.StringAt(line),
+                    DTA_SCALEX,scale.X,DTA_SCALEY,scale.Y,DTA_SHADOW,true);
+            y+=needed;lines.Destroy();
+        }
+        if(overflow)
+        {
+            String hint=String.Format(CaelumInputHints.Resolve(StringTable.Localize("CA_MESSAGES_MORE",false)),CaelumNotificationMenu.Link());
+            let lines=font.BreakLines(hint,Max(1,int(width/scale.X)));
+            // Reservar el indicador completo antes de los recursos; no alterar la mira.
+            if(y+lines.Count()*lineHeight<=bottom)
+                for(int line=0;line<lines.Count();line++)
+                    Screen.DrawText(font,Font.CR_GOLD,x,y+line*lineHeight,lines.StringAt(line),
+                        DTA_SCALEX,scale.X,DTA_SCALEY,scale.Y,DTA_SHADOW,true);
             lines.Destroy();
         }
     }

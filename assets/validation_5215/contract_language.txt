@@ -1,0 +1,3 @@
+[enu default]
+CA150_LONG_EN = "Received: a sleeping bag, a five litre canteen, leather and rope. The complete description must remain readable in the Journal when message scaling leaves insufficient room on the HUD.";
+CA150_LONG_ES = "Recibido: bolsa de dormir, cantimplora de cinco litros, cuero y soga. La descripción completa debe poder leerse en el Diario aunque el tamaño de los mensajes deje poco espacio en pantalla.";
