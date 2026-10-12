@@ -30,6 +30,16 @@ the issue is closed. No earlier accepted tests are reopened by this patch.
 Delivery: art/resources commit b6874a48, runtime/evidence commit 345c710e, pushed
 on issue148-appearance-preview. Draft PR201 links #148 and awaits CA148-01.
 
+Author feedback, 2026-10-11: the cursor was invisible in the creator, MainMenu
+and Options in fullscreen; clicks still worked and Alt+Enter restored it.
+A first cursor-reinitialization probe was confounded by a video-mode change.
+In the isolated repeat, with Alt+Enter disabled only for that disposable run,
+the author reported that the cursor was already visible from startup. Neither
+probe establishes a cursor fix. Runtime and user settings remain unchanged;
+CA148-01 stays pending. The test runner now supports a true title-screen start:
+GZDoom's -skill argument also starts a map, so title tests omit it and +map.
+Evidence: the cursor follow-up in assets/validation_5213/RESULTS.md.
+
 ## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
 
 Author decisions: final 10 m/s cap, linear 10 m/s^2 acceleration, tracking a

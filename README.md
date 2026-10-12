@@ -18,6 +18,9 @@ game to edit tone/form. Voices remain automatic by saved sex.
 describe the supported shared poses and tests. [CA148-01](pending_test.txt) remains
 pending author visual acceptance. Delivery: [draft PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201),
 branch `issue148-appearance-preview`, committed and pushed.
+Author testing reported an intermittent invisible cursor in fullscreen menus;
+clicks still work and Alt+Enter restored visibility. The isolated repeat started
+with a visible cursor, so no cursor fix or acceptance is claimed yet.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;

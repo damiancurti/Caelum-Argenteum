@@ -1,0 +1,118 @@
+[
+  {
+    "label": "cursor-before-fullscreen-01",
+    "started_utc": "2026-10-12T01:32:16.1311669Z",
+    "finished_utc": "2026-10-12T01:33:23.9089153Z",
+    "exit_code": 0,
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "production_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "runtime_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "fixture_sha256": "0B370E12BD9AEDFF5CDE4D02B1D901D6A1A5D4C7758A4EEEE420F2828F66290E",
+    "raw_log_sha256": "6a717d617392d0e168ddaec03f1a0eae25e8f0b11dabae66cecf64e8b0e51b1e",
+    "starts_map": true,
+    "initial_mouse_video_settings": {
+      "vid_preferbackend": "1",
+      "vid_activeinbackground": "true",
+      "i_pauseinbackground": "false",
+      "vid_fullscreen": "false",
+      "use_mouse": "true",
+      "snd_mastervolume": "0.05"
+    }
+  },
+  {
+    "label": "cursor-before-title-01",
+    "started_utc": "2026-10-12T01:34:39.0960773Z",
+    "finished_utc": "2026-10-12T01:36:26.3718641Z",
+    "exit_code": 0,
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "production_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "runtime_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "fixture_sha256": "0B370E12BD9AEDFF5CDE4D02B1D901D6A1A5D4C7758A4EEEE420F2828F66290E",
+    "raw_log_sha256": "f8a3a4becf64108373674d51802ba6120c7dd8d2e6c10b88a789770d46449ead",
+    "starts_map": true,
+    "initial_mouse_video_settings": {
+      "i_pauseinbackground": "false",
+      "in_mouse": "0",
+      "m_use_mouse": "2",
+      "snd_mastervolume": "0.05",
+      "use_mouse": "true",
+      "vid_activeinbackground": "true",
+      "vid_fullscreen": "true",
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_cursor": "None"
+    }
+  },
+  {
+    "label": "cursor-before-title-02",
+    "started_utc": "2026-10-12T01:38:43.4270657Z",
+    "finished_utc": "2026-10-12T01:40:30.7426495Z",
+    "exit_code": 0,
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "production_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "runtime_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "fixture_sha256": "0B370E12BD9AEDFF5CDE4D02B1D901D6A1A5D4C7758A4EEEE420F2828F66290E",
+    "raw_log_sha256": "258467360903688ced3c4fcb47ce5d64820c2da16c05d236d76a38e1d1887538",
+    "starts_map": false,
+    "initial_mouse_video_settings": {
+      "i_pauseinbackground": "false",
+      "in_mouse": "0",
+      "m_use_mouse": "2",
+      "snd_mastervolume": "0.05",
+      "use_mouse": "true",
+      "vid_activeinbackground": "true",
+      "vid_fullscreen": "true",
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_cursor": "None"
+    }
+  },
+  {
+    "label": "cursor-refresh-01",
+    "started_utc": "2026-10-12T01:41:55.1581199Z",
+    "finished_utc": "2026-10-12T01:44:02.5571996Z",
+    "exit_code": 0,
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "production_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "runtime_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "fixture_sha256": "0B370E12BD9AEDFF5CDE4D02B1D901D6A1A5D4C7758A4EEEE420F2828F66290E",
+    "raw_log_sha256": "469319c488dbbd43cbb351623bafbc9d80f72d59e292a902dba140fa17d0ad3c",
+    "starts_map": false,
+    "initial_mouse_video_settings": {
+      "i_pauseinbackground": "false",
+      "in_mouse": "0",
+      "m_use_mouse": "2",
+      "snd_mastervolume": "0.05",
+      "use_mouse": "true",
+      "vid_activeinbackground": "true",
+      "vid_fullscreen": "true",
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_cursor": "None"
+    }
+  },
+  {
+    "label": "cursor-refresh-isolated-01",
+    "started_utc": "2026-10-12T01:47:27.6045087Z",
+    "finished_utc": "2026-10-12T01:48:14.0045179Z",
+    "exit_code": 0,
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "production_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "runtime_sha256": "69BCC7B76A3E28D32B4DC06B503E238CA22F4995C5B81EDE0D7BAA894B09BA60",
+    "fixture_sha256": "0C0FF50A1B53AF5FBBD40D9A7AAF76006B13622D4A31BC35755D886F7E465C0D",
+    "raw_log_sha256": "d66f3251206954cef97259dfbd9baf43bbb4b744bb0d346fbc2df229305fa036",
+    "starts_map": false,
+    "initial_mouse_video_settings": {
+      "i_pauseinbackground": "false",
+      "in_mouse": "0",
+      "m_use_mouse": "2",
+      "snd_mastervolume": "0.05",
+      "use_mouse": "true",
+      "vid_activeinbackground": "true",
+      "vid_fullscreen": "true",
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_cursor": "None"
+    }
+  }
+]

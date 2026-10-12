@@ -12,6 +12,9 @@ Sources/generators are retained and deterministic. Isolated engine checks cover
 creation, editor transactions, old/current saves, restart, travel and gloves.
 Evidence: assets/validation_5213/RESULTS.md. Remaining delivery gate: author
 visual acceptance CA148-01 in pending_test.txt; no merge/closure is claimed.
+Author reported an invisible cursor in fullscreen MainMenu, Options and creator,
+with working clicks and recovery after Alt+Enter. The isolated repeat began with
+a visible cursor; identify a reproducible trigger before choosing a runtime fix.
 PR200/#195 are merged/closed following the prior explicit acceptance.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)

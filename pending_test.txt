@@ -1,5 +1,9 @@
 CA148-01 | Origin 5.2.13 / issue #148 | Native appearance and hands
 Prerequisites: rebuild the current PK3 with run_dev.bat; GZDoom 4.14.2.
+Cursor follow-up: on a fresh fullscreen launch, check the pointer in MainMenu,
+Options and Create Character. Report the launch/transition that hides it, if
+it recurs. Clicks worked and Alt+Enter restored it in the author's 2026-10-11
+report; the isolated repeat started visible. No cursor fix is claimed yet.
 1. Create characters of each race/sex. Check all three tones; Beast Men also
    offer wolf, bear, puma and jaguar. Rotate/walk the preview by mouse and
    PageUp/PageDown/Backspace. Check Spanish/English and your normal resolution.

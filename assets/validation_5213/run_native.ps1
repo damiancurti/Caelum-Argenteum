@@ -14,7 +14,8 @@ param(
     [string]$Iwad = 'C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD',
     [switch]$Baseline,
     [switch]$ExpectRegression,
-    [switch]$Interactive
+    [switch]$Interactive,
+    [switch]$TitleScreen
 )
 $ErrorActionPreference='Stop'
 if(Get-CimInstance Win32_Process -Filter "Name='gzdoom.exe'" | Where-Object {$_.CommandLine -like '*build\issue148\*'}){throw 'Wait for the existing issue148 native run to finish.'}
@@ -35,8 +36,13 @@ $files=@("`"$work\$runtime`"")
 $files+=@("`"$work\$Fixture.pk3`"")
 if($AdditionalFixture){$files+=@("`"$work\$AdditionalFixture.pk3`"")}
 $arguments=@('-noautoload','-nomouse','-iwad',"`"$Iwad`"",'-file')+$files+@('-config',"`"$config`"",'-savedir',"`"$work`"",'-width','1280','-height','720','-window','-rngseed','184','-skill','2','+logfile',"`"$work\$Label.txt`"",'+con_notifytime','0')
-if($LoadGame){$arguments+=@('-loadgame',"`"$LoadGame`"")}else{$arguments+=@('+map',$Map)}
+if($LoadGame){$arguments+=@('-loadgame',"`"$LoadGame`"")}elseif(!$TitleScreen){$arguments+=@('+map',$Map)}
 $arguments[$arguments.IndexOf('-width')+1]="$Width"
+if($TitleScreen){
+    # -skill also enables autostart in GZDoom; a title test must omit it.
+    $skillIndex=[Array]::IndexOf($arguments,'-skill')
+    $arguments=@($arguments[0..($skillIndex-1)])+@($arguments[($skillIndex+2)..($arguments.Count-1)])
+}
 $arguments[$arguments.IndexOf('-height')+1]="$Height"
 if($Script){$arguments+=@('+exec',"`"$work\$Script`"")}
 if($Interactive){$arguments=@($arguments | Where-Object {$_ -ne '-nomouse'})}

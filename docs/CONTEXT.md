@@ -9,6 +9,7 @@ skin/fur unless actual gloves are equipped; voices follow saved sex. No respec.
 Appearance revision 1 initializes old saves once. Matrix/limits: ASSETS/SYSTEMS.
 Evidence: validation_5213. Author visual check CA148-01 pending; branch
 issue148-appearance-preview, no merge/acceptance claimed. #149/#150 remain separate.
+Intermittent fullscreen cursor loss remains unresolved; Alt+Enter restored visibility during author testing.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;

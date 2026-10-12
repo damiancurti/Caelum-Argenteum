@@ -2,6 +2,8 @@ class CA148After : StaticEventHandler
 {
     override void ConsoleProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca148_cursor_phase")
+            Console.Printf("CA148 cursor phase %d at %d; fullscreen=%d; cursor=%s",e.Args[0],SystemTime.Now(),CVar.GetCVar('vid_fullscreen').GetInt(),CVar.GetCVar('vid_cursor').GetString());
         if(e.Name=="ca148_edit")Menu.SetMenu("CaelumAppearanceMenu");
         if(e.Name=="ca148_turn")
         {

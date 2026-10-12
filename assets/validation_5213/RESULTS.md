@@ -70,6 +70,41 @@ actors are spawned and no state actions/sounds are executed by the UI walker.
 
 ## Reproduction
 
+### Cursor follow-up, 2026-10-11
+
+The author reported an invisible cursor in fullscreen MainMenu, Options and
+character creation. Clicks still worked; Alt+Enter restored visibility.
+This is an unresolved author-reported issue, not a passed appearance check.
+
+- cursor-before-fullscreen-01 and cursor-before-title-01 started MAP01. The
+  latter exposed a fixture error: -skill enables GZDoom autostart even without
+  +map. TitleScreen now omits both. Neither run proves title-screen behavior.
+- cursor-before-title-02 starts on the title screen. Fullscreen computer-use
+  captures did not reliably reflect subsequent game frames; a captured native
+  cursor alone does not establish what was visible on the physical display.
+- cursor-refresh-01 reassigns vid_cursor=None and opens the creator. The author
+  reported recovery, but the log also records fullscreen=false/true transitions;
+  the result cannot distinguish cursor refresh from the Alt+Enter workaround.
+- cursor-refresh-isolated-01 disables Alt+Enter only in its disposable config.
+  Both logged phases remain fullscreen=1/cursor=None, ten seconds apart. The
+  author reported the cursor was already visible from startup. No regression
+  or recovery was reproduced; DONE failures=0 only confirms fixture completion.
+
+All five processes exited normally. Selected reproducibility metadata and raw-log
+hashes are in CURSOR_DIAGNOSTICS.json; full logs are retained under logs/.
+The user's config was copied, not edited; only the copy enables background
+ticking/audio at 5%. No production cursor workaround was added. The prior
+keep-awake request remained released; these probes did not change the power plan.
+
+Read-only cross-review checked g4.14.2 d_main.cpp, i_system.cpp, i_mouse.cpp,
+menu.cpp, c_cvars.cpp and common/scripting/interface/vmnatives.cpp. Reassigning
+vid_cursor recreates the native handle but does not repair ShowCursor/capture
+state. Native CVar writes from ZScript require the engine's menu-input context;
+UiTick/Ticker/Drawer alone do not provide it. A speculative per-frame refresh
+would therefore be inappropriate. The PNG remains 32x32 with hotspot (31,7).
+
+### Existing appearance probes
+
 Run `python assets/validation_5213/prepare.py`, then the matching cfg/fixture with
 `run_native.ps1 -Label <new-label> -Fixture <name> -Script <name>.cfg`.
 Use unique labels to retain earlier diagnostics. Current saved-game probes load
