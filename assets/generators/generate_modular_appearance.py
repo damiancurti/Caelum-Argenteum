@@ -11,6 +11,7 @@ import hashlib
 import json
 import math
 from PIL import Image, ImageChops, ImageDraw
+from appearance_pose_modules import authored, clean, head_kind, save_png, BOXES
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'assets/source/art/appearance_5213'
@@ -37,9 +38,10 @@ def sheet(name):
 
 
 def save(im, name):
+    if im.mode=='RGBA':im=clean(im)
     path = OUT / (name + '.png')
     path.parent.mkdir(parents=True, exist_ok=True)
-    im.save(path, compress_level=9)
+    save_png(im,path)
     RECORDS[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     return 'graphics/caelum/appearance/' + name + '.png'
 
@@ -127,6 +129,19 @@ def rotate_at(im, angle, pivot):
     return im.rotate(angle, RESAMPLE, center=pivot)
 
 
+def grounded(im,neck,angle):
+    """Keep opaque pixels above the support plane with the same neck shift.
+
+    Native player clipping must not independently raise this body away from
+    its separate head actor in pain or reload frames.
+    """
+    im=clean(im);bounds=im.getbbox()
+    excess=max(0,bounds[3]-PIVOT[1])
+    if excess:
+        moved=Image.new('RGBA',SIZE);moved.alpha_composite(im,(0,-excess));im=moved
+    return im,(neck[0],neck[1]-excess),angle
+
+
 def body_pose(original, view, pose):
     h = SPEC['body_height']
     body = original.resize((round(original.width*h/original.height), h), Image.Resampling.LANCZOS)
@@ -185,11 +200,13 @@ def body_pose(original, view, pose):
         delta=(PIVOT[0]-(box[0]+box[2])//2,PIVOT[1]-box[3])
         moved=Image.new('RGBA',SIZE);moved.alpha_composite(result,delta);result=moved
         nx+=delta[0];ny+=delta[1]
-    return result,(nx,ny),lean+roll
+    return grounded(result,(nx,ny),lean+roll)
 
 
 def authored_pose(view,pose,sex,bare=False):
     """Common crouch / held-weapon modules retain authored anatomy and grips."""
+    new_pose=authored(view,pose,sex)
+    if new_pose:return new_pose
     weapon=pose.get('weapon')
     walking=pose['id'].startswith(('walk_','run_'))
     if not weapon and not walking and pose['id'] not in ('crouch','crouch_a','crouch_b','sit','fall_knee'):
@@ -222,13 +239,24 @@ def authored_pose(view,pose,sex,bare=False):
     dy=-2 if pose['id'].endswith('fire') else 2 if pose['id'].endswith('reload') else 0
     if dy:
         moved=Image.new('RGBA',SIZE);moved.alpha_composite(result,(0,dy));result=moved;y+=dy
-    return result,(NECK[0],y+3),0
+    return grounded(result,(NECK[0],y+3),0)
 
 
 def main():
     (ROOT/'build/issue148').mkdir(parents=True,exist_ok=True)
     OUT.mkdir(parents=True,exist_ok=True)
     heads={}; body_modules={}; anchors={}; images={}; hand_modules={}
+    required_heads={view:set() for view in range(8)}
+    for pose in SPEC['poses']:
+        for view in range(8):
+            kind=head_kind(pose)
+            authored_data=pose.get('authored',{})
+            family=authored_data.get('kind')
+            angle=pose.get('lean',0)+pose.get('roll',0)
+            if family=='sleep' or (family=='death' and authored_data['row']==2):
+                angle=SPEC['authored_registration'][family]['angles'][view]
+            head_view=(-view)%8 if kind=='supine' else view
+            required_heads[head_view].add((angle,kind))
     for spec in SPEC['heads']:
         for view in range(8):
             raw=head_source(spec,view);mask=skin_mask(raw,spec['color_kind'],view)
@@ -236,17 +264,26 @@ def main():
             for tone in range(3):
                 im=tone_image(raw,mask,spec['color_kind'],tone)
                 # Tilted head modules are shared by every compatible pose/body.
-                for angle in (0,-9,-12,-18,50,90):
-                    posed=im.rotate(angle,RESAMPLE,expand=True)
+                angles={0,-9,-12,-18,50,90}
+                for registration in SPEC['authored_registration'].values():
+                    if isinstance(registration,dict):angles.update(registration.get('angles',[]))
+                for angle in sorted(angles):
+                    posed=clean(im.rotate(angle,RESAMPLE,expand=True))
                     name=f'heads/{spec["id"]}_{tone}_{view}_{angle}'
-                    heads[spec['id'],tone,view,angle]=(save(posed,name),posed)
+                    path=save(posed,name) if spec['color_kind']=='fur' and (angle,'upright') in required_heads[view] else ''
+                    heads[spec['id'],tone,view,angle]=(path,posed)
+                    factor=SPEC['authored_registration']['sleep']['head_projection']
+                    turned=im.rotate(angle,RESAMPLE,expand=True)
+                    posed=clean(turned.resize((turned.width,round(turned.height*factor)),Image.Resampling.LANCZOS))
+                    path=save(posed,name+'_supine') if spec['color_kind']=='fur' and (angle,'supine') in required_heads[view] else ''
+                    heads[spec['id'],tone,view,angle,'supine']=(path,posed)
     for bare in (False,True):
         for sex,source in enumerate(SPEC['bare_body_sources' if bare else 'body_sources']):
             for view,raw in enumerate(sheet(source)):
                 for index,pose in enumerate(SPEC['poses']):
                     override=authored_pose(view,pose,sex,bare)
                     im,neck,angle=override if override else body_pose(raw,view,pose)
-                    has_hands=bare or pose['id'].startswith(('walk_','run_'))
+                    has_hands=bare or 'authored' in pose or pose['id'].startswith(('walk_','run_'))
                     if has_hands:
                         pixels=[];hands=[]
                         for r,g,b,a in im.getdata():
@@ -275,9 +312,18 @@ def main():
                     for view in range(8):
                         name=f'{prefix}{frame}{view+1}';assert name not in names;names.add(name)
                         (nx,ny),angle=anchors[bare,sex,index,view]
-                        path,head=heads[head_id,tone,view,angle]
-                        hx=nx-head.width//2;hy=ny-head.height+3
-                        if angle==90:hx=nx-head.width+3;hy=ny-head.height//2
+                        head_view=(-view)%8 if head_kind(pose)=='supine' else view
+                        path,head=heads[head_id,tone,head_view,angle]
+                        # Rotate about the actual neck attachment, not the
+                        # rotated bounding box. All races use the same joint.
+                        original=heads[head_id,tone,head_view,0][1]
+                        if head_kind(pose)=='supine':
+                            path,head=heads[head_id,tone,head_view,angle,'supine']
+                        theta=math.radians(angle)
+                        joint=(0,original.height/2-3)
+                        hx=round(nx-head.width/2-joint[1]*math.sin(theta))
+                        projection=SPEC['authored_registration']['sleep']['head_projection'] if head_kind(pose)=='supine' else 1
+                        hy=round(ny-head.height/2-joint[1]*math.cos(theta)*projection)
                         body=body_modules[bare,sex,index,view]
                         lines += [f'Sprite "{name}", {SIZE[0]}, {SIZE[1]}', '{',f'    Offset {PIVOT[0]}, {PIVOT[1]}',f'    Patch "{body}", 0, 0']
                         if (bare,sex,index,view) in hand_modules:
@@ -303,6 +349,8 @@ def main():
     (ROOT/'src/graphics/caelum/appearance.textures').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     heights=', '.join(str(standing[i,g]) for i in range(14) for g in (False,True))
     states='// Registro de prefijos dinámicos; esta clase nunca se instancia.\nclass CaelumAppearanceRegistry : Actor\n{\n'
+    for method,key in [('SeatSupportPixels','seat_support_pixels'),('ChairSurface','chair_surface_model'),('BedSurface','bed_surface_model'),('BagSurface','bag_surface_model')]:
+        states+=f'    static clearscope double {method}() {{return {SPEC["authored_registration"][key]};}}\n'
     states+='    static clearscope double StandingHeight(int identity,bool gloved)\n    {\n'
     states+=f'        static const double heights[] = {{{heights}}};\n'
     states+='        return heights[Clamp(identity,0,13)*2+int(gloved)];\n    }\n    States\n    {\n    Spawn:\n'
@@ -311,8 +359,8 @@ def main():
     states+='        Stop;\n    }\n}\n'
     (ROOT/'src/caelum/character/CaelumAppearanceRegistry.zs').write_text(states,encoding='utf-8')
     board.save(ROOT/'build/issue148/modular-identities.png')
-    manifest={'issue':148,'generator':'assets/generators/generate_modular_appearance.py','identities':14,'tones_per_identity':3,'poses':len(SPEC['poses']),'views':8,'sprite_compositions':len(names),'registered_prefixes':registry,'module_sha256':RECORDS}
-    (SOURCE/'REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+    manifest={'issue':209,'generator':'assets/generators/generate_modular_appearance.py','identities':14,'tones_per_identity':3,'poses':len(SPEC['poses']),'views':8,'sprite_compositions':len(names),'registered_prefixes':registry,'authored_boxes':BOXES,'module_sha256':RECORDS}
+    (ROOT/'assets/source/art/appearance_5218/REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(f'{len(names)} native compositions; {len(RECORDS)} shared module files; {len(registry)} registered banks.')
 
 

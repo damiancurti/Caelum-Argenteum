@@ -184,13 +184,17 @@
     },
     {
       "id": "run_a",
-      "stride": 23,
-      "dy": -2
+      "authored": {
+        "kind": "run",
+        "row": 0
+      }
     },
     {
       "id": "run_b",
-      "stride": -23,
-      "dy": -2
+      "authored": {
+        "kind": "run",
+        "row": 1
+      }
     },
     {
       "id": "crouch",
@@ -208,11 +212,17 @@
     },
     {
       "id": "windup",
-      "arm": -38
+      "authored": {
+        "kind": "punch",
+        "row": 0
+      }
     },
     {
       "id": "strike",
-      "arm": 65
+      "authored": {
+        "kind": "punch",
+        "row": 2
+      }
     },
     {
       "id": "pain",
@@ -221,21 +231,31 @@
     },
     {
       "id": "fall_start",
-      "leg_scale": 0.72,
-      "lean": -12
+      "authored": {
+        "kind": "death",
+        "row": 0
+      }
     },
     {
       "id": "fall_knee",
-      "leg_scale": 0.4,
-      "lean": -18
+      "authored": {
+        "kind": "death",
+        "row": 1
+      }
     },
     {
       "id": "fall",
-      "roll": 50
+      "authored": {
+        "kind": "death",
+        "row": 2
+      }
     },
     {
       "id": "dead",
-      "roll": 90
+      "authored": {
+        "kind": "death",
+        "row": 2
+      }
     },
     {
       "id": "sit",
@@ -244,7 +264,10 @@
     },
     {
       "id": "lie",
-      "roll": 90
+      "authored": {
+        "kind": "sleep",
+        "row": 0
+      }
     },
     {
       "id": "carbine",
@@ -305,6 +328,36 @@
       "arm": 32,
       "leg_scale": 0.46,
       "weapon": "carbine"
+    },
+    {
+      "id": "run_c",
+      "authored": {
+        "kind": "run",
+        "row": 0,
+        "mirror": true
+      }
+    },
+    {
+      "id": "run_d",
+      "authored": {
+        "kind": "run",
+        "row": 1,
+        "mirror": true
+      }
+    },
+    {
+      "id": "punch_drive",
+      "authored": {
+        "kind": "punch",
+        "row": 1
+      }
+    },
+    {
+      "id": "punch_recover",
+      "authored": {
+        "kind": "punch",
+        "row": 3
+      }
     }
   ],
   "detail_revision": 2,
@@ -360,11 +413,171 @@
     }
   ],
   "detail_canvas": [
-    96,
-    96
+    160,
+    160
   ],
   "detail_anchor": [
-    48,
-    56
-  ]
+    80,
+    80
+  ],
+  "authored_registration": {
+    "run": {
+      "heights": [
+        137,
+        131,
+        137,
+        131
+      ]
+    },
+    "punch": {
+      "heights": [
+        142,
+        142,
+        142,
+        142
+      ]
+    },
+    "death": {
+      "heights": [
+        124,
+        77,
+        40
+      ],
+      "fallen_length": [
+        109,
+        117,
+        133,
+        119,
+        110,
+        119,
+        133,
+        117
+      ],
+      "neck": [
+        [
+          0.17,
+          0.45
+        ],
+        [
+          0.17,
+          0.4
+        ],
+        [
+          0.15,
+          0.45
+        ],
+        [
+          0.15,
+          0.2
+        ],
+        [
+          0.25,
+          0.15
+        ],
+        [
+          0.83,
+          0.2
+        ],
+        [
+          0.85,
+          0.45
+        ],
+        [
+          0.85,
+          0.45
+        ]
+      ],
+      "angles": [
+        70,
+        70,
+        80,
+        75,
+        120,
+        -75,
+        -80,
+        -70
+      ]
+    },
+    "sleep": {
+      "length": [
+        91,
+        122,
+        142,
+        122,
+        91,
+        122,
+        142,
+        122
+      ],
+      "neck": [
+        [
+          0.5,
+          0.04
+        ],
+        [
+          0.27,
+          0.06
+        ],
+        [
+          0.11,
+          0.08
+        ],
+        [
+          0.18,
+          0.77
+        ],
+        [
+          0.5,
+          0.89
+        ],
+        [
+          0.82,
+          0.77
+        ],
+        [
+          0.89,
+          0.08
+        ],
+        [
+          0.73,
+          0.06
+        ]
+      ],
+      "angles": [
+        0,
+        45,
+        90,
+        135,
+        180,
+        -135,
+        -90,
+        -45
+      ],
+      "head_clearance": [
+        0,
+        0,
+        0,
+        6,
+        10,
+        6,
+        0,
+        0
+      ],
+      "head_projection": 0.55,
+      "body_projection": [
+        0.33,
+        0.55,
+        1,
+        0.55,
+        0.33,
+        0.55,
+        1,
+        0.55
+      ]
+    },
+    "seat_support_pixels": 47,
+    "chair_surface_model": 20,
+    "bed_surface_model": 12,
+    "bag_surface_model": 4
+  }
 }

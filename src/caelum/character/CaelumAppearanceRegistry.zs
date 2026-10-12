@@ -1,6 +1,10 @@
 // Registro de prefijos dinámicos; esta clase nunca se instancia.
 class CaelumAppearanceRegistry : Actor
 {
+    static clearscope double SeatSupportPixels() {return 47;}
+    static clearscope double ChairSurface() {return 20;}
+    static clearscope double BedSurface() {return 12;}
+    static clearscope double BagSurface() {return 4;}
     static clearscope double StandingHeight(int identity,bool gloved)
     {
         static const double heights[] = {170, 170, 170, 170, 172, 172, 172, 172, 171, 171, 171, 171, 175, 175, 175, 175, 175, 175, 175, 175, 173, 173, 173, 173, 173, 173, 173, 173};

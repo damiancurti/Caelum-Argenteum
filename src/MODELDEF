@@ -3238,6 +3238,17 @@ Model CaelumDiningWaterCup
     FrameIndex CAHC A 0 0
 }
 
+// #209: volumen real; conserva la escala e identidad del objeto de la mesa.
+Model CaelumDiningLargeCanteen
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_large_canteen.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CW5X A 0 0
+}
+
 // BEGIN CAELUM TRAVEL VEHICLES
 Model CaelumCoveredCart
 {

@@ -1,0 +1,238 @@
+{
+  "issue": 209,
+  "assets": [
+    {
+      "file": "run_male_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset: modular game animation sprite atlas for Caelum Argenteum issue 209. Input image is a STYLE, CLOTHING, SEX PROPORTIONS AND MODULE-BOUNDARY reference, not the final pose. Generate an original RUNNING CYCLE of this MALE headless body in EXACTLY 8 columns x 4 rows = 32 isolated headless full-body modules, on genuine transparent alpha. Columns in EVERY row: front, front-left 45, left profile, rear-left 135, back, rear-right 225, right profile, front-right 315. Each column is the same moment viewed around the same body, NOT a different animation phase. Rows: 1 right foot forward landing/left arm forward, 2 right leg support with left knee passing forward and bent elbows, 3 left foot forward landing/right arm forward, 4 left leg support with right knee passing forward and bent elbows. This is unmistakable running with stride, knee lift, ankle flexion, airborne recovery and a slight forward torso lean, not standing or walking. Preserve anatomy and physical right/left through all views. Same consistent adult male proportions and exact plain off-white lace-neck loose shirt, dark gray trousers, brown waist belt/brass buckle, brown boots. Bare exposed hands use saturated green as a technical recolor mask, ONLY on skin of hands. No head, face, hair, neck stump, armor or weapons: open shirt collar ends at the neck socket. Soft neutral shared lighting, painted pixel-oriented dark fantasy nineteenth-century Argentina; readable at 150-pixel body height; no thick outlines. All cells same character scale, collar/hip landmarks, baseline and clear transparent gutters; whole boots and hands fit each cell. Clean contour alpha with no colored fringe, no backdrop, floor, shadow, grid or text. Do not include any idle pose. Target large atlas suitable for cutting 32 separate frames, around 2048 by 1536 or larger.",
+      "references": [
+        "assets/source/art/appearance_5218/references/body-reference.png"
+      ],
+      "reference_role": "composited technical copy of existing body_bare_male_v1.png; clothes/style/anatomy",
+      "sha256": "0402d0af218b4ae335f2e9b9ba56d77b9d68d77cf464b040465a62794f3bc311",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/references/body-reference.png": "15a013cb70e2983243ced950ed14fdc75ae1522c36241ffa35ef412275cf96e9"
+      }
+    },
+    {
+      "file": "run_female_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset: modular game animation sprite atlas for Caelum Argenteum issue 209. Input image is a STYLE, CLOTHING, SEX PROPORTIONS AND MODULE-BOUNDARY reference, not the final pose. Generate an original RUNNING CYCLE of this FEMALE headless body in EXACTLY 8 columns x 4 rows = 32 isolated headless full-body modules, on genuine transparent alpha. Columns in EVERY row: front, front-left 45, left profile, rear-left 135, back, rear-right 225, right profile, front-right 315. Each column is the same moment viewed around the same body, NOT a different animation phase. Rows: 1 right foot forward landing/left arm forward, 2 right leg support with left knee passing forward and bent elbows, 3 left foot forward landing/right arm forward, 4 left leg support with right knee passing forward and bent elbows. This is unmistakable running with stride, knee lift, ankle flexion, airborne recovery and a slight forward torso lean, not standing or walking. Preserve anatomy and physical right/left through all views. Same consistent adult female proportions from the reference, with practical loose clothes, not a muscular male torso and exact plain off-white lace-neck loose shirt, dark gray trousers, brown waist belt/brass buckle, brown boots. Bare exposed hands use saturated green as a technical recolor mask, ONLY on skin of hands. No head, face, hair, neck stump, armor or weapons: open shirt collar ends at the neck socket. Soft neutral shared lighting, painted pixel-oriented dark fantasy nineteenth-century Argentina; readable at 150-pixel body height; no thick outlines. All cells same character scale, collar/hip landmarks, baseline and clear transparent gutters; whole boots and hands fit each cell. Clean contour alpha with no colored fringe, no backdrop, floor, shadow, grid or text. Do not include any idle pose. Target large atlas suitable for cutting 32 separate frames, around 2048 by 1536 or larger.",
+      "references": [
+        "assets/source/art/appearance_5213/body_bare_female_v1.png"
+      ],
+      "sha256": "0e1001453b07c89b1ca9e8ee6e688ba69ee131b79210a2c4925a5902d80a0508",
+      "reference_sha256": {
+        "assets/source/art/appearance_5213/body_bare_female_v1.png": "f7becb9db4e21d5298d20afa39462206898eec5c9576e6940ed0cb3d9c601fa1"
+      }
+    },
+    {
+      "file": "punch_male_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset: original modular male unarmed punch animation atlas for Caelum Argenteum issue 209. Use the input solely as clothing/style/anatomy reference. EXACTLY 8 columns x 4 rows, 32 full headless bodies on genuinely transparent alpha. Columns in each row: front, front-left 45, left profile, rear-left 135, back, rear-right 225, right profile, front-right 315. Row 1: wind up a RIGHT-HANDED punch, right fist pulled back to ribs, elbow bent, shoulders and waist gently twisted. Row 2: drive the right fist forward, elbow unfolding, small shoulder rotation. Row 3: full right-fist extension horizontally FORWARD at an opponent's chest, left hand kept guarding the chest. Row 4: recover right fist back to guard, upright relaxed shoulders. Feet stay planted in a stable fighting stance in ALL frames, hips and trousers stay intact and do not swing with the arm. Show correct foreshortening in front/back views, not a sideways windmill arm; motion resembles a forceful straight monster-style punch, not waving, shooting or kicking. Only the arm and natural shoulder/torso turn articulate. Preserve anatomical right/left around all views; from directly behind, the right fist extends away and is mostly occluded by the right shoulder. Exact existing off-white lace-neck shirt, charcoal trousers, belt/brass buckle, brown boots. Bare hands in green technical mask color. MALE proportions as reference. NO head, hair, neck stump, weapons or armor. Clean empty collar for separate modular head. Soft shared neutral lighting; painted pixel-oriented dark fantasy style, readable at 150px body height. Same scale and grounded boot baseline in all cells, generous transparent gutters, no cutoff hands. No background, floor, shadow, text, grid or colored matte/halo. Large clear atlas, about 2048x1536 or larger.",
+      "references": [
+        "assets/source/art/appearance_5218/references/body-reference.png"
+      ],
+      "sha256": "6446a730d4f7e49bd4ec515ab37413099c9c7ca8cb5cbf169d464eb3341fadd6",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/references/body-reference.png": "15a013cb70e2983243ced950ed14fdc75ae1522c36241ffa35ef412275cf96e9"
+      }
+    },
+    {
+      "file": "punch_female_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset: original modular female unarmed punch animation atlas for Caelum Argenteum issue 209. Use the input solely as clothing/style/anatomy reference. EXACTLY 8 columns x 4 rows, 32 full headless bodies on genuinely transparent alpha. Columns in each row: front, front-left 45, left profile, rear-left 135, back, rear-right 225, right profile, front-right 315. Row 1: wind up a RIGHT-HANDED punch, right fist pulled back to ribs, elbow bent, shoulders and waist gently twisted. Row 2: drive the right fist forward, elbow unfolding, small shoulder rotation. Row 3: full right-fist extension horizontally FORWARD at an opponent's chest, left hand kept guarding the chest. Row 4: recover right fist back to guard, upright relaxed shoulders. Feet stay planted in a stable fighting stance in ALL frames, hips and trousers stay intact and do not swing with the arm. Show correct foreshortening in front/back views, not a sideways windmill arm; motion resembles a forceful straight monster-style punch, not waving, shooting or kicking. Only the arm and natural shoulder/torso turn articulate. Preserve anatomical right/left around all views; from directly behind, the right fist extends away and is mostly occluded by the right shoulder. Exact existing off-white lace-neck shirt, charcoal trousers, belt/brass buckle, brown boots. Bare hands in green technical mask color. FEMALE proportions as reference. NO head, hair, neck stump, weapons or armor. Clean empty collar for separate modular head. Soft shared neutral lighting; painted pixel-oriented dark fantasy style, readable at 150px body height. Same scale and grounded boot baseline in all cells, generous transparent gutters, no cutoff hands. No background, floor, shadow, text, grid or colored matte/halo. Large clear atlas, about 2048x1536 or larger.",
+      "references": [
+        "assets/source/art/appearance_5213/body_bare_female_v1.png"
+      ],
+      "sha256": "e6047b70023a72ad528184914f16336d2162f1d3ec0d5f773ab87ff1d783cc8b",
+      "reference_sha256": {
+        "assets/source/art/appearance_5213/body_bare_female_v1.png": "f7becb9db4e21d5298d20afa39462206898eec5c9576e6940ed0cb3d9c601fa1"
+      }
+    },
+    {
+      "file": "sleep_v1.png",
+      "status": "superseded source retained",
+      "tool": "built-in image_gen",
+      "prompt": "Create a modular game sprite atlas, exactly 8 columns and 2 rows (16 separated figures), transparent background. Reference 1 is the SAME fixed supine sleeping pose viewed from eight camera directions: follow its anatomical position, foreshortening and direction order exactly. Reference 2 supplies ONLY clothes and painting style: ivory lace-neck shirt, brown belt brass buckle, charcoal trousers, brown boots, green bare hand masks. NO armor, cape, sword or shield. Row 1 adult male headless body, row 2 adult female headless body in identical pose/directions. Sleeping on back, arms relaxed close to sides, legs extended relaxed; body lies on a horizontal plane, chest faces upwards. This is NOT a standing sprite rotated sideways. Eight views are feet-end looking toward collar, feet/left diagonal, pure side collar at left feet at right, head/left diagonal, head-end looking toward boots, head/right diagonal, opposite pure side collar at right feet at left, feet/right diagonal, exactly like reference1. Strong short foreshortened end views and long thin side views. Keep the neck socket visible and clean, NO head, face, hair or neck stump, designed for a separate head module. Green hand masks only on bare hands. No bed, pillow, ground, contact shadow, lettering or grid. All silhouettes completely inside equal cells with wide transparent gutters, same anatomical length and camera elevation around 12 degrees. Detailed hand painted low-resolution dark fantasy sprite craft matching references, consistent light from above. Wide 2048x768 atlas.",
+      "references": [
+        "assets/source/art/appearance_5218/references/domingo-supine-reference.png",
+        "assets/source/art/appearance_5218/references/body-reference.png"
+      ],
+      "sha256": "9f57c555a247a338cbbac55fbfde3f5897fbf75d434c94c5a2a6348ef6a9326c",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/references/domingo-supine-reference.png": "16429d9680e0307ca368b6afbc8c0f151ef176623b900b9a7aae6149a0272cc5",
+        "assets/source/art/appearance_5218/references/body-reference.png": "15a013cb70e2983243ced950ed14fdc75ae1522c36241ffa35ef412275cf96e9"
+      }
+    },
+    {
+      "file": "sleep_v2.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this transparent sprite atlas, preserve all sixteen body poses, clothes, spacing and camera angles exactly. It must be HEADLESS for modular assembly. Remove every head/hair fragment in columns 4,5,6 in both rows (the dark curly blobs near the collar). End each body cleanly at the hollow shirt collar. No hair, skin head, face or neck stump anywhere. Keep the sleeves, shirt, legs and green hands unchanged. Do not rotate or otherwise change the sleeping poses. Keep transparency.",
+      "references": [
+        "assets/source/art/appearance_5218/sleep_v1.png"
+      ],
+      "sha256": "dcf31deb11ba21bda3d19d601ed09082ceb4ea21c4db3723c6ebff5fdbc193d5",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/sleep_v1.png": "9f57c555a247a338cbbac55fbfde3f5897fbf75d434c94c5a2a6348ef6a9326c"
+      }
+    },
+    {
+      "file": "death_male_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Create a modular dark fantasy game sprite atlas, exactly 8 columns and 4 rows, 32 separated HEADLESS adult MALE bodies. Reference1 provides ONLY the anatomical death progression: stagger/buckling, fall to knee, collapse forward with hands contacting ground, settle lifeless on side with limbs folded. Reference2 supplies clothing/style ONLY: ivory laced shirt, brown belt, dark trousers, brown boots, green hand masks. No armor, weapons, cape, head, hair, face, gore or blood. Empty clean collar, no neck stump. Each row is ONE death stage consistently seen in all eight directions, NOT different times across columns. Columns front,front-left45,left profile,rear-left135,back,rear-right225,right profile,front-right315. Row1 knees buckling forward, weight dropping, torso bent; row2 on one knee reaching toward ground; row3 both hands and knee on ground, torso nearly horizontal; row4 corpse resting on anatomical right side, knees softly bent and one arm under shoulder, clear true horizontal ground contact. Distinct silhouettes from upright to ground, correct foreshortening at end views, not standing sprites rotated. Match Domingo's believable weight and folded anatomy, but plain clothing. Common scale within each row/all stages, soft overhead light, equal cells and wide transparent gutters. Isolated transparent background, no lettering/grid/ground/shadows. Painted detailed sprite style at approximately 2048x1536.",
+      "references": [
+        "assets/source/art/appearance_5218/references/domingo-death-reference.png",
+        "assets/source/art/appearance_5218/references/body-reference.png"
+      ],
+      "sha256": "3b366f4dec167498abb1deba66aa5a04a13902d163888be806b33569c950e5de",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/references/domingo-death-reference.png": "fa673d20d12bc54721862baa09b75cb3aaad8aecc16db290015b7f92d9c8fb16",
+        "assets/source/art/appearance_5218/references/body-reference.png": "15a013cb70e2983243ced950ed14fdc75ae1522c36241ffa35ef412275cf96e9"
+      }
+    },
+    {
+      "file": "death_female_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this atlas into the adult FEMALE version of the same plain-clothed character. Keep EXACTLY the same 8 columns and 3 rows, same poses, camera directions, positions, transparent gutters and relative anatomical scale. Row1 buckling stagger, row2 collapsed to knees and hands, row3 lifeless curled on side. Female anatomical proportions, narrower shoulders and wrists, natural waist, modest loose clothing. Preserve ivory lace-neck shirt, charcoal trousers, brown belt and boots and green bare hand masks. Every cell must remain headless with an empty collar: NO face, hair or head. No armor, cape, weapons, text, grid, shadows or blood. High quality hand-painted sprite appearance, transparent background.",
+      "references": [
+        "assets/source/art/appearance_5218/death_male_v1.png"
+      ],
+      "sha256": "9f5c07169935a6d166bde77e0abca73439fca95de2c262ad128bb3f7142a81e3",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/death_male_v1.png": "3b366f4dec167498abb1deba66aa5a04a13902d163888be806b33569c950e5de"
+      }
+    },
+    {
+      "file": "female_hands_human_v1.png",
+      "status": "superseded source retained",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact eight-pose first-person hand atlas to show an adult WOMAN's bare human hands and forearms. Preserve the exact 2 columns x 4 rows, left/right handedness, finger poses, directions, wrist angles, grip contact locations and placement in each cell. Slender female wrists, narrower palms, finer knuckles and fingers, proportionate forearms with little visible hair; natural short unpainted nails, no jewelry or adornments. This must be a distinct female anatomy, not just recolored male hands. Keep hand-painted dark fantasy sprite rendering and natural skin. No weapons or objects. Do not add sleeves. Fully transparent background, no grid or text, clean edges.",
+      "references": [
+        "assets/source/art/appearance_5213/first_person_bare_human_v1.png"
+      ],
+      "sha256": "c9d786a5269463ff75904de718bb46017d94a551a5220c3cc804085ab91876dd",
+      "reference_sha256": {
+        "assets/source/art/appearance_5213/first_person_bare_human_v1.png": "013073597b45b2e1620e5dd05bb0303f7584f4caa9c6525d68c90331a2e1da20"
+      }
+    },
+    {
+      "file": "female_human_v2.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Make a clean production atlas from this hand reference: EXACTLY 2 columns and 7 rows, 14 cells in the same order. First four rows are single hand/forearm poses; next two rows are paired shotgun hand poses (last one holds one brass cartridge); last row left paired hands holding two cartridges, last row right one extended fist/forearm. Preserve each pose's left/right handedness, grip orientation and finger contact points. ALL hands must consistently be adult FEMALE human anatomy: narrower palms and wrists, slender proportional fingers and forearms, fine knuckles, short natural nails, no visible coarse arm hair. Match the female hands in the FIRST FOUR ROWS. Convert the male hands in last three rows to those same female hands. Remove every stray cut-off fragment at cell borders. Keep each entire forearm inside its cell with clear transparent margins on every side; do not touch neighboring cells. Keep brass cartridges exactly as objects held. No weapon geometry, sleeve, jewelry, text, grid, shadows. Hand painted dark fantasy game sprite style with realistic detail. Transparent background.",
+      "references": [
+        "assets/source/art/appearance_5218/references/female-hands-reference.png"
+      ],
+      "sha256": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/references/female-hands-reference.png": "16aa612f337176afd2993aa1bee1531c6c0de3e650d7b5475e636e6a58db2096"
+      }
+    },
+    {
+      "file": "female_wolf_v1.png",
+      "status": "superseded source retained",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact first-person female hand atlas to make FEMALE WOLF beast-person hands and forearms. Preserve EXACTLY the 2 columns x 7 rows, every left/right hand, pose, size, position and grip contact point, and all brass cartridges. Fine gray wolf fur and darker short nails, humanoid five-finger anatomy, slender female wrists/palms/forearms relative to male beast hands. Fur must follow anatomy, lighter inner palms, no jewelry. Keep each complete cell isolated with transparent gutters and clean alpha; no background, text or grid. Match detailed hand-painted game sprite quality. Do not change poses or add/remove cells.",
+      "references": [
+        "assets/source/art/appearance_5218/female_human_v2.png"
+      ],
+      "sha256": "249258654fd3d5f7553a4714c723f753f2389243394228e4f3377153e9c1f4e9",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_human_v2.png": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483"
+      }
+    },
+    {
+      "file": "female_bear_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact atlas into FEMALE BROWN BEAR beast-person hands and forearms. Exact 2 columns x 7 rows, 14 cells; preserve every hand pose, left/right handedness, position, wrist direction and grip contact point. Soft dense dark-brown bear fur, humanoid five-finger hands with short dark claws, female narrower wrists/palms and proportional fine fingers while retaining bear character. IMPORTANT: row5 left is an EMPTY closed right fist with thumb alongside open left support hand: NO cartridge or gold object there. Row5 right both hands open in support. Row6 left and right and row7 left retain the exact existing brass ammunition ONLY there. Row7 right extended closed fist. No added objects. Transparent background with clean edges and wide cell gutters, hand-painted game sprite style, no text/grid/shadows.",
+      "references": [
+        "assets/source/art/appearance_5218/female_human_v2.png"
+      ],
+      "sha256": "1f579097e2dd4d030f88881e268f30b53978622d882c33c337c90079ff8f1c65",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_human_v2.png": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483"
+      }
+    },
+    {
+      "file": "female_puma_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact atlas into FEMALE PUMA beast-person hands and forearms. Exact 2 columns x 7 rows, 14 cells; preserve every hand pose, left/right handedness, position, wrist direction and grip contact point. Short tawny gold-brown puma fur with pale cream inner palms, humanoid five-finger hands, short dark nails, slender female wrists/palms/forearms. IMPORTANT: row5 left is an EMPTY closed right fist with thumb alongside open left support hand: NO cartridge or gold object there. Row5 right both hands open in support. Row6 left/right and row7 left retain the exact existing brass ammunition ONLY there. Row7 right extended closed fist. No added objects. Transparent background, clean alpha edges and wide cell gutters; hand-painted game sprite style, no text/grid/shadows.",
+      "references": [
+        "assets/source/art/appearance_5218/female_human_v2.png"
+      ],
+      "sha256": "c89945f012d5e23b39edf7cd0fcaa29439aa3ad0441c45888df981d0a06193d3",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_human_v2.png": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483"
+      }
+    },
+    {
+      "file": "female_jaguar_v1.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact atlas into FEMALE JAGUAR beast-person hands and forearms. Exact 2 columns x 7 rows, 14 cells; preserve every pose, left/right handedness, position, wrist direction and grip contact point. Short warm golden jaguar fur with authentic dark rosette markings and pale inner palms, humanoid five-finger hands, short dark nails, slender female wrists/palms/forearms. IMPORTANT: row5 left is an EMPTY closed right fist with thumb alongside open left support hand: NO cartridge or gold object there. Row5 right both hands open in support. Row6 left/right and row7 left retain the exact existing brass ammunition ONLY there. Row7 right extended closed fist. No added objects. Transparent background, clean alpha edges and wide cell gutters; hand-painted game sprite style, no text/grid/shadows.",
+      "references": [
+        "assets/source/art/appearance_5218/female_human_v2.png"
+      ],
+      "sha256": "b7a6b05c63a55d81125af122b3326571ef25e5448d410a82be52814489f98f17",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_human_v2.png": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483"
+      }
+    },
+    {
+      "file": "female_gloves_v1.png",
+      "status": "superseded source retained",
+      "tool": "built-in image_gen",
+      "prompt": "Edit this exact first-person female hand atlas by dressing all the hands and forearms in fitted BROWN LEATHER GLOVES with short leather wrist cuffs, matching plain nineteenth-century dark-fantasy equipment. Preserve female anatomy (narrower palms/wrists, fine finger proportions), EXACT 2 columns x 7 rows, all14 cells, every left/right pose, wrist angle, location and grip. Gloves cover all fingers and visible forearms; subtle seams and leather creases, no gauntlet armor or metal decorations. No exposed skin or fur. Row5 left EMPTY closed right fist beside left support hand; no cartridge there. Keep existing brass cartridges ONLY in row6 and row7 left. Row7 right extended closed fist. No added weapons or objects, no grid/text/shadows, transparent background, isolated complete silhouettes and clean alpha edges. Hand painted game sprite detail.",
+      "references": [
+        "assets/source/art/appearance_5218/female_human_v2.png"
+      ],
+      "sha256": "6f430d482ba0fe11e636bc5a291e3fbb82ffaab66648d964c2501f4fca10cef5",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_human_v2.png": "cedd8acac5ac2d2b0f5a66a53d3f16b583977d24f9f804377c28fa8a04f26483"
+      }
+    },
+    {
+      "file": "female_gloves_v2.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Targeted correction to this atlas ONLY: in ROW FIVE, LEFT COLUMN, restore the missing RIGHT gloved hand next to the existing left support hand. This cell must show a pair: left hand open supporting, right hand a CLOSED EMPTY GRIP with thumb pointing diagonally left/up, matching the reference atlas' basic grip. Brown leather female glove, no ammunition/object in that fist. Keep every other pixel/pose/cell unchanged, including all brass cartridges in the lower rows. Exact 2 columns and7rows, transparent background.",
+      "references": [
+        "assets/source/art/appearance_5218/female_gloves_v1.png"
+      ],
+      "sha256": "7a606f9a2fe2a31867273784fdb0d57f947165aedc88da16bf4b41b37e1af448",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_gloves_v1.png": "6f430d482ba0fe11e636bc5a291e3fbb82ffaab66648d964c2501f4fca10cef5"
+      }
+    },
+    {
+      "file": "female_wolf_v2.png",
+      "status": "selected; author visual acceptance pending",
+      "tool": "built-in image_gen",
+      "prompt": "Make one targeted correction only: ROW FIVE, LEFT COLUMN has a wrongly added gold/brass cartridge in the right hand. Remove that cartridge and draw the right thumb/fingers as a CLOSED EMPTY GRIP next to the existing open left support hand. Wolf fur female hand anatomy, exactly same wrist and hand location and proportions. No object in this one grip. Preserve ALL other cells, fur patterns, poses, and the brass cartridges in rows SIX and SEVEN unchanged. Exact2columns7rows, transparent background.",
+      "references": [
+        "assets/source/art/appearance_5218/female_wolf_v1.png"
+      ],
+      "sha256": "933edb10dce28166a8741599f9b281946781880c86dc8f478f9add1fc0bde2f7",
+      "reference_sha256": {
+        "assets/source/art/appearance_5218/female_wolf_v1.png": "249258654fd3d5f7553a4714c723f753f2389243394228e4f3377153e9c1f4e9"
+      }
+    }
+  ],
+  "author_decisions": [
+    "Supine sleep",
+    "Domingo poses and anatomical forms except rear attack",
+    "Distinct female first-person hands",
+    "Modular plain clothes, sex/race/tone/gloves retained"
+  ],
+  "processing": "Pillow 11.3.0; deterministic crop/alpha cleanup/registration; source paintings remain intact."
+}
