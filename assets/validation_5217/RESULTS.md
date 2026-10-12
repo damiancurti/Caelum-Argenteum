@@ -3,8 +3,10 @@
 The author requested that the MAP01 player cannot die and remains at 1 HP after
 reporting appearance reverting on death. This patch preserves the living pawn,
 profile and modular appearance. It does not repair general respawn appearance
-outside MAP01 or revive already-dead saves. CA207-01 author gameplay acceptance
-is pending in the root pending_test.txt.
+outside MAP01 or revive already-dead saves. CA207-01 (origin 5.2.17 / #207) passed
+author gameplay acceptance on 2026-10-12 without qualifications. The author
+confirmed all tests and requested PR208 merge and issue closure. Its confirmed
+entry is removed from the root pending_test.txt; no author checks remain.
 
 ## Implementation and boundaries
 

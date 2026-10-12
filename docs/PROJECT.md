@@ -10,7 +10,9 @@ pawn/profile throughout MAP01, including the Bull fight; NPC rules and player
 mortality on other maps remain unchanged. No automatic retry, regeneration,
 save schema change or general respawn-appearance repair is introduced.
 Native checks cover damage paths, identity, old/current saves and travel;
-evidence: assets/validation_5217/RESULTS.md. CA207-01 gameplay acceptance is pending.
+evidence: assets/validation_5217/RESULTS.md. CA207-01 passed author acceptance on
+2026-10-12 without qualifications; the author authorized PR208 merge and #207
+closure. No author checks remain for this patch.
 
 ## 5.2.16 - Fullscreen native cursor workaround (#204)
 

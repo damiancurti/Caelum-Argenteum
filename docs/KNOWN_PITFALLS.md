@@ -6,7 +6,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-086 - A health floor must precede native death and cover direct losses
 
-Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED; author gameplay check pending.
+Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED; author gameplay check accepted.
 First recorded / last checked: 2026-10-12. Issue #207 / 5.2.17.
 Baseline: 1bf5087e; GZDoom 4.14.2, Windows 11, isolated Vulkan fixtures.
 Scope: CaelumPlayer.ApplyNativeHealthDamage, Die, CaelumTutorialSafety,
@@ -32,7 +32,8 @@ Reproduce with assets/validation_5217 fixtures and RESULTS.md: ordinary/forced/
 telefrag damage, armor order, nested events, direct losses, identity, saves and
 MAP02 mortality. Source audit URL/hash and failed fixture attempts are retained
 there. These checks establish the health-floor mechanism, not a general repair
-of appearance after death on other maps. CA207-01 remains pending.
+of appearance after death on other maps. CA207-01 passed author acceptance on
+2026-10-12 without qualifications; PR208 merge and #207 closure were authorized.
 
 ## CA-KP-085 - Fullscreen Vulkan cursor visibility can depend on presentation
 

@@ -20,8 +20,13 @@ on other maps is outside this patch, and already-dead saves are not resurrected.
 
 Isolated GZDoom 4.14.2 evidence, before/after regression, failed fixture attempts,
 save compatibility and test limits: assets/validation_5217/RESULTS.md.
-CA207-01 (origin 5.2.17 / #207) remains pending; no author acceptance is inferred
-from automated tests. Configurations are isolated and keep-awake is released.
+Configurations are isolated and keep-awake is released.
+
+Author acceptance, 2026-10-12: CA207-01 (origin 5.2.17 / #207) passed without
+qualifications. The author explicitly confirmed all tests and requested issue
+closure and merge of PR208. Its entry is removed from pending_test.txt; the
+tracked queue is empty. Automated checks remain distinct from this confirmation.
+This acceptance update does not change runtime behavior or release 5.2.17.
 
 ## 5.2.16 - Accepted fullscreen cursor workaround (#204), 2026-10-12
 

@@ -5,7 +5,7 @@ Documentation version: **5.2.17** — 2026-10-12.
 **Current 5.2.17 / #207:** MAP01 player cannot die; 1 HP floor preserves the
 living pawn/profile/appearance. All damage paths covered, NPCs/other maps unchanged.
 No saved protection or respawn repair. Native evidence: validation_5217;
-CA207-01 gameplay acceptance/merge pending; see pending_test.txt.
+CA207-01 passed 2026-10-12; PR208 merge/closure authorized. Author queue empty.
 **5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01
 passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshed.
 **5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,

@@ -14,7 +14,9 @@ the player stays alive at a minimum of **1 HP in MAP01**, retaining the same
 character and appearance. Combat, status, survival, temperature and scripted
 damage follow this rule. Other maps retain normal player mortality.
 [Native test evidence](assets/validation_5217/RESULTS.md); author gameplay check
-CA207-01 remains in [pending_test.txt](pending_test.txt).
+CA207-01 passed on 2026-10-12 without qualifications. The author authorized
+[PR208](https://github.com/damiancurti/Caelum-Argenteum/pull/208) merge and issue
+closure; no #207 checks remain in [pending_test.txt](pending_test.txt).
 
 5.2.16 records the accepted fullscreen cursor workaround for
 [#204](https://github.com/damiancurti/Caelum-Argenteum/issues/204). On the author's
