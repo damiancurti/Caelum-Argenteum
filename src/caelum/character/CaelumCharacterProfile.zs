@@ -11,16 +11,17 @@ class CaelumCharacterProfile : Object
     int AppearanceRevision;
     int SkinTone;
     int BeastForm;
+    int Face, HairStyle, HairColor;
     int AppearanceEditSerial;
 
     // El tono y la variante pertenecen al perfil
     // guardado; nunca se restaura desde las preferencias globales del motor.
     void EnsureAppearance()
     {
-        if(AppearanceRevision>=1)return;
-        SkinTone=0;
-        BeastForm=0;
-        AppearanceRevision=1;
+        if(AppearanceRevision>=CaelumAppearance.REVISION)return;
+        if(AppearanceRevision<1){SkinTone=0;BeastForm=0;}
+        if(AppearanceRevision<2){Face=0;HairStyle=0;HairColor=0;}
+        AppearanceRevision=CaelumAppearance.REVISION;
     }
 
     // Decisión del autor: perfiles previos reciben Normal/Normal/Normal/Centro.
@@ -43,6 +44,7 @@ class CaelumCharacterProfile : Object
         AppearanceRevision=source.AppearanceRevision;
         SkinTone=source.SkinTone;
         BeastForm=source.BeastForm;
+        Face=source.Face;HairStyle=source.HairStyle;HairColor=source.HairColor;
         AppearanceEditSerial=source.AppearanceEditSerial;
         EnsureAppearance();
     }
@@ -54,9 +56,10 @@ class CaelumCharacterProfile : Object
         SecondClass = CaelumConstants.CLASS_MAGE;
         Sex = CaelumConstants.SEX_MALE;
         HeightChoice = CaelumConstants.HEIGHT_NORMAL;
-        AppearanceRevision=1;
+        AppearanceRevision=CaelumAppearance.REVISION;
         SkinTone=0;
         BeastForm=0;
+        Face=0;HairStyle=0;HairColor=0;
     }
 
     void CycleRace() { Race = (Race + 1) % 5; }

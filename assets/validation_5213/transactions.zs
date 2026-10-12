@@ -70,7 +70,7 @@ class CA148Transactions : StaticEventHandler
                 String.Format("appearance expected tone=%d form=%d on %s",expectedTone,expectedForm,level.MapName));
             Check(profile.Race==CaelumConstants.RACE_BEAST_MAN && profile.Sex==CaelumConstants.SEX_FEMALE,
                 "cosmetic operation preserves saved race/sex");
-            Check(profile.AppearanceRevision==1,"appearance schema initialized idempotently");
+            Check(profile.AppearanceRevision==CaelumAppearance.REVISION,"appearance schema initialized idempotently");
             Check(user.CharacterProfile==user.GetPersistentCharacterState(false).IdentityProfile,
                 "loaded/travelled pawn retains one authoritative profile");
             if(e.Args[0]==1)Check(profile.AppearanceEditSerial==1,"exactly one confirmed cosmetic commit");

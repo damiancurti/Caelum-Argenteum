@@ -61,6 +61,8 @@ class CaelumPlayer : DoomPlayer
     bool HUDActiveWeaponStateInitialized;
     CaelumAnatomyProfile AnatomyProfile;
     CaelumCharacterProfile AppearanceDeathProfile;
+    CaelumAppearanceHead AppearanceHead;
+    int AppearancePose;
     bool AppearanceHasGloves,AppearanceDeathGloves;
     bool DebugAttributesAt75;
     bool DebugAttributesAt100;

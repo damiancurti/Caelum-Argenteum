@@ -7,6 +7,9 @@ Documentation version: **5.2.13** — 2026-10-11.
 Implemented a rotating/animated native creator preview and an in-game cosmetic
 editor using the single saved profile. Author-approved modular race/sex bodies,
 finite skin/fur tones and four Beast Man forms share body/head/hand components.
+Humans, goblins and Caelith also have four faces/four hairstyles per sex and six
+hair colors, editable during play. A separate visual head uses native eight-view
+registration with reusable anchors; it shares the saved profile and corpse snapshot.
 First-person skin/fur follows the profile; actual equipped gloves select covered
 hands. Voices remain automatic by saved sex. No gameplay balance or respec is
 introduced. Existing saves initialize default appearance once and retain it

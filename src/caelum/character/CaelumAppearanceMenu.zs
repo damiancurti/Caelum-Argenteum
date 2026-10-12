@@ -15,6 +15,7 @@ class CaelumAppearanceMenu : CaelumCharacterCreationMenu
         Race=profile.Race;Sex=profile.Sex;HeightChoice=profile.HeightChoice;
         FirstClass=profile.FirstClass;SecondClass=profile.SecondClass;
         SkinTone=profile.SkinTone;BeastForm=profile.BeastForm;
+        Face=profile.Face;HairStyle=profile.HairStyle;HairColor=profile.HairColor;
         EditSerial=profile.AppearanceEditSerial;
     }
 

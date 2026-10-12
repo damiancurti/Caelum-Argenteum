@@ -2,14 +2,39 @@
 // Los índices guardados son semánticos; nunca se serializan TextureID/sprites.
 class CaelumAppearance : Object play
 {
-    const REVISION=1;
+    const REVISION=2;
     const PAGE=12;
     const TONE_COUNT=3;
     const FORM_COUNT=4;
     const POSE_COUNT=29;
+    const FACE_COUNT=4;
+    const HAIR_COUNT=4;
+    const HAIR_COLOR_COUNT=6;
 
     static clearscope bool Valid(int tone,int form)
     {return tone>=0 && tone<TONE_COUNT && form>=0 && form<FORM_COUNT;}
+
+    static clearscope bool ValidDetails(int face,int hair,int color)
+    {return face>=0 && face<FACE_COUNT && hair>=0 && hair<HAIR_COUNT && color>=0 && color<HAIR_COLOR_COUNT;}
+
+    // Los tres argumentos nativos incluyen tono, opciones empaquetadas y serial.
+    static clearscope int Pack(int form,int face,int hair,int color)
+    {return form+FORM_COUNT*(face+FACE_COUNT*(hair+HAIR_COUNT*color));}
+
+    static clearscope bool ValidPacked(int tone,int packed)
+    {return tone>=0 && tone<TONE_COUNT && packed>=0 && packed<FORM_COUNT*FACE_COUNT*HAIR_COUNT*HAIR_COLOR_COUNT;}
+
+    static clearscope int HeadSprite(int race,int sex,int tone,int face,int hair,int color)
+    {
+        if(race==CaelumConstants.RACE_BEAST_MAN)return -1;
+        int look=Identity(race,sex,0)*TONE_COUNT+Clamp(tone,0,TONE_COUNT-1);
+        look=look*FACE_COUNT+Clamp(face,0,FACE_COUNT-1);
+        look=look*HAIR_COUNT+Clamp(hair,0,HAIR_COUNT-1);
+        look=look*HAIR_COLOR_COUNT+Clamp(color,0,HAIR_COLOR_COUNT-1);
+        let registry=GetDefaultByType("CaelumAppearanceDetailsRegistry");
+        let state=registry.FindStateByString(String.Format("Look%d",look),true);
+        return state==null?-1:state.sprite;
+    }
 
     static clearscope int Identity(int race,int sex,int form)
     {
@@ -71,6 +96,7 @@ class CaelumAppearance : Object play
         // sea player.mo. Esto no amplía la autoridad de juego sobre otros cuerpos.
         let profile=user.health<=0 && user.AppearanceDeathProfile!=null?user.AppearanceDeathProfile:user.CharacterProfile;
         int pose=PoseFor(user.sprite,user.frame);
+        user.AppearancePose=pose;
         bool authoredCrouch=user.crouchsprite!=0 && user.crouchsprite==user.sprite;
         user.AppearanceHasGloves=user.health<=0 && user.AppearanceDeathProfile!=null
             ?user.AppearanceDeathGloves:CaelumAppearanceHands.HasGloves(user);
@@ -80,5 +106,11 @@ class CaelumAppearance : Object play
             user.Scale=ScaleFor(profile.Race,profile.Sex,profile.BeastForm,user.DerivedStats.ActorHeight,user.AppearanceHasGloves);
         if(authoredCrouch)user.crouchsprite=user.sprite;
         user.bNoSkin=true;
+        if(user.AppearanceHead==null)
+        {
+            user.AppearanceHead=CaelumAppearanceHead(Actor.Spawn("CaelumAppearanceHead",user.Pos,NO_REPLACE));
+            if(user.AppearanceHead!=null)user.AppearanceHead.Master=user;
+        }
+        if(user.AppearanceHead!=null)user.AppearanceHead.UpdateVisual();
     }
 }

@@ -7,8 +7,8 @@ Documentation version: **5.2.13** — 2026-10-11.
 Read [SPRITE_ART_DIRECTION](SPRITE_ART_DIRECTION.md) before generating sprites.
 The author requested this dedicated visual brief and an extension with four
 faces/four hairstyles per humanoid race/sex and six hair colors, editable during
-play. That extension is in progress; the implemented matrix below describes
-the initial #148 delivery, not completion of the new face/hair requirements.
+play. Both the initial body/hands integration and that extension are implemented;
+author visual acceptance remains pending.
 
 Author-approved plain shirt/trousers/boots replace the player's fixed armored
 Domingo presentation. Heads, clothes and exposed hands are separate modules;
@@ -17,19 +17,35 @@ Original Domingo, Caella and equipment resources are preserved.
 
 | Supported choice | World/preview | First-person | Voice |
 | --- | --- | --- | --- |
-| Human, male/female | Separate head/body; three natural skin tones | Shared human hand geometry, matching tone | Saved sex |
-| Goblin, male/female | Separate heads, scaled body; three natural skin tones | Shared human hand geometry, matching tone | Saved sex |
-| Caelith, male/female | Separate heads/bodies; red, green, blue skin; neutral silver hair | Shared hand geometry with RGB skin | Saved sex |
+| Human, male/female | Separate head/body; three natural skin tones; four faces/four hairstyles/six hair colors | Shared human hand geometry, matching tone | Saved sex |
+| Goblin, male/female | Separate heads, scaled body; three natural skin tones; four faces/four hairstyles/six hair colors | Shared human hand geometry, matching tone | Saved sex |
+| Caelith, male/female | Separate heads/bodies; RGB skin; four faces/four hairstyles/six hair colors | Shared hand geometry with RGB skin | Saved sex |
 | Beast Man, male/female | Wolf/bear/puma/jaguar head modules, sex body modules; three natural fur tones each | Animal-specific hands, shared between sexes | Saved sex |
 | Equipped gloves | Shared brown glove presentation | Existing accepted glove resources | Unchanged |
 
-There are 14 body identities, 42 finite looks, 29 visual poses and eight views,
+There are 14 body identities, 42 body/tone combinations, 29 visual poses and eight views,
 with bare/gloved variants: 19,488 native compositions and 2,976 world module PNGs.
 First-person resources use 18 bare variants, 375 modules and 702 registered
 sprite banks. Shared hand/shield/bolas/shotgun/fallback compositions preserve
 weapon patches and source pivots. World scale uses measured standing alpha
 height and the existing physical capsule height. Native Blend modulation colors
 exposed hand masks without recoloring clothing, hair or weapon patches.
+
+The humanoid extension adds 1,728 head looks, with seven reusable anchor groups
+and eight native views: 96,768 small head textures, 12,096 registered frames and
+3,840 shared face/hair PNG modules. Hair uses catalog RGB Blend values, without
+quantizing the face/body through actor palette translations. A complete
+body/face/hair/color product would need 100,224 humanoid frames alone, exceeding
+GZDoom 4.14.2's 16-bit frame index. Native view-specific offsets plus the pose's
+common displacement preserve alignment without selecting a main camera.
+
+A noninteractive head actor follows its body's position, interpolation, floor
+clip, effective crouch scale and saved/death profile. Hub-restored duplicates
+discard themselves unless they are the body's current module. MAPINFO's
+AddDefaultMap forces compat_spritesort=0 for Caelum maps so the newer head draws
+over the body at equal depth, without writing the user's global preference.
+The preview draws the same body/head textures without creating actors. Hair
+length does not alter physical height or the standing-height scale reference.
 
 These resources cover existing state families, not a complete newly authored
 animation catalogue. Walk cycles use a shared authored body; some attack, pain,
@@ -40,12 +56,18 @@ not offered. Existing carbine/shotgun world presentations remain supported.
 
 Sources and exact built-in imagegen prompts/references are retained in
 assets/source/art/appearance_5213/PROVENANCE.json, including discarded drafts.
-The female goblin head derives from owned Caella art. Technical cutting, masks,
+The original female goblin module derives from owned Caella art and is retained.
+The new face/hair atlases, reference hashes and exact prompts are recorded in
+FACE_HAIR_PROVENANCE.json. Technical cutting, masks,
 anchors and packing with Python were explicitly authorized by the author.
 Rebuild with Pillow 11.3.0 using assets/generators/generate_modular_appearance.py
-and generate_appearance_hands.py; appearance_catalog.json is the shared catalog.
-REGISTRATION.json and HAND_REGISTRATION.json record output hashes. A repeated
-generation matched all 3,355 output files byte for byte.
+and generate_appearance_hands.py, then generate_appearance_details.py;
+appearance_catalog.json is the shared catalog. REGISTRATION.json,
+HAND_REGISTRATION.json and DETAIL_REGISTRATION.json record output hashes.
+The initial generators matched 3,355 outputs on repeat; the detail generator
+separately matched all 3,843 outputs byte for byte. Alpha-component registration
+handles imperfect atlas gutters and excludes detached source debris; original
+atlases are preserved. The 24-face contact sheet and native captures document fit.
 
 CaelumCharacterPreview adapts GZDoom g4.14.2 playerdisplay.zs state stepping and
 GetSpriteTexture drawing. Christoph Oelckers' BSD notice is retained in the

@@ -287,7 +287,9 @@ def main():
                             if not bare:color=[110,65,33]
                             hand=hand_modules[bare,sex,index,view]
                             lines.append(f'    Patch "{hand}", 0, 0 {{ Blend {color[0]}, {color[1]}, {color[2]} }}')
-                        lines += [f'    Patch "{path}", {hx}, {hy}', '}']
+                        if identity>=6:
+                            lines.append(f'    Patch "{path}", {hx}, {hy}')
+                        lines.append('}')
                         if tone==0 and index==0 and view==0:
                             sample=images[bare,sex,index,view].copy();sample.alpha_composite(head,(hx,hy))
                             bounds=sample.getchannel('A').point(lambda a:255 if a>=32 else 0).getbbox()

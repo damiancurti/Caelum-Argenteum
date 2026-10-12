@@ -4,6 +4,7 @@ class CaelumCreationDraft : Object ui
 {
     int Page, Race, FirstClass, SecondClass, Sex, HeightChoice;
     int SkinTone, BeastForm;
+    int Face, HairStyle, HairColor;
     int SelectedLayer, SelectedAttribute;
     int Personality[4];
     int LayerBonus[4];
@@ -62,10 +63,19 @@ class CaelumCharacterSettings : StaticEventHandler
         if(!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete)return;
         let profile=CaelumCharacterIdentity.Profile(user);
         if(profile==null || profile.AppearanceEditSerial!=e.Args[2]
-            || !CaelumAppearance.Valid(e.Args[0],e.Args[1]))return;
+            || !CaelumAppearance.ValidPacked(e.Args[0],e.Args[1]))return;
         // Una sola escritura confirmada; cancelar sólo descarta el borrador UI.
         profile.SkinTone=e.Args[0];
-        if(profile.Race==CaelumConstants.RACE_BEAST_MAN)profile.BeastForm=e.Args[1];
+        int packed=e.Args[1];
+        if(profile.Race==CaelumConstants.RACE_BEAST_MAN)profile.BeastForm=packed%CaelumAppearance.FORM_COUNT;
+        else
+        {
+            packed/=CaelumAppearance.FORM_COUNT;
+            profile.Face=packed%CaelumAppearance.FACE_COUNT;
+            packed/=CaelumAppearance.FACE_COUNT;
+            profile.HairStyle=packed%CaelumAppearance.HAIR_COUNT;
+            profile.HairColor=packed/CaelumAppearance.HAIR_COUNT;
+        }
         profile.AppearanceEditSerial++;
         user.UpdateWorldCarbineVisual();
     }

@@ -8,14 +8,21 @@ The native creator includes Appearance after Height. It offers three skin/fur
 tones per race and wolf, bear, puma or jaguar form for Beast Men. Caelith use
 red/green/blue; humans and goblins use natural skin tones; beast tones remain
 within the selected animal's natural palette. These are cosmetic choices.
+Humans, goblins and Caelith also offer four faces and four hairstyles for each
+sex: short/long straight and short/long curly. All three share black, brown,
+blonde, redhead, gray and white hair colors.
 
-Options > Player Setup > Appearance edits only tone and Beast Man form in an
-existing game. Race, sex, height, professions, personality, allocations, equipment
+Options > Player Setup > Appearance edits tone, Beast Man form where applicable,
+and humanoid face/hairstyle/hair color in an existing game. Race, sex, height,
+professions, personality, allocations, equipment
 and resources remain authoritative saved gameplay data. Back/Escape cancels;
 Confirm/Enter commits once against the profile revision. Loading or replacing
 the pawn invalidates the editor. Global skin/color/new-character defaults never
-replace a committed profile. AppearanceRevision 1 initializes older profiles to
-tone 0 and form 0 once; subsequent binds/copies preserve their selections.
+replace a committed profile. AppearanceRevision 2 initializes missing face,
+hairstyle and hair color to option 0 once. Revision-1 saves keep their tone/form;
+pre-appearance saves also initialize tone/form 0. Subsequent binds/copies preserve
+all selections. The edit serial rejects stale confirmations independently of
+the schema revision.
 
 The preview uses native GetSpriteTexture and the same modular world sprite,
 rotation and physical-height scale as the saved character. It is a UI object,

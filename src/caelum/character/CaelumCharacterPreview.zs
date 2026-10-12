@@ -42,6 +42,7 @@ class CaelumCharacterPreview : Object ui
     bool Walking;
     bool Gloved;
     int Race, Sex, SkinTone, BeastForm;
+    int Face, HairStyle, HairColor;
     double ActorHeight;
 
     void Reset()
@@ -80,6 +81,17 @@ class CaelumCharacterPreview : Object ui
         // La escala corporal es la misma del mundo; el zoom sólo encuadra el visor.
         double pixels=Screen.GetHeight()/600.0;
         Screen.DrawTexture(texture,false,centerX*pixels,floorY*pixels,
+            DTA_DestWidthF,size.X*scale.X*zoom*pixels,
+            DTA_DestHeightF,size.Y*scale.Y*zoom*pixels,DTA_FlipX,flip);
+        int head=CaelumAppearance.HeadSprite(Race,Sex,SkinTone,Face,HairStyle,HairColor);
+        if(head<0)return;
+        int group;Vector2 displacement;
+        [group,displacement]=CaelumAppearanceDetailsRegistry.Anchor(Sex,Gloved,pose);
+        [texture,flip,scale]=Frame.GetSpriteTexture(Rotation*2,0,scale,head,group);
+        if(!texture.IsValid())return;
+        size=TexMan.GetScaledSize(texture);
+        Screen.DrawTexture(texture,false,(centerX+displacement.X*scale.X*zoom)*pixels,
+            (floorY+displacement.Y*scale.Y*zoom)*pixels,
             DTA_DestWidthF,size.X*scale.X*zoom*pixels,
             DTA_DestHeightF,size.Y*scale.Y*zoom*pixels,DTA_FlipX,flip);
     }

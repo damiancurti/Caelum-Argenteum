@@ -13,7 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 modular race/sex appearance, finite skin/fur tones, four Beast Man forms, native
 character preview and saved cosmetic editing. First-person hands follow skin/fur
 and actual equipped gloves. Open **Options > Player Setup > Appearance** in a
-game to edit tone/form. Voices remain automatic by saved sex.
+game to edit tone/form, face, hairstyle and hair color. Humans, goblins and
+Caelith each have four faces and four hairstyles per sex, with six hair colors.
+Voices remain automatic by saved sex.
 [Asset coverage](docs/ASSETS.md) and [validation evidence](assets/validation_5213/RESULTS.md)
 describe the supported shared poses and tests. [CA148-01](pending_test.txt) remains
 pending author visual acceptance. Delivery: [draft PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201),
@@ -22,7 +24,8 @@ Author testing reported an intermittent invisible cursor in fullscreen menus;
 clicks still work and Alt+Enter restored visibility. The isolated repeat started
 with a visible cursor, so no cursor fix or acceptance is claimed yet.
 The author-requested [sprite art direction](docs/SPRITE_ART_DIRECTION.md) defines
-the visual brief. Additional faces, hairstyles and six hair colors are in progress.
+the visual brief. Reusable head/hair modules keep the expanded catalog within
+the engine's sprite-frame limit.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;

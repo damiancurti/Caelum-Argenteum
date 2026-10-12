@@ -12,6 +12,7 @@ class CaelumCharacterCreationMenu : ListMenu
     int Sex;
     int HeightChoice;
     int SkinTone, BeastForm;
+    int Face, HairStyle, HairColor;
     int Personality[4];
     int LayerBonus[4];
     int AttributeBonus[12];
@@ -66,6 +67,7 @@ class CaelumCharacterCreationMenu : ListMenu
         HeightChoice = draft.HeightChoice;
         SkinTone=draft.SkinTone;
         BeastForm=draft.BeastForm;
+        Face=draft.Face;HairStyle=draft.HairStyle;HairColor=draft.HairColor;
         for(int i=0;i<4;i++)Personality[i]=draft.Personality[i];
         SelectedLayer = draft.SelectedLayer;
         SelectedAttribute = draft.SelectedAttribute;
@@ -88,6 +90,7 @@ class CaelumCharacterCreationMenu : ListMenu
         draft.HeightChoice = HeightChoice;
         draft.SkinTone=SkinTone;
         draft.BeastForm=BeastForm;
+        draft.Face=Face;draft.HairStyle=HairStyle;draft.HairColor=HairColor;
         for(int i=0;i<4;i++)draft.Personality[i]=Personality[i];
         draft.SelectedLayer = SelectedLayer;
         draft.SelectedAttribute = SelectedAttribute;
@@ -172,8 +175,12 @@ class CaelumCharacterCreationMenu : ListMenu
     {
         if(Page==CaelumAppearance.PAGE)
         {
+            AppearanceRow=Clamp(AppearanceRow,0,AppearanceRows()-1);
             if(AppearanceRow==1 && Race==CaelumConstants.RACE_BEAST_MAN)
                 BeastForm=Wrap(BeastForm+direction,CaelumAppearance.FORM_COUNT);
+            else if(AppearanceRow==1)Face=Wrap(Face+direction,CaelumAppearance.FACE_COUNT);
+            else if(AppearanceRow==2)HairStyle=Wrap(HairStyle+direction,CaelumAppearance.HAIR_COUNT);
+            else if(AppearanceRow==3)HairColor=Wrap(HairColor+direction,CaelumAppearance.HAIR_COLOR_COUNT);
             else SkinTone=Wrap(SkinTone+direction,CaelumAppearance.TONE_COUNT);
             return;
         }
@@ -520,18 +527,21 @@ class CaelumCharacterCreationMenu : ListMenu
             || players[consoleplayer].mo!=EditSubject))Close();
     }
 
+    int AppearanceRows(){return Race==CaelumConstants.RACE_BEAST_MAN?2:4;}
+
     void DrawAppearancePage()
     {
-        Line(TextFont,AppearanceRow==0?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,170,
-            StringTable.Localize("CA_APPEARANCE_TONE",false),LeftWidth());
-        Line(TextFont,AppearanceRow==0?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,210,
-            "< "..StringTable.Localize(CaelumAppearance.ToneKey(Race,SkinTone),false).." >",LeftWidth());
-        if(Race==CaelumConstants.RACE_BEAST_MAN)
+        AppearanceRow=Clamp(AppearanceRow,0,AppearanceRows()-1);
+        for(int row=0;row<AppearanceRows();row++)
         {
-            Line(TextFont,AppearanceRow==1?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,284,
-                StringTable.Localize("CA_APPEARANCE_FORM",false),LeftWidth());
-            Line(TextFont,AppearanceRow==1?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,324,
-                "< "..StringTable.Localize(CaelumAppearance.FormKey(BeastForm),false).." >",LeftWidth());
+            String label=row==0?"CA_APPEARANCE_TONE":Race==CaelumConstants.RACE_BEAST_MAN?"CA_APPEARANCE_FORM":
+                row==1?"CA_APPEARANCE_FACE":row==2?"CA_APPEARANCE_HAIR":"CA_APPEARANCE_HAIR_COLOR";
+            String value=row==0?CaelumAppearance.ToneKey(Race,SkinTone):Race==CaelumConstants.RACE_BEAST_MAN?CaelumAppearance.FormKey(BeastForm):
+                String.Format(row==1?"CA_APPEARANCE_FACE_%d":row==2?"CA_APPEARANCE_HAIR_%d":"CA_APPEARANCE_HAIR_COLOR_%d",row==1?Face:row==2?HairStyle:HairColor);
+            int color=AppearanceRow==row?Font.CR_GOLD:Font.CR_WHITE;
+            double y=144+row*66;
+            Line(SmallTextFont,color,PanelLeft()+16,y,StringTable.Localize(label,false),LeftWidth(),1.2);
+            Line(TextFont,color,PanelLeft()+16,y+24,"< "..StringTable.Localize(value,false).." >",LeftWidth(),1.3);
         }
         Line(SmallTextFont,Font.CR_GRAY,PanelLeft()+16,425,StringTable.Localize("CA_APPEARANCE_VOICE",false),LeftWidth(),1.2);
     }
@@ -540,6 +550,7 @@ class CaelumCharacterCreationMenu : ListMenu
     {
         CaelumNarrativeArtwork.Rect(ContextLeft(),118,ContextWidth(),332,0x152029,0.85);
         Preview.Race=Race;Preview.Sex=Sex;Preview.SkinTone=SkinTone;Preview.BeastForm=BeastForm;
+        Preview.Face=Face;Preview.HairStyle=HairStyle;Preview.HairColor=HairColor;
         Preview.Gloved=AppearanceOnly && EditSubject!=null && EditSubject.AppearanceHasGloves;
         let profile=new("CaelumCharacterProfile");
         profile.Race=Race;profile.Sex=Sex;profile.HeightChoice=HeightChoice;
@@ -554,8 +565,7 @@ class CaelumCharacterCreationMenu : ListMenu
         Pointer.Clear();
         if(Page==CaelumAppearance.PAGE)
         {
-            Pointer.Add(300,PanelLeft()+16,158,LeftWidth(),92);
-            if(Race==CaelumConstants.RACE_BEAST_MAN)Pointer.Add(301,PanelLeft()+16,272,LeftWidth(),92);
+            for(int row=0;row<AppearanceRows();row++)Pointer.Add(300+row,PanelLeft()+16,138+row*66,LeftWidth(),60);
         }
         if(ShowsPreview())for(int i=0;i<3;i++)
         {
@@ -675,6 +685,9 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_height", HeightChoice);
         SetDraft("ca_newchar_skintone", SkinTone);
         SetDraft("ca_newchar_beastform", BeastForm);
+        SetDraft("ca_newchar_face",Face);
+        SetDraft("ca_newchar_hairstyle",HairStyle);
+        SetDraft("ca_newchar_haircolor",HairColor);
         int packed=0;for(int i=3;i>=0;i--)packed=packed*3+Personality[i];
         SetDraft("ca_newchar_personality",packed);
         SetDraft("ca_newchar_layer0", LayerBonus[0]);
@@ -716,14 +729,14 @@ class CaelumCharacterCreationMenu : ListMenu
                 && EditSubject.health>0 && EditSubject.CharacterCreationComplete
                 && EditProfile!=null && EditProfile==CaelumCharacterIdentity.Profile(EditSubject)
                 && EditProfile.AppearanceEditSerial==EditSerial)
-                EventHandler.SendNetworkEvent("ca_appearance_commit",SkinTone,BeastForm,EditSerial);
+                EventHandler.SendNetworkEvent("ca_appearance_commit",SkinTone,CaelumAppearance.Pack(BeastForm,Face,HairStyle,HairColor),EditSerial);
             Close();return true;
         }
         if (mkey == MKEY_Up || mkey == MKEY_Down)
         {
             int direction = mkey == MKEY_Up ? -1 : 1;
-            if(Page==CaelumAppearance.PAGE && Race==CaelumConstants.RACE_BEAST_MAN)
-                AppearanceRow=Wrap(AppearanceRow+direction,2);
+            if(Page==CaelumAppearance.PAGE)
+                AppearanceRow=Wrap(AppearanceRow+direction,AppearanceRows());
             else if (Page == CaelumConstants.CREATION_PAGE_LAYERS)
                 SelectedLayer = Wrap(SelectedLayer + direction, 4);
             else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES)

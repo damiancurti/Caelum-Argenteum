@@ -223,9 +223,10 @@ acceptance in HISTORY. Generated candidates are never automatically accepted.
 
 The first #148 modular body/skin/fur/hands integration is committed in draft
 [PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201); CA148-01 remains
-pending. Four-face/four-hairstyle/six-color support is the current author-requested
-extension. Candidate face atlases have been generated; they are not yet
-integrated or approved. Further source generation must follow this brief.
+pending. The author-requested four-face/four-hairstyle/six-color extension is
+integrated through reusable face/hair modules and native eight-view
+head registration. Agent inspection and engine evidence are recorded in ASSETS;
+author approval remains pending. Further source generation must follow this brief.
 
 Exact face designs, hair silhouettes, attachment quality and final processed
 color appearance remain visual-review work. Additional beard, eye-color, clothing

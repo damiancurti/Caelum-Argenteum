@@ -4,8 +4,8 @@ Documentation version: **5.2.13** — 2026-10-11.
 
 **Current 5.2.13 / #148:** modular appearance, native preview/editor and equipped
 glove-dependent hands; saved sex voices. Draft PR201, CA148-01 pending.
-New author scope: four faces/four hairstyles per human/goblin/Caelith sex, six
-hair colors, editable in-game. Integration ongoing. Read SPRITE_ART_DIRECTION
+Implemented four faces/four hairstyles per human/goblin/Caelith sex, six
+hair colors, editable in-game. Read SPRITE_ART_DIRECTION
 before generating sprites; ASSETS/SYSTEMS retain technical/gameplay details.
 Evidence: validation_5213. Intermittent fullscreen cursor loss remains unresolved;
 Alt+Enter restored visibility during author testing. No merge/acceptance claimed.

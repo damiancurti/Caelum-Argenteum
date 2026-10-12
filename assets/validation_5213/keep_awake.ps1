@@ -1,7 +1,8 @@
-param([int]$MaximumHours = 4)
+param([int]$MaximumHours = 4,[ValidatePattern('^[a-z0-9-]*$')][string]$Session = '')
 $ErrorActionPreference = 'Stop'
 $work = Join-Path (Split-Path (Split-Path $PSScriptRoot)) 'build/issue148'
-$release = Join-Path $work 'release-awake.signal'
+$suffix=if($Session){"-$Session"}else{''}
+$release = Join-Path $work "release-awake$suffix.signal"
 if (Test-Path -LiteralPath $release) { throw 'Use a fresh release marker before starting a new request.' }
 Add-Type @'
 using System.Runtime.InteropServices;
@@ -17,7 +18,7 @@ $record = [ordered]@{
     mechanism = 'Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation'
     maximum_hours = $MaximumHours
 }
-$path = Join-Path $work 'power-request.json'
+$path = Join-Path $work "power-request$suffix.json"
 try {
     $previous = [CA148Power]::SetThreadExecutionState([uint32]2147483651)
     if ($previous -eq 0) { throw 'SetThreadExecutionState failed.' }

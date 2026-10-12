@@ -43,7 +43,21 @@ Evidence: the cursor follow-up in assets/validation_5213/RESULTS.md.
 The author subsequently requested at least four faces and four hairstyles for
 humans, goblins and Caelith, with black/brown/blonde/redhead/gray/white hair for
 all three. Face, hairstyle and hair color may also change during a game. This
-extends #148; candidate source generation is not completed runtime integration.
+extends #148. The extension now uses revision-2 saved choices, four faces/four
+hairstyles per humanoid sex and six catalog hair colors. A separate visual head
+shares the body's profile/death snapshot and seven reusable anchor groups,
+avoiding the native frame-index overflow of full body combinations. There are
+96,768 small head textures, 12,096 frames and 3,840 reusable PNG modules.
+Repeated detail generation matched 3,843 output files byte for byte.
+
+The extension's native checks cover the complete texture catalog, creator and
+editor transfers, current/revision-1 saves, restart and a round trip through the
+hub. Tests exposed and corrected a restored duplicate head; cross-review also
+identified interpolation/floor clipping and native sprite-sort requirements.
+MAPINFO fixes the map's sort order without changing the global preference.
+Agent-operated mouse/keyboard checks and crouch/attack/layout captures are
+recorded separately from author visual acceptance in validation_5213/RESULTS.md.
+CA148-01 includes the new options and remains pending; no merge is authorized.
 The author explicitly requested a dedicated sprite-art specification document.
 SPRITE_ART_DIRECTION.md now owns that brief and is linked from AGENTS/ASSETS;
 the validator includes it in the versioned canonical document set. Version stays

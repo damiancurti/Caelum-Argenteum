@@ -19,7 +19,9 @@ PR200/#195 are merged/closed following the prior explicit acceptance.
 Author extension: four faces and four hairstyles for each human/goblin/Caelith
 sex, six natural hair colors for all three races, all editable in-game. Follow
 the requested dedicated SPRITE_ART_DIRECTION.md before further generation;
-modular integration and final visual/engine validation are still in progress.
+modular integration is implemented, with revision-2 persistence and native
+head/body composition. Agent evidence is in RESULTS; author art acceptance
+remains CA148-01. The cursor report remains unresolved.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)
 

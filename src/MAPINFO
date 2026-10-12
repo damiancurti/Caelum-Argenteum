@@ -49,6 +49,13 @@ skill Caelum
 
 // MAP01 cierra el prólogo; MAP02 contiene la llegada a las alcantarillas.
 // El campo diagnóstico completo se conserva aparte en CADEV02.
+AddDefaultMap
+{
+    // Cuerpo y cabeza comparten profundidad: el orden nativo dibuja después
+    // el módulo creado después. No se cambia la preferencia global del usuario.
+    compat_spritesort = 0
+}
+
 map MAP01 "$CA_MAP01_NAME"
 {
     UnFreezeSinglePlayerConversations

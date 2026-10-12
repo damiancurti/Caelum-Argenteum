@@ -19,14 +19,14 @@ class CA148Profile : StaticEventHandler
         int hp=u.health,items=r.NextEquipmentItemId,race=p.Race,sex=p.Sex;
         double air=u.CurrentAir,anima=u.CurrentAnima;
         int mass=p.GetMassTier(),size=p.GetSizeTier(),profession=p.GetProfession();
-        p.AppearanceRevision=0;p.SkinTone=2;p.BeastForm=3;
+        p.AppearanceRevision=0;p.SkinTone=2;p.BeastForm=3;p.Face=3;p.HairStyle=2;p.HairColor=5;
         CaelumCharacterIdentity.Bind(u,r,true);
-        Check(p.AppearanceRevision==1 && p.SkinTone==0 && p.BeastForm==0,"legacy appearance initializes to default tone/form");
-        p.SkinTone=2;p.BeastForm=3;
+        Check(p.AppearanceRevision==CaelumAppearance.REVISION && p.SkinTone==0 && p.BeastForm==0,"legacy appearance initializes to default tone/form");
+        p.SkinTone=2;p.BeastForm=3;p.Face=3;p.HairStyle=2;p.HairColor=5;
         CaelumCharacterIdentity.Bind(u,r,true);
-        Check(p.SkinTone==2 && p.BeastForm==3,"repeat bind preserves saved tone/form");
+        Check(p.SkinTone==2 && p.BeastForm==3 && p.Face==3 && p.HairStyle==2 && p.HairColor==5,"repeat bind preserves all six saved choices");
         let copy=new("CaelumCharacterProfile");copy.CopyFrom(p);
-        Check(copy.SkinTone==p.SkinTone && copy.BeastForm==p.BeastForm && copy.AppearanceRevision==1,"profile copies include appearance");
+        Check(copy.SkinTone==p.SkinTone && copy.BeastForm==p.BeastForm && copy.Face==3 && copy.HairStyle==2 && copy.HairColor==5 && copy.AppearanceRevision==CaelumAppearance.REVISION,"profile copies include appearance");
         Check(p.Race==race && p.Sex==sex && p.GetMassTier()==mass && p.GetSizeTier()==size
             && p.GetProfession()==profession,"appearance migration preserves structural identity");
         Check(u.health==hp && u.CurrentAir==air && u.CurrentAnima==anima
@@ -36,8 +36,10 @@ class CA148Profile : StaticEventHandler
         Check(!u.ConsumeNewCharacterDraft() && p.SkinTone==2 && p.BeastForm==3,"new-character bridge cannot recolor committed identity");
         u.ClearNewCharacterDraftReady();
         Check(CaelumCharacterIdentity.VoiceSex(u)==sex,"voice remains automatic by saved sex");
+        p.AppearanceRevision=1;p.EnsureAppearance();
+        Check(p.SkinTone==2 && p.BeastForm==3 && p.Face==0 && p.HairStyle==0 && p.HairColor==0,"revision one preserves tone/form and initializes face/hair");
         copy.InitializeDefaultTestProfile();
-        Check(copy.SkinTone==0 && copy.BeastForm==0 && copy.AppearanceRevision==1,"fresh direct-map profile uses default tone/form");
+        Check(copy.SkinTone==0 && copy.BeastForm==0 && copy.AppearanceRevision==CaelumAppearance.REVISION,"fresh direct-map profile uses default tone/form");
         Console.Printf("CA148 DONE failures=%d",Failures);
     }
 }

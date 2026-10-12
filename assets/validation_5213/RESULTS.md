@@ -7,7 +7,63 @@ retain engine/package hashes, arguments and timing. Tests use background ticking
 and 5% audio; the temporary thread-scoped keep-awake request does not change the
 power plan and is released after testing.
 
-## Final evidence
+## Face/hair extension
+
+The author expanded the same unaccepted #148 patch with four faces, four
+hairstyles and six hair colors for each human/goblin/Caelith sex. The delivered
+extension uses appearance revision 2 and separate head/body composition.
+The original evidence below remains the initial delivery's record.
+
+| Run / check | Scope | Result |
+| --- | --- | --- |
+| details-contract-02 | All 96,768 head textures; editor draft/cancel/confirm; invalid packed choices and stale serial; current save/load; teleport interpolation | PASS |
+| details-restart-03 | Cold load retains face/hair, revision and single visual head | PASS |
+| details-revone-01 | Actual initial 5.2.13 save preserves tone/form, defaults missing face/hair, saves again | PASS |
+| details-travel-02 | Cold load and MAP02/MAP03/MAP02 round trip; one head; map sort override with global compat_spritesort=true | PASS |
+| details-profile-01 | Revision-0/1 initialization, idempotence, copying, structural values, resources and committed-profile bridge protection | PASS |
+| details-creation-01 | Creator selects tone/face/style/color; real mouse clicks through introduction; new game consumes draft once and preserves previous profile | PASS, exit 0 |
+| details-clicks-02 | Actual mouse selection of hair/face/color, keyboard changes, mouse rotation/walking | Agent walkthrough passed; terminated after inspection, not an automated exit-0 run |
+| details-world-02 | Front/side/back, long hair overlap, goblin and corpse snapshot; global sort preference cannot change effective map order | PASS, inspected |
+| details-poses-01 | Native held crouch and attack captures; teleport API interpolation and controlled FloorClip propagation | PASS, inspected |
+| details-layout-en-02 | EN 1024x768 idle/walking layout; all four rows readable | PASS, inspected |
+| details-official-01 | Official PK3: head catalog plus original world/hands/gloves/voice checks and full editor/save contract | PASS |
+| DETAIL_PACKAGE.json | All 13,555 official package members compared with tested production | Identical content |
+| DETAIL_DETERMINISM.json | Repeat detail generator with Pillow 11.3.0 | All 3,843 outputs identical |
+| DETAIL_STATIC.json / DETAIL_ASSET_CHECK.json | Project/index validation and 7,191 module hashes | PASS, no errors |
+
+The extension's raw logs and run metadata are retained under `logs/details-*`.
+Native captures use `captures/details-*.png`. The four `*-board.png` images are
+technical registration sheets, not engine screenshots: they cover the face/hair
+joins and all eight views for the six humanoid race/sex identities. Agent visual
+inspection passed; final artistic acceptance remains with the author.
+
+Read-only cross-review verified native scale/offset, crouch and sprite-sort
+semantics and identified missing Prev/FloorClip propagation, which were fixed.
+MASTERNOSEE preserves reflected/portal views by engine code inspection; a
+physical mirror capture and full multiplayer are not claimed. Lookup coverage
+does not benchmark every combination's GPU cost. The temporary keep-awake request
+is thread-scoped; its final release at 2026-10-12 02:55:46 UTC is recorded in
+power-request-finish.json. The before/after power plans match.
+
+Failures retained: details-compile-01 had a parenthesis error;
+details-compile-02 used private/unsupported actor render fields, replaced by
+native A_SetRenderStyle/GetRenderStyle. details-contract-01 used waits too short
+for deferred network events; -02 separates dispatch and explicitly verifies
+after load. details-restart-01/02 supplied a path rather than the save basename.
+details-travel-01 found a real duplicate head on hub return; modules now discard
+themselves when they are not body.AppearanceHead. details-world-01 exposed the
+legacy sprite-sort reversal; the map-level native override fixes it. The first
+EN layout capture changed pose before the deferred screenshot; -02 separates
+capture from the next UI event. details-clicks-01 was stopped by the author with
+Escape; that interrupted run is not a pass. No runtime cursor fix is claimed.
+
+Reproduce with prepare.py, then run_native.ps1 and the correspondingly named
+fixtures/configs. Native -loadgame expects a basename inside the configured
+savedir. Run details.cfg before details-restart.cfg/details-travel.cfg; if the
+save was made by the official package alias, use that same RuntimeAlias on load.
+Source PK3s, IWADs, executables and saved games remain local and are not committed.
+
+## Initial delivery evidence
 
 | Run / check | Scope | Result |
 | --- | --- | --- |

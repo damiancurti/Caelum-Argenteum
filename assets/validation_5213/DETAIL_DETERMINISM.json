@@ -1,0 +1,7 @@
+{
+  "generator": "generate_appearance_details.py",
+  "pillow": "11.3.0",
+  "artifacts": 3843,
+  "changed": [],
+  "deterministic": true
+}
