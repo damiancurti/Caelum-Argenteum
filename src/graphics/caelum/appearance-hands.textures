@@ -1,0 +1,5167 @@
+// Generated from shared hand modules; weapon patches are unchanged.
+Sprite "H000A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H001A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", 0, 0
+}
+Sprite "H002A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/0/FH04.png", 0, 0
+}
+Sprite "H003A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/0/FH05.png", 0, 0
+}
+Sprite "H004A0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/0/FH06.png", 0, 0
+}
+Sprite "H005A0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/0/FH07.png", 0, 0
+}
+Sprite "H006A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/0/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H007A0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/0/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V0", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V0", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V0", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V0", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V0", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/0/FH03.png", -136, -154
+}
+Sprite "H008A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V0", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V0", 118, 135
+    Graphic "CA_BOW_MIDDLE_V0", 138, 135
+    Graphic "CA_BOW_RING_V0", 137, 144
+    Graphic "CA_BOW_LITTLE_V0", 136, 154
+}
+Sprite "H009A0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/0/shield_A.png", 0, 0 }
+Sprite "H009B0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/0/shield_B.png", 0, 0 }
+Sprite "H009C0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/0/shield_C.png", 0, 0 }
+Sprite "H009D0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/0/shield_D.png", 0, 0 }
+Sprite "H009H0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/0/shield_H.png", 0, 0 }
+Sprite "H009I0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/0/shield_I.png", 0, 0 }
+Sprite "H00AA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/0/bolas.png", 1182, 760 }
+Sprite "H00BA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/0/shotgun_0.png", 0, 0
+}
+Sprite "H00CA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/0/shotgun_1.png", 0, 0
+}
+Sprite "H00DA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/0/shotgun_2.png", 0, 0
+}
+Sprite "H00EA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/0/shotgun_3.png", 0, 0
+}
+Sprite "H00FA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/0/shotgun_4.png", 0, 0
+}
+Sprite "H00GA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/0/shotgun_3.png", 0, 0
+}
+Sprite "H00HA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/0/shotgun_2.png", 0, 0
+}
+Sprite "H00IA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00JA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00KA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00LA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00MA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00NA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00OA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00PA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00QA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00RA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00SA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00TA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH00.png", 0, 0
+}
+Sprite "H00UA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH01.png", 0, 0
+}
+Sprite "H00VA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH01.png", 0, 0
+}
+Sprite "H00WA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/0/FH01.png", 0, 0
+}
+Sprite "H00XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H00YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H00ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H010A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H011A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H012A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H013A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H014A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", 0, 0
+}
+Sprite "H015A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/1/FH04.png", 0, 0
+}
+Sprite "H016A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/1/FH05.png", 0, 0
+}
+Sprite "H017A0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/1/FH06.png", 0, 0
+}
+Sprite "H018A0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/1/FH07.png", 0, 0
+}
+Sprite "H019A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/1/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H01AA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/1/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V1", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V1", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V1", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V1", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V1", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/1/FH03.png", -136, -154
+}
+Sprite "H01BA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V1", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V1", 118, 135
+    Graphic "CA_BOW_MIDDLE_V1", 138, 135
+    Graphic "CA_BOW_RING_V1", 137, 144
+    Graphic "CA_BOW_LITTLE_V1", 136, 154
+}
+Sprite "H01CA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/1/shield_A.png", 0, 0 }
+Sprite "H01CB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/1/shield_B.png", 0, 0 }
+Sprite "H01CC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/1/shield_C.png", 0, 0 }
+Sprite "H01CD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/1/shield_D.png", 0, 0 }
+Sprite "H01CH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/1/shield_H.png", 0, 0 }
+Sprite "H01CI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/1/shield_I.png", 0, 0 }
+Sprite "H01DA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/1/bolas.png", 1182, 760 }
+Sprite "H01EA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/1/shotgun_0.png", 0, 0
+}
+Sprite "H01FA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/1/shotgun_1.png", 0, 0
+}
+Sprite "H01GA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/1/shotgun_2.png", 0, 0
+}
+Sprite "H01HA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/1/shotgun_3.png", 0, 0
+}
+Sprite "H01IA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/1/shotgun_4.png", 0, 0
+}
+Sprite "H01JA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/1/shotgun_3.png", 0, 0
+}
+Sprite "H01KA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/1/shotgun_2.png", 0, 0
+}
+Sprite "H01LA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01MA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01NA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01OA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01PA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01QA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01RA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01SA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01TA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01UA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01VA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01WA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH00.png", 0, 0
+}
+Sprite "H01XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH01.png", 0, 0
+}
+Sprite "H01YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH01.png", 0, 0
+}
+Sprite "H01ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/1/FH01.png", 0, 0
+}
+Sprite "H020A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H021A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H022A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H023A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H024A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H025A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H026A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H027A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", 0, 0
+}
+Sprite "H028A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/2/FH04.png", 0, 0
+}
+Sprite "H029A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/2/FH05.png", 0, 0
+}
+Sprite "H02AA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/2/FH06.png", 0, 0
+}
+Sprite "H02BA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/2/FH07.png", 0, 0
+}
+Sprite "H02CA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/2/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H02DA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/2/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V2", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V2", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V2", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V2", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V2", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/2/FH03.png", -136, -154
+}
+Sprite "H02EA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V2", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V2", 118, 135
+    Graphic "CA_BOW_MIDDLE_V2", 138, 135
+    Graphic "CA_BOW_RING_V2", 137, 144
+    Graphic "CA_BOW_LITTLE_V2", 136, 154
+}
+Sprite "H02FA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/2/shield_A.png", 0, 0 }
+Sprite "H02FB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/2/shield_B.png", 0, 0 }
+Sprite "H02FC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/2/shield_C.png", 0, 0 }
+Sprite "H02FD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/2/shield_D.png", 0, 0 }
+Sprite "H02FH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/2/shield_H.png", 0, 0 }
+Sprite "H02FI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/2/shield_I.png", 0, 0 }
+Sprite "H02GA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/2/bolas.png", 1182, 760 }
+Sprite "H02HA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/2/shotgun_0.png", 0, 0
+}
+Sprite "H02IA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/2/shotgun_1.png", 0, 0
+}
+Sprite "H02JA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/2/shotgun_2.png", 0, 0
+}
+Sprite "H02KA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/2/shotgun_3.png", 0, 0
+}
+Sprite "H02LA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/2/shotgun_4.png", 0, 0
+}
+Sprite "H02MA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/2/shotgun_3.png", 0, 0
+}
+Sprite "H02NA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/2/shotgun_2.png", 0, 0
+}
+Sprite "H02OA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02PA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02QA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02RA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02SA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02TA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02UA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02VA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02WA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H02ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH00.png", 0, 0
+}
+Sprite "H030A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH01.png", 0, 0
+}
+Sprite "H031A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH01.png", 0, 0
+}
+Sprite "H032A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/2/FH01.png", 0, 0
+}
+Sprite "H033A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H034A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H035A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H036A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H037A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H038A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H039A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03AA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", 0, 0
+}
+Sprite "H03BA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/3/FH04.png", 0, 0
+}
+Sprite "H03CA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/3/FH05.png", 0, 0
+}
+Sprite "H03DA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/3/FH06.png", 0, 0
+}
+Sprite "H03EA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/3/FH07.png", 0, 0
+}
+Sprite "H03FA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/3/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H03GA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/3/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V3", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V3", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V3", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V3", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V3", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/3/FH03.png", -136, -154
+}
+Sprite "H03HA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V3", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V3", 118, 135
+    Graphic "CA_BOW_MIDDLE_V3", 138, 135
+    Graphic "CA_BOW_RING_V3", 137, 144
+    Graphic "CA_BOW_LITTLE_V3", 136, 154
+}
+Sprite "H03IA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/3/shield_A.png", 0, 0 }
+Sprite "H03IB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/3/shield_B.png", 0, 0 }
+Sprite "H03IC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/3/shield_C.png", 0, 0 }
+Sprite "H03ID0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/3/shield_D.png", 0, 0 }
+Sprite "H03IH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/3/shield_H.png", 0, 0 }
+Sprite "H03II0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/3/shield_I.png", 0, 0 }
+Sprite "H03JA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/3/bolas.png", 1182, 760 }
+Sprite "H03KA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/3/shotgun_0.png", 0, 0
+}
+Sprite "H03LA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/3/shotgun_1.png", 0, 0
+}
+Sprite "H03MA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/3/shotgun_2.png", 0, 0
+}
+Sprite "H03NA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/3/shotgun_3.png", 0, 0
+}
+Sprite "H03OA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/3/shotgun_4.png", 0, 0
+}
+Sprite "H03PA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/3/shotgun_3.png", 0, 0
+}
+Sprite "H03QA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/3/shotgun_2.png", 0, 0
+}
+Sprite "H03RA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03SA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03TA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03UA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03VA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03WA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H03ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H040A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H041A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H042A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH00.png", 0, 0
+}
+Sprite "H043A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH01.png", 0, 0
+}
+Sprite "H044A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH01.png", 0, 0
+}
+Sprite "H045A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/3/FH01.png", 0, 0
+}
+Sprite "H046A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H047A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H048A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H049A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H04AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H04BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H04CA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04DA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", 0, 0
+}
+Sprite "H04EA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/4/FH04.png", 0, 0
+}
+Sprite "H04FA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/4/FH05.png", 0, 0
+}
+Sprite "H04GA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/4/FH06.png", 0, 0
+}
+Sprite "H04HA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/4/FH07.png", 0, 0
+}
+Sprite "H04IA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/4/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H04JA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/4/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V4", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V4", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V4", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V4", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V4", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/4/FH03.png", -136, -154
+}
+Sprite "H04KA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V4", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V4", 118, 135
+    Graphic "CA_BOW_MIDDLE_V4", 138, 135
+    Graphic "CA_BOW_RING_V4", 137, 144
+    Graphic "CA_BOW_LITTLE_V4", 136, 154
+}
+Sprite "H04LA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/4/shield_A.png", 0, 0 }
+Sprite "H04LB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/4/shield_B.png", 0, 0 }
+Sprite "H04LC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/4/shield_C.png", 0, 0 }
+Sprite "H04LD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/4/shield_D.png", 0, 0 }
+Sprite "H04LH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/4/shield_H.png", 0, 0 }
+Sprite "H04LI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/4/shield_I.png", 0, 0 }
+Sprite "H04MA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/4/bolas.png", 1182, 760 }
+Sprite "H04NA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/4/shotgun_0.png", 0, 0
+}
+Sprite "H04OA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/4/shotgun_1.png", 0, 0
+}
+Sprite "H04PA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/4/shotgun_2.png", 0, 0
+}
+Sprite "H04QA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/4/shotgun_3.png", 0, 0
+}
+Sprite "H04RA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/4/shotgun_4.png", 0, 0
+}
+Sprite "H04SA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/4/shotgun_3.png", 0, 0
+}
+Sprite "H04TA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/4/shotgun_2.png", 0, 0
+}
+Sprite "H04UA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04VA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04WA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H04ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H050A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H051A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H052A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H053A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H054A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H055A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH00.png", 0, 0
+}
+Sprite "H056A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH01.png", 0, 0
+}
+Sprite "H057A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH01.png", 0, 0
+}
+Sprite "H058A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/4/FH01.png", 0, 0
+}
+Sprite "H059A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H05AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H05BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H05CA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H05DA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H05EA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H05FA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H05GA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", 0, 0
+}
+Sprite "H05HA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/5/FH04.png", 0, 0
+}
+Sprite "H05IA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/5/FH05.png", 0, 0
+}
+Sprite "H05JA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/5/FH06.png", 0, 0
+}
+Sprite "H05KA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/5/FH07.png", 0, 0
+}
+Sprite "H05LA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/5/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H05MA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/5/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V5", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V5", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V5", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V5", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V5", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/5/FH03.png", -136, -154
+}
+Sprite "H05NA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V5", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V5", 118, 135
+    Graphic "CA_BOW_MIDDLE_V5", 138, 135
+    Graphic "CA_BOW_RING_V5", 137, 144
+    Graphic "CA_BOW_LITTLE_V5", 136, 154
+}
+Sprite "H05OA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/5/shield_A.png", 0, 0 }
+Sprite "H05OB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/5/shield_B.png", 0, 0 }
+Sprite "H05OC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/5/shield_C.png", 0, 0 }
+Sprite "H05OD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/5/shield_D.png", 0, 0 }
+Sprite "H05OH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/5/shield_H.png", 0, 0 }
+Sprite "H05OI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/5/shield_I.png", 0, 0 }
+Sprite "H05PA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/5/bolas.png", 1182, 760 }
+Sprite "H05QA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/5/shotgun_0.png", 0, 0
+}
+Sprite "H05RA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/5/shotgun_1.png", 0, 0
+}
+Sprite "H05SA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/5/shotgun_2.png", 0, 0
+}
+Sprite "H05TA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/5/shotgun_3.png", 0, 0
+}
+Sprite "H05UA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/5/shotgun_4.png", 0, 0
+}
+Sprite "H05VA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/5/shotgun_3.png", 0, 0
+}
+Sprite "H05WA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/5/shotgun_2.png", 0, 0
+}
+Sprite "H05XA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H05YA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H05ZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H060A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H061A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H062A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H063A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H064A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H065A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H066A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H067A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H068A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH00.png", 0, 0
+}
+Sprite "H069A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH01.png", 0, 0
+}
+Sprite "H06AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH01.png", 0, 0
+}
+Sprite "H06BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/5/FH01.png", 0, 0
+}
+Sprite "H06CA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H06DA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H06EA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H06FA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H06GA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H06HA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H06IA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H06JA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", 0, 0
+}
+Sprite "H06KA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/6/FH04.png", 0, 0
+}
+Sprite "H06LA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/6/FH05.png", 0, 0
+}
+Sprite "H06MA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/6/FH06.png", 0, 0
+}
+Sprite "H06NA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/6/FH07.png", 0, 0
+}
+Sprite "H06OA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/6/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H06PA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/6/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V6", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V6", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V6", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V6", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V6", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/6/FH03.png", -136, -154
+}
+Sprite "H06QA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V6", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V6", 118, 135
+    Graphic "CA_BOW_MIDDLE_V6", 138, 135
+    Graphic "CA_BOW_RING_V6", 137, 144
+    Graphic "CA_BOW_LITTLE_V6", 136, 154
+}
+Sprite "H06RA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/6/shield_A.png", 0, 0 }
+Sprite "H06RB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/6/shield_B.png", 0, 0 }
+Sprite "H06RC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/6/shield_C.png", 0, 0 }
+Sprite "H06RD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/6/shield_D.png", 0, 0 }
+Sprite "H06RH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/6/shield_H.png", 0, 0 }
+Sprite "H06RI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/6/shield_I.png", 0, 0 }
+Sprite "H06SA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/6/bolas.png", 1182, 760 }
+Sprite "H06TA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/6/shotgun_0.png", 0, 0
+}
+Sprite "H06UA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/6/shotgun_1.png", 0, 0
+}
+Sprite "H06VA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/6/shotgun_2.png", 0, 0
+}
+Sprite "H06WA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/6/shotgun_3.png", 0, 0
+}
+Sprite "H06XA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/6/shotgun_4.png", 0, 0
+}
+Sprite "H06YA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/6/shotgun_3.png", 0, 0
+}
+Sprite "H06ZA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/6/shotgun_2.png", 0, 0
+}
+Sprite "H070A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H071A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H072A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H073A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H074A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H075A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H076A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H077A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H078A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H079A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H07AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H07BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH00.png", 0, 0
+}
+Sprite "H07CA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH01.png", 0, 0
+}
+Sprite "H07DA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH01.png", 0, 0
+}
+Sprite "H07EA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/6/FH01.png", 0, 0
+}
+Sprite "H07FA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H07GA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H07HA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H07IA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H07JA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H07KA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H07LA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H07MA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", 0, 0
+}
+Sprite "H07NA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/7/FH04.png", 0, 0
+}
+Sprite "H07OA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/7/FH05.png", 0, 0
+}
+Sprite "H07PA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/7/FH06.png", 0, 0
+}
+Sprite "H07QA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/7/FH07.png", 0, 0
+}
+Sprite "H07RA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/7/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H07SA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/7/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V7", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V7", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V7", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V7", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V7", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/7/FH03.png", -136, -154
+}
+Sprite "H07TA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V7", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V7", 118, 135
+    Graphic "CA_BOW_MIDDLE_V7", 138, 135
+    Graphic "CA_BOW_RING_V7", 137, 144
+    Graphic "CA_BOW_LITTLE_V7", 136, 154
+}
+Sprite "H07UA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/7/shield_A.png", 0, 0 }
+Sprite "H07UB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/7/shield_B.png", 0, 0 }
+Sprite "H07UC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/7/shield_C.png", 0, 0 }
+Sprite "H07UD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/7/shield_D.png", 0, 0 }
+Sprite "H07UH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/7/shield_H.png", 0, 0 }
+Sprite "H07UI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/7/shield_I.png", 0, 0 }
+Sprite "H07VA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/7/bolas.png", 1182, 760 }
+Sprite "H07WA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/7/shotgun_0.png", 0, 0
+}
+Sprite "H07XA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/7/shotgun_1.png", 0, 0
+}
+Sprite "H07YA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/7/shotgun_2.png", 0, 0
+}
+Sprite "H07ZA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/7/shotgun_3.png", 0, 0
+}
+Sprite "H080A0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/7/shotgun_4.png", 0, 0
+}
+Sprite "H081A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/7/shotgun_3.png", 0, 0
+}
+Sprite "H082A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/7/shotgun_2.png", 0, 0
+}
+Sprite "H083A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H084A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H085A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H086A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H087A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H088A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H089A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08CA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08DA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08EA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH00.png", 0, 0
+}
+Sprite "H08FA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH01.png", 0, 0
+}
+Sprite "H08GA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH01.png", 0, 0
+}
+Sprite "H08HA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/7/FH01.png", 0, 0
+}
+Sprite "H08IA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H08JA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H08KA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H08LA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H08MA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H08NA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H08OA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H08PA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", 0, 0
+}
+Sprite "H08QA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/8/FH04.png", 0, 0
+}
+Sprite "H08RA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/8/FH05.png", 0, 0
+}
+Sprite "H08SA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/8/FH06.png", 0, 0
+}
+Sprite "H08TA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/8/FH07.png", 0, 0
+}
+Sprite "H08UA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/8/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H08VA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/8/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V8", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V8", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V8", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V8", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V8", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/8/FH03.png", -136, -154
+}
+Sprite "H08WA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V8", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V8", 118, 135
+    Graphic "CA_BOW_MIDDLE_V8", 138, 135
+    Graphic "CA_BOW_RING_V8", 137, 144
+    Graphic "CA_BOW_LITTLE_V8", 136, 154
+}
+Sprite "H08XA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/8/shield_A.png", 0, 0 }
+Sprite "H08XB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/8/shield_B.png", 0, 0 }
+Sprite "H08XC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/8/shield_C.png", 0, 0 }
+Sprite "H08XD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/8/shield_D.png", 0, 0 }
+Sprite "H08XH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/8/shield_H.png", 0, 0 }
+Sprite "H08XI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/8/shield_I.png", 0, 0 }
+Sprite "H08YA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/8/bolas.png", 1182, 760 }
+Sprite "H08ZA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/8/shotgun_0.png", 0, 0
+}
+Sprite "H090A0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/8/shotgun_1.png", 0, 0
+}
+Sprite "H091A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/8/shotgun_2.png", 0, 0
+}
+Sprite "H092A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/8/shotgun_3.png", 0, 0
+}
+Sprite "H093A0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/8/shotgun_4.png", 0, 0
+}
+Sprite "H094A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/8/shotgun_3.png", 0, 0
+}
+Sprite "H095A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/8/shotgun_2.png", 0, 0
+}
+Sprite "H096A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H097A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H098A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H099A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09AA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09BA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09CA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09DA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09EA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09FA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09GA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09HA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH00.png", 0, 0
+}
+Sprite "H09IA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH01.png", 0, 0
+}
+Sprite "H09JA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH01.png", 0, 0
+}
+Sprite "H09KA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/8/FH01.png", 0, 0
+}
+Sprite "H09LA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H09MA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H09NA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H09OA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H09PA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H09QA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H09RA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H09SA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", 0, 0
+}
+Sprite "H09TA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/9/FH04.png", 0, 0
+}
+Sprite "H09UA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/9/FH05.png", 0, 0
+}
+Sprite "H09VA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/9/FH06.png", 0, 0
+}
+Sprite "H09WA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/9/FH07.png", 0, 0
+}
+Sprite "H09XA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/9/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H09YA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/9/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V9", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V9", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V9", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V9", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V9", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/9/FH03.png", -136, -154
+}
+Sprite "H09ZA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V9", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V9", 118, 135
+    Graphic "CA_BOW_MIDDLE_V9", 138, 135
+    Graphic "CA_BOW_RING_V9", 137, 144
+    Graphic "CA_BOW_LITTLE_V9", 136, 154
+}
+Sprite "H0A0A0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/9/shield_A.png", 0, 0 }
+Sprite "H0A0B0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/9/shield_B.png", 0, 0 }
+Sprite "H0A0C0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/9/shield_C.png", 0, 0 }
+Sprite "H0A0D0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/9/shield_D.png", 0, 0 }
+Sprite "H0A0H0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/9/shield_H.png", 0, 0 }
+Sprite "H0A0I0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/9/shield_I.png", 0, 0 }
+Sprite "H0A1A0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/9/bolas.png", 1182, 760 }
+Sprite "H0A2A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/9/shotgun_0.png", 0, 0
+}
+Sprite "H0A3A0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/9/shotgun_1.png", 0, 0
+}
+Sprite "H0A4A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/9/shotgun_2.png", 0, 0
+}
+Sprite "H0A5A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/9/shotgun_3.png", 0, 0
+}
+Sprite "H0A6A0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/9/shotgun_4.png", 0, 0
+}
+Sprite "H0A7A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/9/shotgun_3.png", 0, 0
+}
+Sprite "H0A8A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/9/shotgun_2.png", 0, 0
+}
+Sprite "H0A9A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AAA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0ABA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0ACA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0ADA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AEA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AFA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AGA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AHA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AIA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AJA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0AKA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH00.png", 0, 0
+}
+Sprite "H0ALA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH01.png", 0, 0
+}
+Sprite "H0AMA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH01.png", 0, 0
+}
+Sprite "H0ANA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/9/FH01.png", 0, 0
+}
+Sprite "H0AOA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0APA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0AQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0ARA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0ASA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0ATA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0AUA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0AVA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", 0, 0
+}
+Sprite "H0AWA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/10/FH04.png", 0, 0
+}
+Sprite "H0AXA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/10/FH05.png", 0, 0
+}
+Sprite "H0AYA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/10/FH06.png", 0, 0
+}
+Sprite "H0AZA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/10/FH07.png", 0, 0
+}
+Sprite "H0B0A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/10/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0B1A0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/10/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V10", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V10", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V10", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V10", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V10", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/10/FH03.png", -136, -154
+}
+Sprite "H0B2A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V10", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V10", 118, 135
+    Graphic "CA_BOW_MIDDLE_V10", 138, 135
+    Graphic "CA_BOW_RING_V10", 137, 144
+    Graphic "CA_BOW_LITTLE_V10", 136, 154
+}
+Sprite "H0B3A0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/10/shield_A.png", 0, 0 }
+Sprite "H0B3B0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/10/shield_B.png", 0, 0 }
+Sprite "H0B3C0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/10/shield_C.png", 0, 0 }
+Sprite "H0B3D0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/10/shield_D.png", 0, 0 }
+Sprite "H0B3H0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/10/shield_H.png", 0, 0 }
+Sprite "H0B3I0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/10/shield_I.png", 0, 0 }
+Sprite "H0B4A0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/10/bolas.png", 1182, 760 }
+Sprite "H0B5A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/10/shotgun_0.png", 0, 0
+}
+Sprite "H0B6A0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/10/shotgun_1.png", 0, 0
+}
+Sprite "H0B7A0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/10/shotgun_2.png", 0, 0
+}
+Sprite "H0B8A0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/10/shotgun_3.png", 0, 0
+}
+Sprite "H0B9A0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/10/shotgun_4.png", 0, 0
+}
+Sprite "H0BAA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/10/shotgun_3.png", 0, 0
+}
+Sprite "H0BBA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/10/shotgun_2.png", 0, 0
+}
+Sprite "H0BCA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BDA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BEA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BFA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BGA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BHA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BIA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BJA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BKA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BLA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BMA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BNA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH00.png", 0, 0
+}
+Sprite "H0BOA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH01.png", 0, 0
+}
+Sprite "H0BPA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH01.png", 0, 0
+}
+Sprite "H0BQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/10/FH01.png", 0, 0
+}
+Sprite "H0BRA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0BSA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0BTA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0BUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0BVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0BWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0BXA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0BYA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", 0, 0
+}
+Sprite "H0BZA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/11/FH04.png", 0, 0
+}
+Sprite "H0C0A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/11/FH05.png", 0, 0
+}
+Sprite "H0C1A0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/11/FH06.png", 0, 0
+}
+Sprite "H0C2A0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/11/FH07.png", 0, 0
+}
+Sprite "H0C3A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/11/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0C4A0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/11/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V11", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V11", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V11", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V11", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V11", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/11/FH03.png", -136, -154
+}
+Sprite "H0C5A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V11", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V11", 118, 135
+    Graphic "CA_BOW_MIDDLE_V11", 138, 135
+    Graphic "CA_BOW_RING_V11", 137, 144
+    Graphic "CA_BOW_LITTLE_V11", 136, 154
+}
+Sprite "H0C6A0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/11/shield_A.png", 0, 0 }
+Sprite "H0C6B0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/11/shield_B.png", 0, 0 }
+Sprite "H0C6C0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/11/shield_C.png", 0, 0 }
+Sprite "H0C6D0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/11/shield_D.png", 0, 0 }
+Sprite "H0C6H0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/11/shield_H.png", 0, 0 }
+Sprite "H0C6I0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/11/shield_I.png", 0, 0 }
+Sprite "H0C7A0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/11/bolas.png", 1182, 760 }
+Sprite "H0C8A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/11/shotgun_0.png", 0, 0
+}
+Sprite "H0C9A0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/11/shotgun_1.png", 0, 0
+}
+Sprite "H0CAA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/11/shotgun_2.png", 0, 0
+}
+Sprite "H0CBA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/11/shotgun_3.png", 0, 0
+}
+Sprite "H0CCA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/11/shotgun_4.png", 0, 0
+}
+Sprite "H0CDA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/11/shotgun_3.png", 0, 0
+}
+Sprite "H0CEA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/11/shotgun_2.png", 0, 0
+}
+Sprite "H0CFA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CGA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CHA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CIA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CJA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CKA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CLA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CMA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CNA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0COA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CPA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH00.png", 0, 0
+}
+Sprite "H0CRA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH01.png", 0, 0
+}
+Sprite "H0CSA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH01.png", 0, 0
+}
+Sprite "H0CTA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/11/FH01.png", 0, 0
+}
+Sprite "H0CUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0CVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0CWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0CXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0CYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0CZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0D0A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0D1A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", 0, 0
+}
+Sprite "H0D2A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/12/FH04.png", 0, 0
+}
+Sprite "H0D3A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/12/FH05.png", 0, 0
+}
+Sprite "H0D4A0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/12/FH06.png", 0, 0
+}
+Sprite "H0D5A0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/12/FH07.png", 0, 0
+}
+Sprite "H0D6A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/12/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0D7A0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/12/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V12", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V12", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V12", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V12", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V12", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/12/FH03.png", -136, -154
+}
+Sprite "H0D8A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V12", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V12", 118, 135
+    Graphic "CA_BOW_MIDDLE_V12", 138, 135
+    Graphic "CA_BOW_RING_V12", 137, 144
+    Graphic "CA_BOW_LITTLE_V12", 136, 154
+}
+Sprite "H0D9A0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/12/shield_A.png", 0, 0 }
+Sprite "H0D9B0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/12/shield_B.png", 0, 0 }
+Sprite "H0D9C0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/12/shield_C.png", 0, 0 }
+Sprite "H0D9D0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/12/shield_D.png", 0, 0 }
+Sprite "H0D9H0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/12/shield_H.png", 0, 0 }
+Sprite "H0D9I0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/12/shield_I.png", 0, 0 }
+Sprite "H0DAA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/12/bolas.png", 1182, 760 }
+Sprite "H0DBA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/12/shotgun_0.png", 0, 0
+}
+Sprite "H0DCA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/12/shotgun_1.png", 0, 0
+}
+Sprite "H0DDA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/12/shotgun_2.png", 0, 0
+}
+Sprite "H0DEA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/12/shotgun_3.png", 0, 0
+}
+Sprite "H0DFA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/12/shotgun_4.png", 0, 0
+}
+Sprite "H0DGA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/12/shotgun_3.png", 0, 0
+}
+Sprite "H0DHA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/12/shotgun_2.png", 0, 0
+}
+Sprite "H0DIA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DJA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DKA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DLA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DMA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DNA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DOA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DPA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DRA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DSA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DTA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH00.png", 0, 0
+}
+Sprite "H0DUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH01.png", 0, 0
+}
+Sprite "H0DVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH01.png", 0, 0
+}
+Sprite "H0DWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/12/FH01.png", 0, 0
+}
+Sprite "H0DXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0DYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0DZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0E0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0E1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0E2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0E3A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0E4A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", 0, 0
+}
+Sprite "H0E5A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/13/FH04.png", 0, 0
+}
+Sprite "H0E6A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/13/FH05.png", 0, 0
+}
+Sprite "H0E7A0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/13/FH06.png", 0, 0
+}
+Sprite "H0E8A0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/13/FH07.png", 0, 0
+}
+Sprite "H0E9A0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/13/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0EAA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/13/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V13", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V13", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V13", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V13", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V13", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/13/FH03.png", -136, -154
+}
+Sprite "H0EBA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V13", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V13", 118, 135
+    Graphic "CA_BOW_MIDDLE_V13", 138, 135
+    Graphic "CA_BOW_RING_V13", 137, 144
+    Graphic "CA_BOW_LITTLE_V13", 136, 154
+}
+Sprite "H0ECA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/13/shield_A.png", 0, 0 }
+Sprite "H0ECB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/13/shield_B.png", 0, 0 }
+Sprite "H0ECC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/13/shield_C.png", 0, 0 }
+Sprite "H0ECD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/13/shield_D.png", 0, 0 }
+Sprite "H0ECH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/13/shield_H.png", 0, 0 }
+Sprite "H0ECI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/13/shield_I.png", 0, 0 }
+Sprite "H0EDA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/13/bolas.png", 1182, 760 }
+Sprite "H0EEA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/13/shotgun_0.png", 0, 0
+}
+Sprite "H0EFA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/13/shotgun_1.png", 0, 0
+}
+Sprite "H0EGA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/13/shotgun_2.png", 0, 0
+}
+Sprite "H0EHA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/13/shotgun_3.png", 0, 0
+}
+Sprite "H0EIA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/13/shotgun_4.png", 0, 0
+}
+Sprite "H0EJA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/13/shotgun_3.png", 0, 0
+}
+Sprite "H0EKA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/13/shotgun_2.png", 0, 0
+}
+Sprite "H0ELA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EMA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0ENA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EOA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EPA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0ERA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0ESA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0ETA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH00.png", 0, 0
+}
+Sprite "H0EXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH01.png", 0, 0
+}
+Sprite "H0EYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH01.png", 0, 0
+}
+Sprite "H0EZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/13/FH01.png", 0, 0
+}
+Sprite "H0F0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0F1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0F2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0F3A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0F4A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0F5A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0F6A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0F7A0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", 0, 0
+}
+Sprite "H0F8A0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/14/FH04.png", 0, 0
+}
+Sprite "H0F9A0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/14/FH05.png", 0, 0
+}
+Sprite "H0FAA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/14/FH06.png", 0, 0
+}
+Sprite "H0FBA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/14/FH07.png", 0, 0
+}
+Sprite "H0FCA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/14/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0FDA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/14/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V14", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V14", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V14", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V14", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V14", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/14/FH03.png", -136, -154
+}
+Sprite "H0FEA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V14", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V14", 118, 135
+    Graphic "CA_BOW_MIDDLE_V14", 138, 135
+    Graphic "CA_BOW_RING_V14", 137, 144
+    Graphic "CA_BOW_LITTLE_V14", 136, 154
+}
+Sprite "H0FFA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/14/shield_A.png", 0, 0 }
+Sprite "H0FFB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/14/shield_B.png", 0, 0 }
+Sprite "H0FFC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/14/shield_C.png", 0, 0 }
+Sprite "H0FFD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/14/shield_D.png", 0, 0 }
+Sprite "H0FFH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/14/shield_H.png", 0, 0 }
+Sprite "H0FFI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/14/shield_I.png", 0, 0 }
+Sprite "H0FGA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/14/bolas.png", 1182, 760 }
+Sprite "H0FHA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/14/shotgun_0.png", 0, 0
+}
+Sprite "H0FIA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/14/shotgun_1.png", 0, 0
+}
+Sprite "H0FJA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/14/shotgun_2.png", 0, 0
+}
+Sprite "H0FKA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/14/shotgun_3.png", 0, 0
+}
+Sprite "H0FLA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/14/shotgun_4.png", 0, 0
+}
+Sprite "H0FMA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/14/shotgun_3.png", 0, 0
+}
+Sprite "H0FNA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/14/shotgun_2.png", 0, 0
+}
+Sprite "H0FOA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FPA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FQA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FRA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FSA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FTA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0FZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH00.png", 0, 0
+}
+Sprite "H0G0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH01.png", 0, 0
+}
+Sprite "H0G1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH01.png", 0, 0
+}
+Sprite "H0G2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/14/FH01.png", 0, 0
+}
+Sprite "H0G3A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0G4A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0G5A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0G6A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0G7A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0G8A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0G9A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GAA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", 0, 0
+}
+Sprite "H0GBA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/15/FH04.png", 0, 0
+}
+Sprite "H0GCA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/15/FH05.png", 0, 0
+}
+Sprite "H0GDA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/15/FH06.png", 0, 0
+}
+Sprite "H0GEA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/15/FH07.png", 0, 0
+}
+Sprite "H0GFA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/15/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0GGA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/15/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V15", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V15", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V15", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V15", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V15", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/15/FH03.png", -136, -154
+}
+Sprite "H0GHA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V15", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V15", 118, 135
+    Graphic "CA_BOW_MIDDLE_V15", 138, 135
+    Graphic "CA_BOW_RING_V15", 137, 144
+    Graphic "CA_BOW_LITTLE_V15", 136, 154
+}
+Sprite "H0GIA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/15/shield_A.png", 0, 0 }
+Sprite "H0GIB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/15/shield_B.png", 0, 0 }
+Sprite "H0GIC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/15/shield_C.png", 0, 0 }
+Sprite "H0GID0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/15/shield_D.png", 0, 0 }
+Sprite "H0GIH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/15/shield_H.png", 0, 0 }
+Sprite "H0GII0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/15/shield_I.png", 0, 0 }
+Sprite "H0GJA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/15/bolas.png", 1182, 760 }
+Sprite "H0GKA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/15/shotgun_0.png", 0, 0
+}
+Sprite "H0GLA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/15/shotgun_1.png", 0, 0
+}
+Sprite "H0GMA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/15/shotgun_2.png", 0, 0
+}
+Sprite "H0GNA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/15/shotgun_3.png", 0, 0
+}
+Sprite "H0GOA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/15/shotgun_4.png", 0, 0
+}
+Sprite "H0GPA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/15/shotgun_3.png", 0, 0
+}
+Sprite "H0GQA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/15/shotgun_2.png", 0, 0
+}
+Sprite "H0GRA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GSA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GTA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0GZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0H0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0H1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0H2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH00.png", 0, 0
+}
+Sprite "H0H3A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH01.png", 0, 0
+}
+Sprite "H0H4A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH01.png", 0, 0
+}
+Sprite "H0H5A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/15/FH01.png", 0, 0
+}
+Sprite "H0H6A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0H7A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0H8A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0H9A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0HAA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0HBA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0HCA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HDA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", 0, 0
+}
+Sprite "H0HEA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/16/FH04.png", 0, 0
+}
+Sprite "H0HFA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/16/FH05.png", 0, 0
+}
+Sprite "H0HGA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/16/FH06.png", 0, 0
+}
+Sprite "H0HHA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/16/FH07.png", 0, 0
+}
+Sprite "H0HIA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/16/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0HJA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/16/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V16", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V16", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V16", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V16", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V16", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/16/FH03.png", -136, -154
+}
+Sprite "H0HKA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V16", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V16", 118, 135
+    Graphic "CA_BOW_MIDDLE_V16", 138, 135
+    Graphic "CA_BOW_RING_V16", 137, 144
+    Graphic "CA_BOW_LITTLE_V16", 136, 154
+}
+Sprite "H0HLA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/16/shield_A.png", 0, 0 }
+Sprite "H0HLB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/16/shield_B.png", 0, 0 }
+Sprite "H0HLC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/16/shield_C.png", 0, 0 }
+Sprite "H0HLD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/16/shield_D.png", 0, 0 }
+Sprite "H0HLH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/16/shield_H.png", 0, 0 }
+Sprite "H0HLI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/16/shield_I.png", 0, 0 }
+Sprite "H0HMA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/16/bolas.png", 1182, 760 }
+Sprite "H0HNA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/16/shotgun_0.png", 0, 0
+}
+Sprite "H0HOA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/16/shotgun_1.png", 0, 0
+}
+Sprite "H0HPA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/16/shotgun_2.png", 0, 0
+}
+Sprite "H0HQA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/16/shotgun_3.png", 0, 0
+}
+Sprite "H0HRA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/16/shotgun_4.png", 0, 0
+}
+Sprite "H0HSA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/16/shotgun_3.png", 0, 0
+}
+Sprite "H0HTA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/16/shotgun_2.png", 0, 0
+}
+Sprite "H0HUA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HVA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HWA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0HZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I3A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I4A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I5A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH00.png", 0, 0
+}
+Sprite "H0I6A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH01.png", 0, 0
+}
+Sprite "H0I7A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH01.png", 0, 0
+}
+Sprite "H0I8A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/16/FH01.png", 0, 0
+}
+Sprite "H0I9A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0IAA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0IBA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0ICA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0IDA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0IEA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}
+Sprite "H0IFA0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0IGA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", 0, 0
+}
+Sprite "H0IHA0", 320, 200
+{
+    NoTrim
+    Offset 161, 168
+    Patch "graphics/caelum/appearance/hands/17/FH04.png", 0, 0
+}
+Sprite "H0IIA0", 320, 200
+{
+    NoTrim
+    Offset 184, 174
+    Patch "graphics/caelum/appearance/hands/17/FH05.png", 0, 0
+}
+Sprite "H0IJA0", 320, 200
+{
+    NoTrim
+    Offset 142, 153
+    Patch "graphics/caelum/appearance/hands/17/FH06.png", 0, 0
+}
+Sprite "H0IKA0", 320, 200
+{
+    NoTrim
+    Offset 208, 170
+    Patch "graphics/caelum/appearance/hands/17/FH07.png", 0, 0
+}
+Sprite "H0ILA0", 320, 200
+{
+    NoTrim
+    Offset 84, 125
+    Patch "graphics/caelum/appearance/hands/17/FH01.png", 0, 0 { FlipX }
+}
+Sprite "H0IMA0", 320, 200
+{
+    NoTrim
+    Offset 236, 125
+    Patch "graphics/caelum/appearance/hands/17/FH01.png", 0, 0
+}
+Graphic "CA_BOW_THUMB_TOP_V17", 32, 15
+{
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", -118, -120
+}
+Graphic "CA_BOW_THUMB_BASE_V17", 20, 4
+{
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", -118, -135
+}
+Graphic "CA_BOW_MIDDLE_V17", 21, 9
+{
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", -138, -135
+}
+Graphic "CA_BOW_RING_V17", 20, 10
+{
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", -137, -144
+}
+Graphic "CA_BOW_LITTLE_V17", 18, 10
+{
+    Patch "graphics/caelum/appearance/hands/17/FH03.png", -136, -154
+}
+Sprite "H0INA0", 320, 200
+{
+    NoTrim
+    Offset 141, 139
+    Graphic "CA_BOW_THUMB_TOP_V17", 118, 120
+    Graphic "CA_BOW_THUMB_BASE_V17", 118, 135
+    Graphic "CA_BOW_MIDDLE_V17", 138, 135
+    Graphic "CA_BOW_RING_V17", 137, 144
+    Graphic "CA_BOW_LITTLE_V17", 136, 154
+}
+Sprite "H0IOA0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/17/shield_A.png", 0, 0 }
+Sprite "H0IOB0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/17/shield_B.png", 0, 0 }
+Sprite "H0IOC0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/17/shield_C.png", 0, 0 }
+Sprite "H0IOD0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/17/shield_D.png", 0, 0 }
+Sprite "H0IOH0", 320, 200
+{ NoTrim Offset 160, 32 Patch "graphics/caelum/appearance/hands/17/shield_H.png", 0, 0 }
+Sprite "H0IOI0", 450, 300
+{ NoTrim Offset 225, 48 Patch "graphics/caelum/appearance/hands/17/shield_I.png", 0, 0 }
+Sprite "H0IPA0", 2240, 2800 { XScale 7 YScale 7 NoTrim Offset 1512, 1120 Patch "graphics/caelum/appearance/hands/17/bolas.png", 1182, 760 }
+Sprite "H0IQA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/appearance/hands/17/shotgun_0.png", 0, 0
+}
+Sprite "H0IRA0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/appearance/hands/17/shotgun_1.png", 0, 0
+}
+Sprite "H0ISA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/17/shotgun_2.png", 0, 0
+}
+Sprite "H0ITA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/17/shotgun_3.png", 0, 0
+}
+Sprite "H0IUA0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/appearance/hands/17/shotgun_4.png", 0, 0
+}
+Sprite "H0IVA0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/appearance/hands/17/shotgun_3.png", 0, 0
+}
+Sprite "H0IWA0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/appearance/hands/17/shotgun_2.png", 0, 0
+}
+Sprite "H0IXA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F041A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0IYA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F042A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0IZA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/javelin/F043A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J0A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F081A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J1A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F082A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J2A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/spear/F083A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J3A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F121A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J4A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F122A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J5A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/staff/F123A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J6A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J7A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J8A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH00.png", 0, 0
+}
+Sprite "H0J9A0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F141A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH01.png", 0, 0
+}
+Sprite "H0JAA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F142A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH01.png", 0, 0
+}
+Sprite "H0JBA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "sprites/caelum/first_person/v1/bell/F143A0.png", 0, 0
+    Patch "graphics/caelum/appearance/hands/17/FH01.png", 0, 0
+}
+Sprite "H0JCA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0
+}
+Sprite "H0JDA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0
+}
+Sprite "H0JEA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0
+}
+Sprite "H0JFA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F151B0.png", 0, 0
+}
+Sprite "H0JGA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F152B0.png", 0, 0
+}
+Sprite "H0JHA0", 320, 200
+{
+    NoTrim
+    Offset 160, 32
+    Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0
+    Patch "sprites/caelum/first_person/v1/book/F153B0.png", 0, 0
+}

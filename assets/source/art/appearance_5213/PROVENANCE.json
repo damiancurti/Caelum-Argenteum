@@ -1,0 +1,243 @@
+{
+  "issue": 148,
+  "tool": "image_gen.imagegen (built-in)",
+  "status": "Integrated modular source catalogue for #148; author visual acceptance pending",
+  "generated_date": "2026-10-11",
+  "assets": [
+    {
+      "file": "human_female_idle_v1.png",
+      "reference": "src/sprites/caelum/domingo/DOIDA1.png",
+      "prompt": "Use case: stylized-concept. Project asset: Caelum Argenteum, female human player sprite turnaround, matching the attached authored Domingo sprite's painterly pixel-art dark-fantasy style, proportions of equipment and rendering detail. Generate a NEW adult female human counterpart, NOT the same man. She wears the same practical closed steel armor, dark blue cloak and red neck scarf, brown leather gloves and boots. Natural adult female facial anatomy, dark brown shoulder-length hair, no sexualized armor. Preserve round sun-emblem shield on anatomical left forearm and sword in anatomical right hand, pointed down. Output a production sprite sheet with precisely 8 full-body views in a perfectly regular grid: 4 columns, 2 rows; each view centered within its own equal-size cell with feet aligned at the same baseline and consistent body scale. Row 1 views: front, front-left three-quarter, left profile, rear-left three-quarter. Row 2: back, rear-right three-quarter, right profile, front-right three-quarter. Anatomical left/right equipment must rotate with the body; never swap hands. Neutral alert standing pose, knees straight, breathing relaxed. Completely transparent background, alpha preserved, no floor, no scene, no labels, no text, no grid lines, no extra weapons, no cropping or overlaps. Highest available resolution, generous transparent gutters. This sheet will be cut into native GZDoom sprite directions. Reference image is for costume/style only; produce distinct female anatomy and a consistent face across directions.",
+      "status": "Head module used; armored costume is discarded",
+      "sha256": "c2b285bb305eb7167f3ee245e699f7f8c6f6210b77ece5db1ebe75be5af528c5"
+    },
+    {
+      "file": "caelith_female_idle_v1.png",
+      "reference": "src/sprites/caelum/ronnie/ROIDA1.png",
+      "prompt": "Use case: stylized-concept. Project asset for Caelum Argenteum: adult FEMALE Caelith player sprite sheet, matching the attached authored Ronnie sprite as the species/anatomy and clothing style reference. Caelith are the lunar humanoid species depicted in this reference: pale gray-lavender skin, long pointed ears, very light silver hair, slender humanlike body; do not turn her into a human or animal. Create a distinct adult female counterpart with a consistent face, same practical dark blue coat/leather travel armor, trousers, boots and gloves as reference. Closed practical clothing, no exposed cleavage. Relaxed standing pose, hands empty and visible at sides; no bow, no crossbow, no sword, no shield or staff. Highest available resolution. Precisely 8 full-body turnaround views on a genuinely transparent background, 4 columns by 2 rows in equal cells, consistent scale and aligned feet. Row one: FRONT, view from her LEFT FRONT (45 degrees), LEFT SIDE (90 degrees), LEFT REAR (135 degrees). Row two: BACK (180 degrees), RIGHT REAR (225 degrees), RIGHT SIDE (270 degrees), RIGHT FRONT (315 degrees). Each direction must be geometrically distinct. Keep long silver hair and pointed ears consistent. Preserve the dark painterly pixel-art fantasy rendering of the reference. Soft neutral consistent illumination, no floor, no cast shadows on background, no labels, no letters, no borders, no grid, no overlaps, transparent gutters. The image is a costume/species/style reference, not a request to reuse the male character's identity.",
+      "status": "Discarded costume draft; author requires plain clothes and empty hands",
+      "sha256": "ad519c13fe72801c2dcfcd1cfd6eceafa68295862476af0c5ef8f1ce7aa39e0e"
+    },
+    {
+      "file": "human_male_plain_v1.png",
+      "reference": "src/sprites/caelum/domingo/DOIDA1.png",
+      "prompt": "Use case: stylized-concept. Create a production game sprite sheet for Caelum Argenteum. The reference establishes only painterly pixel-art rendering and the adult male human's face, dark shoulder-length hair and beard. AUTHOR CHANGE: SIMPLE CLOTHES AND EMPTY HANDS. Remove every weapon, shield, plate, chainmail and armor piece. Dress him in a plain worn off-white long-sleeved linen shirt, simple dark charcoal trousers, plain brown leather belt, plain brown leather boots and closed brown leather gloves. No cape, no hat, no added accessories. Neutral upright relaxed pose with arms by the sides. Full-body adult male human, normal realistic anatomy, not muscular superhero. Precisely EIGHT consistent turnaround views, regular FOUR-column TWO-row grid. Read left to right: front; left-front 45 degrees; left profile; left-rear 135 degrees; back; right-rear 225 degrees; right profile; right-front 315 degrees. Each is a physically distinct angle, and the entire torso and feet rotate as well as the head. Same body dimensions, costume, face and scale in all cells; feet on matching cell baselines with generous transparent gutters. Transparent background with genuine alpha, no ground shadows or scene, no grid lines, captions or text. Dark fantasy painterly sprite detail as reference, warm neutral light, no weapons anywhere. Highest available resolution. This is the unarmed initial player appearance, not a portrait or concept illustration.",
+      "status": "Integrated source for deterministic modular decomposition",
+      "sha256": "b9889ef3b5b796869270ad7527894c4f70c0850723e9da7fabaabaee5f57cdfb"
+    },
+    {
+      "file": "body_plain_module_v1.png",
+      "reference": "assets/source/art/appearance_5213/human_male_plain_v1.png",
+      "prompt": "Use case: precise-object-edit. Production MODULAR sprite asset for Caelum Argenteum. Edit the attached eight-view sheet into ONE reusable CLOTHED BODY MODULE sheet: remove the entire head, all hair, beard and visible neck/skin in every cell, leaving an empty TRANSPARENT neck opening at the shirt collar. This is a disassembled game-art/clothing mannequin module, absolutely NO blood, wounds, severed anatomy or gore. Preserve the plain off-white linen shirt, dark charcoal trousers, leather belt, brown boots and brown closed gloves, the body proportions, eight exact viewing directions, aligned feet, same 4-column x 2-row grid and body poses. Cleanly reconstruct small bits of collar/shoulder fabric previously hidden behind the long hair. Hands remain relaxed at the sides and fully gloved. No weapons, armor or other additions. Keep the exact original painterly sprite shading/color/style, transparent background with genuine alpha, no scene, floor or cast background shadows, no labels or grid lines. The missing head will be supplied by a SEPARATE head/skin module in the engine; do not draw a placeholder head, neck stump, skin, mannequin peg or black shape. Every body must be complete from empty fabric collar to boot soles. Consistent scale, uniform cell centers and bottom baselines, generous transparent gutters.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "de855ed092f7e37aa8417a52b0254dab85d1544378b7f2906cc0159c0e2910e3"
+    },
+    {
+      "file": "wolf_male_head_v1.png",
+      "reference": "src/sprites/caelum/rulo/RUIDA1.png",
+      "prompt": "Use case: stylized-concept. Game-art modular asset for Caelum Argenteum, painterly pixel-art dark-fantasy rendering like the attached authored Rulo reference. Create a NEW adult MALE anthropomorphic WOLF head module, not a bear. Intelligent calm alert expression, anatomically lupine long muzzle, upright triangular wolf ears, gray/taupe/cream natural wolf fur, dark nose, amber-brown eyes; no human hair, human skin or facial beard, no accessories or clothing. Only the HEAD WITH SHORT FURRED NECK for attachment to a separate clothed body; an isolated painted game sprite component, no severing or gore. Exactly eight geometrically distinct views, four equal columns by two rows: front, left-front 45 degrees, left profile, left-rear 135 degrees, back, right-rear 225 degrees, right profile, right-front 315 degrees. Entire head rotates, including muzzle and ears. Identical identity, proportions, neutral expression and fur markings across all directions. Necks end at consistent baseline within each cell; consistent scale and generous transparent gutters. Genuine transparent background/alpha, no scene, shadows outside the module, text, grid, labels, collar or body. Crisp painterly sprite detail with neutral warm illumination, highest available resolution. Existing reference supplies art style only, not species or outfit.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "8663415a97dc5eee3a9db9047a7c29a89b6093b5e06f1fdf66efdd5ed38e4711"
+    },
+    {
+      "file": "goblin_male_head_v1.png",
+      "reference": "src/sprites/caelum/caella/CAELA1.png",
+      "prompt": "Use case: stylized-concept. Modular game sprite asset for Caelum Argenteum. Create an adult MALE GOBLIN HEAD AND SHORT NECK ONLY, matching the attached female goblin's species (long pointed ears, small humanlike face, natural warm brown skin, dark brown hair) and dark painterly pixel-art nineteenth-century Argentine fantasy style. Male adult face, short dark tousled hair, modest sideburns; no hat, no armor, no clothing, no body. The image is a style/species reference, not the same female face. Precisely EIGHT consistent head turnaround views arranged FOUR columns TWO rows in equal cells: front; left-front 45 degrees; left profile; left-rear 135 degrees; back; right-rear 225 degrees; right profile; right-front 315 degrees. Geometrically distinct views, same skull size throughout, neck bases aligned within each row, ample transparent gutters. Neutral expression, closed mouth. The head is an isolated modular portrait asset, not a severed body: clean natural neck base, no gore. Highest resolution, genuine transparent alpha background; no scene, lighting gradient, shadow background, labels, borders, text or extra faces.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "7de1706cac716a8bfab86158c96ee8d62ac1a6bc8f14093078515593c54d549a"
+    },
+    {
+      "file": "puma_head_v1.png",
+      "reference": "assets/source/art/appearance_5213/wolf_male_head_v1.png",
+      "prompt": "Use case: stylized-concept. Modular game sprite asset: a PUMA humanoid character HEAD AND SHORT FURRED NECK ONLY, for Caelum Argenteum. Natural adult mountain lion facial anatomy, short tawny tan fur, rounded small ears, cream chin and muzzle, black nose, amber eyes. No human hair or beard, no clothing or body. Match the painterly pixel-art rendering of the provided wolf head turnaround as a STYLE reference ONLY: must look unmistakably like a puma, not wolf or house cat. Neutral alert closed-mouth face. Exactly EIGHT views in a FOUR-column TWO-row grid: front; left-front45; left-profile90; left-rear135; back180; right-rear225; right-profile270; right-front315. Same skull scale in each cell; all eight directions clearly distinct; neck base aligned, ample transparent gutters. This is a clean reusable head module, not gore. Transparent background with real alpha, no backdrop glow, no shadows or floor, text, borders, labels, extra heads. Highest resolution.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "11382e3475e5116bedaca01c0624885b24a8c9332be9b300a5bd0fe2c46112ec"
+    },
+    {
+      "file": "jaguar_head_v1.png",
+      "reference": "",
+      "prompt": "Use case: stylized-concept. Create a game sprite module for Caelum Argenteum: adult JAGUAR HEAD with a short furry neck, eight-view turnaround. Natural jaguar anatomy: broad powerful rounded feline skull, short round ears, broad muzzle, golden ochre short fur with jaguar BLACK ROSETTES containing center spots, pale chin and cheeks, amber eyes. No mane, no human hair, no clothes, no torso, no accessories. Dark fantasy painterly pixel-art texture, crisp readable silhouette. Precisely eight heads in four columns and two rows: front, left-front45, left-profile90, left-rear135; back180, right-rear225, right-profile270, right-front315. Consistent adult identity, scale and neck-base alignment. Plain neutral closed mouth. Large transparent gutters, transparent alpha background, no scene, no colored background, no ground shadows, no titles, no text or grid. Highest resolution. Reusable clean character head module, not injury or gore.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "735ba7ef32efd67aab4069455b033711c5203f9bc0e81e8949549e3ecf4d0bae"
+    },
+    {
+      "file": "puma_head_v2.png",
+      "reference": "assets/source/art/appearance_5213/puma_head_v1.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached puma head sprite sheet. Correct ONLY the species anatomy so these eight heads unmistakably depict a real PUMA / mountain lion: much SMALLER ROUND EARS with rounded tips, close-fitting SHORT fur on head and neck, broad feline nose and muzzle. Remove the long fluffy lynx-like cheek ruff and pointed wolf-like ears. Natural tan coat, cream muzzle/chin, amber eyes, black nose. Keep the exact eight-view four-column two-row layout and directions, consistent head scale and dark fantasy painterly sprite style. No human hair, no clothes or body. Genuine transparent background, no glow or scene, text, borders, shadows or extra faces.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "470163bc26c5121565d4c5ac80277f9e5fc96592e957c27e88ad24c7bdc75fe9"
+    },
+    {
+      "file": "bear_head_v1.png",
+      "reference": "src/sprites/caelum/rulo/RUIDA1.png",
+      "prompt": "Use case: stylized-concept. Caelum Argenteum modular character game asset. Adult BEAR humanoid HEAD AND SHORT FURRED NECK ONLY, brown bear natural anatomy: short round ears, broad powerful skull and forehead, wide short muzzle, brown eyes and black nose, thick dark brown fur with a warmer tan muzzle. The attached Rulo sprite is the authored species/style reference: preserve his dark painterly pixel-art fantasy bear-man appearance, but closed neutral mouth. No axe, armor, clothes, body, or accessories. Precisely EIGHT consistent turnaround heads in FOUR columns TWO rows, equal cells: front; left-front45; left-profile90; left-rear135; back180; right-rear225; right-profile270; right-front315. Each view distinct, same skull dimensions, neck bases aligned, generous transparent gutters. Genuine transparent alpha background, no colored backdrop, shadows, floor, text, grid, border or extra heads. Highest resolution. Clean reusable head module, no injury or gore.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "cebd00cc2e07df262611cf4a64e4ed0f4352e07ab29b2ab031f40afe776dda2e"
+    },
+    {
+      "file": "body_plain_female_module_v1.png",
+      "reference": "assets/source/art/appearance_5213/body_plain_module_v1.png",
+      "prompt": "Use case: precise-object-edit. Modular sprites for Caelum Argenteum. Edit this headless common clothed-body turnaround to an ADULT FEMALE body with natural adult female proportions beneath the SAME simple, loose, fully covering clothes. Subtly narrower shoulders and waist, naturally proportioned hips, no sexualization, no exaggerated bust. Preserve off-white long-sleeved linen shirt, brown belt, charcoal trousers, closed brown leather gloves and brown boots. Empty relaxed hands. NO HEAD, NO HAIR, no visible skin; collar opening at top. No weapons, armor, accessories. Exact EIGHT body views in FOUR columns TWO rows: front, left-front45, left-profile, left-rear135; back, right-rear225, right-profile, right-front315. All angles distinct with consistent body scale and feet baseline. Dark painterly pixel-art game style matching reference. Genuine transparent alpha background with no background paint, gradients, ground shadows, text, labels or grid. Preserve generous transparent separation. This is a wardrobe/body animation module, not a scene and not gore.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "f09b3d94b5d6bea6057e3ee63ad6b1467fe4fba1590df47fff3bb2fba09d3770"
+    },
+    {
+      "file": "body_crouch_module_v1.png",
+      "reference": "assets/source/art/appearance_5213/body_plain_module_v1.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached eight-view headless clothed body sprite into a physically correct CROUCH pose: both knees deeply bent, feet firmly planted, hips lowered, torso slightly leaning forward, empty gloved hands held relaxed in front of thighs. NOT a vertically squashed standing person. Same plain off-white linen shirt, charcoal trousers, brown belt/boots/gloves, no armor or weapons. No head, no neck skin; open collar is the attachment socket for interchangeable heads. Precisely 8 synchronized crouched body turnarounds, four columns two rows: front, left-front45, left-profile90, left-rear135; back, right-rear225, right-profile270, right-front315. Same body dimensions/clothes and knee bend in every angle, foot baselines aligned, generous transparent gutters. Dark painterly pixel-art style as source. Alpha transparent background, no scene, grid, text, ground shadows, backdrop glow, no extra limbs. Modular animation body asset for Caelum Argenteum.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "47d51fb808d467420e03abc54106fb511106ed3644118fecc882a5c0050cd54c"
+    },
+    {
+      "file": "body_carbine_module_v1.png",
+      "reference": "assets/source/art/appearance_5213/body_plain_module_v1.png; src/sprites/caelum/weapons/ranged/CCARA0.png",
+      "prompt": "Use case: compositing. Caelum Argenteum modular player wardrobe sprite. Input1 is the headless clothed body edit target. Input2 is the weapon reference, the exact wood-and-metal carbine to hold. Put the carbine into both leather-gloved hands in a low-ready grip across the torso, muzzle directed forward in the character's facing direction, butt near shoulder. Keep simple off-white shirt, charcoal trousers, brown belt/boots/gloves. NO HEAD or neck skin: open collar for reusable heads, no helmet, armor, sword or shield. Exactly EIGHT body views in FOUR columns TWO rows: front, left-front45, left-profile90, left-rear135; back180, right-rear225, right-profile270, right-front315. The rifle rotates correctly with the BODY at every direction; from rear views it is naturally partly occluded by the torso. Consistent hands and carbine length, normal anatomy, feet aligned, generous gutters. Dark painterly pixel-art style. Real alpha transparent background, no painted background, glow, ground shadow, labels or grid. This body-and-held-weapon module will be shared among every race and head.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "374dd6fa3bab0178496dd02522b17046fd10fa0dffa5ec77cda1f959922b7a6d"
+    },
+    {
+      "file": "body_shotgun_module_v1.png",
+      "reference": "body_carbine_module_v1.png; src/graphics/caelum/shotgun/icons.png",
+      "prompt": "Use case: precise-object-edit. In the first attached eight-view headless player sheet, replace ONLY the held carbine with the double-barrel wood-and-steel SHOTGUN shown in the second attachment (plain first weapon in top-left). Preserve the character's unarmored linen shirt, charcoal trousers, brown gloves, belt and boots, stance, headless open collar, eight view directions and layout. Adapt the gloved grip naturally to the shotgun: dominant hand at grip/trigger, support hand at fore-end, stock toward shoulder, barrel points forward along character facing. Rear views occlude the gun correctly. Remove carbine ammunition and sling details that do not belong to shotgun. Precisely eight views, four columns two rows, matching the first sheet, generous transparent gutters and aligned feet. Dark painterly pixel art; no head, armor, sword, shield, new accessories, captions, floor or background. Genuine transparent alpha.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "a4a17b86a4489b833ad567a3ff5abbb7478672d1f97d59d3a821e6cdc47a0eaa"
+    },
+    {
+      "file": "first_person_bare_human_v1.png",
+      "reference": "first_person_hands_reference.png",
+      "prompt": "Use case: precise-object-edit. Edit this first-person game HAND MODULE atlas. REMOVE ALL gloves, metal bracers, armor, straps, cloth and jewelry from each of the eight hands/forearms, replacing them with natural uncovered adult HUMAN hands and bare forearms in a medium warm brown skin tone. Preserve EXACTLY the original eight poses, left/right handedness, finger curl, perspective, empty grip space, arm angle, per-cell position and scale. Eight independent modules in the SAME TWO-column FOUR-row grid. Row1: right vertical closed grip; right horizontal closed grip. Row2: right upward open palm; left vertical closed grip. Row3: right compact closed grip; left compact closed grip. Row4: left cupped support palm; right cupped palm. Preserve forearms reaching original cell edge where they do. Five anatomically correct digits per hand; no extra fingers. Skin knuckles, tendons and fingernails replace the leather detailing, not just brown recolored armor. Dark painterly pixel-art style matches Caelum Argenteum. Empty hands with no weapons. True transparent alpha background, no backdrop, shadow, text, labels or borders. This is an exact technical replacement sheet; do not rearrange, mirror or recenter any cell.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "013073597b45b2e1620e5dd05bb0303f7584f4caa9c6525d68c90331a2e1da20"
+    },
+    {
+      "file": "first_person_bare_wolf_v1.png",
+      "reference": "first_person_bare_human_v1.png",
+      "prompt": "Use case: precise-object-edit. Convert the eight bare human first-person hands in this exact atlas into WOLF-MAN bare hands and forearms. They remain dexterous humanoid FIVE-digit hands with an opposable thumb in the exact same grips and perspective, but with natural gray/taupe wolf fur on forearms and backs, darker nails forming short natural claws, and dark brown-gray palm pads on open palms. No gloves, armor, cuffs, clothing or weapons. Preserve EACH hand's original handedness, pose, empty gripping hole, arm angle, scale and placement in the TWO-column FOUR-row grid. Row1 right upright grip, right horizontal grip; row2 right open palm, left upright grip; row3 right compact grip, left compact grip; row4 left support palm, right support palm. Do not mirror, recenter or rearrange cells. Same dark painterly pixel-art game rendering. True transparent alpha background, no text, borders, scene, shadow or glow. This is a reusable modular sheet, not full characters.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "1b514781fcf6851f7a93485ae86de2f53b6dbd52f4790c5df7557254ba774a24"
+    },
+    {
+      "file": "first_person_bare_bear_v1.png",
+      "reference": "first_person_bare_human_v1.png",
+      "prompt": "Use case: precise-object-edit. Convert these eight bare HUMAN first-person hand modules into BEAR-MAN hands and forearms. Keep five functional digits and opposable thumbs with precisely the same poses, handedness, gripping openings, arm direction, placement and scale in the TWO-column FOUR-row grid. Broad bear knuckles, thick dark brown fur, tan-brown palm pads and short strong dark curved claws. No gloves, bracers, armor, clothes, weapons or new objects. Row1 right upright grip/right horizontal grip; row2 right open palm/left upright grip; row3 right compact grip/left compact grip; row4 left support palm/right support palm. Consistent natural bear anatomy adapted to humanoid weapon grips. Preserve dark painterly pixel-art game style. Genuine transparent alpha; no backdrop, text, labels, grid or glow. Do not rearrange or recenter cells.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "9b3484ecdb1bcf0a0ff0fa482e5dd910773eb0c4cd041668bf55e3e89a5e10e9"
+    },
+    {
+      "file": "first_person_bare_puma_v1.png",
+      "reference": "first_person_bare_human_v1.png",
+      "prompt": "Use case: precise-object-edit. Convert the eight bare HUMAN first-person hand modules in the attachment to PUMA-MAN hands/forearms. Dexterous humanoid five-digit hands with opposable thumbs; natural SHORT tawny tan puma fur over backs and forearms, cream inner-wrist fur, dark brown palm pads, short dark feline claws. Preserve every pose, handedness, empty gripping opening, angle, size, location and TWO-column FOUR-row grid. Row1 right upright grip/right horizontal grip; row2 right open palm/left upright grip; row3 right compact grip/left compact grip; row4 left cupped support/right cupped support. No gloves, armor, clothing, wrist jewelry, weapons, extra fingers or new objects. Dark painterly pixel-art first-person game style. Genuine transparent alpha background, no backdrop, text, labels, borders or glow. Do not rearrange, mirror or recenter the hands.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "25833a625843bc3caa0c9fdb52e8f82eca867762eaf98eb578a75a8f2b6a0063"
+    },
+    {
+      "file": "first_person_bare_jaguar_v1.png",
+      "reference": "first_person_bare_human_v1.png",
+      "prompt": "Use case: precise-object-edit. Convert these eight bare HUMAN first-person hand modules into JAGUAR-MAN hands/forearms. Keep dexterous five-digit humanoid hands, opposable thumbs, original exact grip holes, finger curls, handedness and arm perspective. Short golden-ochre jaguar fur with characteristic BLACK ROSETTES WITH CENTER SPOTS on backs and forearms, cream inner-wrist fur, dark brown palm pads, short dark curved feline claws. No gloves, bracers, armor, clothing or weapons. Preserve the TWO-column FOUR-row grid, each module's scale and location: row1 right upright/right horizontal grip; row2 right open palm/left upright grip; row3 right compact/left compact grip; row4 left support/right support palm. Dark painterly pixel-art game rendering. Genuine transparent alpha background; no backdrop, extra digits, new objects, text, borders or glow. Do not rearrange or recenter.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "5134054f9b6735cba801bad4b8141004e3528cf1851d45d989fb900ec1b0ec64"
+    },
+    {
+      "file": "first_person_shotgun_human_v1.png",
+      "reference": "shotgun_hands_reference.png",
+      "prompt": "Use case: precise-object-edit. Technical first-person sprite edit for Caelum Argenteum. Replace ONLY the gloves, bracers, armor, straps and red cloth on the hands/forearms with bare HUMAN skin, medium warm brown tone. Keep all FIVE pairs of hands in their exact same poses, left/right orientation, finger geometry, perspective, scale and positions in this TWO-column THREE-row layout. Bottom-right sixth cell must stay EMPTY/TRANSPARENT. The fourth pair (middle-right) holds ONE BRASS SHOTGUN CARTRIDGE, and the fifth pair (bottom-left) holds TWO brass cartridges: preserve those objects and their placement unchanged. Do not add a gun. All other hands are empty with the same gripping gaps and support-palm shapes. Skin knuckles, tendons and nails instead of leather, not recolored gloves. Dark painterly pixel art matching source. Keep all cell baselines, arm crop edges and transparent gutters. Genuine transparent alpha background, no labels, text, scene, floor, borders, glow or extra hands.",
+      "status": "Reusable modular source; awaiting integration",
+      "sha256": "2a32185670131f5d059d5cee1b9034092a1f696c36a2c40fd202b9e2b16601b9"
+    },
+    {
+      "file": "caelith_male_head_green_v1.png",
+      "reference": "src/sprites/caelum/ronnie/ROIDA1.png",
+      "prompt": "Use case: stylized-concept. Reusable HEAD-ONLY sprite atlas for Caelum Argenteum. Adult MALE Caelith lunar humanoid, reference Ronnie provides species, adult male facial features and dark painterly pixel-art style. HEAD AND SHORT NECK ONLY, no shoulders, clothes, collar, armor, jewelry, weapons or body. Long pointed ears. SILVER/WHITE HAIR with strictly neutral GRAY shadows and no green cast. All exposed skin of face/ears/neck is rich GREEN (an approved Caelith skin color), with clearly green shadows and highlights distinct from neutral silver hair; this separation is needed for a technical skin-only mask. Eyes dark gray, no glow. Short/medium silver hair kept around the head, not hanging below neck base. Exactly EIGHT same-identity heads in FOUR columns TWO rows: front, left-front45, left-profile90, left-rear135; back, right-rear225, right-profile270, right-front315. Match skull size in all views, natural closed-mouth expression, clean short-neck base, ample transparent gutters. Genuine transparent alpha background, no painted backdrop, glow, shadows, text, captions or border. Highest resolution. Clean modular portrait, no gore.",
+      "status": "Head-only production module; green separates skin from silver hair",
+      "sha256": "a7990bcec52b18b2efd47335c4c8a1cc9880a888f7540ac34788705130825115"
+    },
+    {
+      "file": "caelith_female_head_green_v1.png",
+      "reference": "caelith_male_head_green_v1.png",
+      "prompt": "Use case: stylized-concept. Edit the attached 8-view green Caelith head atlas into a distinct ADULT FEMALE Caelith, matching the same species, painterly pixel-art style, scale, green skin, silver hair, pointed ears and eight-view 4-column 2-row layout. Only HEAD AND SHORT NECK, no shoulders, costume or accessories. Clearly adult feminine facial anatomy, no beard, with silver hair in a practical short bob close to head (not below neck). All exposed skin GREEN including shadows, ears and neck. Hair WHITE/SILVER with strictly neutral gray shadows, no green tint. These colors must remain separable for skin-only recoloring. Same eight directions: front,left-front,left-profile,left-rear;back,right-rear,right-profile,right-front. Genuine transparent alpha background, no colored halo, no glow, no scene, no floor shadows, no text or borders. Match head scale across views. Highest resolution.",
+      "status": "Head-only production module; green separates skin from silver hair",
+      "sha256": "d377c19ff8380eaf25675b6e511d09832e4774ab8b022aff42a59dca0090f574"
+    },
+    {
+      "file": "first_person_shotgun_wolf_v1.png",
+      "reference": "first_person_shotgun_human_v1.png",
+      "prompt": "Use case: stylized-concept. Edit ONLY the bare human hands and forearms in the attached transparent shotgun-hand sprite atlas into anthropomorphic WOLF hands: natural gray/taupe wolf fur, dark palm pads and short dark claws, dexterous FIVE fingers. Preserve every exact pose, handedness, alignment, scale, crop edge and negative space. Exactly same 2-column 3-row layout, five pairs of hands (sixth cell EMPTY): upper left low-ready support left hand/right grip; upper right symmetric aiming hands; middle left opened-gun support/grip; middle right support left hand and right hand holding ONE brass cartridge; bottom left support left hand and right hand holding TWO brass cartridges. Keep the cartridge shapes, positions and metallic colors unchanged. No gloves, sleeve, clothing, weapons or new objects. Dark painterly game sprite style. Genuine transparent alpha background, clean edges without colored fringes or halo, no labels, grid, floor, backdrop or shadows. Highest resolution. Do not rearrange, add, or duplicate hands.",
+      "status": "Bare shotgun hand pose module",
+      "sha256": "ddf26f73a69d90f3c08f0f348f7152c2c5136b346a85e61e37f4b1279ecbdd3e"
+    },
+    {
+      "file": "first_person_shotgun_bear_v1.png",
+      "reference": "first_person_shotgun_human_v1.png",
+      "prompt": "Use case: stylized-concept. Edit ONLY the bare human hands and forearms in the attached transparent shotgun-hand sprite atlas into anthropomorphic BEAR hands: thick natural dark-brown bear fur, dark palm pads and robust dark bear claws, dexterous FIVE fingers. Preserve every exact pose, handedness, alignment, scale, crop edge and negative space. Exactly same 2-column 3-row layout, five pairs of hands (sixth cell EMPTY): upper left low-ready support left hand/right grip; upper right symmetric aiming hands; middle left opened-gun support/grip; middle right support left hand and right hand holding ONE brass cartridge; bottom left support left hand and right hand holding TWO brass cartridges. Keep the cartridge shapes, positions and metallic colors unchanged. No gloves, sleeve, clothing, weapons or new objects. Dark painterly game sprite style. Genuine transparent alpha background, clean edges without colored fringes or halo, no labels, grid, floor, backdrop or shadows. Highest resolution. Do not rearrange, add, or duplicate hands.",
+      "status": "Bare shotgun hand pose module",
+      "sha256": "b1485d2e26e1ceba5edf4a1dbd9f48f1810a8d4c2fc7a68281a4d57ec06a1b14"
+    },
+    {
+      "file": "first_person_shotgun_puma_v1.png",
+      "reference": "first_person_shotgun_human_v1.png",
+      "prompt": "Use case: stylized-concept. Edit ONLY the bare human hands and forearms in the attached transparent shotgun-hand sprite atlas into anthropomorphic PUMA hands: short smooth tawny/ochre puma fur, cream underside, no stripes or spots, dark palm pads and short dark feline claws, dexterous FIVE fingers. Preserve every exact pose, handedness, alignment, scale, crop edge and negative space. Exactly same 2-column 3-row layout, five pairs of hands (sixth cell EMPTY): upper left low-ready support left hand/right grip; upper right symmetric aiming hands; middle left opened-gun support/grip; middle right support left hand and right hand holding ONE brass cartridge; bottom left support left hand and right hand holding TWO brass cartridges. Keep the cartridge shapes, positions and metallic colors unchanged. No gloves, sleeve, clothing, weapons or new objects. Dark painterly game sprite style. Genuine transparent alpha background, clean edges without colored fringes or halo, no labels, grid, floor, backdrop or shadows. Highest resolution. Do not rearrange, add, or duplicate hands.",
+      "status": "Bare shotgun hand pose module",
+      "sha256": "1dba9fb87957c9a6e4520d22da472c7a76383b87808db9512b18889f676a317c"
+    },
+    {
+      "file": "first_person_shotgun_jaguar_v1.png",
+      "reference": "first_person_shotgun_human_v1.png",
+      "prompt": "Use case: stylized-concept. Edit ONLY the bare human hands and forearms in the attached transparent shotgun-hand sprite atlas into anthropomorphic JAGUAR hands: short golden-yellow fur with distinctive black jaguar ROSETTES, cream underside, dark palm pads and short dark feline claws, dexterous FIVE fingers. Preserve every exact pose, handedness, alignment, scale, crop edge and negative space. Exactly same 2-column 3-row layout, five pairs of hands (sixth cell EMPTY): upper left low-ready support left hand/right grip; upper right symmetric aiming hands; middle left opened-gun support/grip; middle right support left hand and right hand holding ONE brass cartridge; bottom left support left hand and right hand holding TWO brass cartridges. Keep the cartridge shapes, positions and metallic colors unchanged. No gloves, sleeve, clothing, weapons or new objects. Dark painterly game sprite style. Genuine transparent alpha background, clean edges without colored fringes or halo, no labels, grid, floor, backdrop or shadows. Highest resolution. Do not rearrange, add, or duplicate hands.",
+      "status": "Bare shotgun hand pose module",
+      "sha256": "c791c3bdf70a85e12439dc06a45403019e88f400db042c84006c6a6f8552f4bb"
+    },
+    {
+      "file": "body_bare_male_v1.png",
+      "reference": "body_plain_module_v1.png",
+      "prompt": "Use case: stylized-concept. Technical sprite edit of the attached headless male plain-clothing 8-view atlas: REMOVE BOTH LEATHER GLOVES AND THEIR CUFFS in every view. Replace with anatomically correct BARE GREEN HUMAN HANDS and short green wrists; the linen sleeves extend to the wrist. Skin must be saturated green, with green shadows and highlights, to make a separate technical hand-color mask. Do not color the shirt, belt, trousers or boots green. Preserve all eight body views, exact body proportions, headless neck opening, pose, clothing, boot position, pixel-art painterly style and regular 4x2 layout. Do not add head, weapons or other objects. Keep leather boots and belt. Genuine transparent alpha background, clean silhouette without halo/shadow/backdrop. Highest resolution. Only gloves and their cuffs change.",
+      "status": "Bare world hands keyed green for isolated skin/fur mask",
+      "sha256": "924ecec660423b5b131b52383c7b478ebe7ee87aa9823a7d7d03adfd3a9e4639"
+    },
+    {
+      "file": "body_bare_female_v1.png",
+      "reference": "body_plain_female_module_v1.png",
+      "prompt": "Use case: stylized-concept. Technical sprite edit of the attached headless female plain-clothing 8-view atlas: REMOVE BOTH LEATHER GLOVES AND THEIR CUFFS in every view. Replace with anatomically correct BARE GREEN HUMAN HANDS and short green wrists; the linen sleeves extend to the wrist. Skin must be saturated green, with green shadows and highlights, to make a separate technical hand-color mask. Do not color the shirt, belt, trousers or boots green. Preserve all eight body views, exact body proportions, headless neck opening, pose, clothing, boot position, pixel-art painterly style and regular 4x2 layout. Do not add head, weapons or other objects. Keep leather boots and belt. Genuine transparent alpha background, clean silhouette without halo/shadow/backdrop. Highest resolution. Only gloves and their cuffs change.",
+      "status": "Bare world hands keyed green for isolated skin/fur mask",
+      "sha256": "f7becb9db4e21d5298d20afa39462206898eec5c9576e6940ed0cb3d9c601fa1"
+    },
+    {
+      "file": "body_bare_crouch_v1.png",
+      "reference": "body_crouch_module_v1.png",
+      "prompt": "Use case: stylized-concept. Technical sprite edit of the attached headless crouching plain-clothing 8-view atlas: REMOVE BOTH LEATHER GLOVES AND THEIR CUFFS in every view. Replace with anatomically correct BARE GREEN HUMAN HANDS and short green wrists; the linen sleeves extend to the wrist. Skin must be saturated green, with green shadows and highlights, to make a separate technical hand-color mask. Do not color the shirt, belt, trousers or boots green. Preserve all eight body views, exact body proportions and bent-knee crouching posture, headless neck opening, pose, clothing, boot position, pixel-art painterly style and regular 4x2 layout. Do not add head, weapons or other objects. Keep leather boots and belt. Genuine transparent alpha background, clean silhouette without halo/shadow/backdrop. Highest resolution. Only gloves and their cuffs change.",
+      "status": "Bare world hands keyed green for isolated skin/fur mask",
+      "sha256": "d45a4a2fa83fde8e4a099dc2baf6a3fbae7f70d812d682b7281cb3d8a5cf78d5"
+    },
+    {
+      "file": "body_bare_carbine_v1.png",
+      "reference": "body_carbine_module_v1.png",
+      "prompt": "Use case: stylized-concept. Edit only the gloves in the attached headless body holding a carbine 8-view sprite atlas. Remove brown leather gloves and cuffs, replace them with BARE GREEN HUMANOID HANDS and short wrists. Saturated green skin with green shadows for technical skin masking. Keep fingers securely wrapped around the same carbine grips. Preserve the weapon, every pose and perspective, body proportions, headless collar, linen sleeves, belt, trousers, boots, 4x2 layout and dark painterly sprite rendering. Shirt sleeves end at wrists. Do not alter the gun's size or pose, add a head, weapons or accessories. Genuine transparent alpha background, no halo, no scene or shadows. Highest resolution.",
+      "status": "Bare world hands keyed green for isolated skin/fur mask",
+      "sha256": "e26ad8ae55aab08942ae3543b279ff4a4faa071040359bdecaaa486a652bfff0"
+    },
+    {
+      "file": "body_bare_shotgun_v1.png",
+      "reference": "body_shotgun_module_v1.png",
+      "prompt": "Use case: stylized-concept. Edit only the gloves in the attached headless body holding a double-barrel shotgun 8-view sprite atlas. Remove brown leather gloves and cuffs, replace them with BARE GREEN HUMANOID HANDS and short wrists. Saturated green skin with green shadows for technical skin masking. Keep fingers securely wrapped around the same double-barrel shotgun grips. Preserve the weapon, every pose and perspective, body proportions, headless collar, linen sleeves, belt, trousers, boots, 4x2 layout and dark painterly sprite rendering. Shirt sleeves end at wrists. Do not alter the gun's size or pose, add a head, weapons or accessories. Genuine transparent alpha background, no halo, no scene or shadows. Highest resolution.",
+      "status": "Bare world hands keyed green for isolated skin/fur mask",
+      "sha256": "73b234d15eded9495fd5f4ab1899ebe44907fdb7f4d6a411b4a225384cb12497"
+    },
+    {
+      "file": "first_person_bolas_bare_v1.png",
+      "reference": "src/graphics/caelum/bolas/hand-extended.png",
+      "prompt": "Use case: stylized-concept. Modular first-person extended RIGHT ARM sprite atlas, using the attached image ONLY for exact anatomy, foreshortening, orientation, fist position and silhouette. Remove ALL gloves, bracers, armor and sleeves, show BARE HAND AND FOREARM. Arm extends from lower-right edge toward upper-left, clenched hand gripping an invisible rope: same fist anatomy and fist-to-arm proportions as reference. Produce FIVE variants in a regular THREE-column TWO-row grid, sixth/bottom-right cell empty: row1 human medium-brown skin, anthropomorphic wolf gray/taupe fur, anthropomorphic bear dark-brown fur; row2 anthropomorphic puma smooth tawny/cream fur, anthropomorphic jaguar golden fur with black rosettes, EMPTY. Dexterous five fingers, small dark claws on beast hands, no extra digits. Same pose, size, perspective and placement within each cell for every variant, long forearm continuing to lower-right cell edge. Dark painterly game sprite rendering matching reference. No weapon, rope or other objects. Genuine transparent alpha background, no glow, halo, scene, floor, shadows, captions, grid or borders. Highest resolution. Keep the fist compact relative to the long arm; do not enlarge the fist or shorten the arm.",
+      "status": "Five shared extended bare arms: human, wolf, bear, puma, jaguar",
+      "sha256": "90b3f10b2a2110b99d6e4e6a338b5f6cd23226c752b8f4fe7f56ed455dfeccfe"
+    },
+    {
+      "file": "body_walk_bare_v1.png",
+      "reference": "body_bare_male_v1.png",
+      "prompt": "Use case: stylized-concept. Modular headless player WALKING BODY sprite atlas for Caelum Argenteum, matching the attached headless plain linen-clothes body. Create one anatomically coherent MID-STRIDE walking pose seen from exactly eight directions: front,left-front45,left-profile90,left-rear135;back,right-rear225,right-profile270,right-front315. Right leg stepping forward, left leg back, opposite natural arm swing; torso remains connected to shoulders and hips, no holes or detached limbs. Unisex adult body in same off-white linen long-sleeve shirt, brown belt, charcoal trousers and leather boots. BARE GREEN HANDS and short green wrists, no gloves: green is technical skin mask, all clothing neutral. NO HEAD, only neat open collar, no neck sticking out. Same scale, proportions, gait phase, outfit and physically consistent viewpoint across all eight cells in a regular 4-column 2-row grid. Keep arms and legs separated enough for a readable walk, normal walking stride not running, jumping or wide-legged pose. Highest resolution, dark painterly game sprite style. Genuine transparent alpha background, no halo, scene, cast shadow, floor, grid or captions. No weapons, armor, hats or accessories.",
+      "status": "Shared neutral clothing locomotion module; opposite gait mirrors corresponding reverse-facing view",
+      "sha256": "882b0cd77afac393cefe8dada6b0b81742e557e4c9e412b9d511fd533f98a09d"
+    }
+  ],
+  "technical_references": {
+    "first_person_hands_reference.png": "Deterministic 2x4 contact sheet of the existing owned FH00-FH07 modules; source alpha preserved.",
+    "shotgun_hands_reference.png": "Deterministic 2x3 contact sheet of the existing owned shotgun hand pairs; last cell empty."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "issue": 148,
+  "author_date": "2026-10-11",
+  "decisions": {
+    "wardrobe": "Plain clothes, empty hands",
+    "voices": "Automatic by saved sex",
+    "structure": "Modular sprites; do not generate the Cartesian product of identities, colors, poses and equipment",
+    "humans_and_goblins": "Natural human skin tones appropriate to nineteenth-century Argentina",
+    "beast_forms": [
+      "wolf",
+      "bear",
+      "puma",
+      "jaguar"
+    ],
+    "beast_colors": "Typical natural colors of the selected animal",
+    "caelith_colors": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "python": "Deterministic cutting, anchors, masks and packing explicitly authorized",
+    "in_game_editor": "Skin/fur tone and beast form; saved race and sex remain fixed",
+    "first_person": "Bare skin/fur unless actual Hands-slot gloves are equipped; broken gloves remain worn"
+  }
+}
