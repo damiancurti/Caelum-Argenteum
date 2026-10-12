@@ -9,8 +9,9 @@ without baked-in armor, sword or shield. Saved race/sex/skin/fur and Beast Man
 form determine world and first-person presentation; worn gloves follow actual
 Hands-slot equipment. Character creation previews those choices before starting.
 This changes no mansion NPC art, dialogue, item gifts, combat, map geometry or
-story identity. Cosmetic editing changes tone/form only. ASSETS documents shared
-pose coverage; CA148-01 visual acceptance remains pending.
+story identity. Cosmetic editing includes tone/form and humanoid face/hair,
+without changing structural identity. ASSETS documents shared pose coverage;
+CA148-01 passed author visual acceptance on 2026-10-12.
 
 ## 5.2.12 - Bull and resident combat (#195)
 

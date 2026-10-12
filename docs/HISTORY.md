@@ -4,6 +4,14 @@ Documentation version: **5.2.13** — 2026-10-11.
 
 ## 5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11
 
+Author acceptance, 2026-10-12: CA148-01 (origin 5.2.13 / #148) passed
+without qualifications, including the completed face/hair extension. The author
+confirmed all tests passed and requested PR201 merge and issue closure. The
+confirmed entry is removed from pending_test.txt; the tracked queue is empty.
+This supersedes the pending status recorded in the delivery chronology below.
+The earlier intermittent cursor observation remains evidence; acceptance does
+not establish a runtime cursor fix. No new version for acceptance of this patch.
+
 The author requested prepared race/sex variants, simple clothes without weapons,
 finite race-specific skin/fur tones, wolf/bear/puma/jaguar Beast Men, RGB Caelith,
 automatic sex voices and modular sprites. The existing-game editor may change

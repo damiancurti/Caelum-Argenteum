@@ -16,9 +16,9 @@ introduced. Existing saves initialize default appearance once and retain it
 across reload/restart/travel. Sources, limitations and supported matrix: ASSETS.
 
 Static, deterministic-generator and isolated GZDoom evidence is recorded in
-assets/validation_5213/RESULTS.md. CA148-01 remains pending author visual
-acceptance. Delivery: draft PR201 on issue148-appearance-preview, committed and
-pushed; art b6874a48 and runtime/evidence 345c710e. Merge is not authorized yet.
+assets/validation_5213/RESULTS.md. CA148-01 passed author acceptance on
+2026-10-12, including the face/hair extension (c713e720 / 4aeddb8b).
+The author authorized PR201 merge and #148 closure; no author checks remain.
 The preceding PR200 is merged as 74c31ca5 and #195 is closed; its acceptance holds.
 
 ## 5.2.12 - Bull balance and finite resident tools (#195)

@@ -3,13 +3,13 @@
 Documentation version: **5.2.13** — 2026-10-11.
 
 **Current 5.2.13 / #148:** modular appearance, native preview/editor and equipped
-glove-dependent hands; saved sex voices. Draft PR201, CA148-01 pending.
+glove-dependent hands; saved sex voices. CA148-01 accepted 2026-10-12;
+PR201 merge and #148 closure authorized.
 Implemented four faces/four hairstyles per human/goblin/Caelith sex, six
 hair colors, editable in-game. Read SPRITE_ART_DIRECTION
 before generating sprites; ASSETS/SYSTEMS retain technical/gameplay details.
-Evidence: validation_5213. Intermittent fullscreen cursor loss remains unresolved;
-Alt+Enter restored visibility during author testing. No merge/acceptance claimed.
-#149/#150 remain separate.
+Evidence: validation_5213. Earlier intermittent cursor report is preserved;
+final author tests passed without a runtime cursor fix. Next: #149 controls.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;

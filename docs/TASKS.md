@@ -10,8 +10,8 @@ hands. Author decisions and supported/missing asset matrix are in SYSTEMS/ASSETS
 Scope excludes a full new animation set, wardrobe, respec and new voice bank.
 Sources/generators are retained and deterministic. Isolated engine checks cover
 creation, editor transactions, old/current saves, restart, travel and gloves.
-Evidence: assets/validation_5213/RESULTS.md. Remaining delivery gate: author
-visual acceptance CA148-01 in pending_test.txt; no merge/closure is claimed.
+Evidence: assets/validation_5213/RESULTS.md. CA148-01 passed author acceptance
+on 2026-10-12; PR201 merge and #148 closure are authorized.
 Author reported an invisible cursor in fullscreen MainMenu, Options and creator,
 with working clicks and recovery after Alt+Enter. The isolated repeat began with
 a visible cursor; identify a reproducible trigger before choosing a runtime fix.
@@ -20,8 +20,8 @@ Author extension: four faces and four hairstyles for each human/goblin/Caelith
 sex, six natural hair colors for all three races, all editable in-game. Follow
 the requested dedicated SPRITE_ART_DIRECTION.md before further generation;
 modular integration is implemented, with revision-2 persistence and native
-head/body composition. Agent evidence is in RESULTS; author art acceptance
-remains CA148-01. The cursor report remains unresolved.
+head/body composition. Agent evidence is in RESULTS; final author tests passed.
+The earlier cursor report remains historical evidence, without a runtime fix.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)
 

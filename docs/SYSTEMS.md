@@ -39,7 +39,7 @@ pain/breathing sounds remain automatic by saved sex; no voice selector or new
 animal recordings are introduced. Asset coverage and limitations: ASSETS.
 
 This supersedes the appearance deferral in the historical #147 matrix below.
-Evidence: assets/validation_5213/RESULTS.md. Author check CA148-01 remains pending.
+Evidence: assets/validation_5213/RESULTS.md. Author check CA148-01 passed on 2026-10-12.
 
 ## Bull charge, resident tools and personality - 5.2.12 / #195
 

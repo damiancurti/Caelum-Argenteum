@@ -221,16 +221,16 @@ acceptance in HISTORY. Generated candidates are never automatically accepted.
 
 ## Status and open details
 
-The first #148 modular body/skin/fur/hands integration is committed in draft
-[PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201); CA148-01 remains
-pending. The author-requested four-face/four-hairstyle/six-color extension is
+The #148 modular body/skin/fur/hands integration is delivered in
+[PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201); CA148-01 passed
+author acceptance on 2026-10-12, with merge and issue closure authorized. The author-requested four-face/four-hairstyle/six-color extension is
 integrated through reusable face/hair modules and native eight-view
 head registration. Agent inspection and engine evidence are recorded in ASSETS;
-author approval remains pending. Further source generation must follow this brief.
+author approval is recorded in HISTORY. Further source generation must follow this brief.
 
-Exact face designs, hair silhouettes, attachment quality and final processed
-color appearance remain visual-review work. Additional beard, eye-color, clothing
+The delivered face designs, hair silhouettes, attachment quality and processed
+colors are included in that acceptance. Additional beard, eye-color, clothing
 color or accessory selectors are not currently requested. A full new animation
 set and a complete visible armor/weapon wardrobe remain outside #148's scope.
-The intermittent fullscreen cursor report remains unresolved and separate from
-art approval; see the diagnostic follow-up in ASSETS' linked validation record.
+The earlier intermittent fullscreen cursor report is preserved in the diagnostic
+record. Final author tests passed, without establishing a runtime cursor fix.

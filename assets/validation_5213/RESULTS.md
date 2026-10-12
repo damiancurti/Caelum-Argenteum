@@ -1,7 +1,10 @@
 # Issue #148 / 5.2.13 validation
 
 Target: GZDoom 4.14.2 on Windows 11. Baseline: 74c31ca5 (accepted #195).
-Author visual acceptance is **pending CA148-01**, separately from these agent checks.
+Author acceptance: **CA148-01 passed on 2026-10-12**, without qualifications.
+The author confirmed all tests passed and requested PR201 merge / #148 closure.
+Earlier pending statements below describe the test sequence before acceptance;
+the earlier cursor probes still do not establish a runtime fix.
 No test IWAD, executable, save or fixture PK3 is distributed. Native run records
 retain engine/package hashes, arguments and timing. Tests use background ticking
 and 5% audio; the temporary thread-scoped keep-awake request does not change the

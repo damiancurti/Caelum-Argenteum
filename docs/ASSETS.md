@@ -72,8 +72,8 @@ atlases are preserved. The 24-face contact sheet and native captures document fi
 CaelumCharacterPreview adapts GZDoom g4.14.2 playerdisplay.zs state stepping and
 GetSpriteTexture drawing. Christoph Oelckers' BSD notice is retained in the
 packaged source. No Doom artwork or test IWAD is distributed. Before/after native
-captures and scoped validation: assets/validation_5213/RESULTS.md. Visual author
-acceptance remains CA148-01; native texture registration is not a GPU benchmark.
+captures and scoped validation: assets/validation_5213/RESULTS.md. CA148-01
+passed author acceptance on 2026-10-12; texture registration is not a GPU benchmark.
 
 ## 5.2.12 - Bull and resident diagnostics (#195)
 

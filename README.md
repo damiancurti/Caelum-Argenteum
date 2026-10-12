@@ -17,12 +17,13 @@ game to edit tone/form, face, hairstyle and hair color. Humans, goblins and
 Caelith each have four faces and four hairstyles per sex, with six hair colors.
 Voices remain automatic by saved sex.
 [Asset coverage](docs/ASSETS.md) and [validation evidence](assets/validation_5213/RESULTS.md)
-describe the supported shared poses and tests. [CA148-01](pending_test.txt) remains
-pending author visual acceptance. Delivery: [draft PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201),
-branch `issue148-appearance-preview`, committed and pushed.
+describe the supported shared poses and tests. CA148-01 passed on 2026-10-12;
+the author authorized [PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201)
+merge and issue closure. No #148 author checks remain pending.
 Author testing reported an intermittent invisible cursor in fullscreen menus;
 clicks still work and Alt+Enter restored visibility. The isolated repeat started
-with a visible cursor, so no cursor fix or acceptance is claimed yet.
+with a visible cursor. The final author test set passed; no runtime cursor fix
+is inferred from that acceptance.
 The author-requested [sprite art direction](docs/SPRITE_ART_DIRECTION.md) defines
 the visual brief. Reusable head/hair modules keep the expanded catalog within
 the engine's sprite-frame limit.
@@ -118,7 +119,7 @@ console. Existing saves migrate without changing progress or equipment.
 [Evidence](assets/validation_520/RESULTS.md); CA147-01 passed author acceptance
 on 2026-10-11; PR176 is merged and #147 closed. At that acceptance the author test queue was empty;
 the four confirmations are recorded under their originating releases in HISTORY.
-Appearance/preview is implemented in 5.2.13; visual acceptance remains pending. PR171/PR174/PR175 are merged and
+Appearance/preview 5.2.13 passed author acceptance on 2026-10-12. PR171/PR174/PR175 are merged and
 issues #164/#172/#173 closed, with author acceptance recorded in HISTORY.
 
 5.1.20 adds MAP06 bedroom/bathroom doors without replacing map geometry or old
