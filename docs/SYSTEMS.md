@@ -1,6 +1,28 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
+
+## 5.2.17 - MAP01 minimum player health (#207)
+
+Throughout MAP01, damage cannot kill a living current player: health stops at
+1 HP, retaining the same pawn, character profile and appearance. Damage above
+that floor, armor/shield wear, control/status effects and resource consumption
+still apply. This includes combat, collision/pressure, native crush/telefrag,
+elemental DOT, drowning, hunger/thirst, environmental temperature and projected
+journey health. Blocked integer damage is consumed, never banked for later.
+The floor is neither healing nor a retry/reset. NPC behavior is unchanged;
+player death is normal outside MAP01. Already-dead saved pawns are not revived.
+
+The shared rule derives from the current map, without a saved flag or schema
+revision. Final native damage calls temporarily use GZDoom 4.14.2 CF_BUDDHA2;
+only a bit introduced by that call is removed afterward. This includes the
+native Buddha2 semantics for forced damage: early bypasses remain, but late
+native armor/invulnerability checks apply after the engine clears DMG_FORCED.
+Caelum defense calculations precede that call. Returned health loss excludes
+the blocked portion and cannot exceed that call's native result; native damage
+events retain their engine-calculated damage payload. Direct health consumers
+apply the same floor, and direct scripted Die calls return before death cleanup.
+Thermal applied-damage accounting counts only HP actually lost.
 
 ## 5.2.16 - Native fullscreen cursor preference (#204)
 
@@ -990,8 +1012,10 @@ manual-trigger autosaves or zero slots prevent a file. No custom save slot or
 scripted load/respawn is used. The checkpoint does not heal, refill or repair the
 player or reset Bull health. Existing initial practice preparation and combat
 ammunition support remain; combat resupply starts only after hostility begins.
-Lethal damage follows normal player death. Legacy pending-retry state is retired
-without triggering a reset. The user loads a save manually to try again.
+As of #207, the MAP01 player remains alive at a minimum of 1 HP, including
+the Bull fight. No retry/reset occurs; manual loading remains available. Legacy
+pending-retry state is retired without triggering a reset. Other maps retain
+normal player death.
 
 Departure preserves all actual gifts and legacy loan instances alongside owned
 crafted equipment. The separately approved removal of ammunition, materials,

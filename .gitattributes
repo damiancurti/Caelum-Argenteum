@@ -168,3 +168,7 @@
 # Keep #204 sanitized native logs and their retained hashes stable.
 /assets/validation_5216/** text eol=lf
 /assets/validation_5216/logs/*.txt whitespace=-blank-at-eof,-blank-at-eol
+
+# Preserve #207 fixture fingerprints and sanitized native evidence.
+/assets/validation_5217/** text eol=lf
+/assets/validation_5217/logs/*.txt whitespace=-blank-at-eof,-blank-at-eol

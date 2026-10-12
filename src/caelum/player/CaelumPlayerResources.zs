@@ -493,6 +493,7 @@ class CaelumPlayerResources : Object play
         if (wholeDamage <= 0) return;
 
         user.SurvivalDamageAccumulator -= wholeDamage;
+        wholeDamage = CaelumTutorialSafety.HealthLoss(user, wholeDamage);
         user.health -= wholeDamage;
         user.player.health = user.health;
         CaelumRestState.Interrupt(user, "CA_REST_NEEDS");

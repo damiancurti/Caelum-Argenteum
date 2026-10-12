@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
+
+## 5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12
+
+The author reported that MAP01 death reverted the character's appearance and
+explicitly replaced tutorial mortality with a minimum of 1 HP. This supersedes
+the former #164 normal-death/manual-retry rule in MAP01. The existing Bull
+preparation autosave/grace remains; no refill, reset or respawn is added.
+
+The shared map rule protects final native damage, direct survival/thermal loss,
+journey health commit and scripted Die calls. Native Buddha2 is scoped to each
+call, including telefrag/forced damage, without leaking to saves or MAP02.
+Native armor and custom defenses remain before the floor; the documented native
+forced-damage caveat is retained. Cross-review caught nested damage being counted
+in an outer return value; the final return is capped by that native call's result.
+Living profile and modular actor identity are retained. General death appearance
+on other maps is outside this patch, and already-dead saves are not resurrected.
+
+Isolated GZDoom 4.14.2 evidence, before/after regression, failed fixture attempts,
+save compatibility and test limits: assets/validation_5217/RESULTS.md.
+CA207-01 (origin 5.2.17 / #207) remains pending; no author acceptance is inferred
+from automated tests. Configurations are isolated and keep-awake is released.
 
 ## 5.2.16 - Accepted fullscreen cursor workaround (#204), 2026-10-12
 

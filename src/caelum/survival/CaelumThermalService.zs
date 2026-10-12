@@ -69,6 +69,7 @@ class CaelumThermalService : Object play
         int damage=int(thermal.DamageRemainder+CaelumThermalData.THRESHOLD_EPSILON);
         if(damage<=0 || body.health<=0)return;
         thermal.DamageRemainder=Max(0.0,thermal.DamageRemainder-damage);
+        if(user!=null)damage=CaelumTutorialSafety.HealthLoss(user,damage);
         thermal.AppliedDamageHP+=Min(damage,body.health);
         body.health=Max(0,body.health-damage);
         if(user!=null)

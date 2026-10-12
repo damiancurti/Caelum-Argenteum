@@ -1,0 +1,10 @@
+CA207-01 | Origin: 5.2.17 / issue #207 | Status: pending author acceptance
+Prerequisites: rebuild with run_dev.bat; use a living MAP01 character with a
+recognizable nondefault appearance (new or existing save).
+1. Fight the Bull or another damaging encounter until health reaches 1 HP.
+2. Continue receiving hits: stay alive and controllable at 1 HP, without a death
+   screen, respawn, reset or appearance change. Healing still works normally.
+3. Save and load at 1 HP: the character and appearance remain unchanged.
+4. Continue to MAP02 and take lethal damage: normal death is still possible.
+Expected: the health floor applies only to the MAP01 player; existing NPC rules,
+equipment wear and resource/status effects remain active.
