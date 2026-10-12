@@ -24,6 +24,8 @@ real launcher's INI, with the original retained locally; no setting is imposed o
 other users. Repository changes record the reproducible native workaround,
 evidence and release labels. The underlying engine/driver cause remains unproven.
 Technical restart checks and retained failures: assets/validation_5216/RESULTS.md.
+Delivery commit 1d9e7efe was pushed through PR205; its merge and #204 closure
+are explicitly authorized by the author after acceptance.
 
 ## 5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12
 

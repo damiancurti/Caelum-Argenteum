@@ -5,7 +5,7 @@ Documentation version: **5.2.16** — 2026-10-12.
 **Current 5.2.16 / #204 accepted:** fullscreen Vulkan cursor recovered with native
 VSync; author approved the local preference, commit/push/merge/closure.
 CA204-01 passed two starts, menu clicks and gameplay capture on 2026-10-12.
-Evidence: validation_5216; CA-KP-085. No forced default or engine repair claimed.
+Delivery: PR205. Evidence: validation_5216; CA-KP-085. No forced default or engine repair claimed.
 **5.2.15/#150 accepted:** UI/HUD/message scales, crosshair/comfort, Journal notice
 history; CA150-01 passed 2026-10-12, PR203 merged cd712377. Evidence validation_5215.
 **5.2.14/#149 accepted:** grouped controls/hints, M automap; CA149-01 passed

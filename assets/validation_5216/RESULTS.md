@@ -95,7 +95,7 @@ The local setting delta is recorded in applied-setting.json. Final build/static
 verification and the diagnostic-only runtime delta are recorded in summary.json.
 Author acceptance is the explicit CA204-01 record, not inferred from those checks.
 
-Final checks: project validation passes with no errors and 2,484 context words;
+Final checks: project validation passes with no errors and 2,486 context words;
 the official build contains 13,559 members. Compared with the author-tested
 package, only two required diagnostic release strings differ. Native compilation
 and persistence checks pass on that final build. Independent read-only review

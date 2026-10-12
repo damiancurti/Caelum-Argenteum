@@ -10,7 +10,7 @@ transitions. The existing launcher config receives only that approved preference
 no global default, renderer switch, gameplay or save change is introduced.
 CA204-01 passed on 2026-10-12. Evidence and reproduction:
 assets/validation_5216/RESULTS.md. Delivery includes the support documentation;
-the author requested commit, push, PR merge and issue closure.
+the author requested commit, push, PR205 merge and issue closure.
 
 ## 5.2.15 - Native readability and comfort (#150)
 

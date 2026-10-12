@@ -9,8 +9,9 @@ existing launcher config. Two fullscreen starts, three menu click routes and
 gameplay/menu capture transitions passed CA204-01 on 2026-10-12. Native restart
 and configuration preservation evidence: assets/validation_5216/RESULTS.md.
 No forced renderer/default, cursor refresh loop, gameplay or save change.
-The author requested commit, push, issue closure and PR merge; no author checks
-remain. Lower-level engine/driver diagnosis is not claimed as completed.
+Accepted delivery: PR205. The author requested commit, push, issue closure and
+PR merge; no author checks remain. Lower-level engine/driver diagnosis is not
+claimed as completed.
 
 ## Issue #150 - Readability and comfort (5.2.15)
 

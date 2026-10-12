@@ -18,6 +18,7 @@ this setting on other installations. Two starts, menu clicks and gameplay
 capture transitions passed author check CA204-01 on 2026-10-12.
 [Evidence and limits](assets/validation_5216/RESULTS.md); setup is under
 [Build and run](#build-and-run). No outstanding #204 author checks.
+Accepted delivery: [PR205](https://github.com/damiancurti/Caelum-Argenteum/pull/205).
 
 5.2.15 implements [#150](https://github.com/damiancurti/Caelum-Argenteum/issues/150):
 native UI/HUD/message scaling, configurable crosshair and a bilingual
