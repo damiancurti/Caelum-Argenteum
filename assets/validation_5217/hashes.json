@@ -1,0 +1,34 @@
+{
+  "base_commit": "1bf5087e",
+  "source_sha256": {
+    "src/ZSCRIPT": "09d356b649658a24ce91896f9a4822860c2c87a310660e7f39b7827ab6f763e3",
+    "src/caelum/core/CaelumConstants.zs": "e24b6fb2293f1a0df03bcb25838a52a9b32227cfe0d772ab4b33572aafecc539",
+    "src/caelum/player/CaelumPlayer.zs": "c155586500575b372fd66d2defa3872caabc386a61757e7c6d91c815413e4e85",
+    "src/caelum/player/CaelumTutorialSafety.zs": "abaf95ad82d9eb2154478b0cfbe788a43251702c06bd4746903245273562c5fb",
+    "src/caelum/player/CaelumPlayerResources.zs": "8acf0ba4bdab90f04d49e2da4271b0ea046bbd3a38fd264c002dd3a0fe411329",
+    "src/caelum/survival/CaelumThermalService.zs": "3f512dc9051dacb1eecbb4b15534ec08ee3aefafb07bcccc94f2acaa5e4907fb",
+    "src/caelum/world/CaelumJourneyPlan.zs": "3e5f46898130f5f0b50c64299b5bc4a403ecd70f6f97fa6829ed4b56bc6c5e02",
+    "assets/validation_5217/contract.cfg": "c4667fc543ef784b81a976793778cc87243386143e14a70475b842491180d1d7",
+    "assets/validation_5217/contract.zs": "d0c25797edb5271f0927f9f6be21a16e64056a380744c287c2d90add7fbeaba8",
+    "assets/validation_5217/identity.cfg": "fa7a2611797cc5bb640b514c4baf0e2700cd80b784b8f7d3e999e620663aa569",
+    "assets/validation_5217/legacy.cfg": "cc637128c6b1b5363eb586dd3efb136b4551b4020e4214abb5bc1556173f8ae7",
+    "assets/validation_5217/outside-survival.cfg": "060896b3bc525c389ff7131ac1d732770bfba94fa8743ec04e049f699972d5c2",
+    "assets/validation_5217/outside-thermal.cfg": "7330377161c27845ebd38f7d83f371e8557b34ae2c4fd617e93f5bf1c9f19b6a",
+    "assets/validation_5217/persistence.cfg": "d06a0cdda3cba824243712b3fe7565243d5fab3ad6da87a7c26f85574bd6d053",
+    "assets/validation_5217/prepare.py": "233cbf7302343c87fb57735358612e8731f77430ee181e29d87404d5c8a7f100",
+    "assets/validation_5217/regression.cfg": "39cc88c3ea4418a514c1807dd2aa9ad56e102c7e9a2967c0fb45a23bf95ceb2b",
+    "assets/validation_5217/retain_evidence.py": "b1bde01366dd098ea51a8876ae00f66fb530e0c78f65afb7ff90e19e73f47c06",
+    "assets/validation_5217/run_native.ps1": "bb30f99ae2743c2ab9ab03f3b96cba164df523ae0d22378438ee909a52ea1d80",
+    "assets/validation_5217/upgrade.cfg": "2599cd8ed672e0c4b5118e5da461a1c035dc02a7ea14688d02f5eb4a9c3a9790"
+  },
+  "package_sha256": {
+    "baseline": "682c104907ea7193831ab7f4c437c8745304005cf84ca34291e6297de5edf316",
+    "production": "6e2f8dc3d0a5c63f1757d1218a5effe86134de12dd70cfbd43fff69e3ae3237b",
+    "contract": "4edab86f81114f6b5f15fb5b47072eebdd966b3321ffd43ade4c273d44264b6c"
+  },
+  "official_package": {
+    "sha256": "3b91f74b94f20b9c055a522caa7692224d496ce39dba5d838479a42ecf783188",
+    "members": 13560,
+    "all_members_equal_tested_runtime": true
+  }
+}

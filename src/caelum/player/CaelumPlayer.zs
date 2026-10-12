@@ -7607,10 +7607,17 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
-    // El combate tutorial intercepta la muerte antes de los efectos nativos.
-    // El reinicio se difiere al WorldTick para terminar primero el daño actual.
+    // Defensa final para muertes solicitadas directamente por scripts; no
+    // resucitar cadáveres cargados ni crear un nuevo perfil o cuerpo.
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        if(CaelumTutorialSafety.Protects(self))
+        {
+            health=CaelumTutorialSafety.HealthAfter(self,health);
+            player.health=health;
+            UpdateHealthStateEffects();
+            return;
+        }
         CaelumUtilityStaff.EndEmission(self);
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         CaelumBreathing.StopAudio(self);
@@ -7626,6 +7633,20 @@ class CaelumPlayer : DoomPlayer
     // Estado visual individual; el daño real sigue en las mismas rutas de defensa.
     int PendingDamageVFXKind,DamageVFXKind,DamageVFXTic,DamageFeedbackRevision;
     double DamageVFXStrength;
+
+    int ApplyNativeHealthDamage(Actor inflictor,Actor source,int damage,Name mod,int flags,double damageAngle)
+    {
+        // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
+        // después de las defensas. La bandera existe sólo durante esta llamada.
+        bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
+        bool introduced=protect && !(player.cheats & CF_BUDDHA2);
+        int before=health;
+        if(introduced)player.cheats|=CF_BUDDHA2;
+        int result=Super.DamageMobj(inflictor,source,damage,mod,flags,damageAngle);
+        if(introduced)player.cheats&=~CF_BUDDHA2;
+        // No contar HP bloqueado por el piso ni atribuir daño anidado a este golpe.
+        return protect ? Max(0,Min(result,before-health)) : result;
+    }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
@@ -7681,7 +7702,7 @@ class CaelumPlayer : DoomPlayer
                 );
             }
 
-            int drowningResult = Super.DamageMobj(
+            int drowningResult = ApplyNativeHealthDamage(
                 inflictor,
                 source,
                 damage,
@@ -7721,7 +7742,7 @@ class CaelumPlayer : DoomPlayer
                 );
             }
 
-            int result = Super.DamageMobj(
+            int result = ApplyNativeHealthDamage(
                 inflictor,
                 source,
                 damage,
@@ -7815,7 +7836,7 @@ class CaelumPlayer : DoomPlayer
                 1.0
             );
         }
-        int result = Super.DamageMobj(
+        int result = ApplyNativeHealthDamage(
             inflictor,
             source,
             damage,
@@ -7939,7 +7960,7 @@ class CaelumPlayer : DoomPlayer
         }
         if (bInvulnerable)
         {
-            return Super.DamageMobj(
+            return ApplyNativeHealthDamage(
                 inflictor, source, incomingDamage, mod, flags, damageAngle
             );
         }
@@ -8074,7 +8095,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
         int healthBeforeDamage = health;
-        int result = Super.DamageMobj(
+        int result = ApplyNativeHealthDamage(
             inflictor,
             source,
             totalHealthDamage,
@@ -8171,7 +8192,7 @@ class CaelumPlayer : DoomPlayer
         // custom durability are calculated.
         if (bInvulnerable)
         {
-            return Super.DamageMobj(
+            return ApplyNativeHealthDamage(
                 inflictor,
                 source,
                 incomingDamage,
@@ -8216,7 +8237,7 @@ class CaelumPlayer : DoomPlayer
         int result = 0;
         if (finalDamage > 0)
         {
-            result = Super.DamageMobj(
+            result = ApplyNativeHealthDamage(
                 inflictor,
                 source,
                 finalDamage,

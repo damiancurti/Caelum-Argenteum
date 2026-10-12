@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
+
+## 5.2.17 - Preserve the living tutorial appearance (#207)
+
+No new art/audio assets. The MAP01 1 HP floor retains the living player and
+its modular appearance actors instead of entering the death/respawn path.
+assets/validation_5217 retains isolated native fixtures, sanitized logs, hashes
+and limits; local INIs, saves, engine packages and development IWADs are excluded.
+This does not claim a general appearance-after-respawn repair on other maps.
 
 ## 5.2.16 - Fullscreen cursor evidence (#204)
 

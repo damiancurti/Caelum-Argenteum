@@ -1,19 +1,17 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
 
-**Current 5.2.16 / #204 accepted:** fullscreen Vulkan cursor recovered with native
-VSync; author approved the local preference, commit/push/merge/closure.
-CA204-01 passed two starts, menu clicks and gameplay capture on 2026-10-12.
-Delivery: PR205. Evidence: validation_5216; CA-KP-085. No forced default or engine repair claimed.
-**5.2.15/#150 accepted:** UI/HUD/message scales, crosshair/comfort, Journal notice
-history; CA150-01 passed 2026-10-12, PR203 merged cd712377. Evidence validation_5215.
-**5.2.14/#149 accepted:** grouped controls/hints, M automap; CA149-01 passed
-2026-10-12, PR202 merged b36ef830. Evidence validation_5214.
-**5.2.13/#148 accepted:** modular appearance, preview/editor, glove hands,
-four faces/hairstyles, six hair colors, saved-sex voices. CA148-01 passed
-2026-10-12; PR201 merged b21e0632. Evidence validation_5213. Read
-SPRITE_ART_DIRECTION before generation. #148/#149/#150 closed; author queue empty.
+**Current 5.2.17 / #207:** MAP01 player cannot die; 1 HP floor preserves the
+living pawn/profile/appearance. All damage paths covered, NPCs/other maps unchanged.
+No saved protection or respawn repair. Native evidence: validation_5217;
+CA207-01 passed 2026-10-12; PR208 merge/closure authorized. Author queue empty.
+**5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01
+passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshed.
+**5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
+controls/M automap, modular cosmetics/hands. CA150/149/148-01 passed 2026-10-12;
+PR203/202/201 merged, issues closed. Evidence validation_5215/5214/5213;
+SPRITE_ART_DIRECTION governs generation. No pending checks for those issues.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;

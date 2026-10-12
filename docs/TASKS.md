@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
+
+## Issue #207 - MAP01 player stays alive at 1 HP (5.2.17)
+
+Implemented the author-requested map-scoped floor before native player death,
+plus direct survival/thermal/journey consumers and scripted death fallback.
+No persisted protection, global cheat/config change, NPC rule or other-map
+mortality change. Evidence: assets/validation_5217/RESULTS.md. Native identity,
+damage, save/load and travel checks are separate from author gameplay acceptance.
+CA207-01 passed on 2026-10-12 without qualifications. The author requested PR208
+merge and #207 closure; no author checks remain. Release 5.2.17 is unchanged.
 
 ## Issue #204 - Fullscreen native cursor (5.2.16)
 

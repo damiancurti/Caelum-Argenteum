@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
+
+## 5.2.17 - MAP01 player health floor (#207)
+
+The author reported appearance reverting after death in MAP01 and requested
+that the tutorial player remain alive at 1 HP. Damage now preserves the living
+pawn/profile throughout MAP01, including the Bull fight; NPC rules and player
+mortality on other maps remain unchanged. No automatic retry, regeneration,
+save schema change or general respawn-appearance repair is introduced.
+Native checks cover damage paths, identity, old/current saves and travel;
+evidence: assets/validation_5217/RESULTS.md. CA207-01 passed author acceptance on
+2026-10-12 without qualifications; the author authorized PR208 merge and #207
+closure. No author checks remain for this patch.
 
 ## 5.2.16 - Fullscreen native cursor workaround (#204)
 

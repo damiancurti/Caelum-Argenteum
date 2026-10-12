@@ -3,6 +3,9 @@
 // many different source files.
 class CaelumConstants : Object
 {
+    // Autor, #207: el personaje no muere durante MAP01.
+    const TUTORIAL_SAFE_MAP = "MAP01";
+    const TUTORIAL_MINIMUM_HEALTH = 1;
     // Autor, #128: combatientes vivos del mapa completo, incluidos jugadores.
     const HIGH_DENSITY_COMBATANTS = 500;
     const DEBUG_ALL_ATTRIBUTES_LEVEL_75 = 75;

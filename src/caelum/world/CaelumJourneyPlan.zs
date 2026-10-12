@@ -424,7 +424,8 @@ class CaelumJourneyPlan : Inventory
         }
         user.CurrentHunger = model.Hunger; user.CurrentThirst = model.Thirst; user.CurrentSleep = model.Sleep;
         user.CurrentAir = model.Air; user.CurrentAnima = model.Anima; user.CurrentLucidity = model.Lucidity;
-        user.CurrentAdrenaline = model.Adrenaline; user.health = model.Health; user.player.health = model.Health;
+        user.CurrentAdrenaline = model.Adrenaline;
+        user.health = CaelumTutorialSafety.HealthAfter(user,model.Health); user.player.health = user.health;
         user.NaturalHealthRegenerationAccumulator = model.HealingFraction;
         user.SurvivalDamageAccumulator = model.DamageFraction;
         if(ThermalForecast!=null)CaelumThermalService.CommitForecast(user,ThermalForecast.Result);

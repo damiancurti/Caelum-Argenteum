@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-086 - A health floor must precede native death and cover direct losses
+
+Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED; author gameplay check accepted.
+First recorded / last checked: 2026-10-12. Issue #207 / 5.2.17.
+Baseline: 1bf5087e; GZDoom 4.14.2, Windows 11, isolated Vulkan fixtures.
+Scope: CaelumPlayer.ApplyNativeHealthDamage, Die, CaelumTutorialSafety,
+survival/thermal direct losses and journey health commit.
+
+Actor Buddha can be bypassed by telefrag/forced damage. Clamping incoming damage
+before native armor changes absorption; restoring health after Super.DamageMobj
+is too late to prevent native death side effects. The verified approach scopes
+CF_BUDDHA2 around final native calls and restores only the introduced bit, so
+nested calls and preexisting cheats remain intact. Native p_interaction.cpp at
+tag g4.14.2 clears DMG_FORCED after early bypasses but before late native armor/
+invulnerability; document that semantic instead of claiming perfect equivalence.
+The return value is capped by both the native result and observed HP loss,
+avoiding duplicate attribution when WorldThingDamaged triggers nested damage.
+Native event payloads themselves still report engine-calculated damage.
+
+This alone misses direct health writes. Survival and thermal accumulators consume
+the original integer damage, then clamp actual loss; otherwise blocked damage
+can become deferred debt. Die has only a final live-pawn fallback for direct
+script calls, and does not revive saved corpses. No protection flag is saved.
+
+Reproduce with assets/validation_5217 fixtures and RESULTS.md: ordinary/forced/
+telefrag damage, armor order, nested events, direct losses, identity, saves and
+MAP02 mortality. Source audit URL/hash and failed fixture attempts are retained
+there. These checks establish the health-floor mechanism, not a general repair
+of appearance after death on other maps. CA207-01 passed author acceptance on
+2026-10-12 without qualifications; PR208 merge and #207 closure were authorized.
+
 ## CA-KP-085 - Fullscreen Vulkan cursor visibility can depend on presentation
 
 Status/evidence: AUTHOR-REPORTED acceptance for physical visibility/clicks; ENGINE-VERIFIED

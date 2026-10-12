@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.16** — 2026-10-12.
+Documentation version: **5.2.17** — 2026-10-12.
 
 ## 5.2.14 - Tutorial control hints (#149)
 
@@ -211,7 +211,11 @@ Autosave runs during the existing two-second pre-fight grace, after gathering
 support and before enabling hostility. It preserves current equipment, resources
 and progress without adding a heal/refill. Loading the saved preparation resumes
 it once; combat/death do not repeatedly overwrite it. Normal native save settings
-and rotation apply. Death stays normal death; retries use manual loading.
+and rotation apply. As of #207, the player cannot die anywhere in MAP01: damage
+stops at 1 HP and preserves the living character and appearance. All damage
+paths follow this rule; status/control effects and costs still apply. No heal,
+refill or automatic retry is added. NPC rules and mortality outside MAP01 remain
+unchanged. The earlier normal-death/manual-retry rule is superseded here.
 
 Loadout revision 2 and gift revision 1 preserve actual old equipment and migrate
 recorded stages idempotently. Old wand/Seal/sword loans become owned instead of
