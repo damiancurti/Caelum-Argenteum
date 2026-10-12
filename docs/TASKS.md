@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
+
+## Issue #204 - Fullscreen native cursor (5.2.16)
+
+Accepted native-setting workaround: Vulkan with VSync enabled in the author's
+existing launcher config. Two fullscreen starts, three menu click routes and
+gameplay/menu capture transitions passed CA204-01 on 2026-10-12. Native restart
+and configuration preservation evidence: assets/validation_5216/RESULTS.md.
+No forced renderer/default, cursor refresh loop, gameplay or save change.
+Accepted delivery: PR205. The author requested commit, push, issue closure and
+PR merge; no author checks remain. Lower-level engine/driver diagnosis is not
+claimed as completed.
 
 ## Issue #150 - Readability and comfort (5.2.15)
 
@@ -36,7 +47,8 @@ Evidence: assets/validation_5213/RESULTS.md. CA148-01 passed author acceptance
 on 2026-10-12; PR201 merge and #148 closure are authorized.
 Author reported an invisible cursor in fullscreen MainMenu, Options and creator,
 with working clicks and recovery after Alt+Enter. The isolated repeat began with
-a visible cursor; identify a reproducible trigger before choosing a runtime fix.
+a visible cursor; #204 later reproduced the failure and verified the native
+VSync workaround above.
 PR200/#195 are merged/closed following the prior explicit acceptance.
 Author extension: four faces and four hairstyles for each human/goblin/Caelith
 sex, six natural hair colors for all three races, all editable in-game. Follow

@@ -4,6 +4,41 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-085 - Fullscreen Vulkan cursor visibility can depend on presentation
+
+Status/evidence: AUTHOR-REPORTED acceptance for physical visibility/clicks; ENGINE-VERIFIED
+for native preferences/restart; CODE-VERIFIED for presentation mode selection.
+First recorded / last checked: 2026-10-12. Issue #204 / 5.2.16.
+Baseline: cd712377; GZDoom 4.14.2, Windows 11, RTX 3070 Ti, NVIDIA 576.88.
+Scope: native Windows cursor at fullscreen startup through run_dev.bat.
+
+With Vulkan, vid_vsync=false and vk_exclusivefullscreen=false, the author saw
+no cursor in fullscreen; windowed Vulkan and fullscreen OpenGL showed it.
+Reassigning vid_cursor, replacing the moon with the Windows arrow, and mode
+cycling failed. Exclusive fullscreen also failed initially; Alt+Tab recovered
+it in that probe. This focus recovery must not count as successful startup.
+
+Native vid_vsync=true produced two successful fullscreen Vulkan starts before
+Alt+Tab. The author verified MainMenu/Options/creator clicks and gameplay/menu
+capture transitions, then approved this preference. Keep it in the existing
+INI; do not force a backend or overwrite other users' explicit VSync choices.
+VSync can add latency. The physical result applies to the recorded installation,
+not every GPU/driver. No engine/driver root cause or source-level repair is proven.
+
+g4.14.2 libraries/ZVulkan/src/vulkanswapchain.cpp selects IMMEDIATE presentation
+when supported with VSync off, versus FIFO/FIFO_RELAXED with VSync on. This is a
+code distinction, not instrumentation proving which driver path lost the cursor.
+Recreating the Windows HCURSOR does not itself repair capture/ShowCursor state.
+CA-KP-034 still governs the unchanged cursor image and hotspot.
+
+Reproduction: assets/validation_5216/RESULTS.md, probes, logs and hashes. Use
+disposable configs and record initial focus separately from later Alt+Tab.
+The fullscreen Computer Use capture showed other desktop windows in these runs;
+it cannot establish physical cursor visibility. Native engine screenshots omit
+the OS cursor. Use explicit physical-display observations for that claim.
+The first -window-only probe still reported vid_fullscreen=true and is retained
+as invalid windowed evidence; set the copied INI explicitly for that comparison.
+
 ## CA-KP-084 - Native crosshair and scale APIs have separate owners
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
@@ -34,7 +69,7 @@ the matrix. Native Save/Load Size Clean uses CleanXfac/Yfac, not uiscale.
 
 Evidence/reproduction: assets/validation_5215/RESULTS.md; native small/large
 4:3, 16:9 and ultrawide panels, crosshair contexts, pointer dispatch and combat
-comparison. Author visual/comfort acceptance remains CA150-01 pending.
+comparison. CA150-01 passed author visual/comfort acceptance on 2026-10-12.
 
 ## CA-KP-083 - Native bindings, modal priority and automap use different paths
 

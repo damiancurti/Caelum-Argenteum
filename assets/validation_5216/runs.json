@@ -1,0 +1,148 @@
+{
+  "issue": 204,
+  "baseline": "cd712377",
+  "engine": "GZDoom 4.14.2",
+  "platform": "Windows 11",
+  "gpu": "NVIDIA GeForce RTX 3070 Ti",
+  "opengl_driver_string": "576.88",
+  "fullscreen_resolution": [
+    1920,
+    1080
+  ],
+  "runtime_members": 13559,
+  "test_overrides": {
+    "snd_mastervolume": 0.05,
+    "vid_activeinbackground": true,
+    "i_pauseinbackground": false,
+    "i_soundinbackground": true
+  },
+  "baseline_preferences": {
+    "vid_preferbackend": 1,
+    "vid_fullscreen": true,
+    "vk_exclusivefullscreen": false,
+    "vid_vsync": false,
+    "vid_cursor": "None",
+    "in_mouse": 0,
+    "m_use_mouse": 2
+  },
+  "log_processing": "Installation paths replaced by placeholders; UTF-8 LF. Both original and retained hashes are recorded.",
+  "runs": [
+    {
+      "started_utc": null,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": null,
+      "label": "baseline-01",
+      "original_log_sha256": "96d85e10e0adee01daa3ff47ef17357104fa61d571f347d86c82884a08b34b38",
+      "retained_log_sha256": "9e5f39adcdd1ff26d43e939613d79bf6517c7a286de215f19dbb5c54f397e754"
+    },
+    {
+      "started_utc": "2026-10-12T04:56:50.5641034Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "D10FCCDA3D54C0182B23ED27D9C3C0FE949C82C2EA79A923EDC9573C85BD970C",
+      "label": "display-cycle-01",
+      "original_log_sha256": "dfe1ca57ec4011d15a401456e9d5589619cc2c619171e0ca4219153108334fb2",
+      "retained_log_sha256": "f54aaf4f22aed737523698bc55a830d2ec27bd70f12a3857f9e638057597b7b5"
+    },
+    {
+      "started_utc": "2026-10-12T05:08:32.9560894Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "A57E1C48160965CAEDE4B64426BC2D7DAF52641D8B4FBFC940EF0D8EB989AD2D",
+      "label": "exclusive-01",
+      "original_log_sha256": "73d4836aa09a072a64506ecdd1c5cd2999239b828d59287ba5b5e4bfa6cca13c",
+      "retained_log_sha256": "14a1d710b07b993ccfac6bb13341c67b111f2a3d0becd681e052f0c2c3dfba27"
+    },
+    {
+      "started_utc": "2026-10-12T05:28:17.6929907Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "9A8AF873070AA3A25B1B05794DB34D17876EBEFF519E6CF361682DB38B18D87B",
+      "initial_config_sha256": "6893E995CE311ECD4D5FECA3B272D609486C235EBDF3E0991E606E94AC366D2F",
+      "label": "official-01",
+      "original_log_sha256": "7aa3d1fa48c5ea65ec927653605e1c84647d2f58fb8e51ff311a776457f8564f",
+      "retained_log_sha256": "eb60df29170ceccf270a84a026a216c2a62277b20cd558df4464e9ff59ca59ee"
+    },
+    {
+      "started_utc": "2026-10-12T05:04:58.7624830Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "61F88946EBEAFFD17EC66C544D3A1725E9D2F6BBA9B83AFE4AC6AA43E4AB5184",
+      "label": "opengl-01",
+      "original_log_sha256": "993e7a6587e8f6d4ffe7ffec05703ecc793ccecb94c86a722f1d8778299e0d8f",
+      "retained_log_sha256": "0381c5b37b2f1e8ffc31a4a040743b7c66df2fb952c050f88d638f0749bae01e"
+    },
+    {
+      "started_utc": "2026-10-12T05:23:20.2863827Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "6893E995CE311ECD4D5FECA3B272D609486C235EBDF3E0991E606E94AC366D2F",
+      "label": "persist-01",
+      "original_log_sha256": "9c960dbe65f0aa59e30a545f9bf53e5462d67ecd534819205ba3973052b6dd31",
+      "retained_log_sha256": "fefebf37c75120880419c1cbb49f7d6079b26bf16e469421e9944f25cd5304d6"
+    },
+    {
+      "started_utc": "2026-10-12T05:23:47.1284225Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "BBCBBD83B8ED4355E93346F730133404B980C5602A5625F4A58AB1638C1658A5",
+      "label": "persist-02",
+      "original_log_sha256": "a913064b34796442ea8ea475b18c6d4d707238af3bd60d2939d5b44370c03715",
+      "retained_log_sha256": "dae95e1cd612983926d726f3d9b848358a7882668ad399b3351c693fc38d5f77"
+    },
+    {
+      "started_utc": "2026-10-12T04:54:55.6907906Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "D10FCCDA3D54C0182B23ED27D9C3C0FE949C82C2EA79A923EDC9573C85BD970C",
+      "label": "refresh-01",
+      "original_log_sha256": "ee811aeaa67caa92cbe6c7bbf257ccf50c7011a364a9cb5986ab484db55e0be5",
+      "retained_log_sha256": "7c97b43981fbce2cae797a80d22afee86ec4af13b0f0cb2548edd64b3bb30436"
+    },
+    {
+      "started_utc": "2026-10-12T05:00:26.8278771Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "D10FCCDA3D54C0182B23ED27D9C3C0FE949C82C2EA79A923EDC9573C85BD970C",
+      "label": "system-arrow-01",
+      "original_log_sha256": "fd15c88746f2b48edffa827679bacea035393992be08c0142a0232863a418961",
+      "retained_log_sha256": "86a37992e143780ccf57081e5f2b441b8b1ff4bebf1ee22908646118c6a2ffc3"
+    },
+    {
+      "started_utc": "2026-10-12T05:10:20.6394595Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "6893E995CE311ECD4D5FECA3B272D609486C235EBDF3E0991E606E94AC366D2F",
+      "label": "vsync-01",
+      "original_log_sha256": "9004756a3188296f7a4d06d9444ec0ab0734d2ff71cc751b5aa5b1d59bacc039",
+      "retained_log_sha256": "b45488eccd52bfc06d00607f50900b0f8784a6d298f18875709ccccb91d12f98"
+    },
+    {
+      "started_utc": "2026-10-12T05:14:25.0311421Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "6893E995CE311ECD4D5FECA3B272D609486C235EBDF3E0991E606E94AC366D2F",
+      "label": "vsync-02",
+      "original_log_sha256": "8a7ab367ba4af9509c2211838d5d87095a9576a09093e42b192c6dc36b7929cd",
+      "retained_log_sha256": "156343211d2b1f64b9cde0810f7e52693e676d6381e27d8687dbd2595b68ad18"
+    },
+    {
+      "started_utc": "2026-10-12T05:01:59.0059009Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "D10FCCDA3D54C0182B23ED27D9C3C0FE949C82C2EA79A923EDC9573C85BD970C",
+      "label": "window-first-01",
+      "original_log_sha256": "ec9c717ebfddea0b1f5c877115d709b7c404fca8611dad5e99024e81954f97fb",
+      "retained_log_sha256": "33a4680f9720f577e0dd0b1f6042d78b5e82789c4e19d706e6bbfe57434a62cf"
+    },
+    {
+      "started_utc": "2026-10-12T05:03:14.8161715Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "production_sha256": "67BB5E1B3C6E413B1A2F10FAA1C1FBC00F0AB706C5BFAC9A0A78ABE9B37FBF73",
+      "initial_config_sha256": "D493861D510024D5B216CF5A4E7E6E59D0C2B8F98571BCB745478F75FE38F1CA",
+      "label": "window-first-02",
+      "original_log_sha256": "552e789b5ca3660d47e3d8a9f6043915bbdc3867dff9720995091f6653d0126b",
+      "retained_log_sha256": "076172b5326a9d3fd3fb19117bff1e8172093d3c8ebeebc9c06d65013f239056"
+    }
+  ]
+}

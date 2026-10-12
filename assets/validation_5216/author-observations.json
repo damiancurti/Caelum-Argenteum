@@ -1,0 +1,69 @@
+{
+  "issue": 204,
+  "baseline": "cd712377",
+  "author_observations": [
+    {
+      "probe": "baseline-01",
+      "result": "Cursor invisible at fullscreen MainMenu using a disposable copy of run_dev.bat configuration."
+    },
+    {
+      "probe": "refresh-01",
+      "result": "Cursor remained invisible after vid_cursor None was reassigned at ten seconds; fullscreen stayed enabled."
+    },
+    {
+      "probe": "display-cycle-01",
+      "result": "Author reported cursor still invisible after scheduled false/true fullscreen requests; clicking removes the keyboard Sun selector."
+    },
+    {
+      "probe": "display-cycle-01-manual",
+      "result": "Author reported manual Alt+Enter twice did not restore the cursor."
+    },
+    {
+      "probe": "system-arrow-01",
+      "result": "Author reports standard Windows arrow also invisible in fullscreen Vulkan."
+    },
+    {
+      "probe": "window-first-01",
+      "result": "Invalid warm-start attempt: -window alone did not override fullscreen=true; no windowed claim."
+    },
+    {
+      "probe": "window-first-02",
+      "result": "Author corrected the initial answer: cursor visible in windowed Vulkan, invisible after entering fullscreen."
+    },
+    {
+      "probe": "opengl-01",
+      "result": "Author confirms Caelum cursor visible in fullscreen OpenGL."
+    },
+    {
+      "probe": "exclusive-01",
+      "result": "Native exclusive-fullscreen Vulkan preference: initially invisible; author later reports Alt+Tab makes cursor appear. This is focus recovery, not startup success."
+    },
+    {
+      "probe": "vsync-01",
+      "result": "Author confirms cursor visible from fullscreen Vulkan startup with vid_vsync=true, before Alt+Tab or mode changes."
+    },
+    {
+      "probe": "vsync-02",
+      "result": "Author confirms cursor visible from a second fullscreen Vulkan startup, before Alt+Tab or mode changes; clicks work in MainMenu, Options and Create Character."
+    },
+    {
+      "probe": "vsync-02-gameplay",
+      "result": "Author confirms mouse camera input, cursor hidden during play, visible in menus and hidden again after closing the menu."
+    },
+    {
+      "probe": "author-setting-approval",
+      "result": "Author approved keeping Vulkan with VSync enabled and requested commit, push, issue closure and PR merge."
+    }
+  ],
+  "limits": [
+    "Fullscreen Computer Use captures show other desktop windows instead of reliable game frames. Physical-display conclusions use explicit author observations.",
+    "CVar request logging does not prove a display transition was presented while the process was unfocused."
+  ],
+  "acceptance": {
+    "id": "CA204-01",
+    "origin": "5.2.16 / #204",
+    "date": "2026-10-12",
+    "result": "passed",
+    "scope": "Two fullscreen Vulkan startups; MainMenu/Options/creator clicks; menu/gameplay capture transitions on the author machine."
+  }
+}

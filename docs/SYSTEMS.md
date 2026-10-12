@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
+
+## 5.2.16 - Native fullscreen cursor preference (#204)
+
+Author decision, 2026-10-12: retain Vulkan and enable native `vid_vsync` for the
+tested Windows installation. The native cursor became visible at fullscreen
+startup with this preference; main menu, Options, creator clicks and gameplay
+capture transitions passed CA204-01. This is an engine-global presentation
+preference saved in the launcher's INI, separate from character saves.
+`run_dev.bat` continues to respect that INI, without forcing VSync or a backend
+on every launch. Native VSync can add presentation latency. The scoped workaround
+does not prove the underlying engine/driver fault is repaired on other hardware.
+Reproduction and failed alternatives: assets/validation_5216/RESULTS.md.
 
 ## 5.2.15 - Readability, native crosshair and comfort (#150)
 

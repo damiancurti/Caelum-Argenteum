@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
+
+## 5.2.16 - Accepted fullscreen cursor workaround (#204), 2026-10-12
+
+After #150 acceptance, fullscreen startup through run_dev.bat again hid the
+native cursor. Disposable configs reproduced the failure with Vulkan; recreating
+the cursor, automatic/manual mode changes and the standard Windows arrow did not
+resolve it. The author's corrected observation distinguishes visible windowed
+Vulkan from invisible fullscreen Vulkan. OpenGL worked. Vulkan exclusive mode
+failed initially and recovered after Alt+Tab; that is not a startup pass.
+
+Enabling native VSync restored the cursor from startup on two fresh Vulkan
+processes, before Alt+Tab or mode changes. The author confirmed working clicks in
+MainMenu, Options and Create Character, plus camera input and cursor hide/show
+through gameplay/menu transitions. CA204-01 (origin 5.2.16 / #204) passed author
+acceptance on 2026-10-12 for this installation. No outstanding author check is
+removed or inferred; pending_test.txt remains empty.
+
+After explaining the latency tradeoff, the author chose this adjustment and
+requested commit, push, issue closure and PR merge. Only vid_vsync changed in the
+real launcher's INI, with the original retained locally; no setting is imposed on
+other users. Repository changes record the reproducible native workaround,
+evidence and release labels. The underlying engine/driver cause remains unproven.
+Technical restart checks and retained failures: assets/validation_5216/RESULTS.md.
+Delivery commit 1d9e7efe was pushed through PR205; its merge and #204 closure
+are explicitly authorized by the author after acceptance.
 
 ## 5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12
 

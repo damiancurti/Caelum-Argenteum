@@ -1,0 +1,46 @@
+{
+  "vmnatives.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/scripting/interface/vmnatives.cpp",
+    "sha256": "dabe4747f902e2cd3e43734d437a1798eea54925cc2ed8b22a22367c463f53fe"
+  },
+  "c_cmds.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/console/c_cmds.cpp",
+    "sha256": "7bebf9eb095a95a539319d7f4411bd40f800551f727392ddf6a7916d3a742c58"
+  },
+  "c_dispatch.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/console/c_dispatch.cpp",
+    "sha256": "3d0d031aee720b6004f0589a8c96fd495bf40041bbfc9ca3d5897c77a0ecf398"
+  },
+  "i_mainwindow.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/platform/win32/i_mainwindow.cpp",
+    "sha256": "63ef6601dabea9dc5ae866342ecd055fdc3864223cd3af80334ca3b688f64bb5"
+  },
+  "c_expr.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/console/c_expr.cpp",
+    "sha256": "1d77ad2c1d145e11515f3b5bf92bdde6b237f0c8fd64c166c7f5c44a0cdf60d2"
+  },
+  "win32glvideo.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/platform/win32/win32glvideo.cpp",
+    "sha256": "2c5434f9dea3e497a32b36b541e24f5adea7dfb7530ee318b1561293ee8d4866"
+  },
+  "win32basevideo.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/platform/win32/win32basevideo.cpp",
+    "sha256": "2b7795367cba1d33ba9a9054af742e6456d4e84e066a05129bbe5497c44b46ee"
+  },
+  "win32vulkanvideo.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/platform/win32/win32vulkanvideo.cpp",
+    "sha256": "ca9f0bf7a4a9f53bd63e11b977821fe7091ea36924635fcacf5111ac433d71ae"
+  },
+  "vk_renderdevice.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/rendering/vulkan/system/vk_renderdevice.cpp",
+    "sha256": "b9428c73566ec28664ac99bd18ff728aba78cadf4522d24369bbe8b7f5f09efc"
+  },
+  "base_sysfb.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/platform/win32/base_sysfb.cpp",
+    "sha256": "e456ba7351e57012cab68c8e69e3410739ddee643db8ee084f88a674ed04a5bb"
+  },
+  "vulkanswapchain.cpp": {
+    "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/libraries/ZVulkan/src/vulkanswapchain.cpp",
+    "sha256": "295f7441289e2eab04b54729551b7d8e6c8e522f9eba50b10dc549008a008bb3"
+  }
+}

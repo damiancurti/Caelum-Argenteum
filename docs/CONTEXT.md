@@ -1,18 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
 
-**Current 5.2.15 / #150 accepted:** shared native UI/HUD/message scales, native crosshair
-and comfort options; saved last-20 Journal notice history approved by author.
-Combat/#137 unchanged. CA150-01 passed 2026-10-12; author queue empty.
-Evidence: validation_5215. Native limits: SYSTEMS. Accepted delivery: PR203.
-**5.2.14 / #149 accepted:** CA149-01 passed 2026-10-12, PR202 merged b36ef830,
-issue closed. Grouped native controls/hints; M automap. Evidence validation_5214.
-
-**5.2.13 / #148 accepted:** CA148-01 passed 2026-10-12; PR201 merged b21e0632,
-issue closed. Modular appearance, preview/editor and equipped-glove hands;
-four humanoid faces/hairstyles, six hair colors; saved sex voices. Read
-SPRITE_ART_DIRECTION before art generation; evidence validation_5213. Earlier cursor report remains historical.
+**Current 5.2.16 / #204 accepted:** fullscreen Vulkan cursor recovered with native
+VSync; author approved the local preference, commit/push/merge/closure.
+CA204-01 passed two starts, menu clicks and gameplay capture on 2026-10-12.
+Delivery: PR205. Evidence: validation_5216; CA-KP-085. No forced default or engine repair claimed.
+**5.2.15/#150 accepted:** UI/HUD/message scales, crosshair/comfort, Journal notice
+history; CA150-01 passed 2026-10-12, PR203 merged cd712377. Evidence validation_5215.
+**5.2.14/#149 accepted:** grouped controls/hints, M automap; CA149-01 passed
+2026-10-12, PR202 merged b36ef830. Evidence validation_5214.
+**5.2.13/#148 accepted:** modular appearance, preview/editor, glove hands,
+four faces/hairstyles, six hair colors, saved-sex voices. CA148-01 passed
+2026-10-12; PR201 merged b21e0632. Evidence validation_5213. Read
+SPRITE_ART_DIRECTION before generation. #148/#149/#150 closed; author queue empty.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;
@@ -47,7 +48,7 @@ Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
 The author authorized all four merges/closures. At that acceptance the author test queue was empty;
-HISTORY records each confirmation. Current roadmap: #150; prior #148/#149 accepted.
+HISTORY records each confirmation. Current delivery: #204.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.
