@@ -11,7 +11,8 @@ The native crosshair uses engine-provided artwork without copying it into src.
 Fonts and English/Spanish text retain their sources in LANGUAGE and the
 localization index. The new notice history stores text, not rendered images.
 Reproducible native fixtures, captures, source hashes and limits are retained in
-assets/validation_5215. Author visual/comfort acceptance is pending CA150-01.
+assets/validation_5215. CA150-01 passed author visual/comfort acceptance on
+2026-10-12 without qualifications.
 
 ## 5.2.14 - Native control presentation and test sources (#149)
 

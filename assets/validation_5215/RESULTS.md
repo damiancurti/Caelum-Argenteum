@@ -4,7 +4,9 @@ Technical implementation on `issue150-accessibility-comfort`, based on accepted
 merge `b36ef830` (#149/PR202). Target: GZDoom 4.14.2, Windows 11, Vulkan, local
 development Doom II IWAD. No IWAD, executable, package, INI or save is distributed.
 The author approved recent complete HUD notices plus last-20 Journal history.
-Author visual/comfort acceptance is **pending CA150-01**, separate from this QA.
+Author visual/comfort acceptance **CA150-01 passed on 2026-10-12 without
+qualifications**, separate from this QA. Origin: 5.2.15 / #150. The author
+requested PR203 merge and issue closure; no author checks remain.
 
 ## Reproduction and retained evidence
 
@@ -78,4 +80,5 @@ Independent final review found no remaining blocker. Its crosshair=0 caveat
 (weapon-specific override versus the global crosshairon toggle) is documented.
 Source/document whitespace checks pass. Native logs retain the engine's raw
 trailing space in the CPU-name line rather than altering recorded evidence.
-Delivery: implementation f8a5698b, pushed through draft PR203; #150 stays open.
+Delivery: implementation f8a5698b, pushed through PR203; author acceptance and
+merge/closure authorization recorded on 2026-10-12.

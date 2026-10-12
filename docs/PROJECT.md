@@ -12,8 +12,9 @@ Author-approved notification overflow uses recent complete HUD messages plus a
 saved, scrollable last-20 history in the Journal. Camera/weapon bob remains
 native; accepted combat and #137 feedback are unchanged. Global presentation
 preferences remain separate from saved identity. Native evidence and limits:
-assets/validation_5215/RESULTS.md. CA150-01 author acceptance is pending; #150
-is implemented for review, not merged or closed. #149/PR202 are closed/merged.
+assets/validation_5215/RESULTS.md. CA150-01 passed author acceptance on
+2026-10-12 without qualifications; the author requested PR203 merge and #150
+closure. No author checks remain. #149/PR202 are closed/merged.
 
 ## 5.2.14 - Grouped native controls and current hints (#149)
 

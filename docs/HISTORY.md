@@ -4,6 +4,11 @@ Documentation version: **5.2.15** — 2026-10-12.
 
 ## 5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12
 
+Author acceptance, 2026-10-12: CA150-01 (origin 5.2.15 / #150) passed
+without qualifications. The author confirmed all tests and requested PR203
+merge and issue closure. Its confirmed entry is removed from pending_test.txt;
+the author test queue is empty. Acceptance does not increment this patch version.
+
 After accepting #149, the author requested its closure/merge and implementation,
 live tests, commit and push for #150. Acceptance commit 80cacfce was pushed;
 PR202 merged b36ef830 and #149 closed. No extra #149 version increment.
@@ -23,11 +28,11 @@ Focused evidence, failed fixture attempts and support limits are recorded in
 assets/validation_5215/RESULTS.md. Baseline/current/zero-bob/maximum-bob native
 combat traces match exactly: 474 state samples and seven projectiles per run.
 Different saved identities retain global presentation choices across load and
-restart. Engine checks do not establish author comfort acceptance; CA150-01
-originates in 5.2.15/#150 and remains outstanding. Implementation commit f8a5698b
+restart. Engine checks remain distinct from the author acceptance recorded
+above. Implementation commit f8a5698b
 was pushed through draft PR203. Sixteen native runs and official package
 membership checks passed; keep-awake was released with the power plan unchanged.
-The issue remains open pending author acceptance and merge.
+The author subsequently authorized PR203 merge and #150 closure.
 
 ## 5.2.14 - Native controls and synchronized hints (#149), 2026-10-12
 

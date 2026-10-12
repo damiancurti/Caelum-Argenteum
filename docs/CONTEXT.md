@@ -2,10 +2,10 @@
 
 Documentation version: **5.2.15** — 2026-10-12.
 
-**Current 5.2.15 / #150:** shared native UI/HUD/message scales, native crosshair
+**Current 5.2.15 / #150 accepted:** shared native UI/HUD/message scales, native crosshair
 and comfort options; saved last-20 Journal notice history approved by author.
-Combat/#137 feedback unchanged. Evidence: validation_5215; CA150-01 pending.
-Native limits and ownership: SYSTEMS. Committed/pushed; draft PR203; no merge yet.
+Combat/#137 unchanged. CA150-01 passed 2026-10-12; author queue empty.
+Evidence: validation_5215. Native limits: SYSTEMS. Accepted delivery: PR203.
 **5.2.14 / #149 accepted:** CA149-01 passed 2026-10-12, PR202 merged b36ef830,
 issue closed. Grouped native controls/hints; M automap. Evidence validation_5214.
 

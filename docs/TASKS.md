@@ -7,8 +7,9 @@ Documentation version: **5.2.15** — 2026-10-12.
 Implemented shared UI/HUD/message scaling, restored native crosshair, native
 comfort options and author-approved recent-notice overflow/history. Preserved
 identity ownership, native Save/Load, input remaps, combat and #137 feedback.
-Committed and pushed through draft PR203; evidence: assets/validation_5215/RESULTS.md. Remaining: CA150-01
-author visual/comfort acceptance, then PR review/merge and issue closure.
+Accepted delivery: PR203; evidence: assets/validation_5215/RESULTS.md.
+CA150-01 passed author visual/comfort acceptance on 2026-10-12 without
+qualifications. The author requested merge and closure; no author checks remain.
 No engine fork, new effect-intensity default or combat/balance change is part
 of this delivery. Native health-color normalization is documented in SYSTEMS.
 

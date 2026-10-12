@@ -56,7 +56,7 @@ No extra intensity setting or new default is introduced. Accepted #137 flash,
 wound and Lucidity feedback, thresholds and palette remain unchanged.
 
 Evidence: assets/validation_5215/RESULTS.md. Technical checks and author comfort
-acceptance are separate; CA150-01 remains in pending_test.txt.
+acceptance are separate; the author confirmed CA150-01 passed on 2026-10-12.
 
 ## 5.2.14 - Native input ownership, groups and hints (#149)
 
