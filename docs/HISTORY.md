@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Modular animation and rest repairs (#209), 2026-10-12
+
+Author report: face outlines, missing running, head/body separation, rolled
+sleep/death art, incorrect orbit perspective and seat height, F cancelling
+food actions, flat table canteen, and rear punch dragging trousers. Author
+clarifications: supine sleep; Domingo pose/anatomy references except rear punch;
+distinct female first-person hands. Simple clothes and modular identity remain.
+
+Implemented authored run/punch/death/sleep poses, alpha cleanup, common
+grounding/neck registration, head WorldOffset following, model-surface rest
+alignment, contextual F/G/T dispatch, sex-specific bare/gloved hands and an
+original 3D canteen. No gameplay balance, native action timing or save schema
+change. Original and superseded sources/provenance are retained.
+
+Native GZDoom 4.14.2/Vulkan tests reproduce the old chair head-offset failure
+and pass its repair; native movement visits all four run and four punch phases
+and all death stages in MAP99. Real rest-menu key dispatch preserves eating/
+drinking and Q cancellation. Old/current seated saves retain the original
+offset, correct it idempotently and restore it on exit, with the same canteen
+owner and three liters. Visual captures also exposed and corrected unsupported
+OBJ polygon caps and excessive end-view supine depth projection.
+Full evidence, hashes and limits: assets/validation_5218/RESULTS.md.
+
+CA209-01/CA209-02 originate in this release and remain pending author visual/
+interaction acceptance. No author acceptance, merge or closure is inferred
+from agent tests. The author requested commit and push.
 
 ## 5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12
 

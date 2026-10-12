@@ -22,6 +22,7 @@ class CaelumAppearanceHead : Actor
         if(bInvisible)return;
         SetOrigin(body.Pos,true);
         Prev=body.Prev;
+        WorldOffset=body.WorldOffset;
         FloorClip=body.FloorClip;
         Angle=body.Angle;
         sprite=CaelumAppearance.HeadSprite(profile.Race,profile.Sex,profile.SkinTone,profile.Face,profile.HairStyle,profile.HairColor);

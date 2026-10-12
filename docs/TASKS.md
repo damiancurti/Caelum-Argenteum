@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## Issue #209 - Modular animation and rest repair (5.2.18)
+
+Implemented the reported pose/attachment, seating/input and table-model fixes,
+plus the author's female-hand amendment. Source provenance and native test
+fixtures: assets/source/art/appearance_5218 and assets/validation_5218.
+CA209-01/CA209-02 remain pending in the single author queue. Review the native
+visual evidence before accepting artwork; engine assertions do not substitute
+for that acceptance. Commit/push and linked PR requested; do not merge/close
+until the author authorizes that step.
 
 ## Issue #207 - MAP01 player stays alive at 1 HP (5.2.17)
 

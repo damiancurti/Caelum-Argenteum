@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.2.17** - 2026-10-12.
+Documentation version: **5.2.18** - 2026-10-12.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -46,6 +46,11 @@ pose, equipment, or exact edit target. An armored Domingo reference does not
 authorize painting its armor and weapons onto the unequipped player. Caella can
 establish goblin features without making every goblin the same individual.
 Do not introduce Doom artwork or assume that a development IWAD licenses its art.
+
+For #209 the author specifically selects Domingo's poses and anatomical forms
+as references, except his rear attack. The rear punch should follow the clear
+forward extension/recovery idea of the Revenant without copying Doom pixels.
+Preserve the player's simple clothing and the modular identity choices.
 
 ## Characters and choices
 
@@ -147,6 +152,15 @@ new animation catalog. Sitting/kneeling and held-firearm locomotion retain the
 limitations documented in ASSETS until separately improved. Inspect those poses
 when adding modules rather than describing them as newly authored animation.
 
+The #209 revision replaces run/punch/death/sleep with authored pose sources.
+Sleep is **supine**, with relaxed limbs, a supported head and consistent world
+direction as the rest camera orbits. A side-rolled upright figure is not a
+sleep or corpse pose. Death must visibly buckle and settle into an actual
+fallen body. Four-phase running must alternate support/flight; punching must
+articulate shoulder/elbow/forearm without moving neighboring trouser pixels.
+Check the neck joint in every direction and posture, not only the standing
+front. Seat contact follows character height and the furniture surface.
+
 ## First-person artwork
 
 Hands belong to the selected character. Exposed skin/fur must agree with the
@@ -155,6 +169,12 @@ Visible gloves depend on the actual equipped Hands-slot item. Broken gloves
 remain worn; unequipped or boxed gloves must not hide the bare hand appearance.
 The current shared brown glove presentation is not a new material-specific
 wardrobe.
+
+The author requires anatomically distinct female first-person hands (#209),
+including humanoid skin, every beast form and worn gloves. Use proportion,
+knuckle/wrist shape and silhouette; a recolor of a male hand is insufficient.
+Keep hands functionally capable and consistent with the painted world body;
+do not introduce jewelry, nail polish or decorative accessories.
 
 Keep the accepted weapon shapes, sleeve framing, handedness, grip and shared
 pivots when replacing hand components. Preserve the thumb/fingers in front of
@@ -220,6 +240,13 @@ Keep outstanding author checks in `pending_test.txt`, and record confirmed
 acceptance in HISTORY. Generated candidates are never automatically accepted.
 
 ## Status and open details
+
+#209 repairs the subsequently reported attachment/animation defects and adds
+female hand anatomy. Its sources are integrated but author visual acceptance
+is still pending. Source hashes and exact prompts are retained in
+assets/source/art/appearance_5218/PROVENANCE.json; native checks and limitations
+are in assets/validation_5218/RESULTS.md. The older #148 acceptance below remains
+historical evidence, not automatic acceptance of this revision.
 
 The #148 modular body/skin/fur/hands integration is delivered in
 [PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201); CA148-01 passed

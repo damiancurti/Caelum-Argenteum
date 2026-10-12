@@ -14,6 +14,16 @@ class CaelumRestFurniture : Actor abstract
     // Ajuste gráfico a las poses RSDO; el volumen físico conserva sus medidas.
     virtual vector3 PoseOffset() { return (Cos(Angle)*-16, Sin(Angle)*-16, 0); }
 
+    virtual vector3 PoseOffsetFor(CaelumPlayer user)
+    {
+        vector3 offset=PoseOffset();
+        // El apoyo dibujado se alinea con la superficie real del modelo.
+        // No cambia el volumen físico ni fuerza una altura al personaje.
+        double support=CaelumAppearanceRegistry.SeatSupportPixels()*user.Scale.Y;
+        offset.Z=CaelumAppearanceRegistry.ChairSurface()*Scale.Y/Max(.001,level.pixelstretch)-support;
+        return offset;
+    }
+
     bool CanReach(CaelumPlayer user)
     {
         return user != null && user.player != null && user.health > 0
@@ -132,6 +142,8 @@ class CaelumRestBed : CaelumRestFurniture
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
     override int ComfortFactor() { return 4; }
     override vector3 PoseOffset() { return (0, 0, 10); }
+    override vector3 PoseOffsetFor(CaelumPlayer user)
+    { return (0,0,CaelumAppearanceRegistry.BedSurface()*Scale.Y/Max(.001,level.pixelstretch)); }
     Default { Radius 56; Height 24; Tag "$CA_REST_BED_TITLE"; }
     States { Spawn: CAHC A -1; Stop; }
 }

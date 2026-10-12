@@ -14,11 +14,13 @@ class CaelumAppearanceHands : Object play
 
     static int Variant(CaelumPlayer user)
     {
-        if(user==null || user.CharacterProfile==null || HasGloves(user))return -1;
+        if(user==null || user.CharacterProfile==null)return -1;
         let profile=user.CharacterProfile;
+        bool female=profile.Sex==1;
+        if(HasGloves(user))return female?36:-1;
         int family=profile.Race==CaelumConstants.RACE_CAELITH?1
             :profile.Race==CaelumConstants.RACE_BEAST_MAN?2+Clamp(profile.BeastForm,0,3):0;
-        return family*3+Clamp(profile.SkinTone,0,2);
+        return (female?18:0)+family*3+Clamp(profile.SkinTone,0,2);
     }
 
     static State Resolve(CaelumPlayer user,String label,State original)

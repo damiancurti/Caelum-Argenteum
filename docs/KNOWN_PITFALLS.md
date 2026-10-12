@@ -4,6 +4,19 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-087 - Triangulate model caps before native OBJ validation
+
+Status/evidence: ENGINE-VERIFIED; first recorded / last checked 2026-10-12.
+Issue #209 / 5.2.18, GZDoom 4.14.2/Vulkan, original dining canteen mesh.
+The generated flask used eight-vertex front/back faces. Native rendering kept
+the quad edges, cap and strap but omitted those faces, producing a hollow frame.
+Triangle fans with the same vertices/UVs rendered the solid flask in the next
+native run. Export triangles/quads and assert face arity before packaging; a
+syntactically valid OBJ is not proof that every polygon is rendered.
+Evidence: assets/generators/generate_dining_canteen.py and validation_5218
+rest-visual-01/02 captures/logs, check_assets.py and RESULTS.md. This confirms
+the tested OBJ path, not general support for arbitrary imported model formats.
+
 ## CA-KP-086 - A health floor must precede native death and cover direct losses
 
 Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED; author gameplay check accepted.
@@ -166,6 +179,17 @@ g4.14.2 p_user.cpp (P_CheckPlayerSprite), hw_sprites.cpp (Process/visibility),
 hw_drawlist.cpp (CompareSprites), g_mapinfo.cpp (MITYPE_COMPATFLAG), g_level.cpp
 (GetCompatibility). No physical mirror capture or GPU benchmark is claimed.
 Author visual acceptance remains CA148-01.
+
+Follow-up #209 / 5.2.18, 2026-10-12: ENGINE-VERIFIED baseline chair rest leaves
+the head at WorldOffset zero while the body moves 16 units. Copy WorldOffset
+along with Prev/FloorClip; old and current saved rests pass the same correction
+and restore OriginalWorldOffset on exit. Ground body and neck together before
+export: body pixels below the floor pivot can trigger player-only native sprite
+clipping and separate a generic head module. Do not invert SpriteOffset.Y;
+native GetSpriteOffset already converts its screen-down sign. This evidence
+does not establish correctness for every gl_spriteclip mode or low ceiling.
+Evidence: assets/validation_5218/fixture.zs and RESULTS.md. CA209-01 remains
+pending author visual acceptance.
 
 ## CA-KP-081 - Validate contact work through native movement and lazy state initialization
 

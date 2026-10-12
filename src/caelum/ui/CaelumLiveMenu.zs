@@ -112,7 +112,14 @@ class CaelumLiveMenu : ListMenu
             else if(scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B || keyString~=="q")EventHandler.SendNetworkEvent("ca_chest_cancel");
             return true;
         }
-        if(physical && Context==CTX_REST && type==InputEvent.Type_KeyDown)
+        // Las acciones del panel y sus accesos remapeados preceden a la salida
+        // por controles de juego: F/G/T pueden compartir +zoom/+user1/+user3.
+        bool restAction=keyString~=="f" || keyString~=="g" || keyString~=="t"
+            || character==102 || character==70 || character==103 || character==71
+            || character==116 || character==84
+            || CaelumInputHints.Matches(scan,"ca_journal_toggle")
+            || CaelumInputHints.Matches(scan,"ca_time_skip");
+        if(physical && Context==CTX_REST && type==InputEvent.Type_KeyDown && !restAction)
         {
             String binding=Bindings.GetBinding(scan);
             if(binding~=="+forward" || binding~=="+back" || binding~=="+moveleft" || binding~=="+moveright"

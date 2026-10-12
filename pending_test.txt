@@ -1,0 +1,27 @@
+CA209-01 | Origin: 5.2.18 / issue #209 | World poses and furniture
+Prerequisites: rebuild with run_dev.bat; use an existing test character or create
+one. MAP01 remains nonlethal; use a normal map outside MAP01 for death art.
+MAP99 exists only in the separate diagnostic fixture described in RESULTS.md.
+Steps:
+1. Inspect a human, goblin and Caelith with representative face/hair choices in
+   the creator/editor and third person. Compare short/tall characters when seated.
+2. Walk, run, punch (especially from behind), crouch and take a hit. Check head
+   movement, face contours, four run phases and trousers during the punch.
+3. Sit, then sleep in a bed and a sleeping bag. Orbit with right-drag through
+   front, side and rear views. Confirm seat support, neck attachment, supine
+   posture and stable world heading. Inspect the table canteen from both sides.
+4. Outside MAP01, inspect the fall/death sequence and final corpse.
+Expected: clean face contours; coherent body/head, natural run/punch/fall,
+supported supine pose and seat, no trousers dragged by the arm, solid canteen.
+Native captures and reproduction: assets/validation_5218/RESULTS.md.
+
+CA209-02 | Origin: 5.2.18 / issue #209 | Female first-person hands
+Prerequisites: same build; male/female test characters and actual Hands-slot gloves.
+Steps:
+1. Compare male/female bare fists, weapon grips and shield holding. Try a female
+   Caelith and representative beast form; verify the chosen skin/fur tone.
+2. Attack, block, use bolas and reload the shotgun. Equip/unequip/box gloves.
+Expected: female anatomy differs from male; grips remain aligned; no stray
+   cartridge in the resting hand; gloves appear only while actually equipped.
+Agent native and interactive controls tests are recorded separately from this
+outstanding author visual acceptance.

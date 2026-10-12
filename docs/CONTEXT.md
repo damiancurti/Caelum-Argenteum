@@ -1,11 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
 
-**Current 5.2.17 / #207:** MAP01 player cannot die; 1 HP floor preserves the
-living pawn/profile/appearance. All damage paths covered, NPCs/other maps unchanged.
-No saved protection or respawn repair. Native evidence: validation_5217;
-CA207-01 passed 2026-10-12; PR208 merge/closure authorized. Author queue empty.
+**Current 5.2.18 / #209:** pose/head/furniture repairs, contextual rest F/G/T,
+sex-specific FP hands and original table canteen model. Supine sleep; Domingo
+references except rear punch. Evidence: validation_5218; sources: appearance_5218.
+CA209-01/02 pending author acceptance; commit/push requested, no merge yet.
+**5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
+CA207-01 passed 2026-10-12; native evidence: validation_5217.
 **5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01
 passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshed.
 **5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
@@ -46,7 +48,7 @@ Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
 The author authorized all four merges/closures. At that acceptance the author test queue was empty;
-HISTORY records each confirmation. Current delivery: #204.
+HISTORY records each confirmation. Current delivery: #209.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.
