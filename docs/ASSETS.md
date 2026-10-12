@@ -1,6 +1,55 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Authored poses, female hands and dining model (#209)
+
+Supersedes the shared-sex hand and rigged run/punch/sleep/death coverage in the
+5.2.13 inventory below. Saved humanoid face/hair choices remain modular. New
+source paintings cover male/female running, punch anticipation/drive/extension/
+recovery, three actual death stages, and eight-direction supine sleep. The
+death settle holds its final authored pose without changing native state timing.
+Run uses two painted phases and their opposite mirrored half-cycle. The punch
+uses complete body paintings, with no arm crop that can drag trouser pixels.
+Sitting keeps the accepted crouched body and aligns its support to furniture.
+
+Domingo's owned poses and anatomical forms are references except rear attack;
+the Revenant supplies only the requested motion idea. Source art, retained
+superseded candidates, exact built-in imagegen prompts/reference hashes and
+portable reference boards are in assets/source/art/appearance_5218/PROVENANCE.json.
+The author authorized deterministic Python cropping, masks and registration.
+Technical projection foreshortens supine depth from the low world camera;
+eight native directions retain world heading rather than tracking one camera.
+Low-alpha source fringes are removed after resampling. Grounding moves the body
+and neck together to avoid native default sprite-floor correction separating
+them. This is not a guarantee for every engine sprite-clipping setting.
+
+Current registration: 33 semantic poses, 22,176 body compositions, 2,288 world
+modules; 1,728 humanoid looks, five anchor groups per sex, 69,120 head textures,
+8,640 head frames and 3,072 face/hair modules. Only required transforms are
+generated. Old tracked resources are retained; unused experimental new outputs
+are outside src. New manifests preserve the original #148 registration records.
+
+First-person hands have 37 variants: the original 18 bare male variants, 18
+female skin/fur variants and one shared female glove variant. Male equipped
+gloves retain the accepted original art. Six selected female atlases cover
+human/Caelith/goblin skin, wolf, bear, puma, jaguar and gloves, with grip, fists,
+shield, bolas and shotgun reload poses. Weapon patches and grip pivots remain
+unchanged. The native registry has 1,850 labels and 1,443 banks; 770 shared PNG
+modules avoid a weapon-by-identity painted product.
+
+The original ca_large_canteen.obj mesh adds beveled depth, cap and strap to the
+dining display, reusing the owned canteen_large.png icon as its texture. Its
+generator triangulates polygon caps for the native OBJ reader. The existing
+0.25 display scale and underlying inventory item are retained.
+
+Rebuild with Pillow 11.3.0: generate_modular_appearance.py,
+generate_appearance_details.py, generate_appearance_hands.py and
+generate_dining_canteen.py under assets/generators. Registration/mask/pose data
+are in appearance_catalog.json; appearance_pose_modules.py performs technical
+source registration. Evidence and limits: assets/validation_5218/RESULTS.md.
+CA209-01 and CA209-02 passed author visual acceptance on 2026-10-12 without
+qualifications; this confirmation is separate from source generation.
 
 ## 5.2.17 - Preserve the living tutorial appearance (#207)
 

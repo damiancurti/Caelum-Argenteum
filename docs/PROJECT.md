@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Modular pose, furniture and hand repairs (#209)
+
+Repairs the author's post-acceptance visual report: authored four-phase running
+and punch, buckling/kneeling/fallen death, supine sleep, shared head/body offsets,
+clean alpha edges, scaled seat contact, sex-specific first-person hands and a
+solid table canteen. Domingo supplies pose/anatomy references except the rear
+attack; Revenant is a motion reference only, with no Doom artwork copied.
+The author requested distinct female hands, including animal forms and worn
+gloves. Combat, item identity, existing animation timing and saved structural
+identity remain unchanged. Evidence: assets/validation_5218/RESULTS.md;
+CA209-01 and CA209-02 passed author acceptance on 2026-10-12 without
+qualifications. The author authorized PR210 merge and #209 closure; no checks
+remain pending for this issue. Release 5.2.18 is unchanged.
 
 ## 5.2.17 - MAP01 player health floor (#207)
 

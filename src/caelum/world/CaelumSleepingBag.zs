@@ -98,6 +98,8 @@ class CaelumRestBag : CaelumRestFurniture
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
     override int ComfortFactor() { return 3; }
     override vector3 PoseOffset() { return (0, 0, 2); }
+    override vector3 PoseOffsetFor(CaelumPlayer user)
+    { return (0,0,CaelumAppearanceRegistry.BagSurface()*Scale.Y/Max(.001,level.pixelstretch)); }
     override bool SupportsRest(CaelumPlayer user)
     { return Occupant == user && Bag != null && Bag.AvailableTo(user); }
     override bool Used(Actor activator) { return false; }

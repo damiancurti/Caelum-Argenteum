@@ -1,6 +1,28 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Rest presentation and contextual input (#209)
+
+Seated F toggles automatic eating and G toggles automatic drinking without
+also triggering the generic movement/action cancellation. T retains the
+existing rest speed action; Journal/time-skip remaps retain priority. These
+keys do not deposit food: table inventory interaction remains the existing
+route. Q/stand-up and other intended cancellation actions still leave the seat.
+
+Furniture aligns the drawn seat support with the chair surface using the
+current character scale; bed/bag support uses the corresponding model surface.
+Only WorldOffset changes, never physical capsule height, reach or resources.
+The head copies the body's WorldOffset. Active older rests recompute their
+owned offset from OriginalWorldOffset, without accumulating it each tic; an
+external offset remains externally owned. Native old/current-save evidence is
+recorded in validation_5218. No saved field or state index was added to gameplay.
+
+Appearance now distinguishes female bare skin/fur hands and female equipped
+gloves. Actual Hands-slot ownership/equipment still selects gloves; no new
+equipment or stats are granted. Running/punch/death/sleep art and the dining
+canteen model are presentation changes with unchanged combat clocks and item
+identity. The canteen retains its water amount and inventory owner.
 
 ## 5.2.17 - MAP01 minimum player health (#207)
 

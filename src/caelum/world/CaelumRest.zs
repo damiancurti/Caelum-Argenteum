@@ -193,7 +193,7 @@ class CaelumRestState : Inventory
         rest.AppliedWorldOffset = user.WorldOffset;
         if (furniture != null)
         {
-            rest.AppliedWorldOffset += furniture.PoseOffset();
+            rest.AppliedWorldOffset += furniture.PoseOffsetFor(user);
             user.WorldOffset = rest.AppliedWorldOffset;
             user.Angle = furniture.PoseAngle();
         }
@@ -314,6 +314,13 @@ class CaelumRestState : Inventory
         Validate(user);
         let rest = Get(user);
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE) return;
+        // Actualización idempotente de sesiones guardadas y cambios de talla.
+        // Respeta un WorldOffset que pertenezca a otro sistema.
+        if(rest.Furniture!=null && user.WorldOffset==rest.AppliedWorldOffset)
+        {
+            rest.AppliedWorldOffset=rest.OriginalWorldOffset+rest.Furniture.PoseOffsetFor(user);
+            user.WorldOffset=rest.AppliedWorldOffset;
+        }
         if (!rest.PoseFacingFixed)
         {
             // Migración de una sesión 0f activa, sin reiniciar su progreso.

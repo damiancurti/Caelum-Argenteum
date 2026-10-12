@@ -1,0 +1,12 @@
+{
+  "run": "live-input-01",
+  "tool": "computer-use @oai/sky",
+  "agent_observed": [
+    "F: food ON, rest remained active",
+    "G: water ON, rest remained active",
+    "Eat click: food OFF, rest remained active",
+    "Q: rest ended, first-person returned"
+  ],
+  "author_acceptance": false,
+  "profile_ini_untouched": true
+}

@@ -6,7 +6,7 @@ class CaelumAppearance : Object play
     const PAGE=12;
     const TONE_COUNT=3;
     const FORM_COUNT=4;
-    const POSE_COUNT=29;
+    const POSE_COUNT=33;
     const FACE_COUNT=4;
     const HAIR_COUNT=4;
     const HAIR_COLOR_COUNT=6;
@@ -67,7 +67,7 @@ class CaelumAppearance : Object play
     static clearscope int PoseFor(int source,int frame)
     {
         if(source==RegisteredSprite("SourceDOWK"))return 2+frame%2;
-        if(source==RegisteredSprite("SourceDORN"))return 4+frame%2;
+        if(source==RegisteredSprite("SourceDORN"))return frame%4<2?4+frame%4:27+frame%4;
         if(source==RegisteredSprite("SourceRSDO"))return frame==0?16:frame==1?17:frame==2?6:7+frame%2;
         if(source==RegisteredSprite("SourceCAGN"))return frame==0?18:frame<=2?18+frame:frame==3?21:22;
         if(source==RegisteredSprite("SourceCAGC"))return frame==0?26:frame==1?27:28;
@@ -75,7 +75,12 @@ class CaelumAppearance : Object play
         if(source==RegisteredSprite("SourceDOMI"))
         {
             if(frame>=18)return frame==18?12:frame==19?13:frame<=21?14:15;
-            if(frame>=2)return frame%8<4?9:10;
+            if(frame>=2)
+            {
+                // Se conservan estados, tics y golpes; sólo cambia la pose.
+                int step=frame>=10?frame-10:frame-2;
+                return step<2?9:step<4?31:step<6?10:32;
+            }
             return 11;
         }
         return frame%2;

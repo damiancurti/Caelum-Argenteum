@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Modular animation and rest repairs (#209), 2026-10-12
+
+Author report: face outlines, missing running, head/body separation, rolled
+sleep/death art, incorrect orbit perspective and seat height, F cancelling
+food actions, flat table canteen, and rear punch dragging trousers. Author
+clarifications: supine sleep; Domingo pose/anatomy references except rear punch;
+distinct female first-person hands. Simple clothes and modular identity remain.
+
+Implemented authored run/punch/death/sleep poses, alpha cleanup, common
+grounding/neck registration, head WorldOffset following, model-surface rest
+alignment, contextual F/G/T dispatch, sex-specific bare/gloved hands and an
+original 3D canteen. No gameplay balance, native action timing or save schema
+change. Original and superseded sources/provenance are retained.
+
+Native GZDoom 4.14.2/Vulkan tests reproduce the old chair head-offset failure
+and pass its repair; native movement visits all four run and four punch phases
+and all death stages in MAP99. Real rest-menu key dispatch preserves eating/
+drinking and Q cancellation. Old/current seated saves retain the original
+offset, correct it idempotently and restore it on exit, with the same canteen
+owner and three liters. Visual captures also exposed and corrected unsupported
+OBJ polygon caps and excessive end-view supine depth projection.
+Full evidence, hashes and limits: assets/validation_5218/RESULTS.md.
+
+On 2026-10-12, the author explicitly confirmed that all tests passed and
+authorized PR210 merge and #209 closure, without qualifications. CA209-01
+(world poses and furniture) and CA209-02 (female first-person hands), both
+originating in 5.2.18 / #209, therefore passed author visual/interaction
+acceptance. Their entries were removed from pending_test.txt, which remains
+tracked and empty. This confirmation is separate from agent-only evidence.
+The tested runtime and version remain unchanged. Delivery uses separate
+visual-resource and runtime-binding commits in PR210. The official
+package matches all 16,052 tested members; 6,140 regenerated outputs match
+byte for byte. Final rear-corpse capture passes 102 native assertions. Scoped
+and session-wide keep-awake requests were released after testing.
 
 ## 5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12
 

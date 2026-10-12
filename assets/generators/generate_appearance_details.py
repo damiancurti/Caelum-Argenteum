@@ -10,6 +10,7 @@ import importlib.util
 import json
 from pathlib import Path
 from PIL import Image, ImageChops, ImageDraw
+from appearance_pose_modules import clean, head_kind, save_png
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'assets/source/art/appearance_5213'
@@ -120,13 +121,24 @@ def skin_mask(im, kind):
 
 
 def save_module(im, name):
+    im=clean(im)
     bounds = im.getchannel('A').point(lambda a:255 if a>=16 else 0).getbbox()
     assert bounds and bounds[0]>0 and bounds[1]>0 and bounds[2]<CANVAS[0] and bounds[3]<CANVAS[1], name
     path = OUT / (name+'.png')
     path.parent.mkdir(parents=True,exist_ok=True)
-    im.crop(bounds).save(path,compress_level=9)
+    save_png(im.crop(bounds),path)
     RECORDS[path.relative_to(ROOT).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     return path.relative_to(ROOT/'src').as_posix(),bounds
+
+
+def pose_detail(im,angle,kind):
+    im=im.rotate(angle,Image.Resampling.BICUBIC,center=ANCHOR)
+    if kind=='supine':
+        factor=SPEC['authored_registration']['sleep']['head_projection']
+        scaled=im.resize((im.width,round(im.height*factor)),Image.Resampling.LANCZOS)
+        im=Image.new('RGBA',CANVAS)
+        im.alpha_composite(scaled,(0,round(ANCHOR[1]*(1-factor))))
+    return im
 
 
 def base_generator():
@@ -146,10 +158,13 @@ def anchor_groups(base):
                     value=base.authored_pose(view,pose,sex,not gloved) or base.body_pose(raw,view,pose)
                     anchors.append((value[1],value[2]))
                 (x,y),angle=anchors[0]
-                signature=tuple((point[0]-x,point[1]-y,a) for point,a in anchors)
+                signature=tuple((point[0]-x,point[1]-y,a,head_kind(pose)) for point,a in anchors)
                 if signature not in groups[sex]:groups[sex].append(signature)
                 entries.append((groups[sex].index(signature),x-SPEC['neck'][0],y-SPEC['neck'][1]))
-    assert len(groups[0])==len(groups[1]) and len(groups[0])<=26
+    count=max(map(len,groups))
+    assert count<=26,('Native head frame letters exhausted',count)
+    for group in groups:
+        while len(group)<count:group.append(group[0])
     return groups,entries
 
 
@@ -163,7 +178,12 @@ def main():
     parser.add_argument('--prepare-only',action='store_true',help='Prepare modules and a contact sheet without native registration.')
     args=parser.parse_args()
     base=base_generator();groups,entries=anchor_groups(base)
-    angles=sorted({a for sex in groups for group in sex for dx,dy,a in group})
+    transforms={view:set() for view in range(8)}
+    for sex in groups:
+        for group in sex:
+            for view,(dx,dy,angle,kind) in enumerate(group):
+                head_view=(-view)%8 if kind=='supine' else view
+                transforms[head_view].add((angle,kind))
     faces={};hairs={}
     for identity,spec in enumerate(SPEC['heads'][:6]):
         for view in range(8):
@@ -171,14 +191,16 @@ def main():
                 raw=place_face(identity,face,view);mask=skin_mask(raw,spec['color_kind'])
                 for tone in range(3):
                     colored=base.tone_image(raw,mask,spec['color_kind'],tone)
-                    for angle in angles:
-                        posed=colored.rotate(angle,Image.Resampling.BICUBIC,center=ANCHOR)
-                        faces[identity,tone,face,view,angle]=save_module(posed,f'face/{identity}_{tone}_{face}_{view}_{angle}')
+                    for angle,kind in sorted(transforms[view]):
+                        posed=pose_detail(colored,angle,kind)
+                        suffix='' if kind=='upright' else '_'+kind
+                        faces[identity,tone,face,view,angle,kind]=save_module(posed,f'face/{identity}_{tone}_{face}_{view}_{angle}{suffix}')
             for style in range(4):
                 raw=place_hair(identity,style,view)
-                for angle in angles:
-                    posed=raw.rotate(angle,Image.Resampling.BICUBIC,center=ANCHOR)
-                    hairs[identity,style,view,angle]=save_module(posed,f'hair/{identity}_{style}_{view}_{angle}')
+                for angle,kind in sorted(transforms[view]):
+                    posed=pose_detail(raw,angle,kind)
+                    suffix='' if kind=='upright' else '_'+kind
+                    hairs[identity,style,view,angle,kind]=save_module(posed,f'hair/{identity}_{style}_{view}_{angle}{suffix}')
     board=Image.new('RGBA',(6*192,4*192),(35,40,44,255))
     for identity in range(6):
         for variant in range(4):
@@ -197,9 +219,10 @@ def main():
                         for color,swatch in enumerate(SPEC['hair_colors']):
                             look=((((identity*3+tone)*4+face)*4+style)*6+color)
                             for group,rotations in enumerate(groups[identity%2]):
-                                for view,(dx,dy,angle) in enumerate(rotations):
-                                    fp,fb=faces[identity,tone,face,view,angle]
-                                    hp,hb=hairs[identity,style,view,angle]
+                                for view,(dx,dy,angle,kind) in enumerate(rotations):
+                                    head_view=(-view)%8 if kind=='supine' else view
+                                    fp,fb=faces[identity,tone,face,head_view,angle,kind]
+                                    hp,hb=hairs[identity,style,head_view,angle,kind]
                                     bounds=(min(fb[0],hb[0]),min(fb[1],hb[1]),max(fb[2],hb[2]),max(fb[3],hb[3]))
                                     x,y,right,bottom=bounds
                                     ox=SPEC['pivot'][0]+ANCHOR[0]-x-SPEC['neck'][0]-dx
@@ -219,8 +242,8 @@ def main():
         registry+='        Stop;\n    }\n}\n'
         (ROOT/'src/caelum/character/CaelumAppearanceDetailsRegistry.zs').write_text(registry,encoding='utf-8')
         print(f'{count} small native head textures; {count//8} frames; {len(groups[0])} anchor groups per sex.')
-    manifest={'issue':148,'generator':'assets/generators/generate_appearance_details.py','atlas_boxes':BOXES,'anchor_groups':groups,'pose_anchors':entries,'module_sha256':RECORDS}
-    (SOURCE/'DETAIL_REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+    manifest={'issue':209,'generator':'assets/generators/generate_appearance_details.py','atlas_boxes':BOXES,'anchor_groups':groups,'pose_anchors':entries,'module_sha256':RECORDS}
+    (ROOT/'assets/source/art/appearance_5218/DETAIL_REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(f'{len(RECORDS)} reusable face/hair modules.')
 
 

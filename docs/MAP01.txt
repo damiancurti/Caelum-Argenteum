@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.17** — 2026-10-12.
+Documentation version: **5.2.18** — 2026-10-12.
+
+## 5.2.18 - Player presentation and dining repair (#209)
+
+Player pose/hand art, furniture alignment, contextual seated input and the
+table canteen model are repaired without changing mansion geometry, NPC art,
+dialogue, gifts or combat rules. The MAP01 player still stays alive at 1 HP;
+death-art checks therefore use the isolated MAP99 fixture. Supine sleep and
+Domingo pose references follow the author's clarification. ASSETS records
+sources and validation; CA209-01/CA209-02 passed author acceptance on 2026-10-12.
 
 ## 5.2.14 - Tutorial control hints (#149)
 
