@@ -24,8 +24,10 @@ assets/validation_5215/RESULTS.md. Baseline/current/zero-bob/maximum-bob native
 combat traces match exactly: 474 state samples and seven projectiles per run.
 Different saved identities retain global presentation choices across load and
 restart. Engine checks do not establish author comfort acceptance; CA150-01
-originates in 5.2.15/#150 and remains outstanding. Delivery targets a linked PR;
-the issue remains open pending author acceptance and merge.
+originates in 5.2.15/#150 and remains outstanding. Implementation commit f8a5698b
+was pushed through draft PR203. Sixteen native runs and official package
+membership checks passed; keep-awake was released with the power plan unchanged.
+The issue remains open pending author acceptance and merge.
 
 ## 5.2.14 - Native controls and synchronized hints (#149), 2026-10-12
 

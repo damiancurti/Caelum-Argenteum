@@ -73,6 +73,9 @@ record is retained. The final summary records static validation, official build
 membership comparison and cleanup. No author acceptance is inferred from it.
 
 Final static checks: project validator passes at version 5.2.15, with 2,483
-context words; generated dialogue/localization/document indexes are current.
+context words at initial validation; generated dialogue/localization/document indexes are current.
 Independent final review found no remaining blocker. Its crosshair=0 caveat
 (weapon-specific override versus the global crosshairon toggle) is documented.
+Source/document whitespace checks pass. Native logs retain the engine's raw
+trailing space in the CPU-name line rather than altering recorded evidence.
+Delivery: implementation f8a5698b, pushed through draft PR203; #150 stays open.

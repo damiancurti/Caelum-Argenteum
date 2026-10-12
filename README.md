@@ -16,6 +16,7 @@ combat unchanged. **Journal > Notices** retains the last 20 complete messages;
 recent notices wrap on the HUD. Global preferences survive character loads.
 [Technical evidence and limits](assets/validation_5215/RESULTS.md) distinguish
 engine checks from pending author acceptance [CA150-01](pending_test.txt).
+Committed and pushed through draft [PR203](https://github.com/damiancurti/Caelum-Argenteum/pull/203).
 
 5.2.14 implements [#149](https://github.com/damiancurti/Caelum-Argenteum/issues/149):
 native grouped controls and binding-aware English/Spanish hints. Open
