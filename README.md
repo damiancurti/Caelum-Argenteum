@@ -16,7 +16,8 @@ and actual equipped gloves. Open **Options > Player Setup > Appearance** in a
 game to edit tone/form. Voices remain automatic by saved sex.
 [Asset coverage](docs/ASSETS.md) and [validation evidence](assets/validation_5213/RESULTS.md)
 describe the supported shared poses and tests. [CA148-01](pending_test.txt) remains
-pending author visual acceptance. Branch: `issue148-appearance-preview`.
+pending author visual acceptance. Delivery: [draft PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201),
+branch `issue148-appearance-preview`, committed and pushed.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;

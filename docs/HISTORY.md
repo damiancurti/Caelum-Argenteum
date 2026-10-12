@@ -27,6 +27,8 @@ unchanged. No GZDoom test process remains running.
 
 Prior delivery: acceptance commit 4b54ac81 and PR200 merge 74c31ca5 complete #195;
 the issue is closed. No earlier accepted tests are reopened by this patch.
+Delivery: art/resources commit b6874a48, runtime/evidence commit 345c710e, pushed
+on issue148-appearance-preview. Draft PR201 links #148 and awaits CA148-01.
 
 ## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
 
