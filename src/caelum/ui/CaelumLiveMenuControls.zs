@@ -180,7 +180,12 @@ class CaelumLiveMenuControls : Object ui
             if(view.GetJournalPage()==3 && next!=3)EventHandler.SendNetworkEvent("ca_crafting_session_close");
             view.SetJournalPage(next);host.ResetInput();return;
         }
-        if(id>0 && id<=Scans.Size())host.Stroke(Scans[id-1],Characters[id-1],Keys[id-1]);
+        if(id>0 && id<=Scans.Size())
+        {
+            // El botón visual solicita la acción, aunque no tenga tecla asignada.
+            if(Keys[id-1]=="y")EventHandler.SendNetworkEvent("ca_skip_open");
+            else host.Stroke(Scans[id-1],Characters[id-1],Keys[id-1]);
+        }
     }
     void Wheel(CaelumLiveMenu host,int direction,Vector2 point)
     {

@@ -296,7 +296,7 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
             String text = CaelumSiegeIntelligence.Text(user);
             if (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData))
                 text = StringTable.Localize(mCurNode.Dialogue) .. "\n\n" .. text;
-            mDialogueLines = displayFont.BreakLines(text, SpeechWidth);
+            mDialogueLines = displayFont.BreakLines(CaelumInputHints.Resolve(text), SpeechWidth);
             return;
         }
         if (mCurNode.UserData ~== "palomo_upstairs_wait")
@@ -305,7 +305,7 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
             String text = StringTable.Localize(mCurNode.Dialogue);
             if (user != null) text = text .. "\n\n" .. StringTable.Localize(
                 CaelumJournalOverlay.GetQuestDetailStageKey(user, CaelumConstants.QUEST_MAIN_M00_THE_FOOL), false);
-            mDialogueLines = displayFont.BreakLines(text, SpeechWidth);
+            mDialogueLines = displayFont.BreakLines(CaelumInputHints.Resolve(text), SpeechWidth);
             return;
         }
         if (!(mCurNode.UserData ~== "palomo_discount_confirm"))
@@ -332,7 +332,7 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
         }
         toSay.Replace("%CHANCE%", chanceText);
         if (toSay.Length() == 0) { toSay = "."; }
-        mDialogueLines = displayFont.BreakLines(toSay, SpeechWidth);
+        mDialogueLines = displayFont.BreakLines(CaelumInputHints.Resolve(toSay), SpeechWidth);
     }
 
     override bool OnUIEvent(UIEvent ev)

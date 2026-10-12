@@ -52,11 +52,7 @@ class CaelumIntroductionMenu : ListMenu
 
     String BoundKeys(String command)
     {
-        int first, second;
-        [first, second] = Bindings.GetKeysForCommand(command);
-        return first == 0 && second == 0
-            ? CaelumNarrativeArtwork.L("CA_INTRO_UNBOUND")
-            : KeyBindings.NameKeys(first, second);
+        return CaelumInputHints.Keys(command);
     }
 
     String Body()
@@ -79,6 +75,7 @@ class CaelumIntroductionMenu : ListMenu
 
     override void Ticker()
     {
+        FullText = Body();
         if (Revealed || FullTextDrawn) return;
         ElapsedTics++;
         VisibleCharacters = Max(0, (ElapsedTics - CaelumNarrativeArtwork.TEXT_DELAY_TICS)

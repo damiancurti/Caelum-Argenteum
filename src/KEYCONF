@@ -97,11 +97,9 @@ alias ca_journal_toggle "event ca_journal_toggle"
 
 // Tab abre el Diario definitivo. El automapa nativo se conserva en M para
 // exteriores y depuración; ambas acciones siguen apareciendo en Controles.
-defaultbind Tab "ca_journal_toggle"
-defaultbind M "togglemap"
-defaultbind B "+user2"
-defaultbind R "+reload"
-defaultbind F "+zoom"
-defaultbind T "+user3"
 alias ca_time_skip "netevent ca_skip_open"
-defaultbind Y "ca_time_skip"
+
+// BEGIN GENERATED CONTROL DEFAULTS
+// Sólo el primer inicio del lanzador o un reset solicitado aplican el preset.
+alias ca_controls_defaults "bind Tab ca_journal_toggle; bind M togglemap; bind B +user2; bind R +reload; bind F +zoom; bind T +user3; bind Y ca_time_skip; unmapbind M"
+alias ca_controls_reset "resetb2defaults; ca_controls_defaults"

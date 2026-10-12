@@ -5,6 +5,18 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    override Weapon PickWeapon(int slot, bool checkammo)
+    {
+        // El dispatcher nativo ya resolvió teclas, aliases y doble clic.
+        // La mutación de las instancias equipadas sigue en NetworkProcess.
+        if (slot == 2)
+        {
+            EventHandler.SendNetworkEvent("ca_cycle_weapon_slot_2");
+            return null;
+        }
+        return Super.PickWeapon(slot, checkammo);
+    }
+
     CaelumBolasFlight BolasBinding;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;

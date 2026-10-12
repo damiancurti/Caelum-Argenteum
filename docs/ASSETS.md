@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## 5.2.14 - Native control presentation and test sources (#149)
+
+No new art/audio assets. Bilingual labels and late-bound hint tokens remain in
+LANGUAGE; the localization index is regenerated. The deterministic
+assets/generators/controls_catalog.json and generate_controls.py produce native
+DEFBINDS, explicit-reset KEYCONF aliases and the portable first-start preset.
+Existing native fonts, menus and controller key names provide presentation.
+assets/validation_5214 contains reproducible fixtures, retained engine evidence
+and limits. CA149-01 passed on 2026-10-12; CA148-01 visual acceptance passed on
+2026-10-12, with PR201 merged b21e0632 and #148 closed.
 
 ## 5.2.13 - Modular saved appearance and first-person hands (#148)
 
@@ -8,7 +19,7 @@ Read [SPRITE_ART_DIRECTION](SPRITE_ART_DIRECTION.md) before generating sprites.
 The author requested this dedicated visual brief and an extension with four
 faces/four hairstyles per humanoid race/sex and six hair colors, editable during
 play. Both the initial body/hands integration and that extension are implemented;
-author visual acceptance remains pending.
+CA148-01 passed author visual acceptance on 2026-10-12.
 
 Author-approved plain shirt/trousers/boots replace the player's fixed armored
 Domingo presentation. Heads, clothes and exposed hands are separate modules;

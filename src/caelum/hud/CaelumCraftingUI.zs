@@ -20,14 +20,14 @@ class CaelumCraftingUI : Object
     static ui String Fit(Font font, String text, int width)
     {
         if (font.StringWidth(text) <= width) return text;
-        let lines = font.BreakLines(text, width-font.StringWidth("..."));
+        let lines = font.BreakLines(CaelumInputHints.Resolve(text), width-font.StringWidth("..."));
         String result = lines.StringAt(0) .. "...";
         lines.Destroy();
         return result;
     }
     static ui void Paragraph(CaelumJournalOverlay view, String text, int x, int y, int width, int rows, String scrollKey)
     {
-        let lines = view.SmallFont.BreakLines(text, width);
+        let lines = view.SmallFont.BreakLines(CaelumInputHints.Resolve(text), width);
         int total = lines.Count(), offset = Clamp(ScrollValue(scrollKey), 0, Max(0,total-rows));
         let value = CVar.GetCVar(scrollKey, players[consoleplayer]);
         if (value != null && value.GetInt() != offset) value.SetInt(offset);

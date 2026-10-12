@@ -1092,6 +1092,7 @@ class CaelumJournalOverlay : EventHandler
     ui void DrawTextLine(Font font, int textColor, double x, double y,
         String text)
     {
+        text=CaelumInputHints.Resolve(text);
         if (font == null) { return; }
         Screen.DrawText(
             font, textColor, x, y, text,
@@ -1105,6 +1106,7 @@ class CaelumJournalOverlay : EventHandler
     ui void DrawParagraph(Font font, int textColor, double x, double y,
         int width, String text)
     {
+        text=CaelumInputHints.Resolve(text);
         if (font == null) return;
         let lines = font.BreakLines(text, width);
         for (int row = 0; row < lines.Count(); row++)
@@ -1116,6 +1118,7 @@ class CaelumJournalOverlay : EventHandler
     ui void DrawCenteredText(Font font, int textColor, double centerX,
         double y, String text)
     {
+        text=CaelumInputHints.Resolve(text);
         if (font == null) { return; }
         DrawTextLine(
             font,
@@ -2361,12 +2364,8 @@ class CaelumJournalOverlay : EventHandler
         return PanelKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
     }
 
-    ui bool PanelKey(int type,int scan,int character,String keyString)
+    ui bool PanelKey(int type,int scan,int character,String keyString,bool physical=true)
     {
-        // El slot nativo sólo conoce clases de Weapon. Caelum mantiene varias
-        // instancias exactas (acabado, tier y durabilidad propios), por lo que
-        // el 2 cicla sus objetos equipados antes de que Doom seleccione Pistol.
-        bool slotTwo = character == 50 || keyString ~== "2";
         CaelumPlayer localPlayer = consoleplayer >= 0
             ? CaelumPlayer(players[consoleplayer].mo) : null;
         let plan = localPlayer == null ? null : CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
@@ -2387,7 +2386,12 @@ class CaelumJournalOverlay : EventHandler
         bool restOpen = activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE;
         bool craftOpen = localPlayer != null && localPlayer.CraftingMenuOpen;
         if(localPlayer!=null && CaelumTimeSkipPanel.Key(type,scan,character,keyString,localPlayer))return true;
-        if(CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown && (keyString~=="y" || character==121 || character==89))
+        if(physical && CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown
+            && CaelumInputHints.Matches(scan,"ca_journal_toggle") && (IsJournalOpen() || restOpen))
+        {
+            ToggleJournal();return true;
+        }
+        if(physical && menuactive!=Menu.Off && CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown && CaelumInputHints.Matches(scan,"ca_time_skip"))
         {SendNetworkEvent("ca_skip_open");return true;}
         if (CaelumLiveMenu.InputAllowed() && (restOpen || craftOpen) && type == InputEvent.Type_KeyDown
             && (character == 116 || character == 84 || keyString ~== "t"))
@@ -2411,7 +2415,7 @@ class CaelumJournalOverlay : EventHandler
             // Abrir el Diario levanta al personaje. Escape conserva la pausa
             // nativa; las liberaciones de Use siempre llegan al motor.
             if (scan == InputEvent.Key_Tab)
-            { SendNetworkEvent("ca_rest_cancel"); SetJournalOpen(true); return true; }
+            { ToggleJournal(); return true; }
         }
         if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
         {
@@ -2475,16 +2479,6 @@ class CaelumJournalOverlay : EventHandler
         }
         if (!IsJournalOpen())
         {
-            if (CaelumLiveMenu.InputAllowed() && slotTwo
-                && (type == InputEvent.Type_KeyDown
-                    || type == InputEvent.Type_KeyUp))
-            {
-                if (type == InputEvent.Type_KeyDown)
-                {
-                    SendNetworkEvent("ca_cycle_weapon_slot_2");
-                }
-                return true;
-            }
             return false;
         }
         if (GetJournalPage() == 2 && CaelumScheduleCalendar.Key(type,scan,character,keyString,localPlayer)) return true;
@@ -2727,30 +2721,32 @@ class CaelumJournalOverlay : EventHandler
 
     override void ConsoleProcess(ConsoleEvent e)
     {
-        if (e.Name ~== "ca_journal_toggle")
+        if (e.Name ~== "ca_journal_toggle") ToggleJournal();
+    }
+
+    ui void ToggleJournal()
+    {
+        CaelumPlayer localPlayer = consoleplayer >= 0
+            ? CaelumPlayer(players[consoleplayer].mo) : null;
+        let rest = localPlayer == null ? null
+            : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
+        if (rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE)
+            SendNetworkEvent("ca_rest_cancel");
+        if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
         {
-            CaelumPlayer localPlayer = consoleplayer >= 0
-                ? CaelumPlayer(players[consoleplayer].mo) : null;
-            let rest = localPlayer == null ? null
-                : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
-            if (rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE)
-                SendNetworkEvent("ca_rest_cancel");
-            if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
-            {
-                SendNetworkEvent("ca_palomo_merchant_close");
-                return;
-            }
-            bool opening = !IsJournalOpen();
-            if (!opening && GetJournalPage() == 3)
-            {
-                SendNetworkEvent("ca_crafting_session_close");
-            }
-            SetJournalOpen(opening);
-            if (opening)
-            {
-                SendNetworkEvent("ca_inventory_refresh");
-                SendNetworkEvent("ca_social_refresh");
-            }
+            SendNetworkEvent("ca_palomo_merchant_close");
+            return;
+        }
+        bool opening = !IsJournalOpen();
+        if (!opening && GetJournalPage() == 3)
+        {
+            SendNetworkEvent("ca_crafting_session_close");
+        }
+        SetJournalOpen(opening);
+        if (opening)
+        {
+            SendNetworkEvent("ca_inventory_refresh");
+            SendNetworkEvent("ca_social_refresh");
         }
     }
 

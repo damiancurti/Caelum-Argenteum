@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "dc3797a69457bcfe3cec3e916f90ee8fa286997ad2cd396ca1a9054fe4c64ac7",
+  "sha256": "d3a29292fd63394e5a2e4588e679cf49ac6c3c7fb724635a405e402efc12cb20",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -226,9 +226,11 @@
     "CA_CONSUMABLE_LIFE_MEDIUM": {"enu":[[591,591]],"default":[[591,591]],"es":[[1279,1279]]},
     "CA_CONSUMABLE_LIFE_POTION": {"enu":[[590,590]],"default":[[590,590]],"es":[[1278,1278]]},
     "CA_CONSUMABLE_WATER_RATION": {"enu":[[600,600]],"default":[[600,600]],"es":[[1288,1288]]},
+    "CA_CONTROL_ABILITIES": {"enu":[[5439,5439]],"default":[[5439,5439]],"es":[[5450,5450]]},
     "CA_CONTROL_ADD_ATTRIBUTE_POINT": {"enu":[[405,405]],"default":[[405,405]],"es":[[1093,1093]]},
     "CA_CONTROL_ADD_LAYER_POINT": {"enu":[[403,403]],"default":[[403,403]],"es":[[1091,1091]]},
     "CA_CONTROL_CLASS_ABILITY": {"enu":[[349,349]],"default":[[349,349]],"es":[[1037,1037]]},
+    "CA_CONTROL_COMBAT": {"enu":[[5438,5438]],"default":[[5438,5438]],"es":[[5449,5449]]},
     "CA_CONTROL_CRAFTING_TOGGLE": {"enu":[[425,425]],"default":[[425,425]],"es":[[1113,1113]]},
     "CA_CONTROL_CREATION_ADD_POINT": {"enu":[[411,411]],"default":[[411,411]],"es":[[1099,1099]]},
     "CA_CONTROL_CREATION_BACK": {"enu":[[410,410]],"default":[[410,410]],"es":[[1098,1098]]},
@@ -297,6 +299,7 @@
     "CA_CONTROL_NEXT_SECOND_CLASS": {"enu":[[391,391]],"default":[[391,391]],"es":[[1079,1079]]},
     "CA_CONTROL_NEXT_SEX": {"enu":[[392,392]],"default":[[392,392]],"es":[[1080,1080]]},
     "CA_CONTROL_RACIAL_ABILITY": {"enu":[[346,346]],"default":[[346,346]],"es":[[1034,1034]]},
+    "CA_CONTROL_RESERVED": {"enu":[[5440,5440]],"default":[[5440,5440]],"es":[[5451,5451]]},
     "CA_CONTROL_RESET_ALLOCATIONS": {"enu":[[406,406]],"default":[[406,406]],"es":[[1094,1094]]},
     "CA_CONTROL_SEAL_CHANNEL": {"enu":[[347,347]],"default":[[347,347]],"es":[[1035,1035]]},
     "CA_CONTROL_SELECT_NEXT_ATTRIBUTE": {"enu":[[404,404]],"default":[[404,404]],"es":[[1092,1092]]},
@@ -2479,11 +2482,21 @@
     "CA_WORLD_USE_EXIT": {"default":[[3591,3591]],"es":[[3607,3607]]},
     "CA_WORLD_VISITED": {"default":[[3582,3582]],"es":[[3598,3598]]},
     "CA_ZUPAY_COLOSSUS_NAME": {"enu":[[1957,1957]],"default":[[1957,1957]],"es":[[1962,1962]]},
+    "CNTRLMNU_ACTION": {"enu":[[5441,5441]],"default":[[5441,5441]],"es":[[5452,5452]]},
+    "CNTRLMNU_ACTION_TITLE": {"enu":[[5442,5442]],"default":[[5442,5442]],"es":[[5453,5453]]},
+    "CNTRLMNU_ALTATTACK": {"enu":[[5461,5461]],"default":[[5461,5461]],"es":[[5466,5466]]},
+    "CNTRLMNU_ATTACK": {"enu":[[5460,5460]],"default":[[5460,5460]],"es":[[5465,5465]]},
+    "CNTRLMNU_INVENTORY": {"enu":[[5445,5445]],"default":[[5445,5445]],"es":[[5456,5456]]},
+    "CNTRLMNU_INVENTORY_TITLE": {"enu":[[5446,5446]],"default":[[5446,5446]],"es":[[5457,5457]]},
     "CNTRLMNU_MOVEDOWN": {"enu":[[47,47]],"default":[[47,47]],"es":[[143,143]]},
     "CNTRLMNU_MOVEUP": {"enu":[[46,46]],"default":[[46,46]],"es":[[142,142]]},
+    "CNTRLMNU_RELOAD": {"enu":[[5462,5462]],"default":[[5462,5462]],"es":[[5467,5467]]},
     "CNTRLMNU_USER1": {"enu":[[42,42]],"default":[[42,42]],"es":[[138,138]]},
     "CNTRLMNU_USER2": {"enu":[[43,43]],"default":[[43,43]],"es":[[139,139]]},
     "CNTRLMNU_USER3": {"enu":[[44,44]],"default":[[44,44]],"es":[[140,140]]},
-    "CNTRLMNU_USER4": {"enu":[[45,45]],"default":[[45,45]],"es":[[141,141]]}
+    "CNTRLMNU_USER4": {"enu":[[45,45]],"default":[[45,45]],"es":[[141,141]]},
+    "CNTRLMNU_WEAPONS": {"enu":[[5443,5443]],"default":[[5443,5443]],"es":[[5454,5454]]},
+    "CNTRLMNU_WEAPONS_TITLE": {"enu":[[5444,5444]],"default":[[5444,5444]],"es":[[5455,5455]]},
+    "CNTRLMNU_ZOOM": {"enu":[[5463,5463]],"default":[[5463,5463]],"es":[[5468,5468]]}
   }
 }

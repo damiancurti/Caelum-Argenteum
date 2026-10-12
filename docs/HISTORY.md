@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## 5.2.14 - Native controls and synchronized hints (#149), 2026-10-12
+
+Author acceptance, 2026-10-12: CA149-01 (origin 5.2.14 / #149) passed
+without qualifications. The author confirmed all tests and requested issue
+closure and PR202 merge. The confirmed entry is removed from pending_test.txt;
+no #149 author checks remain. This supersedes the pending delivery status below.
+The agent did not independently test physical controller hardware.
+
+The author confirmed explicit control reset should restore GZDoom controls then
+Tab=Journal, M=automap, B=Seal, R=reload/charge, F=block/aim, T=Tarot and Y=time
+skip, preserving custom controls on ordinary startup/load. The author repeated
+that automap must use M. Native automap M=mark consumes M in full-map mode;
+the approved preset/reset removes that map-only binding, leaving the normal
+remappable togglemap action authoritative.
+
+Implementation groups existing native Control rows, resolves all normal keys
+in bilingual hints and shares Journal toggle handling. Slot 2 now hooks native
+PickWeapon after binding dispatch and queues the existing authoritative event,
+retaining aliases and native double-binding dispatch. Data and generated presets
+share one catalogue; first launcher start is explicit, not repeated KEYCONF
+rebinding. No saved-character schema or balance changes.
+
+Evidence and failed fixture iterations: assets/validation_5214/RESULTS.md.
+Static checks, native fixture assertions and agent UI actions are distinguished
+from author acceptance. CA149-01 originates here and remains outstanding.
+Partial author confirmation, 2026-10-12: physical M opened and closed automap
+in isolated live-03. The remaining CA149-01 usability matrix stays pending.
+Delivery: e1046f48 pushed on issue149-controls-hints; draft PR202 links #149.
+The issue remains open pending CA149-01 acceptance and merge.
+Final native contract/official-package checks pass; 13,557 package members match.
+Keep-awake released 2026-10-12T03:50:32.8666020Z; power plan unchanged.
+
+Preceding patch: CA148-01 passed without qualifications on 2026-10-12;
+acceptance commit 76f50303 and PR201 merge b21e0632 complete #148. The issue is
+closed. Its earlier cursor report does not establish a runtime cursor fix.
 
 ## 5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11
 

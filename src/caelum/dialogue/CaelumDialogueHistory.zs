@@ -17,6 +17,12 @@ class CaelumDialogueHistory : StaticEventHandler
 
 class CaelumHistoryConversationMenu : ConversationMenu
 {
+    override void FormatSpeakerMessage()
+    {
+        String text=CaelumInputHints.Resolve(StringTable.Localize(mCurNode.Dialogue));
+        if(text=="")text=".";
+        mDialogueLines=displayFont.BreakLines(text,SpeechWidth);
+    }
     bool ReplyHeld;
     int ArmedReply, ArmedPage, ReplyRevision;
     override bool MouseEvent(int type,int x,int y)
@@ -70,7 +76,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
 
     void AppendReply(String text,int nativeIndex)
     {
-        let lines=displayFont.BreakLines(text,ReplyWidth);
+        let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
         mResponses.Push(mResponseLines.Size());ReplyMap.Push(nativeIndex);
         for(int i=0;i<lines.Count();i++)mResponseLines.Push(lines.StringAt(i));
         lines.Destroy();
@@ -94,7 +100,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
                 mShowGold=true;text.AppendFormat(" %s",StringTable.Localize("$TXT_TRADE"));
                 text.Replace("%u",String.Format("%u",reply.PrintAmount));
             }
-            let lines=displayFont.BreakLines(text,ReplyWidth);
+            let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
             int count=lines.Count();lines.Destroy();
             if(mResponses.Size()>0 && mResponseLines.Size()+count>CONTENT_LINES)
             {NextOffset=eligible-1;break;}
@@ -108,7 +114,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
                 if(!Seen(id))continue;
                 if(eligible++<PageOffset)continue;
                 String text=StringTable.Localize(CaelumDialogueHistoryData.Reply(id));
-                let lines=displayFont.BreakLines(text,ReplyWidth);
+                let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
                 int count=lines.Count();lines.Destroy();
                 if(mResponses.Size()>0 && mResponseLines.Size()+count>CONTENT_LINES)
                 {NextOffset=eligible-1;break;}
@@ -154,7 +160,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
             String text=StringTable.Localize(CaelumDialogueHistoryData.Answer(selected-ARCHIVE_ITEM));
             let user=mPlayer==null?null:CaelumPlayer(mPlayer.mo);
             if(user!=null)text.Replace("%DEFENSE%",StringTable.Localize(CaelumJournalOverlay.GetRuloDefenseKey(user),false));
-            mDialogueLines=displayFont.BreakLines(text,SpeechWidth);
+            mDialogueLines=displayFont.BreakLines(CaelumInputHints.Resolve(text),SpeechWidth);
             return true;
         }
         let reply=mCurNode.Children;

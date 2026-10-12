@@ -6,27 +6,30 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.13.** Obtain and update the complete repository, validate
+**Current release: 5.2.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.2.13 implements [#148](https://github.com/damiancurti/Caelum-Argenteum/issues/148):
-modular race/sex appearance, finite skin/fur tones, four Beast Man forms, native
-character preview and saved cosmetic editing. First-person hands follow skin/fur
-and actual equipped gloves. Open **Options > Player Setup > Appearance** in a
-game to edit tone/form, face, hairstyle and hair color. Humans, goblins and
-Caelith each have four faces and four hairstyles per sex, with six hair colors.
-Voices remain automatic by saved sex.
-[Asset coverage](docs/ASSETS.md) and [validation evidence](assets/validation_5213/RESULTS.md)
-describe the supported shared poses and tests. CA148-01 passed on 2026-10-12;
-the author authorized [PR201](https://github.com/damiancurti/Caelum-Argenteum/pull/201)
-merge and issue closure. No #148 author checks remain pending.
-Author testing reported an intermittent invisible cursor in fullscreen menus;
-clicks still work and Alt+Enter restored visibility. The isolated repeat started
-with a visible cursor. The final author test set passed; no runtime cursor fix
-is inferred from that acceptance.
-The author-requested [sprite art direction](docs/SPRITE_ART_DIRECTION.md) defines
-the visual brief. Reusable head/hair modules keep the expanded catalog within
-the engine's sprite-frame limit.
+5.2.14 implements [#149](https://github.com/damiancurti/Caelum-Argenteum/issues/149):
+native grouped controls and binding-aware English/Spanish hints. Open
+**Options > Customize Controls** to change or clear an action. **Defaults** uses
+the native confirmation, restores engine controls and applies Caelum's accepted
+preset: Tab Journal, M automap, B Seal, R reload/charge, F block/aim, T Tarot,
+Y time skip. Existing configuration remains intact on startup/load. The launcher
+applies the preset only when creating its first INI. M's native automap marking
+conflict is removed only by that preset/reset; marking remains remappable.
+Hints list all normal bindings, or a localized unbound label. Native double
+bindings remain preserved; GZDoom 4.14.2 does not expose them to ZScript hints.
+[PR202](https://github.com/damiancurti/Caelum-Argenteum/pull/202),
+[evidence and limitations](assets/validation_5214/RESULTS.md); CA149-01 passed author acceptance on 2026-10-12. PR202 merge/closure authorized;
+no #149 author checks remain in [pending_test.txt](pending_test.txt).
+
+5.2.13/#148 is accepted: modular race/sex appearance, native character preview,
+editable faces/hair/tones/forms and equipped-glove-dependent first-person hands.
+CA148-01 passed on 2026-10-12. PR201 merged as b21e0632; #148 is closed.
+[Sprite art direction](docs/SPRITE_ART_DIRECTION.md), [asset coverage](docs/ASSETS.md)
+and [original evidence](assets/validation_5213/RESULTS.md) retain the full scope.
+The earlier intermittent fullscreen cursor report remains historical evidence;
+acceptance does not establish a runtime cursor fix.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;
