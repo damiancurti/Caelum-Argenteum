@@ -27,6 +27,14 @@ Technical restart checks and retained failures: assets/validation_5216/RESULTS.m
 Delivery commit 1d9e7efe was pushed through PR205; its merge and #204 closure
 are explicitly authorized by the author after acceptance.
 
+Post-merge checkout audit: Git restored LANGUAGE with the existing canonical LF
+attribute, exposing a pre-existing index fingerprint generated from CRLF bytes.
+The CRLF-equivalent hash exactly matches the stale fingerprint; text and line
+locations are identical. Regenerated only the two localization index hashes so
+normal checkout validation/build works. #204 was reopened for this focused
+delivery correction under the same 5.2.16 version and existing merge authority.
+Retained checkout/native evidence: assets/validation_5216/checkout-followup.json.
+
 ## 5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12
 
 Author acceptance, 2026-10-12: CA150-01 (origin 5.2.15 / #150) passed

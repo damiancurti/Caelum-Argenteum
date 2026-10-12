@@ -96,9 +96,32 @@ verification and the diagnostic-only runtime delta are recorded in summary.json.
 Author acceptance is the explicit CA204-01 record, not inferred from those checks.
 
 Final checks: project validation passes with no errors and 2,486 context words;
-the official build contains 13,559 members. Compared with the author-tested
+the original PR205 build contains 13,559 members. Compared with the author-tested
 package, only two required diagnostic release strings differ. Native compilation
 and persistence checks pass on that final build. Independent read-only review
 found no blocker and confirmed the one-preference local delta and retained log
 hashes. All test engine processes exited; the original user audio/background
 preferences remain intact in build/gzdoom.ini.
+
+## Post-merge checkout follow-up
+
+Switching to the updated main branch restored LANGUAGE with its existing Git LF
+attribute. That exposed an older localization index hash generated from CRLF:
+the stored b0b25741 fingerprint exactly equals the canonical LF source converted
+to CRLF; the real LF fingerprint is 6c8ae933. Only these two generated hash fields
+in localization/INDEX.md and localization/index.json are refreshed. Strings,
+keys, line locations and generator logic are unchanged. The issue was reopened
+to finish this checkout correction under the same accepted version/merge scope.
+
+The preceding summary.json records the original PR205 working-tree build/checks.
+checkout-followup.json records the fresh-checkout failure, generated correction,
+Git-stored source/index checks, rebuilt package and native checkout-02 result.
+checkout-01 ran before asynchronous build completion was confirmed and is not
+final-package evidence. The completed rebuild changes two index fingerprints
+and normalizes line endings in 24 existing text members; exact hash matching to
+the prior package (including the retained #150 production package for mixed
+line endings) confirms that their text is otherwise identical. No runtime
+logic, localization string or resource has been added or removed.
+Physical cursor acceptance still applies: presentation and input logic did not
+change. Native configurations remain local and the approved one-setting delta
+is preserved.
