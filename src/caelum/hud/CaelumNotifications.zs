@@ -229,7 +229,7 @@ class CaelumNotifications : Object
             int row = index % 10;
             double x = column == 0 ? CaelumCompass.NotificationLeft(user) : 706.0;
             int width = column == 0 ? int(CaelumCompassLayout.NOTIFY_RIGHT - x) : 430;
-            let lines = font.BreakLines(inbox.Text[index], int(width / textScale));
+            let lines = font.BreakLines(CaelumInputHints.Resolve(inbox.Text[index]), int(width / textScale));
             for (int line = 0; line < Min(2, lines.Count()); line++)
             {
                 String text = lines.StringAt(line);

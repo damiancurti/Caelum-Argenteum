@@ -87,7 +87,7 @@ class CaelumLiveMenu : ListMenu
         else Journal().DrawMenu();
         Controls.Layout(self,true);
     }
-    bool Key(int type,int scan,int character,String keyString)
+    bool Key(int type,int scan,int character,String keyString,bool physical=true)
     {
         if(Wanted(Subject)!=Context)return true;
         if(type==InputEvent.Type_KeyDown)ResetPointer();
@@ -107,7 +107,7 @@ class CaelumLiveMenu : ListMenu
             else if(scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B || keyString~=="q")EventHandler.SendNetworkEvent("ca_chest_cancel");
             return true;
         }
-        if(Context==CTX_REST && type==InputEvent.Type_KeyDown)
+        if(physical && Context==CTX_REST && type==InputEvent.Type_KeyDown)
         {
             String binding=Bindings.GetBinding(scan);
             if(binding~=="+forward" || binding~=="+back" || binding~=="+moveleft" || binding~=="+moveright"
@@ -121,12 +121,13 @@ class CaelumLiveMenu : ListMenu
                 return true;
             }
         }
-        return Journal().PanelKey(type,scan,character,keyString);
+        return Journal().PanelKey(type,scan,character,keyString,physical);
     }
     void Stroke(int scan,int character=0,String keyString="")
     {
-        Key(InputEvent.Type_KeyDown,scan,character,keyString);
-        Key(InputEvent.Type_KeyUp,scan,character,keyString);
+        // Botones y navegación nativa son acciones de contexto, no teclas físicas.
+        Key(InputEvent.Type_KeyDown,scan,character,keyString,false);
+        Key(InputEvent.Type_KeyUp,scan,character,keyString,false);
     }
     override bool MenuEvent(int key,bool fromcontroller)
     {
@@ -145,6 +146,8 @@ class CaelumLiveMenu : ListMenu
     }
     override bool OnInputEvent(InputEvent e)
     {
+        if(CaelumInputHints.Matches(e.KeyScan,"ca_journal_toggle") || CaelumInputHints.Matches(e.KeyScan,"ca_time_skip"))
+            return Key(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
         if(e.KeyScan==InputEvent.Key_Pad_A || e.KeyScan==InputEvent.Key_Pad_B || e.KeyScan==InputEvent.Key_Pad_X || e.KeyScan==InputEvent.Key_Pad_Y
             || e.KeyScan==InputEvent.Key_Pad_LShoulder || e.KeyScan==InputEvent.Key_Pad_RShoulder
             || e.KeyScan==InputEvent.Key_Pad_LTrigger || e.KeyScan==InputEvent.Key_Pad_RTrigger)
@@ -153,6 +156,13 @@ class CaelumLiveMenu : ListMenu
     }
     override bool OnUIEvent(UIEvent e)
     {
+        int mouseScan=0;bool down=false;
+        if(e.Type==UIEvent.Type_FwdButtonDown || e.Type==UIEvent.Type_FwdButtonUp)
+        {mouseScan=InputEvent.Key_Mouse5;down=e.Type==UIEvent.Type_FwdButtonDown;}
+        if(e.Type==UIEvent.Type_MButtonDown || e.Type==UIEvent.Type_MButtonUp)
+        {mouseScan=InputEvent.Key_Mouse3;down=e.Type==UIEvent.Type_MButtonDown;}
+        if(mouseScan!=0 && (CaelumInputHints.Matches(mouseScan,"ca_journal_toggle") || CaelumInputHints.Matches(mouseScan,"ca_time_skip")))
+            return Key(down?InputEvent.Type_KeyDown:InputEvent.Type_KeyUp,mouseScan,0,"");
         if(e.Type==UIEvent.Type_KeyDown || e.Type==UIEvent.Type_KeyUp)
         {
             int scan=CaelumMenuPointer.KeyScan(e.KeyChar);

@@ -56,6 +56,21 @@ class CaelumMenuPointer : Object ui
             case UiEvent.Key_Down:return InputEvent.Key_DownArrow;
             case UiEvent.Key_Return:return InputEvent.Key_Enter;
             case UiEvent.Key_Home:return InputEvent.Key_Home;
+            case UiEvent.Key_End:return InputEvent.Key_End;
+            case UiEvent.Key_Del:return InputEvent.Key_Del;
+            case UiEvent.Key_F1:return InputEvent.Key_F1;
+            case UiEvent.Key_F2:return InputEvent.Key_F2;
+            case UiEvent.Key_F3:return InputEvent.Key_F3;
+            case UiEvent.Key_F4:return InputEvent.Key_F4;
+            case UiEvent.Key_F5:return InputEvent.Key_F5;
+            case UiEvent.Key_F6:return InputEvent.Key_F6;
+            case UiEvent.Key_F7:return InputEvent.Key_F7;
+            case UiEvent.Key_F8:return InputEvent.Key_F8;
+            case UiEvent.Key_F9:return InputEvent.Key_F9;
+            case UiEvent.Key_F10:return InputEvent.Key_F10;
+            case UiEvent.Key_F11:return InputEvent.Key_F11;
+            case UiEvent.Key_F12:return InputEvent.Key_F12;
+
             case 8:return InputEvent.Key_Backspace;
             case UiEvent.Key_Tab:return InputEvent.Key_Tab;
             case UiEvent.Key_Escape:return InputEvent.Key_Escape;

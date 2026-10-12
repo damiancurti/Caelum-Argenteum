@@ -1,0 +1,13 @@
+{
+  "issue": 149,
+  "automap_unbind": ["M"],
+  "defaults": {
+    "Tab": "ca_journal_toggle",
+    "M": "togglemap",
+    "B": "+user2",
+    "R": "+reload",
+    "F": "+zoom",
+    "T": "+user3",
+    "Y": "ca_time_skip"
+  }
+}

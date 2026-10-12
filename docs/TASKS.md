@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## Issue #149 - Controls and synchronized hints (5.2.14)
+
+Implemented native command groups, all-normal-binding/unbound hints, approved
+explicit reset/first-start preset and binding-aware Journal/time input. Native
+slot 2 dispatch retains exact equipment cycling through the existing network
+event. Save/config persistence and focused native checks are recorded in
+assets/validation_5214/RESULTS.md. CA149-01 remains the author usability gate;
+physical controller acceptance is conditional on available hardware. No new
+controller UI or double-binding hint introspection is claimed. Next: author
+review/acceptance and then the remaining V5.2 readability/comfort work.
+PR201/#148 are merged/closed; its accepted tests remain accepted.
 
 ## Issue #148 - Native cosmetics and preview (5.2.13)
 

@@ -252,3 +252,5 @@ version "4.14"
 #include "caelum/equipment/CaelumUtilityStaff.zs"
 #include "caelum/equipment/CaelumWeaponUseRules.zs"
 #include "caelum/equipment/CaelumBolas.zs"
+
+#include "caelum/ui/CaelumInputHints.zs"

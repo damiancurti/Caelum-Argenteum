@@ -23,6 +23,7 @@ class CaelumCharacterSettings : StaticEventHandler
         // opciones: no deja accesos indirectos a los selectores retirados.
         CaelumPlayerPreferencesMenu.Filter(OptionMenuDescriptor(MenuDescriptor.GetDescriptor("NewPlayerMenu")));
         HideLegacyControlSection();
+        CaelumControlMenus.Setup();
         let legacy = MenuDescriptor.GetDescriptor("PlayerMenu");
         if (legacy != null) legacy.mClass = "CaelumPlayerPreferencesRedirect";
         MenusReady = true;

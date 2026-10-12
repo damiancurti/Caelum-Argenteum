@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## 5.2.14 - Tutorial control hints (#149)
+
+Rulo/tutorial, loadout and interaction hints display current normal bindings
+before layout in Spanish and English, including cleared actions. Element names
+such as Fire and instructions to load a save remain ordinary prose. Commands,
+lessons, gifts and story are unchanged. Controls can be changed in the engine's
+native groups; M is the approved automap default. CA149-01 covers usability;
+assets/validation_5214 records isolated agent checks and their limits.
 
 ## 5.2.13 - Character appearance boundary (#148)
 

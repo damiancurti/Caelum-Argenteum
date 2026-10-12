@@ -1,15 +1,16 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
 
-**Current 5.2.13 / #148:** modular appearance, native preview/editor and equipped
-glove-dependent hands; saved sex voices. CA148-01 accepted 2026-10-12;
-PR201 merge and #148 closure authorized.
-Implemented four faces/four hairstyles per human/goblin/Caelith sex, six
-hair colors, editable in-game. Read SPRITE_ART_DIRECTION
-before generating sprites; ASSETS/SYSTEMS retain technical/gameplay details.
-Evidence: validation_5213. Earlier intermittent cursor report is preserved;
-final author tests passed without a runtime cursor fix. Next: #149 controls.
+**Current 5.2.14 / #149:** native control groups and actual-binding hints.
+Approved defaults include M automap; custom/cleared controls survive startup/load.
+Preset/reset removes the map-only M mark conflict. Evidence validation_5214;
+CA149-01 awaits author usability acceptance. Input support boundaries: SYSTEMS.
+
+**5.2.13 / #148 accepted:** CA148-01 passed 2026-10-12; PR201 merged b21e0632,
+issue closed. Modular appearance, preview/editor and equipped-glove hands;
+four humanoid faces/hairstyles, six hair colors; saved sex voices. Read
+SPRITE_ART_DIRECTION before art generation; evidence validation_5213. Earlier cursor report remains historical.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;
@@ -17,7 +18,7 @@ finite resident tools/control priority. Evidence validation_5212.
 **5.2.11/#194 and 5.2.10/#192 accepted:** PR199/198 merged, issues closed.
 Collision 1 J/HP/body; ranged ideology exclusions, active shotgun naming.
 5.2.9 personality/power/bell12 and #188 Toughness accepted; PR193/196/197 merged.
-Evidence validation_5211/5210/529/528; HISTORY retains exact acceptance records.
+Evidence: validation_5211/5210/529/528; acceptance records: HISTORY.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:

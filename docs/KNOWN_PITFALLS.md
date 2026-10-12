@@ -4,6 +4,41 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-083 - Native bindings, modal priority and automap use different paths
+
+Status/evidence: ENGINE-VERIFIED for reset, persistence, hint enumeration,
+slot commands and modal cancellation; CODE-VERIFIED for native double-binding
+and controller navigation dispatch. #149 / 5.2.14, 2026-10-12, GZDoom 4.14.2.
+Baseline: b21e0632. Author verified physical M opens/closes the map.
+
+KEYCONF defaultbind is evaluated repeatedly and can resurrect deliberately
+cleared keys. Use DEFBINDS before INI plus an explicit first-start/reset preset
+for engine-default conflicts. resetb2defaults restores controls, not KEYCONF;
+reset2defaults also changes unrelated CVars. Bindings.SetBind from UiTick is
+invalid outside the native menu responder. Preserve the legacy empty key
+section for existing normal/double binding import (CA-KP-077).
+
+Enumerate GetAllKeysForCommand and NameAllKeys instead of assuming two keys.
+DoubleBindings is not exposed to ZScript 4.14.2; preserve it through the engine.
+Do not intercept a physical slot key before C_DoKey: PickWeapon is the native
+post-dispatch hook, and SendNetworkEvent safely queues the authoritative change.
+Native M_Responder converts Back/controller navigation before menu callbacks;
+ambiguous menu keys cannot recover an exact physical binding. Let modal skip
+input run before Journal toggling and share the same Journal cleanup path.
+Visual buttons/native navigation must bypass physical-binding lookup; a synthetic
+Tab for Back must not activate a remapped gameplay action.
+
+Full-screen automap processes AutomapBindings before normal Bindings. The engine
+M=am_setmark consumes M, so the accepted M=togglemap preset uses unmapbind M.
+Do not add a second map-only toggle binding: it would survive normal remapping.
+
+Reproduction: assets/validation_5214/{contract.zs,contract.cfg,flow.cfg,persist.cfg,
+restart.cfg,RESULTS.md}. Engine sources: c_bind.cpp (DEFBINDS/reset/unmapbind),
+g_game.cpp (slot/automap responder), am_map.cpp (AutomapBindings), menu.cpp
+(M_Responder), and events.cpp (SendNetworkEvent). Keyboard injection that works
+in GUI menus does not prove gameplay keyboard input; the physical M result is
+explicit author evidence, separate from agent-operated mouse/F5 menu checks.
+
 ## CA-KP-082 - Modular sprite actors must share render and hub lifecycles
 
 Status/evidence: ENGINE-VERIFIED for composition, native crouch, save/load,

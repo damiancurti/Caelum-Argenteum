@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## 5.2.14 - Grouped native controls and current hints (#149)
+
+Existing commands now appear under movement/interaction, combat/blocking,
+abilities, weapon selection, Journal/inventory/time and map controls. Native
+remapping, clearing, controller bindings, save/load menus and settings remain
+owned by GZDoom. Actual normal bindings resolve in bilingual UI text.
+Explicit native reset applies the seven approved Caelum defaults, including M
+for automap; first-launch setup uses the same catalogue. Startup/load preserves
+custom and cleared bindings. No powers, balance or exploration features added.
+Evidence: assets/validation_5214/RESULTS.md. CA149-01 awaits author usability
+acceptance. #148 is complete: PR201 merged b21e0632 and issue closed.
 
 ## 5.2.13 - Native saved cosmetics and character preview (#148)
 

@@ -1,0 +1,20 @@
+CA149-01 | Origin: 5.2.14 / issue #149 | Native controls usability
+Prerequisites: rebuild with run_dev.bat; use a test save and note custom keys
+before requesting Defaults. Agent evidence: assets/validation_5214/RESULTS.md.
+1. Options > Customize Controls: check the grouped actions in Spanish and English.
+   Add keyboard/mouse bindings, clear Use or an attack, and reopen tutorial/Journal
+   hints. Expect every normal binding, or the translated unbound label, to match.
+2. Request Defaults and confirm: Tab=Journal, M=automap, B=Seal, R=reload/charge,
+   F=block/aim, T=Tarot, Y=time skip. unrelated preferences stay unchanged. Marking can be remapped independently.
+3. Remap Journal/time skip; open/close Journal, resting and crafting, then cancel
+   the time-skip panel above crafting. Expect parent context retained, no accidental
+   attack, Seal/Tarot use or extra resource cost. Hold/release movement and attacks
+   across menu transitions. Fixed native Back/navigation keys retain precedence.
+4. Save/load, exit/restart and confirm custom and cleared actions remain intact.
+   Native save/load screens must remain accessible.
+5. If a native controller is available, check its assigned gameplay actions and
+   existing panel navigation. Native Back/navigation has priority; Pad_Y and other
+   untranslated buttons can use Journal/time remaps. Record hardware tested, or
+   explicitly qualify that hardware was unavailable. Double-binding hints are not
+   exposed by GZDoom 4.14.2, though double bindings remain preserved.
+Expected: coherent labels, correct native actions, no leaked input/resources.

@@ -100,7 +100,7 @@ AddOptionMenu "InventoryControlsMenu"
     Control "$CA_CONTROL_JOURNAL", "ca_journal_toggle"
 }
 
-AddOptionMenu "OtherControlsMenu"
+AddOptionMenu "InventoryControlsMenu"
 {
     Control "$CA_SKIP_TITLE", "ca_time_skip"
 }
@@ -108,4 +108,38 @@ AddOptionMenu "OtherControlsMenu"
 ListMenu "CaelumLiveMenu"
 {
     Class "CaelumLiveMenu"
+}
+
+// Las filas usan EnterKey/Bindings y el reset originales del motor.
+AddOptionMenu "CustomizeControls"
+{
+    Submenu "$CA_CONTROL_COMBAT", "CaelumCombatControls"
+    Submenu "$CA_CONTROL_ABILITIES", "CaelumAbilityControls"
+}
+OptionMenu "CaelumCombatControls"
+{
+    Title "$CA_CONTROL_COMBAT"
+    ScrollTop 2
+    StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+    StaticText ""
+    Control "$CNTRLMNU_ATTACK", "+attack"
+    Control "$CNTRLMNU_ALTATTACK", "+altattack"
+    Control "$CNTRLMNU_RELOAD", "+reload"
+    Control "$CNTRLMNU_ZOOM", "+zoom"
+}
+OptionMenu "CaelumAbilityControls"
+{
+    Title "$CA_CONTROL_ABILITIES"
+    ScrollTop 2
+    StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+    StaticText ""
+    Control "$CNTRLMNU_USER1", "+user1"
+    Control "$CNTRLMNU_USER2", "+user2"
+    Control "$CNTRLMNU_USER3", "+user3"
+    Control "$CNTRLMNU_USER4", "+user4"
+    StaticText "$CA_CONTROL_RESERVED"
+}
+AddOptionMenu "MapControlsMenu"
+{
+    Control "$CNTRLMNU_AUTOMAP", "togglemap"
 }

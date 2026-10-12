@@ -404,7 +404,7 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
                 .. "]\n\n" .. text;
         }
         if (text.Length() == 0) { text = "."; }
-        mDialogueLines = displayFont.BreakLines(text, SpeechWidth);
+        mDialogueLines = displayFont.BreakLines(CaelumInputHints.Resolve(text), SpeechWidth);
     }
 }
 

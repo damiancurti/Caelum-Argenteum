@@ -1,6 +1,61 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.13** — 2026-10-11.
+Documentation version: **5.2.14** — 2026-10-12.
+
+## 5.2.14 - Native input ownership, groups and hints (#149)
+
+GZDoom 4.14.2 remains the binding owner. Native Control rows support remapping,
+clearing and the supported keyboard/mouse/controller key names. There is no
+parallel gameplay input poller. The following inventory supersedes the category
+placement recorded under 5.2.0; commands and gameplay meanings are unchanged.
+
+| Native group | Commands / existing actions | Support boundary |
+| --- | --- | --- |
+| Movement and interaction | +forward, +back, +moveleft, +moveright, turning/strafe/look, +jump, +crouch, +speed, +use, +moveup/+movedown | Native movement/use and existing flight remain available |
+| Combat and blocking | +attack, +altattack, +reload, +zoom | Primary, secondary/aim, reload/charge, block/sweep/aim |
+| Race, Seal, Tarot and class | +user1, +user2, +user3, +user4 | Racial/class rows are reserved interfaces with pending content; Seal/Tarot retain implemented behavior |
+| Weapon selection | slot 1..10, weapnext, weapprev and native weapon rows | Slot 2 cycles exact equipped Caelum items via PickWeapon and the existing authoritative event |
+| Journal, inventory and time | ca_journal_toggle, ca_time_skip; invprev/invnext/invuse/invdrop and native inventory rows | Journal handles formal equipment; native inventory remains compatibility access |
+| Map controls | togglemap plus native map zoom, pan, follow and mark commands | Existing automap only; exploration icons/travel redesign are outside #149 |
+| Other/native groups | menu_save, menu_load, native menu/screenshots and multiplayer/Strife compatibility rows | Native menus retained; no claim that Doom/Strife-specific gameplay exists |
+
+The default catalogue is assets/generators/controls_catalog.json. Generated
+DEFBINDS loads before INI, which remains authoritative. The launcher supplies
+its generated preset only when build/gzdoom.ini does not yet exist. Direct
+external launches with new configs may retain engine conflicting defaults;
+use the explicit native **Defaults** action to apply Caelum's full preset.
+That action keeps native confirmation, runs resetb2defaults and applies:
+Tab Journal, M automap, B Seal, R reload/charge, F block/sweep/aim, T Tarot,
+Y time skip. No defaults are assigned to racial/class abilities. It removes
+M's map-only mark assignment so M also closes the full-screen automap. Marking
+remains remappable, without an invented replacement key. Reset changes controls
+only; unrelated preferences remain untouched. Startup/load never reapply reset.
+The empty legacy KEYCONF section continues importing old normal/double bindings.
+
+Hints use {bind:command} tokens resolved locally before wrapping/drawing. All
+normal keys are listed with native NameAllKeys, or localized Unbound/Sin asignar.
+Rebinding updates the next presentation, including introduction, Journal,
+crafting, dialogue and notifications. GZDoom's ZScript API exposes Bindings and
+AutomapBindings, not DoubleBindings: native double bindings are preserved and
+executed by the engine, but are not advertised by this hint API. Exact native
+command bindings are supported in live panels; compound console aliases retain
+their native gameplay dispatch without being interpreted as panel shortcuts.
+
+Visual buttons and native navigation invoke contextual actions without reinterpreting
+synthetic scans as physical bindings. Live panels own input while open. Fixed arrows/Enter/Escape/Q and displayed
+panel edit shortcuts remain contextual controls. Journal/time remaps are
+recognized when native dispatch delivers their keys, including F-keys and
+middle mouse. The modal time-skip panel takes precedence over Journal toggling.
+Native Back (Mouse4 and mapped controller navigation buttons) and native menu
+navigation retain precedence; physical scans cannot be reconstructed from those
+ambiguous menu actions. Untranslated controller buttons such as Pad_Y reach the
+existing handler. No new controller UI or hardware coverage is claimed.
+Opening/closing Journal retains refresh/crafting/rest cleanup; input releases
+remain governed by the existing native menu path. Gameplay slot commands use
+native dispatch before queuing a single existing equipment event, so aliases
+and double-bind actions are not swallowed by a global key interceptor.
+
+Evidence: assets/validation_5214/RESULTS.md; CA149-01 author acceptance pending.
 
 ## Saved cosmetics and native preview - 5.2.13 / #148
 

@@ -1,0 +1,24 @@
+{
+  "official_members_match_tested": true,
+  "official_member_count": 13557,
+  "controls_generator_deterministic": true,
+  "generator_hashes": {
+    "src/KEYCONF": "b5704ee5d685723be30b4b910f3d0fb04010ca23d086b1e7e1dcf65468c37124",
+    "src/DEFBINDS": "d7056ba758c3ac349d6355743c7e0e661aa7a18ad9b9d1d3fa84a8f64cbd0c7e",
+    "assets/playtest/default_controls.cfg": "4f9031e44331726313e85650f605bd9bcbdddb1b5f6e6caecfa39eef0ba02330"
+  },
+  "persist-01_normal": true,
+  "persist-01_cleared_use": true,
+  "persist-01_double": true,
+  "persist-01_map": true,
+  "restart-01_normal": true,
+  "restart-01_cleared_use": true,
+  "restart-01_double": true,
+  "restart-01_map": true,
+  "legacy-01_normal": true,
+  "legacy-01_cleared_use": true,
+  "legacy-01_double": true,
+  "legacy-01_map": true,
+  "legacy-01_legacy_empty": true,
+  "failures": []
+}
