@@ -40,6 +40,15 @@ CA148-01 stays pending. The test runner now supports a true title-screen start:
 GZDoom's -skill argument also starts a map, so title tests omit it and +map.
 Evidence: the cursor follow-up in assets/validation_5213/RESULTS.md.
 
+The author subsequently requested at least four faces and four hairstyles for
+humans, goblins and Caelith, with black/brown/blonde/redhead/gray/white hair for
+all three. Face, hairstyle and hair color may also change during a game. This
+extends #148; candidate source generation is not completed runtime integration.
+The author explicitly requested a dedicated sprite-art specification document.
+SPRITE_ART_DIRECTION.md now owns that brief and is linked from AGENTS/ASSETS;
+the validator includes it in the versioned canonical document set. Version stays
+5.2.13 because this is the same unaccepted patch.
+
 ## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
 
 Author decisions: final 10 m/s cap, linear 10 m/s^2 acceleration, tracking a

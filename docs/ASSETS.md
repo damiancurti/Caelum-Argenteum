@@ -4,6 +4,12 @@ Documentation version: **5.2.13** — 2026-10-11.
 
 ## 5.2.13 - Modular saved appearance and first-person hands (#148)
 
+Read [SPRITE_ART_DIRECTION](SPRITE_ART_DIRECTION.md) before generating sprites.
+The author requested this dedicated visual brief and an extension with four
+faces/four hairstyles per humanoid race/sex and six hair colors, editable during
+play. That extension is in progress; the implemented matrix below describes
+the initial #148 delivery, not completion of the new face/hair requirements.
+
 Author-approved plain shirt/trousers/boots replace the player's fixed armored
 Domingo presentation. Heads, clothes and exposed hands are separate modules;
 native TEXTURES composes them without storing a full identity/pose PNG product.

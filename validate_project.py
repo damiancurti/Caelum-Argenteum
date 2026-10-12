@@ -17,7 +17,7 @@ from build_document_index import (
     word_count as doc_word_count,
 )
 
-CANONICAL = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md'}
+CANONICAL = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md', 'SPRITE_ART_DIRECTION.md'}
 WORKING = {'CONTEXT.md', 'TASKS.md'}
 DOCUMENTS = CANONICAL | WORKING
 ANCILLARY = {'GZDOOM_DEVELOPMENT.md', 'KNOWN_PITFALLS.md'}

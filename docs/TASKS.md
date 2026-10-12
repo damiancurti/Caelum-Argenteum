@@ -16,6 +16,10 @@ Author reported an invisible cursor in fullscreen MainMenu, Options and creator,
 with working clicks and recovery after Alt+Enter. The isolated repeat began with
 a visible cursor; identify a reproducible trigger before choosing a runtime fix.
 PR200/#195 are merged/closed following the prior explicit acceptance.
+Author extension: four faces and four hairstyles for each human/goblin/Caelith
+sex, six natural hair colors for all three races, all editable in-game. Follow
+the requested dedicated SPRITE_ART_DIRECTION.md before further generation;
+modular integration and final visual/engine validation are still in progress.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)
 

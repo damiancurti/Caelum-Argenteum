@@ -21,6 +21,8 @@ branch `issue148-appearance-preview`, committed and pushed.
 Author testing reported an intermittent invisible cursor in fullscreen menus;
 clicks still work and Alt+Enter restored visibility. The isolated repeat started
 with a visible cursor, so no cursor fix or acceptance is claimed yet.
+The author-requested [sprite art direction](docs/SPRITE_ART_DIRECTION.md) defines
+the visual brief. Additional faces, hairstyles and six hair colors are in progress.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;
