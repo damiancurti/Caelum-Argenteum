@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
 
 ## 5.2.14 - Tutorial control hints (#149)
 

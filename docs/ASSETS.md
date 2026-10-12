@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
+
+## 5.2.16 - Fullscreen cursor evidence (#204)
+
+The native 32x32 moon cursor, hotspot and all packaged artwork remain unchanged.
+The author approved the existing native VSync setting after physical fullscreen
+tests; no generated cursor, engine fork or dependency is distributed.
+assets/validation_5216 retains console probes, logs, source hashes and explicit
+author observations. INIs, saves, executables and development IWADs remain local.
 
 ## 5.2.15 - Presentation scaling and native feedback (#150)
 

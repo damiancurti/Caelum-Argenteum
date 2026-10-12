@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.15.** Obtain and update the complete repository, validate
+**Current release: 5.2.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.16 records the accepted fullscreen cursor workaround for
+[#204](https://github.com/damiancurti/Caelum-Argenteum/issues/204). On the author's
+Windows/Vulkan installation, enabling native **Vertical sync** restores the
+cursor from startup. The approved local `build/gzdoom.ini` now has
+`vid_vsync=true`; other preferences are preserved. The launcher does not force
+this setting on other installations. Two starts, menu clicks and gameplay
+capture transitions passed author check CA204-01 on 2026-10-12.
+[Evidence and limits](assets/validation_5216/RESULTS.md); setup is under
+[Build and run](#build-and-run). No outstanding #204 author checks.
 
 5.2.15 implements [#150](https://github.com/damiancurti/Caelum-Argenteum/issues/150):
 native UI/HUD/message scaling, configurable crosshair and a bilingual
@@ -38,8 +48,8 @@ editable faces/hair/tones/forms and equipped-glove-dependent first-person hands.
 CA148-01 passed on 2026-10-12. PR201 merged as b21e0632; #148 is closed.
 [Sprite art direction](docs/SPRITE_ART_DIRECTION.md), [asset coverage](docs/ASSETS.md)
 and [original evidence](assets/validation_5213/RESULTS.md) retain the full scope.
-The earlier intermittent fullscreen cursor report remains historical evidence;
-acceptance does not establish a runtime cursor fix.
+The earlier fullscreen cursor report is retained in that evidence; the
+verified native-setting workaround is delivered separately in #204 above.
 
 5.2.12/#195 is accepted: the bull uses its approved tracking acceleration and
 biological cushioning; residents own finite tools. CA195-01 passed 2026-10-11;
@@ -1956,7 +1966,7 @@ From the repository root, using the author's installed Python:
 python validate_project.py
 ```
 
-Success prints JSON with `"version": "4.36.28"`, `"documents": 10`, and
+Success prints JSON with the current README version and
 `"errors": []`, returning exit code 0 (`$LASTEXITCODE` in PowerShell or
 `echo %ERRORLEVEL%` in Command Prompt). On failure, report the full output,
 command, Python version (`python --version`) and current commit (`git rev-parse
@@ -1970,7 +1980,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**4.36.28**. This packaging patch requires no save-schema migration.
+**5.2.16**. This patch requires no save-schema migration.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on
@@ -1980,6 +1990,18 @@ from any working directory:
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\path\CaelumArgenteum\build_dev.ps1"
 ```
+
+If the native cursor is invisible when starting fullscreen with Vulkan on
+Windows, enable **Vertical sync** in GZDoom's video options and restart. In the
+full options menu this is **Set video mode**; its console preference is
+`vid_vsync true`. If necessary, close GZDoom and change only `vid_vsync=false`
+to `vid_vsync=true` in the existing `build/gzdoom.ini`, keeping a backup first.
+This native preference is saved by GZDoom and reused by `run_dev.bat`.
+VSync synchronizes presentation with the display and can add input latency.
+It is a verified workaround on the tested RTX 3070 Ti installation, not a
+universal engine repair. Do not reset controls, replace the cursor image or
+force a rendering backend to apply it. See
+[CA-KP-085](docs/KNOWN_PITFALLS.md#ca-kp-085---fullscreen-vulkan-cursor-visibility-can-depend-on-presentation).
 
 Only src enters build/caelum_argenteum_dev.pk3. The builder writes files-only
 ZIP entries and replaces the previous build atomically after verification.

@@ -1,0 +1,20 @@
+{
+  "issue": 204,
+  "author_approved": "2026-10-12",
+  "change": {
+    "vid_vsync": {
+      "before": false,
+      "after": true
+    }
+  },
+  "only_one_preference_changed": true,
+  "before_sha256": "9597139b57bce964c23788047a0c2817761105a1da538bc331dd82d8f1c68460",
+  "after_sha256": "d646c40ebc04e70df5b955230ed9b324a7a9b65dbeb6e81ca9b447d8d8dc4598",
+  "rollback_local_copy": "build/issue204/user-settings-before.ini",
+  "kept": {
+    "vid_preferbackend": 1,
+    "vid_fullscreen": true,
+    "vk_exclusivefullscreen": false,
+    "vid_cursor": "None"
+  }
+}

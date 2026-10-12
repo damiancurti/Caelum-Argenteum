@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.15** — 2026-10-12.
+Documentation version: **5.2.16** — 2026-10-12.
+
+## 5.2.16 - Fullscreen native cursor workaround (#204)
+
+The author accepted Vulkan with native VSync enabled after two successful
+fullscreen starts, MainMenu/Options/creator clicks and menu/gameplay capture
+transitions. The existing launcher config receives only that approved preference;
+no global default, renderer switch, gameplay or save change is introduced.
+CA204-01 passed on 2026-10-12. Evidence and reproduction:
+assets/validation_5216/RESULTS.md. Delivery includes the support documentation;
+the author requested commit, push, PR merge and issue closure.
 
 ## 5.2.15 - Native readability and comfort (#150)
 

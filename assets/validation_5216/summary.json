@@ -1,0 +1,81 @@
+{
+  "issue": 204,
+  "version": "5.2.16",
+  "baseline": "cd712377",
+  "static_validation": {
+    "version": "5.2.16",
+    "documents": 11,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2484,
+    "errors": []
+  },
+  "build": {
+    "exit_code": 0,
+    "members": 13559,
+    "production_sha256": "9a8af873070aa3a25b1b05794db34d17876ebeff519e6cf361682db38b18d87b",
+    "changed_members": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "runtime_delta": "Only required diagnostic release strings: 5.2.15 -> 5.2.16. All other member bytes identical."
+  },
+  "native_persistence_and_final_compile": {
+    "persist-01": {
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_vsync": "true",
+      "vid_fullscreen": "true",
+      "vid_cursor": "None",
+      "in_mouse": "0",
+      "m_use_mouse": "2"
+    },
+    "persist-02": {
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_vsync": "true",
+      "vid_fullscreen": "true",
+      "vid_cursor": "None",
+      "in_mouse": "0",
+      "m_use_mouse": "2"
+    },
+    "official-01": {
+      "vid_preferbackend": "1",
+      "vk_exclusivefullscreen": "false",
+      "vid_vsync": "true",
+      "vid_fullscreen": "true",
+      "vid_cursor": "None",
+      "in_mouse": "0",
+      "m_use_mouse": "2"
+    }
+  },
+  "local_setting": {
+    "only_vid_vsync_changed": true,
+    "sha256": "d646c40ebc04e70df5b955230ed9b324a7a9b65dbeb6e81ca9b447d8d8dc4598"
+  },
+  "author_acceptance": "CA204-01; 2026-10-12; recorded physical startup/menu/gameplay scope only",
+  "keep_awake": "No request made for #204; no power-plan changes."
+}
