@@ -80,7 +80,13 @@ Agent inspections cover front/profile/rear run and punch silhouettes, trousers,
 head joints, real fall/rest poses, seat placement and canteen depth. Female
 grip/fist/shotgun/shield images differ anatomically from male. Source images,
 runtime registration, native screenshots and human artistic acceptance are
-different evidence levels. CA209-01/02 remain pending in root pending_test.txt.
+different evidence levels. On 2026-10-12 the author explicitly confirmed all
+tests passed, accepting CA209-01 (world poses and furniture) and CA209-02
+(female first-person hands), both originating in 5.2.18 / #209, without
+qualifications. PR210 merge and #209 closure were authorized. The accepted
+entries were removed from root pending_test.txt; the tested runtime is unchanged.
+PROVENANCE.json preserves the source-selection status recorded before this
+confirmation; this paragraph and HISTORY record subsequent author acceptance.
 No multiplayer visual benchmark, every cosmetic combination, every ceiling or
 every gl_spriteclip setting is claimed. The original clipping behavior is not
 globally overridden. Material-specific glove wardrobes remain outside scope.

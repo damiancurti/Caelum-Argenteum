@@ -13,10 +13,11 @@ it, then rebuild with `run_dev.bat` as described below.
 authored run/punch/supine/death poses, modular head and furniture alignment,
 distinct female first-person hands, seated food/drink controls and a 3D table
 canteen. [Native evidence](assets/validation_5218/RESULTS.md) is separate from
-the outstanding author visual checks in [pending_test.txt](pending_test.txt).
+author visual acceptance: CA209-01 and CA209-02 passed on 2026-10-12 without
+qualifications; no #209 checks remain in [pending_test.txt](pending_test.txt).
 Combat timings, saved identity and inventory rules are preserved.
-Delivery: [draft PR210](https://github.com/damiancurti/Caelum-Argenteum/pull/210),
-with commits pushed and author visual acceptance pending.
+The author authorized [PR210](https://github.com/damiancurti/Caelum-Argenteum/pull/210)
+merge and #209 closure.
 
 5.2.17 implements [#207](https://github.com/damiancurti/Caelum-Argenteum/issues/207):
 the player stays alive at a minimum of **1 HP in MAP01**, retaining the same

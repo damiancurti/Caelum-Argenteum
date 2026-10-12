@@ -188,8 +188,8 @@ export: body pixels below the floor pivot can trigger player-only native sprite
 clipping and separate a generic head module. Do not invert SpriteOffset.Y;
 native GetSpriteOffset already converts its screen-down sign. This evidence
 does not establish correctness for every gl_spriteclip mode or low ceiling.
-Evidence: assets/validation_5218/fixture.zs and RESULTS.md. CA209-01 remains
-pending author visual acceptance.
+Evidence: assets/validation_5218/fixture.zs and RESULTS.md. CA209-01 passed
+author visual acceptance on 2026-10-12 without qualifications.
 
 ## CA-KP-081 - Validate contact work through native movement and lazy state initialization
 

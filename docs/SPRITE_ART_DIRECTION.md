@@ -242,8 +242,8 @@ acceptance in HISTORY. Generated candidates are never automatically accepted.
 ## Status and open details
 
 #209 repairs the subsequently reported attachment/animation defects and adds
-female hand anatomy. Its sources are integrated but author visual acceptance
-is still pending. Source hashes and exact prompts are retained in
+female hand anatomy. The author accepted CA209-01 and CA209-02 on 2026-10-12
+without qualifications. Source hashes and exact prompts are retained in
 assets/source/art/appearance_5218/PROVENANCE.json; native checks and limitations
 are in assets/validation_5218/RESULTS.md. The older #148 acceptance below remains
 historical evidence, not automatic acceptance of this revision.

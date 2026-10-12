@@ -12,8 +12,9 @@ attack; Revenant is a motion reference only, with no Doom artwork copied.
 The author requested distinct female hands, including animal forms and worn
 gloves. Combat, item identity, existing animation timing and saved structural
 identity remain unchanged. Evidence: assets/validation_5218/RESULTS.md;
-author visual acceptance is pending in pending_test.txt. Commit/push requested;
-merge and closure have not yet been authorized for #209.
+CA209-01 and CA209-02 passed author acceptance on 2026-10-12 without
+qualifications. The author authorized PR210 merge and #209 closure; no checks
+remain pending for this issue. Release 5.2.18 is unchanged.
 
 ## 5.2.17 - MAP01 player health floor (#207)
 

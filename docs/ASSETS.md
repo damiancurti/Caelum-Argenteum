@@ -48,7 +48,8 @@ generate_appearance_details.py, generate_appearance_hands.py and
 generate_dining_canteen.py under assets/generators. Registration/mask/pose data
 are in appearance_catalog.json; appearance_pose_modules.py performs technical
 source registration. Evidence and limits: assets/validation_5218/RESULTS.md.
-Author visual acceptance remains pending; source generation is not acceptance.
+CA209-01 and CA209-02 passed author visual acceptance on 2026-10-12 without
+qualifications; this confirmation is separate from source generation.
 
 ## 5.2.17 - Preserve the living tutorial appearance (#207)
 

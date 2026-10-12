@@ -25,10 +25,14 @@ owner and three liters. Visual captures also exposed and corrected unsupported
 OBJ polygon caps and excessive end-view supine depth projection.
 Full evidence, hashes and limits: assets/validation_5218/RESULTS.md.
 
-CA209-01/CA209-02 originate in this release and remain pending author visual/
-interaction acceptance. No author acceptance, merge or closure is inferred
-from agent tests. The author requested commit and push; delivered in draft
-PR210 with separate visual-resource and runtime-binding commits. The official
+On 2026-10-12, the author explicitly confirmed that all tests passed and
+authorized PR210 merge and #209 closure, without qualifications. CA209-01
+(world poses and furniture) and CA209-02 (female first-person hands), both
+originating in 5.2.18 / #209, therefore passed author visual/interaction
+acceptance. Their entries were removed from pending_test.txt, which remains
+tracked and empty. This confirmation is separate from agent-only evidence.
+The tested runtime and version remain unchanged. Delivery uses separate
+visual-resource and runtime-binding commits in PR210. The official
 package matches all 16,052 tested members; 6,140 regenerated outputs match
 byte for byte. Final rear-corpse capture passes 102 native assertions. Scoped
 and session-wide keep-awake requests were released after testing.
