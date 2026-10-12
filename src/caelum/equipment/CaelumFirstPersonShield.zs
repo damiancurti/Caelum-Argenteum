@@ -54,6 +54,7 @@ class CaelumFirstPersonShield : Object play
     const HAND_LAYER = 45;
     bool Initialized;
     int LastType;
+    int LastHandVariant;
     String LastRole;
 
     static void Clear(CaelumPlayer user)
@@ -101,11 +102,17 @@ class CaelumFirstPersonShield : Object play
         bool missing = user.player.FindPSprite(BODY_LAYER) == null
             || user.player.FindPSprite(HAND_LAYER) == null;
         bool restart = !Initialized || missing || LastType != item.ItemType || LastRole != role;
+        int handVariant=CaelumAppearanceHands.Variant(user);
+        bool handChanged=LastHandVariant!=handVariant;
+        restart=restart || handChanged;
         // Al cargar un bloqueo sostenido, reconstruye I directamente: no repite H.
-        String poseRole = blocking && (!Initialized || missing) ? "Hold" : role;
+        String poseRole = blocking && (!Initialized || missing || handChanged) ? "Hold" : role;
         vector2 position = blocking ? (160,100) : (82 + baseView.x,45 + lower);
         Place(user, BODY_LAYER, Pose(Family(item.ItemType), poseRole), position, restart);
-        Place(user, HAND_LAYER, Pose("Hand", poseRole), position, restart);
+        String handRole=blocking && handChanged?"Hold":poseRole;
+        Place(user, HAND_LAYER, CaelumAppearanceHands.Resolve(user,"Shield_"..handRole,
+            Pose("Hand",handRole)), position, restart || handChanged);
+        LastHandVariant=handVariant;
         LastType = item.ItemType; LastRole = role; Initialized = true;
         return blocking;
     }

@@ -1,20 +1,22 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
 
-**Current patch 5.2.12 / #195:** bull 10 m/s, linear 10 m/s^2 acceleration,
-moving-target tracking, normal collision mass and horizontal biological cushioning.
-Residents own finite Pickaxe/staff/one bolas; Rulo/Ronnie use T1 War Axe/Sword
-with sequential charging. Bolas/ice precede damage; resident fire is
-excluded during trial. Eight personalities.
-validation_5212; CA195-01 accepted 2026-10-11; PR200 merge/closure authorized.
-**5.2.11 / #194:** CA194-01 accepted 2026-10-11; PR199 merged, issue closed.
-Collision: 1 J/HP/body, independent defenses.
-**5.2.10 / #192 amendment:** CA192-02 accepted 2026-10-11; issue closed,
-PR198 merged. Bow 20/30/40%, crossbow 40/50/60%; four ranged families exclude
-ideology. Active names use shotgun; fresh test saves authorized. validation_5210.
-5.2.9 personality/power/bell12 and #188 Toughness accepted CA192-01/CA188-01;
-PR193/196/197 merged. Evidence validation_529/528. Separate roadmap: #148.
+**Current 5.2.13 / #148:** saved modular appearance, native creator preview and
+tone/beast-form editor. Human/goblin natural tones; Caelith RGB; Beast Men
+wolf/bear/puma/jaguar. Plain clothing, sex body modules, shared poses. Hands use
+skin/fur unless actual gloves are equipped; voices follow saved sex. No respec.
+Appearance revision 1 initializes old saves once. Matrix/limits: ASSETS/SYSTEMS.
+Evidence: validation_5213. Author visual check CA148-01 pending; branch
+issue148-appearance-preview, no merge/acceptance claimed. #149/#150 remain separate.
+
+**5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
+issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;
+finite resident tools/control priority. Evidence validation_5212.
+**5.2.11/#194 and 5.2.10/#192 accepted:** PR199/198 merged, issues closed.
+Collision 1 J/HP/body; ranged ideology exclusions, active shotgun naming.
+5.2.9 personality/power/bell12 and #188 Toughness accepted; PR193/196/197 merged.
+Evidence validation_5211/5210/529/528; HISTORY retains exact acceptance records.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:
@@ -57,8 +59,7 @@ old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYST
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 
-**Earlier accepted releases:** #93/#97/#99/#101/#87 and #80/#78; ownership,
-Tarot and equipment rules remain in SYSTEMS, with acceptance in HISTORY.
+**Earlier accepted releases:** HISTORY retains #93/#97/#99/#101/#87/#80/#78.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
@@ -69,9 +70,8 @@ dies in II. Evidence: assets/validation_43711 and validation_43710.
 soldiers. Geometry/legacy options/10 km route: README/SYSTEMS. Evidence:
 assets/validation_4379/south/COMBAT_RECOVERY.json. Performance: #86 (13.5/35 tics/s).
 
-**Accepted #73/#74/#75:** cardinal maze, finite supplies, flooded returns,
-grates and elevator. Closed blocks remain shut until entry. #75 corrected report
-associations; its old-save waiver stays specific. HISTORY retains acceptance.
+**Accepted #73/#74/#75:** maze, supplies and returns; HISTORY retains acceptance
+and the specific old-save waiver.
 
 **Accepted base:** #64/#65 (time/tables), #63 (loadout), #68 (magic), #62 (dummy),
 #61 (landscape), #17 (export). #61 geometry needs fresh MAP01. Rights: LICENSE.md.

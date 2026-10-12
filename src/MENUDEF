@@ -85,8 +85,14 @@ ListMenu "CaelumTrucoMenu"
 AddOptionMenu "NewPlayerMenu"
 {
     Class "CaelumPlayerPreferencesMenu"
+    Submenu "$CA_APPEARANCE_TITLE", "CaelumAppearanceMenu"
     StaticText "$CA_IDENTITY_CREATOR_OWNER"
     StaticText "$CA_IDENTITY_NETWORK_NAME"
+}
+
+ListMenu "CaelumAppearanceMenu"
+{
+    Class "CaelumAppearanceMenu"
 }
 
 AddOptionMenu "InventoryControlsMenu"

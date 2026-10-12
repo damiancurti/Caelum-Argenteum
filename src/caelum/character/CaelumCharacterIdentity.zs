@@ -48,12 +48,13 @@ class CaelumCharacterIdentity : Object play
         }
         bool migratePersonality=record.IdentityProfile.PersonalityRevision<CaelumPersonalityRules.REVISION;
         record.IdentityProfile.EnsurePersonality();
+        record.IdentityProfile.EnsureAppearance();
         user.CharacterProfile = record.IdentityProfile;
         user.CharacterAllocation = record.IdentityAllocation;
-        // La apariencia mundial existente es propia; una skin global de Doom
-        // no sustituye el cuerpo ni su banco sonoro. #148 ampliará los recursos.
+        // Los recursos del perfil reemplazan una skin global de Doom.
         user.bNoSkin = true;
         if(migratePersonality)user.ApplyCharacterProfile();
+        user.UpdateWorldCarbineVisual();
     }
 
     static void Ensure(CaelumPlayer user)

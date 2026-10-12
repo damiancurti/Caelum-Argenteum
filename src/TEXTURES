@@ -5772,3 +5772,6 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "graphics/caelum/utility_staff/staff.textures"
 
 #include "graphics/caelum/bolas/bolas.textures"
+
+#include "graphics/caelum/appearance.textures"
+#include "graphics/caelum/appearance-hands.textures"

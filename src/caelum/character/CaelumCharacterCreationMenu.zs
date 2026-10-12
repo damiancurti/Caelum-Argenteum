@@ -11,6 +11,7 @@ class CaelumCharacterCreationMenu : ListMenu
     int SecondClass;
     int Sex;
     int HeightChoice;
+    int SkinTone, BeastForm;
     int Personality[4];
     int LayerBonus[4];
     int AttributeBonus[12];
@@ -20,17 +21,25 @@ class CaelumCharacterCreationMenu : ListMenu
     Font TextFont;
     Font SmallTextFont;
     bool Confirmed;
+    CaelumCharacterPreview Preview;
+    int AppearanceRow;
+    bool AppearanceOnly;
+    int EditSerial;
+    CaelumPlayer EditSubject;
+    CaelumCharacterProfile EditProfile;
 
     override void Init(Menu parent, ListMenuDescriptor desc)
     {
         Super.Init(parent, desc);
         Pointer=new("CaelumMenuPointer");
+        Preview=new("CaelumCharacterPreview");
         Page = CaelumConstants.CREATION_PAGE_RACE;
         Race = CaelumConstants.RACE_HUMAN;
         FirstClass = CaelumConstants.CLASS_WARRIOR;
         SecondClass = CaelumConstants.CLASS_MAGE;
         Sex = CaelumConstants.SEX_MALE;
         HeightChoice = CaelumConstants.HEIGHT_NORMAL;
+        SkinTone=0;
         for(int i=0;i<4;i++)Personality[i]=1;
         SelectedLayer = 0;
         SelectedAttribute = 0;
@@ -55,6 +64,8 @@ class CaelumCharacterCreationMenu : ListMenu
         SecondClass = draft.SecondClass;
         Sex = draft.Sex;
         HeightChoice = draft.HeightChoice;
+        SkinTone=draft.SkinTone;
+        BeastForm=draft.BeastForm;
         for(int i=0;i<4;i++)Personality[i]=draft.Personality[i];
         SelectedLayer = draft.SelectedLayer;
         SelectedAttribute = draft.SelectedAttribute;
@@ -64,6 +75,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     void StoreSessionDraft()
     {
+        if(AppearanceOnly)return;
         let settings = CaelumCharacterSettings(StaticEventHandler.Find("CaelumCharacterSettings"));
         if (settings == null) return;
         if (settings.Draft == null) settings.Draft = new("CaelumCreationDraft");
@@ -74,6 +86,8 @@ class CaelumCharacterCreationMenu : ListMenu
         draft.SecondClass = SecondClass;
         draft.Sex = Sex;
         draft.HeightChoice = HeightChoice;
+        draft.SkinTone=SkinTone;
+        draft.BeastForm=BeastForm;
         for(int i=0;i<4;i++)draft.Personality[i]=Personality[i];
         draft.SelectedLayer = SelectedLayer;
         draft.SelectedAttribute = SelectedAttribute;
@@ -156,6 +170,13 @@ class CaelumCharacterCreationMenu : ListMenu
 
     void ChangeChoice(int direction)
     {
+        if(Page==CaelumAppearance.PAGE)
+        {
+            if(AppearanceRow==1 && Race==CaelumConstants.RACE_BEAST_MAN)
+                BeastForm=Wrap(BeastForm+direction,CaelumAppearance.FORM_COUNT);
+            else SkinTone=Wrap(SkinTone+direction,CaelumAppearance.TONE_COUNT);
+            return;
+        }
         if(IsPersonalityPage())
         {int layer=Page-CaelumPersonalityRules.FIRST_PAGE;Personality[layer]=Wrap(Personality[layer]+direction,3);return;}
         if (Page == CaelumConstants.CREATION_PAGE_RACE)
@@ -324,6 +345,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     String PageTitleKey()
     {
+        if(Page==CaelumAppearance.PAGE)return "CA_APPEARANCE_TITLE";
         if(IsPersonalityPage())return CaelumPersonalityRules.LayerKey(Page-CaelumPersonalityRules.FIRST_PAGE);
         switch (Page)
         {
@@ -340,6 +362,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     String PageHelpKey()
     {
+        if(Page==CaelumAppearance.PAGE)return "CA_APPEARANCE_HELP";
         if(IsPersonalityPage())return "CA_PERSONALITY_HELP";
         switch (Page)
         {
@@ -420,7 +443,7 @@ class CaelumCharacterCreationMenu : ListMenu
     void DrawBasicPage()
     {
         if (Page > CaelumConstants.CREATION_PAGE_SECOND_CLASS)
-        { Center(TextFont, Font.CR_GOLD, 232, "< " .. CurrentChoice() .. " >", 1.6); return; }
+        { Line(TextFont, Font.CR_GOLD, PanelLeft()+16, 232, "< " .. CurrentChoice() .. " >", LeftWidth(), 1.6); return; }
         int selected = Page == 0 ? Race : Page == 1 ? FirstClass : SecondClass;
         for (int i = 0; i < 4; i++)
         {
@@ -476,19 +499,77 @@ class CaelumCharacterCreationMenu : ListMenu
 
     void DrawSummaryPage()
     {
-        Center(TextFont,Font.CR_WHITE,126,StringTable.Localize(RaceKey(),false));
-        Center(TextFont,Font.CR_GOLD,174,StringTable.Localize(ProfessionKey(SecondClass),false),1.6);
-        Center(SmallTextFont,Font.CR_GRAY,216,StringTable.Localize(ClassKey(FirstClass),false)
-            .." + "..StringTable.Localize(ClassKey(SecondClass),false));
-        Center(TextFont,Font.CR_WHITE,258,StringTable.Localize(SexKey(),false).." / "..StringTable.Localize(HeightKey(),false));
-        for(int i=0;i<4;i++)Center(TextFont,Font.CR_GOLD,320+i*40,
+        Line(TextFont,Font.CR_WHITE,PanelLeft()+16,126,StringTable.Localize(RaceKey(),false),LeftWidth());
+        Line(TextFont,Font.CR_GOLD,PanelLeft()+16,168,StringTable.Localize(ProfessionKey(SecondClass),false),LeftWidth());
+        Line(TextFont,Font.CR_WHITE,PanelLeft()+16,210,StringTable.Localize(SexKey(),false).." / "..StringTable.Localize(HeightKey(),false),LeftWidth());
+        Line(SmallTextFont,Font.CR_GRAY,PanelLeft()+16,250,StringTable.Localize(CaelumAppearance.ToneKey(Race,SkinTone),false)
+            ..(Race==CaelumConstants.RACE_BEAST_MAN?" / "..StringTable.Localize(CaelumAppearance.FormKey(BeastForm),false):""),LeftWidth());
+        for(int i=0;i<4;i++)Line(TextFont,Font.CR_GOLD,PanelLeft()+16,312+i*40,
             StringTable.Localize(CaelumPersonalityRules.LayerKey(i),false)..": "
-            ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(i,Personality[i]),false),1.35);
+            ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(i,Personality[i]),false),LeftWidth(),1.35);
+    }
+
+    bool ShowsPreview()
+    {return Page==3 || Page==4 || Page==7 || Page==CaelumAppearance.PAGE;}
+
+    override void Ticker()
+    {
+        Super.Ticker();
+        Preview.Tick();
+        if(AppearanceOnly && (gamestate!=GS_LEVEL || consoleplayer<0
+            || players[consoleplayer].mo!=EditSubject))Close();
+    }
+
+    void DrawAppearancePage()
+    {
+        Line(TextFont,AppearanceRow==0?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,170,
+            StringTable.Localize("CA_APPEARANCE_TONE",false),LeftWidth());
+        Line(TextFont,AppearanceRow==0?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,210,
+            "< "..StringTable.Localize(CaelumAppearance.ToneKey(Race,SkinTone),false).." >",LeftWidth());
+        if(Race==CaelumConstants.RACE_BEAST_MAN)
+        {
+            Line(TextFont,AppearanceRow==1?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,284,
+                StringTable.Localize("CA_APPEARANCE_FORM",false),LeftWidth());
+            Line(TextFont,AppearanceRow==1?Font.CR_GOLD:Font.CR_WHITE,PanelLeft()+16,324,
+                "< "..StringTable.Localize(CaelumAppearance.FormKey(BeastForm),false).." >",LeftWidth());
+        }
+        Line(SmallTextFont,Font.CR_GRAY,PanelLeft()+16,425,StringTable.Localize("CA_APPEARANCE_VOICE",false),LeftWidth(),1.2);
+    }
+
+    void DrawPreview()
+    {
+        CaelumNarrativeArtwork.Rect(ContextLeft(),118,ContextWidth(),332,0x152029,0.85);
+        Preview.Race=Race;Preview.Sex=Sex;Preview.SkinTone=SkinTone;Preview.BeastForm=BeastForm;
+        Preview.Gloved=AppearanceOnly && EditSubject!=null && EditSubject.AppearanceHasGloves;
+        let profile=new("CaelumCharacterProfile");
+        profile.Race=Race;profile.Sex=Sex;profile.HeightChoice=HeightChoice;
+        profile.FirstClass=FirstClass;profile.SecondClass=SecondClass;
+        let stats=new("CaelumDerivedStats");
+        Preview.ActorHeight=stats.GetActorHeightForTier(profile.GetSizeTier());
+        Preview.Draw(ContextLeft()+ContextWidth()/2,433,4.1);
     }
 
     void PointerLayout(bool draw)
     {
         Pointer.Clear();
+        if(Page==CaelumAppearance.PAGE)
+        {
+            Pointer.Add(300,PanelLeft()+16,158,LeftWidth(),92);
+            if(Race==CaelumConstants.RACE_BEAST_MAN)Pointer.Add(301,PanelLeft()+16,272,LeftWidth(),92);
+        }
+        if(ShowsPreview())for(int i=0;i<3;i++)
+        {
+            double width=(ContextWidth()-12)/3;
+            double x=ContextLeft()+i*(width+6);
+            Pointer.Add(200+i,x,460,width,34);
+            if(draw)
+            {
+                bool hover=Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(x,460),(width,34));
+                CaelumNarrativeArtwork.Rect(x,460,width,34,hover?0x806632:0x152029,0.9);
+                String label=i==0?"<":i==2?">":StringTable.Localize(Preview.Walking?"CA_APPEARANCE_IDLE":"CA_APPEARANCE_WALK",false);
+                Line(SmallTextFont,Font.CR_WHITE,x+8,470,label,width-16,1.25);
+            }
+        }
         bool allocation=Page==CaelumConstants.CREATION_PAGE_LAYERS || Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES;
         int count=IsPersonalityPage()?3:Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?12:Page==CaelumConstants.CREATION_PAGE_LAYERS?4:
             Page==CaelumConstants.CREATION_PAGE_RACE?4:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?4:Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS?4:0;
@@ -508,7 +589,7 @@ class CaelumCharacterCreationMenu : ListMenu
             if(!draw)continue;
             bool hover=Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(x,548),(178,36));
             CaelumNarrativeArtwork.Rect(x,548,178,36,hover?0x806632:0x152029,0.9);
-            String key=i==0?"CA_UI_BACK":i==1?allocation?"CA_UI_MINUS":"CA_UI_PREVIOUS":i==2?allocation?"CA_UI_PLUS":"CA_UI_NEXT":"CA_UI_CONFIRM";
+            String key=i==0?AppearanceOnly?"CA_UI_CANCEL":"CA_UI_BACK":i==1?allocation?"CA_UI_MINUS":"CA_UI_PREVIOUS":i==2?allocation?"CA_UI_PLUS":"CA_UI_NEXT":"CA_UI_CONFIRM";
             Line(SmallTextFont,hover?Font.CR_GOLD:Font.CR_WHITE,x+12,558,StringTable.Localize(key,false),154,1.4);
         }
     }
@@ -526,7 +607,10 @@ class CaelumCharacterCreationMenu : ListMenu
         else if(type==MOUSE_Release)
         {
             int id=Pointer.Release(Page);
-            if(id>=100)
+            if(id>=300)AppearanceRow=id-300;
+            else if(id>=200)
+            {if(id==201)Preview.ToggleWalking();else Preview.Turn(id==200?-1:1);}
+            else if(id>=100)
             {
                 int value=id-100;
                 if(Page==CaelumConstants.CREATION_PAGE_LAYERS)SelectedLayer=value;
@@ -550,14 +634,18 @@ class CaelumCharacterCreationMenu : ListMenu
             CaelumNarrativeArtwork.Rect(ContextLeft() - 16, 116, ContextWidth() + 32, 378, 0x152029, 0.85);
             CaelumNarrativeArtwork.Rect(ContextLeft() - 16, 116, 1, 378, 0xA8B6C8, 0.7);
         }
-        Center(TitleFont, Font.CR_GOLD, 24, StringTable.Localize("CA_CREATION_MAIN_TITLE", false), 1.65);
-        Center(TextFont, Font.CR_WHITE, 74, StringTable.Localize(PageTitleKey(), false), 1.6);
-        if(IsPersonalityPage())DrawPersonalityPage();
+        Center(TitleFont, Font.CR_GOLD, 24, StringTable.Localize(AppearanceOnly?"CA_APPEARANCE_TITLE":"CA_CREATION_MAIN_TITLE", false), 1.65);
+        Center(TextFont, Font.CR_WHITE, 74, AppearanceOnly
+            ?StringTable.Localize(RaceKey(),false).." / "..StringTable.Localize(SexKey(),false)
+            :StringTable.Localize(PageTitleKey(), false), 1.6);
+        if(Page==CaelumAppearance.PAGE)DrawAppearancePage();
+        else if(IsPersonalityPage())DrawPersonalityPage();
         else if (Page <= CaelumConstants.CREATION_PAGE_HEIGHT) DrawBasicPage();
         else if (Page == CaelumConstants.CREATION_PAGE_LAYERS) DrawLayerPage();
         else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES) DrawAttributePage();
         else DrawSummaryPage();
         DrawContext();
+        if(ShowsPreview())DrawPreview();
         Center(SmallTextFont, Font.CR_GRAY, 516, StringTable.Localize(PageHelpKey(), false), 1.4);
         String navigation = Page == CaelumConstants.CREATION_PAGE_SUMMARY
             ? "CA_CREATION_SUMMARY_NAVIGATION_HELP"
@@ -585,6 +673,8 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_second_class", SecondClass);
         SetDraft("ca_newchar_sex", Sex);
         SetDraft("ca_newchar_height", HeightChoice);
+        SetDraft("ca_newchar_skintone", SkinTone);
+        SetDraft("ca_newchar_beastform", BeastForm);
         int packed=0;for(int i=3;i>=0;i--)packed=packed*3+Personality[i];
         SetDraft("ca_newchar_personality",packed);
         SetDraft("ca_newchar_layer0", LayerBonus[0]);
@@ -613,10 +703,28 @@ class CaelumCharacterCreationMenu : ListMenu
     override bool MenuEvent(int mkey, bool fromcontroller)
     {
         Pointer.Reset();
+        if(ShowsPreview() && (mkey==MKEY_PageUp || mkey==MKEY_PageDown || mkey==MKEY_Clear))
+        {
+            if(mkey==MKEY_Clear)Preview.ToggleWalking();
+            else Preview.Turn(mkey==MKEY_PageUp?-1:1);
+            return true;
+        }
+        if(AppearanceOnly && (mkey==MKEY_Back || mkey==MKEY_Enter))
+        {
+            if(mkey==MKEY_Enter && gamestate==GS_LEVEL && consoleplayer>=0
+                && EditSubject!=null && EditSubject==players[consoleplayer].mo
+                && EditSubject.health>0 && EditSubject.CharacterCreationComplete
+                && EditProfile!=null && EditProfile==CaelumCharacterIdentity.Profile(EditSubject)
+                && EditProfile.AppearanceEditSerial==EditSerial)
+                EventHandler.SendNetworkEvent("ca_appearance_commit",SkinTone,BeastForm,EditSerial);
+            Close();return true;
+        }
         if (mkey == MKEY_Up || mkey == MKEY_Down)
         {
             int direction = mkey == MKEY_Up ? -1 : 1;
-            if (Page == CaelumConstants.CREATION_PAGE_LAYERS)
+            if(Page==CaelumAppearance.PAGE && Race==CaelumConstants.RACE_BEAST_MAN)
+                AppearanceRow=Wrap(AppearanceRow+direction,2);
+            else if (Page == CaelumConstants.CREATION_PAGE_LAYERS)
                 SelectedLayer = Wrap(SelectedLayer + direction, 4);
             else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES)
                 SelectedAttribute = Wrap(SelectedAttribute + direction, 12);
@@ -651,7 +759,9 @@ class CaelumCharacterCreationMenu : ListMenu
                 MenuSound("menu/clear");
                 return true;
             }
-            Page=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES ? CaelumPersonalityRules.FIRST_PAGE
+            Page=Page==CaelumConstants.CREATION_PAGE_HEIGHT?CaelumAppearance.PAGE
+                :Page==CaelumAppearance.PAGE?CaelumConstants.CREATION_PAGE_LAYERS
+                :Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES ? CaelumPersonalityRules.FIRST_PAGE
                 : Page==CaelumPersonalityRules.LAST_PAGE ? CaelumConstants.CREATION_PAGE_SUMMARY : Page+1;
             MenuSound("caelum/ui/menu_select");
             return true;
@@ -660,7 +770,9 @@ class CaelumCharacterCreationMenu : ListMenu
         {
             if (Page > CaelumConstants.CREATION_PAGE_RACE)
             {
-                Page=Page==CaelumConstants.CREATION_PAGE_SUMMARY ? CaelumPersonalityRules.LAST_PAGE
+                Page=Page==CaelumAppearance.PAGE?CaelumConstants.CREATION_PAGE_HEIGHT
+                    :Page==CaelumConstants.CREATION_PAGE_LAYERS?CaelumAppearance.PAGE
+                    :Page==CaelumConstants.CREATION_PAGE_SUMMARY ? CaelumPersonalityRules.LAST_PAGE
                     : Page==CaelumPersonalityRules.FIRST_PAGE ? CaelumConstants.CREATION_PAGE_ATTRIBUTES : Page-1;
                 MenuSound("menu/backup");
                 return true;

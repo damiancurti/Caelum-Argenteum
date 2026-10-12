@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## 5.2.13 - Native saved cosmetics and character preview (#148)
+
+Implemented a rotating/animated native creator preview and an in-game cosmetic
+editor using the single saved profile. Author-approved modular race/sex bodies,
+finite skin/fur tones and four Beast Man forms share body/head/hand components.
+First-person skin/fur follows the profile; actual equipped gloves select covered
+hands. Voices remain automatic by saved sex. No gameplay balance or respec is
+introduced. Existing saves initialize default appearance once and retain it
+across reload/restart/travel. Sources, limitations and supported matrix: ASSETS.
+
+Static, deterministic-generator and isolated GZDoom evidence is recorded in
+assets/validation_5213/RESULTS.md. CA148-01 remains pending author visual
+acceptance. Delivery branch: issue148-appearance-preview; linked PR required.
+The preceding PR200 is merged as 74c31ca5 and #195 is closed; its acceptance holds.
 
 ## 5.2.12 - Bull balance and finite resident tools (#195)
 

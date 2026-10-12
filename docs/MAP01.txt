@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## 5.2.13 - Character appearance boundary (#148)
+
+The player reaches the mansion wearing the approved simple visual clothing,
+without baked-in armor, sword or shield. Saved race/sex/skin/fur and Beast Man
+form determine world and first-person presentation; worn gloves follow actual
+Hands-slot equipment. Character creation previews those choices before starting.
+This changes no mansion NPC art, dialogue, item gifts, combat, map geometry or
+story identity. Cosmetic editing changes tone/form only. ASSETS documents shared
+pose coverage; CA148-01 visual acceptance remains pending.
 
 ## 5.2.12 - Bull and resident combat (#195)
 

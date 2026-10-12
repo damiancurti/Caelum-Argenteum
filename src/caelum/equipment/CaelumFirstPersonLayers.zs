@@ -520,8 +520,7 @@ class CaelumFirstPersonLayers : Object play
         Vector2 relative,double size,double rotation)
     {
         vector2 turned=Turn(relative,rotation);
-        State pose=GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString(
-            String.Format("Hand_%d",hand));
+        State pose=CaelumAppearanceHands.Hand(user,hand);
         Place(user,layer,pose,anchor+turned,Pivot(200+hand),size,rotation,false);
     }
 
@@ -673,7 +672,7 @@ class CaelumFirstPersonLayers : Object play
             user.A_ClearOverlays(49,49);
             if(kind!=7 && kind!=12)user.A_ClearOverlays(48,48);
             if(kind==CaelumConstants.WEAPON_TYPE_BOLAS)
-                Place(user,52,GetDefaultByType("CaelumBolasFrames").FindStateByString("Hand"),grip,(216,160),1.0,rotation);
+                Place(user,52,CaelumAppearanceHands.Resolve(user,"Bolas",GetDefaultByType("CaelumBolasFrames").FindStateByString("Hand")),grip,(216,160),1.0,rotation);
             else Hand(user,52,0,grip,(0,0),1.0,rotation);
             // La izquierda sostiene el tramo inferior, sin tapar la derecha.
             if(large)Hand(user,51,3,grip,(0,24),0.85,rotation);

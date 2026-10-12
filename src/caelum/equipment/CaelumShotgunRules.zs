@@ -148,6 +148,7 @@ class CaelumShotgunView : Object play
         user.A_ClearOverlays(48,48);
         // Las manos se sustituyen sin duplicar el arma ni alterar su animación.
         State hands=GetDefaultByType("CaelumShotgunHandFrames").FindStateByString(String.Format("Hands_%d",pose));
+        hands=CaelumAppearanceHands.Resolve(user,String.Format("Shotgun_%d",pose),hands);
         if(pose==0 || pose==2 || pose==6)
         {
             // Un único par bajo el arma: la copia frontal desplazaba la mano

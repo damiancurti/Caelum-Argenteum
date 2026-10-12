@@ -1977,6 +1977,15 @@ closing returns to menuactive=0 with no frozen-control flag. See
 [4.37.13 evidence](../assets/validation_43713/RESULTS.json). This does not claim
 arbitrary serialized menu objects can be restored or bypass scope separation.
 
+Related #148 evidence (5.2.13, ENGINE-VERIFIED): appearance editor drafts validate
+both pawn and profile pointers, life/creation state and the expected edit serial
+at confirmation. A serial alone is insufficient when another profile has the
+same serial. WorldLoaded discards a visible editor; native save loading can also
+clear UI references itself. `retained-03` and `replaced-01` distinguish those
+cases in assets/validation_5213. A null retained UI reference after load is not a
+failed invalidation. Never infer successful disposal solely from a zero failure
+counter when a fixture printed a separate FAIL line.
+
 ## CA-KP-008 — Changed map geometry prevents old saves from loading
 
 Status/evidence: ENGINE-VERIFIED in 4.36.5 (#11), GZDoom g4.14.2.

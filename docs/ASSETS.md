@@ -1,6 +1,51 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## 5.2.13 - Modular saved appearance and first-person hands (#148)
+
+Author-approved plain shirt/trousers/boots replace the player's fixed armored
+Domingo presentation. Heads, clothes and exposed hands are separate modules;
+native TEXTURES composes them without storing a full identity/pose PNG product.
+Original Domingo, Caella and equipment resources are preserved.
+
+| Supported choice | World/preview | First-person | Voice |
+| --- | --- | --- | --- |
+| Human, male/female | Separate head/body; three natural skin tones | Shared human hand geometry, matching tone | Saved sex |
+| Goblin, male/female | Separate heads, scaled body; three natural skin tones | Shared human hand geometry, matching tone | Saved sex |
+| Caelith, male/female | Separate heads/bodies; red, green, blue skin; neutral silver hair | Shared hand geometry with RGB skin | Saved sex |
+| Beast Man, male/female | Wolf/bear/puma/jaguar head modules, sex body modules; three natural fur tones each | Animal-specific hands, shared between sexes | Saved sex |
+| Equipped gloves | Shared brown glove presentation | Existing accepted glove resources | Unchanged |
+
+There are 14 body identities, 42 finite looks, 29 visual poses and eight views,
+with bare/gloved variants: 19,488 native compositions and 2,976 world module PNGs.
+First-person resources use 18 bare variants, 375 modules and 702 registered
+sprite banks. Shared hand/shield/bolas/shotgun/fallback compositions preserve
+weapon patches and source pivots. World scale uses measured standing alpha
+height and the existing physical capsule height. Native Blend modulation colors
+exposed hand masks without recoloring clothing, hair or weapon patches.
+
+These resources cover existing state families, not a complete newly authored
+animation catalogue. Walk cycles use a shared authored body; some attack, pain,
+fall and rest poses reuse a deterministic rig. Sitting/kneeling share a crouched
+body and firearm locomotion shares held poses. Material-specific gloves, clothing
+color selectors, a full world weapon/armor wardrobe and independent voices are
+not offered. Existing carbine/shotgun world presentations remain supported.
+
+Sources and exact built-in imagegen prompts/references are retained in
+assets/source/art/appearance_5213/PROVENANCE.json, including discarded drafts.
+The female goblin head derives from owned Caella art. Technical cutting, masks,
+anchors and packing with Python were explicitly authorized by the author.
+Rebuild with Pillow 11.3.0 using assets/generators/generate_modular_appearance.py
+and generate_appearance_hands.py; appearance_catalog.json is the shared catalog.
+REGISTRATION.json and HAND_REGISTRATION.json record output hashes. A repeated
+generation matched all 3,355 output files byte for byte.
+
+CaelumCharacterPreview adapts GZDoom g4.14.2 playerdisplay.zs state stepping and
+GetSpriteTexture drawing. Christoph Oelckers' BSD notice is retained in the
+packaged source. No Doom artwork or test IWAD is distributed. Before/after native
+captures and scoped validation: assets/validation_5213/RESULTS.md. Visual author
+acceptance remains CA148-01; native texture registration is not a GPU benchmark.
 
 ## 5.2.12 - Bull and resident diagnostics (#195)
 

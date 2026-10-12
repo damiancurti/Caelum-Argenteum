@@ -1,0 +1,20 @@
+CA148-01 | Origin 5.2.13 / issue #148 | Native appearance and hands
+Prerequisites: rebuild the current PK3 with run_dev.bat; GZDoom 4.14.2.
+1. Create characters of each race/sex. Check all three tones; Beast Men also
+   offer wolf, bear, puma and jaguar. Rotate/walk the preview by mouse and
+   PageUp/PageDown/Backspace. Check Spanish/English and your normal resolution.
+2. Start a game. Compare the preview with chase camera and bare first-person
+   hands. Check standing, walking, crouching, attacks, rest and death; assess
+   the shared pose quality, head/body joins, skin/fur tones and proportions.
+3. Equip/unequip real gloves. Check fists, shield blocking, melee/ranged weapons,
+   carbine, shotgun reload and magical weapons for hand alignment and clipping.
+   Broken worn gloves should stay visible; boxed gloves should not.
+4. In Options > Player Setup > Appearance, change tone and beast form, cancel,
+   then confirm. Race/sex/profession/stats must stay fixed. Save/load, restart,
+   travel and return; verify appearance and sex-based pain/breathing persist.
+5. Load another character (including an older save): its appearance must remain
+   independent. An older save starts at its race's default tone/form once.
+Expected: supported options match the preview, world and hands; no armor/weapon
+grants or gameplay changes. Confirm visual acceptance or identify the exact
+race/sex/tone/form, pose and weapon needing adjustment. Shared pose limitations
+are documented in ASSETS; this is not a complete new animation catalogue.

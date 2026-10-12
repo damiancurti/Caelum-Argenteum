@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## 5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11
+
+The author requested prepared race/sex variants, simple clothes without weapons,
+finite race-specific skin/fur tones, wolf/bear/puma/jaguar Beast Men, RGB Caelith,
+automatic sex voices and modular sprites. The existing-game editor may change
+tone and beast form. First-person hands were added to scope; gloves depend on
+actual equipped gear. Python technical sprite processing was explicitly allowed.
+
+The implementation uses saved appearance revision 1, native menus/GetSpriteTexture,
+shared modular TEXTURES and existing equipment layer anchors. Preview state
+walking is UI-only. Old profiles initialize tone/form zero once; global defaults
+cannot replace them. Corpse appearance is separate from the live identity.
+
+Validation found and corrected sprite lookup scope, hand masking, walking arm
+seams, physical-height scaling, fallback pivots, shield phase changes and stale
+editor confirmation after load. Fixture-only failures and final evidence remain
+in assets/validation_5213/RESULTS.md. Deterministic generation matched all 3,355
+outputs. Static checks, isolated engine probes and agent-operated native clicks
+are distinguished from author acceptance: CA148-01 is still outstanding.
+The final official PK3 passes the native matrix; all 9,712 members match the
+tested package. Keep-awake released at 2026-10-12T01:18:08Z (UTC); power plan
+unchanged. No GZDoom test process remains running.
+
+Prior delivery: acceptance commit 4b54ac81 and PR200 merge 74c31ca5 complete #195;
+the issue is closed. No earlier accepted tests are reopened by this patch.
 
 ## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
 

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.12** — 2026-10-11.
+Documentation version: **5.2.13** — 2026-10-11.
+
+## Issue #148 - Native cosmetics and preview (5.2.13)
+
+Implemented modular race/sex/skin/fur appearance, wolf/bear/puma/jaguar forms,
+saved cosmetic editing, native preview and equipment-dependent first-person
+hands. Author decisions and supported/missing asset matrix are in SYSTEMS/ASSETS.
+Scope excludes a full new animation set, wardrobe, respec and new voice bank.
+Sources/generators are retained and deterministic. Isolated engine checks cover
+creation, editor transactions, old/current saves, restart, travel and gloves.
+Evidence: assets/validation_5213/RESULTS.md. Remaining delivery gate: author
+visual acceptance CA148-01 in pending_test.txt; no merge/closure is claimed.
+PR200/#195 are merged/closed following the prior explicit acceptance.
 
 ## Issue #195 - Bull balance and resident actions (5.2.12)
 

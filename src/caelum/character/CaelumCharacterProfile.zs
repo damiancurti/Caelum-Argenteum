@@ -8,6 +8,20 @@ class CaelumCharacterProfile : Object
     int HeightChoice;
     int PersonalityRevision;
     int Personality[4];
+    int AppearanceRevision;
+    int SkinTone;
+    int BeastForm;
+    int AppearanceEditSerial;
+
+    // El tono y la variante pertenecen al perfil
+    // guardado; nunca se restaura desde las preferencias globales del motor.
+    void EnsureAppearance()
+    {
+        if(AppearanceRevision>=1)return;
+        SkinTone=0;
+        BeastForm=0;
+        AppearanceRevision=1;
+    }
 
     // Decisión del autor: perfiles previos reciben Normal/Normal/Normal/Centro.
     void EnsurePersonality()
@@ -26,6 +40,11 @@ class CaelumCharacterProfile : Object
         HeightChoice = source.HeightChoice;
         PersonalityRevision=source.PersonalityRevision;
         for(int i=0;i<4;i++)Personality[i]=source.Personality[i];
+        AppearanceRevision=source.AppearanceRevision;
+        SkinTone=source.SkinTone;
+        BeastForm=source.BeastForm;
+        AppearanceEditSerial=source.AppearanceEditSerial;
+        EnsureAppearance();
     }
 
     void InitializeDefaultTestProfile()
@@ -35,6 +54,9 @@ class CaelumCharacterProfile : Object
         SecondClass = CaelumConstants.CLASS_MAGE;
         Sex = CaelumConstants.SEX_MALE;
         HeightChoice = CaelumConstants.HEIGHT_NORMAL;
+        AppearanceRevision=1;
+        SkinTone=0;
+        BeastForm=0;
     }
 
     void CycleRace() { Race = (Race + 1) % 5; }
