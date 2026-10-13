@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.24** — 2026-10-13.
+Documentation version: **5.2.25** — 2026-10-13.
 
 ## 5.2.22 - Parenthesized menu controls (#215)
 
@@ -1403,9 +1403,14 @@ No solution retains the previous direct-shot policy. Collision and range limits
 remain native. This is a bounded launch calculation, not an every-tic AI solver;
 no mass-siege performance improvement is claimed by this issue.
 Dispersion categories become k–10k degrees for k=1..7, retaining assignments:
-book 1, longbow/statuette 2, crossbow/dagger 5, ordinary melee 6,
+book 1, longbow/statuette/magical staff 2, crossbow/dagger 5, ordinary melee 6,
 carbine/shotgun/bell and the existing maximum-category heavy weapons 7.
 Physical and magical precision use Type 3; crouch, aim and random sampling remain.
+Author decision 5.2.25/#222: the magical staff shares the statuette category,
+reducing its previous 4-40 degree per-axis base range to 2-20 across all tiers.
+At Insight 100, standing without impairments, this becomes 0.25-2.5 degrees.
+The book retains its existing guided trajectory. The utility staff is distinct
+and retains its existing physical statistics.
 
 Muscular efficiency is `eta=min(0.99,0.25*M1((Agility+Dexterity)/2))`: average the
 attributes first. It is 25% at 0/0, 32.5% at 0/100 and 50% at 100/100. Positive

@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.24.** Obtain and update the complete repository, validate
+**Current release: 5.2.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.25 implements [#222](https://github.com/damiancurti/Caelum-Argenteum/issues/222):
+the magical staff now shares the statuette's **2-20 degree** base dispersion,
+half its former 4-40 range. Insight and stance modifiers remain; the book keeps
+its existing homing. [Native evidence](assets/validation_5225/RESULTS.md);
+author check CA222-01 remains pending.
 
 5.2.24 fixes [#220](https://github.com/damiancurti/Caelum-Argenteum/issues/220):
 MAP02 Mandingas without an assigned key/ammunition drop now release one remaining

@@ -244,6 +244,7 @@ class CaelumWeaponModel : Object
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_BOOK: return 10.0;
+            case CaelumConstants.WEAPON_TYPE_STAFF:
             case CaelumConstants.WEAPON_TYPE_STATUETTE: return 20.0;
             case CaelumConstants.WEAPON_TYPE_BELL: return 70.0;
             default: return 40.0;

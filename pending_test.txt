@@ -46,3 +46,11 @@ Expected: unassigned Mandingas drop one potion if any remain; key/ammunition
 carriers keep their assigned drop. Exhausted enemies drop no replacement potion.
 Saved dead bodies are not retroactively refilled; reload cannot duplicate loot.
 Status: awaiting explicit author in-game acceptance.
+
+CA222-01 | Origin: 5.2.25 / issue #222 | Magical staff precision
+Prerequisites: rebuild with run_dev.bat; equip a magical staff and a statuette.
+Steps: compare repeated shots at the same distance, Insight and stance. Also
+try the guided book with a valid target.
+Expected: staff and statuette use the same dispersion category; the staff is
+more precise than before. The book retains its existing target guidance.
+Status: awaiting explicit author in-game acceptance.

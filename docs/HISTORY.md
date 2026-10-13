@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.24** — 2026-10-13.
+Documentation version: **5.2.25** — 2026-10-13.
+
+## 5.2.25 - Staff dispersion (#222), 2026-10-13
+
+After inspecting the four magical spread categories, the author chose the
+statuette's category for the staff and explicitly retained the book's current
+guidance. The staff therefore becomes more precise: its base per-axis range
+falls from 4-40 to 2-20 degrees. At Insight 100, standing without impairment,
+the Type-3 divisor of eight yields 0.25-2.5 degrees. Tiers retain the same spread.
+The shared category avoids a separate balance value; no other weapons, costs,
+damage, guidance, sprites or save fields change. Native evidence:
+assets/validation_5225. All 26 native assertions passed; static validation and
+normal packaging passed, with all 16,053 members matching the tested runtime.
+Read-only review found no blocker; keep-awake was released. CA222-01 author
+acceptance remains pending.
 
 ## 5.2.24 - Missing Mandinga loot (#220), 2026-10-13
 

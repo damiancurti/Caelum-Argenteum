@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.24** — 2026-10-13.
+Documentation version: **5.2.25** — 2026-10-13.
+
+## 5.2.25 - Staff matches statuette dispersion (#222)
+
+Share the existing 2-20 degree category for the magical staff, preserving other
+weapons and book homing. Native validation covers T1-T3 and actual shots at
+Insight 0/100; evidence: assets/validation_5225. Next: CA222-01 author acceptance
+and linked PR review. Earlier CA213/216/215/219/220-01 checks remain pending.
 
 ## 5.2.24 - MAP02 Mandinga drops (#220)
 

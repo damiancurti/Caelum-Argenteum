@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.24** — 2026-10-13.
+Documentation version: **5.2.25** — 2026-10-13.
+
+## 5.2.25 - Magical staff precision (#222)
+
+The author selected the statuette's dispersion for the magical staff and kept
+book homing. Staff base spread becomes 2-20 degrees per axis instead of 4-40,
+across T1-T3. Type-3 Insight, crouching and impairment still modify accuracy.
+Other weapon categories, damage, costs and saves remain. Native evidence:
+assets/validation_5225. CA222-01 awaits author acceptance.
 
 ## 5.2.24 - Mandinga potion fallback (#220)
 
