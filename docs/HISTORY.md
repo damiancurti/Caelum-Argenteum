@@ -1,6 +1,15 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.20** — 2026-10-12.
+Documentation version: **5.2.21** — 2026-10-12.
+
+## 5.2.21 - Visible tutorial gold (#216)
+
+Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
+model registration for its subclass. Register the existing gold-rock OBJ for
+CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
+Native before/after captures and extraction/save-load checks are recorded in
+assets/validation_5221. The author confirmed the reported invisible obstruction was at this same rock
+position. Author visual acceptance CA216-01 remains pending.
 
 ## 5.2.20 - Resource bar layout (#213), 2026-10-12
 

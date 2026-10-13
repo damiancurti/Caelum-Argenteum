@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.20** — 2026-10-12.
+Documentation version: **5.2.21** — 2026-10-12.
 
-**Current 5.2.20/#213:** lower-edge resource bars, 95% larger, labels above;
-measured viewport fit and weapon-status clearance. Evidence validation_5220;
-CA213-01 author acceptance pending. #211/PR212 merged b4b7f49f, CA211-01 passed.
+**Current 5.2.21/#216:** tutorial gold MODELDEF repair; native visual/extraction
+and save-load checks: validation_5221. CA216-01 pending. #213/PR214 resource
+bars 1.95x, labels above, edge anchors; CA213-01 pending. #211 accepted/merged.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
