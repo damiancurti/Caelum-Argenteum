@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
+
+## 5.2.23 - Sewer bag sleep (#219)
+
+Reuse the existing sleeping bag, supine character pose and native rest/skip UI.
+No generated art, models, sounds or provenance change. The generic T help no
+longer claims a safe marker is always required; danger messages remain.
+Native evidence: assets/validation_5223; author check CA219-01 pending.
 
 ## 5.2.22 - Menu control captions (#215)
 

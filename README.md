@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.22.** Obtain and update the complete repository, validate
+**Current release: 5.2.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.23 implements [#219](https://github.com/damiancurti/Caelum-Argenteum/issues/219):
+sleeping in the owned bag on dry, clear MAP02 ground permits T fast-forward
+and Y time skip outside marked safe zones. Combat, nearby enemies and hazards
+still block acceleration; waking outside a safe zone stops Y. Normal clock and
+comfort rates remain. [Evidence](assets/validation_5223/RESULTS.md); CA219-01 pending.
 
 5.2.22 implements [#215](https://github.com/damiancurti/Caelum-Argenteum/issues/215):
 menu options show their existing keyboard controls in parentheses, including

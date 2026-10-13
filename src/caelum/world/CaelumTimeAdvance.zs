@@ -36,6 +36,27 @@ class CaelumTimeAdvanceState : Inventory
     static int StepSerial(CaelumPlayer user)
     {let advance=Get(user);return advance!=null?advance.PersonalStepSerial:0;}
 
+    // La bolsa habilita acelerar solo el sueño en las alcantarillas; no
+    // convierte el sitio en zona segura para oficios, espera u otros muebles.
+    static bool IsSewerBagSleep(CaelumPlayer user,bool skipping=false)
+    {
+        if(user==null || CaelumWorldCatalogue.LocationForMap(level.MapName)!=CaelumWorldCatalogue.LOCATION_SEWERS
+            || user.CraftingTaskActive)return false;
+        let rest=CaelumRestState.Get(user);
+        if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.Mode==CaelumRestRules.MODE_SLEEP
+            && rest.OriginMap==level.MapName && (user.Pos-rest.OriginPosition).Length()<=4)
+        {
+            let mat=CaelumRestBag(rest.Furniture);
+            if(mat!=null && mat.SupportsRest(user))return true;
+        }
+        if(!skipping)return false;
+        let skip=CaelumTimeSkipState.Get(user);
+        let bag=CaelumSleepingBag(user.FindInventory("CaelumSleepingBag"));
+        return skip!=null && skip.Open && skip.Sleeping && skip.BagSupport && !skip.HadTask
+            && skip.OriginMap==level.MapName && (user.Pos-skip.OriginPosition).Length()<=4
+            && bag!=null && bag.AvailableTo(user);
+    }
+
     static bool InSafeZone(CaelumPlayer user)
     {
         // La ciudad habitada es segura hasta el asedio; el resto de controles
@@ -82,9 +103,14 @@ class CaelumTimeAdvanceState : Inventory
         let status = user.ElementalStatus;
         if (status != null && (status.BurnRemaining > 0 || status.PoisonRemaining > 0 || status.DiseaseRemaining > 0
             || status.CutRemaining > 0 || status.IsLightningStunned())) return "CA_FAST_UNSAFE";
+        // El salto revalida la bolsa también entre subpasos: despertar o
+        // perderla no debe conceder el resto del lote como espera acelerada.
+        bool bagSleep=IsSewerBagSleep(user,skipping);
+        if((scanWorld || (skipping && CaelumWorldCatalogue.LocationForMap(level.MapName)==CaelumWorldCatalogue.LOCATION_SEWERS))
+            && !bagSleep && !InSafeZone(user))return "CA_FAST_ZONE";
         if (scanWorld)
         {
-            if (!InSafeZone(user)) return "CA_FAST_ZONE";
+            if(bagSleep && !CaelumRestBag.HasRoom(user))return "CA_SLEEPING_BAG_SPACE";
             // Un efecto nativo ajeno carece de adaptador: no se le regalan horas.
             for (Inventory item=user.Inv; item!=null; item=item.Inv)
                 if (Powerup(item)!=null && CaelumRegenerationPower(item)==null) return "CA_FAST_EFFECT";

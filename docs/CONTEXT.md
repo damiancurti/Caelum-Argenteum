@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
 
-**Current 5.2.22/#215:** existing keyboard hints across custom/native menus;
-validation_5222, CA215-01 pending. 5.2.21/#216 gold model: validation_5221,
-CA216-01 pending. #213/PR214 bars 1.95x/edge anchors: CA213-01 pending.
-#211 accepted/merged.
+**Current 5.2.23/#219:** MAP02 bag sleep permits T/Y outside marked zones,
+retaining threats/needs; waking stops Y. Normal clocks. validation_5223;
+CA219-01 pending. #220 Mandinga loot next. Earlier pending: CA215-01 menus,
+CA216-01 gold, CA213-01 bars. #211 accepted/merged.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.

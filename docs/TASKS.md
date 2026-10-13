@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
+
+## 5.2.23 - Sewer sleeping-bag acceleration (#219)
+
+Implement the author-approved MAP02 exception only for actual bag sleep,
+retaining all danger guards and normal clocks/comfort. Validate T completion,
+Y transition and waking, bag loss/Box storage, current and baseline saved rest.
+Evidence: assets/validation_5223. Next: CA219-01 author acceptance and linked PR
+review before merge/closure. CA213-01, CA216-01 and CA215-01 remain outstanding.
+Separate next issue #220: mapped Mandingas without assigned loot incorrectly
+suppress their remaining-potion fallback; retain existing loot quantities.
 
 ## 5.2.22 - Current menu controls (#215)
 

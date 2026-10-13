@@ -276,6 +276,9 @@ class CaelumTimeSkipState : Inventory
         CaelumTimeAdvanceState.Halt(user);
         s.Open=true;s.Active=false;s.Completed=false;s.OriginMap=level.MapName;s.OriginPosition=user.Pos;
         s.HadTask=user.CraftingTaskActive;s.TaskDone=false;s.Station=user.ActiveCraftingStationActor;
+        // El soporte desplegado desaparece al cerrar el descanso; conservar
+        // la decisión desde la bolsa real, sin depender de ese actor temporal.
+        s.RefreshSupports(user);
         s.LastReason="";s.Field=0;s.UseTaskDefault=s.HadTask;
         s.TargetDay=NowDay(user);s.TargetTics=NowTics(user);
         s.TargetTics-=s.TargetTics%(CaelumWorldClock.TicsPerHour()/60);
@@ -346,13 +349,13 @@ class CaelumTimeSkipState : Inventory
     static void PrepareStep(CaelumPlayer user)
     {
         let s=Get(user);if(s==null || !s.Active)return;
+        s.Sleeping=CaelumTimeSkipRules.SleepingNext(s.Sleeping,user.CurrentSleep);
         String reason=CaelumTimeSkipRules.BlockReason(user,false);
         if(s.OriginMap!=level.MapName || (user.Pos-s.OriginPosition).Length()>4)reason="CA_REST_MOVED";
         if(user.health<s.LastHealth)reason="CA_REST_DAMAGE";
         if(s.HadTask && !s.TaskDone && (!user.CraftingTaskActive
             || user.ActiveCraftingStationActor!=s.Station))reason="CA_SKIP_TASK_CHANGED";
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
-        s.Sleeping=CaelumTimeSkipRules.SleepingNext(s.Sleeping,user.CurrentSleep);
         let support=s.Sleeping?s.Bed:user.CraftingTaskActive?null:s.Chair;
         if(support!=null && support.Occupant!=null && support.Occupant!=user)support=null;
         if(s.Furniture!=support)

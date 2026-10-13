@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
 
 ## 5.2.22 - Parenthesized menu controls (#215)
 
@@ -3289,7 +3289,8 @@ MAP01 receive no automatic initial or daily supplies.
 ## 4.37.4 — Explicit time skipping and separate Limbo clock (#64)
 
 Y opens a destination day/hour/minute selector in an existing safe rest or work
-context (or an authored safe zone outside MAP01). Left/Right select the field,
+context (or an authored safe zone outside MAP01), including the MAP02 bag-sleep
+exception below. Left/Right select the field,
 Up/Down change it, Enter confirms, R recalculates the task default, and Q closes
 or interrupts. Escape retains native pause. T remains the existing x105
 fast-forward, with 104 extra integrated personal steps per normal engine step.
@@ -5774,6 +5775,17 @@ does not convert another place into a safe zone. Initial zones cover arrival
 points/furniture/workbench of MAP02–MAP05 and the MAP03 tables. Outside of them the
 normal rest remains available. From 0i MAP01 allows personal advancement in
 furniture/workshops; it keeps schedule stopped and furniture sessions without duration.
+
+Author-approved 5.2.23/#219 exception: actual sleep with the owned sleeping bag
+on dry, clear MAP02 ground permits T and Y outside marked safe zones. The bag
+must remain carried outside the Box; ground waiting, chairs and crafting gain
+no permission. Y may start from deployed bag sleep and retains its bag support
+after the temporary mat is released. It stops before an awake substep at 100%
+Sleep outside a safe zone, or if bag ownership/support is lost. Existing combat,
+nearby hostile (1024 MU), hazard, movement, water and resource checks still apply.
+This creates no new safe zone or access to remote furniture. Comfort remains 3;
+durations and recovery rates are unchanged. MAP02 keeps normal exterior time;
+only MAP01 uses the separate Limbo clock. No saved fields are added.
 
 i_timescale is not used. The service accelerates the project systems integrated into it,
 not AI, physics, doors, scripts or arbitrary Thinkers. Climate, routes and scheduled

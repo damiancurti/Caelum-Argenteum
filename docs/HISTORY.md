@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
+
+## 5.2.23 - Sewer sleeping-bag acceleration (#219), 2026-10-13
+
+The author reported the safe-zone rejection when trying to sleep in MAP02,
+selected the existing bag and explicitly retained combat/enemy/hazard guards.
+Ordinary sleep already worked. The initial clock hypothesis was incorrect:
+only MAP01 is Limbo, while MAP02 keeps normal exterior time progression.
+T and Y now accept actual owned-bag sleep on dry, clear MAP02 ground outside
+marked zones. Y retains support after releasing the temporary mat and checks
+waking/ownership before each substep; it cannot continue as outside-zone waiting
+or crafting. Existing rates, bag identity and save fields remain unchanged.
+Static validation and normal build passed; 101 selected native assertions passed.
+All 16,053 packaged members match the tested runtime; keep-awake was released.
+Isolated evidence: assets/validation_5223. CA219-01 awaits author acceptance;
+earlier CA213-01, CA216-01 and CA215-01 remain pending. Mandinga loot report #220
+is a separate patch and does not change this sleep contract.
 
 ## 5.2.22 - Current menu controls (#215), 2026-10-12
 
