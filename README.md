@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.26.** Obtain and update the complete repository, validate
+**Current release: 5.2.27.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.27 implements [#229](https://github.com/damiancurti/Caelum-Argenteum/issues/229):
+the empty Magic Box weighs **1 gram (0.001 kg)**. Contents retain the existing
+capacity-based reduction and gram truncation. Palomo's bilingual reward/help
+text matches the new empty mass. Native evidence: [validation_5227](assets/validation_5227/RESULTS.md).
+Author inventory check CA229-01 remains pending alongside CA227-01.
 
 5.2.26 addresses [#227](https://github.com/damiancurti/Caelum-Argenteum/issues/227):
 the rest menu now shows action feedback that was hidden while menus were open.
@@ -1842,7 +1848,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   and explicit acceptance of the Magic Box. Leaving before acceptance gives
   no reward; reopening after acceptance offers storage help and cave directions.
 - The Box now has one native Inventory instance, an owner and a stable ItemId.
-  Existing storage/weight rules remain authoritative: 10 kg for the Box plus
+  Existing storage/weight rules remain authoritative: 0.001 kg for the empty Box plus
   reduced content weight. It cannot be dropped, sold or stored inside itself.
   Old owned Boxes migrate without a second weight charge or lost contents.
 - Quest Detail and Argento's guidance reflect phase 80. Palomo remains upstairs,

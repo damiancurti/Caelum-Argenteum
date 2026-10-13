@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Magic Box empty mass (#229)
+
+Author decision: the empty Box weighs 1 gram; contents retain their reduction.
+The shared tare changes to 0.001 kg, with bilingual Palomo text and current rules
+synchronized. Slots, transactions, rounding and saved inventory remain unchanged.
+Evidence: assets/validation_5227; author check CA229-01 pending.
 
 ## 5.2.26 - Rest controls feedback (#227)
 
@@ -5008,6 +5015,9 @@ defense guide were addressed in 0u. The output and active powers are not tested 
 implemented functions.
 
 ## Validation of 4.33.0s — approved by the author
+
+These historical checks used the former 10 kg tare. Issue #229 changes the
+current empty mass to 0.001 kg; the original measured results remain below.
 
 - 130 passed checks, zero failures, in GZDoom 4.14.2: 61 for dialogue/reward/storage, 17 when reloading a 0s save and 26 for each 0r save variant (without Box and with previous property).
 - Use and USDF natives cover the thirteen new pages: early visit, optional questions, go

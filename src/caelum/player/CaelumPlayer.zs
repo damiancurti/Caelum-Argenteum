@@ -3143,7 +3143,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Actor.Inv es la fuente única de propiedad y carga. Equipar no cambia el
-    // peso. La Caja Mágica suma 10 kg y reduce el peso agregado de su contenido
+    // peso. La Caja Mágica suma 1 gramo y reduce el peso agregado de su contenido
     // según la capacidad máxima actual. Las pilas usan Amount.
     void RefreshCarriedInventorySummary()
     {

@@ -1,9 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
 
-**Current 5.2.26/#227:** rest notices visible; chairs/bags serve owned provisions; x105 matches existing speed. Evidence:
-validation_5226. CA227-01 pending: retry the reported bag/stocked chair.
+**5.2.27/#229:** empty Box 1 gram; content reduction unchanged. Evidence:
+validation_5227; CA229-01 pending.
+**5.2.26/#227:** visible rest notices; chair/bag provisions; x105 captions.
+PR228, validation_5226; CA227-01 pending.
 **5.2.20-25 accepted:** six checks passed 2026-10-13; PR214/217/218/
 221/223/224 merged and issues closed. #225/PR226 repaired LF index hashes.
 #211 accepted/merged; prior acceptance records remain in HISTORY.
@@ -16,7 +18,7 @@ passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshe
 **5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
 controls/M automap, modular cosmetics/hands. CA150/149/148-01 passed 2026-10-12;
 PR203/202/201 merged, issues closed. Evidence validation_5215/5214/5213;
-SPRITE_ART_DIRECTION governs generation. No pending checks for those issues.
+SPRITE_ART_DIRECTION governs generation.
 
 **5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
 issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;
@@ -50,7 +52,6 @@ CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.
 Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
-All four merges/closures were authorized; HISTORY retains acceptance.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.

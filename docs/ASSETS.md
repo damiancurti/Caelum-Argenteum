@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Magic Box weight evidence (#229)
+
+assets/validation_5227 retains the isolated native weight/save probe and result
+record. No art, audio or model changes. Generated test packages, saves and engine
+dependencies remain local under build/issue229.
 
 ## 5.2.26 - Rest feedback validation (#227)
 

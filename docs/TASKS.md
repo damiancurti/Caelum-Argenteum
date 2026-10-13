@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Empty Magic Box weighs one gram (#229)
+
+Apply the author's empty-mass decision separately from #227, retaining the
+existing content divisor and gram truncation. Verify real inventory totals,
+ownership and normal recalculation of a save made with the old 10 kg tare.
+Evidence: assets/validation_5227. Author inventory check CA229-01 is pending.
 
 ## 5.2.26 - Rest control diagnosis and feedback (#227)
 

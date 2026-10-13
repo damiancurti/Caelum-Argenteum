@@ -1,0 +1,37 @@
+{
+  "engine": "GZDoom 4.14.2 Windows 11",
+  "baseline": "5209b4d8",
+  "release": "5.2.27",
+  "issue": 229,
+  "runs": [
+    {
+      "label": "baseline-final-save",
+      "assertions": 14,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "AC2EB720D048B99D8849148E9414A7040938202CF98C03C8B69ABFCED3699962",
+      "fixture_sha256": "A152A507C1DF445A5B4827802354974717F74CC55D7BA59A51F5F0013A150C37",
+      "log_sha256": "81cb468fe35f3b0b05332a0affee96a8efe049dd86cbb8fe7d1b916ccfe0f371"
+    },
+    {
+      "label": "final-native",
+      "assertions": 14,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "98F7935055D090ED3EBEBD3740BD96C37A01F6DE34518F5EC5FC20AA312306D3",
+      "fixture_sha256": "A152A507C1DF445A5B4827802354974717F74CC55D7BA59A51F5F0013A150C37",
+      "log_sha256": "9db5802c4a5dbfb97a5578997c88b4d6dc19562c1cf4c767745de04155f13fa1"
+    },
+    {
+      "label": "delivery-load",
+      "assertions": 5,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "30C871837D1384E426F22D122A12E0F817B4314A5E2EE8D0D626E998A4F9F369",
+      "fixture_sha256": "A152A507C1DF445A5B4827802354974717F74CC55D7BA59A51F5F0013A150C37",
+      "log_sha256": "afc2a0085d91625d7983875cb7e63156d5ec89a7a493a8a844067e5aa9a2fd66"
+    }
+  ],
+  "later_runtime_changes": [
+    "LANGUAGE",
+    "localization/INDEX.md",
+    "localization/index.json"
+  ]
+}

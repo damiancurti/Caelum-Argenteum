@@ -1,5 +1,5 @@
 // La Caja ya tiene almacenamiento y peso centralizados en el jugador. Este
-// Inventory representa identidad/propietario, sin sumar otra vez sus 10 kg.
+// Inventory representa identidad/propietario, sin sumar otra vez su gramo de tara.
 class CaelumMagicBox : Inventory
 {
     int ItemId;

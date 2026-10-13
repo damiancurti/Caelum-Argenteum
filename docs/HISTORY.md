@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Empty Magic Box mass (#229), 2026-10-13
+
+The author requested a one-gram Magic Box, explicitly clarifying that this is
+its empty mass and contents retain the existing reduction. The shared tare is
+now 0.001 kg instead of 10 kg. Capacity, content truncation, ownership, inventory
+and schema are unchanged. Current canonical references and Palomo's bilingual
+reward/help text now match. Earlier release records preserve the former rule.
+Native evidence: assets/validation_5227; 14 baseline and 19 current native checks
+passed, including a real former-tare save recalculated by normal ticks.
+Static validation/build are recorded with the delivery evidence.
+Author check CA229-01 is outstanding;
+CA227-01 also remains pending for the rest correction delivered in PR228.
 
 ## 5.2.26 - Rest menu feedback (#227), 2026-10-13
 
