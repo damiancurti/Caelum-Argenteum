@@ -2,10 +2,10 @@
 
 Documentation version: **5.2.25** — 2026-10-13.
 
-**Current 5.2.25/#222:** magical staff spread 2-20 degrees, like statuette;
-book homing unchanged. validation_5225; CA222-01 pending. Earlier pending:
-CA220-01 Mandinga loot (PR223), CA219-01 sewer bag sleep (PR221), CA215-01 menus,
-CA216-01 gold, CA213-01 bars. #211 accepted/merged.
+**Current 5.2.25 accepted:** CA213/216/215/219/220/222-01 all passed author
+acceptance on 2026-10-13 without qualifications. PR214/217/218/221/223/224
+merge and issue closure authorized; pending_test.txt is empty. Evidence:
+validation_5220-5225; individual acceptance records in HISTORY. #211 accepted/merged.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.

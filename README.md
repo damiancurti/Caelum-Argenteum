@@ -13,36 +13,38 @@ it, then rebuild with `run_dev.bat` as described below.
 the magical staff now shares the statuette's **2-20 degree** base dispersion,
 half its former 4-40 range. Insight and stance modifiers remain; the book keeps
 its existing homing. [Native evidence](assets/validation_5225/RESULTS.md);
-author check CA222-01 remains pending.
+CA222-01 passed author acceptance on 2026-10-13.
 
 5.2.24 fixes [#220](https://github.com/damiancurti/Caelum-Argenteum/issues/220):
 MAP02 Mandingas without an assigned key/ammunition drop now release one remaining
 potion under the existing rule. Assigned loot, exhaustion and death latches stay
-unchanged. [Native evidence](assets/validation_5224/RESULTS.md); CA220-01 pending.
+unchanged. [Native evidence](assets/validation_5224/RESULTS.md); CA220-01 accepted 2026-10-13.
 
 5.2.23 implements [#219](https://github.com/damiancurti/Caelum-Argenteum/issues/219):
 sleeping in the owned bag on dry, clear MAP02 ground permits T fast-forward
 and Y time skip outside marked safe zones. Combat, nearby enemies and hazards
 still block acceleration; waking outside a safe zone stops Y. Normal clock and
-comfort rates remain. [Evidence](assets/validation_5223/RESULTS.md); CA219-01 pending.
+comfort rates remain. [Evidence](assets/validation_5223/RESULTS.md); CA219-01 accepted 2026-10-13.
 
 5.2.22 implements [#215](https://github.com/damiancurti/Caelum-Argenteum/issues/215):
 menu options show their existing keyboard controls in parentheses, including
 native engine options, character creation, Journal, crafting and dialogues.
 Remappable actions use current bindings; shadowed contextual keys show Click.
-[Native evidence](assets/validation_5222/RESULTS.md) is separate from pending
-CA215-01 author acceptance. No direct shortcuts or input preferences are added.
+[Native evidence](assets/validation_5222/RESULTS.md) is separate from CA215-01
+author acceptance, passed 2026-10-13. No direct shortcuts or input preferences are added.
 
 5.2.21 fixes [#216](https://github.com/damiancurti/Caelum-Argenteum/issues/216):
 the tutorial gold rock now uses its existing 3D model instead of being invisible.
 Its single 2 kg supply and collision remain. [Native evidence](assets/validation_5221/RESULTS.md)
-is separate from CA216-01 author acceptance, still pending.
+is separate from CA216-01 author acceptance, passed 2026-10-13.
 
 5.2.20 implements [#213](https://github.com/damiancurti/Caelum-Argenteum/issues/213):
 resource bars at the lower screen edges, **95% larger**, with descriptions above.
 Native HUD scaling remains adjustable; measured viewport limits prevent clipping.
 [Native visual evidence](assets/validation_5220/RESULTS.md) is separate from
-CA213-01 author acceptance, still in [pending_test.txt](pending_test.txt).
+CA213-01 author acceptance, passed 2026-10-13. All six checks for releases
+5.2.20-5.2.25 passed without qualifications; merges and issue closures are
+authorized. [pending_test.txt](pending_test.txt) remains tracked and empty.
 
 5.2.19 implements [#211](https://github.com/damiancurti/Caelum-Argenteum/issues/211):
 eligible horizontal impacts subtract **150% of the recipient's landing speed

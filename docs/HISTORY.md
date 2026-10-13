@@ -4,6 +4,16 @@ Documentation version: **5.2.25** — 2026-10-13.
 
 ## 5.2.25 - Staff dispersion (#222), 2026-10-13
 
+Author acceptance, 2026-10-13: **CA222-01** (Magical staff precision), originating
+in **5.2.25 / issue #222**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR224 merge and #222 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
+
 After inspecting the four magical spread categories, the author chose the
 statuette's category for the staff and explicitly retained the book's current
 guidance. The staff therefore becomes more precise: its base per-axis range
@@ -17,6 +27,16 @@ Read-only review found no blocker; keep-awake was released. CA222-01 author
 acceptance remains pending.
 
 ## 5.2.24 - Missing Mandinga loot (#220), 2026-10-13
+
+Author acceptance, 2026-10-13: **CA220-01** (Mandinga death loot), originating
+in **5.2.24 / issue #220**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR223 merge and #220 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
 
 The author reported missing MAP02 loot and identified Mandingas only. Native
 baseline deaths reproduced the failure for an unassigned Mandinga with remaining
@@ -34,6 +54,16 @@ author acceptance remains pending.
 
 ## 5.2.23 - Sewer sleeping-bag acceleration (#219), 2026-10-13
 
+Author acceptance, 2026-10-13: **CA219-01** (Sleeping bag in the sewers), originating
+in **5.2.23 / issue #219**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR221 merge and #219 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
+
 The author reported the safe-zone rejection when trying to sleep in MAP02,
 selected the existing bag and explicitly retained combat/enemy/hazard guards.
 Ordinary sleep already worked. The initial clock hypothesis was incorrect:
@@ -49,6 +79,16 @@ earlier CA213-01, CA216-01 and CA215-01 remain pending. Mandinga loot report #22
 is a separate patch and does not change this sleep contract.
 
 ## 5.2.22 - Current menu controls (#215), 2026-10-12
+
+Author acceptance, 2026-10-13: **CA215-01** (Existing menu controls), originating
+in **5.2.22 / issue #215**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR218 merge and #215 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
 
 After the bar enlargement, the author requested control hints in parentheses
 on menu options. They chose existing controls rather than new shortcuts and
@@ -72,6 +112,16 @@ Evidence and physical-input limits: assets/validation_5222/RESULTS.md.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 
+Author acceptance, 2026-10-13: **CA216-01** (Visible tutorial gold), originating
+in **5.2.21 / issue #216**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR217 merge and #216 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
+
 Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
 model registration for its subclass. Register the existing gold-rock OBJ for
 CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
@@ -80,6 +130,16 @@ assets/validation_5221. The author confirmed the reported invisible obstruction 
 position. Author visual acceptance CA216-01 remains pending.
 
 ## 5.2.20 - Resource bar layout (#213), 2026-10-12
+
+Author acceptance, 2026-10-13: **CA213-01** (Resource-bar layout), originating
+in **5.2.20 / issue #213**, passed by explicit author confirmation
+that all tests were correct, without qualifications. The author authorized
+PR214 merge and #213 closure. The confirmed entry was removed from
+pending_test.txt; all six checks in this accepted batch are complete.
+This confirmation is separate from the recorded native agent tests.
+Release 5.2.25 and the tested runtime remain unchanged.
+
+Delivery record before this acceptance:
 
 The author reported centrally positioned small bars and requested edge anchors
 and descriptions above them, then explicitly selected a 30% size increase.

@@ -8,7 +8,7 @@ The author selected the statuette's dispersion for the magical staff and kept
 book homing. Staff base spread becomes 2-20 degrees per axis instead of 4-40,
 across T1-T3. Type-3 Insight, crouching and impairment still modify accuracy.
 Other weapon categories, damage, costs and saves remain. Native evidence:
-assets/validation_5225. CA222-01 awaits author acceptance.
+assets/validation_5225. CA222-01 passed author acceptance on 2026-10-13.
 
 ## 5.2.24 - Mandinga potion fallback (#220)
 
@@ -17,8 +17,8 @@ Mandingas. It now derives from actual assignments: 38 Mandingas and 192 rats.
 The other 58 Mandingas use the existing remaining-potion death rule. No loot
 amounts, anchors, native supplies, death latches or save fields change. Existing
 corpses are not retroactively populated. Native evidence: assets/validation_5224;
-author check CA220-01 remains pending. Next approved balance task: #222,
-magical staff dispersion matching the statuette, with book homing unchanged.
+author check CA220-01 passed author acceptance on 2026-10-13. The subsequent #222 staff
+adjustment was accepted in the same confirmation.
 
 ## 5.2.23 - Sleeping-bag acceleration in MAP02 (#219)
 
@@ -27,7 +27,7 @@ on dry, clear sewer ground outside authored safe zones. Existing combat, nearby
 enemy, hazard and resource checks remain. The exception ends on waking or loss
 of bag support; it grants no crafting or ordinary waiting permission. MAP02
 already uses the exterior clock; no clock, comfort or save schema changes.
-Native evidence: assets/validation_5223. CA219-01 author acceptance is pending.
+Native evidence: assets/validation_5223. CA219-01 passed author acceptance on 2026-10-13.
 The reported missing Mandinga loot is tracked separately in #220.
 
 ## 5.2.22 - Current controls beside menu options (#215)
@@ -37,8 +37,8 @@ included native engine options. Existing arrows/Enter and contextual keys are
 shown; no per-option shortcuts are introduced. Current bindings are resolved
 at display time, including conflicts with native navigation and global actions.
 Native subclasses preserve search, key capture, save/load and specialized options.
-Evidence: assets/validation_5222. CA215-01 remains pending; #213/PR214 and
-#216/PR217 are earlier, separate patches awaiting acceptance and merge.
+Evidence: assets/validation_5222. CA215-01 passed author acceptance on 2026-10-13; #213/PR214 and
+#216/PR217 are earlier, separate patches accepted in the same confirmation.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 
@@ -46,7 +46,7 @@ Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
 model registration for its subclass. Register the existing gold-rock OBJ for
 CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
 Native before/after captures and extraction/save-load checks are recorded in
-assets/validation_5221. Author visual acceptance CA216-01 remains pending.
+assets/validation_5221. Author visual acceptance CA216-01 passed author acceptance on 2026-10-13.
 
 ## 5.2.20 - Resource bars at screen edges (#213)
 
@@ -56,7 +56,7 @@ control their base size; a measured viewport limit keeps the complete localized
 labels inside the display. Frames, fills, icons and labels share each transform.
 Long central reload/charge text moves above the groups only if it would overlap.
 No resource rules, saves or menu preferences change. Native visual evidence:
-assets/validation_5220. Author visual acceptance CA213-01 remains pending.
+assets/validation_5220. Author visual acceptance CA213-01 passed author acceptance on 2026-10-13.
 
 Static validation and normal packaging pass. Final native render checks cover
 1280x720/960x720 Spanish, 1600x675 English and 1920x1080 fullscreen with copied

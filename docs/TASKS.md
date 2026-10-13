@@ -6,34 +6,36 @@ Documentation version: **5.2.25** — 2026-10-13.
 
 Share the existing 2-20 degree category for the magical staff, preserving other
 weapons and book homing. Native validation covers T1-T3 and actual shots at
-Insight 0/100; evidence: assets/validation_5225. Next: CA222-01 author acceptance
-and linked PR review. Earlier CA213/216/215/219/220-01 checks remain pending.
+Insight 0/100; evidence: assets/validation_5225. CA222-01 passed author acceptance
+on 2026-10-13. All six current checks passed without qualifications; the author
+authorized their PR merges and issue closures. No author checks remain pending.
+Next development scope awaits the author's next issue.
 
 ## 5.2.24 - MAP02 Mandinga drops (#220)
 
 Fix the generated predicate from real assignments; verify unassigned potion,
 assigned key/ammunition, exhaustion, last unit, repeated death and save/load.
-Evidence: assets/validation_5224. Next: CA220-01 author acceptance and PR review.
-Carry CA213-01, CA216-01, CA215-01 and CA219-01 forward. #222 follows separately:
-set magical staff dispersion to the statuette category; retain book homing.
+Evidence: assets/validation_5224. CA220-01 passed author acceptance on
+2026-10-13; PR223 merge and #220 closure are authorized. The subsequent #222
+staff adjustment and earlier checks were accepted in the same confirmation.
 
 ## 5.2.23 - Sewer sleeping-bag acceleration (#219)
 
 Implement the author-approved MAP02 exception only for actual bag sleep,
 retaining all danger guards and normal clocks/comfort. Validate T completion,
 Y transition and waking, bag loss/Box storage, current and baseline saved rest.
-Evidence: assets/validation_5223. Next: CA219-01 author acceptance and linked PR
-review before merge/closure. CA213-01, CA216-01 and CA215-01 remain outstanding.
-Separate next issue #220: mapped Mandingas without assigned loot incorrectly
-suppress their remaining-potion fallback; retain existing loot quantities.
+Evidence: assets/validation_5223. CA219-01 passed author acceptance on
+2026-10-13; PR221 merge and #219 closure are authorized. The separate #220
+Mandinga loot repair and earlier checks are also accepted.
 
 ## 5.2.22 - Current menu controls (#215)
 
 Implemented parenthesized existing controls across custom and native engine
 menus, including remapped bindings and contextual precedence. Preserve native
 search/key capture/save titles and verify complete captions at different scales.
-Evidence: assets/validation_5222. Next: author check CA215-01, linked PR review,
-then merge/closure upon acceptance. CA213-01 and CA216-01 remain outstanding.
+Evidence: assets/validation_5222. CA215-01 passed author acceptance on
+2026-10-13; PR218 merge and #215 closure are authorized. CA213-01 and CA216-01
+were accepted in the same confirmation.
 
 Static validation and normal packaging pass; all 16,053 official runtime
 members match the final tested package. The selected native runs record 95
@@ -47,11 +49,10 @@ Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
 model registration for its subclass. Register the existing gold-rock OBJ for
 CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
 Native before/after captures and extraction/save-load checks are recorded in
-assets/validation_5221. Author visual acceptance CA216-01 remains pending.
+assets/validation_5221. Author visual acceptance CA216-01 passed on 2026-10-13.
 
 The author identified the reported obstruction as this same rock position.
-Next: confirm the corrected visible rock with the author and review the linked
-PR before merge/closure.
+The author authorized PR217 merge and #216 closure; no checks remain.
 
 ## Issue #213 - Resource bar layout (5.2.20)
 
@@ -59,8 +60,8 @@ Implemented: independent lower-corner anchors; author-approved 1.95 scale;
 labels above all ten bars; right labels grow inward; measured viewport fitting
 and conditional clearance for central weapon status. Existing art and native
 HUD preferences remain. Static validation and isolated native visual evidence
-are recorded in assets/validation_5220; CA213-01 is the outstanding author check.
-Next: review the linked PR and confirm the in-game layout before merge/closure.
+are recorded in assets/validation_5220. CA213-01 passed author acceptance
+on 2026-10-13; PR214 merge and #213 closure are authorized.
 
 Static validation and normal packaging pass. Final native render checks cover
 1280x720/960x720 Spanish, 1600x675 English and 1920x1080 fullscreen with copied
