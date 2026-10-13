@@ -39,7 +39,7 @@ class CaelumMazeLayout : Object play
         return null;
     }
     static bool HasDeathDrop(int tid)
-    {return (tid>=47000 && tid<47096) || (tid>=48000 && tid<48192);}
+    {return (tid>=47000 && tid<=47008) || tid==47022 || (tid>=47024 && tid<=47030) || tid==47038 || tid==47043 || (tid>=47048 && tid<=47055) || (tid>=47062 && tid<=47063) || (tid>=47072 && tid<=47078) || (tid>=47086 && tid<=47087) || (tid>=48000 && tid<=48191);}
     static Inventory CreateDeathDrop0(int tid)
     {
         Inventory item;
