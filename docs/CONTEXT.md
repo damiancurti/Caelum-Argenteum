@@ -5,7 +5,7 @@ Documentation version: **5.2.19** — 2026-10-12.
 **Current 5.2.19/#211:** eligible horizontal cushioning uses 1.5 times each
 body's jump capacity; player and charging bull. All biological falls also use
 150%; crushing unchanged. Buckler applies once.
-Evidence: validation_5219; CA211-01 pending; draft PR212 pushed.
+Evidence: validation_5219; CA211-01 passed 2026-10-12; merge/closure authorized.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.

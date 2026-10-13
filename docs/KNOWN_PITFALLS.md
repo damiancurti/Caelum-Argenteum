@@ -22,7 +22,7 @@ Evidence: assets/validation_5219/checks.zs compares the old fractional pressure
 rules and new 150% impact/fall capacity, including active buckler and bull.
 The native baseline still passes pressure expectations while failing the new
 impact/fall expectations. Native motion and current/old saves are separate
-checks; author acceptance remains CA211-01.
+checks; CA211-01 passed author acceptance on 2026-10-12 without qualifications.
 
 ## CA-KP-087 - Triangulate model caps before native OBJ validation
 

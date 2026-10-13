@@ -9,8 +9,10 @@ eligible horizontal contacts. Validate threshold, zero delta, load/impairment,
 immobilization, buckler overlap, exclusions, bilateral contacts, charge
 interruption and old/current saves. Falls also use 150% for every biological
 body, as subsequently requested. Preserve actual jumps/crushing and
-record native evidence in assets/validation_5219. CA211-01 remains pending
-author acceptance. Commit/push delivered in draft PR212; 350 native checks pass.
+record native evidence in assets/validation_5219. CA211-01 passed author
+acceptance on 2026-10-12 without qualifications; its entry was removed from
+the author queue. The author authorized PR212 merge and #211 closure.
+350 native checks pass; release 5.2.19 and the tested runtime remain unchanged.
 
 ## Issue #209 - Modular animation and rest repair (5.2.18)
 

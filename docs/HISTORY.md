@@ -19,13 +19,17 @@ fallback are retained separately; weighted NPC rock pressure remains uncushioned
 This also preserves crushing provenance before environmental relabeling.
 
 Native evidence, regression attempts, hashes and scope: assets/validation_5219.
-Author test CA211-01 originates in 5.2.19 / #211 and remains outstanding in
-pending_test.txt. The author requested native tests, commit and push; no merge,
-closure or manual acceptance is inferred. No saved field/state migration or
+On 2026-10-12 the author explicitly confirmed that all tests passed and
+authorized PR212 merge and #211 closure, without qualifications. CA211-01
+(horizontal and fall cushioning), originating in 5.2.19 / #211, therefore
+passed author gameplay acceptance. Its entry was removed from pending_test.txt,
+which remains tracked and empty. This confirmation is separate from native
+agent evidence; release 5.2.19 and the tested runtime remain unchanged.
+No saved field/state migration or
 art changes are required. The preceding #209 / PR210 was accepted and merged
 as 4549991a; this patch starts from that baseline.
 
-Delivered in draft PR212, implementation commit 976602ba. All 350 native
+Delivered in PR212, implementation commit 976602ba. All 350 native
 checks pass, including actual player wall/fall movement, all-body falls,
 bilateral bull contacts, pressure and current/old saves. Static validation
 and normal packaging pass; all 16,052 runtime members match the tested package.
