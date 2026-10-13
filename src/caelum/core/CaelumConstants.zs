@@ -516,9 +516,9 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_COUNT = 11;
 
     // La Caja Mágica es una capacidad permanente del personaje: su estructura
-    // pesa siempre 10 kg. El contenido comparte una reducción igual a la
+    // pesa siempre 1 gramo. El contenido comparte una reducción igual a la
     // capacidad máxima actual y se trunca una sola vez a precisión de gramos.
-    const MAGIC_BOX_BASE_WEIGHT = 10.0;
+    const MAGIC_BOX_BASE_WEIGHT = 0.001;
     const MAGIC_BOX_WEIGHT_PRECISION = 0.001;
 
     // Economía física 4.32.0a-r2. Cada metal ofrece monedas nominales de

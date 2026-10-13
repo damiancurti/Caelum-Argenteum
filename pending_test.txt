@@ -1,8 +1,0 @@
-CA227-01 | 5.2.26 | issue #227 | Rest action feedback and reported controls
-Prerequisites: rebuild with run_dev.bat; use the bag/chair scene where T/F/G failed.
-1. On dry clear MAP02 floor, begin bag sleep. Press T, then click Speed x105.
-Expected: if safe, time/sleep advance faster then return to normal; otherwise the reason is visible below the controls. Preserve combat/enemy/hazard restrictions.
-2. With hunger/thirst below 100 and food/water carried or in the owned Box, test F/G and Eat/Drink clicks from the MAP02 chair and sleeping bag. Also check a stocked table.
-Expected: both channels toggle, finite food/water is consumed, container/storage identity remains, and any rejection appears in the panel. Serving stops on standing or loss of support.
-3. Retry the exact original failure. Report the displayed message if it still cannot act; verify readable text with the usual UI/message scale.
-Author confirmation is pending.

@@ -1964,7 +1964,7 @@ CA_ZUPAY_COLOSSUS_NAME = "Zupay Colosal del Socavón";
 [enu default]
 CA_MAGIC_BOX_NOT_ACQUIRED = "Not acquired";
 CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED = "You have not received the Magic Box yet";
-CA_PALOMO_MAGIC_BOX_RECEIVED = "Palomo gave you the Magic Box. It now adds 10 kg and its storage is available.";
+CA_PALOMO_MAGIC_BOX_RECEIVED = "Palomo gave you the Magic Box. It now adds 1 gram when empty and its storage is available.";
 CA_PALOMO_MAGIC_BOX_ALREADY_RECEIVED = "Palomo has already given you the Magic Box.";
 CA_SPEAKER_UNKNOWN_VOICE = "Unknown Voice";
 CA_DLG_M01_UNKNOWN_VOICE_WAKE = "Wake up. Do not try to remember yet. There is someone nearby who can help you find the way.";
@@ -2040,7 +2040,7 @@ CA_PALOMO_MERCHANT_ACTION_FAILED_SESSION = "The trade ended because Palomo is no
 [es]
 CA_MAGIC_BOX_NOT_ACQUIRED = "No adquirida";
 CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED = "Todavía no recibiste la Caja Mágica";
-CA_PALOMO_MAGIC_BOX_RECEIVED = "Palomo te regaló la Caja Mágica. Ahora suma 10 kg y su almacenamiento está disponible.";
+CA_PALOMO_MAGIC_BOX_RECEIVED = "Palomo te regaló la Caja Mágica. Ahora suma 1 gramo vacía y su almacenamiento está disponible.";
 CA_PALOMO_MAGIC_BOX_ALREADY_RECEIVED = "Palomo ya te regaló la Caja Mágica.";
 CA_SPEAKER_UNKNOWN_VOICE = "Voz desconocida";
 CA_DLG_M01_UNKNOWN_VOICE_WAKE = "Despertá. No intentes recordar todavía. Hay alguien cerca que puede ayudarte a encontrar el camino.";
@@ -3006,12 +3006,12 @@ CA_M01_PALOMO_RECEIVED = "The Box is in your care now. Keep the sleeping bag you
 CA_M01_PALOMO_DECK_HANDOFF = "Argento gives you the physical Tarot deck for practice. Its powers require captured essences.";
 CA_M01_PALOMO_DECK_ROOM = "Make room for Argento's physical Tarot deck.";
 CA_M01_PALOMO_USE_ASK = "How do I store my belongings?";
-CA_M01_PALOMO_USE = "The Box weighs ten kilograms; its contents weigh less when stored. Its space has a limit.\n\nOpen inventory with {bind:ca_journal_toggle}, select an item and press C to store or retrieve it. Unequip it first if necessary. Loans and materials reserved for the trials stay outside. The Box itself stays with you.";
+CA_M01_PALOMO_USE = "The empty Box weighs one gram; its contents weigh less when stored. Its space has a limit.\n\nOpen inventory with {bind:ca_journal_toggle}, select an item and press C to store or retrieve it. Unequip it first if necessary. Loans and materials reserved for the trials stay outside. The Box itself stays with you.";
 CA_M01_PALOMO_CAVE_ASK = "Where should I take it?";
 CA_M01_PALOMO_CAVE = "Sometimes it helps to return to a place carrying something different. The cave beneath this mansion, for example.\n\nReturn to the passage you discovered with Caella, walk through the rear wall and take the lift down. The apparition floats in the centre of the cave, in front of the veins along its back wall. Approach it and examine it with the Box.";
 CA_M01_PALOMO_WAIT = "There are still a few introductions to finish. I would not want a box to make you forget the people.";
 CA_M01_PALOMO_BACK = "Back.";
-CA_M01_PALOMO_DETAIL_BOX = "Palomo gave you the Magic Box. It weighs 10 kg and stores contents at reduced weight according to its capacity. In Inventory ({bind:ca_journal_toggle}), select an item and press C to store or retrieve it; unequip it first if needed.\n\nPalomo suggested bringing it to the cave beneath the mansion. Use the passage discovered with Caella: walk through the rear wall and take the lift down. You can speak with him again on the second floor to review its use and the route.\n\nHe also gave you the complete physical Tarot deck: 78 cards, 780 grams and one slot. Keep it inside your Box to capture essences; only captured essences grant powers. In the Tarot Journal, Enter selects up to three; User3 ({bind:+user3}) activates them together.";
+CA_M01_PALOMO_DETAIL_BOX = "Palomo gave you the Magic Box. It weighs 1 gram when empty and stores contents at reduced weight according to its capacity. In Inventory ({bind:ca_journal_toggle}), select an item and press C to store or retrieve it; unequip it first if needed.\n\nPalomo suggested bringing it to the cave beneath the mansion. Use the passage discovered with Caella: walk through the rear wall and take the lift down. You can speak with him again on the second floor to review its use and the route.\n\nHe also gave you the complete physical Tarot deck: 78 cards, 780 grams and one slot. Keep it inside your Box to capture essences; only captured essences grant powers. In the Tarot Journal, Enter selects up to three; User3 ({bind:+user3}) activates them together.";
 CA_M01_STATE_BOX_RECEIVED = "The Magic Box is yours";
 
 [es]
@@ -3037,12 +3037,12 @@ CA_M01_PALOMO_RECEIVED = "La Caja queda a su cuidado. Conserve la bolsa que fabr
 CA_M01_PALOMO_DECK_HANDOFF = "Argento le entrega el mazo físico del Tarot para practicar. Sus poderes requieren capturar esencias.";
 CA_M01_PALOMO_DECK_ROOM = "Haga espacio para el mazo físico del Tarot de Argento.";
 CA_M01_PALOMO_USE_ASK = "¿Cómo guardo mis cosas?";
-CA_M01_PALOMO_USE = "La Caja pesa diez kilos; el contenido pesa menos al guardarlo. Su espacio tiene un límite.\n\nAbra el inventario con {bind:ca_journal_toggle}, elija un objeto y pulse C para guardarlo o retirarlo. Si lo tiene equipado, desequípelo primero. Los préstamos y materiales reservados para las pruebas permanecen fuera. La propia Caja permanece con usted.";
+CA_M01_PALOMO_USE = "La Caja vacía pesa un gramo; el contenido pesa menos al guardarlo. Su espacio tiene un límite.\n\nAbra el inventario con {bind:ca_journal_toggle}, elija un objeto y pulse C para guardarlo o retirarlo. Si lo tiene equipado, desequípelo primero. Los préstamos y materiales reservados para las pruebas permanecen fuera. La propia Caja permanece con usted.";
 CA_M01_PALOMO_CAVE_ASK = "¿Adónde debería llevarla?";
 CA_M01_PALOMO_CAVE = "A veces conviene volver a un sitio llevando algo distinto. La cueva bajo esta mansión, por ejemplo.\n\nVuelva al pasaje que descubrió con Caella, atraviese la pared del fondo y baje con el ascensor. La aparición flota en el centro de la cueva, delante de las vetas de la pared del fondo. Acérquese y examínela con la Caja.";
 CA_M01_PALOMO_WAIT = "Todavía quedan algunas presentaciones por terminar. No quisiera que una caja le hiciera olvidar a las personas.";
 CA_M01_PALOMO_BACK = "Volver.";
-CA_M01_PALOMO_DETAIL_BOX = "Palomo te entregó la Caja Mágica. Pesa 10 kg y permite guardar contenido con peso reducido según su capacidad. En Inventario ({bind:ca_journal_toggle}), seleccioná un objeto y pulsá C para guardarlo o retirarlo; desequipalo primero si hace falta.\n\nPalomo sugirió llevarla a la cueva bajo la mansión. Se llega por el pasaje descubierto con Caella: atravesá la pared del fondo y bajá con el ascensor. Podés volver a hablar con él en el segundo piso para repasar su uso y esa ruta.\n\nTambién te entregó el mazo físico completo del Tarot: 78 cartas, 780 gramos y un espacio. Guardalo dentro de la Caja para capturar esencias; sólo las esencias capturadas dan poderes. En Tarot, dentro del Diario, Enter elige hasta tres; User3 ({bind:+user3}) las activa juntas.";
+CA_M01_PALOMO_DETAIL_BOX = "Palomo te entregó la Caja Mágica. Pesa 1 gramo vacía y permite guardar contenido con peso reducido según su capacidad. En Inventario ({bind:ca_journal_toggle}), seleccioná un objeto y pulsá C para guardarlo o retirarlo; desequipalo primero si hace falta.\n\nPalomo sugirió llevarla a la cueva bajo la mansión. Se llega por el pasaje descubierto con Caella: atravesá la pared del fondo y bajá con el ascensor. Podés volver a hablar con él en el segundo piso para repasar su uso y esa ruta.\n\nTambién te entregó el mazo físico completo del Tarot: 78 cartas, 780 gramos y un espacio. Guardalo dentro de la Caja para capturar esencias; sólo las esencias capturadas dan poderes. En Tarot, dentro del Diario, Enter elige hasta tres; User3 ({bind:+user3}) las activa juntas.";
 CA_M01_STATE_BOX_RECEIVED = "La Caja Mágica está en tu poder";
 
 [enu default]

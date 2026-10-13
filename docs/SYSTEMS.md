@@ -1,6 +1,16 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - One-gram empty Magic Box (#229)
+
+The author sets the empty Box mass to **0.001 kg (1 gram)**, replacing 10 kg.
+This is its tare, not a fixed total regardless of contents. Capacity and content-weight
+divisor remain `20 + floor(10 * Type3Multiplier(Intelligence))`. Aggregate raw
+contents are divided by capacity and truncated once to grams, then the tare is
+added. An unowned Box contributes zero; ordinary inventory refresh recalculates
+existing saves without changing ownership, contents or schema. HUD and total
+carried load use the same authoritative constant.
 
 ## 5.2.26 - Visible rest action feedback (#227)
 
@@ -851,7 +861,7 @@ social/magic/combat practices remain unchanged.
 The Box now uses **20 + floor(10 × Type3Multiplier(Intelligence))** slots and that
 same number as the content-weight divisor. Type3Multiplier(I) =
 **1 + 7 × (I² + 25I) / 12,500**: 30 slots at I=0, 100 at I=100. The Box itself
-still weighs 10 kg. The shared growth function remains authoritative.
+weighs 0.001 kg empty as of #229. The shared growth function remains authoritative.
 
 Departure requires the actual owned gifts and crafted utilities. It unequips
 and stores those same objects, including the physical deck, in the Box. It
@@ -7546,7 +7556,7 @@ CaelumMagicBox is a native Inventory without duplicate entry in the list; the ex
 interface of the Box is still its presentation. It has ItemId and Owner,
 MaxAmount/InterHubAmount 1, UNDROPPABLE and UNCLEARABLE. It does not enter the sales
 catalogues or storeable content classes. Weight continues to be added only to
-CalculateMagicBoxTotalWeight: 10 kg plus the overall reduced weight of the content, with
+CalculateMagicBoxTotalWeight: 0.001 kg plus the overall reduced weight of the content, with
 current divisor/rounding rule. It does not add another slot.
 
 EnsureOwned recovers the instance if missing and assigns identity to the old property
@@ -7558,7 +7568,7 @@ departure and #80 powers are implemented; the current contract appears above.
 
 In Inventory, C saves/withdraws the selected object. Slots/load limits and restrictions
 are retained for equipment placed, loans, mission reserves and crafting. Delivery allows
-the player to reorganise its content even if the initial 10 kg temporarily increase its
+the player to reorganise its content even if the initial 0.001 kg temporarily increases its
 load. Text gives instructions and the path of the passage/lift/cave. From 0t indicates
 where to examine the appearance.
 
@@ -8405,7 +8415,7 @@ shows:
 - total physical quantity of silver coins, adding their five denominations;
 - total physical number of gold coins, adding up their five denominations.
 
-The Magic Box line also shows your used/maximum slots and their total weight: 10,000 kg
+The Magic Box line also shows your used/maximum slots and their total weight: 0.001 kg
 own plus the reduced contribution of all content. The formula, restrictions and cases of
 change of Intelligence are documented in `SYSTEMS.md`.
 
@@ -8439,7 +8449,7 @@ The Magic Box has an Inventory instance with owner and ItemId from 0s; its conte
 weight remain centralized in the character. It does not add a selectable entry to the
 list: it cannot be dropped, sold, destroyed or stored within itself. Before receiving
 it does not add weight, it does not offer slots and no pickup, crafting or interface
-path can save objects in it. Upon receiving it, its structure contributes **10,000 kg**
+path can save objects in it. Upon receiving it, its structure contributes **0.001 kg (1 gram)**
 to the load even when it is empty.
 
 The maximum number of slots continues to derive from Intelligence. Each individual piece
@@ -8455,16 +8465,16 @@ peso reducido del contenido =
     piso_a_0,001 kg(peso real total guardado / slots máximos actuales)
 
 peso total de la Caja Mágica =
-    10,000 kg + peso reducido del contenido
+    0.001 kg + peso reducido del contenido
 ```
 
 The maximum **slots** are used, not the occupied ones. The weight of all items and stacks is summed
 before dividing and rounding. This prevents separating the same weight between multiple
 stacks from removing load by individual roundings.
 
-Example: with 20 maximum slots and 10,000 kg actually stored, the content provides 0,500
-kg and the complete box provides 10,500 kg. With 0,380 kg stored, the content provides
-0,019 kg.
+Example: at Intelligence 0, 30 maximum slots and 10 kg stored, the content
+contributes 0.333 kg and the complete Box weighs 0.334 kg. At Intelligence 100,
+100 slots reduce the same contents to 0.100 kg, for 0.101 kg total.
 
 ### 3. Content and restrictions
 
@@ -8494,7 +8504,7 @@ recalculated immediately, and new deposits are blocked until occupancy is back w
 ### 5. Interface
 
 The Inventory shows `slots usados/máximos` and the current total weight of the box,
-including its own 10,000 kg. The general Load line incorporates exactly the same value.
+including its own 0.001 kg. The general Load line incorporates exactly the same value.
 The selected item’s weight continues to show the actual weight of the object or
 stack before reduction. The 64×64 icon provided is displayed next to this line; before
 the gift it is dimmed with the `No adquirida` text. Trying to store from Inventory
@@ -8506,8 +8516,8 @@ before the gift returns an explicit cause and does not change the object.
 - The first canonical encounter with Palomo does not grant the Box or open commerce.
 - Accepting Palomo’s offer, after closing the four branches in phase 75, advances to
   `MAIN_M00_STATE_BOX_RECEIVED`. Questions and closing the conversation deliver nothing.
-- The gift adds its 10 kg and enables slots once by `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`; an
-  inherited Box retains its weight.
+- The gift adds its 0.001 kg and enables slots once by `MAIN_M00_FLAG_MAGIC_BOX_GRANTED`; an
+  inherited Box recalculates its weight under the same current rule.
 - `CaelumPersistentCharacterState` is the persistent source of ownership. It is saved to
   `PreTravelled` and restored to `Travelled`; the live field and technical marker are
   synchronized from that record.

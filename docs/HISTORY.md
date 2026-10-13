@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Empty Magic Box mass (#229), 2026-10-13
+
+The author requested a one-gram Magic Box, explicitly clarifying that this is
+its empty mass and contents retain the existing reduction. The shared tare is
+now 0.001 kg instead of 10 kg. Capacity, content truncation, ownership, inventory
+and schema are unchanged. Current canonical references and Palomo's bilingual
+reward/help text now match. Earlier release records preserve the former rule.
+Native evidence: assets/validation_5227; 14 baseline and 19 current native checks
+passed, including a real former-tare save recalculated by normal ticks.
+Static validation/build are recorded with the delivery evidence.
+Author acceptance, 2026-10-13: **CA229-01**, originating in **5.2.27 / #229**,
+passed by explicit confirmation that all tests were correct, without
+qualifications. The author authorized PR230 merge and #229 closure. The check
+was removed from pending_test.txt; the release version and tested runtime remain
+unchanged. This confirmation is separate from the recorded native agent checks.
 
 ## 5.2.26 - Rest menu feedback (#227), 2026-10-13
 
@@ -22,7 +38,12 @@ stopping. Unsupported rest remains blocked. Meal support changes invalidate
 pointer presses. Existing x105 acceleration replaces stale x60 labels; time
 safety, recovery cadence and saved state formats are unchanged. Evidence: assets/validation_5226. All 120 native assertions passed, including save/load and finite reserves.
 Real Windows clicks/F/G/T and scaled captures passed; read-only cross-review
-found no blocker. Author check CA227-01 is outstanding.
+found no blocker.
+Author acceptance, 2026-10-13: **CA227-01**, originating in **5.2.26 / #227**,
+passed by explicit confirmation that all tests were correct, without
+qualifications. The author authorized closure/merge; PR228 merged as bebbd3f1
+and #227 closed. The confirmed check was removed from pending_test.txt.
+Release 5.2.26 and the tested runtime remain unchanged.
 This does not retroactively qualify or remove the earlier explicit acceptance.
 
 ## 5.2.25 - Staff dispersion (#222), 2026-10-13

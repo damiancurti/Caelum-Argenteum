@@ -1,6 +1,7 @@
 # Rest serving and feedback - 5.2.26 / #227
 
-GZDoom 4.14.2, Windows 11; baseline 66029634. Author acceptance is pending CA227-01.
+GZDoom 4.14.2, Windows 11; baseline 66029634. CA227-01 passed explicit
+author acceptance on 2026-10-13, without qualifications. PR228 is merged; #227 closed.
 
 ## Findings and final behavior
 

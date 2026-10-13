@@ -1,13 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
 
 5.2.26 - Visible rest results (#227)
 
 The native rest panel now exposes existing acceleration/dining rejection notices.
 The genuine stocked mansion table/chair is covered by native F/G checks; furniture
 positions, serving rules and supplies remain unchanged. Evidence:
-assets/validation_5226. Author retest CA227-01 remains outstanding.
+assets/validation_5226. CA227-01 passed author acceptance on 2026-10-13.
 
 5.2.22 / #215: creator, Journal and NPC reply options display their existing
 controls in parentheses. Dialogue content/order and tutorial progression remain.
@@ -1906,6 +1906,7 @@ explicit acceptance 75 -> 80, 10 kg single box with ItemId/Owner, storage and or
 to the cave. Asking or leaving does not grant another Box; the saves retain their
 contents. The following records document previous revisions; the chapters 13 and 22
 reflect the current implementation and separate what remains to be built.
+The historical 10 kg tare above becomes 0.001 kg in 5.2.27 / #229.
 
 4.33.0r REGISTRATION — RESIDENTS, LEADERSHIP AND EL LOCO Base: 0q. The author completed the
 Bull and approved the rest of the tests. Caella and Argento were left alive but with
@@ -2217,7 +2218,7 @@ account was a test infrastructure and not a canonical stage:
 
 - only that mission record and its objectives are cleared;
 - being in MAP01, the controller initiates the new prologue;
-- the Box already held, its 10 kg, content, slots, money stock and other inventory are not
+- the Box already held, its then-current 10 kg, content, slots, money stock and other inventory are not
   deleted or duplicated;
 - having a Box of an old game does not jump the Voice or the initial dialogue;
 - A new character keeps starting without Box.
@@ -3958,7 +3959,7 @@ By accepting:
 
 General functions confirmed:
 
-- Own weight: 10 kg.
+- Own weight: 0.001 kg (1 gram, #229).
 - Load reduction: apply the current formula that divides the total weight of its content
   by the amount of slots, with the rounding defined by the system.
 - Persistent container by ItemId.
@@ -4445,7 +4446,7 @@ recalled phrase is attributed to Palomo.
 
 28.8. BOX, TAROT AND EXIT
 
-[ ] Palomo delivers a single Box. [ ] The Box weighs 10 kg and applies the current formula
+[ ] Palomo delivers a single Box. [ ] The empty Box weighs 0.001 kg and applies the current formula
 to its contents. [ ] It cannot be released, sold or stored. [ ] El Loco cannot be captured
 without the Box. [ ] The capture grants the card and bonus once. [ ] The essence does not
 disappear if the save fails. [ ] The output is only enabled after capture. [ ] “Todavía no”

@@ -1,14 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.26** — 2026-10-13.
+Documentation version: **5.2.27** — 2026-10-13.
+
+## 5.2.27 - Magic Box weight evidence (#229)
+
+assets/validation_5227 retains the isolated native weight/save probe and result
+record. No art, audio or model changes. Generated test packages, saves and engine
+dependencies remain local under build/issue229.
 
 ## 5.2.26 - Rest feedback validation (#227)
 
 No art, sounds or map assets change. assets/validation_5226 retains the isolated
 native probe/runner and result record for rest key/click dispatch, real mansion
 furniture, safety rejections and visible messages. Runtime/test packages, saves
-and development dependencies stay local under build/issue227. CA227-01 author
-retest of the reported scene remains pending.
+and development dependencies stay local under build/issue227. CA227-01 passed
+author acceptance on 2026-10-13 without qualifications.
 
 ## 5.2.23 - Sewer bag sleep (#219)
 
