@@ -35,4 +35,6 @@ runtime with the same archive basename; identity and live timers are observed.
 The patch adds no saved fields or migrations. Ordinary hub progression, live
 window resizing and author visual judgment remain CA255-01 author checks.
 The adjacent survival-debuff group belongs to separate issue #256; its combined
-layout is not claimed as tested here. No author acceptance has been recorded.
+layout is not claimed as tested here. The author confirmed CA255-01 (5.3.0 / #255) passed on 2026-10-13,
+without qualifications: "Perfecto, queda aprobado". This is separate from
+the isolated agent evidence above. PR262; implementation commit 2a600e86.

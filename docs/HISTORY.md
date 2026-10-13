@@ -8,7 +8,9 @@ Implemented the requested 2x reference rectangles and an independent right-edge
 anchor. The complete icon/caption column shares native HUD scaling and a fit
 cap above existing bars. Drawing reads the same power state; no save migration
 or artwork replacement is needed. Evidence and actual test limits are recorded
-in assets/validation_530/RESULTS.md. CA255-01 is pending, not author-accepted.
+in assets/validation_530/RESULTS.md. CA255-01 (origin 5.3.0 / #255) passed author acceptance on 2026-10-13.
+The author confirmed "Perfecto, queda aprobado", without qualifications.
+Implementation commit: 2a600e86; PR262. Merge/closure are not claimed.
 
 ## 5.2.27 - Empty Magic Box mass (#229), 2026-10-13
 

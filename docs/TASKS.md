@@ -5,7 +5,7 @@ Documentation version: **5.3.0** — 2026-10-13.
 ## 5.3.0 - Power indicators (#255)
 
 Implementation and focused evidence: assets/validation_530/RESULTS.md.
-CA255-01 awaits author visual acceptance. Keep #256's survival presentation and
+CA255-01 passed author acceptance on 2026-10-13. Keep #256's survival presentation and
 #257/#258 behavior separate. The requested V5.3 sequence is #231, #232, #233,
 #234, #235, #236, each with its own branch, commits, tests and PR. The author
 confirmed #233 inclusion and interaction/use-only POI discovery on 2026-10-13.

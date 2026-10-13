@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Seal/Tarot indicators use twice their former reference dimensions and stay
 anchored to the right viewport edge. The whole column fits above the resource
 bars at large native scales. [Evidence](assets/validation_530/RESULTS.md);
-**CA255-01 awaits author visual acceptance.**
+**CA255-01 passed author acceptance on 2026-10-13.**
 
 5.2.27 implements [#229](https://github.com/damiancurti/Caelum-Argenteum/issues/229):
 the empty Magic Box weighs **1 gram (0.001 kg)**. Contents retain the existing

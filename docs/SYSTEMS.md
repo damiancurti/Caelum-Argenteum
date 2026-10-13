@@ -15,7 +15,7 @@ Thus 2x is the uncapped reference target, not a guarantee at every viewport.
 Availability, desaturation, selection and timers still read the existing owners.
 No power activation, saved state, controls or assets change. #256 owns adjacent
 survival debuffs and moving the four resource bars into Character.
-Native/static evidence: assets/validation_530/RESULTS.md. CA255-01 awaits author acceptance.
+Native/static evidence: assets/validation_530/RESULTS.md. CA255-01 passed author acceptance on 2026-10-13.
 
 ## 5.2.27 - One-gram empty Magic Box (#229)
 

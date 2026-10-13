@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.0** — 2026-10-13.
 
-**5.3.0/#255:** enlarged powers; validation_530; CA255-01 pending.
+**5.3.0/#255:** enlarged powers; validation_530; CA255-01 accepted.
 Decisions: TASKS.
 
 **5.2.27/#229 accepted:** empty Box 1 gram; content reduction unchanged.

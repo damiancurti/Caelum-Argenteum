@@ -305,7 +305,15 @@
       "finished_utc": "2026-10-13T22:27:11.1926610Z"
     }
   ],
-  "author_acceptance": "pending CA255-01",
+  "author_acceptance": {
+    "id": "CA255-01",
+    "version": "5.3.0",
+    "issue": 255,
+    "date": "2026-10-13",
+    "result": "passed",
+    "qualifications": "none",
+    "confirmation": "Perfecto, queda aprobado"
+  },
   "runtime_sha256": "1f330939e84aa4573d5c824648efdbc35ca49b9221e4068f8ce1c575004c0b18",
   "static_commands": [
     {
