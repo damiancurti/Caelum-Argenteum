@@ -136,6 +136,7 @@ class CaelumIntroductionMenu : ListMenu
         FullTextDrawn = remaining >= 0;
         lines.Destroy();
         String prompt = CaelumNarrativeArtwork.L(FullTextDrawn ? "CA_INTRO_BEGIN" : "CA_INTRO_REVEAL");
+        prompt=CaelumInputHints.Label(prompt,StringTable.Localize("CA_HINT_ANY",false));
         CaelumNarrativeArtwork.Text(SmallTextFont, Font.CR_GOLD,
             left + (width - SmallTextFont.StringWidth(prompt)) / 2, 552, prompt);
         CaelumPresentation.End();

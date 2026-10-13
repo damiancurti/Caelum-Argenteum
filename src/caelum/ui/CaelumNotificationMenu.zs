@@ -12,7 +12,7 @@ class CaelumNotificationMenu : ListMenu
     {
         int scan=CaelumMenuPointer.KeyScan(108);
         bool available=!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip");
-        return StringTable.Localize("CA_MESSAGES_LINK",false)..(available?" [L]":"");
+        return CaelumInputHints.Label(StringTable.Localize("CA_MESSAGES_LINK",false),available?"L":StringTable.Localize("CA_HINT_MOUSE",false));
     }
 
     override void Init(Menu parent,ListMenuDescriptor desc)
@@ -32,9 +32,9 @@ class CaelumNotificationMenu : ListMenu
     void Layout(bool draw)
     {
         let view=CaelumLiveMenu.Journal();Pointer.Clear();
-        Pointer.Button(view,1,32,326,180,StringTable.Localize("CA_UI_UP",false),Offset>0,false,draw);
-        Pointer.Button(view,2,228,326,180,StringTable.Localize("CA_UI_DOWN",false),Offset+VisibleLines<Lines.Size(),false,draw);
-        Pointer.Button(view,3,424,326,180,StringTable.Localize("CA_UI_BACK",false),true,false,draw);
+        Pointer.Button(view,1,32,326,180,CaelumInputHints.Fixed(StringTable.Localize("CA_UI_UP",false),InputEvent.Key_PgUp),Offset>0,false,draw);
+        Pointer.Button(view,2,228,326,180,CaelumInputHints.Fixed(StringTable.Localize("CA_UI_DOWN",false),InputEvent.Key_PgDn),Offset+VisibleLines<Lines.Size(),false,draw);
+        Pointer.Button(view,3,424,326,180,CaelumInputHints.Fixed(StringTable.Localize("CA_UI_BACK",false),InputEvent.Key_Escape),true,false,draw);
     }
     void Scroll(int amount)
     {Offset=Clamp(Offset+amount,0,Max(0,int(Lines.Size())-VisibleLines));Pointer.Reset();}

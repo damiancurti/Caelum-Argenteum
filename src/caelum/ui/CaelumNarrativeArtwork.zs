@@ -80,14 +80,14 @@ class CaelumNarrativeMessageBox : MessageBoxMenu
 
     override void Drawer()
     {
-        if (!IsCaelumExit) { Super.Drawer(); return; }
+        if (!IsCaelumExit) { Super.Drawer(); DrawKeyHints(); return; }
         CaelumNarrativeArtwork.DrawBackground();
         if (!Farewell)
         {
             // Conserva las opciones, teclas y coordenadas de la pregunta nativa.
             Screen.Dim(0x080D15, 0.65, 0, Screen.GetHeight() / 3,
                 Screen.GetWidth(), Screen.GetHeight() / 3);
-            Super.Drawer();
+            Super.Drawer(); DrawKeyHints();
             return;
         }
         let font = Font.GetFont("CaelumSmall");
@@ -97,6 +97,24 @@ class CaelumNarrativeMessageBox : MessageBoxMenu
         CaelumNarrativeArtwork.Text(font, Font.CR_GOLD,
             (width - font.StringWidth(prompt)) / 2, 569, prompt);
         FarewellDrawn = true;
+    }
+
+    void DrawKeyHints()
+    {
+        if(Farewell)return;
+        if(mMessageMode==0)
+        {
+            for(int row=0;row<2;row++)
+            {
+                String label=StringTable.Localize(row==0?"$TXT_YES":"$TXT_NO");
+                String hint=CaelumInputHints.Label("",row==0?"Y":"N");
+                mMouseRight=Max(mMouseRight,int(destWidth/2+textFont.StringWidth(label..hint)*NotifyFontScale)+10);
+                Screen.DrawText(textFont,Font.CR_GRAY,destWidth/2+textFont.StringWidth(label)*NotifyFontScale,
+                    mMouseY+row*textFont.GetHeight()*NotifyFontScale,hint,
+                    DTA_VIRTUALWIDTH,destWidth,DTA_VIRTUALHEIGHT,destHeight,DTA_KEEPRATIO,true,
+                    DTA_SCALEX,NotifyFontScale,DTA_SCALEY,NotifyFontScale);
+            }
+        }
     }
 
     override void HandleResult(bool result)

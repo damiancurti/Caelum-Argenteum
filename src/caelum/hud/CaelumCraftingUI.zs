@@ -129,16 +129,16 @@ class CaelumCraftingUI : Object
         int mode=browser.Mode;
         for(int i=0;i<3;i++)
         {
-            pointer.Button(view,i+1,48+i*184,112,176,String.Format("%d %s",i+1,L(ModeKey(i))),true,i==mode,draw);
+            pointer.Button(view,i+1,48+i*184,112,176,CaelumInputHints.Context(L(ModeKey(i)),0,49+i),true,i==mode,draw);
             if(draw)view.DrawTexture("graphics/caelum/ui/journal/icons/ca_ui_action_" .. (i==0?"craft":i==1?"repair":"dismantle") .. ".png",52+i*184,113,16,16);
         }
         bool craft=mode==CaelumCraftingBrowser.CRAFT, selected=browser.SelectedIndex>=0;
-        pointer.Button(view,10,44,146,182,craft?L(view.GetCraftingFilterKey(user.CraftingRecipeFilter)).." [G]":L("CA_CRAFT_BROWSER_OWNED"),craft,false,draw);
+        pointer.Button(view,10,44,146,182,craft?CaelumInputHints.Context(L(view.GetCraftingFilterKey(user.CraftingRecipeFilter)),0,103):L("CA_CRAFT_BROWSER_OWNED"),craft,false,draw);
         int start=ListStart(browser);
         for(int row=0;row<4 && start+row<browser.Entries.Size();row++)
-            pointer.Button(view,100+start+row,44,170+row*25,182,browser.Labels[start+row],true,start+row==browser.SelectedIndex,draw);
-        pointer.Button(view,15,44,270,36,"<",selected,false,draw);
-        pointer.Button(view,16,190,270,36,">",selected,false,draw);
+            pointer.Button(view,100+start+row,44,170+row*25,182,CaelumInputHints.Navigation(browser.Labels[start+row],true),true,start+row==browser.SelectedIndex,draw);
+        pointer.Button(view,15,44,270,64,CaelumInputHints.Context("<",InputEvent.Key_LeftArrow),selected,false,draw);
+        pointer.Button(view,16,162,270,64,CaelumInputHints.Context(">",InputEvent.Key_RightArrow),selected,false,draw);
         if(draw)view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,135,273,String.Format("%d / %d",browser.SelectedIndex+1,browser.Entries.Size()));
         if(selected)
         {
@@ -148,22 +148,22 @@ class CaelumCraftingUI : Object
                 bool batch=kind==CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING || kind==CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
                 bool sized=!batch && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
                     && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_SEAL && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
-                pointer.Button(view,11,244,178,72,String.Format("T%d [Space]",user.CraftingSelectionTier),
+                pointer.Button(view,11,244,178,72,CaelumInputHints.Context(String.Format("T%d",user.CraftingSelectionTier),InputEvent.Key_Space),
                     !CaelumCraftingRules.IsSingleTierRecipe(user.CraftingSelectionRecipe) && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING,false,draw);
-                pointer.Button(view,12,320,178,112,L(CaelumDisplayNames.GetEquipmentSizeKey(CaelumCraftingRules.GetRecipeEquipmentSize(
-                    user.CraftingSelectionRecipe,user.CraftingSelectionSize))).." [R]",sized,false,draw);
-                pointer.Button(view,13,436,178,68,String.Format("x%d [B]",user.CraftingProcessingBatchMultiplier),batch,false,draw);
+                pointer.Button(view,12,320,178,112,CaelumInputHints.Context(L(CaelumDisplayNames.GetEquipmentSizeKey(CaelumCraftingRules.GetRecipeEquipmentSize(
+                    user.CraftingSelectionRecipe,user.CraftingSelectionSize))),0,114),sized,false,draw);
+                pointer.Button(view,13,436,178,68,CaelumInputHints.Context(String.Format("x%d",user.CraftingProcessingBatchMultiplier),0,98),batch,false,draw);
             }
             if(mode!=CaelumCraftingBrowser.DISMANTLE)
-                pointer.Button(view,14,508,178,84,String.Format("%d%% [X]",user.CraftingEfficiencyPercent),true,false,draw);
-            pointer.Button(view,20,590,218,18,"^",true,false,draw);
-            pointer.Button(view,21,590,250,18,"v",true,false,draw);
+                pointer.Button(view,14,508,178,84,CaelumInputHints.Context(String.Format("%d%%",user.CraftingEfficiencyPercent),0,120),true,false,draw);
+            pointer.Button(view,20,552,218,56,CaelumInputHints.Context("^",InputEvent.Key_UpArrow),true,false,draw);
+            pointer.Button(view,21,552,250,56,CaelumInputHints.Context("v",InputEvent.Key_DownArrow),true,false,draw);
         }
-        pointer.Button(view,17,44,318,112,L(ModeKey(mode)).." [E]",CanConfirm(user,browser),false,draw);
-        pointer.Button(view,18,160,318,120,L("CA_UI_CANCEL_TASK"),user.CraftingTaskActive,false,draw);
-        pointer.Button(view,22,284,318,116,L("CA_UI_TIME_SKIP"),true,false,draw);
-        pointer.Button(view,23,404,318,88,"x60 [T]",user.CraftingMenuOpen,false,draw);
-        pointer.Button(view,19,496,318,96,L("CA_UI_BACK"),true,false,draw);
+        pointer.Button(view,17,44,318,112,CaelumInputHints.Context(L(ModeKey(mode)),InputEvent.Key_Enter),CanConfirm(user,browser),false,draw);
+        pointer.Button(view,18,160,318,120,CaelumInputHints.Context(L("CA_UI_CANCEL_TASK"),0,99),user.CraftingTaskActive,false,draw);
+        pointer.Button(view,22,284,318,116,CaelumInputHints.Bound(L("CA_UI_TIME_SKIP"),"ca_time_skip"),true,false,draw);
+        pointer.Button(view,23,404,318,88,CaelumInputHints.Context("x60",0,116),user.CraftingMenuOpen,false,draw);
+        pointer.Button(view,19,496,318,96,CaelumInputHints.BoundOrFallback(L("CA_UI_BACK"),"ca_journal_toggle",InputEvent.Key_Tab),true,false,draw);
     }
     static ui void Draw(CaelumJournalOverlay view,CaelumPlayer user)
     {
@@ -186,7 +186,7 @@ class CaelumCraftingUI : Object
                     L(CaelumDisplayNames.GetEquipmentSizeKey(browser.Size)),browser.Weight));
             String details=craft?Blueprint(view,user):Materials(browser);
             if(!craft && browser.Essence>=0 && browser.Essence<CaelumConstants.ESSENCE_TYPE_COUNT)details=L(CaelumNotifications.EssenceKey(browser.Essence)).."\n"..details;
-            Paragraph(view,details,244,220,330,5,"ca_journal_craft_scroll");
+            Paragraph(view,details,244,220,300,5,"ca_journal_craft_scroll");
         }
         else Paragraph(view,L(mode==CaelumCraftingBrowser.CRAFT?"CA_CRAFT_BROWSER_EMPTY_RECIPES":"CA_CRAFT_BROWSER_EMPTY_WEAPONS"),244,178,330,5,"ca_journal_craft_scroll");
         let statusLines=view.SmallFont.BreakLines(Status(view,user,browser),544);

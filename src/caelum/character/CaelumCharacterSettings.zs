@@ -24,6 +24,7 @@ class CaelumCharacterSettings : StaticEventHandler
         CaelumPlayerPreferencesMenu.Filter(OptionMenuDescriptor(MenuDescriptor.GetDescriptor("NewPlayerMenu")));
         HideLegacyControlSection();
         CaelumControlMenus.Setup();
+        CaelumNativeMenuHints.Install();
         let legacy = MenuDescriptor.GetDescriptor("PlayerMenu");
         if (legacy != null) legacy.mClass = "CaelumPlayerPreferencesRedirect";
         MenusReady = true;
@@ -104,7 +105,7 @@ class CaelumCharacterSettings : StaticEventHandler
 // Se conserva nombre de red, equipo y preferencias de manejo nativas. Raza,
 // profesión y sexo pertenecen al creador; colores/skins sin recursos propios
 // no se presentan como opciones funcionales de aspecto.
-class CaelumPlayerPreferencesMenu : OptionMenu
+class CaelumPlayerPreferencesMenu : CaelumHintOptionMenu
 {
     static void Filter(OptionMenuDescriptor desc)
     {

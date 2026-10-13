@@ -27,7 +27,15 @@ class CaelumLiveMenuControls : Object ui
     void Button(String key,int scan=0,int character=0,String letter="",double width=92,bool enabled=true)
     {
         Scans.Push(scan);Characters.Push(character);Keys.Push(letter);
-        OwnerMenu.Pointer.Button(OwnerMenu.Journal(),Scans.Size(),NextX,RowY,width,StringTable.Localize(key,false),enabled,false,Drawing);
+        String label=StringTable.Localize(key,false);
+        if(key=="CA_UI_SKIP")label=CaelumInputHints.Bound(label,"ca_time_skip");
+        else
+        {
+            String allowed=key=="CA_UI_JOURNAL" || (key=="CA_UI_BACK" && OwnerMenu.Context>=1 && OwnerMenu.Context<=7
+                && !(OwnerMenu.Context==5 && OwnerMenu.Journal().IsQuestDetailOpen()))?"ca_journal_toggle":"";
+            label=allowed!=""?CaelumInputHints.BoundOrFallback(label,allowed,scan):CaelumInputHints.Context(label,scan,character);
+        }
+        OwnerMenu.Pointer.Button(OwnerMenu.Journal(),Scans.Size(),NextX,RowY,width,label,enabled,false,Drawing);
         NextX+=width+4;
     }
     void PrevNext()

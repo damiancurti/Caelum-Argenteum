@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+## 5.2.22 - Current menu controls (#215), 2026-10-12
+
+After the bar enlargement, the author requested control hints in parentheses
+on menu options. They chose existing controls rather than new shortcuts and
+explicitly included the engine's menus. Shared formatting now covers Caelum
+panels, creator/appearance, native options/search/save/load, NPC replies and
+story/confirmation prompts. Dynamic bindings respect dispatch precedence;
+blocked contextual keys show Click and existing fallbacks remain visible.
+
+Native descriptors are temporarily decorated for drawing; search strings and
+saved-game titles are not changed. Specialized menu classes retain native
+input behavior. This patch adds no binding, balance, art or save-schema change.
+It follows #213/PR214 (bars) and #216/PR217 (visible gold) as a separate patch.
+Isolated native evidence: assets/validation_5222. CA215-01 author acceptance
+remains pending, alongside CA213-01 and CA216-01.
+
+Static validation and normal packaging pass; all 16,053 official runtime
+members match the final tested package. The selected native runs record 95
+passing assertions, with inspected English/Spanish captures at 1280x720 and
+960x720. Temporary keep-awake was released without changing the power plan.
+Evidence and physical-input limits: assets/validation_5222/RESULTS.md.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 

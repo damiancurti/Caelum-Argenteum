@@ -96,7 +96,7 @@ class CaelumMenuPointer : Object ui
         Vector2 origin,size;
         [origin,size]=Screen.VirtualToRealCoords((x,y),(width,18),(640,360),false,false);
         Screen.Dim(hover?0x806632:0x101923,hover?0.85:0.75,int(origin.X),int(origin.Y),int(size.X),int(size.Y));
-        view.DrawCenteredText(view.SmallFont,!enabled?Font.CR_DARKGRAY:hover || selected?Font.CR_GOLD:Font.CR_WHITE,
-            x+width/2,y+3,CaelumCraftingUI.Fit(view.SmallFont,label,int(width)-8));
+        CaelumInputHints.Draw(view.SmallFont,!enabled?Font.CR_DARKGRAY:hover || selected?Font.CR_GOLD:Font.CR_WHITE,
+            x+width/2,y+3,label,width-8);
     }
 }

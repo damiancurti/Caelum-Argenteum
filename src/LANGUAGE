@@ -5266,19 +5266,19 @@ CA_ONBOARD_PALOMO_SCAM = "¿Cambió dos kilos de oro por un poco de soga y cuero
 
 // #184: controles visibles compartidos por los paneles con cursor.
 [enu default]
-CA_UI_CANCEL_TASK = "Cancel task [C]";
-CA_UI_TIME_SKIP = "Time skip [Y]";
-CA_UI_BACK = "Back [Q]";
-CA_UI_SKIP_START = "Skip [Enter]";
-CA_UI_SKIP_FORECAST = "Task estimate [R]";
-CA_UI_SKIP_STOP = "Stop [Q]";
+CA_UI_CANCEL_TASK = "Cancel task";
+CA_UI_TIME_SKIP = "Time skip";
+CA_UI_BACK = "Back";
+CA_UI_SKIP_START = "Skip";
+CA_UI_SKIP_FORECAST = "Task estimate";
+CA_UI_SKIP_STOP = "Stop";
 [es]
-CA_UI_CANCEL_TASK = "Cancelar tarea [C]";
-CA_UI_TIME_SKIP = "Salto temporal [Y]";
-CA_UI_BACK = "Volver [Q]";
-CA_UI_SKIP_START = "Saltar [Intro]";
-CA_UI_SKIP_FORECAST = "Estimar tarea [R]";
-CA_UI_SKIP_STOP = "Interrumpir [Q]";
+CA_UI_CANCEL_TASK = "Cancelar tarea";
+CA_UI_TIME_SKIP = "Salto temporal";
+CA_UI_BACK = "Volver";
+CA_UI_SKIP_START = "Saltar";
+CA_UI_SKIP_FORECAST = "Estimar tarea";
+CA_UI_SKIP_STOP = "Interrumpir";
 
 [enu default]
 CA_UI_PREVIOUS = "Previous";
@@ -5492,3 +5492,36 @@ CA_MESSAGES_LINK = "Avisos";
 CA_MESSAGES_HELP = "Últimos 20 avisos / rueda o flechas para desplazar";
 CA_MESSAGES_EMPTY = "Este personaje aún no tiene avisos.";
 CA_MESSAGES_MORE = "Más avisos: {bind:ca_journal_toggle} > %s";
+
+// Current keyboard controls; no new shortcut assignments.
+[enu default]
+CA_HINT_LABEL = "%s (%s)";
+CA_HINT_UP = "Up";
+CA_HINT_DOWN = "Down";
+CA_HINT_LEFT = "Left";
+CA_HINT_RIGHT = "Right";
+CA_HINT_PGUP = "PgUp";
+CA_HINT_PGDN = "PgDn";
+CA_HINT_BACKSPACE = "Backspace";
+CA_HINT_SPACE = "Space";
+CA_HINT_MOUSE = "Click";
+CA_HINT_ANY = "Any key";
+CA_HINT_ESC = "Esc";
+CA_HINT_ENTER = "Enter";
+CA_HINT_TAB = "Tab";
+
+[es]
+CA_HINT_LABEL = "%s (%s)";
+CA_HINT_UP = "Arriba";
+CA_HINT_DOWN = "Abajo";
+CA_HINT_LEFT = "Izq.";
+CA_HINT_RIGHT = "Der.";
+CA_HINT_PGUP = "RePág";
+CA_HINT_PGDN = "AvPág";
+CA_HINT_BACKSPACE = "Retroceso";
+CA_HINT_SPACE = "Espacio";
+CA_HINT_MOUSE = "Clic";
+CA_HINT_ANY = "Cualquier tecla";
+CA_HINT_ESC = "Esc";
+CA_HINT_ENTER = "Enter";
+CA_HINT_TAB = "Tab";

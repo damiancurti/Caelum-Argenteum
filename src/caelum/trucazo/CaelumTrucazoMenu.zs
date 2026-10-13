@@ -200,8 +200,9 @@ class CaelumTrucazoMenu : ListMenu
     static double UITop() {return (Screen.GetHeight()-600*UIScale())/2;}
     static void Text(double x,double y,String value,int color=Font.CR_WHITE)
     {
+        double fit=x>=566?Min(1.0,216.0/Max(1,Font.GetFont("CaelumSmall").StringWidth(value))):1.0;
         Screen.DrawText(Font.GetFont("CaelumSmall"),color,UILeft()+x*UIScale(),UITop()+y*UIScale(),value,
-            DTA_SCALEX,UIScale(),DTA_SCALEY,UIScale(),DTA_SHADOW,true);
+            DTA_SCALEX,UIScale()*fit,DTA_SCALEY,UIScale()*fit,DTA_SHADOW,true);
     }
     static void Wrap(double x,double y,double width,String value,int color=Font.CR_WHITE)
     {
@@ -285,7 +286,7 @@ class CaelumTrucazoMenu : ListMenu
             {
                 double x=22+i*105;
                 Card(own.Hand[i],x,390,92,120,own.Used[i]?0.24:1);
-                Text(x+37,513,String.Format("%d",i+1),i==CardCursor?Font.CR_GOLD:Font.CR_GRAY);
+                Text(x+37,513,String.Format("(%d)",i+1),i==CardCursor?Font.CR_GOLD:Font.CR_GRAY);
                 if(i==CardCursor && !own.Used[i])Text(x+12,377,L("CA_TC_SELECTED"),Font.CR_GOLD);
             }
             Wrap(22,537,525,CaelumTrucazoRules.CardName(own.Hand[CardCursor]),Font.CR_GOLD);
@@ -293,7 +294,7 @@ class CaelumTrucazoMenu : ListMenu
                 Wrap(22,560,525,String.Format(L("CA_TC_DAMAGE"),own.Points,own.LastDamage,other.Points,other.LastDamage));
         }
         for(int i=0;i<int(Operations.Size());i++)
-            Text(566,114+i*27,(Focus==i?"> ":"  ")..Labels[i],Focus==i?Font.CR_GOLD:Font.CR_WHITE);
+            Text(566,114+i*27,(Focus==i?"> ":"  ")..CaelumInputHints.Fixed(Labels[i],InputEvent.Key_Enter),Focus==i?Font.CR_GOLD:Font.CR_WHITE);
         if(Details==0 && !ConfirmForfeit && match.HandNumber>0)
         {
             int first=Max(0,match.EventCount-3);

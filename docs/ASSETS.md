@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+## 5.2.22 - Menu control captions (#215)
+
+No artwork, fonts, sounds or provenance change. Parenthesized bilingual text
+uses existing fonts and native menu transforms. Custom button captions fit
+complete hints within their bounds; creator previews and card images remain.
+Native visual evidence and deterministic fixtures: assets/validation_5222.
+CA215-01 author visual/input acceptance remains pending.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 

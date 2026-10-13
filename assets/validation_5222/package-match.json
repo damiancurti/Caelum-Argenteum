@@ -1,0 +1,9 @@
+{
+  "official_sha256": "8d484e908dd30ce45d7cb3545dc506af0d4c1f7e99f76599e7ac911e9f7e5127",
+  "tested_sha256": "6be2878500ebb7a187831cd8416f4e2dde06b8d1289076757f0991a28ee7c6cb",
+  "official_members": 16053,
+  "tested_members": 16053,
+  "only_official": [],
+  "only_tested": [],
+  "different": []
+}
