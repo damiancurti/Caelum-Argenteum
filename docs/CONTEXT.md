@@ -2,10 +2,10 @@
 
 Documentation version: **5.2.27** — 2026-10-13.
 
-**5.2.27/#229:** empty Box 1 gram; content reduction unchanged. Evidence:
-validation_5227; CA229-01 pending.
-**5.2.26/#227:** visible rest notices; chair/bag provisions; x105 captions.
-PR228, validation_5226; CA227-01 pending.
+**5.2.27/#229 accepted:** empty Box 1 gram; content reduction unchanged.
+validation_5227; CA229-01 passed 2026-10-13; PR230.
+**5.2.26/#227 accepted:** rest notices, chair/bag provisions, x105 captions.
+PR228 merged; validation_5226; CA227-01 passed 2026-10-13.
 **5.2.20-25 accepted:** six checks passed 2026-10-13; PR214/217/218/
 221/223/224 merged and issues closed. #225/PR226 repaired LF index hashes.
 #211 accepted/merged; prior acceptance records remain in HISTORY.

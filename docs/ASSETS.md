@@ -13,8 +13,8 @@ dependencies remain local under build/issue229.
 No art, sounds or map assets change. assets/validation_5226 retains the isolated
 native probe/runner and result record for rest key/click dispatch, real mansion
 furniture, safety rejections and visible messages. Runtime/test packages, saves
-and development dependencies stay local under build/issue227. CA227-01 author
-retest of the reported scene remains pending.
+and development dependencies stay local under build/issue227. CA227-01 passed
+author acceptance on 2026-10-13 without qualifications.
 
 ## 5.2.23 - Sewer bag sleep (#219)
 

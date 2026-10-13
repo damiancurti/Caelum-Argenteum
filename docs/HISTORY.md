@@ -12,8 +12,11 @@ reward/help text now match. Earlier release records preserve the former rule.
 Native evidence: assets/validation_5227; 14 baseline and 19 current native checks
 passed, including a real former-tare save recalculated by normal ticks.
 Static validation/build are recorded with the delivery evidence.
-Author check CA229-01 is outstanding;
-CA227-01 also remains pending for the rest correction delivered in PR228.
+Author acceptance, 2026-10-13: **CA229-01**, originating in **5.2.27 / #229**,
+passed by explicit confirmation that all tests were correct, without
+qualifications. The author authorized PR230 merge and #229 closure. The check
+was removed from pending_test.txt; the release version and tested runtime remain
+unchanged. This confirmation is separate from the recorded native agent checks.
 
 ## 5.2.26 - Rest menu feedback (#227), 2026-10-13
 
@@ -35,7 +38,12 @@ stopping. Unsupported rest remains blocked. Meal support changes invalidate
 pointer presses. Existing x105 acceleration replaces stale x60 labels; time
 safety, recovery cadence and saved state formats are unchanged. Evidence: assets/validation_5226. All 120 native assertions passed, including save/load and finite reserves.
 Real Windows clicks/F/G/T and scaled captures passed; read-only cross-review
-found no blocker. Author check CA227-01 is outstanding.
+found no blocker.
+Author acceptance, 2026-10-13: **CA227-01**, originating in **5.2.26 / #227**,
+passed by explicit confirmation that all tests were correct, without
+qualifications. The author authorized closure/merge; PR228 merged as bebbd3f1
+and #227 closed. The confirmed check was removed from pending_test.txt.
+Release 5.2.26 and the tested runtime remain unchanged.
 This does not retroactively qualify or remove the earlier explicit acceptance.
 
 ## 5.2.25 - Staff dispersion (#222), 2026-10-13

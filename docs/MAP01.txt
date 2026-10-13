@@ -7,7 +7,7 @@ Documentation version: **5.2.27** — 2026-10-13.
 The native rest panel now exposes existing acceleration/dining rejection notices.
 The genuine stocked mansion table/chair is covered by native F/G checks; furniture
 positions, serving rules and supplies remain unchanged. Evidence:
-assets/validation_5226. Author retest CA227-01 remains outstanding.
+assets/validation_5226. CA227-01 passed author acceptance on 2026-10-13.
 
 5.2.22 / #215: creator, Journal and NPC reply options display their existing
 controls in parentheses. Dialogue content/order and tutorial progression remain.

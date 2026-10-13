@@ -38,7 +38,9 @@ labels and `-Fixture probe -Map MAP02`:
 
 Generated packages, logs, saves, engine and development IWAD remain local under
 build/issue229; only reproducible fixtures and results are tracked. These are
-isolated agent checks, not author acceptance. CA229-01 remains in pending_test.txt.
+isolated agent checks. Separately, the author explicitly confirmed CA229-01
+passed on 2026-10-13 without qualifications and authorized PR230 merge/#229
+closure. The confirmed check was removed from pending_test.txt.
 
 Static validation and normal build passed. All 16,053 packaged members match
 the final native-tested package exactly. The temporary keep-awake request was

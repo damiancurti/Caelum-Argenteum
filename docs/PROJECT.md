@@ -7,7 +7,8 @@ Documentation version: **5.2.27** — 2026-10-13.
 Author decision: the empty Box weighs 1 gram; contents retain their reduction.
 The shared tare changes to 0.001 kg, with bilingual Palomo text and current rules
 synchronized. Slots, transactions, rounding and saved inventory remain unchanged.
-Evidence: assets/validation_5227; author check CA229-01 pending.
+Evidence: assets/validation_5227. CA229-01 passed author acceptance on
+2026-10-13 without qualifications; PR230 merge and #229 closure authorized.
 
 ## 5.2.26 - Rest controls feedback (#227)
 
@@ -18,9 +19,9 @@ shows its latest notification and labels existing acceleration x105. The reporte
 MAP02 chair has no table; the author approved serving carried/Box provisions
 from both chairs and sleeping bags. Existing portions, native recovery, time
 safety and table priority remain.
-Evidence: assets/validation_5226. CA227-01 remains pending: the exact reported
-blocked activity must be retried with its reason visible; isolated success is
-not author acceptance or proof of the author's specific blocker.
+Evidence: assets/validation_5226. CA227-01 passed explicit author acceptance
+on 2026-10-13 without qualifications, separately from the isolated checks.
+PR228 is merged and #227 closed.
 
 ## 5.2.25 - Magical staff precision (#222)
 

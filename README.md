@@ -13,15 +13,15 @@ it, then rebuild with `run_dev.bat` as described below.
 the empty Magic Box weighs **1 gram (0.001 kg)**. Contents retain the existing
 capacity-based reduction and gram truncation. Palomo's bilingual reward/help
 text matches the new empty mass. Native evidence: [validation_5227](assets/validation_5227/RESULTS.md).
-Author inventory check CA229-01 remains pending alongside CA227-01.
+Author checks CA229-01 and CA227-01 passed on 2026-10-13, without qualifications.
 
 5.2.26 addresses [#227](https://github.com/damiancurti/Caelum-Argenteum/issues/227):
 the rest menu now shows action feedback that was hidden while menus were open.
 F/G and Eat/Drink now use owned provisions from chairs and sleeping bags,
 as requested; acceleration labels correctly say **x105**. Existing time safety
 and finite consumption remain. Native input/scene
-checks: [evidence](assets/validation_5226/RESULTS.md). The author's original
-bag/chair failure needs a retest with its reason visible: **CA227-01 pending**.
+checks: [evidence](assets/validation_5226/RESULTS.md). **CA227-01 passed author
+acceptance on 2026-10-13**; PR228 is merged and #227 is closed.
 
 5.2.25 implements [#222](https://github.com/damiancurti/Caelum-Argenteum/issues/222):
 the magical staff now shares the statuette's **2-20 degree** base dispersion,
@@ -59,7 +59,7 @@ Native HUD scaling remains adjustable; measured viewport limits prevent clipping
 CA213-01 author acceptance, passed 2026-10-13. All six checks for releases
 5.2.20-5.2.25 passed without qualifications; merges and issue closures are
 complete. Their test queue was cleared at acceptance; [pending_test.txt](pending_test.txt)
-now tracks the separate #227 retest.
+is empty after acceptance of the subsequent #227 and #229 checks.
 
 5.2.19 implements [#211](https://github.com/damiancurti/Caelum-Argenteum/issues/211):
 eligible horizontal impacts subtract **150% of the recipient's landing speed
