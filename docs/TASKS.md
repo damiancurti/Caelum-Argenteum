@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.0** — 2026-10-13.
+Documentation version: **5.3.1** — 2026-10-13.
+
+## 5.3.1 - Survival and combat presentation (#256)
+
+Implemented Character resources, current evasion/criticals and mean elemental
+resistance. Author decisions: unsupported category = Not applicable; fists use
+their real 0% critical; resistance excludes Toughness; HUD columns ordered
+Load/Lucidity/Health and Adrenaline/Anima/Air. Native evidence is collected in
+assets/validation_531; CA256-01 passed author acceptance on 2026-10-13. No #257/#258 behavior is included.
+For later #232/#234, rooms/towers become known on entry and services on use;
+the author approved #233 as a separate delivery required by #236.
 
 ## 5.3.0 - Power indicators (#255)
 

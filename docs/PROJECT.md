@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.0** — 2026-10-13.
+Documentation version: **5.3.1** — 2026-10-13.
+
+## 5.3.1 - Character survival, chances and resistances (#256)
+
+Character owns Hunger/Thirst/Sleep/Exposure, all attributes, Tarot bonus and
+live combat chances. Author-requested elemental resistance is the four-region
+mean, expressed as 100% minus retained damage; Toughness is excluded.
+HUD columns are Load/Lucidity/Health and Adrenaline/Anima/Air. Compact adverse
+states remain beside powers, with bounded bilingual transition notices.
+Evidence: assets/validation_531/RESULTS.md; CA256-01 passed author acceptance on 2026-10-13.
+The remaining requested issues retain separate branches, commits and PRs.
 
 ## 5.3.0 - Power HUD layout (#255)
 

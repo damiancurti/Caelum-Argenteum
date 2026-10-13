@@ -154,6 +154,24 @@ class CaelumPlayerPresentation : Object play
             || user.HUDActiveWeaponEssenceType != activeEssenceType
             || user.HUDActiveWeaponItemId != activeItemId;
 
+        // Los puños y el flujo utilitario no tienen tirada de crítico.
+        bool magical = hasActiveWeapon && user.WeaponModel.IsMagicalType(activeType);
+        bool utility = hasActiveWeapon && activeType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
+        bool bolas = hasActiveWeapon && activeType == CaelumConstants.WEAPON_TYPE_BOLAS;
+        user.HUDPhysicalCriticalApplies = !magical && !utility && !bolas;
+        user.HUDMagicalCriticalApplies = magical || utility;
+        user.HUDPhysicalCriticalChance = hasActiveWeapon && user.HUDPhysicalCriticalApplies
+            ? user.PhysicalCriticalChanceFor(CaelumCraftingRules.GetCatalogueWeaponForPlayableType(activeType),
+                user.IsRangedWeaponType(activeType)) : 0;
+        user.HUDMagicalCriticalChance = magical ? user.MagicalCriticalChanceFor(activeType) : 0;
+        // Media corporal solicitada: misma absorción racial/equipada, sin atacante hipotético.
+        user.HUDMagicalDamageFactor = 0;
+        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
+        {
+            user.HUDMagicalDamageFactor += 1 - user.GetArmorDefensePercent(slot, true) / 100;
+        }
+        user.HUDMagicalDamageFactor /= CaelumConstants.ARMOR_SLOT_COUNT;
+
         user.HUDHasActiveWeapon = hasActiveWeapon;
         user.HUDActiveWeaponType = activeType;
         user.HUDActiveWeaponTier = activeTier;

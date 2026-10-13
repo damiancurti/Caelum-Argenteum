@@ -13,6 +13,13 @@ class CaelumAttackRules : Object
     const THRUST_IMPACT = 0.80;
     const SWING_IMPACT = 0.50;
 
+    static clearscope double CriticalChance(double baseChance, double derivedChance,
+        double posture, double personality)
+    {
+        return Clamp((baseChance + Max(0.0, derivedChance
+            - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT)) * posture * personality, 0.0, 100.0);
+    }
+
     static bool IsThrust(int kind, bool secondary)
     {
         return (!secondary && kind == CaelumConstants.WEAPON_TYPE_DAGGER)

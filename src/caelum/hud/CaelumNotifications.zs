@@ -6,10 +6,14 @@ class CaelumNotificationInbox : Inventory
     int Count;
     String Text[LIMIT];
     int RemainingTics[LIMIT];
+    int SurvivalCategory[LIMIT];
     String ExtractionText;
     int ExtractionRemainingTics;
     int HistoryRevision, HistoryCount;
     String HistoryText[LIMIT];
+    // Revisión aditiva: importar el estado presente una vez, sin repetir avisos antiguos.
+    int SurvivalRevision;
+    int SurvivalStates[4];
 
     Default
     {
@@ -29,10 +33,12 @@ class CaelumNotificationInbox : Inventory
         {
             Text[i] = Text[i + 1];
             RemainingTics[i] = RemainingTics[i + 1];
+            SurvivalCategory[i] = SurvivalCategory[i + 1];
         }
         Count--;
         Text[Count] = "";
         RemainingTics[Count] = 0;
+        SurvivalCategory[Count] = 0;
     }
 
     void Add(String message, int duration)
@@ -42,7 +48,19 @@ class CaelumNotificationInbox : Inventory
         if (Count == LIMIT) RemoveAt(0);
         Text[Count] = message;
         RemainingTics[Count] = duration;
+        SurvivalCategory[Count] = 0;
         Count++;
+    }
+
+    void AddSurvival(int resource, String message, int duration)
+    {
+        // Un solo aviso vivo por recurso. Cambiar de estado actualiza el texto
+        // sin renovar su reloj ni volcar oscilaciones rápidas en el historial.
+        for (int i = 0; i < Count; i++)
+            if (SurvivalCategory[i] == resource + 1)
+            { Text[i] = message; return; }
+        Add(message, duration);
+        SurvivalCategory[Count - 1] = resource + 1;
     }
 
     override void Tick()
@@ -100,6 +118,35 @@ class CaelumNotifications : Object
         if (message == "") return;
         let inbox = Inbox(recipient);
         if (inbox != null) inbox.Add(message, Duration(recipient));
+    }
+
+    static play void Survival(CaelumPlayer user)
+    {
+        if (user == null || !user.CharacterCreationComplete || user.health <= 0) return;
+        let inbox = Inbox(user);
+        if (inbox == null) return;
+        let record = CaelumPersistentCharacterState(user.FindInventory("CaelumPersistentCharacterState"));
+        let thermal = record != null ? record.ThermalState : null;
+        for (int resource = 0; resource < 4; resource++)
+        {
+            int state = resource < 3 ? CaelumSurvivalView.State(user, resource)
+                : thermal != null ? thermal.Severity * (thermal.Exposure < 0 ? -1 : 1) : 0;
+            int previous = inbox.SurvivalStates[resource];
+            inbox.SurvivalStates[resource] = state;
+            if (inbox.SurvivalRevision < 1 || state == previous) continue;
+            String key;
+            if (resource == 0) key = state == 0 ? "CA_SURVIVAL_HUNGER_RECOVERED" : "CA_SURVIVAL_HUNGER_WARNING";
+            else if (resource == 1) key = state == 0 ? "CA_SURVIVAL_THIRST_RECOVERED" : "CA_SURVIVAL_THIRST_WARNING";
+            else if (resource == 2) key = state == 0 ? "CA_SURVIVAL_SLEEP_RECOVERED" : "CA_SURVIVAL_SLEEP_WARNING";
+            else key = state == 0 ? "CA_SURVIVAL_THERMAL_RECOVERED"
+                : state < 0 ? "CA_SURVIVAL_COLD_WARNING" : "CA_SURVIVAL_HEAT_WARNING";
+            String message = StringTable.Localize(key, false);
+            if (state != 0)
+                message = StringTable.Localize(resource < 3 ? CaelumSurvivalView.StateKey(resource, state)
+                    : CaelumThermalRules.StateKey(thermal.Exposure, thermal.Toughness), false) .. ": " .. message;
+            inbox.AddSurvival(resource, message, Duration(user));
+        }
+        inbox.SurvivalRevision = 1;
     }
 
     static play void Extracted(Actor recipient, int material)

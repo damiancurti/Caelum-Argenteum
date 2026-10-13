@@ -1377,30 +1377,79 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawCharacterPage(CaelumPlayer localPlayer)
     {
-        if (localPlayer.Attributes == null) { return; }
+        DrawTextLine(SmallFont, Font.CR_CYAN, 416, 310,
+            StringTable.Localize("CA_CHARACTER_THERMAL", false));
+        if (ThermalDetailsOpen) { DrawThermalPage(localPlayer); return; }
+        if (localPlayer.Attributes == null) return;
         CaelumAttributes values = localPlayer.Attributes;
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 132.0,
-            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
-                StringTable.Localize("CA_ATTRIBUTE_STRENGTH", false), values.Strength,
-                StringTable.Localize("CA_ATTRIBUTE_TOUGHNESS", false), values.Toughness,
-                StringTable.Localize("CA_ATTRIBUTE_CONSTITUTION", false), values.Constitution));
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 164.0,
-            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
-                StringTable.Localize("CA_ATTRIBUTE_AGILITY", false), values.Agility,
-                StringTable.Localize("CA_ATTRIBUTE_DEXTERITY", false), values.Dexterity,
-                StringTable.Localize("CA_ATTRIBUTE_RESILIENCE", false), values.Resilience));
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 196.0,
-            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
-                StringTable.Localize("CA_ATTRIBUTE_CHARISMA", false), values.Charisma,
-                StringTable.Localize("CA_ATTRIBUTE_EMPATHY", false), values.Empathy,
-                StringTable.Localize("CA_ATTRIBUTE_ELOQUENCE", false), values.Eloquence));
-        DrawTextLine(TextFont, Font.CR_WHITE, 56.0, 228.0,
-            String.Format("%s: %.2f | %s: %.2f | %s: %.2f",
-                StringTable.Localize("CA_ATTRIBUTE_INTELLIGENCE", false), values.Intelligence,
-                StringTable.Localize("CA_ATTRIBUTE_PATIENCE", false), values.Patience,
-                StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
-        DrawTextLine(SmallFont, Font.CR_GOLD, 56.0, 270.0,
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_STRENGTH", false), values.Strength));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_TOUGHNESS", false), values.Toughness));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_CONSTITUTION", false), values.Constitution));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_AGILITY", false), values.Agility));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_DEXTERITY", false), values.Dexterity));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_RESILIENCE", false), values.Resilience));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_CHARISMA", false), values.Charisma));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_EMPATHY", false), values.Empathy));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_ELOQUENCE", false), values.Eloquence));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_INTELLIGENCE", false), values.Intelligence));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_PATIENCE", false), values.Patience));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 56, 207,
             String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 230,
+            String.Format("%s: %.2f%%", StringTable.Localize("CA_CHARACTER_EVASION", false),
+                Clamp(localPlayer.EffectiveEvasionChance, 0.0, 100.0)));
+        DrawCharacterChance("CA_CHARACTER_PHYSICAL_CRITICAL", 245,
+            localPlayer.HUDPhysicalCriticalApplies, localPlayer.HUDPhysicalCriticalChance);
+        DrawCharacterChance("CA_CHARACTER_MAGICAL_CRITICAL", 260,
+            localPlayer.HUDMagicalCriticalApplies, localPlayer.HUDMagicalCriticalChance);
+        // Todas las esencias usan la absorción mágica actual. No sumar Dureza ni bloqueo.
+        for (int element = 0; element < CaelumConstants.ESSENCE_TYPE_COUNT; element++)
+            DrawTextLine(SmallFont, Font.CR_CYAN, 56 + (element % 2) * 176, 282 + (element / 2) * 14,
+                String.Format(StringTable.Localize(CaelumCharacterView.ResistanceKey(element), false),
+                    (1 - localPlayer.HUDMagicalDamageFactor) * 100));
+        for (int resource = 0; resource < 3; resource++)
+        {
+            double y = 132 + resource * 43;
+            int state = CaelumSurvivalView.State(localPlayer, resource);
+            DrawTexture(CaelumSurvivalView.Icon(resource), 407, y, 18, 18);
+            DrawTextLine(SmallFont, Font.CR_WHITE, 428, y,
+                String.Format("%s: %.0f%%", StringTable.Localize(CaelumSurvivalView.NameKey(resource), false),
+                    CaelumSurvivalView.Value(localPlayer, resource)));
+            DrawTextLine(SmallFont, CaelumSurvivalView.TextColor(state), 428, y + 12,
+                StringTable.Localize(CaelumSurvivalView.StateKey(resource, state), false));
+            CaelumSurvivalView.Bar(CaelumSurvivalView.Value(localPlayer, resource), state,
+                428, y + 26, 146, CaelumSurvivalView.BaseColor(resource));
+        }
+        DrawTexture(CaelumSurvivalView.Icon(3), 407, 261, 18, 18);
+        String thermalLine; int thermalColor, thermalTint;
+        [thermalLine, thermalColor, thermalTint] = CaelumSurvivalView.ThermalLabel(localPlayer);
+        let lines = SmallFont.BreakLines(thermalLine, 146);
+        for (int line = 0; line < lines.Count(); line++)
+            Screen.DrawText(SmallFont, thermalColor, 428, 261 + line * 12, lines.StringAt(line),
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true, DTA_SHADOW, true, DTA_COLOR, thermalTint);
+        lines.Destroy();
+        CaelumSurvivalView.ThermalBar(localPlayer, 428, 292, 146);
+    }
+
+    ui void DrawCharacterChance(String key, double y, bool applies, double chance)
+    {
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, y,
+            StringTable.Localize(key, false) .. ": " .. (applies ? String.Format("%.2f%%", chance)
+                : StringTable.Localize("CA_CHARACTER_NOT_APPLICABLE", false)));
     }
 
     ui void DrawTarotPage(CaelumPlayer localPlayer)
@@ -2539,7 +2588,7 @@ class CaelumJournalOverlay : EventHandler
         }
 
         int currentPage = GetJournalPage();
-        if(currentPage==2 && (keyString ~== "t" || character==116 || character==84))
+        if((currentPage==1 || currentPage==2) && (keyString ~== "t" || character==116 || character==84))
         {ThermalDetailsOpen=!ThermalDetailsOpen;return true;}
         bool craftingSession = currentPage == 3
             && localPlayer != null && localPlayer.CraftingMenuOpen;
