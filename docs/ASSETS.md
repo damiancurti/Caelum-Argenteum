@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
 
 ## 5.2.23 - Sewer bag sleep (#219)
 

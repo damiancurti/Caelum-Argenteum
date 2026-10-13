@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
+
+## 5.2.24 - Missing Mandinga loot (#220), 2026-10-13
+
+The author reported missing MAP02 loot and identified Mandingas only. Native
+baseline deaths reproduced the failure for an unassigned Mandinga with remaining
+potions; ammunition and rat drops still worked. HasDeathDrop treated the whole
+Mandinga TID range as predefined, suppressing the #135 potion fallback.
+The generator now builds the predicate from the same drops list as the actual
+creation branches. It preserves all 230 assigned carriers (38 Mandingas and
+192 rats), quantities and dry anchors; the other 58 Mandingas regain the existing
+one-remaining-potion rule. No schema, geometry, resources or dead-body refill.
+Independent static review found no blocker. Engine/determinism evidence:
+assets/validation_5224. All 24 corrected native assertions passed, including
+current/old saved deaths and living carriers. Static validation/build and exact
+16,053-member package comparison passed; keep-awake was released. CA220-01
+author acceptance remains pending.
 
 ## 5.2.23 - Sewer sleeping-bag acceleration (#219), 2026-10-13
 

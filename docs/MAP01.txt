@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
 
 5.2.22 / #215: creator, Journal and NPC reply options display their existing
 controls in parentheses. Dialogue content/order and tutorial progression remain.

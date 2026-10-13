@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
+
+## 5.2.24 - Mandinga potion fallback (#220)
+
+The generated predefined-loot predicate incorrectly included all 96 mapped
+Mandingas. It now derives from actual assignments: 38 Mandingas and 192 rats.
+The other 58 Mandingas use the existing remaining-potion death rule. No loot
+amounts, anchors, native supplies, death latches or save fields change. Existing
+corpses are not retroactively populated. Native evidence: assets/validation_5224;
+author check CA220-01 remains pending. Next approved balance task: #222,
+magical staff dispersion matching the statuette, with book homing unchanged.
 
 ## 5.2.23 - Sleeping-bag acceleration in MAP02 (#219)
 

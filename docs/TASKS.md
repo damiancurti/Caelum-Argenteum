@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
+
+## 5.2.24 - MAP02 Mandinga drops (#220)
+
+Fix the generated predicate from real assignments; verify unassigned potion,
+assigned key/ammunition, exhaustion, last unit, repeated death and save/load.
+Evidence: assets/validation_5224. Next: CA220-01 author acceptance and PR review.
+Carry CA213-01, CA216-01, CA215-01 and CA219-01 forward. #222 follows separately:
+set magical staff dispersion to the statuette category; retain book homing.
 
 ## 5.2.23 - Sewer sleeping-bag acceleration (#219)
 

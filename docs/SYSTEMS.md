@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.23** — 2026-10-13.
+Documentation version: **5.2.24** — 2026-10-13.
 
 ## 5.2.22 - Parenthesized menu controls (#215)
 
@@ -3236,9 +3236,12 @@ Material previews paginate with N. No recipe is learned by inspecting/collecting
 The author confirmed retaining existing stations: sewing/leather, jewelry and
 shield-anvil routes may require another workshop and known recipes.
 
-Exactly eight Mandingas carry one key each; 24 others carry one same-type
-20-unit ammunition stack: 240 arrows, 120 bolts and 120 bullets in total.
-Other Mandingas carry no assigned object. Each rat carries one ration:
+Exactly eight Mandingas carry one key each; 30 others carry one same-type
+20-unit ammunition stack: 360 arrows and 240 bolts in total, following #183.
+The other 58 Mandingas have no assigned object and therefore use the existing
+#135 one-remaining-potion death rule. The 5.2.24/#220 generated predicate checks
+actual assignments, not the whole mapped Mandinga TID range. Existing corpses
+retain their death latches and receive no retroactive loot. Each rat carries one ration:
 96 food and 96 water map-wide. These supplies are not preplaced on the floor.
 Death releases each assignment once at its original dry, reachable map position,
 so pit/crush/companion kills cannot destroy keys or leave them below the map.

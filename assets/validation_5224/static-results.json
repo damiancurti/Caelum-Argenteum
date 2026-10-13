@@ -1,0 +1,11 @@
+{
+  "deterministic_runs": 2,
+  "assigned_mandingas": 38,
+  "assigned_rats": 192,
+  "outputs": {
+    "src/maps/MAP02.wad": "6337bc73ca32bb9db9936052ac341d34ace75b3c66858dfc4eaa0e6833ce55f1",
+    "src/caelum/world/CaelumMazeLayout.zs": "64d2d4142c35042de6be999ca15e13731b708dfa5adbff57f0e011245db78bf4",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "assets/map02_maze/MAP02_MANIFEST.json": "de6907f8d45c41d90cb07c14feee04c02ee08eec5eac9198e263e5d8b43ec58b"
+  }
+}

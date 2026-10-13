@@ -37,3 +37,12 @@ Expected: accelerated sleep works without a safe-zone marker; existing danger
 guards still reject unsafe acceleration. T finishes the chosen rest; Y stops
 when fully rested outside a safe zone. The single bag remains owned after waking.
 Status: awaiting explicit author in-game acceptance.
+
+CA220-01 | Origin: 5.2.24 / issue #220 | Mandinga death loot
+Prerequisites: rebuild with run_dev.bat; enter MAP02 with living Mandingas.
+Steps: kill several Mandingas, including one that carries no key or ammunition.
+Check both the body and its original dry spawn point for assigned recovery loot.
+Expected: unassigned Mandingas drop one potion if any remain; key/ammunition
+carriers keep their assigned drop. Exhausted enemies drop no replacement potion.
+Saved dead bodies are not retroactively refilled; reload cannot duplicate loot.
+Status: awaiting explicit author in-game acceptance.

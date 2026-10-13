@@ -331,8 +331,15 @@ runtime += ['    static bool IsCardinal(){let marker=ActorIterator.Create(44800,
 for z in range(4):
  runtime.append(f'        if((tid>={47000+z*24} && tid<{47000+(z+1)*24}) || (tid>={48000+z*48} && tid<{48000+(z+1)*48}))return CreateDeathDrop{z}(tid);')
 runtime += ['        return null;','    }']
+# Predefined loot exists only for actual assignments, not every mapped enemy.
+# Compress adjacent carrier IDs without introducing a second assignment table.
+drop_ranges=[]
+for carrier_tid in sorted({d['tid'] for d in drops}):
+ if drop_ranges and carrier_tid==drop_ranges[-1][1]+1:drop_ranges[-1][1]=carrier_tid
+ else:drop_ranges.append([carrier_tid,carrier_tid])
+drop_conditions=[f'tid=={lo}' if lo==hi else f'(tid>={lo} && tid<={hi})' for lo,hi in drop_ranges]
 runtime += ['    static bool HasDeathDrop(int tid)',
- '    {return (tid>=47000 && tid<47096) || (tid>=48000 && tid<48192);}']
+ '    {return '+' || '.join(drop_conditions)+';}']
 for z in range(4):
  runtime += [f'    static Inventory CreateDeathDrop{z}(int tid)', '    {', '        Inventory item;']
  for d in drops:
