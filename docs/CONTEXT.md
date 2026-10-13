@@ -1,6 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.27** — 2026-10-13.
+Documentation version: **5.3.0** — 2026-10-13.
+
+**5.3.0/#255:** enlarged powers; validation_530; CA255-01 pending.
+Decisions: TASKS.
 
 **5.2.27/#229 accepted:** empty Box 1 gram; content reduction unchanged.
 validation_5227; CA229-01 passed 2026-10-13; PR230.

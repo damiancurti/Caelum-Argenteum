@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.27** — 2026-10-13.
+Documentation version: **5.3.0** — 2026-10-13.
+
+## 5.3.0 - Power HUD layout (#255)
+
+Seal/Tarot indicators double their reference dimensions and follow the actual
+right viewport edge, with captions and a shared fit cap above retained bars.
+Evidence: assets/validation_530. CA255-01 remains pending. #256-#258 and
+#231-#236 are separate requested deliveries, including #233 by author confirmation.
+For #232/#234 the author chose interaction/use discovery on 2026-10-13.
 
 ## 5.2.27 - Magic Box empty mass (#229)
 

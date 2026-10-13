@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.27** — 2026-10-13.
+Documentation version: **5.3.0** — 2026-10-13.
+
+## 5.3.0 - Power indicator presentation (#255)
+
+Existing Seal and Tarot artwork/provenance are reused without pixel edits.
+Reference rectangles become 88x88 and 64x96; viewport scaling can cap them.
+assets/validation_530 holds source fixtures and evidence; generated packages,
+saves and development dependencies remain local in build/issue255.
 
 ## 5.2.27 - Magic Box weight evidence (#229)
 
