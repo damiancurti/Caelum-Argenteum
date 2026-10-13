@@ -36,8 +36,8 @@ evidence = {
     'runtime_sha256': runtime_hash, 'unchanged_original_save_sha256': old_hash,
     'runs': records, 'native_assertions': sum(run['native_assertions'] for run in records),
     'interactive_run': interactive,
-    'ordinary_input': 'User activated native x105 and orbited the camera; the observed rest reached 100% food/water. Agent F/G input was not delivered because user input was detected. These controls remain in author check CA257-01.',
-    'author_acceptance': {'id': 'CA257-01', 'result': 'pending'},
+    'ordinary_input': 'User activated native x105 and orbited the camera; the observed rest reached 100% food/water. Agent F/G input was not delivered because user input was detected. The author subsequently passed CA257-01, including its native control checks.',
+    'author_acceptance': {'id': 'CA257-01', 'origin_version': '5.3.2', 'issue': 257, 'result': 'passed', 'date': '2026-10-13', 'statement': 'La prueba que me dejaste dio todo correcto.', 'qualifications': 'none'},
     'static_commands': [
         {'command': 'python validate_project.py', 'exit_code': 0},
         {'command': 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1', 'exit_code': 0, 'packaged_files': 16054}],

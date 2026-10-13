@@ -10,8 +10,10 @@ available. Unified real table/carried/owned-Box transactions across normal,
 accelerated and skipped time. Preserved doses, native digestion, body mass,
 Sleep costs, inventory identity and #177 MAP01 refill. Added idempotent rest
 state revision 1 and forecast revision 2; original saves remain rollback copies.
-Evidence: assets/validation_532/RESULTS.md. CA257-01 pending; agent checks do
-not establish author acceptance. Thermal forecast discrepancy is recorded in
+Evidence: assets/validation_532/RESULTS.md. CA257-01 passed author acceptance on 2026-10-13, without qualifications.
+Author confirmation: "La prueba que me dejaste dio todo correcto." The originating check is
+5.3.2 / #257; its completed entry was removed from pending_test.txt.
+Agent checks remain separate from author acceptance. Thermal forecast discrepancy is recorded in
 TASKS; no thermal rebalance or #258 exhaustion trigger is included.
 
 ## 5.3.1 - Character survival and defenses (#256), 2026-10-13

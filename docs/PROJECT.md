@@ -8,7 +8,7 @@ Food/water start independently below 50%, or toward 100% when seated/lying.
 F/G pause only the rest filling; below 50% always re-arms. Native doses,
 finite ownership, Box access and MAP01 refill remain authoritative. Shared
 normal/accelerated/time-skip consumption prevents duplicate portions.
-Evidence: assets/validation_532/RESULTS.md; CA257-01 pending author acceptance.
+Evidence: assets/validation_532/RESULTS.md; CA257-01 passed author acceptance on 2026-10-13.
 #258 exhaustion and #231-#236 remain separate patches. The existing time-skip
 forecast omits evolving thermal resource costs; this is recorded for follow-up.
 

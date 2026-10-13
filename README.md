@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 food and water start below 50%, or fill toward 100% while seated/lying.
 F/G pause the rest filling; below 50% remains automatic. Native sources,
 portions and digestion are preserved. [Evidence](assets/validation_532/RESULTS.md).
-**CA257-01 awaits author acceptance.**
+**CA257-01 passed author acceptance on 2026-10-13.**
 
 5.3.1 implements [#256](https://github.com/damiancurti/Caelum-Argenteum/issues/256):
 Character shows survival resources, live combat chances and mean elemental

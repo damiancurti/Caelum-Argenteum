@@ -29,11 +29,11 @@ Direct API probes are engine integration checks, not ordinary player input.
 Native keyboard/mouse observations and author acceptance are recorded separately.
 The live user activated x105 and orbited the camera; the reviewed Spanish
 capture shows both channels ON and both resources at 100%. The agent's F/G
-input was not delivered after the user-input guard fired. Native F/G/click
-acceptance remains an explicit part of CA257-01; direct toggle integration
-checks passed. The same game remains available to the author.
-CA257-01 remains pending in `pending_test.txt`; #258 exhaustion induction is a
-separate issue, beyond the ground-rest eligibility tested here.
+input was not delivered after the user-input guard fired. Direct toggle integration checks passed; the author subsequently confirmed
+CA257-01, including the pending native control checks. The same game remains available to the author.
+CA257-01 (origin 5.3.2 / #257) passed author acceptance on 2026-10-13, without
+qualifications: "La prueba que me dejaste dio todo correcto." Its pending entry was
+removed and recorded in HISTORY. #258 exhaustion induction remains separate.
 
 Eight completed runs passed **74 native assertions**. Static validation returned
 `errors: []`; normal packaging succeeded with 16,054 files. Old/current saves,

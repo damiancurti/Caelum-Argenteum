@@ -43,7 +43,7 @@ revision initializes automatic rest flags and clears only failed-supply cache
 once. Current pauses and native inventory/power instances remain serialized.
 Migration does not consume or refill anything. Retain original save slots for
 rollback in 5.3.1; write new slots after migration. Evidence and limitations:
-assets/validation_532/RESULTS.md. CA257-01 awaits author acceptance.
+assets/validation_532/RESULTS.md. CA257-01 passed author acceptance on 2026-10-13.
 
 ## 5.3.1 - Character resources and combat readouts (#256)
 

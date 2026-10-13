@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.2** — 2026-10-13.
 
-**5.3.2/#257:** automatic provisions; CA257-01 pending; validation_532.
+**5.3.2/#257:** automatic provisions; CA257-01 accepted; validation_532.
 **#255/#256 accepted:** powers/HUD/Character; validation_530/531.
 Decisions and remaining batch: SYSTEMS/TASKS.
 

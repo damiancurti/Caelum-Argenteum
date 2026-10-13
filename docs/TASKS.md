@@ -7,7 +7,7 @@ Documentation version: **5.3.2** — 2026-10-13.
 Implement independent below-50% consumption, 100% seated/lying targets and
 author-confirmed F/G pause/resume with mandatory below-50% restart. Preserve
 real sources and unify native time paths. Evidence: assets/validation_532;
-CA257-01 pending. #258 will add exhaustion lying using the shared eligibility.
+CA257-01 passed author acceptance on 2026-10-13. #258 will add exhaustion lying using the shared eligibility.
 Follow-up discrepancy found during native comparison: time-skip forecasting
 does not integrate evolving shivering/sweat costs. Do not treat matching
 portion counts as proof of an exact thermal/calendar forecast.
