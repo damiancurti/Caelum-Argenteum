@@ -65,6 +65,8 @@ class CaelumLiveMenu : ListMenu
         // Identidad seleccionada, no los valores de supervivencia que cambian cada tic.
         let view=Journal();
         int result=Context*100000;
+        if(Context==CTX_REST)
+        {let rest=CaelumRestState(Subject.FindInventory("CaelumRestState"));if(rest!=null)result+=rest.Mode*2+(CaelumDiningSession.HasMealSupport(Subject)?1:0);}
         if(Context==1 || Context==CTX_EQUIPMENT)result+=Subject.EquipmentSelectionItemId*31+Subject.EquipmentSelectionKind*7+Subject.EquipmentSelectionTier
             +Subject.FormalInventorySelectionIndex*97+Subject.FormalInventoryFilter*503;
         if(Context==5)result+=view.GetVisibleQuestId(Subject)*2+(view.IsQuestDetailOpen()?1:0);
@@ -88,6 +90,8 @@ class CaelumLiveMenu : ListMenu
         else Journal().DrawMenu();
         Controls.Layout(self,true);
         CaelumPresentation.End();
+        if(Context==CTX_REST && GetCurrentMenu()==self && menuactive==Menu.OnNoPause)
+            CaelumNotifications.DrawRestFeedback(Subject,Journal().TextFont);
     }
     bool Key(int type,int scan,int character,String keyString,bool physical=true)
     {

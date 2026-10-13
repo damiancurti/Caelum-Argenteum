@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-091 - Native menu actions need visible feedback inside the menu
+
+Status/evidence: ENGINE-VERIFIED, #227 / 5.2.26, 2026-10-13.
+Baseline: 66029634; GZDoom 4.14.2 / Windows 11.
+
+A successful event dispatch does not imply visible feedback. The ordinary
+notification renderer suppresses all native menus, so rejected rest actions
+looked inert. Render the current inbox result after the native menu's transform
+ends, using message scaling once. When a large notice would cover resources,
+use the upper information area while preserving controls. Reuse the inbox/history.
+Test actual authored furniture: MAP02's standalone chair is not a serving table.
+A spawned table fixture cannot establish behavior of that authored scene.
+
+Evidence: assets/validation_5226; key/pointer and physical Windows inputs, finite
+reserves, saved session and large Spanish 4:3 message. Scope: tested rest panel;
+this does not certify every menu or reproduce the author's exact T blocker.
+
 ## CA-KP-090 - Decorate native menu labels without mutating their data
 
 Status/evidence: ENGINE-VERIFIED, #215 / 5.2.22, 2026-10-12.
