@@ -18,7 +18,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 1;
+    const PROVISION_REVISION = 2;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -29,13 +29,17 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     double Scale, NextThreat, FoodTrigger, WaterTrigger;
     int HealthBeforeStep;
     int ChairFactor;
+    bool HasChair;
+    int FoodSeatedSubTics, WaterSeatedSubTics;
     double AdrenalineBeforeStep;
 
     override void Step(bool sleeping)
     {
         // El jugador calcula rendimiento al comienzo del tic, antes de curar
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
+        Sleeping=sleeping;
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
+        if(Health>0)ServeSupplies();
     }
     override int AirHealth(){return HealthBeforeStep;}
     override double AirAdrenaline(){return AdrenalineBeforeStep;}
@@ -59,7 +63,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         let bed=CaelumTimeSkipRules.FindFurniture(user,true);
         BedFactor=bed!=null?bed.ComfortFactor():Bag && CaelumRestBag.HasRoom(user)?3:1;
         let chair=user.CraftingTaskActive?null:CaelumTimeSkipRules.FindFurniture(user,false);
-        ChairFactor=chair!=null?chair.ComfortFactor():1;
+        ChairFactor=chair!=null?chair.ComfortFactor():1;HasChair=chair!=null;
         let it=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable table;
         while((table=CaelumDiningTable(it.Next()))!=null)
         {
@@ -77,10 +81,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         let food=CaelumRegenerationPower(user.FindInventory("CaelumHungerRegeneration"));
         let water=CaelumRegenerationPower(user.FindInventory("CaelumThirstRegeneration"));
         if(food!=null)
-        {FoodEffectTics=food.EffectTics;FoodPulseTics=food.PulseTics;
+        {FoodEffectTics=food.EffectTics;FoodPulseTics=food.PulseTics;FoodSeatedSubTics=food.SeatedMealSubTics;
             FoodPulse=food.FoodRecoveryPerPulse>0?food.FoodRecoveryPerPulse:1;}
         if(water!=null)
-        {WaterEffectTics=water.EffectTics;WaterPulseTics=water.PulseTics;
+        {WaterEffectTics=water.EffectTics;WaterPulseTics=water.PulseTics;WaterSeatedSubTics=water.SeatedMealSubTics;
             WaterPulse=water.WaterRecoveryPerPulse>0?water.WaterRecoveryPerPulse:1;}
         // Otros poderes cambian el pronóstico de curación/consumo. El salto
         // puede ejecutarlos, pero no promete una fecha de tarea sin adaptador.
@@ -106,33 +110,70 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         {
             let row=Supplies[i];if(row.Count<=0 || row.Kind==0)continue;
             double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);if(dose<=0.000001)continue;
-            if(row.Kind==1)FoodTrigger=Max(FoodTrigger,100-Min(100,dose));
-            else WaterTrigger=Max(WaterTrigger,100-Min(100,dose));
+            if(row.Kind==1)FoodTrigger=CaelumDiningSession.REST_TARGET;
+            else WaterTrigger=CaelumDiningSession.REST_TARGET;
         }
     }
-    override void BeginServings()
+    // El motor sirve después de consumir recursos y avanzar los poderes.
+    // El viaje conserva su propio orden; sólo este modelo cambia de fase.
+    override void BeginServings() {}
+    void ServeSupplies()
     {
-        if(!((FoodEffectTics<=0 && Hunger<=FoodTrigger) || (WaterEffectTics<=0 && Thirst<=WaterTrigger)))return;
+        double target=Sleeping || HasChair?CaelumDiningSession.REST_TARGET:CaelumDiningSession.ORDINARY_TARGET;
+        if(!((FoodEffectTics<=0 && Hunger<Min(target,FoodTrigger))
+            || (WaterEffectTics<=0 && Thirst<Min(target,WaterTrigger))))return;
         for(int i=0;i<Supplies.Size();i++)
         {
             let row=Supplies[i];if(row.Count<=0 || row.Kind==0)continue;
             bool food=row.Kind==1;
             if(food?FoodEffectTics>0:WaterEffectTics>0)continue;
             double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);
-            if(!CaelumTimeSkipRules.NeedsServing(food?Hunger:Thirst,dose))continue;
+            if(dose<=0.000001 || (food?Hunger:Thirst)>=target)continue;
             if(row.Kind==3)row.Liters=Max(0,row.Liters-Min(row.Liters,Mass/CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE));
             else row.Count--;
             if(food)
             {FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
-                FoodPulseTics=0;FoodPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
+                FoodPulseTics=0;FoodSeatedSubTics=0;FoodPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
             else
             {WaterSpent++;WaterEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
-                WaterPulseTics=0;WaterPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
+                WaterPulseTics=0;WaterSeatedSubTics=0;WaterPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
         }
         LocalDay();
     }
+    override void Pulses()
+    {
+        bool seated=!Sleeping && HasChair;
+        if(FoodEffectTics>0)
+        {
+            if(seated)FoodSeatedSubTics++;
+            if(!seated || FoodSeatedSubTics>=CaelumRegenerationPower.SEATED_MEAL_TIC_DIVISOR)
+            {
+                if(seated)FoodSeatedSubTics=0;
+                FoodPulseTics++;
+                if(FoodPulseTics>=TICRATE)
+                {
+                    FoodPulseTics-=TICRATE;
+                    double gained=Min(FoodPulse,100-Hunger);
+                    Hunger+=gained;Sleep=Max(0,Sleep-gained/4);
+                }
+                FoodEffectTics--;
+            }
+        }
+        if(WaterEffectTics>0)
+        {
+            if(seated)WaterSeatedSubTics++;
+            if(!seated || WaterSeatedSubTics>=CaelumRegenerationPower.SEATED_MEAL_TIC_DIVISOR)
+            {
+                if(seated)WaterSeatedSubTics=0;
+                WaterPulseTics++;
+                if(WaterPulseTics>=TICRATE)
+                {WaterPulseTics-=TICRATE;Thirst=Min(100,Thirst+WaterPulse);}
+                WaterEffectTics--;
+            }
+        }
+    }
     override double Comfort(bool sleeping)
-    {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:1;}
+    {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:HasChair?ChairFactor:1;}
     override double SleepRecoveryScale() {return Scale;}
     override double AnimaComfort(bool sleeping)
     {return sleeping || Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:Max(1,ChairFactor);}

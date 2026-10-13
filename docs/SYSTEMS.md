@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.1** — 2026-10-13.
+Documentation version: **5.3.2** — 2026-10-13.
+
+## 5.3.2 - Automatic food and water (#257)
+
+Hunger and Thirst independently start real portions below 50% outside seated
+or lying rest. Exactly 50% does not start a portion. At or above the target,
+do not schedule another portion; the current native effect finishes normally,
+including natural overshoot. Crossing below 50% re-arms without hysteresis.
+Actual occupied chairs, beds, the owned deployed bag, ground sleep and the
+existing spell-sleep timer use a 100% target. This patch supplies the common
+eligibility needed by #258; it does not implement exhaustion-induced lying.
+
+Author decision of 2026-10-13: F/G and Eat/Drink pause/resume that channel's
+100% filling for the current rest. A paused channel still serves below 50%.
+The next rest starts with both channels enabled. A toggle never refreshes or
+duplicates an in-flight portion, refunds an item, or cancels digestion.
+Reaching full does not permanently disable later automatic consumption.
+These rules supersede #227's manual start, chair/bag-only and bed exclusions.
+
+Use an eligible table first, then carried provisions, then the owned Box.
+Ordinary table access requires the actual reachable seated support; explicit
+time skip retains its existing safe-location access rules. Food units, water
+rations and containers use their original inventory transaction, body-mass
+dose, ten pulses, seated pacing and actual recovered-food Sleep cost. Preserve
+container identity, Box location and a partial final sip. MAP01 retains #177's
+immediate refill; other maps gain no replenishment. Other consumables are not
+automatically used. Empty/blocked channels cache failure until supply, posture,
+map, ownership or manual-control changes; they produce no per-frame notices.
+
+One authoritative DiningSession transaction runs from the shared personal tic,
+after native effects and resource costs. Time skip no longer has a second
+serving loop. Its copied forecast uses the same targets, post-cost scheduling,
+seated sub-tic pacing and active effect progress. Forecast ProvisionRevision 2
+invalidates older cached forecasts. Existing thermal forecast limitations remain:
+the supply model does not project evolving shivering/sweat costs. Native tests
+separate exact digestion equivalence from full simulation in a cold location;
+thermal rules and acceleration permissions are unchanged.
+
+Saved owner: the existing InterHub CaelumRestState, ProvisionRevision 1. Missing
+revision initializes automatic rest flags and clears only failed-supply cache
+once. Current pauses and native inventory/power instances remain serialized.
+Migration does not consume or refill anything. Retain original save slots for
+rollback in 5.3.1; write new slots after migration. Evidence and limitations:
+assets/validation_532/RESULTS.md. CA257-01 awaits author acceptance.
 
 ## 5.3.1 - Character resources and combat readouts (#256)
 
@@ -69,6 +112,8 @@ existing saves without changing ownership, contents or schema. HUD and total
 carried load use the same authoritative constant.
 
 ## 5.2.26 - Visible rest action feedback (#227)
+
+Historical accepted behavior; #257 above supersedes its serving controls and eligibility.
 
 The native rest panel displays the newest live notification below its controls,
 using the engine message scale and wrapping the full text. This exposes existing

@@ -60,6 +60,11 @@ class CaelumRestState : Inventory
     int LastUntimedStepSerial;
     bool AutoEating;
     bool AutoDrinking;
+    // Revisión 1: F/G pausan sólo el llenado del descanso; el umbral 50 sigue activo.
+    int ProvisionRevision;
+    int ProvisionBlocked;
+    int ProvisionContext;
+    String ProvisionMap;
     CaelumDiningTable DiningTable;
     double FacingAngle;
     double OriginalPitch;
@@ -203,7 +208,8 @@ class CaelumRestState : Inventory
         rest.Mode = mode;
         rest.Untimed=untimed;rest.LastUntimedTic=level.maptime;
         rest.LastUntimedStepSerial=CaelumTimeAdvanceState.StepSerial(user);
-        rest.AutoEating=false;rest.AutoDrinking=false;rest.DiningTable=null;
+        rest.AutoEating=true;rest.AutoDrinking=true;rest.DiningTable=null;
+        rest.ProvisionRevision=1;rest.ProvisionBlocked=0;rest.ProvisionContext=-1;
         rest.RequestedTics = duration;
         rest.ElapsedTics = 0;
         rest.OriginMap = level.MapName;

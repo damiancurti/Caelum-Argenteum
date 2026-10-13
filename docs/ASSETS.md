@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.1** — 2026-10-13.
+Documentation version: **5.3.2** — 2026-10-13.
 
 ## 5.3.1 - Survival and Character presentation (#256)
 

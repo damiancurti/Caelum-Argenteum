@@ -191,6 +191,9 @@ class CaelumDiningTable : Actor
 
     void RefreshDisplays()
     {
+        // Un cambio real de stock permite reintentar los canales agotados.
+        for(int p=0;p<MAXPLAYERS;p++)
+            if(playeringame[p])CaelumDiningSession.Invalidate(CaelumPlayer(players[p].mo));
         for(int i=0;i<Capacity();i++)
         {
             if(Items[i]==null || Items[i].Owner!=self || Items[i].Amount<=0)
@@ -254,24 +257,10 @@ class CaelumDiningTable : Actor
 
     bool Consume(CaelumPlayer user,bool drink)
     {
-        if(!CanDine(user) || user.ForcedSleepTics>0)return false;
-        Name powerName=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
-        // Evita desperdiciar un plato refrescando el mismo efecto aún activo.
-        if(user.FindInventory(powerName)!=null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
+        if(!CanDine(user))return false;
         for(int i=0;i<Capacity();i++)
-        {
-            let item=Items[i];if(item==null || item.Owner!=self || IsDrink(item)!=drink)continue;
-            let bottle=CaelumWaterContainer(item);
-            if(bottle!=null && bottle.WaterLiters<=0.000001)continue;
-            // Préstamo transaccional para reutilizar exactamente el consumo nativo.
-            // No hay tic de simulación ni consulta de carga entre ambos pasos.
-            RemoveInventory(item);item.AttachToOwner(user);
-            bool accepted=bottle!=null?bottle.Drink():item.Use(false);
-            user.RemoveInventory(item);
-            if(accepted && bottle==null) {Items[i]=null;item.Destroy();}
-            else item.AttachToOwner(self);
-            RestockMansion();RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return accepted;
-        }
+            if(CaelumDiningSession.Matches(Items[i],drink)
+                && CaelumDiningSession.ConsumeItem(user,Items[i],self))return true;
         return ConsumeReserve(user,drink);
     }
 
@@ -478,95 +467,153 @@ class CaelumDiningWorld : Object play
     }
 }
 
-// Repetición explícita por canal: F y G también permiten detener las próximas
-// porciones. La porción ya aplicada termina sus pulsos nativos, sin reembolso.
+// Una sola transacción para tiempo normal, acelerado y salto temporal.
+// F/G pausan el objetivo 100 del descanso, nunca el umbral obligatorio 50.
 class CaelumDiningSession : Object play
 {
+    const ORDINARY_TARGET = 50.0;
+    const REST_TARGET = CaelumConstants.SURVIVAL_MAXIMUM;
+
     static clearscope bool HasMealSupport(CaelumPlayer user)
     {
         let rest=user==null?null:CaelumRestState(user.FindInventory("CaelumRestState"));
         return rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE
             && rest.OriginMap==level.MapName
-            && ((rest.Mode==CaelumRestRules.MODE_WAIT && rest.Furniture is "CaelumRestChair")
-                || (rest.Mode==CaelumRestRules.MODE_SLEEP && rest.Furniture is "CaelumRestBag"));
+            && (rest.Mode==CaelumRestRules.MODE_SLEEP
+                || (rest.Mode==CaelumRestRules.MODE_WAIT && rest.Furniture!=null
+                    && rest.UsesFurniture));
     }
     static bool CanServe(CaelumPlayer user)
     {
-        return HasMealSupport(user) && user.health>0 && user.ForcedSleepTics<=0
-            && CaelumRestState.Get(user).Furniture.SupportsRest(user);
+        return user!=null && user.player!=null && user.health>0
+            && user.CharacterCreationComplete && !user.CreationWizardOpen && user.DerivedStats!=null;
     }
-    // La mesa tiene prioridad cuando existe; silla sola y bolsa reutilizan
-    // el mismo consumo de provisiones propias, sin crear raciones nuevas.
-    static bool Serve(CaelumPlayer user,bool drink)
+    static void Migrate(CaelumRestState rest)
     {
-        if(!CanServe(user))return false;
-        let rest=CaelumRestState.Get(user);
-        let table=rest.DiningTable;
-        if(table!=null && table.CanDine(user))return table.Consume(user,drink);
-        rest.DiningTable=null;
-        return ConsumeReserve(user,drink);
+        if(rest==null || rest.ProvisionRevision>=1)return;
+        rest.ProvisionRevision=1;rest.ProvisionBlocked=0;
+        rest.AutoEating=true;rest.AutoDrinking=true;
     }
-
+    static void Invalidate(CaelumPlayer user)
+    {
+        let rest=CaelumRestState.Get(user);
+        if(rest!=null){rest.ProvisionBlocked=0;rest.ProvisionContext=-1;}
+    }
+    static double Target(CaelumPlayer user,bool drink)
+    {
+        if(!CaelumSleepRules.IsSleeping(user) && !CaelumRestState.IsSeated(user))return ORDINARY_TARGET;
+        let rest=CaelumRestState.Get(user);
+        bool paused=HasMealSupport(user) && !(drink?rest.AutoDrinking:rest.AutoEating);
+        return paused?ORDINARY_TARGET:REST_TARGET;
+    }
+    static bool Matches(CaelumConsumableItem item,bool drink)
+    {
+        int kind=CaelumTimeSkipRules.Kind(item);
+        return kind!=0 && (kind!=1)==drink;
+    }
+    static bool TableAvailable(CaelumPlayer user,CaelumDiningTable table)
+    {
+        return table!=null && (CaelumTimeSkipState.IsActive(user)
+            ?CaelumTimeSkipRules.Accessible(user,table):table.CanDine(user));
+    }
+    static bool ConsumeItem(CaelumPlayer user,CaelumConsumableItem item,CaelumDiningTable table=null)
+    {
+        if(!CanServe(user) || item==null || item.Amount<=0)return false;
+        int kind=CaelumTimeSkipRules.Kind(item);if(kind==0)return false;
+        bool drink=kind!=1;
+        if(user.FindInventory(drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration')!=null
+            || (drink?user.CurrentThirst:user.CurrentHunger)>=REST_TARGET)return false;
+        let bottle=CaelumWaterContainer(item);
+        if(bottle!=null && bottle.WaterLiters<=0.000001)return false;
+        if(table!=null)
+        {
+            if(item.Owner!=table || !TableAvailable(user,table))return false;
+            table.RemoveInventory(item);item.AttachToOwner(user);
+        }
+        else if(!CaelumTimeSkipRules.OwnedAvailable(user,item))return false;
+        bool stored=item.InMagicBox;item.InMagicBox=false;
+        bool accepted=bottle!=null?bottle.Drink():item.Use(false);
+        item.InMagicBox=stored;
+        if(table!=null)user.RemoveInventory(item);
+        if(accepted && bottle==null)item.Amount--;
+        if(item.Amount<=0)
+        {
+            if(table!=null)
+                for(int i=0;i<table.Capacity();i++)if(table.Items[i]==item)table.Items[i]=null;
+            item.Destroy();
+        }
+        else if(table!=null)item.AttachToOwner(table);
+        if(table!=null && accepted){table.RestockMansion();table.RefreshDisplays();}
+        if(accepted){user.OnNativeInventoryChanged();user.PersistCharacterState();}
+        return accepted;
+    }
     static bool ConsumeReserve(CaelumPlayer user,bool drink)
     {
         if(!CanServe(user))return false;
-        Name powerName=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
-        if(user.FindInventory(powerName)!=null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
-        // Primero lo llevado a mano; después la reserva propia de la Caja.
-        // Sólo se descuenta una unidad aceptada. El resto conserva su ubicación.
         for(int source=0;source<2;source++)
         {
             if(source==1 && !user.MagicBoxOwned)break;
             for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
             {
                 let item=CaelumConsumableItem(cursor);
-                if(item==null || item.Owner!=user || item.Amount<=0 || item.InMagicBox!=(source==1))continue;
-                if(drink?!CaelumDiningTable.IsDrink(item):item.GetConsumableType()!=CaelumConstants.CONSUMABLE_FOOD_RATION)continue;
-                let bottle=CaelumWaterContainer(item);
-                if(bottle!=null && bottle.WaterLiters<=0.000001)continue;
-                bool stored=item.InMagicBox;
-                item.InMagicBox=false;
-                bool accepted=bottle!=null?bottle.Drink():item.Use(false);
-                item.InMagicBox=stored;
-                if(!accepted)continue;
-                if(bottle==null){item.Amount--;if(item.Amount==0)item.Destroy();}
-                user.OnNativeInventoryChanged();user.PersistCharacterState();return true;
+                if(item!=null && item.InMagicBox==(source==1) && Matches(item,drink)
+                    && ConsumeItem(user,item))return true;
             }
         }
         return false;
     }
-
-    static void Sated(CaelumPlayer user,bool drink)
+    static bool Serve(CaelumPlayer user,bool drink)
     {
-        let rest=CaelumRestState.Get(user);if(rest==null)return;
-        if(drink)rest.AutoDrinking=false;else rest.AutoEating=false;
+        if(!CanServe(user))return false;
+        if(CaelumTimeSkipState.IsActive(user))
+        {
+            let it=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable table;
+            while((table=CaelumDiningTable(it.Next()))!=null)
+                if(TableAvailable(user,table))
+                    for(int i=0;i<table.Capacity();i++)
+                        if(Matches(table.Items[i],drink) && ConsumeItem(user,table.Items[i],table))return true;
+        }
+        else
+        {
+            let table=CaelumDiningTable.Nearby(user);
+            if(table!=null)return table.Consume(user,drink);
+        }
+        return ConsumeReserve(user,drink);
     }
+    // Llegar al máximo no desarma el siguiente descenso ni cambia la pausa.
+    static void Sated(CaelumPlayer user,bool drink) {}
 
     static bool Toggle(CaelumPlayer user,bool drink)
     {
-        let rest=CaelumRestState.Get(user);
-        if(rest==null || rest.Status!=CaelumRestRules.STATUS_ACTIVE)return false;
-        if(drink?rest.AutoDrinking:rest.AutoEating)
-        {Sated(user,drink);CaelumNotifications.Notify(user,StringTable.Localize("CA_TABLE_AUTO_STOP",false));return true;}
-        if(!CanServe(user) || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
-        rest.DiningTable=CaelumDiningTable.Nearby(user);
-        Name power=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';
-        if(user.FindInventory(power)==null && !Serve(user,drink))return false;
-        if(drink)rest.AutoDrinking=true;else rest.AutoEating=true;
+        if(!CanServe(user) || !HasMealSupport(user))return false;
+        let rest=CaelumRestState.Get(user);Migrate(rest);
+        if(drink)rest.AutoDrinking=!rest.AutoDrinking;
+        else rest.AutoEating=!rest.AutoEating;
+        rest.ProvisionBlocked=0;
+        if(!(drink?rest.AutoDrinking:rest.AutoEating))
+            CaelumNotifications.Notify(user,StringTable.Localize("CA_TABLE_AUTO_STOP",false));
         return true;
     }
-
     static void Advance(CaelumPlayer user)
     {
-        let rest=CaelumRestState.Get(user);
-        if(rest==null || (!rest.AutoEating && !rest.AutoDrinking))return;
-        if(!CanServe(user))
-        {rest.AutoEating=false;rest.AutoDrinking=false;rest.DiningTable=null;return;}
-        if(user.CurrentHunger>=100)rest.AutoEating=false;
-        if(user.CurrentThirst>=100)rest.AutoDrinking=false;
-        if(rest.AutoEating && user.FindInventory('CaelumHungerRegeneration')==null)
-            if(!Serve(user,false))rest.AutoEating=false;
-        if(rest.AutoDrinking && user.FindInventory('CaelumThirstRegeneration')==null)
-            if(!Serve(user,true))rest.AutoDrinking=false;
+        if(!CanServe(user))return;
+        let rest=CaelumRestState.Get(user,true);Migrate(rest);
+        int context=int(CaelumSleepRules.IsSleeping(user))*2+int(CaelumRestState.IsSeated(user))
+            +int(CaelumTimeSkipState.IsActive(user))*4+int(user.MagicBoxOwned)*8;
+        if(rest.ProvisionContext!=context || rest.ProvisionMap!=level.MapName)
+        {
+            rest.ProvisionBlocked=0;
+            rest.DiningTable=(context&1)!=0 && (context&4)==0?CaelumDiningTable.Nearby(user):null;
+        }
+        rest.ProvisionContext=context;rest.ProvisionMap=level.MapName;
+        for(int channel=0;channel<2;channel++)
+        {
+            bool drink=channel==1;int bit=1<<channel;
+            if((drink?user.CurrentThirst:user.CurrentHunger)>=Target(user,drink))
+            {rest.ProvisionBlocked&=~bit;continue;}
+            if((rest.ProvisionBlocked&bit)!=0
+                || user.FindInventory(drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration')!=null)continue;
+            if(!Serve(user,drink))rest.ProvisionBlocked|=bit;
+        }
     }
 }

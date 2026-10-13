@@ -1305,6 +1305,7 @@ class CaelumInventoryService : Object play
     static void OnNativeInventoryChanged(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumDiningSession.Invalidate(user);
         user.ApplyCharacterProfile();
         user.RefreshEquipmentSelectionPreview();
         user.RefreshFormalInventorySnapshot();
@@ -4479,6 +4480,7 @@ class CaelumInventoryService : Object play
     static void ToggleSelectedMagicBoxNative(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumDiningSession.Invalidate(user);
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             let material = user.FindNativeSpecialItem(user.EquipmentSelectionKind, user.EquipmentSelectionSpecialType, user.EquipmentSelectionTier);

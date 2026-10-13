@@ -1,0 +1,15 @@
+CA257-01 | Origin: 5.3.2 / #257 | Automatic food/water and rest controls
+Prerequisites: GZDoom 4.14.2, built 5.3.2, a committed character and real food/water.
+The isolated author terminal opens the authored MAP01 chair/table at about 80%.
+1. Wait seated: food and water start without F/G and recover toward 100%.
+2. Press F/G or click Eat/Drink: filling pauses/resumes independently; the current
+   portion completes. Below 50%, a paused channel still starts automatically.
+3. Stand and lower each resource below 50% with console commands ca_debug_lose_hunger / ca_debug_lose_thirst:
+   only the affected channel starts; at/above 50%, no next portion is scheduled.
+4. Repeat on a bed and the owned deployed bag. Use carried/Box supplies away from
+   a table; verify actual ration units and canteen liters decrease, and empty
+   supplies do not produce repeated warnings or free recovery.
+5. Save to a new slot while a portion runs, reload, and check its continued progress
+   and rest pause controls. Do not overwrite the original pre-5.3.2 save.
+Expected: native doses/pacing/Sleep costs, independent automatic channels, and
+preserved inventory identity. Ground exhaustion is delivered separately in #258.
