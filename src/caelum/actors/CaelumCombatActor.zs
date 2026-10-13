@@ -1834,7 +1834,7 @@ class CaelumCombatActor : Actor
         return totalDefense / CaelumConstants.ARMOR_SLOT_COUNT;
     }
 
-    double GetBiologicalLandingAbsorptionSpeed()
+    double GetBiologicalJumpAbsorptionSpeed()
     {
         // Escala geométrica de la velocidad segura: la velocidad característica
         // de un cuerpo bajo la misma gravedad crece como sqrt(longitud).
@@ -1844,6 +1844,12 @@ class CaelumCombatActor : Actor
         }
 
         return CaelumPhysicsUnits.JumpVelocity(Mass,Mass+GetAttackCarriedWeight(),CombatAgility);
+    }
+
+    double GetBiologicalLandingAbsorptionSpeed()
+    {
+        return GetBiologicalJumpAbsorptionSpeed()
+            * CaelumConstants.BIOLOGICAL_IMPACT_ABSORPTION_MULTIPLIER;
     }
 
     double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
@@ -1858,13 +1864,16 @@ class CaelumCombatActor : Actor
         );
     }
 
-    virtual double GetHorizontalImpactAbsorptionFraction(){return 0;}
+    virtual double GetHorizontalImpactAbsorptionSpeed(){return 0;}
+    virtual double GetHazardPressureAbsorptionSpeed(double delta){return 0;}
 
     double ImpactAbsorptionSpeed(double delta,int kind,Vector3 normal=(0,0,0))
     {
-        if(kind==CaelumConstants.IMPACT_KIND_CRUSH || kind==CaelumConstants.IMPACT_KIND_FLOOR)
+        if(kind==CaelumConstants.IMPACT_KIND_CRUSH)
+            return Min(Max(0.0,delta),GetBiologicalJumpAbsorptionSpeed());
+        if(kind==CaelumConstants.IMPACT_KIND_FLOOR)
             return Min(Max(0.0,delta),GetBiologicalLandingAbsorptionSpeed());
-        return Abs(normal.Z)<0.5 ? Max(0.0,delta)*GetHorizontalImpactAbsorptionFraction() : 0;
+        return Abs(normal.Z)<0.5 ? Min(Max(0.0,delta),GetHorizontalImpactAbsorptionSpeed()) : 0;
     }
 
     double RetainImpactEnergy(double joules,double delta,int kind,Vector3 normal=(0,0,0))
@@ -1983,11 +1992,15 @@ class CaelumCombatActor : Actor
     )
     {
         // Procedencia explícita: una roca del mecanismo es daño ambiental.
+        bool hazardPressure = impactKind == CaelumConstants.IMPACT_KIND_CRUSH
+            && CaelumHazardRock(sourceActor) != null;
         if (CaelumHazardRock(sourceActor) != null && impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
             impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
         LastImpactKind = impactKind;
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
-        LastImpactBiologicalAbsorptionSpeed=ImpactAbsorptionSpeed(LastImpactRawDeltaSpeed,impactKind,contactNormal);
+        LastImpactBiologicalAbsorptionSpeed=hazardPressure
+            ? (Abs(contactNormal.Z)<0.5 ? GetHazardPressureAbsorptionSpeed(LastImpactRawDeltaSpeed) : 0)
+            : ImpactAbsorptionSpeed(LastImpactRawDeltaSpeed,impactKind,contactNormal);
         LastImpactDeltaSpeed=Max(0.0,LastImpactRawDeltaSpeed-LastImpactBiologicalAbsorptionSpeed);
         LastImpactEquivalentTics = CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactReceivedJoules = receivedJoules>=0 ? receivedJoules

@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Landing capacity for impacts (#211), 2026-10-12
+
+The author requested replacing horizontal fractional cushioning with landing
+capacity and explicitly chose 150% of each body's own jump speed for player
+and bull. A later clarification also applies 150% to falls for all bodies
+already using biological cushioning, while excluding crushing. Actual jump
+work/velocity, mass, contact eligibility, anatomy, armor and Toughness remain.
+
+Shared unscaled jump capacity now feeds crushing; scaled landing capacity feeds
+falls and the existing eligible horizontal player/bull contacts. Buckler's x2
+enhancement applies once. Ordinary NPCs gain no horizontal allowance. The bull
+uses the landing helper's own suppression, not the old horizontal-only health
+ratio. The prior player rock-pressure rule and bull's unweighted rock-pressure
+fallback are retained separately; weighted NPC rock pressure remains uncushioned.
+This also preserves crushing provenance before environmental relabeling.
+
+Native evidence, regression attempts, hashes and scope: assets/validation_5219.
+Author test CA211-01 originates in 5.2.19 / #211 and remains outstanding in
+pending_test.txt. The author requested native tests, commit and push; no merge,
+closure or manual acceptance is inferred. No saved field/state migration or
+art changes are required. The preceding #209 / PR210 was accepted and merged
+as 4549991a; this patch starts from that baseline.
 
 ## 5.2.18 - Modular animation and rest repairs (#209), 2026-10-12
 

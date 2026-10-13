@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Horizontal landing capacity (#211)
+
+Replace the horizontal fractional Agility bonus with the recipient's landing
+speed capacity times 1.5, explicitly approved for both player and charging
+bull. Keep contact eligibility, active-buckler enhancement once, bilateral
+energy and defenses. A later author amendment also applies 150% to falls for
+all biologically cushioned bodies; actual jumping and crushing remain unchanged.
+No save schema or art changes. Evidence: assets/validation_5219; CA211-01 remains
+pending author gameplay acceptance. Commit/push delivery does not imply merge.
 
 ## 5.2.18 - Modular pose, furniture and hand repairs (#209)
 

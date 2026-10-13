@@ -6567,68 +6567,50 @@ class CaelumPlayer : DoomPlayer
 
     double GetImpactAgilityAbsorptionSpeed(int impactKind, bool stationarySceneryContact = false)
     {
-        if (IsPhysicallyImmobilized()) { return 0.0; }
-
-        double baseAbsorption = Max(0.0, JumpZ);
-
-        // La caída conserva la amortiguación directa por JumpZ.
         if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
-        {
-            if (IsBucklerAcrobaticDefenseActive())
-            {
-                return baseAbsorption
-                    * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER;
-            }
-            return baseAbsorption;
-        }
-
-        double baseJump = DerivedStats!=null
-            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,0) : 0;
-        double agilityBonusRatio = Max(
-            0.0,
-            baseAbsorption / Max(0.0001, baseJump) - 1.0
-        );
+            return GetBiologicalLandingAbsorptionSpeed();
 
         // Caminar, correr o agacharse permite ceder ante paredes y escenario
         // quieto. El contacto guarda el reposo previo a transmitir impulso;
         // no concede este beneficio a cuerpos ni rocas que ya venían moviéndose.
-        double carefulMovementFraction = 0.0;
-        if ((IsCrouching || IsWalkingOnGround() || IsRunningOnGround())
+        bool carefulMovement = (IsCrouching || IsWalkingOnGround() || IsRunningOnGround())
             && (impactKind == CaelumConstants.IMPACT_KIND_WALL
                 || (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT
-                    && stationarySceneryContact)))
-        {
-            carefulMovementFraction = Clamp(
-                agilityBonusRatio,
-                0.0,
-                CaelumConstants.SHIELD_BUCKLER_HORIZONTAL_ABSORPTION_MAX_FRACTION
-            );
-        }
+                    && stationarySceneryContact));
 
         // La rodela conserva su versión más potente y también funciona contra
-        // actores. Si ambas condiciones coinciden usamos la mayor, no se apilan.
-        double bucklerFraction = 0.0;
-        if (IsBucklerAcrobaticDefenseActive())
-        {
-            bucklerFraction = Clamp(
-                agilityBonusRatio
-                    * CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER,
-                0.0,
-                CaelumConstants.SHIELD_BUCKLER_HORIZONTAL_ABSORPTION_MAX_FRACTION
-            );
-        }
-
-        return Max(carefulMovementFraction, bucklerFraction);
+        // actores. La capacidad de caída incorpora esa mejora una sola vez.
+        if (!carefulMovement && !IsBucklerAcrobaticDefenseActive()) return 0.0;
+        return GetBiologicalLandingAbsorptionSpeed();
     }
 
-    double GetBiologicalLandingAbsorptionSpeed()
+    double GetBiologicalJumpAbsorptionSpeed()
     {
         // Un personaje consciente flexiona articulaciones y usa musculatura
         // para absorber un aterrizaje comparable a su propio salto normal.
         // Aturdido/inmovilizado cae rígido: no recibe esta amortiguación.
-        return GetImpactAgilityAbsorptionSpeed(
-            CaelumConstants.IMPACT_KIND_FLOOR
-        );
+        if (IsPhysicallyImmobilized()) return 0.0;
+        return Max(0.0, JumpZ) * (IsBucklerAcrobaticDefenseActive()
+            ? CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER : 1.0);
+    }
+
+    double GetBiologicalLandingAbsorptionSpeed()
+    {
+        return GetBiologicalJumpAbsorptionSpeed()
+            * CaelumConstants.BIOLOGICAL_IMPACT_ABSORPTION_MULTIPLIER;
+    }
+
+    double GetHazardPressureAbsorptionSpeed(double deltaSpeed)
+    {
+        // La presión sostenida de rocas conserva la maniobra anterior de rodela.
+        // No es un nuevo impacto ni recibe el 150% aprobado para las caídas.
+        if (IsPhysicallyImmobilized() || !IsBucklerAcrobaticDefenseActive()) return 0;
+        double baseline = DerivedStats!=null
+            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,0) : 0;
+        double bonus = Max(0.0, Max(0.0,JumpZ)/Max(0.0001,baseline)-1.0);
+        return Max(0.0,deltaSpeed)*Clamp(
+            bonus*CaelumConstants.SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER,
+            0.0,CaelumConstants.SHIELD_BUCKLER_PRESSURE_ABSORPTION_MAX_FRACTION);
     }
 
     double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
@@ -6761,6 +6743,7 @@ class CaelumPlayer : DoomPlayer
     {
         // El escenario y las rocas del mecanismo son daño ambiental, aunque
         // GZDoom los represente con actores: ni daño ni dolor dan adrenalina.
+        bool crushingContact = impactKind == CaelumConstants.IMPACT_KIND_CRUSH;
         if ((CaelumHazardRock(sourceActor) != null && impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
             || (impactKind == CaelumConstants.IMPACT_KIND_ACTOR
                 && CaelumEnvironmentProp(sourceActor) != null))
@@ -6769,12 +6752,16 @@ class CaelumPlayer : DoomPlayer
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactBiologicalAbsorptionSpeed = 0.0;
         LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
-        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH
+        if (crushingContact
             || impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
         {
             LastImpactBiologicalAbsorptionSpeed = Min(
                 LastImpactRawDeltaSpeed,
-                GetBiologicalLandingAbsorptionSpeed()
+                crushingContact
+                    ? (CaelumHazardRock(sourceActor)!=null
+                        ? GetHazardPressureAbsorptionSpeed(LastImpactRawDeltaSpeed)
+                        : GetBiologicalJumpAbsorptionSpeed())
+                    : GetBiologicalLandingAbsorptionSpeed()
             );
             LastImpactDeltaSpeed = Max(
                 0.0,
@@ -6783,10 +6770,8 @@ class CaelumPlayer : DoomPlayer
         }
         else if (impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
         {
-            double horizontalAbsorptionFraction =
-                GetImpactAgilityAbsorptionSpeed(impactKind, stationarySceneryContact);
-            LastImpactBiologicalAbsorptionSpeed =
-                LastImpactRawDeltaSpeed * horizontalAbsorptionFraction;
+            LastImpactBiologicalAbsorptionSpeed = Min(LastImpactRawDeltaSpeed,
+                GetImpactAgilityAbsorptionSpeed(impactKind, stationarySceneryContact));
             LastImpactDeltaSpeed = Max(
                 0.0,
                 LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed

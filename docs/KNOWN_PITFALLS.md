@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-088 - Preserve pressure provenance before environmental relabeling
+
+Status/evidence: ENGINE-VERIFIED, #211 / 5.2.19, 2026-10-12.
+Baseline: 4549991a; GZDoom 4.14.2 / Windows 11. Scope: biological impact
+cushioning, hazard-rock pressure and preweighted work snapshots.
+
+Player and NPC impact receivers relabel hazard-rock sources as environmental.
+Testing the kind after that relabel can accidentally give sustained crushing a
+new impact-only allowance. Preserve the incoming pressure classification before
+relabeling; update both direct delivery and captured per-tic work consumers.
+Preweighted energy can hide a faulty fallback because the snapshot overrides
+the recomputed energy. Exercise both supplied and absent cushionedJoules and
+inspect diagnostics as well as HP. Keep the prior pressure rules explicit.
+
+Evidence: assets/validation_5219/checks.zs compares the old fractional pressure
+rules and new 150% impact/fall capacity, including active buckler and bull.
+The native baseline still passes pressure expectations while failing the new
+impact/fall expectations. Native motion and current/old saves are separate
+checks; author acceptance remains CA211-01.
+
 ## CA-KP-087 - Triangulate model caps before native OBJ validation
 
 Status/evidence: ENGINE-VERIFIED; first recorded / last checked 2026-10-12.

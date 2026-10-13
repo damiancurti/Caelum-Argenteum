@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.18.** Obtain and update the complete repository, validate
+**Current release: 5.2.19.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.19 implements [#211](https://github.com/damiancurti/Caelum-Argenteum/issues/211):
+eligible horizontal impacts subtract **150% of the recipient's landing speed
+capacity**, for both player and charging bull, before anatomy and defenses.
+The active buckler enhancement applies once. The same 150% now applies to
+falls for every biologically cushioned body; actual jumping and crushing stay
+unchanged. Evidence: assets/validation_5219;
+author gameplay acceptance remains in [pending_test.txt](pending_test.txt).
 
 5.2.18 implements [#209](https://github.com/damiancurti/Caelum-Argenteum/issues/209):
 authored run/punch/supine/death poses, modular head and furniture alignment,

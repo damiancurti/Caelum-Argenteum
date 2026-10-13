@@ -1,0 +1,14 @@
+{
+  "matched_members": 16052,
+  "official_sha256": "d095948c3e54c31b7d97cff8554a9acada90518863c13ca84fbc3a8bf607e226",
+  "runtime_sources": {
+    "src/caelum/player/CaelumPlayer.zs": "4f431637ce134839a697ea276de28ac9f2fbe5f0afffbc32fd9e21503d1f38f0",
+    "src/caelum/actors/CaelumCombatActor.zs": "acf578f79f8442689e2de8aeec58359871a555353fd7f9bd3ce8103407efc2e2",
+    "src/caelum/actors/CaelumBull.zs": "ef634648ac6c1c9445860f758b952aa9b0dc1fe9249ea77bcfa7a27a9070b6e6",
+    "src/caelum/actors/CaelumBullRules.zs": "d8dcb06a031f7b839026e437dfb2af1b1e69a0f8398dfb8763466453820c4c29",
+    "src/caelum/core/CaelumImpactEnergy.zs": "022cd4341866dc3501def29bbb2d0ae947bb6e0c3583e16885c424400c54a5ac",
+    "src/caelum/core/CaelumConstants.zs": "b95a534dcb3d96946150f3a55185dacbf554ca6ecf13e134bb0a1d3e2573d8a5",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "0711abb17508f0cf12eb9e4e495018eccf39fc12baa25747320a1fd6cd59560d",
+    "src/caelum/world/CaelumSewerMaze.zs": "98e4b02b907b8fd9ed0999528d5cb1ee8c79a0e8ed326331e669f98af6f42120"
+  }
+}

@@ -20,15 +20,24 @@ class CaelumBull : CaelumCombatActor
             || (ElementalStatus!=null && ElementalStatus.GetMovementMultiplier()<=0);
     }
 
-    override double GetHorizontalImpactAbsorptionFraction()
+    override double GetHorizontalImpactAbsorptionSpeed()
     {
+        if(!BullChargeActive || BullChargeInterrupted())return 0;
+        return GetBiologicalLandingAbsorptionSpeed();
+    }
+
+    override double GetHazardPressureAbsorptionSpeed(double delta)
+    {
+        // Conserva la ruta anterior de presión sin muestras ponderadas.
+        // Las muestras ordinarias de roca siguen sin amortiguación NPC.
         if(!BullChargeActive || BullChargeInterrupted())return 0;
         double total=Mass+GetAttackCarriedWeight();
         double baseline=CaelumPhysicsUnits.JumpVelocity(Mass,total,0);
         double impaired=CaelumPhysicsUnits.JumpVelocity(Mass,total,CombatAgility)
             *CombatHealthPerformanceMultiplier
             *(ElementalStatus!=null ? ElementalStatus.GetMovementMultiplier() : 1);
-        return Clamp(impaired/Max(0.0001,baseline)-1,0.0,CaelumBullRules.HORIZONTAL_CUSHION_CAP);
+        return Max(0.0,delta)*Clamp(impaired/Max(0.0001,baseline)-1,0.0,
+            CaelumBullRules.HAZARD_PRESSURE_CUSHION_CAP);
     }
 
     void EnsureBullChargeRevision()
