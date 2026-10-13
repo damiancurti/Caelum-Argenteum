@@ -1,6 +1,51 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Landing capacity for horizontal cushioning (#211)
+
+The author's amendment applies a **1.5 multiplier** to each eligible body's
+own jump absorption speed. Horizontal eligibility remains player/charging bull;
+the later amendment extends 150% to falls for ALL already cushioned biological
+bodies. For assigned
+energy E and recipient normal delta-speed d, in consistent velocity units:
+
+    a = 1.5 * jumpAbsorptionSpeed = landingAbsorptionSpeed
+    residual = max(0, d - a)
+    retainedEnergy = E * (residual / d)^2   when d > 0
+
+At zero delta retain E, preserving the existing zero-delta guard. At or below
+capacity, retained energy is zero before anatomy, regional armor and final
+Toughness. This replaces the horizontal Agility-0 bonus ratio and 50% cap;
+Agility 0 now has nonzero capacity when the body can absorb its own landing.
+
+Player ordinary eligibility remains walking/running/crouching into walls or
+scenery stationary before contact. Moving scenery and incoming bodies have
+no ordinary movement allowance. The active buckler retains its broader contact
+eligibility and its x2 landing enhancement: horizontal capacity is 3 * JumpZ,
+not a sum of ordinary and buckler absorption. Immobilization suppresses both.
+Player JumpZ already includes natural/total mass, Agility, health and elemental
+jump modifiers; no second copy of those factors is applied.
+
+The bull uses its existing landing helper (natural/loaded mass, Agility and
+physical-stun suppression), only while its charge remains eligible and the
+contact normal is horizontal. Its former horizontal-only health/partial-element
+ratio is superseded by that exact landing capacity. Full elemental interruption,
+bolas, death and inactive charge retain their exclusions. Other NPCs receive no
+new horizontal allowance. Both recipients keep independent assigned energy;
+one body's capacity never reduces the other's damage. No saved fields or
+native state timings change. Actual jump physics stays unchanged.
+
+Crushing explicitly retains its previous capacity: ordinary sustained body
+pressure uses the unscaled jump helper; hazard-rock pressure retains its old
+buckler-only fractional Agility bonus with a 0.5 cap. Static supported weight
+and ceiling work also stay unchanged. Capture crushing provenance before a
+hazard source is relabeled environmental, so it cannot acquire fall cushioning.
+Weighted NPC rock pressure remains uncushioned; the older unweighted/direct
+bull fallback retains its original charge fraction, health/elemental modifiers
+and 0.5 cap, rather than acquiring the new landing allowance.
+An incoming falling rock remains an environmental impact: active buckler gets
+the new landing capacity, but ordinary movement grants no incoming allowance.
 
 ## 5.2.18 - Rest presentation and contextual input (#209)
 
@@ -227,13 +272,13 @@ the collision and pays its existing natural-attack cost. Running pays its
 existing biological-mass Air cost. No blanket invulnerability is added.
 
 Collision mass is natural mass plus actual carried load, with charge multiplier
-1. The healthy unloaded bull is 900 kg. While charging, its own horizontal
-received impact energy is cushioned using the same jump model and masses:
+1. The healthy unloaded bull is 900 kg. The following historical horizontal
+formula was replaced by the 5.2.19 / #211 landing-capacity contract above:
 
     f = clamp(JumpVelocity(natural, total, Agility) / JumpVelocity(natural, total, 0) - 1, 0, 0.5)
     retainedEnergy = receivedEnergy * (1 - f)^2
 
-The numerator includes health and elemental biological impairment. At Agility
+The former numerator included health and elemental biological impairment. At Agility
 20, healthy and unladen, f = 0.2263767773 and retained energy = 0.5984928906 E.
 This does not reduce the other body's energy or increase Toughness. Existing
 floor/crushing absorption remains separate. The shared pair snapshots cushioning

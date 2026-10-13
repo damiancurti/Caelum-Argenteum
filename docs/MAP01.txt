@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Shared horizontal cushioning (#211)
+
+Player and charging bull use the shared SYSTEMS contract: horizontal landing
+capacity times 1.5, under existing contact/charge eligibility. No tutorial
+story, map layout, gifts or resident AI changes. MAP01's player health floor
+remains 1 HP; ordinary lethal-damage tests use isolated fixtures elsewhere.
 
 ## 5.2.18 - Player presentation and dining repair (#209)
 

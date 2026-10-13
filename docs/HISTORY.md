@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Landing capacity for impacts (#211), 2026-10-12
+
+The author requested replacing horizontal fractional cushioning with landing
+capacity and explicitly chose 150% of each body's own jump speed for player
+and bull. A later clarification also applies 150% to falls for all bodies
+already using biological cushioning, while excluding crushing. Actual jump
+work/velocity, mass, contact eligibility, anatomy, armor and Toughness remain.
+
+Shared unscaled jump capacity now feeds crushing; scaled landing capacity feeds
+falls and the existing eligible horizontal player/bull contacts. Buckler's x2
+enhancement applies once. Ordinary NPCs gain no horizontal allowance. The bull
+uses the landing helper's own suppression, not the old horizontal-only health
+ratio. The prior player rock-pressure rule and bull's unweighted rock-pressure
+fallback are retained separately; weighted NPC rock pressure remains uncushioned.
+This also preserves crushing provenance before environmental relabeling.
+
+Native evidence, regression attempts, hashes and scope: assets/validation_5219.
+On 2026-10-12 the author explicitly confirmed that all tests passed and
+authorized PR212 merge and #211 closure, without qualifications. CA211-01
+(horizontal and fall cushioning), originating in 5.2.19 / #211, therefore
+passed author gameplay acceptance. Its entry was removed from pending_test.txt,
+which remains tracked and empty. This confirmation is separate from native
+agent evidence; release 5.2.19 and the tested runtime remain unchanged.
+No saved field/state migration or
+art changes are required. The preceding #209 / PR210 was accepted and merged
+as 4549991a; this patch starts from that baseline.
+
+Delivered in PR212, implementation commit 976602ba. All 350 native
+checks pass, including actual player wall/fall movement, all-body falls,
+bilateral bull contacts, pressure and current/old saves. Static validation
+and normal packaging pass; all 16,052 runtime members match the tested package.
+The temporary keep-awake request was released without changing the power plan.
 
 ## 5.2.18 - Modular animation and rest repairs (#209), 2026-10-12
 

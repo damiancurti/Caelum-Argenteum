@@ -172,9 +172,9 @@ class CaelumImpactEnergy : Object
         // ReceiveCaelumImpact reclasifica la roca de peligro como ambiente:
         // no recibe la amortiguación de caída usada por la presión corporal.
         double absorption=source is "CaelumHazardRock"
-            ? (user!=null ? delta*user.GetImpactAgilityAbsorptionSpeed(CaelumConstants.IMPACT_KIND_ENVIRONMENT) : 0)
-            : user!=null ? user.GetBiologicalLandingAbsorptionSpeed()
-            : npc!=null ? npc.GetBiologicalLandingAbsorptionSpeed() : 0;
+            ? (user!=null ? user.GetHazardPressureAbsorptionSpeed(delta) : 0)
+            : user!=null ? user.GetBiologicalJumpAbsorptionSpeed()
+            : npc!=null ? npc.GetBiologicalJumpAbsorptionSpeed() : 0;
         double retained=delta>0 ? Max(0.0,delta-absorption)/delta : 1;
         return work*retained*retained;
     }

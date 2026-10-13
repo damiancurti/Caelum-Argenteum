@@ -857,9 +857,9 @@ class CaelumConstants : Object
     const SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER = 2.00;
     const SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER = 2.00;
     const SHIELD_BUCKLER_AGILITY_ABSORPTION_MULTIPLIER = 2.00;
-    // La maniobra horizontal usa solamente el BONUS de movilidad derivado
-    // de Agilidad y nunca puede borrar por completo el Delta-v físico.
-    const SHIELD_BUCKLER_HORIZONTAL_ABSORPTION_MAX_FRACTION = 0.50;
+    // #211: caídas y choques elegibles, sin modificar el aplastamiento.
+    const BIOLOGICAL_IMPACT_ABSORPTION_MULTIPLIER = 1.50;
+    const SHIELD_BUCKLER_PRESSURE_ABSORPTION_MAX_FRACTION = 0.50;
 
     // V4.25.1 — física de impactos.
     // Una variación de velocidad capaz de recorrer media altura en más de

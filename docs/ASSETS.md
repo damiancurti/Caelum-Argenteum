@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.18** — 2026-10-12.
+Documentation version: **5.2.19** — 2026-10-12.
+
+## 5.2.19 - Horizontal impact diagnostics (#211)
+
+No art, sound or world geometry changes. assets/validation_5219 records isolated
+GZDoom fixtures, baseline regression, load/impairment and buckler cases,
+bilateral bull contacts, charge motion, persistence, revised falls and unchanged
+crushing. No new production test actor is packaged.
+Diagnostic packages, user configs, saves, engine and IWAD remain local in build.
 
 ## 5.2.18 - Authored poses, female hands and dining model (#209)
 
