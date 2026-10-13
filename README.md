@@ -10,7 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 5.2.20 implements [#213](https://github.com/damiancurti/Caelum-Argenteum/issues/213):
-resource bars at the lower screen edges, **30% larger**, with descriptions above.
+resource bars at the lower screen edges, **95% larger**, with descriptions above.
 Native HUD scaling remains adjustable; measured viewport limits prevent clipping.
 [Native visual evidence](assets/validation_5220/RESULTS.md) is separate from
 CA213-01 author acceptance, still in [pending_test.txt](pending_test.txt).

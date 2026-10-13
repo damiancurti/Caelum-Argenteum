@@ -2,7 +2,7 @@
 
 Documentation version: **5.2.20** — 2026-10-12.
 
-**Current 5.2.20/#213:** lower-edge resource bars, 30% larger, labels above;
+**Current 5.2.20/#213:** lower-edge resource bars, 95% larger, labels above;
 measured viewport fit and weapon-status clearance. Evidence validation_5220;
 CA213-01 author acceptance pending. #211/PR212 merged b4b7f49f, CA211-01 passed.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands

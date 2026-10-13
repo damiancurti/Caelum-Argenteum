@@ -6,8 +6,9 @@ Documentation version: **5.2.20** — 2026-10-12.
 
 The author reported centrally positioned small bars and requested edge anchors
 and descriptions above them, then explicitly selected a 30% size increase.
-The two groups now use independent lower-corner transforms, with the same
-1.30 multiplier for art, fills and text. Complete localized labels determine
+The author then requested another 50% increase over that result, giving
+1.30 x 1.50 = 1.95 times the native resource scale. The two groups now use independent lower-corner transforms, with the same
+1.95 multiplier for art, fills and text. Complete localized labels determine
 the viewport cap; right labels end above their bars and extend inward.
 Central reload/charge text retains native scaling and moves above the groups
 when it needs more horizontal space. The thermal icon stays above its laurels; the final text pass stays above

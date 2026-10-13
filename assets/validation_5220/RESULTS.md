@@ -52,3 +52,13 @@ The temporary keep-awake request was released; the power plan is unchanged.
 The native HUD mode names are intentionally preserved: visual.cfg's historical
 small/large screenshot names refer to its test stages, not GZDoom scale ordering.
 CA213-01 remains the sole author check. No merge/closure is claimed here.
+
+## Author size amendment
+
+The author requested an additional 50% over the first 1.30 result:
+RESOURCE_ENLARGEMENT is now 1.95. Earlier captures above document the first
+iteration; amended-size captures use the size195 prefix. Viewport fitting,
+edge anchoring, label placement and weapon clearance remain in effect.
+
+Amended native checks pass: fullscreen1920x1080 uses scale1.95x2.34;
+960x720 long-label stress reaches the viewport cap without clipping.

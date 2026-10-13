@@ -78,7 +78,7 @@ class CaelumPresentation : Object ui
     static void End() {Screen.ClearTransform();}
     // #213: cada grupo de recursos toma su propio borde, sin mover los
     // indicadores centrales ni modificar las preferencias nativas del HUD.
-    const RESOURCE_ENLARGEMENT=1.30;
+    const RESOURCE_ENLARGEMENT=1.95;
     const RESOURCE_RIGHT_EDGE=631.0;
     const RESOURCE_BOTTOM_EDGE=341.0;
     static Vector2 ResourceScale(double contentWidth)

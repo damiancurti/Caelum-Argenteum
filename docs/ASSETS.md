@@ -6,7 +6,7 @@ Documentation version: **5.2.20** — 2026-10-12.
 
 Reuse the existing HUD component PNGs, icons, laurels and CaelumMono font.
 No artwork is generated or changed. Each resource group is anchored to its
-lower screen edge, enlarged 30% over native HUD scaling within measured
+lower screen edge, enlarged 95% over native HUD scaling within measured
 viewport limits, and labelled above the bars. Validation sources and selected
 native captures live in assets/validation_5220; generated PK3s and INIs stay
 local under build/issue213.

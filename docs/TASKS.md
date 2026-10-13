@@ -4,7 +4,7 @@ Documentation version: **5.2.20** — 2026-10-12.
 
 ## Issue #213 - Resource bar layout (5.2.20)
 
-Implemented: independent lower-corner anchors; author-approved 1.30 scale;
+Implemented: independent lower-corner anchors; author-approved 1.95 scale;
 labels above all ten bars; right labels grow inward; measured viewport fitting
 and conditional clearance for central weapon status. Existing art and native
 HUD preferences remain. Static validation and isolated native visual evidence

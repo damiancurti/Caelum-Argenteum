@@ -5,7 +5,7 @@ Documentation version: **5.2.20** — 2026-10-12.
 ## 5.2.20 - Resource bars at screen edges (#213)
 
 The author requested the two resource groups at the lower left/right edges,
-30% larger, with descriptions above each bar. Native HUD preferences still
+95% larger, with descriptions above each bar. Native HUD preferences still
 control their base size; a measured viewport limit keeps the complete localized
 labels inside the display. Frames, fills, icons and labels share each transform.
 Long central reload/charge text moves above the groups only if it would overlap.

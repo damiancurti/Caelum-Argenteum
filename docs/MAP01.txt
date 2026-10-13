@@ -5,7 +5,7 @@ Documentation version: **5.2.20** — 2026-10-12.
 ## 5.2.20 - Resource HUD placement (#213)
 
 The shared SYSTEMS resource layout also applies in MAP01: lower-edge groups,
-30% enlargement within viewport limits and labels above the bars. No map,
+95% enlargement within viewport limits and labels above the bars. No map,
 story, interaction or tutorial resource rules change.
 
 ## 5.2.19 - Shared horizontal cushioning (#211)
