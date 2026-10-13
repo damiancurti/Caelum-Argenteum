@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+## 5.2.22 - Current menu controls (#215)
+
+Implemented parenthesized existing controls across custom and native engine
+menus, including remapped bindings and contextual precedence. Preserve native
+search/key capture/save titles and verify complete captions at different scales.
+Evidence: assets/validation_5222. Next: author check CA215-01, linked PR review,
+then merge/closure upon acceptance. CA213-01 and CA216-01 remain outstanding.
+
+Static validation and normal packaging pass; all 16,053 official runtime
+members match the final tested package. The selected native runs record 95
+passing assertions, with inspected English/Spanish captures at 1280x720 and
+960x720. Temporary keep-awake was released without changing the power plan.
+Evidence and physical-input limits: assets/validation_5222/RESULTS.md.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 

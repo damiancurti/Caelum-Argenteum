@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.21.** Obtain and update the complete repository, validate
+**Current release: 5.2.22.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.22 implements [#215](https://github.com/damiancurti/Caelum-Argenteum/issues/215):
+menu options show their existing keyboard controls in parentheses, including
+native engine options, character creation, Journal, crafting and dialogues.
+Remappable actions use current bindings; shadowed contextual keys show Click.
+[Native evidence](assets/validation_5222/RESULTS.md) is separate from pending
+CA215-01 author acceptance. No direct shortcuts or input preferences are added.
 
 5.2.21 fixes [#216](https://github.com/damiancurti/Caelum-Argenteum/issues/216):
 the tutorial gold rock now uses its existing 3D model instead of being invisible.

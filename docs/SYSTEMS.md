@@ -1,6 +1,29 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+## 5.2.22 - Parenthesized menu controls (#215)
+
+Each interactive menu caption identifies its existing keyboard control in
+parentheses. Navigation-only lists show arrows/Enter; this does not create
+new direct shortcuts. The shared CaelumInputHints formatter covers creator,
+appearance, Journal navigation/actions, crafting, time skip, rest, containers,
+trade, calendar, notices, cards, conversation replies and story prompts.
+Native engine options use Enter, Left/Right or Enter/Backspace according to
+the item's existing behavior. Numbered NPC replies show their native number.
+
+Remappable Journal/time-skip actions read the current bindings on each draw.
+Keys already consumed by native menu navigation are not advertised as global
+menu actions. A contextual letter shadowed by a higher-priority binding shows
+Click; an existing Tab fallback is retained where dispatched. No settings,
+bindings, pause ownership, gameplay or saved fields change.
+
+Native labels are decorated only during rendering and restored immediately.
+Option-search source labels and saved-game names remain original. Native
+specialized menu classes retain their behavior; save/load hints are a visual
+overlay. Full custom captions fit within their button bounds, and confirmation
+click bounds include the appended hint. English/Spanish evidence and limits:
+assets/validation_5222. Author acceptance CA215-01 is outstanding.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 

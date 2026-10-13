@@ -16,3 +16,14 @@ Expected: visible gold-bearing rock; exactly 2 kg available; after depletion the
 rock and its collision disappear. No separate invisible chest blocks the passage.
 Status: awaiting explicit author visual acceptance. The author identified the
 reported obstruction as the same location as this formerly invisible rock.
+
+CA215-01 | Origin: 5.2.22 / issue #215 | Existing menu controls
+Prerequisites: rebuild with run_dev.bat; keep your usual UI scale and bindings.
+Steps: inspect/click Main, Options, creator/appearance and Journal options.
+Check crafting/time skip/rest, a card game, NPC replies and notices. Change a
+Journal or time-skip binding; verify its hint updates. Use native option search,
+change/clear a control binding and open Save/Load without altering saved names.
+Expected: readable parenthesized controls match actual input; click targets
+include their captions; arrows/Enter remain navigation, with no new shortcuts.
+Native options and existing artwork/pause behavior remain functional.
+Status: awaiting explicit author visual/input acceptance.

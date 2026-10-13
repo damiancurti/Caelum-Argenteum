@@ -450,12 +450,12 @@ class CaelumCharacterCreationMenu : ListMenu
     void DrawBasicPage()
     {
         if (Page > CaelumConstants.CREATION_PAGE_SECOND_CLASS)
-        { Line(TextFont, Font.CR_GOLD, PanelLeft()+16, 232, "< " .. CurrentChoice() .. " >", LeftWidth(), 1.6); return; }
+        { Line(TextFont, Font.CR_GOLD, PanelLeft()+16, 232, CaelumInputHints.Navigation(CurrentChoice(),true), LeftWidth(), 1.6); return; }
         int selected = Page == 0 ? Race : Page == 1 ? FirstClass : SecondClass;
         for (int i = 0; i < 4; i++)
         {
             String key = Page == 0 ? RaceKey(i) : Page == 1 ? ActivityKey(i) : ProfessionKey(i);
-            String value = (i == selected ? "> " : "  ") .. StringTable.Localize(key, false);
+            String value = (i == selected ? "> " : "  ") .. CaelumInputHints.Navigation(StringTable.Localize(key, false));
             Line(TextFont, i == selected ? Font.CR_GOLD : Font.CR_WHITE,
                 PanelLeft() + 16, 146 + i * 58, value, LeftWidth());
         }
@@ -472,7 +472,7 @@ class CaelumCharacterCreationMenu : ListMenu
             String row = String.Format("%s %d (+%d)", StringTable.Localize(LayerKey(layer), false),
                 FinalLayerValue(layer), LayerBonus[layer]);
             Line(TextFont, layer == SelectedLayer ? Font.CR_GOLD : Font.CR_WHITE,
-                PanelLeft() + 16, 146 + layer * 58, row, LeftWidth());
+                PanelLeft() + 16, 146 + layer * 58, CaelumInputHints.Navigation(row,true), LeftWidth());
         }
         DrawRemaining(RemainingLayerPoints());
     }
@@ -490,7 +490,7 @@ class CaelumCharacterCreationMenu : ListMenu
             String row = String.Format("%s +%d/%d", StringTable.Localize(AttributeKey(attribute), false),
                 AttributeBonus[attribute], MaximumAttributeBonus(attribute));
             Line(SmallTextFont, attribute == SelectedAttribute ? Font.CR_GOLD : Font.CR_WHITE,
-                PanelLeft() + 16, 124 + attribute * 27, row, LeftWidth());
+                PanelLeft() + 16, 124 + attribute * 27, CaelumInputHints.Navigation(row,true), LeftWidth());
         }
         DrawRemaining(RemainingAttributePoints());
     }
@@ -501,7 +501,7 @@ class CaelumCharacterCreationMenu : ListMenu
         for(int i=0;i<3;i++)
             Line(TextFont,i==Personality[layer]?Font.CR_GOLD:Font.CR_WHITE,
                 PanelLeft()+16,146+i*58,(i==Personality[layer]?"> ":"  ")
-                ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(layer,i),false),LeftWidth());
+                ..CaelumInputHints.Navigation(StringTable.Localize(CaelumPersonalityRules.ChoiceKey(layer,i),false)),LeftWidth());
     }
 
     void DrawSummaryPage()
@@ -540,8 +540,8 @@ class CaelumCharacterCreationMenu : ListMenu
                 String.Format(row==1?"CA_APPEARANCE_FACE_%d":row==2?"CA_APPEARANCE_HAIR_%d":"CA_APPEARANCE_HAIR_COLOR_%d",row==1?Face:row==2?HairStyle:HairColor);
             int color=AppearanceRow==row?Font.CR_GOLD:Font.CR_WHITE;
             double y=144+row*66;
-            Line(SmallTextFont,color,PanelLeft()+16,y,StringTable.Localize(label,false),LeftWidth(),1.2);
-            Line(TextFont,color,PanelLeft()+16,y+24,"< "..StringTable.Localize(value,false).." >",LeftWidth(),1.3);
+            Line(SmallTextFont,color,PanelLeft()+16,y,CaelumInputHints.Navigation(StringTable.Localize(label,false)),LeftWidth(),1.2);
+            Line(TextFont,color,PanelLeft()+16,y+24,CaelumInputHints.Navigation(StringTable.Localize(value,false),true),LeftWidth(),1.3);
         }
         Line(SmallTextFont,Font.CR_GRAY,PanelLeft()+16,425,StringTable.Localize("CA_APPEARANCE_VOICE",false),LeftWidth(),1.2);
     }
@@ -577,7 +577,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 bool hover=Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(x,460),(width,34));
                 CaelumNarrativeArtwork.Rect(x,460,width,34,hover?0x806632:0x152029,0.9);
                 String label=i==0?"<":i==2?">":StringTable.Localize(Preview.Walking?"CA_APPEARANCE_IDLE":"CA_APPEARANCE_WALK",false);
-                Line(SmallTextFont,Font.CR_WHITE,x+8,470,label,width-16,1.25);
+                Line(SmallTextFont,Font.CR_WHITE,x+8,470,CaelumInputHints.Fixed(label,i==0?InputEvent.Key_PgUp:i==2?InputEvent.Key_PgDn:InputEvent.Key_Backspace),width-16,1.25);
             }
         }
         bool allocation=Page==CaelumConstants.CREATION_PAGE_LAYERS || Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES;
@@ -600,7 +600,7 @@ class CaelumCharacterCreationMenu : ListMenu
             bool hover=Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(x,548),(178,36));
             CaelumNarrativeArtwork.Rect(x,548,178,36,hover?0x806632:0x152029,0.9);
             String key=i==0?AppearanceOnly?"CA_UI_CANCEL":"CA_UI_BACK":i==1?allocation?"CA_UI_MINUS":"CA_UI_PREVIOUS":i==2?allocation?"CA_UI_PLUS":"CA_UI_NEXT":"CA_UI_CONFIRM";
-            Line(SmallTextFont,hover?Font.CR_GOLD:Font.CR_WHITE,x+12,558,StringTable.Localize(key,false),154,1.4);
+            Line(SmallTextFont,hover?Font.CR_GOLD:Font.CR_WHITE,x+12,558,CaelumInputHints.Fixed(StringTable.Localize(key,false),i==0?InputEvent.Key_Escape:i==1?InputEvent.Key_LeftArrow:i==2?InputEvent.Key_RightArrow:InputEvent.Key_Enter),154,1.4);
         }
     }
     override void OnReturn(){Pointer.Reset();}

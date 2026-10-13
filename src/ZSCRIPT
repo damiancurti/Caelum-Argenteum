@@ -257,3 +257,5 @@ version "4.14"
 #include "caelum/equipment/CaelumBolas.zs"
 
 #include "caelum/ui/CaelumInputHints.zs"
+
+#include "caelum/ui/CaelumNativeMenuHints.zs"

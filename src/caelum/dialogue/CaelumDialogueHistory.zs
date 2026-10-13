@@ -74,9 +74,12 @@ class CaelumHistoryConversationMenu : ConversationMenu
     int SelectedNativeReply()
     { return mSelection<0 || mSelection>=ReplyMap.Size()?-1:ReplyMap[mSelection]; }
 
+    String ReplyLabel(String text)
+    {return CaelumInputHints.Label(CaelumInputHints.Resolve(text),mResponses.Size()<10?String.Format("%d",(mResponses.Size()+1)%10):CaelumInputHints.KeyName(InputEvent.Key_Enter));}
+
     void AppendReply(String text,int nativeIndex)
     {
-        let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
+        let lines=displayFont.BreakLines(ReplyLabel(text),ReplyWidth);
         mResponses.Push(mResponseLines.Size());ReplyMap.Push(nativeIndex);
         for(int i=0;i<lines.Count();i++)mResponseLines.Push(lines.StringAt(i));
         lines.Destroy();
@@ -100,7 +103,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
                 mShowGold=true;text.AppendFormat(" %s",StringTable.Localize("$TXT_TRADE"));
                 text.Replace("%u",String.Format("%u",reply.PrintAmount));
             }
-            let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
+            let lines=displayFont.BreakLines(ReplyLabel(text),ReplyWidth);
             int count=lines.Count();lines.Destroy();
             if(mResponses.Size()>0 && mResponseLines.Size()+count>CONTENT_LINES)
             {NextOffset=eligible-1;break;}
@@ -114,7 +117,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
                 if(!Seen(id))continue;
                 if(eligible++<PageOffset)continue;
                 String text=StringTable.Localize(CaelumDialogueHistoryData.Reply(id));
-                let lines=displayFont.BreakLines(CaelumInputHints.Resolve(text),ReplyWidth);
+                let lines=displayFont.BreakLines(ReplyLabel(text),ReplyWidth);
                 int count=lines.Count();lines.Destroy();
                 if(mResponses.Size()>0 && mResponseLines.Size()+count>CONTENT_LINES)
                 {NextOffset=eligible-1;break;}

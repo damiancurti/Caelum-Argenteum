@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-090 - Decorate native menu labels without mutating their data
+
+Status/evidence: ENGINE-VERIFIED, #215 / 5.2.22, 2026-10-12.
+Baseline: 8fc9bc80; GZDoom 4.14.2 / Windows 11.
+
+Option search shares item objects with source descriptors. Add display hints
+only around Drawer and restore labels before search/input; retain specialized
+native subclasses. Saved-game titles are persistence data: draw an overlay,
+never append hints to SaveTitle. Confirmation text extending past the original
+caption also needs a corresponding horizontal mouse bound.
+
+Evidence: assets/validation_5222 covers real render frames, repeated native
+search, unchanged stored save titles and clicks on the appended Yes hint.
+The test fixture initially shadowed its Result field with a case-insensitive
+parameter; self.Result fixes that fixture error. Engine event structs are
+read-only and direct native key-binding mutation from ConsoleProcess is
+rejected; test menu capture opening/abort separately from physical rebinding.
+Scope: the target engine and the tested menu paths; physical input acceptance
+remains CA215-01. Do not infer every native submenu was manually exercised.
+
 ## CA-KP-089 - Model registration for a gameplay subclass
 
 Status/evidence: ENGINE-VERIFIED, #216 / 5.2.21, 2026-10-12.

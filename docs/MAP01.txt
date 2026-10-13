@@ -1,6 +1,10 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+5.2.22 / #215: creator, Journal and NPC reply options display their existing
+controls in parentheses. Dialogue content/order and tutorial progression remain.
+Native input/render evidence: assets/validation_5222; CA215-01 pending.
 
 5.2.21 / #216: the finite tutorial gold subclass explicitly registers the
 existing gold-rock model. Position and 2 kg quota are unchanged. Native

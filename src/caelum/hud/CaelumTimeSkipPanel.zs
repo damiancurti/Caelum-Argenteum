@@ -28,13 +28,13 @@ class CaelumTimeSkipPanel : Object
     static ui void Layout(CaelumJournalOverlay view,CaelumTimeSkipState skip,CaelumMenuPointer pointer,bool draw)
     {
         pointer.Clear();bool edit=!skip.Active && !skip.ConfirmPending;
-        pointer.Button(view,4,112,126,36,"-",edit,false,draw);
+        pointer.Button(view,4,88,126,60,CaelumInputHints.Fixed("-",InputEvent.Key_DownArrow),edit,false,draw);
         for(int i=0;i<3;i++)pointer.Button(view,i+1,156+i*112,126,104,
-            StringTable.Localize(i==0?"CA_SKIP_DAY":i==1?"CA_SKIP_HOUR":"CA_SKIP_MINUTE",false),edit,skip.Field==i,draw);
-        pointer.Button(view,5,496,126,36,"+",edit,false,draw);
-        pointer.Button(view,6,44,316,180,StringTable.Localize("CA_UI_SKIP_START",false),edit,false,draw);
-        pointer.Button(view,7,232,316,180,StringTable.Localize("CA_UI_SKIP_FORECAST",false),edit,false,draw);
-        pointer.Button(view,8,420,316,176,StringTable.Localize(skip.Active?"CA_UI_SKIP_STOP":"CA_UI_BACK",false),true,false,draw);
+            CaelumInputHints.Navigation(StringTable.Localize(i==0?"CA_SKIP_DAY":i==1?"CA_SKIP_HOUR":"CA_SKIP_MINUTE",false),true),edit,skip.Field==i,draw);
+        pointer.Button(view,5,496,126,60,CaelumInputHints.Fixed("+",InputEvent.Key_UpArrow),edit,false,draw);
+        pointer.Button(view,6,44,316,180,CaelumInputHints.Fixed(StringTable.Localize("CA_UI_SKIP_START",false),InputEvent.Key_Enter),edit,false,draw);
+        pointer.Button(view,7,232,316,180,CaelumInputHints.Fixed(StringTable.Localize("CA_UI_SKIP_FORECAST",false),CaelumMenuPointer.KeyScan(114)),edit,false,draw);
+        pointer.Button(view,8,420,316,176,CaelumInputHints.Fixed(StringTable.Localize(skip.Active?"CA_UI_SKIP_STOP":"CA_UI_BACK",false),InputEvent.Key_Tab),true,false,draw);
     }
     static ui bool Mouse(CaelumJournalOverlay view,CaelumPlayer user,UiEvent e)
     {

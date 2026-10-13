@@ -1176,6 +1176,8 @@ class CaelumJournalOverlay : EventHandler
                 86.0,
                 StringTable.Localize(GetPageKey(page), false)
             );
+            CaelumInputHints.Draw(SmallFont,Font.CR_GRAY,centerX,96,
+                CaelumInputHints.Label("",CaelumInputHints.KeyName(InputEvent.Key_PgUp).."/"..CaelumInputHints.KeyName(InputEvent.Key_PgDn)),80);
         }
     }
 

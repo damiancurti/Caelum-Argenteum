@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.21** — 2026-10-12.
+Documentation version: **5.2.22** — 2026-10-12.
+
+## 5.2.22 - Current controls beside menu options (#215)
+
+The author requested parenthesized controls throughout the game and explicitly
+included native engine options. Existing arrows/Enter and contextual keys are
+shown; no per-option shortcuts are introduced. Current bindings are resolved
+at display time, including conflicts with native navigation and global actions.
+Native subclasses preserve search, key capture, save/load and specialized options.
+Evidence: assets/validation_5222. CA215-01 remains pending; #213/PR214 and
+#216/PR217 are earlier, separate patches awaiting acceptance and merge.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 
