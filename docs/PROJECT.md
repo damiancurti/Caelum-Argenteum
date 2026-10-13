@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.19** — 2026-10-12.
+Documentation version: **5.2.20** — 2026-10-12.
+
+## 5.2.20 - Resource bars at screen edges (#213)
+
+The author requested the two resource groups at the lower left/right edges,
+95% larger, with descriptions above each bar. Native HUD preferences still
+control their base size; a measured viewport limit keeps the complete localized
+labels inside the display. Frames, fills, icons and labels share each transform.
+Long central reload/charge text moves above the groups only if it would overlap.
+No resource rules, saves or menu preferences change. Native visual evidence:
+assets/validation_5220. Author visual acceptance CA213-01 remains pending.
+
+Static validation and normal packaging pass. Final native render checks cover
+1280x720/960x720 Spanish, 1600x675 English and 1920x1080 fullscreen with copied
+user preferences. All 16,052 official runtime members match the tested package;
+the user's INI is unchanged. Selected captures/logs and scope: validation_5220.
 
 ## 5.2.19 - Horizontal landing capacity (#211)
 

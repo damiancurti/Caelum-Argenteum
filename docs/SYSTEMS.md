@@ -1,6 +1,31 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.19** — 2026-10-12.
+Documentation version: **5.2.20** — 2026-10-12.
+
+## 5.2.20 - Edge-anchored resource bars (#213)
+
+Supersedes the shared centered resource frame in the 5.2.15 contract below.
+The five bodily-resource bars anchor at the lower left; temperature, load,
+hunger, thirst and sleep anchor at the lower right. Frames, fills, icons and
+labels share a **1.95 multiplier** over the existing native HUD scale (another 50% over
+the initially requested 1.30 multiplier). The
+native HUD preference remains authoritative; the game does not rewrite it.
+
+Both groups retain the existing 24-unit row spacing and artwork. Labels move
+from 12 virtual units below their fill origin to 12 above; right labels end at
+their bar's inner right edge and grow inward. The original group bounds leave
+two scaled units between the outer artwork and the screen edge. Groups grow
+until their measured localized text/art widths or height fill the viewport;
+that cap can reduce the 95% increase on small displays or extreme scales.
+Two additional measurement units cover text shadows and separate the groups.
+The last row stays anchored when a longer label requires this fit adjustment.
+
+Menus, compass and other HUD indicators retain their scaling. If central
+magazine/reload or charge text would cross a resource group horizontally, its
+native-scale text moves above the groups; otherwise its position is unchanged.
+Resource text renders after first-person weapon/shield art so long labels
+stay readable. All resource values, thermal thresholds, colors, actions and
+save fields remain.
 
 ## 5.2.19 - Landing capacity for horizontal cushioning (#211)
 

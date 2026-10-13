@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.19** — 2026-10-12.
+Documentation version: **5.2.20** — 2026-10-12.
+
+## Issue #213 - Resource bar layout (5.2.20)
+
+Implemented: independent lower-corner anchors; author-approved 1.95 scale;
+labels above all ten bars; right labels grow inward; measured viewport fitting
+and conditional clearance for central weapon status. Existing art and native
+HUD preferences remain. Static validation and isolated native visual evidence
+are recorded in assets/validation_5220; CA213-01 is the outstanding author check.
+Next: review the linked PR and confirm the in-game layout before merge/closure.
+
+Static validation and normal packaging pass. Final native render checks cover
+1280x720/960x720 Spanish, 1600x675 English and 1920x1080 fullscreen with copied
+user preferences. All 16,052 official runtime members match the tested package;
+the user's INI is unchanged. Selected captures/logs and scope: validation_5220.
 
 ## Issue #211 - Horizontal landing capacity (5.2.19)
 

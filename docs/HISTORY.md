@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.19** — 2026-10-12.
+Documentation version: **5.2.20** — 2026-10-12.
+
+## 5.2.20 - Resource bar layout (#213), 2026-10-12
+
+The author reported centrally positioned small bars and requested edge anchors
+and descriptions above them, then explicitly selected a 30% size increase.
+The author then requested another 50% increase over that result, giving
+1.30 x 1.50 = 1.95 times the native resource scale. The two groups now use independent lower-corner transforms, with the same
+1.95 multiplier for art, fills and text. Complete localized labels determine
+the viewport cap; right labels end above their bars and extend inward.
+Central reload/charge text retains native scaling and moves above the groups
+when it needs more horizontal space. The thermal icon stays above its laurels; the final text pass stays above
+first-person weapon/shield art, including long labels.
+
+Baseline: accepted #211/PR212 merge b4b7f49f. No new art, balance, save schema,
+menu scaling or user INI changes. Static and isolated native visual evidence
+is in assets/validation_5220; CA213-01 author acceptance remains pending.
+
+Static validation and normal packaging pass. Final native render checks cover
+1280x720/960x720 Spanish, 1600x675 English and 1920x1080 fullscreen with copied
+user preferences. All 16,052 official runtime members match the tested package;
+the user's INI is unchanged. Selected captures/logs and scope: validation_5220.
 
 ## 5.2.19 - Landing capacity for impacts (#211), 2026-10-12
 

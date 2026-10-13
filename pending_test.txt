@@ -1,0 +1,8 @@
+CA213-01 | Origin: 5.2.20 / issue #213 | Resource-bar layout
+Prerequisites: rebuild with run_dev.bat; load a character or start MAP01.
+Steps: inspect both lower resource groups at your usual resolution/HUD scale.
+Check every label above its bar, left/right edge placement and the 95% increase.
+Try a ranged weapon/reload and a different HUD scale from native Options.
+Expected: all bars/icons/fills/labels align and remain fully visible; text does
+not overlap the opposite group or weapon status. Menu size stays unchanged.
+Status: awaiting explicit author visual acceptance.
