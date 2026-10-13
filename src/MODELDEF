@@ -4261,3 +4261,14 @@ Model CaelumActorExplosiveElementalProjectile
  FrameIndex VFLI D 0 0
 }
 // END GENERATED LIGHTNING RAYS
+
+// La clase finita del tutorial necesita su propio enlace de modelo.
+Model CaelumTutorialGoldVein
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_gold.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE F 0 0
+}

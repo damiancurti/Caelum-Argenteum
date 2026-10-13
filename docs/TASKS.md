@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.20** — 2026-10-12.
+Documentation version: **5.2.21** — 2026-10-12.
+
+## 5.2.21 - Visible tutorial gold (#216)
+
+Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
+model registration for its subclass. Register the existing gold-rock OBJ for
+CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
+Native before/after captures and extraction/save-load checks are recorded in
+assets/validation_5221. Author visual acceptance CA216-01 remains pending.
+
+The author identified the reported obstruction as this same rock position.
+Next: confirm the corrected visible rock with the author and review the linked
+PR before merge/closure.
 
 ## Issue #213 - Resource bar layout (5.2.20)
 

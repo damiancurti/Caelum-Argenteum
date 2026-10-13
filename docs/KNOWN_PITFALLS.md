@@ -4,6 +4,22 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-089 - Model registration for a gameplay subclass
+
+Status/evidence: ENGINE-VERIFIED, #216 / 5.2.21, 2026-10-12.
+Baseline: 7f801d41; GZDoom 4.14.2 / Windows 11.
+
+CaelumTutorialGoldVein inherits CaelumVeinGold states and physics, but its
+parent's MODELDEF does not render this subclass. The transparent CAVE F
+fallback leaves a solid invisible rock. An explicit MODELDEF registration
+reuses the original OBJ and resolves it without changing saved gameplay data.
+Verify subclasses visually, not only through actor counts or resource calls.
+
+Evidence: assets/validation_5221 pairs the same basement camera before/after;
+the native probe reports exactly one 2 kg actor and its unchanged position.
+Scope: this subclass and target engine; do not generalize this into an engine
+inheritance guarantee for every model feature.
+
 ## CA-KP-088 - Preserve pressure provenance before environmental relabeling
 
 Status/evidence: ENGINE-VERIFIED, #211 / 5.2.19, 2026-10-12.

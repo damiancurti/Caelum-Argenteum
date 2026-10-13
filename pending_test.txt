@@ -6,3 +6,13 @@ Try a ranged weapon/reload and a different HUD scale from native Options.
 Expected: all bars/icons/fills/labels align and remain fully visible; text does
 not overlap the opposite group or weapon status. Menu size stays unchanged.
 Status: awaiting explicit author visual acceptance.
+
+CA216-01 | Origin: 5.2.21 / issue #216 | Visible tutorial gold
+Prerequisites: rebuild with run_dev.bat; start a fresh MAP01 or load an unmined one.
+Steps: choose the Seal with Palomo, obtain Ronnie's Pickaxe and visit the basement.
+Inspect the gold rock, strike it with the Pickaxe secondary attack and collect it.
+Check the previously reported invisible obstruction at the former chest location.
+Expected: visible gold-bearing rock; exactly 2 kg available; after depletion the
+rock and its collision disappear. No separate invisible chest blocks the passage.
+Status: awaiting explicit author visual acceptance. The author identified the
+reported obstruction as the same location as this formerly invisible rock.
