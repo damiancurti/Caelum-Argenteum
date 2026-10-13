@@ -12,6 +12,11 @@ pending_test.txt; all six checks in this accepted batch are complete.
 This confirmation is separate from the recorded native agent tests.
 Release 5.2.25 and the tested runtime remain unchanged.
 
+Acceptance follow-up #225: the post-merge checkout exposed stale document-index
+hashes calculated from CRLF working copies before Git's required LF conversion.
+Regenerate the index from committed LF source bytes; verify a fresh checkout.
+This completes the same 5.2.25 acceptance delivery without runtime changes.
+
 Delivery record before this acceptance:
 
 After inspecting the four magical spread categories, the author chose the
