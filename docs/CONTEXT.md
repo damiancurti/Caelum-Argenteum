@@ -1,11 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.19** — 2026-10-12.
+Documentation version: **5.2.20** — 2026-10-12.
 
-**Current 5.2.19/#211:** eligible horizontal cushioning uses 1.5 times each
-body's jump capacity; player and charging bull. All biological falls also use
-150%; crushing unchanged. Buckler applies once.
-Evidence: validation_5219; CA211-01 passed 2026-10-12; merge/closure authorized.
+**Current 5.2.20/#213:** lower-edge resource bars, 30% larger, labels above;
+measured viewport fit and weapon-status clearance. Evidence validation_5220;
+CA213-01 author acceptance pending. #211/PR212 merged b4b7f49f, CA211-01 passed.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.

@@ -76,6 +76,27 @@ class CaelumPresentation : Object ui
         Screen.SetTransform(matrix);
     }
     static void End() {Screen.ClearTransform();}
+    // #213: cada grupo de recursos toma su propio borde, sin mover los
+    // indicadores centrales ni modificar las preferencias nativas del HUD.
+    const RESOURCE_ENLARGEMENT=1.30;
+    const RESOURCE_RIGHT_EDGE=631.0;
+    const RESOURCE_BOTTOM_EDGE=341.0;
+    static Vector2 ResourceScale(double contentWidth)
+    {
+        Vector2 scale=HUDScale()*RESOURCE_ENLARGEMENT;
+        double fit=Min(1.0,Min(Screen.GetWidth()/(contentWidth*scale.X),Screen.GetHeight()/((RESOURCE_BOTTOM_EDGE-218)*scale.Y)));
+        return scale*fit;
+    }
+    static void BeginResources(bool right,Vector2 target)
+    {
+        Vector2 origin,size;
+        [origin,size]=Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
+        Vector2 factor=(target.X*640/size.X,target.Y*360/size.Y);
+        let matrix=new("Shape2DTransform");matrix.Scale(factor);
+        matrix.Translate(((right?Screen.GetWidth()-RESOURCE_RIGHT_EDGE*target.X:0)-origin.X*factor.X,
+            Screen.GetHeight()-RESOURCE_BOTTOM_EDGE*target.Y-origin.Y*factor.Y));
+        Screen.SetTransform(matrix);
+    }
     static double CenterMessage(Font font,int color,String text,double y)
     {
         Vector2 scale=MessageScale();

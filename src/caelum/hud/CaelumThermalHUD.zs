@@ -8,7 +8,6 @@ class CaelumThermalHUD : Object
     const FILL_INSET=8.0;
     const FILL_WIDTH=164.0;
     const FILL_HEIGHT=7.0;
-    const LABEL_Y=242.0;
 
     static clearscope double Range(double toughness)
     {return CaelumThermalRules.Threshold(3,toughness);}

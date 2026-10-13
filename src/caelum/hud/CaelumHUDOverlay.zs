@@ -471,45 +471,54 @@ class CaelumHUDOverlay : EventHandler
         );
     }
 
-    ui void DrawResourceLaurels()
+    ui void DrawResourceLaurels(bool right)
     {
-        DrawHUDBarLaurels(20.0, 230.0, 180.0);
-        DrawHUDBarLaurels(20.0, 254.0, 180.0);
-        DrawHUDBarLaurels(20.0, 278.0, 180.0);
-        DrawHUDBarLaurels(20.0, 302.0, 180.0);
-        DrawHUDBarLaurels(20.0, 326.0, 180.0);
-        DrawHUDBarLaurels(CaelumThermalHUD.BAR_X, CaelumThermalHUD.BAR_Y, CaelumThermalHUD.BAR_WIDTH);
-        DrawHUDBarLaurels(440.0, 254.0, 180.0);
-        DrawHUDBarLaurels(440.0, 278.0, 180.0);
-        DrawHUDBarLaurels(440.0, 302.0, 180.0);
-        DrawHUDBarLaurels(440.0, 326.0, 180.0);
+        double x=right?440.0:20.0;
+        for(int row=0;row<5;row++)DrawHUDBarLaurels(x,230.0+24.0*row,180.0);
     }
 
-    // Aplica el vocabulario visual del paquete sin reservar espacio para un
-    // retrato. Cada silueta continúa siendo legible aun sin depender del color.
-    ui void DrawResourceSkin()
+    // Cada grupo conserva sus marcos, iconos y remates en una misma proyeccion.
+    ui void DrawResourceSkin(bool right)
     {
         String root = "graphics/caelum/ui/hud/icons/";
-        DrawHUDBarFrame(20.0, 230.0, 180.0);
-        DrawHUDBarFrame(20.0, 254.0, 180.0);
-        DrawHUDBarFrame(20.0, 278.0, 180.0);
-        DrawHUDBarFrame(20.0, 302.0, 180.0);
-        DrawHUDBarFrame(20.0, 326.0, 180.0);
-        DrawHUDBarFrame(CaelumThermalHUD.BAR_X, CaelumThermalHUD.BAR_Y, CaelumThermalHUD.BAR_WIDTH);
-        DrawHUDBarFrame(440.0, 254.0, 180.0);
-        DrawHUDBarFrame(440.0, 278.0, 180.0);
-        DrawHUDBarFrame(440.0, 302.0, 180.0);
-        DrawHUDBarFrame(440.0, 326.0, 180.0);
+        double x=right?440.0:20.0;
+        for(int row=0;row<5;row++)DrawHUDBarFrame(x,230.0+24.0*row,180.0);
+        if(right)
+        {
+            DrawHUDTexture(root .. "ca_hud_icon_load.png",422.0,249.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_hunger.png",422.0,273.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_thirst.png",422.0,297.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_sleep.png",422.0,321.0,18.0,18.0);
+        }
+        else
+        {
+            DrawHUDTexture(root .. "ca_hud_icon_lucidity.png",2.0,225.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_adrenaline.png",2.0,249.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_anima.png",2.0,273.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_health.png",2.0,297.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_air.png",2.0,321.0,18.0,18.0);
+        }
+    }
 
-        DrawHUDTexture(root .. "ca_hud_icon_lucidity.png", 2.0, 225.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_adrenaline.png", 2.0, 249.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_anima.png", 2.0, 273.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_health.png", 2.0, 297.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_air.png", 2.0, 321.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_load.png", 422.0, 249.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_hunger.png", 422.0, 273.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_thirst.png", 422.0, 297.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_sleep.png", 422.0, 321.0, 18.0, 18.0);
+    // La descripcion ocupa el hueco encima del marco; las de la derecha
+    // terminan sobre el extremo de la barra y crecen hacia dentro de la pantalla.
+    ui void DrawResourceLabel(bool right,double barY,int color,String label,int tint=0xFFFFFFFF)
+    {
+        double x=right?620.0-HUDFont.StringWidth(label):20.0;
+        Screen.DrawText(HUDFont,color,x,barY-12.0,label,
+            DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,
+            DTA_KEEPRATIO,true,DTA_SHADOW,true,DTA_COLOR,tint);
+    }
+
+    // Si una recarga larga invade los recursos, queda por encima de ambos
+    // grupos. El texto central conserva su escala nativa y su posición usual
+    // cuando hay espacio suficiente entre las barras.
+    ui double WeaponStatusY(String text,Vector2 resources,double leftWidth,double rightWidth)
+    {
+        Vector2 hud=CaelumPresentation.HUDScale();
+        double left=(Screen.GetWidth()-HUDFont.StringWidth(text)*hud.X)/2;
+        if(left>leftWidth*resources.X && left>rightWidth*resources.X)return 326;
+        return Min(326,360-(CaelumPresentation.RESOURCE_BOTTOM_EDGE-218)*resources.Y/hud.Y-HUDFont.GetHeight()-2);
     }
 
     // Coincide con DrawTexture/DrawText y DTA_KEEPRATIO: no mezclar otra
@@ -749,9 +758,6 @@ class CaelumHUDOverlay : EventHandler
         for(int tick=1;tick<6;tick++)
             Screen.Dim(tick==3 ? 0xFFFFFF : 0x20252B,0.9,
                 x+int(width*CaelumThermalHUD.BandPosition(tick)),y,stroke,height);
-        String label=StringTable.Localize("CA_HUD_THERMAL_UNAVAILABLE",false);
-        int textColor=Font.CR_GRAY;
-        int textTint=0xFFFFFFFF;
         if(thermal!=null)
         {
             double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
@@ -759,6 +765,20 @@ class CaelumHUDOverlay : EventHandler
             int marker=x+int((width-1)*CaelumThermalHUD.Position(exposure,toughness));
             Screen.Dim(0x080C10,1,marker-2*stroke,y-strokeY,5*stroke,height+2*strokeY);
             Screen.Dim(0xFFFFFF,1,marker,y-strokeY,stroke,height+2*strokeY);
+        }
+    }
+
+    ui String, int, int ThermalLabel(CaelumPlayer localPlayer)
+    {
+        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=record!=null ? record.ThermalState : null;
+        String label=StringTable.Localize("CA_HUD_THERMAL_UNAVAILABLE",false);
+        int textColor=Font.CR_GRAY;
+        int textTint=0xFFFFFFFF;
+        if(thermal!=null)
+        {
+            double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
+            double exposure=thermal.Exposure;
             textColor=Font.CR_WHITE;
             textTint=0xFF000000 | CaelumThermalHUD.ExposureColor(exposure,toughness);
             String stateName=StringTable.Localize(CaelumThermalHUD.StateKey(exposure,toughness),false);
@@ -768,11 +788,7 @@ class CaelumHUDOverlay : EventHandler
             String value=String.Format(Abs(displayed)<1000 ? "%+.1f" : "%+.2e",displayed);
             label=String.Format(StringTable.Localize(key,false),value,stateName);
         }
-        Screen.DrawText(HUDFont,textColor,CaelumThermalHUD.BAR_X,CaelumThermalHUD.LABEL_Y,label,
-            DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true,
-            DTA_COLOR,textTint);
-        // La llama desplazada no debe quedar tapada por el laurel del marco.
-        DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
+        return label,textColor,textTint;
     }
 
     // Gradientes y bandas animadas hacen visible la pérdida de Lucidez.
@@ -1015,23 +1031,59 @@ class CaelumHUDOverlay : EventHandler
         // El centro del marco HUD-01 es deliberadamente oscuro y casi opaco.
         // Dibujarlo primero permite que los rellenos tintados queden visibles
         // dentro de sus bordes metálicos en vez de quedar tapados por el arte.
-        CaelumPresentation.BeginHUD();
-        DrawResourceSkin();
+        String thermalLine;int thermalColor,thermalTint;
+        [thermalLine,thermalColor,thermalTint]=ThermalLabel(localPlayer);
+        // Medir el texto localizado antes de limitar la ampliacion: los dos
+        // grupos pueden crecer hasta tocarse, pero nunca invadirse ni cortarse.
+        double leftWidth=Max(209,20+Max(HUDFont.StringWidth(lucidityLine),
+            Max(HUDFont.StringWidth(adrenalineLine),Max(HUDFont.StringWidth(animaLine),
+            Max(HUDFont.StringWidth(healthLine),HUDFont.StringWidth(airLine))))));
+        double rightWidth=Max(209,11+Max(HUDFont.StringWidth(thermalLine),
+            Max(HUDFont.StringWidth(loadLine),Max(HUDFont.StringWidth(hungerLine),
+            Max(HUDFont.StringWidth(thirstLine),HUDFont.StringWidth(sleepLine))))));
+        // Dos unidades incluyen la sombra y separan las etiquetas enfrentadas.
+        leftWidth+=2;rightWidth+=2;
+        Vector2 resourceScale=CaelumPresentation.ResourceScale(leftWidth+rightWidth);
+        CaelumPresentation.BeginResources(false,resourceScale);
+        DrawResourceSkin(false);
         DrawLucidityBar(localPlayer);
         DrawAdrenalineBar(localPlayer);
         DrawAnimaBar(localPlayer);
         DrawHealthBar(localPlayer);
         DrawAirBar(localPlayer);
-        DrawResourceLaurels();
+        DrawResourceLaurels(false);
+        CaelumPresentation.End();
+        CaelumPresentation.BeginResources(true,resourceScale);
+        DrawResourceSkin(true);
         DrawLoadBar(localPlayer, 254);
         DrawThermalBar(localPlayer);
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
+        DrawResourceLaurels(true);
+        // La llama se dibuja despues del laurel para conservar su silueta.
+        DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
 
         CaelumPresentation.End();
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
+
+        // Como antes, las etiquetas quedan por encima del arma de primera persona.
+        CaelumPresentation.BeginResources(false,resourceScale);
+        DrawResourceLabel(false,230,GetLucidityColor(localPlayer.LucidityState),lucidityLine);
+        DrawResourceLabel(false,254,Font.CR_GOLD,adrenalineLine);
+        DrawResourceLabel(false,278,Font.CR_PURPLE,animaLine);
+        DrawResourceLabel(false,302,GetHealthTextColor(localPlayer.HealthState),healthLine);
+        DrawResourceLabel(false,326,GetAirColor(localPlayer.AirState),airLine);
+        CaelumPresentation.End();
+        CaelumPresentation.BeginResources(true,resourceScale);
+        DrawResourceLabel(true,230,thermalColor,thermalLine,thermalTint);
+        DrawResourceLabel(true,254,Font.CR_WHITE,loadLine);
+        DrawResourceLabel(true,278,GetSurvivalColor(localPlayer.HungerState),hungerLine);
+        DrawResourceLabel(true,302,GetSurvivalColor(localPlayer.ThirstState),thirstLine);
+        DrawResourceLabel(true,326,GetSurvivalColor(localPlayer.SleepState),sleepLine);
+
+        CaelumPresentation.End();
 
         CaelumCompass.Draw(event, localPlayer, HUDFont);
         CaelumPresentation.BeginHUD();
@@ -1073,7 +1125,7 @@ class CaelumHUDOverlay : EventHandler
             double magazineX = 320.0
                 - HUDFont.StringWidth(magazineLine) * 0.5;
             Screen.DrawText(
-                HUDFont, Font.CR_WHITE, magazineX, 326.0, magazineLine,
+                HUDFont, Font.CR_WHITE, magazineX, WeaponStatusY(magazineLine,resourceScale,leftWidth,rightWidth), magazineLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true,
@@ -1105,7 +1157,7 @@ class CaelumHUDOverlay : EventHandler
             double chargeX = 320.0
                 - HUDFont.StringWidth(chargeLine) * 0.5;
             Screen.DrawText(
-                HUDFont, chargeColor, chargeX, 326.0, chargeLine,
+                HUDFont, chargeColor, chargeX, WeaponStatusY(chargeLine,resourceScale,leftWidth,rightWidth), chargeLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true,
@@ -1113,79 +1165,6 @@ class CaelumHUDOverlay : EventHandler
             );
         }
 
-        Screen.DrawText(HUDFont, Font.CR_WHITE, 440.0, 266.0,
-            loadLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true, DTA_SHADOW, true);
-
-        Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.HungerState), 440.0, 290.0,
-            hungerLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true, DTA_SHADOW, true);
-        Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.ThirstState), 440.0, 314.0,
-            thirstLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true, DTA_SHADOW, true);
-        Screen.DrawText(HUDFont, GetSurvivalColor(localPlayer.SleepState), 440.0, 338.0,
-            sleepLine, DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true, DTA_SHADOW, true);
-
-        Screen.DrawText(
-            HUDFont,
-            GetLucidityColor(localPlayer.LucidityState),
-            20.0,
-            242.0,
-            lucidityLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true,
-            DTA_SHADOW, true
-        );
-
-        Screen.DrawText(
-            HUDFont,
-            Font.CR_GOLD,
-            20.0,
-            266.0,
-            adrenalineLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true,
-            DTA_SHADOW, true
-        );
-
-        Screen.DrawText(
-            HUDFont,
-            Font.CR_PURPLE,
-            20.0,
-            290.0,
-            animaLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true,
-            DTA_SHADOW, true
-        );
-
-        Screen.DrawText(
-            HUDFont,
-            GetHealthTextColor(localPlayer.HealthState),
-            20.0,
-            314.0,
-            healthLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true,
-            DTA_SHADOW, true
-        );
-
-        Screen.DrawText(
-            HUDFont,
-            GetAirColor(localPlayer.AirState),
-            20.0,
-            338.0,
-            airLine,
-            DTA_VIRTUALWIDTHF, 640.0,
-            DTA_VIRTUALHEIGHTF, 360.0,
-            DTA_KEEPRATIO, true,
-            DTA_SHADOW, true
-        );
         CaelumPresentation.End();
         CaelumNotifications.Draw(localPlayer,HUDFont,noticeBottom);
         CaelumNotifications.DrawExtraction(localPlayer);
