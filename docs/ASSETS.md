@@ -1,13 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.24** — 2026-10-13.
+Documentation version: **5.2.25** — 2026-10-13.
 
 ## 5.2.23 - Sewer bag sleep (#219)
 
 Reuse the existing sleeping bag, supine character pose and native rest/skip UI.
 No generated art, models, sounds or provenance change. The generic T help no
 longer claims a safe marker is always required; danger messages remain.
-Native evidence: assets/validation_5223; author check CA219-01 pending.
+Native evidence: assets/validation_5223; author check CA219-01 accepted 2026-10-13.
 
 ## 5.2.22 - Menu control captions (#215)
 
@@ -15,7 +15,7 @@ No artwork, fonts, sounds or provenance change. Parenthesized bilingual text
 uses existing fonts and native menu transforms. Custom button captions fit
 complete hints within their bounds; creator previews and card images remain.
 Native visual evidence and deterministic fixtures: assets/validation_5222.
-CA215-01 author visual/input acceptance remains pending.
+CA215-01 passed author visual/input acceptance on 2026-10-13.
 
 ## 5.2.21 - Visible tutorial gold (#216)
 
@@ -23,7 +23,7 @@ Fresh MAP01 games spawned the finite 2 kg gold actor with collision but no
 model registration for its subclass. Register the existing gold-rock OBJ for
 CaelumTutorialGoldVein; keep placement, harvesting, quota and depletion intact.
 Native before/after captures and extraction/save-load checks are recorded in
-assets/validation_5221. Author visual acceptance CA216-01 remains pending.
+assets/validation_5221. Author visual acceptance CA216-01 passed author acceptance on 2026-10-13.
 
 ## 5.2.20 - Resource HUD layout (#213)
 
