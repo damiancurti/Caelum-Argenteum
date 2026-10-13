@@ -10,7 +10,8 @@ bull. Keep contact eligibility, active-buckler enhancement once, bilateral
 energy and defenses. A later author amendment also applies 150% to falls for
 all biologically cushioned bodies; actual jumping and crushing remain unchanged.
 No save schema or art changes. Evidence: assets/validation_5219; CA211-01 remains
-pending author gameplay acceptance. Commit/push delivery does not imply merge.
+pending author gameplay acceptance. Commit/push delivered in draft PR212;
+350 native checks, static validation and normal packaging pass.
 
 ## 5.2.18 - Modular pose, furniture and hand repairs (#209)
 

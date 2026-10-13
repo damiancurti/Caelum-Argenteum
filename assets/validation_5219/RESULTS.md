@@ -4,6 +4,8 @@ Date: 2026-10-12 (America/Buenos_Aires). Baseline: main `4549991a` / 5.2.18.
 Engine: installed GZDoom 4.14.2, Windows, Vulkan. Native runs were unpaused in
 the background at 5% master volume, with disposable configuration and saves.
 Author acceptance remains **CA211-01** in root pending_test.txt.
+Delivery: draft [PR212](https://github.com/damiancurti/Caelum-Argenteum/pull/212),
+implementation commit `976602ba`, pushed to the focused #211 branch.
 
 ## Final contract
 

@@ -16,6 +16,8 @@ The active buckler enhancement applies once. The same 150% now applies to
 falls for every biologically cushioned body; actual jumping and crushing stay
 unchanged. Evidence: assets/validation_5219;
 author gameplay acceptance remains in [pending_test.txt](pending_test.txt).
+Delivery: [draft PR212](https://github.com/damiancurti/Caelum-Argenteum/pull/212),
+with commit/push complete and 350 native checks passed.
 
 5.2.18 implements [#209](https://github.com/damiancurti/Caelum-Argenteum/issues/209):
 authored run/punch/supine/death poses, modular head and furniture alignment,

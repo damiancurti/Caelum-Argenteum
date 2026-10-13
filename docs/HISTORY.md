@@ -25,6 +25,12 @@ closure or manual acceptance is inferred. No saved field/state migration or
 art changes are required. The preceding #209 / PR210 was accepted and merged
 as 4549991a; this patch starts from that baseline.
 
+Delivered in draft PR212, implementation commit 976602ba. All 350 native
+checks pass, including actual player wall/fall movement, all-body falls,
+bilateral bull contacts, pressure and current/old saves. Static validation
+and normal packaging pass; all 16,052 runtime members match the tested package.
+The temporary keep-awake request was released without changing the power plan.
+
 ## 5.2.18 - Modular animation and rest repairs (#209), 2026-10-12
 
 Author report: face outlines, missing running, head/body separation, rolled

@@ -10,7 +10,7 @@ immobilization, buckler overlap, exclusions, bilateral contacts, charge
 interruption and old/current saves. Falls also use 150% for every biological
 body, as subsequently requested. Preserve actual jumps/crushing and
 record native evidence in assets/validation_5219. CA211-01 remains pending
-author acceptance; this delivery is commit/push, not merge or closure.
+author acceptance. Commit/push delivered in draft PR212; 350 native checks pass.
 
 ## Issue #209 - Modular animation and rest repair (5.2.18)
 
