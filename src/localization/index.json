@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "85a851a663596647285fc69d689acfce8483294cc75ebcc13a2bcc103305dba2",
+  "sha256": "bfbe690aa90178b7a1c491ada65d50a99c9d9955b84ab9f7379b2568b288a4ca",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -788,6 +788,9 @@
     "CA_EVENT_WORKER_NAME": {"default":[[4118,4118]],"es":[[4193,4193]]},
     "CA_EVENT_WORKER_REST": {"default":[[4119,4119]],"es":[[4194,4194]]},
     "CA_EVENT_WORKER_WORK": {"default":[[4120,4120]],"es":[[4195,4195]]},
+    "CA_EXHAUSTION_LOCK": {"enu":[[5575,5575]],"default":[[5575,5575]],"esp":[[5580,5580]]},
+    "CA_EXHAUSTION_START": {"enu":[[5574,5574]],"default":[[5574,5574]],"esp":[[5579,5579]]},
+    "CA_EXHAUSTION_TITLE": {"enu":[[5573,5573]],"default":[[5573,5573]],"esp":[[5578,5578]]},
     "CA_EXIT_CONFIRM": {"enu":[[85,85]],"default":[[85,85]],"es":[[179,179]]},
     "CA_FACTION_CAELITH": {"enu":[[1827,1827]],"default":[[1827,1827]],"es":[[1897,1897]]},
     "CA_FACTION_CULT_TAROT": {"enu":[[1828,1828]],"default":[[1828,1828]],"es":[[1898,1898]]},

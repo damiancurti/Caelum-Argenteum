@@ -96,10 +96,11 @@ class CaelumLiveMenuControls : Object ui
         {Row(326);Button("CA_UI_CONFIRM",InputEvent.Key_Enter,0,"",280);Button("CA_UI_CANCEL",InputEvent.Key_Tab,0,"",280);}
         else if(context==host.CTX_REST)
         {
-            Row(145);Button("CA_UI_STAND",0,113,"q");Button("CA_UI_FAST",0,116,"t");Button("CA_UI_SKIP",0,121,"y");
+            bool canStand=!CaelumExhaustion.Locked(user);
+            Row(145);Button("CA_UI_STAND",0,113,"q",92,canStand);Button("CA_UI_FAST",0,116,"t");Button("CA_UI_SKIP",0,121,"y",92,canStand);
             if(CaelumDiningSession.HasMealSupport(user))
             {Button("CA_UI_EAT",0,102,"f");Button("CA_UI_DRINK",0,103,"g");}
-            Button("CA_UI_JOURNAL",InputEvent.Key_Tab);
+            Button("CA_UI_JOURNAL",InputEvent.Key_Tab,0,"",92,canStand);
         }
         else if(context==host.CTX_MERCHANT)
         {

@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.2** — 2026-10-13.
+Documentation version: **5.3.3** — 2026-10-13.
+
+## 5.3.3 - Exhaustion sleep (#258), 2026-10-13
+
+Implemented immediate zero-Sleep exhaustion and a strictly-above-10% standing
+threshold. The author chose immediate lying in air/water while preserving
+normal falling, flotation and sinking. Shared rest recovery, real support,
+automatic provisions and ordinary hazards remain authoritative. Exhaustion
+has its own revisioned flag in the existing InterHub rest owner; spell sleep
+remains distinct. Native conversation Back and existing activity interruption
+paths prevent escaping into another live interaction.
+Evidence: assets/validation_533/RESULTS.md. Static and isolated engine results
+are recorded there separately from author acceptance. CA258-01 is pending;
+the author is away, so no manual acceptance is claimed.
 
 ## 5.3.2 - Automatic provisions (#257), 2026-10-13
 

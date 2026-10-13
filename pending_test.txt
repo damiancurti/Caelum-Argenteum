@@ -1,0 +1,14 @@
+CA258-01 | Origin: 5.3.3 / #258 | Status: pending author acceptance
+Prerequisites: issue258 build in GZDoom 4.14.2; isolated Probar258 terminal
+fixture, or an initialized living character. Keep original saves unchanged.
+1. Reach 0% Sleep without a bed: expect immediate visible lying in place and
+   factor 1, with gradual recovery and no free refill.
+2. Below/at 10%, try movement, Use, attacks, jump/crouch, Q/Back, Journal and
+   time-skip: none may stand the character. After >10%, Q allows standing;
+   crossing the boundary alone does not force waking.
+3. Check falling, water, unsafe/moving ground, damage and critical food/water:
+   lying continues with ordinary physics/hazards and real automatic portions.
+4. Check real bed/bag support versus a chair or nearby furniture; save/load
+   while locked, pause/resume and inspect camera/controls after recovery.
+Expected: no relocation, duplicate portions, early exit, immunity, fake bed
+bonus or MAP02 ground acceleration permission. Report any partial/failing step.

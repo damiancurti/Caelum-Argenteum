@@ -1,6 +1,46 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.2** — 2026-10-13.
+Documentation version: **5.3.3** — 2026-10-13.
+
+## 5.3.3 - Involuntary exhaustion sleep (#258)
+
+Initialized living characters immediately lie down when Sleep reaches 0%, at
+their current position. Combat, critical needs, unsafe ground, air and water
+do not block this transition. The author explicitly chose immediate lying in
+air/water with ordinary falling, flotation or sinking and no relocation.
+Input is disabled while lying, but exhaustion alone does not zero physical
+momentum or alter collision, gravity, drowning, damage or death handling.
+
+Standing is locked while Sleep is **<=10%**, including exactly 10%. Only a
+value strictly above 10% permits voluntary cancellation; passing that value
+does not itself wake the character. Movement, actions, Cancel/Back, Journal
+and time-skip entry cannot bypass the lock. Damage and spell timer expiry do
+not release it. Timed Arcanist sleep remains an independent effect. Live
+activities close through their existing interruption paths; conversations
+use native Back without selecting a response, and card games retain their
+existing context-loss/forfeit policy. Pausing still pauses simulation.
+
+Ground exhaustion has factor 1. A nearby bed or owned bag grants no support.
+Only an already occupied valid sleeping support retains its existing factor;
+chair conversion drops support without using the relocating furniture exit.
+Moving away from a real support drops that support without moving the body.
+Critical Hunger/Thirst still reduce effective comfort to 1. The rest panel
+shows that effective factor. Recovery uses existing shared sleeping pulses
+and location time scale: no instant refill or offline-time catch-up. #257
+automatic portions and F/G behavior apply while lying, with real stock and
+in-flight guards. Ordinary fast-forward safety remains authoritative; ground
+exhaustion grants neither a safe zone nor the MAP02 bag exception.
+
+Hidden InterHub `CaelumRestState` owns `ExhaustionRevision=1`, `Exhaustion`
+and the one-per-lock feedback latch. Migration is idempotent and does not
+reset resources or sessions. Old initialized zero-Sleep saves reconstruct
+the condition on their next live tick. Hub travel keeps the lock, anchors
+the new map/current position and discards stale support/camera ownership.
+Death terminates the living controller normally. Preserve the original save
+as a reversible rollback copy; never overwrite it during migration tests.
+
+These rules supersede the voluntary-rest blockers only for exhaustion.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance.
 
 ## 5.3.2 - Automatic food and water (#257)
 

@@ -170,6 +170,7 @@ version "4.14"
 #include "caelum/world/CaelumClimateNormals.zs"
 #include "caelum/world/CaelumWeather.zs"
 #include "caelum/world/CaelumRest.zs"
+#include "caelum/world/CaelumExhaustion.zs"
 #include "caelum/world/CaelumRestTrial.zs"
 
 #include "caelum/world/CaelumRestFurniture.zs"

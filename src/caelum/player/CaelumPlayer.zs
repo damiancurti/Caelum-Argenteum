@@ -5538,6 +5538,7 @@ class CaelumPlayer : DoomPlayer
 
     void ToggleEquipmentMenu()
     {
+        if(CaelumExhaustion.Locked(self)){CaelumExhaustion.NotifyLocked(self);return;}
         if (CreationWizardOpen) { return; }
         EquipmentMenuOpen = !EquipmentMenuOpen;
         if (!EquipmentMenuOpen) { return; }
@@ -7609,6 +7610,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         CaelumUtilityStaff.EndEmission(self);
+        let dyingRest=CaelumRestState.Get(self);
+        if(dyingRest!=null)dyingRest.Exhaustion=false;
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         CaelumBreathing.StopAudio(self);
         if(CharacterProfile!=null)
@@ -8807,8 +8810,11 @@ class CaelumPlayer : DoomPlayer
             player.cmd.upmove = 0;
             player.cmd.buttons = 0;
 
-            Vel.X = 0.0;
-            Vel.Y = 0.0;
+            if(!CaelumExhaustion.Active(self))
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+            }
         }
 
         Super.PlayerThink();
@@ -11355,8 +11361,12 @@ class CaelumPlayer : DoomPlayer
         {
             movementFactor = 0.0;
             jumpFactor = 0.0;
-            Vel.X = 0.0;
-            Vel.Y = 0.0;
+            // El agotamiento quita el control, pero conserva caída, empujes y agua.
+            if (IsOtherwiseImmobilized())
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+            }
         }
 
         movementFactor *= GetShieldCombatMobilityMultiplier();
@@ -11398,6 +11408,11 @@ class CaelumPlayer : DoomPlayer
     }
 
     bool IsPhysicallyImmobilized()
+    {
+        return CaelumExhaustion.Active(self) || IsOtherwiseImmobilized();
+    }
+
+    bool IsOtherwiseImmobilized()
     {
         return CaelumBolas.Restrained(self) || CombatChannelModeActive
             || ForcedSleepTics > 0

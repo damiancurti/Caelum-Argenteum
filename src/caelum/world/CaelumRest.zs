@@ -60,6 +60,9 @@ class CaelumRestState : Inventory
     int LastUntimedStepSerial;
     bool AutoEating;
     bool AutoDrinking;
+    int ExhaustionRevision;
+    bool Exhaustion;
+    bool ExhaustionLockNoticeShown;
     // Revisión 1: F/G pausan sólo el llenado del descanso; el umbral 50 sigue activo.
     int ProvisionRevision;
     int ProvisionBlocked;
@@ -233,6 +236,12 @@ class CaelumRestState : Inventory
     {
         // Completar, cancelar o interrumpir es terminal para esta sesión.
         if (Status != CaelumRestRules.STATUS_ACTIVE) return;
+        if(CaelumExhaustion.Locked(user))
+        {
+            if(result==CaelumRestRules.STATUS_CANCELLED)CaelumExhaustion.NotifyLocked(user);
+            return;
+        }
+        Exhaustion=false;
         CaelumTimeAdvanceState.Halt(user);
         AutoEating=false;AutoDrinking=false;DiningTable=null;
         Status = result;
@@ -270,8 +279,10 @@ class CaelumRestState : Inventory
     static void Validate(CaelumPlayer user)
     {
         if (user != null && user.player != null && (user.player.cheats & CF_PREDICTING)) return;
+        CaelumExhaustion.Sync(user);
         let rest = Get(user);
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE) return;
+        if(CaelumExhaustion.Active(user))return;
         String reason = rest.OriginMap != level.MapName ? "CA_REST_MOVED" : BlockReason(user);
         if (reason.Length() == 0 && rest.UsesFurniture
             && (rest.Furniture == null || !rest.Furniture.SupportsRest(user)
@@ -301,6 +312,12 @@ class CaelumRestState : Inventory
         int cancelButtons = BT_ATTACK | BT_ALTATTACK | BT_USE | BT_JUMP | BT_CROUCH
             | BT_ZOOM | BT_RELOAD | BT_USER1 | BT_USER2 | BT_USER3 | BT_USER4;
         let rest = Get(user);
+        if(CaelumExhaustion.Locked(user))
+        {
+            rest.InputArmed=user.player.cmd.forwardmove==0 && user.player.cmd.sidemove==0
+                && user.player.cmd.upmove==0 && (user.player.cmd.buttons&cancelButtons)==0;
+            return;
+        }
         if (!rest.InputArmed)
         {
             // Primero soltar la entrada que confirmó el diálogo. No se

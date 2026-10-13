@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.2** — 2026-10-13.
+Documentation version: **5.3.3** — 2026-10-13.
+
+## 5.3.3 - Exhaustion sleep (#258)
+
+Zero Sleep now produces immediate lying at the current location, including
+air/water, with ordinary physics and hazards. Standing remains unavailable
+until Sleep exceeds 10%. Real support, shared recovery/provisions and
+revisioned save/hub state preserve existing resources and acceleration rules.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance;
+the author is away and has not tested this patch. #231-#236 remain separate.
 
 ## 5.3.2 - Automatic provisions (#257)
 

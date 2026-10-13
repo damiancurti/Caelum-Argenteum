@@ -109,6 +109,7 @@ class CaelumPlayerResources : Object play
                 user.CurrentHunger+=recovered;
                 // Digestión: sólo el hambre efectivamente saciada tiene coste.
                 user.CurrentSleep=Max(0.0,user.CurrentSleep-recovered/4.0);
+                CaelumExhaustion.Sync(user);
                 if(user.CurrentHunger>=CaelumConstants.SURVIVAL_MAXIMUM)CaelumDiningSession.Sated(user,false);
                 user.UpdateSurvivalStates();
                 break;
@@ -358,6 +359,7 @@ class CaelumPlayerResources : Object play
                 / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS
                     * CaelumWorldClock.SecondsPerGameHour(level.MapName))
                 * user.DerivedStats.SleepLossMultiplier / TICRATE);
+        CaelumExhaustion.Sync(user);
         user.UpdateSurvivalStates();
     }
 
