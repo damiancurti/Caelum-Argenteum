@@ -96,7 +96,9 @@ class CaelumLiveMenuControls : Object ui
         else if(context==host.CTX_REST)
         {
             Row(145);Button("CA_UI_STAND",0,113,"q");Button("CA_UI_FAST",0,116,"t");Button("CA_UI_SKIP",0,121,"y");
-            Button("CA_UI_EAT",0,102,"f");Button("CA_UI_DRINK",0,103,"g");Button("CA_UI_JOURNAL",InputEvent.Key_Tab);
+            if(CaelumDiningSession.HasMealSupport(user))
+            {Button("CA_UI_EAT",0,102,"f");Button("CA_UI_DRINK",0,103,"g");}
+            Button("CA_UI_JOURNAL",InputEvent.Key_Tab);
         }
         else if(context==host.CTX_MERCHANT)
         {

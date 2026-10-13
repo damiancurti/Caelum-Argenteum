@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
+
+## 5.2.26 - Rest feedback validation (#227)
+
+No art, sounds or map assets change. assets/validation_5226 retains the isolated
+native probe/runner and result record for rest key/click dispatch, real mansion
+furniture, safety rejections and visible messages. Runtime/test packages, saves
+and development dependencies stay local under build/issue227. CA227-01 author
+retest of the reported scene remains pending.
 
 ## 5.2.23 - Sewer bag sleep (#219)
 

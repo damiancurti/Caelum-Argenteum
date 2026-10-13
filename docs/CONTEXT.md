@@ -1,11 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
 
-**Current 5.2.25 accepted:** CA213/216/215/219/220/222-01 all passed author
-acceptance on 2026-10-13 without qualifications. PR214/217/218/221/223/224
-merge and issue closure authorized; pending_test.txt is empty. Evidence:
-validation_5220-5225; individual acceptance records in HISTORY. #211 accepted/merged.
+**Current 5.2.26/#227:** rest notices visible; chairs/bags serve owned provisions; x105 matches existing speed. Evidence:
+validation_5226. CA227-01 pending: retry the reported bag/stocked chair.
+**5.2.20-25 accepted:** six checks passed 2026-10-13; PR214/217/218/
+221/223/224 merged and issues closed. #225/PR226 repaired LF index hashes.
+#211 accepted/merged; prior acceptance records remain in HISTORY.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
@@ -49,8 +50,7 @@ CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.
 Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
-The author authorized all four merges/closures. At that acceptance the author test queue was empty;
-HISTORY records each confirmation. Current delivery: #209.
+All four merges/closures were authorized; HISTORY retains acceptance.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.

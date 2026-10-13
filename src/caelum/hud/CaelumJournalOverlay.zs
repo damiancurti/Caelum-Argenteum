@@ -2139,10 +2139,10 @@ class CaelumJournalOverlay : EventHandler
                 ? fast!=null && fast.Active ? "CA_FAST_LIMBO_ON" : "CA_FAST_LIMBO_OFF"
                 : fast!=null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
         DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 113,
-            rest.Mode==CaelumRestRules.MODE_WAIT
+            CaelumDiningSession.HasMealSupport(localPlayer)
                 ? String.Format(StringTable.Localize("CA_TABLE_AUTO_HELP",false),rest.AutoEating?"ON":"OFF",rest.AutoDrinking?"ON":"OFF")
                 : StringTable.Localize("CA_SLEEP_LUCIDITY_HELP", false));
-        if(rest.Mode==CaelumRestRules.MODE_WAIT)
+        if(CaelumDiningSession.HasMealSupport(localPlayer))
             DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 126, StringTable.Localize("CA_TABLE_RESERVES",false));
     }
 

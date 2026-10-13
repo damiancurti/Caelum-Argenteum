@@ -1,6 +1,23 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
+
+## 5.2.26 - Visible rest action feedback (#227)
+
+The native rest panel displays the newest live notification below its controls,
+using the engine message scale and wrapping the full text. This exposes existing
+fast-forward/dining rejection reasons previously hidden by the ordinary HUD's
+menu guard. The same inbox and Journal history retain the result; paused menus
+keep their existing presentation. By the author's follow-up decision, F/G and
+Eat/Drink now serve provisions in any occupied chair (Wait) or the owned deployed
+sleeping bag (Sleep), including the standalone MAP02 arrival chair. A reachable
+table supplies first when seated beside one; otherwise use carried provisions,
+then the owned Box. No food/water is created. Existing native portions, pulses
+and seated pacing remain; a second activation stops that channel, the current
+portion finishes, and unsupported rest/standing cannot start automatic serving.
+Beds retain the existing restriction. Fast-forward captions
+now say x105, matching the existing simulation; its rate and safety rules do not
+change. Meal support participates in pointer revision so a click cannot cross layouts.
 
 ## 5.2.22 - Parenthesized menu controls (#215)
 
@@ -723,7 +740,7 @@ A forfeit still requires its existing confirmation. Their world pause is unchang
 
 Crafting has visible mode, filter, recipe, tier, size, batch and efficiency
 controls, previous/next entry, detail scrolling, operation, cancel task, time
-skip, x60 and Back buttons. The wheel over the list changes the entry; over
+skip, x105 and Back buttons. The wheel over the list changes the entry; over
 the blueprint it scrolls details. Nonapplicable controls are disabled; final
 operations still revalidate real inventory, station, capacity and reservations.
 Processing/component availability uses their native material preview rather
@@ -5825,8 +5842,10 @@ Objects are real Inventory owned by the table; the figures on the model only rep
 them. Containers retain class, liters and weight. Withdrawal uses native pickup and
 rolls back if the item does not fit; save/load retains references.
 
-F/G activates repetition from an adjacent chair occupied in Wait. It is not consumed
-while standing, sleeping, out of reach or with full reserve. While there is an active
+F/G activates repetition from an occupied chair in Wait or the owned deployed
+sleeping bag in Sleep (#227). A table is optional: portable serving uses the same
+carried/Box reserve fallback. It does not start while standing, in unsupported
+rest, without valid furniture support or with full reserve. While there is an active
 regeneration effect is expected before another portion. Native consumables are reused:
 rations are spent and containers lose drinking water without disappearing. Improvement
 occurs in their usual pulses; T also processes those pulses and their expiration. Since

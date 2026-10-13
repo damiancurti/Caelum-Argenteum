@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
+
+## 5.2.26 - Rest menu feedback (#227), 2026-10-13
+
+The author reported inert sleeping-bag acceleration and F/G, with keys and
+clicks, including stocked seating and newly created characters. Native isolated
+input probes and a real Windows mouse click successfully dispatched acceleration;
+a copied saved profile also passed after test preparation. These probes do not
+reproduce the author's original scene. Source inspection established that the
+notification renderer returned whenever any menu was active, hiding every
+rejection and confirmation under the native rest menu.
+
+The current rest menu now draws its latest live notification below its controls
+with native message scaling and wrapping. The author then localized the chair
+report to MAP02: its standalone arrival chair has no serving table. The author
+explicitly authorized automatic eating/drinking from both chairs and sleeping
+bags. Shared reserve consumption now serves real carried/Box provisions there,
+retaining nearby-table priority, finite portions, native recovery and channel
+stopping. Unsupported rest remains blocked. Meal support changes invalidate
+pointer presses. Existing x105 acceleration replaces stale x60 labels; time
+safety, recovery cadence and saved state formats are unchanged. Evidence: assets/validation_5226. All 120 native assertions passed, including save/load and finite reserves.
+Real Windows clicks/F/G/T and scaled captures passed; read-only cross-review
+found no blocker. Author check CA227-01 is outstanding.
+This does not retroactively qualify or remove the earlier explicit acceptance.
 
 ## 5.2.25 - Staff dispersion (#222), 2026-10-13
 

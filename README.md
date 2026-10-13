@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.25.** Obtain and update the complete repository, validate
+**Current release: 5.2.26.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.26 addresses [#227](https://github.com/damiancurti/Caelum-Argenteum/issues/227):
+the rest menu now shows action feedback that was hidden while menus were open.
+F/G and Eat/Drink now use owned provisions from chairs and sleeping bags,
+as requested; acceleration labels correctly say **x105**. Existing time safety
+and finite consumption remain. Native input/scene
+checks: [evidence](assets/validation_5226/RESULTS.md). The author's original
+bag/chair failure needs a retest with its reason visible: **CA227-01 pending**.
 
 5.2.25 implements [#222](https://github.com/damiancurti/Caelum-Argenteum/issues/222):
 the magical staff now shares the statuette's **2-20 degree** base dispersion,
@@ -44,7 +52,8 @@ Native HUD scaling remains adjustable; measured viewport limits prevent clipping
 [Native visual evidence](assets/validation_5220/RESULTS.md) is separate from
 CA213-01 author acceptance, passed 2026-10-13. All six checks for releases
 5.2.20-5.2.25 passed without qualifications; merges and issue closures are
-authorized. [pending_test.txt](pending_test.txt) remains tracked and empty.
+complete. Their test queue was cleared at acceptance; [pending_test.txt](pending_test.txt)
+now tracks the separate #227 retest.
 
 5.2.19 implements [#211](https://github.com/damiancurti/Caelum-Argenteum/issues/211):
 eligible horizontal impacts subtract **150% of the recipient's landing speed

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
+
+## 5.2.26 - Rest control diagnosis and feedback (#227)
+
+Expose T/F/G results within native rest, enable author-approved provision use
+from chairs and sleeping bags without a table, synchronize x105 captions, and
+test key/click dispatch, finite carried/Box supplies, genuine MAP01/MAP02
+furniture, rejected actions and readable feedback. Evidence:
+assets/validation_5226. CA227-01 is outstanding: retry the author's failing
+bag/chair and record any visible restriction. Do not remove accepted safety or
+consumption conditions merely because the old UI hid their reason.
 
 ## 5.2.25 - Staff matches statuette dispersion (#222)
 
@@ -8,8 +18,8 @@ Share the existing 2-20 degree category for the magical staff, preserving other
 weapons and book homing. Native validation covers T1-T3 and actual shots at
 Insight 0/100; evidence: assets/validation_5225. CA222-01 passed author acceptance
 on 2026-10-13. All six current checks passed without qualifications; the author
-authorized their PR merges and issue closures. No author checks remain pending.
-Next development scope awaits the author's next issue.
+authorized their PR merges and issue closures, now completed. The subsequent
+rest report is tracked separately under #227 above.
 
 ## 5.2.24 - MAP02 Mandinga drops (#220)
 

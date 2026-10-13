@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.25** — 2026-10-13.
+Documentation version: **5.2.26** — 2026-10-13.
+
+## 5.2.26 - Rest controls feedback (#227)
+
+T/F/G appeared inert to the author on new and loaded characters, by keyboard and
+mouse, including a stocked chair. Isolated menu dispatch works; a verified UI
+bug hid all rejection notices while the native menu was open. The rest panel now
+shows its latest notification and labels existing acceleration x105. The reported
+MAP02 chair has no table; the author approved serving carried/Box provisions
+from both chairs and sleeping bags. Existing portions, native recovery, time
+safety and table priority remain.
+Evidence: assets/validation_5226. CA227-01 remains pending: the exact reported
+blocked activity must be retried with its reason visible; isolated success is
+not author acceptance or proof of the author's specific blocker.
 
 ## 5.2.25 - Magical staff precision (#222)
 

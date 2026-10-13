@@ -232,6 +232,36 @@ class CaelumNotifications : Object
         return total;
     }
 
+    static ui void DrawRestFeedback(CaelumPlayer user,Font font)
+    {
+        let inbox=CaelumNotificationInbox(user.FindInventory("CaelumNotificationInbox"));
+        if(inbox==null || inbox.Count==0 || font==null)return;
+        // El HUD oculta sus avisos durante los menús. El descanso conserva
+        // visible el último resultado, debajo de sus controles y con la
+        // escala de mensajes elegida; el historial sigue siendo el mismo.
+        Vector2 origin,extent;
+        [origin,extent]=CaelumPresentation.MenuRect((32,170),(576,1));
+        Vector2 scale=CaelumPresentation.MessageScale();
+        let lines=font.BreakLines(CaelumInputHints.Resolve(inbox.Text[inbox.Count-1]),
+            Max(1,int((extent.X-16)/scale.X)));
+        double lineHeight=(font.GetHeight()+2)*scale.Y;
+        double height=lines.Count()*lineHeight+12;
+        Vector2 hud=CaelumPresentation.HUDScale();
+        if(origin.Y+height>Screen.GetHeight()-140*hud.Y*CaelumPresentation.RESOURCE_ENLARGEMENT)
+        {
+            // Con texto grande, usar temporalmente el panel de información
+            // superior: no tapar los botones ni las barras de recursos.
+            Vector2 above,area;
+            [above,area]=CaelumPresentation.MenuRect((32,12),(576,127));
+            origin.Y=Max(0,above.Y+area.Y-height);
+        }
+        Screen.Dim(0x080E16,1,int(origin.X),int(origin.Y),int(extent.X),int(height));
+        for(int i=0;i<lines.Count();i++)
+            Screen.DrawText(font,Font.CR_GOLD,origin.X+8,origin.Y+6+i*lineHeight,lines.StringAt(i),
+                DTA_SCALEX,scale.X,DTA_SCALEY,scale.Y,DTA_SHADOW,true);
+        lines.Destroy();
+    }
+
     static ui void Draw(CaelumPlayer user, Font font,double minimumY=0)
     {
         if(menuactive!=Menu.Off)return;

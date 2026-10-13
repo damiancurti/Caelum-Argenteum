@@ -162,7 +162,7 @@ class CaelumCraftingUI : Object
         pointer.Button(view,17,44,318,112,CaelumInputHints.Context(L(ModeKey(mode)),InputEvent.Key_Enter),CanConfirm(user,browser),false,draw);
         pointer.Button(view,18,160,318,120,CaelumInputHints.Context(L("CA_UI_CANCEL_TASK"),0,99),user.CraftingTaskActive,false,draw);
         pointer.Button(view,22,284,318,116,CaelumInputHints.Bound(L("CA_UI_TIME_SKIP"),"ca_time_skip"),true,false,draw);
-        pointer.Button(view,23,404,318,88,CaelumInputHints.Context("x60",0,116),user.CraftingMenuOpen,false,draw);
+        pointer.Button(view,23,404,318,88,CaelumInputHints.Context("x105",0,116),user.CraftingMenuOpen,false,draw);
         pointer.Button(view,19,496,318,96,CaelumInputHints.BoundOrFallback(L("CA_UI_BACK"),"ca_journal_toggle",InputEvent.Key_Tab),true,false,draw);
     }
     static ui void Draw(CaelumJournalOverlay view,CaelumPlayer user)

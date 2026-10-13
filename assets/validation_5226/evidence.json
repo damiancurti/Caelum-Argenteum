@@ -1,0 +1,86 @@
+{
+  "checks": 120,
+  "runs": [
+    {
+      "label": "delivery-authored",
+      "checks": 6,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "1236658a0ab4d534e5f85e0371dc507aeab7295e554f2bf89a2a8decd8f9d16f",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-bag",
+      "checks": 11,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "1bf5cf87dc9cee18373a575fa72fc4d47cfb99f3c65e2e41241b9c93500816cf",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-box",
+      "checks": 11,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "0fac68957aed786a5b4c2c1104dcb691f1089baaa1945c905bc77ca80f253375",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-chair",
+      "checks": 11,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "41f11f06017ee205ae1be214454527b7a2e3452c17bac636e4e3f4b62863529f",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-deplete",
+      "checks": 12,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "2256e91cea6fe10a1c265046529a838d0ced46c9bbf880a09e90b3a622eb4816",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-final",
+      "checks": 17,
+      "runtime_sha256": "F68137CC4FFE7706F7834644E4F59F9FAEF6DC8662C17CAC1D7AFB09CD4502E8",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "ea87936e7a93cd5ea3f8aafb6003c8e9527e91c9d6d864bcd2e318c6ca5b9af6",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-large",
+      "checks": 17,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "3420d659a9c46ea71ad9bd990391356dd7ddac8ecb42be8025c73eff019d51f9",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-load",
+      "checks": 11,
+      "runtime_sha256": "F68137CC4FFE7706F7834644E4F59F9FAEF6DC8662C17CAC1D7AFB09CD4502E8",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "50733276c52e03951ecf17c324232f86bdc492fcf62b92b19f568cf157724c41",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-probe",
+      "checks": 17,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "cd9a121678ac92186ca78aa607c804ed40056e753fda226ec4219e5b94674a00",
+      "exit_code": 0
+    },
+    {
+      "label": "delivery-save",
+      "checks": 7,
+      "runtime_sha256": "F4A9B14B06A78D8AF26651CE7DBDB2D3A247B78CBBD7024AB14E89D2FBC834E5",
+      "fixture_sha256": "8DA8DCBDFEC117A2EF7D5BA87DA3A6B5BF6FED9353E9BFC1905EEC9D9119E565",
+      "log_sha256": "0f80660e1a54be1233fd278765b9778f0401763135476673c1dc8b085f68e842",
+      "exit_code": 0
+    }
+  ],
+  "final_runtime_only_changes_since_earlier_suite": "Mandatory diagnostic 5.2.26 labels and line endings in PhysicalHazards/SewerMaze; final load and probe recompiled/reran final package."
+}
