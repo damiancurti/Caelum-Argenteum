@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.22** — 2026-10-12.
+Documentation version: **5.2.23** — 2026-10-13.
+
+## 5.2.23 - Sleeping-bag acceleration in MAP02 (#219)
+
+The author approved T/Y acceleration while sleeping with the existing owned bag
+on dry, clear sewer ground outside authored safe zones. Existing combat, nearby
+enemy, hazard and resource checks remain. The exception ends on waking or loss
+of bag support; it grants no crafting or ordinary waiting permission. MAP02
+already uses the exterior clock; no clock, comfort or save schema changes.
+Native evidence: assets/validation_5223. CA219-01 author acceptance is pending.
+The reported missing Mandinga loot is tracked separately in #220.
 
 ## 5.2.22 - Current controls beside menu options (#215)
 

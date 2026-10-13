@@ -27,3 +27,13 @@ Expected: readable parenthesized controls match actual input; click targets
 include their captions; arrows/Enter remain navigation, with no new shortcuts.
 Native options and existing artwork/pause behavior remain functional.
 Status: awaiting explicit author visual/input acceptance.
+
+CA219-01 | Origin: 5.2.23 / issue #219 | Sleeping bag in the sewers
+Prerequisites: rebuild with run_dev.bat; own the bag outside the Box in MAP02.
+Steps: on dry, clear ground outside a marked refuge, with no combat, nearby
+enemies or hazards, use the bag and choose Sleep; activate T or open Y from sleep.
+Try near a living enemy, then return to a clear area. Save/reload during bag rest.
+Expected: accelerated sleep works without a safe-zone marker; existing danger
+guards still reject unsafe acceleration. T finishes the chosen rest; Y stops
+when fully rested outside a safe zone. The single bag remains owned after waking.
+Status: awaiting explicit author in-game acceptance.

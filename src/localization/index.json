@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "190b22bbb6db09a3a30e2b4171a6c958262543f93d6c9258a80715706229f790",
+  "sha256": "82666cd902e9e5e42a55afc6291c6795253b3777dc35174c5157e68fda42ebc3",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
