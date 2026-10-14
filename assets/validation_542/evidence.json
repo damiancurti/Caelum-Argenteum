@@ -479,7 +479,7 @@
       ]
     }
   ],
-  "manual_acceptance": "CA261-01 partial author result on 2026-10-14; four-element correction and final evidence in four-elements.json.",
+  "manual_acceptance": "CA261-01 passed on 2026-10-14 after the four-element correction; see acceptance.json.",
   "schema_changes": false,
   "preserved_failures": "See RESULTS.md; issue261-01 double reduction regression and issue261-02 reserved keyword compile failure are retained.",
   "static_validation": {

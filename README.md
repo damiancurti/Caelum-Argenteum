@@ -22,7 +22,8 @@ reduces the four elemental families by 15%; Quintessence has no resistance of
 its own. Direct hits, explosions and
 harmful status pulses share the rule. Character resistances and bilingual item
 details reflect it. [Native evidence](assets/validation_542/RESULTS.md) separates
-completed checks from pending author acceptance CA261-01.
+native checks from author acceptance: CA261-01 passed on 2026-10-14 after the
+four-element correction. The linked PR awaits review; no merge is inferred.
 
 5.4.1 implements [#259](https://github.com/damiancurti/Caelum-Argenteum/issues/259):
 weapon dispersion combines its base category, equipment tier and strict Lucidity

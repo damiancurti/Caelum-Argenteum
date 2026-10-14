@@ -52,13 +52,13 @@ reduction of the same dose. Native retention/HP rounding and the MAP01 safety
 floor remain part of that calculation. English/Spanish item details and Character
 resistances show the equipped contribution without adding Toughness or blocking.
 
-Final GZDoom 4.14.2 matrix passed 556 assertions. An earlier regression caught the
+The initial GZDoom 4.14.2 matrix passed 556 assertions. An earlier regression caught the
 double-reduced burn source dose; another launch caught a reserved-keyword compile
 error. Both are corrected and their original evidence is preserved. Native item
 cycling, old-save upgrade, current reload, rollback and MAP02/MAP03 round-trip
 passed. Spanish Character/item captures were inspected. Exact hashes, scope and
-static/package results: assets/validation_542/RESULTS.md. CA261-01 remains pending
-author confirmation; no manual acceptance, merge or closure is inferred.
+static/package results: assets/validation_542/RESULTS.md. At that checkpoint,
+CA261-01 awaited author confirmation.
 
 CA261-01 partial author result, 2026-10-14: the checks were reported good except
 for the fifth resistance row. The author clarified that Quintessence protects
@@ -67,7 +67,15 @@ the Character rows and the Seal damage filter; retained Human innate magical
 armor (7.5%, established in #52). The earlier 556-assertion matrix included the
 incorrect fifth-family expectation and is superseded for that behavior. The
 corrected native matrix and captures are recorded in validation_542/RESULTS.md;
-the narrow author recheck remains pending under the same CA261-01 ID.
+the narrow author recheck retained the same CA261-01 ID.
+
+CA261-01 (origin 5.4.2 / #261) passed on 2026-10-14: the author confirmed
+"Esa prueba dio correcto." after the corrected four-element handoff. No new
+exceptions were reported. The completed check was removed from pending_test.txt;
+acceptance.json records the frozen runtime, session and confirmation. Corrected
+native evidence passed 561 assertions, previous-save loading, static validation
+and packaging. This acceptance adds no runtime change or version increment;
+no merge or issue closure is inferred.
 
 ## 5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)
 
