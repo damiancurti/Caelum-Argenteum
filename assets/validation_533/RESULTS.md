@@ -1,5 +1,15 @@
 # Issue #258 validation — 5.3.3
 
+CA258-01 (origin 5.3.3 / #258) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Hazards, air/water and moving/unsafe support, real provisions, bed/bag versus chair support, locked save/load, pause and recovered camera/controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+Earlier validation and staged acceptance records follow; pending labels below
+describe those earlier checkpoints and are superseded by this confirmation.
+
 Implemented against `d974f859` (5.3.2). Final evidence: **9 completed engine
 runs, 50 assertions**, GZDoom 4.14.2, Windows 11, Vulkan, fixed seed 184.
 The fixture map is generated locally; no engine, IWAD, WAD, PK3 or save is

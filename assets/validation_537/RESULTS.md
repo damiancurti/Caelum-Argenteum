@@ -1,5 +1,15 @@
 # Issue #234 - Authored exploration catalogue
 
+CA234-01 (origin 5.3.7 / #234) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Ordinary sewer secrecy/traversal, city gates/east arch/towers/services, map and hub persistence, names and native controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+Earlier validation and staged acceptance records follow; pending labels below
+describe those earlier checkpoints and are superseded by this confirmation.
+
 Version 5.3.7, 2026-10-14. Branch `feat/issue234-authored-cartography`,
 baseline `bdcae305` (#233).
 

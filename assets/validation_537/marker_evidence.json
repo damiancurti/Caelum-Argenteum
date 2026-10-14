@@ -156,5 +156,8 @@
     "marker-after-01-marker-open.png",
     "marker-reload-02-marker-reload.png"
   ],
-  "author_acceptance": "pending CA234-01 visual retest"
+  "author_acceptance": {
+    "id": "CA234-01",
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
+  }
 }

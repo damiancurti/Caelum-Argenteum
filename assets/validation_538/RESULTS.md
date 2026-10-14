@@ -1,5 +1,15 @@
 # Issue #235 - Multiple tracked missions
 
+CA235-01 (origin 5.3.8 / #235) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Long bilingual objectives and scale, known versus unknown locations, saved notes/discoveries, reward neutrality and detailed terminal history passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+Earlier validation and staged acceptance records follow; pending labels below
+describe those earlier checkpoints and are superseded by this confirmation.
+
 Version 5.3.8, 2026-10-14. Baseline fc947471 (#234), branch
 `feat/issue235-quest-tracking`. CA235-01 author usability acceptance is partial.
 No new manual session was launched during the author's absence. After return,
