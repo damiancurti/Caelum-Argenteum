@@ -122,7 +122,7 @@ all previous evidence remain unchanged.
 
 Added fixed passive HP factors from the one equipped Seal: Fire/Light,
 Water/Ice, Earth/Poison and Air/Lightning use 0.5; Quintessence uses 0.85 for all
-identified elemental damage. The shared lookup excludes owned/boxed Seals and
+four elemental families. The shared lookup excludes owned/boxed Seals and
 also serves Channel/HUD identity. It creates no new equipment or saved schema.
 Direct/area damage applies the factor after existing custom defenses and before
 final HP rounding. Harmful burn/poison scales before its fractional accumulator;
@@ -139,6 +139,15 @@ cycling, old-save upgrade, current reload, rollback and MAP02/MAP03 round-trip
 passed. Spanish Character/item captures were inspected. Exact hashes, scope and
 static/package results: assets/validation_542/RESULTS.md. CA261-01 remains pending
 author confirmation; no manual acceptance, merge or closure is inferred.
+
+CA261-01 partial author result, 2026-10-14: the checks were reported good except
+for the fifth resistance row. The author clarified that Quintessence protects
+the four elemental families and has no resistance of its own. Corrected both
+the Character rows and the Seal damage filter; retained Human innate magical
+armor (7.5%, established in #52). The earlier 556-assertion matrix included the
+incorrect fifth-family expectation and is superseded for that behavior. The
+corrected native matrix and captures are recorded in validation_542/RESULTS.md;
+the narrow author recheck remains pending under the same CA261-01 ID.
 
 ## 5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)
 

@@ -48,9 +48,10 @@ No new population, balance change or broader combat-AI repair belongs here.
 Implemented fixed matching-pair factors (0.5) and Quintessence (0.85), including
 actual direct/area attacks and fractional harmful DOT. Character's existing body
 average now includes the equipped Seal. Native evidence: assets/validation_542;
-CA261-01 remains an outstanding author check. Class/racial lifecycle and social
-scaling belong to #238 and their individual issues; questions remain deferred
-until the author returns. Do not merge or close the new batch without instruction.
+CA261-01 is partially confirmed; recheck only the corrected four resistance rows
+and Quintessence coverage. Existing Human innate armor is 7.5%. Class/racial
+lifecycle and social scaling belong to #238 and their individual issues.
+Do not merge or close the new batch without instruction.
 
 ## 5.4.1 - Weapon dispersion tiers (#259)
 

@@ -46,8 +46,10 @@ Implemented the approved passive factors, shared by player/NPC damage entry
 points without new NPC equipment grants. Elemental metadata owns identification;
 unknown magic is not inferred from colors or source actors. Existing equipment
 state survives saves/travel with no new schema. Native checks, captures and
-reproduction: assets/validation_542/RESULTS.md. CA261-01 remains pending; the
-author is away. No merge or issue closure is inferred from automated tests.
+reproduction: assets/validation_542/RESULTS.md. The author clarified four
+resistance families only: Quintessence protects them without a fifth resistance
+of its own. CA261-01 is partially confirmed, with that correction pending a
+narrow author recheck. No merge or issue closure is inferred.
 
 ## 5.4.1 - Weapon dispersion tiers (#259)
 
