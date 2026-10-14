@@ -6,6 +6,7 @@ param(
     [string]$Script = 'compile.cfg',
     [string]$LoadGame = '',
     [string]$ConfigSource = '',
+    [string]$WorkDirectory = '',
     [string]$Map = 'MAP01',
     [string]$Language = 'enu',
     [int]$Width = 1280,
@@ -18,9 +19,9 @@ param(
     [switch]$TitleScreen
 )
 $ErrorActionPreference='Stop'
-if(Get-CimInstance Win32_Process -Filter "Name='gzdoom.exe'" | Where-Object {$_.CommandLine -like '*build\issue234\*'}){throw 'Wait for the existing issue234 native run to finish.'}
 $root=(Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-$work=Join-Path $root 'build\issue234'
+$work=if($WorkDirectory){(Resolve-Path -LiteralPath $WorkDirectory).Path}else{Join-Path $root 'build\issue234'}
+if(Get-CimInstance Win32_Process -Filter "Name='gzdoom.exe'" | Where-Object {$_.CommandLine -and $_.CommandLine.Contains($work+'\')}){throw 'Wait for the existing native run in this test directory to finish.'}
 if($Script -and !(Test-Path -LiteralPath (Join-Path $work $Script))){throw "Missing script: $Script"}
 $config=Join-Path $work "$Label.ini"
 if(Test-Path -LiteralPath $config){throw 'Choose a new label to preserve the original run.'}

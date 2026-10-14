@@ -28,6 +28,11 @@ author passed CA234-01's five mansion handoff steps, including entered rooms,
 interacted services, secrecy and save/load. Sewer/city exploration and remaining
 compatibility checks stay pending. #233 editing passed; retain remaining
 #233/#258 checks and separate #235/#236 acceptance.
+CA234-01 sewer feedback exposed a category-only padlock despite an open label.
+The marker now uses the saved observed access; the original runtime reproduces
+the mismatch and the fix passes 43 focused native assertions. Keep the visual
+retest pending; assets/validation_537/marker_handoff.ps1 supplies a diagnostic
+position and F8 key without revealing other locations or changing production balance.
 
 ## 5.3.6 - Manual map notes (#233)
 

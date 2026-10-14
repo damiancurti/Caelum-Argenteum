@@ -144,7 +144,7 @@ class CaelumKnownPoiMarker : MapMarker
             CachedFact=CaelumPoiKnowledge.Find(record,level.MapName,PoiId);
         }
         let fact=CachedFact;if(fact==null)return;
-        picnum=TexMan.CheckForTexture(CaelumPoiData.IconPath(fact.Category),TexMan.Type_Any);
+        picnum=TexMan.CheckForTexture(CaelumPoiData.IconPath(fact.Category,fact.ObservedAccess),TexMan.Type_Any);
         Vector2 size=TexMan.GetScaledSize(picnum);
         if(size.X<=0 || size.Y<=0)return;
         Scale=(CaelumPoiData.ICON_SIZE/size.X,CaelumPoiData.ICON_SIZE/size.Y);

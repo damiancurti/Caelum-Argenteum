@@ -22,9 +22,14 @@ with no duplicate notes or input leaks. Report any untested/partial or failing s
 CA234-01 | Origin: 5.3.7 / #234 | Status: remaining author checks
 Prerequisites: isolated Probar234 terminal/package, GZDoom 4.14.2; select
 Sewers or City. Use copies of saves and ordinary exploration without reveal cheats.
+For the reported grate icon failure, marker_handoff.ps1 opens Probar234Reja at
+one diagnostic grate; F8 supplies its key after the denied-use check. This
+positioning does not count as ordinary exploration or secrecy acceptance.
 1. MAP02: use a locked grate without its key, then revisit after opening it.
    Its reminder reflects the last personally observed state; unrelated grates,
-   keys, loot, enemies and unexplored routes remain unknown.
+   keys, loot, enemies and unexplored routes remain unknown. Retest the reported
+   failure: closed label/padlock before opening, open label/passage icon afterward,
+   including native save/load. The earlier open-label/candado report is not a pass.
 2. MAP06: use individual south/north/west gates; cross the open east arch.
    Enter the corner towers and interact with an existing shop, bed and vehicle.
    Markers appear only after the corresponding event; no route is unlocked.

@@ -101,6 +101,10 @@ symbol. Labels identify mansion storeys and separate south gate numbers.
 start with unknown access; migration is idempotent and infers no visits. Grates
 record the last personally observed state on use, including the successful
 opening. A remote change does not silently update another character's record.
+The marker uses that saved observation too: observed-open grates use the existing
+passage symbol used by exits; other grate states retain their category padlock.
+The label continues to distinguish closed/open/unknown observations. Rendering
+never reads the hidden gate state or changes knowledge, access or saved schema.
 The upper elevator control does not reveal hidden lower return grates, even
 though it dispatches through their controller; lower-grate use records them.
 Use hooks grant no key, permission, faction standing or quest progress.
@@ -116,9 +120,12 @@ editor still offers exactly its six approved categories.
 
 Static/build checks and 151 native assertions passed across 16 runs, with
 16 native-save comparisons and 12 inspected captures. Evidence: assets/validation_537.
-Author exploration/visual acceptance
-CA234-01 remains pending and deferred until the author returns. Preserve original
-saves and packages as recovery copies. #235/#236 remain separate patches.
+CA234-01's mansion exploration/save-load passed author review on 2026-10-14.
+The author then reported that an open grate retained its padlock despite its
+correct open label. The derived icon now follows ObservedAccess; 43 focused
+native assertions passed after reproducing the original visual mismatch.
+Sewer visual retest, city and remaining compatibility checks stay pending.
+Preserve original saves/packages; #235/#236 remain separate patches.
 
 ## 5.3.6 - Personal manual map notes (#233)
 
