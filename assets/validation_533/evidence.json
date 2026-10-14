@@ -438,7 +438,20 @@
     "id": "CA258-01",
     "origin_version": "5.3.3",
     "issue": 258,
-    "result": "pending"
+    "result": "partial",
+    "confirmation_date": "2026-10-13",
+    "confirmed": [
+      "zero-Sleep lying and locked controls",
+      "F8 sets 11 percent; Q permits standing"
+    ],
+    "remaining": [
+      "hazards and real support",
+      "save/load and pause/resume"
+    ],
+    "confirmation_quotes": [
+      "La prueba del sue\u00f1o al 0% qued\u00f3 muy bien.",
+      "S\u00ed, tambi\u00e9n funcion\u00f3 correctamente."
+    ]
   },
   "limits": [
     "Engine assertions use isolated fixtures, not author input.",

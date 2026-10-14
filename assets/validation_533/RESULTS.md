@@ -35,6 +35,14 @@ Spanish interactive build and minimized PowerShell terminal are prepared;
 F10 quits the fixture. Native pause presentation and campaign visual review
 remain in CA258-01. These isolated checks do not certify every map location.
 
-Author acceptance: **pending CA258-01**. The author is away; agent checks do
-not stand in for manual acceptance. Keep the tracked check until explicit
-author confirmation, then record its originating 5.3.3/#258 history entry.
+Author confirmation on 2026-10-13: **CA258-01 partially passed**. The author
+approved the zero-Sleep test and separately confirmed F8/11%/Q standing.
+The isolated `author-return-20261013-224926` run records ordinary cancellation
+attempts while locked and after recovery. `pending_test.txt` retains only the
+unconfirmed hazards/support, save/load and pause checks; HISTORY records the
+exact confirmations. Existing technical coverage does not imply those manual
+checks passed. This acceptance update changes no runtime or version.
+Fresh-checkout validation also found the two localization index hashes still
+referencing CRLF source bytes. They were regenerated against the tracked LF
+LANGUAGE source; no translation or gameplay text changed. Validation then
+passed with errors=[]; no gameplay retest was required for those fingerprints.

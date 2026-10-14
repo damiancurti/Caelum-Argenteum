@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.3** — 2026-10-13.
 
-**5.3.3/#258:** exhaustion; CA258-01 pending; validation_533.
+**5.3.3/#258:** zero-Sleep/standing accepted; CA258-01 remainder pending.
 **#255-257 accepted:** HUD/Character/provisions; validation_530-532.
 Remaining #231-236: SYSTEMS/TASKS.
 
