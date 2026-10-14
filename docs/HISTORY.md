@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Manual map notes (#233, 2026-10-14)
+
+The author approved placing notes at the native automap center after panning,
+and selecting/editing through a clickable keyboard/controller list. This uses
+GZDoom 4.14.2's exposed center and TextEnterMenu without inventing a mouse-to-world
+projector. Note plus the five existing service categories affect presentation
+only. Existing numbered marks and discovered POIs remain separate.
+
+Added revision-one notes to the traveling character record, stable monotonic
+IDs, expected-serial edit/delete commands and empty old-save migration. Drafts
+remain UI-local until Save; delete has an explicit cancel-first confirmation.
+The native command's 16-bit byte capacity is checked before sending long text.
+Owned Journal paper artwork marks manual notes. No new bitmap or reveal rule.
+Native validation passed: eight runs, 88 assertions, ten native-save comparisons
+and sixteen inspected captures. This includes delayed commands, Unicode data,
+old/current saves, native numbered marks, hub return, multiple characters and
+Spanish/English scales. The old-save comparison resolves identity object-table
+references before comparing values; changed native relocation slots are not
+changed identity. Validation/build results and exact hashes are retained in
+assets/validation_536. On 2026-10-14 the author confirmed CA233-01's five editing
+handoff steps (origin 5.3.6 / #233): place a note at the panned map center; enter
+accented text and choose a category; edit with mouse/keyboard, cancel an edit
+and a deletion, and confirm deletion of a separate note; retain long text and
+notes through zoom/pan and native save/load; and verify manual Bed/Merchant
+categories neither discover nor enable services. Session author-20261014-064047
+used MAP04 and frozen runtime SHA-256
+6a274349bdf886cf42fe499325b86d856eb233977b7ab7d2283af810a822a662.
+Held/opening input, rotation/overlay, numbered marks, custom/unbound controls
+and optional controller navigation remain in CA233-01. Agent evidence and this
+partial author acceptance remain distinct; no merge or issue closure is inferred.
+
+CA233-01 (origin 5.3.6 / #233) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Held/released controls, rotated and overlay maps, native numbered marks and custom/unbound bindings passed; controller navigation remains optional where applicable.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.5 - Known local POIs (#232, 2026-10-13)
 

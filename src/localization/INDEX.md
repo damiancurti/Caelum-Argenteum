@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `489eb997efc8a64e9f01205550ac4316660c3171b0ae1ee7394167f4574753cb`. Locations include every definition; the last one per language wins.
+SHA-256: `ee5c1d59def3038c8f023c4e4328f82f600ea34bfdab90b162a5bfa382742ed9`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -100,6 +100,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MERCHANT | 3 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
 | CA_MESSAGES | 5 | CA_MESSAGES_EMPTY | CA_MESSAGES_TITLE |
 | CA_MONTH | 12 | CA_MONTH_01 | CA_MONTH_12 |
+| CA_NOTE | 23 | CA_NOTE_CANCEL | CA_NOTE_UNAVAILABLE |
 | CA_ONBOARD | 3 | CA_ONBOARD_GOLD_REWARD | CA_ONBOARD_PALOMO_SCAM |
 | CA_PAIN | 2 | CA_PAIN_RESISTED | CA_PAIN_TRIGGERED |
 | CA_PALOMO | 65 | CA_PALOMO_DIALOGUE_ARE_YOU_SURE | CA_PALOMO_PLACEMENT_MANSION_UPSTAIRS |

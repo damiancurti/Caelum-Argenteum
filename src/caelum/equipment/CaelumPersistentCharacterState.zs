@@ -55,6 +55,13 @@ class CaelumPersistentCharacterState : Inventory
     Array<CaelumKnownPoi> KnownPois;
     transient String LocalMarkerMap;
     transient int LocalMarkerSerial;
+    // #233: notas propias; no alteran KnownPois ni las marcas del motor.
+    int ManualNotesRevision,ManualNotesSerial,ManualNoteNextId;
+    Array<CaelumMapNote> ManualNotes;
+    transient String ManualMarkerMap;
+    transient int ManualMarkerSerial;
+    transient int ManualNoteReplySerial;
+    transient bool ManualNoteReplySuccess;
     // El primer comercio es persistente por personaje. Así Palomo puede ser
     // recolocado por una etapa de misión sin restablecer stock ni dinero y el
     // servidor conserva una autoridad independiente para cada jugador.

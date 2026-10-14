@@ -1,6 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Personal manual map notes (#233)
+
+Author-approved placement (2026-10-13): pan the native automap, then open
+Map notes from the main menu or a player-assigned `ca_map_notes` binding.
+The editor captures `level.GetAutomapPosition()` once. A new note uses that
+center; selection/editing uses the native keyboard/controller menu and clickable
+list. Outside the automap the list can edit existing notes, but creation is
+disabled rather than guessing a placement. No default key or binding reset is
+introduced. The native ten numbered marks and geometry discovery remain intact.
+
+The six presentation categories are Note, Bed, Station, Merchant, Exit and
+Transport. Every manual marker uses the owned Journal quests/paper icon to
+separate player writing from observed service icons. The list and nearest-center
+label show its category and text. A manual Bed or Exit never creates a known
+POI, room, route, destination, objective, reward or travel permission. Notes may
+record guesses; the UI does not validate them against hidden map content.
+
+`CaelumPersistentCharacterState` owns `ManualNotesRevision=1`, the dynamic
+`ManualNotes` array, a monotonic next ID and edit serial. Each note stores ID,
+map ID, category, text and XYZ. Old saves migrate to an empty list idempotently;
+no automatic facts or numbered marks are imported. Native inventory save/hub
+serialization retains this data. The unchanged old save with its original
+package remains the recovery source. Same coordinates or labels are not IDs.
+
+A local draft is committed only on Save or confirmed Delete. The native
+`TextEnterMenu` owns text input, Unicode keyboard handling and the controller
+character grid. Canceling text entry restores its prior draft; canceling the
+editor changes no note. Long stored text is retained, wrapped and scrollable;
+list rows and the map label abbreviate presentation only. Native append/backspace
+editing and the native controller grid remain the supported input capabilities.
+
+Typed network commands validate originating player/map, live character, stable
+ID and expected serial; duplicate/stale requests cannot modify a different row.
+The native command length field is unsigned 16-bit, so this request's technical
+limit is 65,535 bytes minus 42 fixed bytes and the map ID byte length. Oversized
+text stays in the draft with feedback; it is never silently truncated or sent
+with a wrapped command size. There is no gameplay note-count limit. IDs use the
+native signed integer range and are never reused after deletion.
+
+The list and native text child keep the existing live-menu policy; native
+Save/Load and other main-menu screens keep their own pause policy. Death,
+character/map replacement and exhaustion dismiss an invalid editor. Pointer
+press/release guards include layout revision, resolution and UI scale. UI-only
+acknowledgments are transient, not knowledge. Native derived note markers use
+the same private-renderer restriction as #232: suppress them in multiplayer or
+with multiple participants while keeping character records separate.
+
+Native checks passed; evidence: assets/validation_536/RESULTS.md. CA233-01 passed full author acceptance on 2026-10-14. #234 map-specific
+registrations, #235 multi-mission tracking and #236 Journal navigation remain
+separate patches.
 
 ## 5.3.5 - Personal local POI knowledge (#232)
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Manual note presentation (#233)
+
+Manual markers reuse `graphics/caelum/ui/journal/icons/ca_ui_nav_quests.png`,
+the owned Journal paper/quests icon. A consistent paper symbol distinguishes
+written guesses from discovered service icons; category/text remain visible in
+the list and nearest-center label. Existing Caelum fonts and Journal panels
+frame the native list and TextEnterMenu. No bitmap, external asset, font source
+or generator was added or modified. Provenance remains with the original owned
+Journal assets. Bilingual text lives in LANGUAGE and its generated index.
 
 ## 5.3.5 - Known-service map icons (#232)
 

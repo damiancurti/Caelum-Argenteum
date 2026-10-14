@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Named manual map notes (#233)
+
+Implemented center placement approved by the author, a native list/text editor,
+six manual categories and independent revisioned per-character/map storage.
+Stable identities and serial checks protect edit/delete/cancel and repeated
+input. Native numbered marks, discoveries, quests and travel remain independent.
+GZDoom compilation and native editing, persistence and presentation checks
+passed. CA233-01 passed full author acceptance on 2026-10-14. Evidence: assets/validation_536.
+Next: #234 authored registrations, #235 simultaneous tracked missions, #236
+Journal navigation; separate branches, commits, validation and linked PRs.
 
 ## 5.3.5 - Known local services (#232)
 
