@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
+
+## 5.4.4 - Shared class preparation (#238, in progress)
+
+Implemented the presentation component, its saved 105-tic clock/revision and
+combat entry guards. Native component matrix: 2,142 checks across nine weapon
+families and unarmed. This is not completion of #238: User4 still uses the earlier
+Sleep path until the new lifecycle is integrated. No executable author acceptance
+entry is added for this incomplete feature. Evidence: assets/validation_544.
+
+Continue with payment/release/cancellation and native input, left class/racial HUD,
+revised Sleep HP-based wake/final-damage integration and full save/hub tests.
+The author is away; defer questions on initial/partial insufficient Anima,
+cost snapshot versus changing modifiers, death/control/UI/weapon-change policies,
+simultaneous power inputs, Sleep relationship/expiry/body-pose handling and exact
+social scaling/composition. The confirmed three-hit count must never scale.
+Do not invent those decisions or count component-only tests as an ability pass.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

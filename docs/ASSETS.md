@@ -1,6 +1,26 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
+
+## 5.4.4 - Class preparation hands (#238, in progress)
+
+The presentation reuses owned closed fists and palms with saved appearance/glove
+selection. Inspection found the existing male equal-height atlas extraction clips
+part of the previous row into the palm cells. The new cast-only pipeline extracts
+the actual last row from the original human/wolf/bear/puma/jaguar atlases under
+assets/source/art/appearance_5213. Source artwork is unchanged; existing accepted
+weapon modules and their registration are unchanged. Female and gloved palms
+continue to use their existing registrations.
+
+`assets/generators/generate_class_cast_palms.py` (Pillow 11.3.0) reuses the existing
+fit, tint and deterministic PNG helpers. Cropping coordinates are data in
+class_cast_palms.json. Thirty-six cast-only PNGs and their native textures/states
+regenerate byte-for-byte; hashes and original provenance are in
+assets/validation_544/palms.json. Presentation timing, pivots and framing live in
+CaelumClassCastLayout. Native captures exposed both the atlas-row defect and
+stale interpolation origins when composed weapons recreate hand overlays; the
+component now supplies its own origins. Artistic/animation acceptance remains
+pending until the full #238 scenario can be handed off after the author's return.
 
 ## 5.4.3 - Original procedural rat audio (#254)
 

@@ -143,7 +143,8 @@ class CaelumBolas : Object play
             && user.WeaponModel!=null && user.WeaponModel.Equipped && user.DerivedStats!=null
             && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS
             && user.player.ReadyWeapon is "CaelumBolasSelectorWeapon"
-            && !user.IsPhysicallyImmobilized() && !user.CombatBlockModeActive
+            && !user.IsPhysicallyImmobilized() && !CaelumClassCastView.Active(user)
+            && !user.CombatBlockModeActive
             && !user.EquipmentMenuOpen && !user.CraftingMenuOpen && !user.CreationWizardOpen
             && (user.player.PendingWeapon==null || user.player.PendingWeapon==WP_NOCHANGE
                 || user.player.PendingWeapon==user.player.ReadyWeapon);

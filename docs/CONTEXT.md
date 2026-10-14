@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
 
-**5.4.3/#254:** rat movement/audio; validation_543; CA254-01 pending.
-#261/#259: validation_542/541; CA261/259-01 pending; PR274/273.
-#237: validation_540/PR272. #238 separate; questions/tests await author return.
+**5.4.4/#238 WIP:** preparation component; validation_544; lifecycle/HUD/Sleep pending.
+#254/#261/#259: validation_543/542/541; CA254/261/259-01 pending; PR275/274/273.
+#237: validation_540/PR272. Questions/manual checks await author return.
 **Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.

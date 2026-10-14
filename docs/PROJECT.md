@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
+
+## 5.4.4 - Class preparation component (#238, in progress)
+
+The shared first-person component lowers the current hands/weapon, raises empty
+fists, turns them and opens the palms across 105 simulation tics. Preparation
+blocks the real attack/block entry points without adding movement immobilization.
+This checkpoint does not connect the component to User4 or implement the full
+ability lifecycle, revised Sleep, racial toggles or new HUD indicators.
+
+The native component matrix covers nine weapon families and unarmed. Dedicated
+male cast palms correctly extract the last row of existing owned atlases, leaving
+accepted weapon artwork untouched. Female/gloved hands retain their existing
+sources. Evidence and remaining scope: assets/validation_544. #238 stays open and
+its PR remains a draft; author checks are deferred while the author is away.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

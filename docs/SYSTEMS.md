@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
+
+## Class preparation component and confirmed V5.4 contract (#238, in progress)
+
+The author requires a three-second preparation: lower the equipped hands/weapon,
+raise empty closed fists facing forward, turn the hands and open the palms.
+Attacking and blocking are disabled during preparation; movement and receiving
+damage are not newly defined as user-requested cancellation. A second User4 press
+cancels. Anima is spent progressively, cancelled spending is not refunded, and
+60-second reuse begins on release. The approved trial base remains 1,000 Anima
+with existing cost modifiers and a 10-second effect before the pending social
+scaling rules. These are confirmed requirements, not a claim of full implementation.
+
+In this checkpoint CaelumClassCastView supplies the visual sequence, a revision-1
+saved countdown on the existing player and real combat entry guards. Zero is the
+safe default in older saves. The new component is only started by the isolated
+fixture: production User4 still follows the previous Sleep implementation.
+The full controller will own payment, release, cancellation and effect policies;
+the presentation component does not charge resources or apply a class effect.
+
+Social attributes including Charisma/Empathy must scale class range, duration and
+potency; Intelligence owns direct damage. Exact social ownership/composition is
+pending. Sleep enemies require three separate HP-damaging impacts (including each
+pellet and DOT application), with final received damage multiplied after defenses
+through the third waking hit; allies retain one-hit wake and no enemy multiplier.
+The hit count stays three. Continuous racial toggles have no cooldown/duration cap;
+Hunter's Instinct and Socialization cost 10 Anima/second before cost modifiers.
+These confirmed corrections supersede the older catalog below, but their runtime
+implementation and remaining policy questions still belong to #238/#239-251.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 

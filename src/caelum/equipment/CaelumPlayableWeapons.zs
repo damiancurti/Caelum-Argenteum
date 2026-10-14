@@ -357,6 +357,7 @@ class CaelumPhysicalSelectorWeapon : Weapon
         }
         if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
         FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
+        CaelumClassCastView.Apply(CaelumPlayer(Owner));
     }
 
     Default
@@ -1053,6 +1054,7 @@ class CaelumMagicSelectorWeapon : Weapon
         }
         if (FirstPersonView == null) FirstPersonView = new("CaelumFirstPersonView");
         FirstPersonView.Update(self, CaelumPlayer(Owner), psp);
+        CaelumClassCastView.Apply(CaelumPlayer(Owner));
     }
 
     Default

@@ -44,7 +44,8 @@ class CaelumUtilityStaff : Object play
             || !user.WeaponModel.Equipped || user.WeaponModel.Durability<=0
             || user.WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
             || !(user.player.ReadyWeapon is "CaelumUtilityStaffSelectorWeapon")
-            || user.IsPhysicallyImmobilized() || user.CombatBlockModeActive
+            || user.IsPhysicallyImmobilized() || CaelumClassCastView.Active(user)
+            || user.CombatBlockModeActive
             || user.EquipmentMenuOpen || user.CraftingMenuOpen || user.CreationWizardOpen
             || user.StaffCastPending || user.WeaponChargeActive || CaelumRestState.IsActive(user))return false;
         return user.player.PendingWeapon==null || user.player.PendingWeapon==WP_NOCHANGE

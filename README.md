@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.3.** Obtain and update the complete repository, validate
+**Current release: 5.4.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.4 is an **in-progress #238 checkpoint**, not a completed ability release.
+It provides the shared three-second hand sequence and preparation combat guards;
+the isolated native component checks are in [validation_544](assets/validation_544/RESULTS.md).
+User4 payment/release, revised Sleep, racial lifecycle and left ability HUD remain
+unfinished. Design questions and author tests wait for the author's return.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
 MAP02 rats recover their authored movement speed, including existing saves,

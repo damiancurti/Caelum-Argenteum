@@ -803,6 +803,14 @@ rat silhouette border cuts but no visible neighbor fragments or bull clipping.
 For opaque-sheet recovery, preserve valid old alpha as foreground/background
 seeds: a rectangle-only segmentation can fill tail holes or remove dark fur.
 
+2026-10-14, #238 / 5.4.4, ENGINE-VERIFIED component follow-up: equal-height male
+hand rows included the preceding wrist strip inside the palm cells. Fitting that
+combined alpha box also shrank the actual palm. Cast-only outputs now use measured
+last-row bounds from the intact owned atlases; accepted weapon modules remain
+unchanged. Sources, exact bounds, deterministic outputs and native captures are
+recorded in [validation_544](../assets/validation_544/RESULTS.md). The full class
+ability and author animation acceptance remain pending.
+
 ## CA-KP-063 - Emit cosmetic impacts on native Death entry
 
 Status/evidence: RESOLVED-VERIFIED, #137 / 5.1.8, 2026-10-09.

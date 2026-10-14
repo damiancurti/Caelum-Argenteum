@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.3** — 2026-10-14.
+Documentation version: **5.4.4** — 2026-10-14.
+
+## 5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)
+
+While the author was away, implemented the independent shared hand-sequence and
+combat-guard component. It lowers equipped hands, presents closed empty fists,
+turns/opens palms over 105 tics, and restores the ordinary weapon presentation.
+Two revisioned fields on the existing player preserve its component countdown;
+legacy defaults are inactive. The component does not yet receive production
+User4 activation, spend Anima or release an effect. Full lifecycle, revised Sleep,
+racial toggles and left ability HUD remain unfinished; no manual acceptance,
+merge or closure is claimed.
+
+The native component matrix passed 2,142 checks over nine weapon families and
+unarmed. Early test scaffolding had a case-insensitive local/field shadow and a
+one-tic observation-boundary assumption; both were corrected, with complete-cycle
+coverage asserted explicitly. A later fixture used an invalid fourth ConsoleEvent
+argument; its compile failure is preserved and corrected. These were fixture
+failures, not successful gameplay runs.
+
+Visual inspection found clipped prior-row strips in existing male palm extraction
+and stale overlay interpolation origins after composed-weapon redraw. Dedicated
+cast-only modules now extract the actual owned-source row and preserve every
+accepted weapon module. Thirty-eight generated outputs repeat byte-for-byte.
+Framing and return to the ordinary view were inspected in native captures;
+this is not author approval. Exact packages, results, compatibility evidence,
+limits and reproduction: assets/validation_544. No incomplete feature was added
+to the actionable author-test queue; outstanding CA259/261/254 checks remain.
+Current-runtime reload observes 19 remaining tics and expires to zero. A neutral
+5.4.3 save upgrades with zero preparation/revision 1. Old-runtime rollback loads
+the body/weapon; without the optional visual-state bridge it reports two discarded
+hand states, while the bridged check has no such warnings. An initial upgrade
+fixture lost its mode event before load completion; the delayed event passes.
+Validator and normal build pass; all 16,118 package members match the final
+component-tested runtime. This remains an intermediate #238 checkpoint.
+
 
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 

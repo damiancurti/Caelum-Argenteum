@@ -664,6 +664,9 @@ class CaelumPlayer : DoomPlayer
     int ForcedSleepTics;
     double ClassSleepCooldownRemaining;
     bool ClassSleepInputLatched;
+    // #238: reloj guardado de preparacion; cero en partidas anteriores.
+    int ClassPreparationRevision;
+    int ClassPreparationTics;
     bool JournalMainM00RuloPracticeDone[6];
     int MainM00RuloPracticeSnapshot;
     bool MainM00BullDefeatedSnapshot;
@@ -9045,6 +9048,7 @@ class CaelumPlayer : DoomPlayer
         CarbineAmmoCount = currentCarbineAmmo != null
             ? currentCarbineAmmo.Amount : 0;
 
+        CaelumClassCastView.Advance(self);
         CaelumSleepRules.AdvancePlayer(self);
         ClassSleepCooldownRemaining = Max(0.0, ClassSleepCooldownRemaining - 1.0 / TICRATE);
 
@@ -9388,6 +9392,7 @@ class CaelumPlayer : DoomPlayer
 
     bool BeginPhysicalAttackCycle(bool secondary, bool sweep=false)
     {
+        if(CaelumClassCastView.Active(self))return false;
         RefreshWeaponAttackClock();
         double duration=GetEquippedAttackDurationTics();
         if(duration<=0 || PhysicalAttackPending || EquippedWeaponCooldownRemaining>0 || StaffCastPending
@@ -9485,6 +9490,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformEquippedWeaponPrimaryAttack()
     {
+        if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
         {CaelumBolas.Throw(self);return;}
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
@@ -9562,6 +9568,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
         {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.ICE);return;}
@@ -10099,6 +10106,7 @@ class CaelumPlayer : DoomPlayer
 
     void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
     {
+        if(CaelumClassCastView.Active(self))return;
         if(CaelumBolas.Restrained(self))return; // El flanco de Reload inicia el corte en Update.
         if(requestedWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
             || requestedWeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
@@ -10245,6 +10253,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformCarbineAttack()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastCarbineFired = false;
         LastCarbineHadEnoughAir = false;
@@ -10444,6 +10453,7 @@ class CaelumPlayer : DoomPlayer
 
     void CompletePendingStaffCast()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (!StaffCastPending) { return; }
         bool secondaryAttack = PendingStaffSecondaryAttack;
         int activeMagicType = PendingStaffWeaponType;
@@ -10483,6 +10493,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
+        if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastStaffHit = false;
         LastStaffCriticalAttempted = false;
@@ -10814,6 +10825,7 @@ class CaelumPlayer : DoomPlayer
             && !CraftingMenuOpen
             && !CombatChannelModeActive
             && !StaffCastPending
+            && !CaelumClassCastView.Active(self)
             && !IsPhysicallyImmobilized()
             && HasActiveBlockSource()
             && CurrentAir > 0.0;
@@ -10966,6 +10978,7 @@ class CaelumPlayer : DoomPlayer
     // consume el estado cargado inmediatamente antes de producir el impulso.
     void PerformChargedBlockDash()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (DerivedStats == null || IsPhysicallyImmobilized()) { return; }
         double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0);
         if (ElementalStatus != null)
@@ -11704,6 +11717,7 @@ class CaelumPlayer : DoomPlayer
     // is live; status effects and the final Caelum armor stage remain separate.
     void PerformDebugSwordAttack(bool secondaryAttack, bool areaSweep = false)
     {
+        if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastMeleeCalculatedDamage = 0.0;
         LastMeleeActualDamage = 0;

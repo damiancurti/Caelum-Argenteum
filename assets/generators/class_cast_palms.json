@@ -1,0 +1,14 @@
+{
+  "issue": 238,
+  "source_directory": "assets/source/art/appearance_5213",
+  "families": ["human", "human", "wolf", "bear", "puma", "jaguar"],
+  "last_row": {
+    "human": [1258, 1402],
+    "wolf": [1212, 1402],
+    "bear": [1151, 1402],
+    "puma": [1230, 1402],
+    "jaguar": [1180, 1402]
+  },
+  "hands": [6, 7],
+  "pivots": [[142, 153], [208, 170]]
+}
