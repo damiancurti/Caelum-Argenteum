@@ -70,6 +70,16 @@ state. No other symbol or gameplay rule changed. Native flow/reload passed anoth
 earlier hand-symbol runs remain separate evidence. New artwork acceptance and
 the other CA234-01 cases remain pending.
 
+On 2026-10-14 the author confirmed the three focused open-padlock handoff steps
+passed (CA234-01, origin 5.3.7 / #234): denied use without the key shows the closed
+padlock; F8 supplies the diagnostic key and successful use shows the open padlock;
+native save/load preserves that state. Session author-20261014-073046 used runtime
+SHA-256 0b7072e6d6a6468d9b24e1b156ad5af01b11d0e3a4835b6437d8f43ea24b76ec
+and exited with code 0. Remove only those confirmed retest steps from the queue.
+Diagnostic grate positioning does not confirm ordinary sewer traversal/secrecy,
+city exploration, cross-map persistence or the remaining compatibility checks.
+Those cases remain in CA234-01; no release increment or PR merge is implied.
+
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
 The author approved placing notes at the native automap center after panning,

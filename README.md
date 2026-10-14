@@ -24,7 +24,8 @@ protect older layouts. Static/build and focused native checks passed. CA234-01's
 mansion handoff passed author review on 2026-10-14. The reported open-grate
 padlock is corrected: observed-open grates use a dedicated open-padlock icon,
 following the author's clarification after the initial hand-symbol retest.
-Sewer visual retest, city and remaining compatibility checks stay pending.
+The author accepted the closed/open artwork and save/load on 2026-10-14.
+Ordinary sewer exploration, city and remaining compatibility checks stay pending.
 [Evidence](assets/validation_537/RESULTS.md).
 
 5.3.6 implements [#233](https://github.com/damiancurti/Caelum-Argenteum/issues/233):
