@@ -19,9 +19,17 @@ class CaelumSealResistance : Object
 
     static clearscope double Factor(int sealType,int essence)
     {
-        if(essence<0 || essence>=CaelumConstants.ESSENCE_TYPE_COUNT)return 1;
+        if(essence<0 || essence>=CaelumConstants.ELEMENT_TYPE_COUNT)return 1;
         if(sealType==CaelumConstants.SEAL_QUINTESSENCE)return QUINTESSENCE_FACTOR;
         return sealType==essence ? MATCHED_FACTOR : 1;
+    }
+
+    static clearscope double ReductionPercent(int sealType)
+    {
+        // La descripción de Quintaesencia usa una familia protegida, no su identidad.
+        int element=sealType==CaelumConstants.SEAL_QUINTESSENCE
+            ? CaelumConstants.ESSENCE_FIRE : sealType;
+        return 100*(1-Factor(sealType,element));
     }
 
     static clearscope String DescriptionKey(int sealType)

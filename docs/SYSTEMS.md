@@ -14,7 +14,11 @@ The authoritative factors live in CaelumSealResistance.
 | Water | Water, Ice | 0.5 |
 | Earth | Earth, Poison | 0.5 |
 | Air | Air, Lightning | 0.5 |
-| Quintessence | All nine elements, including Quintessence | 0.85 |
+| Quintessence | All four families above (both members of each pair) | 0.85 |
+
+The author clarified on 2026-10-14 that only Fire, Water, Earth and Air have
+elemental resistance. Quintessence has no resistance of its own: no Seal reduces
+Quintessence damage. Existing generic magical armor still follows its own rules.
 
 Physical damage and nonmatching elements retain factor 1. Prepared projectile
 payloads identify primary/secondary elements even under generic damage names;
@@ -45,10 +49,12 @@ retains observed native damage retention and integer rounding; MAP01's protected
 turning one intended 50% reduction into 75% across the source dose and its ticks.
 
 Character displays `(1 - averageMagicalArmorRetention * sealFactor) * 100` for
-each essence pair, with the existing equal body-slot average and no Toughness or
+the four elemental pairs, with the existing equal body-slot average and no Toughness or
 blocking. Fire's 50% passive factor plus 7.5% innate absorption therefore displays
 53.75%, while unrelated rows remain 7.5%. Bilingual item details explain the
-passive condition. Native checks/limits: assets/validation_542/RESULTS.md.
+passive condition. The 7.5% is the existing Human innate magical armor from #52,
+also used by the debug profile; it is not a new Seal bonus. There is no fifth
+Quintessence resistance row. Native checks/limits: assets/validation_542/RESULTS.md.
 
 ## 5.3.9 - Exploration navigation and owned documents (#236)
 

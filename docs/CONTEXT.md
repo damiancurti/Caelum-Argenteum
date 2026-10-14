@@ -2,10 +2,9 @@
 
 Documentation version: **5.4.2** — 2026-10-14.
 
-**5.4.2 / #261:** passive Seal resistance; assets/validation_542; CA261-01 pending.
+**5.4.2 / #261:** four-family Seal resistance; validation_542; CA261-01 partial.
 **5.4.1 / #259:** dispersion; assets/validation_541; CA259-01 pending; PR273.
-#237 audit: assets/validation_540 / PR272. #238 remains separate; questions/manual
-checks await the author's return.
+#237 audit: assets/validation_540 / PR272. #238 remains separate. Author returned.
 **Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.

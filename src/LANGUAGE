@@ -5799,11 +5799,11 @@ CA_SEAL_RESIST_FIRE = "Equipped: -%.0f%% Fire / Light damage.";
 CA_SEAL_RESIST_WATER = "Equipped: -%.0f%% Water / Ice damage.";
 CA_SEAL_RESIST_EARTH = "Equipped: -%.0f%% Earth / Poison damage.";
 CA_SEAL_RESIST_AIR = "Equipped: -%.0f%% Air / Lightning damage.";
-CA_SEAL_RESIST_QUINTESSENCE = "Equipped: -%.0f%% elemental damage.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipped: -%.0f%% Fire, Water, Earth and Air damage.";
 
 [es]
 CA_SEAL_RESIST_FIRE = "Equipado: -%.0f%% de daño de Fuego / Luz.";
 CA_SEAL_RESIST_WATER = "Equipado: -%.0f%% de daño de Agua / Hielo.";
 CA_SEAL_RESIST_EARTH = "Equipado: -%.0f%% de daño de Tierra / Veneno.";
 CA_SEAL_RESIST_AIR = "Equipado: -%.0f%% de daño de Aire / Rayo.";
-CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño elemental.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño de fuego, agua, tierra y aire.";

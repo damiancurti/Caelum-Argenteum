@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `68fd211d8d9e731fa28323451d5a5cb108fcbca6cf05f77b9695ce9d5829a990`. Locations include every definition; the last one per language wins.
+SHA-256: `30c5886475604491512ea0131004aef50f9e7f391a3655b14bd90081887acb98`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
