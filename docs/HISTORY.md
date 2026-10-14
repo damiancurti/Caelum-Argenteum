@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
+
+Added Explore navigation to existing screens, native showpop adapters and owned
+keys/documents inspection. Existing inventory/quest/travel authorities and saved
+schemas remain unchanged. Document names are available, but their actors define
+no readable body; the interface reports that absence without new lore or effects.
+The first engine startup identified unsupported OptionMenu Font syntax; the font
+uses the exposed descriptor instead. A diagnostic calling a native command item
+from ConsoleProcess hit GZDoom's menu-command guard; later fixtures inspect that
+item and dispatch its exact route through the console separately. This is not
+physical menu activation evidence. Failed diagnostics are retained.
+Static validation/build passed; fourteen native runs passed 202 assertions, with
+28 save comparisons and 17 inspected captures. Final review corrected the
+crafting header pointer region and GUI mouse shortcut dispatch; a complete
+flow and focused pointer case passed afterward. Mixed-case command bindings
+received a final focused check. Unchanged earlier evidence is reused with an
+exact runtime-delta check. Record comparisons resolve
+identity/POI/note references and exclude the live thermal observation object;
+hub return also excludes three naturally changing survival observations.
+Validation evidence: assets/validation_539. CA236-01 is pending author usability
+acceptance; questions and manual sessions remain deferred while the author is
+away. The requested temporary system keep-awake remains active until return.
 
 ## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
 

@@ -68,7 +68,8 @@ class CaelumInputHints : Object ui
         {
             String command=Bindings.GetBinding(scan);
             bool journal=menu.Journal().IsJournalOpen() || menu.Context==menu.CTX_REST;
-            if(!(command~==allowedCommand) && (command~=="ca_time_skip" || (journal && command~=="ca_journal_toggle")))
+            if(!(command~==allowedCommand) && (command~=="ca_time_skip" || (journal && command~=="ca_journal_toggle")
+                || (menu.Context>=1 && menu.Context<=7 && CaelumExplorationNavigation.IsShortcut(command))))
                 return StringTable.Localize("CA_HINT_MOUSE",false);
         }
         return KeyName(scan);

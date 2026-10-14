@@ -5769,3 +5769,27 @@ CA_TRACK_LOCAL = "Mapa actual";
 CA_TRACK_OTHER_MAP = "Otro mapa";
 CA_TRACK_POSITION_UNKNOWN = "Sin ubicación precisa conocida";
 CA_TRACK_MORE = "%d misiones más en seguimiento - leé sus objetivos completos en el Diario.";
+
+[enu default]
+CA_NAV_TITLE = "Explore";
+CA_NAV_LOCAL = "Local map";
+CA_NAV_KEYS = "Keys and documents";
+CA_NAV_OWNED_HELP = "Owned items only. Viewing does not use them or advance a quest.";
+CA_NAV_CARRIED = "Carried";
+CA_NAV_IN_BOX = "In the Magic Box";
+CA_NAV_KEY_HELP = "Locks check this key automatically while you carry it.";
+CA_NAV_NO_TEXT = "No additional readable text is available for this document.";
+CA_NAV_NO_DOCUMENTS = "You currently own no keys or documents.";
+CA_NAV_MAP_HINT = "Explore / World: %s | Journal: %s | Also available in the pause menu.";
+
+[esp es]
+CA_NAV_TITLE = "Explorar";
+CA_NAV_LOCAL = "Mapa local";
+CA_NAV_KEYS = "Llaves y documentos";
+CA_NAV_OWNED_HELP = "Solo objetos poseídos. Consultarlos no los usa ni avanza una misión.";
+CA_NAV_CARRIED = "En posesión";
+CA_NAV_IN_BOX = "En la Caja Mágica";
+CA_NAV_KEY_HELP = "Las cerraduras comprueban esta llave automáticamente mientras la llevás.";
+CA_NAV_NO_TEXT = "Este documento no tiene texto adicional disponible para leer.";
+CA_NAV_NO_DOCUMENTS = "Actualmente no poseés llaves ni documentos.";
+CA_NAV_MAP_HINT = "Explorar / Mundo: %s | Diario: %s | También desde el menú de pausa.";

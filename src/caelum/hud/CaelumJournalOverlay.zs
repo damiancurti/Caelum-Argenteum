@@ -2775,6 +2775,7 @@ class CaelumJournalOverlay : EventHandler
 
     override void ConsoleProcess(ConsoleEvent e)
     {
+        if(CaelumExplorationNavigation.Command(e.Name))return;
         if (e.Name ~== "ca_journal_toggle") ToggleJournal();
     }
 

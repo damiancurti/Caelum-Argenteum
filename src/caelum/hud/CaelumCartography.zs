@@ -76,6 +76,7 @@ class CaelumCartography : Object ui
             rows.Push(StringTable.Localize("CA_MAP_LEGEND",false));
             rows.Push(Controls());
             rows.Push(String.Format(StringTable.Localize("CA_NOTE_OPEN_HINT",false),Keys("ca_map_notes")));
+            rows.Push(String.Format(StringTable.Localize("CA_NAV_MAP_HINT",false),Keys("ca_exploration"),Keys("ca_journal_toggle")));
             rows.Push(StringTable.Localize(CVar.GetCVar("am_followplayer").GetBool()?"CA_MAP_FOLLOW_PAN":"CA_MAP_FREE_PAN",false));
             if(level.MapName=="MAP01")rows.Push(StringTable.Localize("CA_MAP_STACKED",false));
             String knownPoi=CaelumPoiView.CenterLabel(user);

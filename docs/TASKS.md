@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Exploration entry points (#236)
+
+Implemented the entry-point audit, shared Explore navigation, native popup
+adapters and a read-only owned keys/documents view. Existing pages, filters,
+travel confirmations, notes and world/local ownership remain authoritative.
+No new default binding, saved schema, document body or note gameplay effect.
+Static/build and 202 native assertions passed; 28 save comparisons and 17
+inspected captures are in assets/validation_539. CA236-01 and earlier outstanding author
+IDs are deferred until return; no merge or acceptance is inferred.
 
 ## 5.3.8 - Multiple mission tracking (#235)
 

@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-095 - Native menu command tests need the real dispatch boundary
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #236 / 5.3.9,
+2026-10-14; baseline 2f738c39, GZDoom 4.14.2 / Windows 11.
+
+Calling OptionMenuItemCommand.Activate from a diagnostic ConsoleProcess can
+abort with "Attempt to execute CCMD ... outside of menu code", even when the
+item belongs to the current native menu. Do not remove the engine guard or
+mislabel that failure as ordinary player input. Inspect the actual descriptor
+and test its route separately through console commands; record physical native
+activation as outstanding until exercised through real input. The #236 failed
+flow-04 and subsequent selected runs are retained in assets/validation_539.
+
+OptionMenu's exposed descriptor has mFont, but the ListMenu-style Font token
+in a 4.14.2 OptionMenu definition causes a fatal menu-parser error. Assign the
+descriptor's supported field instead. Keep startup stderr/stdout and detect
+the fatal-error process title so a hidden test cannot wait indefinitely behind
+an error dialog. Neither these scripted checks nor a successful build imply
+author usability acceptance.
+
 ## CA-KP-094 - Check disclosure separately from legacy objective writes
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #235 / 5.3.8,

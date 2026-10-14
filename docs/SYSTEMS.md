@@ -1,6 +1,53 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Exploration navigation and owned documents (#236)
+
+The entry-point audit found the seven Journal tabs, formal inventory filters,
+native inventory commands, World/travel page, native local map and manual-note
+editor already implemented. The delta is an Explore menu connecting those
+existing destinations, a read-only owned-document projection and native popup
+adapters. No replacement inventory, quest or travel service is introduced.
+
+| Entry | Destination / authority |
+| --- | --- |
+| Existing Journal binding (default Tab) | Last Journal page; existing filters, selections and detail behavior |
+| Journal Explore button / contextual N; pause menu > Explore | Native live navigation menu; Back retains its parent |
+| Optional ca_exploration, ca_inventory_open, ca_world_open, ca_missions_open, ca_keys_open controls | Explore, formal Inventory, World, Missions, owned Keys/Documents; no assigned defaults |
+| Native showpop 1 / 2 / 3 | Missions / Keys and documents / Character; no stock Strife popup |
+| Existing native invprev/invnext/invuse/invdrop/invquery | Existing engine inventory compatibility; not a second formal inventory screen |
+| Explore > Local map | Native automap; an already-open map keeps its center/zoom/rotation |
+| Explore > World / Map notes | Existing World journal / native map-local note editor |
+
+Direct shortcuts resolve exact current bindings inside live Journal pages;
+native menu/navigation keys keep precedence, and conflicting context labels
+show Click. Compound aliases/double bindings retain native gameplay dispatch,
+not a new panel interpreter. Controls/reset/defaults are unchanged. Map hints
+resolve normal/map binding precedence and retain a pause-menu fallback when
+Explore is unbound. N is a Journal context action, not a new global binding.
+
+Keys and documents traverses the current pawn's native Inventory, including
+owned boxed documents, and shows only positive-amount owned weighted keys,
+sealed letters and processing manuals. Native names and quantities are reused;
+keys describe their existing automatic lock check. The two implemented document
+actors have names but no authored readable body, so the view says no additional
+text is available. It does not invent pages, use an item, teach recipes, reveal
+unknown material or retain consumed content as an owned object. The broader
+Inventory key-item filter still includes bags/decks and keeps its existing meaning.
+
+World remains a read-only projection of visited/known/traversed records. Local
+geometry, discoveries, numbered marks, manual notes and tracked objectives retain
+their distinct owners. Browsing cannot start a journey; the existing World
+travel offer and physical services still own confirmation and revalidation.
+Live screens keep natural simulation time running; reading does not apply a
+journey/time-skip charge. Rest, card games, active conversations and modal
+services cannot be bypassed with a navigation shortcut. Native pause/settings
+and save/load remain native. No saved field or migration is added by #236.
+
+Evidence: assets/validation_539. Author usability acceptance CA236-01 is pending.
+Real physical input remains a separate author check; scripted menu handlers and
+console routes are identified separately in the native evidence.
 
 ## 5.3.8 - Multiple tracked missions (#235)
 

@@ -1,0 +1,205 @@
+{
+  "issue": 236,
+  "version": "5.3.9",
+  "baseline": "2f738c39",
+  "runtime_sha256": "2d8affc4cdbed61c12a10625d9f0d5c64833c62b82d079495b1b9a72abf66d16",
+  "previous_runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+  "pointer_runtime_sha256": "cec34a4e33e936848d1585bc75f403d6493d66ee872763ad354467b4be32b99a",
+  "verified_runtime_delta": [
+    "Crafting header pointer exclusion",
+    "Exact navigation shortcuts on GUI middle/forward mouse events",
+    "Case-insensitive command routing matches native command semantics"
+  ],
+  "runs": [
+    {
+      "label": "flow-08",
+      "assertions": 57,
+      "fixture_sha256": "CE7D5D7B033527B4A24737F1E02E8C1E04B435DE95ADF02DD52824FC6957FD12",
+      "fixture_source": "fixture_revisions/pointer-01.zs",
+      "runtime_sha256": "cec34a4e33e936848d1585bc75f403d6493d66ee872763ad354467b4be32b99a",
+      "exit_code": 0
+    },
+    {
+      "label": "fresh-01",
+      "assertions": 57,
+      "fixture_sha256": "47F4275C98E117F49CE29811D881728A22066C149891420204193D66C2529DF8",
+      "fixture_source": "fixture_revisions/fresh-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "travel-01",
+      "assertions": 15,
+      "fixture_sha256": "47F4275C98E117F49CE29811D881728A22066C149891420204193D66C2529DF8",
+      "fixture_source": "fixture_revisions/fresh-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "compat-01",
+      "assertions": 12,
+      "fixture_sha256": "47F4275C98E117F49CE29811D881728A22066C149891420204193D66C2529DF8",
+      "fixture_source": "fixture_revisions/fresh-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "reload-01",
+      "assertions": 10,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "hub-01",
+      "assertions": 7,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "box-01",
+      "assertions": 6,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "empty-01",
+      "assertions": 6,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "presentation-small-01",
+      "assertions": 8,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "presentation-large-01",
+      "assertions": 8,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "map-small-01",
+      "assertions": 1,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "map-large-01",
+      "assertions": 1,
+      "fixture_sha256": "C05173C90D3E3B659918AD97611D8B6D4D9020CF5DB90FC7126090F42F18085B",
+      "fixture_source": "fixture_revisions/reload-01.zs",
+      "runtime_sha256": "a4e4022dc24c3dec415d54f75f47c168316748e24b2a4f7de1882f4dffdbd7ab",
+      "exit_code": 0
+    },
+    {
+      "label": "pointer-01",
+      "assertions": 8,
+      "fixture_sha256": "CE7D5D7B033527B4A24737F1E02E8C1E04B435DE95ADF02DD52824FC6957FD12",
+      "fixture_source": "fixture_revisions/pointer-01.zs",
+      "runtime_sha256": "cec34a4e33e936848d1585bc75f403d6493d66ee872763ad354467b4be32b99a",
+      "exit_code": 0
+    },
+    {
+      "label": "case-01",
+      "assertions": 6,
+      "fixture_sha256": "CE7D5D7B033527B4A24737F1E02E8C1E04B435DE95ADF02DD52824FC6957FD12",
+      "fixture_source": "fixture_revisions/pointer-01.zs",
+      "runtime_sha256": "2d8affc4cdbed61c12a10625d9f0d5c64833c62b82d079495b1b9a72abf66d16",
+      "exit_code": 0
+    }
+  ],
+  "native_assertions": 202,
+  "save_checks": {
+    "current_browsing_record": true,
+    "current_browsing_inventory": true,
+    "current_browsing_automap": true,
+    "current_browsing_linedefs": true,
+    "native_reload_record": true,
+    "native_reload_inventory": true,
+    "native_reload_automap": true,
+    "native_reload_linedefs": true,
+    "fresh_browsing_record": true,
+    "fresh_browsing_inventory": true,
+    "fresh_browsing_automap": true,
+    "fresh_browsing_linedefs": true,
+    "older_browsing_record": true,
+    "older_browsing_inventory": true,
+    "older_browsing_automap": true,
+    "older_browsing_linedefs": true,
+    "older_only_existing_235_revision": true,
+    "older_no_inferred_tracking": true,
+    "older_all_prior_nonthermal_record_values": true,
+    "older_owned_instances": true,
+    "older_native_automap": true,
+    "older_native_linedefs": true,
+    "hub_other_record_values": true,
+    "hub_owned_instances": true,
+    "hub_notes_pois_not_copied_to_other_map": true,
+    "cancel_other_record_values": true,
+    "cancel_owned_instances": true,
+    "cancel_only_natural_clock_ticks": true
+  },
+  "captures_inspected": [
+    "flow-08-navigation",
+    "flow-08-documents",
+    "flow-08-notes",
+    "flow-08-map",
+    "travel-01-arrival",
+    "compat-01-old-notes",
+    "box-01-boxed",
+    "empty-01-empty",
+    "presentation-small-01-navigation",
+    "presentation-small-01-documents",
+    "presentation-small-01-world",
+    "presentation-large-01-navigation",
+    "presentation-large-01-documents",
+    "presentation-large-01-world",
+    "map-small-01-map",
+    "map-large-01-map",
+    "pointer-01-pointer-world"
+  ],
+  "validation_exit": 0,
+  "build_exit": 0,
+  "saved_sha256": {
+    "c236-after.zds": "90cca26ccac77cd2e83ffd9957641cdb664132f0f46d225aff385dd7075351cb",
+    "c236-arrived.zds": "bbed70109eddde025f0e6477a7855a2f8a18d30259789a3826cf196ae8a5564d",
+    "c236-before.zds": "d72ffbe4995d82593966f07424b5a56a818e73561c1bd01c8de804fc943080a3",
+    "c236-compat.zds": "191b95d61e4997683f0dd9ef20f2943269eb8e816a3c02c8ff01969e31869688",
+    "c236-final-after.zds": "e43721664414548fcc65ec8c805ef599318dbc7e7738c114650d522a331b0acc",
+    "c236-final-before.zds": "5a773b4b1caf36f3c4fe0366f3f140ae638e2c6dba8ada3cd1b5046e631e0c33",
+    "c236-fresh-after.zds": "6b88aafa715cab36676516feef0e428b09c3909c03d5fe6073457db6f595118b",
+    "c236-fresh-before.zds": "61ee2c81892e83dbe485664f023617e8a648fe06410e09c6490fd784b72d105f",
+    "c236-hub-before.zds": "94f2b69bbdf48e794e33115c3b0af6b9aa5424eb1c72f10ffafdd389a91f887a",
+    "c236-hub-return.zds": "30c591fd1433ed38853203666826a6fd2a1a971350169a85012f94dfb957a95c",
+    "c236-hub-sewers.zds": "ca98a8bc4a1fcc58648457f0d2a083b7559c9eee43198117c2d38d7b4e99a592",
+    "c236-loaded.zds": "1667e2af22cf596a59bdd416849bac539d08eef54cd521c5bd9e424503d890d9",
+    "c236-reloaded.zds": "672f69dbf622be4419d3feb327addad54cea62f84ec5adf55b69c35ac72dd456",
+    "c236-source537-notes.zds": "68cc3e872ac95412769f4f38283cca8926cb69b83cc13e31f8a85c03da84b5b7",
+    "c236-source538.zds": "20823e86a2b16748a002116d32e62bb563e67f4ea071b4571d6a73ef06df1c4a",
+    "c236-travel-before.zds": "7688fa708fe60e421cfacc39180f4bb969f23750a184600688be8e0680edc5b4",
+    "c236-travel-cancelled.zds": "7fe8373e77bbe966e1bcbafd53dcf0149c5d6fcd4dd67f7c2faa2b965640ffa0"
+  },
+  "limits": [
+    "Native handlers and console routes, not physical input acceptance.",
+    "Record comparisons resolve identity/POI/note references and exclude live ThermalState; hub also excludes three survival observations.",
+    "A preview may create one transient journey plan; cancellation changes no carried instances.",
+    "The 5.3.7 upgrade includes only the previously delivered #235 tracking revision.",
+    "Author CA236-01 deferred; no multiplayer certification or merge."
+  ]
+}

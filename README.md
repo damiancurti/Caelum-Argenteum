@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.8.** Obtain and update the complete repository, validate
+**Current release: 5.3.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.9 implements [#236](https://github.com/damiancurti/Caelum-Argenteum/issues/236):
+Explore connects the existing Journal, Inventory, World, local map, notes and
+owned Keys/Documents. Open it from the pause menu or the Journal's Explore
+button (N); optional direct controls remain unbound until configured. Legacy
+mission/key/status commands open Caelum views. No new travel or inventory state.
+CA236-01 manual usability checks are deferred until the author returns.
+[Evidence](assets/validation_539/RESULTS.md).
 
 5.3.8 implements [#235](https://github.com/damiancurti/Caelum-Argenteum/issues/235):
 track several active missions independently from Journal > Missions with T or

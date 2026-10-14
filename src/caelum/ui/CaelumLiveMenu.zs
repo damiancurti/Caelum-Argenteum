@@ -99,6 +99,10 @@ class CaelumLiveMenu : ListMenu
         if(Wanted(Subject)!=Context)return true;
         if(type==InputEvent.Type_KeyDown)ResetPointer();
         if(scan==InputEvent.Key_Grave)return false;
+        if(physical && Context>=1 && Context<=7 && CaelumExplorationNavigation.Shortcut(type,scan))return true;
+        if(Context>=1 && Context<=7 && keyString~=="n"
+            && (!physical || (!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip"))))
+        {if(type==InputEvent.Type_KeyDown){ResetInput();Menu.SetMenu("CaelumNavigationMenu");}return true;}
         if(Context>=1 && Context<=7 && keyString~=="l"
             && (!physical || (!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip"))))
         {if(type==InputEvent.Type_KeyDown)Menu.SetMenu("CaelumNotificationMenu");return true;}
@@ -163,6 +167,8 @@ class CaelumLiveMenu : ListMenu
     }
     override bool OnInputEvent(InputEvent e)
     {
+        if(Context>=1 && Context<=7 && CaelumExplorationNavigation.IsShortcut(Bindings.GetBinding(e.KeyScan)))
+            return Key(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
         if(CaelumInputHints.Matches(e.KeyScan,"ca_journal_toggle") || CaelumInputHints.Matches(e.KeyScan,"ca_time_skip"))
             return Key(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
         if(e.KeyScan==InputEvent.Key_Pad_A || e.KeyScan==InputEvent.Key_Pad_B || e.KeyScan==InputEvent.Key_Pad_X || e.KeyScan==InputEvent.Key_Pad_Y
@@ -178,7 +184,8 @@ class CaelumLiveMenu : ListMenu
         {mouseScan=InputEvent.Key_Mouse5;down=e.Type==UIEvent.Type_FwdButtonDown;}
         if(e.Type==UIEvent.Type_MButtonDown || e.Type==UIEvent.Type_MButtonUp)
         {mouseScan=InputEvent.Key_Mouse3;down=e.Type==UIEvent.Type_MButtonDown;}
-        if(mouseScan!=0 && (CaelumInputHints.Matches(mouseScan,"ca_journal_toggle") || CaelumInputHints.Matches(mouseScan,"ca_time_skip")))
+        if(mouseScan!=0 && (CaelumInputHints.Matches(mouseScan,"ca_journal_toggle") || CaelumInputHints.Matches(mouseScan,"ca_time_skip")
+            || (Context>=1 && Context<=7 && CaelumExplorationNavigation.IsShortcut(Bindings.GetBinding(mouseScan)))))
             return Key(down?InputEvent.Type_KeyDown:InputEvent.Type_KeyUp,mouseScan,0,"");
         if(e.Type==UIEvent.Type_KeyDown || e.Type==UIEvent.Type_KeyUp)
         {
@@ -222,7 +229,8 @@ class CaelumLiveMenu : ListMenu
         int eventType=type==MOUSE_Click?UIEvent.Type_LButtonDown:type==MOUSE_Release?UIEvent.Type_LButtonUp:UIEvent.Type_MouseMove;
         if(Context==CTX_SKIP)return CaelumTimeSkipPanel.PointerInput(Journal(),Subject,eventType,point);
         if(Context==4 && !(point.Y>=36 && point.Y<101 && point.X>=26 && point.X<614)
-            && !CaelumMenuPointer.Inside(point,(508,15),(100,18)))
+            && !CaelumMenuPointer.Inside(point,(508,15),(100,18))
+            && !CaelumMenuPointer.Inside(point,(32,15),(104,18)))
             return CaelumCraftingUI.Mouse(Journal(),Subject,eventType,point);
         Controls.Layout(self,false);Pointer.Move(point);
         if(type==MOUSE_Click)Pointer.Press(Revision());

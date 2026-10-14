@@ -19,6 +19,7 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_NEW_CHARACTER", "n", "CaelumNewCharacterMenu"
     TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
+    TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
     TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
@@ -99,6 +100,29 @@ ListMenu "CaelumAppearanceMenu"
 AddOptionMenu "InventoryControlsMenu"
 {
     Control "$CA_CONTROL_JOURNAL", "ca_journal_toggle"
+    Control "$CA_NAV_TITLE", "ca_exploration"
+    Control "$CA_JOURNAL_INVENTORY", "ca_inventory_open"
+    Control "$CA_NAV_KEYS", "ca_keys_open"
+    Control "$CA_JOURNAL_WORLD", "ca_world_open"
+    Control "$CA_JOURNAL_QUESTS", "ca_missions_open"
+}
+
+OptionMenu "CaelumNavigationMenu"
+{
+    Class "CaelumNavigationMenu"
+    Title "$CA_NAV_TITLE"
+    Command "$CA_UI_JOURNAL", "ca_nav_journal"
+    Command "$CA_JOURNAL_INVENTORY", "ca_inventory_open"
+    Command "$CA_NAV_KEYS", "ca_keys_open"
+    Command "$CA_NAV_LOCAL", "ca_nav_local"
+    Command "$CA_JOURNAL_WORLD", "ca_world_open"
+    Command "$CA_JOURNAL_QUESTS", "ca_missions_open"
+    Command "$CA_NOTE_TITLE", "ca_nav_notes"
+}
+
+ListMenu "CaelumOwnedDocumentsMenu"
+{
+    Class "CaelumOwnedDocumentsMenu"
 }
 
 AddOptionMenu "InventoryControlsMenu"
