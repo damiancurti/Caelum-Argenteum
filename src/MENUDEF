@@ -19,6 +19,7 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_NEW_CHARACTER", "n", "CaelumNewCharacterMenu"
     TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
+    TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
     TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
 }
@@ -177,4 +178,10 @@ OptionMenu "CaelumAbilityControls"
 AddOptionMenu "MapControlsMenu"
 {
     Control "$CNTRLMNU_AUTOMAP", "togglemap"
+    Control "$CA_NOTE_TITLE", "ca_map_notes"
+}
+
+ListMenu "CaelumMapNoteMenu"
+{
+    Class "CaelumMapNoteMenu"
 }

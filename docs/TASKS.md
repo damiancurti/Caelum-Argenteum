@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Manual map notes (#233)
+
+Implemented native-center placement, clickable/native-navigation list, native
+text input, editable category and confirmed deletion with character/map-owned
+revision-one data. Save commands validate stable ID and serial. Notes are not
+automatic knowledge and do not replace native numbered marks or bindings.
+Native persistence/input/layout checks passed; CA233-01 remains pending author
+editing acceptance. Evidence: assets/validation_536. Continue #234/#235/#236
+separately after this delivery.
 
 ## 5.3.5 - Personal POI knowledge (#232)
 

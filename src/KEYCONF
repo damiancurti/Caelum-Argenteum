@@ -103,3 +103,5 @@ alias ca_time_skip "netevent ca_skip_open"
 // Sólo el primer inicio del lanzador o un reset solicitado aplican el preset.
 alias ca_controls_defaults "bind Tab ca_journal_toggle; bind M togglemap; bind B +user2; bind R +reload; bind F +zoom; bind T +user3; bind Y ca_time_skip; unmapbind M"
 alias ca_controls_reset "resetb2defaults; ca_controls_defaults"
+
+alias ca_map_notes "event ca_map_notes"

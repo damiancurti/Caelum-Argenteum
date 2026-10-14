@@ -1,11 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
 
-**#232/5.3.5 accepted:** CA232-01 passed 2026-10-14 (corrected MAP04).
-**#231/5.3.4 accepted:** cartography; CA231-01 passed 2026-10-13.
-**#258/5.3.3:** zero-Sleep/standing accepted; remaining CA258-01 pending.
-**#255-257 accepted.** Evidence: validation_530-534.
+**#233/5.3.6:** manual notes; native checks passed; CA233-01 pending.
+**#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
+**#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

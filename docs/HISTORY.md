@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.5** — 2026-10-13.
+Documentation version: **5.3.6** — 2026-10-14.
+
+## 5.3.6 - Manual map notes (#233, 2026-10-14)
+
+The author approved placing notes at the native automap center after panning,
+and selecting/editing through a clickable keyboard/controller list. This uses
+GZDoom 4.14.2's exposed center and TextEnterMenu without inventing a mouse-to-world
+projector. Note plus the five existing service categories affect presentation
+only. Existing numbered marks and discovered POIs remain separate.
+
+Added revision-one notes to the traveling character record, stable monotonic
+IDs, expected-serial edit/delete commands and empty old-save migration. Drafts
+remain UI-local until Save; delete has an explicit cancel-first confirmation.
+The native command's 16-bit byte capacity is checked before sending long text.
+Owned Journal paper artwork marks manual notes. No new bitmap or reveal rule.
+Native validation passed: eight runs, 88 assertions, ten native-save comparisons
+and sixteen inspected captures. This includes delayed commands, Unicode data,
+old/current saves, native numbered marks, hub return, multiple characters and
+Spanish/English scales. The old-save comparison resolves identity object-table
+references before comparing values; changed native relocation slots are not
+changed identity. Validation/build results and exact hashes are retained in
+assets/validation_536. CA233-01 remains pending author editing acceptance;
+agent checks do not constitute author acceptance.
 
 ## 5.3.5 - Known local POIs (#232, 2026-10-13)
 
