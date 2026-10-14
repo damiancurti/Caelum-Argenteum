@@ -78,6 +78,18 @@ markers through native save/load. Session author-20261014-064857 used the frozen
 numbered/manual notes and bilingual/native-control checks remain in CA234-01.
 This partial author acceptance does not certify the untested cases or imply a merge.
 The author returned; the temporary keep-awake request was released on 2026-10-14.
+Later on 2026-10-14, CA234-01's sewer check failed: the author clarified that the
+label changed to open but the icon remained a padlock. Category-only texture
+selection caused the mismatch. Derived markers now pass the saved ObservedAccess
+to the shared presentation data, using the existing exit/passage artwork for an
+observed-open grate. No discovery, access, save field or balance changed.
+The original frozen runtime reproduced both open-marker failures; the fix passed
+34 native flow assertions and 9 after native save/load. These check the actual
+MapMarker texture, unchanged identity/position, no extra discoveries and remote
+state changes without reobservation. Save comparisons retain the recorded facts.
+The initial new diagnostic had a UI/play Check scope compile error; corrected
+before these runs, with its failed log retained. This correction stays in the
+same #234 patch/version. Author visual retest remains pending.
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 

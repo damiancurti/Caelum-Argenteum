@@ -2,8 +2,9 @@
 
 Documentation version: **5.3.9** — 2026-10-14.
 
-**#236/5.3.9:** first five CA236-01 steps accepted; remainder pending.
-**#233 editing/#234 mansion accepted:** remaining CA233/234/235-01 checks pending.
+**#236/5.3.9:** CA236-01 partially accepted.
+**#233 editing/#234 mansion accepted:** CA233/234/235-01 remainder pending.
+Grate icon fixed; author retest pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 

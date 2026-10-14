@@ -10,6 +10,37 @@ markers through save/load. The five presented steps ran in
 the engine exited with code 0. Sewer/city and remaining compatibility checks
 stay pending. Physical author acceptance is separate from the native matrix.
 
+Open-grate icon correction (2026-10-14): the author reported and clarified an
+open label with an unchanged padlock. The original native matrix checked access
+facts/labels but missed this displayed-state mismatch. CaelumKnownPoiMarker now
+selects its texture using the saved observation: an observed-open grate uses the
+existing passage/exit artwork, while other grate states keep their category icon.
+The patch changes no knowledge event, access rule, balance value or saved field.
+
+`marker_evidence.json` records the focused regression separately. The original
+frozen runtime reproduces two expected icon failures. Corrected flow/reload runs
+pass **43 assertions**, **2 native-save comparisons** and **3 inspected captures**.
+Real native Use first fails without a key, then opens the same grate after the
+fixture supplies its existing key. Assertions read the actual MapMarker texture,
+identity, position and dormancy; a diagnostic remote state change must not update
+the remembered icon. No other grate is discovered. Native reload reconstructs
+the correct texture and retains the observed fact/knowledge serial. Static
+validation and normal packaging pass; the collector matches the production
+build to the tested package and limits its runtime diff to the two icon-routing
+sources, normalizing checkout CRLF only for ZScript, KEYCONF, MENUDEF and ZSCRIPT.
+
+The first marker diagnostic failed to compile because its Check helper had play
+scope; its corrected UI scope is in all selected runs. The first reload passed
+its assertions but captured the closed automap; the selected repeat opens the
+map before capture. Both preliminary logs remain in build/issue234-marker-fix.
+The original issue234 packages and the author's active session remain untouched.
+Reproduce with `python assets/validation_537/marker_prepare.py`, then the recorded
+`run_native.ps1 -WorkDirectory build/issue234-marker-fix` arguments and
+`python assets/validation_537/marker_collect.py`. The focused author retest uses
+`marker_handoff.ps1`: diagnostic grate positioning, F8 for its key, native Use,
+map inspection and save/load. This is not ordinary traversal/secrecy acceptance.
+CA234-01 remains pending that visual retest and its other unconfirmed cases.
+
 Static validation and normal packaging passed. Sixteen native GZDoom 4.14.2
 runs passed 151 assertions, with 16 save comparisons and 12 inspected captures.
 `evidence.json` records exact commands, runtime/fixture/save hashes and results.

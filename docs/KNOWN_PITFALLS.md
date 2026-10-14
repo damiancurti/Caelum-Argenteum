@@ -93,6 +93,13 @@ assets/validation_534/RESULTS.md and its final captures/manifest. Ordinary
 input and visual acceptance passed CA231-01 on 2026-10-13 after the author
 returned. Physical-controller coverage was not separately reported.
 
+#234 / 5.3.7 follow-up, 2026-10-14: correct access text does not prove the native
+MapMarker icon matches. Author CA234-01 reported an open grate still showing a
+padlock; category-only texture lookup ignored ObservedAccess. Native reproduction
+and 43 corrected assertions in assets/validation_537/marker_evidence.json check
+the real actor picnum, save/reload and remote-state isolation. Assert rendered
+state as well as the persistent fact. ENGINE-VERIFIED; author retest pending.
+
 ## CA-KP-091 - Native menu actions need visible feedback inside the menu
 
 Status/evidence: ENGINE-VERIFIED, #227 / 5.2.26, 2026-10-13.
