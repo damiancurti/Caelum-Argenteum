@@ -52,7 +52,7 @@ target TIDs or live-object tracking; they consult only the current character's
 known fact. No renderer or reveal CVar is changed.
 
 Evidence and precise fixture limits: assets/validation_535/RESULTS.md.
-CA232-01 remains an author check; #233 notes, #234 registrations, #235 multiple
+CA232-01 passed author acceptance on 2026-10-14; #233 notes, #234 registrations, #235 multiple
 mission tracking and #236 Journal navigation remain separate deliveries.
 
 ## 5.3.4 - Native local cartography (#231)

@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.5** — 2026-10-13.
 
-**#232/5.3.5:** CA232-01 MAP04 retest pending.
+**#232/5.3.5 accepted:** CA232-01 passed 2026-10-14 (corrected MAP04).
 **#231/5.3.4 accepted:** cartography; CA231-01 passed 2026-10-13.
 **#258/5.3.3:** zero-Sleep/standing accepted; remaining CA258-01 pending.
 **#255-257 accepted.** Evidence: validation_530-534.

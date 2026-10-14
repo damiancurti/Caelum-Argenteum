@@ -8,7 +8,8 @@ Implemented per-character, revisioned local POI facts and conditional native
 icons/names for beds, stations, merchants, exits and transport. Discovery uses
 valid service interactions, including blocked services; old unrecorded discoveries remain unknown.
 World/quest owners, native geometry and route permissions are preserved.
-Evidence: assets/validation_535/RESULTS.md. CA232-01 author acceptance pending.
+Evidence: assets/validation_535/RESULTS.md. CA232-01 accepted on 2026-10-14
+after the corrected MAP04 handoff.
 Authored map registrations remain #234, named notes #233, simultaneous mission
 tracking #235 and Journal navigation #236, with separate commits/tests/PRs.
 

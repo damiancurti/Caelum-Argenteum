@@ -57,7 +57,8 @@ are recorded. The final package passed another native compile/startup check.
 No gameplay or presentation code changed after the behavioral matrix.
 
 Static validation and normal build results are retained adjacent to the
-manifest. CA232-01 is pending author acceptance; no merge or closure is claimed.
+manifest. CA232-01 passed author acceptance on 2026-10-14 after the corrected MAP04
+handoff; no merge or closure is claimed.
 
 Author handoff correction (2026-10-13, same patch/PR): the author reported
 that the merchant marked the map but the bed/station did not, with only a
@@ -74,8 +75,9 @@ both known icons. All 14 checks passed; all four captures were inspected.
 The final runtime is byte-identical: only test orchestration, diagnostics and
 documentation changed. The ordinary rest dialog retains its existing native
 layout; this fixture correction does not claim a dialog redesign. F5 records
-fixture state without granting knowledge. CA232-01 remains pending a new
-author run; this failure and correction are not treated as author acceptance.
+fixture state without granting knowledge. On 2026-10-14 the author then
+explicitly confirmed that the corrected tests passed. CA232-01 is accepted;
+the earlier failure and agent correction remain distinct from that acceptance.
 
 Run `powershell.exe -NoProfile -ExecutionPolicy Bypass -NoExit -File
 assets/validation_535/handoff.ps1` for the corrected interactive handoff.

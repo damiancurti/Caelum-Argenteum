@@ -571,8 +571,10 @@
   ],
   "author_acceptance": {
     "id": "CA232-01",
-    "status": "corrected MAP04 fixture retest pending",
-    "report": "Merchant marker visible; bed/station missing with brief appearance/disappearance."
+    "status": "passed",
+    "report": "Merchant marker visible; bed/station missing with brief appearance/disappearance.",
+    "date": "2026-10-14",
+    "qualification": "Corrected MAP04 handoff after reproduced MAP03 fixture failure"
   },
   "limits": [
     "Fixture registrations; authored map catalogues remain #234.",

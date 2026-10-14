@@ -13,8 +13,8 @@ it, then rebuild with `run_dev.bat` as described below.
 personal knowledge of registered beds, stations, merchants, exits and transport,
 with conditional native icons/names. Service use records the last known place;
 map-specific registrations follow in #234. [Evidence](assets/validation_535/RESULTS.md).
-**CA232-01 remains pending:** the reported disappearing bed/station was
-reproduced in the MAP03 fixture; the corrected test uses MAP04 and delayed Use.
+**CA232-01 passed author acceptance on 2026-10-14** using the corrected MAP04
+fixture after the reproduced MAP03 handoff failure.
 
 5.3.4 implements [#231](https://github.com/damiancurti/Caelum-Argenteum/issues/231):
 native local cartography with paper/ink colors, location, local time and current
