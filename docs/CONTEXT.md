@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
 
-**#233 accepted; #234 accepted.**
+**#233-235 accepted:** CA235-01/02 completed 2026-10-14.
 **#231/232 accepted; #255-258 accepted.** CA258-01 completed 2026-10-14.
 Evidence and individual acceptance records: HISTORY; pending checks: pending_test.txt.
 

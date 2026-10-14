@@ -54,8 +54,9 @@ class CaelumPlayerPresentation : Object play
             objective++)
         {
             user.JournalQuestObjectiveKnown[objective] =
-                objective < CaelumConstants.QUEST_SEWERS * CaelumConstants.QUEST_OBJECTIVE_CAPACITY
-                    && persistentState.QuestObjectiveKnown[objective];
+                CaelumQuestCatalogue.KnownObjective(persistentState,
+                    objective/CaelumConstants.QUEST_OBJECTIVE_CAPACITY,
+                    objective%CaelumConstants.QUEST_OBJECTIVE_CAPACITY);
             user.JournalQuestObjectiveProgress[objective] =
                 persistentState.QuestObjectiveProgress[objective];
             user.JournalQuestObjectiveTarget[objective] =

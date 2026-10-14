@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+5.3.8 / #235: the Journal can track several active missions. Current authored
+room/workshop directions link only to the character's existing #234 observations;
+secret/rune/Fool positions receive no invented waypoint. Mission activation
+alone adds no map knowledge. The read-only catalogue hides the legacy lesson
+updater's premature main-quest/objective visibility until its documented Palomo
+guidance/stages; stored progress is unchanged. CA235-01 remains deferred.
 
 ## 5.3.7 - Discovered mansion rooms and services (#234)
 

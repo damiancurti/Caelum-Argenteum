@@ -42,6 +42,14 @@ class CaelumQuestCatalogue : Object
     static play int State(CaelumPersistentCharacterState record, int id)
     {
         if (record == null || id < 0 || id >= CaelumConstants.QUEST_DEFINED_COUNT) return 0;
+        // UpdateLessons heredado puede activar el slot antes de Palomo. El
+        // contrato narrativo exige haber oído la guía; no reescribir ese slot
+        // ni borrar progreso antiguo para corregir su presentación.
+        if(id==CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && record.QuestState[id]==CaelumConstants.QUEST_STATE_ACTIVE
+            && record.QuestStage[id]<=CaelumConstants.MAIN_M00_STATE_MET_PALOMO
+            && !record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET))
+            return CaelumConstants.QUEST_STATE_UNDISCOVERED;
         if (id < CaelumConstants.QUEST_SEWERS || id == CaelumConstants.QUEST_GUARD_CAPTAIN)
             return record.QuestState[id];
         if (id == CaelumConstants.QUEST_SEWERS)
@@ -60,6 +68,22 @@ class CaelumQuestCatalogue : Object
         // Sólo presenta la muerte ya registrada; no añade reglas de fracaso.
         if (outcome == CaelumConstants.PRISONER_STATE_DEAD) return CaelumConstants.QUEST_STATE_FAILED;
         return CaelumConstants.QUEST_STATE_UNDISCOVERED;
+    }
+
+    static play bool KnownObjective(CaelumPersistentCharacterState record,int quest,int objective)
+    {
+        if(record==null || quest<0 || quest>=CaelumConstants.QUEST_SEWERS
+            || objective<0 || objective>=CaelumConstants.QUEST_OBJECTIVE_CAPACITY
+            || State(record,quest)==CaelumConstants.QUEST_STATE_UNDISCOVERED
+            || !record.QuestObjectiveKnown[quest*CaelumConstants.QUEST_OBJECTIVE_CAPACITY+objective])return false;
+        if(quest!=CaelumConstants.QUEST_MAIN_M00_THE_FOOL)return true;
+        int minimum=objective==CaelumConstants.MAIN_M00_OBJECTIVE_CONVINCE_RESIDENTS?CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE
+            :objective==CaelumConstants.MAIN_M00_OBJECTIVE_SOLVE_RIDDLE?CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
+            :objective==CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS || objective==CaelumConstants.MAIN_M00_OBJECTIVE_PREPARE_WEAPON?CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            :objective==CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL?CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE
+            :objective==CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL?CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED
+            :objective==CaelumConstants.MAIN_M00_OBJECTIVE_LEAVE_MANSION?CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED:0;
+        return record.QuestStage[quest]>=minimum;
     }
 
     static play void RefreshObserved(CaelumPlayer user)

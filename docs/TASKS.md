@@ -1,6 +1,29 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+## 5.3.8 - Multiple mission tracking (#235)
+
+The subsequent author request adds a native target symbol at current known
+destinations, updated on stage changes and removed on untracking/completion.
+CA235-02 passed author review on 2026-10-14; CA235-01 stays accepted.
+No #235 author checks remain outstanding.
+
+Implemented independent saved selections, native Journal action, shared objective
+text, known-place associations and bounded map rows. Terminal/history/filter
+semantics remain intact. The read-only catalogue hides premature legacy lesson
+flags before their documented stages; underlying quest progress is untouched.
+Validation evidence: assets/validation_538. On 2026-10-14 the author accepted
+CA235-01's four presented handoff steps: independent T/button tracking with the
+held-key latch, simultaneous map selections, filters/detail/Back and saved choices,
+and terminal objectives leaving the map while remaining in history. CA235-01 passed full author acceptance on 2026-10-14.
+Earlier author checks are accepted. Next separate patch: #236.
+
+Future decision inventory, not implemented as guessed waypoints: precise NPC
+disclosure events and positions for the refuge, moving companions, rune/secret
+content and battle targets. Current tracking uses authored directions as text
+and already-observed POIs only. Future author decisions are required before
+adding these disclosures; they are outside this completed implementation.
 
 ## 5.3.7 - Existing-map exploration (#234)
 
@@ -22,7 +45,7 @@ grates. Another 43 native assertions/two save comparisons passed. On 2026-10-14
 the author accepted the three unlocked_handoff.ps1 steps: closed padlock on denied
 use, open padlock after F8/key and successful use, and persistence on save/load.
 Diagnostic positioning does not certify ordinary sewer traversal or secrecy;
-those checks, city exploration and remaining compatibility cases stay pending.
+those checks and the remaining CA234-01 cases subsequently passed on 2026-10-14.
 The subsequent city handoff failed author review: gates retained the generic
 hand and southwest factory stations added no marker. The same #234 patch now
 records gate observations before/after use and binds all 96 authored factory

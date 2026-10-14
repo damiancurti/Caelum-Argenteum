@@ -46,6 +46,7 @@ class CaelumLiveMenu : ListMenu
     void ResetInput()
     {
         ResetPointer();
+        let journal=Journal();if(journal!=null)journal.QuestTrackHeld=false;
         CaelumScheduleCalendar.Set("ca_journal_tarot_select_held",0);
         CaelumScheduleCalendar.Set("ca_journal_quest_abandon_held",0);
     }

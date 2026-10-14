@@ -72,11 +72,17 @@ class CaelumLiveMenuControls : Object ui
             }
             else if(context==5)
             {
+                int quest=view.GetVisibleQuestId(user);
+                bool tracked=CaelumQuestTracking.Selected(user,quest);
                 Button("CA_UI_PREVIOUS",InputEvent.Key_UpArrow,0,"",70);Button("CA_UI_NEXT",InputEvent.Key_DownArrow,0,"",70);
-                Button("CA_UI_DETAILS",0,102,"f",84);Button("CA_UI_ACT",InputEvent.Key_Enter,0,"",84);
-                Button("CA_UI_ABANDON",0,103,"g",92);Button("CA_UI_FILTER",0,99,"c",70);Back();
+                Button("CA_UI_DETAILS",0,102,"f",84);Button("CA_UI_ACT",InputEvent.Key_Enter,0,"",80);
+                Button("CA_UI_ABANDON",0,103,"g",84);
+                Button(tracked?"CA_TRACK_STOP":"CA_TRACK_START",0,116,"t",96,
+                    quest>=0 && (tracked || user.JournalQuestState[quest]==CaelumConstants.QUEST_STATE_ACTIVE));
+                Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",72);
                 // Los filtros tienen dos ejes independientes.
                 Region(4002,320,108,280,18);
+                Region(4003,40,108,280,18);
             }
             else if(context==7)
             {
@@ -175,6 +181,7 @@ class CaelumLiveMenuControls : Object ui
             for(int i=0;i<Abs(delta);i++)EventHandler.SendNetworkEvent(delta<0?"ca_palomo_merchant_previous":"ca_palomo_merchant_next");
             return;
         }
+        if(id==4003){host.Stroke(0,99,"c");return;}
         if(id==4002){host.Stroke(0,118,"v");return;}
         if(id==4000){host.Stroke(0,116,"t");return;}
         if(id==4001){host.Stroke(InputEvent.Key_Enter);return;}

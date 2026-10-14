@@ -1,6 +1,28 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+## 5.3.8 - Saved independent mission tracking (#235)
+
+Author-requested follow-up (2026-10-14): mark the current tracked destination
+directly on the native map, restricted to known places. The existing target
+symbol updates with the stage. CA235-02 passed author acceptance on 2026-10-14,
+separately from the previously accepted CA235-01.
+
+The author selected simultaneous tracking of several missions. Implemented a
+Journal action, shared objective projection, bounded local-map summary and links
+to already-known authored places. Active/completed/Other and main/side filters,
+optional rescue/payment distinctions and captain history retain their contracts.
+Additive revision-one preferences start unselected in older saves; presentation
+does not grant progress or information. Exact NPC-disclosed coordinates without
+a persisted disclosure event remain a documented design gap, with existing
+spoken directions available as text.
+
+The audit found legacy lesson updates activating slot 0 before Palomo and exposing
+future objective flags. #235 corrects only the read-only visibility adapter to
+follow the documented start/stage contract; original progress remains stored.
+Evidence: assets/validation_538. CA235-01 passed full author acceptance on 2026-10-14.
+#233/#234/#258 author checks are accepted. Next separate patch: #236.
 
 ## 5.3.7 - Existing-map exploration catalogue (#234)
 

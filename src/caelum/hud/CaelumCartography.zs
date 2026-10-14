@@ -18,9 +18,6 @@ class CaelumCartography : Object ui
         let calendar=CaelumCalendarState(user.FindInventory("CaelumCalendarState"));
         return calendar==null?"":calendar.FormatDate(clock);
     }
-    // #235 aporta sólo el objetivo conocido y seguido. La selección de una
-    // fila del Diario no constituye seguimiento ni autoriza revelar su destino.
-    static String KnownObjective(CaelumPlayer user) {return "";}
     static String Keys(String command)
     {
         Array<int> keys,normal,available;
@@ -70,7 +67,6 @@ class CaelumCartography : Object ui
         if(CVar.GetCVar("con_notifytime").GetFloat()>0)
             top+=Clamp(CVar.GetCVar("con_notifylines").GetInt(),0,4)*CaelumCartographyLayout.NATIVE_NOTICE_HEIGHT*messages.Y;
         String location=StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(CaelumWorldCatalogue.LocationForMap(level.MapName)),false);
-        String objective=KnownObjective(user);
         bool rotated=CVar.GetCVar("am_rotate").GetInt()==1 || (CVar.GetCVar("am_rotate").GetInt()==2 && viewactive);
         String stamp=ClockText(user).."  |  "..StringTable.Localize(rotated?"CA_MAP_HEADING_UP":"CA_MAP_NORTH_UP",false);
         Array<String> rows;
@@ -87,7 +83,6 @@ class CaelumCartography : Object ui
             String manual=CaelumMapNoteMenu.CenterLabel(user,Max(1,width/scale-2*CaelumCartographyLayout.PADDING));
             if(manual.Length()>0)rows.Push(manual);
         }
-        if(objective.Length()>0)rows.Push(objective);
         double inner=Max(1,width-2*CaelumCartographyLayout.PADDING*scale);
         let titleLines=title.BreakLines(location,Max(1,int(inner/scale)));
         double height=(titleLines.Count()*(title.GetHeight()+CaelumCartographyLayout.TEXT_GAP)+CaelumCartographyLayout.PADDING)*scale;
@@ -98,6 +93,27 @@ class CaelumCartography : Object ui
         // sobre las barras. Las preferencias grandes conservan su valor;
         // sólo se limita la posición de esta presentación local.
         double bottom=Screen.GetHeight()-(CaelumPresentation.RESOURCE_BOTTOM_EDGE-CaelumPresentation.RESOURCE_TOP_BAR+CaelumPresentation.RESOURCE_LABEL_OFFSET)*resources.Y-CaelumCartographyLayout.MARGIN;
+        Array<String> tracked;
+        double lineHeight=(font.GetHeight()+CaelumCartographyLayout.TEXT_GAP)*scale;
+        int budget=Max(0,int((bottom-CaelumCartographyLayout.TOP-height)/lineHeight));
+        bool hasTracked=false;
+        for(int quest=0;quest<CaelumConstants.QUEST_DEFINED_COUNT;quest++)
+            if(CaelumQuestTracking.Active(user,quest)){hasTracked=true;break;}
+        if(hasTracked && budget==0)
+        {
+            // Reservar al menos el aviso de seguimiento incluso con escala
+            // grande. No cambia preferencias: encaja sólo esta cartela.
+            double fit=Max(0.001,Min(1.0,(bottom-CaelumCartographyLayout.TOP)
+                /(height+lineHeight+CaelumCartographyLayout.TEXT_GAP*scale)));
+            scale*=fit;height*=fit;lineHeight*=fit;
+            inner=Max(1,width-2*CaelumCartographyLayout.PADDING*scale);
+            // El ancho relativo crece: la medida previa es conservadora si
+            // alguna fila pasa a ocupar menos líneas después del ajuste.
+            budget=Max(1,int((bottom-CaelumCartographyLayout.TOP-height)/lineHeight));
+        }
+        CaelumQuestTrackingView.MapRows(user,font,Max(1,int(inner/scale)),budget,tracked);
+        for(int i=0;i<tracked.Size();i++)rows.Push(tracked[i]);
+        height+=tracked.Size()*lineHeight;
         top=Min(top,Max(CaelumCartographyLayout.TOP,bottom-height));
         Screen.Dim(CaelumCartographyLayout.PANEL_COLOR,CaelumCartographyLayout.PANEL_ALPHA,int(left),int(top),int(width),int(height));
         Screen.DrawThickLine(left,top,left+width,top,Max(1,scale),CaelumCartographyLayout.RULE_COLOR);

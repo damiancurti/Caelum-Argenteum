@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `c3b6b42c8c44f985630fdd371e58a945df329f86d1b1ac33b9a3d9500f24589b`. Locations include every definition; the last one per language wins.
+SHA-256: `8e542d711516b551b3cf37d16d23e3c215019922160c9061944cc106e89c7ace`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -142,6 +142,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |
 | CA_THERMAL | 16 | CA_THERMAL_ATTACK | CA_THERMAL_WET |
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |
+| CA_TRACK | 10 | CA_TRACK_FINISHED | CA_TRACK_STOP |
 | CA_TRAP | 1 | CA_TRAP_TELEPORTED | CA_TRAP_TELEPORTED |
 | CA_TRAPS | 4 | CA_TRAPS_RESET_DONE | CA_TRAPS_RESET_OCCUPIED |
 | CA_TREE | 47 | CA_TREE_CITY_JACARANDA | CA_TREE_TUNDRA_NIRE_YOUNG |

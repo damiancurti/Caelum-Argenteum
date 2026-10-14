@@ -144,10 +144,15 @@ class CaelumKnownPoiMarker : MapMarker
             CachedFact=CaelumPoiKnowledge.Find(record,level.MapName,PoiId);
         }
         let fact=CachedFact;if(fact==null)return;
-        picnum=TexMan.CheckForTexture(CaelumPoiData.IconPath(fact.Category,fact.ObservedAccess),TexMan.Type_Any);
+        // Proyección transitoria: cambiar de etapa o dejar de seguir restaura
+        // el símbolo del lugar, sin escribir descubrimientos ni campos guardados.
+        bool tracked=CaelumQuestTrackingView.TrackedTarget(user,fact);
+        picnum=TexMan.CheckForTexture(tracked?CaelumQuestTrackingData.MarkerIcon()
+            :CaelumPoiData.IconPath(fact.Category,fact.ObservedAccess),TexMan.Type_Any);
         Vector2 size=TexMan.GetScaledSize(picnum);
         if(size.X<=0 || size.Y<=0)return;
-        Scale=(CaelumPoiData.ICON_SIZE/size.X,CaelumPoiData.ICON_SIZE/size.Y);
+        double iconSize=tracked?CaelumQuestTrackingData.MarkerSize():CaelumPoiData.ICON_SIZE;
+        Scale=(iconSize/size.X,iconSize/size.Y);
         if(Pos!=fact.ObservedPosition)SetOrigin(fact.ObservedPosition,false);
         bDormant=false;
     }

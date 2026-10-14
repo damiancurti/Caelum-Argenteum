@@ -1,6 +1,76 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
+
+After accepting all remaining CA235-01 checks on 2026-10-14, the author asked
+for the next actionable objective to have a spatial map marker and selected
+known destinations only. The current-stage selector is now callable from both
+UI and native marker logic; its rules are unchanged. A known matching POI uses
+the existing owned target icon, updates automatically with the active stage and
+returns to its category icon on untracking or completion. No saved fields,
+knowledge, quest progression, rewards or map coordinates are changed. CA235-02
+records acceptance of this additional behavior separately.
+Static validation and normal packaging passed. Three corrected native runs
+passed 104 assertions, two full resolved-record save comparisons and three
+inspected captures; the accepted preceding runtime reproduces 12 expected
+missing-symbol/size failures. Exact fingerprints and scope: validation_538
+RESULTS and targets_evidence.json. Earlier frozen evidence remains unchanged.
+
+CA235-02 (origin 5.3.8 / #235) passed author acceptance on 2026-10-14.
+The author confirmed, "Estas pruebas dieron muy bien." The three presented
+steps covered Argento/Caella stage changes, absence of an unknown destination
+and appearance after recording it, Track/Untrack and save/load, then completion
+restoring the ordinary place symbol. No failures or qualifications were reported.
+Session author-20261014-102654 used the final frozen runtime SHA-256
+27081ed0b4059a12bcf9c5ed3868b4ab8094cd1a15698774d3c862d395f9d742
+and exited with code 0. This author confirmation is separate from the scripted
+native evidence; no runtime change or version increment accompanies it.
+
+Implemented the author's multi-mission preference with per-character revision-one
+saved selections, Journal T/native-button actions, current-objective map rows
+and already-known place links. Opening/tracking does not change quest progress,
+payments, reputation or knowledge. Existing terminal statuses and completed
+history remain; old saves start without inferred tracking choices.
+
+The first native diagnostic exposed pre-existing UpdateLessons behavior that
+activates the main slot and writes future objective flags before Palomo. This
+disagrees with the documented #34 disclosure contract. The read-only catalogue
+now hides those premature observations without resetting any authoritative
+progress or changing quest controllers. The failing diagnostic is preserved.
+Static/build checks passed; 13 native runs passed 114 assertions, with 18 save
+comparisons and 19 inspected captures. Large-scale cartography reserves its
+tracked-count notice above the bars without changing preferences.
+Evidence: assets/validation_538. CA235-01 remains pending author usability
+acceptance. At the initial delivery the author was away, so questions/manual
+tests were deferred and temporary keep-awake was active until return.
+On 2026-10-14 the returned author resumed checks; keep-awake had been released.
+After the focused #234 city retest passed, CA235-01 session
+author-20261014-080756 was opened through Probar235 using the existing frozen
+5.3.8 runtime and a copy of c235-tracked.zds. Three active tracked missions and
+one known mansion room are diagnostic preparation, not campaign progression.
+Startup passed; no author acceptance is inferred from opening the session.
+The author subsequently confirmed all four presented steps passed on 2026-10-14
+(CA235-01, origin 5.3.8 / #235): T and the Track button toggle each mission
+independently, holding T changes it once; several selected missions remain on
+the map and removing one preserves the others; filters/detail/Back work and
+save/load retains selections; F8 diagnostic terminal states leave the map while
+remaining in Journal history. The session used runtime SHA-256
+15ff167152e296fc701213ea1d2f49da9518d2a1c2e8fa4cf4bdf90322b87a97.
+Remove only those confirmed steps. Bilingual/long-text/scale presentation,
+known-versus-unknown locations, preserved notes/discoveries, reward neutrality,
+unpaid Leonor and captain-clue text remain unconfirmed in CA235-01. The run's
+exit status was not captured; explicit author acceptance is separate from that
+technical limitation. No version increment, PR merge or issue closure is implied.
+
+CA235-01 (origin 5.3.8 / #235) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Long bilingual objectives and scale, known versus unknown locations, saved notes/discoveries, reward neutrality and detailed terminal history passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 

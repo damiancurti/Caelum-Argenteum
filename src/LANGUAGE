@@ -5746,3 +5746,26 @@ CA_POI_TOWER_1 = "Torre noreste";
 CA_POI_TOWER_2 = "Torre suroeste";
 CA_POI_TOWER_3 = "Torre sureste";
 CA_POI_EAST_EXIT = "Salida este - arco del muelle";
+[enu default]
+CA_TRACK_START = "Track";
+CA_TRACK_KNOWN_TARGET = "Known place for: %s";
+CA_TRACK_STOP = "Untrack";
+CA_TRACK_SELECTED = "Tracked on the map. Each active mission can be tracked independently.";
+CA_TRACK_NOT_SELECTED = "Not tracked. Use Track to add this mission to the map.";
+CA_TRACK_FINISHED = "Only active missions show objectives on the map. This record remains in the Journal.";
+CA_TRACK_LOCAL = "Current map";
+CA_TRACK_OTHER_MAP = "Other map";
+CA_TRACK_POSITION_UNKNOWN = "No known precise location";
+CA_TRACK_MORE = "%d more tracked missions - read their full objectives in the Journal.";
+
+[esp es]
+CA_TRACK_START = "Seguir";
+CA_TRACK_KNOWN_TARGET = "Lugar conocido para: %s";
+CA_TRACK_STOP = "No seguir";
+CA_TRACK_SELECTED = "En seguimiento en el mapa. Podés seguir cada misión activa de forma independiente.";
+CA_TRACK_NOT_SELECTED = "Sin seguimiento. Usá Seguir para añadir esta misión al mapa.";
+CA_TRACK_FINISHED = "Solo las misiones activas muestran objetivos en el mapa. Este registro permanece en el Diario.";
+CA_TRACK_LOCAL = "Mapa actual";
+CA_TRACK_OTHER_MAP = "Otro mapa";
+CA_TRACK_POSITION_UNKNOWN = "Sin ubicación precisa conocida";
+CA_TRACK_MORE = "%d misiones más en seguimiento - leé sus objetivos completos en el Diario.";
