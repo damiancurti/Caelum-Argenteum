@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.0** — 2026-10-14.
+
+## 5.4.0 - Live attribute audit (#237, 2026-10-14)
+
+Started the author-requested 5.4 series with a source-to-consumer audit of all
+twelve attributes. SYSTEMS now records effective-value ownership/order, formulas,
+units, caps, player/NPC differences, real consumers and a bounded pending-design
+list. Preserved #154 curves, #188 Toughness/status rules, #192 personality,
+#183 Box capacity and #229 tare. Corrected the claim of completed visual stealth:
+native movement noise works, while visual concealment remains diagnostic.
+Stored Empathy/illumination fields are not counted as completed support effects.
+
+The isolated GZDoom 4.14.2 audit passed 160 assertions on unchanged 5.3.9 production
+source. The first run passed 158 and failed two fixture-removal expectations:
+InitializeDefaults intentionally does not reset an initialized armor model. A
+fresh model corrected the fixture; audit-02 passed 160/160, engine exit 0.
+After synchronizing the two required console release labels, final-source
+release-01 also passed 160/160, exit 0. No
+production behavior was changed to make the check pass. Evidence and exact scope:
+assets/validation_540/RESULTS.md. Static validation and normal packaging results
+are recorded there. No save migration, new manual author test or gameplay
+acceptance is claimed; previous accepted tests remain accepted.
+
+Next: #238's shared lifecycle and the separately revised class/racial issues;
+their outstanding numerical/target policies stay PENDING. New class designs were
+recorded in their GitHub issues on 2026-10-14 and are not implemented by this audit.
 
 ## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
 

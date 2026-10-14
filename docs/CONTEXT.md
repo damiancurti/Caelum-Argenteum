@@ -1,10 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.0** — 2026-10-14.
 
-**#233-236 accepted. #235 objective-marker CA235-02 passed 2026-10-14.**
-**#231/232 accepted; #255-258 accepted.** CA258-01 completed 2026-10-14.
-Evidence and individual acceptance records: HISTORY. Author test queue is empty.
+**5.4.0 / #237:** attribute audit; 160 native assertions; evidence: assets/validation_540.
+SYSTEMS separates real consumers from pending design. Next: #238 and the revised
+class designs recorded in their own issues. Gameplay is unchanged.
+**Previous #231-236/#255-258:** accepted, merged and closed. HISTORY owns results;
+the author queue is empty.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
@@ -65,10 +67,7 @@ follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
 old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
 **#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
 
-**#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
-crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
-
-Earlier acceptances: HISTORY.
+Earlier accepted deliveries and evidence: HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.

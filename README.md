@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.9.** Obtain and update the complete repository, validate
+**Current release: 5.4.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.0 delivers [#237](https://github.com/damiancurti/Caelum-Argenteum/issues/237):
+the twelve-attribute audit now distinguishes live player/NPC consumers, partial
+systems and pending design. It preserves accepted gameplay and save schemas.
+The focused GZDoom audit passed 160 assertions; [evidence](assets/validation_540/RESULTS.md).
+The remaining 5.4 abilities and balance issues retain separate branches and PRs.
 
 5.3.9 implements [#236](https://github.com/damiancurti/Caelum-Argenteum/issues/236):
 Explore connects the existing Journal, Inventory, World, local map, notes and
@@ -2047,7 +2053,7 @@ affiliations, +10 own-faction reputation and a fixed 25 gold coins per
 successful rescue, independent of character size, are defined in the roadmap.
 SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
-The attribute audit is deferred by the author; the current rules stay accepted.
+The historical audit deferral was superseded by 5.4.0/#237's source-to-consumer review; accepted runtime rules remain unchanged and its explicit design gaps remain pending.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system

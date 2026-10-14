@@ -1,0 +1,181 @@
+{
+  "issue": 237,
+  "version": "5.4.0",
+  "baseline": "5208cc921b9a80244164c8fc0a5afef16b58045a",
+  "production_changes": "Only the two required diagnostic release labels: 5.3.9 to 5.4.0.",
+  "runs": [
+    {
+      "directory": "build/issue237",
+      "label": "audit-01",
+      "exit_code": 0,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "manifest": {
+        "source_commit": "5208cc921b9a80244164c8fc0a5afef16b58045a",
+        "production_sha256": "d9111085cc59fc343c973487174e5b148e54e3eb15f016bf7e9954a7bf916996",
+        "fixture_sha256": "d128ee8206518a4a265da5ce737014699eea3a6106da09f4ae546bd6956a1a51"
+      },
+      "log_sha256": "63c980a1dbf5b1407514a5675a4dd4c4a9bf9190585dded72ab3c80986f4afb9",
+      "completion": [
+        "CA237 DONE failures=2 passes=158"
+      ],
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\\production.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\\probe.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\\audit-01.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "237",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\\audit-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237\\probe.cfg\""
+      ],
+      "started_utc": "2026-10-14T14:33:13.1649457Z",
+      "finished_utc": "2026-10-14T14:33:21.4053988Z"
+    },
+    {
+      "directory": "build/issue237-final",
+      "label": "audit-02",
+      "exit_code": 0,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "manifest": {
+        "source_commit": "5208cc921b9a80244164c8fc0a5afef16b58045a",
+        "production_sha256": "d9111085cc59fc343c973487174e5b148e54e3eb15f016bf7e9954a7bf916996",
+        "fixture_sha256": "a6165ebbf8aa94984b1dd04e6bf0276fe127a6684380eb2aecdd126bbd1989a7"
+      },
+      "log_sha256": "92c9e17055c2cbaf44ff5da9d3db3ceb9ac89319c6c062ca0ded297c9e0e364a",
+      "completion": [
+        "CA237 DONE failures=0 passes=160"
+      ],
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\\production.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\\probe.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\\audit-02.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "237",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\\audit-02.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-final\\probe.cfg\""
+      ],
+      "started_utc": "2026-10-14T14:34:22.2848399Z",
+      "finished_utc": "2026-10-14T14:34:31.3170991Z"
+    },
+    {
+      "directory": "build/issue237-release",
+      "label": "release-01",
+      "exit_code": 0,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "manifest": {
+        "source_commit": "5208cc921b9a80244164c8fc0a5afef16b58045a",
+        "production_sha256": "36b2465ff773f48a2aa1851c202fc34f073d1b355993a0ac2639fa3dfcdd1cac",
+        "fixture_sha256": "a6165ebbf8aa94984b1dd04e6bf0276fe127a6684380eb2aecdd126bbd1989a7"
+      },
+      "log_sha256": "3918cef935815bcd10c9ae5205c079cf2d40bea9c6855fe1a9fb70a652f0ec6b",
+      "completion": [
+        "CA237 DONE failures=0 passes=160"
+      ],
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\\production.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\\probe.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\\release-01.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "237",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\\release-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue237-release\\probe.cfg\""
+      ],
+      "started_utc": "2026-10-14T14:40:33.7781825Z",
+      "finished_utc": "2026-10-14T14:40:41.9223491Z"
+    }
+  ],
+  "static_validation": {
+    "version": "5.4.0",
+    "documents": 11,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2498,
+    "errors": []
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "members": 16072,
+    "sha256": "050d5ee0993aed1812ce8085c344b811904f077b3767847bf0b50a80765f32a0",
+    "all_members_match_final_native_package": true
+  },
+  "manual_author_test": "None added: no gameplay behavior/input change; inherited acceptance remains separate."
+}

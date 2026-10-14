@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.0** — 2026-10-14.
 
 ## 5.3.9 - Exploration navigation and owned documents (#236)
 
@@ -7294,77 +7294,143 @@ to 0ag is restored at the author's request. To regenerate health again, all thre
 reserves must be above the 10%. Performance penalties and regeneration costs remain in
 place.
 
-## Audit of the twelve attributes — current code 5.1.10 (#154)
+## Audit of the twelve attributes - 5.4.0 (#237)
 
-Comparison with the table provided by the author. The calculations and their consumers
-in play were reviewed: a calculated field or an isolated timer does not amount to a
-finished mechanic. The four families and their three members agree. The following
-differences separate implementation from intent; they do not themselves authorize new
-combat changes in this patch.
+This source-to-consumer audit refreshes the earlier 5.1.10/#154 matrix against
+accepted main `5208cc92` (5.3.9). No gameplay logic, balance, save schema or
+control changes are made by #237; two console release labels advance to 5.4.0.
+**Implemented** means a normal gameplay
+consumer exists; **partial** distinguishes such a consumer from stored fields,
+diagnostic observers and intended future systems. Author-revised class powers
+remain separate implementation issues #238/#243-251; their planning approval
+does not make their modifiers active in this audited build.
 
-To avoid r/l/lx2 ambiguity, explicit types of code are used:
+### Source, ownership and order
 
-| Scale | Formula | N=0 | N=100 |
-| --- | --- | ---: | ---: |
-| Type 1 bonus | B=(N*N+25*N)/125 | 0% | 100% |
-| Type 2 multiplier | 1+3B/100 | 1 | 4 |
-| Type 3 multiplier | 1+7B/100 | 1 | 8 |
-| Harmful complement | clamp(1-B/100,0,1) | 1 | 0 |
-| Division by Type 2 | base/(1+3B/100) | base | base/4 |
+The player's saved profile/allocation is authoritative. In
+[CaelumPlayerCharacter.ApplyCharacterProfile](../src/caelum/player/CaelumPlayerCharacter.zs),
+the sequence is creation layer plus individual allocation, intact armor bonuses,
+equipped jewelry/Seal bonuses, additive Tarot minor bonuses, then the collection
+percentage. Effective values remain doubles; Tarot never overwrites the saved
+allocation or compounds on the previous effective value. Debug attribute presets
+explicitly replace the creation/equipment subtotal before Tarot; they are not
+ordinary character creation. Derived statistics and carried load are refreshed
+twice so changed Intelligence immediately updates the Box content divisor.
 
-Probabilities add their base when it corresponds to and is limited to the permitted
-range; equipment, mass, states and vulnerability can add modifiers. "Type 2" does not
-mean linear. Each "l" in the table is not automatically replaced: damage, pain,
-lucidity, Dialogue skill and durations do not share a single curve today.
+[CaelumAttributes](../src/caelum/attributes/CaelumAttributes.zs) owns the twelve
+effective values; [CaelumDerivedStats](../src/caelum/statistics/CaelumDerivedStats.zs)
+derives player fields. NPCs instead own integer `Combat*` attributes and their
+own saved `CombatPersonality` in
+[CaelumCombatActor](../src/caelum/actors/CaelumCombatActor.zs). Their combat
+consumers add applicable armor bonuses individually; they do not inherit the
+player's allocation, jewelry or Tarot collection. Current armor grants Dexterity
+from light/medium gloves and Agility from light footwear. NPC footwear enters
+evasion, while its base movement curve uses authored `CombatAgility`; no general
+player/NPC equipment-pipeline equivalence is claimed.
 
-| Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
-| --- | --- | --- | --- |
-| Strength / Physical | Melee damage and physical thrust Type 3, with body mass. | Load Type 2; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
-| Hardness / Physical | After defenses, subtract natural mass times Type3 from physical damage, half from direct magic (#188). Burn/poison/disease use Type1 duration response: immunity at 100, healing above. Pain and Lucidity retain their existing curves. | Environmental thermal rules remain separate. | Disease processing exists; no gameplay disease source is introduced. |
-| Constitution / Physical | Maximum health Type 3, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 2. | It is not connected to shortening debuffs or incoming poisons. Shared disease duration processing uses Toughness (#188); no gameplay disease source is implemented. |
-| Dexterity / Technical | Attack speed Type 2, physical precision Type 3 and physical critical chance Type 1. It also reduces the ranged-weapon reload time by Type 2. | Type 3 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
-| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 2. | Acclimatization rate and displacement limit use base plus Type 1 (#136). | At 100: 2 C/world day, +/-10 C; five days from the racial base. Sleep depletion belongs to Constitution. |
-| Agility / Technical | Type 2 movement using shared ground/swimming/flight factors; Type 1 evasion; jump uses another curve. | Type 1 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 2: Jump energy uses Type 3 and biological mass; native velocity follows total moved mass, then the retained state modifiers. |
-| Charisma / Social | Its Type 2 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 2 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
-| Empathy / Social | BuffPowerPercent Type 2 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 2 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |
-| Eloquence / Social | Casting speed and ability range Type 2 (not projectile muzzle velocity); this range also scales current radii. Anima cost divided by Type 2. | Dialogue skill Type 1, used by Ronnie; also intervenes in social discount of Palomo. | The ammunition reload uses Dexterity; the Channel Seal Cooldown is fixed to 60 s and does not use Eloquence. The table should specify which recharge is intended to reduce and add the cost of Anima already implemented. |
-| Intelligence / Mental | Magical Damage and Push Type 3. | Box capacity = 20 + floor(10 × Type3Multiplier(Intelligence)); the same number divides content weight (#183). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
-| Patience / Mental | Maximum Anima Type 3; regeneration = maximum/base time multiplied by Type 2; interrupt resistance Type 1. It mitigates effects of being injured by Type 1 complement. | Type 1 complement mitigates low/critical sleep aggravation of Lucidity loss and stunning duration. | It does not mitigate general performance penalties by Hunger/Thirst/Sleep: that combination uses Adrenaline. The intended function is only partial. It does not control Sleep loss. |
-| Insight / Mental | Magical precision Type 3 and magical critical chance Type 1. | There is no player detection of hidden objects/sounds or dark attenuation linked to this attribute. | Magical senses and hidden detection are still pending. The debugging perception observer does not implement the senses of the player. |
+Personality does not rewrite attributes: #192 applies its three independent
+magic factors, critical/evasion/Adrenaline alternatives and ideological defense
+rules at their consumers. #194's exclusions for bow/crossbow/carbine/shotgun
+remain accepted. The audit does not change these operation orders.
 
-"Recharge time" needs that distinction: ammunition, wait between attacks and cooldown
-skills are not a single route. StaffCastCooldownRemaining names launch preparation time,
-which does use Eloquence; StopSealChannel assigns 60 seconds fixed to
-CombatChannelCooldownRemaining. There is no overall reduction of all cooldowns by
-Eloquence.
+### Curves, units and boundaries
 
-References to verify or continue implementation:
+For effective level N, B=(N*N+25*N)/125, M2=1+3B/100 and M3=1+7B/100.
+`CaelumGrowthRules` is the shared authority. Historical method names are adapters:
+`CalculateType1Percent` returns 100*M3, `CalculateType4Percent` returns 100*M2,
+and `CalculateType2Percent` returns B. They are not three new curves.
 
-- [CaelumAttributes](../src/caelum/attributes/CaelumAttributes.zs): families and formation
-  of effective attributes.
-- [CaelumDerivedStats](../src/caelum/statistics/CaelumDerivedStats.zs): Recalculate,
-  curves, capabilities and RefreshSurvivalLossMultipliers.
-- [CaelumPlayer](../src/caelum/player/CaelumPlayer.zs): Harm/pain/lucidity consumers,
-  GetRangedEffectiveReloadSeconds, GetCraftingDexterityPercent,
-  ApplyIncomingElementalPayload, ReleasePendingStaffAttack, UpdateAirStateEffects,
-  ApplyPhysicalMovement, UpdateSurvivalStates, UpdateHealthStateEffects and regenerations.
-- [MAP01 Social Dialogue](../src/caelum/dialogue/CaelumMainM00SocialDialogue.zs):
-  Persuasion/Emotion and Dialogue skill requirement.
-- [Elemental States](../src/caelum/actors/CaelumElementalStatus.zs),
-  [projectiles](../src/caelum/actors/CaelumActorProjectile.zs) and
-  [Channel](../src/caelum/actors/CaelumChannelEffect.zs): application of duration, power
-  and radii.
-- [Manufacturing](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds
-  uses the Dexterity Type 3.
-- [Diagnosis of perception](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): experimental
-  observer, different from the senses of the player.
+| Effective N | B (percentage points) | M2 | M3 | clamp(1-B/100,0,1) | Box slots |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 0 | 0 | 1 | 1 | 1 | 30 |
+| 25.5 | 10.302 | 1.30906 | 1.72114 | 0.89698 | 37 |
+| 100 | 100 | 4 | 8 | 0 | 100 |
+| 150 | 210 | 7.3 | 15.7 | 0 | 177 |
 
-Historical 0ai deferred further changes. The author has now authorized the #154 curve mapping and physics contract; unrelated missing systems in this matrix remain pending.
+Levels are not globally capped at 100. Probability and harmful-complement
+consumers clamp individually. Player derived critical fields clamp the shared
+5+B baseline before the weapon-specific base replaces 5; the final attack helper
+then applies posture/personality and clamps again. NPC critical statistics apply
+personality before their final clamp. Preserve this real order; do not describe
+every critical path as an uncapped B plus a weapon base. Toughness status response
+is **not** the clamped harmful complement: 1-B/100 becomes negative above 100 and
+the accepted status processor converts the remaining dose to healing.
 
-Design status: keep the author's table as intent and this matrix as proven state. It is
-left to decide/implement the logical differences in the attribute, magic/state and
-roadmap perception blocks; it is not enough to change the scale letters. 0ai only
-modifies the Sleep association and expressly ordered regeneration costs.
+### Twelve source-to-consumer rows
+
+The source/order above applies to every player row. NPC qualifications are
+explicit below. HP and resource quantities are native game units; mass is kg,
+durations are simulation seconds unless stated otherwise, and percent fields use
+100 for a multiplier of one. Spatial range is MU (32 MU per development metre).
+
+| Attribute / family | Formula and normal gameplay consumers | NPC ownership and status / limitations |
+| --- | --- | --- |
+| Strength / Physical | M3 times natural body mass /100 supplies physical damage/push through weapon attacks and object thrust/launch. CarryCapacity = body kg * M2; carried mass and Box effective weight are counted once. | **Implemented.** NPC physical push/damage and load checks use its own CombatStrength and mass. There is no separate universal third 'physical power' effect. |
+| Toughness / Physical | After shield/armor, CaelumToughnessRules subtracts R = natural body kg * M3; direct magic subtracts R/2. Burn/poison/disease use 1-B/100: immunity at 100, healing above. Pain/Lucidity retain the clamped complement. | **Implemented / partial source coverage.** Shared player/NPC reduction and status processor; disease has a processor but no new gameplay infection source. Thermal exposure remains separate. DamageResistanceMultiplier is retained save data, not the current direct-damage receiver. |
+| Constitution / Physical | MaximumHealth = 1000*M3*(body kg/100). Passive Hunger/Thirst/Sleep and natural-health-recovery consumption divide by M2; passive Hunger/Thirst also retain body mass. PlayerResources owns the actual losses and recovery costs. | **Implemented.** NPC maximum HP uses CombatConstitution and mass. Do not infer player survival reserves on every NPC. Constitution does not shorten incoming status durations: #188 assigns the accepted status response to Toughness. |
+| Dexterity / Technical | Attack speed M2 and duration /M2 through attack cycles; physical precision 100*M3 through actual accuracy/dispersion; critical B plus the real weapon base subject to the clamp order above. Ammunition reload /M2; crafting material work /M3. | **Implemented.** NPC attack/ranged reload, accuracy and critical consumers add applicable glove bonuses. Crafting is a specific player consumer, not a general accuracy-roll or skill-cooldown system. |
+| Resilience / Technical | Maximum Air and Adrenaline = 1000*M2. Natural HP recovery = maxHP/3600*M2 per second. Acclimatization rate/limit use base plus B (#136): at 100, 2 degrees C/world day and +/-10 degrees C, reached in five days. | **Implemented.** NPC capacity and finite-health recovery use its CombatResilience. Sleep depletion belongs to Constitution, not Resilience. |
+| Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
+| Charisma / Social | 100*M2 supplies the attacker's elemental payload duration/power through projectiles and utility-staff streams; player incoming payload processing and shared stream status application consume it. MAP01 Caella persuasion uses M2 against the documented difficulty, rounded/clamped to 0..100. | **Partial combat scope; implemented dialogue.** NPCs emit payloads using CombatCharisma; this is not the recipient's Charisma. Not every actor/effect receiver consumes the generic payload. Eloquence owns current areas; Channel power/duration do not universally scale with Charisma. |
+| Empathy / Social | MAP01 Rulo emotion uses M2 against the documented difficulty, rounded/clamped to 0..100. BuffPowerPercent=100*M2 is stored and copied into payloads; Fire-secondary preparation sets an illumination timer. | **Implemented emotion; planned/general support incomplete.** No general buff/heal/area consumer follows from that field. The illumination timer only decrements and appears in diagnostics; it is not playable lighting. NPC CombatEmpathy payload storage does not prove an NPC support effect. |
+| Eloquence / Social | Cast preparation and Anima cost divide by M2; AbilityRangePercent=100*M2 scales real spell/area ranges, not muzzle velocity. Dialogue skill B is used by Ronnie and Palomo's discount route. | **Implemented with cooldown distinction.** NPC magical cost, preparation and range use effective CombatEloquence. Ammunition reload uses Dexterity; Seal and existing Sleep reuse are fixed 60 seconds, not an overall Eloquence cooldown reduction. #238's new class preparation is a separate contract. |
+| Intelligence / Mental | Magical damage/push M3, then accepted personality factors at actual release/transfer consumers. Box capacity = 20+floor(10*M3); that same integer divides content kg before aggregate gram truncation. Owned empty Box tare is 0.001 kg (#229); an unowned Box adds zero. | **Implemented combat/Box; academic uses planned.** NPC magical consumers use effective CombatIntelligence and NPC personality. The player's Box service is not a generic NPC inventory rule. No separate third universal magic-power effect is implied. |
+| Patience / Mental | Maximum Anima=1000*M3; regeneration=maxAnima/480*M2 per second. Interrupt resistance clamps B to 0..100. Clamped complement mitigates injury performance/pain and low/critical-Sleep aggravation of Lucidity loss/stun duration. | **Implemented / partial intended needs role.** NPC Anima and injury consumers use effective CombatPatience. General Hunger/Thirst/Sleep performance penalties use Adrenaline, not a universal Patience mitigation. Constitution owns passive Sleep drain. |
+| Insight / Mental | Magical precision 100*M3 and critical B through the current magical attack/weapon-base and clamp paths. | **Implemented combat; senses planned.** NPC precision/critical use effective CombatInsight. No playable hidden-object, sound detection or dark attenuation is connected to this attribute; the perception observer is diagnostic evidence only. |
+
+### Pending decisions and roadmap ownership
+
+1. **V5.4 ability contract (#238-252):** distinguish attack preparation,
+   ammunition reload and reuse; specify which new effects consume Charisma,
+   Empathy or Eloquence, including support/healing area, power and duration.
+   The author's revised abilities do not by themselves approve a new attribute
+   multiplier. Define status coverage/stacking through real receivers, not just
+   a stored DebuffPowerPercent/BuffPowerPercent.
+2. **V5.4/V5.5 consumer integration:** decide whether the existing player/NPC
+   equipment and critical-clamp differences should be standardized in a later
+   focused issue. #237 reports them without rebalancing accepted combat.
+3. **V5.6 crafting/economy and later content:** Intelligence academic actions
+   need actual authored tasks, success rules and rewards. Existing Dexterity
+   material work and Intelligence Box rules are already implemented and remain.
+4. **V5.8 recovery/survival:** any broader Patience mitigation of need penalties
+   requires a separate authored rule. Do not restore the obsolete association
+   of Sleep drain with Resilience or duration resistance with Constitution.
+5. **V5.10 perception/stealth:** Insight senses, hidden detection and general
+   visual concealment need the planned production sensor rules. Existing native
+   movement noise is implemented; the diagnostic observer is not their delivery.
+
+The earlier 0ai postponement and the 5.1.10 audit remain historical decisions;
+#154, #188, #192, #183 and #229 supersede their corresponding provisional curve,
+defense, personality and Box examples. This audit can close with the explicit
+pending list; it does not mark those future systems complete.
+
+### Evidence and continuation references
+
+5.4.0 ran **160 isolated GZDoom 4.14.2 assertions**, covering the table boundaries,
+all twelve derived rows, current Toughness responses, representative NPC consumers,
+the real rebuild order with T3 light armor/T1 Seal/full Tarot, removal/idempotence
+and a personality change. `assets/validation_540/RESULTS.md` records the exact
+scope and package hashes. Derived-field assertions are not evidence of a missing
+gameplay consumer. No new physical-input or author gameplay acceptance is claimed.
+
+Inherited acceptance is reused only for its scope: #154 curves/physics
+(`validation_5110`, not its superseded Box/Toughness assertions), #188 real
+defense/status/persistence (`validation_528`), #192 personality/projectile
+receivers (`validation_529`), #183 Box capacity (`validation_524`), #229 tare and
+load (`validation_5227`), and #256 real critical display/consumers
+(`validation_532`). These are not new campaign reruns.
+
+Source continuation points: `CaelumPlayerCharacter.ApplyCharacterProfile`,
+`CaelumDerivedStats.Recalculate`, `CaelumToughnessRules`,
+`CaelumPlayerResources`, `CaelumPlayer.GetRangedEffectiveReloadSeconds`,
+`GetCraftingDexterityPercent`, `PhysicalCriticalChanceFor`,
+`MagicalCriticalChanceFor`, `ApplyIncomingElementalPayload`,
+`UpdateMovementNoise`, `CaelumMainM00SocialDialogue.GetChance/GetLabia`,
+`CaelumCraftingRules.GetMaterialWorkSeconds`, `CaelumElementalStream`,
+`CaelumActorProjectile`, `CaelumCombatActor.RecalculateCombatStatistics`,
+`UpdateActorOffensiveStatistics`, `UpdateCombatHealthEffects` and
+`CaelumPhysicsDiagnostics` (diagnostic only).
+
 
 ## Water containers and accessories chosen — valid in 4.33.0ai
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.0** — 2026-10-14.
+
+## 5.4.0 - Attribute implementation audit (#237)
+
+The 5.4 series begins with the refreshed twelve-attribute audit in SYSTEMS.
+It traces saved identity, equipment and Tarot to derived values and real player/
+NPC consumers, distinguishing partial/planned mechanics and assigning pending
+decisions to V5.4 abilities, V5.6 content, V5.8 survival and V5.10 perception.
+No runtime balance or save schema changed. The focused native audit passed 160
+assertions; assets/validation_540 records evidence separately from inherited
+author acceptance. Next: #238 and the remaining individually scoped issues.
 
 ## 5.3.9 - Connected exploration screens (#236)
 

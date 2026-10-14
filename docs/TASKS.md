@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.0** — 2026-10-14.
+
+## 5.4.0 - Attribute audit (#237)
+
+Completed the source-to-consumer matrix, fractional/0/100/above-100 boundary
+checks, equipment/Tarot ordering and representative NPC/personality verification.
+The isolated engine audit passed 160 assertions; evidence: assets/validation_540.
+No gameplay rebalance, save migration or new author-input test is part of this
+documentation delivery. SYSTEMS owns the bounded pending-design list. #238 and
+each separate ability issue consume that list; derived fields/debug observers
+must not be counted as completed effects. Commit/PR review remains separate
+from author acceptance; do not merge or close the new batch without instruction.
 
 ## 5.3.9 - Exploration entry points (#236)
 
