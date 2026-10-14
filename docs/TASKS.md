@@ -44,8 +44,11 @@ compatibility checks stay pending. #233 editing passed; retain remaining
 CA234-01 sewer feedback exposed a category-only padlock despite an open label.
 The marker now uses the saved observed access; the original runtime reproduces
 the mismatch and the fix passes 43 focused native assertions. Keep the visual
-retest pending; assets/validation_537/marker_handoff.ps1 supplies a diagnostic
-position and F8 key without revealing other locations or changing production balance.
+retest pending. The author confirmed the icon change and requested an open padlock;
+dedicated transparent artwork replaces the initial hand only for observed-open
+grates. Another 43 native assertions/two save comparisons passed. The new
+assets/validation_537/unlocked_handoff.ps1 supplies a diagnostic position and F8
+key; retain new artwork acceptance and ordinary sewer traversal as separate checks.
 
 ## 5.3.6 - Manual map notes (#233)
 
