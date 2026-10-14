@@ -37,10 +37,16 @@ service input, secrecy, hub return and legacy geometry. The upper elevator
 control was guarded so it cannot reveal hidden lower grates. A first full-army
 legacy diagnostic was stopped after about four minutes; a shorter 6000-attacker
 case and the 1000-attacker original port passed their catalogue checks. These
-are not battle-performance certification. CA234-01 has not received author
-acceptance. Questions/manual checks were deferred on the author's departure.
-Temporary keep-awake was re-enabled at the author's request on 2026-10-14 and
-must be released on return. Evidence: assets/validation_537.
+are not battle-performance certification. Evidence: assets/validation_537.
+On 2026-10-14 the author confirmed CA234-01's five mansion handoff steps
+(origin 5.3.7 / #234): room labels on entry across ground/first/second floors;
+bedroom entry without automatic bed discovery; bed and crafting station markers
+on interaction; no unvisited/secret-room labels; and retaining the discovered
+markers through native save/load. Session author-20261014-064857 used the frozen
+5.3.7 runtime and exited with code 0. Sewer/city exploration, cross-map persistence,
+numbered/manual notes and bilingual/native-control checks remain in CA234-01.
+This partial author acceptance does not certify the untested cases or imply a merge.
+The author returned; the temporary keep-awake request was released on 2026-10-14.
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
