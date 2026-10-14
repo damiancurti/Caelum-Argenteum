@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
+
+## 5.3.4 - Native local cartography (#231), 2026-10-13
+
+Added source-owned paper/ink and overlay palettes, current location/local time,
+native binding hints and an empty conditional objective provider for #235.
+Preserved engine discovery, maps, marks, settings and save ownership. The
+cartouche reserves existing survival-warning space; HUD resources remain.
+Audited g4.14.2's native two-dimensional line projection, ten numbered marks,
+saved zoom/bounds and 3D-floor texturing. No floor picker or automatic zoom was
+invented; overlapping mansion floors remain an explicit acceptance limitation.
+Evidence: assets/validation_534/RESULTS.md. CA231-01 is pending; renderer captures
+and scripted checks are not author acceptance or physical-input coverage.
+Final native evidence: 14 runs / 65 assertions, 11 exact save comparisons and
+14 inspected captures; validator errors=[], normal build 16,058 files. The
+large-ultrawide header overlap was fixed using the actual resource-label edge.
+Bounded MAP06 map-mode FPS was 1.5–3.8% below the 5.3.3 sample; full-map p95
+increased about 3.7 ms. This is reported variation/overhead, not a claimed
+no-regression or mass-AI pass. See the evidence table and its limitations.
 
 ## 5.3.3 - Exhaustion sleep (#258), 2026-10-13
 

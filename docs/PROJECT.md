@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
+
+## 5.3.4 - Local cartography (#231)
+
+Native exploration now has a paper/ink palette, location/local-time cartouche,
+late-bound native control hints and a conditional objective integration point.
+Discovery, navigation, marks, saves and user preferences stay engine-owned.
+Mansion linework still projects overlapping storeys: no floor picker or new
+auto-zoom policy is claimed. Evidence: assets/validation_534/RESULTS.md.
+CA231-01 and CA258-01 remain pending while the author is away. #232–#236 remain
+separate issues, branches, tests and PRs.
 
 ## 5.3.3 - Exhaustion sleep (#258)
 

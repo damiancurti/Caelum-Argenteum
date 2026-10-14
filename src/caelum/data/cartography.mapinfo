@@ -1,0 +1,45 @@
+// Paleta cartográfica del proyecto; am_customcolors conserva el control nativo.
+Automap
+{
+    Background = "d8 c8 a8"
+    YourColor = "73 25 20"
+    WallColor = "35 2b 22"
+    TwoSidedWallColor = "76 6d 5a"
+    FloorDiffWallColor = "74 55 31"
+    CeilingDiffWallColor = "8a 78 61"
+    ExtraFloorWallColor = "55 65 62"
+    ThingColor = "35 2b 22"
+    ThingColor_Item = "35 2b 22"
+    ThingColor_CountItem = "35 2b 22"
+    ThingColor_Monster = "35 2b 22"
+    ThingColor_NocountMonster = "35 2b 22"
+    ThingColor_Friend = "35 2b 22"
+    SpecialWallColor = "74 55 31"
+    SecretWallColor = "35 2b 22"
+    GridColor = "bb aa 88"
+    XHairColor = "73 25 20"
+    NotSeenColor = "99 8c 74"
+    LockedColor = "73 25 20"
+    IntraTeleportColor = "55 65 62"
+    InterTeleportColor = "55 65 62"
+    SecretSectorColor = "35 2b 22"
+    UnexploredSecretColor = "35 2b 22"
+    PortalColor = "a1 93 79"
+    AlmostBackgroundColor = "cb ba 9a"
+    ShowLocks = false
+}
+
+Automap_Overlay
+{
+    Base = "Raven"
+    YourColor = "fc e8 d8"
+    WallColor = "ea c7 6b"
+    FloorDiffWallColor = "d0 b0 85"
+    CeilingDiffWallColor = "a4 97 86"
+    ExtraFloorWallColor = "a4 c0 b9"
+    SecretWallColor = "ea c7 6b"
+    SecretSectorColor = "ea c7 6b"
+    UnexploredSecretColor = "ea c7 6b"
+    LockedColor = "ea c7 6b"
+    ShowLocks = false
+}

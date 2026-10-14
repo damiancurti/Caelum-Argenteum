@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
+
+## 5.3.4 - Local cartographic presentation (#231)
+
+No new bitmap, font, engine or IWAD asset is distributed. Existing CaelumDisplay
+and CaelumText fonts remain under their retained provenance. Owned paper/ink
+colors live in `src/caelum/data/cartography.mapinfo`; layout measures and frame
+colors live in `CaelumCartographyLayout.zs`. They are source data, not generated
+images. GZDoom draws the existing map geometry, player arrow and numbered marks.
+Native palette opt-out and texture preferences remain intact. Agent-generated
+renderer captures and reproducible fixtures: assets/validation_534; author
+visual acceptance is pending CA231-01.
 
 ## 5.3.1 - Survival and Character presentation (#256)
 

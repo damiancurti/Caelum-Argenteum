@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-092 - Automap colors do not provide floor selection or private markers
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #231 / 5.3.4,
+2026-10-13. Baseline: 7b90cfde plus the focused #231 patch; GZDoom 4.14.2,
+Windows 11, Vulkan, isolated INIs and native engine-created saves.
+
+The g4.14.2 `am_map.cpp` audit (commit 99aa489d09015a95bb78df2b30ede29f328cc874)
+and MAP01 captures establish that native linework projects known XY lines;
+extra-floor colors and textured floor surfaces do not expose a floor picker.
+Bounds include distant control vertices. Retain native discovery/settings and
+record this limit instead of silently inventing a height filter or zoom reset.
+MAPINFO `Automap` / `Automap_Overlay` palettes respect `am_customcolors`; no
+startup CVar writes are needed. Native MapMarker projection checks dormancy
+and optional subsector discovery, but does not filter an owner/player. A later
+private POI or note registry must not assume it provides private rendering.
+
+The native serializer preserves ten numbered marks, scale and map bounds.
+The #231 old/current/reload/rollback and hub scenarios compare these objects
+and linedefs directly. Native `screenshot` queues its capture: wait before
+changing view/map state, or a file named for one state can contain the next.
+
+Large native message scaling can push a project cartouche down over resources.
+Reserve the actual top resource label, including its baseline offset, and
+bound the cartouche position without rewriting preferences. The final large
+ultrawide capture verifies separated labels; transient native console notices
+still own their native drawing and lifetime. Regression evidence:
+assets/validation_534/RESULTS.md and its final captures/manifest. Ordinary
+keyboard/controller checks and author visual acceptance remain CA231-01.
+
 ## CA-KP-091 - Native menu actions need visible feedback inside the menu
 
 Status/evidence: ENGINE-VERIFIED, #227 / 5.2.26, 2026-10-13.

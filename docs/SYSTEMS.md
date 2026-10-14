@@ -1,6 +1,54 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
+
+## 5.3.4 - Native local cartography (#231)
+
+The local view uses GZDoom 4.14.2's automap renderer and discovery. A project
+MAPINFO palette supplies paper/ink linework and a contrasting overlay palette.
+`am_customcolors=false` retains the user's native colors; existing texturing,
+line, background and scaling preferences remain authoritative. No startup,
+load or opening code resets settings or bindings. The read-only cartouche uses
+existing fonts and UI scaling, reserves the measured survival-warning width,
+and moves transient messages below it without removing history or resources.
+Its vertical position is bounded above the actual resource-label edge; large
+native notification preferences cannot push this project panel over the bars.
+Native console notices retain their own drawing/lifetime and are not reset.
+
+Location comes from WorldCatalogue. MAP01 shows the authoritative local Limbo
+clock; campaign maps use Calendar's normal campaign date/time. The objective
+provider is deliberately empty until #235 supplies a known tracked objective;
+the current Journal selection is not treated as tracking. No POI registry,
+named notes, travel action, secret detector or geometry change belongs to #231.
+
+| Facility | GZDoom 4.14.2 owner and integration |
+| --- | --- |
+| Discovery | Native `ML_MAPPED`, `ML_REVEALED`, `ML_DONTDRAW` and drawn subsectors. Presentation writes none of them and enables no reveal cheat. |
+| Zoom and pan | Native `+am_zoomin/out`, `am_zoom` and `+am_pan*`. Follow must be off for free pan; native follow-on pan-key fallback remains unchanged. |
+| Follow and rotation | `am_togglefollow`, `am_followplayer`, `am_rotate` (off / always / overlay only). The cartouche reports the actual orientation. |
+| Full screen / overlay | `togglemap`, `am_overlay` (off / overlay-then-full / overlay-only). Existing live simulation and 3D overlay behavior remain; accepted full-map crosshair exclusion stays authoritative. |
+| Bindings | Native AutomapBindings and Bindings. Hints read the current tables and omit a normal key shadowed by a different map command; no new marking key is assigned. Double bindings remain engine-owned and are not exposed by ZScript. |
+| Numbered marks | Native ring of ten marks (0–9), stored with each map's automap object. They are not named/category notes; #233 is separate. |
+| Saved view | Native serializer preserves marks, scale, bounds and big-map state. The header adds no saved owner, schema or migration. |
+| Custom point projection | Native MapMarker can project actor icons through zoom/pan/rotation. ZScript exposes the map center, not a complete public projection or floor-picker API; later POI/notes issues own discovery and per-character authority. |
+
+The source audit is pinned to GZDoom commit
+`99aa489d09015a95bb78df2b30ede29f328cc874` (tag g4.14.2), especially
+`src/am_map.cpp` / `am_map.h`. Native ordinary input and hardware acceptance
+remain distinct from isolated console-command checks.
+
+**Mansion limitation:** native linework is a two-dimensional projection of
+known lines, without a selectable floor. The 3D-floor border color does not
+filter away another storey. Textured mode chooses visible floor surfaces below
+the viewer's height, but is not a floor selector. The cartouche states that
+storeys can overlap. Native bounds also include distant control vertices, so
+the initial overview can be small; zoom/pan remain under user control. This
+patch does not invent a floor-selection or automatic-zoom policy. Readability
+of the retained projection remains an explicit author check.
+
+Evidence and exact limitations: assets/validation_534/RESULTS.md. CA231-01 is
+pending; no physical-keyboard/controller or author acceptance is inferred from
+renderer captures, scripted native commands or static validation.
 
 ## 5.3.3 - Involuntary exhaustion sleep (#258)
 
