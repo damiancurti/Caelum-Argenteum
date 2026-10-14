@@ -34,25 +34,21 @@ Sewers or City. Use copies of saves and ordinary exploration without reveal chea
 Expected: locations/names match explored content, no duplicate or premature
 markers, access unchanged, no sector warning without an authored knowledge rule.
 CA235-01 | Origin 5.3.8 / issue #235 | Multiple mission tracking
-Status: author session available; acceptance pending.
+Status: remaining author checks.
 Prerequisites: use the isolated 5.3.8 build and a copy of c235-tracked.zds.
 Run assets/validation_538/handoff.ps1 to repeat. This diagnostic save
 prepares three known active missions and one visited mansion room; it is not
 normal campaign progression. Preserve original saves and earlier test packages.
-1. Open Journal > Missions. Use T and the Track/Untrack button independently
-   for the main mission, sewers and Leonor rescue; navigate both filter headings,
-   Detail, page scrolling and Back. Holding T must change the selection once.
-2. Open the native map. All selected active missions must remain followed.
-   Argento's known first-floor room can be named; the sewer/rescue entries show
-   their known other map and no invented precise target. Read full long text in
-   Journal detail; check Spanish/English and the preferred UI scale.
-3. Save/load the test copy and verify tracking choices, discoveries and manual
-   notes remain intact. Selecting/tracking must not grant items or rewards.
-4. F8 in this isolated fixture prepares completed/failed diagnostic states.
-   Map objectives must disappear while completed/Other Journal records remain.
-   Leonor must be completed but unpaid; the captain clue retains its existing text.
-Expected: clear independent multi-mission controls, bounded readable map summary,
-no secret/future-location reveal, no quest/reward changes from tracking.
+1. Read long objectives in Journal detail, including scrolling, Spanish/English
+   and the preferred UI scale. Argento's known first-floor room may be named;
+   sewer/rescue locations on other maps stay textual, without an invented target.
+2. With a manual note and discoveries present, save/load a test copy after changing
+   tracking: notes/discoveries remain intact, with no items or rewards granted.
+3. After F8's diagnostic terminal states, inspect detailed history: Leonor is
+   completed but unpaid, and the captain clue retains its existing text.
+Expected: readable complete text, no secret/future-location reveal, preserved
+notes/discoveries and unchanged reward rules. Confirmed tracking controls,
+saved choices and terminal map/history behavior are recorded in HISTORY.
 
 CA236-01 | Origin: 5.3.9 / #236 | Status: remaining author checks
 Prerequisites: isolated Probar236 terminal (assets/validation_539/handoff.ps1),

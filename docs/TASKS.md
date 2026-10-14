@@ -21,9 +21,12 @@ Implemented independent saved selections, native Journal action, shared objectiv
 text, known-place associations and bounded map rows. Terminal/history/filter
 semantics remain intact. The read-only catalogue hides premature legacy lesson
 flags before their documented stages; underlying quest progress is untouched.
-Validation evidence: assets/validation_538. The author returned; CA235-01's
-Probar235 session was opened on 2026-10-14, with acceptance pending. Retain all
-earlier outstanding author IDs. Next separate patch: #236.
+Validation evidence: assets/validation_538. On 2026-10-14 the author accepted
+CA235-01's four presented handoff steps: independent T/button tracking with the
+held-key latch, simultaneous map selections, filters/detail/Back and saved choices,
+and terminal objectives leaving the map while remaining in history. Remaining
+presentation, knowledge, note/reward and detailed terminal-text checks stay pending.
+Retain earlier outstanding author IDs. Next separate patch: #236.
 
 Future decision inventory, not implemented as guessed waypoints: precise NPC
 disclosure events and positions for the refuge, moving companions, rune/secret

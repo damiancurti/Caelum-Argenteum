@@ -58,6 +58,18 @@ author-20261014-080756 was opened through Probar235 using the existing frozen
 5.3.8 runtime and a copy of c235-tracked.zds. Three active tracked missions and
 one known mansion room are diagnostic preparation, not campaign progression.
 Startup passed; no author acceptance is inferred from opening the session.
+The author subsequently confirmed all four presented steps passed on 2026-10-14
+(CA235-01, origin 5.3.8 / #235): T and the Track button toggle each mission
+independently, holding T changes it once; several selected missions remain on
+the map and removing one preserves the others; filters/detail/Back work and
+save/load retains selections; F8 diagnostic terminal states leave the map while
+remaining in Journal history. The session used runtime SHA-256
+15ff167152e296fc701213ea1d2f49da9518d2a1c2e8fa4cf4bdf90322b87a97.
+Remove only those confirmed steps. Bilingual/long-text/scale presentation,
+known-versus-unknown locations, preserved notes/discoveries, reward neutrality,
+unpaid Leonor and captain-clue text remain unconfirmed in CA235-01. The run's
+exit status was not captured; explicit author acceptance is separate from that
+technical limitation. No version increment, PR merge or issue closure is implied.
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 
