@@ -65,6 +65,6 @@ captures = ['unlocked-after-01-marker-closed.png', 'unlocked-after-01-marker-ope
 for capture in captures:
     shutil.copyfile(WORK / capture, HERE / 'captures' / capture)
 report['captures'] = captures
-report['author_acceptance'] = 'pending CA234-01 visual retest'
+report['author_acceptance'] = 'Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.'
 (HERE / ('unlocked_evidence.json' if OPEN_PADLOCK else 'marker_evidence.json')).write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
 print('Open padlock: 43 assertions and 2 save comparisons passed.' if OPEN_PADLOCK else 'Baseline reproduced 2 icon failures; corrected runs passed 43 assertions and 2 save comparisons.')
