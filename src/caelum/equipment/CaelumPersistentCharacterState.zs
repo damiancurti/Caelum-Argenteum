@@ -55,6 +55,9 @@ class CaelumPersistentCharacterState : Inventory
     Array<CaelumKnownPoi> KnownPois;
     transient String LocalMarkerMap;
     transient int LocalMarkerSerial;
+    // #234: muestreo transitorio; cargar no inventa un cruce del arco.
+    transient String CartographyMap,CartographyChecksum;
+    transient Vector3 CartographyPreviousPosition;
     // #233: notas propias; no alteran KnownPois ni las marcas del motor.
     int ManualNotesRevision,ManualNotesSerial,ManualNoteNextId;
     Array<CaelumMapNote> ManualNotes;

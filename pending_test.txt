@@ -23,3 +23,21 @@ Prerequisites: isolated Probar233 terminal, MAP04, initialized living character.
    available controller navigation. F10 exits; Probar233 starts a fresh test.
 Expected: only the intended note changes; no duplicates, lost text, input leaks
 or hidden-world discoveries. Report any untested/partial or failing step.
+
+CA234-01 | Origin: 5.3.7 / #234 | Status: deferred until author returns
+Prerequisites: isolated Probar234 terminal/package, GZDoom 4.14.2; select
+Mansion, Sewers or City. Handoff is deferred until the author returns;
+use copies of saves and ordinary exploration without reveal cheats.
+1. MAP01: enter ground/first/second-floor rooms. Only the entered room appears;
+   nearby beds/stations stay unknown until used. Try a bed and crafting station.
+   The secret room, its labels and connections must not appear prematurely.
+2. MAP02: use a locked grate without its key, then revisit after opening it.
+   Its reminder reflects the last personally observed state; unrelated grates,
+   keys, loot, enemies and unexplored routes remain unknown.
+3. MAP06: use individual south/north/west gates; cross the open east arch.
+   Enter the corner towers and interact with an existing shop, bed and vehicle.
+   Markers appear only after the corresponding event; no route is unlocked.
+4. Save/load and allowed hub return preserve facts and numbered/manual notes.
+   Inspect Spanish/English names, stacked-floor labels and native map controls.
+Expected: locations/names match explored content, no duplicate or premature
+markers, access unchanged, no sector warning without an authored knowledge rule.

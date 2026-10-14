@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Existing-map exploration (#234)
+
+Implemented the explicit SYSTEMS catalogue, existing actor bindings, ten mansion
+room regions, observed sewer grates, current city gates/towers/services and
+loaded-layout guards. No secret/loot/enemy annotation or new access rule.
+The author approved one marker per south gate and east-arch crossing; siege-sector
+warnings remain a design gap, explicitly deferred. Static/build and focused
+native checks passed (151 assertions, 16 save comparisons); CA234-01 manual
+checks wait for the author's return. #233 editing
+and remaining #258 checks stay pending. Next: #235/#236 separately.
 
 ## 5.3.6 - Manual map notes (#233)
 

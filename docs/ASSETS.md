@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Authored cartographic data and symbols (#234)
+
+`assets/map01_mansion/CARTOGRAPHY.json` lists the ten ordinary room interiors,
+storeys and stable names against the existing WAD, REPAIR/PRACTICE data and
+furniture/workshop placement, with native collision traces confirming the
+ground-floor side-door strips. `generate_cartography_catalogue.py` derives room
+data, CITY.json tower/east-arch geometry and native TEXTMAP checksums without
+modifying a map. Its output is `CaelumCartographyCatalogueData.zs`; regeneration
+must be byte-for-byte deterministic. Read-only project validation rejects stale
+output, and a changed mansion checksum requires reviewing its room data before
+regeneration. Service coordinates come from the actual
+interacted actors, never a second coordinate table.
+Rooms reuse the owned Journal reputation emblem, towers the shields-category
+icon and grates the locked-action icon. Manual notes retain their separate
+paper icon; service symbols remain #232's. No new bitmap, font, third-party
+asset, provenance change or game actor is introduced. Bilingual names are in
+LANGUAGE and its regenerated localization index. Test packages/saves remain local.
 
 ## 5.3.6 - Manual note presentation (#233)
 

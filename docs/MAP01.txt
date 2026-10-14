@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Discovered mansion rooms and services (#234)
+
+Ten ordinary interiors have cartographic identities: four ground-floor resident
+workshops, the practice room, four first-floor bedrooms and the shared second-floor
+workshop. The existing room bounds and vertical storeys govern entry. Secret
+spaces, connections and their labels are excluded. Beds, stations and Palomo's
+trade become known only on their own interactions, including denied service use.
+Their stored position comes from the actual actor. Current region coordinates
+require the loaded MAP01 geometry checksum; older unsupported layouts retain
+native exploration without invented room annotations. No WAD or accepted tutorial
+progress/access rule changes. Static/build and focused native checks passed;
+author exploration and stacked-floor presentation remain pending under CA234-01.
 
 5.2.26 - Visible rest results (#227)
 

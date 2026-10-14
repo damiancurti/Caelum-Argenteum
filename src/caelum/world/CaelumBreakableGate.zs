@@ -149,6 +149,7 @@ class CaelumBreakableGate : Actor
             || (user.player != null && (user.player.cheats & CF_PREDICTING))
             || user.Pos.Z >= Pos.Z + CaelumGateData.HEIGHT
             || user.Pos.Z + user.Height <= Pos.Z || !user.CheckSight(self, SF_IGNOREVISIBILITY)) return false;
+        CaelumPoiKnowledge.RecordUse(CaelumPlayer(user),self,CaelumPoiData.EXIT);
         let check = ThinkerIterator.Create("CaelumBreakableGate");
         CaelumBreakableGate peer;
         while ((peer = CaelumBreakableGate(check.Next())) != null)

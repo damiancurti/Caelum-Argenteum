@@ -19,7 +19,11 @@ class CaelumPoiView : Object ui
     static String Name(CaelumKnownPoi fact)
     {
         if(fact==null)return "";
-        return StringTable.Localize(CaelumPoiData.CategoryKey(fact.Category),false)..": "..StringTable.Localize(fact.NameKey,false);
+        String label=StringTable.Localize(CaelumPoiData.CategoryKey(fact.Category),false)..": "..StringTable.Localize(fact.NameKey,false);
+        if(fact.ObservedAccess!=CaelumPoiData.ACCESS_UNKNOWN)
+            label=label.." ("..StringTable.Localize(fact.ObservedAccess==CaelumPoiData.ACCESS_OPEN
+                ?"CA_POI_OBSERVED_OPEN":"CA_POI_OBSERVED_CLOSED",false)..")";
+        return label;
     }
     static String CenterLabel(CaelumPlayer user)
     {

@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Existing-map exploration catalogue (#234)
+
+Implemented discovery registrations for ten ordinary mansion rooms, its existing
+beds/workshops/merchant, sewer grates and the fortified city's gates, towers and
+services. Native map geometry and accepted access rules remain authoritative.
+The author approved east-arch crossing and one marker per used south gate, and
+deferred sector warnings until their knowledge rules are defined (2026-10-14).
+Loaded-layout guards avoid applying current region coordinates to older maps;
+revision-two knowledge preserves old facts with unknown access state.
+Static/build checks and the focused native matrix passed; CA234-01 author checks
+are deferred during the author's
+absence. Evidence: assets/validation_537. Next: #235 multi-mission tracking and
+#236 Journal navigation, with separate commits, branches, tests and linked PRs.
+Manual-note effects/predefined notes discussed on 2026-10-14 are possibilities,
+not an authorized change to #233's player-authored annotations.
 
 ## 5.3.6 - Named manual map notes (#233)
 

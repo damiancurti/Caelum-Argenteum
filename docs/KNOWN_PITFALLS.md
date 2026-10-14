@@ -2332,6 +2332,12 @@ previous package. See [validation evidence](../assets/validation_4365/RESULTS.js
 Keep compatibility mode for that campaign; normal builds provide the rebuilt
 map for new campaigns. No external save rewriting is required.
 
+Rechecked for #234 / 5.3.7: replacing the old mansion WAD before loading
+produced native `Savegame is from a different level` before ZScript ran.
+Loading with its exact archived WAD passed and kept the current room catalogue
+disabled. Evidence: assets/validation_537/legacy-reload-01.txt (rejection) and
+legacy-reload-02.txt (matching geometry); this patch changes no production WAD.
+
 ## CA-KP-009 — MODELDEF slots overlay state meshes
 
 Status/evidence: ENGINE-VERIFIED, 2026-09-26; #18 follow-up, 4.36.14a.

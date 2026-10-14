@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Authored map registrations (#234, 2026-10-14)
+
+Author decisions: MAP06's east arch becomes known when crossed; each used south
+gate has its own marker; siege-sector warnings remain deferred. Earlier approved
+room/tower entry and service interaction rules remain in force, including denied
+interactions. Added current-map room regions and existing-service registrations,
+last-observed grate states and revision-two empty access migration. Native loaded
+layout checks protect older geometry; secret spaces have no catalogue entry.
+The shared manual note editor keeps its six categories and no gameplay effects.
+Static/build checks passed. Sixteen native runs passed 151 assertions; sixteen
+save comparisons and twelve inspected captures cover current/old records, real
+service input, secrecy, hub return and legacy geometry. The upper elevator
+control was guarded so it cannot reveal hidden lower grates. A first full-army
+legacy diagnostic was stopped after about four minutes; a shorter 6000-attacker
+case and the 1000-attacker original port passed their catalogue checks. These
+are not battle-performance certification. CA234-01 has not received author
+acceptance. Questions/manual checks were deferred on the author's departure.
+Temporary keep-awake was re-enabled at the author's request on 2026-10-14 and
+must be released on return. Evidence: assets/validation_537.
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 

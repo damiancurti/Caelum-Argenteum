@@ -1,0 +1,64 @@
+# Issue #234 - Authored exploration catalogue
+
+Version 5.3.7, 2026-10-14. Branch `feat/issue234-authored-cartography`,
+baseline `bdcae305` (#233). Author acceptance CA234-01 is deferred until return.
+
+Static validation and normal packaging passed. Sixteen native GZDoom 4.14.2
+runs passed 151 assertions, with 16 save comparisons and 12 inspected captures.
+`evidence.json` records exact commands, runtime/fixture/save hashes and results.
+Native checks ran unpaused in the background with 5% audio and isolated INIs.
+
+The catalogue covers ten ordinary mansion interiors, four beds, five workshop
+networks, Palomo, existing sewer grates/travel, and the current city's eight
+physical gates, east arch, four towers, shops, house beds and two vehicles.
+Registrations neither spawn content nor reveal it. Room/tower entry and actual
+service interaction follow the author's decisions. Six south gates remain
+separate. Sector warnings remain explicitly deferred.
+
+Native checks exercise real mansion bed/workbench input after a 175-tic delay,
+actual native Use on a sewer grate and city gate, denied access, individually
+known gates/towers and existing service identities. Diagnostic positioning and
+production calls isolate the remaining cases; this is not ordinary traversal
+or physical author acceptance. Ground-floor entry cannot discover a bedroom;
+secret/cave positions add no annotation. Upper elevator use does not expose its
+hidden lower return grate. Lower interaction records its actual access state.
+Remote opening changes no previously recorded observation until another use.
+
+A genuine 5.3.6 save preserves every prior character-record value, including
+resolved identity objects and manual notes; only LocalKnowledgeRevision changes.
+Current MAP01/02/06 reloads retain exact POI records, native automap and linedefs.
+Hub travel preserves original-map facts without inventing another map's copy.
+The old mansion geometry remains unannotated and reloads with its matching WAD.
+Original 1000-attacker and south 6000-attacker port layouts pass focused identity,
+actual-position and no-current-landmark checks. No full battle performance or
+6000-attacker save/reload claim is made.
+
+Earlier unaffected runs retain their exact package fingerprints. Archive-member
+comparison bounds reuse to the MAP02 upper-control secrecy fix, the tower's
+inclusive authored parapet height and the mansion's corrected room edges.
+Independent native wall traces found that the ground workshops include the
+side-door strips up to x=32/704. Their final entry, reload and presentation cases
+were rerun; the 56 diagnostic geometry rays are separate from the assertion count.
+Affected MAP02 and MAP06 cases were also rerun;
+normal packaging matches the final frozen runtime member-for-member. Captures
+show both languages, normal/rotated views and explicit mansion storey labels.
+An earlier retained mansion service capture records the fixture's still-open
+crafting session, which suppresses the map header; final selected captures close
+the real session and demonstrate the header. Earlier captures remain diagnostic
+history and are not included in the twelve final captures. No UI acceptance is
+inferred from fixtures.
+
+Retained diagnostics: initial compile syntax correction; a completion command
+queued immediately before quit; native rejection when an old save is paired
+with a different WAD; and a first 6000-attacker diagnostic stopped after about
+four minutes. Shorter legacy diagnostics completed the catalogue assertions.
+None of these diagnostic logs is counted as a passed run. Original saves and
+local generated packages are retained; they are not distributed in the PR.
+
+Commands: `python assets/generators/generate_cartography_catalogue.py --check`,
+`python build_dialogue_index.py build`, `python build_document_index.py`,
+`python validate_project.py`, and
+`powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1`.
+`prepare.py` creates deterministic local fixtures; `run_native.ps1` records each
+isolated launch; `collect.py` checks/copies the evidence. `handoff.ps1` prepares
+Probar234 for author use later and is not auto-launched during the absence.

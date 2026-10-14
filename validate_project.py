@@ -6,6 +6,7 @@ import json
 import re
 import struct
 from build_dialogue_index import validate as dialogue_problems
+from assets.generators.generate_cartography_catalogue import render as cartography_catalogue
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -63,6 +64,12 @@ def index_problems(root):
 
 def validate(root):
     errors = dialogue_problems(root)
+    try:
+        output = root/'src/caelum/data/CaelumCartographyCatalogueData.zs'
+        if output.read_bytes() != cartography_catalogue(root):
+            errors.append('Stale cartography catalogue; run python assets/generators/generate_cartography_catalogue.py')
+    except (OSError, ValueError, KeyError) as error:
+        errors.append(f'Cartography catalogue: {error}')
     def check(condition, message):
         if not condition:
             errors.append(message)
