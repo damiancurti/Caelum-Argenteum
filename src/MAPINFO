@@ -1,3 +1,5 @@
+include "caelum/data/cartography.mapinfo"
+
 // GameInfo modifica ajustes globales suministrados por el proyecto.
 GameInfo
 {

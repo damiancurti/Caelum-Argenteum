@@ -475,7 +475,7 @@ class CaelumHUDOverlay : EventHandler
     ui void DrawResourceLabel(bool right,double barY,int color,String label,int tint=0xFFFFFFFF)
     {
         double x=right?620.0-HUDFont.StringWidth(label):20.0;
-        Screen.DrawText(HUDFont,color,x,barY-12.0,label,
+        Screen.DrawText(HUDFont,color,x,barY-CaelumPresentation.RESOURCE_LABEL_OFFSET,label,
             DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,
             DTA_KEEPRATIO,true,DTA_SHADOW,true,DTA_COLOR,tint);
     }
@@ -679,11 +679,12 @@ class CaelumHUDOverlay : EventHandler
 
     // Indicador lateral: utiliza el icono real del Sello y su disponibilidad
     // autoritativa. La escala de grises conserva la transparencia y el detalle.
-    ui void DrawSurvivalDebuffs(CaelumPlayer user)
+    ui double DrawSurvivalDebuffs(CaelumPlayer user)
     {
         let record=CaelumPersistentCharacterState(user.FindInventory("CaelumPersistentCharacterState"));
         let thermal=record!=null ? record.ThermalState : null;
         int row=0;
+        double width=36;
         for(int resource=0;resource<4;resource++)
         {
             String label; int textColor, tint=0xFFFFFFFF;
@@ -702,6 +703,7 @@ class CaelumHUDOverlay : EventHandler
                 tint=0xFF000000|CaelumThermalHUD.ExposureColor(thermal.Exposure,thermal.Toughness);
             }
             double y=16+row*40;
+            width=Max(width,36+HUDFont.StringWidth(label));
             DrawHUDTexture(CaelumSurvivalView.Icon(resource),-30,y,18,18);
             // El nombre crece hacia dentro; nunca entra en la columna de poderes.
             Screen.DrawText(HUDFont,textColor,-36-HUDFont.StringWidth(label),y+5,label,
@@ -709,6 +711,7 @@ class CaelumHUDOverlay : EventHandler
                 DTA_KEEPRATIO,true,DTA_SHADOW,true,DTA_COLOR,tint);
             row++;
         }
+        return width;
     }
 
     ui void DrawSealIndicator(CaelumPlayer localPlayer)
@@ -961,23 +964,23 @@ class CaelumHUDOverlay : EventHandler
 
         // Como antes, las etiquetas quedan por encima del arma de primera persona.
         CaelumPresentation.BeginResources(false,resourceScale);
-        DrawResourceLabel(false,278,Font.CR_WHITE,loadLine);
+        DrawResourceLabel(false,CaelumPresentation.RESOURCE_TOP_BAR,Font.CR_WHITE,loadLine);
         DrawResourceLabel(false,302,GetLucidityColor(localPlayer.LucidityState),lucidityLine);
         DrawResourceLabel(false,326,GetHealthTextColor(localPlayer.HealthState),healthLine);
         CaelumPresentation.End();
         CaelumPresentation.BeginResources(true,resourceScale);
-        DrawResourceLabel(true,278,Font.CR_GOLD,adrenalineLine);
+        DrawResourceLabel(true,CaelumPresentation.RESOURCE_TOP_BAR,Font.CR_GOLD,adrenalineLine);
         DrawResourceLabel(true,302,Font.CR_PURPLE,animaLine);
         DrawResourceLabel(true,326,GetAirColor(localPlayer.AirState),airLine);
         CaelumPresentation.End();
 
         CaelumCompass.Draw(event, localPlayer, HUDFont);
         CaelumPresentation.BeginPowers(resourceScale);
-        DrawSurvivalDebuffs(localPlayer);
+        double debuffWidth=DrawSurvivalDebuffs(localPlayer);
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
         CaelumPresentation.End();
-        double noticeBottom=12;
+        double noticeBottom=Max(12,CaelumCartography.Draw(localPlayer,resourceScale,debuffWidth));
         if(menuactive==Menu.Off)
         {
             if(localPlayer.HUDActiveWeaponNoticeRemaining>0)

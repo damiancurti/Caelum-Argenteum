@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
+
+## 5.3.4 - Native local cartography (#231)
+
+Implemented native palette/header integration and the 4.14.2 support audit.
+Static validation/build passed. Native checks cover floor captures,
+discovery/save boundaries, languages/scales and bounded MAP06 behavior;
+the recorded short-sample slowdown is not a new AI-performance pass.
+Evidence: assets/validation_534/RESULTS.md. CA231-01 passed author acceptance
+on 2026-10-13 after the author returned and tested the prepared map build.
+No floor-selection policy or new marking binding is introduced. Subsequent
+#232/#233/#234/#235/#236 retain separate discovery, notes, catalogue, tracking
+and navigation scopes.
 
 ## 5.3.3 - Exhaustion sleep (#258)
 

@@ -81,6 +81,8 @@ class CaelumPresentation : Object ui
     const RESOURCE_ENLARGEMENT=1.95;
     const RESOURCE_RIGHT_EDGE=631.0;
     const RESOURCE_BOTTOM_EDGE=341.0;
+    const RESOURCE_TOP_BAR=278.0;
+    const RESOURCE_LABEL_OFFSET=12.0;
     static Vector2 ResourceScale(double contentWidth)
     {
         Vector2 scale=HUDScale()*RESOURCE_ENLARGEMENT;

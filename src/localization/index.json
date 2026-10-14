@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "a56fc247be7adc194110458c45465c323f7b4ceb9d105855f5f39f6a4d385cb2",
+  "sha256": "053280db2ff32761757e972e2bb953f8808909c9f70421024ca8d1574845a7f9",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -1382,6 +1382,13 @@
     "CA_MAP06_NAME": {"default":[[4010,4010]],"es":[[4019,4019]]},
     "CA_MAP07_NAME": {"default":[[4012,4012]],"es":[[4021,4021]]},
     "CA_MAP08_NAME": {"default":[[4248,4248]],"es":[[4252,4252]]},
+    "CA_MAP_CONTROLS": {"enu":[[5587,5587]],"default":[[5587,5587]],"esp":[[5596,5596]]},
+    "CA_MAP_FOLLOW_PAN": {"enu":[[5588,5588]],"default":[[5588,5588]],"esp":[[5597,5597]]},
+    "CA_MAP_FREE_PAN": {"enu":[[5589,5589]],"default":[[5589,5589]],"esp":[[5598,5598]]},
+    "CA_MAP_HEADING_UP": {"enu":[[5585,5585]],"default":[[5585,5585]],"esp":[[5594,5594]]},
+    "CA_MAP_LEGEND": {"enu":[[5586,5586]],"default":[[5586,5586]],"esp":[[5595,5595]]},
+    "CA_MAP_NORTH_UP": {"enu":[[5584,5584]],"default":[[5584,5584]],"esp":[[5593,5593]]},
+    "CA_MAP_STACKED": {"enu":[[5590,5590]],"default":[[5590,5590]],"esp":[[5599,5599]]},
     "CA_MATERIAL_BARREL": {"enu":[[513,513]],"default":[[513,513]],"es":[[1201,1201]]},
     "CA_MATERIAL_BELL_BASE": {"enu":[[516,516]],"default":[[516,516]],"es":[[1204,1204]]},
     "CA_MATERIAL_BLADE": {"enu":[[480,480]],"default":[[480,480]],"es":[[1168,1168]]},

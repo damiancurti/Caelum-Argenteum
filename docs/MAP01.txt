@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.3.3** — 2026-10-13.
+Documentation version: **5.3.4** — 2026-10-13.
 
 5.2.26 - Visible rest results (#227)
 
