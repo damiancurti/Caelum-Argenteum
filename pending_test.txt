@@ -1,0 +1,15 @@
+CA235-02 | Origin: 5.3.8 / #235 | Current-objective map symbol
+Prerequisites: isolated Probar235Objetivo terminal from
+assets/validation_538/targets_handoff.ps1. This is diagnostic stage/knowledge
+setup, not campaign progression. CA235-01 and all earlier checks are accepted.
+1. The initial map has a target symbol at Argento's known room. F7 switches
+   the current objective to Caella: Argento returns to its ordinary symbol,
+   with no Caella marker while that room is unknown. F8 records Caella's room;
+   her target symbol now appears. F6/F7 move it between the known destinations.
+2. In Journal > Missions, T or Track/Untrack hides/restores the objective symbol
+   while preserving the ordinary place and other followed missions. Check zoom,
+   rotation and your normal map mode. Save to a new test slot and reload.
+3. F9 completes the diagnostic mission: its target symbol disappears and the
+   ordinary place remains. F10 exits; Probar235Objetivo restarts the original copy.
+Expected: recognizable current-objective symbol at known recorded positions;
+no unknown destination reveal, stale previous target, new route or reward.

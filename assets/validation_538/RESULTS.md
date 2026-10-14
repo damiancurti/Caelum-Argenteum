@@ -1,5 +1,33 @@
 # Issue #235 - Multiple tracked missions
 
+Current-objective marker follow-up (2026-10-14, CA235-02): after accepting the
+previous tracking interface, the author requested a spatial symbol restricted
+to already-known destinations. Existing native POI markers now use the owned
+HUD target icon for the active tracked stage and restore their ordinary symbol
+when that stage changes, tracking stops or the mission finishes. The shared
+stage selector is read-only across UI/play scopes; no saved fields are added.
+
+`targets_evidence.json`: three corrected GZDoom 4.14.2 runs passed **104
+assertions**, **two full resolved-record save comparisons** and **three inspected
+captures**. The preceding runtime reproduces **12 expected failures**. Coverage:
+known Argento to unknown/then-known Caella, automatic stage changes, two known
+destinations for one stage, preservation of other tracked missions, untracking,
+completion, marker texture/size/observed coordinates, rotation, old/current
+save loading, foreign-map suppression and hub return. Ordinary keyboard/mouse
+acceptance of this additional behavior remains CA235-02; CA235-01 stays accepted.
+Runtime SHA-256: `27081ed0b4059a12bcf9c5ed3868b4ab8094cd1a15698774d3c862d395f9d742`.
+
+Static validation and normal packaging passed (16,071 files on this #235 branch).
+Every uncompressed normal-package member equals the isolated final runtime.
+Only four runtime source members differ from the accepted baseline after text
+line-ending normalization; the save comparison resolves object references and
+case-insensitive native field names. The initial flow used generic output save
+names; the selected final run preserves names per run. Stage/knowledge events
+are diagnostic preparation, not normal campaign traversal or a new multiplayer
+certification. Earlier frozen packages/saves remain separate. Reproduce with
+`targets_prepare.py`, `targets_run_native.ps1` and `targets_collect.py`; physical
+handoff: `targets_handoff.ps1` / `Probar235Objetivo`.
+
 CA235-01 (origin 5.3.8 / #235) passed the remaining author checks on
 2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
 y dieron correcto." Long bilingual objectives and scale, known versus unknown locations, saved notes/discoveries, reward neutrality and detailed terminal history passed.

@@ -75,9 +75,16 @@ objective text and snapshots. Map rows show each tracked title/objective plus
 known location information. Long rows end in an ellipsis; full text remains in
 the paginated Journal detail. Available screen height bounds rows above the
 resource bars, with an explicit count of additional tracked missions if needed.
-The nearest known POI label identifies an applicable tracked objective. Existing
-POI symbols/coordinates remain the spatial reference; no enemy or route overlay,
-new quest marker, camera move, teleport or travel action is added.
+The nearest known POI label identifies an applicable tracked objective. At the
+author's subsequent request (2026-10-14), its native map marker uses the existing
+owned target symbol while that known place is a current tracked destination.
+The symbol replaces the ordinary category icon at the recorded position and is
+larger using existing presentation dimensions. Stage changes, untracking and
+terminal states restore the ordinary icon without changing the recorded fact.
+The same stage selector and known-place association drive text and symbols; all
+matching known destinations can be shown simultaneously. Unknown or other-map
+places never acquire local markers. No enemy/route overlay, camera move, travel
+action, new actor class, saved field or migration is added.
 
 | Current objective text | Eligible already-known POI IDs |
 | --- | --- |

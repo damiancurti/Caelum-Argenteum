@@ -344,7 +344,7 @@ class CaelumJournalOverlay : EventHandler
         return "CA_Q_SIDE_TERMINAL";
     }
 
-    static ui String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
+    static clearscope String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
     {
         if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED)
             return questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL ? "CA_M01_RETURN_DETAIL_COMPLETE" : "CA_Q_DETAIL_COMPLETE";

@@ -1,5 +1,12 @@
 # Issue #236 / 5.3.9 - Exploration navigation evidence
 
+The requested #235 marker follow-up was propagated into the #236 stack on
+2026-10-14. Normal 5.3.9 validation/packaging passed (16,072 files). The integrated
+runtime passed 75 native target-marker assertions in targets-stack-01, exit 0,
+loading the preserved pre-change diagnostic save. This is dependency integration
+evidence, separate from accepted CA236-01 and the new CA235-02 author check.
+Integrated runtime SHA-256: `aa502b25b5374db07f4db1247863234819cb520a6ba3952cb940701ef02de071`.
+
 CA236-01 (origin 5.3.9 / #236) passed the remaining author checks on
 2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
 y dieron correcto." Retained filters/history and owned contents, remapped/unbound and native popup controls, pause/settings, notes/save-load, readability and travel neutrality passed.

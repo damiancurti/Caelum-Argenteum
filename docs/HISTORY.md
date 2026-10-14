@@ -4,6 +4,12 @@ Documentation version: **5.3.9** — 2026-10-14.
 
 ## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
 
+The subsequent #235 known-objective symbol was integrated after CA236-01
+acceptance. Final 5.3.9 packaging passed with 16,072 files; targets-stack-01
+passed 75 native assertions on the preserved diagnostic save, exit 0. Runtime
+fingerprint and log: assets/validation_539/RESULTS.md. CA236-01 stays accepted;
+only CA235-02 requests review of the newly requested target symbol.
+
 Added Explore navigation to existing screens, native showpop adapters and owned
 keys/documents inspection. Existing inventory/quest/travel authorities and saved
 schemas remain unchanged. Document names are available, but their actors define
@@ -42,6 +48,20 @@ separate; this records author confirmation, not a new instrumented run.
 
 
 ## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
+
+After accepting all remaining CA235-01 checks on 2026-10-14, the author asked
+for the next actionable objective to have a spatial map marker and selected
+known destinations only. The current-stage selector is now callable from both
+UI and native marker logic; its rules are unchanged. A known matching POI uses
+the existing owned target icon, updates automatically with the active stage and
+returns to its category icon on untracking or completion. No saved fields,
+knowledge, quest progression, rewards or map coordinates are changed. CA235-02
+will record acceptance of this additional behavior separately.
+Static validation and normal packaging passed. Three corrected native runs
+passed 104 assertions, two full resolved-record save comparisons and three
+inspected captures; the accepted preceding runtime reproduces 12 expected
+missing-symbol/size failures. Exact fingerprints and scope: validation_538
+RESULTS and targets_evidence.json. Earlier frozen evidence remains unchanged.
 
 Implemented the author's multi-mission preference with per-character revision-one
 saved selections, Journal T/native-button actions, current-objective map rows

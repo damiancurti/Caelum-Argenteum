@@ -29,12 +29,20 @@ class CaelumQuestTrackingView : Object ui
         text.Replace("%STARTER%",CaelumMainM00StarterRules.GetName(user.MainM00StarterOptionSnapshot));
         return text;
     }
-    static bool Targets(CaelumPlayer user,int quest,CaelumKnownPoi fact)
+    static clearscope bool Targets(CaelumPlayer user,int quest,CaelumKnownPoi fact)
     {
         return user!=null && fact!=null && quest>=0 && quest<CaelumConstants.QUEST_DEFINED_COUNT
             && user.JournalQuestState[quest]==CaelumConstants.QUEST_STATE_ACTIVE
             && quest==CaelumConstants.QUEST_MAIN_M00_THE_FOOL && fact.MapId==CaelumQuestTrackingData.MapId(quest)
             && CaelumQuestTrackingData.MatchesPoi(CaelumJournalOverlay.GetQuestDetailStageKey(user,quest),fact.PoiId);
+    }
+    // La marca nativa y el rótulo usan exactamente la misma etapa y conocimiento.
+    static clearscope bool TrackedTarget(CaelumPlayer user,CaelumKnownPoi fact)
+    {
+        if(user==null || fact==null || fact.MapId!=level.MapName)return false;
+        for(int quest=0;quest<CaelumConstants.QUEST_DEFINED_COUNT;quest++)
+            if(CaelumQuestTracking.Active(user,quest) && Targets(user,quest,fact))return true;
+        return false;
     }
     static String Location(CaelumPlayer user,int quest)
     {

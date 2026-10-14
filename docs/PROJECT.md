@@ -14,6 +14,10 @@ from author acceptance. Do not merge or close the batch without authorization.
 
 ## 5.3.8 - Saved independent mission tracking (#235)
 
+Author-requested follow-up (2026-10-14): mark the current tracked destination
+directly on the native map, restricted to known places. The existing target
+symbol updates with the stage; CA235-02 is separate from accepted CA235-01.
+
 The author selected simultaneous tracking of several missions. Implemented a
 Journal action, shared objective projection, bounded local-map summary and links
 to already-known authored places. Active/completed/Other and main/side filters,
