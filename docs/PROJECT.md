@@ -27,7 +27,8 @@ The native component matrix covers nine weapon families and unarmed. Dedicated
 male cast palms correctly extract the last row of existing owned atlases, leaving
 accepted weapon artwork untouched. Female/gloved hands retain their existing
 sources. Evidence and remaining scope: assets/validation_544. #238 stays open and
-its PR remains a draft; author checks are deferred while the author is away.
+its PR remains a draft. The author has returned and confirmed shared attribute
+ownership, whole-factor scaling and full-cost admission; implementation continues.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 
@@ -35,9 +36,9 @@ Repaired a zero base-speed initialization and added revision-1 migration for
 existing rats without replacing bodies or resetting their resources/drops.
 All 192 rats initialize with positive speed; native pursuit and bites pass in
 all four sections. Four original procedural cues have reproducible sources and
-provenance. Evidence: assets/validation_543; author check CA254-01 is pending.
-The author is away; questions and interactive handoffs remain deferred. #238
-continues separately after this delivery; no merge or closure is authorized.
+provenance. Evidence: assets/validation_543. The author passed CA254-01 movement
+and listening checks on 2026-10-14, after returning. #238 continues separately;
+no merge or closure is inferred from this acceptance.
 
 ## 5.4.2 - Equipped-Seal resistances (#261)
 

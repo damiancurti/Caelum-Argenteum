@@ -72,6 +72,15 @@ inactive and retain the preparation countdown. The initial UI compile failure
 was a temporary-vector member access; assigning the vector locally corrected it.
 Exact final runtime and captures: validation_544/hud_evidence.json.
 
+After returning on 2026-10-14, the author confirmed class-effect scaling with the
+existing curves: Eloquence owns radius/cost, Charisma harmful power/duration,
+Empathy beneficial/healing power/duration, and Intelligence remains direct damage.
+The whole authored factor scales (base x3 with x2 statistical power becomes x6).
+Three Sleep hits remain invariant. Full modified Anima cost must be available
+before the three-second preparation; debit remains progressive with no cancelled
+refund. These are recorded design decisions, not newly completed runtime effects.
+CA254-01 acceptance is carried forward from its own #254 commit/history entry.
+
 
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
@@ -87,7 +96,7 @@ sources and provenance. Rat melee supplies its own hit sound through an optional
 shared parameter; other actors retain their default. Native recognition, pain
 and death hooks activate the other cues. Local sound limits retain native spatial
 attenuation. All four PCM files regenerate byte-for-byte, peak below clipping
-and have zero endpoints; author listening remains pending.
+and have zero endpoints; subsequent author listening acceptance is recorded below.
 
 Final GZDoom 4.14.2 / Windows / Vulkan contract passes 11 checks: 192 positive
 rat speeds, 96 unchanged Mandingas, pursuit and actual bites in all four sections,
@@ -100,8 +109,12 @@ corrected test measures the local neighborhood and makes no global-mix claim.
 
 The manual fixture's camera now frames the short rat; the final Spanish capture
 was inspected. No manual session was handed off while the author was away.
-CA254-01 (origin 5.4.3/#254) is outstanding; no author pass, merge or closure is
-inferred. Exact hashes, commands, reproduction and limits: assets/validation_543.
+On 2026-10-14 the author passed CA254-01 (origin 5.4.3/#254), confirming the
+offered rat movement/sound checks with no reported exception. The isolated
+manual run author-20261014-203342 used the frozen final runtime and session-v2
+fixture, and exited 0. Removed only CA254-01 from pending_test.txt. No merge or
+issue closure is inferred. Exact handoff hashes/confirmation: assets/validation_543/acceptance.json.
+Commands, reproduction and limits: assets/validation_543.
 Static validation/build results are recorded there. Unrelated local files and
 all previous evidence remain unchanged.
 

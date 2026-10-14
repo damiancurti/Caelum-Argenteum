@@ -59,9 +59,10 @@ An initial audio assertion wrongly treated the native limit as global and counte
 distant/virtual voices. The corrected local assertion passes. Earlier packages
 and logs remain preserved, not recategorized as successful final runs.
 
-This is focused native evidence. Physical input, narrow-walkway pursuit and the
-artistic quality/spatial mix of the sounds await **CA254-01**. The author is away;
-no interactive handoff, manual pass, merge or closure is inferred. Final fixture
+The author passed **CA254-01** on 2026-10-14 after the isolated manual handoff,
+with no reported exception to the offered movement/listening checks. The run
+exited 0; acceptance.json preserves the confirmation and exact package hashes.
+This acceptance does not merge the PR or close the issue. Final fixture
 source includes only a manual-camera adjustment after the migration checks;
 `preview-02` compiles and runs that fixture against the same final runtime.
 

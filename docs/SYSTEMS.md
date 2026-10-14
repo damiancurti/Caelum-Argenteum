@@ -37,9 +37,20 @@ individual racial effects will own its activation. Debug race has no racial icon
 The compass and transient notifications reserve the column width. Generic icons
 reuse existing owned artwork; they do not imply effects are already implemented.
 
-Social attributes including Charisma/Empathy must scale class range, duration and
-potency; Intelligence owns direct damage. Exact social ownership/composition is
-pending. Sleep enemies require three separate HP-damaging impacts (including each
+On 2026-10-14 the author confirmed the shared class scaling contract, using the
+existing curves: B=(N*N+25*N)/125 and M2=1+3B/100. Eloquence multiplies the base
+radius by M2 and divides Anima cost by M2. Charisma multiplies harmful-effect
+power and duration by M2; Empathy multiplies beneficial-effect/healing power and
+duration by M2. Direct damage retains its existing Intelligence calculation.
+The class preparation remains exactly three seconds, independent of Eloquence.
+Scale the whole authored multiplier: a base x3 with statistical power x2 becomes
+x6, not x5. The enemy Sleep hit count remains exactly three regardless of stats.
+The caster must have the entire modified cost available before preparation starts,
+although payment is progressive and cancellation does not refund paid Anima.
+These decisions define the implementation contract; the new lifecycle and effect
+consumers remain pending in this checkpoint.
+
+Sleep enemies require three separate HP-damaging impacts (including each
 pellet and DOT application), with final received damage multiplied after defenses
 through the third waking hit; allies retain one-hit wake and no enemy multiplier.
 The hit count stays three. Continuous racial toggles have no cooldown/duration cap;
@@ -63,7 +74,7 @@ the shared newly-recognized-player-target path; bite replaces the sword-hit
 sound only for rat melee. Pain and death use their native states. Each alias has
 a local three-instance limit within 512 map units and native distance attenuation;
 this is not a global cap across distant sectors. Sources and rights: ASSETS;
-author listening acceptance remains pending under CA254-01.
+the author passed CA254-01 movement/listening acceptance on 2026-10-14.
 
 ## Equipped-Seal elemental resistance - 5.4.2 / #261
 

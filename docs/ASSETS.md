@@ -68,7 +68,7 @@ Runtime files: `src/sounds/caelum/enemies/rat/`; rights/provenance:
 `assets/validation_543/rat_audio.json` records hashes, durations, RMS, peak and
 zero endpoints. SNDINFO registers each cue with a local 3/512 instance limit.
 The final native fixture verifies recognition, bite, pain and death triggers.
-Technical checks do not establish artistic approval: CA254-01 awaits listening.
+The author separately passed CA254-01 movement/listening review on 2026-10-14.
 
 ## 5.3.8 - Existing quest text and known-place links (#235)
 

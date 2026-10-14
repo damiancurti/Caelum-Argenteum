@@ -46,8 +46,8 @@ spawns had already marked the revision; keep fresh and saved paths covered.
 Evidence/reproduction: [validation_543](../assets/validation_543/RESULTS.md).
 The final native probe checks all 192 rats and actual pursuit/bites across four
 sections. Upgrade, reload, rollback and hub checks preserve corpses, drops, sleep,
-resources and a positive custom base. Author audio/movement check CA254-01 remains
-pending; this finding does not establish the same defect in other actor classes.
+resources and a positive custom base. The author passed audio/movement check CA254-01 on
+2026-10-14; this finding does not establish the same defect in other actor classes.
 
 ## CA-KP-095 - Native menu command tests need the real dispatch boundary
 

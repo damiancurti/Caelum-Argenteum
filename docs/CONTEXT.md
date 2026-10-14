@@ -2,9 +2,9 @@
 
 Documentation version: **5.4.5** — 2026-10-14.
 
-**5.4.5/#251 WIP:** cloud asset, validation_545. #238 preparation/HUD: validation_544; lifecycle/Sleep pending.
-#254/#261/#259: validation_543/542/541; CA254/261/259-01 pending; PR275/274/273.
-#237: validation_540/PR272. Questions/manual checks await author return.
+**5.4.5/#251 WIP:** cloud asset, validation_545. #238: validation_544; scaling/admission confirmed; lifecycle/Sleep pending.
+#254: validation_543/PR275; CA254-01 passed 2026-10-14. #261/#259: CA261/259-01 pending; PR274/273.
+#237: validation_540/PR272. Author returned for questions/manual checks.
 **Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.

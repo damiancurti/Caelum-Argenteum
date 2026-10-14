@@ -19,14 +19,15 @@ Vulkan/OpenGL asset previews from outstanding gameplay and author acceptance.
 It provides the shared three-second hand sequence, preparation combat guards and
 left class/racial indicators using the existing power-column scale;
 the isolated native component checks are in [validation_544](assets/validation_544/RESULTS.md).
-User4 payment/release, revised Sleep and racial lifecycle remain unfinished. Design questions and author tests wait for the author's return.
+User4 payment/release, revised Sleep and racial lifecycle remain unfinished. The author confirmed shared scaling and admission rules; remaining
+design details and manual checks are being reviewed.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
 MAP02 rats recover their authored movement speed, including existing saves,
 and use four original procedural alert/bite/pain/death cues. Population, combat
 statistics and one-time drops are preserved. [Evidence](assets/validation_543/RESULTS.md)
-records native movement, audio triggers and save compatibility; CA254-01 awaits
-the author's return for movement/audio review.
+records native movement, audio triggers and save compatibility. The author passed
+CA254-01 movement/listening review on 2026-10-14.
 
 5.4.2 implements [#261](https://github.com/damiancurti/Caelum-Argenteum/issues/261):
 the equipped Seal reduces damage from its elemental pair by 50%; Quintessence

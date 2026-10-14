@@ -25,18 +25,21 @@ that fixture; its production effects/toggle remain pending.
 
 Continue with payment/release/cancellation and native input,
 revised Sleep HP-based wake/final-damage integration and full save/hub tests.
-The author is away; defer questions on initial/partial insufficient Anima,
-cost snapshot versus changing modifiers, death/control/UI/weapon-change policies,
-simultaneous power inputs, Sleep relationship/expiry/body-pose handling and exact
-social scaling/composition. The confirmed three-hit count must never scale.
-Do not invent those decisions or count component-only tests as an ability pass.
+The author returned and confirmed: existing Eloquence scaling for radius/cost,
+Charisma for harmful-effect power/duration, Empathy for beneficial-effect/healing
+power/duration; whole-factor multiplication; full modified Anima cost required
+at admission with progressive payment. SYSTEMS records the exact shared curves.
+The three-hit count never scales and preparation stays three seconds.
+Resolve remaining cost snapshot/changing-modifier, forced-control/input and Sleep
+relationship/expiry/body-pose details where existing rules do not determine them.
+Do not re-ask confirmed decisions or count component-only tests as an ability pass.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 
 Implemented and engine-tested the rat-only initialization repair, idempotent
 saved-body migration and alert/bite/pain/death cues. The final contract passes
 11 assertions; old-save upgrade, reload, rollback and hub return pass. Audio
-regeneration is byte-identical. CA254-01 remains pending for the author's return;
+regeneration is byte-identical. The author passed CA254-01 on 2026-10-14;
 assets/validation_543 records scope, fixtures and earlier failed approaches.
 No new population, balance change or broader combat-AI repair belongs here.
 

@@ -145,3 +145,12 @@ all captures. No interactive author handoff has occurred while the author is awa
 HUD follow-up static validation passed with errors: [], 2,483 CONTEXT words;
 normal packaging contains 16,119 files and no directory entries. Every member
 matches the frozen HUD-tested runtime. Dialogue/document indexes are current.
+
+## Author design follow-up - 2026-10-14
+
+Confirmed existing Eloquence radius/cost, Charisma harmful power/duration and
+Empathy beneficial/healing power/duration curves; direct damage stays with
+Intelligence. Scale whole authored multipliers (x3 with x2 power becomes x6),
+never the three-hit Sleep count. Require the full modified cost before starting,
+then debit progressively through the fixed three-second preparation. These are
+contract updates only; no new lifecycle/effect test or manual acceptance is claimed.
