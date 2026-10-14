@@ -142,7 +142,7 @@ Death terminates the living controller normally. Preserve the original save
 as a reversible rollback copy; never overwrite it during migration tests.
 
 These rules supersede the voluntary-rest blockers only for exhaustion.
-Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 passed full author acceptance on 2026-10-14.
 
 ## 5.3.2 - Automatic food and water (#257)
 

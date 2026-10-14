@@ -73,6 +73,14 @@ entry. Remaining author checks concern hazards/support, save/load and pause;
 the existing engine fixtures cover these technically, but their author pass
 is not inferred. Runtime behavior and release number are unchanged.
 
+CA258-01 (origin 5.3.3 / #258) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Hazards, air/water and moving/unsafe support, real provisions, bed/bag versus chair support, locked save/load, pause and recovered camera/controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+
 ## 5.3.2 - Automatic provisions (#257), 2026-10-13
 
 Added independent below-50% serving and 100% seated/lying filling. The author

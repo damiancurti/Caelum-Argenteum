@@ -25,8 +25,7 @@ overlap remains explicit. [Evidence](assets/validation_534/RESULTS.md).
 5.3.3 implements [#258](https://github.com/damiancurti/Caelum-Argenteum/issues/258):
 zero Sleep makes the character lie down in place, including in air/water.
 Standing unlocks only above 10%; normal recovery, support and hazards remain.
-[Evidence](assets/validation_533/RESULTS.md). **Zero-Sleep/standing controls accepted
-on 2026-10-13; remaining CA258-01 author checks are pending.**
+[Evidence](assets/validation_533/RESULTS.md). **CA258-01 passed full author acceptance on 2026-10-14.**
 
 5.3.2 implements [#257](https://github.com/damiancurti/Caelum-Argenteum/issues/257):
 food and water start below 50%, or fill toward 100% while seated/lying.
