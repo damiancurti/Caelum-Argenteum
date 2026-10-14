@@ -8,8 +8,7 @@ Zero Sleep now produces immediate lying at the current location, including
 air/water, with ordinary physics and hazards. Standing remains unavailable
 until Sleep exceeds 10%. Real support, shared recovery/provisions and
 revisioned save/hub state preserve existing resources and acceleration rules.
-Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance;
-the author is away and has not tested this patch. #231-#236 remain separate.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 passed full author acceptance on 2026-10-14. #231-#236 remain separate.
 
 ## 5.3.2 - Automatic provisions (#257)
 

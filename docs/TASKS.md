@@ -7,8 +7,7 @@ Documentation version: **5.3.3** — 2026-10-13.
 Implement deterministic zero-Sleep lying, strict >10% standing eligibility,
 truthful support and persistent enforcement without changing physics or
 hazards. Author decision: immediately lie down in air/water without relocation.
-Evidence: assets/validation_533/RESULTS.md; CA258-01 remains pending while
-the author is away. Continue #231-#236 in separate branches, commits and PRs.
+Evidence: assets/validation_533/RESULTS.md; CA258-01 passed full author acceptance on 2026-10-14. Continue #231-#236 in separate branches, commits and PRs.
 
 ## 5.3.2 - Automatic provisions (#257)
 
