@@ -26,7 +26,7 @@ Do not invent those decisions or count component-only tests as an ability pass.
 Implemented and engine-tested the rat-only initialization repair, idempotent
 saved-body migration and alert/bite/pain/death cues. The final contract passes
 11 assertions; old-save upgrade, reload, rollback and hub return pass. Audio
-regeneration is byte-identical. CA254-01 remains pending for the author's return;
+regeneration is byte-identical. The author passed CA254-01 on 2026-10-14;
 assets/validation_543 records scope, fixtures and earlier failed approaches.
 No new population, balance change or broader combat-AI repair belongs here.
 

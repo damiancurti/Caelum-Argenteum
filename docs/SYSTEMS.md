@@ -54,7 +54,7 @@ the shared newly-recognized-player-target path; bite replaces the sword-hit
 sound only for rat melee. Pain and death use their native states. Each alias has
 a local three-instance limit within 512 map units and native distance attenuation;
 this is not a global cap across distant sectors. Sources and rights: ASSETS;
-author listening acceptance remains pending under CA254-01.
+the author passed CA254-01 movement/listening acceptance on 2026-10-14.
 
 ## Equipped-Seal elemental resistance - 5.4.2 / #261
 

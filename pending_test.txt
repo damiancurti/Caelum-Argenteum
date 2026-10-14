@@ -36,20 +36,3 @@ Steps:
 Expected: readable, correct descriptions and immediate resistance updates. The
 native matrix separately covers direct/area HP, fractional DOT, save/load and
 hub travel. Temporary test Seals belong only to this isolated configuration.
-
-CA254-01 | Origin: 5.4.3 / issue #254 | MAP02 rat movement and sound
-Prerequisites: use the isolated #254 session with final production/session files.
-Offer only after the author returns. The fixture protects the player, points the
-camera toward an existing rat and does not respawn or add any enemies.
-Steps:
-1. Let the rat approach and bite; listen for its recognition and bite sounds.
-2. F6 selects the next of four original MAP02 sections. Repeat the approach and
-   listen nearby, then back away through a narrow walkway to check pursuit and
-   ordinary distance attenuation.
-3. F7 damages the selected rat by a small test hit; repeat if its native pain
-   chance does not enter Pain. F8 kills it to check the death cue.
-4. Listen with several nearby rats: cues should remain intelligible without
-   excessive overlap. Check that they suit rats and have no clicks or harsh peaks.
-Expected: living rats pursue and bite normally in all four sections; alert,
-bite, pain and death have distinct appropriate sounds. Dead rats stay dead and
-leave their existing one-time drop. F6/F7/F8 are isolated fixture bindings only.

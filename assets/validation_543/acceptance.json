@@ -1,0 +1,15 @@
+{
+  "test_id": "CA254-01",
+  "origin_version": "5.4.3",
+  "issue": 254,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "Si, las pruebas de las ratas dio bien.",
+  "result": "passed",
+  "qualifications": "No exceptions reported for the offered movement and sound steps. No merge or closure inferred.",
+  "runtime_sha256": "0aadf92c7b571e5a44542e784f8c2ac88943c749d91391b5dc84f29c1853358f",
+  "fixture_sha256": "4d92db576bfa9182812a230ec84b007bb28e8057dbfa8d3a684ac8a03be97dd4",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "handoff_label": "author-20261014-203342",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-14T23:35:56.1681915Z"
+}

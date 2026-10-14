@@ -24,9 +24,9 @@ Repaired a zero base-speed initialization and added revision-1 migration for
 existing rats without replacing bodies or resetting their resources/drops.
 All 192 rats initialize with positive speed; native pursuit and bites pass in
 all four sections. Four original procedural cues have reproducible sources and
-provenance. Evidence: assets/validation_543; author check CA254-01 is pending.
-The author is away; questions and interactive handoffs remain deferred. #238
-continues separately after this delivery; no merge or closure is authorized.
+provenance. Evidence: assets/validation_543. The author passed CA254-01 movement
+and listening checks on 2026-10-14, after returning. #238 continues separately;
+no merge or closure is inferred from this acceptance.
 
 ## 5.4.2 - Equipped-Seal resistances (#261)
 

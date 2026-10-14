@@ -19,8 +19,8 @@ User4 payment/release, revised Sleep and racial lifecycle remain unfinished. Des
 MAP02 rats recover their authored movement speed, including existing saves,
 and use four original procedural alert/bite/pain/death cues. Population, combat
 statistics and one-time drops are preserved. [Evidence](assets/validation_543/RESULTS.md)
-records native movement, audio triggers and save compatibility; CA254-01 awaits
-the author's return for movement/audio review.
+records native movement, audio triggers and save compatibility. The author passed
+CA254-01 movement/listening review on 2026-10-14.
 
 5.4.2 implements [#261](https://github.com/damiancurti/Caelum-Argenteum/issues/261):
 the equipped Seal reduces damage from its elemental pair by 50%; Quintessence
