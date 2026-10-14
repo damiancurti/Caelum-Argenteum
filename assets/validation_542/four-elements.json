@@ -4,7 +4,7 @@
   "date": "2026-10-14",
   "author_result": {
     "test": "CA261-01",
-    "status": "partial; correction awaits narrow recheck",
+    "status": "passed after corrected recheck on 2026-10-14; acceptance.json",
     "clarification": "Four elemental resistance families; Quintessence protects those four and has no resistance of its own.",
     "previous_handoff": "build/issue261-release/author-20261014-203953"
   },
