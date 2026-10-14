@@ -28,9 +28,10 @@ The subsequent city handoff failed author review: gates retained the generic
 hand and southwest factory stations added no marker. The same #234 patch now
 records gate observations before/after use and binds all 96 authored factory
 stations individually, with the current-layout guard and existing bilingual names.
-Retest these two reported cases using cityfix_handoff.ps1; keep ordinary traversal
-and the other unconfirmed CA234-01 cases separate. No new release or acceptance
-is inferred from this correction.
+On 2026-10-14 the author accepted the three cityfix_handoff.ps1 steps: denied/open
+gate padlocks, separate workbench/adjacent-station markers, and save/load retention.
+Keep ordinary traversal and other unconfirmed CA234-01 cases separate. This
+acceptance does not increment the patch version or certify all 96 stations manually.
 The focused city regression reproduces eight baseline failures and passes 92
 corrected native assertions, five save comparisons and three inspected captures.
 All 96 slots match the WAD; static/build and generator determinism checks pass.

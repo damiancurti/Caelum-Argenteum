@@ -21,6 +21,7 @@ The author accepted the closed/open artwork and save/load on 2026-10-14.
 Further city feedback exposed generic gate icons and missing factory stations.
 City gates now remember access on use and share the padlocks; all 96 existing
 factory stations gain individual identities and appear only after interaction.
+The author accepted the focused city gate/station retest and save/load on 2026-10-14.
 Ordinary sewer exploration, city and remaining compatibility checks stay pending.
 [Evidence](assets/validation_537/RESULTS.md).
 

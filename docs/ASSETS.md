@@ -37,6 +37,8 @@ and INTERIORS.json, using the same building/profile/slot order as the existing
 interior generator. It does not rebuild the WAD; regression preparation verifies
 each slot and editor type against its actual MAP06 thing. Positions shown on the
 map come from the interacted actor; its original SpawnPoint supplies identity.
+The author accepted the focused city padlock/station presentation and save/load
+on 2026-10-14; this does not certify every factory or ordinary city traversal.
 
 ## 5.3.6 - Manual note presentation (#233)
 

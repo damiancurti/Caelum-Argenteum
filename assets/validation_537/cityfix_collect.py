@@ -85,7 +85,7 @@ captures = ['city-after-02-city-stations.png', 'city-native-denied-01-city-close
 for name in captures:
     shutil.copyfile(WORK / name, HERE / 'captures' / name)
 report['captures'] = captures
-report['author_acceptance'] = 'Pending city correction retest in CA234-01; earlier mansion/sewer acceptance remains separate.'
+report['author_acceptance'] = 'Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.'
 report['fixed_assertions'] = sum(r['assertions'] for r in report['runs'] if r['expected_failures'] == 0)
 (HERE / 'cityfix_evidence.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
 print(f"City corrections: {report['fixed_assertions']} assertions, {len(report['save_comparisons'])} save comparisons; baseline reproduces eight failures.")
