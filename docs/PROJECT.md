@@ -4634,6 +4634,37 @@ slice may be implemented earlier through a focused issue without moving an entir
 milestone or reopening accepted releases. Unapproved balance/canon remains an
 author decision; this numbering assigns sequence, not new mechanics.
 
+### Prologue content and NPC performance additions — author approval 2026-10-14
+
+Planning task: #276. This supplements the numbered sequence without changing
+the current runtime release or reopening accepted systems.
+
+| Area | Target | Explicit scope |
+| --- | --- | --- |
+| Furniture | V5.8; visual completion V5.17 | Expand usable furniture, storage and furnishing of homes/shelters. Decorative assets may accompany the map that needs them. Preserve accepted seating, meals and rest. |
+| Character sprite variety | V5.9; expansion/completion V5.17 | Add inhabitants and quest-character appearances using V5.2 modular identity and reusable animations. Deliver the initial variety with prologue social content. |
+| NPC clothing variety | V5.6 and V5.9; visual completion V5.17 | V5.6 owns garments that are equippable, craftable or tradeable; V5.9 adds authored wardrobes distinguishing inhabitants, professions and factions. |
+| Third campaign map social/story content | V5.9 | Expand Barracas al Sud (runtime MAP06): conversations, recognition of the protagonist as captain, rescued prisoners, rumors, siege preparation and aftermath dialogue. Preserve established secrecy and canon. Dynamic siege expansion stays V5.15. |
+| Early subsystem performance audit | Upcoming V5.3.x patches; broad mass-AI work V5.11 | Measure individual subsystem costs in comparable active siege scenarios, identify dispensable NPC simulation work, then implement measured improvements through focused issues. NPC thermal simulation is a candidate, not a proven bottleneck. |
+
+Compare full NPC thermal simulation, reduced-frequency updates and a simplified
+model before choosing a production policy. Controlled diagnostic disabling may
+measure cost; it does not authorize permanent removal or changes to fire,
+cold-response or demon behavior. Record performance and gameplay consequences.
+Preserve individual combat/resources/collision and #128's standing policy unless
+the author explicitly approves a concrete change.
+
+V5.11 retains formations, leaders, local offsets, dynamic membership, shared
+memory, companions, and measured targeting/movement/contact/controller/renderer
+work. The early audit feeds that milestone rather than postponing current siege
+playability until V5.11. Active-population evidence remains required.
+
+For the prologue beta, prioritize performance and third-map social content.
+Deliver initial furniture, sprite and clothing variety with the content that
+needs it; V5.17 is the broader completion/polish pass. These are planning targets,
+not completed features or a claim that the beta is ready. Next steps are focused
+implementation issues; this documentation-only update requires no gameplay test.
+
 ### V5 native menus, character setup and exploration — approved 2026-10-05
 
 Planning task: CA-V5-NATIVE-UI. The author approved this scope for version 5
@@ -5283,3 +5314,4 @@ implemented; it does not make the remaining branches playable. Isolated trials u
 4.14.2/OpenGL with private instrumentation. They do not credit duration of a game or
 cooperative. Engine, IWAD, fixtures, captures and saves are left out of patch; 0m
 validation in HISTORY.md.
+
