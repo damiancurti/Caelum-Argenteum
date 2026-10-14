@@ -3,6 +3,11 @@
 class CaelumQuestTrackingData : Object
 {
     const REVISION = 1;
+    // Reutiliza el símbolo propio de objetivos; tamaño sólo de presentación.
+    static String MarkerIcon()
+    {return "graphics/caelum/ui/hud/icons/ca_hud_combat_affected_targets.png";}
+    static double MarkerSize()
+    {return CaelumPoiData.ICON_SIZE+CaelumCartographyLayout.PADDING;}
     static String MapId(int quest)
     {
         if(quest==CaelumConstants.QUEST_MAIN_M00_THE_FOOL)return "MAP01";

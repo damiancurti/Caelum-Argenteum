@@ -4,6 +4,11 @@ Documentation version: **5.3.8** — 2026-10-14.
 
 ## 5.3.8 - Existing quest text and known-place links (#235)
 
+The 2026-10-14 spatial-marker follow-up reuses the owned HUD target symbol
+`src/graphics/caelum/ui/hud/icons/ca_hud_combat_affected_targets.png`. No new
+bitmap or attribution is introduced. A tracked known destination temporarily
+uses this symbol instead of its ordinary POI category icon.
+
 `CaelumQuestTrackingData` associates existing LANGUAGE objective keys with #234
 POI identities; no coordinate, map, bitmap, font or provenance is added. Shared
 Journal/map adapters reuse existing bilingual mission and stage text. New labels
