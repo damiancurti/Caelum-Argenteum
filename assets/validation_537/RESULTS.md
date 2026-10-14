@@ -1,7 +1,49 @@
 # Issue #234 - Authored exploration catalogue
 
 Version 5.3.7, 2026-10-14. Branch `feat/issue234-authored-cartography`,
-baseline `bdcae305` (#233). CA234-01's mansion handoff passed author review on
+baseline `bdcae305` (#233).
+
+City corrections (2026-10-14): the author reported the generic hand on port gates
+and missing southwest factory station markers. Gate use now observes closed/open
+access and uses the accepted padlocks. Factory registration derives all 96 actual
+station identities from CITY.json/INTERIORS.json; only the interacted actor becomes
+known, using its original SpawnPoint for identity and current position for display.
+The loaded MAP06 checksum guards this lookup. No map or saved schema changed.
+
+`cityfix_evidence.json` records **92 passing assertions in seven corrected native
+runs**, **five save comparisons** and **three inspected captures**. The pre-fix
+runtime reproduces eight expected failures in `city-before-07`. Corrected runs
+cover real native Use on a denied/opening gate and two factory stations (separate
+fresh sessions), actual marker textures/positions, remote gate-state isolation,
+all 96 authored station bindings, idempotent rediscovery and native reload.
+A genuine pre-fix save preserves unknown gate access, identity/profile, quest
+state, owned Tarot, equipment IDs and note metadata; new native interactions
+then record only the used gate/station. Profile values are compared after resolving
+native object-table references, whose indices change on reload.
+These are the values present in the diagnostic profile; a populated campaign
+inventory is not certified by this fixture.
+
+Runtime SHA-256: `4ca76e0d933eae7be2b9f4d67288fdbd9fb7528ad273198eb7cc30e270a60d1b`.
+Only the catalogue, authored bindings, icon lookup and gate-use hook differ from
+the previously accepted sewer-padlock runtime. Static validation, normal packaging,
+exact normalized package comparison, generator determinism and matching all
+96 station slots/editor types to actual WAD things pass. Native tests used isolated
+INIs, background simulation and 5% audio. Earlier diagnostic runs remain in
+`build/issue234-city-fix`: a UI/play helper error, an unavailable ConsoleCommand
+helper and intermittent missed short scripted presses were corrected in the test
+harness. Selected input runs hold Use for 35 tics and log its actual native button
+transition; this does not change gameplay timing. Captures are taken after input
+checks so map/menu transitions cannot invalidate subsequent scripted presses.
+
+Reproduce on this #234 branch with `cityfix_prepare.py`, the recorded native commands,
+`cityfix_load_old.py`, normal packaging and `cityfix_collect.py`. Preserve/copy the
+selected named saves before another flow run overwrites its generic output names.
+`cityfix_handoff.ps1` opens Probar234Ciudad: F6 positions at a diagnostic blocked
+gate, F8 permits its opening, and F7 positions at the southwest factory workbench.
+These two reported corrections await author retest in CA234-01. Diagnostic
+positioning and direct catalogue checks do not certify ordinary city traversal.
+
+CA234-01's mansion handoff passed author review on
 2026-10-14: labels after entering ground/first/second-floor rooms, beds/stations
 only after interaction, no unvisited/secret-room labels, and retaining discovered
 markers through save/load. The five presented steps ran in

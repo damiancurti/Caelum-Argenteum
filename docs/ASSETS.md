@@ -30,6 +30,13 @@ actor, closed-padlock replacement or change to the Use/exit hand is introduced.
 Native closed/open/reloaded captures are in assets/validation_537. The author
 accepted the new artwork and save/load on 2026-10-14. Bilingual names remain in LANGUAGE
 and its localization index. Test packages/saves remain local.
+The city follow-up reuses these padlocks for observed physical gate states and
+the existing crafting emblem for factory stations. No additional artwork is
+introduced. The catalogue generator derives 96 station identities from CITY.json
+and INTERIORS.json, using the same building/profile/slot order as the existing
+interior generator. It does not rebuild the WAD; regression preparation verifies
+each slot and editor type against its actual MAP06 thing. Positions shown on the
+map come from the interacted actor; its original SpawnPoint supplies identity.
 
 ## 5.3.6 - Manual note presentation (#233)
 

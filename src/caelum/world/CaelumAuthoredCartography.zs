@@ -44,6 +44,7 @@ class CaelumAuthoredCartography : Object play
                 }
             let vendor=CaelumCityMerchant(subject);
             let bed=CaelumRestBed(subject);
+            let station=CaelumCraftingStation(subject);
             if(CaelumCityData.Enabled() && category==CaelumPoiData.MERCHANT && vendor!=null
                 && vendor.ShopIdentity>=0 && vendor.ShopIdentity<CaelumCityData.SHOP_COUNT)
             {id=String.Format("city-shop-%d",vendor.ShopIdentity);nameKey=String.Format("CA_CITY_SHOP_%d",vendor.Category);}
@@ -51,6 +52,13 @@ class CaelumAuthoredCartography : Object play
                 && bed.TrialSlot>=CaelumCityData.FURNITURE_SLOT_BASE
                 && bed.TrialSlot<CaelumCityData.FURNITURE_SLOT_BASE+CaelumCityData.HOUSE_COUNT)
             {id=String.Format("city-bed-%d",bed.TrialSlot-CaelumCityData.FURNITURE_SLOT_BASE);nameKey="CA_POI_CITY_BED";}
+            else if(CaelumCityData.Enabled() && category==CaelumPoiData.STATION && station!=null
+                && level.GetChecksum()==CaelumCartographyCatalogueData.MAP06_CHECKSUM)
+            {
+                // El origen identifica la instancia del mapa aunque después se mueva.
+                id=CaelumCartographyCatalogueData.CityStationId(station.SpawnPoint);
+                nameKey=CaelumCartographyServiceData.StationName(station.GetCraftingStationType());
+            }
             else if(category==CaelumPoiData.TRANSPORT && subject is "CaelumCoveredCart")
             {id="port-covered-cart";nameKey="CA_POI_COVERED_CART";}
             else if(category==CaelumPoiData.TRANSPORT && subject is "CaelumMerchantShip")
@@ -71,6 +79,8 @@ class CaelumAuthoredCartography : Object play
         if(grate!=null)return grate.Opened?CaelumPoiData.ACCESS_OPEN:CaelumPoiData.ACCESS_CLOSED;
         let back=CaelumMazeReturnGrate(subject);
         if(back!=null)return back.Opened?CaelumPoiData.ACCESS_OPEN:CaelumPoiData.ACCESS_CLOSED;
+        let gate=CaelumBreakableGate(subject);
+        if(gate!=null)return gate.Opened || gate.Broken?CaelumPoiData.ACCESS_OPEN:CaelumPoiData.ACCESS_CLOSED;
         return CaelumPoiData.ACCESS_UNKNOWN;
     }
 

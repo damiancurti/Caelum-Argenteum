@@ -11,9 +11,12 @@ The author approved east-arch crossing and one marker per used south gate, and
 deferred sector warnings until their knowledge rules are defined (2026-10-14).
 Loaded-layout guards avoid applying current region coordinates to older maps;
 revision-two knowledge preserves old facts with unknown access state.
-Static/build checks and the focused native matrix passed; CA234-01 author checks
-are deferred during the author's
-absence. Evidence: assets/validation_537. Next: #235 multi-mission tracking and
+Static/build checks and the focused native matrix passed. The author accepted
+the mansion and sewer-padlock checks, then reported city gate icons and missing
+factory stations. The city corrections add observed gate padlocks and individual
+bindings for all 96 existing factory stations; 92 native assertions and five save
+comparisons pass. CA234-01 city retest and remaining checks await the author.
+Evidence: assets/validation_537. Next: #235 multi-mission tracking and
 #236 Journal navigation, with separate commits, branches, tests and linked PRs.
 Manual-note effects/predefined notes discussed on 2026-10-14 are possibilities,
 not an authorized change to #233's player-authored annotations.

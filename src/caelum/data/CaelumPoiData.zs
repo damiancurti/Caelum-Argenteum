@@ -33,8 +33,11 @@ class CaelumPoiData : Object
     }
     static String IconPath(int category,int observedAccess=ACCESS_UNKNOWN)
     {
-        // El icono sigue el hecho observado, nunca el estado remoto de la reja.
-        if(category==GRATE && observedAccess==ACCESS_OPEN)return "graphics/caelum/ui/journal/icons/ca_ui_action_unlocked.png";
+        // El icono sigue el hecho observado, nunca el estado remoto del acceso.
+        if(category==GRATE || (category==EXIT && observedAccess!=ACCESS_UNKNOWN))
+            return observedAccess==ACCESS_OPEN
+                ?"graphics/caelum/ui/journal/icons/ca_ui_action_unlocked.png"
+                :"graphics/caelum/ui/journal/icons/ca_ui_action_locked.png";
         switch(category)
         {
         case BED: return "graphics/caelum/ui/hud/icons/ca_hud_icon_sleep.png";

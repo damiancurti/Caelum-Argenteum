@@ -18,6 +18,9 @@ mansion handoff passed author review on 2026-10-14. The reported open-grate
 padlock is corrected: observed-open grates use a dedicated open-padlock icon,
 following the author's clarification after the initial hand-symbol retest.
 The author accepted the closed/open artwork and save/load on 2026-10-14.
+Further city feedback exposed generic gate icons and missing factory stations.
+City gates now remember access on use and share the padlocks; all 96 existing
+factory stations gain individual identities and appear only after interaction.
 Ordinary sewer exploration, city and remaining compatibility checks stay pending.
 [Evidence](assets/validation_537/RESULTS.md).
 
