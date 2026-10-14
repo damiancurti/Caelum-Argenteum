@@ -36,9 +36,11 @@ room regions, observed sewer grates, current city gates/towers/services and
 loaded-layout guards. No secret/loot/enemy annotation or new access rule.
 The author approved one marker per south gate and east-arch crossing; siege-sector
 warnings remain a design gap, explicitly deferred. Static/build and focused
-native checks passed (151 assertions, 16 save comparisons); CA234-01 manual
-checks remain pending. #233 editing passed; remaining #233/#258 checks stay
-pending. Next: #235/#236 separately.
+native checks passed (151 assertions, 16 save comparisons). On 2026-10-14 the
+author passed CA234-01's five mansion handoff steps, including entered rooms,
+interacted services, secrecy and save/load. Sewer/city exploration and remaining
+compatibility checks stay pending. #233 editing passed; retain remaining
+#233/#258 checks and separate #235/#236 acceptance.
 
 ## 5.3.6 - Manual map notes (#233)
 

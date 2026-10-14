@@ -29,8 +29,9 @@ check CA235-01 is deferred during the absence. [Evidence](assets/validation_538/
 authored mansion rooms/services, observed sewer grates and the fortified city's
 exits, towers, shops, beds and transport. Entry or interaction records personal
 knowledge; sector warnings remain deferred by author decision. Geometry checks
-protect older layouts. Static/build and focused native checks passed; author checks remain
-deferred until the author returns. [Evidence](assets/validation_537/RESULTS.md).
+protect older layouts. Static/build and focused native checks passed. CA234-01's
+mansion handoff passed author review on 2026-10-14; sewer, city and remaining
+compatibility checks stay pending. [Evidence](assets/validation_537/RESULTS.md).
 
 5.3.6 implements [#233](https://github.com/damiancurti/Caelum-Argenteum/issues/233):
 manual named/category notes at the native map center, edited through a native
