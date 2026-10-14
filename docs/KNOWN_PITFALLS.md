@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-096 - Early derived-stat queries can erase a spawn default
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #254 / 5.4.3,
+2026-10-14; baseline 3d07bb87, GZDoom 4.14.2 / Windows / Vulkan.
+
+MAP02 rats recognized the player but never pursued: all 192 had zero Speed and
+CombatBaseSpeed. A package-only trace observed personality/health calculation
+while Speed was still 10 and CombatBaseSpeed was 0, then rat PostBeginPlay entered
+with Speed 0 and the shared initializer captured that zero. Seeing the correct
+Default property therefore did not establish the value actually captured.
+
+Restore the rat's missing initial Speed from its class default before the shared
+capture. Preserve positive custom values. Old saves do not replay PostBeginPlay:
+revision-1 Tick migration repairs only absent bases and recalculates current
+health effects without replacing the body. A Tick-only trial failed because fresh
+spawns had already marked the revision; keep fresh and saved paths covered.
+
+Evidence/reproduction: [validation_543](../assets/validation_543/RESULTS.md).
+The final native probe checks all 192 rats and actual pursuit/bites across four
+sections. Upgrade, reload, rollback and hub checks preserve corpses, drops, sleep,
+resources and a positive custom base. Author audio/movement check CA254-01 remains
+pending; this finding does not establish the same defect in other actor classes.
+
 ## CA-KP-095 - Native menu command tests need the real dispatch boundary
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #236 / 5.3.9,

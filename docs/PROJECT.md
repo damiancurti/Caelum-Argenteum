@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.2** — 2026-10-14.
+Documentation version: **5.4.3** — 2026-10-14.
+
+## 5.4.3 - MAP02 rat movement and audio (#254)
+
+Repaired a zero base-speed initialization and added revision-1 migration for
+existing rats without replacing bodies or resetting their resources/drops.
+All 192 rats initialize with positive speed; native pursuit and bites pass in
+all four sections. Four original procedural cues have reproducible sources and
+provenance. Evidence: assets/validation_543; author check CA254-01 is pending.
+The author is away; questions and interactive handoffs remain deferred. #238
+continues separately after this delivery; no merge or closure is authorized.
 
 ## 5.4.2 - Equipped-Seal resistances (#261)
 

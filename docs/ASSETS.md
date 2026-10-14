@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.2** — 2026-10-14.
+Documentation version: **5.4.3** — 2026-10-14.
+
+## 5.4.3 - Original procedural rat audio (#254)
+
+Four mono 22,050-Hz signed 16-bit PCM cues cover alert (0.38 s), bite (0.17 s),
+pain (0.29 s) and death (0.58 s). No suitable rat source was found in the existing
+audio inventory. These cues use original deterministic oscillator/noise synthesis,
+with no external recordings or Doom audio. Rebuild with
+`python assets/generators/generate_rat_audio.py`; editorial parameters and seed
+live in `assets/generators/rat_audio.json`. All four outputs regenerate byte-for-byte.
+
+Runtime files: `src/sounds/caelum/enemies/rat/`; rights/provenance:
+`src/licenses/rat_audio_543.txt` and repository LICENSE.md. The manifest in
+`assets/validation_543/rat_audio.json` records hashes, durations, RMS, peak and
+zero endpoints. SNDINFO registers each cue with a local 3/512 instance limit.
+The final native fixture verifies recognition, bite, pain and death triggers.
+Technical checks do not establish artistic approval: CA254-01 awaits listening.
 
 ## 5.3.8 - Existing quest text and known-place links (#235)
 
@@ -2822,11 +2838,11 @@ third party is not rewritten when reorganizing documents.
 
 ## Physical audio inventory
 
-The fully audited project contains 107 runtime files: 100 OGG, 2 MP3 and 5 WAV, including the
+The fully audited project contains 111 runtime files: 100 OGG, 2 MP3 and 9 WAV, including the
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
 music/sound masters. Issue #89 preserves four more audio originals under
-assets/issue89_pickaxe/reference_package. Total catalogued: 133 files.
+assets/issue89_pickaxe/reference_package. Total catalogued: 137 files.
 A copy by another name does not imply
 another recording: menu_move and menu_select continue to share content. 14 native
 interface/interruptors aliases also do not add files.
@@ -2851,6 +2867,10 @@ file does not imply that there is already a climate or scene emitter.
 | `sounds/caelum/ambience/ca_ambience_fountain_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
 | `sounds/caelum/ambience/ca_ambience_rio_waves_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
 | `sounds/caelum/ambience/ca_ambience_sewer_water_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
+| `sounds/caelum/enemies/rat/alert.wav` | Original procedural rat alert cue (#254). |
+| `sounds/caelum/enemies/rat/bite.wav` | Original procedural rat bite cue (#254). |
+| `sounds/caelum/enemies/rat/pain.wav` | Original procedural rat pain cue (#254). |
+| `sounds/caelum/enemies/rat/death.wav` | Original procedural rat death cue (#254). |
 | `sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
 | `sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg` | Mandinga combat pain, resolved by `CaelumMandinga.GetCombatPainSound()`. |
 | `sounds/caelum/enemies/zupay/ca_zupay_alert.ogg` | Registered; use according to calls of actor, system or TERRAIN. |

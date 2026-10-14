@@ -1386,7 +1386,7 @@ class CaelumCombatActor : Actor
         }
     }
 
-    action void A_CaelumMeleeAttack(int baseDamage)
+    action void A_CaelumMeleeAttack(int baseDamage,Sound hitSound="weapons/swordhit")
     {
         // Las acciones sin alcance explicito son invocables desde estados de
         // monstruo. El casteo recupera el tipo concreto para llamar su logica.
@@ -1413,7 +1413,7 @@ class CaelumCombatActor : Actor
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
         combatActor.A_CustomMeleeAttack(
             calculatedDamage,
-            "weapons/swordhit"
+            hitSound
         );
         if (meleeVictim != null && meleeVictim.health < victimHealthBefore)
         {

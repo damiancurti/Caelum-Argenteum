@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.2** — 2026-10-14.
+Documentation version: **5.4.3** — 2026-10-14.
+
+## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
+
+Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat
+per sector saw and targeted the player but did not move. Instrumentation observed
+an early personality/health recalculation at level time 0 before rat PostBeginPlay
+captured the already-zero Speed. Restoring the class default before that capture
+fixes fresh spawns; revision-1 migration repairs only absent bases in saved rats.
+A positive custom base is preserved. No population/statistics/map change is made.
+
+Added four original procedural alert/bite/pain/death clips with deterministic
+sources and provenance. Rat melee supplies its own hit sound through an optional
+shared parameter; other actors retain their default. Native recognition, pain
+and death hooks activate the other cues. Local sound limits retain native spatial
+attenuation. All four PCM files regenerate byte-for-byte, peak below clipping
+and have zero endpoints; author listening remains pending.
+
+Final GZDoom 4.14.2 / Windows / Vulkan contract passes 11 checks: 192 positive
+rat speeds, 96 unchanged Mandingas, pursuit and actual bites in all four sections,
+revision and all four sound triggers/local overlap. Old 5.4.2 saves upgrade;
+new saves reload and load back on 5.4.2; MAP02/MAP03 round-trip retains 191 living
+rats, the one dead body/drop, its sleeping neighbor, Health and a custom base.
+Earlier failed trials remain preserved: Tick-only repair missed fresh spawns;
+a global sound-count assertion wrongly included distant/virtual voices. The
+corrected test measures the local neighborhood and makes no global-mix claim.
+
+The manual fixture's camera now frames the short rat; the final Spanish capture
+was inspected. No manual session was handed off while the author was away.
+CA254-01 (origin 5.4.3/#254) is outstanding; no author pass, merge or closure is
+inferred. Exact hashes, commands, reproduction and limits: assets/validation_543.
+Static validation/build results are recorded there. Unrelated local files and
+all previous evidence remain unchanged.
 
 ## 5.4.2 - Equipped-Seal resistances (#261, 2026-10-14)
 

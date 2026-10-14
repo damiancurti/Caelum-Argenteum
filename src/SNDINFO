@@ -192,3 +192,13 @@ caelum/breathing/female = "sounds/caelum/breathing/female.wav"
 caelum/breathing/female_high = "sounds/caelum/breathing/female_high.wav"
 caelum/breathing/male = "sounds/caelum/breathing/male.wav"
 caelum/breathing/male_high = "sounds/caelum/breathing/male_high.wav"
+
+// #254: original procedural rat cues; provenance in licenses/rat_audio_543.txt.
+caelum/enemies/rat_alert = "sounds/caelum/enemies/rat/alert.wav"
+caelum/enemies/rat_bite = "sounds/caelum/enemies/rat/bite.wav"
+caelum/enemies/rat_pain = "sounds/caelum/enemies/rat/pain.wav"
+caelum/enemies/rat_death = "sounds/caelum/enemies/rat/death.wav"
+$limit caelum/enemies/rat_alert 3 512
+$limit caelum/enemies/rat_bite 3 512
+$limit caelum/enemies/rat_pain 3 512
+$limit caelum/enemies/rat_death 3 512

@@ -2,6 +2,10 @@
 // sus doce atributos son 1 y su masa corporal es de solo 10 kg.
 class CaelumGiantRat : CaelumCombatActor
 {
+    const MOVEMENT_REVISION=1;
+    int RatMovementRevision;
+    override String GetCaelumRecognitionSound()
+    {return health>0 ? "caelum/enemies/rat_alert" : "";}
     override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     Default
     {
@@ -13,6 +17,8 @@ class CaelumGiantRat : CaelumCombatActor
         Speed 10;
         MeleeRange 24;
         MaxTargetRange 768;
+        PainSound "caelum/enemies/rat_pain";
+        DeathSound "caelum/enemies/rat_death";
         Monster;
         +FLOORCLIP
         Scale 0.11;
@@ -20,6 +26,9 @@ class CaelumGiantRat : CaelumCombatActor
 
     override void PostBeginPlay()
     {
+        // Las consultas previas al alta pueden haber recalculado Speed con
+        // CombatBaseSpeed aún vacío. Recuperar sólo ese cero antes de capturarlo.
+        if(Speed<=0)Speed=GetDefaultByType(GetClass()).Speed;
         Super.PostBeginPlay();
         InitializeCombatProfile(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
         if (AnatomyProfile != null)
@@ -36,6 +45,21 @@ class CaelumGiantRat : CaelumCombatActor
         RecalculateCombatStatistics();
         Speed = CombatBaseSpeed
             * CalculateActorType4Percent(CombatAgility) / 100.0;
+        RatMovementRevision=MOVEMENT_REVISION;
+    }
+
+    override void Tick()
+    {
+        // Los saves no repiten PostBeginPlay: reparar sólo una base ausente.
+        // No reiniciar salud, estados, objetivos ni drops únicos.
+        if(RatMovementRevision<MOVEMENT_REVISION && CombatProfileInitialized)
+        {
+            if(CombatBaseSpeed<=0)
+                CombatBaseSpeed=GetDefaultByType(GetClass()).Speed;
+            RatMovementRevision=MOVEMENT_REVISION;
+            UpdateCombatHealthEffects();
+        }
+        Super.Tick();
     }
 
     States
@@ -55,7 +79,7 @@ class CaelumGiantRat : CaelumCombatActor
         Goto See;
     Melee:
         RATG D 6 A_CaelumBeginResourceAttack(CaelumAttackRules.NaturalAir());
-        RATG D 0 A_CaelumMeleeAttack(60);
+        RATG D 0 A_CaelumMeleeAttack(60,"caelum/enemies/rat_bite");
         RATG A 8 A_CaelumThermalAttackFrame;
         Goto See;
     Pain:

@@ -1,6 +1,24 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.2** — 2026-10-14.
+Documentation version: **5.4.3** — 2026-10-14.
+
+## MAP02 rat movement and sound - 5.4.3 / #254
+
+Rats retain their authored Speed 10, mass, attributes, attack, anatomy, targeting
+and the existing MAP02 population (192 rats and 96 Mandingas). An early health
+recalculation can zero Speed before PostBeginPlay captures CombatBaseSpeed.
+The rat restores only a missing initial speed from its class default before that
+capture. RatMovementRevision 1 repairs a missing base speed once in old saved
+bodies, then recomputes existing health effects. Positive custom bases, Health,
+Air, sleep, targets, corpses and one-time drops are preserved. No map regeneration
+or replacement spawn is required.
+
+Rats use original procedural alert, bite, pain and death sounds. Alert follows
+the shared newly-recognized-player-target path; bite replaces the sword-hit
+sound only for rat melee. Pain and death use their native states. Each alias has
+a local three-instance limit within 512 map units and native distance attenuation;
+this is not a global cap across distant sectors. Sources and rights: ASSETS;
+author listening acceptance remains pending under CA254-01.
 
 ## Equipped-Seal elemental resistance - 5.4.2 / #261
 

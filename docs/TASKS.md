@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.2** — 2026-10-14.
+Documentation version: **5.4.3** — 2026-10-14.
+
+## 5.4.3 - MAP02 rat movement and audio (#254)
+
+Implemented and engine-tested the rat-only initialization repair, idempotent
+saved-body migration and alert/bite/pain/death cues. The final contract passes
+11 assertions; old-save upgrade, reload, rollback and hub return pass. Audio
+regeneration is byte-identical. CA254-01 remains pending for the author's return;
+assets/validation_543 records scope, fixtures and earlier failed approaches.
+No new population, balance change or broader combat-AI repair belongs here.
 
 ## 5.4.2 - Equipped-Seal resistances (#261)
 
