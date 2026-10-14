@@ -28,11 +28,6 @@ Sewers or City. Use copies of saves and ordinary exploration without reveal chea
 2. MAP06: use individual south/north/west gates; cross the open east arch.
    Enter the corner towers and interact with an existing shop, bed and vehicle.
    Markers appear only after the corresponding event; no route is unlocked.
-   Retest the reported city failures with cityfix_handoff.ps1: use the diagnostic
-   blocked gate, then F8 allows its ordinary opening; inspect closed/open padlocks.
-   F7 positions you at the southwest factory. Use its workbench and an adjacent
-   station separately: each gets its own crafting marker, never the whole network.
-   Save/load those observations. Diagnostic positioning is not traversal acceptance.
 3. Save/load on MAP02/MAP06 and allowed hub return preserve facts and
    numbered/manual notes. Inspect Spanish/English names, stacked-floor labels
    and native map controls.

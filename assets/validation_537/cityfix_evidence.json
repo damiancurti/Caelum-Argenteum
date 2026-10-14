@@ -395,6 +395,6 @@
     "city-native-denied-01-city-closed.png",
     "city-open-view-01-city-open.png"
   ],
-  "author_acceptance": "Pending city correction retest in CA234-01; earlier mansion/sewer acceptance remains separate.",
+  "author_acceptance": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.",
   "fixed_assertions": 92
 }

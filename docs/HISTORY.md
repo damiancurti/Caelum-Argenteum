@@ -104,6 +104,17 @@ deterministic generation pass. Short scripted Use pulses missed input in early
 diagnostics; the selected 35-tic pulses log actual native button transitions.
 The failed/preliminary harness logs remain local; author city acceptance is pending.
 
+On 2026-10-14 the author confirmed all three presented city correction steps
+passed (CA234-01, origin 5.3.7 / #234): the blocked gate shows a closed padlock;
+F8 permits opening and subsequent Use shows the open padlock; the southwest
+factory workbench and an adjacent station each acquire their own crafting marker;
+and native save/load retains those observations. Session author-20261014-080428
+used runtime SHA-256 4ca76e0d933eae7be2b9f4d67288fdbd9fb7528ad273198eb7cc30e270a60d1b
+and exited with code 0. Only these confirmed retest steps leave the queue.
+Diagnostic positioning does not certify ordinary traversal, every factory/gate,
+east-arch/tower/service discovery, hub behavior or remaining compatibility checks.
+Those CA234-01 cases remain pending; no version increment, PR merge or closure.
+
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
 The author approved placing notes at the native automap center after panning,

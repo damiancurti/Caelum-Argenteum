@@ -32,7 +32,8 @@ Static/build checks and the focused native matrix passed. The author accepted
 the mansion and sewer-padlock checks, then reported city gate icons and missing
 factory stations. The city corrections add observed gate padlocks and individual
 bindings for all 96 existing factory stations; 92 native assertions and five save
-comparisons pass. CA234-01 city retest and remaining checks await the author.
+comparisons pass. The author accepted the focused city retest and save/load on
+2026-10-14; ordinary exploration and remaining CA234-01 checks stay pending.
 Evidence: assets/validation_537. Next: #235 multi-mission tracking and
 #236 Journal navigation, with separate commits, branches, tests and linked PRs.
 Manual-note effects/predefined notes discussed on 2026-10-14 are possibilities,
