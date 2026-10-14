@@ -2,8 +2,8 @@
 
 Documentation version: **5.3.7** — 2026-10-14.
 
-**#234/5.3.7:** authored cartography; static/native passed; CA234-01 pending.
-**#233:** checks passed; CA233-01 pending. Author away; defer manual checks.
+**#234/5.3.7:** authored cartography; CA234-01 pending.
+**#233:** editing accepted; remaining CA233-01 checks pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 
