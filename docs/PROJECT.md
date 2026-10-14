@@ -4614,18 +4614,18 @@ existing position. Preserve accepted work and historical numbering.
 | **V5.3** | Local exploration, automap and Journal access | Discovered geometry/POIs/manual markers, readable local cartography, known objectives, separate world-travel view, and consistent Journal/Inventory/Keys-Documents access. Preserve existing quest filters and secrecy; later content consumes these interfaces. |
 | **V5.4** | Attributes, racial/class abilities and Seals | Audit implemented versus planned attribute effects, complete authored User1/User4 powers, and climate-dependent Seal extensions on V5.1. Retain the approved input mapping and ask for still-missing ability/balance decisions. |
 | **V5.5** | Combat integration and physical interactions | Remaining weapon-family matrix, combat dispatch portion of F2, impacts/contacts/thrust/crushing/anatomy, bullet composition and defined material interactions. Thermal/damaging-surface integration builds on V5.1; future melee-energy rules require authored numbers. Avalanches require suitable maps. |
-| **V5.6** | Crafting, economy, loot and ownership | Remaining crafting/task and merchant/session coordination (F1), recipe acquisition/learning/bonuses, authored shops, loot tables, containers/capacity/ownership/theft/replenishment and resource acquisition rules. Preserve accepted inventory transaction authority. |
+| **V5.6** | Crafting, economy, loot and ownership | Remaining crafting/task and merchant/session coordination (F1), recipe acquisition/learning/bonuses, authored shops, loot tables, containers/capacity/ownership/theft/replenishment and resource acquisition rules. Preserve accepted inventory transaction authority. Add models for equippable, craftable and tradeable clothing. |
 | **V5.7** | Resource sources, water and biomes | Persistent 3D land/marine resources, extraction/rarity/depth/region/skill, exhaustion/regeneration, algae/iodine and water potability/treatment. Uses V5.5 interactions and V5.6 economy; no automatic authorization of missing harvest values. |
-| **V5.8** | Survival, world persistence and travel | Camps/properties/shelters/rest quality, remaining oxygen/altitude rules, connected water volumes, calendar compensation for unloaded areas, vehicle types/routes/schedules and travel encounters/storms/failures. Builds on thermal/resource foundations and exposes later narrative/siege hooks. |
-| **V5.9** | Quests, social dialogue, factions and secrecy | Authored main/side chains, rewards/failure/abandonment/composite conditions, reputation ranks/relationships, private emotions and faction outcomes; narrative-transition portion of F2. Reuse Strife-derived dialogue/transactions and V5.3 Journal instead of a second quest system. |
+| **V5.8** | Survival, world persistence and travel | Camps/properties/shelters/rest quality, remaining oxygen/altitude rules, connected water volumes, calendar compensation for unloaded areas, vehicle types/routes/schedules and travel encounters/storms/failures. Builds on thermal/resource foundations and exposes later narrative/siege hooks. Expand usable furniture, storage and home/shelter furnishings, preserving accepted seating, meals and rest. Decorative furniture may accompany its map. |
+| **V5.9** | Quests, social dialogue, factions and secrecy | Authored main/side chains, rewards/failure/abandonment/composite conditions, reputation ranks/relationships, private emotions and faction outcomes; narrative-transition portion of F2. Reuse Strife-derived dialogue/transactions and V5.3 Journal instead of a second quest system. Expand third-map Barracas al Sud (runtime MAP06) social/story content: captain recognition, rescued prisoners, rumors, siege preparation and aftermath conversations, preserving secrecy/canon. Add character sprite models and NPC clothing for inhabitants, professions and factions using V5.2 modular identity and reusable animations. |
 | **V5.10** | Perception and stealth | Visual/acoustic sensing, detection/loss/reacquisition/memory, noise and shared communication. Establish authored parameters before broader group and siege behavior. |
-| **V5.11** | Groups, companions and measured mass-AI work | Formations/leaders/offsets/dynamic membership/shared memory, NPC companions and measured targeting/movement/contact/controller/renderer work (F3). Preserve #128's accepted policy; retain staged active-population evidence and avoid claiming passive spawns prove active AI performance. |
+| **V5.11** | Groups, companions and measured mass-AI work | Formations/leaders/offsets/dynamic membership/shared memory, NPC companions and measured targeting/movement/contact/controller/renderer work (F3). Preserve #128's accepted policy; retain staged active-population evidence and avoid claiming passive spawns prove active AI performance. Measure individual NPC subsystem costs in comparable active siege scenarios; evaluate dispensable simulation work, including thermal simulation (a candidate, not a proven bottleneck). Compare full, reduced-frequency and simplified thermal models. Diagnostic disabling does not authorize permanent removal or changes to fire/cold responses or demon behavior. Record performance and gameplay consequences; preserve individual combat/resources/collision unless explicitly changed by the author. |
 | **V5.12** | Persistent profiles and cooperative/PvP foundation | Native saves plus external profiles, narrative autosaves and shared-world/session authority (F4); authored clock/progress/reward policy and real multi-client join/leave/reconnect/respawn/transfer tests for the 2–8-player target. Network ownership contracts must inform earlier modules even before this dedicated delivery. |
 | **V5.13** | Remaining Tarot powers and awakening | Remaining authored Major powers, collection/acquisition hooks and essence-weapon awakening; reuse accepted deck, Minor passives and activation. Campaign placement continues in V5.16 rather than claiming all 78 acquisitions already exist. |
 | **V5.14** | Expanded Trucazo and network teams | Remaining Major modifiers, Magic Senses, wagers/consequences and casual/ranked/team modes up to 4v4, on Tarot and multiplayer authority. Preserve the accepted NPC slice. |
 | **V5.15** | Dynamic sieges and world consequences | Battle director, reinforcements/tactics/commanders, machines/barricades/sabotage, alternative routes and permanent city/faction/travel consequences. Depends on physics, calendar/world, quests/factions and group AI; network behavior uses V5.12 contracts. |
 | **V5.16** | Campaign and world expansion | Authored chapters, maps, encounters, memories/revelations and complete card-acquisition content toward the existing 78-card/at-least-78-map target. Integrate geographic/biome/travel/faction systems without rewriting canon or making that target a condition for every earlier playtest. |
-| **V5.17** | Art, audio and presentation completion | Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. |
+| **V5.17** | Art, audio and presentation completion | Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. Complete and polish furniture, character sprite and NPC clothing models introduced in V5.6/V5.8/V5.9; initial assets accompany their corresponding content. |
 | **V5.18** | Independent distribution and release validation | Complete removal of distributable Doom dependencies, provenance/licenses/own packaging, clean installation/startup and integrated campaign/save/game-mode checks. Version numbering alone does not certify standalone readiness or complete content. |
 
 Cross-cutting work (save migration, bilingual UI, performance checks, required
@@ -4634,37 +4634,12 @@ slice may be implemented earlier through a focused issue without moving an entir
 milestone or reopening accepted releases. Unapproved balance/canon remains an
 author decision; this numbering assigns sequence, not new mechanics.
 
-### Prologue content and NPC performance additions — author approval 2026-10-14
-
-Planning task: #276. This supplements the numbered sequence without changing
-the current runtime release or reopening accepted systems.
-
-| Area | Target | Explicit scope |
-| --- | --- | --- |
-| Furniture | V5.8; visual completion V5.17 | Expand usable furniture, storage and furnishing of homes/shelters. Decorative assets may accompany the map that needs them. Preserve accepted seating, meals and rest. |
-| Character sprite variety | V5.9; expansion/completion V5.17 | Add inhabitants and quest-character appearances using V5.2 modular identity and reusable animations. Deliver the initial variety with prologue social content. |
-| NPC clothing variety | V5.6 and V5.9; visual completion V5.17 | V5.6 owns garments that are equippable, craftable or tradeable; V5.9 adds authored wardrobes distinguishing inhabitants, professions and factions. |
-| Third campaign map social/story content | V5.9 | Expand Barracas al Sud (runtime MAP06): conversations, recognition of the protagonist as captain, rescued prisoners, rumors, siege preparation and aftermath dialogue. Preserve established secrecy and canon. Dynamic siege expansion stays V5.15. |
-| NPC subsystem performance audit | V5.11 | Measure individual subsystem costs in comparable active siege scenarios, identify dispensable NPC simulation work, then implement measured improvements through focused issues. NPC thermal simulation is a candidate, not a proven bottleneck. |
-
-Compare full NPC thermal simulation, reduced-frequency updates and a simplified
-model before choosing a production policy. Controlled diagnostic disabling may
-measure cost; it does not authorize permanent removal or changes to fire,
-cold-response or demon behavior. Record performance and gameplay consequences.
-Preserve individual combat/resources/collision and #128's standing policy unless
-the author explicitly approves a concrete change.
-
-V5.11 retains formations, leaders, local offsets, dynamic membership, shared
-memory, companions, and measured targeting/movement/contact/controller/renderer
-work. The subsystem audit belongs to V5.11. Active-population evidence remains required.
-
-Author clarification (2026-10-14): all version blocks remain important and the
-existing numbered order is unchanged. Add the missing content at the targets
-above; do not advance V5.11 work into V5.3.x or prioritize selected milestones
-over the sequence. V5.17 remains the broader visual completion/polish pass.
-These are planning targets, not completed features or a beta-readiness claim.
-Next steps follow the existing sequence through focused implementation issues;
-this documentation-only correction requires no gameplay test.
+Author additions and clarification (2026-10-14, #276): furniture, character
+sprites, NPC clothing, third-map social/story content and the NPC subsystem
+audit are integrated in their version rows above. All blocks retain their
+existing order and importance; no V5.11 work is advanced into V5.3.x. Dynamic
+siege expansion remains V5.15. These are planning targets, not completed
+features or a beta-readiness claim; implementation follows focused issues.
 
 ### V5 native menus, character setup and exploration — approved 2026-10-05
 
