@@ -16,7 +16,9 @@ spoken directions available as text.
 The audit found legacy lesson updates activating slot 0 before Palomo and exposing
 future objective flags. #235 corrects only the read-only visibility adapter to
 follow the documented start/stage contract; original progress remains stored.
-Evidence: assets/validation_538. CA235-01 author usability checks are available;
+Evidence: assets/validation_538. CA235-01's four presented tracking/navigation,
+save/load and terminal-history steps passed author review on 2026-10-14; its
+remaining presentation and compatibility checks stay pending.
 #233/#234 and the remaining #258 checks stay pending. Next separate patch: #236.
 
 ## 5.3.7 - Existing-map exploration catalogue (#234)

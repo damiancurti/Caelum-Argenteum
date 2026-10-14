@@ -1,14 +1,20 @@
 # Issue #235 - Multiple tracked missions
 
 Version 5.3.8, 2026-10-14. Baseline fc947471 (#234), branch
-`feat/issue235-quest-tracking`. CA235-01 author usability acceptance remains pending.
+`feat/issue235-quest-tracking`. CA235-01 author usability acceptance is partial.
 No new manual session was launched during the author's absence. After return,
 Probar235 session `author-20261014-080756` opened on 2026-10-14 with runtime SHA-256
 `15ff167152e296fc701213ea1d2f49da9518d2a1c2e8fa4cf4bdf90322b87a97` and copied
 diagnostic save SHA-256 `20823e86a2b16748a002116d32e62bb563e67f4ea071b4571d6a73ef06df1c4a`.
 Startup succeeded. This reuses the tested mission fixture, whose MAP01 tracking
 paths are unaffected by #234's subsequent gate artwork/factory corrections.
-It does not retest those city changes or imply author acceptance.
+It does not retest those city changes. On 2026-10-14 the author confirmed all four
+presented steps passed: independent T/button tracking and held-key latch; several
+map selections with independent removal; filters/detail/Back and saved choices;
+terminal objectives leaving the map while remaining in history. The final run
+exit code was not captured, so no exit-code success is claimed. Remaining
+presentation, knowledge, note/reward and detailed terminal-text checks stay in
+CA235-01; physical acceptance is separate from the native matrix below.
 
 Static validation and normal packaging passed. Thirteen native runs passed
 114 assertions; 18 save comparisons and 19 inspected captures are recorded.

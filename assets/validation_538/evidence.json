@@ -776,7 +776,7 @@
   "reuse": "Checked member differences cover the known practice-room association, the zero-row cartouche-fit fallback, a null guard in menu latch cleanup, a saved-field comment and trailing LANGUAGE whitespace with regenerated indexes. LANGUAGE equality after rstrip is asserted. Stage, large-scale, navigation and final reload cases exercise affected paths. Positive-budget cases do not enter the fallback; stored quest/runtime logic remains unchanged.",
   "author_acceptance": {
     "id": "CA235-01",
-    "status": "deferred until author returns"
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
   },
   "limits": [
     "Diagnostic positioning and direct native UI action dispatch are not physical author acceptance.",

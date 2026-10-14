@@ -64,8 +64,10 @@ stage constants. No underlying quest setter/controller is changed in #235.
 Static/build checks and 114 native assertions passed across 13 runs, with
 18 save comparisons and 19 inspected captures. Evidence is recorded in
 assets/validation_538; native diagnostic state setup is
-distinct from ordinary campaign progression and author acceptance. CA235-01 is
-available in Probar235 after the author's return; acceptance remains pending.
+distinct from ordinary campaign progression and author acceptance. On 2026-10-14
+the author accepted CA235-01's four presented tracking/navigation/save-load/history
+steps. Remaining presentation, knowledge, note/reward and detailed terminal-text
+checks remain in pending_test.txt.
 #236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)
