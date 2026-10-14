@@ -17,8 +17,13 @@ edited the existing owned closed padlock; source/runtime preserve the generated
 `assets/manifests/map_grate_unlocked_537.json`. Only the observed-open texture
 path and its new PNG differ from the earlier icon-routing fix. Native flow and
 reload passed **43 assertions**, **2 save comparisons** and **3 inspected captures**,
-recorded separately in `unlocked_evidence.json`. The new artwork remains pending
-author acceptance. Reproduce on this #234 branch with
+recorded separately in `unlocked_evidence.json`. The author accepted the three
+focused handoff steps on 2026-10-14: denied use/closed padlock, F8/key then successful
+use/open padlock, and native save/load persistence. Session
+`author-20261014-073046` used runtime SHA-256
+`0b7072e6d6a6468d9b24e1b156ad5af01b11d0e3a4835b6437d8f43ea24b76ec`
+and exited with code 0. Diagnostic positioning does not certify ordinary sewer
+traversal/secrecy or other unconfirmed CA234-01 cases. Reproduce on this #234 branch with
 `marker_prepare.py --open-padlock`, the recorded `run_native.ps1 -WorkDirectory
 build/issue234-open-padlock` runs, normal build and
 `marker_collect.py --open-padlock`. `unlocked_handoff.ps1` opens Probar234Candado.
@@ -53,7 +58,8 @@ Reproduce with `python assets/validation_537/marker_prepare.py`, then the record
 `python assets/validation_537/marker_collect.py`. The focused author retest uses
 `marker_handoff.ps1`: diagnostic grate positioning, F8 for its key, native Use,
 map inspection and save/load. This is not ordinary traversal/secrecy acceptance.
-CA234-01 remains pending that visual retest and its other unconfirmed cases.
+That initial hand-symbol retest is superseded by the accepted open-padlock test
+above. CA234-01 retains ordinary exploration and its other unconfirmed cases.
 
 Static validation and normal packaging passed. Sixteen native GZDoom 4.14.2
 runs passed 151 assertions, with 16 save comparisons and 12 inspected captures.

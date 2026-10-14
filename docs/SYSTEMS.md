@@ -173,8 +173,9 @@ correct open label. The derived icon now follows ObservedAccess; 43 focused
 native assertions passed after reproducing the original visual mismatch.
 The author confirmed that the icon changed, but expected an open padlock instead
 of the initially reused Use hand. The dedicated artwork passed another 43 native
-assertions and two save comparisons. Its visual retest, city and remaining
-compatibility checks stay pending.
+assertions and two save comparisons. On 2026-10-14 the author accepted the focused
+closed/open-padlock test and save/load. Ordinary sewer exploration, city and
+remaining compatibility checks stay pending.
 Preserve original saves/packages; #235/#236 remain separate patches.
 
 ## 5.3.6 - Personal manual map notes (#233)

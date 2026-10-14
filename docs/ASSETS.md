@@ -36,8 +36,8 @@ without resampling or a generator. Existing native ICON_SIZE controls placement.
 The prompt, reference/output hashes and method are recorded in
 `assets/manifests/map_grate_unlocked_537.json`. No font, third-party asset, game
 actor, closed-padlock replacement or change to the Use/exit hand is introduced.
-Native closed/open/reloaded captures are in assets/validation_537; author visual
-acceptance of the new artwork remains pending. Bilingual names remain in LANGUAGE
+Native closed/open/reloaded captures are in assets/validation_537. The author
+accepted the new artwork and save/load on 2026-10-14. Bilingual names remain in LANGUAGE
 and its localization index. Test packages/saves remain local.
 
 ## 5.3.6 - Manual note presentation (#233)
