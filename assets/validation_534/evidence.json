@@ -832,7 +832,10 @@
   "author_acceptance": {
     "id": "CA231-01",
     "origin_version": "5.3.4",
-    "result": "pending"
+    "result": "passed",
+    "confirmation_date": "2026-10-13",
+    "confirmation_quote": "Dieron bien las pruebas del mapa.",
+    "qualifications": "No exceptions reported; no additional physical-controller coverage inferred."
   },
   "limits": [
     "Native commands are scripted; physical keyboard/controller and nested settings input remain pending after the Computer Use Escape interruption.",

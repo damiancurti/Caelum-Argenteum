@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.4** — 2026-10-13.
 
-**#231/5.3.4:** cartography; CA231-01 pending.
+**#231/5.3.4 accepted:** cartography; CA231-01 passed 2026-10-13.
 **#258/5.3.3:** zero-Sleep/standing accepted; remaining CA258-01 pending.
 **#255-257 accepted.** Evidence: validation_530-534. Remaining #232-236: TASKS.
 

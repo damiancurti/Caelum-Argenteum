@@ -46,9 +46,10 @@ the initial overview can be small; zoom/pan remain under user control. This
 patch does not invent a floor-selection or automatic-zoom policy. Readability
 of the retained projection remains an explicit author check.
 
-Evidence and exact limitations: assets/validation_534/RESULTS.md. CA231-01 is
-pending; no physical-keyboard/controller or author acceptance is inferred from
-renderer captures, scripted native commands or static validation.
+Evidence and exact limitations: assets/validation_534/RESULTS.md. CA231-01
+passed author acceptance on 2026-10-13. Renderer captures, scripted native
+commands and static validation remain separate evidence; no unreported
+physical-controller testing is inferred.
 
 ## 5.3.3 - Involuntary exhaustion sleep (#258)
 

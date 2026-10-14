@@ -11,7 +11,7 @@ colors live in `CaelumCartographyLayout.zs`. They are source data, not generated
 images. GZDoom draws the existing map geometry, player arrow and numbered marks.
 Native palette opt-out and texture preferences remain intact. Agent-generated
 renderer captures and reproducible fixtures: assets/validation_534; author
-visual acceptance is pending CA231-01.
+visual acceptance passed CA231-01 on 2026-10-13.
 
 ## 5.3.1 - Survival and Character presentation (#256)
 

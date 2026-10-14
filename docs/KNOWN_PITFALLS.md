@@ -31,7 +31,8 @@ bound the cartouche position without rewriting preferences. The final large
 ultrawide capture verifies separated labels; transient native console notices
 still own their native drawing and lifetime. Regression evidence:
 assets/validation_534/RESULTS.md and its final captures/manifest. Ordinary
-keyboard/controller checks and author visual acceptance remain CA231-01.
+input and visual acceptance passed CA231-01 on 2026-10-13 after the author
+returned. Physical-controller coverage was not separately reported.
 
 ## CA-KP-091 - Native menu actions need visible feedback inside the menu
 

@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 native local cartography with paper/ink colors, location, local time and current
 control hints. Native exploration/settings remain authoritative; mansion floor
 overlap remains explicit. [Evidence](assets/validation_534/RESULTS.md).
-**CA231-01 awaits ordinary-input and author visual checks.**
+**CA231-01 passed author acceptance on 2026-10-13.**
 
 5.3.3 implements [#258](https://github.com/damiancurti/Caelum-Argenteum/issues/258):
 zero Sleep makes the character lie down in place, including in air/water.

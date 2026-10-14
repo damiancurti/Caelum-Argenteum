@@ -54,11 +54,13 @@ Source audit: g4.14.2 commit `99aa489d09015a95bb78df2b30ede29f328cc874`,
 `src/am_map.cpp`, `src/am_map.h` and `src/g_mapinfo.cpp`; support inventory
 and limits are in SYSTEMS and CA-KP-092.
 
-**Pending CA231-01:** ordinary keyboard/controller input, nested native
-settings, floor readability and author acceptance. Computer Use reported a
-physical Escape interruption before window selection during #258; no further
-app input was sent. The author is away. Scripted native commands and engine
-screenshots do not stand in for these checks. The minimized issue-specific
-terminal offers `Probar231`, `Probar231 MAP02` and `Probar231 MAP06`, using
-the frozen 5.3.4 package and an isolated INI. F6/F7/F8 select actual mansion
-floor anchors only in this fixture; F9 records state and F10 closes the test.
+**CA231-01 passed author acceptance on 2026-10-13:** "Dieron bien las pruebas
+del mapa." No exceptions were reported. The author returned after the earlier
+Computer Use Escape interruption and tested the frozen 5.3.4 package with an
+isolated INI. The retained `author-return-20261013-225540` log records native
+map controls and all three authored floor anchors. This is separate from the
+scripted 14-run matrix; no unreported physical-controller coverage is claimed.
+The confirmed check was removed from pending_test.txt and recorded in HISTORY.
+The minimized terminal retains `Probar231`, `Probar231 MAP02` and `Probar231
+MAP06`; F6/F7/F8 select mansion floors only in the fixture, F9 records state
+and F10 closes it. No runtime behavior or release number changed on acceptance.

@@ -7,20 +7,3 @@ fixture, or an initialized living character. Keep original saves unchanged.
    while locked, pause/resume and inspect camera/controls after recovery.
 Expected: no relocation, duplicate portions, early exit, immunity, fake bed
 bonus or MAP02 ground acceleration permission. Report any partial/failing step.
-
-CA231-01 | Origin: 5.3.4 / #231 | Status: pending author acceptance
-Prerequisites: issue231 build, GZDoom 4.14.2, copies of existing saves. Use
-Probar231 in the issue-specific terminal when available; keep your normal INI.
-1. Open/close the map with your real binding. Test zoom, follow, free pan,
-   rotation, overlay/full-screen options, numbered marks and unbound/remapped
-   actions. Expect native behavior and no reassignment of marking or M.
-2. Inspect MAP01 at ground/first/second storeys and MAP02 corridors. Judge
-   paper/ink legibility, retained floor overlap, zoom and linework. No floor
-   picker is claimed. Compare known versus unexplored areas before/after use.
-3. Check English/Spanish, 4:3/16:9/ultrawide and small/large UI/message scales:
-   location/time/control text, resources and survival warnings remain legible.
-4. Save/load marks and exploration, travel through an allowed hub route, and
-   compare MAP06 opening/navigation/overlay responsiveness with your usual view.
-Expected: native discovery/settings/marks persist; no hidden-content reveal,
-unwanted world/menu action, false objective, crosshair regression or unreadable
-overlap. Report partial checks and any desired floor-policy change explicitly.

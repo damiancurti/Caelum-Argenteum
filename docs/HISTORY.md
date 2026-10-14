@@ -11,8 +11,11 @@ cartouche reserves existing survival-warning space; HUD resources remain.
 Audited g4.14.2's native two-dimensional line projection, ten numbered marks,
 saved zoom/bounds and 3D-floor texturing. No floor picker or automatic zoom was
 invented; overlapping mansion floors remain an explicit acceptance limitation.
-Evidence: assets/validation_534/RESULTS.md. CA231-01 is pending; renderer captures
-and scripted checks are not author acceptance or physical-input coverage.
+Evidence: assets/validation_534/RESULTS.md. CA231-01 (origin 5.3.4 / #231)
+passed author acceptance on 2026-10-13: "Dieron bien las pruebas del mapa."
+No exceptions were reported. The confirmed entry was removed from
+pending_test.txt; technical renderer evidence remains separate from this
+author pass. No additional physical-controller coverage is inferred.
 Final native evidence: 14 runs / 65 assertions, 11 exact save comparisons and
 14 inspected captures; validator errors=[], normal build 16,058 files. The
 large-ultrawide header overlap was fixed using the actual resource-label edge.
