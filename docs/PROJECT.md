@@ -16,7 +16,8 @@ The native component matrix covers nine weapon families and unarmed. Dedicated
 male cast palms correctly extract the last row of existing owned atlases, leaving
 accepted weapon artwork untouched. Female/gloved hands retain their existing
 sources. Evidence and remaining scope: assets/validation_544. #238 stays open and
-its PR remains a draft; author checks are deferred while the author is away.
+its PR remains a draft. The author has returned and confirmed shared attribute
+ownership, whole-factor scaling and full-cost admission; implementation continues.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

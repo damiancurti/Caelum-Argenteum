@@ -15,11 +15,14 @@ that fixture; its production effects/toggle remain pending.
 
 Continue with payment/release/cancellation and native input,
 revised Sleep HP-based wake/final-damage integration and full save/hub tests.
-The author is away; defer questions on initial/partial insufficient Anima,
-cost snapshot versus changing modifiers, death/control/UI/weapon-change policies,
-simultaneous power inputs, Sleep relationship/expiry/body-pose handling and exact
-social scaling/composition. The confirmed three-hit count must never scale.
-Do not invent those decisions or count component-only tests as an ability pass.
+The author returned and confirmed: existing Eloquence scaling for radius/cost,
+Charisma for harmful-effect power/duration, Empathy for beneficial-effect/healing
+power/duration; whole-factor multiplication; full modified Anima cost required
+at admission with progressive payment. SYSTEMS records the exact shared curves.
+The three-hit count never scales and preparation stays three seconds.
+Resolve remaining cost snapshot/changing-modifier, forced-control/input and Sleep
+relationship/expiry/body-pose details where existing rules do not determine them.
+Do not re-ask confirmed decisions or count component-only tests as an ability pass.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 
