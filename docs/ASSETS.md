@@ -15,10 +15,21 @@ output, and a changed mansion checksum requires reviewing its room data before
 regeneration. Service coordinates come from the actual
 interacted actors, never a second coordinate table.
 Rooms reuse the owned Journal reputation emblem, towers the shields-category
-icon and grates the locked-action icon. Manual notes retain their separate
-paper icon; service symbols remain #232's. No new bitmap, font, third-party
-asset, provenance change or game actor is introduced. Bilingual names are in
-LANGUAGE and its regenerated localization index. Test packages/saves remain local.
+icon and closed/unknown grates the locked-action icon. Manual notes retain their
+paper icon; other service symbols remain #232's. The initial access-state fix
+used the existing Use hand for open grates. On 2026-10-14 the author confirmed
+that it changed but clarified the expected symbol: an open padlock.
+Built-in imagegen edited the project-owned closed padlock into the original
+transparent counterpart at `graphics/caelum/ui/journal/icons/ca_ui_action_unlocked.png`.
+The 1254x1254 RGBA output was copied byte-for-byte to runtime and
+`assets/art_source/ca_ui_action_unlocked_537.png`; alpha and source are preserved,
+without resampling or a generator. Existing native ICON_SIZE controls placement.
+The prompt, reference/output hashes and method are recorded in
+`assets/manifests/map_grate_unlocked_537.json`. No font, third-party asset, game
+actor, closed-padlock replacement or change to the Use/exit hand is introduced.
+Native closed/open/reloaded captures are in assets/validation_537; author visual
+acceptance of the new artwork remains pending. Bilingual names remain in LANGUAGE
+and its localization index. Test packages/saves remain local.
 
 ## 5.3.6 - Manual note presentation (#233)
 

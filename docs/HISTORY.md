@@ -39,6 +39,16 @@ state changes without reobservation. Save comparisons retain the recorded facts.
 The initial new diagnostic had a UI/play Check scope compile error; corrected
 before these runs, with its failed log retained. This correction stays in the
 same #234 patch/version. Author visual retest remains pending.
+In the next CA234-01 reply on 2026-10-14 the author explicitly confirmed that the
+icon now changed, but expected an open padlock rather than the reused Use hand.
+Only that observed change is accepted; the full sewer/save-load procedure was
+not confirmed. Built-in imagegen produced a dedicated transparent open padlock
+from the existing closed icon, retained with prompt/hashes in the asset manifest.
+The shared presentation lookup now selects that artwork for the same saved open
+state. No other symbol or gameplay rule changed. Native flow/reload passed another
+43 assertions and two save comparisons, with three inspected captures. The
+earlier hand-symbol runs remain separate evidence. New artwork acceptance and
+the other CA234-01 cases remain pending.
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
