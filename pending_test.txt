@@ -34,9 +34,9 @@ Sewers or City. Use copies of saves and ordinary exploration without reveal chea
 Expected: locations/names match explored content, no duplicate or premature
 markers, access unchanged, no sector warning without an authored knowledge rule.
 CA235-01 | Origin 5.3.8 / issue #235 | Multiple mission tracking
-Status: deferred until the author returns; no author acceptance inferred.
+Status: author session available; acceptance pending.
 Prerequisites: use the isolated 5.3.8 build and a copy of c235-tracked.zds.
-Run assets/validation_538/handoff.ps1 after returning. This diagnostic save
+Run assets/validation_538/handoff.ps1 to repeat. This diagnostic save
 prepares three known active missions and one visited mansion room; it is not
 normal campaign progression. Preserve original saves and earlier test packages.
 1. Open Journal > Missions. Use T and the Track/Untrack button independently

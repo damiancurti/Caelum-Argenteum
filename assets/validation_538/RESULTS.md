@@ -1,8 +1,14 @@
 # Issue #235 - Multiple tracked missions
 
 Version 5.3.8, 2026-10-14. Baseline fc947471 (#234), branch
-`feat/issue235-quest-tracking`. CA235-01 author usability acceptance is deferred
-until return. No new manual session was launched during the author's absence.
+`feat/issue235-quest-tracking`. CA235-01 author usability acceptance remains pending.
+No new manual session was launched during the author's absence. After return,
+Probar235 session `author-20261014-080756` opened on 2026-10-14 with runtime SHA-256
+`15ff167152e296fc701213ea1d2f49da9518d2a1c2e8fa4cf4bdf90322b87a97` and copied
+diagnostic save SHA-256 `20823e86a2b16748a002116d32e62bb563e67f4ea071b4571d6a73ef06df1c4a`.
+Startup succeeded. This reuses the tested mission fixture, whose MAP01 tracking
+paths are unaffected by #234's subsequent gate artwork/factory corrections.
+It does not retest those city changes or imply author acceptance.
 
 Static validation and normal packaging passed. Thirteen native runs passed
 114 assertions; 18 save comparisons and 19 inspected captures are recorded.
@@ -58,4 +64,4 @@ Static commands: `python build_dialogue_index.py build`,
 `powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1`.
 Normal packaging is compared member-for-member with the frozen tested runtime.
 Local generated packages, engine/IWAD and original saves remain untracked.
-`handoff.ps1` prepares Probar235 for the author's return; it is not auto-launched.
+`handoff.ps1` opens Probar235; the terminal stays available to repeat the author test.

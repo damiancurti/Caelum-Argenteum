@@ -14,7 +14,8 @@ track several active missions independently from Journal > Missions with T or
 the Track button. The map reuses their current objectives and personally known
 places; unknown positions and other maps remain textual. Completed history,
 rescue payments and quest progression remain authoritative. Author usability
-check CA235-01 is deferred during the absence. [Evidence](assets/validation_538/RESULTS.md).
+check CA235-01 is available in the Probar235 terminal; acceptance remains pending.
+[Evidence](assets/validation_538/RESULTS.md).
 
 5.3.7 implements [#234](https://github.com/damiancurti/Caelum-Argenteum/issues/234):
 authored mansion rooms/services, observed sewer grates and the fortified city's

@@ -8,13 +8,15 @@ Implemented independent saved selections, native Journal action, shared objectiv
 text, known-place associations and bounded map rows. Terminal/history/filter
 semantics remain intact. The read-only catalogue hides premature legacy lesson
 flags before their documented stages; underlying quest progress is untouched.
-Validation evidence: assets/validation_538. CA235-01 is deferred while the author
-is away; retain all earlier outstanding author IDs. Next separate patch: #236.
+Validation evidence: assets/validation_538. The author returned; CA235-01's
+Probar235 session was opened on 2026-10-14, with acceptance pending. Retain all
+earlier outstanding author IDs. Next separate patch: #236.
 
 Future decision inventory, not implemented as guessed waypoints: precise NPC
 disclosure events and positions for the refuge, moving companions, rune/secret
 content and battle targets. Current tracking uses authored directions as text
-and already-observed POIs only. Questions wait for the author's return.
+and already-observed POIs only. Future author decisions are required before
+adding these disclosures; they are outside this completed implementation.
 
 ## 5.3.7 - Existing-map exploration (#234)
 

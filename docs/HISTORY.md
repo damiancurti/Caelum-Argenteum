@@ -19,8 +19,14 @@ Static/build checks passed; 13 native runs passed 114 assertions, with 18 save
 comparisons and 19 inspected captures. Large-scale cartography reserves its
 tracked-count notice above the bars without changing preferences.
 Evidence: assets/validation_538. CA235-01 remains pending author usability
-acceptance. The author is away; questions and manual tests are deferred.
-The requested temporary keep-awake remains active until return.
+acceptance. At the initial delivery the author was away, so questions/manual
+tests were deferred and temporary keep-awake was active until return.
+On 2026-10-14 the returned author resumed checks; keep-awake had been released.
+After the focused #234 city retest passed, CA235-01 session
+author-20261014-080756 was opened through Probar235 using the existing frozen
+5.3.8 runtime and a copy of c235-tracked.zds. Three active tracked missions and
+one known mansion room are diagnostic preparation, not campaign progression.
+Startup passed; no author acceptance is inferred from opening the session.
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 

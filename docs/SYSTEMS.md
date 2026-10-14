@@ -65,7 +65,8 @@ Static/build checks and 114 native assertions passed across 13 runs, with
 18 save comparisons and 19 inspected captures. Evidence is recorded in
 assets/validation_538; native diagnostic state setup is
 distinct from ordinary campaign progression and author acceptance. CA235-01 is
-deferred until the author returns. #236 remains a separate navigation patch.
+available in Probar235 after the author's return; acceptance remains pending.
+#236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)
 
