@@ -2,10 +2,9 @@
 
 Documentation version: **5.3.7** — 2026-10-14.
 
-**#234/5.3.7:** city fixes, mansion/sewer padlocks accepted; remaining checks pending.
-**#233:** editing accepted; remaining CA233-01 checks pending.
-**#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
-**#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
+**#233 accepted; #234 accepted.**
+**#231/232 accepted; #255-258 accepted.** CA258-01 completed 2026-10-14.
+Evidence and individual acceptance records: HISTORY; pending checks: pending_test.txt.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

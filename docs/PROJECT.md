@@ -16,7 +16,7 @@ the mansion and sewer-padlock checks, then reported city gate icons and missing
 factory stations. The city corrections add observed gate padlocks and individual
 bindings for all 96 existing factory stations; 92 native assertions and five save
 comparisons pass. The author accepted the focused city retest and save/load on
-2026-10-14; ordinary exploration and remaining CA234-01 checks stay pending.
+2026-10-14; CA234-01 passed full author acceptance on 2026-10-14.
 Evidence: assets/validation_537. Next: #235 multi-mission tracking and
 #236 Journal navigation, with separate commits, branches, tests and linked PRs.
 Manual-note effects/predefined notes discussed on 2026-10-14 are possibilities,
@@ -29,7 +29,7 @@ six manual categories and independent revisioned per-character/map storage.
 Stable identities and serial checks protect edit/delete/cancel and repeated
 input. Native numbered marks, discoveries, quests and travel remain independent.
 GZDoom compilation and native editing, persistence and presentation checks
-passed. CA233-01 is pending author editing acceptance. Evidence: assets/validation_536.
+passed. CA233-01 passed full author acceptance on 2026-10-14. Evidence: assets/validation_536.
 Next: #234 authored registrations, #235 simultaneous tracked missions, #236
 Journal navigation; separate branches, commits, validation and linked PRs.
 
@@ -51,8 +51,7 @@ late-bound native control hints and a conditional objective integration point.
 Discovery, navigation, marks, saves and user preferences stay engine-owned.
 Mansion linework still projects overlapping storeys: no floor picker or new
 auto-zoom policy is claimed. Evidence: assets/validation_534/RESULTS.md.
-CA231-01 passed author acceptance on 2026-10-13. CA258-01 retains its remaining
-checks. #232–#236 remain separate issues, branches, tests and PRs.
+CA231-01 passed author acceptance on 2026-10-13. CA258-01 passed full author acceptance on 2026-10-14. #232–#236 remain separate issues, branches, tests and PRs.
 
 ## 5.3.3 - Exhaustion sleep (#258)
 
@@ -60,8 +59,7 @@ Zero Sleep now produces immediate lying at the current location, including
 air/water, with ordinary physics and hazards. Standing remains unavailable
 until Sleep exceeds 10%. Real support, shared recovery/provisions and
 revisioned save/hub state preserve existing resources and acceleration rules.
-Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance;
-the author is away and has not tested this patch. #231-#236 remain separate.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 passed full author acceptance on 2026-10-14. #231-#236 remain separate.
 
 ## 5.3.2 - Automatic provisions (#257)
 

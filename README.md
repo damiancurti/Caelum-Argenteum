@@ -22,15 +22,13 @@ Further city feedback exposed generic gate icons and missing factory stations.
 City gates now remember access on use and share the padlocks; all 96 existing
 factory stations gain individual identities and appear only after interaction.
 The author accepted the focused city gate/station retest and save/load on 2026-10-14.
-Ordinary sewer exploration, city and remaining compatibility checks stay pending.
+CA234-01 passed full author acceptance on 2026-10-14.
 [Evidence](assets/validation_537/RESULTS.md).
 
 5.3.6 implements [#233](https://github.com/damiancurti/Caelum-Argenteum/issues/233):
 manual named/category notes at the native map center, edited through a native
 list and text-entry menu. Notes remain separate from discoveries and numbered
-marks. [Evidence](assets/validation_536/RESULTS.md). CA233-01's five editing
-handoff steps passed author review on 2026-10-14; remaining input/map-mode
-compatibility checks stay pending.
+marks. [Evidence](assets/validation_536/RESULTS.md). CA233-01 passed full author acceptance on 2026-10-14.
 
 5.3.5 implements [#232](https://github.com/damiancurti/Caelum-Argenteum/issues/232):
 personal knowledge of registered beds, stations, merchants, exits and transport,
@@ -48,8 +46,7 @@ overlap remains explicit. [Evidence](assets/validation_534/RESULTS.md).
 5.3.3 implements [#258](https://github.com/damiancurti/Caelum-Argenteum/issues/258):
 zero Sleep makes the character lie down in place, including in air/water.
 Standing unlocks only above 10%; normal recovery, support and hazards remain.
-[Evidence](assets/validation_533/RESULTS.md). **Zero-Sleep/standing controls accepted
-on 2026-10-13; remaining CA258-01 author checks are pending.**
+[Evidence](assets/validation_533/RESULTS.md). **CA258-01 passed full author acceptance on 2026-10-14.**
 
 5.3.2 implements [#257](https://github.com/damiancurti/Caelum-Argenteum/issues/257):
 food and water start below 50%, or fill toward 100% while seated/lying.

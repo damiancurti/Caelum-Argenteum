@@ -395,6 +395,9 @@
     "city-native-denied-01-city-closed.png",
     "city-open-view-01-city-open.png"
   ],
-  "author_acceptance": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.",
+  "author_acceptance": {
+    "id": "CA234-01",
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
+  },
   "fixed_assertions": 92
 }
