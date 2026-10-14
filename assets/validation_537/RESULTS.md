@@ -1,7 +1,14 @@
 # Issue #234 - Authored exploration catalogue
 
 Version 5.3.7, 2026-10-14. Branch `feat/issue234-authored-cartography`,
-baseline `bdcae305` (#233). Author acceptance CA234-01 is deferred until return.
+baseline `bdcae305` (#233). CA234-01's mansion handoff passed author review on
+2026-10-14: labels after entering ground/first/second-floor rooms, beds/stations
+only after interaction, no unvisited/secret-room labels, and retaining discovered
+markers through save/load. The five presented steps ran in
+`author-20261014-064857` on final runtime SHA-256
+`8a15c589f40aae6b99708fcb20677f619ac503edc4c3918a8501125577bc67f9`;
+the engine exited with code 0. Sewer/city and remaining compatibility checks
+stay pending. Physical author acceptance is separate from the native matrix.
 
 Static validation and normal packaging passed. Sixteen native GZDoom 4.14.2
 runs passed 151 assertions, with 16 save comparisons and 12 inspected captures.
@@ -61,4 +68,5 @@ Commands: `python assets/generators/generate_cartography_catalogue.py --check`,
 `powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1`.
 `prepare.py` creates deterministic local fixtures; `run_native.ps1` records each
 isolated launch; `collect.py` checks/copies the evidence. `handoff.ps1` prepares
-Probar234 for author use later and is not auto-launched during the absence.
+Probar234 for author use. The mansion handoff was launched after the return;
+later sewer/city sessions use separate labels and preserve original evidence.
