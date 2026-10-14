@@ -10,7 +10,21 @@ markers through save/load. The five presented steps ran in
 the engine exited with code 0. Sewer/city and remaining compatibility checks
 stay pending. Physical author acceptance is separate from the native matrix.
 
-Open-grate icon correction (2026-10-14): the author reported and clarified an
+Final open-padlock artwork (2026-10-14): the author confirmed the icon now changed,
+but expected an open padlock rather than the interim Use hand. Built-in imagegen
+edited the existing owned closed padlock; source/runtime preserve the generated
+1254x1254 RGBA bytes and alpha. Prompt/reference/output hashes are in
+`assets/manifests/map_grate_unlocked_537.json`. Only the observed-open texture
+path and its new PNG differ from the earlier icon-routing fix. Native flow and
+reload passed **43 assertions**, **2 save comparisons** and **3 inspected captures**,
+recorded separately in `unlocked_evidence.json`. The new artwork remains pending
+author acceptance. Reproduce on this #234 branch with
+`marker_prepare.py --open-padlock`, the recorded `run_native.ps1 -WorkDirectory
+build/issue234-open-padlock` runs, normal build and
+`marker_collect.py --open-padlock`. `unlocked_handoff.ps1` opens Probar234Candado.
+The previous fixtures, packages, logs and hand-symbol evidence remain preserved.
+
+First open-grate icon correction (2026-10-14): the author reported and clarified an
 open label with an unchanged padlock. The original native matrix checked access
 facts/labels but missed this displayed-state mismatch. CaelumKnownPoiMarker now
 selects its texture using the saved observation: an observed-open grate uses the

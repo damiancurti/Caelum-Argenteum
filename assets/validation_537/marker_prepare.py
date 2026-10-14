@@ -9,19 +9,20 @@ from prepare import package
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-OUT = ROOT / 'build/issue234-marker-fix'
+OPEN_PADLOCK = '--open-padlock' in sys.argv
+OUT = ROOT / ('build/issue234-open-padlock' if OPEN_PADLOCK else 'build/issue234-marker-fix')
 running = subprocess.check_output(['powershell', '-NoProfile', '-Command',
-    "Get-CimInstance Win32_Process -Filter \"Name='gzdoom.exe'\" | Where-Object {$_.CommandLine -like '*build\\issue234-marker-fix\\*'} | Select-Object -ExpandProperty ProcessId"], text=True)
+    "Get-CimInstance Win32_Process -Filter \"Name='gzdoom.exe'\" | Where-Object {$_.CommandLine -like '*build\\"+OUT.name+"\\*'} | Select-Object -ExpandProperty ProcessId"], text=True)
 if running.strip():
     raise SystemExit('Finish the marker regression run before replacing its packages.')
 OUT.mkdir(exist_ok=True)
 baseline = OUT / 'baseline.pk3'
 if not baseline.exists():
-    shutil.copyfile(ROOT / 'build/issue234/production.pk3', baseline)
-sources = ['legacy', 'probe', 'marker']
+    shutil.copyfile(ROOT / ('build/issue234-marker-fix/production.pk3' if OPEN_PADLOCK else 'build/issue234/production.pk3'), baseline)
+sources = ['legacy', 'probe', 'unlocked' if OPEN_PADLOCK else 'marker']
 members = {f'checks/{name}.zs': (HERE / f'{name}.zs').read_bytes() for name in sources}
 members['ZSCRIPT'] = ('version "4.14"\n' + ''.join(f'#include "checks/{name}.zs"\n' for name in sources)).encode()
-members['MAPINFO'] = b'GameInfo { AddEventHandlers="CA234Legacy", "CA234Probe", "CA234Marker" }\n'
+members['MAPINFO'] = ('GameInfo { AddEventHandlers="CA234Legacy", "CA234Probe", "'+('CA234Unlocked' if OPEN_PADLOCK else 'CA234Marker')+'" }\n').encode()
 manifest = {'baseline': hashlib.sha256(baseline.read_bytes()).hexdigest(),
     'production': (hashlib.sha256((OUT / 'production.pk3').read_bytes()).hexdigest() if '--fixtures-only' in sys.argv
         else package(OUT / 'production.pk3', {p.relative_to(ROOT / 'src').as_posix(): p.read_bytes()
