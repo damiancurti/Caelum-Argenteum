@@ -1,0 +1,19 @@
+CA259-01 | Origin: 5.4.1 / issue #259 | Weapon dispersion and switching
+Prerequisites: use the isolated #259 session prepared by Codex, with the matching
+5.4.1 production package and session.pk3 (not an ordinary campaign save). The
+author is away; offer this check only after the author returns. Automated native
+checks already cover all numeric tier/threshold boundaries; this check is for
+physical input and visible behavior. F6/F7/F8 are fixture-only bindings.
+Steps:
+1. Fire the equipped staff at the distant training dummy or wall. F6 cycles
+   Lucidity 100%, 50%, 49.9%, 10%, 9.9%; F7 cycles equipment T1/T2/T3.
+2. Compare multiple shots at the same distance: lower Lucidity and higher weapon
+   tiers widen the spread. Attribute precision and crouching still narrow it.
+3. F8 cycles staff, book, statuette, bell, sword, carbine, shotgun, bow, crossbow.
+   Try their normal primary/secondary attacks; book projectiles still seek the
+   known target. The bell/shotgun T3 low-Lucidity spread stays capped.
+4. Confirm that changing weapons/tiers remains usable and no weapon gets stuck.
+Expected: the selected weapon/tier matches the test notice; dispersion changes
+as above, without an additional Lucidity accuracy divisor. Resources, ammo and
+low-Lucidity stun are held for this comparison only. No permanent test grants
+or debug bindings belong to ordinary gameplay. Report the ID and any failure.

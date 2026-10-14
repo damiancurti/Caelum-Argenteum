@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.0** — 2026-10-14.
+Documentation version: **5.4.1** — 2026-10-14.
 
 ## 5.3.9 - Exploration navigation and owned documents (#236)
 
@@ -1918,15 +1918,45 @@ gravity-then-move order. The existing angular dispersion is applied afterward.
 No solution retains the previous direct-shot policy. Collision and range limits
 remain native. This is a bounded launch calculation, not an every-tic AI solver;
 no mass-siege performance improvement is claimed by this issue.
-Dispersion categories become k–10k degrees for k=1..7, retaining assignments:
-book 1, longbow/statuette/magical staff 2, crossbow/dagger 5, ordinary melee 6,
-carbine/shotgun/bell and the existing maximum-category heavy weapons 7.
-Physical and magical precision use Type 3; crouch, aim and random sampling remain.
-Author decision 5.2.25/#222: the magical staff shares the statuette category,
-reducing its previous 4-40 degree per-axis base range to 2-20 across all tiers.
-At Insight 100, standing without impairments, this becomes 0.25-2.5 degrees.
-The book retains its existing guided trajectory. The utility staff is distinct
-and retains its existing physical statistics.
+### Weapon dispersion — 5.4.1 / #259
+
+Dispersion tier k gives a k–10k degree range, capped at k=7. The T1 bases are:
+
+| Weapon family | Base dispersion tier |
+| --- | --- |
+| Magical staff/wand, book, carbine, longbow, crossbow | 1 |
+| Statuette | 2 |
+| Melee weapons in the existing physical catalogue | 3 |
+| Bell, shotgun | 4 |
+| Existing single-tier pickaxe, utility staff and bolas | 6 (unchanged base) |
+
+`k = min(7, base + (weaponTier - 1) + lucidityPenalty)`.
+The penalty is 0 at Lucidity >=50%, 1 at >=10% and <50%, and 2 below 10%.
+Exactly 50% has no dispersion penalty; exactly 10% has only +1. Other Lucidity
+state/stun boundaries retain their existing inclusive comparisons. A single-tier
+tool always resolves weaponTier=1. Bolas retain the preparation interpolation
+between their effective maximum and minimum; utility fire/ice stream geometry
+is unchanged.
+
+Physical/magical Type-3 precision divides the selected angular range afterward.
+Crouch, ADS, running, elemental accuracy and each attack's existing sampling stay
+in place. Weapon attacks no longer halve precision for low Lucidity. Natural
+NPC claws, horns and unarmed attacks have no authored weapon category and retain
+their previous probability rule; no new weapon identity is inferred for them.
+The player's legacy LucidityAccuracyMultiplier field is recomputed to 1; no
+saved attributes, inventory or schema change. Tier and current Lucidity are read
+at release, so switching or loading cannot retain an obsolete spread cache.
+
+Player melee, javelin, all four physical ranged weapons and four magical weapons,
+resident weapon attacks/bolas, soldier sword/carbine and NPC staff/statuette
+launches use the shared rule. NPC weapon projectiles keep their native speed,
+target and elemental payload; dispersion changes their initial velocity only.
+The book retains acquisition along the original aim and its guided trajectory.
+For example, T3 staff at Insight 100 and Lucidity <10% uses 0.625–6.25 degrees;
+T3 bell/shotgun at that Lucidity reaches the cap, 7–70 degrees before accuracy.
+
+This supersedes #222's staff/statuette equality and the pre-#259 fixed assignments.
+Their historical values remain in HISTORY and the corresponding issue evidence.
 
 Muscular efficiency is `eta=min(0.99,0.25*M1((Agility+Dexterity)/2))`: average the
 attributes first. It is 25% at 0/0, 32.5% at 0/100 and 50% at 100/100. Positive
@@ -2069,13 +2099,11 @@ firearm muscular heat, rather than the generic melee Air-to-heat conversion,
 also applies. Mass (T1 12 kg), durability, critical chance, recipe components,
 material quantities and manufacturing complexity copy the corresponding carbine.
 
-Range is 30 m, half the carbine's 60 m. Both use **Maximum dispersion: 13–130°**
-before the shared accuracy, aim, crouch and movement adjustments. The author's
-final correction supersedes the intermediate double-dispersion approval.
-Dispersion categories are separate from T1/T2/T3 equipment tiers: maximums are
-10/30/50/70/90/110/130°, with minimums one tenth of maximums. Existing longbow
-code remains 3–30°; the historical 70° note in HISTORY is not a new balance
-change. Ranged tiers still affect damage/critical chance, not spread category.
+Range is 30 m, half the carbine's 60 m. Current spread follows the 5.4.1/#259
+weapon-dispersion contract above: shotgun base 4, carbine base 1, plus equipment
+tier and Lucidity. The original equal 13–130-degree assignment and later equal
+7–70-degree assignment are historical, superseded by #259. Damage, costs, range,
+penetration and critical rules are unchanged by this spread revision.
 
 | Weapon | Equipped armor bypass T1 / T2 / T3 |
 | --- | --- |

@@ -9822,10 +9822,10 @@ class CaelumPlayer : DoomPlayer
             EffectivePhysicalAccuracyPercent * movementAccuracyMultiplier
         );
         double minimumSpread = CaelumWeaponCatalogue.GetMinimumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         ) * 100.0 / accuracyPercent;
         double maximumSpread = CaelumWeaponCatalogue.GetMaximumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         ) * 100.0 / accuracyPercent;
         double spreadRoll = Random[CaelumJavelinSpread](0, 100000)
             / 100000.0;
@@ -10318,11 +10318,11 @@ class CaelumPlayer : DoomPlayer
                 * aimAccuracyMultiplier
         );
         LastCarbineMinimumSpread = CaelumWeaponCatalogue.GetMinimumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         )
             * 100.0 / LastCarbineAccuracyPercent;
         LastCarbineMaximumSpread = CaelumWeaponCatalogue.GetMaximumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         )
             * 100.0 / LastCarbineAccuracyPercent;
         double spreadRoll = Random[CaelumCarbineSpread](0, 100000) / 100000.0;
@@ -10566,9 +10566,9 @@ class CaelumPlayer : DoomPlayer
             1.0,
             EffectiveMagicalAccuracyPercent * CrouchAccuracyMultiplier
         );
-        double maximumAimError = WeaponModel.GetMaximumSpreadFor(activeMagicType)
+        double maximumAimError = WeaponModel.GetMaximumSpreadFor(activeMagicType, CurrentLucidity)
             * 100.0 / LastStaffAccuracyPercent;
-        double minimumAimError = WeaponModel.GetMinimumSpreadFor(activeMagicType)
+        double minimumAimError = WeaponModel.GetMinimumSpreadFor(activeMagicType, CurrentLucidity)
             * 100.0 / LastStaffAccuracyPercent;
         int staffYawRoll = Random[CaelumStaffAccuracyYaw](-100000, 100000);
         int staffPitchRoll = Random[CaelumStaffAccuracyPitch](-100000, 100000);
@@ -11800,10 +11800,10 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         double maximumAimError = CaelumWeaponCatalogue.GetMaximumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         ) * 100.0 / LastMeleeAccuracyPercent;
         double minimumAimError = CaelumWeaponCatalogue.GetMinimumSpread(
-            catalogueWeapon
+            catalogueWeapon, WeaponModel.Tier, CurrentLucidity
         ) * 100.0 / LastMeleeAccuracyPercent;
         int meleeYawRoll = Random[CaelumSwordAccuracyYaw](-100000, 100000);
         int meleePitchRoll = Random[CaelumSwordAccuracyPitch](-100000, 100000);

@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.0** — 2026-10-14.
+Documentation version: **5.4.1** — 2026-10-14.
 
-**5.4.0 / #237:** attribute audit; 160 native assertions; evidence: assets/validation_540.
-SYSTEMS separates real consumers from pending design. Next: #238 and the revised
-class designs recorded in their own issues. Gameplay is unchanged.
+**5.4.1 / #259:** weapon dispersion tiers/Lucidity; evidence: assets/validation_541.
+CA259-01 pending. #237 audit: assets/validation_540. Next: #238 shared abilities;
+latest author decisions are recorded in the individual GitHub issues.
 **Previous #231-236/#255-258:** accepted, merged and closed. HISTORY owns results;
-the author queue is empty.
+their author checks are complete; CA259-01 is the current outstanding check.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

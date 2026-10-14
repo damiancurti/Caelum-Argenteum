@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.0** — 2026-10-14.
+Documentation version: **5.4.1** — 2026-10-14.
+
+## 5.4.1 - Weapon dispersion tiers (#259)
+
+The shared dispersion rule now combines authored family base, equipment tier and
+Lucidity, with a tier-7 cap. Player and applicable NPC weapon consumers use it;
+Type-3 precision, posture, book guidance and utility stream geometry remain.
+No class/racial ability or saved schema change is part of this patch. Evidence:
+assets/validation_541. Author check CA259-01 remains pending; next is #238.
+
 
 ## 5.4.0 - Attribute implementation audit (#237)
 

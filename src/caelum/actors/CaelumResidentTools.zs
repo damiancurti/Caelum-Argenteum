@@ -210,10 +210,10 @@ class CaelumResidentTools : Object play
         CaelumThermalEffects.RecordWeaponAction(Owner,ActiveItem.ItemType,Secondary,Charged,false);
         Owner.EnsureCombatPersonality();Owner.UpdateCombatHealthEffects();Owner.UpdateActorOffensiveStatistics();
         int catalogue=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(ActiveItem.ItemType);
-        double accuracy=Max(1.0,Owner.CombatPhysicalAccuracyPercent*Owner.CombatLucidityAccuracyMultiplier
+        double accuracy=Max(1.0,Owner.CombatPhysicalAccuracyPercent
             *(Owner.ElementalStatus!=null ? Owner.ElementalStatus.GetAccuracyMultiplier() : 1));
-        double low=CaelumWeaponCatalogue.GetMinimumSpread(catalogue)*100/accuracy;
-        double high=CaelumWeaponCatalogue.GetMaximumSpread(catalogue)*100/accuracy;
+        double low=CaelumWeaponCatalogue.GetMinimumSpread(catalogue,ActiveItem.Tier,Owner.CurrentCombatLucidity)*100/accuracy;
+        double high=CaelumWeaponCatalogue.GetMaximumSpread(catalogue,ActiveItem.Tier,Owner.CurrentCombatLucidity)*100/accuracy;
         int yawRoll=Random[CaelumSwordAccuracyYaw](-100000,100000);
         int pitchRoll=Random[CaelumSwordAccuracyPitch](-100000,100000);
         double yaw=Owner.Angle+(yawRoll<0 ? -1 : 1)*(low+(high-low)*Abs(yawRoll)/100000.0);

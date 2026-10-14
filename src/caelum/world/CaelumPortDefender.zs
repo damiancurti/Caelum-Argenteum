@@ -258,7 +258,9 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_SWORD)))return;
         if(soldier.target==null || soldier.target.bFriendly)return;
         int damage=soldier.PrepareActorOutgoingDamage(CaelumWeaponCatalogue.GetPrimaryDamage(CaelumConstants.CATALOGUE_WEAPON_SWORD)
-            *soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false);
+            *soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false,true);
+        if(damage<=0 || !soldier.WeaponMeleeAimHits(soldier.Sword))
+        {soldier.PendingCombatCriticalDelivery=false;return;}
         int before=soldier.target.health;
         soldier.A_CustomMeleeAttack(damage,"weapons/swordhit");
         if(soldier.target.health<before)

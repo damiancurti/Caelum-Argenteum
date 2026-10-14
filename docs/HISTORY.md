@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.0** — 2026-10-14.
+Documentation version: **5.4.1** — 2026-10-14.
+
+## 5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)
+
+Replaced fixed weapon spread assignments with the author's base + equipment tier
++ Lucidity categories, capped at 7. Strict 50%/10% comparisons apply to dispersion
+only. Removed the additional Lucidity precision divisor from weapon attacks;
+NPC natural attacks keep their existing rule. Player melee/ranged/magic, resident
+weapons/bolas, soldier sword/carbine and NPC magical launches use actual tiers.
+Single-tier tools keep their old base; book homing, utility stream geometry,
+attribute/stance/elemental modifiers, damage, resources and other balance remain.
+No saved field or schema changed. Runtime release labels advance to 5.4.1.
+
+The final native contract passed 677 assertions. Earlier fixture revisions exposed
+a homing-check syntax error, omitted NPC initialization, inherited armor bonuses,
+an equipment-size ID mismatch and an overly strict one-tic Lucidity tolerance.
+These were isolated fixture defects; original packages/logs remain preserved.
+Old-to-new save loading, current reloading and rollback passed with actual equipped
+T3 inventory. Native weapon/tier cycling and a captured manual preview passed.
+Final-source native, save/load, validation and packaging evidence is recorded in
+assets/validation_541/RESULTS.md. CA259-01 is pending author confirmation; no manual
+acceptance, merge or issue closure is inferred. #238 remains the next focused task.
+
 
 ## 5.4.0 - Live attribute audit (#237, 2026-10-14)
 

@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.0.** Obtain and update the complete repository, validate
+**Current release: 5.4.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.1 implements [#259](https://github.com/damiancurti/Caelum-Argenteum/issues/259):
+weapon dispersion combines its base category, equipment tier and strict Lucidity
+thresholds, capped at category 7. Player and applicable NPC weapon attacks share
+the rule; book homing and existing attribute/stance modifiers remain.
+Validation and outstanding author checks: [evidence](assets/validation_541/RESULTS.md)
+and [pending_test.txt](pending_test.txt). No ability changes are included.
 
 5.4.0 delivers [#237](https://github.com/damiancurti/Caelum-Argenteum/issues/237):
 the twelve-attribute audit now distinguishes live player/NPC consumers, partial

@@ -19,10 +19,10 @@ class CaelumBolasRules : Object
     const READY_LIFT=65.0;
     const WRAP_DEPTH=0.25;
 
-    static double Spread(int prepared)
+    static double Spread(int prepared, double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
     {
-        double hi=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_JAVELIN);
-        double lo=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_JAVELIN);
+        double hi=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_BOLAS,1,lucidity);
+        double lo=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_BOLAS,1,lucidity);
         return hi+(lo-hi)*Clamp(prepared/double(PREPARE_TICS),0.0,1.0);
     }
 
@@ -207,11 +207,11 @@ class CaelumBolas : Object play
         {
             if(npc.CurrentCombatAir<cost)return null;
             npc.UpdateActorOffensiveStatistics();
-            accuracy=npc.CombatPhysicalAccuracyPercent*npc.CombatLucidityAccuracyMultiplier
+            accuracy=npc.CombatPhysicalAccuracyPercent
                 *(npc.ElementalStatus!=null ? npc.ElementalStatus.GetAccuracyMultiplier() : 1);
             push=npc.CombatPhysicalPushMultiplier;
         }
-        double spread=CaelumBolasRules.Spread(prepared)*100/Max(1.0,accuracy);
+        double spread=CaelumBolasRules.Spread(prepared,user!=null ? user.CurrentLucidity : npc.CurrentCombatLucidity)*100/Max(1.0,accuracy);
         double yaw=emitter.Angle+Random[CaelumBolasYaw](-100000,100000)/100000.0*spread;
         double pitch=emitter.Pitch+Random[CaelumBolasPitch](-100000,100000)/100000.0*spread;
         vector3 origin=emitter.Pos+(Cos(emitter.Angle)*32,Sin(emitter.Angle)*32,emitter.Height*0.65);

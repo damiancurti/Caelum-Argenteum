@@ -188,11 +188,11 @@ class CaelumCityCarbine : Object play
         owner.AttackResourceResume=owner.SeeState;
         if(!owner.HasAttackResource()){owner.WaitForAttackResource();return true;}
         owner.UpdateCombatHealthEffects();owner.UpdateActorOffensiveStatistics();
-        double accuracy=Max(1.0,owner.CombatPhysicalAccuracyPercent*owner.CombatLucidityAccuracyMultiplier
+        double accuracy=Max(1.0,owner.CombatPhysicalAccuracyPercent
             *(owner.ElementalStatus==null ? 1.0 : owner.ElementalStatus.GetAccuracyMultiplier())
             *CaelumConstants.CROUCH_ACCURACY_MULTIPLIER*CaelumConstants.RANGED_AIM_ACCURACY_MULTIPLIER);
-        double minimum=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
-        double maximum=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
+        double minimum=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE,Weapon.Tier,owner.CurrentCombatLucidity)*100/accuracy;
+        double maximum=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE,Weapon.Tier,owner.CurrentCombatLucidity)*100/accuracy;
         double spread=minimum+(maximum-minimum)*Random[CaelumCarbineSpread](0,100000)/100000.0;
         double yawOffset=Random[CaelumCarbineYaw](-100000,100000)/100000.0*spread;
         double yaw=owner.Angle+yawOffset;

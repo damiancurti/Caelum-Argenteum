@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.0** — 2026-10-14.
+Documentation version: **5.4.1** — 2026-10-14.
+
+## 5.4.1 - Weapon dispersion tiers (#259)
+
+Implemented the approved family/tier/Lucidity rule in actual player and NPC
+weapon consumers, preserving single-tier tools and natural attacks without an
+authored weapon identity. Source and native validation: assets/validation_541.
+CA259-01 remains an outstanding physical-input/visual check in pending_test.txt.
+The separate #238 lifecycle uses the author's latest confirmed Sleep hit rules
+and continuous racial toggles; this patch does not implement those powers.
+
 
 ## 5.4.0 - Attribute audit (#237)
 

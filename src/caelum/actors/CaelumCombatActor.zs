@@ -1271,7 +1271,7 @@ class CaelumCombatActor : Actor
 
     // Entrada ofensiva comun: salud modifica dano, lucidez modifica precision
     // y el atributo propio del ataque determina su probabilidad critica.
-    int PrepareActorOutgoingDamage(double baseDamage, bool magicalAttack)
+    int PrepareActorOutgoingDamage(double baseDamage, bool magicalAttack, bool weaponAttack=false)
     {
         EnsureCombatPersonality();
         UpdateCombatHealthEffects();
@@ -1284,7 +1284,7 @@ class CaelumCombatActor : Actor
             (magicalAttack
                 ? CombatMagicalAccuracyPercent
                 : CombatPhysicalAccuracyPercent)
-                * CombatLucidityAccuracyMultiplier
+                * (weaponAttack ? 1.0 : CombatLucidityAccuracyMultiplier)
                 * (ElementalStatus != null
                     ? ElementalStatus.GetAccuracyMultiplier() : 1.0),
             0.0,
@@ -1401,11 +1401,14 @@ class CaelumCombatActor : Actor
             combatActor.PendingCombatCriticalDelivery = false;
             return;
         }
+        let sidearm=combatActor.GetPossessedSidearm();
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
-            false
+            false, sidearm!=null
         );
         if (calculatedDamage <= 0) { return; }
+        if (sidearm!=null && !combatActor.WeaponMeleeAimHits(sidearm))
+        { combatActor.PendingCombatCriticalDelivery=false; return; }
         Actor meleeVictim = combatActor.Target;
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
         combatActor.A_CustomMeleeAttack(
@@ -1454,9 +1457,11 @@ class CaelumCombatActor : Actor
         );
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             strengthScaledDamage,
-            false
+            false, !(combatActor is "CaelumBull")
         );
         if (calculatedDamage <= 0) { return; }
+        if (!(combatActor is "CaelumBull") && !combatActor.WeaponMeleeAimHits(combatActor.GetPossessedSidearm()))
+        { combatActor.PendingCombatCriticalDelivery=false; return; }
 
         Actor meleeVictim = combatActor.Target;
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
@@ -1549,6 +1554,45 @@ class CaelumCombatActor : Actor
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
+    // #259: sólo armas con identidad/tier conocidos. Las garras, cuernos y
+    // golpes naturales conservan su regla anterior, sin inventarles una ficha.
+    double WeaponAimOffset(double minimum, double maximum)
+    {
+        int roll=Random[CaelumActorWeaponSpread](-100000,100000);
+        return (roll<0 ? -1.0 : 1.0)*(minimum+(maximum-minimum)*Abs(roll)/100000.0);
+    }
+
+    void ApplyWeaponProjectileDispersion(CaelumActorProjectile missile,int weaponType)
+    {
+        if(missile==null)return;
+        double accuracy=Max(1.0,CombatMagicalAccuracyPercent
+            *(ElementalStatus!=null ? ElementalStatus.GetAccuracyMultiplier() : 1.0));
+        double minimum=CaelumDispersionRules.EffectiveTier(
+            CaelumDispersionRules.MagicBase(weaponType),1,CurrentCombatLucidity)*100.0/accuracy;
+        double speed=missile.Vel.Length();
+        double yaw=missile.Angle+WeaponAimOffset(minimum,minimum*10.0);
+        double pitch=VectorAngle(missile.Vel.XY.Length(),-missile.Vel.Z)
+            +WeaponAimOffset(minimum,minimum*10.0);
+        missile.Angle=yaw;missile.Pitch=pitch;
+        missile.Vel=(Cos(yaw)*Cos(pitch)*speed,Sin(yaw)*Cos(pitch)*speed,-Sin(pitch)*speed);
+    }
+
+    bool WeaponMeleeAimHits(CaelumWeaponModel weapon)
+    {
+        if(Target==null || weapon==null)return false;
+        double accuracy=Max(1.0,CombatPhysicalAccuracyPercent
+            *(ElementalStatus!=null ? ElementalStatus.GetAccuracyMultiplier() : 1.0));
+        double minimum=CaelumWeaponCatalogue.GetMinimumSpread(
+            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weapon.WeaponType),weapon.Tier,CurrentCombatLucidity)*100.0/accuracy;
+        vector3 origin=Pos+(0,0,Height/2);
+        vector3 aim=Target.Pos+(0,0,Target.Height/2)-origin;
+        double yaw=AngleTo(Target)+WeaponAimOffset(minimum,minimum*10.0);
+        double pitch=VectorAngle(aim.XY.Length(),-aim.Z)+WeaponAimOffset(minimum,minimum*10.0);
+        FLineTraceData hit;
+        return LineTrace(yaw,MeleeRange+Target.Radius,pitch,TRF_ABSPOSITION,
+            origin.Z,origin.X,origin.Y,hit) && hit.HitActor==Target;
+    }
+
     // El resultado a distancia queda fijado al disparar. Los cambios posteriores
     // del atacante no alteran un proyectil que ya esta viajando por el mundo.
     action void A_CaelumSpawnProjectile(
@@ -1569,7 +1613,7 @@ class CaelumCombatActor : Actor
         else if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.NaturalAir())) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
-            magicalAttack
+            magicalAttack, magicalAttack
         );
         if (calculatedDamage <= 0) { return; }
 
@@ -1578,6 +1622,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            if (magicalAttack) combatActor.ApplyWeaponProjectileDispersion(missile,CaelumConstants.WEAPON_TYPE_STAFF);
             missile.ConfigureCaelumTravelDistance(combatActor.GetCombatAbilityRange());
             combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
@@ -1616,7 +1661,7 @@ class CaelumCombatActor : Actor
         if (!combatActor.WithinAttackRange(true,spawnHeight) || !combatActor.SpendBasicMagic()) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
-            true
+            true, true
         );
         if (calculatedDamage <= 0) { return; }
 
@@ -1625,6 +1670,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ApplyWeaponProjectileDispersion(missile,CaelumConstants.WEAPON_TYPE_STAFF);
             combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
@@ -1666,7 +1712,7 @@ class CaelumCombatActor : Actor
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(true,spawnHeight) || !combatActor.SpendBasicMagic(CaelumConstants.WEAPON_TYPE_STATUETTE)) return;
-        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(baseDamage, true);
+        int calculatedDamage = combatActor.PrepareActorOutgoingDamage(baseDamage, true, true);
         if (calculatedDamage <= 0) { return; }
 
         CaelumActorProjectile missile = CaelumActorProjectile(
@@ -1674,6 +1720,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ApplyWeaponProjectileDispersion(missile,CaelumConstants.WEAPON_TYPE_STATUETTE);
             combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
@@ -1731,7 +1778,7 @@ class CaelumCombatActor : Actor
         }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             combatActor.GetTierOneMagicDamage(weaponType),
-            true
+            true, true
         );
         if (calculatedDamage <= 0)
         {
@@ -1747,6 +1794,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            combatActor.ApplyWeaponProjectileDispersion(missile,weaponType);
             combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,

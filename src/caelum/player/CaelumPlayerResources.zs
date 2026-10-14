@@ -222,10 +222,8 @@ class CaelumPlayerResources : Object play
     static void UpdateLucidityAccuracyEffects(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        user.LucidityAccuracyMultiplier = user.LucidityState
-            == CaelumConstants.LUCIDITY_STATE_NORMAL
-            ? 1.0
-            : CaelumConstants.LUCIDITY_DIZZY_ACCURACY_MULTIPLIER;
+        // Campo legado guardado: #259 aplica Lucidez sólo al tier de dispersión.
+        user.LucidityAccuracyMultiplier = 1.0;
 
         if (user.DerivedStats == null)
         {

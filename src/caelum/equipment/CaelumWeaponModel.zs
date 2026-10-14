@@ -233,28 +233,19 @@ class CaelumWeaponModel : Object
         }
     }
 
-    double GetMaximumSpreadFor(int weaponType)
+    double GetMaximumSpreadFor(int weaponType,
+        double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
     {
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
+        int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
         if (catalogueWeapon >= 0)
-        {
-            return CaelumWeaponCatalogue.GetMaximumSpread(catalogueWeapon);
-        }
-        switch (weaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_BOOK: return 10.0;
-            case CaelumConstants.WEAPON_TYPE_STAFF:
-            case CaelumConstants.WEAPON_TYPE_STATUETTE: return 20.0;
-            case CaelumConstants.WEAPON_TYPE_BELL: return 70.0;
-            default: return 40.0;
-        }
+            return CaelumWeaponCatalogue.GetMaximumSpread(catalogueWeapon,Tier,lucidity);
+        return CaelumDispersionRules.EffectiveTier(CaelumDispersionRules.MagicBase(weaponType),
+            Tier,lucidity)*10.0;
     }
 
-    double GetMinimumSpreadFor(int weaponType)
-    {
-        return GetMaximumSpreadFor(weaponType) * 0.10;
-    }
+    double GetMinimumSpreadFor(int weaponType,
+        double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
+    { return GetMaximumSpreadFor(weaponType,lucidity)*0.10; }
 
     bool IsMagical()
     {
