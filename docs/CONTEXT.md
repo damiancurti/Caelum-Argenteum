@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.6** — 2026-10-14.
 
-**#233/5.3.6:** manual notes; native checks passed; CA233-01 pending.
+**#233/5.3.6:** CA233-01 editing accepted; remaining input/map-mode checks pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 

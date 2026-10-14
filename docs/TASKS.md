@@ -8,9 +8,11 @@ Implemented native-center placement, clickable/native-navigation list, native
 text input, editable category and confirmed deletion with character/map-owned
 revision-one data. Save commands validate stable ID and serial. Notes are not
 automatic knowledge and do not replace native numbered marks or bindings.
-Native persistence/input/layout checks passed; CA233-01 remains pending author
-editing acceptance. Evidence: assets/validation_536. Continue #234/#235/#236
-separately after this delivery.
+Native persistence/input/layout checks passed. On 2026-10-14 the author passed
+CA233-01's five editing handoff steps, including accented/long text, cancellation,
+deletion, save/load and presentation-only service categories. Remaining native
+input/map-mode compatibility checks stay pending. Evidence: assets/validation_536.
+Keep #234/#235/#236 implementation and acceptance separate.
 
 ## 5.3.5 - Personal POI knowledge (#232)
 
