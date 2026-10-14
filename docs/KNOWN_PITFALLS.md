@@ -18,6 +18,15 @@ known markers. Keep the existing map contract intact. Validate fixture lifetime
 before and after ordinary input, and retain this distinction in acceptance.
 Evidence: assets/validation_535/RESULTS.md and author-delay-map04-02.
 
+#234 / 5.3.7 city follow-up, 2026-10-14: short scripted Use pulses intermittently
+missed input in the native city harness. Hold the diagnostic button long enough
+to observe an actual cmd.buttons transition; the selected 35-tic pulses verify
+real gate/workbench/forge use. Separate input checks from map/menu capture changes.
+Do not infer a production interaction defect from an unobserved synthetic press.
+ENGINE-VERIFIED evidence: assets/validation_537/cityfix_evidence.json. The author
+accepted the focused city correction retest on 2026-10-14; ordinary exploration
+remains pending. Gameplay control timing was not modified.
+
 ## CA-KP-092 - Automap colors do not provide floor selection or private markers
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #231 / 5.3.4,
@@ -53,6 +62,20 @@ still own their native drawing and lifetime. Regression evidence:
 assets/validation_534/RESULTS.md and its final captures/manifest. Ordinary
 input and visual acceptance passed CA231-01 on 2026-10-13 after the author
 returned. Physical-controller coverage was not separately reported.
+
+#234 / 5.3.7 follow-up, 2026-10-14: correct access text does not prove the native
+MapMarker icon matches. Author CA234-01 reported an open grate still showing a
+padlock; category-only texture lookup ignored ObservedAccess. Native reproduction
+and 43 corrected assertions in assets/validation_537/marker_evidence.json check
+the real actor picnum, save/reload and remote-state isolation. Assert rendered
+state as well as the persistent fact. ENGINE-VERIFIED; author retest pending.
+
+The author accepted the dedicated sewer open-padlock artwork/save-load on
+2026-10-14. Subsequent city feedback exposed a separate coverage omission: city
+gates were generic exits without observed access, and factory services were not
+bound. City evidence now checks observed exit icons and all 96 real station
+identities. The focused city gate/station/save-load retest passed author review
+on 2026-10-14. Ordinary city traversal and other unconfirmed cases remain pending.
 
 ## CA-KP-091 - Native menu actions need visible feedback inside the menu
 
@@ -2331,6 +2354,12 @@ verification also rejects missing/wrong legacy data without replacing the
 previous package. See [validation evidence](../assets/validation_4365/RESULTS.json).
 Keep compatibility mode for that campaign; normal builds provide the rebuilt
 map for new campaigns. No external save rewriting is required.
+
+Rechecked for #234 / 5.3.7: replacing the old mansion WAD before loading
+produced native `Savegame is from a different level` before ZScript ran.
+Loading with its exact archived WAD passed and kept the current room catalogue
+disabled. Evidence: assets/validation_537/legacy-reload-01.txt (rejection) and
+legacy-reload-02.txt (matching geometry); this patch changes no production WAD.
 
 ## CA-KP-009 — MODELDEF slots overlay state meshes
 

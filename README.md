@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.6.** Obtain and update the complete repository, validate
+**Current release: 5.3.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.7 implements [#234](https://github.com/damiancurti/Caelum-Argenteum/issues/234):
+authored mansion rooms/services, observed sewer grates and the fortified city's
+exits, towers, shops, beds and transport. Entry or interaction records personal
+knowledge; sector warnings remain deferred by author decision. Geometry checks
+protect older layouts. Static/build and focused native checks passed. CA234-01's
+mansion handoff passed author review on 2026-10-14. The reported open-grate
+padlock is corrected: observed-open grates use a dedicated open-padlock icon,
+following the author's clarification after the initial hand-symbol retest.
+The author accepted the closed/open artwork and save/load on 2026-10-14.
+Further city feedback exposed generic gate icons and missing factory stations.
+City gates now remember access on use and share the padlocks; all 96 existing
+factory stations gain individual identities and appear only after interaction.
+The author accepted the focused city gate/station retest and save/load on 2026-10-14.
+CA234-01 passed full author acceptance on 2026-10-14.
+[Evidence](assets/validation_537/RESULTS.md).
 
 5.3.6 implements [#233](https://github.com/damiancurti/Caelum-Argenteum/issues/233):
 manual named/category notes at the native map center, edited through a native

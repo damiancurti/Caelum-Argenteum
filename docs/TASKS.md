@@ -1,6 +1,39 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Existing-map exploration (#234)
+
+Implemented the explicit SYSTEMS catalogue, existing actor bindings, ten mansion
+room regions, observed sewer grates, current city gates/towers/services and
+loaded-layout guards. No secret/loot/enemy annotation or new access rule.
+The author approved one marker per south gate and east-arch crossing; siege-sector
+warnings remain a design gap, explicitly deferred. Static/build and focused
+native checks passed (151 assertions, 16 save comparisons). On 2026-10-14 the
+author passed CA234-01's five mansion handoff steps, including entered rooms,
+interacted services, secrecy and save/load. CA234-01 passed full author acceptance on 2026-10-14. #233 editing passed; retain remaining
+#233/#258 checks and separate #235/#236 acceptance.
+CA234-01 sewer feedback exposed a category-only padlock despite an open label.
+The marker now uses the saved observed access; the original runtime reproduces
+the mismatch and the fix passes 43 focused native assertions.
+The author confirmed the icon change and requested an open padlock;
+dedicated transparent artwork replaces the initial hand only for observed-open
+grates. Another 43 native assertions/two save comparisons passed. On 2026-10-14
+the author accepted the three unlocked_handoff.ps1 steps: closed padlock on denied
+use, open padlock after F8/key and successful use, and persistence on save/load.
+Diagnostic positioning does not certify ordinary sewer traversal or secrecy;
+those checks, city exploration and remaining compatibility cases stay pending.
+The subsequent city handoff failed author review: gates retained the generic
+hand and southwest factory stations added no marker. The same #234 patch now
+records gate observations before/after use and binds all 96 authored factory
+stations individually, with the current-layout guard and existing bilingual names.
+On 2026-10-14 the author accepted the three cityfix_handoff.ps1 steps: denied/open
+gate padlocks, separate workbench/adjacent-station markers, and save/load retention.
+CA234-01 passed full author acceptance on 2026-10-14. This
+acceptance does not increment the patch version or certify all 96 stations manually.
+The focused city regression reproduces eight baseline failures and passes 92
+corrected native assertions, five save comparisons and three inspected captures.
+All 96 slots match the WAD; static/build and generator determinism checks pass.
 
 ## 5.3.6 - Manual map notes (#233)
 

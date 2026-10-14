@@ -1,6 +1,44 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Authored cartographic data and symbols (#234)
+
+`assets/map01_mansion/CARTOGRAPHY.json` lists the ten ordinary room interiors,
+storeys and stable names against the existing WAD, REPAIR/PRACTICE data and
+furniture/workshop placement, with native collision traces confirming the
+ground-floor side-door strips. `generate_cartography_catalogue.py` derives room
+data, CITY.json tower/east-arch geometry and native TEXTMAP checksums without
+modifying a map. Its output is `CaelumCartographyCatalogueData.zs`; regeneration
+must be byte-for-byte deterministic. Read-only project validation rejects stale
+output, and a changed mansion checksum requires reviewing its room data before
+regeneration. Service coordinates come from the actual
+interacted actors, never a second coordinate table.
+Rooms reuse the owned Journal reputation emblem, towers the shields-category
+icon and closed/unknown grates the locked-action icon. Manual notes retain their
+paper icon; other service symbols remain #232's. The initial access-state fix
+used the existing Use hand for open grates. On 2026-10-14 the author confirmed
+that it changed but clarified the expected symbol: an open padlock.
+Built-in imagegen edited the project-owned closed padlock into the original
+transparent counterpart at `graphics/caelum/ui/journal/icons/ca_ui_action_unlocked.png`.
+The 1254x1254 RGBA output was copied byte-for-byte to runtime and
+`assets/art_source/ca_ui_action_unlocked_537.png`; alpha and source are preserved,
+without resampling or a generator. Existing native ICON_SIZE controls placement.
+The prompt, reference/output hashes and method are recorded in
+`assets/manifests/map_grate_unlocked_537.json`. No font, third-party asset, game
+actor, closed-padlock replacement or change to the Use/exit hand is introduced.
+Native closed/open/reloaded captures are in assets/validation_537. The author
+accepted the new artwork and save/load on 2026-10-14. Bilingual names remain in LANGUAGE
+and its localization index. Test packages/saves remain local.
+The city follow-up reuses these padlocks for observed physical gate states and
+the existing crafting emblem for factory stations. No additional artwork is
+introduced. The catalogue generator derives 96 station identities from CITY.json
+and INTERIORS.json, using the same building/profile/slot order as the existing
+interior generator. It does not rebuild the WAD; regression preparation verifies
+each slot and editor type against its actual MAP06 thing. Positions shown on the
+map come from the interacted actor; its original SpawnPoint supplies identity.
+The author accepted the focused city padlock/station presentation and save/load
+on 2026-10-14; this does not certify every factory or ordinary city traversal.
 
 ## 5.3.6 - Manual note presentation (#233)
 

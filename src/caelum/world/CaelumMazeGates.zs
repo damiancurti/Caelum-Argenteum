@@ -28,10 +28,12 @@ class CaelumMazeBarredGate : Actor
     bool Open(CaelumPlayer user)
     {
         if(user==null || user.player==null || user.health<=0)return false;
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.GRATE);
         if(Opened)return true;
         if(args[1]!=0 && !user.CheckKeys(args[1],false,false))return false;
         Opened=true;Revision=1;
         ApplyOpening();
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.GRATE);
         A_StartSound("caelum/world/door_open",CHAN_BODY);
         return true;
     }
@@ -86,6 +88,9 @@ class CaelumMazeReturnGrate : Actor
         if(user==null || user.health<=0 || !CaelumMazeLayout.IsFloodedReturn())return false;
         let lift=CaelumMazeReturnElevator(ActorIterator.Create(CaelumMazeLayout.RETURN_ELEVATOR_TAG,"CaelumMazeReturnElevator").Next());
         bool lower=user.Pos.Z<CaelumMazeLayout.RETURN_CEILING;
+        // El mando superior llama al elevador: no observa las rejas ocultas
+        // del túnel inferior aunque comparta su controlador de activación.
+        if(lower)CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.GRATE);
         if(lower && !Opened)
         {
             // Descender desde el inicio nunca encierra al jugador: puede
@@ -95,6 +100,7 @@ class CaelumMazeReturnGrate : Actor
             if(!Floor_MoveToValue(args[0],CaelumMazeLayout.RETURN_SPEED,
                 -CaelumMazeLayout.RETURN_CEILING,1))return false;
             Opened=true;Revision=1;
+            CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.GRATE);
             A_StartSound("caelum/world/door_open",CHAN_BODY);
         }
         if(lift!=null)lift.Call(user);

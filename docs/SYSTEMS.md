@@ -1,6 +1,78 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Authored local exploration (#234)
+
+Discovery decisions confirmed 2026-10-14: enter rooms/towers, interact with
+services even when access is denied, cross MAP06's open east arch, and remember
+each of the six south gates separately. Siege-sector warnings are explicitly
+deferred until their information sources and visibility rules are authored.
+No new warning, quest, route permission, map geometry or gameplay actor is added.
+
+| Map / stable identity | Authoritative source | Knowledge event |
+| --- | --- | --- |
+| MAP01 `mansion-room-<id>` (ten entries) | `assets/map01_mansion/CARTOGRAPHY.json`, current WAD, REPAIR/PRACTICE data | Feet enter the named room's interior and vertical storey |
+| MAP01 `mansion-bed-101..104` | Existing furniture TrialSlot and actual actor position | Bed interaction |
+| MAP01 `mansion-station-<group>-<type>` | Existing five workshop groups and station type | Station interaction |
+| MAP01 `mansion-palomo` | Existing Palomo merchant actor | Trade interaction |
+| MAP02 `maze-grate-<tag>`, `maze-return-<tag>` | Existing gate controller tag and actual position | Native grate use, including denied use |
+| MAP02/MAP06 `travel-<connection>` | Existing placed active sewer travel gate | Travel interaction; route rules unchanged |
+| MAP06 `port-r<layout>-gate-<index>` | Existing port controller Gates array | Gate use; six south, north and west in current city |
+| MAP06 `city-east-exit` | CITY.json east-arch bounds/headroom | Crossing the arch plane inside its passage |
+| MAP06 `city-tower-0..3` | CITY.json tower footprints and walk/deck heights | Entry at the tower's physical heights |
+| MAP06 `city-shop-<ShopIdentity>`, `city-bed-<house>` | Existing merchant identity or furniture slot | Service interaction |
+| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
+| MAP06 `port-covered-cart`, `port-merchant-ship` | Existing vehicle instance | Boarding interaction, even when route 10 remains unavailable |
+
+Room bounds deliberately omit secret spaces, labels and connections. Entering a
+bedroom does not discover its bed; a lower storey does not discover the room
+above. Native explored linework remains the sole route geometry source, with
+its existing 2D stacked-floor limitation. No keys, containers or enemies are
+annotated. Rooms use a separate owned emblem so manual notes retain their paper
+symbol. Labels identify mansion storeys and separate south gate numbers.
+
+`KnownPois` remains character-owned. `LocalKnowledgeRevision=2` adds only
+`ObservedAccess` (0 unknown, 1 closed, 2 open). Old facts retain their values and
+start with unknown access; migration is idempotent and infers no visits. Grates
+record the last personally observed state on use, including the successful
+opening. A remote change does not silently update another character's record.
+The marker uses that saved observation too: observed-open grates use the dedicated
+open-padlock icon; other grate states retain their existing category padlock.
+The label continues to distinguish closed/open/unknown observations. Rendering
+never reads the hidden gate state or changes knowledge, access or saved schema.
+City port gates also record their closed/open state on use, including after a
+successful opening. These observed exits share the closed/open padlocks; generic
+exits, the east arch and manual exit notes retain their existing symbol. Older
+city gate facts with unknown access remain unknown until another interaction.
+Automatic or remote gate closure does not silently revise a personal observation.
+The upper elevator control does not reveal hidden lower return grates, even
+though it dispatches through their controller; lower-grate use records them.
+Use hooks grant no key, permission, faction standing or quest progress.
+
+Generated room/tower/crossing data is guarded by the loaded level's native
+TEXTMAP checksum. Unsupported older geometry receives no current-layout region
+coordinates. Real services keep actor-relative observations and explicit saved
+identities; old port gates use their own layout ID and neutral label. Transient
+crossing samples reset on load, so loading beside the arch is not a crossing.
+Derived marker lookup is cached by owner/knowledge serial; multiplayer marker
+suppression and personal records retain #232's privacy contract. The #233 manual
+editor still offers exactly its six approved categories.
+
+Static/build checks and 151 native assertions passed across 16 runs, with
+16 native-save comparisons and 12 inspected captures. Evidence: assets/validation_537.
+CA234-01's mansion exploration/save-load passed author review on 2026-10-14.
+The author then reported that an open grate retained its padlock despite its
+correct open label. The derived icon now follows ObservedAccess; 43 focused
+native assertions passed after reproducing the original visual mismatch.
+The author confirmed that the icon changed, but expected an open padlock instead
+of the initially reused Use hand. The dedicated artwork passed another 43 native
+assertions and two save comparisons. On 2026-10-14 the author accepted the focused
+closed/open-padlock test and save/load. CA234-01 passed full author acceptance on 2026-10-14.
+Preserve original saves/packages; #235/#236 remain separate patches.
+The author's subsequent city test reported hand icons on gates and missing
+southwest factory stations. On 2026-10-14 the author accepted the focused gate,
+workbench/adjacent-station and save/load retest. CA234-01 passed full author acceptance on 2026-10-14. Further evidence: assets/validation_537/RESULTS.md.
 
 ## 5.3.6 - Personal manual map notes (#233)
 

@@ -2,7 +2,7 @@
 class CaelumKnownPoi : Object play
 {
     String MapId, PoiId, NameKey;
-    int Category;
+    int Category, ObservedAccess;
     Vector3 ObservedPosition;
 }
 
@@ -50,8 +50,8 @@ class CaelumPoiKnowledge : Object play
     static void Ensure(CaelumPersistentCharacterState record)
     {
         if(record==null || record.LocalKnowledgeRevision>=CaelumPoiData.REVISION)return;
-        // Revisión cero: ausencia de prueba significa desconocido. No inferir
-        // objetos a partir de mapas visitados, rutas ni etapas de misión.
+        // Revisiones 0/1: no inferir visitas ni estados de acceso. El nuevo
+        // ObservedAccess vale cero (desconocido) y conserva todos los hechos.
         record.LocalKnowledgeRevision=CaelumPoiData.REVISION;
     }
     static bool RecordUse(CaelumPlayer user,Actor subject,int category)
@@ -61,25 +61,40 @@ class CaelumPoiKnowledge : Object play
             || user.CreationWizardOpen || subject==null)return false;
         let record=user.GetPersistentCharacterState(false);
         if(record==null || !record.ProfileCommitted)return false;
+        CaelumAuthoredCartography.BindSubject(subject,category);
         let it=ThinkerIterator.Create("CaelumPoiRegistration");CaelumPoiRegistration entry;
         while((entry=CaelumPoiRegistration(it.Next()))!=null)
         {
             if(entry.Subject!=subject || entry.Category!=category)continue;
-            Ensure(record);
-            let fact=Find(record,level.MapName,entry.PoiId);
-            if(fact==null)
-            {
-                fact=new("CaelumKnownPoi");fact.MapId=level.MapName;fact.PoiId=entry.PoiId;
-                record.KnownPois.Push(fact);
-            }
-            if(fact.NameKey!=entry.NameKey || fact.Category!=category || fact.ObservedPosition!=subject.Pos)
-            {
-                fact.NameKey=entry.NameKey;fact.Category=category;fact.ObservedPosition=subject.Pos;
-                record.LocalKnowledgeSerial++;
-            }
+            Record(user,entry.PoiId,category,entry.NameKey,subject.Pos,
+                CaelumAuthoredCartography.ObservedAccess(subject));
             return true;
         }
         return false;
+    }
+    // Sólo los sucesos de uso o entrada autorizados llaman a este registro.
+    static bool Record(CaelumPlayer user,String id,int category,String nameKey,Vector3 position,int access=0)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0
+            || user.player.playerstate!=PST_LIVE || !user.CharacterCreationComplete
+            || user.CreationWizardOpen || id.Length()==0 || nameKey.Length()==0
+            || !CaelumPoiData.ValidCategory(category))return false;
+        let record=user.GetPersistentCharacterState(false);
+        if(record==null || !record.ProfileCommitted)return false;
+        Ensure(record);
+        let fact=Find(record,level.MapName,id);
+        if(fact==null)
+        {
+            fact=new("CaelumKnownPoi");fact.MapId=level.MapName;fact.PoiId=id;
+            record.KnownPois.Push(fact);
+        }
+        if(fact.NameKey!=nameKey || fact.Category!=category || fact.ObservedPosition!=position
+            || fact.ObservedAccess!=access)
+        {
+            fact.NameKey=nameKey;fact.Category=category;fact.ObservedPosition=position;
+            fact.ObservedAccess=access;record.LocalKnowledgeSerial++;
+        }
+        return true;
     }
     // Los MapMarker nativos ignoran dueño y filtros de jugador. Nunca se
     // muestran en multijugador; los hechos personales sí permanecen separados.
@@ -114,13 +129,22 @@ class CaelumPoiKnowledge : Object play
 class CaelumKnownPoiMarker : MapMarker
 {
     String PoiId;
+    transient CaelumPersistentCharacterState CachedRecord;
+    transient CaelumKnownPoi CachedFact;
+    transient int CachedSerial;
     override void Tick()
     {
         Super.Tick();bDormant=true;
         let user=CaelumPoiKnowledge.MarkerUser();if(user==null)return;
         let record=CaelumPersistentCharacterState(user.FindInventory("CaelumPersistentCharacterState"));
-        let fact=CaelumPoiKnowledge.Find(record,level.MapName,PoiId);if(fact==null)return;
-        picnum=TexMan.CheckForTexture(CaelumPoiData.IconPath(fact.Category),TexMan.Type_Any);
+        if(record==null)return;
+        if(CachedRecord!=record || CachedFact==null || CachedSerial!=record.LocalKnowledgeSerial)
+        {
+            CachedRecord=record;CachedSerial=record.LocalKnowledgeSerial;
+            CachedFact=CaelumPoiKnowledge.Find(record,level.MapName,PoiId);
+        }
+        let fact=CachedFact;if(fact==null)return;
+        picnum=TexMan.CheckForTexture(CaelumPoiData.IconPath(fact.Category,fact.ObservedAccess),TexMan.Type_Any);
         Vector2 size=TexMan.GetScaledSize(picnum);
         if(size.X<=0 || size.Y<=0)return;
         Scale=(CaelumPoiData.ICON_SIZE/size.X,CaelumPoiData.ICON_SIZE/size.Y);

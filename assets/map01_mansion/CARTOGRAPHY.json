@@ -1,0 +1,130 @@
+{
+  "issue": 234,
+  "revision": 1,
+  "map_checksum": "359c5aa1daa71a0fb91bba6848818f46",
+  "source": "src/maps/MAP01.wad; REPAIR.json; PRACTICE.json; CaelumMainM00QuestController.PlaceRoomStations; CaelumMansionFurniture.Prepare",
+  "discovery": "Player feet inside the room's authored interior and storey; no sight radius. Secret spaces and connections are deliberately absent.",
+  "rooms": [
+    {
+      "id": "workshop-rulo",
+      "key": "CA_POI_WORKSHOP_RULO",
+      "bounds": [
+        -561,
+        100,
+        32,
+        632
+      ],
+      "floor": 0,
+      "ceiling": 128
+    },
+    {
+      "id": "workshop-ronnie",
+      "key": "CA_POI_WORKSHOP_RONNIE",
+      "bounds": [
+        704,
+        100,
+        1305,
+        632
+      ],
+      "floor": 0,
+      "ceiling": 128
+    },
+    {
+      "id": "workshop-caella",
+      "key": "CA_POI_WORKSHOP_CAELLA",
+      "bounds": [
+        -561,
+        -632,
+        32,
+        -100
+      ],
+      "floor": 0,
+      "ceiling": 128
+    },
+    {
+      "id": "workshop-argento",
+      "key": "CA_POI_WORKSHOP_ARGENTO",
+      "bounds": [
+        704,
+        -632,
+        1305,
+        -100
+      ],
+      "floor": 0,
+      "ceiling": 128
+    },
+    {
+      "id": "practice",
+      "key": "CA_POI_PRACTICE",
+      "bounds": [
+        40,
+        88,
+        696,
+        628
+      ],
+      "floor": 0,
+      "ceiling": 128
+    },
+    {
+      "id": "bedroom-rulo",
+      "key": "CA_POI_BEDROOM_RULO",
+      "bounds": [
+        -465,
+        200,
+        -129,
+        536
+      ],
+      "floor": 136,
+      "ceiling": 256
+    },
+    {
+      "id": "bedroom-ronnie",
+      "key": "CA_POI_BEDROOM_RONNIE",
+      "bounds": [
+        865,
+        200,
+        1201,
+        536
+      ],
+      "floor": 136,
+      "ceiling": 256
+    },
+    {
+      "id": "bedroom-caella",
+      "key": "CA_POI_BEDROOM_CAELLA",
+      "bounds": [
+        -465,
+        -536,
+        -129,
+        -200
+      ],
+      "floor": 136,
+      "ceiling": 256
+    },
+    {
+      "id": "bedroom-argento",
+      "key": "CA_POI_BEDROOM_ARGENTO",
+      "bounds": [
+        865,
+        -536,
+        1201,
+        -200
+      ],
+      "floor": 136,
+      "ceiling": 256
+    },
+    {
+      "id": "upper-workshop",
+      "key": "CA_POI_UPPER_WORKSHOP",
+      "bounds": [
+        -363,
+        -383,
+        1047,
+        383
+      ],
+      "floor": 264,
+      "ceiling": 392
+    }
+  ],
+  "geometry_audit": "Native LineTracer at Z=48 confirms workshop side walls X=32/704 and front walls Y=+/-100; the original sector bounds omit the adjoining side-door strips. Upper-room bounds retain REPAIR.json interiors."
+}

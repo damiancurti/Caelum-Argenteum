@@ -20,6 +20,7 @@ class CaelumWorldProgress : Object play
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !record.ProfileCommitted) return;
         CaelumPoiKnowledge.Ensure(record);
+        CaelumAuthoredCartography.Update(user,record);
         CaelumPoiKnowledge.PrepareMarkers(user,record);
         CaelumMapNotes.PrepareMarkers(user,record);
         int locationId = CaelumWorldCatalogue.LocationForMap(level.MapName);

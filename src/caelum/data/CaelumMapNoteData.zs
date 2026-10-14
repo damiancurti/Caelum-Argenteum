@@ -11,7 +11,7 @@ class CaelumMapNoteData : Object
     const NETWORK_BYTES=65535;
     const REQUEST_BYTES=42;
     static bool ValidCategory(int category)
-    {return category==NOTE || CaelumPoiData.ValidCategory(category);}
+    {return category>=NOTE && category<=CaelumPoiData.TRANSPORT;}
     static String CategoryKey(int category)
     {return category==NOTE?"CA_NOTE_CATEGORY":CaelumPoiData.CategoryKey(category);}
     static String IconPath()

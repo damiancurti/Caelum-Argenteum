@@ -1,6 +1,107 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
+
+## 5.3.7 - Authored map registrations (#234, 2026-10-14)
+
+Author decisions: MAP06's east arch becomes known when crossed; each used south
+gate has its own marker; siege-sector warnings remain deferred. Earlier approved
+room/tower entry and service interaction rules remain in force, including denied
+interactions. Added current-map room regions and existing-service registrations,
+last-observed grate states and revision-two empty access migration. Native loaded
+layout checks protect older geometry; secret spaces have no catalogue entry.
+The shared manual note editor keeps its six categories and no gameplay effects.
+Static/build checks passed. Sixteen native runs passed 151 assertions; sixteen
+save comparisons and twelve inspected captures cover current/old records, real
+service input, secrecy, hub return and legacy geometry. The upper elevator
+control was guarded so it cannot reveal hidden lower grates. A first full-army
+legacy diagnostic was stopped after about four minutes; a shorter 6000-attacker
+case and the 1000-attacker original port passed their catalogue checks. These
+are not battle-performance certification. Evidence: assets/validation_537.
+On 2026-10-14 the author confirmed CA234-01's five mansion handoff steps
+(origin 5.3.7 / #234): room labels on entry across ground/first/second floors;
+bedroom entry without automatic bed discovery; bed and crafting station markers
+on interaction; no unvisited/secret-room labels; and retaining the discovered
+markers through native save/load. Session author-20261014-064857 used the frozen
+5.3.7 runtime and exited with code 0. Sewer/city exploration, cross-map persistence,
+numbered/manual notes and bilingual/native-control checks remain in CA234-01.
+This partial author acceptance does not certify the untested cases or imply a merge.
+The author returned; the temporary keep-awake request was released on 2026-10-14.
+Later on 2026-10-14, CA234-01's sewer check failed: the author clarified that the
+label changed to open but the icon remained a padlock. Category-only texture
+selection caused the mismatch. Derived markers now pass the saved ObservedAccess
+to the shared presentation data, using the existing exit/passage artwork for an
+observed-open grate. No discovery, access, save field or balance changed.
+The original frozen runtime reproduced both open-marker failures; the fix passed
+34 native flow assertions and 9 after native save/load. These check the actual
+MapMarker texture, unchanged identity/position, no extra discoveries and remote
+state changes without reobservation. Save comparisons retain the recorded facts.
+The initial new diagnostic had a UI/play Check scope compile error; corrected
+before these runs, with its failed log retained. This correction stays in the
+same #234 patch/version. Author visual retest remains pending.
+In the next CA234-01 reply on 2026-10-14 the author explicitly confirmed that the
+icon now changed, but expected an open padlock rather than the reused Use hand.
+Only that observed change is accepted; the full sewer/save-load procedure was
+not confirmed. Built-in imagegen produced a dedicated transparent open padlock
+from the existing closed icon, retained with prompt/hashes in the asset manifest.
+The shared presentation lookup now selects that artwork for the same saved open
+state. No other symbol or gameplay rule changed. Native flow/reload passed another
+43 assertions and two save comparisons, with three inspected captures. The
+earlier hand-symbol runs remain separate evidence. New artwork acceptance and
+the other CA234-01 cases remain pending.
+
+On 2026-10-14 the author confirmed the three focused open-padlock handoff steps
+passed (CA234-01, origin 5.3.7 / #234): denied use without the key shows the closed
+padlock; F8 supplies the diagnostic key and successful use shows the open padlock;
+native save/load preserves that state. Session author-20261014-073046 used runtime
+SHA-256 0b7072e6d6a6468d9b24e1b156ad5af01b11d0e3a4835b6437d8f43ea24b76ec
+and exited with code 0. Remove only those confirmed retest steps from the queue.
+Diagnostic grate positioning does not confirm ordinary sewer traversal/secrecy,
+city exploration, cross-map persistence or the remaining compatibility checks.
+Those cases remain in CA234-01; no release increment or PR merge is implied.
+
+Later on 2026-10-14 the author reported two CA234-01 city failures: physical
+port gates still displayed the generic Use hand, and southwest factory stations
+left no marker. Gate registrations were EXIT facts without observed access;
+the catalogue omitted factory stations entirely. The same #234 patch now records
+each used gate's observed state, including successful opening, and selects the
+accepted closed/open padlock artwork for observed physical exits. Generic exits
+and manual notes retain their symbols. The generated catalogue adds the existing
+96 factory stations from CITY.json/INTERIORS.json, identified by original actor
+SpawnPoint and authored building/station IDs under the native current-layout
+checksum. Only the interacted station is discovered; networks reveal no neighbors.
+No map, access rule, recipe, balance value or saved field changes. Existing unknown
+gate observations and undiscovered stations remain unknown until interaction.
+Author retest remains pending; technical evidence: assets/validation_537/RESULTS.md.
+City regression results: eight expected pre-fix failures; seven corrected native
+runs with 92 passing assertions, five save comparisons and three inspected captures.
+Real native Use covers denied/opening gates and two separate station sessions;
+direct catalogue calls cover the 96 actual factory stations without claiming
+ordinary traversal. A genuine pre-fix save preserves its unknown gate observation,
+identity, quests, owned Tarot, equipment IDs and note metadata until new use.
+Static validation, normal packaging, exact normalized runtime comparison and
+deterministic generation pass. Short scripted Use pulses missed input in early
+diagnostics; the selected 35-tic pulses log actual native button transitions.
+The failed/preliminary harness logs remain local; author city acceptance is pending.
+
+On 2026-10-14 the author confirmed all three presented city correction steps
+passed (CA234-01, origin 5.3.7 / #234): the blocked gate shows a closed padlock;
+F8 permits opening and subsequent Use shows the open padlock; the southwest
+factory workbench and an adjacent station each acquire their own crafting marker;
+and native save/load retains those observations. Session author-20261014-080428
+used runtime SHA-256 4ca76e0d933eae7be2b9f4d67288fdbd9fb7528ad273198eb7cc30e270a60d1b
+and exited with code 0. Only these confirmed retest steps leave the queue.
+Diagnostic positioning does not certify ordinary traversal, every factory/gate,
+east-arch/tower/service discovery, hub behavior or remaining compatibility checks.
+Those CA234-01 cases remain pending; no version increment, PR merge or closure.
+
+CA234-01 (origin 5.3.7 / #234) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Ordinary sewer secrecy/traversal, city gates/east arch/towers/services, map and hub persistence, names and native controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 

@@ -1,15 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.6** — 2026-10-14.
+Documentation version: **5.3.7** — 2026-10-14.
 
-**#233 accepted.**
+**#233 accepted; #234 accepted.**
 **#231/232 accepted; #255-258 accepted.** CA258-01 completed 2026-10-14.
 Evidence and individual acceptance records: HISTORY; pending checks: pending_test.txt.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
-**5.2.20-25 accepted:** six checks passed 2026-10-13; PR214/217/218/
-221/223/224 merged and issues closed. #225/PR226 repaired LF index hashes.
+**5.2.20-25 accepted/merged:** HISTORY retains six checks; #225 repaired LF hashes.
 #211 accepted/merged; prior acceptance records remain in HISTORY.
 **5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
 and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
@@ -69,7 +68,7 @@ old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYST
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 
-**Earlier accepted releases:** HISTORY retains #93/#97/#99/#101/#87/#80/#78.
+Earlier acceptances: HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
