@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Connected exploration screens (#236)
+
+Explore connects the existing Journal, formal Inventory, World, local automap
+and note editor. Native mission/key/status commands route to the corresponding
+Caelum views; owned keys/documents read native instances without new ownership
+or quest state. Current documents have no authored readable body; the view
+states that limitation. Control defaults and existing travel rules are unchanged.
+Evidence: assets/validation_539; CA236-01 passed full author acceptance on 2026-10-14. Commit/PR delivery is separate
+from author acceptance. Do not merge or close the batch without authorization.
 
 ## 5.3.8 - Saved independent mission tracking (#235)
 

@@ -1,6 +1,51 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
+
+The subsequent #235 known-objective symbol was integrated after CA236-01
+acceptance. Final 5.3.9 packaging passed with 16,072 files; targets-stack-01
+passed 75 native assertions on the preserved diagnostic save, exit 0. Runtime
+fingerprint and log: assets/validation_539/RESULTS.md. CA236-01 stays accepted;
+CA235-02 subsequently passed author review on 2026-10-14, as recorded below.
+
+Added Explore navigation to existing screens, native showpop adapters and owned
+keys/documents inspection. Existing inventory/quest/travel authorities and saved
+schemas remain unchanged. Document names are available, but their actors define
+no readable body; the interface reports that absence without new lore or effects.
+The first engine startup identified unsupported OptionMenu Font syntax; the font
+uses the exposed descriptor instead. A diagnostic calling a native command item
+from ConsoleProcess hit GZDoom's menu-command guard; later fixtures inspect that
+item and dispatch its exact route through the console separately. This is not
+physical menu activation evidence. Failed diagnostics are retained.
+Static validation/build passed; fourteen native runs passed 202 assertions, with
+28 save comparisons and 17 inspected captures. Final review corrected the
+crafting header pointer region and GUI mouse shortcut dispatch; a complete
+flow and focused pointer case passed afterward. Mixed-case command bindings
+received a final focused check. Unchanged earlier evidence is reused with an
+exact runtime-delta check. Record comparisons resolve
+identity/POI/note references and exclude the live thermal observation object;
+hub return also excludes three naturally changing survival observations.
+Validation evidence: assets/validation_539. On 2026-10-14 the author confirmed
+CA236-01's first five handoff steps (origin 5.3.9 / #236): mouse/keyboard visits
+to the connected screens; Back/Escape and Explore from Crafting; inspecting and
+reopening owned documents without consuming them; retaining local map center/zoom
+through World; and saving/loading a test copy with owned items and tracked
+missions preserved. Session author-20261014-063717 used the final frozen runtime
+and exited with code 0. This is partial acceptance: remapped/unbound controls,
+native showpop, held input, detailed ownership/quest checks, filters/history,
+bilingual scrolling, pause/settings, note persistence and preferred UI scale
+remain in CA236-01 or the separate CA233-01 procedure. No merge is inferred.
+The author returned; the temporary keep-awake request was released at 09:37 UTC.
+
+CA236-01 (origin 5.3.9 / #236) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Retained filters/history and owned contents, remapped/unbound and native popup controls, pause/settings, notes/save-load, readability and travel neutrality passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
 

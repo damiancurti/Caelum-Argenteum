@@ -11,7 +11,8 @@ class CaelumNotificationMenu : ListMenu
     static String Link()
     {
         int scan=CaelumMenuPointer.KeyScan(108);
-        bool available=!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip");
+        bool available=!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip")
+            && !CaelumExplorationNavigation.IsShortcut(Bindings.GetBinding(scan));
         return CaelumInputHints.Label(StringTable.Localize("CA_MESSAGES_LINK",false),available?"L":StringTable.Localize("CA_HINT_MOUSE",false));
     }
 
@@ -61,6 +62,14 @@ class CaelumNotificationMenu : ListMenu
         {int id=Pointer.Release(0);if(id==1)Scroll(-VisibleLines);else if(id==2)Scroll(VisibleLines);else if(id==3)Close();}
         return true;
     }
+    virtual String TitleKey(){return "CA_MESSAGES_TITLE";}
+    virtual String HelpKey(){return "CA_MESSAGES_HELP";}
+    virtual void CollectText(Array<String> text)
+    {
+        let inbox=CaelumNotificationInbox(Subject.FindInventory("CaelumNotificationInbox"));
+        if(inbox!=null)for(int i=inbox.HistoryCount-1;i>=0;i--)text.Push(inbox.HistoryText[i]);
+        if(text.Size()==0)text.Push(StringTable.Localize("CA_MESSAGES_EMPTY",false));
+    }
     override void Drawer()
     {
         if(Subject==null)return;
@@ -73,10 +82,10 @@ class CaelumNotificationMenu : ListMenu
         if(size.X!=LastWidth || scale.X!=LastScale || language!=LastLanguage)
         {Offset=0;Pointer.Reset();LastWidth=size.X;LastScale=scale.X;LastLanguage=language;}
         Lines.Clear();
-        let inbox=CaelumNotificationInbox(Subject.FindInventory("CaelumNotificationInbox"));
-        if(inbox!=null)for(int i=inbox.HistoryCount-1;i>=0;i--)
+        Array<String> text;CollectText(text);
+        for(int i=0;i<text.Size();i++)
         {
-            let wrapped=font.BreakLines(CaelumInputHints.Resolve(inbox.HistoryText[i]),Max(1,int(size.X/scale.X)));
+            let wrapped=font.BreakLines(CaelumInputHints.Resolve(text[i]),Max(1,int(size.X/scale.X)));
             for(int line=0;line<wrapped.Count();line++)Lines.Push(wrapped.StringAt(line));
             wrapped.Destroy();Lines.Push("");
         }
@@ -85,8 +94,8 @@ class CaelumNotificationMenu : ListMenu
         Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
         CaelumPresentation.BeginMenu();
         let view=CaelumLiveMenu.Journal();view.DrawPanel(16,12,608,336);
-        view.DrawCenteredText(view.TitleFont,Font.CR_GOLD,320,16,StringTable.Localize("CA_MESSAGES_TITLE",false));
-        view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,42,StringTable.Localize("CA_MESSAGES_HELP",false));
+        view.DrawCenteredText(view.TitleFont,Font.CR_GOLD,320,16,StringTable.Localize(TitleKey(),false));
+        CaelumInputHints.Draw(view.SmallFont,Font.CR_GRAY,320,42,StringTable.Localize(HelpKey(),false),560);
         Layout(true);CaelumPresentation.End();
         for(int i=0;i<VisibleLines && Offset+i<Lines.Size();i++)
             Screen.DrawText(font,Font.CR_WHITE,origin.X,origin.Y+i*lineHeight,Lines[Offset+i],

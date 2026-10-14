@@ -47,6 +47,7 @@ class CaelumLiveMenuControls : Object ui
         let user=host.Subject;let view=host.Journal();int context=host.Context;
         if(context>=1 && context<=7)
         {
+            host.Pointer.Button(view,9001,32,15,104,CaelumInputHints.Context(StringTable.Localize("CA_NAV_TITLE",false),0,110),true,false,draw);
             host.Pointer.Button(view,9000,508,15,100,CaelumNotificationMenu.Link(),true,false,draw);
             for(int i=0;i<7;i++)Region(1000+i,26+i*84,36,84,65);
             if(context==4)return;
@@ -164,6 +165,7 @@ class CaelumLiveMenuControls : Object ui
     void Activate(CaelumLiveMenu host,int id)
     {
         let view=host.Journal();let user=host.Subject;
+        if(id==9001){host.ResetInput();Menu.SetMenu("CaelumNavigationMenu");return;}
         if(id==9000){host.ResetInput();Menu.SetMenu("CaelumNotificationMenu");return;}
         if(id>=7000){CaelumScheduleCalendar.Set("ca_calendar_event",id-7000);return;}
         if(id>=6000)

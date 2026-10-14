@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.8** — 2026-10-14.
+Documentation version: **5.3.9** — 2026-10-14.
+
+## 5.3.9 - Exploration entry points (#236)
+
+Implemented the entry-point audit, shared Explore navigation, native popup
+adapters and a read-only owned keys/documents view. Existing pages, filters,
+travel confirmations, notes and world/local ownership remain authoritative.
+No new default binding, saved schema, document body or note gameplay effect.
+Static/build and 202 native assertions passed; 28 save comparisons and 17
+inspected captures are in assets/validation_539. On 2026-10-14 the author passed
+CA236-01's first five handoff steps: connected navigation/Back, Crafting entry,
+non-consuming document viewing, map center/zoom and owned/tracked save-load.
+CA236-01 passed full author acceptance on 2026-10-14. No merge is inferred.
 
 ## 5.3.8 - Multiple mission tracking (#235)
 
@@ -34,8 +46,7 @@ The author approved one marker per south gate and east-arch crossing; siege-sect
 warnings remain a design gap, explicitly deferred. Static/build and focused
 native checks passed (151 assertions, 16 save comparisons). On 2026-10-14 the
 author passed CA234-01's five mansion handoff steps, including entered rooms,
-interacted services, secrecy and save/load. CA234-01 passed full author acceptance on 2026-10-14. #233 editing passed; retain remaining
-#233/#258 checks and separate #235/#236 acceptance.
+interacted services, secrecy and save/load. CA234-01 passed full author acceptance on 2026-10-14. #233/#258 are accepted; #235/#236 retain separate acceptance records.
 CA234-01 sewer feedback exposed a category-only padlock despite an open label.
 The marker now uses the saved observed access; the original runtime reproduces
 the mismatch and the fix passes 43 focused native assertions.

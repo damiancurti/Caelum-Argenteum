@@ -105,3 +105,11 @@ alias ca_controls_defaults "bind Tab ca_journal_toggle; bind M togglemap; bind B
 alias ca_controls_reset "resetb2defaults; ca_controls_defaults"
 
 alias ca_map_notes "event ca_map_notes"
+alias ca_exploration "event ca_exploration"
+alias ca_nav_journal "event ca_nav_journal"
+alias ca_inventory_open "event ca_inventory_open"
+alias ca_keys_open "event ca_keys_open"
+alias ca_world_open "event ca_world_open"
+alias ca_missions_open "event ca_missions_open"
+alias ca_nav_local "event ca_nav_local"
+alias ca_nav_notes "event ca_nav_notes"
