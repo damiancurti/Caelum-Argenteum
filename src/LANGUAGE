@@ -3906,8 +3906,8 @@ CA_TABLE_SEATED_HELP = "F: comida automática | G: bebida automática";
 CA_TABLE_CANNOT_EAT = "Descansá en una silla o tu bolsa. Necesitás comida/agua y hambre/sed; podés usar provisiones del inventario o la Caja.";
 
 [default]
-CA_TABLE_AUTO_STOP = "Automatic serving stopped. The current serving finishes normally.";
-CA_TABLE_AUTO_HELP = "F: automatic food %s | G: automatic water %s";
+CA_TABLE_AUTO_STOP = "Filling to 100% paused. Below 50%, serving always resumes.";
+CA_TABLE_AUTO_HELP = "To 100%: F food %s | G water %s. Below 50%: always automatic.";
 CA_REST_UNTIMED = "Until you get up";
 CA_REST_TIMELESS_SEATED = "Limbo clock: 1 real second = 1 game second";
 CA_REST_TIMELESS_INFO = "You may sit or sleep here until you get up. Limbo time runs at a 1:1 pace. T accelerates recovery, consumption and the clock.";
@@ -3915,8 +3915,8 @@ CA_REST_SIT_UNTIMED = "Sit down";
 CA_REST_SLEEP_UNTIMED = "Lie down and sleep";
 
 [es]
-CA_TABLE_AUTO_STOP = "Repetición detenida. La porción actual termina normalmente.";
-CA_TABLE_AUTO_HELP = "F: comida automática %s | G: bebida automática %s";
+CA_TABLE_AUTO_STOP = "Llenado al 100% pausado. Por debajo del 50%, el consumo siempre vuelve.";
+CA_TABLE_AUTO_HELP = "Hasta 100%: F comida %s | G bebida %s. Menos de 50%: siempre automático.";
 CA_REST_UNTIMED = "Hasta levantarte";
 CA_REST_TIMELESS_SEATED = "Reloj del Limbo: 1 segundo real = 1 segundo de juego";
 CA_REST_TIMELESS_INFO = "Podés sentarte o dormir hasta levantarte. El tiempo del Limbo transcurre a escala 1:1. T acelera la recuperación, el consumo y el reloj.";

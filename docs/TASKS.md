@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.1** — 2026-10-13.
+Documentation version: **5.3.2** — 2026-10-13.
+
+## 5.3.2 - Automatic provisions (#257)
+
+Implement independent below-50% consumption, 100% seated/lying targets and
+author-confirmed F/G pause/resume with mandatory below-50% restart. Preserve
+real sources and unify native time paths. Evidence: assets/validation_532;
+CA257-01 passed author acceptance on 2026-10-13. #258 will add exhaustion lying using the shared eligibility.
+Follow-up discrepancy found during native comparison: time-skip forecasting
+does not integrate evolving shivering/sweat costs. Do not treat matching
+portion counts as proof of an exact thermal/calendar forecast.
 
 ## 5.3.1 - Survival and combat presentation (#256)
 

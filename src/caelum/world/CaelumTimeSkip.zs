@@ -35,10 +35,6 @@ class CaelumTimeSkipRules : Object play
             * CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;
     }
 
-    // Mismo disparador conservador de las provisiones de viaje: porción entera.
-    static bool NeedsServing(double value,double dose)
-    { return dose>0.000001 && value<=100-Min(100,dose); }
-
     static bool Accessible(CaelumPlayer user, Actor item)
     {
         if (user==null || item==null) return false;
@@ -72,79 +68,6 @@ class CaelumTimeSkipRules : Object play
 
     static bool OwnedAvailable(CaelumPlayer user,CaelumConsumableItem item)
     { return item!=null && item.Owner==user && item.Amount>0 && (!item.InMagicBox || user.MagicBoxOwned); }
-
-    static bool Consume(CaelumPlayer user,CaelumConsumableItem item,CaelumDiningTable table=null)
-    {
-        if (item==null || item.Amount<=0 || CaelumSleepRules.IsSleeping(user)) return false;
-        int kind=Kind(item); if (kind==0) return false;
-        bool drink=kind!=1;
-        if (user.FindInventory(drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration')!=null) return false;
-        let bottle=CaelumWaterContainer(item);
-        if (!NeedsServing(drink?user.CurrentThirst:user.CurrentHunger,
-            Dose(kind,user.DerivedStats.BaseMass,bottle!=null?bottle.WaterLiters:0))) return false;
-        if (table!=null)
-        {
-            if (item.Owner!=table || !Accessible(user,table)) return false;
-            table.RemoveInventory(item); item.AttachToOwner(user);
-        }
-        else if (!OwnedAvailable(user,item)) return false;
-        bool stored=item.InMagicBox; item.InMagicBox=false;
-        bool accepted=bottle!=null?bottle.Drink():item.Use(false);
-        item.InMagicBox=stored;
-        if (table!=null)
-        {
-            user.RemoveInventory(item);
-            if (accepted && bottle==null)
-            {
-                item.Amount--;
-                if (item.Amount<=0)
-                {
-                    for (int i=0;i<table.Capacity();i++) if(table.Items[i]==item)table.Items[i]=null;
-                    item.Destroy();
-                }
-                else item.AttachToOwner(table);
-            }
-            else item.AttachToOwner(table);
-            table.RestockMansion();table.RefreshDisplays();
-        }
-        else if (accepted && bottle==null)
-        { item.Amount--; if(item.Amount<=0)item.Destroy(); }
-        if (accepted) { user.OnNativeInventoryChanged(); user.PersistCharacterState(); }
-        return accepted;
-    }
-
-    static void Provisions(CaelumPlayer user)
-    {
-        if (CaelumSleepRules.IsSleeping(user)) return;
-        let s=CaelumTimeSkipState.Get(user);
-        int day=CaelumTimeSkipState.NowDay(user);
-        if(s.SupplyDay!=day){s.FoodTrigger=100;s.WaterTrigger=100;s.SupplyDay=day;}
-        bool food=user.FindInventory("CaelumHungerRegeneration")==null && user.CurrentHunger<=s.FoodTrigger;
-        bool water=user.FindInventory("CaelumThirstRegeneration")==null && user.CurrentThirst<=s.WaterTrigger;
-        if(!food && !water)return;
-        // Primero las mesas de la ubicación; después inventario y Caja propia.
-        let it=ThinkerIterator.Create("CaelumDiningTable"); CaelumDiningTable table;
-        while ((table=CaelumDiningTable(it.Next()))!=null)
-            if (Accessible(user,table))
-                for(int i=0;i<table.Capacity();i++) Consume(user,table.Items[i],table);
-        for(int source=0;source<2;source++)
-        {
-            Inventory cursor=user.Inv;
-            while(cursor!=null)
-            {
-                Inventory next=cursor.Inv; let item=CaelumConsumableItem(cursor);
-                if (item!=null && item.InMagicBox==(source==1)) Consume(user,item);
-                cursor=next;
-            }
-        }
-        s.FoodTrigger=-1;s.WaterTrigger=-1;
-        it=ThinkerIterator.Create("CaelumDiningTable");
-        while((table=CaelumDiningTable(it.Next()))!=null)
-            if(Accessible(user,table))
-                for(int i=0;i<table.Capacity();i++) s.ObserveSupply(user,table.Items[i]);
-        for(Inventory item=user.Inv;item!=null;item=item.Inv)
-            if(OwnedAvailable(user,CaelumConsumableItem(item)))s.ObserveSupply(user,CaelumConsumableItem(item));
-    }
 
     static String BlockReason(CaelumPlayer user,bool scan=true)
     {
@@ -360,7 +283,6 @@ class CaelumTimeSkipState : Inventory
         if(support!=null && support.Occupant!=null && support.Occupant!=user)support=null;
         if(s.Furniture!=support)
         {s.ReleaseFurniture(user);s.Furniture=support;if(support!=null)support.Occupant=user;}
-        CaelumTimeSkipRules.Provisions(user);
     }
     static void AfterStep(CaelumPlayer user)
     {

@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.1.** Obtain and update the complete repository, validate
+**Current release: 5.3.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.2 implements [#257](https://github.com/damiancurti/Caelum-Argenteum/issues/257):
+food and water start below 50%, or fill toward 100% while seated/lying.
+F/G pause the rest filling; below 50% remains automatic. Native sources,
+portions and digestion are preserved. [Evidence](assets/validation_532/RESULTS.md).
+**CA257-01 passed author acceptance on 2026-10-13.**
 
 5.3.1 implements [#256](https://github.com/damiancurti/Caelum-Argenteum/issues/256):
 Character shows survival resources, live combat chances and mean elemental

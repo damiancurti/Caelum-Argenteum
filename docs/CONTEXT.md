@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.1** — 2026-10-13.
+Documentation version: **5.3.2** — 2026-10-13.
 
-**5.3.1/#256:** Character survival/chances/resistances; reordered HUD;
-validation_531; CA256-01 accepted. Decisions: SYSTEMS/TASKS.
-**5.3.0/#255:** enlarged powers; CA255-01 accepted.
+**5.3.2/#257:** automatic provisions; CA257-01 accepted; validation_532.
+**#255/#256 accepted:** powers/HUD/Character; validation_530/531.
+Decisions and remaining batch: SYSTEMS/TASKS.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

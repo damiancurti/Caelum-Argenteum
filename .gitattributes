@@ -180,3 +180,7 @@
 # Preserve #256 native evidence fingerprints and engine log formatting.
 /assets/validation_531/** -text whitespace=cr-at-eol
 /assets/validation_531/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #257 native evidence fingerprints and engine log formatting.
+/assets/validation_532/** -text whitespace=cr-at-eol
+/assets/validation_532/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
