@@ -63,6 +63,15 @@ accepts the exact manifest arguments. The older-save load uses
 
 For ordinary editing, run `powershell.exe -NoProfile -ExecutionPolicy Bypass
 -NoExit -File assets/validation_536/handoff.ps1`. The terminal remains open and
-`Probar233` starts a fresh MAP04 test. **CA233-01 remains pending author acceptance.**
+`Probar233` starts a fresh MAP04 test. On 2026-10-14 the author confirmed all
+five presented editing steps in CA233-01: center placement with accented text
+and category selection; mouse/keyboard editing; cancelled edits/deletions and
+confirmed deletion of a separate note; long text, zoom/pan and save/load; and
+manual Bed/Merchant categories without service discovery or access. Session
+`author-20261014-064047` used MAP04 and runtime SHA-256
+`6a274349bdf886cf42fe499325b86d856eb233977b7ab7d2283af810a822a662`.
+This physical-input acceptance is separate from the scripted matrix. Remaining
+held-input, map-mode, numbered-mark/binding and optional controller checks stay
+in CA233-01; they were not included in the five presented steps.
 No merge or issue closure is claimed. Authored registrations (#234), multi-mission
 tracking (#235) and Journal navigation (#236) remain separate deliveries.

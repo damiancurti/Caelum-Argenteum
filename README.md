@@ -35,8 +35,9 @@ deferred until the author returns. [Evidence](assets/validation_537/RESULTS.md).
 5.3.6 implements [#233](https://github.com/damiancurti/Caelum-Argenteum/issues/233):
 manual named/category notes at the native map center, edited through a native
 list and text-entry menu. Notes remain separate from discoveries and numbered
-marks. [Evidence](assets/validation_536/RESULTS.md). **CA233-01 author editing
-acceptance is pending.**
+marks. [Evidence](assets/validation_536/RESULTS.md). CA233-01's five editing
+handoff steps passed author review on 2026-10-14; remaining input/map-mode
+compatibility checks stay pending.
 
 5.3.5 implements [#232](https://github.com/damiancurti/Caelum-Argenteum/issues/232):
 personal knowledge of registered beds, stations, merchants, exits and transport,
