@@ -2,8 +2,8 @@
 
 Documentation version: **5.3.9** — 2026-10-14.
 
-**#236/5.3.9:** Explore/navigation; CA236-01 pending. Author away.
-**#233-235:** checks passed; CA233/234/235-01 pending. Defer manual checks.
+**#236/5.3.9:** CA236-01 first five steps accepted; remaining checks pending.
+**#233-235:** technical checks passed; CA233/234/235-01 pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 

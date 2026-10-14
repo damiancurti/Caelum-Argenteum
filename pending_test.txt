@@ -62,24 +62,20 @@ normal campaign progression. Preserve original saves and earlier test packages.
 Expected: clear independent multi-mission controls, bounded readable map summary,
 no secret/future-location reveal, no quest/reward changes from tracking.
 
-CA236-01 | Origin: 5.3.9 / #236 | Status: deferred until author returns
+CA236-01 | Origin: 5.3.9 / #236 | Status: remaining author checks
 Prerequisites: isolated Probar236 terminal (assets/validation_539/handoff.ps1),
 GZDoom 4.14.2. The diagnostic save owns test keys/documents and three tracked
-missions. Preserve original saves; no session is launched during the absence.
-1. Journal > Explore (button/N): visit Inventory, Llaves y documentos, World,
-   Missions, Local map and Map notes with actual mouse/keyboard input. Back
-   returns reliably; filters, selection and history retain their existing roles.
-2. Keys/Documents contains only owned items and their native names. Current
-   documents explicitly have no readable body; viewing must not consume an
-   item or advance a mission. Check scrolling and Spanish/English readability.
-3. Pan/zoom the native map, open Explore > World, then return to Local map.
-   Its center/zoom remain; notes and discoveries stay local. Edit a note using
-   the separate CA233-01 procedure. World browsing does not initiate travel.
-4. Try optional remapped/unbound direct controls and native showpop 1/2/3.
+missions. Preserve original saves. Confirmed first-round results are in HISTORY.
+1. Check retained inventory filters, mission selection and history when moving
+   between the connected views. Keys/Documents must contain only owned items
+   with their native names and report the absence of a readable document body.
+   Check scrolling, Spanish/English readability and unchanged mission progress.
+2. Try optional remapped/unbound direct controls and native showpop 1/2/3.
    Check held/opening releases, pointer movement, native Back and no leaked
    attacks/actions. Defaults must not be overwritten when reopening/loading.
-5. Open native pause/settings and Save/Load over these views. Return/reload a
-   test copy; tracked missions, owned items and notes remain intact. Check your
-   usual resolution/scale; F10 exits and Probar236 restarts the isolated session.
+3. Open native pause/settings over these views. Create/edit a note using the
+   separate CA233-01 procedure and reload a test copy: notes and discoveries
+   must remain local and intact. World browsing must not initiate travel.
+   Check your usual resolution/scale; F10 exits and Probar236 restarts the session.
 Expected: clear destinations, reliable native input and return, no false owned
 content, duplicated rewards/discoveries, surprise travel or unintended charges.

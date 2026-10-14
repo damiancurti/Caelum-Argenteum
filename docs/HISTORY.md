@@ -21,9 +21,17 @@ received a final focused check. Unchanged earlier evidence is reused with an
 exact runtime-delta check. Record comparisons resolve
 identity/POI/note references and exclude the live thermal observation object;
 hub return also excludes three naturally changing survival observations.
-Validation evidence: assets/validation_539. CA236-01 is pending author usability
-acceptance; questions and manual sessions remain deferred while the author is
-away. The requested temporary system keep-awake remains active until return.
+Validation evidence: assets/validation_539. On 2026-10-14 the author confirmed
+CA236-01's first five handoff steps (origin 5.3.9 / #236): mouse/keyboard visits
+to the connected screens; Back/Escape and Explore from Crafting; inspecting and
+reopening owned documents without consuming them; retaining local map center/zoom
+through World; and saving/loading a test copy with owned items and tracked
+missions preserved. Session author-20261014-063717 used the final frozen runtime
+and exited with code 0. This is partial acceptance: remapped/unbound controls,
+native showpop, held input, detailed ownership/quest checks, filters/history,
+bilingual scrolling, pause/settings, note persistence and preferred UI scale
+remain in CA236-01 or the separate CA233-01 procedure. No merge is inferred.
+The author returned; the temporary keep-awake request was released at 09:37 UTC.
 
 ## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
 

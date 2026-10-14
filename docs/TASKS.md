@@ -9,8 +9,11 @@ adapters and a read-only owned keys/documents view. Existing pages, filters,
 travel confirmations, notes and world/local ownership remain authoritative.
 No new default binding, saved schema, document body or note gameplay effect.
 Static/build and 202 native assertions passed; 28 save comparisons and 17
-inspected captures are in assets/validation_539. CA236-01 and earlier outstanding author
-IDs are deferred until return; no merge or acceptance is inferred.
+inspected captures are in assets/validation_539. On 2026-10-14 the author passed
+CA236-01's first five handoff steps: connected navigation/Back, Crafting entry,
+non-consuming document viewing, map center/zoom and owned/tracked save-load.
+Remaining controls, presentation and persistence checks stay in CA236-01;
+earlier outstanding author IDs remain separate. No merge is inferred.
 
 ## 5.3.8 - Multiple mission tracking (#235)
 

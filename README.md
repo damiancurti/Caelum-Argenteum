@@ -14,7 +14,8 @@ Explore connects the existing Journal, Inventory, World, local map, notes and
 owned Keys/Documents. Open it from the pause menu or the Journal's Explore
 button (N); optional direct controls remain unbound until configured. Legacy
 mission/key/status commands open Caelum views. No new travel or inventory state.
-CA236-01 manual usability checks are deferred until the author returns.
+CA236-01's first five handoff steps passed author review on 2026-10-14;
+remaining control, presentation and persistence checks stay pending.
 [Evidence](assets/validation_539/RESULTS.md).
 
 5.3.8 implements [#235](https://github.com/damiancurti/Caelum-Argenteum/issues/235):

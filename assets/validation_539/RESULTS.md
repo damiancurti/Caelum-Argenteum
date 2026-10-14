@@ -11,14 +11,21 @@ The native matrix uses isolated INIs, background simulation and 5% audio.
 It covers fresh/current/older records, the connected screens, native popup
 commands, direct remaps, note/map return, travel cancel/confirmation and
 Spanish/English presentation. Final counts and hashes are in `evidence.json`.
-Author physical-input/usability check CA236-01 is deferred until return.
+Author physical-input/usability check CA236-01 partially passed on 2026-10-14.
+The author confirmed the first five handoff steps: mouse/keyboard navigation to
+all connected screens, Back/Escape and Explore from Crafting, document viewing
+without consumption, map center/zoom after World, and save/load retaining owned
+items and tracked missions. Session `author-20261014-063717` used final runtime
+SHA-256 `2d8affc4cdbed61c12a10625d9f0d5c64833c62b82d079495b1b9a72abf66d16`
+and exited with code 0. The remaining CA236-01 checks stay in `pending_test.txt`.
 
 Native handler calls and console commands are isolated technical evidence,
 not physical mouse/keyboard acceptance. GZDoom rejects executing a native
 command item from a diagnostic ConsoleProcess; that first failure is retained.
 The subsequent fixture inspects the actual native command item, then dispatches
-its route from the console separately. Real native item activation remains an
-explicit author check. The existing native command-item implementation is reused.
+its route from the console separately. Real native item activation in the first
+handoff was subsequently accepted by the author, separately from those scripted
+checks. The existing native command-item implementation is reused.
 
 The selected real travel check uses the existing measured MAP03-to-MAP06 route,
 native confirmation/cancel handlers and production revalidation. Fresh profiles
@@ -54,6 +61,7 @@ Run `python build_dialogue_index.py build`, `python build_document_index.py`,
 Bypass -File .\build_dev.ps1` for the production gates. The collector verifies
 the normal build members equal the tested frozen production package.
 
-The author handoff is prepared but not launched during the absence. Original
-source saves and earlier issue packages remain preserved. No merge, issue
-closure, multiplayer certification or author acceptance is inferred.
+The author handoff was launched after the return, with the terminal left open.
+The temporary keep-awake request was released at 09:37 UTC on 2026-10-14.
+Original source saves and earlier issue packages remain preserved. No merge,
+issue closure, multiplayer certification or further author acceptance is inferred.
