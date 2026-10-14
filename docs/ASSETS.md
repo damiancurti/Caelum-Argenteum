@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.1** — 2026-10-14.
+Documentation version: **5.4.2** — 2026-10-14.
 
 ## 5.3.8 - Existing quest text and known-place links (#235)
 

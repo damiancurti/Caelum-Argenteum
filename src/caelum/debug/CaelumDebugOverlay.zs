@@ -1691,6 +1691,10 @@ class CaelumDebugOverlay : EventHandler
             );
         }
         String weaponDetail = "";
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            weaponDetail=String.Format(StringTable.Localize(CaelumSealResistance.DescriptionKey(
+                localPlayer.EquipmentSelectionSealType),false),100*(1-CaelumSealResistance.Factor(
+                localPlayer.EquipmentSelectionSealType,localPlayer.EquipmentSelectionSealType)));
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             weaponDetail = String.Format(
@@ -1809,8 +1813,8 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.EquipmentSelectionOwned ? Font.CR_WHITE : Font.CR_RED);
         DrawCenteredText(detail, 188.0,
             localPlayer.EquipmentSelectionSizeCompatible ? Font.CR_WHITE : Font.CR_RED);
-        if (localPlayer.EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
         {
             DrawCenteredText(weaponDetail, 206.0, Font.CR_GOLD);
         }

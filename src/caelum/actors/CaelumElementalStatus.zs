@@ -204,7 +204,12 @@ class CaelumElementalStatus : Object
         double step=Min(ticSeconds,remaining);
         int rate=index==0 ? BurnDamagePerSecond : index==1 ? PoisonDamagePerSecond : DiseaseDamagePerSecond;
         Actor source=index==0 ? BurnSource : index==1 ? PoisonSource : DiseaseSource;
-        HealthFraction[index]+=step*rate*(response>0 ? 1 : -1);
+        // El sello reduce sólo la dosis dañina, antes del acumulador existente.
+        // Los restos ya devengados, duración, curación y calor no se reescalan.
+        int essence=index==0 ? CaelumConstants.ESSENCE_FIRE
+            : index==1 ? CaelumConstants.ESSENCE_EARTH : -1;
+        double sealFactor=response>0 ? CaelumSealResistance.ForEssence(owner,essence) : 1;
+        HealthFraction[index]+=step*rate*(response>0 ? sealFactor : -1);
         PulseSeconds[index]+=step;
         bool deliver=PulseSeconds[index]+0.0000001>=1 || step+0.0000001>=remaining;
         int whole=deliver ? (HealthFraction[index]>=0 ? int(HealthFraction[index]+0.0000001)

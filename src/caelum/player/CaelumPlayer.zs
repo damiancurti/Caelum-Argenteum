@@ -7629,8 +7629,9 @@ class CaelumPlayer : DoomPlayer
     int PendingDamageVFXKind,DamageVFXKind,DamageVFXTic,DamageFeedbackRevision;
     double DamageVFXStrength;
 
-    int ApplyNativeHealthDamage(Actor inflictor,Actor source,int damage,Name mod,int flags,double damageAngle)
+    int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
+        int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -8093,7 +8094,7 @@ class CaelumPlayer : DoomPlayer
         int result = ApplyNativeHealthDamage(
             inflictor,
             source,
-            totalHealthDamage,
+            postToughnessDamage,
             mod,
             flags | DMG_NO_ARMOR,
             damageAngle
@@ -8116,7 +8117,8 @@ class CaelumPlayer : DoomPlayer
                 if (!LastShieldBlockedAttack)
                 {
                     ApplyIncomingElementalPayload(
-                        attackProjectile, actualHealthLost
+                        attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
+                            postToughnessDamage,actualHealthLost,mod)
                     );
                 }
             }
@@ -8228,7 +8230,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         int healthBeforeDamage = health;
-        int finalDamage = Max(0, LastArmorHealthDamage);
+        double finalDamage = Max(0.0, LastArmorPostDefenseDamage*LastToughnessDamageMultiplier);
         int result = 0;
         if (finalDamage > 0)
         {
@@ -8260,7 +8262,8 @@ class CaelumPlayer : DoomPlayer
                     attackProjectile.CaelumPushMultiplier
                 );
                 ApplyIncomingElementalPayload(
-                    attackProjectile, actualHealthLost
+                    attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
+                        finalDamage,actualHealthLost,mod)
                 );
             }
             LastArmorHealthDamage = actualHealthLost;
@@ -11010,14 +11013,7 @@ class CaelumPlayer : DoomPlayer
 
     CaelumEquipmentItem GetEquippedSeal()
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem seal = CaelumEquipmentItem(cursor);
-            if (seal != null && seal.Equipped
-                && seal.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-                return seal;
-        }
-        return null;
+        return CaelumSealResistance.Equipped(self);
     }
 
     double GetSealChannelAdrenalinePerTic(int tier)

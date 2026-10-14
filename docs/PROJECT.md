@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.1** — 2026-10-14.
+Documentation version: **5.4.2** — 2026-10-14.
+
+## 5.4.2 - Equipped-Seal resistances (#261)
+
+Implemented the approved passive factors, shared by player/NPC damage entry
+points without new NPC equipment grants. Elemental metadata owns identification;
+unknown magic is not inferred from colors or source actors. Existing equipment
+state survives saves/travel with no new schema. Native checks, captures and
+reproduction: assets/validation_542/RESULTS.md. CA261-01 remains pending; the
+author is away. No merge or issue closure is inferred from automated tests.
 
 ## 5.4.1 - Weapon dispersion tiers (#259)
 

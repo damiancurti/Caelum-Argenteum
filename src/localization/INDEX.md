@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `af065133d73f1217ad6519edf07d920384a63716f00484b0d1f9dc98da73756c`. Locations include every definition; the last one per language wins.
+SHA-256: `68fd211d8d9e731fa28323451d5a5cb108fcbca6cf05f77b9695ce9d5829a990`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -125,7 +125,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_ROCK | 5 | CA_ROCK_BASALT | CA_ROCK_SANDSTONE |
 | CA_RONNIE | 1 | CA_RONNIE_NAME | CA_RONNIE_NAME |
 | CA_RULO | 1 | CA_RULO_NAME | CA_RULO_NAME |
-| CA_SEAL | 5 | CA_SEAL_AIR | CA_SEAL_WATER |
+| CA_SEAL | 10 | CA_SEAL_AIR | CA_SEAL_WATER |
 | CA_SEWER | 9 | CA_SEWER_SUPPORT_CRAFT | CA_SEWER_WORLD_HELP |
 | CA_SEX | 2 | CA_SEX_FEMALE | CA_SEX_MALE |
 | CA_SHIELD | 4 | CA_SHIELD_TYPE_BUCKLER | CA_SHIELD_TYPE_TOWER |

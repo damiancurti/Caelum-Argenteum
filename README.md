@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.1.** Obtain and update the complete repository, validate
+**Current release: 5.4.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.2 implements [#261](https://github.com/damiancurti/Caelum-Argenteum/issues/261):
+the equipped Seal reduces damage from its elemental pair by 50%; Quintessence
+reduces all identified elemental damage by 15%. Direct hits, explosions and
+harmful status pulses share the rule. Character resistances and bilingual item
+details reflect it. [Native evidence](assets/validation_542/RESULTS.md) separates
+completed checks from pending author acceptance CA261-01.
 
 5.4.1 implements [#259](https://github.com/damiancurti/Caelum-Argenteum/issues/259):
 weapon dispersion combines its base category, equipment tier and strict Lucidity

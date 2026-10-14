@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "af065133d73f1217ad6519edf07d920384a63716f00484b0d1f9dc98da73756c",
+  "sha256": "68fd211d8d9e731fa28323451d5a5cb108fcbca6cf05f77b9695ce9d5829a990",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -2061,6 +2061,11 @@
     "CA_SEAL_EARTH": {"enu":[[1675,1675]],"default":[[1675,1675]],"es":[[1690,1690]]},
     "CA_SEAL_FIRE": {"enu":[[1673,1673]],"default":[[1673,1673]],"es":[[1688,1688]]},
     "CA_SEAL_QUINTESSENCE": {"enu":[[1677,1677]],"default":[[1677,1677]],"es":[[1692,1692]]},
+    "CA_SEAL_RESIST_AIR": {"enu":[[5801,5801]],"default":[[5801,5801]],"es":[[5808,5808]]},
+    "CA_SEAL_RESIST_EARTH": {"enu":[[5800,5800]],"default":[[5800,5800]],"es":[[5807,5807]]},
+    "CA_SEAL_RESIST_FIRE": {"enu":[[5798,5798]],"default":[[5798,5798]],"es":[[5805,5805]]},
+    "CA_SEAL_RESIST_QUINTESSENCE": {"enu":[[5802,5802]],"default":[[5802,5802]],"es":[[5809,5809]]},
+    "CA_SEAL_RESIST_WATER": {"enu":[[5799,5799]],"default":[[5799,5799]],"es":[[5806,5806]]},
     "CA_SEAL_WATER": {"enu":[[1674,1674]],"default":[[1674,1674]],"es":[[1689,1689]]},
     "CA_SEWER_SUPPORT_CRAFT": {"enu":[[3699,3699]],"default":[[3699,3699]],"es":[[3706,3706]]},
     "CA_SEWER_SUPPORT_CRAFT_READY": {"enu":[[3701,3701]],"default":[[3701,3701]],"es":[[3708,3708]]},

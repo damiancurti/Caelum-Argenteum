@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.1** — 2026-10-14.
+Documentation version: **5.4.2** — 2026-10-14.
 
-**5.4.1 / #259:** weapon dispersion tiers/Lucidity; evidence: assets/validation_541.
-CA259-01 pending. #237 audit: assets/validation_540. Next: #238 shared abilities;
-latest author decisions are recorded in the individual GitHub issues.
-**Previous #231-236/#255-258:** accepted, merged and closed. HISTORY owns results;
-their author checks are complete; CA259-01 is the current outstanding check.
+**5.4.2 / #261:** passive Seal resistance; assets/validation_542; CA261-01 pending.
+**5.4.1 / #259:** dispersion; assets/validation_541; CA259-01 pending; PR273.
+#237 audit: assets/validation_540 / PR272. #238 remains separate; questions/manual
+checks await the author's return.
+**Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

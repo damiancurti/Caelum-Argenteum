@@ -5793,3 +5793,17 @@ CA_NAV_KEY_HELP = "Las cerraduras comprueban esta llave automáticamente mientra
 CA_NAV_NO_TEXT = "Este documento no tiene texto adicional disponible para leer.";
 CA_NAV_NO_DOCUMENTS = "Actualmente no poseés llaves ni documentos.";
 CA_NAV_MAP_HINT = "Explorar / Mundo: %s | Diario: %s | También desde el menú de pausa.";
+
+[enu default]
+CA_SEAL_RESIST_FIRE = "Equipped: -%.0f%% Fire / Light damage.";
+CA_SEAL_RESIST_WATER = "Equipped: -%.0f%% Water / Ice damage.";
+CA_SEAL_RESIST_EARTH = "Equipped: -%.0f%% Earth / Poison damage.";
+CA_SEAL_RESIST_AIR = "Equipped: -%.0f%% Air / Lightning damage.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipped: -%.0f%% elemental damage.";
+
+[es]
+CA_SEAL_RESIST_FIRE = "Equipado: -%.0f%% de daño de Fuego / Luz.";
+CA_SEAL_RESIST_WATER = "Equipado: -%.0f%% de daño de Agua / Hielo.";
+CA_SEAL_RESIST_EARTH = "Equipado: -%.0f%% de daño de Tierra / Veneno.";
+CA_SEAL_RESIST_AIR = "Equipado: -%.0f%% de daño de Aire / Rayo.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño elemental.";

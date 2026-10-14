@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.1** — 2026-10-14.
+Documentation version: **5.4.2** — 2026-10-14.
+
+## 5.4.2 - Equipped-Seal resistances (#261, 2026-10-14)
+
+Added fixed passive HP factors from the one equipped Seal: Fire/Light,
+Water/Ice, Earth/Poison and Air/Lightning use 0.5; Quintessence uses 0.85 for all
+identified elemental damage. The shared lookup excludes owned/boxed Seals and
+also serves Channel/HUD identity. It creates no new equipment or saved schema.
+Direct/area damage applies the factor after existing custom defenses and before
+final HP rounding. Harmful burn/poison scales before its fractional accumulator;
+healing, duration, thermal transfer and physical damage retain their rules.
+The status source dose compensates the direct Seal factor, preventing a second
+reduction of the same dose. Native retention/HP rounding and the MAP01 safety
+floor remain part of that calculation. English/Spanish item details and Character
+resistances show the equipped contribution without adding Toughness or blocking.
+
+Final GZDoom 4.14.2 matrix passed 556 assertions. An earlier regression caught the
+double-reduced burn source dose; another launch caught a reserved-keyword compile
+error. Both are corrected and their original evidence is preserved. Native item
+cycling, old-save upgrade, current reload, rollback and MAP02/MAP03 round-trip
+passed. Spanish Character/item captures were inspected. Exact hashes, scope and
+static/package results: assets/validation_542/RESULTS.md. CA261-01 remains pending
+author confirmation; no manual acceptance, merge or closure is inferred.
 
 ## 5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)
 

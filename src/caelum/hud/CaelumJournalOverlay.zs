@@ -1404,11 +1404,12 @@ class CaelumJournalOverlay : EventHandler
             localPlayer.HUDPhysicalCriticalApplies, localPlayer.HUDPhysicalCriticalChance);
         DrawCharacterChance("CA_CHARACTER_MAGICAL_CRITICAL", 260,
             localPlayer.HUDMagicalCriticalApplies, localPlayer.HUDMagicalCriticalChance);
-        // Todas las esencias usan la absorción mágica actual. No sumar Dureza ni bloqueo.
+        // Media de armadura corporal y factor del sello; sin Dureza ni bloqueo.
         for (int element = 0; element < CaelumConstants.ESSENCE_TYPE_COUNT; element++)
             DrawTextLine(SmallFont, Font.CR_CYAN, 56 + (element % 2) * 176, 282 + (element / 2) * 14,
                 String.Format(StringTable.Localize(CaelumCharacterView.ResistanceKey(element), false),
-                    (1 - localPlayer.HUDMagicalDamageFactor) * 100));
+                    (1 - localPlayer.HUDMagicalDamageFactor*CaelumSealResistance.Factor(
+                        localPlayer.HUDHasEquippedSeal ? localPlayer.HUDEquippedSealType : -1,element)) * 100));
         for (int resource = 0; resource < 3; resource++)
         {
             double y = 132 + resource * 43;

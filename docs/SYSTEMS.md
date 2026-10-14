@@ -1,6 +1,54 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.1** — 2026-10-14.
+Documentation version: **5.4.2** — 2026-10-14.
+
+## Equipped-Seal elemental resistance - 5.4.2 / #261
+
+Only the equipped, unboxed Seal contributes. Owning another Seal, recalculating
+attributes or channeling does not add another factor; tier does not scale it.
+The authoritative factors live in CaelumSealResistance.
+
+| Equipped Seal | Identified incoming elements | HP factor |
+| --- | --- | --- |
+| Fire | Fire, Light | 0.5 |
+| Water | Water, Ice | 0.5 |
+| Earth | Earth, Poison | 0.5 |
+| Air | Air, Lightning | 0.5 |
+| Quintessence | All nine elements, including Quintessence | 0.85 |
+
+Physical damage and nonmatching elements retain factor 1. Prepared projectile
+payloads identify primary/secondary elements even under generic damage names;
+explicit elemental damage names cover nonprojectile sources. Physical impacts
+from an elemental projectile remain physical. Generic magic with no authored
+identity (including the current magic mine) is not assigned an element from its
+appearance. Burn and poison identify their own element after their source dies.
+Disease/cut remain outside the listed elemental families; no new source is added.
+
+Direct and area damage retains shield/anatomy/armor wear/Toughness order. Apply
+the Seal after those custom defenses, before the final nearest-integer HP round
+and native damage handling. Area damage scales once after summing its regions.
+The damage factor does not scale push, Lucidity formulas, thermal joules, control
+strength or duration. Existing gates requiring actual HP loss still apply.
+
+For harmful burn/poison, scale new dose before the existing fractional-HP
+accumulator and deliver through the already-resolved sustained-damage path. The
+factor is not applied again at native HP entry. A 1 HP/s burn lasting two seconds
+with a matching Seal deals one HP; Quintessence retains 17 of 20 such HP. Changing
+Seals affects future accrual, not already-earned fractional HP or remaining time.
+Healing is not reduced. No timers, counters or save schemas are added.
+
+This is an explicit exception to #188's damage-derived status dose: remove the
+direct Seal contribution when constructing a projectile's source dose, because
+each future status pulse receives its own current Seal factor. The calculation
+retains observed native damage retention and integer rounding; MAP01's protected
+1 HP floor does not inflate a capped dose. This prevents a matching Seal from
+turning one intended 50% reduction into 75% across the source dose and its ticks.
+
+Character displays `(1 - averageMagicalArmorRetention * sealFactor) * 100` for
+each essence pair, with the existing equal body-slot average and no Toughness or
+blocking. Fire's 50% passive factor plus 7.5% innate absorption therefore displays
+53.75%, while unrelated rows remain 7.5%. Bilingual item details explain the
+passive condition. Native checks/limits: assets/validation_542/RESULTS.md.
 
 ## 5.3.9 - Exploration navigation and owned documents (#236)
 

@@ -2827,6 +2827,12 @@ class CaelumCombatActor : Actor
         );
     }
 
+    int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
+    {
+        return Super.DamageMobj(inflictor,source,
+            CaelumSealResistance.HealthDamage(self,inflictor,damage,mod),mod,flags,angle);
+    }
+
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
         EnsureCombatPersonality();
@@ -2866,7 +2872,7 @@ class CaelumCombatActor : Actor
             {PendingLocalizedImpact=false;PendingLocalizedCriticalHit=false;}
             int healthBeforeImpact = health;
             double adrenalineRatioBeforeImpact = GetCombatAdrenalineRatio();
-            int result = Super.DamageMobj(
+            int result = ApplyNativeHealthDamage(
                 inflictor,
                 source,
                 damage,
@@ -2958,10 +2964,10 @@ class CaelumCombatActor : Actor
             int(LastCombatPostToughnessDamage + 0.5)
         );
         if (retainedDamage <= 0) { return 0; }
-        int result = Super.DamageMobj(
+        int result = ApplyNativeHealthDamage(
             inflictor,
             source,
-            retainedDamage,
+            LastCombatPostToughnessDamage,
             mod,
             flags | DMG_NO_ARMOR,
             angle
@@ -3048,7 +3054,7 @@ class CaelumCombatActor : Actor
         }
         if (bInvulnerable)
         {
-            return Super.DamageMobj(
+            return ApplyNativeHealthDamage(
                 inflictor, source, incomingDamage, mod, flags, damageAngle
             );
         }
@@ -3179,10 +3185,10 @@ class CaelumCombatActor : Actor
         if (totalHealthDamage <= 0) { return 0; }
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = GetCombatAdrenalineRatio();
-        int result = Super.DamageMobj(
+        int result = ApplyNativeHealthDamage(
             inflictor,
             source,
-            totalHealthDamage,
+            LastCombatPostToughnessDamage,
             mod,
             flags | DMG_NO_ARMOR,
             damageAngle
