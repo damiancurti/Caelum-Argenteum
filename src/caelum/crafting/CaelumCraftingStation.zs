@@ -107,6 +107,7 @@ class CaelumCraftingStation : CaelumMovableProp
         // una misma pulsación física de Use.
         if (user.CraftingStationUseLatched) { return; }
         user.CraftingStationUseLatched = true;
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.STATION);
 
         int scanToken = user.BeginCraftingNetworkScan();
         CollectCraftingNetwork(user, scanToken);

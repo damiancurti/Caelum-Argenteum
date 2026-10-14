@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "053280db2ff32761757e972e2bb953f8808909c9f70421024ca8d1574845a7f9",
+  "sha256": "489eb997efc8a64e9f01205550ac4316660c3171b0ae1ee7394167f4574753cb",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -1662,6 +1662,12 @@
     "CA_PICKUP_SEAL": {"enu":[[1679,1679]],"default":[[1679,1679]],"es":[[1694,1694]]},
     "CA_PICKUP_WATER_RATION": {"enu":[[605,605]],"default":[[605,605]],"es":[[1293,1293]]},
     "CA_PLAYER_DISPLAY_NAME": {"enu":[[284,284]],"default":[[284,284]],"es":[[972,972]]},
+    "CA_POI_BED": {"enu":[[5602,5602]],"default":[[5602,5602]],"esp":[[5610,5610]]},
+    "CA_POI_EXIT": {"enu":[[5605,5605]],"default":[[5605,5605]],"esp":[[5613,5613]]},
+    "CA_POI_MERCHANT": {"enu":[[5604,5604]],"default":[[5604,5604]],"esp":[[5612,5612]]},
+    "CA_POI_NEAREST": {"enu":[[5607,5607]],"default":[[5607,5607]],"esp":[[5615,5615]]},
+    "CA_POI_STATION": {"enu":[[5603,5603]],"default":[[5603,5603]],"esp":[[5611,5611]]},
+    "CA_POI_TRANSPORT": {"enu":[[5606,5606]],"default":[[5606,5606]],"esp":[[5614,5614]]},
     "CA_PORT_AFTER": {"enu":[[4539,4539]],"default":[[4539,4539]],"es":[[4545,4545]]},
     "CA_PORT_END": {"enu":[[4541,4541]],"default":[[4541,4541]],"es":[[4547,4547]]},
     "CA_PORT_END_SIGN": {"enu":[[4540,4540]],"default":[[4540,4540]],"es":[[4546,4546]]},

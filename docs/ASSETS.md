@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
+
+## 5.3.5 - Known-service map icons (#232)
+
+No new or edited bitmap, font, external asset or generator is introduced.
+`CaelumPoiData.IconPath` reuses the owned sleep HUD icon, crafts navigation icon,
+gold coin, use action icon and world navigation icon for the five categories.
+Original provenance remains under the corresponding retained HUD/Journal/item
+asset records. The map uses native icon projection at a fixed presentation
+size; the name/category comes from the known fact and bilingual LANGUAGE keys.
+Sources, native logs and captures are retained in assets/validation_535;
+development packages, saves, executable and IWAD remain local.
 
 ## 5.3.4 - Local cartographic presentation (#231)
 

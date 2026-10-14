@@ -1,6 +1,59 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
+
+## 5.3.5 - Personal local POI knowledge (#232)
+
+Services become known on valid interaction with a registered bed, station,
+merchant, exit or vehicle. Author decision (2026-10-13): an interaction still
+records the place when combat, access requirements or a lock blocks the service.
+Knowledge grants no permission to use, unlock or travel through it.
+In particular, MAP06 coastal connection 10 remains disabled by the existing
+world catalogue even when its cart is known. Seeing a
+service, revealing its native lines or visiting its map grants no local POI.
+The separate approved world-route signage rule remains unchanged: a known
+connection is neither a known local service nor a visited destination.
+
+`CaelumPersistentCharacterState` owns `KnownPois` and `LocalKnowledgeRevision=1`.
+Each fact stores the exact map ID + authored stable POI ID, category, localization
+key and last observed XYZ. The pair, not coordinates, translated text or list
+order, identifies it. Revision-zero saves migrate idempotently without inventing
+discoveries. Normal inventory serialization carries these facts through native
+save/load and hub travel. Recovery uses an unchanged pre-patch save with its
+original package; writing a new-schema save does not modify that original.
+
+`CaelumPoiRegistration.Bind` links an existing service to explicit authored
+metadata. Repeated equal bindings are harmless; conflicting identities fail
+closed. An absent subject may be rebound to the same identity. Registration
+alone never writes personal facts. #234 owns actual MAP01/MAP02/MAP06 entries;
+this patch supplies the framework and isolated validation registrations only.
+No new NPC information, disclosure rule, room detector or reveal radius is added.
+The author-approved later room/tower condition is entry, not mere visibility.
+
+`CaelumPoiKnowledge.Find` is a read-only lookup for map/objective integration.
+`CaelumPoiView` exposes conditional localized names and nearest-known-center
+selection; UI opening, drawing, panning and lookup cannot mutate knowledge,
+quests, rewards, routes or geometry. Full map shows the name/category of the
+known place nearest the map center, with no selection/discovery radius. Native
+icons project through native zoom/pan/rotation in both map modes. Only already
+known facts are candidates, including facts on another known storey; unknown
+stacked-floor and secret-room registrations remain absent. Native 2D overlap
+still applies. This is memory, not a promise that a service remains available:
+moving/removed objects leave their last observed location until used again.
+
+Presentation reuses the project's sleep, crafts, gold coin, use and world icons
+for bed, station, merchant, exit and transport. Category metadata lives in
+`CaelumPoiData`; authored coordinates/names remain outside generic logic.
+The native MapMarker renderer ignores ownership and player-visibility flags.
+Therefore these derived markers are suppressed in multiplayer or with multiple
+participants; personal records and read-only labels remain separate. Full
+multiplayer support is not claimed. Markers contain no authority, reveal flags,
+target TIDs or live-object tracking; they consult only the current character's
+known fact. No renderer or reveal CVar is changed.
+
+Evidence and precise fixture limits: assets/validation_535/RESULTS.md.
+CA232-01 passed author acceptance on 2026-10-14; #233 notes, #234 registrations, #235 multiple
+mission tracking and #236 Journal navigation remain separate deliveries.
 
 ## 5.3.4 - Native local cartography (#231)
 

@@ -7,6 +7,8 @@ class CaelumRestTrial : Object play
         if (CaelumRestState.IsActive(user)) return false;
         if (bag != null && (furniture != null || !bag.AvailableTo(user))) return false;
         if (furniture != null && !furniture.CanReach(user)) return false;
+        if(furniture!=null && furniture.RestMode()==CaelumRestRules.MODE_SLEEP)
+            CaelumPoiKnowledge.RecordUse(user,furniture,CaelumPoiData.BED);
         String reason = CaelumRestState.BlockReason(user,furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName));
         if (reason.Length() != 0 && reason != "CA_REST_NEEDS")
         {
@@ -30,7 +32,10 @@ class CaelumRestTrial : Object play
         if (bag != null) conversation = 43513;
         if (furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName))
             conversation=furniture.RestMode()==CaelumRestRules.MODE_SLEEP?43516:43515;
-        if (CaelumFactionCondition.OpenDialogue(user, guide, conversation, null, SF_IGNOREVISIBILITY)) return true;
+        if (CaelumFactionCondition.OpenDialogue(user, guide, conversation, null, SF_IGNOREVISIBILITY))
+        {
+            return true;
+        }
         guide.Destroy();
         return false;
     }

@@ -4,6 +4,20 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-093 - Wait before validating manually spawned service fixtures
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #232 / 5.3.5,
+2026-10-13; runtime 356f20ad, GZDoom 4.14.2 / Windows 11.
+
+`CaelumSiegePreviewWorld.RemoveTrialFurniture` periodically retires beds and
+stations in MAP03. An immediate scripted Use can succeed before cleanup even
+though a human cannot use the disappearing object. The author exposed this
+handoff failure. A native delayed-use run reproduced both missing objects and
+missing discoveries; the equivalent MAP04 run retains the objects, menus and
+known markers. Keep the existing map contract intact. Validate fixture lifetime
+before and after ordinary input, and retain this distinction in acceptance.
+Evidence: assets/validation_535/RESULTS.md and author-delay-map04-02.
+
 ## CA-KP-092 - Automap colors do not provide floor selection or private markers
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #231 / 5.3.4,
@@ -19,6 +33,12 @@ MAPINFO `Automap` / `Automap_Overlay` palettes respect `am_customcolors`; no
 startup CVar writes are needed. Native MapMarker projection checks dormancy
 and optional subsector discovery, but does not filter an owner/player. A later
 private POI or note registry must not assume it provides private rendering.
+
+#232 / 5.3.5 implements that boundary with character-owned facts and derived
+markers that are dormant in multiplayer or with multiple participants. The
+native bot fixture in assets/validation_535 verifies distinct discoveries for
+two native players and no displayed private markers. This is ENGINE-VERIFIED
+ownership/privacy evidence, not a multiplayer gameplay certification.
 
 The native serializer preserves ten numbered marks, scale and map bounds.
 The #231 old/current/reload/rollback and hub scenarios compare these objects

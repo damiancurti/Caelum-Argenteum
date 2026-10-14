@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
+
+## 5.3.5 - Known local POIs (#232, 2026-10-13)
+
+Extended the existing character record with revision-one local knowledge keyed
+by map + authored POI ID. Valid registered service interactions remember
+bed/station/merchant/exit/transport metadata and the observed position. The author
+confirmed on 2026-10-13 that blocked interactions also count as knowledge; they
+do not unlock the service or alter its restrictions. Neither
+native map exploration nor world/quest catalogue membership infers these facts.
+UI names and native icons read only this authority; repeated bindings/events,
+old-save migration and missing/moved sources preserve the secrecy boundary.
+Map-specific registrations remain #234. Existing world-route signage remains
+unchanged and does not grant local service knowledge. Native renderer ownership
+limits require suppressing private markers in multiplayer; no multiplayer
+delivery is claimed. Existing owned icons are reused without asset edits.
+
+Validation details and test-source limitations: assets/validation_535/RESULTS.md.
+Static and native checks are separate from the author acceptance recorded below.
+On 2026-10-13 the author reported a visible merchant marker but no bed/station
+markers and objects/interactions disappearing almost immediately. A delayed
+native reproduction confirms MAP03's existing gallery cleanup destroys those
+fixture objects. The earlier short scripted Use ran before cleanup and missed
+the handoff failure. The corrected handoff uses MAP04, checks object/menu/icon
+persistence after waiting, and changes no gameplay code. This is not an author
+pass by itself. Subsequently, on 2026-10-14 the author explicitly confirmed
+that the corrected tests passed ("Ahora si dieron bien las pruebas").
+**CA232-01, originating in 5.3.5 / #232, passed author acceptance** using the
+corrected MAP04 handoff. Its pending entry was removed; the original MAP03
+fixture failure remains evidence. No separate physical-controller coverage,
+merge or issue closure is inferred.
 
 ## 5.3.4 - Native local cartography (#231), 2026-10-13
 

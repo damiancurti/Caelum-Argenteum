@@ -141,6 +141,7 @@ class CaelumCityMerchant : Actor
         if(user==null || user.health<=0 || !CaelumUseGeometry.AimedAt(user,self))return false;
         if((user.player.cmd.buttons&BT_USE)==0 || user.FolkloreInteractionUseLatched)return true;
         user.FolkloreInteractionUseLatched=true;user.FolkloreInteractionReleaseGuardTics=0;
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.MERCHANT);
         CaelumCityTradeSession.Open(user,self);return true;
     }
 

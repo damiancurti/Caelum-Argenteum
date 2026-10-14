@@ -62,6 +62,7 @@ class CaelumSewerTravel : Object play
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)
             || user.Distance2D(gate) > user.UseRange + gate.Radius
             || Abs(user.Pos.Z-gate.Pos.Z) > 64 || !user.CheckSight(gate)) return false;
+        CaelumPoiKnowledge.RecordUse(user,gate,CaelumPoiData.EXIT);
         return CaelumTravelService.Begin(user, id, CaelumJourneyState.MODE_FOOT);
     }
 }

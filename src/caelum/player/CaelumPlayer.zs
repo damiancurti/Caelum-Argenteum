@@ -2160,7 +2160,9 @@ class CaelumPlayer : DoomPlayer
         CaelumFactionCondition discount = null, String titleKey = "CA_PALOMO_MERCHANT_TITLE")
     {
         SyncPalomoDialogueTokens();
-        if (CreationWizardOpen || !MagicBoxOwned || merchant == null) { return; }
+        if (CreationWizardOpen || merchant == null) { return; }
+        CaelumPoiKnowledge.RecordUse(self,merchant,CaelumPoiData.MERCHANT);
+        if (!MagicBoxOwned) { return; }
         if (!CaelumFactionCondition.Require(self, requirement)) return;
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;

@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.4.** Obtain and update the complete repository, validate
+**Current release: 5.3.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.5 implements [#232](https://github.com/damiancurti/Caelum-Argenteum/issues/232):
+personal knowledge of registered beds, stations, merchants, exits and transport,
+with conditional native icons/names. Service use records the last known place;
+map-specific registrations follow in #234. [Evidence](assets/validation_535/RESULTS.md).
+**CA232-01 passed author acceptance on 2026-10-14** using the corrected MAP04
+fixture after the reproduced MAP03 handoff failure.
 
 5.3.4 implements [#231](https://github.com/damiancurti/Caelum-Argenteum/issues/231):
 native local cartography with paper/ink colors, location, local time and current
