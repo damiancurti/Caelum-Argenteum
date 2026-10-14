@@ -2,8 +2,8 @@
 
 Documentation version: **5.3.8** — 2026-10-14.
 
-**#235/5.3.8:** multi-mission tracking; CA235-01 pending. Author away.
-**#233/234:** checks passed; CA233/234-01 pending. Defer manual checks.
+**#235/5.3.8:** multi-mission tracking; CA235-01 pending.
+**#233:** editing accepted; CA233 remainder and CA234-01 pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 

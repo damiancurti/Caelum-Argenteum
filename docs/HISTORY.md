@@ -61,8 +61,17 @@ old/current saves, native numbered marks, hub return, multiple characters and
 Spanish/English scales. The old-save comparison resolves identity object-table
 references before comparing values; changed native relocation slots are not
 changed identity. Validation/build results and exact hashes are retained in
-assets/validation_536. CA233-01 remains pending author editing acceptance;
-agent checks do not constitute author acceptance.
+assets/validation_536. On 2026-10-14 the author confirmed CA233-01's five editing
+handoff steps (origin 5.3.6 / #233): place a note at the panned map center; enter
+accented text and choose a category; edit with mouse/keyboard, cancel an edit
+and a deletion, and confirm deletion of a separate note; retain long text and
+notes through zoom/pan and native save/load; and verify manual Bed/Merchant
+categories neither discover nor enable services. Session author-20261014-064047
+used MAP04 and frozen runtime SHA-256
+6a274349bdf886cf42fe499325b86d856eb233977b7ab7d2283af810a822a662.
+Held/opening input, rotation/overlay, numbered marks, custom/unbound controls
+and optional controller navigation remain in CA233-01. Agent evidence and this
+partial author acceptance remain distinct; no merge or issue closure is inferred.
 
 ## 5.3.5 - Known local POIs (#232, 2026-10-13)
 

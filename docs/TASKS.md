@@ -24,8 +24,8 @@ loaded-layout guards. No secret/loot/enemy annotation or new access rule.
 The author approved one marker per south gate and east-arch crossing; siege-sector
 warnings remain a design gap, explicitly deferred. Static/build and focused
 native checks passed (151 assertions, 16 save comparisons); CA234-01 manual
-checks wait for the author's return. #233 editing
-and remaining #258 checks stay pending. Next: #235/#236 separately.
+checks remain pending. #233 editing passed; remaining #233/#258 checks stay
+pending. Next: #235/#236 separately.
 
 ## 5.3.6 - Manual map notes (#233)
 
@@ -33,9 +33,11 @@ Implemented native-center placement, clickable/native-navigation list, native
 text input, editable category and confirmed deletion with character/map-owned
 revision-one data. Save commands validate stable ID and serial. Notes are not
 automatic knowledge and do not replace native numbered marks or bindings.
-Native persistence/input/layout checks passed; CA233-01 remains pending author
-editing acceptance. Evidence: assets/validation_536. Continue #234/#235/#236
-separately after this delivery.
+Native persistence/input/layout checks passed. On 2026-10-14 the author passed
+CA233-01's five editing handoff steps, including accented/long text, cancellation,
+deletion, save/load and presentation-only service categories. Remaining native
+input/map-mode compatibility checks stay pending. Evidence: assets/validation_536.
+Keep #234/#235/#236 implementation and acceptance separate.
 
 ## 5.3.5 - Personal POI knowledge (#232)
 
