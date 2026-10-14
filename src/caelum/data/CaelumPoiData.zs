@@ -31,8 +31,10 @@ class CaelumPoiData : Object
         }
         return "";
     }
-    static String IconPath(int category)
+    static String IconPath(int category,int observedAccess=ACCESS_UNKNOWN)
     {
+        // El icono sigue el hecho observado, nunca el estado remoto de la reja.
+        if(category==GRATE && observedAccess==ACCESS_OPEN)return IconPath(EXIT);
         switch(category)
         {
         case BED: return "graphics/caelum/ui/hud/icons/ca_hud_icon_sleep.png";

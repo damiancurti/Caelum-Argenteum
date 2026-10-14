@@ -2,7 +2,7 @@
 
 Documentation version: **5.3.7** — 2026-10-14.
 
-**#234/5.3.7:** CA234-01 mansion accepted; remaining checks pending.
+**#234/5.3.7:** mansion accepted; open-grate icon fixed, author retest pending.
 **#233:** editing accepted; remaining CA233-01 checks pending.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
