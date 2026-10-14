@@ -112,7 +112,8 @@ Static/build checks and 114 native assertions passed across 13 runs, with
 18 save comparisons and 19 inspected captures. Evidence is recorded in
 assets/validation_538; native diagnostic state setup is
 distinct from ordinary campaign progression and author acceptance. CA235-01 is
-deferred until the author returns. #236 remains a separate navigation patch.
+available in Probar235 after the author's return; acceptance remains pending.
+#236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)
 
@@ -184,8 +185,9 @@ closed/open-padlock test and save/load. Ordinary sewer exploration, city and
 remaining compatibility checks stay pending.
 Preserve original saves/packages; #235/#236 remain separate patches.
 The author's subsequent city test reported hand icons on gates and missing
-southwest factory stations. The corrections above remain pending author retest;
-focused evidence is recorded separately in assets/validation_537/RESULTS.md.
+southwest factory stations. On 2026-10-14 the author accepted the focused gate,
+workbench/adjacent-station and save/load retest. Ordinary city traversal and other
+unconfirmed cases remain pending; evidence: assets/validation_537/RESULTS.md.
 
 ## 5.3.6 - Personal manual map notes (#233)
 

@@ -21,13 +21,15 @@ Implemented independent saved selections, native Journal action, shared objectiv
 text, known-place associations and bounded map rows. Terminal/history/filter
 semantics remain intact. The read-only catalogue hides premature legacy lesson
 flags before their documented stages; underlying quest progress is untouched.
-Validation evidence: assets/validation_538. CA235-01 is deferred while the author
-is away; retain all earlier outstanding author IDs. Next separate patch: #236.
+Validation evidence: assets/validation_538. The author returned; CA235-01's
+Probar235 session was opened on 2026-10-14, with acceptance pending. Retain all
+earlier outstanding author IDs. Next separate patch: #236.
 
 Future decision inventory, not implemented as guessed waypoints: precise NPC
 disclosure events and positions for the refuge, moving companions, rune/secret
 content and battle targets. Current tracking uses authored directions as text
-and already-observed POIs only. Questions wait for the author's return.
+and already-observed POIs only. Future author decisions are required before
+adding these disclosures; they are outside this completed implementation.
 
 ## 5.3.7 - Existing-map exploration (#234)
 
@@ -55,9 +57,10 @@ The subsequent city handoff failed author review: gates retained the generic
 hand and southwest factory stations added no marker. The same #234 patch now
 records gate observations before/after use and binds all 96 authored factory
 stations individually, with the current-layout guard and existing bilingual names.
-Retest these two reported cases using cityfix_handoff.ps1; keep ordinary traversal
-and the other unconfirmed CA234-01 cases separate. No new release or acceptance
-is inferred from this correction.
+On 2026-10-14 the author accepted the three cityfix_handoff.ps1 steps: denied/open
+gate padlocks, separate workbench/adjacent-station markers, and save/load retention.
+Keep ordinary traversal and other unconfirmed CA234-01 cases separate. This
+acceptance does not increment the patch version or certify all 96 stations manually.
 The focused city regression reproduces eight baseline failures and passes 92
 corrected native assertions, five save comparisons and three inspected captures.
 All 96 slots match the WAD; static/build and generator determinism checks pass.

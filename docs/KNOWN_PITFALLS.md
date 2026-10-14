@@ -62,8 +62,9 @@ missed input in the native city harness. Hold the diagnostic button long enough
 to observe an actual cmd.buttons transition; the selected 35-tic pulses verify
 real gate/workbench/forge use. Separate input checks from map/menu capture changes.
 Do not infer a production interaction defect from an unobserved synthetic press.
-ENGINE-VERIFIED evidence: assets/validation_537/cityfix_evidence.json; ordinary
-author retest remains pending. Gameplay control timing was not modified.
+ENGINE-VERIFIED evidence: assets/validation_537/cityfix_evidence.json. The author
+accepted the focused city correction retest on 2026-10-14; ordinary exploration
+remains pending. Gameplay control timing was not modified.
 
 ## CA-KP-092 - Automap colors do not provide floor selection or private markers
 
@@ -112,8 +113,8 @@ The author accepted the dedicated sewer open-padlock artwork/save-load on
 2026-10-14. Subsequent city feedback exposed a separate coverage omission: city
 gates were generic exits without observed access, and factory services were not
 bound. City evidence now checks observed exit icons and all 96 real station
-identities; those corrections still await author retest. Original mansion/sewer
-acceptances do not certify the city cases.
+identities. The focused city gate/station/save-load retest passed author review
+on 2026-10-14. Ordinary city traversal and other unconfirmed cases remain pending.
 
 ## CA-KP-091 - Native menu actions need visible feedback inside the menu
 

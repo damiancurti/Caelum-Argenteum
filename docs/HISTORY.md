@@ -50,8 +50,14 @@ Static/build checks passed; 13 native runs passed 114 assertions, with 18 save
 comparisons and 19 inspected captures. Large-scale cartography reserves its
 tracked-count notice above the bars without changing preferences.
 Evidence: assets/validation_538. CA235-01 remains pending author usability
-acceptance. The author is away; questions and manual tests are deferred.
-The requested temporary keep-awake remains active until return.
+acceptance. At the initial delivery the author was away, so questions/manual
+tests were deferred and temporary keep-awake was active until return.
+On 2026-10-14 the returned author resumed checks; keep-awake had been released.
+After the focused #234 city retest passed, CA235-01 session
+author-20261014-080756 was opened through Probar235 using the existing frozen
+5.3.8 runtime and a copy of c235-tracked.zds. Three active tracked missions and
+one known mansion room are diagnostic preparation, not campaign progression.
+Startup passed; no author acceptance is inferred from opening the session.
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 
@@ -134,6 +140,17 @@ Static validation, normal packaging, exact normalized runtime comparison and
 deterministic generation pass. Short scripted Use pulses missed input in early
 diagnostics; the selected 35-tic pulses log actual native button transitions.
 The failed/preliminary harness logs remain local; author city acceptance is pending.
+
+On 2026-10-14 the author confirmed all three presented city correction steps
+passed (CA234-01, origin 5.3.7 / #234): the blocked gate shows a closed padlock;
+F8 permits opening and subsequent Use shows the open padlock; the southwest
+factory workbench and an adjacent station each acquire their own crafting marker;
+and native save/load retains those observations. Session author-20261014-080428
+used runtime SHA-256 4ca76e0d933eae7be2b9f4d67288fdbd9fb7528ad273198eb7cc30e270a60d1b
+and exited with code 0. Only these confirmed retest steps leave the queue.
+Diagnostic positioning does not certify ordinary traversal, every factory/gate,
+east-arch/tower/service discovery, hub behavior or remaining compatibility checks.
+Those CA234-01 cases remain pending; no version increment, PR merge or closure.
 
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 

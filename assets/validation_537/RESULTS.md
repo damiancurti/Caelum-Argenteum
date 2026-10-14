@@ -40,8 +40,11 @@ Reproduce on this #234 branch with `cityfix_prepare.py`, the recorded native com
 selected named saves before another flow run overwrites its generic output names.
 `cityfix_handoff.ps1` opens Probar234Ciudad: F6 positions at a diagnostic blocked
 gate, F8 permits its opening, and F7 positions at the southwest factory workbench.
-These two reported corrections await author retest in CA234-01. Diagnostic
-positioning and direct catalogue checks do not certify ordinary city traversal.
+On 2026-10-14 the author accepted all three presented CA234-01 steps: blocked/open
+gate padlocks, individual workbench/adjacent-station crafting markers and save/load
+retention. Session `author-20261014-080428` used the runtime hash above and exited
+with code 0. Diagnostic positioning and direct catalogue checks do not certify
+ordinary city traversal, every station or the other unconfirmed CA234-01 cases.
 
 CA234-01's mansion handoff passed author review on
 2026-10-14: labels after entering ground/first/second-floor rooms, beds/stations

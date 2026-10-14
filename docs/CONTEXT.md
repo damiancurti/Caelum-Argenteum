@@ -4,7 +4,7 @@ Documentation version: **5.3.9** — 2026-10-14.
 
 **#236/5.3.9:** CA236-01 partially accepted.
 **#233 editing/#234 mansion/sewer padlocks accepted:** CA233/234/235-01 remainder pending.
-City gate/factory fixes await retest.
+City gate/factory retest accepted.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 

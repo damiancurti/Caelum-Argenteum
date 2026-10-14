@@ -28,20 +28,15 @@ Sewers or City. Use copies of saves and ordinary exploration without reveal chea
 2. MAP06: use individual south/north/west gates; cross the open east arch.
    Enter the corner towers and interact with an existing shop, bed and vehicle.
    Markers appear only after the corresponding event; no route is unlocked.
-   Retest the reported city failures with cityfix_handoff.ps1: use the diagnostic
-   blocked gate, then F8 allows its ordinary opening; inspect closed/open padlocks.
-   F7 positions you at the southwest factory. Use its workbench and an adjacent
-   station separately: each gets its own crafting marker, never the whole network.
-   Save/load those observations. Diagnostic positioning is not traversal acceptance.
 3. Save/load on MAP02/MAP06 and allowed hub return preserve facts and
    numbered/manual notes. Inspect Spanish/English names, stacked-floor labels
    and native map controls.
 Expected: locations/names match explored content, no duplicate or premature
 markers, access unchanged, no sector warning without an authored knowledge rule.
 CA235-01 | Origin 5.3.8 / issue #235 | Multiple mission tracking
-Status: deferred until the author returns; no author acceptance inferred.
+Status: author session available; acceptance pending.
 Prerequisites: use the isolated 5.3.8 build and a copy of c235-tracked.zds.
-Run assets/validation_538/handoff.ps1 after returning. This diagnostic save
+Run assets/validation_538/handoff.ps1 to repeat. This diagnostic save
 prepares three known active missions and one visited mansion room; it is not
 normal campaign progression. Preserve original saves and earlier test packages.
 1. Open Journal > Missions. Use T and the Track/Untrack button independently
