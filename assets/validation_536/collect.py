@@ -100,7 +100,7 @@ evidence = {
     "save_comparisons": checks, "captures": captures,
     "old_save_sha256": digest(WORK / "c233-old-verified.zds"),
     "normal_build_members_match_frozen": True,
-    "author_acceptance": {"id": "CA233-01", "status": "pending"},
+    "author_acceptance": {'id': 'CA233-01', 'status': 'Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.'},
     "limits": [
         "Fixture menu dispatch and native commands are not physical typing acceptance.",
         "Manual placement uses native map center; selection uses the list, not cursor-world picking.",

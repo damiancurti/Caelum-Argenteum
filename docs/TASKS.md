@@ -10,8 +10,7 @@ revision-one data. Save commands validate stable ID and serial. Notes are not
 automatic knowledge and do not replace native numbered marks or bindings.
 Native persistence/input/layout checks passed. On 2026-10-14 the author passed
 CA233-01's five editing handoff steps, including accented/long text, cancellation,
-deletion, save/load and presentation-only service categories. Remaining native
-input/map-mode compatibility checks stay pending. Evidence: assets/validation_536.
+deletion, save/load and presentation-only service categories. CA233-01 passed full author acceptance on 2026-10-14. Evidence: assets/validation_536.
 Keep #234/#235/#236 implementation and acceptance separate.
 
 ## 5.3.5 - Personal POI knowledge (#232)
@@ -25,7 +24,7 @@ on 2026-10-14 after the corrected MAP04 handoff; the earlier MAP03 fixture
 failure remains documented. No merge or issue closure is claimed.
 Continue #233/#234/#235/#236 separately: manual Note + five service categories,
 rooms/towers on entry and services on use, multiple tracked missions, then
-Journal map navigation. CA258-01 retains only its explicitly outstanding checks.
+Journal map navigation. CA258-01 passed full author acceptance on 2026-10-14.
 
 ## 5.3.4 - Native local cartography (#231)
 
@@ -44,8 +43,7 @@ and navigation scopes.
 Implement deterministic zero-Sleep lying, strict >10% standing eligibility,
 truthful support and persistent enforcement without changing physics or
 hazards. Author decision: immediately lie down in air/water without relocation.
-Evidence: assets/validation_533/RESULTS.md; CA258-01 retains the remaining
-support/hazard checks. Continue #233-#236 in separate branches, commits and PRs.
+Evidence: assets/validation_533/RESULTS.md; CA258-01 passed full author acceptance on 2026-10-14. Continue #233-#236 in separate branches, commits and PRs.
 
 ## 5.3.2 - Automatic provisions (#257)
 

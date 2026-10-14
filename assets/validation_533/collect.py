@@ -56,9 +56,9 @@ evidence = {
         {'command': 'python validate_project.py', 'exit_code': 0},
         {'command': 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1', 'exit_code': 0, 'packaged_files': 16055}],
     'ordinary_input': 'Pending: Computer Use reported a user Escape interruption before window selection. No app input was sent afterward. The isolated interactive build and Probar258 handoff are prepared.',
-    'author_acceptance': {'id': 'CA258-01', 'origin_version': '5.3.3', 'issue': 258, 'result': 'pending'},
+    'author_acceptance': {'id': 'CA258-01', 'status': 'Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.'},
     'limits': ['Engine assertions use isolated fixtures, not author input.',
-              'Physical gamepad, ordinary-input/pause presentation and author visual acceptance remain pending.',
+              'Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.',
               'Fixture map physics and native MAP02/MAP03/MAP04 runs do not certify every campaign location.'],
 }
 (HERE / 'evidence.json').write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')

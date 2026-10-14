@@ -436,26 +436,11 @@
   "ordinary_input": "Pending: Computer Use reported a user Escape interruption before window selection. No app input was sent afterward. The isolated interactive build and Probar258 handoff are prepared.",
   "author_acceptance": {
     "id": "CA258-01",
-    "origin_version": "5.3.3",
-    "issue": 258,
-    "result": "partial",
-    "confirmation_date": "2026-10-13",
-    "confirmed": [
-      "zero-Sleep lying and locked controls",
-      "F8 sets 11 percent; Q permits standing"
-    ],
-    "remaining": [
-      "hazards and real support",
-      "save/load and pause/resume"
-    ],
-    "confirmation_quotes": [
-      "La prueba del sue\u00f1o al 0% qued\u00f3 muy bien.",
-      "S\u00ed, tambi\u00e9n funcion\u00f3 correctamente."
-    ]
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
   },
   "limits": [
     "Engine assertions use isolated fixtures, not author input.",
-    "Physical gamepad, ordinary-input/pause presentation and author visual acceptance remain pending.",
+    "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance.",
     "Fixture map physics and native MAP02/MAP03/MAP04 runs do not certify every campaign location."
   ]
 }
