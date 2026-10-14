@@ -21,6 +21,7 @@ def map_checksum(name, root=ROOT):
 def render(root=ROOT):
     mansion = json.loads((root / 'assets/map01_mansion/CARTOGRAPHY.json').read_text(encoding='utf-8'))
     city = json.loads((root / 'assets/map06_port/CITY.json').read_text(encoding='utf-8'))
+    interiors = json.loads((root / 'assets/map06_port/INTERIORS.json').read_text(encoding='utf-8'))
     if map_checksum('MAP01', root) != mansion['map_checksum']:
         raise ValueError('MAP01 geometry changed: review CARTOGRAPHY.json room bounds before regeneration.')
     rooms = mansion['rooms']
@@ -57,6 +58,17 @@ def render(root=ROOT):
         x, y = tower['origin']; half = city['tower_size']/2
         lines.append(f'        case {i}: return ({x+half:g},{y+half:g},{city["tower_deck_height"]});')
     lines += ['        }', '        return (0,0,0);', '    }']
+    # Use the existing interior generator's factory ordering and station slots.
+    # IDs use authored building IDs and station kinds, never mutable actor positions.
+    lines += ['    static String CityStationId(Vector3 spawnPoint)', '    {']
+    factories = [building for building in city['buildings'] if building['kind'] == 'factory']
+    for i, building in enumerate(factories):
+        profile = interiors['factory_profiles'][i % len(interiors['factory_profiles'])]
+        for j, kind in enumerate(profile['stations']):
+            dx, dy = interiors['station_positions'][j]
+            x, y = building['bounds'][0] + dx, building['bounds'][1] + dy
+            lines.append(f'        if(spawnPoint==({x},{y},0))return "city-factory-{building["id"]}-{kind}";')
+    lines += ['        return "";', '    }']
     east = next(gate for gate in city['gates'] if gate['name'] == 'east')
     x0, y0, x1, y1 = east['bounds']; mid = (x0+x1)/2
     lines += [f'    static Vector3 EastPosition() {{ return ({mid:g},{(y0+y1)/2:g},0); }}',

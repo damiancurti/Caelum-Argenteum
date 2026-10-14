@@ -111,6 +111,30 @@ Diagnostic grate positioning does not confirm ordinary sewer traversal/secrecy,
 city exploration, cross-map persistence or the remaining compatibility checks.
 Those cases remain in CA234-01; no release increment or PR merge is implied.
 
+Later on 2026-10-14 the author reported two CA234-01 city failures: physical
+port gates still displayed the generic Use hand, and southwest factory stations
+left no marker. Gate registrations were EXIT facts without observed access;
+the catalogue omitted factory stations entirely. The same #234 patch now records
+each used gate's observed state, including successful opening, and selects the
+accepted closed/open padlock artwork for observed physical exits. Generic exits
+and manual notes retain their symbols. The generated catalogue adds the existing
+96 factory stations from CITY.json/INTERIORS.json, identified by original actor
+SpawnPoint and authored building/station IDs under the native current-layout
+checksum. Only the interacted station is discovered; networks reveal no neighbors.
+No map, access rule, recipe, balance value or saved field changes. Existing unknown
+gate observations and undiscovered stations remain unknown until interaction.
+Author retest remains pending; technical evidence: assets/validation_537/RESULTS.md.
+City regression results: eight expected pre-fix failures; seven corrected native
+runs with 92 passing assertions, five save comparisons and three inspected captures.
+Real native Use covers denied/opening gates and two separate station sessions;
+direct catalogue calls cover the 96 actual factory stations without claiming
+ordinary traversal. A genuine pre-fix save preserves its unknown gate observation,
+identity, quests, owned Tarot, equipment IDs and note metadata until new use.
+Static validation, normal packaging, exact normalized runtime comparison and
+deterministic generation pass. Short scripted Use pulses missed input in early
+diagnostics; the selected 35-tic pulses log actual native button transitions.
+The failed/preliminary harness logs remain local; author city acceptance is pending.
+
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
 The author approved placing notes at the native automap center after panning,
