@@ -4645,7 +4645,7 @@ the current runtime release or reopening accepted systems.
 | Character sprite variety | V5.9; expansion/completion V5.17 | Add inhabitants and quest-character appearances using V5.2 modular identity and reusable animations. Deliver the initial variety with prologue social content. |
 | NPC clothing variety | V5.6 and V5.9; visual completion V5.17 | V5.6 owns garments that are equippable, craftable or tradeable; V5.9 adds authored wardrobes distinguishing inhabitants, professions and factions. |
 | Third campaign map social/story content | V5.9 | Expand Barracas al Sud (runtime MAP06): conversations, recognition of the protagonist as captain, rescued prisoners, rumors, siege preparation and aftermath dialogue. Preserve established secrecy and canon. Dynamic siege expansion stays V5.15. |
-| Early subsystem performance audit | Upcoming V5.3.x patches; broad mass-AI work V5.11 | Measure individual subsystem costs in comparable active siege scenarios, identify dispensable NPC simulation work, then implement measured improvements through focused issues. NPC thermal simulation is a candidate, not a proven bottleneck. |
+| NPC subsystem performance audit | V5.11 | Measure individual subsystem costs in comparable active siege scenarios, identify dispensable NPC simulation work, then implement measured improvements through focused issues. NPC thermal simulation is a candidate, not a proven bottleneck. |
 
 Compare full NPC thermal simulation, reduced-frequency updates and a simplified
 model before choosing a production policy. Controlled diagnostic disabling may
@@ -4656,14 +4656,15 @@ the author explicitly approves a concrete change.
 
 V5.11 retains formations, leaders, local offsets, dynamic membership, shared
 memory, companions, and measured targeting/movement/contact/controller/renderer
-work. The early audit feeds that milestone rather than postponing current siege
-playability until V5.11. Active-population evidence remains required.
+work. The subsystem audit belongs to V5.11. Active-population evidence remains required.
 
-For the prologue beta, prioritize performance and third-map social content.
-Deliver initial furniture, sprite and clothing variety with the content that
-needs it; V5.17 is the broader completion/polish pass. These are planning targets,
-not completed features or a claim that the beta is ready. Next steps are focused
-implementation issues; this documentation-only update requires no gameplay test.
+Author clarification (2026-10-14): all version blocks remain important and the
+existing numbered order is unchanged. Add the missing content at the targets
+above; do not advance V5.11 work into V5.3.x or prioritize selected milestones
+over the sequence. V5.17 remains the broader visual completion/polish pass.
+These are planning targets, not completed features or a beta-readiness claim.
+Next steps follow the existing sequence through focused implementation issues;
+this documentation-only correction requires no gameplay test.
 
 ### V5 native menus, character setup and exploration — approved 2026-10-05
 
