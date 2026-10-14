@@ -1,0 +1,219 @@
+{
+  "issue": 251,
+  "description": "Original reusable dark rain-cloud mesh; art-space coordinates only, no gameplay size or collision.",
+  "axes": "OBJ X width, Y up, Z depth. Width normalized to 2; base at Y=0.",
+  "grid": [
+    36,
+    20,
+    28
+  ],
+  "bounds": [
+    [
+      -1.8,
+      -0.9,
+      -1.3
+    ],
+    [
+      1.8,
+      1.4,
+      1.3
+    ]
+  ],
+  "density_threshold": 0.5,
+  "density_shape_power": 2,
+  "lobes": [
+    {
+      "center": [
+        0,
+        -0.1,
+        0
+      ],
+      "radii": [
+        1.45,
+        0.35,
+        0.96
+      ]
+    },
+    {
+      "center": [
+        -0.8,
+        0.0,
+        0.0
+      ],
+      "radii": [
+        0.58,
+        0.45,
+        0.56
+      ]
+    },
+    {
+      "center": [
+        -0.28,
+        0.08,
+        0.15
+      ],
+      "radii": [
+        0.65,
+        0.53,
+        0.6
+      ]
+    },
+    {
+      "center": [
+        0.3,
+        0.0,
+        0.03
+      ],
+      "radii": [
+        0.64,
+        0.43,
+        0.65
+      ]
+    },
+    {
+      "center": [
+        0.84,
+        -0.03,
+        0.04
+      ],
+      "radii": [
+        0.52,
+        0.4,
+        0.48
+      ]
+    },
+    {
+      "center": [
+        -0.5,
+        0.42,
+        -0.04
+      ],
+      "radii": [
+        0.43,
+        0.47,
+        0.43
+      ]
+    },
+    {
+      "center": [
+        0.12,
+        0.51,
+        -0.08
+      ],
+      "radii": [
+        0.51,
+        0.51,
+        0.48
+      ]
+    },
+    {
+      "center": [
+        0.55,
+        0.34,
+        -0.15
+      ],
+      "radii": [
+        0.43,
+        0.42,
+        0.43
+      ]
+    },
+    {
+      "center": [
+        -0.58,
+        -0.07,
+        -0.49
+      ],
+      "radii": [
+        0.46,
+        0.32,
+        0.4
+      ]
+    },
+    {
+      "center": [
+        0.03,
+        -0.1,
+        -0.55
+      ],
+      "radii": [
+        0.51,
+        0.3,
+        0.42
+      ]
+    },
+    {
+      "center": [
+        0.63,
+        -0.1,
+        -0.41
+      ],
+      "radii": [
+        0.43,
+        0.29,
+        0.37
+      ]
+    },
+    {
+      "center": [
+        -0.54,
+        -0.08,
+        0.55
+      ],
+      "radii": [
+        0.43,
+        0.3,
+        0.37
+      ]
+    },
+    {
+      "center": [
+        0.1,
+        -0.1,
+        0.59
+      ],
+      "radii": [
+        0.49,
+        0.32,
+        0.37
+      ]
+    },
+    {
+      "center": [
+        0.64,
+        -0.13,
+        0.45
+      ],
+      "radii": [
+        0.42,
+        0.27,
+        0.35
+      ]
+    }
+  ],
+  "palette": {
+    "low": [
+      34,
+      39,
+      48
+    ],
+    "high": [
+      121,
+      131,
+      145
+    ],
+    "samples": 256
+  },
+  "preview": {
+    "scale": 64,
+    "alpha": 0.78,
+    "note": "Isolated asset-review settings, not approved gameplay dimensions or balance."
+  },
+  "runtime_directory": "models/caelum/weather",
+  "model": "rain_cloud.obj",
+  "texture": "rain_cloud_palette.png",
+  "material": {
+    "facing_fade_end": 0.7,
+    "edge_opacity": 0.2
+  }
+}

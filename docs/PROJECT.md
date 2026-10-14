@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
+
+## 5.4.5 - Reusable rain-cloud asset (#251, in progress)
+
+Added an original normalized 3D cloud, palette and soft-edge material, with
+editable density-lobe source and deterministic generator. Native Vulkan and
+OpenGL previews inspect volume/transparency from six orientations. This is an
+asset checkpoint only: no production actor or ability activation is added.
+Seated identity presentation, mounting/flight, rain, lightning and all associated
+lifecycle/ownership rules remain pending. No weather system is implemented.
+Questions and manual tests wait for the author's return; #251 stays open and its
+PR stays draft. Evidence: assets/validation_545. The #238 checkpoint remains WIP.
 
 ## 5.4.4 - Class preparation component (#238, in progress)
 

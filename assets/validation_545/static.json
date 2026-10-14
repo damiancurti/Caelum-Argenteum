@@ -1,0 +1,20 @@
+{
+  "version": "5.4.5",
+  "issue": 251,
+  "vertices": 3752,
+  "triangles": 7500,
+  "edges": 11250,
+  "connected_components": 1,
+  "euler_characteristic": 2,
+  "signed_volume": 0.953391879541926,
+  "minimum_triangle_area": 7.595866679176815e-10,
+  "unit_normals": true,
+  "consistent_winding": true,
+  "repeat_identical": true,
+  "hashes": {
+    "src/models/caelum/weather/rain_cloud.obj": "265a19749ece908b1c5c3223a337a0b79dce2d3df35d4b3112491b1491bed9e9",
+    "src/models/caelum/weather/rain_cloud_palette.png": "0f1ea3f213c062d1f1382137f8a38988d55e67bbb30224b5ba288fd51e36c79a",
+    "src/shaders/caelum/rain_cloud.fp": "215f38b87dc1891d67be5fecdf13f46e0eb7942f892c9c3dcdb4038f39ac12e2",
+    "assets/rain_cloud/manifest.json": "e7a4b6fe6334bf38d6b935e4bb2876dbc432d2c665d5b54d4446df40f462d309"
+  }
+}

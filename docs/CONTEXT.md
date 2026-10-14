@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
 
-**5.4.4/#238 WIP:** preparation component and left HUD; validation_544; lifecycle/Sleep pending.
+**5.4.5/#251 WIP:** cloud asset, validation_545. #238 preparation/HUD: validation_544; lifecycle/Sleep pending.
 #254/#261/#259: validation_543/542/541; CA254/261/259-01 pending; PR275/274/273.
 #237: validation_540/PR272. Questions/manual checks await author return.
 **Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.

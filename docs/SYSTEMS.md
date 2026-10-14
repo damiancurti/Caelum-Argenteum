@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
+
+## Arcane Cloud asset boundary (#251 / 5.4.5, in progress)
+
+The packaged cloud mesh/material is an independent visual asset for Nube arcana
+and future weather. It has normalized art coordinates and no production actor,
+collision, saved state, gameplay size, speed, resource or damage contribution.
+The isolated preview's scale/alpha do not define the eventual ability. The
+confirmed seated rider, free flight, lightning and restorative rain remain
+requirements; their implementation and the unresolved rules stay in #251.
 
 ## Class preparation component and confirmed V5.4 contract (#238, in progress)
 

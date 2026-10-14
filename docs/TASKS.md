@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
+
+## 5.4.5 - Arcane Cloud asset (#251, in progress)
+
+The original closed 3D cloud and material pass topology/repeatability checks and
+native Vulkan/OpenGL preview inspection. This independent asset work does not
+complete Nube arcana. Continue with the seated character, the #238 lifecycle and
+the already recorded #251 decisions on dimensions/collision, flight, targeting,
+lightning damage, rain contact/restoration, scaling and expiry. Preview dimensions
+and opacity are visual test settings, not approved gameplay balance. No author
+acceptance or merge is inferred; no incomplete gameplay test enters the queue.
 
 ## 5.4.4 - Shared class preparation (#238, in progress)
 

@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-097 - Translucent cloud meshes need visual inspection from several angles
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED asset behavior, #251 / 5.4.5,
+2026-10-14; GZDoom 4.14.2 / Windows / Vulkan and OpenGL. Author art acceptance pending.
+
+A closed mesh and successful model load do not make a volume behave like fog.
+A transparent, concave cloud shell showed hard bands from overlapping visible
+surfaces. Reversing winding or explicitly forcing native culling did not remove
+the appearance. Do not report those diagnostic runs as a visual fix.
+
+Use a single closed shell, verify topology independently, and inspect front,
+side, back, high and low views against a contrasting background. The #251
+material uses SetupMaterial with world normals/view direction to soften grazing
+contours and suppress back-facing fragments. This is a surface approximation;
+concave bands remain a visual limitation, and no general depth-sorting or
+volumetric-rendering fix is claimed. Source observation: GZDoom g4.14.2
+src/rendering/hwrenderer/hw_models.cpp:56-67 itself notes incomplete depth sorting.
+
+Evidence/reproduction: [validation_545](../assets/validation_545/RESULTS.md).
+Keep art-space dimensions and preview opacity separate from gameplay collision,
+size and rider anchors. Do not adopt an unapproved fixture scale as balance.
+
 ## CA-KP-096 - Early derived-stat queries can erase a spawn default
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #254 / 5.4.3,

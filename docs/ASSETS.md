@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
+
+## 5.4.5 - Reusable dark rain cloud (#251, in progress)
+
+`assets/rain_cloud/DESIGN.json` describes original density lobes, palette and
+preview-only presentation settings. `generate_rain_cloud.py` uses Python's
+standard library and marching tetrahedra to produce one closed, consistently
+wound OBJ shell: 3,752 vertices, 7,500 triangles, one connected component and
+Euler characteristic 2. OBJ axes are X width, Y up/base 0, Z depth; width is 2
+art units. No world dimension, collision shape or rider anchor is approved here.
+The generator also writes the palette PNG and soft-edge GLSL material; manifest
+hashes and repeatability are checked by validation_545/verify_asset.py.
+
+Runtime resources live in `src/models/caelum/weather/` and
+`src/shaders/caelum/rain_cloud.fp`, with the material registered in GLDEFS.
+The material uses GZDoom 4.14.2 SetupMaterial, world normals and view direction
+to soften grazing contours and suppress back-facing fragments. It has no clock
+or gameplay state. It remains a surface-based model, not a volumetric weather
+simulation; overlapping concave contours can remain visible. Native Vulkan and
+OpenGL previews show the checkerboard behind the volume from front, sides, back,
+above and below. Shape, translucency and the seated-character composition still
+require author review. The source has no external art/model dependencies or Doom
+assets; provenance is in src/licenses/RAIN_CLOUD_545.txt.
+
+The preview actor, model registration and original checkerboard room are isolated
+fixtures, outside src. Production does not spawn the asset yet. No seating,
+flight, rain, lightning or weather behavior is claimed. Earlier shape/material
+iterations are retained as diagnostic evidence; assets/validation_545/RESULTS.md
+records exact tested packages and the limits of this checkpoint.
 
 ## 5.4.4 - Class preparation hands (#238, in progress)
 

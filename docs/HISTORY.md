@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.5** — 2026-10-14.
+
+## 5.4.5 - Arcane Cloud visual checkpoint (#251, 2026-10-14, in progress)
+
+While the author remained away, implemented the independent original rain-cloud
+asset with normalized geometry, editable density lobes, deterministic palette and
+soft-edge material. It is reusable by future weather without embedding ability
+rules. No production actor, input, rider pose, flight, rain, lightning, balance
+value or saved field was added. #251 remains incomplete and requires the pending
+author decisions and acceptance; no merge or closure is authorized by this work.
+
+Topology checks establish one closed, consistently wound shell with 3,752
+vertices/7,500 triangles, finite unit normals, positive signed volume and Euler
+characteristic 2. Regeneration repeats OBJ, PNG, shader and manifest bytes.
+GZDoom 4.14.2 Vulkan and OpenGL each pass eight fixture checks and capture six
+views. Those assertions establish setup/state, not artistic acceptance. Native
+images were inspected; the shader softens the earlier hard contours, but this
+surface approximation still permits visible concave bands. Early higher-detail
+and strongly separated lobes, winding diagnostics and material iterations remain
+preserved. The current mesh has no cavity/handle and uses fewer triangles.
+Evidence/reproduction: assets/validation_545. Interactive handoff stays deferred.
+Final project validation passes with 2,483 CONTEXT words. Normal packaging has
+16,124 files/no directory entries, all equal to the final native-tested runtime.
+Two diagnostic release labels caught by the first validation were updated to
+5.4.5; no hazard/maze behavior changed.
 
 ## 5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)
 

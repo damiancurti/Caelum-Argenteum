@@ -204,3 +204,14 @@
 # Preserve #236 fixture and native evidence fingerprints.
 /assets/validation_539/** -text whitespace=cr-at-eol
 /assets/validation_539/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #251 deterministic cloud sources and model fingerprints.
+/assets/rain_cloud/*.json text eol=lf
+/assets/generators/generate_rain_cloud.py text eol=lf
+/assets/validation_545/** text eol=lf
+/assets/validation_545/captures/*.png -text
+/src/models/caelum/weather/*.obj text eol=lf
+/src/models/caelum/weather/*.png -text
+/src/shaders/caelum/rain_cloud.fp text eol=lf
+/src/GLDEFS text eol=lf
+/src/licenses/RAIN_CLOUD_545.txt text eol=lf

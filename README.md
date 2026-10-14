@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.4.** Obtain and update the complete repository, validate
+**Current release: 5.4.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.5 is an **in-progress #251 cloud-asset checkpoint**. It adds an original,
+normalized dark translucent 3D cloud and editable deterministic source for the
+ability and future weather. It does not yet mount the character, apply flight,
+rain or lightning. [Evidence](assets/validation_545/RESULTS.md) separates native
+Vulkan/OpenGL asset previews from outstanding gameplay and author acceptance.
 
 5.4.4 is an **in-progress #238 checkpoint**, not a completed ability release.
 It provides the shared three-second hand sequence, preparation combat guards and
