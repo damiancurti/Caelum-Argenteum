@@ -7,8 +7,8 @@ Documentation version: **5.4.2** — 2026-10-14.
 Implemented fixed matching-pair factors (0.5) and Quintessence (0.85), including
 actual direct/area attacks and fractional harmful DOT. Character's existing body
 average now includes the equipped Seal. Native evidence: assets/validation_542;
-CA261-01 is partially confirmed; recheck only the corrected four resistance rows
-and Quintessence coverage. Existing Human innate armor is 7.5%. Class/racial
+CA261-01 passed on 2026-10-14 after the four-element correction; PR274 is ready
+for review. Existing Human innate armor is 7.5%. Class/racial
 lifecycle and social scaling belong to #238 and their individual issues.
 Do not merge or close the new batch without instruction.
 

@@ -8,7 +8,11 @@ no native actor receives new equipment and no save schema changes.
 
 The author reported the prior checks good except the fifth resistance row:
 Quintessence protects the four elemental families but has no resistance of its
-own. CA261-01 is therefore partial, with a narrow recheck in pending_test.txt.
+own. CA261-01 was initially partial; a narrow recheck was offered.
+The subsequent corrected handoff was author-confirmed on 2026-10-14: "Esa
+prueba dio correcto." CA261-01 passed without further exceptions and was removed
+from pending_test.txt. Exact acceptance/session hashes: acceptance.json. No
+runtime changes or repeated native tests were needed to record that acceptance.
 Human innate magical armor remains 7.5%, the existing #52 value rather than a
 Seal bonus. No generic armor rule, essence weapon or save field changes here.
 
@@ -62,7 +66,7 @@ through all five Seals. Spanish final-runtime Character and item-detail captures
 were inspected: Fire resistance is 53.75% with 7.5% innate absorption; other rows
 remain 7.5%. The item explains its 50% Fire/Light reduction while equipped.
 At that checkpoint no author physical-input acceptance was inferred. The later
-author handoff and partial result are recorded above; CA261-01 remains pending.
+author handoff, partial result and final acceptance are recorded above.
 
 ## Save and travel evidence
 
