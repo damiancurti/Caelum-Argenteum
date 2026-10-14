@@ -33,6 +33,14 @@ bilingual scrolling, pause/settings, note persistence and preferred UI scale
 remain in CA236-01 or the separate CA233-01 procedure. No merge is inferred.
 The author returned; the temporary keep-awake request was released at 09:37 UTC.
 
+CA236-01 (origin 5.3.9 / #236) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Retained filters/history and owned contents, remapped/unbound and native popup controls, pause/settings, notes/save-load, readability and travel neutrality passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+
 ## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
 
 Implemented the author's multi-mission preference with per-character revision-one
@@ -70,6 +78,14 @@ known-versus-unknown locations, preserved notes/discoveries, reward neutrality,
 unpaid Leonor and captain-clue text remain unconfirmed in CA235-01. The run's
 exit status was not captured; explicit author acceptance is separate from that
 technical limitation. No version increment, PR merge or issue closure is implied.
+
+CA235-01 (origin 5.3.8 / #235) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Long bilingual objectives and scale, known versus unknown locations, saved notes/discoveries, reward neutrality and detailed terminal history passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 
@@ -164,6 +180,14 @@ Diagnostic positioning does not certify ordinary traversal, every factory/gate,
 east-arch/tower/service discovery, hub behavior or remaining compatibility checks.
 Those CA234-01 cases remain pending; no version increment, PR merge or closure.
 
+CA234-01 (origin 5.3.7 / #234) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Ordinary sewer secrecy/traversal, city gates/east arch/towers/services, map and hub persistence, names and native controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
+
 ## 5.3.6 - Manual map notes (#233, 2026-10-14)
 
 The author approved placing notes at the native automap center after panning,
@@ -194,6 +218,14 @@ used MAP04 and frozen runtime SHA-256
 Held/opening input, rotation/overlay, numbered marks, custom/unbound controls
 and optional controller navigation remain in CA233-01. Agent evidence and this
 partial author acceptance remain distinct; no merge or issue closure is inferred.
+
+CA233-01 (origin 5.3.6 / #233) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Held/released controls, rotated and overlay maps, native numbered marks and custom/unbound bindings passed; controller navigation remains optional where applicable.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.5 - Known local POIs (#232, 2026-10-13)
 
@@ -265,6 +297,14 @@ The zero-Sleep/standing-control checks passed and were removed from the pending
 entry. Remaining author checks concern hazards/support, save/load and pause;
 the existing engine fixtures cover these technically, but their author pass
 is not inferred. Runtime behavior and release number are unchanged.
+
+CA258-01 (origin 5.3.3 / #258) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Hazards, air/water and moving/unsafe support, real provisions, bed/bag versus chair support, locked save/load, pause and recovered camera/controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.2 - Automatic provisions (#257), 2026-10-13
 

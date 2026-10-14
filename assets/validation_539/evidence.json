@@ -200,6 +200,10 @@
     "Record comparisons resolve identity/POI/note references and exclude live ThermalState; hub also excludes three survival observations.",
     "A preview may create one transient journey plan; cancellation changes no carried instances.",
     "The 5.3.7 upgrade includes only the previously delivered #235 tracking revision.",
-    "Author CA236-01 deferred; no multiplayer certification or merge."
-  ]
+    "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
+  ],
+  "author_acceptance": {
+    "id": "CA236-01",
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
+  }
 }

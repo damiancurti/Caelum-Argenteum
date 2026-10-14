@@ -879,7 +879,7 @@
   "normal_build_members_match_frozen": true,
   "author_acceptance": {
     "id": "CA234-01",
-    "status": "deferred until author returns"
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
   },
   "reuse": "Earlier unaffected cases retain their exact package hashes. MAP02 was rerun after the upper-control secrecy fix; MAP06 after including its authored parapet height; MAP01 after native wall traces corrected the ground-room side-door strips. Archive member differences are checked above.",
   "limits": [

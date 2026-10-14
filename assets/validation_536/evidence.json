@@ -459,7 +459,7 @@
   "normal_build_members_match_frozen": true,
   "author_acceptance": {
     "id": "CA233-01",
-    "status": "pending"
+    "status": "Tracked separately in RESULTS.md and docs/HISTORY.md; native runs do not imply author acceptance."
   },
   "limits": [
     "Fixture menu dispatch and native commands are not physical typing acceptance.",

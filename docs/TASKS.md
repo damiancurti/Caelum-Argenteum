@@ -12,8 +12,7 @@ Static/build and 202 native assertions passed; 28 save comparisons and 17
 inspected captures are in assets/validation_539. On 2026-10-14 the author passed
 CA236-01's first five handoff steps: connected navigation/Back, Crafting entry,
 non-consuming document viewing, map center/zoom and owned/tracked save-load.
-Remaining controls, presentation and persistence checks stay in CA236-01;
-earlier outstanding author IDs remain separate. No merge is inferred.
+CA236-01 passed full author acceptance on 2026-10-14. No merge is inferred.
 
 ## 5.3.8 - Multiple mission tracking (#235)
 
@@ -24,8 +23,7 @@ flags before their documented stages; underlying quest progress is untouched.
 Validation evidence: assets/validation_538. On 2026-10-14 the author accepted
 CA235-01's four presented handoff steps: independent T/button tracking with the
 held-key latch, simultaneous map selections, filters/detail/Back and saved choices,
-and terminal objectives leaving the map while remaining in history. Remaining
-presentation, knowledge, note/reward and detailed terminal-text checks stay pending.
+and terminal objectives leaving the map while remaining in history. CA235-01 passed full author acceptance on 2026-10-14.
 Retain earlier outstanding author IDs. Next separate patch: #236.
 
 Future decision inventory, not implemented as guessed waypoints: precise NPC
@@ -43,9 +41,7 @@ The author approved one marker per south gate and east-arch crossing; siege-sect
 warnings remain a design gap, explicitly deferred. Static/build and focused
 native checks passed (151 assertions, 16 save comparisons). On 2026-10-14 the
 author passed CA234-01's five mansion handoff steps, including entered rooms,
-interacted services, secrecy and save/load. Sewer/city exploration and remaining
-compatibility checks stay pending. #233 editing passed; retain remaining
-#233/#258 checks and separate #235/#236 acceptance.
+interacted services, secrecy and save/load. CA234-01 passed full author acceptance on 2026-10-14. #233/#258 are accepted; #235/#236 retain separate acceptance records.
 CA234-01 sewer feedback exposed a category-only padlock despite an open label.
 The marker now uses the saved observed access; the original runtime reproduces
 the mismatch and the fix passes 43 focused native assertions.
@@ -62,7 +58,7 @@ records gate observations before/after use and binds all 96 authored factory
 stations individually, with the current-layout guard and existing bilingual names.
 On 2026-10-14 the author accepted the three cityfix_handoff.ps1 steps: denied/open
 gate padlocks, separate workbench/adjacent-station markers, and save/load retention.
-Keep ordinary traversal and other unconfirmed CA234-01 cases separate. This
+CA234-01 passed full author acceptance on 2026-10-14. This
 acceptance does not increment the patch version or certify all 96 stations manually.
 The focused city regression reproduces eight baseline failures and passes 92
 corrected native assertions, five save comparisons and three inspected captures.
@@ -76,8 +72,7 @@ revision-one data. Save commands validate stable ID and serial. Notes are not
 automatic knowledge and do not replace native numbered marks or bindings.
 Native persistence/input/layout checks passed. On 2026-10-14 the author passed
 CA233-01's five editing handoff steps, including accented/long text, cancellation,
-deletion, save/load and presentation-only service categories. Remaining native
-input/map-mode compatibility checks stay pending. Evidence: assets/validation_536.
+deletion, save/load and presentation-only service categories. CA233-01 passed full author acceptance on 2026-10-14. Evidence: assets/validation_536.
 Keep #234/#235/#236 implementation and acceptance separate.
 
 ## 5.3.5 - Personal POI knowledge (#232)
@@ -91,7 +86,7 @@ on 2026-10-14 after the corrected MAP04 handoff; the earlier MAP03 fixture
 failure remains documented. No merge or issue closure is claimed.
 Continue #233/#234/#235/#236 separately: manual Note + five service categories,
 rooms/towers on entry and services on use, multiple tracked missions, then
-Journal map navigation. CA258-01 retains only its explicitly outstanding checks.
+Journal map navigation. CA258-01 passed full author acceptance on 2026-10-14.
 
 ## 5.3.4 - Native local cartography (#231)
 
@@ -110,8 +105,7 @@ and navigation scopes.
 Implement deterministic zero-Sleep lying, strict >10% standing eligibility,
 truthful support and persistent enforcement without changing physics or
 hazards. Author decision: immediately lie down in air/water without relocation.
-Evidence: assets/validation_533/RESULTS.md; CA258-01 retains the remaining
-support/hazard checks. Continue #233-#236 in separate branches, commits and PRs.
+Evidence: assets/validation_533/RESULTS.md; CA258-01 passed full author acceptance on 2026-10-14. Continue #233-#236 in separate branches, commits and PRs.
 
 ## 5.3.2 - Automatic provisions (#257)
 

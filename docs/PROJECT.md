@@ -9,8 +9,7 @@ and note editor. Native mission/key/status commands route to the corresponding
 Caelum views; owned keys/documents read native instances without new ownership
 or quest state. Current documents have no authored readable body; the view
 states that limitation. Control defaults and existing travel rules are unchanged.
-Evidence: assets/validation_539; CA236-01 remains deferred during the author's
-absence alongside earlier outstanding checks. Commit/PR delivery is separate
+Evidence: assets/validation_539; CA236-01 passed full author acceptance on 2026-10-14. Commit/PR delivery is separate
 from author acceptance. Do not merge or close the batch without authorization.
 
 ## 5.3.8 - Saved independent mission tracking (#235)
@@ -27,10 +26,8 @@ spoken directions available as text.
 The audit found legacy lesson updates activating slot 0 before Palomo and exposing
 future objective flags. #235 corrects only the read-only visibility adapter to
 follow the documented start/stage contract; original progress remains stored.
-Evidence: assets/validation_538. CA235-01's four presented tracking/navigation,
-save/load and terminal-history steps passed author review on 2026-10-14; its
-remaining presentation and compatibility checks stay pending.
-#233/#234 and the remaining #258 checks stay pending. Next separate patch: #236.
+Evidence: assets/validation_538. CA235-01 passed full author acceptance on 2026-10-14.
+#233/#234/#258 author checks are accepted. Next separate patch: #236.
 
 ## 5.3.7 - Existing-map exploration catalogue (#234)
 
@@ -46,7 +43,7 @@ the mansion and sewer-padlock checks, then reported city gate icons and missing
 factory stations. The city corrections add observed gate padlocks and individual
 bindings for all 96 existing factory stations; 92 native assertions and five save
 comparisons pass. The author accepted the focused city retest and save/load on
-2026-10-14; ordinary exploration and remaining CA234-01 checks stay pending.
+2026-10-14; CA234-01 passed full author acceptance on 2026-10-14.
 Evidence: assets/validation_537. Next: #235 multi-mission tracking and
 #236 Journal navigation, with separate commits, branches, tests and linked PRs.
 Manual-note effects/predefined notes discussed on 2026-10-14 are possibilities,
@@ -59,7 +56,7 @@ six manual categories and independent revisioned per-character/map storage.
 Stable identities and serial checks protect edit/delete/cancel and repeated
 input. Native numbered marks, discoveries, quests and travel remain independent.
 GZDoom compilation and native editing, persistence and presentation checks
-passed. CA233-01 is pending author editing acceptance. Evidence: assets/validation_536.
+passed. CA233-01 passed full author acceptance on 2026-10-14. Evidence: assets/validation_536.
 Next: #234 authored registrations, #235 simultaneous tracked missions, #236
 Journal navigation; separate branches, commits, validation and linked PRs.
 
@@ -81,8 +78,7 @@ late-bound native control hints and a conditional objective integration point.
 Discovery, navigation, marks, saves and user preferences stay engine-owned.
 Mansion linework still projects overlapping storeys: no floor picker or new
 auto-zoom policy is claimed. Evidence: assets/validation_534/RESULTS.md.
-CA231-01 passed author acceptance on 2026-10-13. CA258-01 retains its remaining
-checks. #232–#236 remain separate issues, branches, tests and PRs.
+CA231-01 passed author acceptance on 2026-10-13. CA258-01 passed full author acceptance on 2026-10-14. #232–#236 remain separate issues, branches, tests and PRs.
 
 ## 5.3.3 - Exhaustion sleep (#258)
 
@@ -90,8 +86,7 @@ Zero Sleep now produces immediate lying at the current location, including
 air/water, with ordinary physics and hazards. Standing remains unavailable
 until Sleep exceeds 10%. Real support, shared recovery/provisions and
 revisioned save/hub state preserve existing resources and acceleration rules.
-Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance;
-the author is away and has not tested this patch. #231-#236 remain separate.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 passed full author acceptance on 2026-10-14. #231-#236 remain separate.
 
 ## 5.3.2 - Automatic provisions (#257)
 

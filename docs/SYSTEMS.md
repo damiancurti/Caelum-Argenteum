@@ -45,8 +45,8 @@ journey/time-skip charge. Rest, card games, active conversations and modal
 services cannot be bypassed with a navigation shortcut. Native pause/settings
 and save/load remain native. No saved field or migration is added by #236.
 
-Evidence: assets/validation_539. Author usability acceptance CA236-01 is pending.
-Real physical input remains a separate author check; scripted menu handlers and
+Evidence: assets/validation_539. CA236-01 passed full author acceptance on 2026-10-14.
+Physical author acceptance is separate from technical checks; scripted menu handlers and
 console routes are identified separately in the native evidence.
 
 ## 5.3.8 - Multiple tracked missions (#235)
@@ -113,8 +113,7 @@ Static/build checks and 114 native assertions passed across 13 runs, with
 assets/validation_538; native diagnostic state setup is
 distinct from ordinary campaign progression and author acceptance. On 2026-10-14
 the author accepted CA235-01's four presented tracking/navigation/save-load/history
-steps. Remaining presentation, knowledge, note/reward and detailed terminal-text
-checks remain in pending_test.txt.
+steps. CA235-01 passed full author acceptance on 2026-10-14.
 #236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)
@@ -183,13 +182,11 @@ native assertions passed after reproducing the original visual mismatch.
 The author confirmed that the icon changed, but expected an open padlock instead
 of the initially reused Use hand. The dedicated artwork passed another 43 native
 assertions and two save comparisons. On 2026-10-14 the author accepted the focused
-closed/open-padlock test and save/load. Ordinary sewer exploration, city and
-remaining compatibility checks stay pending.
+closed/open-padlock test and save/load. CA234-01 passed full author acceptance on 2026-10-14.
 Preserve original saves/packages; #235/#236 remain separate patches.
 The author's subsequent city test reported hand icons on gates and missing
 southwest factory stations. On 2026-10-14 the author accepted the focused gate,
-workbench/adjacent-station and save/load retest. Ordinary city traversal and other
-unconfirmed cases remain pending; evidence: assets/validation_537/RESULTS.md.
+workbench/adjacent-station and save/load retest. CA234-01 passed full author acceptance on 2026-10-14. Further evidence: assets/validation_537/RESULTS.md.
 
 ## 5.3.6 - Personal manual map notes (#233)
 
@@ -238,8 +235,7 @@ acknowledgments are transient, not knowledge. Native derived note markers use
 the same private-renderer restriction as #232: suppress them in multiplayer or
 with multiple participants while keeping character records separate.
 
-Native checks passed; evidence: assets/validation_536/RESULTS.md. CA233-01
-ordinary editing acceptance is pending. #234 map-specific
+Native checks passed; evidence: assets/validation_536/RESULTS.md. CA233-01 passed full author acceptance on 2026-10-14. #234 map-specific
 registrations, #235 multi-mission tracking and #236 Journal navigation remain
 separate patches.
 
@@ -383,7 +379,7 @@ Death terminates the living controller normally. Preserve the original save
 as a reversible rollback copy; never overwrite it during migration tests.
 
 These rules supersede the voluntary-rest blockers only for exhaustion.
-Evidence: assets/validation_533/RESULTS.md. CA258-01 awaits author acceptance.
+Evidence: assets/validation_533/RESULTS.md. CA258-01 passed full author acceptance on 2026-10-14.
 
 ## 5.3.2 - Automatic food and water (#257)
 
