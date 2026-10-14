@@ -13,8 +13,8 @@ captures**. The preceding runtime reproduces **12 expected failures**. Coverage:
 known Argento to unknown/then-known Caella, automatic stage changes, two known
 destinations for one stage, preservation of other tracked missions, untracking,
 completion, marker texture/size/observed coordinates, rotation, old/current
-save loading, foreign-map suppression and hub return. Ordinary keyboard/mouse
-acceptance of this additional behavior remains CA235-02; CA235-01 stays accepted.
+save loading, foreign-map suppression and hub return. CA235-02 passed author
+review on 2026-10-14; CA235-01 stays accepted.
 Runtime SHA-256: `27081ed0b4059a12bcf9c5ed3868b4ab8094cd1a15698774d3c862d395f9d742`.
 
 Static validation and normal packaging passed (16,071 files on this #235 branch).
@@ -27,6 +27,16 @@ are diagnostic preparation, not normal campaign traversal or a new multiplayer
 certification. Earlier frozen packages/saves remain separate. Reproduce with
 `targets_prepare.py`, `targets_run_native.ps1` and `targets_collect.py`; physical
 handoff: `targets_handoff.ps1` / `Probar235Objetivo`.
+
+CA235-02 (origin 5.3.8 / #235) passed author acceptance on 2026-10-14.
+The author confirmed, "Estas pruebas dieron muy bien." The three presented
+steps covered Argento/Caella stage changes, absence of an unknown destination
+and appearance after recording it, Track/Untrack and save/load, then completion
+restoring the ordinary place symbol. No failures or qualifications were reported.
+Session author-20261014-102654 used the final frozen runtime SHA-256
+27081ed0b4059a12bcf9c5ed3868b4ab8094cd1a15698774d3c862d395f9d742
+and exited with code 0. This author confirmation is separate from the scripted
+native evidence; no runtime change or version increment accompanies it.
 
 CA235-01 (origin 5.3.8 / #235) passed the remaining author checks on
 2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice

@@ -74,6 +74,7 @@ assets/validation_538; native diagnostic state setup is
 distinct from ordinary campaign progression and author acceptance. On 2026-10-14
 the author accepted CA235-01's four presented tracking/navigation/save-load/history
 steps. CA235-01 passed full author acceptance on 2026-10-14.
+The spatial-marker follow-up CA235-02 passed author review on 2026-10-14.
 #236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)

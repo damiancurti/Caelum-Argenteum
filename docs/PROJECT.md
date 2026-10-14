@@ -6,7 +6,8 @@ Documentation version: **5.3.8** — 2026-10-14.
 
 Author-requested follow-up (2026-10-14): mark the current tracked destination
 directly on the native map, restricted to known places. The existing target
-symbol updates with the stage; CA235-02 is separate from accepted CA235-01.
+symbol updates with the stage. CA235-02 passed author acceptance on 2026-10-14,
+separately from the previously accepted CA235-01.
 
 The author selected simultaneous tracking of several missions. Implemented a
 Journal action, shared objective projection, bounded local-map summary and links

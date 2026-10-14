@@ -11,12 +11,22 @@ UI and native marker logic; its rules are unchanged. A known matching POI uses
 the existing owned target icon, updates automatically with the active stage and
 returns to its category icon on untracking or completion. No saved fields,
 knowledge, quest progression, rewards or map coordinates are changed. CA235-02
-will record acceptance of this additional behavior separately.
+records acceptance of this additional behavior separately.
 Static validation and normal packaging passed. Three corrected native runs
 passed 104 assertions, two full resolved-record save comparisons and three
 inspected captures; the accepted preceding runtime reproduces 12 expected
 missing-symbol/size failures. Exact fingerprints and scope: validation_538
 RESULTS and targets_evidence.json. Earlier frozen evidence remains unchanged.
+
+CA235-02 (origin 5.3.8 / #235) passed author acceptance on 2026-10-14.
+The author confirmed, "Estas pruebas dieron muy bien." The three presented
+steps covered Argento/Caella stage changes, absence of an unknown destination
+and appearance after recording it, Track/Untrack and save/load, then completion
+restoring the ordinary place symbol. No failures or qualifications were reported.
+Session author-20261014-102654 used the final frozen runtime SHA-256
+27081ed0b4059a12bcf9c5ed3868b4ab8094cd1a15698774d3c862d395f9d742
+and exited with code 0. This author confirmation is separate from the scripted
+native evidence; no runtime change or version increment accompanies it.
 
 Implemented the author's multi-mission preference with per-character revision-one
 saved selections, Journal T/native-button actions, current-objective map rows
