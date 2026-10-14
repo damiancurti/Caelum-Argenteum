@@ -45,13 +45,15 @@ class CA261Probe : StaticEventHandler
         if(e.Name!="c261_audit")return;
         User=CaelumPlayer(players[e.Player].mo);User.ApplyCharacterProfile();Reset();
         Seal=GiveSeal(User);
+        for(int s=0;s<5;s++)
+            Check(String.Format("item description seal%d",s),CaelumSealResistance.ReductionPercent(s),s==4?15:50);
         let shot=CA261Shot(Actor.Spawn("CA261Shot",User.Pos+(32,0,User.Height*0.6),NO_REPLACE));
         shot.StoreCaelumAttackResult(1000,true,false,true,1);
         Name types[]={'Fire','Light','Water','Ice','Earth','Poison','Air','Lightning','Quintessence'};
         for(int s=0;s<5;s++)for(int t=1;t<=3;t++)for(int element=0;element<9;element++)
         {
             int essence=element/2;
-            double expected=s==4 ? 0.85 : s==essence ? 0.5 : 1;
+            double expected=element==8 ? 1 : s==4 ? 0.85 : s==essence ? 0.5 : 1;
             Seal.ItemType=s;Seal.Tier=t;Seal.Equipped=true;
             Check(String.Format("named seal%d T%d element%d",s,t,element),
                 CaelumSealResistance.ForEssence(User,CaelumSealResistance.Essence(null,types[element])),expected);
@@ -95,7 +97,7 @@ class CA261Probe : StaticEventHandler
         let npcSeal=GiveSeal(npc);
         for(int s=0;s<5;s++)for(int element=0;element<9;element++)
         {
-            double factor=s==4 ? 0.85 : s==element/2 ? 0.5 : 1;
+            double factor=element==8 ? 1 : s==4 ? 0.85 : s==element/2 ? 0.5 : 1;
             shot.StoreCaelumElementalPayload(element/2,(element%2)!=0,100,100);
             npc.health=100000;npc.CombatMaximumHealth=100000;npcSeal.ItemType=s;npcSeal.Equipped=true;
             npc.DamageMobj(shot,null,1000,'CaelumMagicTest',0,0);

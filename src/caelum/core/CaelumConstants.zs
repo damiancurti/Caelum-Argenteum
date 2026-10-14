@@ -376,6 +376,8 @@ class CaelumConstants : Object
     const ESSENCE_WATER = 1;
     const ESSENCE_EARTH = 2;
     const ESSENCE_WIND = 3;
+    // Cuatro familias elementales; Quintaesencia no tiene resistencia propia.
+    const ELEMENT_TYPE_COUNT = 4;
     const ESSENCE_QUINTESSENCE = 4;
     const ESSENCE_TYPE_COUNT = 5;
     const ELEMENTAL_BASE_DURATION_SECONDS = 3.0;

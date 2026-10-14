@@ -18,21 +18,19 @@ as above, without an additional Lucidity accuracy divisor. Resources, ammo and
 low-Lucidity stun are held for this comparison only. No permanent test grants
 or debug bindings belong to ordinary gameplay. Report the ID and any failure.
 
-CA261-01 | Origin: 5.4.2 / issue #261 | Equipped-Seal resistance presentation
-Prerequisites: the isolated #261 session prepared by Codex. Offer it only after
-the author returns; no author pass is inferred from native automated checks.
+CA261-01 | Origin: 5.4.2 / issue #261 | Four elemental resistances
+Prerequisites: the corrected isolated #261 session prepared by Codex. On
+2026-10-14 the author confirmed the prior checks except the fifth resistance;
+only this correction needs a manual recheck. F6 is fixture-only.
 Steps:
-1. In Journal > Character, inspect the elemental resistance rows. The initial
-   Fire Seal should improve Fire only (the Fire/Light pair); other rows keep
-   their existing body-average armor value. No resistance bars are added to HUD.
-2. F6 cycles Water, Earth, Air, Quintessence, no Seal, then Fire. Each matching
-   pair gets 50% passive reduction; Quintessence adds 15% to every element's
-   retained damage. These combine multiplicatively with the existing armor
-   average, so the displayed total need not be exactly 50% or 15%.
-3. Open Inventory and select a Seal. Its description must state the matching
-   elements and reduction while equipped, in Spanish or English as configured.
-4. Equip/unequip through the normal Inventory controls. Check that the Character
-   rows update once, without accumulating bonuses from owned or boxed Seals.
-Expected: readable, correct descriptions and immediate resistance updates. The
-native matrix separately covers direct/area HP, fractional DOT, save/load and
-hub travel. Temporary test Seals belong only to this isolated configuration.
+1. In Journal > Character, confirm exactly four rows: Fire, Water, Earth, Air.
+   There must be no Quintessence resistance row.
+2. With Fire equipped, expect Fire 53.75% and the other three 7.50% for this
+   unarmored Human profile. The existing innate magical armor is 7.5% (#52).
+3. Press F6 four times to equip Quintessence: all four rows should read 21.38%
+   (1 - 0.925 * 0.85). One more F6 removes the Seal: all four return to 7.50%.
+4. Quintessence's Inventory description names Fire, Water, Earth and Air.
+Expected: four correct totals, with no resistance to Quintessence itself. Native
+checks separately verify positive damage and that Quintessence damage gains no
+Seal reduction. Temporary test Seals and invulnerability belong only to this
+isolated UI check; no campaign save or normal bindings are changed.

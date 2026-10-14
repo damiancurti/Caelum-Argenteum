@@ -479,7 +479,7 @@
       ]
     }
   ],
-  "manual_acceptance": "Pending CA261-01; author away.",
+  "manual_acceptance": "CA261-01 partial author result on 2026-10-14; four-element correction and final evidence in four-elements.json.",
   "schema_changes": false,
   "preserved_failures": "See RESULTS.md; issue261-01 double reduction regression and issue261-02 reserved keyword compile failure are retained.",
   "static_validation": {
@@ -499,5 +499,6 @@
   "diff_check": {
     "command": "git diff --check",
     "exit_code": 0
-  }
+  },
+  "superseded_expectation": "The original ninth damage identity was incorrectly treated as resistible Quintessence; see the corrected matrix in four-elements.json."
 }

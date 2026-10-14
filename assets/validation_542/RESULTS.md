@@ -4,7 +4,41 @@ Baseline: `a88ce908` (5.4.1 / #259). This patch adds only the approved passive
 Seal factors and their presentation. Shared lookup uses equipped/unboxed identity;
 no native actor receives new equipment and no save schema changes.
 
-## Final native evidence
+## Four-element correction after author review (2026-10-14)
+
+The author reported the prior checks good except the fifth resistance row:
+Quintessence protects the four elemental families but has no resistance of its
+own. CA261-01 is therefore partial, with a narrow recheck in pending_test.txt.
+Human innate magical armor remains 7.5%, the existing #52 value rather than a
+Seal bonus. No generic armor rule, essence weapon or save field changes here.
+
+`build/issue261-four-elements-final/contract-01` passed **561 assertions**, exit
+0, on GZDoom 4.14.2. The matrix now treats Quintessence damage as an excluded
+identity for all five Seals, all tiers, named/prepared attacks, actual player/NPC
+direct and area HP. The other four families, burn/poison accumulation and dose
+regressions still pass; five additional checks cover item-description percentages.
+Production SHA-256:
+`211a18ce8ad08a27e7084f137e90084090f71c6a76d02f3926eaf9972e34f221`.
+Exact commands, hashes and logs: `four-elements.json`.
+
+`display-01` captures show exactly four rows; Fire displays 53.75% and the other
+three 7.50%. With Quintessence all four display 21.38% (1 - 0.925 * 0.85), and its
+Spanish item description correctly states 15% across those four families.
+The captures are retained under `captures/`. `prior-save-01` loads the saved
+previous #261 runtime and retains equipped inventory, burn progress and the
+500-HP Fire result. Prior upgrade/rollback/travel evidence below still describes
+the earlier package; this correction adds no saved state.
+
+An intermediate screenshot caught the description displaying 0% because it
+queried Quintessence against itself. The description now uses a protected
+family to calculate its percentage. Intermediate evidence remains under
+`build/issue261-four-elements`; that package is not the author handoff.
+The original matrix below is superseded for the fifth-family expectation.
+Project validation passed (errors: [], 2,488 CONTEXT words). Normal packaging
+passed with 16,074 files, no directory entries; every member matches this final
+native-tested runtime. Diff checks passed.
+
+## Original native evidence (before the four-element correction)
 
 Windows 11, GZDoom 4.14.2, Vulkan, isolated configuration, unpaused in background,
 5% audio. `build/issue261-release/release-01` passed **556 assertions**, exit 0,
@@ -27,8 +61,8 @@ production NPC loadouts remain unchanged.
 through all five Seals. Spanish final-runtime Character and item-detail captures
 were inspected: Fire resistance is 53.75% with 7.5% innate absorption; other rows
 remain 7.5%. The item explains its 50% Fire/Light reduction while equipped.
-No author physical-input acceptance is inferred. **CA261-01 remains pending**;
-the author is away, and no interactive handoff was opened for this patch.
+At that checkpoint no author physical-input acceptance was inferred. The later
+author handoff and partial result are recorded above; CA261-01 remains pending.
 
 ## Save and travel evidence
 

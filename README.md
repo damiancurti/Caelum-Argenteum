@@ -25,7 +25,8 @@ CA254-01 movement/listening review on 2026-10-14.
 
 5.4.2 implements [#261](https://github.com/damiancurti/Caelum-Argenteum/issues/261):
 the equipped Seal reduces damage from its elemental pair by 50%; Quintessence
-reduces all identified elemental damage by 15%. Direct hits, explosions and
+reduces the four elemental families by 15%; Quintessence has no resistance of
+its own. Direct hits, explosions and
 harmful status pulses share the rule. Character resistances and bilingual item
 details reflect it. [Native evidence](assets/validation_542/RESULTS.md) separates
 completed checks from pending author acceptance CA261-01.

@@ -1693,8 +1693,8 @@ class CaelumDebugOverlay : EventHandler
         String weaponDetail = "";
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
             weaponDetail=String.Format(StringTable.Localize(CaelumSealResistance.DescriptionKey(
-                localPlayer.EquipmentSelectionSealType),false),100*(1-CaelumSealResistance.Factor(
-                localPlayer.EquipmentSelectionSealType,localPlayer.EquipmentSelectionSealType)));
+                localPlayer.EquipmentSelectionSealType),false),CaelumSealResistance.ReductionPercent(
+                localPlayer.EquipmentSelectionSealType));
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             weaponDetail = String.Format(
