@@ -97,6 +97,29 @@ class CaelumPresentation : Object ui
             Screen.GetHeight()-RESOURCE_BOTTOM_EDGE*target.Y-origin.Y*factor.Y));
         Screen.SetTransform(matrix);
     }
+    // #255: columna propia en el borde derecho; el ajuste mantiene separados
+    // los poderes y los recursos incluso cuando la escala nativa es grande.
+    const POWER_WIDTH=88.0;
+    const POWER_HEIGHT=232.0;
+    const POWER_MARGIN=8.0;
+    static Vector2 PowerScale(Vector2 resources)
+    {
+        Vector2 scale=HUDScale();
+        double room=Screen.GetHeight()-(RESOURCE_BOTTOM_EDGE-218)*resources.Y-2*POWER_MARGIN*scale.Y;
+        double fit=Min(1.0,Max(0.0,room)/(POWER_HEIGHT*scale.Y));
+        return scale*fit;
+    }
+    static void BeginPowers(Vector2 resources)
+    {
+        Vector2 origin,size;
+        [origin,size]=Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
+        Vector2 target=PowerScale(resources);
+        Vector2 factor=(target.X*640/size.X,target.Y*360/size.Y);
+        let matrix=new("Shape2DTransform");matrix.Scale(factor);
+        matrix.Translate((Screen.GetWidth()-(POWER_WIDTH+POWER_MARGIN)*target.X-origin.X*factor.X,
+            POWER_MARGIN*target.Y-origin.Y*factor.Y));
+        Screen.SetTransform(matrix);
+    }
     static double CenterMessage(Font font,int color,String text,double y)
     {
         Vector2 scale=MessageScale();

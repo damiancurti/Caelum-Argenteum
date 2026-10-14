@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.27.** Obtain and update the complete repository, validate
+**Current release: 5.3.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.0 implements [#255](https://github.com/damiancurti/Caelum-Argenteum/issues/255):
+Seal/Tarot indicators use twice their former reference dimensions and stay
+anchored to the right viewport edge. The whole column fits above the resource
+bars at large native scales. [Evidence](assets/validation_530/RESULTS.md);
+**CA255-01 passed author acceptance on 2026-10-13.**
 
 5.2.27 implements [#229](https://github.com/damiancurti/Caelum-Argenteum/issues/229):
 the empty Magic Box weighs **1 gram (0.001 kg)**. Contents retain the existing

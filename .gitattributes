@@ -2,6 +2,10 @@
 /docs/*.md text eol=lf
 /docs/MAP01.txt text eol=lf
 
+# Preserve #255 native evidence and source fingerprints across checkouts.
+/assets/validation_530/** -text whitespace=cr-at-eol
+/assets/validation_530/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
 # #185 dialogue/localization indexes hash source bytes across checkouts.
 /src/dialogues/** text eol=lf
 /src/localization/** text eol=lf

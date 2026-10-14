@@ -811,8 +811,8 @@ class CaelumHUDOverlay : EventHandler
         let icon = TexMan.CheckForTexture(path, TexMan.Type_Any);
         if (!icon.IsValid()) return;
         bool available = localPlayer.HUDSealChannelAvailable;
-        Screen.DrawTexture(icon, false, 580.0, 132.0,
-            DTA_DESTWIDTHF, 44.0, DTA_DESTHEIGHTF, 44.0,
+        Screen.DrawTexture(icon, false, 0.0, 130.0,
+            DTA_DESTWIDTHF, 88.0, DTA_DESTHEIGHTF, 88.0,
             DTA_LEFTOFFSETF, 0.0, DTA_TOPOFFSETF, 0.0,
             DTA_DESATURATE, available ? 0 : 255,
             DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
@@ -824,8 +824,8 @@ class CaelumHUDOverlay : EventHandler
         {
             int seconds = Max(1, int(Ceil(localPlayer.CombatChannelCooldownRemaining)));
             String countdown = String.Format("%ds", seconds);
-            double x = 602.0 - HUDFont.StringWidth(countdown) * 0.5;
-            Screen.DrawText(HUDFont, Font.CR_WHITE, x, 180.0, countdown,
+            double x = 44.0 - HUDFont.StringWidth(countdown) * 0.5;
+            Screen.DrawText(HUDFont, Font.CR_WHITE, x, 220.0, countdown,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true
             );
@@ -847,8 +847,8 @@ class CaelumHUDOverlay : EventHandler
             && localPlayer.CurrentAnima >= CaelumConstants.TAROT_ACTIVATION_ANIMA);
         let icon = TexMan.CheckForTexture("graphics/caelum/icons/ca_tarot_back.png", TexMan.Type_Any);
         if (!icon.IsValid()) return;
-        Screen.DrawTexture(icon, false, 586.0, 52.0,
-            DTA_DESTWIDTHF, 32.0, DTA_DESTHEIGHTF, 48.0,
+        Screen.DrawTexture(icon, false, 12.0, 0.0,
+            DTA_DESTWIDTHF, 64.0, DTA_DESTHEIGHTF, 96.0,
             DTA_LEFTOFFSETF, 0.0, DTA_TOPOFFSETF, 0.0,
             DTA_DESATURATE, available ? 0 : 255,
             DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
@@ -857,7 +857,7 @@ class CaelumHUDOverlay : EventHandler
         {
             String duration = String.Format(StringTable.Localize("CA_TAROT_HUD_DURATION", false),
                 (CaelumTarotService.EffectTics(record) + TICRATE - 1) / TICRATE);
-            Screen.DrawText(HUDFont, Font.CR_CYAN, 624.0 - HUDFont.StringWidth(duration), 102.0, duration,
+            Screen.DrawText(HUDFont, Font.CR_CYAN, 88.0 - HUDFont.StringWidth(duration), 98.0, duration,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true);
         }
@@ -865,7 +865,7 @@ class CaelumHUDOverlay : EventHandler
         {
             String cooldown = String.Format(StringTable.Localize("CA_TAROT_HUD_COOLDOWN", false),
                 (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE);
-            Screen.DrawText(HUDFont, Font.CR_WHITE, 624.0 - HUDFont.StringWidth(cooldown), 116.0, cooldown,
+            Screen.DrawText(HUDFont, Font.CR_WHITE, 88.0 - HUDFont.StringWidth(cooldown), 112.0, cooldown,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true);
         }
@@ -1086,7 +1086,7 @@ class CaelumHUDOverlay : EventHandler
         CaelumPresentation.End();
 
         CaelumCompass.Draw(event, localPlayer, HUDFont);
-        CaelumPresentation.BeginHUD();
+        CaelumPresentation.BeginPowers(resourceScale);
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
         CaelumPresentation.End();

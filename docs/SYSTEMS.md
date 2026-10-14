@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.27** — 2026-10-13.
+Documentation version: **5.3.0** — 2026-10-13.
+
+## 5.3.0 - Right-edge power indicators (#255)
+
+Seal and Tarot use 88x88 and 64x96 virtual-unit rectangles respectively, twice
+their former width and height. Tarot remains above Seal. Both icons and their
+existing duration/cooldown captions share one viewport-right transform driven
+by the native HUD scale, independently of the centered HUD and the resource
+bars' 1.95 enlargement. The group keeps an eight-unit right/top margin.
+The complete 232-unit column fits above the retained resource bars; if a large
+native scale cannot fit, its uniform fit factor reduces the whole group.
+Thus 2x is the uncapped reference target, not a guarantee at every viewport.
+Availability, desaturation, selection and timers still read the existing owners.
+No power activation, saved state, controls or assets change. #256 owns adjacent
+survival debuffs and moving the four resource bars into Character.
+Native/static evidence: assets/validation_530/RESULTS.md. CA255-01 passed author acceptance on 2026-10-13.
 
 ## 5.2.27 - One-gram empty Magic Box (#229)
 
