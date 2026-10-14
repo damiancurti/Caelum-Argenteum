@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `496e92ec19c4a7e5ceffafca70606feb850b8e5b75e53742ee265e20dd3bd256`. Locations include every definition; the last one per language wins.
+SHA-256: `fa98cf340c88f88d0c9c1f45b9319302a033842b34f7d259b0545702c67c0d6d`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -31,6 +31,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
 | CA_CARAVAN | 18 | CA_CARAVAN_BACK | CA_CARAVAN_WORLD_HELP |
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
+| CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |
 | CA_CHEST | 11 | CA_CHEST_MATERIAL_ADAPTIVE | CA_CHEST_TUTORIAL_PLAN |
 | CA_CITY | 7 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_5 |
 | CA_CLASS | 4 | CA_CLASS_EXPLORER | CA_CLASS_WARRIOR |
@@ -130,7 +131,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |
-| CA_SURVIVAL | 1 | CA_SURVIVAL_STATE_NORMAL | CA_SURVIVAL_STATE_NORMAL |
+| CA_SURVIVAL | 10 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
 | CA_TAROT | 66 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |

@@ -86,6 +86,7 @@ class CaelumLiveMenuControls : Object ui
             }
             else
             {
+                if(context==2)Button("CA_UI_THERMAL",0,116,"t");
                 if(context==6 && user.JournalReputationTrialEnabled)Button("CA_UI_TRIAL",0,102,"f");
                 Button("CA_UI_PREVIOUS",InputEvent.Key_PgUp);Button("CA_UI_NEXT",InputEvent.Key_PgDn);Back();
             }

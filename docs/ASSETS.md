@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.3.0** — 2026-10-13.
+Documentation version: **5.3.1** — 2026-10-13.
+
+## 5.3.1 - Survival and Character presentation (#256)
+
+Reused all six retained HUD icons and Hunger/Thirst/Sleep/thermal icons without
+editing pixels. Character uses existing fonts and native menu controls.
+assets/validation_531 contains isolated fixture sources, logs and captures;
+generated packages, saves, engine and development IWAD stay local in build.
 
 ## 5.3.0 - Power indicator presentation (#255)
 

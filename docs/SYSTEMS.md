@@ -1,6 +1,47 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.0** — 2026-10-13.
+Documentation version: **5.3.1** — 2026-10-13.
+
+## 5.3.1 - Character resources and combat readouts (#256)
+
+Journal > Character keeps all twelve attributes and the Tarot bonus, adds
+live evasion and physical/magical critical percentages, and moves Hunger,
+Thirst, Sleep and signed thermal Exposure into its right column. T and the
+native Temperature button expose the existing thermal detail; World > T still
+works. Viewing either page is read-only. Combat and presentation share the
+same capped critical queries: catalogue/tier base, derived bonus, crouch and
+personality. A category the active weapon cannot use says Not applicable.
+Actual fists have no critical roll and display 0%; the utility stream likewise
+has 0% magical critical, and bolas have no damaging critical category.
+
+Author follow-up on 2026-10-13: show elemental resistance as a percentage,
+`100*(1-mean(damage factor across the four armor regions))`; factor 0.5 means
+50% resistance. Each region uses current additive racial and equipped magical
+absorption, including personality and broken/absent armor. All five essences
+currently share that defensive rule. Do not invent distinct per-element bonuses.
+Exclude Toughness, shield coverage and hypothetical attacker penetration from
+this character resistance readout. It is not a prediction of final HP loss.
+Evasion is the same capped current chance used for eligible direct attacks;
+explosions and other non-evadable damage do not gain a new roll.
+
+The author also changed the retained HUD layout to two lower-edge columns,
+each ordered top to bottom: left Load, Lucidity, Health; right Adrenaline,
+Anima, Air. The four survival bars now live in Character. Their adverse states
+reuse the existing resource/thermal icons and severity palettes immediately
+left of Seal/Tarot. Recovery clears each adverse indicator. This supersedes
+the former ten-bar arrangement under #131/#213, preserving values and native
+scale preferences. No new artwork or gameplay thresholds are introduced.
+
+Hunger, thirst, sleep, heat, cold and recovery notifications use bilingual
+text and the existing notification duration/cap. Sample the completed real
+tick, not every accelerated simulation substep. One live message per resource
+can change text without extending its timer or replaying intermediate states.
+No recurring warning cadence is added. NotificationInbox SurvivalRevision 1
+imports the current four state codes silently once; saved current state codes
+prevent replay on load/hub travel. New fields are additive to existing classes.
+Keep original saves and load them in the previous package for rollback; always
+write new test slots. Native/save evidence: assets/validation_531/RESULTS.md.
+CA256-01 passed author acceptance on 2026-10-13.
 
 ## 5.3.0 - Right-edge power indicators (#255)
 
@@ -78,7 +119,8 @@ assets/validation_5221. Author visual acceptance CA216-01 remains pending.
 ## 5.2.20 - Edge-anchored resource bars (#213)
 
 Supersedes the shared centered resource frame in the 5.2.15 contract below.
-The five bodily-resource bars anchor at the lower left; temperature, load,
+The original #213 arrangement (superseded by #256 above) placed five
+bodily-resource bars at the lower left; temperature, load,
 hunger, thirst and sleep anchor at the lower right. Frames, fills, icons and
 labels share a **1.95 multiplier** over the existing native HUD scale (another 50% over
 the initially requested 1.30 multiplier). The
@@ -2212,9 +2254,10 @@ serialization for a later 5.1 reload. Keep original saves and the same map-addon
 basenames; save to a new slot. This bridge changes no original save file.
 Generated packages, development IWADs, engine and saves are not distributed.
 
-Journal > World > **T** displays air, adapted comfort, signed exposure, first
+Journal > Character or World > **T** displays air, adapted comfort, signed exposure, first
 harmful threshold, wetness, humidity, acclimatization and current penalties in
-English/Spanish. The 5.1.1/#131 HUD adds a read-only bar directly above Load:
+English/Spanish. The 5.1.1/#131 read-only bar, moved into Character by #256,
+originally appeared directly above Load:
 a grey icon with snowflake upper left and flame lower right, a neutral center, cold/hot bands and
 ticks at the actual Toughness-scaled
 thresholds, a signed value and localized severity. The #140 follow-up colors

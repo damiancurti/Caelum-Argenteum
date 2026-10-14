@@ -339,33 +339,6 @@ class CaelumHUDOverlay : EventHandler
         return Font.CR_CYAN;
     }
 
-    ui String GetSurvivalStateKey(int resourceType, int state)
-    {
-        if (state == CaelumConstants.SURVIVAL_STATE_NORMAL)
-        {
-            return "CA_SURVIVAL_STATE_NORMAL";
-        }
-        if (resourceType == 0)
-        {
-            return state == CaelumConstants.SURVIVAL_STATE_CRITICAL
-                ? "CA_HUNGER_STATE_CRITICAL" : "CA_HUNGER_STATE_LOW";
-        }
-        if (resourceType == 1)
-        {
-            return state == CaelumConstants.SURVIVAL_STATE_CRITICAL
-                ? "CA_THIRST_STATE_CRITICAL" : "CA_THIRST_STATE_LOW";
-        }
-        return state == CaelumConstants.SURVIVAL_STATE_CRITICAL
-            ? "CA_SLEEP_STATE_CRITICAL" : "CA_SLEEP_STATE_LOW";
-    }
-
-    ui int GetSurvivalColor(int state)
-    {
-        if (state == CaelumConstants.SURVIVAL_STATE_CRITICAL) return Font.CR_RED;
-        if (state == CaelumConstants.SURVIVAL_STATE_LOW) return Font.CR_GOLD;
-        return Font.CR_GREEN;
-    }
-
     ui String GetHealthStateKey(int state)
     {
         if (state == CaelumConstants.HEALTH_STATE_BADLY_WOUNDED)
@@ -474,7 +447,7 @@ class CaelumHUDOverlay : EventHandler
     ui void DrawResourceLaurels(bool right)
     {
         double x=right?440.0:20.0;
-        for(int row=0;row<5;row++)DrawHUDBarLaurels(x,230.0+24.0*row,180.0);
+        for(int row=2;row<5;row++)DrawHUDBarLaurels(x,230.0+24.0*row,180.0);
     }
 
     // Cada grupo conserva sus marcos, iconos y remates en una misma proyeccion.
@@ -482,21 +455,18 @@ class CaelumHUDOverlay : EventHandler
     {
         String root = "graphics/caelum/ui/hud/icons/";
         double x=right?440.0:20.0;
-        for(int row=0;row<5;row++)DrawHUDBarFrame(x,230.0+24.0*row,180.0);
+        for(int row=2;row<5;row++)DrawHUDBarFrame(x,230.0+24.0*row,180.0);
         if(right)
         {
-            DrawHUDTexture(root .. "ca_hud_icon_load.png",422.0,249.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_hunger.png",422.0,273.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_thirst.png",422.0,297.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_sleep.png",422.0,321.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_adrenaline.png",422.0,273.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_anima.png",422.0,297.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_air.png",422.0,321.0,18.0,18.0);
         }
         else
         {
-            DrawHUDTexture(root .. "ca_hud_icon_lucidity.png",2.0,225.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_adrenaline.png",2.0,249.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_anima.png",2.0,273.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_health.png",2.0,297.0,18.0,18.0);
-            DrawHUDTexture(root .. "ca_hud_icon_air.png",2.0,321.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_load.png",2.0,273.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_lucidity.png",2.0,297.0,18.0,18.0);
+            DrawHUDTexture(root .. "ca_hud_icon_health.png",2.0,321.0,18.0,18.0);
         }
     }
 
@@ -533,7 +503,7 @@ class CaelumHUDOverlay : EventHandler
     ui void DrawAirBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(28, 326);
+        [pos, size] = ResourceRect(448, 326);
         int barX=int(pos.X), barY=int(pos.Y);
         int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         // Read stored fields directly. Calling a play-scope function such as
@@ -566,12 +536,11 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
-    // Health uses GZDoom's inherited current value and Caelum's Constitution-
-    // based maximum. It sits above air so both resources remain readable.
+    // Salud conserva la vida nativa y el máximo derivado de Constitución.
     ui void DrawHealthBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(28, 302);
+        [pos, size] = ResourceRect(28, 326);
         int barX=int(pos.X), barY=int(pos.Y);
         int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
@@ -594,12 +563,11 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
-    // Anima uses a violet bar above health. Like the other resource graphics,
-    // it is drawn through code and requires no copyrighted interface artwork.
+    // Ánima conserva el relleno violeta entre Adrenalina y Aire.
     ui void DrawAnimaBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(28, 278);
+        [pos, size] = ResourceRect(448, 302);
         int barX=int(pos.X), barY=int(pos.Y);
         int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
@@ -628,7 +596,7 @@ class CaelumHUDOverlay : EventHandler
     ui void DrawAdrenalineBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(28, 254);
+        [pos, size] = ResourceRect(448, 278);
         int barX=int(pos.X), barY=int(pos.Y);
         int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
@@ -652,12 +620,11 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
-    // Lucidity is cyan while clear, gold while dizzy, and red while stunned.
-    // It is placed above adrenaline to keep every live resource in one stack.
+    // Lucidez conserva sus colores, entre Carga y Salud.
     ui void DrawLucidityBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(28, 230);
+        [pos, size] = ResourceRect(28, 302);
         int barX=int(pos.X), barY=int(pos.Y);
         int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = Clamp(
@@ -685,46 +652,12 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
-    // Survival resources use a separate lower-right stack so the growing HUD
-    // remains readable instead of extending too far up the left side.
-    ui void DrawSurvivalBar(double value, int state, int virtualY, int baseColor)
-    {
-        Vector2 pos, size;
-        [pos, size] = ResourceRect(448, virtualY);
-        int x=int(pos.X), y=int(pos.Y);
-        int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
-        int fill = int(width * Clamp(value / 100.0, 0.0, 1.0));
-        // "color" is a built-in ZScript type, so the variable needs a more
-        // specific name to remain compatible with GZDoom 4.14.2's parser.
-        int barColor = baseColor;
-
-        // Keep each resource identifiable in critical states by using a
-        // hand-tuned mixture of its base hue with gold or red.
-        if (baseColor == 0x75A84A)
-        {
-            if (state == CaelumConstants.SURVIVAL_STATE_LOW) barColor = 0xA5A139;
-            if (state == CaelumConstants.SURVIVAL_STATE_CRITICAL) barColor = 0x9D5643;
-        }
-        else if (baseColor == 0x3F9FD2)
-        {
-            if (state == CaelumConstants.SURVIVAL_STATE_LOW) barColor = 0x8A9D7D;
-            if (state == CaelumConstants.SURVIVAL_STATE_CRITICAL) barColor = 0x826D87;
-        }
-        else
-        {
-            if (state == CaelumConstants.SURVIVAL_STATE_LOW) barColor = 0xAA876F;
-            if (state == CaelumConstants.SURVIVAL_STATE_CRITICAL) barColor = 0xA55882;
-        }
-        Screen.Dim(0x161616, 0.85, x, y, width, height);
-        if (fill > 0) Screen.Dim(barColor, 0.95, x, y, fill, height);
-    }
-
-    // La carga comparte la columna de supervivencia. El color avanza desde
+    // Carga encabeza la columna izquierda. El color avanza desde
     // verde hasta rojo al acercarse y superar la capacidad máxima.
-    ui void DrawLoadBar(CaelumPlayer localPlayer, int virtualY)
+    ui void DrawLoadBar(CaelumPlayer localPlayer)
     {
         Vector2 pos, size;
-        [pos, size] = ResourceRect(448, virtualY);
+        [pos, size] = ResourceRect(28, 278);
         int x=int(pos.X), y=int(pos.Y);
         int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
         double ratio = localPlayer.HUDLoadRatio;
@@ -737,60 +670,6 @@ class CaelumHUDOverlay : EventHandler
         if (fill > 0) Screen.Dim(barColor, 0.95, x, y, fill, height);
     }
 
-    ui void DrawThermalBar(CaelumPlayer localPlayer)
-    {
-        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
-        let thermal=record!=null ? record.ThermalState : null;
-        Vector2 pos, size;
-        [pos, size] = ResourceRect(CaelumThermalHUD.BAR_X+CaelumThermalHUD.FILL_INSET,
-            CaelumThermalHUD.BAR_Y,CaelumThermalHUD.FILL_WIDTH,CaelumThermalHUD.FILL_HEIGHT);
-        int x=int(pos.X), y=int(pos.Y);
-        int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
-        int stroke=Max(1,int(Screen.GetWidth()/640.0));
-        int strokeY=Max(1,int(Screen.GetHeight()/360.0));
-        for(int band=0;band<6;band++)
-        {
-            int left=x+int(width*CaelumThermalHUD.BandPosition(band));
-            int right=x+int(width*CaelumThermalHUD.BandPosition(band+1));
-            Screen.Dim(CaelumThermalHUD.BandColor(band),0.80,left,y,Max(1,right-left),height);
-        }
-        // ±10, ±20 y el cero se distinguen también por geometría, sin color.
-        for(int tick=1;tick<6;tick++)
-            Screen.Dim(tick==3 ? 0xFFFFFF : 0x20252B,0.9,
-                x+int(width*CaelumThermalHUD.BandPosition(tick)),y,stroke,height);
-        if(thermal!=null)
-        {
-            double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
-            double exposure=thermal.Exposure;
-            int marker=x+int((width-1)*CaelumThermalHUD.Position(exposure,toughness));
-            Screen.Dim(0x080C10,1,marker-2*stroke,y-strokeY,5*stroke,height+2*strokeY);
-            Screen.Dim(0xFFFFFF,1,marker,y-strokeY,stroke,height+2*strokeY);
-        }
-    }
-
-    ui String, int, int ThermalLabel(CaelumPlayer localPlayer)
-    {
-        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
-        let thermal=record!=null ? record.ThermalState : null;
-        String label=StringTable.Localize("CA_HUD_THERMAL_UNAVAILABLE",false);
-        int textColor=Font.CR_GRAY;
-        int textTint=0xFFFFFFFF;
-        if(thermal!=null)
-        {
-            double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
-            double exposure=thermal.Exposure;
-            textColor=Font.CR_WHITE;
-            textTint=0xFF000000 | CaelumThermalHUD.ExposureColor(exposure,toughness);
-            String stateName=StringTable.Localize(CaelumThermalHUD.StateKey(exposure,toughness),false);
-            bool beyond=Abs(exposure)>CaelumThermalHUD.Range(toughness);
-            String key=beyond ? (exposure<0 ? "CA_HUD_THERMAL_BELOW" : "CA_HUD_THERMAL_ABOVE") : "CA_HUD_THERMAL_VALUE";
-            double displayed=beyond ? (exposure<0 ? -1 : 1)*CaelumThermalHUD.Range(toughness) : exposure;
-            String value=String.Format(Abs(displayed)<1000 ? "%+.1f" : "%+.2e",displayed);
-            label=String.Format(StringTable.Localize(key,false),value,stateName);
-        }
-        return label,textColor,textTint;
-    }
-
     // Gradientes y bandas animadas hacen visible la pérdida de Lucidez.
     // El HUD se dibuja después para conservar la legibilidad de sus textos.
     ui void DrawLucidityDistortion(CaelumPlayer localPlayer,double fraction)
@@ -800,6 +679,38 @@ class CaelumHUDOverlay : EventHandler
 
     // Indicador lateral: utiliza el icono real del Sello y su disponibilidad
     // autoritativa. La escala de grises conserva la transparencia y el detalle.
+    ui void DrawSurvivalDebuffs(CaelumPlayer user)
+    {
+        let record=CaelumPersistentCharacterState(user.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=record!=null ? record.ThermalState : null;
+        int row=0;
+        for(int resource=0;resource<4;resource++)
+        {
+            String label; int textColor, tint=0xFFFFFFFF;
+            if(resource<3)
+            {
+                int state=CaelumSurvivalView.State(user,resource);
+                if(state==CaelumConstants.SURVIVAL_STATE_NORMAL)continue;
+                label=StringTable.Localize(CaelumSurvivalView.StateKey(resource,state),false);
+                textColor=CaelumSurvivalView.TextColor(state);
+            }
+            else
+            {
+                if(thermal==null || thermal.Severity<=0)continue;
+                label=StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false);
+                textColor=Font.CR_WHITE;
+                tint=0xFF000000|CaelumThermalHUD.ExposureColor(thermal.Exposure,thermal.Toughness);
+            }
+            double y=16+row*40;
+            DrawHUDTexture(CaelumSurvivalView.Icon(resource),-30,y,18,18);
+            // El nombre crece hacia dentro; nunca entra en la columna de poderes.
+            Screen.DrawText(HUDFont,textColor,-36-HUDFont.StringWidth(label),y+5,label,
+                DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,
+                DTA_KEEPRATIO,true,DTA_SHADOW,true,DTA_COLOR,tint);
+            row++;
+        }
+    }
+
     ui void DrawSealIndicator(CaelumPlayer localPlayer)
     {
         if (!localPlayer.HUDHasEquippedSeal) return;
@@ -944,15 +855,6 @@ class CaelumHUDOverlay : EventHandler
                 localPlayer.LucidityPhysicalStunRemaining
             );
         }
-        String hungerLine = String.Format("%s: %.0f%% (%s)",
-            StringTable.Localize("CA_HUD_HUNGER", false), localPlayer.CurrentHunger,
-            StringTable.Localize(GetSurvivalStateKey(0, localPlayer.HungerState), false));
-        String thirstLine = String.Format("%s: %.0f%% (%s)",
-            StringTable.Localize("CA_HUD_THIRST", false), localPlayer.CurrentThirst,
-            StringTable.Localize(GetSurvivalStateKey(1, localPlayer.ThirstState), false));
-        String sleepLine = String.Format("%s: %.0f%% (%s)",
-            StringTable.Localize("CA_HUD_SLEEP", false), localPlayer.CurrentSleep,
-            StringTable.Localize(GetSurvivalStateKey(2, localPlayer.SleepState), false));
         double loadPercent = localPlayer.HUDLoadRatio * 100.0;
         String loadStateKey = "CA_LOAD_NORMAL";
         if (localPlayer.HUDLoadRatio >= 1.0)
@@ -1031,62 +933,47 @@ class CaelumHUDOverlay : EventHandler
         // El centro del marco HUD-01 es deliberadamente oscuro y casi opaco.
         // Dibujarlo primero permite que los rellenos tintados queden visibles
         // dentro de sus bordes metálicos en vez de quedar tapados por el arte.
-        String thermalLine;int thermalColor,thermalTint;
-        [thermalLine,thermalColor,thermalTint]=ThermalLabel(localPlayer);
         // Medir el texto localizado antes de limitar la ampliacion: los dos
         // grupos pueden crecer hasta tocarse, pero nunca invadirse ni cortarse.
-        double leftWidth=Max(209,20+Max(HUDFont.StringWidth(lucidityLine),
-            Max(HUDFont.StringWidth(adrenalineLine),Max(HUDFont.StringWidth(animaLine),
-            Max(HUDFont.StringWidth(healthLine),HUDFont.StringWidth(airLine))))));
-        double rightWidth=Max(209,11+Max(HUDFont.StringWidth(thermalLine),
-            Max(HUDFont.StringWidth(loadLine),Max(HUDFont.StringWidth(hungerLine),
-            Max(HUDFont.StringWidth(thirstLine),HUDFont.StringWidth(sleepLine))))));
+        double leftWidth=Max(209,20+Max(HUDFont.StringWidth(loadLine),
+            Max(HUDFont.StringWidth(lucidityLine),HUDFont.StringWidth(healthLine))));
+        double rightWidth=Max(209,11+Max(HUDFont.StringWidth(adrenalineLine),
+            Max(HUDFont.StringWidth(animaLine),HUDFont.StringWidth(airLine))));
         // Dos unidades incluyen la sombra y separan las etiquetas enfrentadas.
         leftWidth+=2;rightWidth+=2;
         Vector2 resourceScale=CaelumPresentation.ResourceScale(leftWidth+rightWidth);
         CaelumPresentation.BeginResources(false,resourceScale);
         DrawResourceSkin(false);
+        DrawLoadBar(localPlayer);
         DrawLucidityBar(localPlayer);
-        DrawAdrenalineBar(localPlayer);
-        DrawAnimaBar(localPlayer);
         DrawHealthBar(localPlayer);
-        DrawAirBar(localPlayer);
         DrawResourceLaurels(false);
         CaelumPresentation.End();
         CaelumPresentation.BeginResources(true,resourceScale);
         DrawResourceSkin(true);
-        DrawLoadBar(localPlayer, 254);
-        DrawThermalBar(localPlayer);
-        DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
-        DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
-        DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
+        DrawAdrenalineBar(localPlayer);
+        DrawAnimaBar(localPlayer);
+        DrawAirBar(localPlayer);
         DrawResourceLaurels(true);
-        // La llama se dibuja despues del laurel para conservar su silueta.
-        DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
-
         CaelumPresentation.End();
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
 
         // Como antes, las etiquetas quedan por encima del arma de primera persona.
         CaelumPresentation.BeginResources(false,resourceScale);
-        DrawResourceLabel(false,230,GetLucidityColor(localPlayer.LucidityState),lucidityLine);
-        DrawResourceLabel(false,254,Font.CR_GOLD,adrenalineLine);
-        DrawResourceLabel(false,278,Font.CR_PURPLE,animaLine);
-        DrawResourceLabel(false,302,GetHealthTextColor(localPlayer.HealthState),healthLine);
-        DrawResourceLabel(false,326,GetAirColor(localPlayer.AirState),airLine);
+        DrawResourceLabel(false,278,Font.CR_WHITE,loadLine);
+        DrawResourceLabel(false,302,GetLucidityColor(localPlayer.LucidityState),lucidityLine);
+        DrawResourceLabel(false,326,GetHealthTextColor(localPlayer.HealthState),healthLine);
         CaelumPresentation.End();
         CaelumPresentation.BeginResources(true,resourceScale);
-        DrawResourceLabel(true,230,thermalColor,thermalLine,thermalTint);
-        DrawResourceLabel(true,254,Font.CR_WHITE,loadLine);
-        DrawResourceLabel(true,278,GetSurvivalColor(localPlayer.HungerState),hungerLine);
-        DrawResourceLabel(true,302,GetSurvivalColor(localPlayer.ThirstState),thirstLine);
-        DrawResourceLabel(true,326,GetSurvivalColor(localPlayer.SleepState),sleepLine);
-
+        DrawResourceLabel(true,278,Font.CR_GOLD,adrenalineLine);
+        DrawResourceLabel(true,302,Font.CR_PURPLE,animaLine);
+        DrawResourceLabel(true,326,GetAirColor(localPlayer.AirState),airLine);
         CaelumPresentation.End();
 
         CaelumCompass.Draw(event, localPlayer, HUDFont);
         CaelumPresentation.BeginPowers(resourceScale);
+        DrawSurvivalDebuffs(localPlayer);
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
         CaelumPresentation.End();
@@ -1098,11 +985,6 @@ class CaelumHUDOverlay : EventHandler
             if(localPlayer.HUDAbilitySuccessRemaining>0)
                 noticeBottom=CaelumPresentation.CenterMessage(HUDFont,Font.CR_GREEN,
                     StringTable.Localize("CA_ABILITY_USED_SUCCESSFULLY",false),noticeBottom);
-            let thermalOwner=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
-            let thermal=thermalOwner!=null?thermalOwner.ThermalState:null;
-            if(thermal!=null && thermal.Severity>0)
-                noticeBottom=CaelumPresentation.CenterMessage(HUDFont,thermal.Exposure<0?Font.CR_CYAN:Font.CR_RED,
-                    StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false),noticeBottom);
         }
         CaelumPresentation.BeginHUD();
 

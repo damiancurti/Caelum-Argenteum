@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.0** — 2026-10-13.
+Documentation version: **5.3.1** — 2026-10-13.
+
+## 5.3.1 - Character survival and defenses (#256), 2026-10-13
+
+Moved four survival resource presentations into Character. Added shared live
+critical queries and capped evasion, with Not applicable for unsupported
+categories and actual zero-critical fists. The author additionally requested
+mean body-region elemental resistance, explicitly excluding Toughness, and
+two HUD columns ordered Load/Lucidity/Health and Adrenaline/Anima/Air.
+Adverse icons remain next to powers; bilingual notifications coalesce within
+their existing duration and import saved state idempotently without replay.
+Evidence and limitations: assets/validation_531/RESULTS.md. CA256-01 (origin
+5.3.1 / #256) passed author acceptance on 2026-10-13: "Quedó muy bien, apruebo."
+No qualifications were stated. The confirmed entry was removed from
+pending_test.txt. Native agent checks remain distinct from author acceptance;
+#255 remains accepted separately. Merge/closure are not claimed.
 
 ## 5.3.0 - Right-edge Seal/Tarot (#255), 2026-10-13
 

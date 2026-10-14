@@ -723,6 +723,11 @@ class CaelumPlayer : DoomPlayer
     bool UnderwaterWithoutOxygen;
     bool UnderwaterAirRecoveryAppliedThisTick;
     double EffectiveEvasionChance;
+    // Proyección derivada: se reconstruye sin atacar ni conservar muestras.
+    double HUDPhysicalCriticalChance, HUDMagicalCriticalChance;
+    bool HUDPhysicalCriticalApplies, HUDMagicalCriticalApplies;
+    double HUDMagicalDamageFactor;
+
     bool LastEvasionAttempted;
     bool LastEvasionSucceeded;
     double LastEvasionChancePercent;
@@ -8982,6 +8987,7 @@ class CaelumPlayer : DoomPlayer
         CaelumTimeAdvanceState.Pump(self);
         CaelumTimeSkipState.AfterStep(self);
         CaelumTimeSkipState.Pump(self);
+        CaelumNotifications.Survival(self);
     }
 
     // Este paso no mueve actores ni llama Super.Tick. Cada intervalo simulado
@@ -9448,6 +9454,24 @@ class CaelumPlayer : DoomPlayer
         CaelumInventoryService.MigrateWeaponDurability(self, revision);
     }
 
+    // Consulta común del combate y de Personaje; no tira dados ni consume recursos.
+    double PhysicalCriticalChanceFor(int catalogueWeapon, bool ranged = false)
+    {
+        if (DerivedStats == null || WeaponModel == null) return 0;
+        double baseChance = CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon);
+        if (ranged) baseChance *= GetRangedTierCriticalMultiplier(WeaponModel.Tier);
+        return CaelumAttackRules.CriticalChance(baseChance, DerivedStats.PhysicalCriticalChance,
+            CrouchCriticalChanceMultiplier, CaelumPersonalityRules.Critical(self));
+    }
+
+    double MagicalCriticalChanceFor(int weaponType)
+    {
+        if (DerivedStats == null || WeaponModel == null) return 0;
+        return CaelumAttackRules.CriticalChance(WeaponModel.GetBaseCriticalChanceFor(weaponType),
+            DerivedStats.MagicalCriticalChance, CrouchCriticalChanceMultiplier,
+            CaelumPersonalityRules.Critical(self));
+    }
+
     void PerformEquippedWeaponPrimaryAttack()
     {
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
@@ -9804,17 +9828,7 @@ class CaelumPlayer : DoomPlayer
         double pitchOffset = Random[CaelumJavelinPitch](-100000, 100000)
             / 100000.0 * spreadMagnitude;
 
-        double criticalBonus = Max(
-            0.0,
-            DerivedStats.PhysicalCriticalChance
-                - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-        );
-        double criticalChance = Clamp(
-            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-                + criticalBonus) * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
-            0.0,
-            100.0
-        );
+        double criticalChance = PhysicalCriticalChanceFor(catalogueWeapon);
         int criticalRoll = Random[CaelumJavelinCritical](0, 999999);
         bool criticalHit = criticalRoll / 10000.0 < criticalChance;
         double selectedBaseDamage = CaelumWeaponCatalogue.GetSecondaryDamage(
@@ -10311,20 +10325,7 @@ class CaelumPlayer : DoomPlayer
         LastCarbinePitchOffset = Random[CaelumCarbinePitch](-100000, 100000)
             / 100000.0 * spreadMagnitude;
 
-        double criticalBonus = Max(
-            0.0,
-            DerivedStats.PhysicalCriticalChance
-                - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-        );
-        double rangedBaseCritical =
-            CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-            * GetRangedTierCriticalMultiplier(WeaponModel.Tier);
-        double criticalChance = Clamp(
-            (rangedBaseCritical + criticalBonus)
-                * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
-            0.0,
-            100.0
-        );
+        double criticalChance = PhysicalCriticalChanceFor(catalogueWeapon, true);
         int criticalRoll = Random[CaelumCarbineCritical](0, 999999);
         LastCarbineCriticalHit = criticalRoll / 10000.0 < criticalChance;
         LastCarbineDamage = WeaponModel.GetDamage()
@@ -10573,14 +10574,7 @@ class CaelumPlayer : DoomPlayer
         double attackPitch = Pitch + LastStaffPitchOffset;
 
         LastStaffCriticalAttempted = true;
-        LastStaffCriticalChancePercent = Clamp(
-            (WeaponModel.GetBaseCriticalChanceFor(activeMagicType)
-                + Max(0.0, DerivedStats.MagicalCriticalChance
-                    - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
-            0.0,
-            100.0
-        );
+        LastStaffCriticalChancePercent = MagicalCriticalChanceFor(activeMagicType);
         // La campana resuelve el critico por proyectil. Las demas armas
         // conservan una unica tirada por ataque.
         if (activeMagicType != CaelumConstants.WEAPON_TYPE_BELL)
@@ -11840,14 +11834,7 @@ class CaelumPlayer : DoomPlayer
         );
         LastMeleeCriticalAttempted = true;
         LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-        LastMeleeCriticalChancePercent = Clamp(
-            (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-                + Max(0.0, DerivedStats.PhysicalCriticalChance
-                    - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                * LastMeleeCrouchCriticalMultiplier * CaelumPersonalityRules.Critical(self),
-            0.0,
-            100.0
-        );
+        LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
         int criticalRoll = Random[CaelumPhysicalCritical](0, 999999);
         LastMeleeCriticalRollPercent = criticalRoll / 10000.0;
         LastMeleeCriticalHit = LastMeleeCriticalRollPercent
@@ -12009,11 +11996,7 @@ class CaelumPlayer : DoomPlayer
             CalculateDebugMeleeHitLocation(candidate, attackAngle, attackPitch);
             LastMeleeCriticalAttempted = true;
             LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-            LastMeleeCriticalChancePercent = Clamp(
-                (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-                    + Max(0.0, DerivedStats.PhysicalCriticalChance
-                        - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                    * LastMeleeCrouchCriticalMultiplier * CaelumPersonalityRules.Critical(self), 0.0, 100.0);
+            LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
             LastMeleeCriticalRollPercent = Random[CaelumPhysicalCritical](0, 999999) / 10000.0;
             LastMeleeCriticalHit = LastMeleeCriticalRollPercent < LastMeleeCriticalChancePercent;
             CaelumCombatActor combatTarget = CaelumCombatActor(candidate);

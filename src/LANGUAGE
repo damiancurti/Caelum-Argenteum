@@ -5525,3 +5525,45 @@ CA_HINT_ANY = "Cualquier tecla";
 CA_HINT_ESC = "Esc";
 CA_HINT_ENTER = "Enter";
 CA_HINT_TAB = "Tab";
+
+[enu default]
+CA_CHARACTER_EVASION = "Evasion";
+CA_CHARACTER_PHYSICAL_CRITICAL = "Physical critical";
+CA_CHARACTER_MAGICAL_CRITICAL = "Magical critical";
+CA_CHARACTER_NOT_APPLICABLE = "Not applicable";
+CA_CHARACTER_THERMAL = "[T] Thermal details / Character";
+CA_CHARACTER_RESIST_FIRE = "Fire resistance: %.2f%%";
+CA_CHARACTER_RESIST_WATER = "Water resistance: %.2f%%";
+CA_CHARACTER_RESIST_EARTH = "Earth resistance: %.2f%%";
+CA_CHARACTER_RESIST_WIND = "Wind resistance: %.2f%%";
+CA_CHARACTER_RESIST_QUINTESSENCE = "Quintessence resistance: %.2f%%";
+CA_SURVIVAL_HUNGER_WARNING = "You are hungry; look for food.";
+CA_SURVIVAL_THIRST_WARNING = "You are thirsty; look for drinking water.";
+CA_SURVIVAL_SLEEP_WARNING = "You are tired; find a place to rest.";
+CA_SURVIVAL_COLD_WARNING = "You are too cold; seek warmth and dry shelter.";
+CA_SURVIVAL_HEAT_WARNING = "You are too hot; seek shade and cool down.";
+CA_SURVIVAL_HUNGER_RECOVERED = "Your hunger has eased.";
+CA_SURVIVAL_THIRST_RECOVERED = "Your thirst has eased.";
+CA_SURVIVAL_SLEEP_RECOVERED = "You feel rested again.";
+CA_SURVIVAL_THERMAL_RECOVERED = "Your thermal exposure is back within the safe range.";
+
+[es]
+CA_CHARACTER_EVASION = "Evasión";
+CA_CHARACTER_PHYSICAL_CRITICAL = "Crítico físico";
+CA_CHARACTER_MAGICAL_CRITICAL = "Crítico mágico";
+CA_CHARACTER_NOT_APPLICABLE = "No aplica";
+CA_CHARACTER_THERMAL = "[T] Detalle térmico / Personaje";
+CA_CHARACTER_RESIST_FIRE = "Resistencia al fuego: %.2f%%";
+CA_CHARACTER_RESIST_WATER = "Resistencia al agua: %.2f%%";
+CA_CHARACTER_RESIST_EARTH = "Resistencia a tierra: %.2f%%";
+CA_CHARACTER_RESIST_WIND = "Resistencia al aire: %.2f%%";
+CA_CHARACTER_RESIST_QUINTESSENCE = "Resistencia a quintaesencia: %.2f%%";
+CA_SURVIVAL_HUNGER_WARNING = "Tienes hambre, busca alimento.";
+CA_SURVIVAL_THIRST_WARNING = "Tienes sed, busca agua potable.";
+CA_SURVIVAL_SLEEP_WARNING = "Tienes sueño, busca dónde descansar.";
+CA_SURVIVAL_COLD_WARNING = "Tienes demasiado frío, busca calor y refugio seco.";
+CA_SURVIVAL_HEAT_WARNING = "Tienes demasiado calor, busca sombra y refréscate.";
+CA_SURVIVAL_HUNGER_RECOVERED = "Ya no tienes hambre.";
+CA_SURVIVAL_THIRST_RECOVERED = "Ya no tienes sed.";
+CA_SURVIVAL_SLEEP_RECOVERED = "Vuelves a sentirte descansado.";
+CA_SURVIVAL_THERMAL_RECOVERED = "Tu exposición térmica vuelve al rango seguro.";

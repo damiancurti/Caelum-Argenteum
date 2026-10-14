@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.0.** Obtain and update the complete repository, validate
+**Current release: 5.3.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.3.1 implements [#256](https://github.com/damiancurti/Caelum-Argenteum/issues/256):
+Character shows survival resources, live combat chances and mean elemental
+resistances. The HUD uses Load/Lucidity/Health on the left and Adrenaline/Anima/Air
+on the right; adverse survival states remain beside powers. [Evidence](assets/validation_531/RESULTS.md).
+**CA256-01 passed author acceptance on 2026-10-13.**
 
 5.3.0 implements [#255](https://github.com/damiancurti/Caelum-Argenteum/issues/255):
 Seal/Tarot indicators use twice their former reference dimensions and stay
