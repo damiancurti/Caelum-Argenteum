@@ -196,3 +196,7 @@
 # Preserve #234 fixture and native evidence fingerprints.
 /assets/validation_537/** -text whitespace=cr-at-eol
 /assets/validation_537/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #235 fixture and native evidence fingerprints.
+/assets/validation_538/** -text whitespace=cr-at-eol
+/assets/validation_538/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

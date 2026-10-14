@@ -29,6 +29,11 @@ class CaelumPoiView : Object ui
     {
         let fact=Nearest(user,level.GetAutomapPosition());
         if(fact==null)return "";
-        return String.Format(StringTable.Localize("CA_POI_NEAREST",false),Name(fact));
+        String label=String.Format(StringTable.Localize("CA_POI_NEAREST",false),Name(fact));
+        for(int quest=0;quest<CaelumConstants.QUEST_DEFINED_COUNT;quest++)
+            if(CaelumQuestTracking.Active(user,quest) && CaelumQuestTrackingView.Targets(user,quest,fact))
+                label=label.." | "..String.Format(StringTable.Localize("CA_TRACK_KNOWN_TARGET",false),
+                    StringTable.Localize(CaelumQuestCatalogue.TitleKey(quest),false));
+        return label;
     }
 }

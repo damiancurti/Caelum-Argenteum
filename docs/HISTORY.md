@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+## 5.3.8 - Independent mission tracking (#235, 2026-10-14)
+
+Implemented the author's multi-mission preference with per-character revision-one
+saved selections, Journal T/native-button actions, current-objective map rows
+and already-known place links. Opening/tracking does not change quest progress,
+payments, reputation or knowledge. Existing terminal statuses and completed
+history remain; old saves start without inferred tracking choices.
+
+The first native diagnostic exposed pre-existing UpdateLessons behavior that
+activates the main slot and writes future objective flags before Palomo. This
+disagrees with the documented #34 disclosure contract. The read-only catalogue
+now hides those premature observations without resetting any authoritative
+progress or changing quest controllers. The failing diagnostic is preserved.
+Static/build checks passed; 13 native runs passed 114 assertions, with 18 save
+comparisons and 19 inspected captures. Large-scale cartography reserves its
+tracked-count notice above the bars without changing preferences.
+Evidence: assets/validation_538. CA235-01 remains pending author usability
+acceptance. The author is away; questions and manual tests are deferred.
+The requested temporary keep-awake remains active until return.
 
 ## 5.3.7 - Authored map registrations (#234, 2026-10-14)
 

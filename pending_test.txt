@@ -41,3 +41,23 @@ use copies of saves and ordinary exploration without reveal cheats.
    Inspect Spanish/English names, stacked-floor labels and native map controls.
 Expected: locations/names match explored content, no duplicate or premature
 markers, access unchanged, no sector warning without an authored knowledge rule.
+CA235-01 | Origin 5.3.8 / issue #235 | Multiple mission tracking
+Status: deferred until the author returns; no author acceptance inferred.
+Prerequisites: use the isolated 5.3.8 build and a copy of c235-tracked.zds.
+Run assets/validation_538/handoff.ps1 after returning. This diagnostic save
+prepares three known active missions and one visited mansion room; it is not
+normal campaign progression. Preserve original saves and earlier test packages.
+1. Open Journal > Missions. Use T and the Track/Untrack button independently
+   for the main mission, sewers and Leonor rescue; navigate both filter headings,
+   Detail, page scrolling and Back. Holding T must change the selection once.
+2. Open the native map. All selected active missions must remain followed.
+   Argento's known first-floor room can be named; the sewer/rescue entries show
+   their known other map and no invented precise target. Read full long text in
+   Journal detail; check Spanish/English and the preferred UI scale.
+3. Save/load the test copy and verify tracking choices, discoveries and manual
+   notes remain intact. Selecting/tracking must not grant items or rewards.
+4. F8 in this isolated fixture prepares completed/failed diagnostic states.
+   Map objectives must disappear while completed/Other Journal records remain.
+   Leonor must be completed but unpaid; the captain clue retains its existing text.
+Expected: clear independent multi-mission controls, bounded readable map summary,
+no secret/future-location reveal, no quest/reward changes from tracking.

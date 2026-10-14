@@ -4,7 +4,8 @@
 class CaelumJournalOverlay : EventHandler
 {
     const JOURNAL_PAGE_COUNT = 7;
-    ui bool ThermalDetailsOpen;
+    ui bool ThermalDetailsOpen, QuestTrackHeld;
+    ui int QuestTrackScan;
 
     Font TitleFont;
     Font TextFont;
@@ -36,6 +37,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void SetJournalOpen(bool value)
     {
+        QuestTrackHeld=false;
         CaelumScheduleCalendar.Close();
         SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
@@ -63,6 +65,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void SetJournalPage(int page)
     {
+        QuestTrackHeld=false;
         CaelumScheduleCalendar.Close();
         SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
@@ -399,17 +402,12 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
-        if (questId == CaelumConstants.QUEST_GUARD_CAPTAIN)
-            return StringTable.Localize("CA_Q_GUARD_CAPTAIN_DETAIL", false);
-        if (questId == CaelumConstants.QUEST_SEWERS)
-            return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
-                ? "CA_Q_SEWER_DONE" : "CA_Q_SEWER_ACTIVE", false);
+        if (questId == CaelumConstants.QUEST_GUARD_CAPTAIN || questId == CaelumConstants.QUEST_SEWERS)
+            return CaelumQuestTrackingView.Objective(localPlayer,questId);
         if (CaelumQuestCatalogue.IsRescue(questId))
         {
             int state = localPlayer.JournalQuestState[questId];
-            String text = StringTable.Localize(state == CaelumConstants.QUEST_STATE_COMPLETED
-                ? "CA_Q_RESCUE_DONE" : state == CaelumConstants.QUEST_STATE_FAILED
-                ? "CA_Q_RESCUE_DEAD" : "CA_Q_RESCUE_ACTIVE", false);
+            String text = CaelumQuestTrackingView.Objective(localPlayer,questId);
             if (state == CaelumConstants.QUEST_STATE_COMPLETED)
                 text = text .. "\n\n" .. StringTable.Localize(localPlayer.JournalQuestRewardClaimed[questId]
                     ? "CA_Q_RESCUE_PAID" : "CA_Q_RESCUE_UNPAID", false);
@@ -421,21 +419,12 @@ class CaelumJournalOverlay : EventHandler
             return CaelumSiegeIntelligence.Text(localPlayer);
         if (CaelumSideQuestRules.IsDefined(questId))
         {
-            int state = localPlayer.JournalQuestState[questId];
-            String key = state == CaelumConstants.QUEST_STATE_FAILED ? "CA_Q_SIDE_DETAIL_FAILED"
-                : state == CaelumConstants.QUEST_STATE_ABANDONED ? "CA_Q_SIDE_DETAIL_ABANDONED"
-                : state == CaelumConstants.QUEST_STATE_COMPLETED ? "CA_Q_SIDE_DETAIL_COMPLETE"
-                : questId == CaelumConstants.QUEST_TRIAL_ROUTE ? "CA_Q_SIDE_DETAIL_ROUTE" : "CA_Q_SIDE_DETAIL_WAIT";
-            return StringTable.Localize(key, false) .. "\n\n"
+            return CaelumQuestTrackingView.Objective(localPlayer,questId) .. "\n\n"
                 .. StringTable.Localize(GetSideQuestHelp(localPlayer, questId), false)
                 .. "\n\n" .. StringTable.Localize("CA_Q_SIDE_REWARD_NOTE", false);
         }
         String text = StringTable.Localize("CA_QUEST_STAGE_LABEL", false) .. ": "
-            .. StringTable.Localize(GetQuestDetailStageKey(localPlayer, questId), false);
-        text.Replace("%COUNT%", String.Format("%d", localPlayer.MainM00ConvincedCountSnapshot));
-        text.Replace("%MAGIC_COUNT%", String.Format("%d", localPlayer.MainM00MagicPracticeSnapshot));
-        text.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));
-        text.Replace("%STARTER%", CaelumMainM00StarterRules.GetName(localPlayer.MainM00StarterOptionSnapshot));
+            .. CaelumQuestTrackingView.Objective(localPlayer,questId);
         int stage = localPlayer.JournalQuestStage[questId];
         if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && stage == CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE && localPlayer.MainM00RuloPracticeSnapshot < 6)
@@ -576,7 +565,7 @@ class CaelumJournalOverlay : EventHandler
     {
         int questId = GetVisibleQuestId(localPlayer);
         if (questId < 0 || SmallFont == null) return;
-        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
         int count = GetQuestDetailLineCount();
         int last = Max(0, (lines.Count() - 1) / count) * count;
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
@@ -589,7 +578,7 @@ class CaelumJournalOverlay : EventHandler
         if (questId < 0) return;
         DrawTextLine(TextFont, Font.CR_GOLD, 64, 132,
             StringTable.Localize(GetQuestNameKey(questId), false));
-        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
         int count = GetQuestDetailLineCount();
         int pages = Max(1, (lines.Count() + count - 1) / count);
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
@@ -2561,6 +2550,19 @@ class CaelumJournalOverlay : EventHandler
             }
             return true;
         }
+        bool trackKey=character==116 || character==84 || keyString~=="t" || scan==InputEvent.Key_Backspace;
+        if(type==InputEvent.Type_KeyUp && QuestTrackHeld && (trackKey || scan==QuestTrackScan))
+        {QuestTrackHeld=false;return true;}
+        if(GetJournalPage()==4 && trackKey)
+        {
+            if(type==InputEvent.Type_KeyDown && !QuestTrackHeld)
+            {
+                QuestTrackHeld=true;QuestTrackScan=scan;
+                int quest=GetVisibleQuestId(localPlayer);
+                if(quest>=0)SendNetworkEvent("ca_quest_track",quest,CaelumQuestTracking.Selected(localPlayer,quest)?0:1);
+            }
+            return true;
+        }
         bool abandonKey = character == 103 || character == 71 || keyString ~== "g"
             || scan == InputEvent.Key_Pad_X;
         let abandonScan = CVar.GetCVar("ca_journal_quest_abandon_scan", players[consoleplayer]);
@@ -2950,6 +2952,8 @@ class CaelumJournalOverlay : EventHandler
         {
             CaelumReputationTrialState.Open(requestingPlayer);
         }
+        else if (e.Name == "ca_quest_track")
+        { CaelumQuestTracking.Set(requestingPlayer,e.Args[0],e.Args[1]!=0); }
         else if (e.Name == "ca_quest_activate")
         {
             CaelumSideQuestRules.Activate(requestingPlayer, e.Args[0]);

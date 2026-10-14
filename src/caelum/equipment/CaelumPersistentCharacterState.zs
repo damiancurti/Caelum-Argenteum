@@ -50,6 +50,9 @@ class CaelumPersistentCharacterState : Inventory
     bool WorldConnectionKnown[CaelumWorldCatalogue.CONNECTION_CAPACITY];
     bool WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_CAPACITY];
     int WorldPendingConnection;
+    // #235: selección personal independiente del progreso de cada misión.
+    int QuestTrackingRevision;
+    bool QuestTracked[CaelumConstants.QUEST_CAPACITY];
     // #232: conocimiento local por mapa + ID estable; no copia progreso mundial.
     int LocalKnowledgeRevision, LocalKnowledgeSerial;
     Array<CaelumKnownPoi> KnownPois;

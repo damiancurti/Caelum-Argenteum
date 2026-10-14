@@ -1,6 +1,71 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.3.7** — 2026-10-14.
+Documentation version: **5.3.8** — 2026-10-14.
+
+## 5.3.8 - Multiple tracked missions (#235)
+
+The author chose independent simultaneous mission tracking. Journal > Missions
+offers Track/Untrack with T, Backspace or the native clickable action; changing
+the selected row or filters does not change tracking. Both filter headings are
+clickable and retain C/V and the accepted controller triggers. Detail, history,
+side-quest actions, abandonment and Back retain their existing paths.
+
+Tracking is a presentation preference in the traveling character Inventory:
+`QuestTrackingRevision=1`, `QuestTracked[QUEST_CAPACITY]`. Revision-zero saves
+start with all choices false; migration only advances this additive revision,
+is idempotent and infers no past selection. Set events contain the desired bool,
+validate ownership, creation/live state, stable quest ID and current eligibility,
+and cannot alter quest stages, rewards, discoveries, reputation or travel.
+
+Only active known missions can enter tracking. Terminal records retain their
+selection for history but cease to appear on the map; they can be untracked.
+Offered/failed/abandoned filters and the completed captain clue retain their
+existing semantics. Prisoner rescue still completes at live extraction, before
+and independently of payment. Payment is never a new tracked rescue stage.
+
+`CaelumQuestTrackingView` reuses the Journal's current-stage selector, localized
+objective text and snapshots. Map rows show each tracked title/objective plus
+known location information. Long rows end in an ellipsis; full text remains in
+the paginated Journal detail. Available screen height bounds rows above the
+resource bars, with an explicit count of additional tracked missions if needed.
+The nearest known POI label identifies an applicable tracked objective. Existing
+POI symbols/coordinates remain the spatial reference; no enemy or route overlay,
+new quest marker, camera move, teleport or travel action is added.
+
+| Current objective text | Eligible already-known POI IDs |
+| --- | --- |
+| Speak/return to Argento | `mansion-room-bedroom-argento` |
+| Speak/return to Caella | `mansion-room-bedroom-caella` |
+| Caella completed; consult Palomo and Ronnie | `mansion-room-upper-workshop`, `mansion-room-bedroom-ronnie` |
+| Report finished lessons to Ronnie | `mansion-room-bedroom-ronnie` |
+| Speak to Rulo before his trial | `mansion-room-bedroom-rulo` |
+| Rulo's target exercises | `mansion-room-practice` |
+| Rulo completed; meet Palomo upstairs | `mansion-room-upper-workshop` |
+| Current crafting lessons | Ronnie's observed `mansion-station-2-4`, `mansion-room-upper-workshop` |
+
+These associations come from the existing LANGUAGE objective instructions and
+#234 identities. The adapter intersects them with the character's KnownPois;
+an active mission never inserts a POI. Map names require a recorded visit or a
+known matching place. Other-map objectives identify only that known map/place.
+Sewer traversal, rescue refuge, siege targets, mobile companions, runes, the
+secret room and the Fool have no invented precise waypoint. Authored spoken
+directions remain text. Persisted NPC disclosures with exact positions would
+need separately specified information events; no new disclosure schema is
+silently inferred from activating a quest.
+
+Audit discrepancy: existing `CaelumOnboarding.UpdateLessons` calls legacy
+objective setters before Palomo, which can activate slot 0 and mark future
+crafting objectives known. The documented #34 start condition remains Palomo's
+guidance. The read-only catalogue therefore hides early stages without the
+recorded PALOMO_MET flag, while preserving genuinely later legacy stages and
+all stored progress. Objective snapshots also respect the existing authored
+stage constants. No underlying quest setter/controller is changed in #235.
+
+Static/build checks and 114 native assertions passed across 13 runs, with
+18 save comparisons and 19 inspected captures. Evidence is recorded in
+assets/validation_538; native diagnostic state setup is
+distinct from ordinary campaign progression and author acceptance. CA235-01 is
+deferred until the author returns. #236 remains a separate navigation patch.
 
 ## 5.3.7 - Authored local exploration (#234)
 

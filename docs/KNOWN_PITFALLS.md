@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-094 - Check disclosure separately from legacy objective writes
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #235 / 5.3.8,
+2026-10-14; baseline fc947471, GZDoom 4.14.2 / Windows 11.
+
+The first tracking fixture found the main quest active before Palomo's guidance.
+`CaelumMainM00RonnieTrial.Update` calls `CaelumOnboarding.UpdateLessons`, whose
+legacy setters activate an undiscovered main slot and mark crafting objectives
+known before their authored stage. A tracking adapter that trusts only those
+flags can expose unstarted/future content despite performing no progress writes.
+
+Use the documented disclosure evidence and existing stage constants in the
+shared read-only catalogue. Preserve stored progress and genuinely later legacy
+stages; do not silently reset them or change controllers in a presentation patch.
+Native before/after-guidance and later-stage cases verify this boundary. The
+initial failed diagnostic remains in assets/validation_538/main-01.txt; final
+evidence and limits are in assets/validation_538/RESULTS.md. No author acceptance
+is inferred from these scripted cases.
+
 ## CA-KP-093 - Wait before validating manually spawned service fixtures
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #232 / 5.3.5,
