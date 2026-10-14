@@ -18,7 +18,8 @@ CA236-01 passed full author acceptance on 2026-10-14. No merge is inferred.
 
 The subsequent author request adds a native target symbol at current known
 destinations, updated on stage changes and removed on untracking/completion.
-Only CA235-02 covers this new spatial-marker behavior; CA235-01 stays accepted.
+CA235-02 passed author review on 2026-10-14; CA235-01 stays accepted.
+No #235 author checks remain outstanding.
 
 Implemented independent saved selections, native Journal action, shared objective
 text, known-place associations and bounded map rows. Terminal/history/filter
