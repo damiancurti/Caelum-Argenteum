@@ -7,3 +7,17 @@ fixture, or an initialized living character. Keep original saves unchanged.
    while locked, pause/resume and inspect camera/controls after recovery.
 Expected: no relocation, duplicate portions, early exit, immunity, fake bed
 bonus or MAP02 ground acceleration permission. Report any partial/failing step.
+
+CA232-01 | Origin: 5.3.5 / #232 | Status: pending author check
+Prerequisites: isolated Probar232 terminal; no authored map registrations yet.
+1. Use the prepared bed (F6), station (F7), merchant (F8) and exit (F9).
+   Open M before and after each use: unknown services have no icon/name;
+   valid interactions (including a blocked service) add its category without a
+   purchase, sleep or departure. Cancel the offered menus normally.
+2. Run Probar232 Transporte for the existing MAP06 cart. Use it and check its marker;
+   its currently disabled coastal route must remain unavailable.
+3. Save/load through the native menu and inspect the retained known markers;
+   pan/zoom the map and inspect the nearest-known name. A new test character
+   starts without those discoveries. F10 closes the isolated engine.
+Expected: readable icons/names, no duplicate discoveries, no service detected
+merely by looking, and no unrelated travel/quest/reward from viewing the map.

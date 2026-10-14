@@ -50,6 +50,11 @@ class CaelumPersistentCharacterState : Inventory
     bool WorldConnectionKnown[CaelumWorldCatalogue.CONNECTION_CAPACITY];
     bool WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_CAPACITY];
     int WorldPendingConnection;
+    // #232: conocimiento local por mapa + ID estable; no copia progreso mundial.
+    int LocalKnowledgeRevision, LocalKnowledgeSerial;
+    Array<CaelumKnownPoi> KnownPois;
+    transient String LocalMarkerMap;
+    transient int LocalMarkerSerial;
     // El primer comercio es persistente por personaje. Así Palomo puede ser
     // recolocado por una etapa de misión sin restablecer stock ni dinero y el
     // servidor conserva una autoridad independiente para cada jugador.

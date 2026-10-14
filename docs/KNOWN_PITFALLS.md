@@ -20,6 +20,12 @@ startup CVar writes are needed. Native MapMarker projection checks dormancy
 and optional subsector discovery, but does not filter an owner/player. A later
 private POI or note registry must not assume it provides private rendering.
 
+#232 / 5.3.5 implements that boundary with character-owned facts and derived
+markers that are dormant in multiplayer or with multiple participants. The
+native bot fixture in assets/validation_535 verifies distinct discoveries for
+two native players and no displayed private markers. This is ENGINE-VERIFIED
+ownership/privacy evidence, not a multiplayer gameplay certification.
+
 The native serializer preserves ten numbered marks, scale and map bounds.
 The #231 old/current/reload/rollback and hub scenarios compare these objects
 and linedefs directly. Native `screenshot` queues its capture: wait before

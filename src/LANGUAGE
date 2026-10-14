@@ -5597,3 +5597,19 @@ CA_MAP_CONTROLS = "Zoom [%s / %s] | Seguir [%s] | Marca [%s] | Mapa [%s]";
 CA_MAP_FOLLOW_PAN = "Sigue tu posición. Desactiva Seguir para desplazarlo con los controles del mapa.";
 CA_MAP_FREE_PAN = "Desplazamiento libre con los controles del mapa. Rotación y vista: opciones del automapa.";
 CA_MAP_STACKED = "Mansión: pueden superponerse trazos de distintas plantas.";
+
+[enu default]
+CA_POI_BED = "Bed";
+CA_POI_STATION = "Station";
+CA_POI_MERCHANT = "Merchant";
+CA_POI_EXIT = "Exit";
+CA_POI_TRANSPORT = "Transport";
+CA_POI_NEAREST = "Known place nearest the map center: %s";
+
+[esp]
+CA_POI_BED = "Cama";
+CA_POI_STATION = "Estación";
+CA_POI_MERCHANT = "Comerciante";
+CA_POI_EXIT = "Salida";
+CA_POI_TRANSPORT = "Transporte";
+CA_POI_NEAREST = "Lugar conocido más cercano al centro del mapa: %s";

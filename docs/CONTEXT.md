@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
 
+**#232/5.3.5:** personal POI knowledge; CA232-01 pending. validation_535.
 **#231/5.3.4 accepted:** cartography; CA231-01 passed 2026-10-13.
 **#258/5.3.3:** zero-Sleep/standing accepted; remaining CA258-01 pending.
-**#255-257 accepted.** Evidence: validation_530-534. Remaining #232-236: TASKS.
+**#255-257 accepted.** Evidence: validation_530-534.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

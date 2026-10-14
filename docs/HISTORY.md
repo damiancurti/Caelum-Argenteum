@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
+
+## 5.3.5 - Known local POIs (#232, 2026-10-13)
+
+Extended the existing character record with revision-one local knowledge keyed
+by map + authored POI ID. Valid registered service interactions remember
+bed/station/merchant/exit/transport metadata and the observed position. The author
+confirmed on 2026-10-13 that blocked interactions also count as knowledge; they
+do not unlock the service or alter its restrictions. Neither
+native map exploration nor world/quest catalogue membership infers these facts.
+UI names and native icons read only this authority; repeated bindings/events,
+old-save migration and missing/moved sources preserve the secrecy boundary.
+Map-specific registrations remain #234. Existing world-route signage remains
+unchanged and does not grant local service knowledge. Native renderer ownership
+limits require suppressing private markers in multiplayer; no multiplayer
+delivery is claimed. Existing owned icons are reused without asset edits.
+
+Validation details and test-source limitations: assets/validation_535/RESULTS.md.
+CA232-01 author acceptance is pending; static and native checks are separate.
 
 ## 5.3.4 - Native local cartography (#231), 2026-10-13
 

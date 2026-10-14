@@ -19,6 +19,8 @@ class CaelumWorldProgress : Object play
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)) return;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !record.ProfileCommitted) return;
+        CaelumPoiKnowledge.Ensure(record);
+        CaelumPoiKnowledge.PrepareMarkers(user,record);
         int locationId = CaelumWorldCatalogue.LocationForMap(level.MapName);
         if (record.WorldStateVersion == 0)
         {

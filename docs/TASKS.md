@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.4** — 2026-10-13.
+Documentation version: **5.3.5** — 2026-10-13.
+
+## 5.3.5 - Personal POI knowledge (#232)
+
+Implemented revision-one personal facts, stable map/POI identities, valid
+service interaction hooks and read-only native icon/name presentation. Scope
+excludes authored map registrations and remote NPC information. Native renderer
+privacy limitation: derived icons are suppressed with multiple participants.
+Evidence: assets/validation_535/RESULTS.md. CA232-01 is pending author acceptance.
+Continue #233/#234/#235/#236 separately: manual Note + five service categories,
+rooms/towers on entry and services on use, multiple tracked missions, then
+Journal map navigation. CA258-01 retains only its explicitly outstanding checks.
 
 ## 5.3.4 - Native local cartography (#231)
 
@@ -19,8 +30,8 @@ and navigation scopes.
 Implement deterministic zero-Sleep lying, strict >10% standing eligibility,
 truthful support and persistent enforcement without changing physics or
 hazards. Author decision: immediately lie down in air/water without relocation.
-Evidence: assets/validation_533/RESULTS.md; CA258-01 remains pending while
-the author is away. Continue #231-#236 in separate branches, commits and PRs.
+Evidence: assets/validation_533/RESULTS.md; CA258-01 retains the remaining
+support/hazard checks. Continue #233-#236 in separate branches, commits and PRs.
 
 ## 5.3.2 - Automatic provisions (#257)
 

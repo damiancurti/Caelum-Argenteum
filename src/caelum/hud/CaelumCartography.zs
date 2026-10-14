@@ -81,6 +81,8 @@ class CaelumCartography : Object ui
             rows.Push(Controls());
             rows.Push(StringTable.Localize(CVar.GetCVar("am_followplayer").GetBool()?"CA_MAP_FOLLOW_PAN":"CA_MAP_FREE_PAN",false));
             if(level.MapName=="MAP01")rows.Push(StringTable.Localize("CA_MAP_STACKED",false));
+            String knownPoi=CaelumPoiView.CenterLabel(user);
+            if(knownPoi.Length()>0)rows.Push(knownPoi);
         }
         if(objective.Length()>0)rows.Push(objective);
         double inner=Max(1,width-2*CaelumCartographyLayout.PADDING*scale);

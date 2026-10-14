@@ -29,10 +29,13 @@ class CaelumTravelVehicle : Actor
     }
     bool Board(CaelumPlayer user)
     {
-        if(!CanBoard(user) || !CaelumTravelService.Begin(user,Connection(),TravelMode()))return false;
+        if(!CanBoard(user))return false;
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.TRANSPORT);
+        if(!CaelumTravelService.Begin(user,Connection(),TravelMode()))return false;
         let plan=CaelumJourneyPlan.Get(user);
         if(plan==null || !plan.Open)return false;
-        plan.SourceVehicle=self;return true;
+        plan.SourceVehicle=self;
+        return true;
     }
     override bool Used(Actor activator)
     {return CaelumUseGeometry.AimedAt(CaelumPlayer(activator),self) && Board(CaelumPlayer(activator));}
