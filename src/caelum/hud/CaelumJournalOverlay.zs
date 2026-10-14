@@ -1405,7 +1405,7 @@ class CaelumJournalOverlay : EventHandler
         DrawCharacterChance("CA_CHARACTER_MAGICAL_CRITICAL", 260,
             localPlayer.HUDMagicalCriticalApplies, localPlayer.HUDMagicalCriticalChance);
         // Media de armadura corporal y factor del sello; sin Dureza ni bloqueo.
-        for (int element = 0; element < CaelumConstants.ESSENCE_TYPE_COUNT; element++)
+        for (int element = 0; element < CaelumConstants.ELEMENT_TYPE_COUNT; element++)
             DrawTextLine(SmallFont, Font.CR_CYAN, 56 + (element % 2) * 176, 282 + (element / 2) * 14,
                 String.Format(StringTable.Localize(CaelumCharacterView.ResistanceKey(element), false),
                     (1 - localPlayer.HUDMagicalDamageFactor*CaelumSealResistance.Factor(
