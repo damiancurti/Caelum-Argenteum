@@ -1,0 +1,15 @@
+{
+  "test_id": "CA261-01",
+  "origin_version": "5.4.2",
+  "issue": 261,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "Esa prueba dio correcto.",
+  "result": "passed",
+  "qualifications": "Corrected four-element recheck passed without reported exceptions. Prior manual checks were confirmed except for that now-corrected fifth resistance. No merge or closure inferred.",
+  "runtime_sha256": "211a18ce8ad08a27e7084f137e90084090f71c6a76d02f3926eaf9972e34f221",
+  "fixture_sha256": "02e5dbec510be0b075d5b1d997185660959cacee98d8b6ad0ebcb1eb8a95dcf3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "handoff_label": "author-20261014-205247",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-14T23:54:16.7594980Z"
+}
