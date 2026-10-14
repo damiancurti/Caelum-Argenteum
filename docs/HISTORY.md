@@ -10,7 +10,7 @@ turns/opens palms over 105 tics, and restores the ordinary weapon presentation.
 Two revisioned fields on the existing player preserve its component countdown;
 legacy defaults are inactive. The component does not yet receive production
 User4 activation, spend Anima or release an effect. Full lifecycle, revised Sleep,
-racial toggles and left ability HUD remain unfinished; no manual acceptance,
+racial toggles remain unfinished; no manual acceptance,
 merge or closure is claimed.
 
 The native component matrix passed 2,142 checks over nine weapon families and
@@ -35,6 +35,18 @@ hand states, while the bridged check has no such warnings. An initial upgrade
 fixture lost its mode event before load completion; the delayed event passes.
 Validator and normal build pass; all 16,118 package members match the final
 component-tested runtime. This remains an intermediate #238 checkpoint.
+
+A same-version follow-up adds the left class/racial indicators with existing
+owned icons and the shared Tarot/Seal projection. Class availability follows the
+implemented Sleep eligibility without changing its cost; unavailable states are
+dim gray, preparation has a label and reuse shows remaining seconds. Racial
+state has no timer. The compass and notifications move beside the new column.
+Four isolated native runs pass 16 checks each at 1280x720, 1024x768, 1920x810 and
+640x480 with high HUD scale. Synthetic racial state is presentation evidence,
+not a claim of implemented racial effects. Existing saves load the new boolean
+inactive and retain the preparation countdown. The initial UI compile failure
+was a temporary-vector member access; assigning the vector locally corrected it.
+Exact final runtime and captures: validation_544/hud_evidence.json.
 
 
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)

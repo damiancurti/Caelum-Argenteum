@@ -3,7 +3,8 @@
 Baseline: c07be5a2 / 5.4.3. This is an intermediate #238 checkpoint. It does not
 complete the ability issue or enable the new lifecycle through production User4.
 The existing instant Sleep input remains until payment/release integration is
-ready. There is no new class effect, racial toggle or left ability HUD yet.
+ready. There is no new class effect or racial toggle yet. A same-version follow-up adds
+the left class/racial HUD; its separately frozen evidence is recorded below.
 
 ## Implemented component
 
@@ -71,7 +72,7 @@ Full preparation payment/effects/cooldown/hub compatibility is not claimed.
 ## Remaining work and author handoff
 
 Complete payment, release, cancellation and independent input handling; implement
-revised Sleep and racial lifecycle, plus the left-side class/racial HUD. Preserve
+revised Sleep and racial lifecycle. Preserve
 the author's fixed three-hit rule and resolve exact social scaling/composition,
 initial/partial Anima eligibility and interruption policies after return.
 No actionable author acceptance entry is added for this incomplete component.
@@ -111,3 +112,36 @@ passed with `errors: []`, 2,480 CONTEXT words. Normal `build_dev.ps1` passed wit
 16,118 files and no directory entries. Every member equals the final native-tested
 runtime. `git diff --check` passed. Unrelated local deletion/untracked files and
 all earlier evidence remain untouched.
+
+## Left HUD follow-up (same issue/version)
+
+Runtime `31db33a10640b21870d61b730da9445921638c03cba160a3b4bca35b6918ac5c`
+adds the class/racial column using the existing power scale and owned generic
+icons. The original component matrix remains evidence for unchanged preparation
+and guards; it is not relabeled as a test of this later package. Class readiness
+reuses extracted Sleep eligibility/cost, including insufficient/exact-cost
+boundaries. There is no new paid lifecycle. Racial active/inactive state is set
+synthetically for this presentation fixture and does not apply a racial effect.
+
+Four native runs each pass the same 16 assertions: 1280x720 and 1024x768 Spanish,
+1920x810 English, and 640x480 Spanish with hud_scale=8. Captured PNG dimensions
+confirm these viewport sizes. Inspected captures cover preparation, availability,
+dim-gray unavailability, a progressing 60-to-58-second class cooldown, racial
+active/inactive and coexisting Tarot/Seal indicators. Compass/notices reserve the
+left column. The six resource bars retain their established positions. This is
+agent visual inspection, not author approval or all-configuration coverage.
+
+The same final runtime loads the prior 19-tic preparation save without restarting,
+and a neutral 5.4.3 save initializes revision 1 with zero preparation. Both saves
+keep the new racial display boolean false. Exact logs, capture hashes and run
+settings are recorded in hud_evidence.json. The initial HUD compile error from
+accessing a temporary vector's X component is preserved; a local vector fixed it.
+
+Reproduction: prepare.py also creates hud.pk3 and hud.cfg. Run run_native.ps1
+with -Fixture hud.pk3 -Script hud.cfg and optional -Width/-Height/-HudScale/
+-Language. Use separate directories or distinct screenshot prefixes to retain
+all captures. No interactive author handoff has occurred while the author is away.
+
+HUD follow-up static validation passed with errors: [], 2,483 CONTEXT words;
+normal packaging contains 16,119 files and no directory entries. Every member
+matches the frozen HUD-tested runtime. Dialogue/document indexes are current.

@@ -111,6 +111,7 @@ class CaelumPlayerPresentation : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.HUDHasEquippedSeal = false;
         user.HUDSealChannelAvailable = user.CombatChannelModeActive || user.CanStartSealChannel();
+        user.HUDClassAbilityAvailable = CaelumClassCastView.Active(user) || CaelumSleepRules.CanCast(user);
         user.HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
         user.HUDEquippedSealTier = 0;
         let equippedSeal=user.GetEquippedSeal();

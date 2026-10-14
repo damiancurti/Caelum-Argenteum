@@ -66,6 +66,7 @@ class CaelumPlayer : DoomPlayer
     int HUDActiveShieldType;
     bool HUDHasEquippedSeal;
     bool HUDSealChannelAvailable;
+    bool HUDClassAbilityAvailable;
     int HUDEquippedSealType;
     int HUDEquippedSealTier;
     int HUDChannelAffectedCount;
@@ -667,6 +668,8 @@ class CaelumPlayer : DoomPlayer
     // #238: reloj guardado de preparacion; cero en partidas anteriores.
     int ClassPreparationRevision;
     int ClassPreparationTics;
+    // #238: estado compartido; los efectos raciales lo activarán en sus issues.
+    bool RacialAbilityActive;
     bool JournalMainM00RuloPracticeDone[6];
     int MainM00RuloPracticeSnapshot;
     bool MainM00BullDefeatedSnapshot;

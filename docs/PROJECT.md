@@ -8,7 +8,9 @@ The shared first-person component lowers the current hands/weapon, raises empty
 fists, turns them and opens the palms across 105 simulation tics. Preparation
 blocks the real attack/block entry points without adding movement immobilization.
 This checkpoint does not connect the component to User4 or implement the full
-ability lifecycle, revised Sleep, racial toggles or new HUD indicators.
+ability lifecycle, revised Sleep or racial toggles. The left class/racial HUD
+uses the existing Tarot/Seal column scale: class availability/preparation/reuse
+and racial active/inactive only. The compass and notices reserve its width.
 
 The native component matrix covers nine weapon families and unarmed. Dedicated
 male cast palms correctly extract the last row of existing owned atlases, leaving

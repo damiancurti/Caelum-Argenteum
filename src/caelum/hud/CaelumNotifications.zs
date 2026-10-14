@@ -318,6 +318,7 @@ class CaelumNotifications : Object
         // El historial conserva las entradas que no caben en el aviso temporal.
         Vector2 scale=CaelumPresentation.MessageScale(), hud=CaelumPresentation.HUDScale();
         double x=CaelumCompass.Visible(user)?CaelumCompassLayout.NOTIFY_LEFT*CaelumCompass.Scale():16.0;
+        x+=CaelumAbilityHUD.ReservedWidth(user);
         double width=Screen.GetWidth()*0.45-x;
         double top=Max(12.0,minimumY);
         if(CVar.GetCVar("con_notifytime").GetFloat()>0)

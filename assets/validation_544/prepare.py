@@ -37,5 +37,17 @@ steps += ["netevent c238_unarmed", "wait 80", "netevent c238_start", "+attack", 
 (out / "save.cfg").write_text("wait 100; netevent c238_setup; wait 100; netevent c238_pose 20; wait 5; save cast-palms.zds; wait 10; netevent c238_end; wait 5; quit\n", encoding="utf-8")
 steps = ["language es", "con_notifytime 0", "wait 100", "netevent c238_setup", "wait 100", "netevent c238_pose 2", "wait 5", "screenshot final-palms.png", "netevent c238_profile 0 0 0", "wait 5", "screenshot wolf-palms.png", "netevent c238_profile 2 1 0", "wait 5", "screenshot female-palms.png", "netevent c238_unarmed", "wait 80", "netevent c238_pose 50", "wait 5", "screenshot unarmed-fists.png", "netevent c238_pose 2", "wait 5", "screenshot unarmed-palms.png", "netevent c238_end", "wait 5", "quit"]
 (out / "variants.cfg").write_text("; ".join(steps)+"\n", encoding="utf-8")
+manifest["hud_fixture_sha256"] = shared.package(out / "hud.pk3", {
+    "ZSCRIPT": b'version "4.14"\n#include "powers.zs"\n#include "hud.zs"\n',
+    "powers.zs": (HERE.parent / "validation_530/probe.zs").read_bytes(),
+    "hud.zs": (HERE / "hud.zs").read_bytes(),
+    "MAPINFO": b'GameInfo { AddEventHandlers="CA255Probe", "CA238HUDProbe" }\n'})
+steps = ["con_notifytime 0", "wait 100", "netevent c255_prepare", "wait 50", "netevent c238_hud_setup", "wait 5"]
+for mode, name in [(1,"ready"),(0,"unavailable"),(2,"preparing"),(3,"cooldown"),(4,"unimplemented")]:
+    steps += ["netevent c255_state 2", f"netevent c238_hud_state {mode}", "wait 10", "netevent c238_hud_check", f"screenshot hud-{name}.png"]
+    if mode == 3:
+        steps += ["wait 70", "netevent c238_hud_check", "screenshot hud-countdown.png"]
+steps += ["netevent c238_hud_done", "wait 5", "quit"]
+(out / "hud.cfg").write_text("; ".join(steps)+"\n", encoding="utf-8")
 (out / "manifest.json").write_text(json.dumps(manifest, indent=2)+"\n", encoding="utf-8")
 print(json.dumps(manifest))

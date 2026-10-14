@@ -5,6 +5,10 @@ param(
     [string]$Fixture = 'probe.pk3',
     [string]$Script = 'probe.cfg',
     [string]$LoadGame = '',
+    [int]$Width = 1280,
+    [int]$Height = 720,
+    [int]$HudScale = 0,
+    [string]$Language = 'enu',
     [switch]$Interactive,
     [string]$Engine = 'C:\Program Files (x86)\GZDoom\gzdoom.exe',
     [string]$Iwad = 'C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD'
@@ -17,13 +21,13 @@ if (Test-Path -LiteralPath $config) { throw 'Use a fresh label to preserve evide
 if (Get-CimInstance Win32_Process -Filter "Name='gzdoom.exe'" | Where-Object { $_.CommandLine -like "*$work\*" }) {
     throw 'An issue238 engine run is already active.'
 }
-$initial = "[LastRun]`nVersion=225`n[GlobalSettings]`nvid_preferbackend=1`nvid_vsync=true`nvid_maxfps=60`nvid_activeinbackground=true`ni_pauseinbackground=false`nvid_lowerinbackground=false`ni_soundinbackground=true`nvid_fullscreen=false`nuse_mouse=false`nsnd_mastervolume=0.05`nlanguage=enu`n"
+$initial = "[LastRun]`nVersion=225`n[GlobalSettings]`nvid_preferbackend=1`nvid_vsync=true`nvid_maxfps=60`nvid_activeinbackground=true`ni_pauseinbackground=false`nvid_lowerinbackground=false`ni_soundinbackground=true`nvid_fullscreen=false`nvid_defwidth=$Width`nvid_defheight=$Height`nwin_w=$($Width+16)`nwin_h=$($Height+39)`nwin_maximized=false`nuse_mouse=false`nsnd_mastervolume=0.05`nlanguage=$Language`nhud_scale=$HudScale`n"
 [IO.File]::WriteAllText($config, $initial)
 if ($Interactive) {
     Copy-Item -LiteralPath (Join-Path $root 'build\gzdoom.ini') -Destination $config -Force
     $initial = [IO.File]::ReadAllText($config)
 }
-$arguments = @('-noautoload','-nomouse','-iwad',"`"$Iwad`"",'-file',"`"$work\$Runtime`"", "`"$work\$Fixture`"",'-config',"`"$config`"",'-savedir',"`"$work`"",'-width','1280','-height','720','-window','-rngseed','238','-skill','2','+logfile',"`"$work\$Label.txt`"")
+$arguments = @('-noautoload','-nomouse','-iwad',"`"$Iwad`"",'-file',"`"$work\$Runtime`"", "`"$work\$Fixture`"",'-config',"`"$config`"",'-savedir',"`"$work`"",'-width',"$Width",'-height',"$Height",'-window','-rngseed','238','-skill','2','+logfile',"`"$work\$Label.txt`"")
 if ($LoadGame) { $arguments += @('-loadgame',"`"$LoadGame`"") }
 else { $arguments += @('+map','MAP02') }
 $arguments += @('+exec',"`"$work\$Script`"",'+snd_mastervolume','0.05','+i_pauseinbackground','false','+vid_activeinbackground','true','+i_soundinbackground','true')

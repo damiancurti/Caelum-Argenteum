@@ -111,14 +111,14 @@ class CaelumPresentation : Object ui
         double fit=Min(1.0,Max(0.0,room)/(POWER_HEIGHT*scale.Y));
         return scale*fit;
     }
-    static void BeginPowers(Vector2 resources)
+    static void BeginPowers(Vector2 resources,bool right=true)
     {
         Vector2 origin,size;
         [origin,size]=Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
         Vector2 target=PowerScale(resources);
         Vector2 factor=(target.X*640/size.X,target.Y*360/size.Y);
         let matrix=new("Shape2DTransform");matrix.Scale(factor);
-        matrix.Translate((Screen.GetWidth()-(POWER_WIDTH+POWER_MARGIN)*target.X-origin.X*factor.X,
+        matrix.Translate(((right?Screen.GetWidth()-(POWER_WIDTH+POWER_MARGIN)*target.X:POWER_MARGIN*target.X)-origin.X*factor.X,
             POWER_MARGIN*target.Y-origin.Y*factor.Y));
         Screen.SetTransform(matrix);
     }

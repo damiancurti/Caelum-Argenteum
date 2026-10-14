@@ -980,6 +980,9 @@ class CaelumHUDOverlay : EventHandler
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
         CaelumPresentation.End();
+        CaelumPresentation.BeginPowers(resourceScale,false);
+        CaelumAbilityHUD.Draw(localPlayer,HUDFont);
+        CaelumPresentation.End();
         double noticeBottom=Max(12,CaelumCartography.Draw(localPlayer,resourceScale,debuffWidth));
         if(menuactive==Menu.Off)
         {

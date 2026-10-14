@@ -10,10 +10,10 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 5.4.4 is an **in-progress #238 checkpoint**, not a completed ability release.
-It provides the shared three-second hand sequence and preparation combat guards;
+It provides the shared three-second hand sequence, preparation combat guards and
+left class/racial indicators using the existing power-column scale;
 the isolated native component checks are in [validation_544](assets/validation_544/RESULTS.md).
-User4 payment/release, revised Sleep, racial lifecycle and left ability HUD remain
-unfinished. Design questions and author tests wait for the author's return.
+User4 payment/release, revised Sleep and racial lifecycle remain unfinished. Design questions and author tests wait for the author's return.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
 MAP02 rats recover their authored movement speed, including existing saves,

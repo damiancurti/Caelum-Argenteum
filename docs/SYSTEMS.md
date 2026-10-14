@@ -20,6 +20,14 @@ fixture: production User4 still follows the previous Sleep implementation.
 The full controller will own payment, release, cancellation and effect policies;
 the presentation component does not charge resources or apply a class effect.
 
+The left power column shares the existing Tarot/Seal size and native HUD scaling.
+Class readiness uses the currently implemented effect eligibility, with dim gray
+unavailable icons, a preparation label and remaining reuse seconds. Racial state
+shows only active/inactive and has no timer. Its new saved boolean defaults false;
+individual racial effects will own its activation. Debug race has no racial icon.
+The compass and transient notifications reserve the column width. Generic icons
+reuse existing owned artwork; they do not imply effects are already implemented.
+
 Social attributes including Charisma/Empathy must scale class range, duration and
 potency; Intelligence owns direct damage. Exact social ownership/composition is
 pending. Sleep enemies require three separate HP-damaging impacts (including each

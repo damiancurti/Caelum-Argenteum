@@ -4,6 +4,10 @@ Documentation version: **5.4.4** — 2026-10-14.
 
 ## 5.4.4 - Class preparation hands (#238, in progress)
 
+The same-version left class/racial HUD reuses ca_hud_combat_charge.png and
+ca_hud_combat_affected_targets.png from the existing owned HUD icon set. No new
+icon artwork is generated; generic labels identify their presentation roles.
+
 The presentation reuses owned closed fists and palms with saved appearance/glove
 selection. Inspection found the existing male equal-height atlas extraction clips
 part of the previous row into the palm cells. The new cast-only pipeline extracts

@@ -44,7 +44,10 @@ class CaelumSleepRules : Object play
         return true;
     }
 
-    static bool Cast(CaelumPlayer user)
+    static double Cost(CaelumPlayer user)
+    {return BASE_ANIMA_COST*(1.0-user.DerivedStats.AnimaCostReductionPercent/100.0);}
+
+    static bool CanCast(CaelumPlayer user)
     {
         if (user == null || user.player == null || user.health <= 0
             || user.CharacterProfile == null || !user.CharacterCreationComplete
@@ -53,8 +56,13 @@ class CaelumSleepRules : Object play
             || CaelumRestState.IsActive(user) || user.CraftingMenuOpen
             || user.HasActiveConversation() || user.PalomoMerchantMenuOpen
             || user.ClassSleepCooldownRemaining > 0) return false;
-        double cost = BASE_ANIMA_COST * (1.0 - user.DerivedStats.AnimaCostReductionPercent / 100.0);
-        if (user.CurrentAnima < cost) return false;
+        return user.CurrentAnima>=Cost(user);
+    }
+
+    static bool Cast(CaelumPlayer user)
+    {
+        if(!CanCast(user))return false;
+        double cost=Cost(user);
         // Las habilidades de clase comparten el radio base de los sellos.
         double radius = CaelumConstants.CLASS_ABILITY_BASE_RADIUS
             * user.DerivedStats.AbilityRangePercent / 100.0;

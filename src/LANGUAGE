@@ -5807,3 +5807,13 @@ CA_SEAL_RESIST_WATER = "Equipado: -%.0f%% de daño de Agua / Hielo.";
 CA_SEAL_RESIST_EARTH = "Equipado: -%.0f%% de daño de Tierra / Veneno.";
 CA_SEAL_RESIST_AIR = "Equipado: -%.0f%% de daño de Aire / Rayo.";
 CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño elemental.";
+
+[enu default]
+CA_HUD_CLASS_ABILITY = "Class";
+CA_HUD_RACIAL_ABILITY = "Racial";
+CA_HUD_CLASS_PREPARING = "Casting";
+
+[es]
+CA_HUD_CLASS_ABILITY = "Clase";
+CA_HUD_RACIAL_ABILITY = "Racial";
+CA_HUD_CLASS_PREPARING = "Lanzando";

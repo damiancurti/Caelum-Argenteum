@@ -9,8 +9,11 @@ combat entry guards. Native component matrix: 2,142 checks across nine weapon
 families and unarmed. This is not completion of #238: User4 still uses the earlier
 Sleep path until the new lifecycle is integrated. No executable author acceptance
 entry is added for this incomplete feature. Evidence: assets/validation_544.
+Left class/racial indicators pass native state and layout checks at four
+resolutions, including high HUD scale. Racial activation is still synthetic in
+that fixture; its production effects/toggle remain pending.
 
-Continue with payment/release/cancellation and native input, left class/racial HUD,
+Continue with payment/release/cancellation and native input,
 revised Sleep HP-based wake/final-damage integration and full save/hub tests.
 The author is away; defer questions on initial/partial insufficient Anima,
 cost snapshot versus changing modifiers, death/control/UI/weapon-change policies,
