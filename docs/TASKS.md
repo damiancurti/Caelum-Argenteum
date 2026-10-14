@@ -38,6 +38,16 @@ the author accepted the three unlocked_handoff.ps1 steps: closed padlock on deni
 use, open padlock after F8/key and successful use, and persistence on save/load.
 Diagnostic positioning does not certify ordinary sewer traversal or secrecy;
 those checks, city exploration and remaining compatibility cases stay pending.
+The subsequent city handoff failed author review: gates retained the generic
+hand and southwest factory stations added no marker. The same #234 patch now
+records gate observations before/after use and binds all 96 authored factory
+stations individually, with the current-layout guard and existing bilingual names.
+Retest these two reported cases using cityfix_handoff.ps1; keep ordinary traversal
+and the other unconfirmed CA234-01 cases separate. No new release or acceptance
+is inferred from this correction.
+The focused city regression reproduces eight baseline failures and passes 92
+corrected native assertions, five save comparisons and three inspected captures.
+All 96 slots match the WAD; static/build and generator determinism checks pass.
 
 ## 5.3.6 - Manual map notes (#233)
 

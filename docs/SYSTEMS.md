@@ -87,6 +87,7 @@ No new warning, quest, route permission, map geometry or gameplay actor is added
 | MAP06 `city-east-exit` | CITY.json east-arch bounds/headroom | Crossing the arch plane inside its passage |
 | MAP06 `city-tower-0..3` | CITY.json tower footprints and walk/deck heights | Entry at the tower's physical heights |
 | MAP06 `city-shop-<ShopIdentity>`, `city-bed-<house>` | Existing merchant identity or furniture slot | Service interaction |
+| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
 | MAP06 `port-covered-cart`, `port-merchant-ship` | Existing vehicle instance | Boarding interaction, even when route 10 remains unavailable |
 
 Room bounds deliberately omit secret spaces, labels and connections. Entering a
@@ -105,6 +106,11 @@ The marker uses that saved observation too: observed-open grates use the dedicat
 open-padlock icon; other grate states retain their existing category padlock.
 The label continues to distinguish closed/open/unknown observations. Rendering
 never reads the hidden gate state or changes knowledge, access or saved schema.
+City port gates also record their closed/open state on use, including after a
+successful opening. These observed exits share the closed/open padlocks; generic
+exits, the east arch and manual exit notes retain their existing symbol. Older
+city gate facts with unknown access remain unknown until another interaction.
+Automatic or remote gate closure does not silently revise a personal observation.
 The upper elevator control does not reveal hidden lower return grates, even
 though it dispatches through their controller; lower-grate use records them.
 Use hooks grant no key, permission, faction standing or quest progress.
@@ -130,6 +136,9 @@ assertions and two save comparisons. On 2026-10-14 the author accepted the focus
 closed/open-padlock test and save/load. Ordinary sewer exploration, city and
 remaining compatibility checks stay pending.
 Preserve original saves/packages; #235/#236 remain separate patches.
+The author's subsequent city test reported hand icons on gates and missing
+southwest factory stations. The corrections above remain pending author retest;
+focused evidence is recorded separately in assets/validation_537/RESULTS.md.
 
 ## 5.3.6 - Personal manual map notes (#233)
 

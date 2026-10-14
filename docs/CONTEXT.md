@@ -3,8 +3,8 @@
 Documentation version: **5.3.8** — 2026-10-14.
 
 **#235/5.3.8:** CA235-01 pending.
-**#233 editing/#234 mansion accepted:** CA233/234-01 remainder pending.
-Open-padlock test accepted; other checks pending.
+**#233 editing/#234 mansion/sewer padlocks accepted:** CA233/234-01 remainder pending.
+City gate/factory fixes await retest.
 **#231/232 accepted:** CA231-01 (10-13), CA232-01 (10-14, corrected MAP04).
 **#255-257 accepted; #258** remaining CA258-01 pending. validation_530-535.
 
