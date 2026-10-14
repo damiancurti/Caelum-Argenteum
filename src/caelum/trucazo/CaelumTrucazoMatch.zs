@@ -56,6 +56,7 @@ class CaelumTrucazoMatch : Inventory
     {
         let user=CaelumPlayer(Owner);
         return user!=null && user.health>0 && user.player!=null && !multiplayer
+            && !CaelumExhaustion.Active(user)
             && level.MapName=="MAP01" && Opponent!=null && Opponent.health>0 && Opponent.StoryAnchored;
     }
     static bool Open(CaelumPlayer user,CaelumArgento opponent)

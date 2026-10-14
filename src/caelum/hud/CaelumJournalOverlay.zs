@@ -2161,7 +2161,7 @@ class CaelumJournalOverlay : EventHandler
         CaelumPresentation.MenuBackground(0x05070A,0.12);
         DrawPanel(16.0, 12.0, 608.0, 116.0);
         DrawCenteredText(TextFont, Font.CR_GOLD, 320, 18,
-            StringTable.Localize(CaelumRestRules.ModeKey(rest.Mode), false));
+            StringTable.Localize(rest.Exhaustion ? "CA_EXHAUSTION_TITLE" : CaelumRestRules.ModeKey(rest.Mode), false));
         let clock = CaelumWorldClock(localPlayer.FindInventory("CaelumWorldClock"));
         let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
         if (calendar != null)
@@ -2176,10 +2176,12 @@ class CaelumJournalOverlay : EventHandler
             String.Format(StringTable.Localize("CA_REST_RESOURCES", false),
                 localPlayer.CurrentSleep, localPlayer.CurrentHunger, localPlayer.CurrentThirst));
         DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 74,
-            StringTable.Localize("CA_REST_STOP_HELP", false));
+            StringTable.Localize(CaelumExhaustion.Locked(localPlayer) ? "CA_EXHAUSTION_LOCK" : "CA_REST_STOP_HELP", false));
         DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 87,
             StringTable.Localize(rest.ViewCamera != null ? "CA_REST_CAMERA_HELP" : "CA_REST_PAUSE_HELP", false));
         int factor = rest.Furniture != null ? rest.Furniture.ComfortFactor() : 1;
+        if(localPlayer.CurrentHunger<=CaelumExhaustion.RELEASE_ABOVE
+            || localPlayer.CurrentThirst<=CaelumExhaustion.RELEASE_ABOVE)factor=1;
         DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 58,
             String.Format(StringTable.Localize("CA_REST_COMFORT", false), factor, factor));
         let fast = CaelumTimeAdvanceState(localPlayer.FindInventory("CaelumTimeAdvanceState"));
@@ -2781,7 +2783,10 @@ class CaelumJournalOverlay : EventHandler
         let rest = localPlayer == null ? null
             : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
         if (rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE)
+        {
             SendNetworkEvent("ca_rest_cancel");
+            if(CaelumExhaustion.Locked(localPlayer))return;
+        }
         if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
         {
             SendNetworkEvent("ca_palomo_merchant_close");
@@ -3183,6 +3188,9 @@ class CaelumJournalInput : StaticEventHandler
     {
         let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
         let current=Menu.GetCurrentMenu();
+        // Cerrar la charla por su ruta nativa de volver, sin elegir respuestas.
+        if(CaelumExhaustion.Active(user) && ConversationMenu(current)!=null)
+        {current.MenuEvent(Menu.MKEY_Back,false);return;}
         if(ConsoleState==c_up && current==null && menuactive==Menu.Off && CaelumLiveMenu.Wanted(user)>0)
             Menu.SetMenu("CaelumLiveMenu");
     }

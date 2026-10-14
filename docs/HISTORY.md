@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.2** — 2026-10-13.
+Documentation version: **5.3.3** — 2026-10-13.
+
+## 5.3.3 - Exhaustion sleep (#258), 2026-10-13
+
+Implemented immediate zero-Sleep exhaustion and a strictly-above-10% standing
+threshold. The author chose immediate lying in air/water while preserving
+normal falling, flotation and sinking. Shared rest recovery, real support,
+automatic provisions and ordinary hazards remain authoritative. Exhaustion
+has its own revisioned flag in the existing InterHub rest owner; spell sleep
+remains distinct. Native conversation Back and existing activity interruption
+paths prevent escaping into another live interaction.
+Evidence: assets/validation_533/RESULTS.md. Static and isolated engine results
+are recorded there separately from author acceptance.
+
+CA258-01 (origin 5.3.3 / #258), partial author confirmation on 2026-10-13:
+"La prueba del sueño al 0% quedó muy bien." The author also confirmed that
+F8 sets Sleep to 11% and Q permits standing: "Sí, también funcionó correctamente."
+The zero-Sleep/standing-control checks passed and were removed from the pending
+entry. Remaining author checks concern hazards/support, save/load and pause;
+the existing engine fixtures cover these technically, but their author pass
+is not inferred. Runtime behavior and release number are unchanged.
+
+CA258-01 (origin 5.3.3 / #258) passed the remaining author checks on
+2026-10-14. The author explicitly confirmed: "Todas las pruebas esas ya las hice
+y dieron correcto." Hazards, air/water and moving/unsafe support, real provisions, bed/bag versus chair support, locked save/load, pause and recovered camera/controls passed.
+This completes the previously partial acceptance, with no reported failures or
+qualifications beyond optional hardware applicability. Technical evidence remains
+separate; this records author confirmation, not a new instrumented run.
+
 
 ## 5.3.2 - Automatic provisions (#257), 2026-10-13
 

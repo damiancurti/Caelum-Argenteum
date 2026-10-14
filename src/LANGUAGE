@@ -5567,3 +5567,14 @@ CA_SURVIVAL_HUNGER_RECOVERED = "Ya no tienes hambre.";
 CA_SURVIVAL_THIRST_RECOVERED = "Ya no tienes sed.";
 CA_SURVIVAL_SLEEP_RECOVERED = "Vuelves a sentirte descansado.";
 CA_SURVIVAL_THERMAL_RECOVERED = "Tu exposición térmica vuelve al rango seguro.";
+
+// Agotamiento fisiológico (#258); independiente del sueño por hechizo.
+[enu default]
+CA_EXHAUSTION_TITLE = "Exhaustion sleep";
+CA_EXHAUSTION_START = "Exhausted: you lie down. Standing unlocks above 10% Sleep.";
+CA_EXHAUSTION_LOCK = "You cannot stand until Sleep exceeds 10%.";
+
+[esp]
+CA_EXHAUSTION_TITLE = "Sueño por agotamiento";
+CA_EXHAUSTION_START = "Agotamiento: te tumbas. Podrás levantarte con más del 10% de Sueño.";
+CA_EXHAUSTION_LOCK = "No puedes levantarte hasta superar el 10% de Sueño.";

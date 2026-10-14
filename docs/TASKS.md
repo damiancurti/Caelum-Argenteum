@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.3.2** — 2026-10-13.
+Documentation version: **5.3.3** — 2026-10-13.
+
+## 5.3.3 - Exhaustion sleep (#258)
+
+Implement deterministic zero-Sleep lying, strict >10% standing eligibility,
+truthful support and persistent enforcement without changing physics or
+hazards. Author decision: immediately lie down in air/water without relocation.
+Evidence: assets/validation_533/RESULTS.md; CA258-01 passed full author acceptance on 2026-10-14. Continue #231-#236 in separate branches, commits and PRs.
 
 ## 5.3.2 - Automatic provisions (#257)
 

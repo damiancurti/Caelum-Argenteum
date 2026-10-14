@@ -190,6 +190,7 @@ class CaelumTimeSkipState : Inventory
     static bool OpenMenu(CaelumPlayer user)
     {
         if(IsOpen(user))return false;
+        if(CaelumExhaustion.Locked(user)){CaelumExhaustion.NotifyLocked(user);return false;}
         String reason=CaelumTimeSkipRules.BlockReason(user);
         if(reason.Length()!=0){CaelumNotifications.Notify(user,StringTable.Localize(reason,false));return false;}
         let s=Get(user,true);let rest=CaelumRestState.Get(user);
