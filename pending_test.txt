@@ -8,8 +8,10 @@ fixture, or an initialized living character. Keep original saves unchanged.
 Expected: no relocation, duplicate portions, early exit, immunity, fake bed
 bonus or MAP02 ground acceleration permission. Report any partial/failing step.
 
-CA232-01 | Origin: 5.3.5 / #232 | Status: pending author check
-Prerequisites: isolated Probar232 terminal; no authored map registrations yet.
+CA232-01 | Origin: 5.3.5 / #232 | Status: corrected-fixture retest pending
+Reported: merchant marker visible; bed/station disappeared before discovery.
+Prerequisites: corrected MAP04 Probar232 terminal; MAP03 retires these objects.
+No authored map registrations yet. Wait several seconds before using each object.
 1. Use the prepared bed (F6), station (F7), merchant (F8) and exit (F9).
    Open M before and after each use: unknown services have no icon/name;
    valid interactions (including a blocked service) add its category without a

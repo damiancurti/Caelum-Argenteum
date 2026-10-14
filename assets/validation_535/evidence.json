@@ -472,9 +472,55 @@
       "exit_code": 0,
       "finished_utc": "2026-10-14T02:41:27.1174696Z",
       "assertions": 6
+    },
+    {
+      "label": "author-delay-map04-02",
+      "started_utc": "2026-10-14T02:56:59.5678563Z",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\production.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\hooks.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\legacy.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\author-delay-map04-02.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "184",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\author-delay-map04-02.txt\"",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP04",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue232\\author-delay-map04-02-exec.cfg\""
+      ],
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=true\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=esp\n",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "baseline_sha256": "E7D0A1623906753196973C54080538326FB352851E26E07950975755AA038E91",
+      "production_sha256": "193AD99B8E131EA5572A72F364F37D977C50988353642143B3FFAF766D3A26CF",
+      "runtime_sha256": "193AD99B8E131EA5572A72F364F37D977C50988353642143B3FFAF766D3A26CF",
+      "fixture_sha256": "3CCDF1367E80B7D4EC805C7B07D5AA747D678789D137B31508B42EB36CB7F133",
+      "additional_fixture_sha256": "E44826D385AC334AAC469BA7B47D240BF47A541966D14E80839AD41A769080C7",
+      "pid": 6124,
+      "exit_code": 0,
+      "finished_utc": "2026-10-14T02:57:34.2202473Z",
+      "assertions": 14
     }
   ],
-  "native_assertions": 98,
+  "native_assertions": 112,
   "save_comparisons": {
     "old_save_all_prior_record_fields": true,
     "old_save_native_automap": true,
@@ -505,11 +551,28 @@
     {
       "file": "captures/layout-01-small-pois.png",
       "sha256": "9fce875e5d7af6eed9ba39cd30a066ef5620b25cae0cd4a6b97096ba8c862dbd"
+    },
+    {
+      "file": "captures/author-delay-map04-02-bed-map.png",
+      "sha256": "aec3908da55f00673e74e6d335d41dffe19d7361583873257b4b1dc3d9203848"
+    },
+    {
+      "file": "captures/author-delay-map04-02-bed-menu.png",
+      "sha256": "52d3c909b5678da816c505fc1ec8e34732a9f8ac9c33ca85d07ef36b1472ee89"
+    },
+    {
+      "file": "captures/author-delay-map04-02-station-map.png",
+      "sha256": "7b5d2013fb63a8fbeb5127b3d8b2958b34e14a7d3de9703d50871ea26d5e0287"
+    },
+    {
+      "file": "captures/author-delay-map04-02-station-menu.png",
+      "sha256": "3826a2e0df3180adc67e2630d7c376d96de9e3a6fc63a75c7c267aa9ff5bf9a9"
     }
   ],
   "author_acceptance": {
     "id": "CA232-01",
-    "status": "pending"
+    "status": "corrected MAP04 fixture retest pending",
+    "report": "Merchant marker visible; bed/station missing with brief appearance/disappearance."
   },
   "limits": [
     "Fixture registrations; authored map catalogues remain #234.",
@@ -561,5 +624,11 @@
     "exit_code": 0,
     "finished_utc": "2026-10-14T02:38:51.0070332Z"
   },
-  "normal_build_members_match_frozen": true
+  "normal_build_members_match_frozen": true,
+  "handoff_failure_reproduction": {
+    "label": "author-regression-01",
+    "map": "MAP03",
+    "expected_failures": 2,
+    "cause": "Existing gallery cleanup retires bed/station fixtures before delayed Use."
+  }
 }

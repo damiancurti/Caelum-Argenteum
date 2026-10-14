@@ -8,7 +8,9 @@ Implemented revision-one personal facts, stable map/POI identities, valid
 service interaction hooks and read-only native icon/name presentation. Scope
 excludes authored map registrations and remote NPC information. Native renderer
 privacy limitation: derived icons are suppressed with multiple participants.
-Evidence: assets/validation_535/RESULTS.md. CA232-01 is pending author acceptance.
+Evidence: assets/validation_535/RESULTS.md. CA232-01 remains pending after the
+author reported disappearing beds/stations: MAP03 retires these test objects.
+The corrected MAP04 handoff verifies delayed interaction and sustained menus.
 Continue #233/#234/#235/#236 separately: manual Note + five service categories,
 rooms/towers on entry and services on use, multiple tracked missions, then
 Journal map navigation. CA258-01 retains only its explicitly outstanding checks.

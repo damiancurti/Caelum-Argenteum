@@ -9,7 +9,8 @@ ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).resolve().parent
 WORK=ROOT/'build/issue232'
 RUNS=['core-02','reload-02','hooks-03','blocked-01','transport-05',
-      'old-save-01','migration-02','hub-02','privacy-03','layout-01']
+      'old-save-01','migration-02','hub-02','privacy-03','layout-01',
+      'author-delay-map04-02']
 
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def saved(name,map_id='map03'):
@@ -62,7 +63,8 @@ evidence={'issue':232,'version':'5.3.5','baseline_commit':'edf9aa76',
  'runtime_sha256':runtime,'tested_runtime_sha256':tested_runtime,'release_label_only_delta':changed,
  'runs':records,'native_assertions':sum(r['assertions'] for r in records),
  'save_comparisons':checks,'original_save_sha256':digest(WORK/'c232-old.zds'),
- 'captures':captures,'author_acceptance':{'id':'CA232-01','status':'pending'},
+ 'captures':captures,'author_acceptance':{'id':'CA232-01','status':'corrected MAP04 fixture retest pending',
+   'report':'Merchant marker visible; bed/station missing with brief appearance/disappearance.'},
  'limits':['Fixture registrations; authored map catalogues remain #234.',
  'Native Use is scripted, not a physical input acceptance claim.',
  'Native bot privacy check does not certify multiplayer gameplay.',
@@ -73,6 +75,15 @@ evidence['final_compile']=compile_run
 with zipfile.ZipFile(WORK/'production.pk3') as a, zipfile.ZipFile(ROOT/'build/caelum_argenteum_dev.pk3') as b:
     assert set(a.namelist())==set(b.namelist()) and all(a.read(n)==b.read(n) for n in a.namelist())
 evidence['normal_build_members_match_frozen']=True
+reproduction='author-regression-01'
+failed_log=(WORK/f'{reproduction}.txt').read_text(encoding='utf-8-sig')
+assert 'CA232 DONE failures=2' in failed_log and failed_log.count('CA232 FAIL ')==2
+evidence['handoff_failure_reproduction']={'label':reproduction,'map':'MAP03',
+ 'expected_failures':2,'cause':'Existing gallery cleanup retires bed/station fixtures before delayed Use.'}
+for name in (reproduction+'.txt',reproduction+'-run.json'):
+    shutil.copyfile(WORK/name,HERE/name)
+for label in (reproduction,'author-delay-map04-02'):
+    shutil.copyfile(WORK/f'{label}-exec.cfg',HERE/f'{label}-exec.cfg')
 for name in ('final-compile-01-run.json','final-compile-01.txt'):shutil.copyfile(WORK/name,HERE/name)
 (HERE/'evidence.json').write_bytes((json.dumps(evidence,indent=2)+'\n').encode())
 print(f"Collected {len(records)} runs, {evidence['native_assertions']} assertions, {len(checks)} save comparisons and {len(captures)} captures.")

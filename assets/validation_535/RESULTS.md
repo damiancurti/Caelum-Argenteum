@@ -2,8 +2,8 @@
 
 Baseline: `edf9aa76` (accepted 5.3.4 cartography). Environment: Windows 11,
 GZDoom 4.14.2, Vulkan, fixed seed 184, unpaused background, 5% audio.
-Final evidence: **10 completed native runs, 98 assertions, 7 exact save
-comparisons and 5 inspected captures**, plus a final production compile run.
+Final evidence: **11 completed native runs, 112 assertions, 7 exact save
+comparisons and 9 inspected captures**, plus a final production compile run.
 Static validator: exit 0, `errors: []`; normal build: exit 0, **16,061 files**.
 Its uncompressed members exactly match the frozen production package.
 Exact packages, fixture hashes, commands, logs, captures and assertions are
@@ -58,3 +58,24 @@ No gameplay or presentation code changed after the behavioral matrix.
 
 Static validation and normal build results are retained adjacent to the
 manifest. CA232-01 is pending author acceptance; no merge or closure is claimed.
+
+Author handoff correction (2026-10-13, same patch/PR): the author reported
+that the merchant marked the map but the bed/station did not, with only a
+brief appearance before disappearing. `author-regression-01` deliberately
+waits before Use and reproduces two failed discoveries in MAP03: its existing
+`CaelumSiegePreviewWorld.RemoveTrialFurniture` has already destroyed both
+objects. The earlier `hooks-03` pulse beat this cleanup and therefore did not
+establish a usable human handoff; its station menu also closed afterward.
+
+`handoff.ps1` now uses MAP04 for services. `author-delay-map04-02` waits 175
+native command frames before each Use and after releasing it, asserts the
+objects/menu/markers survive, and captures the actual bed/station menus and
+both known icons. All 14 checks passed; all four captures were inspected.
+The final runtime is byte-identical: only test orchestration, diagnostics and
+documentation changed. The ordinary rest dialog retains its existing native
+layout; this fixture correction does not claim a dialog redesign. F5 records
+fixture state without granting knowledge. CA232-01 remains pending a new
+author run; this failure and correction are not treated as author acceptance.
+
+Run `powershell.exe -NoProfile -ExecutionPolicy Bypass -NoExit -File
+assets/validation_535/handoff.ps1` for the corrected interactive handoff.

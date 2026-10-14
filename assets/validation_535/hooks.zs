@@ -6,6 +6,15 @@ class CA232Hooks : StaticEventHandler
     bool BlockedCase;
     bool Interactive;
     bool ReportedUse;
+    void Inspect(CaelumPlayer u)
+    {
+        let r=u.GetPersistentCharacterState(false);int markers=0;
+        let it=ThinkerIterator.Create("CaelumKnownPoiMarker");CaelumKnownPoiMarker mark;
+        while((mark=CaelumKnownPoiMarker(it.Next()))!=null)if(!mark.bDormant)markers++;
+        Console.Printf("CA232 INSPECT tic=%d category=%d service=%d facts=%d markers=%d rest=%d craft=%d merchant=%d buttons=%d pos=(%.1f %.1f %.1f) pitch=%.1f",level.time,Category,Service!=null,r.KnownPois.Size(),markers,u.HasActiveConversation(),u.CraftingMenuOpen,u.PalomoMerchantMenuOpen,u.player.cmd.buttons,u.Pos.X,u.Pos.Y,u.Pos.Z,u.Pitch);
+        if(Service!=null)Console.Printf("CA232 TARGET pos=(%.1f %.1f %.1f) radius=%.1f height=%.1f aimed=%d sight=%d distance=%.1f",Service.Pos.X,Service.Pos.Y,Service.Pos.Z,Service.Radius,Service.Height,CaelumUseGeometry.AimedAt(u,Service),u.CheckSight(Service),u.Distance3D(Service));
+        for(int i=0;i<r.KnownPois.Size();i++)Console.Printf("CA232 FACT %s %s category=%d",r.KnownPois[i].MapId,r.KnownPois[i].PoiId,r.KnownPois[i].Category);
+    }
     override void WorldTick()
     {
         let u=CaelumPlayer(players[0].mo);if(u==null || Service==null || Category!=5)return;
@@ -26,6 +35,25 @@ class CA232Hooks : StaticEventHandler
         let u=CaelumPlayer(players[e.Player].mo);if(u==null)return;
         let r=u.GetPersistentCharacterState(false);if(r==null)return;
         if(e.Name=="c232_author")Interactive=true;
+        if(e.Name=="c232_inspect")Inspect(u);
+        if(e.Name=="c232_release")
+        {
+            u.ClosePalomoMerchant();u.CloseCraftingStationSession();
+            u.SetCraftingJournalState(false);CaelumJourneyPlan.Cancel(u);
+        }
+        if(e.Name=="c232_present")
+            Check(Service!=null,String.Format("service-survives-human-wait-%d",Category));
+        if(e.Name=="c232_retained")
+        {
+            Check(Service!=null,String.Format("service-retained-after-use-%d",Category));
+            if(Category==1)Check(u.HasActiveConversation(),"bed-menu-remains-open");
+            if(Category==2)Check(u.CraftingMenuOpen,"station-menu-remains-open");
+            if(Category==3)Check(u.PalomoMerchantMenuOpen,"merchant-menu-remains-open");
+            bool visible=false;let it=ThinkerIterator.Create("CaelumKnownPoiMarker");CaelumKnownPoiMarker mark;
+            while((mark=CaelumKnownPoiMarker(it.Next()))!=null)
+                if(mark.PoiId==String.Format("hook-%d",Category) && !mark.bDormant)visible=true;
+            Check(visible,String.Format("used-service-marker-retained-%d",Category));
+        }
         if(e.Name=="c232_hook")
         {
             if(u.player.ConversationNPC!=null)u.player.ConversationNPC.bInConversation=false;
