@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 92845)
-Total output lines: 5317
-
 # Caelum Argenteum — Project, status and roadmap
 
 Documentation version: **5.3.9** — 2026-10-14.
@@ -2699,7 +2696,182 @@ reaches CaelumFirstPersonLayers; the observed failure is not attributed to a cac
 path that could not be replicated in the engine.
 
 Axe with a 50% larger head and separate handle. Halberd with its shaft lengthened along its axis, without enlarging blade, ribbons or hands. Greatsword with the same shape and
-less saturated/darker colors in view, inventory and ground sprite. Bows: index finger behind …2845 tokens truncated…ironmental origin; they do not grant
+less saturated/darker colors in view, inventory and ground sprite. Bows: index finger behind the wood; thumb and phalanges of the other three fingers in front. Arrow continues on
+top layer.
+
+[PRESERVED RULE] The axe secondary is documented as blunt, stronger and shorter-ranged than the slashing primary. Combat, actual reach, resources and physics were not modified with this presentation review.
+
+[VERIFIED LOCALLY] Texture dependencies, order of states, pivots, clips, palettes, preservation of silhouettes and sources. Reconstructions of the three tiers and three phases of both bows
+were inspected. [PENDING] Start, saves and visual acceptance in GZDoom 4.14.2 on Windows
+11: the engine was not executed. The recovered base is partial. Application on 0f;
+PRUEBAS_4_36_0g.txt guide.
+
+The above sections are history. The author's test indicated that the 0f flail was
+still without the correction expected and that the palettes were vivid.
+
+## 4.36.0f — corrections after the author's test
+
+[CORRECTED IN SOURCES] Rotation sign of hatchet, machete, axe, war axe and halberd: its
+upper ends lean to the right. Flail incorporated to the modular layers, with inclination
+to the left. Hatchet 24 MU lower than the grip; NoTrim canvases and absolute pivots.
+
+[INTEGRATED ART] Greatsword blade enlarged in T1–T3, also in inventory and ground sprite. Bows with muted palettes, fingers behind, thumb in front and arrow in the top layer. String
+built with native vertices.
+
+[REQUESTED ADJUSTMENT] MAP08 Rolling Rock: 8 → 32 MU/tic, without forced death or change of the
+damage curve. Compatibility on the next activation of saves with the old value. A released rock is not re-launched.
+
+[AUDITED] Rock impacts use mass/speed. The ceiling uses native Crush at 10 points per
+pulse. The motionless rock supported on a victim does not apply continuous pressure due to
+its weight. Formulas and limits in SYSTEMS.md.
+
+[VERIFIED LOCALLY] Structure, data, resources and views reconstructed with the order of
+4.14.2 renderer transformations. They are not game screenshots. [PENDING] Compile and test in
+GZDoom 4.14.2 / Windows 11. The engine download failed and the recovered base is partial.
+Guide: PRUEBAS_4_36_0f.txt.
+
+The sections prior to 0f are history; 0e's orientation and string statements were refuted
+by the author's subsequent test.
+
+
+## 4.36.0e — corrections requested after testing 0d
+
+[PROGRAMMED] Fists with continuous forearms and the same glove of the other weapons; left
+and right come from the same original PNG, reflected by TEXTURES. The original set of
+hands is also used for both bows. The left hand is in a layer before the right. Glove
+sizes independent of the size of the weapon.
+
+[PROGRAMMED] Hatchet, axe, war axe and halberd tilted to the right with the handle seated
+on the grip. +20% sword and greatsword +15% relative to 0d. Normal recurve bow and longbow with continuous limbs, both in T1–T3, with a string between the tips and hand, and visible
+arrow only if loaded.
+
+[PROGRAMMED] Trimmed MAP01 chord at the first revelation of the Arcanum. Original level up
+sound by confirming its capture and applying the bonus. [CONFIRMED BY THE AUTHOR] Correct
+0d transitions; its logic is preserved.
+
+[PROGRAMMED] Carriage with front axle and two front wheels: four wheels in total. On the
+boat, non-solid Use volume in front of the hull, in addition to the sign; the warning
+remains centered and retains the requirements of boarding. New parts are added once when
+preparing vehicles, also when loading.
+
+[VERIFIED LOCALLY] Structure of changed sources and resources, references, layers, OBJ
+geometry and reconstructed weapon/model views. GZDoom was not run for 0e: the complete
+baseline had not been recovered and no engine was installed. Changed files start from
+their latest recovered versions. [PENDING] Compilation and gameplay/visual testing in
+GZDoom 4.14.2 / Windows 11. Instructions: PRUEBAS_4_36_0e.txt. The following sections are
+historical.
+
+## Previous base: 4.36.0d — grips, fists and visible mechanisms
+
+Delta on the complete project 4.36.0c. The author’s observations and his four attached
+references are taken care of. Dagger and magic weapons retain the approved art. Only the
+weapon is inverted into hatchet, machete, axe, war axe and halberd; the hands retain
+their laterality. The hatchet is held lower on its handle. Axe, greatsword, war axe and
+halberd increase in size; the last three show two hands. The sword adopts the small hands
+of the new package. All families move down and to the left when put away.
+
+Crossbow and carbine are presented below, with the hands below and the left support
+centered. The empty carbine uses rest, without permanent flash. Both bows lower and show
+the back of the left hand on the grip, following the photograph. This grip and a pair of
+closed fists are generated; the other corrections use native transformations of existing
+art. Bullets on the ground reduce their scale from 0,25 to 0,10, including those saved.
+
+CaelumUnarmedWeapon replaces the Fist fallback. It is equipped when left without a usable weapon and after cleaning objects of MAP01→MAP02. It retains the range, damage and cadence
+of the previous fallback, with its own presentation; does not add a family of equipment or
+modify the balance of the weapons of the catalog.
+
+Looking at a caravan/carriage, boat, table or chair within reach shows "Use:" and its name.
+Mechanism 4 is identified as local teleport and confirms arrival by message, flash and
+target rune. A MAP08 side lever rearms the gallery, also in 0c saves; it rejects restart
+if the crusher moves or there are bodies in the areas to be restored.
+
+It reproduces the visual absence of hub trips: GZDoom g4.14.2 suppresses the wipes during
+the first 35 rendered frames. The patch retains the departure view during that lock and then
+executes the native carriage/caravan crossfade or the melt of the boat. Screenshots from the renderer confirm both effects. The accepted El Loco burn, provisions, travel time, sound
+clips and global wipetype preference are retained.
+
+Validation: GZDoom g4.14.2/Linux, 60 family/tier selections, real actions and reloads,
+narrative return with fists, two trap resets, uses, confirmed trips and loading an
+authentic 0c save. Native rendering was reviewed in 4:3 and 16:9. The eight WADs and
+previous state blocks are preserved. Final visual/gameplay acceptance on Windows 11
+belongs to the author; PRUEBAS_4_36_0d.txt accompanies that release. 4.36 remains open and
+the immobilization rune remains under review only. The following sections are historical
+and do not supersede these corrections.
+
+## History: 4.36.0c — first person, audio and corrections
+
+Delta on the complete 4.36.0b project. The author accepts the lever design and asks for
+half size, reports that mechanism 4 was not activated and asks about the rock mass. He provides the packages Primera Persona v1 and Audio Events v1 (1.4 revision) and requests
+crossfade for the carriage and burn for El Loco.
+
+The lever uses 0,045 scale, also on serialized actors. It reproduces a pressure failure on
+the edge of the teleport plate: 0b required the character's center to enter the radius. It
+now counts the support of his feet. It maintains the guards of height, free destination
+and absence of telefrag; the report explains rejections of the latest attempt. The exact
+case of the author's save is not available; a occupied destination continues to be
+deliberately rejected.
+
+19 new first-person families, T1/T2/T3, are connected to the inventory and the real
+selectors. The already accepted sword rig remains active; the three variants of sword
+provided are available as resources. The 101 PNG and 93 compositions come from the
+author's package, without regenerating art. Visual phases follow ammunition, reload,
+aim, blocking and effective callbacks.
+
+The six supplied OGGs are incorporated and the five main uses are connected: lever,
+carriage, boat, tarot capture and rolling rock. The main ship clip (3–9 s) is chosen.
+The tarot clip preserves revision 1.4 exactly. El Loco MAP01→MAP02 uses burn; carriage, crossfade; ship, melt. The request is created only when confirming a crossing and
+does not modify wipetype.
+
+The large granite sphere weighs 38170 kg (38,17 t). The native fall test with Toughness 13 and
+without armor caused 1343/1780 points of health damage. The actual mass, speed and defenses are
+printed in the diagnostic report. An old boulder that does not fit still retain its size and mass of
+0a; its expansion within occupied geometry is not forced. The new patch does not rebalance
+the impact core.
+
+MAP01–08 and previous states of weapons/actors retain their bytes/indices. Tests run in
+GZDoom g4.14.2/Linux; playable, visual and mixing acceptance in Windows 11 corresponds to
+the author. Guide: PRUEBAS_4_36_0c.txt. The 4.36 stage remains open; the immobilization
+rune remains only under review.
+
+## History: 4.36.0b — traps, levers and presentation
+
+Delta on the complete project 4.36.0a. The author confirms the other tests of 0a correctly
+and asks to correct the size of the bull and rocks. Approves explosive magic mines,
+teleport and crushing; asks for a lever on column, audible transitions and a melt effect for boat trips.
+
+These three traps are implemented in MAP08. The MAP01–08 maps retain their WADs byte for byte. MagicHazardRevision of the existing controller incorporates the new actors once,
+also in old saves. The trap and the already used mechanisms retain their status. The used levers are shown down.
+
+Bull: general visual increase of the 25% and normalization of each running view relative to rest; its anatomy, mass, collision or attack is not changed. The PNGs provided
+by the author retain their bytes. 0a rocks were small test granite; the hazard ones
+receive an irregular sphere of 96 MU of diameter, central pivot and spherical granite mass
+(38170 kg). The damage follows the current physics core and depends on the conditions
+of impact, without automatic death.
+
+The three traps, dimensions and values of MAP08 are test configurations; they do not set
+narrative locations or definitive balance. The rest of 4.36 continues with special
+surfaces, avalanches, rams, catapults and other mechanisms. 4.37 is not advanced nor is
+Impact Physics yet extracted as an external package.
+
+Proposal for revision only: a temporary immobilization rune. Duration, endurance, cost or
+damage is not implemented or assigned without the author's decision. gameplay/visual
+revision of 0b in Windows 11 remains pending; follow PRUEBAS_4_36_0b.txt. The above
+sections are history.
+
+## Approved base: 4.36.0a — trapdoor and first physical hazards
+
+The author confirms "All correct" for 4.35.0q: 4.35 is approved and closed. Authorizes to
+start 4.36 and adds ground traps that open when you step on them. This delta applies to
+the complete 4.35.0q project.
+
+Implemented: Reusable trapdoor on a real pit, gravity drop, rolling rock and suspended rock
+released with Use. MAP08 incorporates a gallery with pit and exit ladder, connected to
+MAP05 by a native access. MAP01–07 WAD retains its bytes and allows to load its saves. The
+support is only removed when stepping on the lid; passing above or below does not fire it.
+It remains open once activated and its state belongs to the map/hub.
+
+The rocks reuse granite, mass and existing models. The impacts use the current formulas,
+with an additional vertical adaptor and explicit environmental origin; they do not grant
 combat adrenaline or add Doom thrust to the already resolved core. Saves, diagnostic report and TXT allow you to review the mechanisms. The configuration of the gallery is
 trial; it does not fix narrative locations or a definitive new balance.
 
