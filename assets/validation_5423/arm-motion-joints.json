@@ -1,0 +1,44 @@
+{
+  "source_sha256": "9b3f4bf5e08a36db786a3df19495fc7fcfc367540b6227af892dc71f26443c61",
+  "joint_samples": 186,
+  "maximum_lateral_knee_units": 0.8146324157714844,
+  "minimum_forward_knee_units": 0.08260536193847656,
+  "elbow_degrees": {
+    "Walk.L": {
+      "min": 30.34860344477975,
+      "max": 36.13987644580396
+    },
+    "Walk.R": {
+      "min": 30.348610274968923,
+      "max": 36.13987644580396
+    },
+    "Run.L": {
+      "min": 55.61585692067725,
+      "max": 79.05948745422178
+    },
+    "Run.R": {
+      "min": 55.61585692067725,
+      "max": 79.05949428441096
+    }
+  },
+  "hand_excursion_units_relative_to_shoulder": {
+    "Walk.L": 7.003772025835383,
+    "Walk.R": 9.05433866077387,
+    "Run.L": 31.023332736381914,
+    "Run.R": 32.60229637623584
+  },
+  "scope": "Evaluated walk/run/seated anatomy; author visual acceptance remains separate.",
+  "comparison": {
+    "baseline_sha256": "0fc69553d956477f8f7bc1678b363527079e0de5c270567e0cf5cd3bd218a2bd",
+    "baseline_hand_excursion_units": {
+      "Walk.L": 30.9619505160895,
+      "Walk.R": 32.814436559299324,
+      "Run.L": 43.113657645645795,
+      "Run.R": 44.55017004869138
+    },
+    "current_to_previous_walk_ratio": {
+      "L": 0.22620577544673243,
+      "R": 0.2759254648304467
+    }
+  }
+}

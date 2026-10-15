@@ -763,7 +763,8 @@
     "visual_feedback": [
       "Correct sideways knee flexion while walking.",
       "Flex the elbows while walking.",
-      "Add a native shield-block animation."
+      "Add a native shield-block animation.",
+      "Walking hands must sway less; running must have its own visibly distinct animation."
     ],
     "jump": "Flex legs and lower the body for one second before actual takeoff; landing flexes/lowers for one second. Movement, attacks and blocking remain available for both. Any received damage cancels jump preparation; existing jump trajectory/collision remain authoritative after takeoff.",
     "shield": "Add an animation driven by actual shield blocking."
@@ -775,5 +776,26 @@
     "walk_elbow_curve_degrees": "35 + 15*sin(phase), opposite phase per arm",
     "run_elbow_curve_degrees": "60 + 20*sin(phase), opposite phase per arm",
     "validation": "186 evaluated samples; anatomy-joints.json. Author review remains open."
+  },
+  "arm_motion_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "48b32cd4",
+    "scope": "Art-only arm curves, independent Walk and Run actions; native movement/attack timing unchanged.",
+    "curves_degrees": {
+      "Walk": {
+        "shoulder_bias": 0,
+        "shoulder_amplitude": 4,
+        "elbow_bias": 30,
+        "elbow_amplitude": 3
+      },
+      "Run": {
+        "shoulder_bias": 8,
+        "shoulder_amplitude": 20,
+        "elbow_bias": 65,
+        "elbow_amplitude": 12
+      }
+    },
+    "phase": "Opposite phase per arm, full native action cycle.",
+    "author_review": "Pending; these art-tuning angles are not combat or movement balance."
   }
 }
