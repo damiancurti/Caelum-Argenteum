@@ -1,6 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Domingo 3D pilot (#283, in progress)
+
+Branch feat/issue283-domingo-3d-pilot adds editable original-reference art,
+deterministic MD3 export and a controlled native-player presentation adapter.
+Evidence/limitations: assets/validation_5423/RESULTS.md. No global replacement,
+merge, issue closure or author acceptance. Keep #284 in its own patch.
+
+Outstanding: review reconstructed silhouette/materials/views; implement
+sit/stand (2 s), lie/get-up (3 s) and eating/drinking (4 s) integration;
+polish transient floor/cloth intersections; exercise those transitions when
+defined; extend or retain documented fallback for unsupported equipment/crouch;
+broaden performance evidence before any NPC/battle conversion. The existing
+40-tic source transition clips need retiming. The author requires movement,
+attack and block locks during animation, without changing provision consumption.
+CA283-01 is a bounded prototype review, not completion of all issue criteria.
+The author returned and resumed questions/manual tests. Extend this pilot with
+interchangeable weapon, shield, armor, hair and face parts using existing choices,
+starting with Domingo; the first fixed-surface export does not satisfy that
+requirement. Preserve its tested intermediate evidence and original resources.
+Initial author feedback: walking knees bend sideways and elbows look rigid.
+Correct their anatomical motion and add a shield-block animation driven by
+native blocking. CA283-01 remains open; the author has not accepted the art.
+
 
 
 ## 5.4.22 - Quick-use HUD (#282, author review pending)

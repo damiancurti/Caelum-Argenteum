@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Opt-in Domingo model presentation (#283, draft)
+
+The default player remains CaelumPlayer. CaelumDomingoPilotPlayer is selected
+only by an explicit test scenario. Its presentation hook reads native states
+and their remaining tics; it does not advance attacks, spend resources, move
+the pawn or modify collision. The human male sword/shield variant uses an owned
+MD3 body with a first-person-hidden visual layer. Other equipment and crouch
+fall back to existing appearance. The optional original-sprite comparison is
+also presentation only. No armor or weapon statistics come from the mesh.
+
+Native chair/bed/ground rest, occupancy, interruptions and timing remain the
+authority. Seated/lying breathing uses the existing 70-tic breathing cadence.
+The tested intermediate changes rest pose immediately. The author subsequently
+approved 2-second chair entry/exit, 3-second lie/get-up and 4-second eating/drinking
+cycles, with movement, attacks and blocking locked until each animation ends.
+Provision consumption rates and quantities stay unchanged. These transitions
+and control locks remain to be implemented. The pilot's revision 1 fields reconstruct one local body,
+which is released before map travel; base-player saves remain base-player saves.
+No campaign appearance schema is changed. This pilot has no author acceptance.
+
+The author now requires interchangeable weapon, shield, armor, hair and face
+parts, demonstrated first on Domingo using existing choices. The fixed runtime
+mesh is only an intermediate prototype. Native equipment and saved appearance
+remain the authority; modular presentation must neither grant items nor change
+combat statistics. The same structure should be reusable by other characters.
+
 
 
 ## 5.4.22 - Gameplay quick-use selector (#282)

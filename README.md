@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.22.** Obtain and update the complete repository, validate
+**Current release: 5.4.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.23 adds an **opt-in draft** for [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283):
+an editable Domingo model derived from the original sheet, with native MD3
+animation driven by the existing player. Default gameplay keeps its current
+appearance. Interchangeable equipment/hair/face parts, art approval and timed rest/provision animations
+remain pending; this issue is not complete. Agent evidence and reproduction:
+[validation_5423](assets/validation_5423/RESULTS.md).
 
 5.4.22 implements [#282](https://github.com/damiancurti/Caelum-Argenteum/issues/282):
 the bottom-center quick-use selector displays the selected item's name and
@@ -27,9 +34,9 @@ assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15
 PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 #237's attribute audit now reflects the accepted class/racial consumers; its
-160 native checks pass on this baseline. PR272 is ready. Next are separately
-scoped #282 (usable-item HUD), #283 (Domingo 3D pilot) and #284 (Mandinga fire
-damage, demon personalities and a cosmetic 3D Zupay rock). The author withdrew
+160 native checks pass on this baseline. PR272 is ready. #282 awaits author review in PR300; #283 is the opt-in draft
+described above. Separately scoped #284 adds Mandinga fire damage, demon
+personalities and a cosmetic 3D Zupay rock. The author withdrew
 the proposed Mandinga attribute increase; existing base attributes are preserved.
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a

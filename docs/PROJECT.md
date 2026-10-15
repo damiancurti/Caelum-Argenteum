@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Domingo native 3D feasibility pilot (#283, draft)
+
+An editable, original-sheet-derived Domingo model now runs through an opt-in
+player subclass and native MD3 registration. Native movement, attacks and rest
+remain authoritative; no default character is replaced. validation_5423 records
+geometry/export parity, native action/rest/death/save/hub checks and matched
+sprite/model rendering samples. These are agent tests, not author acceptance.
+
+The issue remains in progress: art/hidden-view review, timed transition integration
+and polish, unsupported equipment coverage and broader combat performance
+are explicitly outstanding. #282 remains awaiting CA282-01; revised #284 keeps
+its separate scope/branch. The author returned and the temporary keep-awake was
+released. The author requires interchangeable weapon, shield, armor, hair and
+face parts, starting with Domingo and existing choices. This fixed-surface
+runtime is an intermediate prototype; modular integration remains in #283.
+
 
 
 ## 5.4.22 - Quick-use inventory HUD (#282)

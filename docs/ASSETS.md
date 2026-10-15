@@ -1,6 +1,57 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Editable Domingo 3D pilot (#283, draft)
+
+The identity reference is the author-supplied original Domingo sheet from
+2026-10-09 (`assets/source/art/death_repair_518/domingo-original.png`, SHA256
+`4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3`).
+The pilot interprets its dark hair/beard, steel/gold armor, red scarf, blue/gold
+cape, right sword and left shield as volumetric geometry. The later modular
+human bodies are not the identity reference. Reconstructed views and proportions
+remain unreviewed by the author.
+
+On return, the author required interchangeable weapons, shields, armor, hair
+and faces, starting with Domingo and existing appearance/equipment choices.
+The editable source has separate mesh objects, but this first runtime export
+merges them into one fixed surface. It does not yet meet that modular contract.
+Continue the same #283 pilot with reusable parts and native saved identity;
+converting all other characters is outside this initial trial.
+
+`assets/source/art/domingo_3d_pilot/domingo.blend` contains editable mesh/UVs,
+26 rig bones including foot IK/poles, packed source-derived texture and 15 named
+actions. DESIGN.json records provenance, coverage, timing and pending decisions.
+The .blend is authoritative art input; the retained initial authoring transcript
+is construction history, not a byte-identical Blender-file regeneration tool.
+The skin keeps original RGB and makes alpha opaque for UV sampling. It is
+1254 x 1254, 1,863,217 PNG bytes. No external or Doom artwork is incorporated.
+
+Blender 4.5.3 LTS exports deterministically with:
+`blender -b --python assets/generators/export_domingo_pilot.py -- --output build/issue283-export --install`.
+The exporter reads the committed source, bakes a native MD3 v15 with one surface,
+5,516 UV-split vertices, 7,232 triangles and 195 frames (8,747,076 bytes), and
+generates state/texture/model registrations. The exact GZDoom 4.14.2 loader was
+checked before export. No Blender executable, IWAD or generated test PK3 ships.
+
+The opt-in player subclass supports sword/shield idle, walk/run, native attack
+poses, pain/death/raise and seated/lying breathing. Other equipment and crouch
+retain existing appearance. Native furniture offsets and the 47-unit seat
+support are retained; the cape folds onto the chair. Original sprites remain
+available for comparison. Standing geometry uses the existing 170-unit human
+normalization and native sprite pixel stretch, without changing collision.
+
+This is a draft, not approved conversion of other actors. Sit/stand and lie/get-up
+clips are editable candidates, not yet connected to gameplay. The author chose
+2 seconds for sitting/standing from a chair, 3 seconds for lying/getting up,
+and 4-second eating/drinking cycles. Movement, attacks and blocking are disabled
+during those animations; provision speed and quantities remain unchanged. The
+current tested intermediate still changes rest pose immediately. Small transient
+floor intersections in run/death and source-only crouch also need art polish;
+the measured bounds and native evidence are in validation_5423. Author review,
+additional transition/weapon coverage and a broader representative combat
+benchmark remain outstanding. No large-battle performance improvement is claimed.
+
 
 
 ## 5.4.22 - Quick-use HUD artwork (#282)

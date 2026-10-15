@@ -1,5 +1,5 @@
 CA282-01 | Origin: 5.4.22 / #282 | Quick-use carousel and native controls
-Status: pending; author requested deferral until returning on 2026-10-15.
+Status: pending; author returned and resumed manual tests on 2026-10-15.
 Prerequisites: current #282 production + isolated validation_5422 fixture;
 prepare.py --directory <fresh-name>, then run_native.ps1 -Directory <name>
 -Label author -Script manual.cfg -Interactive. This uses a separate config/save
@@ -18,3 +18,27 @@ directory. Do not launch automatically while the author is away.
    window size/HUD scale. Switch Spanish/English if desired.
 Expected: correct layout, actual owned quantities/water, one intended use,
 native menu/remapping behavior, no overlapping bars or stale selection.
+
+CA283-01 | Origin: 5.4.23 / #283 | Domingo 3D prototype review
+Status: pending; author returned; fixed-appearance prototype, modular work open.
+Feedback: sideways knee flexion and rigid elbows during walking; correct those
+and add native shield-block animation before the next acceptance candidate.
+Scope: review this draft's art and connected native actions, not final issue
+acceptance. Approved 2-second chair, 3-second lie/get-up and 4-second provision
+animations/control locks are not implemented; this draft changes rest pose immediately. Documented minor floor/cloth polish remains.
+Prerequisites: validation_5423/prepare.py --directory <fresh-name> (no --visual),
+then run_native.ps1 -Directory <name> -Label author -Script manual.cfg -Interactive.
+The isolated scenario chooses CaelumDomingoPilotPlayer, equips real sword/shield,
+and uses a separate configuration/save directory. Do not launch while away.
+1. Walk, run and attack normally. F6 switches original sprites/model; F8 cycles
+   front/side/rear views and returns to the player's chase camera on its fifth
+   press. Review face/hair, armor, cape, sword/shield, scale and reconstructed views.
+2. F7 selects chair rest, bed sleep, ground sleep, then standing. Use Q to leave
+   each native rest panel before pressing F7 again. Native rest camera/mouse
+   orbit remains available. Inspect seat/bed/floor support and breathing.
+3. Use normal menus to change equipment: variants without pilot geometry retain
+   existing appearance. The model must not grant armor, duplicate attacks or
+   change movement/resources. Report any major clipping or pose mismatch.
+Expected: recognizable, reviewable Domingo candidate; native action/furniture
+behavior retained. Record art feedback and limitations separately from final
+approval of #283, whose transitions and broader coverage remain open.

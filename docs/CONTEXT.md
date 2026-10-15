@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
 
-**5.4.22/#282:** bottom-center carousel; name/count above icon; smaller neighbors;
-native input/individual containers. validation_5422; CA282-01 pending. Author
-away: defer questions/manual tests; keep-awake active (12h). Next #283/#284:
-unchanged Mandinga attributes, extra Fire machete damage, approved demon
-personalities/cosmetic Zupay rock. Separate PRs.
+**5.4.23/#283:** Domingo MD3 draft; validation_5423. CA283-01 pending;
+interchangeable parts required, timed animations/polish open; opt-in only.
+**5.4.22/#282:** PR300 draft; 47 native assertions/four views; CA282-01 pending.
+Author returned; keep-awake released. #284 next:
+unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
 

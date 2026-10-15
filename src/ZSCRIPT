@@ -304,3 +304,6 @@ version "4.14"
 
 #include "caelum/equipment/CaelumQuickUse.zs"
 #include "caelum/hud/CaelumQuickUseHUD.zs"
+
+#include "caelum/character/CaelumDomingoPilotFrames.zs"
+#include "caelum/character/CaelumDomingoPilot.zs"

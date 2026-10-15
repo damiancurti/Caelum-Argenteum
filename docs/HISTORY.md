@@ -1,6 +1,50 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Domingo 3D pilot foundation (#283, 2026-10-15, draft)
+
+While the author was away, the original 2026-10-09 Domingo sheet was verified
+instead of substituting the later modular body. A textured volumetric model,
+editable Blender rig/actions and deterministic native MD3 export were authored.
+The pilot is opt-in; native player states, attacks, collision, resources,
+furniture and original sprites remain. The author has not reviewed this model.
+
+The head UV projection and knee pole were corrected during authoring. Native
+chair review led to matching the existing 47-unit seat support and folding the
+cape onto the seat; native WorldOffset is retained. Source candidates remain
+preserved locally; the current editable source and provenance are tracked.
+
+Native checks cover real input-selected movement/weapon actions, presentation
+side-effect isolation, chair/bed/ground rest, terminal death, save/load, hub travel
+and fallback. A matched 1/64 render-proxy comparison records frame intervals
+separately from native thinker profiling; it is not a large-combat benchmark.
+Detailed fingerprints, results, failed iterations and limits live in
+assets/validation_5423/RESULTS.md and evidence.json. No author check is marked
+passed. CA282-01 remains pending and CA283-01 is a limited prototype review.
+
+The isolated visual fixture initially read past a semicolon-free EventHandlers
+line, producing an unknown-handler fatal dialog; bounded parsing fixed that
+diagnostic. Removing the Journal handler then broke its live-menu consumer;
+the final fixture retains it and repositions the review camera instead. These
+failed logs are retained; neither experiment changes production HUD behavior.
+
+Candidate 40-tic clips were left disconnected pending the author's decision.
+On return, the author chose 2-second chair entry/exit, 3-second lie/get-up and
+4-second eating/drinking cycles; movement, attacks and blocking are locked during
+each animation while provision consumption rates and quantities remain unchanged.
+These additions are not implemented in the tested intermediate. Source-only crouch and small transient run/death floor
+intersections remain documented art work. No issue closure/merge or complete
+pilot acceptance is asserted. Temporary keep-awake was released on the author's
+return at 2026-10-15 23:25:29 UTC, preserving the Balanced power plan.
+Questions and manual tests resumed. The author clarified that the character
+must have interchangeable weapon, shield, armor, hair and face parts, starting
+with Domingo and existing choices. The first fixed-surface runtime is retained
+as intermediate evidence; modular integration is still required in #283.
+During CA283-01 the author reported sideways knee flexion and rigid arms while
+walking, and requested a shield-block animation. These are unresolved visual
+findings, not acceptance. Keep the pending test for the corrected candidate.
+
 
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, author review pending)
