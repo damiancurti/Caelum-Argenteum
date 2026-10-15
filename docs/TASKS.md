@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.14** — 2026-10-15.
+Documentation version: **5.4.15** — 2026-10-15.
+
+## 5.4.15 - Player acceleration component (#260, draft)
+
+Implemented the already approved mass-scaled linear ordinary ramp, preserving
+native velocity/collision handling. Focused evidence: assets/validation_5415.
+CA260-01 is only the ordinary-movement author check, not full #260 acceptance.
+Keep one focused branch/PR based on #253; later #260 work stays on this branch
+and version. No merge/closure. Remaining impulse decisions must wait for return:
+double-tap interval, insufficient Air, already-moving activation, walk/run/crouch,
+diagonal/opposite inputs and air/swim/flight eligibility. #247 consumes that input
+gesture later; its special speed/defenses/afterimages are outside this component.
+#247-252 retain their own unresolved designs; #282 follows the batch. Keep the
+temporary system keep-awake request until return, then release it. No manual
+engine window or new questions while away.
 
 ## 5.4.14 - Resident participation at the protected floor (#253)
 

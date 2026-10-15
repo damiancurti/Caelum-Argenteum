@@ -878,11 +878,9 @@ class CaelumConstants : Object
     // exactamente en el umbral de 35 tics.
     const IMPACT_WALL_REFERENCE_MOVEMENT_PERCENT = 100.0;
 
-    // V4.25.3 — aceleración horizontal exponencial.
-    // alpha produce exactamente 95% de la velocidad disponible tras 3 s
-    // de entrada continua a 35 tics/s: f(n)=1-(1-alpha)^n.
-    const MOVEMENT_ACCELERATION_ALPHA_PER_TIC = 0.0281276240;
-    const MOVEMENT_ACCELERATION_TARGET_SECONDS_95 = 3.0;
+    // #260: tres segundos hasta el máximo por cada 100 kg de cuerpo y carga.
+    const MOVEMENT_ACCELERATION_SECONDS = 3.0;
+    const MOVEMENT_ACCELERATION_REFERENCE_KG = 100.0;
 
     // Separación necesaria para rearmar un choque entre los mismos cuerpos.
     const IMPACT_CONTACT_RELEASE_MARGIN = 2.0;

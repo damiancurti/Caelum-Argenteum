@@ -1,6 +1,36 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.14** — 2026-10-15.
+Documentation version: **5.4.15** — 2026-10-15.
+
+## Player constant acceleration - 5.4.15 / #260 (partial)
+
+Playable characters reach their current steady movement speed with a linear ramp:
+`timeToFullSpeed = 3 seconds * DerivedStats.TotalMass / 100 kg`. TotalMass is the
+existing authoritative body-plus-carried-load aggregate, including equipment and
+the Box contribution once. At fixed mass and target speed, 50/100/200 kg require
+1.5/3/6 simulation seconds. Native input has one initial command-tic startup;
+fractional durations clamp at the next simulation tic. Calendar time is irrelevant.
+
+Existing effective speed, directional/run/crouch input, health, survival, load,
+Air, elemental, shield, reload and thermal modifiers remain authoritative. The
+ramp compensates the native command's own thrust for friction, rather than
+clamping total velocity. This produces linear real movement while preserving
+external impulses, collisions and native stopping. No input or immobilization
+resets progress; ordinary airborne jumps retain the existing frozen progression;
+swimming and native flight continue progressing. A changed total mass changes
+the next increment; it does not rewrite momentum or elapsed time. Direction and
+target-speed changes retain the native response, with no new steering rule.
+NPCs, including the bull's 10 m/s and 10 m/s² charge, do not use this player ramp.
+
+Revision 1 preserves an old saved progress fraction, clamps corrupt out-of-range
+fractions and adds a serialized next-tic increment. No actor class/state changes
+are needed. Native copied-save upgrade, reload and rollback evidence is recorded
+in assets/validation_5415; keep original saves as reversible inputs.
+
+This is the approved acceleration component only. The Air-paid double-tap impulse
+remains unimplemented pending its gesture window, insufficient-Air policy,
+already-moving/stance/diagonal behavior and eligible media. #247's boosted forward
+impulse depends on that remaining component. Do not mark #260 complete or merge.
 
 ## MAP01 resident movement repair - 5.4.14 / #253
 
@@ -2355,9 +2385,10 @@ modifiers and deliberate no-gravity states remain native. World/calendar time,
 map geometry, body dimensions and projectile muzzle-speed data are not rescaled.
 
 Unpenalized steady forward walk/run at Agility 0 is 4/8 m/s, multiplied by Type 2:
-16/32 m/s at 100. Native input and friction remain in control. The existing
-per-tic acceleration envelope `f+=(1-f)*0.028127624` remains; 95% of input after
-three seconds is not a constant-force or constant-power acceleration model.
+16/32 m/s at 100. #260 / 5.4.15 replaces the former exponential envelope with
+constant ordinary acceleration: 3 simulation seconds per 100 kg of body plus
+load to reach 100%. Native input/friction remain in control, with compensation
+limited to the command's own thrust. See the current #260 partial contract above.
 Existing load, health, survival, Air, elemental, shield and reload modifiers remain.
 Foot journeys use steady walking speed: 14.4 km/h at Agility 0 and 57.6 at 100
 before penalties, with the existing 16-hour walking / 8-hour sleeping schedule.

@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.14** — 2026-10-15.
+Documentation version: **5.4.15** — 2026-10-15.
+
+**5.4.15/#260 (partial):** ordinary constant acceleration implemented; double-tap decisions deferred. CA260-01 pending. validation_5415.
 
 **5.4.14/#253:** MAP01 resident movement repaired; CA253-01 pending until return. validation_5414.
 

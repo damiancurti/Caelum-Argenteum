@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.14.** Obtain and update the complete repository, validate
+**Current release: 5.4.15.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.15 starts [#260](https://github.com/damiancurti/Caelum-Argenteum/issues/260):
+ordinary player acceleration now reaches current full speed linearly in 3 seconds
+per 100 kg of body plus carried load. Native stopping and external impulses remain.
+[Evidence](assets/validation_5415/RESULTS.md). This is a **partial draft**: the
+Air-paid double-tap impulse still awaits design decisions. CA260-01 covers only
+ordinary acceleration; author checks/questions wait until return.
 
 5.4.14 fixes [#253](https://github.com/damiancurti/Caelum-Argenteum/issues/253):
 anchored mansion residents recover missing movement bases so they can pursue and

@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.14** — 2026-10-15.
+Documentation version: **5.4.15** — 2026-10-15.
+
+## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
+
+Replaced the exponential player input envelope with the authored 3 s per 100 kg
+body-plus-load ramp. Native friction added a second lag to an input factor alone;
+compensating only the current native command's thrust yields actual linear
+velocity/displacement without overwriting external momentum. Existing target
+speed, movement media, collisions and NPC/bull logic remain unchanged. Revision-1
+migration preserves legacy progress; focused native and copied-save evidence is
+in assets/validation_5415. Failed fixture iterations remain recorded there.
+
+This is a partial delivery of #260. The double-tap impulse is not implemented;
+its unresolved author decisions are deferred during the author's absence. No
+manual acceptance, merge or issue closure is implied. CA260-01 originates here
+and covers only ordinary acceleration. CA246-01 and CA253-01 remain pending.
+
+Delivery evidence: 90 qualified native assertions in eight runs, with seed and
+overlay observation recorded separately. Project validation has zero errors;
+normal packaging contains 16,163 members identical to the frozen runtime. Copied
+5.4.14 upgrade, current reload, direct rollback and return pass with original save
+hashes preserved. The prepared manual fixture waits for the author's return.
 
 ## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
 

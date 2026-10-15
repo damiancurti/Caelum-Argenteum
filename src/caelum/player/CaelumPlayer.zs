@@ -635,6 +635,8 @@ class CaelumPlayer : DoomPlayer
     // V4.25.3 — aceleración y contacto sostenido.
     double MovementAccelerationFactor;
     double MovementAccelerationSeconds;
+    double MovementAccelerationStep;
+    int MovementAccelerationRevision;
     Array<ImpactContactState> ImpactContacts;
     int ImpactContactCountForUI;
     int ImpactDiagnosticCollisionCallbacks;
@@ -8785,9 +8787,22 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void MovePlayer()
     {
-        vector2 before=Vel.XY;
+        vector3 before=Vel;
         Super.MovePlayer();
-        CaelumThermalMotion.PlayerInput(self,before);
+        // Compensa sólo la propulsión nativa de este comando. Sin este término,
+        // el rozamiento añadiría otra demora a la rampa lineal. No se recorta
+        // la velocidad total: choques, empujes y frenado siguen siendo nativos.
+        if (MovementAccelerationStep > 0 && MovementAccelerationFactor > 0
+            && !IsPhysicallyImmobilized()
+            && (player.onground || (bNOGRAVITY && bFLY) || WaterLevel > 0))
+        {
+            double friction, moveFactor;
+            [friction, moveFactor] = GetFriction();
+            if (friction > 0 && friction < 1 && !bNOFRICTION)
+                Vel += (Vel-before) * (friction * MovementAccelerationStep
+                    / ((1-friction) * MovementAccelerationFactor));
+        }
+        CaelumThermalMotion.PlayerInput(self,before.XY);
     }
 
     override void PlayerThink()
@@ -11369,6 +11384,14 @@ class CaelumPlayer : DoomPlayer
 
     void UpdateMovementAcceleration()
     {
+        // La fracción antigua ya expresa progreso, no segundos. Se conserva
+        // al migrar y no se reinterpreta como una velocidad ni un impulso.
+        if (MovementAccelerationRevision < 1)
+        {
+            MovementAccelerationFactor = Clamp(MovementAccelerationFactor, 0.0, 1.0);
+            MovementAccelerationRevision = 1;
+        }
+        MovementAccelerationStep = 0;
         if (player == null || player.playerstate != PST_LIVE)
         {
             MovementAccelerationFactor = 0.0;
@@ -11392,12 +11415,15 @@ class CaelumPlayer : DoomPlayer
         // aire el factor permanecía en cero hasta tocar el fondo del vaso.
         if (!player.onground && !bNOGRAVITY && WaterLevel == 0) { return; }
 
-        MovementAccelerationFactor +=
-            (1.0 - MovementAccelerationFactor)
-            * CaelumConstants.MOVEMENT_ACCELERATION_ALPHA_PER_TIC;
+        if (DerivedStats == null || DerivedStats.TotalMass <= 0) { return; }
+        double previousFactor = MovementAccelerationFactor;
+        double duration = CaelumConstants.MOVEMENT_ACCELERATION_SECONDS
+            * DerivedStats.TotalMass / CaelumConstants.MOVEMENT_ACCELERATION_REFERENCE_KG;
+        MovementAccelerationFactor += 1.0 / (duration * TICRATE);
         MovementAccelerationFactor = Clamp(
             MovementAccelerationFactor, 0.0, 1.0
         );
+        MovementAccelerationStep = MovementAccelerationFactor - previousFactor;
         MovementAccelerationSeconds += 1.0 / TICRATE;
     }
 

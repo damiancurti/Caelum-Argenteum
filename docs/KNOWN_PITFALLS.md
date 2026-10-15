@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-097 - A linear input envelope is not linear native motion
+
+- Status: verified in isolated GZDoom 4.14.2 input tests, #260 / 5.4.15.
+- Symptom: changing ForwardMove/SideMove factors alone leaves an additional
+  native-friction lag; a displayed 100% factor does not prove full movement speed.
+- Cause: each command adds thrust to momentum already reduced by friction.
+- Remedy: retain native movement and compensate only that command's thrust
+  while its ramp rises; do not clamp total velocity or cancel external impulses.
+  With constant friction f and ramp increment d, added thrust is the full-speed
+  command thrust times f*d/(1-f). Skip media without applicable native friction.
+- Evidence: assets/validation_5415, per-tic native input velocity/displacement
+  for 50/100/200 kg, walking/running/lateral/flight/water and copied-save cases.
+  The installed engine's player.zs and g4.14.2 p_mobj.cpp establish the boundary.
+- Limits: constant mass/target/input establishes linear motion. Direction changes,
+  collisions, dynamic modifiers and ordinary airborne control retain native policy.
+  This evidence does not implement or approve the pending double-tap impulse.
+
 ## CA-KP-096 - Early derived-stat queries can erase a spawn default
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #254 / 5.4.3,

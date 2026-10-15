@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.14** — 2026-10-15.
+Documentation version: **5.4.15** — 2026-10-15.
+
+## 5.4.15 - Mass-scaled player acceleration (#260, partial)
+
+The approved ordinary-movement component now reaches full current speed linearly
+in 3 seconds per 100 kg of body plus carried load. Native input/friction tests
+measure real velocity and displacement, not only a progress field. NPC movement
+is unchanged. Evidence: assets/validation_5415. The Air-paid double-tap component
+still needs author decisions and is not implemented; keep this issue/PR a draft.
+CA260-01 covers only the delivered ordinary ramp. Questions/manual checks remain
+deferred while the author is away. #246 and #253 also await author review;
+remaining class/climate issues, then #282, stay separate.
 
 ## 5.4.14 - Mansion residents keep participating (#253)
 
