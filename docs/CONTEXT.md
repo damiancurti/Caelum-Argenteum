@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.11** — 2026-10-15.
 
-**5.4.11/#244:** Instinct consumers implemented; CA244-01 pending. validation_5411.
+**5.4.11/#244:** CA244-01 accepted 2026-10-15. validation_5411.
 
 **5.4.10/#243:** CA243-01 accepted 2026-10-15. validation_5410.
 

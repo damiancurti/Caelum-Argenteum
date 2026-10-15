@@ -8,8 +8,9 @@ Implemented the Explorer's shared class release and four temporary contributions
 at real consumers. Author confirmations cover both attack categories, current-value
 composition and combat/ability Adrenaline gains excluding tutorial/debug reserves.
 Focused native evidence and compatibility helpers live in assets/validation_5411.
-CA244-01 in pending_test.txt awaits author review. Keep this PR stacked on accepted
-#243; remaining class powers and then #282 retain separate scope and delivery.
+CA244-01 passed author review on 2026-10-15; HISTORY and acceptance.json preserve
+the confirmation. PR290 is ready for review, stacked on accepted #243. Remaining
+class powers and then #282 retain separate scope and delivery.
 
 ## 5.4.10 - Battle Cry (#243)
 

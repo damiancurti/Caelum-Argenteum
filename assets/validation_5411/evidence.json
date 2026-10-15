@@ -841,5 +841,5 @@
     "Earlier gain check at full Health allowed zero equals zero; final contract and preview require nonzero gain. Manual final uses 50% Health, no regeneration.",
     "Final author fixture preserves its artificial Anima reserve across F8 weapon recalculation; production code unchanged."
   ],
-  "author_acceptance": "Pending CA244-01; no physical-input, campaign or multiplayer acceptance claimed."
+  "author_acceptance": "CA244-01 passed 2026-10-15; see acceptance.json. No itemized, campaign or multiplayer claim."
 }

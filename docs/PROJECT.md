@@ -10,8 +10,8 @@ Adrenaline earned in combat or from abilities receive the full 3x Empathy factor
 Existing probability/resource caps remain; tutorial/debug reserves do not gain
 the bonus. Duration is the common ten-second base times Empathy. No negative-state
 or survival-drain immunity remains from the superseded design. Native consumers,
-combination and saved-effect evidence: assets/validation_5411. CA244-01 awaits
-author review; this focused patch stacks on accepted #243.
+combination and saved-effect evidence: assets/validation_5411. CA244-01 passed
+author review on 2026-10-15; PR290 stacks on accepted #243.
 
 ## 5.4.10 - Warrior Battle Cry (#243)
 

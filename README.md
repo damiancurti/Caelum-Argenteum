@@ -15,7 +15,7 @@ and critical chance, and earned Adrenaline by three before existing limits.
 Empathy scales the entire factor and duration. Tutorial/development reserves are
 excluded. It uses the shared three-second class preparation and preserves other
 effects when it expires. [Evidence](assets/validation_5411/RESULTS.md).
-CA244-01 awaits author review; this focused PR stacks on accepted #243.
+CA244-01 passed author review on 2026-10-15. PR290 stacks on accepted #243.
 
 5.4.10 implements [#243](https://github.com/damiancurti/Caelum-Argenteum/issues/243):
 Warrior Battle Cry stops every attack by enemies visible within its area when

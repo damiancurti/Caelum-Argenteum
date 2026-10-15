@@ -21,8 +21,13 @@ it is applied once. Explicit reserve grants bypass the bonus. The revisioned
 inventory effect survives native save/load and hub travel without repayment;
 expiry preserves independent Tarot/racial factors. assets/validation_5411 records
 native consumer, combination, lifecycle, compatibility and preview evidence,
-including failed fixture iterations. CA244-01 (origin 5.4.11 / #244) awaits author
-review. No campaign or multiplayer acceptance, merge or closure is inferred.
+including failed fixture iterations. CA244-01 (origin 5.4.11 / #244) passed on
+2026-10-15: the author confirmed "La prueba dio correcto". The offered isolated
+scenario exited normally (0); assets/validation_5411/acceptance.json records exact
+runtime/fixture hashes. This is scenario acceptance, not an itemized claim or
+campaign/multiplayer result. The confirmed pending entry was removed. PR290 is
+ready, stacked on accepted #243; no merge or issue closure. Acceptance does not
+increment the same patch version.
 
 ## 5.4.10 - Battle Cry (#243, 2026-10-15)
 

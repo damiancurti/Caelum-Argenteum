@@ -73,12 +73,16 @@ This does not claim compatibility with every historical version.
 
 ## Author check
 
-CA244-01 remains pending in root pending_test.txt. launch.ps1 opens the isolated
+CA244-01 passed on 2026-10-15: "La prueba dio correcto". The offered run exited
+with code 0; acceptance.json records exact hashes and qualifications. HISTORY
+preserves the result and the confirmed pending entry was removed. PR290 is ready;
+no merge or issue closure. launch.ps1 opens the isolated
 scene: F cast/cancel, F6 reset, F7 combat Adrenaline event, F8 staff/carbine, F9
 controlled incoming hit with real probabilistic evasion. The overlay shows both
 precision values, equipped critical chances, evasion and gain. Fixture settings
 include 100 base precision, fixed base critical/evasion, 10000 Anima, zero Health/
 Anima regeneration, 50% Health, an invulnerable player except during controlled
 hits, and an immortal target. Normal health/load modifiers remain in the values.
-No physical author acceptance is claimed. The direct launcher opens the game;
+The author confirmed the offered scenario; no itemized or campaign/multiplayer
+result is inferred. The direct launcher opens the game;
 the persistent PowerShell window was previously rejected by automatic policy.

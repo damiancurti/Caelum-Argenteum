@@ -38,7 +38,7 @@ retroactive boost is introduced. Saves and supported hub travel retain one effec
 without reapplying payment. Forecast travel rejects this unsupported timed effect.
 The optional copied-save bridge targets 5.4.10 only, cancelling unsupported effects
 and preparations without refund; preserve original saves for reversal.
-CA244-01 is pending; exact isolated evidence is in assets/validation_5411.
+CA244-01 passed author review on 2026-10-15; exact evidence is in assets/validation_5411.
 
 ## Battle Cry - 5.4.10 / #243
 
