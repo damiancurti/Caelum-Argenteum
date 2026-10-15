@@ -370,7 +370,7 @@
       "successful_equipment_changes": 37
     }
   ],
-  "manual_acceptance": "Pending CA259-01; author away.",
+  "manual_acceptance": "CA259-01 passed on 2026-10-14; acceptance.json records exact handoff and confirmation.",
   "preserved_failed_trials": "See RESULTS.md. All original logs/packages remain under build/issue259-*; no production fixes were inferred from fixture failures.",
   "static_validation": {
     "command": "python validate_project.py",

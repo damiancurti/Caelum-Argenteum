@@ -13,8 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 weapon dispersion combines its base category, equipment tier and strict Lucidity
 thresholds, capped at category 7. Player and applicable NPC weapon attacks share
 the rule; book homing and existing attribute/stance modifiers remain.
-Validation and outstanding author checks: [evidence](assets/validation_541/RESULTS.md)
-and [pending_test.txt](pending_test.txt). No ability changes are included.
+CA259-01 passed author acceptance on 2026-10-14. [Evidence](assets/validation_541/RESULTS.md)
+separates native checks from manual acceptance; PR273 is ready for review.
+No ability changes or merge are included.
 
 5.4.0 delivers [#237](https://github.com/damiancurti/Caelum-Argenteum/issues/237):
 the twelve-attribute audit now distinguishes live player/NPC consumers, partial

@@ -3,10 +3,10 @@
 Documentation version: **5.4.1** — 2026-10-14.
 
 **5.4.1 / #259:** weapon dispersion tiers/Lucidity; evidence: assets/validation_541.
-CA259-01 pending. #237 audit: assets/validation_540. Next: #238 shared abilities;
-latest author decisions are recorded in the individual GitHub issues.
+CA259-01 passed 2026-10-14; PR273 ready. #237: validation_540. Next: #238;
+GitHub issues record author decisions.
 **Previous #231-236/#255-258:** accepted, merged and closed. HISTORY owns results;
-their author checks are complete; CA259-01 is the current outstanding check.
+Author checks complete; none pending here.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
