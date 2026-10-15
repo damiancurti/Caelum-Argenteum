@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+**5.4.21/#252:** validation_5421 in progress; author review pending.
 
 **5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 ready.
 
@@ -10,7 +12,7 @@ Documentation version: **5.4.20** — 2026-10-15.
 **5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 ready.
 **5.4.16/#247:** CA247-01 accepted; PR295 ready. Keep-awake released.
 
-**5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
+**5.4.15/#260:** acceleration/double tap accepted (CA260-01/02, 2026-10-15); validation_5415; PR294 ready.
 
 **5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
 
@@ -30,7 +32,7 @@ Documentation version: **5.4.20** — 2026-10-15.
 
 **5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 ready, aa253eed.
-#254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
+#254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
 After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.

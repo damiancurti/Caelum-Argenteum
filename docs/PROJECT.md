@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Local Seal climate and channel presentation (#252)
+
+The authored five-Seal extensions now share the existing local weather/thermal
+authority. Fire/Air/Water use growing cumulative contributions; Earth and released
+Quintessence use a linear power ledger. The exact formulas and boundaries are in
+SYSTEMS. Channeling adds native chasecam and a double-trap-size emblem at the feet.
+Implementation starts at integration/v54-accepted-251-238 (a3b305b6); no unrelated
+issue is included. Focused native validation is in progress in validation_5421;
+author review, final delivery and PR remain pending. No merge/closure is claimed.
+
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)
 

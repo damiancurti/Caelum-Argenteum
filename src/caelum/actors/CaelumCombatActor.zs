@@ -2907,14 +2907,14 @@ class CaelumCombatActor : Actor
     {
         CaelumBolas.FireAttack(self,inflictor,mod);
         if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
-            || CaelumToughnessRules.IsSustained(mod))
+            || mod=='CaelumEarthquake' || CaelumToughnessRules.IsSustained(mod))
         {
             // Los impactos y la presión ya están resueltos; el techo convierte
             // trabajo a HP una sola vez, sin depender de la vida máxima.
             double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
                 preToughnessDamage = damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD ? damage : CaelumCrushingDamage.NativeWork(self);
-            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
+            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight' || mod=='CaelumEarthquake')
                 damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
             if(CaelumToughnessRules.IsSustained(mod))
             {PendingLocalizedImpact=false;PendingLocalizedCriticalHit=false;}

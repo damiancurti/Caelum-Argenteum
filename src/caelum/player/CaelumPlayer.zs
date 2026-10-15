@@ -6168,6 +6168,8 @@ class CaelumPlayer : DoomPlayer
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
         WorldCarbineShotUntil = 0;
+        // La fuente local no debe conservar actores/sectores del mapa anterior.
+        StopSealChannel(true,false);
         if(RacialAbility is "CaelumTelekinesisEffect")CaelumRacialAbilityRules.Deactivate(self);
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
@@ -7724,14 +7726,14 @@ class CaelumPlayer : DoomPlayer
         // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
         if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
-            || CaelumToughnessRules.IsSustained(mod))
+            || mod=='CaelumEarthquake' || CaelumToughnessRules.IsSustained(mod))
         {
             // Techo: trabajo medido; ahogamiento/presión ya llegan resueltos.
             // P_DoCrunch envía source e inflictor nulos.
             double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
                 preToughnessDamage = damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD ? damage : CaelumCrushingDamage.NativeWork(self);
-            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
+            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight' || mod=='CaelumEarthquake')
                 damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
             int healthBeforeDrowning = health;
             double adrenalineRatioBeforeDrowning = 0.0;

@@ -1,6 +1,56 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Seal climate extensions (#252, implementation in progress)
+
+The author-approved extension augments existing User2 Channel effects. It does
+not replace Fire's accepted direct thermal energy, Water lightning, Air tornado,
+Earth poison/penalty, or Quintessence attraction/suspension/expulsion. Exact Seal
+equipment identity, Adrenaline payment and cooldown remain authoritative.
+
+Each completed real simulation second adds the current magical power multiplier
+to a Seal-owned power ledger. Normal attributes and weapon damage do not grow.
+Fire, Air and Water add this ledger to their environmental total each second:
+at constant power P, total is P*n*(n+1)/2 after n seconds. Base units are +1 C,
++2 km/h and +3 relative-humidity percentage points respectively. Humidity caps
+at 100%. Intelligence 25 gives P=1.7: Fire totals +1.7/+5.1/+10.2 C at 1/2/3 s.
+Overlapping environmental changes add. The current radius and clear paths through
+walls/floors bound their effect; they disappear when channeling ends. Wind keeps
+the ambient direction, using a saved random direction in calm conditions.
+Local weather and per-body thermal sampling share this overlay; regional weather,
+water/ground temperature and existing heat already exchanged are not rewritten.
+
+Earth uses the power ledger directly: each one-second damage pulse is accumulated
+power times the receiver's physical mass in kg, with linear distance falloff from
+100% at the center to zero at the radius. Continuous outward force uses 1000 N
+times that ledger and the same falloff, converted through the shared SI scale.
+For P=1.7 and 80 kg, pulse damage is 136/272/408 and force 1700/3400/5100 N after
+1/2/3 s. Ground contact and an unobstructed path are required. Native visual quake
+intensity is the ledger times base 1; native quake damage/thrust are disabled.
+
+Quintessence suppresses gravity while channeling. Release snapshots bodies inside
+the radius and applies normal gravity times the power ledger for one real second:
+x1.7/x3.4/x5.1 after 1/2/3 s at Intelligence 25. Natural and magical flight remain.
+Overlapping aftereffects retain the strongest multiplier and longest remaining
+duration. Earth and gravity affect all eligible bodies except their caster,
+including allies, neutrals and movable objects; fixed infrastructure is protected.
+
+Earth damage ignores armor and retains Toughness. Quintessence uses at least
+the initial magical power, including releases before one second. Save migration,
+native geometry/stacking/lifecycle tests and author acceptance are not yet complete.
+Calendar catch-up never creates extra pulses, resource charges or force.
+
+Channeling enables native chasecam and displays the matching Seal flat at the
+caster's feet, exactly twice the pressure-trap size. Ending, interruption or
+departure removes the local mark and restores the prior camera mode. These
+cosmetics do not become collision bodies, targets or sources of weather.
+Leaving a map stops its Channel without a cross-map release attack; local
+gravity ownership is restored. The additive revision-1 ledger in older saves
+starts empty without replaying old pulses or resetting the existing pulse phase.
+The derived thermal overlay has its own revision and never resets body reserves.
+
 
 ## Arcane Cloud implementation decisions (#251, in progress)
 
@@ -7950,7 +8000,8 @@ ca_debug_fool_report retains explicit query of requirements, Box,
 menus/channel/conversation and proximity/visibility, without mutating the state.
 
 The channeling selects fighters, corpses and projectiles, excluding Inventory and
-CaelumMovableProp. Trees, resource nodes and stations can be SHOOTABLE due to their
+CaelumMovableProp, except movable objects explicitly added to Earth and
+Quintessence by #252. Trees, resource nodes and stations can be SHOOTABLE due to their
 interactions, but they are not targets of the seal: they are not attracted, rotated,
 ejected or added to captured mass. The formulas of force, radius, mass, elemental
 effects, drain and cooldown are preserved for combat.

@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.20.** Obtain and update the complete repository, validate
+**Current release: 5.4.21.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
+local accumulating Seal climate, grounded earthquake force/damage, temporary
+Quintessence gravity, and a third-person channel view with the Seal at the feet.
+Native validation is in progress; author acceptance remains pending. Current
+evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
 reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal

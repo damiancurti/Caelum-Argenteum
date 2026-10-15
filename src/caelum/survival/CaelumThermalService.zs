@@ -44,6 +44,7 @@ class CaelumThermalService : Object play
         if(npc!=null)CaelumThermalRuntime.NPCStep(npc,true);
         let thermal=CaelumThermalBody.Get(body,true);
         if(thermal==null || body.health<=0)return;
+        CaelumSealClimate.ApplyThermal(body,thermal);
         CaelumThermalBody.Refresh(body,thermal);
         if(thermal.Inertia<=0)return;
         thermal.Exposure+=joules/thermal.Inertia;
@@ -94,6 +95,7 @@ class CaelumThermalService : Object play
     {
         let thermal=CaelumThermalBody.Get(body,true);
         if(thermal==null || body.health<=0)return;
+        CaelumSealClimate.ApplyThermal(body,thermal);
         CaelumThermalBody.Refresh(body,thermal);
         if(thermal.Inertia<=0)return;
         if(thermal.Coverage[0]+thermal.Coverage[1]+thermal.Coverage[2]+thermal.Coverage[3]<=0)

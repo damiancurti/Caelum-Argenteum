@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Seal extensions (#252, native validation in progress)
+
+Branch feat/issue252-seal-climate-extensions targets integration/v54-accepted-251-238.
+All requested formulas and the chasecam/ground-emblem addition are confirmed.
+Focused native formula, geometry, defense, flight and presentation probes pass;
+save/load, travel, performance, final packaging and author review remain pending.
+Keep #237's completion audit and later #282 separate. Shared #238 completion is
+already delivered as aa253eed / PR280; it is not pending #252 gameplay work.
+
 
 ## 5.4.20 - Arcane Cloud (#251, accepted)
 

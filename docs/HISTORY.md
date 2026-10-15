@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, in progress)
+
+The author confirmed growing Fire/Air/Water contributions, then explicitly kept
+Earth and Quintessence linear: at Intelligence 25, Earth pulse damage on 80 kg is
+136/272/408 and force 1700/3400/5100 N; released gravity is x1.7/x3.4/x5.1 for one
+second. Early release uses at least initial power. Earth ignores armor, retains
+Toughness, affects grounded visible bodies except the caster, and protects fixed
+infrastructure. Overlapping weather adds; gravity retains strongest/longest.
+The author additionally requested chasecam during channeling and the Seal image
+at the feet at least twice the trap size; the implementation chooses exactly x2.
+
+Canonical rules, compatible additive ledgers and isolated tests are implemented;
+validation_5421 records native evidence and unresolved delivery checks. Author
+acceptance is pending, distinct from native checks. No merge or closure occurred.
+
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)
 

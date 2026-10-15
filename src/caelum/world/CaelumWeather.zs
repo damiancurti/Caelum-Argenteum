@@ -280,7 +280,8 @@ class CaelumWeatherState : Inventory
         bool sampleChanged=changed || weather.SampleDate!=serial || weather.SampleMinute!=minute;
         bool positionChanged=changed || weather.SamplePosition!=user.Pos
             || level.maptime-weather.GeometryCheckedTic>=TICRATE || weather.GeometryCheckedTic>level.maptime;
-        if(!sampleChanged && !positionChanged)return;
+        // La base meteorológica/geometría conserva su caché; sólo la proyección
+        // barata se recompone para no acumular ni retener un sello ya apagado.
         if(weather.Current==null)weather.Current=new("CaelumWeatherSample");
         if(weather.Outside==null)weather.Outside=new("CaelumWeatherSample");
         if(sampleChanged)
@@ -296,6 +297,7 @@ class CaelumWeatherState : Inventory
         }
         weather.Current.ApplyShelter(weather.Outside,weather.Shelter,profile);
         if(weather.WindSheltered){weather.Current.WindSpeedKmh=0;weather.Current.WindFromDegrees=0;}
+        CaelumSealClimate.ApplyWeather(user,weather.Current);
         weather.SourceMap=level.MapName;weather.LocationId=location;weather.Profile=profile;weather.Region=region;
         weather.SampleDate=serial;weather.SampleMinute=minute;weather.Revision=CaelumWeatherRules.REVISION;
     }

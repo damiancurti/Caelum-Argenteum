@@ -9,6 +9,37 @@ class CaelumChannelEffect : Actor
     double EffectRadius;
     double PulseAccumulator;
     double TrappedMass;
+    int ClimateRevision;
+    double InitialClimatePower,ClimatePower,ClimateTotal,CalmWindDirection;
+    transient CaelumSealPath ClimatePath;
+
+    void EnsureClimateState()
+    {
+        if(ClimateRevision>=CaelumSealClimateData.REVISION)return;
+        // Los guardados anteriores empiezan el acumulador en cero sin cobrar
+        // de nuevo ni repetir pulsos anteriores. La fase existente se conserva.
+        InitialClimatePower=CurrentClimatePower();ClimatePower=ClimateTotal=0;
+        CalmWindDirection=Random[CaelumSealClimateWind](0,359);
+        ClimateRevision=CaelumSealClimateData.REVISION;
+    }
+
+    double CurrentClimatePower()
+    {return ChannelOwner!=null && ChannelOwner.DerivedStats!=null
+        ? ChannelOwner.DerivedStats.MagicalPowerMultiplier : 1.0;}
+
+    void ClimatePulse()
+    {
+        EnsureClimateState();ClimatePower+=CurrentClimatePower();ClimateTotal+=ClimatePower;
+        if(SealType==CaelumConstants.SEAL_EARTH)
+        {
+            double intensity=ClimatePower*CaelumSealClimateData.QUAKE_INTENSITY;
+            A_QuakeEx(intensity,intensity,intensity,TICRATE,0,EffectRadius,"",
+                QF_SHAKEONLY|QF_GROUNDONLY,1,1,1,EffectRadius,0,0,0,0,0,0);
+            let it=ThinkerIterator.Create("Actor");Actor body;
+            while((body=Actor(it.Next()))!=null)
+                if(CaelumSealClimate.EarthTarget(self,body))CaelumSealClimate.DamageEarth(self,body);
+        }
+    }
     Array<Actor> GravityTargets;
     Array<int> GravityOriginalFlags;
 
@@ -35,13 +66,15 @@ class CaelumChannelEffect : Actor
         EffectRadius = Max(1.0, radius);
         PulseAccumulator = 0.0;
         TrappedMass = 0.0;
+        EnsureClimateState();
     }
 
     bool IsAuthorizedTarget(Actor candidate)
     {
         if (candidate == null || candidate == self || candidate == ChannelOwner
-            || Inventory(candidate) != null
-            || CaelumMovableProp(candidate) != null) return false;
+            || Inventory(candidate) != null) return false;
+        if(CaelumMovableProp(candidate)!=null)
+            return SealType==CaelumConstants.SEAL_QUINTESSENCE && CaelumSealClimate.Movable(candidate);
         // SHOOTABLE también permite recolectar recursos e interactuar con
         // estaciones. Esa marca no convierte la infraestructura en combatiente.
         return candidate.bMISSILE || candidate.bSHOOTABLE || candidate.bCORPSE
@@ -249,6 +282,8 @@ class CaelumChannelEffect : Actor
         while ((entry = iterator.Next()) != null)
         {
             Actor candidate = Actor(entry);
+            if(SealType==CaelumConstants.SEAL_EARTH && CaelumSealClimate.EarthTarget(self,candidate))
+                CaelumSealClimate.PushEarth(self,candidate);
             if (!IsAuthorizedTarget(candidate)
                 || !IsInside(candidate, Pos, EffectRadius)) continue;
             affectedCount++;
@@ -267,7 +302,8 @@ class CaelumChannelEffect : Actor
             }
             else if (SealType == CaelumConstants.SEAL_QUINTESSENCE)
             {
-                SuppressTargetGravity(candidate);
+                let gravity=CaelumSealGravity.Get(candidate,true);
+                if(gravity!=null)gravity.Hold(self);
                 TrappedMass += GetActorMass(candidate);
                 ApplyRadialVelocity(candidate, massAdjustedSpeed, true);
             }
@@ -278,6 +314,7 @@ class CaelumChannelEffect : Actor
 
     void ApplyOneSecondPulse()
     {
+        ClimatePulse();
         if (SealType == CaelumConstants.SEAL_WATER)
         {
             ApplyLightningPulse();
@@ -302,8 +339,7 @@ class CaelumChannelEffect : Actor
     void ReleaseChannel(bool releaseAttack=true)
     {
         RestoreTargetGravity();
-        if (releaseAttack && SealType == CaelumConstants.SEAL_QUINTESSENCE
-            && TrappedMass > 0.0)
+        if (releaseAttack && SealType == CaelumConstants.SEAL_QUINTESSENCE)
         {
             ThinkerIterator iterator = ThinkerIterator.Create("Actor");
             Thinker entry;
@@ -312,6 +348,9 @@ class CaelumChannelEffect : Actor
                 Actor candidate = Actor(entry);
                 if (!IsAuthorizedTarget(candidate)
                     || !IsInside(candidate, Pos, EffectRadius)) continue;
+                EnsureClimateState();
+                let gravity=CaelumSealGravity.Get(candidate,true);
+                if(gravity!=null)gravity.Amplify(Max(InitialClimatePower,ClimatePower));
                 double speed =
                     CaelumConstants.SEAL_QUINTESSENCE_BASE_EXPULSION_SPEED
                     * TrappedMass / GetActorMass(candidate);
@@ -319,6 +358,14 @@ class CaelumChannelEffect : Actor
             }
         }
         Destroy();
+    }
+
+    override void OnDestroy()
+    {
+        RestoreTargetGravity();
+        let it=ThinkerIterator.Create("CaelumSealGravity");CaelumSealGravity binding;
+        while((binding=CaelumSealGravity(it.Next()))!=null)binding.Release(self);
+        Super.OnDestroy();
     }
 
     override void Tick()
@@ -334,6 +381,7 @@ class CaelumChannelEffect : Actor
             Destroy();
             return;
         }
+        EnsureClimateState();
         // El tipo se toma del objeto exacto que inició la canalización. Así
         // ningún actor de efecto anterior puede conservar el tipo Fuego.
         SealType = Clamp(ChannelSeal.ItemType, 0,
