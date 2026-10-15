@@ -59,7 +59,7 @@ and inventory-bar eligibility against actual ownership. `InvSel`/`InvFirst`
 are existing native saved pointers; no save schema is added. Derived flags are
 reconciled idempotently each tick, including older saves containing a boxed
 selection or a previously hidden water container. Focused evidence and limits:
-`assets/validation_5422/RESULTS.md`. Author check CA282-01 remains pending.
+`assets/validation_5422/RESULTS.md`. Author check CA282-01 passed on 2026-10-15.
 
 ## 5.4.21 - Seal climate extensions (#252, accepted)
 

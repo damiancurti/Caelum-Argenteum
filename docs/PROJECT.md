@@ -12,7 +12,7 @@ sprite/model rendering samples. These are agent tests, not author acceptance.
 
 The issue remains in progress: art/hidden-view review, timed transition integration
 and polish, unsupported equipment coverage and broader combat performance
-are explicitly outstanding. #282 remains awaiting CA282-01; revised #284 keeps
+are explicitly outstanding. #282 is author-accepted; revised #284 keeps
 its separate scope/branch. The author returned and the temporary keep-awake was
 released. The author requires interchangeable weapon, shield, armor, hair and
 face parts, starting with Domingo and existing choices. This fixed-surface
@@ -25,8 +25,8 @@ runtime is an intermediate prototype; modular integration remains in #283.
 The author selected a carousel at the bottom center, with name/count above the
 selected icon and smaller neighboring icons. It reuses native inventory input,
 owned artwork, existing consumption and water-container identity. No inventory
-schema or item balance changes. Evidence: validation_5422; CA282-01 is pending
-while the author is away. Keep #283's editable Domingo model pilot and #284's
+schema or item balance changes. Evidence: validation_5422; CA282-01 passed
+author review on 2026-10-15; PR300 is ready. Keep #283's editable Domingo model pilot and #284's
 revised combat/personality/rock work in separate branches, commits and PRs.
 
 ## 5.4.21 - Local Seal climate and channel presentation (#252)

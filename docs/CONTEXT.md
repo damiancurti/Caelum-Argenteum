@@ -4,7 +4,7 @@ Documentation version: **5.4.23** — 2026-10-15.
 
 **5.4.23/#283:** Domingo MD3 draft; validation_5423. CA283-01 pending;
 interchangeable parts required, timed animations/polish open; opt-in only.
-**5.4.22/#282:** PR300 draft; 47 native assertions/four views; CA282-01 pending.
+**5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
 Author returned; keep-awake released. #284 next:
 unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
 

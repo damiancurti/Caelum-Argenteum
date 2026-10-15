@@ -21,7 +21,7 @@ the bottom-center quick-use selector displays the selected item's name and
 quantity above its icon, with smaller previous/next icons alongside it. Native
 inventory commands retain remapping and existing use rules; individual water
 containers show their remaining liters. Static/build checks and 47 assertions
-across 11 final native runs pass; CA282-01 awaits author review. Evidence:
+across 11 final native runs pass; CA282-01 passed author review on 2026-10-15; PR300 is ready. Evidence:
 [validation_5422](assets/validation_5422/RESULTS.md), [pending_test.txt](pending_test.txt).
 
 5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
@@ -34,7 +34,7 @@ assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15
 PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 #237's attribute audit now reflects the accepted class/racial consumers; its
-160 native checks pass on this baseline. PR272 is ready. #282 awaits author review in PR300; #283 is the opt-in draft
+160 native checks pass on this baseline. PR272 is ready. #282 is accepted in PR300; #283 is the opt-in draft
 described above. Separately scoped #284 adds Mandinga fire damage, demon
 personalities and a cosmetic 3D Zupay rock. The author withdrew
 the proposed Mandinga attribute increase; existing base attributes are preserved.

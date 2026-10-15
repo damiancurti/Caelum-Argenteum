@@ -27,15 +27,14 @@ native blocking. CA283-01 remains open; the author has not accepted the art.
 
 
 
-## 5.4.22 - Quick-use HUD (#282, author review pending)
+## 5.4.22 - Quick-use HUD (#282, accepted)
 
 Branch feat/issue282-quick-use-hud: native selection/use, bottom-center carousel,
 name/count above the selected icon, smaller neighboring icons, independent
 water-container previews, Box exclusion and idempotent old-save reconciliation.
 Static/build, 47 assertions in 11 final native runs, and four rendered views pass
-(validation_5422). CA282-01 remains pending; the
-author is away, so defer questions and live manual tests until their return.
-Temporary keep-awake is bounded to 12 hours and must be released on return.
+(validation_5422). CA282-01 passed author review on 2026-10-15; PR300 is ready.
+The author returned and temporary keep-awake was released without changing the power plan.
 Next: #283's editable Domingo 3D pilot, then revised #284. No batch merges or
 closures have been authorized.
 

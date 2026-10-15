@@ -21,7 +21,7 @@ and fallback. A matched 1/64 render-proxy comparison records frame intervals
 separately from native thinker profiling; it is not a large-combat benchmark.
 Detailed fingerprints, results, failed iterations and limits live in
 assets/validation_5423/RESULTS.md and evidence.json. No author check is marked
-passed. CA282-01 remains pending and CA283-01 is a limited prototype review.
+passed for #283. CA282-01 is accepted separately; CA283-01 remains a limited prototype review.
 
 The isolated visual fixture initially read past a semicolon-free EventHandlers
 line, producing an unknown-handler fatal dialog; bounded parsing fixed that
@@ -47,7 +47,7 @@ findings, not acceptance. Keep the pending test for the corrected candidate.
 
 
 
-## 5.4.22 - Quick-use selector (#282, 2026-10-15, author review pending)
+## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
 
 The author requested the gameplay selector at the bottom center, with each water
 container represented separately and remaining water shown. Subsequent visual
@@ -59,8 +59,12 @@ through Drink rather than destroying its container. No save schema was added.
 Static/build validation passes, with 47 assertions in 11 final native runs,
 four rendered views, a real 5.4.21 save seed and 16,180 runtime members matching
 source. Evidence and its limitations: assets/validation_5422/RESULTS.md.
-CA282-01 (origin 5.4.22 / #282) is pending. The author left for several hours and
-requested temporary keep-awake, postponing all questions and manual tests.
+CA282-01 (origin 5.4.22 / #282) passed author review on 2026-10-15. The author
+confirmed "La prueba que me diste dio bien" after the isolated selector trial
+(build/issue282-final-06, author-return-01, unchanged tested runtime). No
+qualifications were reported. Its entry was removed from pending_test.txt.
+Temporary keep-awake was released on return, preserving the Balanced power plan.
+PR300 is ready for review; no merge or issue closure is implied.
 
 The queued #284 was revised before implementation: remove the Mandinga attribute
 increase, preserve its physical machete hit, and add magical Fire damage with

@@ -294,7 +294,7 @@
     }
   },
   "static_errors": 0,
-  "context_words": 2498,
+  "context_words": 2496,
   "normal_build_sha256": "a20f538f9deb601fc8bd6bb425a615ba4220a8434a517e2afee3c539f3b30bd6",
   "limitations": [
     "No author acceptance or default replacement.",
