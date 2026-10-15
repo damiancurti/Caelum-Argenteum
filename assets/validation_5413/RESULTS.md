@@ -4,9 +4,10 @@ This focused patch stacks on accepted #245 (720acb5b). Mage User4 replaces the
 superseded Brainstorm discounts with the author's traveling fire orb. It reuses
 the accepted paid class lifecycle and existing elemental projectile, defense,
 burning and visual consumers. No new art or development IWAD is distributed.
-CA246-01 remains pending; the author requested that questions and manual tests
-wait until their return. The keep-awake helper is temporary and must be released
-when requested or when the author returns.
+CA246-01 passed author review on 2026-10-15: "La prueba dio bien". The offered
+isolated scenario is accepted without an additional itemized or campaign claim.
+See acceptance.json for the interactive run and hashes. The temporary keep-awake
+request was released when the author returned; no merge or closure is implied.
 
 ## Approved contract
 

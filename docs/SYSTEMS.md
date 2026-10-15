@@ -99,8 +99,8 @@ Save/load must not duplicate payment, direct hits, periodic emission or final bu
 Hub projectiles remain in their original map under native inactive-map freezing.
 The optional 5.4.12 bridge operates on copied saves, removes unsupported projectiles
 and cancels Mage preparation without refund; the preserved original is reversible.
-Focused evidence: assets/validation_5413. CA246-01 is pending; manual tests and
-questions are deferred while the author is away. No multiplayer acceptance is claimed.
+Focused evidence: assets/validation_5413. CA246-01 passed author review on
+2026-10-15. No broader campaign or multiplayer acceptance is claimed.
 
 ## Miracle - 5.4.12 / #245
 

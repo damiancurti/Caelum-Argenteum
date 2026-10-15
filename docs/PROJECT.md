@@ -19,8 +19,8 @@ The native assisted encounter reproduced the player's protected 1-HP floor and
 stationary eligible residents. Their stored movement bases were zero; the repair
 recovers missing authored bases on fresh spawn and old saves, preserving positive
 custom values and finite resources. It is limited to anchored MAP01 residents.
-Evidence: assets/validation_5414. CA253-01 awaits author review; #246/CA246-01 also
-remains pending. This focused patch stacks on #246 without claiming its acceptance.
+Evidence: assets/validation_5414. CA253-01 awaits author review; #246/CA246-01
+passed on 2026-10-15. This focused patch stacks on #246 without claiming its acceptance.
 Remaining class/climate/impulse design questions wait until the author's return;
 #282 remains after the batch.
 
@@ -31,7 +31,7 @@ It crosses characters, burns visible nearby enemies, emits one homing shot each
 second and ends with a native radial explosion plus 25 spherical straight shots.
 The approved reference, social scaling, enemy-only policy and shared paid casting
 are documented in SYSTEMS. This patch stacks on accepted #245. Focused automated
-evidence is in assets/validation_5413; CA246-01 awaits author review after return.
+evidence is in assets/validation_5413; CA246-01 passed author review on 2026-10-15.
 Remaining abilities and then #282 retain their separate scope and delivery.
 
 ## 5.4.12 - Priest Miracle (#245)
