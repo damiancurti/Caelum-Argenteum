@@ -588,6 +588,9 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     RacialBreath:
         MDBR ABCD 3;
         Loop;
+    RestLying:
+        SLMD A -1;
+        Stop;
     }
 }
 
@@ -811,6 +814,9 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     RacialBreath:
         ZUBR ABCD 3;
         Loop;
+    RestLying:
+        SLZU A -1;
+        Stop;
     }
 }
 

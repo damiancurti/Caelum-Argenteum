@@ -101,6 +101,18 @@ Hunter's Instinct uses the target's rear 180-degree half at impact, based on bot
 Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
 Sleep poses: the rat and Bull lie naturally as animals; Mandinga and Zupay lie supine, like the player. New owned artwork is being registered and is not yet author accepted.
 
+Same-version visual follow-up: added eight original living sleep views to rat,
+Bull, Mandinga and Zupay, with appended RestLying states and unchanged gameplay
+dimensions. Source prompts/references/rejected candidates and deterministic
+registration are preserved. Native checks pass 36 assertions for the four bodies
+and four reload assertions; actual User4 is also checked in the handoff fixture.
+Development failures were confined to the fixture: one invalid field, assumptions
+that waking always means the literal Spawn state (rat pain and Zupay zero-tic
+Spawn resolution), and an absolute -loadgame path interpreted relative to savedir.
+The corrected tests capture the actual idle state and retain the normal waking
+pain reaction. Exact evidence and limitations: validation_544/sleep_pose_evidence.json.
+CA238-02 remains pending; no visual acceptance, issue completion or merge is claimed.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

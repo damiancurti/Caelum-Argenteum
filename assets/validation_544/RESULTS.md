@@ -16,7 +16,7 @@ DamageFactor and integer rounding. The third enemy hit still receives the factor
 zero-damage impacts do not count, and DOT applications count separately. Allies
 and neutrals retain one-hit wake without the multiplier. Expiry and reapplication
 use the author-confirmed rules. Existing RestLying poses restore safely without
-replaying actions. Missing living poses for rat/Bull/Mandinga/Zupay remain pending.
+replaying actions. The later visual follow-up below fills the four missing bodies.
 
 Lifecycle-tested production SHA-256 (before the separate icon reduction below):
 `346f3bd66b9ef6369f40c3e62fb3a925ac2724193c58321b770ba8f54548a899`.
@@ -216,3 +216,24 @@ Intelligence. Scale whole authored multipliers (x3 with x2 power becomes x6),
 never the three-hit Sleep count. Require the full modified cost before starting,
 then debit progressively through the fixed three-second preparation. These are
 contract updates only; no new lifecycle/effect test or manual acceptance is claimed.
+
+## Living creature poses (same-version visual follow-up)
+
+Eight views each cover naturally lying rat/Bull and supine Mandinga/Zupay. Only
+new art/registrations and appended actor states change production. Existing
+collision, attributes, death art and earlier state indices are retained. Native
+captures inspect all 32 views. Registration repeats byte-for-byte with Pillow
+11.3.0; sources, prompts and hashes are in assets/source/art/sleep_544.
+
+Final runtime: 15a025e20e3f06186c025e0c39d7c4ff8fd179412b850c34ea052efd70f5a59c.
+issue238-sleep/poses-05 passes 36 checks: living poses, unchanged collision,
+three final-x3 HP hits and waking/expiry in all four actors. load-03 passes four
+saved-pose/two-hit checks. sleep_pose_evidence.json records exact fixture hashes,
+native User4 handoff checks, commands and preceding fixture failures. A contact
+sheet is a locator; full captures remain under the identified build directory.
+
+This visual follow-up does not rerun unrelated class/HUD matrices. Earlier
+casting contracts retain their documented runtime hashes. No paid-state rollback
+or full multiplayer claim is added. A previously saved null Sleep lying pointer
+keeps its pre-art presentation until expiry/reapplication; the effect is retained.
+CA238-02 is the separate actionable author visual check.

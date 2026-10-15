@@ -278,5 +278,8 @@ class CaelumBull : CaelumCombatActor
     BullChargeFinish:
         BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
         Goto See;
+    RestLying:
+        SLBU A -1;
+        Stop;
     }
 }

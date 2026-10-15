@@ -23,8 +23,24 @@ regenerate byte-for-byte; hashes and original provenance are in
 assets/validation_544/palms.json. Presentation timing, pivots and framing live in
 CaelumClassCastLayout. Native captures exposed both the atlas-row defect and
 stale interpolation origins when composed weapons recreate hand overlays; the
-component now supplies its own origins. Artistic/animation acceptance remains
-pending until the full #238 scenario can be handed off after the author's return.
+component now supplies its own origins. The author passed preparation and smaller
+HUD icons in CA238-01 on 2026-10-14; this does not accept the new creature poses.
+
+The built-in image_gen tool painted eight living sleep views per rat, Bull,
+Mandinga and Zupay. Animals lie naturally; the two bipeds lie supine. Source
+art, exact original/revised prompts, references, hashes and rejected candidates
+are preserved under assets/source/art/sleep_544. The first animal atlases repeated
+a rear direction; revised candidates correct it. The first Mandinga atlas was
+rejected for face-down/overlapping views. No wounded death frame is reused.
+
+register_sleep_creatures.py uses Pillow 11.3.0 for connected-silhouette crops,
+alpha cleanup and resampling. Calibration is data in sleep_creatures.json: match
+existing animal side-view length or biped standing height and reuse accepted
+biped sleep foreshortening. Native actor and texture scales are retained. The
+32 PNGs, registration and manifest regenerate byte-for-byte. Runtime art is
+under src/graphics/caelum/sleep_creatures; provenance is packaged in
+licenses/sleep_creatures_544.txt. Eight-angle engine captures verify the native
+direction order, transparency and ground placement; CA238-02 awaits author review.
 
 ## 5.4.3 - Original procedural rat audio (#254)
 

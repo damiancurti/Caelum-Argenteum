@@ -53,9 +53,13 @@ Duration expiry also wakes sleepers. Reapplication resets the enemy count to thr
 uses the new power, and keeps the greater of remaining and new duration. The saved
 Sleep object has schema revision 1, hit count, multiplier and original pose state.
 Existing RestLying poses are held without replaying state actions; wake restores
-the prior state without replaying an attack action. Bodies without an appropriate
-lying pose still freeze in their current frame: rat, Bull, Mandinga and Zupay pose
-coverage remains unfinished, and wounded corpse frames are not substituted.
+the prior state without replaying an attack action. Rat and Bull now use natural
+lying poses; Mandinga and Zupay use supine poses, each with eight views. The states
+are appended after existing states, preserving earlier indices. Collision, height,
+health and existing death artwork are unchanged. The waking hit may trigger the
+ordinary pain reaction after Sleep releases. Existing saves whose active Sleep
+object already stored a null lying-state pointer keep that old presentation until
+expiry/reapplication; no effect counters or timers are reset by this visual patch.
 Old saves with only ForcedSleepTics retain their former one-hit wake behavior until
 expiry/reapplication. Voluntary rest is unchanged. Compatibility evidence and
 limits are in assets/validation_544; author acceptance is separate.

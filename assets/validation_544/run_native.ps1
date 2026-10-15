@@ -5,6 +5,7 @@ param(
     [string]$Fixture = 'probe.pk3',
     [string]$Script = 'probe.cfg',
     [string]$LoadGame = '',
+    [string]$Map = 'MAP02',
     [int]$Width = 1280,
     [int]$Height = 720,
     [int]$HudScale = 0,
@@ -29,7 +30,7 @@ if ($Interactive) {
 }
 $arguments = @('-noautoload','-nomouse','-iwad',"`"$Iwad`"",'-file',"`"$work\$Runtime`"", "`"$work\$Fixture`"",'-config',"`"$config`"",'-savedir',"`"$work`"",'-width',"$Width",'-height',"$Height",'-window','-rngseed','238','-skill','2','+logfile',"`"$work\$Label.txt`"")
 if ($LoadGame) { $arguments += @('-loadgame',"`"$LoadGame`"") }
-else { $arguments += @('+map','MAP02') }
+else { $arguments += @('+map',$Map) }
 $arguments += @('+exec',"`"$work\$Script`"",'+snd_mastervolume','0.05','+i_pauseinbackground','false','+vid_activeinbackground','true','+i_soundinbackground','true')
 if ($Interactive) { $arguments = @($arguments | Where-Object { $_ -ne '-nomouse' }) }
 $record = [ordered]@{label=$Label; started_utc=[DateTime]::UtcNow.ToString('o'); arguments=$arguments; initial_config=$initial; engine_sha256=(Get-FileHash -LiteralPath $Engine).Hash; runtime_sha256=(Get-FileHash -LiteralPath (Join-Path $work $Runtime)).Hash; fixture_sha256=(Get-FileHash -LiteralPath (Join-Path $work $Fixture)).Hash}

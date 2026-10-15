@@ -1,0 +1,11 @@
+{
+  "minimum_body_pixels": 1000,
+  "crop_padding": 3,
+  "calibration": "Animal side-view length matches the existing standing side sprite's opaque bounding width; biped side-view length matches its standing height. Biped azimuth foreshortening reuses the accepted shared sleep registration. Texture scale and Actor.Scale remain those of the standing actor. These are pixel registration values, not collision or balance changes.",
+  "actors": {
+    "rat": {"source":"rat-candidate-v2.png", "sprite":"SLRT", "supine":false, "reference":"src/sprites/caelum/actors/giant_rat/RATGA3.png", "reference_length":127, "texture_scale":1},
+    "bull": {"source":"bull-candidate-v2.png", "sprite":"SLBU", "supine":false, "reference":"src/sprites/caelum/actors/bull/BULLA3.png", "reference_length":65, "texture_scale":0.8},
+    "mandinga": {"source":"mandinga-candidate-v2.png", "sprite":"SLMD", "supine":true, "reference":"src/sprites/caelum/actors/mandinga/MNDGA3.png", "reference_length":227, "texture_scale":1},
+    "zupay": {"source":"zupay-candidate-v1.png", "sprite":"SLZU", "supine":true, "reference":"src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png", "reference_length":373, "texture_scale":1}
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "issue": 238,
+  "version": "5.4.4",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "author_decision": "Animals naturally lying; Mandinga and Zupay supine. Confirmed 2026-10-14.",
+  "tool": "built-in image_gen",
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "front",
+      "front-left",
+      "left",
+      "rear-left",
+      "back",
+      "rear-right",
+      "right",
+      "front-right"
+    ]
+  },
+  "processing": "Deterministic alpha-preserving crop, scale and native texture registration only. Retain original generated atlas and references; no repainting via the extraction utility.",
+  "actors": {
+    "rat": {
+      "references": [
+        "src/sprites/caelum/actors/giant_rat/RATGA1.png",
+        "src/sprites/caelum/actors/giant_rat/RATGA3.png",
+        "src/sprites/caelum/actors/giant_rat/RATGA5.png"
+      ],
+      "pose": "The black giant rat is naturally curled/resting on its belly with its paws comfortably folded beneath or beside its body and its chin supported. Eyes CLOSED, pink ears and a single pink bare tail curled close to its body, shaggy black/dark-brown fur. Same dark rat from the center of each reference, with no extra rats. Front cell looks toward its nose; left-profile cell has its nose pointing LEFT. The animal lies naturally, NOT on its back.",
+      "sprite": "SLRT",
+      "prompt": "Create ONE production game sprite atlas for Caelum Argenteum. Painted, pixel-oriented dark fantasy, matching the provided project-owned character sprites: readable silhouette and matte material shading, NOT glossy modern 3D, cartoon outlines or photography. Actual transparent alpha background, no ground plane, no cast-shadow blob, no text, no grid, no labels, no checkerboard. Exactly four equal columns and two equal rows, eight equal cells, ideally 1536x1024 total. Each cell contains exactly one COMPLETE isolated body including all extremities and tail/horns, generous transparent gutters, no overlap. Same identity, proportions, scale and EXACT SAME resting body pose in all eight cells, seen from eight camera azimuths at the same low elevated gameplay viewpoint (about 25 degrees above ground). Row-major direction order: front, front-left 45 degrees, left profile, rear-left 135 degrees; then rear, rear-right 225 degrees, right profile, front-right 315 degrees. Rotate the whole body in three dimensions; do not paste or flip one standing image. Eight views of one peacefully sleeping living creature, never a wounded corpse. No blood, injuries, death debris or new equipment. Keep the low resting silhouette and consistent belly/hip center in each cell. References establish identity, materials and style only, NOT the standing pose. Use all the usable central character details; ignore any cropped neighboring figures or border fragments in reference images.\n\nThe black giant rat is naturally curled/resting on its belly with its paws comfortably folded beneath or beside its body and its chin supported. Eyes CLOSED, pink ears and a single pink bare tail curled close to its body, shaggy black/dark-brown fur. Same dark rat from the center of each reference, with no extra rats. Front cell looks toward its nose; left-profile cell has its nose pointing LEFT. The animal lies naturally, NOT on its back.",
+      "reference_sha256": {
+        "src/sprites/caelum/actors/giant_rat/RATGA1.png": "95759e44fd6bfa64989a69765ec902acb1e4f000d190e6e6e8a0289b37dab163",
+        "src/sprites/caelum/actors/giant_rat/RATGA3.png": "ff409b65f86cdd4009577d41377f9ef0e8503d6d5b671a6d0d9dbbeeae2e1ddf",
+        "src/sprites/caelum/actors/giant_rat/RATGA5.png": "c81605bbfd9ac9a723df2c28d1c025221d5591d5704b007ba8af3ed3a5596b13"
+      },
+      "status": "Registered in native engine; author visual acceptance pending.",
+      "selected": "rat-candidate-v2.png",
+      "selected_sha256": "c759cb8f2fc735a8b638f9f9e83158e8b36d435d474f2ced14838d55b594e00e",
+      "final_prompt": "Use case: precise-object-edit. Edit the provided transparent game sprite atlas. Keep its 1536x1024 size, four columns and two rows, alpha, material, resting pose, identity and the other SEVEN sprites exactly unchanged. Correct ONLY the rat in row 1 column 4 (top right). It currently points to the right, repeating the sixth view. Replace it with the missing REAR-LEFT 135-degree view: the rat's rounded rump is nearest camera on the RIGHT of that cell; its head and nose recede toward the UPPER LEFT. Show the back and left flank, one natural tail curled near the body, no extra limbs, closed eyes. The neighboring row 1 column 3 nose points left; this fourth view turns that same body 45 degrees farther away while still pointing left. Complete contained rat with transparent gutter. Do not mirror the entire atlas, reorder cells, add text, backdrop, floor or shadow. Actual transparent background.",
+      "references_for_final": [
+        "assets/source/art/sleep_544/rat-candidate-v1.png"
+      ],
+      "final_reference_sha256": {
+        "assets/source/art/sleep_544/rat-candidate-v1.png": "f3786752357c291b896b088d61cdb593c669da31185385c3337fbb0a8b2b7214"
+      },
+      "rejected": "v1 repeated the rear-right direction in the rear-left cell."
+    },
+    "bull": {
+      "references": [
+        "src/sprites/caelum/actors/bull/BULLA1.png",
+        "src/sprites/caelum/actors/bull/BULLA3.png"
+      ],
+      "pose": "The muscular dark reddish-brown bull lies naturally on its belly/chest, all four legs folded comfortably under or alongside it, neck relaxed and muzzle supported close to the ground. Eyes CLOSED, preserve its two pale curved horns, dark muzzle and single tail. Front cell looks toward its muzzle; left-profile cell has its muzzle pointing LEFT. It is asleep, not kneeling upright and not on its back.",
+      "sprite": "SLBU",
+      "prompt": "Create ONE production game sprite atlas for Caelum Argenteum. Painted, pixel-oriented dark fantasy, matching the provided project-owned character sprites: readable silhouette and matte material shading, NOT glossy modern 3D, cartoon outlines or photography. Actual transparent alpha background, no ground plane, no cast-shadow blob, no text, no grid, no labels, no checkerboard. Exactly four equal columns and two equal rows, eight equal cells, ideally 1536x1024 total. Each cell contains exactly one COMPLETE isolated body including all extremities and tail/horns, generous transparent gutters, no overlap. Same identity, proportions, scale and EXACT SAME resting body pose in all eight cells, seen from eight camera azimuths at the same low elevated gameplay viewpoint (about 25 degrees above ground). Row-major direction order: front, front-left 45 degrees, left profile, rear-left 135 degrees; then rear, rear-right 225 degrees, right profile, front-right 315 degrees. Rotate the whole body in three dimensions; do not paste or flip one standing image. Eight views of one peacefully sleeping living creature, never a wounded corpse. No blood, injuries, death debris or new equipment. Keep the low resting silhouette and consistent belly/hip center in each cell. References establish identity, materials and style only, NOT the standing pose. Use all the usable central character details; ignore any cropped neighboring figures or border fragments in reference images.\n\nThe muscular dark reddish-brown bull lies naturally on its belly/chest, all four legs folded comfortably under or alongside it, neck relaxed and muzzle supported close to the ground. Eyes CLOSED, preserve its two pale curved horns, dark muzzle and single tail. Front cell looks toward its muzzle; left-profile cell has its muzzle pointing LEFT. It is asleep, not kneeling upright and not on its back.",
+      "reference_sha256": {
+        "src/sprites/caelum/actors/bull/BULLA1.png": "ac5e26df28bbfb4c49ab87d1edcb4edfdf5724f2fec4dcebed040cae2fe2c15f",
+        "src/sprites/caelum/actors/bull/BULLA3.png": "e1bdc419544dbfbd42077ed9eaef00f9be6c0cccd69586e1876f3a24959dd318"
+      },
+      "status": "Registered in native engine; author visual acceptance pending.",
+      "selected": "bull-candidate-v2.png",
+      "selected_sha256": "189db58aecf8620995b97dc04948c14ef353c140ff2f7d556a95d39ddefba280",
+      "final_prompt": "Use case: precise-object-edit. Edit the provided transparent game sprite atlas. Keep its 1536x1024 size, four columns and two rows, alpha, material, resting pose, identity and the other SEVEN sprites exactly unchanged. Correct ONLY the sleeping bull in row 1 column 4 (top right). It currently points to the right, repeating the sixth view. Replace it with the missing REAR-LEFT 135-degree view: the bull's rounded rump is nearest camera on the RIGHT of that cell; its head and muzzle recede toward the UPPER LEFT. Show the back and left flank, horns in correct perspective, four legs folded under its belly, tail resting near body, eyes closed. The neighboring row 1 column 3 muzzle points left; this fourth view turns that same body 45 degrees farther away while still pointing left. Complete contained bull with transparent gutter. Do not mirror the entire atlas, reorder cells, add text, backdrop, floor or shadow. Actual transparent background.",
+      "references_for_final": [
+        "assets/source/art/sleep_544/bull-candidate-v1.png"
+      ],
+      "final_reference_sha256": {
+        "assets/source/art/sleep_544/bull-candidate-v1.png": "3cbd51823b9fb37ad3ecb936e83ccc645cbf2d3bfb5385fd6ebb3b3b36ed1172"
+      },
+      "rejected": "v1 repeated the rear-right direction in the rear-left cell."
+    },
+    "mandinga": {
+      "references": [
+        "src/sprites/caelum/actors/mandinga/MNDGA1.png",
+        "src/sprites/caelum/actors/mandinga/MNDGA3.png"
+      ],
+      "pose": "The SAME lean horned goat-faced Argentine demon in the black poncho/coat, red neckerchief, wide ornate belt, dark trousers and tall worn boots lies flat SUPINE (on his back), relaxed arms beside his torso and slightly separated legs. Support the head and shoulders on the ground; keep the two horns intact and the face pointing UP, eyes CLOSED. Keep exactly one machete loosely held in his anatomical RIGHT hand beside him; the other hand is relaxed with NO active flame while asleep. Preserve all clothing and belt details. Front cell is viewed from the FOOT end looking along the legs toward his head; rear cell is from the HEAD end; left profile has his feet pointing LEFT and his head to the RIGHT. Never render an upright body rotated sideways.",
+      "sprite": "SLMD",
+      "prompt": "Create ONE production game sprite atlas for Caelum Argenteum. Painted, pixel-oriented dark fantasy, matching the provided project-owned character sprites: readable silhouette and matte material shading, NOT glossy modern 3D, cartoon outlines or photography. Actual transparent alpha background, no ground plane, no cast-shadow blob, no text, no grid, no labels, no checkerboard. Exactly four equal columns and two equal rows, eight equal cells, ideally 1536x1024 total. Each cell contains exactly one COMPLETE isolated body including all extremities and tail/horns, generous transparent gutters, no overlap. Same identity, proportions, scale and EXACT SAME resting body pose in all eight cells, seen from eight camera azimuths at the same low elevated gameplay viewpoint (about 25 degrees above ground). Row-major direction order: front, front-left 45 degrees, left profile, rear-left 135 degrees; then rear, rear-right 225 degrees, right profile, front-right 315 degrees. Rotate the whole body in three dimensions; do not paste or flip one standing image. Eight views of one peacefully sleeping living creature, never a wounded corpse. No blood, injuries, death debris or new equipment. Keep the low resting silhouette and consistent belly/hip center in each cell. References establish identity, materials and style only, NOT the standing pose. Use all the usable central character details; ignore any cropped neighboring figures or border fragments in reference images.\n\nThe SAME lean horned goat-faced Argentine demon in the black poncho/coat, red neckerchief, wide ornate belt, dark trousers and tall worn boots lies flat SUPINE (on his back), relaxed arms beside his torso and slightly separated legs. Support the head and shoulders on the ground; keep the two horns intact and the face pointing UP, eyes CLOSED. Keep exactly one machete loosely held in his anatomical RIGHT hand beside him; the other hand is relaxed with NO active flame while asleep. Preserve all clothing and belt details. Front cell is viewed from the FOOT end looking along the legs toward his head; rear cell is from the HEAD end; left profile has his feet pointing LEFT and his head to the RIGHT. Never render an upright body rotated sideways.",
+      "reference_sha256": {
+        "src/sprites/caelum/actors/mandinga/MNDGA1.png": "a0839934534603172bc9365122dc748997e0df4e30aedec13d1d8e59a292dce3",
+        "src/sprites/caelum/actors/mandinga/MNDGA3.png": "e59bd754c0835c78e1a33df277b7b4acfedf0c1fdad25677b571ca754a35ec87"
+      },
+      "status": "Registered in native engine; author visual acceptance pending.",
+      "selected": "mandinga-candidate-v2.png",
+      "selected_sha256": "dfb34655daafe0e205e7220e417d59a51183c12852a8548988c64c9f0615dd55",
+      "final_prompt": "Create a new transparent game sprite atlas by using image 1 ONLY as the exact supine-pose, camera-angle and cell-layout template, and images 2 and 3 ONLY as the Mandinga character identity, anatomy, outfit and painted pixel-oriented art style. Replace the human in EVERY cell of image 1 with the SAME Mandinga from images 2/3. DO NOT copy the human face, armor, scarf color or costume from image 1. Preserve Mandinga's dark goat-like demon muzzle/face, two horns, black poncho with red trim, red neckerchief, skull/ornate belt, trousers and boots. Exactly one machete remains in his anatomical RIGHT hand, resting on the ground beside him. No active flame. Eyes closed, relaxed peaceful sleep, no blood or injury.\nExactly FOUR columns by TWO rows, eight nonoverlapping equal cells, genuine transparent alpha, no background, labels, text, ground or shadow blobs. Ideally 1536x1024. Keep the same eight camera directions as image 1 in row-major order; the body is ALWAYS flat on its BACK with its chest and face pointing UP in every view. The BACK of his coat cannot face the camera from overhead: never turn him face-down. Each entire silhouette must fit comfortably INSIDE its own cell with at least 12% margin on left/right and ample clear vertical gutters. Each body occupies the LOWER HALF of its cell, as in image 1; do not expand figures vertically into standing-shaped portraits. Match low camera elevation and foreshortening to image 1. Cell 1 views from feet toward head; cell 3 is a horizontal side view with HEAD LEFT and FEET RIGHT; cell 4 has HEAD LOWER LEFT and FEET UPPER RIGHT; cell 5 views from head toward feet; cell 6 has HEAD LOWER RIGHT and FEET UPPER LEFT; cell 7 is a horizontal side view with HEAD RIGHT and FEET LEFT. Same identity, scale, horn shape, right-hand ownership and exact sleeping pose in all eight views. This is newly painted living sleep art, not a rotated standing sprite or corpse.",
+      "references_for_final": [
+        "assets/source/art/sleep_544/supine-pose-reference.png",
+        "src/sprites/caelum/actors/mandinga/MNDGA1.png",
+        "src/sprites/caelum/actors/mandinga/MNDGA3.png"
+      ],
+      "final_reference_sha256": {
+        "assets/source/art/sleep_544/supine-pose-reference.png": "734ac8c1c6e9ce10a0682ec800c4bce51c8c718a8f576d9c084b7fce46207e17",
+        "src/sprites/caelum/actors/mandinga/MNDGA1.png": "a0839934534603172bc9365122dc748997e0df4e30aedec13d1d8e59a292dce3",
+        "src/sprites/caelum/actors/mandinga/MNDGA3.png": "e59bd754c0835c78e1a33df277b7b4acfedf0c1fdad25677b571ca754a35ec87"
+      },
+      "rejected": "v1 included a face-down body, inconsistent orientation and overlapping cells. Original prompt is retained as history, superseded by final_prompt."
+    },
+    "zupay": {
+      "references": [
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA1.png",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png"
+      ],
+      "pose": "The SAME massive muscular dark stone-skinned horned Zupay with orange fissures, huge curved horns, broad clawed hands/feet, gold bracers, skull belt and reddish loincloth lies flat SUPINE (on his back), relaxed arms beside his torso, legs slightly separated. Face points UP, eyes CLOSED; head/shoulders are supported rather than floating. Keep the horns, bracers, skull belt and body silhouette exactly recognizable; no new armor, weapon or jewelry. Front cell is viewed from the FOOT end looking along his legs toward his head; rear cell is from the HEAD end; left profile has his feet pointing LEFT and head to the RIGHT. Never render an upright body rotated sideways.",
+      "sprite": "SLZU",
+      "prompt": "Create ONE production game sprite atlas for Caelum Argenteum. Painted, pixel-oriented dark fantasy, matching the provided project-owned character sprites: readable silhouette and matte material shading, NOT glossy modern 3D, cartoon outlines or photography. Actual transparent alpha background, no ground plane, no cast-shadow blob, no text, no grid, no labels, no checkerboard. Exactly four equal columns and two equal rows, eight equal cells, ideally 1536x1024 total. Each cell contains exactly one COMPLETE isolated body including all extremities and tail/horns, generous transparent gutters, no overlap. Same identity, proportions, scale and EXACT SAME resting body pose in all eight cells, seen from eight camera azimuths at the same low elevated gameplay viewpoint (about 25 degrees above ground). Row-major direction order: front, front-left 45 degrees, left profile, rear-left 135 degrees; then rear, rear-right 225 degrees, right profile, front-right 315 degrees. Rotate the whole body in three dimensions; do not paste or flip one standing image. Eight views of one peacefully sleeping living creature, never a wounded corpse. No blood, injuries, death debris or new equipment. Keep the low resting silhouette and consistent belly/hip center in each cell. References establish identity, materials and style only, NOT the standing pose. Use all the usable central character details; ignore any cropped neighboring figures or border fragments in reference images.\n\nThe SAME massive muscular dark stone-skinned horned Zupay with orange fissures, huge curved horns, broad clawed hands/feet, gold bracers, skull belt and reddish loincloth lies flat SUPINE (on his back), relaxed arms beside his torso, legs slightly separated. Face points UP, eyes CLOSED; head/shoulders are supported rather than floating. Keep the horns, bracers, skull belt and body silhouette exactly recognizable; no new armor, weapon or jewelry. Front cell is viewed from the FOOT end looking along his legs toward his head; rear cell is from the HEAD end; left profile has his feet pointing LEFT and head to the RIGHT. Never render an upright body rotated sideways.",
+      "reference_sha256": {
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA1.png": "f7a6a1020cddfac49a01ed247050a84b76e4894a31986d65798ce2c02e151f06",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png": "bf0b7ebb5bbcf05b4e67209bb5355c609e1105a58a675868e1f5acd5c65fdeb3"
+      },
+      "status": "Registered in native engine; author visual acceptance pending.",
+      "selected": "zupay-candidate-v1.png",
+      "selected_sha256": "6a8b409584277c44fd751d1b36299c20a2e9088d0e2e9726bc4d392859ee6287",
+      "final_prompt": "Create a new transparent game sprite atlas by using image 1 ONLY as the exact supine-pose, camera-angle and cell-layout template, and images 2 and 3 ONLY as the Zupay character identity, anatomy, materials and painted pixel-oriented art style. Replace the human in EVERY cell of image 1 with the SAME massive Zupay demon from images 2/3. DO NOT copy the human face, armor, clothes or equipment from image 1. Preserve Zupay's enormous curved horns, goat-like demonic face, muscular dark stone skin with orange fissures, broad clawed hands and feet, gold bracers, skull belt and reddish loincloth. No weapon, no added armor. Relaxed arms beside his body, relaxed slightly separated legs; eyes closed, living peaceful sleep, no blood, wounds or debris.\nExactly FOUR columns by TWO rows, eight nonoverlapping equal cells, genuine transparent alpha, no background, labels, text, ground or shadow blobs. Ideally 1536x1024. Keep the same eight camera directions as image 1 in row-major order; the body is ALWAYS flat on its BACK with its chest and face pointing UP in every view. The BACK cannot face the camera from overhead: never turn him face-down. Each entire silhouette including horns must fit comfortably INSIDE its own cell with at least 12% margin on left/right and ample clear vertical gutters. Each body occupies the LOWER HALF of its cell, as in image 1; do not expand figures vertically into standing-shaped portraits. Match low camera elevation and foreshortening to image 1. Cell 1 views from feet toward head; cell 3 is a horizontal side view with HEAD LEFT and FEET RIGHT; cell 4 has HEAD LOWER LEFT and FEET UPPER RIGHT; cell 5 views from head toward feet; cell 6 has HEAD LOWER RIGHT and FEET UPPER LEFT; cell 7 is a horizontal side view with HEAD RIGHT and FEET LEFT. Same identity, scale, horn shape, materials and exact sleeping pose in all eight views. This is newly painted living sleep art, not a rotated standing sprite or corpse.",
+      "references_for_final": [
+        "assets/source/art/sleep_544/supine-pose-reference.png",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA1.png",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png"
+      ],
+      "final_reference_sha256": {
+        "assets/source/art/sleep_544/supine-pose-reference.png": "734ac8c1c6e9ce10a0682ec800c4bce51c8c718a8f576d9c084b7fce46207e17",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA1.png": "f7a6a1020cddfac49a01ed247050a84b76e4894a31986d65798ce2c02e151f06",
+        "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png": "bf0b7ebb5bbcf05b4e67209bb5355c609e1105a58a675868e1f5acd5c65fdeb3"
+      }
+    }
+  },
+  "native_biped_order": "1 feet/front; 2 head upper-left; 3 head left; 4 head lower-left; 5 head/rear; 6 head lower-right; 7 head right; 8 head upper-right.",
+  "rights": "Generated for this project with built-in image_gen using project-owned references; repository LICENSE.md applies to the extent rights are owned. No third-party/Doom source art was used in the paintings.",
+  "tool_outputs": {
+    "bull-candidate-v1.png": "3cbd51823b9fb37ad3ecb936e83ccc645cbf2d3bfb5385fd6ebb3b3b36ed1172",
+    "bull-candidate-v2.png": "189db58aecf8620995b97dc04948c14ef353c140ff2f7d556a95d39ddefba280",
+    "mandinga-candidate-v1.png": "f81b6702b55f7ad41c1d4b8e3983f5a9a35032be6b1ec79046ad75979982720d",
+    "mandinga-candidate-v2.png": "dfb34655daafe0e205e7220e417d59a51183c12852a8548988c64c9f0615dd55",
+    "rat-candidate-v1.png": "f3786752357c291b896b088d61cdb593c669da31185385c3337fbb0a8b2b7214",
+    "rat-candidate-v2.png": "c759cb8f2fc735a8b638f9f9e83158e8b36d435d474f2ced14838d55b594e00e",
+    "supine-pose-reference.png": "734ac8c1c6e9ce10a0682ec800c4bce51c8c718a8f576d9c084b7fce46207e17",
+    "zupay-candidate-v1.png": "6a8b409584277c44fd751d1b36299c20a2e9088d0e2e9726bc4d392859ee6287"
+  },
+  "pose_reference": "Technical 4x2 montage of src/sprites/caelum/rest/argento/RSARB1..8.png, used only for camera/body orientation; no character identity transfer.",
+  "pose_reference_sources": {
+    "src/sprites/caelum/rest/argento/RSARB1.png": "50db40b9f66aa522b0510a1e3f8c44cd4b90ce56fece159d50e15d1350aa54f6",
+    "src/sprites/caelum/rest/argento/RSARB2.png": "e0350db788334b7d11868ec203b48afbe3ad28ff3ed5a2f0baf171980e1c63e6",
+    "src/sprites/caelum/rest/argento/RSARB3.png": "b5bcdd6fe6539d264b3734e4993777506f8df2d7ce91384a9fc9534b8d38420e",
+    "src/sprites/caelum/rest/argento/RSARB4.png": "a0c84d1a1b2b9e2a36509f8d27ee9e893f590fda82ec6cd468543074cc3950b1",
+    "src/sprites/caelum/rest/argento/RSARB5.png": "285209ef15807545bd5c2c86f168ef70bab4526a3235935f70e4045d677ab811",
+    "src/sprites/caelum/rest/argento/RSARB6.png": "2d8c6e43e7bef14665cb9a6ecabeeec3da1b3cdfa5832e8c1f86b0cf87fd8e85",
+    "src/sprites/caelum/rest/argento/RSARB7.png": "72971bc7ca20beb050f5841bd0c6456d92f15e1b9f9a39d174422ae1e4229391",
+    "src/sprites/caelum/rest/argento/RSARB8.png": "7bf7748c3098f62e935a70d71d68196c48ffb2c30aacd24d1b8f5085333db38a"
+  }
+}
