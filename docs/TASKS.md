@@ -158,7 +158,7 @@ Keep the remaining racial powers in their own
 branches and PRs. The Telekinesis force/range/control decisions are recorded in
 #241; no Telekinesis movement is implemented by #242.
 
-## 5.4.4 - Shared class preparation (#238, in progress)
+## 5.4.4 - Shared class preparation (#238)
 
 Production User4 now uses the shared 105-tic presentation, fixed-cost progressive
 payment, full-cost admission, cancellation and release-only reuse. Native attack,
@@ -182,9 +182,11 @@ Shared racial lifecycle is integrated: 43 native contract/input checks cover all
 nine weapon families and unarmed; saved object/debit and hub return pass. The
 factory remains empty until each #239-242 consumer is implemented. The existing
 journey forecast refuses active effects it cannot simulate; native hub travel
-retains them. Remaining: full rollback coverage and each consumer's input/effect
-checks. Keep new class effects in #243-251 and movement
-in #260. No merge or closure is inferred from component or author checks.
+retains them. Shared paid-state rollback/re-upgrade checks now pass through the
+pinned optional 5.4.3 schema bridge; PR280 is ready. Each consumer's input/effect
+checks belong to #239-242, new class effects to #243-251 and movement to #260.
+The shared controller is complete within this scope. No merge or closure is
+inferred from component or author checks.
 
 Queue: finish the current 21-issue batch (#237-254 and #259-261), then implement
 #282, with its own branch, scope, tests, commits and linked PR. The author requested

@@ -179,7 +179,7 @@ lifecycle/ownership rules remain pending. No weather system is implemented.
 The author has returned; #251 stays open and PR281 stays draft while the
 remaining gameplay decisions are collected. Evidence: assets/validation_545. The #238 checkpoint remains WIP.
 
-## 5.4.4 - Shared class casting checkpoint (#238, in progress)
+## 5.4.4 - Shared class casting, ability HUD and Sleep (#238)
 
 Production User4 prepares Arcanist Sleep over 105 tics: lower the current weapon,
 raise empty fists, turn/open the palms, then release. The controller freezes the
@@ -198,9 +198,12 @@ have eight living sleep views; their native pose/wake/save checks pass. The auth
 passed CA238-02 on 2026-10-14. The racial controller now serializes an optional
 effect, handles native User1, pays each simulation tic and cleans up on forced
 control, death or exhaustion. Native instrumentation/save/hub checks pass; real
-effects stay in #239-242 and full rollback coverage remains open. CA238-01 is a focused
-preparation/HUD author check, passed on 2026-10-14; full issue acceptance remains pending. Evidence: validation_544.
-The PR remains draft; separate effects retain their own issues and PRs.
+effects stay in #239-242. A pinned 5.4.3 bridge now retains the new serialized
+preparation/payment, racial and Sleep fields as inert data; native re-upgrade
+resumes the paid cast and existing cooldown without duplication. CA238-01
+(preparation/HUD) and CA238-02 (creature poses/wake) passed on 2026-10-14.
+Evidence: validation_544. PR280 is ready for review; separate effects retain their
+own issues and PRs. No additional author test, merge or closure is inferred.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

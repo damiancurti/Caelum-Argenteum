@@ -620,7 +620,7 @@ older saves default inactive and no new resource reserve is introduced.
 
 Native evidence and remaining author checks: assets/validation_546.
 
-## Class preparation and revised Sleep (#238, in progress)
+## Class preparation and revised Sleep (#238)
 
 Production User4 now starts the shared three-second preparation for the implemented
 Arcanist Sleep effect: lower equipped hands/weapon, raise empty closed fists facing
@@ -707,6 +707,19 @@ journey forecasts reuse the existing unsupported-effect restriction: a pending
 class preparation or racial effect must finish/be stopped before that forecast
 can run. Preview rejection neither consumes resources nor silently stops a power.
 This is distinct from native hub transitions, which retain the saved controller.
+
+Same-version compatibility completion (2026-10-15):
+`assets/validation_544/prepare_paid_rollback.py` builds a pinned 5.4.3 runtime
+with inert serialization declarations for #238 and appended visual states/assets.
+It retains partial payment, preparation clocks, racial identity and Sleep data
+without running the new controllers. Existing cooldown/Sleep timers follow old
+gameplay. Use copies with the matching runtime and fixture basenames; retain the
+original save/runtime pair. Return to 5.4.4 to resume preparation from its paid
+ledger. Native repeated re-upgrade verifies one total debit and one release
+cooldown. This bridge is specific to 5.4.3/5.4.4 shared schema, not a general
+downgrade tool or support for later concrete racial/class effects. Raw 5.4.3
+lacks the new classes. Never substitute it for the bridge with a new-state save.
+Evidence and preserved fixture failures: validation_544/rollback_evidence.json.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 

@@ -29,7 +29,7 @@ Documentation version: **5.4.20** — 2026-10-15.
 **5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
 
 **5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
-**5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.
+**5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 ready, aa253eed.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
 After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.
 

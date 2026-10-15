@@ -1438,6 +1438,17 @@ The bridge is specific to this schema/baseline, not a universal downgrade tool.
 Author acceptance: CA130-03 passed on 2026-10-07, without reported exceptions.
 No save or development IWAD is distributed.
 
+Follow-up #238 / 5.4.4, checked 2026-10-15: the same approach retains paid
+preparation, racial objects and Sleep hit/power/pose state in a pinned 5.4.3
+bridge. Preserve appended actor/weapon state indices as well as class/field
+declarations. Old gameplay leaves new controller fields inert while its existing
+Sleep/cooldown timers continue; re-upgrade resumes the retained paid ledger.
+The native round trip passes 59 assertions in seven runs. This is specific to
+the shared #238 schema, excluding later concrete powers. Evidence and commands:
+[paid-state bridge](../assets/validation_544/RESULTS.md). Load-time console scripts
+must wait for loading and save completion; verify the saved artifact before
+launching the next stage, not merely a successful assertion marker.
+
 ## CA-KP-049 - A filtered global iterator per NPC can still become quadratic
 
 Status/evidence: RESOLVED-VERIFIED. First recorded / checked: 2026-10-07.

@@ -98,7 +98,7 @@ flight, rain, lightning or weather behavior is claimed. Earlier shape/material
 iterations are retained as diagnostic evidence; assets/validation_545/RESULTS.md
 records exact tested packages and the limits of this checkpoint.
 
-## 5.4.4 - Class preparation hands (#238, in progress)
+## 5.4.4 - Class preparation hands (#238)
 
 The same-version left class/racial HUD reuses ca_hud_combat_charge.png and
 ca_hud_combat_affected_targets.png from the existing owned HUD icon set. No new
@@ -138,6 +138,9 @@ under src/graphics/caelum/sleep_creatures; provenance is packaged in
 licenses/sleep_creatures_544.txt. Eight-angle engine captures verify the native
 direction order, transparency and ground placement. The author passed CA238-02
 on 2026-10-14; exact scope and frozen build: validation_544/sleep_acceptance.json.
+The optional same-version rollback bridge retains these exact appended states
+and owned graphics so saved pose pointers remain valid. It creates no new art.
+Native schema round-trip evidence: validation_544/rollback_evidence.json.
 
 ## 5.4.3 - Original procedural rat audio (#254)
 
