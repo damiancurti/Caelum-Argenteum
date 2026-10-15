@@ -1,0 +1,23 @@
+Caelum Argenteum - Domingo 3D pilot, issue #283.
+Author/project: Damian Curti / Caelum Argenteum.
+
+Reference: the complete original Domingo sheet supplied by the author on
+2026-10-09, assets/source/art/death_repair_518/domingo-original.png.
+Reference SHA256: 4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3.
+The earlier modular human derivatives are not the identity reference.
+
+The new mesh, UVs, rig and animation actions were authored for this project
+using Blender 4.5.3 LTS and the supplied original views. The texture preserves
+the source RGB; its alpha is made opaque for mesh sampling. No external or
+Doom artwork is incorporated. Reconstructed geometry requires author review.
+
+Editable source and provenance: assets/source/art/domingo_3d_pilot/.
+Deterministic native export: assets/generators/export_domingo_pilot.py.
+The .blend is authoritative editable art input, not generated runtime output.
+The retained authoring transcript records construction history; it is not a
+byte-for-byte Blender-file regeneration contract. MD3/PNG/state export from
+the pinned source and Blender version is checked byte for byte.
+
+Only CaelumDomingoPilotPlayer opts into the model. The ordinary player class,
+original sprite resources, native movement, combat and furniture remain.
+No Blender executable, development IWAD or isolated test PK3 is distributed.
