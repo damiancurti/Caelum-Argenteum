@@ -2,6 +2,14 @@
 // Las subclases aportan sprite, dimensiones, masa y cualquier sonido propio.
 class CaelumMovableProp : Actor
 {
+    CaelumTelekinesisEffect TelekinesisBinding;
+
+    override void Tick()
+    {
+        CaelumTelekinesisRules.Physics(self);
+        Super.Tick();
+    }
+
     // args[0] expresa el requisito como PhysicalPushMultiplier × 100.
     // Ejemplo de formato técnico: 150 representa un multiplicador 1.50.
     // Un valor <= 0 se considera sin configurar y bloquea el movimiento.

@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+## 5.4.7 - Telekinesis (#241, 2026-10-14)
+
+The author approved 1,000 N times magical power, actual inverse mass acceleration,
+1 Anima/kg/s, Seal base range with the existing range modifier, one aimed target
+and second-press release. Further confirmation requires living held targets to
+be unable to act, with automatic release on lost sight or excess range.
+SYSTEMS records these rules and clarifies that the Newton baseline is new;
+the previously documented 1,000 class Anima cost was not a force value.
+
+Implementation retains native gravity/collision and identity, suppresses actor
+actions without a permanent freeze flag, and uses the shared continuous racial
+lifecycle. The effect owns its revisioned target/contact state; map travel
+releases it. Base racial effects now have play scope so concrete effects can
+call native gameplay services. No class/racial balance changes are bundled.
+
+Native evidence covers the 40-check input/payment/force contract, 22 checks on
+actual Mandinga/rat/Bull/rock consumers, active save/reload and hub release.
+Ten additional checks verify native lifting versus gravity. Old-save upgrade,
+return from the rollback copy and a #242 active-save regression pass. Static
+validation has no errors (CONTEXT 2,486 words), and all 16,157 normal-build members
+equal the final tested runtime. The visual preview was inspected in-engine.
+An isolated 5.4.6 bridge preserves Anima and resumes the original target's actions.
+Initial compile failures exposed a missing play scope and a fixture TID assignment;
+the next run exposed case-insensitive field/parameter shadowing, corrected by the
+explicit Caster field. Those failed logs are retained, not counted as passing.
+Exact final hashes, test commands and remaining qualifications are in
+assets/validation_547/RESULTS.md and evidence.json. CA241-01 is pending; no author
+acceptance, merge or issue closure is inferred from native checks.
 
 ## 5.4.6 - Supernatural Breathing (#242, 2026-10-14)
 

@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+**5.4.7/#241:** Telekinesis native-tested; CA241-01 pending. validation_547.
 
 **5.4.6/#242:** Supernatural Breathing accepted; CA242-01 passed 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.

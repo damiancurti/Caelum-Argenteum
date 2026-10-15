@@ -1,6 +1,47 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+## Telekinesis - 5.4.7 / #241
+
+Duende User1 captures one aimed, visible living body or movable scenery object
+within the Seal's base radius (1,280 MU / 40 m), multiplied by the current
+Eloquence-derived AbilityRangePercent. Eligible scenery uses the existing
+CaelumMovableProp contract: configured movable props and movable environment
+rocks. Rooted trees, static infrastructure, owned inventory and visual effects
+are not movable scenery. Living Caelum combatants/players retain their native
+identity; inactive/dormant bodies are not captured. Capturing transfers no ownership.
+
+The captured contact follows the aim at its original distance. One target may
+have one active holder. Held living bodies cannot voluntarily move or attack;
+ongoing breath, charging and player action preparation are interrupted. Native
+external velocity, gravity, water and collision remain active. The effect never
+teleports the target or overrides collision/gravity flags. User1 again releases
+it; loss of sight, excess current range, target death/removal, caster interruption
+or inability to pay the next instant also releases it without a throw impulse.
+Map travel releases the target before departure.
+
+Base consumption is 1 Anima per actual kilogram per second, followed by the
+usual current Anima-cost reduction. Body and carried mass count; virtual shield
+collision inertia does not increase real mass. No flat fee, mass cap, duration
+cap or cooldown applies. Preserve an unaffordable fractional remainder.
+
+Force is 1,000 N times MagicalPowerMultiplier, including its existing Intelligence
+and personality factors. At Intelligence 25 before personality: 1,700 N; a bare
+66 kg Mandinga has acceleration 25.76 m/s² before gravity/friction. Its actual
+carried load reduces that value. This is a newly approved force baseline, not a
+reinterpretation of the 1,000 Anima class cost or old native attack thrust.
+The controller converts F/m to MU/tic² and limits the full velocity change to
+that budget. Braking uses v²=2ad toward the moving contact, with no additional
+authored speed cap. Gravity remains native: insufficient force cannot lift a
+heavy body. Ground friction and collisions can further reduce motion.
+
+The effect has hold schema revision 1 and nullable target bindings. Old saves
+start without this effect; current saves preserve the same body/contact/payment.
+State countdown suspension is local to each NPC tick, so release cannot leave
+a saved permanent freeze. The optional tested 5.4.6 bridge deactivates the new
+effect without refunding resources; preserve original saves before using it.
+Evidence: assets/validation_547. CA241-01 remains a separate author check.
 
 ## Supernatural Breathing - 5.4.6 / #242
 

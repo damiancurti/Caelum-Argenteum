@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `4fa311a2924e3fd640c880445532eb0bab2d5ff5a20e8f843ba144a3d2812a79`. Locations include every definition; the last one per language wins.
+SHA-256: `0c26295aabdb65ee079860b64ba8fb0a451669bcc47d30fcfac6fe2b460d75bc`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -42,7 +42,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 42 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 43 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
@@ -141,6 +141,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
 | CA_TAROT | 66 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
+| CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |
 | CA_THERMAL | 16 | CA_THERMAL_ATTACK | CA_THERMAL_WET |
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |

@@ -18,6 +18,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     CaelumBolasFlight BolasBinding;
+    CaelumTelekinesisEffect TelekinesisBinding;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
@@ -6161,6 +6162,7 @@ class CaelumPlayer : DoomPlayer
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
         WorldCarbineShotUntil = 0;
+        if(RacialAbility is "CaelumTelekinesisEffect")CaelumRacialAbilityRules.Deactivate(self);
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         ClosePalomoMerchant();
@@ -8821,7 +8823,8 @@ class CaelumPlayer : DoomPlayer
         }
         if ((readingMenu || CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
-                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
+                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0
+                || CaelumTelekinesisRules.Held(self))
             && player != null)
         {
             UserCmd creationCommand = player.cmd;
@@ -8838,7 +8841,7 @@ class CaelumPlayer : DoomPlayer
             player.cmd.upmove = 0;
             player.cmd.buttons = 0;
 
-            if(!CaelumExhaustion.Active(self))
+            if(!CaelumExhaustion.Active(self) && !CaelumTelekinesisRules.Held(self))
             {
                 Vel.X = 0.0;
                 Vel.Y = 0.0;
@@ -8874,6 +8877,8 @@ class CaelumPlayer : DoomPlayer
         // Los saves antiguos pueden conservar el modelo sin su objeto. Se
         // reconcilia antes de actualizar la vista, el peso y el bloqueo.
         RepairActiveShieldReference();
+        CaelumTelekinesisRules.Physics(self);
+        if(CaelumTelekinesisRules.Held(self))prePhysicsVelocity=Vel;
         Super.Tick();
         CaelumUtilityStaff.Update(self);
         CaelumBolas.Update(self);
@@ -11159,6 +11164,7 @@ class CaelumPlayer : DoomPlayer
     virtual CaelumRacialAbilityEffect CreateRacialAbilityEffect(int race)
     {
         if(race==CaelumConstants.RACE_CAELITH)return new("CaelumSupernaturalBreathingEffect");
+        if(race==CaelumConstants.RACE_GOBLIN)return new("CaelumTelekinesisEffect");
         return null;
     }
 
@@ -11400,7 +11406,7 @@ class CaelumPlayer : DoomPlayer
             movementFactor = 0.0;
             jumpFactor = 0.0;
             // El agotamiento quita el control, pero conserva caída, empujes y agua.
-            if (IsOtherwiseImmobilized())
+            if (IsOtherwiseImmobilized() && !CaelumTelekinesisRules.Held(self))
             {
                 Vel.X = 0.0;
                 Vel.Y = 0.0;
@@ -11447,7 +11453,7 @@ class CaelumPlayer : DoomPlayer
 
     bool IsPhysicallyImmobilized()
     {
-        return CaelumExhaustion.Active(self) || IsOtherwiseImmobilized();
+        return CaelumExhaustion.Active(self) || CaelumTelekinesisRules.Held(self) || IsOtherwiseImmobilized();
     }
 
     bool IsOtherwiseImmobilized()

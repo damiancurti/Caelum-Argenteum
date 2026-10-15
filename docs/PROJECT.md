@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+## 5.4.7 - Duende Telekinesis (#241)
+
+User1 now captures one living body or movable scenery object and drives it with
+the approved 1,000 N times magical-power force. Actual mass sets acceleration
+and the 1 Anima/kg/s base cost; the target follows the capture-distance anchor.
+Held bodies cannot act. Sight/range loss, interruption, exhaustion and map travel
+release the body while native gravity, collision and ownership remain intact.
+SYSTEMS records the exact scope, units and persistence contract. Native input,
+real actors, save/load, hub and reversible 5.4.6 rollback checks are recorded in
+assets/validation_547; CA241-01 awaits author review. The focused PR stacks on #242.
 
 ## 5.4.6 - Caelith Supernatural Breathing (#242)
 

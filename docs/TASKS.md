@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+## 5.4.7 - Telekinesis (#241)
+
+The approved targeting, F/m force, mass-based payment and action suppression are
+implemented on their own branch. Native body/scenery input, physical movement,
+release, persistence and rollback evidence lives in assets/validation_547.
+Hand off CA241-01 and record only explicit author acceptance in HISTORY.
+Keep remaining racial/class powers and #282 in their separate issues and PRs.
 
 ## 5.4.6 - Supernatural Breathing (#242)
 

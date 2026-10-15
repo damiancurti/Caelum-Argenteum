@@ -17,7 +17,7 @@ class CaelumDemonService : Object play
     {
         if(!Supports(npc))return;
         let boss=CaelumZupayColossus(npc);
-        bool blocked=npc.health<=0 || npc.ForcedSleepTics>0 || npc.CombatLucidityPhysicalStunRemaining>0
+        bool blocked=CaelumTelekinesisRules.Held(npc) || npc.health<=0 || npc.ForcedSleepTics>0 || npc.CombatLucidityPhysicalStunRemaining>0
             || npc.RecoveryPhase==1
             || npc.CaelumDiagnosticPassiveAI || npc.CaelumMassAIScheduleActive
             || (boss!=null && boss.SewerFleeing)

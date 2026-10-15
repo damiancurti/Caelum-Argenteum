@@ -79,6 +79,7 @@ class CaelumBolas : Object play
 
     static bool Interrupted(Actor body)
     {
+        if(CaelumTelekinesisRules.Held(body))return true;
         let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
         if(user!=null)return user.ForcedSleepTics>0 || user.LucidityPhysicalStunRemaining>0
             || user.PainImmobilizationRemaining>0 || user.CombatChannelModeActive
@@ -155,7 +156,8 @@ class CaelumBolas : Object play
         if(Restrained(user))
         {
             if((user.player.cmd.buttons&BT_RELOAD)!=0 && (user.player.oldbuttons&BT_RELOAD)==0)RequestCut(user);
-            user.Vel.X=0;user.Vel.Y=0;if(user.bNOGRAVITY)user.Vel.Z=0;
+            if(!CaelumTelekinesisRules.Held(user))
+            {user.Vel.X=0;user.Vel.Y=0;if(user.bNOGRAVITY)user.Vel.Z=0;}
         }
         if(!CanPrepare(user) || (user.player.cmd.buttons&BT_ALTATTACK)==0
             || (user.BolasPreparedItem!=0 && user.BolasPreparedItem!=user.ActiveWeaponItemId))
@@ -271,7 +273,8 @@ class CaelumBolasFlight : Actor
         }
         if(npc!=null)npc.BolasBinding=self;
         let bull=CaelumBull(body);if(bull!=null)bull.StopBullCharge();
-        body.Vel.X=0;body.Vel.Y=0;if(body.bNOGRAVITY)body.Vel.Z=0;
+        if(!CaelumTelekinesisRules.Held(body))
+        {body.Vel.X=0;body.Vel.Y=0;if(body.bNOGRAVITY)body.Vel.Z=0;}
         UpdateVisuals();
     }
 

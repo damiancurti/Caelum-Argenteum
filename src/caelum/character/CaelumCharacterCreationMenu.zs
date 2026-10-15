@@ -303,7 +303,8 @@ class CaelumCharacterCreationMenu : ListMenu
         String result = StringTable.Localize(key, false);
         if (Page == CaelumConstants.CREATION_PAGE_RACE)
             result = result .. "\n\n" .. StringTable.Localize(
-                Race==CaelumConstants.RACE_CAELITH ? "CA_CREATE_RACIAL_BREATHING" : "CA_CREATE_RACIAL_PLANNED", false);
+                Race==CaelumConstants.RACE_CAELITH ? "CA_CREATE_RACIAL_BREATHING"
+                : Race==CaelumConstants.RACE_GOBLIN ? "CA_CREATE_RACIAL_TELEKINESIS" : "CA_CREATE_RACIAL_PLANNED", false);
         else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS
             || (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS
                 && CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) != CaelumConstants.PROFESSION_ARCANIST))

@@ -1,5 +1,5 @@
 // #238: contrato guardado del ciclo; cada efecto concreto pertenece a su issue.
-class CaelumRacialAbilityEffect : Object
+class CaelumRacialAbilityEffect : Object play
 {
     int Revision, Race;
     virtual bool CanStart(CaelumPlayer user) { return true; }
@@ -38,6 +38,7 @@ class CaelumRacialAbilityRules : Object play
         return user.player==null || user.player.playerstate!=PST_LIVE || user.health<=0
             || !user.CharacterCreationComplete || user.CharacterProfile==null || user.DerivedStats==null
             || CaelumSleepRules.IsSleeping(user) || CaelumExhaustion.Active(user)
+            || CaelumTelekinesisRules.Held(user)
             || CaelumBolas.Restrained(user) || user.LucidityPhysicalStunRemaining>0
             || user.PainImmobilizationRemaining>0
             || (user.ElementalStatus!=null && user.ElementalStatus.IsLightningStunned());

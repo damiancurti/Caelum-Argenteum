@@ -142,7 +142,7 @@ class CaelumCityCarbine : Object play
     {
         Initialize(owner);
         bool moving=(owner.Pos.XY-PreviousPosition.XY).Length()>0.01;
-        bool interrupted=CaelumBolas.Restrained(owner) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
+        bool interrupted=(CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")) || !Held;
         if(interrupted)
         {ReloadRemaining=0;ReloadTotal=0;}
@@ -168,7 +168,7 @@ class CaelumCityCarbine : Object play
     }
     bool Attack(CaelumPortDefender owner,Actor victim)
     {
-        if(owner==null || CaelumBolas.Restrained(owner) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
+        if(owner==null || (CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")))return false;
         if(!InRange(owner,victim))return false;
         Initialize(owner);Select(true);owner.target=victim;owner.A_FaceTarget();owner.Vel.X=0;owner.Vel.Y=0;

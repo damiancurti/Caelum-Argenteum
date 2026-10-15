@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.6** — 2026-10-14.
+Documentation version: **5.4.7** — 2026-10-14.
+
+## 5.4.7 - Telekinesis validation fixtures (#241)
+
+assets/validation_547 contains isolated native test actors, packaging, launch and
+rollback helpers. Runtime artwork is reused unchanged. Generated test PK3s,
+captures, development IWADs and engine files remain outside src and distribution.
 
 ## 5.4.4 - Class preparation hands (#238, in progress)
 

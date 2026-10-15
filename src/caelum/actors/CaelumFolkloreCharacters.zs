@@ -642,7 +642,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         if (IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
             && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
             SewerFleeing = true;
-        if (!CaelumBolas.Restrained(self) && SewerFleeing && IsRetreatBoss() && health > 0)
+        if (!CaelumBolas.Restrained(self) && !CaelumTelekinesisRules.Held(self) && SewerFleeing && IsRetreatBoss() && health > 0)
         {
             Vector3 exitPos = EscapePosition();
             if (SewerEscapeTarget == null)
