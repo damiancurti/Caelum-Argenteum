@@ -52,7 +52,8 @@ The incomplete gesture is transient: load starts disarmed, and UI transitions
 clear it through the existing synchronized event handler. Prediction cannot
 consume a gesture or pay. No persistent actor or state-list migration is added;
 the existing revision-1 ordinary ramp migration remains authoritative.
-CA260-01 accepts only ordinary acceleration; CA260-02 is the pending impulse test.
+CA260-01 (ordinary acceleration) and CA260-02 (impulse) passed author review
+on 2026-10-15; their recorded scopes remain separate.
 
 ## MAP01 resident movement repair - 5.4.14 / #253
 

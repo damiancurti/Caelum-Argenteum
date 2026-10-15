@@ -9,8 +9,8 @@ body plus carried load. The authored 0.4-second double tap bypasses the ramp to
 the current walk/run/crouch and full-direction cap, paying the running-equivalent
 cost once. Native velocity/displacement, direction/stance, medium, payment,
 interruption and copied-save checks are recorded in assets/validation_5415.
-NPC movement is unchanged. CA260-01 passed on 2026-10-15; CA260-02 awaits author
-testing, so PR294 stays a draft. #246/#253 passed separately. Remaining class and
+NPC movement is unchanged. CA260-01/02 passed on 2026-10-15; PR294 is ready
+for review. #246/#253 passed separately. Remaining class and
 climate issues, then #282, retain their own branches, tests and PRs.
 
 ## 5.4.14 - Mansion residents keep participating (#253)

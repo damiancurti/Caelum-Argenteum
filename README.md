@@ -15,7 +15,7 @@ A movement-direction double tap within 0.4 seconds reaches the current mode's
 maximum immediately, paying the full acceleration-time equivalent of running Air.
 Ground, swimming and flight are supported; ordinary jumps/falls are excluded.
 [Evidence](assets/validation_5415/RESULTS.md). CA260-01 (ordinary acceleration)
-passed author review; CA260-02 (impulse) awaits author testing. PR remains a draft.
+and CA260-02 (impulse) passed author review on 2026-10-15. PR294 is ready for review.
 
 5.4.14 fixes [#253](https://github.com/damiancurti/Caelum-Argenteum/issues/253):
 anchored mansion residents recover missing movement bases so they can pursue and

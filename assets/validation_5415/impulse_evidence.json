@@ -843,7 +843,7 @@
   },
   "author_acceptance": {
     "CA260-01": "Accepted separately; see acceptance.json",
-    "CA260-02": "Pending"
+    "CA260-02": "Accepted 2026-10-15; see acceptance_impulse.json"
   },
   "preserved_iterations": [
     {

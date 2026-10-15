@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-**5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01 accepted, CA260-02 pending. Native evidence: validation_5415. PR294 remains a draft.
+**5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
 
 **5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
 

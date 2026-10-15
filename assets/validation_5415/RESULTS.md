@@ -1,6 +1,6 @@
 # #260 / 5.4.15 — player acceleration and directional impulse
 
-## Completed implementation; impulse author check pending
+## Completed implementation; author scenarios accepted
 
 The same-patch impulse continuation implements the author's 2026-10-15 answers:
 0.4 seconds between presses, current walk/run/crouch mode and full current
@@ -16,8 +16,8 @@ The current normal PK3 has **16,164 members**, all byte-identical to both src an
 the frozen tested runtime. Project validation reports no errors. Runtime SHA-256:
 `c42fffcff3d89dc38bd0b91a7ff1dcbfc574fe8253e4a21ef13ebcdf7b30e987`.
 Exact runs, scripts, hashes, measurements and copied-save inputs are recorded in
-`impulse_evidence.json`. Native evidence is separate from CA260-02, which remains
-in pending_test.txt. CA260-01's prior acceptance is unchanged.
+`impulse_evidence.json`. Native evidence is separate from CA260-02, which passed
+on 2026-10-15 (acceptance_impulse.json). CA260-01's prior acceptance is unchanged.
 
 - `issue260-impulse-final/contract-final`: 88 assertions cover 50/100/200 kg,
   four directions, run/crouch, current diagonal while moving, simultaneous axes,
@@ -47,7 +47,8 @@ Other scripts are impulse-input/water/edges/world/save/load.cfg; water uses
 For the author, `launch_impulse.ps1` opens the frozen final scenario; its overlay
 reports successful impulses and debit while the fixture restores resources.
 Physical bindings/UI interaction, broad campaign, performance and multiplayer
-acceptance are not inferred from automated commands.
+acceptance are not inferred from automated commands. The author subsequently
+confirmed the offered CA260-02 scenario; no broader itemized claim is added.
 
 Preserved impulse iterations:
 

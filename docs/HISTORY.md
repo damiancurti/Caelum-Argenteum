@@ -43,8 +43,14 @@ sign-only detector mistook release of an opposite key for another forward press;
 the reproduced case passes after switching digital gestures to native button
 edges. The prior
 90-assertion ordinary evidence remains identified by its original runtime hash.
-CA260-02 awaits author testing. This continuation does not imply acceptance or
-authorize merge/closure.
+CA260-02 (origin 5.4.15 / #260) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." after the offered directional impulse scenario. Record the
+offered current-mode/diagonal, mass/cost, insufficient-Air and held-key/UI checks
+without an extra itemized claim or broader campaign/multiplayer acceptance.
+The interactive run exited normally; validation_5415/acceptance_impulse.json
+records its hashes and confirmation. The confirmed entry was removed from the
+author queue. Version remains 5.4.15; PR294 is ready for review. No merge or
+issue closure is inferred.
 
 ## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
 

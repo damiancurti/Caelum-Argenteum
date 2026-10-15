@@ -2,12 +2,12 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-## 5.4.15 - Player acceleration and impulse (#260, author check pending)
+## 5.4.15 - Player acceleration and impulse (#260, accepted)
 
 Both the linear mass-based ramp and the authored Air-paid 0.4-second double tap
 are implemented on the focused branch/PR294 based on #253. Native evidence:
-assets/validation_5415. CA260-01 passed; only CA260-02 is queued for the author.
-Keep this same version for acceptance. No merge/closure is authorized.
+assets/validation_5415. CA260-01/02 passed on 2026-10-15; PR294 is ready for review.
+Acceptance retains this same version and leaves no #260 author check queued. No merge/closure is authorized.
 #247 may consume the forward gesture next; its enhanced speed, collision defenses
 and afterimages require their own implementation, tests, branch and PR.
 #247-252 retain their own unresolved designs; #282 follows the batch. The author
