@@ -1,6 +1,56 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.12** — 2026-10-15.
+Documentation version: **5.4.13** — 2026-10-15.
+
+## Arcane Sun - 5.4.13 / #246
+
+Mage User4 replaces Brainstorm with Sol arcano (Arcane Sun). The accepted shared
+105-tic preparation, progressive fixed-cost debit, cancellation without refund and
+60-second reuse apply. It is offensive and therefore subject to Battle Cry.
+At release, snapshot tier-one uncharged fire-staff damage with the caster's current
+Intelligence and offensive modifiers, independently of the equipped weapon. No
+weapon wear is charged. Direct impact and explosion use ten times that reference;
+each child uses normal reference damage and elemental payload. Intelligence is
+not applied twice. Ordinary critical, anatomy, armor, Toughness and Seal consumers
+remain authoritative. All components affect native enemies only: never the
+caster, allies or neutrals. Existing native allegiance remains authoritative.
+
+The central orb has ten times the normal projectile's visual scale and radial
+collision geometry (40 MU radius/height), and travels straight at the normal staff
+speed, 20 MU/tic. It crosses characters, delivering one direct impact per enemy per
+launch; re-entry cannot repeat it. Scenery (wall, floor or ceiling) or the end of
+the 10-second base lifetime triggers exactly one explosion and 25 straight children.
+Charisma scales lifetime. The burst uses a near-uniform Fibonacci sphere, including
+up/down poles, rather than an unattainable equal pairwise distance for 25 points.
+Explosion base radius is ten times the uncharged statuette's 128 MU, then scaled
+by Eloquence. Native distance falloff and wall occlusion are retained.
+
+The moving burning area uses the 40-m class base radius scaled by Eloquence, with
+direct sight from the orb and live membership. Native burning delivers ten times
+reference staff damage per second, further scaled by Charisma. Exposure refreshes
+the native burn; after leaving, its 3-second base duration remains, scaled by
+Charisma and native resistance. Strength is ten times harmful potency so a weaker
+ordinary fire hit cannot replace the Sun's stronger burning. Reapplication keeps
+the native fractional damage and pulse phase. No separate artificial periodic
+damage or bypass of defenses is introduced.
+
+Starting one second after release, each complete second emits one normal-sized
+homing fire shot at the nearest visible enemy in the scaled area. No target means
+no shot for that second. Children use normal staff speed and normal travel range
+(3200 MU base, scaled by Eloquence); burst children remain straight. A homing child
+whose target becomes invalid or invisible reacquires the nearest visible enemy
+within its remaining travel budget and the scaled acquisition radius. Released
+shots and existing burning continue when the main orb ends or the caster dies;
+damage requires the original source actor to remain available.
+
+Revision-1 projectile state serializes offensive snapshots, hit recipients, lifetime,
+next shot and finished flag. Old saves have no new projectile state to initialize.
+Save/load must not duplicate payment, direct hits, periodic emission or final burst.
+Hub projectiles remain in their original map under native inactive-map freezing.
+The optional 5.4.12 bridge operates on copied saves, removes unsupported projectiles
+and cancels Mage preparation without refund; the preserved original is reversible.
+Focused evidence: assets/validation_5413. CA246-01 is pending; manual tests and
+questions are deferred while the author is away. No multiplayer acceptance is claimed.
 
 ## Miracle - 5.4.12 / #245
 
@@ -7100,7 +7150,7 @@ status were added in V4.35; character thermal exposure is implemented in
 
 This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
 V5.4 sections and issue-specific author revisions supersede historical rules.
-The Warrior, Explorer and Priest rows below reflect #243/#244/#245; pending class replacements retain their
+The Warrior, Explorer, Priest and Mage rows below reflect #243/#244/#245/#246; pending class replacements retain their
 separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
@@ -7118,7 +7168,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Warrior | Battle Cry | Visible enemies in the release-time area cannot perform any attack, including magic. Movement/defense remain; see the 5.4.10 contract above. |
 | Explorer | Survival Instinct | Multiplies current evasion, physical/magical critical chance and precision, and earned Adrenaline by 3; Empathy scales the entire factor and duration. See 5.4.11 above. |
 | Priest | Miracle | Restores 3% of current maximum Lucidity, Health, Anima and Air per second to the caster and visible allies in a moving area. Empathy scales recovery/duration; see 5.4.12 above. |
-| Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |
+| Mage | Arcane Sun | Large traveling fire orb: tenfold reference impact/burn/explosion, one homing shot per second and 25 straight spherical shots at scenery impact or expiry. Enemies only; see 5.4.13 above. |
 | Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |
 | Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |
 | Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |

@@ -2869,6 +2869,7 @@ class CaelumCombatActor : Actor
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self))return 0;
         EnsureCombatPersonality();
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;

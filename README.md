@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.12.** Obtain and update the complete repository, validate
+**Current release: 5.4.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.13 implements [#246](https://github.com/damiancurti/Caelum-Argenteum/issues/246):
+Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,
+emits homing fire and explodes into 25 shots. It uses the shared paid preparation
+and preserves native elemental defenses. [Evidence](assets/validation_5413/RESULTS.md).
+CA246-01 awaits author review after return; this focused PR stacks on accepted #245.
 
 5.4.12 implements [#245](https://github.com/damiancurti/Caelum-Argenteum/issues/245):
 Priest Miracle restores Health, Lucidity, Anima and Air each second in an area

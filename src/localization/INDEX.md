@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `e2725722d32a033a2b5059b6bf4dba7c9fab6eb905971217bb1a5750445af612`. Locations include every definition; the last one per language wins.
+SHA-256: `b1f3e6ac8a97696a73463dacb9917951bfad78e2f23e3fc8f8d978f51a06dd41`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -22,6 +22,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_AMULET | 4 | CA_AMULET_EMERALD | CA_AMULET_TOPAZ |
 | CA_APPEARANCE | 37 | CA_APPEARANCE_FACE | CA_APPEARANCE_WALK |
 | CA_ARCANA | 3 | CA_ARCANA_CUPS_REVEAL | CA_ARCANA_WANDS_REVEAL |
+| CA_ARCANE | 1 | CA_ARCANE_SUN_CAST | CA_ARCANE_SUN_CAST |
 | CA_ARGENTO | 1 | CA_ARGENTO_NAME | CA_ARGENTO_NAME |
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |

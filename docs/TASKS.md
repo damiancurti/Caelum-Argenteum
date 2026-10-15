@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.12** — 2026-10-15.
+Documentation version: **5.4.13** — 2026-10-15.
+
+## 5.4.13 - Arcane Sun (#246)
+
+Implemented the author's replacement Mage ability using existing elemental damage,
+defense, visuals and paid class lifecycle. Author confirmations on 2026-10-15 settle
+reference damage, speed, character pass-through, one impact per enemy, sight/range,
+burning cadence/tail, guided targeting, child persistence and native radial falloff.
+Focused automated evidence and copied-save helpers: assets/validation_5413.
+CA246-01 remains in pending_test.txt; questions and manual launch are deferred at
+the author's request while away. Keep the focused PR based on accepted #245;
+no merge or closure. Remaining class issues, then #282, stay separate.
 
 ## 5.4.12 - Miracle (#245)
 

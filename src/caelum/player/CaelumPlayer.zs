@@ -7669,6 +7669,7 @@ class CaelumPlayer : DoomPlayer
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self))return 0;
         CaelumBolas.FireAttack(self,inflictor,mod);
         int before=health;
         let shot=CaelumActorProjectile(inflictor);

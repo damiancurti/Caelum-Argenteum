@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.12** — 2026-10-15.
+Documentation version: **5.4.13** — 2026-10-15.
+
+## 5.4.13 - Mage Arcane Sun (#246)
+
+Mage User4 now launches the revised large fire orb instead of Brainstorm discounts.
+It crosses characters, burns visible nearby enemies, emits one homing shot each
+second and ends with a native radial explosion plus 25 spherical straight shots.
+The approved reference, social scaling, enemy-only policy and shared paid casting
+are documented in SYSTEMS. This patch stacks on accepted #245. Focused automated
+evidence is in assets/validation_5413; CA246-01 awaits author review after return.
+Remaining abilities and then #282 retain their separate scope and delivery.
 
 ## 5.4.12 - Priest Miracle (#245)
 

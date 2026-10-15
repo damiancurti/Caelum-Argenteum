@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.12** — 2026-10-15.
+Documentation version: **5.4.13** — 2026-10-15.
+
+## 5.4.13 - Arcane Sun (#246, 2026-10-15)
+
+Replaced Mage Brainstorm with the author-revised Sol arcano. Reference is a tier-one
+uncharged fire staff using current Intelligence and applicable modifiers, regardless
+of equipment. Main impact, explosion and burn use tenfold reference damage; children
+retain normal damage. Burning additionally scales with Charisma. All components
+harm only enemies. The orb crosses characters once per enemy, burns visible nearby
+enemies and emits one nearest-target homing shot per second. Scenery or expiration
+produces one native falloff/occluded explosion and exactly 25 near-uniform spherical
+straight projectiles. Normal staff speed/range, tenfold central size/statuette
+radius, 40-m burning area and social scaling follow the confirmed contract.
+
+Native evidence covers input, contacts, homing, burning, range, explosion, clocks,
+save/load and hub state; assets/validation_5413 preserves exact builds and qualified
+iterations. Early fixture errors included invalid test-only fields, an overly tight
+spherical-vector sum tolerance, comparison of direct hits against extra child hits,
+and radial checks before NPC PostBeginPlay initialized anatomy. Command scripts
+now allow pending native events to drain before quitting. No balance was changed
+to make those fixture checks pass. CA246-01 (origin 5.4.13 / #246) remains pending.
+The author requested keep-awake and deferred questions/manual tests while away.
+No campaign/multiplayer acceptance, merge or issue closure is inferred.
 
 ## 5.4.12 - Miracle (#245, 2026-10-15)
 

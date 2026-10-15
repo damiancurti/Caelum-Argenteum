@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.4.12** — 2026-10-15.
+Documentation version: **5.4.13** — 2026-10-15.
 
 5.3.8 / #235: the Journal can track several active missions. Current authored
 room/workshop directions link only to the character's existing #234 observations;
