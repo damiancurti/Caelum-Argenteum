@@ -8172,14 +8172,14 @@ place.
 
 ## Audit of the twelve attributes - 5.4.0 (#237)
 
-This source-to-consumer audit refreshes the earlier 5.1.10/#154 matrix against
-accepted main `5208cc92` (5.3.9). No gameplay logic, balance, save schema or
-control changes are made by #237; two console release labels advance to 5.4.0.
-**Implemented** means a normal gameplay
-consumer exists; **partial** distinguishes such a consumer from stored fields,
-diagnostic observers and intended future systems. Author-revised class powers
-remain separate implementation issues #238/#243-251; their planning approval
-does not make their modifiers active in this audited build.
+The original audit checked accepted main `5208cc92` (5.3.9), starting release
+5.4.0. Its completion refresh checks the accepted 5.4.21 ability baseline
+`bde4cd96` on 2026-10-15. No gameplay logic, balance, save schema or controls change
+in this audit. Current release markers remain 5.4.21; this is completion of #237,
+not another gameplay patch. **Implemented** means a normal gameplay consumer;
+**partial** distinguishes consumers from stored fields, diagnostic observers and
+future systems. Class/racial consumers below were implemented and accepted in
+their own issues, not by the audit.
 
 ### Source, ownership and order
 
@@ -8226,7 +8226,9 @@ and `CalculateType2Percent` returns B. They are not three new curves.
 Levels are not globally capped at 100. Probability and harmful-complement
 consumers clamp individually. Player derived critical fields clamp the shared
 5+B baseline before the weapon-specific base replaces 5; the final attack helper
-then applies posture/personality and clamps again. NPC critical statistics apply
+then applies posture/personality and Survival Instinct and clamps again. Hunter
+Instinct multiplies that current chance for rear impacts, with eligibility saved
+at projectile release and rear position checked at impact. NPC critical statistics apply
 personality before their final clamp. Preserve this real order; do not describe
 every critical path as an uncapped B plus a weapon base. Toughness status response
 is **not** the clamped harmful complement: 1-B/100 becomes negative above 100 and
@@ -8247,21 +8249,21 @@ durations are simulation seconds unless stated otherwise, and percent fields use
 | Dexterity / Technical | Attack speed M2 and duration /M2 through attack cycles; physical precision 100*M3 through actual accuracy/dispersion; critical B plus the real weapon base subject to the clamp order above. Ammunition reload /M2; crafting material work /M3. | **Implemented.** NPC attack/ranged reload, accuracy and critical consumers add applicable glove bonuses. Crafting is a specific player consumer, not a general accuracy-roll or skill-cooldown system. |
 | Resilience / Technical | Maximum Air and Adrenaline = 1000*M2. Natural HP recovery = maxHP/3600*M2 per second. Acclimatization rate/limit use base plus B (#136): at 100, 2 degrees C/world day and +/-10 degrees C, reached in five days. | **Implemented.** NPC capacity and finite-health recovery use its CombatResilience. Sleep depletion belongs to Constitution, not Resilience. |
 | Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture*Hunter (3 while active, otherwise 1) to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
-| Charisma / Social | 100*M2 supplies the attacker's elemental payload duration/power through projectiles and utility-staff streams; player incoming payload processing and shared stream status application consume it. MAP01 Caella persuasion uses M2 against the documented difficulty, rounded/clamped to 0..100. | **Partial combat scope; implemented dialogue.** NPCs emit payloads using CombatCharisma; this is not the recipient's Charisma. Not every actor/effect receiver consumes the generic payload. Eloquence owns current areas; Channel power/duration do not universally scale with Charisma. |
-| Empathy / Social | MAP01 Rulo emotion uses M2 against the documented difficulty, rounded/clamped to 0..100. BuffPowerPercent=100*M2 is stored and copied into payloads; Fire-secondary preparation sets an illumination timer. | **Implemented emotion; planned/general support incomplete.** No general buff/heal/area consumer follows from that field. The illumination timer only decrements and appears in diagnostics; it is not playable lighting. NPC CombatEmpathy payload storage does not prove an NPC support effect. |
-| Eloquence / Social | Cast preparation and Anima cost divide by M2; AbilityRangePercent=100*M2 scales real spell/area ranges, not muzzle velocity. Dialogue skill B is used by Ronnie and Palomo's discount route. | **Implemented with cooldown distinction.** NPC magical cost, preparation and range use effective CombatEloquence. Ammunition reload uses Dexterity; Seal and existing Sleep reuse are fixed 60 seconds, not an overall Eloquence cooldown reduction. #238's new class preparation is a separate contract. |
-| Intelligence / Mental | Magical damage/push M3, then accepted personality factors at actual release/transfer consumers. Box capacity = 20+floor(10*M3); that same integer divides content kg before aggregate gram truncation. Owned empty Box tare is 0.001 kg (#229); an unowned Box adds zero. | **Implemented combat/Box; academic uses planned.** NPC magical consumers use effective CombatIntelligence and NPC personality. The player's Box service is not a generic NPC inventory rule. No separate third universal magic-power effect is implied. |
+| Charisma / Social | 100*M2 supplies the attacker's elemental payload duration/power through projectiles and utility-staff streams; player incoming payload processing and shared stream status application consume it. MAP01 Caella persuasion uses M2, with active/snapshotted Socialization x2 and the existing 0..100 cap. ClassAbilityRules.HarmfulPower=M2 supplies Sleep's final-damage multiplier/duration, Battle Cry duration, Arcane Sun lifespan/burn strength/duration and Arcane Cloud stun. | **Implemented listed class/dialogue consumers; partial generic payload coverage.** NPCs emit payloads using CombatCharisma; this is not the recipient's Charisma. Generic payload support is not universal. Sleep still requires exactly three damaging enemy hits. Channel power/duration do not universally scale with Charisma. |
+| Empathy / Social | MAP01 Rulo emotion uses M2 and the existing 0..100 cap. ClassAbilityRules.BeneficialPower=M2 now drives actual Survival Instinct multipliers, Miracle recovery, Formation Breaker speed/collision defense, Rally recovery/final-damage factors, Summoning base attributes, Redemption Toughness, Cloud flight/rain, and their durations. | **Implemented listed support/curative consumers and emotion.** Full multipliers scale (base x3 with power x2 becomes x6). Player/NPC recipients use the actual pulse/damage/resource handlers. Summoned Zupay attributes are round(33*M2), not direct scaling of every final stat. NPC payload storage alone still does not establish an independent NPC support caster. The old illumination timer remains diagnostic, not playable lighting. |
+| Eloquence / Social | Ordinary magical attack preparation and Anima cost divide by M2; AbilityRangePercent=100*M2 scales real ranges, class areas/placement, Cloud width/rain/lightning area and Telekinesis range, not muzzle velocity. Class total cost is 1000/M2, fixed on start and paid uniformly across three seconds. Racial recurring/action costs use the same reduction. Dialogue skill B serves Ronnie and Palomo, with Socialization x2 applied before the existing limits. | **Implemented with explicit timing distinction.** NPC magical cost, preparation and range use effective CombatEloquence. Ammunition reload uses Dexterity. Class preparation remains exactly 3 seconds and class/Seal reuse 60 seconds; continuous racials have no reuse. Eloquence does not shorten these fixed class timers. |
+| Intelligence / Mental | Magical damage/push M3, then accepted personality factors at actual release/transfer consumers. Actual consumers now include Arcane Sun reference-staff damage, Cloud Air-seal damage, Telekinesis force (1000 N times power), and #252's separate accumulating Seal climate/earth/gravity ledger. The ledger never raises the character's attributes. Box capacity = 20+floor(10*M3); that same integer divides content kg before aggregate gram truncation. Owned empty Box tare is 0.001 kg (#229); an unowned Box adds zero. | **Implemented combat/Box; academic uses planned.** NPC magical consumers use effective CombatIntelligence and NPC personality. The player's Box service is not a generic NPC inventory rule. No separate third universal magic-power effect is implied. |
 | Patience / Mental | Maximum Anima=1000*M3; regeneration=maxAnima/480*M2 per second. Interrupt resistance clamps B to 0..100. Clamped complement mitigates injury performance/pain and low/critical-Sleep aggravation of Lucidity loss/stun duration. | **Implemented / partial intended needs role.** NPC Anima and injury consumers use effective CombatPatience. General Hunger/Thirst/Sleep performance penalties use Adrenaline, not a universal Patience mitigation. Constitution owns passive Sleep drain. |
 | Insight / Mental | Magical precision 100*M3 and critical B through the current magical attack/weapon-base and clamp paths. | **Implemented combat; senses planned.** NPC precision/critical use effective CombatInsight. No playable hidden-object, sound detection or dark attenuation is connected to this attribute; the perception observer is diagnostic evidence only. |
 
 ### Pending decisions and roadmap ownership
 
-1. **V5.4 ability contract (#238-252):** distinguish attack preparation,
-   ammunition reload and reuse; specify which new effects consume Charisma,
-   Empathy or Eloquence, including support/healing area, power and duration.
-   The author's revised abilities do not by themselves approve a new attribute
-   multiplier. Define status coverage/stacking through real receivers, not just
-   a stored DebuffPowerPercent/BuffPowerPercent.
+1. **Resolved V5.4 ability contract (#238-252):** fixed three-second class
+   preparation/60-second reuse, Eloquence cost/range, Charisma harmful effects,
+   Empathy benefits/duration, Intelligence direct damage. Full factors scale;
+   fixed hit counts remain fixed. Author-confirmed targeting/stacking rules and
+   concrete receiver evidence are owned by each completed ability issue. This
+   item is resolved, not deferred merely because its fields also remain saved.
 2. **V5.4/V5.5 consumer integration:** decide whether the existing player/NPC
    equipment and critical-clamp differences should be standardized in a later
    focused issue. #237 reports them without rebalancing accepted combat.
@@ -8281,6 +8283,23 @@ defense, personality and Box examples. This audit can close with the explicit
 pending list; it does not mark those future systems complete.
 
 ### Evidence and continuation references
+
+The completion audit reran the same 160 checks on 5.4.21 (`bde4cd96`), all passing;
+`assets/validation_540/completion_evidence.json` records the exact runtime and
+fixture. No new manual author-input test is needed for a documentation audit.
+Actual ability consumers are supported by accepted per-issue evidence, not only
+by this derived-stat fixture: validation_544 (Sleep), validation_547/548/549
+(Telekinesis/Socialization/Hunter), validation_5410/5411/5412 (Battle Cry/Survival/
+Miracle), validation_5413/5416/5417 (Sun/Formation/Rally), and validation_5418/5419/
+5420/5421 (Summoning/Redemption/Cloud/Seal climate). Each record retains its own
+tested source and limitations; the audit does not relabel them as new reruns.
+
+Concrete support paths: CaelumMiracle.Pulse -> ApplyMiraclePulse; CaelumRally
+Factor/ScaleDamage and resource pulse; CaelumRedemption.ToughnessFactor;
+CaelumArcaneCloud rain resources/flight multiplier; CaelumSummonedZupay
+PostBeginPlay -> InitializeUniformFolkloreProfile. Harmful consumers include
+CaelumSleepRules, CaelumBattleCry and CaelumArcaneSun.Release. See those source
+files and the current ability contracts above for exclusions and snapshot rules.
 
 5.4.0 ran **160 isolated GZDoom 4.14.2 assertions**, covering the table boundaries,
 all twelve derived rows, current Toughness responses, representative NPC consumers,
