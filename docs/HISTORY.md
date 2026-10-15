@@ -12,17 +12,20 @@ speed, movement media, collisions and NPC/bull logic remain unchanged. Revision-
 migration preserves legacy progress; focused native and copied-save evidence is
 in assets/validation_5415. Failed fixture iterations remain recorded there.
 
-This is a partial delivery of #260. The double-tap impulse is not implemented;
-its unresolved author decisions are deferred during the author's absence. No
-manual acceptance, merge or issue closure is implied. CA260-01 originates here
-and covers only ordinary acceleration. CA253-01 and CA246-01 passed author
-review on 2026-10-15.
+This is a partial delivery of #260; the double-tap impulse remains separate.
+CA260-01 (origin 5.4.15 / #260) passed on 2026-10-15: the author confirmed
+"La prueba dio bien" after the offered 50/100/200 kg ordinary-movement scenario.
+The confirmation is recorded without an additional itemized or broad campaign
+claim. The interactive run exited normally; validation_5415/acceptance.json retains
+its scope and hashes. The confirmed entry was removed from pending_test.txt.
+Version remains 5.4.15. This does not accept the unimplemented impulse or authorize
+merge/closure. CA253-01 and CA246-01 passed separately on 2026-10-15.
 
 Delivery evidence: 90 qualified native assertions in eight runs, with seed and
 overlay observation recorded separately. Project validation has zero errors;
 normal packaging contains 16,163 members identical to the frozen runtime. Copied
 5.4.14 upgrade, current reload, direct rollback and return pass with original save
-hashes preserved. The prepared manual fixture waits for the author's return.
+hashes preserved. CA260-01 is now accepted; impulse decisions/testing remain pending.
 
 ## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
 

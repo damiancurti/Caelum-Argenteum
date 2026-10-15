@@ -1,0 +1,16 @@
+{
+  "test_id": "CA260-01",
+  "originating_version": "5.4.15",
+  "issue": 260,
+  "result": "passed",
+  "author_quote": "La prueba dio bien",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered 50/100/200 kg ordinary acceleration, walking/running/lateral movement and stopping; no additional itemized claim.",
+  "run": "build/issue260-author-ready/author-20261015-072622-run.json",
+  "exit_code": 0,
+  "pid": 52364,
+  "runtime_sha256": "29F3E2082DCED3D2A6FEADDAC444105A0E4499B1144123479176E66A82CB52A3",
+  "fixture_sha256": "889C993CA9EC3805AF2CFE7246D943C96E3B194A0F7DF4E97F9E7DFAB9C11077",
+  "finished_utc": "2026-10-15T10:28:57.9160620Z",
+  "qualifications": "Only the ordinary ramp is accepted. Double-tap impulse remains unimplemented. No broader campaign/multiplayer acceptance, merge or issue closure."
+}

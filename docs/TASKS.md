@@ -6,7 +6,7 @@ Documentation version: **5.4.15** — 2026-10-15.
 
 Implemented the already approved mass-scaled linear ordinary ramp, preserving
 native velocity/collision handling. Focused evidence: assets/validation_5415.
-CA260-01 is only the ordinary-movement author check, not full #260 acceptance.
+CA260-01 passed on 2026-10-15 for ordinary movement only; #260 is not complete.
 Keep one focused branch/PR based on #253; later #260 work stays on this branch
 and version. No merge/closure. Remaining impulse decisions need author answers:
 double-tap interval, insufficient Air, already-moving activation, walk/run/crouch,

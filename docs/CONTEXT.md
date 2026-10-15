@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-**5.4.15/#260 (partial):** ordinary constant acceleration implemented; double-tap decisions deferred. CA260-01 pending. validation_5415.
+**5.4.15/#260 (partial):** CA260-01 accepted on 2026-10-15; ordinary acceleration implemented. Double-tap work remains pending. validation_5415.
 
 **5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
 

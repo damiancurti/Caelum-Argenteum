@@ -9,7 +9,7 @@ in 3 seconds per 100 kg of body plus carried load. Native input/friction tests
 measure real velocity and displacement, not only a progress field. NPC movement
 is unchanged. Evidence: assets/validation_5415. The Air-paid double-tap component
 still needs author decisions and is not implemented; keep this issue/PR a draft.
-CA260-01 covers only the delivered ordinary ramp. The author has returned;
+CA260-01 passed on 2026-10-15 for the ordinary ramp only. The author has returned;
 questions/manual checks can resume. #246 and #253 passed author review on 2026-10-15;
 remaining class/climate issues, then #282, stay separate.
 

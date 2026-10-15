@@ -3,7 +3,8 @@
 Windows 11, installed GZDoom 4.14.2, private development IWAD. Native tests use
 unpaused background execution and 5% audio; no interactive window was launched
 while the author was away. The impulse gesture is not implemented and has no
-claimed acceptance. CA260-01 is pending in the root author queue.
+claimed acceptance. CA260-01 passed on 2026-10-15 for ordinary movement only;
+acceptance.json records the author confirmation and interactive run.
 
 Final result: **90 qualified native assertions in eight runs**, plus seed and
 visual-observation runs. Project validation reports zero errors; normal packaging
@@ -47,7 +48,7 @@ The prepared author directory is `build/issue260-author-ready`. Its only later
 fixture change displays actual per-tic displacement instead of a velocity sampled
 after friction; a fresh native screenshot was inspected. Runtime is identical,
 and this observation-only overlay is excluded from the 90 assertions. The
-interactive launcher remains deferred until the author returns.
+interactive launcher was used for accepted CA260-01 on 2026-10-15.
 
 The native05 runtime differs from the final runtime only in the version strings
 of two diagnostic messages. Every gameplay file is byte-identical. Final-runtime
