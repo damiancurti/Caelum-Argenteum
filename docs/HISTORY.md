@@ -58,6 +58,18 @@ leg flexion and body lowering. Jump waits for preparation and cancels on receive
 damage; both animations retain movement, attack and block controls. These
 additions and modular parts are still unimplemented; CA283-01 remains open.
 
+The author then reported excessive hand motion while walking and asked for a
+separate run animation. Walk's hand arc was reduced to 23-28% of the preceding
+candidate while preserving elbow flexion; Run received a distinct, more flexed
+arm pose and broader swing. The prior manual configuration inherited always-run;
+the new isolated trial starts walking and uses Shift to run. This is an art and
+test-configuration revision, not movement or combat balance. Its source/export,
+native walk/run selection and rendered comparisons are recorded separately in
+validation_5423/arm-motion-evidence.json. CA283-01 is still pending.
+The revision passes 32 assertions in three native runs, 186 evaluated joint
+samples, deterministic export, static validation and normal packaging. The 175
+non-walk/run model frames are byte-identical to the preceding candidate.
+
 
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)

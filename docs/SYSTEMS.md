@@ -28,6 +28,11 @@ mesh is only an intermediate prototype. Native equipment and saved appearance
 remain the authority; modular presentation must neither grant items nor change
 combat statistics. The same structure should be reusable by other characters.
 
+Walk and Run remain separate model clips selected by the native player states.
+Their revised arm curves change presentation only: speed, acceleration, movement
+input, collision, resource costs and attack timing are unchanged. The isolated
+manual fixture starts with always-run off and Shift mapped to native speed input.
+
 Required pilot follow-up: shield-block presentation and one-second jump/landing
 animations that flex the legs and lower the body. Jump preparation happens before
 actual takeoff; received damage cancels it. Movement, attacks and blocking stay

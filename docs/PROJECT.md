@@ -17,6 +17,9 @@ its separate scope/branch. The author returned and the temporary keep-awake was
 released. The author requires interchangeable weapon, shield, armor, hair and
 face parts, starting with Domingo and existing choices. This fixed-surface
 runtime is an intermediate prototype; modular integration remains in #283.
+The latest art revision reduces walking hand sway and gives Run a distinct arm
+pose, with unchanged gameplay timing; its separate native evidence and author
+review remain under CA283-01.
 
 
 

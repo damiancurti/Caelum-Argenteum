@@ -166,6 +166,14 @@ class CA283Probe : StaticEventHandler
             Console.Printf("CA283 CAMERA slot=%d delta=%.6f velocity=%.6f",ManualCamera,delta,User.Vel.Length());
             Check(delta<.01,"review camera follows actual player position");
         }
+        if(e.Name=='c283_gait')
+        {
+            int expected=e.Args[0]==0?CaelumDomingoPilotFrames.WALK:CaelumDomingoPilotFrames.RUN;
+            Check(User.PilotBody.Pose==expected,e.Args[0]==0?"walking input selects walk clip":"running input selects run clip");
+            Check(User.Vel.XY.Length()>0,"gait check uses moving native player");
+            Check(User.PilotBody.ModelFrame>=CaelumDomingoPilotFrames.Start(expected)
+                && User.PilotBody.ModelFrame<CaelumDomingoPilotFrames.Start(expected)+CaelumDomingoPilotFrames.Count(expected),"gait samples its own model frames");
+        }
         if(e.Name=='c283_bench')Benchmark(e.Args[0],e.Args[1]!=0);
         if(e.Name=='c283_record'){BenchSerial++;BenchActive=true;}
         if(e.Name=='c283_record_end')BenchActive=false;

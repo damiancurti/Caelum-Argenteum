@@ -13,12 +13,12 @@ Initial author review reported sideways knee flexion and rigid elbows while
 walking, and requested a shield-block animation. These findings remain open;
 the successful technical assertions do not establish visual acceptance.
 
-The current anatomy revision corrects the knee plane and adds varying elbow
+The preceding anatomy revision corrects the knee plane and adds varying elbow
 flexion. `anatomy-joints.json` checks 186 evaluated joint samples;
 `anatomy-evidence.json` records the corrective native runs and current package
 separately from the 98-assertion foundation in `evidence.json` (commit 9515fb2c).
 The old `record_evidence.py` reproduces that foundation at its original revision;
-use `record_anatomy_evidence.py` for the current corrective candidate.
+use `record_anatomy_evidence.py` at its recorded revision for that candidate.
 The correction passes 52 native assertions in five runs on the same production
 hash: action selection, rest/furniture, moving review camera, terminal death and
 loading the previous pilot's save. Static validation reports zero errors; normal
@@ -29,6 +29,26 @@ in Tick resolves it. Manual author-02 starts from the front in anatomy-03.
 The author also requires shield-block and one-second jump/landing animations.
 Jump waits for preparation; damage cancels it; movement/attack/block remain
 available. These animations and modularity remain outstanding.
+
+## Quiet walk and distinct run revision
+
+The author reported excessive walking hand sway. This revision reduces the hand
+arc to 23-28% of the previous candidate while retaining elbow flexion, and gives
+Run a separate, more flexed arm pose and broader swing. Native timings and other
+poses remain unchanged. The old manual configuration inherited always-run; the
+new fixture sets `cl_run false` and binds Shift to native `+speed` in its separate
+settings file. This makes the two gaits explicit during author review.
+
+`arm-motion-joints.json` retains 186 evaluated joint samples and comparison with
+the preserved candidate-07 Blender source. `arm-motion-evidence.json` records
+only this revision's native runs, frozen package and export parity. Reproduce
+with `record_anatomy_evidence.py --revision arm-motion`; earlier foundation and
+anatomy evidence remain separate. The static studio poses and native walk/run
+views support review but do not establish author acceptance. CA283-01 stays open.
+This revision passes 32 assertions in three native runs (actions, camera and gait
+selection), 186 joint samples, static validation and normal packaging. Seven
+export artifacts are deterministic. All 175 non-walk/run model frames remain
+byte-identical to the preceding candidate; no broader regression claim is made.
 
 ## Artifact and reproduction
 

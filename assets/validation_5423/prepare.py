@@ -38,10 +38,11 @@ def main():
              'load.cfg':'wait 35; netevent c283_loaded; '+done,
              'fallback.cfg':start+'netevent c283_fallback; '+done,
              'travel.cfg':'wait 35; netevent c283_loaded; changemap MAP98; wait 35; netevent c283_loaded; changemap MAP99; wait 35; netevent c283_loaded; '+done,
-             'manual.cfg':start+'netevent c283_manual; chase_dist 150; chase_height 10; language es; use_mouse true; bind f6 "netevent c283_compare"; bind f7 "netevent c283_next_rest"; bind f8 "netevent c283_orbit"; netevent c283_done;\n',
+             'manual.cfg':start+'netevent c283_manual; cl_run false; bind shift +speed; chase_dist 150; chase_height 10; language es; use_mouse true; bind f6 "netevent c283_compare"; bind f7 "netevent c283_next_rest"; bind f8 "netevent c283_orbit"; netevent c283_done;\n',
              'death.cfg':start+'netevent c283_kill; wait 70; netevent c283_dead; screenshot pilot-death.png; '+done}
     scripts['death-console.cfg']=start+'kill; wait 70; netevent c283_dead; screenshot pilot-death-still.png; '+done
     scripts['camera.cfg']=start+'netevent c283_manual; wait 5; netevent c283_camera_audit; screenshot pilot-review-front.png; +forward; wait 10; -forward; wait 5; netevent c283_camera_audit; netevent c283_orbit; wait 5; netevent c283_camera_audit; screenshot pilot-review-side.png; '+done
+    scripts['motion.cfg']=start+'netevent c283_manual; netevent c283_orbit; cl_run false; wait 5; +forward; wait 10; netevent c283_gait 0; wait 1; screenshot pilot-walk.png; -forward; wait 35; +speed; +forward; wait 15; netevent c283_gait 1; wait 1; screenshot pilot-run.png; -forward; -speed; wait 35; '+done
     for count in (1,64):
         for model in (0,1):
             scripts[f'bench-{count}-{model}.cfg']=start+f'vid_vsync false; vid_maxfps 0; netevent c283_bench {count} {model}; wait 175; netevent c283_record; wait 350; netevent c283_record_end; profilethinkers -t 20; wait 35; screenshot pilot-bench-{count}-{model}.png; '+done

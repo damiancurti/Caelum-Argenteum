@@ -20,6 +20,16 @@ validation_5423/anatomy-joints.json and anatomy-evidence.json; visual acceptance
 remains open. The manual fixture now starts from the front and follows its
 selected review angle, with the native chase flag reserved for following mode.
 
+Further author feedback requires less hand sway while walking and a distinct
+running animation. The revised Walk arm curves keep a small elbow bend and a
+short hand arc; Run uses more flexed elbows and a broader arm swing. Measured
+walking hand excursion is 23-28% of the previous candidate, relative to the
+shoulder. Native action periods, root/leg motion and all other model poses are
+unchanged. DESIGN.json owns the art curves; arm-motion-joints.json and
+arm-motion-evidence.json separate this revision from prior evidence. The manual
+fixture explicitly starts walking with Shift held to run, rather than inheriting
+the previous test configuration's enabled always-run setting. Review is pending.
+
 On return, the author required interchangeable weapons, shields, armor, hair
 and faces, starting with Domingo and existing appearance/equipment choices.
 The editable source has separate mesh objects, but this first runtime export
