@@ -4272,3 +4272,15 @@ Model CaelumTutorialGoldVein
     DontCullBackFaces
     FrameIndex CAVE F 0 0
 }
+
+// BEGIN CAELUM ARCANE CLOUD
+Model CaelumArcaneCloudModel
+{
+    Path "models/caelum/weather"
+    Model 0 "rain_cloud.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    ForceCullBackFaces
+    FrameIndex CARK A 0 0
+}
+// END CAELUM ARCANE CLOUD

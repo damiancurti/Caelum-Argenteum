@@ -28,27 +28,45 @@ then explicitly chose the Air seal's visual, damage, area and damage distributio
 The normal staff-stun rule above remains separate from that revised damage rule.
 The base x2 speed factor, increased as a whole by Empathy, applies horizontally
 and vertically to the current movement mode and retains the ordinary #260 impulse.
-Entering water, sleep, stun or immobilization ends the effect. Area allegiance,
-map/journey persistence and intimidation behavior remain under clarification.
+Entering water, sleep, stun or immobilization ends the effect. Lightning damages
+and stuns enemies only, protecting the caster, allies and neutrals. The cloud
+travels between maps with its remaining duration; elapsed journeys consume that
+duration. Explicit author clarification: an already-created cloud continues to
+generate new lightning while its caster is intimidated by War Cry. Starting a
+new offensive cast still follows the shared intimidation restriction.
 
-5.4.20 implements the ownership prerequisite only: when Tarot flight ends while
-another active PowerFlight remains, preserve the previous flight/gravity/view
-flags without resetting duration, charging Anima or applying takeoff thrust.
-The last source retains native expiry behavior, including fly-cheat handling.
-No serialized fields or class inheritance change; the helper is stateless.
-Native evidence uses real Tarot plus a fixture-only second source; it does not
-claim cloud input, save/travel, movement or full ability acceptance (CA-KP-105).
-Existing seated artwork, native flight and the class lifecycle will be reused;
-Investigator activation remains disabled until the full ability is implemented.
+5.4.20 enables Investigator activation through the shared User4 lifecycle. The
+effect inventory has revision 1 and snapshots power, range, width, lightning
+payload, duration and pulse phases. Old saves contain no such inventory and do
+not gain a free effect. Native saves serialize these fields without an invasive
+player schema/inheritance change. Water rejects a new cast and cancels an ongoing
+preparation without refund or reuse. Owner death removes the effect immediately.
 
-## Arcane Cloud asset boundary (#251 / 5.4.5, in progress)
+Native PowerFlight supplies controls/collision. The shared ownership helper
+preserves another active flight's flags and view centering without resetting
+duration, charging Anima or applying takeoff thrust. Only the final flight source
+ends ordinary flight. World posture uses the existing seated state without
+entering rest mechanics. Flight commands retain native land/cheat behavior.
+Rain uses the scaled cloud's elliptical footprint and a vertical native trace;
+interposed bodies and solid floors/ceilings stop it. Each recipient's current
+maximum Anima is read at the pulse. Strongest-only ties use player identity.
+Lightning's anchor requires visibility; its secondary area uses the existing Air
+seal distance/distribution rule. Staff stun requires actual lost Health. The
+35-Hz scheduler gives 12/12/11-tic spacing, without a launch-time strike.
 
-The packaged cloud mesh/material is an independent visual asset for Nube arcana
-and future weather. It has normalized art coordinates and no production actor,
-collision, saved state, gameplay size, speed, resource or damage contribution.
-The isolated preview's scale/alpha do not define the eventual ability. The
-confirmed seated rider, free flight, lightning and restorative rain remain
-requirements; their implementation and the unresolved rules stay in #251.
+Only gameplay inventory state travels. Recreate the cosmetic cloud at the
+destination; do not manually unlink and transfer a sector-linked visual actor.
+This repairs the native transition crash reproduced in the first implementation.
+Short journeys consume remaining duration without retroactive pulse bursts;
+long journeys expire the effect. Focused native evidence: validation_5420.
+Author acceptance remains pending; PR281 is draft.
+
+## Arcane Cloud asset checkpoint (#251 / 5.4.5, historical scope)
+
+The original checkpoint supplied a normalized owned cloud model/material for
+Nube arcana and future weather. It had no production actor or gameplay fields.
+The 5.4.20 implementation above supplies those consumers. Original generator,
+provenance and asset evidence remain in assets/rain_cloud and validation_545.
 
 ## Pilgrim Redemption - 5.4.19 / #250
 

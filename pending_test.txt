@@ -1,0 +1,26 @@
+CA251-01 | Origin: 5.4.20 | Issue: #251 | Investigator Arcane Cloud
+Prerequisites: isolated build/issue251-release-5420/production.pk3 plus cloud.pk3;
+assets/validation_5420/run_native.ps1 with -Directory issue251-release-5420,
+-Interactive -Language es -Script manual.cfg and a fresh label. F6 resets the
+scene; F7 refills Anima and clears reuse for another test. Targets are stationary
+laboratory actors; the player is protected from damage. This is not a campaign save.
+
+1. Press F (User4), wait through the three-second hand preparation and confirm
+   seated flight on a dark translucent 3D cloud. F12 toggles the lateral view;
+   F10 toggles ordinary third person. Check the cloud shape and rider position.
+2. Use movement keys, Home to ascend and End to descend. Confirm native walls and
+   ceiling stop the rider, and ordinary attack/block actions remain available.
+3. Observe repeated Air-seal lightning on the enemy ahead. The ally initially
+   close to the left and the farther neutral must remain unharmed. Fly directly
+   over the ally and check its displayed Anima rises only beneath the cloud;
+   the caster also recovers Anima once per second.
+4. While the cloud is active, F8 applies War Cry. Its new lightning must continue.
+   F6 clears this diagnostic scene; F7 permits another paid cast.
+5. Cast again, then F9 immediately changes to the linked map. Confirm no crash,
+   one cloud, seated flight and remaining duration without a fresh full timer.
+6. F11 ends the cloud early, or wait for expiry: normal falling resumes. F6
+   resets the scene. Report whether the gameplay and cloud/rider appearance pass.
+
+Expected: the behavior above, no duplicate cost/effect or native crash. Concave
+surface bands remain an identified mesh/material limitation for author review.
+Static/native evidence is in assets/validation_5420; it does not replace this check.

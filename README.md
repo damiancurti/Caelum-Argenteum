@@ -9,10 +9,11 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.4.20 continues Arcane Cloud (#251) in draft PR281: the reusable 3D cloud asset
-and shared flight-ownership component are present. The ability remains incomplete;
-mounted presentation, movement, lightning and restorative rain are not enabled.
-Focused evidence and remaining scope: [validation_545](assets/validation_545/RESULTS.md).
+5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
+reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal
+lightning. Current rules and focused test scope are in
+[validation_5420](assets/validation_5420/RESULTS.md). PR281 remains draft pending
+the author's CA251-01 gameplay/visual review; no merge or closure is claimed.
 
 5.4.19 implements [#250](https://github.com/damiancurti/Caelum-Argenteum/issues/250):
 Pilgrim Redemption, a mobile resurrection area and living-ally Toughness benefit.

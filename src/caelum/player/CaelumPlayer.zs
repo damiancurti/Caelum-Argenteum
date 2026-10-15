@@ -9187,6 +9187,13 @@ class CaelumPlayer : DoomPlayer
         // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
         crouchsprite = 0;
         if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
+        if(CaelumArcaneCloud.Active(self))
+        {
+            // Sólo postura mundial: el arma y el bloqueo siguen usando sus estados.
+            State seated=FindState("RestSeated");
+            if(CurState!=seated)SetState(seated);
+            return;
+        }
         if (CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
         {
             // Las ramas literales evitan convertir un String a StateLabel en 4.14.2.
@@ -11399,6 +11406,15 @@ class CaelumPlayer : DoomPlayer
     // the ground, is now airborne, is rising, and pressed the jump control.
     // The prediction guard prevents client-side prediction from charging the
     // persistent resource in addition to the authoritative game tic.
+    override void CheckMoveUpDown()
+    {
+        Super.CheckMoveUpDown();
+        // El motor asigna la propulsión vertical por separado de ForwardMove.
+        // Se escala sólo el comando nuevo, nunca una caída o un empuje recibido.
+        if(player!=null && player.cmd.upmove!=0 && player.cmd.upmove!=-32768
+            && CaelumArcaneCloud.Active(self))Vel.Z*=CaelumArcaneCloud.SpeedFactor(self);
+    }
+
     override void CheckJump()
     {
         double before=Vel.Z;
@@ -11467,6 +11483,7 @@ class CaelumPlayer : DoomPlayer
     void ApplyPhysicalMovement()
     {
         double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0) * CaelumThermalEffects.Speed(self);
+        movementFactor*=CaelumArcaneCloud.SpeedFactor(self);
         double jumpFactor = Max(0.0, EffectiveJumpHeightPercent / 100.0);
         if (ElementalStatus != null)
         {

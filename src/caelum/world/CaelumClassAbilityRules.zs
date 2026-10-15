@@ -26,11 +26,12 @@ class CaelumClassAbilityRules : Object play
         || profession==CaelumConstants.PROFESSION_EXPLORER || profession==CaelumConstants.PROFESSION_MERCENARY
         || profession==CaelumConstants.PROFESSION_PRIEST || profession==CaelumConstants.PROFESSION_CLERIC
         || profession==CaelumConstants.PROFESSION_MAGE || profession==CaelumConstants.PROFESSION_BATTLE_MAGE
-        || profession==CaelumConstants.PROFESSION_PILGRIM;}
+        || profession==CaelumConstants.PROFESSION_PILGRIM || profession==CaelumConstants.PROFESSION_INVESTIGATOR;}
 
     static clearscope bool Offensive(int profession)
     {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR
-        || profession==CaelumConstants.PROFESSION_MAGE || profession==CaelumConstants.PROFESSION_BATTLE_MAGE;}
+        || profession==CaelumConstants.PROFESSION_MAGE || profession==CaelumConstants.PROFESSION_BATTLE_MAGE
+        || profession==CaelumConstants.PROFESSION_INVESTIGATOR;}
 
     static bool CanCast(CaelumPlayer user)
     {
@@ -44,6 +45,8 @@ class CaelumClassAbilityRules : Object play
             || CaelumRestState.IsActive(user) || user.CraftingMenuOpen
             || user.HasActiveConversation() || user.PalomoMerchantMenuOpen
             || user.ClassSleepCooldownRemaining > 0) return false;
+        if(user.CharacterProfile.GetProfession()==CaelumConstants.PROFESSION_INVESTIGATOR
+            && !CaelumArcaneCloud.CanRide(user))return false;
         return user.CurrentAnima>=Cost(user);
     }
 
@@ -101,7 +104,8 @@ class CaelumClassAbilityRules : Object play
         Ensure(user);
         if(!user.ClassCastActive){CaelumClassCastView.Advance(user);return;}
         if(user.health<=0 || user.player==null || user.player.playerstate!=PST_LIVE
-            || user.IsPhysicallyImmobilized())
+            || user.IsPhysicallyImmobilized()
+            || (user.ClassCastProfession==CaelumConstants.PROFESSION_INVESTIGATOR && user.WaterLevel>0))
         {Cancel(user);return;}
         int total=CaelumClassCastLayout.SECONDS*TICRATE;
         int elapsed=total-user.ClassPreparationTics+1;
@@ -135,6 +139,10 @@ class CaelumClassAbilityRules : Object play
         }
         else if(user.ClassCastProfession==CaelumConstants.PROFESSION_PILGRIM)
             CaelumRedemption.Release(user);
+        else if(user.ClassCastProfession==CaelumConstants.PROFESSION_INVESTIGATOR)
+        {
+            if(!CaelumArcaneCloud.Release(user)){user.PersistCharacterState();return;}
+        }
         user.ClassSleepCooldownRemaining=REUSE_SECONDS;
         user.PersistCharacterState();
     }

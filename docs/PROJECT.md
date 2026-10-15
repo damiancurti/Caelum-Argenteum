@@ -2,15 +2,16 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-## 5.4.20 - Arcane Cloud continuation (#251, in progress)
+## 5.4.20 - Investigator Arcane Cloud (#251, author review pending)
 
-The reusable original cloud asset now shares the accepted #250 baseline. The
-flight ownership prerequisite preserves another active source when Tarot expires;
-focused native checks use the real Tarot power and a fixture-only second source.
-The author confirms cart-width presentation, solid-surface rain obstruction and
-seated ordinary actions. Remaining decisions and the authoritative rules are in
-SYSTEMS. Mounted gameplay, lightning, rain and full lifecycle tests remain pending;
-PR281 stays draft and this checkpoint is not full ability or author acceptance.
+The original cloud asset now supports the complete shared User4 lifecycle,
+seated native flight, attribute-scaled movement, downward restorative rain and
+enemy-only Air-seal lightning. Existing clouds keep generating strikes under
+War Cry. Inventory state preserves paid duration and pulse phases across saves
+and travel; the cosmetic model is rebuilt at each destination. This fixes the
+reproduced native crash from manually moving an unlinked visual between maps.
+Focused evidence and limitations: validation_5420. CA251-01 remains the author
+review boundary; PR281 is draft, separate from accepted #250 and pending #252.
 
 ## 5.4.19 - Pilgrim Redemption (#250)
 

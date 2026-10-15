@@ -4,6 +4,21 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-106 - Recreate disposable visuals instead of carrying stale world links
+
+- Status: ENGINE-VERIFIED, #251 / 5.4.20, GZDoom 4.14.2 Windows Vulkan,
+  2026-10-15. Scope is the cloud presentation actor, not all actor travel.
+- Manually UnlinkFromWorld/STAT_TRAVELLING followed by SetOrigin on the cloud
+  model reproduced a native MAP98 transition crash: access violation writing
+  0xbeefcafe. A cosmetic actor does not need to retain native world links.
+- Keep authoritative duration, power and pulse phase in the owner's inventory.
+  Destroy the old presentation in PreTravelled and recreate it in Travelled.
+  The same failing save then passes hub departure/return and non-hub transfer,
+  with one presentation actor and continued flight. Stateful summoned bodies
+  still use their separately verified placement/link-flag protocol (CA-KP-102).
+- Evidence/reproduction: [validation_5420](../assets/validation_5420/RESULTS.md).
+  Original crash report and failed run are retained under build/issue251-gameplay-03.
+
 ## CA-KP-105 - Native flight powers share flags without ownership counting
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED native API behavior, #251,
@@ -21,9 +36,9 @@ remaining sources on expiry, and avoid restarting timers, charging again or addi
 an unintended takeoff impulse. Native coexistence alone is insufficient. The
 5.4.20 stateless helper/Tarot integration preserves flags and view-centering state
 when another positive-duration PowerFlight remains. Focused component checks use
-real Tarot and a fixture-only second source. Full cloud input, movement, expiry,
-hub travel and save/load remain separate required checks in #251; neither the
-eight API assertions nor the component checks claim those are implemented.
+real Tarot and a fixture-only second source. Full cloud input, movement, expiry, hub travel and save/load are covered
+separately in validation_5420. The earlier eight API assertions and ten component
+checks retain their narrower scope.
 
 Evidence/reproduction: [flight_evidence.json](../assets/validation_545/flight_evidence.json),
 `prepare_flight_probe.py` and `flight_probe.zs` in the same directory. This finding

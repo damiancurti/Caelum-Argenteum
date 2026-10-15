@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `a1fc18623c5a31cb7b3df8c121b450a7c7cd9a118239f520bde49b6a9cbfa632`. Locations include every definition; the last one per language wins.
+SHA-256: `47e4e5667614c67fcbb5301814bb99270ff4198891ff0339897465228ab9ed1b`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -22,7 +22,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_AMULET | 4 | CA_AMULET_EMERALD | CA_AMULET_TOPAZ |
 | CA_APPEARANCE | 37 | CA_APPEARANCE_FACE | CA_APPEARANCE_WALK |
 | CA_ARCANA | 3 | CA_ARCANA_CUPS_REVEAL | CA_ARCANA_WANDS_REVEAL |
-| CA_ARCANE | 1 | CA_ARCANE_SUN_CAST | CA_ARCANE_SUN_CAST |
+| CA_ARCANE | 2 | CA_ARCANE_CLOUD_CAST | CA_ARCANE_SUN_CAST |
 | CA_ARGENTO | 1 | CA_ARGENTO_NAME | CA_ARGENTO_NAME |
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |
@@ -44,7 +44,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 50 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 51 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |

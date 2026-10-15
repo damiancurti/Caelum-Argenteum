@@ -2,27 +2,31 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-## 5.4.20 - Arcane Cloud flight prerequisite (#251, 2026-10-15, in progress)
+## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, author review pending)
 
-The author specified a cloud as wide as the covered cart, rain stopped by solid
-surfaces, and a seated rider retaining ordinary attacks/blocking/actions. The
-cart's current source model supplies 82 map units of full width (2.5625 m).
-After the eight-check native coexistence probe, a stateless ownership helper and
-Tarot EndEffect integration preserve a surviving flight without changing its
-timer, Anima, velocity or view centering. Last-source expiry retains native gravity
-and cheat behavior. No serialized fields or inheritance were changed. Component
-checks use the real Tarot with an isolated second source; ten final native
-assertions, project validation and normal package parity pass. Full Nube arcana
-remains disabled/unimplemented. The author also confirmed Eloquence scaling of
-cloud/rain/bolt range, strongest-only rain, renewal without advancing pulses, and
-evenly spaced three strikes per second with staff stun scaled by Charisma. The
-later request was confirmed to copy the Air seal's visual, damage and area,
-including division among recipients, superseding the staff-damage reference.
-The author approved speed in all axes with the current mode and #260 impulse,
-and ending on water, sleep, stun or immobilization. Area allegiance, map/journey
-and intimidation behavior remain pending. Evidence and exact validation scope
-are in validation_545.
-PR281 stays draft; no author acceptance, merge or issue closure is claimed.
+The author finalized cart-width, massless translucent cloud presentation with a
+seated rider retaining ordinary actions. Eloquence scales width/rain/range;
+Empathy scales whole speed/recovery/duration factors; Intelligence controls Air
+seal lightning damage, while Charisma scales normal staff stun. The Air-seal
+damage/area decision supersedes the earlier staff-damage reference. Rain restores
+1% current maximum Anima per second to the caster and allies underneath, stopping
+at solid surfaces. Three spaced enemy-only strikes per second start after a third
+second. Strongest-only rain, phase-preserving renewal, all-axis native movement,
+water/control-state interruption and elapsed journey rules are implemented.
+The final War Cry clarification explicitly permits an existing cloud to generate
+new strikes while its caster is intimidated; new offensive casting stays blocked.
+
+The earlier stateless Tarot/flight prerequisite passed ten component assertions
+(validation_545). The full ability now uses revisioned inventory state, shared
+User4 cost/preparation/reuse, native collision and the existing seated pose.
+The first native active-cloud travel test crashed with access violation writing
+0xbeefcafe. The author's CrashReport.zip matched that isolated MAP98 run.
+Replacing manual visual-actor travel with destination recreation preserves the
+effect and removes the crash on the same saved scenario, hub return and non-hub
+travel. The report and failed runs remain local evidence, not distributed assets.
+Full focused checks, copied-save compatibility and their exact qualifications
+are recorded in validation_5420. CA251-01 is outstanding author gameplay/visual
+review. PR281 stays draft; no author acceptance, merge or closure is claimed.
 
 ## #251 continuation on accepted 5.4.19 (2026-10-15, in progress)
 

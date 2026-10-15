@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "a1fc18623c5a31cb7b3df8c121b450a7c7cd9a118239f520bde49b6a9cbfa632",
+  "sha256": "47e4e5667614c67fcbb5301814bb99270ff4198891ff0339897465228ab9ed1b",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -107,6 +107,7 @@
     "CA_ARCANA_CUPS_REVEAL": {"enu":[[4430,4430]],"default":[[4430,4430]],"es":[[4435,4435]]},
     "CA_ARCANA_OBTAINED": {"enu":[[4429,4429]],"default":[[4429,4429]],"es":[[4434,4434]]},
     "CA_ARCANA_WANDS_REVEAL": {"enu":[[4431,4431]],"default":[[4431,4431]],"es":[[4436,4436]]},
+    "CA_ARCANE_CLOUD_CAST": {"enu":[[5872,5872]],"default":[[5872,5872]],"es":[[5876,5876]]},
     "CA_ARCANE_SUN_CAST": {"default":[[3872,3872]],"es":[[3909,3909]]},
     "CA_ARGENTO_NAME": {"enu":[[285,285]],"default":[[285,285]],"es":[[973,973]]},
     "CA_ARMOR_BASE_NOTHING": {"enu":[[858,858]],"default":[[858,858]],"es":[[1546,1546]]},
@@ -428,6 +429,7 @@
     "CA_CREATE_ATTRIBUTE_RESILIENCE": {"enu":[[5168,5168]],"default":[[5168,5168]],"es":[[5208,5208]]},
     "CA_CREATE_ATTRIBUTE_STRENGTH": {"enu":[[5163,5163]],"default":[[5163,5163]],"es":[[5203,5203]]},
     "CA_CREATE_ATTRIBUTE_TOUGHNESS": {"enu":[[5164,5164]],"default":[[5164,5164]],"es":[[5204,5204]]},
+    "CA_CREATE_CLASS_ARCANE_CLOUD": {"enu":[[5873,5873]],"default":[[5873,5873]],"es":[[5877,5877]]},
     "CA_CREATE_CLASS_BATTLE_CRY": {"default":[[3877,3877]],"es":[[3914,3914]]},
     "CA_CREATE_CLASS_EXPLORER": {"enu":[[5146,5146]],"default":[[5146,5146]],"es":[[5186,5186]]},
     "CA_CREATE_CLASS_FORMATION_BREAKER": {"default":[[3874,3874]],"es":[[3911,3911]]},

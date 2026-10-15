@@ -2,15 +2,18 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-## 5.4.20 - Cloud dimensions and flight prerequisite (#251, in progress)
+## 5.4.20 - Mounted Arcane Cloud presentation (#251)
 
-The author selected the covered cart's full width for the cloud: current
-ca_covered_cart.obj X bounds are [-41, 41], 82 map units / 2.5625 m. MODELDEF uses
-unit scale and CorrectPixelStretch. This supplies a base art width, not new cloud
-mass or collision: the author explicitly requires neither. Keep the owned cloud
-mesh/material and seated character artwork. No new visual binding is implemented
-in this checkpoint. Flight API/component fixtures remain outside src in
-validation_545; no development IWAD, executable or generated PK3 is distributed.
+The owned 5.4.5 mesh, palette, shader and original generator remain unchanged.
+CaelumArcaneCloudModel binds them through MODELDEF with the covered cart's full
+82-unit width (2.5625 m), scaled by Eloquence. The existing seated pose and pelvis
+anchor place the rider above the cloud. The model has zero mass and no solid
+body; player collision remains native. Deterministic cosmetic drops stop at
+traced surfaces, with the established dense-combat VFX cadence. The surface
+material still has the documented concave-band limitation (CA-KP-104); it is not
+volumetric weather. Native gameplay/capture fixtures: validation_5420. Model
+appearance and mounted presentation await CA251-01 author review. Test geometry,
+development IWAD, executables, saves and generated packages are not distributed.
 
 ## 5.4.19 - Redemption asset reuse (#250)
 

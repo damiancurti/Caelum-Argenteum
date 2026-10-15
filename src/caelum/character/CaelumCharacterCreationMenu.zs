@@ -325,7 +325,10 @@ class CaelumCharacterCreationMenu : ListMenu
                                 ? "CA_CREATE_CLASS_RALLY"
                                 : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
                                 && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_BATTLE_MAGE
-                                    ? "CA_CREATE_CLASS_SUMMONING" : "CA_CREATE_CLASS_PLANNED", false);
+                                    ? "CA_CREATE_CLASS_SUMMONING"
+                                    : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                                    && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_INVESTIGATOR
+                                        ? "CA_CREATE_CLASS_ARCANE_CLOUD" : "CA_CREATE_CLASS_PLANNED", false);
         return result;
     }
 

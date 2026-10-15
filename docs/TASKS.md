@@ -2,17 +2,16 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-## 5.4.20 - Arcane Cloud (#251, in progress)
+## 5.4.20 - Arcane Cloud (#251, author review pending)
 
-PR281 continues on accepted #250 baseline e9c79de8, preserving the original 5.4.5
-asset checkpoint. SYSTEMS records the confirmed cart-width cloud, rain blocked
-by solid surfaces, seated ordinary actions, rain/targeting/scaling and expiry
-rules, plus remaining decisions. The stateless flight ownership prerequisite is
-implemented and tested with real Tarot and an isolated second source. It adds no
-serialized fields or inheritance changes. Native probes and component evidence:
-validation_545. Investigator activation, mounted visuals/movement, rain/lightning
-and full save/travel/lifecycle validation remain pending. No author test is queued
-for incomplete gameplay; PR281 remains draft. #252 and later #282 stay separate.
+PR281 continues from accepted #250 baseline e9c79de8, retaining the original
+5.4.5 cloud asset/provenance. Shared casting, seated native flight, full-factor
+attribute scaling, restorative rain, Air-seal lightning and saved lifecycle are
+implemented. SYSTEMS is the current contract; validation_5420 records native
+input, effects, overlap, interruptions, collision, flight ownership and travel
+checks, including the repaired transition crash. Review CA251-01 before marking
+the PR ready. No merge/closure is authorized in this batch. #252, the #238/#237
+completion audits and later #282 retain their separate scopes.
 
 ## 5.4.19 - Redemption (#250, accepted)
 
