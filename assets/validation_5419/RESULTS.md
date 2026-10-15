@@ -2,8 +2,9 @@
 
 Implemented on `feat/issue250-redemption`, based on accepted #249 commit
 `6578c8b7`. Exact packages, commands, successful assertions and qualifications
-are recorded in [evidence.json](evidence.json). Author acceptance **CA250-01 is
-pending**; there is no merge or issue closure.
+are recorded in [evidence.json](evidence.json). **CA250-01 passed author review on
+2026-10-15**; [acceptance.json](acceptance.json) records the offered scope and
+normal session exit. PR298 is ready; there is no merge or issue closure.
 
 ## Focused results
 
@@ -34,7 +35,7 @@ pending**; there is no merge or issue closure.
   Original pre-upgrade snapshots remain the rollback source.
 - #249 placement regression covers the extended shared full-body placement helper.
   Agent visual review checks before/active/expired Spanish scene controls and
-  existing corpse, living-body, hands and HUD art. Physical author input is pending.
+  existing corpse, living-body, hands and HUD art. The offered physical-input scenario passed author review on 2026-10-15.
 
 Qualified reuse avoids repeating unchanged tests. The earlier final gameplay
 suite differs only by added same-tic player-death cleanup in `CaelumResurrection`;
@@ -64,7 +65,8 @@ runtime/distribution assets. Test values are laboratory controls, not new balanc
 
 ## Author check
 
-The sole outstanding check is `CA250-01` in root `pending_test.txt`. `F` prepares
+`CA250-01` passed on 2026-10-15: "La prueba dio correcto". Its confirmed entry
+was removed from root `pending_test.txt` and recorded in HISTORY. `F` prepares
 or cancels; `F6` resets; `F7` refills Anima/clears reuse; `F8` creates/kills the late
 body; `F9` crosses maps with temporary allies; `F10` advances one journey hour.
-Only explicit author confirmation will move this check into HISTORY.
+The confirmation accepts the offered scenario without additional itemized claims.

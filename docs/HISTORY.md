@@ -21,8 +21,15 @@ death, reload, hub/pending placement and elapsed journeys. Neutral copied saves
 upgrade and return to 5.4.18; active 5.4.19 saves reload in the new runtime.
 Same-tic resurrection completes existing owner-death effect cleanup. Static checks,
 normal package parity and deterministic freezes pass. Agent visual review is
-separate from the outstanding author check CA250-01. No author acceptance, merge
-or issue closure is recorded.
+separate from author acceptance. CA250-01 (origin 5.4.19/#250) passed on
+2026-10-15: the author confirmed "La prueba dio correcto" after the offered
+preparation, resurrection/Toughness, following/expiry, one-revival-per-cast and
+map/journey scenario. No qualifications were reported; no additional itemized
+claim or broad campaign/network acceptance is inferred. The manual session
+PID30820 exited normally (code 0). validation_5419/acceptance.json retains the
+exact packages and offered scope. The confirmed pending entry is removed without
+a version increment. Implementation 7eda77b0 is pushed; PR298 is ready for review.
+No merge or issue closure is claimed. Keep-awake remains released.
 
 ## 5.4.18 - Battle Mage Summoning (#249, 2026-10-15)
 

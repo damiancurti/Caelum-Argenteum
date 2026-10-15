@@ -12,8 +12,8 @@ it, then rebuild with `run_dev.bat` as described below.
 5.4.19 implements [#250](https://github.com/damiancurti/Caelum-Argenteum/issues/250):
 Pilgrim Redemption, a mobile resurrection area and living-ally Toughness benefit.
 Static/build and focused native evidence are recorded in
-[validation_5419](assets/validation_5419/RESULTS.md). Author check CA250-01 remains
-pending; no merge or issue closure is claimed.
+[validation_5419](assets/validation_5419/RESULTS.md). CA250-01 passed author review on
+2026-10-15; PR298 is ready for review. No merge or issue closure is claimed.
 
 5.4.18 implements [#249](https://github.com/damiancurti/Caelum-Argenteum/issues/249):
 Battle Mage Summoning creates an allied Zupay at the aimed ground or nearby valid

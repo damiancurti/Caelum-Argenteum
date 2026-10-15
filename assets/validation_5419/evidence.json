@@ -1341,7 +1341,7 @@
   "normal_package_all_members_equal": true,
   "deterministic_runtime_and_fixture": true,
   "agent_visual_review": "Spanish overlay, before/active/expired native captures in build/issue250-author; existing corpses/living art, class hands and HUD reused.",
-  "author_acceptance": "Pending CA250-01. No merge or issue closure.",
+  "author_acceptance": "CA250-01 passed on 2026-10-15; see acceptance.json. No merge or issue closure.",
   "limits": "Focused native fixtures are not broad campaign, network multiplayer, or large-map performance acceptance.",
   "development_failures": "Preserved under build/issue250-*; reserved keyword Protected and fixture PlayerPawn type were corrected. Fixtures were corrected for deferred PostBeginPlay, native non-monster corpse marking, inverted-dose threshold, DOT ticking, a real directed damage source and collision Health budget. An absolute -loadgame argument was replaced with a savedir-relative filename. All relevant final checks pass."
 }

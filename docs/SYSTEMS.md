@@ -42,8 +42,8 @@ start without these inventories; no character reconstruction or payment migratio
 is needed. Active effects and preparation reload in 5.4.19, including pending
 arrival. Neutral copied saves roundtrip with 5.4.18; active Redemption saves are
 not claimed to load in unsupported older runtimes. Keep the original snapshot for
-rollback. Focused native/static/build evidence: validation_5419. CA250-01 author
-acceptance remains pending; broad campaign/network coverage is not implied.
+rollback. Focused native/static/build evidence: validation_5419. CA250-01 passed
+author review on 2026-10-15; broad campaign/network coverage is not implied.
 
 ## Battle Mage Summoning - 5.4.18 / #249
 

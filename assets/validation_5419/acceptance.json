@@ -1,0 +1,18 @@
+{
+  "test_id": "CA250-01",
+  "originating_version": "5.4.19",
+  "issue": 250,
+  "result": "passed",
+  "author_quote": "La prueba dio correcto",
+  "confirmation_date": "2026-10-15",
+  "implementation_commit": "7eda77b0",
+  "pull_request": 298,
+  "scope": "Offered native preparation, resurrection and living-ally Toughness, following and expiry, next-pulse resurrection and once-per-cast rule, map transfer and elapsed journey. No additional itemized claim.",
+  "run": "build/issue250-release/author-20261015-issue250-run.json",
+  "exit_code": 0,
+  "pid": 30820,
+  "runtime_sha256": "D3E8074213056BC2E7FA0E4BFE129B66F05FF4582DE984B1FCC677B4A3414FD3",
+  "fixture_sha256": "0AD179FA82049DDD68BFC777B6FEA51BAF42FC966D8B2FF8EB3058D51D43B2CC",
+  "finished_utc": "2026-10-15T17:31:35.4295610Z",
+  "qualifications": "Accepts the offered CA250-01 scenario; no broad campaign, multiplayer or large-map performance acceptance, merge or issue closure."
+}

@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.19** — 2026-10-15.
 
-## 5.4.19 - Redemption (#250, author review pending)
+## 5.4.19 - Redemption (#250, accepted)
 
 Branch feat/issue250-redemption starts at accepted #249 commit 6578c8b7 / PR297.
 SYSTEMS records the confirmed moving area, corpse eligibility, recovery, Toughness,
@@ -10,8 +10,9 @@ once-per-cast identity, no-duplicate-rewards and travel rules. Restoration, mobi
 area membership, temporary following/allied attacks, fixed-Toughness consumers and
 saved lifecycle are implemented. Native casting, corpse/resource/defense tests,
 reload/hub/pending arrival, real journeys and neutral copied-save roundtrip pass;
-validation_5419 retains exact scope and hashes. Only CA250-01 author review is
-queued here. No merge/closure; broader campaign/network checks are not claimed.
+validation_5419 retains exact scope and hashes. CA250-01 passed author review on
+2026-10-15; acceptance.json/HISTORY retain the confirmation and PR298 is ready.
+No merge/closure; broader campaign/network checks are not claimed.
 
 ## 5.4.18 - Summoning (#249, accepted)
 

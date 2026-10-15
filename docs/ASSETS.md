@@ -7,7 +7,7 @@ Documentation version: **5.4.19** — 2026-10-15.
 Reuse owned existing corpses, living actor art and shared class hands/HUD. Native
 and gameplay fixture sources live in assets/validation_5419. Deterministic test
 rooms reuse validation_5418 geometry. Native before/active/expired captures were
-visually reviewed; author review remains CA250-01. Development IWAD textures,
+visually reviewed; CA250-01 passed author review on 2026-10-15. Development IWAD textures,
 generated packages, saves and captures stay outside src. No new artwork or
 distribution license is introduced.
 

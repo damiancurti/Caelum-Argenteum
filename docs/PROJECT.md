@@ -10,7 +10,7 @@ removal. Former enemies are temporary allies; the caster and non-raised living
 allies gain scaled x4 fixed Toughness reduction. Preserve loot/progression and
 body identity, with travel and elapsed-journey lifetime. Implementation, static
 checks, normal packaging and qualified native evidence are in validation_5419.
-CA250-01 is the outstanding author check; no merge or issue closure is claimed.
+CA250-01 passed author review on 2026-10-15; PR298 is ready. No merge/closure.
 Keep #251-252 and later #282 separately scoped.
 
 ## 5.4.18 - Battle Mage Summoning (#249)
