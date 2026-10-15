@@ -23,6 +23,10 @@ original saves remain unchanged. No author acceptance is recorded: CA247-01 stay
 pending. The author left again and requested temporary keep-awake; manual checks/
 questions are deferred until return. Implementation ddbe769d is pushed; PR295 is
 draft on PR294. No merge or closure is inferred.
+The author returned on 2026-10-15. The temporary system-only keep-awake request
+was released at 14:08:54 UTC. CA247-01 was opened from the frozen confirmed fixture
+(author-20261015-110856); native setup completed without an engine error. Manual
+acceptance is still pending, separately from the prior automated assertions.
 
 ## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
 

@@ -3,8 +3,9 @@
 Documentation version: **5.4.16** — 2026-10-15.
 
 **5.4.16/#247:** Formation Breaker implemented; native/static/package checks pass,
-PR295 draft, stacked on accepted #260. CA247-01 pending. Author away since 2026-10-15: temporary keep-awake active;
-questions/manual acceptance deferred until return. Evidence: validation_5416.
+PR295 draft, stacked on accepted #260. CA247-01 awaits the author's result.
+The author returned on 2026-10-15; temporary keep-awake was released at 14:08:54 UTC.
+The frozen manual scenario is open; #248 design questions resumed. Evidence: validation_5416.
 
 **5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
 

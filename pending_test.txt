@@ -1,5 +1,5 @@
 CA247-01 | Origin: 5.4.16 / issue #247 | Formation Breaker physical input and appearance
-Status: pending; defer until the author returns.
+Status: pending explicit author result; manual scenario opened on 2026-10-15.
 Prerequisites: no other GZDoom instance. From the repository root run:
 powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_5416/launch.ps1
 The local frozen fixture is build/issue247-confirmed (not a campaign save).

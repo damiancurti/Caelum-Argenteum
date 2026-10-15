@@ -10,9 +10,9 @@ native gesture and #238 class preparation. Native interruption, collision, appea
 preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
 CA247-01 is prepared in pending_test.txt for the author's return. Keep its branch/PR
 separate: PR295 is draft, stacked on #260/PR294; no merge or closure authorized.
-The author is away: a temporary system-only keep-awake request is active. Release
-it on return; defer manual checks/questions. #248-252 remain separately scoped,
-and #282 follows the batch.
+The author returned on 2026-10-15; temporary keep-awake is released. CA247-01
+is open for manual review and #248 design questions resumed. #248-252 remain
+separately scoped, and #282 follows the batch.
 
 ## 5.4.15 - Player acceleration and impulse (#260, accepted)
 
