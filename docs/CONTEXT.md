@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.13** — 2026-10-15.
+Documentation version: **5.4.14** — 2026-10-15.
+
+**5.4.14/#253:** MAP01 resident movement repaired; CA253-01 pending until return. validation_5414.
 
 **5.4.13/#246:** Arcane Sun implemented; CA246-01 pending until author return. validation_5413.
 

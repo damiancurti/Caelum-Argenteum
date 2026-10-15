@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.13.** Obtain and update the complete repository, validate
+**Current release: 5.4.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.14 fixes [#253](https://github.com/damiancurti/Caelum-Argenteum/issues/253):
+anchored mansion residents recover missing movement bases so they can pursue and
+fight while the living player remains at MAP01's protected 1 HP. Their own downing,
+finite resources and encounter progression remain unchanged. Old instances migrate
+without replacement. [Evidence](assets/validation_5414/RESULTS.md).
+CA253-01 and CA246-01 await author review after return; this PR stacks on #246.
 
 5.4.13 implements [#246](https://github.com/damiancurti/Caelum-Argenteum/issues/246):
 Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.13** — 2026-10-15.
+Documentation version: **5.4.14** — 2026-10-15.
+
+## 5.4.14 - Resident participation at the protected floor (#253)
+
+Reproduced in native MAP01 with the ordinary encounter controller and forward input:
+player reached 1 HP on tic 131 and stayed alive; encounter references remained.
+All four healthy resident movement bases were zero. A scoped fresh-spawn repair
+and revision-1 saved-base repair recover authored defaults without replacing actors
+or replenishing resources. Positive custom bases and genuine downing are retained.
+Evidence: assets/validation_5414. CA253-01 waits in pending_test.txt alongside
+CA246-01; manual launch/questions are deferred while the author is away. Keep this
+PR separate, based on #246. No merge or issue closure. #247-252/#260 still require
+their unresolved author design decisions; #282 follows the batch.
 
 ## 5.4.13 - Arcane Sun (#246)
 

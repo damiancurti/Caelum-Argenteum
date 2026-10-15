@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.13** — 2026-10-15.
+Documentation version: **5.4.14** — 2026-10-15.
+
+## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
+
+Investigated the reported stall when the player's Health reached the MAP01 1-HP
+floor. Native forward movement into the bull reproduced protected survival at tic
+131 without an encounter reset. The four residents retained valid targets and
+resources, but had captured zero CombatBaseSpeed before profile initialization;
+healthy/thermal/elemental factors were one. The same initialization hazard was
+previously verified for rats in #254, but this issue separately establishes it
+for the four anchored mansion residents. Player floor protection is unchanged.
+
+Before shared capture, restore only absent initial Speed from the authored class
+default. Revision-1 Tick migration repairs absent saved bases, preserves positive
+custom bases and reapplies normal status multipliers. No replacement, refill,
+healing, state-list reorder or quest advancement is introduced. In the corrected
+native encounter all four moved after the player reached 1 HP, and genuine own
+downing remained excluded. Focused evidence and preserved fixture iterations are
+in assets/validation_5414; victory-transition checks distinguish diagnostic lethal
+completion from an unaided NPC victory. CA253-01 (origin 5.4.14 / #253) is pending.
+The author remains away; no manual launch, author acceptance, merge or closure.
+Final static validation and normal packaging passed; 144 focused checks across
+eight native runs passed. All 16,163 package members match the recorded frozen
+runtime. The evidence ledger separates baseline observations from acceptance checks.
 
 ## 5.4.13 - Arcane Sun (#246, 2026-10-15)
 

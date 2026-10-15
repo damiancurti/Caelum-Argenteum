@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.13** — 2026-10-15.
+Documentation version: **5.4.14** — 2026-10-15.
+
+## MAP01 resident movement repair - 5.4.14 / #253
+
+The player's protected 1-HP floor does not end the assisted bull encounter or
+disable eligible residents. The reproduced stall had a different cause: all four
+residents captured zero CombatBaseSpeed during initialization, despite authored
+positive class defaults. Their current Health, thermal and elemental multipliers
+were all one in the stalled trace. They could attack when the bull approached,
+but could not pursue or retrieve their finite bolas.
+
+For anchored MAP01 residents only, restore a missing initial Speed from its class
+default before the shared base captures it. Keep positive custom values. Revision-1
+Tick migration repairs absent bases in old saved instances and reapplies existing
+Health/thermal/elemental modifiers. It preserves actor and equipment identity,
+resources, wear, targets, downing, recovery and quest progress. It neither replaces
+residents nor grants healing, supplies, damage immunity or victory. Existing own
+downing, finite tools, encounter grace and post-victory restoration still apply.
+The repair adds no states and no new actor class; copied-save upgrade/reload and
+rollback use native serialization, with preserved originals for reversal.
+Evidence: assets/validation_5414. CA253-01 is pending until the author returns.
 
 ## Arcane Sun - 5.4.13 / #246
 

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.13** — 2026-10-15.
+Documentation version: **5.4.14** — 2026-10-15.
+
+## 5.4.14 - Mansion residents keep participating (#253)
+
+The native assisted encounter reproduced the player's protected 1-HP floor and
+stationary eligible residents. Their stored movement bases were zero; the repair
+recovers missing authored bases on fresh spawn and old saves, preserving positive
+custom values and finite resources. It is limited to anchored MAP01 residents.
+Evidence: assets/validation_5414. CA253-01 awaits author review; #246/CA246-01 also
+remains pending. This focused patch stacks on #246 without claiming its acceptance.
+Remaining class/climate/impulse design questions wait until the author's return;
+#282 remains after the batch.
 
 ## 5.4.13 - Mage Arcane Sun (#246)
 

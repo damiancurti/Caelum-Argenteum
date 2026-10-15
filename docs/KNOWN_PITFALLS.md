@@ -27,6 +27,15 @@ sections. Upgrade, reload, rollback and hub checks preserve corpses, drops, slee
 resources and a positive custom base. The author passed audio/movement check CA254-01 on
 2026-10-14; this finding does not establish the same defect in other actor classes.
 
+Follow-up, #253 / 5.4.14, 2026-10-15, CODE-VERIFIED and ENGINE-VERIFIED:
+native MAP01 traces independently
+establish the same missing-base capture for all four anchored residents. At the
+player's protected floor their own healthy/thermal/elemental factors were one,
+but bases and Speed were zero. The repair is scoped to these narrative residents;
+it does not broaden the rat fix to every actor. Fresh and copied-save tests retain
+positive customization, finite equipment and genuine downing. Evidence:
+[validation_5414](../assets/validation_5414/RESULTS.md). Author check CA253-01 pending.
+
 ## CA-KP-095 - Native menu command tests need the real dispatch boundary
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #236 / 5.3.9,
