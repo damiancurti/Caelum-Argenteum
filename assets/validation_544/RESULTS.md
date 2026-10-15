@@ -236,4 +236,6 @@ This visual follow-up does not rerun unrelated class/HUD matrices. Earlier
 casting contracts retain their documented runtime hashes. No paid-state rollback
 or full multiplayer claim is added. A previously saved null Sleep lying pointer
 keeps its pre-art presentation until expiry/reapplication; the effect is retained.
-CA238-02 is the separate actionable author visual check.
+The author passed CA238-02 on 2026-10-14: "Estas pruebas dieron correcto."
+The game exited normally (0). Exact scope: sleep_acceptance.json. This confirms
+the offered creature poses and wake behavior; #238 remains in progress.

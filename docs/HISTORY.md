@@ -113,6 +113,13 @@ The corrected tests capture the actual idle state and retain the normal waking
 pain reaction. Exact evidence and limitations: validation_544/sleep_pose_evidence.json.
 CA238-02 remains pending; no visual acceptance, issue completion or merge is claimed.
 
+Author acceptance on 2026-10-14: **CA238-02** (origin 5.4.4 / #238) passed.
+Confirmation: "Estas pruebas dieron correcto." The offered four-body living-pose,
+third-hit wake and duration-expiry scenario is accepted. The frozen runtime and
+fixture, scope and normal exit code 0 are recorded in validation_544/sleep_acceptance.json.
+The confirmed entry is removed from pending_test.txt. Shared racial integration
+and compatibility boundaries remain open; this does not close or merge #238.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

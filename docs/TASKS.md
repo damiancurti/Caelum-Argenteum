@@ -21,8 +21,8 @@ HUD state checks pass at 1280x720 and 640x480 with high scale; the author also
 approved icon size in CA238-01. Evidence: validation_544/small_icons.json and acceptance.json.
 
 Eight living views now cover rat/Bull/Mandinga/Zupay. Native checks cover all
-four bodies, hit/expiry wake and saved pose/counters; CA238-02 is actionable.
-Remaining: Sleep visual acceptance, racial lifecycle integration alongside #239-242 and remaining
+four bodies, hit/expiry wake and saved pose/counters; CA238-02 passed on 2026-10-14.
+Remaining: racial lifecycle integration alongside #239-242 and remaining
 compatibility/input boundaries. Keep new class effects in #243-251 and movement
 in #260. No merge or closure is inferred from component or author checks.
 

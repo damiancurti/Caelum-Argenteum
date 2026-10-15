@@ -16,4 +16,5 @@ These are living poses, not death frames. Existing owned art remains intact.
 
 The repository LICENSE.md applies to original project materials to the extent
 those rights are owned by Damian Curti. This record grants no separate license
-and makes no claim over third-party material. Author visual acceptance is pending.
+and makes no claim over third-party material. Author visual acceptance passed
+CA238-02 on 2026-10-14; see assets/validation_544/sleep_acceptance.json.

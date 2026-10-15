@@ -2,7 +2,7 @@
   "issue": 238,
   "version": "5.4.4",
   "author_test": "CA238-02",
-  "author_acceptance": "pending",
+  "author_acceptance": "passed 2026-10-14; see sleep_acceptance.json",
   "runtime_sha256": "15a025e20e3f06186c025e0c39d7c4ff8fd179412b850c34ea052efd70f5a59c",
   "normal_build": {
     "exit_code": 0,

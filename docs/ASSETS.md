@@ -40,7 +40,8 @@ biped sleep foreshortening. Native actor and texture scales are retained. The
 32 PNGs, registration and manifest regenerate byte-for-byte. Runtime art is
 under src/graphics/caelum/sleep_creatures; provenance is packaged in
 licenses/sleep_creatures_544.txt. Eight-angle engine captures verify the native
-direction order, transparency and ground placement; CA238-02 awaits author review.
+direction order, transparency and ground placement. The author passed CA238-02
+on 2026-10-14; exact scope and frozen build: validation_544/sleep_acceptance.json.
 
 ## 5.4.3 - Original procedural rat audio (#254)
 

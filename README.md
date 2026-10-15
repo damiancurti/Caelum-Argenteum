@@ -16,8 +16,8 @@ enemy damage. Saved casts/effects and native hub return pass focused checks.
 The author passed CA238-01 (preparation and HUD) on 2026-10-14.
 Class/racial icons now use a smaller 64-unit square, close to Tarot/Seal size.
 Rat/Bull now lie naturally; Mandinga/Zupay use living supine poses with eight
-views. Native pose/hit/expiry and saved-pose checks pass; CA238-02 requests visual
-acceptance. Racial lifecycle integration and compatibility boundaries remain open.
+views. Native pose/hit/expiry and saved-pose checks pass; the author passed
+CA238-02 on 2026-10-14. Racial lifecycle integration and compatibility boundaries remain open.
 [Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
