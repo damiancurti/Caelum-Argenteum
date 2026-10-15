@@ -41,7 +41,7 @@ start without this effect; current saves preserve the same body/contact/payment.
 State countdown suspension is local to each NPC tick, so release cannot leave
 a saved permanent freeze. The optional tested 5.4.6 bridge deactivates the new
 effect without refunding resources; preserve original saves before using it.
-Evidence: assets/validation_547. CA241-01 remains a separate author check.
+Evidence: assets/validation_547. CA241-01 passed author review on 2026-10-14.
 
 ## Supernatural Breathing - 5.4.6 / #242
 

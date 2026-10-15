@@ -63,12 +63,14 @@ not arbitrary compatibility with every past release.
 
 ## Author check
 
-CA241-01 is pending in the root pending_test.txt. The manual fixture uses actual
+CA241-01 passed author review on 2026-10-14: "La prueba dio correcta."
+The native handoff exited normally (0); acceptance.json records its scope and
+exact hashes. The confirmed entry was removed from pending_test.txt. The fixture uses actual
 actors, normal body mass and collision, fixed 1,700/8,000 N reference forces,
 a visible 10,000 Anima test reserve, no regeneration and protected player health.
 It offers lighter/heavier
-targets and exhaustion/reset controls. Agent checks do not establish author,
-campaign-wide or multiplayer acceptance. No merge or issue closure is claimed.
+targets and exhaustion/reset controls. Campaign-wide or multiplayer acceptance
+is not implied. No merge or issue closure is claimed.
 
 The first preview exited normally and produced its screenshot, but omitted the
 runner's completion marker. The handoff fixture adds a manual-seed-only marker

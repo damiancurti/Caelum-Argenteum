@@ -11,7 +11,7 @@ Held bodies cannot act. Sight/range loss, interruption, exhaustion and map trave
 release the body while native gravity, collision and ownership remain intact.
 SYSTEMS records the exact scope, units and persistence contract. Native input,
 real actors, save/load, hub and reversible 5.4.6 rollback checks are recorded in
-assets/validation_547; CA241-01 awaits author review. The focused PR stacks on #242.
+assets/validation_547; CA241-01 passed author review on 2026-10-14. The focused PR stacks on #242.
 
 ## 5.4.6 - Caelith Supernatural Breathing (#242)
 

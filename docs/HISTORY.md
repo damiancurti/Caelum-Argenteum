@@ -28,8 +28,16 @@ Initial compile failures exposed a missing play scope and a fixture TID assignme
 the next run exposed case-insensitive field/parameter shadowing, corrected by the
 explicit Caster field. Those failed logs are retained, not counted as passing.
 Exact final hashes, test commands and remaining qualifications are in
-assets/validation_547/RESULTS.md and evidence.json. CA241-01 is pending; no author
-acceptance, merge or issue closure is inferred from native checks.
+assets/validation_547/RESULTS.md and evidence.json.
+
+On 2026-10-14 the author confirmed CA241-01 (origin 5.4.7 / #241):
+"La prueba dio correcta." The offered isolated scenario passed capture/release,
+mass-dependent motion and consumption, held-target action suppression, reference
+force switching, exhaustion and retained native gravity/contact. The native
+handoff exited normally (0). Exact hashes and handoff identity are recorded in
+assets/validation_547/acceptance.json. The confirmed entry was removed from
+pending_test.txt. Campaign-wide/multiplayer acceptance, merge and issue closure
+are not implied by this confirmation.
 
 ## 5.4.6 - Supernatural Breathing (#242, 2026-10-14)
 

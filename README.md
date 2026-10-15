@@ -14,7 +14,8 @@ Duende Telekinesis holds one living body or movable scenery object with User1.
 Force is 1,000 N times magical power; cost is 1 Anima/kg/s before normal modifiers.
 The target follows the aim at its captured distance, cannot act, and retains
 native gravity/collision. A second press, lost sight/range or exhaustion releases
-it. Focused evidence and pending author review: [validation_547](assets/validation_547/RESULTS.md).
+it. CA241-01 passed author review on 2026-10-14:
+[validation_547](assets/validation_547/RESULTS.md).
 This focused branch stacks on the accepted #242 branch; its PR contains only #241.
 
 5.4.6 implements [#242](https://github.com/damiancurti/Caelum-Argenteum/issues/242):
