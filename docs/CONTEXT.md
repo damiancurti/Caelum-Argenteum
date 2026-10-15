@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.12** — 2026-10-15.
 
-**5.4.12/#245:** Miracle implemented; CA245-01 pending. validation_5412.
+**5.4.12/#245:** CA245-01 accepted 2026-10-15. validation_5412.
 
 **5.4.11/#244:** CA244-01 accepted 2026-10-15. validation_5411.
 

@@ -14,7 +14,7 @@ Priest Miracle restores Health, Lucidity, Anima and Air each second in an area
 that follows the caster. It benefits visible allies and the caster, uses their
 current maxima and keeps the strongest overlapping effect. Empathy scales healing
 and duration; Eloquence scales radius and cost. [Evidence](assets/validation_5412/RESULTS.md).
-CA245-01 awaits author review; this focused PR stacks on accepted #244.
+CA245-01 passed author review on 2026-10-15. PR291 stacks on accepted #244.
 
 5.4.11 implements [#244](https://github.com/damiancurti/Caelum-Argenteum/issues/244):
 Explorer Survival Instinct multiplies current evasion, physical/magical precision

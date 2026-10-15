@@ -2,7 +2,7 @@
 
 This focused patch stacks on accepted #244 (05fa1855). Production adds Priest
 User4 release, a moving recovery area and authoritative player/NPC restoration.
-It does not implement the other class abilities. CA245-01 awaits author review.
+It does not implement the other class abilities. CA245-01 passed author review on 2026-10-15.
 
 ## Approved contract
 
@@ -82,10 +82,14 @@ No campaign or network multiplayer acceptance is claimed.
 
 ## Author check
 
-CA245-01 remains in root pending_test.txt. launch.ps1 opens the isolated game:
+CA245-01 passed on 2026-10-15: "La prueba dio bien." The offered run exited
+with code 0; acceptance.json records exact hashes and qualifications. HISTORY
+preserves the result and the confirmed pending entry was removed. PR291 is ready;
+no merge or issue closure. launch.ps1 opens the isolated game:
 F cast/cancel, F6 reset, F7 ally inside/outside, F8 ally behind the real wall.
 The ally begins at 200 Health, 20 Lucidity, 2000 Anima, 200 Air; each eligible
 pulse adds 30/3/300/30. The player's ordinary Lucidity recovery remains active;
 other natural rates and NPC movement/recovery are fixed solely for this fixture.
 The direct launcher opens the game; a persistent PowerShell window was previously
-rejected by automatic policy. No physical author acceptance is inferred.
+rejected by automatic policy. The author confirmed the offered scenario; no
+itemized or campaign/multiplayer result is inferred.

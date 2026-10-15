@@ -9,8 +9,9 @@ authoritative player/NPC resource consumers. Author decisions on 2026-10-15 cove
 current maxima, additive ordinary recovery, dynamic membership, pulse-time sight,
 native allies excluding neutrals/enemies, first pulse after one second, strongest
 overlap and renewal without clock reset. Focused checks and compatibility helpers:
-assets/validation_5412. CA245-01 awaits author review in pending_test.txt. Keep the
-focused PR based on accepted #244; remaining class issues and then #282 stay separate.
+assets/validation_5412. CA245-01 passed author review on 2026-10-15; HISTORY and
+acceptance.json preserve the confirmation. PR291 is ready, based on accepted #244;
+remaining class issues and then #282 stay separate.
 
 ## 5.4.11 - Survival Instinct (#244)
 

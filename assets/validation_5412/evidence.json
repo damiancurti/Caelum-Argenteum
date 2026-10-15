@@ -688,5 +688,5 @@
     "Final author fixture only adds reset of its F7 position toggle; gameplay hash matches final contract runtime."
   ],
   "coverage_limits": "Secondary-caster overlap uses an isolated actor fixture, not a network multiplayer test. Unchanged shared hold/rebind/menu/input-lockout evidence is reused from validation_544, not counted as rerun. No campaign acceptance.",
-  "author_acceptance": "Pending CA245-01; no physical author acceptance claimed."
+  "author_acceptance": "CA245-01 passed 2026-10-15; see acceptance.json. No itemized, campaign or multiplayer claim."
 }

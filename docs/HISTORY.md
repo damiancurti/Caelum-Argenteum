@@ -19,8 +19,12 @@ cadence, save/load, hub and copied-save compatibility checks are recorded in
 assets/validation_5412, including qualified fixture iterations. The original NPC
 fixture set resources before deferred PostBeginPlay restored its normal profile;
 fixture initialization now follows that profile initialization.
-CA245-01 (origin 5.4.12 / #245) awaits author review. No campaign or multiplayer
-acceptance, merge or closure is inferred. This patch stacks on accepted #244.
+CA245-01 (origin 5.4.12 / #245) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." The offered isolated scenario exited normally (0);
+assets/validation_5412/acceptance.json records exact runtime/fixture hashes.
+This is scenario acceptance, not an itemized or campaign/multiplayer result.
+The confirmed pending entry was removed. PR291 is ready, stacked on accepted
+#244; no merge or issue closure. Acceptance retains the same patch version.
 
 ## 5.4.11 - Survival Instinct (#244, 2026-10-15)
 

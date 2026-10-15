@@ -37,7 +37,7 @@ must not duplicate payment or pulses. Death disables the area immediately; expir
 removes it. Forecast travel rejects an active area. The optional copied-save
 bridge targets 5.4.11, removing unsupported areas/preparations without refund;
 preserved original saves provide reversal. It does not alter campaign saves.
-CA245-01 awaits author review; focused evidence is in assets/validation_5412.
+CA245-01 passed author review on 2026-10-15; focused evidence is in assets/validation_5412.
 
 ## Survival Instinct - 5.4.11 / #244
 
