@@ -11,9 +11,10 @@ trap scale (0.75 versus 0.375, 96 versus 48 map units). Fire/Earth/Quintessence 
 CMNF/CMNE/CMNQ; new CMNW/CMNA aliases reference the already-owned Water/Air jewelry
 icons. No bitmap, model or audio source is replaced and no Doom asset is added to
 the runtime. The Earth visual quake uses the native silent shake-only API; its
-damage and force come solely from the authored gameplay calculation. Screenshot
-and native scene validation are in progress in validation_5421; author review
-is not yet accepted. Fixture maps/IWADs remain local and are not distributed.
+damage and force come solely from the authored gameplay calculation. The final
+native chasecam capture was visually inspected; all five emblems and camera
+restoration pass focused native checks in validation_5421. CA252-01 author review
+is pending. Fixture maps/IWADs remain local and are not distributed.
 
 
 ## 5.4.20 - Mounted Arcane Cloud presentation (#251)

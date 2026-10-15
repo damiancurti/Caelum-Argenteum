@@ -3,7 +3,7 @@
 Documentation version: **5.4.21** — 2026-10-15.
 
 
-## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, in progress)
+## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, author review pending)
 
 The author confirmed growing Fire/Air/Water contributions, then explicitly kept
 Earth and Quintessence linear: at Intelligence 25, Earth pulse damage on 80 kg is
@@ -14,9 +14,22 @@ infrastructure. Overlapping weather adds; gravity retains strongest/longest.
 The author additionally requested chasecam during channeling and the Seal image
 at the feet at least twice the trap size; the implementation chooses exactly x2.
 
-Canonical rules, compatible additive ledgers and isolated tests are implemented;
-validation_5421 records native evidence and unresolved delivery checks. Author
-acceptance is pending, distinct from native checks. No merge or closure occurred.
+Gameplay commit 3a8bba88 and presentation commit 26a00596 keep these changes
+separate. Static validation and normal packaging pass; all 16,178 source members
+match the frozen tested package. validation_5421 records 233 passing assertions
+across 20 qualified native runs, including active-state save/load, travel and a
+copied genuine 5.4.20 save. Repeated fixture/package preparation is deterministic.
+The isolated 500-body benchmark measured 1.054 ms for baseline weather samples,
+1.722 ms with climate, and 24.042 ms for 35 continuous Earth-force steps. These
+service timings are not full-battle frame-rate evidence.
+
+The author's second CrashReport matched a test startup launched before fixture
+preparation had finished: no level was active. The failed run/report are retained
+locally. The launcher now checks completed manifest, required files and package
+hashes; a prepared legacy seed and its current-runtime upgrade both pass.
+CA-KP-107 records the reusable lesson. CA252-01 (origin 5.4.21 / #252) remains
+pending author gameplay/visual review. No author acceptance, merge or closure
+is claimed by these automated results.
 
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)

@@ -10,8 +10,10 @@ authority. Fire/Air/Water use growing cumulative contributions; Earth and releas
 Quintessence use a linear power ledger. The exact formulas and boundaries are in
 SYSTEMS. Channeling adds native chasecam and a double-trap-size emblem at the feet.
 Implementation starts at integration/v54-accepted-251-238 (a3b305b6); no unrelated
-issue is included. Focused native validation is in progress in validation_5421;
-author review, final delivery and PR remain pending. No merge/closure is claimed.
+issue is included. Static validation, packaging and 233 assertions across 20
+qualified native runs pass, including old-save migration and map travel. Evidence
+and limitations: validation_5421. CA252-01 remains pending author review; the
+delivery remains a draft until that review. No merge/closure is claimed.
 
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)

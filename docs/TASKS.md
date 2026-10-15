@@ -3,12 +3,14 @@
 Documentation version: **5.4.21** — 2026-10-15.
 
 
-## 5.4.21 - Seal extensions (#252, native validation in progress)
+## 5.4.21 - Seal extensions (#252, author review pending)
 
 Branch feat/issue252-seal-climate-extensions targets integration/v54-accepted-251-238.
 All requested formulas and the chasecam/ground-emblem addition are confirmed.
-Focused native formula, geometry, defense, flight and presentation probes pass;
-save/load, travel, performance, final packaging and author review remain pending.
+Static validation, normal packaging and 233 assertions across 20 qualified native
+runs pass: formulas, geometry, defenses, flight, presentation, save/load, travel
+and old-save migration. The 500-body service benchmark is not full-battle FPS
+evidence. CA252-01 is the outstanding author check in pending_test.txt.
 Keep #237's completion audit and later #282 separate. Shared #238 completion is
 already delivered as aa253eed / PR280; it is not pending #252 gameplay work.
 

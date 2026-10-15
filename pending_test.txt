@@ -1,0 +1,25 @@
+CA252-01 | Origin 5.4.21 / issue #252 | Seal climate and channel presentation
+Status: pending author confirmation.
+Prerequisites: use the prepared interactive #252 scene with the matching runtime
+and fixture from build/issue252-release-5421. To reopen, use a fresh label:
+powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_5421/run_native.ps1 -Directory issue252-release-5421 -Label author-recheck-01 -Script manual.cfg -Interactive
+
+1. Press F to channel Fire. Look down slightly: native chasecam should show the
+   matching Seal flat at your feet, twice the trap size. Move and stop with F:
+   the mark follows you, then disappears, and the previous camera mode returns.
+2. Press F6 to select each next Seal (Water, Earth, Air, Quintessence), then F to
+   start it. Check that each has its own image and the same camera lifecycle.
+   F6 is a fixture-only reset/selector, so no 60-second wait is needed here.
+3. With Fire, Water and Air, use J and the Journal Climate page to inspect the
+   local temperature, humidity and wind. Their increase grows while channeling
+   and is removed on stop; humidity cannot exceed 100%. Regional weather is not
+   replaced. The fixture pins magical power to x1.7 for reproducible observation.
+4. With Earth, observe the growing camera tremor and outward movement of nearby
+   grounded bodies. Report whether its presentation is comfortable. With
+   Quintessence, observe suspension and release, then ordinary gravity afterward.
+5. Confirm that stopping each Seal leaves movement/camera usable and causes no
+   crash. Report any failed or unclear step; partial results remain pending.
+
+Native formulas, damage, geometry, save/load, old-save migration and travel are
+already checked separately in assets/validation_5421/RESULTS.md. This entry asks
+for author gameplay and visual acceptance, not repetition of those probes.

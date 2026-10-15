@@ -3,7 +3,7 @@
 Documentation version: **5.4.21** — 2026-10-15.
 
 
-## 5.4.21 - Seal climate extensions (#252, implementation in progress)
+## 5.4.21 - Seal climate extensions (#252, author review pending)
 
 The author-approved extension augments existing User2 Channel effects. It does
 not replace Fire's accepted direct thermal energy, Water lightning, Air tornado,
@@ -38,8 +38,9 @@ duration. Earth and gravity affect all eligible bodies except their caster,
 including allies, neutrals and movable objects; fixed infrastructure is protected.
 
 Earth damage ignores armor and retains Toughness. Quintessence uses at least
-the initial magical power, including releases before one second. Save migration,
-native geometry/stacking/lifecycle tests and author acceptance are not yet complete.
+the initial magical power, including releases before one second. Native geometry,
+stacking, lifecycle and old-save migration checks pass in validation_5421;
+CA252-01 author acceptance remains pending.
 Calendar catch-up never creates extra pulses, resource charges or force.
 
 Channeling enables native chasecam and displays the matching Seal flat at the

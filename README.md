@@ -12,7 +12,8 @@ it, then rebuild with `run_dev.bat` as described below.
 5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
 local accumulating Seal climate, grounded earthquake force/damage, temporary
 Quintessence gravity, and a third-person channel view with the Seal at the feet.
-Native validation is in progress; author acceptance remains pending. Current
+Static validation, packaging and 233 assertions across 20 native runs pass.
+Author check CA252-01 remains pending. Current
 evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
