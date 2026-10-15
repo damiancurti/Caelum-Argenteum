@@ -14,7 +14,7 @@ Mercenary Formation Breaker empowers forward ground double taps with an upright,
 fixed-direction dash, temporary collision defenses and fading appearance trails.
 It uses the shared class preparation; normal running Air drain remains. Native
 validation passes with 124 qualified assertions. [Evidence](assets/validation_5416/RESULTS.md).
-Author check CA247-01 is pending until the author returns.
+CA247-01 passed author review on 2026-10-15; PR295 is ready for review.
 
 5.4.15 implements [#260](https://github.com/damiancurti/Caelum-Argenteum/issues/260):
 player acceleration reaches full current speed linearly in 3 seconds per 100 kg.

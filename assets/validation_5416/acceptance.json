@@ -1,0 +1,16 @@
+{
+  "test_id": "CA247-01",
+  "originating_version": "5.4.16",
+  "issue": 247,
+  "result": "passed",
+  "author_quote": "La prueba que me diste dio bien.",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered native User4 preparation/cancellation, forward double-tap upright dash, fixed direction, afterimages and wall interruption. No additional itemized claim.",
+  "run": "build/issue247-confirmed/author-20261015-110856-run.json",
+  "exit_code": 0,
+  "pid": 35468,
+  "runtime_sha256": "B5AD604382708BE1682009B7412B831D1AF0182DC6A86B4A2C5A4D145F45F423",
+  "fixture_sha256": "3F20BFB70AB683EB6AF2BF6809BFC9D4E544C8E250FF58CDC46CABE77135C0DB",
+  "finished_utc": "2026-10-15T14:11:31.0582853Z",
+  "qualifications": "Accepts the offered scenario; no broad campaign/multiplayer acceptance, merge or issue closure."
+}

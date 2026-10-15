@@ -3,6 +3,17 @@
   "version": "5.4.16",
   "date": "2026-10-15",
   "runtime_sha256": "b5ad604382708be1682009b7412b831d1af0182dc6a86b4a2c5a4d145f45f423",
+  "static_validation": {
+    "command": "python validate_project.py",
+    "exit_code": 0,
+    "errors": [],
+    "version": "5.4.16"
+  },
+  "normal_build": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "exit_code": 0,
+    "files_included": 16165
+  },
   "normal_package_members": 16165,
   "normal_package_matches_src_and_frozen_runtime": true,
   "native_assertions": 124,
@@ -1629,11 +1640,11 @@
     "issue247-rollback": "04883f72f69ed69fd13bd72b5037d1c5abd2ea19a33b3c69963e2d62a1d2718e",
     "issue247-return": "2be5d319bda173e52c73a680789a34a65c8f234961295ff9a5307e6b2c1c1b49"
   },
-  "author_acceptance": "Pending CA247-01; author away, no manual launch.",
+  "author_acceptance": "CA247-01 passed on 2026-10-15; see acceptance.json.",
   "visual_review": {
     "path": "build/issue247-reviewed/trail.png",
     "sha256": "8d87f4ed6555b2810e39cd713cf0e87df04692c5ebb932739516eda55e077ad0",
-    "result": "Agent inspected frozen translucent body/head appearance and aligned snapshot positions; author appearance acceptance pending."
+    "result": "Agent inspected aligned translucent snapshots; author accepted offered CA247-01 appearance/input scenario on 2026-10-15."
   },
   "diagnostics": [
     "compile01: Stop is a reserved ZScript token; renamed EndDash. compile02 passed 5 native #260 regression assertions.",
@@ -1645,18 +1656,7 @@
     "boundaries/preview: head snapshot lagged body by one tic; synchronize modular head before photographing. Reviewed snapshot pairs share exact positions/age."
   ],
   "limitations": [
-    "No author acceptance, broad campaign, multiplayer, performance or other class delivery claim.",
+    "No broad campaign, multiplayer, performance or other class delivery claim.",
     "Rollback requires the documented inert-class bridge on copied saves; unsupported transient effect is cancelled without refund. Original saves remain unchanged."
-  ],
-  "static_validation": {
-    "command": "python validate_project.py",
-    "exit_code": 0,
-    "errors": [],
-    "version": "5.4.16"
-  },
-  "normal_build": {
-    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
-    "exit_code": 0,
-    "files_included": 16165
-  }
+  ]
 }

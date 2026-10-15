@@ -45,7 +45,8 @@ preparation payment. Hub arrival ends an old-map traversal while preserving the
 remaining owned class window. For rollback to 5.4.15, the optional copied-save
 bridge declares the new classes and cancels unsupported effects without refund;
 plain old runtime does not know those classes. Original saves remain untouched.
-Native and copied-save evidence is in validation_5416; CA247-01 is pending.
+Native and copied-save evidence is in validation_5416; CA247-01 passed author
+review on 2026-10-15 without reported qualifications.
 
 ## Player constant acceleration and directional impulse - 5.4.15 / #260
 

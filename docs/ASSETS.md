@@ -11,8 +11,8 @@ emitted per 0.1 seconds of actual traversal and fade over 0.3 seconds (35-Hz tic
 quantization). Development fixture sources live in assets/validation_5416; generated
 packages, development IWADs and saves remain local under build/. Visual/native
 validation passes; the agent inspected the final body/head alignment and fading
-trail. Evidence/hashes are in validation_5416/evidence.json, separately from pending
-CA247-01 author appearance acceptance.
+trail. Evidence/hashes are in validation_5416/evidence.json, separately from
+CA247-01 author appearance acceptance, confirmed on 2026-10-15.
 
 ## 5.4.15 - Movement validation fixtures (#260)
 

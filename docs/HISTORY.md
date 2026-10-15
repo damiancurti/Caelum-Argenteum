@@ -26,7 +26,17 @@ draft on PR294. No merge or closure is inferred.
 The author returned on 2026-10-15. The temporary system-only keep-awake request
 was released at 14:08:54 UTC. CA247-01 was opened from the frozen confirmed fixture
 (author-20261015-110856); native setup completed without an engine error. Manual
-acceptance is still pending, separately from the prior automated assertions.
+acceptance was initially pending, separately from the prior automated assertions.
+
+CA247-01 (origin 5.4.16 / #247) passed on 2026-10-15: the author confirmed
+"La prueba que me diste dio bien." after the offered preparation/cancellation,
+upright double-tap, fixed-direction, appearance-trail and wall scenario. Record
+the offered scope without an extra itemized or campaign/multiplayer claim.
+The interactive run exited normally; validation_5416/acceptance.json records its
+hashes and confirmation. Remove the confirmed entry from pending_test.txt.
+Version remains 5.4.16; PR295 is ready for review. No merge/closure is inferred.
+The return-status update briefly exceeded CONTEXT's 2,500-word limit by one word;
+the acceptance summary was shortened and static validation passes again.
 
 ## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
 

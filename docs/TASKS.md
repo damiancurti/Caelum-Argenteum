@@ -2,16 +2,15 @@
 
 Documentation version: **5.4.16** — 2026-10-15.
 
-## 5.4.16 - Formation Breaker (#247, awaiting author check)
+## 5.4.16 - Formation Breaker (#247, accepted)
 
 The author's traversal, stance, running-cost, collision and afterimage decisions
 are now explicit in SYSTEMS and issue #247. Implementation uses the accepted #260
 native gesture and #238 class preparation. Native interruption, collision, appearance,
 preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
-CA247-01 is prepared in pending_test.txt for the author's return. Keep its branch/PR
-separate: PR295 is draft, stacked on #260/PR294; no merge or closure authorized.
-The author returned on 2026-10-15; temporary keep-awake is released. CA247-01
-is open for manual review and #248 design questions resumed. #248-252 remain
+CA247-01 passed on 2026-10-15; acceptance.json/HISTORY retain the offered scope.
+PR295 is ready, stacked on #260/PR294; no merge or closure authorized.
+Temporary keep-awake is released. #248 design questions resumed; #248-252 remain
 separately scoped, and #282 follows the batch.
 
 ## 5.4.15 - Player acceleration and impulse (#260, accepted)

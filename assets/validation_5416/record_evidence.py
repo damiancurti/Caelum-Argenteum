@@ -69,5 +69,12 @@ result={'issue':247,'version':'5.4.16','date':'2026-10-15','runtime_sha256':sha(
  'final/low: actor-overhead stand-in did not establish a low native ceiling; actual MoveCeiling fixture passes with 42-unit clearance and 56-unit full body.',
  'boundaries/preview: head snapshot lagged body by one tic; synchronize modular head before photographing. Reviewed snapshot pairs share exact positions/age.'
  ],'limitations':['No author acceptance, broad campaign, multiplayer, performance or other class delivery claim.','Rollback requires the documented inert-class bridge on copied saves; unsupported transient effect is cancelled without refund. Original saves remain unchanged.']}
-(HERE/'evidence.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+acceptance_path = HERE / 'acceptance.json'
+if acceptance_path.is_file():
+ acceptance = json.loads(acceptance_path.read_text(encoding='utf-8'))
+ if acceptance['result'] == 'passed':
+  result['author_acceptance'] = 'CA247-01 passed on 2026-10-15; see acceptance.json.'
+  result['visual_review']['result'] = 'Agent inspected aligned translucent snapshots; author accepted offered CA247-01 appearance/input scenario on 2026-10-15.'
+  result['limitations'][0] = 'No broad campaign, multiplayer, performance or other class delivery claim.'
+(HERE / 'evidence.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
 print(json.dumps({'assertions':result['native_assertions'],'runs':len(runs),'members':len(members),'runtime':result['runtime_sha256']}))

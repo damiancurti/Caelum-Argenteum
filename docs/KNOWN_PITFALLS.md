@@ -28,7 +28,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 - Evidence: issue247-boundaries/preview records one-step offsets; reviewed/preview
   records exact paired positions/ages and a visually inspected fading trail.
   [validation_5416](../assets/validation_5416/RESULTS.md) retains hashes.
-- Limits: author visual acceptance remains CA247-01; this verifies the current
+- Limits: CA247-01 passed author review on 2026-10-15; this verifies the current
   owned composite sprite system, not arbitrary future 3D attachments.
 
 ## CA-KP-098 - Bound native console test scripts

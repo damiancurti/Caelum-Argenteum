@@ -11,7 +11,8 @@ final flat collision Toughness reduction. Empathy scales full factors and both
 durations. Ordinary running Air consumption remains; only the impulse fee is
 waived. Native input, collision, appearance and copied-save validation passes: 124
 qualified assertions in 30 runs (hashes/reuse limits: assets/validation_5416).
-Static validation and normal packaging pass. CA247-01 author acceptance remains outstanding. This focused
+Static validation and normal packaging pass. CA247-01 passed author review on 2026-10-15;
+PR295 is ready for review. This focused
 branch stacks on accepted #260; other classes/climate and #282 retain their scope.
 
 ## 5.4.15 - Player acceleration and directional impulse (#260)
