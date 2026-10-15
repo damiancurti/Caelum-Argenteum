@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.11** — 2026-10-15.
+Documentation version: **5.4.12** — 2026-10-15.
+
+## 5.4.12 - Priest Miracle (#245)
+
+Priest User4 now restores Health, Lucidity, Anima and Air every second in a moving
+area, including the caster and visible native allies. Each recipient contributes
+its current resource maxima; base recovery is 3%, scaled by Empathy with duration.
+Eloquence scales range and cost. The strongest overlapping area wins. This replaces
+the historical 1% design. Shared paid preparation, cancellation and reuse remain.
+Focused evidence: assets/validation_5412. CA245-01 awaits author review; this patch
+stacks on accepted #244. Other abilities and #282 retain separate delivery.
 
 ## 5.4.11 - Explorer Survival Instinct (#244)
 

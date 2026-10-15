@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.11** — 2026-10-15.
+Documentation version: **5.4.12** — 2026-10-15.
+
+## 5.4.12 - Miracle (#245)
+
+Implemented Priest's moving recovery area through the shared class lifecycle and
+authoritative player/NPC resource consumers. Author decisions on 2026-10-15 cover
+current maxima, additive ordinary recovery, dynamic membership, pulse-time sight,
+native allies excluding neutrals/enemies, first pulse after one second, strongest
+overlap and renewal without clock reset. Focused checks and compatibility helpers:
+assets/validation_5412. CA245-01 awaits author review in pending_test.txt. Keep the
+focused PR based on accepted #244; remaining class issues and then #282 stay separate.
 
 ## 5.4.11 - Survival Instinct (#244)
 

@@ -17,6 +17,27 @@ class CaelumCombatActor : Actor
     CaelumThermalState ThermalState;
     CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;
+    int MiracleRecoveryRevision;
+    double MiracleHealthRemainder;
+
+    void ApplyMiraclePulse(double ratio)
+    {
+        if(health<=0 || CombatMaximumHealth<=0 || ratio<=0)return;
+        // La fracción se guarda separada de la curación por reposo.
+        if(MiracleRecoveryRevision<CaelumMiracle.REVISION)
+        {MiracleRecoveryRevision=CaelumMiracle.REVISION;MiracleHealthRemainder=0;}
+        MiracleHealthRemainder+=Max(0,CombatMaximumHealth)*ratio;
+        int healing=int(MiracleHealthRemainder+1e-8);
+        MiracleHealthRemainder=Max(0.0,MiracleHealthRemainder-healing);
+        health=Min(CombatMaximumHealth,health+healing);
+        if(health>=CombatMaximumHealth)MiracleHealthRemainder=0;
+        CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
+            CurrentCombatLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
+        CurrentCombatAnima=Min(MaximumCombatAnima,CurrentCombatAnima+MaximumCombatAnima*ratio);
+        CurrentCombatAir=Min(MaximumCombatAir,CurrentCombatAir+MaximumCombatAir*ratio);
+        UpdateCombatHealthEffects();UpdateActorLucidityState();
+    }
+
     int CombatToughness;
     int CombatResilience;
     int CombatAgility;

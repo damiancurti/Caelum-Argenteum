@@ -1,6 +1,43 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.11** — 2026-10-15.
+Documentation version: **5.4.12** — 2026-10-15.
+
+## Miracle - 5.4.12 / #245
+
+Priest User4 uses the shared three-second paid preparation, cancellation without
+refund and 60-second reuse from release. At release, snapshot Eloquence-scaled
+class radius (40 m base), Empathy-scaled recovery (3% base) and duration (10 s base).
+The moving area follows its living caster. It is a benefit, not an attack.
+The first pulse occurs after 35 simulation tics; subsequent pulses occur once per
+second, including the last complete second of the effect. Each pulse checks
+current three-dimensional distance, direct sight and native allegiance. The
+caster benefits; other living players in cooperative play or on the same team,
+and native friendly monsters recognized as friends, benefit. Neutral and hostile
+bodies, corpses and ordinary objects do not. No narrative faction matrix is added.
+Entering/leaving, walls and changed allegiance affect the next pulse.
+
+Restore the approved percentage of each recipient's current maximum Health,
+Lucidity, Anima and Air. Recovery adds to ordinary recovery and consumables and
+caps at legal maxima. Fractional Health carries separately from natural recovery
+so small maxima do not gain a fabricated minimum of one HP per pulse; reaching
+maximum clears the remainder. No extra food/water payment, Adrenaline, cleansing,
+resurrection or survival resource restoration is introduced. Recovery updates
+the corresponding Health/Lucidity/Air state services and native player health.
+
+Overlapping areas restore only the most potent eligible Miracle. Equal potency
+uses native player-number order. Each source retains its own one-second clock;
+suppressed pulses do not queue. Renewal uses the new release's potency/range and
+max(remaining, new duration), retaining the next pulse's phase and one area.
+Changing a maximum during the effect changes the next recovery amount.
+
+The caster-owned revision-1 inventory serializes potency, radius, remaining time
+and pulse phase. Player/NPC recovery revision 1 initializes the separate Health
+remainder to zero for old saves, idempotently. Save/load and supported hub travel
+must not duplicate payment or pulses. Death disables the area immediately; expiry
+removes it. Forecast travel rejects an active area. The optional copied-save
+bridge targets 5.4.11, removing unsupported areas/preparations without refund;
+preserved original saves provide reversal. It does not alter campaign saves.
+CA245-01 awaits author review; focused evidence is in assets/validation_5412.
 
 ## Survival Instinct - 5.4.11 / #244
 
@@ -7063,7 +7100,7 @@ status were added in V4.35; character thermal exposure is implemented in
 
 This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
 V5.4 sections and issue-specific author revisions supersede historical rules.
-The Warrior and Explorer rows below reflect #243/#244; pending class replacements retain their
+The Warrior, Explorer and Priest rows below reflect #243/#244/#245; pending class replacements retain their
 separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
@@ -7080,7 +7117,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | --- | --- | --- |
 | Warrior | Battle Cry | Visible enemies in the release-time area cannot perform any attack, including magic. Movement/defense remain; see the 5.4.10 contract above. |
 | Explorer | Survival Instinct | Multiplies current evasion, physical/magical critical chance and precision, and earned Adrenaline by 3; Empathy scales the entire factor and duration. See 5.4.11 above. |
-| Priest | Miracle | Restores 1% of Lucidity, Health, Anima and Air per second. |
+| Priest | Miracle | Restores 3% of current maximum Lucidity, Health, Anima and Air per second to the caster and visible allies in a moving area. Empathy scales recovery/duration; see 5.4.12 above. |
 | Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |
 | Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |
 | Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |

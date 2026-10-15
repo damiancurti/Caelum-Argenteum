@@ -1,0 +1,18 @@
+CA245-01 | Origin: 5.4.12 / #245 | Miracle native playtest
+Prerequisites: run assets/validation_5412/launch.ps1 with its prepared isolated
+runtime; GZDoom 4.14.2. Campaign saves remain untouched. Fixed test maxima:
+1000 Health, 100 Lucidity, 10000 Anima, 1000 Air. NPC recovery is held steady;
+the player's ordinary Lucidity recovery remains visible alongside Miracle.
+1. F6 resets. The left body is allied; the right body is hostile. F starts the
+   actual three-second preparation and progressively spends 1000 Anima.
+2. One second after release, the caster and visible ally begin receiving one
+   pulse per second: 30 Health, 3 Lucidity, 300 Anima, 30 Air, capped at maxima.
+   The ally starts at 200/20/2000/200 and ends at 500/50/5000/500 after ten pulses.
+   The enemy and ally hidden behind the wall do not recover. The effect stops
+   after ten seconds; reuse begins at release and lasts sixty seconds.
+3. F6 resets. Cast again, then use F7 to move the ally outside/inside the radius.
+   Recovery stops/resumes on subsequent pulses. F8 puts it behind the wall;
+   recovery stops. F7 can return it; F6 always resets the whole scene.
+4. F6 resets. Start F and press it again before three seconds. No area or reuse
+   begins; spent Anima stays spent. The normal hand preparation returns to idle.
+Close the game and report CA245-01, including failed or partial steps.

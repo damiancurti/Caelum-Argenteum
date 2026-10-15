@@ -721,6 +721,8 @@ class CaelumPlayer : DoomPlayer
     double AdrenalinePenaltyIgnoreRatio;
     double SurvivalDamageAccumulator;
     double NaturalHealthRegenerationAccumulator;
+    int MiracleRecoveryRevision;
+    double MiracleHealthRemainder;
 
     // CurrentAir is the first live Caelum resource. It is stored on the player
     // actor so ordinary GZDoom saves preserve it automatically.

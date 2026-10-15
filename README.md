@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.11.** Obtain and update the complete repository, validate
+**Current release: 5.4.12.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.12 implements [#245](https://github.com/damiancurti/Caelum-Argenteum/issues/245):
+Priest Miracle restores Health, Lucidity, Anima and Air each second in an area
+that follows the caster. It benefits visible allies and the caster, uses their
+current maxima and keeps the strongest overlapping effect. Empathy scales healing
+and duration; Eloquence scales radius and cost. [Evidence](assets/validation_5412/RESULTS.md).
+CA245-01 awaits author review; this focused PR stacks on accepted #244.
 
 5.4.11 implements [#244](https://github.com/damiancurti/Caelum-Argenteum/issues/244):
 Explorer Survival Instinct multiplies current evasion, physical/magical precision

@@ -2,6 +2,29 @@
 // El coordinador mantiene el orden de llamadas y la inicialización explícita.
 class CaelumPlayerResources : Object play
 {
+    static void ApplyMiraclePulse(CaelumPlayer user,double ratio)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0
+            || user.player.playerstate!=PST_LIVE || user.DerivedStats==null
+            || user.CaelumMaximumHealth<=0 || ratio<=0)return;
+        // Los saves anteriores empiezan sin fracción; no tocar la regeneración natural.
+        if(user.MiracleRecoveryRevision<CaelumMiracle.REVISION)
+        {user.MiracleRecoveryRevision=CaelumMiracle.REVISION;user.MiracleHealthRemainder=0;}
+        user.MiracleHealthRemainder+=Max(0,user.CaelumMaximumHealth)*ratio;
+        int healing=int(user.MiracleHealthRemainder+1e-8);
+        user.MiracleHealthRemainder=Max(0.0,user.MiracleHealthRemainder-healing);
+        user.health=Min(user.CaelumMaximumHealth,user.health+healing);
+        if(user.health>=user.CaelumMaximumHealth)user.MiracleHealthRemainder=0;
+        user.player.health=user.health;
+        user.CurrentLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
+            user.CurrentLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
+        user.CurrentAnima=Min(user.DerivedStats.MaximumAnima,
+            user.CurrentAnima+user.DerivedStats.MaximumAnima*ratio);
+        user.CurrentAir=Min(user.DerivedStats.MaximumAir,
+            user.CurrentAir+user.DerivedStats.MaximumAir*ratio);
+        user.UpdateHealthStateEffects();user.UpdateLucidityState();user.UpdateAirStateEffects();
+    }
+
     static void AddAdrenaline(CaelumPlayer user, double amount, bool applyAbility=true)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;

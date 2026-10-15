@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.11** — 2026-10-15.
+Documentation version: **5.4.12** — 2026-10-15.
+
+## 5.4.12 - Miracle (#245, 2026-10-15)
+
+Implemented the revised Priest class ability: base 3% of each beneficiary's current
+maximum Health, Lucidity, Anima and Air each second. The author confirmed a moving
+area with dynamic entry/exit, caster plus native allies, pulse-time direct sight,
+no neutrals/enemies, first pulse one second after release and recovery additive to
+ordinary regeneration. Empathy scales potency/duration; Eloquence scales radius
+and cost under the accepted shared casting contract. Strongest eligible overlap
+wins; renewal retains max duration and pulse phase while replacing potency/range.
+
+Player/NPC resource services cap additions and preserve fractional Health apart
+from natural regeneration; no survival, cleansing or resurrection effect is added.
+Revisioned aura state stores clocks and release-time values. Native preparation,
+cadence, save/load, hub and copied-save compatibility checks are recorded in
+assets/validation_5412, including qualified fixture iterations. The original NPC
+fixture set resources before deferred PostBeginPlay restored its normal profile;
+fixture initialization now follows that profile initialization.
+CA245-01 (origin 5.4.12 / #245) awaits author review. No campaign or multiplayer
+acceptance, merge or closure is inferred. This patch stacks on accepted #244.
 
 ## 5.4.11 - Survival Instinct (#244, 2026-10-15)
 
