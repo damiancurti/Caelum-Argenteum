@@ -14,7 +14,7 @@ the bottom-center quick-use selector displays the selected item's name and
 quantity above its icon, with smaller previous/next icons alongside it. Native
 inventory commands retain remapping and existing use rules; individual water
 containers show their remaining liters. Static/build checks and 47 assertions
-across 11 final native runs pass; CA282-01 awaits author review. Evidence:
+across 11 final native runs pass; CA282-01 passed author review on 2026-10-15; PR300 is ready. Evidence:
 [validation_5422](assets/validation_5422/RESULTS.md), [pending_test.txt](pending_test.txt).
 
 5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):

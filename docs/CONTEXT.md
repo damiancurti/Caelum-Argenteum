@@ -3,8 +3,8 @@
 Documentation version: **5.4.22** — 2026-10-15.
 
 **5.4.22/#282:** bottom-center carousel; name/count above icon; smaller neighbors;
-native input/individual containers. validation_5422; CA282-01 pending. Author
-away: defer questions/manual tests; keep-awake active (12h). Next #283/#284:
+native input/individual containers. validation_5422; CA282-01 accepted
+2026-10-15, PR300 ready. Author returned; keep-awake released. Next #283/#284:
 unchanged Mandinga attributes, extra Fire machete damage, approved demon
 personalities/cosmetic Zupay rock. Separate PRs.
 

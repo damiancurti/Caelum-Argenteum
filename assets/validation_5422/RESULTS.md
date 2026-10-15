@@ -2,8 +2,10 @@
 
 Version: 5.4.22. Target: GZDoom 4.14.2, Windows 11, Vulkan.
 Branch: `feat/issue282-quick-use-hud`; base: `72f4b93b` (#237 completion on
-accepted #252). Author acceptance **pending**: CA282-01 in root pending_test.txt.
-The author is away; do not launch the manual fixture until their return.
+accepted #252). Author check **CA282-01 passed on 2026-10-15**, without reported
+qualifications: "La prueba que me diste dio bien." The manual trial used frozen
+issue282-final-06, label author-return-01; its runtime was unchanged. PR300 ready;
+merge and issue closure remain separate.
 
 ## Implemented behavior
 
@@ -43,9 +45,9 @@ icon, and resource groups stay outside the reserved central width. Earlier
 attempts at 2560×1080 were clamped by the desktop to 1924×1061; these do **not**
 establish ultrawide coverage. Use the actual PNG dimensions in evidence.
 
-Manual
-held-key behavior, personal remapping/menu use and aesthetic acceptance remain
-CA282-01; scripted console commands do not claim physical keyboard testing.
+CA282-01 covers manual held-key behavior, remapping/menu use and aesthetic review.
+It is author-confirmed; scripted console commands alone do not establish physical
+keyboard testing. See HISTORY for the originating version, confirmation and scope.
 
 `prepare.py --directory <fresh-name>` freezes the current source and isolated
 fixture. Optionally supply `--legacy-runtime <accepted-5.4.21.pk3>` for a genuine

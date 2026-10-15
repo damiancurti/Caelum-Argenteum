@@ -3,7 +3,7 @@
 Documentation version: **5.4.22** — 2026-10-15.
 
 
-## 5.4.22 - Quick-use selector (#282, 2026-10-15, author review pending)
+## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
 
 The author requested the gameplay selector at the bottom center, with each water
 container represented separately and remaining water shown. Subsequent visual
@@ -15,8 +15,12 @@ through Drink rather than destroying its container. No save schema was added.
 Static/build validation passes, with 47 assertions in 11 final native runs,
 four rendered views, a real 5.4.21 save seed and 16,180 runtime members matching
 source. Evidence and its limitations: assets/validation_5422/RESULTS.md.
-CA282-01 (origin 5.4.22 / #282) is pending. The author left for several hours and
-requested temporary keep-awake, postponing all questions and manual tests.
+CA282-01 (origin 5.4.22 / #282) passed author review on 2026-10-15. The author
+confirmed "La prueba que me diste dio bien" after the isolated selector trial
+(build/issue282-final-06, author-return-01, unchanged tested runtime). No
+qualifications were reported. Its entry was removed from pending_test.txt.
+Temporary keep-awake was released on return, preserving the Balanced power plan.
+PR300 is ready for review; no merge or issue closure is implied.
 
 The queued #284 was revised before implementation: remove the Mandinga attribute
 increase, preserve its physical machete hit, and add magical Fire damage with

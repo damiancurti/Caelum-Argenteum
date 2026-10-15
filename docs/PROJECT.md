@@ -8,8 +8,8 @@ Documentation version: **5.4.22** — 2026-10-15.
 The author selected a carousel at the bottom center, with name/count above the
 selected icon and smaller neighboring icons. It reuses native inventory input,
 owned artwork, existing consumption and water-container identity. No inventory
-schema or item balance changes. Evidence: validation_5422; CA282-01 is pending
-while the author is away. Keep #283's editable Domingo model pilot and #284's
+schema or item balance changes. Evidence: validation_5422; CA282-01 passed
+author review on 2026-10-15; PR300 is ready. Keep #283's editable Domingo model pilot and #284's
 revised combat/personality/rock work in separate branches, commits and PRs.
 
 ## 5.4.21 - Local Seal climate and channel presentation (#252)
