@@ -22,7 +22,8 @@ class CaelumClassAbilityRules : Object play
     {return user.DerivedStats.BuffPowerPercent/100.0;}
 
     static clearscope bool Implemented(int profession)
-    {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR;}
+    {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR
+        || profession==CaelumConstants.PROFESSION_EXPLORER;}
 
     static clearscope bool Offensive(int profession)
     {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR;}
@@ -114,6 +115,8 @@ class CaelumClassAbilityRules : Object play
             CaelumSleepRules.Release(user);
         else if(user.ClassCastProfession==CaelumConstants.PROFESSION_WARRIOR)
             CaelumBattleCry.Release(user);
+        else if(user.ClassCastProfession==CaelumConstants.PROFESSION_EXPLORER)
+            CaelumSurvivalInstinct.Release(user);
         user.ClassSleepCooldownRemaining=REUSE_SECONDS;
         user.PersistCharacterState();
     }

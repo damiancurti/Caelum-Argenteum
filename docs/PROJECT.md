@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.10** — 2026-10-15.
+Documentation version: **5.4.11** — 2026-10-15.
+
+## 5.4.11 - Explorer Survival Instinct (#244)
+
+Explorer User4 now applies a temporary self benefit through the shared paid class
+lifecycle. Current evasion, physical/magical accuracy and critical chance, and
+Adrenaline earned in combat or from abilities receive the full 3x Empathy factor.
+Existing probability/resource caps remain; tutorial/debug reserves do not gain
+the bonus. Duration is the common ten-second base times Empathy. No negative-state
+or survival-drain immunity remains from the superseded design. Native consumers,
+combination and saved-effect evidence: assets/validation_5411. CA244-01 awaits
+author review; this focused patch stacks on accepted #243.
 
 ## 5.4.10 - Warrior Battle Cry (#243)
 

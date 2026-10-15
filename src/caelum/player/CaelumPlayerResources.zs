@@ -2,13 +2,14 @@
 // El coordinador mantiene el orden de llamadas y la inicialización explícita.
 class CaelumPlayerResources : Object play
 {
-    static void AddAdrenaline(CaelumPlayer user, double amount)
+    static void AddAdrenaline(CaelumPlayer user, double amount, bool applyAbility=true)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.DerivedStats != null)
         {
             user.CurrentAdrenaline = Clamp(
-                user.CurrentAdrenaline + Max(0.0, amount),
+                user.CurrentAdrenaline + Max(0.0, amount)
+                    * (applyAbility?CaelumSurvivalInstinct.Multiplier(user):1.0),
                 0.0,
                 user.DerivedStats.MaximumAdrenaline
             );
@@ -21,8 +22,9 @@ class CaelumPlayerResources : Object play
         user.LastAdrenalineEvent = eventType;
         user.LastAdrenalineBaseGain = Max(0.0, amount);
         user.LastAdrenalineFinalGain = user.LastAdrenalineBaseGain
-            * user.HealthAdrenalineGainMultiplier * CaelumPersonalityRules.Adrenaline(user);
-        user.AddAdrenaline(user.LastAdrenalineFinalGain);
+            * user.HealthAdrenalineGainMultiplier * CaelumPersonalityRules.Adrenaline(user)
+            * CaelumSurvivalInstinct.Multiplier(user);
+        user.AddAdrenaline(user.LastAdrenalineFinalGain,false);
     }
 
     static void MarkCombatActivity(CaelumPlayer user)
@@ -233,10 +235,12 @@ class CaelumPlayerResources : Object play
         }
 
         user.EffectivePhysicalAccuracyPercent = user.DerivedStats.PhysicalAccuracyPercent
+            * CaelumSurvivalInstinct.Multiplier(user)
             * user.LucidityAccuracyMultiplier
             * (user.ElementalStatus != null
                 ? user.ElementalStatus.GetAccuracyMultiplier() : 1.0);
         user.EffectiveMagicalAccuracyPercent = user.DerivedStats.MagicalAccuracyPercent
+            * CaelumSurvivalInstinct.Multiplier(user)
             * user.LucidityAccuracyMultiplier
             * (user.ElementalStatus != null
                 ? user.ElementalStatus.GetAccuracyMultiplier() : 1.0);
@@ -857,6 +861,7 @@ class CaelumPlayerResources : Object play
             );
 
             user.EffectiveEvasionChance = user.DerivedStats.BaseEvasionChance
+                * CaelumSurvivalInstinct.Multiplier(user)
                 * CaelumPersonalityRules.Evasion(user)
                 * loadPerformanceMultiplier
                 * user.AirStatePerformanceMultiplier

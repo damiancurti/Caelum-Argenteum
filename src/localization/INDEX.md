@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `c61e4777d80b474e18cf33262b3220448165feb8a8530ca437af7153fd6927e5`. Locations include every definition; the last one per language wins.
+SHA-256: `6e0f737d9a65874ed5c4d877494f865c86e975979f4c561ebc89d7b9734e7da2`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -43,7 +43,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 46 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 47 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
@@ -138,7 +138,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |
-| CA_SURVIVAL | 10 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
+| CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
 | CA_TAROT | 66 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |

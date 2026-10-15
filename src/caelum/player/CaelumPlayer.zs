@@ -9502,7 +9502,8 @@ class CaelumPlayer : DoomPlayer
         double baseChance = CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon);
         if (ranged) baseChance *= GetRangedTierCriticalMultiplier(WeaponModel.Tier);
         return CaelumAttackRules.CriticalChance(baseChance, DerivedStats.PhysicalCriticalChance,
-            CrouchCriticalChanceMultiplier, CaelumPersonalityRules.Critical(self));
+            CrouchCriticalChanceMultiplier, CaelumPersonalityRules.Critical(self)
+                * CaelumSurvivalInstinct.Multiplier(self));
     }
 
     double MagicalCriticalChanceFor(int weaponType)
@@ -9510,7 +9511,7 @@ class CaelumPlayer : DoomPlayer
         if (DerivedStats == null || WeaponModel == null) return 0;
         return CaelumAttackRules.CriticalChance(WeaponModel.GetBaseCriticalChanceFor(weaponType),
             DerivedStats.MagicalCriticalChance, CrouchCriticalChanceMultiplier,
-            CaelumPersonalityRules.Critical(self));
+            CaelumPersonalityRules.Critical(self)*CaelumSurvivalInstinct.Multiplier(self));
     }
 
     void PerformEquippedWeaponPrimaryAttack()
@@ -11571,9 +11572,9 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Agrega una cantidad positiva sin superar el maximo derivado de Resiliencia.
-    void AddAdrenaline(double amount)
+    void AddAdrenaline(double amount, bool applyAbility=true)
     {
-        CaelumPlayerResources.AddAdrenaline(self, amount);
+        CaelumPlayerResources.AddAdrenaline(self, amount,applyAbility);
     }
 
     // Health state multiplies only gameplay-earned adrenaline. The manual
@@ -11604,7 +11605,7 @@ class CaelumPlayer : DoomPlayer
     // cards and the remaining combat event types are programmed.
     void AddDebugAdrenaline()
     {
-        AddAdrenaline(CaelumConstants.DEBUG_ADRENALINE_GAIN);
+        AddAdrenaline(CaelumConstants.DEBUG_ADRENALINE_GAIN,false);
         CombatChannelCooldownRemaining = Max(
             0.0,
             CombatChannelCooldownRemaining

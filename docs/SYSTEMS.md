@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.10** — 2026-10-15.
+Documentation version: **5.4.11** — 2026-10-15.
+
+## Survival Instinct - 5.4.11 / #244
+
+Explorer User4 uses the shared three-second preparation, fixed progressive debit,
+full modified 1000-Anima admission, cancellation without refund and 60-second reuse
+from release. It affects the caster only. At release, Empathy's existing beneficial
+power snapshots the full factor (3 times that power) and ten-second base duration.
+A factor of 2 therefore yields x6 for 20 seconds, not x5. The effect is not an
+attack and Battle Cry alone does not prevent its preparation.
+Renewal uses the new release's potency and max(remaining, new duration), without
+adding factors or durations, as confirmed by the author on 2026-10-15.
+
+Multiply current evasion, physical/magical critical chance and precision, retaining
+personality, Tarot, racial, posture, equipment, load and survival-state modifiers.
+Precision remains the existing quantity that divides angular dispersion: x3
+precision divides the same spread by three. Weapon tiers, sampling, guidance and
+attack timing remain unchanged. Critical damage is unchanged. Existing unarmed
+and utility-stream consumers acquire no invented critical roll or weapon identity.
+The real evasion/critical probability consumers cap at 100%; resource additions
+still cap at MaximumAdrenaline. Personage journal values use the shared consumers.
+
+Every gameplay-earned Adrenaline gain, including future ability gains such as
+Rally, receives the factor exactly once. Combat still composes its health and
+personality factors. Explicit tutorial/development reserve additions bypass the
+class factor; they remain exact. AddAdrenaline's applyAbility flag distinguishes
+these calls, and AddCombatAdrenaline records the already-scaled final gain before
+using the exact addition path. Future abilities use the normal gain path.
+
+The caster-owned inventory effect is revision 1 and stores remaining tics and its
+release-time factor. Contributions are queried, never baked into saved attributes
+or divided back out. Expiry removes only this contribution; death disables it.
+The ability grants neither negative-state immunity nor protection from survival
+drain. Existing projectiles retain their firing-time critical chance; no reroll or
+retroactive boost is introduced. Saves and supported hub travel retain one effect
+without reapplying payment. Forecast travel rejects this unsupported timed effect.
+The optional copied-save bridge targets 5.4.10 only, cancelling unsupported effects
+and preparations without refund; preserve original saves for reversal.
+CA244-01 is pending; exact isolated evidence is in assets/validation_5411.
 
 ## Battle Cry - 5.4.10 / #243
 
@@ -7025,7 +7063,7 @@ status were added in V4.35; character thermal exposure is implemented in
 
 This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
 V5.4 sections and issue-specific author revisions supersede historical rules.
-The Warrior row below reflects #243; pending class replacements retain their
+The Warrior and Explorer rows below reflect #243/#244; pending class replacements retain their
 separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
@@ -7041,7 +7079,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Class | Ability | Agreed effect for 10 seconds |
 | --- | --- | --- |
 | Warrior | Battle Cry | Visible enemies in the release-time area cannot perform any attack, including magic. Movement/defense remain; see the 5.4.10 contract above. |
-| Explorer | Survival Instinct | Blocks all negative states and loss of survival resources. |
+| Explorer | Survival Instinct | Multiplies current evasion, physical/magical critical chance and precision, and earned Adrenaline by 3; Empathy scales the entire factor and duration. See 5.4.11 above. |
 | Priest | Miracle | Restores 1% of Lucidity, Health, Anima and Air per second. |
 | Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |
 | Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |

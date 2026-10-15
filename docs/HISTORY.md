@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.10** — 2026-10-15.
+Documentation version: **5.4.11** — 2026-10-15.
+
+## 5.4.11 - Survival Instinct (#244, 2026-10-15)
+
+Implemented Explorer User4 as a temporary self benefit. On 2026-10-15 the author
+confirmed both physical and magical precision/critical coverage, multiplication
+of current values with existing modifiers/caps, and Adrenaline gains from combat
+and other abilities, excluding tutorial/development reserves. This replaces the
+historical negative-state and survival-resource-loss immunity. Shared class
+preparation/payment/cancellation/reuse remains; Empathy scales the full factor
+and effect duration at release. Critical damage and saved attributes are unchanged.
+The author also confirmed renewal with the new potency and the greater of
+remaining/new duration, without accumulation, on the same date.
+
+Current precision and evasion retain their normal penalties; actual critical
+queries and projectile launch metadata include the contribution. Combat gain
+records its final scaled amount and bypasses the generic factor on addition, so
+it is applied once. Explicit reserve grants bypass the bonus. The revisioned
+inventory effect survives native save/load and hub travel without repayment;
+expiry preserves independent Tarot/racial factors. assets/validation_5411 records
+native consumer, combination, lifecycle, compatibility and preview evidence,
+including failed fixture iterations. CA244-01 (origin 5.4.11 / #244) awaits author
+review. No campaign or multiplayer acceptance, merge or closure is inferred.
 
 ## 5.4.10 - Battle Cry (#243, 2026-10-15)
 
