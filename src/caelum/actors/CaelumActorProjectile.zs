@@ -42,6 +42,7 @@ class CaelumActorProjectile : Actor
             || (damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD && !victim.bLAXTELEFRAGDMG))return damage;
         if(victim.health<=0 || victim.bDORMANT
             || (victim.bINVULNERABLE && !shot.bFOILINVUL && !(flags & DMG_FOILINVUL)))return damage;
+        shot.ResolveCaelumCritical(victim);
         // Una explosion ya trae su propio presupuesto, no el impacto directo.
         if(!(flags & DMG_EXPLOSION))
         {
@@ -65,6 +66,9 @@ class CaelumActorProjectile : Actor
     bool MainM00ChargedPractice;
     bool MainM00MobilePractice;
     bool CaelumCriticalHit;
+    int CaelumCriticalRevision;
+    bool CaelumHunterEligible;
+    double CaelumCriticalBaseChance,CaelumCriticalRollPercent;
     bool CaelumAttackAccuracySucceeded;
     bool CaelumMagicalAttack;
     int CaelumPreparedDamage;
@@ -133,6 +137,22 @@ class CaelumActorProjectile : Actor
         // Capturar al lanzar, incluida la jabalina sin desgaste diferido.
         CaelumIdeologyPenetration=CaelumPersonalityRules.Penetration(CaelumPersonalityRules.Profile(Target));
         CaelumPersonalityRevision=CaelumPersonalityRules.REVISION;
+    }
+
+    void StoreCaelumCriticalRoll(double chance,double roll)
+    {
+        CaelumCriticalRevision=CaelumHuntersInstinct.CRITICAL_REVISION;
+        CaelumCriticalBaseChance=Clamp(chance,0.0,100.0);
+        CaelumCriticalRollPercent=roll;
+        CaelumHunterEligible=CaelumHuntersInstinct.Active(CaelumPlayer(Target));
+    }
+
+    void ResolveCaelumCritical(Actor victim)
+    {
+        // Los vuelos antiguos conservan su resultado; nunca se vuelve a tirar.
+        if(CaelumCriticalRevision!=CaelumHuntersInstinct.CRITICAL_REVISION)return;
+        CaelumCriticalHit=CaelumCriticalRollPercent<CaelumHuntersInstinct.RearChance(
+            Target,victim,CaelumCriticalBaseChance,CaelumHunterEligible);
     }
 
     void ConfigureCaelumActorExplosion(

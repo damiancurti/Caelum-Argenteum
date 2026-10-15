@@ -1,12 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.8** — 2026-10-14.
+Documentation version: **5.4.9** — 2026-10-15.
 
-**5.4.8/#240:** Socialization accepted; CA240-01 passed 2026-10-14. validation_548.
+**5.4.9/#239:** Hunter's Instinct implemented; CA239-01 pending. validation_549.
 
-**5.4.7/#241:** Telekinesis accepted; CA241-01 passed 2026-10-14. validation_547.
+**5.4.8/#240:** CA240-01 accepted 2026-10-14. validation_548.
 
-**5.4.6/#242:** Supernatural Breathing accepted; CA242-01 passed 2026-10-14. validation_546.
+**5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
+
+**5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
 After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.8** — 2026-10-14.
+Documentation version: **5.4.9** — 2026-10-15.
 
 ## 5.4.7 - Telekinesis validation fixtures (#241)
 

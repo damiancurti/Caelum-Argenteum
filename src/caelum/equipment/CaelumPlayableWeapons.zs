@@ -2765,6 +2765,7 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         int preparedDamage = GetCaelumPreparedDamage(
             int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE)
         );
+        ResolveCaelumCritical(victim);
         ApplyPreparedWeaponWear(victim);
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }
@@ -2979,6 +2980,7 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
     {
         if(CaelumDefenseReceiver==victim)return damage;
         int preparedDamage = GetCaelumPreparedDamage(1);
+        ResolveCaelumCritical(victim);
         ApplyPreparedWeaponWear(victim);
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }

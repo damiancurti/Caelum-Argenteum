@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.8.** Obtain and update the complete repository, validate
+**Current release: 5.4.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.9 implements [#239](https://github.com/damiancurti/Caelum-Argenteum/issues/239):
+Beast Man Hunter's Instinct triples current stealth and rear critical chance,
+within existing limits, for 10 Anima/second before modifiers. Stealth reduces
+actual movement noise. Projectiles retain eligibility from firing and check
+rear position at impact; critical damage is unchanged. Native weapon, damage,
+noise and persistence checks are recorded in [validation_549](assets/validation_549/RESULTS.md).
+CA239-01 remains pending author review. This focused PR stacks on accepted #240.
 
 5.4.8 implements [#240](https://github.com/damiancurti/Caelum-Argenteum/issues/240):
 Human Socialization doubles current Dialogue skill and Persuasion, preserving

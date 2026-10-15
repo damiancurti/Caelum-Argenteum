@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `1a6c02b14aa5f40c61352bbdf0960969639e24c0cb8321810505cd89145e30bb`. Locations include every definition; the last one per language wins.
+SHA-256: `123ff761ccf79d3847f471c57ac2d59b4e88e0a7c5770d2f12554fbd6ab81514`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -42,7 +42,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 44 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 45 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |

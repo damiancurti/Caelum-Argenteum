@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.8** — 2026-10-14.
+Documentation version: **5.4.9** — 2026-10-15.
+
+## Hunter's Instinct - 5.4.9 / #239
+
+Beast Man User1 toggles Hunter's Instinct. The shared racial lifecycle charges
+10 Anima/second before current Anima-cost modifiers, with no upfront fee, duration
+cap or cooldown. It supports sub-second reserves, preserves an unaffordable
+remainder and stops on sleep, stun, immobilization, death or identity changes.
+
+Multiply current stealth, including the existing crouch contribution, by three
+before the 0..100% cap. Effective stealth feeds the production movement-noise
+complement, range and native SoundAlert call. At 100% no movement-noise event is
+emitted. Existing running/crouching and mass contributions still apply. The
+diagnostic visual observer also reads this value, but is not a completed
+production visual-perception system; that remains outside #239.
+
+For physical and magical critical chance, the rear half is the target's rear
+180 degrees, measured horizontally from its current facing to the attacker's
+current position. Exact side boundaries and coincident positions receive no rear
+bonus. Multiply the current eligible chance by three and cap at 100%. Do not
+multiply critical damage. Single melee hits and large-weapon sweeps check each
+victim at impact. Existing fists have no critical roll: zero remains zero.
+
+The author confirmed on 2026-10-15 that a projectile captures whether the racial
+was active **when fired**. Switching it off during flight retains eligibility;
+switching it on afterward grants none. Rear geometry still uses both actors'
+positions at impact. Preserve the launch's ordinary chance and original random
+roll, and compare that same roll against the conditional chance for each receiver.
+No reroll occurs. Carbine, shotgun, bow, crossbow, javelin and all four magical
+weapons use this metadata, including charged forms, homing and area defense.
+Existing per-volley/per-projectile roll ownership is unchanged.
+
+New projectile metadata has revision 1. Older in-flight projectiles have revision
+0 and retain their original resolved result without invented chance, eligibility
+or randomness. Current saves preserve the effect and each projectile's launch
+metadata; native hub travel retains the valid effect. The optional isolated 5.4.8
+bridge ends the unsupported effect without refunding Anima. A rollback flight
+retains the legacy outcome when returned; keep original saves for full recovery.
+Evidence and exact compatibility scope: assets/validation_549. CA239-01 is pending.
 
 ## Socialization - 5.4.8 / #240
 
@@ -7662,7 +7700,7 @@ durations are simulation seconds unless stated otherwise, and percent fields use
 | Constitution / Physical | MaximumHealth = 1000*M3*(body kg/100). Passive Hunger/Thirst/Sleep and natural-health-recovery consumption divide by M2; passive Hunger/Thirst also retain body mass. PlayerResources owns the actual losses and recovery costs. | **Implemented.** NPC maximum HP uses CombatConstitution and mass. Do not infer player survival reserves on every NPC. Constitution does not shorten incoming status durations: #188 assigns the accepted status response to Toughness. |
 | Dexterity / Technical | Attack speed M2 and duration /M2 through attack cycles; physical precision 100*M3 through actual accuracy/dispersion; critical B plus the real weapon base subject to the clamp order above. Ammunition reload /M2; crafting material work /M3. | **Implemented.** NPC attack/ranged reload, accuracy and critical consumers add applicable glove bonuses. Crafting is a specific player consumer, not a general accuracy-roll or skill-cooldown system. |
 | Resilience / Technical | Maximum Air and Adrenaline = 1000*M2. Natural HP recovery = maxHP/3600*M2 per second. Acclimatization rate/limit use base plus B (#136): at 100, 2 degrees C/world day and +/-10 degrees C, reached in five days. | **Implemented.** NPC capacity and finite-health recovery use its CombatResilience. Sleep depletion belongs to Constitution, not Resilience. |
-| Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
+| Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture*Hunter (3 while active, otherwise 1) to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
 | Charisma / Social | 100*M2 supplies the attacker's elemental payload duration/power through projectiles and utility-staff streams; player incoming payload processing and shared stream status application consume it. MAP01 Caella persuasion uses M2 against the documented difficulty, rounded/clamped to 0..100. | **Partial combat scope; implemented dialogue.** NPCs emit payloads using CombatCharisma; this is not the recipient's Charisma. Not every actor/effect receiver consumes the generic payload. Eloquence owns current areas; Channel power/duration do not universally scale with Charisma. |
 | Empathy / Social | MAP01 Rulo emotion uses M2 against the documented difficulty, rounded/clamped to 0..100. BuffPowerPercent=100*M2 is stored and copied into payloads; Fire-secondary preparation sets an illumination timer. | **Implemented emotion; planned/general support incomplete.** No general buff/heal/area consumer follows from that field. The illumination timer only decrements and appears in diagnostics; it is not playable lighting. NPC CombatEmpathy payload storage does not prove an NPC support effect. |
 | Eloquence / Social | Cast preparation and Anima cost divide by M2; AbilityRangePercent=100*M2 scales real spell/area ranges, not muzzle velocity. Dialogue skill B is used by Ronnie and Palomo's discount route. | **Implemented with cooldown distinction.** NPC magical cost, preparation and range use effective CombatEloquence. Ammunition reload uses Dexterity; Seal and existing Sleep reuse are fixed 60 seconds, not an overall Eloquence cooldown reduction. #238's new class preparation is a separate contract. |

@@ -9203,11 +9203,8 @@ class CaelumPlayer : DoomPlayer
         EffectiveStealthPercent = 0.0;
         if (DerivedStats != null)
         {
-            EffectiveStealthPercent = Clamp(
-                DerivedStats.StealthPercent * CrouchStealthMultiplier,
-                0.0,
-                100.0
-            );
+            EffectiveStealthPercent = CaelumHuntersInstinct.Stealth(self,
+                DerivedStats.StealthPercent * CrouchStealthMultiplier);
         }
         MovementNoiseMultiplier = Clamp(
             1.0 - EffectiveStealthPercent / 100.0,
@@ -9929,6 +9926,7 @@ class CaelumPlayer : DoomPlayer
             false,
             DerivedStats.PhysicalPushMultiplier
         );
+        projectile.StoreCaelumCriticalRoll(criticalChance,criticalRoll/10000.0);
         // Cada lanzamiento representa exactamente un punto de durabilidad.
         // Los materiales recuperados por este proyectil corresponden a la
         // mitad del valor material de ESE punto concreto de durabilidad.
@@ -10379,14 +10377,15 @@ class CaelumPlayer : DoomPlayer
         if(WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
         {
             if(!CaelumShotgunRules.Fire(self,WeaponModel,LastCarbineDamage,LastCarbineCriticalHit,
-                DerivedStats.PhysicalPushMultiplier,LastCarbineMinimumSpread,LastCarbineMaximumSpread))return;
+                DerivedStats.PhysicalPushMultiplier,LastCarbineMinimumSpread,LastCarbineMaximumSpread,
+                criticalChance,criticalRoll/10000.0))return;
             ShotgunLastBarrel=(ShotgunLoadedMask&2)!=0 ? 1 : 0;
         }
         else
         {
             let projectile=CaelumRangedRules.Fire(self,WeaponModel,LastCarbineDamage,
                 LastCarbineCriticalHit,DerivedStats.PhysicalPushMultiplier,
-                Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset);
+                Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset,criticalChance,criticalRoll/10000.0);
             if(projectile==null)return;
         }
 
@@ -10772,6 +10771,7 @@ class CaelumPlayer : DoomPlayer
                 integerDamage, true, projectileCritical, true,
                 elementalPushMultiplier
             );
+            projectile.StoreCaelumCriticalRoll(LastStaffCriticalChancePercent,LastStaffCriticalRollPercent);
         projectile.StoreCaelumWeaponWearIdentity(
             WeaponModel.WeaponType,
             WeaponModel.Tier,
@@ -11164,6 +11164,7 @@ class CaelumPlayer : DoomPlayer
         if(race==CaelumConstants.RACE_CAELITH)return new("CaelumSupernaturalBreathingEffect");
         if(race==CaelumConstants.RACE_GOBLIN)return new("CaelumTelekinesisEffect");
         if(race==CaelumConstants.RACE_HUMAN)return new("CaelumSocializationEffect");
+        if(race==CaelumConstants.RACE_BEAST_MAN)return new("CaelumHuntersInstinctEffect");
         return null;
     }
 
@@ -11893,7 +11894,8 @@ class CaelumPlayer : DoomPlayer
         );
         LastMeleeCriticalAttempted = true;
         LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-        LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
+        LastMeleeCriticalChancePercent = CaelumHuntersInstinct.Chance(self,targetData.linetarget,
+            PhysicalCriticalChanceFor(catalogueWeapon));
         int criticalRoll = Random[CaelumPhysicalCritical](0, 999999);
         LastMeleeCriticalRollPercent = criticalRoll / 10000.0;
         LastMeleeCriticalHit = LastMeleeCriticalRollPercent
@@ -12055,7 +12057,8 @@ class CaelumPlayer : DoomPlayer
             CalculateDebugMeleeHitLocation(candidate, attackAngle, attackPitch);
             LastMeleeCriticalAttempted = true;
             LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-            LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
+            LastMeleeCriticalChancePercent = CaelumHuntersInstinct.Chance(self,candidate,
+                PhysicalCriticalChanceFor(catalogueWeapon));
             LastMeleeCriticalRollPercent = Random[CaelumPhysicalCritical](0, 999999) / 10000.0;
             LastMeleeCriticalHit = LastMeleeCriticalRollPercent < LastMeleeCriticalChancePercent;
             CaelumCombatActor combatTarget = CaelumCombatActor(candidate);

@@ -36,7 +36,7 @@ class CaelumRangedRules : Object
     {return tier<=1 ? 1.0 : tier==2 ? 1.6 : 2.5;}
 
     static play CaelumCarbineProjectile Fire(Actor owner,CaelumWeaponModel weapon,
-        double damage,bool critical,double push,double yaw,double pitch)
+        double damage,bool critical,double push,double yaw,double pitch,double criticalChance=-1,double criticalRoll=0)
     {
         Name type="CaelumCarbineProjectile";
         if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)type="CaelumShotgunPellet";
@@ -51,6 +51,7 @@ class CaelumRangedRules : Object
         vector3 direction=(Cos(pitch)*Cos(yaw),Cos(pitch)*Sin(yaw),-Sin(pitch));
         projectile.Vel=direction.Unit()*speed;
         projectile.StoreCaelumAttackResult(Max(0,int(damage+0.5)),true,critical,false,push);
+        if(criticalChance>=0)projectile.StoreCaelumCriticalRoll(criticalChance,criticalRoll);
         projectile.StoreCaelumWeaponWearIdentity(weapon.WeaponType,weapon.Tier,weapon.Size);
         return projectile;
     }

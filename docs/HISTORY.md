@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.8** — 2026-10-14.
+Documentation version: **5.4.9** — 2026-10-15.
+
+## 5.4.9 - Hunter's Instinct (#239, 2026-10-15)
+
+Beast Man User1 now creates the concrete continuous effect. It multiplies current
+stealth and rear critical chance by three before their existing caps. The actual
+movement-noise/SoundAlert consumer receives stealth; no new visual perception
+rules are introduced. Melee/sweeps resolve geometry at impact. Projectiles preserve
+their original chance and roll with revisioned metadata, and capture eligibility
+at firing, as explicitly confirmed by the author on 2026-10-15. Both actors'
+current positions determine the rear bonus at impact. Turning the effect off in
+flight retains a paid launch's potential bonus; turning it on afterward grants
+none. Critical damage and existing volley/randomness ownership remain unchanged.
+
+Focused native evidence covers 30 lifecycle/geometry/statistics checks, 41 checks
+on nine actual projectile weapons, native movement noise, physical/magical/area
+damage parity, real sword/sweep consumers, active effect and in-flight save/load,
+hub travel and compatibility copies. Exact hashes, commands and qualifications
+are in assets/validation_549. Early compilation required Actor-qualified
+DeltaAngle; an initial sweep fixture lacked the required monster flag. The first
+manual preview missed through ordinary spread; the final isolated demonstration
+pins accuracy, chance/roll and slow flight so the offered result is reproducible.
+The slow carbine previews failed before extending its finite flight state to
+match the slowdown; this manual fixture also disables projectile gravity and
+preserves its reserve on weapon changes.
+Those fixture settings do not change production balance or physics. Failed runs remain
+preserved. CA239-01 is pending author acceptance; no merge/closure is claimed.
 
 ## 5.4.8 - Socialization (#240, 2026-10-14)
 
