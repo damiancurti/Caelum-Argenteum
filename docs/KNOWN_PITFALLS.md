@@ -18,9 +18,12 @@ That probe call is diagnostic: InitEffect can also repeat the native takeoff thr
 
 An ability sharing flight with El Loco must manage its own contribution, preserve
 remaining sources on expiry, and avoid restarting timers, charging again or adding
-an unintended takeoff impulse. Native coexistence alone is insufficient. Actual
-production restoration, input, expiry, hub travel and save/load remain required
-checks in #251; the eight probe assertions do not claim those are implemented.
+an unintended takeoff impulse. Native coexistence alone is insufficient. The
+5.4.20 stateless helper/Tarot integration preserves flags and view-centering state
+when another positive-duration PowerFlight remains. Focused component checks use
+real Tarot and a fixture-only second source. Full cloud input, movement, expiry,
+hub travel and save/load remain separate required checks in #251; neither the
+eight API assertions nor the component checks claim those are implemented.
 
 Evidence/reproduction: [flight_evidence.json](../assets/validation_545/flight_evidence.json),
 `prepare_flight_probe.py` and `flight_probe.zs` in the same directory. This finding

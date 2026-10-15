@@ -1,25 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
 
 ## Arcane Cloud implementation decisions (#251, in progress)
 
 Continue PR281 from the accepted #250 baseline e9c79de8. The original 5.4.5
 asset checkpoint is preserved below; it is not a completed gameplay delivery.
-On 2026-10-15 the author confirmed normal lightning-staff damage using caster
-Intelligence; random visible enemies within 40 m base scaled by Eloquence,
+On 2026-10-15 the author confirmed Air-seal lightning damage, area and division
+among recipients, superseding the earlier staff-damage reference; random visible
+enemies within 40 m base scaled by Eloquence,
 allowing repeat targets and no shot without an eligible enemy; rain restores
 1% of each beneficiary's current maximum Anima per second, scaled by Empathy,
 with the first pulse one second after release. The caster is included.
 Rain benefits only allies underneath the cloud, rather than a surrounding aura;
 the separately approved caster recovery remains included. The cloud has no mass
 or solid body. Expiry begins ordinary falling unless another flight source is
-still active. Cloud width/rain footprint scaling, obstruction/contact details,
-mounted actions and other lifecycle decisions remain pending. Existing seated
-artwork, native flight and the class lifecycle will be reused. The isolated native
-flight probe reproduces shared-flag removal when one of two powers ends; the
-ability must preserve the surviving source (CA-KP-105). No new gameplay behavior
-or author acceptance is claimed at this checkpoint.
+still active. The author sets the base cloud width to the covered cart's full
+width: 82 map units (2.5625 m at 32 units/m), from the current cart mesh X bounds
+[-41, 41]. Rain stops at solid surfaces rather than passing through them. The
+rider stays seated throughout the effect and retains ordinary attacks, blocking
+and other actions. Eloquence scales cloud width, rain footprint and lightning
+range. Overlapping rain uses only the strongest source; recasting snapshots new
+power, keeps the longer remaining/new duration and does not advance either pulse.
+Lightning fires three evenly spaced strikes per second, starting after the first
+third of a second, with normal staff lightning stun scaled by Charisma. The author
+then explicitly chose the Air seal's visual, damage, area and damage distribution.
+The normal staff-stun rule above remains separate from that revised damage rule.
+The base x2 speed factor, increased as a whole by Empathy, applies horizontally
+and vertically to the current movement mode and retains the ordinary #260 impulse.
+Entering water, sleep, stun or immobilization ends the effect. Area allegiance,
+map/journey persistence and intimidation behavior remain under clarification.
+
+5.4.20 implements the ownership prerequisite only: when Tarot flight ends while
+another active PowerFlight remains, preserve the previous flight/gravity/view
+flags without resetting duration, charging Anima or applying takeoff thrust.
+The last source retains native expiry behavior, including fly-cheat handling.
+No serialized fields or class inheritance change; the helper is stateless.
+Native evidence uses real Tarot plus a fixture-only second source; it does not
+claim cloud input, save/travel, movement or full ability acceptance (CA-KP-105).
+Existing seated artwork, native flight and the class lifecycle will be reused;
+Investigator activation remains disabled until the full ability is implemented.
 
 ## Arcane Cloud asset boundary (#251 / 5.4.5, in progress)
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
+
+## 5.4.20 - Cloud dimensions and flight prerequisite (#251, in progress)
+
+The author selected the covered cart's full width for the cloud: current
+ca_covered_cart.obj X bounds are [-41, 41], 82 map units / 2.5625 m. MODELDEF uses
+unit scale and CorrectPixelStretch. This supplies a base art width, not new cloud
+mass or collision: the author explicitly requires neither. Keep the owned cloud
+mesh/material and seated character artwork. No new visual binding is implemented
+in this checkpoint. Flight API/component fixtures remain outside src in
+validation_545; no development IWAD, executable or generated PK3 is distributed.
 
 ## 5.4.19 - Redemption asset reuse (#250)
 

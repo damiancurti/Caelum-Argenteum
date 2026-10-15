@@ -32,6 +32,19 @@ establish a native limitation and feasibility, not a shipped fix or cloud abilit
 Production integration must preserve other active sources without restarting their
 timer, charging again or repeating native takeoff impulses. See CA-KP-105.
 
+## 5.4.20 flight ownership component (in progress)
+
+`CaelumFlightOwnership.AfterEnd` and the real Tarot EndEffect integration preserve
+the prior flight/gravity/view-centering state when another active flight remains.
+They do not restart its clock, charge Anima or repeat native takeoff thrust. The
+last power still restores gravity; landed permission and fly-cheat behavior remain
+native. No saved fields or class inheritance changed. Use `prepare_flight_probe.py
+--owned` with the current runtime and the original room to reproduce the component
+fixture. Ten final native assertions, project validation and normal package parity
+pass. Exact run and package evidence: `owned_flight_evidence.json`.
+The second source is fixture-only: cloud gameplay, input, speed, save/travel and
+author acceptance remain pending. Earlier diagnostic runs remain separate evidence.
+
 ## Static asset checks
 
 Run `python assets/validation_545/verify_asset.py`. Python 3.12 standard library,

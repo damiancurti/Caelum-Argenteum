@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
 
-**#251:** PR281 cloud/flight probes pass; confirmed rules and pending decisions: SYSTEMS.
+**5.4.20/#251:** PR281 WIP; flight component verified; remaining decisions: SYSTEMS.
 
 **5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 ready; unmerged.
 

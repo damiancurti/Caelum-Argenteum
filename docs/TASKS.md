@@ -1,25 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
 
-## Arcane Cloud implementation decisions (#251, in progress)
+## 5.4.20 - Arcane Cloud (#251, in progress)
 
-Continue PR281 from the accepted #250 baseline e9c79de8. The original 5.4.5
-asset checkpoint is preserved below; it is not a completed gameplay delivery.
-On 2026-10-15 the author confirmed normal lightning-staff damage using caster
-Intelligence; random visible enemies within 40 m base scaled by Eloquence,
-allowing repeat targets and no shot without an eligible enemy; rain restores
-1% of each beneficiary's current maximum Anima per second, scaled by Empathy,
-with the first pulse one second after release. The caster is included.
-Rain benefits only allies underneath the cloud, rather than a surrounding aura;
-the separately approved caster recovery remains included. The cloud has no mass
-or solid body. Expiry begins ordinary falling unless another flight source is
-still active. Cloud width/rain footprint scaling, obstruction/contact details,
-mounted actions and other lifecycle decisions remain pending. Existing seated
-artwork, native flight and the class lifecycle will be reused. The isolated native
-flight probe reproduces shared-flag removal when one of two powers ends; the
-ability must preserve the surviving source (CA-KP-105). No new gameplay behavior
-or author acceptance is claimed at this checkpoint.
+PR281 continues on accepted #250 baseline e9c79de8, preserving the original 5.4.5
+asset checkpoint. SYSTEMS records the confirmed cart-width cloud, rain blocked
+by solid surfaces, seated ordinary actions, rain/targeting/scaling and expiry
+rules, plus remaining decisions. The stateless flight ownership prerequisite is
+implemented and tested with real Tarot and an isolated second source. It adds no
+serialized fields or inheritance changes. Native probes and component evidence:
+validation_545. Investigator activation, mounted visuals/movement, rain/lightning
+and full save/travel/lifecycle validation remain pending. No author test is queued
+for incomplete gameplay; PR281 remains draft. #252 and later #282 stay separate.
 
 ## 5.4.19 - Redemption (#250, accepted)
 

@@ -31,10 +31,40 @@ class CaelumTarotPowers : Object play
     { CaelumTarotService.Advance(user, elapsedTics); }
 }
 
+// #251: PowerFlight comparte flags, pero su EndEffect no cuenta otras fuentes.
+// Restaurar sólo flags previos evita repetir el impulso de InitEffect o pagar
+// de nuevo. Cada fuente conserva su propio reloj y su política de viaje.
+class CaelumFlightOwnership : Object play
+{
+    static void AfterEnd(Actor owner,Inventory ending,bool wasFlying,bool hadNoGravity,bool wasCentering)
+    {
+        if(owner==null || owner.health<=0 || owner.player==null)return;
+        for(Inventory item=owner.Inv;item!=null;item=item.Inv)
+        {
+            let flight=PowerFlight(item);
+            if(item==ending || flight==null || flight.EffectTics<=0)continue;
+            owner.bFly=wasFlying;
+            owner.bNoGravity=hadNoGravity;
+            owner.player.centering=wasCentering;
+            return;
+        }
+    }
+}
+
 // El motor proporciona los controles y flags nativos de vuelo. El registro
 // personal fija la caducidad incluso en mapas con infinite_flight.
 class CaelumTarotFlight : PowerFlight
 {
+    override void EndEffect()
+    {
+        Actor owner=Owner;
+        bool wasFlying=owner!=null && owner.bFly;
+        bool hadNoGravity=owner!=null && owner.bNoGravity;
+        bool wasCentering=owner!=null && owner.player!=null && owner.player.centering;
+        Super.EndEffect();
+        CaelumFlightOwnership.AfterEnd(owner,self,wasFlying,hadNoGravity,wasCentering);
+    }
+
     override void Tick()
     {
         let user = CaelumPlayer(Owner);

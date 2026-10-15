@@ -1,0 +1,87 @@
+{
+  "issue": 251,
+  "version": "5.4.20",
+  "base_commit": "a00960af",
+  "date": "2026-10-15",
+  "scope": "Flight ownership prerequisite using real Tarot and a fixture-only second source; full Arcane Cloud remains disabled.",
+  "commands": [
+    "python validate_project.py",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "python assets/validation_545/prepare_flight_probe.py --owned --directory issue251-owned-flight-5420 --runtime build/caelum_argenteum_dev.pk3 --room build/issue251-integration-5419/probe.pk3",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_545/run_native.ps1 -Directory issue251-owned-flight-5420 -Label owned-flight-final -Script probe.cfg"
+  ],
+  "run": {
+    "label": "owned-flight-final",
+    "started_utc": "2026-10-15T18:01:15.2804262Z",
+    "arguments": [
+      "-noautoload",
+      "-nomouse",
+      "-iwad",
+      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+      "-file",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\\production.pk3\"",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\\probe.pk3\"",
+      "-config",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\\owned-flight-final.ini\"",
+      "-savedir",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\"",
+      "-width",
+      "1280",
+      "-height",
+      "720",
+      "-window",
+      "-rngseed",
+      "251",
+      "-skill",
+      "2",
+      "+logfile",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\\owned-flight-final.txt\"",
+      "+map",
+      "MAP02",
+      "+exec",
+      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue251-owned-flight-5420\\probe.cfg\"",
+      "+snd_mastervolume",
+      "0.05",
+      "+i_pauseinbackground",
+      "false",
+      "+vid_activeinbackground",
+      "true",
+      "+i_soundinbackground",
+      "true"
+    ],
+    "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "runtime_sha256": "533F4B1622C7D531C1B07DF58FD4D05C860450802FD16E54C971D3D465B86B1D",
+    "fixture_sha256": "8117F49F36246D7102735A1C5234EA615D66508F0BF09F77853C9DD948933B50",
+    "pid": 10404,
+    "exit_code": 0,
+    "finished_utc": "2026-10-15T18:01:24.7936062Z"
+  },
+  "native_passes": 10,
+  "normal_package_members": 16174,
+  "all_members_match_source": true,
+  "production_source_sha256": "b75c1d83662481412a14549cfe26548df9ed776a7cd3d84c64086c3e45215397",
+  "fixture_source_sha256": "ef311b73556e15932474a8eadd66ba6048bfb35662702e314dd2f0ec1a1d97be",
+  "log_sha256": "b4128b3e6c055c371cec0b2a74c5cc54ecff2edf3e00bada18a9d53ce067c5c1",
+  "checks": [
+    "Real Tarot and the second source coexist; expiry in both orders preserves the survivor.",
+    "No timer reset, Anima change, velocity change or view-centering change while another flight survives.",
+    "Last source restores native falling; landed native permission and fly cheat retain native behavior."
+  ],
+  "persistence_scope": "No serialized fields or class inheritance change. Full cloud input, save/load, hub/travel and migration checks are not claimed by this component probe.",
+  "limits": "No full ability, movement-speed, mounted visual, lightning/rain or author acceptance. No merge or issue closure.",
+  "cart_width_reference": {
+    "path": "src/models/caelum/vehicles/ca_covered_cart.obj",
+    "sha256": "3195f9f499f372bf8cf45c54379e46318ba252a38622b7dcb92f7bbd04515e8a",
+    "bounds_x": [
+      -41,
+      41
+    ],
+    "width_map_units": 82,
+    "width_meters": 2.5625,
+    "modeldef_scale": [
+      1,
+      1,
+      1
+    ]
+  }
+}

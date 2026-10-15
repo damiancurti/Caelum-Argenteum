@@ -6,11 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.19.** Obtain and update the complete repository, validate
+**Current release: 5.4.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Arcane Cloud (#251) remains in progress in PR281: its reusable 3D cloud asset
-is present, while flight, lightning and restorative rain await implementation.
+5.4.20 continues Arcane Cloud (#251) in draft PR281: the reusable 3D cloud asset
+and shared flight-ownership component are present. The ability remains incomplete;
+mounted presentation, movement, lightning and restorative rain are not enabled.
+Focused evidence and remaining scope: [validation_545](assets/validation_545/RESULTS.md).
 
 5.4.19 implements [#250](https://github.com/damiancurti/Caelum-Argenteum/issues/250):
 Pilgrim Redemption, a mobile resurrection area and living-ally Toughness benefit.

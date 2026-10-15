@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
+
+## 5.4.20 - Arcane Cloud flight prerequisite (#251, 2026-10-15, in progress)
+
+The author specified a cloud as wide as the covered cart, rain stopped by solid
+surfaces, and a seated rider retaining ordinary attacks/blocking/actions. The
+cart's current source model supplies 82 map units of full width (2.5625 m).
+After the eight-check native coexistence probe, a stateless ownership helper and
+Tarot EndEffect integration preserve a surviving flight without changing its
+timer, Anima, velocity or view centering. Last-source expiry retains native gravity
+and cheat behavior. No serialized fields or inheritance were changed. Component
+checks use the real Tarot with an isolated second source; ten final native
+assertions, project validation and normal package parity pass. Full Nube arcana
+remains disabled/unimplemented. The author also confirmed Eloquence scaling of
+cloud/rain/bolt range, strongest-only rain, renewal without advancing pulses, and
+evenly spaced three strikes per second with staff stun scaled by Charisma. The
+later request was confirmed to copy the Air seal's visual, damage and area,
+including division among recipients, superseding the staff-damage reference.
+The author approved speed in all axes with the current mode and #260 impulse,
+and ending on water, sleep, stun or immobilization. Area allegiance, map/journey
+and intimidation behavior remain pending. Evidence and exact validation scope
+are in validation_545.
+PR281 stays draft; no author acceptance, merge or issue closure is claimed.
 
 ## #251 continuation on accepted 5.4.19 (2026-10-15, in progress)
 

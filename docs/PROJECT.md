@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.19** — 2026-10-15.
+Documentation version: **5.4.20** — 2026-10-15.
+
+## 5.4.20 - Arcane Cloud continuation (#251, in progress)
+
+The reusable original cloud asset now shares the accepted #250 baseline. The
+flight ownership prerequisite preserves another active source when Tarot expires;
+focused native checks use the real Tarot power and a fixture-only second source.
+The author confirms cart-width presentation, solid-surface rain obstruction and
+seated ordinary actions. Remaining decisions and the authoritative rules are in
+SYSTEMS. Mounted gameplay, lightning, rain and full lifecycle tests remain pending;
+PR281 stays draft and this checkpoint is not full ability or author acceptance.
 
 ## 5.4.19 - Pilgrim Redemption (#250)
 
