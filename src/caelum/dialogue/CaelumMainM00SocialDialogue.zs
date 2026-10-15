@@ -30,7 +30,7 @@ class CaelumMainM00SocialDialogue : Object play
     static double GetLabia(CaelumPlayer user)
     {
         if (user == null || user.Attributes == null || user.DerivedStats == null) { return 0.0; }
-        return user.DerivedStats.CalculateType2Percent(user.Attributes.Eloquence);
+        return CaelumSocialization.Dialogue(user);
     }
 
     static int GetChance(CaelumPlayer user, int resident)
@@ -52,6 +52,8 @@ class CaelumMainM00SocialDialogue : Object play
         // Los residentes aún no tienen una facción asignada: reputación neutra,
         // sin reutilizar por accidente la reputación de los Unitarios.
         double ability = user.DerivedStats.CalculateType4Percent(attribute);
+        if(resident==CaelumConstants.MAIN_M00_RESIDENT_CAELLA)
+            ability=CaelumSocialization.Persuasion(user,ability);
         return Clamp(int(Floor(ability * 100.0 / difficulty + 0.5)), 0, 100);
     }
 
@@ -151,6 +153,7 @@ class CaelumMainM00SocialDialogue : Object play
         int resident = GetResidentId(speaker);
         int conversation = GetConversationId(resident);
         if (conversation == 0) { return false; }
+        CaelumSocialization.Clear(user);
         Sync(user);
         CaelumMainM00MagicTrial.Sync(user);
         CaelumMainM00RonnieTrial.Sync(user);

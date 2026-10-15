@@ -1,4 +1,4 @@
-"""Package the in-progress #238 presentation component, not a full ability test."""
+"""Package isolated #238 presentation, lifecycle and focused author checks."""
 import argparse
 import importlib.util
 import json
@@ -49,5 +49,48 @@ for mode, name in [(1,"ready"),(0,"unavailable"),(2,"preparing"),(3,"cooldown"),
         steps += ["wait 70", "netevent c238_hud_check", "screenshot hud-countdown.png"]
 steps += ["netevent c238_hud_done", "wait 5", "quit"]
 (out / "hud.cfg").write_text("; ".join(steps)+"\n", encoding="utf-8")
+manifest["lifecycle_fixture_sha256"] = shared.package(out / "lifecycle.pk3", {
+    "ZSCRIPT": b'version "4.14"\n#include "equipment.zs"\n#include "lifecycle.zs"\n',
+    "equipment.zs": (HERE.parent / "validation_541/session.zs").read_bytes(),
+    "lifecycle.zs": (HERE / "lifecycle.zs").read_bytes(),
+    "MAPINFO": b'GameInfo { AddEventHandlers="CA238LifecycleProbe", "CA238LifecycleLoad" }\n'})
+(out / "lifecycle.cfg").write_text(
+    "wait 100; netevent c238_lifecycle_setup; wait 100; +user4; wait 2; "
+    "+attack; +altattack; +zoom; +reload; +user1; +user2; +user3; slot 1; wait 100; "
+    "-attack; -altattack; -zoom; -reload; -user1; -user2; -user3; wait 38; -user4; "
+    "wait 10; netevent c238_lifecycle_reset; wait 10; +user4; wait 2; -user4; wait 35; "
+    "+user4; wait 2; -user4; wait 5; netevent c238_lifecycle_cancel_check; "
+    "netevent c238_lifecycle_unarmed; wait 100; +user4; wait 140; -user4; wait 10; "
+    "netevent c238_lifecycle_done; wait 5; quit\n", encoding="utf-8")
+(out / "lifecycle-save.cfg").write_text(
+    "wait 100; netevent c238_lifecycle_setup; wait 100; +user4; wait 2; -user4; "
+    "wait 35; netevent c238_lifecycle_save; save class-cast.zds; wait 5; quit\n", encoding="utf-8")
+(out / "lifecycle-load.cfg").write_text(
+    "wait 2; netevent c238_resume; wait 100; netevent c238_resume_done; wait 5; quit\n", encoding="utf-8")
+(out / "lifecycle-hub.cfg").write_text(
+    "wait 100; netevent c238_lifecycle_setup; wait 100; +user4; wait 2; -user4; "
+    "wait 20; netevent c238_lifecycle_save; changemap MAP03; wait 10; netevent c238_hub_check; "
+    "changemap MAP02; wait 10; netevent c238_hub_check; wait 100; netevent c238_hub_done; wait 5; quit\n",
+    encoding="utf-8")
+manifest["manual_fixture_sha256"] = shared.package(out / "manual.pk3", {
+    "ZSCRIPT": b'version "4.14"\n#include "equipment.zs"\n#include "powers.zs"\n#include "manual.zs"\n',
+    "equipment.zs": (HERE.parent / "validation_541/session.zs").read_bytes(),
+    "powers.zs": (HERE.parent / "validation_530/probe.zs").read_bytes(),
+    "manual.zs": (HERE / "manual.zs").read_bytes(),
+    "MAPINFO": b'GameInfo { AddEventHandlers="CA255Probe", "CA238Manual" }\n'})
+manual = ('language es; use_mouse true; bind f +user4; bind g +zoom; bind f6 "netevent c238_reset"; '
+          'bind f7 "netevent c238_weapon"; bind f8 "netevent c238_unarmed"; '
+          'bind f9 "netevent c238_short"; wait 100; netevent c255_prepare; wait 20; netevent c238_manual; wait 100; '
+          'netevent c238_manual_check; ')
+(out / "manual.cfg").write_text(manual+"\n", encoding="utf-8")
+(out / "manual-seed.cfg").write_text(manual+"wait 5; screenshot manual-ready.png; wait 5; quit\n", encoding="utf-8")
+steps = ["wait 100", "netevent c238_lifecycle_setup", "wait 100"]
+for choice in range(9):
+    steps += [f"netevent c238_native_weapon {choice}", "wait 80", "+user4", "wait 2",
+              "+attack", "+altattack", "+zoom", "wait 100", "-attack", "-altattack", "-zoom",
+              "wait 38", "-user4", "wait 10"]
+steps += ["netevent c238_lifecycle_unarmed", "wait 80", "+user4", "wait 140", "-user4",
+          "wait 10", "netevent c238_matrix_done", "wait 5", "quit"]
+(out / "lifecycle-matrix.cfg").write_text("; ".join(steps)+"\n", encoding="utf-8")
 (out / "manifest.json").write_text(json.dumps(manifest, indent=2)+"\n", encoding="utf-8")
 print(json.dumps(manifest))

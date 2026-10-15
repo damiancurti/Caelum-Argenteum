@@ -23,7 +23,7 @@ class CaelumShotgunRules : Object
     }
 
     static play bool Fire(Actor owner,CaelumWeaponModel weapon,double total,bool critical,
-        double push,double minimum,double maximum)
+        double push,double minimum,double maximum,double criticalChance=-1,double criticalRoll=0)
     {
         Array<CaelumCarbineProjectile> launched;
         for(int i=0;i<PELLETS;i++)
@@ -31,7 +31,7 @@ class CaelumShotgunRules : Object
             double spread=minimum+(maximum-minimum)*Random[CaelumShotgunSpread](0,100000)/100000.0;
             double yaw=owner.Angle+Random[CaelumShotgunYaw](-100000,100000)/100000.0*spread;
             double pitch=owner.Pitch+Random[CaelumShotgunPitch](-100000,100000)/100000.0*spread;
-            let pellet=CaelumRangedRules.Fire(owner,weapon,PelletDamage(total,i),critical,push,yaw,pitch);
+            let pellet=CaelumRangedRules.Fire(owner,weapon,PelletDamage(total,i),critical,push,yaw,pitch,criticalChance,criticalRoll);
             if(pellet==null)
             {
                 for(int j=0;j<launched.Size();j++)launched[j].Destroy();

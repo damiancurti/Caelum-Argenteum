@@ -1,38 +1,196 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
 
-## 5.4.5 - Arcane Cloud asset (#251, in progress)
+## Arcane Cloud implementation decisions (#251, in progress)
 
-The original closed 3D cloud and material pass topology/repeatability checks and
-native Vulkan/OpenGL preview inspection. This independent asset work does not
-complete Nube arcana. Continue with the seated character, the #238 lifecycle and
-the already recorded #251 decisions on dimensions/collision, flight, targeting,
-lightning damage, rain contact/restoration, scaling and expiry. Preview dimensions
-and opacity are visual test settings, not approved gameplay balance. No author
-acceptance or merge is inferred; no incomplete gameplay test enters the queue.
+Continue PR281 from the accepted #250 baseline e9c79de8. The original 5.4.5
+asset checkpoint is preserved below; it is not a completed gameplay delivery.
+On 2026-10-15 the author confirmed normal lightning-staff damage using caster
+Intelligence; random visible enemies within 40 m base scaled by Eloquence,
+allowing repeat targets and no shot without an eligible enemy; rain restores
+1% of each beneficiary's current maximum Anima per second, scaled by Empathy,
+with the first pulse one second after release. The caster is included.
+Rain footprint/contact, mounting/flight and effect lifecycle decisions remain
+pending. Existing seated artwork, native flight and the class lifecycle are
+reused; no new gameplay behavior or acceptance is claimed at this checkpoint.
+
+## 5.4.19 - Redemption (#250, accepted)
+
+Branch feat/issue250-redemption starts at accepted #249 commit 6578c8b7 / PR297.
+SYSTEMS records the confirmed moving area, corpse eligibility, recovery, Toughness,
+once-per-cast identity, no-duplicate-rewards and travel rules. Restoration, mobile
+area membership, temporary following/allied attacks, fixed-Toughness consumers and
+saved lifecycle are implemented. Native casting, corpse/resource/defense tests,
+reload/hub/pending arrival, real journeys and neutral copied-save roundtrip pass;
+validation_5419 retains exact scope and hashes. CA250-01 passed author review on
+2026-10-15; acceptance.json/HISTORY retain the confirmation and PR298 is ready.
+No merge/closure; broader campaign/network checks are not claimed.
+
+## 5.4.18 - Summoning (#249, accepted)
+
+The implementation branch feat/issue249-summoning starts at accepted #248
+b87f977b / PR296. SYSTEMS and the issue record the author's placement, replacement,
+attribute-scaling, targeting, death and travel decisions. Static checks, packaging
+and 132 assertions in 19 native runs pass (validation_5418), with copied-save
+upgrade/rollback/return and agent visual review. CA249-01 passed author review on
+2026-10-15; the pending entry is removed and PR297 is ready. No merge/closure.
+#250-252 keep their scope; #282 follows the batch.
+
+## 5.4.17 - Rally (#248, accepted)
+
+The author confirmed moving visible-allied area, current maxima, delayed first
+pulse, full-factor Empathy scaling, pre-hit bar snapshots, final outgoing/incoming
+damage scaling, strongest overlap, renewal and self-damage protection. Periodic
+effects apply Rally only once per damage event, not also to their stored dose.
+Implemented on feat/issue248-rally, ready PR296 based on accepted #247 / PR295. Static,
+normal package and 74 qualified native assertions pass, including copied-save
+upgrade/rollback/return. CA248-01 passed on 2026-10-15; acceptance.json/HISTORY
+retain the offered scope. No merge or closure is inferred.
+#249-252 remain separately scoped; #282 follows the batch.
+
+## 5.4.16 - Formation Breaker (#247, accepted)
+
+The author's traversal, stance, running-cost, collision and afterimage decisions
+are now explicit in SYSTEMS and issue #247. Implementation uses the accepted #260
+native gesture and #238 class preparation. Native interruption, collision, appearance,
+preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
+CA247-01 passed on 2026-10-15; acceptance.json/HISTORY retain the offered scope.
+PR295 is ready, stacked on #260/PR294; no merge or closure authorized.
+Temporary keep-awake is released. #248 is delivered and accepted above; #249-252 remain separately scoped, and #282 follows the batch.
+
+## 5.4.15 - Player acceleration and impulse (#260, accepted)
+
+Both the linear mass-based ramp and the authored Air-paid 0.4-second double tap
+are implemented on the focused branch/PR294 based on #253. Native evidence:
+assets/validation_5415. CA260-01/02 passed on 2026-10-15; PR294 is ready for review.
+Acceptance retains this same version and leaves no #260 author check queued. No merge/closure is authorized.
+#247 now consumes the forward gesture in its separate 5.4.16 patch above.
+#248-252 retain their own designs; #282 follows the batch. CA246-01/CA253-01 passed.
+
+## 5.4.14 - Resident participation at the protected floor (#253)
+
+Reproduced in native MAP01 with the ordinary encounter controller and forward input:
+player reached 1 HP on tic 131 and stayed alive; encounter references remained.
+All four healthy resident movement bases were zero. A scoped fresh-spawn repair
+and revision-1 saved-base repair recover authored defaults without replacing actors
+or replenishing resources. Positive custom bases and genuine downing are retained.
+Evidence: assets/validation_5414. CA253-01 and CA246-01 passed on 2026-10-15.
+HISTORY and the corresponding acceptance.json files retain scope and run evidence. Keep this
+PR separate, based on #246. No merge or issue closure. #247-252/#260 still require
+their unresolved author design decisions; #282 follows the batch.
+
+## 5.4.13 - Arcane Sun (#246)
+
+Implemented the author's replacement Mage ability using existing elemental damage,
+defense, visuals and paid class lifecycle. Author confirmations on 2026-10-15 settle
+reference damage, speed, character pass-through, one impact per enemy, sight/range,
+burning cadence/tail, guided targeting, child persistence and native radial falloff.
+Focused automated evidence and copied-save helpers: assets/validation_5413.
+CA246-01 passed author review on 2026-10-15; HISTORY and validation_5413/acceptance.json
+record the result. Keep the focused PR based on accepted #245;
+no merge or closure. Remaining class issues, then #282, stay separate.
+
+## 5.4.12 - Miracle (#245)
+
+Implemented Priest's moving recovery area through the shared class lifecycle and
+authoritative player/NPC resource consumers. Author decisions on 2026-10-15 cover
+current maxima, additive ordinary recovery, dynamic membership, pulse-time sight,
+native allies excluding neutrals/enemies, first pulse after one second, strongest
+overlap and renewal without clock reset. Focused checks and compatibility helpers:
+assets/validation_5412. CA245-01 passed author review on 2026-10-15; HISTORY and
+acceptance.json preserve the confirmation. PR291 is ready, based on accepted #244;
+remaining class issues and then #282 stay separate.
+
+## 5.4.11 - Survival Instinct (#244)
+
+Implemented the Explorer's shared class release and four temporary contributions
+at real consumers. Author confirmations cover both attack categories, current-value
+composition and combat/ability Adrenaline gains excluding tutorial/debug reserves.
+Focused native evidence and compatibility helpers live in assets/validation_5411.
+CA244-01 passed author review on 2026-10-15; HISTORY and acceptance.json preserve
+the confirmation. PR290 is ready for review, stacked on accepted #243. Remaining
+class powers and then #282 retain separate scope and delivery.
+
+## 5.4.10 - Battle Cry (#243)
+
+Implemented the shared Warrior cast, release-time enemy/sight selection, attack
+gates, continuous-attack interruption and siege staffing distinction. Native
+weapon, NPC, movement/defense, projectile/DOT, save/hub and compatibility evidence
+lives in assets/validation_5410. CA243-01 passed author review on 2026-10-15;
+HISTORY and acceptance.json preserve the confirmation. PR289 is ready for review,
+based on accepted #239. Remaining class issues and then #282 stay separate.
+
+## 5.4.9 - Hunter's Instinct (#239)
+
+Implemented effective stealth in native movement noise, rear melee/sweep chance
+and saved projectile eligibility/chance/roll. Existing caps and critical damage
+remain. Native weapon, geometry, payment, noise, damage and persistence evidence
+is recorded in assets/validation_549. CA239-01 passed author review on 2026-10-15;
+HISTORY and acceptance.json preserve the result. Complete visual perception stays with its roadmap;
+keep remaining class powers and #282 in their separate issues/branches/PRs.
+
+## 5.4.8 - Socialization (#240)
+
+Implemented current Dialogue/Persuasion multipliers, continuous payment and
+authoritative visible-page snapshots. Actual native Ronnie/Caella responses,
+manual stop/exhaustion, active/stopped saves, hub travel and compatibility checks
+are recorded in assets/validation_548. CA240-01 passed on 2026-10-14; HISTORY and
+acceptance.json record the author's confirmation. Keep #239 and the remaining
+class powers in their own branches, tests, commits and PRs; #282 follows the batch.
+
+## 5.4.7 - Telekinesis (#241)
+
+The approved targeting, F/m force, mass-based payment and action suppression are
+implemented on their own branch. Native body/scenery input, physical movement,
+release, persistence and rollback evidence lives in assets/validation_547.
+CA241-01 passed author review on 2026-10-14; HISTORY and validation_547/acceptance.json record the result.
+Keep remaining racial/class powers and #282 in their separate issues and PRs.
+
+## 5.4.6 - Supernatural Breathing (#242)
+
+Implement the approved Caelith User1 Anima-for-Air substitution with all existing
+Air consumers, normal modifiers, complete-effort fallback and no fixed drain.
+Production integration is present. Native input checks cover sword, firearms,
+bow/crossbow, javelin, bolas, fists, running, jumping and gauntlet blocking.
+Native immersion, save/load, hub return, old-save upgrade and a reversible
+5.4.4 bridge pass. CA242-01 passed author review on 2026-10-14; acceptance is
+recorded in HISTORY and assets/validation_546/acceptance.json.
+Keep the remaining racial powers in their own
+branches and PRs. The Telekinesis force/range/control decisions are recorded in
+#241; no Telekinesis movement is implemented by #242.
 
 ## 5.4.4 - Shared class preparation (#238, in progress)
 
-Implemented the presentation component, its saved 105-tic clock/revision and
-combat entry guards. Native component matrix: 2,142 checks across nine weapon
-families and unarmed. This is not completion of #238: User4 still uses the earlier
-Sleep path until the new lifecycle is integrated. No executable author acceptance
-entry is added for this incomplete feature. Evidence: assets/validation_544.
-Left class/racial indicators pass native state and layout checks at four
-resolutions, including high HUD scale. Racial activation is still synthetic in
-that fixture; its production effects/toggle remain pending.
+Production User4 now uses the shared 105-tic presentation, fixed-cost progressive
+payment, full-cost admission, cancellation and release-only reuse. Native attack,
+block, weapon/inventory change and other-power activation guards are integrated.
+Revised Sleep counts actual HP-losing impacts after defenses, supports final-damage
+scaling, neutral/ally exceptions, expiry and renewed-hit/power/remaining-time rules.
+SYSTEMS records the approved contract; do not re-ask those decisions.
 
-Continue with payment/release/cancellation and native input,
-revised Sleep HP-based wake/final-damage integration and full save/hub tests.
-The author returned and confirmed: existing Eloquence scaling for radius/cost,
-Charisma for harmful-effect power/duration, Empathy for beneficial-effect/healing
-power/duration; whole-factor multiplication; full modified Anima cost required
-at admission with progressive payment. SYSTEMS records the exact shared curves.
-The three-hit count never scales and preparation stays three seconds.
-Resolve remaining cost snapshot/changing-modifier, forced-control/input and Sleep
-relationship/expiry/body-pose details where existing rules do not determine them.
-Do not re-ask confirmed decisions or count component-only tests as an ability pass.
+Evidence: assets/validation_544. Lifecycle contract: 1,021 native assertions;
+partial-payment/Sleep save and reload pass; MAP02 -> MAP03 -> MAP02 retains paid
+preparation and NPC hit counts, with one release. Earlier component/HUD evidence
+remains separately identified. CA238-01 covers only executable preparation/HUD
+author checks, passed on 2026-10-14; this does not complete the whole issue.
+The requested smaller class/racial icons use centered 64-unit frames. Native
+HUD state checks pass at 1280x720 and 640x480 with high scale; the author also
+approved icon size in CA238-01. Evidence: validation_544/small_icons.json and acceptance.json.
+
+Eight living views now cover rat/Bull/Mandinga/Zupay. Native checks cover all
+four bodies, hit/expiry wake and saved pose/counters; CA238-02 passed on 2026-10-14.
+Shared racial lifecycle is integrated: 43 native contract/input checks cover all
+nine weapon families and unarmed; saved object/debit and hub return pass. The
+factory remains empty until each #239-242 consumer is implemented. The existing
+journey forecast refuses active effects it cannot simulate; native hub travel
+retains them. Remaining: full rollback coverage and each consumer's input/effect
+checks. Keep new class effects in #243-251 and movement
+in #260. No merge or closure is inferred from component or author checks.
+
+Queue: finish the current 21-issue batch (#237-254 and #259-261), then implement
+#282, with its own branch, scope, tests, commits and linked PR. The author requested
+this order on 2026-10-14; #282 is not part of the #238 patch.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 
@@ -58,7 +216,7 @@ Do not merge or close the new batch without instruction.
 Implemented the approved family/tier/Lucidity rule in actual player and NPC
 weapon consumers, preserving single-tier tools and natural attacks without an
 authored weapon identity. Source and native validation: assets/validation_541.
-CA259-01 remains an outstanding physical-input/visual check in pending_test.txt.
+CA259-01 passed on 2026-10-14; PR273 is ready for review. No merge is inferred.
 The separate #238 lifecycle uses the author's latest confirmed Sleep hit rules
 and continuous racial toggles; this patch does not implement those powers.
 

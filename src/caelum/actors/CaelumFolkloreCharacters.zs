@@ -274,6 +274,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         Super.Tick();
         UpdateLocomotionVisual();
         if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
@@ -421,7 +422,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     Death:
         PALM A 0 A_StopPalomoWander;
         PALM A 5 A_Scream;
-        PALM A 0 A_NoBlocking;
+        PALM A 0 A_CaelumNoBlocking;
         PALM A -1;
         Stop;
     DepartureRun:
@@ -466,6 +467,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         // También corrige una pelea ya guardada, sin reconstruir al actor ni
         // tocar heridas, recursos, quemaduras o la transferencia de calor.
         if (IsAlliedMandinga(target)) target = null;
@@ -565,7 +567,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     Death:
         MNDG G 5 A_Scream;
         MNDG HI 5;
-        MNDG J 5 A_NoBlocking;
+        MNDG J 5 A_CaelumNoBlocking;
         MNDG K 5;
         MNDG L -1;
         Stop;
@@ -588,6 +590,9 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     RacialBreath:
         MDBR ABCD 3;
         Loop;
+    RestLying:
+        SLMD A -1;
+        Stop;
     }
 }
 
@@ -624,9 +629,10 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         // La reja del jefe es también su activación: ningún sonido, blanco
         // heredado o impulso inicia la IA antes de abrirla con la llave norte.
-        if(IsSewerBoss())
+        if(IsSewerBoss() && !CaelumRedemption.PreviouslyRaised(self))
         {
             let gate=CaelumMazeBarredGate(ActorIterator.Create(
                 CaelumConstants.PRISONER_BOSS_GATE_TID,"CaelumMazeBarredGate").Next());
@@ -636,10 +642,10 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
                 return;
             }
         }
-        if (IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
+        if (!CaelumRedemption.PreviouslyRaised(self) && IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
             && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
             SewerFleeing = true;
-        if (!CaelumBolas.Restrained(self) && SewerFleeing && IsRetreatBoss() && health > 0)
+        if (!CaelumBolas.Restrained(self) && !CaelumTelekinesisRules.Held(self) && SewerFleeing && IsRetreatBoss() && health > 0)
         {
             Vector3 exitPos = EscapePosition();
             if (SewerEscapeTarget == null)
@@ -701,7 +707,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        InitializeUniformFolkloreProfile(33);
+        InitializeUniformFolkloreProfile(CaelumConstants.ZUPAY_ATTRIBUTE_LEVEL);
         ConfigureCombatMagicalRange();
         CaelumDemonService.Initialize(self);
     }
@@ -777,7 +783,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         TNT1 A 0 A_StopSound(CHAN_7);
         ZUPY G 5 A_Scream;
         ZUPY HI 5;
-        ZUPY J 5 A_NoBlocking;
+        ZUPY J 5 A_CaelumNoBlocking;
         ZUPY K 5;
         ZUPY L -1;
         Stop;
@@ -811,6 +817,9 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     RacialBreath:
         ZUBR ABCD 3;
         Loop;
+    RestLying:
+        SLZU A -1;
+        Stop;
     }
 }
 

@@ -1,0 +1,159 @@
+{
+  "issue": 240,
+  "version": "5.4.8",
+  "baseline": "f711724b",
+  "environment": "GZDoom 4.14.2 / Windows 11 / Vulkan / background unpaused / 5% master volume",
+  "runs": [
+    {
+      "exit_code": 0,
+      "runtime_sha256": "0DF8265DC1D538A87CBCAA52F543E8535304CDB0E0C42981A649D1E759E15E39",
+      "fixture_sha256": "A02CA4A0563E9759920E32623F962B8B30963D5D7AD10566676727D97EB8CB5C",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:59:05.4606503Z",
+      "directory": "build/issue240-final",
+      "label": "contract-01",
+      "result": [
+        "CA240 DONE failures=0 passed=19"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "EF650B04B2E42DD4D87AD302A3ECCC96A21979495E14D958DA353E9B9533BD80",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:50:02.4634487Z",
+      "directory": "build/issue240-v5",
+      "label": "dialogue-01",
+      "result": [
+        "CA240 DONE failures=0 passed=8"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "EF650B04B2E42DD4D87AD302A3ECCC96A21979495E14D958DA353E9B9533BD80",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:50:21.7682498Z",
+      "directory": "build/issue240-v5",
+      "label": "caella-01",
+      "result": [
+        "CA240 DONE failures=0 passed=7"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "EF650B04B2E42DD4D87AD302A3ECCC96A21979495E14D958DA353E9B9533BD80",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:50:38.3162905Z",
+      "directory": "build/issue240-v5",
+      "label": "save-01",
+      "result": [
+        "CA240 DONE failures=0 passed=3"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "EF650B04B2E42DD4D87AD302A3ECCC96A21979495E14D958DA353E9B9533BD80",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:51:06.2683875Z",
+      "directory": "build/issue240-v5",
+      "label": "load-01",
+      "result": [
+        "CA240 DONE failures=0 passed=3"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "EF650B04B2E42DD4D87AD302A3ECCC96A21979495E14D958DA353E9B9533BD80",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:51:41.7378886Z",
+      "directory": "build/issue240-v5",
+      "label": "hub-01",
+      "result": [
+        "CA240 DONE failures=0 passed=3"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "1E8E1B2589C6A603F7E2AE36456F51DFAAC6536AABADF95A9A08A752C9D34C90",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:52:55.8138381Z",
+      "directory": "build/issue240-v6",
+      "label": "new-page-01",
+      "result": [
+        "CA240 DONE failures=0 passed=5"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "1E8E1B2589C6A603F7E2AE36456F51DFAAC6536AABADF95A9A08A752C9D34C90",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:53:06.9335606Z",
+      "directory": "build/issue240-v6",
+      "label": "save-active-01",
+      "result": [
+        "CA240 DONE failures=0 passed=1"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "1E8E1B2589C6A603F7E2AE36456F51DFAAC6536AABADF95A9A08A752C9D34C90",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:53:37.6501026Z",
+      "directory": "build/issue240-v6",
+      "label": "load-active-01",
+      "result": [
+        "CA240 DONE failures=0 passed=2"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+      "fixture_sha256": "72FAA12EC1BD10214247F3928A33D905997BA03BAB1F1D4BBBF7CE7261E2A0C3",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:57:44.2139671Z",
+      "directory": "build/issue240-upgrade",
+      "label": "upgrade-01",
+      "result": [
+        "CA240 DONE failures=0 passed=1"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "1028B894293DA4FCBED4215AF82FBED65C6767797F94650B789A4395FA3850CB",
+      "fixture_sha256": "FDC86CD9EED0573A15A0DC9D770A8CB9C257E1B142870E6FA155B42F72917585",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T02:54:38.0703294Z",
+      "directory": "build/issue240-rollback",
+      "label": "rollback-01",
+      "result": [
+        "CA240 DONE failures=0 ROLLBACK_ONLY"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "0DF8265DC1D538A87CBCAA52F543E8535304CDB0E0C42981A649D1E759E15E39",
+      "fixture_sha256": "A02CA4A0563E9759920E32623F962B8B30963D5D7AD10566676727D97EB8CB5C",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:00:46.2695301Z",
+      "directory": "build/issue240-final",
+      "label": "return-02",
+      "result": [
+        "CA240 DONE failures=0 passed=1"
+      ]
+    }
+  ],
+  "static": {
+    "validator_exit_code": 0,
+    "errors": [],
+    "context_words": 2494,
+    "normal_build_exit_code": 0,
+    "identical_packaged_members": 16158
+  }
+}

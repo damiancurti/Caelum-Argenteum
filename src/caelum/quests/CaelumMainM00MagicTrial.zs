@@ -131,7 +131,7 @@ class CaelumMainM00MagicTrial : Object play
         // La demostración no exige herir a nadie: sólo aporta la reserva para
         // un segundo del coste NATIVO del Sello. Se agota al validar User2.
         double reserve = user.GetSealChannelAdrenalinePerTic(seal.Tier) * TICRATE;
-        user.AddAdrenaline(Max(0.0, reserve - user.CurrentAdrenaline));
+        user.AddAdrenaline(Max(0.0, reserve - user.CurrentAdrenaline),false);
     }
 
     static void RecordChannel(CaelumPlayer user)

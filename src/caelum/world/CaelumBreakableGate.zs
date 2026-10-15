@@ -208,6 +208,7 @@ class CaelumBreakableGate : Actor
         int retained = mod == 'CaelumImpact' ? damage : Max(0, int(
             CaelumToughnessRules.IsSustained(mod) ? damage : CaelumToughnessRules.AfterDefenses(
                 postArmor,Mass,Toughness,CaelumArmorRules.IsMagical(inflictor,mod))+0.5));
+        retained=Max(0,int(retained*CaelumRally.DamageFactor(self,source)+0.5));
         if (flags & DMG_EXPLOSION)
         {
             if (ExplosionTick != level.maptime)

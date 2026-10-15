@@ -1,6 +1,19 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## Arcane Cloud implementation decisions (#251, in progress)
+
+Continue PR281 from the accepted #250 baseline e9c79de8. The original 5.4.5
+asset checkpoint is preserved below; it is not a completed gameplay delivery.
+On 2026-10-15 the author confirmed normal lightning-staff damage using caster
+Intelligence; random visible enemies within 40 m base scaled by Eloquence,
+allowing repeat targets and no shot without an eligible enemy; rain restores
+1% of each beneficiary's current maximum Anima per second, scaled by Empathy,
+with the first pulse one second after release. The caster is included.
+Rain footprint/contact, mounting/flight and effect lifecycle decisions remain
+pending. Existing seated artwork, native flight and the class lifecycle are
+reused; no new gameplay behavior or acceptance is claimed at this checkpoint.
 
 ## Arcane Cloud asset boundary (#251 / 5.4.5, in progress)
 
@@ -11,52 +24,645 @@ The isolated preview's scale/alpha do not define the eventual ability. The
 confirmed seated rider, free flight, lightning and restorative rain remain
 requirements; their implementation and the unresolved rules stay in #251.
 
-## Class preparation component and confirmed V5.4 contract (#238, in progress)
+## Pilgrim Redemption - 5.4.19 / #250
 
-The author requires a three-second preparation: lower the equipped hands/weapon,
-raise empty closed fists facing forward, turn the hands and open the palms.
-Attacking and blocking are disabled during preparation; movement and receiving
-damage are not newly defined as user-requested cancellation. A second User4 press
-cancels. Anima is spent progressively, cancelled spending is not refunded, and
-60-second reuse begins on release. The approved trial base remains 1,000 Anima
-with existing cost modifiers and a 10-second effect before the pending social
-scaling rules. These are confirmed requirements, not a claim of full implementation.
+Redencion replaces Amparo. Reuse the approved shared User4 preparation, payment,
+cancellation and reuse. The mobile area follows the caster and requires direct
+sight, like Rally. Base reach remains 40 m with Eloquence; the shared beneficial
+potency/duration rules apply. Resurrection runs immediately on release, then once
+per second. Each body can revive only once per cast; recasting is a new cast.
 
-In this checkpoint CaelumClassCastView supplies the visual sequence, a revision-1
-saved countdown on the existing player and real combat entry guards. Zero is the
-safe default in older saves. The new component is only started by the isolated
-fixture: production User4 still follows the previous Sleep implementation.
-The full controller will own payment, release, cancellation and effect policies;
-the presentation component does not charge resources or apply a class effect.
+All existing corpses are eligible regardless of species, faction or story role,
+including neutrals, players and unique/boss actors. Restore 100% of current maximum
+Health, Anima, Air and Lucidity; remove negative statuses. Preserve the original
+body/character and finite inventory. If the full body cannot fit, search for nearby
+visible fitting ground within the area; do not overlap or telefrag.
 
-The left power column shares the existing Tarot/Seal size and native HUD scaling.
-Class readiness uses the currently implemented effect eligibility, with dim gray
-unavailable icons, a preparation label and remaining reuse seconds. Racial state
-shows only active/inactive and has no timer. Its new saved boolean defaults false;
-individual racial effects will own its activation. Debug race has no racial icon.
-The compass and transient notifications reserve the column width. Generic icons
-reuse existing owned artwork; they do not imply effects are already implemented.
+Former enemies become allies until the responsible effect ends, even after leaving
+the area. They then die again. Original allies and neutrals remain alive. The
+caster and living allies not revived by that cast receive x4 final fixed Toughness
+reduction, scaled by Empathy as a full factor. This benefit requires current area
+membership and sight; use only the strongest overlapping area. Recasting uses new
+potency and the greater of remaining/new duration, without stacking factors.
 
-On 2026-10-14 the author confirmed the shared class scaling contract, using the
-existing curves: B=(N*N+25*N)/125 and M2=1+3B/100. Eloquence multiplies the base
-radius by M2 and divides Anima cost by M2. Charisma multiplies harmful-effect
-power and duration by M2; Empathy multiplies beneficial-effect/healing power and
-duration by M2. Direct damage retains its existing Intelligence calculation.
-The class preparation remains exactly three seconds, independent of Eloquence.
-Scale the whole authored multiplier: a base x3 with statistical power x2 becomes
-x6, not x5. The enemy Sleep hit count remains exactly three regardless of stats.
-The caster must have the entire modified cost available before preparation starts,
-although payment is progressive and cancellation does not refund paid Anima.
-These decisions define the implementation contract; the new lifecycle and effect
-consumers remain pending in this checkpoint.
+Caster death ends the area and kills its temporary former enemies. Their bodies
+accompany the caster between maps with Health, reserves and remaining lifetime;
+long journeys consume elapsed duration. Do not duplicate original loot, death
+rewards (including Adrenaline) or story/quest progression when revived bodies die.
 
-Sleep enemies require three separate HP-damaging impacts (including each
-pellet and DOT application), with final received damage multiplied after defenses
-through the third waking hit; allies retain one-hit wake and no enemy multiplier.
-The hit count stays three. Continuous racial toggles have no cooldown/duration cap;
-Hunter's Instinct and Socialization cost 10 Anima/second before cost modifiers.
-These confirmed corrections supersede the older catalog below, but their runtime
-implementation and remaining policy questions still belong to #238/#239-251.
+Former enemies follow the caster while idle; their attacks protect the caster
+and allies. Ignore an old player corpse once that player has respawned in another
+body; the currently dead pawn can revive. If no valid nearby full-size placement
+exists, leave that corpse for the next pulse. Corpses already removed by the engine
+are not reconstructed from a new template. Preserve beneficial inverted periodic
+doses while clearing harmful ones. Existing effects that end with their caster
+still end if that caster is revived in the same tic.
+
+Revision-1 inventories retain per-cast bodies, original allegiance, conversion
+ownership, remaining duration and the no-repeat-death-reward latch. Previous saves
+start without these inventories; no character reconstruction or payment migration
+is needed. Active effects and preparation reload in 5.4.19, including pending
+arrival. Neutral copied saves roundtrip with 5.4.18; active Redemption saves are
+not claimed to load in unsupported older runtimes. Keep the original snapshot for
+rollback. Focused native/static/build evidence: validation_5419. CA250-01 passed
+author review on 2026-10-15; broad campaign/network coverage is not implied.
+
+## Battle Mage Summoning - 5.4.18 / #249
+
+Invocacion replaces Deafening Cry. User4 retains the shared three-second paid
+preparation, full initial Anima requirement, cancellation without refund and
+60-second reuse from successful release. It is an offensive class ability for
+Battle Cry's existing restriction. Aim at visible ground when preparation ends;
+base reach is 40 m, scaled by Eloquence. If the aimed position is occupied, search
+for nearby visible ground within range where the existing Zupay cylinder fits.
+Never telefrag or place through walls. If no valid position exists, retain spent
+Anima and do not start reuse; an existing summon remains unchanged.
+
+Each caster owns one temporary allied Zupay. Preserve the current creature's
+size, mass, artwork, attacks and finite supplies; suppress unique MAP02/port
+boss identity, retreat and quest events. Empathy snapshots at release, multiplying
+all twelve base attributes (33 at power 1, 66 at power 2) before the existing
+derived-stat formulas. Attributes retain integer representation, rounded to the
+nearest integer. Its own resulting Strength/Intelligence drive existing attacks;
+there is no extra caster-damage multiplier. Empathy also multiplies the base
+10-second duration. Successful recasting replaces the old creature with a fresh
+one and a new duration, never stacking or renewing its damaged body.
+
+The summon follows its caster when not fighting and independently engages
+enemies with its existing combat. Its attacks, ground-launch impulse, projectiles,
+breath burning and thermal radiation protect the caster, allies and neutrals.
+Projectile ownership/policy persists after the creature disappears. Normal solid
+body collision is retained. Death of the summon or caster, or expiry, removes
+the summon without corpse, loot, kill count or nearby ally-death reward.
+
+The revision-1 owned effect carries the body and its finite inventory between
+maps rather than recreating them. Preserve Health, reserves and remaining time;
+clear previous-map targets and ongoing breath. If no visible space is available
+near the arrival point, keep the body pending and noninteractive while duration
+continues, retrying placement on the shared one-second cadence. Trips that advance
+hours or days subtract their elapsed simulation time from the effect.
+
+Implemented on feat/issue249-summoning. Static validation, normal packaging and
+132 qualified assertions in 19 native runs pass, including copied-save upgrade,
+optional inert-class rollback and return (validation_5418). CA249-01 passed author
+review on 2026-10-15. Earlier accepted issues are not reopened.
+
+## Rally - 5.4.17 / #248
+
+Cleric User4 uses the shared three-second progressive Anima preparation and
+60-second reuse from release. The living caster carries a revision-1 area with
+40 m base radius, 10 s base duration and 10% maximum Adrenaline recovery per
+second. Snapshot Eloquence-scaled range and Empathy-scaled power/duration at
+release. Require the same native allegiance and direct sight as Miracle:
+caster, cooperative/teammate players and friendly combatants, excluding neutral
+or hostile bodies, corpses and ordinary objects. Current three-dimensional
+distance, sight and allegiance govern both recovery and damage, immediately.
+
+The first pulse is one second after release; the last complete effect second
+also pulses. Restore the recipient's current maximum times the approved rate,
+cap at that maximum, and preserve ordinary decay. The player's existing
+Survival Instinct multiplies this gain once. Only the strongest eligible Rally
+provides either recovery or damage modifiers. Ties use native player number;
+each source retains its own clock and suppressed pulses do not queue.
+Renewal snapshots new potency/range, keeps max(remaining, new duration), and
+does not reset or advance the next pulse.
+
+For each beneficiary, factor = (1 + current Adrenaline / current maximum) times
+the area's captured Empathy power. Scale the full factor. At base power, empty,
+half and full bars give 1, 1.5 and 2. Both outgoing multiplication and incoming
+division apply after the target's defenses, including armor, elemental factors
+and Toughness. Include physical/magic attacks, ongoing burns/poisons, falling,
+collisions and environmental hazards. Own damage applies only incoming division,
+so falling or a self-inflicted explosion does not cancel protection.
+
+Capture both live factors at each damage entry, before that hit grants Adrenaline
+for blocking, pain or damage. Already-flying projectiles and existing periodic
+effects use the current area/bar at impact/pulse, not launch-time snapshots.
+The elemental dose derived from an initial hit excludes Rally's factor; each
+subsequent pulse applies it once. Existing native integer HP quantization,
+Sleep multiplication, immunities and tutorial Health protection remain.
+Snapshot context is transient, nested-call-safe and neutral outside a hit.
+Destructible gates and training/physical props receive outgoing scaling through
+their own final damage paths, without making them allied beneficiaries.
+
+The area serializes revision, power, range, remaining tics and pulse phase.
+Old saves have no Rally inventory and no persistent recipient modifiers.
+Death immediately disables the area; expiry removes it. Forecast travel rejects
+an affected traveler rather than extending or discarding the temporary benefit.
+Static validation, normal packaging and 74 qualified native assertions pass.
+Current save/load, preparation reload and hub travel preserve clocks/payment.
+The optional copied-save bridge to 5.4.16 removes unsupported Rally areas and
+preparation without refund; preserved original saves provide reversal. Upgrade,
+bridged rollback and re-upgrade pass. CA248-01 passed author review on 2026-10-15.
+Exact commands/hashes and limits are in assets/validation_5417.
+
+## Mercenary Formation Breaker - 5.4.16 / #247
+
+Rompeformaciones / Formation Breaker replaces Killer Instinct. User4 uses the
+shared 3-second paid preparation, base 1000 Anima and 60-second cooldown from
+release. The base effect window is 10 seconds. While active, a native forward
+double tap within the #260 0.4-second interval starts a ground-only traversal:
+
+- Stand upright, using maximum **running** speed even from walking/crouching.
+  If the full body cannot fit, consume the gesture without starting, paying or
+  changing posture. Swimming/flying retain the ordinary paid #260 impulse.
+- Base speed factor **x4** and traversal duration **1 second**. Empathy scales
+  the entire speed/defense factors and both the traversal and window durations.
+  Capture these factors at release/start; later attribute changes do not rewrite
+  a running traversal. The original full movement direction, including an existing
+  diagonal, stays fixed in world space while the camera remains freely movable.
+- Waive the impulse activation Air fee only. Running Air continues through the
+  canonical payment system, including Supernatural Breathing substitution.
+- Ignore additional double taps during the traversal. A started traversal finishes
+  independently of window expiry. Recasting renews window power and keeps the
+  greater remaining/new duration without stacking; an ongoing traversal keeps its
+  captured factors. Stop when obstructed by a wall/body, leaving the ground,
+  jumping, entering water, immobilized, dead or modal control takes over. Preserve
+  native collision/fall motion; cap excess horizontal speed at normal running
+  speed when ending and never reaccelerate a stopped body.
+- During the traversal only, biological collision cushioning and **final flat
+  Toughness reduction** multiply by base x10, then beneficial power. Do not multiply
+  the raw Toughness attribute or modify ordinary attack damage. Moving characters
+  and objects are eligible for this biological cushioning. Keep the bonus until
+  the terminating collision has resolved both receivers independently. Sustained
+  pressure/crushing retains its separately approved rule; armor wear, anatomy and
+  the other body's defenses remain unchanged.
+- Every 0.1 seconds of actual movement, freeze the current owned body/head appearance
+  at 50% opacity and fade it over 0.3 seconds. Simulation quantization alternates
+  3/4-tic emission intervals and expires a snapshot by tic 11. It has no collision,
+  inventory or combat role.
+
+Revision-1 inventory state owns the window, captured traversal and direction per
+player. New fields are absent/inactive on older saves; partial gestures stay
+transient under #260. Current reload continues the exact traversal and partial
+preparation payment. Hub arrival ends an old-map traversal while preserving the
+remaining owned class window. For rollback to 5.4.15, the optional copied-save
+bridge declares the new classes and cancels unsupported effects without refund;
+plain old runtime does not know those classes. Original saves remain untouched.
+Native and copied-save evidence is in validation_5416; CA247-01 passed author
+review on 2026-10-15 without reported qualifications.
+
+## Player constant acceleration and directional impulse - 5.4.15 / #260
+
+Playable characters reach their current steady movement speed with a linear ramp:
+`timeToFullSpeed = 3 seconds * DerivedStats.TotalMass / 100 kg`. TotalMass is the
+existing authoritative body-plus-carried-load aggregate, including equipment and
+the Box contribution once. At fixed mass and target speed, 50/100/200 kg require
+1.5/3/6 simulation seconds. Native input has one initial command-tic startup;
+fractional durations clamp at the next simulation tic. Calendar time is irrelevant.
+
+Existing effective speed, directional/run/crouch input, health, survival, load,
+Air, elemental, shield, reload and thermal modifiers remain authoritative. The
+ramp compensates the native command's own thrust for friction, rather than
+clamping total velocity. This produces linear real movement while preserving
+external impulses, collisions and native stopping. No input or immobilization
+resets progress; ordinary airborne jumps retain the existing frozen progression;
+swimming and native flight continue progressing. A changed total mass changes
+the next increment; it does not rewrite momentum or elapsed time. Direction and
+target-speed changes retain the native response, with no new steering rule.
+NPCs, including the bull's 10 m/s and 10 m/s² charge, do not use this player ramp.
+
+Revision 1 preserves an old saved progress fraction, clamps corrupt out-of-range
+fractions and adds a serialized next-tic increment. No actor class/state changes
+are needed. Native copied-save upgrade, reload and rollback evidence is recorded
+in assets/validation_5415; keep original saves as reversible inputs.
+
+The author confirmed the double-tap contract on 2026-10-15: two native
+direction presses at most 0.4 simulation seconds apart, with a release between
+them. Holding a direction is not another tap. The impulse also works while
+moving, reaches the current walk/run/crouch mode's maximum and follows the full
+current movement direction (including a held diagonal). It does not stack a
+second maximum on existing velocity. Ground, swimming and flight are eligible;
+ordinary jumps/falls are not. If the complete cost cannot be paid, spend nothing,
+do not activate and continue ordinary movement. Cost remains the actual running
+Air rate times the full mass-based acceleration duration, using the common Air
+payment authority (including Supernatural Breathing). No cooldown is added.
+Native opposite directions cancel through the engine's own command input.
+Held directional buttons remain held when their opposite is released; cancellation
+of movement is not a new press. Analog-only axes use native command sign edges.
+Menu/dialogue/rest/death/immobilization/load must not retain a partial gesture.
+The #247 enhanced forward impulse remains a separate issue.
+
+The native command supplies direction, current stance and all speed modifiers.
+After payment, the impulse completes velocity toward that command's steady cap,
+accounting for existing perpendicular motion instead of stacking another cap.
+Already faster external momentum is retained. Native collision and vertical
+movement remain active; there is no teleport or ordinary airborne impulse.
+The incomplete gesture is transient: load starts disarmed, and UI transitions
+clear it through the existing synchronized event handler. Prediction cannot
+consume a gesture or pay. No persistent actor or state-list migration is added;
+the existing revision-1 ordinary ramp migration remains authoritative.
+CA260-01 (ordinary acceleration) and CA260-02 (impulse) passed author review
+on 2026-10-15; their recorded scopes remain separate.
+
+## MAP01 resident movement repair - 5.4.14 / #253
+
+The player's protected 1-HP floor does not end the assisted bull encounter or
+disable eligible residents. The reproduced stall had a different cause: all four
+residents captured zero CombatBaseSpeed during initialization, despite authored
+positive class defaults. Their current Health, thermal and elemental multipliers
+were all one in the stalled trace. They could attack when the bull approached,
+but could not pursue or retrieve their finite bolas.
+
+For anchored MAP01 residents only, restore a missing initial Speed from its class
+default before the shared base captures it. Keep positive custom values. Revision-1
+Tick migration repairs absent bases in old saved instances and reapplies existing
+Health/thermal/elemental modifiers. It preserves actor and equipment identity,
+resources, wear, targets, downing, recovery and quest progress. It neither replaces
+residents nor grants healing, supplies, damage immunity or victory. Existing own
+downing, finite tools, encounter grace and post-victory restoration still apply.
+The repair adds no states and no new actor class; copied-save upgrade/reload and
+rollback use native serialization, with preserved originals for reversal.
+Evidence: assets/validation_5414. CA253-01 passed author review on 2026-10-15.
+
+## Arcane Sun - 5.4.13 / #246
+
+Mage User4 replaces Brainstorm with Sol arcano (Arcane Sun). The accepted shared
+105-tic preparation, progressive fixed-cost debit, cancellation without refund and
+60-second reuse apply. It is offensive and therefore subject to Battle Cry.
+At release, snapshot tier-one uncharged fire-staff damage with the caster's current
+Intelligence and offensive modifiers, independently of the equipped weapon. No
+weapon wear is charged. Direct impact and explosion use ten times that reference;
+each child uses normal reference damage and elemental payload. Intelligence is
+not applied twice. Ordinary critical, anatomy, armor, Toughness and Seal consumers
+remain authoritative. All components affect native enemies only: never the
+caster, allies or neutrals. Existing native allegiance remains authoritative.
+
+The central orb has ten times the normal projectile's visual scale and radial
+collision geometry (40 MU radius/height), and travels straight at the normal staff
+speed, 20 MU/tic. It crosses characters, delivering one direct impact per enemy per
+launch; re-entry cannot repeat it. Scenery (wall, floor or ceiling) or the end of
+the 10-second base lifetime triggers exactly one explosion and 25 straight children.
+Charisma scales lifetime. The burst uses a near-uniform Fibonacci sphere, including
+up/down poles, rather than an unattainable equal pairwise distance for 25 points.
+Explosion base radius is ten times the uncharged statuette's 128 MU, then scaled
+by Eloquence. Native distance falloff and wall occlusion are retained.
+
+The moving burning area uses the 40-m class base radius scaled by Eloquence, with
+direct sight from the orb and live membership. Native burning delivers ten times
+reference staff damage per second, further scaled by Charisma. Exposure refreshes
+the native burn; after leaving, its 3-second base duration remains, scaled by
+Charisma and native resistance. Strength is ten times harmful potency so a weaker
+ordinary fire hit cannot replace the Sun's stronger burning. Reapplication keeps
+the native fractional damage and pulse phase. No separate artificial periodic
+damage or bypass of defenses is introduced.
+
+Starting one second after release, each complete second emits one normal-sized
+homing fire shot at the nearest visible enemy in the scaled area. No target means
+no shot for that second. Children use normal staff speed and normal travel range
+(3200 MU base, scaled by Eloquence); burst children remain straight. A homing child
+whose target becomes invalid or invisible reacquires the nearest visible enemy
+within its remaining travel budget and the scaled acquisition radius. Released
+shots and existing burning continue when the main orb ends or the caster dies;
+damage requires the original source actor to remain available.
+
+Revision-1 projectile state serializes offensive snapshots, hit recipients, lifetime,
+next shot and finished flag. Old saves have no new projectile state to initialize.
+Save/load must not duplicate payment, direct hits, periodic emission or final burst.
+Hub projectiles remain in their original map under native inactive-map freezing.
+The optional 5.4.12 bridge operates on copied saves, removes unsupported projectiles
+and cancels Mage preparation without refund; the preserved original is reversible.
+Focused evidence: assets/validation_5413. CA246-01 passed author review on
+2026-10-15. No broader campaign or multiplayer acceptance is claimed.
+
+## Miracle - 5.4.12 / #245
+
+Priest User4 uses the shared three-second paid preparation, cancellation without
+refund and 60-second reuse from release. At release, snapshot Eloquence-scaled
+class radius (40 m base), Empathy-scaled recovery (3% base) and duration (10 s base).
+The moving area follows its living caster. It is a benefit, not an attack.
+The first pulse occurs after 35 simulation tics; subsequent pulses occur once per
+second, including the last complete second of the effect. Each pulse checks
+current three-dimensional distance, direct sight and native allegiance. The
+caster benefits; other living players in cooperative play or on the same team,
+and native friendly monsters recognized as friends, benefit. Neutral and hostile
+bodies, corpses and ordinary objects do not. No narrative faction matrix is added.
+Entering/leaving, walls and changed allegiance affect the next pulse.
+
+Restore the approved percentage of each recipient's current maximum Health,
+Lucidity, Anima and Air. Recovery adds to ordinary recovery and consumables and
+caps at legal maxima. Fractional Health carries separately from natural recovery
+so small maxima do not gain a fabricated minimum of one HP per pulse; reaching
+maximum clears the remainder. No extra food/water payment, Adrenaline, cleansing,
+resurrection or survival resource restoration is introduced. Recovery updates
+the corresponding Health/Lucidity/Air state services and native player health.
+
+Overlapping areas restore only the most potent eligible Miracle. Equal potency
+uses native player-number order. Each source retains its own one-second clock;
+suppressed pulses do not queue. Renewal uses the new release's potency/range and
+max(remaining, new duration), retaining the next pulse's phase and one area.
+Changing a maximum during the effect changes the next recovery amount.
+
+The caster-owned revision-1 inventory serializes potency, radius, remaining time
+and pulse phase. Player/NPC recovery revision 1 initializes the separate Health
+remainder to zero for old saves, idempotently. Save/load and supported hub travel
+must not duplicate payment or pulses. Death disables the area immediately; expiry
+removes it. Forecast travel rejects an active area. The optional copied-save
+bridge targets 5.4.11, removing unsupported areas/preparations without refund;
+preserved original saves provide reversal. It does not alter campaign saves.
+CA245-01 passed author review on 2026-10-15; focused evidence is in assets/validation_5412.
+
+## Survival Instinct - 5.4.11 / #244
+
+Explorer User4 uses the shared three-second preparation, fixed progressive debit,
+full modified 1000-Anima admission, cancellation without refund and 60-second reuse
+from release. It affects the caster only. At release, Empathy's existing beneficial
+power snapshots the full factor (3 times that power) and ten-second base duration.
+A factor of 2 therefore yields x6 for 20 seconds, not x5. The effect is not an
+attack and Battle Cry alone does not prevent its preparation.
+Renewal uses the new release's potency and max(remaining, new duration), without
+adding factors or durations, as confirmed by the author on 2026-10-15.
+
+Multiply current evasion, physical/magical critical chance and precision, retaining
+personality, Tarot, racial, posture, equipment, load and survival-state modifiers.
+Precision remains the existing quantity that divides angular dispersion: x3
+precision divides the same spread by three. Weapon tiers, sampling, guidance and
+attack timing remain unchanged. Critical damage is unchanged. Existing unarmed
+and utility-stream consumers acquire no invented critical roll or weapon identity.
+The real evasion/critical probability consumers cap at 100%; resource additions
+still cap at MaximumAdrenaline. Personage journal values use the shared consumers.
+
+Every gameplay-earned Adrenaline gain, including future ability gains such as
+Rally, receives the factor exactly once. Combat still composes its health and
+personality factors. Explicit tutorial/development reserve additions bypass the
+class factor; they remain exact. AddAdrenaline's applyAbility flag distinguishes
+these calls, and AddCombatAdrenaline records the already-scaled final gain before
+using the exact addition path. Future abilities use the normal gain path.
+
+The caster-owned inventory effect is revision 1 and stores remaining tics and its
+release-time factor. Contributions are queried, never baked into saved attributes
+or divided back out. Expiry removes only this contribution; death disables it.
+The ability grants neither negative-state immunity nor protection from survival
+drain. Existing projectiles retain their firing-time critical chance; no reroll or
+retroactive boost is introduced. Saves and supported hub travel retain one effect
+without reapplying payment. Forecast travel rejects this unsupported timed effect.
+The optional copied-save bridge targets 5.4.10 only, cancelling unsupported effects
+and preparations without refund; preserve original saves for reversal.
+CA244-01 passed author review on 2026-10-15; exact evidence is in assets/validation_5411.
+
+## Battle Cry - 5.4.10 / #243
+
+Warrior User4 follows the shared #238 contract: exactly three seconds of native
+hand preparation, full modified 1000-Anima admission, a fixed cost paid uniformly,
+second-press cancellation without refund, and 60-second reuse from release.
+At release it snapshots living enemies within 40 metres (1280 MU) times the
+Eloquence range factor, with unobstructed sight. Geometric sight ignores visibility
+modifiers, matching the existing Sleep query. Allies, neutral actors and the caster
+are excluded. Enemies use existing monster/friendly and player team rules; bosses
+have no special immunity. No invented resistance roll or damage is involved.
+
+The attack prohibition lasts 10 seconds times the Charisma harmful-effect factor.
+Renewal retains max(remaining, new duration), never their sum. Membership does not
+change after release: leaving the radius or losing the caster does not end it.
+Recipients retain movement and defense. Preparing physical/magical attacks,
+offensive class casts, bolas, resident tool attacks, Bull charges, demon breath
+and utility-staff streams stop. Harmful Seal channels stop without a final
+Quintessence release burst; all Telekinesis stops, including nonliving targets.
+Weapon execution paths also reject attacks until expiry. Nonattack reloads,
+implemented Tarot benefits/flight and self-benefit racials remain available.
+Already launched projectiles and already applied burn/poison/periodic effects
+continue normally; this is an attack gate, not a global damage filter.
+
+Intimidated siege operators may move/load. Cannon firing still requires one
+eligible nearby operator; the ram still requires its complete eligible crew.
+An interrupted ram strike enters recovery even if another crew member is absent.
+The prohibition lives in recipient inventory (revision 1), survives save/load and
+supported hub travel, and expires on its own clock without caster ownership.
+Old saves have no new effect to invent. The optional 5.4.9 rollback bridge operates
+on copies, removes unsupported effects/casts and retains spent Anima; preserve
+original saves for reversal. Scope and exact evidence: assets/validation_5410.
+CA243-01 passed explicit author review on 2026-10-15; HISTORY records the result.
+
+## Hunter's Instinct - 5.4.9 / #239
+
+Beast Man User1 toggles Hunter's Instinct. The shared racial lifecycle charges
+10 Anima/second before current Anima-cost modifiers, with no upfront fee, duration
+cap or cooldown. It supports sub-second reserves, preserves an unaffordable
+remainder and stops on sleep, stun, immobilization, death or identity changes.
+
+Multiply current stealth, including the existing crouch contribution, by three
+before the 0..100% cap. Effective stealth feeds the production movement-noise
+complement, range and native SoundAlert call. At 100% no movement-noise event is
+emitted. Existing running/crouching and mass contributions still apply. The
+diagnostic visual observer also reads this value, but is not a completed
+production visual-perception system; that remains outside #239.
+
+For physical and magical critical chance, the rear half is the target's rear
+180 degrees, measured horizontally from its current facing to the attacker's
+current position. Exact side boundaries and coincident positions receive no rear
+bonus. Multiply the current eligible chance by three and cap at 100%. Do not
+multiply critical damage. Single melee hits and large-weapon sweeps check each
+victim at impact. Existing fists have no critical roll: zero remains zero.
+
+The author confirmed on 2026-10-15 that a projectile captures whether the racial
+was active **when fired**. Switching it off during flight retains eligibility;
+switching it on afterward grants none. Rear geometry still uses both actors'
+positions at impact. Preserve the launch's ordinary chance and original random
+roll, and compare that same roll against the conditional chance for each receiver.
+No reroll occurs. Carbine, shotgun, bow, crossbow, javelin and all four magical
+weapons use this metadata, including charged forms, homing and area defense.
+Existing per-volley/per-projectile roll ownership is unchanged.
+
+New projectile metadata has revision 1. Older in-flight projectiles have revision
+0 and retain their original resolved result without invented chance, eligibility
+or randomness. Current saves preserve the effect and each projectile's launch
+metadata; native hub travel retains the valid effect. The optional isolated 5.4.8
+bridge ends the unsupported effect without refunding Anima. A rollback flight
+retains the legacy outcome when returned; keep original saves for full recovery.
+Evidence and exact compatibility scope: assets/validation_549. CA239-01 passed
+author review on 2026-10-15.
+
+## Socialization - 5.4.8 / #240
+
+Human User1 toggles Socialization. It multiplies current Dialogue skill and
+Persuasion capacity by two, then applies the existing thresholds, probability
+rounding and caps. Underlying Eloquence/Charisma and saved results are unchanged.
+Rulo's Emotion and faction reputation receive no bonus. Palomo's existing
+Dialogue-based discount request uses the boosted skill; no separate shop-price
+or discount modifier is added. Ronnie's Eloquence-4 Dialogue 0.928 becomes 1.856;
+Caella's Charisma-0 difficulty-120 chance becomes 100% instead of 83%.
+
+The shared racial controller charges 10 Anima/second before normal cost reduction,
+uniformly per simulation tic, including native unpaused conversation. No upfront
+fee, duration cap or cooldown applies. A sub-second reserve may start the effect;
+an unaffordable next tic switches it off without spending the remaining fraction.
+Sleep, stun, immobilization, death or identity changes end the effect. Native hub
+travel retains an otherwise valid effect and does not reset Anima.
+
+During conversation, the rebound User1 key can stop this effect without selecting
+a reply or activating another power. Each displayed native node/option page
+captures its multiplier in authoritative play state before drawing or accepting
+a reply. Already visited pages retain that multiplier until the conversation
+ends, including after manual stop or exhaustion. New pages use the current live
+effect. No client-supplied skill value is trusted. The existing history/replay
+flow, saved roll, probability, automatic-success rules and no-reroll guard remain.
+
+Conversation snapshots have schema revision 1, speaker identity and page keys.
+Old saves start with a null session; current saves restore the page multiplier
+and active/stopped effect without replaying actions. Closing the conversation
+clears its session. The optional isolated 5.4.7 rollback bridge ends an unsupported
+effect while retaining spent Anima; preserve original saves. Exact evidence and
+limitations: assets/validation_548. CA240-01 passed author review on 2026-10-14.
+
+## Telekinesis - 5.4.7 / #241
+
+Duende User1 captures one aimed, visible living body or movable scenery object
+within the Seal's base radius (1,280 MU / 40 m), multiplied by the current
+Eloquence-derived AbilityRangePercent. Eligible scenery uses the existing
+CaelumMovableProp contract: configured movable props and movable environment
+rocks. Rooted trees, static infrastructure, owned inventory and visual effects
+are not movable scenery. Living Caelum combatants/players retain their native
+identity; inactive/dormant bodies are not captured. Capturing transfers no ownership.
+
+The captured contact follows the aim at its original distance. One target may
+have one active holder. Held living bodies cannot voluntarily move or attack;
+ongoing breath, charging and player action preparation are interrupted. Native
+external velocity, gravity, water and collision remain active. The effect never
+teleports the target or overrides collision/gravity flags. User1 again releases
+it; loss of sight, excess current range, target death/removal, caster interruption
+or inability to pay the next instant also releases it without a throw impulse.
+Map travel releases the target before departure.
+
+Base consumption is 1 Anima per actual kilogram per second, followed by the
+usual current Anima-cost reduction. Body and carried mass count; virtual shield
+collision inertia does not increase real mass. No flat fee, mass cap, duration
+cap or cooldown applies. Preserve an unaffordable fractional remainder.
+
+Force is 1,000 N times MagicalPowerMultiplier, including its existing Intelligence
+and personality factors. At Intelligence 25 before personality: 1,700 N; a bare
+66 kg Mandinga has acceleration 25.76 m/s² before gravity/friction. Its actual
+carried load reduces that value. This is a newly approved force baseline, not a
+reinterpretation of the 1,000 Anima class cost or old native attack thrust.
+The controller converts F/m to MU/tic² and limits the full velocity change to
+that budget. Braking uses v²=2ad toward the moving contact, with no additional
+authored speed cap. Gravity remains native: insufficient force cannot lift a
+heavy body. Ground friction and collisions can further reduce motion.
+
+The effect has hold schema revision 1 and nullable target bindings. Old saves
+start without this effect; current saves preserve the same body/contact/payment.
+State countdown suspension is local to each NPC tick, so release cannot leave
+a saved permanent freeze. The optional tested 5.4.6 bridge deactivates the new
+effect without refunding resources; preserve original saves before using it.
+Evidence: assets/validation_547. CA241-01 passed author review on 2026-10-14.
+
+## Supernatural Breathing - 5.4.6 / #242
+
+The Caelith User1 power is **Supernatural Breathing / Respiración sobrenatural**.
+The shared racial controller supplies toggling, interruption, saved identity and
+active/inactive HUD state. There is no fixed Anima drain or cooldown. Existing
+forced sleep, stun, immobilization and death rules turn it off.
+
+Every ordinary player Air expenditure is substituted: running, jumping, physical
+melee/ranged attacks, fists, javelin/bolas throws, blocking and oxygen deprivation.
+First calculate the ordinary Air demand with its existing load, charge, heat and
+other modifiers; multiply by 1 Anima per Air point, then apply the current Anima
+cost reduction once. A zero Air reserve does not make an effort free or prevent
+an otherwise affordable substituted effort. Existing Air-dependent performance,
+thermal effects and ordinary resource recovery remain tied to actual reserves.
+
+If the complete effort is unaffordable, turn the power off without consuming the
+remaining Anima and run the ordinary Air rule for that entire effort. Attacks
+still refuse an unaffordable Air cost; continuous exhaustion/deprivation follows
+its existing empty-reserve behavior. Exact payment to zero ends the power after
+paying that effort. Admission and personal-time simulation use #238's controller.
+
+Underwater deprivation keeps its existing increasing demand. Paid Anima prevents
+that tic's drowning without adding Air recovery debt; on failure only actual Air
+loss becomes debt. Once ordinary Air is exhausted, ordinary drowning resumes.
+Surfacing therefore cannot turn Anima expenditure into free Air. Native hub
+transitions preserve the effect; numerical journey forecasts retain #238's
+unsupported-active-effect restriction. Revision-1 racial state remains authoritative;
+older saves default inactive and no new resource reserve is introduced.
+
+Native evidence and remaining author checks: assets/validation_546.
+
+## Class preparation and revised Sleep (#238, in progress)
+
+Production User4 now starts the shared three-second preparation for the implemented
+Arcanist Sleep effect: lower equipped hands/weapon, raise empty closed fists facing
+forward, turn the hands and open the palms, then release. Other class effects
+remain in their own issues. The caster must have the entire modified cost at
+admission. Snapshot that cost once and debit it uniformly over 105 simulation tics.
+Base cost is 1,000 Anima; cancellation never refunds paid Anima. Reuse starts at
+successful release and lasts 60 seconds. Effects have a 10-second base duration.
+
+A second User4 press cancels. Insufficient Anima for the next payment, death,
+sleep, stun or physical immobilization also cancels. Movement and ordinary damage
+without those states do not cancel. During preparation, reject attacks, blocking,
+weapon switches (including inventory operations), and new Seal/Tarot/racial
+activations. The native input latch prevents holding User4 from retriggering.
+The revision-1 paid-cast state keeps cost, paid amount, profession and remaining
+visual clock; old saves default inactive without converting the old visual clock
+into a paid ability. Save/load and native MAP02/MAP03 hub return retain that state.
+
+The left class/racial column shares the existing Tarot/Seal projection and HUD
+scaling. At the author's request, both glyphs use centered 64-by-64 logical units
+instead of 88-by-88, matching the Tarot frame width and approximating the visible
+Seal width. Labels and class countdown sit below the reduced glyphs.
+Class readiness uses implemented effect eligibility, with dim unavailable icons,
+a preparation label and reuse seconds. Racial state has no timer; the shared
+controller owns its active boolean and saved effect. The compass
+and notifications reserve the column width. Generic icons reuse owned artwork.
+
+The author confirmed the existing curves: B=(N*N+25*N)/125; M2=1+3B/100.
+Eloquence multiplies radius by M2 and divides Anima cost by M2. Charisma multiplies
+harmful-effect power and duration; Empathy multiplies beneficial/healing power
+and duration. Direct damage retains the existing Intelligence calculation.
+Preparation stays exactly three seconds. Scale the complete authored factor:
+base x3 with statistical power x2 becomes x6. Cost is frozen at admission; effect
+parameters use the release-time derived statistics, as in the previous effect.
+
+Sleep preserves its 1,280-MU base radius before Eloquence scaling, sight check,
+caster exclusion and Lucidity behavior. Enemy identity follows existing native
+combat classification: hostile monsters are monsters without Friendly; cooperative
+players, friendly residents and neutral bodies do not receive the enemy penalty.
+The existing deathmatch/team identity handles opposing players; full multiplayer
+validation remains outside this issue. Enemies require exactly three separate
+HP-losing impacts, including individual pellets/projectiles and DOT applications.
+Their final damage after project defenses is multiplied by 3 times harmful power,
+including the third waking impact. Fully absorbed/evaded/blocked damage does not
+count. Allies and neutrals wake after one HP-losing impact without that multiplier.
+
+Duration expiry also wakes sleepers. Reapplication resets the enemy count to three,
+uses the new power, and keeps the greater of remaining and new duration. The saved
+Sleep object has schema revision 1, hit count, multiplier and original pose state.
+Existing RestLying poses are held without replaying state actions; wake restores
+the prior state without replaying an attack action. Rat and Bull now use natural
+lying poses; Mandinga and Zupay use supine poses, each with eight views. The states
+are appended after existing states, preserving earlier indices. Collision, height,
+health and existing death artwork are unchanged. The waking hit may trigger the
+ordinary pain reaction after Sleep releases. Existing saves whose active Sleep
+object already stored a null lying-state pointer keep that old presentation until
+expiry/reapplication; no effect counters or timers are reset by this visual patch.
+Old saves with only ForcedSleepTics retain their former one-hit wake behavior until
+expiry/reapplication. Voluntary rest is unchanged. Compatibility evidence and
+limits are in assets/validation_544; author acceptance is separate.
+
+Continuous racial toggles have no cooldown/duration cap. Hunter's Instinct and
+Socialization cost 10 Anima/second before cost modifiers. Continuous racial powers switch off on sleep, stun, immobilization or death. They may start with less than one second of Anima, without an upfront fee: charge uniformly per simulation tic, stop before an unaffordable tic, and leave the small unpaid remainder untouched. No duration cap or cooldown.
+Hunter's Instinct uses the target's rear 180-degree half at impact, based on both actors' current positions, for physical and magical critical chance. Multiply current stealth (including crouch) and rear critical chance by three, then apply existing caps.
+Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
+These are approved contracts; their production effects, the remaining racial
+drain policies and nine new class effects stay in #239-251.
+
+The #238 shared racial controller is now integrated with native User1. Its
+revision-1 saved effect object carries the selected race; old HUD-only flags
+migrate once to inactive. A held press toggles once, and an interface-absorbed
+press cannot activate after closing the interface. Admission requires one
+affordable simulation tic, with no initial fee; the first paid tic starts the
+effect. Current Anima cost reduction applies once to each tic, including personal
+time simulation. Forced sleep/stun/immobilization/death, race mismatch or an
+invalid effect end it exactly once. Voluntary Seal channeling does not count as
+forced immobilization. Activation remains blocked during class preparation and
+existing interaction menus/rest/channel controls. Unsupported races report the
+unavailable effect rather than displaying a fictitious active power.
+
+Concrete racial effects remain in #239-242. Instrumentation verifies saved
+effect identity and debit across native save/load and map hub return. Numerical
+journey forecasts reuse the existing unsupported-effect restriction: a pending
+class preparation or racial effect must finish/be stopped before that forecast
+can run. Preview rejection neither consumes resources nor silently stops a power.
+This is distinct from native hub transitions, which retain the saved controller.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 
@@ -2002,9 +2608,10 @@ modifiers and deliberate no-gravity states remain native. World/calendar time,
 map geometry, body dimensions and projectile muzzle-speed data are not rescaled.
 
 Unpenalized steady forward walk/run at Agility 0 is 4/8 m/s, multiplied by Type 2:
-16/32 m/s at 100. Native input and friction remain in control. The existing
-per-tic acceleration envelope `f+=(1-f)*0.028127624` remains; 95% of input after
-three seconds is not a constant-force or constant-power acceleration model.
+16/32 m/s at 100. #260 / 5.4.15 replaces the former exponential envelope with
+constant ordinary acceleration: 3 simulation seconds per 100 kg of body plus
+load to reach 100%. Native input/friction remain in control, with compensation
+limited to the command's own thrust. See the current #260 movement contract above.
 Existing load, health, survival, Air, elemental, shield and reload modifiers remain.
 Foot journeys use steady walking speed: 14.4 km/h at Agility 0 and 57.6 at 100
 before penalties, with the existing 16-hour walking / 8-hour sleeping schedule.
@@ -6338,13 +6945,13 @@ Base before AbilityRangePercent; 32 MU development scale per metre.
 | Effect | Base radius (MU) | Meters |
 | --- | ---: | ---: |
 | Channeling of Seals | 1280 | 40 |
-| Class skills; currently Arcanist Sleep | 1280 | 40 |
+| Class skills; currently Sleep and Battle Cry | 1280 | 40 |
 | Impact of lightning seal | 256 | 8 |
 | Zupay ground slam | 192 | 6 |
 | Statuette explosion | 128 | 4 |
 
 SEAL_CHANNEL_BASE_RADIUS maintains 128 × 10. CLASS_ABILITY_BASE_RADIUS reference that
-same base; Sleep and seals multiply by AbilityRangePercent/100. to 150%, both reach 1920
+same base; Sleep, Battle Cry and seals multiply by AbilityRangePercent/100. to 150%, both reach 1920
 MU. The selection of Sleep by distance and vision is retained: it includes visible
 allies, excludes the launcher and targets behind walls. Duration 10 s, wake up by
 impact, reuse 60 s and confirmed base cost of 1000 Anima with its usual reduction. The
@@ -6813,10 +7420,12 @@ temperature, light or thermal exposure. Rest, temporary advancement and environm
 status were added in V4.35; character thermal exposure is implemented in
 5.1.0/#130 above.
 
-## Class and racial abilities: agreed design; Sleep implemented in 0g
+## Historical ability catalog and focused V5.4 revisions
 
-4.35.0g update: Arcanist Sleep is implemented above with the requested Lucidity drain.
-The rest of this catalog retains its design status.
+This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
+V5.4 sections and issue-specific author revisions supersede historical rules.
+Delivered class rows below reflect their focused V5.4 revisions, including #250; pending class replacements retain their
+separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
 playable User1/User4 effects in 0b or 0c. The roadmap assigns these abilities to V5
@@ -6830,18 +7439,18 @@ additional formula is invented in this patch. The aura radii remain to be define
 
 | Class | Ability | Agreed effect for 10 seconds |
 | --- | --- | --- |
-| Warrior | Battle Cry | Intimidates within the area. Terrified targets cannot perform physical attacks or attacks with ranged weapons. |
-| Explorer | Survival Instinct | Blocks all negative states and loss of survival resources. |
-| Priest | Miracle | Restores 1% of Lucidity, Health, Anima and Air per second. |
-| Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |
-| Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |
-| Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |
-| Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |
-| Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |
+| Warrior | Battle Cry | Visible enemies in the release-time area cannot perform any attack, including magic. Movement/defense remain; see the 5.4.10 contract above. |
+| Explorer | Survival Instinct | Multiplies current evasion, physical/magical critical chance and precision, and earned Adrenaline by 3; Empathy scales the entire factor and duration. See 5.4.11 above. |
+| Priest | Miracle | Restores 3% of current maximum Lucidity, Health, Anima and Air per second to the caster and visible allies in a moving area. Empathy scales recovery/duration; see 5.4.12 above. |
+| Mage | Arcane Sun | Large traveling fire orb: tenfold reference impact/burn/explosion, one homing shot per second and 25 straight spherical shots at scenery impact or expiry. Enemies only; see 5.4.13 above. |
+| Mercenary | Formation Breaker (Rompeformaciones) | Forward ground double tap: upright running x4 for 1 s, collision cushioning/final Toughness reduction x10; Empathy scales full factors and durations. No impulse Air fee; normal running drain remains. |
+| Cleric | Rally | Restores 10% current maximum Adrenaline per second to the caster and visible allies; their current bars multiply outgoing and divide incoming final damage. Empathy scales full factors/recovery/duration. See 5.4.17 above. |
+| Battle Mage | Summoning | One allied Zupay at aimed/nearby valid ground. Empathy scales its base attributes and duration; follows across maps, disappears on death/expiry. See the 5.4.18 contract above. |
+| Pilgrim | Redemption (Redención) | Moving visible area revives corpses immediately and each second. Former enemies serve until expiry; original allies remain. Living allies not raised by that cast gain x4 final fixed Toughness reduction, scaled by Empathy. See 5.4.19 above. |
 | Investigator | Levitation | Allows flight for approximately 10 seconds. |
 | Arcanist | Sleep | Targets remain motionless and wake when hit. |
 
-Protection replaces Bless Food. It does not grant healing, food, drink or reduction of
+Historical, superseded by #250: Protection replaced Bless Food. It did not grant healing, food, drink or reduction of
 combat damage. Classification depends on the origin of the damage: an environmental
 flame is reduced; a fire spell in combat retains its damage. The system of dangers must
 retain that origin, including persistent effects; it is not enough to deduce
@@ -7526,7 +8135,7 @@ durations are simulation seconds unless stated otherwise, and percent fields use
 | Constitution / Physical | MaximumHealth = 1000*M3*(body kg/100). Passive Hunger/Thirst/Sleep and natural-health-recovery consumption divide by M2; passive Hunger/Thirst also retain body mass. PlayerResources owns the actual losses and recovery costs. | **Implemented.** NPC maximum HP uses CombatConstitution and mass. Do not infer player survival reserves on every NPC. Constitution does not shorten incoming status durations: #188 assigns the accepted status response to Toughness. |
 | Dexterity / Technical | Attack speed M2 and duration /M2 through attack cycles; physical precision 100*M3 through actual accuracy/dispersion; critical B plus the real weapon base subject to the clamp order above. Ammunition reload /M2; crafting material work /M3. | **Implemented.** NPC attack/ranged reload, accuracy and critical consumers add applicable glove bonuses. Crafting is a specific player consumer, not a general accuracy-roll or skill-cooldown system. |
 | Resilience / Technical | Maximum Air and Adrenaline = 1000*M2. Natural HP recovery = maxHP/3600*M2 per second. Acclimatization rate/limit use base plus B (#136): at 100, 2 degrees C/world day and +/-10 degrees C, reached in five days. | **Implemented.** NPC capacity and finite-health recovery use its CombatResilience. Sleep depletion belongs to Constitution, not Resilience. |
-| Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
+| Agility / Technical | Movement 100*M2 with existing mass/load/state/medium factors; base evasion B with mass/performance/personality factors; jump work uses M3 and biological mass, native takeoff velocity uses total moved mass. Stealth clamps B*posture*Hunter (3 while active, otherwise 1) to 0..100; movement noise uses its complement and calls native SoundAlert. | **Implemented movement/evasion/jump/noise; partial stealth.** NPC movement/evasion/jump use its combat fields. Visual concealment from EffectiveStealthPercent is consumed by the diagnostic observer, not a finished shared production visual-sensor system. |
 | Charisma / Social | 100*M2 supplies the attacker's elemental payload duration/power through projectiles and utility-staff streams; player incoming payload processing and shared stream status application consume it. MAP01 Caella persuasion uses M2 against the documented difficulty, rounded/clamped to 0..100. | **Partial combat scope; implemented dialogue.** NPCs emit payloads using CombatCharisma; this is not the recipient's Charisma. Not every actor/effect receiver consumes the generic payload. Eloquence owns current areas; Channel power/duration do not universally scale with Charisma. |
 | Empathy / Social | MAP01 Rulo emotion uses M2 against the documented difficulty, rounded/clamped to 0..100. BuffPowerPercent=100*M2 is stored and copied into payloads; Fire-secondary preparation sets an illumination timer. | **Implemented emotion; planned/general support incomplete.** No general buff/heal/area consumer follows from that field. The illumination timer only decrements and appears in diagnostics; it is not playable lighting. NPC CombatEmpathy payload storage does not prove an NPC support effect. |
 | Eloquence / Social | Cast preparation and Anima cost divide by M2; AbilityRangePercent=100*M2 scales real spell/area ranges, not muzzle velocity. Dialogue skill B is used by Ronnie and Palomo's discount route. | **Implemented with cooldown distinction.** NPC magical cost, preparation and range use effective CombatEloquence. Ammunition reload uses Dexterity; Seal and existing Sleep reuse are fixed 60 seconds, not an overall Eloquence cooldown reduction. #238's new class preparation is a separate contract. |

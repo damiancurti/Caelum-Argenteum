@@ -66,7 +66,7 @@ class CaelumCaella : CaelumAnchoredResident
     Death:
         CAEL G 5 A_Scream;
         CAEL H 5;
-        CAEL I 5 A_NoBlocking;
+        CAEL I 5 A_CaelumNoBlocking;
         CAEL JK 5;
         CAEL L -1;
         Stop;

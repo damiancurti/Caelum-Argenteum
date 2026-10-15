@@ -1,7 +1,10 @@
-// Columna izquierda #238: misma proyección y cajas que los poderes derechos.
+// Columna izquierda #238: misma proyección y arte reducido al ancho del Tarot.
 // Dibujar nunca activa una habilidad ni modifica sus relojes o recursos.
 class CaelumAbilityHUD : Object ui
 {
+    const ICON_SIZE=64.0;
+    const ICON_INSET=(CaelumPresentation.POWER_WIDTH-ICON_SIZE)/2.0;
+    const LABEL_Y=ICON_INSET+ICON_SIZE+6.0;
     static bool Visible(CaelumPlayer user)
     {
         return user!=null && user.player!=null && user.player.playerstate==PST_LIVE
@@ -20,7 +23,8 @@ class CaelumAbilityHUD : Object ui
     {
         let icon=TexMan.CheckForTexture(path,TexMan.Type_Any);
         if(!icon.IsValid())return;
-        Screen.DrawTexture(icon,false,0.0,y,DTA_DESTWIDTHF,88.0,DTA_DESTHEIGHTF,88.0,
+        Screen.DrawTexture(icon,false,ICON_INSET,y+ICON_INSET,
+            DTA_DESTWIDTHF,ICON_SIZE,DTA_DESTHEIGHTF,ICON_SIZE,
             DTA_LEFTOFFSETF,0.0,DTA_TOPOFFSETF,0.0,DTA_DESATURATE,available?0:255,
             DTA_ALPHA,available?1.0:0.35,DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,
             DTA_KEEPRATIO,true);
@@ -37,15 +41,15 @@ class CaelumAbilityHUD : Object ui
     {
         if(!Visible(user) || font==null)return;
         Icon("graphics/caelum/ui/hud/icons/ca_hud_combat_charge.png",0,user.HUDClassAbilityAvailable);
-        Label(font,StringTable.Localize("CA_HUD_CLASS_ABILITY",false),94,
+        Label(font,StringTable.Localize("CA_HUD_CLASS_ABILITY",false),LABEL_Y,
             user.HUDClassAbilityAvailable?Font.CR_GOLD:Font.CR_GRAY);
         if(user.ClassPreparationTics>0)
-            Label(font,StringTable.Localize("CA_HUD_CLASS_PREPARING",false),112,Font.CR_GOLD);
+            Label(font,StringTable.Localize("CA_HUD_CLASS_PREPARING",false),LABEL_Y+18,Font.CR_GOLD);
         else if(user.ClassSleepCooldownRemaining>0)
-            Label(font,String.Format("%ds",Max(1,int(Ceil(user.ClassSleepCooldownRemaining)))),112,Font.CR_WHITE);
+            Label(font,String.Format("%ds",Max(1,int(Ceil(user.ClassSleepCooldownRemaining)))),LABEL_Y+18,Font.CR_WHITE);
         if(user.CharacterProfile.Race==CaelumConstants.RACE_DEBUG)return;
         Icon("graphics/caelum/ui/hud/icons/ca_hud_combat_affected_targets.png",130,user.RacialAbilityActive);
-        Label(font,StringTable.Localize("CA_HUD_RACIAL_ABILITY",false),220,
+        Label(font,StringTable.Localize("CA_HUD_RACIAL_ABILITY",false),130+LABEL_Y,
             user.RacialAbilityActive?Font.CR_CYAN:Font.CR_GRAY);
     }
 }

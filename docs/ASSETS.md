@@ -1,6 +1,61 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## 5.4.19 - Redemption asset reuse (#250)
+
+Reuse owned existing corpses, living actor art and shared class hands/HUD. Native
+and gameplay fixture sources live in assets/validation_5419. Deterministic test
+rooms reuse validation_5418 geometry. Native before/active/expired captures were
+visually reviewed; CA250-01 passed author review on 2026-10-15. Development IWAD textures,
+generated packages, saves and captures stay outside src. No new artwork or
+distribution license is introduced.
+
+## 5.4.18 - Summoning asset reuse (#249)
+
+The temporary allied Zupay reuses the current owned sprites, animations, sounds,
+projectile art and class hands/HUD. No new artwork or redistribution dependency is
+introduced. Deterministic isolated fixture sources and runners are in
+assets/validation_5418; generated native packages, logs, saves and captures remain
+local in build/. Native visual review confirms reused Zupay art, Spanish test
+overlay and shared HUD. Author CA249-01 passed on 2026-10-15. No development IWAD
+resources are added to the product.
+
+## 5.4.17 - Rally integration and isolated evidence (#248)
+
+Reuse existing class hands, Cleric HUD icon, owned characters and localized UI.
+No new art or distribution rights are introduced. assets/validation_5417 contains
+the isolated room/occlusion fixture, native runner and evidence for Rally; generated
+packages, saves, screenshots and logs remain in build/. These development maps
+use the local IWAD and are not packaged with the product. The 16,166 normal
+package members match src and the frozen runtime. Native/static checks pass;
+agent visual review confirms the Spanish control/resource/last-hit overlay and
+class HUD. CA248-01 passed author review on 2026-10-15; acceptance.json retains
+the offered scenario and frozen-build identity.
+
+## 5.4.16 - Formation Breaker residual appearance (#247)
+
+Afterimages reuse the current owned player body sprite/frame, scale, facing,
+translation and modular face/hair overlay. They add no raster/model source or
+external attribution. Frozen actors are noninteractive, translucent at 50%,
+emitted per 0.1 seconds of actual traversal and fade over 0.3 seconds (35-Hz tic
+quantization). Development fixture sources live in assets/validation_5416; generated
+packages, development IWADs and saves remain local under build/. Visual/native
+validation passes; the agent inspected the final body/head alignment and fading
+trail. Evidence/hashes are in validation_5416/evidence.json, separately from
+CA247-01 author appearance acceptance, confirmed on 2026-10-15.
+
+## 5.4.15 - Movement validation fixtures (#260)
+
+assets/validation_5415 contains deterministic isolated maps, native command tests
+and launchers for ordinary acceleration and directional impulses. No runtime art
+is added. Packages, saves, private IWAD and engine files remain local build evidence.
+
+## 5.4.7 - Telekinesis validation fixtures (#241)
+
+assets/validation_547 contains isolated native test actors, packaging, launch and
+rollback helpers. Runtime artwork is reused unchanged. Generated test PK3s,
+captures, development IWADs and engine files remain outside src and distribution.
 
 ## 5.4.5 - Reusable dark rain cloud (#251, in progress)
 
@@ -51,8 +106,25 @@ regenerate byte-for-byte; hashes and original provenance are in
 assets/validation_544/palms.json. Presentation timing, pivots and framing live in
 CaelumClassCastLayout. Native captures exposed both the atlas-row defect and
 stale interpolation origins when composed weapons recreate hand overlays; the
-component now supplies its own origins. Artistic/animation acceptance remains
-pending until the full #238 scenario can be handed off after the author's return.
+component now supplies its own origins. The author passed preparation and smaller
+HUD icons in CA238-01 on 2026-10-14; this does not accept the new creature poses.
+
+The built-in image_gen tool painted eight living sleep views per rat, Bull,
+Mandinga and Zupay. Animals lie naturally; the two bipeds lie supine. Source
+art, exact original/revised prompts, references, hashes and rejected candidates
+are preserved under assets/source/art/sleep_544. The first animal atlases repeated
+a rear direction; revised candidates correct it. The first Mandinga atlas was
+rejected for face-down/overlapping views. No wounded death frame is reused.
+
+register_sleep_creatures.py uses Pillow 11.3.0 for connected-silhouette crops,
+alpha cleanup and resampling. Calibration is data in sleep_creatures.json: match
+existing animal side-view length or biped standing height and reuse accepted
+biped sleep foreshortening. Native actor and texture scales are retained. The
+32 PNGs, registration and manifest regenerate byte-for-byte. Runtime art is
+under src/graphics/caelum/sleep_creatures; provenance is packaged in
+licenses/sleep_creatures_544.txt. Eight-angle engine captures verify the native
+direction order, transparency and ground placement. The author passed CA238-02
+on 2026-10-14; exact scope and frozen build: validation_544/sleep_acceptance.json.
 
 ## 5.4.3 - Original procedural rat audio (#254)
 

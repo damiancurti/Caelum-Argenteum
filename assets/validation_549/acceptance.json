@@ -1,0 +1,16 @@
+{
+  "test_id": "CA239-01",
+  "originating_version": "5.4.9",
+  "issue": 239,
+  "result": "passed",
+  "author_quote": "Esa prueba dio correcto.",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered isolated Hunter scenario; no itemized claim beyond author confirmation.",
+  "run": "build/issue239-manual-v3/author-20261015-01-run.json",
+  "exit_code": 0,
+  "pid": 29908,
+  "runtime_sha256": "3BBCC5FDA892EB2FD8ED3ABAB69F9DB46148A20E1F80E7E530F9CE0186082595",
+  "fixture_sha256": "0EE54E57FB76A2DAE9D4B2C2D15C3293117583075CEAAAD4F45AE5AF9BD187C0",
+  "finished_utc": "2026-10-15T03:39:56.3665469Z",
+  "qualifications": "Persistent terminal was blocked by automatic policy; direct launcher opened the accepted game. No merge or issue closure."
+}

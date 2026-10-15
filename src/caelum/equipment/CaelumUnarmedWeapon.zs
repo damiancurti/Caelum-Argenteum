@@ -22,12 +22,12 @@ class CaelumUnarmedWeapon : Weapon
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || !user.CharacterCreationComplete || user.CreationWizardOpen
             || user.EquipmentMenuOpen || user.CraftingMenuOpen || user.IsPhysicallyImmobilized()
-            || CaelumClassCastView.Active(user))return;
+            || CaelumClassCastView.Active(user) || CaelumBattleCry.Active(user))return;
         invoker.Punching=false;
         if (user.DerivedStats==null) return;
         double cost=CaelumAttackRules.NaturalAir()*user.DerivedStats.AirConsumptionMultiplier;
-        if (user.CurrentAir<cost) return;
-        user.CurrentAir-=cost;
+        if (!CaelumAirPayment.CanAfford(user,cost)) return;
+        CaelumAirPayment.Spend(user,cost);
         user.UpdateAirStateEffects();
         invoker.Punching=true; invoker.PunchFrame=0;
         invoker.LeftPunch=!invoker.LeftPunch;
@@ -38,7 +38,7 @@ class CaelumUnarmedWeapon : Weapon
         if(!invoker.Punching)return;
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || user.health<=0 || user.IsPhysicallyImmobilized()
-            || CaelumClassCastView.Active(user))return;
+            || CaelumClassCastView.Active(user) || CaelumBattleCry.Active(user))return;
         int damage=Random[Punch](1,10)*2;
         if(user.FindInventory("PowerStrength")!=null)damage*=10;
         double direction=user.Angle+Random2[Punch]()*(5.625/256);
@@ -97,10 +97,30 @@ class CaelumUnarmedWeapon : Weapon
         if (user != null) user.ReserveTarotInput();
     }
 
+    action void A_CaelumClassInput()
+    {
+        let user=CaelumPlayer(invoker.Owner);
+        if(user!=null)user.ReserveClassAbilityInput();
+    }
+
+    action void A_CaelumRacialInput()
+    {
+        let user=CaelumPlayer(invoker.Owner);
+        if(user!=null)user.ReserveRacialAbilityInput();
+    }
+
+    action void A_CaelumReady()
+    {
+        int flags=WRF_ALLOWUSER1|WRF_ALLOWUSER3|WRF_ALLOWUSER4;
+        if(CaelumClassCastView.Active(CaelumPlayer(invoker.Owner)))
+            flags|=WRF_NOSWITCH|WRF_NOFIRE;
+        A_WeaponReady(flags);
+    }
+
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady(WRF_ALLOWUSER3);
+        TNT1 A 1 A_CaelumReady;
         Loop;
     Select:
         TNT1 A 1 A_Raise;
@@ -123,5 +143,14 @@ class CaelumUnarmedWeapon : Weapon
     Spawn:
         TNT1 A -1;
         Stop;
+    // Anexar controles nuevos sin desplazar estados de saves anteriores.
+    User1:
+        TNT1 A 0 A_CaelumRacialInput;
+        TNT1 A 1;
+        Goto Ready;
+    User4:
+        TNT1 A 0 A_CaelumClassInput;
+        TNT1 A 1;
+        Goto Ready;
     }
 }

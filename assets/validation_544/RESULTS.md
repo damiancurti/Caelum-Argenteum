@@ -1,4 +1,82 @@
-# 5.4.4 / #238 - Preparation component checkpoint (in progress)
+# 5.4.4 / #238 - Casting checkpoint (in progress)
+
+## Current lifecycle follow-up
+
+The later shared racial follow-up is recorded in racial_evidence.json. User1
+now dispatches a revision-1 effect object, current per-tic Anima debit, held-input
+latching and forced-control cleanup. Production has no concrete effect factory
+yet; the isolated fixture overrides it with counters only. Forty-three native
+contract/input checks cover nine real weapon families plus unarmed; save (25),
+reload (3), hub return (27), the existing class/Sleep contract (1,021) and neutral
+5.4.3 upgrade pass. The native upgrade asserts the new racial object is null and
+revision 1. Normal packaging matches all 16,155 native-tested runtime members.
+
+Numerical journey forecasts retain the existing unsupported-effect restriction
+for pending class preparation and racial effects, without spending resources or
+stopping the effect. Native map/hub transitions remain supported. The full
+paid-state rollback boundary below and consumer-specific #239-242 checks remain
+open; this is not manual acceptance of a playable racial bonus. Failed reserved
+method-name and fixture cost-oracle attempts remain recorded in the evidence.
+
+Production User4 now owns preparation/payment/release for Arcanist Sleep. The
+shared controller requires the full cost, snapshots it and debits uniformly over
+105 tics. A second press, forced control/death or insufficient next payment cancels
+without refund or cooldown. Attacks, blocking, weapon/inventory mutations and new
+Seal/Tarot/racial activations are blocked. Movement and damage alone do not cancel.
+The release starts exactly 60 seconds of reuse. Other professions retain their own
+pending effect issues; no synthetic racial activation is enabled.
+
+Sleep has schema-1 saved hit/multiplier/pose state. Native damage receivers count
+actual HP loss and multiply final damage after project defenses, including native
+DamageFactor and integer rounding. The third enemy hit still receives the factor;
+zero-damage impacts do not count, and DOT applications count separately. Allies
+and neutrals retain one-hit wake without the multiplier. Expiry and reapplication
+use the author-confirmed rules. Existing RestLying poses restore safely without
+replaying actions. The later visual follow-up below fills the four missing bodies.
+
+Lifecycle-tested production SHA-256 (before the separate icon reduction below):
+`346f3bd66b9ef6369f40c3e62fb3a925ac2724193c58321b770ba8f54548a899`.
+Native Windows/GZDoom 4.14.2 evidence is in lifecycle_evidence.json. Key runs:
+
+- issue238-release/contract-01: 1,021 checks, actual User4 armed/unarmed,
+  three starts, two releases and one cancellation; inventory guards included.
+- Same runtime save-01: 178 checks; load-01: 4 checks, complementary resource/debit,
+  one release, saved enemy count two and damage factor six.
+- issue238-release/hub-01: 459 checks, real MAP02 -> MAP03 -> MAP02, paid
+  preparation retained and NPC Sleep state restored; only one successful release.
+- issue238-lifecycle-upgrade/upgrade-01: original 5.4.3 save loads neutral new fields,
+  revision 1, no paid cast and no new Sleep object.
+
+The native TakeSpecialDamage hook follows project defenses and native factors.
+Production damage paths use the project's armor system. Arbitrary third-party
+native inventory armor and telefrag exceptions are not validated by these checks.
+The final wake path preserves indefinite state tics. New unarmed input states are appended after all old states to preserve save indices. The preceding runtime passed 4,239 native User4 checks across nine weapon families and unarmed; the final contract repeats the changed wake and unarmed paths. New save data and full rollback coverage remain an explicit completion boundary;
+keep original saves/runtime packages. The prior visual-component rollback evidence
+below is not upgraded into a paid-state rollback claim.
+
+CA238-01 is the executable preparation/HUD author check only. A fresh isolated
+configuration binds F to User4, F6 to reset test resources/reuse, F7 to the next
+real weapon, F8 to unarmed and F9 to one Anima below the actual modified cost.
+The fixture gives invulnerability and disables Anima regeneration to expose debit;
+it does not change production balance. No full Sleep visual acceptance is claimed.
+
+## Smaller class/racial icons - author-requested visual follow-up
+
+The author requested smaller glyphs, close to Tarot/Seal size. The two square
+frames are reduced from 88 to 64 logical units (27.3% per side), matching the
+Tarot frame width and approaching the Seal artwork's visible width. They remain
+centered in the same column; labels and class countdown move beneath the glyphs.
+No art source, Tarot/Seal rendering, resource bar or gameplay state is changed.
+
+Native HUD checks pass 16 assertions each at 1280x720 and 640x480/high scale.
+The latter run's six state captures were inspected. Both runs use the same screenshot
+names: the retained six files belong to the later 640x480 run; no preserved 1280x720
+state capture is claimed. The separate author seed provides a retained 1280x720
+comparison with owned Tarot and Seal. Runtime/fixture/capture hashes and normal
+build comparison are recorded in small_icons.json. The author passed CA238-01 on 2026-10-14; see acceptance.json. This covers preparation/HUD only, including the smaller icons.
+
+## Original presentation checkpoint (historical scope)
+
 
 Baseline: c07be5a2 / 5.4.3. This is an intermediate #238 checkpoint. It does not
 complete the ability issue or enable the new lifecycle through production User4.
@@ -69,7 +147,7 @@ never load it beside production CaelumClassCastHandFrames. It changes no balance
 or saved inventory. Exact save tests/qualifications are recorded in evidence.json.
 Full preparation payment/effects/cooldown/hub compatibility is not claimed.
 
-## Remaining work and author handoff
+## Original checkpoint remaining work (superseded by current scope)
 
 Complete payment, release, cancellation and independent input handling; implement
 revised Sleep and racial lifecycle. Preserve
@@ -154,3 +232,26 @@ Intelligence. Scale whole authored multipliers (x3 with x2 power becomes x6),
 never the three-hit Sleep count. Require the full modified cost before starting,
 then debit progressively through the fixed three-second preparation. These are
 contract updates only; no new lifecycle/effect test or manual acceptance is claimed.
+
+## Living creature poses (same-version visual follow-up)
+
+Eight views each cover naturally lying rat/Bull and supine Mandinga/Zupay. Only
+new art/registrations and appended actor states change production. Existing
+collision, attributes, death art and earlier state indices are retained. Native
+captures inspect all 32 views. Registration repeats byte-for-byte with Pillow
+11.3.0; sources, prompts and hashes are in assets/source/art/sleep_544.
+
+Final runtime: 15a025e20e3f06186c025e0c39d7c4ff8fd179412b850c34ea052efd70f5a59c.
+issue238-sleep/poses-05 passes 36 checks: living poses, unchanged collision,
+three final-x3 HP hits and waking/expiry in all four actors. load-03 passes four
+saved-pose/two-hit checks. sleep_pose_evidence.json records exact fixture hashes,
+native User4 handoff checks, commands and preceding fixture failures. A contact
+sheet is a locator; full captures remain under the identified build directory.
+
+This visual follow-up does not rerun unrelated class/HUD matrices. Earlier
+casting contracts retain their documented runtime hashes. No paid-state rollback
+or full multiplayer claim is added. A previously saved null Sleep lying pointer
+keeps its pre-art presentation until expiry/reapplication; the effect is retained.
+The author passed CA238-02 on 2026-10-14: "Estas pruebas dieron correcto."
+The game exited normally (0). Exact scope: sleep_acceptance.json. This confirms
+the offered creature poses and wake behavior; #238 remains in progress.

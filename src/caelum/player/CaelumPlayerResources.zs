@@ -2,13 +2,37 @@
 // El coordinador mantiene el orden de llamadas y la inicialización explícita.
 class CaelumPlayerResources : Object play
 {
-    static void AddAdrenaline(CaelumPlayer user, double amount)
+    static void ApplyMiraclePulse(CaelumPlayer user,double ratio)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0
+            || user.player.playerstate!=PST_LIVE || user.DerivedStats==null
+            || user.CaelumMaximumHealth<=0 || ratio<=0)return;
+        // Los saves anteriores empiezan sin fracción; no tocar la regeneración natural.
+        if(user.MiracleRecoveryRevision<CaelumMiracle.REVISION)
+        {user.MiracleRecoveryRevision=CaelumMiracle.REVISION;user.MiracleHealthRemainder=0;}
+        user.MiracleHealthRemainder+=Max(0,user.CaelumMaximumHealth)*ratio;
+        int healing=int(user.MiracleHealthRemainder+1e-8);
+        user.MiracleHealthRemainder=Max(0.0,user.MiracleHealthRemainder-healing);
+        user.health=Min(user.CaelumMaximumHealth,user.health+healing);
+        if(user.health>=user.CaelumMaximumHealth)user.MiracleHealthRemainder=0;
+        user.player.health=user.health;
+        user.CurrentLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
+            user.CurrentLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
+        user.CurrentAnima=Min(user.DerivedStats.MaximumAnima,
+            user.CurrentAnima+user.DerivedStats.MaximumAnima*ratio);
+        user.CurrentAir=Min(user.DerivedStats.MaximumAir,
+            user.CurrentAir+user.DerivedStats.MaximumAir*ratio);
+        user.UpdateHealthStateEffects();user.UpdateLucidityState();user.UpdateAirStateEffects();
+    }
+
+    static void AddAdrenaline(CaelumPlayer user, double amount, bool applyAbility=true)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.DerivedStats != null)
         {
             user.CurrentAdrenaline = Clamp(
-                user.CurrentAdrenaline + Max(0.0, amount),
+                user.CurrentAdrenaline + Max(0.0, amount)
+                    * (applyAbility?CaelumSurvivalInstinct.Multiplier(user):1.0),
                 0.0,
                 user.DerivedStats.MaximumAdrenaline
             );
@@ -21,8 +45,9 @@ class CaelumPlayerResources : Object play
         user.LastAdrenalineEvent = eventType;
         user.LastAdrenalineBaseGain = Max(0.0, amount);
         user.LastAdrenalineFinalGain = user.LastAdrenalineBaseGain
-            * user.HealthAdrenalineGainMultiplier * CaelumPersonalityRules.Adrenaline(user);
-        user.AddAdrenaline(user.LastAdrenalineFinalGain);
+            * user.HealthAdrenalineGainMultiplier * CaelumPersonalityRules.Adrenaline(user)
+            * CaelumSurvivalInstinct.Multiplier(user);
+        user.AddAdrenaline(user.LastAdrenalineFinalGain,false);
     }
 
     static void MarkCombatActivity(CaelumPlayer user)
@@ -233,10 +258,12 @@ class CaelumPlayerResources : Object play
         }
 
         user.EffectivePhysicalAccuracyPercent = user.DerivedStats.PhysicalAccuracyPercent
+            * CaelumSurvivalInstinct.Multiplier(user)
             * user.LucidityAccuracyMultiplier
             * (user.ElementalStatus != null
                 ? user.ElementalStatus.GetAccuracyMultiplier() : 1.0);
         user.EffectiveMagicalAccuracyPercent = user.DerivedStats.MagicalAccuracyPercent
+            * CaelumSurvivalInstinct.Multiplier(user)
             * user.LucidityAccuracyMultiplier
             * (user.ElementalStatus != null
                 ? user.ElementalStatus.GetAccuracyMultiplier() : 1.0);
@@ -741,12 +768,17 @@ class CaelumPlayerResources : Object play
         user.UnderwaterCurrentBaseCostPerSecond =
             user.GetUnderwaterBaseAirCostPerSecond();
 
-        if (user.CurrentAir > 0.0)
-        {
-            double underwaterAirCost =
+        double underwaterAirCost =
                 user.UnderwaterCurrentBaseCostPerSecond
                 * user.DerivedStats.AirConsumptionMultiplier
                 / TICRATE;
+        if(CaelumAirPayment.PayWithAnima(user,underwaterAirCost))
+        {
+            user.UnderwaterDrowningTics=0;
+            return;
+        }
+        if (user.CurrentAir > 0.0)
+        {
             double removedAir = Min(user.CurrentAir, underwaterAirCost);
             user.CurrentAir -= removedAir;
             user.UnderwaterAirRecoveryDebt += removedAir;
@@ -799,7 +831,7 @@ class CaelumPlayerResources : Object play
 
         double finalCost = CaelumConstants.JUMP_AIR_COST
             * user.DerivedStats.AirConsumptionMultiplier;
-        user.CurrentAir = Max(0.0, user.CurrentAir - finalCost * CaelumThermalEffects.HeatCost(user));
+        CaelumAirPayment.Spend(user,finalCost * CaelumThermalEffects.HeatCost(user));
         user.UpdateAirStateEffects();
     }
 
@@ -852,6 +884,7 @@ class CaelumPlayerResources : Object play
             );
 
             user.EffectiveEvasionChance = user.DerivedStats.BaseEvasionChance
+                * CaelumSurvivalInstinct.Multiplier(user)
                 * CaelumPersonalityRules.Evasion(user)
                 * loadPerformanceMultiplier
                 * user.AirStatePerformanceMultiplier

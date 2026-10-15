@@ -2,6 +2,20 @@
 // invocaciones de depuración sin args[0] conservan su IA de combate anterior.
 class CaelumAnchoredResident : CaelumCombatActor abstract
 {
+    const RULO_MOVEMENT_REVISION=1;
+    int RuloMovementRevision;
+
+    void EnsureRuloMovement()
+    {
+        if(!IsProtectedStoryResident() || !CombatProfileInitialized
+            || RuloMovementRevision>=RULO_MOVEMENT_REVISION)return;
+        // Un save anterior puede haber capturado cero antes del alta nativa.
+        // No tocar bases positivas, recursos, bajas ni identidad del residente.
+        if(CombatBaseSpeed<=0)CombatBaseSpeed=GetDefaultByType(GetClass()).Speed;
+        RuloMovementRevision=RULO_MOVEMENT_REVISION;
+        UpdateCombatHealthEffects();
+    }
+
     Vector3 StoryHome;
     double StoryHomeAngle;
     bool StoryAnchored;
@@ -593,6 +607,10 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override void PostBeginPlay()
     {
+        // Las consultas previas de estadísticas pueden borrar Speed antes de
+        // que la base compartida lo capture. Recuperar sólo el valor ausente.
+        if(level.MapName=="MAP01" && args[0]==CaelumConstants.STORY_NPC_ANCHORED && Speed<=0)
+            Speed=GetDefaultByType(GetClass()).Speed;
         Super.PostBeginPlay();
         EscortPrisonerId = -1;
         StoryHome = Pos;
@@ -610,6 +628,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             bBuddha = level.MapName == "MAP01";
             target = null;
         }
+        if(IsProtectedStoryResident())RuloMovementRevision=RULO_MOVEMENT_REVISION;
     }
 
     override bool Used(Actor user)
@@ -731,6 +750,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     }
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
+        EnsureRuloMovement();
         EnsureResidentTools();
         if(ResidentTools!=null)ResidentTools.Tick();
         EnsureStorySurvival();

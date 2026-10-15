@@ -1,0 +1,119 @@
+{
+  "issue": 238,
+  "version": "5.4.4",
+  "scope": "Shared racial controller only; concrete racial effects remain separate",
+  "runs": [
+    {
+      "label": "matrix-01",
+      "started_utc": "2026-10-15T01:35:36.9370446Z",
+      "finished_utc": "2026-10-15T01:36:32.1306720Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "1B1F4B121C15C191A1FFF6BE53E034E2C581CD1283BD5CCFC1A09963A02EBE3B",
+      "exit_code": 0,
+      "directory": "build/issue238-racial-v4",
+      "log_sha256": "38a712b2dd361224df3e38e4fefd72643a03c7c7218e2796e9d7f7750916743b",
+      "completion": [
+        "CA238 DONE failures=0 passes=43 RACIAL_COMPONENT starts=10 stops=10"
+      ]
+    },
+    {
+      "label": "save-01",
+      "started_utc": "2026-10-15T01:34:04.8476455Z",
+      "finished_utc": "2026-10-15T01:34:17.2003322Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "1B1F4B121C15C191A1FFF6BE53E034E2C581CD1283BD5CCFC1A09963A02EBE3B",
+      "exit_code": 0,
+      "directory": "build/issue238-racial-v4",
+      "log_sha256": "d7b080ed0ee38ee89115afd03183b619cc0e7ae640624c3450f298098f9cfdd1",
+      "completion": [
+        "CA238 DONE failures=0 passes=25 RACIAL_COMPONENT starts=0 stops=0"
+      ]
+    },
+    {
+      "label": "load-01",
+      "started_utc": "2026-10-15T01:34:37.0788612Z",
+      "finished_utc": "2026-10-15T01:34:45.0576410Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "1B1F4B121C15C191A1FFF6BE53E034E2C581CD1283BD5CCFC1A09963A02EBE3B",
+      "exit_code": 0,
+      "directory": "build/issue238-racial-v4",
+      "log_sha256": "a818fa1d67f74530eb67545018eec430b3bae1e038e7473743d4113b7ff24a7a",
+      "completion": [
+        "CA238 DONE failures=0 passes=3 RACIAL_COMPONENT starts=0 stops=1"
+      ]
+    },
+    {
+      "label": "hub-01",
+      "started_utc": "2026-10-15T01:34:57.7954825Z",
+      "finished_utc": "2026-10-15T01:35:11.2902010Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "1B1F4B121C15C191A1FFF6BE53E034E2C581CD1283BD5CCFC1A09963A02EBE3B",
+      "exit_code": 0,
+      "directory": "build/issue238-racial-v4",
+      "log_sha256": "f3c66e4c93eb6627e5a961915dddd9c2d03e6f1777810c7869e13398c7a3f1c6",
+      "completion": [
+        "CA238 DONE failures=0 passes=27 RACIAL_COMPONENT starts=0 stops=0"
+      ]
+    },
+    {
+      "label": "contract-01",
+      "started_utc": "2026-10-15T01:36:58.2064589Z",
+      "finished_utc": "2026-10-15T01:37:23.4321108Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "00DB9238B7EFFF9B9F3ABB303CD54F646BAB9C9725D260690DDAF8136F182F72",
+      "exit_code": 0,
+      "directory": "build/issue238-controller-regression",
+      "log_sha256": "eb3b4b5e81683f712370e5c9cb67dfb8d4ebc64b5d52d587642f5a0a5116214b",
+      "completion": [
+        "CA238 DONE failures=0 passes=1021 starts=3 releases=2 cancels=1"
+      ]
+    },
+    {
+      "label": "upgrade-01",
+      "started_utc": "2026-10-15T01:37:53.6000665Z",
+      "finished_utc": "2026-10-15T01:38:03.7460505Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "558B0838DD73EDA932E3404B1A23886F0D59E01FD15D371F7CE4ED443CE2EA64",
+      "exit_code": 0,
+      "directory": "build/issue238-controller-upgrade",
+      "log_sha256": "f59aec5d2a9e1035b6a9fe8d8ab894387ef9ab2eec6f6ce7512b9b5fdf1ceaa3",
+      "completion": [
+        "CA238 DONE failures=0 COMPATIBILITY_ONLY",
+        "CA238 DONE failures=0 PREPARATION_SAVE_ONLY"
+      ]
+    }
+  ],
+  "static_validation": {
+    "command": "python validate_project.py",
+    "exit_code": 0,
+    "errors": [],
+    "context_words": 2493
+  },
+  "packaging": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "exit_code": 0,
+    "members_compared": 16155,
+    "result": "Every member equals the frozen native-tested runtime"
+  },
+  "reproduction": [
+    "python assets/validation_544/prepare_racial.py --directory <fresh-name>",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_544/run_native.ps1 -Directory <fresh-name> -Label <fresh-label> -Fixture racial.pk3 -Script racial.cfg -Map MAP99",
+    "Repeat with save.cfg, then load.cfg -LoadGame racial.zds, then hub.cfg. Use separate labels."
+  ],
+  "preserved_failures": [
+    "build/issue238-racial/matrix-01: reserved Stop method name; renamed Deactivate",
+    "build/issue238-racial-v2/save-01 and issue238-racial-v3/save-01: fixture expected unmodified cost after equipment restored Eloquence discount; production charged the correct reduced cost"
+  ],
+  "limits": [
+    "Instrumented effect outside src; production factory remains empty until each racial issue",
+    "Native hub transitions retain the effect; numerical journey forecasts reject unsupported active effects",
+    "Full paid-state rollback and concrete target/bonus/consumer tests remain open",
+    "No new author acceptance, multiplayer claim, merge or issue closure"
+  ]
+}

@@ -17,6 +17,27 @@ class CaelumCombatActor : Actor
     CaelumThermalState ThermalState;
     CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;
+    int MiracleRecoveryRevision;
+    double MiracleHealthRemainder;
+
+    void ApplyMiraclePulse(double ratio)
+    {
+        if(health<=0 || CombatMaximumHealth<=0 || ratio<=0)return;
+        // La fracción se guarda separada de la curación por reposo.
+        if(MiracleRecoveryRevision<CaelumMiracle.REVISION)
+        {MiracleRecoveryRevision=CaelumMiracle.REVISION;MiracleHealthRemainder=0;}
+        MiracleHealthRemainder+=Max(0,CombatMaximumHealth)*ratio;
+        int healing=int(MiracleHealthRemainder+1e-8);
+        MiracleHealthRemainder=Max(0.0,MiracleHealthRemainder-healing);
+        health=Min(CombatMaximumHealth,health+healing);
+        if(health>=CombatMaximumHealth)MiracleHealthRemainder=0;
+        CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
+            CurrentCombatLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
+        CurrentCombatAnima=Min(MaximumCombatAnima,CurrentCombatAnima+MaximumCombatAnima*ratio);
+        CurrentCombatAir=Min(MaximumCombatAir,CurrentCombatAir+MaximumCombatAir*ratio);
+        UpdateCombatHealthEffects();UpdateActorLucidityState();
+    }
+
     int CombatToughness;
     int CombatResilience;
     int CombatAgility;
@@ -164,7 +185,9 @@ class CaelumCombatActor : Actor
     double CombatHealthPainMultiplier;
     double CombatAdrenalineGainMultiplier;
     double CurrentCombatLucidity;
+    CaelumTelekinesisEffect TelekinesisBinding;
     int ForcedSleepTics;
+    CaelumSpellSleepState SpellSleep;
     int SleepSavedTics;
     int CombatLucidityState;
     double CombatLucidityAccuracyMultiplier;
@@ -397,6 +420,7 @@ class CaelumCombatActor : Actor
 
     bool BeginCaelumDiagnosticAttack()
     {
+        if(CaelumBattleCry.Active(self))return false;
         if (level.MapName != "CADEV02") { return true; }
         ImpactDiagnosticAttackAttempts++;
         if (!CaelumMassAIScheduleActive) { return true; }
@@ -568,6 +592,9 @@ class CaelumCombatActor : Actor
             return;
         }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
+        if(CaelumRedemption.Follow(combatActor))return;
+        let summoned=CaelumSummonedZupay(combatActor);
+        if(summoned!=null && summoned.FollowCaster())return;
         let resident=CaelumAnchoredResident(combatActor);
         if(resident!=null && resident.IsRuloPartyFighting())
         {
@@ -931,7 +958,8 @@ class CaelumCombatActor : Actor
 
     bool WithinAttackRange(bool magical, double spawnHeight=-1)
     {
-        if(CaelumBolas.Restrained(self) || target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
+        if(CaelumBattleCry.Active(self))return false;
+        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
         if(!magical)return CheckMeleeRange();
         vector3 origin=Pos+(0,0,spawnHeight>=0 ? spawnHeight : Height*0.65);
         vector3 aim=target.Pos+(0,0,target.Height/2);
@@ -972,7 +1000,8 @@ class CaelumCombatActor : Actor
         if(health<=0 || (pain!=null && InStateSequence(CurState,pain)))
         {EndResourceRecovery();return false;}
         let boss=CaelumZupayColossus(self);
-        if((SiegeCombatant!=null && SiegeCombatant.Withdrawing) || (boss!=null && boss.SewerFleeing))
+        if(!CaelumRedemption.PreviouslyRaised(self)
+            && ((SiegeCombatant!=null && SiegeCombatant.Withdrawing) || (boss!=null && boss.SewerFleeing)))
         {EndResourceRecovery();return false;}
         return true;
     }
@@ -980,7 +1009,7 @@ class CaelumCombatActor : Actor
     bool PulseResourceRecovery()
     {
         if(!ResourceRecoveryActive())return false;
-        if(ForcedSleepTics>0 || CombatLucidityPhysicalStunRemaining>0)return true;
+        if(ForcedSleepTics>0 || CombatLucidityPhysicalStunRemaining>0 || CaelumTelekinesisRules.Held(self))return true;
         if(CurrentCombatAir>=MaximumCombatAir && CurrentCombatAnima>=MaximumCombatAnima)
         {
             EndResourceRecovery();SetStateLabel("AttackOutOfRange");return true;
@@ -1009,7 +1038,7 @@ class CaelumCombatActor : Actor
 
     bool IsCombatIdle()
     {
-        if(health<=0 || CombatAirSpending || RecoveryPhase==1 || ForcedSleepTics>0)return false;
+        if(health<=0 || CombatAirSpending || RecoveryPhase==1 || ForcedSleepTics>0 || CaelumTelekinesisRules.Held(self))return false;
         State pain=FindState("Pain");
         if(pain!=null && InStateSequence(CurState,pain))return false;
         if(MeleeState!=null && InStateSequence(CurState,MeleeState))return false;
@@ -1078,7 +1107,7 @@ class CaelumCombatActor : Actor
     action void A_CaelumWaitAttackResource()
     {
         let actor=CaelumCombatActor(self);
-        if(actor==null || actor.health<=0)return;
+        if(actor==null || actor.health<=0 || CaelumTelekinesisRules.Held(actor))return;
         if(actor.PulseResourceRecovery())return;
         actor.Vel.X=0;actor.Vel.Y=0;
         if(actor.ForcedSleepTics>0)return;
@@ -1290,7 +1319,7 @@ class CaelumCombatActor : Actor
             0.0,
             100.0
         );
-        if (CaelumBolas.Restrained(self) || CombatLucidityPhysicalStunRemaining > 0.0 || ForcedSleepTics > 0)
+        if ((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || CombatLucidityPhysicalStunRemaining > 0.0 || ForcedSleepTics > 0)
         {
             LastCombatAttackAccuracyChancePercent = 0.0;
         }
@@ -1492,6 +1521,9 @@ class CaelumCombatActor : Actor
         while (iterator.Next())
         {
             Actor candidate = iterator.thing;
+            let summoned=CaelumSummonedZupay(self);
+            if(summoned!=null && !summoned.CanAffect(candidate))continue;
+            if(!CaelumRedemption.AllowsDamage(self,candidate))continue;
             if (candidate == null
                 || candidate == self
                 || candidate.health <= 0
@@ -2069,7 +2101,7 @@ class CaelumCombatActor : Actor
         LastImpactFinalDamage = 0;
         LastImpactToughnessMultiplier = 1.0;
         double impactToughness=CaelumToughnessRules.Effective(self);
-        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
+        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.ActorReduction(self,impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
             ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
@@ -2161,8 +2193,8 @@ class CaelumCombatActor : Actor
             )
         );
         double postArmor=weightedFinalDamage;
-        double postToughness=CaelumToughnessRules.AfterDefenses(
-            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        double postToughness=CaelumToughnessRules.AfterActorDefenses(
+            self,postArmor,impactToughness);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
         LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
         LastImpactFinalDamage=Max(0,int(postToughness+0.5));
@@ -2827,18 +2859,36 @@ class CaelumCombatActor : Actor
         );
     }
 
+    // Contexto síncrono: capturar antes de ganar Adrenalina por bloqueo o dolor.
+    transient double RallyDamageFactor;
+
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
     {
-        return Super.DamageMobj(inflictor,source,
-            CaelumSealResistance.HealthDamage(self,inflictor,damage,mod),mod,flags,angle);
+        int retained=CaelumSealResistance.HealthDamage(self,inflictor,damage,mod);
+        if(flags & DMG_FORCED)retained=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained));
+        int before=health;
+        int result=Super.DamageMobj(inflictor,source,retained,mod,flags,angle);
+        CaelumSleepRules.HealthLost(self,before);
+        return result;
+    }
+
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        return CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self)
+            || (!(flags & DMG_FORCED) && !CaelumRedemption.AllowsDamage(source,self,mod)))return 0;
         EnsureCombatPersonality();
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
+        double previousRallyFactor=RallyDamageFactor;
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        RallyDamageFactor=previousRallyFactor;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
         return result;
     }
@@ -2856,8 +2906,6 @@ class CaelumCombatActor : Actor
     )
     {
         CaelumBolas.FireAttack(self,inflictor,mod);
-        if (damage > 0 && ForcedSleepTics > 0)
-        { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
         if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
             || CaelumToughnessRules.IsSustained(mod))
         {
@@ -3177,8 +3225,8 @@ class CaelumCombatActor : Actor
             }
         }
 
-        LastCombatPostToughnessDamage=CaelumToughnessRules.AfterDefenses(
-            LastCombatArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        LastCombatPostToughnessDamage=CaelumToughnessRules.AfterActorDefenses(
+            self,LastCombatArmorPostDefenseDamage,toughness,magical);
         LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
             LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
         totalHealthDamage=Max(0,int(LastCombatPostToughnessDamage+0.5));
@@ -3640,12 +3688,20 @@ class CaelumCombatActor : Actor
         return total;
     }
 
+    // El estado de muerte conserva su índice; sólo cambia la política de drop.
+    action void A_CaelumNoBlocking()
+    { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); }
+
+    override int DoSpecialDamage(Actor victim,int damage,Name mod)
+    { return CaelumRedemption.AllowsDamage(self,victim,mod)?Super.DoSpecialDamage(victim,damage,mod):0; }
+
     bool MazeDropReleased;
     int DemonSupplyRevision;
     bool DemonDeathLootReleased;
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        if(CaelumRedemption.PreviouslyRaised(self)){MazeDropReleased=true;DemonDeathLootReleased=true;}
         // La posición seca original recupera incluso bajas en pozos/aplastamientos.
         if(!MazeDropReleased && CaelumMazeLayout.IsCardinal())
         {
@@ -3663,15 +3719,16 @@ class CaelumCombatActor : Actor
 
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
-        if(CaelumBolas.Restrained(self))return;
+        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
         vector3 before=Pos;
+        if(CaelumBattleCry.Active(self)){melee=null;missile=null;}
         A_Chase(melee,missile,flags);
         if(Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
     }
 
     bool ThermalTryMove(vector2 destination)
     {
-        if(CaelumBolas.Restrained(self))return false;
+        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return false;
         vector3 before=Pos;
         bool moved=TryMove(destination,0);
         if(moved && Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
@@ -3680,6 +3737,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         EnsureCombatPersonality();
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
@@ -3693,7 +3751,8 @@ class CaelumCombatActor : Actor
             LastCombatArmorDefenseExactPercent = LastCombatArmorDefensePercent;
             ArmorBalanceRevision = 1;
         }
-        if (!CaelumBolas.Restrained(self) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
+        if (!CaelumRedemption.PreviouslyRaised(self)
+            && !(CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
         {
             if (!InStateSequence(CurState,FindState("SiegeWithdrawal")))
                 SetStateLabel("SiegeWithdrawal");
@@ -3709,21 +3768,27 @@ class CaelumCombatActor : Actor
         let thermalMotion=ThermalState;
         vector2 thermalPropulsion=thermalMotion!=null ? thermalMotion.PropelledVelocity : (0,0);
         bool thermalGrounded=Pos.Z<=FloorZ+0.01;
+        bool held=CaelumTelekinesisRules.Held(self);
         bool bound=CaelumBolas.Restrained(self);
         int bolasSavedTics=tics;State bolasSavedState=CurState;
         bool bolasFreeze=bound && !CaelumBolas.Interrupted(self);
-        if(bound){Vel.X=0;Vel.Y=0;if(bNOGRAVITY)Vel.Z=0;}
+        if(bound && !held){Vel.X=0;Vel.Y=0;if(bNOGRAVITY)Vel.Z=0;}
         if(bolasFreeze)tics=-1;
+        int heldSavedTics=tics;State heldSavedState=CurState;
         bool sleeping = ForcedSleepTics > 0;
-        if (sleeping) { tics = -1; Vel = (0,0,0); }
+        if (sleeping) { CaelumSleepRules.MaintainPose(self);tics = -1; if(!held)Vel = (0,0,0); }
+        if(held)tics=-1;
+        CaelumTelekinesisRules.Physics(self);
+        if(CaelumTelekinesisRules.Held(self))prePhysicsVelocity=Vel;
         Super.Tick();
+        if(held && !sleeping && !bolasFreeze && CurState==heldSavedState)tics=heldSavedTics;
         if(bolasFreeze && CurState==bolasSavedState)tics=bolasSavedTics;
         if (sleeping)
         {
             CurrentCombatLucidity = CaelumSleepRules.Drain(CurrentCombatLucidity);
             UpdateActorLucidityState();
             ForcedSleepTics--;
-            if (ForcedSleepTics <= 0) tics = Max(1, SleepSavedTics);
+            if (ForcedSleepTics <= 0)CaelumSleepRules.Wake(self);
         }
         UpdateCaelumRecognitionSound();
         CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);
@@ -3840,8 +3905,7 @@ class CaelumCombatActor : Actor
         }
         if (CombatLucidityPhysicalStunRemaining > 0.0)
         {
-            Vel.X = 0.0;
-            Vel.Y = 0.0;
+            if(!CaelumTelekinesisRules.Held(self)){Vel.X=0;Vel.Y=0;}
             CombatLucidityPhysicalStunRemaining = Max(
                 0.0,
                 CombatLucidityPhysicalStunRemaining - 1.0 / TICRATE

@@ -1,11 +1,37 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
 
-**5.4.5/#251 WIP:** cloud asset, validation_545. #238: validation_544; scaling/admission confirmed; lifecycle/Sleep pending.
-#254: validation_543/PR275; CA254-01 passed 2026-10-14. #261: CA261-01 passed 2026-10-14/PR274 ready. #259: CA259-01 pending/PR273.
-#237: validation_540/PR272. Author returned for questions/manual checks.
-**Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
+**#251:** PR281 asset checkpoint integrated; gameplay decisions pending (SYSTEMS).
+
+**5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 ready; unmerged.
+
+**5.4.18/#249:** CA249-01 accepted; validation_5418, PR297 ready; unmerged.
+**5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 ready.
+**5.4.16/#247:** CA247-01 accepted; PR295 ready. Keep-awake released.
+
+**5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
+
+**5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
+
+**5.4.13/#246:** CA246-01 accepted on 2026-10-15; Arcane Sun implemented. validation_5413.
+
+**5.4.12/#245:** CA245-01 accepted 2026-10-15. validation_5412.
+
+**5.4.11/#244:** CA244-01 accepted 2026-10-15. validation_5411.
+
+**5.4.10/#243:** CA243-01 accepted 2026-10-15. validation_5410.
+
+**5.4.9/#239:** CA239-01 accepted 2026-10-15. validation_549.
+
+**5.4.8/#240:** CA240-01 accepted 2026-10-14. validation_548.
+
+**5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
+
+**5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
+**5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.
+#254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
+After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
@@ -39,15 +65,8 @@ src/localization/INDEX.md. Regenerate with `python build_dialogue_index.py build
 validation rejects stale output. Node/ID order preserved. Evidence: validation_525.
 Accepted 2026-10-11; PR187 merge/closure authorized.
 
-**Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
-profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
-2 kg gold deposit for bag/Seal/5 L canteen materials. Bag/canteen are 90% leather,
-10% rope by empty mass; MAP01 Bull drops no leather. Box slots/content divisor:
-20 + floor(10 × Type3 multiplier). Departure boxes actual gifts/utilities/deck and
-matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
-budget plus five replacement bolas across 39 finite chests. Start fresh test
-games by author instruction. Evidence: validation_524; CA183-01 passed on
-2026-10-11 without qualifications. PR186 is merged and #183 closed.
+**5.2.4/#183 accepted:** creator/tutorial kits and finite MAP02 supplies; PR186
+merged/closed, CA183-01 passed 2026-10-11. HISTORY/validation_524 retain details.
 
 **Accepted on 2026-10-11:** CA147-01 (5.2.0/#147), CA177-01 (5.2.1/#177),
 CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.

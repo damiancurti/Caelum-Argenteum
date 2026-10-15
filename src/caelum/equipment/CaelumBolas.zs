@@ -79,6 +79,7 @@ class CaelumBolas : Object play
 
     static bool Interrupted(Actor body)
     {
+        if(CaelumTelekinesisRules.Held(body))return true;
         let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
         if(user!=null)return user.ForcedSleepTics>0 || user.LucidityPhysicalStunRemaining>0
             || user.PainImmobilizationRemaining>0 || user.CombatChannelModeActive
@@ -139,6 +140,7 @@ class CaelumBolas : Object play
 
     static bool CanPrepare(CaelumPlayer user)
     {
+        if(CaelumBattleCry.Active(user))return false;
         return user!=null && user.health>0 && user.player!=null && user.CharacterCreationComplete
             && user.WeaponModel!=null && user.WeaponModel.Equipped && user.DerivedStats!=null
             && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS
@@ -155,7 +157,8 @@ class CaelumBolas : Object play
         if(Restrained(user))
         {
             if((user.player.cmd.buttons&BT_RELOAD)!=0 && (user.player.oldbuttons&BT_RELOAD)==0)RequestCut(user);
-            user.Vel.X=0;user.Vel.Y=0;if(user.bNOGRAVITY)user.Vel.Z=0;
+            if(!CaelumTelekinesisRules.Held(user))
+            {user.Vel.X=0;user.Vel.Y=0;if(user.bNOGRAVITY)user.Vel.Z=0;}
         }
         if(!CanPrepare(user) || (user.player.cmd.buttons&BT_ALTATTACK)==0
             || (user.BolasPreparedItem!=0 && user.BolasPreparedItem!=user.ActiveWeaponItemId))
@@ -190,6 +193,7 @@ class CaelumBolas : Object play
     // La activación cambia, pero vuelo, coste y objeto transferido son únicos.
     static CaelumBolasFlight ThrowItem(Actor emitter,CaelumEquipmentItem item,int prepared)
     {
+        if(CaelumBattleCry.Active(emitter))return null;
         let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
         if(emitter==null || (user==null && npc==null) || emitter.health<=0 || Restrained(emitter)
             || Interrupted(emitter) || item==null || item.Owner!=emitter || !item.Equipped || item.InMagicBox
@@ -197,7 +201,7 @@ class CaelumBolas : Object play
         double cost=ThrowCost(emitter),accuracy=0,push=0;
         if(user!=null)
         {
-            if(user.DerivedStats==null || user.CurrentAir<cost)return null;
+            if(user.DerivedStats==null || !CaelumAirPayment.CanAfford(user,cost))return null;
             user.UpdateLucidityAccuracyEffects();user.UpdateCrouchEffects();
             double movement=user.IsCrouching ? user.CrouchAccuracyMultiplier
                 : user.IsRunningOnGround() ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER : 1;
@@ -220,7 +224,7 @@ class CaelumBolas : Object play
         if(flight==null)return null;
         flight.SourceItem=item;flight.Target=emitter;flight.SourceMap=level.MapName;
         emitter.RemoveInventory(item);item.Equipped=false;item.AttachToOwner(flight);
-        if(user!=null){user.CurrentAir-=cost;user.UpdateAirStateEffects();user.MarkCombatActivity();}
+        if(user!=null){CaelumAirPayment.Spend(user,cost);user.UpdateAirStateEffects();user.MarkCombatActivity();}
         else {npc.CurrentCombatAir-=cost;npc.MarkActorCombatActivity();}
         double speed=CaelumConstants.PROJECTILE_SPEED_SLOW*Sqrt(Max(0.0,push));
         flight.Angle=yaw;flight.Vel=(Cos(yaw)*Cos(pitch),Sin(yaw)*Cos(pitch),-Sin(pitch))*speed;
@@ -271,7 +275,8 @@ class CaelumBolasFlight : Actor
         }
         if(npc!=null)npc.BolasBinding=self;
         let bull=CaelumBull(body);if(bull!=null)bull.StopBullCharge();
-        body.Vel.X=0;body.Vel.Y=0;if(body.bNOGRAVITY)body.Vel.Z=0;
+        if(!CaelumTelekinesisRules.Held(body))
+        {body.Vel.X=0;body.Vel.Y=0;if(body.bNOGRAVITY)body.Vel.Z=0;}
         UpdateVisuals();
     }
 

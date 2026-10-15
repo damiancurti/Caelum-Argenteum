@@ -338,6 +338,7 @@ class CaelumConstants : Object
     const PALOMO_DISCOUNT_SELL_PERCENT = 60;
     const BULL_GORE_BASE_DAMAGE = 45.0;
     const MANDINGA_MACHETE_BASE_DAMAGE = 66.0;
+    const ZUPAY_ATTRIBUTE_LEVEL = 33;
     const ZUPAY_SLAM_BASE_DAMAGE = 66.0;
     const ZUPAY_SLAM_RADIUS_MAP_UNITS = 192.0;
     const ZUPAY_SLAM_VERTICAL_SPEED = 8.0;
@@ -413,6 +414,7 @@ class CaelumConstants : Object
     const SEAL_CHANNEL_BASE_RADIUS = ESSENCE_EXPLOSION_BASE_RADIUS
         * SEAL_CHANNEL_RADIUS_STATUETTE_MULTIPLIER;
     const CLASS_ABILITY_BASE_RADIUS = SEAL_CHANNEL_BASE_RADIUS;
+    const SUPERNATURAL_BREATHING_ANIMA_PER_AIR = 1.0;
     const ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO = 0.10;
     // Ficha tier 1 de la carabina.
     const CARBINE_TIER_ONE_BASE_WEIGHT = 12.0;
@@ -877,11 +879,10 @@ class CaelumConstants : Object
     // exactamente en el umbral de 35 tics.
     const IMPACT_WALL_REFERENCE_MOVEMENT_PERCENT = 100.0;
 
-    // V4.25.3 — aceleración horizontal exponencial.
-    // alpha produce exactamente 95% de la velocidad disponible tras 3 s
-    // de entrada continua a 35 tics/s: f(n)=1-(1-alpha)^n.
-    const MOVEMENT_ACCELERATION_ALPHA_PER_TIC = 0.0281276240;
-    const MOVEMENT_ACCELERATION_TARGET_SECONDS_95 = 3.0;
+    // #260: tres segundos hasta el máximo por cada 100 kg de cuerpo y carga.
+    const MOVEMENT_ACCELERATION_SECONDS = 3.0;
+    const MOVEMENT_ACCELERATION_REFERENCE_KG = 100.0;
+    const MOVEMENT_DOUBLE_TAP_SECONDS = 0.4;
 
     // Separación necesaria para rearmar un choque entre los mismos cuerpos.
     const IMPACT_CONTACT_RELEASE_MARGIN = 2.0;

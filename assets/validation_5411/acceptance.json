@@ -1,0 +1,16 @@
+{
+  "test_id": "CA244-01",
+  "originating_version": "5.4.11",
+  "issue": 244,
+  "result": "passed",
+  "author_quote": "La prueba dio correcto",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered isolated Survival Instinct scenario; no itemized claim beyond author confirmation.",
+  "run": "build/issue244-author/author-20261015-01-run.json",
+  "exit_code": 0,
+  "pid": 32856,
+  "runtime_sha256": "8472526AE630B7B93558059DA70EA7B7F214866E7AB943658B9AF714EB67C934",
+  "fixture_sha256": "9306CC5F9A7468A25E308BFF642F78783C3F870E53342B4886E0289A844765EF",
+  "finished_utc": "2026-10-15T04:53:21.5943771Z",
+  "qualifications": "Direct launcher opened the accepted game; persistent terminal was previously blocked by automatic policy. No campaign or multiplayer acceptance inferred. No merge or issue closure."
+}

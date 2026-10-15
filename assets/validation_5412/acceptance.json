@@ -1,0 +1,16 @@
+{
+  "test_id": "CA245-01",
+  "originating_version": "5.4.12",
+  "issue": 245,
+  "result": "passed",
+  "author_quote": "La prueba dio bien.",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered isolated Miracle scenario; no itemized claim beyond author confirmation.",
+  "run": "build/issue245-author/author-20261015-01-run.json",
+  "exit_code": 0,
+  "pid": 14392,
+  "runtime_sha256": "C6AF1C023A16F7C973B90A3A8F6B75319C7BFA8BC0FAAFD709713C6AFA7EFE93",
+  "fixture_sha256": "CB63D510342C72EFC622211FF80AE84A242DD7168BA06231A0C9F34488E85715",
+  "finished_utc": "2026-10-15T05:14:13.9195182Z",
+  "qualifications": "Direct launcher opened the accepted game; persistent terminal was previously blocked by automatic policy. No campaign or multiplayer acceptance inferred. No merge or issue closure."
+}

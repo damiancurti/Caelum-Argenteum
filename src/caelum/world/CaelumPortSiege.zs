@@ -571,6 +571,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     static bool Pulse(CaelumCombatActor body)
     {
+        // La baja ya fue registrada; no devolver resucitados a órdenes históricas.
+        if(CaelumRedemption.PreviouslyRaised(body))return false;
         let soldier=CaelumPortDefender(body);
         let entry=body.SiegeCombatant;
         // El menú nativo no pausa el mundo; sólo este guardia detiene su ruta.

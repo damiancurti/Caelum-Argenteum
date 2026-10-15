@@ -1,6 +1,161 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## 5.4.19 - Pilgrim Redemption (#250)
+
+The author approved a moving visible resurrection area, immediate/one-second
+pulses, one revival per body/cast, full Health/Anima/Air/Lucidity and negative-status
+removal. Former enemies are temporary allies; the caster and non-raised living
+allies gain scaled x4 fixed Toughness reduction. Preserve loot/progression and
+body identity, with travel and elapsed-journey lifetime. Implementation, static
+checks, normal packaging and qualified native evidence are in validation_5419.
+CA250-01 passed author review on 2026-10-15; PR298 is ready. No merge/closure.
+Keep #251-252 and later #282 separately scoped.
+
+## 5.4.18 - Battle Mage Summoning (#249)
+
+The author confirmed aimed-ground placement, nearest visible fitting fallback,
+automatic following/combat, replacement on recast, Empathy-scaled base attributes,
+ally protection and disappearance without rewards. The same body follows between
+maps with its saved state; elapsed long journeys consume its duration. Isolated
+native validation passes in validation_5418: 132 assertions in 19 runs, including
+copied-save upgrade/rollback/return. Static checks and normal packaging pass.
+CA249-01 passed author review on 2026-10-15; PR297 is ready. #250-252 and #282
+remain separate; no merge or issue closure is claimed.
+
+## 5.4.17 - Cleric Rally (#248)
+
+Arenga restores 10% current maximum Adrenaline per second to its caster and
+visible allies in a moving area. Their current bars scale outgoing/incoming
+damage after defenses; the strongest area applies. Empathy scales full factors,
+recovery and duration. Shared preparation and cancellation remain authoritative.
+Static checks, normal packaging and 74 qualified assertions in 15 native runs
+pass on the focused branch above #247. CA248-01 passed author review on
+2026-10-15; PR296 is ready. No merge is claimed. See SYSTEMS and validation_5417 for exact evidence and limits.
+
+## 5.4.16 - Mercenary Formation Breaker (#247)
+
+Rompeformaciones replaces the superseded Killer Instinct design. Its shared paid
+User4 release enables forward double-tap ground traversals at four times running
+speed, upright and with fixed direction, with tenfold biological cushioning and
+final flat collision Toughness reduction. Empathy scales full factors and both
+durations. Ordinary running Air consumption remains; only the impulse fee is
+waived. Native input, collision, appearance and copied-save validation passes: 124
+qualified assertions in 30 runs (hashes/reuse limits: assets/validation_5416).
+Static validation and normal packaging pass. CA247-01 passed author review on 2026-10-15;
+PR295 is ready for review. This focused
+branch stacks on accepted #260; other classes/climate and #282 retain their scope.
+
+## 5.4.15 - Player acceleration and directional impulse (#260)
+
+Ordinary movement reaches full current speed linearly in 3 seconds per 100 kg of
+body plus carried load. The authored 0.4-second double tap bypasses the ramp to
+the current walk/run/crouch and full-direction cap, paying the running-equivalent
+cost once. Native velocity/displacement, direction/stance, medium, payment,
+interruption and copied-save checks are recorded in assets/validation_5415.
+NPC movement is unchanged. CA260-01/02 passed on 2026-10-15; PR294 is ready
+for review. #246/#253 passed separately. Remaining class and
+climate issues, then #282, retain their own branches, tests and PRs.
+
+## 5.4.14 - Mansion residents keep participating (#253)
+
+The native assisted encounter reproduced the player's protected 1-HP floor and
+stationary eligible residents. Their stored movement bases were zero; the repair
+recovers missing authored bases on fresh spawn and old saves, preserving positive
+custom values and finite resources. It is limited to anchored MAP01 residents.
+Evidence: assets/validation_5414. CA253-01 and #246/CA246-01 passed author
+review on 2026-10-15. This focused patch stacks on accepted #246.
+The author has returned; remaining class/climate/impulse decisions are pending;
+#282 remains after the batch.
+
+## 5.4.13 - Mage Arcane Sun (#246)
+
+Mage User4 now launches the revised large fire orb instead of Brainstorm discounts.
+It crosses characters, burns visible nearby enemies, emits one homing shot each
+second and ends with a native radial explosion plus 25 spherical straight shots.
+The approved reference, social scaling, enemy-only policy and shared paid casting
+are documented in SYSTEMS. This patch stacks on accepted #245. Focused automated
+evidence is in assets/validation_5413; CA246-01 passed author review on 2026-10-15.
+Remaining abilities and then #282 retain their separate scope and delivery.
+
+## 5.4.12 - Priest Miracle (#245)
+
+Priest User4 now restores Health, Lucidity, Anima and Air every second in a moving
+area, including the caster and visible native allies. Each recipient contributes
+its current resource maxima; base recovery is 3%, scaled by Empathy with duration.
+Eloquence scales range and cost. The strongest overlapping area wins. This replaces
+the historical 1% design. Shared paid preparation, cancellation and reuse remain.
+Focused evidence: assets/validation_5412. CA245-01 passed author review on 2026-10-15;
+PR291 stacks on accepted #244. Other abilities and #282 retain separate delivery.
+
+## 5.4.11 - Explorer Survival Instinct (#244)
+
+Explorer User4 now applies a temporary self benefit through the shared paid class
+lifecycle. Current evasion, physical/magical accuracy and critical chance, and
+Adrenaline earned in combat or from abilities receive the full 3x Empathy factor.
+Existing probability/resource caps remain; tutorial/debug reserves do not gain
+the bonus. Duration is the common ten-second base times Empathy. No negative-state
+or survival-drain immunity remains from the superseded design. Native consumers,
+combination and saved-effect evidence: assets/validation_5411. CA244-01 passed
+author review on 2026-10-15; PR290 stacks on accepted #243.
+
+## 5.4.10 - Warrior Battle Cry (#243)
+
+Warrior User4 uses the accepted progressive-cost preparation and release cooldown.
+It prohibits attacks by visible enemies in the release-time area, including bosses,
+without preventing movement or defense. Attack preparations, continuous attacks,
+offensive Seal channels and all Telekinesis stop; existing projectiles and applied
+periodic damage remain. Siege operators can still move/load but only eligible
+operators count toward each machine's existing attack requirement. Saved status
+is recipient-owned and revisioned. Native evidence: assets/validation_5410.
+CA243-01 passed author review on 2026-10-15; PR289 stacks on accepted #239.
+
+## 5.4.9 - Beast Man Hunter's Instinct (#239)
+
+The Beast Man User1 effect triples current stealth and physical/magical critical
+chance from behind, then retains existing caps. Production movement-noise range
+uses the effective stealth value; visual sensing remains outside this patch.
+Projectile eligibility is captured at firing, while the rear 180-degree test uses
+both actors' current positions at impact. Original chance/roll, critical damage,
+attributes and existing spread/volley rules remain. The shared racial lifecycle
+pays 10 Anima/second before modifiers. Native weapons, damage, noise, saved
+effects/projectiles and compatibility evidence: assets/validation_549.
+CA239-01 passed author review on 2026-10-15; PR288 stacks on accepted #240.
+
+## 5.4.8 - Human Socialization (#240)
+
+The Human User1 toggle doubles current Dialogue skill and Persuasion before
+their existing limits, without changing saved attributes. Native dialogue keeps
+paying 10 Anima/second before modifiers. Manual stop and exhaustion preserve
+the multiplier of already displayed choices; new pages use the current effect.
+Saved results cannot reroll. The shared racial controller handles interruption,
+identity, payment and HUD state. Native input/checks, dialogue, persistence and
+specific rollback evidence are in assets/validation_548. CA240-01 passed author
+review on 2026-10-14. Its focused PR stacks on #241; other powers remain separate.
+
+## 5.4.7 - Duende Telekinesis (#241)
+
+User1 now captures one living body or movable scenery object and drives it with
+the approved 1,000 N times magical-power force. Actual mass sets acceleration
+and the 1 Anima/kg/s base cost; the target follows the capture-distance anchor.
+Held bodies cannot act. Sight/range loss, interruption, exhaustion and map travel
+release the body while native gravity, collision and ownership remain intact.
+SYSTEMS records the exact scope, units and persistence contract. Native input,
+real actors, save/load, hub and reversible 5.4.6 rollback checks are recorded in
+assets/validation_547; CA241-01 passed author review on 2026-10-14. The focused PR stacks on #242.
+
+## 5.4.6 - Caelith Supernatural Breathing (#242)
+
+The Caelith User1 toggle routes all actual player Air demands through a common
+payment service. Anima pays 1:1 after ordinary Air modifiers and then its own cost
+reduction. There is no fixed drain. Insufficient Anima switches back to ordinary
+Air for the complete effort without consuming the remainder. Native immersion
+uses the same demand and does not create Air-recovery debt for Anima payments.
+The creator describes the implemented bilingual power; the shared HUD/controller
+and saved identity remain authoritative. Evidence: assets/validation_546.
+CA242-01 passed author review on 2026-10-14. The focused branch stacks on #238; release 5.4.5
+remains allocated to the separate #251 cloud artwork branch.
 
 ## 5.4.5 - Reusable rain-cloud asset (#251, in progress)
 
@@ -10,25 +165,31 @@ OpenGL previews inspect volume/transparency from six orientations. This is an
 asset checkpoint only: no production actor or ability activation is added.
 Seated identity presentation, mounting/flight, rain, lightning and all associated
 lifecycle/ownership rules remain pending. No weather system is implemented.
-Questions and manual tests wait for the author's return; #251 stays open and its
-PR stays draft. Evidence: assets/validation_545. The #238 checkpoint remains WIP.
+The author has returned; #251 stays open and PR281 stays draft while the
+remaining gameplay decisions are collected. Evidence: assets/validation_545. The #238 checkpoint remains WIP.
 
-## 5.4.4 - Class preparation component (#238, in progress)
+## 5.4.4 - Shared class casting checkpoint (#238, in progress)
 
-The shared first-person component lowers the current hands/weapon, raises empty
-fists, turns them and opens the palms across 105 simulation tics. Preparation
-blocks the real attack/block entry points without adding movement immobilization.
-This checkpoint does not connect the component to User4 or implement the full
-ability lifecycle, revised Sleep or racial toggles. The left class/racial HUD
-uses the existing Tarot/Seal column scale: class availability/preparation/reuse
-and racial active/inactive only. The compass and notices reserve its width.
+Production User4 prepares Arcanist Sleep over 105 tics: lower the current weapon,
+raise empty fists, turn/open the palms, then release. The controller freezes the
+admitted cost, spends it uniformly, retains cancelled spending and starts reuse
+only at release. It blocks attacks, blocking, weapon changes and new power
+activations while preserving movement. SYSTEMS records approved interruption and
+attribute rules. The left class/racial HUD retains the existing power-column scale.
+The author requested smaller class/racial glyphs; centered 64-unit icons now
+approximate the visible Tarot/Seal size, with labels and countdown below.
 
-The native component matrix covers nine weapon families and unarmed. Dedicated
-male cast palms correctly extract the last row of existing owned atlases, leaving
-accepted weapon artwork untouched. Female/gloved hands retain their existing
-sources. Evidence and remaining scope: assets/validation_544. #238 stays open and
-its PR remains a draft. The author has returned and confirmed shared attribute
-ownership, whole-factor scaling and full-cost admission; implementation continues.
+Revised Sleep counts HP-losing impacts, multiplies final enemy damage through the
+third waking hit, preserves ally/neutral exceptions and expires normally. Renewed
+Sleep resets hits/power and retains the longer duration. Saved cast/debit and Sleep
+state pass reload and native hub-return checks. Four missing creature bodies now
+have eight living sleep views; their native pose/wake/save checks pass. The author
+passed CA238-02 on 2026-10-14. The racial controller now serializes an optional
+effect, handles native User1, pays each simulation tic and cleans up on forced
+control, death or exhaustion. Native instrumentation/save/hub checks pass; real
+effects stay in #239-242 and full rollback coverage remains open. CA238-01 is a focused
+preparation/HUD author check, passed on 2026-10-14; full issue acceptance remains pending. Evidence: validation_544.
+The PR remains draft; separate effects retain their own issues and PRs.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 
@@ -57,7 +218,8 @@ The shared dispersion rule now combines authored family base, equipment tier and
 Lucidity, with a tier-7 cap. Player and applicable NPC weapon consumers use it;
 Type-3 precision, posture, book guidance and utility stream geometry remain.
 No class/racial ability or saved schema change is part of this patch. Evidence:
-assets/validation_541. Author check CA259-01 remains pending; next is #238.
+assets/validation_541. CA259-01 passed on 2026-10-14; PR273 is ready for review.
+No merge or closure is inferred. Next is #238.
 
 
 ## 5.4.0 - Attribute implementation audit (#237)

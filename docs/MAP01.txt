@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.4.5** — 2026-10-14.
+Documentation version: **5.4.19** — 2026-10-15.
+
+5.4.14 - Resident movement at the protected floor (#253)
+
+Anchored residents repair missing movement bases on fresh spawn and old saves.
+They retain the same bodies, finite tools, own downing and quest references while
+the living player remains at 1 HP. The reproduced stall came from a zero stored
+base, not a defeat transition. SYSTEMS and validation_5414 record the scoped fix;
+CA253-01 passed author review on 2026-10-15.
 
 5.3.8 / #235: the Journal can track several active missions. Current authored
 room/workshop directions link only to the character's existing #234 observations;

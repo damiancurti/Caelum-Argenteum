@@ -299,10 +299,10 @@ class CaelumChannelEffect : Actor
         }
     }
 
-    void ReleaseChannel()
+    void ReleaseChannel(bool releaseAttack=true)
     {
         RestoreTargetGravity();
-        if (SealType == CaelumConstants.SEAL_QUINTESSENCE
+        if (releaseAttack && SealType == CaelumConstants.SEAL_QUINTESSENCE
             && TrappedMass > 0.0)
         {
             ThinkerIterator iterator = ThinkerIterator.Create("Actor");

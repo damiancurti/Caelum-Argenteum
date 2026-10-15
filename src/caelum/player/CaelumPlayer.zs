@@ -18,6 +18,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     CaelumBolasFlight BolasBinding;
+    CaelumTelekinesisEffect TelekinesisBinding;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
@@ -423,6 +424,7 @@ class CaelumPlayer : DoomPlayer
     bool JournalMainM00MagicPracticeDone[5];
     int MainM00SocialChanceSnapshot[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
     double MainM00LabiaSnapshot;
+    CaelumSocialSession SocialSession;
     // Se rearma únicamente tras cerrar toda interacción folclórica y soltar
     // físicamente Use. Evita que Q cierre y reabra a Palomo en el mismo pulso.
     bool FolkloreInteractionUseLatched;
@@ -633,6 +635,13 @@ class CaelumPlayer : DoomPlayer
     // V4.25.3 — aceleración y contacto sostenido.
     double MovementAccelerationFactor;
     double MovementAccelerationSeconds;
+    double MovementAccelerationStep;
+    int MovementAccelerationRevision;
+    // Un gesto incompleto nunca viaja dentro del guardado.
+    transient int MovementTapMask, MovementTapPending, MovementTapLastTic;
+    transient int MovementTapTimes[4];
+    transient bool MovementTapReady;
+    transient String MovementTapMap;
     Array<ImpactContactState> ImpactContacts;
     int ImpactContactCountForUI;
     int ImpactDiagnosticCollisionCallbacks;
@@ -663,13 +672,20 @@ class CaelumPlayer : DoomPlayer
     // maximum. LucidityState is cached so UI code never calls play functions.
     double CurrentLucidity;
     int ForcedSleepTics;
+    CaelumSpellSleepState SpellSleep;
     double ClassSleepCooldownRemaining;
     bool ClassSleepInputLatched;
     // #238: reloj guardado de preparacion; cero en partidas anteriores.
     int ClassPreparationRevision;
     int ClassPreparationTics;
+    int ClassCastRevision,ClassCastProfession;
+    bool ClassCastActive;
+    double ClassCastCost,ClassCastPaid;
     // #238: estado compartido; los efectos raciales lo activarán en sus issues.
     bool RacialAbilityActive;
+    int RacialAbilityRevision;
+    bool RacialAbilityInputLatched;
+    CaelumRacialAbilityEffect RacialAbility;
     bool JournalMainM00RuloPracticeDone[6];
     int MainM00RuloPracticeSnapshot;
     bool MainM00BullDefeatedSnapshot;
@@ -712,6 +728,8 @@ class CaelumPlayer : DoomPlayer
     double AdrenalinePenaltyIgnoreRatio;
     double SurvivalDamageAccumulator;
     double NaturalHealthRegenerationAccumulator;
+    int MiracleRecoveryRevision;
+    double MiracleHealthRemainder;
 
     // CurrentAir is the first live Caelum resource. It is stored on the player
     // actor so ordinary GZDoom saves preserve it automatically.
@@ -815,7 +833,7 @@ class CaelumPlayer : DoomPlayer
         DOMI S 8 UpdateWorldCarbineVisual;
         DOMI T 8 { A_PlayerScream(); UpdateWorldCarbineVisual(); }
         DOMI U 8 UpdateWorldCarbineVisual;
-        DOMI V 8 { A_NoBlocking(); UpdateWorldCarbineVisual(); }
+        DOMI V 8 { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); UpdateWorldCarbineVisual(); }
         DOMI WXY 8 UpdateWorldCarbineVisual;
         DOMI Z -1 UpdateWorldCarbineVisual;
         Stop;
@@ -1076,12 +1094,7 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshPalomoDiscountOdds()
     {
-        double dialogueSkill = Attributes == null ? 0.0
-            : CaelumGrowthRules.Bonus(Attributes.Eloquence);
-        if (DerivedStats != null)
-        {
-            dialogueSkill = DerivedStats.DialogueSkillPercent;
-        }
+        double dialogueSkill = CaelumSocialization.Dialogue(self);
         PalomoDiscountAutomaticSuccess = dialogueSkill
             >= CaelumConstants.PALOMO_DIALOGUE_DIFFICULTY;
         PalomoDiscountChancePercent = PalomoDiscountAutomaticSuccess ? 100
@@ -1296,6 +1309,7 @@ class CaelumPlayer : DoomPlayer
         if (conversationId == CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID)
             conversationId = CaelumMainM00Loadout.CONVERSATION;
         CaelumMainM00Loadout.Refresh(self);
+        CaelumSocialization.Clear(self);
         SyncPalomoDialogueTokens();
         CaelumMainM00RonnieTrial.Sync(self);
         CaelumDemoNarrative.Sync(self);
@@ -2617,6 +2631,7 @@ class CaelumPlayer : DoomPlayer
         int weaponType, int essenceType, int tier
     )
     {
+        if(CaelumClassCastView.Active(self))return;
         if (player == null) { return; }
         Name selectorClass = GetNativeWeaponSelectorClass(
             weaponType, essenceType, tier
@@ -6153,6 +6168,7 @@ class CaelumPlayer : DoomPlayer
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
         WorldCarbineShotUntil = 0;
+        if(RacialAbility is "CaelumTelekinesisEffect")CaelumRacialAbilityRules.Deactivate(self);
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         ClosePalomoMerchant();
@@ -6581,6 +6597,8 @@ class CaelumPlayer : DoomPlayer
 
     double GetImpactAgilityAbsorptionSpeed(int impactKind, bool stationarySceneryContact = false)
     {
+        if (CaelumFormationBreaker.Dashing(self))
+            return GetBiologicalLandingAbsorptionSpeed()*CaelumFormationBreaker.Defense(self);
         if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
             return GetBiologicalLandingAbsorptionSpeed();
 
@@ -6822,7 +6840,10 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
             }
         }
-        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
+        // #247 multiplica la reducción final, nunca el atributo ni la presión sostenida.
+        double collisionReduction=CaelumToughnessRules.ActorReduction(self,impactToughness);
+        if(!crushingContact)collisionReduction*=CaelumFormationBreaker.Defense(self);
+        LastImpactToughnessPercent = 100.0*collisionReduction/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
             ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
@@ -6916,8 +6937,7 @@ class CaelumPlayer : DoomPlayer
             )
         );
         double postArmor=weightedFinalDamage;
-        double postToughness=CaelumToughnessRules.AfterDefenses(
-            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        double postToughness=Max(0.0,postArmor-collisionReduction);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
         LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
         LastImpactFinalDamage=Max(0,int(postToughness+0.5));
@@ -7635,9 +7655,14 @@ class CaelumPlayer : DoomPlayer
     int PendingDamageVFXKind,DamageVFXKind,DamageVFXTic,DamageFeedbackRevision;
     double DamageVFXStrength;
 
+    // Contexto síncrono: capturar antes de ganar Adrenalina por bloqueo o dolor.
+    transient double RallyDamageFactor;
+    transient int RallyPayloadBaseDamage,RallyResolvedDamage;
+
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
         int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
+        if(flags & DMG_FORCED)damage=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage));
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -7646,17 +7671,33 @@ class CaelumPlayer : DoomPlayer
         if(introduced)player.cheats|=CF_BUDDHA2;
         int result=Super.DamageMobj(inflictor,source,damage,mod,flags,damageAngle);
         if(introduced)player.cheats&=~CF_BUDDHA2;
+        CaelumSleepRules.HealthLost(self,before);
         // No contar HP bloqueado por el piso ni atribuir daño anidado a este golpe.
         return protect ? Max(0,Min(result,before-health)) : result;
     }
 
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // Tras las defensas propias y los factores nativos; antes de perder HP.
+        return CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
+    }
+
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self)
+            || (!(flags & DMG_FORCED) && !CaelumRedemption.AllowsDamage(source,self,mod)))return 0;
         CaelumBolas.FireAttack(self,inflictor,mod);
         int before=health;
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
+        double previousRallyFactor=RallyDamageFactor;
+        int previousRallyBase=RallyPayloadBaseDamage,previousRallyResolved=RallyResolvedDamage;
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
+        RallyPayloadBaseDamage=RallyResolvedDamage=0;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        RallyDamageFactor=previousRallyFactor;
+        RallyPayloadBaseDamage=previousRallyBase;RallyResolvedDamage=previousRallyResolved;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
@@ -7671,7 +7712,6 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
-        if (damage > 0) ForcedSleepTics = 0;
         CaelumTimeAdvanceState.Halt(self);
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
 
@@ -8076,8 +8116,8 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
-        double postToughnessDamage=CaelumToughnessRules.AfterDefenses(
-            LastArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        double postToughnessDamage=CaelumToughnessRules.AfterActorDefenses(
+            self,LastArmorPostDefenseDamage,toughness,magical);
         LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
         totalHealthDamage=Max(0,int(postToughnessDamage+0.5));
         LastArmorHealthDamage = totalHealthDamage;
@@ -8124,7 +8164,7 @@ class CaelumPlayer : DoomPlayer
                 {
                     ApplyIncomingElementalPayload(
                         attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
-                            postToughnessDamage,actualHealthLost,mod)
+                            postToughnessDamage,CaelumRally.PayloadLoss(self,actualHealthLost),mod)
                     );
                 }
             }
@@ -8269,7 +8309,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 ApplyIncomingElementalPayload(
                     attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
-                        finalDamage,actualHealthLost,mod)
+                        finalDamage,CaelumRally.PayloadLoss(self,actualHealthLost),mod)
                 );
             }
             LastArmorHealthDamage = actualHealthLost;
@@ -8768,9 +8808,26 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void MovePlayer()
     {
-        vector2 before=Vel.XY;
+        bool impulse=CaelumMovementImpulse.Begin(self);
+        CaelumFormationBreaker.PrepareMove(self);
+        vector3 before=Vel;
         Super.MovePlayer();
-        CaelumThermalMotion.PlayerInput(self,before);
+        // Compensa sólo la propulsión nativa de este comando. Sin este término,
+        // el rozamiento añadiría otra demora a la rampa lineal. No se recorta
+        // la velocidad total: choques, empujes y frenado siguen siendo nativos.
+        if (CaelumFormationBreaker.Dashing(self)) CaelumFormationBreaker.Drive(self,Vel-before);
+        else if (impulse) CaelumMovementImpulse.Finish(self,Vel-before);
+        else if (MovementAccelerationStep > 0 && MovementAccelerationFactor > 0
+            && !IsPhysicallyImmobilized()
+            && (player.onground || (bNOGRAVITY && bFLY) || WaterLevel > 0))
+        {
+            double friction, moveFactor;
+            [friction, moveFactor] = GetFriction();
+            if (friction > 0 && friction < 1 && !bNOFRICTION)
+                Vel += (Vel-before) * (friction * MovementAccelerationStep
+                    / ((1-friction) * MovementAccelerationFactor));
+        }
+        CaelumThermalMotion.PlayerInput(self,before.XY);
     }
 
     override void PlayerThink()
@@ -8782,13 +8839,22 @@ class CaelumPlayer : DoomPlayer
         bool readingMenu=(journalOpen!=null && journalOpen.GetBool()) || (preview!=null && preview.IsOpen());
         let journeyPlan = CaelumJourneyPlan.Get(self);
         bool choosingJourney = journeyPlan != null && journeyPlan.Open;
+        CaelumMovementImpulse.Observe(self,readingMenu || choosingJourney);
+        CaelumFormationBreaker.Guard(self,readingMenu || choosingJourney || CreationWizardOpen
+            || EquipmentMenuOpen || CraftingMenuOpen || PalomoMerchantMenuOpen
+            || HasActiveConversation() || CaelumTimeSkipState.IsOpen(self)
+            || CaelumRestState.IsActive(self) || CombatChannelModeActive);
         if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))
         { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
         if(player!=null && (readingMenu || choosingJourney || CreationWizardOpen || EquipmentMenuOpen || PalomoMerchantMenuOpen
             || CraftingMenuOpen || CaelumTimeSkipState.IsOpen(self) || CaelumRestState.IsActive(self)))
         {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
+        CaelumRacialAbilityRules.ObserveInput(self);
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
+        CaelumClassAbilityRules.FilterInput(self);
+        if(CaelumBattleCry.Active(self) && player!=null)
+            player.cmd.buttons &= ~(BT_ATTACK|BT_ALTATTACK);
         if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
@@ -8804,7 +8870,8 @@ class CaelumPlayer : DoomPlayer
         }
         if ((readingMenu || CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
-                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
+                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0
+                || CaelumTelekinesisRules.Held(self))
             && player != null)
         {
             UserCmd creationCommand = player.cmd;
@@ -8821,7 +8888,7 @@ class CaelumPlayer : DoomPlayer
             player.cmd.upmove = 0;
             player.cmd.buttons = 0;
 
-            if(!CaelumExhaustion.Active(self))
+            if(!CaelumExhaustion.Active(self) && !CaelumTelekinesisRules.Held(self))
             {
                 Vel.X = 0.0;
                 Vel.Y = 0.0;
@@ -8838,6 +8905,8 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         CaelumCharacterIdentity.Ensure(self);
+        CaelumSocialization.Update(self);
+        CaelumRacialAbilityRules.Guard(self);
         CaelumDamageFeedback.EnsureRevision(self);
         CaelumBreathing.UpdateSound(self);
         CaelumCarbineWorld.Restore(self);
@@ -8856,6 +8925,8 @@ class CaelumPlayer : DoomPlayer
         // Los saves antiguos pueden conservar el modelo sin su objeto. Se
         // reconcilia antes de actualizar la vista, el peso y el bloqueo.
         RepairActiveShieldReference();
+        CaelumTelekinesisRules.Physics(self);
+        if(CaelumTelekinesisRules.Held(self))prePhysicsVelocity=Vel;
         Super.Tick();
         CaelumUtilityStaff.Update(self);
         CaelumBolas.Update(self);
@@ -8926,6 +8997,7 @@ class CaelumPlayer : DoomPlayer
             }
         }
         UpdateImpactContactLatch();
+        CaelumFormationBreaker.AfterPhysics(self,thermalBefore);
 
         // No rearmamos la estación mientras crafting siga abierto, aunque
         // PlayerThink haya limpiado temporalmente los botones. Tras cerrar,
@@ -9023,6 +9095,7 @@ class CaelumPlayer : DoomPlayer
 
         // Paciencia conserva la tasa; Constitución/reposo reducen los costes.
         CaelumPlayerResources.ApplyAnimaRegeneration(self);
+        CaelumRacialAbilityRules.Advance(self,realStep);
 
         UpdateAdrenalineDecay();
         UpdateSealChannel();
@@ -9051,9 +9124,9 @@ class CaelumPlayer : DoomPlayer
         CarbineAmmoCount = currentCarbineAmmo != null
             ? currentCarbineAmmo.Amount : 0;
 
-        CaelumClassCastView.Advance(self);
         CaelumSleepRules.AdvancePlayer(self);
         ClassSleepCooldownRemaining = Max(0.0, ClassSleepCooldownRemaining - 1.0 / TICRATE);
+        CaelumClassAbilityRules.Advance(self);
 
         UpdateSurvivalResources();
         ApplyCriticalSurvivalDamage();
@@ -9069,7 +9142,7 @@ class CaelumPlayer : DoomPlayer
         if (ForcedSleepTics > 0)
         {
             ForcedSleepTics--;
-            if (ForcedSleepTics == 0 && health > 0 && !CaelumRestState.IsActive(self)) SetState(SpawnState);
+            if (ForcedSleepTics == 0)CaelumSleepRules.Wake(self);
         }
     }
 
@@ -9181,11 +9254,8 @@ class CaelumPlayer : DoomPlayer
         EffectiveStealthPercent = 0.0;
         if (DerivedStats != null)
         {
-            EffectiveStealthPercent = Clamp(
-                DerivedStats.StealthPercent * CrouchStealthMultiplier,
-                0.0,
-                100.0
-            );
+            EffectiveStealthPercent = CaelumHuntersInstinct.Stealth(self,
+                DerivedStats.StealthPercent * CrouchStealthMultiplier);
         }
         MovementNoiseMultiplier = Clamp(
             1.0 - EffectiveStealthPercent / 100.0,
@@ -9395,6 +9465,7 @@ class CaelumPlayer : DoomPlayer
 
     bool BeginPhysicalAttackCycle(bool secondary, bool sweep=false)
     {
+        if(CaelumBattleCry.Active(self))return false;
         if(CaelumClassCastView.Active(self))return false;
         RefreshWeaponAttackClock();
         double duration=GetEquippedAttackDurationTics();
@@ -9408,7 +9479,7 @@ class CaelumPlayer : DoomPlayer
         if(sweep)cost*=CaelumConstants.LARGE_SWEEP_AIR_MULTIPLIER;
         if(WeaponChargedStateActive && !ranged)cost*=CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         cost*=CaelumThermalEffects.HeatCost(self);
-        if(CurrentAir<cost)return false;
+        if(!CaelumAirPayment.CanAfford(self,cost))return false;
         if(ranged)
         {
             // El disparo y su retroceso siguen comenzando juntos.
@@ -9480,7 +9551,8 @@ class CaelumPlayer : DoomPlayer
         double baseChance = CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon);
         if (ranged) baseChance *= GetRangedTierCriticalMultiplier(WeaponModel.Tier);
         return CaelumAttackRules.CriticalChance(baseChance, DerivedStats.PhysicalCriticalChance,
-            CrouchCriticalChanceMultiplier, CaelumPersonalityRules.Critical(self));
+            CrouchCriticalChanceMultiplier, CaelumPersonalityRules.Critical(self)
+                * CaelumSurvivalInstinct.Multiplier(self));
     }
 
     double MagicalCriticalChanceFor(int weaponType)
@@ -9488,11 +9560,12 @@ class CaelumPlayer : DoomPlayer
         if (DerivedStats == null || WeaponModel == null) return 0;
         return CaelumAttackRules.CriticalChance(WeaponModel.GetBaseCriticalChanceFor(weaponType),
             DerivedStats.MagicalCriticalChance, CrouchCriticalChanceMultiplier,
-            CaelumPersonalityRules.Critical(self));
+            CaelumPersonalityRules.Critical(self)*CaelumSurvivalInstinct.Multiplier(self));
     }
 
     void PerformEquippedWeaponPrimaryAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
         {CaelumBolas.Throw(self);return;}
@@ -9571,6 +9644,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
@@ -9803,6 +9877,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformJavelinThrow()
     {
+        if(CaelumBattleCry.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_JAVELIN
@@ -9821,7 +9896,7 @@ class CaelumPlayer : DoomPlayer
             airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
         airCost*=CaelumThermalEffects.HeatCost(self);
-        if (CurrentAir < airCost) { return; }
+        if (!CaelumAirPayment.CanAfford(self,airCost)) { return; }
 
         UpdateLucidityAccuracyEffects();
         UpdateCrouchEffects();
@@ -9907,6 +9982,7 @@ class CaelumPlayer : DoomPlayer
             false,
             DerivedStats.PhysicalPushMultiplier
         );
+        projectile.StoreCaelumCriticalRoll(criticalChance,criticalRoll/10000.0);
         // Cada lanzamiento representa exactamente un punto de durabilidad.
         // Los materiales recuperados por este proyectil corresponden a la
         // mitad del valor material de ESE punto concreto de durabilidad.
@@ -9964,7 +10040,7 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumThermalEffects.RecordWeaponAction(self,CaelumConstants.WEAPON_TYPE_JAVELIN,true,chargedAttack);
-        CurrentAir = Max(0.0, CurrentAir - airCost);
+        CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
             / double(TICRATE);
@@ -10119,6 +10195,7 @@ class CaelumPlayer : DoomPlayer
             RequestRangedReload(requestedWeaponType);
             return;
         }
+        if(CaelumBattleCry.Active(self))return;
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != requestedWeaponType
             || DerivedStats == null || CombatBlockModeActive
@@ -10256,6 +10333,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformCarbineAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastCarbineFired = false;
@@ -10315,7 +10393,7 @@ class CaelumPlayer : DoomPlayer
         )
             * DerivedStats.AirConsumptionMultiplier;
         airCost*=CaelumThermalEffects.HeatCost(self);
-        LastCarbineHadEnoughAir = CurrentAir >= airCost;
+        LastCarbineHadEnoughAir = CaelumAirPayment.CanAfford(self,airCost);
         if (!LastCarbineHadEnoughAir) { return; }
 
         UpdateLucidityAccuracyEffects();
@@ -10357,14 +10435,15 @@ class CaelumPlayer : DoomPlayer
         if(WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
         {
             if(!CaelumShotgunRules.Fire(self,WeaponModel,LastCarbineDamage,LastCarbineCriticalHit,
-                DerivedStats.PhysicalPushMultiplier,LastCarbineMinimumSpread,LastCarbineMaximumSpread))return;
+                DerivedStats.PhysicalPushMultiplier,LastCarbineMinimumSpread,LastCarbineMaximumSpread,
+                criticalChance,criticalRoll/10000.0))return;
             ShotgunLastBarrel=(ShotgunLoadedMask&2)!=0 ? 1 : 0;
         }
         else
         {
             let projectile=CaelumRangedRules.Fire(self,WeaponModel,LastCarbineDamage,
                 LastCarbineCriticalHit,DerivedStats.PhysicalPushMultiplier,
-                Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset);
+                Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset,criticalChance,criticalRoll/10000.0);
             if(projectile==null)return;
         }
 
@@ -10392,7 +10471,7 @@ class CaelumPlayer : DoomPlayer
         if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
             CaelumThermalEffects.RecordFirearmShot(self);
         else CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType);
-        CurrentAir = Max(0.0, CurrentAir - airCost);
+        CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
         if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
@@ -10456,6 +10535,7 @@ class CaelumPlayer : DoomPlayer
 
     void CompletePendingStaffCast()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (!StaffCastPending) { return; }
         bool secondaryAttack = PendingStaffSecondaryAttack;
@@ -10496,6 +10576,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastStaffHit = false;
@@ -10575,6 +10656,7 @@ class CaelumPlayer : DoomPlayer
         bool chargedAttack
     )
     {
+        if(CaelumBattleCry.Active(self))return;
         double magicDamageScale = WeaponModel.GetDamage()
             / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         UpdateLucidityAccuracyEffects();
@@ -10750,6 +10832,7 @@ class CaelumPlayer : DoomPlayer
                 integerDamage, true, projectileCritical, true,
                 elementalPushMultiplier
             );
+            projectile.StoreCaelumCriticalRoll(LastStaffCriticalChancePercent,LastStaffCriticalRollPercent);
         projectile.StoreCaelumWeaponWearIdentity(
             WeaponModel.WeaponType,
             WeaponModel.Tier,
@@ -10801,6 +10884,12 @@ class CaelumPlayer : DoomPlayer
 
     // Convert the documented per-second running cost into a per-tic cost.
     // Regeneration pauses during these tics so the displayed rate is exact.
+    double RunningAirCostPerSecond()
+    {
+        return DerivedStats==null?0:CaelumConstants.RUN_AIR_COST_PER_SECOND
+            * DerivedStats.AirConsumptionMultiplier * CaelumThermalEffects.HeatCost(self);
+    }
+
     void ConsumeRunningAir()
     {
         if (!IsSpendingRunningAir || DerivedStats == null)
@@ -10808,10 +10897,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        double finalCostPerSecond = CaelumConstants.RUN_AIR_COST_PER_SECOND
-            * DerivedStats.AirConsumptionMultiplier;
         double previousAir = CurrentAir;
-        CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
+        CaelumAirPayment.Spend(self,RunningAirCostPerSecond() / TICRATE);
         CaelumMainM00RonnieTrial.RecordAirLesson(self, previousAir - CurrentAir, true);
         UpdateAirStateEffects();
     }
@@ -10831,7 +10918,7 @@ class CaelumPlayer : DoomPlayer
             && !CaelumClassCastView.Active(self)
             && !IsPhysicallyImmobilized()
             && HasActiveBlockSource()
-            && CurrentAir > 0.0;
+            && CaelumAirPayment.HasSupply(self);
     }
 
     bool IsGiantGauntletsBlockSource()
@@ -11039,7 +11126,7 @@ class CaelumPlayer : DoomPlayer
         return CaelumConstants.SEAL_CHANNEL_T1_ADRENALINE_PER_TIC;
     }
 
-    void StopSealChannel(bool startCooldown)
+    void StopSealChannel(bool startCooldown,bool releaseAttack=true)
     {
         if (!CombatChannelModeActive && CombatChannelEffectActor == null) return;
         CombatChannelModeActive = false;
@@ -11047,7 +11134,7 @@ class CaelumPlayer : DoomPlayer
         if (CombatChannelEffectActor != null)
         {
             CaelumChannelEffect effect = CaelumChannelEffect(CombatChannelEffectActor);
-            if (effect != null) effect.ReleaseChannel();
+            if (effect != null) effect.ReleaseChannel(releaseAttack);
             else CombatChannelEffectActor.Destroy();
             CombatChannelEffectActor = null;
         }
@@ -11089,6 +11176,7 @@ class CaelumPlayer : DoomPlayer
     // inicial de Caella. La consulta no consume ni concede Adrenalina.
     bool CanStartSealChannel()
     {
+        if(CaelumBattleCry.Active(self))return false;
         if (CombatChannelCooldownRemaining > 0.0 || player == null
             || player.playerstate != PST_LIVE || health <= 0
             || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
@@ -11102,6 +11190,7 @@ class CaelumPlayer : DoomPlayer
     // User2 alterna la canalizacion; Reload conserva sus funciones propias.
     void RequestCombatChannelInput()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (CombatChannelModeActive)
         {
             CombatChannelInputLatched = true;
@@ -11135,17 +11224,24 @@ class CaelumPlayer : DoomPlayer
         // El propio icono del Sello muestra su estado; no tapa el centro.
     }
 
-    // User1 y las clases distintas del arcanista conservan su reserva
-    // hasta que sus respectivos bloques sean implementados.
+    // Los efectos se incorporan por separado; no activar bonificaciones ficticias.
+    virtual CaelumRacialAbilityEffect CreateRacialAbilityEffect(int race)
+    {
+        if(race==CaelumConstants.RACE_CAELITH)return new("CaelumSupernaturalBreathingEffect");
+        if(race==CaelumConstants.RACE_GOBLIN)return new("CaelumTelekinesisEffect");
+        if(race==CaelumConstants.RACE_HUMAN)return new("CaelumSocializationEffect");
+        if(race==CaelumConstants.RACE_BEAST_MAN)return new("CaelumHuntersInstinctEffect");
+        return null;
+    }
+
     void ReserveRacialAbilityInput()
     {
-        CombatRacialAbilityInputReserved = true;
-        ShowAbilitySuccessMessage();
-        CombatRacialAbilityInputReserved = false;
+        CaelumRacialAbilityRules.Input(self);
     }
 
     void ReserveTarotInput()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
         CaelumTarotService.Activate(self);
@@ -11153,10 +11249,10 @@ class CaelumPlayer : DoomPlayer
 
     void ReserveClassAbilityInput()
     {
-        if (CharacterProfile != null && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST)
+        if (ClassCastActive || (CharacterProfile != null
+            && CaelumClassAbilityRules.Implemented(CharacterProfile.GetProfession())))
         {
-            if (!ClassSleepInputLatched) CaelumSleepRules.Cast(self);
-            ClassSleepInputLatched = true;
+            CaelumClassAbilityRules.Input(self);
             return;
         }
         CombatClassAbilityInputReserved = true;
@@ -11184,13 +11280,13 @@ class CaelumPlayer : DoomPlayer
     {
         UpdateShieldAirCost();
         if (!DebugShieldBlocking || !HasActiveBlockSource()) { return; }
-        if (CurrentAir <= 0.0)
+        if (!CaelumAirPayment.HasSupply(self))
         {
             CancelCombatBlockMode();
             return;
         }
-        CurrentAir = Max(0.0, CurrentAir - CurrentShieldAirCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
-        if (CurrentAir <= 0.0) { CancelCombatBlockMode(); }
+        CaelumAirPayment.Spend(self,CurrentShieldAirCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
+        if (!CaelumAirPayment.HasSupply(self)) { CancelCombatBlockMode(); }
         UpdateAirStateEffects();
     }
 
@@ -11323,6 +11419,14 @@ class CaelumPlayer : DoomPlayer
 
     void UpdateMovementAcceleration()
     {
+        // La fracción antigua ya expresa progreso, no segundos. Se conserva
+        // al migrar y no se reinterpreta como una velocidad ni un impulso.
+        if (MovementAccelerationRevision < 1)
+        {
+            MovementAccelerationFactor = Clamp(MovementAccelerationFactor, 0.0, 1.0);
+            MovementAccelerationRevision = 1;
+        }
+        MovementAccelerationStep = 0;
         if (player == null || player.playerstate != PST_LIVE)
         {
             MovementAccelerationFactor = 0.0;
@@ -11346,12 +11450,15 @@ class CaelumPlayer : DoomPlayer
         // aire el factor permanecía en cero hasta tocar el fondo del vaso.
         if (!player.onground && !bNOGRAVITY && WaterLevel == 0) { return; }
 
-        MovementAccelerationFactor +=
-            (1.0 - MovementAccelerationFactor)
-            * CaelumConstants.MOVEMENT_ACCELERATION_ALPHA_PER_TIC;
+        if (DerivedStats == null || DerivedStats.TotalMass <= 0) { return; }
+        double previousFactor = MovementAccelerationFactor;
+        double duration = CaelumConstants.MOVEMENT_ACCELERATION_SECONDS
+            * DerivedStats.TotalMass / CaelumConstants.MOVEMENT_ACCELERATION_REFERENCE_KG;
+        MovementAccelerationFactor += 1.0 / (duration * TICRATE);
         MovementAccelerationFactor = Clamp(
             MovementAccelerationFactor, 0.0, 1.0
         );
+        MovementAccelerationStep = MovementAccelerationFactor - previousFactor;
         MovementAccelerationSeconds += 1.0 / TICRATE;
     }
 
@@ -11376,7 +11483,7 @@ class CaelumPlayer : DoomPlayer
             movementFactor = 0.0;
             jumpFactor = 0.0;
             // El agotamiento quita el control, pero conserva caída, empujes y agua.
-            if (IsOtherwiseImmobilized())
+            if (IsOtherwiseImmobilized() && !CaelumTelekinesisRules.Held(self))
             {
                 Vel.X = 0.0;
                 Vel.Y = 0.0;
@@ -11423,7 +11530,7 @@ class CaelumPlayer : DoomPlayer
 
     bool IsPhysicallyImmobilized()
     {
-        return CaelumExhaustion.Active(self) || IsOtherwiseImmobilized();
+        return CaelumExhaustion.Active(self) || CaelumTelekinesisRules.Held(self) || IsOtherwiseImmobilized();
     }
 
     bool IsOtherwiseImmobilized()
@@ -11495,7 +11602,7 @@ class CaelumPlayer : DoomPlayer
 
         double finalCost = CaelumConstants.DEBUG_AIR_ACTION_COST
             * DerivedStats.AirConsumptionMultiplier;
-        CurrentAir = Max(0.0, CurrentAir - finalCost * CaelumThermalEffects.HeatCost(self));
+        CaelumAirPayment.Spend(self,finalCost * CaelumThermalEffects.HeatCost(self));
         UpdateAirStateEffects();
     }
 
@@ -11529,9 +11636,9 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Agrega una cantidad positiva sin superar el maximo derivado de Resiliencia.
-    void AddAdrenaline(double amount)
+    void AddAdrenaline(double amount, bool applyAbility=true)
     {
-        CaelumPlayerResources.AddAdrenaline(self, amount);
+        CaelumPlayerResources.AddAdrenaline(self, amount,applyAbility);
     }
 
     // Health state multiplies only gameplay-earned adrenaline. The manual
@@ -11562,7 +11669,7 @@ class CaelumPlayer : DoomPlayer
     // cards and the remaining combat event types are programmed.
     void AddDebugAdrenaline()
     {
-        AddAdrenaline(CaelumConstants.DEBUG_ADRENALINE_GAIN);
+        AddAdrenaline(CaelumConstants.DEBUG_ADRENALINE_GAIN,false);
         CombatChannelCooldownRemaining = Max(
             0.0,
             CombatChannelCooldownRemaining
@@ -11720,6 +11827,7 @@ class CaelumPlayer : DoomPlayer
     // is live; status effects and the final Caelum armor stage remain separate.
     void PerformDebugSwordAttack(bool secondaryAttack, bool areaSweep = false)
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastMeleeCalculatedDamage = 0.0;
@@ -11771,7 +11879,7 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
         LastMeleeAirCost*=CaelumThermalEffects.HeatCost(self);
-        if (CurrentAir < LastMeleeAirCost)
+        if (!CaelumAirPayment.CanAfford(self,LastMeleeAirCost))
         {
             return;
         }
@@ -11779,7 +11887,7 @@ class CaelumPlayer : DoomPlayer
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
         CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType,secondaryAttack,chargedAttack,areaSweep);
-        CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
+        CaelumAirPayment.Spend(self,LastMeleeAirCost);
         UpdateAirStateEffects();
 
         double selectedBaseDamage = secondaryAttack
@@ -11864,7 +11972,8 @@ class CaelumPlayer : DoomPlayer
         );
         LastMeleeCriticalAttempted = true;
         LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-        LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
+        LastMeleeCriticalChancePercent = CaelumHuntersInstinct.Chance(self,targetData.linetarget,
+            PhysicalCriticalChanceFor(catalogueWeapon));
         int criticalRoll = Random[CaelumPhysicalCritical](0, 999999);
         LastMeleeCriticalRollPercent = criticalRoll / 10000.0;
         LastMeleeCriticalHit = LastMeleeCriticalRollPercent
@@ -12026,7 +12135,8 @@ class CaelumPlayer : DoomPlayer
             CalculateDebugMeleeHitLocation(candidate, attackAngle, attackPitch);
             LastMeleeCriticalAttempted = true;
             LastMeleeCrouchCriticalMultiplier = CrouchCriticalChanceMultiplier;
-            LastMeleeCriticalChancePercent = PhysicalCriticalChanceFor(catalogueWeapon);
+            LastMeleeCriticalChancePercent = CaelumHuntersInstinct.Chance(self,candidate,
+                PhysicalCriticalChanceFor(catalogueWeapon));
             LastMeleeCriticalRollPercent = Random[CaelumPhysicalCritical](0, 999999) / 10000.0;
             LastMeleeCriticalHit = LastMeleeCriticalRollPercent < LastMeleeCriticalChancePercent;
             CaelumCombatActor combatTarget = CaelumCombatActor(candidate);

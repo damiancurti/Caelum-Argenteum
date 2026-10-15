@@ -114,6 +114,7 @@ class CaelumResidentTools : Object play
 
     bool TryStart()
     {
+        if(CaelumBattleCry.Active(Owner))return false;
         if(Owner==null || !Owner.IsRuloPartyFighting() || Owner.target==null
             || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner))return false;
         if(Phase!=IDLE)return true;
@@ -202,6 +203,7 @@ class CaelumResidentTools : Object play
 
     void Strike()
     {
+        if(CaelumBattleCry.Active(Owner))return;
         LastStrikeDamage=LastStrikeRawDamage=0;LastStrikeCritical=false;
         if(!Available(ActiveItem))return;
         double cost=AttackCost(Secondary,Charged);
@@ -266,7 +268,7 @@ class CaelumResidentTools : Object play
     void Tick()
     {
         if(Owner==null)return;
-        if(!Owner.IsRuloPartyFighting() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner))
+        if(CaelumBattleCry.Active(Owner) || !Owner.IsRuloPartyFighting() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner))
         {
             if(Phase!=IDLE)
             {

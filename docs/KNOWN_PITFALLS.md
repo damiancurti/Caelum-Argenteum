@@ -4,7 +4,10 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
-## CA-KP-097 - Translucent cloud meshes need visual inspection from several angles
+## CA-KP-104 - Translucent cloud meshes need visual inspection from several angles
+
+Integrated as CA-KP-104 on 2026-10-15; the isolated #251 branch originally
+used CA-KP-097, now occupied by the accepted #260 movement lesson.
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED asset behavior, #251 / 5.4.5,
 2026-10-14; GZDoom 4.14.2 / Windows / Vulkan and OpenGL. Author art acceptance pending.
@@ -25,6 +28,121 @@ src/rendering/hwrenderer/hw_models.cpp:56-67 itself notes incomplete depth sorti
 Evidence/reproduction: [validation_545](../assets/validation_545/RESULTS.md).
 Keep art-space dimensions and preview opacity separate from gameplay collision,
 size and rider anchors. Do not adopt an unapproved fixture scale as balance.
+
+## CA-KP-103 - Native resurrection preserves identity but needs project restoration
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #250 / 5.4.19, 2026-10-15.
+- Actor.Revive works without a Raise animation, preserves inventory and resets
+  native death flags, but does not restore a dead NPC's full height or Caelum
+  reserves and increments the native monster total. Use explicit full-body fit,
+  height/resources/status restoration and retain the previously recorded count.
+  PlayerInfo.Resurrect restores the currently owned dead pawn/control; reject a
+  stale corpse whose player already has another pawn. Do not clone a profile.
+- Record raised-body identity and original allegiance separately from the aura.
+  A persistent latch prevents repeated custom/predefined drops and death rewards;
+  per-cast references prevent repeated resurrection during the same cast.
+  Death-dependent owner effects must end even if resurrection happens in that tic.
+- Probe after PostBeginPlay has initialized the actor. A stationary test target
+  that skips Tick also skips periodic damage; native attack/health assertions must
+  run that path. A non-monster is not automatically flagged CORPSE by native death.
+- Evidence and exact limits: [validation_5419](../assets/validation_5419/RESULTS.md).
+  This is focused engine evidence, not broad campaign or multiplayer acceptance.
+
+## CA-KP-102 - Summoned bodies need explicit travel ownership and native JIT checks
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #249 / 5.4.18, 2026-10-15;
+  baseline b87f977b plus the #249 working patch.
+- An owned inventory can move its companion and finite inventory to
+  STAT_TRAVELLING in PreTravelled. Travelled must restore the companion to
+  STAT_DEFAULT and its inventory to STAT_INVENTORY before native travel cleanup.
+  Retain identity and reserves; clear old-map targets and geometry references.
+  A blocked arrival can keep the body noninteractive while the owner's timer runs.
+- Native A_Look does not enter See without an enemy. Merely waking friendly
+  A_Chase still permits wandering away; explicit owner following needs its own
+  collision-aware step and obstacle fallback. Do not use the caster as a patrol
+  point, which can trigger unrelated PatrolSpecials for its TID.
+- A scripted `out Vector3` placement result compiled but failed during JIT with
+  `REGT_ADDROF not implemented for vectors`. Returning an object with Found/Point
+  removes that output parameter. The engine returned zero on that failed run:
+  require a completion marker and scan JIT diagnostics, not just the exit code.
+- Evidence: [validation_5418](../assets/validation_5418/RESULTS.md), including
+  current reload/hub/blocked-arrival and copied-save checks. Prototype failures
+  and final hashes remain recorded. Scope is the tested native engine and temporary
+  ally lifecycle; campaign/multiplayer and author acceptance are not implied.
+
+## CA-KP-101 - Capture damage factors before resource-changing callbacks
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #248 / 5.4.17, 2026-10-15.
+- Symptom: evaluating a live Adrenaline modifier after shield/pain callbacks
+  would let the same hit benefit from the resource it generates. Deriving a
+  periodic dose from already-scaled HP would also store that modifier twice.
+- Remedy: capture source/receiver factors at damage entry, apply them after
+  defenses and restore the prior transient context on nested calls. Exclude
+  the factor from stored elemental doses; resolve it again at each real pulse.
+  Handle forced damage separately because it bypasses TakeSpecialDamage.
+- Evidence: native shield-callback/nested-hit fixture, seal plus burn-dose/pulse,
+  forced damage and real in-flight projectile checks in
+  [validation_5417](../assets/validation_5417/RESULTS.md). The same production
+  runtime passes current reload and copied-save upgrade/rollback/return.
+- Limits: this establishes the author's Rally ordering. It does not authorize
+  changing other effects' snapshot policies or claim multiplayer acceptance.
+
+## CA-KP-100 - Measure obstruction after movable-body contact
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #247 / 5.4.16, 2026-10-15.
+- Symptom: an empowered traversal stopped on walls but continued driving after
+  a moving body impeded it; BlockingMobj was no longer a reliable post-Tick signal.
+- Remedy: compare actual forward displacement with the requested native step,
+  after collision energy/defenses resolve. End only the scripted traversal and
+  preserve native contact velocity; do not clear its defense before both receivers.
+- Evidence: issue247-audit04/body failed; issue247-confirmed/body passes termination,
+  equal raw collision energy to both bodies and ordinary defenses on the other body.
+  Exact logs/hashes: [validation_5416](../assets/validation_5416/RESULTS.md).
+- Limits: this is the authored fixed-direction ground traversal, not a replacement
+  for general collision detection, ordinary movement or NPC physics.
+
+## CA-KP-099 - Freeze composite appearance at one simulation instant
+
+- Status: ENGINE-VERIFIED and agent visual review, #247 / 5.4.16, 2026-10-15.
+- Symptom: body afterimages were captured after physics while the modular head
+  still held its preceding Tick position; at high speed the detached offset grew.
+- Remedy: synchronize the owned head visual before freezing body/head snapshots.
+  Preserve sprite/frame, scale, offset, translation and shared capture position/age.
+- Evidence: issue247-boundaries/preview records one-step offsets; reviewed/preview
+  records exact paired positions/ages and a visually inspected fading trail.
+  [validation_5416](../assets/validation_5416/RESULTS.md) retains hashes.
+- Limits: CA247-01 passed author review on 2026-10-15; this verifies the current
+  owned composite sprite system, not arbitrary future 3D attachments.
+
+## CA-KP-098 - Bound native console test scripts
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #260 / 5.4.15.
+- Symptom: a 4,188-byte single-line fixture executed only its trailing check and
+  completion marker; the preceding setup and scenarios did not run.
+- Remedy: split the sequence into short scripts and explicitly chain them with
+  `exec` after their waits. Assert the expected case/pass counts as well as DONE.
+- Evidence: build/issue260-impulse02/contract02.txt (failed fixture); chained
+  contract03 and contract06 in assets/validation_5415/impulse_evidence.json.
+- Limits: this establishes the reproduced command-buffer truncation; it does not
+  specify a universal limit for every native command or engine version.
+
+## CA-KP-097 - A linear input envelope is not linear native motion
+
+- Status: verified in isolated GZDoom 4.14.2 input tests, #260 / 5.4.15.
+- Symptom: changing ForwardMove/SideMove factors alone leaves an additional
+  native-friction lag; a displayed 100% factor does not prove full movement speed.
+- Cause: each command adds thrust to momentum already reduced by friction.
+- Remedy: retain native movement and compensate only that command's thrust
+  while its ramp rises; do not clamp total velocity or cancel external impulses.
+  With constant friction f and ramp increment d, added thrust is the full-speed
+  command thrust times f*d/(1-f). Skip media without applicable native friction.
+- Evidence: assets/validation_5415, per-tic native input velocity/displacement
+  for 50/100/200 kg, walking/running/lateral/flight/water and copied-save cases.
+  The installed engine's player.zs and g4.14.2 p_mobj.cpp establish the boundary.
+- Limits: constant mass/target/input establishes linear motion. Direction changes,
+  collisions, dynamic modifiers and ordinary airborne control retain native policy.
+  These original ramp traces do not establish impulse behavior; same-patch
+  impulse evidence is recorded separately in validation_5415.
 
 ## CA-KP-096 - Early derived-stat queries can erase a spawn default
 
@@ -48,6 +166,15 @@ The final native probe checks all 192 rats and actual pursuit/bites across four
 sections. Upgrade, reload, rollback and hub checks preserve corpses, drops, sleep,
 resources and a positive custom base. The author passed audio/movement check CA254-01 on
 2026-10-14; this finding does not establish the same defect in other actor classes.
+
+Follow-up, #253 / 5.4.14, 2026-10-15, CODE-VERIFIED and ENGINE-VERIFIED:
+native MAP01 traces independently
+establish the same missing-base capture for all four anchored residents. At the
+player's protected floor their own healthy/thermal/elemental factors were one,
+but bases and Speed were zero. The repair is scoped to these narrative residents;
+it does not broaden the rat fix to every actor. Fresh and copied-save tests retain
+positive customization, finite equipment and genuine downing. Evidence:
+[validation_5414](../assets/validation_5414/RESULTS.md). Author check CA253-01 pending.
 
 ## CA-KP-095 - Native menu command tests need the real dispatch boundary
 

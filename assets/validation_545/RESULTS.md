@@ -8,6 +8,18 @@ integration remain pending. Preview scale/opacity are visual settings, not
 approved gameplay dimensions or balance. No production actor or saved field is
 added, so there is no new actor/save schema to migrate in this asset checkpoint.
 
+## Integration on accepted 5.4.19 (2026-10-15)
+
+The original asset checkpoint is integrated with accepted #250 baseline e9c79de8
+without changing its geometry/material or any accepted gameplay source. Asset
+verification still repeats identical bytes. Eight native Vulkan state/view checks
+pass with the unchanged fixture; normal packaging matches source and the tested
+runtime. The integrated side capture was visually inspected and retains the known
+concave bands. Exact commands, package hashes and normal exit are recorded in
+[integration_5419.json](integration_5419.json). This is not ability implementation
+or author acceptance. The cloud lesson is now CA-KP-104 to avoid the independently
+accepted #260 CA-KP-097 identifier.
+
 ## Static asset checks
 
 Run `python assets/validation_545/verify_asset.py`. Python 3.12 standard library,

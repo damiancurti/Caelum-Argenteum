@@ -1,0 +1,14 @@
+{
+  "test_id": "CA241-01",
+  "origin_version": "5.4.7",
+  "issue": 241,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "La prueba dio correcta.",
+  "result": "passed",
+  "scope": "Capture/release, mass-dependent motion and consumption, held-target action suppression, reference-force switching, exhaustion and retained native gravity/contact in the offered isolated scenario. Campaign-wide and multiplayer acceptance are not implied.",
+  "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+  "fixture_sha256": "3ac4161afcc07dfb325062af88746b442753c63ed130e3538b71e6006b8e4605",
+  "handoff_label": "author-20261014-232910",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-15T02:31:21.0154790Z"
+}

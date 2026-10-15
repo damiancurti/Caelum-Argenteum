@@ -1,0 +1,14 @@
+{
+  "test_id": "CA259-01",
+  "origin_version": "5.4.1",
+  "issue": 259,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "Esa prueba dio corrrecto",
+  "result": "passed",
+  "qualifications": "No exceptions reported for the offered dispersion, tier and weapon switching check. No merge or closure inferred.",
+  "runtime_sha256": "df669fdf02813ab3ee7f13cc9a70f55ca932c3671ae662d9a4497b2bf148b137",
+  "fixture_sha256": "b799f638fdc1522955546084081e0ceb82e2f8cf99b5f8ba0cf042d1c5d62499",
+  "handoff_label": "author-20261014-205637",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-14T23:59:29.9202594Z"
+}

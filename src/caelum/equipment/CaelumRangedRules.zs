@@ -36,8 +36,9 @@ class CaelumRangedRules : Object
     {return tier<=1 ? 1.0 : tier==2 ? 1.6 : 2.5;}
 
     static play CaelumCarbineProjectile Fire(Actor owner,CaelumWeaponModel weapon,
-        double damage,bool critical,double push,double yaw,double pitch)
+        double damage,bool critical,double push,double yaw,double pitch,double criticalChance=-1,double criticalRoll=0)
     {
+        if(CaelumBattleCry.Active(owner))return null;
         Name type="CaelumCarbineProjectile";
         if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)type="CaelumShotgunPellet";
         else if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_LONGBOW)type="CaelumArrowProjectile";
@@ -51,6 +52,7 @@ class CaelumRangedRules : Object
         vector3 direction=(Cos(pitch)*Cos(yaw),Cos(pitch)*Sin(yaw),-Sin(pitch));
         projectile.Vel=direction.Unit()*speed;
         projectile.StoreCaelumAttackResult(Max(0,int(damage+0.5)),true,critical,false,push);
+        if(criticalChance>=0)projectile.StoreCaelumCriticalRoll(criticalChance,criticalRoll);
         projectile.StoreCaelumWeaponWearIdentity(weapon.WeaponType,weapon.Tier,weapon.Size);
         return projectile;
     }
@@ -142,7 +144,7 @@ class CaelumCityCarbine : Object play
     {
         Initialize(owner);
         bool moving=(owner.Pos.XY-PreviousPosition.XY).Length()>0.01;
-        bool interrupted=CaelumBolas.Restrained(owner) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
+        bool interrupted=(CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")) || !Held;
         if(interrupted)
         {ReloadRemaining=0;ReloadTotal=0;}
@@ -168,7 +170,8 @@ class CaelumCityCarbine : Object play
     }
     bool Attack(CaelumPortDefender owner,Actor victim)
     {
-        if(owner==null || CaelumBolas.Restrained(owner) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
+        if(CaelumBattleCry.Active(owner))return false;
+        if(owner==null || (CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")))return false;
         if(!InRange(owner,victim))return false;
         Initialize(owner);Select(true);owner.target=victim;owner.A_FaceTarget();owner.Vel.X=0;owner.Vel.Y=0;
