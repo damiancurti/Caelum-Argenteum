@@ -14,7 +14,7 @@ anchored mansion residents recover missing movement bases so they can pursue and
 fight while the living player remains at MAP01's protected 1 HP. Their own downing,
 finite resources and encounter progression remain unchanged. Old instances migrate
 without replacement. [Evidence](assets/validation_5414/RESULTS.md).
-CA253-01 awaits author review; this PR stacks on accepted #246.
+CA253-01 passed author review on 2026-10-15; this PR stacks on accepted #246.
 
 5.4.13 implements [#246](https://github.com/damiancurti/Caelum-Argenteum/issues/246):
 Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,

@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.14** — 2026-10-15.
 
-**5.4.14/#253:** MAP01 resident movement repaired; CA253-01 pending until return. validation_5414.
+**5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
 
 **5.4.13/#246:** CA246-01 accepted on 2026-10-15; Arcane Sun implemented. validation_5413.
 

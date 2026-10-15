@@ -1,0 +1,16 @@
+{
+  "test_id": "CA253-01",
+  "originating_version": "5.4.14",
+  "issue": 253,
+  "result": "passed",
+  "author_quote": "La prueba dio bien",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered native MAP01 resident participation at the protected player Health floor; no additional itemized victory claim.",
+  "run": "build/issue253-final-v2/author-20261015-072230-run.json",
+  "exit_code": 0,
+  "pid": 14392,
+  "runtime_sha256": "796FBF41156383FF953F4E16A4BF1454AE38EDC476724CDC20B5ACA3C15345CA",
+  "fixture_sha256": "778DEA2229A8DA00AA2F31FBDE999C48DE73DB9EB59D96C0CFB0A0E4B0EF436D",
+  "finished_utc": "2026-10-15T10:23:38.3784704Z",
+  "qualifications": "Direct isolated launcher; no broader campaign/multiplayer acceptance. No merge or issue closure."
+}

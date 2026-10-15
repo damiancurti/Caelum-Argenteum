@@ -1,8 +1,8 @@
 # 5.4.14 / #253 - Mansion resident participation
 
-Focused patch based on #246 commit 659a7aa4. CA246-01 remains pending; this patch
-does not claim its acceptance. The author is away and requested keep-awake while
-deferring questions and manual tests. CA253-01 remains pending too.
+Focused patch originally based on #246 commit 659a7aa4; its acceptance update
+a09ce24c is integrated. CA246-01 and CA253-01 passed author review on 2026-10-15.
+The temporary keep-awake request was released on return.
 
 ## Verified cause and scope
 
@@ -84,12 +84,14 @@ The repaired preliminary upgrade passed. No production balance was changed to
 satisfy the fixture. Final runs use the final documented runtime and repaired
 fixture, including actual saved impairment.
 
-## Deferred author check
+## Author acceptance
 
-launch.ps1 opens the original MAP01 scene for CA253-01 after the author returns.
+launch.ps1 opened the original MAP01 scene for CA253-01 on 2026-10-15.
 Move toward the bull and allow protected floor damage; watch eligible residents
 continue, respecting their own downing and finite resources. Optional F7 is clearly
 marked as a diagnostic finish for checking existing victory interaction. No manual
 game is left running while the author is away. The earlier persistent-terminal
 approval rejection remains; the direct reviewed launcher opens the game.
-No author acceptance, merge or issue closure is inferred.
+The author confirmed "La prueba dio bien"; acceptance.json records the normal
+engine exit and hashes. No additional itemized victory, broader campaign or
+multiplayer acceptance, merge or issue closure is inferred.

@@ -20,7 +20,7 @@ residents nor grants healing, supplies, damage immunity or victory. Existing own
 downing, finite tools, encounter grace and post-victory restoration still apply.
 The repair adds no states and no new actor class; copied-save upgrade/reload and
 rollback use native serialization, with preserved originals for reversal.
-Evidence: assets/validation_5414. CA253-01 is pending until the author returns.
+Evidence: assets/validation_5414. CA253-01 passed author review on 2026-10-15.
 
 ## Arcane Sun - 5.4.13 / #246
 
