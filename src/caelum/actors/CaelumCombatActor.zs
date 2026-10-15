@@ -592,6 +592,7 @@ class CaelumCombatActor : Actor
             return;
         }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
+        if(CaelumRedemption.Follow(combatActor))return;
         let summoned=CaelumSummonedZupay(combatActor);
         if(summoned!=null && summoned.FollowCaster())return;
         let resident=CaelumAnchoredResident(combatActor);
@@ -999,7 +1000,8 @@ class CaelumCombatActor : Actor
         if(health<=0 || (pain!=null && InStateSequence(CurState,pain)))
         {EndResourceRecovery();return false;}
         let boss=CaelumZupayColossus(self);
-        if((SiegeCombatant!=null && SiegeCombatant.Withdrawing) || (boss!=null && boss.SewerFleeing))
+        if(!CaelumRedemption.PreviouslyRaised(self)
+            && ((SiegeCombatant!=null && SiegeCombatant.Withdrawing) || (boss!=null && boss.SewerFleeing)))
         {EndResourceRecovery();return false;}
         return true;
     }
@@ -1521,6 +1523,7 @@ class CaelumCombatActor : Actor
             Actor candidate = iterator.thing;
             let summoned=CaelumSummonedZupay(self);
             if(summoned!=null && !summoned.CanAffect(candidate))continue;
+            if(!CaelumRedemption.AllowsDamage(self,candidate))continue;
             if (candidate == null
                 || candidate == self
                 || candidate.health <= 0
@@ -2098,7 +2101,7 @@ class CaelumCombatActor : Actor
         LastImpactFinalDamage = 0;
         LastImpactToughnessMultiplier = 1.0;
         double impactToughness=CaelumToughnessRules.Effective(self);
-        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
+        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.ActorReduction(self,impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
             ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
@@ -2190,8 +2193,8 @@ class CaelumCombatActor : Actor
             )
         );
         double postArmor=weightedFinalDamage;
-        double postToughness=CaelumToughnessRules.AfterDefenses(
-            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        double postToughness=CaelumToughnessRules.AfterActorDefenses(
+            self,postArmor,impactToughness);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
         LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
         LastImpactFinalDamage=Max(0,int(postToughness+0.5));
@@ -2877,7 +2880,8 @@ class CaelumCombatActor : Actor
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
-        if(!CaelumArcaneSun.AllowsDamage(inflictor,self))return 0;
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self)
+            || (!(flags & DMG_FORCED) && !CaelumRedemption.AllowsDamage(source,self,mod)))return 0;
         EnsureCombatPersonality();
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
@@ -3221,8 +3225,8 @@ class CaelumCombatActor : Actor
             }
         }
 
-        LastCombatPostToughnessDamage=CaelumToughnessRules.AfterDefenses(
-            LastCombatArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        LastCombatPostToughnessDamage=CaelumToughnessRules.AfterActorDefenses(
+            self,LastCombatArmorPostDefenseDamage,toughness,magical);
         LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
             LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
         totalHealthDamage=Max(0,int(LastCombatPostToughnessDamage+0.5));
@@ -3684,12 +3688,20 @@ class CaelumCombatActor : Actor
         return total;
     }
 
+    // El estado de muerte conserva su índice; sólo cambia la política de drop.
+    action void A_CaelumNoBlocking()
+    { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); }
+
+    override int DoSpecialDamage(Actor victim,int damage,Name mod)
+    { return CaelumRedemption.AllowsDamage(self,victim,mod)?Super.DoSpecialDamage(victim,damage,mod):0; }
+
     bool MazeDropReleased;
     int DemonSupplyRevision;
     bool DemonDeathLootReleased;
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        if(CaelumRedemption.PreviouslyRaised(self)){MazeDropReleased=true;DemonDeathLootReleased=true;}
         // La posición seca original recupera incluso bajas en pozos/aplastamientos.
         if(!MazeDropReleased && CaelumMazeLayout.IsCardinal())
         {
@@ -3725,6 +3737,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         EnsureCombatPersonality();
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
@@ -3738,7 +3751,8 @@ class CaelumCombatActor : Actor
             LastCombatArmorDefenseExactPercent = LastCombatArmorDefensePercent;
             ArmorBalanceRevision = 1;
         }
-        if (!(CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
+        if (!CaelumRedemption.PreviouslyRaised(self)
+            && !(CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
         {
             if (!InStateSequence(CurState,FindState("SiegeWithdrawal")))
                 SetStateLabel("SiegeWithdrawal");

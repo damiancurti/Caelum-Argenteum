@@ -21,7 +21,7 @@ class CaelumDemonService : Object play
             || npc.RecoveryPhase==1
             || npc.CaelumDiagnosticPassiveAI || npc.CaelumMassAIScheduleActive
             || (boss!=null && boss.SewerFleeing)
-            || (npc.SiegeCombatant!=null && npc.SiegeCombatant.Withdrawing)
+            || (!CaelumRedemption.PreviouslyRaised(npc) && npc.SiegeCombatant!=null && npc.SiegeCombatant.Withdrawing)
             || (npc.FindState("Pain")!=null && npc.InStateSequence(npc.CurState,npc.FindState("Pain")));
         bool ropes=CaelumBolas.Restrained(npc);
         if(ropes && CaelumBolas.Interrupted(npc))blocked=true;

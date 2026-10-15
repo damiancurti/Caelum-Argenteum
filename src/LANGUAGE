@@ -5153,7 +5153,7 @@ CA_CREATE_PROFESSION_MAGE = "Repeating Mage concentrates both class contribution
 CA_CREATE_PROFESSION_MERCENARY = "Warrior and Explorer emphasize physical and technical development: melee force, mobility and precision. Social and mental contributions are lower. The profession increases body mass.";
 CA_CREATE_PROFESSION_CLERIC = "Warrior and Priest emphasize physical and social development. Rally restores Adrenaline each second to the caster and visible allies in its moving area. Their current Adrenaline increases damage caused and reduces damage received after defenses. Empathy increases power and duration; Eloquence increases range and reduces cost.";
 CA_CREATE_PROFESSION_BATTLE_MAGE = "Warrior and Mage contribute evenly to all four families. A versatile starting point for weapons and magic, with less specialization than repeating either class. The profession increases body mass.";
-CA_CREATE_PROFESSION_PILGRIM = "Explorer and Priest contribute evenly to all four families. A balanced starting point combining exploration and social development, with less specialization than repeating either class. Protection from environmental damage is a planned ability.";
+CA_CREATE_PROFESSION_PILGRIM = "Explorer and Priest contribute evenly to all four families. A balanced starting point combining exploration and social development, with less specialization than repeating either class. Redemption revives nearby visible corpses and strengthens living allies' Toughness. Former enemies serve temporarily; revived allies remain alive.";
 CA_CREATE_PROFESSION_INVESTIGATOR = "Explorer and Mage emphasize technical and mental development: mobility, precision and magic. Physical and social contributions are lower. Levitation is planned and is not granted as an active ability by this choice.";
 CA_CREATE_PROFESSION_ARCANIST = "Priest and Mage emphasize social and mental development: conversation, magic and Anima. Physical and technical contributions are lower. Sleep is implemented: it puts affected targets to sleep; damage wakes them.";
 CA_CREATE_LAYER_PHYSICAL = "Strength improves melee damage, pushing and carrying capacity. Toughness reduces damage, pain and Lucidity loss. Constitution improves maximum health and lowers Hunger, Thirst, Sleep and regeneration costs. One family point raises all three base attributes.";
@@ -5193,7 +5193,7 @@ CA_CREATE_PROFESSION_MAGE = "Repetir Mago concentra ambos aportes en la familia 
 CA_CREATE_PROFESSION_MERCENARY = "Guerrero y Explorador priorizan el desarrollo físico y técnico: fuerza de los golpes, movilidad y precisión. Los aportes social y mental son menores. La profesión aumenta la masa corporal.";
 CA_CREATE_PROFESSION_CLERIC = "Guerrero y Sacerdote priorizan lo físico y lo social. Arenga recupera Adrenalina cada segundo para el lanzador y los aliados visibles en su área móvil. La barra actual aumenta el daño causado y reduce el recibido después de las defensas. Empatía aumenta potencia y duración; Elocuencia aumenta alcance y reduce coste.";
 CA_CREATE_PROFESSION_BATTLE_MAGE = "Guerrero y Mago aportan por igual a las cuatro familias. Es un punto de partida versátil para armas y magia, menos especializado que repetir una clase. La profesión aumenta la masa corporal.";
-CA_CREATE_PROFESSION_PILGRIM = "Explorador y Sacerdote aportan por igual a las cuatro familias. Es una base equilibrada de exploración y trato social, menos especializada que repetir una clase. La protección contra daño ambiental es una habilidad prevista.";
+CA_CREATE_PROFESSION_PILGRIM = "Explorador y Sacerdote aportan por igual a las cuatro familias. Es una base equilibrada de exploración y trato social, menos especializada que repetir una clase. Redención resucita cadáveres cercanos visibles y refuerza la Dureza de aliados vivos. Los antiguos enemigos sirven temporalmente; los aliados resucitados permanecen vivos.";
 CA_CREATE_PROFESSION_INVESTIGATOR = "Explorador y Mago priorizan lo técnico y lo mental: movilidad, precisión y magia. Los aportes físico y social son menores. Levitación está prevista; esta elección no la concede como habilidad disponible.";
 CA_CREATE_PROFESSION_ARCANIST = "Sacerdote y Mago priorizan lo social y lo mental: conversación, magia y Ánima. Los aportes físico y técnico son menores. Sueño está implementado: duerme a los objetivos afectados; el daño los despierta.";
 CA_CREATE_LAYER_PHYSICAL = "Fuerza mejora los golpes, el empuje y la carga. Dureza reduce daño, dolor y pérdida de Lucidez. Constitución mejora la salud máxima y reduce el gasto de Hambre, Sed, Sueño y regeneración. Un punto de familia sube los tres atributos base.";
@@ -5857,11 +5857,13 @@ CA_HUD_CLASS_PREPARING = "Lanzando";
 [enu default]
 CA_SUMMON_ZUPAY_NAME = "Summoned Zupay";
 CA_SUMMON_CAST = "Summoning: an allied Zupay answers your call.";
+CA_REDEMPTION_CAST = "Redemption: the fallen rise; living allies gain Toughness.";
 CA_SUMMON_INVALID = "Summoning needs visible ground with enough room within reach.";
 CA_CREATE_CLASS_SUMMONING = "Summoning (User4): prepare for 3 seconds, then summon an allied Zupay at the ground you aim at, or the nearest valid space. Eloquence increases reach; Empathy increases its base attributes and duration. It follows you across maps, preserving its state. A new cast replaces it. It disappears when either of you dies or its duration ends, without loot.";
 
 [es]
 CA_SUMMON_ZUPAY_NAME = "Zupay invocado";
 CA_SUMMON_CAST = "Invocación: un Zupay aliado responde a tu llamado.";
+CA_REDEMPTION_CAST = "Redención: los caídos se levantan; los aliados vivos ganan Dureza.";
 CA_SUMMON_INVALID = "La invocación necesita suelo visible, espacio suficiente y estar dentro del alcance.";
 CA_CREATE_CLASS_SUMMONING = "Invocación (User4): prepará durante 3 segundos y aparecerá un Zupay aliado en el suelo al que apuntás, o en el lugar válido más cercano. Elocuencia aumenta el alcance; Empatía sus atributos base y duración. Te sigue entre mapas conservando su estado. Volver a lanzarla lo reemplaza. Desaparece si alguno muere o termina la duración, sin botín.";

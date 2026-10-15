@@ -193,6 +193,7 @@ class CaelumBull : CaelumCombatActor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         EnsureBullChargeRevision();
         if (BullChargeActive)
         {
@@ -257,7 +258,7 @@ class CaelumBull : CaelumCombatActor
         BULL I 0 A_CaelumEndBullCharge;
         BULL I 5 A_Scream;
         BULL JKLM 5;
-        BULL N 5 A_NoBlocking;
+        BULL N 5 A_CaelumNoBlocking;
         BULL N -1;
         Stop;
 

@@ -1,6 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.18** — 2026-10-15.
+Documentation version: **5.4.19** — 2026-10-15.
+
+**5.4.19/#250:** Redemption implemented; validation_5419. CA250-01 pending.
+No merge/closure.
 
 **5.4.18/#249:** CA249-01 accepted 2026-10-15; validation_5418, PR297 ready.
 Implementation 545eb01d; static/build and 132 native assertions pass. No merge/closure.

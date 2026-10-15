@@ -440,6 +440,7 @@ class CaelumJourneyPlan : Inventory
         user.CombatChannelCooldownRemaining = Max(0.0, user.CombatChannelCooldownRemaining - seconds);
         CaelumTarotService.Advance(user, model.ElapsedTics);
         CaelumSummoning.AdvanceJourney(user,model.ElapsedTics);
+        CaelumRedemption.AdvanceJourney(user,model.ElapsedTics);
         user.HUDAbilitySuccessRemaining = Max(0.0, user.HUDAbilitySuccessRemaining - seconds);
         user.PainImmobilizationRemaining = Max(0.0, user.PainImmobilizationRemaining - seconds);
         user.UpdateSurvivalStates(); user.UpdateHealthStateEffects(); user.UpdateLucidityState();

@@ -181,17 +181,18 @@ class CaelumSummoning : Object play
         return user.CheckSight(probe,SF_IGNOREVISIBILITY);
     }
 
-    static CaelumSummoningPlace FindPlace(CaelumPlayer user,vector3 desired,double range)
+    static CaelumSummoningPlace FindPlace(CaelumPlayer user,vector3 desired,double range,
+        double bodyRadius=0,double bodyHeight=0)
     {
         let result=CaelumSummoningPlace(new("CaelumSummoningPlace"));
         if(user==null || range<=0)return result;
         let probe=CaelumSummoningProbe(Actor.Spawn("CaelumSummoningProbe",desired,NO_REPLACE));
         if(probe==null)return result;
         let shape=GetDefaultByType("CaelumZupayColossus");
-        probe.A_SetSize(shape.Radius,shape.Height);
+        probe.A_SetSize(bodyRadius>0?bodyRadius:shape.Radius,bodyHeight>0?bodyHeight:shape.Height);
         bool found=Candidate(user,probe,desired,range);vector3 point=probe.Pos;
         double best=found?(point-desired).Length():1e30;
-        double step=shape.Radius;
+        double step=probe.Radius;
         // Anillos ordenados por distancia al punto elegido; el cilindro de
         // colisión determina el muestreo. La refinación final evita saltos
         // visibles al buscar junto a paredes y cuerpos.

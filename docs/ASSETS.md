@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.18** — 2026-10-15.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## 5.4.19 - Redemption asset reuse (#250)
+
+Reuse owned existing corpses, living actor art and shared class hands/HUD. Native
+and gameplay fixture sources live in assets/validation_5419. Deterministic test
+rooms reuse validation_5418 geometry. Native before/active/expired captures were
+visually reviewed; author review remains CA250-01. Development IWAD textures,
+generated packages, saves and captures stay outside src. No new artwork or
+distribution license is introduced.
 
 ## 5.4.18 - Summoning asset reuse (#249)
 

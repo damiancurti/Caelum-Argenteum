@@ -88,7 +88,7 @@ class CaelumGiantRat : CaelumCombatActor
     Death:
         RATG F 4 A_Scream;
         RATG GHIJKL 4;
-        RATG M 4 A_NoBlocking;
+        RATG M 4 A_CaelumNoBlocking;
         RATG M -1;
         Stop;
     // Añadido al final para conservar los índices de estados guardados.

@@ -750,6 +750,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     }
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         EnsureRuloMovement();
         EnsureResidentTools();
         if(ResidentTools!=null)ResidentTools.Tick();

@@ -207,3 +207,6 @@
 
 # Preserve #249 isolated fixture and evidence byte fingerprints.
 /assets/validation_5418/** -text whitespace=cr-at-eol
+
+# Preserve #250 isolated fixture and evidence fingerprints.
+/assets/validation_5419/** -text whitespace=cr-at-eol

@@ -33,6 +33,7 @@ class CaelumRally : Object play
 
     static bool Eligible(CaelumRallyEffect effect,Actor body)
     {
+        if(CaelumRedemption.Pending(body))return false;
         let summoned=CaelumSummonedZupay(body);
         if(summoned!=null && summoned.AwaitingPlacement)return false;
         let caster=CaelumPlayer(effect.Owner);
@@ -41,8 +42,7 @@ class CaelumRally : Object play
             || (CaelumPlayer(body)==null && CaelumCombatActor(body)==null))return false;
         if(body!=caster)
         {
-            bool allied=body.player!=null ? (!deathmatch || body.IsTeammate(caster))
-                : body.bIsMonster && body.bFriendly && body.IsFriend(caster);
+            bool allied=CaelumRedemption.Allied(caster,body);
             if(!allied || (body.Pos-caster.Pos).Length()>effect.Range
                 || !caster.CheckSight(body,SF_IGNOREVISIBILITY))return false;
         }

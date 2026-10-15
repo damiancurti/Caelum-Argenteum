@@ -53,6 +53,7 @@ class CaelumElementalStream : Object play
     {
         let summoned=CaelumSummonedZupay(emitter);
         if(summoned!=null && !summoned.CanAffect(body))return;
+        if(!CaelumRedemption.AllowsDamage(emitter,body))return;
         let status=Status(body);
         if(status==null || emitter==null)return;
         double power=Power(emitter);
@@ -102,6 +103,7 @@ class CaelumElementalStream : Object play
             let breath=CaelumDemonBreath(source);
             let summoned=breath!=null?CaelumSummonedZupay(breath.Emitter):null;
             if(summoned!=null && !summoned.CanAffect(body))continue;
+            if(breath!=null && !CaelumRedemption.AllowsDamage(breath.Emitter,body))continue;
             if(body.health<=0 || !CaelumThermalBody.Supported(body))continue;
             let thermal=CaelumThermalBody.Get(body,true);
             if(thermal==null)continue;

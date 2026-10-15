@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.18.** Obtain and update the complete repository, validate
+**Current release: 5.4.19.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.19 implements [#250](https://github.com/damiancurti/Caelum-Argenteum/issues/250):
+Pilgrim Redemption, a mobile resurrection area and living-ally Toughness benefit.
+Static/build and focused native evidence are recorded in
+[validation_5419](assets/validation_5419/RESULTS.md). Author check CA250-01 remains
+pending; no merge or issue closure is claimed.
 
 5.4.18 implements [#249](https://github.com/damiancurti/Caelum-Argenteum/issues/249):
 Battle Mage Summoning creates an allied Zupay at the aimed ground or nearby valid

@@ -753,6 +753,8 @@ class CaelumDebugOverlay : EventHandler
             return;
         }
 
+        if(CaelumRedemption.PreviouslyRaised(dead)){ForgetRecordedDamageOwner(dead);return;}
+
         // A Doom monster keeps the player it was fighting in Target. This is
         // the reliable owner for ordinary player kills, including LineAttack.
         // Inflictor remains a fallback for actors without a combat target.

@@ -833,7 +833,7 @@ class CaelumPlayer : DoomPlayer
         DOMI S 8 UpdateWorldCarbineVisual;
         DOMI T 8 { A_PlayerScream(); UpdateWorldCarbineVisual(); }
         DOMI U 8 UpdateWorldCarbineVisual;
-        DOMI V 8 { A_NoBlocking(); UpdateWorldCarbineVisual(); }
+        DOMI V 8 { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); UpdateWorldCarbineVisual(); }
         DOMI WXY 8 UpdateWorldCarbineVisual;
         DOMI Z -1 UpdateWorldCarbineVisual;
         Stop;
@@ -6841,8 +6841,7 @@ class CaelumPlayer : DoomPlayer
             }
         }
         // #247 multiplica la reducción final, nunca el atributo ni la presión sostenida.
-        double collisionReduction=CaelumToughnessRules.Reduction(
-            CaelumToughnessRules.NaturalMass(self),impactToughness);
+        double collisionReduction=CaelumToughnessRules.ActorReduction(self,impactToughness);
         if(!crushingContact)collisionReduction*=CaelumFormationBreaker.Defense(self);
         LastImpactToughnessPercent = 100.0*collisionReduction/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
@@ -7686,7 +7685,8 @@ class CaelumPlayer : DoomPlayer
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
-        if(!CaelumArcaneSun.AllowsDamage(inflictor,self))return 0;
+        if(!CaelumArcaneSun.AllowsDamage(inflictor,self)
+            || (!(flags & DMG_FORCED) && !CaelumRedemption.AllowsDamage(source,self,mod)))return 0;
         CaelumBolas.FireAttack(self,inflictor,mod);
         int before=health;
         let shot=CaelumActorProjectile(inflictor);
@@ -8116,8 +8116,8 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
-        double postToughnessDamage=CaelumToughnessRules.AfterDefenses(
-            LastArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        double postToughnessDamage=CaelumToughnessRules.AfterActorDefenses(
+            self,LastArmorPostDefenseDamage,toughness,magical);
         LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
         totalHealthDamage=Max(0,int(postToughnessDamage+0.5));
         LastArmorHealthDamage = totalHealthDamage;

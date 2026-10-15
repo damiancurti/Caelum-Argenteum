@@ -84,7 +84,11 @@ class CaelumSleepRules : Object play
     {
         // La misma identidad nativa que separa amenazas y residentes aliados.
         // No inferir hostilidad de una facción narrativa aún sin relaciones.
-        if(victim.player!=null)return deathmatch && !victim.IsTeammate(caster);
+        if(victim.player!=null)
+        {
+            if(CaelumRedemption.Commander(victim)!=null)return !CaelumRedemption.Allied(caster,victim);
+            return deathmatch && !victim.IsTeammate(caster);
+        }
         return victim.bIsMonster && !victim.bFriendly;
     }
 

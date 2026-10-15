@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-103 - Native resurrection preserves identity but needs project restoration
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #250 / 5.4.19, 2026-10-15.
+- Actor.Revive works without a Raise animation, preserves inventory and resets
+  native death flags, but does not restore a dead NPC's full height or Caelum
+  reserves and increments the native monster total. Use explicit full-body fit,
+  height/resources/status restoration and retain the previously recorded count.
+  PlayerInfo.Resurrect restores the currently owned dead pawn/control; reject a
+  stale corpse whose player already has another pawn. Do not clone a profile.
+- Record raised-body identity and original allegiance separately from the aura.
+  A persistent latch prevents repeated custom/predefined drops and death rewards;
+  per-cast references prevent repeated resurrection during the same cast.
+  Death-dependent owner effects must end even if resurrection happens in that tic.
+- Probe after PostBeginPlay has initialized the actor. A stationary test target
+  that skips Tick also skips periodic damage; native attack/health assertions must
+  run that path. A non-monster is not automatically flagged CORPSE by native death.
+- Evidence and exact limits: [validation_5419](../assets/validation_5419/RESULTS.md).
+  This is focused engine evidence, not broad campaign or multiplayer acceptance.
+
 ## CA-KP-102 - Summoned bodies need explicit travel ownership and native JIT checks
 
 - Status: ENGINE-VERIFIED, GZDoom 4.14.2, #249 / 5.4.18, 2026-10-15;

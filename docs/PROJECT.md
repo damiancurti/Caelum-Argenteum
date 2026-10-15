@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.18** — 2026-10-15.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## 5.4.19 - Pilgrim Redemption (#250)
+
+The author approved a moving visible resurrection area, immediate/one-second
+pulses, one revival per body/cast, full Health/Anima/Air/Lucidity and negative-status
+removal. Former enemies are temporary allies; the caster and non-raised living
+allies gain scaled x4 fixed Toughness reduction. Preserve loot/progression and
+body identity, with travel and elapsed-journey lifetime. Implementation, static
+checks, normal packaging and qualified native evidence are in validation_5419.
+CA250-01 is the outstanding author check; no merge or issue closure is claimed.
+Keep #251-252 and later #282 separately scoped.
 
 ## 5.4.18 - Battle Mage Summoning (#249)
 

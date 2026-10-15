@@ -66,7 +66,7 @@ class CaelumRonnie : CaelumAnchoredResident
     Death:
         RONI G 5 A_Scream;
         RONI H 5;
-        RONI I 5 A_NoBlocking;
+        RONI I 5 A_CaelumNoBlocking;
         RONI JK 5;
         RONI L -1;
         Stop;

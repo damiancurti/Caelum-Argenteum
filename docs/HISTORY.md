@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.18** — 2026-10-15.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## 5.4.19 - Pilgrim Redemption (#250, 2026-10-15)
+
+After accepting CA249-01, the author chose a mobile area like Rally, no corpse
+species/faction/story exclusions, full maximum Health/Anima/Air/Lucidity and
+negative-status removal. The caster receives Toughness protection; bodies revived
+by that cast do not. Former enemies stay allied outside the area until expiry;
+one resurrection per body/cast. Caster death ends the effect. Preserve past loot,
+rewards and quest progress, use strongest Toughness and renew with new potency and
+the longer duration. Find nearby fitting space, carry temporary former enemies
+between maps, consume journey time, and pulse immediately then every second.
+Former enemies follow the caster and protect allies with their attacks. Ignore
+old player corpses after respawn; restore the currently dead pawn. The isolated
+13-check native API probe on 5.4.18 remains prerequisite evidence. Implementation
+and qualified native checks are recorded in assets/validation_5419: actual User4,
+resources/statuses, final Toughness consumers, original/duplicate drops, AI combat,
+death, reload, hub/pending placement and elapsed journeys. Neutral copied saves
+upgrade and return to 5.4.18; active 5.4.19 saves reload in the new runtime.
+Same-tic resurrection completes existing owner-death effect cleanup. Static checks,
+normal package parity and deterministic freezes pass. Agent visual review is
+separate from the outstanding author check CA250-01. No author acceptance, merge
+or issue closure is recorded.
 
 ## 5.4.18 - Battle Mage Summoning (#249, 2026-10-15)
 

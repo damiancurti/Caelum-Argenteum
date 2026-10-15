@@ -25,7 +25,8 @@ class CaelumClassAbilityRules : Object play
     {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR
         || profession==CaelumConstants.PROFESSION_EXPLORER || profession==CaelumConstants.PROFESSION_MERCENARY
         || profession==CaelumConstants.PROFESSION_PRIEST || profession==CaelumConstants.PROFESSION_CLERIC
-        || profession==CaelumConstants.PROFESSION_MAGE || profession==CaelumConstants.PROFESSION_BATTLE_MAGE;}
+        || profession==CaelumConstants.PROFESSION_MAGE || profession==CaelumConstants.PROFESSION_BATTLE_MAGE
+        || profession==CaelumConstants.PROFESSION_PILGRIM;}
 
     static clearscope bool Offensive(int profession)
     {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR
@@ -132,6 +133,8 @@ class CaelumClassAbilityRules : Object play
         {
             if(!CaelumSummoning.Release(user)){user.PersistCharacterState();return;}
         }
+        else if(user.ClassCastProfession==CaelumConstants.PROFESSION_PILGRIM)
+            CaelumRedemption.Release(user);
         user.ClassSleepCooldownRemaining=REUSE_SECONDS;
         user.PersistCharacterState();
     }

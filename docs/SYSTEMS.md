@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.18** — 2026-10-15.
+Documentation version: **5.4.19** — 2026-10-15.
+
+## Pilgrim Redemption - 5.4.19 / #250
+
+Redencion replaces Amparo. Reuse the approved shared User4 preparation, payment,
+cancellation and reuse. The mobile area follows the caster and requires direct
+sight, like Rally. Base reach remains 40 m with Eloquence; the shared beneficial
+potency/duration rules apply. Resurrection runs immediately on release, then once
+per second. Each body can revive only once per cast; recasting is a new cast.
+
+All existing corpses are eligible regardless of species, faction or story role,
+including neutrals, players and unique/boss actors. Restore 100% of current maximum
+Health, Anima, Air and Lucidity; remove negative statuses. Preserve the original
+body/character and finite inventory. If the full body cannot fit, search for nearby
+visible fitting ground within the area; do not overlap or telefrag.
+
+Former enemies become allies until the responsible effect ends, even after leaving
+the area. They then die again. Original allies and neutrals remain alive. The
+caster and living allies not revived by that cast receive x4 final fixed Toughness
+reduction, scaled by Empathy as a full factor. This benefit requires current area
+membership and sight; use only the strongest overlapping area. Recasting uses new
+potency and the greater of remaining/new duration, without stacking factors.
+
+Caster death ends the area and kills its temporary former enemies. Their bodies
+accompany the caster between maps with Health, reserves and remaining lifetime;
+long journeys consume elapsed duration. Do not duplicate original loot, death
+rewards (including Adrenaline) or story/quest progression when revived bodies die.
+
+Former enemies follow the caster while idle; their attacks protect the caster
+and allies. Ignore an old player corpse once that player has respawned in another
+body; the currently dead pawn can revive. If no valid nearby full-size placement
+exists, leave that corpse for the next pulse. Corpses already removed by the engine
+are not reconstructed from a new template. Preserve beneficial inverted periodic
+doses while clearing harmful ones. Existing effects that end with their caster
+still end if that caster is revived in the same tic.
+
+Revision-1 inventories retain per-cast bodies, original allegiance, conversion
+ownership, remaining duration and the no-repeat-death-reward latch. Previous saves
+start without these inventories; no character reconstruction or payment migration
+is needed. Active effects and preparation reload in 5.4.19, including pending
+arrival. Neutral copied saves roundtrip with 5.4.18; active Redemption saves are
+not claimed to load in unsupported older runtimes. Keep the original snapshot for
+rollback. Focused native/static/build evidence: validation_5419. CA250-01 author
+acceptance remains pending; broad campaign/network coverage is not implied.
 
 ## Battle Mage Summoning - 5.4.18 / #249
 
@@ -7359,7 +7402,7 @@ status were added in V4.35; character thermal exposure is implemented in
 
 This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
 V5.4 sections and issue-specific author revisions supersede historical rules.
-The Warrior, Explorer, Priest and Mage rows below reflect #243/#244/#245/#246; pending class replacements retain their
+Delivered class rows below reflect their focused V5.4 revisions, including #250; pending class replacements retain their
 separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
@@ -7381,11 +7424,11 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Mercenary | Formation Breaker (Rompeformaciones) | Forward ground double tap: upright running x4 for 1 s, collision cushioning/final Toughness reduction x10; Empathy scales full factors and durations. No impulse Air fee; normal running drain remains. |
 | Cleric | Rally | Restores 10% current maximum Adrenaline per second to the caster and visible allies; their current bars multiply outgoing and divide incoming final damage. Empathy scales full factors/recovery/duration. See 5.4.17 above. |
 | Battle Mage | Summoning | One allied Zupay at aimed/nearby valid ground. Empathy scales its base attributes and duration; follows across maps, disappears on death/expiry. See the 5.4.18 contract above. |
-| Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |
+| Pilgrim | Redemption (Redención) | Moving visible area revives corpses immediately and each second. Former enemies serve until expiry; original allies remain. Living allies not raised by that cast gain x4 final fixed Toughness reduction, scaled by Empathy. See 5.4.19 above. |
 | Investigator | Levitation | Allows flight for approximately 10 seconds. |
 | Arcanist | Sleep | Targets remain motionless and wake when hit. |
 
-Protection replaces Bless Food. It does not grant healing, food, drink or reduction of
+Historical, superseded by #250: Protection replaced Bless Food. It did not grant healing, food, drink or reduction of
 combat damage. Classification depends on the origin of the damage: an environmental
 flame is reduced; a fire spell in combat retains its damage. The system of dangers must
 retain that origin, including persistent effects; it is not enough to deduce

@@ -88,7 +88,7 @@ class CaelumActorProjectile : Actor
     // Campos cosméticos: cero en saves anteriores; no alteran el vuelo guardado.
     int CaelumVFXAge,CaelumVFXRevision;
     bool CaelumVFXImpactShown;
-    // Sólo los disparos de #249 guardan esta política, aun si el Zupay expira.
+    // #249/#250 conservan la protección aliada aunque expire su invocación/conversión.
     bool CaelumSummonShot;
     CaelumPlayer CaelumSummonOwner;
 
@@ -142,6 +142,8 @@ class CaelumActorProjectile : Actor
             CaelumSummonShot=true;
             CaelumSummonOwner=CaelumPlayer(summoned.master);
         }
+        let commander=CaelumRedemption.Commander(Target);
+        if(commander!=null){CaelumSummonShot=true;CaelumSummonOwner=commander;}
         CaelumPreparedDamage = Max(0, preparedDamage);
         CaelumAttackAccuracySucceeded = accuracySucceeded;
         CaelumCriticalHit = criticalHit;

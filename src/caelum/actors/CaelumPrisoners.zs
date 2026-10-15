@@ -48,7 +48,7 @@ class CaelumPrisonerUnitario : CaelumCaella
     Death:
         PUNL G 5 A_Scream;
         PUNL H 5;
-        PUNL I 5 A_NoBlocking;
+        PUNL I 5 A_CaelumNoBlocking;
         PUNL JK 5;
         PUNL L -1;
         Stop;
@@ -124,7 +124,7 @@ class CaelumPrisonerFederal : CaelumRonnie
     Death:
         PFEL G 5 A_Scream;
         PFEL H 5;
-        PFEL I 5 A_NoBlocking;
+        PFEL I 5 A_CaelumNoBlocking;
         PFEL JK 5;
         PFEL L -1;
         Stop;
@@ -200,7 +200,7 @@ class CaelumPrisonerBestia : CaelumRulo
     Death:
         PBEL G 5 A_Scream;
         PBEL H 5;
-        PBEL I 5 A_NoBlocking;
+        PBEL I 5 A_CaelumNoBlocking;
         PBEL JK 5;
         PBEL L -1;
         Stop;
@@ -276,7 +276,7 @@ class CaelumPrisonerTarot : CaelumArgento
     Death:
         PTEL G 5 A_Scream;
         PTEL H 5;
-        PTEL I 5 A_NoBlocking;
+        PTEL I 5 A_CaelumNoBlocking;
         PTEL JK 5;
         PTEL L -1;
         Stop;
