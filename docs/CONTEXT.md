@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.7** — 2026-10-14.
+Documentation version: **5.4.8** — 2026-10-14.
+
+**5.4.8/#240:** Socialization accepted; CA240-01 passed 2026-10-14. validation_548.
 
 **5.4.7/#241:** Telekinesis accepted; CA241-01 passed 2026-10-14. validation_547.
 

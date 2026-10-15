@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.7** — 2026-10-14.
+Documentation version: **5.4.8** — 2026-10-14.
+
+## Socialization - 5.4.8 / #240
+
+Human User1 toggles Socialization. It multiplies current Dialogue skill and
+Persuasion capacity by two, then applies the existing thresholds, probability
+rounding and caps. Underlying Eloquence/Charisma and saved results are unchanged.
+Rulo's Emotion and faction reputation receive no bonus. Palomo's existing
+Dialogue-based discount request uses the boosted skill; no separate shop-price
+or discount modifier is added. Ronnie's Eloquence-4 Dialogue 0.928 becomes 1.856;
+Caella's Charisma-0 difficulty-120 chance becomes 100% instead of 83%.
+
+The shared racial controller charges 10 Anima/second before normal cost reduction,
+uniformly per simulation tic, including native unpaused conversation. No upfront
+fee, duration cap or cooldown applies. A sub-second reserve may start the effect;
+an unaffordable next tic switches it off without spending the remaining fraction.
+Sleep, stun, immobilization, death or identity changes end the effect. Native hub
+travel retains an otherwise valid effect and does not reset Anima.
+
+During conversation, the rebound User1 key can stop this effect without selecting
+a reply or activating another power. Each displayed native node/option page
+captures its multiplier in authoritative play state before drawing or accepting
+a reply. Already visited pages retain that multiplier until the conversation
+ends, including after manual stop or exhaustion. New pages use the current live
+effect. No client-supplied skill value is trusted. The existing history/replay
+flow, saved roll, probability, automatic-success rules and no-reroll guard remain.
+
+Conversation snapshots have schema revision 1, speaker identity and page keys.
+Old saves start with a null session; current saves restore the page multiplier
+and active/stopped effect without replaying actions. Closing the conversation
+clears its session. The optional isolated 5.4.7 rollback bridge ends an unsupported
+effect while retaining spent Anima; preserve original saves. Exact evidence and
+limitations: assets/validation_548. CA240-01 passed author review on 2026-10-14.
 
 ## Telekinesis - 5.4.7 / #241
 

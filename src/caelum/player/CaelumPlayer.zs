@@ -424,6 +424,7 @@ class CaelumPlayer : DoomPlayer
     bool JournalMainM00MagicPracticeDone[5];
     int MainM00SocialChanceSnapshot[CaelumConstants.MAIN_M00_RESIDENT_COUNT];
     double MainM00LabiaSnapshot;
+    CaelumSocialSession SocialSession;
     // Se rearma únicamente tras cerrar toda interacción folclórica y soltar
     // físicamente Use. Evita que Q cierre y reabra a Palomo en el mismo pulso.
     bool FolkloreInteractionUseLatched;
@@ -1084,12 +1085,7 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshPalomoDiscountOdds()
     {
-        double dialogueSkill = Attributes == null ? 0.0
-            : CaelumGrowthRules.Bonus(Attributes.Eloquence);
-        if (DerivedStats != null)
-        {
-            dialogueSkill = DerivedStats.DialogueSkillPercent;
-        }
+        double dialogueSkill = CaelumSocialization.Dialogue(self);
         PalomoDiscountAutomaticSuccess = dialogueSkill
             >= CaelumConstants.PALOMO_DIALOGUE_DIFFICULTY;
         PalomoDiscountChancePercent = PalomoDiscountAutomaticSuccess ? 100
@@ -1304,6 +1300,7 @@ class CaelumPlayer : DoomPlayer
         if (conversationId == CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID)
             conversationId = CaelumMainM00Loadout.CONVERSATION;
         CaelumMainM00Loadout.Refresh(self);
+        CaelumSocialization.Clear(self);
         SyncPalomoDialogueTokens();
         CaelumMainM00RonnieTrial.Sync(self);
         CaelumDemoNarrative.Sync(self);
@@ -8858,6 +8855,7 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         CaelumCharacterIdentity.Ensure(self);
+        CaelumSocialization.Update(self);
         CaelumRacialAbilityRules.Guard(self);
         CaelumDamageFeedback.EnsureRevision(self);
         CaelumBreathing.UpdateSound(self);
@@ -11165,6 +11163,7 @@ class CaelumPlayer : DoomPlayer
     {
         if(race==CaelumConstants.RACE_CAELITH)return new("CaelumSupernaturalBreathingEffect");
         if(race==CaelumConstants.RACE_GOBLIN)return new("CaelumTelekinesisEffect");
+        if(race==CaelumConstants.RACE_HUMAN)return new("CaelumSocializationEffect");
         return null;
     }
 

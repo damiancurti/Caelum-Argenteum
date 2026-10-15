@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.7** — 2026-10-14.
+Documentation version: **5.4.8** — 2026-10-14.
+
+## 5.4.8 - Socialization (#240)
+
+Implemented current Dialogue/Persuasion multipliers, continuous payment and
+authoritative visible-page snapshots. Actual native Ronnie/Caella responses,
+manual stop/exhaustion, active/stopped saves, hub travel and compatibility checks
+are recorded in assets/validation_548. CA240-01 passed on 2026-10-14; HISTORY and
+acceptance.json record the author's confirmation. Keep #239 and the remaining
+class powers in their own branches, tests, commits and PRs; #282 follows the batch.
 
 ## 5.4.7 - Telekinesis (#241)
 

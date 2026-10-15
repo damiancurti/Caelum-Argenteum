@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.7** — 2026-10-14.
+Documentation version: **5.4.8** — 2026-10-14.
+
+## 5.4.8 - Human Socialization (#240)
+
+The Human User1 toggle doubles current Dialogue skill and Persuasion before
+their existing limits, without changing saved attributes. Native dialogue keeps
+paying 10 Anima/second before modifiers. Manual stop and exhaustion preserve
+the multiplier of already displayed choices; new pages use the current effect.
+Saved results cannot reroll. The shared racial controller handles interruption,
+identity, payment and HUD state. Native input/checks, dialogue, persistence and
+specific rollback evidence are in assets/validation_548. CA240-01 passed author
+review on 2026-10-14. Its focused PR stacks on #241; other powers remain separate.
 
 ## 5.4.7 - Duende Telekinesis (#241)
 

@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.7** — 2026-10-14.
+Documentation version: **5.4.8** — 2026-10-14.
+
+## 5.4.8 - Socialization (#240, 2026-10-14)
+
+Human User1 now creates its concrete continuous racial effect: 10 Anima/second
+before modifiers, no duration cap/cooldown, current Dialogue/Persuasion times two
+before existing limits. Native unpaused dialogue keeps paying. A revisioned,
+speaker-bound session records each displayed page's multiplier in play state;
+manual stop/exhaustion preserve displayed choices while new pages use live values.
+Saved attributes, Emotion, reputation, quest results and no-reroll behavior remain.
+
+Native evidence includes 19 lifecycle/statistics checks, actual Ronnie/Caella
+USDF choices, stopped and active saves, new-page timing and native hub travel.
+Old-save upgrade and a specific reversible 5.4.7 bridge are documented in
+assets/validation_548/RESULTS.md and evidence.json. Initial fixture errors involved
+UI/play scope, static-handler lookup, resident prerequisites and deferred actor
+PostBeginPlay; their failed runs remain preserved and are not counted as passing.
+
+On 2026-10-14 the author confirmed CA240-01 (origin 5.4.8 / #240):
+"La prueba dio correcto." The offered isolated Ronnie/Caella scenario displayed
+live Anima, the retained Dialogue multiplier and reset/exhaustion controls. The
+native session exited normally (0). acceptance.json records its exact hashes.
+The confirmation arrived before adding an outstanding queue entry, so
+pending_test.txt remains empty. It does not imply campaign-wide/multiplayer
+acceptance, merge or issue closure.
 
 ## 5.4.7 - Telekinesis (#241, 2026-10-14)
 

@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.7.** Obtain and update the complete repository, validate
+**Current release: 5.4.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.8 implements [#240](https://github.com/damiancurti/Caelum-Argenteum/issues/240):
+Human Socialization doubles current Dialogue skill and Persuasion, preserving
+existing limits. User1 toggles it; the base drain is 10 Anima/second even during
+conversation. Displayed choices retain their multiplier after stopping; resolved
+checks never reroll. CA240-01 passed author review on 2026-10-14.
+[Evidence](assets/validation_548/RESULTS.md). This focused PR stacks on #241.
 
 5.4.7 implements [#241](https://github.com/damiancurti/Caelum-Argenteum/issues/241):
 Duende Telekinesis holds one living body or movable scenery object with User1.
@@ -16,7 +23,7 @@ The target follows the aim at its captured distance, cannot act, and retains
 native gravity/collision. A second press, lost sight/range or exhaustion releases
 it. CA241-01 passed author review on 2026-10-14:
 [validation_547](assets/validation_547/RESULTS.md).
-This focused branch stacks on the accepted #242 branch; its PR contains only #241.
+The #241 PR stacks on the accepted #242 branch and contains only #241.
 
 5.4.6 implements [#242](https://github.com/damiancurti/Caelum-Argenteum/issues/242):
 Caelith Supernatural Breathing substitutes every Air expenditure with Anima at
