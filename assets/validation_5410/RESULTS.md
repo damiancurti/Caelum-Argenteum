@@ -77,12 +77,16 @@ This evidence does not claim compatibility with every historical release.
 
 ## Author check
 
-CA243-01 remains in root pending_test.txt. `launch.ps1` opens the isolated game.
+CA243-01 passed on 2026-10-15: "La prueba dio correcto." The offered run exited
+with code 0; acceptance.json records exact hashes and qualifications. The confirmed
+entry was removed from pending_test.txt; HISTORY preserves its originating version
+and issue. PR289 is ready; no merge or issue closure. `launch.ps1` opens the isolated game.
 F casts/cancels, F6 resets, F7 intimidates the player for ten seconds, F8 switches
 gauntlets/staff, F9 cycles Mandinga/rat/Bull/Zupay, and B blocks with gauntlets.
 The overlay shows preparation, resource, reuse and both intimidation clocks.
 The fixture fixes 40 m/10 s/1000 Anima, disables regeneration, makes the player
 invulnerable and creature immortal, and replenishes NPC resources. These are
-test settings, not production balance. No physical author acceptance is claimed.
+test settings, not production balance. The author confirmed the offered scenario;
+no itemized or campaign/multiplayer result is inferred.
 Automatic policy previously rejected persistent PowerShell `-NoExit`; the direct
 reviewed launcher can open the game without creating a separate persistent terminal.

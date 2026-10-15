@@ -14,8 +14,7 @@ Warrior Battle Cry stops every attack by enemies visible within its area when
 the shared three-second preparation completes. Movement and defense remain;
 already released projectiles and applied periodic damage continue. Duration and
 radius use the approved social scaling. Native evidence and save compatibility:
-[validation_5410](assets/validation_5410/RESULTS.md). CA243-01 awaits author review
-in `pending_test.txt`. This focused PR stacks on accepted #239.
+[validation_5410](assets/validation_5410/RESULTS.md). CA243-01 passed author review on 2026-10-15. PR289 stacks on accepted #239.
 
 5.4.9 implements [#239](https://github.com/damiancurti/Caelum-Argenteum/issues/239):
 Beast Man Hunter's Instinct triples current stealth and rear critical chance,

@@ -21,8 +21,12 @@ social scaling, overlapping effects, save/load during preparation/effect, expiry
 hub travel and caster death. assets/validation_5410 records exact builds, runs,
 qualifications, failed fixture iterations and the optional copied-save 5.4.9 bridge.
 These are isolated GZDoom 4.14.2 results, not campaign or multiplayer acceptance.
-CA243-01 (origin 5.4.10 / #243) awaits the author; no acceptance is claimed.
-The patch stacks on accepted #239. No merge or issue closure is authorized here.
+CA243-01 (origin 5.4.10 / #243) passed on 2026-10-15: the author confirmed
+"La prueba dio correcto." The offered isolated scenario exited normally (0);
+assets/validation_5410/acceptance.json records the exact runtime/fixture hashes.
+This is scenario acceptance, not an itemized claim or campaign/multiplayer result.
+The confirmed pending entry was removed. PR289 is ready, stacked on accepted #239;
+no merge or issue closure. Acceptance does not increment the same patch version.
 
 ## 5.4.9 - Hunter's Instinct (#239, 2026-10-15)
 

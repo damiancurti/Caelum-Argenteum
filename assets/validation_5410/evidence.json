@@ -980,7 +980,7 @@
     "issue243-v7/siege-01: preview overlay called play method from UI",
     "issue243-v8/preview-01: preview mixed Name/string types"
   ],
-  "author_acceptance": "Pending CA243-01; no physical-input acceptance claimed.",
+  "author_acceptance": "CA243-01 passed 2026-10-15; see acceptance.json. No itemized, campaign or multiplayer claim.",
   "static": {
     "command": "python validate_project.py",
     "exit_code": 0,

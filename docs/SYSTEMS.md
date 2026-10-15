@@ -33,7 +33,7 @@ supported hub travel, and expires on its own clock without caster ownership.
 Old saves have no new effect to invent. The optional 5.4.9 rollback bridge operates
 on copies, removes unsupported effects/casts and retains spent Anima; preserve
 original saves for reversal. Scope and exact evidence: assets/validation_5410.
-CA243-01 remains an outstanding author check, not implied by automated results.
+CA243-01 passed explicit author review on 2026-10-15; HISTORY records the result.
 
 ## Hunter's Instinct - 5.4.9 / #239
 

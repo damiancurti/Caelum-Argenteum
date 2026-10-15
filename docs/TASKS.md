@@ -7,9 +7,9 @@ Documentation version: **5.4.10** — 2026-10-15.
 Implemented the shared Warrior cast, release-time enemy/sight selection, attack
 gates, continuous-attack interruption and siege staffing distinction. Native
 weapon, NPC, movement/defense, projectile/DOT, save/hub and compatibility evidence
-lives in assets/validation_5410. CA243-01 in pending_test.txt awaits author review.
-Keep the focused PR based on accepted #239; do not merge or close it as a proxy
-for manual acceptance. Remaining class issues and then #282 stay separate.
+lives in assets/validation_5410. CA243-01 passed author review on 2026-10-15;
+HISTORY and acceptance.json preserve the confirmation. PR289 is ready for review,
+based on accepted #239. Remaining class issues and then #282 stay separate.
 
 ## 5.4.9 - Hunter's Instinct (#239)
 

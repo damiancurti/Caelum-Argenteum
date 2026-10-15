@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.10** — 2026-10-15.
 
-**5.4.10/#243:** Grito attack gates implemented; CA243-01 pending. validation_5410.
+**5.4.10/#243:** CA243-01 accepted 2026-10-15. validation_5410.
 
 **5.4.9/#239:** CA239-01 accepted 2026-10-15. validation_549.
 
