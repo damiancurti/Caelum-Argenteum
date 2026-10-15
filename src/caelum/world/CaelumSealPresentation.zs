@@ -36,6 +36,13 @@ class CaelumChannelSealMark : Actor
         // La pequeña separación evita parpadeo por coplanaridad con el piso.
         SetOrigin(ground+(0,0,0.5),false);
         Angle=user.Angle;Pitch=Roll=0;
+        // GZDoom ordena los sprites con alfa por profundidad XY y, al empatar,
+        // por creación. El sello nace después del cuerpo y puede tapar sus
+        // piernas aunque esté en el suelo. Romper sólo el empate de dibujo
+        // hacia el fondo conserva posición física, escala y transparencia.
+        let camera=players[consoleplayer].camera;
+        vector2 depth=AngleToVector(camera!=null?camera.Angle:user.Angle,0.5);
+        WorldOffset=(depth.X,depth.Y,0);
     }
     override void Tick(){UpdateMark();}
     Default {+NOINTERACTION +NOGRAVITY +FLATSPRITE}

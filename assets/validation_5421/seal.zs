@@ -396,6 +396,7 @@ class CA252Probe : StaticEventHandler
         else if(e.Name=="c252_next")NextSeal();
         else if(e.Name=="c252_overview")User.Pitch=0;
         else if(e.Name=="c252_groundview")User.Pitch=35;
+        else if(e.Name=="c252_turn")User.Angle+=90;
         else if(e.Name=="c252_interruptions")Interruptions();
         else if(e.Name=="c252_performance")Performance();
         else if(e.Name=="c252_upgrade")

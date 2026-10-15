@@ -83,6 +83,11 @@ def main():
         gallery+='chase_dist 160; chase_height 0; netevent c252_groundview; wait 20; screenshot seal-'+element+'-ground.png; wait 2; '
         gallery+='chase_dist 850; chase_height 260; netevent c252_overview; wait 20; '
     scripts['gallery.cfg']=gallery+'netevent c252_done; wait 35; quit\n'
+    depth=manual+'wait 100; chase_dist 160; chase_height 0; netevent c252_groundview; +user2; wait 15; -user2; wait 35; '
+    for angle in [0,90,180,270]:
+        depth+='screenshot depth-'+str(angle)+'-ground.png; wait 2; netevent c252_overview; wait 20; '
+        depth+='screenshot depth-'+str(angle)+'-level.png; wait 2; netevent c252_groundview; netevent c252_turn; wait 20; '
+    scripts['depth.cfg']=depth+done
     scripts['weather-fixed.cfg']=manual+'wait 100; netevent ca_debug_weather_report; +user2; wait 40; -user2; wait 2; netevent ca_debug_weather_report; +user2; wait 2; -user2; wait 1; netevent ca_debug_weather_report; '+done
     scripts['input.cfg']=start+'wait 100; +user2; wait 32; -user2; netevent c252_early; wait 4; netevent c252_first; wait 35; netevent c252_second; wait 35; netevent c252_third; +user2; wait 2; -user2; netevent c252_stopped; '+done
     for name,code in scripts.items():(out/name).write_text(code,encoding='utf-8',newline='\n')

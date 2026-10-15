@@ -13,8 +13,10 @@ icons. No bitmap, model or audio source is replaced and no Doom asset is added t
 the runtime. The Earth visual quake uses the native silent shake-only API; its
 damage and force come solely from the authored gameplay calculation. The final
 native chasecam capture was visually inspected; all five emblems and camera
-restoration pass focused native checks in validation_5421. CA252-01 author review
-is pending. Fixture maps/IWADs remain local and are not distributed.
+restoration pass focused native checks in validation_5421. CA252-01 passed author
+review on 2026-10-15. A 0.5-unit cosmetic WorldOffset along the camera depth axis
+resolves transparent-sprite depth ties so the emblem draws behind the body; its
+physical ground origin and artwork are unchanged. Fixture maps/IWADs remain local and are not distributed.
 
 The author's visual correction registers Water/Air frames explicitly, removing
 the invalid dynamic sprite lookup that displayed a face. A downward native trace

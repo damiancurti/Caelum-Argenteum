@@ -6,12 +6,37 @@ Implementation branch: `feat/issue252-seal-climate-extensions`.
 
 Original gameplay validation passed 233 assertions across 20 qualified native
 runs. The author's visual feedback prompted the revision below, which passes
-142 assertions across nine additional qualified native runs. CA252-01 remains
-pending; no author acceptance, merge or closure is claimed.
+142 assertions across nine additional qualified native runs. The final depth
+correction adds 88 assertions across four runs. CA252-01 passed author review
+on 2026-10-15; no merge or closure is claimed.
 Gameplay: `3a8bba88`. Separate presentation change: `26a00596`.
 `prepare.py` freezes normal source bytes and deterministic isolated fixtures;
 `run_native.ps1` runs one engine at a time, hidden, unpaused, with 5% sound.
 Fixtures, IWADs, engines and generated saves stay local under `build/`.
+
+## Final depth correction and author acceptance
+
+The author approved the other behavior but reported the emblem covering the
+character. Ground tracing was correct; GZDoom 4.14.2's transparent-sprite sort
+uses XY depth, with SpawnOrder breaking ties. A 0.5-unit cosmetic WorldOffset
+away along the local camera yaw draws the emblem behind the body. No physical
+origin, scale, texture or gameplay effect changes. CA-KP-073 records the lesson.
+
+`depth_evidence.json` records the final runtime, package/source parity and static
+validation. `issue252-depth-01/gallery` captures all five emblems and orbs.
+`issue252-depth-02` passes presentation (80 assertions), pre-correction save load
+(8), and a rendered depth sequence (four yaw positions, level/downward chase
+views). All four runs exit zero. Runtime SHA-256:
+`cf8bce350bad8846f388e01f10d3799535f782f7b084c164670176f418decec8`.
+Final fixture SHA-256:
+`3901c64698addde1280497e3940c2a8deef3a7eb414dc341e1dd4e225040887b`.
+These ordinary chase captures do not establish portal/mirror/multiplayer views.
+Unchanged climate evidence below retains its original runtime identity.
+
+CA252-01 (origin 5.4.21 / #252) passed on 2026-10-15. After reporting that the
+rest was correct, the author confirmed the depth correction: "Ahora si la prueba
+dio correcto, queda aprobada." Its pending entry is removed. No new interactive
+session was opened after that confirmation. PR299 is ready for review.
 
 ## Revised presentation after author feedback
 
@@ -68,7 +93,7 @@ The first `visual-05/save` wrote its save but exited before the completion event
 The revised author scene uses F to channel/stop, F6 for the next Seal, F7 for a
 wide orb view, F8 for a close ground view, and J for Journal/Climate. Its wide
 camera values are test-only; production chasecam settings are unchanged. CA252-01
-remains the single pending author check, including the earlier climate steps.
+was subsequently accepted, including the earlier climate steps.
 
 Native probes cover the numerical accumulation sequences, weather/thermal
 agreement and removal, native and actor-built walls/floors, armor bypass with

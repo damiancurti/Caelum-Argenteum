@@ -14,9 +14,9 @@ local accumulating Seal climate, grounded earthquake force/damage, temporary
 Quintessence gravity, and a third-person channel view with the Seal at the feet.
 The revised presentation projects all five registered emblems onto the ground
 and adds a cosmetic elemental orb above the head, matching Arcane Sun's size.
-Original gameplay validation passed 233 assertions; focused revision evidence
-and outstanding author check CA252-01 are recorded with the current
-evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
+Original gameplay validation passed 233 assertions; visual revisions add 230
+assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15.
+PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
 reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal

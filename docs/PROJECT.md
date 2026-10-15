@@ -12,15 +12,18 @@ SYSTEMS. Channeling adds native chasecam and a double-trap-size emblem at the fe
 Implementation starts at integration/v54-accepted-251-238 (a3b305b6); no unrelated
 issue is included. Static validation, packaging and 233 assertions across 20
 qualified native runs pass, including old-save migration and map travel. Evidence
-and limitations: validation_5421. CA252-01 remains pending author review; the
-delivery remains a draft until that review. No merge/closure is claimed.
+and limitations: validation_5421. CA252-01 passed author review on 2026-10-15;
+PR299 is ready. No merge/closure is claimed.
 
 CA252-01 visual feedback requires the emblem on the ground and reports a face
 instead of Water's image. The correction explicitly registers Water/Air sprites,
 projects the mark onto ground and adds the requested cosmetic elemental sphere
 above the head, using Arcane Sun's size. Focused revision evidence is recorded
 in validation_5421: 142 assertions in nine native runs and ten inspected captures;
-the author check remains pending.
+the subsequent sprite-depth correction adds 88 assertions and four qualified
+runs. The author approved the corrected floor layering and the complete check.
+The remaining #237 audit precedes #282, then newly authorized #283 (Domingo 3D
+pilot) and #284 (Mandinga base attributes 33), each separately scoped.
 
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)

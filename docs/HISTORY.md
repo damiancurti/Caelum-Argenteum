@@ -3,7 +3,7 @@
 Documentation version: **5.4.21** — 2026-10-15.
 
 
-## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, author review pending)
+## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, accepted)
 
 The author confirmed growing Fire/Air/Water contributions, then explicitly kept
 Earth and Quintessence linear: at Intelligence 25, Earth pulse damage on 80 kg is
@@ -27,9 +27,8 @@ The author's second CrashReport matched a test startup launched before fixture
 preparation had finished: no level was active. The failed run/report are retained
 locally. The launcher now checks completed manifest, required files and package
 hashes; a prepared legacy seed and its current-runtime upgrade both pass.
-CA-KP-107 records the reusable lesson. CA252-01 (origin 5.4.21 / #252) remains
-pending author gameplay/visual review. No author acceptance, merge or closure
-is claimed by these automated results.
+CA-KP-107 records the reusable lesson. At this stage CA252-01 (origin 5.4.21 /
+#252) was pending; automated results alone did not establish author acceptance.
 
 The first CA252-01 review was not accepted: the author requested the drawing on
 the ground and reported that Water displayed a face. Water/Air existed in
@@ -45,8 +44,21 @@ The revision passes 142 assertions in nine native runs, static validation and
 normal packaging, including current saves, copied pre-orb saves and map travel.
 All ten final ground/orb captures were inspected. Original climate evidence is
 reused only for unchanged gameplay source; it is not relabeled as the new build.
-CA252-01 remains pending; this feedback does not imply acceptance of the other
-steps. The same patch retains version 5.4.21.
+The next author review approved the rest but found the mark drawing over the
+body. GZDoom sorts transparent sprites by XY depth then spawn order: equal XY
+made the later-created floor mark cover the legs despite its correct ground Z.
+A 0.5-unit cosmetic WorldOffset breaks that draw-order tie without changing
+physical placement. The final runtime passes 88 additional assertions across
+four qualified native runs, including pre-correction save loading, an all-Seal
+gallery and four yaw views at level/downward chase angles. See depth_evidence.json.
+On 2026-10-15 the author confirmed: "Ahora si la prueba dio correcto, queda
+aprobada." CA252-01 is accepted in full and its outstanding entry is removed.
+This records author confirmation after the rendered comparison; it does not
+claim a newly opened interactive session. PR299 is ready; no merge or closure
+is authorized. The same patch retains version 5.4.21.
+
+The author also assigned #283 (Domingo 3D pilot) and #284 (Mandinga attributes 33)
+after #282, retaining separate scope, commits, tests and PRs.
 
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)

@@ -797,6 +797,15 @@ calculating sprite depth. Evidence: assets/validation_5116/visual_followup,
 four cardinal views plus separate body/rear-only/combined native captures.
 This establishes ordinary-view occlusion, not author visual acceptance.
 
+Follow-up #252 / 5.4.21, 2026-10-15: a translucent floor Seal at the caster's
+XY sorted after the body despite a lower Z. hw_drawlist.cpp resolves equal XY
+depth using SpawnOrder. A 0.5-unit rearward cosmetic WorldOffset breaks the tie;
+do not raise/lower physical ground placement to repair this render ordering.
+validation_5421/depth_evidence.json records native presentation/save assertions
+and ordinary chase views at four yaw positions and two pitch settings. CA252-01
+was accepted by the author. Mirrors, portals and multiplayer cameras were not
+verified by these captures.
+
 ## CA-KP-072 - Observe loaded input state before the first simulation tick
 
 Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16, 2026-10-10.
@@ -2398,7 +2407,7 @@ lacked actor states. The author saw a face for Water. Append-only registration
 corrects these lookups; the revised native test requires each index to be
 nonnegative and checks the selected image, then captures all five ground marks.
 The earlier flat-flag/scale assertions did not establish image correctness.
-See assets/validation_5421/RESULTS.md; CA252-01 remains pending.
+See assets/validation_5421/RESULTS.md; CA252-01 was accepted on 2026-10-15.
 
 ## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
 
