@@ -21,6 +21,7 @@ Diagnostic failures were fixture evasion/stat initialization, native projectile
 damage randomness, explicit Actor casts in the manual UI and Windows save-path
 resolution; evidence preserves each failure and its successful correction.
 The screenshot waited for queued input before verifying the 300-to-200 hit.
+Implementation 4418e05a is committed/pushed; draft PR296 stacks on accepted PR295.
 CA248-01 is pending author acceptance. No campaign, multiplayer, performance,
 merge/closure or other-issue acceptance is claimed. Keep-awake remains released.
 

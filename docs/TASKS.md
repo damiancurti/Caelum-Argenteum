@@ -8,7 +8,7 @@ The author confirmed moving visible-allied area, current maxima, delayed first
 pulse, full-factor Empathy scaling, pre-hit bar snapshots, final outgoing/incoming
 damage scaling, strongest overlap, renewal and self-damage protection. Periodic
 effects apply Rally only once per damage event, not also to their stored dose.
-Implemented on feat/issue248-rally, based on accepted #247 / PR295. Static,
+Implemented on feat/issue248-rally, draft PR296 based on accepted #247 / PR295. Static,
 normal package and 74 qualified native assertions pass, including copied-save
 upgrade/rollback/return. CA248-01 is actionable in pending_test.txt; no acceptance
 or merge/closure is inferred.
