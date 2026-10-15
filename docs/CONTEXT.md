@@ -1,12 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.6** — 2026-10-14.
 
-**5.4.4/#238 WIP:** paid casting/Sleep rules pass native save/hub checks; CA238-01 passed 2026-10-14.
-CA238-02 passed. Racial controller tested; effects/rollback open. validation_544. Then #282.
-#254: validation_543/PR275; CA254-01 passed 2026-10-14. #261: CA261-01 passed 2026-10-14/PR274 ready. #259: CA259-01 passed 2026-10-14/PR273.
-#237: validation_540/PR272.
-**#231-236/#255-258:** accepted/merged/closed; HISTORY.
+**5.4.6/#242:** Supernatural Breathing engine-tested; CA242-01 pending. validation_546.
+**5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.
+#254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
+After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

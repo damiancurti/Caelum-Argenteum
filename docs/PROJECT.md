@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.6** — 2026-10-14.
+
+## 5.4.6 - Caelith Supernatural Breathing (#242)
+
+The Caelith User1 toggle routes all actual player Air demands through a common
+payment service. Anima pays 1:1 after ordinary Air modifiers and then its own cost
+reduction. There is no fixed drain. Insufficient Anima switches back to ordinary
+Air for the complete effort without consuming the remainder. Native immersion
+uses the same demand and does not create Air-recovery debt for Anima payments.
+The creator describes the implemented bilingual power; the shared HUD/controller
+and saved identity remain authoritative. Evidence: assets/validation_546.
+Author acceptance is pending. The focused branch stacks on #238; release 5.4.5
+remains allocated to the separate #251 cloud artwork branch.
 
 ## 5.4.4 - Shared class casting checkpoint (#238, in progress)
 

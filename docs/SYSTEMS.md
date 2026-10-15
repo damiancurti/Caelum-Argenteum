@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.6** — 2026-10-14.
+
+## Supernatural Breathing - 5.4.6 / #242
+
+The Caelith User1 power is **Supernatural Breathing / Respiraci?n sobrenatural**.
+The shared racial controller supplies toggling, interruption, saved identity and
+active/inactive HUD state. There is no fixed Anima drain or cooldown. Existing
+forced sleep, stun, immobilization and death rules turn it off.
+
+Every ordinary player Air expenditure is substituted: running, jumping, physical
+melee/ranged attacks, fists, javelin/bolas throws, blocking and oxygen deprivation.
+First calculate the ordinary Air demand with its existing load, charge, heat and
+other modifiers; multiply by 1 Anima per Air point, then apply the current Anima
+cost reduction once. A zero Air reserve does not make an effort free or prevent
+an otherwise affordable substituted effort. Existing Air-dependent performance,
+thermal effects and ordinary resource recovery remain tied to actual reserves.
+
+If the complete effort is unaffordable, turn the power off without consuming the
+remaining Anima and run the ordinary Air rule for that entire effort. Attacks
+still refuse an unaffordable Air cost; continuous exhaustion/deprivation follows
+its existing empty-reserve behavior. Exact payment to zero ends the power after
+paying that effort. Admission and personal-time simulation use #238's controller.
+
+Underwater deprivation keeps its existing increasing demand. Paid Anima prevents
+that tic's drowning without adding Air recovery debt; on failure only actual Air
+loss becomes debt. Once ordinary Air is exhausted, ordinary drowning resumes.
+Surfacing therefore cannot turn Anima expenditure into free Air. Native hub
+transitions preserve the effect; numerical journey forecasts retain #238's
+unsupported-active-effect restriction. Revision-1 racial state remains authoritative;
+older saves default inactive and no new resource reserve is introduced.
+
+Native evidence and remaining author checks: assets/validation_546.
 
 ## Class preparation and revised Sleep (#238, in progress)
 

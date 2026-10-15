@@ -9427,7 +9427,7 @@ class CaelumPlayer : DoomPlayer
         if(sweep)cost*=CaelumConstants.LARGE_SWEEP_AIR_MULTIPLIER;
         if(WeaponChargedStateActive && !ranged)cost*=CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         cost*=CaelumThermalEffects.HeatCost(self);
-        if(CurrentAir<cost)return false;
+        if(!CaelumAirPayment.CanAfford(self,cost))return false;
         if(ranged)
         {
             // El disparo y su retroceso siguen comenzando juntos.
@@ -9840,7 +9840,7 @@ class CaelumPlayer : DoomPlayer
             airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
         airCost*=CaelumThermalEffects.HeatCost(self);
-        if (CurrentAir < airCost) { return; }
+        if (!CaelumAirPayment.CanAfford(self,airCost)) { return; }
 
         UpdateLucidityAccuracyEffects();
         UpdateCrouchEffects();
@@ -9983,7 +9983,7 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumThermalEffects.RecordWeaponAction(self,CaelumConstants.WEAPON_TYPE_JAVELIN,true,chargedAttack);
-        CurrentAir = Max(0.0, CurrentAir - airCost);
+        CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
             / double(TICRATE);
@@ -10334,7 +10334,7 @@ class CaelumPlayer : DoomPlayer
         )
             * DerivedStats.AirConsumptionMultiplier;
         airCost*=CaelumThermalEffects.HeatCost(self);
-        LastCarbineHadEnoughAir = CurrentAir >= airCost;
+        LastCarbineHadEnoughAir = CaelumAirPayment.CanAfford(self,airCost);
         if (!LastCarbineHadEnoughAir) { return; }
 
         UpdateLucidityAccuracyEffects();
@@ -10411,7 +10411,7 @@ class CaelumPlayer : DoomPlayer
         if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
             CaelumThermalEffects.RecordFirearmShot(self);
         else CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType);
-        CurrentAir = Max(0.0, CurrentAir - airCost);
+        CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
         if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
@@ -10830,7 +10830,7 @@ class CaelumPlayer : DoomPlayer
         double finalCostPerSecond = CaelumConstants.RUN_AIR_COST_PER_SECOND
             * DerivedStats.AirConsumptionMultiplier;
         double previousAir = CurrentAir;
-        CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
+        CaelumAirPayment.Spend(self,finalCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
         CaelumMainM00RonnieTrial.RecordAirLesson(self, previousAir - CurrentAir, true);
         UpdateAirStateEffects();
     }
@@ -10850,7 +10850,7 @@ class CaelumPlayer : DoomPlayer
             && !CaelumClassCastView.Active(self)
             && !IsPhysicallyImmobilized()
             && HasActiveBlockSource()
-            && CurrentAir > 0.0;
+            && CaelumAirPayment.HasSupply(self);
     }
 
     bool IsGiantGauntletsBlockSource()
@@ -11157,7 +11157,10 @@ class CaelumPlayer : DoomPlayer
 
     // Los efectos se incorporan por separado; no activar bonificaciones ficticias.
     virtual CaelumRacialAbilityEffect CreateRacialAbilityEffect(int race)
-    { return null; }
+    {
+        if(race==CaelumConstants.RACE_CAELITH)return new("CaelumSupernaturalBreathingEffect");
+        return null;
+    }
 
     void ReserveRacialAbilityInput()
     {
@@ -11205,13 +11208,13 @@ class CaelumPlayer : DoomPlayer
     {
         UpdateShieldAirCost();
         if (!DebugShieldBlocking || !HasActiveBlockSource()) { return; }
-        if (CurrentAir <= 0.0)
+        if (!CaelumAirPayment.HasSupply(self))
         {
             CancelCombatBlockMode();
             return;
         }
-        CurrentAir = Max(0.0, CurrentAir - CurrentShieldAirCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
-        if (CurrentAir <= 0.0) { CancelCombatBlockMode(); }
+        CaelumAirPayment.Spend(self,CurrentShieldAirCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
+        if (!CaelumAirPayment.HasSupply(self)) { CancelCombatBlockMode(); }
         UpdateAirStateEffects();
     }
 
@@ -11516,7 +11519,7 @@ class CaelumPlayer : DoomPlayer
 
         double finalCost = CaelumConstants.DEBUG_AIR_ACTION_COST
             * DerivedStats.AirConsumptionMultiplier;
-        CurrentAir = Max(0.0, CurrentAir - finalCost * CaelumThermalEffects.HeatCost(self));
+        CaelumAirPayment.Spend(self,finalCost * CaelumThermalEffects.HeatCost(self));
         UpdateAirStateEffects();
     }
 
@@ -11792,7 +11795,7 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
         LastMeleeAirCost*=CaelumThermalEffects.HeatCost(self);
-        if (CurrentAir < LastMeleeAirCost)
+        if (!CaelumAirPayment.CanAfford(self,LastMeleeAirCost))
         {
             return;
         }
@@ -11800,7 +11803,7 @@ class CaelumPlayer : DoomPlayer
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
         CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType,secondaryAttack,chargedAttack,areaSweep);
-        CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
+        CaelumAirPayment.Spend(self,LastMeleeAirCost);
         UpdateAirStateEffects();
 
         double selectedBaseDamage = secondaryAttack

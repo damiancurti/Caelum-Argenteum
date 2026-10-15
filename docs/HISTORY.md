@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.6** — 2026-10-14.
+
+## 5.4.6 - Supernatural Breathing (#242, 2026-10-14)
+
+The author named the Caelith power Respiraci?n sobrenatural and approved all Air
+expenditure, 1:1 conversion followed by Anima cost reduction, no flat fee, and
+whole-effort Air fallback without spending an unaffordable Anima remainder.
+The production controller now creates the Caelith effect. Actual Air checks and
+payments use one service across attacks, movement, blocking and deprivation.
+Paid underwater breathing does not accrue Air recovery debt. Creator descriptions
+are bilingual. This is a separate branch from #238, which supplies its lifecycle;
+5.4.5 remains reserved for the separate #251 cloud asset.
+
+The first fixture incorrectly enabled invulnerability for oxygen checks and
+attempted to block with a sword without a shield. The corrected fixture uses
+ordinary vulnerability and a real gauntlet block source. The corrected native
+contract passes 48 assertions. Native immersion passes 30, save 27, reload 3,
+and hub return 29. A neutral 5.4.3 save upgrades inactive. An optional bridge to
+the preceding 5.4.4 runtime deactivates the unsupported power while preserving
+777 Anima/333 Air; returning that copy to 5.4.6 also preserves inactive state and
+both reserves. Original saves/runtimes remain intact. Exact evidence and limits:
+assets/validation_546. CA242-01 is pending; no author acceptance is inferred.
+Static validation passes with CONTEXT at 2,479 words. All 16,156 normal-build
+members equal the final native-tested runtime. The final revision changes only
+two diagnostic release labels; gameplay bytes retain the preceding full native
+contract evidence, with final preview and active-save reload checked again.
 
 ## 5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)
 

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.4** — 2026-10-14.
+Documentation version: **5.4.6** — 2026-10-14.
+
+## 5.4.6 - Supernatural Breathing (#242)
+
+Implement the approved Caelith User1 Anima-for-Air substitution with all existing
+Air consumers, normal modifiers, complete-effort fallback and no fixed drain.
+Production integration is present. Native input checks cover sword, firearms,
+bow/crossbow, javelin, bolas, fists, running, jumping and gauntlet blocking.
+Native immersion, save/load, hub return, old-save upgrade and a reversible
+5.4.4 bridge pass. Hand off CA242-01 for author acceptance, then record the result.
+Keep the remaining racial powers in their own
+branches and PRs. The Telekinesis force/range/control decisions are recorded in
+#241; no Telekinesis movement is implemented by #242.
 
 ## 5.4.4 - Shared class preparation (#238, in progress)
 

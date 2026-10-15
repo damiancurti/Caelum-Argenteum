@@ -741,12 +741,17 @@ class CaelumPlayerResources : Object play
         user.UnderwaterCurrentBaseCostPerSecond =
             user.GetUnderwaterBaseAirCostPerSecond();
 
-        if (user.CurrentAir > 0.0)
-        {
-            double underwaterAirCost =
+        double underwaterAirCost =
                 user.UnderwaterCurrentBaseCostPerSecond
                 * user.DerivedStats.AirConsumptionMultiplier
                 / TICRATE;
+        if(CaelumAirPayment.PayWithAnima(user,underwaterAirCost))
+        {
+            user.UnderwaterDrowningTics=0;
+            return;
+        }
+        if (user.CurrentAir > 0.0)
+        {
             double removedAir = Min(user.CurrentAir, underwaterAirCost);
             user.CurrentAir -= removedAir;
             user.UnderwaterAirRecoveryDebt += removedAir;
@@ -799,7 +804,7 @@ class CaelumPlayerResources : Object play
 
         double finalCost = CaelumConstants.JUMP_AIR_COST
             * user.DerivedStats.AirConsumptionMultiplier;
-        user.CurrentAir = Max(0.0, user.CurrentAir - finalCost * CaelumThermalEffects.HeatCost(user));
+        CaelumAirPayment.Spend(user,finalCost * CaelumThermalEffects.HeatCost(user));
         user.UpdateAirStateEffects();
     }
 

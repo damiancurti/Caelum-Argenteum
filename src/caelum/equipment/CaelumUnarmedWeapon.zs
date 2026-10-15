@@ -26,8 +26,8 @@ class CaelumUnarmedWeapon : Weapon
         invoker.Punching=false;
         if (user.DerivedStats==null) return;
         double cost=CaelumAttackRules.NaturalAir()*user.DerivedStats.AirConsumptionMultiplier;
-        if (user.CurrentAir<cost) return;
-        user.CurrentAir-=cost;
+        if (!CaelumAirPayment.CanAfford(user,cost)) return;
+        CaelumAirPayment.Spend(user,cost);
         user.UpdateAirStateEffects();
         invoker.Punching=true; invoker.PunchFrame=0;
         invoker.LeftPunch=!invoker.LeftPunch;

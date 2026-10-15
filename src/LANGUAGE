@@ -5813,6 +5813,7 @@ CA_HUD_CLASS_ABILITY = "Class";
 CA_HUD_RACIAL_ABILITY = "Racial";
 CA_RACIAL_UNAVAILABLE = "This racial ability is not available yet.";
 CA_RACIAL_ANIMA = "Not enough Anima to sustain this racial ability.";
+CA_CREATE_RACIAL_BREATHING = "Supernatural Breathing (User1): toggle all Air expenditure to Anima at 1:1, then apply Anima cost reduction. No fixed drain or cooldown. If a complete effort is unaffordable, the power switches off and that effort uses ordinary Air.";
 CA_HUD_CLASS_PREPARING = "Casting";
 
 [es]
@@ -5820,4 +5821,5 @@ CA_HUD_CLASS_ABILITY = "Clase";
 CA_HUD_RACIAL_ABILITY = "Racial";
 CA_RACIAL_UNAVAILABLE = "Esta habilidad racial todavía no está disponible.";
 CA_RACIAL_ANIMA = "No tenés suficiente ánima para mantener esta habilidad racial.";
+CA_CREATE_RACIAL_BREATHING = "Respiración sobrenatural (User1): sustituye todo gasto de Aire por Ánima a razón de 1:1, aplicando luego la reducción de coste de Ánima. Sin gasto fijo ni reutilización. Si no alcanza para un esfuerzo completo, se apaga y ese esfuerzo usa Aire normalmente.";
 CA_HUD_CLASS_PREPARING = "Lanzando";

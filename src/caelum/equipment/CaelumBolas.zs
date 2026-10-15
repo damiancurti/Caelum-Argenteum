@@ -197,7 +197,7 @@ class CaelumBolas : Object play
         double cost=ThrowCost(emitter),accuracy=0,push=0;
         if(user!=null)
         {
-            if(user.DerivedStats==null || user.CurrentAir<cost)return null;
+            if(user.DerivedStats==null || !CaelumAirPayment.CanAfford(user,cost))return null;
             user.UpdateLucidityAccuracyEffects();user.UpdateCrouchEffects();
             double movement=user.IsCrouching ? user.CrouchAccuracyMultiplier
                 : user.IsRunningOnGround() ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER : 1;
@@ -220,7 +220,7 @@ class CaelumBolas : Object play
         if(flight==null)return null;
         flight.SourceItem=item;flight.Target=emitter;flight.SourceMap=level.MapName;
         emitter.RemoveInventory(item);item.Equipped=false;item.AttachToOwner(flight);
-        if(user!=null){user.CurrentAir-=cost;user.UpdateAirStateEffects();user.MarkCombatActivity();}
+        if(user!=null){CaelumAirPayment.Spend(user,cost);user.UpdateAirStateEffects();user.MarkCombatActivity();}
         else {npc.CurrentCombatAir-=cost;npc.MarkActorCombatActivity();}
         double speed=CaelumConstants.PROJECTILE_SPEED_SLOW*Sqrt(Max(0.0,push));
         flight.Angle=yaw;flight.Vel=(Cos(yaw)*Cos(pitch),Sin(yaw)*Cos(pitch),-Sin(pitch))*speed;

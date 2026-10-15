@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.4.** Obtain and update the complete repository, validate
+**Current release: 5.4.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.6 implements [#242](https://github.com/damiancurti/Caelum-Argenteum/issues/242):
+Caelith Supernatural Breathing substitutes every Air expenditure with Anima at
+1:1, followed by the usual Anima cost reduction. It has no flat drain or cooldown.
+An unaffordable effort switches the power off and uses ordinary Air in full,
+retaining the remaining Anima. Native input/resource checks and persistence are
+tracked in [validation_546](assets/validation_546/RESULTS.md); author review is pending.
+This branch builds on #238; 5.4.5 remains assigned to the separate #251 cloud asset.
 
 5.4.4 is an **in-progress #238 checkpoint**. Production User4 now prepares
 Arcanist Sleep with progressive payment, cancellation, release-only reuse and
