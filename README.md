@@ -13,8 +13,8 @@ it, then rebuild with `run_dev.bat` as described below.
 Battle Mage Summoning creates an allied Zupay at the aimed ground or nearby valid
 space, scales its attributes/duration with Empathy and preserves it across maps.
 Static checks, packaging and 132 qualified assertions in 19 native runs pass.
-[Evidence](assets/validation_5418/RESULTS.md). Physical-input acceptance CA249-01
-remains pending; earlier accepted issues are unchanged.
+[Evidence](assets/validation_5418/RESULTS.md). CA249-01 passed author review on
+2026-10-15; PR297 is ready for review. Earlier accepted issues are unchanged.
 
 5.4.17 implements [#248](https://github.com/damiancurti/Caelum-Argenteum/issues/248):
 Cleric Rally restores allied Adrenaline in a moving visible area and scales final

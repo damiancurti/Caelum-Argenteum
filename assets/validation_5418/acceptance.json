@@ -1,0 +1,16 @@
+{
+  "test_id": "CA249-01",
+  "originating_version": "5.4.18",
+  "issue": 249,
+  "result": "passed",
+  "author_quote": "La prueba dio correcto",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered native preparation/cancellation, legal placement, allied follow/combat, replacement, expiry and diagnostic map/journey travel controls. No additional itemized claim.",
+  "run": "build/issue249-final/author-20261015-130112-run.json",
+  "exit_code": 0,
+  "pid": 1504,
+  "runtime_sha256": "8896C9C05E799B94BEBAA08DAB057E624E8C81CBD35A8672756E47F6F0A7D7C1",
+  "fixture_sha256": "2FC9699699E329EAB929A8FFCBA5D003B269FEBA8D981C7B809111F499399C37",
+  "finished_utc": "2026-10-15T16:02:17.2686184Z",
+  "qualifications": "Accepts the offered CA249-01 scenario; no broad campaign/multiplayer acceptance, merge or issue closure."
+}

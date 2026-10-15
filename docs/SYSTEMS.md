@@ -39,8 +39,8 @@ hours or days subtract their elapsed simulation time from the effect.
 
 Implemented on feat/issue249-summoning. Static validation, normal packaging and
 132 qualified assertions in 19 native runs pass, including copied-save upgrade,
-optional inert-class rollback and return (validation_5418). CA249-01 physical-input
-acceptance remains pending. Earlier accepted issues are not reopened.
+optional inert-class rollback and return (validation_5418). CA249-01 passed author
+review on 2026-10-15. Earlier accepted issues are not reopened.
 
 ## Rally - 5.4.17 / #248
 

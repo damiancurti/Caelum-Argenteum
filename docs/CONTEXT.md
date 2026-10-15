@@ -2,8 +2,8 @@
 
 Documentation version: **5.4.18** — 2026-10-15.
 
-**5.4.18/#249:** Summoning implemented; static/build and 132 native assertions pass;
-validation_5418. CA249-01 pending. Separate branch; no merge/closure.
+**5.4.18/#249:** CA249-01 accepted 2026-10-15; validation_5418, PR297 ready.
+Implementation 545eb01d; static/build and 132 native assertions pass. No merge/closure.
 **5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 ready.
 **5.4.16/#247:** CA247-01 accepted; PR295 ready. Keep-awake released.
 

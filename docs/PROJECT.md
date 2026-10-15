@@ -10,7 +10,8 @@ ally protection and disappearance without rewards. The same body follows between
 maps with its saved state; elapsed long journeys consume its duration. Isolated
 native validation passes in validation_5418: 132 assertions in 19 runs, including
 copied-save upgrade/rollback/return. Static checks and normal packaging pass.
-CA249-01 author acceptance remains pending. #250-252 and #282 remain separate.
+CA249-01 passed author review on 2026-10-15; PR297 is ready. #250-252 and #282
+remain separate; no merge or issue closure is claimed.
 
 ## 5.4.17 - Cleric Rally (#248)
 

@@ -1,6 +1,0 @@
-CA249-01 — 5.4.18 / issue #249 — Summoning (pending)
-Prerequisites: GZDoom 4.14.2; isolated issue249-final scene from assets/validation_5418/launch.ps1. No campaign save is loaded. F6 resets; F7 restores Anima and clears cooldown for repeat casting.
-1. Aim at the floor and press F (User4). The three-second paid preparation creates one allied Zupay. Move away: it follows. It disappears when the displayed effect timer ends. Repeat after F6 and press F again during preparation: cancel without a summon or refund.
-2. F6, then F8 creates an ally and an enemy. Aim at the floor and cast with F. The Zupay fights the enemy; only the enemy's Health falls. While the summon lives, F7 then F permits a fresh replacement, never two owned Zupays.
-3. F6, cast with F, then promptly press F9. This diagnostic halves the Zupay's Health, sets Anima to 123 and Air to 50, and changes map. Its displayed state is preserved and the lifetime continues. F10 simulates a one-hour journey and removes it.
-Expected: legal visible placement without overlap, accepted hand preparation/cancellation, automatic allied follow/combat, fresh replacement, finite duration and preserved travel state. Report any failed or untested step separately.

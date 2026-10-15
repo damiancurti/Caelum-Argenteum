@@ -33,7 +33,7 @@
       19,
       20
     ],
-    "context_words": 2489,
+    "context_words": 2490,
     "errors": []
   },
   "normal_build": {
@@ -1181,11 +1181,26 @@
     "issue249-rollback": "c7b9946cf6d1ed200163c60f3f39f83c71c7761d0f311baad8af09e3980a3a64",
     "issue249-return": "f90fc509dea1fda973d766af14e6dbb7d748ff1a3bcd637f4028ae9e46e509c0"
   },
-  "author_acceptance": "Pending CA249-01.",
+  "author_acceptance": {
+    "test_id": "CA249-01",
+    "originating_version": "5.4.18",
+    "issue": 249,
+    "result": "passed",
+    "author_quote": "La prueba dio correcto",
+    "confirmation_date": "2026-10-15",
+    "scope": "Offered native preparation/cancellation, legal placement, allied follow/combat, replacement, expiry and diagnostic map/journey travel controls. No additional itemized claim.",
+    "run": "build/issue249-final/author-20261015-130112-run.json",
+    "exit_code": 0,
+    "pid": 1504,
+    "runtime_sha256": "8896C9C05E799B94BEBAA08DAB057E624E8C81CBD35A8672756E47F6F0A7D7C1",
+    "fixture_sha256": "2FC9699699E329EAB929A8FFCBA5D003B269FEBA8D981C7B809111F499399C37",
+    "finished_utc": "2026-10-15T16:02:17.2686184Z",
+    "qualifications": "Accepts the offered CA249-01 scenario; no broad campaign/multiplayer acceptance, merge or issue closure."
+  },
   "visual_review": {
     "path": "build/issue249-final/active.png",
     "sha256": "82dd53714fb0aedf216182513ab77c811311cef29173ea4319702d41512c71f1",
-    "result": "Agent inspected the existing Zupay art, readable Spanish resource/lifetime overlay and native class cooldown HUD. The enemy loses HP while the allied target does not. Physical-input acceptance remains pending."
+    "result": "Agent inspected the existing Zupay art, readable Spanish resource/lifetime overlay and native class cooldown HUD. The enemy loses HP while the allied target does not. Author acceptance CA249-01 passed on 2026-10-15."
   },
   "diagnostics": [
     "initial/contract: GZDoom JIT rejects scripted out Vector3 with Unknown REGT / REGT_ADDROF not implemented for vectors; exit code alone was zero. A result object removes the unsupported output parameter, and the runner now also watches JIT errors and requires a completion marker.",
@@ -1196,7 +1211,7 @@
     "native09/placement: fixture passed a player where aura eligibility expects an effect. Correct owned test effects compile and the final pending-state checks pass."
   ],
   "limitations": [
-    "Author acceptance is pending; no broad campaign, multiplayer, large-map performance or other class delivery claim.",
+    "Author acceptance covers the offered CA249-01 scenario; no broad campaign, multiplayer, large-map performance or other class delivery claim.",
     "Rollback to 5.4.17 uses an optional inert-class bridge on copied saves, cancelling unsupported summon/preparation without refund. It does not restore an expired summon; the original save is untouched."
   ]
 }

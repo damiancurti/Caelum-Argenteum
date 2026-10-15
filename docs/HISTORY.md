@@ -16,7 +16,11 @@ Static validation and normal packaging pass; frozen/runtime/source members match
 combat/protection, death, saved preparation/body state, hub/blocked arrival and
 long-journey expiry. Copied-save upgrade/bridged rollback/return pass. Native JIT
 output-vector and native friendly-wander findings are retained in validation_5418.
-Agent visual review passes; CA249-01 physical-input acceptance remains pending.
+Agent visual review passes. The author confirmed CA249-01 (origin 5.4.18/#249)
+on 2026-10-15: "La prueba dio correcto". The offered casting/cancellation,
+placement, follow/combat, replacement and map/journey controls passed without
+reported qualifications. Evidence: validation_5418/acceptance.json; native session
+PID1504 exited 0. The confirmed pending entry is removed; PR297 is ready for review.
 No merge or closure is claimed. Keep-awake remains released.
 
 ## 5.4.17 - Cleric Rally (#248, 2026-10-15)

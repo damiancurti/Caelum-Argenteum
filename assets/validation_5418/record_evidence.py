@@ -66,5 +66,7 @@ if acceptance_path.exists():
     acceptance=json.loads(acceptance_path.read_text(encoding='utf-8'))
     assert acceptance['result']=='passed' and acceptance['test_id']=='CA249-01'
     result['author_acceptance']=acceptance
+    result['visual_review']['result']=result['visual_review']['result'].replace('Physical-input acceptance remains pending.', 'Author acceptance CA249-01 passed on 2026-10-15.')
+    result['limitations'][0]='Author acceptance covers the offered CA249-01 scenario; no broad campaign, multiplayer, large-map performance or other class delivery claim.'
 (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'assertions':result['native_assertions'],'runs':len(runs),'members':len(members),'runtime':result['runtime_sha256']}))

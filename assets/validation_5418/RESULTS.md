@@ -2,7 +2,7 @@
 
 Implemented on `feat/issue249-summoning`, based on accepted #248 commit
 `b87f977b`. The final runtime is identified in [evidence.json](evidence.json).
-Author acceptance **CA249-01 is pending**; native evidence is separate.
+Author acceptance **CA249-01 passed on 2026-10-15**; native evidence is separate.
 
 ## Results
 
@@ -63,8 +63,10 @@ No live campaign save is edited. The bridge and diagnostic classes remain outsid
 `src/`. Current effect revision is 1; old saves without it stay inactive. Existing
 projectiles default the new summon policy to false, retaining previous behavior.
 
-## Pending author check
+## Author acceptance
 
-CA249-01 in root `pending_test.txt`: physical casting/cancellation, follow/combat,
-recast, lifetime and the supplied map/journey controls. F6 resets; F7 refills Anima
-and clears cooldown for repeated checks. These controls affect only this fixture.
+CA249-01 passed on 2026-10-15: "La prueba dio correcto". This confirms the offered
+physical casting/cancellation, follow/combat, recast, lifetime and supplied
+map/journey controls without reported qualifications. The completed entry has
+been removed from pending_test.txt. [Acceptance record](acceptance.json).
+No broad campaign, multiplayer, merge or issue closure is implied.
