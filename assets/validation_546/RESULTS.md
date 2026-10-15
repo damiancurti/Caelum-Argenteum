@@ -69,8 +69,10 @@ new powers without a bridge.
 
 ## Author check
 
-CA242-01 is pending in the root pending_test.txt. The handoff uses the real player
-and Caelith effect with reusable resource/reset controls. Its observer disables
-resource regeneration to expose spending and gives real giant gauntlets for
-blocking. There is no invulnerability. Manual acceptance, campaign-wide play and
-multiplayer acceptance are not inferred from agent tests. No merge/closure is claimed.
+CA242-01 passed author review on 2026-10-14: "La prueba esta dio correcto."
+The handoff used the real player and Caelith effect with reusable resource/reset
+controls. Its observer disabled resource regeneration to expose spending and gave
+real giant gauntlets for blocking, without invulnerability. The engine exited
+normally (0). See acceptance.json for the exact handoff, hashes and accepted scope.
+The confirmed entry was removed from pending_test.txt. Campaign-wide play,
+multiplayer acceptance and merge/closure are not implied.

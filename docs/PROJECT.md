@@ -11,7 +11,7 @@ Air for the complete effort without consuming the remainder. Native immersion
 uses the same demand and does not create Air-recovery debt for Anima payments.
 The creator describes the implemented bilingual power; the shared HUD/controller
 and saved identity remain authoritative. Evidence: assets/validation_546.
-Author acceptance is pending. The focused branch stacks on #238; release 5.4.5
+CA242-01 passed author review on 2026-10-14. The focused branch stacks on #238; release 5.4.5
 remains allocated to the separate #251 cloud artwork branch.
 
 ## 5.4.4 - Shared class casting checkpoint (#238, in progress)

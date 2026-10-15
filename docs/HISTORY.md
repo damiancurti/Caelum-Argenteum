@@ -4,7 +4,7 @@ Documentation version: **5.4.6** — 2026-10-14.
 
 ## 5.4.6 - Supernatural Breathing (#242, 2026-10-14)
 
-The author named the Caelith power Respiraci?n sobrenatural and approved all Air
+The author named the Caelith power Respiración sobrenatural and approved all Air
 expenditure, 1:1 conversion followed by Anima cost reduction, no flat fee, and
 whole-effort Air fallback without spending an unaffordable Anima remainder.
 The production controller now creates the Caelith effect. Actual Air checks and
@@ -21,11 +21,20 @@ and hub return 29. A neutral 5.4.3 save upgrades inactive. An optional bridge to
 the preceding 5.4.4 runtime deactivates the unsupported power while preserving
 777 Anima/333 Air; returning that copy to 5.4.6 also preserves inactive state and
 both reserves. Original saves/runtimes remain intact. Exact evidence and limits:
-assets/validation_546. CA242-01 is pending; no author acceptance is inferred.
+assets/validation_546.
 Static validation passes with CONTEXT at 2,479 words. All 16,156 normal-build
 members equal the final native-tested runtime. The final revision changes only
 two diagnostic release labels; gameplay bytes retain the preceding full native
 contract evidence, with final preview and active-save reload checked again.
+
+On 2026-10-14 the author confirmed CA242-01 (origin 5.4.6 / #242):
+"La prueba esta dio correcto." The offered isolated scenario passed toggling,
+physical-effort reserve selection, no idle drain, underwater payment at zero Air,
+exhaustion fallback with the Anima remainder retained and no free Air refund.
+The native handoff exited normally (0). Exact runtime/fixture hashes and handoff
+identity are in assets/validation_546/acceptance.json. The confirmed entry was
+removed from pending_test.txt. Campaign-wide and multiplayer acceptance are not
+implied; this confirmation does not merge the PR or close the issue.
 
 ## 5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)
 

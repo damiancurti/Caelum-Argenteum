@@ -14,7 +14,8 @@ Caelith Supernatural Breathing substitutes every Air expenditure with Anima at
 1:1, followed by the usual Anima cost reduction. It has no flat drain or cooldown.
 An unaffordable effort switches the power off and uses ordinary Air in full,
 retaining the remaining Anima. Native input/resource checks and persistence are
-tracked in [validation_546](assets/validation_546/RESULTS.md); author review is pending.
+tracked in [validation_546](assets/validation_546/RESULTS.md); CA242-01 was accepted
+by the author on 2026-10-14.
 This branch builds on #238; 5.4.5 remains assigned to the separate #251 cloud asset.
 
 5.4.4 is an **in-progress #238 checkpoint**. Production User4 now prepares

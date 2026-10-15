@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.6** — 2026-10-14.
 
-**5.4.6/#242:** Supernatural Breathing engine-tested; CA242-01 pending. validation_546.
+**5.4.6/#242:** Supernatural Breathing accepted; CA242-01 passed 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; controller tested; rollback open.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273. #237: PR272.
 After this batch, #282. #231-236/#255-258 accepted/merged/closed; HISTORY.

@@ -4,7 +4,7 @@ Documentation version: **5.4.6** — 2026-10-14.
 
 ## Supernatural Breathing - 5.4.6 / #242
 
-The Caelith User1 power is **Supernatural Breathing / Respiraci?n sobrenatural**.
+The Caelith User1 power is **Supernatural Breathing / Respiración sobrenatural**.
 The shared racial controller supplies toggling, interruption, saved identity and
 active/inactive HUD state. There is no fixed Anima drain or cooldown. Existing
 forced sleep, stun, immobilization and death rules turn it off.

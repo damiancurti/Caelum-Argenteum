@@ -9,7 +9,8 @@ Air consumers, normal modifiers, complete-effort fallback and no fixed drain.
 Production integration is present. Native input checks cover sword, firearms,
 bow/crossbow, javelin, bolas, fists, running, jumping and gauntlet blocking.
 Native immersion, save/load, hub return, old-save upgrade and a reversible
-5.4.4 bridge pass. Hand off CA242-01 for author acceptance, then record the result.
+5.4.4 bridge pass. CA242-01 passed author review on 2026-10-14; acceptance is
+recorded in HISTORY and assets/validation_546/acceptance.json.
 Keep the remaining racial powers in their own
 branches and PRs. The Telekinesis force/range/control decisions are recorded in
 #241; no Telekinesis movement is implemented by #242.
