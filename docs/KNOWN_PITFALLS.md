@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-100 - Measure obstruction after movable-body contact
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #247 / 5.4.16, 2026-10-15.
+- Symptom: an empowered traversal stopped on walls but continued driving after
+  a moving body impeded it; BlockingMobj was no longer a reliable post-Tick signal.
+- Remedy: compare actual forward displacement with the requested native step,
+  after collision energy/defenses resolve. End only the scripted traversal and
+  preserve native contact velocity; do not clear its defense before both receivers.
+- Evidence: issue247-audit04/body failed; issue247-confirmed/body passes termination,
+  equal raw collision energy to both bodies and ordinary defenses on the other body.
+  Exact logs/hashes: [validation_5416](../assets/validation_5416/RESULTS.md).
+- Limits: this is the authored fixed-direction ground traversal, not a replacement
+  for general collision detection, ordinary movement or NPC physics.
+
+## CA-KP-099 - Freeze composite appearance at one simulation instant
+
+- Status: ENGINE-VERIFIED and agent visual review, #247 / 5.4.16, 2026-10-15.
+- Symptom: body afterimages were captured after physics while the modular head
+  still held its preceding Tick position; at high speed the detached offset grew.
+- Remedy: synchronize the owned head visual before freezing body/head snapshots.
+  Preserve sprite/frame, scale, offset, translation and shared capture position/age.
+- Evidence: issue247-boundaries/preview records one-step offsets; reviewed/preview
+  records exact paired positions/ages and a visually inspected fading trail.
+  [validation_5416](../assets/validation_5416/RESULTS.md) retains hashes.
+- Limits: author visual acceptance remains CA247-01; this verifies the current
+  owned composite sprite system, not arbitrary future 3D attachments.
+
 ## CA-KP-098 - Bound native console test scripts
 
 - Status: ENGINE-VERIFIED, GZDoom 4.14.2, #260 / 5.4.15.

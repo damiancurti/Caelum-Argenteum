@@ -1,6 +1,51 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+## Mercenary Formation Breaker - 5.4.16 / #247
+
+Rompeformaciones / Formation Breaker replaces Killer Instinct. User4 uses the
+shared 3-second paid preparation, base 1000 Anima and 60-second cooldown from
+release. The base effect window is 10 seconds. While active, a native forward
+double tap within the #260 0.4-second interval starts a ground-only traversal:
+
+- Stand upright, using maximum **running** speed even from walking/crouching.
+  If the full body cannot fit, consume the gesture without starting, paying or
+  changing posture. Swimming/flying retain the ordinary paid #260 impulse.
+- Base speed factor **x4** and traversal duration **1 second**. Empathy scales
+  the entire speed/defense factors and both the traversal and window durations.
+  Capture these factors at release/start; later attribute changes do not rewrite
+  a running traversal. The original full movement direction, including an existing
+  diagonal, stays fixed in world space while the camera remains freely movable.
+- Waive the impulse activation Air fee only. Running Air continues through the
+  canonical payment system, including Supernatural Breathing substitution.
+- Ignore additional double taps during the traversal. A started traversal finishes
+  independently of window expiry. Recasting renews window power and keeps the
+  greater remaining/new duration without stacking; an ongoing traversal keeps its
+  captured factors. Stop when obstructed by a wall/body, leaving the ground,
+  jumping, entering water, immobilized, dead or modal control takes over. Preserve
+  native collision/fall motion; cap excess horizontal speed at normal running
+  speed when ending and never reaccelerate a stopped body.
+- During the traversal only, biological collision cushioning and **final flat
+  Toughness reduction** multiply by base x10, then beneficial power. Do not multiply
+  the raw Toughness attribute or modify ordinary attack damage. Moving characters
+  and objects are eligible for this biological cushioning. Keep the bonus until
+  the terminating collision has resolved both receivers independently. Sustained
+  pressure/crushing retains its separately approved rule; armor wear, anatomy and
+  the other body's defenses remain unchanged.
+- Every 0.1 seconds of actual movement, freeze the current owned body/head appearance
+  at 50% opacity and fade it over 0.3 seconds. Simulation quantization alternates
+  3/4-tic emission intervals and expires a snapshot by tic 11. It has no collision,
+  inventory or combat role.
+
+Revision-1 inventory state owns the window, captured traversal and direction per
+player. New fields are absent/inactive on older saves; partial gestures stay
+transient under #260. Current reload continues the exact traversal and partial
+preparation payment. Hub arrival ends an old-map traversal while preserving the
+remaining owned class window. For rollback to 5.4.15, the optional copied-save
+bridge declares the new classes and cancels unsupported effects without refund;
+plain old runtime does not know those classes. Original saves remain untouched.
+Native and copied-save evidence is in validation_5416; CA247-01 is pending.
 
 ## Player constant acceleration and directional impulse - 5.4.15 / #260
 
@@ -7243,7 +7288,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Explorer | Survival Instinct | Multiplies current evasion, physical/magical critical chance and precision, and earned Adrenaline by 3; Empathy scales the entire factor and duration. See 5.4.11 above. |
 | Priest | Miracle | Restores 3% of current maximum Lucidity, Health, Anima and Air per second to the caster and visible allies in a moving area. Empathy scales recovery/duration; see 5.4.12 above. |
 | Mage | Arcane Sun | Large traveling fire orb: tenfold reference impact/burn/explosion, one homing shot per second and 25 straight spherical shots at scenery impact or expiry. Enemies only; see 5.4.13 above. |
-| Mercenary | Killer Instinct | Triples critical chance and Adrenaline gain. |
+| Mercenary | Formation Breaker (Rompeformaciones) | Forward ground double tap: upright running x4 for 1 s, collision cushioning/final Toughness reduction x10; Empathy scales full factors and durations. No impulse Air fee; normal running drain remains. |
 | Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |
 | Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |
 | Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |

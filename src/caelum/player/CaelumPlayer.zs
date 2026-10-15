@@ -6597,6 +6597,8 @@ class CaelumPlayer : DoomPlayer
 
     double GetImpactAgilityAbsorptionSpeed(int impactKind, bool stationarySceneryContact = false)
     {
+        if (CaelumFormationBreaker.Dashing(self))
+            return GetBiologicalLandingAbsorptionSpeed()*CaelumFormationBreaker.Defense(self);
         if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
             return GetBiologicalLandingAbsorptionSpeed();
 
@@ -6838,7 +6840,11 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
             }
         }
-        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
+        // #247 multiplica la reducción final, nunca el atributo ni la presión sostenida.
+        double collisionReduction=CaelumToughnessRules.Reduction(
+            CaelumToughnessRules.NaturalMass(self),impactToughness);
+        if(!crushingContact)collisionReduction*=CaelumFormationBreaker.Defense(self);
+        LastImpactToughnessPercent = 100.0*collisionReduction/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
             ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
@@ -6932,8 +6938,7 @@ class CaelumPlayer : DoomPlayer
             )
         );
         double postArmor=weightedFinalDamage;
-        double postToughness=CaelumToughnessRules.AfterDefenses(
-            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        double postToughness=Max(0.0,postArmor-collisionReduction);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
         LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
         LastImpactFinalDamage=Max(0,int(postToughness+0.5));
@@ -8793,12 +8798,14 @@ class CaelumPlayer : DoomPlayer
     override void MovePlayer()
     {
         bool impulse=CaelumMovementImpulse.Begin(self);
+        CaelumFormationBreaker.PrepareMove(self);
         vector3 before=Vel;
         Super.MovePlayer();
         // Compensa sólo la propulsión nativa de este comando. Sin este término,
         // el rozamiento añadiría otra demora a la rampa lineal. No se recorta
         // la velocidad total: choques, empujes y frenado siguen siendo nativos.
-        if (impulse) CaelumMovementImpulse.Finish(self,Vel-before);
+        if (CaelumFormationBreaker.Dashing(self)) CaelumFormationBreaker.Drive(self,Vel-before);
+        else if (impulse) CaelumMovementImpulse.Finish(self,Vel-before);
         else if (MovementAccelerationStep > 0 && MovementAccelerationFactor > 0
             && !IsPhysicallyImmobilized()
             && (player.onground || (bNOGRAVITY && bFLY) || WaterLevel > 0))
@@ -8822,6 +8829,10 @@ class CaelumPlayer : DoomPlayer
         let journeyPlan = CaelumJourneyPlan.Get(self);
         bool choosingJourney = journeyPlan != null && journeyPlan.Open;
         CaelumMovementImpulse.Observe(self,readingMenu || choosingJourney);
+        CaelumFormationBreaker.Guard(self,readingMenu || choosingJourney || CreationWizardOpen
+            || EquipmentMenuOpen || CraftingMenuOpen || PalomoMerchantMenuOpen
+            || HasActiveConversation() || CaelumTimeSkipState.IsOpen(self)
+            || CaelumRestState.IsActive(self) || CombatChannelModeActive);
         if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))
         { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
         if(player!=null && (readingMenu || choosingJourney || CreationWizardOpen || EquipmentMenuOpen || PalomoMerchantMenuOpen
@@ -8975,6 +8986,7 @@ class CaelumPlayer : DoomPlayer
             }
         }
         UpdateImpactContactLatch();
+        CaelumFormationBreaker.AfterPhysics(self,thermalBefore);
 
         // No rearmamos la estación mientras crafting siga abierto, aunque
         // PlayerThink haya limpiado temporalmente los botones. Tras cerrar,

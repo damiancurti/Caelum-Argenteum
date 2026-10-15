@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `b1f3e6ac8a97696a73463dacb9917951bfad78e2f23e3fc8f8d978f51a06dd41`. Locations include every definition; the last one per language wins.
+SHA-256: `f9c24de2a8ccab97f787197fb99e7631bc35dbb7a88866a760c1fd0424eb4961`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -44,7 +44,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 47 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 48 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
@@ -64,6 +64,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_EXIT | 1 | CA_EXIT_CONFIRM | CA_EXIT_CONFIRM |
 | CA_FACTION | 9 | CA_FACTION_CAELITH | CA_FACTION_UNITARIOS |
 | CA_FAST | 10 | CA_FAST_ACTIVITY | CA_FAST_ZONE |
+| CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
 | CA_GATHERING | 1 | CA_GATHERING_EXTRACTED | CA_GATHERING_EXTRACTED |
 | CA_GIANT | 1 | CA_GIANT_RAT_NAME | CA_GIANT_RAT_NAME |
 | CA_GUARD | 5 | CA_GUARD_CAPTAIN_ANSWER | CA_GUARD_CAPTAIN_REPEAT_RESPONSE |

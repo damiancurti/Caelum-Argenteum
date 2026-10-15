@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+## 5.4.16 - Formation Breaker (#247, 2026-10-15)
+
+Recorded the author's ground-only, upright running reference, fixed direction,
+normal running Air drain, contact/ground-loss interruption, independent started
+traversal, low-ceiling denial and normal-speed completion decisions. The approved
+afterimage uses current owned appearance at 50%, every 0.1 seconds, fading over
+0.3 seconds. Collision Toughness scales its final reduction, and enhanced
+biological cushioning also applies against moving bodies. Full factors and both
+durations scale with Empathy under the shared class contract.
+Implementation passes 124 qualified native assertions in 30 runs; exact hashes,
+nonvisual evidence reuse and diagnostic iterations are in validation_5416/evidence.json.
+The normal PK3 has 16,165 members identical to src and the final frozen runtime.
+Static validation reports zero errors. Agent review found and corrected a one-tic
+modular-head lag in frozen afterimages; body/head now share capture position/age.
+Moving-body contacts require actual displacement checks after native blocking fields
+are cleared. Upgrade/reload/hub, preparation saves and bridged rollback/re-upgrade
+pass on copies. The bridge cancels unsupported transient effects without refund;
+original saves remain unchanged. No author acceptance is recorded: CA247-01 stays
+pending. The author left again and requested temporary keep-awake; manual checks/
+questions are deferred until return. No merge or closure is inferred.
 
 ## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
 

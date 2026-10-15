@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+## 5.4.16 - Formation Breaker residual appearance (#247)
+
+Afterimages reuse the current owned player body sprite/frame, scale, facing,
+translation and modular face/hair overlay. They add no raster/model source or
+external attribution. Frozen actors are noninteractive, translucent at 50%,
+emitted per 0.1 seconds of actual traversal and fade over 0.3 seconds (35-Hz tic
+quantization). Development fixture sources live in assets/validation_5416; generated
+packages, development IWADs and saves remain local under build/. Visual/native
+validation passes; the agent inspected the final body/head alignment and fading
+trail. Evidence/hashes are in validation_5416/evidence.json, separately from pending
+CA247-01 author appearance acceptance.
 
 ## 5.4.15 - Movement validation fixtures (#260)
 

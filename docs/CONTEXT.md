@@ -1,6 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+**5.4.16/#247:** Formation Breaker implemented; native/static/package checks pass,
+stacked on accepted #260. Author away since 2026-10-15: temporary keep-awake active;
+questions/manual acceptance deferred until return. Evidence: validation_5416.
 
 **5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
 

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+## 5.4.16 - Mercenary Formation Breaker (#247)
+
+Rompeformaciones replaces the superseded Killer Instinct design. Its shared paid
+User4 release enables forward double-tap ground traversals at four times running
+speed, upright and with fixed direction, with tenfold biological cushioning and
+final flat collision Toughness reduction. Empathy scales full factors and both
+durations. Ordinary running Air consumption remains; only the impulse fee is
+waived. Native input, collision, appearance and copied-save validation passes: 124
+qualified assertions in 30 runs (hashes/reuse limits: assets/validation_5416).
+Static validation and normal packaging pass. CA247-01 author acceptance remains outstanding. This focused
+branch stacks on accepted #260; other classes/climate and #282 retain their scope.
 
 ## 5.4.15 - Player acceleration and directional impulse (#260)
 

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.15** — 2026-10-15.
+Documentation version: **5.4.16** — 2026-10-15.
+
+## 5.4.16 - Formation Breaker (#247, awaiting author check)
+
+The author's traversal, stance, running-cost, collision and afterimage decisions
+are now explicit in SYSTEMS and issue #247. Implementation uses the accepted #260
+native gesture and #238 class preparation. Native interruption, collision, appearance,
+preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
+CA247-01 is prepared in pending_test.txt for the author's return. Keep its branch/PR
+separate, stacked on #260/PR294; no merge or closure authorized.
+The author is away: a temporary system-only keep-awake request is active. Release
+it on return; defer manual checks/questions. #248-252 remain separately scoped,
+and #282 follows the batch.
 
 ## 5.4.15 - Player acceleration and impulse (#260, accepted)
 
@@ -8,11 +20,8 @@ Both the linear mass-based ramp and the authored Air-paid 0.4-second double tap
 are implemented on the focused branch/PR294 based on #253. Native evidence:
 assets/validation_5415. CA260-01/02 passed on 2026-10-15; PR294 is ready for review.
 Acceptance retains this same version and leaves no #260 author check queued. No merge/closure is authorized.
-#247 may consume the forward gesture next; its enhanced speed, collision defenses
-and afterimages require their own implementation, tests, branch and PR.
-#247-252 retain their own unresolved designs; #282 follows the batch. The author
-returned on 2026-10-15; the temporary keep-awake request was released. Resume
-manual checks and design questions one scenario at a time. CA246-01/CA253-01 passed.
+#247 now consumes the forward gesture in its separate 5.4.16 patch above.
+#248-252 retain their own designs; #282 follows the batch. CA246-01/CA253-01 passed.
 
 ## 5.4.14 - Resident participation at the protected floor (#253)
 

@@ -71,7 +71,9 @@ class CaelumMovementImpulse : Object play
     static bool Begin(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.MovementTapPending==0)return false;
+        int gesture=user.MovementTapPending;
         user.MovementTapPending=0;
+        if(CaelumFormationBreaker.TryBegin(user,gesture))return false;
         if(user.IsPhysicallyImmobilized() || !MediumAllowed(user) || user.DerivedStats==null
             || user.DerivedStats.TotalMass<=0
             || (user.player.cmd.forwardmove==0 && user.player.cmd.sidemove==0))return false;

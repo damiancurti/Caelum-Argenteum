@@ -316,7 +316,10 @@ class CaelumCharacterCreationMenu : ListMenu
                     ? "CA_CREATE_CLASS_BATTLE_CRY"
                     : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
                     && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_EXPLORER
-                        ? "CA_CREATE_CLASS_SURVIVAL_INSTINCT" : "CA_CREATE_CLASS_PLANNED", false);
+                        ? "CA_CREATE_CLASS_SURVIVAL_INSTINCT"
+                        : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                        && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_MERCENARY
+                            ? "CA_CREATE_CLASS_FORMATION_BREAKER" : "CA_CREATE_CLASS_PLANNED", false);
         return result;
     }
 

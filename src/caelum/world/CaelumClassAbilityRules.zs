@@ -23,7 +23,8 @@ class CaelumClassAbilityRules : Object play
 
     static clearscope bool Implemented(int profession)
     {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR
-        || profession==CaelumConstants.PROFESSION_EXPLORER || profession==CaelumConstants.PROFESSION_PRIEST
+        || profession==CaelumConstants.PROFESSION_EXPLORER || profession==CaelumConstants.PROFESSION_MERCENARY
+        || profession==CaelumConstants.PROFESSION_PRIEST
         || profession==CaelumConstants.PROFESSION_MAGE;}
 
     static clearscope bool Offensive(int profession)
@@ -119,6 +120,8 @@ class CaelumClassAbilityRules : Object play
             CaelumBattleCry.Release(user);
         else if(user.ClassCastProfession==CaelumConstants.PROFESSION_EXPLORER)
             CaelumSurvivalInstinct.Release(user);
+        else if(user.ClassCastProfession==CaelumConstants.PROFESSION_MERCENARY)
+            CaelumFormationBreaker.Release(user);
         else if(user.ClassCastProfession==CaelumConstants.PROFESSION_PRIEST)
             CaelumMiracle.Release(user);
         else if(user.ClassCastProfession==CaelumConstants.PROFESSION_MAGE)
