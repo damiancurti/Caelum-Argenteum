@@ -58,5 +58,10 @@ evidence={
  'limits':'Focused single-process native tests, including two bot/player slots for rain overlap; not network transport, campaign-wide or large-map performance acceptance.',
  'development_failures':'Fixture virtual override defaults and read-only WaterLevel assignments corrected. Overlapping test bodies initially blocked the eligibility trace as designed. Absolute loadgame paths replaced by savedir-relative names. Non-hub intermission skipped through the same native ChangeLevel flag used by production journeys. Native bot needs the existing isolated executable directory with zcajun/bots.cfg. Original crash and failed/incomplete runs retained outside src.'
 }
+if (HERE/'acceptance.json').exists():
+    acceptance=read_json(HERE/'acceptance.json')
+    if acceptance['result']=='passed':
+        evidence['author_acceptance']='CA251-01 passed on '+acceptance['confirmation_date']+'; see acceptance.json. PR281 ready. No merge or issue closure.'
+        evidence['visual_review']=evidence['visual_review'].replace('CA251-01 author review outstanding.','CA251-01 accepted on '+acceptance['confirmation_date']+'.')
 (HERE/'evidence.json').write_text(json.dumps(evidence,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
 print(json.dumps({k:evidence[k] for k in ['runtime_sha256','fixture_sha256','native_runs','native_passes']}))

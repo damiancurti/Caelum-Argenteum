@@ -1287,8 +1287,8 @@
   },
   "normal_package_all_members_equal": true,
   "deterministic_runtime_and_fixture": true,
-  "visual_review": "Native rear/side seated rider and dark translucent model inspected; owned mesh/material unchanged. Rain particles and Air-seal VFX are presentation; known concave surface bands remain. CA251-01 author review outstanding.",
-  "author_acceptance": "Pending CA251-01; draft PR281. No merge or issue closure.",
+  "visual_review": "Native rear/side seated rider and dark translucent model inspected; owned mesh/material unchanged. Rain particles and Air-seal VFX are presentation; known concave surface bands remain. CA251-01 accepted on 2026-10-15.",
+  "author_acceptance": "CA251-01 passed on 2026-10-15; see acceptance.json. PR281 ready. No merge or issue closure.",
   "limits": "Focused single-process native tests, including two bot/player slots for rain overlap; not network transport, campaign-wide or large-map performance acceptance.",
   "development_failures": "Fixture virtual override defaults and read-only WaterLevel assignments corrected. Overlapping test bodies initially blocked the eligibility trace as designed. Absolute loadgame paths replaced by savedir-relative names. Non-hub intermission skipped through the same native ChangeLevel flag used by production journeys. Native bot needs the existing isolated executable directory with zcajun/bots.cfg. Original crash and failed/incomplete runs retained outside src."
 }

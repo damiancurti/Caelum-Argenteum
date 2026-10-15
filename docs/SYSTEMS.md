@@ -59,7 +59,7 @@ destination; do not manually unlink and transfer a sector-linked visual actor.
 This repairs the native transition crash reproduced in the first implementation.
 Short journeys consume remaining duration without retroactive pulse bursts;
 long journeys expire the effect. Focused native evidence: validation_5420.
-Author acceptance remains pending; PR281 is draft.
+CA251-01 passed author review on 2026-10-15; PR281 is ready, unmerged.
 
 ## Arcane Cloud asset checkpoint (#251 / 5.4.5, historical scope)
 

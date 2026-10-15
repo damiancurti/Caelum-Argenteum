@@ -11,8 +11,8 @@ anchor place the rider above the cloud. The model has zero mass and no solid
 body; player collision remains native. Deterministic cosmetic drops stop at
 traced surfaces, with the established dense-combat VFX cadence. The surface
 material still has the documented concave-band limitation (CA-KP-104); it is not
-volumetric weather. Native gameplay/capture fixtures: validation_5420. Model
-appearance and mounted presentation await CA251-01 author review. Test geometry,
+volumetric weather. Native gameplay/capture fixtures: validation_5420. CA251-01 author review
+passed on 2026-10-15 for the offered gameplay/visual scene. Test geometry,
 development IWAD, executables, saves and generated packages are not distributed.
 
 ## 5.4.19 - Redemption asset reuse (#250)

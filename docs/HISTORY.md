@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, author review pending)
+## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)
 
 The author finalized cart-width, massless translucent cloud presentation with a
 seated rider retaining ordinary actions. Eloquence scales width/rain/range;
@@ -25,8 +25,11 @@ Replacing manual visual-actor travel with destination recreation preserves the
 effect and removes the crash on the same saved scenario, hub return and non-hub
 travel. The report and failed runs remain local evidence, not distributed assets.
 Full focused checks, copied-save compatibility and their exact qualifications
-are recorded in validation_5420. CA251-01 is outstanding author gameplay/visual
-review. PR281 stays draft; no author acceptance, merge or closure is claimed.
+are recorded in validation_5420. CA251-01 (origin 5.4.20 / #251) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." for the offered gameplay/visual scene, without additional
+itemized claims. Its pending entry is removed and acceptance.json preserves the
+quote, hashes and still-open native session. PR281 is ready; no merge or closure
+is claimed. Campaign, network and large-map acceptance remain outside this result.
 
 ## #251 continuation on accepted 5.4.19 (2026-10-15, in progress)
 

@@ -1,8 +1,8 @@
 # Arcane Cloud — 5.4.20 / #251
 
 Implemented on `feat/issue251-rain-cloud-model`, based on accepted #250 commit
-`e9c79de8`. PR281 remains draft pending **CA251-01** author gameplay/visual review.
-No merge, issue closure or author acceptance is claimed.
+`e9c79de8`. **CA251-01 passed author gameplay/visual review on 2026-10-15**; see
+[acceptance.json](acceptance.json). PR281 is ready. No merge or closure is claimed.
 
 ## Focused evidence
 

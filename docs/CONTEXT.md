@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.20** — 2026-10-15.
 
-**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 pending; PR281 draft.
+**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 ready.
 
 **5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 ready; unmerged.
 
