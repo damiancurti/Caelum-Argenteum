@@ -9,7 +9,7 @@ are now explicit in SYSTEMS and issue #247. Implementation uses the accepted #26
 native gesture and #238 class preparation. Native interruption, collision, appearance,
 preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
 CA247-01 is prepared in pending_test.txt for the author's return. Keep its branch/PR
-separate, stacked on #260/PR294; no merge or closure authorized.
+separate: PR295 is draft, stacked on #260/PR294; no merge or closure authorized.
 The author is away: a temporary system-only keep-awake request is active. Release
 it on return; defer manual checks/questions. #248-252 remain separately scoped,
 and #282 follows the batch.

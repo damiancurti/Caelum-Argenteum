@@ -21,7 +21,8 @@ are cleared. Upgrade/reload/hub, preparation saves and bridged rollback/re-upgra
 pass on copies. The bridge cancels unsupported transient effects without refund;
 original saves remain unchanged. No author acceptance is recorded: CA247-01 stays
 pending. The author left again and requested temporary keep-awake; manual checks/
-questions are deferred until return. No merge or closure is inferred.
+questions are deferred until return. Implementation ddbe769d is pushed; PR295 is
+draft on PR294. No merge or closure is inferred.
 
 ## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
 
