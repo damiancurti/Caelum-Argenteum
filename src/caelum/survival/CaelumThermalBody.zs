@@ -18,6 +18,8 @@ class CaelumThermalBody : Object play
 
     static clearscope bool Supported(Actor body)
     {
+        let summoned=CaelumSummonedZupay(body);
+        if(summoned!=null && summoned.AwaitingPlacement)return false;
         return body is 'CaelumPlayer' || body is 'CaelumAnchoredResident'
             || body is 'CaelumFolkloreCombatActor' || FurryAnimal(body);
     }
@@ -25,6 +27,8 @@ class CaelumThermalBody : Object play
     static CaelumThermalState Get(Actor body,bool create=false)
     {
         if(body==null)return null;
+        let summoned=CaelumSummonedZupay(body);
+        if(summoned!=null && summoned.AwaitingPlacement)return null;
         let existingNPC=CaelumCombatActor(body);
         if(existingNPC!=null && existingNPC.ThermalState!=null
             && existingNPC.ThermalState.Revision>=CaelumThermalData.REVISION)return existingNPC.ThermalState;

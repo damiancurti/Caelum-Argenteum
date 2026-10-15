@@ -33,6 +33,8 @@ class CaelumMiracle : Object
 
     static play bool Eligible(CaelumMiracleEffect effect,Actor body)
     {
+        let summoned=CaelumSummonedZupay(body);
+        if(summoned!=null && summoned.AwaitingPlacement)return false;
         let caster=CaelumPlayer(effect.Owner);
         if(caster==null || caster.health<=0 || effect.Revision!=REVISION || effect.RemainingTics<=0
             || body==null || body.health<=0

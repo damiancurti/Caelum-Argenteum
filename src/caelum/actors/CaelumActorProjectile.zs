@@ -38,6 +38,7 @@ class CaelumActorProjectile : Actor
     static int PrepareDefense(Actor victim,Actor inflictor,int damage,Name mod,int flags)
     {
         let shot=CaelumActorProjectile(inflictor);
+        if(shot!=null && shot.PreventSummoningFriendlyFire(victim))return 0;
         if(shot==null || shot.CaelumDefenseReceiver==victim || (flags & DMG_FORCED)
             || (damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD && !victim.bLAXTELEFRAGDMG))return damage;
         if(victim.health<=0 || victim.bDORMANT
@@ -87,6 +88,12 @@ class CaelumActorProjectile : Actor
     // Campos cosméticos: cero en saves anteriores; no alteran el vuelo guardado.
     int CaelumVFXAge,CaelumVFXRevision;
     bool CaelumVFXImpactShown;
+    // Sólo los disparos de #249 guardan esta política, aun si el Zupay expira.
+    bool CaelumSummonShot;
+    CaelumPlayer CaelumSummonOwner;
+
+    bool PreventSummoningFriendlyFire(Actor victim)
+    {return CaelumSummonShot && !CaelumSummoning.Enemy(CaelumSummonOwner,victim);}
 
     // Conserva la identidad del arma que originó el proyectil. Así la
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
@@ -129,6 +136,12 @@ class CaelumActorProjectile : Actor
     )
     {
         CaelumAttackPrepared = true;
+        let summoned=CaelumSummonedZupay(Target);
+        if(summoned!=null)
+        {
+            CaelumSummonShot=true;
+            CaelumSummonOwner=CaelumPlayer(summoned.master);
+        }
         CaelumPreparedDamage = Max(0, preparedDamage);
         CaelumAttackAccuracySucceeded = accuracySucceeded;
         CaelumCriticalHit = criticalHit;
@@ -256,6 +269,7 @@ class CaelumActorProjectile : Actor
 
     override int SpecialMissileHit(Actor victim)
     {
+        if(PreventSummoningFriendlyFire(victim))return MHIT_PASS;
         let ally = CaelumAnchoredResident(Target);
         if (ally != null && ally.RuloPartyMode != 0
             && (victim == ally.RuloPartyTraveler

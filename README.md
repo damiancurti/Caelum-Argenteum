@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.17.** Obtain and update the complete repository, validate
+**Current release: 5.4.18.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.18 implements [#249](https://github.com/damiancurti/Caelum-Argenteum/issues/249):
+Battle Mage Summoning creates an allied Zupay at the aimed ground or nearby valid
+space, scales its attributes/duration with Empathy and preserves it across maps.
+Static checks, packaging and 132 qualified assertions in 19 native runs pass.
+[Evidence](assets/validation_5418/RESULTS.md). Physical-input acceptance CA249-01
+remains pending; earlier accepted issues are unchanged.
 
 5.4.17 implements [#248](https://github.com/damiancurti/Caelum-Argenteum/issues/248):
 Cleric Rally restores allied Adrenaline in a moving visible area and scales final

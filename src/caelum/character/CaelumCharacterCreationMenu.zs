@@ -322,7 +322,10 @@ class CaelumCharacterCreationMenu : ListMenu
                             ? "CA_CREATE_CLASS_FORMATION_BREAKER"
                             : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
                             && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_CLERIC
-                                ? "CA_CREATE_CLASS_RALLY" : "CA_CREATE_CLASS_PLANNED", false);
+                                ? "CA_CREATE_CLASS_RALLY"
+                                : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                                && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_BATTLE_MAGE
+                                    ? "CA_CREATE_CLASS_SUMMONING" : "CA_CREATE_CLASS_PLANNED", false);
         return result;
     }
 

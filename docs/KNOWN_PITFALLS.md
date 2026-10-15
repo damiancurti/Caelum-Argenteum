@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-102 - Summoned bodies need explicit travel ownership and native JIT checks
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #249 / 5.4.18, 2026-10-15;
+  baseline b87f977b plus the #249 working patch.
+- An owned inventory can move its companion and finite inventory to
+  STAT_TRAVELLING in PreTravelled. Travelled must restore the companion to
+  STAT_DEFAULT and its inventory to STAT_INVENTORY before native travel cleanup.
+  Retain identity and reserves; clear old-map targets and geometry references.
+  A blocked arrival can keep the body noninteractive while the owner's timer runs.
+- Native A_Look does not enter See without an enemy. Merely waking friendly
+  A_Chase still permits wandering away; explicit owner following needs its own
+  collision-aware step and obstacle fallback. Do not use the caster as a patrol
+  point, which can trigger unrelated PatrolSpecials for its TID.
+- A scripted `out Vector3` placement result compiled but failed during JIT with
+  `REGT_ADDROF not implemented for vectors`. Returning an object with Found/Point
+  removes that output parameter. The engine returned zero on that failed run:
+  require a completion marker and scan JIT diagnostics, not just the exit code.
+- Evidence: [validation_5418](../assets/validation_5418/RESULTS.md), including
+  current reload/hub/blocked-arrival and copied-save checks. Prototype failures
+  and final hashes remain recorded. Scope is the tested native engine and temporary
+  ally lifecycle; campaign/multiplayer and author acceptance are not implied.
+
 ## CA-KP-101 - Capture damage factors before resource-changing callbacks
 
 - Status: ENGINE-VERIFIED, GZDoom 4.14.2, #248 / 5.4.17, 2026-10-15.

@@ -1,6 +1,46 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.17** — 2026-10-15.
+Documentation version: **5.4.18** — 2026-10-15.
+
+## Battle Mage Summoning - 5.4.18 / #249
+
+Invocacion replaces Deafening Cry. User4 retains the shared three-second paid
+preparation, full initial Anima requirement, cancellation without refund and
+60-second reuse from successful release. It is an offensive class ability for
+Battle Cry's existing restriction. Aim at visible ground when preparation ends;
+base reach is 40 m, scaled by Eloquence. If the aimed position is occupied, search
+for nearby visible ground within range where the existing Zupay cylinder fits.
+Never telefrag or place through walls. If no valid position exists, retain spent
+Anima and do not start reuse; an existing summon remains unchanged.
+
+Each caster owns one temporary allied Zupay. Preserve the current creature's
+size, mass, artwork, attacks and finite supplies; suppress unique MAP02/port
+boss identity, retreat and quest events. Empathy snapshots at release, multiplying
+all twelve base attributes (33 at power 1, 66 at power 2) before the existing
+derived-stat formulas. Attributes retain integer representation, rounded to the
+nearest integer. Its own resulting Strength/Intelligence drive existing attacks;
+there is no extra caster-damage multiplier. Empathy also multiplies the base
+10-second duration. Successful recasting replaces the old creature with a fresh
+one and a new duration, never stacking or renewing its damaged body.
+
+The summon follows its caster when not fighting and independently engages
+enemies with its existing combat. Its attacks, ground-launch impulse, projectiles,
+breath burning and thermal radiation protect the caster, allies and neutrals.
+Projectile ownership/policy persists after the creature disappears. Normal solid
+body collision is retained. Death of the summon or caster, or expiry, removes
+the summon without corpse, loot, kill count or nearby ally-death reward.
+
+The revision-1 owned effect carries the body and its finite inventory between
+maps rather than recreating them. Preserve Health, reserves and remaining time;
+clear previous-map targets and ongoing breath. If no visible space is available
+near the arrival point, keep the body pending and noninteractive while duration
+continues, retrying placement on the shared one-second cadence. Trips that advance
+hours or days subtract their elapsed simulation time from the effect.
+
+Implemented on feat/issue249-summoning. Static validation, normal packaging and
+132 qualified assertions in 19 native runs pass, including copied-save upgrade,
+optional inert-class rollback and return (validation_5418). CA249-01 physical-input
+acceptance remains pending. Earlier accepted issues are not reopened.
 
 ## Rally - 5.4.17 / #248
 
@@ -7340,7 +7380,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Mage | Arcane Sun | Large traveling fire orb: tenfold reference impact/burn/explosion, one homing shot per second and 25 straight spherical shots at scenery impact or expiry. Enemies only; see 5.4.13 above. |
 | Mercenary | Formation Breaker (Rompeformaciones) | Forward ground double tap: upright running x4 for 1 s, collision cushioning/final Toughness reduction x10; Empathy scales full factors and durations. No impulse Air fee; normal running drain remains. |
 | Cleric | Rally | Restores 10% current maximum Adrenaline per second to the caster and visible allies; their current bars multiply outgoing and divide incoming final damage. Empathy scales full factors/recovery/duration. See 5.4.17 above. |
-| Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |
+| Battle Mage | Summoning | One allied Zupay at aimed/nearby valid ground. Empathy scales its base attributes and duration; follows across maps, disappears on death/expiry. See the 5.4.18 contract above. |
 | Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |
 | Investigator | Levitation | Allows flight for approximately 10 seconds. |
 | Arcanist | Sleep | Targets remain motionless and wake when hit. |

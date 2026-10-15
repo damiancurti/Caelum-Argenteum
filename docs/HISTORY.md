@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.17** — 2026-10-15.
+Documentation version: **5.4.18** — 2026-10-15.
+
+## 5.4.18 - Battle Mage Summoning (#249, 2026-10-15)
+
+After accepting CA248-01, the author confirmed aimed ground at release, 40 m base
+reach with Eloquence, nearest visible fitting fallback, and failed placement with
+no refund or cooldown. The allied Zupay follows and fights automatically. Recasting
+replaces it; Empathy scales all twelve base attributes and duration. Death of either
+summon or caster removes it without corpse, loot or rewards. Its attacks protect
+allies. Map transfer preserves the same body/resources/time, waiting invisibly for
+room if necessary while time continues. Long journeys consume their elapsed time.
+Static validation and normal packaging pass; frozen/runtime/source members match.
+132 assertions in 19 GZDoom 4.14.2 runs cover placement, scaling, native casting,
+combat/protection, death, saved preparation/body state, hub/blocked arrival and
+long-journey expiry. Copied-save upgrade/bridged rollback/return pass. Native JIT
+output-vector and native friendly-wander findings are retained in validation_5418.
+Agent visual review passes; CA249-01 physical-input acceptance remains pending.
+No merge or closure is claimed. Keep-awake remains released.
 
 ## 5.4.17 - Cleric Rally (#248, 2026-10-15)
 

@@ -704,7 +704,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
-        InitializeUniformFolkloreProfile(33);
+        InitializeUniformFolkloreProfile(CaelumConstants.ZUPAY_ATTRIBUTE_LEVEL);
         ConfigureCombatMagicalRange();
         CaelumDemonService.Initialize(self);
     }

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.17** — 2026-10-15.
+Documentation version: **5.4.18** — 2026-10-15.
+
+## 5.4.18 - Summoning (#249, pending author review)
+
+The implementation branch feat/issue249-summoning starts at accepted #248
+b87f977b / PR296. SYSTEMS and the issue record the author's placement, replacement,
+attribute-scaling, targeting, death and travel decisions. Static checks, packaging
+and 132 assertions in 19 native runs pass (validation_5418), with copied-save
+upgrade/rollback/return and agent visual review. CA249-01 is the actionable
+author check in pending_test.txt. Keep the focused PR separate; no merge/closure.
+#250-252 keep their scope; #282 follows the batch.
 
 ## 5.4.17 - Rally (#248, accepted)
 

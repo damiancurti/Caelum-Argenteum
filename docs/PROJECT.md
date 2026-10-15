@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.17** — 2026-10-15.
+Documentation version: **5.4.18** — 2026-10-15.
+
+## 5.4.18 - Battle Mage Summoning (#249)
+
+The author confirmed aimed-ground placement, nearest visible fitting fallback,
+automatic following/combat, replacement on recast, Empathy-scaled base attributes,
+ally protection and disappearance without rewards. The same body follows between
+maps with its saved state; elapsed long journeys consume its duration. Isolated
+native validation passes in validation_5418: 132 assertions in 19 runs, including
+copied-save upgrade/rollback/return. Static checks and normal packaging pass.
+CA249-01 author acceptance remains pending. #250-252 and #282 remain separate.
 
 ## 5.4.17 - Cleric Rally (#248)
 

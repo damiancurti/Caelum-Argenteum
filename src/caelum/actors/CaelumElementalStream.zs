@@ -51,6 +51,8 @@ class CaelumElementalStream : Object play
 
     static void ApplyContact(Actor emitter,Actor body,bool ice=false)
     {
+        let summoned=CaelumSummonedZupay(emitter);
+        if(summoned!=null && !summoned.CanAffect(body))return;
         let status=Status(body);
         if(status==null || emitter==null)return;
         double power=Power(emitter);
@@ -97,6 +99,9 @@ class CaelumElementalStream : Object play
         while((entry=search.Next())!=null)
         {
             let body=Actor(entry);
+            let breath=CaelumDemonBreath(source);
+            let summoned=breath!=null?CaelumSummonedZupay(breath.Emitter):null;
+            if(summoned!=null && !summoned.CanAffect(body))continue;
             if(body.health<=0 || !CaelumThermalBody.Supported(body))continue;
             let thermal=CaelumThermalBody.Get(body,true);
             if(thermal==null)continue;

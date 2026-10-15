@@ -5853,3 +5853,15 @@ CA_TELEKINESIS_TARGET = "Apuntá a un cuerpo vivo o un objeto móvil del escenar
 CA_CREATE_RACIAL_TELEKINESIS = "Telequinesis (User1): sujeta un cuerpo vivo o un objeto móvil del escenario a la distancia de captura; volvé a pulsar para soltarlo. Consume 1 Ánima por kg y segundo antes de modificadores. Inteligencia aumenta la fuerza y Elocuencia el alcance. El cuerpo sujetado no puede actuar. Se suelta al perderlo de vista o salir del alcance.";
 CA_CREATE_RACIAL_BREATHING = "Respiración sobrenatural (User1): sustituye todo gasto de Aire por Ánima a razón de 1:1, aplicando luego la reducción de coste de Ánima. Sin gasto fijo ni reutilización. Si no alcanza para un esfuerzo completo, se apaga y ese esfuerzo usa Aire normalmente.";
 CA_HUD_CLASS_PREPARING = "Lanzando";
+
+[enu default]
+CA_SUMMON_ZUPAY_NAME = "Summoned Zupay";
+CA_SUMMON_CAST = "Summoning: an allied Zupay answers your call.";
+CA_SUMMON_INVALID = "Summoning needs visible ground with enough room within reach.";
+CA_CREATE_CLASS_SUMMONING = "Summoning (User4): prepare for 3 seconds, then summon an allied Zupay at the ground you aim at, or the nearest valid space. Eloquence increases reach; Empathy increases its base attributes and duration. It follows you across maps, preserving its state. A new cast replaces it. It disappears when either of you dies or its duration ends, without loot.";
+
+[es]
+CA_SUMMON_ZUPAY_NAME = "Zupay invocado";
+CA_SUMMON_CAST = "Invocación: un Zupay aliado responde a tu llamado.";
+CA_SUMMON_INVALID = "La invocación necesita suelo visible, espacio suficiente y estar dentro del alcance.";
+CA_CREATE_CLASS_SUMMONING = "Invocación (User4): prepará durante 3 segundos y aparecerá un Zupay aliado en el suelo al que apuntás, o en el lugar válido más cercano. Elocuencia aumenta el alcance; Empatía sus atributos base y duración. Te sigue entre mapas conservando su estado. Volver a lanzarla lo reemplaza. Desaparece si alguno muere o termina la duración, sin botín.";

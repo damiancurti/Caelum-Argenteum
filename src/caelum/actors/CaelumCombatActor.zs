@@ -592,6 +592,8 @@ class CaelumCombatActor : Actor
             return;
         }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
+        let summoned=CaelumSummonedZupay(combatActor);
+        if(summoned!=null && summoned.FollowCaster())return;
         let resident=CaelumAnchoredResident(combatActor);
         if(resident!=null && resident.IsRuloPartyFighting())
         {
@@ -1517,6 +1519,8 @@ class CaelumCombatActor : Actor
         while (iterator.Next())
         {
             Actor candidate = iterator.thing;
+            let summoned=CaelumSummonedZupay(self);
+            if(summoned!=null && !summoned.CanAffect(candidate))continue;
             if (candidate == null
                 || candidate == self
                 || candidate.health <= 0

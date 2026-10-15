@@ -18,6 +18,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
+        if(PreventSummoningFriendlyFire(victim))return 0;
         if(CaelumDefenseReceiver==victim)return damage;
         if (PreventCaelumMassDiagnosticFriendlyFire(victim)) { return 0; }
         return Max(1, GetCaelumPreparedDamage(Max(1, damage)));
@@ -80,6 +81,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
+        if(PreventSummoningFriendlyFire(victim))return 0;
         if(CaelumDefenseReceiver==victim)return damage;
         if (PreventCaelumMassDiagnosticFriendlyFire(victim)) { return 0; }
         return Max(1, int(

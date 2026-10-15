@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.17** — 2026-10-15.
+Documentation version: **5.4.18** — 2026-10-15.
+
+## 5.4.18 - Summoning asset reuse (#249)
+
+The temporary allied Zupay reuses the current owned sprites, animations, sounds,
+projectile art and class hands/HUD. No new artwork or redistribution dependency is
+introduced. Deterministic isolated fixture sources and runners are in
+assets/validation_5418; generated native packages, logs, saves and captures remain
+local in build/. Native visual review confirms reused Zupay art, Spanish test
+overlay and shared HUD. Author CA249-01 remains pending. No development IWAD
+resources are added to the product.
 
 ## 5.4.17 - Rally integration and isolated evidence (#248)
 
