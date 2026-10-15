@@ -12,6 +12,9 @@ class CaelumChannelEffect : Actor
     int ClimateRevision;
     double InitialClimatePower,ClimatePower,ClimateTotal,CalmWindDirection;
     transient CaelumSealPath ClimatePath;
+    bool ChannelCameraCaptured,ChannelWasChase;
+    Actor ChannelPreviousCamera;
+    CaelumChannelSealMark ChannelMark;
 
     void EnsureClimateState()
     {
@@ -362,6 +365,7 @@ class CaelumChannelEffect : Actor
 
     override void OnDestroy()
     {
+        CaelumSealPresentation.End(self);
         RestoreTargetGravity();
         let it=ThinkerIterator.Create("CaelumSealGravity");CaelumSealGravity binding;
         while((binding=CaelumSealGravity(it.Next()))!=null)binding.Release(self);
@@ -382,6 +386,7 @@ class CaelumChannelEffect : Actor
             return;
         }
         EnsureClimateState();
+        CaelumSealPresentation.Update(self);
         // El tipo se toma del objeto exacto que inició la canalización. Así
         // ningún actor de efecto anterior puede conservar el tipo Fuego.
         SealType = Clamp(ChannelSeal.ItemType, 0,
