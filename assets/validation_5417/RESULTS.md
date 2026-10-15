@@ -4,7 +4,9 @@ Cleric Rally is implemented on its own branch above accepted #247. **74 qualifie
 assertions in 15 native runs pass** on GZDoom 4.14.2 / Windows / Vulkan. Static
 validation passes with zero errors. The normal package is compared member by
 member with src and the frozen tested production package by `record_evidence.py`.
-Author acceptance **CA248-01 remains pending** in root pending_test.txt.
+Author acceptance **CA248-01 passed on 2026-10-15**: "La prueba dio bien".
+The offered manual scenario exited normally; acceptance.json retains its scope,
+run identity and runtime/fixture hashes. The confirmed queue entry is cleared.
 
 The native fixture verifies mobile range/sight/allegiance, current maxima, recovery
 caps, first and last pulse, strongest overlap, renewal phase, full Empathy factors,

@@ -22,8 +22,16 @@ damage randomness, explicit Actor casts in the manual UI and Windows save-path
 resolution; evidence preserves each failure and its successful correction.
 The screenshot waited for queued input before verifying the 300-to-200 hit.
 Implementation 4418e05a is committed/pushed; draft PR296 stacks on accepted PR295.
-CA248-01 is pending author acceptance. No campaign, multiplayer, performance,
-merge/closure or other-issue acceptance is claimed. Keep-awake remains released.
+CA248-01 was pending author acceptance at delivery.
+
+CA248-01 (origin 5.4.17 / #248) passed on 2026-10-15: the author confirmed
+"La prueba dio bien" after the offered native preparation/cancellation, moving
+area, sight/range and controlled damage scenario. The manual run
+`author-20261015-120126` exited normally (code 0); acceptance.json records the
+exact runtime/fixture hashes and offered scope, without additional itemized claims.
+The accepted entry was removed from pending_test.txt without a version increment.
+PR296 is ready for review. No broad campaign, multiplayer, performance, merge/closure
+or other-issue acceptance is claimed. Keep-awake remains released.
 
 ## 5.4.16 - Formation Breaker (#247, 2026-10-15)
 

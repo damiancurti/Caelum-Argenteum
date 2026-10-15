@@ -48,7 +48,7 @@ Static validation, normal packaging and 74 qualified native assertions pass.
 Current save/load, preparation reload and hub travel preserve clocks/payment.
 The optional copied-save bridge to 5.4.16 removes unsupported Rally areas and
 preparation without refund; preserved original saves provide reversal. Upgrade,
-bridged rollback and re-upgrade pass. CA248-01 remains pending author acceptance.
+bridged rollback and re-upgrade pass. CA248-01 passed author review on 2026-10-15.
 Exact commands/hashes and limits are in assets/validation_5417.
 
 ## Mercenary Formation Breaker - 5.4.16 / #247

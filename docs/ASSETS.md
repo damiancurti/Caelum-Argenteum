@@ -11,7 +11,8 @@ packages, saves, screenshots and logs remain in build/. These development maps
 use the local IWAD and are not packaged with the product. The 16,166 normal
 package members match src and the frozen runtime. Native/static checks pass;
 agent visual review confirms the Spanish control/resource/last-hit overlay and
-class HUD. Author check CA248-01 remains pending.
+class HUD. CA248-01 passed author review on 2026-10-15; acceptance.json retains
+the offered scenario and frozen-build identity.
 
 ## 5.4.16 - Formation Breaker residual appearance (#247)
 

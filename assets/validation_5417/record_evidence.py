@@ -53,5 +53,12 @@ result={'issue':248,'version':'5.4.17','date':'2026-10-15','runtime_sha256':sha(
   'delivery/preview: screenshot preceded queued network events; feedback waits three tics and shows the resolved hit. Original capture/log preserved.'
  ],'limitations':['No author acceptance, broad campaign, multiplayer, performance or other class delivery claim.',
  'Rollback requires the documented inert-class bridge on copied saves; unsupported temporary area/preparation is cancelled without refund. Original saves remain unchanged.']}
+acceptance_path=HERE/'acceptance.json'
+if acceptance_path.exists():
+ acceptance=json.loads(acceptance_path.read_text(encoding='utf-8'))
+ assert acceptance['result']=='passed' and acceptance['test_id']=='CA248-01'
+ result['author_acceptance']=acceptance
+ result['visual_review']['result']=result['visual_review']['result'].replace('; author acceptance pending.', '. Author acceptance CA248-01 passed on 2026-10-15.')
+ result['limitations'][0]='Author acceptance covers the offered CA248-01 scenario only; no broad campaign, multiplayer, performance or other class delivery claim.'
 (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'assertions':result['native_assertions'],'runs':len(runs),'members':len(members),'runtime':result['runtime_sha256']}))

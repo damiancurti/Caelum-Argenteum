@@ -9,8 +9,8 @@ visible allies in a moving area. Their current bars scale outgoing/incoming
 damage after defenses; the strongest area applies. Empathy scales full factors,
 recovery and duration. Shared preparation and cancellation remain authoritative.
 Static checks, normal packaging and 74 qualified assertions in 15 native runs
-pass on the focused branch above #247. CA248-01 awaits author acceptance; no
-merge is claimed. See SYSTEMS and validation_5417 for exact evidence and limits.
+pass on the focused branch above #247. CA248-01 passed author review on
+2026-10-15; PR296 is ready. No merge is claimed. See SYSTEMS and validation_5417 for exact evidence and limits.
 
 ## 5.4.16 - Mercenary Formation Breaker (#247)
 

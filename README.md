@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Cleric Rally restores allied Adrenaline in a moving visible area and scales final
 damage with each beneficiary's current bar. Static checks, packaging and 74
 qualified assertions in 15 native runs pass. [Evidence](assets/validation_5417/RESULTS.md).
-Author check CA248-01 is pending.
+CA248-01 passed author review on 2026-10-15; PR296 is ready for review.
 
 5.4.16 implements [#247](https://github.com/damiancurti/Caelum-Argenteum/issues/247):
 Mercenary Formation Breaker empowers forward ground double taps with an upright,

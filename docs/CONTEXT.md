@@ -4,7 +4,7 @@ Documentation version: **5.4.17** — 2026-10-15.
 
 **5.4.16/#247:** Formation Breaker implemented; CA247-01 accepted on 2026-10-15.
 validation_5416; PR295 ready on PR294. Keep-awake released.
-**5.4.17/#248:** Rally implemented; 74 native assertions pass. PR296 draft; CA248-01 pending; validation_5417.
+**5.4.17/#248:** Rally implemented; 74 native assertions pass. CA248-01 accepted 2026-10-15; PR296 ready; validation_5417.
 
 **5.4.15/#260:** ordinary acceleration and Air-paid double tap implemented; CA260-01/02 accepted on 2026-10-15. Native evidence: validation_5415. PR294 ready for review.
 

@@ -1,0 +1,16 @@
+{
+  "test_id": "CA248-01",
+  "originating_version": "5.4.17",
+  "issue": 248,
+  "result": "passed",
+  "author_quote": "La prueba dio bien",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered native User4 preparation/cancellation, moving allied recovery area, range/sight eligibility, and controlled current-bar outgoing/incoming damage. No additional itemized claim.",
+  "run": "build/issue248-delivery/author-20261015-120126-run.json",
+  "exit_code": 0,
+  "pid": 52012,
+  "runtime_sha256": "CD4791A75AEC5FD45574DE2D2EB43D7CDB7C982258CF5F7A61116A0011F0AE25",
+  "fixture_sha256": "2DDC197E6E17D1AB5DC982AA87CC0B7733F1B9981921AEC7E320605DE8F20999",
+  "finished_utc": "2026-10-15T15:03:35.6922758Z",
+  "qualifications": "Accepts the offered scenario; no broad campaign/multiplayer acceptance, merge or issue closure."
+}

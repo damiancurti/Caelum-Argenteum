@@ -817,11 +817,26 @@
     "issue248-rollback": "b1828e30190ee643cbfd9317893de47085a4d912bfbd2cd61bfdf8cb54473b7e",
     "issue248-return": "8301137099199492b12954ed05607d59ba860c07f2890e564a6647be5c1ed968"
   },
-  "author_acceptance": "Pending CA248-01.",
+  "author_acceptance": {
+    "test_id": "CA248-01",
+    "originating_version": "5.4.17",
+    "issue": 248,
+    "result": "passed",
+    "author_quote": "La prueba dio bien",
+    "confirmation_date": "2026-10-15",
+    "scope": "Offered native User4 preparation/cancellation, moving allied recovery area, range/sight eligibility, and controlled current-bar outgoing/incoming damage. No additional itemized claim.",
+    "run": "build/issue248-delivery/author-20261015-120126-run.json",
+    "exit_code": 0,
+    "pid": 52012,
+    "runtime_sha256": "CD4791A75AEC5FD45574DE2D2EB43D7CDB7C982258CF5F7A61116A0011F0AE25",
+    "fixture_sha256": "2DDC197E6E17D1AB5DC982AA87CC0B7733F1B9981921AEC7E320605DE8F20999",
+    "finished_utc": "2026-10-15T15:03:35.6922758Z",
+    "qualifications": "Accepts the offered scenario; no broad campaign/multiplayer acceptance, merge or issue closure."
+  },
   "visual_review": {
     "path": "build/issue248-delivery/feedback.png",
     "sha256": "9211e73a2d4fa05f300719c0b5f8e6dbdeef0055c6775a3d156e7d93ad5c14a7",
-    "result": "Agent inspected readable Spanish resource/factor/HP overlay, friendly/hostile placement and native class HUD. At 50% Adrenaline the controlled 300-HP hit removes 200 HP; author acceptance pending."
+    "result": "Agent inspected readable Spanish resource/factor/HP overlay, friendly/hostile placement and native class HUD. At 50% Adrenaline the controlled 300-HP hit removes 200 HP. Author acceptance CA248-01 passed on 2026-10-15."
   },
   "diagnostics": [
     "audit02/advanced: granting a seal recalculated player evasion; pin test defenses afterward. Reviewed payload checks pass without production changes.",
@@ -832,7 +847,7 @@
     "delivery/preview: screenshot preceded queued network events; feedback waits three tics and shows the resolved hit. Original capture/log preserved."
   ],
   "limitations": [
-    "No author acceptance, broad campaign, multiplayer, performance or other class delivery claim.",
+    "Author acceptance covers the offered CA248-01 scenario only; no broad campaign, multiplayer, performance or other class delivery claim.",
     "Rollback requires the documented inert-class bridge on copied saves; unsupported temporary area/preparation is cancelled without refund. Original saves remain unchanged."
   ]
 }
