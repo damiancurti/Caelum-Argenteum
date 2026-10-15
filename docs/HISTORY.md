@@ -95,6 +95,12 @@ runtime/fixture and handoff are recorded in validation_544/acceptance.json.
 The native session was still open at confirmation; no exit code or merge/closure
 is inferred. Earlier pending statements above describe the preceding checkpoints.
 
+Author decisions on 2026-10-14 (implementation remains scoped by issue):
+Continuous racial powers switch off on sleep, stun, immobilization or death. They may start with less than one second of Anima, without an upfront fee: charge uniformly per simulation tic, stop before an unaffordable tic, and leave the small unpaid remainder untouched. No duration cap or cooldown.
+Hunter's Instinct uses the target's rear 180-degree half at impact, based on both actors' current positions, for physical and magical critical chance. Multiply current stealth (including crouch) and rear critical chance by three, then apply existing caps.
+Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
+Sleep poses: the rat and Bull lie naturally as animals; Mandinga and Zupay lie supine, like the player. New owned artwork is being registered and is not yet author accepted.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

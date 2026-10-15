@@ -61,8 +61,11 @@ expiry/reapplication. Voluntary rest is unchanged. Compatibility evidence and
 limits are in assets/validation_544; author acceptance is separate.
 
 Continuous racial toggles have no cooldown/duration cap. Hunter's Instinct and
-Socialization cost 10 Anima/second before cost modifiers. Their production effects,
-the remaining racial drain policies and nine new class effects stay in #239-251.
+Socialization cost 10 Anima/second before cost modifiers. Continuous racial powers switch off on sleep, stun, immobilization or death. They may start with less than one second of Anima, without an upfront fee: charge uniformly per simulation tic, stop before an unaffordable tic, and leave the small unpaid remainder untouched. No duration cap or cooldown.
+Hunter's Instinct uses the target's rear 180-degree half at impact, based on both actors' current positions, for physical and magical critical chance. Multiply current stealth (including crouch) and rear critical chance by three, then apply existing caps.
+Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
+These are approved contracts; their production effects, the remaining racial
+drain policies and nine new class effects stay in #239-251.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 
