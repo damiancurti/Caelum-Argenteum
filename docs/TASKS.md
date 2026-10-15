@@ -22,8 +22,12 @@ approved icon size in CA238-01. Evidence: validation_544/small_icons.json and ac
 
 Eight living views now cover rat/Bull/Mandinga/Zupay. Native checks cover all
 four bodies, hit/expiry wake and saved pose/counters; CA238-02 passed on 2026-10-14.
-Remaining: racial lifecycle integration alongside #239-242 and remaining
-compatibility/input boundaries. Keep new class effects in #243-251 and movement
+Shared racial lifecycle is integrated: 43 native contract/input checks cover all
+nine weapon families and unarmed; saved object/debit and hub return pass. The
+factory remains empty until each #239-242 consumer is implemented. The existing
+journey forecast refuses active effects it cannot simulate; native hub travel
+retains them. Remaining: full rollback coverage and each consumer's input/effect
+checks. Keep new class effects in #243-251 and movement
 in #260. No merge or closure is inferred from component or author checks.
 
 Queue: finish the current 21-issue batch (#237-254 and #259-261), then implement

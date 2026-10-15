@@ -17,7 +17,10 @@ The author passed CA238-01 (preparation and HUD) on 2026-10-14.
 Class/racial icons now use a smaller 64-unit square, close to Tarot/Seal size.
 Rat/Bull now lie naturally; Mandinga/Zupay use living supine poses with eight
 views. Native pose/hit/expiry and saved-pose checks pass; the author passed
-CA238-02 on 2026-10-14. Racial lifecycle integration and compatibility boundaries remain open.
+CA238-02 on 2026-10-14. The shared racial controller now handles User1, per-tic
+payment, interruption and saved effects; concrete powers remain in #239-242.
+Focused native controller/save/hub checks pass. Remaining compatibility boundaries
+are documented separately; the instrumentation is not a playable racial power.
 [Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):

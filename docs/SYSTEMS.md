@@ -26,8 +26,8 @@ scaling. At the author's request, both glyphs use centered 64-by-64 logical unit
 instead of 88-by-88, matching the Tarot frame width and approximating the visible
 Seal width. Labels and class countdown sit below the reduced glyphs.
 Class readiness uses implemented effect eligibility, with dim unavailable icons,
-a preparation label and reuse seconds. Racial state has no timer; its boolean
-defaults false and individual racial effects will own activation. The compass
+a preparation label and reuse seconds. Racial state has no timer; the shared
+controller owns its active boolean and saved effect. The compass
 and notifications reserve the column width. Generic icons reuse owned artwork.
 
 The author confirmed the existing curves: B=(N*N+25*N)/125; M2=1+3B/100.
@@ -70,6 +70,25 @@ Hunter's Instinct uses the target's rear 180-degree half at impact, based on bot
 Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
 These are approved contracts; their production effects, the remaining racial
 drain policies and nine new class effects stay in #239-251.
+
+The #238 shared racial controller is now integrated with native User1. Its
+revision-1 saved effect object carries the selected race; old HUD-only flags
+migrate once to inactive. A held press toggles once, and an interface-absorbed
+press cannot activate after closing the interface. Admission requires one
+affordable simulation tic, with no initial fee; the first paid tic starts the
+effect. Current Anima cost reduction applies once to each tic, including personal
+time simulation. Forced sleep/stun/immobilization/death, race mismatch or an
+invalid effect end it exactly once. Voluntary Seal channeling does not count as
+forced immobilization. Activation remains blocked during class preparation and
+existing interaction menus/rest/channel controls. Unsupported races report the
+unavailable effect rather than displaying a fictitious active power.
+
+Concrete racial effects remain in #239-242. Instrumentation verifies saved
+effect identity and debit across native save/load and map hub return. Numerical
+journey forecasts reuse the existing unsupported-effect restriction: a pending
+class preparation or racial effect must finish/be stopped before that forecast
+can run. Preview rejection neither consumes resources nor silently stops a power.
+This is distinct from native hub transitions, which retain the saved controller.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 

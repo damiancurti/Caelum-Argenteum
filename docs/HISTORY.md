@@ -120,6 +120,20 @@ fixture, scope and normal exit code 0 are recorded in validation_544/sleep_accep
 The confirmed entry is removed from pending_test.txt. Shared racial integration
 and compatibility boundaries remain open; this does not close or merge #238.
 
+Same-version shared racial controller follow-up: native User1 now dispatches a
+revision-1 saved effect with per-simulation-tic payment and idempotent cleanup.
+No concrete racial bonus is enabled on this branch. Native instrumentation passes
+43 contract/input assertions, 25 save assertions, 3 reload assertions and 27 hub
+assertions. The existing class/Sleep contract still passes 1,021 assertions.
+Numerical journey forecasts reject effects they cannot simulate, retaining the
+existing external-effect policy without silently cancelling or freezing them.
+An early compile used reserved word Stop; it was renamed Deactivate. A save-test
+oracle initially omitted the Eloquence discount restored by equipping a weapon;
+the fixture now controls that modifier, separately from direct live-modifier
+checks. Failed runs remain preserved. Evidence: validation_544/racial_evidence.json.
+Full paid-state rollback and consumer-specific effects remain open. These tests
+do not replace CA238-01/02 or claim author acceptance of #239-242.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

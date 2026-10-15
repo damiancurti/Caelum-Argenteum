@@ -18,8 +18,10 @@ third waking hit, preserves ally/neutral exceptions and expires normally. Renewe
 Sleep resets hits/power and retains the longer duration. Saved cast/debit and Sleep
 state pass reload and native hub-return checks. Four missing creature bodies now
 have eight living sleep views; their native pose/wake/save checks pass. The author
-passed CA238-02 on 2026-10-14. Racial lifecycle/effects and compatibility boundaries
-remain unfinished. CA238-01 is a focused
+passed CA238-02 on 2026-10-14. The racial controller now serializes an optional
+effect, handles native User1, pays each simulation tic and cleans up on forced
+control, death or exhaustion. Native instrumentation/save/hub checks pass; real
+effects stay in #239-242 and full rollback coverage remains open. CA238-01 is a focused
 preparation/HUD author check, passed on 2026-10-14; full issue acceptance remains pending. Evidence: validation_544.
 The PR remains draft; separate effects retain their own issues and PRs.
 

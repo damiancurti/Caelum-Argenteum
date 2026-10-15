@@ -3,7 +3,7 @@
 Documentation version: **5.4.4** — 2026-10-14.
 
 **5.4.4/#238 WIP:** paid casting/Sleep rules pass native save/hub checks; CA238-01 passed 2026-10-14.
-Poses: CA238-02 passed; racials open. validation_544. After this batch, #282.
+CA238-02 passed. Racial controller tested; effects/rollback open. validation_544. Then #282.
 #254: validation_543/PR275; CA254-01 passed 2026-10-14. #261: CA261-01 passed 2026-10-14/PR274 ready. #259: CA259-01 passed 2026-10-14/PR273.
 #237: validation_540/PR272.
 **#231-236/#255-258:** accepted/merged/closed; HISTORY.

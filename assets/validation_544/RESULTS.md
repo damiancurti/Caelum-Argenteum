@@ -2,6 +2,22 @@
 
 ## Current lifecycle follow-up
 
+The later shared racial follow-up is recorded in racial_evidence.json. User1
+now dispatches a revision-1 effect object, current per-tic Anima debit, held-input
+latching and forced-control cleanup. Production has no concrete effect factory
+yet; the isolated fixture overrides it with counters only. Forty-three native
+contract/input checks cover nine real weapon families plus unarmed; save (25),
+reload (3), hub return (27), the existing class/Sleep contract (1,021) and neutral
+5.4.3 upgrade pass. The native upgrade asserts the new racial object is null and
+revision 1. Normal packaging matches all 16,155 native-tested runtime members.
+
+Numerical journey forecasts retain the existing unsupported-effect restriction
+for pending class preparation and racial effects, without spending resources or
+stopping the effect. Native map/hub transitions remain supported. The full
+paid-state rollback boundary below and consumer-specific #239-242 checks remain
+open; this is not manual acceptance of a playable racial bonus. Failed reserved
+method-name and fixture cost-oracle attempts remain recorded in the evidence.
+
 Production User4 now owns preparation/payment/release for Arcanist Sleep. The
 shared controller requires the full cost, snapshots it and debits uniformly over
 105 tics. A second press, forced control/death or insufficient next payment cancels

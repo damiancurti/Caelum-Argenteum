@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `14a32cb556cf3a7fe1b379eb9d9664b25999b7da6e8039d2a179ef9ae70ad60a`. Locations include every definition; the last one per language wins.
+SHA-256: `dd2ff627d840a61e30df4c85d6e650e8a58086ac26931ddddd9b63b141a814f2`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -118,6 +118,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_Q | 97 | CA_Q_DETAIL_ABOUT | CA_Q_SIDE_WAIT_TITLE |
 | CA_QUEST | 12 | CA_QUEST_FOUNDATION_NOTE | CA_QUEST_STATUS_OFFERED |
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
+| CA_RACIAL | 2 | CA_RACIAL_ANIMA | CA_RACIAL_UNAVAILABLE |
 | CA_REP | 29 | CA_REP_NEEDS_MEMBER | CA_REP_UNKNOWN_FACTION |
 | CA_REPUTATION | 2 | CA_REPUTATION_FOUNDATION_NOTE | CA_REPUTATION_VALUE_LABEL |
 | CA_RESOURCE | 72 | CA_RESOURCE_ACTIVE_ESSENCE | CA_RESOURCE_TEST_AIR_COST |

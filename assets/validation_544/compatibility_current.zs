@@ -25,7 +25,8 @@ class CA238CompatibilityCurrent : CA238CompatibilityProbe
                 && InitialPreparation<3*TICRATE
                 && user.ClassPreparationTics==0 && user.ClassPreparationRevision==CaelumClassCastView.REVISION;
             Console.Printf("CA238 %s saved preparation resumes without restarting",ok?"PASS":"FAIL");
-            bool racial=user!=null && !InitialRacial && !user.RacialAbilityActive;
+            bool racial=user!=null && !InitialRacial && !user.RacialAbilityActive
+                && user.RacialAbility==null && user.RacialAbilityRevision==CaelumRacialAbilityRules.SCHEMA_REVISION;
             Console.Printf("CA238 %s older saves keep the new racial display inactive",racial?"PASS":"FAIL");
             bool neutral=user!=null && !user.ClassCastActive && user.ClassCastPaid==0
                 && user.ClassCastRevision==CaelumClassAbilityRules.REVISION && user.SpellSleep==null;

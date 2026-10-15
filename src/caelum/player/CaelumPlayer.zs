@@ -674,6 +674,9 @@ class CaelumPlayer : DoomPlayer
     double ClassCastCost,ClassCastPaid;
     // #238: estado compartido; los efectos raciales lo activarán en sus issues.
     bool RacialAbilityActive;
+    int RacialAbilityRevision;
+    bool RacialAbilityInputLatched;
+    CaelumRacialAbilityEffect RacialAbility;
     bool JournalMainM00RuloPracticeDone[6];
     int MainM00RuloPracticeSnapshot;
     bool MainM00BullDefeatedSnapshot;
@@ -8799,6 +8802,7 @@ class CaelumPlayer : DoomPlayer
         if(player!=null && (readingMenu || choosingJourney || CreationWizardOpen || EquipmentMenuOpen || PalomoMerchantMenuOpen
             || CraftingMenuOpen || CaelumTimeSkipState.IsOpen(self) || CaelumRestState.IsActive(self)))
         {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
+        CaelumRacialAbilityRules.ObserveInput(self);
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
@@ -8851,6 +8855,7 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         CaelumCharacterIdentity.Ensure(self);
+        CaelumRacialAbilityRules.Guard(self);
         CaelumDamageFeedback.EnsureRevision(self);
         CaelumBreathing.UpdateSound(self);
         CaelumCarbineWorld.Restore(self);
@@ -9036,6 +9041,7 @@ class CaelumPlayer : DoomPlayer
 
         // Paciencia conserva la tasa; Constitución/reposo reducen los costes.
         CaelumPlayerResources.ApplyAnimaRegeneration(self);
+        CaelumRacialAbilityRules.Advance(self,realStep);
 
         UpdateAdrenalineDecay();
         UpdateSealChannel();
@@ -11149,14 +11155,13 @@ class CaelumPlayer : DoomPlayer
         // El propio icono del Sello muestra su estado; no tapa el centro.
     }
 
-    // User1 y las clases distintas del arcanista conservan su reserva
-    // hasta que sus respectivos bloques sean implementados.
+    // Los efectos se incorporan por separado; no activar bonificaciones ficticias.
+    virtual CaelumRacialAbilityEffect CreateRacialAbilityEffect(int race)
+    { return null; }
+
     void ReserveRacialAbilityInput()
     {
-        if(CaelumClassCastView.Active(self))return;
-        CombatRacialAbilityInputReserved = true;
-        ShowAbilitySuccessMessage();
-        CombatRacialAbilityInputReserved = false;
+        CaelumRacialAbilityRules.Input(self);
     }
 
     void ReserveTarotInput()

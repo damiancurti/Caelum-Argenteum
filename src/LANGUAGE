@@ -5811,9 +5811,13 @@ CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño de fuego, agua, tierra
 [enu default]
 CA_HUD_CLASS_ABILITY = "Class";
 CA_HUD_RACIAL_ABILITY = "Racial";
+CA_RACIAL_UNAVAILABLE = "This racial ability is not available yet.";
+CA_RACIAL_ANIMA = "Not enough Anima to sustain this racial ability.";
 CA_HUD_CLASS_PREPARING = "Casting";
 
 [es]
 CA_HUD_CLASS_ABILITY = "Clase";
 CA_HUD_RACIAL_ABILITY = "Racial";
+CA_RACIAL_UNAVAILABLE = "Esta habilidad racial todavía no está disponible.";
+CA_RACIAL_ANIMA = "No tenés suficiente ánima para mantener esta habilidad racial.";
 CA_HUD_CLASS_PREPARING = "Lanzando";
