@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.16** — 2026-10-15.
+Documentation version: **5.4.17** — 2026-10-15.
+
+## 5.4.17 - Cleric Rally (#248, 2026-10-15)
+
+The author finalized Arenga: 10% of each current maximum Adrenaline per second,
+first pulse after one second, moving allied area with direct sight, and current
+pre-hit bars for both outgoing and incoming final damage. Environmental/impact
+damage is included; self-inflicted damage receives only protection. Overlap uses
+the strongest source; renewal preserves the longer duration and pulse phase.
+Do not bake Rally into stored elemental doses as well as later pulses. Existing
+Empathy full-factor scaling and Survival Instinct recovery amplification apply.
+The focused implementation passes static validation and normal packaging;
+all 16,166 package members match src and the frozen runtime. 74 qualified
+assertions in 15 native runs pass, including native User4, delayed/last pulses,
+live ownership, final damage ordering, elemental doses, nested calls, real
+projectile flight, preparation/current saves, hub travel and copied-save
+upgrade/bridged rollback/return. Exact commands/hashes are in validation_5417.
+Diagnostic failures were fixture evasion/stat initialization, native projectile
+damage randomness, explicit Actor casts in the manual UI and Windows save-path
+resolution; evidence preserves each failure and its successful correction.
+The screenshot waited for queued input before verifying the 300-to-200 hit.
+CA248-01 is pending author acceptance. No campaign, multiplayer, performance,
+merge/closure or other-issue acceptance is claimed. Keep-awake remains released.
 
 ## 5.4.16 - Formation Breaker (#247, 2026-10-15)
 

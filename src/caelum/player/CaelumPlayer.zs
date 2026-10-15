@@ -7656,10 +7656,14 @@ class CaelumPlayer : DoomPlayer
     int PendingDamageVFXKind,DamageVFXKind,DamageVFXTic,DamageFeedbackRevision;
     double DamageVFXStrength;
 
+    // Contexto síncrono: capturar antes de ganar Adrenalina por bloqueo o dolor.
+    transient double RallyDamageFactor;
+    transient int RallyPayloadBaseDamage,RallyResolvedDamage;
+
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
         int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
-        if(flags & DMG_FORCED)damage=CaelumSleepRules.ScaleDamage(self,damage);
+        if(flags & DMG_FORCED)damage=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage));
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -7676,7 +7680,8 @@ class CaelumPlayer : DoomPlayer
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
         // Tras las defensas propias y los factores nativos; antes de perder HP.
-        return CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod));
+        return CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
@@ -7686,7 +7691,13 @@ class CaelumPlayer : DoomPlayer
         int before=health;
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
+        double previousRallyFactor=RallyDamageFactor;
+        int previousRallyBase=RallyPayloadBaseDamage,previousRallyResolved=RallyResolvedDamage;
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
+        RallyPayloadBaseDamage=RallyResolvedDamage=0;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        RallyDamageFactor=previousRallyFactor;
+        RallyPayloadBaseDamage=previousRallyBase;RallyResolvedDamage=previousRallyResolved;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
@@ -8153,7 +8164,7 @@ class CaelumPlayer : DoomPlayer
                 {
                     ApplyIncomingElementalPayload(
                         attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
-                            postToughnessDamage,actualHealthLost,mod)
+                            postToughnessDamage,CaelumRally.PayloadLoss(self,actualHealthLost),mod)
                     );
                 }
             }
@@ -8298,7 +8309,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 ApplyIncomingElementalPayload(
                     attackProjectile, CaelumSealResistance.PayloadDamage(self,inflictor,
-                        finalDamage,actualHealthLost,mod)
+                        finalDamage,CaelumRally.PayloadLoss(self,actualHealthLost),mod)
                 );
             }
             LastArmorHealthDamage = actualHealthLost;

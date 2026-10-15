@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-101 - Capture damage factors before resource-changing callbacks
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #248 / 5.4.17, 2026-10-15.
+- Symptom: evaluating a live Adrenaline modifier after shield/pain callbacks
+  would let the same hit benefit from the resource it generates. Deriving a
+  periodic dose from already-scaled HP would also store that modifier twice.
+- Remedy: capture source/receiver factors at damage entry, apply them after
+  defenses and restore the prior transient context on nested calls. Exclude
+  the factor from stored elemental doses; resolve it again at each real pulse.
+  Handle forced damage separately because it bypasses TakeSpecialDamage.
+- Evidence: native shield-callback/nested-hit fixture, seal plus burn-dose/pulse,
+  forced damage and real in-flight projectile checks in
+  [validation_5417](../assets/validation_5417/RESULTS.md). The same production
+  runtime passes current reload and copied-save upgrade/rollback/return.
+- Limits: this establishes the author's Rally ordering. It does not authorize
+  changing other effects' snapshot policies or claim multiplayer acceptance.
+
 ## CA-KP-100 - Measure obstruction after movable-body contact
 
 - Status: ENGINE-VERIFIED, GZDoom 4.14.2, #247 / 5.4.16, 2026-10-15.

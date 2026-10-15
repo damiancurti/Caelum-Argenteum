@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.16** — 2026-10-15.
+Documentation version: **5.4.17** — 2026-10-15.
+
+## 5.4.17 - Rally integration and isolated evidence (#248)
+
+Reuse existing class hands, Cleric HUD icon, owned characters and localized UI.
+No new art or distribution rights are introduced. assets/validation_5417 contains
+the isolated room/occlusion fixture, native runner and evidence for Rally; generated
+packages, saves, screenshots and logs remain in build/. These development maps
+use the local IWAD and are not packaged with the product. The 16,166 normal
+package members match src and the frozen runtime. Native/static checks pass;
+agent visual review confirms the Spanish control/resource/last-hit overlay and
+class HUD. Author check CA248-01 remains pending.
 
 ## 5.4.16 - Formation Breaker residual appearance (#247)
 

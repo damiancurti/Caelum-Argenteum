@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.16** — 2026-10-15.
+Documentation version: **5.4.17** — 2026-10-15.
+
+## 5.4.17 - Rally (#248, awaiting author check)
+
+The author confirmed moving visible-allied area, current maxima, delayed first
+pulse, full-factor Empathy scaling, pre-hit bar snapshots, final outgoing/incoming
+damage scaling, strongest overlap, renewal and self-damage protection. Periodic
+effects apply Rally only once per damage event, not also to their stored dose.
+Implemented on feat/issue248-rally, based on accepted #247 / PR295. Static,
+normal package and 74 qualified native assertions pass, including copied-save
+upgrade/rollback/return. CA248-01 is actionable in pending_test.txt; no acceptance
+or merge/closure is inferred.
+#249-252 remain separately scoped; #282 follows the batch.
 
 ## 5.4.16 - Formation Breaker (#247, accepted)
 
@@ -10,8 +22,8 @@ native gesture and #238 class preparation. Native interruption, collision, appea
 preparation/save/load, hub and copied-save checks pass; see validation_5416/RESULTS.md.
 CA247-01 passed on 2026-10-15; acceptance.json/HISTORY retain the offered scope.
 PR295 is ready, stacked on #260/PR294; no merge or closure authorized.
-Temporary keep-awake is released. #248 design questions resumed; #248-252 remain
-separately scoped, and #282 follows the batch.
+Temporary keep-awake is released. #248 is delivered above with its own pending
+author check; #249-252 remain separately scoped, and #282 follows the batch.
 
 ## 5.4.15 - Player acceleration and impulse (#260, accepted)
 

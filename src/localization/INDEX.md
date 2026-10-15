@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `f9c24de2a8ccab97f787197fb99e7631bc35dbb7a88866a760c1fd0424eb4961`. Locations include every definition; the last one per language wins.
+SHA-256: `c93ac3afc033bdf048dff60de0bb643911b841db42fae9127353bbf929d65c74`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -44,7 +44,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 48 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 49 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
@@ -123,6 +123,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_QUEST | 12 | CA_QUEST_FOUNDATION_NOTE | CA_QUEST_STATUS_OFFERED |
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
 | CA_RACIAL | 2 | CA_RACIAL_ANIMA | CA_RACIAL_UNAVAILABLE |
+| CA_RALLY | 1 | CA_RALLY_CAST | CA_RALLY_CAST |
 | CA_REP | 29 | CA_REP_NEEDS_MEMBER | CA_REP_UNKNOWN_FACTION |
 | CA_REPUTATION | 2 | CA_REPUTATION_FOUNDATION_NOTE | CA_REPUTATION_VALUE_LABEL |
 | CA_RESOURCE | 72 | CA_RESOURCE_ACTIVE_ESSENCE | CA_RESOURCE_TEST_AIR_COST |

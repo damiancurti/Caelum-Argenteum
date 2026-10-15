@@ -47,6 +47,16 @@ class CaelumMovableProp : Actor
         return true;
     }
 
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {return Max(0,int(Super.TakeSpecialDamage(inflictor,source,damage,mod)
+        *CaelumRally.DamageFactor(self,source)+0.5));}
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        if(flags & DMG_FORCED)damage=Max(0,int(damage*CaelumRally.DamageFactor(self,source)+0.5));
+        return Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+    }
+
     Default
     {
         +SOLID

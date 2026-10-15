@@ -97,7 +97,8 @@ class CaelumJourneyRules : Object play
         if(thermal!=null && thermal.DrinkRemaining>0)return "CA_JOURNEY_EFFECT";
         // No extender, borrar ni simular arbitrariamente efectos externos.
         if (CaelumClassCastView.Active(user) || user.RacialAbility != null || CaelumBattleCry.Active(user)
-            || CaelumSurvivalInstinct.Active(user) || CaelumMiracle.Affected(user)) return "CA_JOURNEY_EFFECT";
+            || CaelumSurvivalInstinct.Active(user) || CaelumMiracle.Affected(user)
+            || CaelumRally.Affected(user)) return "CA_JOURNEY_EFFECT";
         let record = user.GetPersistentCharacterState(false);
         if (record != null && CaelumTarotService.EffectTics(record) > 0) return "CA_JOURNEY_EFFECT";
         for (Inventory item = user.Inv; item != null; item = item.Inv)

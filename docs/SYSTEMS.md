@@ -1,6 +1,55 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.16** — 2026-10-15.
+Documentation version: **5.4.17** — 2026-10-15.
+
+## Rally - 5.4.17 / #248
+
+Cleric User4 uses the shared three-second progressive Anima preparation and
+60-second reuse from release. The living caster carries a revision-1 area with
+40 m base radius, 10 s base duration and 10% maximum Adrenaline recovery per
+second. Snapshot Eloquence-scaled range and Empathy-scaled power/duration at
+release. Require the same native allegiance and direct sight as Miracle:
+caster, cooperative/teammate players and friendly combatants, excluding neutral
+or hostile bodies, corpses and ordinary objects. Current three-dimensional
+distance, sight and allegiance govern both recovery and damage, immediately.
+
+The first pulse is one second after release; the last complete effect second
+also pulses. Restore the recipient's current maximum times the approved rate,
+cap at that maximum, and preserve ordinary decay. The player's existing
+Survival Instinct multiplies this gain once. Only the strongest eligible Rally
+provides either recovery or damage modifiers. Ties use native player number;
+each source retains its own clock and suppressed pulses do not queue.
+Renewal snapshots new potency/range, keeps max(remaining, new duration), and
+does not reset or advance the next pulse.
+
+For each beneficiary, factor = (1 + current Adrenaline / current maximum) times
+the area's captured Empathy power. Scale the full factor. At base power, empty,
+half and full bars give 1, 1.5 and 2. Both outgoing multiplication and incoming
+division apply after the target's defenses, including armor, elemental factors
+and Toughness. Include physical/magic attacks, ongoing burns/poisons, falling,
+collisions and environmental hazards. Own damage applies only incoming division,
+so falling or a self-inflicted explosion does not cancel protection.
+
+Capture both live factors at each damage entry, before that hit grants Adrenaline
+for blocking, pain or damage. Already-flying projectiles and existing periodic
+effects use the current area/bar at impact/pulse, not launch-time snapshots.
+The elemental dose derived from an initial hit excludes Rally's factor; each
+subsequent pulse applies it once. Existing native integer HP quantization,
+Sleep multiplication, immunities and tutorial Health protection remain.
+Snapshot context is transient, nested-call-safe and neutral outside a hit.
+Destructible gates and training/physical props receive outgoing scaling through
+their own final damage paths, without making them allied beneficiaries.
+
+The area serializes revision, power, range, remaining tics and pulse phase.
+Old saves have no Rally inventory and no persistent recipient modifiers.
+Death immediately disables the area; expiry removes it. Forecast travel rejects
+an affected traveler rather than extending or discarding the temporary benefit.
+Static validation, normal packaging and 74 qualified native assertions pass.
+Current save/load, preparation reload and hub travel preserve clocks/payment.
+The optional copied-save bridge to 5.4.16 removes unsupported Rally areas and
+preparation without refund; preserved original saves provide reversal. Upgrade,
+bridged rollback and re-upgrade pass. CA248-01 remains pending author acceptance.
+Exact commands/hashes and limits are in assets/validation_5417.
 
 ## Mercenary Formation Breaker - 5.4.16 / #247
 
@@ -7290,7 +7339,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 | Priest | Miracle | Restores 3% of current maximum Lucidity, Health, Anima and Air per second to the caster and visible allies in a moving area. Empathy scales recovery/duration; see 5.4.12 above. |
 | Mage | Arcane Sun | Large traveling fire orb: tenfold reference impact/burn/explosion, one homing shot per second and 25 straight spherical shots at scenery impact or expiry. Enemies only; see 5.4.13 above. |
 | Mercenary | Formation Breaker (Rompeformaciones) | Forward ground double tap: upright running x4 for 1 s, collision cushioning/final Toughness reduction x10; Empathy scales full factors and durations. No impulse Air fee; normal running drain remains. |
-| Cleric | Rally | Restores 1% Adrenaline per second to nearby allies. |
+| Cleric | Rally | Restores 10% current maximum Adrenaline per second to the caster and visible allies; their current bars multiply outgoing and divide incoming final damage. Empathy scales full factors/recovery/duration. See 5.4.17 above. |
 | Battle Mage | Deafening Cry | Prevents nearby enemies from casting spells, abilities and seals. |
 | Pilgrim | Pilgrim’s Protection | The character and nearby allies receive 50% less environmental damage. |
 | Investigator | Levitation | Allows flight for approximately 10 seconds. |

@@ -2852,10 +2852,13 @@ class CaelumCombatActor : Actor
         );
     }
 
+    // Contexto síncrono: capturar antes de ganar Adrenalina por bloqueo o dolor.
+    transient double RallyDamageFactor;
+
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
     {
         int retained=CaelumSealResistance.HealthDamage(self,inflictor,damage,mod);
-        if(flags & DMG_FORCED)retained=CaelumSleepRules.ScaleDamage(self,retained);
+        if(flags & DMG_FORCED)retained=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained));
         int before=health;
         int result=Super.DamageMobj(inflictor,source,retained,mod,flags,angle);
         CaelumSleepRules.HealthLost(self,before);
@@ -2864,7 +2867,8 @@ class CaelumCombatActor : Actor
 
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
-        return CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod));
+        return CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
@@ -2873,7 +2877,10 @@ class CaelumCombatActor : Actor
         EnsureCombatPersonality();
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
+        double previousRallyFactor=RallyDamageFactor;
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        RallyDamageFactor=previousRallyFactor;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
         return result;
     }

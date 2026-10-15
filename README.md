@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.16.** Obtain and update the complete repository, validate
+**Current release: 5.4.17.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.17 implements [#248](https://github.com/damiancurti/Caelum-Argenteum/issues/248):
+Cleric Rally restores allied Adrenaline in a moving visible area and scales final
+damage with each beneficiary's current bar. Static checks, packaging and 74
+qualified assertions in 15 native runs pass. [Evidence](assets/validation_5417/RESULTS.md).
+Author check CA248-01 is pending.
 
 5.4.16 implements [#247](https://github.com/damiancurti/Caelum-Argenteum/issues/247):
 Mercenary Formation Breaker empowers forward ground double taps with an upright,
