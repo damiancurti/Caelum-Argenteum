@@ -7,8 +7,8 @@ Documentation version: **5.4.9** — 2026-10-15.
 Implemented effective stealth in native movement noise, rear melee/sweep chance
 and saved projectile eligibility/chance/roll. Existing caps and critical damage
 remain. Native weapon, geometry, payment, noise, damage and persistence evidence
-is recorded in assets/validation_549. CA239-01 remains in pending_test.txt for
-the offered live scenario. Complete visual perception stays with its roadmap;
+is recorded in assets/validation_549. CA239-01 passed author review on 2026-10-15;
+HISTORY and acceptance.json preserve the result. Complete visual perception stays with its roadmap;
 keep remaining class powers and #282 in their separate issues/branches/PRs.
 
 ## 5.4.8 - Socialization (#240)

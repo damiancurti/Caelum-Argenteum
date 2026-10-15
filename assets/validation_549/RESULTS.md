@@ -66,14 +66,18 @@ new runtime. Keep original saves: the bridge cannot preserve metadata unknown to
 the older engine script schema. This verifies one reversible baseline, not all
 older versions. The neutral upgrade fixture comes from issue241-upgrade.
 
-## Author check
+## Author acceptance
 
-CA239-01 remains pending in the root pending_test.txt. launch.ps1 opens the
+CA239-01 (origin 5.4.9 / #239) passed on 2026-10-15: "Esa prueba dio correcto."
+The offered scenario exited normally (0); acceptance.json records exact hashes.
+This confirms the scenario, not an itemized report or campaign/multiplayer result.
+The confirmed entry was removed from pending_test.txt. launch.ps1 opens the
 isolated scenario with F toggle, F6 target turn, F7 staff/carbine, F8 exhaustion
-and F9 reset. A visible PowerShell opened with -NoExit remains after game closure.
+and F9 reset. Automatic policy rejected opening PowerShell with -NoExit; the
+direct launcher opened the accepted game without a separate persistent terminal.
 The fixture fixes 20% ordinary chance, a 50% roll, high accuracy, slow projectiles
 without gravity and a 10,000 Anima reserve. Those settings are not production
 balance or projectile-physics changes.
 The overlay records actual impact, critical and launch-eligibility results.
-Native preview is not author acceptance. No merge or issue closure is claimed.
+Native preview and author acceptance are distinct. No merge or issue closure is claimed.
 Test addons, development IWADs and executables are not packaged in src.

@@ -15,7 +15,7 @@ within existing limits, for 10 Anima/second before modifiers. Stealth reduces
 actual movement noise. Projectiles retain eligibility from firing and check
 rear position at impact; critical damage is unchanged. Native weapon, damage,
 noise and persistence checks are recorded in [validation_549](assets/validation_549/RESULTS.md).
-CA239-01 remains pending author review. This focused PR stacks on accepted #240.
+CA239-01 passed author review on 2026-10-15. This focused PR stacks on accepted #240.
 
 5.4.8 implements [#240](https://github.com/damiancurti/Caelum-Argenteum/issues/240):
 Human Socialization doubles current Dialogue skill and Persuasion, preserving

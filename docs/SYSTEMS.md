@@ -38,7 +38,8 @@ or randomness. Current saves preserve the effect and each projectile's launch
 metadata; native hub travel retains the valid effect. The optional isolated 5.4.8
 bridge ends the unsupported effect without refunding Anima. A rollback flight
 retains the legacy outcome when returned; keep original saves for full recovery.
-Evidence and exact compatibility scope: assets/validation_549. CA239-01 is pending.
+Evidence and exact compatibility scope: assets/validation_549. CA239-01 passed
+author review on 2026-10-15.
 
 ## Socialization - 5.4.8 / #240
 

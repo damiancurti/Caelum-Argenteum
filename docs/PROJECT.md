@@ -12,7 +12,7 @@ both actors' current positions at impact. Original chance/roll, critical damage,
 attributes and existing spread/volley rules remain. The shared racial lifecycle
 pays 10 Anima/second before modifiers. Native weapons, damage, noise, saved
 effects/projectiles and compatibility evidence: assets/validation_549.
-CA239-01 is pending; this focused PR stacks on accepted #240.
+CA239-01 passed author review on 2026-10-15; PR288 stacks on accepted #240.
 
 ## 5.4.8 - Human Socialization (#240)
 

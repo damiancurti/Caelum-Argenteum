@@ -26,7 +26,13 @@ The slow carbine previews failed before extending its finite flight state to
 match the slowdown; this manual fixture also disables projectile gravity and
 preserves its reserve on weapon changes.
 Those fixture settings do not change production balance or physics. Failed runs remain
-preserved. CA239-01 is pending author acceptance; no merge/closure is claimed.
+preserved. CA239-01 (origin 5.4.9 / #239) passed on 2026-10-15: the author
+confirmed "Esa prueba dio correcto." for the offered staff/carbine, launch/impact,
+toggle and exhaustion scenario. This is scenario acceptance, not an itemized
+report or campaign/multiplayer acceptance. The exact runtime/fixture hashes and
+normal exit (0) are in assets/validation_549/acceptance.json. The approved entry
+was removed from pending_test.txt. Automatic policy rejected a persistent terminal;
+the direct launcher opened the accepted game. No merge/closure is claimed.
 
 ## 5.4.8 - Socialization (#240, 2026-10-14)
 

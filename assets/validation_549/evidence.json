@@ -181,7 +181,7 @@
       "caelum/world/CaelumSewerMaze.zs"
     ]
   },
-  "author_acceptance": "pending CA239-01",
+  "author_acceptance": "CA239-01 passed 2026-10-15; see acceptance.json",
   "static_validation": {
     "exit_code": 0,
     "errors": [],

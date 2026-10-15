@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.9** — 2026-10-15.
 
-**5.4.9/#239:** Hunter's Instinct implemented; CA239-01 pending. validation_549.
+**5.4.9/#239:** CA239-01 accepted 2026-10-15. validation_549.
 
 **5.4.8/#240:** CA240-01 accepted 2026-10-14. validation_548.
 
