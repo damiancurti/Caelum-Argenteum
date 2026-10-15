@@ -9,8 +9,8 @@ in 3 seconds per 100 kg of body plus carried load. Native input/friction tests
 measure real velocity and displacement, not only a progress field. NPC movement
 is unchanged. Evidence: assets/validation_5415. The Air-paid double-tap component
 still needs author decisions and is not implemented; keep this issue/PR a draft.
-CA260-01 covers only the delivered ordinary ramp. Questions/manual checks remain
-deferred while the author is away. #246 and #253 also await author review;
+CA260-01 covers only the delivered ordinary ramp. The author has returned;
+questions/manual checks can resume. #246 and #253 passed author review on 2026-10-15;
 remaining class/climate issues, then #282, stay separate.
 
 ## 5.4.14 - Mansion residents keep participating (#253)
@@ -19,9 +19,9 @@ The native assisted encounter reproduced the player's protected 1-HP floor and
 stationary eligible residents. Their stored movement bases were zero; the repair
 recovers missing authored bases on fresh spawn and old saves, preserving positive
 custom values and finite resources. It is limited to anchored MAP01 residents.
-Evidence: assets/validation_5414. CA253-01 awaits author review; #246/CA246-01
-passed on 2026-10-15. This focused patch stacks on #246 without claiming its acceptance.
-Remaining class/climate/impulse design questions wait until the author's return;
+Evidence: assets/validation_5414. CA253-01 and #246/CA246-01 passed author
+review on 2026-10-15. This focused patch stacks on accepted #246.
+The author has returned; remaining class/climate/impulse decisions are pending;
 #282 remains after the batch.
 
 ## 5.4.13 - Mage Arcane Sun (#246)

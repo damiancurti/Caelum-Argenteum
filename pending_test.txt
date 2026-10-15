@@ -1,23 +1,5 @@
-CA253-01 | Origin: 5.4.14 / #253 | Mansion residents at the protected 1-HP floor
-Status: pending; the author has returned. CA246-01 passed on 2026-10-15.
-Prerequisites: no other GZDoom instance; Windows GZDoom 4.14.2 and development IWAD.
-Use the prepared issue253-final-v2 fixture, or prepare a fresh issue253-author directory
-with python assets/validation_5414/prepare.py --directory issue253-author.
-Launch: powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_5414/launch.ps1
-(For a fresh directory, add -Directory issue253-author.)
-1. The original MAP01 assisted encounter starts automatically. Move forward toward
-   the bull and let it reduce the player to 1 HP; remain alive under the existing floor.
-2. Observe the four residents: eligible ones pursue/attack; exhausted or genuinely
-   downed residents retain their own recovery/downing behavior. No resource refill
-   should occur merely because the player is at 1 HP.
-3. Finish the fight normally, or optionally press F7 for a diagnostic lethal finish.
-   The same residents must enter the existing post-victory interaction. F7 does not
-   demonstrate ordinary combat balance. Report any partial or failed step.
-Expected: no stall caused by a missing movement base, no duplicate NPCs, intact
-protection, finite tools and quest progression. No campaign save is loaded by this fixture.
-
 CA260-01 | Origin: 5.4.15 / #260 (partial) | Ordinary mass-scaled acceleration
-Status: pending; defer until the author returns. This does not accept the missing double-tap impulse.
+Status: pending; the author has returned. This does not accept the missing double-tap impulse.
 Prerequisites: no other GZDoom instance; Windows GZDoom 4.14.2 and development IWAD.
 Use the prepared issue260-author-ready fixture, or create a fresh directory with
 python assets/validation_5415/prepare.py --directory issue260-author-new

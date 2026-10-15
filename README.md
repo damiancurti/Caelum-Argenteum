@@ -14,14 +14,14 @@ ordinary player acceleration now reaches current full speed linearly in 3 second
 per 100 kg of body plus carried load. Native stopping and external impulses remain.
 [Evidence](assets/validation_5415/RESULTS.md). This is a **partial draft**: the
 Air-paid double-tap impulse still awaits design decisions. CA260-01 covers only
-ordinary acceleration; author checks/questions wait until return.
+ordinary acceleration and awaits author review. The author has returned.
 
 5.4.14 fixes [#253](https://github.com/damiancurti/Caelum-Argenteum/issues/253):
 anchored mansion residents recover missing movement bases so they can pursue and
 fight while the living player remains at MAP01's protected 1 HP. Their own downing,
 finite resources and encounter progression remain unchanged. Old instances migrate
 without replacement. [Evidence](assets/validation_5414/RESULTS.md).
-CA253-01 awaits author review; this PR stacks on accepted #246.
+CA253-01 passed author review on 2026-10-15; this PR stacks on accepted #246.
 
 5.4.13 implements [#246](https://github.com/damiancurti/Caelum-Argenteum/issues/246):
 Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,

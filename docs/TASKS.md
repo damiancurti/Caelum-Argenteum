@@ -8,13 +8,13 @@ Implemented the already approved mass-scaled linear ordinary ramp, preserving
 native velocity/collision handling. Focused evidence: assets/validation_5415.
 CA260-01 is only the ordinary-movement author check, not full #260 acceptance.
 Keep one focused branch/PR based on #253; later #260 work stays on this branch
-and version. No merge/closure. Remaining impulse decisions must wait for return:
+and version. No merge/closure. Remaining impulse decisions need author answers:
 double-tap interval, insufficient Air, already-moving activation, walk/run/crouch,
 diagonal/opposite inputs and air/swim/flight eligibility. #247 consumes that input
 gesture later; its special speed/defenses/afterimages are outside this component.
-#247-252 retain their own unresolved designs; #282 follows the batch. Keep the
-temporary system keep-awake request until return, then release it. No manual
-engine window or new questions while away.
+#247-252 retain their own unresolved designs; #282 follows the batch. The author
+returned on 2026-10-15; the temporary keep-awake request was released. Resume
+manual checks and design questions one scenario at a time. CA246-01/CA253-01 passed.
 
 ## 5.4.14 - Resident participation at the protected floor (#253)
 
@@ -23,8 +23,8 @@ player reached 1 HP on tic 131 and stayed alive; encounter references remained.
 All four healthy resident movement bases were zero. A scoped fresh-spawn repair
 and revision-1 saved-base repair recover authored defaults without replacing actors
 or replenishing resources. Positive custom bases and genuine downing are retained.
-Evidence: assets/validation_5414. CA253-01 waits in pending_test.txt; CA246-01 passed on 2026-10-15.
-The author has returned; resume remaining manual checks and design questions. Keep this
+Evidence: assets/validation_5414. CA253-01 and CA246-01 passed on 2026-10-15.
+HISTORY and the corresponding acceptance.json files retain scope and run evidence. Keep this
 PR separate, based on #246. No merge or issue closure. #247-252/#260 still require
 their unresolved author design decisions; #282 follows the batch.
 

@@ -15,8 +15,8 @@ in assets/validation_5415. Failed fixture iterations remain recorded there.
 This is a partial delivery of #260. The double-tap impulse is not implemented;
 its unresolved author decisions are deferred during the author's absence. No
 manual acceptance, merge or issue closure is implied. CA260-01 originates here
-and covers only ordinary acceleration. CA253-01 remains pending; CA246-01
-passed on 2026-10-15.
+and covers only ordinary acceleration. CA253-01 and CA246-01 passed author
+review on 2026-10-15.
 
 Delivery evidence: 90 qualified native assertions in eight runs, with seed and
 overlay observation recorded separately. Project validation has zero errors;
@@ -41,8 +41,13 @@ healing, state-list reorder or quest advancement is introduced. In the corrected
 native encounter all four moved after the player reached 1 HP, and genuine own
 downing remained excluded. Focused evidence and preserved fixture iterations are
 in assets/validation_5414; victory-transition checks distinguish diagnostic lethal
-completion from an unaided NPC victory. CA253-01 (origin 5.4.14 / #253) is pending.
-The author remains away; no manual launch, author acceptance, merge or closure.
+completion from an unaided NPC victory. CA253-01 (origin 5.4.14 / #253) passed
+on 2026-10-15: the author confirmed "La prueba dio bien" after the offered native
+MAP01 resident-participation scenario. The confirmation is recorded without an
+additional itemized victory, broader campaign or multiplayer claim. The interactive
+run exited normally; validation_5414/acceptance.json retains the run and hashes.
+The confirmed entry was removed from pending_test.txt. Version remains 5.4.14
+for this acceptance update; no merge or issue closure is inferred.
 Final static validation and normal packaging passed; 144 focused checks across
 eight native runs passed. All 16,163 package members match the recorded frozen
 runtime. The evidence ledger separates baseline observations from acceptance checks.
