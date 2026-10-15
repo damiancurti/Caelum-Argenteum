@@ -6,6 +6,14 @@ Lucidity categories. It preserves natural NPC attack rules, single-tier tool
 identities, book homing, utility streams and existing damage/resource rules.
 No saved fields or schema changed; the legacy accuracy field remains present.
 
+## Author acceptance (2026-10-14)
+
+CA259-01 passed: the author confirmed "Esa prueba dio corrrecto" after the
+isolated manual handoff. No exceptions were reported for dispersion, weapon tiers,
+attacks or switching. acceptance.json records the frozen runtime/session hashes.
+The completed check was removed from pending_test.txt. This documentation-only
+acceptance reuses the unchanged native evidence below; no merge is inferred.
+
 ## Native evidence
 
 Windows 11, GZDoom 4.14.2, Vulkan, isolated configurations, background simulation
@@ -44,8 +52,8 @@ was inspected: first-person weapon, target and test instructions are visible.
 `cycles-01` exercises all nine fixture weapons, three tiers and five Lucidity
 settings through the same equipment/network actions as the handoff. The fixture
 holds resources/ammo and suppresses low-Lucidity stun only to compare trajectories.
-It is excluded from the production PK3. Author check **CA259-01 remains pending**;
-the author is away, so no interactive window or question was offered for it yet.
+It is excluded from the production PK3. At that checkpoint the author was away;
+the subsequent handoff and passed CA259-01 acceptance are recorded above.
 
 ## Earlier failures and their disposition
 
