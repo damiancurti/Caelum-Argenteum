@@ -1,4 +1,39 @@
-# 5.4.4 / #238 - Casting checkpoint (in progress)
+# 5.4.4 / #238 - Shared lifecycle, HUD and Sleep
+
+
+## Completion - 2026-10-15
+
+The shared controller/HUD/Sleep scope is complete. CA238-01 and CA238-02 retain
+their explicit author acceptance; concrete racial effects stay in #239-242.
+The previously open paid-state rollback boundary now has an isolated, pinned
+5.4.3 schema bridge and native round-trip evidence in rollback_evidence.json.
+The sections below describe earlier checkpoints, with their original hashes
+and qualifications. They do not override this completion record.
+
+The bridge preserves new serialized fields/classes and appended state indices.
+It runs old gameplay, not the new cast/racial controllers. New fields remain inert;
+old cooldown/Sleep timers continue normally. Returning to the current runtime
+resumes paid preparation, retains the Sleep hit counter/power, and never refunds
+or duplicates the cast payment. This is a specific recovery path, not a universal
+downgrade of later powers or a promise of new ability behavior in the old game.
+Keep original saves and runtime packages; all tests use isolated copies.
+
+Production gameplay is unchanged from 0e0ae85f. The new native runtime is packaged
+from that pinned Git tree; its text line endings differ from Windows checkout
+packages, so earlier byte hashes remain distinct. Current save/input/hub evidence
+is reused only for the unchanged controller. No new manual test is required for
+this tooling-only completion. PR280 is ready; no merge or closure is inferred.
+
+Reproduce with `python assets/validation_544/prepare_paid_rollback.py --directory
+<fresh-prefix>`; it creates `<prefix>-current` and `<prefix>-bridge`. Use
+`run_native.ps1 -Fixture paid.pk3` for each stage. Create `paid.zds` with
+paid-seed.cfg in current, copy it to bridge, and run bridge-paid.cfg with
+`-LoadGame paid.zds`. Copy bridged-paid.zds back to current, run repeat.cfg
+loading it, then resume.cfg loading repeated.zds. Separately create cooldown.zds
+with cooldown-seed.cfg, copy it to bridge and run bridge-cooldown.cfg, then copy
+bridged-cooldown.zds to current and load it with cooldown.cfg. Use fresh labels,
+check every exit and save artifact before the next stage, and never run two
+engines at once. No runtime, save, development IWAD or engine is distributed.
 
 ## Current lifecycle follow-up
 

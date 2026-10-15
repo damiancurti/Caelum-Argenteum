@@ -134,6 +134,23 @@ checks. Failed runs remain preserved. Evidence: validation_544/racial_evidence.j
 Full paid-state rollback and consumer-specific effects remain open. These tests
 do not replace CA238-01/02 or claim author acceptance of #239-242.
 
+Same-version compatibility completion (2026-10-15):
+`assets/validation_544/prepare_paid_rollback.py` builds a pinned 5.4.3 runtime
+with inert serialization declarations for #238 and appended visual states/assets.
+It retains partial payment, preparation clocks, racial identity and Sleep data
+without running the new controllers. Existing cooldown/Sleep timers follow old
+gameplay. Use copies with the matching runtime and fixture basenames; retain the
+original save/runtime pair. Return to 5.4.4 to resume preparation from its paid
+ledger. Native repeated re-upgrade verifies one total debit and one release
+cooldown. This bridge is specific to 5.4.3/5.4.4 shared schema, not a general
+downgrade tool or support for later concrete racial/class effects. Raw 5.4.3
+lacks the new classes. Never substitute it for the bridge with a new-state save.
+Evidence and preserved fixture failures: validation_544/rollback_evidence.json.
+
+This completes the remaining shared compatibility boundary of #238. No gameplay
+or asset balance changes were required. CA238-01/02 acceptance is unchanged;
+concrete effects retain their individual issues. PR280 is ready, unmerged.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

@@ -9,7 +9,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.4.4 is an **in-progress #238 checkpoint**. Production User4 now prepares
+5.4.4 implements the shared lifecycle, ability HUD and revised Sleep in **#238**. Production User4 now prepares
 Arcanist Sleep with progressive payment, cancellation, release-only reuse and
 combat/input guards. Revised Sleep counts actual damaging hits and scales final
 enemy damage. Saved casts/effects and native hub return pass focused checks.
@@ -19,9 +19,11 @@ Rat/Bull now lie naturally; Mandinga/Zupay use living supine poses with eight
 views. Native pose/hit/expiry and saved-pose checks pass; the author passed
 CA238-02 on 2026-10-14. The shared racial controller now handles User1, per-tic
 payment, interruption and saved effects; concrete powers remain in #239-242.
-Focused native controller/save/hub checks pass. Remaining compatibility boundaries
-are documented separately; the instrumentation is not a playable racial power.
-[Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.
+Focused native controller/save/hub and paid-state rollback checks pass. The optional
+5.4.3 schema bridge retains new data for returning to this runtime; it does not
+execute the new powers. Concrete racial/class effects retain their own issues.
+[Evidence and limits](assets/validation_544/RESULTS.md). PR280 is ready for review;
+CA238-01/02 retain their recorded acceptance scopes. No merge or closure is inferred.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
 MAP02 rats recover their authored movement speed, including existing saves,
