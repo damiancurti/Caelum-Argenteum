@@ -4,7 +4,7 @@ class CA283Probe : StaticEventHandler
     CaelumDomingoPilotPlayer User;
     int Passed,Failed;
     bool Ready;
-    Actor Camera;
+    CA283Camera Camera;
     CaelumRestFurniture Furniture;
     bool WalkSeen,RunSeen,AttackSeen;
     Array<Actor> RenderProxies;
@@ -42,7 +42,7 @@ class CA283Probe : StaticEventHandler
         Check(item.Equipped && User.ShieldModel.Equipped,"native shield equipment");
         Ready=true;User.UpdatePilotVisual();
         Check(User.PilotBody!=null,"native MD3 body created");
-        Camera=Actor.Spawn('CA283Camera',(180,0,User.Height*.55));Camera.Angle=180;
+        Camera=CA283Camera(Actor.Spawn('CA283Camera',(180,0,User.Height*.55)));Camera.Angle=180;
         User.Angle=0;players[0].camera=Camera;
         Console.Printf("CA283 GEOMETRY height=%.4f scale=(%.4f,%.4f) sprite=%d",User.Height,User.Scale.X,User.Scale.Y,User.sprite);
     }
@@ -53,6 +53,10 @@ class CA283Probe : StaticEventHandler
         if(User.PilotBody.Pose==CaelumDomingoPilotFrames.RUN)RunSeen=true;
         if(User.PilotBody.Pose==CaelumDomingoPilotFrames.MELEE
             || User.PilotBody.Pose==CaelumDomingoPilotFrames.MISSILE)AttackSeen=true;
+    }
+    void UpdateReviewCamera()
+    {
+        Camera.Subject=User;Camera.ReviewSlot=ManualCamera;Camera.FollowReview();
     }
     override void RenderOverlay(RenderEvent e)
     {
@@ -131,7 +135,11 @@ class CA283Probe : StaticEventHandler
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=='c283_setup')Setup();
-        if(e.Name=='c283_manual'){Manual=true;players[0].camera=User;}
+        if(e.Name=='c283_manual')
+        {
+            Manual=true;ManualCamera=1;UpdateReviewCamera();
+            players[0].cheats&=~CF_CHASECAM;players[0].camera=Camera;
+        }
         if(e.Name=='c283_compare')User.PilotOriginalSprites=!User.PilotOriginalSprites;
         if(e.Name=='c283_next_rest')
         {
@@ -142,13 +150,21 @@ class CA283Probe : StaticEventHandler
         if(e.Name=='c283_orbit')
         {
             ManualCamera=(ManualCamera+1)%5;
-            if(ManualCamera==0)players[0].camera=User;
+            if(ManualCamera==0){players[0].camera=User;players[0].cheats|=CF_CHASECAM;}
             else
             {
-                double yaw=User.Angle+(ManualCamera-1)*90;
-                Camera.SetOrigin(User.Pos+(Cos(yaw)*180,Sin(yaw)*180,65),false);
-                Camera.Angle=Camera.AngleTo(User);Camera.Pitch=0;players[0].camera=Camera;
+                UpdateReviewCamera();players[0].cheats&=~CF_CHASECAM;players[0].camera=Camera;
             }
+        }
+        if(e.Name=='c283_camera_audit')
+        {
+            Check(Manual && ManualCamera>0 && players[0].camera==Camera,"review camera active");
+            Check((players[0].cheats&CF_CHASECAM)==0,"review angle independent of chase flag");
+            double yaw=User.Angle+(ManualCamera-1)*90;
+            double distance=Max(112.0,User.Height*2.4);
+            double delta=(Camera.Pos-(User.Pos+(Cos(yaw)*distance,Sin(yaw)*distance,User.Height*.55))).Length();
+            Console.Printf("CA283 CAMERA slot=%d delta=%.6f velocity=%.6f",ManualCamera,delta,User.Vel.Length());
+            Check(delta<.01,"review camera follows actual player position");
         }
         if(e.Name=='c283_bench')Benchmark(e.Args[0],e.Args[1]!=0);
         if(e.Name=='c283_record'){BenchSerial++;BenchActive=true;}
@@ -205,6 +221,21 @@ class CA283Probe : StaticEventHandler
 
 class CA283Camera : Actor
 {
+    CaelumDomingoPilotPlayer Subject;
+    int ReviewSlot;
+    void FollowReview()
+    {
+        if(Subject==null || ReviewSlot<=0)return;
+        double yaw=Subject.Angle+(ReviewSlot-1)*90;
+        double distance=Max(112.0,Subject.Height*2.4);
+        SetOrigin(Subject.Pos+(Cos(yaw)*distance,Sin(yaw)*distance,Subject.Height*.55),false);
+        Angle=AngleTo(Subject);Pitch=10;CameraFOV=55;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        if(Subject!=null && Subject.player!=null && Subject.player.camera==self)FollowReview();
+    }
     Default { +NOINTERACTION +NOGRAVITY }
     States { Spawn: TNT1 A -1; Stop; }
 }

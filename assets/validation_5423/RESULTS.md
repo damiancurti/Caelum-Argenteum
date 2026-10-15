@@ -13,6 +13,23 @@ Initial author review reported sideways knee flexion and rigid elbows while
 walking, and requested a shield-block animation. These findings remain open;
 the successful technical assertions do not establish visual acceptance.
 
+The current anatomy revision corrects the knee plane and adds varying elbow
+flexion. `anatomy-joints.json` checks 186 evaluated joint samples;
+`anatomy-evidence.json` records the corrective native runs and current package
+separately from the 98-assertion foundation in `evidence.json` (commit 9515fb2c).
+The old `record_evidence.py` reproduces that foundation at its original revision;
+use `record_anatomy_evidence.py` for the current corrective candidate.
+The correction passes 52 native assertions in five runs on the same production
+hash: action selection, rest/furniture, moving review camera, terminal death and
+loading the previous pilot's save. Static validation reports zero errors; normal
+packaging matches all 16,187 source members and seven export files repeat exactly.
+These runs use the separately fingerprinted anatomy-01/02/03 fixtures. The failed
+anatomy-01 camera assertion identified a one-tic lag; updating the camera actor
+in Tick resolves it. Manual author-02 starts from the front in anatomy-03.
+The author also requires shield-block and one-second jump/landing animations.
+Jump waits for preparation; damage cancels it; movement/attack/block remain
+available. These animations and modularity remain outstanding.
+
 ## Artifact and reproduction
 
 - Editable source: `assets/source/art/domingo_3d_pilot/domingo.blend`; its packed
@@ -89,6 +106,6 @@ fold. Native furniture offsets are unchanged. The source contains candidate
 they do not match the subsequently approved durations and are not connected
 gameplay transitions. Provision consumption must retain its current rate/quantity. Crouch is an
 explicit existing-appearance fallback. Exported bounds expose small transient
-run/death/raise floor intersections, so those remain art polish rather than being
+death/raise floor intersections, so those remain art polish rather than being
 silently described as passed visual acceptance. Hidden-view/proportion feedback,
 transition design and the requested modular integration remain pending.

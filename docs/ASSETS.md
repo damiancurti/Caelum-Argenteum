@@ -12,6 +12,14 @@ cape, right sword and left shield as volumetric geometry. The later modular
 human bodies are not the identity reference. Reconstructed views and proportions
 remain unreviewed by the author.
 
+The initial author trial found sideways knee flexion and rigid walking elbows.
+The corrective candidate sets the forward knee-pole plane and animates elbow
+flexion during walk/run; 186 evaluated joint samples and rendered comparisons
+check the change. Geometry/texture/frame counts are unchanged. See
+validation_5423/anatomy-joints.json and anatomy-evidence.json; visual acceptance
+remains open. The manual fixture now starts from the front and follows its
+selected review angle, with the native chase flag reserved for following mode.
+
 On return, the author required interchangeable weapons, shields, armor, hair
 and faces, starting with Domingo and existing appearance/equipment choices.
 The editable source has separate mesh objects, but this first runtime export
@@ -47,7 +55,7 @@ clips are editable candidates, not yet connected to gameplay. The author chose
 and 4-second eating/drinking cycles. Movement, attacks and blocking are disabled
 during those animations; provision speed and quantities remain unchanged. The
 current tested intermediate still changes rest pose immediately. Small transient
-floor intersections in run/death and source-only crouch also need art polish;
+floor intersections in death/raise and source-only crouch also need art polish;
 the measured bounds and native evidence are in validation_5423. Author review,
 additional transition/weapon coverage and a broader representative combat
 benchmark remain outstanding. No large-battle performance improvement is claimed.

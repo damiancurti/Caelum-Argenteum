@@ -28,6 +28,12 @@ mesh is only an intermediate prototype. Native equipment and saved appearance
 remain the authority; modular presentation must neither grant items nor change
 combat statistics. The same structure should be reusable by other characters.
 
+Required pilot follow-up: shield-block presentation and one-second jump/landing
+animations that flex the legs and lower the body. Jump preparation happens before
+actual takeoff; received damage cancels it. Movement, attacks and blocking stay
+available during jump preparation and landing (an explicit exception to the
+other animation locks). Once launched, native jump trajectory/collision apply.
+
 
 
 ## 5.4.22 - Gameplay quick-use selector (#282)

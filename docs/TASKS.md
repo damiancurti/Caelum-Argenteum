@@ -24,6 +24,10 @@ requirement. Preserve its tested intermediate evidence and original resources.
 Initial author feedback: walking knees bend sideways and elbows look rigid.
 Correct their anatomical motion and add a shield-block animation driven by
 native blocking. CA283-01 remains open; the author has not accepted the art.
+The anatomy correction is implemented and under renewed author review. Add
+one-second jump preparation before takeoff and one-second landing, lowering
+the body with leg flexion; attacks, movement and blocking remain available.
+Received damage cancels jump preparation. These new animations remain open.
 
 
 

@@ -44,6 +44,19 @@ as intermediate evidence; modular integration is still required in #283.
 During CA283-01 the author reported sideways knee flexion and rigid arms while
 walking, and requested a shield-block animation. These are unresolved visual
 findings, not acceptance. Keep the pending test for the corrected candidate.
+The corrective source sets the knee pole to the forward plane and varies elbow
+flexion in walk/run. A 186-sample anatomical check verifies evaluated joint
+positions. The test camera now starts in front and follows the chosen view; an
+initial camera check exposed a one-tic WorldTick offset, corrected by updating
+the camera actor in Tick. Its failing evidence remains in anatomy-01.
+The corrected art passes 52 native assertions across five runs, 186 anatomical
+samples, deterministic export parity, static validation and normal packaging.
+Its evidence remains separate from the earlier 98-assertion foundation; author
+review of the corrected motion is still pending.
+The author added shield blocking and one-second jump/landing animations with
+leg flexion and body lowering. Jump waits for preparation and cancels on received
+damage; both animations retain movement, attack and block controls. These
+additions and modular parts are still unimplemented; CA283-01 remains open.
 
 
 
