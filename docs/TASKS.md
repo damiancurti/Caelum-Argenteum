@@ -2,16 +2,14 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-## 5.4.15 - Player acceleration component (#260, draft)
+## 5.4.15 - Player acceleration and impulse (#260, author check pending)
 
-Implemented the already approved mass-scaled linear ordinary ramp, preserving
-native velocity/collision handling. Focused evidence: assets/validation_5415.
-CA260-01 passed on 2026-10-15 for ordinary movement only; #260 is not complete.
-Keep one focused branch/PR based on #253; later #260 work stays on this branch
-and version. No merge/closure. Remaining impulse decisions need author answers:
-double-tap interval, insufficient Air, already-moving activation, walk/run/crouch,
-diagonal/opposite inputs and air/swim/flight eligibility. #247 consumes that input
-gesture later; its special speed/defenses/afterimages are outside this component.
+Both the linear mass-based ramp and the authored Air-paid 0.4-second double tap
+are implemented on the focused branch/PR294 based on #253. Native evidence:
+assets/validation_5415. CA260-01 passed; only CA260-02 is queued for the author.
+Keep this same version for acceptance. No merge/closure is authorized.
+#247 may consume the forward gesture next; its enhanced speed, collision defenses
+and afterimages require their own implementation, tests, branch and PR.
 #247-252 retain their own unresolved designs; #282 follows the batch. The author
 returned on 2026-10-15; the temporary keep-awake request was released. Resume
 manual checks and design questions one scenario at a time. CA246-01/CA253-01 passed.

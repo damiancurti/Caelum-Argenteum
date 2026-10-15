@@ -2,16 +2,16 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-## 5.4.15 - Mass-scaled player acceleration (#260, partial)
+## 5.4.15 - Player acceleration and directional impulse (#260)
 
-The approved ordinary-movement component now reaches full current speed linearly
-in 3 seconds per 100 kg of body plus carried load. Native input/friction tests
-measure real velocity and displacement, not only a progress field. NPC movement
-is unchanged. Evidence: assets/validation_5415. The Air-paid double-tap component
-still needs author decisions and is not implemented; keep this issue/PR a draft.
-CA260-01 passed on 2026-10-15 for the ordinary ramp only. The author has returned;
-questions/manual checks can resume. #246 and #253 passed author review on 2026-10-15;
-remaining class/climate issues, then #282, stay separate.
+Ordinary movement reaches full current speed linearly in 3 seconds per 100 kg of
+body plus carried load. The authored 0.4-second double tap bypasses the ramp to
+the current walk/run/crouch and full-direction cap, paying the running-equivalent
+cost once. Native velocity/displacement, direction/stance, medium, payment,
+interruption and copied-save checks are recorded in assets/validation_5415.
+NPC movement is unchanged. CA260-01 passed on 2026-10-15; CA260-02 awaits author
+testing, so PR294 stays a draft. #246/#253 passed separately. Remaining class and
+climate issues, then #282, retain their own branches, tests and PRs.
 
 ## 5.4.14 - Mansion residents keep participating (#253)
 

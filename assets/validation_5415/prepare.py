@@ -16,6 +16,7 @@ p.add_argument('--directory', required=True)
 p.add_argument('--runtime', type=Path)
 p.add_argument('--save', type=Path)
 p.add_argument('--compatibility', action='store_true')
+p.add_argument('--impulse', action='store_true')
 a = p.parse_args()
 if not a.directory or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in a.directory):
     p.error('Plain directory name required.')
@@ -48,11 +49,12 @@ if a.runtime:
     manifest['runtime_sha256']=hashlib.sha256(a.runtime.read_bytes()).hexdigest()
 if a.save:shutil.copyfile(a.save,out/'input.zds')
 manifest['fixture_sha256'] = room.package(out/'movement.pk3', {
-    'ZSCRIPT': b'version "4.14"\n#include "movement.zs"\n',
+    'ZSCRIPT': b'version "4.14"\n#include "movement.zs"\n'+(b'#include "impulse.zs"\n' if a.impulse else b''),
     'movement.zs': (HERE/('compatibility.zs' if a.compatibility else 'movement.zs')).read_bytes(),
+    **({'impulse.zs':(HERE/'impulse.zs').read_bytes()} if a.impulse else {}),
     'maps/CA154.wad': room.room(),
     'maps/CA260W.wad':water_room(),
-    'MAPINFO': b'map CA154 "Mass acceleration audit" {}\nmap CA260W "Water acceleration audit" {}\nGameInfo { PlayerClasses="CA260Player" AddEventHandlers="CA260Probe" }\n'})
+    'MAPINFO': ('map CA154 "Mass acceleration audit" {}\nmap CA260W "Water acceleration audit" {}\nGameInfo { PlayerClasses="'+('CA260ImpulsePlayer' if a.impulse else 'CA260Player')+'" AddEventHandlers="'+('CA260ImpulseProbe' if a.impulse else 'CA260Probe')+'" }\n').encode()})
 for q in HERE.glob('*.cfg'):
     (out/q.name).write_bytes(q.read_bytes())
 cases=[(50,0,0,'forward',False),(100,0,0,'forward',False),(200,0,0,'forward',False),
@@ -75,4 +77,7 @@ steps += ['netevent c260_done','wait 35','quit']
 (out/'manual.cfg').write_bytes(b'language es; cl_run false; con_notifytime 0; use_mouse true; bind f6 "netevent c260_setup 50"; bind f7 "netevent c260_setup 100"; bind f8 "netevent c260_setup 200"; wait 100; netevent c260_setup 100; wait 5; netevent c260_done;\n')
 (out/'extended.cfg').write_bytes(b'cl_run false; wait 100; netevent c260_setup 50 50; wait 5; +forward; wait 270; netevent c260_check; wait 2; -forward; wait 100; netevent c260_stopped; wait 2; netevent c260_setup 100; +crouch; wait 35; +forward; wait 270; netevent c260_check; wait 2; -forward; -crouch; wait 100; netevent c260_stopped; wait 2; netevent c260_setup 100; wait 5; +forward; +moveright; +speed; wait 270; netevent c260_check; wait 2; -forward; -moveright; -speed; wait 100; netevent c260_stopped; wait 2; netevent c260_done; wait 35; quit\n')
 (out/'manifest.json').write_bytes((json.dumps(manifest, indent=2)+'\n').encode())
+if a.impulse:
+    from impulse_cases import generate
+    generate(out)
 print(json.dumps(manifest))

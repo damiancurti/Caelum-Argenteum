@@ -7,6 +7,18 @@ class CaelumDebugOverlay : EventHandler
     Array<Actor> LastDamagedActors;
     Array<Actor> LastPlayerDamageOwners;
     CaelumCombatActor LastInspectedCombatActor;
+    ui bool MovementInputBlocked;
+
+    override void UiTick()
+    {
+        bool blocked=menuactive!=Menu.Off || ConsoleState!=c_up;
+        if(blocked!=MovementInputBlocked)
+        {
+            MovementInputBlocked=blocked;
+            if(gamestate==GS_LEVEL && consoleplayer>=0)
+                SendNetworkEvent("ca_movement_clear_taps");
+        }
+    }
 
     Actor ResolvePlayerDamageOwner(Actor source)
     {
@@ -3880,6 +3892,12 @@ class CaelumDebugOverlay : EventHandler
             return;
         }
         CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
+
+        if(e.Name=="ca_movement_clear_taps")
+        {
+            if(CaelumPlayerAuthority.CanMutate(requestingPlayer))CaelumMovementImpulse.Clear(requestingPlayer);
+            return;
+        }
 
         if (requestingPlayer == null || requestingPlayer.CharacterProfile == null)
         {

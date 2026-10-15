@@ -2,6 +2,12 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
+## 5.4.15 - Movement validation fixtures (#260)
+
+assets/validation_5415 contains deterministic isolated maps, native command tests
+and launchers for ordinary acceleration and directional impulses. No runtime art
+is added. Packages, saves, private IWAD and engine files remain local build evidence.
+
 ## 5.4.7 - Telekinesis validation fixtures (#241)
 
 assets/validation_547 contains isolated native test actors, packaging, launch and

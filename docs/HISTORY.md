@@ -12,20 +12,39 @@ speed, movement media, collisions and NPC/bull logic remain unchanged. Revision-
 migration preserves legacy progress; focused native and copied-save evidence is
 in assets/validation_5415. Failed fixture iterations remain recorded there.
 
-This is a partial delivery of #260; the double-tap impulse remains separate.
+The first delivery covered ordinary acceleration; its author acceptance is separate:
 CA260-01 (origin 5.4.15 / #260) passed on 2026-10-15: the author confirmed
 "La prueba dio bien" after the offered 50/100/200 kg ordinary-movement scenario.
 The confirmation is recorded without an additional itemized or broad campaign
 claim. The interactive run exited normally; validation_5415/acceptance.json retains
 its scope and hashes. The confirmed entry was removed from pending_test.txt.
-Version remains 5.4.15. This does not accept the unimplemented impulse or authorize
+Version remains 5.4.15. This acceptance does not cover the later impulse or authorize
 merge/closure. CA253-01 and CA246-01 passed separately on 2026-10-15.
 
 Delivery evidence: 90 qualified native assertions in eight runs, with seed and
 overlay observation recorded separately. Project validation has zero errors;
 normal packaging contains 16,163 members identical to the frozen runtime. Copied
 5.4.14 upgrade, current reload, direct rollback and return pass with original save
-hashes preserved. CA260-01 is now accepted; impulse decisions/testing remain pending.
+hashes preserved. CA260-01 is accepted.
+
+The same-patch continuation implements the author's 2026-10-15 impulse decisions:
+0.4 seconds between presses, current mode and full current direction, ground/
+water/flight eligibility and no payment or activation when unaffordable. Native
+commands preserve rebinding; transient gesture fields discard partial taps on
+load and UI interruptions. The existing running-cost/Air-payment authorities
+include thermal modifiers and Supernatural Breathing. Native thrust supplies the
+cap; the impulse fills only available speed without stacking over it or deleting
+faster external momentum. Ordinary acceleration and NPC code remain unchanged.
+The continuation passes 143 assertions across ten native runs, including native
+traces, physical displacement, payment, copied-save and rollback/return checks;
+see validation_5415/impulse_evidence.json. Static validation has zero errors and
+all 16,164 normal-package members match the frozen tested runtime. A draft
+sign-only detector mistook release of an opposite key for another forward press;
+the reproduced case passes after switching digital gestures to native button
+edges. The prior
+90-assertion ordinary evidence remains identified by its original runtime hash.
+CA260-02 awaits author testing. This continuation does not imply acceptance or
+authorize merge/closure.
 
 ## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
 

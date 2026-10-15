@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.15** — 2026-10-15.
 
-## Player constant acceleration - 5.4.15 / #260 (partial)
+## Player constant acceleration and directional impulse - 5.4.15 / #260
 
 Playable characters reach their current steady movement speed with a linear ramp:
 `timeToFullSpeed = 3 seconds * DerivedStats.TotalMass / 100 kg`. TotalMass is the
@@ -27,10 +27,32 @@ fractions and adds a serialized next-tic increment. No actor class/state changes
 are needed. Native copied-save upgrade, reload and rollback evidence is recorded
 in assets/validation_5415; keep original saves as reversible inputs.
 
-This is the approved acceleration component only. The Air-paid double-tap impulse
-remains unimplemented pending its gesture window, insufficient-Air policy,
-already-moving/stance/diagonal behavior and eligible media. #247's boosted forward
-impulse depends on that remaining component. Do not mark #260 complete or merge.
+The author confirmed the double-tap contract on 2026-10-15: two native
+direction presses at most 0.4 simulation seconds apart, with a release between
+them. Holding a direction is not another tap. The impulse also works while
+moving, reaches the current walk/run/crouch mode's maximum and follows the full
+current movement direction (including a held diagonal). It does not stack a
+second maximum on existing velocity. Ground, swimming and flight are eligible;
+ordinary jumps/falls are not. If the complete cost cannot be paid, spend nothing,
+do not activate and continue ordinary movement. Cost remains the actual running
+Air rate times the full mass-based acceleration duration, using the common Air
+payment authority (including Supernatural Breathing). No cooldown is added.
+Native opposite directions cancel through the engine's own command input.
+Held directional buttons remain held when their opposite is released; cancellation
+of movement is not a new press. Analog-only axes use native command sign edges.
+Menu/dialogue/rest/death/immobilization/load must not retain a partial gesture.
+The #247 enhanced forward impulse remains a separate issue.
+
+The native command supplies direction, current stance and all speed modifiers.
+After payment, the impulse completes velocity toward that command's steady cap,
+accounting for existing perpendicular motion instead of stacking another cap.
+Already faster external momentum is retained. Native collision and vertical
+movement remain active; there is no teleport or ordinary airborne impulse.
+The incomplete gesture is transient: load starts disarmed, and UI transitions
+clear it through the existing synchronized event handler. Prediction cannot
+consume a gesture or pay. No persistent actor or state-list migration is added;
+the existing revision-1 ordinary ramp migration remains authoritative.
+CA260-01 accepts only ordinary acceleration; CA260-02 is the pending impulse test.
 
 ## MAP01 resident movement repair - 5.4.14 / #253
 
@@ -2388,7 +2410,7 @@ Unpenalized steady forward walk/run at Agility 0 is 4/8 m/s, multiplied by Type 
 16/32 m/s at 100. #260 / 5.4.15 replaces the former exponential envelope with
 constant ordinary acceleration: 3 simulation seconds per 100 kg of body plus
 load to reach 100%. Native input/friction remain in control, with compensation
-limited to the command's own thrust. See the current #260 partial contract above.
+limited to the command's own thrust. See the current #260 movement contract above.
 Existing load, health, survival, Air, elemental, shield and reload modifiers remain.
 Foot journeys use steady walking speed: 14.4 km/h at Agility 0 and 57.6 at 100
 before penalties, with the existing 16-hour walking / 8-hour sleeping schedule.

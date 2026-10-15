@@ -881,6 +881,7 @@ class CaelumConstants : Object
     // #260: tres segundos hasta el máximo por cada 100 kg de cuerpo y carga.
     const MOVEMENT_ACCELERATION_SECONDS = 3.0;
     const MOVEMENT_ACCELERATION_REFERENCE_KG = 100.0;
+    const MOVEMENT_DOUBLE_TAP_SECONDS = 0.4;
 
     // Separación necesaria para rearmar un choque entre los mismos cuerpos.
     const IMPACT_CONTACT_RELEASE_MARGIN = 2.0;

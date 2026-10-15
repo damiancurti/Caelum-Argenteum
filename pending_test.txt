@@ -1,0 +1,18 @@
+CA260-02 | Origin: 5.4.15 / issue #260 | Directional double-tap impulse
+Prerequisites: launch assets/validation_5415/launch_impulse.ps1; isolated scenario,
+no campaign save. The fixture restores resources and shows successful impulse
+count and cost. F6/F7/F8 choose 50/100/200 kg; F9 pins Air to zero; F7 resets.
+1. Hold a movement direction once: ordinary acceleration, no impulse. Release,
+   then press/release/press the same direction within 0.4 seconds: instant current
+   mode cap and one impulse. A gap longer than 0.4 seconds must not activate.
+2. Repeat forward/back/left/right, running and crouched. Hold D and double-tap W:
+   the impulse uses the current diagonal, preserving the current movement mode.
+   Repeat while moving; the speed must not stack above that mode's cap.
+   Hold W, press and release S: returning to forward movement is not a new W tap.
+3. Compare F6/F7/F8: the controlled fixture reports 3/6/12 Air per impulse.
+   Press F9 and try: no successful impulse or debit; normal movement continues.
+4. Tap once, open/close Escape or the Journal, and press again: no stale impulse.
+   A new complete double tap works. Verify the gesture with your bound movement
+   controls; holding a key is never another tap. Close the game when finished.
+Expected: no involuntary activations, duplicate cost, teleport or new attack/
+invulnerability behavior. Report any failed step; CA260-01 is already accepted.

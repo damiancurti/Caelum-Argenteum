@@ -637,6 +637,11 @@ class CaelumPlayer : DoomPlayer
     double MovementAccelerationSeconds;
     double MovementAccelerationStep;
     int MovementAccelerationRevision;
+    // Un gesto incompleto nunca viaja dentro del guardado.
+    transient int MovementTapMask, MovementTapPending, MovementTapLastTic;
+    transient int MovementTapTimes[4];
+    transient bool MovementTapReady;
+    transient String MovementTapMap;
     Array<ImpactContactState> ImpactContacts;
     int ImpactContactCountForUI;
     int ImpactDiagnosticCollisionCallbacks;
@@ -8787,12 +8792,14 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void MovePlayer()
     {
+        bool impulse=CaelumMovementImpulse.Begin(self);
         vector3 before=Vel;
         Super.MovePlayer();
         // Compensa sólo la propulsión nativa de este comando. Sin este término,
         // el rozamiento añadiría otra demora a la rampa lineal. No se recorta
         // la velocidad total: choques, empujes y frenado siguen siendo nativos.
-        if (MovementAccelerationStep > 0 && MovementAccelerationFactor > 0
+        if (impulse) CaelumMovementImpulse.Finish(self,Vel-before);
+        else if (MovementAccelerationStep > 0 && MovementAccelerationFactor > 0
             && !IsPhysicallyImmobilized()
             && (player.onground || (bNOGRAVITY && bFLY) || WaterLevel > 0))
         {
@@ -8814,6 +8821,7 @@ class CaelumPlayer : DoomPlayer
         bool readingMenu=(journalOpen!=null && journalOpen.GetBool()) || (preview!=null && preview.IsOpen());
         let journeyPlan = CaelumJourneyPlan.Get(self);
         bool choosingJourney = journeyPlan != null && journeyPlan.Open;
+        CaelumMovementImpulse.Observe(self,readingMenu || choosingJourney);
         if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))
         { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
         if(player!=null && (readingMenu || choosingJourney || CreationWizardOpen || EquipmentMenuOpen || PalomoMerchantMenuOpen
@@ -10853,6 +10861,12 @@ class CaelumPlayer : DoomPlayer
 
     // Convert the documented per-second running cost into a per-tic cost.
     // Regeneration pauses during these tics so the displayed rate is exact.
+    double RunningAirCostPerSecond()
+    {
+        return DerivedStats==null?0:CaelumConstants.RUN_AIR_COST_PER_SECOND
+            * DerivedStats.AirConsumptionMultiplier * CaelumThermalEffects.HeatCost(self);
+    }
+
     void ConsumeRunningAir()
     {
         if (!IsSpendingRunningAir || DerivedStats == null)
@@ -10860,10 +10874,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        double finalCostPerSecond = CaelumConstants.RUN_AIR_COST_PER_SECOND
-            * DerivedStats.AirConsumptionMultiplier;
         double previousAir = CurrentAir;
-        CaelumAirPayment.Spend(self,finalCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
+        CaelumAirPayment.Spend(self,RunningAirCostPerSecond() / TICRATE);
         CaelumMainM00RonnieTrial.RecordAirLesson(self, previousAir - CurrentAir, true);
         UpdateAirStateEffects();
     }

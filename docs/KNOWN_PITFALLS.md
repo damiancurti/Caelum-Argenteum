@@ -4,6 +4,18 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-098 - Bound native console test scripts
+
+- Status: ENGINE-VERIFIED, GZDoom 4.14.2, #260 / 5.4.15.
+- Symptom: a 4,188-byte single-line fixture executed only its trailing check and
+  completion marker; the preceding setup and scenarios did not run.
+- Remedy: split the sequence into short scripts and explicitly chain them with
+  `exec` after their waits. Assert the expected case/pass counts as well as DONE.
+- Evidence: build/issue260-impulse02/contract02.txt (failed fixture); chained
+  contract03 and contract06 in assets/validation_5415/impulse_evidence.json.
+- Limits: this establishes the reproduced command-buffer truncation; it does not
+  specify a universal limit for every native command or engine version.
+
 ## CA-KP-097 - A linear input envelope is not linear native motion
 
 - Status: verified in isolated GZDoom 4.14.2 input tests, #260 / 5.4.15.
@@ -19,7 +31,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
   The installed engine's player.zs and g4.14.2 p_mobj.cpp establish the boundary.
 - Limits: constant mass/target/input establishes linear motion. Direction changes,
   collisions, dynamic modifiers and ordinary airborne control retain native policy.
-  This evidence does not implement or approve the pending double-tap impulse.
+  These original ramp traces do not establish impulse behavior; same-patch
+  impulse evidence is recorded separately in validation_5415.
 
 ## CA-KP-096 - Early derived-stat queries can erase a spawn default
 
