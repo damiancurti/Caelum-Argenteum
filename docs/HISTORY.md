@@ -43,9 +43,14 @@ iterations. Early fixture errors included invalid test-only fields, an overly ti
 spherical-vector sum tolerance, comparison of direct hits against extra child hits,
 and radial checks before NPC PostBeginPlay initialized anatomy. Command scripts
 now allow pending native events to drain before quitting. No balance was changed
-to make those fixture checks pass. CA246-01 (origin 5.4.13 / #246) remains pending.
-The author requested keep-awake and deferred questions/manual tests while away.
-No campaign/multiplayer acceptance, merge or issue closure is inferred.
+to make those fixture checks pass. CA246-01 (origin 5.4.13 / #246) passed on
+2026-10-15: the author confirmed "La prueba dio bien" after the offered isolated
+casting/cancellation, free-flight, enemy-only and wall-impact scenario. No extra
+itemized result beyond that confirmation is inferred. The native interactive run
+exited normally; validation_5413/acceptance.json records its hashes and scope.
+The confirmed entry was removed from pending_test.txt. The temporary keep-awake
+request was released when the author returned. Version remains 5.4.13 for this
+acceptance update; no broader campaign/multiplayer acceptance, merge or closure.
 
 ## 5.4.12 - Miracle (#245, 2026-10-15)
 
