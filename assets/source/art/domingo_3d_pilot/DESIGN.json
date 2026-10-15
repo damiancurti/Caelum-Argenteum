@@ -752,7 +752,9 @@
       "LieDown": 3,
       "GetUp": 3,
       "Eating": 4,
-      "Drinking": 4
+      "Drinking": 4,
+      "JumpPreparation": 1,
+      "Landing": 1
     },
     "control_lock": "Block movement, attacks and blocking during each animation.",
     "provisions": "Repeat visual eating/drinking cycles without changing consumption rate or quantity.",
@@ -762,6 +764,16 @@
       "Correct sideways knee flexion while walking.",
       "Flex the elbows while walking.",
       "Add a native shield-block animation."
-    ]
+    ],
+    "jump": "Flex legs and lower the body for one second before actual takeoff; landing flexes/lowers for one second. Movement, attacks and blocking remain available for both. Any received damage cancels jump preparation; existing jump trajectory/collision remain authoritative after takeoff.",
+    "shield": "Add an animation driven by actual shield blocking."
+  },
+  "anatomy_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "9515fb2c",
+    "pole_angle_radians": 0,
+    "walk_elbow_curve_degrees": "35 + 15*sin(phase), opposite phase per arm",
+    "run_elbow_curve_degrees": "60 + 20*sin(phase), opposite phase per arm",
+    "validation": "186 evaluated samples; anatomy-joints.json. Author review remains open."
   }
 }
