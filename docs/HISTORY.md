@@ -151,8 +151,14 @@ These were isolated fixture defects; original packages/logs remain preserved.
 Old-to-new save loading, current reloading and rollback passed with actual equipped
 T3 inventory. Native weapon/tier cycling and a captured manual preview passed.
 Final-source native, save/load, validation and packaging evidence is recorded in
-assets/validation_541/RESULTS.md. CA259-01 is pending author confirmation; no manual
-acceptance, merge or issue closure is inferred. #238 remains the next focused task.
+assets/validation_541/RESULTS.md.
+
+CA259-01 (origin 5.4.1 / #259) passed on 2026-10-14: the author confirmed
+"Esa prueba dio corrrecto" after the isolated dispersion/tier/weapon handoff.
+No exceptions were reported. acceptance.json records the exact runtime/session
+and confirmation; the completed check was removed from pending_test.txt.
+This documentation-only acceptance requires no new native run or version bump.
+No merge or issue closure is inferred. #238 remains the next focused task.
 
 
 ## 5.4.0 - Live attribute audit (#237, 2026-10-14)
