@@ -4,25 +4,27 @@ Documentation version: **5.4.4** — 2026-10-14.
 
 ## 5.4.4 - Shared class preparation (#238, in progress)
 
-Implemented the presentation component, its saved 105-tic clock/revision and
-combat entry guards. Native component matrix: 2,142 checks across nine weapon
-families and unarmed. This is not completion of #238: User4 still uses the earlier
-Sleep path until the new lifecycle is integrated. No executable author acceptance
-entry is added for this incomplete feature. Evidence: assets/validation_544.
-Left class/racial indicators pass native state and layout checks at four
-resolutions, including high HUD scale. Racial activation is still synthetic in
-that fixture; its production effects/toggle remain pending.
+Production User4 now uses the shared 105-tic presentation, fixed-cost progressive
+payment, full-cost admission, cancellation and release-only reuse. Native attack,
+block, weapon/inventory change and other-power activation guards are integrated.
+Revised Sleep counts actual HP-losing impacts after defenses, supports final-damage
+scaling, neutral/ally exceptions, expiry and renewed-hit/power/remaining-time rules.
+SYSTEMS records the approved contract; do not re-ask those decisions.
 
-Continue with payment/release/cancellation and native input,
-revised Sleep HP-based wake/final-damage integration and full save/hub tests.
-The author returned and confirmed: existing Eloquence scaling for radius/cost,
-Charisma for harmful-effect power/duration, Empathy for beneficial-effect/healing
-power/duration; whole-factor multiplication; full modified Anima cost required
-at admission with progressive payment. SYSTEMS records the exact shared curves.
-The three-hit count never scales and preparation stays three seconds.
-Resolve remaining cost snapshot/changing-modifier, forced-control/input and Sleep
-relationship/expiry/body-pose details where existing rules do not determine them.
-Do not re-ask confirmed decisions or count component-only tests as an ability pass.
+Evidence: assets/validation_544. Lifecycle contract: 1,021 native assertions;
+partial-payment/Sleep save and reload pass; MAP02 -> MAP03 -> MAP02 retains paid
+preparation and NPC hit counts, with one release. Earlier component/HUD evidence
+remains separately identified. CA238-01 covers only executable preparation/HUD
+author checks; its acceptance does not complete the whole issue.
+
+Remaining: appropriate living prone poses for rat/Bull/Mandinga/Zupay, full Sleep
+visual acceptance, racial lifecycle integration alongside #239-242 and remaining
+compatibility/input boundaries. Keep new class effects in #243-251 and movement
+in #260. No merge or closure is inferred from component or author checks.
+
+Queue: finish the current 21-issue batch (#237-254 and #259-261), then implement
+#282, with its own branch, scope, tests, commits and linked PR. The author requested
+this order on 2026-10-14; #282 is not part of the #238 patch.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

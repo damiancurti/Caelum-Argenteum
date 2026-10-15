@@ -475,6 +475,15 @@ class CaelumPhysicalSelectorWeapon : Weapon
         if (caelumPlayer != null) { caelumPlayer.ReserveTarotInput(); }
     }
 
+    action void A_CaelumReady()
+    {
+        let user=CaelumPlayer(invoker.Owner);
+        int flags=WRF_ALLOWZOOM|WRF_ALLOWRELOAD|WRF_ALLOWUSER1
+            |WRF_ALLOWUSER2|WRF_ALLOWUSER3|WRF_ALLOWUSER4;
+        if(CaelumClassCastView.Active(user))flags|=WRF_NOSWITCH|WRF_NOFIRE;
+        A_WeaponReady(flags);
+    }
+
     action void A_CaelumClassAbilityInput()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
@@ -484,14 +493,7 @@ class CaelumPhysicalSelectorWeapon : Weapon
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady(
-            WRF_ALLOWZOOM
-            | WRF_ALLOWRELOAD
-            | WRF_ALLOWUSER1
-            | WRF_ALLOWUSER2
-            | WRF_ALLOWUSER3
-            | WRF_ALLOWUSER4
-        );
+        TNT1 A 1 A_CaelumReady;
         Loop;
     Deselect:
         TNT1 A 1 A_Lower;
@@ -854,14 +856,7 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
 
     Ready:
         TNT1 A 0 A_CaelumSwordSyncView;
-        TNT1 A 1 A_WeaponReady(
-            WRF_ALLOWZOOM
-            | WRF_ALLOWRELOAD
-            | WRF_ALLOWUSER1
-            | WRF_ALLOWUSER2
-            | WRF_ALLOWUSER3
-            | WRF_ALLOWUSER4
-        );
+        TNT1 A 1 A_CaelumReady;
         Loop;
 
     Fire:
@@ -1163,6 +1158,15 @@ class CaelumMagicSelectorWeapon : Weapon
         if (caelumPlayer != null) { caelumPlayer.ReserveTarotInput(); }
     }
 
+    action void A_CaelumReady()
+    {
+        let user=CaelumPlayer(invoker.Owner);
+        int flags=WRF_ALLOWZOOM|WRF_ALLOWRELOAD|WRF_ALLOWUSER1
+            |WRF_ALLOWUSER2|WRF_ALLOWUSER3|WRF_ALLOWUSER4;
+        if(CaelumClassCastView.Active(user))flags|=WRF_NOSWITCH|WRF_NOFIRE;
+        A_WeaponReady(flags);
+    }
+
     action void A_CaelumClassAbilityInput()
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
@@ -1172,14 +1176,7 @@ class CaelumMagicSelectorWeapon : Weapon
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady(
-            WRF_ALLOWZOOM
-            | WRF_ALLOWRELOAD
-            | WRF_ALLOWUSER1
-            | WRF_ALLOWUSER2
-            | WRF_ALLOWUSER3
-            | WRF_ALLOWUSER4
-        );
+        TNT1 A 1 A_CaelumReady;
         Loop;
     Deselect:
         TNT1 A 1 A_Lower;

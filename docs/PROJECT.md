@@ -2,22 +2,22 @@
 
 Documentation version: **5.4.4** — 2026-10-14.
 
-## 5.4.4 - Class preparation component (#238, in progress)
+## 5.4.4 - Shared class casting checkpoint (#238, in progress)
 
-The shared first-person component lowers the current hands/weapon, raises empty
-fists, turns them and opens the palms across 105 simulation tics. Preparation
-blocks the real attack/block entry points without adding movement immobilization.
-This checkpoint does not connect the component to User4 or implement the full
-ability lifecycle, revised Sleep or racial toggles. The left class/racial HUD
-uses the existing Tarot/Seal column scale: class availability/preparation/reuse
-and racial active/inactive only. The compass and notices reserve its width.
+Production User4 prepares Arcanist Sleep over 105 tics: lower the current weapon,
+raise empty fists, turn/open the palms, then release. The controller freezes the
+admitted cost, spends it uniformly, retains cancelled spending and starts reuse
+only at release. It blocks attacks, blocking, weapon changes and new power
+activations while preserving movement. SYSTEMS records approved interruption and
+attribute rules. The left class/racial HUD retains the existing power-column scale.
 
-The native component matrix covers nine weapon families and unarmed. Dedicated
-male cast palms correctly extract the last row of existing owned atlases, leaving
-accepted weapon artwork untouched. Female/gloved hands retain their existing
-sources. Evidence and remaining scope: assets/validation_544. #238 stays open and
-its PR remains a draft. The author has returned and confirmed shared attribute
-ownership, whole-factor scaling and full-cost admission; implementation continues.
+Revised Sleep counts HP-losing impacts, multiplies final enemy damage through the
+third waking hit, preserves ally/neutral exceptions and expires normally. Renewed
+Sleep resets hits/power and retains the longer duration. Saved cast/debit and Sleep
+state pass reload and native hub-return checks. Appropriate prone poses for some
+enemy bodies and racial lifecycle/effects remain unfinished. CA238-01 is a focused
+preparation/HUD author check, not full issue acceptance. Evidence: validation_544.
+The PR remains draft; separate effects retain their own issues and PRs.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)
 

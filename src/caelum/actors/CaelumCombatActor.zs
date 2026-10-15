@@ -165,6 +165,7 @@ class CaelumCombatActor : Actor
     double CombatAdrenalineGainMultiplier;
     double CurrentCombatLucidity;
     int ForcedSleepTics;
+    CaelumSpellSleepState SpellSleep;
     int SleepSavedTics;
     int CombatLucidityState;
     double CombatLucidityAccuracyMultiplier;
@@ -2829,8 +2830,17 @@ class CaelumCombatActor : Actor
 
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
     {
-        return Super.DamageMobj(inflictor,source,
-            CaelumSealResistance.HealthDamage(self,inflictor,damage,mod),mod,flags,angle);
+        int retained=CaelumSealResistance.HealthDamage(self,inflictor,damage,mod);
+        if(flags & DMG_FORCED)retained=CaelumSleepRules.ScaleDamage(self,retained);
+        int before=health;
+        int result=Super.DamageMobj(inflictor,source,retained,mod,flags,angle);
+        CaelumSleepRules.HealthLost(self,before);
+        return result;
+    }
+
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        return CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod));
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
@@ -2856,8 +2866,6 @@ class CaelumCombatActor : Actor
     )
     {
         CaelumBolas.FireAttack(self,inflictor,mod);
-        if (damage > 0 && ForcedSleepTics > 0)
-        { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
         if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
             || CaelumToughnessRules.IsSustained(mod))
         {
@@ -3715,7 +3723,7 @@ class CaelumCombatActor : Actor
         if(bound){Vel.X=0;Vel.Y=0;if(bNOGRAVITY)Vel.Z=0;}
         if(bolasFreeze)tics=-1;
         bool sleeping = ForcedSleepTics > 0;
-        if (sleeping) { tics = -1; Vel = (0,0,0); }
+        if (sleeping) { CaelumSleepRules.MaintainPose(self);tics = -1; Vel = (0,0,0); }
         Super.Tick();
         if(bolasFreeze && CurState==bolasSavedState)tics=bolasSavedTics;
         if (sleeping)
@@ -3723,7 +3731,7 @@ class CaelumCombatActor : Actor
             CurrentCombatLucidity = CaelumSleepRules.Drain(CurrentCombatLucidity);
             UpdateActorLucidityState();
             ForcedSleepTics--;
-            if (ForcedSleepTics <= 0) tics = Max(1, SleepSavedTics);
+            if (ForcedSleepTics <= 0)CaelumSleepRules.Wake(self);
         }
         UpdateCaelumRecognitionSound();
         CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);

@@ -1,4 +1,51 @@
-# 5.4.4 / #238 - Preparation component checkpoint (in progress)
+# 5.4.4 / #238 - Casting checkpoint (in progress)
+
+## Current lifecycle follow-up
+
+Production User4 now owns preparation/payment/release for Arcanist Sleep. The
+shared controller requires the full cost, snapshots it and debits uniformly over
+105 tics. A second press, forced control/death or insufficient next payment cancels
+without refund or cooldown. Attacks, blocking, weapon/inventory mutations and new
+Seal/Tarot/racial activations are blocked. Movement and damage alone do not cancel.
+The release starts exactly 60 seconds of reuse. Other professions retain their own
+pending effect issues; no synthetic racial activation is enabled.
+
+Sleep has schema-1 saved hit/multiplier/pose state. Native damage receivers count
+actual HP loss and multiply final damage after project defenses, including native
+DamageFactor and integer rounding. The third enemy hit still receives the factor;
+zero-damage impacts do not count, and DOT applications count separately. Allies
+and neutrals retain one-hit wake without the multiplier. Expiry and reapplication
+use the author-confirmed rules. Existing RestLying poses restore safely without
+replaying actions. Missing living poses for rat/Bull/Mandinga/Zupay remain pending.
+
+Final production SHA-256:
+`346f3bd66b9ef6369f40c3e62fb3a925ac2724193c58321b770ba8f54548a899`.
+Native Windows/GZDoom 4.14.2 evidence is in lifecycle_evidence.json. Key runs:
+
+- issue238-release/contract-01: 1,021 checks, actual User4 armed/unarmed,
+  three starts, two releases and one cancellation; inventory guards included.
+- Same runtime save-01: 178 checks; load-01: 4 checks, complementary resource/debit,
+  one release, saved enemy count two and damage factor six.
+- issue238-release/hub-01: 459 checks, real MAP02 -> MAP03 -> MAP02, paid
+  preparation retained and NPC Sleep state restored; only one successful release.
+- issue238-lifecycle-upgrade/upgrade-01: original 5.4.3 save loads neutral new fields,
+  revision 1, no paid cast and no new Sleep object.
+
+The native TakeSpecialDamage hook follows project defenses and native factors.
+Production damage paths use the project's armor system. Arbitrary third-party
+native inventory armor and telefrag exceptions are not validated by these checks.
+The final wake path preserves indefinite state tics. New unarmed input states are appended after all old states to preserve save indices. The preceding runtime passed 4,239 native User4 checks across nine weapon families and unarmed; the final contract repeats the changed wake and unarmed paths. New save data and full rollback coverage remain an explicit completion boundary;
+keep original saves/runtime packages. The prior visual-component rollback evidence
+below is not upgraded into a paid-state rollback claim.
+
+CA238-01 is the executable preparation/HUD author check only. A fresh isolated
+configuration binds F to User4, F6 to reset test resources/reuse, F7 to the next
+real weapon, F8 to unarmed and F9 to one Anima below the actual modified cost.
+The fixture gives invulnerability and disables Anima regeneration to expose debit;
+it does not change production balance. No full Sleep visual acceptance is claimed.
+
+## Original presentation checkpoint (historical scope)
+
 
 Baseline: c07be5a2 / 5.4.3. This is an intermediate #238 checkpoint. It does not
 complete the ability issue or enable the new lifecycle through production User4.
@@ -69,7 +116,7 @@ never load it beside production CaelumClassCastHandFrames. It changes no balance
 or saved inventory. Exact save tests/qualifications are recorded in evidence.json.
 Full preparation payment/effects/cooldown/hub compatibility is not claimed.
 
-## Remaining work and author handoff
+## Original checkpoint remaining work (superseded by current scope)
 
 Complete payment, release, cancellation and independent input handling; implement
 revised Sleep and racial lifecycle. Preserve

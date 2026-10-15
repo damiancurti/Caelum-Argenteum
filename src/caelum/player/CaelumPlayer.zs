@@ -663,11 +663,15 @@ class CaelumPlayer : DoomPlayer
     // maximum. LucidityState is cached so UI code never calls play functions.
     double CurrentLucidity;
     int ForcedSleepTics;
+    CaelumSpellSleepState SpellSleep;
     double ClassSleepCooldownRemaining;
     bool ClassSleepInputLatched;
     // #238: reloj guardado de preparacion; cero en partidas anteriores.
     int ClassPreparationRevision;
     int ClassPreparationTics;
+    int ClassCastRevision,ClassCastProfession;
+    bool ClassCastActive;
+    double ClassCastCost,ClassCastPaid;
     // #238: estado compartido; los efectos raciales lo activarán en sus issues.
     bool RacialAbilityActive;
     bool JournalMainM00RuloPracticeDone[6];
@@ -2617,6 +2621,7 @@ class CaelumPlayer : DoomPlayer
         int weaponType, int essenceType, int tier
     )
     {
+        if(CaelumClassCastView.Active(self))return;
         if (player == null) { return; }
         Name selectorClass = GetNativeWeaponSelectorClass(
             weaponType, essenceType, tier
@@ -7638,6 +7643,7 @@ class CaelumPlayer : DoomPlayer
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
         int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
+        if(flags & DMG_FORCED)damage=CaelumSleepRules.ScaleDamage(self,damage);
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -7646,8 +7652,15 @@ class CaelumPlayer : DoomPlayer
         if(introduced)player.cheats|=CF_BUDDHA2;
         int result=Super.DamageMobj(inflictor,source,damage,mod,flags,damageAngle);
         if(introduced)player.cheats&=~CF_BUDDHA2;
+        CaelumSleepRules.HealthLost(self,before);
         // No contar HP bloqueado por el piso ni atribuir daño anidado a este golpe.
         return protect ? Max(0,Min(result,before-health)) : result;
+    }
+
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // Tras las defensas propias y los factores nativos; antes de perder HP.
+        return CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod));
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
@@ -7671,7 +7684,6 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
-        if (damage > 0) ForcedSleepTics = 0;
         CaelumTimeAdvanceState.Halt(self);
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
 
@@ -8789,6 +8801,7 @@ class CaelumPlayer : DoomPlayer
         {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
+        CaelumClassAbilityRules.FilterInput(self);
         if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
@@ -9051,9 +9064,9 @@ class CaelumPlayer : DoomPlayer
         CarbineAmmoCount = currentCarbineAmmo != null
             ? currentCarbineAmmo.Amount : 0;
 
-        CaelumClassCastView.Advance(self);
         CaelumSleepRules.AdvancePlayer(self);
         ClassSleepCooldownRemaining = Max(0.0, ClassSleepCooldownRemaining - 1.0 / TICRATE);
+        CaelumClassAbilityRules.Advance(self);
 
         UpdateSurvivalResources();
         ApplyCriticalSurvivalDamage();
@@ -9069,7 +9082,7 @@ class CaelumPlayer : DoomPlayer
         if (ForcedSleepTics > 0)
         {
             ForcedSleepTics--;
-            if (ForcedSleepTics == 0 && health > 0 && !CaelumRestState.IsActive(self)) SetState(SpawnState);
+            if (ForcedSleepTics == 0)CaelumSleepRules.Wake(self);
         }
     }
 
@@ -11102,6 +11115,7 @@ class CaelumPlayer : DoomPlayer
     // User2 alterna la canalizacion; Reload conserva sus funciones propias.
     void RequestCombatChannelInput()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (CombatChannelModeActive)
         {
             CombatChannelInputLatched = true;
@@ -11139,6 +11153,7 @@ class CaelumPlayer : DoomPlayer
     // hasta que sus respectivos bloques sean implementados.
     void ReserveRacialAbilityInput()
     {
+        if(CaelumClassCastView.Active(self))return;
         CombatRacialAbilityInputReserved = true;
         ShowAbilitySuccessMessage();
         CombatRacialAbilityInputReserved = false;
@@ -11146,6 +11161,7 @@ class CaelumPlayer : DoomPlayer
 
     void ReserveTarotInput()
     {
+        if(CaelumClassCastView.Active(self))return;
         if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
         CaelumTarotService.Activate(self);
@@ -11153,10 +11169,10 @@ class CaelumPlayer : DoomPlayer
 
     void ReserveClassAbilityInput()
     {
-        if (CharacterProfile != null && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST)
+        if (ClassCastActive || (CharacterProfile != null
+            && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST))
         {
-            if (!ClassSleepInputLatched) CaelumSleepRules.Cast(self);
-            ClassSleepInputLatched = true;
+            CaelumClassAbilityRules.Input(self);
             return;
         }
         CombatClassAbilityInputReserved = true;

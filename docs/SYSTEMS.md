@@ -2,52 +2,64 @@
 
 Documentation version: **5.4.4** — 2026-10-14.
 
-## Class preparation component and confirmed V5.4 contract (#238, in progress)
+## Class preparation and revised Sleep (#238, in progress)
 
-The author requires a three-second preparation: lower the equipped hands/weapon,
-raise empty closed fists facing forward, turn the hands and open the palms.
-Attacking and blocking are disabled during preparation; movement and receiving
-damage are not newly defined as user-requested cancellation. A second User4 press
-cancels. Anima is spent progressively, cancelled spending is not refunded, and
-60-second reuse begins on release. The approved trial base remains 1,000 Anima
-with existing cost modifiers and a 10-second effect before the pending social
-scaling rules. These are confirmed requirements, not a claim of full implementation.
+Production User4 now starts the shared three-second preparation for the implemented
+Arcanist Sleep effect: lower equipped hands/weapon, raise empty closed fists facing
+forward, turn the hands and open the palms, then release. Other class effects
+remain in their own issues. The caster must have the entire modified cost at
+admission. Snapshot that cost once and debit it uniformly over 105 simulation tics.
+Base cost is 1,000 Anima; cancellation never refunds paid Anima. Reuse starts at
+successful release and lasts 60 seconds. Effects have a 10-second base duration.
 
-In this checkpoint CaelumClassCastView supplies the visual sequence, a revision-1
-saved countdown on the existing player and real combat entry guards. Zero is the
-safe default in older saves. The new component is only started by the isolated
-fixture: production User4 still follows the previous Sleep implementation.
-The full controller will own payment, release, cancellation and effect policies;
-the presentation component does not charge resources or apply a class effect.
+A second User4 press cancels. Insufficient Anima for the next payment, death,
+sleep, stun or physical immobilization also cancels. Movement and ordinary damage
+without those states do not cancel. During preparation, reject attacks, blocking,
+weapon switches (including inventory operations), and new Seal/Tarot/racial
+activations. The native input latch prevents holding User4 from retriggering.
+The revision-1 paid-cast state keeps cost, paid amount, profession and remaining
+visual clock; old saves default inactive without converting the old visual clock
+into a paid ability. Save/load and native MAP02/MAP03 hub return retain that state.
 
-The left power column shares the existing Tarot/Seal size and native HUD scaling.
-Class readiness uses the currently implemented effect eligibility, with dim gray
-unavailable icons, a preparation label and remaining reuse seconds. Racial state
-shows only active/inactive and has no timer. Its new saved boolean defaults false;
-individual racial effects will own its activation. Debug race has no racial icon.
-The compass and transient notifications reserve the column width. Generic icons
-reuse existing owned artwork; they do not imply effects are already implemented.
+The left class/racial column shares the existing Tarot/Seal size and HUD scaling.
+Class readiness uses implemented effect eligibility, with dim unavailable icons,
+a preparation label and reuse seconds. Racial state has no timer; its boolean
+defaults false and individual racial effects will own activation. The compass
+and notifications reserve the column width. Generic icons reuse owned artwork.
 
-On 2026-10-14 the author confirmed the shared class scaling contract, using the
-existing curves: B=(N*N+25*N)/125 and M2=1+3B/100. Eloquence multiplies the base
-radius by M2 and divides Anima cost by M2. Charisma multiplies harmful-effect
-power and duration by M2; Empathy multiplies beneficial-effect/healing power and
-duration by M2. Direct damage retains its existing Intelligence calculation.
-The class preparation remains exactly three seconds, independent of Eloquence.
-Scale the whole authored multiplier: a base x3 with statistical power x2 becomes
-x6, not x5. The enemy Sleep hit count remains exactly three regardless of stats.
-The caster must have the entire modified cost available before preparation starts,
-although payment is progressive and cancellation does not refund paid Anima.
-These decisions define the implementation contract; the new lifecycle and effect
-consumers remain pending in this checkpoint.
+The author confirmed the existing curves: B=(N*N+25*N)/125; M2=1+3B/100.
+Eloquence multiplies radius by M2 and divides Anima cost by M2. Charisma multiplies
+harmful-effect power and duration; Empathy multiplies beneficial/healing power
+and duration. Direct damage retains the existing Intelligence calculation.
+Preparation stays exactly three seconds. Scale the complete authored factor:
+base x3 with statistical power x2 becomes x6. Cost is frozen at admission; effect
+parameters use the release-time derived statistics, as in the previous effect.
 
-Sleep enemies require three separate HP-damaging impacts (including each
-pellet and DOT application), with final received damage multiplied after defenses
-through the third waking hit; allies retain one-hit wake and no enemy multiplier.
-The hit count stays three. Continuous racial toggles have no cooldown/duration cap;
-Hunter's Instinct and Socialization cost 10 Anima/second before cost modifiers.
-These confirmed corrections supersede the older catalog below, but their runtime
-implementation and remaining policy questions still belong to #238/#239-251.
+Sleep preserves its 1,280-MU base radius before Eloquence scaling, sight check,
+caster exclusion and Lucidity behavior. Enemy identity follows existing native
+combat classification: hostile monsters are monsters without Friendly; cooperative
+players, friendly residents and neutral bodies do not receive the enemy penalty.
+The existing deathmatch/team identity handles opposing players; full multiplayer
+validation remains outside this issue. Enemies require exactly three separate
+HP-losing impacts, including individual pellets/projectiles and DOT applications.
+Their final damage after project defenses is multiplied by 3 times harmful power,
+including the third waking impact. Fully absorbed/evaded/blocked damage does not
+count. Allies and neutrals wake after one HP-losing impact without that multiplier.
+
+Duration expiry also wakes sleepers. Reapplication resets the enemy count to three,
+uses the new power, and keeps the greater of remaining and new duration. The saved
+Sleep object has schema revision 1, hit count, multiplier and original pose state.
+Existing RestLying poses are held without replaying state actions; wake restores
+the prior state without replaying an attack action. Bodies without an appropriate
+lying pose still freeze in their current frame: rat, Bull, Mandinga and Zupay pose
+coverage remains unfinished, and wounded corpse frames are not substituted.
+Old saves with only ForcedSleepTics retain their former one-hit wake behavior until
+expiry/reapplication. Voluntary rest is unchanged. Compatibility evidence and
+limits are in assets/validation_544; author acceptance is separate.
+
+Continuous racial toggles have no cooldown/duration cap. Hunter's Instinct and
+Socialization cost 10 Anima/second before cost modifiers. Their production effects,
+the remaining racial drain policies and nine new class effects stay in #239-251.
 
 ## MAP02 rat movement and sound - 5.4.3 / #254
 

@@ -2,10 +2,11 @@
 
 Documentation version: **5.4.4** — 2026-10-14.
 
-**5.4.4/#238 WIP:** preparation/HUD; scaling/admission confirmed; validation_544; lifecycle/Sleep pending.
+**5.4.4/#238 WIP:** paid casting/Sleep rules pass native save/hub checks; CA238-01 pending.
+Enemy poses/racial lifecycle remain. validation_544. After the 21-issue batch, implement #282.
 #254: validation_543/PR275; CA254-01 passed 2026-10-14. #261: CA261-01 passed 2026-10-14/PR274 ready. #259: CA259-01 passed 2026-10-14/PR273.
-#237: validation_540/PR272. Author returned for questions/manual checks.
-**Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
+#237: validation_540/PR272.
+**#231-236/#255-258:** accepted/merged/closed; HISTORY.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

@@ -39,7 +39,7 @@ $record.pid = $process.Id
 $null = $process.Handle
 while (!$process.WaitForExit(1000)) {
     $log = Join-Path $work "$Label.txt"
-    if ((Test-Path -LiteralPath $log) -and (Select-String -LiteralPath $log -Pattern 'Script error|errors while parsing|VM execution aborted|DIED WITH FATAL ERROR|This savegame needs' -Quiet)) {
+    if ((Test-Path -LiteralPath $log) -and (Select-String -LiteralPath $log -Pattern 'Script error|errors? while parsing|Attempt to redefine|VM execution aborted|DIED WITH FATAL ERROR|This savegame needs' -Quiet)) {
         Stop-Process -Id $process.Id
         throw "Engine error: $log"
     }

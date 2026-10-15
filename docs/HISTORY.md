@@ -58,6 +58,25 @@ refund. These are recorded design decisions, not newly completed runtime effects
 CA254-01 acceptance is carried forward from its own #254 commit/history entry.
 
 
+Same-version lifecycle follow-up: production User4 now drives the paid 105-tic
+preparation and releases Sleep. The author confirmed uniform snapshot payment,
+insufficient-resource cancellation, weapon/new-power blocking, forced-control
+interruption, neutral one-hit wake, duration expiry and reapplication (reset hits,
+new power, maximum remaining duration). No cancelled spending is refunded.
+Native receiver hooks count actual HP loss and scale final enemy damage after
+project defenses, including the third hit; schema-1 state serializes the effect.
+The final contract passed 1,021 checks; saving during payment passed 178 and reload
+4; native MAP02/MAP03 return passed 459 checks. Earlier development runs and their
+case-insensitive revision-name compile failure remain recorded separately.
+Old 5.4.3 saves receive inactive paid-cast defaults without spending Anima.
+Existing lying poses are used, while appropriate living poses for rat/Bull/Mandinga/
+Zupay remain pending. No corpse artwork was substituted. CA238-01 covers only the
+completed preparation/HUD behavior; full issue and visual Sleep acceptance remain
+pending. Detailed final hashes, commands and limitations: validation_544.
+CA259-01, CA261-01 and CA254-01 have since passed in their own history entries;
+the earlier checkpoint's outstanding-test list is historical. After the current
+21-issue batch, the author queued #282, with separate scope/branch/tests/PR.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

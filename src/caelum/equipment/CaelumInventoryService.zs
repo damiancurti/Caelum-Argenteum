@@ -4271,6 +4271,8 @@ class CaelumInventoryService : Object play
 
     static void EquipSelectedNativeEquipment(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (user.EquipmentSelectionKind
@@ -4395,6 +4397,8 @@ class CaelumInventoryService : Object play
 
     static void UnequipSelectedNativeEquipment(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         user.SyncActiveModelsToNativeInventory();
@@ -4479,6 +4483,8 @@ class CaelumInventoryService : Object play
 
     static void ToggleSelectedMagicBoxNative(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumDiningSession.Invalidate(user);
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
@@ -5789,6 +5795,8 @@ class CaelumInventoryService : Object play
 
     static void BreakSelectedNativeEquipment(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (user.EquipmentSelectionKind
@@ -5865,6 +5873,8 @@ class CaelumInventoryService : Object play
 
     static void DismantleSelectedNativeWeapon(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         user.LastDismantledBasicUnits = 0;
@@ -6054,6 +6064,8 @@ class CaelumInventoryService : Object play
 
     static void DropSelectedNativeInventoryItem(CaelumPlayer user)
     {
+        if(CaelumClassCastView.Active(user)
+            && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
             && user.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_TAROT_DECK)

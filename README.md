@@ -9,12 +9,13 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.4.4 is an **in-progress #238 checkpoint**, not a completed ability release.
-It provides the shared three-second hand sequence, preparation combat guards and
-left class/racial indicators using the existing power-column scale;
-the isolated native component checks are in [validation_544](assets/validation_544/RESULTS.md).
-User4 payment/release, revised Sleep and racial lifecycle remain unfinished. The author confirmed shared scaling and admission rules; remaining
-design details and manual checks are being reviewed.
+5.4.4 is an **in-progress #238 checkpoint**. Production User4 now prepares
+Arcanist Sleep with progressive payment, cancellation, release-only reuse and
+combat/input guards. Revised Sleep counts actual damaging hits and scales final
+enemy damage. Saved casts/effects and native hub return pass focused checks.
+The left class/racial HUD and hand sequence await focused author acceptance;
+some enemy prone poses and racial lifecycle integration remain unfinished.
+[Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
 MAP02 rats recover their authored movement speed, including existing saves,
