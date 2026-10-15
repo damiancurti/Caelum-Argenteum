@@ -15,6 +15,7 @@ class CaelumChannelEffect : Actor
     bool ChannelCameraCaptured,ChannelWasChase;
     Actor ChannelPreviousCamera;
     CaelumChannelSealMark ChannelMark;
+    CaelumChannelSealOrb ChannelOrb;
 
     void EnsureClimateState()
     {
