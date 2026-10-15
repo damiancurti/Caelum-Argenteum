@@ -1312,6 +1312,7 @@ class CaelumInventoryService : Object play
         if (user.PalomoMerchantMenuOpen) { user.RefreshPalomoMerchantSnapshot(); }
         if (user.CraftingMenuOpen) { user.RefreshCraftingPreview(); }
         if (user.CraftingBrowser != null) user.CraftingBrowser.Refresh(user);
+        CaelumQuickUse.Reconcile(user);
         user.PersistCharacterState();
     }
 

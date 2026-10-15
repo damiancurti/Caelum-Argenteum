@@ -8904,8 +8904,26 @@ class CaelumPlayer : DoomPlayer
     // Tick runs once per game tic. GZDoom uses 35 tics per second, so dividing
     // the documented per-second rate by TICRATE produces frame-independent
     // regeneration that also pauses when the game itself is paused.
+    override bool UseInventory(Inventory item)
+    {
+        // InvUse y el inventario formal llegan al mismo objeto nativo.
+        // Los recipientes conservan su instancia: Drink consume agua, no Amount.
+        let consumable=CaelumConsumableItem(item);
+        if(consumable!=null)
+        {
+            if(!CaelumPlayerAuthority.CanMutate(self) || !CaelumQuickUse.Available(self,item))return false;
+            let water=CaelumWaterContainer(item);
+            if(water!=null)return water.Drink();
+        }
+        if(item==null || !Super.UseInventory(item))return false;
+        if(consumable!=null)OnNativeInventoryChanged();
+        return true;
+    }
+
     override void Tick()
     {
+        // También repara flags/selección de saves anteriores sin duplicar stock.
+        CaelumQuickUse.Reconcile(self);
         CaelumCharacterIdentity.Ensure(self);
         CaelumSocialization.Update(self);
         CaelumRacialAbilityRules.Guard(self);
