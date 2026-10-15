@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "47e4e5667614c67fcbb5301814bb99270ff4198891ff0339897465228ab9ed1b",
+  "sha256": "52e032244d5d1e528efe0137ab1e787422b31117d3d46fa0f0d1362e5cd29a32",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -1816,6 +1816,13 @@
     "CA_QUEST_STATUS_FAILED": {"enu":[[1785,1785]],"default":[[1785,1785]],"es":[[1855,1855]]},
     "CA_QUEST_STATUS_LABEL": {"enu":[[1780,1780]],"default":[[1780,1780]],"es":[[1850,1850]]},
     "CA_QUEST_STATUS_OFFERED": {"default":[[3460,3460]],"es":[[3483,3483]]},
+    "CA_QUICK_EMPTY": {"enu":[[5880,5880]],"default":[[5880,5880]],"es":[[5889,5889]]},
+    "CA_QUICK_NEXT": {"enu":[[5885,5885]],"default":[[5885,5885]],"es":[[5894,5894]]},
+    "CA_QUICK_PREVIOUS": {"enu":[[5884,5884]],"default":[[5884,5884]],"es":[[5893,5893]]},
+    "CA_QUICK_QUANTITY": {"enu":[[5882,5882]],"default":[[5882,5882]],"es":[[5891,5891]]},
+    "CA_QUICK_UNAVAILABLE": {"enu":[[5881,5881]],"default":[[5881,5881]],"es":[[5890,5890]]},
+    "CA_QUICK_USE": {"enu":[[5886,5886]],"default":[[5886,5886]],"es":[[5895,5895]]},
+    "CA_QUICK_WATER": {"enu":[[5883,5883]],"default":[[5883,5883]],"es":[[5892,5892]]},
     "CA_Q_DETAIL_ABOUT": {"enu":[[2567,2567]],"default":[[2567,2567]],"es":[[2595,2595]]},
     "CA_Q_DETAIL_ANIMA_RECOVERED": {"enu":[[2576,2576]],"default":[[2576,2576]],"es":[[2604,2604]]},
     "CA_Q_DETAIL_ANIMA_SPENT": {"enu":[[2575,2575]],"default":[[2575,2575]],"es":[[2603,2603]]},

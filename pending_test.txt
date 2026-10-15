@@ -1,0 +1,20 @@
+CA282-01 | Origin: 5.4.22 / #282 | Quick-use carousel and native controls
+Status: pending; author requested deferral until returning on 2026-10-15.
+Prerequisites: current #282 production + isolated validation_5422 fixture;
+prepare.py --directory <fresh-name>, then run_native.ps1 -Directory <name>
+-Label author -Script manual.cfg -Interactive. This uses a separate config/save
+directory. Do not launch automatically while the author is away.
+1. In the bottom center, verify the selected icon is in the middle, with its
+   localized name and quantity above, and smaller previous/next icons alongside.
+2. Press F6/F7 to cycle, F8 to use. Verify one intended press consumes only the
+   displayed item; a held key does not consume an unintended stream. Deplete a
+   stack and verify the selection resolves without a ghost item.
+3. Select the canteen, use it, and verify water decreases while the container
+   remains. Check that the full inventory agrees with the carousel.
+4. Open/close Inventory, Journal, automap and Escape menus; their controls should
+   retain ownership and the carousel should not cover those views. Remap the
+   native inventory controls, return to gameplay and verify the shown key works.
+5. Check readability and separation from all six resource bars at your usual
+   window size/HUD scale. Switch Spanish/English if desired.
+Expected: correct layout, actual owned quantities/water, one intended use,
+native menu/remapping behavior, no overlapping bars or stale selection.

@@ -1,7 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
 
+
+## 5.4.22 - Quick-use inventory HUD (#282)
+
+The author selected a carousel at the bottom center, with name/count above the
+selected icon and smaller neighboring icons. It reuses native inventory input,
+owned artwork, existing consumption and water-container identity. No inventory
+schema or item balance changes. Evidence: validation_5422; CA282-01 is pending
+while the author is away. Keep #283's editable Domingo model pilot and #284's
+revised combat/personality/rock work in separate branches, commits and PRs.
 
 ## 5.4.21 - Local Seal climate and channel presentation (#252)
 
@@ -23,7 +32,9 @@ in validation_5421: 142 assertions in nine native runs and ten inspected capture
 the subsequent sprite-depth correction adds 88 assertions and four qualified
 runs. The author approved the corrected floor layering and the complete check.
 The completed #237 audit precedes #282, then newly authorized #283 (Domingo 3D
-pilot) and #284 (Mandinga base attributes 33), each separately scoped.
+pilot) and revised #284 (extra Mandinga Fire damage, demon personalities and
+a cosmetic Zupay rock), each separately scoped. The author withdrew the Mandinga
+attribute increase before implementation; retain its existing base attributes.
 
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)

@@ -1,7 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
 
+
+## 5.4.22 - Quick-use HUD (#282, author review pending)
+
+Branch feat/issue282-quick-use-hud: native selection/use, bottom-center carousel,
+name/count above the selected icon, smaller neighboring icons, independent
+water-container previews, Box exclusion and idempotent old-save reconciliation.
+Static/build, 47 assertions in 11 final native runs, and four rendered views pass
+(validation_5422). CA282-01 remains pending; the
+author is away, so defer questions and live manual tests until their return.
+Temporary keep-awake is bounded to 12 hours and must be released on return.
+Next: #283's editable Domingo 3D pilot, then revised #284. No batch merges or
+closures have been authorized.
 
 ## 5.4.21 - Seal extensions (#252, accepted)
 
@@ -16,8 +28,11 @@ The revised scene includes the corrected marks and newly requested purely visual
 elemental orb above the head. The final depth correction keeps the mark behind
 the body; 88 further native assertions and rendered views passed before approval.
 #237's completion audit is ready; next #282, #283 and #284 stay separate. The author
-added #283 (editable animated Domingo 3D pilot) and #284 (Mandinga attributes 33)
-on 2026-10-15; each requires its own branch, evidence, commits and linked PR. Shared #238 completion is
+added #283 (editable animated Domingo 3D pilot) and #284 on 2026-10-15. The revised
+#284 preserves Mandinga's base attributes, adds magical Fire damage to its
+physical machete hit, assigns approved personalities to both demons, and gives
+Zupay's existing projectile a purely cosmetic 3D rock. Each requires its own
+branch, evidence, commits and linked PR. Shared #238 completion is
 already delivered as aa253eed / PR280; it is not pending #252 gameplay work.
 
 

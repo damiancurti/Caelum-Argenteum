@@ -5875,3 +5875,21 @@ CA_CREATE_CLASS_ARCANE_CLOUD = "Arcane Cloud (User4): prepare for 3 seconds, the
 [es]
 CA_ARCANE_CLOUD_CAST = "Nube arcana: volá sentado, recuperá Ánima con la lluvia y alcanzá enemigos con rayos.";
 CA_CREATE_CLASS_ARCANE_CLOUD = "Nube arcana (User4): prepará durante 3 segundos y volá sentado sobre una nube de lluvia. Recupera Ánima para vos y los aliados que estén debajo, y descarga rayos del sello de aire sobre enemigos visibles tres veces por segundo. Elocuencia amplía la nube y el alcance; Empatía aumenta velocidad de vuelo, recuperación y duración. Agua, sueño, aturdimiento o inmovilización terminan el efecto.";
+
+[enu default]
+CA_QUICK_EMPTY = "No usable items";
+CA_QUICK_UNAVAILABLE = "Unavailable now";
+CA_QUICK_QUANTITY = "Quantity: %d";
+CA_QUICK_WATER = "Quantity: %d | Water: %.2f / %.2f L";
+CA_QUICK_PREVIOUS = "Previous";
+CA_QUICK_NEXT = "Next";
+CA_QUICK_USE = "Use";
+
+[es]
+CA_QUICK_EMPTY = "Sin objetos utilizables";
+CA_QUICK_UNAVAILABLE = "No disponible ahora";
+CA_QUICK_QUANTITY = "Cantidad: %d";
+CA_QUICK_WATER = "Cantidad: %d | Agua: %.2f / %.2f L";
+CA_QUICK_PREVIOUS = "Anterior";
+CA_QUICK_NEXT = "Siguiente";
+CA_QUICK_USE = "Usar";
