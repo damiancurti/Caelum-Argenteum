@@ -1,5 +1,5 @@
 CA238-01 | Origin: 5.4.4 / #238 | Class preparation and HUD only
-Prerequisites: isolated issue238-release manual.pk3 session, GZDoom 4.14.2.
+Prerequisites: isolated issue238-author manual.pk3 session, GZDoom 4.14.2.
 The terminal remains open. Test-only F = User4, G = block/zoom, F6 = reset Anima/reuse,
 F7 = next weapon, F8 = unarmed, F9 = insufficient Anima. Invulnerability is on;
 Anima regeneration is disabled. These controls do not change the personal profile.
@@ -11,7 +11,7 @@ Anima regeneration is disabled. These controls do not change the personal profil
 3. F6, then F. Try attack, G (block) and weapon switching during preparation; they
    must not execute. Movement remains possible. Holding F must release only once.
 4. Repeat with F7 weapons and F8 unarmed. F9 then F must refuse a new preparation.
-5. Confirm left class/racial indicators remain readable, match Tarot/Seal size,
+5. Confirm the smaller left class/racial icons look close to Tarot/Seal size,
    and do not overlap the accepted bars. Racial remains inactive in this scope.
 Expected: all five checks pass. Enemy sleeping poses, racial effects and complete
 #238 acceptance are explicitly outside this focused author test.

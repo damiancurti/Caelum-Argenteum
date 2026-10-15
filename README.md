@@ -13,8 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 Arcanist Sleep with progressive payment, cancellation, release-only reuse and
 combat/input guards. Revised Sleep counts actual damaging hits and scales final
 enemy damage. Saved casts/effects and native hub return pass focused checks.
-The left class/racial HUD and hand sequence await focused author acceptance;
-some enemy prone poses and racial lifecycle integration remain unfinished.
+The left class/racial HUD and hand sequence await focused author acceptance.
+Class/racial icons now use a smaller 64-unit square, close to Tarot/Seal size.
+Some enemy prone poses and racial lifecycle integration remain unfinished.
 [Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.
 
 5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):

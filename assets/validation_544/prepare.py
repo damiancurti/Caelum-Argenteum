@@ -73,13 +73,14 @@ manifest["lifecycle_fixture_sha256"] = shared.package(out / "lifecycle.pk3", {
     "changemap MAP02; wait 10; netevent c238_hub_check; wait 100; netevent c238_hub_done; wait 5; quit\n",
     encoding="utf-8")
 manifest["manual_fixture_sha256"] = shared.package(out / "manual.pk3", {
-    "ZSCRIPT": b'version "4.14"\n#include "equipment.zs"\n#include "manual.zs"\n',
+    "ZSCRIPT": b'version "4.14"\n#include "equipment.zs"\n#include "powers.zs"\n#include "manual.zs"\n',
     "equipment.zs": (HERE.parent / "validation_541/session.zs").read_bytes(),
+    "powers.zs": (HERE.parent / "validation_530/probe.zs").read_bytes(),
     "manual.zs": (HERE / "manual.zs").read_bytes(),
-    "MAPINFO": b'GameInfo { AddEventHandlers="CA238Manual" }\n'})
+    "MAPINFO": b'GameInfo { AddEventHandlers="CA255Probe", "CA238Manual" }\n'})
 manual = ('language es; use_mouse true; bind f +user4; bind g +zoom; bind f6 "netevent c238_reset"; '
           'bind f7 "netevent c238_weapon"; bind f8 "netevent c238_unarmed"; '
-          'bind f9 "netevent c238_short"; wait 100; netevent c238_manual; wait 100; '
+          'bind f9 "netevent c238_short"; wait 100; netevent c255_prepare; wait 20; netevent c238_manual; wait 100; '
           'netevent c238_manual_check; ')
 (out / "manual.cfg").write_text(manual+"\n", encoding="utf-8")
 (out / "manual-seed.cfg").write_text(manual+"wait 5; screenshot manual-ready.png; wait 5; quit\n", encoding="utf-8")

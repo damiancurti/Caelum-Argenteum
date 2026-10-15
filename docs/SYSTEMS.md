@@ -21,7 +21,10 @@ The revision-1 paid-cast state keeps cost, paid amount, profession and remaining
 visual clock; old saves default inactive without converting the old visual clock
 into a paid ability. Save/load and native MAP02/MAP03 hub return retain that state.
 
-The left class/racial column shares the existing Tarot/Seal size and HUD scaling.
+The left class/racial column shares the existing Tarot/Seal projection and HUD
+scaling. At the author's request, both glyphs use centered 64-by-64 logical units
+instead of 88-by-88, matching the Tarot frame width and approximating the visible
+Seal width. Labels and class countdown sit below the reduced glyphs.
 Class readiness uses implemented effect eligibility, with dim unavailable icons,
 a preparation label and reuse seconds. Racial state has no timer; its boolean
 defaults false and individual racial effects will own activation. The compass

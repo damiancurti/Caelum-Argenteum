@@ -77,6 +77,15 @@ CA259-01, CA261-01 and CA254-01 have since passed in their own history entries;
 the earlier checkpoint's outstanding-test list is historical. After the current
 21-issue batch, the author queued #282, with separate scope/branch/tests/PR.
 
+The author subsequently requested smaller class/racial icons, as close as possible
+to Tarot/Seal size. A separate visual change reduces the square frame from 88 to
+64 logical units (the existing Tarot frame width), centers it and moves labels/
+countdown beneath it. Existing Tarot/Seal rendering and resource bars are unchanged.
+Native state checks pass 16 assertions each at 1280x720 and 640x480/high HUD scale.
+The isolated author scenario now includes owned Tarot/Seal references for direct
+comparison. This is engine/visual evidence, not author acceptance; CA238-01 remains
+pending. Exact runtime and capture hashes: validation_544/small_icons.json.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

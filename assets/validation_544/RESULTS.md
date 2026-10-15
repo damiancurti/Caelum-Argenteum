@@ -18,7 +18,7 @@ and neutrals retain one-hit wake without the multiplier. Expiry and reapplicatio
 use the author-confirmed rules. Existing RestLying poses restore safely without
 replaying actions. Missing living poses for rat/Bull/Mandinga/Zupay remain pending.
 
-Final production SHA-256:
+Lifecycle-tested production SHA-256 (before the separate icon reduction below):
 `346f3bd66b9ef6369f40c3e62fb3a925ac2724193c58321b770ba8f54548a899`.
 Native Windows/GZDoom 4.14.2 evidence is in lifecycle_evidence.json. Key runs:
 
@@ -43,6 +43,21 @@ configuration binds F to User4, F6 to reset test resources/reuse, F7 to the next
 real weapon, F8 to unarmed and F9 to one Anima below the actual modified cost.
 The fixture gives invulnerability and disables Anima regeneration to expose debit;
 it does not change production balance. No full Sleep visual acceptance is claimed.
+
+## Smaller class/racial icons - author-requested visual follow-up
+
+The author requested smaller glyphs, close to Tarot/Seal size. The two square
+frames are reduced from 88 to 64 logical units (27.3% per side), matching the
+Tarot frame width and approaching the Seal artwork's visible width. They remain
+centered in the same column; labels and class countdown move beneath the glyphs.
+No art source, Tarot/Seal rendering, resource bar or gameplay state is changed.
+
+Native HUD checks pass 16 assertions each at 1280x720 and 640x480/high scale.
+The latter run's six state captures were inspected. Both runs use the same screenshot
+names: the retained six files belong to the later 640x480 run; no preserved 1280x720
+state capture is claimed. The separate author seed provides a retained 1280x720
+comparison with owned Tarot and Seal. Runtime/fixture/capture hashes and normal
+build comparison are recorded in small_icons.json. CA238-01 still awaits acceptance.
 
 ## Original presentation checkpoint (historical scope)
 

@@ -10,6 +10,8 @@ admitted cost, spends it uniformly, retains cancelled spending and starts reuse
 only at release. It blocks attacks, blocking, weapon changes and new power
 activations while preserving movement. SYSTEMS records approved interruption and
 attribute rules. The left class/racial HUD retains the existing power-column scale.
+The author requested smaller class/racial glyphs; centered 64-unit icons now
+approximate the visible Tarot/Seal size, with labels and countdown below.
 
 Revised Sleep counts HP-losing impacts, multiplies final enemy damage through the
 third waking hit, preserves ally/neutral exceptions and expires normally. Renewed
