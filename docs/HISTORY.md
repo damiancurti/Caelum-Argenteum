@@ -13,7 +13,13 @@ The author confirmed normal lightning-staff damage, random visible enemies in th
 Anima rain with Empathy and first pulse at one second. Other #251 decisions remain
 pending. Asset repeatability, eight native Vulkan state/view checks and normal
 package parity pass; validation_545/integration_5419.json records scope/hashes.
-No completed ability, new author acceptance, merge or issue closure is claimed.
+The author then restricted rain to beneficiaries underneath, confirmed ordinary
+falling at expiry while preserving other flight, and specified no cloud mass or
+solid body. Eight isolated native flight API checks reproduce the shared-flag
+coexistence limitation in both removal orders and demonstrate restoration; see
+validation_545/flight_evidence.json and CA-KP-105. This is feasibility evidence,
+not a production fix or full ability validation. No completed ability, new author
+acceptance, merge or issue closure is claimed.
 
 ## 5.4.19 - Pilgrim Redemption (#250, 2026-10-15)
 

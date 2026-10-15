@@ -20,6 +20,18 @@ concave bands. Exact commands, package hashes and normal exit are recorded in
 or author acceptance. The cloud lesson is now CA-KP-104 to avoid the independently
 accepted #260 CA-KP-097 identifier.
 
+## Native flight coexistence probe (2026-10-15)
+
+`prepare_flight_probe.py` packages an isolated native `PowerFlight` experiment
+against the integrated 5.4.19 runtime. Two independent flight inventories set the
+same flags; removing either one clears FLY/NOGRAVITY even when the other remains
+active. Restoring the survivor's native effect recovers flight, and removing the
+last power restores gravity. Eight checks cover both removal orders, exit 0.
+`flight_evidence.json` records exact commands, hashes and scope. These checks
+establish a native limitation and feasibility, not a shipped fix or cloud ability.
+Production integration must preserve other active sources without restarting their
+timer, charging again or repeating native takeoff impulses. See CA-KP-105.
+
 ## Static asset checks
 
 Run `python assets/validation_545/verify_asset.py`. Python 3.12 standard library,

@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.19** — 2026-10-15.
 
-**#251:** PR281 asset checkpoint integrated; gameplay decisions pending (SYSTEMS).
+**#251:** PR281 cloud/flight probes pass; confirmed rules and pending decisions: SYSTEMS.
 
 **5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 ready; unmerged.
 

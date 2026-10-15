@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-105 - Native flight powers share flags without ownership counting
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED native API behavior, #251,
+2026-10-15, integrated 5.4.19 baseline c1f1553b / GZDoom 4.14.2 Windows Vulkan.
+
+`PowerFlight.EndEffect` in the engine's `zscript/actors/inventory/powerups.zs`
+clears FLY/NOGRAVITY unless the flight cheat is active. It does not check for a
+second active flight power. Two separately named native subclasses can coexist
+as inventory, but removing either clears those shared flags. The isolated probe
+reproduces this in both orders; invoking the survivor's InitEffect restores flight.
+That probe call is diagnostic: InitEffect can also repeat the native takeoff thrust.
+
+An ability sharing flight with El Loco must manage its own contribution, preserve
+remaining sources on expiry, and avoid restarting timers, charging again or adding
+an unintended takeoff impulse. Native coexistence alone is insufficient. Actual
+production restoration, input, expiry, hub travel and save/load remain required
+checks in #251; the eight probe assertions do not claim those are implemented.
+
+Evidence/reproduction: [flight_evidence.json](../assets/validation_545/flight_evidence.json),
+`prepare_flight_probe.py` and `flight_probe.zs` in the same directory. This finding
+complements CA-KP-040's separate hub-power removal behavior.
+
 ## CA-KP-104 - Translucent cloud meshes need visual inspection from several angles
 
 Integrated as CA-KP-104 on 2026-10-15; the isolated #251 branch originally

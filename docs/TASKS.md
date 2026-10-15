@@ -11,9 +11,15 @@ Intelligence; random visible enemies within 40 m base scaled by Eloquence,
 allowing repeat targets and no shot without an eligible enemy; rain restores
 1% of each beneficiary's current maximum Anima per second, scaled by Empathy,
 with the first pulse one second after release. The caster is included.
-Rain footprint/contact, mounting/flight and effect lifecycle decisions remain
-pending. Existing seated artwork, native flight and the class lifecycle are
-reused; no new gameplay behavior or acceptance is claimed at this checkpoint.
+Rain benefits only allies underneath the cloud, rather than a surrounding aura;
+the separately approved caster recovery remains included. The cloud has no mass
+or solid body. Expiry begins ordinary falling unless another flight source is
+still active. Cloud width/rain footprint scaling, obstruction/contact details,
+mounted actions and other lifecycle decisions remain pending. Existing seated
+artwork, native flight and the class lifecycle will be reused. The isolated native
+flight probe reproduces shared-flag removal when one of two powers ends; the
+ability must preserve the surviving source (CA-KP-105). No new gameplay behavior
+or author acceptance is claimed at this checkpoint.
 
 ## 5.4.19 - Redemption (#250, accepted)
 
