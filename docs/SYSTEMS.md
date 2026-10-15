@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.9** — 2026-10-15.
+Documentation version: **5.4.10** — 2026-10-15.
+
+## Battle Cry - 5.4.10 / #243
+
+Warrior User4 follows the shared #238 contract: exactly three seconds of native
+hand preparation, full modified 1000-Anima admission, a fixed cost paid uniformly,
+second-press cancellation without refund, and 60-second reuse from release.
+At release it snapshots living enemies within 40 metres (1280 MU) times the
+Eloquence range factor, with unobstructed sight. Geometric sight ignores visibility
+modifiers, matching the existing Sleep query. Allies, neutral actors and the caster
+are excluded. Enemies use existing monster/friendly and player team rules; bosses
+have no special immunity. No invented resistance roll or damage is involved.
+
+The attack prohibition lasts 10 seconds times the Charisma harmful-effect factor.
+Renewal retains max(remaining, new duration), never their sum. Membership does not
+change after release: leaving the radius or losing the caster does not end it.
+Recipients retain movement and defense. Preparing physical/magical attacks,
+offensive class casts, bolas, resident tool attacks, Bull charges, demon breath
+and utility-staff streams stop. Harmful Seal channels stop without a final
+Quintessence release burst; all Telekinesis stops, including nonliving targets.
+Weapon execution paths also reject attacks until expiry. Nonattack reloads,
+implemented Tarot benefits/flight and self-benefit racials remain available.
+Already launched projectiles and already applied burn/poison/periodic effects
+continue normally; this is an attack gate, not a global damage filter.
+
+Intimidated siege operators may move/load. Cannon firing still requires one
+eligible nearby operator; the ram still requires its complete eligible crew.
+An interrupted ram strike enters recovery even if another crew member is absent.
+The prohibition lives in recipient inventory (revision 1), survives save/load and
+supported hub travel, and expires on its own clock without caster ownership.
+Old saves have no new effect to invent. The optional 5.4.9 rollback bridge operates
+on copies, removes unsupported effects/casts and retains spent Anima; preserve
+original saves for reversal. Scope and exact evidence: assets/validation_5410.
+CA243-01 remains an outstanding author check, not implied by automated results.
 
 ## Hunter's Instinct - 5.4.9 / #239
 
@@ -6513,13 +6546,13 @@ Base before AbilityRangePercent; 32 MU development scale per metre.
 | Effect | Base radius (MU) | Meters |
 | --- | ---: | ---: |
 | Channeling of Seals | 1280 | 40 |
-| Class skills; currently Arcanist Sleep | 1280 | 40 |
+| Class skills; currently Sleep and Battle Cry | 1280 | 40 |
 | Impact of lightning seal | 256 | 8 |
 | Zupay ground slam | 192 | 6 |
 | Statuette explosion | 128 | 4 |
 
 SEAL_CHANNEL_BASE_RADIUS maintains 128 × 10. CLASS_ABILITY_BASE_RADIUS reference that
-same base; Sleep and seals multiply by AbilityRangePercent/100. to 150%, both reach 1920
+same base; Sleep, Battle Cry and seals multiply by AbilityRangePercent/100. to 150%, both reach 1920
 MU. The selection of Sleep by distance and vision is retained: it includes visible
 allies, excludes the launcher and targets behind walls. Duration 10 s, wake up by
 impact, reuse 60 s and confirmed base cost of 1000 Anima with its usual reduction. The
@@ -6988,10 +7021,12 @@ temperature, light or thermal exposure. Rest, temporary advancement and environm
 status were added in V4.35; character thermal exposure is implemented in
 5.1.0/#130 above.
 
-## Class and racial abilities: agreed design; Sleep implemented in 0g
+## Historical ability catalog and focused V5.4 revisions
 
-4.35.0g update: Arcanist Sleep is implemented above with the requested Lucidity drain.
-The rest of this catalog retains its design status.
+This preserves the 2026-09-14 catalog and its 4.35.0g Sleep checkpoint. Current
+V5.4 sections and issue-specific author revisions supersede historical rules.
+The Warrior row below reflects #243; pending class replacements retain their
+separate issue briefs until their focused delivery.
 
 The decisions from the discussion on 2026-09-14 are recorded here. There are no new
 playable User1/User4 effects in 0b or 0c. The roadmap assigns these abilities to V5
@@ -7005,7 +7040,7 @@ additional formula is invented in this patch. The aura radii remain to be define
 
 | Class | Ability | Agreed effect for 10 seconds |
 | --- | --- | --- |
-| Warrior | Battle Cry | Intimidates within the area. Terrified targets cannot perform physical attacks or attacks with ranged weapons. |
+| Warrior | Battle Cry | Visible enemies in the release-time area cannot perform any attack, including magic. Movement/defense remain; see the 5.4.10 contract above. |
 | Explorer | Survival Instinct | Blocks all negative states and loss of survival resources. |
 | Priest | Miracle | Restores 1% of Lucidity, Health, Anima and Air per second. |
 | Mage | Brainstorm | For each distinct cast, the next three within the window receive reductions of 100%, 50% and 25%. Fire and AltFire count for each weapon, and an attack charged with R counts as a separate spell. |

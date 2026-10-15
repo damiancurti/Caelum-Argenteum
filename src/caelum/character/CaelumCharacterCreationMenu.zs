@@ -310,7 +310,10 @@ class CaelumCharacterCreationMenu : ListMenu
         else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS
             || (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS
                 && CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) != CaelumConstants.PROFESSION_ARCANIST))
-            result = result .. "\n\n" .. StringTable.Localize("CA_CREATE_CLASS_PLANNED", false);
+            result = result .. "\n\n" .. StringTable.Localize(
+                Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_WARRIOR
+                    ? "CA_CREATE_CLASS_BATTLE_CRY" : "CA_CREATE_CLASS_PLANNED", false);
         return result;
     }
 

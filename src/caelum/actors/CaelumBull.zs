@@ -16,7 +16,7 @@ class CaelumBull : CaelumCombatActor
 
     bool BullChargeInterrupted()
     {
-        return health<=0 || CaelumBolas.Restrained(self) || CaelumBolas.Interrupted(self)
+        return health<=0 || CaelumBattleCry.Active(self) || CaelumBolas.Restrained(self) || CaelumBolas.Interrupted(self)
             || (ElementalStatus!=null && ElementalStatus.GetMovementMultiplier()<=0);
     }
 

@@ -399,6 +399,7 @@ class CaelumCombatActor : Actor
 
     bool BeginCaelumDiagnosticAttack()
     {
+        if(CaelumBattleCry.Active(self))return false;
         if (level.MapName != "CADEV02") { return true; }
         ImpactDiagnosticAttackAttempts++;
         if (!CaelumMassAIScheduleActive) { return true; }
@@ -933,6 +934,7 @@ class CaelumCombatActor : Actor
 
     bool WithinAttackRange(bool magical, double spawnHeight=-1)
     {
+        if(CaelumBattleCry.Active(self))return false;
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
         if(!magical)return CheckMeleeRange();
         vector3 origin=Pos+(0,0,spawnHeight>=0 ? spawnHeight : Height*0.65);
@@ -3674,6 +3676,7 @@ class CaelumCombatActor : Actor
     {
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
         vector3 before=Pos;
+        if(CaelumBattleCry.Active(self)){melee=null;missile=null;}
         A_Chase(melee,missile,flags);
         if(Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
     }

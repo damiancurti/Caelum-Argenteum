@@ -21,6 +21,27 @@ class CaelumClassAbilityRules : Object play
     static double BeneficialPower(CaelumPlayer user)
     {return user.DerivedStats.BuffPowerPercent/100.0;}
 
+    static clearscope bool Implemented(int profession)
+    {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR;}
+
+    static clearscope bool Offensive(int profession)
+    {return profession==CaelumConstants.PROFESSION_ARCANIST || profession==CaelumConstants.PROFESSION_WARRIOR;}
+
+    static bool CanCast(CaelumPlayer user)
+    {
+        if (user == null || user.player == null || user.health <= 0
+            || user.CharacterProfile == null || !user.CharacterCreationComplete
+            || !Implemented(user.CharacterProfile.GetProfession())
+            || (CaelumBattleCry.Active(user) && Offensive(user.CharacterProfile.GetProfession()))
+            || user.DerivedStats == null || user.IsPhysicallyImmobilized()
+            || user.CombatChannelModeActive || user.ClassCastActive
+            || user.EquipmentMenuOpen || user.CreationWizardOpen
+            || CaelumRestState.IsActive(user) || user.CraftingMenuOpen
+            || user.HasActiveConversation() || user.PalomoMerchantMenuOpen
+            || user.ClassSleepCooldownRemaining > 0) return false;
+        return user.CurrentAnima>=Cost(user);
+    }
+
     static void Ensure(CaelumPlayer user)
     {
         // Los nuevos campos se inicializan a cero al cargar un save anterior.
@@ -38,7 +59,7 @@ class CaelumClassAbilityRules : Object play
     static bool Begin(CaelumPlayer user)
     {
         if(user==null || user.ClassCastActive || CaelumClassCastView.Active(user)
-            || !CaelumSleepRules.CanCast(user))return false;
+            || !CanCast(user))return false;
         Ensure(user);
         user.ClassCastProfession=user.CharacterProfile.GetProfession();
         user.ClassCastCost=Cost(user);
@@ -91,6 +112,8 @@ class CaelumClassAbilityRules : Object play
         user.ClassCastActive=false;
         if(user.ClassCastProfession==CaelumConstants.PROFESSION_ARCANIST)
             CaelumSleepRules.Release(user);
+        else if(user.ClassCastProfession==CaelumConstants.PROFESSION_WARRIOR)
+            CaelumBattleCry.Release(user);
         user.ClassSleepCooldownRemaining=REUSE_SECONDS;
         user.PersistCharacterState();
     }

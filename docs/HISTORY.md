@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.9** — 2026-10-15.
+Documentation version: **5.4.10** — 2026-10-15.
+
+## 5.4.10 - Battle Cry (#243, 2026-10-15)
+
+Implemented Warrior Grito de guerra through the accepted #238 class lifecycle.
+The author confirmed visible enemies at release, all attack types, no boss
+immunity, max-duration renewal, persistence outside range/after caster death,
+interruption of preparations/channels, and preservation of existing projectiles
+and applied periodic effects. Telekinesis is wholly prohibited. Siege operators
+may move/load but cannot count toward attacks while intimidated. Each machine's
+existing attack staffing requirement remains authoritative. This supersedes the
+old catalog's physical/ranged-only Warrior restriction; other class revisions
+remain in their own issues.
+
+Player/NPC execution paths and native weapon input are covered, including fists,
+melee, nine projectile families, demon breath, Bull charge, block/movement and
+siege attacks. Focused native checks cover payment/cancellation, sight/range,
+social scaling, overlapping effects, save/load during preparation/effect, expiry,
+hub travel and caster death. assets/validation_5410 records exact builds, runs,
+qualifications, failed fixture iterations and the optional copied-save 5.4.9 bridge.
+These are isolated GZDoom 4.14.2 results, not campaign or multiplayer acceptance.
+CA243-01 (origin 5.4.10 / #243) awaits the author; no acceptance is claimed.
+The patch stacks on accepted #239. No merge or issue closure is authorized here.
 
 ## 5.4.9 - Hunter's Instinct (#239, 2026-10-15)
 

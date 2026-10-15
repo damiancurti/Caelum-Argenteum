@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.9.** Obtain and update the complete repository, validate
+**Current release: 5.4.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.10 implements [#243](https://github.com/damiancurti/Caelum-Argenteum/issues/243):
+Warrior Battle Cry stops every attack by enemies visible within its area when
+the shared three-second preparation completes. Movement and defense remain;
+already released projectiles and applied periodic damage continue. Duration and
+radius use the approved social scaling. Native evidence and save compatibility:
+[validation_5410](assets/validation_5410/RESULTS.md). CA243-01 awaits author review
+in `pending_test.txt`. This focused PR stacks on accepted #239.
 
 5.4.9 implements [#239](https://github.com/damiancurti/Caelum-Argenteum/issues/239):
 Beast Man Hunter's Instinct triples current stealth and rear critical chance,

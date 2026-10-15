@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.9** — 2026-10-15.
+Documentation version: **5.4.10** — 2026-10-15.
+
+## 5.4.10 - Battle Cry (#243)
+
+Implemented the shared Warrior cast, release-time enemy/sight selection, attack
+gates, continuous-attack interruption and siege staffing distinction. Native
+weapon, NPC, movement/defense, projectile/DOT, save/hub and compatibility evidence
+lives in assets/validation_5410. CA243-01 in pending_test.txt awaits author review.
+Keep the focused PR based on accepted #239; do not merge or close it as a proxy
+for manual acceptance. Remaining class issues and then #282 stay separate.
 
 ## 5.4.9 - Hunter's Instinct (#239)
 

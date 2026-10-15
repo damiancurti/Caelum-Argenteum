@@ -75,6 +75,7 @@ class CaelumTelekinesisEffect : CaelumRacialAbilityEffect
 
     override bool CanStart(CaelumPlayer user)
     {
+        if(CaelumBattleCry.Active(user))return false;
         vector3 eye=CaelumTelekinesisRules.Eye(user);FLineTraceData hit;
         if(!user.LineTrace(user.Angle,CaelumTelekinesisRules.Range(user),user.Pitch,
             TRF_ABSPOSITION|TRF_SOLIDACTORS,eye.Z,eye.X,eye.Y,hit)
@@ -90,6 +91,7 @@ class CaelumTelekinesisEffect : CaelumRacialAbilityEffect
 
     override bool CanContinue(CaelumPlayer user)
     {
+        if(CaelumBattleCry.Active(user))return false;
         if(Caster!=user || MapName!=level.MapName || HoldRevision!=CaelumTelekinesisRules.REVISION
             || !CaelumTelekinesisRules.Eligible(user,Body))return false;
         let other=CaelumTelekinesisRules.Binding(Body);

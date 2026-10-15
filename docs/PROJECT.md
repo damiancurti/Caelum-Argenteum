@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.9** — 2026-10-15.
+Documentation version: **5.4.10** — 2026-10-15.
+
+## 5.4.10 - Warrior Battle Cry (#243)
+
+Warrior User4 uses the accepted progressive-cost preparation and release cooldown.
+It prohibits attacks by visible enemies in the release-time area, including bosses,
+without preventing movement or defense. Attack preparations, continuous attacks,
+offensive Seal channels and all Telekinesis stop; existing projectiles and applied
+periodic damage remain. Siege operators can still move/load but only eligible
+operators count toward each machine's existing attack requirement. Saved status
+is recipient-owned and revisioned. Native evidence: assets/validation_5410.
+CA243-01 awaits author review; the focused PR stacks on accepted #239.
 
 ## 5.4.9 - Beast Man Hunter's Instinct (#239)
 

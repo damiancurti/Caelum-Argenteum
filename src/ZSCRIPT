@@ -200,6 +200,7 @@ version "4.14"
 #include "caelum/world/CaelumSleepingBag.zs"
 
 #include "caelum/world/CaelumSleepRules.zs"
+#include "caelum/world/CaelumBattleCry.zs"
 #include "caelum/world/CaelumClassAbilityRules.zs"
 #include "caelum/world/CaelumRacialAbilityRules.zs"
 #include "caelum/world/CaelumTelekinesis.zs"

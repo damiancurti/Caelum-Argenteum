@@ -140,6 +140,7 @@ class CaelumBolas : Object play
 
     static bool CanPrepare(CaelumPlayer user)
     {
+        if(CaelumBattleCry.Active(user))return false;
         return user!=null && user.health>0 && user.player!=null && user.CharacterCreationComplete
             && user.WeaponModel!=null && user.WeaponModel.Equipped && user.DerivedStats!=null
             && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS
@@ -192,6 +193,7 @@ class CaelumBolas : Object play
     // La activación cambia, pero vuelo, coste y objeto transferido son únicos.
     static CaelumBolasFlight ThrowItem(Actor emitter,CaelumEquipmentItem item,int prepared)
     {
+        if(CaelumBattleCry.Active(emitter))return null;
         let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
         if(emitter==null || (user==null && npc==null) || emitter.health<=0 || Restrained(emitter)
             || Interrupted(emitter) || item==null || item.Owner!=emitter || !item.Equipped || item.InMagicBox

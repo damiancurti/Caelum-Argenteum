@@ -17,7 +17,7 @@ class CaelumDemonService : Object play
     {
         if(!Supports(npc))return;
         let boss=CaelumZupayColossus(npc);
-        bool blocked=CaelumTelekinesisRules.Held(npc) || npc.health<=0 || npc.ForcedSleepTics>0 || npc.CombatLucidityPhysicalStunRemaining>0
+        bool blocked=CaelumBattleCry.Active(npc) || CaelumTelekinesisRules.Held(npc) || npc.health<=0 || npc.ForcedSleepTics>0 || npc.CombatLucidityPhysicalStunRemaining>0
             || npc.RecoveryPhase==1
             || npc.CaelumDiagnosticPassiveAI || npc.CaelumMassAIScheduleActive
             || (boss!=null && boss.SewerFleeing)
@@ -28,12 +28,12 @@ class CaelumDemonService : Object play
         bool cold=npc.ThermalState!=null && npc.ThermalState.Exposure<0 && npc.ThermalState.Severity>0;
         bool combat=!blocked && npc.RecoveryPhase==0 && npc.target!=null && npc.target.health>0
             && npc.target.bSHOOTABLE && CaelumDemonBreath.CanReach(npc,npc.target);
-        if(blocked || (!ropes && !cold && !combat)){StopBreath(npc);return;}
+        if(blocked || (!ropes && !cold && !combat)){StopBreath(npc,!CaelumBattleCry.Active(npc));return;}
         // No se cancela a mitad una acción que ya pagó sus recursos.
         if(!ropes && npc.DemonBreath==null && ((npc.MeleeState!=null && npc.InStateSequence(npc.CurState,npc.MeleeState))
             || (npc.MissileState!=null && npc.InStateSequence(npc.CurState,npc.MissileState))))return;
         double cost=npc.GetMagicAnimaCost(CaelumDemonBreathRules.ANIMA_PER_SECOND)/TICRATE;
-        if(npc.CurrentCombatAnima<cost){StopBreath(npc);return;}
+        if(npc.CurrentCombatAnima<cost){StopBreath(npc,!CaelumBattleCry.Active(npc));return;}
         if(combat)npc.A_FaceTarget();
         if(npc.DemonBreath==null)
         {

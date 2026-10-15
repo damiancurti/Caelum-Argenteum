@@ -8805,6 +8805,8 @@ class CaelumPlayer : DoomPlayer
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
+        if(CaelumBattleCry.Active(self) && player!=null)
+            player.cmd.buttons &= ~(BT_ATTACK|BT_ALTATTACK);
         if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
@@ -9414,6 +9416,7 @@ class CaelumPlayer : DoomPlayer
 
     bool BeginPhysicalAttackCycle(bool secondary, bool sweep=false)
     {
+        if(CaelumBattleCry.Active(self))return false;
         if(CaelumClassCastView.Active(self))return false;
         RefreshWeaponAttackClock();
         double duration=GetEquippedAttackDurationTics();
@@ -9512,6 +9515,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformEquippedWeaponPrimaryAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
         {CaelumBolas.Throw(self);return;}
@@ -9590,6 +9594,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
@@ -9822,6 +9827,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformJavelinThrow()
     {
+        if(CaelumBattleCry.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_JAVELIN
@@ -10139,6 +10145,7 @@ class CaelumPlayer : DoomPlayer
             RequestRangedReload(requestedWeaponType);
             return;
         }
+        if(CaelumBattleCry.Active(self))return;
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != requestedWeaponType
             || DerivedStats == null || CombatBlockModeActive
@@ -10276,6 +10283,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformCarbineAttack()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastCarbineFired = false;
@@ -10477,6 +10485,7 @@ class CaelumPlayer : DoomPlayer
 
     void CompletePendingStaffCast()
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (!StaffCastPending) { return; }
         bool secondaryAttack = PendingStaffSecondaryAttack;
@@ -10517,6 +10526,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastStaffHit = false;
@@ -10596,6 +10606,7 @@ class CaelumPlayer : DoomPlayer
         bool chargedAttack
     )
     {
+        if(CaelumBattleCry.Active(self))return;
         double magicDamageScale = WeaponModel.GetDamage()
             / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         UpdateLucidityAccuracyEffects();
@@ -11061,7 +11072,7 @@ class CaelumPlayer : DoomPlayer
         return CaelumConstants.SEAL_CHANNEL_T1_ADRENALINE_PER_TIC;
     }
 
-    void StopSealChannel(bool startCooldown)
+    void StopSealChannel(bool startCooldown,bool releaseAttack=true)
     {
         if (!CombatChannelModeActive && CombatChannelEffectActor == null) return;
         CombatChannelModeActive = false;
@@ -11069,7 +11080,7 @@ class CaelumPlayer : DoomPlayer
         if (CombatChannelEffectActor != null)
         {
             CaelumChannelEffect effect = CaelumChannelEffect(CombatChannelEffectActor);
-            if (effect != null) effect.ReleaseChannel();
+            if (effect != null) effect.ReleaseChannel(releaseAttack);
             else CombatChannelEffectActor.Destroy();
             CombatChannelEffectActor = null;
         }
@@ -11111,6 +11122,7 @@ class CaelumPlayer : DoomPlayer
     // inicial de Caella. La consulta no consume ni concede Adrenalina.
     bool CanStartSealChannel()
     {
+        if(CaelumBattleCry.Active(self))return false;
         if (CombatChannelCooldownRemaining > 0.0 || player == null
             || player.playerstate != PST_LIVE || health <= 0
             || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
@@ -11184,7 +11196,7 @@ class CaelumPlayer : DoomPlayer
     void ReserveClassAbilityInput()
     {
         if (ClassCastActive || (CharacterProfile != null
-            && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST))
+            && CaelumClassAbilityRules.Implemented(CharacterProfile.GetProfession())))
         {
             CaelumClassAbilityRules.Input(self);
             return;
@@ -11750,6 +11762,7 @@ class CaelumPlayer : DoomPlayer
     // is live; status effects and the final Caelum armor stage remain separate.
     void PerformDebugSwordAttack(bool secondaryAttack, bool areaSweep = false)
     {
+        if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
         LastMeleeCalculatedDamage = 0.0;

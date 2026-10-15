@@ -38,6 +38,7 @@ class CaelumRangedRules : Object
     static play CaelumCarbineProjectile Fire(Actor owner,CaelumWeaponModel weapon,
         double damage,bool critical,double push,double yaw,double pitch,double criticalChance=-1,double criticalRoll=0)
     {
+        if(CaelumBattleCry.Active(owner))return null;
         Name type="CaelumCarbineProjectile";
         if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)type="CaelumShotgunPellet";
         else if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_LONGBOW)type="CaelumArrowProjectile";
@@ -169,6 +170,7 @@ class CaelumCityCarbine : Object play
     }
     bool Attack(CaelumPortDefender owner,Actor victim)
     {
+        if(CaelumBattleCry.Active(owner))return false;
         if(owner==null || (CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")))return false;
         if(!InRange(owner,victim))return false;

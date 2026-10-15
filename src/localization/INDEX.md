@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `123ff761ccf79d3847f471c57ac2d59b4e88e0a7c5770d2f12554fbd6ab81514`. Locations include every definition; the last one per language wins.
+SHA-256: `c61e4777d80b474e18cf33262b3220448165feb8a8530ca437af7153fd6927e5`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -26,6 +26,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |
 | CA_ATTRIBUTE | 12 | CA_ATTRIBUTE_AGILITY | CA_ATTRIBUTE_TOUGHNESS |
+| CA_BATTLE | 2 | CA_BATTLE_CRY_BLOCKED | CA_BATTLE_CRY_CAST |
 | CA_BULL | 1 | CA_BULL_NAME | CA_BULL_NAME |
 | CA_CAELLA | 5 | CA_CAELLA_NAME | CA_CAELLA_NECKLACE_TEACH |
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
@@ -42,7 +43,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 68 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
-| CA_CREATE | 45 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
+| CA_CREATE | 46 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |

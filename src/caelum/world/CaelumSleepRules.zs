@@ -140,18 +140,9 @@ class CaelumSleepRules : Object play
     {return CaelumClassAbilityRules.Cost(user);}
 
     static bool CanCast(CaelumPlayer user)
-    {
-        if (user == null || user.player == null || user.health <= 0
-            || user.CharacterProfile == null || !user.CharacterCreationComplete
-            || user.CharacterProfile.GetProfession() != CaelumConstants.PROFESSION_ARCANIST
-            || user.DerivedStats == null || user.IsPhysicallyImmobilized()
-            || user.CombatChannelModeActive || user.ClassCastActive
-            || user.EquipmentMenuOpen || user.CreationWizardOpen
-            || CaelumRestState.IsActive(user) || user.CraftingMenuOpen
-            || user.HasActiveConversation() || user.PalomoMerchantMenuOpen
-            || user.ClassSleepCooldownRemaining > 0) return false;
-        return user.CurrentAnima>=Cost(user);
-    }
+    {return user!=null && user.CharacterProfile!=null
+        && user.CharacterProfile.GetProfession()==CaelumConstants.PROFESSION_ARCANIST
+        && CaelumClassAbilityRules.CanCast(user);}
 
     static bool Cast(CaelumPlayer user)
     {

@@ -22,7 +22,7 @@ class CaelumUnarmedWeapon : Weapon
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || !user.CharacterCreationComplete || user.CreationWizardOpen
             || user.EquipmentMenuOpen || user.CraftingMenuOpen || user.IsPhysicallyImmobilized()
-            || CaelumClassCastView.Active(user))return;
+            || CaelumClassCastView.Active(user) || CaelumBattleCry.Active(user))return;
         invoker.Punching=false;
         if (user.DerivedStats==null) return;
         double cost=CaelumAttackRules.NaturalAir()*user.DerivedStats.AirConsumptionMultiplier;
@@ -38,7 +38,7 @@ class CaelumUnarmedWeapon : Weapon
         if(!invoker.Punching)return;
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || user.health<=0 || user.IsPhysicallyImmobilized()
-            || CaelumClassCastView.Active(user))return;
+            || CaelumClassCastView.Active(user) || CaelumBattleCry.Active(user))return;
         int damage=Random[Punch](1,10)*2;
         if(user.FindInventory("PowerStrength")!=null)damage*=10;
         double direction=user.Angle+Random2[Punch]()*(5.625/256);
