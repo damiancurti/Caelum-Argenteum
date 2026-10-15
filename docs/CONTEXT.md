@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.13** — 2026-10-15.
 
-**5.4.13/#246:** Arcane Sun implemented; CA246-01 pending until author return. validation_5413.
+**5.4.13/#246:** CA246-01 accepted on 2026-10-15; Arcane Sun implemented. validation_5413.
 
 **5.4.12/#245:** CA245-01 accepted 2026-10-15. validation_5412.
 

@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,
 emits homing fire and explodes into 25 shots. It uses the shared paid preparation
 and preserves native elemental defenses. [Evidence](assets/validation_5413/RESULTS.md).
-CA246-01 awaits author review after return; this focused PR stacks on accepted #245.
+CA246-01 passed author review on 2026-10-15; this focused PR stacks on accepted #245.
 
 5.4.12 implements [#245](https://github.com/damiancurti/Caelum-Argenteum/issues/245):
 Priest Miracle restores Health, Lucidity, Anima and Air each second in an area
