@@ -3,7 +3,7 @@
 Documentation version: **5.4.3** — 2026-10-14.
 
 **5.4.3/#254:** rat movement/audio; validation_543; CA254-01 author-passed 2026-10-14.
-#261: CA261-01 passed 2026-10-14; PR274 ready. #259: CA259-01 pending; PR273.
+#261: CA261-01 passed 2026-10-14; PR274 ready. #259: CA259-01 passed 2026-10-14; PR273.
 #237: validation_540/PR272. #238 separate; author returned for questions/tests.
 **Previous #231-236/#255-258:** accepted, merged and closed; HISTORY records acceptance.
 
