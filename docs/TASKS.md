@@ -11,6 +11,9 @@ Static validation, normal packaging and 233 assertions across 20 qualified nativ
 runs pass: formulas, geometry, defenses, flight, presentation, save/load, travel
 and old-save migration. The 500-body service benchmark is not full-battle FPS
 evidence. CA252-01 is the outstanding author check in pending_test.txt.
+Its first visual review reported incorrect ground placement and Water's image.
+The revised scene includes the corrected marks and newly requested purely visual
+elemental orb above the head. Keep CA252-01 pending until explicit confirmation.
 Keep #237's completion audit and later #282 separate. Shared #238 completion is
 already delivered as aa253eed / PR280; it is not pending #252 gameplay work.
 

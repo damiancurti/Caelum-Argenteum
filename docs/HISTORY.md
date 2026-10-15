@@ -31,6 +31,23 @@ CA-KP-107 records the reusable lesson. CA252-01 (origin 5.4.21 / #252) remains
 pending author gameplay/visual review. No author acceptance, merge or closure
 is claimed by these automated results.
 
+The first CA252-01 review was not accepted: the author requested the drawing on
+the ground and reported that Water displayed a face. Water/Air existed in
+TEXTURES but lacked native state registration; the original numerical tests
+checked flat flags/scale, not valid sprite indices or all rendered images.
+The correction registers both frames and traces downward to real floors,
+including 3D floors and solid actor architecture, instead of following airborne
+feet. The author also requested an elemental sphere like Arcane Sun, confirmed
+as purely visual and floating above the head. It shares the existing scale and
+elemental animation, with no inherited attack/heat/collision behavior. Focused
+revision tests and all-five-element captures are recorded in validation_5421.
+The revision passes 142 assertions in nine native runs, static validation and
+normal packaging, including current saves, copied pre-orb saves and map travel.
+All ten final ground/orb captures were inspected. Original climate evidence is
+reused only for unchanged gameplay source; it is not relabeled as the new build.
+CA252-01 remains pending; this feedback does not imply acceptance of the other
+steps. The same patch retains version 5.4.21.
+
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)
 

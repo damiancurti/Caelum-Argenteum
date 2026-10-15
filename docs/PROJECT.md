@@ -15,6 +15,13 @@ qualified native runs pass, including old-save migration and map travel. Evidenc
 and limitations: validation_5421. CA252-01 remains pending author review; the
 delivery remains a draft until that review. No merge/closure is claimed.
 
+CA252-01 visual feedback requires the emblem on the ground and reports a face
+instead of Water's image. The correction explicitly registers Water/Air sprites,
+projects the mark onto ground and adds the requested cosmetic elemental sphere
+above the head, using Arcane Sun's size. Focused revision evidence is recorded
+in validation_5421: 142 assertions in nine native runs and ten inspected captures;
+the author check remains pending.
+
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)
 

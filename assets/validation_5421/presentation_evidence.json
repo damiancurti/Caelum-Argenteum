@@ -1,0 +1,108 @@
+{
+  "issue": 252,
+  "version": "5.4.21",
+  "author_acceptance": "pending revised CA252-01",
+  "implementation_commit": "9ccab64b",
+  "runtime_sha256": "f8b92313d140018cca3e41357c5a1c3dfb22273230bd72315e7eda5153a6b414",
+  "fixture_sha256": "97a3229b265ff6cdddc43d26408550d54923c30af7ee24aa742f3fc23f5078d0",
+  "native_runs": 9,
+  "native_assertions": 142,
+  "runs": [
+    {
+      "label": "presentation",
+      "assertions": 80,
+      "exit_code": 0,
+      "log_sha256": "1434948c3e952463dccfcfa65bb5e1c3b18167a6a5905a216fc9c9755ee96a51",
+      "script_sha256": "6b238861019aead7861ea53ea7faf7e1c5c4254999291b7f28e18673d62ec41e",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "roof",
+      "assertions": 5,
+      "exit_code": 0,
+      "log_sha256": "f5be43455e83b36e88e8147ce01ebb8da79cb818b02eaaf865e48af9b2eca983",
+      "script_sha256": "3492d589587bf65610b4bc3839a0e4bd42e15de1a279f5dcd9c69983db500b5e",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "input",
+      "assertions": 13,
+      "exit_code": 0,
+      "log_sha256": "663000d198f13806c862561c54a49910deb30c3f6671a6628696924bbe49ac6e",
+      "script_sha256": "7f4cea8cc70ff96af4b77832a0caf81045a10193a55d3c93f498152ebebb10fa",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "interruptions",
+      "assertions": 10,
+      "exit_code": 0,
+      "log_sha256": "5c43cd6472fcc120679fabe5c8772cf735f058f28909132c51c226db889c86a9",
+      "script_sha256": "8c4feb8c95fc2f67293172526f65e24146e1f3f84a4c823d48622c389dd71dae",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "save-02",
+      "assertions": 2,
+      "exit_code": 0,
+      "log_sha256": "22c95c20b86d74fb6231be56ced8d4cf13fb619b634f46f0ef172746a439e325",
+      "script_sha256": "02e55fad9166a6a9ea985f9132ceb945f71e11b8ed5ffc0acc549c4608fe71d3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "load",
+      "assertions": 8,
+      "exit_code": 0,
+      "log_sha256": "342d964371f2881470978e5ebe8561e2342e5bc8b03536087b8c94b6707a9406",
+      "script_sha256": "e9631956408af605c1d836796e6a3d006a27737ab3bd801694a758ba57b27c8f",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "travel",
+      "assertions": 16,
+      "exit_code": 0,
+      "log_sha256": "95e3f5e65d92e4a4223ccfb1dd93cfec63fba29cba14b7e24ec605e452e467fc",
+      "script_sha256": "fc3adb305b1c4551dc4b4eaf1ffb6dc127c50180e563598dc32252462e7e9f56",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "old-load",
+      "assertions": 8,
+      "exit_code": 0,
+      "log_sha256": "a2a1d472e343ba6c4f3592e99b479363834a73f30707c03e786347cc16450875",
+      "script_sha256": "fe9e085abb894e9c8d5360647cc30fa5c0b6fad4adf89a25d620a18dd5bda3b8",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "label": "gallery",
+      "assertions": 0,
+      "exit_code": 0,
+      "log_sha256": "356029e0b2828d6009ed2dd0a0211e752b973362c418dcbf6f7b9900cbe6547f",
+      "script_sha256": "05d129448f21f64e9c1714dc7763e6774eb9cda7548765f6b22ce0176b71c846",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    }
+  ],
+  "source_members": 16178,
+  "static_errors": [],
+  "normal_package_matches_source": true,
+  "deterministic_packaging": true,
+  "screenshots": {
+    "seal-air-ground.png": "a4cd6675b9e8b1959dc8b6c5f3e0c77185a39011b71472f4059a99c566f8c33c",
+    "seal-air-orb.png": "e12340dea264d6b6dea65f14e101575425073b91fb6f54f9f8beb0abbf517b18",
+    "seal-earth-ground.png": "ff1b26078502185d5a6a7311a7db7bace253ef43f1629b0d3c7915399748f036",
+    "seal-earth-orb.png": "37db0e6af22b867395d50c0f82c0620bcad4dd23689064628398c7a214e8a0d4",
+    "seal-fire-ground.png": "646bab46da6fdf9496e81ff1985a68706a555debd758357d263f018bc78263f7",
+    "seal-fire-orb.png": "17406302feeffcf17bb463fa54a8a588e747a9446f589d567fa01653f67d37f7",
+    "seal-quintessence-ground.png": "9f671137320a19559c78ba9ee2f25c61502ad1d9feb8724a8d9fe39a79965a60",
+    "seal-quintessence-orb.png": "15a08aed1b9a8b952d0b0ac37b609f6041028fa520d3fb56de369ac92c988587",
+    "seal-water-ground.png": "177d2a22d05d330891e9057ce898367ac75f1ad932dab5b3fa5b005c7715b935",
+    "seal-water-orb.png": "553ec6687ed967eed288533f9be70ccd7263b4b8e14984839b258c68346dce49"
+  },
+  "prior_save_sha256": "84236c0db22363e619bdea1a37e9173ff17c185c848fa8e98a099e5ddb61c321",
+  "scope": "Revised ground projection, sprite registration, cosmetic orb and lifecycle. Original unchanged climate evidence remains in evidence.json.",
+  "excluded_runs": [
+    "visual-01 compiler probe",
+    "visual-03 gallery incomplete marker",
+    "visual-04 gallery deferred captures used adjacent camera settings",
+    "visual-05 save missing completion marker; save-02 adds completion wait"
+  ]
+}

@@ -62,19 +62,27 @@ def main():
         parts['MAPINFO']=parts['MAPINFO'].replace(b'"CA252Legacy","CA252Probe"',b'"CA252Legacy"')
         manifest['fixture_sha256']=shared.package(out/'seal.pk3',parts)
     start='wait 100; netevent c252_setup; '
-    done='netevent c252_done; wait 2; quit\n'
+    done='netevent c252_done; wait 35; quit\n'
     scripts={name+'.cfg':start+'netevent c252_'+name+'; '+done for name in ['formulas','earth','gravity','roof','environment','defenses','presentation','performance','interruptions']}
     scripts['falling.cfg']=start+'netevent c252_falling; wait 10; netevent c252_fallen; wait 30; netevent c252_gravity_expired; '+done
     scripts['save.cfg']=start+'netevent c252_seed; save seal.zds; wait 8; '+done
     scripts['gravity-save.cfg']=start+'netevent c252_gravity_seed; save gravity.zds; wait 8; '+done
     scripts['gravity-load.cfg']='wait 1; netevent c252_gravity_loaded; wait 40; netevent c252_gravity_load_expired; '+done
     scripts['load.cfg']='wait 1; netevent c252_loaded; save seal-repeat.zds; wait 8; '+done
+    scripts['load-before-visual.cfg']='wait 1; netevent c252_loaded; '+done
     scripts['travel.cfg']='wait 1; netevent c252_loaded; changemap MAP98; wait 20; netevent c252_travelled; changemap MAP99; wait 20; netevent c252_travelled; '+done
     scripts['legacy.cfg']='wait 100; netevent c252_legacy; save legacy.zds; wait 8; quit\n'
     scripts['upgrade.cfg']='wait 1; netevent c252_upgrade; '+done
-    manual='language es; con_notifytime 0; use_mouse true; bind f +user2; bind j ca_journal_toggle; bind f6 "netevent c252_next"; wait 100; netevent c252_manual; '
+    manual='language es; con_notifytime 0; use_mouse true; bind f +user2; bind j ca_journal_toggle; bind f6 "netevent c252_next"; bind f7 "chase_dist 850; chase_height 260; netevent c252_overview"; bind f8 "chase_dist 160; chase_height 0; netevent c252_groundview"; wait 100; netevent c252_manual; '
     scripts['manual.cfg']=manual+'netevent c252_done;\n'
     scripts['preview.cfg']=manual+'wait 100; +user2; wait 40; -user2; screenshot seal-chase.png; wait 5; '+done
+    gallery=manual+'wait 100; chase_dist 850; chase_height 260; netevent c252_overview; wait 20; '
+    for element in ['fire','water','earth','air','quintessence']:
+        if element!='fire': gallery+='netevent c252_next; wait 20; '
+        gallery+='+user2; wait 15; -user2; wait 20; screenshot seal-'+element+'-orb.png; wait 2; '
+        gallery+='chase_dist 160; chase_height 0; netevent c252_groundview; wait 20; screenshot seal-'+element+'-ground.png; wait 2; '
+        gallery+='chase_dist 850; chase_height 260; netevent c252_overview; wait 20; '
+    scripts['gallery.cfg']=gallery+'netevent c252_done; wait 35; quit\n'
     scripts['weather-fixed.cfg']=manual+'wait 100; netevent ca_debug_weather_report; +user2; wait 40; -user2; wait 2; netevent ca_debug_weather_report; +user2; wait 2; -user2; wait 1; netevent ca_debug_weather_report; '+done
     scripts['input.cfg']=start+'wait 100; +user2; wait 32; -user2; netevent c252_early; wait 4; netevent c252_first; wait 35; netevent c252_second; wait 35; netevent c252_third; +user2; wait 2; -user2; netevent c252_stopped; '+done
     for name,code in scripts.items():(out/name).write_text(code,encoding='utf-8',newline='\n')

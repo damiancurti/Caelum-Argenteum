@@ -43,10 +43,12 @@ stacking, lifecycle and old-save migration checks pass in validation_5421;
 CA252-01 author acceptance remains pending.
 Calendar catch-up never creates extra pulses, resource charges or force.
 
-Channeling enables native chasecam and displays the matching Seal flat at the
-caster's feet, exactly twice the pressure-trap size. Ending, interruption or
-departure removes the local mark and restores the prior camera mode. These
-cosmetics do not become collision bodies, targets or sources of weather.
+Channeling enables native chasecam and displays the matching Seal flat on the
+ground below the caster, exactly twice the pressure-trap size. A visual elemental
+orb of Arcane Sun's size floats above the head. The author explicitly confirmed
+that it adds no gameplay effects. Ending, interruption or departure removes both
+visuals and restores the prior camera mode. These cosmetics do not become
+collision bodies, targets or sources of weather.
 Leaving a map stops its Channel without a cross-map release attack; local
 gravity ownership is restored. The additive revision-1 ledger in older saves
 starts empty without replaying old pulses or resetting the existing pulse phase.

@@ -2393,6 +2393,13 @@ rapid console captures alone do not prove every requested rotation was rendered.
 See assets/validation_516/RESULTS.md. This is engine verification, not CA143-01
 author acceptance.
 
+Reverified under #252 / 5.4.21 on 2026-10-15: CMNW/CMNA texture aliases also
+lacked actor states. The author saw a face for Water. Append-only registration
+corrects these lookups; the revised native test requires each index to be
+nonnegative and checks the selected image, then captures all five ground marks.
+The earlier flat-flag/scale assertions did not establish image correctness.
+See assets/validation_5421/RESULTS.md; CA252-01 remains pending.
+
 ## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.

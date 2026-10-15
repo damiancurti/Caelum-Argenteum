@@ -212,21 +212,39 @@ class CA252Probe : StaticEventHandler
     void Presentation()
     {
         User.player.cheats&=~CF_CHASECAM;
+        static const String marks[]={"CMNF","CMNW","CMNE","CMNA","CMNQ"};
         for(int i=0;i<5;i++)
         {
+            int index=Actor.GetSpriteIndex(marks[i]);
+            Check(index>=0,"seal sprite is registered before rendering");
             let effect=Start(i);CaelumSealPresentation.Update(effect);
             Check((User.player.cheats&CF_CHASECAM)!=0 && User.player.camera==User,"channel owns native chasecam");
             Check(effect.ChannelMark!=null && effect.ChannelMark.bFlatSprite,"flat seal mark exists");
             Number(effect.ChannelMark.Scale.X,0.75,"seal is double trap scale");
-            Number(effect.ChannelMark.Pos.Z-User.Pos.Z,0.5,"mark follows caster feet");
+            Number(effect.ChannelMark.sprite,index,"correct registered seal image");
+            Number(effect.ChannelMark.Pos.Z-User.FloorZ,0.5,"mark lies on ground");
+            Check(effect.ChannelOrb!=null,"visual orb exists");
+            let orb=effect.ChannelOrb;
+            Check(!orb.bSolid && !orb.bMissile && !orb.bShootable && orb.bNoInteraction,"orb has no gameplay body");
+            Number(orb.Scale.X,GetDefaultByType("CaelumArcaneSunOrb").Scale.X,"orb matches Arcane Sun size");
+            Number(orb.sprite,Actor.GetSpriteIndex(CaelumElementalVFXData.SpriteName(i*2)),"orb matches seal element");
+            Number(orb.Pos.Z-orb.VisualHalfHeight,User.Pos.Z+User.Height,"orb bottom floats above head");
             let mark=effect.ChannelMark;User.StopSealChannel(false,false);
             Check(mark==null || mark.bDestroyed,"stopping removes seal mark");
+            Check(orb==null || orb.bDestroyed,"stopping removes visual orb");
             Check((User.player.cheats&CF_CHASECAM)==0,"prior first-person camera restored");
         }
         User.player.cheats|=CF_CHASECAM;
         let effect=Start(CaelumConstants.SEAL_FIRE);CaelumSealPresentation.Update(effect);
         User.StopSealChannel(false,false);Check((User.player.cheats&CF_CHASECAM)!=0,"existing chasecam preserved");
         User.player.cheats&=~CF_CHASECAM;
+        User.SetOrigin((0,0,192),false);User.FindFloorCeiling();
+        effect=Start(CaelumConstants.SEAL_WATER);CaelumSealPresentation.Update(effect);
+        Number(effect.ChannelMark.Pos.Z,0.5,"airborne user leaves mark on ground");
+        let floor=Actor.Spawn("CaelumFiniteFloorBlocker",(0,0,64),NO_REPLACE);
+        CaelumSealPresentation.Update(effect);
+        Number(effect.ChannelMark.Pos.Z,64+floor.Height+0.5,"actor floor supports projected seal");
+        floor.Destroy();User.StopSealChannel(false,false);User.SetOrigin((0,0,0),false);
     }
     void Falling()
     {
@@ -243,6 +261,10 @@ class CA252Probe : StaticEventHandler
         Check(!CaelumSealClimate.ClearPath(effect,body),"native 3D floor blocks vertical propagation");
         double h,r,w,d;[h,r,w,d]=CaelumSealClimate.Delta(body,0,0);
         Number(h,0,"no heat through native 3D floor");body.Destroy();User.StopSealChannel(false,false);
+        User.SetOrigin((0,0,192),false);User.FindFloorCeiling();
+        effect=Start(CaelumConstants.SEAL_WATER);CaelumSealPresentation.Update(effect);
+        Number(effect.ChannelMark.Pos.Z,160.5,"3D floor supports projected seal");
+        User.StopSealChannel(false,false);
     }
     void Seed()
     {
@@ -267,6 +289,8 @@ class CA252Probe : StaticEventHandler
         Number(effect.CalmWindDirection,checkpoint.Direction,"load preserves calm wind bearing");
         Check(effect.ChannelCameraCaptured && effect.ChannelMark!=null,"saved presentation retained");
         Check((User.player.cheats&CF_CHASECAM)!=0,"loaded channel remains third person");
+        CaelumSealPresentation.Update(effect);
+        Check(effect.ChannelOrb!=null && effect.ChannelOrb.Source==effect,"loaded or migrated channel owns one orb");
         Check(CaelumSealClimate.ClearPath(effect,checkpoint.Body),"transient geometry tracer rebuilds on load");
     }
     void GravitySeed()
@@ -288,7 +312,7 @@ class CA252Probe : StaticEventHandler
             let npc=CaelumCombatActor(Actor.Spawn("CaelumMandinga",(192+i*96,192,0),NO_REPLACE));
             npc.bFriendly=true;npc.bInvulnerable=true;
         }
-        CaelumNotifications.Notify(User,"#252 | F: canalizar/parar | F6: siguiente sello | J: Diario/Clima");
+        CaelumNotifications.Notify(User,"#252 | F: canalizar/parar | F6: siguiente | F7: esfera | F8: suelo | J: Clima");
     }
     void NextSeal()
     {
@@ -370,6 +394,8 @@ class CA252Probe : StaticEventHandler
         }
         else if(e.Name=="c252_manual")ManualSetup();
         else if(e.Name=="c252_next")NextSeal();
+        else if(e.Name=="c252_overview")User.Pitch=0;
+        else if(e.Name=="c252_groundview")User.Pitch=35;
         else if(e.Name=="c252_interruptions")Interruptions();
         else if(e.Name=="c252_performance")Performance();
         else if(e.Name=="c252_upgrade")
@@ -396,6 +422,7 @@ class CA252Probe : StaticEventHandler
             Check(!User.CombatChannelModeActive && User.CombatChannelEffectActor==null,"travel stops old-map channel");
             Check((User.player.cheats&CF_CHASECAM)==0,"travel restores prior camera");
             Check(ThinkerIterator.Create("CaelumChannelSealMark").Next()==null,"travel leaves no old seal mark");
+            Check(ThinkerIterator.Create("CaelumChannelSealOrb").Next()==null,"travel leaves no old elemental orb");
         }
         else if(e.Name=="c252_falling")Falling();
         else if(e.Name=="c252_fallen")

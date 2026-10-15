@@ -12,8 +12,10 @@ it, then rebuild with `run_dev.bat` as described below.
 5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
 local accumulating Seal climate, grounded earthquake force/damage, temporary
 Quintessence gravity, and a third-person channel view with the Seal at the feet.
-Static validation, packaging and 233 assertions across 20 native runs pass.
-Author check CA252-01 remains pending. Current
+The revised presentation projects all five registered emblems onto the ground
+and adds a cosmetic elemental orb above the head, matching Arcane Sun's size.
+Original gameplay validation passed 233 assertions; focused revision evidence
+and outstanding author check CA252-01 are recorded with the current
 evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
