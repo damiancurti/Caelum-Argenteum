@@ -13,7 +13,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Arcanist Sleep with progressive payment, cancellation, release-only reuse and
 combat/input guards. Revised Sleep counts actual damaging hits and scales final
 enemy damage. Saved casts/effects and native hub return pass focused checks.
-The left class/racial HUD and hand sequence await focused author acceptance.
+The author passed CA238-01 (preparation and HUD) on 2026-10-14.
 Class/racial icons now use a smaller 64-unit square, close to Tarot/Seal size.
 Some enemy prone poses and racial lifecycle integration remain unfinished.
 [Evidence and limits](assets/validation_544/RESULTS.md); no completed issue is claimed.

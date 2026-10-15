@@ -18,7 +18,7 @@ third waking hit, preserves ally/neutral exceptions and expires normally. Renewe
 Sleep resets hits/power and retains the longer duration. Saved cast/debit and Sleep
 state pass reload and native hub-return checks. Appropriate prone poses for some
 enemy bodies and racial lifecycle/effects remain unfinished. CA238-01 is a focused
-preparation/HUD author check, not full issue acceptance. Evidence: validation_544.
+preparation/HUD author check, passed on 2026-10-14; full issue acceptance remains pending. Evidence: validation_544.
 The PR remains draft; separate effects retain their own issues and PRs.
 
 ## 5.4.3 - MAP02 rat movement and audio (#254)

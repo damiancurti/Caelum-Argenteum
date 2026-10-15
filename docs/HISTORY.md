@@ -86,6 +86,15 @@ The isolated author scenario now includes owned Tarot/Seal references for direct
 comparison. This is engine/visual evidence, not author acceptance; CA238-01 remains
 pending. Exact runtime and capture hashes: validation_544/small_icons.json.
 
+Author acceptance on 2026-10-14: **CA238-01** (origin 5.4.4 / #238) passed.
+Confirmation: "Esa prueba dio correcto." This confirms the offered preparation,
+progressive debit/cancellation, native input guards and reduced class/racial HUD
+icons. Full Sleep body poses, racial effects and whole-issue acceptance remain
+outside this check. The entry is removed from pending_test.txt; exact frozen
+runtime/fixture and handoff are recorded in validation_544/acceptance.json.
+The native session was still open at confirmation; no exit code or merge/closure
+is inferred. Earlier pending statements above describe the preceding checkpoints.
+
 ## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
 
 Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat

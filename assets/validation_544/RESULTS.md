@@ -57,7 +57,7 @@ The latter run's six state captures were inspected. Both runs use the same scree
 names: the retained six files belong to the later 640x480 run; no preserved 1280x720
 state capture is claimed. The separate author seed provides a retained 1280x720
 comparison with owned Tarot and Seal. Runtime/fixture/capture hashes and normal
-build comparison are recorded in small_icons.json. CA238-01 still awaits acceptance.
+build comparison are recorded in small_icons.json. The author passed CA238-01 on 2026-10-14; see acceptance.json. This covers preparation/HUD only, including the smaller icons.
 
 ## Original presentation checkpoint (historical scope)
 

@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.4** — 2026-10-14.
 
-**5.4.4/#238 WIP:** paid casting/Sleep rules pass native save/hub checks; CA238-01 pending.
+**5.4.4/#238 WIP:** paid casting/Sleep rules pass native save/hub checks; CA238-01 passed 2026-10-14.
 Smaller icons; poses/racials pending. validation_544. After the 21-issue batch, implement #282.
 #254: validation_543/PR275; CA254-01 passed 2026-10-14. #261: CA261-01 passed 2026-10-14/PR274 ready. #259: CA259-01 passed 2026-10-14/PR273.
 #237: validation_540/PR272.

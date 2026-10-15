@@ -209,6 +209,12 @@
     "normal_build_exit_code": 0,
     "normal_package_members_matching_tested_runtime": 16120
   },
-  "author_acceptance": null,
-  "pending_author_check": "CA238-01"
+  "author_acceptance": {
+    "test_id": "CA238-01",
+    "result": "passed",
+    "confirmed_date": "2026-10-14",
+    "record": "acceptance.json",
+    "scope": "Preparation/HUD only; not full issue acceptance."
+  },
+  "pending_author_check": null
 }

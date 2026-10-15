@@ -462,7 +462,13 @@
     "Four racial effects/lifecycle and nine new class effects remain in their own issues.",
     "No third-party native inventory armor, telefrag exception or full multiplayer coverage.",
     "Original 5.4.3 save upgrade and new save/hub pass; old component rollback is not paid-state rollback evidence.",
-    "CA238-01 is preparation/HUD-only and awaits author confirmation."
+    "CA238-01 passed author preparation/HUD acceptance; full Sleep body poses and racial effects remain pending."
   ],
-  "author_acceptance": null
+  "author_acceptance": {
+    "test_id": "CA238-01",
+    "result": "passed",
+    "confirmed_date": "2026-10-14",
+    "record": "acceptance.json",
+    "scope": "Preparation/HUD only; not full issue acceptance."
+  }
 }

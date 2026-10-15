@@ -15,10 +15,10 @@ Evidence: assets/validation_544. Lifecycle contract: 1,021 native assertions;
 partial-payment/Sleep save and reload pass; MAP02 -> MAP03 -> MAP02 retains paid
 preparation and NPC hit counts, with one release. Earlier component/HUD evidence
 remains separately identified. CA238-01 covers only executable preparation/HUD
-author checks; its acceptance does not complete the whole issue.
+author checks, passed on 2026-10-14; this does not complete the whole issue.
 The requested smaller class/racial icons use centered 64-unit frames. Native
-HUD state checks pass at 1280x720 and 640x480 with high scale; author size approval
-remains part of CA238-01. Visual evidence: validation_544/small_icons.json.
+HUD state checks pass at 1280x720 and 640x480 with high scale; the author also
+approved icon size in CA238-01. Evidence: validation_544/small_icons.json and acceptance.json.
 
 Remaining: appropriate living prone poses for rat/Bull/Mandinga/Zupay, full Sleep
 visual acceptance, racial lifecycle integration alongside #239-242 and remaining

@@ -1,0 +1,14 @@
+{
+  "test_id": "CA238-01",
+  "origin_version": "5.4.4",
+  "issue": 238,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "Esa prueba dio correcto.",
+  "result": "passed",
+  "qualifications": "Preparation, progressive debit/cancellation, input guards and smaller class/racial HUD icons only, as offered. No full Sleep-pose or racial-effect acceptance, merge or closure inferred.",
+  "runtime_sha256": "c0d3bab0f0d488320093cc4d05e060713b0eec8e105f43de487722dbc1e6286f",
+  "fixture_sha256": "def04c12b55b697285e2c630b5b6e52b25512903f638f300a293e14c636464f0",
+  "handoff_label": "author-20261014-214256",
+  "native_exit_code": null,
+  "native_session_status": "Still running at acceptance; the visible terminal is retained."
+}
