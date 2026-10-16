@@ -1,0 +1,8 @@
+{
+  "base": {
+    "sha256": "cb116c446660ac6049e9ac55770b68ce8751afa59fb0616596b9f0d902015251"
+  },
+  "thermal-off": {
+    "sha256": "f7c81bd7b35d9a09a9063ae8ca4f6178d3868af6a50f7b6f0fd9622086c4d2a4"
+  }
+}

@@ -3750,6 +3750,7 @@ class CaelumCombatActor : Actor
         // Los saves previos retienen sus EventHandlers. La misma confirmación
         // idempotente cubre su muerte nativa sin convertir ausencia en muerte.
         if(SiegeCombatant!=null)CaelumSiegeCombatant.ConfirmDeath(self);
+        CaelumCorpseArchive.Died(self);
     }
 
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)

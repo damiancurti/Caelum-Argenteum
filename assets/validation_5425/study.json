@@ -1,0 +1,18 @@
+{
+  "issue": 304,
+  "mandinga_total": 6660,
+  "mandinga_living_cap": 1000,
+  "visible_corpses": 100,
+  "target_period_tics": 105,
+  "seed": 116,
+  "warmup_tics": 350,
+  "observation_tics": 1050,
+  "render_control_soldiers": 600,
+  "camera": [-14464, -14000, 512],
+  "camera_angle": 270,
+  "render_origin": [-15624, -16640, 0],
+  "render_columns": 30,
+  "render_spacing": 80,
+  "render_camera": [-14464, -15100, 1600],
+  "render_pitch": 35
+}

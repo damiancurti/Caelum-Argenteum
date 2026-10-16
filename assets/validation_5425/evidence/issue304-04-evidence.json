@@ -1,0 +1,47 @@
+[
+  {
+    "source": "build/issue304-04/corpses-01.txt",
+    "artifact": "issue304-04-corpses-01.txt.gz",
+    "raw_sha256": "8d2bbf27a2af49e657e9001a4439919a6e1ce6a80b5c093ead0535810260f6dd"
+  },
+  {
+    "source": "build/issue304-04/corpses-01-run.json",
+    "artifact": "issue304-04-corpses-01-run.json",
+    "raw_sha256": "25bdebdbf3e73f5ec07a0635d8033cccc12c6ae69129c6ae3f3e23f160530577"
+  },
+  {
+    "source": "build/issue304-04/corpses-01.ini",
+    "artifact": "issue304-04-corpses-01.ini",
+    "raw_sha256": "1ab1889e3e13acc4918a0fa01de2552ceb9c371d6c9ae7672fc31adfacc18b00"
+  },
+  {
+    "source": "build/issue304-04/load-01.txt",
+    "artifact": "issue304-04-load-01.txt.gz",
+    "raw_sha256": "a13acc61de8ae9b8aef01cf2ac051dbb1777f6ae5e54eced2b837d395323525f"
+  },
+  {
+    "source": "build/issue304-04/load-01-run.json",
+    "artifact": "issue304-04-load-01-run.json",
+    "raw_sha256": "b77cfe15972825128f92e9e5186e801c057580c0617af274a372c84876e63648"
+  },
+  {
+    "source": "build/issue304-04/load-01.ini",
+    "artifact": "issue304-04-load-01.ini",
+    "raw_sha256": "a528128d998a665fbc37014f58191ca34e24cb69bf64e83720d3ee1ca5826481"
+  },
+  {
+    "source": "build/issue304-04/save-01.txt",
+    "artifact": "issue304-04-save-01.txt.gz",
+    "raw_sha256": "f4b7065026c0741c57889e43a589b45aaa550d32235187ddffddcb57844a07f2"
+  },
+  {
+    "source": "build/issue304-04/save-01-run.json",
+    "artifact": "issue304-04-save-01-run.json",
+    "raw_sha256": "c682c9a33acabdf2ef95560200fd8f42c834b51cd84feb766f793eb037bddc4a"
+  },
+  {
+    "source": "build/issue304-04/save-01.ini",
+    "artifact": "issue304-04-save-01.ini",
+    "raw_sha256": "f289bdb6a6d2e1f4df97115b01a942a6bc0bebc3f9eb96da26d7264d23bcb282"
+  }
+]

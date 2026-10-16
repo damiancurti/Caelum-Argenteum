@@ -1,0 +1,5346 @@
+{
+  "manifest": {
+    "settings": {
+      "issue": 304,
+      "mandinga_total": 6660,
+      "mandinga_living_cap": 1000,
+      "visible_corpses": 100,
+      "target_period_tics": 105,
+      "seed": 116,
+      "warmup_tics": 350,
+      "observation_tics": 1050,
+      "render_control_soldiers": 600,
+      "camera": [
+        -14464,
+        -14000,
+        512
+      ],
+      "camera_angle": 270,
+      "render_origin": [
+        -15624,
+        -16640,
+        0
+      ],
+      "render_columns": 30,
+      "render_spacing": 80,
+      "render_camera": [
+        -14464,
+        -15100,
+        1600
+      ],
+      "render_pitch": 35
+    },
+    "variants": {
+      "base": {
+        "sha256": "b4a5ae10952f26eefac95a1288c51a99232981c56d219921aff95b386dab3268"
+      },
+      "thermal-off": {
+        "disabled_entries": [
+          [
+            "CaelumThermalBody",
+            "Get",
+            "if(body is \"CaelumCombatActor\")return null;"
+          ],
+          [
+            "CaelumThermalRuntime",
+            "NPCStep",
+            "return;"
+          ],
+          [
+            "CaelumThermalService",
+            "Impulse",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Path",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Physics",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "SetVelocity",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Support",
+            "if(body is \"CaelumCombatActor\")return null;"
+          ]
+        ],
+        "sha256": "3cdbbe00a670f7cfcd61c3e677fc013091dd944a2ef7b1564a86a408d5b691af"
+      },
+      "target-3s": {
+        "sha256": "d973cd836d07b567f18ce7465d67ff24e572a4bf5b7b350b4c434c2450d43f3e"
+      },
+      "models": {
+        "sha256": "04eb67b3fb6fcf20e2d687c794d969d0f68d3eaa99bcd79fc7af0d213c7cf192"
+      },
+      "profile-base": {
+        "methods": [
+          {
+            "class": "CaelumActorProjectile",
+            "method": "Tick",
+            "category": 27,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "PulseResourceRecovery",
+            "category": 6,
+            "signature": "bool PulseResourceRecovery()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateActorOffensiveStatistics",
+            "category": 5,
+            "signature": "void UpdateActorOffensiveStatistics()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateImpactContactLatch",
+            "category": 3,
+            "signature": "void UpdateImpactContactLatch()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "CollidedWith",
+            "category": 2,
+            "signature": "override void CollidedWith(Actor other, bool passive)"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateCombatHealthEffects",
+            "category": 4,
+            "signature": "void UpdateCombatHealthEffects()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "Tick",
+            "category": 0,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "CA121NativeTick",
+            "category": 1,
+            "signature": "void CA121NativeTick()"
+          },
+          {
+            "class": "CaelumDemonBreath",
+            "method": "Tick",
+            "category": 39,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumDemonService",
+            "method": "UpdateBreath",
+            "category": 7,
+            "signature": "static void UpdateBreath(CaelumCombatActor npc)"
+          },
+          {
+            "class": "CaelumDemonService",
+            "method": "UpdatePotions",
+            "category": 8,
+            "signature": "static void UpdatePotions(CaelumCombatActor npc)"
+          },
+          {
+            "class": "CaelumElementalStatus",
+            "method": "Tick",
+            "category": 24,
+            "signature": "play void Tick(Actor owner)"
+          },
+          {
+            "class": "CaelumActorSimpleElementalProjectile",
+            "method": "Tick",
+            "category": 28,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumPopulationState",
+            "method": "Refresh",
+            "category": 19,
+            "signature": "void Refresh()"
+          },
+          {
+            "class": "CaelumPlayer",
+            "method": "Tick",
+            "category": 23,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumThermalBody",
+            "method": "Refresh",
+            "category": 38,
+            "signature": "static void Refresh(Actor body,CaelumThermalState thermal)"
+          },
+          {
+            "class": "CaelumThermalEnvironment",
+            "method": "Sample",
+            "category": 34,
+            "signature": "static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)"
+          },
+          {
+            "class": "CaelumThermalFire",
+            "method": "Sample",
+            "category": 37,
+            "signature": "static double Sample(Actor body,CaelumThermalState thermal)"
+          },
+          {
+            "class": "CaelumThermalMotion",
+            "method": "Physics",
+            "category": 36,
+            "signature": "static void Physics(Actor body,vector3 before,vector3 velocity,bool grounded,vector2 propelled, Sector supportSector,F3DFloor supportFloor,double supportHeight)"
+          },
+          {
+            "class": "CaelumThermalRuntime",
+            "method": "NPCStep",
+            "category": 32,
+            "signature": "static void NPCStep(CaelumCombatActor npc,bool force=false)"
+          },
+          {
+            "class": "CaelumThermalService",
+            "method": "Advance",
+            "category": 33,
+            "signature": "static void Advance(Actor body,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0)"
+          },
+          {
+            "class": "CaelumThermalService",
+            "method": "Integrate",
+            "category": 35,
+            "signature": "static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0,double firearmWatts=0)"
+          },
+          {
+            "class": "CaelumCannon",
+            "method": "Tick",
+            "category": 21,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCannonProjectile",
+            "method": "Tick",
+            "category": 22,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCorpseArchive",
+            "method": "Tick",
+            "category": 26,
+            "signature": "void Tick()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "ElectCommands",
+            "category": 11,
+            "signature": "void ElectCommands()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "RefreshTargets",
+            "category": 13,
+            "signature": "void RefreshTargets()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "AttackerTarget",
+            "category": 10,
+            "signature": "Actor AttackerTarget(CaelumSiegeCombatant entry)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "RefillCrews",
+            "category": 14,
+            "signature": "void RefillCrews()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "CannonTarget",
+            "category": 16,
+            "signature": "Actor CannonTarget(CaelumCannon gun)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "OrderGuns",
+            "category": 15,
+            "signature": "void OrderGuns()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "WalkTo",
+            "category": 17,
+            "signature": "static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "Pulse",
+            "category": 18,
+            "signature": "static bool Pulse(CaelumCombatActor body)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "Tick",
+            "category": 9,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumHostileMachine",
+            "method": "ObserveGuards",
+            "category": 20,
+            "signature": "void ObserveGuards()"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "RefreshLiving",
+            "category": 29,
+            "signature": "void RefreshLiving(CaelumPortSiege port)"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "Place",
+            "category": 30,
+            "signature": "bool Place(CaelumPortSiege port, int slot)"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "Tick",
+            "category": 31,
+            "signature": "void Tick(CaelumPortSiege port)"
+          }
+        ],
+        "sha256": "0e43ba3dee7f4af5afb3e30a6d53ae57d6059c14e7104f3928eeedae2b05aaf5"
+      },
+      "profile-thermal-off": {
+        "disabled_entries": [
+          [
+            "CaelumThermalBody",
+            "Get",
+            "if(body is \"CaelumCombatActor\")return null;"
+          ],
+          [
+            "CaelumThermalRuntime",
+            "NPCStep",
+            "return;"
+          ],
+          [
+            "CaelumThermalService",
+            "Impulse",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Path",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Physics",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "SetVelocity",
+            "if(body is \"CaelumCombatActor\")return;"
+          ],
+          [
+            "CaelumThermalMotion",
+            "Support",
+            "if(body is \"CaelumCombatActor\")return null;"
+          ]
+        ],
+        "methods": [
+          {
+            "class": "CaelumActorProjectile",
+            "method": "Tick",
+            "category": 27,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "PulseResourceRecovery",
+            "category": 6,
+            "signature": "bool PulseResourceRecovery()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateActorOffensiveStatistics",
+            "category": 5,
+            "signature": "void UpdateActorOffensiveStatistics()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateImpactContactLatch",
+            "category": 3,
+            "signature": "void UpdateImpactContactLatch()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "CollidedWith",
+            "category": 2,
+            "signature": "override void CollidedWith(Actor other, bool passive)"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "UpdateCombatHealthEffects",
+            "category": 4,
+            "signature": "void UpdateCombatHealthEffects()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "Tick",
+            "category": 0,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCombatActor",
+            "method": "CA121NativeTick",
+            "category": 1,
+            "signature": "void CA121NativeTick()"
+          },
+          {
+            "class": "CaelumDemonBreath",
+            "method": "Tick",
+            "category": 39,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumDemonService",
+            "method": "UpdateBreath",
+            "category": 7,
+            "signature": "static void UpdateBreath(CaelumCombatActor npc)"
+          },
+          {
+            "class": "CaelumDemonService",
+            "method": "UpdatePotions",
+            "category": 8,
+            "signature": "static void UpdatePotions(CaelumCombatActor npc)"
+          },
+          {
+            "class": "CaelumElementalStatus",
+            "method": "Tick",
+            "category": 24,
+            "signature": "play void Tick(Actor owner)"
+          },
+          {
+            "class": "CaelumActorSimpleElementalProjectile",
+            "method": "Tick",
+            "category": 28,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumPopulationState",
+            "method": "Refresh",
+            "category": 19,
+            "signature": "void Refresh()"
+          },
+          {
+            "class": "CaelumPlayer",
+            "method": "Tick",
+            "category": 23,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumThermalBody",
+            "method": "Refresh",
+            "category": 38,
+            "signature": "static void Refresh(Actor body,CaelumThermalState thermal)"
+          },
+          {
+            "class": "CaelumThermalEnvironment",
+            "method": "Sample",
+            "category": 34,
+            "signature": "static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)"
+          },
+          {
+            "class": "CaelumThermalFire",
+            "method": "Sample",
+            "category": 37,
+            "signature": "static double Sample(Actor body,CaelumThermalState thermal)"
+          },
+          {
+            "class": "CaelumThermalMotion",
+            "method": "Physics",
+            "category": 36,
+            "signature": "static void Physics(Actor body,vector3 before,vector3 velocity,bool grounded,vector2 propelled, Sector supportSector,F3DFloor supportFloor,double supportHeight)"
+          },
+          {
+            "class": "CaelumThermalRuntime",
+            "method": "NPCStep",
+            "category": 32,
+            "signature": "static void NPCStep(CaelumCombatActor npc,bool force=false)"
+          },
+          {
+            "class": "CaelumThermalService",
+            "method": "Advance",
+            "category": 33,
+            "signature": "static void Advance(Actor body,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0)"
+          },
+          {
+            "class": "CaelumThermalService",
+            "method": "Integrate",
+            "category": 35,
+            "signature": "static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0,double firearmWatts=0)"
+          },
+          {
+            "class": "CaelumCannon",
+            "method": "Tick",
+            "category": 21,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCannonProjectile",
+            "method": "Tick",
+            "category": 22,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumCorpseArchive",
+            "method": "Tick",
+            "category": 26,
+            "signature": "void Tick()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "ElectCommands",
+            "category": 11,
+            "signature": "void ElectCommands()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "RefreshTargets",
+            "category": 13,
+            "signature": "void RefreshTargets()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "AttackerTarget",
+            "category": 10,
+            "signature": "Actor AttackerTarget(CaelumSiegeCombatant entry)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "RefillCrews",
+            "category": 14,
+            "signature": "void RefillCrews()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "CannonTarget",
+            "category": 16,
+            "signature": "Actor CannonTarget(CaelumCannon gun)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "OrderGuns",
+            "category": 15,
+            "signature": "void OrderGuns()"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "WalkTo",
+            "category": 17,
+            "signature": "static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "Pulse",
+            "category": 18,
+            "signature": "static bool Pulse(CaelumCombatActor body)"
+          },
+          {
+            "class": "CaelumPortSiege",
+            "method": "Tick",
+            "category": 9,
+            "signature": "override void Tick()"
+          },
+          {
+            "class": "CaelumHostileMachine",
+            "method": "ObserveGuards",
+            "category": 20,
+            "signature": "void ObserveGuards()"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "RefreshLiving",
+            "category": 29,
+            "signature": "void RefreshLiving(CaelumPortSiege port)"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "Place",
+            "category": 30,
+            "signature": "bool Place(CaelumPortSiege port, int slot)"
+          },
+          {
+            "class": "CaelumSiegeReinforcements",
+            "method": "Tick",
+            "category": 31,
+            "signature": "void Tick(CaelumPortSiege port)"
+          }
+        ],
+        "sha256": "76ef59d862f8098c66139845cb3434951f0c37e92df30d5e3dd3c9166954c58c"
+      }
+    },
+    "scope": "Diagnostic copies only. Native production corpse archive shared by every variant.",
+    "observer_sha256": "9a35e4ac2ad25c50be2ce7379895f13f812180b2ffd7118e9a27f17fcce4e05b"
+  },
+  "runs": {
+    "bench-base-01": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8592.7123,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "bench-base-01",
+        "started_utc": "2026-10-16T03:27:14.6949889Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v2.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\bench-base-01.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\bench-base-01.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\bench.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "10768A05C607CD7DBCDB99D781D0236F018C19C7945A3EBBB89B6B8B0316C2CF",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 38568,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:28:20.8212878Z"
+      },
+      "simulation_tics_per_wall_second": 34.999121763416994,
+      "observation_wall_seconds": 29.000727699999995,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.56973428571426,
+        "0.95": 28.633661714285658,
+        "0.99": 28.649761828571357
+      },
+      "render_callbacks": {
+        "count": 9513,
+        "per_second": 316.84534505926894,
+        "interval_ms": {
+          "0.5": 3.013,
+          "0.95": 3.8935400000000002,
+          "0.99": 5.061595999999999
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "budget-01": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8647.3546,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "budget-01",
+        "started_utc": "2026-10-16T03:38:34.0240191Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\budget-01.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\budget-01.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\budget.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "253C79986773D44AF019054A50AA5C0278C318E51FCAFEB24420C93E221C7BAB",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 11320,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:40:37.4149691Z"
+      },
+      "simulation_tics_per_wall_second": 12.474548924458833,
+      "observation_wall_seconds": 81.3656675,
+      "population": {
+        "alive": [
+          960.0,
+          1000.0
+        ],
+        "total": [
+          4800.0,
+          6660.0
+        ],
+        "remaining": [
+          0.0,
+          1860.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          100.0,
+          100.0
+        ],
+        "archived": [
+          3700.0,
+          5600.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 72.02875428571424,
+        "0.95": 127.20061885714281,
+        "0.99": 127.99116651428584
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 0.7360243565469652,
+        "interval_ms": {
+          "0.5": 1206.4453,
+          "0.95": 2091.2115,
+          "0.99": 2660.56244
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "profile_sampled_tics": 28,
+      "profile": {
+        "0": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 50.376125,
+          "exclusive_ms_per_sampled_tic": 3.1844
+        },
+        "1": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 8.344735714285715,
+          "exclusive_ms_per_sampled_tic": 0.47874999999999995
+        },
+        "2": {
+          "calls": 16.0,
+          "inclusive_ms_per_sampled_tic": 0.00022142857142857142,
+          "exclusive_ms_per_sampled_tic": 0.00022142857142857142
+        },
+        "3": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 0.05480357142857143,
+          "exclusive_ms_per_sampled_tic": 0.05480357142857143
+        },
+        "4": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 0.6320642857142857,
+          "exclusive_ms_per_sampled_tic": 0.6320642857142857
+        },
+        "5": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 0.49492857142857144,
+          "exclusive_ms_per_sampled_tic": 0.49492857142857144
+        },
+        "6": {
+          "calls": 28462.0,
+          "inclusive_ms_per_sampled_tic": 0.04097857142857143,
+          "exclusive_ms_per_sampled_tic": 0.04097857142857143
+        },
+        "7": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 1.5705714285714285,
+          "exclusive_ms_per_sampled_tic": 1.5705714285714285
+        },
+        "8": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 0.09078214285714285,
+          "exclusive_ms_per_sampled_tic": 0.09078214285714285
+        },
+        "9": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 1.4904357142857143,
+          "exclusive_ms_per_sampled_tic": 0.8012071428571429
+        },
+        "10": {
+          "calls": 10031.0,
+          "inclusive_ms_per_sampled_tic": 5.925067857142857,
+          "exclusive_ms_per_sampled_tic": 0.21300714285714287
+        },
+        "11": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.13529642857142857,
+          "exclusive_ms_per_sampled_tic": 0.13009642857142859
+        },
+        "12": {
+          "calls": 19809.0,
+          "inclusive_ms_per_sampled_tic": 5.717260714285715,
+          "exclusive_ms_per_sampled_tic": 5.717260714285715
+        },
+        "13": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.044457142857142855,
+          "exclusive_ms_per_sampled_tic": 0.044457142857142855
+        },
+        "14": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.0001892857142857143,
+          "exclusive_ms_per_sampled_tic": 0.0001892857142857143
+        },
+        "15": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0015,
+          "exclusive_ms_per_sampled_tic": 0.0015
+        },
+        "17": {
+          "calls": 4200.0,
+          "inclusive_ms_per_sampled_tic": 0.7529750000000001,
+          "exclusive_ms_per_sampled_tic": 0.6279178571428572
+        },
+        "18": {
+          "calls": 14231.0,
+          "inclusive_ms_per_sampled_tic": 8.208985714285715,
+          "exclusive_ms_per_sampled_tic": 0.9146535714285715
+        },
+        "19": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.3934714285714286,
+          "exclusive_ms_per_sampled_tic": 0.3934714285714286
+        },
+        "20": {
+          "calls": 1344.0,
+          "inclusive_ms_per_sampled_tic": 0.002910714285714286,
+          "exclusive_ms_per_sampled_tic": 0.002910714285714286
+        },
+        "21": {
+          "calls": 1176.0,
+          "inclusive_ms_per_sampled_tic": 0.023739285714285713,
+          "exclusive_ms_per_sampled_tic": 0.02126071428571429
+        },
+        "23": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.4959535714285714,
+          "exclusive_ms_per_sampled_tic": 0.11895
+        },
+        "24": {
+          "calls": 46776.0,
+          "inclusive_ms_per_sampled_tic": 0.5822357142857143,
+          "exclusive_ms_per_sampled_tic": 0.5822357142857143
+        },
+        "26": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.03945,
+          "exclusive_ms_per_sampled_tic": 0.03945
+        },
+        "29": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.5070535714285714,
+          "exclusive_ms_per_sampled_tic": 0.5070535714285714
+        },
+        "31": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.5077857142857143,
+          "exclusive_ms_per_sampled_tic": 0.0007321428571428572
+        },
+        "32": {
+          "calls": 46748.0,
+          "inclusive_ms_per_sampled_tic": 35.27828928571429,
+          "exclusive_ms_per_sampled_tic": 0.25597857142857144
+        },
+        "33": {
+          "calls": 1287.0,
+          "inclusive_ms_per_sampled_tic": 16.835414285714286,
+          "exclusive_ms_per_sampled_tic": 0.06079642857142857
+        },
+        "34": {
+          "calls": 1260.0,
+          "inclusive_ms_per_sampled_tic": 18.557892857142857,
+          "exclusive_ms_per_sampled_tic": 0.051564285714285715
+        },
+        "35": {
+          "calls": 1287.0,
+          "inclusive_ms_per_sampled_tic": 0.21414285714285716,
+          "exclusive_ms_per_sampled_tic": 0.21414285714285716
+        },
+        "36": {
+          "calls": 46776.0,
+          "inclusive_ms_per_sampled_tic": 0.14611785714285716,
+          "exclusive_ms_per_sampled_tic": 0.14611785714285716
+        },
+        "37": {
+          "calls": 1260.0,
+          "inclusive_ms_per_sampled_tic": 0.0032035714285714285,
+          "exclusive_ms_per_sampled_tic": 0.0032035714285714285
+        },
+        "38": {
+          "calls": 11605.0,
+          "inclusive_ms_per_sampled_tic": 0.4213857142857143,
+          "exclusive_ms_per_sampled_tic": 0.4213857142857143
+        },
+        "40": {
+          "calls": 2547.0,
+          "inclusive_ms_per_sampled_tic": 33.90386071428571,
+          "exclusive_ms_per_sampled_tic": 33.90386071428571
+        },
+        "41": {
+          "calls": 1260.0,
+          "inclusive_ms_per_sampled_tic": 0.002857142857142857,
+          "exclusive_ms_per_sampled_tic": 0.002857142857142857
+        },
+        "42": {
+          "calls": 1261.0,
+          "inclusive_ms_per_sampled_tic": 0.05325714285714286,
+          "exclusive_ms_per_sampled_tic": 0.05325714285714286
+        },
+        "43": {
+          "calls": 1261.0,
+          "inclusive_ms_per_sampled_tic": 1.0098285714285715,
+          "exclusive_ms_per_sampled_tic": 1.0098285714285715
+        },
+        "44": {
+          "calls": 1260.0,
+          "inclusive_ms_per_sampled_tic": 0.03369285714285714,
+          "exclusive_ms_per_sampled_tic": 0.03369285714285714
+        }
+      },
+      "detail_ranges": {
+        "displaced": [
+          600.0,
+          960.0
+        ],
+        "npc_thermal": [
+          960.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "captures-1-models": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8825.4618,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "captures-1-models",
+        "started_utc": "2026-10-16T04:28:23.2457308Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\models.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\captures-1-models.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\captures-1-models.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\bench.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "04EB67B3FB6FCF20E2D687C794D969D0F68D3EAA99BCD79FC7AF0D213C7CF192",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 29276,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T04:29:29.4963311Z"
+      },
+      "simulation_tics_per_wall_second": 35.00025996744817,
+      "observation_wall_seconds": 28.999784599999998,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.564622857142865,
+        "0.95": 28.682087428571396,
+        "0.99": 28.702283542857185
+      },
+      "render_callbacks": {
+        "count": 5615,
+        "per_second": 187.02383095625046,
+        "interval_ms": {
+          "0.5": 5.2509,
+          "0.95": 5.87865,
+          "0.99": 7.149399999999998
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "captures-2-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8566.8523,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "captures-2-base",
+        "started_utc": "2026-10-16T04:29:29.6986987Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\captures-2-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\captures-2-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\bench.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 5464,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T04:30:35.7200162Z"
+      },
+      "simulation_tics_per_wall_second": 35.001780383663586,
+      "observation_wall_seconds": 28.9985249,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.56581428571434,
+        "0.95": 28.624653142857134,
+        "0.99": 28.63340171428566
+      },
+      "render_callbacks": {
+        "count": 9919,
+        "per_second": 330.35048394547437,
+        "interval_ms": {
+          "0.5": 2.9235,
+          "0.95": 3.6696200000000005,
+          "0.99": 4.764177999999998
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "deep-base-01": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9486.2756,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "deep-base-01",
+        "started_utc": "2026-10-16T03:25:15.0534320Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v2.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base-01.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base-01.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "253C79986773D44AF019054A50AA5C0278C318E51FCAFEB24420C93E221C7BAB",
+        "fixture_sha256": "10768A05C607CD7DBCDB99D781D0236F018C19C7945A3EBBB89B6B8B0316C2CF",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 53156,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:26:48.8175832Z"
+      },
+      "simulation_tics_per_wall_second": 17.70947274270755,
+      "observation_wall_seconds": 57.3139593,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 50.55511714285718,
+        "0.95": 85.06106342857146,
+        "0.99": 88.09332217142854
+      },
+      "render_callbacks": {
+        "count": 60,
+        "per_second": 1.040816370287382,
+        "interval_ms": {
+          "0.5": 855.58155,
+          "0.95": 1368.9721399999996,
+          "0.99": 1748.6431959999986
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "profile_sampled_tics": 28,
+      "profile": {
+        "0": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 36.634635714285714,
+          "exclusive_ms_per_sampled_tic": 3.0179250000000004
+        },
+        "1": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 8.6656,
+          "exclusive_ms_per_sampled_tic": 0.4599714285714286
+        },
+        "2": {
+          "calls": 56.0,
+          "inclusive_ms_per_sampled_tic": 0.0004785714285714285,
+          "exclusive_ms_per_sampled_tic": 0.0004785714285714285
+        },
+        "3": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.04960714285714286,
+          "exclusive_ms_per_sampled_tic": 0.04960714285714286
+        },
+        "4": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.5856857142857143,
+          "exclusive_ms_per_sampled_tic": 0.5856857142857143
+        },
+        "5": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.4683107142857143,
+          "exclusive_ms_per_sampled_tic": 0.4683107142857143
+        },
+        "6": {
+          "calls": 27974.0,
+          "inclusive_ms_per_sampled_tic": 0.03917142857142857,
+          "exclusive_ms_per_sampled_tic": 0.03917142857142857
+        },
+        "7": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 1.4385607142857142,
+          "exclusive_ms_per_sampled_tic": 1.4385607142857142
+        },
+        "8": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.09115357142857143,
+          "exclusive_ms_per_sampled_tic": 0.09115357142857143
+        },
+        "9": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.9266571428571428,
+          "exclusive_ms_per_sampled_tic": 0.7790607142857143
+        },
+        "10": {
+          "calls": 9787.0,
+          "inclusive_ms_per_sampled_tic": 6.375353571428571,
+          "exclusive_ms_per_sampled_tic": 0.20513928571428572
+        },
+        "11": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.06593571428571429,
+          "exclusive_ms_per_sampled_tic": 0.06122142857142857
+        },
+        "12": {
+          "calls": 24038.0,
+          "inclusive_ms_per_sampled_tic": 6.1749285714285715,
+          "exclusive_ms_per_sampled_tic": 6.1749285714285715
+        },
+        "13": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.03383928571428572,
+          "exclusive_ms_per_sampled_tic": 0.03383928571428572
+        },
+        "14": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.00021785714285714287,
+          "exclusive_ms_per_sampled_tic": 0.00021785714285714287
+        },
+        "15": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.001567857142857143,
+          "exclusive_ms_per_sampled_tic": 0.001567857142857143
+        },
+        "17": {
+          "calls": 4256.0,
+          "inclusive_ms_per_sampled_tic": 0.728675,
+          "exclusive_ms_per_sampled_tic": 0.6030035714285714
+        },
+        "18": {
+          "calls": 13987.0,
+          "inclusive_ms_per_sampled_tic": 8.463842857142858,
+          "exclusive_ms_per_sampled_tic": 0.8589535714285714
+        },
+        "19": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.2504321428571429,
+          "exclusive_ms_per_sampled_tic": 0.2504321428571429
+        },
+        "20": {
+          "calls": 1344.0,
+          "inclusive_ms_per_sampled_tic": 0.10069642857142858,
+          "exclusive_ms_per_sampled_tic": 0.10069642857142858
+        },
+        "21": {
+          "calls": 1176.0,
+          "inclusive_ms_per_sampled_tic": 0.051057142857142856,
+          "exclusive_ms_per_sampled_tic": 0.027635714285714288
+        },
+        "22": {
+          "calls": 6.0,
+          "inclusive_ms_per_sampled_tic": 0.00043571428571428575,
+          "exclusive_ms_per_sampled_tic": 0.00043571428571428575
+        },
+        "23": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.3443,
+          "exclusive_ms_per_sampled_tic": 0.11121071428571429
+        },
+        "24": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.5401392857142857,
+          "exclusive_ms_per_sampled_tic": 0.5401392857142857
+        },
+        "26": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.00045357142857142856,
+          "exclusive_ms_per_sampled_tic": 0.00045357142857142856
+        },
+        "29": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.045257142857142864,
+          "exclusive_ms_per_sampled_tic": 0.045257142857142864
+        },
+        "31": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.046035714285714284,
+          "exclusive_ms_per_sampled_tic": 0.0007785714285714286
+        },
+        "32": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 21.637089285714286,
+          "exclusive_ms_per_sampled_tic": 0.24789642857142855
+        },
+        "33": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 10.414596428571429,
+          "exclusive_ms_per_sampled_tic": 0.05606071428571429
+        },
+        "34": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 11.20272857142857,
+          "exclusive_ms_per_sampled_tic": 0.04431428571428571
+        },
+        "35": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 0.21873928571428572,
+          "exclusive_ms_per_sampled_tic": 0.21873928571428572
+        },
+        "36": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.14252142857142858,
+          "exclusive_ms_per_sampled_tic": 0.14252142857142858
+        },
+        "37": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.003,
+          "exclusive_ms_per_sampled_tic": 0.003
+        },
+        "38": {
+          "calls": 11463.0,
+          "inclusive_ms_per_sampled_tic": 0.38828214285714285,
+          "exclusive_ms_per_sampled_tic": 0.38828214285714285
+        },
+        "40": {
+          "calls": 2587.0,
+          "inclusive_ms_per_sampled_tic": 20.301032142857142,
+          "exclusive_ms_per_sampled_tic": 20.301032142857142
+        },
+        "41": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.0026785714285714286,
+          "exclusive_ms_per_sampled_tic": 0.0026785714285714286
+        },
+        "42": {
+          "calls": 1281.0,
+          "inclusive_ms_per_sampled_tic": 0.04554285714285715,
+          "exclusive_ms_per_sampled_tic": 0.04554285714285715
+        },
+        "43": {
+          "calls": 1281.0,
+          "inclusive_ms_per_sampled_tic": 0.8646107142857142,
+          "exclusive_ms_per_sampled_tic": 0.8646107142857142
+        },
+        "44": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.025621428571428573,
+          "exclusive_ms_per_sampled_tic": 0.025621428571428573
+        }
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "detailed-1-deep-thermal-off": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9533.7574,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-1-deep-thermal-off",
+        "started_utc": "2026-10-16T03:41:02.1576347Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-thermal-off.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-1-deep-thermal-off.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-1-deep-thermal-off.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "F74ADE5DBA8BC23B4140287AF2DE8B5A4639591B6AF78037B8096F32038B1D3D",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 51752,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:42:03.7515099Z"
+      },
+      "simulation_tics_per_wall_second": 29.20659140570237,
+      "observation_wall_seconds": 34.7524292,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 29.810065714285674,
+        "0.95": 61.61037942857142,
+        "0.99": 64.57506994285723
+      },
+      "render_callbacks": {
+        "count": 79,
+        "per_second": 2.2346529270021485,
+        "interval_ms": {
+          "0.5": 360.4403,
+          "0.95": 843.5788899999993,
+          "0.99": 1531.6571219999996
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "profile_sampled_tics": 28,
+      "profile": {
+        "0": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 13.328296428571429,
+          "exclusive_ms_per_sampled_tic": 2.276696428571429
+        },
+        "1": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 8.0519,
+          "exclusive_ms_per_sampled_tic": 0.4232892857142857
+        },
+        "2": {
+          "calls": 56.0,
+          "inclusive_ms_per_sampled_tic": 0.0004321428571428571,
+          "exclusive_ms_per_sampled_tic": 0.0004321428571428571
+        },
+        "3": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.053375,
+          "exclusive_ms_per_sampled_tic": 0.053375
+        },
+        "4": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.41210714285714284,
+          "exclusive_ms_per_sampled_tic": 0.41210714285714284
+        },
+        "5": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.4514785714285714,
+          "exclusive_ms_per_sampled_tic": 0.4514785714285714
+        },
+        "6": {
+          "calls": 27974.0,
+          "inclusive_ms_per_sampled_tic": 0.03968571428571428,
+          "exclusive_ms_per_sampled_tic": 0.03968571428571428
+        },
+        "7": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 1.3219428571428573,
+          "exclusive_ms_per_sampled_tic": 1.3219428571428573
+        },
+        "8": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.09385,
+          "exclusive_ms_per_sampled_tic": 0.09385
+        },
+        "9": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.9057000000000001,
+          "exclusive_ms_per_sampled_tic": 0.7574678571428571
+        },
+        "10": {
+          "calls": 9787.0,
+          "inclusive_ms_per_sampled_tic": 6.279546428571429,
+          "exclusive_ms_per_sampled_tic": 0.22656428571428572
+        },
+        "11": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.06639285714285714,
+          "exclusive_ms_per_sampled_tic": 0.06086785714285714
+        },
+        "12": {
+          "calls": 24038.0,
+          "inclusive_ms_per_sampled_tic": 6.0585071428571435,
+          "exclusive_ms_per_sampled_tic": 6.0585071428571435
+        },
+        "13": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.03558571428571428,
+          "exclusive_ms_per_sampled_tic": 0.03558571428571428
+        },
+        "14": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.00027142857142857144,
+          "exclusive_ms_per_sampled_tic": 0.00027142857142857144
+        },
+        "15": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0013035714285714285,
+          "exclusive_ms_per_sampled_tic": 0.0013035714285714285
+        },
+        "17": {
+          "calls": 4256.0,
+          "inclusive_ms_per_sampled_tic": 0.5363821428571429,
+          "exclusive_ms_per_sampled_tic": 0.5363821428571429
+        },
+        "18": {
+          "calls": 13987.0,
+          "inclusive_ms_per_sampled_tic": 7.765682142857143,
+          "exclusive_ms_per_sampled_tic": 0.7725642857142857
+        },
+        "19": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.26464642857142856,
+          "exclusive_ms_per_sampled_tic": 0.26464642857142856
+        },
+        "20": {
+          "calls": 1344.0,
+          "inclusive_ms_per_sampled_tic": 0.09996428571428571,
+          "exclusive_ms_per_sampled_tic": 0.09996428571428571
+        },
+        "21": {
+          "calls": 1176.0,
+          "inclusive_ms_per_sampled_tic": 0.050617857142857145,
+          "exclusive_ms_per_sampled_tic": 0.027217857142857144
+        },
+        "22": {
+          "calls": 6.0,
+          "inclusive_ms_per_sampled_tic": 0.0004642857142857143,
+          "exclusive_ms_per_sampled_tic": 0.0004642857142857143
+        },
+        "23": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.3531642857142857,
+          "exclusive_ms_per_sampled_tic": 0.11125714285714286
+        },
+        "24": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.5426178571428572,
+          "exclusive_ms_per_sampled_tic": 0.5426178571428572
+        },
+        "26": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0005071428571428572,
+          "exclusive_ms_per_sampled_tic": 0.0005071428571428572
+        },
+        "29": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.04404642857142858,
+          "exclusive_ms_per_sampled_tic": 0.04404642857142858
+        },
+        "31": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.044678571428571436,
+          "exclusive_ms_per_sampled_tic": 0.0006321428571428572
+        },
+        "32": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.07326071428571428,
+          "exclusive_ms_per_sampled_tic": 0.07326071428571428
+        },
+        "33": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.231525,
+          "exclusive_ms_per_sampled_tic": 0.005842857142857143
+        },
+        "34": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.007935714285714286,
+          "exclusive_ms_per_sampled_tic": 0.0001142857142857143
+        },
+        "35": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0050750000000000005,
+          "exclusive_ms_per_sampled_tic": 0.0050750000000000005
+        },
+        "36": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.05350357142857143,
+          "exclusive_ms_per_sampled_tic": 0.05350357142857143
+        },
+        "37": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 1.0714285714285714e-05,
+          "exclusive_ms_per_sampled_tic": 1.0714285714285714e-05
+        },
+        "38": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.003775,
+          "exclusive_ms_per_sampled_tic": 0.003775
+        },
+        "40": {
+          "calls": 29.0,
+          "inclusive_ms_per_sampled_tic": 0.2242785714285714,
+          "exclusive_ms_per_sampled_tic": 0.2242785714285714
+        },
+        "41": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 7.1428571428571436e-06,
+          "exclusive_ms_per_sampled_tic": 7.1428571428571436e-06
+        },
+        "42": {
+          "calls": 2.0,
+          "inclusive_ms_per_sampled_tic": 0.00014285714285714287,
+          "exclusive_ms_per_sampled_tic": 0.00014285714285714287
+        },
+        "43": {
+          "calls": 2.0,
+          "inclusive_ms_per_sampled_tic": 0.0010571428571428572,
+          "exclusive_ms_per_sampled_tic": 0.0010571428571428572
+        },
+        "44": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 4.642857142857143e-05,
+          "exclusive_ms_per_sampled_tic": 4.642857142857143e-05
+        }
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          0.0,
+          0.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "detailed-2-deep-target-3s": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9462.225,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 105.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-2-deep-target-3s",
+        "started_utc": "2026-10-16T03:42:03.9066992Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-target-3s.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-2-deep-target-3s.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-2-deep-target-3s.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "D506DC774CB55F16000DB3DD3317F3AD10C9CD19BE1EC00A4E44E435B91C4AC7",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 12300,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:43:26.8339692Z"
+      },
+      "simulation_tics_per_wall_second": 20.32689398493222,
+      "observation_wall_seconds": 49.933846300000006,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 43.58164285714281,
+        "0.95": 76.90404742857142,
+        "0.99": 78.87021017142865
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.1986938756420935,
+        "interval_ms": {
+          "0.5": 754.4211,
+          "0.95": 1175.5021,
+          "0.99": 1843.6698999999996
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "profile_sampled_tics": 28,
+      "profile": {
+        "0": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 30.15382142857143,
+          "exclusive_ms_per_sampled_tic": 2.949142857142857
+        },
+        "1": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 2.671275,
+          "exclusive_ms_per_sampled_tic": 0.44890357142857146
+        },
+        "2": {
+          "calls": 104.0,
+          "inclusive_ms_per_sampled_tic": 0.0005928571428571429,
+          "exclusive_ms_per_sampled_tic": 0.0005928571428571429
+        },
+        "3": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.049614285714285715,
+          "exclusive_ms_per_sampled_tic": 0.049614285714285715
+        },
+        "4": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.5798642857142857,
+          "exclusive_ms_per_sampled_tic": 0.5798642857142857
+        },
+        "5": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.46252499999999996,
+          "exclusive_ms_per_sampled_tic": 0.46252499999999996
+        },
+        "6": {
+          "calls": 27974.0,
+          "inclusive_ms_per_sampled_tic": 0.03875714285714286,
+          "exclusive_ms_per_sampled_tic": 0.03875714285714286
+        },
+        "7": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 1.4226071428571427,
+          "exclusive_ms_per_sampled_tic": 1.4226071428571427
+        },
+        "8": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.089575,
+          "exclusive_ms_per_sampled_tic": 0.089575
+        },
+        "9": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.9364178571428571,
+          "exclusive_ms_per_sampled_tic": 0.7744535714285714
+        },
+        "10": {
+          "calls": 9787.0,
+          "inclusive_ms_per_sampled_tic": 0.41275,
+          "exclusive_ms_per_sampled_tic": 0.027707142857142857
+        },
+        "11": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.07487857142857143,
+          "exclusive_ms_per_sampled_tic": 0.069125
+        },
+        "12": {
+          "calls": 2191.0,
+          "inclusive_ms_per_sampled_tic": 0.39079642857142854,
+          "exclusive_ms_per_sampled_tic": 0.39079642857142854
+        },
+        "13": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.03582142857142857,
+          "exclusive_ms_per_sampled_tic": 0.03582142857142857
+        },
+        "14": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.0002928571428571429,
+          "exclusive_ms_per_sampled_tic": 0.0002928571428571429
+        },
+        "15": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.001457142857142857,
+          "exclusive_ms_per_sampled_tic": 0.001457142857142857
+        },
+        "17": {
+          "calls": 4256.0,
+          "inclusive_ms_per_sampled_tic": 0.7112214285714286,
+          "exclusive_ms_per_sampled_tic": 0.5873642857142858
+        },
+        "18": {
+          "calls": 13987.0,
+          "inclusive_ms_per_sampled_tic": 2.491435714285714,
+          "exclusive_ms_per_sampled_tic": 0.859675
+        },
+        "19": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.2469857142857143,
+          "exclusive_ms_per_sampled_tic": 0.2469857142857143
+        },
+        "20": {
+          "calls": 1344.0,
+          "inclusive_ms_per_sampled_tic": 0.10992142857142857,
+          "exclusive_ms_per_sampled_tic": 0.10992142857142857
+        },
+        "21": {
+          "calls": 1176.0,
+          "inclusive_ms_per_sampled_tic": 0.056674999999999996,
+          "exclusive_ms_per_sampled_tic": 0.028967857142857146
+        },
+        "22": {
+          "calls": 6.0,
+          "inclusive_ms_per_sampled_tic": 0.0003821428571428571,
+          "exclusive_ms_per_sampled_tic": 0.0003821428571428571
+        },
+        "23": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.3490357142857143,
+          "exclusive_ms_per_sampled_tic": 0.11730714285714286
+        },
+        "24": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.5333321428571428,
+          "exclusive_ms_per_sampled_tic": 0.5333321428571428
+        },
+        "26": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0003607142857142857,
+          "exclusive_ms_per_sampled_tic": 0.0003607142857142857
+        },
+        "29": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.04874285714285714,
+          "exclusive_ms_per_sampled_tic": 0.04874285714285714
+        },
+        "31": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.04951428571428572,
+          "exclusive_ms_per_sampled_tic": 0.0007714285714285715
+        },
+        "32": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 21.260610714285715,
+          "exclusive_ms_per_sampled_tic": 0.2468892857142857
+        },
+        "33": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 10.296225000000002,
+          "exclusive_ms_per_sampled_tic": 0.05465
+        },
+        "34": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 10.944342857142857,
+          "exclusive_ms_per_sampled_tic": 0.044675
+        },
+        "35": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 0.21085714285714285,
+          "exclusive_ms_per_sampled_tic": 0.21085714285714285
+        },
+        "36": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.1375357142857143,
+          "exclusive_ms_per_sampled_tic": 0.1375357142857143
+        },
+        "37": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.002621428571428571,
+          "exclusive_ms_per_sampled_tic": 0.002621428571428571
+        },
+        "38": {
+          "calls": 11463.0,
+          "inclusive_ms_per_sampled_tic": 0.3809321428571429,
+          "exclusive_ms_per_sampled_tic": 0.3809321428571429
+        },
+        "40": {
+          "calls": 2587.0,
+          "inclusive_ms_per_sampled_tic": 19.94614642857143,
+          "exclusive_ms_per_sampled_tic": 19.94614642857143
+        },
+        "41": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.002635714285714286,
+          "exclusive_ms_per_sampled_tic": 0.002635714285714286
+        },
+        "42": {
+          "calls": 1281.0,
+          "inclusive_ms_per_sampled_tic": 0.046607142857142854,
+          "exclusive_ms_per_sampled_tic": 0.046607142857142854
+        },
+        "43": {
+          "calls": 1281.0,
+          "inclusive_ms_per_sampled_tic": 0.8523535714285714,
+          "exclusive_ms_per_sampled_tic": 0.8523535714285714
+        },
+        "44": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.02572857142857143,
+          "exclusive_ms_per_sampled_tic": 0.02572857142857143
+        }
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "detailed-3-no-seal-scan": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9454.3342,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-3-no-seal-scan",
+        "started_utc": "2026-10-16T03:43:26.9637370Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\no-seal-scan.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-3-no-seal-scan.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-3-no-seal-scan.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "169247DB439958F1F8D9673814C852712E5B63ABD19DBEFAC1D4F4E39787FFA0",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 12284,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:44:30.4356090Z"
+      },
+      "simulation_tics_per_wall_second": 28.149606343979436,
+      "observation_wall_seconds": 36.057342600000005,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 30.435997142857275,
+        "0.95": 63.288017142857115,
+        "0.99": 67.43555748571433
+      },
+      "render_callbacks": {
+        "count": 63,
+        "per_second": 1.7198639420549335,
+        "interval_ms": {
+          "0.5": 498.4041,
+          "0.95": 1009.5991499999999,
+          "0.99": 1346.8200300000003
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "detailed-4-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8647.8313,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-4-base",
+        "started_utc": "2026-10-16T03:44:30.5818633Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-4-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-4-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 49232,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:46:04.5033475Z"
+      },
+      "simulation_tics_per_wall_second": 17.416149587476962,
+      "observation_wall_seconds": 58.279242200000006,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 52.39450571428564,
+        "0.95": 82.33327771428577,
+        "0.99": 85.60737302857144
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.0268893397752357,
+        "interval_ms": {
+          "0.5": 891.9763,
+          "0.95": 1532.0009,
+          "0.99": 1775.61348
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "detailed-5-no-seal-scan": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8773.8256,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-5-no-seal-scan",
+        "started_utc": "2026-10-16T03:46:04.6184232Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\no-seal-scan.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-5-no-seal-scan.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-5-no-seal-scan.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "169247DB439958F1F8D9673814C852712E5B63ABD19DBEFAC1D4F4E39787FFA0",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 36376,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:47:07.1944228Z"
+      },
+      "simulation_tics_per_wall_second": 28.494869654528085,
+      "observation_wall_seconds": 35.6204472,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 29.390420000000034,
+        "0.95": 62.0982685714286,
+        "0.99": 67.2298468571429
+      },
+      "render_callbacks": {
+        "count": 70,
+        "per_second": 1.9186975013013496,
+        "interval_ms": {
+          "0.5": 473.46565,
+          "0.95": 1048.0084999999995,
+          "0.99": 1216.8339660000001
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "detailed-6-thermal-off": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8534.4203,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "detailed-6-thermal-off",
+        "started_utc": "2026-10-16T03:47:07.2959653Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\thermal-off.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-6-thermal-off.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\detailed-6-thermal-off.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "3CDBBE00A670F7CFCD61C3E677FC013091DD944A2EF7B1564A86A408D5B691AF",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 30320,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:48:08.0404803Z"
+      },
+      "simulation_tics_per_wall_second": 28.86094261857437,
+      "observation_wall_seconds": 35.16863649999999,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 29.05467428571428,
+        "0.95": 60.22590799999995,
+        "0.99": 64.79247874285716
+      },
+      "render_callbacks": {
+        "count": 100,
+        "per_second": 2.779431199633302,
+        "interval_ms": {
+          "0.5": 252.05360000000002,
+          "0.95": 970.65432,
+          "0.99": 1264.424029000001
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          0.0,
+          0.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "early-1-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8621.2011,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-1-base",
+        "started_utc": "2026-10-16T03:13:09.3861389Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-1-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-1-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 49656,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:14:44.2110138Z"
+      },
+      "simulation_tics_per_wall_second": 17.32942879278038,
+      "observation_wall_seconds": 58.570886099999996,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 52.646442857142915,
+        "0.95": 84.00243771428579,
+        "0.99": 86.43676982857134
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.0219643835494252,
+        "interval_ms": {
+          "0.5": 887.9904,
+          "0.95": 1594.8984,
+          "0.99": 1786.5776999999998
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-2-thermal-off": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9486.217,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-2-thermal-off",
+        "started_utc": "2026-10-16T03:14:44.3986263Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\thermal-off.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-2-thermal-off.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-2-thermal-off.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "3CDBBE00A670F7CFCD61C3E677FC013091DD944A2EF7B1564A86A408D5B691AF",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 42052,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:15:48.6843891Z"
+      },
+      "simulation_tics_per_wall_second": 27.74696095806041,
+      "observation_wall_seconds": 36.5805827,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 30.547457142857144,
+        "0.95": 62.23687828571431,
+        "0.99": 68.08330639999997
+      },
+      "render_callbacks": {
+        "count": 63,
+        "per_second": 1.693141778188451,
+        "interval_ms": {
+          "0.5": 518.7152,
+          "0.95": 1067.6693799999998,
+          "0.99": 1473.3563980000001
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          0.0,
+          0.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-3-target-3s": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 10394.0135,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 105.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-3-target-3s",
+        "started_utc": "2026-10-16T03:15:48.8463911Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\target-3s.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-3-target-3s.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-3-target-3s.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "D973CD836D07B567F18CE7465D67FF24E572A4BF5B7B350B4C434C2450D43F3E",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 49352,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:17:24.9780652Z"
+      },
+      "simulation_tics_per_wall_second": 17.595272606860863,
+      "observation_wall_seconds": 57.685949099999995,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 53.0037857142855,
+        "0.95": 92.157852,
+        "0.99": 94.47673862857155
+      },
+      "render_callbacks": {
+        "count": 60,
+        "per_second": 1.0314535006184045,
+        "interval_ms": {
+          "0.5": 908.76605,
+          "0.95": 1441.8939649999993,
+          "0.99": 1908.1947699999985
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-4-models": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9424.9697,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-4-models",
+        "started_utc": "2026-10-16T03:17:25.0896931Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\models.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-4-models.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-4-models.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "04EB67B3FB6FCF20E2D687C794D969D0F68D3EAA99BCD79FC7AF0D213C7CF192",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 14388,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:18:58.1458169Z"
+      },
+      "simulation_tics_per_wall_second": 17.705439573297163,
+      "observation_wall_seconds": 57.327015,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 52.979977142856974,
+        "0.95": 81.7597617142857,
+        "0.99": 83.43951348571429
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.044886000402223,
+        "interval_ms": {
+          "0.5": 891.1307,
+          "0.95": 1368.4688,
+          "0.99": 1745.84316
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-5-models": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8619.4485,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-5-models",
+        "started_utc": "2026-10-16T03:18:58.2878151Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\models.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-5-models.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-5-models.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "04EB67B3FB6FCF20E2D687C794D969D0F68D3EAA99BCD79FC7AF0D213C7CF192",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 42444,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:20:46.5841977Z"
+      },
+      "simulation_tics_per_wall_second": 14.262732817596193,
+      "observation_wall_seconds": 71.16448249999999,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 66.26681428571423,
+        "0.95": 95.28825885714281,
+        "0.99": 99.92634799999996
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 0.8395078424083915,
+        "interval_ms": {
+          "0.5": 1119.9578,
+          "0.95": 1700.7374,
+          "0.99": 1882.62936
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-6-target-3s": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8776.1836,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 105.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-6-target-3s",
+        "started_utc": "2026-10-16T03:20:46.7460054Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\target-3s.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-6-target-3s.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-6-target-3s.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "D973CD836D07B567F18CE7465D67FF24E572A4BF5B7B350B4C434C2450D43F3E",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 28496,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:22:14.3803474Z"
+      },
+      "simulation_tics_per_wall_second": 19.17584710504258,
+      "observation_wall_seconds": 52.9311688,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 46.43038285714283,
+        "0.95": 80.0305811428571,
+        "0.99": 82.71263302857149
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.1289891749778715,
+        "interval_ms": {
+          "0.5": 808.8711,
+          "0.95": 1333.1753,
+          "0.99": 1680.8276199999998
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-7-thermal-off": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8535.7612,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-7-thermal-off",
+        "started_utc": "2026-10-16T03:22:14.4924860Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\thermal-off.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-7-thermal-off.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-7-thermal-off.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "3CDBBE00A670F7CFCD61C3E677FC013091DD944A2EF7B1564A86A408D5B691AF",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 21792,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:23:14.8924690Z"
+      },
+      "simulation_tics_per_wall_second": 29.494043258073464,
+      "observation_wall_seconds": 34.4137286,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 29.615168571428512,
+        "0.95": 58.74094914285709,
+        "0.99": 60.2094986285714
+      },
+      "render_callbacks": {
+        "count": 117,
+        "per_second": 3.3431098819642195,
+        "interval_ms": {
+          "0.5": 196.7521,
+          "0.95": 779.2090199999988,
+          "0.99": 1283.1837600000001
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          0.0,
+          0.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "early-8-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8641.4607,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "early-8-base",
+        "started_utc": "2026-10-16T03:23:15.0061962Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-8-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\early-8-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 17560,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:24:49.0473135Z"
+      },
+      "simulation_tics_per_wall_second": 17.37205329990359,
+      "observation_wall_seconds": 58.42717510000001,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 51.67000285714291,
+        "0.95": 85.42810228571432,
+        "0.99": 90.00227531428563
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.0240284584559294,
+        "interval_ms": {
+          "0.5": 877.0021,
+          "0.95": 1439.9726,
+          "0.99": 1879.72968
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "natural-1-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9471.1061,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 200,
+      "observation_tic_bounds": [
+        426.0,
+        7426.0
+      ],
+      "run": {
+        "label": "natural-1-base",
+        "started_utc": "2026-10-16T03:49:06.5686888Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-1-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-1-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\long.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "CB116C446660AC6049E9AC55770B68CE8751AFA59FB0616596B9F0D902015251",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 21880,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T04:01:19.8159679Z"
+      },
+      "simulation_tics_per_wall_second": 10.118175636933318,
+      "observation_wall_seconds": 688.3652003999999,
+      "population": {
+        "alive": [
+          875.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1200.0
+        ],
+        "remaining": [
+          5460.0,
+          5660.0
+        ],
+        "defenders": [
+          595.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          100.0
+        ],
+        "archived": [
+          0.0,
+          230.0
+        ],
+        "projectiles": [
+          0.0,
+          58.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 74.39359714285736,
+        "0.95": 224.2084634285703,
+        "0.99": 243.49782474285635
+      },
+      "late_combat": {
+        "tic_bounds": [
+          6020.0,
+          7385.0
+        ],
+        "tics_per_wall_second": 4.832407418169365,
+        "population_ranges": {
+          "alive": [
+            876.0,
+            972.0
+          ],
+          "defenders": [
+            595.0,
+            597.0
+          ],
+          "corpses": [
+            100.0,
+            100.0
+          ],
+          "archived": [
+            89.0,
+            226.0
+          ],
+          "projectiles": [
+            3.0,
+            58.0
+          ]
+        }
+      },
+      "render_callbacks": {
+        "count": 410,
+        "per_second": 0.5969264107694003,
+        "interval_ms": {
+          "0.5": 941.39185,
+          "0.95": 3940.1723399999996,
+          "0.99": 5162.217234999995
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          825.0,
+          954.0
+        ],
+        "npc_thermal": [
+          875.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      },
+      "last_death_counters": {
+        "tic": 7350.0,
+        "total": 319.0,
+        "thermal": 0.0
+      }
+    },
+    "natural-2-thermal-off": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9323.439,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 200,
+      "observation_tic_bounds": [
+        426.0,
+        7426.0
+      ],
+      "run": {
+        "label": "natural-2-thermal-off",
+        "started_utc": "2026-10-16T04:01:19.9984501Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-thermal-off.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v4.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-2-thermal-off.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\natural-2-thermal-off.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\long.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "F7C81BD7B35D9A09A9063AE8CA4F6178D3868AF6A50F7B6F0FD9622086C4D2A4",
+        "fixture_sha256": "7D0CC3A8F67EAD7086B376BDF82FC51C958CC9E7E15D8C16FDC941858DCE165D",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 21176,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T04:05:44.1027984Z"
+      },
+      "simulation_tics_per_wall_second": 29.376044150717334,
+      "observation_wall_seconds": 237.0979552,
+      "population": {
+        "alive": [
+          875.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1200.0
+        ],
+        "remaining": [
+          5460.0,
+          5660.0
+        ],
+        "defenders": [
+          595.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          100.0
+        ],
+        "archived": [
+          0.0,
+          230.0
+        ],
+        "projectiles": [
+          0.0,
+          58.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 31.10035428571365,
+        "0.95": 43.996085714285606,
+        "0.99": 64.38197405714287
+      },
+      "late_combat": {
+        "tic_bounds": [
+          6020.0,
+          7385.0
+        ],
+        "tics_per_wall_second": 24.998786872056858,
+        "population_ranges": {
+          "alive": [
+            876.0,
+            972.0
+          ],
+          "defenders": [
+            595.0,
+            597.0
+          ],
+          "corpses": [
+            100.0,
+            100.0
+          ],
+          "archived": [
+            89.0,
+            226.0
+          ],
+          "projectiles": [
+            3.0,
+            58.0
+          ]
+        }
+      },
+      "render_callbacks": {
+        "count": 437,
+        "per_second": 1.840828119200674,
+        "interval_ms": {
+          "0.5": 513.6362,
+          "0.95": 755.6504,
+          "0.99": 1024.0765839999985
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          825.0,
+          954.0
+        ],
+        "npc_thermal": [
+          0.0,
+          0.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      },
+      "last_death_counters": {
+        "tic": 7350.0,
+        "total": 319.0,
+        "thermal": 0.0
+      }
+    },
+    "profile-base-01": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 9603.3294,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": false,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "profile-base-01",
+        "started_utc": "2026-10-16T03:10:44.6566900Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\profile-base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\profile-base-01.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\profile-base-01.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "0E43BA3DEE7F4AF5AFB3E30A6D53AE57D6059C14E7104F3928EEEDAE2B05AAF5",
+        "fixture_sha256": "9A35E4AC2AD25C50BE2CE7379895F13F812180B2FFD7118E9A27F17FCCE4E05B",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 48196,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:12:19.8083655Z"
+      },
+      "simulation_tics_per_wall_second": 17.515426288917812,
+      "observation_wall_seconds": 57.9489179,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 51.1506028571428,
+        "0.95": 83.46286514285711,
+        "0.99": 88.42017851428572
+      },
+      "render_callbacks": {
+        "count": 61,
+        "per_second": 1.0314288563686436,
+        "interval_ms": {
+          "0.5": 878.467,
+          "0.95": 1411.4035,
+          "0.99": 1848.95096
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "profile_sampled_tics": 28,
+      "profile": {
+        "0": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 37.00869285714286,
+          "exclusive_ms_per_sampled_tic": 3.0129535714285716
+        },
+        "1": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 8.748689285714287,
+          "exclusive_ms_per_sampled_tic": 0.45977142857142855
+        },
+        "2": {
+          "calls": 56.0,
+          "inclusive_ms_per_sampled_tic": 0.00047857142857142857,
+          "exclusive_ms_per_sampled_tic": 0.00047857142857142857
+        },
+        "3": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.050325,
+          "exclusive_ms_per_sampled_tic": 0.050325
+        },
+        "4": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.5912714285714286,
+          "exclusive_ms_per_sampled_tic": 0.5912714285714286
+        },
+        "5": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.4655964285714286,
+          "exclusive_ms_per_sampled_tic": 0.4655964285714286
+        },
+        "6": {
+          "calls": 27974.0,
+          "inclusive_ms_per_sampled_tic": 0.036264285714285714,
+          "exclusive_ms_per_sampled_tic": 0.036264285714285714
+        },
+        "7": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 1.4906892857142857,
+          "exclusive_ms_per_sampled_tic": 1.4906892857142857
+        },
+        "8": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 0.0909857142857143,
+          "exclusive_ms_per_sampled_tic": 0.0909857142857143
+        },
+        "9": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.9128464285714285,
+          "exclusive_ms_per_sampled_tic": 0.7589107142857143
+        },
+        "10": {
+          "calls": 9787.0,
+          "inclusive_ms_per_sampled_tic": 6.466807142857142,
+          "exclusive_ms_per_sampled_tic": 0.2331892857142857
+        },
+        "11": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.06706071428571428,
+          "exclusive_ms_per_sampled_tic": 0.06180714285714285
+        },
+        "12": {
+          "calls": 24038.0,
+          "inclusive_ms_per_sampled_tic": 6.238871428571429,
+          "exclusive_ms_per_sampled_tic": 6.238871428571429
+        },
+        "13": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.03363928571428571,
+          "exclusive_ms_per_sampled_tic": 0.03363928571428571
+        },
+        "14": {
+          "calls": 1.0,
+          "inclusive_ms_per_sampled_tic": 0.00025714285714285715,
+          "exclusive_ms_per_sampled_tic": 0.00025714285714285715
+        },
+        "15": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0014571428571428572,
+          "exclusive_ms_per_sampled_tic": 0.0014571428571428572
+        },
+        "17": {
+          "calls": 4256.0,
+          "inclusive_ms_per_sampled_tic": 0.7389785714285715,
+          "exclusive_ms_per_sampled_tic": 0.6162821428571429
+        },
+        "18": {
+          "calls": 13987.0,
+          "inclusive_ms_per_sampled_tic": 8.551085714285714,
+          "exclusive_ms_per_sampled_tic": 0.8466142857142858
+        },
+        "19": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.2581785714285714,
+          "exclusive_ms_per_sampled_tic": 0.2581785714285714
+        },
+        "20": {
+          "calls": 1344.0,
+          "inclusive_ms_per_sampled_tic": 0.1093,
+          "exclusive_ms_per_sampled_tic": 0.1093
+        },
+        "21": {
+          "calls": 1176.0,
+          "inclusive_ms_per_sampled_tic": 0.05291785714285714,
+          "exclusive_ms_per_sampled_tic": 0.027839285714285712
+        },
+        "22": {
+          "calls": 6.0,
+          "inclusive_ms_per_sampled_tic": 0.0004714285714285714,
+          "exclusive_ms_per_sampled_tic": 0.0004714285714285714
+        },
+        "23": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.3541285714285714,
+          "exclusive_ms_per_sampled_tic": 0.12075000000000001
+        },
+        "24": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.5284107142857143,
+          "exclusive_ms_per_sampled_tic": 0.5284107142857143
+        },
+        "26": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.0005428571428571429,
+          "exclusive_ms_per_sampled_tic": 0.0005428571428571429
+        },
+        "29": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.05084285714285714,
+          "exclusive_ms_per_sampled_tic": 0.05084285714285714
+        },
+        "31": {
+          "calls": 28.0,
+          "inclusive_ms_per_sampled_tic": 0.05152142857142857,
+          "exclusive_ms_per_sampled_tic": 0.0006785714285714286
+        },
+        "32": {
+          "calls": 44828.0,
+          "inclusive_ms_per_sampled_tic": 21.89564642857143,
+          "exclusive_ms_per_sampled_tic": 0.23971071428571428
+        },
+        "33": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 10.492882142857143,
+          "exclusive_ms_per_sampled_tic": 10.222125
+        },
+        "34": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 11.389732142857143,
+          "exclusive_ms_per_sampled_tic": 11.389732142857143
+        },
+        "35": {
+          "calls": 1307.0,
+          "inclusive_ms_per_sampled_tic": 0.20882857142857142,
+          "exclusive_ms_per_sampled_tic": 0.20882857142857142
+        },
+        "36": {
+          "calls": 44856.0,
+          "inclusive_ms_per_sampled_tic": 0.1364607142857143,
+          "exclusive_ms_per_sampled_tic": 0.1364607142857143
+        },
+        "37": {
+          "calls": 1280.0,
+          "inclusive_ms_per_sampled_tic": 0.004364285714285715,
+          "exclusive_ms_per_sampled_tic": 0.004364285714285715
+        },
+        "38": {
+          "calls": 11463.0,
+          "inclusive_ms_per_sampled_tic": 0.38439999999999996,
+          "exclusive_ms_per_sampled_tic": 0.38439999999999996
+        }
+      },
+      "detail_ranges": {
+        "displaced": [
+          953.0,
+          954.0
+        ],
+        "npc_thermal": [
+          1000.0,
+          1000.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "render-1-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8676.1688,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "render-1-base",
+        "started_utc": "2026-10-16T03:29:46.5227872Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v3.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-1-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-1-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "C75E317B572345272761DCE9D7366B7AA081AB8D41794B965991942519D47FD8",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 26420,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:30:38.4319700Z"
+      },
+      "simulation_tics_per_wall_second": 34.99814196071163,
+      "observation_wall_seconds": 29.0015396,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.574714285714332,
+        "0.95": 28.638183428571416,
+        "0.99": 28.656882857142865
+      },
+      "render_callbacks": {
+        "count": 9785,
+        "per_second": 325.86957571941093,
+        "interval_ms": {
+          "0.5": 2.9299,
+          "0.95": 3.88952,
+          "0.99": 5.096943999999999
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "render-2-models": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8788.8564,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "render-2-models",
+        "started_utc": "2026-10-16T03:30:38.6371804Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\models.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v3.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-2-models.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-2-models.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "04EB67B3FB6FCF20E2D687C794D969D0F68D3EAA99BCD79FC7AF0D213C7CF192",
+        "fixture_sha256": "C75E317B572345272761DCE9D7366B7AA081AB8D41794B965991942519D47FD8",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 16488,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:31:30.6917823Z"
+      },
+      "simulation_tics_per_wall_second": 35.00144230081205,
+      "observation_wall_seconds": 28.998805,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.573088571428627,
+        "0.95": 28.663979428571494,
+        "0.99": 28.707968457142783
+      },
+      "render_callbacks": {
+        "count": 5487,
+        "per_second": 182.75667247042614,
+        "interval_ms": {
+          "0.5": 5.3491,
+          "0.95": 6.199729999999999,
+          "0.99": 7.421242
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "render-3-models": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8635.7698,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "render-3-models",
+        "started_utc": "2026-10-16T03:31:30.8487614Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\models.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v3.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-3-models.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-3-models.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "04EB67B3FB6FCF20E2D687C794D969D0F68D3EAA99BCD79FC7AF0D213C7CF192",
+        "fixture_sha256": "C75E317B572345272761DCE9D7366B7AA081AB8D41794B965991942519D47FD8",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 17300,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:32:22.5883943Z"
+      },
+      "simulation_tics_per_wall_second": 35.00336672037217,
+      "observation_wall_seconds": 28.997210700000004,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.572577142857025,
+        "0.95": 28.646668571428577,
+        "0.99": 28.682089371428567
+      },
+      "render_callbacks": {
+        "count": 5511,
+        "per_second": 183.54203515924698,
+        "interval_ms": {
+          "0.5": 5.3471,
+          "0.95": 6.0455000000000005,
+          "0.99": 7.403329999999996
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "render-4-base": {
+      "valid": true,
+      "start": {
+        "tic": 76.0,
+        "ms": 8632.4589,
+        "total": 6660.0,
+        "cap": 1000.0,
+        "period": 8.0
+      },
+      "render_control": true,
+      "samples": 30,
+      "observation_tic_bounds": [
+        426.0,
+        1476.0
+      ],
+      "run": {
+        "label": "render-4-base",
+        "started_utc": "2026-10-16T03:32:22.7467697Z",
+        "arguments": [
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\base.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v3.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-4-base.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "116",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render-4-base.txt\"",
+          "+map",
+          "MAP06",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\render.cfg\"",
+          "+snd_mastervolume",
+          "0.05",
+          "+i_pauseinbackground",
+          "false",
+          "+vid_activeinbackground",
+          "true",
+          "+i_soundinbackground",
+          "true"
+        ],
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "runtime_sha256": "B4A5AE10952F26EEFAC95A1288C51A99232981C56D219921AFF95B386DAB3268",
+        "fixture_sha256": "C75E317B572345272761DCE9D7366B7AA081AB8D41794B965991942519D47FD8",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "pid": 25680,
+        "exit_code": 0,
+        "finished_utc": "2026-10-16T03:33:14.6024348Z"
+      },
+      "simulation_tics_per_wall_second": 35.00061082100471,
+      "observation_wall_seconds": 28.999493899999997,
+      "population": {
+        "alive": [
+          1000.0,
+          1000.0
+        ],
+        "total": [
+          1000.0,
+          1000.0
+        ],
+        "remaining": [
+          5660.0,
+          5660.0
+        ],
+        "defenders": [
+          600.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          0.0
+        ],
+        "archived": [
+          0.0,
+          0.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "wall_ms_per_tic_over_35_tic_windows": {
+        "0.5": 28.57021999999997,
+        "0.95": 28.632443428571506,
+        "0.99": 28.651643200000027
+      },
+      "render_callbacks": {
+        "count": 9367,
+        "per_second": 312.0123277213207,
+        "interval_ms": {
+          "0.5": 3.0759,
+          "0.95": 4.336329999999996,
+          "0.99": 5.415966000000002
+        },
+        "qualification": "RenderOverlay callbacks, NOT displayed FPS, GPU time or PresentMon intervals."
+      },
+      "detail_ranges": {
+        "displaced": [
+          0.0,
+          0.0
+        ],
+        "npc_thermal": [
+          100.0,
+          100.0
+        ],
+        "player_thermal": [
+          1.0,
+          1.0
+        ],
+        "channels": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

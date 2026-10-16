@@ -1,46 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
 
-**V5.4 batch:** all 24 scoped issues complete/accepted; individual PRs merged.
-PR303 to main; pending_test.txt empty; modular migration V5.17.
-
-**5.4.24/#284:** CA284-01 accepted 2026-10-15; PR302 merged; validation_5424.
-**#283:** prototype accepted/closed, PR301 merged; modular migration in V5.17.
-**#282:** PR300 merged; CA282-01 accepted; validation_5422. Keep-awake released.
-
-**5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 merged.
-
-**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 merged.
-
-**5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 merged.
-
-**5.4.18/#249:** CA249-01 accepted; validation_5418, PR297 merged.
-**5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 merged.
-**5.4.16/#247:** CA247-01 accepted; PR295 merged. Keep-awake released.
-
-**5.4.15/#260:** acceleration/double tap accepted (CA260-01/02, 2026-10-15); validation_5415; PR294 merged.
-
-**5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
-
-**5.4.13/#246:** CA246-01 accepted on 2026-10-15; Arcane Sun implemented. validation_5413.
-
-**5.4.12/#245:** CA245-01 accepted 2026-10-15. validation_5412.
-
-**5.4.11/#244:** CA244-01 accepted 2026-10-15. validation_5411.
-
-**5.4.10/#243:** CA243-01 accepted 2026-10-15. validation_5410.
-
-**5.4.9/#239:** CA239-01 accepted 2026-10-15. validation_549.
-
-**5.4.8/#240:** CA240-01 accepted 2026-10-14. validation_548.
-
-**5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
-
-**5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
-**5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 merged, aa253eed.
-#254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
-#237 audit complete; batch merge/closure authorized. #231-236/#255-258 accepted/merged/closed; HISTORY.
+**5.4.25/#304, author check pending:** MAP06 archives all but 100 recent corpses without
+simulation, preserving loot and resurrection. Diagnostic: 6660 Mandingas total,
+1000 alive; NPC thermal on/off, 8/105-tic perception and soldier sprite/3D controls.
+Branch feat/issue304-siege-performance; validation_5425. Native archive, legacy
+save, hub, 105-body Redemption and thermal-clock restart checks pass. Early
+baseline 17.3-17.4 tics/s vs NPC thermal off 27.7-29.5; empty climate-seal scans
+dominate the sampled thermal cost. See RESULTS for late combat, 3D and limits.
+**5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
+PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
+validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
+full modular migration remains V5.17. Keep-awake released. Earlier map/Journal
+batch #231-236/#255-258 is accepted/merged/closed. CA304-01 is the pending author check.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
 #225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02

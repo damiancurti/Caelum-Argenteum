@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue304-author-03/clock-final.txt",
+    "artifact": "issue304-author-03-clock-final.txt.gz",
+    "raw_sha256": "3db6da6d0dbd70b10ba19159a9011a0cf64e3da5d951e26ef7033151b3b88c59"
+  },
+  {
+    "source": "build/issue304-author-03/clock-final-run.json",
+    "artifact": "issue304-author-03-clock-final-run.json",
+    "raw_sha256": "8ed93d3b61094ada29ea8ab5146273273ed86324c5f79c17114cf5ee60aad782"
+  },
+  {
+    "source": "build/issue304-author-03/clock-final.ini",
+    "artifact": "issue304-author-03-clock-final.ini",
+    "raw_sha256": "a1fc35ab42eaffe594e0b5cf958f6274d3a547b76c225ef0d7c3339c6933a5da"
+  },
+  {
+    "source": "build/issue304-author-03/smoke-final.txt",
+    "artifact": "issue304-author-03-smoke-final.txt.gz",
+    "raw_sha256": "8e127b87650e900952fc732b6125f8a1383026717f04a91ffd0ddbb61c567bed"
+  },
+  {
+    "source": "build/issue304-author-03/smoke-final-run.json",
+    "artifact": "issue304-author-03-smoke-final-run.json",
+    "raw_sha256": "e211b766c90d8ae16ebcc7960c5b89f426694b7f3121a31a3271d773145e63ab"
+  },
+  {
+    "source": "build/issue304-author-03/smoke-final.ini",
+    "artifact": "issue304-author-03-smoke-final.ini",
+    "raw_sha256": "acdf66982135c230bf939b8edd9355ca83c722a79aab3449cb8eaede2736b0cf"
+  }
+]

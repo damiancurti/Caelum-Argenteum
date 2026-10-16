@@ -1,0 +1,64 @@
+﻿{
+    "label":  "deep-base-01",
+    "started_utc":  "2026-10-16T03:25:15.0534320Z",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\observer-v2.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base-01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\deep-base-01.txt\"",
+                      "+map",
+                      "MAP06",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue304-study-04\\study.cfg\"",
+                      "+snd_mastervolume",
+                      "0.05",
+                      "+i_pauseinbackground",
+                      "false",
+                      "+vid_activeinbackground",
+                      "true",
+                      "+i_soundinbackground",
+                      "true"
+                  ],
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=0\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "runtime_sha256":  "253C79986773D44AF019054A50AA5C0278C318E51FCAFEB24420C93E221C7BAB",
+    "fixture_sha256":  "10768A05C607CD7DBCDB99D781D0236F018C19C7945A3EBBB89B6B8B0316C2CF",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "pid":  53156,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-16T03:26:48.8175832Z"
+}

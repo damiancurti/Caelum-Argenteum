@@ -1,0 +1,5 @@
+{
+  "sha256": "169247db439958f1f8d9673814c852712e5b63abd19dbefac1d4f4e39787ffa0",
+  "source": "base.pk3",
+  "scope": "Diagnostic only: Delta returns zero. Valid cost control only when no seals are active; no production change."
+}

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
+
+## 5.4.25 - Soldier representation benchmark (#304)
+
+The isolated sprite/model comparison reuses the owned Domingo MD3 and texture
+from #283 as an author-approved visual substitute for soldiers. It introduces
+no new art or soldier balance. The diagnostic MODELDEF maps the actual soldier's
+frames without adding proxy actors or AI. The prototype has 10,689 vertices and
+17,447 triangles. In the frozen 600-soldier render control, median render callback
+intervals are 2.93-3.08 ms for sprites and about 5.35 ms for MD3; both maintain
+35 simulation tics/s. These callbacks are not displayed FPS. See validation_5425
+for captures, native rendering counters, repeated measurements and limitations.
+Production soldier presentation and the future modular migration remain unchanged.
 
 ## 5.4.24 - Zupay cosmetic rock projectile (#284)
 

@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue304-05/redemption-01.txt",
+    "artifact": "issue304-05-redemption-01.txt.gz",
+    "raw_sha256": "e994196398ce33e553e79655d4d8e9905594e0d1f97761f556572e673a6c2841"
+  },
+  {
+    "source": "build/issue304-05/redemption-01-run.json",
+    "artifact": "issue304-05-redemption-01-run.json",
+    "raw_sha256": "d1b73161b6ef90dd557cfa23ad1d9275443477358c1b86d68b239e3cf8d132de"
+  },
+  {
+    "source": "build/issue304-05/redemption-01.ini",
+    "artifact": "issue304-05-redemption-01.ini",
+    "raw_sha256": "ab74b46208942f29c557e09850719c89bc7be34fecdbacd9a4845bf6af31615a"
+  }
+]

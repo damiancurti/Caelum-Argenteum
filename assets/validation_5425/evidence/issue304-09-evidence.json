@@ -1,0 +1,47 @@
+[
+  {
+    "source": "build/issue304-09/redemption-01.txt",
+    "artifact": "issue304-09-redemption-01.txt.gz",
+    "raw_sha256": "015b0b2759e0969c312cbdad933c0d044e7aff7cc25f6bec7cb4e9db4ce14c1c"
+  },
+  {
+    "source": "build/issue304-09/redemption-01-run.json",
+    "artifact": "issue304-09-redemption-01-run.json",
+    "raw_sha256": "184c45ca50132019225e6617cbb0ae76329232fab7f6fba60096c747092a2eca"
+  },
+  {
+    "source": "build/issue304-09/redemption-01.ini",
+    "artifact": "issue304-09-redemption-01.ini",
+    "raw_sha256": "0709029ccb987f8f74bfd8e5f65e88b4f3f15c52a7c1064fc43f2f1b70d24606"
+  },
+  {
+    "source": "build/issue304-09/save-01.txt",
+    "artifact": "issue304-09-save-01.txt.gz",
+    "raw_sha256": "bf75b8772d501ecdedcc821421098dd412ca91c3af5df78bb646d2f16c43d1b8"
+  },
+  {
+    "source": "build/issue304-09/save-01-run.json",
+    "artifact": "issue304-09-save-01-run.json",
+    "raw_sha256": "2c7fd9e60c5e43dc2ed30777b88afc3cf4d5f1911cee312810909a0b94c98347"
+  },
+  {
+    "source": "build/issue304-09/save-01.ini",
+    "artifact": "issue304-09-save-01.ini",
+    "raw_sha256": "6a686742fbc055dad0fc9368692780691d60e783bd768eb57a9be29604b67fc1"
+  },
+  {
+    "source": "build/issue304-09/travel-01.txt",
+    "artifact": "issue304-09-travel-01.txt.gz",
+    "raw_sha256": "2983dbf4ccdeb28053b0a40d965de992ee7f4da2e60690305819c7908664e8bd"
+  },
+  {
+    "source": "build/issue304-09/travel-01-run.json",
+    "artifact": "issue304-09-travel-01-run.json",
+    "raw_sha256": "45ab54945f23cc5dc8285da158c767241882a2e0517660f64c07104c33efae80"
+  },
+  {
+    "source": "build/issue304-09/travel-01.ini",
+    "artifact": "issue304-09-travel-01.ini",
+    "raw_sha256": "c17ed0108110f719448fa44e7ccd5e624e47afb84da52ce50b1d4489f0f53ca0"
+  }
+]

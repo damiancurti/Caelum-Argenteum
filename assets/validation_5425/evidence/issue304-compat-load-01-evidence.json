@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue304-compat-load-01/migrated-load.txt",
+    "artifact": "issue304-compat-load-01-migrated-load.txt.gz",
+    "raw_sha256": "554dfea7cda2f5622469f5cc94f642eade41b56aba0793acddf14bdd428ab66d"
+  },
+  {
+    "source": "build/issue304-compat-load-01/migrated-load-run.json",
+    "artifact": "issue304-compat-load-01-migrated-load-run.json",
+    "raw_sha256": "d2e28946122bee788c5db3213bdd666fae3d5dd51da762eb5b55edc7ad25f576"
+  },
+  {
+    "source": "build/issue304-compat-load-01/migrated-load.ini",
+    "artifact": "issue304-compat-load-01-migrated-load.ini",
+    "raw_sha256": "4002e2bb22027527e5693e7d48f7bd1b2dd517cbee9f361da05bb5ebdacd73b8"
+  }
+]

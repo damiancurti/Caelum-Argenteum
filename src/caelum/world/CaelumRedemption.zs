@@ -249,8 +249,23 @@ class CaelumRedemption : Object play
     {
         let caster=CaelumPlayer(effect.Owner);
         let it=ThinkerIterator.Create("Actor");Actor body;
-        while((body=Actor(it.Next()))!=null)
+        Array<Actor> candidates;
+        bool archivedPass=false;
+        while(true)
         {
+            body=Actor(it.Next());
+            if(body==null)
+            {
+                if(archivedPass)break;
+                archivedPass=true;it=ThinkerIterator.Create("Actor",CaelumCorpseArchiveData.DORMANT_STAT);continue;
+            }
+            if(body.health<=0 && body.bCorpse)candidates.Push(body);
+        }
+        // Resucitar mueve cuerpo e inventario entre listas nativas. No cambiar
+        // esas listas mientras ThinkerIterator todavia las esta recorriendo.
+        for(int i=0;i<candidates.Size();i++)
+        {
+            body=candidates[i];if(body==null)continue;
             if(body.health>0 || !body.bCorpse || effect.Raised(body) || !InArea(effect,body))continue;
             let user=CaelumPlayer(body);
             // No reconstruir cadáveres anteriores de un jugador que ya reapareció.

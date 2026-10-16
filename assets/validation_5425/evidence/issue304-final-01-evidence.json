@@ -1,0 +1,112 @@
+[
+  {
+    "source": "build/issue304-final-01/corpses-final.txt",
+    "artifact": "issue304-final-01-corpses-final.txt.gz",
+    "raw_sha256": "5411bdbdfccf19efd6eb1b4cc08c9426956d9549375692c82ef75dce30e02d32"
+  },
+  {
+    "source": "build/issue304-final-01/corpses-final-run.json",
+    "artifact": "issue304-final-01-corpses-final-run.json",
+    "raw_sha256": "4bb7590ae7e6c5fe4ff2f20e14025dd6bfa398d158e23a093199905feefcd61f"
+  },
+  {
+    "source": "build/issue304-final-01/corpses-final.ini",
+    "artifact": "issue304-final-01-corpses-final.ini",
+    "raw_sha256": "7ffa552ad88dc1b3b7cc18af8ab6dfbe26bef7973f5aa87d127f7b920e9f9e28"
+  },
+  {
+    "source": "build/issue304-final-01/load-final.txt",
+    "artifact": "issue304-final-01-load-final.txt.gz",
+    "raw_sha256": "7333ec05257f64050904bc9fca57d59fabeb8d39b57ff1c7ba7a6ba90f415462"
+  },
+  {
+    "source": "build/issue304-final-01/load-final-run.json",
+    "artifact": "issue304-final-01-load-final-run.json",
+    "raw_sha256": "545b54a89527db0de2173409b3c704780be356466652489bff966b37cb9190ad"
+  },
+  {
+    "source": "build/issue304-final-01/load-final.ini",
+    "artifact": "issue304-final-01-load-final.ini",
+    "raw_sha256": "0142f2b4869d7fdfe326c0452f92d2dd53105a1c0a283ff6de56dc299b492a7d"
+  },
+  {
+    "source": "build/issue304-final-01/outside-final.txt",
+    "artifact": "issue304-final-01-outside-final.txt.gz",
+    "raw_sha256": "76bb58fc92471d763010f238ae0171c9287facb586bd580e3e54701cfe3568d5"
+  },
+  {
+    "source": "build/issue304-final-01/outside-final-run.json",
+    "artifact": "issue304-final-01-outside-final-run.json",
+    "raw_sha256": "970bec462a03f7453563b82f43da0ba29cc12da6fc3f9a7dfc2c820b17343e97"
+  },
+  {
+    "source": "build/issue304-final-01/outside-final.ini",
+    "artifact": "issue304-final-01-outside-final.ini",
+    "raw_sha256": "e7b2f4749423d8e16cca85e68d21cb8e288c0bc4b503a50fbd73faead748ad5d"
+  },
+  {
+    "source": "build/issue304-final-01/player-final.txt",
+    "artifact": "issue304-final-01-player-final.txt.gz",
+    "raw_sha256": "d79c10834961f5951df118230c06c250001d353c35e890b1cec545a165aebace"
+  },
+  {
+    "source": "build/issue304-final-01/player-final-run.json",
+    "artifact": "issue304-final-01-player-final-run.json",
+    "raw_sha256": "103328ce2dca277237c416f9d77463be040409d9258ad2480f4ac5acee27a52b"
+  },
+  {
+    "source": "build/issue304-final-01/player-final.ini",
+    "artifact": "issue304-final-01-player-final.ini",
+    "raw_sha256": "f5860faad61d59a2413891be61744af97e7e1bb84514015484083ca688c97b18"
+  },
+  {
+    "source": "build/issue304-final-01/redemption-final.txt",
+    "artifact": "issue304-final-01-redemption-final.txt.gz",
+    "raw_sha256": "617372df73289d80ed2df8905e0a92e2099c3e15ad0d6344f7e9426968bebef0"
+  },
+  {
+    "source": "build/issue304-final-01/redemption-final-run.json",
+    "artifact": "issue304-final-01-redemption-final-run.json",
+    "raw_sha256": "325ef538696dcbe8f2b8146e8caba150f69f7eebd5745d64a2bff0729b227571"
+  },
+  {
+    "source": "build/issue304-final-01/redemption-final.ini",
+    "artifact": "issue304-final-01-redemption-final.ini",
+    "raw_sha256": "d079cf5b2d73f203c40bb759c443ff1e4fdcf01104cafa4759891a68781943dc"
+  },
+  {
+    "source": "build/issue304-final-01/save-final.txt",
+    "artifact": "issue304-final-01-save-final.txt.gz",
+    "raw_sha256": "c21c0a52513dd94ca69cf4cb377461da087d2025e1ca8cfbdfbb070e57cad28c"
+  },
+  {
+    "source": "build/issue304-final-01/save-final-run.json",
+    "artifact": "issue304-final-01-save-final-run.json",
+    "raw_sha256": "f8726f6ed66f0fae1399a5ec5614bcdcfbe7835ee5224df6871c6d23540853e6"
+  },
+  {
+    "source": "build/issue304-final-01/save-final.ini",
+    "artifact": "issue304-final-01-save-final.ini",
+    "raw_sha256": "7c8f9cd2f28183b8c06adabac523701afd87f83719c2a20dc7d832c5a90f81f8"
+  },
+  {
+    "source": "build/issue304-final-01/travel-final.txt",
+    "artifact": "issue304-final-01-travel-final.txt.gz",
+    "raw_sha256": "39b43ab19b7773cf41694b0c539a32f90e047340d4157670e5dce8a8ece9205e"
+  },
+  {
+    "source": "build/issue304-final-01/travel-final-run.json",
+    "artifact": "issue304-final-01-travel-final-run.json",
+    "raw_sha256": "b39f5aa236c2a0ddd4a9a1e55647f01924098c7ec8a16269352b4a63a951b21c"
+  },
+  {
+    "source": "build/issue304-final-01/travel-final.ini",
+    "artifact": "issue304-final-01-travel-final.ini",
+    "raw_sha256": "6da80fa34de9ef604e492cfc7fd01961873cc44f54b3f3b7832f59ad5d15ebf7"
+  },
+  {
+    "source": "build/issue304-final-01/validation.txt",
+    "artifact": "issue304-final-01-validation.txt.gz",
+    "raw_sha256": "f911265cc042f48fa0440fbea7114e3a3795d9331aa88be05bd3a17f4ed91ec0"
+  }
+]

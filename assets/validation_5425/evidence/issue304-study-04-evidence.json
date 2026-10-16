@@ -1,0 +1,477 @@
+[
+  {
+    "source": "build/issue304-study-04/bench-base-01.txt",
+    "artifact": "issue304-study-04-bench-base-01.txt.gz",
+    "raw_sha256": "e110e384f6533b4adb6cf3cd9949c6821f7de0741b076437e7fbed712a5fb547"
+  },
+  {
+    "source": "build/issue304-study-04/bench-base-01-run.json",
+    "artifact": "issue304-study-04-bench-base-01-run.json",
+    "raw_sha256": "34c760ddc76dac4165defad6851a1550a45cc858c3b6e9a440b88d10c8dff2b5"
+  },
+  {
+    "source": "build/issue304-study-04/bench-base-01.ini",
+    "artifact": "issue304-study-04-bench-base-01.ini",
+    "raw_sha256": "4e3d85ea87b43d89615bc47b8a05bb7739366b01bc35da684a86387b0e1acb81"
+  },
+  {
+    "source": "build/issue304-study-04/bench-base-01-bench.txt",
+    "artifact": "issue304-study-04-bench-base-01-bench.txt.gz",
+    "raw_sha256": "7ac237a1b0020cc63b1e3c2fb82de628b69ce684562cb4d9e4e9ca97c88e7679"
+  },
+  {
+    "source": "build/issue304-study-04/bench-base-01-scene.png",
+    "artifact": "issue304-study-04-bench-base-01-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/budget-01.txt",
+    "artifact": "issue304-study-04-budget-01.txt.gz",
+    "raw_sha256": "095554cd8c370ed73a74ad4eabad21de1e028876771b10fbfe852f3b40f58e9f"
+  },
+  {
+    "source": "build/issue304-study-04/budget-01-run.json",
+    "artifact": "issue304-study-04-budget-01-run.json",
+    "raw_sha256": "b5f282e23b4fc98a69f1f15367260ff32c9973671cf1e5c9a01f831cb505bcf4"
+  },
+  {
+    "source": "build/issue304-study-04/budget-01.ini",
+    "artifact": "issue304-study-04-budget-01.ini",
+    "raw_sha256": "5c26b0f772c64a00268e9f5d8e6c910530ccdb150e7ff675858b0756292ef8af"
+  },
+  {
+    "source": "build/issue304-study-04/budget-01-scene.png",
+    "artifact": "issue304-study-04-budget-01-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/captures-1-models.txt",
+    "artifact": "issue304-study-04-captures-1-models.txt.gz",
+    "raw_sha256": "f6f51a1eafda6e7aa6359da550dc60d672d50a9189496b399f9467559bfa1db8"
+  },
+  {
+    "source": "build/issue304-study-04/captures-1-models-run.json",
+    "artifact": "issue304-study-04-captures-1-models-run.json",
+    "raw_sha256": "a4e96a5252b559e717c26b6a1f8a8c2bff82f15169413e8bbc893aace01b1eb4"
+  },
+  {
+    "source": "build/issue304-study-04/captures-1-models.ini",
+    "artifact": "issue304-study-04-captures-1-models.ini",
+    "raw_sha256": "81dfa81e422698a13191930c07830e75f4bc9fa2446ac4af11304ac406aaf4d0"
+  },
+  {
+    "source": "build/issue304-study-04/captures-1-models-bench.txt",
+    "artifact": "issue304-study-04-captures-1-models-bench.txt.gz",
+    "raw_sha256": "4335f47547e27dc3be1235c432a2db543cc9868146c2dbd4a6c76acf6ecc72df"
+  },
+  {
+    "source": "build/issue304-study-04/captures-1-models-scene.png",
+    "artifact": "issue304-study-04-captures-1-models-scene.png",
+    "raw_sha256": "ad345645774840384c00ad3d9914882d5617afe0cb274b0c93093d2fbeea75d9"
+  },
+  {
+    "source": "build/issue304-study-04/captures-2-base.txt",
+    "artifact": "issue304-study-04-captures-2-base.txt.gz",
+    "raw_sha256": "cdabd78a13fa625e8cab473a6ff8b8597fde380f1f429afc009eabeab02f1b38"
+  },
+  {
+    "source": "build/issue304-study-04/captures-2-base-run.json",
+    "artifact": "issue304-study-04-captures-2-base-run.json",
+    "raw_sha256": "718ac314a54d007a768a9ab439d33d93cccce2c0128269008e0a82aa08d21264"
+  },
+  {
+    "source": "build/issue304-study-04/captures-2-base.ini",
+    "artifact": "issue304-study-04-captures-2-base.ini",
+    "raw_sha256": "49ad2768ac737aaf047c09fcfa0e88f9d862d20b3350b35a49bc72025fabeaf0"
+  },
+  {
+    "source": "build/issue304-study-04/captures-2-base-bench.txt",
+    "artifact": "issue304-study-04-captures-2-base-bench.txt.gz",
+    "raw_sha256": "c74cbdf7af1cf8118386c65cbd5f82e43d488c900c41a38a3a5abcc82e41ae93"
+  },
+  {
+    "source": "build/issue304-study-04/captures-2-base-scene.png",
+    "artifact": "issue304-study-04-captures-2-base-scene.png",
+    "raw_sha256": "0d69c50c88239c14cb28c89f435e4c3216fd366df1bae6f1819972129e49cab1"
+  },
+  {
+    "source": "build/issue304-study-04/deep-base-01.txt",
+    "artifact": "issue304-study-04-deep-base-01.txt.gz",
+    "raw_sha256": "13db923da3341b4efc1b26db830610b5297cb5aedb869aa8d88510d6dda80e6b"
+  },
+  {
+    "source": "build/issue304-study-04/deep-base-01-run.json",
+    "artifact": "issue304-study-04-deep-base-01-run.json",
+    "raw_sha256": "6e3dd26d2082831e9613a56f0e1a9f3a1796b2f0470a9d78c7fd09aa434dc541"
+  },
+  {
+    "source": "build/issue304-study-04/deep-base-01.ini",
+    "artifact": "issue304-study-04-deep-base-01.ini",
+    "raw_sha256": "7e614d7b45df0702bb2a049a94d8a37551a99a7039a0aa357b79906e97270006"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-1-deep-thermal-off.txt",
+    "artifact": "issue304-study-04-detailed-1-deep-thermal-off.txt.gz",
+    "raw_sha256": "f87246a1045238822a493a26565f0dfe34ac6a897d002818142ab553e9e71723"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-1-deep-thermal-off-run.json",
+    "artifact": "issue304-study-04-detailed-1-deep-thermal-off-run.json",
+    "raw_sha256": "347a719175848e0d90d1941ea406a2dc68a63659ff0b5936f859872684a68744"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-1-deep-thermal-off.ini",
+    "artifact": "issue304-study-04-detailed-1-deep-thermal-off.ini",
+    "raw_sha256": "5474dfe5edf391cd836d7715127ebdc0ffb8fa6a6c84022f6b1b944549cf985f"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-1-deep-thermal-off-scene.png",
+    "artifact": "issue304-study-04-detailed-1-deep-thermal-off-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-2-deep-target-3s.txt",
+    "artifact": "issue304-study-04-detailed-2-deep-target-3s.txt.gz",
+    "raw_sha256": "907d54e0631f13243becf1ee55f5d3950d374bf30b955a144c4370c654ed99f2"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-2-deep-target-3s-run.json",
+    "artifact": "issue304-study-04-detailed-2-deep-target-3s-run.json",
+    "raw_sha256": "7ea68f7362b9176236d77d017f68440c9ae4fb8396cb07d4f0a744c1ee5157b3"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-2-deep-target-3s.ini",
+    "artifact": "issue304-study-04-detailed-2-deep-target-3s.ini",
+    "raw_sha256": "71c7a48b3b0053f8f8b177249f2b05dd86cdd202425db07dbe22abdbda0e0351"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-2-deep-target-3s-scene.png",
+    "artifact": "issue304-study-04-detailed-2-deep-target-3s-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-3-no-seal-scan.txt",
+    "artifact": "issue304-study-04-detailed-3-no-seal-scan.txt.gz",
+    "raw_sha256": "e000a01b846b9c97b6fc3b94f6cb4bf6954bf384df75a6d7a59bc7e26802d891"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-3-no-seal-scan-run.json",
+    "artifact": "issue304-study-04-detailed-3-no-seal-scan-run.json",
+    "raw_sha256": "2bd025b659a70c3ff9be6b80037de494d53bbbef674556e20fa2c53067249cfb"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-3-no-seal-scan.ini",
+    "artifact": "issue304-study-04-detailed-3-no-seal-scan.ini",
+    "raw_sha256": "3ba0337b0f10a34453472b2f3b1c1a25e77abeb3cbbc405f4dbc8e409df3f17d"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-3-no-seal-scan-scene.png",
+    "artifact": "issue304-study-04-detailed-3-no-seal-scan-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-4-base.txt",
+    "artifact": "issue304-study-04-detailed-4-base.txt.gz",
+    "raw_sha256": "908379b4c6f7c2bd2656a2308cc70d464c7cb9ef1f4de526bbb124abf8231526"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-4-base-run.json",
+    "artifact": "issue304-study-04-detailed-4-base-run.json",
+    "raw_sha256": "392c306703980602782fe981abe106c8cc4f778155e7b3b20783e38a49cdacac"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-4-base.ini",
+    "artifact": "issue304-study-04-detailed-4-base.ini",
+    "raw_sha256": "a0c3c684269f81789f64394616d7078c355a1b2ed4b46a4b22f7c2aa338e6f9b"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-4-base-scene.png",
+    "artifact": "issue304-study-04-detailed-4-base-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-5-no-seal-scan.txt",
+    "artifact": "issue304-study-04-detailed-5-no-seal-scan.txt.gz",
+    "raw_sha256": "b98d936bcae24684ff5d00d51e4245144831f39bb668f75051584906e3102676"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-5-no-seal-scan-run.json",
+    "artifact": "issue304-study-04-detailed-5-no-seal-scan-run.json",
+    "raw_sha256": "c76313ed113da6d1aa68dd1055f2d8cf5ede50eb6d91bf725ae3fe757059501b"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-5-no-seal-scan.ini",
+    "artifact": "issue304-study-04-detailed-5-no-seal-scan.ini",
+    "raw_sha256": "c4788c3cefb0ff811f239c1ca27222e1e6bcb541c6c58b73996257cb1c2aaabe"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-5-no-seal-scan-scene.png",
+    "artifact": "issue304-study-04-detailed-5-no-seal-scan-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-6-thermal-off.txt",
+    "artifact": "issue304-study-04-detailed-6-thermal-off.txt.gz",
+    "raw_sha256": "a341f39a5244c6a15e8bef83d3b6dbb55b42b09e1e2caf61282d7e44cddb7a53"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-6-thermal-off-run.json",
+    "artifact": "issue304-study-04-detailed-6-thermal-off-run.json",
+    "raw_sha256": "2e726a416d8384bcd3b33096975a56b446fb994739b8b4c2a59644fe1951ee45"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-6-thermal-off.ini",
+    "artifact": "issue304-study-04-detailed-6-thermal-off.ini",
+    "raw_sha256": "455c8b7b1cb5992496bc8276447bf46f0475a0b0ed9cc5f07543aee00e741981"
+  },
+  {
+    "source": "build/issue304-study-04/detailed-6-thermal-off-scene.png",
+    "artifact": "issue304-study-04-detailed-6-thermal-off-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/early-1-base.txt",
+    "artifact": "issue304-study-04-early-1-base.txt.gz",
+    "raw_sha256": "646ff7f979eaca4b2c29356bbbb9a3f17cc564f1ca7030eb0178331b117edac7"
+  },
+  {
+    "source": "build/issue304-study-04/early-1-base-run.json",
+    "artifact": "issue304-study-04-early-1-base-run.json",
+    "raw_sha256": "a61564f28b82d9f06dca3041fca9dbe148ce6ee85a7c07ba4d5888827df2efe6"
+  },
+  {
+    "source": "build/issue304-study-04/early-1-base.ini",
+    "artifact": "issue304-study-04-early-1-base.ini",
+    "raw_sha256": "486c0803a9b560f358ee79b2729034ce6e2893dc19b4c6448bdf0bf8ba74eb61"
+  },
+  {
+    "source": "build/issue304-study-04/early-2-thermal-off.txt",
+    "artifact": "issue304-study-04-early-2-thermal-off.txt.gz",
+    "raw_sha256": "f9ee3f9a205d0adcc9c944b5605a97697e70fa8f36049ac2f6e47f0d622eb41b"
+  },
+  {
+    "source": "build/issue304-study-04/early-2-thermal-off-run.json",
+    "artifact": "issue304-study-04-early-2-thermal-off-run.json",
+    "raw_sha256": "cc2824176c8cb3d479093ef1929336ff7fce735ba9157a8b31f5d664d80203a7"
+  },
+  {
+    "source": "build/issue304-study-04/early-2-thermal-off.ini",
+    "artifact": "issue304-study-04-early-2-thermal-off.ini",
+    "raw_sha256": "6851728cd5894ed046c6f6a0c7425437ec368ad2ffd56ea75ec5e7392a42d76f"
+  },
+  {
+    "source": "build/issue304-study-04/early-3-target-3s.txt",
+    "artifact": "issue304-study-04-early-3-target-3s.txt.gz",
+    "raw_sha256": "5d499cffec81d77541b74435092d42e9f8ec6d6c41e490a178cf055cd0b6eb35"
+  },
+  {
+    "source": "build/issue304-study-04/early-3-target-3s-run.json",
+    "artifact": "issue304-study-04-early-3-target-3s-run.json",
+    "raw_sha256": "96bd67ef5b4aee95220439bb22c92cb42b01a4ead7e44fc981d46a7d87e559bf"
+  },
+  {
+    "source": "build/issue304-study-04/early-3-target-3s.ini",
+    "artifact": "issue304-study-04-early-3-target-3s.ini",
+    "raw_sha256": "4d7dad8aead62f9fe202921ff8720598a8823411eb35cd26c866ec7b16457bea"
+  },
+  {
+    "source": "build/issue304-study-04/early-4-models.txt",
+    "artifact": "issue304-study-04-early-4-models.txt.gz",
+    "raw_sha256": "c8a2f7a9691cc393bbc2d54a24724fd8b00dddd3609f77237ab2fe2c86417ad9"
+  },
+  {
+    "source": "build/issue304-study-04/early-4-models-run.json",
+    "artifact": "issue304-study-04-early-4-models-run.json",
+    "raw_sha256": "ef625d9289567e41ff65e86af98b4a165f8e9b4f4d989c283a2a63018fecd56e"
+  },
+  {
+    "source": "build/issue304-study-04/early-4-models.ini",
+    "artifact": "issue304-study-04-early-4-models.ini",
+    "raw_sha256": "54dd8cd0cb287e383cdf1ddd3b7758afaa93ce8a1742481fc37e023c9011e83a"
+  },
+  {
+    "source": "build/issue304-study-04/early-5-models.txt",
+    "artifact": "issue304-study-04-early-5-models.txt.gz",
+    "raw_sha256": "26e811663e364098f7aa05f09b356b9a58ec44340b42833d9dfdb1a721a7d253"
+  },
+  {
+    "source": "build/issue304-study-04/early-5-models-run.json",
+    "artifact": "issue304-study-04-early-5-models-run.json",
+    "raw_sha256": "cf60d21d7e3e4fa87ff31cee705c6c63f621ac51e097a8fea1e5a35ba0a16b2a"
+  },
+  {
+    "source": "build/issue304-study-04/early-5-models.ini",
+    "artifact": "issue304-study-04-early-5-models.ini",
+    "raw_sha256": "2c46983c046e3e87ffaff4d4e67b17bd9fadc3379f6917fe125f7a95738df828"
+  },
+  {
+    "source": "build/issue304-study-04/early-6-target-3s.txt",
+    "artifact": "issue304-study-04-early-6-target-3s.txt.gz",
+    "raw_sha256": "825474e302b3d2f46eba27943c70763f40210aacd2b1518d438a8283d560e1fd"
+  },
+  {
+    "source": "build/issue304-study-04/early-6-target-3s-run.json",
+    "artifact": "issue304-study-04-early-6-target-3s-run.json",
+    "raw_sha256": "8cee7e574c22af3823c6c0e4b1f636910da25ce6406fc0c255b67edaae737214"
+  },
+  {
+    "source": "build/issue304-study-04/early-6-target-3s.ini",
+    "artifact": "issue304-study-04-early-6-target-3s.ini",
+    "raw_sha256": "c0510948d19f11034ed0a2fdf4026c9421bfdbd48f207e0cacf6e333d409cfbe"
+  },
+  {
+    "source": "build/issue304-study-04/early-7-thermal-off.txt",
+    "artifact": "issue304-study-04-early-7-thermal-off.txt.gz",
+    "raw_sha256": "9cc67aec6370b3d81726109fc0092add600964642f8c66f7105cf706808c4629"
+  },
+  {
+    "source": "build/issue304-study-04/early-7-thermal-off-run.json",
+    "artifact": "issue304-study-04-early-7-thermal-off-run.json",
+    "raw_sha256": "b7a5453c907a0950c6559bd8ef35dcb1de9b2728ea02f824f49f1ce07d3d5002"
+  },
+  {
+    "source": "build/issue304-study-04/early-7-thermal-off.ini",
+    "artifact": "issue304-study-04-early-7-thermal-off.ini",
+    "raw_sha256": "e6c662b9ee5168a52f0633e517aab98e8235c463c77b7650e4bd33e00235ab79"
+  },
+  {
+    "source": "build/issue304-study-04/early-8-base.txt",
+    "artifact": "issue304-study-04-early-8-base.txt.gz",
+    "raw_sha256": "45c347b452fc8a048bcafbd6abc4a500ed88fdc4a9dc04bd31c9067249f62a86"
+  },
+  {
+    "source": "build/issue304-study-04/early-8-base-run.json",
+    "artifact": "issue304-study-04-early-8-base-run.json",
+    "raw_sha256": "1bae63165082ff4d05ccff6cfd100b45e0fb4153b7931a5c0b178b1a746b0207"
+  },
+  {
+    "source": "build/issue304-study-04/early-8-base.ini",
+    "artifact": "issue304-study-04-early-8-base.ini",
+    "raw_sha256": "099051e2e70323fde6f801ad6c674a7268280ca71651ca5f90e9a6a7b99e0b41"
+  },
+  {
+    "source": "build/issue304-study-04/natural-1-base.txt",
+    "artifact": "issue304-study-04-natural-1-base.txt.gz",
+    "raw_sha256": "1b2f7ab2eea03d27e1f11f5f34548ada64c35d9ff8ac2de51cccda8771e09eb2"
+  },
+  {
+    "source": "build/issue304-study-04/natural-1-base-run.json",
+    "artifact": "issue304-study-04-natural-1-base-run.json",
+    "raw_sha256": "1040e24108ed64ea0e631f53d3aae75e8787b04bca8a68d6a72aac5687209ae0"
+  },
+  {
+    "source": "build/issue304-study-04/natural-1-base.ini",
+    "artifact": "issue304-study-04-natural-1-base.ini",
+    "raw_sha256": "9f8e732767a4a818a96771d07be5581cc954f0103ce6d528c0d17ee2bd358b88"
+  },
+  {
+    "source": "build/issue304-study-04/natural-1-base-scene.png",
+    "artifact": "issue304-study-04-natural-1-base-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/natural-2-thermal-off.txt",
+    "artifact": "issue304-study-04-natural-2-thermal-off.txt.gz",
+    "raw_sha256": "4fcdfcd393a1f875b148a66ca4d06342c2794340d0c70c247fd22fecde9a630f"
+  },
+  {
+    "source": "build/issue304-study-04/natural-2-thermal-off-run.json",
+    "artifact": "issue304-study-04-natural-2-thermal-off-run.json",
+    "raw_sha256": "008a0daec4df476b6b69a13f3f2b30b3b6e307a2b680aad0c15ed6f06598c010"
+  },
+  {
+    "source": "build/issue304-study-04/natural-2-thermal-off.ini",
+    "artifact": "issue304-study-04-natural-2-thermal-off.ini",
+    "raw_sha256": "0c0a0adebfb15d0be5a32ed72b0b1767208d819e393cc2b6676329986e14b544"
+  },
+  {
+    "source": "build/issue304-study-04/natural-2-thermal-off-scene.png",
+    "artifact": "issue304-study-04-natural-2-thermal-off-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/profile-base-01.txt",
+    "artifact": "issue304-study-04-profile-base-01.txt.gz",
+    "raw_sha256": "9fb1e7e1e26d8d0d2a710777434c14d7eecfb4e86d3decf2d7acaa5e650bbd5b"
+  },
+  {
+    "source": "build/issue304-study-04/profile-base-01-run.json",
+    "artifact": "issue304-study-04-profile-base-01-run.json",
+    "raw_sha256": "e4cef74b5dc891dd83be738d4e807fda9a6fcca219dccea87f2cc51e167d6c35"
+  },
+  {
+    "source": "build/issue304-study-04/profile-base-01.ini",
+    "artifact": "issue304-study-04-profile-base-01.ini",
+    "raw_sha256": "934ab431f83967d57e00ef8dd84141fcbbc5fb9403ed7369513465d525adc8d6"
+  },
+  {
+    "source": "build/issue304-study-04/render-1-base.txt",
+    "artifact": "issue304-study-04-render-1-base.txt.gz",
+    "raw_sha256": "402c1ac6109795788cb2706dc280481a72c0985c0f30017480d28bcd3303c410"
+  },
+  {
+    "source": "build/issue304-study-04/render-1-base-run.json",
+    "artifact": "issue304-study-04-render-1-base-run.json",
+    "raw_sha256": "49f91a81abb4ad843c3bc2348abbf8d776194cf7b2a128d3fd2a7732d80b2037"
+  },
+  {
+    "source": "build/issue304-study-04/render-1-base.ini",
+    "artifact": "issue304-study-04-render-1-base.ini",
+    "raw_sha256": "da2a9245c7552e5513297c3606837107ae616887c149e382ab71960d0955d463"
+  },
+  {
+    "source": "build/issue304-study-04/render-2-models.txt",
+    "artifact": "issue304-study-04-render-2-models.txt.gz",
+    "raw_sha256": "de3b06dbcfa347ca89b4defae0d986ebc51b440154131ceabe925dbf3022e82e"
+  },
+  {
+    "source": "build/issue304-study-04/render-2-models-run.json",
+    "artifact": "issue304-study-04-render-2-models-run.json",
+    "raw_sha256": "0d05562e95ee956c21a2993eb03f8de2bc2e8f753a99a6127aa1f925508f17d1"
+  },
+  {
+    "source": "build/issue304-study-04/render-2-models.ini",
+    "artifact": "issue304-study-04-render-2-models.ini",
+    "raw_sha256": "f358724260077eb696970fe97eea8bc43fc73b3741352e692abd2299f97839bf"
+  },
+  {
+    "source": "build/issue304-study-04/render-3-models.txt",
+    "artifact": "issue304-study-04-render-3-models.txt.gz",
+    "raw_sha256": "0e381fb9b20bf7dd4d560718d694d1487e62632176dee6bebdbd3caf004ae14a"
+  },
+  {
+    "source": "build/issue304-study-04/render-3-models-run.json",
+    "artifact": "issue304-study-04-render-3-models-run.json",
+    "raw_sha256": "7f6789ed69dd08f90dceb5e2207219be4f30d19bbd10c19b47237068c16e9658"
+  },
+  {
+    "source": "build/issue304-study-04/render-3-models.ini",
+    "artifact": "issue304-study-04-render-3-models.ini",
+    "raw_sha256": "2114283d154260d55fe8c724f363d6b36a683f5dc8867f81b405968e0d1966e7"
+  },
+  {
+    "source": "build/issue304-study-04/render-3-models-scene.png",
+    "artifact": "issue304-study-04-render-3-models-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  },
+  {
+    "source": "build/issue304-study-04/render-4-base.txt",
+    "artifact": "issue304-study-04-render-4-base.txt.gz",
+    "raw_sha256": "02215c4b480dec0fcd6c52eed388301ee29a2c5528eb470ee7c6f92022186539"
+  },
+  {
+    "source": "build/issue304-study-04/render-4-base-run.json",
+    "artifact": "issue304-study-04-render-4-base-run.json",
+    "raw_sha256": "07186be20414de7167242dd79a2e33822c46727d0cb14082a0d692d9bd4b45a9"
+  },
+  {
+    "source": "build/issue304-study-04/render-4-base.ini",
+    "artifact": "issue304-study-04-render-4-base.ini",
+    "raw_sha256": "34ea074fc8c5c3abc540a7f65cf49e18efd99f72471b7f5c195b9732d94e4f6c"
+  },
+  {
+    "source": "build/issue304-study-04/render-4-base-scene.png",
+    "artifact": "issue304-study-04-render-4-base-scene.png",
+    "raw_sha256": "de4ba5b9576a42df750ee72ab59d0ef8594b30ef6108d56e34ee13bc0ddc3992"
+  }
+]
