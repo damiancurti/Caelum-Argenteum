@@ -1,0 +1,19 @@
+{
+  "issue": 237,
+  "origin_version": "5.4.0",
+  "completion_version": "5.4.21",
+  "date": "2026-10-15",
+  "baseline_commit": "bde4cd96fd8e055d02d26b07c03b43eddddadb56",
+  "production_sha256": "d61eb779ee657edb8179c0eec0685e86e36297bb26de7b29403c55fb314c445d",
+  "fixture_sha256": "a6165ebbf8aa94984b1dd04e6bf0276fe127a6684380eb2aecdd126bbd1989a7",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "log_sha256": "83c86358277baca974b5a7e9b6b28b7543af45692aff0ee325bc4c92223a6239",
+  "run_record_sha256": "4f78a2bdd1392ca8824614942e292423875818bc7fb727793078c04107cc93b9",
+  "passes": 160,
+  "failures": 0,
+  "exit_code": 0,
+  "source_members": 16178,
+  "normal_package_matches_source": true,
+  "static_errors": [],
+  "author_test": "No new physical-input check; documentation-only completion, with inherited acceptance qualified in RESULTS.md."
+}

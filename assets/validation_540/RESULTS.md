@@ -71,3 +71,24 @@ powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1
 
 The engine and development IWAD paths are configurable launcher arguments.
 Packages, saves, logs, engine and IWAD are not distributed with this patch.
+
+## Completion refresh on 5.4.21 - 2026-10-15
+
+The accepted ability baseline bde4cd96 now supplies real social-attribute
+consumers. SYSTEMS records their source/receiver paths, full-factor scaling,
+fixed class preparation/reuse and continuous racial costs. Future academic,
+production perception, broader Patience/needs and optional player/NPC parity
+remain explicit design work; no missing effect is inferred from a stored field.
+
+The original fixture was rerun against the current source in
+build/issue237-completion-5421: 160 assertions passed, zero failures, native exit0.
+completion_evidence.json records package/fixture/log hashes and source parity.
+Per-ability native tests and explicit author acceptance are reused for their
+unchanged scope and are not relabeled as reruns of the entire batch. This audit
+changes documentation only, so there is no new manual author check. The current
+release stays 5.4.21; the originating audit remains 5.4.0 / #237.
+
+PR272 completion diff targets integration/v54-accepted-252. Original audit work
+remains in its historical commits; the integration baseline already contains it.
+No merge or closure is requested. Static validation, normal packaging and all
+16,178 source members match the current tested archive.

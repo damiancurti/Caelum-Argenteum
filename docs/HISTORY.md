@@ -832,9 +832,16 @@ assets/validation_540/RESULTS.md. Static validation and normal packaging results
 are recorded there. No save migration, new manual author test or gameplay
 acceptance is claimed; previous accepted tests remain accepted.
 
-Next: #238's shared lifecycle and the separately revised class/racial issues;
-their outstanding numerical/target policies stay PENDING. New class designs were
-recorded in their GitHub issues on 2026-10-14 and are not implemented by this audit.
+At the original delivery, the shared lifecycle and separate class/racial issues
+remained pending. Completion on 2026-10-15, after author acceptance through #252,
+refreshes the twelve-attribute matrix against bde4cd96 / 5.4.21. It replaces the
+obsolete "stored Empathy only" description with real support/healing consumers,
+records fixed class timers and approved social scaling, and retains the bounded
+future academic/perception/survival/parity list. The unchanged audit fixture
+passes 160 assertions on the current runtime. Per-ability evidence and acceptance
+are reused only for their own scope. No gameplay code or saved schema changes,
+new manual test, release increment, merge or issue closure are implied. PR272 is
+ready with its completion diff based on integration/v54-accepted-252.
 
 ## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
 

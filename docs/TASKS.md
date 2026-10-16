@@ -15,7 +15,7 @@ Its first visual review reported incorrect ground placement and Water's image.
 The revised scene includes the corrected marks and newly requested purely visual
 elemental orb above the head. The final depth correction keeps the mark behind
 the body; 88 further native assertions and rendered views passed before approval.
-Keep #237's completion audit and later #282, #283 and #284 separate. The author
+#237's completion audit is ready; next #282, #283 and #284 stay separate. The author
 added #283 (editable animated Domingo 3D pilot) and #284 (Mandinga attributes 33)
 on 2026-10-15; each requires its own branch, evidence, commits and linked PR. Shared #238 completion is
 already delivered as aa253eed / PR280; it is not pending #252 gameplay work.
@@ -246,9 +246,11 @@ Completed the source-to-consumer matrix, fractional/0/100/above-100 boundary
 checks, equipment/Tarot ordering and representative NPC/personality verification.
 The isolated engine audit passed 160 assertions; evidence: assets/validation_540.
 No gameplay rebalance, save migration or new author-input test is part of this
-documentation delivery. SYSTEMS owns the bounded pending-design list. #238 and
-each separate ability issue consume that list; derived fields/debug observers
-must not be counted as completed effects. Commit/PR review remains separate
+documentation delivery. The 2026-10-15 completion on accepted 5.4.21 refreshes
+real class/racial consumers and passes the same 160 native checks. SYSTEMS owns
+the remaining academic/perception/survival and parity decisions; the V5.4 social
+ability contract is resolved. PR272 is ready, based on integration/v54-accepted-252.
+Derived fields/debug observers must not be counted as completed effects. Commit/PR review remains separate
 from author acceptance; do not merge or close the new batch without instruction.
 
 ## 5.3.9 - Exploration entry points (#236)

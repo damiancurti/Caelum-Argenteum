@@ -33,7 +33,7 @@ Documentation version: **5.4.21** — 2026-10-15.
 **5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 ready, aa253eed.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
-Next: #237 audit, then #282, #283 and #284. #231-236/#255-258 accepted/merged/closed; HISTORY.
+#237 audit complete/PR272 ready; next #282, #283, #284. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
 CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.

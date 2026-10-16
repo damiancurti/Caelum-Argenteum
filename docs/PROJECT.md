@@ -22,7 +22,7 @@ above the head, using Arcane Sun's size. Focused revision evidence is recorded
 in validation_5421: 142 assertions in nine native runs and ten inspected captures;
 the subsequent sprite-depth correction adds 88 assertions and four qualified
 runs. The author approved the corrected floor layering and the complete check.
-The remaining #237 audit precedes #282, then newly authorized #283 (Domingo 3D
+The completed #237 audit precedes #282, then newly authorized #283 (Domingo 3D
 pilot) and #284 (Mandinga base attributes 33), each separately scoped.
 
 
@@ -268,7 +268,11 @@ NPC consumers, distinguishing partial/planned mechanics and assigning pending
 decisions to V5.4 abilities, V5.6 content, V5.8 survival and V5.10 perception.
 No runtime balance or save schema changed. The focused native audit passed 160
 assertions; assets/validation_540 records evidence separately from inherited
-author acceptance. Next: #238 and the remaining individually scoped issues.
+author acceptance. Completion on 2026-10-15 refreshes the matrix against the
+accepted 5.4.21 class/racial consumers and again passes 160 native assertions.
+PR272 is ready; no extra gameplay test is assigned for this documentation audit.
+Academic actions, broader need penalties, production senses and optional
+player/NPC parity remain explicitly bounded future work. Next: #282, #283, #284.
 
 ## 5.3.9 - Connected exploration screens (#236)
 

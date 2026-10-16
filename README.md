@@ -18,6 +18,10 @@ Original gameplay validation passed 233 assertions; visual revisions add 230
 assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15.
 PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
+#237's attribute audit now reflects the accepted class/racial consumers; its
+160 native checks pass on this baseline. PR272 is ready. Next are separately
+scoped #282 (usable-item HUD), #283 (Domingo 3D pilot) and #284 (Mandinga attributes).
+
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
 reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal
 lightning. Current rules and focused test scope are in
