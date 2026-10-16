@@ -8246,11 +8246,13 @@ class CaelumPlayer : DoomPlayer
                 damageAngle
             );
         }
+        let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
+        if(mixed!=null)mixed.PrepareFire(self);
         double damageAfterShield = ResolveRealShieldDamage(
             inflictor,
             source,
             incomingDamage,
-            mod
+            mod,mixed
         );
         bool incomingActorCritical = ResolveIncomingActorCritical(
             inflictor,
@@ -8264,7 +8266,7 @@ class CaelumPlayer : DoomPlayer
             damageAfterShield,
             incomingActorCritical,
             LastIncomingArmorSlot,
-            CaelumArmorRules.IsMagical(inflictor, mod),inflictor,source
+            CaelumArmorRules.IsMagical(inflictor, mod),inflictor,source,mixed
         );
 
         double adrenalineRatioBeforeDamage = 0.0;
@@ -8298,6 +8300,7 @@ class CaelumPlayer : DoomPlayer
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            if(mixed!=null)mixed.ApplyBurn(self,healthBeforeDamage);
             TryInterruptPendingStaffCast(
                 actualHealthLost, adrenalineRatioBeforeDamage
             );
@@ -8415,7 +8418,8 @@ class CaelumPlayer : DoomPlayer
         Actor inflictor,
         Actor source,
         double incomingDamage,
-        Name mod
+        Name mod,
+        CaelumMixedMeleeDamage mixed=null
     )
     {
         LastShieldAbsorbedDamage = 0.0;
@@ -8458,10 +8462,13 @@ class CaelumPlayer : DoomPlayer
             0.0,
             1.0
         );
-        LastShieldAbsorbedDamage = incomingDamage * defenseRatio;
+        double physicalAbsorbed = incomingDamage * defenseRatio;
+        LastShieldAbsorbedDamage = physicalAbsorbed;
+        if(mixed!=null)LastShieldAbsorbedDamage+=mixed.BlockFire(self,
+            GetActiveBlockDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL),inflictor,source);
         LastShieldHealthDamage = Max(
             0,
-            int(incomingDamage - LastShieldAbsorbedDamage + 0.5)
+            int(incomingDamage-physicalAbsorbed+(mixed!=null ? mixed.FireAfterShield : 0)+0.5)
         );
         if (LastShieldAbsorbedDamage > 0.0)
         {
@@ -8481,7 +8488,7 @@ class CaelumPlayer : DoomPlayer
         }
         CalculateRealShieldDurabilityLoss();
         // Conservar la fracción hasta terminar armadura y Dureza.
-        return Max(0.0,incomingDamage-LastShieldAbsorbedDamage);
+        return Max(0.0,incomingDamage-physicalAbsorbed);
     }
 
     void CalculateRealShieldDurabilityLoss()
@@ -8532,7 +8539,7 @@ class CaelumPlayer : DoomPlayer
         double incomingDamage,
         bool criticalHit,
         int incomingSlot,
-        bool magical = false,Actor inflictor=null,Actor source=null
+        bool magical = false,Actor inflictor=null,Actor source=null,CaelumMixedMeleeDamage mixed=null
     )
     {
         LastLocalizedLucidityLoss = 0.0;
@@ -8545,7 +8552,7 @@ class CaelumPlayer : DoomPlayer
         LastArmorDurabilityChancePercent = 0.0;
         LastArmorDurabilityRollPercent = 0.0;
         LastArmorHitWasCritical = criticalHit && incomingDamage > 0.0;
-        if (incomingDamage <= 0.0) { return; }
+        if (incomingDamage <= 0.0 && (mixed==null || mixed.FireAfterShield<=0)) { return; }
 
         int slot = Clamp(
             incomingSlot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1
@@ -8567,7 +8574,17 @@ class CaelumPlayer : DoomPlayer
             0.0,
             LastArmorPreDefenseDamage - LastArmorAbsorbedDamage
         );
-        double postToughnessDamage=CaelumToughnessRules.Apply(self,LastArmorPostDefenseDamage,magical);
+        double fireIncoming=mixed!=null ? mixed.FireAfterShield*LastArmorVulnerabilityMultiplier : 0;
+        double fireAbsorbed=mixed!=null ? fireIncoming*Clamp(
+            GetArmorDefensePercent(slot,true,inflictor,source)/100.0,0.0,1.0) : 0;
+        double postToughnessDamage;
+        if(mixed!=null)
+        {
+            postToughnessDamage=mixed.Resolve(self,LastArmorPostDefenseDamage,fireIncoming-fireAbsorbed);
+            LastArmorPreDefenseDamage+=fireIncoming;LastArmorAbsorbedDamage+=fireAbsorbed;
+            LastArmorPostDefenseDamage=mixed.BeforeToughness;
+        }
+        else postToughnessDamage=CaelumToughnessRules.Apply(self,LastArmorPostDefenseDamage,magical);
         LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
         LastArmorHealthDamage = Max(
             0,
@@ -8575,8 +8592,9 @@ class CaelumPlayer : DoomPlayer
         );
 
         // El cuerpo absorbe su parte sin desgastar la pieza equipada.
-        double eligibleDamage = LastArmorPreDefenseDamage
+        double eligibleDamage = (postAnatomyDamage
             * CaelumArmorRules.EquippedDefense(ArmorModel,slot,magical,self,inflictor,source)/100.0
+            +fireIncoming*CaelumArmorRules.EquippedDefense(ArmorModel,slot,true,self,inflictor,source)/100.0)
             * Max(0.0, ArmorDurabilityDamageMultiplier);
         LastArmorDurabilityLoss = int(
             eligibleDamage

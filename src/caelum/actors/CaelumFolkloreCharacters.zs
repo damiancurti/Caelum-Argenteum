@@ -453,6 +453,19 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    override CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage)
+    {
+        let hit=new("CaelumMixedMeleeDamage");
+        hit.Attacker=self;hit.Victim=victim;hit.Critical=LastCombatAttackCriticalHit;
+        hit.FireDamage=CalculateActorOutgoingDamage(baseDamage
+            *CalculateActorType1Percent(CombatEffectiveIntelligence)/100.0,true);
+        hit.FireAfterShield=hit.FireDamage;
+        hit.DebuffPower=CaelumElementalStream.Power(self);
+        return hit;
+    }
+
+    override int GetApprovedPersonality(){return CaelumResidentData.MANDINGA_PERSONALITY;}
+    override int GetApprovedPersonalityRevision(){return CaelumResidentData.DEMON_PERSONALITY_REVISION;}
     // El daño accidental no convierte a otro mandinga del mismo bando en
     // enemigo. Se respetan lealtades opuestas y órdenes nativas de odio.
     bool IsAlliedMandinga(Actor other)
@@ -598,6 +611,8 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    override int GetApprovedPersonality(){return CaelumResidentData.ZUPAY_PERSONALITY;}
+    override int GetApprovedPersonalityRevision(){return CaelumResidentData.DEMON_PERSONALITY_REVISION;}
     override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
     bool SewerFleeing;
     Actor SewerEscapeTarget;

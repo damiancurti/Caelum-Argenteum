@@ -52,17 +52,20 @@ class CaelumCombatActor : Actor
     CaelumCharacterProfile CombatPersonality;
     int CombatPersonalityRevision;
     virtual int GetApprovedPersonality(){return -1;}
+    virtual int GetApprovedPersonalityRevision(){return CaelumResidentData.REVISION;}
+    transient CaelumMixedMeleeDamage PendingMixedMelee;
+    virtual CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage){return null;}
 
     void EnsureCombatPersonality()
     {
-        if(CombatPersonalityRevision>=CaelumResidentData.REVISION)return;
+        if(CombatPersonalityRevision>=GetApprovedPersonalityRevision())return;
         int packed=GetApprovedPersonality();
         if(packed>=0)
         {
             if(CombatPersonality==null)CombatPersonality=new("CaelumCharacterProfile");
             CaelumPersonalityRules.Unpack(CombatPersonality,packed);
         }
-        CombatPersonalityRevision=CaelumResidentData.REVISION;
+        CombatPersonalityRevision=GetApprovedPersonalityRevision();
         UpdateActorOffensiveStatistics();UpdateCombatHealthEffects();
     }
     virtual CaelumWeaponModel GetPossessedSidearm(){return null;}
@@ -1343,13 +1346,16 @@ class CaelumCombatActor : Actor
         LastCombatAttackCriticalHit = LastCombatAttackCriticalRollPercent
             < LastCombatAttackCriticalChancePercent;
         PendingCombatCriticalDelivery = LastCombatAttackCriticalHit;
-        LastCombatAttackCalculatedDamage = Max(
-            1,
-            int(resolvedBaseDamage
-                * (magicalAttack ? CaelumPersonalityRules.MagicPower(CombatPersonality) : CombatPhysicalPowerMultiplier)
-                * CombatHealthPerformanceMultiplier + 0.5)
-        );
+        LastCombatAttackCalculatedDamage = CalculateActorOutgoingDamage(resolvedBaseDamage,magicalAttack);
         return LastCombatAttackCalculatedDamage;
+    }
+
+    // Escalado compartido sin otra tirada para componentes del mismo impacto.
+    int CalculateActorOutgoingDamage(double baseDamage,bool magicalAttack)
+    {
+        return Max(1,int(Max(0.0,baseDamage)
+            *(magicalAttack ? CaelumPersonalityRules.MagicPower(CombatPersonality) : CombatPhysicalPowerMultiplier)
+            *CombatHealthPerformanceMultiplier+0.5));
     }
 
     bool ConsumePendingCombatCritical()
@@ -1494,10 +1500,12 @@ class CaelumCombatActor : Actor
 
         Actor meleeVictim = combatActor.Target;
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
+        combatActor.PendingMixedMelee=combatActor.PrepareMixedMelee(meleeVictim,authoredBaseDamage);
         combatActor.A_CustomMeleeAttack(
             calculatedDamage,
             "weapons/swordhit"
         );
+        combatActor.PendingMixedMelee=null;
         if (meleeVictim != null && meleeVictim.health < victimHealthBefore)
         {
             combatActor.ApplyActorAttackPush(
@@ -2979,6 +2987,8 @@ class CaelumCombatActor : Actor
         damage=CaelumActorProjectile.PrepareDefense(self,inflictor,damage,mod,flags);
         if(damage<=0){PendingLocalizedImpact=false;PendingLocalizedCriticalHit=false;return 0;}
         damage=CaelumThermalEffects.Incoming(self,inflictor,source,damage,mod);
+        let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
+        if(mixed!=null)mixed.PrepareFire(self);
         double shieldRetained=ResolveActorShieldDamage(inflictor,source,damage,mod,flags);
 
         if (flags & DMG_EXPLOSION)
@@ -3004,8 +3014,8 @@ class CaelumCombatActor : Actor
         int effectiveVulnerabilityBeforeDamage = hadLocalizedImpactForLucidity
             ? LastAnatomyVulnerabilityGrade
             : CaelumConstants.VULNERABILITY_SENSITIVE_POINT;
-        bool localizedCriticalHit = PendingLocalizedCriticalHit;
-        ResolveActorArmorImpact(shieldRetained, CaelumArmorRules.IsMagical(inflictor, mod),inflictor,source);
+        bool localizedCriticalHit = mixed!=null ? mixed.Critical : PendingLocalizedCriticalHit;
+        ResolveActorArmorImpact(shieldRetained, CaelumArmorRules.IsMagical(inflictor, mod),inflictor,source,mixed);
         PendingLocalizedCriticalHit = false;
         int retainedDamage = Max(
             0,
@@ -3024,6 +3034,7 @@ class CaelumCombatActor : Actor
         if (health < healthBeforeDamage)
         {
             int actualHealthLost = healthBeforeDamage - health;
+            if(mixed!=null)mixed.ApplyBurn(self,healthBeforeDamage);
             CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
             if (attackProjectile != null)
             {
@@ -3361,7 +3372,7 @@ class CaelumCombatActor : Actor
         }
     }
 
-    void ResolveActorArmorImpact(double incomingDamage, bool magical = false,Actor inflictor=null,Actor source=null)
+    void ResolveActorArmorImpact(double incomingDamage, bool magical = false,Actor inflictor=null,Actor source=null,CaelumMixedMeleeDamage mixed=null)
     {
         bool hadLocalizedImpact = PendingLocalizedImpact;
         LastCombatArmorIncomingDamage = Max(0, incomingDamage);
@@ -3391,10 +3402,12 @@ class CaelumCombatActor : Actor
         let preparedProjectile=CaelumActorProjectile(inflictor);
         bool deferredAnatomy=hadLocalizedImpact && preparedProjectile!=null
             && preparedProjectile.CaelumDefenseReceiver==self;
-        if (!hadLocalizedImpact || deferredAnatomy)
+        double sharedAnatomy=GetActorVulnerabilityMultiplier(LastAnatomyVulnerabilityGrade);
+        if(mixed!=null && mixed.Critical)sharedAnatomy*=sharedAnatomy+1;
+        if (!hadLocalizedImpact || deferredAnatomy || mixed!=null)
         {
-            double anatomy=GetActorVulnerabilityMultiplier(LastAnatomyVulnerabilityGrade);
-            if(deferredAnatomy && PendingLocalizedCriticalHit)anatomy*=anatomy+1;
+            double anatomy=mixed!=null ? sharedAnatomy : GetActorVulnerabilityMultiplier(LastAnatomyVulnerabilityGrade);
+            if(mixed==null && deferredAnatomy && PendingLocalizedCriticalHit)anatomy*=anatomy+1;
             LastCombatArmorIncomingDamage *= anatomy;
             LastCombatArmorPostDefenseDamage = LastCombatArmorIncomingDamage;
         }
@@ -3416,7 +3429,17 @@ class CaelumCombatActor : Actor
             LastCombatArmorIncomingDamage - LastCombatArmorAbsorbedDamage
         );
 
-        LastCombatPostToughnessDamage=CaelumToughnessRules.Apply(self,LastCombatArmorPostDefenseDamage,magical);
+        double physicalIncoming=LastCombatArmorIncomingDamage;
+        double fireIncoming=mixed!=null ? mixed.FireAfterShield*sharedAnatomy : 0;
+        double fireAbsorbed=mixed!=null ? fireIncoming*Clamp(
+            GetArmorDefensePercent(LastCombatArmorSlot,true,inflictor,source)/100.0,0.0,1.0) : 0;
+        if(mixed!=null)
+        {
+            LastCombatPostToughnessDamage=mixed.Resolve(self,LastCombatArmorPostDefenseDamage,fireIncoming-fireAbsorbed);
+            LastCombatArmorIncomingDamage+=fireIncoming;LastCombatArmorAbsorbedDamage+=fireAbsorbed;
+            LastCombatArmorPostDefenseDamage=mixed.BeforeToughness;
+        }
+        else LastCombatPostToughnessDamage=CaelumToughnessRules.Apply(self,LastCombatArmorPostDefenseDamage,magical);
         LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
             LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
 
@@ -3427,8 +3450,9 @@ class CaelumCombatActor : Actor
             return;
         }
 
-        double equippedAbsorbed = LastCombatArmorIncomingDamage
-            * CaelumArmorRules.EquippedDefense(CombatArmor,LastCombatArmorSlot,magical,self,inflictor,source)/100.0;
+        double equippedAbsorbed = physicalIncoming
+            * CaelumArmorRules.EquippedDefense(CombatArmor,LastCombatArmorSlot,magical,self,inflictor,source)/100.0
+            +fireIncoming*CaelumArmorRules.EquippedDefense(CombatArmor,LastCombatArmorSlot,true,self,inflictor,source)/100.0;
         LastCombatArmorDurabilityLoss = int(
             equippedAbsorbed
                 / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
@@ -3693,7 +3717,18 @@ class CaelumCombatActor : Actor
     { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); }
 
     override int DoSpecialDamage(Actor victim,int damage,Name mod)
-    { return CaelumRedemption.AllowsDamage(self,victim,mod)?Super.DoSpecialDamage(victim,damage,mod):0; }
+    {
+        if(!CaelumRedemption.AllowsDamage(self,victim,mod))return 0;
+        int retained=Super.DoSpecialDamage(victim,damage,mod);
+        // Los objetos sin perfil biológico conservan su receptor nativo único.
+        let mixed=CaelumMixedMeleeDamage.ForHit(victim,self,self,mod);
+        if(mixed!=null && CaelumPlayer(victim)==null && CaelumCombatActor(victim)==null)
+        {
+            mixed.PrepareFire(victim);
+            retained+=Max(0,int(mixed.FireDamage*CaelumSealResistance.ForEssence(victim,CaelumConstants.ESSENCE_FIRE)+0.5));
+        }
+        return retained;
+    }
 
     bool MazeDropReleased;
     int DemonSupplyRevision;
