@@ -10,9 +10,10 @@ radius. The author confirmed retaining recovery teleport. No new balance value
 or persistent schema is introduced. Native checks pass 334 current-runtime and
 14 legacy-control assertions, including movement, collision and save/hub identity.
 Validation/build and all 16,193 packaged source members pass verification.
-Evidence: validation_5427/RESULTS.md;
-CA307-01 is the outstanding author check. This focused branch stacks on #305's
-PR308; #304's corpse check remains separately pending.
+Evidence: validation_5427/RESULTS.md; delivery PR317, stacked on #305/PR308.
+CA307-01 (origin 5.4.27/#307) passed author review on 2026-10-16 without reported
+exceptions. The author confirmed all tests passed and authorized merge/closure
+of #304, #305 and #307. pending_test.txt is empty; release 5.4.27 is unchanged.
 
 ## 5.4.26 - Active seal registry (#305)
 
@@ -25,8 +26,8 @@ Repeated controls improve approach simulation from 18.0-18.3 to 28.7-29.3 tics/s
 and saved combat from 5.2-5.3 to 9.7 tics/s, retaining NPC thermal states and
 matching sampled populations/projectiles. These are not displayed FPS and combat
 still falls below 35 tics/s. See validation_5426 for methods, failed-attempt
-retention, prior-profile reuse and qualifications. Review remains pending;
-#304/PR306 and its CA304-01 author check stay separate.
+retention, prior-profile reuse and qualifications. The author accepted #305 on
+2026-10-16; delivery PR308 remains separate from #304/PR306.
 
 ## 5.4.25 - MAP06 performance diagnosis and corpse retention (#304)
 
@@ -41,9 +42,9 @@ Archive/save/hub/previous-version migration and 105-body Redemption native
 checks pass, including restarting thermal scheduling without simulating dead
 time. The study identifies repeated climate-seal lookups as a major cost and
 measures 8/105-tic targeting and the prototype soldier model separately. Results,
-raw evidence and qualifications are in validation_5425. CA304-01 remains pending;
-no author acceptance is inferred and no thermal/cadence optimization is silently
-integrated into production.
+raw evidence and qualifications are in validation_5425. CA304-01 (origin
+5.4.25/#304) passed author review on 2026-10-16 without reported exceptions;
+delivery PR306. Production physiology and target cadence remain unchanged.
 
 ## V5.4 accepted batch delivery - PR303
 

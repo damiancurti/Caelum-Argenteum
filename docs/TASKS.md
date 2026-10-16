@@ -2,28 +2,31 @@
 
 Documentation version: **5.4.27** — 2026-10-16.
 
-## 5.4.27 - Normal prisoner escort speed (#307)
+## 5.4.27 - Normal prisoner escort speed (#307, accepted)
 
 Use normal resolved movement speed while following; keep existing proximity and
 the author-confirmed recovery teleport. Branch fix/issue307-prisoner-follow-speed
 stacks on #305/PR308. Native movement, modifiers, collision and save compatibility
 pass with 334 current-runtime assertions and 14 legacy-control assertions;
-validation/build pass. Evidence: validation_5427/RESULTS.md. CA307-01 awaits author acceptance;
-CA304-01 remains outstanding. Commit/push and a linked PR are authorized.
+validation/build pass. Evidence: validation_5427/RESULTS.md; delivery PR317.
+CA307-01 passed author review on 2026-10-16 without reported exceptions. The
+author confirmed all tests passed and authorized merge/closure of #304, #305 and
+#307. No implementation or author-test work remains for these deliveries;
+pending_test.txt is empty. Release 5.4.27 and the tested runtime are unchanged.
 
-## 5.4.26 - Active seal lookup optimization (#305)
+## 5.4.26 - Active seal lookup optimization (#305, accepted)
 
 Implemented on feat/issue305-active-seal-registry, separately from #304/PR306.
 Native equivalence, existing seal rules, current/old saves and map/hub transitions
 pass. Repeated matched MAP06 controls retain NPC thermal simulation and improve
 approach throughput by approximately 60% and saved-combat throughput by 85%.
-Evidence and limits: validation_5426/RESULTS.md. Review/merge remains pending;
-CA304-01 is the outstanding author check. On 2026-10-16 the author requested
+Evidence and limits: validation_5426/RESULTS.md; delivery PR308. Accepted by the
+author on 2026-10-16. Earlier that day the author requested
 resumption, commit and push; delivery validation and 27 repeated native checks
 pass against the unchanged tested runtime. Remaining
 combat costs are follow-up profiling candidates, not changes included in #305.
 
-## 5.4.25 - Active performance issue #304
+## 5.4.25 - Performance issue #304 (accepted)
 
 Branch feat/issue304-siege-performance. Implement and validate the production
 MAP06 100-visible-corpse FIFO archive with saved resurrection and dropped-loot
@@ -34,15 +37,15 @@ keep implementation, profiling and art-control evidence separately scoped.
 Archive/save/hub/old-save/Redemption and thermal-clock native checks passed.
 Repeated approach controls, long natural battle and exact reserve/corpse controls
 are recorded in validation_5425. Final saved-combat/capture checks pass; CA304-01
-remains pending while the author is away. Commit/push and a linked PR are authorized;
-removal of thermal simulation or target-period changes are not requested. The
+passed author review on 2026-10-16 without reported exceptions. Delivery: PR306.
+Removal of thermal simulation or target-period changes is outside this scope. The
 active-seal lookup optimization is delivered separately by #305.
 
 ## Current V5.4 batch completion
 
 All 24 requested issues (#237-254, #259-261 and #282-284) are implemented and
 accepted within their documented scopes. No implementation or author-test work
-remains for that batch; CA304-01 belongs to the subsequent performance patch. Every focused issue PR is
+remains for that batch. Every focused issue PR is
 merged. PR303 delivers the assembled history to main and closes the completed
 issues, as authorized on 2026-10-15. The #283 full modular migration remains
 future roadmap work. The version sections below preserve earlier checkpoints;

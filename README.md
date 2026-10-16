@@ -15,7 +15,8 @@ temperature and elemental modifiers. They seek the existing 96-unit proximity;
 the author confirmed retaining recovery teleport beyond 1024 units. Native movement,
 collision and save/hub checks pass (334 current-runtime assertions, 14 legacy
 control assertions); project validation and packaging pass. Evidence:
-[validation_5427](assets/validation_5427/RESULTS.md). Author check CA307-01 is pending.
+[validation_5427](assets/validation_5427/RESULTS.md). CA307-01 passed author review
+on 2026-10-16 without reported exceptions. Delivery: [PR317](https://github.com/damiancurti/Caelum-Argenteum/pull/317).
 
 5.4.26 implements [#305](https://github.com/damiancurti/Caelum-Argenteum/issues/305):
 a transient registry of seal channels removes repeated whole-map searches while
@@ -24,9 +25,8 @@ and save/hub compatibility checks pass. Repeated MAP06 controls improve from
 18.0-18.3 to 28.7-29.3 simulation tics/s during approach, and from 5.2-5.3 to
 9.7 tics/s in saved combat. These are simulation rates, not displayed FPS; see
 [evidence and limits](assets/validation_5426/RESULTS.md). Delivered in
-[PR308](https://github.com/damiancurti/Caelum-Argenteum/pull/308); review is pending. The preceding
-#304 delivery is [draft PR306](https://github.com/damiancurti/Caelum-Argenteum/pull/306),
-with author check CA304-01 pending.
+[PR308](https://github.com/damiancurti/Caelum-Argenteum/pull/308), accepted by the
+author on 2026-10-16.
 
 5.4.25 implements [#304](https://github.com/damiancurti/Caelum-Argenteum/issues/304):
 a controlled siege performance study and a production MAP06 budget of 100 visible,
@@ -34,14 +34,19 @@ active corpses. Older bodies remain hidden and suspended for resurrection.
 Native archive, saved-game and resurrection checks pass. The controlled study
 identifies expensive climate-seal lookups and compares target refresh and soldier
 sprites/models. See [methods and results](assets/validation_5425/RESULTS.md).
-CA304-01 author acceptance is still pending; production thermal and target timing
-remain unchanged.
+CA304-01 passed author review on 2026-10-16 without reported exceptions.
+Delivery: [PR306](https://github.com/damiancurti/Caelum-Argenteum/pull/306).
+Production thermal rules and target timing remain unchanged.
+
+The author confirmed all tests passed and authorized merge and issue closure for
+#304, #305 and #307 on 2026-10-16. No author checks remain in
+[pending_test.txt](pending_test.txt). Release 5.4.27 and the tested runtime are unchanged.
 
 The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
 are implemented and accepted within their documented scopes. Their individual
 PRs are merged; [PR303](https://github.com/damiancurti/Caelum-Argenteum/pull/303)
 delivers the complete batch to main while preserving recent roadmap changes.
-That batch has no pending author checks; CA304-01 covers the new archive.
+That batch has no pending author checks.
 The #283 prototype remains the accepted boundary;
 full modular character migration belongs to the future roadmap.
 

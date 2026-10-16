@@ -6,21 +6,24 @@ Documentation version: **5.4.27** — 2026-10-16.
 health/thermal/elemental modifiers and existing proximity/teleport distances.
 The author confirmed retaining the recovery teleport. Native checks pass with
 334 current-runtime and 14 legacy-control assertions; validation/build pass.
-Evidence: validation_5427; CA307-01 remains pending. #305 is committed/pushed in PR308 (83f79cc1), stacked on
-#304/PR306; no merge or author acceptance is inferred.
+Evidence: validation_5427; delivery PR317. CA307-01 passed author review on
+2026-10-16 without reported exceptions.
 
 **5.4.26/#305 implemented:** author-requested active-seal registry preserves
 climate/thermal rules. Branch feat/issue305-active-seal-registry; validation_5426.
 Lifecycle/save/performance checks pass; resumed delivery verifies all 16,193
 runtime members and repeats 27 native equivalence checks. No test helper remains
-active. Review is pending. #304 is pushed in draft PR306 (41b40476): native
-archive and performance checks pass; CA304-01 awaits author acceptance. See
+active. Delivery PR308 (83f79cc1) is accepted. #304 is delivered in PR306
+(41b40476): native archive and performance checks pass; CA304-01 passed author
+review on 2026-10-16 without reported exceptions. See
 validation_5425/RESULTS.md for measured costs and limitations.
+All tests accepted; merge/closure of #304/#305/#307 authorized on 2026-10-16.
+pending_test.txt is empty; release 5.4.27 and runtime unchanged.
 **5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
 full modular migration remains V5.17. Earlier map/Journal
-batch #231-236/#255-258 is accepted/merged/closed. CA304-01 and CA307-01 are pending author checks.
+batch #231-236/#255-258 is accepted/merged/closed.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
 #225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02

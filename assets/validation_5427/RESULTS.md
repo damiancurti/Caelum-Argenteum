@@ -2,7 +2,8 @@
 
 Requested by the author on 2026-10-16, with explicit confirmation that the existing
 recovery teleport should remain. Branch: fix/issue307-prisoner-follow-speed,
-stacked on #305/PR308 (83f79cc1). CA307-01 remains an author check.
+stacked on #305/PR308 (83f79cc1). CA307-01 (origin 5.4.27 / #307) passed author
+review on 2026-10-16 without reported exceptions; PR317 merge/closure is authorized.
 
 ## Production boundary
 
@@ -106,4 +107,6 @@ runtime members against src/. Failed evidence is retained separately.
 
 The change has no new art or companion navigation algorithm. The existing native
 wall handling and distant recovery teleport remain. Ordinary MAP02 movement feel
-and campaign save confirmation are pending in CA307-01. CA304-01 is carried forward.
+and campaign save confirmation were accepted through CA307-01 on 2026-10-16.
+The author also confirmed CA304-01; both results are recorded in HISTORY and
+removed from the pending queue. This acceptance update changes no tested runtime.

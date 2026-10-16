@@ -18,7 +18,8 @@ and the resolved Speed, so health/thermal/elemental penalties remain authoritati
 Keep the cadence shared with its state declarations, without changing their order
 or durations. The independent attack-free native A_Chase control and ordinary
 escort each travel 100 units in 40 tics. Regression: walking.cfg plus motion.cfg,
-including low speeds, proximity and restarting. Author acceptance: CA307-01 pending.
+including low speeds, proximity and restarting. Author acceptance: CA307-01
+passed on 2026-10-16 without reported exceptions (origin 5.4.27 / #307).
 Limits: this conversion applies to these existing chase states, not arbitrary
 velocity-driven actors or a new global movement policy.
 
@@ -2933,7 +2934,8 @@ the author's crash report. Its GZDoom PDB resolves the fault to GC::SingleStep
 called by GC::FullGC/D_Cleanup. Earlier runs 01-08 preserve failures. Run09
 restores all 105 bodies, exits normally, and preserves FIFO after save/hub
 travel. Repeat redemption.cfg, save.cfg, load.cfg and travel.cfg to regress.
-Author acceptance: PENDING; engine assertions are not author acceptance.
+Author acceptance: CA304-01 passed on 2026-10-16 without reported exceptions
+(origin 5.4.25 / #304), separately from the native assertions.
 Limitations: dormant corpses retain memory; this is not actor destruction.
 
 ## Copyable entry template
