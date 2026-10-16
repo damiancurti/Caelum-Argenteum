@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue304-02/corpses-01.txt",
+    "artifact": "issue304-02-corpses-01.txt.gz",
+    "raw_sha256": "e5b92472b89a5bb215c6f98d72a2d1d1fb41882a0fe412a476e474f91d8c8967"
+  },
+  {
+    "source": "build/issue304-02/corpses-01-run.json",
+    "artifact": "issue304-02-corpses-01-run.json",
+    "raw_sha256": "d6bf5ab924fa9116757c4c56c6228b4f06611d3a62016e0f5eeeeea1ebcd0b3a"
+  },
+  {
+    "source": "build/issue304-02/corpses-01.ini",
+    "artifact": "issue304-02-corpses-01.ini",
+    "raw_sha256": "2dfa624cf64e9ebba71df486cddf23e549247cf6c520a27febead0d1291aedd2"
+  }
+]

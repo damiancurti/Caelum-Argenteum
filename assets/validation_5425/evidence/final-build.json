@@ -1,0 +1,9 @@
+{
+  "runtime_sha256": "ba234504f6cd502285e040f5276edb49ae5eea3b8bea786c62632451aa417e81",
+  "dev_pk3_sha256": "aae96dcffb2cdce6a8ab198b4583e050c3106fbb022c24ff3a0aa6de9c67c767",
+  "members": 16193,
+  "member_names_sizes_and_crc_match": true,
+  "static_validation_errors": 0,
+  "author_acceptance": "pending CA304-01",
+  "functional_new_pass_lines": 49
+}

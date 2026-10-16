@@ -47,7 +47,18 @@ class CaelumResurrection : Object play
         CaelumUtilityStaff.EndEmission(body);
         CaelumSleepRules.Wake(body);
         let thermal=CaelumThermalBody.Get(body);
-        if(thermal!=null){thermal.Exposure=0;thermal.DamageRemainder=0;thermal.Severity=0;}
+        if(thermal!=null)
+        {
+            thermal.Exposure=0;thermal.DamageRemainder=0;thermal.Severity=0;
+            // NPCStep no simula cuerpos muertos. Resucitar nunca debe cobrar
+            // de golpe ese intervalo, estuviera el cadaver archivado o visible.
+            if(npc!=null)
+            {
+                thermal.RuntimeReady=false;thermal.SourceMap="";
+                thermal.PendingActivityJoules=0;thermal.PendingFirearmJoules=0;
+                thermal.PropelledVelocity=(0,0);thermal.LocalMotionMps=0;
+            }
+        }
         if(user!=null)
         {
             user.ElementalStatus=old;
@@ -95,6 +106,7 @@ class CaelumResurrection : Object play
         int monsters=level.total_monsters;
         bool friendly=body.bFriendly;int friendPlayer=body.FriendPlayer;
         Actor master=body.master;
+        CaelumCorpseArchive.Recall(body);
         body.SetOrigin(point,false);
         if(user!=null){if(!user.player.Resurrect())return false;}
         else body.Revive();

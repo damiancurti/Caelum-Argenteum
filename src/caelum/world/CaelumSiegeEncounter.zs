@@ -319,8 +319,13 @@ class CaelumHostileMachine : Actor
 
 class CaelumSiegeEvents : EventHandler
 {
+    override void WorldTick()
+    {
+        let archive=CaelumCorpseArchive.Get(true);if(archive!=null)archive.Tick();
+    }
     override void WorldThingDied(WorldEvent e)
     {
         CaelumSiegeCombatant.ConfirmDeath(CaelumCombatActor(e.Thing));
+        CaelumCorpseArchive.Died(e.Thing);
     }
 }

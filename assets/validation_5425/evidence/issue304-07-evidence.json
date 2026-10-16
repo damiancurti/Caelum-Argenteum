@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue304-07/travel-01.txt",
+    "artifact": "issue304-07-travel-01.txt.gz",
+    "raw_sha256": "69ae68a2ad63b878d713c521c7e43e7b85ebad41c461678b30c064fd39972718"
+  },
+  {
+    "source": "build/issue304-07/travel-01-run.json",
+    "artifact": "issue304-07-travel-01-run.json",
+    "raw_sha256": "3d5dcea2dbd785395d5fa9807bd4952bbe7335be7d2ed7db856922f2a38f1ca3"
+  },
+  {
+    "source": "build/issue304-07/travel-01.ini",
+    "artifact": "issue304-07-travel-01.ini",
+    "raw_sha256": "5fbe38f010a9cfb30154e7d71d798091d1e2aa252ed4fd168c7df410dcdb2a45"
+  }
+]
