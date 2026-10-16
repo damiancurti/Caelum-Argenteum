@@ -1,0 +1,74 @@
+{
+  "issue": 283,
+  "source_sha256": "d0ad0ca193ed8c4d02ba4b87703844a57d17228d14569cd732e5db6e173cc77d",
+  "baseline_sha256": "9b3f4bf5e08a36db786a3df19495fc7fcfc367540b6227af892dc71f26443c61",
+  "unchanged_object_pose_checks": 12042,
+  "run_grip_samples": [
+    {
+      "frame": 0,
+      "grip_error_units": 8.740569486533813e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 1,
+      "grip_error_units": 7.62939453125e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 2,
+      "grip_error_units": 8.792442757885825e-06,
+      "hand_blade_degrees": 89.99998884409983
+    },
+    {
+      "frame": 3,
+      "grip_error_units": 1.2361031910720559e-05,
+      "hand_blade_degrees": 89.99998884409983
+    },
+    {
+      "frame": 4,
+      "grip_error_units": 8.792442757885825e-06,
+      "hand_blade_degrees": 89.99998884409983
+    },
+    {
+      "frame": 5,
+      "grip_error_units": 7.62939453125e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 6,
+      "grip_error_units": 8.740569486533813e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 7,
+      "grip_error_units": 8.092194914091653e-06,
+      "hand_blade_degrees": 90.00000933466734
+    },
+    {
+      "frame": 8,
+      "grip_error_units": 7.62939453125e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 9,
+      "grip_error_units": 1.4273290202232137e-05,
+      "hand_blade_degrees": 89.999995674289
+    },
+    {
+      "frame": 10,
+      "grip_error_units": 7.62939453125e-06,
+      "hand_blade_degrees": 90.00000250447816
+    },
+    {
+      "frame": 11,
+      "grip_error_units": 8.092194914091653e-06,
+      "hand_blade_degrees": 90.00000933466734
+    },
+    {
+      "frame": 12,
+      "grip_error_units": 8.740569486533813e-06,
+      "hand_blade_degrees": 90.00000250447816
+    }
+  ],
+  "scope": "All exported frames; excludes changed head/hair/eyes and Run sword geometry. Visual acceptance remains pending."
+}

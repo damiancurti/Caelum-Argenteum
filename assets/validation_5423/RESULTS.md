@@ -1,7 +1,7 @@
 # Issue #283 - Domingo 3D pilot evidence (5.4.23, draft)
 
 The default player is unchanged. This opt-in pilot uses the author-supplied
-original Domingo sheet, an editable Blender mesh/UV/26-bone rig with 15 actions,
+Domingo materials, a CC0 human head, an editable Blender mesh/UV/26-bone rig with 15 actions,
 and deterministic native MD3 registration. It is not author-approved or complete.
 The runtime appearance is fixed; the author now requires interchangeable parts
 for weapon, shield, armor, hair and face, demonstrated first on Domingo. This
@@ -50,6 +50,39 @@ selection), 186 joint samples, static validation and normal packaging. Seven
 export artifacts are deterministic. All 175 non-walk/run model frames remain
 byte-identical to the preceding candidate; no broader regression claim is made.
 
+## Human head, layered hair and running grip
+
+The author found walk/run better, requested a more perpendicular running sword,
+human head anatomy and improved hair, then selected polished 3D references over
+sprite-constrained anatomy. This candidate adapts the pinned CC0 MakeHuman hm08
+head and eye volumes; its source/license and modifications are recorded in
+DESIGN.json and runtime attribution. Snow (Blender Studio) and petemc's head scan
+are visual references only. New curved, tapered hair locks follow the scalp.
+The original texture RGB is unchanged; rear head UVs do not repeat the face.
+
+`check_head_grip.py` checks 12,042 unchanged object/pose combinations across all
+exported frames against candidate-08. It excludes changed head/hair/eyes and the
+Run sword. Thirteen evaluated Run samples verify a perpendicular blade/hand axis
+and maintained grip contact (less than 0.001 source unit error). The report is
+head-grip-geometry.json. This verifies geometry constraints, not visual acceptance.
+The larger model requires fresh native rendering evidence, separate from prior
+32/52/98-assertion revisions. Author review and modular/timed-action work remain
+open. The current fixture is `build/issue283-head-grip-02`.
+The prior head-grip-01 passed its functional checks, but its flat hair color
+lost detail in native lighting; the final candidate samples varied owned hair
+texture strands. No texture pixels or gameplay scripts changed.
+
+
+Final candidate: 62 assertions pass across eight native runs (actions, gait,
+camera, rest, preview, terminal death and two 64-proxy rendering cases). Static
+validation has zero errors; normal packaging matches all 16,188 source members.
+Seven export artifacts repeat byte-for-byte. `head-grip-evidence.json` records
+hashes, captures and scope; reproduce with `record_head_grip_evidence.py` after
+running the listed cases and static/export checks. The 64-proxy means are
+0.802678 ms for sprites and 1.162604 ms for this model, Vulkan 1280 x 720,
+uncapped after warm-up. This isolated rendering cost is higher; it is not a
+combat or 500-actor benchmark and does not justify global character conversion.
+
 ## Artifact and reproduction
 
 - Editable source: `assets/source/art/domingo_3d_pilot/domingo.blend`; its packed
@@ -57,8 +90,8 @@ byte-identical to the preceding candidate; no broader regression claim is made.
 - Pinned tool: Blender 4.5.3 LTS, official build 67807e1800cc. See DESIGN.json for
   the archive fingerprint and ASSETS for the export command. The committed blend is the art input;
   its initial authoring transcript is not a deterministic blend-file generator.
-- Export: one surface, 5,516 UV-split vertices, 7,232 triangles, 195 frames,
-  8,747,076 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
+- Current export: one surface, 10,629 UV-split vertices, 17,339 triangles, 195 frames,
+  16,885,544 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
 - Native format/normal decoding checked against GZDoom g4.14.2
   `src/common/models/models_md3.cpp` and `model_md3.h`.
 - Run the exporter twice into fresh directories; `validate_export.py <first>
@@ -72,7 +105,7 @@ byte-identical to the preceding candidate; no broader regression claim is made.
 - Manual: omit `--visual`, use `manual.cfg -Interactive` while the author is available.
   F6 compares sprite/model, F7 cycles native chair/bed/ground rest, F8 changes
   viewpoints. Q exits a rest panel before another fixture shortcut. CA283-01 is
-  only a prototype review; CA282-01 remains independently pending.
+  only a prototype review; CA282-01 is independently accepted.
 
 ## Evidence levels
 
@@ -86,7 +119,7 @@ pending. All 98 assertions passed across 14 final native runs. Exact fingerprint
 assertions, capture hashes and measured frame intervals are recorded by
 `record_evidence.py` in `evidence.json` for this intermediate prototype.
 
-`issue283-final-15` is the final isolated build. Its native capture files remain
+`issue283-final-15` is the preserved foundation build. Its native capture files remain
 under build and are not distributed with development IWAD textures. The normal
 PK3 is rebuilt from src and its member bytes are checked against the frozen build.
 
