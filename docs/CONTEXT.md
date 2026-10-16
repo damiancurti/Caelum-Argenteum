@@ -1,6 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+**5.4.27/#307:** ordinary prisoner following uses resolved normal Speed, with
+health/thermal/elemental modifiers and existing proximity/teleport distances.
+The author confirmed retaining the recovery teleport. Native checks pass with
+334 current-runtime and 14 legacy-control assertions; validation/build pass.
+Evidence: validation_5427; CA307-01 remains pending. #305 is committed/pushed in PR308 (83f79cc1), stacked on
+#304/PR306; no merge or author acceptance is inferred.
 
 **5.4.26/#305 implemented:** author-requested active-seal registry preserves
 climate/thermal rules. Branch feat/issue305-active-seal-registry; validation_5426.
@@ -13,7 +20,7 @@ validation_5425/RESULTS.md for measured costs and limitations.
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
 full modular migration remains V5.17. Earlier map/Journal
-batch #231-236/#255-258 is accepted/merged/closed. CA304-01 is the pending author check.
+batch #231-236/#255-258 is accepted/merged/closed. CA304-01 and CA307-01 are pending author checks.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
 #225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02

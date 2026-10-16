@@ -24,7 +24,7 @@ class CaelumPrisonerUnitario : CaelumCaella
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        PUNC ABCD 4 A_CaelumResidentChase;
+        PUNC ABCD CaelumConstants.PRISONER_WALK_STATE_TICS A_CaelumResidentChase;
         Loop;
     LucidityStun:
         PUNL A 1;
@@ -100,7 +100,7 @@ class CaelumPrisonerFederal : CaelumRonnie
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        PFEC ABCD 4 A_CaelumResidentChase;
+        PFEC ABCD CaelumConstants.PRISONER_WALK_STATE_TICS A_CaelumResidentChase;
         Loop;
     LucidityStun:
         PFEL A 1;
@@ -176,7 +176,7 @@ class CaelumPrisonerBestia : CaelumRulo
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        PBRN ABCD 4 A_CaelumResidentChase;
+        PBRN ABCD CaelumConstants.PRISONER_WALK_STATE_TICS A_CaelumResidentChase;
         Loop;
     LucidityStun:
         PBEL A 1;
@@ -252,7 +252,7 @@ class CaelumPrisonerTarot : CaelumArgento
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        PTRN ABCD 4 A_CaelumResidentChase;
+        PTRN ABCD CaelumConstants.PRISONER_WALK_STATE_TICS A_CaelumResidentChase;
         Loop;
     LucidityStun:
         PTEL A 1;

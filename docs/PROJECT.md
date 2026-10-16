@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+## 5.4.27 - Prisoner escort speed (#307)
+
+At the author's request, ordinary prisoner following retains each actor's normal
+resolved speed and shared movement penalties while seeking the existing nearby
+radius. The author confirmed retaining recovery teleport. No new balance value
+or persistent schema is introduced. Native checks pass 334 current-runtime and
+14 legacy-control assertions, including movement, collision and save/hub identity.
+Validation/build and all 16,193 packaged source members pass verification.
+Evidence: validation_5427/RESULTS.md;
+CA307-01 is the outstanding author check. This focused branch stacks on #305's
+PR308; #304's corpse check remains separately pending.
 
 ## 5.4.26 - Active seal registry (#305)
 

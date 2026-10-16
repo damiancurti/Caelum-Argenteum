@@ -1,0 +1,296 @@
+{
+  "runs": [
+    {
+      "directory": "issue307-01",
+      "label": "motion-01",
+      "passes": 64,
+      "failures": 5,
+      "exit_code": 0,
+      "runtime_sha256": "3E2C28FF27AE31D1A2760FBB80391FC9C9D16B5325B413FC0DE48BF7153D79C4",
+      "fixture_sha256": "C1CEADE0C4A1B728FE6FC35FDB14EF8D32693D5DD69839C26534273D92807124",
+      "done": false
+    },
+    {
+      "directory": "issue307-02",
+      "label": "motion-01",
+      "passes": 64,
+      "failures": 1,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "B0768A684D069B7CFD9E13636A63B8F64D9F055D72F23FB7398315792E5AEB87",
+      "done": false
+    },
+    {
+      "directory": "issue307-04",
+      "label": "contracts-01",
+      "passes": 13,
+      "failures": 1,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "2C54D17A3277ECAC927F60A5EECF22EF0CF88CDCC95E3D77FFCFF47FDF397FF7",
+      "done": false
+    },
+    {
+      "directory": "issue307-04",
+      "label": "walking-01",
+      "passes": 3,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "2C54D17A3277ECAC927F60A5EECF22EF0CF88CDCC95E3D77FFCFF47FDF397FF7",
+      "done": true
+    },
+    {
+      "directory": "issue307-05",
+      "label": "combined-01",
+      "passes": 8,
+      "failures": 1,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "2A47AE44806C4BAE14C79A773C3441C22B464A209247B280A3DABAD974F8B91C",
+      "done": false
+    },
+    {
+      "directory": "issue307-05",
+      "label": "contracts-01",
+      "passes": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "2A47AE44806C4BAE14C79A773C3441C22B464A209247B280A3DABAD974F8B91C",
+      "done": true
+    },
+    {
+      "directory": "issue307-06",
+      "label": "contracts-01",
+      "passes": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": true
+    },
+    {
+      "directory": "issue307-06",
+      "label": "load-01",
+      "passes": 26,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": true
+    },
+    {
+      "directory": "issue307-06",
+      "label": "repeat-01",
+      "passes": 26,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": true
+    },
+    {
+      "directory": "issue307-06",
+      "label": "seed-01",
+      "passes": 5,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": true
+    },
+    {
+      "directory": "issue307-06",
+      "label": "travel-01",
+      "passes": 26,
+      "failures": 1,
+      "exit_code": -1,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": false
+    },
+    {
+      "directory": "issue307-06",
+      "label": "walking-01",
+      "passes": 3,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D8ADF7F54BECF809F0AF0BDFB0C4C0EE0261CEE11CE0703081F8329685D72338",
+      "done": true
+    },
+    {
+      "directory": "issue307-07",
+      "label": "contracts-01",
+      "passes": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D63CD241134101C81501DE39B64D176B548E3283953B8351EEC7F6B8926F6811",
+      "done": true
+    },
+    {
+      "directory": "issue307-07",
+      "label": "motion-01",
+      "passes": 63,
+      "failures": 2,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D63CD241134101C81501DE39B64D176B548E3283953B8351EEC7F6B8926F6811",
+      "done": false
+    },
+    {
+      "directory": "issue307-07",
+      "label": "walking-01",
+      "passes": 3,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "D63CD241134101C81501DE39B64D176B548E3283953B8351EEC7F6B8926F6811",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "combined-01",
+      "passes": 9,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "contracts-01",
+      "passes": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "load-01",
+      "passes": 30,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "migration-01",
+      "passes": 30,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "migration-hub-01",
+      "passes": 59,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "migration-repeat-01",
+      "passes": 30,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "motion-01",
+      "passes": 65,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "repeat-01",
+      "passes": 30,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "seed-01",
+      "passes": 5,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "travel-01",
+      "passes": 59,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08",
+      "label": "walking-01",
+      "passes": 3,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "EAE4716035B849BDF22183D53D1CF695974B99AC6654F5A8CBD392E23AE8E894",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08-legacy",
+      "label": "baseline-01",
+      "passes": 9,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "7C27A0F1D81ED0B146BD04B3D759F9028D76E3AB5AD9F4660D51C5D592255A85",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    },
+    {
+      "directory": "issue307-08-legacy",
+      "label": "seed-01",
+      "passes": 5,
+      "failures": 0,
+      "exit_code": 0,
+      "runtime_sha256": "7C27A0F1D81ED0B146BD04B3D759F9028D76E3AB5AD9F4660D51C5D592255A85",
+      "fixture_sha256": "EB242FC26F6D077997A555D73775685F363619BB2CB8E2C90EE09C844B9BE5AC",
+      "done": true
+    }
+  ],
+  "identical_runtime_members": 16193,
+  "changed_runtime_members": [
+    "caelum/actors/CaelumAnchoredResident.zs",
+    "caelum/actors/CaelumPrisoners.zs",
+    "caelum/core/CaelumConstants.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "development_package_matches_tested_runtime": true,
+  "fixture_matches_final_probe_source": true,
+  "final_runtime_sha256": "eae4716035b849bdf22183d53d1cf695974b99ac6654f5a8cbd392e23ae8e894",
+  "final_passes": 334
+}

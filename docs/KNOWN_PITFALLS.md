@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-109 - Convert native chase steps before assigning continuous velocity
+
+Status/evidence: ENGINE-VERIFIED, #307 / 5.4.27, 2026-10-16. GZDoom 4.14.2,
+Windows Vulkan; validation_5427/RESULTS.md. Baseline 83f79cc1 with the focused
+escort change; production package fingerprint is recorded with the native runs.
+
+Actor.Speed is the distance of a native chase step, not automatically a per-tic
+velocity. The four prisoner See states call chase every four tics. Assigning
+that full Speed to Vel each tic still quadruples effective walking even after
+removing an explicit run multiplier. Convert using the existing state cadence
+and the resolved Speed, so health/thermal/elemental penalties remain authoritative.
+Keep the cadence shared with its state declarations, without changing their order
+or durations. The independent attack-free native A_Chase control and ordinary
+escort each travel 100 units in 40 tics. Regression: walking.cfg plus motion.cfg,
+including low speeds, proximity and restarting. Author acceptance: CA307-01 pending.
+Limits: this conversion applies to these existing chase states, not arbitrary
+velocity-driven actors or a new global movement policy.
+
 ## CA-KP-108 - Register queryable channels before deferred PostBeginPlay
 
 Status/evidence: ENGINE-VERIFIED, #305 / 5.4.26, 2026-10-16. GZDoom 4.14.2,

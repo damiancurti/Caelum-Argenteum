@@ -8,3 +8,16 @@ no campaign save is needed. Native automatic checks passed; author confirmation 
 4. Confirm that the game remains usable and closes normally, without a native crash.
 The fixture bypasses class selection/cost for this focused archive test. Previous class
 animation/ability acceptance is not reopened. Report any mismatch or crash.
+
+CA307-01 | Origin: 5.4.27 / issue #307 | Normal prisoner following speed
+Prerequisites: rebuild the normal development package; use a MAP02 campaign with
+one or more freed prisoners, or release one through its usual cell conversation.
+1. Walk away from a freed prisoner, then stop. Expect normal walking speed without
+   a catch-up boost; it should stop near you rather than pressing into your body.
+2. Move away again. Expect following to resume at the same normal speed. A wounded
+   or slowed prisoner should retain its ordinary movement penalty.
+3. Leave it far behind, beyond the existing 1024-unit threshold. Expect the
+   existing recovery teleport to nearby free space, without a speed burst.
+4. Save and load with the prisoner following. Expect the same prisoner, rescue
+   state and inventory, with normal-speed following and no duplicate companion.
+Confirm movement feels appropriate; report any stall, excess speed or load failure.

@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+## 5.4.27 - Normal prisoner escort speed (#307)
+
+Use normal resolved movement speed while following; keep existing proximity and
+the author-confirmed recovery teleport. Branch fix/issue307-prisoner-follow-speed
+stacks on #305/PR308. Native movement, modifiers, collision and save compatibility
+pass with 334 current-runtime assertions and 14 legacy-control assertions;
+validation/build pass. Evidence: validation_5427/RESULTS.md. CA307-01 awaits author acceptance;
+CA304-01 remains outstanding. Commit/push and a linked PR are authorized.
 
 ## 5.4.26 - Active seal lookup optimization (#305)
 

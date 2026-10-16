@@ -1,0 +1,92 @@
+[
+  {
+    "source": "build/issue307-06/contracts-01.txt",
+    "artifact": "issue307-06-contracts-01.txt.gz",
+    "raw_sha256": "5c22b8704e612ab0407b9b1bdaf899df24ecc91fc7bd275fd964ac30689aa7dc"
+  },
+  {
+    "source": "build/issue307-06/contracts-01-run.json",
+    "artifact": "issue307-06-contracts-01-run.json",
+    "raw_sha256": "ce498ded191fd771584e7781f398352f528d26c1cf3da4d80487be76f907724e"
+  },
+  {
+    "source": "build/issue307-06/contracts-01.ini",
+    "artifact": "issue307-06-contracts-01.ini",
+    "raw_sha256": "df8b1c8643b8385361b5ae91745612f796718ddcdc7c5d0bb7592cdd568fde5f"
+  },
+  {
+    "source": "build/issue307-06/load-01.txt",
+    "artifact": "issue307-06-load-01.txt.gz",
+    "raw_sha256": "e076db0e6fb1d650880ba0e255acef0d7fc19869374838c4908e47ebd835b168"
+  },
+  {
+    "source": "build/issue307-06/load-01-run.json",
+    "artifact": "issue307-06-load-01-run.json",
+    "raw_sha256": "b53dd9742dfc8b0149e32447ae9b6aabe781065c021cc246ae5c160066d947b3"
+  },
+  {
+    "source": "build/issue307-06/load-01.ini",
+    "artifact": "issue307-06-load-01.ini",
+    "raw_sha256": "ff478db4ea894aba82853814137a2371180972e3a851427eb835e61cb5b4921d"
+  },
+  {
+    "source": "build/issue307-06/repeat-01.txt",
+    "artifact": "issue307-06-repeat-01.txt.gz",
+    "raw_sha256": "466240d0a55f4125e08fd2866779e0ebea271e0cc9ce8551713b1e71c482bab4"
+  },
+  {
+    "source": "build/issue307-06/repeat-01-run.json",
+    "artifact": "issue307-06-repeat-01-run.json",
+    "raw_sha256": "2faaebfcc03f7c40626c68b0a5a14ca2f67c62c6a760fec141dcea5816017b52"
+  },
+  {
+    "source": "build/issue307-06/repeat-01.ini",
+    "artifact": "issue307-06-repeat-01.ini",
+    "raw_sha256": "67daed8bafcb980b3882a964caab5913056f67e0f871e51029ca35bc7b6a32c1"
+  },
+  {
+    "source": "build/issue307-06/seed-01.txt",
+    "artifact": "issue307-06-seed-01.txt.gz",
+    "raw_sha256": "6b2455baee0fff182bdb227d9d577da4f123c5196f5b4e9ee703d751a2f1dae2"
+  },
+  {
+    "source": "build/issue307-06/seed-01-run.json",
+    "artifact": "issue307-06-seed-01-run.json",
+    "raw_sha256": "f86f1a0d779728927b4a9f104c31e32ab5181d30d95569b5a8b5c2a49df19299"
+  },
+  {
+    "source": "build/issue307-06/seed-01.ini",
+    "artifact": "issue307-06-seed-01.ini",
+    "raw_sha256": "49e47c75caa280dcd93004dc8944882a4524ed4c5a1b364229f3369918629101"
+  },
+  {
+    "source": "build/issue307-06/travel-01.txt",
+    "artifact": "issue307-06-travel-01.txt.gz",
+    "raw_sha256": "125494ff6a81f1da3516652e83418375a047feac24ab6fc22fbaa8b1a79c036e"
+  },
+  {
+    "source": "build/issue307-06/travel-01-run.json",
+    "artifact": "issue307-06-travel-01-run.json",
+    "raw_sha256": "a7032c6a58efcf6fe68104beecbf41cc99a94bd0b27d9f48c8299d58a567b92b"
+  },
+  {
+    "source": "build/issue307-06/travel-01.ini",
+    "artifact": "issue307-06-travel-01.ini",
+    "raw_sha256": "9b4a2227692eb7d84be3023e117ede92a4c4140759d39e6d58becc3abdcbefca"
+  },
+  {
+    "source": "build/issue307-06/walking-01.txt",
+    "artifact": "issue307-06-walking-01.txt.gz",
+    "raw_sha256": "07505f2827560ca3a2f2557863b429dd8c861b71c9fcf238fddc67a120b333d4"
+  },
+  {
+    "source": "build/issue307-06/walking-01-run.json",
+    "artifact": "issue307-06-walking-01-run.json",
+    "raw_sha256": "ceb84d6d290832fb296f3f853011ab39738d4ffd933f669c45c61d1c69238c8f"
+  },
+  {
+    "source": "build/issue307-06/walking-01.ini",
+    "artifact": "issue307-06-walking-01.ini",
+    "raw_sha256": "63919632b68cea2d46dabf4fec484fc64d3c6240e7b0990ca49e7655ab30efa0"
+  }
+]

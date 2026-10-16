@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+## 5.4.27 - Normal-speed prisoner following (#307)
+
+On 2026-10-16 the author requested normal-speed prisoner following and explicitly
+confirmed retaining recovery teleport. Issue #307 replaces the ordinary escort's
+base-speed run multiplier with shared resolved Speed divided by the existing
+four-tic walking cadence, retaining health, thermal and elemental penalties and
+the existing 96/1024-unit distances. Merely removing the run multiplier would
+still apply a four-tic native walking step every tic. This supersedes
+the ordinary-follow choice in 4.36.8's third correction; its historical record is
+preserved. No save schema changes. Native verification passes 334 assertions in
+11 final-runtime runs plus 14 in two legacy controls. Native A_Chase and following
+each cover 100 units in 40 tics; the old escort reaches 20 units/tic versus the
+normal 2.5. Save/reload/migration/hub identity and inventory checks pass. Static
+validation, normal packaging and 16,193 runtime member comparisons pass. Earlier
+diagnostic fixture failures are preserved and explained, not counted as passes.
+Validation: assets/validation_5427/RESULTS.md.
+CA307-01 awaits author acceptance. The preceding #305 was committed/pushed as
+83f79cc1 in PR308; #304 remains in PR306 with CA304-01 pending.
 
 ## 5.4.26 - Active climate-seal registry (#305)
 

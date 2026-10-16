@@ -245,3 +245,7 @@
 # Preserve #305 native evidence, fixture and configuration fingerprints.
 /assets/validation_5426/** -text whitespace=cr-at-eol
 /assets/validation_5426/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #307 native evidence and deterministic fixture fingerprints.
+/assets/validation_5427/** -text whitespace=cr-at-eol
+/assets/validation_5427/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue307-08-legacy/baseline-01.txt",
+    "artifact": "issue307-08-legacy-baseline-01.txt.gz",
+    "raw_sha256": "73fd73138cd2217e28ab530e75dd960391632daed9155b6552b185cc52b9f228"
+  },
+  {
+    "source": "build/issue307-08-legacy/baseline-01-run.json",
+    "artifact": "issue307-08-legacy-baseline-01-run.json",
+    "raw_sha256": "8360a029c69c73edf0f93fe457005d4b752ae9c121590d6c818b7b9d12f83768"
+  },
+  {
+    "source": "build/issue307-08-legacy/baseline-01.ini",
+    "artifact": "issue307-08-legacy-baseline-01.ini",
+    "raw_sha256": "fecd5cd8b29acfa85f5e525e69f5b1fe0ce92e53bd2b592fc8bc0a9a0ab25e03"
+  },
+  {
+    "source": "build/issue307-08-legacy/seed-01.txt",
+    "artifact": "issue307-08-legacy-seed-01.txt.gz",
+    "raw_sha256": "1ded6172dcef8d15bab3eced4455371cb205c4c9f3a3f32d35ed196ee0917fbe"
+  },
+  {
+    "source": "build/issue307-08-legacy/seed-01-run.json",
+    "artifact": "issue307-08-legacy-seed-01-run.json",
+    "raw_sha256": "e8d37e2e8bc3ad00859f5b0cfda652fd39a2e4f303ffb28c43609c0fb4840953"
+  },
+  {
+    "source": "build/issue307-08-legacy/seed-01.ini",
+    "artifact": "issue307-08-legacy-seed-01.ini",
+    "raw_sha256": "be6b80f141db702326caa6e1572882f0ba93b6a59a89f1899b4f3a53c8cd83bb"
+  }
+]

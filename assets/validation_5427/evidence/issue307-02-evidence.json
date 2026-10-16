@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue307-02/motion-01.txt",
+    "artifact": "issue307-02-motion-01.txt.gz",
+    "raw_sha256": "57603078efcaed36898b2e1a2c22d0043b291db338a41c2c961c249bb9aedb93"
+  },
+  {
+    "source": "build/issue307-02/motion-01-run.json",
+    "artifact": "issue307-02-motion-01-run.json",
+    "raw_sha256": "aa953c07f2fc559ec2cadfdf68d97b36a35c20ce0b0bb54f7f57d222d162a6d3"
+  },
+  {
+    "source": "build/issue307-02/motion-01.ini",
+    "artifact": "issue307-02-motion-01.ini",
+    "raw_sha256": "572f0428d47fecee273902ead3646981df29020755e126814086861224ee6f4b"
+  }
+]

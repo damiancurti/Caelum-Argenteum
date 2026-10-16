@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.26.** Obtain and update the complete repository, validate
+**Current release: 5.4.27.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.27 implements [#307](https://github.com/damiancurti/Caelum-Argenteum/issues/307):
+freed prisoners follow at their normal resolved speed, including health,
+temperature and elemental modifiers. They seek the existing 96-unit proximity;
+the author confirmed retaining recovery teleport beyond 1024 units. Native movement,
+collision and save/hub checks pass (334 current-runtime assertions, 14 legacy
+control assertions); project validation and packaging pass. Evidence:
+[validation_5427](assets/validation_5427/RESULTS.md). Author check CA307-01 is pending.
 
 5.4.26 implements [#305](https://github.com/damiancurti/Caelum-Argenteum/issues/305):
 a transient registry of seal channels removes repeated whole-map searches while
@@ -15,7 +23,8 @@ preserving NPC thermal simulation and every local climate rule. Native lifecycle
 and save/hub compatibility checks pass. Repeated MAP06 controls improve from
 18.0-18.3 to 28.7-29.3 simulation tics/s during approach, and from 5.2-5.3 to
 9.7 tics/s in saved combat. These are simulation rates, not displayed FPS; see
-[evidence and limits](assets/validation_5426/RESULTS.md). Review is pending. The preceding
+[evidence and limits](assets/validation_5426/RESULTS.md). Delivered in
+[PR308](https://github.com/damiancurti/Caelum-Argenteum/pull/308); review is pending. The preceding
 #304 delivery is [draft PR306](https://github.com/damiancurti/Caelum-Argenteum/pull/306),
 with author check CA304-01 pending.
 

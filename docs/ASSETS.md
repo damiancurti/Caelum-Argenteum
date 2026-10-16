@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
 
 ## 5.4.25 - Soldier representation benchmark (#304)
 
