@@ -240,3 +240,4 @@
 
 # Preserve #304 native evidence, fixture and configuration fingerprints.
 /assets/validation_5425/** -text whitespace=cr-at-eol
+/assets/validation_5425/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol

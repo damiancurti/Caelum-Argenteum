@@ -2870,6 +2870,35 @@ These isolated engine checks do not constitute author gameplay acceptance.
 9. Keep entries concise (normally 150–300 words excluding a necessary small reproducer). Link to canonical formulas rather than copying large tables.
 10. Review only the touched entries and connected rules during a patch. Do not add a full historical audit or additional engine run solely to expand this register.
 
+## CA-KP-016 - Dormant map actors must not use STAT_STATIC
+
+Status/evidence: RESOLVED-VERIFIED (native archive, hub, resurrection and exit).
+First recorded / last checked: 2026-10-16 / 2026-10-16.
+Issue / PR: [#304](https://github.com/damiancurti/Caelum-Argenteum/issues/304).
+Affected baseline: 351b949a plus the initial 5.4.25 development archive.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, isolated MAP06/MAP98 hub.
+Scope: CaelumCorpseArchive, CaelumRedemption.Pulse, CaelumResurrection.Restore.
+
+STAT_STATIC is not merely a non-ticking queue: native DestroyAllThinkers skips
+it, and hub loading skips its saved entries to avoid duplicating global actors.
+Using it for map corpses preserved bodies but lost their references to ordinary
+map actors on a round trip. Use a map-local non-ticking statistic below
+STAT_FIRST_THINKING instead; the archive uses STAT_FIRST_THINKING - 1.
+Snapshot eligible bodies before resurrection moves bodies and inventories
+between native thinker lists. Do not allocate an archive in death callbacks:
+Redemption cleanup can emit deaths while the engine is destroying the map.
+Create the holder only during WorldTick; death callbacks only look it up.
+Restart the local thermal clock when resurrecting an NPC, archived or visible;
+otherwise the first NPCStep integrates the dead interval as if it had been alive.
+
+Evidence: assets/validation_5425 fixtures/runners; local issue304-05 contains
+the author's crash report. Its GZDoom PDB resolves the fault to GC::SingleStep
+called by GC::FullGC/D_Cleanup. Earlier runs 01-08 preserve failures. Run09
+restores all 105 bodies, exits normally, and preserves FIFO after save/hub
+travel. Repeat redemption.cfg, save.cfg, load.cfg and travel.cfg to regress.
+Author acceptance: PENDING; engine assertions are not author acceptance.
+Limitations: dormant corpses retain memory; this is not actor destruction.
+
 ## Copyable entry template
 
 ```text

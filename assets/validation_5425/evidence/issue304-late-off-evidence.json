@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue304-late-off/probe-03.txt",
+    "artifact": "issue304-late-off-probe-03.txt.gz",
+    "raw_sha256": "cdc7b3f1dd7c59ce07185ebcabc6eeee77be2215c02a23024657b9fd38062227"
+  },
+  {
+    "source": "build/issue304-late-off/probe-03-run.json",
+    "artifact": "issue304-late-off-probe-03-run.json",
+    "raw_sha256": "1374444115a9ce7bd57f8d35c8f230efe57e37cd353c030cff989807db696bad"
+  },
+  {
+    "source": "build/issue304-late-off/probe-03.ini",
+    "artifact": "issue304-late-off-probe-03.ini",
+    "raw_sha256": "2619fc168dd658a1ac2484ee6863b30ddf1f5a56ad4ae153a7b746adfd1c26f9"
+  }
+]

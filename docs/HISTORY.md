@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
+
+## 5.4.25 - Siege profiling and corpse suspension (#304)
+
+On 2026-10-15 the author requested implementation, live tests, commit and push
+for #304. The confirmed population is 6,660 Mandingas total with a ceiling of
+1,000 living. The author also requested a 3-second targeting explanation/test
+and an isolated soldier model/sprite comparison, approving the existing Domingo
+prototype as the model substitute. The corpse request was clarified from 1,000
+to 100 visible/active bodies, with all older bodies hidden without simulation
+but still available to Redemption. This applies to normal MAP06 and preserves
+already dropped loot. On 2026-10-16, native tests confirmed the archive,
+no dormant body/inventory ticking, saved state, hub travel, 5.4.24 migration,
+other-map isolation, current dead-player retention and restoration of 105 real
+Mandingas (100 visible plus five archived). The author's crash report matched
+a diagnostic Redemption run; snapshot enumeration, map-local dormant lists
+and allocation-free death lookup fixed the native teardown failure. CA-KP-016
+records the engine evidence. Resurrected NPCs also restart their thermal clock
+instead of simulating the dead interval; archived and visible bodies pass the
+same focused native check. CA304-01 author acceptance remains pending.
+
+Repeated approach controls measure 17.3-17.4 simulation tics/s ordinarily and
+27.7-29.5 with NPC thermal disabled. The 105-tic target refresh gives 17.6-19.2;
+the zero-channel climate-query control retains physiology and reaches 28.2-28.5.
+Deep samples attribute about 20.3 ms/tic to climate-seal lookup versus 0.22 to
+numeric heat integration. Natural long windows include actual projectiles,
+deaths and reinforcements; the common late interval measures 4.83 versus 25.00
+tics/s, with equal sampled population/projectile counts and no recorded thermal
+deaths. These are not displayed FPS. Natural runs reach 1200 deployed, not the
+entire reserve. A separate forced-casualty test verifies exactly 6660, the final
+60-member group, pending placement, the living cap and 100 active/5600 dormant
+corpses. The fixed 600-soldier render control costs roughly 1.8 times the median
+callback interval with the detailed prototype MD3 compared with sprites.
+Methods, raw evidence, failed controls and limitations remain in validation_5425;
+no permanent thermal removal, target-period change or soldier migration is made.
 
 ## 5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, accepted)
 

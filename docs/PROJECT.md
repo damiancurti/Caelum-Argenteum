@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
+
+## 5.4.25 - MAP06 performance diagnosis and corpse retention (#304)
+
+The author requests 6,660 Mandingas in the finite diagnostic encounter budget,
+at most 1,000 living simultaneously, NPC thermal on/off comparison, a 3-second
+perception experiment, and soldier sprites versus the accepted Domingo 3D
+prototype as a cosmetic substitute. Ordinary actor statistics and AI remain.
+The production request is separate: keep only 100 recent corpses visible/active
+in MAP06; retain older bodies hidden without simulation so Redemption can still
+recover them, preserving dropped loot. This is not full memory reclamation.
+Archive/save/hub/previous-version migration and 105-body Redemption native
+checks pass, including restarting thermal scheduling without simulating dead
+time. The study identifies repeated climate-seal lookups as a major cost and
+measures 8/105-tic targeting and the prototype soldier model separately. Results,
+raw evidence and qualifications are in validation_5425. CA304-01 remains pending;
+no author acceptance is inferred and no thermal/cadence optimization is silently
+integrated into production.
 
 ## V5.4 accepted batch delivery - PR303
 

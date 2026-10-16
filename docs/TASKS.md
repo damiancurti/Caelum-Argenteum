@@ -1,12 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
+
+## 5.4.25 - Active performance issue #304
+
+Branch feat/issue304-siege-performance. Implement and validate the production
+MAP06 100-visible-corpse FIFO archive with saved resurrection and dropped-loot
+retention. Run isolated 6,660-total/1,000-live reinforcement boundary checks,
+repeated NPC thermal and 3-second targeting comparisons, and soldier sprite/3D
+controls using the accepted prototype. Reuse prior profiling infrastructure;
+keep implementation, profiling and art-control evidence separately scoped.
+Archive/save/hub/old-save/Redemption and thermal-clock native checks passed.
+Repeated approach controls, long natural battle and exact reserve/corpse controls
+are recorded in validation_5425. Final saved-combat/capture checks pass; CA304-01
+remains pending while the author is away. Commit/push and a linked PR are authorized;
+permanent thermal/target-period changes are not requested. The leading follow-up
+is a correctly invalidated active-seal registry, not removal of NPC physiology.
 
 ## Current V5.4 batch completion
 
 All 24 requested issues (#237-254, #259-261 and #282-284) are implemented and
 accepted within their documented scopes. No implementation or author-test work
-remains for this batch; pending_test.txt is empty. Every focused issue PR is
+remains for that batch; CA304-01 belongs to the subsequent performance patch. Every focused issue PR is
 merged. PR303 delivers the assembled history to main and closes the completed
 issues, as authorized on 2026-10-15. The #283 full modular migration remains
 future roadmap work. The version sections below preserve earlier checkpoints;

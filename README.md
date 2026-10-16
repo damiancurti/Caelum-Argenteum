@@ -6,14 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.24.** Obtain and update the complete repository, validate
+**Current release: 5.4.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.25 implements [#304](https://github.com/damiancurti/Caelum-Argenteum/issues/304):
+a controlled siege performance study and a production MAP06 budget of 100 visible,
+active corpses. Older bodies remain hidden and suspended for resurrection.
+Native archive, saved-game and resurrection checks pass. The controlled study
+identifies expensive climate-seal lookups and compares target refresh and soldier
+sprites/models. See [methods and results](assets/validation_5425/RESULTS.md).
+CA304-01 author acceptance is still pending; production thermal and target timing
+remain unchanged.
 
 The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
 are implemented and accepted within their documented scopes. Their individual
 PRs are merged; [PR303](https://github.com/damiancurti/Caelum-Argenteum/pull/303)
 delivers the complete batch to main while preserving recent roadmap changes.
-No author tests remain pending. The #283 prototype remains the accepted boundary;
+That batch has no pending author checks; CA304-01 covers the new archive.
+The #283 prototype remains the accepted boundary;
 full modular character migration belongs to the future roadmap.
 
 5.4.24 implements [#284](https://github.com/damiancurti/Caelum-Argenteum/issues/284):

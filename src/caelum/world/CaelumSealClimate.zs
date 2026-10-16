@@ -55,8 +55,9 @@ class CaelumSealClimate : Object play
     {
         double heat=0,humidity=0,wind=0,direction=baseDirection;
         bool calm=baseWind<=0;
-        // El iterador tipado recorre solamente sellos, nunca todos los cuerpos
-        // por cada muestra térmica. La meteorología regional no se modifica.
+        // El tipo filtra los resultados, pero el iterador nativo recorre las
+        // listas de Thinkers. #304 mide este coste aun sin sellos activos.
+        // La meteorologia regional no se modifica.
         let it=ThinkerIterator.Create("CaelumChannelEffect");CaelumChannelEffect effect;
         while((effect=CaelumChannelEffect(it.Next()))!=null)
         {

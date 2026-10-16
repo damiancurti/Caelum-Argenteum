@@ -1,0 +1,47 @@
+[
+  {
+    "source": "build/issue304-late-on/probe-01.txt",
+    "artifact": "issue304-late-on-probe-01.txt.gz",
+    "raw_sha256": "250b2e2536e9aa4c00bb5b8b27301a9f1f9dcc9970b1734e4bae89d0cc324193"
+  },
+  {
+    "source": "build/issue304-late-on/probe-01-run.json",
+    "artifact": "issue304-late-on-probe-01-run.json",
+    "raw_sha256": "04382a5f523943b04ac62b438cdd0e853be70abc2925bf8fec39520d8a964f95"
+  },
+  {
+    "source": "build/issue304-late-on/probe-01.ini",
+    "artifact": "issue304-late-on-probe-01.ini",
+    "raw_sha256": "b009f459f677bb65a6859e6d2558c951a457150280d14b6d807b48c95377741a"
+  },
+  {
+    "source": "build/issue304-late-on/probe-02.txt",
+    "artifact": "issue304-late-on-probe-02.txt.gz",
+    "raw_sha256": "92664b4a977bc47b974445ed7f113b7c9bcbf1b5c17451ca136ff60663b1639f"
+  },
+  {
+    "source": "build/issue304-late-on/probe-02-run.json",
+    "artifact": "issue304-late-on-probe-02-run.json",
+    "raw_sha256": "27ca4ae7bc9ef88b6638e3c1e31dbda9fc03885509f329c23df52b8e70ec4b0b"
+  },
+  {
+    "source": "build/issue304-late-on/probe-02.ini",
+    "artifact": "issue304-late-on-probe-02.ini",
+    "raw_sha256": "b009f459f677bb65a6859e6d2558c951a457150280d14b6d807b48c95377741a"
+  },
+  {
+    "source": "build/issue304-late-on/probe-03.txt",
+    "artifact": "issue304-late-on-probe-03.txt.gz",
+    "raw_sha256": "98868e02cc6d2413945c909c74cc37dc040eed6c0a5d97513b8ff06d9ffcf8b8"
+  },
+  {
+    "source": "build/issue304-late-on/probe-03-run.json",
+    "artifact": "issue304-late-on-probe-03-run.json",
+    "raw_sha256": "dfc67250300d38ed46bb911a6aaf220e127fbdbf3954f06f0a5c2c6b11c60822"
+  },
+  {
+    "source": "build/issue304-late-on/probe-03.ini",
+    "artifact": "issue304-late-on-probe-03.ini",
+    "raw_sha256": "a8358c709556939b9f5e5aaeecc64631a4b77ea811dee6fd2afef7fa551ac592"
+  }
+]

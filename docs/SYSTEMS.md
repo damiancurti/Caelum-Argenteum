@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.24** — 2026-10-15.
+Documentation version: **5.4.25** — 2026-10-16.
+
+## 5.4.25 - MAP06 corpse archive and diagnostic boundaries (#304)
+
+Author decisions on 2026-10-15: MAP06 retains at most 100 recent visible/active
+corpses. The oldest excess bodies and their attached inventories move to the
+map-local non-ticking list (STAT_FIRST_THINKING - 1) and leave sector/blockmap links; their
+identity, position, profile and inventory stay saved. Dropped loot remains.
+Redemption restores the same body to the normal simulation before resurrection.
+Its local thermal clock restarts without integrating the time spent dormant.
+The current dead player's camera body is retained; older eligible bodies are
+archived instead. New deaths use FIFO order. Older saves did not record death
+order, so their one-time revision-1 import uses stable thinker order.
+
+The 6,660 total / 1,000 living Mandinga budget, NPC thermal disable, 105-tic
+perception interval and soldier model substitution are isolated diagnostics.
+They do not change ordinary encounter population, thermal rules or the existing
+8-tic perception period. High-density targeting remains automatic at 500 living
+combatants across the entire map. Thermal-off changes subsequent survival and
+combat workload; results must report that divergence. The 3D control reuses the
+accepted fixed Domingo prototype, not a completed modular soldier asset.
 
 ## 5.4.24 - Demon machete, personality and projectile presentation (#284)
 

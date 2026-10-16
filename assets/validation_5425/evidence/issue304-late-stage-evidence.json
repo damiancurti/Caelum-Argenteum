@@ -1,0 +1,47 @@
+[
+  {
+    "source": "build/issue304-late-stage/stage-01.txt",
+    "artifact": "issue304-late-stage-stage-01.txt.gz",
+    "raw_sha256": "8687b6f325cab3b621d2c04125f5c7f9659132a5f0a66d577473c0178081ae07"
+  },
+  {
+    "source": "build/issue304-late-stage/stage-01-run.json",
+    "artifact": "issue304-late-stage-stage-01-run.json",
+    "raw_sha256": "d5e1039dcd8b324b8b78e30beeb85b9b457bc2652277783ded29dd9ffc18ee84"
+  },
+  {
+    "source": "build/issue304-late-stage/stage-01.ini",
+    "artifact": "issue304-late-stage-stage-01.ini",
+    "raw_sha256": "9ff20dd4b0870ab4baa01371ffadc1469b1bcb19eb5418ee292b8c554b9e4687"
+  },
+  {
+    "source": "build/issue304-late-stage/stage-02.txt",
+    "artifact": "issue304-late-stage-stage-02.txt.gz",
+    "raw_sha256": "49b1d8d26851dce3eb5ffbc623264b3250bdff946b35eae13e6091c62e16c90f"
+  },
+  {
+    "source": "build/issue304-late-stage/stage-02-run.json",
+    "artifact": "issue304-late-stage-stage-02-run.json",
+    "raw_sha256": "70d7cae09925907f8901e3d44caf090468f1398170e9c416cfed87df0c0837c8"
+  },
+  {
+    "source": "build/issue304-late-stage/stage-02.ini",
+    "artifact": "issue304-late-stage-stage-02.ini",
+    "raw_sha256": "3d4eb3b5fea2ba1cdcfc6afad4293c70b52eea03cd460d402a67e7cc27976d19"
+  },
+  {
+    "source": "build/issue304-late-stage/saveprobe-01.txt",
+    "artifact": "issue304-late-stage-saveprobe-01.txt.gz",
+    "raw_sha256": "614987c8f0bbf0af17e4efcf67d60e80bb3d918b616245b70f2e764ad6e77f1b"
+  },
+  {
+    "source": "build/issue304-late-stage/saveprobe-01-run.json",
+    "artifact": "issue304-late-stage-saveprobe-01-run.json",
+    "raw_sha256": "20505e8c57d04e34422772b948360bdcf985089662cb4bc8844cd5398cf23a62"
+  },
+  {
+    "source": "build/issue304-late-stage/saveprobe-01.ini",
+    "artifact": "issue304-late-stage-saveprobe-01.ini",
+    "raw_sha256": "cf387487ab0c5765d41ce478691bcd4038808931223652908f520b1b8ba8dd81"
+  }
+]
