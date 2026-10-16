@@ -1,6 +1,107 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Editable Domingo 3D prototype (#283, accepted)
+
+The author accepted the corrected prototype and ended #283 on 2026-10-15.
+CA283-02 is accepted. The V5.17 roadmap now owns modular sprite-to-model migration,
+remaining timed animations and fine polish. Earlier review labels below retain
+their historical stage; they do not reopen the accepted prototype.
+
+The identity reference is the author-supplied original Domingo sheet from
+2026-10-09 (`assets/source/art/death_repair_518/domingo-original.png`, SHA256
+`4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3`).
+The pilot interprets its dark hair/beard, steel/gold armor, red scarf, blue/gold
+cape, right sword and left shield as volumetric geometry. The later modular
+human bodies are not the identity reference. The author now prefers polished human 3D
+references for anatomy, rather than limiting the mesh to the sprite silhouette.
+
+The initial author trial found sideways knee flexion and rigid walking elbows.
+The corrective candidate sets the forward knee-pole plane and animates elbow
+flexion during walk/run; 186 evaluated joint samples and rendered comparisons
+check the change. Geometry/texture/frame counts are unchanged. See
+validation_5423/anatomy-joints.json and anatomy-evidence.json; visual acceptance
+was pending at that stage. The manual fixture starts from the front and follows its
+selected review angle, with the native chase flag reserved for following mode.
+
+Further author feedback requires less hand sway while walking and a distinct
+running animation. The revised Walk arm curves keep a small elbow bend and a
+short hand arc; Run uses more flexed elbows and a broader arm swing. Measured
+walking hand excursion is 23-28% of the previous candidate, relative to the
+shoulder. Native action periods, root/leg motion and all other model poses are
+unchanged. DESIGN.json owns the art curves; arm-motion-joints.json and
+arm-motion-evidence.json separate this revision from prior evidence. The manual
+fixture explicitly starts walking with Shift held to run, rather than inheriting
+the previous test configuration's enabled always-run setting. Review was pending
+at that stage and is now covered by the final prototype acceptance.
+
+The author found the walk/run revision better, then requested a perpendicular
+running sword grip, more human head anatomy and better hair. The current head
+and eye volumes adapt MakeHuman hm08 (CC0-1.0), with reduced topology, project
+proportions/UVs and head-bone weights. The pinned upstream source and complete
+license live in `assets/source/art/domingo_3d_pilot/makehuman/`; runtime attribution
+is in DOMINGO_3D_PILOT.txt and MAKEHUMAN_CC0.txt. Snow (Blender Studio) and a male
+head scan (petemc) supplied visual references only; DESIGN.json records URLs and
+roles. The hair is project-authored fitted scalp/curved tapered locks. Run rotates
+the sword around its held grip center; other native actions retain their geometry
+outside the revised head/hair. The author provisionally accepted this candidate on 2026-10-15, deferring fine
+visual polish. Its evidence
+is separate in validation_5423/head-grip-evidence.json.
+
+On return, the author required interchangeable weapons, shields, armor, hair
+and faces, starting with Domingo and existing appearance/equipment choices.
+The editable source has separate mesh objects, but this first runtime export
+merges them into one fixed surface. It does not yet meet that modular contract.
+The author subsequently moved this requirement to the future V5.17 roadmap,
+closing #283 as an accepted fixed-surface prototype. The migration must use
+reusable parts and native saved identity; it has not been implemented here.
+
+`assets/source/art/domingo_3d_pilot/domingo.blend` contains editable mesh/UVs,
+26 rig bones including foot IK/poles, packed source-derived texture and 24 named
+actions. DESIGN.json records provenance, coverage, timing and pending decisions.
+The .blend is authoritative art input; the retained initial authoring transcript
+is construction history, not a byte-identical Blender-file regeneration tool.
+The skin keeps original RGB and makes alpha opaque for UV sampling. It is
+1254 x 1254, 1,863,217 PNG bytes. No Doom artwork is incorporated.
+
+Blender 4.5.3 LTS exports deterministically with:
+`blender -b --python assets/generators/export_domingo_pilot.py -- --output build/issue283-export --install`.
+The exporter reads the committed source, bakes a native MD3 v15 with one surface,
+10,689 UV-split vertices, 17,447 triangles and 375 frames (32,383,160 bytes), and
+generates state/texture/model registrations. The exact GZDoom 4.14.2 loader was
+checked before export. No Blender executable, IWAD or generated test PK3 ships.
+
+The opt-in player subclass supports sword/shield idle, walk/run, native attack
+poses, pain/death/raise and seated/lying breathing. New guard variants raise the
+shield while retaining idle/walk/run and jump/landing leg motion. JumpPrepare
+lowers the body and flexes the knees forward over 10 native tics; Landing reverses
+that movement over 35 tics. The author's subsequent correction attaches the
+shield to hand.L, with a visible rear grip centered in the closed gauntlet. In
+relaxed poses its face points outward and its plane extends forward/back beside
+the body; guard raises the shield forward while maintaining the same hand
+contact. Unrelated geometry/poses are preserved. All 375 frame identities remain,
+with DESIGN.json mapping existing jump poses onto the shorter playback timing.
+Guard/jump visual acceptance is recorded as CA283-02; the
+provisional CA283-01 acceptance applies to the preceding candidate. Other equipment and crouch
+retain existing appearance. Native furniture offsets and the 47-unit seat
+support are retained; the cape folds onto the chair. Original sprites remain
+available for comparison. Standing geometry uses the existing 170-unit human
+normalization and native sprite pixel stretch, without changing collision.
+
+This is an accepted prototype, not a completed conversion of other actors. Sit/stand and lie/get-up
+clips are editable candidates, not yet connected to gameplay. The author chose
+2 seconds for sitting/standing from a chair, 3 seconds for lying/getting up,
+and 4-second eating/drinking cycles. The future implementation must disable
+movement, attacks and blocking during those animations, while keeping provision
+speed and quantities unchanged. The
+current tested intermediate still changes rest pose immediately. Small transient
+floor intersections in death/raise and source-only crouch also need art polish;
+the measured bounds and native evidence are in validation_5423. Additional
+transition/weapon coverage, focused review of future changes and a broader
+representative combat benchmark remain roadmap work. No large-battle performance
+improvement is claimed.
+
 
 
 ## 5.4.22 - Quick-use HUD artwork (#282)

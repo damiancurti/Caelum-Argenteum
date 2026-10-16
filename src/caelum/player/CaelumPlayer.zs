@@ -9241,6 +9241,9 @@ class CaelumPlayer : DoomPlayer
         if (!InStateSequence(CurState, wanted)) SetState(wanted);
     }
 
+    // Presentación optativa; una subclase no adquiere autoridad sobre la acción.
+    virtual bool ApplyCustomWorldVisual(){return false;}
+
     void UpdateWorldCarbineVisual()
     {
         if(CurState==null)return;
@@ -9252,7 +9255,7 @@ class CaelumPlayer : DoomPlayer
             && CaelumRangedRules.IsFirearm(WeaponModel.WeaponType),
             Vel.XY.Length()>0.01,level.time<WorldCarbineShotUntil,
             RangedReloadActive ? RangedReloadRemainingSeconds : 0,RangedReloadTotalSeconds);
-        CaelumAppearance.Apply(self);
+        if(!ApplyCustomWorldVisual())CaelumAppearance.Apply(self);
     }
 
     override void PlayAttacking()

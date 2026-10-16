@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
 
-**5.4.22/#282:** bottom-center carousel; name/count above icon; smaller neighbors;
-native input/individual containers. validation_5422; CA282-01 accepted
-2026-10-15, PR300 ready. Author returned; keep-awake released. Next #283/#284:
-unchanged Mandinga attributes, extra Fire machete damage, approved demon
-personalities/cosmetic Zupay rock. Separate PRs.
+**5.4.23/#283:** prototype accepted; CA283-02 passed; PR301 ready.
+Modular 3D migration and remaining animations move to the V5.17 roadmap.
+**5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
+Keep-awake released. #284 next:
+unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
 

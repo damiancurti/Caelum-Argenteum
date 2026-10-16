@@ -1,0 +1,35 @@
+Caelum Argenteum - Domingo 3D pilot, issue #283.
+Author/project: Damian Curti / Caelum Argenteum.
+
+Reference: the complete original Domingo sheet supplied by the author on
+2026-10-09, assets/source/art/death_repair_518/domingo-original.png.
+Reference SHA256: 4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3.
+The earlier modular human derivatives are not the identity reference.
+
+The body/equipment mesh, rig, animations and hair were authored for this
+project using Blender 4.5.3 LTS. The texture preserves original Domingo RGB;
+its alpha is opaque for mesh sampling. No Doom artwork is incorporated.
+
+The revised head and eye volumes adapt MakeHuman hm08 base.obj (CC0-1.0),
+commit 3c701a8e52f09e69922e8b598d23be2d7dfc49e3:
+https://github.com/makehumancommunity/makehuman/blob/3c701a8e52f09e69922e8b598d23be2d7dfc49e3/makehuman/data/3dobjs/base.obj
+Copyright holders at its September 2020 CC0 release: Data Collection AB,
+Joel Palmius and Jonas Hauquier. Full terms: MAKEHUMAN_CC0.txt.
+Modified head extraction, axes, proportions, reduced topology, original
+Domingo UVs and rig weights; new pupil geometry. The original upstream source
+and license remain in assets/source/art/domingo_3d_pilot/makehuman/.
+Snow (Blender Studio) and Male head 3D scan (petemc) are visual references only;
+their models/textures are not incorporated. Exact links/roles: DESIGN.json.
+The author requested polished human 3D references rather than sprite-limited
+anatomy. The current head/hair/grip candidate still requires visual review.
+
+Editable source and provenance: assets/source/art/domingo_3d_pilot/.
+Deterministic native export: assets/generators/export_domingo_pilot.py.
+The .blend is authoritative editable art input, not generated runtime output.
+The retained authoring transcript records construction history; it is not a
+byte-for-byte Blender-file regeneration contract. MD3/PNG/state export from
+the pinned source and Blender version is checked byte for byte.
+
+Only CaelumDomingoPilotPlayer opts into the model. The ordinary player class,
+original sprite resources, native movement, combat and furniture remain.
+No Blender executable, development IWAD or isolated test PK3 is distributed.

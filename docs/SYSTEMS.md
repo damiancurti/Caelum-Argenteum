@@ -1,6 +1,59 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)
+
+The author ended #283 at its accepted prototype scope on 2026-10-15. CA283-02
+is accepted. Modular conversion and unimplemented rest/provision transitions
+are now future V5.17 roadmap work, preserving the rules below.
+
+The default player remains CaelumPlayer. CaelumDomingoPilotPlayer is selected
+only by an explicit test scenario. Its presentation hook reads native states
+and their remaining tics; it does not advance attacks, spend resources, move
+the pawn or modify collision. The human male sword/shield variant uses an owned
+MD3 body with a first-person-hidden visual layer. Other equipment and crouch
+fall back to existing appearance. The optional original-sprite comparison is
+also presentation only. No armor or weapon statistics come from the mesh.
+
+Native chair/bed/ground rest, occupancy, interruptions and timing remain the
+authority. Seated/lying breathing uses the existing 70-tic breathing cadence.
+The tested intermediate changes rest pose immediately. The author subsequently
+approved 2-second chair entry/exit, 3-second lie/get-up and 4-second eating/drinking
+cycles, with movement, attacks and blocking locked until each animation ends.
+Provision consumption rates and quantities stay unchanged. Damage must interrupt
+these animations immediately and restore ordinary combat rules. These transitions
+and control locks remain to be implemented. The pilot reconstructs one local body,
+which is released before map travel; base-player saves remain base-player saves.
+No campaign appearance schema is changed. CA283-01 provisionally accepts the
+preceding head/grip presentation, with fine visual polish deferred.
+
+The author now requires interchangeable weapon, shield, armor, hair and face
+parts, demonstrated first on Domingo using existing choices. The fixed runtime
+mesh is only an intermediate prototype. Native equipment and saved appearance
+remain the authority; modular presentation must neither grant items nor change
+combat statistics. The same structure should be reusable by other characters.
+
+Walk and Run remain separate model clips selected by the native player states.
+Their revised arm curves change presentation only: speed, acceleration, movement
+input, collision, resource costs and attack timing are unchanged. The isolated
+manual fixture starts with always-run off and Shift mapped to native speed input.
+
+The pilot now presents actual native shield blocking with matching idle, walk,
+run and jump poses. Ten-tic jump preparation flexes the legs and lowers the
+body before native takeoff; releasing Jump keeps that queued action. Actual
+health loss, incapacity, leaving valid ground or map travel cancels preparation.
+One-second landing reverses the flexion on ground contact. Movement, attacks and
+blocking retain their ordinary rules during both transitions. Native CheckJump
+remains the only takeoff velocity, Air-cost and thermal authority; swimming,
+flight and uncrouching retain native Jump behavior. Revision 2 initializes new
+transient fields idempotently for older pilot saves and preserves a pending
+preparation's elapsed time in current saves. Shield geometry now follows a grip
+in the hand; the relaxed shield extends along the character's forward/back plane.
+The timing correction retains all existing model frame identities. CA283-02
+records acceptance of the corrected prototype; it does not certify the deferred
+modular conversion or rest/provision transitions as implemented.
+
 
 
 ## 5.4.22 - Gameplay quick-use selector (#282)

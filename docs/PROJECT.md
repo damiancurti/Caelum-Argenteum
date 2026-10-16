@@ -1,7 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
 
+## 5.4.23 - Domingo native 3D prototype (#283, accepted)
+
+The author accepted the corrected prototype and ended #283 on 2026-10-15.
+CA283-02 is accepted; PR301 is ready. Editable Blender source and deterministic
+MD3 export demonstrate native movement, attacks, rest poses, shield blocking,
+ten-tic jump preparation and one-second landing through an opt-in player.
+Default gameplay retains its existing sprites. validation_5423 separates native,
+geometry, rendering, save and author-acceptance evidence.
+
+The author clarified that later sprite work belongs to the roadmap rather than
+an existing GitHub issue. The V5.17 presentation block below now owns migration
+to mandatory modular 3D characters, remaining timed rest/provision animations,
+finer polish and representative combat performance checks. The prototype's
+fixed runtime surface does not satisfy that future modular contract. #284 keeps
+its separately approved scope, branch and delivery.
 
 ## 5.4.22 - Quick-use inventory HUD (#282)
 
@@ -4908,8 +4923,34 @@ existing position. Preserve accepted work and historical numbering.
 | **V5.14** | Expanded Trucazo and network teams | Remaining Major modifiers, Magic Senses, wagers/consequences and casual/ranked/team modes up to 4v4, on Tarot and multiplayer authority. Preserve the accepted NPC slice. |
 | **V5.15** | Dynamic sieges and world consequences | Battle director, reinforcements/tactics/commanders, machines/barricades/sabotage, alternative routes and permanent city/faction/travel consequences. Depends on physics, calendar/world, quests/factions and group AI; network behavior uses V5.12 contracts. |
 | **V5.16** | Campaign and world expansion | Authored chapters, maps, encounters, memories/revelations and complete card-acquisition content toward the existing 78-card/at-least-78-map target. Integrate geographic/biome/travel/faction systems without rewriting canon or making that target a condition for every earlier playtest. |
-| **V5.17** | Art, audio and presentation completion | Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. |
+| **V5.17** | Art, audio and presentation completion | Sprite-to-model character migration with interchangeable weapon, shield, armor, hair and face modules, using the accepted #283 prototype as a reference. Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. |
 | **V5.18** | Independent distribution and release validation | Complete removal of distributable Doom dependencies, provenance/licenses/own packaging, clean installation/startup and integrated campaign/save/game-mode checks. Version numbering alone does not certify standalone readiness or complete content. |
+
+### Modular 3D character migration - author handoff from #283
+
+On 2026-10-15 the author completed the Domingo prototype and assigned the actual
+sprite-to-model conversion to the later presentation roadmap. This is future
+work under V5.17, not a new current issue or a claim of completed conversion.
+
+- Models must be modular: interchangeable weapon, shield, armor, hair and face,
+  with compatible attachment landmarks and reusable rigs/animations. Native
+  equipment and saved appearance remain authoritative; changing presentation
+  cannot grant items or alter attributes. Do not bake all combinations into
+  complete character meshes.
+- Reuse #283's editable sources and measured evidence, retaining original sprites
+  and resource provenance. Complete unsupported appearances/actions and finer
+  proportions/materials during the migration, with focused author review.
+- Carry forward unimplemented chair sit/stand transitions (2 seconds each),
+  floor/bed lie/get-up (3 seconds each), and eating/drinking cycles (4 seconds).
+  Lock movement, attacks and blocking during those animations; damage interrupts
+  immediately and restores normal combat rules. Keep progressive provision rates
+  and quantities unchanged. Existing candidate transition clips are not finished
+  gameplay implementations.
+- Preserve the accepted hand-held shield, ten-tic jump preparation and 35-tic
+  landing. Jump keeps normal movement/attack/block controls, survives key release
+  and cancels on damage/incapacity. Keep native collision, jump cost and furniture
+  authority, versioned/idempotent save migration, deterministic exports and
+  representative rendering/combat tests before broader conversion.
 
 Cross-cutting work (save migration, bilingual UI, performance checks, required
 assets and ownership contracts) accompanies every relevant block. A prerequisite

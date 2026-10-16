@@ -1,7 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
 
+## 5.4.23 - Domingo 3D prototype (#283, accepted)
+
+On 2026-10-15 the author accepted the corrected prototype and explicitly ended
+#283 at that scope. CA283-02 is accepted; HISTORY records the qualified result.
+PR301 is ready. The author clarified that the later sprites work is in the
+roadmap, not an existing issue; do not create a duplicate issue for this handoff.
+
+The V5.17 presentation roadmap in PROJECT now owns sprite-to-model migration,
+mandatory interchangeable weapon/shield/armor/hair/face parts, remaining timed
+rest/provision animations, finer polish and representative performance checks.
+Keep the approved timings/control rules there; these deferred features are not
+implemented by the fixed-surface prototype. Original sprites and all evidence remain.
+
+Next implementation: #284, on its own branch, commits, tests and PR. Its scope
+preserves Mandinga attributes and adds the approved machete Fire, personalities
+and cosmetic Zupay rock. The author has not requested new batch merges here.
 
 ## 5.4.22 - Quick-use HUD (#282, accepted)
 

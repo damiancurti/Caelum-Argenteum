@@ -1,6 +1,165 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.22** — 2026-10-15.
+Documentation version: **5.4.23** — 2026-10-15.
+
+## 5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)
+
+While the author was away, the original 2026-10-09 Domingo sheet was verified
+instead of substituting the later modular body. A textured volumetric model,
+editable Blender rig/actions and deterministic native MD3 export were authored.
+The pilot is opt-in; native player states, attacks, collision, resources,
+furniture and original sprites remain. The author has not reviewed this model.
+
+The head UV projection and knee pole were corrected during authoring. Native
+chair review led to matching the existing 47-unit seat support and folding the
+cape onto the seat; native WorldOffset is retained. Source candidates remain
+preserved locally; the current editable source and provenance are tracked.
+
+Native checks cover real input-selected movement/weapon actions, presentation
+side-effect isolation, chair/bed/ground rest, terminal death, save/load, hub travel
+and fallback. A matched 1/64 render-proxy comparison records frame intervals
+separately from native thinker profiling; it is not a large-combat benchmark.
+Detailed fingerprints, results, failed iterations and limits live in
+assets/validation_5423/RESULTS.md and evidence.json. No author check is marked
+passed for #283. CA282-01 is accepted separately; CA283-01 remains a limited prototype review.
+
+The isolated visual fixture initially read past a semicolon-free EventHandlers
+line, producing an unknown-handler fatal dialog; bounded parsing fixed that
+diagnostic. Removing the Journal handler then broke its live-menu consumer;
+the final fixture retains it and repositions the review camera instead. These
+failed logs are retained; neither experiment changes production HUD behavior.
+
+Candidate 40-tic clips were left disconnected pending the author's decision.
+On return, the author chose 2-second chair entry/exit, 3-second lie/get-up and
+4-second eating/drinking cycles; movement, attacks and blocking are locked during
+each animation while provision consumption rates and quantities remain unchanged.
+These additions are not implemented in the tested intermediate. Source-only crouch and small transient run/death floor
+intersections remain documented art work. No issue closure/merge or complete
+pilot acceptance is asserted. Temporary keep-awake was released on the author's
+return at 2026-10-15 23:25:29 UTC, preserving the Balanced power plan.
+Questions and manual tests resumed. The author clarified that the character
+must have interchangeable weapon, shield, armor, hair and face parts, starting
+with Domingo and existing choices. The first fixed-surface runtime is retained
+as intermediate evidence; modular integration is still required in #283.
+During CA283-01 the author reported sideways knee flexion and rigid arms while
+walking, and requested a shield-block animation. These are unresolved visual
+findings, not acceptance. Keep the pending test for the corrected candidate.
+The corrective source sets the knee pole to the forward plane and varies elbow
+flexion in walk/run. A 186-sample anatomical check verifies evaluated joint
+positions. The test camera now starts in front and follows the chosen view; an
+initial camera check exposed a one-tic WorldTick offset, corrected by updating
+the camera actor in Tick. Its failing evidence remains in anatomy-01.
+The corrected art passes 52 native assertions across five runs, 186 anatomical
+samples, deterministic export parity, static validation and normal packaging.
+Its evidence remains separate from the earlier 98-assertion foundation; author
+review of the corrected motion is still pending.
+The author added shield blocking and one-second jump/landing animations with
+leg flexion and body lowering. Jump waits for preparation and cancels on received
+damage; both animations retain movement, attack and block controls. These
+additions and modular parts are still unimplemented; CA283-01 remains open.
+
+The author then reported excessive hand motion while walking and asked for a
+separate run animation. Walk's hand arc was reduced to 23-28% of the preceding
+candidate while preserving elbow flexion; Run received a distinct, more flexed
+arm pose and broader swing. The prior manual configuration inherited always-run;
+the new isolated trial starts walking and uses Shift to run. This is an art and
+test-configuration revision, not movement or combat balance. Its source/export,
+native walk/run selection and rendered comparisons are recorded separately in
+validation_5423/arm-motion-evidence.json. CA283-01 is still pending.
+The revision passes 32 assertions in three native runs, 186 evaluated joint
+samples, deterministic export, static validation and normal packaging. The 175
+non-walk/run model frames are byte-identical to the preceding candidate.
+
+
+On 2026-10-15, the author found the quieter walk/run better but requested a more
+perpendicular running sword, human head shape and improved hair. The author then
+explicitly preferred polished human 3D models as references instead of following
+the sprite anatomy closely. The head/eyes now adapt the CC0 MakeHuman hm08 source;
+Snow and petemc's head scan are visual references only. The fitted, layered hair
+and fixed-contact Run sword are new art. Original source/candidates and license
+are preserved. CA283-01 remains pending; this partial positive feedback does not
+accept the new candidate or the unimplemented modular/animation scope.
+
+This candidate passes 62 assertions in eight native runs, 12,042 unchanged
+object/pose checks and 13 fixed-grip checks, deterministic export and zero-error
+static validation. Normal packaging matches 16,188 source members. Current
+64-proxy render means are 0.802678 ms (sprites) and 1.162604 ms (model); no
+large-battle claim. head-grip-evidence.json retains exact scope and fingerprints.
+Native review caught flat hair detail in the preceding candidate; varying its
+owned texture samples corrected that presentation before the final tests.
+
+
+Author confirmation on 2026-10-15 (America/Buenos_Aires), CA283-01, origin
+5.4.23/#283: "De momento está muy bien, pero luego perfeccionaremos detalles de
+este modelo." The current head-grip-02 prototype presentation is provisionally
+accepted; fine visual polish is deferred. This does not accept unimplemented
+modularity or new animations, or claim that each optional fallback step was
+repeated. The completed bounded review leaves pending_test.txt; new executable
+checks will use new IDs. No overall #283 completion is claimed.
+The author also confirmed that releasing Jump during preparation still completes
+the queued jump. Damage interrupts rest/provision transitions immediately and
+returns to ordinary combat rules.
+GitHub audit: 19 implementation PRs in the current batch are already merged;
+PR272 (#237), PR299 (#252) and PR300 (#282) remain open and ready. Their issues
+remain open; this audit performs no new merges or closures.
+
+The next intermediate revision implements native shield-block presentation,
+one-second queued jump preparation and one-second reverse landing flexion.
+Releasing Jump still launches after preparation; damage/incapacity cancels it.
+Normal movement/attack/block remain available. The native jump alone changes
+velocity and charges Air/heat. Pilot schema revision 2 is idempotent; pending
+preparation survives save/load and travel clears local transitions. Default
+CaelumPlayer behavior remains unchanged. The export adds 180 frames and retains
+all 195 previously accepted coordinate/normal frames. New evidence is recorded
+separately in validation_5423/guard-jump-evidence.json; CA283-02 is pending.
+There are 180 passing assertions in 19 native runs, including an unchanged older
+save migrated and resaved at revision 2, a pending jump restored on load, attack
+input during preparation and cancellation on map travel. Seven export artifacts
+repeat exactly; static validation and normal package/source parity pass. The
+resting migrated save also loads in the original runtime. Its original test
+expected revision 1 and failed only that assertion; a separate fixture accepts
+the retained revision 2 and verifies body/resources. Both results are preserved;
+this does not claim rollback during a new animation unsupported by the old model.
+The first save fixture quit before native save/event completion; its failed
+log remains in motion-01. Waiting for the queued operations fixes the fixture.
+Rest/provision animations and interchangeable runtime parts remain unfinished.
+
+During CA283-02 the author found the shield disconnected from the hand and too
+close to the chest, requesting a proper hand grip and a relaxed forward/back
+orientation. The author praised the jump pose but shortened preparation to
+10 tics; the 35-tic landing remains unchanged. This is qualified feedback, not
+acceptance of CA283-02. The correction parents the shield to hand.L, adds a rear
+grip and keeps its center attached to the posed palm in all actions. Native
+playback samples reuse all 375 frame identities while shortening preparation.
+Evidence for this correction is separate in shield-grip-evidence.json and
+shield-grip-geometry.json. Earlier guard/jump evidence retains its original scope.
+This correction passes 105 assertions in 12 native runs, 375 evaluated grip
+contacts and 16,500 unchanged non-shield object/pose comparisons. Seven export
+artifacts repeat exactly; static validation and normal packaging pass. An older
+pilot save still loads, and the shorter pending jump survives current save/load.
+Two travel-fixture iterations are preserved: one waited too long before travel,
+the other issued changemap before the game was active. A one-tic startup wait
+allows the final check to travel before takeoff and verify cancellation.
+
+
+
+Final author acceptance on 2026-10-15 (America/Buenos_Aires), CA283-02, origin
+5.4.23/#283: the author said to conclude the prototype and finish the issue,
+reserving sprite-to-model migration for future versions and requiring modularity.
+The author then clarified that this future work is in the roadmap, not an
+existing issue. The corrected shield-grip-01 prototype is accepted; CA283-02
+leaves pending_test.txt. This is acceptance of the bounded prototype and its
+presentation, not a claim that every optional test step was separately repeated
+or that modularity and timed rest/provision transitions were implemented.
+CA283-01's preceding provisional result remains recorded above.
+
+The V5.17 presentation roadmap now explicitly requires interchangeable weapon,
+shield, armor, hair and face modules and carries forward the agreed 2/3/4-second
+rest/provision animations, control locks/damage interruptions, polish and broader
+validation. The author closes #283 at the accepted prototype scope. PR301 becomes
+ready; this request does not merge its parent branches or other batch PRs. Runtime,
+source art and prior evidence remain unchanged; only acceptance/scope documents
+and the author-test queue change. Validation is static documentation/index review.
 
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)

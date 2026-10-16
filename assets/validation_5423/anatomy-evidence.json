@@ -1,0 +1,184 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Corrective art candidate; author review pending",
+  "runtime_sha256": "f7c09e0e7835f1099057bafe11e927fd684f121b4920b143eb9e4a662380b069",
+  "source_members": 16187,
+  "normal_build_sha256": "3cb371289fd20f1cce5aa23cd260fb7a31b46eb6f10cef07cc3bbe685ceec4c5",
+  "native_runs": 5,
+  "native_assertions": 52,
+  "runs": [
+    {
+      "label": "actions",
+      "assertions": 11,
+      "log": "build/issue283-anatomy-01/actions.txt",
+      "log_sha256": "f0b6c849170f9bca6fb2b323696b6b112a07692aa30c6811f6710a66cdd081b6",
+      "record_sha256": "9fd2b32d5495187b35ecd4b5357f604425fea74aa458467ecccb2b41c4764b20",
+      "fixture_sha256": "b863e6cd3f1648638e50f1177e9adf9eec1396460232a1d60cc4f6979eb083d1"
+    },
+    {
+      "label": "rest",
+      "assertions": 14,
+      "log": "build/issue283-anatomy-01/rest.txt",
+      "log_sha256": "a77070c7edb49f3f6acd4a095ccc3726d33eb20693527a424f45ce4699d98935",
+      "record_sha256": "ec5e9f6b194e44b0f8c1311cadda9aefb9b5e40c631e03242ff7007ee9ac28a7",
+      "fixture_sha256": "b863e6cd3f1648638e50f1177e9adf9eec1396460232a1d60cc4f6979eb083d1"
+    },
+    {
+      "label": "camera",
+      "assertions": 12,
+      "log": "build/issue283-anatomy-03/camera.txt",
+      "log_sha256": "612650253ba51107d71f1ac930c9e50ea514e41b614bb6df8ea843730de516ad",
+      "record_sha256": "f0a32bf87f46dedca27a9450c3a223be91a9fba2a25e1028ea25f05001c8cf93",
+      "fixture_sha256": "f500e38f1d6ca2945890e6900e49c8facbcff7a0675b492b2d64f1f8d4b62580"
+    },
+    {
+      "label": "death-console",
+      "assertions": 7,
+      "log": "build/issue283-anatomy-02/death-console.txt",
+      "log_sha256": "de0d58d5877272eabc32f5f70cd9a2b2e17f0bef64de4d9f6964bd74a290e0dc",
+      "record_sha256": "c86f4535c5e532b857f551a9724fe8e555eaebb8516cedc1303e2e1f11410b46",
+      "fixture_sha256": "47addb9e7a21c5f534ff7c19781405ff779dc3c3d410c74ed1a31f4e060ff35d"
+    },
+    {
+      "label": "previous-pilot-save",
+      "assertions": 8,
+      "log": "build/issue283-anatomy-02/previous-pilot-save.txt",
+      "log_sha256": "52d845f6c49e4543da10a68b4dd7466a80321cb5cf0f722e45e278b0c71bedf5",
+      "record_sha256": "23b83ba71adf4276d53c443610c213a268c1f8c2843589ec7e2f68261a1e7904",
+      "fixture_sha256": "47addb9e7a21c5f534ff7c19781405ff779dc3c3d410c74ed1a31f4e060ff35d"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-anatomy-01/rest-pilot-chair.png",
+      "sha256": "43abae5fb075e773bc4a1d75e8493fda27bb57a0a8a25de77de7376bc42656a2"
+    },
+    {
+      "file": "build/issue283-anatomy-01/rest-pilot-bed.png",
+      "sha256": "2e18b9c3d1087a21cbcc829e6f06e9ba28045627c001dde23e95d30f76d6a471"
+    },
+    {
+      "file": "build/issue283-anatomy-01/rest-pilot-ground.png",
+      "sha256": "f415bf804253eb1acd8e046ecd6631a66346142a8b02b431fd2f1959ca431597"
+    },
+    {
+      "file": "build/issue283-anatomy-03/camera-pilot-review-front.png",
+      "sha256": "a068dd85f304a1cc6a5f612b4a9bd5cef0b439911180fff71b49b660c65e0186"
+    },
+    {
+      "file": "build/issue283-anatomy-03/camera-pilot-review-side.png",
+      "sha256": "e5460e298aaf7afe2fdf55bbe3e887cfbb695d0edad97e2c287c527f9c928077"
+    },
+    {
+      "file": "build/issue283-anatomy-02/death-console-pilot-death-still.png",
+      "sha256": "3518ae0e35b47fa04e5e97d1d6179e82f1efdebce36d4181c2511f16c5bd147d"
+    }
+  ],
+  "anatomy": {
+    "source_sha256": "0fc69553d956477f8f7bc1678b363527079e0de5c270567e0cf5cd3bd218a2bd",
+    "joint_samples": 186,
+    "maximum_lateral_knee_units": 0.8146324157714844,
+    "minimum_forward_knee_units": 0.08260536193847656,
+    "elbow_degrees": {
+      "Walk.L": {
+        "min": 23.669480983734758,
+        "max": 52.686327313956255
+      },
+      "Walk.R": {
+        "min": 23.669480983734758,
+        "max": 52.68631365357791
+      },
+      "Run.L": {
+        "min": 42.93699383985551,
+        "max": 81.98552683427691
+      },
+      "Run.R": {
+        "min": 42.937004085139264,
+        "max": 81.98553366446608
+      }
+    },
+    "scope": "Evaluated walk/run/seated anatomy; author visual acceptance remains separate."
+  },
+  "export": {
+    "deterministic_files": 7,
+    "frames": 195,
+    "vertices": 5516,
+    "triangles": 7232,
+    "surfaces": 1,
+    "bytes": 8747076,
+    "md3_sha256": "d9e269cdbe2a24f3e1b2bf66f44ec08e1e7fa7d888a762730665e93410206f0e",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 170.02113342285156
+      },
+      "Walk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 166.02162170410156
+      },
+      "Run": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 164.02162170410156
+      },
+      "Melee": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 169.9998779296875
+      },
+      "Death": {
+        "min_z": -3.674762725830078,
+        "max_z": 170.34811401367188
+      },
+      "Raise": {
+        "min_z": -3.6513023376464844,
+        "max_z": 170.18850708007812
+      },
+      "Seated": {
+        "min_z": -0.004584779962897301,
+        "max_z": 138.02114868164062
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 39.000003814697266
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 124.8226547241211
+      },
+      "SitDown": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 169.9998779296875
+      },
+      "StandUp": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 169.9998779296875
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2495,
+  "foundation": "evidence.json records the earlier 98 assertions at commit 9515fb2c, not this revised model.",
+  "preserved_failure": "build/issue283-anatomy-01/camera.txt exposed a one-tic WorldTick camera lag; actor Tick fixed it.",
+  "open": [
+    "Author anatomy/visual acceptance.",
+    "Interchangeable equipment/hair/face parts.",
+    "Timed rest/provision animations and approved control locks.",
+    "Shield-block animation; one-second jump preparation and landing."
+  ]
+}

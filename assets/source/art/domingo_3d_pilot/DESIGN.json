@@ -1,0 +1,1195 @@
+{
+  "issue": 283,
+  "status": "Prototype accepted and issue #283 completed by the author on 2026-10-15. Modular 3D conversion, timed rest/provision animations and polish move to the V5.17 roadmap.",
+  "reference": {
+    "file": "assets/source/art/death_repair_518/domingo-original.png",
+    "sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "provenance": "Author-supplied original sheet, 2026-10-09; ORIGINAL.json and src/licenses/DEATH_REPAIR_518.txt",
+    "role": "Domingo identity, painted materials, armor, scarf, cape and equipment. The author now prefers polished human 3D references for anatomy and hair, rather than constraining the mesh to the sprite silhouette."
+  },
+  "authoring": {
+    "application": "Blender 4.5.3 LTS, official portable build 67807e1800cc",
+    "archive_sha256": "6b657c8bdd3a7b65b07b9e1ae17eb4be7dd4aa23121da7f3d3354fc2551330a7",
+    "coordinate_system": "X forward, Y anatomical left, Z up; no gameplay root motion",
+    "standing_units": 170,
+    "standing_units_source": "CaelumAppearanceRegistry.StandingHeight(0,false)",
+    "seat_support_units": 47,
+    "seat_support_source": "CaelumAppearanceRegistry.SeatSupportPixels()",
+    "geometry_note": "Original project body/equipment and hair; adapted CC0 MakeHuman hm08 head/eye geometry. Polished human references guide anatomy. Presentation dimensions do not change collision or balance.",
+    "editable_source": "domingo.blend",
+    "transcript": "authoring_transcript.txt records initial scene-authoring operations, not a regeneration contract for the Blender binary. The committed editable blend is authoritative export input.",
+    "seat_contact": "Seated root lowers the hip underside (79 units) to the existing 47-unit sprite support baseline. The lower cape folds onto the seat. Native player position and furniture WorldOffset are copied unchanged."
+  },
+  "reference_crops": {
+    "face_front": [
+      12,
+      956,
+      139,
+      1085
+    ],
+    "face_profile": [
+      395,
+      960,
+      520,
+      1085
+    ],
+    "hair_back": [
+      535,
+      965,
+      624,
+      1042
+    ],
+    "chest": [
+      79,
+      66,
+      127,
+      113
+    ],
+    "waist": [
+      82,
+      112,
+      119,
+      154
+    ],
+    "metal": [
+      80,
+      66,
+      96,
+      83
+    ],
+    "arm": [
+      59,
+      82,
+      78,
+      134
+    ],
+    "boot": [
+      71,
+      179,
+      93,
+      214
+    ],
+    "cloth": [
+      94,
+      119,
+      114,
+      145
+    ],
+    "scarf": [
+      94,
+      52,
+      126,
+      74
+    ],
+    "gold": [
+      94,
+      102,
+      99,
+      107
+    ],
+    "shield": [
+      732,
+      956,
+      870,
+      1108
+    ],
+    "cape": [
+      939,
+      959,
+      1088,
+      1123
+    ],
+    "blade": [
+      670,
+      955,
+      720,
+      1124
+    ],
+    "grip": [
+      678,
+      1154,
+      710,
+      1210
+    ],
+    "hair": [
+      567,
+      971,
+      605,
+      1010
+    ]
+  },
+  "bones": [
+    [
+      "root",
+      null,
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        18
+      ]
+    ],
+    [
+      "pelvis",
+      "root",
+      [
+        0,
+        0,
+        88
+      ],
+      [
+        0,
+        0,
+        105
+      ]
+    ],
+    [
+      "spine",
+      "pelvis",
+      [
+        0,
+        0,
+        105
+      ],
+      [
+        0,
+        0,
+        125
+      ]
+    ],
+    [
+      "chest",
+      "spine",
+      [
+        0,
+        0,
+        125
+      ],
+      [
+        0,
+        0,
+        143
+      ]
+    ],
+    [
+      "neck",
+      "chest",
+      [
+        0,
+        0,
+        143
+      ],
+      [
+        0,
+        0,
+        150
+      ]
+    ],
+    [
+      "head",
+      "neck",
+      [
+        0,
+        0,
+        150
+      ],
+      [
+        0,
+        0,
+        170
+      ]
+    ],
+    [
+      "upper_arm.L",
+      "chest",
+      [
+        0,
+        22,
+        134
+      ],
+      [
+        1,
+        27,
+        111
+      ]
+    ],
+    [
+      "forearm.L",
+      "upper_arm.L",
+      [
+        1,
+        27,
+        111
+      ],
+      [
+        3,
+        29,
+        90
+      ]
+    ],
+    [
+      "hand.L",
+      "forearm.L",
+      [
+        3,
+        29,
+        90
+      ],
+      [
+        6,
+        29,
+        82
+      ]
+    ],
+    [
+      "upper_arm.R",
+      "chest",
+      [
+        0,
+        -22,
+        134
+      ],
+      [
+        1,
+        -27,
+        111
+      ]
+    ],
+    [
+      "forearm.R",
+      "upper_arm.R",
+      [
+        1,
+        -27,
+        111
+      ],
+      [
+        3,
+        -29,
+        90
+      ]
+    ],
+    [
+      "hand.R",
+      "forearm.R",
+      [
+        3,
+        -29,
+        90
+      ],
+      [
+        6,
+        -29,
+        82
+      ]
+    ],
+    [
+      "thigh.L",
+      "pelvis",
+      [
+        0,
+        11,
+        88
+      ],
+      [
+        1,
+        11,
+        49
+      ]
+    ],
+    [
+      "shin.L",
+      "thigh.L",
+      [
+        1,
+        11,
+        49
+      ],
+      [
+        0,
+        11,
+        9
+      ]
+    ],
+    [
+      "foot.L",
+      "shin.L",
+      [
+        0,
+        11,
+        9
+      ],
+      [
+        13,
+        11,
+        4
+      ]
+    ],
+    [
+      "thigh.R",
+      "pelvis",
+      [
+        0,
+        -11,
+        88
+      ],
+      [
+        1,
+        -11,
+        49
+      ]
+    ],
+    [
+      "shin.R",
+      "thigh.R",
+      [
+        1,
+        -11,
+        49
+      ],
+      [
+        0,
+        -11,
+        9
+      ]
+    ],
+    [
+      "foot.R",
+      "shin.R",
+      [
+        0,
+        -11,
+        9
+      ],
+      [
+        13,
+        -11,
+        4
+      ]
+    ],
+    [
+      "cape.upper",
+      "chest",
+      [
+        -12,
+        0,
+        139
+      ],
+      [
+        -15,
+        0,
+        100
+      ]
+    ],
+    [
+      "cape.lower",
+      "cape.upper",
+      [
+        -15,
+        0,
+        100
+      ],
+      [
+        -18,
+        0,
+        48
+      ]
+    ],
+    [
+      "sword",
+      "hand.R",
+      [
+        6,
+        -29,
+        84
+      ],
+      [
+        12,
+        -43,
+        8
+      ]
+    ],
+    [
+      "shield",
+      "hand.L",
+      [
+        5.0,
+        29.0,
+        87.0
+      ],
+      [
+        5.0,
+        35.0,
+        87.0
+      ]
+    ]
+  ],
+  "native_action_tics": {
+    "IdleBreathing": 70,
+    "Walk": 8,
+    "Run": 12,
+    "Melee": 14,
+    "Missile": 16,
+    "Pain": 8,
+    "Death": 56,
+    "Raise": 40
+  },
+  "native_action_source": "CaelumPlayer.States; cosmetic animation must not issue attacks, move the pawn or change these timings",
+  "pending_author_questions": [],
+  "runtime_candidate": {
+    "format": "MD3 version 15 with baked vertex frames and one shared source-derived skin",
+    "engine_reference": "ZDoom/gzdoom g4.14.2 src/common/models/models_md3.cpp and model_md3.h",
+    "registration": "CaelumDomingoPilotPlayer opt-in subclass only; no replacement. Single surface body follows native player states. Sword and shield supported; other equipment and crouch use existing appearance.",
+    "equipment_audit": "Original Domingo sheet contains sword and left shield. Current player also supports unarmed, carbine and shotgun world poses; firearm and other equipment coverage must be explicitly implemented or reported as fallback."
+  },
+  "export_actions": {
+    "IdleBreathing": {
+      "frames": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65
+      ],
+      "tics": 70,
+      "loop": true
+    },
+    "Walk": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "tics": 8,
+      "loop": true
+    },
+    "Run": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "tics": 12,
+      "loop": true
+    },
+    "Melee": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "tics": 14,
+      "loop": false
+    },
+    "Missile": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "tics": 16,
+      "loop": false
+    },
+    "Pain": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "tics": 8,
+      "loop": false
+    },
+    "Death": {
+      "frames": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56
+      ],
+      "tics": 56,
+      "loop": false
+    },
+    "Raise": {
+      "frames": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40
+      ],
+      "tics": 40,
+      "loop": false
+    },
+    "Seated": {
+      "frames": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65
+      ],
+      "tics": 70,
+      "loop": true,
+      "timing_source": "Existing 70-tic IdleBreathing cadence, cosmetic only; native rest remains indefinite"
+    },
+    "Sleeping": {
+      "frames": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65
+      ],
+      "tics": 70,
+      "loop": true,
+      "timing_source": "Existing 70-tic IdleBreathing cadence, cosmetic only; native rest remains indefinite"
+    },
+    "Crouch": {
+      "frames": [
+        0
+      ],
+      "tics": 1,
+      "loop": false
+    },
+    "SitDown": {
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40
+      ],
+      "tics": 40,
+      "loop": false,
+      "runtime_enabled": false,
+      "timing": "Authoring candidate only; presentation duration not yet approved"
+    },
+    "StandUp": {
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40
+      ],
+      "tics": 40,
+      "loop": false,
+      "runtime_enabled": false,
+      "timing": "Authoring candidate only; presentation duration not yet approved"
+    },
+    "LieDown": {
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40
+      ],
+      "tics": 40,
+      "loop": false,
+      "runtime_enabled": false,
+      "timing": "Authoring candidate only; presentation duration not yet approved"
+    },
+    "GetUp": {
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40
+      ],
+      "tics": 40,
+      "loop": false,
+      "runtime_enabled": false,
+      "timing": "Authoring candidate only; presentation duration not yet approved"
+    },
+    "JumpPrepare": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "tics": 10,
+      "loop": false,
+      "sample_tics": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        9,
+        9,
+        9,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    "Landing": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "tics": 35,
+      "loop": false
+    },
+    "JumpAir": {
+      "frames": [
+        0
+      ],
+      "tics": 1,
+      "loop": false
+    },
+    "GuardIdleBreathing": {
+      "frames": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65
+      ],
+      "tics": 70,
+      "loop": true
+    },
+    "GuardWalk": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "tics": 8,
+      "loop": true
+    },
+    "GuardRun": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "tics": 12,
+      "loop": true
+    },
+    "GuardJumpPrepare": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "tics": 10,
+      "loop": false,
+      "sample_tics": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        9,
+        9,
+        9,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    "GuardLanding": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "tics": 35,
+      "loop": false
+    },
+    "GuardJumpAir": {
+      "frames": [
+        0
+      ],
+      "tics": 1,
+      "loop": false
+    }
+  },
+  "approved_target_design": {
+    "date": "2026-10-15",
+    "modular_scope": "Start with Domingo and interchangeable weapon, shield, armor, hair and face using existing choices; reusable architecture, not conversion of all characters.",
+    "durations_seconds": {
+      "SitDown": 2,
+      "StandUp": 2,
+      "LieDown": 3,
+      "GetUp": 3,
+      "Eating": 4,
+      "Drinking": 4,
+      "JumpPreparation": 0.2857142857142857,
+      "Landing": 1
+    },
+    "control_lock": "Block movement, attacks and blocking during each animation.",
+    "provisions": "Repeat visual eating/drinking cycles without changing consumption rate or quantity.",
+    "status": "Native shield guard and queued jump/landing are accepted in the bounded #283 prototype. Remaining modular parts and timed rest/provision transitions are deferred to the V5.17 migration roadmap.",
+    "historical_export_notes": "export_actions retains the original candidate metadata for reproducibility; approved_target_design supersedes the unapproved duration notes, pending implementation.",
+    "visual_feedback": [
+      "Correct sideways knee flexion while walking.",
+      "Flex the elbows while walking.",
+      "Add a native shield-block animation.",
+      "Walking hands must sway less; running must have its own visibly distinct animation."
+    ],
+    "jump": "Flex the legs and lower the body over 10 native tics before takeoff; landing remains 35 tics. Releasing Jump completes preparation; health loss/incapacity cancels it. Normal movement/attack/block remain available.",
+    "shield": "Add an animation driven by actual shield blocking."
+  },
+  "anatomy_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "9515fb2c",
+    "pole_angle_radians": 0,
+    "walk_elbow_curve_degrees": "35 + 15*sin(phase), opposite phase per arm",
+    "run_elbow_curve_degrees": "60 + 20*sin(phase), opposite phase per arm",
+    "validation": "186 evaluated samples; anatomy-joints.json. Author review remains open."
+  },
+  "arm_motion_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "48b32cd4",
+    "scope": "Art-only arm curves, independent Walk and Run actions; native movement/attack timing unchanged.",
+    "curves_degrees": {
+      "Walk": {
+        "shoulder_bias": 0,
+        "shoulder_amplitude": 4,
+        "elbow_bias": 30,
+        "elbow_amplitude": 3
+      },
+      "Run": {
+        "shoulder_bias": 8,
+        "shoulder_amplitude": 20,
+        "elbow_bias": 65,
+        "elbow_amplitude": 12
+      }
+    },
+    "phase": "Opposite phase per arm, full native action cycle.",
+    "author_review": "Pending; these art-tuning angles are not combat or movement balance."
+  },
+  "head_grip_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "d63fa4ab",
+    "source_candidate": "candidate-14-head-grip.blend",
+    "scope": "Human cranium, jaw, cheeks, nose, ears and eyes; fitted cap and tapered layered hair; Run-only perpendicular sword grip with fixed contact pivot. Native timings and control rules unchanged.",
+    "source_head": {
+      "repository": "https://github.com/makehumancommunity/makehuman",
+      "commit": "3c701a8e52f09e69922e8b598d23be2d7dfc49e3",
+      "path": "makehuman/data/3dobjs/base.obj",
+      "local": "makehuman/base.obj",
+      "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0; makehuman/LICENSE.ASSETS.md",
+      "modifications": "Extract upper neck/head from body and eye helpers; remap axes, proportions, UVs and weights; reduce head topology; add pupils. The full upstream source is retained outside runtime."
+    },
+    "visual_references": [
+      {
+        "title": "Snow",
+        "author": "Blender Studio / Blender Foundation",
+        "url": "https://studio.blender.org/characters/snow/",
+        "role": "Separate scalp/locks and readable facial volumes; visual reference only, no mesh or texture copied."
+      },
+      {
+        "title": "Male head 3D scan",
+        "author": "petemc",
+        "url": "https://sketchfab.com/3d-models/53ca4c0e8d63447cb112fc2d124ba587",
+        "role": "Jaw/cheek/nose anatomy reference only; no scan or texture copied."
+      }
+    ],
+    "run_sword": {
+      "hand_axis": [
+        3,
+        0,
+        -8
+      ],
+      "blade_axis": [
+        6,
+        -14,
+        -75
+      ],
+      "target": "Perpendicular to hand axis, toward forward/up in rest space.",
+      "fixed_grip_point": [
+        5.5,
+        -28,
+        89
+      ],
+      "contact": "Rotate about the held grip center; preserve its position relative to hand.R throughout Run."
+    },
+    "hair": "Scalp-fitted dark cap with separate tapered, curved locks of differing lengths; no painted face projected onto the back of the head. Hair UVs vary the original painted strands so native sector lighting retains detail.",
+    "author_review": "CA283-01 provisionally accepted on 2026-10-15; fine model polish deferred. Overall #283 is incomplete."
+  },
+  "motion_revision": {
+    "date": "2026-10-15",
+    "jump_prepare_seconds": 0.2857142857142857,
+    "landing_seconds": 1,
+    "jump_release": "Complete the queued jump after key release.",
+    "interruptions": "Received damage or incapacity cancels preparation.",
+    "controls": "Movement, attacks and blocking remain governed by their normal rules during preparation/landing.",
+    "guard": "Actual native shield blocking; idle/walk/run/prepare/air/landing variants retain their matching body/leg curves.",
+    "root_lowering_units": 19,
+    "scope": "Opt-in pilot; native CheckJump remains the sole takeoff, Air and thermal authority."
+  },
+  "shield_grip_revision": {
+    "date": "2026-10-15",
+    "parent": "hand.L",
+    "palm_center": [
+      5.0,
+      29.0,
+      87.0
+    ],
+    "rest_face_normal": [
+      0,
+      1,
+      0
+    ],
+    "rest_face_plane": "X/Z: extends forward/backward beside the body",
+    "grip": "Rear U-shaped grip centered on the closed gauntlet; guard keeps this same contact point.",
+    "timing": "Jump preparation 10 native tics; landing unchanged at 35. Retain all frame identifiers for saves."
+  },
+  "prototype_acceptance": {
+    "date": "2026-10-15",
+    "test_id": "CA283-02",
+    "scope": "Corrected shield-grip-01 prototype accepted; no claim of implemented modularity or remaining timed rest/provision transitions.",
+    "follow_up": "PROJECT V5.17 presentation roadmap; mandatory modular weapon, shield, armor, hair and face."
+  }
+}
