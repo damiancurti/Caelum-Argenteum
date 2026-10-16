@@ -783,9 +783,9 @@ SHA-256: `1cb59b5f6abf98dfbc59d6780a9085ddce8cdb2e60476f22a9300eebbd56dc0a`
 - Lines 4297-4496 - `Narrative source [part 11]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 - Lines 4497-4537 - `Narrative source [part 12]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 
-## [PROJECT.md](PROJECT.md) - 55380 words
+## [PROJECT.md](PROJECT.md) - 55586 words
 
-SHA-256: `ce325827250b1f2326f3bf797432d2099193c5d1fb506de4f7b5ac43c9126b4a`
+SHA-256: `e63af64cf7fab623ca318349d308b2d7350a61b509b8fadbbafc0f725bbd6a0e`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-15 - [5.4.24 - Demon combat and cosmetic rock (#284, accepted)](PROJECT.md#5424---demon-combat-and-cosmetic-rock-284-accepted) - context: Caelum Argenteum — Project, status and roadmap
@@ -1018,30 +1018,30 @@ SHA-256: `ce325827250b1f2326f3bf797432d2099193c5d1fb506de4f7b5ac43c9126b4a`
 - Lines 4838-4869 - [Immediate Roadmap: Close systems and tests on MAP01](PROJECT.md#immediate-roadmap-close-systems-and-tests-on-map01) - context: Caelum Argenteum — Project, status and roadmap
 - Lines 4870-4903 - [General roadmap by version](PROJECT.md#general-roadmap-by-version) - context: Caelum Argenteum — Project, status and roadmap
 - Lines 4904-4939 - [Numbered V5 delivery sequence — author request 2026-10-07](PROJECT.md#numbered-v5-delivery-sequence--author-request-2026-10-07) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 4940-4971 - [Modular 3D character migration - author handoff from #283](PROJECT.md#modular-3d-character-migration---author-handoff-from-283) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 4972-5027 - [V5 native menus, character setup and exploration — approved 2026-10-05](PROJECT.md#v5-native-menus-character-setup-and-exploration--approved-2026-10-05) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 5028-5064 - [Inherited and cross-cutting work: V5, after export](PROJECT.md#inherited-and-cross-cutting-work-v5-after-export) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 5065-5075 - [Decisions that still require author design](PROJECT.md#decisions-that-still-require-author-design) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 5076-5116 - [4.33.0h Folder Audit](PROJECT.md#4330h-folder-audit) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5117-5131 - [Historical implementation and maintenance — 4.33.0ao](PROJECT.md#historical-implementation-and-maintenance--4330ao) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5132-5174 - [4.33.0ae Validation](PROJECT.md#4330ae-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5175-5210 - [Validation of 4.33.0ad — approved by the author](PROJECT.md#validation-of-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5211-5243 - [Validation of 4.33.0ac — approved by the author](PROJECT.md#validation-of-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5244-5274 - [Validation of 4.33.0ab — approved by the author](PROJECT.md#validation-of-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5275-5309 - [Validation of 4.33.0aa — approved by the author](PROJECT.md#validation-of-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5310-5323 - [4.33.0z Validation](PROJECT.md#4330z-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5324-5337 - [Validation of 4.33.0y — approved by the author](PROJECT.md#validation-of-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5338-5352 - [Validation of 4.33.0x — approved by the author](PROJECT.md#validation-of-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5353-5380 - [Validation of 4.33.0w — approved by the author](PROJECT.md#validation-of-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5381-5413 - [4.33.0v Validation — Approved within Cumulative 0w](PROJECT.md#4330v-validation--approved-within-cumulative-0w) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5414-5440 - [Validation of 4.33.0u — approved by the author](PROJECT.md#validation-of-4330u--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5441-5471 - [4.33.0t Validation — remaining tests approved by author](PROJECT.md#4330t-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5472-5504 - [Validation of 4.33.0s — approved by the author](PROJECT.md#validation-of-4330s--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5505-5528 - [Validation of 4.33.0r — approved by the author](PROJECT.md#validation-of-4330r--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5529-5553 - [4.33.0q Validation — remaining tests approved by author](PROJECT.md#4330q-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5554-5576 - [4.33.0p Validation — remaining tests approved by author](PROJECT.md#4330p-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5577-5591 - [4.33.0o Validation](PROJECT.md#4330o-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5592-5620 - [Validation of 4.33.0n — accepted on 2026-09-11](PROJECT.md#validation-of-4330n--accepted-on-2026-09-11) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4940-4978 - [Modular 3D character migration - author handoff from #283](PROJECT.md#modular-3d-character-migration---author-handoff-from-283) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 4979-5034 - [V5 native menus, character setup and exploration — approved 2026-10-05](PROJECT.md#v5-native-menus-character-setup-and-exploration--approved-2026-10-05) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 5035-5071 - [Inherited and cross-cutting work: V5, after export](PROJECT.md#inherited-and-cross-cutting-work-v5-after-export) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 5072-5082 - [Decisions that still require author design](PROJECT.md#decisions-that-still-require-author-design) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 5083-5123 - [4.33.0h Folder Audit](PROJECT.md#4330h-folder-audit) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5124-5138 - [Historical implementation and maintenance — 4.33.0ao](PROJECT.md#historical-implementation-and-maintenance--4330ao) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5139-5181 - [4.33.0ae Validation](PROJECT.md#4330ae-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5182-5217 - [Validation of 4.33.0ad — approved by the author](PROJECT.md#validation-of-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5218-5250 - [Validation of 4.33.0ac — approved by the author](PROJECT.md#validation-of-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5251-5281 - [Validation of 4.33.0ab — approved by the author](PROJECT.md#validation-of-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5282-5316 - [Validation of 4.33.0aa — approved by the author](PROJECT.md#validation-of-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5317-5330 - [4.33.0z Validation](PROJECT.md#4330z-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5331-5344 - [Validation of 4.33.0y — approved by the author](PROJECT.md#validation-of-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5345-5359 - [Validation of 4.33.0x — approved by the author](PROJECT.md#validation-of-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5360-5387 - [Validation of 4.33.0w — approved by the author](PROJECT.md#validation-of-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5388-5420 - [4.33.0v Validation — Approved within Cumulative 0w](PROJECT.md#4330v-validation--approved-within-cumulative-0w) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5421-5447 - [Validation of 4.33.0u — approved by the author](PROJECT.md#validation-of-4330u--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5448-5478 - [4.33.0t Validation — remaining tests approved by author](PROJECT.md#4330t-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5479-5511 - [Validation of 4.33.0s — approved by the author](PROJECT.md#validation-of-4330s--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5512-5535 - [Validation of 4.33.0r — approved by the author](PROJECT.md#validation-of-4330r--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5536-5560 - [4.33.0q Validation — remaining tests approved by author](PROJECT.md#4330q-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5561-5583 - [4.33.0p Validation — remaining tests approved by author](PROJECT.md#4330p-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5584-5598 - [4.33.0o Validation](PROJECT.md#4330o-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5599-5627 - [Validation of 4.33.0n — accepted on 2026-09-11](PROJECT.md#validation-of-4330n--accepted-on-2026-09-11) - context: Caelum Argenteum — Project, status and roadmap
 
 ## [SYSTEMS.md](SYSTEMS.md) - 98304 words
 
@@ -1480,6 +1480,6 @@ SHA-256: `fa26e99598b33b4ea06852e58717e3ee02c1eb9e242fd4fd8f2e2f8416063bce`
 - Lines 2320-2332 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "855f5e4ca0b8550545a891712c5a71c53af9d077a9fc3dc0bec11375f61c9d1e", "words": 29612}, {"path": "HISTORY.md", "sha256": "04a11f1f2b75a11456266f7dad5330bc28463dc459918fedd20f3598296be01b", "words": 216526}, {"path": "KNOWN_PITFALLS.md", "sha256": "2bd90f4c9c13cf9ca445287f0b3ee808b739d410ed6c23347e8a2fbd1ab20368", "words": 24019}, {"path": "MAP01.txt", "sha256": "1cb59b5f6abf98dfbc59d6780a9085ddce8cdb2e60476f22a9300eebbd56dc0a", "words": 34829}, {"path": "PROJECT.md", "sha256": "ce325827250b1f2326f3bf797432d2099193c5d1fb506de4f7b5ac43c9126b4a", "words": 55380}, {"path": "SYSTEMS.md", "sha256": "eb4740f83914032292923a376f50aceb2bd3320c14bf04fb17840f1552a84d40", "words": 98304}, {"path": "TASKS.md", "sha256": "fa26e99598b33b4ea06852e58717e3ee02c1eb9e242fd4fd8f2e2f8416063bce", "words": 19096}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "855f5e4ca0b8550545a891712c5a71c53af9d077a9fc3dc0bec11375f61c9d1e", "words": 29612}, {"path": "HISTORY.md", "sha256": "04a11f1f2b75a11456266f7dad5330bc28463dc459918fedd20f3598296be01b", "words": 216526}, {"path": "KNOWN_PITFALLS.md", "sha256": "2bd90f4c9c13cf9ca445287f0b3ee808b739d410ed6c23347e8a2fbd1ab20368", "words": 24019}, {"path": "MAP01.txt", "sha256": "1cb59b5f6abf98dfbc59d6780a9085ddce8cdb2e60476f22a9300eebbd56dc0a", "words": 34829}, {"path": "PROJECT.md", "sha256": "e63af64cf7fab623ca318349d308b2d7350a61b509b8fadbbafc0f725bbd6a0e", "words": 55586}, {"path": "SYSTEMS.md", "sha256": "eb4740f83914032292923a376f50aceb2bd3320c14bf04fb17840f1552a84d40", "words": 98304}, {"path": "TASKS.md", "sha256": "fa26e99598b33b4ea06852e58717e3ee02c1eb9e242fd4fd8f2e2f8416063bce", "words": 19096}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
