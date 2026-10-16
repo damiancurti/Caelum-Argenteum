@@ -4,7 +4,7 @@ Documentation version: **5.4.23** — 2026-10-15.
 
 ## 5.4.23 - Domingo native 3D feasibility pilot (#283, draft)
 
-An editable, original-sheet-derived Domingo model now runs through an opt-in
+An editable Domingo model now runs through an opt-in
 player subclass and native MD3 registration. Native movement, attacks and rest
 remain authoritative; no default character is replaced. validation_5423 records
 geometry/export parity, native action/rest/death/save/hub checks and matched
@@ -17,9 +17,10 @@ its separate scope/branch. The author returned and the temporary keep-awake was
 released. The author requires interchangeable weapon, shield, armor, hair and
 face parts, starting with Domingo and existing choices. This fixed-surface
 runtime is an intermediate prototype; modular integration remains in #283.
-The latest art revision reduces walking hand sway and gives Run a distinct arm
-pose, with unchanged gameplay timing; its separate native evidence and author
-review remain under CA283-01.
+The author found walk/run improved and now prefers polished human 3D references
+for anatomy. The latest candidate adapts a CC0 MakeHuman head, refines hair and
+holds the running sword perpendicular to the hand, preserving its contact point.
+Gameplay timings remain unchanged; CA283-01 still awaits visual review.
 
 
 

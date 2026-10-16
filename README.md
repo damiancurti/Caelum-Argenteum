@@ -10,9 +10,9 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 5.4.23 adds an **opt-in draft** for [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283):
-an editable Domingo model derived from the original sheet, with native MD3
-animation driven by the existing player. Default gameplay keeps its current
-appearance. Knee/elbow and walking-arm feedback have corrective candidates in draft
+an editable Domingo model with native MD3 animation driven by the existing
+player, now using a CC0 human head and polished 3D anatomy references. Default gameplay keeps its current
+appearance. Knee/elbow, walking-arm, head/hair and running-grip revisions remain in draft
 [PR301](https://github.com/damiancurti/Caelum-Argenteum/pull/301). Interchangeable equipment/hair/face parts, art approval and timed rest/provision animations
 remain pending; this issue is not complete. Agent evidence and reproduction:
 [validation_5423](assets/validation_5423/RESULTS.md).

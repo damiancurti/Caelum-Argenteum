@@ -234,3 +234,6 @@
 /src/graphics/caelum/domingo_invisible.png -text
 /src/models/caelum/domingo/* -text
 /src/licenses/DOMINGO_3D_PILOT.txt text eol=lf
+
+/assets/source/art/domingo_3d_pilot/makehuman/* -text
+/src/licenses/MAKEHUMAN_CC0.txt -text

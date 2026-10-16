@@ -52,6 +52,12 @@ as references, except his rear attack. The rear punch should follow the clear
 forward extension/recovery idea of the Revenant without copying Doom pixels.
 Preserve the player's simple clothing and the modular identity choices.
 
+For the #283 3D pilot, the author subsequently requested polished human 3D
+models as anatomy/hair references rather than close adherence to Domingo's
+sprite proportions. Keep his identity/materials/equipment while improving the
+volumetric head and hair. This does not retroactively revise #209 sprite work;
+ASSETS and the pilot DESIGN.json record reference roles and CC0 provenance.
+
 ## Characters and choices
 
 The following requirements record the author's #148 decisions, including the

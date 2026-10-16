@@ -5,7 +5,7 @@
     "file": "assets/source/art/death_repair_518/domingo-original.png",
     "sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
     "provenance": "Author-supplied original sheet, 2026-10-09; ORIGINAL.json and src/licenses/DEATH_REPAIR_518.txt",
-    "role": "Identity, proportions, painted materials, armor, red scarf, dark blue gold-trimmed cape, left shield and right sword. Later modular human bodies are not the character reference."
+    "role": "Domingo identity, painted materials, armor, scarf, cape and equipment. The author now prefers polished human 3D references for anatomy and hair, rather than constraining the mesh to the sprite silhouette."
   },
   "authoring": {
     "application": "Blender 4.5.3 LTS, official portable build 67807e1800cc",
@@ -15,7 +15,7 @@
     "standing_units_source": "CaelumAppearanceRegistry.StandingHeight(0,false)",
     "seat_support_units": 47,
     "seat_support_source": "CaelumAppearanceRegistry.SeatSupportPixels()",
-    "geometry_note": "New volumetric geometry interpreted from the original views. Hidden geometry and reconstructed transitions require author visual review; these dimensions do not change native collision or balance.",
+    "geometry_note": "Original project body/equipment and hair; adapted CC0 MakeHuman hm08 head/eye geometry. Polished human references guide anatomy. Presentation dimensions do not change collision or balance.",
     "editable_source": "domingo.blend",
     "transcript": "authoring_transcript.txt records initial scene-authoring operations, not a regeneration contract for the Blender binary. The committed editable blend is authoritative export input.",
     "seat_contact": "Seated root lowers the hip underside (79 units) to the existing 47-unit sprite support baseline. The lower cape folds onto the seat. Native player position and furniture WorldOffset are copied unchanged."
@@ -797,5 +797,55 @@
     },
     "phase": "Opposite phase per arm, full native action cycle.",
     "author_review": "Pending; these art-tuning angles are not combat or movement balance."
+  },
+  "head_grip_revision": {
+    "date": "2026-10-15",
+    "baseline_commit": "d63fa4ab",
+    "source_candidate": "candidate-14-head-grip.blend",
+    "scope": "Human cranium, jaw, cheeks, nose, ears and eyes; fitted cap and tapered layered hair; Run-only perpendicular sword grip with fixed contact pivot. Native timings and control rules unchanged.",
+    "source_head": {
+      "repository": "https://github.com/makehumancommunity/makehuman",
+      "commit": "3c701a8e52f09e69922e8b598d23be2d7dfc49e3",
+      "path": "makehuman/data/3dobjs/base.obj",
+      "local": "makehuman/base.obj",
+      "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+      "license": "CC0-1.0; makehuman/LICENSE.ASSETS.md",
+      "modifications": "Extract upper neck/head from body and eye helpers; remap axes, proportions, UVs and weights; reduce head topology; add pupils. The full upstream source is retained outside runtime."
+    },
+    "visual_references": [
+      {
+        "title": "Snow",
+        "author": "Blender Studio / Blender Foundation",
+        "url": "https://studio.blender.org/characters/snow/",
+        "role": "Separate scalp/locks and readable facial volumes; visual reference only, no mesh or texture copied."
+      },
+      {
+        "title": "Male head 3D scan",
+        "author": "petemc",
+        "url": "https://sketchfab.com/3d-models/53ca4c0e8d63447cb112fc2d124ba587",
+        "role": "Jaw/cheek/nose anatomy reference only; no scan or texture copied."
+      }
+    ],
+    "run_sword": {
+      "hand_axis": [
+        3,
+        0,
+        -8
+      ],
+      "blade_axis": [
+        6,
+        -14,
+        -75
+      ],
+      "target": "Perpendicular to hand axis, toward forward/up in rest space.",
+      "fixed_grip_point": [
+        5.5,
+        -28,
+        89
+      ],
+      "contact": "Rotate about the held grip center; preserve its position relative to hand.R throughout Run."
+    },
+    "hair": "Scalp-fitted dark cap with separate tapered, curved locks of differing lengths; no painted face projected onto the back of the head. Hair UVs vary the original painted strands so native sector lighting retains detail.",
+    "author_review": "Walk feedback: better. New head, hair and running grip require author review; no overall #283 acceptance."
   }
 }

@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-**5.4.23/#283:** PR301 draft; validation_5423; CA283-01 open. Walk/run tuning;
+**5.4.23/#283:** PR301 draft; validation_5423; CA283-01 open. Head/hair/grip review;
 modular parts and timed/block/jump animations pending.
 **5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
 Author returned; keep-awake released. #284 next:

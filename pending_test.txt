@@ -1,7 +1,8 @@
 CA283-01 | Origin: 5.4.23 / #283 | Domingo 3D prototype review
 Status: pending; author returned; fixed-appearance prototype, modular work open.
 Feedback: initial sideways knees/rigid elbows have a corrective candidate for
-review; quieter walking hands/distinct run also need review. Shield-block,
+review; the author found walk/run better. New head/hair and perpendicular
+running sword grip need review. Shield-block,
 jump/landing, modular parts and timed actions remain open.
 Scope: review this draft's art and connected native actions, not final issue
 acceptance. Approved 2-second chair, 3-second lie/get-up and 4-second provision
@@ -12,7 +13,9 @@ The isolated scenario chooses CaelumDomingoPilotPlayer, equips real sword/shield
 and uses a separate configuration/save directory. Do not launch while away.
 1. The trial starts walking. Hold Shift while moving to run, then release it to
    walk again: walking hands should sway gently, running elbows/arms should have
-   a visibly different pose and swing. Attack normally. F6 compares sprites/model; F8 cycles
+   a visibly different pose and swing. Check that the running sword crosses the
+   hand axis while its grip stays held. Inspect the human jaw/nose profile and
+   layered hair from front, side and rear. Attack normally. F6 compares sprites/model; F8 cycles
    front/side/rear/following views; the trial starts from the front. Review face/hair, armor, cape, sword/shield, scale and reconstructed views.
 2. F7 selects chair rest, bed sleep, ground sleep, then standing. Use Q to leave
    each native rest panel before pressing F7 again. Native rest camera/mouse

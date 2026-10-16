@@ -71,6 +71,24 @@ samples, deterministic export, static validation and normal packaging. The 175
 non-walk/run model frames are byte-identical to the preceding candidate.
 
 
+On 2026-10-15, the author found the quieter walk/run better but requested a more
+perpendicular running sword, human head shape and improved hair. The author then
+explicitly preferred polished human 3D models as references instead of following
+the sprite anatomy closely. The head/eyes now adapt the CC0 MakeHuman hm08 source;
+Snow and petemc's head scan are visual references only. The fitted, layered hair
+and fixed-contact Run sword are new art. Original source/candidates and license
+are preserved. CA283-01 remains pending; this partial positive feedback does not
+accept the new candidate or the unimplemented modular/animation scope.
+
+This candidate passes 62 assertions in eight native runs, 12,042 unchanged
+object/pose checks and 13 fixed-grip checks, deterministic export and zero-error
+static validation. Normal packaging matches 16,188 source members. Current
+64-proxy render means are 0.802678 ms (sprites) and 1.162604 ms (model); no
+large-battle claim. head-grip-evidence.json retains exact scope and fingerprints.
+Native review caught flat hair detail in the preceding candidate; varying its
+owned texture samples corrected that presentation before the final tests.
+
+
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
 

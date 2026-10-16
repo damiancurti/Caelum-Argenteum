@@ -9,8 +9,8 @@ The identity reference is the author-supplied original Domingo sheet from
 `4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3`).
 The pilot interprets its dark hair/beard, steel/gold armor, red scarf, blue/gold
 cape, right sword and left shield as volumetric geometry. The later modular
-human bodies are not the identity reference. Reconstructed views and proportions
-remain unreviewed by the author.
+human bodies are not the identity reference. The author now prefers polished human 3D
+references for anatomy, rather than limiting the mesh to the sprite silhouette.
 
 The initial author trial found sideways knee flexion and rigid walking elbows.
 The corrective candidate sets the forward knee-pole plane and animates elbow
@@ -30,6 +30,18 @@ arm-motion-evidence.json separate this revision from prior evidence. The manual
 fixture explicitly starts walking with Shift held to run, rather than inheriting
 the previous test configuration's enabled always-run setting. Review is pending.
 
+The author found the walk/run revision better, then requested a perpendicular
+running sword grip, more human head anatomy and better hair. The current head
+and eye volumes adapt MakeHuman hm08 (CC0-1.0), with reduced topology, project
+proportions/UVs and head-bone weights. The pinned upstream source and complete
+license live in `assets/source/art/domingo_3d_pilot/makehuman/`; runtime attribution
+is in DOMINGO_3D_PILOT.txt and MAKEHUMAN_CC0.txt. Snow (Blender Studio) and a male
+head scan (petemc) supplied visual references only; DESIGN.json records URLs and
+roles. The hair is project-authored fitted scalp/curved tapered locks. Run rotates
+the sword around its held grip center; other native actions retain their geometry
+outside the revised head/hair. This candidate is not yet accepted. Its evidence
+is separate in validation_5423/head-grip-evidence.json.
+
 On return, the author required interchangeable weapons, shields, armor, hair
 and faces, starting with Domingo and existing appearance/equipment choices.
 The editable source has separate mesh objects, but this first runtime export
@@ -43,12 +55,12 @@ actions. DESIGN.json records provenance, coverage, timing and pending decisions.
 The .blend is authoritative art input; the retained initial authoring transcript
 is construction history, not a byte-identical Blender-file regeneration tool.
 The skin keeps original RGB and makes alpha opaque for UV sampling. It is
-1254 x 1254, 1,863,217 PNG bytes. No external or Doom artwork is incorporated.
+1254 x 1254, 1,863,217 PNG bytes. No Doom artwork is incorporated.
 
 Blender 4.5.3 LTS exports deterministically with:
 `blender -b --python assets/generators/export_domingo_pilot.py -- --output build/issue283-export --install`.
 The exporter reads the committed source, bakes a native MD3 v15 with one surface,
-5,516 UV-split vertices, 7,232 triangles and 195 frames (8,747,076 bytes), and
+10,629 UV-split vertices, 17,339 triangles and 195 frames (16,885,544 bytes), and
 generates state/texture/model registrations. The exact GZDoom 4.14.2 loader was
 checked before export. No Blender executable, IWAD or generated test PK3 ships.
 

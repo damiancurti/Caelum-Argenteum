@@ -4,7 +4,7 @@ Documentation version: **5.4.23** — 2026-10-15.
 
 ## 5.4.23 - Domingo 3D pilot (#283, in progress)
 
-Branch feat/issue283-domingo-3d-pilot adds editable original-reference art,
+Branch feat/issue283-domingo-3d-pilot adds editable Domingo art,
 deterministic MD3 export and a controlled native-player presentation adapter.
 Evidence/limitations: assets/validation_5423/RESULTS.md. No global replacement,
 merge, issue closure or author acceptance. Keep #284 in its own patch.
@@ -28,9 +28,11 @@ The anatomy correction is implemented and under renewed author review. Add
 one-second jump preparation before takeoff and one-second landing, lowering
 the body with leg flexion; attacks, movement and blocking remain available.
 Received damage cancels jump preparation. These new animations remain open.
-Latest author feedback: quieter walking hands and a distinct running animation.
-The revised curves and explicit walk/Shift-run fixture await author review;
-do not treat the preceding knee/elbow checks as approval of this presentation.
+The author found walk/run improved, then requested a more perpendicular sword
+while running, a human-shaped head and better hair. Polished human 3D references
+now guide anatomy rather than the sprite silhouette. The new CC0 MakeHuman head,
+layered hair and Run-only grip are awaiting visual review. CA283-01 stays open;
+partial improvement does not accept the whole pilot.
 
 
 
