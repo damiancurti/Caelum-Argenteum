@@ -1,7 +1,8 @@
 # Issue #304 — MAP06 performance and retained corpses
 
 Status: implementation, native functional tests and performance controls complete.
-CA304-01 awaits author acceptance; manual review is deferred while the author is away.
+CA304-01 (origin 5.4.25 / #304) passed author review on 2026-10-16, without
+reported exceptions. The author authorized PR306 merge and issue closure.
 Baseline: main 351b949a (5.4.24), plus the focused 5.4.25 corpse archive.
 Engine: GZDoom 4.14.2, Windows 11; Ryzen 9 5950X, RTX 3070 Ti,
 driver 32.0.15.7688. Frozen packages and raw run records identify exact hashes.
@@ -81,7 +82,7 @@ Native evidence: issue304-09 redemption/save/travel and the accepted-runtime
 5.4.24 save migrated in issue304-compat-load-01. These cover 100 active plus
 5 dormant bodies, FIFO, no body/inventory ticks while dormant, retained loot,
 same-body revival, resumed ticking, re-death ordering, hub travel and normal
-process exit. This does not replace pending author acceptance.
+process exit. This native evidence is separate from the author acceptance above.
 
 Final frozen runtime ba234504f6cd502285e040f5276edb49ae5eea3b8bea786c62632451aa417e81
 passes 49 newly emitted assertions across corpse/FIFO, Redemption, save, load,

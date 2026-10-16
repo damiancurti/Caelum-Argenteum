@@ -1,0 +1,167 @@
+[
+  {
+    "source": "build/issue307-08/combined-01.txt",
+    "artifact": "issue307-08-combined-01.txt.gz",
+    "raw_sha256": "7fb27cccfcccda74bf8d2506364cbd6955e032695997900e2e46fb7ca610b29f"
+  },
+  {
+    "source": "build/issue307-08/combined-01-run.json",
+    "artifact": "issue307-08-combined-01-run.json",
+    "raw_sha256": "ca29a915540a0d97c573a55b162bb161a790ba722410523457009d8ca91ecaee"
+  },
+  {
+    "source": "build/issue307-08/combined-01.ini",
+    "artifact": "issue307-08-combined-01.ini",
+    "raw_sha256": "2dd1856db7f9d4acde29dd8d5d625bae9934c5d0cc143a95ec20ed5bcf41c38a"
+  },
+  {
+    "source": "build/issue307-08/contracts-01.txt",
+    "artifact": "issue307-08-contracts-01.txt.gz",
+    "raw_sha256": "18d3272dae6551654ae632bcd649728edb52f132140884867f7b460b46c8d540"
+  },
+  {
+    "source": "build/issue307-08/contracts-01-run.json",
+    "artifact": "issue307-08-contracts-01-run.json",
+    "raw_sha256": "1e9fe1bee536299c40821c99648f7456ce9d6ebbd08c4f672ad8ee8710b9e699"
+  },
+  {
+    "source": "build/issue307-08/contracts-01.ini",
+    "artifact": "issue307-08-contracts-01.ini",
+    "raw_sha256": "82118400c79d8d1366714e272e0f8ed7b8b113a25cd66783b17f0350ae41c21c"
+  },
+  {
+    "source": "build/issue307-08/load-01.txt",
+    "artifact": "issue307-08-load-01.txt.gz",
+    "raw_sha256": "540a1f4bda95e0b95ee303f7231114c3df9f829b23ac1965051ac98a62e3ae9e"
+  },
+  {
+    "source": "build/issue307-08/load-01-run.json",
+    "artifact": "issue307-08-load-01-run.json",
+    "raw_sha256": "d27c0c7a29c9caa21dab3b38b8da179ae3287162cc2e122834d2ea86d7ef4897"
+  },
+  {
+    "source": "build/issue307-08/load-01.ini",
+    "artifact": "issue307-08-load-01.ini",
+    "raw_sha256": "7e0c9c8a965b11d12e6866dba317eed8d8538978c3c2bfccd445045955560e92"
+  },
+  {
+    "source": "build/issue307-08/migration-01.txt",
+    "artifact": "issue307-08-migration-01.txt.gz",
+    "raw_sha256": "cc104bf67c9414e946157e4ec416209f6aba0186138b12d057e21014ec09c4ff"
+  },
+  {
+    "source": "build/issue307-08/migration-01-run.json",
+    "artifact": "issue307-08-migration-01-run.json",
+    "raw_sha256": "2acc0bffede4d4b75f1636c0f91e722a475c34b9a10c5891bbf2c4fbee6b94c1"
+  },
+  {
+    "source": "build/issue307-08/migration-01.ini",
+    "artifact": "issue307-08-migration-01.ini",
+    "raw_sha256": "c1172797dc3177004f87e7d1f37073a80a1ea0cf1d6967dd297a0f1f4a5d6db1"
+  },
+  {
+    "source": "build/issue307-08/migration-hub-01.txt",
+    "artifact": "issue307-08-migration-hub-01.txt.gz",
+    "raw_sha256": "8d0ba4f77c3060d4a956458e501299896ef756c6c084175a796e1a443fe89f6f"
+  },
+  {
+    "source": "build/issue307-08/migration-hub-01-run.json",
+    "artifact": "issue307-08-migration-hub-01-run.json",
+    "raw_sha256": "9df87fcb97fed32675ee86f7683367e0c2108589f6811b680d7fd4a824692811"
+  },
+  {
+    "source": "build/issue307-08/migration-hub-01.ini",
+    "artifact": "issue307-08-migration-hub-01.ini",
+    "raw_sha256": "7b28f13779409b1dd9d2d848497bc6d220e1d198579a2e63b39562409fc57547"
+  },
+  {
+    "source": "build/issue307-08/migration-repeat-01.txt",
+    "artifact": "issue307-08-migration-repeat-01.txt.gz",
+    "raw_sha256": "3b65cbcc6c3d47805aa3b677afce48cf5be2bfef45acc0208a9fe705175da89e"
+  },
+  {
+    "source": "build/issue307-08/migration-repeat-01-run.json",
+    "artifact": "issue307-08-migration-repeat-01-run.json",
+    "raw_sha256": "0e2581b9cf525c45b181f2e150bd1f2f3e0757c221fdb3fa2d42cd3c4a0f73fb"
+  },
+  {
+    "source": "build/issue307-08/migration-repeat-01.ini",
+    "artifact": "issue307-08-migration-repeat-01.ini",
+    "raw_sha256": "f7fa86afa899b7d00db60cb61cb1605ecbe3e2bb94a0269fe6cf8b479ad13bb8"
+  },
+  {
+    "source": "build/issue307-08/motion-01.txt",
+    "artifact": "issue307-08-motion-01.txt.gz",
+    "raw_sha256": "180ae4d57dc11420524538483d207c23493d02dd100effb6702faaed0daec76e"
+  },
+  {
+    "source": "build/issue307-08/motion-01-run.json",
+    "artifact": "issue307-08-motion-01-run.json",
+    "raw_sha256": "8990f5445fc6e06ba788727ea80e96f9cafe43007ef0ea8dedc9effe5b477b71"
+  },
+  {
+    "source": "build/issue307-08/motion-01.ini",
+    "artifact": "issue307-08-motion-01.ini",
+    "raw_sha256": "990ca99595cfb96dd2b842d80870787d709c2ff99371530bf5cb5a643596c43a"
+  },
+  {
+    "source": "build/issue307-08/repeat-01.txt",
+    "artifact": "issue307-08-repeat-01.txt.gz",
+    "raw_sha256": "4565302e3122acf0811780fec080c78b100766f3486a247b6ae6ecd78126b840"
+  },
+  {
+    "source": "build/issue307-08/repeat-01-run.json",
+    "artifact": "issue307-08-repeat-01-run.json",
+    "raw_sha256": "76e2b0697ad1c656401148d84cc96223dd28700b7635f1d44756223396cc434d"
+  },
+  {
+    "source": "build/issue307-08/repeat-01.ini",
+    "artifact": "issue307-08-repeat-01.ini",
+    "raw_sha256": "5a9fade2400bc8ee90976f301f98f8760f5825a373f42828df5e1dc13ce8c747"
+  },
+  {
+    "source": "build/issue307-08/seed-01.txt",
+    "artifact": "issue307-08-seed-01.txt.gz",
+    "raw_sha256": "04b10e887b3a7c1c997ff5945ec29c3af0d831816ee4e5ef6d072d56dd21653f"
+  },
+  {
+    "source": "build/issue307-08/seed-01-run.json",
+    "artifact": "issue307-08-seed-01-run.json",
+    "raw_sha256": "c0ad5dfc9a4733ec7a0c997f9b767d4a60688c56e68433f7083b512ef39f82f0"
+  },
+  {
+    "source": "build/issue307-08/seed-01.ini",
+    "artifact": "issue307-08-seed-01.ini",
+    "raw_sha256": "d009cc00e6282ef15b85b6801b2672a266ade1deaefa7fc5cc1e9ce09b7cb756"
+  },
+  {
+    "source": "build/issue307-08/travel-01.txt",
+    "artifact": "issue307-08-travel-01.txt.gz",
+    "raw_sha256": "1742e9a450d8490f1a8c9aaf5f43ffe533877ef86cb97ff5d12208dcafdaaaeb"
+  },
+  {
+    "source": "build/issue307-08/travel-01-run.json",
+    "artifact": "issue307-08-travel-01-run.json",
+    "raw_sha256": "5f5e6a238262b68d83d3671eddb9c41db863ac0eac62ae2a28a9fd5f987c7e26"
+  },
+  {
+    "source": "build/issue307-08/travel-01.ini",
+    "artifact": "issue307-08-travel-01.ini",
+    "raw_sha256": "0ce8cf33dac800f483c489ebf3c6538efbdba3921d7df50ccd45370828e2c1a8"
+  },
+  {
+    "source": "build/issue307-08/walking-01.txt",
+    "artifact": "issue307-08-walking-01.txt.gz",
+    "raw_sha256": "65f1ad04a84257b78a6a0e5b62fd2b6a8a387cc857917a1683b72eee6f7e140f"
+  },
+  {
+    "source": "build/issue307-08/walking-01-run.json",
+    "artifact": "issue307-08-walking-01-run.json",
+    "raw_sha256": "8a06235c17b3a5da85b8085c3217960d042b1bdf0e11aff41b65cfa8e8f3107f"
+  },
+  {
+    "source": "build/issue307-08/walking-01.ini",
+    "artifact": "issue307-08-walking-01.ini",
+    "raw_sha256": "ba99aa5e405e37a3c8bad1c27b21cf770dbf160536bcd2ceb071dd3fad1b6dd9"
+  }
+]

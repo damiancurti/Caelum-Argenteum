@@ -2,8 +2,9 @@
 
 Author request: implement the optimization identified by #304 without disabling
 NPC thermal simulation. Branch: feat/issue305-active-seal-registry, based on
-#304's separate 41b40476 delivery (draft PR306). Native tests are agent evidence;
-no author acceptance is inferred while the author is away.
+#304's separate 41b40476 delivery (PR306). Native tests are agent evidence;
+the author separately accepted #305 and authorized PR308 merge/issue closure on
+2026-10-16, confirming all tests passed without reported exceptions.
 
 ## Production change
 
@@ -165,6 +166,8 @@ checks and exits normally. Project validation reports no errors; the normal
 build packages all 16,193 runtime members. No engine or keep-awake helper remains
 active after these checks. Manual acceptance remains separate.
 
-The author previously deferred manual checks while away. CA304-01 remains unchanged in the
-single root pending_test.txt. No new control or visual presentation is introduced
-by #305. Temporary keep-awake covers native tests and is released afterward.
+The author had deferred manual checks while away. Subsequently, on 2026-10-16,
+the author confirmed all tests passed and authorized merge/closure. CA304-01 and
+CA307-01 are recorded as accepted in HISTORY and removed from pending_test.txt.
+No new control or visual presentation is introduced by #305. Temporary keep-awake
+covered native tests and was released afterward.

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue307-04/contracts-01.txt",
+    "artifact": "issue307-04-contracts-01.txt.gz",
+    "raw_sha256": "73c8c2f40ad2a6e2849603d74df82bee514930841eed12d8508260d7f1f12daa"
+  },
+  {
+    "source": "build/issue307-04/contracts-01-run.json",
+    "artifact": "issue307-04-contracts-01-run.json",
+    "raw_sha256": "760314c81874ae964a65fdbf4238ef37498509c35099eb6221bcd0e4eaf226c9"
+  },
+  {
+    "source": "build/issue307-04/contracts-01.ini",
+    "artifact": "issue307-04-contracts-01.ini",
+    "raw_sha256": "d953d1fc05df5d5f4fd4882a278fff12f9f9b41fbe32237fd7ade8ac40586721"
+  },
+  {
+    "source": "build/issue307-04/walking-01.txt",
+    "artifact": "issue307-04-walking-01.txt.gz",
+    "raw_sha256": "948b82d740512fa0f0a09c6afe4ca83f8020b863320e6c1be04f5eb2ca670ddb"
+  },
+  {
+    "source": "build/issue307-04/walking-01-run.json",
+    "artifact": "issue307-04-walking-01-run.json",
+    "raw_sha256": "29e45c63616f1a1b9946bdce6e04ba530dce83bd295fd4a847a00d02b51692c7"
+  },
+  {
+    "source": "build/issue307-04/walking-01.ini",
+    "artifact": "issue307-04-walking-01.ini",
+    "raw_sha256": "e9cbe3711c1d98d94996accbe1e76ba98e0fcd0e15deeeb19a613636a7d298f7"
+  }
+]

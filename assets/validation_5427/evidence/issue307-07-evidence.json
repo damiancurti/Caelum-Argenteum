@@ -1,0 +1,47 @@
+[
+  {
+    "source": "build/issue307-07/contracts-01.txt",
+    "artifact": "issue307-07-contracts-01.txt.gz",
+    "raw_sha256": "af1bd1c00620ce1fa9567e18defc9ea21aa00608ce857cb75ae2c368acc233bf"
+  },
+  {
+    "source": "build/issue307-07/contracts-01-run.json",
+    "artifact": "issue307-07-contracts-01-run.json",
+    "raw_sha256": "ec9e3967289bf3ee88e441ad5855258536094396411282ab457e8fefd8ac1b66"
+  },
+  {
+    "source": "build/issue307-07/contracts-01.ini",
+    "artifact": "issue307-07-contracts-01.ini",
+    "raw_sha256": "1a7a43b23b143782c5c9378ca79a284d6ee3c637253db436d836cb1e0e24eddf"
+  },
+  {
+    "source": "build/issue307-07/motion-01.txt",
+    "artifact": "issue307-07-motion-01.txt.gz",
+    "raw_sha256": "65ab0961afc7615b09234c73466fe24dc249bc15031164ac27a95725b9d479d3"
+  },
+  {
+    "source": "build/issue307-07/motion-01-run.json",
+    "artifact": "issue307-07-motion-01-run.json",
+    "raw_sha256": "ab0d93aacc2ae673496e9edc25c23e755fa52e7d18d86fb21efe14d627b10fb7"
+  },
+  {
+    "source": "build/issue307-07/motion-01.ini",
+    "artifact": "issue307-07-motion-01.ini",
+    "raw_sha256": "7381adf3f96335e77952962bb0cf76c4dee8addf66c6f97ff7983459c8959079"
+  },
+  {
+    "source": "build/issue307-07/walking-01.txt",
+    "artifact": "issue307-07-walking-01.txt.gz",
+    "raw_sha256": "cc53e81e963d33bdc6df2ed7d68ae6d41ff67cdf72864d9884d26ffbac0b6acc"
+  },
+  {
+    "source": "build/issue307-07/walking-01-run.json",
+    "artifact": "issue307-07-walking-01-run.json",
+    "raw_sha256": "0530a7eb922a50a1ca5e58a016dd1f8cd5ceb85709a13de44f5f3be4d9812865"
+  },
+  {
+    "source": "build/issue307-07/walking-01.ini",
+    "artifact": "issue307-07-walking-01.ini",
+    "raw_sha256": "75ec3c5f9e06fec880c19b444cda1bb12607e633dfa03bd1282bc7570228a760"
+  }
+]

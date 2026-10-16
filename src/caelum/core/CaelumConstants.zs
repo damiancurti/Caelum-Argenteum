@@ -239,6 +239,8 @@ class CaelumConstants : Object
     const PRISONER_CONVERSATION_BASE = 43420;
     const PRISONER_PORT_CONVERSATION_BASE = 43424;
     const PRISONER_FOLLOW_DISTANCE = 96.0;
+    // Cadencia de marcha ya usada por los cuatro estados See de prisioneros.
+    const PRISONER_WALK_STATE_TICS = 4;
     const PRISONER_FOLLOW_TELEPORT_DISTANCE = 1024.0;
     const PRISONER_EXTRACTION_RADIUS = 96.0;
     const PRISONER_THREAT_RADIUS = 512.0;

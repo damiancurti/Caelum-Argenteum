@@ -403,9 +403,9 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         double distance = offset.Length();
         if (distance <= 0.001) { Vel = (0,0,0); return; }
         Angle = VectorAngle(offset.X, offset.Y);
-        double speed = Max(0.0, CombatBaseSpeed
-            * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
-            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED);
+        // Speed mide el paso de See, ejecutado cada cuatro tics. La velocidad
+        // continua conserva esa marcha y sus ajustes de salud, frío y estados.
+        double speed = Max(0.0, Speed) / CaelumConstants.PRISONER_WALK_STATE_TICS;
         double resolvedSpeed = Min(speed, Max(0.0,
             distance - CaelumConstants.PRISONER_FOLLOW_DISTANCE));
         Vel.X = Cos(Angle) * resolvedSpeed;

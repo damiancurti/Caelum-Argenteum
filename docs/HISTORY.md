@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+## 5.4.27 - Normal-speed prisoner following (#307)
+
+On 2026-10-16 the author requested normal-speed prisoner following and explicitly
+confirmed retaining recovery teleport. Issue #307 replaces the ordinary escort's
+base-speed run multiplier with shared resolved Speed divided by the existing
+four-tic walking cadence, retaining health, thermal and elemental penalties and
+the existing 96/1024-unit distances. Merely removing the run multiplier would
+still apply a four-tic native walking step every tic. This supersedes
+the ordinary-follow choice in 4.36.8's third correction; its historical record is
+preserved. No save schema changes. Native verification passes 334 assertions in
+11 final-runtime runs plus 14 in two legacy controls. Native A_Chase and following
+each cover 100 units in 40 tics; the old escort reaches 20 units/tic versus the
+normal 2.5. Save/reload/migration/hub identity and inventory checks pass. Static
+validation, normal packaging and 16,193 runtime member comparisons pass. Earlier
+diagnostic fixture failures are preserved and explained, not counted as passes.
+Validation: assets/validation_5427/RESULTS.md.
+
+Author acceptance, 2026-10-16: CA307-01 (origin 5.4.27 / issue #307) passed,
+without reported exceptions. The author confirmed that all tests were correct
+and explicitly authorized issue closure and merge of the delivered #304, #305
+and #307 work. PR317 contains the prisoner change; #305 is 83f79cc1 in PR308 and
+#304 is 41b40476 in PR306. CA307-01 and CA304-01 are removed from the pending
+queue under that explicit confirmation; pending_test.txt remains tracked and
+empty. This acceptance update changes no runtime files or release version.
 
 ## 5.4.26 - Active climate-seal registry (#305)
 
@@ -18,14 +43,19 @@ and hub restoration. Repeated uninstrumented controls improve approach from
 All sampled population/projectile rows match within each group; thermal states
 remain active. Prior instrumented baseline evidence is reused only after exact
 runtime-hash agreement. Full methods and qualifications: validation_5426/RESULTS.md.
-Review/merge and CA304-01 author acceptance remain pending; no manual acceptance
-or displayed-FPS result is inferred from these automatic tests.
+At that checkpoint, review/merge and CA304-01 author acceptance were pending;
+no manual acceptance or displayed-FPS result was inferred from automatic tests.
 
 Delivery resumed at the author's request on 2026-10-16, including commit/push.
 All 16,193 runtime members match the functional-test package byte for byte;
 the native equivalence replay passes another 27 checks. Project validation and
 the normal PK3 build pass. No test engine or keep-awake helper remains active.
 The author separately requested prisoner normal-speed following in issue #307.
+
+Author acceptance, 2026-10-16: the author confirmed all tests passed and authorized
+#305 closure and PR308 merge, without reported exceptions. This delivery has no
+separate pending author-test ID. The simulation-rate qualifications above remain;
+acceptance does not turn those measurements into displayed-FPS evidence.
 
 ## 5.4.25 - Siege profiling and corpse suspension (#304)
 
@@ -44,7 +74,13 @@ a diagnostic Redemption run; snapshot enumeration, map-local dormant lists
 and allocation-free death lookup fixed the native teardown failure. CA-KP-016
 records the engine evidence. Resurrected NPCs also restart their thermal clock
 instead of simulating the dead interval; archived and visible bodies pass the
-same focused native check. CA304-01 author acceptance remains pending.
+same focused native check.
+
+Author acceptance, 2026-10-16: CA304-01 (origin 5.4.25 / issue #304) passed,
+without reported exceptions. This confirms the 105-body archive/Redemption
+control, game usability and normal shutdown specified by that check. The author
+authorized #304 closure and PR306 merge. The confirmed entry is removed from
+pending_test.txt; native evidence and performance limitations remain preserved.
 
 Repeated approach controls measure 17.3-17.4 simulation tics/s ordinarily and
 27.7-29.5 with NPC thermal disabled. The 105-tic target refresh gives 17.6-19.2;

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.26** — 2026-10-16.
+Documentation version: **5.4.27** — 2026-10-16.
+
+## 5.4.27 - Normal-speed prisoner following (#307)
+
+Ordinary freed-prisoner steering uses the shared resolved Speed: the existing
+base movement with health, thermal and elemental modifiers, converted from the
+existing four-tic See step to continuous per-tic velocity. The unchanged walking
+cadence is shared as PRISONER_WALK_STATE_TICS; it is not a new balance value.
+Following grants no extra run multiplier or distance-based acceleration. Followers stop within
+PRISONER_FOLLOW_DISTANCE (96 map units) and approach again when the player leaves
+that radius. On 2026-10-16 the author explicitly retained recovery teleport
+beyond PRISONER_FOLLOW_TELEPORT_DISTANCE (1024), with existing collision-safe
+placement. This supersedes the ordinary-follow run ratio recorded in 4.36.8's
+third correction; boss escape retains its separate behavior. Rescue, combat,
+resource recovery, conversation, extraction and rewards keep their existing rules.
+No persistent fields or save schema change. Evidence: validation_5427/RESULTS.md.
 
 ## 5.4.26 - Seal-query index (#305)
 

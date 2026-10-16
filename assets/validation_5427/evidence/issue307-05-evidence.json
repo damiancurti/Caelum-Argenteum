@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue307-05/combined-01.txt",
+    "artifact": "issue307-05-combined-01.txt.gz",
+    "raw_sha256": "19c127db189ef5f123f014b047db28636cfa5033e69a507ddafe0938846cba06"
+  },
+  {
+    "source": "build/issue307-05/combined-01-run.json",
+    "artifact": "issue307-05-combined-01-run.json",
+    "raw_sha256": "920d8ca61440a3ef0b7c954005d410bdecae889329a99ed8e494dfc9e434541f"
+  },
+  {
+    "source": "build/issue307-05/combined-01.ini",
+    "artifact": "issue307-05-combined-01.ini",
+    "raw_sha256": "809ab5fd5bb6c234bb730579849954a98a8c2201dfdd82a6e3579fbd02c4db58"
+  },
+  {
+    "source": "build/issue307-05/contracts-01.txt",
+    "artifact": "issue307-05-contracts-01.txt.gz",
+    "raw_sha256": "bf700dc41d945a781b104f003d5307fdfae3d18c658f02f94b2e785bb4107276"
+  },
+  {
+    "source": "build/issue307-05/contracts-01-run.json",
+    "artifact": "issue307-05-contracts-01-run.json",
+    "raw_sha256": "9242f8008de88e48653ab868576c67f220e7219a1bba0f90801516d08e9ac95c"
+  },
+  {
+    "source": "build/issue307-05/contracts-01.ini",
+    "artifact": "issue307-05-contracts-01.ini",
+    "raw_sha256": "f567b37bdddb2d36a13ff7a47563e753883020fa01194e6c5622123d9afd2eaa"
+  }
+]
