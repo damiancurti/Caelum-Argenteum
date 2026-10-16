@@ -1,8 +1,10 @@
 # Issue #284 - Demon combat and rock evidence (5.4.24)
 
-Implemented in PR302; author acceptance is pending as CA284-01. Combat/personality
+Implemented in PR302; CA284-01 passed author review on 2026-10-15. Combat/personality
 and cosmetic work have separate commits. The current frozen author stage is
-`build/issue284-author-02`; no campaign saves or settings are used.
+`build/issue284-author-02`; no campaign saves or settings are used. The author
+confirmed F6/F7/F8 gameplay and model review; acceptance.json records this
+separately from automated checks. Session author-20261015-231334 exited with code 0.
 
 ## Native evidence
 

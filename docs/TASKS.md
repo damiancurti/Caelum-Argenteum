@@ -2,19 +2,21 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
-## 5.4.24 - Demon combat and rock (#284, author review pending)
+## 5.4.24 - Demon combat and rock (#284, accepted)
 
-Branch feat/issue284-demon-fire-rock follows accepted #283. Implement the approved
+Branch feat/issue284-demon-fire-rock follows accepted #283 and implements the approved
 physical-plus-Fire machete with one impact and weighted Toughness, demon
 personalities without base-attribute changes, and cosmetic Zupay rock. Keep
 combat/personality and art commits separate within this issue's PR.
 
 Focused combat/action, migration/reload/hub/rollback and rendered checks pass,
 with 62 assertions across eight scoped runs. Deterministic generation, static
-validation and 16,192-member package parity pass. PR302 is draft; CA284-01 is the
-only outstanding author check. The isolated trial and visible-terminal launcher
-are in validation_5424. Keep the issue open until author confirmation. V5.17 owns
-the deferred modular 3D migration.
+validation and 16,192-member package parity pass. CA284-01 passed author review
+on 2026-10-15; PR302 is ready and pending_test.txt is empty. The author then
+authorized merging and closing all completed issues in this batch. This supersedes
+earlier no-merge instructions below; the remaining task is ordered integration
+and closure of #237-254, #259-261 and #282-284. V5.17 owns the deferred modular
+3D migration. The isolated trial launcher remains in validation_5424.
 
 ## 5.4.23 - Domingo 3D prototype (#283, accepted)
 

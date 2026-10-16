@@ -18,7 +18,7 @@ Only Zupay-owned explosive shots adopt the new native MODELDEF frame. Elemental
 lights/trails/impact effects and all flight/combat properties stay authoritative.
 Native throw/flight and front/side model review pass, with an exact export repeat.
 The earlier player-camera relocation fixture and stretched side UVs remain
-recorded as superseded candidates. Author visual acceptance remains CA284-01.
+recorded as superseded candidates. CA284-01 passed author visual review on 2026-10-15.
 
 ## 5.4.23 - Editable Domingo 3D prototype (#283, accepted)
 

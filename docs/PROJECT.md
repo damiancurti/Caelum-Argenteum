@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
-## 5.4.24 - Demon combat and cosmetic rock (#284, author review pending)
+## 5.4.24 - Demon combat and cosmetic rock (#284, accepted)
 
 The separately scoped follow-up to accepted #283 preserves Mandinga's base
 attributes, adds the approved Fire component and burn to its physical machete
@@ -11,7 +11,7 @@ existing projectile as a 3D rock. The author requires one weighted Toughness
 reduction after both components' defenses. PR302 contains the focused delivery. Combat/action, compatibility, rollback,
 deterministic art and front/side rendering checks pass: 62 assertions across eight
 scoped native runs, with source/build qualifications in validation_5424. Normal
-packaging matches 16,192 source members. CA284-01 awaits author acceptance.
+packaging matches 16,192 source members. CA284-01 passed author review on 2026-10-15; batch merge/closure is authorized.
 
 ## 5.4.23 - Domingo native 3D prototype (#283, accepted)
 

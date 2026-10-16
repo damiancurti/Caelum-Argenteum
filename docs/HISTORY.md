@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
-## 5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, author review pending)
+## 5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, accepted)
 
 The author approved an additional magical Fire component and normal burn on the
 Mandinga's existing physical machete hit, sharing its critical result. The old
@@ -26,8 +26,15 @@ correction fixes side stretching; unchanged combat/migration evidence retains it
 own package fingerprints rather than being relabeled. Three generated artifacts
 repeat byte-for-byte and normal packaging matches all 16,192 source members.
 Project validation reports zero errors. Preserved fixture failures and corrections
-are listed in validation_5424/RESULTS.md. No author acceptance is inferred:
-CA284-01 remains in pending_test.txt and the visible trial terminal stays available.
+are listed in validation_5424/RESULTS.md.
+
+On 2026-10-15 the author explicitly confirmed CA284-01 (origin 5.4.24 / #284)
+passed: the F6 machete/burn, F7 native rock throw and F8 multi-angle rock view.
+The tested runtime was 435dec66f72a7fa3d44d89fa16071b7c75dc65e72dd023ae3c14affbd1de699c;
+the isolated session exited normally. This is manual gameplay/visual acceptance,
+separate from the native contract and save checks above. The confirmed entry was
+removed from pending_test.txt; no author tests remain. PR302 is ready. The author
+then authorized merging and closing the completed V5.4 batch, including #282-284.
 
 ## 5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)
 

@@ -1,7 +1,7 @@
 {
   "issue": 284,
   "version": "5.4.24",
-  "author_acceptance": "pending CA284-01",
+  "author_acceptance": "accepted CA284-01 on 2026-10-15; see acceptance.json",
   "native_runs": [
     {
       "stage": "issue284-final-02",

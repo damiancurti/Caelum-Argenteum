@@ -31,7 +31,7 @@ Zupay's thrown projectile keeps its existing class, state identities, collision,
 speed, trajectory, elemental damage, status, explosion and lifetime. Cosmetic
 revision 1 captures rock presentation once, including existing flying shots;
 other casters keep their existing presentation. No larger collision follows the
-visible rock model. Author acceptance remains pending.
+visible rock model. CA284-01 passed author review on 2026-10-15.
 
 ## 5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)
 

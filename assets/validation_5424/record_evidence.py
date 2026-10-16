@@ -47,7 +47,7 @@ def main():
         assert all(archive.read(name) == value for name, value in expected.items())
     captures = {name: sha(ROOT / "build/issue284-author-02" / name)
                 for name in ("rock-front.png", "rock-side.png")}
-    result = {"issue": 284, "version": "5.4.24", "author_acceptance": "pending CA284-01",
+    result = {"issue": 284, "version": "5.4.24", "author_acceptance": json.loads((HERE / "acceptance.json").read_text(encoding="utf-8"))["status"] + " CA284-01 on 2026-10-15; see acceptance.json",
         "native_runs": runs, "assertions": sum(run["assertions_in_this_log"] for run in runs),
         "current_runtime_sha256": sha(ROOT / "build/issue284-author-02/production.pk3"),
         "package_source_members": len(expected), "deterministic_art": before,

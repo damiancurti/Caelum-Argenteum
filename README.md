@@ -15,7 +15,7 @@ impact, with the same critical/evasion and one weighted Toughness reduction.
 Approved demon personalities use saved shared profiles. Zupay's projectile uses
 a cosmetic 3D rock without changing its combat or flight. Focused native checks and
 packaging pass; [PR302](https://github.com/damiancurti/Caelum-Argenteum/pull/302)
-awaits author review CA284-01. See [validation_5424](assets/validation_5424/RESULTS.md).
+is ready after author acceptance of CA284-01 on 2026-10-15. See [validation_5424](assets/validation_5424/RESULTS.md).
 
 5.4.23 completes the author-accepted **opt-in Domingo 3D prototype** for
 [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283), delivered in
