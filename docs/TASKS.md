@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.25** — 2026-10-16.
+Documentation version: **5.4.26** — 2026-10-16.
+
+## 5.4.26 - Active seal lookup optimization (#305)
+
+Implemented on feat/issue305-active-seal-registry, separately from #304/PR306.
+Native equivalence, existing seal rules, current/old saves and map/hub transitions
+pass. Repeated matched MAP06 controls retain NPC thermal simulation and improve
+approach throughput by approximately 60% and saved-combat throughput by 85%.
+Evidence and limits: validation_5426/RESULTS.md. Review/merge remains pending;
+CA304-01 is the outstanding author check. On 2026-10-16 the author requested
+resumption, commit and push; delivery validation and 27 repeated native checks
+pass against the unchanged tested runtime. Remaining
+combat costs are follow-up profiling candidates, not changes included in #305.
 
 ## 5.4.25 - Active performance issue #304
 
@@ -14,8 +26,8 @@ Archive/save/hub/old-save/Redemption and thermal-clock native checks passed.
 Repeated approach controls, long natural battle and exact reserve/corpse controls
 are recorded in validation_5425. Final saved-combat/capture checks pass; CA304-01
 remains pending while the author is away. Commit/push and a linked PR are authorized;
-permanent thermal/target-period changes are not requested. The leading follow-up
-is a correctly invalidated active-seal registry, not removal of NPC physiology.
+removal of thermal simulation or target-period changes are not requested. The
+active-seal lookup optimization is delivered separately by #305.
 
 ## Current V5.4 batch completion
 

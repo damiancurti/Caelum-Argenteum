@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue305-study-01-late-base/late-1-base.txt",
+    "artifact": "issue305-study-01-late-base-late-1-base.txt.gz",
+    "raw_sha256": "fa16e1539641fb9ba0ff8d7137030c29679747d289d4071a1e9a7c59b989c99d"
+  },
+  {
+    "source": "build/issue305-study-01-late-base/late-1-base-run.json",
+    "artifact": "issue305-study-01-late-base-late-1-base-run.json",
+    "raw_sha256": "7cd7632babb7bfa1e66aa5716e935c0f369ff8c2243ae57540b9dc4241fef5a9"
+  },
+  {
+    "source": "build/issue305-study-01-late-base/late-1-base.ini",
+    "artifact": "issue305-study-01-late-base-late-1-base.ini",
+    "raw_sha256": "0bce9f3d82e1238e243b68318aaf29f096bf22f2f045a556cfc42fa59e3bc181"
+  },
+  {
+    "source": "build/issue305-study-01-late-base/late-4-base.txt",
+    "artifact": "issue305-study-01-late-base-late-4-base.txt.gz",
+    "raw_sha256": "c58be4bb405b524049ee6c38515958546bf1606500006b5bd9d1bb0eb20d4103"
+  },
+  {
+    "source": "build/issue305-study-01-late-base/late-4-base-run.json",
+    "artifact": "issue305-study-01-late-base-late-4-base-run.json",
+    "raw_sha256": "fd3367b6f13a6bd11aba58763b0d680e48eeaa78a8430c3ef26689456ad37c57"
+  },
+  {
+    "source": "build/issue305-study-01-late-base/late-4-base.ini",
+    "artifact": "issue305-study-01-late-base-late-4-base.ini",
+    "raw_sha256": "4018535b23852a84cc54e3259ca08a048424c712be24d0c9e7921e634072ba32"
+  }
+]

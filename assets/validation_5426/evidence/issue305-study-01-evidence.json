@@ -1,0 +1,62 @@
+[
+  {
+    "source": "build/issue305-study-01/early-1-base.txt",
+    "artifact": "issue305-study-01-early-1-base.txt.gz",
+    "raw_sha256": "70849e2937c194c26b2b232a9da1907655f30735444ed098c121be7ecaf27c65"
+  },
+  {
+    "source": "build/issue305-study-01/early-1-base-run.json",
+    "artifact": "issue305-study-01-early-1-base-run.json",
+    "raw_sha256": "443de5b32cd7adcce5ee78c84c4ae2060d14337ad314af4fb0f5728436af47e9"
+  },
+  {
+    "source": "build/issue305-study-01/early-1-base.ini",
+    "artifact": "issue305-study-01-early-1-base.ini",
+    "raw_sha256": "2998d1ca5c9267de1163d0440eeb713df2a1c94c9e8f428b7d0de0e5bacee2ba"
+  },
+  {
+    "source": "build/issue305-study-01/early-2-registry.txt",
+    "artifact": "issue305-study-01-early-2-registry.txt.gz",
+    "raw_sha256": "027022478dd0fb74650012fc6995fc185a8676248e5de9d217a4b7f7677d0b5e"
+  },
+  {
+    "source": "build/issue305-study-01/early-2-registry-run.json",
+    "artifact": "issue305-study-01-early-2-registry-run.json",
+    "raw_sha256": "bb40eea294966f68e504819b39a11060f70b82d9eac4bc07e22d49db23a4360d"
+  },
+  {
+    "source": "build/issue305-study-01/early-2-registry.ini",
+    "artifact": "issue305-study-01-early-2-registry.ini",
+    "raw_sha256": "48476033707f58f16c382b9158de8299a8d4cacee77540a0a86813df8e6f2e11"
+  },
+  {
+    "source": "build/issue305-study-01/early-3-registry.txt",
+    "artifact": "issue305-study-01-early-3-registry.txt.gz",
+    "raw_sha256": "414531a8a9bb402653257158afa9a2c094e883ef7fcb303700c3a5e1b9f4d7b9"
+  },
+  {
+    "source": "build/issue305-study-01/early-3-registry-run.json",
+    "artifact": "issue305-study-01-early-3-registry-run.json",
+    "raw_sha256": "746d2001e5953b55705b11ecac12de923537940583b4f60edd5446dd2b0e11bc"
+  },
+  {
+    "source": "build/issue305-study-01/early-3-registry.ini",
+    "artifact": "issue305-study-01-early-3-registry.ini",
+    "raw_sha256": "994442fb45aa9773277cf730d1b00453f4fdfb7dc97bdf144a4199b1e0656782"
+  },
+  {
+    "source": "build/issue305-study-01/early-4-base.txt",
+    "artifact": "issue305-study-01-early-4-base.txt.gz",
+    "raw_sha256": "7d1e4a15f8257820183ee21c1796a47823e970eda5bc5742f2fb3bfa53ed2008"
+  },
+  {
+    "source": "build/issue305-study-01/early-4-base-run.json",
+    "artifact": "issue305-study-01-early-4-base-run.json",
+    "raw_sha256": "bbb76813ffc3943b4c11315cf09ec6d09fdcd3c6e9b6e268418a77359de28a15"
+  },
+  {
+    "source": "build/issue305-study-01/early-4-base.ini",
+    "artifact": "issue305-study-01-early-4-base.ini",
+    "raw_sha256": "236d83adc7ee29fed67058db8e128b439f4aab5d4a8b6ce93f2bcd89c2c8e8cc"
+  }
+]

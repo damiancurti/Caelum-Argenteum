@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue305-02-legacy/seed-01.txt",
+    "artifact": "issue305-02-legacy-seed-01.txt.gz",
+    "raw_sha256": "7cb4a8d4fc9bb0b56099c97c28ec7ae0087857cb2ebe86189e86ae35c88394a4"
+  },
+  {
+    "source": "build/issue305-02-legacy/seed-01-run.json",
+    "artifact": "issue305-02-legacy-seed-01-run.json",
+    "raw_sha256": "07870d048e28fc1d18b996e4573bac6ed106333422f06139ffa02d41181b5033"
+  },
+  {
+    "source": "build/issue305-02-legacy/seed-01.ini",
+    "artifact": "issue305-02-legacy-seed-01.ini",
+    "raw_sha256": "9208717cecbea982f787fe6d274f051e2adce0f97c0128321e04f5c28a6db364"
+  }
+]

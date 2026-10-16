@@ -58,6 +58,12 @@ class CaelumChannelEffect : Actor
         Height 1;
     }
 
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        let registry=CaelumSealRegistry.Get();if(registry!=null)registry.Track(self);
+    }
+
     void ConfigureChannel(CaelumPlayer owner, CaelumEquipmentItem seal,
         double radius)
     {
@@ -71,6 +77,9 @@ class CaelumChannelEffect : Actor
         PulseAccumulator = 0.0;
         TrappedMass = 0.0;
         EnsureClimateState();
+        // Spawn puede aplazar PostBeginPlay: configurar ya permite consultar
+        // el clima en este mismo tic, por lo que el alta debe ser inmediata.
+        let registry=CaelumSealRegistry.Get();if(registry!=null)registry.Track(self);
     }
 
     bool IsAuthorizedTarget(Actor candidate)
@@ -366,6 +375,7 @@ class CaelumChannelEffect : Actor
 
     override void OnDestroy()
     {
+        let registry=CaelumSealRegistry.Get();if(registry!=null)registry.Forget(self);
         CaelumSealPresentation.End(self);
         RestoreTargetGravity();
         let it=ThinkerIterator.Create("CaelumSealGravity");CaelumSealGravity binding;

@@ -1,18 +1,18 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.25** — 2026-10-16.
+Documentation version: **5.4.26** — 2026-10-16.
 
-**5.4.25/#304, author check pending:** MAP06 archives all but 100 recent corpses without
-simulation, preserving loot and resurrection. Diagnostic: 6660 Mandingas total,
-1000 alive; NPC thermal on/off, 8/105-tic perception and soldier sprite/3D controls.
-Branch feat/issue304-siege-performance; validation_5425. Native archive, legacy
-save, hub, 105-body Redemption and thermal-clock restart checks pass. Early
-baseline 17.3-17.4 tics/s vs NPC thermal off 27.7-29.5; empty climate-seal scans
-dominate the sampled thermal cost. See RESULTS for late combat, 3D and limits.
+**5.4.26/#305 implemented:** author-requested active-seal registry preserves
+climate/thermal rules. Branch feat/issue305-active-seal-registry; validation_5426.
+Lifecycle/save/performance checks pass; resumed delivery verifies all 16,193
+runtime members and repeats 27 native equivalence checks. No test helper remains
+active. Review is pending. #304 is pushed in draft PR306 (41b40476): native
+archive and performance checks pass; CA304-01 awaits author acceptance. See
+validation_5425/RESULTS.md for measured costs and limitations.
 **5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
-full modular migration remains V5.17. Keep-awake released. Earlier map/Journal
+full modular migration remains V5.17. Earlier map/Journal
 batch #231-236/#255-258 is accepted/merged/closed. CA304-01 is the pending author check.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,

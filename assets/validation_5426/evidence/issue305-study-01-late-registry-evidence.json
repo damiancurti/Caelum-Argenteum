@@ -1,0 +1,32 @@
+[
+  {
+    "source": "build/issue305-study-01-late-registry/late-2-registry.txt",
+    "artifact": "issue305-study-01-late-registry-late-2-registry.txt.gz",
+    "raw_sha256": "a31ae3f385ab899c06764e68266434f82c21b13d941d082782d364c405e283d6"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late-2-registry-run.json",
+    "artifact": "issue305-study-01-late-registry-late-2-registry-run.json",
+    "raw_sha256": "b1cdf1fda78678aeaa95aad0ae9470706dbf03ea4bcfcceb220893e23f86c230"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late-2-registry.ini",
+    "artifact": "issue305-study-01-late-registry-late-2-registry.ini",
+    "raw_sha256": "f14f89e5c6287e788c1f19afde5951aa1c279ced5bc278d6b52ea3e49b4b52c0"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late-3-registry.txt",
+    "artifact": "issue305-study-01-late-registry-late-3-registry.txt.gz",
+    "raw_sha256": "d6f686bbe6b4f6f22a02b07c87c1b598ce5a12289b3d19c93a8010de8f8c09ce"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late-3-registry-run.json",
+    "artifact": "issue305-study-01-late-registry-late-3-registry-run.json",
+    "raw_sha256": "1f75a2784e6475790460b4a0f6906e100f67462af0b04f82c9432bb4f4d90695"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late-3-registry.ini",
+    "artifact": "issue305-study-01-late-registry-late-3-registry.ini",
+    "raw_sha256": "4225d83a700d0ca39a7c1287f13f2864e515930837cebedf86ea6a3db778383d"
+  }
+]

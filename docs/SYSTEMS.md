@@ -1,6 +1,20 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.25** — 2026-10-16.
+Documentation version: **5.4.26** — 2026-10-16.
+
+## 5.4.26 - Seal-query index (#305)
+
+Climate queries enumerate live channel references in a transient map-scoped
+registry, retaining the existing Active, radius, wall/floor, overlapping-effect
+and wind-direction checks on every query. The index caches no temperature,
+humidity, wind, visibility or actor-position result. It is rebuilt for normal,
+legacy and hub loads; creation/destruction updates it immediately and map exit
+clears it. Cache revision 1 is reconstructible and adds no persistent actor/save
+schema. A missing registry handler falls back to the previous full scan.
+ConfigureChannel registers immediately because PostBeginPlay can be deferred;
+both paths are idempotent. Teardown unregisters without creating/rebuilding state.
+The safe fast path applies in normal play, including the automatic >=500-living
+combatant mode, without disabling physiology or changing targeting intervals.
 
 ## 5.4.25 - MAP06 corpse archive and diagnostic boundaries (#304)
 

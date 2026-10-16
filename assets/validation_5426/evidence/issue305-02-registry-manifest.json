@@ -1,0 +1,5 @@
+{
+  "fixture_sha256": "86ecfdd03ee13322679d1508a4ce8e244f77f7f68f9dc738ea71b63a2d4c43f7",
+  "previous_runtime_sha256": "ba234504f6cd502285e040f5276edb49ae5eea3b8bea786c62632451aa417e81",
+  "oracle": "exact previous Delta body, shared unchanged Active/ClearPath rules"
+}

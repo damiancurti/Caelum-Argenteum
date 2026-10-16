@@ -10,6 +10,7 @@ param(
     [int]$Height = 720,
     [int]$HudScale = 0,
     [string]$Language = 'enu',
+    [ValidatePattern('^CA[0-9]+$')][string]$Marker = 'CA304',
     [int]$Seed = 243,
     [switch]$Uncapped,
     [switch]$Interactive,
@@ -75,7 +76,7 @@ if ((Test-Path -LiteralPath $capture) -and (Get-Item -LiteralPath $capture).Last
 $record | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath "$work\$Label-run.json" -Encoding utf8
 if ($process.ExitCode -ne 0) { throw "Engine exit code $($process.ExitCode)" }
 if ($record.engine_error -or $record.native_crash) { throw 'Native engine failure; inspect preserved evidence.' }
-if (Select-String -LiteralPath "$work\$Label.txt" -Pattern 'CA304 FAIL|Script error|VM execution aborted' -Quiet) { throw 'Audit failed; inspect the full preserved log.' }
+if (Select-String -LiteralPath "$work\$Label.txt" -Pattern 'CA[0-9]+ FAIL|Script error|VM execution aborted' -Quiet) { throw 'Audit failed; inspect the full preserved log.' }
 if ($Interactive) { Write-Host 'Manual session closed normally. Author confirmation remains separate.'; return }
-if (!(Select-String -LiteralPath "$work\$Label.txt" -SimpleMatch 'CA304 DONE failures=0' -Quiet)) { throw 'Missing completion marker.' }
-Select-String -LiteralPath "$work\$Label.txt" -SimpleMatch 'CA304 DONE'
+if (!(Select-String -LiteralPath "$work\$Label.txt" -Pattern "$Marker DONE[^\r\n]*failures=0\b" -Quiet)) { throw 'Missing completion marker.' }
+Select-String -LiteralPath "$work\$Label.txt" -SimpleMatch "$Marker DONE"

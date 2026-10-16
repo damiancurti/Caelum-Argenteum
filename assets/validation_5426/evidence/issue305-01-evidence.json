@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue305-01/registry-01.txt",
+    "artifact": "issue305-01-registry-01.txt.gz",
+    "raw_sha256": "299cf23ee64f9479ae2968b8bd90a57c1e42187804103dac8dc04bc743093673"
+  },
+  {
+    "source": "build/issue305-01/registry-01-run.json",
+    "artifact": "issue305-01-registry-01-run.json",
+    "raw_sha256": "950ec94d1778031390bc94f1eea93d453c899c5a59530c4f39d664a9c340b488"
+  },
+  {
+    "source": "build/issue305-01/registry-01.ini",
+    "artifact": "issue305-01-registry-01.ini",
+    "raw_sha256": "bca48f9eed6f2f3b9a92570fba8a5a9cd95350f574ec0875964d5b3691b5d928"
+  }
+]

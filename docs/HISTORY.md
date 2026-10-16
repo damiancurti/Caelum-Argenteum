@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.25** — 2026-10-16.
+Documentation version: **5.4.26** — 2026-10-16.
+
+## 5.4.26 - Active climate-seal registry (#305)
+
+On 2026-10-16 the author requested implementation of the optimization identified
+in #304 and a separate issue. Issue305 and branch feat/issue305-active-seal-registry
+are based on the distinct #304 delivery (PR306). A temporary keep-awake request
+covers automatic tests while the author is away; manual questions/checks are
+deferred. The registry preserves current climate effects and is validated against
+the previous full scan. The first equivalence run exposed deferred PostBeginPlay;
+registration in ConfigureChannel fixed immediate queries (CA-KP-108). The failed
+run remains preserved. Final functional runs pass 212 current-runtime assertions
+and two previous-version seed assertions, including normal shutdown, old saves
+and hub restoration. Repeated uninstrumented controls improve approach from
+18.0-18.3 to 28.7-29.3 simulation tics/s and saved combat from 5.2-5.3 to 9.7.
+All sampled population/projectile rows match within each group; thermal states
+remain active. Prior instrumented baseline evidence is reused only after exact
+runtime-hash agreement. Full methods and qualifications: validation_5426/RESULTS.md.
+Review/merge and CA304-01 author acceptance remain pending; no manual acceptance
+or displayed-FPS result is inferred from these automatic tests.
+
+Delivery resumed at the author's request on 2026-10-16, including commit/push.
+All 16,193 runtime members match the functional-test package byte for byte;
+the native equivalence replay passes another 27 checks. Project validation and
+the normal PK3 build pass. No test engine or keep-awake helper remains active.
+The author separately requested prisoner normal-speed following in issue #307.
 
 ## 5.4.25 - Siege profiling and corpse suspension (#304)
 

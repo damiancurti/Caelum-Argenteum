@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue305-study-01-late-profile-registry/profile-01.txt",
+    "artifact": "issue305-study-01-late-profile-registry-profile-01.txt.gz",
+    "raw_sha256": "cf003a4fefadf85204fdc31ea6e22e4861a146854aa18d3da99788987e444dfd"
+  },
+  {
+    "source": "build/issue305-study-01-late-profile-registry/profile-01-run.json",
+    "artifact": "issue305-study-01-late-profile-registry-profile-01-run.json",
+    "raw_sha256": "1f2528c67c3367e8015d1e6e0673a693de55a554c0bd992924bc240e78de9575"
+  },
+  {
+    "source": "build/issue305-study-01-late-profile-registry/profile-01.ini",
+    "artifact": "issue305-study-01-late-profile-registry-profile-01.ini",
+    "raw_sha256": "dd21b1547b2b373ae3d61c1f43186327d057b643420e3612a05ed717949a97d3"
+  }
+]
