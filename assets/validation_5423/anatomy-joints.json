@@ -1,0 +1,25 @@
+{
+  "source_sha256": "0fc69553d956477f8f7bc1678b363527079e0de5c270567e0cf5cd3bd218a2bd",
+  "joint_samples": 186,
+  "maximum_lateral_knee_units": 0.8146324157714844,
+  "minimum_forward_knee_units": 0.08260536193847656,
+  "elbow_degrees": {
+    "Walk.L": {
+      "min": 23.669480983734758,
+      "max": 52.686327313956255
+    },
+    "Walk.R": {
+      "min": 23.669480983734758,
+      "max": 52.68631365357791
+    },
+    "Run.L": {
+      "min": 42.93699383985551,
+      "max": 81.98552683427691
+    },
+    "Run.R": {
+      "min": 42.937004085139264,
+      "max": 81.98553366446608
+    }
+  },
+  "scope": "Evaluated walk/run/seated anatomy; author visual acceptance remains separate."
+}

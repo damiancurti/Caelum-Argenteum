@@ -1,6 +1,1082 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.24** — 2026-10-15.
+
+## 5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, accepted)
+
+The author approved an additional magical Fire component and normal burn on the
+Mandinga's existing physical machete hit, sharing its critical result. The old
+proposal to raise base attributes is withdrawn. Mandinga uses aggressive,
+calculating, rebellious and liberal; Zupay uses patient, calculating, disciplined
+and conservative. The thrown rock is cosmetic and preserves its attack rules.
+
+On 2026-10-15 the author clarified that Dureza is subtracted once after the two
+components' defenses, weighted between full physical and half magical reduction
+according to their remaining damage. The implementation keeps a synchronous
+compound-hit context so evasion, final health loss, Sleep and Arenga stay atomic.
+Demon profile revision 2 and cosmetic rock revision 1 retain existing bodies,
+resources, ownership and projectile state.
+
+Delivery PR302 keeps combat/personality and cosmetic changes in distinct commits.
+Evidence records 62 passing assertions across eight scoped engine runs: 25 combat
+contract checks, six native action checks, six author-control smoke checks,
+18 upgrade/reload/hub checks, six old-package seed/rollback checks and one final
+side-view check. Native capture inspection covers front and side. The final UV
+correction fixes side stretching; unchanged combat/migration evidence retains its
+own package fingerprints rather than being relabeled. Three generated artifacts
+repeat byte-for-byte and normal packaging matches all 16,192 source members.
+Project validation reports zero errors. Preserved fixture failures and corrections
+are listed in validation_5424/RESULTS.md.
+
+On 2026-10-15 the author explicitly confirmed CA284-01 (origin 5.4.24 / #284)
+passed: the F6 machete/burn, F7 native rock throw and F8 multi-angle rock view.
+The tested runtime was 435dec66f72a7fa3d44d89fa16071b7c75dc65e72dd023ae3c14affbd1de699c;
+the isolated session exited normally. This is manual gameplay/visual acceptance,
+separate from the native contract and save checks above. The confirmed entry was
+removed from pending_test.txt; no author tests remain. PR302 is ready. The author
+then authorized merging and closing the completed V5.4 batch, including #282-284.
+
+The remaining focused PRs were merged in dependency order: #299 (018ddb02),
+#272 (0d768cdb), #300 (41a41368), #301 (e084294d) and #302 (b7f4ac0b). The prior
+19 issue PRs were already merged into the working chain. Final delivery PR303
+preserves all 24 issue heads and merge commits, plus main's three #276 roadmap
+commits. The only content conflict was the V5.17 row: both modular 3D migration
+and the existing furniture/clothing completion wording were retained; the
+generated document index was rebuilt. Integration changes no runtime source:
+all 16,192 source members match both the normal package and the accepted
+CA284-01 package byte-for-byte. Applicable native/save/visual evidence is reused
+with its original qualifications; final project validation has zero errors.
+Batch ancestry and package checks are recorded in
+assets/validation_5424/batch_integration.json; issue-specific test evidence remains
+in each release's own validation directory. This delivery closes the requested
+21-issue batch and additions #282-284, not the future modular migration.
+
+## 5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)
+
+While the author was away, the original 2026-10-09 Domingo sheet was verified
+instead of substituting the later modular body. A textured volumetric model,
+editable Blender rig/actions and deterministic native MD3 export were authored.
+The pilot is opt-in; native player states, attacks, collision, resources,
+furniture and original sprites remain. The author has not reviewed this model.
+
+The head UV projection and knee pole were corrected during authoring. Native
+chair review led to matching the existing 47-unit seat support and folding the
+cape onto the seat; native WorldOffset is retained. Source candidates remain
+preserved locally; the current editable source and provenance are tracked.
+
+Native checks cover real input-selected movement/weapon actions, presentation
+side-effect isolation, chair/bed/ground rest, terminal death, save/load, hub travel
+and fallback. A matched 1/64 render-proxy comparison records frame intervals
+separately from native thinker profiling; it is not a large-combat benchmark.
+Detailed fingerprints, results, failed iterations and limits live in
+assets/validation_5423/RESULTS.md and evidence.json. No author check is marked
+passed for #283. CA282-01 is accepted separately; CA283-01 remains a limited prototype review.
+
+The isolated visual fixture initially read past a semicolon-free EventHandlers
+line, producing an unknown-handler fatal dialog; bounded parsing fixed that
+diagnostic. Removing the Journal handler then broke its live-menu consumer;
+the final fixture retains it and repositions the review camera instead. These
+failed logs are retained; neither experiment changes production HUD behavior.
+
+Candidate 40-tic clips were left disconnected pending the author's decision.
+On return, the author chose 2-second chair entry/exit, 3-second lie/get-up and
+4-second eating/drinking cycles; movement, attacks and blocking are locked during
+each animation while provision consumption rates and quantities remain unchanged.
+These additions are not implemented in the tested intermediate. Source-only crouch and small transient run/death floor
+intersections remain documented art work. No issue closure/merge or complete
+pilot acceptance is asserted. Temporary keep-awake was released on the author's
+return at 2026-10-15 23:25:29 UTC, preserving the Balanced power plan.
+Questions and manual tests resumed. The author clarified that the character
+must have interchangeable weapon, shield, armor, hair and face parts, starting
+with Domingo and existing choices. The first fixed-surface runtime is retained
+as intermediate evidence; modular integration is still required in #283.
+During CA283-01 the author reported sideways knee flexion and rigid arms while
+walking, and requested a shield-block animation. These are unresolved visual
+findings, not acceptance. Keep the pending test for the corrected candidate.
+The corrective source sets the knee pole to the forward plane and varies elbow
+flexion in walk/run. A 186-sample anatomical check verifies evaluated joint
+positions. The test camera now starts in front and follows the chosen view; an
+initial camera check exposed a one-tic WorldTick offset, corrected by updating
+the camera actor in Tick. Its failing evidence remains in anatomy-01.
+The corrected art passes 52 native assertions across five runs, 186 anatomical
+samples, deterministic export parity, static validation and normal packaging.
+Its evidence remains separate from the earlier 98-assertion foundation; author
+review of the corrected motion is still pending.
+The author added shield blocking and one-second jump/landing animations with
+leg flexion and body lowering. Jump waits for preparation and cancels on received
+damage; both animations retain movement, attack and block controls. These
+additions and modular parts are still unimplemented; CA283-01 remains open.
+
+The author then reported excessive hand motion while walking and asked for a
+separate run animation. Walk's hand arc was reduced to 23-28% of the preceding
+candidate while preserving elbow flexion; Run received a distinct, more flexed
+arm pose and broader swing. The prior manual configuration inherited always-run;
+the new isolated trial starts walking and uses Shift to run. This is an art and
+test-configuration revision, not movement or combat balance. Its source/export,
+native walk/run selection and rendered comparisons are recorded separately in
+validation_5423/arm-motion-evidence.json. CA283-01 is still pending.
+The revision passes 32 assertions in three native runs, 186 evaluated joint
+samples, deterministic export, static validation and normal packaging. The 175
+non-walk/run model frames are byte-identical to the preceding candidate.
+
+
+On 2026-10-15, the author found the quieter walk/run better but requested a more
+perpendicular running sword, human head shape and improved hair. The author then
+explicitly preferred polished human 3D models as references instead of following
+the sprite anatomy closely. The head/eyes now adapt the CC0 MakeHuman hm08 source;
+Snow and petemc's head scan are visual references only. The fitted, layered hair
+and fixed-contact Run sword are new art. Original source/candidates and license
+are preserved. CA283-01 remains pending; this partial positive feedback does not
+accept the new candidate or the unimplemented modular/animation scope.
+
+This candidate passes 62 assertions in eight native runs, 12,042 unchanged
+object/pose checks and 13 fixed-grip checks, deterministic export and zero-error
+static validation. Normal packaging matches 16,188 source members. Current
+64-proxy render means are 0.802678 ms (sprites) and 1.162604 ms (model); no
+large-battle claim. head-grip-evidence.json retains exact scope and fingerprints.
+Native review caught flat hair detail in the preceding candidate; varying its
+owned texture samples corrected that presentation before the final tests.
+
+
+Author confirmation on 2026-10-15 (America/Buenos_Aires), CA283-01, origin
+5.4.23/#283: "De momento está muy bien, pero luego perfeccionaremos detalles de
+este modelo." The current head-grip-02 prototype presentation is provisionally
+accepted; fine visual polish is deferred. This does not accept unimplemented
+modularity or new animations, or claim that each optional fallback step was
+repeated. The completed bounded review leaves pending_test.txt; new executable
+checks will use new IDs. No overall #283 completion is claimed.
+The author also confirmed that releasing Jump during preparation still completes
+the queued jump. Damage interrupts rest/provision transitions immediately and
+returns to ordinary combat rules.
+GitHub audit: 19 implementation PRs in the current batch are already merged;
+PR272 (#237), PR299 (#252) and PR300 (#282) remain open and ready. Their issues
+remain open; this audit performs no new merges or closures.
+
+The next intermediate revision implements native shield-block presentation,
+one-second queued jump preparation and one-second reverse landing flexion.
+Releasing Jump still launches after preparation; damage/incapacity cancels it.
+Normal movement/attack/block remain available. The native jump alone changes
+velocity and charges Air/heat. Pilot schema revision 2 is idempotent; pending
+preparation survives save/load and travel clears local transitions. Default
+CaelumPlayer behavior remains unchanged. The export adds 180 frames and retains
+all 195 previously accepted coordinate/normal frames. New evidence is recorded
+separately in validation_5423/guard-jump-evidence.json; CA283-02 is pending.
+There are 180 passing assertions in 19 native runs, including an unchanged older
+save migrated and resaved at revision 2, a pending jump restored on load, attack
+input during preparation and cancellation on map travel. Seven export artifacts
+repeat exactly; static validation and normal package/source parity pass. The
+resting migrated save also loads in the original runtime. Its original test
+expected revision 1 and failed only that assertion; a separate fixture accepts
+the retained revision 2 and verifies body/resources. Both results are preserved;
+this does not claim rollback during a new animation unsupported by the old model.
+The first save fixture quit before native save/event completion; its failed
+log remains in motion-01. Waiting for the queued operations fixes the fixture.
+Rest/provision animations and interchangeable runtime parts remain unfinished.
+
+During CA283-02 the author found the shield disconnected from the hand and too
+close to the chest, requesting a proper hand grip and a relaxed forward/back
+orientation. The author praised the jump pose but shortened preparation to
+10 tics; the 35-tic landing remains unchanged. This is qualified feedback, not
+acceptance of CA283-02. The correction parents the shield to hand.L, adds a rear
+grip and keeps its center attached to the posed palm in all actions. Native
+playback samples reuse all 375 frame identities while shortening preparation.
+Evidence for this correction is separate in shield-grip-evidence.json and
+shield-grip-geometry.json. Earlier guard/jump evidence retains its original scope.
+This correction passes 105 assertions in 12 native runs, 375 evaluated grip
+contacts and 16,500 unchanged non-shield object/pose comparisons. Seven export
+artifacts repeat exactly; static validation and normal packaging pass. An older
+pilot save still loads, and the shorter pending jump survives current save/load.
+Two travel-fixture iterations are preserved: one waited too long before travel,
+the other issued changemap before the game was active. A one-tic startup wait
+allows the final check to travel before takeoff and verify cancellation.
+
+
+
+Final author acceptance on 2026-10-15 (America/Buenos_Aires), CA283-02, origin
+5.4.23/#283: the author said to conclude the prototype and finish the issue,
+reserving sprite-to-model migration for future versions and requiring modularity.
+The author then clarified that this future work is in the roadmap, not an
+existing issue. The corrected shield-grip-01 prototype is accepted; CA283-02
+leaves pending_test.txt. This is acceptance of the bounded prototype and its
+presentation, not a claim that every optional test step was separately repeated
+or that modularity and timed rest/provision transitions were implemented.
+CA283-01's preceding provisional result remains recorded above.
+
+The V5.17 presentation roadmap now explicitly requires interchangeable weapon,
+shield, armor, hair and face modules and carries forward the agreed 2/3/4-second
+rest/provision animations, control locks/damage interruptions, polish and broader
+validation. The author closes #283 at the accepted prototype scope. PR301 becomes
+ready; this request does not merge its parent branches or other batch PRs. Runtime,
+source art and prior evidence remain unchanged; only acceptance/scope documents
+and the author-test queue change. Validation is static documentation/index review.
+
+
+## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
+
+The author requested the gameplay selector at the bottom center, with each water
+container represented separately and remaining water shown. Subsequent visual
+directions added smaller previous/next icons, then placed the selected item's
+name and quantity above the central icon. Native inventory commands, existing
+ownership, Box restrictions and consumable effects remain authoritative. The
+first Use after cycling consumes the displayed item; water consumes contents
+through Drink rather than destroying its container. No save schema was added.
+Static/build validation passes, with 47 assertions in 11 final native runs,
+four rendered views, a real 5.4.21 save seed and 16,180 runtime members matching
+source. Evidence and its limitations: assets/validation_5422/RESULTS.md.
+CA282-01 (origin 5.4.22 / #282) passed author review on 2026-10-15. The author
+confirmed "La prueba que me diste dio bien" after the isolated selector trial
+(build/issue282-final-06, author-return-01, unchanged tested runtime). No
+qualifications were reported. Its entry was removed from pending_test.txt.
+Temporary keep-awake was released on return, preserving the Balanced power plan.
+PR300 is ready for review; no merge or issue closure is implied.
+
+The queued #284 was revised before implementation: remove the Mandinga attribute
+increase, preserve its physical machete hit, and add magical Fire damage with
+the machete's base damage scaled by Intelligence and existing personality rules.
+Approved Mandinga traits: aggressive/calculating/rebellious/liberal; Zupay:
+patient/calculating/disciplined/conservative. Zupay's projectile becomes a 3D rock
+matching its sprite-held rock, changing appearance only. These are separate
+#284 decisions; no demon implementation is included in #282.
+
+## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, accepted)
+
+The author confirmed growing Fire/Air/Water contributions, then explicitly kept
+Earth and Quintessence linear: at Intelligence 25, Earth pulse damage on 80 kg is
+136/272/408 and force 1700/3400/5100 N; released gravity is x1.7/x3.4/x5.1 for one
+second. Early release uses at least initial power. Earth ignores armor, retains
+Toughness, affects grounded visible bodies except the caster, and protects fixed
+infrastructure. Overlapping weather adds; gravity retains strongest/longest.
+The author additionally requested chasecam during channeling and the Seal image
+at the feet at least twice the trap size; the implementation chooses exactly x2.
+
+Gameplay commit 3a8bba88 and presentation commit 26a00596 keep these changes
+separate. Static validation and normal packaging pass; all 16,178 source members
+match the frozen tested package. validation_5421 records 233 passing assertions
+across 20 qualified native runs, including active-state save/load, travel and a
+copied genuine 5.4.20 save. Repeated fixture/package preparation is deterministic.
+The isolated 500-body benchmark measured 1.054 ms for baseline weather samples,
+1.722 ms with climate, and 24.042 ms for 35 continuous Earth-force steps. These
+service timings are not full-battle frame-rate evidence.
+
+The author's second CrashReport matched a test startup launched before fixture
+preparation had finished: no level was active. The failed run/report are retained
+locally. The launcher now checks completed manifest, required files and package
+hashes; a prepared legacy seed and its current-runtime upgrade both pass.
+CA-KP-107 records the reusable lesson. At this stage CA252-01 (origin 5.4.21 /
+#252) was pending; automated results alone did not establish author acceptance.
+
+The first CA252-01 review was not accepted: the author requested the drawing on
+the ground and reported that Water displayed a face. Water/Air existed in
+TEXTURES but lacked native state registration; the original numerical tests
+checked flat flags/scale, not valid sprite indices or all rendered images.
+The correction registers both frames and traces downward to real floors,
+including 3D floors and solid actor architecture, instead of following airborne
+feet. The author also requested an elemental sphere like Arcane Sun, confirmed
+as purely visual and floating above the head. It shares the existing scale and
+elemental animation, with no inherited attack/heat/collision behavior. Focused
+revision tests and all-five-element captures are recorded in validation_5421.
+The revision passes 142 assertions in nine native runs, static validation and
+normal packaging, including current saves, copied pre-orb saves and map travel.
+All ten final ground/orb captures were inspected. Original climate evidence is
+reused only for unchanged gameplay source; it is not relabeled as the new build.
+The next author review approved the rest but found the mark drawing over the
+body. GZDoom sorts transparent sprites by XY depth then spawn order: equal XY
+made the later-created floor mark cover the legs despite its correct ground Z.
+A 0.5-unit cosmetic WorldOffset breaks that draw-order tie without changing
+physical placement. The final runtime passes 88 additional assertions across
+four qualified native runs, including pre-correction save loading, an all-Seal
+gallery and four yaw views at level/downward chase angles. See depth_evidence.json.
+On 2026-10-15 the author confirmed: "Ahora si la prueba dio correcto, queda
+aprobada." CA252-01 is accepted in full and its outstanding entry is removed.
+This records author confirmation after the rendered comparison; it does not
+claim a newly opened interactive session. PR299 is ready; no merge or closure
+is authorized. The same patch retains version 5.4.21.
+
+The author also assigned #283 (Domingo 3D pilot) and #284 (Mandinga attributes 33)
+after #282, retaining separate scope, commits, tests and PRs.
+
+
+## 5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)
+
+The author finalized cart-width, massless translucent cloud presentation with a
+seated rider retaining ordinary actions. Eloquence scales width/rain/range;
+Empathy scales whole speed/recovery/duration factors; Intelligence controls Air
+seal lightning damage, while Charisma scales normal staff stun. The Air-seal
+damage/area decision supersedes the earlier staff-damage reference. Rain restores
+1% current maximum Anima per second to the caster and allies underneath, stopping
+at solid surfaces. Three spaced enemy-only strikes per second start after a third
+second. Strongest-only rain, phase-preserving renewal, all-axis native movement,
+water/control-state interruption and elapsed journey rules are implemented.
+The final War Cry clarification explicitly permits an existing cloud to generate
+new strikes while its caster is intimidated; new offensive casting stays blocked.
+
+The earlier stateless Tarot/flight prerequisite passed ten component assertions
+(validation_545). The full ability now uses revisioned inventory state, shared
+User4 cost/preparation/reuse, native collision and the existing seated pose.
+The first native active-cloud travel test crashed with access violation writing
+0xbeefcafe. The author's CrashReport.zip matched that isolated MAP98 run.
+Replacing manual visual-actor travel with destination recreation preserves the
+effect and removes the crash on the same saved scenario, hub return and non-hub
+travel. The report and failed runs remain local evidence, not distributed assets.
+Full focused checks, copied-save compatibility and their exact qualifications
+are recorded in validation_5420. CA251-01 (origin 5.4.20 / #251) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." for the offered gameplay/visual scene, without additional
+itemized claims. Its pending entry is removed and acceptance.json preserves the
+quote, hashes and still-open native session. PR281 is ready; no merge or closure
+is claimed. Campaign, network and large-map acceptance remain outside this result.
+
+## #251 continuation on accepted 5.4.19 (2026-10-15, in progress)
+
+After CA250-01 acceptance, PR281 integrates baseline e9c79de8 with the original
+5.4.5 cloud source, asset and evidence. Conflict resolution retains every accepted
+gameplay source and current version marker; the original asset history is retained
+below. The cloud lesson becomes CA-KP-104 because #260 independently used 097.
+The author confirmed normal lightning-staff damage, random visible enemies in the
+40 m Eloquence-scaled range with repeats/no empty shots, and 1% current maximum
+Anima rain with Empathy and first pulse at one second. Other #251 decisions remain
+pending. Asset repeatability, eight native Vulkan state/view checks and normal
+package parity pass; validation_545/integration_5419.json records scope/hashes.
+The author then restricted rain to beneficiaries underneath, confirmed ordinary
+falling at expiry while preserving other flight, and specified no cloud mass or
+solid body. Eight isolated native flight API checks reproduce the shared-flag
+coexistence limitation in both removal orders and demonstrate restoration; see
+validation_545/flight_evidence.json and CA-KP-105. This is feasibility evidence,
+not a production fix or full ability validation. No completed ability, new author
+acceptance, merge or issue closure is claimed.
+
+## 5.4.19 - Pilgrim Redemption (#250, 2026-10-15)
+
+After accepting CA249-01, the author chose a mobile area like Rally, no corpse
+species/faction/story exclusions, full maximum Health/Anima/Air/Lucidity and
+negative-status removal. The caster receives Toughness protection; bodies revived
+by that cast do not. Former enemies stay allied outside the area until expiry;
+one resurrection per body/cast. Caster death ends the effect. Preserve past loot,
+rewards and quest progress, use strongest Toughness and renew with new potency and
+the longer duration. Find nearby fitting space, carry temporary former enemies
+between maps, consume journey time, and pulse immediately then every second.
+Former enemies follow the caster and protect allies with their attacks. Ignore
+old player corpses after respawn; restore the currently dead pawn. The isolated
+13-check native API probe on 5.4.18 remains prerequisite evidence. Implementation
+and qualified native checks are recorded in assets/validation_5419: actual User4,
+resources/statuses, final Toughness consumers, original/duplicate drops, AI combat,
+death, reload, hub/pending placement and elapsed journeys. Neutral copied saves
+upgrade and return to 5.4.18; active 5.4.19 saves reload in the new runtime.
+Same-tic resurrection completes existing owner-death effect cleanup. Static checks,
+normal package parity and deterministic freezes pass. Agent visual review is
+separate from author acceptance. CA250-01 (origin 5.4.19/#250) passed on
+2026-10-15: the author confirmed "La prueba dio correcto" after the offered
+preparation, resurrection/Toughness, following/expiry, one-revival-per-cast and
+map/journey scenario. No qualifications were reported; no additional itemized
+claim or broad campaign/network acceptance is inferred. The manual session
+PID30820 exited normally (code 0). validation_5419/acceptance.json retains the
+exact packages and offered scope. The confirmed pending entry is removed without
+a version increment. Implementation 7eda77b0 is pushed; PR298 is ready for review.
+No merge or issue closure is claimed. Keep-awake remains released.
+
+## 5.4.18 - Battle Mage Summoning (#249, 2026-10-15)
+
+After accepting CA248-01, the author confirmed aimed ground at release, 40 m base
+reach with Eloquence, nearest visible fitting fallback, and failed placement with
+no refund or cooldown. The allied Zupay follows and fights automatically. Recasting
+replaces it; Empathy scales all twelve base attributes and duration. Death of either
+summon or caster removes it without corpse, loot or rewards. Its attacks protect
+allies. Map transfer preserves the same body/resources/time, waiting invisibly for
+room if necessary while time continues. Long journeys consume their elapsed time.
+Static validation and normal packaging pass; frozen/runtime/source members match.
+132 assertions in 19 GZDoom 4.14.2 runs cover placement, scaling, native casting,
+combat/protection, death, saved preparation/body state, hub/blocked arrival and
+long-journey expiry. Copied-save upgrade/bridged rollback/return pass. Native JIT
+output-vector and native friendly-wander findings are retained in validation_5418.
+Agent visual review passes. The author confirmed CA249-01 (origin 5.4.18/#249)
+on 2026-10-15: "La prueba dio correcto". The offered casting/cancellation,
+placement, follow/combat, replacement and map/journey controls passed without
+reported qualifications. Evidence: validation_5418/acceptance.json; native session
+PID1504 exited 0. The confirmed pending entry is removed; PR297 is ready for review.
+No merge or closure is claimed. Keep-awake remains released.
+
+## 5.4.17 - Cleric Rally (#248, 2026-10-15)
+
+The author finalized Arenga: 10% of each current maximum Adrenaline per second,
+first pulse after one second, moving allied area with direct sight, and current
+pre-hit bars for both outgoing and incoming final damage. Environmental/impact
+damage is included; self-inflicted damage receives only protection. Overlap uses
+the strongest source; renewal preserves the longer duration and pulse phase.
+Do not bake Rally into stored elemental doses as well as later pulses. Existing
+Empathy full-factor scaling and Survival Instinct recovery amplification apply.
+The focused implementation passes static validation and normal packaging;
+all 16,166 package members match src and the frozen runtime. 74 qualified
+assertions in 15 native runs pass, including native User4, delayed/last pulses,
+live ownership, final damage ordering, elemental doses, nested calls, real
+projectile flight, preparation/current saves, hub travel and copied-save
+upgrade/bridged rollback/return. Exact commands/hashes are in validation_5417.
+Diagnostic failures were fixture evasion/stat initialization, native projectile
+damage randomness, explicit Actor casts in the manual UI and Windows save-path
+resolution; evidence preserves each failure and its successful correction.
+The screenshot waited for queued input before verifying the 300-to-200 hit.
+Implementation 4418e05a is committed/pushed; draft PR296 stacks on accepted PR295.
+CA248-01 was pending author acceptance at delivery.
+
+CA248-01 (origin 5.4.17 / #248) passed on 2026-10-15: the author confirmed
+"La prueba dio bien" after the offered native preparation/cancellation, moving
+area, sight/range and controlled damage scenario. The manual run
+`author-20261015-120126` exited normally (code 0); acceptance.json records the
+exact runtime/fixture hashes and offered scope, without additional itemized claims.
+The accepted entry was removed from pending_test.txt without a version increment.
+PR296 is ready for review. No broad campaign, multiplayer, performance, merge/closure
+or other-issue acceptance is claimed. Keep-awake remains released.
+
+## 5.4.16 - Formation Breaker (#247, 2026-10-15)
+
+Recorded the author's ground-only, upright running reference, fixed direction,
+normal running Air drain, contact/ground-loss interruption, independent started
+traversal, low-ceiling denial and normal-speed completion decisions. The approved
+afterimage uses current owned appearance at 50%, every 0.1 seconds, fading over
+0.3 seconds. Collision Toughness scales its final reduction, and enhanced
+biological cushioning also applies against moving bodies. Full factors and both
+durations scale with Empathy under the shared class contract.
+Implementation passes 124 qualified native assertions in 30 runs; exact hashes,
+nonvisual evidence reuse and diagnostic iterations are in validation_5416/evidence.json.
+The normal PK3 has 16,165 members identical to src and the final frozen runtime.
+Static validation reports zero errors. Agent review found and corrected a one-tic
+modular-head lag in frozen afterimages; body/head now share capture position/age.
+Moving-body contacts require actual displacement checks after native blocking fields
+are cleared. Upgrade/reload/hub, preparation saves and bridged rollback/re-upgrade
+pass on copies. The bridge cancels unsupported transient effects without refund;
+original saves remain unchanged. No author acceptance is recorded: CA247-01 stays
+pending. The author left again and requested temporary keep-awake; manual checks/
+questions are deferred until return. Implementation ddbe769d is pushed; PR295 is
+draft on PR294. No merge or closure is inferred.
+The author returned on 2026-10-15. The temporary system-only keep-awake request
+was released at 14:08:54 UTC. CA247-01 was opened from the frozen confirmed fixture
+(author-20261015-110856); native setup completed without an engine error. Manual
+acceptance was initially pending, separately from the prior automated assertions.
+
+CA247-01 (origin 5.4.16 / #247) passed on 2026-10-15: the author confirmed
+"La prueba que me diste dio bien." after the offered preparation/cancellation,
+upright double-tap, fixed-direction, appearance-trail and wall scenario. Record
+the offered scope without an extra itemized or campaign/multiplayer claim.
+The interactive run exited normally; validation_5416/acceptance.json records its
+hashes and confirmation. Remove the confirmed entry from pending_test.txt.
+Version remains 5.4.16; PR295 is ready for review. No merge/closure is inferred.
+The return-status update briefly exceeded CONTEXT's 2,500-word limit by one word;
+the acceptance summary was shortened and static validation passes again.
+
+## 5.4.15 - Linear player acceleration component (#260, 2026-10-15)
+
+Replaced the exponential player input envelope with the authored 3 s per 100 kg
+body-plus-load ramp. Native friction added a second lag to an input factor alone;
+compensating only the current native command's thrust yields actual linear
+velocity/displacement without overwriting external momentum. Existing target
+speed, movement media, collisions and NPC/bull logic remain unchanged. Revision-1
+migration preserves legacy progress; focused native and copied-save evidence is
+in assets/validation_5415. Failed fixture iterations remain recorded there.
+
+The first delivery covered ordinary acceleration; its author acceptance is separate:
+CA260-01 (origin 5.4.15 / #260) passed on 2026-10-15: the author confirmed
+"La prueba dio bien" after the offered 50/100/200 kg ordinary-movement scenario.
+The confirmation is recorded without an additional itemized or broad campaign
+claim. The interactive run exited normally; validation_5415/acceptance.json retains
+its scope and hashes. The confirmed entry was removed from pending_test.txt.
+Version remains 5.4.15. This acceptance does not cover the later impulse or authorize
+merge/closure. CA253-01 and CA246-01 passed separately on 2026-10-15.
+
+Delivery evidence: 90 qualified native assertions in eight runs, with seed and
+overlay observation recorded separately. Project validation has zero errors;
+normal packaging contains 16,163 members identical to the frozen runtime. Copied
+5.4.14 upgrade, current reload, direct rollback and return pass with original save
+hashes preserved. CA260-01 is accepted.
+
+The same-patch continuation implements the author's 2026-10-15 impulse decisions:
+0.4 seconds between presses, current mode and full current direction, ground/
+water/flight eligibility and no payment or activation when unaffordable. Native
+commands preserve rebinding; transient gesture fields discard partial taps on
+load and UI interruptions. The existing running-cost/Air-payment authorities
+include thermal modifiers and Supernatural Breathing. Native thrust supplies the
+cap; the impulse fills only available speed without stacking over it or deleting
+faster external momentum. Ordinary acceleration and NPC code remain unchanged.
+The continuation passes 143 assertions across ten native runs, including native
+traces, physical displacement, payment, copied-save and rollback/return checks;
+see validation_5415/impulse_evidence.json. Static validation has zero errors and
+all 16,164 normal-package members match the frozen tested runtime. A draft
+sign-only detector mistook release of an opposite key for another forward press;
+the reproduced case passes after switching digital gestures to native button
+edges. The prior
+90-assertion ordinary evidence remains identified by its original runtime hash.
+CA260-02 (origin 5.4.15 / #260) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." after the offered directional impulse scenario. Record the
+offered current-mode/diagonal, mass/cost, insufficient-Air and held-key/UI checks
+without an extra itemized claim or broader campaign/multiplayer acceptance.
+The interactive run exited normally; validation_5415/acceptance_impulse.json
+records its hashes and confirmation. The confirmed entry was removed from the
+author queue. Version remains 5.4.15; PR294 is ready for review. No merge or
+issue closure is inferred.
+
+## 5.4.14 - Mansion resident movement repair (#253, 2026-10-15)
+
+Investigated the reported stall when the player's Health reached the MAP01 1-HP
+floor. Native forward movement into the bull reproduced protected survival at tic
+131 without an encounter reset. The four residents retained valid targets and
+resources, but had captured zero CombatBaseSpeed before profile initialization;
+healthy/thermal/elemental factors were one. The same initialization hazard was
+previously verified for rats in #254, but this issue separately establishes it
+for the four anchored mansion residents. Player floor protection is unchanged.
+
+Before shared capture, restore only absent initial Speed from the authored class
+default. Revision-1 Tick migration repairs absent saved bases, preserves positive
+custom bases and reapplies normal status multipliers. No replacement, refill,
+healing, state-list reorder or quest advancement is introduced. In the corrected
+native encounter all four moved after the player reached 1 HP, and genuine own
+downing remained excluded. Focused evidence and preserved fixture iterations are
+in assets/validation_5414; victory-transition checks distinguish diagnostic lethal
+completion from an unaided NPC victory. CA253-01 (origin 5.4.14 / #253) passed
+on 2026-10-15: the author confirmed "La prueba dio bien" after the offered native
+MAP01 resident-participation scenario. The confirmation is recorded without an
+additional itemized victory, broader campaign or multiplayer claim. The interactive
+run exited normally; validation_5414/acceptance.json retains the run and hashes.
+The confirmed entry was removed from pending_test.txt. Version remains 5.4.14
+for this acceptance update; no merge or issue closure is inferred.
+Final static validation and normal packaging passed; 144 focused checks across
+eight native runs passed. All 16,163 package members match the recorded frozen
+runtime. The evidence ledger separates baseline observations from acceptance checks.
+
+## 5.4.13 - Arcane Sun (#246, 2026-10-15)
+
+Replaced Mage Brainstorm with the author-revised Sol arcano. Reference is a tier-one
+uncharged fire staff using current Intelligence and applicable modifiers, regardless
+of equipment. Main impact, explosion and burn use tenfold reference damage; children
+retain normal damage. Burning additionally scales with Charisma. All components
+harm only enemies. The orb crosses characters once per enemy, burns visible nearby
+enemies and emits one nearest-target homing shot per second. Scenery or expiration
+produces one native falloff/occluded explosion and exactly 25 near-uniform spherical
+straight projectiles. Normal staff speed/range, tenfold central size/statuette
+radius, 40-m burning area and social scaling follow the confirmed contract.
+
+Native evidence covers input, contacts, homing, burning, range, explosion, clocks,
+save/load and hub state; assets/validation_5413 preserves exact builds and qualified
+iterations. Early fixture errors included invalid test-only fields, an overly tight
+spherical-vector sum tolerance, comparison of direct hits against extra child hits,
+and radial checks before NPC PostBeginPlay initialized anatomy. Command scripts
+now allow pending native events to drain before quitting. No balance was changed
+to make those fixture checks pass. CA246-01 (origin 5.4.13 / #246) passed on
+2026-10-15: the author confirmed "La prueba dio bien" after the offered isolated
+casting/cancellation, free-flight, enemy-only and wall-impact scenario. No extra
+itemized result beyond that confirmation is inferred. The native interactive run
+exited normally; validation_5413/acceptance.json records its hashes and scope.
+The confirmed entry was removed from pending_test.txt. The temporary keep-awake
+request was released when the author returned. Version remains 5.4.13 for this
+acceptance update; no broader campaign/multiplayer acceptance, merge or closure.
+
+## 5.4.12 - Miracle (#245, 2026-10-15)
+
+Implemented the revised Priest class ability: base 3% of each beneficiary's current
+maximum Health, Lucidity, Anima and Air each second. The author confirmed a moving
+area with dynamic entry/exit, caster plus native allies, pulse-time direct sight,
+no neutrals/enemies, first pulse one second after release and recovery additive to
+ordinary regeneration. Empathy scales potency/duration; Eloquence scales radius
+and cost under the accepted shared casting contract. Strongest eligible overlap
+wins; renewal retains max duration and pulse phase while replacing potency/range.
+
+Player/NPC resource services cap additions and preserve fractional Health apart
+from natural regeneration; no survival, cleansing or resurrection effect is added.
+Revisioned aura state stores clocks and release-time values. Native preparation,
+cadence, save/load, hub and copied-save compatibility checks are recorded in
+assets/validation_5412, including qualified fixture iterations. The original NPC
+fixture set resources before deferred PostBeginPlay restored its normal profile;
+fixture initialization now follows that profile initialization.
+CA245-01 (origin 5.4.12 / #245) passed on 2026-10-15: the author confirmed
+"La prueba dio bien." The offered isolated scenario exited normally (0);
+assets/validation_5412/acceptance.json records exact runtime/fixture hashes.
+This is scenario acceptance, not an itemized or campaign/multiplayer result.
+The confirmed pending entry was removed. PR291 is ready, stacked on accepted
+#244; no merge or issue closure. Acceptance retains the same patch version.
+
+## 5.4.11 - Survival Instinct (#244, 2026-10-15)
+
+Implemented Explorer User4 as a temporary self benefit. On 2026-10-15 the author
+confirmed both physical and magical precision/critical coverage, multiplication
+of current values with existing modifiers/caps, and Adrenaline gains from combat
+and other abilities, excluding tutorial/development reserves. This replaces the
+historical negative-state and survival-resource-loss immunity. Shared class
+preparation/payment/cancellation/reuse remains; Empathy scales the full factor
+and effect duration at release. Critical damage and saved attributes are unchanged.
+The author also confirmed renewal with the new potency and the greater of
+remaining/new duration, without accumulation, on the same date.
+
+Current precision and evasion retain their normal penalties; actual critical
+queries and projectile launch metadata include the contribution. Combat gain
+records its final scaled amount and bypasses the generic factor on addition, so
+it is applied once. Explicit reserve grants bypass the bonus. The revisioned
+inventory effect survives native save/load and hub travel without repayment;
+expiry preserves independent Tarot/racial factors. assets/validation_5411 records
+native consumer, combination, lifecycle, compatibility and preview evidence,
+including failed fixture iterations. CA244-01 (origin 5.4.11 / #244) passed on
+2026-10-15: the author confirmed "La prueba dio correcto". The offered isolated
+scenario exited normally (0); assets/validation_5411/acceptance.json records exact
+runtime/fixture hashes. This is scenario acceptance, not an itemized claim or
+campaign/multiplayer result. The confirmed pending entry was removed. PR290 is
+ready, stacked on accepted #243; no merge or issue closure. Acceptance does not
+increment the same patch version.
+
+## 5.4.10 - Battle Cry (#243, 2026-10-15)
+
+Implemented Warrior Grito de guerra through the accepted #238 class lifecycle.
+The author confirmed visible enemies at release, all attack types, no boss
+immunity, max-duration renewal, persistence outside range/after caster death,
+interruption of preparations/channels, and preservation of existing projectiles
+and applied periodic effects. Telekinesis is wholly prohibited. Siege operators
+may move/load but cannot count toward attacks while intimidated. Each machine's
+existing attack staffing requirement remains authoritative. This supersedes the
+old catalog's physical/ranged-only Warrior restriction; other class revisions
+remain in their own issues.
+
+Player/NPC execution paths and native weapon input are covered, including fists,
+melee, nine projectile families, demon breath, Bull charge, block/movement and
+siege attacks. Focused native checks cover payment/cancellation, sight/range,
+social scaling, overlapping effects, save/load during preparation/effect, expiry,
+hub travel and caster death. assets/validation_5410 records exact builds, runs,
+qualifications, failed fixture iterations and the optional copied-save 5.4.9 bridge.
+These are isolated GZDoom 4.14.2 results, not campaign or multiplayer acceptance.
+CA243-01 (origin 5.4.10 / #243) passed on 2026-10-15: the author confirmed
+"La prueba dio correcto." The offered isolated scenario exited normally (0);
+assets/validation_5410/acceptance.json records the exact runtime/fixture hashes.
+This is scenario acceptance, not an itemized claim or campaign/multiplayer result.
+The confirmed pending entry was removed. PR289 is ready, stacked on accepted #239;
+no merge or issue closure. Acceptance does not increment the same patch version.
+
+## 5.4.9 - Hunter's Instinct (#239, 2026-10-15)
+
+Beast Man User1 now creates the concrete continuous effect. It multiplies current
+stealth and rear critical chance by three before their existing caps. The actual
+movement-noise/SoundAlert consumer receives stealth; no new visual perception
+rules are introduced. Melee/sweeps resolve geometry at impact. Projectiles preserve
+their original chance and roll with revisioned metadata, and capture eligibility
+at firing, as explicitly confirmed by the author on 2026-10-15. Both actors'
+current positions determine the rear bonus at impact. Turning the effect off in
+flight retains a paid launch's potential bonus; turning it on afterward grants
+none. Critical damage and existing volley/randomness ownership remain unchanged.
+
+Focused native evidence covers 30 lifecycle/geometry/statistics checks, 41 checks
+on nine actual projectile weapons, native movement noise, physical/magical/area
+damage parity, real sword/sweep consumers, active effect and in-flight save/load,
+hub travel and compatibility copies. Exact hashes, commands and qualifications
+are in assets/validation_549. Early compilation required Actor-qualified
+DeltaAngle; an initial sweep fixture lacked the required monster flag. The first
+manual preview missed through ordinary spread; the final isolated demonstration
+pins accuracy, chance/roll and slow flight so the offered result is reproducible.
+The slow carbine previews failed before extending its finite flight state to
+match the slowdown; this manual fixture also disables projectile gravity and
+preserves its reserve on weapon changes.
+Those fixture settings do not change production balance or physics. Failed runs remain
+preserved. CA239-01 (origin 5.4.9 / #239) passed on 2026-10-15: the author
+confirmed "Esa prueba dio correcto." for the offered staff/carbine, launch/impact,
+toggle and exhaustion scenario. This is scenario acceptance, not an itemized
+report or campaign/multiplayer acceptance. The exact runtime/fixture hashes and
+normal exit (0) are in assets/validation_549/acceptance.json. The approved entry
+was removed from pending_test.txt. Automatic policy rejected a persistent terminal;
+the direct launcher opened the accepted game. No merge/closure is claimed.
+
+## 5.4.8 - Socialization (#240, 2026-10-14)
+
+Human User1 now creates its concrete continuous racial effect: 10 Anima/second
+before modifiers, no duration cap/cooldown, current Dialogue/Persuasion times two
+before existing limits. Native unpaused dialogue keeps paying. A revisioned,
+speaker-bound session records each displayed page's multiplier in play state;
+manual stop/exhaustion preserve displayed choices while new pages use live values.
+Saved attributes, Emotion, reputation, quest results and no-reroll behavior remain.
+
+Native evidence includes 19 lifecycle/statistics checks, actual Ronnie/Caella
+USDF choices, stopped and active saves, new-page timing and native hub travel.
+Old-save upgrade and a specific reversible 5.4.7 bridge are documented in
+assets/validation_548/RESULTS.md and evidence.json. Initial fixture errors involved
+UI/play scope, static-handler lookup, resident prerequisites and deferred actor
+PostBeginPlay; their failed runs remain preserved and are not counted as passing.
+
+On 2026-10-14 the author confirmed CA240-01 (origin 5.4.8 / #240):
+"La prueba dio correcto." The offered isolated Ronnie/Caella scenario displayed
+live Anima, the retained Dialogue multiplier and reset/exhaustion controls. The
+native session exited normally (0). acceptance.json records its exact hashes.
+The confirmation arrived before adding an outstanding queue entry, so
+pending_test.txt remains empty. It does not imply campaign-wide/multiplayer
+acceptance, merge or issue closure.
+
+## 5.4.7 - Telekinesis (#241, 2026-10-14)
+
+The author approved 1,000 N times magical power, actual inverse mass acceleration,
+1 Anima/kg/s, Seal base range with the existing range modifier, one aimed target
+and second-press release. Further confirmation requires living held targets to
+be unable to act, with automatic release on lost sight or excess range.
+SYSTEMS records these rules and clarifies that the Newton baseline is new;
+the previously documented 1,000 class Anima cost was not a force value.
+
+Implementation retains native gravity/collision and identity, suppresses actor
+actions without a permanent freeze flag, and uses the shared continuous racial
+lifecycle. The effect owns its revisioned target/contact state; map travel
+releases it. Base racial effects now have play scope so concrete effects can
+call native gameplay services. No class/racial balance changes are bundled.
+
+Native evidence covers the 40-check input/payment/force contract, 22 checks on
+actual Mandinga/rat/Bull/rock consumers, active save/reload and hub release.
+Ten additional checks verify native lifting versus gravity. Old-save upgrade,
+return from the rollback copy and a #242 active-save regression pass. Static
+validation has no errors (CONTEXT 2,486 words), and all 16,157 normal-build members
+equal the final tested runtime. The visual preview was inspected in-engine.
+An isolated 5.4.6 bridge preserves Anima and resumes the original target's actions.
+Initial compile failures exposed a missing play scope and a fixture TID assignment;
+the next run exposed case-insensitive field/parameter shadowing, corrected by the
+explicit Caster field. Those failed logs are retained, not counted as passing.
+Exact final hashes, test commands and remaining qualifications are in
+assets/validation_547/RESULTS.md and evidence.json.
+
+On 2026-10-14 the author confirmed CA241-01 (origin 5.4.7 / #241):
+"La prueba dio correcta." The offered isolated scenario passed capture/release,
+mass-dependent motion and consumption, held-target action suppression, reference
+force switching, exhaustion and retained native gravity/contact. The native
+handoff exited normally (0). Exact hashes and handoff identity are recorded in
+assets/validation_547/acceptance.json. The confirmed entry was removed from
+pending_test.txt. Campaign-wide/multiplayer acceptance, merge and issue closure
+are not implied by this confirmation.
+
+## 5.4.6 - Supernatural Breathing (#242, 2026-10-14)
+
+The author named the Caelith power Respiración sobrenatural and approved all Air
+expenditure, 1:1 conversion followed by Anima cost reduction, no flat fee, and
+whole-effort Air fallback without spending an unaffordable Anima remainder.
+The production controller now creates the Caelith effect. Actual Air checks and
+payments use one service across attacks, movement, blocking and deprivation.
+Paid underwater breathing does not accrue Air recovery debt. Creator descriptions
+are bilingual. This is a separate branch from #238, which supplies its lifecycle;
+5.4.5 remains reserved for the separate #251 cloud asset.
+
+The first fixture incorrectly enabled invulnerability for oxygen checks and
+attempted to block with a sword without a shield. The corrected fixture uses
+ordinary vulnerability and a real gauntlet block source. The corrected native
+contract passes 48 assertions. Native immersion passes 30, save 27, reload 3,
+and hub return 29. A neutral 5.4.3 save upgrades inactive. An optional bridge to
+the preceding 5.4.4 runtime deactivates the unsupported power while preserving
+777 Anima/333 Air; returning that copy to 5.4.6 also preserves inactive state and
+both reserves. Original saves/runtimes remain intact. Exact evidence and limits:
+assets/validation_546.
+Static validation passes with CONTEXT at 2,479 words. All 16,156 normal-build
+members equal the final native-tested runtime. The final revision changes only
+two diagnostic release labels; gameplay bytes retain the preceding full native
+contract evidence, with final preview and active-save reload checked again.
+
+On 2026-10-14 the author confirmed CA242-01 (origin 5.4.6 / #242):
+"La prueba esta dio correcto." The offered isolated scenario passed toggling,
+physical-effort reserve selection, no idle drain, underwater payment at zero Air,
+exhaustion fallback with the Anima remainder retained and no free Air refund.
+The native handoff exited normally (0). Exact runtime/fixture hashes and handoff
+identity are in assets/validation_546/acceptance.json. The confirmed entry was
+removed from pending_test.txt. Campaign-wide and multiplayer acceptance are not
+implied; this confirmation does not merge the PR or close the issue.
+
+## 5.4.5 - Arcane Cloud visual checkpoint (#251, 2026-10-14, in progress)
+
+While the author remained away, implemented the independent original rain-cloud
+asset with normalized geometry, editable density lobes, deterministic palette and
+soft-edge material. It is reusable by future weather without embedding ability
+rules. No production actor, input, rider pose, flight, rain, lightning, balance
+value or saved field was added. #251 remains incomplete and requires the pending
+author decisions and acceptance; no merge or closure is authorized by this work.
+
+Topology checks establish one closed, consistently wound shell with 3,752
+vertices/7,500 triangles, finite unit normals, positive signed volume and Euler
+characteristic 2. Regeneration repeats OBJ, PNG, shader and manifest bytes.
+GZDoom 4.14.2 Vulkan and OpenGL each pass eight fixture checks and capture six
+views. Those assertions establish setup/state, not artistic acceptance. Native
+images were inspected; the shader softens the earlier hard contours, but this
+surface approximation still permits visible concave bands. Early higher-detail
+and strongly separated lobes, winding diagnostics and material iterations remain
+preserved. The current mesh has no cavity/handle and uses fewer triangles.
+Evidence/reproduction: assets/validation_545. Interactive handoff stays deferred.
+Final project validation passes with 2,483 CONTEXT words. Normal packaging has
+16,124 files/no directory entries, all equal to the final native-tested runtime.
+Two diagnostic release labels caught by the first validation were updated to
+5.4.5; no hazard/maze behavior changed.
+
+## 5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)
+
+While the author was away, implemented the independent shared hand-sequence and
+combat-guard component. It lowers equipped hands, presents closed empty fists,
+turns/opens palms over 105 tics, and restores the ordinary weapon presentation.
+Two revisioned fields on the existing player preserve its component countdown;
+legacy defaults are inactive. The component does not yet receive production
+User4 activation, spend Anima or release an effect. Full lifecycle, revised Sleep,
+racial toggles remain unfinished; no manual acceptance,
+merge or closure is claimed.
+
+The native component matrix passed 2,142 checks over nine weapon families and
+unarmed. Early test scaffolding had a case-insensitive local/field shadow and a
+one-tic observation-boundary assumption; both were corrected, with complete-cycle
+coverage asserted explicitly. A later fixture used an invalid fourth ConsoleEvent
+argument; its compile failure is preserved and corrected. These were fixture
+failures, not successful gameplay runs.
+
+Visual inspection found clipped prior-row strips in existing male palm extraction
+and stale overlay interpolation origins after composed-weapon redraw. Dedicated
+cast-only modules now extract the actual owned-source row and preserve every
+accepted weapon module. Thirty-eight generated outputs repeat byte-for-byte.
+Framing and return to the ordinary view were inspected in native captures;
+this is not author approval. Exact packages, results, compatibility evidence,
+limits and reproduction: assets/validation_544. No incomplete feature was added
+to the actionable author-test queue; outstanding CA259/261/254 checks remain.
+Current-runtime reload observes 19 remaining tics and expires to zero. A neutral
+5.4.3 save upgrades with zero preparation/revision 1. Old-runtime rollback loads
+the body/weapon; without the optional visual-state bridge it reports two discarded
+hand states, while the bridged check has no such warnings. An initial upgrade
+fixture lost its mode event before load completion; the delayed event passes.
+Validator and normal build pass; all 16,118 package members match the final
+component-tested runtime. This remains an intermediate #238 checkpoint.
+
+A same-version follow-up adds the left class/racial indicators with existing
+owned icons and the shared Tarot/Seal projection. Class availability follows the
+implemented Sleep eligibility without changing its cost; unavailable states are
+dim gray, preparation has a label and reuse shows remaining seconds. Racial
+state has no timer. The compass and notifications move beside the new column.
+Four isolated native runs pass 16 checks each at 1280x720, 1024x768, 1920x810 and
+640x480 with high HUD scale. Synthetic racial state is presentation evidence,
+not a claim of implemented racial effects. Existing saves load the new boolean
+inactive and retain the preparation countdown. The initial UI compile failure
+was a temporary-vector member access; assigning the vector locally corrected it.
+Exact final runtime and captures: validation_544/hud_evidence.json.
+
+After returning on 2026-10-14, the author confirmed class-effect scaling with the
+existing curves: Eloquence owns radius/cost, Charisma harmful power/duration,
+Empathy beneficial/healing power/duration, and Intelligence remains direct damage.
+The whole authored factor scales (base x3 with x2 statistical power becomes x6).
+Three Sleep hits remain invariant. Full modified Anima cost must be available
+before the three-second preparation; debit remains progressive with no cancelled
+refund. These are recorded design decisions, not newly completed runtime effects.
+CA254-01 acceptance is carried forward from its own #254 commit/history entry.
+
+
+Same-version lifecycle follow-up: production User4 now drives the paid 105-tic
+preparation and releases Sleep. The author confirmed uniform snapshot payment,
+insufficient-resource cancellation, weapon/new-power blocking, forced-control
+interruption, neutral one-hit wake, duration expiry and reapplication (reset hits,
+new power, maximum remaining duration). No cancelled spending is refunded.
+Native receiver hooks count actual HP loss and scale final enemy damage after
+project defenses, including the third hit; schema-1 state serializes the effect.
+The final contract passed 1,021 checks; saving during payment passed 178 and reload
+4; native MAP02/MAP03 return passed 459 checks. Earlier development runs and their
+case-insensitive revision-name compile failure remain recorded separately.
+Old 5.4.3 saves receive inactive paid-cast defaults without spending Anima.
+Existing lying poses are used, while appropriate living poses for rat/Bull/Mandinga/
+Zupay remain pending. No corpse artwork was substituted. CA238-01 covers only the
+completed preparation/HUD behavior; full issue and visual Sleep acceptance remain
+pending. Detailed final hashes, commands and limitations: validation_544.
+CA259-01, CA261-01 and CA254-01 have since passed in their own history entries;
+the earlier checkpoint's outstanding-test list is historical. After the current
+21-issue batch, the author queued #282, with separate scope/branch/tests/PR.
+
+The author subsequently requested smaller class/racial icons, as close as possible
+to Tarot/Seal size. A separate visual change reduces the square frame from 88 to
+64 logical units (the existing Tarot frame width), centers it and moves labels/
+countdown beneath it. Existing Tarot/Seal rendering and resource bars are unchanged.
+Native state checks pass 16 assertions each at 1280x720 and 640x480/high HUD scale.
+The isolated author scenario now includes owned Tarot/Seal references for direct
+comparison. This is engine/visual evidence, not author acceptance; CA238-01 remains
+pending. Exact runtime and capture hashes: validation_544/small_icons.json.
+
+Author acceptance on 2026-10-14: **CA238-01** (origin 5.4.4 / #238) passed.
+Confirmation: "Esa prueba dio correcto." This confirms the offered preparation,
+progressive debit/cancellation, native input guards and reduced class/racial HUD
+icons. Full Sleep body poses, racial effects and whole-issue acceptance remain
+outside this check. The entry is removed from pending_test.txt; exact frozen
+runtime/fixture and handoff are recorded in validation_544/acceptance.json.
+The native session was still open at confirmation; no exit code or merge/closure
+is inferred. Earlier pending statements above describe the preceding checkpoints.
+
+Author decisions on 2026-10-14 (implementation remains scoped by issue):
+Continuous racial powers switch off on sleep, stun, immobilization or death. They may start with less than one second of Anima, without an upfront fee: charge uniformly per simulation tic, stop before an unaffordable tic, and leave the small unpaid remainder untouched. No duration cap or cooldown.
+Hunter's Instinct uses the target's rear 180-degree half at impact, based on both actors' current positions, for physical and magical critical chance. Multiply current stealth (including crouch) and rear critical chance by three, then apply existing caps.
+Socialization multiplies current Dialogue/Persuasion values by two, then applies existing caps. Choices already visible retain their boosted values when the power switches off; resolved checks never reroll.
+Sleep poses: the rat and Bull lie naturally as animals; Mandinga and Zupay lie supine, like the player. New owned artwork is being registered and is not yet author accepted.
+
+Same-version visual follow-up: added eight original living sleep views to rat,
+Bull, Mandinga and Zupay, with appended RestLying states and unchanged gameplay
+dimensions. Source prompts/references/rejected candidates and deterministic
+registration are preserved. Native checks pass 36 assertions for the four bodies
+and four reload assertions; actual User4 is also checked in the handoff fixture.
+Development failures were confined to the fixture: one invalid field, assumptions
+that waking always means the literal Spawn state (rat pain and Zupay zero-tic
+Spawn resolution), and an absolute -loadgame path interpreted relative to savedir.
+The corrected tests capture the actual idle state and retain the normal waking
+pain reaction. Exact evidence and limitations: validation_544/sleep_pose_evidence.json.
+CA238-02 remains pending; no visual acceptance, issue completion or merge is claimed.
+
+Author acceptance on 2026-10-14: **CA238-02** (origin 5.4.4 / #238) passed.
+Confirmation: "Estas pruebas dieron correcto." The offered four-body living-pose,
+third-hit wake and duration-expiry scenario is accepted. The frozen runtime and
+fixture, scope and normal exit code 0 are recorded in validation_544/sleep_acceptance.json.
+The confirmed entry is removed from pending_test.txt. Shared racial integration
+and compatibility boundaries remain open; this does not close or merge #238.
+
+Same-version shared racial controller follow-up: native User1 now dispatches a
+revision-1 saved effect with per-simulation-tic payment and idempotent cleanup.
+No concrete racial bonus is enabled on this branch. Native instrumentation passes
+43 contract/input assertions, 25 save assertions, 3 reload assertions and 27 hub
+assertions. The existing class/Sleep contract still passes 1,021 assertions.
+Numerical journey forecasts reject effects they cannot simulate, retaining the
+existing external-effect policy without silently cancelling or freezing them.
+An early compile used reserved word Stop; it was renamed Deactivate. A save-test
+oracle initially omitted the Eloquence discount restored by equipping a weapon;
+the fixture now controls that modifier, separately from direct live-modifier
+checks. Failed runs remain preserved. Evidence: validation_544/racial_evidence.json.
+Full paid-state rollback and consumer-specific effects remain open. These tests
+do not replace CA238-01/02 or claim author acceptance of #239-242.
+
+Same-version compatibility completion (2026-10-15):
+`assets/validation_544/prepare_paid_rollback.py` builds a pinned 5.4.3 runtime
+with inert serialization declarations for #238 and appended visual states/assets.
+It retains partial payment, preparation clocks, racial identity and Sleep data
+without running the new controllers. Existing cooldown/Sleep timers follow old
+gameplay. Use copies with the matching runtime and fixture basenames; retain the
+original save/runtime pair. Return to 5.4.4 to resume preparation from its paid
+ledger. Native repeated re-upgrade verifies one total debit and one release
+cooldown. This bridge is specific to 5.4.3/5.4.4 shared schema, not a general
+downgrade tool or support for later concrete racial/class effects. Raw 5.4.3
+lacks the new classes. Never substitute it for the bridge with a new-state save.
+Evidence and preserved fixture failures: validation_544/rollback_evidence.json.
+
+This completes the remaining shared compatibility boundary of #238. No gameplay
+or asset balance changes were required. CA238-01/02 acceptance is unchanged;
+concrete effects retain their individual issues. PR280 is ready, unmerged.
+
+## 5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)
+
+Baseline 3d07bb87: all 192 rats had zero Speed/CombatBaseSpeed; one original rat
+per sector saw and targeted the player but did not move. Instrumentation observed
+an early personality/health recalculation at level time 0 before rat PostBeginPlay
+captured the already-zero Speed. Restoring the class default before that capture
+fixes fresh spawns; revision-1 migration repairs only absent bases in saved rats.
+A positive custom base is preserved. No population/statistics/map change is made.
+
+Added four original procedural alert/bite/pain/death clips with deterministic
+sources and provenance. Rat melee supplies its own hit sound through an optional
+shared parameter; other actors retain their default. Native recognition, pain
+and death hooks activate the other cues. Local sound limits retain native spatial
+attenuation. All four PCM files regenerate byte-for-byte, peak below clipping
+and have zero endpoints; subsequent author listening acceptance is recorded below.
+
+Final GZDoom 4.14.2 / Windows / Vulkan contract passes 11 checks: 192 positive
+rat speeds, 96 unchanged Mandingas, pursuit and actual bites in all four sections,
+revision and all four sound triggers/local overlap. Old 5.4.2 saves upgrade;
+new saves reload and load back on 5.4.2; MAP02/MAP03 round-trip retains 191 living
+rats, the one dead body/drop, its sleeping neighbor, Health and a custom base.
+Earlier failed trials remain preserved: Tick-only repair missed fresh spawns;
+a global sound-count assertion wrongly included distant/virtual voices. The
+corrected test measures the local neighborhood and makes no global-mix claim.
+
+The manual fixture's camera now frames the short rat; the final Spanish capture
+was inspected. No manual session was handed off while the author was away.
+On 2026-10-14 the author passed CA254-01 (origin 5.4.3/#254), confirming the
+offered rat movement/sound checks with no reported exception. The isolated
+manual run author-20261014-203342 used the frozen final runtime and session-v2
+fixture, and exited 0. Removed only CA254-01 from pending_test.txt. No merge or
+issue closure is inferred. Exact handoff hashes/confirmation: assets/validation_543/acceptance.json.
+Commands, reproduction and limits: assets/validation_543.
+Static validation/build results are recorded there. Unrelated local files and
+all previous evidence remain unchanged.
+
+## 5.4.2 - Equipped-Seal resistances (#261, 2026-10-14)
+
+Added fixed passive HP factors from the one equipped Seal: Fire/Light,
+Water/Ice, Earth/Poison and Air/Lightning use 0.5; Quintessence uses 0.85 for all
+four elemental families. The shared lookup excludes owned/boxed Seals and
+also serves Channel/HUD identity. It creates no new equipment or saved schema.
+Direct/area damage applies the factor after existing custom defenses and before
+final HP rounding. Harmful burn/poison scales before its fractional accumulator;
+healing, duration, thermal transfer and physical damage retain their rules.
+The status source dose compensates the direct Seal factor, preventing a second
+reduction of the same dose. Native retention/HP rounding and the MAP01 safety
+floor remain part of that calculation. English/Spanish item details and Character
+resistances show the equipped contribution without adding Toughness or blocking.
+
+The initial GZDoom 4.14.2 matrix passed 556 assertions. An earlier regression caught the
+double-reduced burn source dose; another launch caught a reserved-keyword compile
+error. Both are corrected and their original evidence is preserved. Native item
+cycling, old-save upgrade, current reload, rollback and MAP02/MAP03 round-trip
+passed. Spanish Character/item captures were inspected. Exact hashes, scope and
+static/package results: assets/validation_542/RESULTS.md. At that checkpoint,
+CA261-01 awaited author confirmation.
+
+CA261-01 partial author result, 2026-10-14: the checks were reported good except
+for the fifth resistance row. The author clarified that Quintessence protects
+the four elemental families and has no resistance of its own. Corrected both
+the Character rows and the Seal damage filter; retained Human innate magical
+armor (7.5%, established in #52). The earlier 556-assertion matrix included the
+incorrect fifth-family expectation and is superseded for that behavior. The
+corrected native matrix and captures are recorded in validation_542/RESULTS.md;
+the narrow author recheck retained the same CA261-01 ID.
+
+CA261-01 (origin 5.4.2 / #261) passed on 2026-10-14: the author confirmed
+"Esa prueba dio correcto." after the corrected four-element handoff. No new
+exceptions were reported. The completed check was removed from pending_test.txt;
+acceptance.json records the frozen runtime, session and confirmation. Corrected
+native evidence passed 561 assertions, previous-save loading, static validation
+and packaging. This acceptance adds no runtime change or version increment;
+no merge or issue closure is inferred.
+
+## 5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)
+
+Replaced fixed weapon spread assignments with the author's base + equipment tier
++ Lucidity categories, capped at 7. Strict 50%/10% comparisons apply to dispersion
+only. Removed the additional Lucidity precision divisor from weapon attacks;
+NPC natural attacks keep their existing rule. Player melee/ranged/magic, resident
+weapons/bolas, soldier sword/carbine and NPC magical launches use actual tiers.
+Single-tier tools keep their old base; book homing, utility stream geometry,
+attribute/stance/elemental modifiers, damage, resources and other balance remain.
+No saved field or schema changed. Runtime release labels advance to 5.4.1.
+
+The final native contract passed 677 assertions. Earlier fixture revisions exposed
+a homing-check syntax error, omitted NPC initialization, inherited armor bonuses,
+an equipment-size ID mismatch and an overly strict one-tic Lucidity tolerance.
+These were isolated fixture defects; original packages/logs remain preserved.
+Old-to-new save loading, current reloading and rollback passed with actual equipped
+T3 inventory. Native weapon/tier cycling and a captured manual preview passed.
+Final-source native, save/load, validation and packaging evidence is recorded in
+assets/validation_541/RESULTS.md.
+
+CA259-01 (origin 5.4.1 / #259) passed on 2026-10-14: the author confirmed
+"Esa prueba dio corrrecto" after the isolated dispersion/tier/weapon handoff.
+No exceptions were reported. acceptance.json records the exact runtime/session
+and confirmation; the completed check was removed from pending_test.txt.
+This documentation-only acceptance requires no new native run or version bump.
+No merge or issue closure is inferred. #238 remains the next focused task.
+
+
+## 5.4.0 - Live attribute audit (#237, 2026-10-14)
+
+Started the author-requested 5.4 series with a source-to-consumer audit of all
+twelve attributes. SYSTEMS now records effective-value ownership/order, formulas,
+units, caps, player/NPC differences, real consumers and a bounded pending-design
+list. Preserved #154 curves, #188 Toughness/status rules, #192 personality,
+#183 Box capacity and #229 tare. Corrected the claim of completed visual stealth:
+native movement noise works, while visual concealment remains diagnostic.
+Stored Empathy/illumination fields are not counted as completed support effects.
+
+The isolated GZDoom 4.14.2 audit passed 160 assertions on unchanged 5.3.9 production
+source. The first run passed 158 and failed two fixture-removal expectations:
+InitializeDefaults intentionally does not reset an initialized armor model. A
+fresh model corrected the fixture; audit-02 passed 160/160, engine exit 0.
+After synchronizing the two required console release labels, final-source
+release-01 also passed 160/160, exit 0. No
+production behavior was changed to make the check pass. Evidence and exact scope:
+assets/validation_540/RESULTS.md. Static validation and normal packaging results
+are recorded there. No save migration, new manual author test or gameplay
+acceptance is claimed; previous accepted tests remain accepted.
+
+At the original delivery, the shared lifecycle and separate class/racial issues
+remained pending. Completion on 2026-10-15, after author acceptance through #252,
+refreshes the twelve-attribute matrix against bde4cd96 / 5.4.21. It replaces the
+obsolete "stored Empathy only" description with real support/healing consumers,
+records fixed class timers and approved social scaling, and retains the bounded
+future academic/perception/survival/parity list. The unchanged audit fixture
+passes 160 assertions on the current runtime. Per-ability evidence and acceptance
+are reused only for their own scope. No gameplay code or saved schema changes,
+new manual test, release increment, merge or issue closure are implied. PR272 is
+ready with its completion diff based on integration/v54-accepted-252.
 
 ## 5.3.9 - Exploration entry-point integration (#236, 2026-10-14)
 

@@ -6,8 +6,211 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.3.9.** Obtain and update the complete repository, validate
+**Current release: 5.4.24.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
+are implemented and accepted within their documented scopes. Their individual
+PRs are merged; [PR303](https://github.com/damiancurti/Caelum-Argenteum/pull/303)
+delivers the complete batch to main while preserving recent roadmap changes.
+No author tests remain pending. The #283 prototype remains the accepted boundary;
+full modular character migration belongs to the future roadmap.
+
+5.4.24 implements [#284](https://github.com/damiancurti/Caelum-Argenteum/issues/284):
+Mandinga retains its base attributes and adds magical Fire to its physical machete
+impact, with the same critical/evasion and one weighted Toughness reduction.
+Approved demon personalities use saved shared profiles. Zupay's projectile uses
+a cosmetic 3D rock without changing its combat or flight. Focused native checks and
+packaging pass; [PR302](https://github.com/damiancurti/Caelum-Argenteum/pull/302)
+is merged after author acceptance of CA284-01 on 2026-10-15. See [validation_5424](assets/validation_5424/RESULTS.md).
+
+5.4.23 completes the author-accepted **opt-in Domingo 3D prototype** for
+[#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283), delivered in
+[PR301](https://github.com/damiancurti/Caelum-Argenteum/pull/301). It includes editable
+Blender source, native MD3 animation, corrected hand-held shield, ten-tic jump
+preparation and one-second landing. CA283-02 is accepted on 2026-10-15.
+Default gameplay retains its existing appearance. The future V5.17 presentation
+roadmap owns migration from sprites to **modular 3D models**, interchangeable
+weapon/shield/armor/hair/face parts, remaining rest/provision transitions and polish.
+The current fixed-surface prototype does not implement that migration. Evidence:
+[validation_5423](assets/validation_5423/RESULTS.md).
+
+5.4.22 implements [#282](https://github.com/damiancurti/Caelum-Argenteum/issues/282):
+the bottom-center quick-use selector displays the selected item's name and
+quantity above its icon, with smaller previous/next icons alongside it. Native
+inventory commands retain remapping and existing use rules; individual water
+containers show their remaining liters. Static/build checks and 47 assertions
+across 11 final native runs pass; CA282-01 passed author review on 2026-10-15; PR300 is ready. Evidence:
+[validation_5422](assets/validation_5422/RESULTS.md), [pending_test.txt](pending_test.txt).
+
+5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
+local accumulating Seal climate, grounded earthquake force/damage, temporary
+Quintessence gravity, and a third-person channel view with the Seal at the feet.
+The revised presentation projects all five registered emblems onto the ground
+and adds a cosmetic elemental orb above the head, matching Arcane Sun's size.
+Original gameplay validation passed 233 assertions; visual revisions add 230
+assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15.
+PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
+
+#237's attribute audit now reflects the accepted class/racial consumers; its
+160 native checks pass on this baseline. PR272 is ready. #282 is accepted in PR300; #283 is the accepted prototype
+described above. Separately scoped #284 adds Mandinga fire damage, demon
+personalities and a cosmetic 3D Zupay rock. The author withdrew
+the proposed Mandinga attribute increase; existing base attributes are preserved.
+
+5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
+reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal
+lightning. Current rules and focused test scope are in
+[validation_5420](assets/validation_5420/RESULTS.md). CA251-01 passed author
+review on 2026-10-15; PR281 is ready. No merge or closure is claimed.
+
+5.4.19 implements [#250](https://github.com/damiancurti/Caelum-Argenteum/issues/250):
+Pilgrim Redemption, a mobile resurrection area and living-ally Toughness benefit.
+Static/build and focused native evidence are recorded in
+[validation_5419](assets/validation_5419/RESULTS.md). CA250-01 passed author review on
+2026-10-15; PR298 is ready for review. No merge or issue closure is claimed.
+
+5.4.18 implements [#249](https://github.com/damiancurti/Caelum-Argenteum/issues/249):
+Battle Mage Summoning creates an allied Zupay at the aimed ground or nearby valid
+space, scales its attributes/duration with Empathy and preserves it across maps.
+Static checks, packaging and 132 qualified assertions in 19 native runs pass.
+[Evidence](assets/validation_5418/RESULTS.md). CA249-01 passed author review on
+2026-10-15; PR297 is ready for review. Earlier accepted issues are unchanged.
+
+5.4.17 implements [#248](https://github.com/damiancurti/Caelum-Argenteum/issues/248):
+Cleric Rally restores allied Adrenaline in a moving visible area and scales final
+damage with each beneficiary's current bar. Static checks, packaging and 74
+qualified assertions in 15 native runs pass. [Evidence](assets/validation_5417/RESULTS.md).
+CA248-01 passed author review on 2026-10-15; PR296 is ready for review.
+
+5.4.16 implements [#247](https://github.com/damiancurti/Caelum-Argenteum/issues/247):
+Mercenary Formation Breaker empowers forward ground double taps with an upright,
+fixed-direction dash, temporary collision defenses and fading appearance trails.
+It uses the shared class preparation; normal running Air drain remains. Native
+validation passes with 124 qualified assertions. [Evidence](assets/validation_5416/RESULTS.md).
+CA247-01 passed author review on 2026-10-15; PR295 is ready for review.
+
+5.4.15 implements [#260](https://github.com/damiancurti/Caelum-Argenteum/issues/260):
+player acceleration reaches full current speed linearly in 3 seconds per 100 kg.
+A movement-direction double tap within 0.4 seconds reaches the current mode's
+maximum immediately, paying the full acceleration-time equivalent of running Air.
+Ground, swimming and flight are supported; ordinary jumps/falls are excluded.
+[Evidence](assets/validation_5415/RESULTS.md). CA260-01 (ordinary acceleration)
+and CA260-02 (impulse) passed author review on 2026-10-15. PR294 is ready for review.
+
+5.4.14 fixes [#253](https://github.com/damiancurti/Caelum-Argenteum/issues/253):
+anchored mansion residents recover missing movement bases so they can pursue and
+fight while the living player remains at MAP01's protected 1 HP. Their own downing,
+finite resources and encounter progression remain unchanged. Old instances migrate
+without replacement. [Evidence](assets/validation_5414/RESULTS.md).
+CA253-01 passed author review on 2026-10-15; this PR stacks on accepted #246.
+
+5.4.13 implements [#246](https://github.com/damiancurti/Caelum-Argenteum/issues/246):
+Mage Arcane Sun launches a large fire orb that burns nearby visible enemies,
+emits homing fire and explodes into 25 shots. It uses the shared paid preparation
+and preserves native elemental defenses. [Evidence](assets/validation_5413/RESULTS.md).
+CA246-01 passed author review on 2026-10-15; this focused PR stacks on accepted #245.
+
+5.4.12 implements [#245](https://github.com/damiancurti/Caelum-Argenteum/issues/245):
+Priest Miracle restores Health, Lucidity, Anima and Air each second in an area
+that follows the caster. It benefits visible allies and the caster, uses their
+current maxima and keeps the strongest overlapping effect. Empathy scales healing
+and duration; Eloquence scales radius and cost. [Evidence](assets/validation_5412/RESULTS.md).
+CA245-01 passed author review on 2026-10-15. PR291 stacks on accepted #244.
+
+5.4.11 implements [#244](https://github.com/damiancurti/Caelum-Argenteum/issues/244):
+Explorer Survival Instinct multiplies current evasion, physical/magical precision
+and critical chance, and earned Adrenaline by three before existing limits.
+Empathy scales the entire factor and duration. Tutorial/development reserves are
+excluded. It uses the shared three-second class preparation and preserves other
+effects when it expires. [Evidence](assets/validation_5411/RESULTS.md).
+CA244-01 passed author review on 2026-10-15. PR290 stacks on accepted #243.
+
+5.4.10 implements [#243](https://github.com/damiancurti/Caelum-Argenteum/issues/243):
+Warrior Battle Cry stops every attack by enemies visible within its area when
+the shared three-second preparation completes. Movement and defense remain;
+already released projectiles and applied periodic damage continue. Duration and
+radius use the approved social scaling. Native evidence and save compatibility:
+[validation_5410](assets/validation_5410/RESULTS.md). CA243-01 passed author review on 2026-10-15. PR289 stacks on accepted #239.
+
+5.4.9 implements [#239](https://github.com/damiancurti/Caelum-Argenteum/issues/239):
+Beast Man Hunter's Instinct triples current stealth and rear critical chance,
+within existing limits, for 10 Anima/second before modifiers. Stealth reduces
+actual movement noise. Projectiles retain eligibility from firing and check
+rear position at impact; critical damage is unchanged. Native weapon, damage,
+noise and persistence checks are recorded in [validation_549](assets/validation_549/RESULTS.md).
+CA239-01 passed author review on 2026-10-15. This focused PR stacks on accepted #240.
+
+5.4.8 implements [#240](https://github.com/damiancurti/Caelum-Argenteum/issues/240):
+Human Socialization doubles current Dialogue skill and Persuasion, preserving
+existing limits. User1 toggles it; the base drain is 10 Anima/second even during
+conversation. Displayed choices retain their multiplier after stopping; resolved
+checks never reroll. CA240-01 passed author review on 2026-10-14.
+[Evidence](assets/validation_548/RESULTS.md). This focused PR stacks on #241.
+
+5.4.7 implements [#241](https://github.com/damiancurti/Caelum-Argenteum/issues/241):
+Duende Telekinesis holds one living body or movable scenery object with User1.
+Force is 1,000 N times magical power; cost is 1 Anima/kg/s before normal modifiers.
+The target follows the aim at its captured distance, cannot act, and retains
+native gravity/collision. A second press, lost sight/range or exhaustion releases
+it. CA241-01 passed author review on 2026-10-14:
+[validation_547](assets/validation_547/RESULTS.md).
+The #241 PR stacks on the accepted #242 branch and contains only #241.
+
+5.4.6 implements [#242](https://github.com/damiancurti/Caelum-Argenteum/issues/242):
+Caelith Supernatural Breathing substitutes every Air expenditure with Anima at
+1:1, followed by the usual Anima cost reduction. It has no flat drain or cooldown.
+An unaffordable effort switches the power off and uses ordinary Air in full,
+retaining the remaining Anima. Native input/resource checks and persistence are
+tracked in [validation_546](assets/validation_546/RESULTS.md); CA242-01 was accepted
+by the author on 2026-10-14.
+This branch builds on #238; 5.4.5 remains assigned to the separate #251 cloud asset.
+
+5.4.4 implements the shared lifecycle, ability HUD and revised Sleep in **#238**. Production User4 now prepares
+Arcanist Sleep with progressive payment, cancellation, release-only reuse and
+combat/input guards. Revised Sleep counts actual damaging hits and scales final
+enemy damage. Saved casts/effects and native hub return pass focused checks.
+The author passed CA238-01 (preparation and HUD) on 2026-10-14.
+Class/racial icons now use a smaller 64-unit square, close to Tarot/Seal size.
+Rat/Bull now lie naturally; Mandinga/Zupay use living supine poses with eight
+views. Native pose/hit/expiry and saved-pose checks pass; the author passed
+CA238-02 on 2026-10-14. The shared racial controller now handles User1, per-tic
+payment, interruption and saved effects; concrete powers remain in #239-242.
+Focused native controller/save/hub and paid-state rollback checks pass. The optional
+5.4.3 schema bridge retains new data for returning to this runtime; it does not
+execute the new powers. Concrete racial/class effects retain their own issues.
+[Evidence and limits](assets/validation_544/RESULTS.md). PR280 is ready for review;
+CA238-01/02 retain their recorded acceptance scopes. No merge or closure is inferred.
+
+5.4.3 repairs [#254](https://github.com/damiancurti/Caelum-Argenteum/issues/254):
+MAP02 rats recover their authored movement speed, including existing saves,
+and use four original procedural alert/bite/pain/death cues. Population, combat
+statistics and one-time drops are preserved. [Evidence](assets/validation_543/RESULTS.md)
+records native movement, audio triggers and save compatibility. The author passed
+CA254-01 movement/listening review on 2026-10-14.
+
+5.4.2 implements [#261](https://github.com/damiancurti/Caelum-Argenteum/issues/261):
+the equipped Seal reduces damage from its elemental pair by 50%; Quintessence
+reduces the four elemental families by 15%; Quintessence has no resistance of
+its own. Direct hits, explosions and
+harmful status pulses share the rule. Character resistances and bilingual item
+details reflect it. [Native evidence](assets/validation_542/RESULTS.md) separates
+native checks from author acceptance: CA261-01 passed on 2026-10-14 after the
+four-element correction. The linked PR awaits review; no merge is inferred.
+
+5.4.1 implements [#259](https://github.com/damiancurti/Caelum-Argenteum/issues/259):
+weapon dispersion combines its base category, equipment tier and strict Lucidity
+thresholds, capped at category 7. Player and applicable NPC weapon attacks share
+the rule; book homing and existing attribute/stance modifiers remain.
+CA259-01 passed author acceptance on 2026-10-14. [Evidence](assets/validation_541/RESULTS.md)
+separates native checks from manual acceptance; PR273 is ready for review.
+No ability changes or merge are included.
+
+5.4.0 delivers [#237](https://github.com/damiancurti/Caelum-Argenteum/issues/237):
+the twelve-attribute audit now distinguishes live player/NPC consumers, partial
+systems and pending design. It preserves accepted gameplay and save schemas.
+The focused GZDoom audit passed 160 assertions; [evidence](assets/validation_540/RESULTS.md).
+The remaining 5.4 abilities and balance issues retain separate branches and PRs.
 
 5.3.9 implements [#236](https://github.com/damiancurti/Caelum-Argenteum/issues/236):
 Explore connects the existing Journal, Inventory, World, local map, notes and
@@ -2047,7 +2250,7 @@ affiliations, +10 own-faction reputation and a fixed 25 gold coins per
 successful rescue, independent of character size, are defined in the roadmap.
 SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
-The attribute audit is deferred by the author; the current rules stay accepted.
+The historical audit deferral was superseded by 5.4.0/#237's source-to-consumer review; accepted runtime rules remain unchanged and its explicit design gaps remain pending.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system

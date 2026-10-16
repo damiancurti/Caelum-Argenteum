@@ -1,0 +1,5 @@
+// #251: material compartido por la nube de habilidad y el futuro clima.
+material texture "models/caelum/weather/rain_cloud_palette.png"
+{
+    shader "shaders/caelum/rain_cloud.fp"
+}

@@ -1,0 +1,166 @@
+{
+  "issue": 241,
+  "version": "5.4.7",
+  "baseline": "a7f213f0",
+  "engine": "GZDoom 4.14.2",
+  "environment": "Windows 11 / Vulkan / 1280x720 / background unpaused / 5% master volume",
+  "runs": [
+    {
+      "directory": "build/issue241-final",
+      "label": "contract-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "14604c70a4e06594208f50ab356e33f8b4081ecb829fe459f0e9a5654f9b37f9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=40"
+      ],
+      "finished_utc": "2026-10-15T02:23:18.7321379Z"
+    },
+    {
+      "directory": "build/issue241-final",
+      "label": "real-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "14604c70a4e06594208f50ab356e33f8b4081ecb829fe459f0e9a5654f9b37f9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=22"
+      ],
+      "finished_utc": "2026-10-15T02:23:28.1059208Z"
+    },
+    {
+      "directory": "build/issue241-final",
+      "label": "gravity-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "14604c70a4e06594208f50ab356e33f8b4081ecb829fe459f0e9a5654f9b37f9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=10"
+      ],
+      "finished_utc": "2026-10-15T02:22:38.4173265Z"
+    },
+    {
+      "directory": "build/issue241-v4",
+      "label": "save-01",
+      "exit_code": 0,
+      "runtime_sha256": "4b95981e6ea2f74996c5270c98c1c33e760fe6421d0f7e883ec6a0edb956d7c1",
+      "fixture_sha256": "2b737f9b0ea0e5638f0865d96f9f9a55c714eb98fcb667210d89155236ed2255",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=3"
+      ],
+      "finished_utc": "2026-10-15T02:17:55.9912606Z"
+    },
+    {
+      "directory": "build/issue241-v4",
+      "label": "load-01",
+      "exit_code": 0,
+      "runtime_sha256": "4b95981e6ea2f74996c5270c98c1c33e760fe6421d0f7e883ec6a0edb956d7c1",
+      "fixture_sha256": "2b737f9b0ea0e5638f0865d96f9f9a55c714eb98fcb667210d89155236ed2255",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=4"
+      ],
+      "finished_utc": "2026-10-15T02:19:04.2784101Z"
+    },
+    {
+      "directory": "build/issue241-v4",
+      "label": "hub-01",
+      "exit_code": 0,
+      "runtime_sha256": "4b95981e6ea2f74996c5270c98c1c33e760fe6421d0f7e883ec6a0edb956d7c1",
+      "fixture_sha256": "2b737f9b0ea0e5638f0865d96f9f9a55c714eb98fcb667210d89155236ed2255",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=5"
+      ],
+      "finished_utc": "2026-10-15T02:19:21.5647167Z"
+    },
+    {
+      "directory": "build/issue241-upgrade",
+      "label": "upgrade-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "558b0838dd73eda932e3404b1a23886f0d59e01fd15d371f7ce4ed443ce2ea64",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA238 DONE failures=0 COMPATIBILITY_ONLY",
+        "CA238 DONE failures=0 PREPARATION_SAVE_ONLY"
+      ],
+      "finished_utc": "2026-10-15T02:24:08.3839745Z"
+    },
+    {
+      "directory": "build/issue241-rollback",
+      "label": "rollback-01",
+      "exit_code": 0,
+      "runtime_sha256": "256e0e6b2ac80b35257ae626f0986208eccf4e6d9d5173903bf4b6c5aa42dbc2",
+      "fixture_sha256": "a3296e1c1676ec84dda639cfb44a3d700e14a73d65190e04815533db5d186347",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 ROLLBACK_ONLY"
+      ],
+      "finished_utc": "2026-10-15T02:20:38.2832966Z"
+    },
+    {
+      "directory": "build/issue241-final",
+      "label": "return-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "14604c70a4e06594208f50ab356e33f8b4081ecb829fe459f0e9a5654f9b37f9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 passed=2"
+      ],
+      "finished_utc": "2026-10-15T02:24:15.7224897Z"
+    },
+    {
+      "directory": "build/issue241-breathing-regression",
+      "label": "reload-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "5c66760f3fe778e742953f2698b4d1f62a044c8d23520bedfa2cf97da52ee184",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA242 DONE failures=0 passes=3"
+      ],
+      "finished_utc": "2026-10-15T02:24:23.0026018Z"
+    },
+    {
+      "directory": "build/issue241-handoff",
+      "label": "preview-01",
+      "exit_code": 0,
+      "runtime_sha256": "1028b894293da4fcbed4215af82fbed65c6767797f94650b789a4395fa3850cb",
+      "fixture_sha256": "3ac4161afcc07dfb325062af88746b442753c63ed130e3538b71e6006b8e4605",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "result": [
+        "CA241 DONE failures=0 MANUAL_SEED_ONLY"
+      ],
+      "finished_utc": "2026-10-15T02:26:41.5635854Z"
+    }
+  ],
+  "author_test": {
+    "id": "CA241-01",
+    "status": "pending"
+  },
+  "limits": [
+    "No author acceptance inferred from automated runs.",
+    "No campaign-wide or multiplayer acceptance.",
+    "Optional rollback bridge applies only to the preserved 5.4.6 baseline."
+  ],
+  "normal_build": {
+    "member_count": 16157,
+    "all_members_equal_final_runtime": true
+  },
+  "v4_to_final_changed_members": [
+    "caelum/actors/CaelumCombatActor.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "static_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "context_words": 2486
+  }
+}

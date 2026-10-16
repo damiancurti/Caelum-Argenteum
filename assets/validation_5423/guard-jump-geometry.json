@@ -1,0 +1,24 @@
+{
+  "issue": 283,
+  "source_sha256": "8b3105ff8787e05c83a86c1843e3753fa486ecf6d74579445d3b03c1861488ed",
+  "md3_sha256": "343525b347f8921d08ec9eb79294daa35ca57587bbb93ef4d093e83550a1daf8",
+  "preserved_frame_count": 195,
+  "current_frame_count": 375,
+  "reverse_pose_samples": 36,
+  "foot_samples": 144,
+  "maximum_foot_error_units": 0.005421623642631878,
+  "root_lowering_units": 19.0,
+  "knee_displacements": {
+    "L": [
+      24.700902938842773,
+      0.6592140197753906,
+      -9.343326568603516
+    ],
+    "R": [
+      24.70089340209961,
+      0.6592130661010742,
+      -9.343315124511719
+    ]
+  },
+  "scope": "Prior accepted MD3 frame coordinates/normals unchanged; jump/landing reverse each other, bend knees forward and retain foot contact. Native input checks and author review are separate."
+}

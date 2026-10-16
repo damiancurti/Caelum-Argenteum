@@ -1,0 +1,17 @@
+{
+  "test_id": "CA251-01",
+  "originating_version": "5.4.20",
+  "issue": 251,
+  "result": "passed",
+  "author_quote": "La prueba dio bien.",
+  "confirmation_date": "2026-10-15",
+  "implementation_commit": "87628e21",
+  "pull_request": 281,
+  "scope": "Author accepted the offered isolated Arcane Cloud gameplay/visual scene. No additional itemized claim.",
+  "launch_log": "build/issue251-release-5420/author-20261015.txt",
+  "pid": 6156,
+  "runtime_sha256": "8e08de05120b4b3409f221835d9753a1d85430ffff3ce89df6276ef28fe9fc6f",
+  "fixture_sha256": "a3eb038d804b580ef51b9a3b041638a026391550d26ce49e0fce110bdacd6b84",
+  "session_status": "Game left open at acceptance; no normal-exit claim.",
+  "qualifications": "Author acceptance does not imply campaign-wide, network multiplayer or large-map performance acceptance, merge or closure."
+}

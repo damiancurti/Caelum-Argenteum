@@ -3864,6 +3864,17 @@ CA_FAST_HELP_ON = "T: normal speed | Fast-forward x105 | {bind:ca_time_skip}: sk
 CA_FAST_HELP_OFF = "T: fast-forward | {bind:ca_time_skip}: skip to day/time";
 CA_SLEEP_LUCIDITY_HELP = "Sleeping: Lucidity -10/s; no Lucidity recovery";
 CA_SLEEP_CAST = "Sleep: %d targets.";
+CA_BATTLE_CRY_CAST = "Battle Cry: %d enemies intimidated.";
+CA_SURVIVAL_INSTINCT_CAST = "Survival Instinct active.";
+CA_MIRACLE_CAST = "Miracle active.";
+CA_RALLY_CAST = "Rally active.";
+CA_CREATE_CLASS_RALLY = "User4 prepares Rally over 3 seconds, progressively consuming Anima. Press again to cancel without a refund. It restores 10% maximum Adrenaline per second in a moving allied area and scales final damage with each beneficiary's current bar. Empathy increases the full factors and duration. Reuse starts at release.";
+CA_ARCANE_SUN_CAST = "Arcane Sun released.";
+CA_FORMATION_BREAKER_CAST = "Formation Breaker active: double-tap forward on the ground.";
+CA_CREATE_CLASS_FORMATION_BREAKER = "Formation Breaker (User4): after 3 seconds, forward double-taps launch an upright ground dash at 4 times running speed for 1 second, with 10 times biological cushioning and final collision Toughness reduction. Empathy scales the full factors and both durations. Base window 10 seconds; cost 1000 Anima; reuse 60 seconds. No impulse Air fee; normal running consumption remains.";
+CA_CREATE_CLASS_SURVIVAL_INSTINCT = "Survival Instinct (User4): after 3 seconds, multiplies evasion, physical/magical critical chance and accuracy, and Adrenaline gains by 3. Empathy scales the entire factor and the base 10-second duration. Base cost 1000 Anima; reuse 60 seconds. Existing limits remain.";
+CA_BATTLE_CRY_BLOCKED = "Intimidated: you cannot attack.";
+CA_CREATE_CLASS_BATTLE_CRY = "Battle Cry (User4): after 3 seconds, visible enemies in the area cannot attack. Base duration 10 seconds, reuse 60 seconds, cost 1000 Anima. Eloquence scales area/cost; Charisma scales duration. Movement and defense remain available.";
 CA_TABLE_SMALL = "Small round table (2 seats)";
 CA_TABLE_NORMAL = "Rectangular table (6 seats)";
 CA_TABLE_LARGE = "Large table (12 seats)";
@@ -3890,6 +3901,17 @@ CA_FAST_HELP_ON = "T: velocidad normal | Avance rápido x105 | {bind:ca_time_ski
 CA_FAST_HELP_OFF = "T: avance rápido | {bind:ca_time_skip}: saltar a día/hora";
 CA_SLEEP_LUCIDITY_HELP = "Durmiendo: Lucidez -10/s; sin recuperación de Lucidez";
 CA_SLEEP_CAST = "Sueño: %d objetivos.";
+CA_BATTLE_CRY_CAST = "Grito de guerra: %d enemigos intimidados.";
+CA_SURVIVAL_INSTINCT_CAST = "Instinto de supervivencia activo.";
+CA_MIRACLE_CAST = "Milagro activo.";
+CA_RALLY_CAST = "Arenga activa.";
+CA_CREATE_CLASS_RALLY = "User4 prepara Arenga durante 3 segundos y consume Ánima progresivamente. Otra pulsación cancela sin devolución. Recupera el 10% de la Adrenalina máxima por segundo en un área aliada móvil y modifica el daño final según la barra actual de cada beneficiario. Empatía aumenta los factores completos y la duración. La reutilización empieza al lanzar.";
+CA_ARCANE_SUN_CAST = "Sol arcano lanzado.";
+CA_FORMATION_BREAKER_CAST = "Rompeformaciones activo: pulsa dos veces hacia delante en el suelo.";
+CA_CREATE_CLASS_FORMATION_BREAKER = "Rompeformaciones (User4): tras 3 segundos, las dobles pulsaciones hacia delante lanzan un impulso erguido en el suelo a 4 veces la velocidad de carrera durante 1 segundo, con 10 veces la amortiguación biológica y la reducción final de Dureza ante colisiones. Empatía aumenta los factores completos y ambas duraciones. Ventana base 10 segundos; coste 1000 Ánima; reutilización 60 segundos. Sin coste de impulso en Aire; mantiene el consumo normal de carrera.";
+CA_CREATE_CLASS_SURVIVAL_INSTINCT = "Instinto de supervivencia (User4): tras 3 segundos, multiplica por 3 la evasión, el crítico y la precisión físicos/mágicos, y la ganancia de Adrenalina. Empatía aumenta el factor completo y la duración base de 10 segundos. Coste base 1000 Ánima; reutilización 60 segundos. Conserva los límites actuales.";
+CA_BATTLE_CRY_BLOCKED = "Intimidado: no puedes atacar.";
+CA_CREATE_CLASS_BATTLE_CRY = "Grito de guerra (User4): tras 3 segundos, los enemigos visibles en el área no pueden atacar. Duración base 10 segundos, reutilización 60 segundos, coste 1000 Ánima. Elocuencia modifica área/coste; Carisma modifica duración. Permite moverse y defenderse.";
 CA_TABLE_SMALL = "Mesa redonda pequeña (2 plazas)";
 CA_TABLE_NORMAL = "Mesa rectangular (6 plazas)";
 CA_TABLE_LARGE = "Mesa grande (12 plazas)";
@@ -5126,13 +5148,13 @@ CA_CREATE_CLASS_PRIEST = "Favors the social family: persuasion, emotional dialog
 CA_CREATE_CLASS_MAGE = "Favors the mental family: magical damage, Anima and magical precision. Its physical contribution is lower. The second class can reinforce magic or compensate for that weaker foundation.";
 CA_CREATE_PROFESSION_WARRIOR = "Repeating Warrior concentrates both class contributions in the physical family. Strong melee, toughness and health foundations; less mental development. The profession increases body mass and size, with the associated mobility and resource costs.";
 CA_CREATE_PROFESSION_EXPLORER = "Repeating Explorer concentrates both class contributions in the technical family. Strong mobility, precision and endurance foundations; less social development. Other families can be improved with your free points.";
-CA_CREATE_PROFESSION_PRIEST = "Repeating Priest concentrates both class contributions in the social family. Strong persuasion, emotion and eloquence foundations; less technical development. Healing abilities remain planned.";
-CA_CREATE_PROFESSION_MAGE = "Repeating Mage concentrates both class contributions in the mental family. Strong magical damage, Anima and magical precision foundations; less physical development. Lower body mass also means less mass-based health and carrying capacity.";
+CA_CREATE_PROFESSION_PRIEST = "Repeating Priest concentrates both class contributions in the social family. Miracle restores Health, Lucidity, Anima and Air each second to the caster and visible allies in its moving area. Empathy increases recovery and duration; Eloquence increases range and reduces cost.";
+CA_CREATE_PROFESSION_MAGE = "Repeating Mage concentrates both class contributions in the mental family. Arcane Sun launches a great fire orb: it burns nearby enemies, fires homing shots and explodes into 25 fire projectiles. Intelligence governs direct damage, Charisma burning and duration, and Eloquence range and cost.";
 CA_CREATE_PROFESSION_MERCENARY = "Warrior and Explorer emphasize physical and technical development: melee force, mobility and precision. Social and mental contributions are lower. The profession increases body mass.";
-CA_CREATE_PROFESSION_CLERIC = "Warrior and Priest emphasize physical and social development: combat resilience and conversation. Technical and mental contributions are lower. The profession increases body mass; it does not grant an implemented healing power.";
+CA_CREATE_PROFESSION_CLERIC = "Warrior and Priest emphasize physical and social development. Rally restores Adrenaline each second to the caster and visible allies in its moving area. Their current Adrenaline increases damage caused and reduces damage received after defenses. Empathy increases power and duration; Eloquence increases range and reduces cost.";
 CA_CREATE_PROFESSION_BATTLE_MAGE = "Warrior and Mage contribute evenly to all four families. A versatile starting point for weapons and magic, with less specialization than repeating either class. The profession increases body mass.";
-CA_CREATE_PROFESSION_PILGRIM = "Explorer and Priest contribute evenly to all four families. A balanced starting point combining exploration and social development, with less specialization than repeating either class. Protection from environmental damage is a planned ability.";
-CA_CREATE_PROFESSION_INVESTIGATOR = "Explorer and Mage emphasize technical and mental development: mobility, precision and magic. Physical and social contributions are lower. Levitation is planned and is not granted as an active ability by this choice.";
+CA_CREATE_PROFESSION_PILGRIM = "Explorer and Priest contribute evenly to all four families. A balanced starting point combining exploration and social development, with less specialization than repeating either class. Redemption revives nearby visible corpses and strengthens living allies' Toughness. Former enemies serve temporarily; revived allies remain alive.";
+CA_CREATE_PROFESSION_INVESTIGATOR = "Explorer and Mage emphasize technical and mental development: mobility, precision and magic. Physical and social contributions are lower. Arcane Cloud grants seated flight, restorative rain and lightning.";
 CA_CREATE_PROFESSION_ARCANIST = "Priest and Mage emphasize social and mental development: conversation, magic and Anima. Physical and technical contributions are lower. Sleep is implemented: it puts affected targets to sleep; damage wakes them.";
 CA_CREATE_LAYER_PHYSICAL = "Strength improves melee damage, pushing and carrying capacity. Toughness reduces damage, pain and Lucidity loss. Constitution improves maximum health and lowers Hunger, Thirst, Sleep and regeneration costs. One family point raises all three base attributes.";
 CA_CREATE_LAYER_TECHNICAL = "Agility improves movement, evasion, jumping and stealth. Dexterity improves physical attacks, reloading and crafting speed. Resilience improves Air, Adrenaline, health regeneration and climate adaptation. One point raises all three bases.";
@@ -5166,13 +5188,13 @@ CA_CREATE_CLASS_PRIEST = "Favorece la familia social: persuasión, diálogo emoc
 CA_CREATE_CLASS_MAGE = "Favorece la familia mental: daño mágico, Ánima y precisión mágica. Su aporte físico es menor. La segunda clase puede reforzar la magia o compensar esa base más débil.";
 CA_CREATE_PROFESSION_WARRIOR = "Repetir Guerrero concentra ambos aportes en la familia física. Base fuerte de golpes, dureza y salud; menor desarrollo mental. La profesión aumenta masa y tamaño, con el coste asociado en movilidad y recursos.";
 CA_CREATE_PROFESSION_EXPLORER = "Repetir Explorador concentra ambos aportes en la familia técnica. Base fuerte de movilidad, precisión y resistencia al esfuerzo; menor desarrollo social. Los puntos libres permiten reforzar otras familias.";
-CA_CREATE_PROFESSION_PRIEST = "Repetir Sacerdote concentra ambos aportes en la familia social. Base fuerte de persuasión, emoción y elocuencia; menor desarrollo técnico. Las habilidades de curación siguen previstas.";
-CA_CREATE_PROFESSION_MAGE = "Repetir Mago concentra ambos aportes en la familia mental. Base fuerte de daño mágico, Ánima y precisión mágica; menor desarrollo físico. La menor masa también reduce la salud y la carga ligadas al peso corporal.";
+CA_CREATE_PROFESSION_PRIEST = "Repetir Sacerdote concentra ambos aportes en la familia social. Milagro restaura Salud, Lucidez, Ánima y Aire cada segundo al lanzador y aliados visibles en su área móvil. Empatía aumenta curación y duración; Elocuencia aumenta alcance y reduce coste.";
+CA_CREATE_PROFESSION_MAGE = "Repetir Mago concentra ambos aportes en la familia mental. Sol arcano lanza una gran bola de fuego: quema a enemigos cercanos, dispara proyectiles dirigidos y explota en 25 proyectiles de fuego. Inteligencia determina el daño directo, Carisma la quemadura y duración, y Elocuencia el alcance y coste.";
 CA_CREATE_PROFESSION_MERCENARY = "Guerrero y Explorador priorizan el desarrollo físico y técnico: fuerza de los golpes, movilidad y precisión. Los aportes social y mental son menores. La profesión aumenta la masa corporal.";
-CA_CREATE_PROFESSION_CLERIC = "Guerrero y Sacerdote priorizan lo físico y lo social: resistencia en combate y conversación. Los aportes técnico y mental son menores. Aumenta la masa corporal; no concede un poder de curación implementado.";
+CA_CREATE_PROFESSION_CLERIC = "Guerrero y Sacerdote priorizan lo físico y lo social. Arenga recupera Adrenalina cada segundo para el lanzador y los aliados visibles en su área móvil. La barra actual aumenta el daño causado y reduce el recibido después de las defensas. Empatía aumenta potencia y duración; Elocuencia aumenta alcance y reduce coste.";
 CA_CREATE_PROFESSION_BATTLE_MAGE = "Guerrero y Mago aportan por igual a las cuatro familias. Es un punto de partida versátil para armas y magia, menos especializado que repetir una clase. La profesión aumenta la masa corporal.";
-CA_CREATE_PROFESSION_PILGRIM = "Explorador y Sacerdote aportan por igual a las cuatro familias. Es una base equilibrada de exploración y trato social, menos especializada que repetir una clase. La protección contra daño ambiental es una habilidad prevista.";
-CA_CREATE_PROFESSION_INVESTIGATOR = "Explorador y Mago priorizan lo técnico y lo mental: movilidad, precisión y magia. Los aportes físico y social son menores. Levitación está prevista; esta elección no la concede como habilidad disponible.";
+CA_CREATE_PROFESSION_PILGRIM = "Explorador y Sacerdote aportan por igual a las cuatro familias. Es una base equilibrada de exploración y trato social, menos especializada que repetir una clase. Redención resucita cadáveres cercanos visibles y refuerza la Dureza de aliados vivos. Los antiguos enemigos sirven temporalmente; los aliados resucitados permanecen vivos.";
+CA_CREATE_PROFESSION_INVESTIGATOR = "Explorador y Mago priorizan lo técnico y lo mental: movilidad, precisión y magia. Los aportes físico y social son menores. Nube arcana permite volar sentado y genera lluvia reparadora y rayos.";
 CA_CREATE_PROFESSION_ARCANIST = "Sacerdote y Mago priorizan lo social y lo mental: conversación, magia y Ánima. Los aportes físico y técnico son menores. Sueño está implementado: duerme a los objetivos afectados; el daño los despierta.";
 CA_CREATE_LAYER_PHYSICAL = "Fuerza mejora los golpes, el empuje y la carga. Dureza reduce daño, dolor y pérdida de Lucidez. Constitución mejora la salud máxima y reduce el gasto de Hambre, Sed, Sueño y regeneración. Un punto de familia sube los tres atributos base.";
 CA_CREATE_LAYER_TECHNICAL = "Agilidad mejora movimiento, evasión, salto y sigilo. Destreza mejora ataques físicos, recarga y trabajo de materiales. Resiliencia mejora Aire, Adrenalina, regeneración de salud y adaptación al clima. Un punto sube las tres bases.";
@@ -5793,3 +5815,81 @@ CA_NAV_KEY_HELP = "Las cerraduras comprueban esta llave automáticamente mientra
 CA_NAV_NO_TEXT = "Este documento no tiene texto adicional disponible para leer.";
 CA_NAV_NO_DOCUMENTS = "Actualmente no poseés llaves ni documentos.";
 CA_NAV_MAP_HINT = "Explorar / Mundo: %s | Diario: %s | También desde el menú de pausa.";
+
+[enu default]
+CA_SEAL_RESIST_FIRE = "Equipped: -%.0f%% Fire / Light damage.";
+CA_SEAL_RESIST_WATER = "Equipped: -%.0f%% Water / Ice damage.";
+CA_SEAL_RESIST_EARTH = "Equipped: -%.0f%% Earth / Poison damage.";
+CA_SEAL_RESIST_AIR = "Equipped: -%.0f%% Air / Lightning damage.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipped: -%.0f%% Fire, Water, Earth and Air damage.";
+
+[es]
+CA_SEAL_RESIST_FIRE = "Equipado: -%.0f%% de daño de Fuego / Luz.";
+CA_SEAL_RESIST_WATER = "Equipado: -%.0f%% de daño de Agua / Hielo.";
+CA_SEAL_RESIST_EARTH = "Equipado: -%.0f%% de daño de Tierra / Veneno.";
+CA_SEAL_RESIST_AIR = "Equipado: -%.0f%% de daño de Aire / Rayo.";
+CA_SEAL_RESIST_QUINTESSENCE = "Equipado: -%.0f%% de daño de fuego, agua, tierra y aire.";
+
+[enu default]
+CA_HUD_CLASS_ABILITY = "Class";
+CA_HUD_RACIAL_ABILITY = "Racial";
+CA_RACIAL_UNAVAILABLE = "This racial ability is not available yet.";
+CA_RACIAL_ANIMA = "Not enough Anima to sustain this racial ability.";
+CA_CREATE_RACIAL_HUNTER = "Hunter's Instinct (User1): triples current stealth and physical/magical critical chance from behind, within existing limits. Costs 10 Anima/second before modifiers; no cooldown. Projectiles retain eligibility from firing, while rear position is checked at impact. Critical damage is unchanged. Stealth currently reduces movement noise.";
+CA_CREATE_RACIAL_SOCIALIZATION = "Socialization (User1): doubles current Dialogue skill and Persuasion before their existing limits. Costs 10 Anima/second before cost reduction, including during dialogue. No cooldown. Press User1 again to stop; choices already displayed retain their multiplier until the conversation ends. Emotion, reputation and shop prices receive no extra bonus.";
+CA_TELEKINESIS_TARGET = "Aim at a visible living body or movable scenery object within reach.";
+CA_CREATE_RACIAL_TELEKINESIS = "Telekinesis (User1): hold one living body or movable scenery object at its capture distance; press again to release. Costs 1 Anima per kg per second before modifiers. Intelligence scales force and Eloquence scales range. Held bodies cannot act. Losing sight or range releases the target.";
+CA_CREATE_RACIAL_BREATHING = "Supernatural Breathing (User1): toggle all Air expenditure to Anima at 1:1, then apply Anima cost reduction. No fixed drain or cooldown. If a complete effort is unaffordable, the power switches off and that effort uses ordinary Air.";
+CA_HUD_CLASS_PREPARING = "Casting";
+
+[es]
+CA_HUD_CLASS_ABILITY = "Clase";
+CA_HUD_RACIAL_ABILITY = "Racial";
+CA_RACIAL_UNAVAILABLE = "Esta habilidad racial todavía no está disponible.";
+CA_RACIAL_ANIMA = "No tenés suficiente ánima para mantener esta habilidad racial.";
+CA_CREATE_RACIAL_HUNTER = "Instinto del cazador (User1): triplica el sigilo actual y la probabilidad de crítico físico/mágico por detrás, dentro de los límites existentes. Consume 10 Ánima por segundo antes de modificadores; sin reutilización. Los proyectiles conservan el beneficio de la activación al disparar; la posición por detrás se comprueba al impactar. El daño crítico no cambia. El sigilo reduce actualmente el ruido de movimiento.";
+CA_CREATE_RACIAL_SOCIALIZATION = "Socialización (User1): duplica la Labia y Persuasión actuales antes de sus límites. Consume 10 Ánima por segundo antes de reducir el coste, también durante el diálogo. Sin reutilización. Volvé a pulsar User1 para apagarla; las opciones ya mostradas conservan su multiplicador hasta terminar la charla. No añade bonos a Emoción, reputación ni precios.";
+CA_TELEKINESIS_TARGET = "Apuntá a un cuerpo vivo o un objeto móvil del escenario visible y a tu alcance.";
+CA_CREATE_RACIAL_TELEKINESIS = "Telequinesis (User1): sujeta un cuerpo vivo o un objeto móvil del escenario a la distancia de captura; volvé a pulsar para soltarlo. Consume 1 Ánima por kg y segundo antes de modificadores. Inteligencia aumenta la fuerza y Elocuencia el alcance. El cuerpo sujetado no puede actuar. Se suelta al perderlo de vista o salir del alcance.";
+CA_CREATE_RACIAL_BREATHING = "Respiración sobrenatural (User1): sustituye todo gasto de Aire por Ánima a razón de 1:1, aplicando luego la reducción de coste de Ánima. Sin gasto fijo ni reutilización. Si no alcanza para un esfuerzo completo, se apaga y ese esfuerzo usa Aire normalmente.";
+CA_HUD_CLASS_PREPARING = "Lanzando";
+
+[enu default]
+CA_SUMMON_ZUPAY_NAME = "Summoned Zupay";
+CA_SUMMON_CAST = "Summoning: an allied Zupay answers your call.";
+CA_REDEMPTION_CAST = "Redemption: the fallen rise; living allies gain Toughness.";
+CA_SUMMON_INVALID = "Summoning needs visible ground with enough room within reach.";
+CA_CREATE_CLASS_SUMMONING = "Summoning (User4): prepare for 3 seconds, then summon an allied Zupay at the ground you aim at, or the nearest valid space. Eloquence increases reach; Empathy increases its base attributes and duration. It follows you across maps, preserving its state. A new cast replaces it. It disappears when either of you dies or its duration ends, without loot.";
+
+[es]
+CA_SUMMON_ZUPAY_NAME = "Zupay invocado";
+CA_SUMMON_CAST = "Invocación: un Zupay aliado responde a tu llamado.";
+CA_REDEMPTION_CAST = "Redención: los caídos se levantan; los aliados vivos ganan Dureza.";
+CA_SUMMON_INVALID = "La invocación necesita suelo visible, espacio suficiente y estar dentro del alcance.";
+CA_CREATE_CLASS_SUMMONING = "Invocación (User4): prepará durante 3 segundos y aparecerá un Zupay aliado en el suelo al que apuntás, o en el lugar válido más cercano. Elocuencia aumenta el alcance; Empatía sus atributos base y duración. Te sigue entre mapas conservando su estado. Volver a lanzarla lo reemplaza. Desaparece si alguno muere o termina la duración, sin botín.";
+
+[enu default]
+CA_ARCANE_CLOUD_CAST = "Arcane Cloud: fly seated, restore Anima with rain and strike enemies with lightning.";
+CA_CREATE_CLASS_ARCANE_CLOUD = "Arcane Cloud (User4): prepare for 3 seconds, then fly seated on a rain cloud. It restores Anima to you and allies below it, and strikes visible enemies three times per second with Air-seal lightning. Eloquence expands the cloud and reach; Empathy increases flight speed, recovery and duration. Water, sleep, stun or immobilization end the effect.";
+
+[es]
+CA_ARCANE_CLOUD_CAST = "Nube arcana: volá sentado, recuperá Ánima con la lluvia y alcanzá enemigos con rayos.";
+CA_CREATE_CLASS_ARCANE_CLOUD = "Nube arcana (User4): prepará durante 3 segundos y volá sentado sobre una nube de lluvia. Recupera Ánima para vos y los aliados que estén debajo, y descarga rayos del sello de aire sobre enemigos visibles tres veces por segundo. Elocuencia amplía la nube y el alcance; Empatía aumenta velocidad de vuelo, recuperación y duración. Agua, sueño, aturdimiento o inmovilización terminan el efecto.";
+
+[enu default]
+CA_QUICK_EMPTY = "No usable items";
+CA_QUICK_UNAVAILABLE = "Unavailable now";
+CA_QUICK_QUANTITY = "Quantity: %d";
+CA_QUICK_WATER = "Quantity: %d | Water: %.2f / %.2f L";
+CA_QUICK_PREVIOUS = "Previous";
+CA_QUICK_NEXT = "Next";
+CA_QUICK_USE = "Use";
+
+[es]
+CA_QUICK_EMPTY = "Sin objetos utilizables";
+CA_QUICK_UNAVAILABLE = "No disponible ahora";
+CA_QUICK_QUANTITY = "Cantidad: %d";
+CA_QUICK_WATER = "Cantidad: %d | Agua: %.2f / %.2f L";
+CA_QUICK_PREVIOUS = "Anterior";
+CA_QUICK_NEXT = "Siguiente";
+CA_QUICK_USE = "Usar";

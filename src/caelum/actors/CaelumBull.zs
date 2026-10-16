@@ -16,7 +16,7 @@ class CaelumBull : CaelumCombatActor
 
     bool BullChargeInterrupted()
     {
-        return health<=0 || CaelumBolas.Restrained(self) || CaelumBolas.Interrupted(self)
+        return health<=0 || CaelumBattleCry.Active(self) || CaelumBolas.Restrained(self) || CaelumBolas.Interrupted(self)
             || (ElementalStatus!=null && ElementalStatus.GetMovementMultiplier()<=0);
     }
 
@@ -193,6 +193,7 @@ class CaelumBull : CaelumCombatActor
 
     override void Tick()
     {
+        if(CaelumRedemption.Pending(self))return;
         EnsureBullChargeRevision();
         if (BullChargeActive)
         {
@@ -257,7 +258,7 @@ class CaelumBull : CaelumCombatActor
         BULL I 0 A_CaelumEndBullCharge;
         BULL I 5 A_Scream;
         BULL JKLM 5;
-        BULL N 5 A_NoBlocking;
+        BULL N 5 A_CaelumNoBlocking;
         BULL N -1;
         Stop;
 
@@ -278,5 +279,8 @@ class CaelumBull : CaelumCombatActor
     BullChargeFinish:
         BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
         Goto See;
+    RestLying:
+        SLBU A -1;
+        Stop;
     }
 }

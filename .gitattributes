@@ -204,3 +204,36 @@
 # Preserve #236 fixture and native evidence fingerprints.
 /assets/validation_539/** -text whitespace=cr-at-eol
 /assets/validation_539/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #249 isolated fixture and evidence byte fingerprints.
+/assets/validation_5418/** -text whitespace=cr-at-eol
+
+# Preserve #250 isolated fixture and evidence fingerprints.
+/assets/validation_5419/** -text whitespace=cr-at-eol
+
+# Preserve #251 deterministic cloud sources and model fingerprints.
+/assets/rain_cloud/*.json text eol=lf
+/assets/generators/generate_rain_cloud.py text eol=lf
+/assets/validation_545/** text eol=lf
+/assets/validation_545/captures/*.png -text
+/src/models/caelum/weather/*.obj text eol=lf
+/src/models/caelum/weather/*.png -text
+/src/shaders/caelum/rain_cloud.fp text eol=lf
+/src/GLDEFS text eol=lf
+/src/licenses/RAIN_CLOUD_545.txt text eol=lf
+
+# Keep #283 editable-source metadata and deterministic export/evidence stable.
+/assets/source/art/domingo_3d_pilot/*.json text eol=lf
+/assets/source/art/domingo_3d_pilot/*.txt text eol=lf
+/assets/source/art/domingo_3d_pilot/*.blend -text
+/assets/source/art/domingo_3d_pilot/*.png -text
+/assets/generators/export_domingo_pilot.py text eol=lf
+/assets/validation_5423/** text eol=lf
+/src/caelum/character/CaelumDomingoPilot*.zs text eol=lf
+/src/graphics/caelum/domingo_pilot.textures text eol=lf
+/src/graphics/caelum/domingo_invisible.png -text
+/src/models/caelum/domingo/* -text
+/src/licenses/DOMINGO_3D_PILOT.txt text eol=lf
+
+/assets/source/art/domingo_3d_pilot/makehuman/* -text
+/src/licenses/MAKEHUMAN_CC0.txt -text

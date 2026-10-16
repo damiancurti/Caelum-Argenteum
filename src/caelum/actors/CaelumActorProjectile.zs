@@ -38,10 +38,12 @@ class CaelumActorProjectile : Actor
     static int PrepareDefense(Actor victim,Actor inflictor,int damage,Name mod,int flags)
     {
         let shot=CaelumActorProjectile(inflictor);
+        if(shot!=null && shot.PreventSummoningFriendlyFire(victim))return 0;
         if(shot==null || shot.CaelumDefenseReceiver==victim || (flags & DMG_FORCED)
             || (damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD && !victim.bLAXTELEFRAGDMG))return damage;
         if(victim.health<=0 || victim.bDORMANT
             || (victim.bINVULNERABLE && !shot.bFOILINVUL && !(flags & DMG_FOILINVUL)))return damage;
+        shot.ResolveCaelumCritical(victim);
         // Una explosion ya trae su propio presupuesto, no el impacto directo.
         if(!(flags & DMG_EXPLOSION))
         {
@@ -65,6 +67,9 @@ class CaelumActorProjectile : Actor
     bool MainM00ChargedPractice;
     bool MainM00MobilePractice;
     bool CaelumCriticalHit;
+    int CaelumCriticalRevision;
+    bool CaelumHunterEligible;
+    double CaelumCriticalBaseChance,CaelumCriticalRollPercent;
     bool CaelumAttackAccuracySucceeded;
     bool CaelumMagicalAttack;
     int CaelumPreparedDamage;
@@ -82,7 +87,15 @@ class CaelumActorProjectile : Actor
     bool CaelumDiagnosticCompletionRecorded;
     // Campos cosméticos: cero en saves anteriores; no alteran el vuelo guardado.
     int CaelumVFXAge,CaelumVFXRevision;
+    int CaelumRockVisualRevision;
+    bool CaelumZupayRockVisual;
     bool CaelumVFXImpactShown;
+    // #249/#250 conservan la protección aliada aunque expire su invocación/conversión.
+    bool CaelumSummonShot;
+    CaelumPlayer CaelumSummonOwner;
+
+    bool PreventSummoningFriendlyFire(Actor victim)
+    {return CaelumSummonShot && !CaelumSummoning.Enemy(CaelumSummonOwner,victim);}
 
     // Conserva la identidad del arma que originó el proyectil. Así la
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
@@ -125,6 +138,14 @@ class CaelumActorProjectile : Actor
     )
     {
         CaelumAttackPrepared = true;
+        let summoned=CaelumSummonedZupay(Target);
+        if(summoned!=null)
+        {
+            CaelumSummonShot=true;
+            CaelumSummonOwner=CaelumPlayer(summoned.master);
+        }
+        let commander=CaelumRedemption.Commander(Target);
+        if(commander!=null){CaelumSummonShot=true;CaelumSummonOwner=commander;}
         CaelumPreparedDamage = Max(0, preparedDamage);
         CaelumAttackAccuracySucceeded = accuracySucceeded;
         CaelumCriticalHit = criticalHit;
@@ -133,6 +154,22 @@ class CaelumActorProjectile : Actor
         // Capturar al lanzar, incluida la jabalina sin desgaste diferido.
         CaelumIdeologyPenetration=CaelumPersonalityRules.Penetration(CaelumPersonalityRules.Profile(Target));
         CaelumPersonalityRevision=CaelumPersonalityRules.REVISION;
+    }
+
+    void StoreCaelumCriticalRoll(double chance,double roll)
+    {
+        CaelumCriticalRevision=CaelumHuntersInstinct.CRITICAL_REVISION;
+        CaelumCriticalBaseChance=Clamp(chance,0.0,100.0);
+        CaelumCriticalRollPercent=roll;
+        CaelumHunterEligible=CaelumHuntersInstinct.Active(CaelumPlayer(Target));
+    }
+
+    void ResolveCaelumCritical(Actor victim)
+    {
+        // Los vuelos antiguos conservan su resultado; nunca se vuelve a tirar.
+        if(CaelumCriticalRevision!=CaelumHuntersInstinct.CRITICAL_REVISION)return;
+        CaelumCriticalHit=CaelumCriticalRollPercent<CaelumHuntersInstinct.RearChance(
+            Target,victim,CaelumCriticalBaseChance,CaelumHunterEligible);
     }
 
     void ConfigureCaelumActorExplosion(
@@ -236,6 +273,7 @@ class CaelumActorProjectile : Actor
 
     override int SpecialMissileHit(Actor victim)
     {
+        if(PreventSummoningFriendlyFire(victim))return MHIT_PASS;
         let ally = CaelumAnchoredResident(Target);
         if (ally != null && ally.RuloPartyMode != 0
             && (victim == ally.RuloPartyTraveler

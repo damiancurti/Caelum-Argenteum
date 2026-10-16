@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.3.9** - 2026-10-14.
+Documentation version: **5.4.24** - 2026-10-15.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -52,6 +52,12 @@ as references, except his rear attack. The rear punch should follow the clear
 forward extension/recovery idea of the Revenant without copying Doom pixels.
 Preserve the player's simple clothing and the modular identity choices.
 
+For the #283 3D pilot, the author subsequently requested polished human 3D
+models as anatomy/hair references rather than close adherence to Domingo's
+sprite proportions. Keep his identity/materials/equipment while improving the
+volumetric head and hair. This does not retroactively revise #209 sprite work;
+ASSETS and the pilot DESIGN.json record reference roles and CC0 provenance.
+
 ## Characters and choices
 
 The following requirements record the author's #148 decisions, including the
@@ -92,6 +98,12 @@ applicable, face, hairstyle and hair color. Race, sex and profession remain fixe
 Pain and breathing voices follow saved sex automatically.
 
 ## Modular construction
+
+The author accepted the Domingo 3D prototype (#283) on 2026-10-15 and deferred
+sprite-to-model migration to the V5.17 presentation roadmap in PROJECT. Future
+3D characters must retain this modular principle: interchangeable weapon, shield,
+armor, hair and face, compatible attachment points and reusable animation.
+The fixed-surface pilot is a reference, not the final modular architecture.
 
 Separate the reusable body/clothing, head/face, hair, exposed hands and equipment
 where their variations are independent. Skin/fur masks and hair color masks must

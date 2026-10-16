@@ -11,6 +11,15 @@ class CaelumHUDOverlay : EventHandler
         HUDFont = Font.GetFont("CaelumMono");
     }
 
+    override void UiTick()
+    {
+        // El selector permanente ya muestra la elección. No exigir otra
+        // pulsación sólo para cerrar la barra temporal nativa de Inventory.
+        if(consoleplayer<0 || gamestate!=GS_LEVEL)return;
+        let user=CaelumPlayer(players[consoleplayer].mo);
+        if(CaelumQuickUseHUD.Visible(user))user.player.inventorytics=0;
+    }
+
     ui String GetActiveWeaponNameKey(int weaponType)
     {
         switch (weaponType)
@@ -486,6 +495,10 @@ class CaelumHUDOverlay : EventHandler
     ui double WeaponStatusY(String text,Vector2 resources,double leftWidth,double rightWidth)
     {
         Vector2 hud=CaelumPresentation.HUDScale();
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        if(CaelumQuickUseHUD.Visible(user))
+            return Min(360-CaelumQuickUseHUD.HEIGHT-HUDFont.GetHeight()-4,
+                360-(CaelumPresentation.RESOURCE_BOTTOM_EDGE-218)*resources.Y/hud.Y-HUDFont.GetHeight()-2);
         double left=(Screen.GetWidth()-HUDFont.StringWidth(text)*hud.X)/2;
         if(left>leftWidth*resources.X && left>rightWidth*resources.X)return 326;
         return Min(326,360-(CaelumPresentation.RESOURCE_BOTTOM_EDGE-218)*resources.Y/hud.Y-HUDFont.GetHeight()-2);
@@ -944,7 +957,13 @@ class CaelumHUDOverlay : EventHandler
             Max(HUDFont.StringWidth(animaLine),HUDFont.StringWidth(airLine))));
         // Dos unidades incluyen la sombra y separan las etiquetas enfrentadas.
         leftWidth+=2;rightWidth+=2;
-        Vector2 resourceScale=CaelumPresentation.ResourceScale(leftWidth+rightWidth);
+        // El selector central ocupa una columna propia en el borde inferior.
+        // Reducir sólo el ajuste al viewport si los recursos invadirían ese hueco.
+        Vector2 quickScale=CaelumPresentation.HUDScale();
+        double quickWidth=CaelumQuickUseHUD.Visible(localPlayer)
+            ?(CaelumQuickUseHUD.WIDTH+2*CaelumQuickUseHUD.GAP)*quickScale.X:0;
+        Vector2 resourceScale=CaelumPresentation.ResourceScale(
+            quickWidth>0?2*Max(leftWidth,rightWidth):leftWidth+rightWidth,quickWidth);
         CaelumPresentation.BeginResources(false,resourceScale);
         DrawResourceSkin(false);
         DrawLoadBar(localPlayer);
@@ -980,6 +999,10 @@ class CaelumHUDOverlay : EventHandler
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
         CaelumPresentation.End();
+        CaelumPresentation.BeginPowers(resourceScale,false);
+        CaelumAbilityHUD.Draw(localPlayer,HUDFont);
+        CaelumPresentation.End();
+        CaelumQuickUseHUD.Draw(localPlayer,HUDFont,resourceScale);
         double noticeBottom=Max(12,CaelumCartography.Draw(localPlayer,resourceScale,debuffWidth));
         if(menuactive==Menu.Off)
         {

@@ -1,0 +1,14 @@
+{
+  "test_id": "CA242-01",
+  "origin_version": "5.4.6",
+  "issue": 242,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "La prueba esta dio correcto.",
+  "result": "passed",
+  "scope": "Toggle/held input, physical-effort reserve selection, no idle drain, underwater payment at zero Air, exhaustion fallback retaining the Anima remainder and no free Air refund in the offered isolated scenario. Campaign-wide and multiplayer acceptance are not implied.",
+  "runtime_sha256": "256e0e6b2ac80b35257ae626f0986208eccf4e6d9d5173903bf4b6c5aa42dbc2",
+  "fixture_sha256": "5c66760f3fe778e742953f2698b4d1f62a044c8d23520bedfa2cf97da52ee184",
+  "handoff_label": "author-20261014-230116",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-15T02:03:31.5427418Z"
+}

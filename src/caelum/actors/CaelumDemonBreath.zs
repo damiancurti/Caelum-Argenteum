@@ -88,7 +88,7 @@ class CaelumDemonBreath : Actor
 
     void PaidTick()
     {
-        if(Emitter==null)return;
+        if(Emitter==null || CaelumBattleCry.Active(Emitter))return;
         // Contacto y coste siguen cada tic; la radiación usa la cadencia
         // térmica de un segundo, con fase repartida entre emisores.
         vector3 next=Mouth(Emitter);

@@ -96,6 +96,9 @@ class CaelumJourneyRules : Object play
         let thermal=CaelumThermalBody.Get(user);
         if(thermal!=null && thermal.DrinkRemaining>0)return "CA_JOURNEY_EFFECT";
         // No extender, borrar ni simular arbitrariamente efectos externos.
+        if (CaelumClassCastView.Active(user) || user.RacialAbility != null || CaelumBattleCry.Active(user)
+            || CaelumSurvivalInstinct.Active(user) || CaelumMiracle.Affected(user)
+            || CaelumRally.Affected(user)) return "CA_JOURNEY_EFFECT";
         let record = user.GetPersistentCharacterState(false);
         if (record != null && CaelumTarotService.EffectTics(record) > 0) return "CA_JOURNEY_EFFECT";
         for (Inventory item = user.Inv; item != null; item = item.Inv)
@@ -436,6 +439,9 @@ class CaelumJourneyPlan : Inventory
         user.ClassSleepCooldownRemaining = Max(0.0, user.ClassSleepCooldownRemaining - seconds);
         user.CombatChannelCooldownRemaining = Max(0.0, user.CombatChannelCooldownRemaining - seconds);
         CaelumTarotService.Advance(user, model.ElapsedTics);
+        CaelumSummoning.AdvanceJourney(user,model.ElapsedTics);
+        CaelumRedemption.AdvanceJourney(user,model.ElapsedTics);
+        CaelumArcaneCloud.AdvanceJourney(user,model.ElapsedTics);
         user.HUDAbilitySuccessRemaining = Max(0.0, user.HUDAbilitySuccessRemaining - seconds);
         user.PainImmobilizationRemaining = Max(0.0, user.PainImmobilizationRemaining - seconds);
         user.UpdateSurvivalStates(); user.UpdateHealthStateEffects(); user.UpdateLucidityState();

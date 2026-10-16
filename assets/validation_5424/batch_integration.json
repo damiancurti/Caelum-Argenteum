@@ -1,0 +1,159 @@
+{
+  "issues": [
+    {
+      "issue": 237,
+      "pr": 272,
+      "head": "72f4b93b2df397ac90f28a779010450337ae758d",
+      "merge": "0d768cdb826447d09934e3ae5d0467fca87a87fd"
+    },
+    {
+      "issue": 238,
+      "pr": 280,
+      "head": "aa253eed896fe0d326a9f4e92d9cca1c77180cc7",
+      "merge": "a3b305b661534c3217c14d301361580d9b4b3e5f"
+    },
+    {
+      "issue": 239,
+      "pr": 288,
+      "head": "891320f41733d0cba5811081fef452f4cb82d041",
+      "merge": "891320f41733d0cba5811081fef452f4cb82d041"
+    },
+    {
+      "issue": 240,
+      "pr": 287,
+      "head": "2f878fe5aca32057c0d2ecd77400db0d2db96eee",
+      "merge": "2f878fe5aca32057c0d2ecd77400db0d2db96eee"
+    },
+    {
+      "issue": 241,
+      "pr": 286,
+      "head": "f711724b97e94822261b19b69468d147e682f187",
+      "merge": "f711724b97e94822261b19b69468d147e682f187"
+    },
+    {
+      "issue": 242,
+      "pr": 285,
+      "head": "a7f213f0819eae2400c8260a24f91a7b27fe1dc3",
+      "merge": "a7f213f0819eae2400c8260a24f91a7b27fe1dc3"
+    },
+    {
+      "issue": 243,
+      "pr": 289,
+      "head": "42f4866a12958fe9f0dc36157c03b7495a7f4556",
+      "merge": "42f4866a12958fe9f0dc36157c03b7495a7f4556"
+    },
+    {
+      "issue": 244,
+      "pr": 290,
+      "head": "05fa1855ea96e611ec65e75e3cb013a202f7dfe5",
+      "merge": "05fa1855ea96e611ec65e75e3cb013a202f7dfe5"
+    },
+    {
+      "issue": 245,
+      "pr": 291,
+      "head": "720acb5bf288bb1afd4847b76a5aed4d8b0cedcc",
+      "merge": "720acb5bf288bb1afd4847b76a5aed4d8b0cedcc"
+    },
+    {
+      "issue": 246,
+      "pr": 292,
+      "head": "a09ce24caa12cc0b3d87b0087f59a4a7fdd05bf4",
+      "merge": "3499f20f90dd3e014cf842abe2735765a3ac93ac"
+    },
+    {
+      "issue": 247,
+      "pr": 295,
+      "head": "cf703f8f730f5cf67a84072a2532c999c5bd2c02",
+      "merge": "cf703f8f730f5cf67a84072a2532c999c5bd2c02"
+    },
+    {
+      "issue": 248,
+      "pr": 296,
+      "head": "b87f977bbe896e185b229d20511ab8bd4aba1c0c",
+      "merge": "b87f977bbe896e185b229d20511ab8bd4aba1c0c"
+    },
+    {
+      "issue": 249,
+      "pr": 297,
+      "head": "6578c8b7af622705a32d8be5b478fffd29e7ca7d",
+      "merge": "6578c8b7af622705a32d8be5b478fffd29e7ca7d"
+    },
+    {
+      "issue": 250,
+      "pr": 298,
+      "head": "e9c79de8c9f5a79401426cd6df6380465d899240",
+      "merge": "c1f1553bdb851ec8ba2b9631bcd3bec29c829e74"
+    },
+    {
+      "issue": 251,
+      "pr": 281,
+      "head": "4b4b15ed522fd49f6a8cde7a17523db658bca0a5",
+      "merge": "a3b305b661534c3217c14d301361580d9b4b3e5f"
+    },
+    {
+      "issue": 252,
+      "pr": 299,
+      "head": "bde4cd96fd8e055d02d26b07c03b43eddddadb56",
+      "merge": "018ddb02c3c1fa3e8ebbead9f207ee18095695f0"
+    },
+    {
+      "issue": 253,
+      "pr": 293,
+      "head": "95a40dac289bcac1e3abe3abc6aac532393d257c",
+      "merge": "69aae761d2bc7151751609c177fac23d734a8481"
+    },
+    {
+      "issue": 254,
+      "pr": 275,
+      "head": "5baa1358082dc2c898276d71c3f7882e401a6a4b",
+      "merge": "36c4934663dc542fada541b095c205e2381953f1"
+    },
+    {
+      "issue": 259,
+      "pr": 273,
+      "head": "423375152356084b8d07327702a4542b610ff548",
+      "merge": "e782a9098fe9f0177dcadfa47526ee34eb8b90e7"
+    },
+    {
+      "issue": 260,
+      "pr": 294,
+      "head": "08b11fb00e245548934a00c998a3c277573d78cf",
+      "merge": "08b11fb00e245548934a00c998a3c277573d78cf"
+    },
+    {
+      "issue": 261,
+      "pr": 274,
+      "head": "e782a9098fe9f0177dcadfa47526ee34eb8b90e7",
+      "merge": "5baa1358082dc2c898276d71c3f7882e401a6a4b"
+    },
+    {
+      "issue": 282,
+      "pr": 300,
+      "head": "46790d165cca8e6fabc946a25f2356554d882852",
+      "merge": "41a41368175c6ed5b021c57b68c24edb55187b0e"
+    },
+    {
+      "issue": 283,
+      "pr": 301,
+      "head": "55a42847b8f0309bc264e71a9a419057f989798a",
+      "merge": "e084294d201aafd6c07684089f5aacc86824ff63"
+    },
+    {
+      "issue": 284,
+      "pr": 302,
+      "head": "0b03d60932096c02487b126efea47bef9b403e23",
+      "merge": "b7f4ac0bde9c97fa331003ea5d8114668b3fb8e2"
+    }
+  ],
+  "source_members": 16192,
+  "runtime_unchanged_since": "0b03d609",
+  "author_tests_pending": 0,
+  "delivery_pr": 303,
+  "authorized_on": "2026-10-15",
+  "scope": "Final assembly of 24 separately implemented and accepted issues; no runtime source changes.",
+  "main_roadmap_commits": [
+    "b5cb1266426be6baec1dbc01cc8128f7069e2c60",
+    "6528234792079d23239c7a0685053b7e525ace24",
+    "8e70a8df54102ab725214206a82d4648401ba027"
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Quiet walk / distinct run candidate; author review pending",
+  "runtime_sha256": "b6557632a833d78096ef3149603f6f028af517c4e940de72555dc5ac107cb663",
+  "source_members": 16187,
+  "normal_build_sha256": "eb61997cf327f8c87ea447b27583c7418b5f97c6e8b8a59b06b77cb3ad670380",
+  "native_runs": 3,
+  "native_assertions": 32,
+  "runs": [
+    {
+      "label": "actions",
+      "assertions": 11,
+      "log": "build/issue283-arm-motion-01/actions.txt",
+      "log_sha256": "a4e52b23d72d08518b5d92c63a7daded7a09315374826c1be44c747845c4c10b",
+      "record_sha256": "eb1c5726fc1659aa5d044c9ae4f9de5160fef376606189a77ef264d131b57679",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "camera",
+      "assertions": 12,
+      "log": "build/issue283-arm-motion-01/camera.txt",
+      "log_sha256": "9365c2e1a813373e3914ea6690d3a330f3b41b2bc8552230a2cd9a8178adcfd0",
+      "record_sha256": "a26cae0863e0c715a5fe79c1fb84d7c236facd2ad906452ce30fb57e8061181c",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "motion",
+      "assertions": 9,
+      "log": "build/issue283-arm-motion-01/motion.txt",
+      "log_sha256": "ec684070eb6b92e47e7e7d12935bf738c37a3a6330a1a599558c90d17edad58c",
+      "record_sha256": "0f610c3cc7a8126d59cc700db060b8798980f9f2b0f7c595dfbd7a406c24495f",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-arm-motion-01/camera-pilot-review-front.png",
+      "sha256": "53efd3db5fcb4ccd7d4efc551212de472f52386ad7c6b2b7611459a87487b459"
+    },
+    {
+      "file": "build/issue283-arm-motion-01/camera-pilot-review-side.png",
+      "sha256": "d0e246e0da21a5896ebbd3316b52967abfc251711f2fe62c43dff134584af06c"
+    },
+    {
+      "file": "build/issue283-arm-motion-01/motion-pilot-walk.png",
+      "sha256": "64457bea980eb71ab828169df5430c2aceb42e87e3d2066d888dad5c4db5bf3b"
+    },
+    {
+      "file": "build/issue283-arm-motion-01/motion-pilot-run.png",
+      "sha256": "15877deb15429c3d68d67b9af78660a79290098bbaf40ff428135e45a212870c"
+    }
+  ],
+  "anatomy": {
+    "source_sha256": "9b3f4bf5e08a36db786a3df19495fc7fcfc367540b6227af892dc71f26443c61",
+    "joint_samples": 186,
+    "maximum_lateral_knee_units": 0.8146324157714844,
+    "minimum_forward_knee_units": 0.08260536193847656,
+    "elbow_degrees": {
+      "Walk.L": {
+        "min": 30.34860344477975,
+        "max": 36.13987644580396
+      },
+      "Walk.R": {
+        "min": 30.348610274968923,
+        "max": 36.13987644580396
+      },
+      "Run.L": {
+        "min": 55.61585692067725,
+        "max": 79.05948745422178
+      },
+      "Run.R": {
+        "min": 55.61585692067725,
+        "max": 79.05949428441096
+      }
+    },
+    "hand_excursion_units_relative_to_shoulder": {
+      "Walk.L": 7.003772025835383,
+      "Walk.R": 9.05433866077387,
+      "Run.L": 31.023332736381914,
+      "Run.R": 32.60229637623584
+    },
+    "scope": "Evaluated walk/run/seated anatomy; author visual acceptance remains separate.",
+    "comparison": {
+      "baseline_sha256": "0fc69553d956477f8f7bc1678b363527079e0de5c270567e0cf5cd3bd218a2bd",
+      "baseline_hand_excursion_units": {
+        "Walk.L": 30.9619505160895,
+        "Walk.R": 32.814436559299324,
+        "Run.L": 43.113657645645795,
+        "Run.R": 44.55017004869138
+      },
+      "current_to_previous_walk_ratio": {
+        "L": 0.22620577544673243,
+        "R": 0.2759254648304467
+      }
+    }
+  },
+  "export": {
+    "deterministic_files": 7,
+    "frames": 195,
+    "vertices": 5516,
+    "triangles": 7232,
+    "surfaces": 1,
+    "bytes": 8747076,
+    "md3_sha256": "98a30a9c7a0dd3b7981e9308e7a237227088ea2c226df7619df042542730dd56",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 170.02113342285156
+      },
+      "Walk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 166.02162170410156
+      },
+      "Run": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 164.02162170410156
+      },
+      "Melee": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 169.9998779296875
+      },
+      "Death": {
+        "min_z": -3.674762725830078,
+        "max_z": 170.34811401367188
+      },
+      "Raise": {
+        "min_z": -3.6513023376464844,
+        "max_z": 170.18850708007812
+      },
+      "Seated": {
+        "min_z": -0.004584779962897301,
+        "max_z": 138.02114868164062
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 39.000003814697266
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 124.8226547241211
+      },
+      "SitDown": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 169.9998779296875
+      },
+      "StandUp": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 169.9998779296875
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2495,
+  "foundation": "evidence.json records the earlier 98 assertions at commit 9515fb2c, not this revised model.",
+  "preserved_failure": "build/issue283-anatomy-01/camera.txt exposed a one-tic WorldTick camera lag; actor Tick fixed it.",
+  "open": [
+    "Author anatomy/visual acceptance.",
+    "Interchangeable equipment/hair/face parts.",
+    "Timed rest/provision animations and approved control locks.",
+    "Shield-block animation; one-second jump preparation and landing."
+  ],
+  "unchanged_non_locomotion_frames": 175,
+  "prior_anatomy": "anatomy-evidence.json preserves the previous 52 assertions; no new results are attributed to that model."
+}

@@ -72,7 +72,7 @@ class CaelumRulo : CaelumAnchoredResident
     Death:
         RULO G 5 A_Scream;
         RULO H 5;
-        RULO I 5 A_NoBlocking;
+        RULO I 5 A_CaelumNoBlocking;
         RULO JK 5;
         RULO L -1;
         Stop;

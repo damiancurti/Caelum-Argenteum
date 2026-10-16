@@ -1,0 +1,16 @@
+{
+  "test_id": "CA240-01",
+  "originating_version": "5.4.8",
+  "issue": 240,
+  "result": "passed",
+  "author_quote": "La prueba dio correcto.",
+  "confirmation_date": "2026-10-14",
+  "scope": "Offered isolated Ronnie/Caella Socialization scenario; no itemized claim beyond the author confirmation.",
+  "run": "build/issue240-v7/input-01-run.json",
+  "exit_code": 0,
+  "pid": 51512,
+  "runtime_sha256": "4F7EB82E7A7D077CC2D7A814323AE5BD933588EFD1B78BE9455874EA87C41B21",
+  "fixture_sha256": "A02CA4A0563E9759920E32623F962B8B30963D5D7AD10566676727D97EB8CB5C",
+  "finished_utc": "2026-10-15T02:56:50.8672154Z",
+  "qualifications": "Final runtime differs only in two diagnostic release labels. No merge or issue closure."
+}

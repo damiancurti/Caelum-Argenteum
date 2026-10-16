@@ -39,12 +39,14 @@ class CaelumUtilityStaff : Object play
 
     static bool CanEmit(CaelumPlayer user)
     {
+        if(CaelumBattleCry.Active(user)){EndEmission(user);return false;}
         if(user==null || user.health<=0 || user.player==null || user.player.playerstate!=PST_LIVE
             || !user.CharacterCreationComplete || user.DerivedStats==null || user.WeaponModel==null
             || !user.WeaponModel.Equipped || user.WeaponModel.Durability<=0
             || user.WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
             || !(user.player.ReadyWeapon is "CaelumUtilityStaffSelectorWeapon")
-            || user.IsPhysicallyImmobilized() || user.CombatBlockModeActive
+            || user.IsPhysicallyImmobilized() || CaelumClassCastView.Active(user)
+            || user.CombatBlockModeActive
             || user.EquipmentMenuOpen || user.CraftingMenuOpen || user.CreationWizardOpen
             || user.StaffCastPending || user.WeaponChargeActive || CaelumRestState.IsActive(user))return false;
         return user.player.PendingWeapon==null || user.player.PendingWeapon==WP_NOCHANGE
@@ -63,7 +65,11 @@ class CaelumUtilityStaff : Object play
         let stream=Stream(emitter);
         if(user!=null){user.UtilityStaffRequestedMode=0;user.UtilityStaffStream=null;}
         if(npc!=null)npc.CombatUtilityStaffStream=null;
-        if(stream!=null)stream.Destroy();
+        if(stream!=null)
+        {
+            if(CaelumBattleCry.Active(emitter))stream.PaidSeconds=0;
+            stream.Destroy();
+        }
     }
 
     static void Update(CaelumPlayer user)
@@ -86,6 +92,7 @@ class CaelumUtilityStaff : Object play
 
     static bool Emit(Actor emitter,CaelumEquipmentItem item,int mode)
     {
+        if(CaelumBattleCry.Active(emitter)){EndEmission(emitter);return false;}
         let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
         let resident=CaelumAnchoredResident(emitter);
         if(emitter==null || emitter.health<=0 || item==null || item.Owner!=emitter

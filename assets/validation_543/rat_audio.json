@@ -1,0 +1,59 @@
+{
+  "issue": 254,
+  "origin": "Original procedural synthesis for Caelum Argenteum; no external audio inputs.",
+  "rights_notice": "LICENSE.md; no third-party recording or Doom sound is included.",
+  "source": "assets/generators/rat_audio.json",
+  "generator": "assets/generators/generate_rat_audio.py",
+  "format": "mono signed 16-bit PCM, 22050 Hz",
+  "author_acceptance": "Pending CA254-01; technical generation is not a listening approval.",
+  "clips": {
+    "alert": {
+      "file": "src/sounds/caelum/enemies/rat/alert.wav",
+      "sha256": "bce5cb2a8ebcaa8aac9074a8a1ef8a594605bf7348d67c139a60ff81486e4cbb",
+      "frames": 8379,
+      "seconds": 0.38,
+      "peak": 0.319976806640625,
+      "rms": 0.11521687888305839,
+      "endpoints": [
+        0,
+        0
+      ]
+    },
+    "bite": {
+      "file": "src/sounds/caelum/enemies/rat/bite.wav",
+      "sha256": "427b011557db55252f36b7ab876496de2de8d9a3570eeb08df42544e2b549ed1",
+      "frames": 3749,
+      "seconds": 0.17002267573696145,
+      "peak": 0.319976806640625,
+      "rms": 0.10546739013054438,
+      "endpoints": [
+        0,
+        0
+      ]
+    },
+    "pain": {
+      "file": "src/sounds/caelum/enemies/rat/pain.wav",
+      "sha256": "1d252c33a593229d49c166872c8a7893749cded775193458d996f15fa3cd3f93",
+      "frames": 6394,
+      "seconds": 0.28997732426303857,
+      "peak": 0.319976806640625,
+      "rms": 0.110077419968809,
+      "endpoints": [
+        0,
+        0
+      ]
+    },
+    "death": {
+      "file": "src/sounds/caelum/enemies/rat/death.wav",
+      "sha256": "1fed456ba349c6699bd2a6dcc3751697a2ea479bc5233b7db34eac00096b1096",
+      "frames": 12789,
+      "seconds": 0.58,
+      "peak": 0.319976806640625,
+      "rms": 0.10725530613188743,
+      "endpoints": [
+        0,
+        0
+      ]
+    }
+  }
+}

@@ -237,6 +237,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
                 *(1-CaelumPersonalityRules.AttackPenetration(inflictor,source));
             double absorbed=damage*Clamp(absorption,0,1);
             damage=Max(0,damage-absorbed);
+            let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
+            if(mixed!=null)absorbed+=mixed.BlockFire(self,Shield.GetDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL),inflictor,source);
             double wear=absorbed;
             int loss=int(wear/CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY);
             double remainder=wear-loss*CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
@@ -258,7 +260,9 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_SWORD)))return;
         if(soldier.target==null || soldier.target.bFriendly)return;
         int damage=soldier.PrepareActorOutgoingDamage(CaelumWeaponCatalogue.GetPrimaryDamage(CaelumConstants.CATALOGUE_WEAPON_SWORD)
-            *soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false);
+            *soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false,true);
+        if(damage<=0 || !soldier.WeaponMeleeAimHits(soldier.Sword))
+        {soldier.PendingCombatCriticalDelivery=false;return;}
         int before=soldier.target.health;
         soldier.A_CustomMeleeAttack(damage,"weapons/swordhit");
         if(soldier.target.health<before)

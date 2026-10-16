@@ -1,0 +1,16 @@
+{
+  "test_id": "CA260-02",
+  "originating_version": "5.4.15",
+  "issue": 260,
+  "result": "passed",
+  "author_quote": "La prueba dio bien.",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered directional double-tap scenario: current movement modes/diagonal, mass costs, insufficient Air, held/opposite keys and UI interruption; no additional itemized claim.",
+  "run": "build/issue260-impulse-final/author-impulse-20261015-080447-run.json",
+  "exit_code": 0,
+  "pid": 13756,
+  "runtime_sha256": "C42FFFCFF3D89DC38BD0B91A7FF1DCBFC574FE8253E4A21EF13EBCDF7B30E987",
+  "fixture_sha256": "5BBBA7F5FC31542DC03BDDBFD77D5E786C7125C9EC1D1C62A9A91FD72BF473BA",
+  "finished_utc": "2026-10-15T11:06:50.5944469Z",
+  "qualifications": "Accepts the offered impulse scenario. No broad campaign/multiplayer acceptance, merge or issue closure."
+}

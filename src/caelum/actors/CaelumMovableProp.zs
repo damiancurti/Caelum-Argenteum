@@ -2,6 +2,14 @@
 // Las subclases aportan sprite, dimensiones, masa y cualquier sonido propio.
 class CaelumMovableProp : Actor
 {
+    CaelumTelekinesisEffect TelekinesisBinding;
+
+    override void Tick()
+    {
+        CaelumTelekinesisRules.Physics(self);
+        Super.Tick();
+    }
+
     // args[0] expresa el requisito como PhysicalPushMultiplier × 100.
     // Ejemplo de formato técnico: 150 representa un multiplicador 1.50.
     // Un valor <= 0 se considera sin configurar y bloquea el movimiento.
@@ -37,6 +45,16 @@ class CaelumMovableProp : Actor
         );
         Thrust(Max(0.0, pushForce), pushAngle);
         return true;
+    }
+
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {return Max(0,int(Super.TakeSpecialDamage(inflictor,source,damage,mod)
+        *CaelumRally.DamageFactor(self,source)+0.5));}
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        if(flags & DMG_FORCED)damage=Max(0,int(damage*CaelumRally.DamageFactor(self,source)+0.5));
+        return Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
     }
 
     Default

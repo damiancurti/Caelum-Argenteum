@@ -1,0 +1,306 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Human head, layered hair and running grip; author review pending",
+  "runtime_sha256": "f84b1880d86c91a1e55798a4acc38da95470c7b846c6ba0fa4d15e6f6c7113a4",
+  "source_members": 16188,
+  "normal_build_sha256": "48d442f48fa128e450ac9d4893aa588dd18bb180a55402909e95e0798c61d575",
+  "native_runs": 8,
+  "native_assertions": 62,
+  "runs": [
+    {
+      "label": "actions",
+      "assertions": 11,
+      "log": "build/issue283-head-grip-02/actions.txt",
+      "log_sha256": "ce81db519c95f7f2b9854d58129d197c35415668a123d7bccda99c4ae5408ad5",
+      "record_sha256": "7415f9bc631dd8a0aef5834b6572c6ce9853a3b88acd25a05aa0f5ebd49ffab7",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "motion",
+      "assertions": 9,
+      "log": "build/issue283-head-grip-02/motion.txt",
+      "log_sha256": "b5057d5a5261cb6d3bb4caf4690b606f89e96ddb3066247d6893c82104bab622",
+      "record_sha256": "36f6e8fcbe0a8f531c51bf46d44d9da8e230cd628cc5e83e87c88e36879ed6d0",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "camera",
+      "assertions": 12,
+      "log": "build/issue283-head-grip-02/camera.txt",
+      "log_sha256": "d7878e730c24245d81a4e2521f2db9d629adf900f9c412cad2558e0920aa3704",
+      "record_sha256": "42fd461f15bb5b2bb3ee610f53208f54a48979909f7226fc2aa0e9d62654d3b4",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "rest",
+      "assertions": 14,
+      "log": "build/issue283-head-grip-02/rest.txt",
+      "log_sha256": "f6223ee59488d1d126bbf35f7c58947dc8dad1e6aef5ed9ec27390460e435cd1",
+      "record_sha256": "0c1e2d62c5771e05f6a58e703cbbe410597af94c7c8448733ecc7cbf8268002d",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "preview",
+      "assertions": 3,
+      "log": "build/issue283-head-grip-02/preview.txt",
+      "log_sha256": "1517303e4cb6bb9129e01f821186342c0e6e13278cf6e03042395df2be686a9e",
+      "record_sha256": "89bd7c908b7e628b1482c3a92a77d7da29f6ebd92f8e6f56b1f78cf04414a339",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "death-console",
+      "assertions": 7,
+      "log": "build/issue283-head-grip-02/death-console.txt",
+      "log_sha256": "86e804f59a7d386fddf190b50eb8b10a18e6ffd78e855bf877c93ea1ee52733e",
+      "record_sha256": "333785ef1bd3a08a7e11f71554a24114ae10879508bade4b4888e15eced9378e",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "bench-64-0",
+      "assertions": 3,
+      "log": "build/issue283-head-grip-02/bench-64-0.txt",
+      "log_sha256": "3835948c1c049ccb69f8fab321cba9c34410e7f52a5786c1ca941d27750ae725",
+      "record_sha256": "ff70bcf5bd1004916bca06c38fc3cecd295591e13a1c6e5de440d115b4a8b778",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    },
+    {
+      "label": "bench-64-1",
+      "assertions": 3,
+      "log": "build/issue283-head-grip-02/bench-64-1.txt",
+      "log_sha256": "7306d4883fbb5a6927600ca406be6d87c9803369c4d29893a1d352f36aa88568",
+      "record_sha256": "a9e1cb8a89566b0f0911bcab076714c9422f8a525e5aa4a5308468b4da39e460",
+      "fixture_sha256": "b37cb7e501147593ebc8e7bb4d4ed732cc89dbf366a4cfae3a8053b2d483de10"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-head-grip-02/motion-pilot-walk.png",
+      "sha256": "76fbafab485b1e6159188e5eb3dbb3f4ba05f69f412027654a5d3daa71b93218"
+    },
+    {
+      "file": "build/issue283-head-grip-02/motion-pilot-run.png",
+      "sha256": "4cbb626f6c5b28b8f0d64502128246357326a024a1277714a37852911e217e6d"
+    },
+    {
+      "file": "build/issue283-head-grip-02/camera-pilot-review-front.png",
+      "sha256": "9af61f69a618b451c26a57f11c025bb17a4b2da9f6c4c9458924eca471e2fc29"
+    },
+    {
+      "file": "build/issue283-head-grip-02/camera-pilot-review-side.png",
+      "sha256": "be27668fa87f608036f148ef844051d8d866f067d416b978e92b601f933525dd"
+    },
+    {
+      "file": "build/issue283-head-grip-02/rest-pilot-chair.png",
+      "sha256": "d6f5a6ab5b027cdea29482e7979bfb3264e09f4ac686b30b9e85d42cd818cd81"
+    },
+    {
+      "file": "build/issue283-head-grip-02/rest-pilot-bed.png",
+      "sha256": "7de2c3c4029bbe37e805afcf8f88a4af4aff056ee46e84d439c7f5e7068fed3c"
+    },
+    {
+      "file": "build/issue283-head-grip-02/rest-pilot-ground.png",
+      "sha256": "eb0b04fd261fc0900d3d95f8002f306b074dbc83da2555d0435954e897513c7a"
+    },
+    {
+      "file": "build/issue283-head-grip-02/preview-pilot-front.png",
+      "sha256": "d4fac003b7ec8043c6b5aae02201a0cc39248af4d63a934f70fa1163a7a1925b"
+    },
+    {
+      "file": "build/issue283-head-grip-02/preview-pilot-side.png",
+      "sha256": "4ce0fd22bf4f7eb61f2c90fb4146af279ec691386bf84755eb920ebd5d923557"
+    },
+    {
+      "file": "build/issue283-head-grip-02/preview-pilot-rear.png",
+      "sha256": "7f6b20892239f7528a88a96b9d43b2ebf9aff6b29061ccfbb1fda10fc71a7fe6"
+    },
+    {
+      "file": "build/issue283-head-grip-02/preview-pilot-original.png",
+      "sha256": "192629208fd5cd8095064f1d1fabaede16b3061193b5cbfb561ac81782251eeb"
+    },
+    {
+      "file": "build/issue283-head-grip-02/death-console-pilot-death-still.png",
+      "sha256": "144ec993bf6955aa5f24e8a75ba09920cd9c4a020e049e5fcff26cb342673850"
+    },
+    {
+      "file": "build/issue283-head-grip-02/bench-64-0-pilot-bench-64-0.png",
+      "sha256": "f0c18fa96736894335140713e5546a70298ee3d0536c7b556337ef513a0c5c16"
+    },
+    {
+      "file": "build/issue283-head-grip-02/bench-64-1-pilot-bench-64-1.png",
+      "sha256": "adf2cd44c116b0c177aa99ba65b3bb8aa4dddfe0069f5f7483cece4f55b4b749"
+    }
+  ],
+  "geometry": {
+    "issue": 283,
+    "source_sha256": "d0ad0ca193ed8c4d02ba4b87703844a57d17228d14569cd732e5db6e173cc77d",
+    "baseline_sha256": "9b3f4bf5e08a36db786a3df19495fc7fcfc367540b6227af892dc71f26443c61",
+    "unchanged_object_pose_checks": 12042,
+    "run_grip_samples": [
+      {
+        "frame": 0,
+        "grip_error_units": 8.740569486533813e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 1,
+        "grip_error_units": 7.62939453125e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 2,
+        "grip_error_units": 8.792442757885825e-06,
+        "hand_blade_degrees": 89.99998884409983
+      },
+      {
+        "frame": 3,
+        "grip_error_units": 1.2361031910720559e-05,
+        "hand_blade_degrees": 89.99998884409983
+      },
+      {
+        "frame": 4,
+        "grip_error_units": 8.792442757885825e-06,
+        "hand_blade_degrees": 89.99998884409983
+      },
+      {
+        "frame": 5,
+        "grip_error_units": 7.62939453125e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 6,
+        "grip_error_units": 8.740569486533813e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 7,
+        "grip_error_units": 8.092194914091653e-06,
+        "hand_blade_degrees": 90.00000933466734
+      },
+      {
+        "frame": 8,
+        "grip_error_units": 7.62939453125e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 9,
+        "grip_error_units": 1.4273290202232137e-05,
+        "hand_blade_degrees": 89.999995674289
+      },
+      {
+        "frame": 10,
+        "grip_error_units": 7.62939453125e-06,
+        "hand_blade_degrees": 90.00000250447816
+      },
+      {
+        "frame": 11,
+        "grip_error_units": 8.092194914091653e-06,
+        "hand_blade_degrees": 90.00000933466734
+      },
+      {
+        "frame": 12,
+        "grip_error_units": 8.740569486533813e-06,
+        "hand_blade_degrees": 90.00000250447816
+      }
+    ],
+    "scope": "All exported frames; excludes changed head/hair/eyes and Run sword geometry. Visual acceptance remains pending."
+  },
+  "export": {
+    "deterministic_files": 7,
+    "frames": 195,
+    "vertices": 10629,
+    "triangles": 17339,
+    "surfaces": 1,
+    "bytes": 16885544,
+    "md3_sha256": "e5513cf16c44582ac7f5a94f32d80c032684bf2d7af9f1bc04758767d16f0c0b",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.1337127685547
+      },
+      "Walk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 167.13400268554688
+      },
+      "Run": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 185.92037963867188
+      },
+      "Melee": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.11993408203125
+      },
+      "Death": {
+        "min_z": -3.674762725830078,
+        "max_z": 171.5362548828125
+      },
+      "Raise": {
+        "min_z": -3.6513023376464844,
+        "max_z": 171.49038696289062
+      },
+      "Seated": {
+        "min_z": -0.004584779962897301,
+        "max_z": 139.13372802734375
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 39.000003814697266
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 126.6629409790039
+      },
+      "SitDown": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "StandUp": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.41146850585938
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.35791015625
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2495,
+  "frame_intervals": [
+    {
+      "count": 64,
+      "model": false,
+      "frames": 12457,
+      "mean_ms": 0.802678,
+      "min_ms": 0.7157,
+      "max_ms": 1.6191
+    },
+    {
+      "count": 64,
+      "model": true,
+      "frames": 8601,
+      "mean_ms": 1.162604,
+      "min_ms": 1.0179,
+      "max_ms": 2.013
+    }
+  ],
+  "prior_evidence": "Earlier foundation/anatomy/arm-motion records describe their own preserved builds, not this model.",
+  "preserved_candidate": "head-grip-01 passed six functional runs; native review found flat hair detail, corrected through UV sampling in head-grip-02.",
+  "limitations": [
+    "Not overall #283 acceptance; modular parts and timed/block/jump animations remain open.",
+    "64 non-combat render proxies measure local frame intervals, not large-battle performance.",
+    "Native captures stay in build because the isolated fixture uses a development IWAD."
+  ]
+}

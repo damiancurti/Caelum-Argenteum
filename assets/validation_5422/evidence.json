@@ -1,0 +1,180 @@
+{
+  "issue": 282,
+  "version": "5.4.22",
+  "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+  "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+  "source_members": 16180,
+  "normal_package_matches_source": true,
+  "deterministic_fixture_packaging": true,
+  "static_errors": [],
+  "runs": [
+    {
+      "directory": "issue282-final-06",
+      "label": "probe",
+      "assertions": 23,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "2cc9c75aacb632f98306298f292dc70d1d5004f992b62334d95073070368d982",
+      "commands_sha256": "15a560e8ecf288042870a5cdaf80b989d5fa0cfcf3267950506e0d9511519c6d"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "input",
+      "assertions": 6,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "e16f165e6c97b4ed431239032d6aa2203d09a37c8a6f3fefe6fdfc95fc2003cb",
+      "commands_sha256": "a8581107aca60514bfb99b38ded8cd7d92e6c5960320a5ac25bf35985a5774a4"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "transfers",
+      "assertions": 8,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "b8182ce19e8f3f75ef7d4fd271d194ac8c818886531b8f8e2166aeeb5ec5cd50",
+      "commands_sha256": "25e392263c5b51ca16da0c9a9d80236380c6161dfce77de8347bf8d4cdee5414"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "save",
+      "assertions": 0,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "515ba86baf129827a038175a1df2452106cee1037188f435835ccaa973751785",
+      "commands_sha256": "839f999452a288ea49f0aca6c031f5e713f82acf49819d5cc6c9d73d4494b74c"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "load",
+      "assertions": 2,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "547b10a16c93de977d9e32a60c61335e3366cdc3153e98b88eff87636e392364",
+      "commands_sha256": "6e77d3dfcf22993e9d4559bc4bbcf6c89b0e7ef94d98a4eabff00008a728f7f1"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "travel",
+      "assertions": 4,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "717ffa0175683bd831de8b802f92477ce461d4e51a9ae63031281cb9a6469fc2",
+      "commands_sha256": "8f14f09923ac1047201026cde77cc70a2eaad9640dc91c3853107485fbefb068"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "legacy-load",
+      "assertions": 4,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "226a78df45fe3534d0d7ea5206ba417582af34e25895a269f5368ff9b3bf13bd",
+      "commands_sha256": "1da4aecd35b89f7f982b5332c50da9bf8e4d1017cb3a0736521bde56e4778e14"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "spanish43",
+      "assertions": 0,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "2a951355160f3c7ed092b3b82a583ac9beaca45da16f778f572a59efc7ba9164",
+      "commands_sha256": "4a4e9e8a5d5231a4d6992c28be2e310fb55c7144b365108b85d4d77de5cac05e"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "english169",
+      "assertions": 0,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "12354d3db1650295521f42ddfae5b9a0107867023c02e2d6e4bb91c2994919c9",
+      "commands_sha256": "51a74d2e77413191e3e5a3f99e3001cf5b0211e159a1efc3364f635ad645c5af"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "scaled-water",
+      "assertions": 0,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "f624cb57f957051c06be78bc4e4cd418cb0e5fcea4089da9fa05473af8a152f8",
+      "commands_sha256": "00f93faf13c71a3b5db22fcf5ec493287bed271bbb7f3ce480b858bd89f18d81"
+    },
+    {
+      "directory": "issue282-final-06",
+      "label": "unbound",
+      "assertions": 0,
+      "exit_code": 0,
+      "runtime_sha256": "851e0014e3c7a5349bc010113888e94b1c9d25fc0bdc5f688e5f8506be84c586",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "log_sha256": "06da7c6d373f797aeef0610a213f4ebdb7632e9fd3b70c29440540dd6edd9a81",
+      "commands_sha256": "168e03214b433f69d15b605d3cdc3b806bad6a9f91731d460afb0c15eb13525a"
+    }
+  ],
+  "native_runs": 11,
+  "native_assertions": 47,
+  "previous_runtime_seed": {
+    "directory": "issue282-final-04",
+    "label": "legacy-save",
+    "assertions": 0,
+    "exit_code": 0,
+    "runtime_sha256": "d61eb779ee657edb8179c0eec0685e86e36297bb26de7b29403c55fb314c445d",
+    "fixture_sha256": "19c8687c9e87a3c8c909ff53151d5e142f547f1c356d2626ee102ccc31a77133",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "log_sha256": "b7a7dfafff9c2d89424580737cf0e642cae02cb776ade7ea34b6d149195b22c6",
+    "commands_sha256": "916c8a43c1727eefcaabe1f00257565fecb4d4cb3a7c5ce9d44bbbe958376ed0"
+  },
+  "old_save_sha256": "4c02c004c0a55eae006fb217450fb26c04ef028de857114f344df8102db36b7a",
+  "current_save_sha256": "90f7bbe03994dc8b5bedd6bd239492e23ae5f9034b38654f421bfb1c0ac995a2",
+  "captures": {
+    "english169-quick-hud.png": {
+      "sha256": "fb31a8c201feab5cec621c8a374ed2d5d1580dbd09bccc075afb335a0030a810",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    "scaled-water-quick-water.png": {
+      "sha256": "e479a977209361336e48ccc8ad6d04d3715c594060973f25d02ce9e379f35584",
+      "pixels": [
+        1600,
+        900
+      ]
+    },
+    "spanish43-quick-hud.png": {
+      "sha256": "79ae6f3b4fd20ea92606b1aef4066ef54590e494e615c880c65bf71ce60544dd",
+      "pixels": [
+        1024,
+        768
+      ]
+    },
+    "unbound-quick-unbound.png": {
+      "sha256": "27d9044c77e44be493e486f1fc0813b7eeba267f2dff086ac04d619046c7cad9",
+      "pixels": [
+        1280,
+        720
+      ]
+    }
+  },
+  "author_acceptance": "pending CA282-01; author requested deferral while away",
+  "scope": "Isolated inventory commands, real transfers, save/load/hub, old-save reconciliation and four rendered HUD checks; physical input/campaign/multiplayer acceptance not claimed."
+}

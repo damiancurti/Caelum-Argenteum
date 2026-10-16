@@ -65,7 +65,7 @@ class CaelumArgento : CaelumAnchoredResident
     Death:
         ARGO G 5 A_Scream;
         ARGO H 5;
-        ARGO I 5 A_NoBlocking;
+        ARGO I 5 A_CaelumNoBlocking;
         ARGO JK 5;
         ARGO L -1;
         Stop;

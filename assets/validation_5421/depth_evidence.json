@@ -1,0 +1,83 @@
+{
+  "issue": 252,
+  "version": "5.4.21",
+  "runtime_sha256": "cf8bce350bad8846f388e01f10d3799535f782f7b084c164670176f418decec8",
+  "fixture_sha256": "3901c64698addde1280497e3940c2a8deef3a7eb414dc341e1dd4e225040887b",
+  "runs": [
+    {
+      "directory": "issue252-depth-01",
+      "label": "gallery",
+      "assertions": 0,
+      "exit_code": 0,
+      "fixture_sha256": "97a3229b265ff6cdddc43d26408550d54923c30af7ee24aa742f3fc23f5078d0",
+      "log_sha256": "14716875cde29cf81d948688eb6fe4d45e776c52ced9e59ced41c90bf46ca9dd",
+      "script_sha256": "05d129448f21f64e9c1714dc7763e6774eb9cda7548765f6b22ce0176b71c846",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue252-depth-02",
+      "label": "presentation",
+      "assertions": 80,
+      "exit_code": 0,
+      "fixture_sha256": "3901c64698addde1280497e3940c2a8deef3a7eb414dc341e1dd4e225040887b",
+      "log_sha256": "e07208af937d652550c5cc6880090df091d99bff4d4d4fd520cc4d91ebf847be",
+      "script_sha256": "6e6141f96bcb6dc93bb61d3de7fb68cab72ef9798e415c6ee95515b37a11c9e0",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue252-depth-02",
+      "label": "old-load",
+      "assertions": 8,
+      "exit_code": 0,
+      "fixture_sha256": "3901c64698addde1280497e3940c2a8deef3a7eb414dc341e1dd4e225040887b",
+      "log_sha256": "b327684d79ea0b5e214fdd2534a5bc9ab14f4301f095a982c01a21b52349f8b2",
+      "script_sha256": "6763cb4e50314222d49c6b5aed13c7abcc5717eee8be416a2ebc5cb2f36db62b",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue252-depth-02",
+      "label": "depth",
+      "assertions": 0,
+      "exit_code": 0,
+      "fixture_sha256": "3901c64698addde1280497e3940c2a8deef3a7eb414dc341e1dd4e225040887b",
+      "log_sha256": "1fe058a62b2f8d0f974883f8ed4c66ab790420658c20c15dff8733adf82ce6e6",
+      "script_sha256": "117870d9b0099e7d315686c0ad76b0fd6d24dc4d8f3d687c0ae8fc05b1f223dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    }
+  ],
+  "native_runs": 4,
+  "native_assertions": 88,
+  "screenshots": {
+    "issue252-depth-01/seal-air-ground.png": "aabe1d7829335e2a8e315ff491f055c659df71c5412c9ec9e9eb5ecd764ada7d",
+    "issue252-depth-01/seal-air-orb.png": "aebf77eccda6e0152cfd85ef724db2b014e02fb0b7afbf4a626f77f60dbb2275",
+    "issue252-depth-01/seal-earth-ground.png": "0ac197daa2eb8eec0d969efa3263351d6e84ebaa36123733874ee441aa29df4c",
+    "issue252-depth-01/seal-earth-orb.png": "c67779b391da217cba27a9f618d5f122137ae483a64d7c9d17b938d5d4bfaa7f",
+    "issue252-depth-01/seal-fire-ground.png": "62252fc8f15ad5865770d284f84741714f81d0a6343818d3b6173330a8742a01",
+    "issue252-depth-01/seal-fire-orb.png": "850d074937196a8a08d161f398b3eab9b162ddcd79cb46a636b9444c3c3a3e51",
+    "issue252-depth-01/seal-quintessence-ground.png": "466c179c211352595243f7e34e2a8838ef3f46a7a2b2bed84683df3d7a5d7678",
+    "issue252-depth-01/seal-quintessence-orb.png": "ecec26c297d234a815b22109391cce7d9190cdcc57229f059f8883ff8b9c1823",
+    "issue252-depth-01/seal-water-ground.png": "5bc27df4f471b9b937987fcb8e2f4c934be8eb741efd4794b63050a683137ddb",
+    "issue252-depth-01/seal-water-orb.png": "3e618b86fc56264974a405766a6391492a3801197f8caeb4dab666efd6ca83f4",
+    "issue252-depth-02/depth-0-ground.png": "e3cca01f6d3fe658c143990ed9dd2926591f0660896f848aada9019b1ac9ef55",
+    "issue252-depth-02/depth-0-level.png": "a2c4635a8e47d2efd7f33a018eb8d6ec15298a1bf9b5811a783dc614a44135fe",
+    "issue252-depth-02/depth-180-ground.png": "f9ae7ff40f0e320a0d353a6fecc228b6acd967026f2be949603fb4008e362c9c",
+    "issue252-depth-02/depth-180-level.png": "bb84cabd0aa90610c302b7bfe3f854f10bdd08b792100b93552b59e4319b8b61",
+    "issue252-depth-02/depth-270-ground.png": "4cbab876d77e29053df9eceef8068682b8c3b0127994b6da294eeb57c6923f05",
+    "issue252-depth-02/depth-270-level.png": "bc7485fb5bc521a5b15d1feff122049a668f97d7c39a33d23c36c59ac5754adf",
+    "issue252-depth-02/depth-90-ground.png": "9e2ffa75496d5a057f89d71e9729617fec6c7b7e26156b135b4f14c8885397a7",
+    "issue252-depth-02/depth-90-level.png": "8e723e97f000963d10c7cb07aaf6133779bf5fd333b9ad03d573bb697e5f02dd"
+  },
+  "source_members": 16178,
+  "static_errors": [],
+  "normal_package_matches_source": true,
+  "deterministic_packaging": true,
+  "prior_save_sha256": "c4326dbc61e1d6fe72dd4850268c48fbd655b22103574ab8936255e977e3a218",
+  "author_acceptance": {
+    "id": "CA252-01",
+    "origin": "5.4.21 / #252",
+    "date": "2026-10-15",
+    "result": "accepted",
+    "quote": "Ahora si la prueba dio correcto, queda aprobada."
+  },
+  "scope": "Cosmetic transparent-sprite depth tie correction. Earlier gameplay and orb evidence retain their original runtime hashes."
+}

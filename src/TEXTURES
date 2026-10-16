@@ -2471,6 +2471,8 @@ Sprite "CLVRB0", 320, 887 { Offset 160, 480 Patch "graphics/caelum/world/ca_leve
 Sprite "CMNFA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_fire.png", 0, 0 }
 Sprite "CMNQA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_quintessence.png", 0, 0 }
 Sprite "CMNEA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_earth.png", 0, 0 }
+Sprite "CMNWA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_water.png", 0, 0 }
+Sprite "CMNAA0", 128, 128 { Offset 64, 64 Patch "graphics/caelum/icons/jewelry/ca_seal_air.png", 0, 0 }
 
 // FP_V1: agregar al final de TEXTURES. Composiciones virtuales de capas propias.
 Sprite "C011A0", 320, 200
@@ -5776,3 +5778,10 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "graphics/caelum/appearance.textures"
 #include "graphics/caelum/appearance-details.textures"
 #include "graphics/caelum/appearance-hands.textures"
+
+#include "graphics/caelum/class_cast.textures"
+#include "graphics/caelum/sleep_creatures/sleep.textures"
+
+#include "graphics/caelum/domingo_pilot.textures"
+
+#include "graphics/caelum/zupay_rock.textures"

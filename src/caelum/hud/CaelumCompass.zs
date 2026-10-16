@@ -54,7 +54,7 @@ class CaelumCompass : Object ui
         if (!Visible(user)) return 40.0;
         double fit = Min(Screen.GetWidth() / CaelumCompassLayout.CANVAS_WIDTH,
             Screen.GetHeight() / CaelumCompassLayout.CANVAS_HEIGHT);
-        return CaelumCompassLayout.NOTIFY_LEFT * Scale() / Max(0.01, fit);
+        return (CaelumCompassLayout.NOTIFY_LEFT*Scale()+CaelumAbilityHUD.ReservedWidth(user))/Max(0.01,fit);
     }
     static void Text(Font font, double x, double y, String value, double scale, int color)
     {
@@ -70,7 +70,8 @@ class CaelumCompass : Object ui
     {
         if (!Visible(user) || font == null) return;
         double scale = Scale();
-        double x = (CaelumCompassLayout.MARGIN + CaelumCompassLayout.CENTER_X) * scale;
+        double x = (CaelumCompassLayout.MARGIN + CaelumCompassLayout.CENTER_X) * scale
+            +CaelumAbilityHUD.ReservedWidth(user);
         double top = CaelumCompassLayout.MARGIN;
         // Reservar las filas de avisos nativos si están habilitadas. El buzón
         // propio reserva una columna independiente y no pierde sus 20 entradas.

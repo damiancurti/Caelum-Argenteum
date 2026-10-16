@@ -85,14 +85,15 @@ class CaelumCannon : CaelumHostileMachine
         return true;
     }
 
-    int OperatorsPresent()
+    int OperatorsPresent(bool attacking=false)
     {
         int count=0;
         for(int i=0;i<Operators.Size();i++)
         {
             let body=Operators[i];
             if(body!=null && body.health>0 && body.bFriendly==Defending
-                && (body.Pos-Pos).Length()<=GuardRadius)count++;
+                && (body.Pos-Pos).Length()<=GuardRadius
+                && (!attacking || !CaelumBattleCry.Active(body)))count++;
         }
         return count;
     }
@@ -122,6 +123,7 @@ class CaelumCannon : CaelumHostileMachine
     bool RequestShot(vector3 point, Actor intended=null)
     {
         if(!Armed || Neutralized || !EligibleTarget(intended))return false;
+        if(OperatorsPresent()>0 && OperatorsPresent(true)==0)return false;
         // El tiro pendiente conserva su punto y blanco; no se reasigna a mitad de carga.
         if(Requested)return true;
         AimPoint=point; IntendedTarget=intended; Requested=true;
@@ -170,7 +172,7 @@ class CaelumCannon : CaelumHostileMachine
 
     void Fire()
     {
-        if(!Armed || Neutralized || Phase!=LOADED || OperatorsPresent()==0)return;
+        if(!Armed || Neutralized || Phase!=LOADED || OperatorsPresent(true)==0)return;
         if(!EligibleTarget(IntendedTarget)){CancelShot();return;}
         if(ActiveShot!=null || (!UnlimitedAmmunition && Ammunition<=0))return;
         vector3 pivot=Pos+(0,0,CaelumCannonData.PIVOT_Z);
@@ -220,6 +222,7 @@ class CaelumCannon : CaelumHostileMachine
             CycleRevision=1;
         }
         if(!Initialized || !Armed || Neutralized)return;
+        if(OperatorsPresent()>0 && OperatorsPresent(true)==0)CancelShot();
         int staffing=OperatorsPresent();
         if(staffing==0)return;
         if(Phase==LOADED)

@@ -29,8 +29,14 @@ class CaelumToughnessRules : Object
     static clearscope double AfterDefenses(double damage,double naturalMass,double toughness,bool magical=false)
     { return Max(0.0,damage-Reduction(naturalMass,toughness,magical)); }
 
+    static play double ActorReduction(Actor receiver,double toughness,bool magical=false)
+    { return Reduction(NaturalMass(receiver),toughness,magical)*CaelumRedemption.ToughnessFactor(receiver); }
+
+    static play double AfterActorDefenses(Actor receiver,double damage,double toughness,bool magical=false)
+    { return Max(0.0,damage-ActorReduction(receiver,toughness,magical)); }
+
     static play double Apply(Actor receiver,double damage,bool magical=false)
-    { return AfterDefenses(damage,NaturalMass(receiver),Effective(receiver),magical); }
+    { return AfterActorDefenses(receiver,damage,Effective(receiver),magical); }
 
     static clearscope double RetainedFraction(double before,double after)
     { return before>0.0 ? after/before : 1.0; }

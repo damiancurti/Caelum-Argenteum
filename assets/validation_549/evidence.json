@@ -1,0 +1,198 @@
+{
+  "issue": 239,
+  "version": "5.4.9",
+  "baseline": "2f878fe5",
+  "environment": "GZDoom 4.14.2 / Windows 11 / Vulkan / background unpaused / 5% master volume",
+  "runs": [
+    {
+      "exit_code": 0,
+      "runtime_sha256": "3BBCC5FDA892EB2FD8ED3ABAB69F9DB46148A20E1F80E7E530F9CE0186082595",
+      "fixture_sha256": "44D375B8BDB48B55B0C027597F3C3F676F5F8C30763403D152F8901C5D6BAC5D",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:27:50.1884001Z",
+      "directory": "build/issue239-final",
+      "label": "contract-01",
+      "result": [
+        "CA239 DONE failures=0 passed=30"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "3BBCC5FDA892EB2FD8ED3ABAB69F9DB46148A20E1F80E7E530F9CE0186082595",
+      "fixture_sha256": "44D375B8BDB48B55B0C027597F3C3F676F5F8C30763403D152F8901C5D6BAC5D",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:28:13.9780638Z",
+      "directory": "build/issue239-final",
+      "label": "return-01",
+      "result": [
+        "CA239 DONE failures=0 passed=2"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "9100F517BB3E1694FC0A7D025FDE99001AB676D3F3AA0B1500E47C3CAE736B2B",
+      "fixture_sha256": "F33AE56B36E12E95AD8467B38C79BF7E16B8D823DA521D020A63385E75C9C7C2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:13:31.8597742Z",
+      "directory": "build/issue239-v2",
+      "label": "weapons-01",
+      "result": [
+        "CA239 DONE failures=0 passed=41"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "9100F517BB3E1694FC0A7D025FDE99001AB676D3F3AA0B1500E47C3CAE736B2B",
+      "fixture_sha256": "F33AE56B36E12E95AD8467B38C79BF7E16B8D823DA521D020A63385E75C9C7C2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:14:22.1942489Z",
+      "directory": "build/issue239-v2",
+      "label": "noise-01",
+      "result": [
+        "CA239 DONE failures=0 passed=3"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "667C97D63F392C837CB0B998CB3CA58E87A735838A744657695D5711AECA78B2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:16:50.3114266Z",
+      "directory": "build/issue239-v3",
+      "label": "damage-01",
+      "result": [
+        "CA239 DONE failures=0 passed=6"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "667C97D63F392C837CB0B998CB3CA58E87A735838A744657695D5711AECA78B2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:15:36.7564843Z",
+      "directory": "build/issue239-v3",
+      "label": "save-01",
+      "result": [
+        "CA239 DONE failures=0 passed=2"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "667C97D63F392C837CB0B998CB3CA58E87A735838A744657695D5711AECA78B2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:16:00.1862867Z",
+      "directory": "build/issue239-v3",
+      "label": "load-01",
+      "result": [
+        "CA239 DONE failures=0 passed=4"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "667C97D63F392C837CB0B998CB3CA58E87A735838A744657695D5711AECA78B2",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:19:34.5994557Z",
+      "directory": "build/issue239-v3",
+      "label": "hub-01",
+      "result": [
+        "CA239 DONE failures=0 passed=3"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "14953D39F9D8CAABD5664E29E7EF4BB6CCCBAA0BBC490508CA178231B84270BE",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:20:52.2002297Z",
+      "directory": "build/issue239-v5",
+      "label": "melee-01",
+      "result": [
+        "CA239 DONE failures=0 passed=5"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "2D7EEEF951291D6311E5F86FE770A0540B287266C3B03DA1078833750F1A8BA4",
+      "fixture_sha256": "14953D39F9D8CAABD5664E29E7EF4BB6CCCBAA0BBC490508CA178231B84270BE",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:22:01.2653152Z",
+      "directory": "build/issue239-v5",
+      "label": "preview-01",
+      "result": [
+        "CA239 DONE failures=0 MANUAL_SEED_ONLY",
+        "CA239 DONE failures=0 passed=1"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "3BBCC5FDA892EB2FD8ED3ABAB69F9DB46148A20E1F80E7E530F9CE0186082595",
+      "fixture_sha256": "A847C17AE8F33A129D671F25860FCAA8467F95E70DA1AF9FEBCE36C9E64BBE6A",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:28:27.7245517Z",
+      "directory": "build/issue239-upgrade",
+      "label": "upgrade-01",
+      "result": [
+        "CA239 DONE failures=0 UPGRADE_ONLY"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "0DF8265DC1D538A87CBCAA52F543E8535304CDB0E0C42981A649D1E759E15E39",
+      "fixture_sha256": "E7663DF745AB4E881DC45E450FDC8F314B7C1EAE10506666CCEF75D32D3265C7",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:24:16.3489561Z",
+      "directory": "build/issue239-rollback",
+      "label": "rollback-01",
+      "result": [
+        "CA239 DONE failures=0 ROLLBACK_ONLY"
+      ]
+    },
+    {
+      "exit_code": 0,
+      "runtime_sha256": "3BBCC5FDA892EB2FD8ED3ABAB69F9DB46148A20E1F80E7E530F9CE0186082595",
+      "fixture_sha256": "0EE54E57FB76A2DAE9D4B2C2D15C3293117583075CEAAAD4F45AE5AF9BD187C0",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "finished_utc": "2026-10-15T03:34:04.0616019Z",
+      "directory": "build/issue239-manual-v3",
+      "label": "carbine-preview-01",
+      "result": [
+        "CA239 DONE failures=0 MANUAL_SEED_ONLY",
+        "CA239 DONE failures=0 passed=2"
+      ]
+    }
+  ],
+  "earlier_runtime_differences": {
+    "issue239-v2": [
+      "LANGUAGE",
+      "caelum/character/CaelumCharacterCreationMenu.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs",
+      "localization/INDEX.md",
+      "localization/index.json"
+    ],
+    "issue239-v3": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "issue239-v5": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ]
+  },
+  "author_acceptance": "CA239-01 passed 2026-10-15; see acceptance.json",
+  "static_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "context_words": 2494
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "members_matching_tested_runtime": 16159
+  },
+  "manual_fixture": {
+    "runtime_sha256": "3bbcc5fda892eb2fd8ed3abab69f9db46148a20e1f80e7e530f9ce0186082595",
+    "fixture_sha256": "0ee54e57fb76a2dae9d4b2c2d15c3293117583075ceaaad4f45ae5af9bd187c0"
+  }
+}

@@ -1,0 +1,13 @@
+Caelum Argenteum - original rain-cloud model (#251, 2026-10-14)
+
+Created for Damian Curti's Caelum Argenteum project with Codex assistance.
+Original procedural geometry and palette; no downloaded geometry, photographs,
+game artwork, Doom assets or external textures are incorporated.
+
+Editable design: assets/rain_cloud/DESIGN.json
+Deterministic source: assets/generators/generate_rain_cloud.py
+Runtime: models/caelum/weather/rain_cloud.obj and rain_cloud_palette.png
+
+The geometry is normalized art, intended for Arcane Cloud and future weather.
+It does not define gameplay size, collision, flight, rain or lightning behavior.
+Copyright and distribution follow the project's original-asset policy.

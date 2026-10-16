@@ -302,11 +302,33 @@ class CaelumCharacterCreationMenu : ListMenu
         if (key == "") return "";
         String result = StringTable.Localize(key, false);
         if (Page == CaelumConstants.CREATION_PAGE_RACE)
-            result = result .. "\n\n" .. StringTable.Localize("CA_CREATE_RACIAL_PLANNED", false);
+            result = result .. "\n\n" .. StringTable.Localize(
+                Race==CaelumConstants.RACE_CAELITH ? "CA_CREATE_RACIAL_BREATHING"
+                : Race==CaelumConstants.RACE_GOBLIN ? "CA_CREATE_RACIAL_TELEKINESIS"
+                : Race==CaelumConstants.RACE_HUMAN ? "CA_CREATE_RACIAL_SOCIALIZATION"
+                : Race==CaelumConstants.RACE_BEAST_MAN ? "CA_CREATE_RACIAL_HUNTER" : "CA_CREATE_RACIAL_PLANNED", false);
         else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS
             || (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS
                 && CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) != CaelumConstants.PROFESSION_ARCANIST))
-            result = result .. "\n\n" .. StringTable.Localize("CA_CREATE_CLASS_PLANNED", false);
+            result = result .. "\n\n" .. StringTable.Localize(
+                Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_WARRIOR
+                    ? "CA_CREATE_CLASS_BATTLE_CRY"
+                    : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                    && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_EXPLORER
+                        ? "CA_CREATE_CLASS_SURVIVAL_INSTINCT"
+                        : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                        && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_MERCENARY
+                            ? "CA_CREATE_CLASS_FORMATION_BREAKER"
+                            : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                            && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_CLERIC
+                                ? "CA_CREATE_CLASS_RALLY"
+                                : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                                && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_BATTLE_MAGE
+                                    ? "CA_CREATE_CLASS_SUMMONING"
+                                    : Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                                    && CaelumCharacterProfile.ProfessionFor(FirstClass,SecondClass)==CaelumConstants.PROFESSION_INVESTIGATOR
+                                        ? "CA_CREATE_CLASS_ARCANE_CLOUD" : "CA_CREATE_CLASS_PLANNED", false);
         return result;
     }
 

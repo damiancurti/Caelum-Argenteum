@@ -7,6 +7,18 @@ class CaelumDebugOverlay : EventHandler
     Array<Actor> LastDamagedActors;
     Array<Actor> LastPlayerDamageOwners;
     CaelumCombatActor LastInspectedCombatActor;
+    ui bool MovementInputBlocked;
+
+    override void UiTick()
+    {
+        bool blocked=menuactive!=Menu.Off || ConsoleState!=c_up;
+        if(blocked!=MovementInputBlocked)
+        {
+            MovementInputBlocked=blocked;
+            if(gamestate==GS_LEVEL && consoleplayer>=0)
+                SendNetworkEvent("ca_movement_clear_taps");
+        }
+    }
 
     Actor ResolvePlayerDamageOwner(Actor source)
     {
@@ -740,6 +752,8 @@ class CaelumDebugOverlay : EventHandler
         {
             return;
         }
+
+        if(CaelumRedemption.PreviouslyRaised(dead)){ForgetRecordedDamageOwner(dead);return;}
 
         // A Doom monster keeps the player it was fighting in Target. This is
         // the reliable owner for ordinary player kills, including LineAttack.
@@ -1691,6 +1705,10 @@ class CaelumDebugOverlay : EventHandler
             );
         }
         String weaponDetail = "";
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+            weaponDetail=String.Format(StringTable.Localize(CaelumSealResistance.DescriptionKey(
+                localPlayer.EquipmentSelectionSealType),false),CaelumSealResistance.ReductionPercent(
+                localPlayer.EquipmentSelectionSealType));
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             weaponDetail = String.Format(
@@ -1809,8 +1827,8 @@ class CaelumDebugOverlay : EventHandler
             localPlayer.EquipmentSelectionOwned ? Font.CR_WHITE : Font.CR_RED);
         DrawCenteredText(detail, 188.0,
             localPlayer.EquipmentSelectionSizeCompatible ? Font.CR_WHITE : Font.CR_RED);
-        if (localPlayer.EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
         {
             DrawCenteredText(weaponDetail, 206.0, Font.CR_GOLD);
         }
@@ -3876,6 +3894,12 @@ class CaelumDebugOverlay : EventHandler
             return;
         }
         CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
+
+        if(e.Name=="ca_movement_clear_taps")
+        {
+            if(CaelumPlayerAuthority.CanMutate(requestingPlayer))CaelumMovementImpulse.Clear(requestingPlayer);
+            return;
+        }
 
         if (requestingPlayer == null || requestingPlayer.CharacterProfile == null)
         {

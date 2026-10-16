@@ -1,0 +1,20 @@
+Caelum Argenteum - living creature sleep poses, #238 / 5.4.4
+
+Generated for this project using the built-in image_gen tool and project-owned
+rat, Bull, Mandinga, Zupay and resting Argento reference artwork. No Doom art,
+third-party photographs or downloaded character assets were used as sources.
+Exact original/revised prompts, reference/output SHA-256 hashes and rejected
+variants are retained in assets/source/art/sleep_544/BRIEF.json and revisions.json.
+The Argento reference supplies pose/camera orientation only, not character identity.
+
+The optional deterministic Pillow 11.3.0 utility
+assets/generators/register_sleep_creatures.py performs silhouette cropping,
+alpha cleanup, resampling and texture registration. Its calibration data live
+in sleep_creatures.json; output hashes are in validation_544/sleep_art.json.
+Eight views each: rat and Bull naturally lying; Mandinga and Zupay supine.
+These are living poses, not death frames. Existing owned art remains intact.
+
+The repository LICENSE.md applies to original project materials to the extent
+those rights are owned by Damian Curti. This record grants no separate license
+and makes no claim over third-party material. Author visual acceptance passed
+CA238-02 on 2026-10-14; see assets/validation_544/sleep_acceptance.json.

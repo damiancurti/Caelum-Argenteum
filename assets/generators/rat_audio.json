@@ -1,0 +1,12 @@
+{
+  "issue": 254,
+  "sample_rate": 22050,
+  "peak": 0.32,
+  "seed": 254,
+  "clips": {
+    "alert": {"seconds": 0.38, "pulses": 3, "start_hz": 1700, "end_hz": 2900, "rasp": 0.08},
+    "bite": {"seconds": 0.17, "pulses": 1, "start_hz": 2400, "end_hz": 1350, "rasp": 0.18},
+    "pain": {"seconds": 0.29, "pulses": 2, "start_hz": 3100, "end_hz": 1600, "rasp": 0.12},
+    "death": {"seconds": 0.58, "pulses": 4, "start_hz": 2600, "end_hz": 850, "rasp": 0.15}
+  }
+}

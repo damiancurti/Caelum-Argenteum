@@ -83,10 +83,10 @@ class CaelumPresentation : Object ui
     const RESOURCE_BOTTOM_EDGE=341.0;
     const RESOURCE_TOP_BAR=278.0;
     const RESOURCE_LABEL_OFFSET=12.0;
-    static Vector2 ResourceScale(double contentWidth)
+    static Vector2 ResourceScale(double contentWidth,double reservedWidth=0)
     {
         Vector2 scale=HUDScale()*RESOURCE_ENLARGEMENT;
-        double fit=Min(1.0,Min(Screen.GetWidth()/(contentWidth*scale.X),Screen.GetHeight()/((RESOURCE_BOTTOM_EDGE-218)*scale.Y)));
+        double fit=Min(1.0,Min(Max(1.0,Screen.GetWidth()-reservedWidth)/(contentWidth*scale.X),Screen.GetHeight()/((RESOURCE_BOTTOM_EDGE-218)*scale.Y)));
         return scale*fit;
     }
     static void BeginResources(bool right,Vector2 target)
@@ -111,14 +111,14 @@ class CaelumPresentation : Object ui
         double fit=Min(1.0,Max(0.0,room)/(POWER_HEIGHT*scale.Y));
         return scale*fit;
     }
-    static void BeginPowers(Vector2 resources)
+    static void BeginPowers(Vector2 resources,bool right=true)
     {
         Vector2 origin,size;
         [origin,size]=Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
         Vector2 target=PowerScale(resources);
         Vector2 factor=(target.X*640/size.X,target.Y*360/size.Y);
         let matrix=new("Shape2DTransform");matrix.Scale(factor);
-        matrix.Translate((Screen.GetWidth()-(POWER_WIDTH+POWER_MARGIN)*target.X-origin.X*factor.X,
+        matrix.Translate(((right?Screen.GetWidth()-(POWER_WIDTH+POWER_MARGIN)*target.X:POWER_MARGIN*target.X)-origin.X*factor.X,
             POWER_MARGIN*target.Y-origin.Y*factor.Y));
         Screen.SetTransform(matrix);
     }

@@ -1,0 +1,189 @@
+{
+  "issue": 242,
+  "version": "5.4.6",
+  "base_commit": "0e0ae85f",
+  "runtime_sha256": "256e0e6b2ac80b35257ae626f0986208eccf4e6d9d5173903bf4b6c5aa42dbc2",
+  "runs": [
+    {
+      "label": "contract-01",
+      "started_utc": "2026-10-15T01:47:00.3893922Z",
+      "finished_utc": "2026-10-15T01:48:45.9000365Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "52D4B7110B54B890DF7146ABCDABAC0D25EBAEC4D31734944675309755A43D05",
+      "exit_code": 0,
+      "directory": "build/issue242-v2",
+      "log_sha256": "6fde641a5acd32e438bc577d6cf046a10dc9bd6579484ce41b22e5f32178cd4a",
+      "completion": [
+        "CA242 DONE failures=0 passes=48"
+      ]
+    },
+    {
+      "label": "water-01",
+      "started_utc": "2026-10-15T01:49:44.2954321Z",
+      "finished_utc": "2026-10-15T01:50:06.6425373Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "A411AE827223217327CFF92D5CFB64C964396569DB140F721CC01423C01401CB",
+      "exit_code": 0,
+      "directory": "build/issue242-v3",
+      "log_sha256": "bf39b702471ea872fa2517d1131138b5eb0f605185d3c9f772bb5156d4b92c9a",
+      "completion": [
+        "CA242 DONE failures=0 passes=30"
+      ]
+    },
+    {
+      "label": "save-01",
+      "started_utc": "2026-10-15T01:51:41.6211546Z",
+      "finished_utc": "2026-10-15T01:51:54.6610656Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "A411AE827223217327CFF92D5CFB64C964396569DB140F721CC01423C01401CB",
+      "exit_code": 0,
+      "directory": "build/issue242-v3",
+      "log_sha256": "b2c605190477ef51b63231f64fcd10d96bf96b76ca38fb6dbca10db29736044c",
+      "completion": [
+        "CA242 DONE failures=0 passes=27"
+      ]
+    },
+    {
+      "label": "load-01",
+      "started_utc": "2026-10-15T01:52:02.1272550Z",
+      "finished_utc": "2026-10-15T01:52:09.4708390Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "A411AE827223217327CFF92D5CFB64C964396569DB140F721CC01423C01401CB",
+      "exit_code": 0,
+      "directory": "build/issue242-v3",
+      "log_sha256": "4c281e9143ac22b13b745bdce99ca2ef915800acbf05410e0eef62e113ce2b9f",
+      "completion": [
+        "CA242 DONE failures=0 passes=3"
+      ]
+    },
+    {
+      "label": "hub-01",
+      "started_utc": "2026-10-15T01:52:34.4961934Z",
+      "finished_utc": "2026-10-15T01:52:48.1101787Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "A411AE827223217327CFF92D5CFB64C964396569DB140F721CC01423C01401CB",
+      "exit_code": 0,
+      "directory": "build/issue242-v3",
+      "log_sha256": "1b0af2d436443d450a68b99eb8473a86e1725021c2aa0329284138f5623d5ff0",
+      "completion": [
+        "CA242 DONE failures=0 passes=29"
+      ]
+    },
+    {
+      "label": "upgrade-01",
+      "started_utc": "2026-10-15T01:53:16.1446048Z",
+      "finished_utc": "2026-10-15T01:53:26.1268119Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "558B0838DD73EDA932E3404B1A23886F0D59E01FD15D371F7CE4ED443CE2EA64",
+      "exit_code": 0,
+      "directory": "build/issue242-upgrade",
+      "log_sha256": "4df79e67ffc38eb738cf83bc49f62b7719c11d1d217df14dae75d97586d0ac7b",
+      "completion": [
+        "CA238 DONE failures=0 COMPATIBILITY_ONLY",
+        "CA238 DONE failures=0 PREPARATION_SAVE_ONLY"
+      ]
+    },
+    {
+      "label": "rollback-01",
+      "started_utc": "2026-10-15T01:52:56.1112378Z",
+      "finished_utc": "2026-10-15T01:53:03.9365920Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "81EB37C1118B486CA43E764490C06D517EB270CF3A73D4F315FDF6798121EB82",
+      "fixture_sha256": "379B07451C3BCCB29977210AE88C4A0ECD9F54EFD677BDE948025D8CC9F16CEC",
+      "exit_code": 0,
+      "directory": "build/issue242-rollback",
+      "log_sha256": "55f27a3877c03edc0b3bf922563d480d6dbcc14952a606611c25a779f7aeb022",
+      "completion": [
+        "CA242 DONE failures=0 ROLLBACK_ONLY"
+      ]
+    },
+    {
+      "label": "rollback-return-01",
+      "started_utc": "2026-10-15T01:54:47.0092783Z",
+      "finished_utc": "2026-10-15T01:54:54.4559674Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "F6F95FCDC2976A66ECAD927AF23190D494BA0E9D5CE55758719A05412660ECFA",
+      "fixture_sha256": "5C66760F3FE778E742953F2698B4D1F62A044C8D23520BEDFA2CF97DA52EE184",
+      "exit_code": 0,
+      "directory": "build/issue242-handoff",
+      "log_sha256": "6adc25708593782b67d59512309418a0d42ee1589e0168982f13b01b9c62ad47",
+      "completion": [
+        "CA242 DONE failures=0 passes=2"
+      ]
+    },
+    {
+      "label": "preview-01",
+      "started_utc": "2026-10-15T01:57:35.4903437Z",
+      "finished_utc": "2026-10-15T01:57:47.8047655Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "256E0E6B2AC80B35257AE626F0986208ECCF4E6D9D5173903BF4B6C5AA42DBC2",
+      "fixture_sha256": "5C66760F3FE778E742953F2698B4D1F62A044C8D23520BEDFA2CF97DA52EE184",
+      "exit_code": 0,
+      "directory": "build/issue242-final",
+      "log_sha256": "07b3d489451e4da233e3f9570923a2ba6fa7fa2a167326754103d6e2c7d9b27e",
+      "completion": [
+        "CA242 DONE failures=0 MANUAL_SEED_ONLY"
+      ]
+    },
+    {
+      "label": "load-01",
+      "started_utc": "2026-10-15T01:58:16.9094482Z",
+      "finished_utc": "2026-10-15T01:58:24.3565626Z",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "256E0E6B2AC80B35257AE626F0986208ECCF4E6D9D5173903BF4B6C5AA42DBC2",
+      "fixture_sha256": "5C66760F3FE778E742953F2698B4D1F62A044C8D23520BEDFA2CF97DA52EE184",
+      "exit_code": 0,
+      "directory": "build/issue242-final",
+      "log_sha256": "37d016cd3b83508b29b671bf3efc11fd29a20f8bc68375c314057055b585c023",
+      "completion": [
+        "CA242 DONE failures=0 passes=3"
+      ]
+    }
+  ],
+  "final_runtime_delta": {
+    "changed_members": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "change": "Diagnostic version strings only; all gameplay bytes equal the 48-assertion/immersion/save/hub runtime. Final native preview and active-save reload pass."
+  },
+  "static": {
+    "command": "python validate_project.py",
+    "exit_code": 0,
+    "errors": [],
+    "context_words": 2479
+  },
+  "packaging": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "exit_code": 0,
+    "members_equal": 16156,
+    "normal_pk3_sha256": "781836f471df3de95713997584a3fe5b075f4b31e47b085da6eebccf6c8a25fb"
+  },
+  "preview": {
+    "path": "build/issue242-final/breathing-ready.png",
+    "sha256": "ac4469b528915fa0ac10b9aa196e4ee33eb12aeb8736dfed29186137e3dcacb1",
+    "inspected": true
+  },
+  "preserved_failures": [
+    "issue242-v1/contract-01: invulnerability exempted underwater spending; sword without shield could not block. Corrected fixture uses ordinary vulnerability and real giant-gauntlet block source.",
+    "Initial static validation detected two diagnostic strings still labelled 5.4.4; final strings and headers agree on 5.4.6.",
+    "First preview exited before the queued screenshot rendered; final preview waits five tics after capture."
+  ],
+  "author_test": {
+    "id": "CA242-01",
+    "status": "pending",
+    "runtime_sha256": "256e0e6b2ac80b35257ae626f0986208eccf4e6d9d5173903bf4b6c5aa42dbc2",
+    "fixture_sha256": "5c66760f3fe778e742953f2698b4d1f62a044c8d23520bedfa2cf97da52ee184"
+  },
+  "limits": [
+    "No author acceptance, campaign-wide or multiplayer claim",
+    "Rollback is to the specific #238/5.4.4 runtime using the optional bridge and copies of saves",
+    "Numerical journey forecasts retain the shared unsupported-active-effect restriction"
+  ]
+}

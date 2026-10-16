@@ -1,0 +1,420 @@
+{
+  "issue": 251,
+  "version": "5.4.5",
+  "status": "In-progress asset only; author art acceptance and ability implementation pending",
+  "baseline": "fcaf6e7b",
+  "runtime_sha256": "920bc4b0fe638b4d5ea1dae9157985933a3334f56da69949b54510e589820c89",
+  "fixture_sha256": "a09627bf2625f114df20cd88024f46a551c0020cb77d3cd40d9f734235661229",
+  "limitations": [
+    "Surface approximation retains visible concave overlap bands.",
+    "No production actor, seated rider, flight, rain or lightning is implemented.",
+    "No author acceptance, software/GLES support or weather-load claim."
+  ],
+  "prior_asset_runs": [
+    {
+      "label": "vulkan-01",
+      "started_utc": "2026-10-14T17:58:04.2551221Z",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "<development-IWAD>",
+        "-file",
+        "\"<repository>\\build\\issue251-asset-final\\production.pk3\"",
+        "\"<repository>\\build\\issue251-asset-final\\probe.pk3\"",
+        "-config",
+        "\"<repository>\\build\\issue251-asset-final\\vulkan-01.ini\"",
+        "-savedir",
+        "\"<repository>\\build\\issue251-asset-final\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "251",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"<repository>\\build\\issue251-asset-final\\vulkan-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"<repository>\\build\\issue251-asset-final\\preview.cfg\"",
+        "+snd_mastervolume",
+        "0.05",
+        "+i_pauseinbackground",
+        "false",
+        "+vid_activeinbackground",
+        "true",
+        "+i_soundinbackground",
+        "true"
+      ],
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=true\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "CF8F20F5C8031E4055CB94E07B5F5B64599AC439567DE7CAD6129E1E7D2EDD5D",
+      "fixture_sha256": "A09627BF2625F114DF20CD88024F46A551C0020CB77D3CD40D9F734235661229",
+      "pid": 11992,
+      "exit_code": 0,
+      "finished_utc": "2026-10-14T17:58:14.7156950Z",
+      "log_path": "build/issue251-asset-final/vulkan-01.txt",
+      "log_sha256": "ea0938d6feaabe5b8de331823f590553ef0372af2b8dd61c76704cf77b7789ba",
+      "observed_results": [
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "CA251 PASS isolated cloud model actor spawned",
+        "CA251 PASS translucent noncombat preview only",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 DONE failures=0 passes=8 ASSET_ONLY"
+      ]
+    },
+    {
+      "label": "opengl-01",
+      "started_utc": "2026-10-14T17:58:30.9624588Z",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "<development-IWAD>",
+        "-file",
+        "\"<repository>\\build\\issue251-asset-final\\production.pk3\"",
+        "\"<repository>\\build\\issue251-asset-final\\probe.pk3\"",
+        "-config",
+        "\"<repository>\\build\\issue251-asset-final\\opengl-01.ini\"",
+        "-savedir",
+        "\"<repository>\\build\\issue251-asset-final\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "251",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"<repository>\\build\\issue251-asset-final\\opengl-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"<repository>\\build\\issue251-asset-final\\opengl.cfg\"",
+        "+snd_mastervolume",
+        "0.05",
+        "+i_pauseinbackground",
+        "false",
+        "+vid_activeinbackground",
+        "true",
+        "+i_soundinbackground",
+        "true"
+      ],
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=0\nvid_vsync=true\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "CF8F20F5C8031E4055CB94E07B5F5B64599AC439567DE7CAD6129E1E7D2EDD5D",
+      "fixture_sha256": "A09627BF2625F114DF20CD88024F46A551C0020CB77D3CD40D9F734235661229",
+      "pid": 41960,
+      "exit_code": 0,
+      "finished_utc": "2026-10-14T17:58:41.0725051Z",
+      "log_path": "build/issue251-asset-final/opengl-01.txt",
+      "log_sha256": "37aee2ebbc590a1c6ae8bcf33027b741c97b303ffa565b980da5455eb78dba9f",
+      "observed_results": [
+        "GL_RENDERER: NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2",
+        "CA251 PASS isolated cloud model actor spawned",
+        "CA251 PASS translucent noncombat preview only",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 DONE failures=0 passes=8 ASSET_ONLY"
+      ]
+    }
+  ],
+  "prior_asset_captures": [
+    {
+      "path": "build/issue251-asset-final/cloud-above.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9d47419e92f450f5778287919937dfcbf76778389e2e513f5bff95dea9424b86"
+    },
+    {
+      "path": "build/issue251-asset-final/cloud-back.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "67b32647f5708fa7ce245560d1ddf6b68d6b29d78598aa8909567964ed518e48"
+    },
+    {
+      "path": "build/issue251-asset-final/cloud-below.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a0a36f6d41e0c41c278bcec8d3329e62e49dcfb2c2e77af91ca73a3d5d744344"
+    },
+    {
+      "path": "build/issue251-asset-final/cloud-front.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ca893b89c62766564fe87a76df6d420992fd8358f838b961174ae9dc07adc0bc"
+    },
+    {
+      "path": "build/issue251-asset-final/cloud-other-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "926233456dfacce8588446542e63a08c4fd435cd0bcadb5486b52e00d10c0833"
+    },
+    {
+      "path": "build/issue251-asset-final/cloud-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "dfc7692cba9accf368c19721a37e6ffb32a2da89967fb3ede129e58225c59134"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-above.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8a7bd1ab35078a80de92b2340c5f0f61ffc230e26b4e5a2c1309581bea3e8eda"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-back.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a61d1f67803f2113bc5fd84a20110aa852fb5a29bda90be89e6dbefe9f951bd3"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-below.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "5fe8b011890f801de8b7e1c431c3a008e05e5ba0e24194a753525ccc1e9c38ac"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-front.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b6057211571a6cf4c812128738a6e6cbe2a5cb0c1549a53e2e04c204561ceb4d"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-other-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e435f06d4bec79933b212a42eab10a2f582248bee313b82ef85f89c3e9c0c89d"
+    },
+    {
+      "path": "build/issue251-asset-final/gl-cloud-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "2d8b48af24c442a25636540df8213d4702528565191f1908abdbb7f432042a90"
+    }
+  ],
+  "runs": [
+    {
+      "label": "vulkan-01",
+      "started_utc": "2026-10-14T18:03:11.8375893Z",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "<development-IWAD>",
+        "-file",
+        "\"<repository>\\build\\issue251-release\\production.pk3\"",
+        "\"<repository>\\build\\issue251-release\\probe.pk3\"",
+        "-config",
+        "\"<repository>\\build\\issue251-release\\vulkan-01.ini\"",
+        "-savedir",
+        "\"<repository>\\build\\issue251-release\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "251",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"<repository>\\build\\issue251-release\\vulkan-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"<repository>\\build\\issue251-release\\preview.cfg\"",
+        "+snd_mastervolume",
+        "0.05",
+        "+i_pauseinbackground",
+        "false",
+        "+vid_activeinbackground",
+        "true",
+        "+i_soundinbackground",
+        "true"
+      ],
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=true\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "920BC4B0FE638B4D5EA1DAE9157985933A3334F56DA69949B54510E589820C89",
+      "fixture_sha256": "A09627BF2625F114DF20CD88024F46A551C0020CB77D3CD40D9F734235661229",
+      "pid": 50644,
+      "exit_code": 0,
+      "finished_utc": "2026-10-14T18:03:22.4430927Z",
+      "log_path": "build/issue251-release/vulkan-01.txt",
+      "log_sha256": "33fd5c772afe90dc0de873974b0f25f63d2188ead9945f23cbc6d3aab306c291",
+      "observed_results": [
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "CA251 PASS isolated cloud model actor spawned",
+        "CA251 PASS translucent noncombat preview only",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 DONE failures=0 passes=8 ASSET_ONLY"
+      ]
+    },
+    {
+      "label": "opengl-01",
+      "started_utc": "2026-10-14T18:03:35.2765321Z",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "<development-IWAD>",
+        "-file",
+        "\"<repository>\\build\\issue251-release\\production.pk3\"",
+        "\"<repository>\\build\\issue251-release\\probe.pk3\"",
+        "-config",
+        "\"<repository>\\build\\issue251-release\\opengl-01.ini\"",
+        "-savedir",
+        "\"<repository>\\build\\issue251-release\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "251",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"<repository>\\build\\issue251-release\\opengl-01.txt\"",
+        "+map",
+        "MAP02",
+        "+exec",
+        "\"<repository>\\build\\issue251-release\\opengl.cfg\"",
+        "+snd_mastervolume",
+        "0.05",
+        "+i_pauseinbackground",
+        "false",
+        "+vid_activeinbackground",
+        "true",
+        "+i_soundinbackground",
+        "true"
+      ],
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=0\nvid_vsync=true\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nhud_scale=0\n",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "runtime_sha256": "920BC4B0FE638B4D5EA1DAE9157985933A3334F56DA69949B54510E589820C89",
+      "fixture_sha256": "A09627BF2625F114DF20CD88024F46A551C0020CB77D3CD40D9F734235661229",
+      "pid": 46024,
+      "exit_code": 0,
+      "finished_utc": "2026-10-14T18:03:45.0485603Z",
+      "log_path": "build/issue251-release/opengl-01.txt",
+      "log_sha256": "18c2cf0eeacd02df9aabb730362f7fa3ccf3a77200319702f21f347899262ad3",
+      "observed_results": [
+        "GL_RENDERER: NVIDIA GeForce RTX 3070 Ti/PCIe/SSE2",
+        "CA251 PASS isolated cloud model actor spawned",
+        "CA251 PASS translucent noncombat preview only",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 PASS preview orientation changed",
+        "CA251 DONE failures=0 passes=8 ASSET_ONLY"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "path": "build/issue251-release/cloud-above.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "523ebb031fcb1de3bfcd051c802d4e4147e1b0ec46c930e3f6439d71c84236e3"
+    },
+    {
+      "path": "build/issue251-release/cloud-back.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "67b32647f5708fa7ce245560d1ddf6b68d6b29d78598aa8909567964ed518e48"
+    },
+    {
+      "path": "build/issue251-release/cloud-below.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a0a36f6d41e0c41c278bcec8d3329e62e49dcfb2c2e77af91ca73a3d5d744344"
+    },
+    {
+      "path": "build/issue251-release/cloud-front.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ca893b89c62766564fe87a76df6d420992fd8358f838b961174ae9dc07adc0bc"
+    },
+    {
+      "path": "build/issue251-release/cloud-other-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "926233456dfacce8588446542e63a08c4fd435cd0bcadb5486b52e00d10c0833"
+    },
+    {
+      "path": "build/issue251-release/cloud-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "dfc7692cba9accf368c19721a37e6ffb32a2da89967fb3ede129e58225c59134"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-above.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "47dd2652ef2e5f9a2712a9dce4f100993e27aa8c9f5f0c98ba44cd0fa112b4da"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-back.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a61d1f67803f2113bc5fd84a20110aa852fb5a29bda90be89e6dbefe9f951bd3"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-below.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "5fe8b011890f801de8b7e1c431c3a008e05e5ba0e24194a753525ccc1e9c38ac"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-front.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b6057211571a6cf4c812128738a6e6cbe2a5cb0c1549a53e2e04c204561ceb4d"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-other-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e435f06d4bec79933b212a42eab10a2f582248bee313b82ef85f89c3e9c0c89d"
+    },
+    {
+      "path": "build/issue251-release/gl-cloud-side.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "2d8b48af24c442a25636540df8213d4702528565191f1908abdbb7f432042a90"
+    }
+  ],
+  "normal_build": {
+    "files": 16124,
+    "directory_entries": 0,
+    "all_members_equal_native_runtime": true
+  },
+  "validation": {
+    "version": "5.4.5",
+    "context_words": 2483,
+    "errors": [],
+    "initial_failure": "Two unchanged diagnostic messages still named 5.4.4; updated to 5.4.5 and reran validation."
+  }
+}

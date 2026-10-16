@@ -1,0 +1,12 @@
+Caelum Argenteum - original procedural rat audio, issue #254 / 5.4.3
+
+Generated locally for this project with assets/generators/generate_rat_audio.py
+and its rat_audio.json parameters. The four cues are synthesized from oscillators
+and seeded noise. No external recordings, Doom audio, cloned voice or downloaded
+asset is used. Sources, output hashes and technical levels are retained under
+assets/validation_543/rat_audio.json in the project repository.
+
+The repository LICENSE.md proprietary rights notice applies to original project
+materials to the extent those rights are owned by Damian Curti. This record does
+not claim rights over third-party materials or grant a separate license.
+Author listening acceptance remains pending; generation is not an approval.

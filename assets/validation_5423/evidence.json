@@ -1,0 +1,309 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Draft; modular parts, approved timed animations and author review pending",
+  "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+  "source_members": 16187,
+  "native_runs": 14,
+  "native_assertions": 98,
+  "runs": [
+    {
+      "label": "actions",
+      "assertions": 11,
+      "log": "build/issue283-final-15/actions.txt",
+      "log_sha256": "a7bde900c82651dac3e3e89715126894b2a1503b1e826d9f23863b66e6b32c01",
+      "record_sha256": "0eb4ec367d1ca9d57037dae304da49c486175ea775a86abcce8bc7155295e1cd",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "rest",
+      "assertions": 14,
+      "log": "build/issue283-final-15/rest.txt",
+      "log_sha256": "f9ff2634b3c8ba5b564bf3ad60a485f14c6b2d905ef09a78d8ec025128503404",
+      "record_sha256": "23daf2ec620ec18b5cc09a553b2f0d4866cba22d9db3324b97b286649b79a5e5",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "death",
+      "assertions": 7,
+      "log": "build/issue283-final-15/death.txt",
+      "log_sha256": "f3be7bb9e51870a7ada6110ab0fb4a5ce0bbf50d8c2534b1dd19b1a39a3a5241",
+      "record_sha256": "883dc1f36fd49fa9b1c7c9bda12805dd82592a4b8525608cc2929283433849bb",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "death-console",
+      "assertions": 7,
+      "log": "build/issue283-final-15/death-console.txt",
+      "log_sha256": "689918c1a712f9d7d60963abb2a8c9775d6ee03983ae896e7ca409dc0d9dd9cb",
+      "record_sha256": "572a0b89bd3a814132f9c1cb284a3f34e9633c6f1be42404d7d09cc0b0e09701",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "fallback",
+      "assertions": 7,
+      "log": "build/issue283-final-15/fallback.txt",
+      "log_sha256": "44ccfb437451abd143957691e60aa07dd7db37f383f854630da85725818df222",
+      "record_sha256": "7b944b35031ab7531b3d64183b31da42fc54e0ebc078cebce8fabc1ed48c65cf",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "preview",
+      "assertions": 3,
+      "log": "build/issue283-final-15/preview.txt",
+      "log_sha256": "245efef09be03ff29a38c09bf42ae38e42012442e08901629b1c6c68938e5b47",
+      "record_sha256": "a2b7a63d3aaccd8d24fa39af558f41a0293579d609b5302f16dc445aa745f070",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "save",
+      "assertions": 3,
+      "log": "build/issue283-final-15/save.txt",
+      "log_sha256": "f3ed6ef7a3d97696a9c52ea1e7b71ef4308ea649095ca7138d992cc1ee4bb72d",
+      "record_sha256": "b39936da89992555609bb745bac209387c6eeb0979c3a0b9f8be14f6b565c2be",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "load",
+      "assertions": 8,
+      "log": "build/issue283-final-15/load.txt",
+      "log_sha256": "e9d63a521cdc5327cf3368ee9bc64277e8c623823f036ff8b9db1bf13ee9ebb8",
+      "record_sha256": "d63f74ada1f89eaa3761a98b4dd429db7aaf84fc6783c63f8481986e7bfdb5dc",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "travel",
+      "assertions": 24,
+      "log": "build/issue283-final-15/travel.txt",
+      "log_sha256": "1d15d76102b90dd35595406689904773401dd80718b590f49de773584748ec47",
+      "record_sha256": "2f7300cbb98211855b7570290d206e7432119e2596e4f42df519109e2e8c6090",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "bench-clean-1-0",
+      "assertions": 3,
+      "log": "build/issue283-final-15/bench-clean-1-0.txt",
+      "log_sha256": "0200a7ae394429b31cfe16ecf109bdfbf4b50a5cc88ddfa96a4b14dbefff6ef6",
+      "record_sha256": "5a77e1daa943da0a44bbae50e5969044554f1d26791095e1a1d4e0c40510766b",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "bench-clean-1-1",
+      "assertions": 3,
+      "log": "build/issue283-final-15/bench-clean-1-1.txt",
+      "log_sha256": "d3f08342c30fa1d43f0a9c8f82943fbbf3391ba7328868acea41242bfb64837b",
+      "record_sha256": "a13f228fc17c2a208dcadc8454927834db52e18a1bfc755caeacc40b77af5f87",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "bench-clean-64-0",
+      "assertions": 3,
+      "log": "build/issue283-final-15/bench-clean-64-0.txt",
+      "log_sha256": "a077ac8ca177722601b4c0503483ba04252752470e1ad4ff65c5af31397d7f3e",
+      "record_sha256": "841c6327083e9aef105bf646cbe8b9dbf09746811a05b8092cbb25356d9433f3",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "bench-clean-64-1",
+      "assertions": 3,
+      "log": "build/issue283-final-15/bench-clean-64-1.txt",
+      "log_sha256": "712d2429c1ae18aa8e90ebbfac10452f676409d183677a40823348daf384eb80",
+      "record_sha256": "001570f46e6246e8bb7f55bbf677c7d3e8be16a2fb2e9e467b970cd10f49a86a",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "b0f8534ee895f204498dd5c4693b0e85c6a01499c1424d275167e875906ff394"
+    },
+    {
+      "label": "genuine-5.4.22-save",
+      "assertions": 2,
+      "log": "build/issue282-final-06/issue283-final-old-save.txt",
+      "log_sha256": "b4b153130f22771668fd2539dda437910e0f2e4f03bde07b79c051f7bdf7e608",
+      "record_sha256": "007d897f88aa1bed5ef7f715dd64ab5bc4e40eb8a96e2eeef151def1e5a0e17d",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "52d82af05e1ea715df47b51e7c650de146851bfbc5c35bfa28c90390a2c9efb5"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-final-15/rest-pilot-chair.png",
+      "sha256": "f752c647c366c259e0d5cc0913cecb0a8817d72a6d82125372d124f1e2085d87"
+    },
+    {
+      "file": "build/issue283-final-15/rest-pilot-bed.png",
+      "sha256": "03ca966cc721084eb7bf4ddbccef3153504eb1855ff30409a75c2a4a0452fbc2"
+    },
+    {
+      "file": "build/issue283-final-15/rest-pilot-ground.png",
+      "sha256": "c839eae9205495ac31d1cccafbd29b361fb25970f605f8f371edaa2357a7f397"
+    },
+    {
+      "file": "build/issue283-final-15/death-pilot-death.png",
+      "sha256": "999af9bcfa102c2341e2deda00c5834a61bd4d79ba6a1f5cec432bd18a670e3f"
+    },
+    {
+      "file": "build/issue283-final-15/death-console-pilot-death-still.png",
+      "sha256": "60cd6b95bb0d1c3dac24bc5f3ee14a8ec4eaeecbf95eaa694e010928e9b285a1"
+    },
+    {
+      "file": "build/issue283-final-15/preview-pilot-front.png",
+      "sha256": "81c3e0cd41174714528ced9e0162f3d2efd51fbf47537281935c25e405dd36cf"
+    },
+    {
+      "file": "build/issue283-final-15/preview-pilot-side.png",
+      "sha256": "4e1ab6d539b2b13f1dfe43ff5398891c650f138d90e69164d4e9cbba74ff56ea"
+    },
+    {
+      "file": "build/issue283-final-15/preview-pilot-rear.png",
+      "sha256": "7b49783e09c4e3f81b9b7ae514ec5a91bca326515509f015421ecc88b98def95"
+    },
+    {
+      "file": "build/issue283-final-15/preview-pilot-original.png",
+      "sha256": "3691d9b0b2a32c1ef778bb3584ca78d8c441156adc011cdd4758bc7af806eb0a"
+    },
+    {
+      "file": "build/issue283-final-15/bench-clean-1-0-pilot-bench-1-0.png",
+      "sha256": "a9f0fcdc689b414a12d568724f7483807c1aac9cb6ab7c086eb28b52f38d7e6d"
+    },
+    {
+      "file": "build/issue283-final-15/bench-clean-1-1-pilot-bench-1-1.png",
+      "sha256": "9864a4df66f2880e4be5ce5bb7391af3085c5c600fcdaf16d1f8bd51975334df"
+    },
+    {
+      "file": "build/issue283-final-15/bench-clean-64-0-pilot-bench-64-0.png",
+      "sha256": "5bfa8cdf788a03c30e01c338605a94f3ab0a7a3204940aecbabca00c465e9f06"
+    },
+    {
+      "file": "build/issue283-final-15/bench-clean-64-1-pilot-bench-64-1.png",
+      "sha256": "59865b917a41c17cd0f3cea5981fd9bd947c249ce07b305ac7e36a66ea99e962"
+    }
+  ],
+  "frame_intervals": [
+    {
+      "count": 1,
+      "model": false,
+      "frames": 18855,
+      "mean_ms": 0.530339,
+      "min_ms": 0.3957,
+      "max_ms": 2.4548
+    },
+    {
+      "count": 1,
+      "model": true,
+      "frames": 18179,
+      "mean_ms": 0.550085,
+      "min_ms": 0.4457,
+      "max_ms": 2.4606
+    },
+    {
+      "count": 64,
+      "model": false,
+      "frames": 17065,
+      "mean_ms": 0.585995,
+      "min_ms": 0.4504,
+      "max_ms": 2.6579
+    },
+    {
+      "count": 64,
+      "model": true,
+      "frames": 13298,
+      "mean_ms": 0.75194,
+      "min_ms": 0.621,
+      "max_ms": 2.5393
+    }
+  ],
+  "export": {
+    "deterministic_files": 7,
+    "frames": 195,
+    "vertices": 5516,
+    "triangles": 7232,
+    "surfaces": 1,
+    "bytes": 8747076,
+    "md3_sha256": "fc04e6f10802eee06dc253134bfb8b93da497cbe97e5ec2c0035a94c8d5e1cdf",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.0213431424926966e-05,
+        "max_z": 170.02113342285156
+      },
+      "Walk": {
+        "min_z": -0.0019692054484039545,
+        "max_z": 166.02162170410156
+      },
+      "Run": {
+        "min_z": -1.3511433601379395,
+        "max_z": 164.02162170410156
+      },
+      "Melee": {
+        "min_z": 6.0213431424926966e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.0213431424926966e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.0213431424926966e-05,
+        "max_z": 169.9998779296875
+      },
+      "Death": {
+        "min_z": -3.674762725830078,
+        "max_z": 170.34811401367188
+      },
+      "Raise": {
+        "min_z": -3.6513023376464844,
+        "max_z": 170.18850708007812
+      },
+      "Seated": {
+        "min_z": -0.003804014530032873,
+        "max_z": 138.02114868164062
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 39.000003814697266
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 124.8226547241211
+      },
+      "SitDown": {
+        "min_z": -0.004027025308459997,
+        "max_z": 169.9998779296875
+      },
+      "StandUp": {
+        "min_z": -0.004027025308459997,
+        "max_z": 169.9998779296875
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 169.9998779296875
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2496,
+  "normal_build_sha256": "a20f538f9deb601fc8bd6bb425a615ba4220a8434a517e2afee3c539f3b30bd6",
+  "limitations": [
+    "No author acceptance or default replacement.",
+    "Fixed-surface intermediate export; required interchangeable weapon/shield/armor/hair/face parts remain open.",
+    "Approved chair (2 s), lie/get-up (3 s), provision (4 s) animations and control locks are unimplemented; tested rest changes pose immediately.",
+    "Other weapons and crouch use existing appearance; source-only crouch is not production coverage.",
+    "Run/death/raise have minor transient floor intersections; source bounds are recorded for further art polish.",
+    "Benchmarks use 1/64 non-combat render proxies, Vulkan 1280x720, hidden/unpaused at 5% audio, uncapped after warm-up.",
+    "Reported intervals include rendering, simulation and scheduling; native thinker profiles are separate, not GPU timings.",
+    "Native captures remain local because the development fixture uses an installed development IWAD."
+  ]
+}

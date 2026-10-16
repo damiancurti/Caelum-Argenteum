@@ -284,6 +284,8 @@ class CaelumBatteringRam : CaelumHostileMachine
         InitializeRam();
         Super.Tick();
         Head.Vel=(0,0,0);
+        if(Phase==STRIKE && HasIntimidatedCrew())
+        {Phase=RECOVERY;RecoveryLeft=CaelumRamData.RECOVERY_TICS;}
         if (Neutralized || !Enabled || !FullCrewPresent()) return;
         if (Phase == CONTACT)
         {
@@ -332,6 +334,7 @@ class CaelumBatteringRam : CaelumHostileMachine
         vector3 tip=LocalPosition(Pos,Angle,(CaelumRamData.HEAD_X+CaelumRamData.EXTENDED_OFFSET
             +CaelumRamData.HEAD_RADIUS,0,CaelumRamData.HEAD_Z));
         if ((tip.XY-TargetGate.Pos.XY).Length()>CaelumGateData.WIDTH/2) return;
+        if(!FullCrewPresent(true))return;
         StrikeSerial++; SpentImpact=false; Phase=STRIKE;
     }
 

@@ -250,11 +250,19 @@ class CaelumHostileMachine : Actor
             && (entry.Body.Pos - Pos).Length() <= GuardRadius;
     }
 
-    bool FullCrewPresent()
+    bool FullCrewPresent(bool attacking=false)
     {
         if (RequiredCrew <= 0 || Crew.Size() != RequiredCrew) return false;
-        for (int i = 0; i < Crew.Size(); i++) if (!IsNearby(Crew[i])) return false;
+        for (int i = 0; i < Crew.Size(); i++)
+            if (!IsNearby(Crew[i]) || (attacking && CaelumBattleCry.Active(Crew[i].Body))) return false;
         return true;
+    }
+
+    bool HasIntimidatedCrew()
+    {
+        for(int i=0;i<Crew.Size();i++)
+            if(Crew[i]!=null && CaelumBattleCry.Active(Crew[i].Body))return true;
+        return false;
     }
 
     bool ArmMachine()

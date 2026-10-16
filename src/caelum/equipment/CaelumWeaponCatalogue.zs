@@ -196,37 +196,41 @@ class CaelumWeaponCatalogue : Object
         }
     }
 
-    static double GetMinimumSpread(int weaponId)
+    static int GetBaseDispersionTier(int weaponId)
     {
-        return GetMaximumSpread(weaponId) * 0.10;
-    }
-
-    static double GetMaximumSpread(int weaponId)
-    {
-        if(weaponId==CaelumConstants.CATALOGUE_WEAPON_BOLAS)return GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_JAVELIN);
+        // Las herramientas conservan su categoría anterior y su tier único.
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS
+            || weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+            || weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
+            return CaelumDispersionRules.TOOL_BASE;
         switch (GetStatisticsWeapon(weaponId))
         {
-            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 20.0;
-            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 50.0;
-            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
-            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 50.0;
-            case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
-            case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
-            case CaelumConstants.CATALOGUE_WEAPON_SWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_SPEAR:
-            case CaelumConstants.CATALOGUE_WEAPON_HALBERD:
-            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
-            case CaelumConstants.CATALOGUE_WEAPON_AXE:
-            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
-                return 60.0;
-            case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
-            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE:
-            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
+            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW:
+            case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW:
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
-                return 70.0;
-            default: return 40.0;
+                return CaelumDispersionRules.RANGED_BASE;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN:
+                return CaelumDispersionRules.SHOTGUN_BASE;
+            default: return CaelumDispersionRules.MELEE_BASE;
         }
     }
+
+    static int GetDispersionTier(int weaponId, int tier=1,
+        double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
+    {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS
+            || weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+            || weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) tier=1;
+        return CaelumDispersionRules.EffectiveTier(GetBaseDispersionTier(weaponId),tier,lucidity);
+    }
+
+    static double GetMinimumSpread(int weaponId, int tier=1,
+        double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
+    { return GetDispersionTier(weaponId,tier,lucidity); }
+
+    static double GetMaximumSpread(int weaponId, int tier=1,
+        double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
+    { return GetMinimumSpread(weaponId,tier,lucidity)*10.0; }
 
     static double GetCriticalChancePercent(int weaponId)
     {

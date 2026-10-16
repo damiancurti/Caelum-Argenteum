@@ -2,8 +2,34 @@
 // de nuevo al nodo USDF ni ejecutar sus acciones, pagos o recompensas.
 class CaelumDialogueHistory : StaticEventHandler
 {
+    ui bool SocialStopHeld;
+    override bool InputProcess(InputEvent e)
+    {return SocialKey(e.Type,e.KeyScan);}
+
+    ui bool SocialKey(int eventType,int scan)
+    {
+        if(eventType==InputEvent.Type_KeyUp && CaelumInputHints.Matches(scan,"+user1"))
+            SocialStopHeld=false;
+        if(demoplayback || !(Menu.GetCurrentMenu() is "CaelumHistoryConversationMenu")
+            || !CaelumInputHints.Matches(scan,"+user1"))return false;
+        if(eventType==InputEvent.Type_KeyDown)
+        {
+            if(!SocialStopHeld)EventHandler.SendNetworkEvent("ca_social_stop");
+            SocialStopHeld=true;return true;
+        }
+        return eventType==InputEvent.Type_KeyUp;
+    }
+
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_social_page" || e.Name=="ca_social_stop")
+        {
+            let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+            if(user==null)return;
+            if(e.Name=="ca_social_page")CaelumSocialization.Capture(user,e.Args[0],e.Args[1]);
+            else CaelumSocialization.StopInConversation(user);
+            return;
+        }
         if(e.Name!="ca_dialogue_seen" || e.Player<0 || e.Player>=MAXPLAYERS
             || !playeringame[e.Player] || e.Args[0]<0 || e.Args[0]>=CaelumDialogueHistoryData.COUNT)return;
         let user=CaelumPlayer(players[e.Player].mo);
@@ -17,6 +43,27 @@ class CaelumDialogueHistory : StaticEventHandler
 
 class CaelumHistoryConversationMenu : ConversationMenu
 {
+    bool SocialPageReady;
+    void RequestSocialPage()
+    {
+        let user=mPlayer==null?null:CaelumPlayer(mPlayer.mo);
+        SocialPageReady=Replaying || (mCurNode!=null && CaelumSocialization.Ready(user,mCurNode.ThisNodeNum,PageOffset));
+        if(!SocialPageReady && mCurNode!=null)
+            EventHandler.SendNetworkEvent("ca_social_page",mCurNode.ThisNodeNum,PageOffset);
+    }
+    override int Init(StrifeDialogueNode node,PlayerInfo player,int activereply)
+    {
+        int result=Super.Init(node,player,activereply);
+        RequestSocialPage();return result;
+    }
+    void UpdateSocialPage()
+    {
+        let user=mPlayer==null?null:CaelumPlayer(mPlayer.mo);
+        if(!SocialPageReady && mCurNode!=null && CaelumSocialization.Ready(user,mCurNode.ThisNodeNum,PageOffset))
+        {SocialPageReady=true;RestorePage();}
+    }
+    override void Ticker(){UpdateSocialPage();Super.Ticker();}
+    override void Drawer(){if(SocialPageReady)Super.Drawer();}
     override void FormatSpeakerMessage()
     {
         String text=CaelumInputHints.Resolve(StringTable.Localize(mCurNode.Dialogue));
@@ -141,12 +188,14 @@ class CaelumHistoryConversationMenu : ConversationMenu
 
     void RestorePage()
     {
+        RequestSocialPage();
         FormatSpeakerMessage();FormatReplies(-1);
     }
 
     override bool MenuEvent(int key,bool fromcontroller)
     {
         ReplyHeld=false;
+        if(key==MKEY_Enter && !SocialPageReady)return true;
         if(demoplayback)return Super.MenuEvent(key,fromcontroller);
         if(key==MKEY_Back && Replaying)
         {Replaying=false;PageOffset=0;RestorePage();return true;}

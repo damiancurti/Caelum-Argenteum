@@ -1,0 +1,288 @@
+"""Author an original volumetric Domingo candidate from the supplied reference.
+
+This is the initial Blender authoring transcript. Runtime export will read the
+editable .blend source; it does not depend on reproducing Blender file headers.
+"""
+from pathlib import Path
+import sys, json, math
+import bpy
+from mathutils import Vector, Quaternion
+
+ROOT=Path(__file__).resolve().parents[2]
+ART=ROOT/'assets/source/art/domingo_3d_pilot'
+DESIGN=json.loads((ART/'DESIGN.json').read_text(encoding='utf-8'))
+OUT=ROOT/'build/issue283-reference'
+VERSION=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'candidate-01'
+BLEND=ART/(VERSION+'.blend')
+assert not BLEND.exists(), 'Preserve prior candidates under their existing names.'
+bpy.ops.wm.read_factory_settings(use_empty=True)
+scene=bpy.context.scene
+scene.render.fps=35
+image=bpy.data.images.load(str(ART/'domingo_skin.png'))
+image.pack();image.filepath='//domingo_skin.png'
+material=bpy.data.materials.new('Original Domingo reference colors')
+material.use_nodes=True
+nodes=material.node_tree.nodes
+bsdf=nodes.get('Principled BSDF')
+bsdf.inputs['Roughness'].default_value=0.95
+bsdf.inputs['Specular IOR Level'].default_value=0.1
+tex=nodes.new('ShaderNodeTexImage');tex.image=image;tex.interpolation='Closest'
+material.node_tree.links.new(tex.outputs['Color'],bsdf.inputs['Base Color'])
+parts=[]
+arm_data=bpy.data.armatures.new('Domingo reusable FK skeleton')
+arm=bpy.data.objects.new('Domingo_Rig',arm_data)
+scene.collection.objects.link(arm)
+bpy.context.view_layer.objects.active=arm;arm.select_set(True)
+bpy.ops.object.mode_set(mode='EDIT')
+for name,parent,head,tail in DESIGN['bones']:
+    b=arm_data.edit_bones.new(name);b.head=head;b.tail=tail
+    if parent:b.parent=arm_data.edit_bones[parent]
+for side,sign in [('L',1),('R',-1)]:
+    b=arm_data.edit_bones.new('foot_ik.'+side);b.head=(0,sign*11,9);b.tail=(13,sign*11,4);b.use_deform=False
+    b=arm_data.edit_bones.new('knee_pole.'+side);b.head=(70,sign*11,49);b.tail=(70,sign*11,59);b.use_deform=False
+bpy.ops.object.mode_set(mode='OBJECT');arm.select_set(False)
+arm.show_in_front=True
+for side in ['L','R']:
+    ik=arm.pose.bones['shin.'+side].constraints.new('IK');ik.name='Foot plant IK'
+    ik.target=arm;ik.subtarget='foot_ik.'+side;ik.chain_count=2
+    ik.pole_target=arm;ik.pole_subtarget='knee_pole.'+side;ik.pole_angle=-math.pi/2
+    orient=arm.pose.bones['foot.'+side].constraints.new('COPY_ROTATION')
+    orient.name='Foot orientation';orient.target=arm;orient.subtarget='foot_ik.'+side
+    orient.target_space='WORLD';orient.owner_space='WORLD'
+
+def uv_rect(tile,u,v):
+    x0,y0,x1,y1=DESIGN['reference_crops'][tile]
+    return ((x0+u*(x1-x0))/image.size[0],1-(y0+(1-v)*(y1-y0))/image.size[1])
+
+def mesh(name,verts,faces,bone,tile='metal',uvs=None,head=False):
+    data=bpy.data.meshes.new(name);data.from_pydata(verts,[],faces);data.update()
+    obj=bpy.data.objects.new(name,data);scene.collection.objects.link(obj)
+    data.materials.append(material)
+    uv=data.uv_layers.new(name='Original-sheet UV')
+    coords=[Vector(p) for p in verts]
+    mn=Vector(tuple(min(p[i] for p in coords) for i in range(3)))
+    mx=Vector(tuple(max(p[i] for p in coords) for i in range(3)))
+    for poly in data.polygons:
+        for li in poly.loop_indices:
+            vi=data.loops[li].vertex_index;p=coords[vi]
+            if uvs is not None:uv.data[li].uv=uv_rect(tile,*uvs[vi]);continue
+            which=tile
+            if head:
+                which='face_front' if poly.normal.x>0.2 else 'hair_back' if poly.normal.x<-.2 else 'face_profile'
+            axis=(0 if which=='face_profile' else 1) if head else (1 if abs(poly.normal.x)>=abs(poly.normal.y) else 0)
+            u=(p[axis]-mn[axis])/max(.001,mx[axis]-mn[axis])
+            v=(p.z-mn.z)/max(.001,mx.z-mn.z)
+            uv.data[li].uv=uv_rect(which,u,v)
+        poly.use_smooth=True
+    group=obj.vertex_groups.new(name=bone);group.add(list(range(len(verts))),1,'REPLACE')
+    part=obj.vertex_groups.new(name='Part.'+name);part.add(list(range(len(verts))),1,'REPLACE')
+    mod=obj.modifiers.new('Reusable rig','ARMATURE');mod.object=arm
+    obj.parent=arm;parts.append(obj)
+    return obj
+
+def ellipsoid(name,center,radii,bone,tile='metal',segments=12,rings=6,head=False):
+    verts=[];faces=[]
+    for r in range(rings+1):
+        phi=math.pi*(r+.01)/(rings+.02)
+        for j in range(segments):
+            a=j*2*math.pi/segments
+            verts.append((center[0]+radii[0]*math.sin(phi)*math.cos(a),
+                          center[1]+radii[1]*math.sin(phi)*math.sin(a),
+                          center[2]+radii[2]*math.cos(phi)))
+    if head:
+        verts=[(x+4*max(0,1-abs(y)/3)*max(0,1-abs(z-157.5)/5) if x>3 else x,y,z) for x,y,z in verts]
+    for r in range(rings):
+        for j in range(segments):
+            a=r*segments+j;b=r*segments+(j+1)%segments
+            faces.append((a,b,b+segments,a+segments))
+    faces+=[tuple(reversed(range(segments))),tuple(rings*segments+j for j in range(segments))]
+    return mesh(name,verts,[tuple(reversed(f)) for f in faces],bone,tile,head=head)
+
+def beam(name,a,b,rx,ry,bone,tile):
+    a=Vector(a);b=Vector(b);direction=b-a
+    q=Vector((0,0,1)).rotation_difference(direction.normalized())
+    verts=[];faces=[]
+    for t,factor in [(0,.75),(.12,1),(.85,.9),(1,.7)]:
+        for j in range(10):
+            angle=j*math.tau/10
+            verts.append(a+direction*t+q@Vector((rx*math.cos(angle)*factor,ry*math.sin(angle)*factor,0)))
+    for r in range(3):
+        for j in range(10):faces.append((r*10+j,r*10+(j+1)%10,(r+1)*10+(j+1)%10,(r+1)*10+j))
+    faces.extend([tuple(reversed(range(10))),tuple(range(30,40))])
+    return mesh(name,verts,faces,bone,tile)
+
+ellipsoid('Breastplate',(0,0,123),(12,20,23),'chest','chest')
+ellipsoid('Waistcoat',(0,0,101),(10.5,15.5,12),'spine','waist')
+ellipsoid('Hip armor',(0,0,89),(10,17,10),'pelvis','waist')
+ellipsoid('Leather belt',(0,0,98),(12,17,3),'pelvis','arm')
+ellipsoid('Sun buckle',(12,0,98),(2,4,4),'pelvis','gold',10,4)
+beam('Cross strap',(12,-16,139),(13,14,103),2,1,'chest','arm')
+beam('Reverse strap',(12,15,139),(13,-13,102),1.4,.7,'chest','arm')
+ellipsoid('Scarf collar',(0,0,144),(9,12,5),'neck','scarf')
+beam('Scarf hanging end',(9,4,142),(13,7,122),3,1,'chest','scarf')
+ellipsoid('Head',(0,0,157),(8.5,9.4,12.8),'head','face_front',16,10,True)
+ellipsoid('Hair crown',(-2,0,164),(8.5,10,6),'head','hair',12,5)
+for side,sign in [('L',1),('R',-1)]:
+    ellipsoid('Long hair '+side,(-4,sign*8.2,153),(5.5,3.6,16),'head','hair_back',10,6)
+    ellipsoid('Pauldron '+side,(0,sign*21,134),(10.5,11,10),'upper_arm.'+side,'metal')
+    ellipsoid('Pauldron trim '+side,(1,sign*23,131),(10.7,10,2),'upper_arm.'+side,'gold')
+    beam('Upper sleeve '+side,(0,sign*23,130),(1,sign*27,112),6.7,6.7,'upper_arm.'+side,'arm')
+    beam('Bracer '+side,(1,sign*27,111),(3,sign*29,92),6,5.5,'forearm.'+side,'arm')
+    ellipsoid('Gauntlet '+side,(5,sign*29,87),(5,5,7),'hand.'+side,'arm')
+    beam('Trouser thigh '+side,(0,sign*11,86),(1,sign*11,51),7.7,8,'thigh.'+side,'cloth')
+    ellipsoid('Thigh armor '+side,(6,sign*11,73),(4,7.8,14),'thigh.'+side,'metal')
+    ellipsoid('Kneecap '+side,(6,sign*11,48),(5,7,6),'shin.'+side,'metal')
+    beam('Greave '+side,(0,sign*11,46),(0,sign*11,10),6.5,6,'shin.'+side,'boot')
+    ellipsoid('Boot '+side,(6,sign*11,5),(13,7,5),'foot.'+side,'boot')
+    # Layered skirt panels retain independent thigh movement.
+    beam('Blue skirt '+side,(8,sign*10,96),(9,sign*15,65),3,8,'thigh.'+side,'waist')
+
+# A true curved cloth surface with separate back thickness, not a billboard.
+verts=[];uvs=[];faces=[]
+for r in range(9):
+    t=r/8
+    for j in range(9):
+        u=j/8;width=22+4*t
+        verts.append((-12-6*t-1.5*math.cos(u*math.pi*4)*t,(u*2-1)*width,
+                      140-91*t+16*t*abs(u*2-1)))
+        uvs.append((.07+.86*u,.07+.86*(1-t)+.25*t*abs(2*u-1)))
+for r in range(8):
+    for j in range(8):a=r*9+j;faces.append((a,a+1,a+10,a+9))
+cape=mesh('Gold embroidered blue cape',verts,faces,'cape.upper','cape',uvs)
+for i,p in enumerate(verts):
+    t=min(1,max(0,(110-p[2])/50))
+    cape.vertex_groups['cape.upper'].add([i],1-t,'REPLACE')
+    if 'cape.lower' not in cape.vertex_groups:cape.vertex_groups.new(name='cape.lower')
+    cape.vertex_groups['cape.lower'].add([i],t,'REPLACE')
+solid=cape.modifiers.new('Cloth thickness','SOLIDIFY');solid.thickness=.5
+
+# Domed shield and separate rim; sword has a diamond blade cross-section.
+verts=[(14,30,104)];uvs=[(.5,.5)];faces=[]
+for j in range(24):
+    a=j*math.tau/24;verts.append((11,30+19*math.cos(a),104+21*math.sin(a)))
+    uvs.append((.5+.48*math.cos(a),.5+.48*math.sin(a)))
+for j in range(24):faces.append((0,1+j,1+(j+1)%24))
+shield=mesh('Shield face',verts,faces,'shield','shield',uvs)
+solid=shield.modifiers.new('Solid shield','SOLIDIFY');solid.thickness=2
+ellipsoid('Shield boss',(15,30,104),(2.5,4,4),'shield','gold',10,4)
+for j in range(24):
+    a=j*math.tau/24;b=(j+1)*math.tau/24
+    beam('Shield rim %02d'%j,(11,30+19*math.cos(a),104+21*math.sin(a)),
+         (11,30+19*math.cos(b),104+21*math.sin(b)),.65,.65,'shield','gold')
+sword_origin=Vector((6,-29,83));tip=Vector((12,-43,8));direction=(tip-sword_origin).normalized()
+side=Vector((0,1,0));side=(side-side.dot(direction)*direction).normalized();normal=direction.cross(side)
+verts=[];uvs=[]
+for t,width in [(0,2.8),(.88,2.1),(1,0.08)]:
+    center=sword_origin.lerp(tip,t)
+    for across,depth,u in [(-1,0,0),(0,1,.5),(1,0,1),(0,-1,.5)]:
+        verts.append(center+side*across*width+normal*depth*.65);uvs.append((u,1-t))
+faces=[]
+for r in range(2):
+    for j in range(4):faces.append((r*4+j,r*4+(j+1)%4,(r+1)*4+(j+1)%4,(r+1)*4+j))
+mesh('Diamond sword blade',verts,faces,'sword','blade',uvs)
+beam('Sword grip',sword_origin-direction*12,sword_origin,2,2,'sword','grip')
+beam('Sword crossguard',sword_origin-side*9,sword_origin+side*9,1.8,1.8,'sword','gold')
+ellipsoid('Sword pommel',sword_origin-direction*13,(3,3,3),'sword','gold',10,4)
+
+def rotate(name,axis,angle):
+    b=arm.pose.bones[name]
+    local=b.bone.matrix_local.to_quaternion().inverted()@Vector(axis)
+    b.rotation_quaternion=Quaternion(local,math.radians(angle))
+
+def translate(name,position):
+    b=arm.pose.bones[name]
+    b.location=b.bone.matrix_local.to_3x3().inverted()@Vector(position)
+
+def pose(action,t):
+    for b in arm.pose.bones:b.rotation_mode='QUATERNION';b.rotation_quaternion=(1,0,0,0);b.location=(0,0,0)
+    grounded=action not in ('LieDown','Sleeping','GetUp','Death','Raise')
+    for side in ['L','R']:
+        arm.pose.bones['shin.'+side].constraints['Foot plant IK'].influence=float(grounded)
+        arm.pose.bones['foot.'+side].constraints['Foot orientation'].influence=float(grounded)
+    wave=math.sin(t*math.tau)
+    rotate('chest',(0,1,0),.7*wave)
+    if action in ('Walk','Run'):
+        amplitude=28 if action=='Walk' else 48
+        for side,sign in [('L',1),('R',-1)]:
+            phase=(t+(0 if side=='L' else .5))%1
+            stance=.6 if action=='Walk' else .35
+            excursion=52 if action=='Walk' else 90
+            lift=12 if action=='Walk' else 25
+            if phase<stance:x=excursion*(.5-phase/stance);z=0
+            else:
+                swing=(phase-stance)/(1-stance);x=excursion*(-.5+swing);z=lift*math.sin(math.pi*swing)
+            translate('foot_ik.'+side,(x,0,z))
+            rotate('upper_arm.'+side,(0,1,0),-amplitude*.55*wave*sign)
+            rotate('forearm.'+side,(0,1,0),-15)
+        translate('root',(0,0,-6+abs(wave)*2 if action=='Walk' else -14+abs(wave)*8))
+        rotate('cape.lower',(0,1,0),4*wave)
+    elif action in ('Melee','Missile'):
+        swing=math.sin(math.pi*t)
+        rotate('chest',(0,0,1),-25*swing)
+        rotate('upper_arm.R',(0,1,0),-110*swing)
+        rotate('forearm.R',(0,1,0),-35*swing)
+        rotate('upper_arm.L',(0,1,0),-30*swing)
+        rotate('sword',(1,0,0),25*swing)
+    elif action=='Pain':rotate('spine',(0,1,0),-12*math.sin(math.pi*t))
+    elif action in ('SitDown','Seated','StandUp'):
+        f=t if action=='SitDown' else 1-t if action=='StandUp' else 1
+        translate('root',(0,0,-(79-DESIGN['authoring']['seat_support_units'])*f))
+        translate('cape.lower',(-40*f,0,30*f))
+        for side in ['L','R']:
+            translate('foot_ik.'+side,(40*f,0,0))
+            rotate('upper_arm.'+side,(0,1,0),-25*f);rotate('forearm.'+side,(0,1,0),-45*f)
+    elif action in ('LieDown','Sleeping','GetUp','Death','Raise'):
+        f=t if action in ('LieDown','Death') else 1-t if action in ('GetUp','Raise') else 1
+        death=action in ('Death','Raise')
+        rotate('root',(0,1,0),(90 if death else -90)*f)
+        translate('root',((-85 if death else 85)*f,0,20*f))
+        if death:
+            rotate('spine',(0,1,0),30*math.sin(math.pi*f))
+            for side in ['L','R']:
+                rotate('thigh.'+side,(0,1,0),-55*math.sin(math.pi*f));rotate('shin.'+side,(0,1,0),90*math.sin(math.pi*f))
+        for side,sign in [('L',1),('R',-1)]:rotate('upper_arm.'+side,(1,0,0),sign*15*f)
+    elif action=='Crouch':
+        translate('root',(0,0,-42))
+        rotate('spine',(0,1,0),22)
+
+actions={**DESIGN['native_action_tics'],'SitDown':40,'Seated':70,'StandUp':40,
+         'LieDown':40,'Sleeping':70,'GetUp':40,'Crouch':1}
+for name,tics in actions.items():
+    arm.animation_data_clear()
+    for frame in range(tics+1):
+        pose(name,frame/max(1,tics))
+        for b in arm.pose.bones:
+            b.keyframe_insert('rotation_quaternion',frame=frame,group=b.name)
+            b.keyframe_insert('location',frame=frame,group=b.name)
+            for c in b.constraints:c.keyframe_insert('influence',frame=frame)
+    action=arm.animation_data.action;action.name=name;action.use_fake_user=True
+    action['native_tics']=tics
+    action['timing_status']='Native baseline' if name in DESIGN['native_action_tics'] else 'Visual action candidate; ordinary rest transition timing pending author decision'
+arm.animation_data.action=bpy.data.actions['IdleBreathing'];scene.frame_set(0)
+scene.frame_start=0;scene.frame_end=70
+
+world=bpy.data.worlds.new('Neutral review world');world.use_nodes=True
+world.node_tree.nodes['Background'].inputs[0].default_value=(.12,.13,.15,1)
+world.node_tree.nodes['Background'].inputs[1].default_value=.6;scene.world=world
+for name,pos,power,size in [('Key',(210,-210,280),1800000,180),('Fill',(100,210,170),1000000,150),('Rim',(-150,0,230),1300000,120)]:
+    data=bpy.data.lights.new(name,'AREA');data.energy=power;data.shape='DISK';data.size=size
+    obj=bpy.data.objects.new(name,data);scene.collection.objects.link(obj);obj.location=pos
+    obj.rotation_euler=(Vector((0,0,90))-obj.location).to_track_quat('-Z','Y').to_euler()
+camera_data=bpy.data.cameras.new('Review camera');camera=bpy.data.objects.new('Review camera',camera_data)
+scene.collection.objects.link(camera);scene.camera=camera;camera_data.type='ORTHO';camera_data.ortho_scale=220
+scene.render.engine='CYCLES';scene.cycles.samples=24
+scene.render.resolution_x=650;scene.render.resolution_y=780;scene.render.resolution_percentage=100
+scene.render.image_settings.file_format='PNG';scene.render.film_transparent=False
+scene.view_settings.view_transform='Standard';scene.view_settings.look='Medium High Contrast'
+camera.location=(280,-130,135);camera.rotation_euler=(Vector((0,0,86))-camera.location).to_track_quat('-Z','Y').to_euler()
+for obj in bpy.context.selected_objects:obj.select_set(False)
+arm.select_set(True);bpy.context.view_layer.objects.active=arm
+bpy.ops.wm.save_as_mainfile(filepath=str(BLEND))
+for name,pos in [('front',(320,0,100)),('three-quarter',(280,-170,120)),('rear',(-320,0,100))]:
+    camera.location=pos;camera.rotation_euler=(Vector((0,0,86))-camera.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=str(OUT/(VERSION+'-'+name+'.png'));bpy.ops.render.render(write_still=True)
+for action,frame in [('Walk',2),('Seated',0),('Sleeping',0),('Death',56)]:
+    arm.animation_data.action=bpy.data.actions[action];scene.frame_set(frame)
+    camera.location=(280,-170,120);camera.rotation_euler=(Vector((0,0,80))-camera.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=str(OUT/(VERSION+'-'+action+'.png'));bpy.ops.render.render(write_still=True)
+print('CA283 candidate',BLEND,'parts',len(parts),'vertices',sum(len(p.data.vertices) for p in parts))

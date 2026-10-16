@@ -46,6 +46,9 @@ class CaelumThermalState : Object play
     bool MotionInitialized;
     double DrinkOffset,DrinkRemaining;
     double AirC,Humidity,WindMps,RainMmHour,WaterC,ClimateC;
+    // Revisión propia de una proyección derivada; no migra reservas corporales.
+    int SealClimateRevision;
+    double AmbientAirC,AmbientHumidity,AmbientWindKmh;
     double WetnessPercent,Conductance,Imbalance,SurfaceArea,Inertia;
     double AbsorbedImpactJoules,AbsorbedContinuousJoules,EvaporatedKg,EvaporationJoules;
     double AppliedDamageHP;
@@ -92,6 +95,8 @@ class CaelumThermalState : Object play
         copy.MotionInitialized=MotionInitialized;
         copy.DrinkOffset=DrinkOffset;
         copy.DrinkRemaining=DrinkRemaining;
+        copy.SealClimateRevision=SealClimateRevision;
+        copy.AmbientAirC=AmbientAirC;copy.AmbientHumidity=AmbientHumidity;copy.AmbientWindKmh=AmbientWindKmh;
         copy.AirC=AirC;
         copy.Humidity=Humidity;
         copy.WindMps=WindMps;

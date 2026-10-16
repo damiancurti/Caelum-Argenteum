@@ -1,0 +1,8 @@
+Caelum Argenteum - Zupay rock projectile (#284, 5.4.24)
+Original deterministic mesh created for this project. Author/designer: Damian Curti.
+Editable dimensions and source hash: assets/source/art/zupay_rock_5424/DESIGN.json.
+Generator: assets/generators/generate_zupay_rock.py.
+The material reuses unchanged pixels from the existing project-owned Zupay
+throw sprite, sprites/caelum/actors/zupay_colossus/ZUPYN1.png, through UV sampling.
+No Doom art, external mesh, new generated bitmap or gameplay data is incorporated.
+The original sprite remains intact and also supplies the native sprite fallback.

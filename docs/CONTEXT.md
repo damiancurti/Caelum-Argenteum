@@ -1,21 +1,54 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.3.9** — 2026-10-14.
+Documentation version: **5.4.24** — 2026-10-15.
 
-**#233-236 accepted. #235 objective-marker CA235-02 passed 2026-10-14.**
-**#231/232 accepted; #255-258 accepted.** CA258-01 completed 2026-10-14.
-Evidence and individual acceptance records: HISTORY. Author test queue is empty.
+**V5.4 batch:** all 24 scoped issues complete/accepted; individual PRs merged.
+PR303 to main; pending_test.txt empty; modular migration V5.17.
 
-**5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
-CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
-**5.2.20-25 accepted/merged:** HISTORY retains six checks; #225 repaired LF hashes.
-#211 accepted/merged; prior acceptance records remain in HISTORY.
-**5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
-and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
-**5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
-CA207-01 passed 2026-10-12; native evidence: validation_5217.
-**5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01
-passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshed.
+**5.4.24/#284:** CA284-01 accepted 2026-10-15; PR302 merged; validation_5424.
+**#283:** prototype accepted/closed, PR301 merged; modular migration in V5.17.
+**#282:** PR300 merged; CA282-01 accepted; validation_5422. Keep-awake released.
+
+**5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 merged.
+
+**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 merged.
+
+**5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 merged.
+
+**5.4.18/#249:** CA249-01 accepted; validation_5418, PR297 merged.
+**5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 merged.
+**5.4.16/#247:** CA247-01 accepted; PR295 merged. Keep-awake released.
+
+**5.4.15/#260:** acceleration/double tap accepted (CA260-01/02, 2026-10-15); validation_5415; PR294 merged.
+
+**5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
+
+**5.4.13/#246:** CA246-01 accepted on 2026-10-15; Arcane Sun implemented. validation_5413.
+
+**5.4.12/#245:** CA245-01 accepted 2026-10-15. validation_5412.
+
+**5.4.11/#244:** CA244-01 accepted 2026-10-15. validation_5411.
+
+**5.4.10/#243:** CA243-01 accepted 2026-10-15. validation_5410.
+
+**5.4.9/#239:** CA239-01 accepted 2026-10-15. validation_549.
+
+**5.4.8/#240:** CA240-01 accepted 2026-10-14. validation_548.
+
+**5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
+
+**5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
+**5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 merged, aa253eed.
+#254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
+#237 audit complete; batch merge/closure authorized. #231-236/#255-258 accepted/merged/closed; HISTORY.
+
+**5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
+#225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02
+(2026-10-12, PR210 merged 4549991a). Current rest/provisions/x105; empty Box 1g.
+**5.2.17/#207 accepted:** MAP01 minimum1 HP; PR208 merged/closed;
+CA207-01 2026-10-12, validation_5217.
+**5.2.16/#204 accepted:** Vulkan cursor/VSync; CA204-01 2026-10-12;
+PR205/206 merged (1bf5087e), refreshed LANGUAGE LF hash.
 **5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
 controls/M automap, modular cosmetics/hands. CA150/149/148-01 passed 2026-10-12;
 PR203/202/201 merged, issues closed. Evidence validation_5215/5214/5213;
@@ -38,15 +71,8 @@ src/localization/INDEX.md. Regenerate with `python build_dialogue_index.py build
 validation rejects stale output. Node/ID order preserved. Evidence: validation_525.
 Accepted 2026-10-11; PR187 merge/closure authorized.
 
-**Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
-profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
-2 kg gold deposit for bag/Seal/5 L canteen materials. Bag/canteen are 90% leather,
-10% rope by empty mass; MAP01 Bull drops no leather. Box slots/content divisor:
-20 + floor(10 × Type3 multiplier). Departure boxes actual gifts/utilities/deck and
-matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
-budget plus five replacement bolas across 39 finite chests. Start fresh test
-games by author instruction. Evidence: validation_524; CA183-01 passed on
-2026-10-11 without qualifications. PR186 is merged and #183 closed.
+**5.2.4/#183 accepted:** creator/tutorial kits and finite MAP02 supplies; PR186
+merged/closed, CA183-01 passed 2026-10-11. HISTORY/validation_524 retain details.
 
 **Accepted on 2026-10-11:** CA147-01 (5.2.0/#147), CA177-01 (5.2.1/#177),
 CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.
@@ -65,10 +91,7 @@ follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
 old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
 **#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
 
-**#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
-crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
-
-Earlier acceptances: HISTORY.
+Earlier accepted deliveries and evidence: HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.

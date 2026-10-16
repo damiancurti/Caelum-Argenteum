@@ -114,7 +114,7 @@ class CaelumSewerTrialSupport : Object play
         if (!seal.Equipped || seal.InMagicBox) return false;
         // Únicamente esta opción de diagnóstico rellena adrenalina y quita
         // la espera. No inicia combate ni cambia el máximo o consumo del sello.
-        user.AddAdrenaline(user.DerivedStats.MaximumAdrenaline);
+        user.AddAdrenaline(user.DerivedStats.MaximumAdrenaline,false);
         user.CombatChannelCooldownRemaining = 0.0;
         user.PersistCharacterState();
         return true;

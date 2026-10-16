@@ -1,0 +1,615 @@
+{
+  "issue": 238,
+  "version": "5.4.4",
+  "tool": "built-in image_gen",
+  "actors": {
+    "rat": {
+      "source": "rat-candidate-v2.png",
+      "source_sha256": "c759cb8f2fc735a8b638f9f9e83158e8b36d435d474f2ced14838d55b594e00e",
+      "reference": "src/sprites/caelum/actors/giant_rat/RATGA3.png",
+      "reference_length": 127,
+      "frames": [
+        {
+          "sprite": "SLRTA1",
+          "source_rect": [
+            56,
+            209,
+            354,
+            442
+          ],
+          "size": [
+            101,
+            79
+          ],
+          "pivot": [
+            50,
+            78
+          ],
+          "sha256": "e2d742ae99b1cff13244352577746cd3b3d4892ed67b38c9a6ec66f915bd8612"
+        },
+        {
+          "sprite": "SLRTA2",
+          "source_rect": [
+            395,
+            221,
+            747,
+            439
+          ],
+          "size": [
+            120,
+            74
+          ],
+          "pivot": [
+            59,
+            73
+          ],
+          "sha256": "96f01895777ce0c2b98cbe616eb32e119775761b4da8fd94b4cbacaa5f0e7a04"
+        },
+        {
+          "sprite": "SLRTA3",
+          "source_rect": [
+            773,
+            237,
+            1146,
+            447
+          ],
+          "size": [
+            127,
+            72
+          ],
+          "pivot": [
+            63,
+            71
+          ],
+          "sha256": "76e6e586305c07819e4780a28b66ba269424e12128676e0abb91d5131d052428"
+        },
+        {
+          "sprite": "SLRTA4",
+          "source_rect": [
+            1202,
+            229,
+            1488,
+            447
+          ],
+          "size": [
+            97,
+            74
+          ],
+          "pivot": [
+            48,
+            73
+          ],
+          "sha256": "7cbe68b396cbe9f13d470feedd936c47725368061eb2588843c262293a6faf15"
+        },
+        {
+          "sprite": "SLRTA5",
+          "source_rect": [
+            83,
+            642,
+            308,
+            919
+          ],
+          "size": [
+            77,
+            94
+          ],
+          "pivot": [
+            38,
+            93
+          ],
+          "sha256": "8d6daf38b7d6afe90c8ca516343432e48bd5d3c088767cf79fbb4be45e4a40d9"
+        },
+        {
+          "sprite": "SLRTA6",
+          "source_rect": [
+            393,
+            669,
+            729,
+            885
+          ],
+          "size": [
+            114,
+            74
+          ],
+          "pivot": [
+            57,
+            73
+          ],
+          "sha256": "797c417182cd2029c71f05eeba7b18d6713b5bca22cd326f49fb8110c0e0eff9"
+        },
+        {
+          "sprite": "SLRTA7",
+          "source_rect": [
+            773,
+            687,
+            1133,
+            893
+          ],
+          "size": [
+            123,
+            70
+          ],
+          "pivot": [
+            62,
+            69
+          ],
+          "sha256": "1824a1e52f05a78eb410c49a7a4fc37d0d553b11f611bfbffecbe07e1d269ca9"
+        },
+        {
+          "sprite": "SLRTA8",
+          "source_rect": [
+            1176,
+            680,
+            1511,
+            894
+          ],
+          "size": [
+            114,
+            73
+          ],
+          "pivot": [
+            57,
+            72
+          ],
+          "sha256": "8004e5cf9631c9c0f20b7d107c5333527e9fd6ca8550a9c512e572fa1989cd26"
+        }
+      ]
+    },
+    "bull": {
+      "source": "bull-candidate-v2.png",
+      "source_sha256": "189db58aecf8620995b97dc04948c14ef353c140ff2f7d556a95d39ddefba280",
+      "reference": "src/sprites/caelum/actors/bull/BULLA3.png",
+      "reference_length": 65,
+      "frames": [
+        {
+          "sprite": "SLBUA1",
+          "source_rect": [
+            74,
+            264,
+            298,
+            458
+          ],
+          "size": [
+            37,
+            32
+          ],
+          "pivot": [
+            18,
+            32
+          ],
+          "sha256": "ef21ab5430413121a3adf91eaa810a27ffbdb0120d4cb99d4cb29abe856a66b6"
+        },
+        {
+          "sprite": "SLBUA2",
+          "source_rect": [
+            404,
+            266,
+            726,
+            462
+          ],
+          "size": [
+            54,
+            33
+          ],
+          "pivot": [
+            27,
+            33
+          ],
+          "sha256": "815d859f2e191135e6d9331b59d29e1763dbd4216442aef673c14308434f62f6"
+        },
+        {
+          "sprite": "SLBUA3",
+          "source_rect": [
+            764,
+            278,
+            1154,
+            478
+          ],
+          "size": [
+            65,
+            33
+          ],
+          "pivot": [
+            32,
+            33
+          ],
+          "sha256": "568a20664adbd1dabae264aa60e7b34e172a1570057858ffe191841123a45722"
+        },
+        {
+          "sprite": "SLBUA4",
+          "source_rect": [
+            1227,
+            262,
+            1490,
+            482
+          ],
+          "size": [
+            44,
+            37
+          ],
+          "pivot": [
+            22,
+            37
+          ],
+          "sha256": "517ccc7929c37b9f2837e302d2e609a6f6460f980b7a9dce3f9a888afb970a43"
+        },
+        {
+          "sprite": "SLBUA5",
+          "source_rect": [
+            66,
+            670,
+            306,
+            898
+          ],
+          "size": [
+            40,
+            38
+          ],
+          "pivot": [
+            20,
+            38
+          ],
+          "sha256": "8f2ff220289c964946124968506995a2876e3cee4553f812f311840aac6a5370"
+        },
+        {
+          "sprite": "SLBUA6",
+          "source_rect": [
+            404,
+            671,
+            729,
+            886
+          ],
+          "size": [
+            54,
+            36
+          ],
+          "pivot": [
+            27,
+            36
+          ],
+          "sha256": "96bf719c16fd320a4e5cff8fe2a427d321c3b65322bd99441eb5636a52363c95"
+        },
+        {
+          "sprite": "SLBUA7",
+          "source_rect": [
+            768,
+            677,
+            1158,
+            877
+          ],
+          "size": [
+            65,
+            33
+          ],
+          "pivot": [
+            32,
+            33
+          ],
+          "sha256": "7992992206fbb71648f9a3fd21eba600eb812f43c074064a97e41fe0ef333466"
+        },
+        {
+          "sprite": "SLBUA8",
+          "source_rect": [
+            1215,
+            680,
+            1503,
+            874
+          ],
+          "size": [
+            48,
+            32
+          ],
+          "pivot": [
+            24,
+            32
+          ],
+          "sha256": "1884eb3d88967b04e247819e2dc9bb3e3995a5324e50972291e408c34b001a82"
+        }
+      ]
+    },
+    "mandinga": {
+      "source": "mandinga-candidate-v2.png",
+      "source_sha256": "dfb34655daafe0e205e7220e417d59a51183c12852a8548988c64c9f0615dd55",
+      "reference": "src/sprites/caelum/actors/mandinga/MNDGA3.png",
+      "reference_length": 227,
+      "frames": [
+        {
+          "sprite": "SLMDA1",
+          "source_rect": [
+            74,
+            230,
+            298,
+            478
+          ],
+          "size": [
+            131,
+            48
+          ],
+          "pivot": [
+            65,
+            48
+          ],
+          "sha256": "d76cf1ec1a58a7cb8115b6d369eba1221806b063bec035c72466f48ecdd64b95"
+        },
+        {
+          "sprite": "SLMDA2",
+          "source_rect": [
+            439,
+            236,
+            743,
+            478
+          ],
+          "size": [
+            195,
+            85
+          ],
+          "pivot": [
+            97,
+            84
+          ],
+          "sha256": "dc3e4b6a58604e948e4a7b34ccb2d33d12e90951d208109e7b8f4dae0f652b02"
+        },
+        {
+          "sprite": "SLMDA3",
+          "source_rect": [
+            775,
+            359,
+            1148,
+            464
+          ],
+          "size": [
+            227,
+            64
+          ],
+          "pivot": [
+            113,
+            62
+          ],
+          "sha256": "3cc970b6c88cd7d19d20516755f3c6a6c0ad2c9a756a277bc969ec4b265a8c06"
+        },
+        {
+          "sprite": "SLMDA4",
+          "source_rect": [
+            1210,
+            238,
+            1500,
+            476
+          ],
+          "size": [
+            195,
+            88
+          ],
+          "pivot": [
+            97,
+            87
+          ],
+          "sha256": "9a03ee6f15457bd303a875c92cb43ebdd4a5d0d92c689b7a7d89e1bd29ecfea1"
+        },
+        {
+          "sprite": "SLMDA5",
+          "source_rect": [
+            75,
+            698,
+            278,
+            973
+          ],
+          "size": [
+            107,
+            48
+          ],
+          "pivot": [
+            53,
+            48
+          ],
+          "sha256": "286e1986de222400c3734081e39a764eb9665bf7b667f166541831b3f555722b"
+        },
+        {
+          "sprite": "SLMDA6",
+          "source_rect": [
+            438,
+            721,
+            742,
+            960
+          ],
+          "size": [
+            195,
+            84
+          ],
+          "pivot": [
+            97,
+            83
+          ],
+          "sha256": "1a90f8f44513949a4f1c9baadf470e5c5b6a03c95530402e09144fa3fb71ce20"
+        },
+        {
+          "sprite": "SLMDA7",
+          "source_rect": [
+            786,
+            847,
+            1158,
+            949
+          ],
+          "size": [
+            227,
+            62
+          ],
+          "pivot": [
+            113,
+            61
+          ],
+          "sha256": "b5ce1e8c05a22c7574eae56cc6737f3a898ccbffc89d50db70814b660182154e"
+        },
+        {
+          "sprite": "SLMDA8",
+          "source_rect": [
+            1215,
+            716,
+            1493,
+            967
+          ],
+          "size": [
+            195,
+            97
+          ],
+          "pivot": [
+            97,
+            96
+          ],
+          "sha256": "af64c9091825e197cbaa80a50a8597a277c2bc4c82adc09afd10ae0a3609f9b1"
+        }
+      ]
+    },
+    "zupay": {
+      "source": "zupay-candidate-v1.png",
+      "source_sha256": "6a8b409584277c44fd751d1b36299c20a2e9088d0e2e9726bc4d392859ee6287",
+      "reference": "src/sprites/caelum/actors/zupay_colossus/ZUPYA3.png",
+      "reference_length": 373,
+      "frames": [
+        {
+          "sprite": "SLZUA1",
+          "source_rect": [
+            65,
+            203,
+            306,
+            489
+          ],
+          "size": [
+            201,
+            79
+          ],
+          "pivot": [
+            100,
+            78
+          ],
+          "sha256": "c437eea4bfe6c9927420311da4e9a57148660a9c750bc75d9e306e14d523b353"
+        },
+        {
+          "sprite": "SLZUA2",
+          "source_rect": [
+            421,
+            207,
+            742,
+            490
+          ],
+          "size": [
+            320,
+            155
+          ],
+          "pivot": [
+            160,
+            153
+          ],
+          "sha256": "4a4dfb7b5e3d1c8e9788bd07fc621d58d6168d855563d858c050535a6c30b401"
+        },
+        {
+          "sprite": "SLZUA3",
+          "source_rect": [
+            774,
+            364,
+            1164,
+            468
+          ],
+          "size": [
+            373,
+            99
+          ],
+          "pivot": [
+            186,
+            97
+          ],
+          "sha256": "6a74dde1c3be413a03e74c432e177da5d45cf44f9e6ebe20b420c3294ea789b6"
+        },
+        {
+          "sprite": "SLZUA4",
+          "source_rect": [
+            1197,
+            229,
+            1505,
+            466
+          ],
+          "size": [
+            320,
+            136
+          ],
+          "pivot": [
+            160,
+            135
+          ],
+          "sha256": "4e1b902c2aaad8854afa10a2fc30069ef0283e9cd2d368d98cdccd2e1a39e227"
+        },
+        {
+          "sprite": "SLZUA5",
+          "source_rect": [
+            67,
+            618,
+            312,
+            930
+          ],
+          "size": [
+            188,
+            79
+          ],
+          "pivot": [
+            94,
+            79
+          ],
+          "sha256": "028bb843b7727f1afd5d558cc9ced0013fc4220bded02ecd928325ed1e3d7384"
+        },
+        {
+          "sprite": "SLZUA6",
+          "source_rect": [
+            412,
+            645,
+            750,
+            919
+          ],
+          "size": [
+            320,
+            143
+          ],
+          "pivot": [
+            160,
+            142
+          ],
+          "sha256": "f11b53b1528369da271f343a2d9f0f8c7314720de637c1bbe508d61c14e0cea6"
+        },
+        {
+          "sprite": "SLZUA7",
+          "source_rect": [
+            770,
+            807,
+            1163,
+            919
+          ],
+          "size": [
+            373,
+            106
+          ],
+          "pivot": [
+            186,
+            103
+          ],
+          "sha256": "338b723a058f93c9e492ec574a1089a7e8f8bb16933332f08e640d29f74b1044"
+        },
+        {
+          "sprite": "SLZUA8",
+          "source_rect": [
+            1197,
+            646,
+            1508,
+            938
+          ],
+          "size": [
+            320,
+            165
+          ],
+          "pivot": [
+            160,
+            163
+          ],
+          "sha256": "10e89664278d615caaa989281d568d926a2f2bf1468d23ff71019fc34d46ddb6"
+        }
+      ]
+    }
+  }
+}

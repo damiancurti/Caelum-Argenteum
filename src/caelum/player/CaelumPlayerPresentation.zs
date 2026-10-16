@@ -111,23 +111,16 @@ class CaelumPlayerPresentation : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.HUDHasEquippedSeal = false;
         user.HUDSealChannelAvailable = user.CombatChannelModeActive || user.CanStartSealChannel();
+        user.HUDClassAbilityAvailable = CaelumClassCastView.Active(user) || CaelumClassAbilityRules.CanCast(user);
         user.HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
         user.HUDEquippedSealTier = 0;
-        for (Inventory sealCursor = user.Inv; sealCursor != null;
-            sealCursor = sealCursor.Inv)
+        let equippedSeal=user.GetEquippedSeal();
+        if(equippedSeal!=null)
         {
-            CaelumEquipmentItem equippedSeal =
-                CaelumEquipmentItem(sealCursor);
-            if (equippedSeal != null && equippedSeal.Equipped
-                && equippedSeal.EquipmentKind
-                    == CaelumConstants.EQUIPMENT_KIND_SEAL)
-            {
-                user.HUDHasEquippedSeal = true;
-                user.HUDEquippedSealType = Clamp(equippedSeal.ItemType, 0,
-                    CaelumConstants.SEAL_TYPE_COUNT - 1);
-                user.HUDEquippedSealTier = Clamp(equippedSeal.Tier, 1, 3);
-                break;
-            }
+            user.HUDHasEquippedSeal = true;
+            user.HUDEquippedSealType = Clamp(equippedSeal.ItemType, 0,
+                CaelumConstants.SEAL_TYPE_COUNT - 1);
+            user.HUDEquippedSealTier = Clamp(equippedSeal.Tier, 1, 3);
         }
         bool hasActiveWeapon = user.WeaponModel != null
             && user.WeaponModel.Equipped

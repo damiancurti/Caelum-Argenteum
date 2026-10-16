@@ -1,0 +1,16 @@
+{
+  "test_id": "CA246-01",
+  "originating_version": "5.4.13",
+  "issue": 246,
+  "result": "passed",
+  "author_quote": "La prueba dio bien",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered isolated Arcane Sun casting/cancellation, free-flight and wall-impact scenario; no extra itemized claim.",
+  "run": "build/issue246-author/author-20261015-071638-run.json",
+  "exit_code": 0,
+  "pid": 40076,
+  "runtime_sha256": "E9E527D3E8549FCFB3534E2A4CCB14B2F0ECE30413F69F40B04FA71D5C51DBCB",
+  "fixture_sha256": "2A6A080697BA6B36EEAB2AEE650B9B4126B1440961D0643639C616BD91EEA2C2",
+  "finished_utc": "2026-10-15T10:18:30.5489759Z",
+  "qualifications": "Direct launcher; no broader campaign/multiplayer acceptance. No merge or issue closure. Temporary keep-awake request released on return."
+}

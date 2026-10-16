@@ -1,0 +1,373 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Guard/jump implemented; CA283-02 pending",
+  "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+  "normal_build_sha256": "d77491cffab9b717e8e7402c8e9fc441700022336e2b74807da0088c7d15d125",
+  "source_members": 16188,
+  "native_runs": 19,
+  "native_assertions": 180,
+  "runs": [
+    {
+      "label": "guard",
+      "assertions": 11,
+      "log": "build/issue283-motion-01/guard.txt",
+      "log_sha256": "a18977b445f9ecb8f0bc7083e5a2143ed71381f5d4e34248792471c72b543821",
+      "record_sha256": "4f54d0aba9f2dd59700965b8df95bba37d121aabd68b2a215c6f2f9c937d7c7b",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "a383bf980c900e8db7c03e6293c06705f0dd77c3229defe8167a058663bc9363"
+    },
+    {
+      "label": "jump",
+      "assertions": 10,
+      "log": "build/issue283-motion-01/jump.txt",
+      "log_sha256": "1bd8e797d9a1c32f6414c694d4b4ec3a1f05476ace605dd4f158b9f3dd663b3e",
+      "record_sha256": "10a2ebf977ecbd202d1b1368f8246dacb195ca32993e898c4b4f67d41b907c86",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "a383bf980c900e8db7c03e6293c06705f0dd77c3229defe8167a058663bc9363"
+    },
+    {
+      "label": "jump-guard",
+      "assertions": 11,
+      "log": "build/issue283-motion-01/jump-guard.txt",
+      "log_sha256": "6f3348e669dcf429b4651055b8077adcb2b06ef45ae00e7fb5b4a95d72e3fcb8",
+      "record_sha256": "0e73a68e12cebff9a414615523f308b081d344e25993b393a7cadf30904a31a1",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "a383bf980c900e8db7c03e6293c06705f0dd77c3229defe8167a058663bc9363"
+    },
+    {
+      "label": "jump-damage",
+      "assertions": 7,
+      "log": "build/issue283-motion-01/jump-damage.txt",
+      "log_sha256": "badacf58a7357fb51d3f9d842c65e5febcff10733e71f02e489d70654d8625fc",
+      "record_sha256": "4ef4174e8e47c0714cf63cab33579e4262be86a73646be7a4049f06627de9b6b",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "a383bf980c900e8db7c03e6293c06705f0dd77c3229defe8167a058663bc9363"
+    },
+    {
+      "label": "jump-save",
+      "assertions": 6,
+      "log": "build/issue283-motion-02/jump-save.txt",
+      "log_sha256": "396c57504a59fb1b6ca7e788a16549324f8abf921b908a33c0bfe41ec099a01e",
+      "record_sha256": "8de8d3cd03420779af434476ff7fe94a9201d5f6a710776075a1bb02ab531614",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "jump-load",
+      "assertions": 6,
+      "log": "build/issue283-motion-02/jump-load.txt",
+      "log_sha256": "229f827ce6d8422c722cfa1d89d4767c073f64753e0da5d3e97023be939a729b",
+      "record_sha256": "70d5655bd323a5087eb8bb2c92dd7c5a3d39afdac8fec9f7899f0752b1027a81",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "jump-held-damage",
+      "assertions": 7,
+      "log": "build/issue283-motion-02/jump-held-damage.txt",
+      "log_sha256": "18fbbda0582bd3edde9c36a75da439f18dfdc8aac751702b093008c450787639",
+      "record_sha256": "891834e8852b7491895503207b30994806c4fb14419e6297609dd65707d46a96",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "jump-stun",
+      "assertions": 5,
+      "log": "build/issue283-motion-02/jump-stun.txt",
+      "log_sha256": "d0aa770b4e73658e703790c7651220b4ea052472b2a0aaac21b3fa3580934379",
+      "record_sha256": "b31de3420cccb25f769c868a22199065007151388b450bc7e074dc27a8f28954",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "actions",
+      "assertions": 11,
+      "log": "build/issue283-motion-02/actions.txt",
+      "log_sha256": "ce59cd9378d2085efce5b740686d61c522141a0d4b2adab854e7f5a09c41c139",
+      "record_sha256": "f1bc811028cb4df1898f912f1dddb261636de52cacb2355c4560c652de17eb92",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "rest",
+      "assertions": 14,
+      "log": "build/issue283-motion-02/rest.txt",
+      "log_sha256": "77f370781ffd6e2b4bf99c873dc60235b8a6cb604a97ee85c58d43ae28754bc1",
+      "record_sha256": "02cf73a182051a9947c542f8abefe3741ff73f2d0107b8bc26915cf6d801928e",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "death",
+      "assertions": 7,
+      "log": "build/issue283-motion-02/death.txt",
+      "log_sha256": "c309de231dee76b91a0a4f70f6ca17c64e4ffcdf2cede13ef8203ce16b3c1ce4",
+      "record_sha256": "60a2bd7594ea2d6fa6751516260a86a52c9c9a8a6e92385df1f44c4eac02b70d",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "fallback",
+      "assertions": 7,
+      "log": "build/issue283-motion-02/fallback.txt",
+      "log_sha256": "aac5a7837a0469269a3444d9777a9d00ddb6e400dbfe9f9263f780e33e0de372",
+      "record_sha256": "57441868e3afe82ca1e8756a452c1f294dacae8f934a9d2fb29306845e37b07c",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "save",
+      "assertions": 3,
+      "log": "build/issue283-motion-02/save.txt",
+      "log_sha256": "7c8d67079b55e602b96eabf4b25dda053cacd827de99b03451659e0edc9523b7",
+      "record_sha256": "f63bd2c9b39ce0c9daa51a3acc911fe3960a368dccc955caeb260935dffeb97d",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "load",
+      "assertions": 8,
+      "log": "build/issue283-motion-02/load.txt",
+      "log_sha256": "7d719768501881d910fa4c7f042b1f93be09b316ebb2dc5be9e2fb57c6668a2e",
+      "record_sha256": "5d674b59540be5f3de745c6a4bea07b010a18e7545ee6cd2499c2e924c4fb6a8",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "travel",
+      "assertions": 24,
+      "log": "build/issue283-motion-02/travel.txt",
+      "log_sha256": "80339dbbbcd6a48a1502c984848eed74e620aec605023d3da4a2d0c0386f6c7d",
+      "record_sha256": "5b060a7fe34a304bb7aae5488bba01a331739127ea4e1f534ae64e2fcdbaae72",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "migrate",
+      "assertions": 16,
+      "log": "build/issue283-motion-02/migrate.txt",
+      "log_sha256": "ee5a717090245cd4388d85af813e31d1595b5ac948003b8ac237d352c4bfa7c0",
+      "record_sha256": "8f068c1f0e6dec5444ab11bed4706c7b4ee260d1a964fdced6af81e57f7e2f86",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "jump-attack",
+      "assertions": 8,
+      "log": "build/issue283-motion-02/jump-attack.txt",
+      "log_sha256": "3585db03cf7a3f8efad0e78d7de80c45b9759ebca8fb44bf55f11546a8c6daa8",
+      "record_sha256": "9b18b35540491f8ab1d5f05d60c2da3e163a141fd4c0ec9b995934b9e60534e2",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "jump-travel",
+      "assertions": 11,
+      "log": "build/issue283-motion-02/jump-travel.txt",
+      "log_sha256": "669a444b0583451abe67098766b2ca6edbfc725eaf73a56c5245de8fa9ebf080",
+      "record_sha256": "34df65c288d9186e68b7ed25d15a18bbdce1b6d18401bc8e6c5d84947d3a746b",
+      "runtime_sha256": "e02de779a24cce85717c2a2059f682d0c9ed17251882d145a0f87f371c09adbc",
+      "fixture_sha256": "196f777faffb516590d11b17aa6b63765a22900cbd79de6cbc5c6aa5a1ac70ff"
+    },
+    {
+      "label": "rollback-02",
+      "assertions": 8,
+      "log": "build/issue283-motion-rollback/rollback-02.txt",
+      "log_sha256": "d68d3b6ea3ae2cd4e174f1b26ad6c792eb2da77e1c1789f3cb46ff8c692597c9",
+      "record_sha256": "02cce5bed7e60a95a89fc7af88ab966389103b1d23160512ad6a5d12fe3429e9",
+      "runtime_sha256": "ad5347f0f94451bdad7cdcb506fccdba2266ff7a635bfac097c993c0fc142b06",
+      "fixture_sha256": "c4ff4403262e6b5a9c65243844426d602af27251fac2cb3b0ca4ead8f70c52cc"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-motion-01/guard-pilot-guard.png",
+      "sha256": "62ae1a9e815f7f39b944b6cee613c68155adaedbb60c442ee15033fcaf7331d3"
+    },
+    {
+      "file": "build/issue283-motion-01/guard-pilot-guard-run.png",
+      "sha256": "312020b6a97128b7933b0e8c1fbf3d63cab1a4f568139c6ba30c8f17ea71916c"
+    },
+    {
+      "file": "build/issue283-motion-01/jump-pilot-jump-prepare.png",
+      "sha256": "08d070c2d9cdf84b446bf65f2262be2cb491f96218af0376b44f5d45907cf6ee"
+    },
+    {
+      "file": "build/issue283-motion-01/jump-pilot-jump-air.png",
+      "sha256": "4f1b2ab041f95f032e650619c88bce2844c464044887ddfd5058bcaac9b0d3ce"
+    },
+    {
+      "file": "build/issue283-motion-01/jump-guard-pilot-guard-prepare.png",
+      "sha256": "61aa96284e356488ce7fd106a0eb2e20af6b0b0ce66fb3d4b652b32e91a200a9"
+    },
+    {
+      "file": "build/issue283-motion-02/rest-pilot-chair.png",
+      "sha256": "61f2011ade453808e36b41a4744acf4d3976b956cd572095e5bdee1a1a2824c5"
+    },
+    {
+      "file": "build/issue283-motion-02/rest-pilot-bed.png",
+      "sha256": "bd846451ff51283157a9152975085cc15b80f2cc8b156c4a8b797b695e9f9bb7"
+    },
+    {
+      "file": "build/issue283-motion-02/rest-pilot-ground.png",
+      "sha256": "06e9a37e6c5bb002287593ed3b68ea6fc7ebbc32b5368d9083b9d2b5cb4f3451"
+    },
+    {
+      "file": "build/issue283-motion-02/death-pilot-death.png",
+      "sha256": "24779eb208442314b6d082764c119a5ce8cb4220a641f83ee06b98c406233503"
+    }
+  ],
+  "geometry": {
+    "issue": 283,
+    "source_sha256": "8b3105ff8787e05c83a86c1843e3753fa486ecf6d74579445d3b03c1861488ed",
+    "md3_sha256": "343525b347f8921d08ec9eb79294daa35ca57587bbb93ef4d093e83550a1daf8",
+    "preserved_frame_count": 195,
+    "current_frame_count": 375,
+    "reverse_pose_samples": 36,
+    "foot_samples": 144,
+    "maximum_foot_error_units": 0.005421623642631878,
+    "root_lowering_units": 19.0,
+    "knee_displacements": {
+      "L": [
+        24.700902938842773,
+        0.6592140197753906,
+        -9.343326568603516
+      ],
+      "R": [
+        24.70089340209961,
+        0.6592130661010742,
+        -9.343315124511719
+      ]
+    },
+    "scope": "Prior accepted MD3 frame coordinates/normals unchanged; jump/landing reverse each other, bend knees forward and retain foot contact. Native input checks and author review are separate."
+  },
+  "export": {
+    "deterministic_files": 7,
+    "frames": 375,
+    "vertices": 10629,
+    "triangles": 17339,
+    "surfaces": 1,
+    "bytes": 32201384,
+    "md3_sha256": "343525b347f8921d08ec9eb79294daa35ca57587bbb93ef4d093e83550a1daf8",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.1337127685547
+      },
+      "Walk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 167.13400268554688
+      },
+      "Run": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 185.92037963867188
+      },
+      "Melee": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.11993408203125
+      },
+      "Death": {
+        "min_z": -3.674762725830078,
+        "max_z": 171.5362548828125
+      },
+      "Raise": {
+        "min_z": -3.6513023376464844,
+        "max_z": 171.49038696289062
+      },
+      "Seated": {
+        "min_z": -0.004584779962897301,
+        "max_z": 139.13372802734375
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 39.000003814697266
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 126.6629409790039
+      },
+      "SitDown": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "StandUp": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.41146850585938
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.35791015625
+      },
+      "JumpPrepare": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "Landing": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "JumpAir": {
+        "min_z": -0.0026671793311834335,
+        "max_z": 151.82386779785156
+      },
+      "GuardIdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.1337127685547
+      },
+      "GuardWalk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 167.13400268554688
+      },
+      "GuardRun": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 185.92037963867188
+      },
+      "GuardJumpPrepare": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "GuardLanding": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "GuardJumpAir": {
+        "min_z": -0.0026671793311834335,
+        "max_z": 151.82386779785156
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2495,
+  "preserved_failures": [
+    {
+      "log": "build/issue283-motion-01/jump-save.txt",
+      "sha256": "8a7df5ab5f87a0f08c8307ac52c374bc8dfc33f2e59d1ef49b920294e1403cff",
+      "reason": "Fixture quit before deferred save/event completion; corrected wait in motion-02."
+    },
+    {
+      "log": "build/issue283-final-15/motion-rollback.txt",
+      "sha256": "a4c6eb3884612e84425dfbdebe937805ed59882c366d1eff2ccbf84c4c89ac74",
+      "reason": "Old fixture expected revision 1 rather than the persisted revision 2. Seven body/resource checks passed. rollback-02 changes only that test expectation."
+    }
+  ],
+  "save_scope": "Unmodified revision-1 pilot save migrates and resaves at revision 2; current pending-jump save resumes; map travel cancels it. Resting migrated save also loads in the original runtime with its old fixture version expectation corrected. No claim for downgrading an active new animation.",
+  "limitations": [
+    "Provisional CA283-01 acceptance covers prior art; CA283-02 is not yet accepted.",
+    "Interchangeable runtime parts and timed rest/provision animations remain open.",
+    "Older rendering measurements belong to their original builds; no new large-battle claim.",
+    "Native captures and development packages stay local under build."
+  ]
+}

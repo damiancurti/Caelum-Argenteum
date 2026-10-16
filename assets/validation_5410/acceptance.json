@@ -1,0 +1,16 @@
+{
+  "test_id": "CA243-01",
+  "originating_version": "5.4.10",
+  "issue": 243,
+  "result": "passed",
+  "author_quote": "La prueba dio correcto.",
+  "confirmation_date": "2026-10-15",
+  "scope": "Offered isolated Battle Cry scenario; no itemized claim beyond author confirmation.",
+  "run": "build/issue243-final-v2/author-20261015-01-run.json",
+  "exit_code": 0,
+  "pid": 43356,
+  "runtime_sha256": "28216F0E58B680108964F5DD8E758C4A846A6ED4BA439A415CC7874DBAEBAAEA",
+  "fixture_sha256": "47652D0677C566F298766B54BD6CB6C5F9A10027B1BFDE669DE813F2289418AB",
+  "finished_utc": "2026-10-15T04:28:53.4245617Z",
+  "qualifications": "Direct launcher opened the accepted game; persistent terminal was previously blocked by automatic policy. No campaign or multiplayer acceptance inferred. No merge or issue closure."
+}

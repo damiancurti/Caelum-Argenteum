@@ -276,6 +276,7 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
 {
     override void Ticker()
     {
+        UpdateSocialPage();
         if(Menu.GetCurrentMenu()==self)menuactive=Menu.OnNoPause;
         if(ConsoleState!=c_up)ReplyHeld=false;
         // ConversationMenu.Ticker sólo activa la pausa tras 20 tics. Omitir

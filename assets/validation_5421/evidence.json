@@ -1,0 +1,251 @@
+{
+  "issue": 252,
+  "version": "5.4.21",
+  "base": "a3b305b6",
+  "gameplay_commit": "3a8bba88",
+  "presentation_commit": "26a00596",
+  "author_acceptance": "pending CA252-01",
+  "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+  "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+  "native_runs": 20,
+  "native_assertions": 233,
+  "runs": [
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "formulas",
+      "passes": 75,
+      "exit_code": 0,
+      "log_sha256": "7ad8a68806ab09f668db3d7656c12fe242860d6a307340b41f917dedf09116c3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "456149061959fde4f111e4d2ff56d89983c57cfa4321f1b5e398bdccc86c7ba3"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "earth",
+      "passes": 23,
+      "exit_code": 0,
+      "log_sha256": "766a919b7fbf722bdbbf3de1d6ae8b864a9fcc75b629cea3346bb07d625f8298",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "510559979f017586b67d281c3cf0a5e6197d84ce50dd5a6afaba821097a68378"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "environment",
+      "passes": 12,
+      "exit_code": 0,
+      "log_sha256": "1733498ad0b5d38a99e8ed1599cca76f8d5cae0f7c9edd4912ce215e104eb269",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "840ec921574aea1319a4d6e5d4da383ba09a29a5cc846cab6a1efbcb7ce12054"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "defenses",
+      "passes": 4,
+      "exit_code": 0,
+      "log_sha256": "6bb13d8b55308298aefc8f7fb657ad0608bb5b2aa0a5ec97a02fd6b560e24bd1",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "63904c36dcce45f9cb60779eb5e129119203a2d96eec8634213d4beaa97a23e2"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "gravity",
+      "passes": 12,
+      "exit_code": 0,
+      "log_sha256": "82549bb279aebbc0d825ebd99ffdeb1c8ead351d65ed9633c987b9e34062dcde",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "2f1e209dad3fd1cb787a51c5fe1169f8b691b75c67319d59c43ef57a8f3a5ea3"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "presentation",
+      "passes": 37,
+      "exit_code": 0,
+      "log_sha256": "98e38fd5461255400685f2ba58efd40f8604b539d20ea93351786caac237e9a8",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "6b238861019aead7861ea53ea7faf7e1c5c4254999291b7f28e18673d62ec41e"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "falling",
+      "passes": 4,
+      "exit_code": 0,
+      "log_sha256": "7db00076595d6ac483e5bb006e7909f5f66040b35bb7a3af846747ecba5fe455",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "518802e969283a1d91b7bf9750776b8c842c73e64c6705a9bcdc4c39a57a0a79"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "input",
+      "passes": 13,
+      "exit_code": 0,
+      "log_sha256": "1581448962e6d0cb3eac0caa26ee36a68a120ea8b226f1d4cad2102d923984b8",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "7f4cea8cc70ff96af4b77832a0caf81045a10193a55d3c93f498152ebebb10fa"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "interruptions",
+      "passes": 10,
+      "exit_code": 0,
+      "log_sha256": "55fd4f1c746f86eb2994dd1f19b4a0ad71721d91d6cde369bc40be76e8f2c56a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "8c4feb8c95fc2f67293172526f65e24146e1f3f84a4c823d48622c389dd71dae"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "performance",
+      "passes": 3,
+      "exit_code": 0,
+      "log_sha256": "424aa3a4d97493f956ba00ed2463c46e341c21dc291a0742410c811e1e333e7d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "722717b347eb851b73bd73e0b04b270aef2f6883d267a5e45410545c3106893b"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "save",
+      "passes": 2,
+      "exit_code": 0,
+      "log_sha256": "c59c75acff0713741eeb7ef65996e989f5280166dadfa157814469c7c3e2f9b3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "9587c311df73fe0f6381f140a0aec7ec887e2d2068b9dfd1c7eaa4b3d95834f2"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "gravity-save",
+      "passes": 2,
+      "exit_code": 0,
+      "log_sha256": "f970e55848bece036f7aa28b0d9dbbaa4696efd4b3ca82346c02099a74b96ea7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "a88464c364ab62d348972daf9da8ad56b1780b2edeb37b2fb17c195b257e7397"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "roof",
+      "passes": 3,
+      "exit_code": 0,
+      "log_sha256": "3cde4471ff3856bd3fc28864a0f0523f85ce85daf50294a26c69f27364749e58",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "3492d589587bf65610b4bc3839a0e4bd42e15de1a279f5dcd9c69983db500b5e"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "load",
+      "passes": 7,
+      "exit_code": 0,
+      "log_sha256": "319c4154077fe83e885e551304aa05a01238b7dcb09a7587644056a3626487d3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "fd35a061d3e5812683f980b3d123d33c73697895d02d13ea9bb623f0fe2bb9e5"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "gravity-load",
+      "passes": 5,
+      "exit_code": 0,
+      "log_sha256": "0be39df63dbd3dd42032a7de50160a3bfc7ed15480ed8fd4cc252c13014f35f7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "54e6b9bd8232212fb9b5c36cc153f2fded2b9a2e91d3610586b3952cc875eecb"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "travel",
+      "passes": 13,
+      "exit_code": 0,
+      "log_sha256": "0a649ba8f540e31709ed7bbb93c296ce0defab762003f0e1599526d749c764a7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "f7b873eeedfbbaf1e1a4029808ae8851c3efd825f0f2574f582dfc16a76c5f17"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "upgrade",
+      "passes": 7,
+      "exit_code": 0,
+      "log_sha256": "31e0ef57cd673c157ec78bc7a19b4f087c6792196a73798a604e0ef9eafdb73b",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "b223d0940f85e111b2e4107ecea3d2abda2a9169663d247075a70254dc57feb9"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "preview",
+      "passes": 0,
+      "exit_code": 0,
+      "log_sha256": "6f2f268cfcda596c8d09aed3ab31c20af4a4674108cc65dfb2d2b5c2684e183a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "707bc315d1ccf953cd4cb2eaca419fd7a863e8430b482704884def749782fb7d"
+    },
+    {
+      "directory": "build/issue252-release-5421",
+      "label": "weather-02",
+      "passes": 0,
+      "exit_code": 0,
+      "log_sha256": "7a79838a351d7e788d69bdfe15921b6472f10352f2123b35cbbb21f5dd6a6af4",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "b14534df2b01a00a94ea7061bc42517527fdc43b23020dd5d52eb8137f7aa727",
+      "fixture_sha256": "297566955bfbec702c0b8337fe57c89efd9703aa425b87c3fa5492ff58fb413c",
+      "script_sha256": "f1488f7e35ca6cfec4847768054c698df7bc513d8bdfb067d2c1eabbe961cc6a"
+    },
+    {
+      "directory": "build/issue252-legacy-01",
+      "label": "seed-02",
+      "passes": 1,
+      "exit_code": 0,
+      "log_sha256": "60e8c2d972c7272936167520e847d53a4e2bc28ab82253ba88f7ff519c0d04f3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runtime_sha256": "8e08de05120b4b3409f221835d9753a1d85430ffff3ce89df6276ef28fe9fc6f",
+      "fixture_sha256": "e653a50ebfc76c3c5bcba8b4ffce8944448efcf6b5f71a2c7c7b60cb55a48eb8",
+      "script_sha256": "dde5b01a5e96f1fdcd195e30f6e4dcb1589168a1b52024d9c0786bbb934cfd26"
+    }
+  ],
+  "source_members": 16178,
+  "normal_package_matches_source": true,
+  "deterministic_packaging": true,
+  "static_errors": [],
+  "performance_500_service_ms": {
+    "baseline_samples": 1.054,
+    "climate_samples": 1.722,
+    "earth_35_continuous_steps": 24.042
+  },
+  "performance_scope": "Isolated service costs on 500 living combatant bodies; not a full-battle frame-rate claim.",
+  "screenshot_sha256": "a86e5b6eb49b3bf9ebf667f3fb7bad2d09377c83e0ac80653444a59067cd335c",
+  "startup_failure": {
+    "run": "build/issue252-legacy-01/seed-01",
+    "zip_sha256": "1aff7af8169cb8607ba82be4b61fbddcbfbac19aeb8980d95f179422792c2d2a",
+    "cause": "Launch raced unfinished fixture preparation; no level entered.",
+    "guard": "Completed manifest, required script and exact package hashes before launch."
+  }
+}

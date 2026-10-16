@@ -1,0 +1,14 @@
+{
+  "test_id": "CA238-02",
+  "origin_version": "5.4.4",
+  "issue": 238,
+  "confirmed_date": "2026-10-14",
+  "author_confirmation": "Estas pruebas dieron correcto.",
+  "result": "passed",
+  "scope": "Living rat/Bull/Mandinga/Zupay poses, eight-angle visual inspection, third HP-losing-hit wake and duration expiry in the offered isolated scenario. Other effects and whole-issue completion are not implied.",
+  "runtime_sha256": "15a025e20e3f06186c025e0c39d7c4ff8fd179412b850c34ea052efd70f5a59c",
+  "fixture_sha256": "354cae8219b7a44e8157f37939c67f556541696ed0e67e979c2b56014b542a49",
+  "handoff_label": "author-20261014-221520",
+  "native_exit_code": 0,
+  "finished_utc": "2026-10-15T01:18:08.0959857Z"
+}
