@@ -61,16 +61,21 @@ The skin keeps original RGB and makes alpha opaque for UV sampling. It is
 Blender 4.5.3 LTS exports deterministically with:
 `blender -b --python assets/generators/export_domingo_pilot.py -- --output build/issue283-export --install`.
 The exporter reads the committed source, bakes a native MD3 v15 with one surface,
-10,629 UV-split vertices, 17,339 triangles and 375 frames (32,201,384 bytes), and
+10,689 UV-split vertices, 17,447 triangles and 375 frames (32,383,160 bytes), and
 generates state/texture/model registrations. The exact GZDoom 4.14.2 loader was
 checked before export. No Blender executable, IWAD or generated test PK3 ships.
 
 The opt-in player subclass supports sword/shield idle, walk/run, native attack
 poses, pain/death/raise and seated/lying breathing. New guard variants raise the
 shield while retaining idle/walk/run and jump/landing leg motion. JumpPrepare
-lowers the body and flexes the knees forward over one second; Landing reverses
-that movement over one second. These additions preserve all 195 previously
-exported coordinate/normal frames. Guard/jump visual review is CA283-02; the
+lowers the body and flexes the knees forward over 10 native tics; Landing reverses
+that movement over 35 tics. The author's subsequent correction attaches the
+shield to hand.L, with a visible rear grip centered in the closed gauntlet. In
+relaxed poses its face points outward and its plane extends forward/back beside
+the body; guard raises the shield forward while maintaining the same hand
+contact. Unrelated geometry/poses are preserved. All 375 frame identities remain,
+with DESIGN.json mapping existing jump poses onto the shorter playback timing.
+Guard/jump visual review is CA283-02; the
 provisional CA283-01 acceptance applies to the preceding candidate. Other equipment and crouch
 retain existing appearance. Native furniture offsets and the 47-unit seat
 support are retained; the cape folds onto the chair. Original sprites remain

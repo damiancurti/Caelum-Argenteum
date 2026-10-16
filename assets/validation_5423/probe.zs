@@ -251,7 +251,7 @@ class CA283Probe : StaticEventHandler
         {
             let motion=CA283MotionPlayer(User);
             Check(SawPreparation && SawAir && SawLanding,"preparation, real takeoff and landing observed");
-            Check(TakeoffDelay>=35 && TakeoffDelay<=36,"takeoff follows one full second of preparation");
+            Check(TakeoffDelay>=10 && TakeoffDelay<=11,"takeoff follows ten tics of preparation");
             Check(!User.PilotJumpPreparing && !User.PilotLanding,"jump and landing transitions finish");
             if(motion!=null)Check(motion.Takeoffs==1 && motion.JumpAirSpent>0,"one native takeoff pays Air once");
             if(e.Args[0])Check(SawMovingPreparation && SawGuardPreparation,"movement and blocking remain available during preparation");

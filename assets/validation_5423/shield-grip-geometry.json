@@ -1,0 +1,12 @@
+{
+  "issue": 283,
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "baseline_sha256": "8b3105ff8787e05c83a86c1843e3753fa486ecf6d74579445d3b03c1861488ed",
+  "unchanged_non_shield_object_poses": 16500,
+  "grip_contact_samples": 375,
+  "maximum_contact_error_units": 3.145679951185349e-05,
+  "jump_prepare_tics": 10,
+  "landing_tics": 35,
+  "frame_identity_count": 375,
+  "scope": "Evaluated handle center stays in the hand for all poses; resting shield lies in the forward/back plane, guard faces forward. All non-shield posed geometry remains unchanged. Native timing and author review are separate."
+}

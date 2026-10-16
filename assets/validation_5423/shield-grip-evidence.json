@@ -1,0 +1,304 @@
+{
+  "issue": 283,
+  "release": "5.4.23",
+  "status": "Corrected shield grip and ten-tic jump; CA283-02 pending",
+  "runtime_sha256": "0e5bbc47f7a0eb1a08cfa50a11a633e23b60b6da65642f70674efa2905eb3d52",
+  "normal_build_sha256": "331920ec5a12ece30798177b0ba8f06fa8cac339ff475ee3eb9348c75a1a6647",
+  "source_members": 16188,
+  "native_runs": 12,
+  "native_assertions": 105,
+  "runs": [
+    {
+      "label": "guard",
+      "assertions": 11,
+      "log": "build/issue283-shield-grip-01/guard.txt",
+      "log_sha256": "a6e8e7d317affd653b931e3836a434c0ef1ac08d6b9f94ab2336828194fce324",
+      "record_sha256": "e8a6ab24762119fb9a81dc261536d93bec8bebe14f44c55b87736a93e219016b",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump",
+      "assertions": 10,
+      "log": "build/issue283-shield-grip-01/jump.txt",
+      "log_sha256": "24ba803c4736babbdca0c7996b690a3601918ee68b91055c3e363d78a14fa70e",
+      "record_sha256": "a6e24afd5977958e892ce0b6926070f7854db9e100e85fe2ec28e1e9db9b9e42",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-guard",
+      "assertions": 11,
+      "log": "build/issue283-shield-grip-01/jump-guard.txt",
+      "log_sha256": "801850ef84d87ca0cf5e09c6c0d549e6a204694052842fcb524aaeaacc96b80e",
+      "record_sha256": "958d4427b20e6e59ee31648bb6ff2592ff812c9f80cc348a541b60e500ce85fb",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-damage",
+      "assertions": 7,
+      "log": "build/issue283-shield-grip-01/jump-damage.txt",
+      "log_sha256": "638de43a51683ad350e01590133f0694ea13109222673461a4193111beda3a51",
+      "record_sha256": "574078776f8ccf8f66c7f4821730f56d44c66289d18913d26dbc30c9351820ec",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-save",
+      "assertions": 6,
+      "log": "build/issue283-shield-grip-01/jump-save.txt",
+      "log_sha256": "6df8793a4b0782b984b40fd3dfe9f5ebf77946c6a5f0a5dd7a01515f2ff6ee88",
+      "record_sha256": "cc489c06fba82404d41151b92457721cf10f755ad07dc1e19a5443707b2c2085",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-load",
+      "assertions": 6,
+      "log": "build/issue283-shield-grip-01/jump-load.txt",
+      "log_sha256": "d00c18a2bb345aeb5e3030b3cf2f62160dafc14060eefd9a1e4c533bef9e7250",
+      "record_sha256": "4dcee4219829973b593cd42be4cf72dd50923093b568170823635621f65a2b43",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-attack",
+      "assertions": 8,
+      "log": "build/issue283-shield-grip-01/jump-attack.txt",
+      "log_sha256": "f920ae2d254bf628d2adf17c17cbdedcb28be8863e4cb92604b4fc9ce1fbdd7e",
+      "record_sha256": "748543442ceb86d7ce7436c9474a9fe6dbe07f37bb11ce9b00d61629d9af8bbb",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "jump-travel-03",
+      "assertions": 9,
+      "log": "build/issue283-shield-grip-01/jump-travel-03.txt",
+      "log_sha256": "b67b18f69099236b4c904b67baa11c74aa36dcaa16ac1d035e02601f266cbbc4",
+      "record_sha256": "92c6d21b77696d9eb1297b9abd304399bab2009d7106d60517393e5f20bd8781",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "preview",
+      "assertions": 3,
+      "log": "build/issue283-shield-grip-01/preview.txt",
+      "log_sha256": "3e27bc2cc2183b7276b96e7cae12540a874b4515aefd8946b472fe37e35cf47e",
+      "record_sha256": "194a7a9ce63f0c022aa002eddaea11cf0d92e2b844f782bc3a316e6f559a30e9",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "rest",
+      "assertions": 14,
+      "log": "build/issue283-shield-grip-01/rest.txt",
+      "log_sha256": "0ebaa5dc187dd99fe77bc076b00c11e35acfceb59aec134d81f837ec013b0274",
+      "record_sha256": "1beb386801830bae3c842f0a89ce4a4d4ef5ca7d7b5969044d74c5a54afb356a",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "previous-pilot",
+      "assertions": 8,
+      "log": "build/issue283-shield-grip-01/previous-pilot.txt",
+      "log_sha256": "18f4746b09532b59b681103e0a7919102d0f8dd65edfff126c6726d21ea1f984",
+      "record_sha256": "8a3759a97770f4b5d82b5c73c173e08351ec0e229c95852235fb55d13bfd854a",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    },
+    {
+      "label": "camera",
+      "assertions": 12,
+      "log": "build/issue283-shield-grip-01/camera.txt",
+      "log_sha256": "f1412b43a1068b703f75aec9a39d228c6da3e1f63de90aa4086610caa016df68",
+      "record_sha256": "1de53d7adbc1eece208da99683455fb481051f13777de34c703a1d848d4ebfd1",
+      "fixture_sha256": "0253d06db1653fcf74b385b5c6c1fb09f943ee09de78bfea510b2c1ed254ceff"
+    }
+  ],
+  "captures": [
+    {
+      "file": "build/issue283-shield-grip-01/guard-pilot-guard.png",
+      "sha256": "97e46f304cfd2f23681593ad5679b0dd7039f1a5377e5856ef9b3a46a4d689e3"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/guard-pilot-guard-run.png",
+      "sha256": "92b45b1230a8f0cedcb0f0f5c068207159caaa5027e8567c601b9ccf2b1d81fd"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/jump-pilot-jump-prepare.png",
+      "sha256": "d4233ac9b414e4d0e4116d2e17a67be2bfbd10d093cd7542b11a0f98fd781823"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/jump-pilot-jump-air.png",
+      "sha256": "f355b68b6c3c9f9c3d116e04705a774c769790b9d7ae65ed7e843db4783e0749"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/jump-guard-pilot-guard-prepare.png",
+      "sha256": "8af04e1636c40bef160a5c286633ac423cebcb6a6290b12b3835488decefe3a5"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/preview-pilot-front.png",
+      "sha256": "9c0040afb44edd71cd032c7507374698674da7092d07755c11151a0cb0f9efff"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/preview-pilot-side.png",
+      "sha256": "337fabfec03e47cd56b6171dee0f74a9c87a7b377d8f6bf4360fbe286da2b627"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/preview-pilot-rear.png",
+      "sha256": "84da645466665211d059b9116dcbfcf01f173fc66ae8878d764285c4d4bb5811"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/preview-pilot-original.png",
+      "sha256": "192629208fd5cd8095064f1d1fabaede16b3061193b5cbfb561ac81782251eeb"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/rest-pilot-chair.png",
+      "sha256": "e2a6bd956e8927e224cfaab2fd55460529563dfa8cc9ea846d1b8db76ad30b1a"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/rest-pilot-bed.png",
+      "sha256": "0cb38ec57c65380683ff6bce1a7c0e0f2b7f4dbe46dab7ba5583fc18280bbb80"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/rest-pilot-ground.png",
+      "sha256": "1a7cc853e47f4fa99b4ca21b8a6930dc895196f8c12474470494ee8ee7478108"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/camera-pilot-review-front.png",
+      "sha256": "f3cebb5140cb9df48b94b853d2dac9d6a1baf42ebb301c680d4d18cc601ee3f8"
+    },
+    {
+      "file": "build/issue283-shield-grip-01/camera-pilot-review-side.png",
+      "sha256": "252f72d37ae2f198915687d98ab36fb7254682ef53dcde4113ef9eb6dd36764a"
+    }
+  ],
+  "geometry": {
+    "issue": 283,
+    "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+    "baseline_sha256": "8b3105ff8787e05c83a86c1843e3753fa486ecf6d74579445d3b03c1861488ed",
+    "unchanged_non_shield_object_poses": 16500,
+    "grip_contact_samples": 375,
+    "maximum_contact_error_units": 3.145679951185349e-05,
+    "jump_prepare_tics": 10,
+    "landing_tics": 35,
+    "frame_identity_count": 375,
+    "scope": "Evaluated handle center stays in the hand for all poses; resting shield lies in the forward/back plane, guard faces forward. All non-shield posed geometry remains unchanged. Native timing and author review are separate."
+  },
+  "export": {
+    "deterministic_files": 7,
+    "frames": 375,
+    "vertices": 10689,
+    "triangles": 17447,
+    "surfaces": 1,
+    "bytes": 32383160,
+    "md3_sha256": "bdc078573426bf82d94dc6b1d6a97f7236cdf31cdf271eabd9ef5512e1f81fa5",
+    "bounds": {
+      "IdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.1337127685547
+      },
+      "Walk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 167.13400268554688
+      },
+      "Run": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 185.92037963867188
+      },
+      "Melee": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Missile": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 232.8351287841797
+      },
+      "Pain": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.11993408203125
+      },
+      "Death": {
+        "min_z": -4.5361175537109375,
+        "max_z": 171.5362548828125
+      },
+      "Raise": {
+        "min_z": -4.5361175537109375,
+        "max_z": 171.49038696289062
+      },
+      "Seated": {
+        "min_z": -0.004584779962897301,
+        "max_z": 139.13372802734375
+      },
+      "Sleeping": {
+        "min_z": -0.40383148193359375,
+        "max_z": 44.93062210083008
+      },
+      "Crouch": {
+        "min_z": -31.62677764892578,
+        "max_z": 126.6629409790039
+      },
+      "SitDown": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "StandUp": {
+        "min_z": -0.0047194864600896835,
+        "max_z": 171.11993408203125
+      },
+      "LieDown": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.41146850585938
+      },
+      "GetUp": {
+        "min_z": 6.760727410437539e-05,
+        "max_z": 171.35791015625
+      },
+      "JumpPrepare": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "Landing": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "JumpAir": {
+        "min_z": -0.0026671793311834335,
+        "max_z": 151.82386779785156
+      },
+      "GuardIdleBreathing": {
+        "min_z": 6.080602906877175e-05,
+        "max_z": 171.1337127685547
+      },
+      "GuardWalk": {
+        "min_z": -0.001961162080988288,
+        "max_z": 167.13400268554688
+      },
+      "GuardRun": {
+        "min_z": -0.0019037567544728518,
+        "max_z": 185.92037963867188
+      },
+      "GuardJumpPrepare": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "GuardLanding": {
+        "min_z": -0.005204282701015472,
+        "max_z": 171.11993408203125
+      },
+      "GuardJumpAir": {
+        "min_z": -0.0026671793311834335,
+        "max_z": 151.82386779785156
+      }
+    }
+  },
+  "static_errors": 0,
+  "context_words": 2495,
+  "preserved_fixture_failures": [
+    {
+      "log": "build/issue283-shield-grip-01/jump-travel.txt",
+      "log_sha256": "f0dff5466a14286dd111e5702cf94cc21c883c169ce495030b10faddec1a0ed7",
+      "reason": "Fixture waited until the shortened jump could launch before travel."
+    },
+    {
+      "log": "build/issue283-shield-grip-01/jump-travel-02.txt",
+      "log_sha256": "4d0147a6be476f3009136782e56148f0d76c2d81001d0d7852543578e637f147",
+      "reason": "Immediate changemap ran before the loaded game was active; native engine rejected the command. jump-travel-03 waits one startup tic."
+    }
+  ],
+  "limitations": [
+    "CA283-02 remains pending; positive feedback on the prior jump pose is qualified.",
+    "Modular parts and timed rest/provision transitions remain unfinished.",
+    "Earlier art/native/performance evidence retains its own build scope."
+  ]
+}

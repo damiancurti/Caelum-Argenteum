@@ -124,6 +124,23 @@ The first save fixture quit before native save/event completion; its failed
 log remains in motion-01. Waiting for the queued operations fixes the fixture.
 Rest/provision animations and interchangeable runtime parts remain unfinished.
 
+During CA283-02 the author found the shield disconnected from the hand and too
+close to the chest, requesting a proper hand grip and a relaxed forward/back
+orientation. The author praised the jump pose but shortened preparation to
+10 tics; the 35-tic landing remains unchanged. This is qualified feedback, not
+acceptance of CA283-02. The correction parents the shield to hand.L, adds a rear
+grip and keeps its center attached to the posed palm in all actions. Native
+playback samples reuse all 375 frame identities while shortening preparation.
+Evidence for this correction is separate in shield-grip-evidence.json and
+shield-grip-geometry.json. Earlier guard/jump evidence retains its original scope.
+This correction passes 105 assertions in 12 native runs, 375 evaluated grip
+contacts and 16,500 unchanged non-shield object/pose comparisons. Seven export
+artifacts repeat exactly; static validation and normal packaging pass. An older
+pilot save still loads, and the shorter pending jump survives current save/load.
+Two travel-fixture iterations are preserved: one waited too long before travel,
+the other issued changemap before the game was active. A one-tic startup wait
+allows the final check to travel before takeoff and verify cancellation.
+
 
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)

@@ -115,6 +115,26 @@ motion-01 jump-save fixture quit too early to save/finish its event; its failed
 log is preserved. Motion-02 waits for native completion. No gameplay fix was
 needed for that fixture failure. Modularity and rest/provision timing remain open.
 
+## Shield attachment and ten-tic preparation correction
+
+CA283-02 remains open: the author praised the flexion but requested ten-tic
+preparation and a shield held by its grip, resting in the forward/back plane
+beside the body. The shield now follows hand.L and has a visible rear grip.
+The evaluated handle center remains in the hand across all 375 poses; 16,500
+non-shield object/pose comparisons remain unchanged. Maximum contact error is
+0.000032 source unit. The landing stays at 35 tics. DESIGN.json supplies native
+sample times independently of retained source poses, preserving every frame ID.
+
+`shield-grip-evidence.json` records this revision's native, static, export and
+package checks: 105 assertions in 12 native runs, zero static errors and matching
+normal package/source members. Seven export files repeat exactly.
+`shield-grip-geometry.json` records the geometry comparisons.
+Prior evidence above belongs to the preceding builds. The first travel fixture
+waited until the shortened preparation had already launched; the corrected
+fixture waits one startup tic before changing map. An intermediate attempt with
+no wait ran before the loaded game was active and was rejected by the engine.
+Both failed logs remain preserved. CA283-02 requires review of this corrected build.
+
 ## Artifact and reproduction
 
 - Editable source: `assets/source/art/domingo_3d_pilot/domingo.blend`; its packed
@@ -122,8 +142,8 @@ needed for that fixture failure. Modularity and rest/provision timing remain ope
 - Pinned tool: Blender 4.5.3 LTS, official build 67807e1800cc. See DESIGN.json for
   the archive fingerprint and ASSETS for the export command. The committed blend is the art input;
   its initial authoring transcript is not a deterministic blend-file generator.
-- Current export: one surface, 10,629 UV-split vertices, 17,339 triangles, 375 frames,
-  32,201,384 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
+- Current export: one surface, 10,689 UV-split vertices, 17,447 triangles, 375 frames,
+  32,383,160 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
 - Native format/normal decoding checked against GZDoom g4.14.2
   `src/common/models/models_md3.cpp` and `model_md3.h`.
 - Run the exporter twice into fresh directories; `validate_export.py <first>
@@ -137,7 +157,8 @@ needed for that fixture failure. Modularity and rest/provision timing remain ope
 - Manual: omit `--visual`, use `manual.cfg -Interactive` while the author is available.
   F6 compares sprite/model, F7 cycles native chair/bed/ground rest, F8 changes
   viewpoints. B toggles native shield block, Space queues Jump, F9 applies test
-  damage (while health is sufficient). Q exits a rest panel before another
+  damage (while health is sufficient); F10 automatically queues a jump then
+  applies damage during preparation. Q exits a rest panel before another
   shortcut. CA283-01 provisionally accepted the previous presentation; CA283-02
   covers guard/jump. CA282-01 is independently accepted.
 

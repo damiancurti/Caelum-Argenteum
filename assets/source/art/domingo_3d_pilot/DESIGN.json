@@ -781,8 +781,46 @@
         34,
         35
       ],
-      "tics": 35,
-      "loop": false
+      "tics": 10,
+      "loop": false,
+      "sample_tics": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        9,
+        9,
+        9,
+        10,
+        10,
+        10,
+        10
+      ]
     },
     "Landing": {
       "frames": [
@@ -924,8 +962,46 @@
         34,
         35
       ],
-      "tics": 35,
-      "loop": false
+      "tics": 10,
+      "loop": false,
+      "sample_tics": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        9,
+        9,
+        9,
+        10,
+        10,
+        10,
+        10
+      ]
     },
     "GuardLanding": {
       "frames": [
@@ -987,7 +1063,7 @@
       "GetUp": 3,
       "Eating": 4,
       "Drinking": 4,
-      "JumpPreparation": 1,
+      "JumpPreparation": 0.2857142857142857,
       "Landing": 1
     },
     "control_lock": "Block movement, attacks and blocking during each animation.",
@@ -1000,7 +1076,7 @@
       "Add a native shield-block animation.",
       "Walking hands must sway less; running must have its own visibly distinct animation."
     ],
-    "jump": "Flex legs and lower the body for one second before actual takeoff; landing flexes/lowers for one second. Movement, attacks and blocking remain available for both. Any received damage cancels jump preparation; existing jump trajectory/collision remain authoritative after takeoff.",
+    "jump": "Flex the legs and lower the body over 10 native tics before takeoff; landing remains 35 tics. Releasing Jump completes preparation; health loss/incapacity cancels it. Normal movement/attack/block remain available.",
     "shield": "Add an animation driven by actual shield blocking."
   },
   "anatomy_revision": {
@@ -1084,7 +1160,7 @@
   },
   "motion_revision": {
     "date": "2026-10-15",
-    "jump_prepare_seconds": 1,
+    "jump_prepare_seconds": 0.2857142857142857,
     "landing_seconds": 1,
     "jump_release": "Complete the queued jump after key release.",
     "interruptions": "Received damage or incapacity cancels preparation.",
@@ -1107,6 +1183,7 @@
       0
     ],
     "rest_face_plane": "X/Z: extends forward/backward beside the body",
-    "grip": "Rear U-shaped grip centered on the closed gauntlet; guard keeps this same contact point."
+    "grip": "Rear U-shaped grip centered on the closed gauntlet; guard keeps this same contact point.",
+    "timing": "Jump preparation 10 native tics; landing unchanged at 35. Retain all frame identifiers for saves."
   }
 }

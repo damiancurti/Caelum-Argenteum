@@ -44,11 +44,18 @@ def main():
     # Sample counts/timings are art data. Runtime action timings remain native.
     config = json.loads((ART / 'DESIGN.json').read_text(encoding='utf-8'))['export_actions']
     frames = []
+    sample_times = []
     actions = {}
     for name, options in config.items():
         sequence = options['frames']
+        playback = options.get('sample_tics', sequence)
+        if (len(playback) != len(sequence) or not playback or playback[0] != 0
+                or any(not isinstance(t, int) or t < 0 for t in playback)
+                or playback != sorted(playback) or playback[-1] > options['tics']):
+            raise ValueError(f'Invalid native sample timing: {name}')
         actions[name] = dict(options, start=len(frames), count=len(sequence))
         frames.extend((name, f) for f in sequence)
+        sample_times.extend(playback)
     uv = []
     triangles = []
     mapping = []
@@ -128,7 +135,7 @@ def main():
         states += [f'    static clearscope int {method}(int poseId)', '    {',
                    f'        static const int values[]={{{values}}};',
                    f'        return values[Clamp(poseId,0,{len(actions)-1})];', '    }']
-    times = ','.join(str(f) for _, f in frames)
+    times = ','.join(str(t) for t in sample_times)
     states += ['    static clearscope int Sample(int frame)', '    {',
                f'        static const int times[]={{{times}}};',
                f'        return times[Clamp(frame,0,{len(frames)-1})];', '    }',
@@ -146,7 +153,7 @@ def main():
         textures.append(f'Sprite "{sprite}{letter}0", 1, 1 {{ Patch "graphics/caelum/domingo_invisible.png", 0, 0 }}')
         action = actions[name]
         last = number == action['start'] + action['count'] - 1
-        delay = action['tics'] - frame if last else frames[number+1][1] - frame
+        delay = action['tics'] - sample_times[number] if last else sample_times[number+1] - sample_times[number]
         terminal = last and not action['loop']
         states += [f'    F{number}:', f'        {sprite} {letter} {-1 if terminal else max(1,delay)};',
                    '        Stop;' if terminal else f'        Goto F{action["start"] if last else number+1};']

@@ -36,7 +36,7 @@ input, collision, resource costs and attack timing are unchanged. The isolated
 manual fixture starts with always-run off and Shift mapped to native speed input.
 
 The pilot now presents actual native shield blocking with matching idle, walk,
-run and jump poses. One-second jump preparation flexes the legs and lowers the
+run and jump poses. Ten-tic jump preparation flexes the legs and lowers the
 body before native takeoff; releasing Jump keeps that queued action. Actual
 health loss, incapacity, leaving valid ground or map travel cancels preparation.
 One-second landing reverses the flexion on ground contact. Movement, attacks and
@@ -44,7 +44,11 @@ blocking retain their ordinary rules during both transitions. Native CheckJump
 remains the only takeoff velocity, Air-cost and thermal authority; swimming,
 flight and uncrouching retain native Jump behavior. Revision 2 initializes new
 transient fields idempotently for older pilot saves and preserves a pending
-preparation's elapsed time in current saves. CA283-02 covers the new visual review.
+preparation's elapsed time in current saves. Shield geometry now follows a grip
+in the hand; the relaxed shield extends along the character's forward/back plane.
+The timing correction retains all existing model frame identities. CA283-02
+covers the revised visual review; the author praised the jump pose but requested
+the shorter timing and corrected shield attachment.
 
 
 

@@ -17,8 +17,9 @@ Required before completion:
   progressive provision rates/quantities. Damage interrupts immediately and
   returns to ordinary combat rules. Existing 40-tic candidate clips need retiming.
 - Obtain CA283-02 author review of implemented native shield blocking and
-  one-second jump preparation/landing. Releasing Jump preserves the queued
+  ten-tic jump preparation/one-second landing. Releasing Jump preserves the queued
   action; damage/incapacity cancels it; ordinary movement/attack/block remain.
+  Review the corrected hand-held shield and its relaxed forward/back orientation.
 - Preserve native collision, resources, equipment and furniture authority;
   validate transitions, interruptions, save/load and equipment changes. Retain
   documented fallback for unsupported variants/crouch. Broaden performance

@@ -21,7 +21,8 @@ The author found walk/run improved and now prefers polished human 3D references
 for anatomy. The latest candidate adapts a CC0 MakeHuman head, refines hair and
 holds the running sword perpendicular to the hand, preserving its contact point.
 CA283-01 is provisionally accepted, with fine model polish deferred. A subsequent
-revision adds native shield-block presentation and one-second queued jump/landing
+revision adds native shield-block presentation, ten-tic jump preparation and
+one-second landing
 to the opt-in pilot; CA283-02 remains pending. Modular parts and timed
 rest/provision animation work remain incomplete.
 
