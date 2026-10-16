@@ -89,6 +89,21 @@ Native review caught flat hair detail in the preceding candidate; varying its
 owned texture samples corrected that presentation before the final tests.
 
 
+Author confirmation on 2026-10-15 (America/Buenos_Aires), CA283-01, origin
+5.4.23/#283: "De momento est? muy bien, pero luego perfeccionaremos detalles de
+este modelo." The current head-grip-02 prototype presentation is provisionally
+accepted; fine visual polish is deferred. This does not accept unimplemented
+modularity or new animations, or claim that each optional fallback step was
+repeated. The completed bounded review leaves pending_test.txt; new executable
+checks will use new IDs. No overall #283 completion is claimed.
+The author also confirmed that releasing Jump during preparation still completes
+the queued jump. Damage interrupts rest/provision transitions immediately and
+returns to ordinary combat rules.
+GitHub audit: 19 implementation PRs in the current batch are already merged;
+PR272 (#237), PR299 (#252) and PR300 (#282) remain open and ready. Their issues
+remain open; this audit performs no new merges or closures.
+
+
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
 

@@ -4,37 +4,30 @@ Documentation version: **5.4.23** — 2026-10-15.
 
 ## 5.4.23 - Domingo 3D pilot (#283, in progress)
 
-Branch feat/issue283-domingo-3d-pilot adds editable Domingo art,
-deterministic MD3 export and a controlled native-player presentation adapter.
-Evidence/limitations: assets/validation_5423/RESULTS.md. No global replacement,
-merge, issue closure or author acceptance. Keep #284 in its own patch.
+Branch feat/issue283-domingo-3d-pilot supplies editable Domingo art, deterministic
+MD3 export and native presentation. CA283-01 is provisionally accepted as of
+2026-10-15; fine model polish is deferred. Evidence: validation_5423/RESULTS.md.
+Keep the original sprites, qualified earlier evidence and #284's separate scope.
 
-Outstanding: review reconstructed silhouette/materials/views; implement
-sit/stand (2 s), lie/get-up (3 s) and eating/drinking (4 s) integration;
-polish transient floor/cloth intersections; exercise those transitions when
-defined; extend or retain documented fallback for unsupported equipment/crouch;
-broaden performance evidence before any NPC/battle conversion. The existing
-40-tic source transition clips need retiming. The author requires movement,
-attack and block locks during animation, without changing provision consumption.
-CA283-01 is a bounded prototype review, not completion of all issue criteria.
-The author returned and resumed questions/manual tests. Extend this pilot with
-interchangeable weapon, shield, armor, hair and face parts using existing choices,
-starting with Domingo; the first fixed-surface export does not satisfy that
-requirement. Preserve its tested intermediate evidence and original resources.
-Initial author feedback: walking knees bend sideways and elbows look rigid.
-Correct their anatomical motion and add a shield-block animation driven by
-native blocking. CA283-01 remains open; the author has not accepted the art.
-The anatomy correction is implemented and under renewed author review. Add
-one-second jump preparation before takeoff and one-second landing, lowering
-the body with leg flexion; attacks, movement and blocking remain available.
-Received damage cancels jump preparation. These new animations remain open.
-The author found walk/run improved, then requested a more perpendicular sword
-while running, a human-shaped head and better hair. Polished human 3D references
-now guide anatomy rather than the sprite silhouette. The new CC0 MakeHuman head,
-layered hair and Run-only grip are awaiting visual review. CA283-01 stays open;
-partial improvement does not accept the whole pilot.
+Required before completion:
+- Demonstrate interchangeable weapon, shield, armor, hair and face parts using
+  existing choices, starting with Domingo; the fixed-surface export is insufficient.
+- Add animation driven by actual shield blocking.
+- Implement chair sit/stand (2 s), floor/bed lie/get-up (3 s), and eating/drinking
+  visual cycles (4 s), blocking movement/attack/block while each runs. Keep native
+  progressive provision rates/quantities. Damage interrupts immediately and
+  returns to ordinary combat rules. Existing 40-tic candidate clips need retiming.
+- Add one-second jump preparation before takeoff and one-second landing, with
+  leg flexion/body lowering. Movement/attack/block stay available. Releasing Jump
+  keeps the queued preparation; any received damage or incapacity cancels it.
+- Preserve native collision, resources, equipment and furniture authority;
+  validate transitions, interruptions, save/load and equipment changes. Retain
+  documented fallback for unsupported variants/crouch. Broaden performance
+  evidence before any separate NPC/battle conversion.
 
-
+19 implementation PRs in the batch are already merged. #237/PR272, #252/PR299 and
+#282/PR300 are ready but remain open; #283/PR301 remains draft. No additional
+merge/closure is performed by this status audit.
 
 ## 5.4.22 - Quick-use HUD (#282, accepted)
 

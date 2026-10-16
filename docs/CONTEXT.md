@@ -2,10 +2,10 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-**5.4.23/#283:** PR301 draft; validation_5423; CA283-01 open. Head/hair/grip review;
+**5.4.23/#283:** PR301 draft; validation_5423; CA283-01 provisionally accepted;
 modular parts and timed/block/jump animations pending.
 **5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
-Author returned; keep-awake released. #284 next:
+Keep-awake released. #284 next:
 unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.

@@ -1,6 +1,6 @@
 {
   "issue": 283,
-  "status": "Unreviewed fixed-appearance intermediate; modular parts and approved timed animations remain open",
+  "status": "Presentation provisionally accepted on 2026-10-15; fine polish deferred. Modular parts and approved timed animations remain open.",
   "reference": {
     "file": "assets/source/art/death_repair_518/domingo-original.png",
     "sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
@@ -846,6 +846,6 @@
       "contact": "Rotate about the held grip center; preserve its position relative to hand.R throughout Run."
     },
     "hair": "Scalp-fitted dark cap with separate tapered, curved locks of differing lengths; no painted face projected onto the back of the head. Hair UVs vary the original painted strands so native sector lighting retains detail.",
-    "author_review": "Walk feedback: better. New head, hair and running grip require author review; no overall #283 acceptance."
+    "author_review": "CA283-01 provisionally accepted on 2026-10-15; fine model polish deferred. Overall #283 is incomplete."
   }
 }

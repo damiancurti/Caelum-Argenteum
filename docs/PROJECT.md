@@ -20,7 +20,8 @@ runtime is an intermediate prototype; modular integration remains in #283.
 The author found walk/run improved and now prefers polished human 3D references
 for anatomy. The latest candidate adapts a CC0 MakeHuman head, refines hair and
 holds the running sword perpendicular to the hand, preserving its contact point.
-Gameplay timings remain unchanged; CA283-01 still awaits visual review.
+Gameplay timings remain unchanged; CA283-01 is provisionally accepted, with
+fine model polish deferred. Modular/timed animation work remains incomplete.
 
 
 

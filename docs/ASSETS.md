@@ -39,7 +39,8 @@ is in DOMINGO_3D_PILOT.txt and MAKEHUMAN_CC0.txt. Snow (Blender Studio) and a ma
 head scan (petemc) supplied visual references only; DESIGN.json records URLs and
 roles. The hair is project-authored fitted scalp/curved tapered locks. Run rotates
 the sword around its held grip center; other native actions retain their geometry
-outside the revised head/hair. This candidate is not yet accepted. Its evidence
+outside the revised head/hair. The author provisionally accepted this candidate on 2026-10-15, deferring fine
+visual polish. Its evidence
 is separate in validation_5423/head-grip-evidence.json.
 
 On return, the author required interchangeable weapons, shields, armor, hair

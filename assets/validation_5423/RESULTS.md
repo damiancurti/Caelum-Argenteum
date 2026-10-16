@@ -2,7 +2,10 @@
 
 The default player is unchanged. This opt-in pilot uses the author-supplied
 Domingo materials, a CC0 human head, an editable Blender mesh/UV/26-bone rig with 15 actions,
-and deterministic native MD3 registration. It is not author-approved or complete.
+and deterministic native MD3 registration. The author provisionally accepted
+the head-grip-02 presentation on 2026-10-15 (CA283-01); fine polish is deferred.
+The overall issue is not complete. Earlier pending labels below describe each
+evidence stage before this qualified acceptance.
 The runtime appearance is fixed; the author now requires interchangeable parts
 for weapon, shield, armor, hair and face, demonstrated first on Domingo. This
 intermediate export does not satisfy that requirement. Approved chair transitions
