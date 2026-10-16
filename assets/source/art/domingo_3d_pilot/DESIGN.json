@@ -415,16 +415,16 @@
     ],
     [
       "shield",
-      "forearm.L",
+      "hand.L",
       [
-        8,
-        30,
-        103
+        5.0,
+        29.0,
+        87.0
       ],
       [
-        14,
-        30,
-        103
+        5.0,
+        35.0,
+        87.0
       ]
     ]
   ],
@@ -1092,5 +1092,21 @@
     "guard": "Actual native shield blocking; idle/walk/run/prepare/air/landing variants retain their matching body/leg curves.",
     "root_lowering_units": 19,
     "scope": "Opt-in pilot; native CheckJump remains the sole takeoff, Air and thermal authority."
+  },
+  "shield_grip_revision": {
+    "date": "2026-10-15",
+    "parent": "hand.L",
+    "palm_center": [
+      5.0,
+      29.0,
+      87.0
+    ],
+    "rest_face_normal": [
+      0,
+      1,
+      0
+    ],
+    "rest_face_plane": "X/Z: extends forward/backward beside the body",
+    "grip": "Rear U-shaped grip centered on the closed gauntlet; guard keeps this same contact point."
   }
 }
