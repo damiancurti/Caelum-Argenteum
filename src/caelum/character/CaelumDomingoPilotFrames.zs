@@ -16,25 +16,34 @@ class CaelumDomingoPilotFrames : Actor
     const STANDUP=12;
     const LIEDOWN=13;
     const GETUP=14;
+    const JUMPPREPARE=15;
+    const LANDING=16;
+    const JUMPAIR=17;
+    const GUARDIDLEBREATHING=18;
+    const GUARDWALK=19;
+    const GUARDRUN=20;
+    const GUARDJUMPPREPARE=21;
+    const GUARDLANDING=22;
+    const GUARDJUMPAIR=23;
     static clearscope int Start(int poseId)
     {
-        static const int values[]={0,14,22,34,48,64,72,101,122,136,150,151,162,173,184};
-        return values[Clamp(poseId,0,14)];
+        static const int values[]={0,14,22,34,48,64,72,101,122,136,150,151,162,173,184,195,231,267,268,282,290,302,338,374};
+        return values[Clamp(poseId,0,23)];
     }
     static clearscope int Count(int poseId)
     {
-        static const int values[]={14,8,12,14,16,8,29,21,14,14,1,11,11,11,11};
-        return values[Clamp(poseId,0,14)];
+        static const int values[]={14,8,12,14,16,8,29,21,14,14,1,11,11,11,11,36,36,1,14,8,12,36,36,1};
+        return values[Clamp(poseId,0,23)];
     }
     static clearscope int Duration(int poseId)
     {
-        static const int values[]={70,8,12,14,16,8,56,40,70,70,1,40,40,40,40};
-        return values[Clamp(poseId,0,14)];
+        static const int values[]={70,8,12,14,16,8,56,40,70,70,1,40,40,40,40,35,35,1,70,8,12,35,35,1};
+        return values[Clamp(poseId,0,23)];
     }
     static clearscope int Sample(int frame)
     {
-        static const int times[]={0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11,12,13,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0,1,2,3,4,5,6,7,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40};
-        return times[Clamp(frame,0,194)];
+        static const int times[]={0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11,12,13,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0,1,2,3,4,5,6,7,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40,0,4,8,12,16,20,24,28,32,36,40,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,0,0,5,10,15,20,25,30,35,40,45,50,55,60,65,0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7,8,9,10,11,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,0};
+        return times[Clamp(frame,0,374)];
     }
     static clearscope int FrameFor(int poseId,int elapsed)
     {
@@ -630,6 +639,546 @@ class CaelumDomingoPilotFrames : Actor
         Goto F194;
     F194:
         D307 M -1;
+        Stop;
+    F195:
+        D307 N 1;
+        Goto F196;
+    F196:
+        D307 O 1;
+        Goto F197;
+    F197:
+        D307 P 1;
+        Goto F198;
+    F198:
+        D307 Q 1;
+        Goto F199;
+    F199:
+        D307 R 1;
+        Goto F200;
+    F200:
+        D307 S 1;
+        Goto F201;
+    F201:
+        D307 T 1;
+        Goto F202;
+    F202:
+        D307 U 1;
+        Goto F203;
+    F203:
+        D307 V 1;
+        Goto F204;
+    F204:
+        D307 W 1;
+        Goto F205;
+    F205:
+        D307 X 1;
+        Goto F206;
+    F206:
+        D307 Y 1;
+        Goto F207;
+    F207:
+        D307 Z 1;
+        Goto F208;
+    F208:
+        D308 A 1;
+        Goto F209;
+    F209:
+        D308 B 1;
+        Goto F210;
+    F210:
+        D308 C 1;
+        Goto F211;
+    F211:
+        D308 D 1;
+        Goto F212;
+    F212:
+        D308 E 1;
+        Goto F213;
+    F213:
+        D308 F 1;
+        Goto F214;
+    F214:
+        D308 G 1;
+        Goto F215;
+    F215:
+        D308 H 1;
+        Goto F216;
+    F216:
+        D308 I 1;
+        Goto F217;
+    F217:
+        D308 J 1;
+        Goto F218;
+    F218:
+        D308 K 1;
+        Goto F219;
+    F219:
+        D308 L 1;
+        Goto F220;
+    F220:
+        D308 M 1;
+        Goto F221;
+    F221:
+        D308 N 1;
+        Goto F222;
+    F222:
+        D308 O 1;
+        Goto F223;
+    F223:
+        D308 P 1;
+        Goto F224;
+    F224:
+        D308 Q 1;
+        Goto F225;
+    F225:
+        D308 R 1;
+        Goto F226;
+    F226:
+        D308 S 1;
+        Goto F227;
+    F227:
+        D308 T 1;
+        Goto F228;
+    F228:
+        D308 U 1;
+        Goto F229;
+    F229:
+        D308 V 1;
+        Goto F230;
+    F230:
+        D308 W -1;
+        Stop;
+    F231:
+        D308 X 1;
+        Goto F232;
+    F232:
+        D308 Y 1;
+        Goto F233;
+    F233:
+        D308 Z 1;
+        Goto F234;
+    F234:
+        D309 A 1;
+        Goto F235;
+    F235:
+        D309 B 1;
+        Goto F236;
+    F236:
+        D309 C 1;
+        Goto F237;
+    F237:
+        D309 D 1;
+        Goto F238;
+    F238:
+        D309 E 1;
+        Goto F239;
+    F239:
+        D309 F 1;
+        Goto F240;
+    F240:
+        D309 G 1;
+        Goto F241;
+    F241:
+        D309 H 1;
+        Goto F242;
+    F242:
+        D309 I 1;
+        Goto F243;
+    F243:
+        D309 J 1;
+        Goto F244;
+    F244:
+        D309 K 1;
+        Goto F245;
+    F245:
+        D309 L 1;
+        Goto F246;
+    F246:
+        D309 M 1;
+        Goto F247;
+    F247:
+        D309 N 1;
+        Goto F248;
+    F248:
+        D309 O 1;
+        Goto F249;
+    F249:
+        D309 P 1;
+        Goto F250;
+    F250:
+        D309 Q 1;
+        Goto F251;
+    F251:
+        D309 R 1;
+        Goto F252;
+    F252:
+        D309 S 1;
+        Goto F253;
+    F253:
+        D309 T 1;
+        Goto F254;
+    F254:
+        D309 U 1;
+        Goto F255;
+    F255:
+        D309 V 1;
+        Goto F256;
+    F256:
+        D309 W 1;
+        Goto F257;
+    F257:
+        D309 X 1;
+        Goto F258;
+    F258:
+        D309 Y 1;
+        Goto F259;
+    F259:
+        D309 Z 1;
+        Goto F260;
+    F260:
+        D30A A 1;
+        Goto F261;
+    F261:
+        D30A B 1;
+        Goto F262;
+    F262:
+        D30A C 1;
+        Goto F263;
+    F263:
+        D30A D 1;
+        Goto F264;
+    F264:
+        D30A E 1;
+        Goto F265;
+    F265:
+        D30A F 1;
+        Goto F266;
+    F266:
+        D30A G -1;
+        Stop;
+    F267:
+        D30A H -1;
+        Stop;
+    F268:
+        D30A I 5;
+        Goto F269;
+    F269:
+        D30A J 5;
+        Goto F270;
+    F270:
+        D30A K 5;
+        Goto F271;
+    F271:
+        D30A L 5;
+        Goto F272;
+    F272:
+        D30A M 5;
+        Goto F273;
+    F273:
+        D30A N 5;
+        Goto F274;
+    F274:
+        D30A O 5;
+        Goto F275;
+    F275:
+        D30A P 5;
+        Goto F276;
+    F276:
+        D30A Q 5;
+        Goto F277;
+    F277:
+        D30A R 5;
+        Goto F278;
+    F278:
+        D30A S 5;
+        Goto F279;
+    F279:
+        D30A T 5;
+        Goto F280;
+    F280:
+        D30A U 5;
+        Goto F281;
+    F281:
+        D30A V 5;
+        Goto F268;
+    F282:
+        D30A W 1;
+        Goto F283;
+    F283:
+        D30A X 1;
+        Goto F284;
+    F284:
+        D30A Y 1;
+        Goto F285;
+    F285:
+        D30A Z 1;
+        Goto F286;
+    F286:
+        D30B A 1;
+        Goto F287;
+    F287:
+        D30B B 1;
+        Goto F288;
+    F288:
+        D30B C 1;
+        Goto F289;
+    F289:
+        D30B D 1;
+        Goto F282;
+    F290:
+        D30B E 1;
+        Goto F291;
+    F291:
+        D30B F 1;
+        Goto F292;
+    F292:
+        D30B G 1;
+        Goto F293;
+    F293:
+        D30B H 1;
+        Goto F294;
+    F294:
+        D30B I 1;
+        Goto F295;
+    F295:
+        D30B J 1;
+        Goto F296;
+    F296:
+        D30B K 1;
+        Goto F297;
+    F297:
+        D30B L 1;
+        Goto F298;
+    F298:
+        D30B M 1;
+        Goto F299;
+    F299:
+        D30B N 1;
+        Goto F300;
+    F300:
+        D30B O 1;
+        Goto F301;
+    F301:
+        D30B P 1;
+        Goto F290;
+    F302:
+        D30B Q 1;
+        Goto F303;
+    F303:
+        D30B R 1;
+        Goto F304;
+    F304:
+        D30B S 1;
+        Goto F305;
+    F305:
+        D30B T 1;
+        Goto F306;
+    F306:
+        D30B U 1;
+        Goto F307;
+    F307:
+        D30B V 1;
+        Goto F308;
+    F308:
+        D30B W 1;
+        Goto F309;
+    F309:
+        D30B X 1;
+        Goto F310;
+    F310:
+        D30B Y 1;
+        Goto F311;
+    F311:
+        D30B Z 1;
+        Goto F312;
+    F312:
+        D30C A 1;
+        Goto F313;
+    F313:
+        D30C B 1;
+        Goto F314;
+    F314:
+        D30C C 1;
+        Goto F315;
+    F315:
+        D30C D 1;
+        Goto F316;
+    F316:
+        D30C E 1;
+        Goto F317;
+    F317:
+        D30C F 1;
+        Goto F318;
+    F318:
+        D30C G 1;
+        Goto F319;
+    F319:
+        D30C H 1;
+        Goto F320;
+    F320:
+        D30C I 1;
+        Goto F321;
+    F321:
+        D30C J 1;
+        Goto F322;
+    F322:
+        D30C K 1;
+        Goto F323;
+    F323:
+        D30C L 1;
+        Goto F324;
+    F324:
+        D30C M 1;
+        Goto F325;
+    F325:
+        D30C N 1;
+        Goto F326;
+    F326:
+        D30C O 1;
+        Goto F327;
+    F327:
+        D30C P 1;
+        Goto F328;
+    F328:
+        D30C Q 1;
+        Goto F329;
+    F329:
+        D30C R 1;
+        Goto F330;
+    F330:
+        D30C S 1;
+        Goto F331;
+    F331:
+        D30C T 1;
+        Goto F332;
+    F332:
+        D30C U 1;
+        Goto F333;
+    F333:
+        D30C V 1;
+        Goto F334;
+    F334:
+        D30C W 1;
+        Goto F335;
+    F335:
+        D30C X 1;
+        Goto F336;
+    F336:
+        D30C Y 1;
+        Goto F337;
+    F337:
+        D30C Z -1;
+        Stop;
+    F338:
+        D30D A 1;
+        Goto F339;
+    F339:
+        D30D B 1;
+        Goto F340;
+    F340:
+        D30D C 1;
+        Goto F341;
+    F341:
+        D30D D 1;
+        Goto F342;
+    F342:
+        D30D E 1;
+        Goto F343;
+    F343:
+        D30D F 1;
+        Goto F344;
+    F344:
+        D30D G 1;
+        Goto F345;
+    F345:
+        D30D H 1;
+        Goto F346;
+    F346:
+        D30D I 1;
+        Goto F347;
+    F347:
+        D30D J 1;
+        Goto F348;
+    F348:
+        D30D K 1;
+        Goto F349;
+    F349:
+        D30D L 1;
+        Goto F350;
+    F350:
+        D30D M 1;
+        Goto F351;
+    F351:
+        D30D N 1;
+        Goto F352;
+    F352:
+        D30D O 1;
+        Goto F353;
+    F353:
+        D30D P 1;
+        Goto F354;
+    F354:
+        D30D Q 1;
+        Goto F355;
+    F355:
+        D30D R 1;
+        Goto F356;
+    F356:
+        D30D S 1;
+        Goto F357;
+    F357:
+        D30D T 1;
+        Goto F358;
+    F358:
+        D30D U 1;
+        Goto F359;
+    F359:
+        D30D V 1;
+        Goto F360;
+    F360:
+        D30D W 1;
+        Goto F361;
+    F361:
+        D30D X 1;
+        Goto F362;
+    F362:
+        D30D Y 1;
+        Goto F363;
+    F363:
+        D30D Z 1;
+        Goto F364;
+    F364:
+        D30E A 1;
+        Goto F365;
+    F365:
+        D30E B 1;
+        Goto F366;
+    F366:
+        D30E C 1;
+        Goto F367;
+    F367:
+        D30E D 1;
+        Goto F368;
+    F368:
+        D30E E 1;
+        Goto F369;
+    F369:
+        D30E F 1;
+        Goto F370;
+    F370:
+        D30E G 1;
+        Goto F371;
+    F371:
+        D30E H 1;
+        Goto F372;
+    F372:
+        D30E I 1;
+        Goto F373;
+    F373:
+        D30E J -1;
+        Stop;
+    F374:
+        D30E K -1;
         Stop;
     }
 }

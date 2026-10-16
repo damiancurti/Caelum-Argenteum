@@ -51,7 +51,7 @@ Continue the same #283 pilot with reusable parts and native saved identity;
 converting all other characters is outside this initial trial.
 
 `assets/source/art/domingo_3d_pilot/domingo.blend` contains editable mesh/UVs,
-26 rig bones including foot IK/poles, packed source-derived texture and 15 named
+26 rig bones including foot IK/poles, packed source-derived texture and 24 named
 actions. DESIGN.json records provenance, coverage, timing and pending decisions.
 The .blend is authoritative art input; the retained initial authoring transcript
 is construction history, not a byte-identical Blender-file regeneration tool.
@@ -61,12 +61,17 @@ The skin keeps original RGB and makes alpha opaque for UV sampling. It is
 Blender 4.5.3 LTS exports deterministically with:
 `blender -b --python assets/generators/export_domingo_pilot.py -- --output build/issue283-export --install`.
 The exporter reads the committed source, bakes a native MD3 v15 with one surface,
-10,629 UV-split vertices, 17,339 triangles and 195 frames (16,885,544 bytes), and
+10,629 UV-split vertices, 17,339 triangles and 375 frames (32,201,384 bytes), and
 generates state/texture/model registrations. The exact GZDoom 4.14.2 loader was
 checked before export. No Blender executable, IWAD or generated test PK3 ships.
 
 The opt-in player subclass supports sword/shield idle, walk/run, native attack
-poses, pain/death/raise and seated/lying breathing. Other equipment and crouch
+poses, pain/death/raise and seated/lying breathing. New guard variants raise the
+shield while retaining idle/walk/run and jump/landing leg motion. JumpPrepare
+lowers the body and flexes the knees forward over one second; Landing reverses
+that movement over one second. These additions preserve all 195 previously
+exported coordinate/normal frames. Guard/jump visual review is CA283-02; the
+provisional CA283-01 acceptance applies to the preceding candidate. Other equipment and crouch
 retain existing appearance. Native furniture offsets and the 47-unit seat
 support are retained; the cape folds onto the chair. Original sprites remain
 available for comparison. Standing geometry uses the existing 170-unit human
