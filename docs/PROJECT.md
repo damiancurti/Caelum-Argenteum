@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.25** — 2026-10-16.
+Documentation version: **5.4.26** — 2026-10-16.
+
+## 5.4.26 - Active seal registry (#305)
+
+Requested on 2026-10-16 after #304 identified repeated empty climate-channel
+lookups. A transient per-map index tracks channel creation/destruction and is
+rebuilt on load and map changes. Production physiology, seal formulas and AI
+cadence remain unchanged. Native equivalence, current/previous-version saves
+and hub checks pass (212 current-runtime assertions plus two legacy seed checks).
+Repeated controls improve approach simulation from 18.0-18.3 to 28.7-29.3 tics/s,
+and saved combat from 5.2-5.3 to 9.7 tics/s, retaining NPC thermal states and
+matching sampled populations/projectiles. These are not displayed FPS and combat
+still falls below 35 tics/s. See validation_5426 for methods, failed-attempt
+retention, prior-profile reuse and qualifications. Review remains pending;
+#304/PR306 and its CA304-01 author check stay separate.
 
 ## 5.4.25 - MAP06 performance diagnosis and corpse retention (#304)
 

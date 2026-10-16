@@ -1,0 +1,27 @@
+[
+  {
+    "source": "build/issue305-study-01/inherited-manifest.json",
+    "artifact": "issue305-study-01-inherited-manifest.json",
+    "raw_sha256": "51b684fc9f8a36d9e70da4a70b2c75379aef2d20620fae3c5b7041105961120c"
+  },
+  {
+    "source": "build/issue305-study-01/manifest.json",
+    "artifact": "issue305-study-01-manifest.json",
+    "raw_sha256": "1f6b1e1793d2f5e9e6fc05836b2e9d7c8251e849a70de4df49908fe8f89750d8"
+  },
+  {
+    "source": "build/issue305-study-01/budget.cfg",
+    "artifact": "issue305-study-01-budget.cfg",
+    "raw_sha256": "20e1d1f7cae0903323d6581b978fef5e0fe8853068c994750af0d3cee20e10e9"
+  },
+  {
+    "source": "build/issue305-study-01/long.cfg",
+    "artifact": "issue305-study-01-long.cfg",
+    "raw_sha256": "406513e3509a7725de472f8f80177f2fc2a0384b3228b18be93419f8e8436b31"
+  },
+  {
+    "source": "build/issue305-study-01/study.cfg",
+    "artifact": "issue305-study-01-study.cfg",
+    "raw_sha256": "fff4e633fbcff078462d886b91055a04c9dd2bf58b3cd52f219f69e1c04e630f"
+  }
+]

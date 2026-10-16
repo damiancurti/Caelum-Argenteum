@@ -1,0 +1,152 @@
+[
+  {
+    "source": "build/issue305-01/manifest.json",
+    "artifact": "issue305-01-manifest.json",
+    "raw_sha256": "c60a050a2dc0686ec0ec42ee555ca80b1df3112c584ca02d4124e9aef7afd233"
+  },
+  {
+    "source": "build/issue305-01/registry-manifest.json",
+    "artifact": "issue305-01-registry-manifest.json",
+    "raw_sha256": "03e4b876e67158d3d3cdff247500a6f5ecd043da8e9c7e48be25cfc05e1c10d9"
+  },
+  {
+    "source": "build/issue305-01/defenses.cfg",
+    "artifact": "issue305-01-defenses.cfg",
+    "raw_sha256": "f308b6ac804711abc25322e349be5413ef6e51204ac72438aeccaa64ff4dd722"
+  },
+  {
+    "source": "build/issue305-01/depth.cfg",
+    "artifact": "issue305-01-depth.cfg",
+    "raw_sha256": "117870d9b0099e7d315686c0ad76b0fd6d24dc4d8f3d687c0ae8fc05b1f223dc"
+  },
+  {
+    "source": "build/issue305-01/earth.cfg",
+    "artifact": "issue305-01-earth.cfg",
+    "raw_sha256": "1dab5f19216ca3ffa2b8eb2d34a686b3cecf53726393a29853bb5ba91d18903d"
+  },
+  {
+    "source": "build/issue305-01/environment.cfg",
+    "artifact": "issue305-01-environment.cfg",
+    "raw_sha256": "fdc2e660da564e98194733f2efcad6a1b6e03bca7c29de7417ce9cf8f2697148"
+  },
+  {
+    "source": "build/issue305-01/falling.cfg",
+    "artifact": "issue305-01-falling.cfg",
+    "raw_sha256": "643d90831f8fb398112b99ee0899055ef1fb95edf196e511db4a3a9889a76265"
+  },
+  {
+    "source": "build/issue305-01/formulas.cfg",
+    "artifact": "issue305-01-formulas.cfg",
+    "raw_sha256": "d442774b2b5fb5b072a274aed027e78e1645608aeb9703d15246e8142e466d71"
+  },
+  {
+    "source": "build/issue305-01/gallery.cfg",
+    "artifact": "issue305-01-gallery.cfg",
+    "raw_sha256": "05d129448f21f64e9c1714dc7763e6774eb9cda7548765f6b22ce0176b71c846"
+  },
+  {
+    "source": "build/issue305-01/gravity-load.cfg",
+    "artifact": "issue305-01-gravity-load.cfg",
+    "raw_sha256": "4a3fa64ecafae2e834b754a88967df5df50876c4fa5b784d823c00a6ddc3d332"
+  },
+  {
+    "source": "build/issue305-01/gravity-save.cfg",
+    "artifact": "issue305-01-gravity-save.cfg",
+    "raw_sha256": "67bb43973c1ff12a1b9eac1991dfca88961ab7b995fb150e731c21405792c096"
+  },
+  {
+    "source": "build/issue305-01/gravity.cfg",
+    "artifact": "issue305-01-gravity.cfg",
+    "raw_sha256": "5cadb5e3ba91f98f6a20576b587f384088b22a6ccc56f70a9b6360b1308d742e"
+  },
+  {
+    "source": "build/issue305-01/input.cfg",
+    "artifact": "issue305-01-input.cfg",
+    "raw_sha256": "4145f00e3debf054fdbccd35c173090964b5acbc95963bfa6a67c5c54d263ec5"
+  },
+  {
+    "source": "build/issue305-01/interruptions.cfg",
+    "artifact": "issue305-01-interruptions.cfg",
+    "raw_sha256": "85d7baeb8c7908f971b8f3964fc150e65a63a9d33f9f35ab6b031d3154200a4a"
+  },
+  {
+    "source": "build/issue305-01/legacy.cfg",
+    "artifact": "issue305-01-legacy.cfg",
+    "raw_sha256": "dde5b01a5e96f1fdcd195e30f6e4dcb1589168a1b52024d9c0786bbb934cfd26"
+  },
+  {
+    "source": "build/issue305-01/load-before-visual.cfg",
+    "artifact": "issue305-01-load-before-visual.cfg",
+    "raw_sha256": "6763cb4e50314222d49c6b5aed13c7abcc5717eee8be416a2ebc5cb2f36db62b"
+  },
+  {
+    "source": "build/issue305-01/load.cfg",
+    "artifact": "issue305-01-load.cfg",
+    "raw_sha256": "e9631956408af605c1d836796e6a3d006a27737ab3bd801694a758ba57b27c8f"
+  },
+  {
+    "source": "build/issue305-01/manual.cfg",
+    "artifact": "issue305-01-manual.cfg",
+    "raw_sha256": "2c84ea4c3d4f538b8250aa29f065dc9aa54195e858979eaec93a95799b3d1ca3"
+  },
+  {
+    "source": "build/issue305-01/performance.cfg",
+    "artifact": "issue305-01-performance.cfg",
+    "raw_sha256": "896cfa589110b07427d5e6a7c59362e0ad8b10e0c9f60cd7409b43f7e3369ccb"
+  },
+  {
+    "source": "build/issue305-01/presentation.cfg",
+    "artifact": "issue305-01-presentation.cfg",
+    "raw_sha256": "6e6141f96bcb6dc93bb61d3de7fb68cab72ef9798e415c6ee95515b37a11c9e0"
+  },
+  {
+    "source": "build/issue305-01/preview.cfg",
+    "artifact": "issue305-01-preview.cfg",
+    "raw_sha256": "e9fd4a22781ed6dc0999b0796bf65ac79429fab882f44c83a5a38076ba3d2a91"
+  },
+  {
+    "source": "build/issue305-01/registry-load.cfg",
+    "artifact": "issue305-01-registry-load.cfg",
+    "raw_sha256": "619586d02b13756f8021ede11315fafa9ae7b7f527bf33cd6c8f59530f89b700"
+  },
+  {
+    "source": "build/issue305-01/registry-travel.cfg",
+    "artifact": "issue305-01-registry-travel.cfg",
+    "raw_sha256": "63855eb1779d1b278338e1aa28c9633da83302fe53c01c6a0dd38eea1930227d"
+  },
+  {
+    "source": "build/issue305-01/registry.cfg",
+    "artifact": "issue305-01-registry.cfg",
+    "raw_sha256": "1c9499f23ceafc3ffd728dbe206962bd968d0886dbac9f0129fd2465783e3df4"
+  },
+  {
+    "source": "build/issue305-01/roof.cfg",
+    "artifact": "issue305-01-roof.cfg",
+    "raw_sha256": "06aa0ba61475c30ccb1fce70f10226c26bc1718e6997fd14816b3d20504eef37"
+  },
+  {
+    "source": "build/issue305-01/save.cfg",
+    "artifact": "issue305-01-save.cfg",
+    "raw_sha256": "02e55fad9166a6a9ea985f9132ceb945f71e11b8ed5ffc0acc549c4608fe71d3"
+  },
+  {
+    "source": "build/issue305-01/seed.cfg",
+    "artifact": "issue305-01-seed.cfg",
+    "raw_sha256": "9fc42392cd3f46501c28868fafc21de650f2f2ef713aad82e13ff88b835bdb2e"
+  },
+  {
+    "source": "build/issue305-01/travel.cfg",
+    "artifact": "issue305-01-travel.cfg",
+    "raw_sha256": "fc3adb305b1c4551dc4b4eaf1ffb6dc127c50180e563598dc32252462e7e9f56"
+  },
+  {
+    "source": "build/issue305-01/upgrade.cfg",
+    "artifact": "issue305-01-upgrade.cfg",
+    "raw_sha256": "e7cdd069d84e3829e531d272d2bcb4022d26f171e7c0ded4c37836766a670fae"
+  },
+  {
+    "source": "build/issue305-01/weather-fixed.cfg",
+    "artifact": "issue305-01-weather-fixed.cfg",
+    "raw_sha256": "6acd4a8a9416eec0d21d021f93ce1f9b8e5bf5edc66fe3d200fbb5bc90973bd4"
+  }
+]

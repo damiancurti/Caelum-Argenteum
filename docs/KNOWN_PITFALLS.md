@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-108 - Register queryable channels before deferred PostBeginPlay
+
+Status/evidence: ENGINE-VERIFIED, #305 / 5.4.26, 2026-10-16. GZDoom 4.14.2,
+Windows Vulkan; validation_5426 preserves issue305-01/registry-01 failures and
+the corrected issue305-02/registry-01 run.
+
+A channel returned by Actor.Spawn can be configured and queried before its
+PostBeginPlay runs. Registering only in PostBeginPlay left immediate climate
+queries empty while the original native thinker scan already found the channel.
+Register idempotently in ConfigureChannel as well as PostBeginPlay; unregister
+without rebuilding during OnDestroy. Reconstruct the transient map index on
+WorldLoaded, including old saves, and clear it on unload/unregister.
+
+A typed ThinkerIterator filters results but still walks thinker lists. A query
+per NPC can therefore be expensive even with zero matching channels. Index only
+channel references, not positions, climate or visibility results; preserve the
+original per-query eligibility and path checks. Native equivalence tests cover
+empty/overlapping channels, ordering, immediate mutations and save/hub lifecycle.
+
 ## CA-KP-107 - Launch only completed, immutable native test packages
 
 Status/evidence: ENGINE-VERIFIED failure and guarded successful rerun, #252 / 5.4.21,

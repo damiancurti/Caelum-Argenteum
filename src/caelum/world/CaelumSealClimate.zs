@@ -10,6 +10,48 @@ class CaelumSealClimateData : Object
     const GRAVITY_TICS=35;
 }
 
+// #305: indice transitorio de actores de canalizacion. No guarda resultados
+// climaticos: alcance, paredes y estado del dueño se comprueban en cada consulta.
+class CaelumSealRegistry : StaticEventHandler
+{
+    const REVISION=1;
+    Array<CaelumChannelEffect> Channels;
+    int CacheRevision;
+    String SourceMap;
+
+    static CaelumSealRegistry Get()
+    {return CaelumSealRegistry(StaticEventHandler.Find("CaelumSealRegistry"));}
+
+    void Rebuild()
+    {
+        Channels.Clear();SourceMap=level.MapName;CacheRevision=REVISION;
+        let it=ThinkerIterator.Create("CaelumChannelEffect");CaelumChannelEffect effect;
+        while((effect=CaelumChannelEffect(it.Next()))!=null)Channels.Push(effect);
+    }
+
+    void Ensure()
+    {if(CacheRevision!=REVISION || SourceMap!=level.MapName)Rebuild();}
+
+    void Track(CaelumChannelEffect effect)
+    {
+        if(effect==null || effect.bDestroyed)return;
+        Ensure();
+        if(Channels.Find(effect)==Channels.Size())Channels.Push(effect);
+    }
+
+    void Forget(CaelumChannelEffect effect)
+    {
+        // El cierre del mapa no debe reconstruir listas ni crear actores.
+        int index=Channels.Find(effect);if(index<Channels.Size())Channels.Delete(index);
+    }
+
+    override void WorldLoaded(WorldEvent e){Rebuild();}
+    override void WorldUnloaded(WorldEvent e)
+    {Channels.Clear();CacheRevision=0;SourceMap="";}
+    override void OnUnregister()
+    {Channels.Clear();CacheRevision=0;SourceMap="";}
+}
+
 // La traza nativa omite cuerpos móviles, pero conserva las paredes/pisos
 // modelados con actores sólidos, además de la geometría de sectores.
 class CaelumSealPath : LineTracer
@@ -55,12 +97,16 @@ class CaelumSealClimate : Object play
     {
         double heat=0,humidity=0,wind=0,direction=baseDirection;
         bool calm=baseWind<=0;
-        // El tipo filtra los resultados, pero el iterador nativo recorre las
-        // listas de Thinkers. #304 mide este coste aun sin sellos activos.
-        // La meteorologia regional no se modifica.
-        let it=ThinkerIterator.Create("CaelumChannelEffect");CaelumChannelEffect effect;
-        while((effect=CaelumChannelEffect(it.Next()))!=null)
+        // El caso vacio ya no recorre todos los Thinkers. Si un entorno externo
+        // omite el manejador, la ruta anterior conserva los efectos completos.
+        let registry=CaelumSealRegistry.Get();if(registry!=null)registry.Ensure();
+        let it=registry==null?ThinkerIterator.Create("CaelumChannelEffect"):null;
+        CaelumChannelEffect effect;int index=0;
+        while(true)
         {
+            if(registry!=null)
+            {if(index>=registry.Channels.Size())break;effect=registry.Channels[index++];}
+            else {effect=CaelumChannelEffect(it.Next());if(effect==null)break;}
             if(!Active(effect) || effect.ClimateTotal<=0
                 || !effect.IsInside(body,effect.ChannelOwner.Pos,effect.EffectRadius)
                 || !ClearPath(effect,body))continue;

@@ -1,0 +1,182 @@
+[
+  {
+    "source": "build/issue305-02/environment-01.txt",
+    "artifact": "issue305-02-environment-01.txt.gz",
+    "raw_sha256": "b0748bed8314e320651a26a0aa492b7e224880569473b5777db5bd512545cdb0"
+  },
+  {
+    "source": "build/issue305-02/environment-01-run.json",
+    "artifact": "issue305-02-environment-01-run.json",
+    "raw_sha256": "4cd8f4abea234d2bf554355c2388664bdcef27ee30d053b563d00a47b059f88f"
+  },
+  {
+    "source": "build/issue305-02/environment-01.ini",
+    "artifact": "issue305-02-environment-01.ini",
+    "raw_sha256": "9686ebe3e1e892646cac139005a213c92f53a447fcde76426dbb0307392aabd2"
+  },
+  {
+    "source": "build/issue305-02/formulas-01.txt",
+    "artifact": "issue305-02-formulas-01.txt.gz",
+    "raw_sha256": "631db6417fa581ff87e3b4cbdc95cf691e8ceaf06f5c567799a8257ce053dbb5"
+  },
+  {
+    "source": "build/issue305-02/formulas-01-run.json",
+    "artifact": "issue305-02-formulas-01-run.json",
+    "raw_sha256": "c7b8b0d93fb0b24cee704e7e7ea01e7c1b024dd2e63416a4bb0d279417d0f90a"
+  },
+  {
+    "source": "build/issue305-02/formulas-01.ini",
+    "artifact": "issue305-02-formulas-01.ini",
+    "raw_sha256": "68de1da14e9552d15d6f7b335fdd68f8f78cc5c0fd4fe0bd17f5847e8772ac2f"
+  },
+  {
+    "source": "build/issue305-02/input-01.txt",
+    "artifact": "issue305-02-input-01.txt.gz",
+    "raw_sha256": "eabd55db0941eea9c542c0fce07a6a0c3972de72bc518457e7775c5b071c5839"
+  },
+  {
+    "source": "build/issue305-02/input-01-run.json",
+    "artifact": "issue305-02-input-01-run.json",
+    "raw_sha256": "9f2845495a6fd646db4ff33b8ade78b9595e5faceac764a9291a04a0a4cb405b"
+  },
+  {
+    "source": "build/issue305-02/input-01.ini",
+    "artifact": "issue305-02-input-01.ini",
+    "raw_sha256": "9c424bbfc2662b4f4713cfa2454f0da2d4e680f1b438718fb7f8e4ce0257bfed"
+  },
+  {
+    "source": "build/issue305-02/interruptions-01.txt",
+    "artifact": "issue305-02-interruptions-01.txt.gz",
+    "raw_sha256": "fa477079ce6d3918e0d829a930bbd49f224bd0dd1a08d67087cb475c27c44df3"
+  },
+  {
+    "source": "build/issue305-02/interruptions-01-run.json",
+    "artifact": "issue305-02-interruptions-01-run.json",
+    "raw_sha256": "5078e71710326c178e910cd6523aaf8eec56ea45676d3311f76c5cf7df79486f"
+  },
+  {
+    "source": "build/issue305-02/interruptions-01.ini",
+    "artifact": "issue305-02-interruptions-01.ini",
+    "raw_sha256": "121fe7dfeb4e02d7e097222ccc973008f49d812a32c85e79649f96876fd991f0"
+  },
+  {
+    "source": "build/issue305-02/load-01.txt",
+    "artifact": "issue305-02-load-01.txt.gz",
+    "raw_sha256": "7dc513dd20e424d6e05e11c40d9eebb7c6995b2dbef022229943f3b11eb22e06"
+  },
+  {
+    "source": "build/issue305-02/load-01-run.json",
+    "artifact": "issue305-02-load-01-run.json",
+    "raw_sha256": "4873cfc29e1c98250a0b157979dc87285e81a134e3a2330e96d967f742eadd3e"
+  },
+  {
+    "source": "build/issue305-02/load-01.ini",
+    "artifact": "issue305-02-load-01.ini",
+    "raw_sha256": "313c69faf0e71697fa2e8e4a28c18ef482dc57c1c4044d555dd4b0b097be1ef3"
+  },
+  {
+    "source": "build/issue305-02/migration-01.txt",
+    "artifact": "issue305-02-migration-01.txt.gz",
+    "raw_sha256": "20132bf6ad24444303e579c68547ba6f274a910ff43e5535d9acbe9c672fea64"
+  },
+  {
+    "source": "build/issue305-02/migration-01-run.json",
+    "artifact": "issue305-02-migration-01-run.json",
+    "raw_sha256": "bf2d9720861ccb865ea3ea1d505d8f87ada7909c3b7257e38e80d7138931d3dd"
+  },
+  {
+    "source": "build/issue305-02/migration-01.ini",
+    "artifact": "issue305-02-migration-01.ini",
+    "raw_sha256": "1db246db1b4e6ebfd9b3f377783c5268050b6dc859538f967bd1d871f12a5ff7"
+  },
+  {
+    "source": "build/issue305-02/migration-hub-01.txt",
+    "artifact": "issue305-02-migration-hub-01.txt.gz",
+    "raw_sha256": "6799a2e6a15559513c0bf8df03d7e62eb8c18e5dc18d85495d1ff2999f42e267"
+  },
+  {
+    "source": "build/issue305-02/migration-hub-01-run.json",
+    "artifact": "issue305-02-migration-hub-01-run.json",
+    "raw_sha256": "d4ca2fe1ac873f38f36b32090f1714fa8f7e43b00528688f43883ce7f02591cf"
+  },
+  {
+    "source": "build/issue305-02/migration-hub-01.ini",
+    "artifact": "issue305-02-migration-hub-01.ini",
+    "raw_sha256": "f97cd6518cd2d5aed5f38eb5f41cc3cb48929b62b7cf8b40e94e2fd559e98186"
+  },
+  {
+    "source": "build/issue305-02/registry-01.txt",
+    "artifact": "issue305-02-registry-01.txt.gz",
+    "raw_sha256": "e839533048ad09a733ce6aec00cd8660cd4a298ac17c9658cd2aa653dc237947"
+  },
+  {
+    "source": "build/issue305-02/registry-01-run.json",
+    "artifact": "issue305-02-registry-01-run.json",
+    "raw_sha256": "ef8462d55f7f760cdfd7093516fd3846098063d34f3da62f39802ff3338bf5f7"
+  },
+  {
+    "source": "build/issue305-02/registry-01.ini",
+    "artifact": "issue305-02-registry-01.ini",
+    "raw_sha256": "011090ba2dcbce545504940c621f6e7180e09288cce4ffb37ee08c5ab2c87473"
+  },
+  {
+    "source": "build/issue305-02/roof-01.txt",
+    "artifact": "issue305-02-roof-01.txt.gz",
+    "raw_sha256": "5e391914965ff7bfa800ef836959b1db2cfe79a6604672729da791ce90713479"
+  },
+  {
+    "source": "build/issue305-02/roof-01-run.json",
+    "artifact": "issue305-02-roof-01-run.json",
+    "raw_sha256": "2e4f8f21c1bb0a8b257f953da3d16a53f99d31c91254b49fd91e667f91540b55"
+  },
+  {
+    "source": "build/issue305-02/roof-01.ini",
+    "artifact": "issue305-02-roof-01.ini",
+    "raw_sha256": "32c4292d92918a126b20c9ef43cf1e629f6d075027dd9a8abb22c8f91baa3f35"
+  },
+  {
+    "source": "build/issue305-02/seed-01.txt",
+    "artifact": "issue305-02-seed-01.txt.gz",
+    "raw_sha256": "823789e7ff8acef2dd8787848af2da1dd42ec91b112fc786137a52aedc47bff5"
+  },
+  {
+    "source": "build/issue305-02/seed-01-run.json",
+    "artifact": "issue305-02-seed-01-run.json",
+    "raw_sha256": "16b17a69e14b73bda89335e03c1e9c6a5a8774a3cf63481bfae71eec40bd5bf7"
+  },
+  {
+    "source": "build/issue305-02/seed-01.ini",
+    "artifact": "issue305-02-seed-01.ini",
+    "raw_sha256": "a0baef763de8d622de3566baaa5d736b7856f7b5fcaa8c38a12313d8d7dfb60d"
+  },
+  {
+    "source": "build/issue305-02/travel-01.txt",
+    "artifact": "issue305-02-travel-01.txt.gz",
+    "raw_sha256": "a722bf97ad847aed1892abce97adebb744589849d57c786878e683555e157607"
+  },
+  {
+    "source": "build/issue305-02/travel-01-run.json",
+    "artifact": "issue305-02-travel-01-run.json",
+    "raw_sha256": "f04e070aa2c8cbf4aa8c84f8638dfbd8d67bd2829a7e33e06e1612c12e500138"
+  },
+  {
+    "source": "build/issue305-02/travel-01.ini",
+    "artifact": "issue305-02-travel-01.ini",
+    "raw_sha256": "a47efb3b4ef29bda881d36f4a95667c49c344287c882096556ad97c7e412c7f0"
+  },
+  {
+    "source": "build/issue305-02/resume-equivalence-01.txt",
+    "artifact": "issue305-02-resume-equivalence-01.txt.gz",
+    "raw_sha256": "5f57d6540860ca9c579f884dcb13bcced3620b959e7747a7b9dba4010e13b381"
+  },
+  {
+    "source": "build/issue305-02/resume-equivalence-01-run.json",
+    "artifact": "issue305-02-resume-equivalence-01-run.json",
+    "raw_sha256": "1b12dbb351b2f1a34e9431e12ec7a957826db1f4d32eb6d1b15e6ad7bcf23627"
+  },
+  {
+    "source": "build/issue305-02/resume-equivalence-01.ini",
+    "artifact": "issue305-02-resume-equivalence-01.ini",
+    "raw_sha256": "c3e1b010ff963c3ab388ffb0c63da31f4e8633699dfe84626ff2325fb2836c5b"
+  }
+]

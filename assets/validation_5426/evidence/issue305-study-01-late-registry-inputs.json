@@ -1,0 +1,17 @@
+[
+  {
+    "source": "build/issue305-study-01-late-registry/inherited-manifest.json",
+    "artifact": "issue305-study-01-late-registry-inherited-manifest.json",
+    "raw_sha256": "51b684fc9f8a36d9e70da4a70b2c75379aef2d20620fae3c5b7041105961120c"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/manifest.json",
+    "artifact": "issue305-study-01-late-registry-manifest.json",
+    "raw_sha256": "1f6b1e1793d2f5e9e6fc05836b2e9d7c8251e849a70de4df49908fe8f89750d8"
+  },
+  {
+    "source": "build/issue305-study-01-late-registry/late.cfg",
+    "artifact": "issue305-study-01-late-registry-late.cfg",
+    "raw_sha256": "e577972c26d9d934e0c38448638e66407e9fbe8b477dae5c1aea61177584e13e"
+  }
+]
