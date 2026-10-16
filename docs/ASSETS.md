@@ -2,7 +2,12 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-## 5.4.23 - Editable Domingo 3D pilot (#283, draft)
+## 5.4.23 - Editable Domingo 3D prototype (#283, accepted)
+
+The author accepted the corrected prototype and ended #283 on 2026-10-15.
+CA283-02 is accepted. The V5.17 roadmap now owns modular sprite-to-model migration,
+remaining timed animations and fine polish. Earlier review labels below retain
+their historical stage; they do not reopen the accepted prototype.
 
 The identity reference is the author-supplied original Domingo sheet from
 2026-10-09 (`assets/source/art/death_repair_518/domingo-original.png`, SHA256
@@ -17,7 +22,7 @@ The corrective candidate sets the forward knee-pole plane and animates elbow
 flexion during walk/run; 186 evaluated joint samples and rendered comparisons
 check the change. Geometry/texture/frame counts are unchanged. See
 validation_5423/anatomy-joints.json and anatomy-evidence.json; visual acceptance
-remains open. The manual fixture now starts from the front and follows its
+was pending at that stage. The manual fixture starts from the front and follows its
 selected review angle, with the native chase flag reserved for following mode.
 
 Further author feedback requires less hand sway while walking and a distinct
@@ -28,7 +33,8 @@ shoulder. Native action periods, root/leg motion and all other model poses are
 unchanged. DESIGN.json owns the art curves; arm-motion-joints.json and
 arm-motion-evidence.json separate this revision from prior evidence. The manual
 fixture explicitly starts walking with Shift held to run, rather than inheriting
-the previous test configuration's enabled always-run setting. Review is pending.
+the previous test configuration's enabled always-run setting. Review was pending
+at that stage and is now covered by the final prototype acceptance.
 
 The author found the walk/run revision better, then requested a perpendicular
 running sword grip, more human head anatomy and better hair. The current head
@@ -47,8 +53,9 @@ On return, the author required interchangeable weapons, shields, armor, hair
 and faces, starting with Domingo and existing appearance/equipment choices.
 The editable source has separate mesh objects, but this first runtime export
 merges them into one fixed surface. It does not yet meet that modular contract.
-Continue the same #283 pilot with reusable parts and native saved identity;
-converting all other characters is outside this initial trial.
+The author subsequently moved this requirement to the future V5.17 roadmap,
+closing #283 as an accepted fixed-surface prototype. The migration must use
+reusable parts and native saved identity; it has not been implemented here.
 
 `assets/source/art/domingo_3d_pilot/domingo.blend` contains editable mesh/UVs,
 26 rig bones including foot IK/poles, packed source-derived texture and 24 named
@@ -75,23 +82,25 @@ relaxed poses its face points outward and its plane extends forward/back beside
 the body; guard raises the shield forward while maintaining the same hand
 contact. Unrelated geometry/poses are preserved. All 375 frame identities remain,
 with DESIGN.json mapping existing jump poses onto the shorter playback timing.
-Guard/jump visual review is CA283-02; the
+Guard/jump visual acceptance is recorded as CA283-02; the
 provisional CA283-01 acceptance applies to the preceding candidate. Other equipment and crouch
 retain existing appearance. Native furniture offsets and the 47-unit seat
 support are retained; the cape folds onto the chair. Original sprites remain
 available for comparison. Standing geometry uses the existing 170-unit human
 normalization and native sprite pixel stretch, without changing collision.
 
-This is a draft, not approved conversion of other actors. Sit/stand and lie/get-up
+This is an accepted prototype, not a completed conversion of other actors. Sit/stand and lie/get-up
 clips are editable candidates, not yet connected to gameplay. The author chose
 2 seconds for sitting/standing from a chair, 3 seconds for lying/getting up,
-and 4-second eating/drinking cycles. Movement, attacks and blocking are disabled
-during those animations; provision speed and quantities remain unchanged. The
+and 4-second eating/drinking cycles. The future implementation must disable
+movement, attacks and blocking during those animations, while keeping provision
+speed and quantities unchanged. The
 current tested intermediate still changes rest pose immediately. Small transient
 floor intersections in death/raise and source-only crouch also need art polish;
-the measured bounds and native evidence are in validation_5423. Author review,
-additional transition/weapon coverage and a broader representative combat
-benchmark remain outstanding. No large-battle performance improvement is claimed.
+the measured bounds and native evidence are in validation_5423. Additional
+transition/weapon coverage, focused review of future changes and a broader
+representative combat benchmark remain roadmap work. No large-battle performance
+improvement is claimed.
 
 
 

@@ -2,7 +2,11 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-## 5.4.23 - Opt-in Domingo model presentation (#283, draft)
+## 5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)
+
+The author ended #283 at its accepted prototype scope on 2026-10-15. CA283-02
+is accepted. Modular conversion and unimplemented rest/provision transitions
+are now future V5.17 roadmap work, preserving the rules below.
 
 The default player remains CaelumPlayer. CaelumDomingoPilotPlayer is selected
 only by an explicit test scenario. Its presentation hook reads native states
@@ -47,8 +51,8 @@ transient fields idempotently for older pilot saves and preserves a pending
 preparation's elapsed time in current saves. Shield geometry now follows a grip
 in the hand; the relaxed shield extends along the character's forward/back plane.
 The timing correction retains all existing model frame identities. CA283-02
-covers the revised visual review; the author praised the jump pose but requested
-the shorter timing and corrected shield attachment.
+records acceptance of the corrected prototype; it does not certify the deferred
+modular conversion or rest/provision transitions as implemented.
 
 
 

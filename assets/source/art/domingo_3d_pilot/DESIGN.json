@@ -1,6 +1,6 @@
 {
   "issue": 283,
-  "status": "Presentation provisionally accepted on 2026-10-15; fine polish deferred. Modular parts and approved timed animations remain open.",
+  "status": "Prototype accepted and issue #283 completed by the author on 2026-10-15. Modular 3D conversion, timed rest/provision animations and polish move to the V5.17 roadmap.",
   "reference": {
     "file": "assets/source/art/death_repair_518/domingo-original.png",
     "sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
@@ -1068,7 +1068,7 @@
     },
     "control_lock": "Block movement, attacks and blocking during each animation.",
     "provisions": "Repeat visual eating/drinking cycles without changing consumption rate or quantity.",
-    "status": "Native shield guard and queued jump/landing are implemented; CA283-02 review is pending. Modular parts and timed rest/provision animations remain open.",
+    "status": "Native shield guard and queued jump/landing are accepted in the bounded #283 prototype. Remaining modular parts and timed rest/provision transitions are deferred to the V5.17 migration roadmap.",
     "historical_export_notes": "export_actions retains the original candidate metadata for reproducibility; approved_target_design supersedes the unapproved duration notes, pending implementation.",
     "visual_feedback": [
       "Correct sideways knee flexion while walking.",
@@ -1185,5 +1185,11 @@
     "rest_face_plane": "X/Z: extends forward/backward beside the body",
     "grip": "Rear U-shaped grip centered on the closed gauntlet; guard keeps this same contact point.",
     "timing": "Jump preparation 10 native tics; landing unchanged at 35. Retain all frame identifiers for saves."
+  },
+  "prototype_acceptance": {
+    "date": "2026-10-15",
+    "test_id": "CA283-02",
+    "scope": "Corrected shield-grip-01 prototype accepted; no claim of implemented modularity or remaining timed rest/provision transitions.",
+    "follow_up": "PROJECT V5.17 presentation roadmap; mandatory modular weapon, shield, armor, hair and face."
   }
 }

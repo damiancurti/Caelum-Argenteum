@@ -9,15 +9,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.4.23 adds an **opt-in draft** for [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283):
-an editable Domingo model with native MD3 animation driven by the existing
-player, now using a CC0 human head and polished 3D anatomy references. Default gameplay keeps its current
-appearance. Knee/elbow, walking-arm, head/hair and running-grip revisions remain in draft
-[PR301](https://github.com/damiancurti/Caelum-Argenteum/pull/301). CA283-01 is provisionally accepted, with fine art polish deferred.
-Native shield-block presentation, ten-tic queued jump and one-second landing have
-focused engine checks; their visual review is CA283-02. Interchangeable
-equipment/hair/face parts and timed rest/provision animations
-remain pending; this issue is not complete. Agent evidence and reproduction:
+5.4.23 completes the author-accepted **opt-in Domingo 3D prototype** for
+[#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283), delivered in
+[PR301](https://github.com/damiancurti/Caelum-Argenteum/pull/301). It includes editable
+Blender source, native MD3 animation, corrected hand-held shield, ten-tic jump
+preparation and one-second landing. CA283-02 is accepted on 2026-10-15.
+Default gameplay retains its existing appearance. The future V5.17 presentation
+roadmap owns migration from sprites to **modular 3D models**, interchangeable
+weapon/shield/armor/hair/face parts, remaining rest/provision transitions and polish.
+The current fixed-surface prototype does not implement that migration. Evidence:
 [validation_5423](assets/validation_5423/RESULTS.md).
 
 5.4.22 implements [#282](https://github.com/damiancurti/Caelum-Argenteum/issues/282):
@@ -38,7 +38,7 @@ assertions and rendered comparisons. CA252-01 passed author review on 2026-10-15
 PR299 is ready for review, without merge or closure. Evidence and limitations: [validation_5421](assets/validation_5421/RESULTS.md).
 
 #237's attribute audit now reflects the accepted class/racial consumers; its
-160 native checks pass on this baseline. PR272 is ready. #282 is accepted in PR300; #283 is the opt-in draft
+160 native checks pass on this baseline. PR272 is ready. #282 is accepted in PR300; #283 is the accepted prototype
 described above. Separately scoped #284 adds Mandinga fire damage, demon
 personalities and a cosmetic 3D Zupay rock. The author withdrew
 the proposed Mandinga attribute increase; existing base attributes are preserved.

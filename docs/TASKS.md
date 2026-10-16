@@ -2,32 +2,22 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-## 5.4.23 - Domingo 3D pilot (#283, in progress)
+## 5.4.23 - Domingo 3D prototype (#283, accepted)
 
-Branch feat/issue283-domingo-3d-pilot supplies editable Domingo art, deterministic
-MD3 export and native presentation. CA283-01 is provisionally accepted as of
-2026-10-15; fine model polish is deferred. Evidence: validation_5423/RESULTS.md.
-Keep the original sprites, qualified earlier evidence and #284's separate scope.
+On 2026-10-15 the author accepted the corrected prototype and explicitly ended
+#283 at that scope. CA283-02 is accepted; HISTORY records the qualified result.
+PR301 is ready. The author clarified that the later sprites work is in the
+roadmap, not an existing issue; do not create a duplicate issue for this handoff.
 
-Required before completion:
-- Demonstrate interchangeable weapon, shield, armor, hair and face parts using
-  existing choices, starting with Domingo; the fixed-surface export is insufficient.
-- Implement chair sit/stand (2 s), floor/bed lie/get-up (3 s), and eating/drinking
-  visual cycles (4 s), blocking movement/attack/block while each runs. Keep native
-  progressive provision rates/quantities. Damage interrupts immediately and
-  returns to ordinary combat rules. Existing 40-tic candidate clips need retiming.
-- Obtain CA283-02 author review of implemented native shield blocking and
-  ten-tic jump preparation/one-second landing. Releasing Jump preserves the queued
-  action; damage/incapacity cancels it; ordinary movement/attack/block remain.
-  Review the corrected hand-held shield and its relaxed forward/back orientation.
-- Preserve native collision, resources, equipment and furniture authority;
-  validate transitions, interruptions, save/load and equipment changes. Retain
-  documented fallback for unsupported variants/crouch. Broaden performance
-  evidence before any separate NPC/battle conversion.
+The V5.17 presentation roadmap in PROJECT now owns sprite-to-model migration,
+mandatory interchangeable weapon/shield/armor/hair/face parts, remaining timed
+rest/provision animations, finer polish and representative performance checks.
+Keep the approved timings/control rules there; these deferred features are not
+implemented by the fixed-surface prototype. Original sprites and all evidence remain.
 
-19 implementation PRs in the batch are already merged. #237/PR272, #252/PR299 and
-#282/PR300 are ready but remain open; #283/PR301 remains draft. No additional
-merge/closure is performed by this status audit.
+Next implementation: #284, on its own branch, commits, tests and PR. Its scope
+preserves Mandinga attributes and adds the approved machete Fire, personalities
+and cosmetic Zupay rock. The author has not requested new batch merges here.
 
 ## 5.4.22 - Quick-use HUD (#282, accepted)
 

@@ -1,20 +1,22 @@
-# Issue #283 - Domingo 3D pilot evidence (5.4.23, draft)
+# Issue #283 - Domingo 3D prototype evidence (5.4.23, accepted)
 
-The default player is unchanged. This opt-in pilot uses the author-supplied
-Domingo materials, a CC0 human head, an editable Blender mesh/UV/26-bone rig with 15 actions,
-and deterministic native MD3 registration. The author provisionally accepted
-the head-grip-02 presentation on 2026-10-15 (CA283-01); fine polish is deferred.
-The overall issue is not complete. Earlier pending labels below describe each
-evidence stage before this qualified acceptance.
-The runtime appearance is fixed; the author now requires interchangeable parts
-for weapon, shield, armor, hair and face, demonstrated first on Domingo. This
-intermediate export does not satisfy that requirement. Approved chair transitions
-(2 seconds), lie/get-up (3 seconds) and eating/drinking (4 seconds) with action
-locks remain to be implemented. Native rest still changes pose immediately. Minor floor/cloth polish and unsupported-variant coverage are
-recorded in TASKS and DESIGN.json. No issue closure or merge is requested.
+The author accepted the corrected Domingo prototype and ended #283 on 2026-10-15.
+CA283-02 is accepted; CA283-01's earlier qualified acceptance remains historical.
+The latest shield-grip-01 runtime passed 105 assertions in 12 native runs; exact
+geometry/export/package evidence is preserved below. No new engine run is needed
+for this documentation-only closure, and no additional manual step is inferred.
+
+The author moved the actual sprite-to-model migration to the future V5.17 roadmap,
+with mandatory interchangeable weapon/shield/armor/hair/face parts. Remaining
+2/3/4-second rest/provision transitions, fine polish and broader conversion tests
+move with it; they are not implemented by this fixed-surface prototype. Earlier
+pending/incomplete labels below describe their original test stages.
+
+## Earlier review and validation stages
+
 Initial author review reported sideways knee flexion and rigid elbows while
-walking, and requested a shield-block animation. These findings remain open;
-the successful technical assertions do not establish visual acceptance.
+walking, and requested a shield-block animation. These findings were still open
+at that stage; the technical assertions alone did not establish visual acceptance.
 
 The preceding anatomy revision corrects the knee plane and adds varying elbow
 flexion. `anatomy-joints.json` checks 186 evaluated joint samples;

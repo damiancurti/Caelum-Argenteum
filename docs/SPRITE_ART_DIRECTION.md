@@ -99,6 +99,12 @@ Pain and breathing voices follow saved sex automatically.
 
 ## Modular construction
 
+The author accepted the Domingo 3D prototype (#283) on 2026-10-15 and deferred
+sprite-to-model migration to the V5.17 presentation roadmap in PROJECT. Future
+3D characters must retain this modular principle: interchangeable weapon, shield,
+armor, hair and face, compatible attachment points and reusable animation.
+The fixed-surface pilot is a reference, not the final modular architecture.
+
 Separate the reusable body/clothing, head/face, hair, exposed hands and equipment
 where their variations are independent. Skin/fur masks and hair color masks must
 not recolor clothing, eyes, weapons or other protected regions. Use transparent

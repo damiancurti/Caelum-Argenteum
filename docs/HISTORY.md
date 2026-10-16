@@ -2,7 +2,7 @@
 
 Documentation version: **5.4.23** — 2026-10-15.
 
-## 5.4.23 - Domingo 3D pilot foundation (#283, 2026-10-15, draft)
+## 5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)
 
 While the author was away, the original 2026-10-09 Domingo sheet was verified
 instead of substituting the later modular body. A textured volumetric model,
@@ -141,6 +141,25 @@ Two travel-fixture iterations are preserved: one waited too long before travel,
 the other issued changemap before the game was active. A one-tic startup wait
 allows the final check to travel before takeoff and verify cancellation.
 
+
+
+Final author acceptance on 2026-10-15 (America/Buenos_Aires), CA283-02, origin
+5.4.23/#283: the author said to conclude the prototype and finish the issue,
+reserving sprite-to-model migration for future versions and requiring modularity.
+The author then clarified that this future work is in the roadmap, not an
+existing issue. The corrected shield-grip-01 prototype is accepted; CA283-02
+leaves pending_test.txt. This is acceptance of the bounded prototype and its
+presentation, not a claim that every optional test step was separately repeated
+or that modularity and timed rest/provision transitions were implemented.
+CA283-01's preceding provisional result remains recorded above.
+
+The V5.17 presentation roadmap now explicitly requires interchangeable weapon,
+shield, armor, hair and face modules and carries forward the agreed 2/3/4-second
+rest/provision animations, control locks/damage interruptions, polish and broader
+validation. The author closes #283 at the accepted prototype scope. PR301 becomes
+ready; this request does not merge its parent branches or other batch PRs. Runtime,
+source art and prior evidence remain unchanged; only acceptance/scope documents
+and the author-test queue change. Validation is static documentation/index review.
 
 
 ## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
