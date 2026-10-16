@@ -1,0 +1,39 @@
+{
+  "issue": 284,
+  "status": "Original cosmetic mesh; author review pending.",
+  "reference": {
+    "path": "src/sprites/caelum/actors/zupay_colossus/ZUPYN1.png",
+    "sha256": "31bf96b2ca2f3fbdd092fb6eb59948c7849160bf69ee66d18e80b3fdd04d01fc",
+    "provenance": "Existing project-owned Zupay throw sprite; unchanged pixels reused through UV coordinates."
+  },
+  "dimensions_map_units": {
+    "depth": 34,
+    "height": 28,
+    "width": 45
+  },
+  "rings": 7,
+  "segments": 16,
+  "irregularity": 0.075,
+  "texture_size": [
+    416,
+    416
+  ],
+  "uv_center_pixels": [
+    208,
+    272
+  ],
+  "uv_half_extent_pixels": [
+    52,
+    31
+  ],
+  "fallback_crop": [
+    136,
+    228,
+    144,
+    92
+  ],
+  "fallback_scale": 3.2,
+  "material": "sprites/caelum/actors/zupay_colossus/ZUPYN1.png",
+  "contract": "Cosmetic only. Existing projectile class, state indices, radius, height, speed, trajectory, damage, essence, payload, explosion, effects and lifetime are retained.",
+  "uv_projection": "Dominant-face box projection; avoids side stretching while reusing unchanged owned rock pixels."
+}

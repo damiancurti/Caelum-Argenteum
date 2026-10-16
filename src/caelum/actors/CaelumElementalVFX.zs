@@ -49,6 +49,14 @@ class CaelumElementalVFX : Object play
             Impact(shot);
             return;
         }
+        // La identidad visual se captura una vez; también migra proyectiles en vuelo.
+        if(shot.CaelumRockVisualRevision<1)
+        {
+            shot.CaelumRockVisualRevision=1;
+            shot.CaelumZupayRockVisual=shot is "CaelumActorExplosiveElementalProjectile"
+                && shot.Target is "CaelumZupayColossus";
+        }
+        if(shot.CaelumZupayRockVisual){shot.sprite=Actor.GetSpriteIndex("ZROK");shot.frame=0;}
         if(shot.CaelumVFXAge%CaelumElementalVFXData.FRAME_TICS==0)Light(shot,kind);
         int interval=Dense() ? CaelumElementalVFXData.DENSE_TRAIL_INTERVAL
             : CaelumElementalVFXData.TRAIL_INTERVAL;
@@ -93,4 +101,10 @@ class CaelumElementalImpactVisual : Actor
     }
     Default { +NOINTERACTION +NOGRAVITY +BRIGHT RenderStyle "Add"; }
     States { Spawn: TNT1 A -1; Stop; }
+}
+
+// Registro adicional: conserva los índices de todos los estados anteriores.
+class CaelumZupayRockFrames : Actor
+{
+    States { Spawn: ZROK A -1; Stop; }
 }

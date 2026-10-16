@@ -4670,3 +4670,15 @@ Model CaelumDomingoPilotBody
     FrameIndex D30E K 0 374
 }
 // END DOMINGO 3D PILOT
+
+// BEGIN ZUPAY ROCK #284
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_zupay_rock.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ FrameIndex ZROK A 0 0
+}
+// END ZUPAY ROCK #284

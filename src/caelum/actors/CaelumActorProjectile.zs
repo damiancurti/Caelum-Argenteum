@@ -87,6 +87,8 @@ class CaelumActorProjectile : Actor
     bool CaelumDiagnosticCompletionRecorded;
     // Campos cosméticos: cero en saves anteriores; no alteran el vuelo guardado.
     int CaelumVFXAge,CaelumVFXRevision;
+    int CaelumRockVisualRevision;
+    bool CaelumZupayRockVisual;
     bool CaelumVFXImpactShown;
     // #249/#250 conservan la protección aliada aunque expire su invocación/conversión.
     bool CaelumSummonShot;
