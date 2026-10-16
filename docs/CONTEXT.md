@@ -1,6 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
+
+**5.4.22/#282:** bottom-center carousel; name/count above icon; smaller neighbors;
+native input/individual containers. validation_5422; CA282-01 accepted
+2026-10-15, PR300 ready. Author returned; keep-awake released. Next #283/#284:
+unchanged Mandinga attributes, extra Fire machete damage, approved demon
+personalities/cosmetic Zupay rock. Separate PRs.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
 
@@ -35,16 +41,13 @@ Documentation version: **5.4.21** — 2026-10-15.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
 #237 audit complete/PR272 ready; next #282, #283, #284. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
-**5.2.26-27/#227/#229 accepted:** rest notices/provisions/x105; empty Box 1g.
-CA227/229-01 passed 2026-10-13; PR228/230; HISTORY retains evidence.
-**5.2.20-25 accepted/merged:** HISTORY retains six checks; #225 repaired LF hashes.
-#211 accepted/merged; prior acceptance records remain in HISTORY.
-**5.2.18/#209 accepted:** modular poses, rest alignment/controls, female hands
-and 3D canteen; CA209-01/02 passed 2026-10-12. PR210 merged 4549991a, #209 closed.
-**5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
-CA207-01 passed 2026-10-12; native evidence: validation_5217.
-**5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01
-passed 2026-10-12. PR205/206 merged (latest 1bf5087e); LANGUAGE LF hash refreshed.
+**5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
+#225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02
+(2026-10-12, PR210 merged 4549991a). Current rest/provisions/x105; empty Box 1g.
+**5.2.17/#207 accepted:** MAP01 minimum1 HP; PR208 merged/closed;
+CA207-01 2026-10-12, validation_5217.
+**5.2.16/#204 accepted:** Vulkan cursor/VSync; CA204-01 2026-10-12;
+PR205/206 merged (1bf5087e), refreshed LANGUAGE LF hash.
 **5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
 controls/M automap, modular cosmetics/hands. CA150/149/148-01 passed 2026-10-12;
 PR203/202/201 merged, issues closed. Evidence validation_5215/5214/5213;

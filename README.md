@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.21.** Obtain and update the complete repository, validate
+**Current release: 5.4.22.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.22 implements [#282](https://github.com/damiancurti/Caelum-Argenteum/issues/282):
+the bottom-center quick-use selector displays the selected item's name and
+quantity above its icon, with smaller previous/next icons alongside it. Native
+inventory commands retain remapping and existing use rules; individual water
+containers show their remaining liters. Static/build checks and 47 assertions
+across 11 final native runs pass; CA282-01 passed author review on 2026-10-15; PR300 is ready. Evidence:
+[validation_5422](assets/validation_5422/RESULTS.md), [pending_test.txt](pending_test.txt).
 
 5.4.21 implements [#252](https://github.com/damiancurti/Caelum-Argenteum/issues/252):
 local accumulating Seal climate, grounded earthquake force/damage, temporary
@@ -20,7 +28,9 @@ PR299 is ready for review, without merge or closure. Evidence and limitations: [
 
 #237's attribute audit now reflects the accepted class/racial consumers; its
 160 native checks pass on this baseline. PR272 is ready. Next are separately
-scoped #282 (usable-item HUD), #283 (Domingo 3D pilot) and #284 (Mandinga attributes).
+scoped #282 (usable-item HUD), #283 (Domingo 3D pilot) and #284 (Mandinga fire
+damage, demon personalities and a cosmetic 3D Zupay rock). The author withdrew
+the proposed Mandinga attribute increase; existing base attributes are preserved.
 
 5.4.20 implements Investigator Arcane Cloud (#251): seated native flight on a
 reusable translucent 3D cloud, restorative rain below it, and enemy-only Air-seal

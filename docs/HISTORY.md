@@ -1,7 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
 
+
+## 5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)
+
+The author requested the gameplay selector at the bottom center, with each water
+container represented separately and remaining water shown. Subsequent visual
+directions added smaller previous/next icons, then placed the selected item's
+name and quantity above the central icon. Native inventory commands, existing
+ownership, Box restrictions and consumable effects remain authoritative. The
+first Use after cycling consumes the displayed item; water consumes contents
+through Drink rather than destroying its container. No save schema was added.
+Static/build validation passes, with 47 assertions in 11 final native runs,
+four rendered views, a real 5.4.21 save seed and 16,180 runtime members matching
+source. Evidence and its limitations: assets/validation_5422/RESULTS.md.
+CA282-01 (origin 5.4.22 / #282) passed author review on 2026-10-15. The author
+confirmed "La prueba que me diste dio bien" after the isolated selector trial
+(build/issue282-final-06, author-return-01, unchanged tested runtime). No
+qualifications were reported. Its entry was removed from pending_test.txt.
+Temporary keep-awake was released on return, preserving the Balanced power plan.
+PR300 is ready for review; no merge or issue closure is implied.
+
+The queued #284 was revised before implementation: remove the Mandinga attribute
+increase, preserve its physical machete hit, and add magical Fire damage with
+the machete's base damage scaled by Intelligence and existing personality rules.
+Approved Mandinga traits: aggressive/calculating/rebellious/liberal; Zupay:
+patient/calculating/disciplined/conservative. Zupay's projectile becomes a 3D rock
+matching its sprite-held rock, changing appearance only. These are separate
+#284 decisions; no demon implementation is included in #282.
 
 ## 5.4.21 - Seal climate and presentation (#252, 2026-10-15, accepted)
 

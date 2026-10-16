@@ -1,7 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
 
+
+## 5.4.22 - Gameplay quick-use selector (#282)
+
+During live gameplay, a bottom-center carousel reads the player's native
+`InvSel` and owned inventory. The selected existing icon is centered; its
+localized name and quantity appear above it. Previous/next items have smaller
+icons at either side. Zero items show an empty label; a single item has no
+neighbors; two items show the other item on both sides because navigation wraps.
+
+Native `invprev`, `invnext` and `invuse` remain authoritative. The first current
+binding is shown compactly under each action; all bindings remain in Controls.
+The persistent selector replaces the native temporary inventory-bar timeout, so
+the first Use after cycling activates the displayed item. Menus and the automap
+hide the carousel and retain their normal input ownership. The resource groups
+reserve horizontal room for it only when viewport fitting requires shrinking;
+weapon status remains above it. Native HUD scaling is preserved.
+
+Eligible entries are positive owned consumable stacks outside the Magic Box.
+Ammo, equipment, keys and documents are not new usable categories. Native item
+use still applies existing effects and removes one stack unit. Each owned water
+container is a distinct entry with its remaining/capacity liters; Use invokes
+the existing Drink operation without removing the container. Empty containers
+remain visible and unavailable. Availability also respects life/frozen state;
+no stock is granted or copied. The full inventory keeps its established rules.
+
+Pickup, depletion, drop, Box storage/retrieval and loading reconcile selection
+and inventory-bar eligibility against actual ownership. `InvSel`/`InvFirst`
+are existing native saved pointers; no save schema is added. Derived flags are
+reconciled idempotently each tick, including older saves containing a boxed
+selection or a previously hidden water container. Focused evidence and limits:
+`assets/validation_5422/RESULTS.md`. Author check CA282-01 passed on 2026-10-15.
 
 ## 5.4.21 - Seal climate extensions (#252, accepted)
 

@@ -1,7 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.21** — 2026-10-15.
+Documentation version: **5.4.22** — 2026-10-15.
 
+
+## 5.4.22 - Quick-use HUD artwork (#282)
+
+The bottom-center selector reads existing project-owned inventory icons. Its
+selected preview is 40 HUD units, neighbors 30, using native HUD scale; labels
+appear above the icons. No bitmap or model is generated or replaced. Individual
+water-container icons and their contents retain their inventory identity.
+Visual evidence: validation_5422; author acceptance remains pending.
 
 ## 5.4.21 - Channel Seal presentation (#252)
 

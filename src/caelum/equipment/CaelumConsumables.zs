@@ -424,7 +424,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         Inventory.InterHubAmount 1;
         -INVENTORY.INVBAR
     }
-    virtual double GetCapacityLiters() { return 1.0; }
+    virtual clearscope double GetCapacityLiters() { return 1.0; }
     override double GetUnitWeight()
     { return CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT + Max(0.0, WaterLiters); }
     override bool HandlePickup(Inventory item)
