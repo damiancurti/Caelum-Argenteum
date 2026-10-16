@@ -237,6 +237,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
                 *(1-CaelumPersonalityRules.AttackPenetration(inflictor,source));
             double absorbed=damage*Clamp(absorption,0,1);
             damage=Max(0,damage-absorbed);
+            let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
+            if(mixed!=null)absorbed+=mixed.BlockFire(self,Shield.GetDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL),inflictor,source);
             double wear=absorbed;
             int loss=int(wear/CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY);
             double remainder=wear-loss*CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;

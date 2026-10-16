@@ -1,12 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.23** — 2026-10-15.
+Documentation version: **5.4.24** — 2026-10-15.
 
-**5.4.23/#283:** prototype accepted; CA283-02 passed; PR301 ready.
-Modular 3D migration and remaining animations move to the V5.17 roadmap.
-**5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
-Keep-awake released. #284 next:
-unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
+**5.4.24/#284:** CA284-01 accepted 2026-10-15; PR302 ready; validation_5424.
+Native/save/art checks pass; one weighted Toughness reduction.
+**#283:** prototype accepted/closed, PR301 ready; modular migration in V5.17.
+**#282:** PR300 ready; CA282-01 accepted; validation_5422. Keep-awake released.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
 
@@ -39,7 +38,7 @@ unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
 **5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
 **5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 ready, aa253eed.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
-#237 audit complete/PR272 ready; next #282, #283, #284. #231-236/#255-258 accepted/merged/closed; HISTORY.
+#237 audit and #282-284 complete; author authorized batch merge/closure. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
 #225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02

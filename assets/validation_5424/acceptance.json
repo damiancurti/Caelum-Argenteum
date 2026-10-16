@@ -1,0 +1,18 @@
+{
+  "test_id": "CA284-01",
+  "origin_version": "5.4.24",
+  "issue": 284,
+  "status": "accepted",
+  "confirmed_on": "2026-10-15",
+  "confirmation": "Las pruebas dieron correcto.",
+  "scope": [
+    "F6 Mandinga mixed machete and ordinary burn",
+    "F7 native Zupay rock throw",
+    "F8 multi-angle 3D rock review"
+  ],
+  "runtime_sha256": "435dec66f72a7fa3d44d89fa16071b7c75dc65e72dd023ae3c14affbd1de699c",
+  "fixture_sha256": "be039eb27c0febcdb9f04063a7964794ae87fb759de22a6ae83be5336f0bf5bd",
+  "session": "issue284-author-02/author-20261015-231334",
+  "exit_code": 0,
+  "qualification": "Author gameplay/visual acceptance; automated combat and compatibility evidence remains separately scoped."
+}

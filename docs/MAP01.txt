@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.4.23** — 2026-10-15.
+Documentation version: **5.4.24** — 2026-10-15.
 
 5.4.14 - Resident movement at the protected floor (#253)
 
