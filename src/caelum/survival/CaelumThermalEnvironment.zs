@@ -199,11 +199,15 @@ class CaelumThermalEnvironment : Object play
         thermal.Available=local.Available;thermal.AirC=local.AirTemperatureC;
         thermal.ClimateC=local.AirTemperatureC;thermal.Humidity=local.RelativeHumidityPercent;
         thermal.RainMmHour=thermal.Roof ? 0 : local.PrecipitationMmPerHour;
-        double exterior=thermal.WindSheltered ? 0 : local.WindSpeedKmh/3.6;
+        thermal.SealClimateRevision=CaelumSealClimateData.REVISION;
+        thermal.AmbientAirC=local.AirTemperatureC;thermal.AmbientHumidity=local.RelativeHumidityPercent;
+        thermal.AmbientWindKmh=thermal.WindSheltered ? 0 : local.WindSpeedKmh;
+        double exterior=thermal.AmbientWindKmh/3.6;
         // Suma cuadrática de magnitudes: aproximación local sin rumbo corporal.
         thermal.WindMps=Sqrt(exterior*exterior+localMotionMps*localMotionMps);
         double immersed=SampleWater(body,thermal,local.GroundTemperatureC);
         CaelumThermalBody.SampleCoverage(body,thermal,immersed,thermal.WaterRowMask);
+        CaelumSealClimate.ApplyThermal(body,thermal);
         thermal.LastEnvironmentTic=level.maptime;thermal.SourceMap=level.MapName;
         return true;
     }

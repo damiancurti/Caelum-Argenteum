@@ -19,7 +19,7 @@ class CaelumThermalRuntime : Object play
         let thermal=CaelumThermalBody.Get(user,true);
         let weather=CaelumWeatherState.Get(user);
         if(thermal==null || weather==null)return;
-        bool changed=thermal.SourceMap!=level.MapName || thermal.LastEnvironmentTic>level.maptime
+        bool changed=thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || thermal.LastEnvironmentTic>level.maptime
             || level.maptime-thermal.LastEnvironmentTic>=CaelumThermalData.ENVIRONMENT_SAMPLE_TICS
             || thermal.LastWaterLevel!=user.WaterLevel || thermal.EnvironmentDate!=weather.SampleDate
             || thermal.EnvironmentMinute!=weather.SampleMinute;
@@ -66,7 +66,7 @@ class CaelumThermalRuntime : Object play
         if(!force && level.maptime<thermal.NextUpdateTic)return;
         double dr=Max(0.0,double(level.maptime-thermal.LastRealTic)/TICRATE);
         double dw=Max(0.0,now-thermal.LastWorldStamp);
-        if(thermal.SourceMap!=level.MapName || level.maptime-thermal.LastEnvironmentTic>=TICRATE
+        if(thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || level.maptime-thermal.LastEnvironmentTic>=TICRATE
             || thermal.LastWaterLevel!=npc.WaterLevel || thermal.EnvironmentDate!=world.ReferenceWeather.SampleDate
             || thermal.EnvironmentMinute!=world.ReferenceWeather.SampleMinute)
         {

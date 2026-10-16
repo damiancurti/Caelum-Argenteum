@@ -1,6 +1,30 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Local Seal climate and channel presentation (#252)
+
+The authored five-Seal extensions now share the existing local weather/thermal
+authority. Fire/Air/Water use growing cumulative contributions; Earth and released
+Quintessence use a linear power ledger. The exact formulas and boundaries are in
+SYSTEMS. Channeling adds native chasecam and a double-trap-size emblem at the feet.
+Implementation starts at integration/v54-accepted-251-238 (a3b305b6); no unrelated
+issue is included. Static validation, packaging and 233 assertions across 20
+qualified native runs pass, including old-save migration and map travel. Evidence
+and limitations: validation_5421. CA252-01 passed author review on 2026-10-15;
+PR299 is ready. No merge/closure is claimed.
+
+CA252-01 visual feedback requires the emblem on the ground and reports a face
+instead of Water's image. The correction explicitly registers Water/Air sprites,
+projects the mark onto ground and adds the requested cosmetic elemental sphere
+above the head, using Arcane Sun's size. Focused revision evidence is recorded
+in validation_5421: 142 assertions in nine native runs and ten inspected captures;
+the subsequent sprite-depth correction adds 88 assertions and four qualified
+runs. The author approved the corrected floor layering and the complete check.
+The remaining #237 audit precedes #282, then newly authorized #283 (Domingo 3D
+pilot) and #284 (Mandinga base attributes 33), each separately scoped.
+
 
 ## 5.4.20 - Investigator Arcane Cloud (#251, accepted)
 

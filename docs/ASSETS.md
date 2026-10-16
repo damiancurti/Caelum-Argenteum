@@ -1,6 +1,37 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.20** — 2026-10-15.
+Documentation version: **5.4.21** — 2026-10-15.
+
+
+## 5.4.21 - Channel Seal presentation (#252)
+
+Channeling uses GZDoom's native chasecam and restores the owner's previous camera
+mode afterward. A non-solid flat sprite follows the ground below the caster at twice the pressure
+trap scale (0.75 versus 0.375, 96 versus 48 map units). Fire/Earth/Quintessence reuse
+CMNF/CMNE/CMNQ; new CMNW/CMNA aliases reference the already-owned Water/Air jewelry
+icons. No bitmap, model or audio source is replaced and no Doom asset is added to
+the runtime. The Earth visual quake uses the native silent shake-only API; its
+damage and force come solely from the authored gameplay calculation. The final
+native chasecam capture was visually inspected; all five emblems and camera
+restoration pass focused native checks in validation_5421. CA252-01 passed author
+review on 2026-10-15. A 0.5-unit cosmetic WorldOffset along the camera depth axis
+resolves transparent-sprite depth ties so the emblem draws behind the body; its
+physical ground origin and artwork are unchanged. Fixture maps/IWADs remain local and are not distributed.
+
+The author's visual correction registers Water/Air frames explicitly, removing
+the invalid dynamic sprite lookup that displayed a face. A downward native trace
+anchors the horizontal mark to real floors, including native 3D floors and solid
+actor architecture, even when the caster is airborne. All five emblems remain
+the existing jewelry art; no image source was repainted.
+
+A separate cosmetic orb now floats directly above the caster's head. It uses
+Arcane Sun's existing scale and the matching primary-element VFX animation;
+texture dimensions determine its height so its lower edge clears the head.
+It has no mass, collision, damage, heat or child projectiles. Stop, interruption
+and departure remove both visuals. Older active channels recreate the missing
+orb idempotently; climate state is unchanged. F7/F8 in the isolated review scene
+provide wide-orb/close-ground views without changing production camera settings.
+
 
 ## 5.4.20 - Mounted Arcane Cloud presentation (#251)
 

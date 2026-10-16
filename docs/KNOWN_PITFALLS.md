@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-107 - Launch only completed, immutable native test packages
+
+Status/evidence: ENGINE-VERIFIED failure and guarded successful rerun, #252 / 5.4.21,
+2026-10-15. GZDoom 4.14.2, Windows 11; validation_5421.
+
+The first legacy-save run began while its preparation command was still running.
+Its log reported a missing console script and loaded packages that the preparer
+had not yet finished replacing. The author's matching crash report records a
+native C0000005 read at 0x8 before entering a level. Preserve this as a failed
+startup, not a Seal gameplay crash or a successful legacy test.
+
+Wait for preparation to exit successfully before launching dependent processes.
+Write the manifest last, use fresh output directories, and require the manifest,
+script and matching runtime/fixture hashes before starting the engine. Never
+replace an archive while a running engine can still read it. Missing-file startup
+output must fail the runner instead of leaving it waiting for a completion marker.
+The completed 5.4.20 seed and 5.4.21 upgrade both passed with the guarded launcher.
+The local ZIP/dump is retained under build and is not a distributed project asset.
+
 ## CA-KP-106 - Recreate disposable visuals instead of carrying stale world links
 
 - Status: ENGINE-VERIFIED, #251 / 5.4.20, GZDoom 4.14.2 Windows Vulkan,
@@ -777,6 +796,15 @@ src/rendering/hwrenderer/scene/hw_sprites.cpp, Process applies WorldOffset befor
 calculating sprite depth. Evidence: assets/validation_5116/visual_followup,
 four cardinal views plus separate body/rear-only/combined native captures.
 This establishes ordinary-view occlusion, not author visual acceptance.
+
+Follow-up #252 / 5.4.21, 2026-10-15: a translucent floor Seal at the caster's
+XY sorted after the body despite a lower Z. hw_drawlist.cpp resolves equal XY
+depth using SpawnOrder. A 0.5-unit rearward cosmetic WorldOffset breaks the tie;
+do not raise/lower physical ground placement to repair this render ordering.
+validation_5421/depth_evidence.json records native presentation/save assertions
+and ordinary chase views at four yaw positions and two pitch settings. CA252-01
+was accepted by the author. Mirrors, portals and multiplayer cameras were not
+verified by these captures.
 
 ## CA-KP-072 - Observe loaded input state before the first simulation tick
 
@@ -2373,6 +2401,13 @@ The final direction gallery waits for world updates and records every pose/view;
 rapid console captures alone do not prove every requested rotation was rendered.
 See assets/validation_516/RESULTS.md. This is engine verification, not CA143-01
 author acceptance.
+
+Reverified under #252 / 5.4.21 on 2026-10-15: CMNW/CMNA texture aliases also
+lacked actor states. The author saw a face for Water. Append-only registration
+corrects these lookups; the revised native test requires each index to be
+nonnegative and checks the selected image, then captures all five ground marks.
+The earlier flat-flag/scale assertions did not establish image correctness.
+See assets/validation_5421/RESULTS.md; CA252-01 was accepted on 2026-10-15.
 
 ## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
 
