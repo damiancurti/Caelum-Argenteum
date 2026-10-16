@@ -1,0 +1,101 @@
+{
+  "issue": 284,
+  "version": "5.4.24",
+  "author_acceptance": "pending CA284-01",
+  "native_runs": [
+    {
+      "stage": "issue284-final-02",
+      "label": "contract-01",
+      "scope": "compound combat/personality contract",
+      "assertions_in_this_log": 25,
+      "log_sha256": "2766b6a33b916fb95ba783f838feb08932ddf135624762ee48c3c5a2dd259c33",
+      "runtime_sha256": "fe73bec5b3e65810b06ecaa4bec4f1d3cf15aa6626338a730ccfcbbac4b924ab",
+      "fixture_sha256": "c3d97f1f6a56eca5b2f509e861f648a8f360205c5b20208301fcdb79b92828e8"
+    },
+    {
+      "stage": "issue284-final-02",
+      "label": "native-01",
+      "scope": "native machete and projectile actions",
+      "assertions_in_this_log": 6,
+      "log_sha256": "107ab754cf573f0043a7c6d229ec4462f93a3a0368cb9c006e19d9ff9fa94273",
+      "runtime_sha256": "fe73bec5b3e65810b06ecaa4bec4f1d3cf15aa6626338a730ccfcbbac4b924ab",
+      "fixture_sha256": "c3d97f1f6a56eca5b2f509e861f648a8f360205c5b20208301fcdb79b92828e8"
+    },
+    {
+      "stage": "issue284-compat-01",
+      "label": "upgrade-02",
+      "scope": "original-save migration",
+      "assertions_in_this_log": 6,
+      "log_sha256": "a55275da6648a4cdb30781c938777adb778bd60ef4c6aaf9663883621e565b98",
+      "runtime_sha256": "deefcca10af2cd4c837af5cccc9c3146538a3b21f8a60cd7bc8348654842a531",
+      "fixture_sha256": "41c87158ecce383d934659880459b5109485e77b785cb29c31906c7ce1849685"
+    },
+    {
+      "stage": "issue284-compat-01",
+      "label": "reload-travel-01",
+      "scope": "migrated-save reload and hub return",
+      "assertions_in_this_log": 12,
+      "log_sha256": "4b79b18f0eff6f5f3678c8863544aebaa748c5bc0184afc562792ffbdfbabb01",
+      "runtime_sha256": "deefcca10af2cd4c837af5cccc9c3146538a3b21f8a60cd7bc8348654842a531",
+      "fixture_sha256": "41c87158ecce383d934659880459b5109485e77b785cb29c31906c7ce1849685"
+    },
+    {
+      "stage": "issue284-author-01",
+      "label": "manual-smoke-01",
+      "scope": "author controls with ordinary demon attributes",
+      "assertions_in_this_log": 6,
+      "log_sha256": "06561da0db249f5620f11bb684346b39c4c13bff383b6e0cfb280c1f7d575a51",
+      "runtime_sha256": "7ade3723468c70584920872adea4c05daacc4bd70f9732e35b2ef08fc6c1ead8",
+      "fixture_sha256": "be039eb27c0febcdb9f04063a7964794ae87fb759de22a6ae83be5336f0bf5bd"
+    },
+    {
+      "stage": "issue284-author-02",
+      "label": "preview-01",
+      "scope": "final front/side OBJ review",
+      "assertions_in_this_log": 1,
+      "log_sha256": "f58dc6a55fa365bf6d756c7d626f9523bc62d06551f44decba57503fc41c2b21",
+      "runtime_sha256": "435dec66f72a7fa3d44d89fa16071b7c75dc65e72dd023ae3c14affbd1de699c",
+      "fixture_sha256": "be039eb27c0febcdb9f04063a7964794ae87fb759de22a6ae83be5336f0bf5bd"
+    },
+    {
+      "stage": "issue284-legacy",
+      "label": "seed-01",
+      "scope": "old-package save seed",
+      "assertions_in_this_log": 2,
+      "log_sha256": "889043a38fa0673bc229d20160b1829f031b1e3f9535b9237a475a8db413c9d4",
+      "runtime_sha256": "0e5bbc47f7a0eb1a08cfa50a11a633e23b60b6da65642f70674efa2905eb3d52",
+      "fixture_sha256": "ce6a83a6e371323dbd6c6b8878e401c792c69e44814cea7264339948e55b3436"
+    },
+    {
+      "stage": "issue284-legacy",
+      "label": "rollback-02",
+      "scope": "untouched old-save rollback",
+      "assertions_in_this_log": 4,
+      "log_sha256": "6c1f998b2a94b369f81d519351cc55f334e94cab8224852f973bfefafc526784",
+      "runtime_sha256": "0e5bbc47f7a0eb1a08cfa50a11a633e23b60b6da65642f70674efa2905eb3d52",
+      "fixture_sha256": "ce6a83a6e371323dbd6c6b8878e401c792c69e44814cea7264339948e55b3436"
+    }
+  ],
+  "assertions": 62,
+  "current_runtime_sha256": "435dec66f72a7fa3d44d89fa16071b7c75dc65e72dd023ae3c14affbd1de699c",
+  "package_source_members": 16192,
+  "deterministic_art": {
+    "src/models/caelum/projectiles/ca_zupay_rock.obj": "8376c379bc844653f56f0b5cac32949173d5c025093a2a9226838a356c3cc93e",
+    "src/MODELDEF": "b4841f4246bdc9e86eecf41b9f9b920310b342e4bd200e60e132b35195c11da0",
+    "src/graphics/caelum/zupay_rock.textures": "38a1190ca9b6ac4cef82061009762cbce68f41bb5f4bf156428829acb4bf25d8"
+  },
+  "local_render_capture_sha256": {
+    "rock-front.png": "e9ede418c6b6a0288af6a129cd4865bba7612f194490f58f3008ee56d4f8cb65",
+    "rock-side.png": "2e08f937bdd245ddf872f9a3c89df2cadc2ed8b2ebc46d4f4b95677ecdc99982"
+  },
+  "scope_qualification": "Combat/action evidence predates only comment spelling and the cosmetic OBJ UV correction. The final visual run tests that correction. Save evidence covers unchanged personality/rock migration and serialization; later cold-defense and generic-prop combat changes do not execute in that frozen compatibility fixture. Old-package seed/rollback remain separate from current-runtime tests.",
+  "preserved_iterations": [
+    "issue284-01 initialization timing",
+    "issue284-02/03 fixture evasion",
+    "issue284-04 missing native shield item",
+    "issue284-compat-01/upgrade-01 absolute save argument",
+    "issue284-legacy/rollback-01 missing final marker",
+    "issue284-preview-02/03 player-camera relocation",
+    "issue284-preview-04 side UV stretching"
+  ]
+}

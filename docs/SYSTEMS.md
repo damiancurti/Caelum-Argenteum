@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.23** — 2026-10-15.
+Documentation version: **5.4.24** — 2026-10-15.
+
+## 5.4.24 - Demon machete, personality and projectile presentation (#284)
+
+Mandinga keeps all twelve base attributes at 6. Its existing physical machete
+component remains; the same successful impact adds magical Fire based on the
+same authored machete base damage, scaled once by effective Intelligence,
+personality magical power and the normal health performance factor. It shares
+the physical accuracy, critical result and evasion; it does not charge another
+attack or roll another magical critical.
+
+The author clarified on 2026-10-15: after each component's shield/armor/innate
+and Fire-seal defenses, subtract Toughness once from the combined damage.
+Weight the normal physical reduction and half-strength magical reduction by
+the respective retained components. Zero total damage never counts as a Sleep
+hit or applies burn. A surviving impact loses HP once, grants the existing hit
+reactions once and counts once toward Sleep. Arenga retains its captured pre-hit
+bars. Ordinary burn derives only from the Fire share; stored intensity excludes
+Arenga/seal factors that are resolved by each later pulse.
+
+Mandinga's profile is aggressive/calculating/rebellious/liberal (0/2/0/0);
+Zupay's is patient/calculating/disciplined/conservative (2/2/2/2). Shared existing
+factors apply; no attribute increase is introduced. Demon personality revision 2
+migrates the existing profile once, without reconstructing the actor, refilling
+resources, resetting states or duplicating supplies. Allied/Redemption/summoning
+variants inherit the same profiles and keep their ownership/reward rules.
+
+Zupay's thrown projectile keeps its existing class, state identities, collision,
+speed, trajectory, elemental damage, status, explosion and lifetime. Cosmetic
+revision 1 captures rock presentation once, including existing flying shots;
+other casters keep their existing presentation. No larger collision follows the
+visible rock model. Author acceptance remains pending.
 
 ## 5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)
 

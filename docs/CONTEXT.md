@@ -1,12 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.23** — 2026-10-15.
+Documentation version: **5.4.24** — 2026-10-15.
 
-**5.4.23/#283:** prototype accepted; CA283-02 passed; PR301 ready.
-Modular 3D migration and remaining animations move to the V5.17 roadmap.
-**5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
-Keep-awake released. #284 next:
-unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.
+**5.4.24/#284:** implemented; PR302 draft; validation_5424; CA284-01 pending.
+Native/save/art checks pass; one weighted Toughness reduction.
+**#283:** prototype accepted/closed, PR301 ready; modular migration in V5.17.
+**#282:** PR300 ready; CA282-01 accepted; validation_5422. Keep-awake released.
 
 **5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
 

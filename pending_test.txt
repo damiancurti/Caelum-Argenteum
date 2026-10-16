@@ -1,0 +1,15 @@
+CA284-01 — Mandinga Fire and Zupay rock
+Origin: 5.4.24 / issue #284. Status: pending author confirmation.
+Prerequisites: isolated issue284-author-02 trial, launched by
+assets/validation_5424/launch.ps1, with a visible terminal and separate settings/saves.
+1. Press F6. Expected: one machete impact causes physical plus Fire damage and
+   a subsequent ordinary burn. The trial restores player health before each hit;
+   Mandinga uses its unchanged twelve base attributes of 6 in this author mode.
+2. Press F7, facing the Zupay. Expected: it throws a recognizable volumetric
+   dark rock with orange cracks; the existing Earth projectile/impact effects remain.
+3. Press F8 and walk around the stationary rock to inspect front and sides.
+   Expected: a genuine 3D volume, textured on every side, resembling its held rock.
+   The stationary display expires normally; F8 recreates it. This is a test-only view.
+Scope: author gameplay/visual review. Automated evidence separately covers shared
+critical/evasion/Sleep/Arenga, weighted Toughness, personalities and save migration.
+Report the result by this ID. No campaign saves are used or changed by the trial.

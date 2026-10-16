@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.23.** Obtain and update the complete repository, validate
+**Current release: 5.4.24.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.24 implements [#284](https://github.com/damiancurti/Caelum-Argenteum/issues/284):
+Mandinga retains its base attributes and adds magical Fire to its physical machete
+impact, with the same critical/evasion and one weighted Toughness reduction.
+Approved demon personalities use saved shared profiles. Zupay's projectile uses
+a cosmetic 3D rock without changing its combat or flight. Focused native checks and
+packaging pass; [PR302](https://github.com/damiancurti/Caelum-Argenteum/pull/302)
+awaits author review CA284-01. See [validation_5424](assets/validation_5424/RESULTS.md).
 
 5.4.23 completes the author-accepted **opt-in Domingo 3D prototype** for
 [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283), delivered in
