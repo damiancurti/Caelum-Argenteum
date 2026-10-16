@@ -9,13 +9,20 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.24.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
+are implemented and accepted within their documented scopes. Their individual
+PRs are merged; [PR303](https://github.com/damiancurti/Caelum-Argenteum/pull/303)
+delivers the complete batch to main while preserving recent roadmap changes.
+No author tests remain pending. The #283 prototype remains the accepted boundary;
+full modular character migration belongs to the future roadmap.
+
 5.4.24 implements [#284](https://github.com/damiancurti/Caelum-Argenteum/issues/284):
 Mandinga retains its base attributes and adds magical Fire to its physical machete
 impact, with the same critical/evasion and one weighted Toughness reduction.
 Approved demon personalities use saved shared profiles. Zupay's projectile uses
 a cosmetic 3D rock without changing its combat or flight. Focused native checks and
 packaging pass; [PR302](https://github.com/damiancurti/Caelum-Argenteum/pull/302)
-is ready after author acceptance of CA284-01 on 2026-10-15. See [validation_5424](assets/validation_5424/RESULTS.md).
+is merged after author acceptance of CA284-01 on 2026-10-15. See [validation_5424](assets/validation_5424/RESULTS.md).
 
 5.4.23 completes the author-accepted **opt-in Domingo 3D prototype** for
 [#283](https://github.com/damiancurti/Caelum-Argenteum/issues/283), delivered in

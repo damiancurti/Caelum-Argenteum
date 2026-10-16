@@ -2,22 +2,24 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
-**5.4.24/#284:** CA284-01 accepted 2026-10-15; PR302 ready; validation_5424.
-Native/save/art checks pass; one weighted Toughness reduction.
-**#283:** prototype accepted/closed, PR301 ready; modular migration in V5.17.
-**#282:** PR300 ready; CA282-01 accepted; validation_5422. Keep-awake released.
+**V5.4 batch:** all 24 scoped issues complete/accepted; individual PRs merged.
+PR303 to main; pending_test.txt empty; modular migration V5.17.
 
-**5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 ready.
+**5.4.24/#284:** CA284-01 accepted 2026-10-15; PR302 merged; validation_5424.
+**#283:** prototype accepted/closed, PR301 merged; modular migration in V5.17.
+**#282:** PR300 merged; CA282-01 accepted; validation_5422. Keep-awake released.
 
-**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 ready.
+**5.4.21/#252:** validation_5421; CA252-01 accepted; PR299 merged.
 
-**5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 ready; unmerged.
+**5.4.20/#251:** cloud implemented; validation_5420; CA251-01 accepted; PR281 merged.
 
-**5.4.18/#249:** CA249-01 accepted; validation_5418, PR297 ready; unmerged.
-**5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 ready.
-**5.4.16/#247:** CA247-01 accepted; PR295 ready. Keep-awake released.
+**5.4.19/#250:** CA250-01 accepted; 7eda77b0, validation_5419, PR298 merged.
 
-**5.4.15/#260:** acceleration/double tap accepted (CA260-01/02, 2026-10-15); validation_5415; PR294 ready.
+**5.4.18/#249:** CA249-01 accepted; validation_5418, PR297 merged.
+**5.4.17/#248:** CA248-01 accepted 2026-10-15; b87f977b, PR296 merged.
+**5.4.16/#247:** CA247-01 accepted; PR295 merged. Keep-awake released.
+
+**5.4.15/#260:** acceleration/double tap accepted (CA260-01/02, 2026-10-15); validation_5415; PR294 merged.
 
 **5.4.14/#253:** CA253-01 accepted on 2026-10-15; MAP01 resident movement repaired. validation_5414.
 
@@ -36,9 +38,9 @@ Native/save/art checks pass; one weighted Toughness reduction.
 **5.4.7/#241:** CA241-01 accepted 2026-10-14. validation_547.
 
 **5.4.6/#242:** CA242-01 accepted 2026-10-14. validation_546.
-**5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 ready, aa253eed.
+**5.4.4/#238:** CA238-01/02 accepted; complete; rollback passed; PR280 merged, aa253eed.
 #254/261/259 accepted: validation_543/542/541; PR275/274/273; #237/PR272.
-#237 audit and #282-284 complete; author authorized batch merge/closure. #231-236/#255-258 accepted/merged/closed; HISTORY.
+#237 audit complete; batch merge/closure authorized. #231-236/#255-258 accepted/merged/closed; HISTORY.
 
 **5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
 #225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02

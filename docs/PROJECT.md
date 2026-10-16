@@ -2,6 +2,16 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
+## V5.4 accepted batch delivery - PR303
+
+The 21 original issues (#237-254 and #259-261) plus #282-284 are complete within
+their accepted scopes. All 24 focused PRs are merged and preserved in the final
+integration history. The author confirmed the last check, CA284-01, and authorized
+merge/closure on 2026-10-15. PR303 delivers this batch to main; no author checks
+remain. Main's #276 roadmap additions and #283's modular 3D handoff are both
+retained. Earlier version sections below are delivery checkpoints; their former
+queues or merge restrictions are superseded by this current status.
+
 ## 5.4.24 - Demon combat and cosmetic rock (#284, accepted)
 
 The separately scoped follow-up to accepted #283 preserves Mandinga's base

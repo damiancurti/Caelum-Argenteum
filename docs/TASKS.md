@@ -2,6 +2,16 @@
 
 Documentation version: **5.4.24** — 2026-10-15.
 
+## Current V5.4 batch completion
+
+All 24 requested issues (#237-254, #259-261 and #282-284) are implemented and
+accepted within their documented scopes. No implementation or author-test work
+remains for this batch; pending_test.txt is empty. Every focused issue PR is
+merged. PR303 delivers the assembled history to main and closes the completed
+issues, as authorized on 2026-10-15. The #283 full modular migration remains
+future roadmap work. The version sections below preserve earlier checkpoints;
+their former queues and merge restrictions are superseded by this status.
+
 ## 5.4.24 - Demon combat and rock (#284, accepted)
 
 Branch feat/issue284-demon-fire-rock follows accepted #283 and implements the approved
@@ -12,10 +22,8 @@ combat/personality and art commits separate within this issue's PR.
 Focused combat/action, migration/reload/hub/rollback and rendered checks pass,
 with 62 assertions across eight scoped runs. Deterministic generation, static
 validation and 16,192-member package parity pass. CA284-01 passed author review
-on 2026-10-15; PR302 is ready and pending_test.txt is empty. The author then
-authorized merging and closing all completed issues in this batch. This supersedes
-earlier no-merge instructions below; the remaining task is ordered integration
-and closure of #237-254, #259-261 and #282-284. V5.17 owns the deferred modular
+on 2026-10-15; PR302 is merged and pending_test.txt is empty. PR303 delivers
+the author-authorized batch integration. V5.17 owns the deferred modular
 3D migration. The isolated trial launcher remains in validation_5424.
 
 ## 5.4.23 - Domingo 3D prototype (#283, accepted)

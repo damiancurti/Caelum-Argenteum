@@ -36,6 +36,21 @@ separate from the native contract and save checks above. The confirmed entry was
 removed from pending_test.txt; no author tests remain. PR302 is ready. The author
 then authorized merging and closing the completed V5.4 batch, including #282-284.
 
+The remaining focused PRs were merged in dependency order: #299 (018ddb02),
+#272 (0d768cdb), #300 (41a41368), #301 (e084294d) and #302 (b7f4ac0b). The prior
+19 issue PRs were already merged into the working chain. Final delivery PR303
+preserves all 24 issue heads and merge commits, plus main's three #276 roadmap
+commits. The only content conflict was the V5.17 row: both modular 3D migration
+and the existing furniture/clothing completion wording were retained; the
+generated document index was rebuilt. Integration changes no runtime source:
+all 16,192 source members match both the normal package and the accepted
+CA284-01 package byte-for-byte. Applicable native/save/visual evidence is reused
+with its original qualifications; final project validation has zero errors.
+Batch ancestry and package checks are recorded in
+assets/validation_5424/batch_integration.json; issue-specific test evidence remains
+in each release's own validation directory. This delivery closes the requested
+21-issue batch and additions #282-284, not the future modular migration.
+
 ## 5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)
 
 While the author was away, the original 2026-10-09 Domingo sheet was verified
