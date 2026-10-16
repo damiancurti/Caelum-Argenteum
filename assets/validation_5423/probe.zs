@@ -12,6 +12,8 @@ class CA283Probe : StaticEventHandler
     int BenchSerial,BenchCount,BenchModel;
     int ManualRest,ManualCamera;
     bool Manual;
+    bool WatchingJump,SawPreparation,SawAir,SawLanding,SawMovingPreparation,SawGuardPreparation;
+    int JumpWatchStart,TakeoffDelay;
     ui int SeenSerial,FrameCount;
     ui double LastFrameMS,FrameSum,FrameMin,FrameMax;
     void Check(bool ok,String text)
@@ -53,6 +55,18 @@ class CA283Probe : StaticEventHandler
         if(User.PilotBody.Pose==CaelumDomingoPilotFrames.RUN)RunSeen=true;
         if(User.PilotBody.Pose==CaelumDomingoPilotFrames.MELEE
             || User.PilotBody.Pose==CaelumDomingoPilotFrames.MISSILE)AttackSeen=true;
+        if(WatchingJump)
+        {
+            if(User.PilotJumpPreparing)
+            {
+                SawPreparation=true;
+                if(User.Vel.XY.Length()>0)SawMovingPreparation=true;
+                if(User.CombatBlockModeActive)SawGuardPreparation=true;
+            }
+            if(User.Vel.Z>0 && !User.PilotJumpPreparing && !SawAir)
+            {SawAir=true;TakeoffDelay=level.time-User.PilotJumpStarted;}
+            if(User.PilotLanding)SawLanding=true;
+        }
     }
     void UpdateReviewCamera()
     {
@@ -203,7 +217,7 @@ class CA283Probe : StaticEventHandler
         if(e.Name=='c283_loaded')
         {
             User=CaelumDomingoPilotPlayer(players[0].mo);
-            Check(User!=null && User.PilotRevision==1,"pilot source state restored");
+            Check(User!=null && User.PilotRevision==2,"pilot motion schema migrated/restored");
             if(User!=null)
             {
                 Check(User.PilotBody!=null && User.PilotBody.Master==User,"bound body after load or travel");
@@ -213,6 +227,70 @@ class CA283Probe : StaticEventHandler
             }
         }
         if(e.Name=='c283_moved'){Check(WalkSeen,"native walking selects model walk");Check(RunSeen,"native running selects model run");}
+        if(e.Name=='c283_guard')
+        {
+            Check(User.CombatBlockModeActive==bool(e.Args[0]),"native block toggle");
+            int expected=e.Args[0]==0?CaelumDomingoPilotFrames.IDLEBREATHING:
+                e.Args[1]==1?CaelumDomingoPilotFrames.GUARDWALK:
+                e.Args[1]==2?CaelumDomingoPilotFrames.GUARDRUN:CaelumDomingoPilotFrames.GUARDIDLEBREATHING;
+            Check(User.PilotBody.Pose==expected,"native block selects matching body/leg action");
+        }
+        if(e.Name=='c283_watch_jump')
+        {
+            WatchingJump=true;SawPreparation=SawAir=SawLanding=SawMovingPreparation=SawGuardPreparation=false;
+            TakeoffDelay=0;JumpWatchStart=level.time;
+            let motion=CA283MotionPlayer(User);if(motion!=null){motion.Takeoffs=0;motion.JumpAirSpent=0;}
+        }
+        if(e.Name=='c283_preparing')
+        {
+            Check(User.PilotJumpPreparing,"jump preparation remains queued after key release");
+            Check(User.player.onground && User.Vel.Z==0,"no takeoff before preparation completes");
+            let motion=CA283MotionPlayer(User);if(motion!=null)Check(motion.Takeoffs==0 && motion.JumpAirSpent==0,"preparation spends no jump Air");
+        }
+        if(e.Name=='c283_jump_result')
+        {
+            let motion=CA283MotionPlayer(User);
+            Check(SawPreparation && SawAir && SawLanding,"preparation, real takeoff and landing observed");
+            Check(TakeoffDelay>=35 && TakeoffDelay<=36,"takeoff follows one full second of preparation");
+            Check(!User.PilotJumpPreparing && !User.PilotLanding,"jump and landing transitions finish");
+            if(motion!=null)Check(motion.Takeoffs==1 && motion.JumpAirSpent>0,"one native takeoff pays Air once");
+            if(e.Args[0])Check(SawMovingPreparation && SawGuardPreparation,"movement and blocking remain available during preparation");
+            Console.Printf("CA283 JUMP delay=%d takeoffs=%d air=%.6f",TakeoffDelay,motion!=null?motion.Takeoffs:-1,motion!=null?motion.JumpAirSpent:-1);
+            WatchingJump=false;
+        }
+        if(e.Name=='c283_hurt_preparation')
+        {
+            Check(User.PilotJumpPreparing,"damage scenario starts in preparation");
+            User.bInvulnerable=false;int before=User.health;
+            User.DamageMobj(Camera,Camera,500,'CaelumPhysicalTest',DMG_FORCED|DMG_NO_ARMOR,0);
+            User.bInvulnerable=true;
+            Check(User.health>0 && User.health<before,"real damage reaches health without killing player");
+            Check(!User.PilotJumpPreparing,"damage cancels queued jump immediately");
+        }
+        if(e.Name=='c283_manual_hurt' && User.health>500)
+        {
+            User.bInvulnerable=false;
+            User.DamageMobj(Camera,Camera,500,'CaelumPhysicalTest',DMG_FORCED|DMG_NO_ARMOR,0);
+            User.bInvulnerable=true;
+        }
+        if(e.Name=='c283_stun_preparation')
+        {
+            Check(User.PilotJumpPreparing,"stun scenario starts in preparation");
+            User.LucidityPhysicalStunRemaining=1;
+        }
+        if(e.Name=='c283_cancelled_result')
+        {
+            let motion=CA283MotionPlayer(User);
+            Check(!SawAir && !User.PilotJumpPreparing && motion!=null && motion.Takeoffs==0,"cancelled preparation cannot launch later");
+            WatchingJump=false;
+        }
+        if(e.Name=='c283_pending_loaded')
+        {
+            User=CaelumDomingoPilotPlayer(players[0].mo);Ready=true;
+            Check(User.PilotRevision==2 && User.PilotJumpPreparing,"save restores pending jump without restarting");
+            Check(level.time>User.PilotJumpStarted,"saved preparation retains elapsed time");
+            WatchingJump=true;SawPreparation=true;SawAir=SawLanding=false;
+        }
         if(e.Name=='c283_attacked')Check(AttackSeen,"native weapon selects supported attack");
         if(e.Name=='c283_chair')Rest(false,false);
         if(e.Name=='c283_bed')Rest(true,false);
@@ -224,6 +302,21 @@ class CA283Probe : StaticEventHandler
             Check(Furniture==null || Furniture.Occupant==null,"native furniture released");
         }
         if(e.Name=='c283_done')Console.Printf("CA283 DONE passes=%d failures=%d",Passed,Failed);
+    }
+}
+
+// Observa el salto real sin sustituir su cálculo ni sus recursos.
+class CA283MotionPlayer : CaelumDomingoPilotPlayer
+{
+    int Takeoffs;
+    double JumpAirSpent;
+    override void CheckJump()
+    {
+        double beforeZ=Vel.Z,beforeAir=CurrentAir;
+        bool grounded=player!=null && player.onground && player.jumpTics==0;
+        Super.CheckJump();
+        if(grounded && player.jumpTics==-1 && Vel.Z>beforeZ && !(player.cheats&CF_PREDICTING))
+        {Takeoffs++;JumpAirSpent+=Max(0,beforeAir-CurrentAir);}
     }
 }
 

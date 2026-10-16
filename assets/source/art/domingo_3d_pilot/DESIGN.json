@@ -992,7 +992,7 @@
     },
     "control_lock": "Block movement, attacks and blocking during each animation.",
     "provisions": "Repeat visual eating/drinking cycles without changing consumption rate or quantity.",
-    "status": "Required follow-up; intermediate export/native evidence does not implement these changes.",
+    "status": "Native shield guard and queued jump/landing are implemented; CA283-02 review is pending. Modular parts and timed rest/provision animations remain open.",
     "historical_export_notes": "export_actions retains the original candidate metadata for reproducibility; approved_target_design supersedes the unapproved duration notes, pending implementation.",
     "visual_feedback": [
       "Correct sideways knee flexion while walking.",

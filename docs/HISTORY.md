@@ -90,7 +90,7 @@ owned texture samples corrected that presentation before the final tests.
 
 
 Author confirmation on 2026-10-15 (America/Buenos_Aires), CA283-01, origin
-5.4.23/#283: "De momento est? muy bien, pero luego perfeccionaremos detalles de
+5.4.23/#283: "De momento está muy bien, pero luego perfeccionaremos detalles de
 este modelo." The current head-grip-02 prototype presentation is provisionally
 accepted; fine visual polish is deferred. This does not accept unimplemented
 modularity or new animations, or claim that each optional fallback step was
@@ -102,6 +102,27 @@ returns to ordinary combat rules.
 GitHub audit: 19 implementation PRs in the current batch are already merged;
 PR272 (#237), PR299 (#252) and PR300 (#282) remain open and ready. Their issues
 remain open; this audit performs no new merges or closures.
+
+The next intermediate revision implements native shield-block presentation,
+one-second queued jump preparation and one-second reverse landing flexion.
+Releasing Jump still launches after preparation; damage/incapacity cancels it.
+Normal movement/attack/block remain available. The native jump alone changes
+velocity and charges Air/heat. Pilot schema revision 2 is idempotent; pending
+preparation survives save/load and travel clears local transitions. Default
+CaelumPlayer behavior remains unchanged. The export adds 180 frames and retains
+all 195 previously accepted coordinate/normal frames. New evidence is recorded
+separately in validation_5423/guard-jump-evidence.json; CA283-02 is pending.
+There are 180 passing assertions in 19 native runs, including an unchanged older
+save migrated and resaved at revision 2, a pending jump restored on load, attack
+input during preparation and cancellation on map travel. Seven export artifacts
+repeat exactly; static validation and normal package/source parity pass. The
+resting migrated save also loads in the original runtime. Its original test
+expected revision 1 and failed only that assertion; a separate fixture accepts
+the retained revision 2 and verifies body/resources. Both results are preserved;
+this does not claim rollback during a new animation unsupported by the old model.
+The first save fixture quit before native save/event completion; its failed
+log remains in motion-01. Waiting for the queued operations fixes the fixture.
+Rest/provision animations and interchangeable runtime parts remain unfinished.
 
 
 

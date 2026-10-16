@@ -86,6 +86,35 @@ running the listed cases and static/export checks. The 64-proxy means are
 uncapped after warm-up. This isolated rendering cost is higher; it is not a
 combat or 500-actor benchmark and does not justify global character conversion.
 
+## Shield guard and queued jump revision
+
+The opt-in pilot now reads actual native shield-block state for guard poses.
+Jump uses one second of preparation before native takeoff, even after releasing
+the key, then one second of reversed flexion on landing. Movement, attacks and
+blocking retain their ordinary rules. Health loss or incapacity cancels a queued
+jump; native CheckJump remains the only velocity/Air/thermal authority. Revision
+2 migrates older pilot saves idempotently and retains a saved preparation's time.
+
+`guard-jump-geometry.json` verifies all 195 older MD3 frames remain byte-identical,
+36 reverse-pose samples and 144 planted-foot samples (maximum error 0.0055 source
+unit). Knees flex predominantly forward and the body lowers 19 source units.
+The source/export now contains 24 actions and 375 frames; export-16/-17 repeat
+all seven artifacts exactly. Native rendering of guard and preparation was
+inspected separately from the geometry assertions. CA283-02 remains pending.
+
+`guard-jump-evidence.json` records the precise motion-01/02 run/fixture hashes,
+save migration/rollback, assertion counts, package parity and static results.
+These are separate from the older art/performance measurements above. The
+revision passes 180 assertions in 19 runs, zero static errors and normal package
+parity across 16,188 source members. The original rollback fixture expected
+revision 1 and failed only that metadata check; a separate fixture changes the
+expectation to 2, with all eight assertions passing. This checks a resting migrated
+save, not downgrade during an animation absent from the older model. Both logs
+remain preserved. The
+motion-01 jump-save fixture quit too early to save/finish its event; its failed
+log is preserved. Motion-02 waits for native completion. No gameplay fix was
+needed for that fixture failure. Modularity and rest/provision timing remain open.
+
 ## Artifact and reproduction
 
 - Editable source: `assets/source/art/domingo_3d_pilot/domingo.blend`; its packed
@@ -93,8 +122,8 @@ combat or 500-actor benchmark and does not justify global character conversion.
 - Pinned tool: Blender 4.5.3 LTS, official build 67807e1800cc. See DESIGN.json for
   the archive fingerprint and ASSETS for the export command. The committed blend is the art input;
   its initial authoring transcript is not a deterministic blend-file generator.
-- Current export: one surface, 10,629 UV-split vertices, 17,339 triangles, 195 frames,
-  16,885,544 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
+- Current export: one surface, 10,629 UV-split vertices, 17,339 triangles, 375 frames,
+  32,201,384 MD3 bytes; 1254 x 1254 skin, 1,863,217 PNG bytes.
 - Native format/normal decoding checked against GZDoom g4.14.2
   `src/common/models/models_md3.cpp` and `model_md3.h`.
 - Run the exporter twice into fresh directories; `validate_export.py <first>
@@ -107,8 +136,10 @@ combat or 500-actor benchmark and does not justify global character conversion.
   the Journal/live-rest consumer is retained.
 - Manual: omit `--visual`, use `manual.cfg -Interactive` while the author is available.
   F6 compares sprite/model, F7 cycles native chair/bed/ground rest, F8 changes
-  viewpoints. Q exits a rest panel before another fixture shortcut. CA283-01 is
-  only a prototype review; CA282-01 is independently accepted.
+  viewpoints. B toggles native shield block, Space queues Jump, F9 applies test
+  damage (while health is sufficient). Q exits a rest panel before another
+  shortcut. CA283-01 provisionally accepted the previous presentation; CA283-02
+  covers guard/jump. CA282-01 is independently accepted.
 
 ## Evidence levels
 

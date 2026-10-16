@@ -14,7 +14,9 @@ an editable Domingo model with native MD3 animation driven by the existing
 player, now using a CC0 human head and polished 3D anatomy references. Default gameplay keeps its current
 appearance. Knee/elbow, walking-arm, head/hair and running-grip revisions remain in draft
 [PR301](https://github.com/damiancurti/Caelum-Argenteum/pull/301). CA283-01 is provisionally accepted, with fine art polish deferred.
-Interchangeable equipment/hair/face parts and timed rest/provision animations
+Native shield-block presentation and one-second queued jump/landing now have
+focused engine checks; their visual review is CA283-02. Interchangeable
+equipment/hair/face parts and timed rest/provision animations
 remain pending; this issue is not complete. Agent evidence and reproduction:
 [validation_5423](assets/validation_5423/RESULTS.md).
 

@@ -6,11 +6,106 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
     bool PilotOriginalSprites;
     bool PilotDeathPresentation;
     CaelumDomingoPilotBody PilotBody;
+    bool PilotJumpPreparing,PilotJumpNeedsRelease,PilotWasAirborne,PilotGroundTracked;
+    int PilotJumpStarted,PilotLandingStarted;
+    bool PilotLanding;
+
+    void EnsurePilotMotion()
+    {
+        // Los guardados del prototipo anterior no tienen transiciones pendientes.
+        if(PilotRevision<2)
+        {
+            PilotJumpPreparing=false;PilotJumpNeedsRelease=false;PilotLanding=false;
+            PilotGroundTracked=false;PilotWasAirborne=false;PilotRevision=2;
+        }
+    }
+
+    bool PilotMotionBlocked()
+    {
+        let journal=player==null?null:CVar.GetCVar("ca_journal_open",player);
+        return player==null || health<=0 || player.playerstate!=PST_LIVE
+            || IsPhysicallyImmobilized() || CaelumRestState.IsActive(self)
+            || CaelumTelekinesisRules.Held(self) || CreationWizardOpen || EquipmentMenuOpen
+            || CraftingMenuOpen || PalomoMerchantMenuOpen || HasActiveConversation()
+            || CaelumTimeSkipState.IsOpen(self) || (journal!=null && journal.GetBool());
+    }
+
+    void CancelPilotJump()
+    {
+        if(PilotJumpPreparing)PilotJumpNeedsRelease=true;
+        PilotJumpPreparing=false;
+    }
+
+    override void CheckJump()
+    {
+        if(player==null){Super.CheckJump();return;}
+        bool predicting=(player.cheats&CF_PREDICTING)!=0;
+        if(!predicting)
+        {
+            EnsurePilotMotion();
+            if((player.cmd.buttons&BT_JUMP)==0)PilotJumpNeedsRelease=false;
+        }
+        // Nadar, volar y desagacharse conservan la interpretación nativa de Saltar.
+        if(WaterLevel>=2 || bNoGravity || player.crouchoffset!=0)
+        {
+            if(!predicting)CancelPilotJump();
+            Super.CheckJump();return;
+        }
+        bool eligible=!PilotMotionBlocked() && player.onground && player.jumpTics==0
+            && level.IsJumpingAllowed() && JumpZ>0;
+        if(PilotJumpPreparing && !eligible)
+        {if(!predicting)CancelPilotJump();return;}
+        if(!PilotJumpPreparing)
+        {
+            if(eligible && !PilotJumpNeedsRelease && (player.cmd.buttons&BT_JUMP)!=0 && !predicting)
+            {PilotJumpPreparing=true;PilotJumpStarted=level.time;PilotLanding=false;}
+            return;
+        }
+        if(level.time-PilotJumpStarted<CaelumDomingoPilotFrames.Duration(CaelumDomingoPilotFrames.JUMPPREPARE))return;
+        // La pulsación queda encolada aunque ya se haya soltado. Sólo el salto
+        // nativo modifica velocidad y cobra Aire/calor; no hay segundo impulso.
+        int buttons=player.cmd.buttons;
+        double before=Vel.Z;
+        player.cmd.buttons|=BT_JUMP;
+        Super.CheckJump();
+        player.cmd.buttons=buttons;
+        if(!predicting)
+        {
+            PilotJumpPreparing=false;
+            if(player.jumpTics==-1 && Vel.Z>before)
+            {PilotWasAirborne=true;PilotGroundTracked=true;PilotLanding=false;}
+        }
+    }
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        int before=health;
+        int result=Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+        if(health<before && (player==null || !(player.cheats&CF_PREDICTING)))CancelPilotJump();
+        return result;
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        if(player==null || (player.cheats&CF_PREDICTING))return;
+        EnsurePilotMotion();
+        if(PilotMotionBlocked() || WaterLevel>0 || bNoGravity)
+        {CancelPilotJump();PilotLanding=false;PilotGroundTracked=false;return;}
+        bool grounded=player.onground && Vel.Z<=0;
+        if(!PilotGroundTracked){PilotWasAirborne=!grounded;PilotGroundTracked=true;}
+        else if(grounded && PilotWasAirborne)
+        {PilotLanding=true;PilotLandingStarted=level.time;PilotWasAirborne=false;}
+        else if(!grounded)PilotWasAirborne=true;
+        if(PilotLanding && level.time-PilotLandingStarted>=CaelumDomingoPilotFrames.Duration(CaelumDomingoPilotFrames.LANDING))
+            PilotLanding=false;
+        if(PilotJumpPreparing && !grounded)CancelPilotJump();
+    }
 
     bool UpdatePilotVisual()
     {
         if(CurState==null || CharacterProfile==null)return false;
-        if(PilotRevision<1)PilotRevision=1;
+        EnsurePilotMotion();
         bool supported=CharacterProfile.Race==CaelumConstants.RACE_HUMAN
             && CharacterProfile.Sex==CaelumConstants.SEX_MALE
             && WeaponModel!=null && WeaponModel.Equipped
@@ -52,6 +147,7 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
     override bool ApplyCustomWorldVisual(){return UpdatePilotVisual();}
     override void PreTravelled()
     {
+        CancelPilotJump();PilotLanding=false;PilotGroundTracked=false;
         Super.PreTravelled();
         // La presentación local se reconstruye; no viaja un actor del hub viejo.
         if(PilotBody!=null){PilotBody.Destroy();PilotBody=null;}
@@ -104,6 +200,24 @@ class CaelumDomingoPilotBody : CaelumDomingoPilotFrames
             else if(frame>=10){Pose=MELEE;Elapsed=NativeElapsed(user,user.MeleeState);}
             else if(frame>=2){Pose=MISSILE;Elapsed=NativeElapsed(user,user.MissileState);}
             else{Pose=PAIN;Elapsed=NativeElapsed(user,user.FindState('Pain'));}
+        }
+        // Los estados de ataque/dolor/muerte siguen teniendo su presentación.
+        // Las transiciones de salto no bloquean las acciones del jugador.
+        if(user.health>0 && (Pose==IDLEBREATHING || Pose==WALK || Pose==RUN))
+        {
+            if(user.PilotJumpPreparing){Pose=JUMPPREPARE;Elapsed=level.time-user.PilotJumpStarted;}
+            else if(user.PilotLanding){Pose=LANDING;Elapsed=level.time-user.PilotLandingStarted;}
+            else if(user.PilotGroundTracked && user.PilotWasAirborne && user.WaterLevel==0 && !user.bNoGravity)
+            {Pose=JUMPAIR;Elapsed=0;}
+        }
+        if(user.health>0 && user.CombatBlockModeActive && user.HasActiveBlockSource())
+        {
+            if(Pose==IDLEBREATHING)Pose=GUARDIDLEBREATHING;
+            else if(Pose==WALK)Pose=GUARDWALK;
+            else if(Pose==RUN)Pose=GUARDRUN;
+            else if(Pose==JUMPPREPARE)Pose=GUARDJUMPPREPARE;
+            else if(Pose==LANDING)Pose=GUARDLANDING;
+            else if(Pose==JUMPAIR)Pose=GUARDJUMPAIR;
         }
         ModelFrame=FrameFor(Pose,Elapsed);
         let wanted=FindStateByString(String.Format('F%d',ModelFrame));

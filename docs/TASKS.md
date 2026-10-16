@@ -12,14 +12,13 @@ Keep the original sprites, qualified earlier evidence and #284's separate scope.
 Required before completion:
 - Demonstrate interchangeable weapon, shield, armor, hair and face parts using
   existing choices, starting with Domingo; the fixed-surface export is insufficient.
-- Add animation driven by actual shield blocking.
 - Implement chair sit/stand (2 s), floor/bed lie/get-up (3 s), and eating/drinking
   visual cycles (4 s), blocking movement/attack/block while each runs. Keep native
   progressive provision rates/quantities. Damage interrupts immediately and
   returns to ordinary combat rules. Existing 40-tic candidate clips need retiming.
-- Add one-second jump preparation before takeoff and one-second landing, with
-  leg flexion/body lowering. Movement/attack/block stay available. Releasing Jump
-  keeps the queued preparation; any received damage or incapacity cancels it.
+- Obtain CA283-02 author review of implemented native shield blocking and
+  one-second jump preparation/landing. Releasing Jump preserves the queued
+  action; damage/incapacity cancels it; ordinary movement/attack/block remain.
 - Preserve native collision, resources, equipment and furniture authority;
   validate transitions, interruptions, save/load and equipment changes. Retain
   documented fallback for unsupported variants/crouch. Broaden performance

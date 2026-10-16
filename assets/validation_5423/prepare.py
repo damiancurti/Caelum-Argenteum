@@ -16,7 +16,7 @@ def main():
     if any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_' for c in a.directory):p.error('Plain directory name required.')
     out=ROOT/'build'/a.directory;out.mkdir(exist_ok=False)
     handlers='AddEventHandlers="CA283Probe"'
-    mapinfo='GameInfo { PlayerClasses="CaelumDomingoPilotPlayer" '+handlers+' }\ncluster 99 { hub }\nmap MAP99 "Domingo pilot" { cluster=99 nointermission sky1="SKY1",0 }\nmap MAP98 "Domingo pilot hub" { cluster=99 nointermission sky1="SKY1",0 }\n'
+    mapinfo='GameInfo { PlayerClasses="CA283MotionPlayer" '+handlers+' }\ncluster 99 { hub }\nmap MAP99 "Domingo pilot" { cluster=99 nointermission sky1="SKY1",0 }\nmap MAP98 "Domingo pilot hub" { cluster=99 nointermission sky1="SKY1",0 }\n'
     modeldef=(ROOT/'src/MODELDEF').read_text(encoding='utf-8').split('// BEGIN DOMINGO 3D PILOT\n')[1].split('// END DOMINGO 3D PILOT')[0]
     modeldef=modeldef.replace('Model CaelumDomingoPilotBody','Model CA283ModelProxy')
     manifest={'runtime_sha256':seal.shared.package(out/'production.pk3',{
@@ -38,11 +38,21 @@ def main():
              'load.cfg':'wait 35; netevent c283_loaded; '+done,
              'fallback.cfg':start+'netevent c283_fallback; '+done,
              'travel.cfg':'wait 35; netevent c283_loaded; changemap MAP98; wait 35; netevent c283_loaded; changemap MAP99; wait 35; netevent c283_loaded; '+done,
-             'manual.cfg':start+'netevent c283_manual; cl_run false; bind shift +speed; chase_dist 150; chase_height 10; language es; use_mouse true; bind f6 "netevent c283_compare"; bind f7 "netevent c283_next_rest"; bind f8 "netevent c283_orbit"; netevent c283_done;\n',
+             'manual.cfg':start+'netevent c283_manual; cl_run false; bind shift +speed; bind b +zoom; bind space +jump; chase_dist 150; chase_height 10; language es; use_mouse true; bind f6 "netevent c283_compare"; bind f7 "netevent c283_next_rest"; bind f8 "netevent c283_orbit"; bind f9 "netevent c283_manual_hurt"; netevent c283_done;\n',
              'death.cfg':start+'netevent c283_kill; wait 70; netevent c283_dead; screenshot pilot-death.png; '+done}
     scripts['death-console.cfg']=start+'kill; wait 70; netevent c283_dead; screenshot pilot-death-still.png; '+done
     scripts['camera.cfg']=start+'netevent c283_manual; wait 5; netevent c283_camera_audit; screenshot pilot-review-front.png; +forward; wait 10; -forward; wait 5; netevent c283_camera_audit; netevent c283_orbit; wait 5; netevent c283_camera_audit; screenshot pilot-review-side.png; '+done
     scripts['motion.cfg']=start+'netevent c283_manual; netevent c283_orbit; cl_run false; wait 5; +forward; wait 10; netevent c283_gait 0; wait 1; screenshot pilot-walk.png; -forward; wait 35; +speed; +forward; wait 15; netevent c283_gait 1; wait 1; screenshot pilot-run.png; -forward; -speed; wait 35; '+done
+    scripts['guard.cfg']=start+'netevent c283_manual; +zoom; wait 2; -zoom; wait 10; netevent c283_guard 1 0; screenshot pilot-guard.png; cl_run false; +forward; wait 10; netevent c283_guard 1 1; +speed; wait 15; netevent c283_guard 1 2; screenshot pilot-guard-run.png; -forward; -speed; wait 40; +zoom; wait 2; -zoom; wait 10; netevent c283_guard 0 0; '+done
+    scripts['jump.cfg']=start+'netevent c283_manual; netevent c283_orbit; netevent c283_watch_jump; +jump; wait 2; -jump; wait 15; netevent c283_preparing; screenshot pilot-jump-prepare.png; wait 22; screenshot pilot-jump-air.png; wait 100; netevent c283_jump_result; '+done
+    scripts['jump-guard.cfg']=start+'netevent c283_manual; netevent c283_orbit; +zoom; wait 2; -zoom; wait 10; netevent c283_watch_jump; +forward; +jump; wait 2; -jump; wait 15; netevent c283_preparing; screenshot pilot-guard-prepare.png; wait 100; -forward; wait 30; netevent c283_jump_result 1; '+done
+    scripts['jump-damage.cfg']=start+'netevent c283_watch_jump; +jump; wait 2; -jump; wait 12; netevent c283_hurt_preparation; wait 70; netevent c283_cancelled_result; '+done
+    scripts['jump-save.cfg']=start+'netevent c283_watch_jump; +jump; wait 2; -jump; wait 12; netevent c283_preparing; save jump-pending.zds; wait 10; '+done
+    scripts['jump-load.cfg']='wait 1; netevent c283_pending_loaded; wait 120; netevent c283_jump_result; '+done
+    scripts['jump-held-damage.cfg']=start+'netevent c283_watch_jump; +jump; wait 14; netevent c283_hurt_preparation; wait 70; netevent c283_cancelled_result; -jump; '+done
+    scripts['jump-stun.cfg']=start+'netevent c283_watch_jump; +jump; wait 2; -jump; wait 12; netevent c283_stun_preparation; wait 70; netevent c283_cancelled_result; '+done
+    scripts['jump-attack.cfg']=start+'netevent c283_watch_jump; +jump; wait 2; -jump; wait 8; +attack; wait 100; -attack; wait 35; netevent c283_jump_result; netevent c283_attacked; '+done
+    scripts['jump-travel.cfg']='wait 1; netevent c283_pending_loaded; wait 1; changemap MAP98; wait 35; netevent c283_loaded; netevent c283_cancelled_result; '+done
     for count in (1,64):
         for model in (0,1):
             scripts[f'bench-{count}-{model}.cfg']=start+f'vid_vsync false; vid_maxfps 0; netevent c283_bench {count} {model}; wait 175; netevent c283_record; wait 350; netevent c283_record_end; profilethinkers -t 20; wait 35; screenshot pilot-bench-{count}-{model}.png; '+done

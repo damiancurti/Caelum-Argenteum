@@ -3,7 +3,7 @@
 Documentation version: **5.4.23** — 2026-10-15.
 
 **5.4.23/#283:** PR301 draft; validation_5423; CA283-01 provisionally accepted;
-modular parts and timed/block/jump animations pending.
+guard/jump implemented (CA283-02 pending); modularity and rest/provision timing remain.
 **5.4.22/#282:** PR300 ready; CA282-01 accepted 2026-10-15; validation_5422.
 Keep-awake released. #284 next:
 unchanged Mandinga attributes, extra machete Fire, approved personalities/rock.

@@ -17,10 +17,12 @@ authority. Seated/lying breathing uses the existing 70-tic breathing cadence.
 The tested intermediate changes rest pose immediately. The author subsequently
 approved 2-second chair entry/exit, 3-second lie/get-up and 4-second eating/drinking
 cycles, with movement, attacks and blocking locked until each animation ends.
-Provision consumption rates and quantities stay unchanged. These transitions
-and control locks remain to be implemented. The pilot's revision 1 fields reconstruct one local body,
+Provision consumption rates and quantities stay unchanged. Damage must interrupt
+these animations immediately and restore ordinary combat rules. These transitions
+and control locks remain to be implemented. The pilot reconstructs one local body,
 which is released before map travel; base-player saves remain base-player saves.
-No campaign appearance schema is changed. This pilot has no author acceptance.
+No campaign appearance schema is changed. CA283-01 provisionally accepts the
+preceding head/grip presentation, with fine visual polish deferred.
 
 The author now requires interchangeable weapon, shield, armor, hair and face
 parts, demonstrated first on Domingo using existing choices. The fixed runtime
@@ -33,11 +35,16 @@ Their revised arm curves change presentation only: speed, acceleration, movement
 input, collision, resource costs and attack timing are unchanged. The isolated
 manual fixture starts with always-run off and Shift mapped to native speed input.
 
-Required pilot follow-up: shield-block presentation and one-second jump/landing
-animations that flex the legs and lower the body. Jump preparation happens before
-actual takeoff; received damage cancels it. Movement, attacks and blocking stay
-available during jump preparation and landing (an explicit exception to the
-other animation locks). Once launched, native jump trajectory/collision apply.
+The pilot now presents actual native shield blocking with matching idle, walk,
+run and jump poses. One-second jump preparation flexes the legs and lowers the
+body before native takeoff; releasing Jump keeps that queued action. Actual
+health loss, incapacity, leaving valid ground or map travel cancels preparation.
+One-second landing reverses the flexion on ground contact. Movement, attacks and
+blocking retain their ordinary rules during both transitions. Native CheckJump
+remains the only takeoff velocity, Air-cost and thermal authority; swimming,
+flight and uncrouching retain native Jump behavior. Revision 2 initializes new
+transient fields idempotently for older pilot saves and preserves a pending
+preparation's elapsed time in current saves. CA283-02 covers the new visual review.
 
 
 
