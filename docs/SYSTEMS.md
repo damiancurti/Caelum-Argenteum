@@ -4,6 +4,13 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - Contact-only breath and performance boundaries (#318)
 
+Latest author decision, 2026-10-17: 6,000 simultaneous attackers are ruled out
+for the game and must never be stress-tested again. The last active diagnostic
+was stopped on request; earlier results remain historical evidence. Current
+geometry comparisons use peaceful scenes and 1,000 attackers/600 defenders.
+Normal code still contains the rejected full-army deployment until its bounded
+replacement is implemented; no new production budget is silently selected.
+
 The author subsequently authorized separate house interiors. Fresh MAP06 keeps
 all 160 houses at their original XY bounds, width, depth and roof height (184 MU).
 Their solid exterior shells preserve street widths, lots and public routes.
@@ -20,6 +27,18 @@ avoid GZDoom's both-sky clipping exception. It is not a renderer-only switch
 or a production height change. Measured peaceful rendering improves strongly;
 the 1,000-attacker siege still misses 60 FPS and 6,000 attackers remain near
 0.7 FPS / 12 tics/s. The experiment does not authorize new army counts or walls.
+
+The later author-requested variable-sky diagnostic keeps the same house shells
+and separate interiors. House/shop districts use the existing 184-MU roof height
+as their physical sky ceiling; the wall-walk belt, towers and nonresidential
+exterior retain 1,024 MU. Districts derive from authored lots plus half the road
+width, with footprint/door/road bounds for retained houses. Higher floor or
+3D-volume cells are excluded. Closed roof sectors use their own opaque material;
+open streets retain F_SKY1 and remain thermally outdoors. Shops keep their real
+160-MU interiors and existing windows. This geometry preserves XY footprints
+and street widths, but limits upward movement and removes standing space on
+the closed house roofs. It is a measured test variant, not an adopted flight,
+roof-access or production-map rule. Normal MAP06 and army totals are unchanged.
 
 The 600 defenders keep stable individual identities. A first house visit creates
 its original three/four residents. The player-owned native travel carrier keeps

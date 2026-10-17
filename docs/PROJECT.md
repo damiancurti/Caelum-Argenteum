@@ -4,6 +4,18 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
 
+Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
+
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+All 24 current matched measurement windows complete with ETW events bracketing their trimmed QPC intervals. The same observer is used across variants; full poses/options/populations are verified. Three successful native runs log 871 passing assertions. Two earlier fixture failures are retained and qualified. Deterministic map generation and exact package comparisons pass: only MAP06 and its cartography checksum differ from the corresponding house baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+The low sky limits flight and removes standing room on closed house roofs. Streets remain thermally outdoors; shops retain their real roof and windows. These are diagnostic geometry choices pending author review (CA318-05), not adopted production restrictions. No new army budget or playable full-siege guarantee follows.
+
 Current follow-up: the author-approved house-hub prototype preserves all 160
 exterior footprints/roof heights and the surrounding streets. Each front door
 enters its own five-sector interior. Residents preserve individual bodies and

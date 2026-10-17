@@ -11,6 +11,12 @@ matched native renderer samples; #318 / 5.4.28, 2026-10-17. Scope: the isolated
 house-height comparison, not an adopted production height or flight rule.
 [Evidence](../assets/validation_issue318/RESULTS.md).
 
+Author decision, 2026-10-17: the 6,000-attacker stress scale is retired and must
+never be run again. The earlier measurements below are historical evidence,
+not a request to repeat that population. The last active run was intentionally
+stopped on the author's instruction; its incomplete-run traceback is not an
+engine-crash finding. Continue the geometry comparison at 1,000/600 and in peace.
+
 A wall can visibly reach the sky while the renderer still traverses the city
 behind it. In [hw_CheckClip](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_fakeflat.cpp),
 closed-sector tests return false when both ceiling textures are skyflatnum.
@@ -52,6 +58,42 @@ the shared sector would alter other buildings. Check every house footprint,
 unchanged street widths and the paired package diff. The tall-wall control also
 changes sight, projectiles, flight and thermal geometry, so a total-gameplay
 timing difference is not a pure renderer subtraction or automatic design approval.
+
+The variable-height follow-up uses the existing 184-MU house roof as physical
+sky over residential/shop lots and keeps the exterior/wall-walk belt at 1,024 MU.
+Changing a shared sector directly would lower unrelated exterior areas. Mark
+eligible generator cells before compaction, split their shared groups, restore
+their original flat and set only those ceilings. The resulting diagnostic adds
+two sectors and 55 lines; normal regeneration remains byte-exact and repeated
+diagnostic generation is identical. Disable generator runtime-source writes
+when building an isolated map: changing the output directory alone is not enough.
+
+Low F_SKY1 streets remain thermally outdoors, but their ceiling is physical:
+flight stops below it and a closed floor/ceiling roof has no standing headroom.
+Check shop entry/window headroom and wall/tower access, not just house doors.
+The successful native follow-up logs 823 geometry assertions, 45 actual portal
+assertions and three deployment assertions. Count PASS records across hub
+transitions: a reconstructed event handler can reset its local DONE counter.
+An unrolled 160-door fixture exceeded the ZScript register limit; a loop passed.
+An upward-launch check must observe motion before gravity returns the player to
+the floor; its corrected one-tic observation passed. Preserve those failed
+fixture attempts with their diagnoses instead of reporting gameplay regressions.
+
+Keep an observation site inside the changed region. The earlier city/front-line
+sites both remain under 1,024 MU; the added residential HouseRoad(0) site confirms
+184 MU natively. Validate full camera pose, measurement options, population
+censuses and identical observer hashes. An ETW file existing is insufficient:
+events for that process must bracket the entire trimmed QPC window. Give the
+collector enough wall time for slow simulation and wait for its CSV handle to
+close. Do not combine historical and fresh runs into an unpaired improvement.
+
+Fresh variable-sky ETW evidence (24 windows, two means per condition):
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+Compare these fresh controls with each other; earlier normal-shell results
+belong to their own session. The full report preserves frame tails and end
+censuses. Neither a lower physical sky nor opaque walls removes offscreen AI.
 
 Do not place a benchmark camera on the old interior/house boundary after making
 it solid. Check native placement and actual coordinates at the measurement

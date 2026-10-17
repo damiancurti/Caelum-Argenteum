@@ -150,6 +150,13 @@ Retain individual combat/resources/collision unless the author explicitly
 changes that policy. Native tests run unpaused in the background at 5% audio;
 temporary keep-awake requests must be released afterward.
 
+On 2026-10-17, under #318, the author rejected the 6,000-simultaneous-attacker
+scale for the game and instructed that it never be tested again. Do not rerun
+the retired 6,000-attacker city or 6,000/1,000 flat stress cases. Preserve their
+historical evidence without treating old reproduction scripts as authorization.
+Current approved comparisons use peaceful scenes and 1,000 attackers against
+600 defenders. This is a diagnostic scope, not an invented production army cap.
+
 The author made performance a standing engineering priority on 2026-10-17
 (#318). Apply the measurement and large-map lessons in
 `docs/KNOWN_PITFALLS.md` (CA-KP-110 through CA-KP-115) to affected work. Report

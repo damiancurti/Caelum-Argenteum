@@ -9,7 +9,8 @@ from run import ENGINE, IWAD, ROOT
 
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--directory',required=True)
-a=p.parse_args();work=ROOT/'build'/a.directory/'current'
+p.add_argument('--variant',default='current',help='Prepared diagnostic variant to preview')
+a=p.parse_args();work=ROOT/'build'/a.directory/a.variant
 assert (work/'runtime.pk3').is_file()
 running=subprocess.run(['powershell','-NoProfile','-Command','(Get-Process gzdoom -ErrorAction SilentlyContinue).Id'],capture_output=True,text=True)
 assert not running.stdout.strip(), 'An existing engine is still open'

@@ -2,15 +2,17 @@
 
 Documentation version: **5.4.28** — 2026-10-17.
 
-**5.4.28/#318:** contact-only heat, native doors and 160 private house interiors;
-original footprints/heights preserved. Real residents/inventories travel and
-deploy; 13 functional runs pass. Six shop signs. 28-window ETW comparison:
-peaceful forward 37 FPS, diagnostic opaque walls 402-405; ground 29 versus166.
-1,000-attacker central siege:7-8 versus28-30 FPS;6,000:~0.7 FPS/~12 tics/s.
-Private CAH158:>1,000 FPS with3 residents. Tall walls remain diagnostic.
-Normal attacker deployment/author acceptance remain open. Prior40 flat tests:
-1600 bodies~35 tics/s,54/44 FPS sprites/Domingo, not stable60. Evidence:
-validation_issue318/RESULTS.md;CA-KP110..121. Old-save waiver applies.
+**5.4.28/#318:** contact-only heat, native doors and160 private house interiors;
+original footprints retained, real resident state/deployment, six shop signs.
+Variable-sky diagnostic:184 MU districts/1024 exterior;871 native checks and24
+fresh ETW windows. Zoned peaceful exterior forward 330.73-337.53 FPS;
+residential 261.85-268.56;1,000-attacker city 6.42-7.16.
+Control also slower this session;cause unproven. Author retired6000 tests forever;
+last run stopped. Flight/roof restrictions need CA318-05 review.
+Normal geometry unchanged; deployment/playability open. Prior normal shells~37
+peaceful FPS;private CAH158>1000. Flat1600 bodies~54/44 FPS sprites/Domingo,
+not stable60. Full controls/limits:validation_issue318/RESULTS.md;CA-KP110..121.
+CA318-01..05 pending;old-save waiver applies.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;

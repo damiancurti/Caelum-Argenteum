@@ -89,6 +89,9 @@ def main():
         ('issue318-houses-perf-03','opaque-6000',('peace-0-2','peace-75-2','siege6000-2','house-interior-2')),
         ('issue318-houses-perf-03','houses-1000',('siege1000-0-1','siege1000-4-1')),
         ('issue318-houses-perf-03','opaque-1000',('siege1000-0-2','siege1000-4-2')),
+        ('issue318-ceilings-01','opaque-6000',('peace-0-0-1','peace-0-75-1','peace-5-0-1','peace-5-75-1')),
+        ('issue318-ceilings-01','zoned-6000',('peace-0-0-2','peace-0-75-2','peace-5-0-2','peace-5-75-2',
+                                           'ceiling-view-v3-1','ceiling-view-v3-2','ceiling-view-v3-3')),
     ):
         for label in labels:
             path=ROOT/'build'/directory/variant/(label+'.png')
@@ -98,8 +101,10 @@ def main():
         ('issue318-houses-09','current'),('issue318-houses-perf-01','houses-6000'),
         ('issue318-houses-perf-02','houses-6000'),
         ('issue318-houses-perf-03','houses-6000'),
+        ('issue318-ceilings-01','zoned-6000'),
     ):
-        for fixture in ('checks.pk3','observer.pk3'):
+        for fixture in ('checks.pk3','observer.pk3','checks-v2.pk3','checks-v3.pk3',
+                        'ceiling-observer.pk3','ceiling-observer-v2.pk3'):
             path=ROOT/'build'/directory/variant/fixture
             if not path.exists():continue
             with zipfile.ZipFile(path) as archive:
@@ -125,6 +130,9 @@ def main():
         if path.exists():
             with zipfile.ZipFile(path) as archive:raw=archive.read(member)
             save('observers/'+directory+'.zs',raw,compressed=False)
+    historical=ROOT/'build/issue318-ceilings-01/ceiling_perf_measured.py'
+    if historical.exists():
+        save('observers/issue318-ceilings-01/ceiling_perf-before-author-stop.txt',historical.read_bytes(),compressed=False)
     # External engine source stays local; publish only URLs/hashes and short research notes.
     for name in ('review-source-manifest.json',):
         path=work/'engine-source'/name

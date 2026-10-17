@@ -6,6 +6,18 @@ Audit delivery: 5.4.28, 2026-10-17. Tested gameplay baseline: 5.4.27,
 
 ## Outcome and scope
 
+Current variable-sky follow-up: Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
+
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+All 24 current matched measurement windows complete with ETW events bracketing their trimmed QPC intervals. The same observer is used across variants; full poses/options/populations are verified. Three successful native runs log 871 passing assertions. Two earlier fixture failures are retained and qualified. Deterministic map generation and exact package comparisons pass: only MAP06 and its cartography checksum differ from the corresponding house baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+The low sky limits flight and removes standing room on closed house roofs. Streets remain thermally outdoors; shops retain their real roof and windows. These are diagnostic geometry choices pending author review (CA318-05), not adopted production restrictions. No new army budget or playable full-siege guarantee follows. Full conditions and raw distributions are in the final variable-height section below. The following house results are historical controls from their own session.
+
 Current house follow-up: all 160 original footprints and roof heights remain;
 private interiors retain real resident bodies/inventories and native doorstep
 deployment. Thirteen isolated functional runs and 28 valid ETW windows pass.
@@ -1238,3 +1250,191 @@ Normal synchronous attacker deployment remains unresolved; this experiment
 does not close #318 or replace author checks CA318-01..04.
 
 <!-- HOUSES_END -->
+
+<!-- CEILINGS_BEGIN -->
+## Variable-height physical sky over house districts
+
+Author-requested follow-up, 2026-10-17. This is an isolated diagnostic
+against the previously tested tall opaque walls. Normal source MAP06,
+its gameplay code and the normal package remain unchanged.
+
+House/shop lots plus half the existing road width receive the existing
+184-MU house-roof height as physical ceiling. Retained houses derive
+their district from their footprint, doorstep and authored road endpoint.
+The perimeter wall-walk belt and nonresidential exterior remain at their
+existing 1,024 MU; higher floors/3D volumes are excluded. Open streets
+retain F_SKY1. Solids whose floor reaches 184 MU close with their own
+opaque roof material, avoiding the native both-sky clipping exception.
+
+A temporary cell-flat marker splits shared sectors before compaction and
+is removed from the final WAD. Normal baseline regeneration is byte-exact;
+two diagnostic regenerations are byte-identical. Floor-cell properties,
+footprints, doors, map things and high control volumes are preserved.
+The diagnostic has 767 sectors/43,000 lines/491 things, versus normal
+765/42,945/491. The added 55 lines partition ceiling zones.
+
+### Native functional checks
+
+Three successful runs log 871 passing assertions: all 160 doorsteps fit defender
+dimensions under ceiling184 and remain thermally outdoors; 64 shops keep
+entrance access, 160-MU interior headroom, real shelter and original window
+heights; 40 wall/tower positions keep standing room and ceiling1024.
+Actual upward movement stops under the low sky. A closed house roof has
+no standing headroom: this removes roof access, rather than creating a
+new walkable roof surface. Native Use/return and 600 unique defender
+deployments/cannon reassignment also pass. Counts use PASS log records,
+because a map transition can reconstruct the handler and reset its local
+DONE counter. This does not replace author
+acceptance of elevated views, transitions, flight or complete playability.
+With the local package prepared and other engines closed, preview with
+`python assets/validation_issue318/house_preview.py --directory issue318-ceilings-01 --variant zoned-1000`.
+The isolated preview uses normal input and its own config/saves; CA318-05
+records the outstanding author check. No preview is launched during timing.
+
+Two early fixture failures remain archived: geometry-01 exceeded the
+ZScript register limit with unrolled checks; geometry-02 waited35 tics
+after an upward launch and observed the player back on the floor. The
+corrected loop and one-tic observation pass in geometry-03. No runtime
+gameplay fix was made to turn those fixture failures into passes.
+
+### Fresh matched presentation measurements
+
+GZDoom4.14.2, Vulkan1280x720, Ryzen9 5950X/RTX3070Ti, seed116, skill2,
+uncapped unpaused background rendering, 5% audio, ordinary sprites and
+inventories. One engine at a time. The same immutable observer is used
+for both shapes. Each condition runs opaque-zoned-zoned-opaque.
+No profiling instrumentation is added to gameplay methods.
+
+Sites0 `(0,320,0)` and4 `(-14464,-14000,0)` remain in the high region.
+Site5 is the authored HouseRoad(0), facing90 along its residential street;
+native camera markers prove ceiling184 in zoned and1024 in opaque.
+Peace:140 warmup/350 observation tics, pitch0/75. Siege:700 warmup/
+1050 observation tics, 600 defenders and1000 attackers. All24 windows
+assert valid camera collision and initial populations. Geometry can alter
+combat trajectories; end censuses are retained for every run.
+
+ETW measures application presents, not display refresh. The collector
+is bounded to30 minutes. Every included process has presentation events
+before and after its trimmed QPC observation window. Host markers use
+200-ms polling and300/500-ms edge trims; no exact per-tic correlation
+or complete additive CPU/GPU attribution is claimed.
+
+| Scene | Tall opaque walls FPS | Zoned sky FPS | Tall tics/s | Zoned tics/s |
+| --- | ---: | ---: | ---: | ---: |
+| Exterior city view, forward | 280.79-284.08 | 330.73-337.53 | 35.01-35.01 | 35.00-35.00 |
+| Exterior city view, ground | 103.47-114.89 | 121.75-123.65 | 34.99-34.99 | 35.01-35.01 |
+| Residential street, forward | 268.93-272.96 | 261.85-268.56 | 34.98-34.99 | 34.99-35.01 |
+| Residential street, ground | 205.90-244.94 | 219.61-252.60 | 34.99-34.99 | 34.99-35.00 |
+| 1,000 attackers, city view | 3.85-5.05 | 6.42-7.16 | 33.87-34.32 | 34.81-34.88 |
+| 1,000 attackers, front line | 3.72-4.44 | 3.53-4.39 | 33.09-33.80 | 33.34-34.19 |
+
+Ranges contain two per-run means, not instantaneous FPS extremes or
+confidence intervals. Earlier normal-shell/opaque results were captured
+in another session; compare the fresh paired controls above for this
+experiment, rather than treating historical values as a new third arm.
+
+| Variant / run | App FPS | Tics/s | ETW N | p95 ms | p99 ms |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| opaque-1000 / siege1000-0-1 | 5.05 | 34.32 | 152 | 496.57 | 543.70 |
+| opaque-1000 / siege1000-0-4 | 3.85 | 33.87 | 116 | 535.28 | 597.24 |
+| opaque-1000 / siege1000-4-1 | 4.44 | 33.80 | 134 | 541.17 | 559.82 |
+| opaque-1000 / siege1000-4-4 | 3.72 | 33.09 | 116 | 561.60 | 594.44 |
+| opaque-6000 / peace-0-0-1 | 284.08 | 35.01 | 2628 | 5.18 | 6.30 |
+| opaque-6000 / peace-0-0-4 | 280.79 | 35.01 | 2542 | 5.22 | 6.55 |
+| opaque-6000 / peace-0-75-1 | 103.47 | 34.99 | 957 | 11.58 | 12.51 |
+| opaque-6000 / peace-0-75-4 | 114.89 | 34.99 | 1063 | 10.68 | 12.01 |
+| opaque-6000 / peace-5-0-1 | 268.93 | 34.99 | 2488 | 5.48 | 6.44 |
+| opaque-6000 / peace-5-0-4 | 272.96 | 34.98 | 2472 | 5.26 | 6.40 |
+| opaque-6000 / peace-5-75-1 | 205.90 | 34.99 | 1865 | 6.64 | 7.66 |
+| opaque-6000 / peace-5-75-4 | 244.94 | 34.99 | 2264 | 6.23 | 8.30 |
+| zoned-1000 / siege1000-0-2 | 7.16 | 34.88 | 211 | 318.15 | 389.87 |
+| zoned-1000 / siege1000-0-3 | 6.42 | 34.81 | 188 | 398.04 | 469.26 |
+| zoned-1000 / siege1000-4-2 | 4.39 | 34.19 | 132 | 525.59 | 548.74 |
+| zoned-1000 / siege1000-4-3 | 3.53 | 33.34 | 109 | 553.32 | 576.22 |
+| zoned-6000 / peace-0-0-2 | 337.53 | 35.00 | 3122 | 4.46 | 5.72 |
+| zoned-6000 / peace-0-0-3 | 330.73 | 35.00 | 3060 | 4.61 | 5.73 |
+| zoned-6000 / peace-0-75-2 | 123.65 | 35.01 | 1119 | 9.98 | 11.58 |
+| zoned-6000 / peace-0-75-3 | 121.75 | 35.01 | 1127 | 9.94 | 10.75 |
+| zoned-6000 / peace-5-0-2 | 268.56 | 35.01 | 2485 | 5.49 | 6.63 |
+| zoned-6000 / peace-5-0-3 | 261.85 | 34.99 | 2424 | 5.59 | 6.79 |
+| zoned-6000 / peace-5-75-2 | 219.61 | 34.99 | 2032 | 6.46 | 7.69 |
+| zoned-6000 / peace-5-75-3 | 252.60 | 35.00 | 2336 | 5.10 | 6.31 |
+
+Tail percentiles are withheld when fewer than30 intervals are available.
+
+### Unresolved difference between sessions
+
+The unchanged tall-wall control is slower than in house-perf-03.
+Exact runtime, engine, initial configuration and full population/end
+censuses match. Independent review also matched the final INI and
+breath counts. The observer adds only site5 and two CeilingZ log fields.
+Native callbacks slow along with ETW, so this is not merely an ETW
+parser artifact. Process CPU samples are aggregate CPU time across
+all process threads, not main-thread/GPU utilization. They use the
+first/last available samples strictly inside each trimmed window.
+
+| Control | Historical FPS / callbacks per s / tics per callback / CPU-s per s | Current values |
+| --- | ---: | ---: |
+| site0 / siege1000-0-1 | 27.968 / 28.256 / 1.239 / 0.943 | 5.053 / 5.192 / 6.631 / 1.027 |
+| site0 / siege1000-0-4 | 29.885 / 30.192 / 1.159 / 0.935 | 3.850 / 3.951 / 8.603 / 0.979 |
+| site4 / siege1000-4-1 | 22.679 / 22.924 / 1.528 / 0.928 | 4.440 / 4.810 / 7.061 / 0.996 |
+| site4 / siege1000-4-4 | 22.236 / 22.653 / 1.546 / 0.952 | 3.724 / 3.929 / 8.463 / 1.014 |
+
+This supports a tighter simulation/rendering time budget in this
+session; the cause of the session difference is not identified.
+Post-window thinker snapshots also cost more, but they cannot prove
+a thermal, power, scheduling or external-application cause. No such
+cause is asserted. Use only the fresh paired controls for the ceiling
+comparison and do not treat earlier siege FPS as a current guarantee.
+
+### Native renderer work after the peaceful window
+
+These are point samples after the timed window, not ETW FPS or GPU
+durations. CPU renderer clocks can overlap; they must not be summed.
+
+| View | Tall wall jobs / flats / flat vertices | Zoned wall jobs / flats / flat vertices |
+| --- | ---: | ---: |
+| site0 / pitch0 | 738 / 65 / 107523 | 235 / 65 / 41763 |
+| site0 / pitch75 | 4727 / 124 / 134238 | 4243 / 138 / 90492 |
+| site5 / pitch0 | 727 / 24 / 111903 | 713 / 61 / 72105 |
+| site5 / pitch75 | 1445 / 45 / 120669 | 1432 / 84 / 81981 |
+
+### Retired full-army tests
+
+During this batch the author ruled out 6,000 simultaneous actors and
+instructed that this size never be tested again. Three earlier full-army
+runs had completed; the fourth owned engine was stopped immediately
+on request. Its incomplete-run traceback is an intentional author stop,
+not an observed engine crash. All four raw records remain preserved
+outside the current24-window comparison. AUTHOR_STOP.json records
+the decision. The siege6000 runner now refuses execution. No further
+full-army run is required or authorized; no replacement production
+army budget is invented. Peaceful runs named *-6000 contain zero
+attackers; their suffix identifies the prepared historical package.
+
+### Reproduction and package scope
+
+From the tested house-perf-03 baseline, run `ceiling_perf.py prepare`,
+then `ceiling_perf.py observer`. Preparation refuses to overwrite an
+existing evidence directory; use `--directory` for a fresh local run.
+Use run.py with checks-v3.pk3 and the generated geometry.cfg, portals.cfg
+and deploy.cfg for the functional checks. With one authorized PresentMon
+collector, run peace and siege1000 serially. Do not run siege6000.
+Wait for CSV release before
+analysis. Run analyze.py with this directory and its explicit collector,
+then `ceiling_report.py --directory NEW`. A new-directory reproduction
+writes its report/verification inside that build directory, preserving
+the canonical results of this run. The default directory and baseline
+are declared in ceiling_zones.json.
+
+Exact package comparison verifies that opaque controls are unchanged;
+zoned packages differ from the corresponding house baseline only in
+MAP06 and its cartography checksum. All four use the same observer hash.
+The baseline MAP06 still matches src. Policy and source
+authorities are in ceiling_zones.json; geometry metadata, packages hashes,
+configs, native logs, captures and ETW are retained in the evidence.
+Normal bounded attacker deployment, acceptable siege FPS and author review
+remain open under #318. Diagnostic ceilings are not adopted production
+geometry and do not select a new army budget.
+
+<!-- CEILINGS_END -->

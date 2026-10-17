@@ -2618,6 +2618,1266 @@
     "sanitized": false
   },
   {
+    "file": "evidence/issue318-ceilings-01/geometry/GEOMETRY.json.gz",
+    "local_sha256": "7db0aec3433444472a85bdba9ab3196d06170a18c86cf9397d37af915dd21f06",
+    "public_sha256": "3f5a180e57bcc4f21b75aa59eaf3f0df53890b40d6516f97145e0b1bcc7059bb",
+    "public_bytes": 34285,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/manifest.json.gz",
+    "local_sha256": "fdb4cebed29653bd242f6b22517b906935d4fb5c6476e17fbb304980fa3f4cf4",
+    "public_sha256": "96ba8c5fdfd8f15997fb220639d3f5baa72bad611b558dac935a77c29603ce8c",
+    "public_bytes": 1272,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-1-bench.txt.gz",
+    "local_sha256": "bb0cfae90bdb20f887e86c8006e2e1fe166d7658c7b341d751da813576e74773",
+    "public_sha256": "4028e75a1a1331a1037a25f4eb936c052608b2af448ad02253e99910168e934f",
+    "public_bytes": 698,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-1-run.json.gz",
+    "local_sha256": "5dc31343c5dfc86567fd09d5bdcd21905f58d28d86bde98918e917097b248448",
+    "public_sha256": "337d5081e341d5664e30f05d9aaab200d92c2e1d30cbd47224b19adca3edae90",
+    "public_bytes": 6667,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-1.cfg.gz",
+    "local_sha256": "bd8de17bdff22990f4a2a2d1010a8f1628034dc2f746201d55531085baf766ee",
+    "public_sha256": "45eb7574f05df6d7bcd34eeda9de1501dfba1a85ecf10bda725c62dc5c9d7666",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-1.txt.gz",
+    "local_sha256": "fc99b7aa06c929c06e53429c3c388ce6a71fbde3b2ba0cc06e71307037656dc7",
+    "public_sha256": "28f3a891a5c2389475e6db3e88e53b3b16a829ae06569035c9e33affc141a82d",
+    "public_bytes": 118144,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-4-bench.txt.gz",
+    "local_sha256": "a7447f13ad0abeb079ee21d95834226e960013ddaba9c6486f57e5e12f95ed2f",
+    "public_sha256": "13f20c971828007de18bc9dec9853d75066d5be4f58572d42ba5f7f492e655ae",
+    "public_bytes": 698,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-4-run.json.gz",
+    "local_sha256": "be9c83d3f3682b665df410285f399c8378a1bb5100df53047a660a3e3e105090",
+    "public_sha256": "5728bc856451623f72ad358193c67adf5b75acb0398faca68c32f89924bb5e33",
+    "public_bytes": 6684,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-4.cfg.gz",
+    "local_sha256": "e7ef1393cb875645578e302db3dedb655f3ae8728d5f4463d260949954d835a2",
+    "public_sha256": "329ba2caf9aead89d56d76847caf437e81cfe00ec55c78d33916a97512cfbfdd",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-0-4.txt.gz",
+    "local_sha256": "9ebaac0cae5de93a658f04ca7e1ebd943d5b5c74deddab9510c97c47b1c5e966",
+    "public_sha256": "76acd037c1b3b967e80aca79aad52c0703f05d868d8ccaa28787a365b43c33d5",
+    "public_bytes": 112816,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-1-bench.txt.gz",
+    "local_sha256": "5ad09d730d8422870bddcd3936e2b3dc1dff89093e77f7fb2f824434c15f5302",
+    "public_sha256": "7d19f7a7250e529384df850664673a61e267ad1a304df92ae638a46f295e58cd",
+    "public_bytes": 706,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-1-run.json.gz",
+    "local_sha256": "8c8e6ef22396e6db5df3e3c193d7ba26bf642cc4cae1898a08ba29d30ab1d527",
+    "public_sha256": "0d41669533da69e2651d0de41666674dbb24aa2f919871f8339ffc5fce7d417a",
+    "public_bytes": 6694,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-1.cfg.gz",
+    "local_sha256": "f9f9531422c5c3334e074e40aff33202516f79d59de5c170d628892ed81d541a",
+    "public_sha256": "6e1fb7a52efbdcf42fd0d67f74d700536307403f745be6e3d466e2873119f60d",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-1.txt.gz",
+    "local_sha256": "60439ae662aa593f0ff086cc4bef83ee5b8d09bc0f4e4971ac4bceb7faed4771",
+    "public_sha256": "3f12d957afd4620a835ba41781cf81b8100504e85675402c9455dca805a202aa",
+    "public_bytes": 106565,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-4-bench.txt.gz",
+    "local_sha256": "1be287256f6e2f28852827f02182cc15f82bd22b15790b56408696c0233089ea",
+    "public_sha256": "7242e252d528006f329153094d8ef0d16b3ea80b64ebcc1aabdc2108a1b62793",
+    "public_bytes": 706,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-4-run.json.gz",
+    "local_sha256": "82d5d4085538380f3e9f42a7628ca4fe58136cd51ba0a735fb8cbc65b0d9f603",
+    "public_sha256": "e4a632a455ca97795e3284d9a96d3eba69d67fdad968191194447f18eff85387",
+    "public_bytes": 6791,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-4.cfg.gz",
+    "local_sha256": "d7ab1320a78949aa1ca6325789fdc6ab9155ee418dbb14259bfd5cf322a4a876",
+    "public_sha256": "b6476b18d66869a29005e167d63558ed17d536056c309267f28f933054429fe5",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-1000/siege1000-4-4.txt.gz",
+    "local_sha256": "b1e2463ce5112fb5ab39f417ea09eba9e991c37a4a6ae487ebda5bd99c8a9fbc",
+    "public_sha256": "488499b18824386f138a0ac87a308e9d306ccab2a844653618e4df0d1444d12c",
+    "public_bytes": 104619,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/manifest.json.gz",
+    "local_sha256": "1814b814ea4873d100cda4a71044cef03dea031a40370ea990a55bf2c8897d8a",
+    "public_sha256": "6fb6de3a69557338851c889f1b789ba993ee79e6de9b8a8abd64f793d5841726",
+    "public_bytes": 1190,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-1-bench.txt.gz",
+    "local_sha256": "a25ec16e4c25a6ea21175e02d4ae5ecbf97cbf91d984fde222d716066424787c",
+    "public_sha256": "af3b28b34fc10c786b1aca210cc8fd699adf387580126d6c4470ad807baa91bd",
+    "public_bytes": 698,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-1-run.json.gz",
+    "local_sha256": "3805841c595428302129d540f33e5c84cd6c92bee19c0d74686004befc786038",
+    "public_sha256": "2bd2679292618a5251a4644c028ec1b545cbb2914135f036468da4b15896a84f",
+    "public_bytes": 4769,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-1.cfg.gz",
+    "local_sha256": "969ab0bdd98873204f15fb93283f5ff40fd6a4b7cbbb2557901688dee8ccdfc1",
+    "public_sha256": "5ee813c2e1c3d3baba954c617fb365a2b2f827ff75437e657d7976bef07b5a8b",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-1.txt.gz",
+    "local_sha256": "8de0a5802b78577e0c0f650c9f91a664ca2004ed59e31973528c423a9b321c27",
+    "public_sha256": "180cf04794a2550a0c62ee9c819129e8e3f72b91afee32736000e1c56ee8980b",
+    "public_bytes": 244651,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-4-bench.txt.gz",
+    "local_sha256": "72cc7a37e7d3c44cca60f486a2045693449f83b65a65d2beb40715a013c724e0",
+    "public_sha256": "9693cb1450a20116e49566cf077e1104f530d2e5f4c97d083a67901b5a4975f4",
+    "public_bytes": 698,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-4-run.json.gz",
+    "local_sha256": "7fd82e1db3ffcb09680570ca469734e11f963113093e225c1c0387f89ace7b67",
+    "public_sha256": "59f84f86f075a5255fdc26995f3d4236b8ea430e713721837764fa1be287c457",
+    "public_bytes": 4777,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-4.cfg.gz",
+    "local_sha256": "4d1259d49da2aa24a3ec8dbbce76a854afb6e8a18d67637ac968ab924225f415",
+    "public_sha256": "ed4d52f2b45d2b63661b2a8964ece2dba3d7344011e8a0deb5ae8ea0f4d527e4",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-0-4.txt.gz",
+    "local_sha256": "e05b337ce7c1d9fd1cbc7272ed7ef65be936d29ee93c5b8ab59ab760afbe9584",
+    "public_sha256": "ea627d260afd8a1923a4ad51c3937a7942db596231cee72b27fb69df86da7ca6",
+    "public_bytes": 240324,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-1-bench.txt.gz",
+    "local_sha256": "8acf9e9e34ff8397fad48f72975bd997e136ae7317bf29feed89a1250008959d",
+    "public_sha256": "6af19436fd0ed44bfbb726dec585fa654166f59c64e94ae082134802c16f1cbf",
+    "public_bytes": 703,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-1-run.json.gz",
+    "local_sha256": "6a29bee8d0b3f2c755ab5d7cbac829491c25e8ed50ab96cf9bb35dd1d689ba4d",
+    "public_sha256": "567f54df8ca33bf7ec96439d699171acd3135f29d0532a35b69acc6f8ff131ad",
+    "public_bytes": 4764,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-1.cfg.gz",
+    "local_sha256": "084471769931dee5889213b8b7ada8f8db42cce99e05fea599b410d7374754e0",
+    "public_sha256": "04cdf734ba35d4963bb3544d3ad0acd59d64cf17eba0a560762f2d30599ff5ec",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-1.txt.gz",
+    "local_sha256": "27cb1c36ba00e535df270e21c7a4823a34946d9e39e6484b72ce37ffc5755664",
+    "public_sha256": "a62e3c10e9feb407d10ccf4e2040f9a8b6f9002cab9ea7885715a45dbefa143b",
+    "public_bytes": 108325,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-4-bench.txt.gz",
+    "local_sha256": "6c6a87a9be6e29ee8f1073694bc1c14d18381c8a4db88b0f81613becd5611f1b",
+    "public_sha256": "4f46c29a66e1ee150ef0b356ab5de8fa94d629dc602718f15cac6ce7ab001922",
+    "public_bytes": 703,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-4-run.json.gz",
+    "local_sha256": "1cb52e7b17094abe911dff0538791795bc2d9a33cec4d83b997e573f5afac565",
+    "public_sha256": "3e0cafcb87d3f4d8395bc44044195fdba3e2ae8745215264cecf0796263cb949",
+    "public_bytes": 4783,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-4.cfg.gz",
+    "local_sha256": "ac890212e1667880f9bf838e5ecf339616a46b8f641c24da4a7763a093d827a2",
+    "public_sha256": "6821433b2a0543851a86b90194de2e503ea60a439b075468367d642649b6f98a",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-0-75-4.txt.gz",
+    "local_sha256": "08a64fb3504a54dc59b3899d78c6fbe37ac29619cf01204bd6de5cb5022c2267",
+    "public_sha256": "888f7e5004af7518b2bf6c3176cf20833f712cafb98bcce941587d52f6877fa2",
+    "public_bytes": 116479,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-1-bench.txt.gz",
+    "local_sha256": "2c3dda125938efdf91a3ab2de1b2efab30540d82ca7aa316d447d6c82f7d54dc",
+    "public_sha256": "6dc2d50183d3bca2fba47d42c4218d5de96c9908296965c5dc5f30a60ada1aae",
+    "public_bytes": 704,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-1-run.json.gz",
+    "local_sha256": "553a53e18af7cc15ef09fd0f3a05680f4c6b874d745dc06ac800ce532ee9cd69",
+    "public_sha256": "427d9106f39895f49179a9ee0e7675bc9aa47bde5fb08fb4c98d1d2319311cad",
+    "public_bytes": 4777,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-1.cfg.gz",
+    "local_sha256": "e51853b2fe1860696bfc5e5ff486f1a20a193f2d6ca81f83e92bf1ad7acfcf13",
+    "public_sha256": "15a5d05b927705ce762a8737c85f11fc4abe6c7a8e9182359c81047b8691bf58",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-1.txt.gz",
+    "local_sha256": "9eaf7d7118d4407c8ce9c448faae0e2a1b613327127b06b45efa66f47392db34",
+    "public_sha256": "2119280a0c7dbce3a39d39c9ae6d17d8330b58b7ac2de20065a96d83436019df",
+    "public_bytes": 234239,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-4-bench.txt.gz",
+    "local_sha256": "a5b5c0cd2f40076904aa74d80e426b063821c52e094ff8b3956d6f2834fa3b29",
+    "public_sha256": "32a2d1f2d6b65ba8800ef691469451121de017eb84329478c33feea64e2c2bac",
+    "public_bytes": 704,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-4-run.json.gz",
+    "local_sha256": "3f02cc4083d35603808838510a5944d7b0a811d95923ebb43de1b958477d1754",
+    "public_sha256": "769fb56d0c60db02d0b3771aac627193fc14b1a9eb15c14f4c9ffa8daffe32be",
+    "public_bytes": 4753,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-4.cfg.gz",
+    "local_sha256": "b8359bd69ab84546598fd76037fe47c77da8958693e2137cd53187e2aa453a43",
+    "public_sha256": "8842c1d690c285fc8d1dba5aef176433011832c198fb537171d9a4fd949af18e",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-0-4.txt.gz",
+    "local_sha256": "c541ee0999811ea0a3b1a2385a3b538873a047109a60ca87eaf35a1319eb5b26",
+    "public_sha256": "cd17ecb645c54ceac7282f75e672610afde2aa0742c264ad41ef974547d90946",
+    "public_bytes": 232682,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-1-bench.txt.gz",
+    "local_sha256": "7d7715e1aa3edac6529377d9d996050f2f4b745a1ab192e95e3116e1a552b7a3",
+    "public_sha256": "c17c07ed46f101eadee5f3d1e8f9c308956d81f966f57756b8d500e876d4c912",
+    "public_bytes": 706,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-1-run.json.gz",
+    "local_sha256": "e5ea288ba418e6b818521c6006de1aacfd160e5bbed78362a496781fa970f348",
+    "public_sha256": "30fb785dee7d7167475d0b0f629eac11ee0f1806021bdc0d4f60c676947fb53a",
+    "public_bytes": 4792,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-1.cfg.gz",
+    "local_sha256": "c56b472bf5f63fb4a380aac76de0ce0b635a19b13fcb99950abdfb31ac0df3ae",
+    "public_sha256": "63136cace2f57b8d143bc4d8687807b158cdd137f12f773745b99f2f3387a43b",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-1.txt.gz",
+    "local_sha256": "006bd712ec6552e562f48261ca4c25341efb94a47ce500331295893b652d2a86",
+    "public_sha256": "0ee19f75c22871b0c0b60154e071ad9e60ecf045ed0864095a54a45b22415f7f",
+    "public_bytes": 184155,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-4-bench.txt.gz",
+    "local_sha256": "ab1940dbcea19a3be99cf776fd9e20eb2a7a2d4849a6632527eddac6b12cbed0",
+    "public_sha256": "2e6c7f0295e040293b72a2ce3d356b891fcbcf6e61351f31e154d349f4ba0b36",
+    "public_bytes": 706,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-4-run.json.gz",
+    "local_sha256": "0e82b074971a2118f61b89f7265c18d2fd3ce381f659245602b7eb32a6edf34e",
+    "public_sha256": "74c6d9c4dfded30a2cc5641792b6d72c96c4bcad29852a7159ba5a01b6fab056",
+    "public_bytes": 4675,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-4.cfg.gz",
+    "local_sha256": "d3fba0a5580d7758df22ac897cfa624a3c0b5bab4167a1791d13cd1bdea321d7",
+    "public_sha256": "bcf6288a24587c845881285a80720a731ffc3a233ef2cb05b27f6b48ad047f43",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/peace-5-75-4.txt.gz",
+    "local_sha256": "9be81ca0e794a559cff42d5aa052b24b69727a6a52958bf6494855ac15739dba",
+    "public_sha256": "0ff6151619d2518409e5c77a7a6450402f20d61455314b3a76b2a6261b2f49c1",
+    "public_bytes": 218857,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-1-bench.txt.gz",
+    "local_sha256": "744e0f2b5ac669eeb940820fcb1b55d9d69636e522251159ecd1a87ed7c55335",
+    "public_sha256": "7525e08fbffc1a820bb05374def463735ef88a57bd0b5d3bb1862698b51037a4",
+    "public_bytes": 698,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-1-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-1-run.json.gz",
+    "local_sha256": "bfdd6f72db890bfa640455d43b2a80ac684279042139bb783bcecb2a9b872409",
+    "public_sha256": "318f76cb3dc3748a6943b5f21ed566b9d52bc0186eba1ce25524f465e9beba33",
+    "public_bytes": 12379,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-1.cfg.gz",
+    "local_sha256": "29b9da93e57e225be33632ca8cd471847ef8a7a707e08bc010ccb20d84dc489d",
+    "public_sha256": "64c0b65bf3e7b26b4faf9195c73ceeaf0e307479b1ad48bd6dfd0e4085b6377a",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-1.txt.gz",
+    "local_sha256": "b19cc717aec99fd458e980ccf355d64a534d5ed088149d47baaa348d4ce50b9e",
+    "public_sha256": "0a4c9fb87cb8bc710c39276db24f975e56765eda18734501962f71c4e69fc825",
+    "public_bytes": 96690,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-4-bench.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-4-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-4-run.json.gz",
+    "local_sha256": "34ad197aa58297a5a0301cfb9dba8497f905fc11c7e00e85d06740b056fe26ce",
+    "public_sha256": "274b4a12036117b57891a542d65b5e9a83f412f8653b4e666203e57d9d2461db",
+    "public_bytes": 7604,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-4.cfg.gz",
+    "local_sha256": "717b731c310176185895e786bd5597d6bbff17cfe57ebf772a7cbf18a0e05e1d",
+    "public_sha256": "317c56617556a78b9edf9b4f42f36dc40145d88ad9463dcfab3477a127d06c56",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/opaque-6000/siege6000-4.txt.gz",
+    "local_sha256": "949ce2a948849ec0db23c43c998bce1243180b8cb3a374fefa3ae466b0ba16e6",
+    "public_sha256": "005411e6232d154312dc6a806f50d19b4f6f9452f2dcd4ed03691e62d09fbc21",
+    "public_bytes": 9829,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/manifest.json.gz",
+    "local_sha256": "9ab3be91cbcb6debb2bf08c055f46b37cec9b63a83d2cd0b8956e57bd9992b83",
+    "public_sha256": "750337adb81c59088f49ad6b559792de2443de9760e8671f36d64c0f605738d9",
+    "public_bytes": 40582,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-2-bench.txt.gz",
+    "local_sha256": "5332b967c45e2a1fff7e7bd276ab60865053f92a644e1086510d92f1f8132e74",
+    "public_sha256": "bf42921145ef6036094530338b053024ff771b56037f721fc5bd111b26fcb609",
+    "public_bytes": 695,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-2-run.json.gz",
+    "local_sha256": "257f3c622ab90386caa534f7aab159d87fd5b5c809582ea311afa2b262994c11",
+    "public_sha256": "c099fc926d80f86c2047b5ba03438fc34a23757c2bcc86e0ef9753d2818ab432",
+    "public_bytes": 6688,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-2.cfg.gz",
+    "local_sha256": "80c7e65b5c5067544d16a5618608c8f378034acdcafbb2293ba7b5ce53da9a87",
+    "public_sha256": "1f0b5c8b089efeb4eb7ab8a2061e1e5f9561bfda0727b650e08da43d318ac06c",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-2.txt.gz",
+    "local_sha256": "4d55e75666356dfcf00434ad77e931d59500dcc5bfacd394c4bbcef83188097a",
+    "public_sha256": "d8ec374edd2548ef85d3ca12906b659934b1b770b4016194ef1970440d85a5a5",
+    "public_bytes": 132575,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-3-bench.txt.gz",
+    "local_sha256": "1df6b086d9fb4bd7d636a14057444f98ebd6c680b215a8ec53d79d4fb782acc9",
+    "public_sha256": "26213d90251e637125fbf18e3eeba0ea83cc92875be715ce3294cb71a25dcf09",
+    "public_bytes": 695,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-3-run.json.gz",
+    "local_sha256": "68e4c441be63014cf19b6c4ecff12488e67919b337a91579b17f270da497d619",
+    "public_sha256": "d9808a59e2a49f7bd95721173251524c7e30b04a0cdb7c63763b2f40717dea1b",
+    "public_bytes": 6684,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-3.cfg.gz",
+    "local_sha256": "ac738ca341c06198e47dceec64ca7cf2ec62d89a7112b27c3aa9b5d3900795e8",
+    "public_sha256": "cbb7788d79b43b4712c60e19fc898bef25c7fc66de83e9cca5678075fe125da8",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-0-3.txt.gz",
+    "local_sha256": "017f1a0dc6b6b99a906ee41bb91b8bc23227c33ffdde1525bc98c2e15b545fb4",
+    "public_sha256": "d3a0403736ba7c24ad7ac4d6dbea8f1bf7cb1796872cc66f6df8f093e985d5d2",
+    "public_bytes": 130573,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-2-bench.txt.gz",
+    "local_sha256": "a6dac59eb199b2fb064e2f30a798f6e5af1c14c2f68bb930a9f5fd979785163b",
+    "public_sha256": "55b9e672009f03d7027f3162a6939dba8bbc88f68bb134edba91454866efa5da",
+    "public_bytes": 705,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-2-run.json.gz",
+    "local_sha256": "d45a589fd7715e700565617f75f985ac15214aeb9acde43d79b8358eb3afd68c",
+    "public_sha256": "8a29acae32b28bc4faea066cd3c44300532e18f8ed60b4ecbd5ed3deade1c91a",
+    "public_bytes": 6707,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-2.cfg.gz",
+    "local_sha256": "141b3e836471fb05bfadb0d23680fd035f4057d36b24dc3393cc973a2dc10fa9",
+    "public_sha256": "b0173c580de3e702663423fdb27164771e54fc006e1bb1d2c46da4f44a80a69c",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-2.txt.gz",
+    "local_sha256": "2be88f7d2e71644fe380b36db9369cbcdbcb969cbbe5365a1534ab14f6145cd8",
+    "public_sha256": "720eaee9589de84519870a8f6d029a51a4f558408fd151376e6212941d55a190",
+    "public_bytes": 110676,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-3-bench.txt.gz",
+    "local_sha256": "027374e6ae30bf740a99876935cc747e41486bd3ca0f02f917a61640def5fa12",
+    "public_sha256": "792282aee9e14a70706d59b155f3edfa6cd98e7e00f3673b5e67c980eecfb720",
+    "public_bytes": 705,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-3-run.json.gz",
+    "local_sha256": "75fe9e8cdb278d33216d51da23224b5538ad9277589e7aa79dcc0a44b0bd4bd5",
+    "public_sha256": "d995d195b2780589b1f145ef20ee47a0e542751a4105a6499d09fcbabdf484fe",
+    "public_bytes": 6704,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-3.cfg.gz",
+    "local_sha256": "289cd45a628a3fde2e68a2dda02de6b435ca322f5229e249ec77bc035c0456de",
+    "public_sha256": "4594075be9467cd283152194fc7ddc99fce4768a50fb7e519418ee4a980709cd",
+    "public_bytes": 269,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-1000/siege1000-4-3.txt.gz",
+    "local_sha256": "dd66948ecfe04c74085c70e6b6bfcbb22aa751901003252c621d3eb71207f009",
+    "public_sha256": "5f435cd1e1af79d734700e6b52c36c470db8b01986b3c4b7eb6380cab3c256b5",
+    "public_bytes": 105277,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/deploy-01-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/deploy-01-run.json.gz",
+    "local_sha256": "21491b114787ef6340a05fa0b8c84c22128b4f945fca31a0caac629adfa359a3",
+    "public_sha256": "fc7236ab3a312b352adeed92a4b09a73327924f2585c20a35f01923d58da6757",
+    "public_bytes": 6879,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/deploy-01.cfg.gz",
+    "local_sha256": "780fe030890946b869956154192e68927c5d04237780476002f4d783d92438ea",
+    "public_sha256": "ddee94db016774c30bf182266bf57472decbc7dc21737200f5a9ef53a74e0fea",
+    "public_bytes": 240,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/deploy-01.txt.gz",
+    "local_sha256": "c862a9c2a2cd4326c8418d75650d745edf23959d4e729904cf2c53de027193a3",
+    "public_sha256": "7be065b29ce6151c03db395a34f6f3d75545e2c6fae0ef44703549f0cda9f835",
+    "public_bytes": 9456,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/deploy.cfg.gz",
+    "local_sha256": "780fe030890946b869956154192e68927c5d04237780476002f4d783d92438ea",
+    "public_sha256": "ddee94db016774c30bf182266bf57472decbc7dc21737200f5a9ef53a74e0fea",
+    "public_bytes": 240,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-01-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-01-run.json.gz",
+    "local_sha256": "3148a8cce8cf5c79d90be7f4eea1c2815e72e02e7bcf74775f7173cda4ca66f7",
+    "public_sha256": "f66b9cbc5387727aa3295a8498f7de9a4ae8e7ed95fec68f8952e27b5e212172",
+    "public_bytes": 3188,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-01.cfg.gz",
+    "local_sha256": "e58e101e9f41af76a5dfa7745897f5ffb26d302eeed5dc202361ac5fe78c1ab8",
+    "public_sha256": "4d591489f5cf00a42c24ac02450a67f3b8dd41fdb744889f313a0c51cb693040",
+    "public_bytes": 396,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-01.txt.gz",
+    "local_sha256": "6b46a72e646e9a9d304e31bfc3c7e3a61132c75e88de7f76e5cb3f7a5eff9e01",
+    "public_sha256": "db34128f0f8e7985f498b5277001f465625d6928ac217d9dc4e76caad0a9da63",
+    "public_bytes": 8571,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-02-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-02-run.json.gz",
+    "local_sha256": "441109ec0f9c1e0c58df0787574f05385f73e606b53ec0c53ecd4bf13bc24c87",
+    "public_sha256": "f3d4a40da940a4f457d91bbdb8d265c000360df5eb31776c72517c9be5447814",
+    "public_bytes": 3575,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-02.cfg.gz",
+    "local_sha256": "e58e101e9f41af76a5dfa7745897f5ffb26d302eeed5dc202361ac5fe78c1ab8",
+    "public_sha256": "4d591489f5cf00a42c24ac02450a67f3b8dd41fdb744889f313a0c51cb693040",
+    "public_bytes": 396,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-02.txt.gz",
+    "local_sha256": "b43ec201bd23cade1fd00eb18a8e47e05bce12fc4e62f8ca6eddc009321a59cd",
+    "public_sha256": "32e8fe17b50fae0835bb33a962e39f428c72f890f21cb65e9b2e80a953dc8965",
+    "public_bytes": 25341,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-03-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-03-run.json.gz",
+    "local_sha256": "bc8b65f7659c31ddccf9df472387d236289918ad9061d9fd1a98dc6518432a07",
+    "public_sha256": "68be3a04961a8ddd18b42c1c62bd030235a5135c11a2d81ce2cbffa6acff7dd2",
+    "public_bytes": 3574,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-03.cfg.gz",
+    "local_sha256": "78ea48cad1ce3c9fb1d5ffefec5a0a2976f2cf4e2039f470b592569b6d129b39",
+    "public_sha256": "9d04f767a44a211f90602f7c0a26473986586d3eed8da16401a4c72311f24d61",
+    "public_bytes": 407,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry-03.txt.gz",
+    "local_sha256": "c3c68c633a5032d1ffab4a8333b5ebea800b397568a08ed0e359667cb8349913",
+    "public_sha256": "5479a81ba861b097081937d08e488f90c6bb2c096828beaa7996b4ecceb63d51",
+    "public_bytes": 44083,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/geometry.cfg.gz",
+    "local_sha256": "78ea48cad1ce3c9fb1d5ffefec5a0a2976f2cf4e2039f470b592569b6d129b39",
+    "public_sha256": "9d04f767a44a211f90602f7c0a26473986586d3eed8da16401a4c72311f24d61",
+    "public_bytes": 407,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/manifest.json.gz",
+    "local_sha256": "d285f91a64be67d38cad737b9fd87227ae4c2df1003d593175695daf8ec6c8ee",
+    "public_sha256": "7c96aa808244066d15ff0663cf2a55e9d6ccaac96ffb14d98f959c310da56219",
+    "public_bytes": 40500,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-2-bench.txt.gz",
+    "local_sha256": "8336a73bef2dafbac2f2b294ba51131644b1dbedcd76442a1985f8f6cfc535b1",
+    "public_sha256": "894e237c82ff146afd83d2f089b78dce1a851b3b4624678d152d708d8d89748d",
+    "public_bytes": 696,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-2-run.json.gz",
+    "local_sha256": "f768d7eb5c7259fb9aa1c5dc67afdfedb8867fcf125a29fa867fe28331608e37",
+    "public_sha256": "ebe051b8e36886877913657cb0d844f35606de9748d8929e8065b56ae3c04a7e",
+    "public_bytes": 4765,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-2.cfg.gz",
+    "local_sha256": "3a33dc06a2437b28dea3163cca123f39cd0137e79409522e5fde6c379a88a188",
+    "public_sha256": "4b561d23809265c2e6b13d2e047b884ca2212ce2dd6b681b2eae395b5d5df427",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-2.txt.gz",
+    "local_sha256": "b293c87641e18c488ce424139bb060d44766cdca52b739a96eb4215da412b502",
+    "public_sha256": "04d411f692b9f173f54a6a277545a63e280ddb3f2902991e3447e371fa645d2d",
+    "public_bytes": 278427,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-3-bench.txt.gz",
+    "local_sha256": "0375ff2a4e435f54363700da61a1c55ad2bae309dc0a2ddb1b79192a2d3f2ebf",
+    "public_sha256": "f51fe05487b7cd0c83f94fef1f64773978d67946082ead79634b4549cdd73371",
+    "public_bytes": 696,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-3-run.json.gz",
+    "local_sha256": "a08d023a8ba023f343990e261b7c1de6612b8a8d31d1c637ddd52c82717a5114",
+    "public_sha256": "58bf6d5af4deb3f67e4912d8de7085815ecf9a6e737c40f2b7ed304d0ccf8a83",
+    "public_bytes": 4764,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-3.cfg.gz",
+    "local_sha256": "5101c32c2844c80af4e41c618c63ef19564249a4e6a6a2a141e0bf91179b04ec",
+    "public_sha256": "fed37a7ffbbeaebe07a5d689f88b546d1b8063a73b9add355a4abe4d97da8635",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-0-3.txt.gz",
+    "local_sha256": "925f1d96707c5747291b8df6f5f97c620d7b2a17b690d8416b67907d410fabc5",
+    "public_sha256": "15e979fa2e8d995ad668c14f9be0ec1eb8a63216ad67c589bc22586e6ca9828b",
+    "public_bytes": 280220,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-2-bench.txt.gz",
+    "local_sha256": "5e441b8c0f4d3cc476e2014a285dfa35e983f99206a417f1627e28501bbd642e",
+    "public_sha256": "14809060cff6ca77dbd7aef334dae94d9736f041a5f06e0ebedb0150a4ad3ddb",
+    "public_bytes": 702,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-2-run.json.gz",
+    "local_sha256": "5c2115c58d39c312247c40a1c72ee4c654b782306a3c3d1066db0ab9b3c61ee0",
+    "public_sha256": "0c51476885405335b6f13d9c19732c811e15906c5813893db0646d8d8e98325f",
+    "public_bytes": 4764,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-2.cfg.gz",
+    "local_sha256": "4426906e442f5d817cfc5b2bece8e7e4318315d2ff84dd3b167f4c578ab62c37",
+    "public_sha256": "07a89e9be7ebb8df190555e513d9b77b93c3f69528ee69a79e64e9f286764dea",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-2.txt.gz",
+    "local_sha256": "7cd8732b850b59a04492e0a8a047c73a5e3695fe1fde5e65dfb73f57d7b5a266",
+    "public_sha256": "377d42930f1f43314ec2b1df0aa859eb1bd81e2765ae1762e3e2028055d3b862",
+    "public_bytes": 123041,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-3-bench.txt.gz",
+    "local_sha256": "851d5a9ce2b92e25d856110e4bb416b046c1c7ce2d2d673bf28336fe15248a13",
+    "public_sha256": "a0bb5ad6a261e36db94fd062483933effdd010adf9b38dfee6e550e37436670f",
+    "public_bytes": 702,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-3-run.json.gz",
+    "local_sha256": "6d948b3ff781ad7fee6eca2dd312bf95f5704291a788f4187662ea2950a845f3",
+    "public_sha256": "c2413a6a8a43d8744952648c228dd2e61f8cd10b5400f6c81a6237024db3dbc6",
+    "public_bytes": 4784,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-3.cfg.gz",
+    "local_sha256": "e82121492d7a4180b373e5564e5f907d18bbad445024246559a821a3046cd777",
+    "public_sha256": "b52196b50126b36178f84228abd6d14ec06611124063fb2ed095e59168332fa5",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-0-75-3.txt.gz",
+    "local_sha256": "2c6f03c0938e5fdbf83f250e12ce52c23e10982d3524fc0121875cec43017223",
+    "public_sha256": "52dc0debcf14f22548eb2444dc1ef3974b0a3e5d58ec6be363251c9e5934b320",
+    "public_bytes": 121638,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-2-bench.txt.gz",
+    "local_sha256": "e8a70b65f3bb12211a2dc8de9a6136da6719ecdf2ba78a9b0dc50bdd145a691c",
+    "public_sha256": "799d94f76fef92d9ba4669f7b13ee21e6af9a2489f81264a6dd6798b7903b71c",
+    "public_bytes": 703,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-2-run.json.gz",
+    "local_sha256": "b29aa11b633422e17542bc01250089555cf4b551798fec24e038f55b18c6f737",
+    "public_sha256": "8643f755111e2b92a4f8e6df81a32645c5f54ec16ed6c49e4c86cf73f28d7dbf",
+    "public_bytes": 4765,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-2.cfg.gz",
+    "local_sha256": "2a3e8af043fc425c7f75b9e7066397feeae2c27ae64f2338e52c1eb99bcb3189",
+    "public_sha256": "8b9eaece5ce29e97ba1e8f4e13fd06858ca245fe10050f3475688bdcb30375d6",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-2.txt.gz",
+    "local_sha256": "32b6efe5083225e531e5dafe2c9fb064b376fcd43604e410d99a76cb74c054e3",
+    "public_sha256": "8566dda5b238068bba101f4ed12b990e90f027501a011d252398176b5aebcfc6",
+    "public_bytes": 232036,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-3-bench.txt.gz",
+    "local_sha256": "5fe45633f04eb9f570586ee8ba6941b61d30be8c3c8d86762ee0cfb5bf6a9b65",
+    "public_sha256": "0fabc8a1fce6a003f78cedeab9a103b3b7788a9d496c44226a3f2436c46c72a2",
+    "public_bytes": 703,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-3-run.json.gz",
+    "local_sha256": "aff63a9333149ae2dbef1a9d0a228d0de973ea4dc7cab362d0ce2a09e0b86781",
+    "public_sha256": "e7fda0b42ac9e8a9f35b204df347793de0396bd3a58e80652e4775172186a8fc",
+    "public_bytes": 4764,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-3.cfg.gz",
+    "local_sha256": "f057f46909c7e0212cebbf33cd9c8ec27b7ebf7289c294b168ee735e9815571a",
+    "public_sha256": "99c6622d134f9ef4a1b40a48f53ba81eac52642bda7cc0296bf3fcc9a8e43cba",
+    "public_bytes": 265,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-0-3.txt.gz",
+    "local_sha256": "8a19c660eaff32c5c4081be6dbf5336c59f483144607d3765bd22c7cd4f28c5d",
+    "public_sha256": "eb6f8f6f96e7e41a013e8b950da94b6b38b59b4c48e2c4b67be6894c099506e6",
+    "public_bytes": 229277,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-2-bench.txt.gz",
+    "local_sha256": "d87aab4cd9e7e0368ccffe24a8e739d4453a1d716691b9c407b08f05776259ce",
+    "public_sha256": "2458af25cd0266630309f03ac4a457851bb18409ae9759c610140ba588ef8efa",
+    "public_bytes": 705,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-2-run.json.gz",
+    "local_sha256": "0255c2152f9246f1163da0afae7ac12f90c275d323e18512fb30e530dec14ab3",
+    "public_sha256": "56fee2ef8af1d183948aba89112af039afe2a9c899db13bb6d10939edd169d5f",
+    "public_bytes": 4769,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-2.cfg.gz",
+    "local_sha256": "d80e7958a3917333fb95d1beadd1b83594e2b75cd2d4a6ec2e254b4996018d23",
+    "public_sha256": "cd84ca29020111ad3bf3e59020defbab581620435a2b6617196340431aaed85b",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-2.txt.gz",
+    "local_sha256": "665863a9aa28809f00571f8450b76d1af647778ae2ccc9b6b76be2e4128aba82",
+    "public_sha256": "bf367b2a1c0dd5c69e156f2cdf9799f35d2d5c6c9e8a1ed8cdeec8e1105cc769",
+    "public_bytes": 190261,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-3-bench.txt.gz",
+    "local_sha256": "8720e95b6c45320948b9a2fbbe30fac023b95051750f04124bc6caeef296e540",
+    "public_sha256": "997dba738b30b3b625b0757a83756b46fd00da0ff6241462fc1ecc7af923d6bb",
+    "public_bytes": 705,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-3-run.json.gz",
+    "local_sha256": "fada11c40c8f8e19af76989b112222a3dac6768f5bb6a2f499b84de9e3207ab9",
+    "public_sha256": "b428dbe4693bec63179536cacf8104232a08c747fef5ea21b5df5009c5509e22",
+    "public_bytes": 4679,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-3.cfg.gz",
+    "local_sha256": "eb39e6fee2ce9edb7bbdd4371e934c76184cd033fe52bfccf5f2e2a5402d9368",
+    "public_sha256": "0087d491b6d27b6d9dc18281612d84eb8544b16709a4c2271541efe346a71406",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/peace-5-75-3.txt.gz",
+    "local_sha256": "a70b14a79708da5ca698449dc2e39413a62862cc061c550441f2026078e989d4",
+    "public_sha256": "5a038c131b524de937223af522835c2fa26b9519c40d2d425b1a9abb14c38403",
+    "public_bytes": 220280,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/portals-01-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/portals-01-run.json.gz",
+    "local_sha256": "902030ee892407c7e037a22af62c6cbe8446e4e2788d20322bd611566cae0814",
+    "public_sha256": "3a8e63bdaeeb028177ea412964789e086d79bde58efe08258ef36db46037e0b8",
+    "public_bytes": 4788,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/portals-01.cfg.gz",
+    "local_sha256": "1ea198e1d6fae53a5d936d0ec7814878d3624737217c54eb679cf8241beeb6d9",
+    "public_sha256": "05198336ee8f4795bb8a29b68e4503367ddbd9457f2f006ecab3ef975f9fed82",
+    "public_bytes": 1011,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/portals-01.txt.gz",
+    "local_sha256": "4e0a4999e653a1b352cadec9a764c64dc75da798053dcf31cfad5c871ff1e9f9",
+    "public_sha256": "19e74622d95e2f1262dae5eb8c9f1f936d68c0c4993707dc056a1573ded12678",
+    "public_bytes": 11927,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/portals.cfg.gz",
+    "local_sha256": "1ea198e1d6fae53a5d936d0ec7814878d3624737217c54eb679cf8241beeb6d9",
+    "public_sha256": "05198336ee8f4795bb8a29b68e4503367ddbd9457f2f006ecab3ef975f9fed82",
+    "public_bytes": 1011,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-2-bench.txt.gz",
+    "local_sha256": "b0f4772f918a10720a27a6f9a1a4b03518835ac7ab1c350847c99495e3477f73",
+    "public_sha256": "161d0659d36a1d355cb32cf2191e22255417e2da847688f49103f5437ed122ec",
+    "public_bytes": 694,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-2-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-2-run.json.gz",
+    "local_sha256": "9cdaede44e83eb692cf194f890905c796e902d44ac3c1fedb45a691a85603b93",
+    "public_sha256": "ca84da030125ab6713a82914ba22b70c2f15f89d749cba169a758f84b87659bc",
+    "public_bytes": 11719,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-2.cfg.gz",
+    "local_sha256": "faf2cabe94b4bd2096cec4c4c724bbb62d640156685d754f19ff54990072ed89",
+    "public_sha256": "b4cb851cafc99dea63fed1357fc63d52b47ee7a17f4e7dff1892e3f1a8e11f0f",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-2.txt.gz",
+    "local_sha256": "f6ba158986b4682aee6795e6c750a76d6e6074aeae2a75b5e4d5225c90214c19",
+    "public_sha256": "5a1057ff287485c0008d9415742711335de050d335d95c8ec7c0d21292bdce69",
+    "public_bytes": 105583,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-3-bench.txt.gz",
+    "local_sha256": "ebdcbf8642d642b77e5d0e62e2709f797e83015e81c475eabde6357e79189dd2",
+    "public_sha256": "eed3b90328fd072ca6b836d53bad2651391af5497d21e56c08832c54ea7d61da",
+    "public_bytes": 694,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-3-presentmon.txt.gz",
+    "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "public_bytes": 0,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-3-run.json.gz",
+    "local_sha256": "40bcb484b7a72986c83d5364b2bc57fe146e43023560a3c0f952769812f2a31c",
+    "public_sha256": "91506732aea71484ab10e48f50eff1a2918dcb17d16a4fa86fe7f606100285df",
+    "public_bytes": 11830,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-3.cfg.gz",
+    "local_sha256": "cb2ea187130449f077d0603367e3ca67082908bdf4a672fcc185f51b2b71522a",
+    "public_sha256": "1560d0cd8b00c70c93cdbab9fe69d40ade109a689ef5e369673ab27245426049",
+    "public_bytes": 267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/zoned-6000/siege6000-3.txt.gz",
+    "local_sha256": "934844a388361f5fb4bee10f205bee52efeb34319fdbb3893a762de87d80a724",
+    "public_sha256": "958f9d197aa686dab75be038fd746d107c4a78780244da9b0703149d3640eeae",
+    "public_bytes": 105602,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/analysis.json",
+    "local_sha256": "16f1e5403f9b09cdd14adb1fbb8fe33c28048412c34322741360249c2d8dab29",
+    "public_sha256": "2d50bbeca7156d85a5d2a38c879e45fa8a25573d2d8e2e71510cc34098eebd9e",
+    "public_bytes": 183532,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/AUTHOR_STOP.json.gz",
+    "local_sha256": "132b5086bbfbd36ab404f3f7382f940d257b284292ffc1df5c6b49383c2a6694",
+    "public_sha256": "188bfc6c0615ade5db221dd0cd2b49e5387931d60b3bdc675fa45a86a1df4229",
+    "public_bytes": 584,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/COLLECTOR.json.gz",
+    "local_sha256": "ad6aead133188dea9ad8141553767cd4c40762562581eeaaf994df5b22ee1336",
+    "public_sha256": "cb1840d6f02e648bcbce3877463f2974757ed63de01343d1929ea644df5f2d6d",
+    "public_bytes": 305,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/ENVIRONMENT_AFTER.json.gz",
+    "local_sha256": "0322a623c57aac5115e99520078e43b2fc6ac5bb5835baa841bfe9c8c8615ce1",
+    "public_sha256": "8878887d525505d2f98bce148d564c1b5fc6143a019f0aeb642714a87d8e6656",
+    "public_bytes": 2058,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/FINAL_CHECKS.json.gz",
+    "local_sha256": "04d3edc9e140884f63383d112f36eb3a8c9c7b24c1d7b4d63185c6f722c5b85e",
+    "public_sha256": "4b766788d845fb113b61dc2d237d8e0e294e1712f78f0e50a3b4cb06a2a329a9",
+    "public_bytes": 966,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/GEOMETRY.json.gz",
+    "local_sha256": "7db0aec3433444472a85bdba9ab3196d06170a18c86cf9397d37af915dd21f06",
+    "public_sha256": "3f5a180e57bcc4f21b75aa59eaf3f0df53890b40d6516f97145e0b1bcc7059bb",
+    "public_bytes": 34285,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/issue-before.json.gz",
+    "local_sha256": "b3abe6f0df4a2d8628f1f4f87c9fd00c0aa4de7f985db53b5fc12b3797ed942d",
+    "public_sha256": "c4669d09a1b94ad6a50d0beface1a39acd3713efac5761d4f318581d6d221d69",
+    "public_bytes": 22267,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/peace-outcomes.json.gz",
+    "local_sha256": "eb7d6868c69ddee2fab116752e2b8d76ee190492ee185d154f32fb1aed46cbbc",
+    "public_sha256": "ecc72ea62a8419b6780c7b9d21822c96c5755ab85439ad667feb12dfacb7703a",
+    "public_bytes": 1395,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/pr-before.json.gz",
+    "local_sha256": "c692bc095bcbea4a8ff9a837527a9dafec38bca9ff64bf8a2a228dadbf2b4cb3",
+    "public_sha256": "dbb8be324cda2b281a682d1c814fe8b9f20a5e73bbff8b329303cd5dfa5546ae",
+    "public_bytes": 3540,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/siege1000-outcomes.json.gz",
+    "local_sha256": "cedcdd4938d35f9def6a01424521b7a0e170e8ca6381f1f3e62ca4345a3b52a7",
+    "public_sha256": "902dff120c282d74e79d76a7f040811b0c14ba49cb9e3ef6773e6b9dfecc80a3",
+    "public_bytes": 711,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/siege6000-outcomes.json.gz",
+    "local_sha256": "5b6f8e412980288d1735de89879f3235fec485432a850979409091631eb31bb5",
+    "public_sha256": "fe4bb4247d89c9d9eb4b9e26920e1e3b8666f7d0c0efcb0a135d39347618bb82",
+    "public_bytes": 349,
+    "sanitized": true
+  },
+  {
+    "file": "evidence/issue318-ceilings-01/presentmon-global.csv.gz",
+    "local_sha256": "21c91453fbc8419ae0068605f2fd2664947ade2adc3538610307d2ea7b7aec36",
+    "public_sha256": "21c91453fbc8419ae0068605f2fd2664947ade2adc3538610307d2ea7b7aec36",
+    "public_bytes": 22419450,
+    "sanitized": false
+  },
+  {
     "file": "evidence/issue318-city-example/original/city-aerial-bench.txt.gz",
     "local_sha256": "fde0a2516703c59310bc7aad3ba7e4cea3e6677f19de5063e5af0020d020e15d",
     "public_sha256": "fcd0e47e7a0e67f8f43034697302e1372126dd930cc9db2b5459479137d9b77f",
@@ -12348,6 +13608,83 @@
     "sanitized": false
   },
   {
+    "file": "evidence/captures/issue318-ceilings-01-opaque-6000-peace-0-0-1.png",
+    "local_sha256": "4215e08582eb4e60b9af4095fe2a1cf2766911814b5c3285b65d19aee1a98728",
+    "public_sha256": "4215e08582eb4e60b9af4095fe2a1cf2766911814b5c3285b65d19aee1a98728",
+    "public_bytes": 1421628,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-opaque-6000-peace-0-75-1.png",
+    "local_sha256": "576f1835a581a5743a466e891a1fe6ac752074b81de30617ba3def4d9f6382ad",
+    "public_sha256": "576f1835a581a5743a466e891a1fe6ac752074b81de30617ba3def4d9f6382ad",
+    "public_bytes": 1190272,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-opaque-6000-peace-5-0-1.png",
+    "local_sha256": "a8fe3ae2ce1874001b4dff935b77f3482f4ce72bd43e647861cc30f1e6bb0139",
+    "public_sha256": "a8fe3ae2ce1874001b4dff935b77f3482f4ce72bd43e647861cc30f1e6bb0139",
+    "public_bytes": 1787345,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-opaque-6000-peace-5-75-1.png",
+    "local_sha256": "39ba2a00116fc18a7706fa6a54a52431727fb19ec3f735cb45278bffc91b653f",
+    "public_sha256": "39ba2a00116fc18a7706fa6a54a52431727fb19ec3f735cb45278bffc91b653f",
+    "public_bytes": 1103381,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-peace-0-0-2.png",
+    "local_sha256": "bd6c90aa4ac9ef8ae3b06fc5c3975546eae94c692ca212f776d6bc1857eafa9a",
+    "public_sha256": "bd6c90aa4ac9ef8ae3b06fc5c3975546eae94c692ca212f776d6bc1857eafa9a",
+    "public_bytes": 961840,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-peace-0-75-2.png",
+    "local_sha256": "80ecf4ee1b36607be4fc9e9f76275d302be3a516738ae3601032d59fbaf278ed",
+    "public_sha256": "80ecf4ee1b36607be4fc9e9f76275d302be3a516738ae3601032d59fbaf278ed",
+    "public_bytes": 1190392,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-peace-5-0-2.png",
+    "local_sha256": "7f302a7593dc4d4b3c253d645f7d09d88577c07268312a3dc7d1403a3acc06a3",
+    "public_sha256": "7f302a7593dc4d4b3c253d645f7d09d88577c07268312a3dc7d1403a3acc06a3",
+    "public_bytes": 1410589,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-peace-5-75-2.png",
+    "local_sha256": "526d40ec0b4c34fb5a259ed88e51f257cc1beb4f620fc00e4cc292cdfd15ae35",
+    "public_sha256": "526d40ec0b4c34fb5a259ed88e51f257cc1beb4f620fc00e4cc292cdfd15ae35",
+    "public_bytes": 1103681,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-ceiling-view-v3-1.png",
+    "local_sha256": "5ec96c7b12912f3cf77257303a4d728e6d299f8d4bdca4bf8b54c5e783794453",
+    "public_sha256": "5ec96c7b12912f3cf77257303a4d728e6d299f8d4bdca4bf8b54c5e783794453",
+    "public_bytes": 790801,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-ceiling-view-v3-2.png",
+    "local_sha256": "0778b6cb0d2cb6605cf6e856e6349520a220e56211972a64b6aecab928f39792",
+    "public_sha256": "0778b6cb0d2cb6605cf6e856e6349520a220e56211972a64b6aecab928f39792",
+    "public_bytes": 510667,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/captures/issue318-ceilings-01-zoned-6000-ceiling-view-v3-3.png",
+    "local_sha256": "7b60e4281f170bbbfa9d1f7e519508825751ae5e444a57489408d1a90a2e73ca",
+    "public_sha256": "7b60e4281f170bbbfa9d1f7e519508825751ae5e444a57489408d1a90a2e73ca",
+    "public_bytes": 565365,
+    "sanitized": false
+  },
+  {
     "file": "evidence/observers/issue318-houses-07/checks.pk3/MAPINFO",
     "local_sha256": "7899600876d089d0d8fcd353edb6247b867e0ff50d2a63de279fc3bccd2381ec",
     "public_sha256": "7899600876d089d0d8fcd353edb6247b867e0ff50d2a63de279fc3bccd2381ec",
@@ -12513,6 +13850,132 @@
     "local_sha256": "add64cbfaafb2af103ca073d4280c980a7c29f00c6f919f4f0806ffbfc6c60ad",
     "public_sha256": "add64cbfaafb2af103ca073d4280c980a7c29f00c6f919f4f0806ffbfc6c60ad",
     "public_bytes": 8090,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks.pk3/MAPINFO",
+    "local_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_bytes": 51,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks.pk3/ceilings.zs",
+    "local_sha256": "d1037feeaa2629ff4b958f1713f2c6de44f6f6e3ee5f10d331658a3bb56400ab",
+    "public_sha256": "d1037feeaa2629ff4b958f1713f2c6de44f6f6e3ee5f10d331658a3bb56400ab",
+    "public_bytes": 38787,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks.pk3/houses.zs",
+    "local_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_bytes": 12230,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/observer.pk3/CVARINFO",
+    "local_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_bytes": 197,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/observer.pk3/MAPINFO",
+    "local_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_bytes": 46,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/observer.pk3/observer.zs",
+    "local_sha256": "add64cbfaafb2af103ca073d4280c980a7c29f00c6f919f4f0806ffbfc6c60ad",
+    "public_sha256": "add64cbfaafb2af103ca073d4280c980a7c29f00c6f919f4f0806ffbfc6c60ad",
+    "public_bytes": 8090,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v2.pk3/MAPINFO",
+    "local_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_bytes": 51,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v2.pk3/ceilings.zs",
+    "local_sha256": "9483bcd9ebb950e80189a9d8b8d466d1f7624928184b6ff46ce75c363e686483",
+    "public_sha256": "9483bcd9ebb950e80189a9d8b8d466d1f7624928184b6ff46ce75c363e686483",
+    "public_bytes": 9489,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v2.pk3/houses.zs",
+    "local_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_bytes": 12230,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v3.pk3/MAPINFO",
+    "local_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_sha256": "a322e69efb6cb870232e9d81759c87cdd42c8680f23e4d0409da634ea02b6ffd",
+    "public_bytes": 51,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v3.pk3/ceilings.zs",
+    "local_sha256": "43d197126abb6ed03594678ffbe9fa3b8c08bc8a3abe44421df8e1cfa8e1f788",
+    "public_sha256": "43d197126abb6ed03594678ffbe9fa3b8c08bc8a3abe44421df8e1cfa8e1f788",
+    "public_bytes": 14878,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/checks-v3.pk3/houses.zs",
+    "local_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_sha256": "f23673fd23020103ad78f2897055fbd064e7b36a0b85efa5aaf75aa8624794f8",
+    "public_bytes": 12230,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer.pk3/CVARINFO",
+    "local_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_bytes": 197,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer.pk3/MAPINFO",
+    "local_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_bytes": 46,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer.pk3/observer.zs",
+    "local_sha256": "1db879828c2628eda689cf86dc6371e14b89191e31cb52c37b7be1685a92e90a",
+    "public_sha256": "1db879828c2628eda689cf86dc6371e14b89191e31cb52c37b7be1685a92e90a",
+    "public_bytes": 8128,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer-v2.pk3/CVARINFO",
+    "local_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_sha256": "e3f181eca51c0e11c6d1da7cbf9def0597cee4a95c91ef65b03fe1ddcf723786",
+    "public_bytes": 197,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer-v2.pk3/MAPINFO",
+    "local_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_sha256": "312f92ec0e0bafeede160d5d0a59ffc0f869e0a953bc4046b5d23b0c734c0a87",
+    "public_bytes": 46,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling-observer-v2.pk3/observer.zs",
+    "local_sha256": "5d85b71223b631fa48877aaed41f5773481225029d08bf0683358a64402e3330",
+    "public_sha256": "5d85b71223b631fa48877aaed41f5773481225029d08bf0683358a64402e3330",
+    "public_bytes": 8191,
     "sanitized": false
   },
   {
@@ -12758,6 +14221,13 @@
     "local_sha256": "01cc9b102d5acd19c1e869e82438c0182c67597c170f0a932567ad722259c427",
     "public_sha256": "01cc9b102d5acd19c1e869e82438c0182c67597c170f0a932567ad722259c427",
     "public_bytes": 3900,
+    "sanitized": false
+  },
+  {
+    "file": "evidence/observers/issue318-ceilings-01/ceiling_perf-before-author-stop.txt",
+    "local_sha256": "6cd858fa72bc51848f203af00a360c7d6716e0bb0bed8cd907c2586d3dc3e163",
+    "public_sha256": "6cd858fa72bc51848f203af00a360c7d6716e0bb0bed8cd907c2586d3dc3e163",
+    "public_bytes": 15048,
     "sanitized": false
   },
   {

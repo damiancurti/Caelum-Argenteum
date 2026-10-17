@@ -4,7 +4,20 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)
 
-Active house-hub follow-up (author decision 2026-10-17): preserve the 160 house
+Variable-sky follow-up completed as an isolated experiment: 184-MU house/shop
+districts, 1,024-MU wall/exterior region; 871 native assertions and 24 fresh
+ETW windows. Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+Next: author review of sky transitions and physical flight/roof restrictions
+(CA318-05), then a production-compatible geometry decision. Normal geometry
+and army counts remain unchanged. Bounded attacker deployment and repeated
+target/body simulation remain outstanding; these tests do not close #318.
+
+Earlier house-hub implementation (author decision 2026-10-17): preserve the 160 house
 footprints, heights and every street width; move interiors to individual native
 hub maps; keep residents present/interactable and retain each body's state;
 deploy them from their own doors; add period-style signs for existing shop stock.
