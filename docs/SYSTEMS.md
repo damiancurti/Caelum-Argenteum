@@ -4,9 +4,47 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - Contact-only breath and performance boundaries (#318)
 
+The author subsequently authorized separate house interiors. Fresh MAP06 keeps
+all 160 houses at their original XY bounds, width, depth and roof height (184 MU).
+Their solid exterior shells preserve street widths, lots and public routes.
+Front-door Use enters the corresponding CAH000..CAH159 hub map; Use inside
+returns to that house's original doorstep. Windows in an isolated interior do
+not show or connect to the city. Shops/factories remain in MAP06; six original
+painted trade signs identify the existing shop categories without changing stock.
+
+The author also requested an isolated comparison with these same interiors and
+house walls extended to the existing 1,024-MU sky ceiling. This diagnostic keeps
+XY boundaries and street widths; it changes sight, projectile paths, flight and
+thermal geometry. Its closed sector uses an opaque roof ceiling material to
+avoid GZDoom's both-sky clipping exception. It is not a renderer-only switch
+or a production height change. Measured peaceful rendering improves strongly;
+the 1,000-attacker siege still misses 60 FPS and 6,000 attackers remain near
+0.7 FPS / 12 tics/s. The experiment does not authorize new army counts or walls.
+
+The 600 defenders keep stable individual identities. A first house visit creates
+its original three/four residents. The player-owned native travel carrier keeps
+each created body, inventory, injury, gear, ammunition and active state; unloaded
+residents are suspended, not reconstructed or simulated. Unvisited house bodies
+are instantiated on their first visit or deployment. Native hub clock semantics
+remain: a siege date reached inside a house starts the city encounter on return.
+Each city tic attempts one pending defender at its own door. Occupied exits
+retry; dead or previously raised identities do not create replacement soldiers.
+Effective cannon assignments survive travel, including replacements and pending
+placement. Redemption owns active converted followers; the house registry still
+owns their bound auxiliary and preserves bodies after conversion expires.
+
+Registry passes are bounded by 600 identities and run only on initialization,
+map transition or deployment start. Ordinary ticks attempt at most one pending
+placement and one deployment identity. There is no new global actor census.
+This prototype changes defender placement; the existing synchronous 6,000
+attacker path is still unresolved. Do not report the defender-only diagnostic
+as proof of a playable complete siege. Current saves/hub behavior pass isolated
+native checks; author checks remain pending. The previous-save waiver remains
+in force.
+
 The author requires a functional normal MAP06 and rejects creating its full
 6,000-plus attacking population in one update. This is an outstanding production
-requirement: this patch does not change deployment or authored counts. The
+requirement: this patch does not yet change attacker deployment or authored counts. The
 author-requested 1,000-Mandinga control is a benchmark only, with 600 soldiers
 retained. The existing #132 reinforcement CVar is
 still an opt-in experiment, not completion of the new normal-play requirement.

@@ -3,6 +3,7 @@
 class CaelumPortDefender : CaelumFolkloreCombatActor
 {
     CaelumPortSiege Port;
+    CaelumHouseResident Residence;
     CaelumCannon Gun;
     Actor NavigationTarget;
     vector3 Station;
@@ -133,7 +134,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     override bool Used(Actor activator)
     {
         let user = CaelumPlayer(activator);
-        if (level.MapName != "MAP06" || user == null || user.player == null
+        if ((level.MapName != "MAP06" && CaelumHouseHubData.HouseForMap(level.MapName)<0) || user == null || user.player == null
             || health <= 0 || !CaelumUseGeometry.AimedAt(user, self)) return false;
         if ((user.player.cmd.buttons & BT_USE) == 0 || user.FolkloreInteractionUseLatched)
             return true;
@@ -144,6 +145,16 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override void Tick()
     {
+        // Un nacimiento que cruzó un mapa aún debe recibir PostBeginPlay nativo.
+        // Después se archiva sin ejecutar combate en una casa que no está cargada.
+        if(Residence!=null && Residence.Suspended)
+        {
+            if(HomeRevision>0 && Carbine==null){Carbine=new("CaelumCityCarbine");Carbine.Initialize(self);}
+            bInvisible=true;bSolid=false;bShootable=false;bNoInteraction=true;
+            A_ChangeLinkFlags(1,1);ChangeStatNum(CaelumHouseResidents.PARKED_STAT);
+            for(Inventory item=Inv;item!=null;item=item.Inv)item.ChangeStatNum(CaelumHouseResidents.PARKED_STAT);
+            return;
+        }
         CaelumCarbineWorld.Restore(self);
         Super.Tick();
         if(HomeRevision>0 && Carbine==null){Carbine=new("CaelumCityCarbine");Carbine.Initialize(self);}

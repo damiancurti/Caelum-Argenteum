@@ -4,6 +4,29 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)
 
+Active house-hub follow-up (author decision 2026-10-17): preserve the 160 house
+footprints, heights and every street width; move interiors to individual native
+hub maps; keep residents present/interactable and retain each body's state;
+deploy them from their own doors; add period-style signs for existing shop stock.
+Native portal/state/save/deployment and status/death/placement checks pass;
+private-map, exterior-map and sign regeneration is byte-identical. The normal
+16,370-member package matches the native runtime and source. The ETW report
+is complete; author tests remain pending. The comparison
+includes the author's second variant: the same interiors with house walls raised
+to the existing sky ceiling, without changing XY boundaries or production height.
+All 28 valid native measurement windows are complete, including separate
+1,000/6,000 profiles and CAH158. Three premature startup changemap attempts are
+excluded from interior results. Opaque closure improves peaceful forward FPS
+from 36.62-37.03 to 402.03-405.19 and ground-facing FPS from 28.54-29.76 to
+165.66-166.03. The 1,000-attacker central siege remains 27.97-29.88 FPS with
+closure; its front-line view does not improve. Both 6,000-attacker variants
+remain near 0.7 FPS / 12 tics/s. CAH158 exceeds 1,000 FPS with three residents.
+Next: choose a production-compatible occlusion design and address bounded
+attacker deployment plus repeated target/actor work without inventing budgets
+or perception rules. The diagnostic 1,024-MU walls are not adopted geometry.
+Do not close #318 on these house tests: synchronous attacker deployment and full
+siege playability remain separate outstanding acceptance requirements.
+
 The author requires exhaustive measurement, a functional peaceful city and siege,
 bounded normal deployment, and diagnosis of ground-facing slowdown. Audit evidence:
 [validation_issue318](../assets/validation_issue318/RESULTS.md). KNOWN_PITFALLS

@@ -22,6 +22,9 @@ def extend(port):
     port.prop(30987, *D['resource_bed'][:2])
     port.prop(18004, *D['resource_workbench'][:2])
     port.prop(31051, *D['completion_position'][:2])
+    import generate_house_hubs
+    if generate_house_hubs.DATA['enabled']:
+        generate_house_hubs.exterior(port)
 
 def runtime():
     import generate_native_city_doors
@@ -91,3 +94,7 @@ if __name__ == '__main__':
     generate(ROOT/'src/maps', port_extension=extend, include_coast=False)
     runtime()
     interiors.runtime(json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8')))
+    import generate_house_hubs
+    if generate_house_hubs.DATA['enabled']:
+        generate_house_hubs.generate(ROOT/'src/maps')
+        generate_house_hubs.runtime()

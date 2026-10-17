@@ -16,11 +16,15 @@ CA318-02 | Origin 5.4.28 / issue #318 | Conservative MAP06 geometry
 Prerequisites: use a fresh campaign and the normal 5.4.28 build. Existing backups
 remain available; previous-save continuation was explicitly waived by the author
 on 2026-10-17 and is not reported as passed.
+Current scope: the author subsequently authorized separate house interiors;
+outer footprints/heights and street widths remain unchanged. Front-door Use
+now changes hub maps and interior windows do not show the exterior city.
 Steps: walk the first streets, enter/leave houses, use doors, inspect windows and
 rooftops, fly over buildings and follow wall/tower stairs. Check ground-facing views.
 Save/reload; leave and return through the hub.
-Expected: unchanged visible layout, materials, collision, roof/flight space and
-interactions; no lost or duplicated defenders, doors or campaign progress. Compare
+Expected: unchanged exterior footprint, street widths, materials and roof/flight
+space; the authorized separate interiors work without lost or duplicated
+defenders, doors or campaign progress. Compare
 frame behavior and report location/view for any regression. This partial reduction
 does not establish that the peaceful city or siege is playable. Author acceptance
 and remaining MAP06 performance work are pending.
@@ -28,9 +32,12 @@ and remaining MAP06 performance work are pending.
 CA318-03 | Origin 5.4.28 / issue #318 | Native MAP06 doors
 Prerequisites: fresh MAP06 using the normal 5.4.28 build; this check does not
 require loading an old campaign or starting the full-army siege.
-Steps: use front and interior doors from both sides, including while touching
+Current scope: front house doors now change maps (CA318-04). This check applies
+to the retained native moving pairs inside the private house maps.
+Steps: use interior doors from both sides, including while touching
 their visible faces. Reuse an open/closing pair; stand or place a body in its
-swing path. Move out of the path, walk through, and fly above roof height.
+swing path. Move out of the path, walk through and check passage under the
+private interior's ceiling; the old open-roof flight step no longer applies here.
 Save during opening or an obstructed pause, reload, then leave/return through
 the hub. Observe the retained models and sound. Compare the first street and
 ground-facing FPS with the documented benchmark on the same settings.
@@ -38,3 +45,17 @@ Expected: paired normal opening, renewed wait, unobstructed passage when open,
 no pushing/crushing, no rising or detached models, and finite vertical collision.
 No duplicated/missing leaves after reload/hub return. Native checks and measured
 gains do not establish 60 FPS or full MAP06 playability. Author acceptance pending.
+
+CA318-04 | Origin 5.4.28 / issue #318 | Separate house interiors and shop signs
+Prerequisites: fresh MAP06 in the current house-hub build. This author test
+covers peaceful exploration; full-army siege performance remains unresolved.
+Steps: walk around several houses and compare their size/street widths. Use a
+front door, interact with the soldiers, injure one, save/reload inside, leave
+and return, then save/reload outside and return again. Test internal doors and
+furniture. Read the shop signs and compare each category with its vendor stock.
+Expected: original outer size/roof height/street widths; correct private house
+and original doorstep on return; individual resident health, finite equipment
+and inventory persist without copies or replacement. Signs are legible and fit
+the nineteenth-century setting. Report FPS and location/view while walking.
+The brief preview was reviewed positively, with an explicit size-preservation
+requirement; that is not confirmation of this complete acceptance test.

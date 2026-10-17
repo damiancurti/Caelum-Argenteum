@@ -6,6 +6,23 @@ Audit delivery: 5.4.28, 2026-10-17. Tested gameplay baseline: 5.4.27,
 
 ## Outcome and scope
 
+Current house follow-up: all 160 original footprints and roof heights remain;
+private interiors retain real resident bodies/inventories and native doorstep
+deployment. Thirteen isolated functional runs and 28 valid ETW windows pass.
+With ordinary shells, peaceful forward/ground means are 36.62-37.03 /
+28.54-29.76 FPS. Diagnostic full-height opaque walls improve those views to
+402.03-405.19 / 165.66-166.03 FPS. The 1,000-attacker central view improves
+from 6.81-8.33 to 27.97-29.88 FPS, while the front line does not improve.
+Both 6,000-attacker variants remain near 0.7 FPS and 12 tics/s. CAH158 exceeds
+1,000 FPS with three residents. These results support separate interiors and
+real occlusion, but do not establish a playable full siege, adopt tall walls
+or choose a new army budget. Full conditions, tails, profiles and exclusions
+are in the final house section below.
+
+The following paragraphs summarize earlier checkpoints, using their own matched
+camera and population controls; they are not a paired before/after comparison
+against the final house experiment.
+
 The peaceful city and ground-facing slowdown are reproduced. About 35 simulation
 tics/s coexist with 8â€“12 application presents/s. Removing doors helps substantially
 but does not solve the problem. A diagnostic collinear-boundary merger greatly
@@ -981,3 +998,243 @@ Stop the authorized ETW collector before analyze.py reads its CSV, then
 run flat_report.py. Runtime/member hashes, exact commands, native logs,
 CPU samples, raw ETW and selected captures accompany the evidence.
 <!-- FLAT_END -->
+
+<!-- HOUSES_BEGIN -->
+## Separate house interiors versus full-height house walls
+
+Author-requested follow-up, 2026-10-17. Production keeps all 160 original
+960-by-1,216-MU house footprints and 184-MU roofs. Front-door Use loads
+one private CAH000..CAH159 map, retaining real resident bodies and finite
+inventories; defenders emerge at their original doors during the siege.
+Shops/factories remain in the city. Six original painted sign designs
+identify the 64 shops using their existing merchandise categories.
+
+### Comparison at a glance
+
+Ranges below contain the two completed per-run means for each condition,
+not minimum/maximum instantaneous FPS or confidence intervals. A is the
+184-MU shell; B adds full-height opaque house walls. All siege rows retain
+600 defenders. The nominal simulation rate is 35 tics/s.
+
+| Scene | A app FPS | B app FPS | A tics/s | B tics/s |
+| --- | ---: | ---: | ---: | ---: |
+| Peaceful city, forward | 36.62-37.03 | 402.03-405.19 | 34.96-35.05 | 35.00-35.00 |
+| Peaceful city, ground | 28.54-29.76 | 165.66-166.03 | 34.98-35.02 | 35.00-35.00 |
+| 1,000 attackers, city centre | 6.81-8.33 | 27.97-29.88 | 34.98-34.99 | 34.98-35.03 |
+| 1,000 attackers, front line | 24.76-24.89 | 22.24-22.68 | 34.99-35.02 | 34.99-35.00 |
+| 6,000 attackers, city centre | 0.69-0.69 | 0.70-0.71 | 11.76-11.79 | 11.96-12.15 |
+| Private interior CAH158 | 1084.20-1091.11 | 1065.57-1128.91 | 35.00-35.00 | 35.00-35.00 |
+
+Real opaque closure strongly improves the two peaceful street views.
+The 1,000-attacker central view also improves, but remains below 60 FPS;
+its p99 frame intervals are 112-131 ms even with occlusion. The front-line
+view does not improve: both native snapshots contain 1,146 wall jobs,
+and B records lower FPS in these repeats. This is not a uniform map-wide
+gain or proof that the geometry alone caused that smaller regression.
+
+The private interior exceeds 1,000 application presents/s with three
+residents and 44 actors; this does not represent the entire city or a
+large indoor battle. At 6,000 attackers both variants remain near 0.7 FPS
+and 12 simulation tics/s. Thirty simulated seconds take about 86-89 real
+seconds. Opaque walls do not solve the full-army simulation bottleneck.
+Bounded normal attacker deployment and measured actor-work reduction
+remain necessary; this test does not choose a new combat budget.
+
+Static final-WAD verification confirms all four outer house boundaries,
+160 portals/return starts and correct sign categories. MAP06 changes from
+1,565 sectors/65,661 lines/2,987 things to 765/42,945/491. Each of the 160
+private interiors has five sectors, 194 lines, 16 map things and four
+native door leaves. All private WADs regenerate byte-for-byte; sign
+generation is byte-identical under the pinned Windows PowerShell 5.1
+and .NET Framework rasterizer. Counts do not include runtime-created props.
+
+Full exterior MAP06 regeneration also matches byte-for-byte; its result
+is recorded in issue318-houses-static-02/EXTERIOR_REGENERATION.json.
+
+Native functional checks cover actual Use in houses 0/119/120/158/159,
+return position, three/four residents, injury, gear durability, ammunition,
+finite inventory, current saves on both sides, fresh birth plus immediate
+travel, 600 unique deployments, cannon reassignment, blocked placement and
+retry, death, burning, bolas, resurrection memory and active/expired
+Redemption. The same real body travels; absent-map combat is suspended.
+A due siege starts when returning to the city. These are isolated engine
+checks, not author acceptance of the entire campaign or multiplayer.
+
+Functional runtime07 differs from08 only in the MAP06 cartography
+checksum; runtime08 differs from09 only in six regenerated sign PNGs
+and their license. Resident/door/cannon gameplay code is unchanged.
+
+With 600 instantiated residents, the native compressed save grows from
+331,899 bytes before visiting ten houses to 2,063,831 bytes afterward.
+All 600 identities remain unique/alive. This is a measured hub-storage
+cost; no linear extrapolation, memory-leak diagnosis or whole-campaign
+memory/transition-latency guarantee follows from it.
+
+### Matched performance conditions
+
+A (`houses`) is the production house-shell prototype. B (`opaque`) keeps
+the same private interiors, XY footprints, lines, vertices and map things,
+but extends house walls to the existing 1,024-MU sky ceiling.
+The original 184-MU sector is shared with unrelated structures, so B
+adds one sector and reassigns only 10,880 house sides. It does not raise
+the shared original sector. Its closed ceiling uses the existing opaque
+roof material: leaving F_SKY1 on both sides invokes hw_CheckClip's sky
+exception and does not block background BSP traversal. Wall materials
+remain unchanged. The paired packages differ only in MAP06 and
+its cartography checksum. B remains diagnostic, with changed sight,
+projectile/flight paths and thermal geometry; it is not a renderer-only
+toggle. No tall walls or reduced army budget are adopted in production.
+
+GZDoom 4.14.2, Vulkan 1280x720, Ryzen 9 5950X/RTX 3070 Ti, seed116,
+skill2, uncapped presentation, unpaused background simulation/rendering
+and 5% audio. Each run uses a fresh isolated process/configuration.
+No concurrent engine or package build runs during measurement.
+The ordinary inventory, sprite art, RPG bodies, collisions and resources
+remain enabled. The 1,000-Mandinga control changes only the diagnostic
+attacker count; 600 defenders and the commander remain.
+
+Peaceful views use site0 `(0,320,0)`, yaw180, pitch0/75: 140 warmup and
+350 observation tics. Siege windows start after 700 warmup tics and run
+1,050 tics (30 simulated seconds); 1,000 attackers use sites0 and4
+(`-14464,-14000,0`, yaw270), while 6,000 use site0. Each condition runs
+A-B-B-A. Interior benchmarks load CAH158 through native changemap and
+retain its native start; actual door Use is covered by functional checks.
+Separate instrumented 1,000- and 6,000-attacker profiles sample every17 tics during
+a 350-tic window; their FPS is not mixed with the uninstrumented repeats.
+
+The earlier `issue318-houses-perf-01` site1 camera was on a newly solid
+house boundary and failed native placement. Its data is retained as an
+invalid-camera diagnostic, excluded from this comparison. Directory02
+has legal cameras but retains sky ceilings in the tall closed sectors;
+it is an ineffective-occluder control, not the requested final B.
+Directory03 corrects that ceiling material and repeats the full comparison.
+The final observer
+checks `TestMobjLocation` at the measurement boundary and records camera
+coordinates/populations. Matching camera and initial populations does
+not establish identical combat trajectories under different geometry.
+
+Early directory03 `interior-*` labels remained in MAP06 because changemap
+was requested before the first level finished loading. They are excluded
+from the interior results. Corrected `house-interior-*` commands first
+wait for MAP06, then change level; native bench must identify CAH158 and
+every census must contain its three residents.
+
+ETW measures application presents, not display refresh. Host marker
+detection polls at 200 ms and trims 300 ms at the start/500 ms at the end;
+no exact per-tic correlation is claimed. Tails are empirical capture
+percentiles; fewer than30 intervals do not support a tail report.
+Renderer `bench` snapshots are separate CPU-side diagnostics, not GPU
+timings or a complete additive breakdown. Its native five-second delay
+requires at least210 postwait tics. The earlier directory02 peace/1,000
+runs used35 and did not produce a bench file; final directory03 uses210
+and records these snapshots after each measurement window.
+
+### Peaceful city
+
+| Variant / run | Complete | Tics/s | App FPS | ETW N | Mean ms | p95 ms | p99 ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses-6000 / peace-0-1 | True | 34.96 | 36.62 | 338 | 27.31 | 31.02 | 33.65 |
+| houses-6000 / peace-0-4 | True | 35.05 | 37.03 | 343 | 27.00 | 29.92 | 31.60 |
+| houses-6000 / peace-75-1 | True | 34.98 | 29.76 | 275 | 33.60 | 36.79 | 37.58 |
+| houses-6000 / peace-75-4 | True | 35.02 | 28.54 | 264 | 35.04 | 37.72 | 39.05 |
+| opaque-6000 / peace-0-2 | True | 35.00 | 405.19 | 3744 | 2.47 | 2.98 | 3.47 |
+| opaque-6000 / peace-0-3 | True | 35.00 | 402.03 | 3716 | 2.49 | 3.03 | 3.58 |
+| opaque-6000 / peace-75-2 | True | 35.00 | 166.03 | 1534 | 6.02 | 7.24 | 7.95 |
+| opaque-6000 / peace-75-3 | True | 35.00 | 165.66 | 1531 | 6.04 | 7.33 | 8.03 |
+
+### 1,000 Mandingas / 600 defenders
+
+| Variant / run | Complete | Tics/s | App FPS | ETW N | Mean ms | p95 ms | p99 ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses-1000 / siege1000-0-1 | True | 34.99 | 6.81 | 198 | 146.95 | 251.70 | 300.19 |
+| houses-1000 / siege1000-0-4 | True | 34.98 | 8.33 | 244 | 120.04 | 210.42 | 261.63 |
+| houses-1000 / siege1000-4-1 | True | 34.99 | 24.76 | 726 | 40.39 | 70.66 | 94.67 |
+| houses-1000 / siege1000-4-4 | True | 35.02 | 24.89 | 725 | 40.17 | 70.90 | 96.34 |
+| opaque-1000 / siege1000-0-2 | True | 34.98 | 27.97 | 820 | 35.76 | 61.84 | 131.06 |
+| opaque-1000 / siege1000-0-3 | True | 35.03 | 29.88 | 870 | 33.46 | 56.94 | 112.29 |
+| opaque-1000 / siege1000-4-2 | True | 35.00 | 22.68 | 665 | 44.09 | 82.90 | 112.88 |
+| opaque-1000 / siege1000-4-3 | True | 34.99 | 22.24 | 647 | 44.97 | 78.70 | 111.96 |
+
+### 6,000 Mandingas / 600 defenders
+
+| Variant / run | Complete | Tics/s | App FPS | ETW N | Mean ms | p95 ms | p99 ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses-6000 / siege6000-1 | True | 11.79 | 0.69 | 61 | 1443.66 | 1598.10 | 1652.85 |
+| houses-6000 / siege6000-4 | True | 11.76 | 0.69 | 62 | 1447.00 | 1616.58 | 1700.60 |
+| opaque-6000 / siege6000-2 | True | 11.96 | 0.70 | 61 | 1421.64 | 1557.62 | 1594.68 |
+| opaque-6000 / siege6000-3 | True | 12.15 | 0.71 | 61 | 1400.70 | 1556.58 | 1566.90 |
+
+### Private interior CAH158
+
+| Variant / run | Complete | Tics/s | App FPS | ETW N | Mean ms | p95 ms | p99 ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses-6000 / house-interior-1 | True | 35.00 | 1084.20 | 9804 | 0.92 | 1.14 | 1.38 |
+| houses-6000 / house-interior-4 | True | 35.00 | 1091.11 | 10088 | 0.92 | 1.15 | 1.41 |
+| opaque-6000 / house-interior-2 | True | 35.00 | 1128.91 | 10211 | 0.89 | 1.10 | 1.32 |
+| opaque-6000 / house-interior-3 | True | 35.00 | 1065.57 | 9640 | 0.94 | 1.18 | 1.46 |
+
+### Instrumented profiles
+
+| Variant / run | Complete | Tics/s | App FPS | ETW N | Mean ms | p95 ms | p99 ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses-1000-profile / profile-siege1000 | True | 34.77 | 8.71 | 81 | 114.79 | 146.98 | 161.80 |
+| houses-6000-profile / profile-siege6000 | True | 11.40 | 0.67 | 20 | 1491.13 | - | - |
+| opaque-1000-profile / profile-siege1000 | True | 34.92 | 30.71 | 285 | 32.56 | 56.26 | 60.94 |
+| opaque-6000-profile / profile-siege6000 | True | 11.65 | 0.68 | 20 | 1464.04 | - | - |
+
+### Native renderer snapshots after peaceful windows
+
+These are individual native bench samples after the timed window, with
+the same stationary scene. CPU-side render/setup clocks may overlap
+worker threads; do not sum them into an additive CPU/GPU budget.
+
+| Variant / view | Walls | Flats | Sprites | Wall render ms | Wall setup ms | All ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| houses / pitch0 | 34297 | 1127 | 628 | 8.97 | 11.81 | 24.84 |
+| opaque / pitch0 | 738 | 65 | 403 | 0.17 | 0.16 | 1.19 |
+| houses / pitch75 | 41833 | 1199 | 631 | 11.18 | 15.59 | 31.98 |
+| opaque / pitch75 | 4727 | 124 | 474 | 1.30 | 1.98 | 5.21 |
+
+### Sampled CPU methods
+
+Exclusive milliseconds per sampled tic. These probes cover selected
+methods; native/uninstrumented work and instrumentation overhead remain.
+Inclusive nested costs must not be summed. Full costs, counts, bursts,
+censuses, camera state and CPU samples are retained in analysis/raw logs.
+
+| Method | 1000 houses | 1000 opaque | 6000 houses | 6000 opaque |
+| --- | ---: | ---: | ---: | ---: |
+| CaelumPortSiege.AttackerTarget | 3.50 | 3.56 | 18.82 | 18.72 |
+| CaelumCombatActor.Tick | 3.00 | 3.05 | 12.69 | 12.75 |
+| CaelumDemonService.UpdateBreath | 0.70 | 0.69 | 4.18 | 4.34 |
+| CaelumDemonBreath.Mouth | 0.62 | 0.62 | 3.63 | 3.72 |
+| CaelumWeightPressure.Update | 0.38 | 0.40 | 3.21 | 3.16 |
+| CaelumElementalStatus.Tick | 0.67 | 0.69 | 3.14 | 3.05 |
+| CaelumPortSiege.Pulse | 0.61 | 0.61 | 3.06 | 3.07 |
+| CaelumCombatActor.UpdateCombatHealthEffects | 0.61 | 0.61 | 2.62 | 2.62 |
+| CaelumWeightPressure.MassAbove | 0.53 | 0.53 | 2.33 | 2.46 |
+| CaelumThermalShelter.WindBlocked | 0.42 | 0.44 | 2.35 | 2.37 |
+| CaelumThermalBody.Get | 0.53 | 0.53 | 2.26 | 2.01 |
+| CaelumElementalStream.ReceivedWatts | 1.85 | 1.90 | 2.00 | 2.02 |
+| CaelumCombatActor.UpdateActorOffensiveStatistics | 0.47 | 0.46 | 1.97 | 2.01 |
+| CaelumCombatActor.NativeTick | 0.42 | 0.43 | 1.86 | 1.91 |
+| CaelumThermalBody.Refresh | 0.38 | 0.39 | 1.66 | 1.70 |
+| CaelumElementalStream.Contact | 1.12 | 1.18 | 1.22 | 1.18 |
+| CaelumWeightPressure.WorldTick | 0.18 | 0.19 | 1.04 | 0.79 |
+| CaelumDemonBreath.CanReach | 0.18 | 0.18 | 1.00 | 0.98 |
+| CaelumPopulationState.Refresh | 0.12 | 0.13 | 0.89 | 0.57 |
+| CaelumThermalRuntime.NPCStep | 0.22 | 0.22 | 0.76 | 0.88 |
+| CaelumCombatActor.IsCombatIdle | 0.20 | 0.20 | 0.83 | 0.87 |
+| CaelumDemonService.Initialize | 0.15 | 0.15 | 0.84 | 0.82 |
+| CaelumDemonBreath.PaidTick | 0.71 | 0.72 | 0.80 | 0.80 |
+| CaelumThermalService.Integrate | 0.20 | 0.19 | 0.79 | 0.80 |
+| CaelumCombatActor.ResourceRecoveryActive | 0.15 | 0.16 | 0.70 | 0.78 |
+
+Reproduce with house_fixture.py, house_suite.py, house_verify.py and
+house_perf.py. Keep immutable evidence directories and stop the authorized
+ETW session before analyze.py/house_report.py. Old fixture failures and
+invalid-camera runs are preserved, not counted as successful acceptance.
+Normal synchronous attacker deployment remains unresolved; this experiment
+does not close #318 or replace author checks CA318-01..04.
+
+<!-- HOUSES_END -->

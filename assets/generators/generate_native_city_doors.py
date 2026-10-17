@@ -32,8 +32,9 @@ def specs():
 def token(v):
     return str(v).lower() if isinstance(v,bool) else '"'+v+'"' if isinstance(v,str) else str(v)
 
-def append(groups):
-    leaves=specs();vertices=groups['vertex'];sectors=groups['sector'];sides=groups['sidedef'];lines=groups['linedef']
+def append(groups, leaves=None):
+    leaves=specs() if leaves is None else leaves
+    vertices=groups['vertex'];sectors=groups['sector'];sides=groups['sidedef'];lines=groups['linedef']
     cell=64 # Existing CoastalMap grid, used only to pack inaccessible storage.
     origin=(max(float(v['x']) for v in vertices)+2*cell,min(float(v['y']) for v in vertices))
     columns=math.ceil(math.sqrt(len(leaves)));rows=math.ceil(len(leaves)/columns)
@@ -61,9 +62,9 @@ def append(groups):
         row=dict(type=kind,x=x,y=y,angle=angle,skill1=True,skill2=True,skill3=True,skill4=True,skill5=True,single=True,coop=True,**fields)
         row={k:token(v) for k,v in row.items()};groups['thing'].append(row);return row
     half=SHAPE['width']/2;thick=DATA['half_thickness']
-    for leaf in leaves:
+    for ordinal,leaf in enumerate(leaves):
         identity=leaf['id'];axis=leaf['axis'];side=leaf['side']
-        x=ox+2*cell+(identity-1)%columns*2*cell;y=oy+2*cell+(identity-1)//columns*2*cell
+        x=ox+2*cell+ordinal%columns*2*cell;y=oy+2*cell+ordinal//columns*2*cell
         offsets=[(-half,-thick),(-half,thick),(half,thick),(half,-thick)]
         polygon([(x+(a if axis==0 else -b),y+(b if axis==0 else a)) for a,b in offsets],identity)
         thing(9300,x+(side*half if axis==0 else 0),y+(side*half if axis==1 else 0),identity)

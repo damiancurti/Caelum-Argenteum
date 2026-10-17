@@ -20,6 +20,7 @@ class CaelumCityInteriorDoors : Object play
 
     static void Ensure(CaelumPortSiege port)
     {
+        if(CaelumHouseHub.IsCity(port))return;
         // El mapa nativo ya contiene las seis hojas de cada vivienda.
         if(port!=null && port.args[4]==1)return;
         if(port==null || !CaelumCityData.Enabled()

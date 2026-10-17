@@ -1,4 +1,5 @@
 include "caelum/data/cartography.mapinfo"
+include "caelum/data/house_hubs.mapinfo"
 
 // GameInfo modifica ajustes globales suministrados por el proyecto.
 GameInfo
@@ -29,7 +30,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumPolyDoorEvents", "CaelumCharacterSettings", "CaelumMenuAudio", "CaelumUtilityStaffEvents", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumDialogueHistory", "CaelumWorldClockTicker", "CaelumThermalWorld", "CaelumSealRegistry", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumJournalInput", "CaelumMapNoteEvents", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents", "CaelumSiegeEvents", "CaelumTrucazoEvents", "CaelumTrucoEvents"
+    EventHandlers = "CaelumPolyDoorEvents", "CaelumCharacterSettings", "CaelumMenuAudio", "CaelumUtilityStaffEvents", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumDialogueHistory", "CaelumWorldClockTicker", "CaelumThermalWorld", "CaelumSealRegistry", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumJournalInput", "CaelumMapNoteEvents", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents", "CaelumSiegeEvents", "CaelumTrucazoEvents", "CaelumTrucoEvents", "CaelumHouseHubEvents"
 
     // El índice de dialogues/ reúne fuentes por NPC y conserva el orden de nodos.
     // El USDF generado se carga de forma aditiva en todos los mapas.
@@ -149,6 +150,9 @@ DoomEdNums
 {
     31050 = CaelumPortSiege
     31051 = CaelumPortCompletion
+    31052 = CaelumHousePortal
+    31053 = CaelumHouseMarker
+    31054 = CaelumShopSign
     // Infraestructura de crafting.
     18000 = CaelumForgeStation
     18001 = CaelumRangedWorkshopStation

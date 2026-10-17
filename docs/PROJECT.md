@@ -4,6 +4,24 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
 
+Current follow-up: the author-approved house-hub prototype preserves all 160
+exterior footprints/roof heights and the surrounding streets. Each front door
+enters its own five-sector interior. Residents preserve individual bodies and
+inventory across travel and emerge through their own doors at siege deployment.
+MAP06 is reduced to 765 sectors / 42,945 lines; shops receive six trade signs.
+Native portal, state, save/reload, status/death/blocked placement and 600-defender
+deployment checks pass. Matched FPS measurements include an author-requested
+diagnostic with the same interiors and house walls extended to the sky ceiling.
+All 28 valid windows have ETW data. Peaceful forward/ground means are
+36.62-37.03 / 28.54-29.76 FPS with ordinary shells and 402.03-405.19 /
+165.66-166.03 with opaque closure. The 1,000-attacker central view improves
+from 6.81-8.33 to 27.97-29.88 FPS; the front-line view does not improve
+(24.76-24.89 versus 22.24-22.68). At 6,000 attackers both remain near 0.7 FPS
+and 12 tics/s. CAH158 exceeds 1,000 FPS with three residents; this is not a
+whole-city guarantee. The 13 functional runs and exact 16,370-member normal/
+native/source check pass. Tall walls remain diagnostic. Normal attacker
+deployment and author acceptance remain open.
+
 The author-requested flat-map comparison is complete: 40 native measurements
 cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
 removal, frozen render controls and sampled profiles. The 1,600-body battle

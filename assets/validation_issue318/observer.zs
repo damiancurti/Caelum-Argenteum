@@ -97,7 +97,8 @@ class CA318Observer : EventHandler
         if(level.time==StartTic+Warmup)
         {
             Census("window");
-            Console.Printf("CA318 CAMERA_WINDOW x=%.3f y=%.3f z=%.3f angle=%.3f pitch=%.3f",User.Pos.X,User.Pos.Y,User.Pos.Z,User.Angle,User.Pitch);
+            Console.Printf("CA318 CAMERA_WINDOW x=%.3f y=%.3f z=%.3f angle=%.3f pitch=%.3f fits=%d",User.Pos.X,User.Pos.Y,User.Pos.Z,User.Angle,User.Pitch,User.TestMobjLocation());
+            if(!User.TestMobjLocation())Console.Printf("CA318 FAIL measurement camera is not in a valid collision position");
             Console.Printf("CA318 WINDOW tic=%d ms=%.6f",level.time,MSTimeF());
         }
         if(level.time==EndTic)

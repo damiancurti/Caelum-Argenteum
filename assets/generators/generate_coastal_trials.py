@@ -116,9 +116,10 @@ class CoastalMap:
                 for key in ('sidefront','sideback'):
                     if key in line: line[key] = side_remap[line[key]]
                 for key in ('v1','v2'): line[key] = vertex_remap[line[key]]
-        self.prop(1,0,320,90)
-        self.prop(30950,0,352)  # Marcador regional explícito, Buenos Aires, superficie.
-        self.things[-1].update(arg0=1,arg1=0)
+        if getattr(self, 'add_default_things', True):
+            self.prop(1,0,320,90)
+            self.prop(30950,0,352)
+            self.things[-1].update(arg0=1,arg1=0)
         def value(v):
             if isinstance(v,bool): return str(v).lower()
             if isinstance(v,str): return '"'+v+'"'
@@ -129,9 +130,11 @@ class CoastalMap:
         if getattr(self,'optimize_open_geometry',False):
             from compact_open_geometry import compact_open_geometry
             self.geometry_reduction=compact_open_geometry(groups)
+        if getattr(self, 'transform_groups', None):
+            self.transform_groups(groups)
         if getattr(self,'native_city_doors',False):
             import generate_native_city_doors
-            self.native_door_geometry=generate_native_city_doors.append(groups)
+            self.native_door_geometry=generate_native_city_doors.append(groups, getattr(self, 'native_door_specs', None))
         for kind,entries in groups.items():
             for entry in entries:
                 chunks.append(kind+'\n{\n'+''.join('    '+k+' = '+v+';\n' for k,v in entry.items())+'}\n')

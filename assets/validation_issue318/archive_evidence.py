@@ -52,7 +52,7 @@ def main():
         for path in sorted(folder.glob('*.json')):
             # These local inspections contain copied external UDMF excerpts.
             # Publish derived counts/attribution, not the supplied map source.
-            if path.name in ('DOOR_INSPECTION.json','POLY2.json'):continue
+            if path.name in ('DOOR_INSPECTION.json','POLY2.json','HANDOFF.json'):continue
             save(path.relative_to(ROOT/'build').as_posix(),path.read_bytes(),sanitize(path.read_text()).encode(),compressed=path.name!='analysis.json')
         csv=folder/'presentmon-global.csv'
         if csv.exists():save(csv.relative_to(ROOT/'build').as_posix(),csv.read_bytes())
@@ -79,6 +79,33 @@ def main():
     for label in ('native-doors','native-map06-door'):
         path=ROOT/'build/issue318-native-08/current'/(label+'.png')
         if path.exists():save('captures/'+path.name,path.read_bytes(),compressed=False)
+    for directory,variant,labels in (
+        ('issue318-houses-07','current',('house-interior',)),
+        ('issue318-houses-perf-02','houses-6000',('peace-0-1','peace-75-1','siege6000-1','interior-1')),
+        ('issue318-houses-perf-02','opaque-6000',('peace-0-2','peace-75-2','siege6000-2','interior-2')),
+        ('issue318-houses-perf-02','houses-1000',('siege1000-0-1','siege1000-4-1')),
+        ('issue318-houses-perf-02','opaque-1000',('siege1000-0-2','siege1000-4-2')),
+        ('issue318-houses-perf-03','houses-6000',('peace-0-1','peace-75-1','siege6000-1','house-interior-1')),
+        ('issue318-houses-perf-03','opaque-6000',('peace-0-2','peace-75-2','siege6000-2','house-interior-2')),
+        ('issue318-houses-perf-03','houses-1000',('siege1000-0-1','siege1000-4-1')),
+        ('issue318-houses-perf-03','opaque-1000',('siege1000-0-2','siege1000-4-2')),
+    ):
+        for label in labels:
+            path=ROOT/'build'/directory/variant/(label+'.png')
+            if path.exists():save('captures/'+directory+'-'+variant+'-'+path.name,path.read_bytes(),compressed=False)
+    for directory,variant in (
+        ('issue318-houses-07','current'),('issue318-houses-08','current'),
+        ('issue318-houses-09','current'),('issue318-houses-perf-01','houses-6000'),
+        ('issue318-houses-perf-02','houses-6000'),
+        ('issue318-houses-perf-03','houses-6000'),
+    ):
+        for fixture in ('checks.pk3','observer.pk3'):
+            path=ROOT/'build'/directory/variant/fixture
+            if not path.exists():continue
+            with zipfile.ZipFile(path) as archive:
+                for member in archive.namelist():
+                    if member.endswith('.zs') or member in ('MAPINFO','CVARINFO'):
+                        save('observers/'+directory+'/'+fixture+'/'+member,archive.read(member),compressed=False)
     for directory in ('issue318-flat-01','issue318-flat-1600-01'):
         for label in ('sprites-01','models-02','frozen-sprites-01','frozen-models-02',
                       'inventory-empty-02','sustained-sprites','sustained-models'):

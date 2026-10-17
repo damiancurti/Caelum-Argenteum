@@ -4,6 +4,51 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
 
+House-hub follow-up, 2026-10-17: the author requested solid exterior house
+shells, one map per interior, residents present/interactable before the siege
+with retained individual state, doorstep deployment and period shop signage.
+After a brief native preview, the author explicitly required unchanged house
+size so street widths remain intact. Static source and final-WAD checks confirm
+all 160 original footprints and 184-MU roof heights. MAP06 now has 765 sectors,
+42,945 lines and 491 things; each private interior has five sectors/194 lines.
+
+Native isolated checks pass for actual Use/return in houses 0/119/120/158/159,
+resident population, gear/health/ammunition/finite inventory, save/reload on
+both sides, fresh birth plus immediate travel, 600 unique doorstep emissions,
+cannon replacement assignment, blocked arrival/retry, death, burning, bolas,
+resurrection memory and active/expired Redemption. Earlier failed fixtures are
+retained: string switch syntax, sparse PolyObject storage, NPC pickup setup and
+a diagnostic controller parked outside typed discovery. They are superseded by
+successful corrected runs; they were not silently counted as passes.
+
+The subsequent matched house experiment completes 28 valid native windows:
+peaceful forward/ground, two 1,000-attacker siege views, 6,000 attackers, four
+private-interior repeats and separate profiles at both army sizes. Initial
+controls are retained: one camera lay on a solid house boundary; raising a
+floor while retaining sky ceilings failed to activate native BSP occlusion;
+three premature startup changemap attempts remained in MAP06. Corrected cameras,
+opaque closed-sector ceilings and CAH158 plus three-resident checks supersede
+those attempts. Full exterior regeneration and exact 16,370-member normal/native/
+source verification pass. PresentMon released its CSV at the scheduled four-hour
+deadline after Windows denied ordinary shutdown and reported a canceled elevated
+stop request. The completed ETW analysis covers all 28 valid windows. Peaceful
+forward means are 36.62-37.03 FPS with ordinary shells versus 402.03-405.19 with
+opaque closure; ground-facing means are 28.54-29.76 versus 165.66-166.03. At
+1,000 attackers the central view improves from 6.81-8.33 to 27.97-29.88, but the
+front-line view records 24.76-24.89 versus 22.24-22.68. Both 6,000-attacker
+variants remain near 0.7 FPS and 12 tics/s. Private CAH158 measures
+1,065.57-1,128.91 FPS across both variants with three residents/44 actors.
+These are application presents, not display refresh or a stable whole-map
+guarantee. Independent source/evidence review found no remaining execution
+blocker; tall walls remain diagnostic and author acceptance remains pending.
+
+Six original trade-sign PNGs use existing merchandise categories and owned
+procedural vector artwork. Windows PowerShell/.NET Framework rasterization is
+pinned; identical repeat output is verified in that environment. The pre-hub
+MAP06 backup is retained. The brief author preview is qualified feedback;
+CA318-01..04 remain pending. Full attacker deployment and city/siege performance
+acceptance remain open; no diagnostic population becomes a new production rule.
+
 The author-requested flat-map comparison is complete: 40 native measurements
 cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
 removal, frozen render controls and sampled profiles. The 1,600-body battle

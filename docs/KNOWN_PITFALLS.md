@@ -4,6 +4,107 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-121 - Sky ceilings can defeat an apparently opaque city barrier
+
+Status/evidence: CODE-VERIFIED GZDoom g4.14.2 hw_CheckClip and ENGINE-VERIFIED
+matched native renderer samples; #318 / 5.4.28, 2026-10-17. Scope: the isolated
+house-height comparison, not an adopted production height or flight rule.
+[Evidence](../assets/validation_issue318/RESULTS.md).
+
+A wall can visibly reach the sky while the renderer still traverses the city
+behind it. In [hw_CheckClip](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_fakeflat.cpp),
+closed-sector tests return false when both ceiling textures are skyflatnum.
+Raising the house floor to the 1,024-MU outdoor ceiling while retaining F_SKY1
+therefore does not establish real occlusion. The final diagnostic sets that
+closed sector's ceiling to the existing opaque roof material. Valid lower-wall
+textures, distinct front/back sectors and the absence of other portal/dither
+bypasses also matter. Verify rendered work, not only the geometry or screenshot.
+
+From the same legal `(0,320,0)` camera, the first matched native bench snapshots
+drop from 34,297 to 738 wall jobs and 1,127 to 65 flats. These are renderer work
+counts, not counts of unique authored walls. CPU-side bench clocks and the HUD
+counter are not ETW presentation FPS. Full measurements remain in the audit.
+The completed ETW comparison measures peaceful forward means of 36.62-37.03
+versus 402.03-405.19 FPS, and ground-facing means of 28.54-29.76 versus
+165.66-166.03. The 1,000-attacker central view rises from 6.81-8.33 to
+27.97-29.88 FPS, still below 60 with p99 frame intervals of 112-131 ms. Its
+front-line view does not improve (24.76-24.89 versus 22.24-22.68 FPS); both
+native snapshots contain 1,146 wall jobs. Do not generalize a large gain from
+one view to every route or attribute every combat difference to the renderer.
+An occluder cannot remove unrelated offscreen actor simulation.
+
+The completed four 6,000-attacker/600-defender runs illustrate that limit:
+11.76-11.79 tics/s with ordinary shells and 11.96-12.15 with real occlusion,
+against the nominal 35; both remain near 0.7 ETW application FPS. Separate
+profiles sample 20 tics per 10-simulated-second
+window. AttackerTarget costs 18.72-18.82 exclusive ms/sample tic, including its
+uninstrumented shared-target helpers; the CombatActor.Tick remainder costs
+12.69-12.75. At 1,000 attackers these scopes cost 3.50-3.56 and 3.00-3.05 ms.
+These are selected CPU scopes, not an exhaustive additive engine/GPU budget.
+The typed target registry still supplies up to 600 defenders to leader searches:
+bounded/typed does not mean free when many leaders repeat the work. Any spatial
+optimization must preserve target eligibility, sight/RNG semantics and offscreen
+combat rather than silently impose a new range, faction or civilian policy.
+
+The generated city shares its 184-MU roof sector with unrelated structures.
+Clone the house sector and redirect only its authored boundary sides; raising
+the shared sector would alter other buildings. Check every house footprint,
+unchanged street widths and the paired package diff. The tall-wall control also
+changes sight, projectiles, flight and thermal geometry, so a total-gameplay
+timing difference is not a pure renderer subtraction or automatic design approval.
+
+Do not place a benchmark camera on the old interior/house boundary after making
+it solid. Check native placement and actual coordinates at the measurement
+boundary. Retain invalid-camera and ineffective-sky-closure attempts as qualified
+controls; they must not become evidence against the corrected occluder.
+Native bench waits five wall seconds before writing when invoked with an
+already-visible FPS counter; a short post-command tic wait may quit too soon.
+
+## CA-KP-120 - House hubs need body ownership, initialization and placement checks
+
+Status/evidence: CODE-VERIFIED native g4.14.2 travel/thinker order and
+ENGINE-VERIFIED house transitions, current saves, finite inventory, fresh
+birth/travel, blocked placement, burning, bolas and Redemption; #318 / 5.4.28.
+Scope: CaelumHouseResidents and the generated CAH000..CAH159 interiors.
+Evidence: validation_issue318 house fixtures and RESULTS.md.
+
+Keep exterior footprints separate from interior representation. The generated
+MAP06 preserves all four outer boundaries and original height of every house;
+the private interiors use ordinary ceilings. Fewer sectors alone does not
+certify FPS, nor does a high interior HUD counter certify the city or siege.
+Compare city/ground/interior windows, native tics and presented frame intervals.
+A startup changemap may be ignored before the initial level finishes loading.
+Wait for the first map, then assert the actual loaded map name and its resident
+population; a successful measurement callback alone does not prove the scene.
+
+Do not serialize a partial hand-written copy of a complex NPC. Native
+Inventory.PreTravelled/Travelled can carry its real body and finite inventory
+through STAT_TRAVELLING; remove them from that list before native cleanup.
+Use a distinct nonthinking stat for absent residents, not STAT_STATIC or the
+corpse archive's stat. A fresh actor moved to a nonthinking list loses
+OF_JustSpawned. Keep it in STAT_TRAVELLING until native PostBeginPlay can run,
+then park it without executing absent-map combat. Assert real gear/anatomy,
+not only one initialized boolean. Rebase absolute clocks and map-bound caches.
+
+Historical resurrection memory does not prove another carrier owns travel.
+Delegate only active conversions actually registered with the travelling
+effect; retain permanent exclusion from historical siege orders separately.
+A bolas binding is an independent actor with its own finite item. Transport
+that auxiliary exactly once, including when Redemption owns the victim body;
+destroying the binding resolves/drops its piece and is not harmless cleanup.
+
+An occupied saved position must defer placement. Use a solid probe with the
+actual body's dimensions; testing the nonsolid parked body misses collisions.
+Retain cannon replacement assignments and reserve a pending operator's slot
+without counting it as present service. Otherwise a vacancy can be reassigned
+and then overwritten when the original body returns. Check the real Use path,
+save/reload, deaths, status composition and deployment independently.
+
+Native hub snapshots can copy travelling objects into stored map state. Measure
+save size, memory and transition latency after many visits and a grown roster;
+one house's FPS does not establish bounded campaign storage. This remains a
+measurement requirement, not a demonstrated leak.
+
 ## CA-KP-119 - Flat army tests must separate simulation, inventory and drawing
 
 Status/evidence: ENGINE-VERIFIED isolated GZDoom 4.14.2 flat-sector tests,

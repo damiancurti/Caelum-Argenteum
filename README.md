@@ -9,7 +9,22 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.28.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Native door checkpoint: 230 new native assertions pass, including current save/hub,
+House-interior prototype (#318): MAP06 now keeps the 160 original house
+footprints and roof heights as solid exterior shells. Front-door Use loads one
+private hub interior; the same soldier bodies and inventories return through
+their house doors for the siege. Shops retain their geometry and receive six
+painted trade-sign designs. Exterior geometry is 765 sectors / 42,945 lines;
+each house interior has five sectors / 194 lines. Native transition, state,
+save/reload, status and 600-defender deployment checks pass in 13 isolated runs.
+The 28-window ETW comparison measures 36.62-37.03 FPS in the peaceful forward
+view and 28.54-29.76 looking down. Diagnostic opaque walls improve these to
+402.03-405.19 and 165.66-166.03 FPS, but the 1,000-attacker central siege still
+averages only 27.97-29.88 FPS and 6,000 attackers remain near 0.7 FPS / 12 tics/s.
+The private CAH158 interior exceeds 1,000 FPS with three residents. Tall walls
+remain diagnostic; normal roof heights are unchanged. Normal attacker deployment
+and author acceptance remain open. See the audit and pending_test.txt.
+
+Earlier native door checkpoint: 230 new native assertions pass, including current save/hub,
 obstruction/roof behavior and 600 NPC home references. ETW forward 18.46-18.84 FPS
 and ground-facing 12.61-12.69 FPS improve on old-door repeats 10.30-14.58 and
 8.46-9.57 FPS; MAP06 remains below its playability target. Detailed controls,

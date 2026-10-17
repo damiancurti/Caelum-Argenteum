@@ -82,6 +82,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         bool city=CaelumCityData.Enabled();
         bool peaceful=city && !attackOnly;
+        bool separateHomes=CaelumHouseHub.IsCity(self);
         EnsureReinforcements(true);
         // La revisión se confirma una vez, antes del sellado y activación.
         for(int lane=0;lane<6;lane++)
@@ -131,6 +132,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 vector3 station=spot+CaelumPortData.OperatorOffset(gunIndex,crew);
                 if(defending)
                 {
+                    if(separateHomes)continue;
                     int identity=Defenders.Size();
                     let soldier=CaelumPortDefender(Spawn("CaelumPortDefender",city ? CaelumCityData.HomePosition(identity) : station));
                     soldier.Port=self;soldier.Gun=gun;soldier.Station=station;soldier.Lane=lane;
@@ -151,7 +153,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             AddDemon(spot,NearestLane(spot.X));infantry++;
         }
         int guard=0;
-        while(!attackOnly && Defenders.Size()<CaelumPortData.DefenderCount())
+        while(!separateHomes && !attackOnly && Defenders.Size()<CaelumPortData.DefenderCount())
         {
             int lane=guard%6;
             vector3 station=city ? CaelumCityData.GuardStation(guard) : CaelumPortData.GuardPosition(guard);
@@ -161,12 +163,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
             soldier.Port=self;soldier.Lane=lane;soldier.Station=station;Defenders.Push(soldier);guard++;
         }
         SetupRevision=city ? CaelumCityData.LAYOUT_REVISION : int(CaelumPortData.LayoutRevision());SetupTick=level.time;
+        if(separateHomes && !attackOnly)CaelumHouseResidents.Get(true).PrepareCity(self);
         if(peaceful)
         {
             Console.Printf("CITY133 housed=%d attackers=0 revision=%d",Defenders.Size(),SetupRevision);
             return;
         }
         SiegeStarted=true;
+        if(separateHomes)CaelumHouseResidents.Get(true).BeginDeployment(self);
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
         Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
         if(Reinforcements.Enabled)Reinforcements.Tick(self);
@@ -577,6 +581,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let entry=body.SiegeCombatant;
         // El menú nativo no pausa el mundo; sólo este guardia detiene su ruta.
         if(soldier!=null && soldier.bInConversation)return true;
+        if(soldier!=null && soldier.HomeRevision>0 && CaelumHouseHubData.HouseForMap(level.MapName)>=0
+            && !CaelumCityWorld.SiegeDue())return true;
         if(soldier!=null && soldier.HomeRevision>0 && soldier.Port!=null && !soldier.Port.SiegeStarted)return true;
         CaelumPortSiege port=soldier!=null ? soldier.Port : entry!=null ? CaelumPortSiege(entry.Encounter) : null;
         if(port==null || !port.RosterSealed)return false;
