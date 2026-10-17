@@ -1,0 +1,23 @@
+{
+  "issue": 318,
+  "schema_revision": 1,
+  "enabled": true,
+  "author_decisions": [
+    "2026-10-17: Test houses as simple exterior blocks; each front door enters a separate map containing only that house's interior.",
+    "Soldiers remain present and interactable inside before the siege, preserving individual state when they emerge from their house doors.",
+    "2026-10-17: Preserve every house's existing position, exterior width, depth and roof height. Keep street widths, lots and public routes unchanged; only the interior representation and door connection may change.",
+    "Shops retain their existing layout and receive distinctive nineteenth-century signs matching their existing merchandise categories.",
+    "Keep the existing unloaded-hub clock policy: unloaded maps do not simulate combat; a due siege starts on return to MAP06.",
+    "2026-10-17: Compare these separate interiors against the same city with house walls extended upward to block overhead visibility. This is an isolated diagnostic; production keeps its original roof height pending the comparison and author review."
+  ],
+  "map_prefix": "CAH",
+  "cluster": 434,
+  "portal_editor": 31052,
+  "marker_editor": 31053,
+  "sign_editor": 31054,
+  "city_marker_argument": 3,
+  "city_marker_value": 1,
+  "start_index_base": 1,
+  "sign_categories": ["provisions", "melee", "ranged", "jewelry", "physical_armor", "magic"],
+  "sign_labels": ["ALMACÉN", "ARMAS BLANCAS", "ARMAS Y MUNICIONES", "JOYERÍA", "ARMERÍA", "ARTES ARCANAS"]
+}

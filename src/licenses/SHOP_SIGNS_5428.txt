@@ -1,0 +1,14 @@
+Caelum Argenteum - MAP06 shop signs (#318, 5.4.28)
+
+Original procedural vector artwork created for Damián Curti's project on
+2026-10-17. Source: assets/generators/generate_shop_signs.ps1.
+Category labels: assets/map06_port/HOUSE_HUBS.json; existing six shop categories.
+Output: graphics/caelum/shop_signs/CASG00.png through CASG05.png.
+
+Muted painted wood, cream trade symbols and rasterized Georgia lettering.
+The installed Windows font is used to rasterize lettering; no font file or
+external picture is packaged. Repeat generation uses Windows PowerShell 5.1
+and its .NET Framework System.Drawing/GDI+ renderer on Windows 11.
+
+These signs follow the project's original-art ownership and distribution
+terms. No third-party image or Doom asset was imported for this artwork.
