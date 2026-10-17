@@ -1,0 +1,1442 @@
+[
+  {
+    "label": "army1000-final-01",
+    "variant": "army1000-base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "army1000-base",
+      "label": "army1000-final-01",
+      "phase": 1,
+      "site": 4,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 175,
+      "warmup": 70,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 35264,
+    "completed": true,
+    "callback_interval_ms": {
+      "n": 11,
+      "mean": 797.7548272727273,
+      "median": 653.0705,
+      "p95": 1414.92095,
+      "p99": 1620.59947,
+      "max": 1672.0191
+    },
+    "native_tic_interval_ms": {
+      "n": 173,
+      "mean": 50.74322196531793,
+      "median": 30.8737000000001,
+      "p95": 115.06198000000052,
+      "p99": 339.45383600000036,
+      "max": 361.5586000000003
+    },
+    "whole_run_max_tic_interval_ms": 361.5586000000003,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=140 actors=19680 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=315 actors=19929 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=4 corpses=0 flames=132"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 174,
+    "observed_interior_tics": 174,
+    "interior_wall_ms": 8778.577400000002,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=62 other=0"
+    ],
+    "skip": [],
+    "watchdog_timeout": false,
+    "tics_per_second": 19.707065520661693,
+    "callbacks_per_second": 1.2535179554082867,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": [],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 10,
+        "mean": 834.22189,
+        "median": 656.78305,
+        "p95": 1438.7224749999996,
+        "p99": 1623.0664150000002,
+        "max": 1669.1524000000002
+      },
+      "MsBetweenDisplayChange": {
+        "n": 10,
+        "mean": 831.6484800000001,
+        "median": 658.32035,
+        "p95": 1434.1295949999994,
+        "p99": 1620.110239,
+        "max": 1666.6054000000001
+      },
+      "MsCPUBusy": {
+        "n": 10,
+        "mean": 834.22189,
+        "median": 656.78305,
+        "p95": 1438.7224749999996,
+        "p99": 1623.066415,
+        "max": 1669.1524
+      },
+      "MsCPUWait": {
+        "n": 10,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 10,
+        "mean": 8.72775,
+        "median": 9.0175,
+        "p95": 11.834,
+        "p99": 12.170960000000001,
+        "max": 12.2552
+      },
+      "MsGPUWait": {
+        "n": 10,
+        "mean": 825.2733,
+        "median": 649.58595,
+        "p95": 1429.8945799999995,
+        "p99": 1614.415316,
+        "max": 1660.5455
+      },
+      "MsUntilDisplayed": {
+        "n": 10,
+        "mean": 37.80452,
+        "median": 30.003,
+        "p95": 73.59516999999997,
+        "p99": 81.723034,
+        "max": 83.755
+      },
+      "application_present_fps": 1.1987218412597636,
+      "sample_count": 10,
+      "short_sample_warning": true,
+      "display_change_fps": 1.2024311040645441,
+      "qpc_bounds_ms": [
+        68995346.5259,
+        69003387.537
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 10
+      }
+    }
+  },
+  {
+    "label": "army1000-final-02",
+    "variant": "army1000-base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "army1000-base",
+      "label": "army1000-final-02",
+      "phase": 1,
+      "site": 4,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 175,
+      "warmup": 70,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 32464,
+    "completed": true,
+    "callback_interval_ms": {
+      "n": 11,
+      "mean": 753.7902181818182,
+      "median": 666.4418,
+      "p95": 1410.7064,
+      "p99": 1895.19448,
+      "max": 2016.3165
+    },
+    "native_tic_interval_ms": {
+      "n": 173,
+      "mean": 47.844373988439294,
+      "median": 29.5750999999982,
+      "p95": 113.89484000000022,
+      "p99": 275.2198720000002,
+      "max": 335.0640000000003
+    },
+    "whole_run_max_tic_interval_ms": 335.0640000000003,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=140 actors=19680 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=315 actors=19929 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=4 corpses=0 flames=132"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 174,
+    "observed_interior_tics": 174,
+    "interior_wall_ms": 8277.076699999998,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=62 other=0"
+    ],
+    "skip": [],
+    "watchdog_timeout": false,
+    "tics_per_second": 20.901099055902193,
+    "callbacks_per_second": 1.3266290486125607,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": [],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 9,
+        "mean": 835.1461666666667,
+        "median": 670.7987,
+        "p95": 1531.2735199999995,
+        "p99": 1916.9777439999998,
+        "max": 2013.4038
+      },
+      "MsBetweenDisplayChange": {
+        "n": 9,
+        "mean": 835.1703555555556,
+        "median": 683.3133,
+        "p95": 1516.6407799999997,
+        "p99": 1889.972236,
+        "max": 1983.3051
+      },
+      "MsCPUBusy": {
+        "n": 9,
+        "mean": 835.1461666666667,
+        "median": 670.7987,
+        "p95": 1531.2735199999997,
+        "p99": 1916.977744,
+        "max": 2013.4038
+      },
+      "MsCPUWait": {
+        "n": 9,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 9,
+        "mean": 6.275233333333333,
+        "median": 5.7557,
+        "p95": 8.342039999999999,
+        "p99": 9.146488,
+        "max": 9.3476
+      },
+      "MsGPUWait": {
+        "n": 9,
+        "mean": 829.1710111111112,
+        "median": 662.4919,
+        "p95": 1524.7207399999995,
+        "p99": 1910.4237479999997,
+        "max": 2006.8495
+      },
+      "MsUntilDisplayed": {
+        "n": 9,
+        "mean": 64.3024,
+        "median": 65.0686,
+        "p95": 100.89842,
+        "p99": 103.639604,
+        "max": 104.3249
+      },
+      "application_present_fps": 1.1973951865112633,
+      "sample_count": 9,
+      "short_sample_warning": true,
+      "display_change_fps": 1.1973605065697042,
+      "qpc_bounds_ms": [
+        69018898.8861,
+        69026736.71280001
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 9
+      }
+    }
+  },
+  {
+    "label": "army1000-skip-01",
+    "variant": "army1000-base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "army1000-base",
+      "label": "army1000-skip-01",
+      "phase": 3,
+      "site": 1,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 175,
+      "warmup": 70,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 4908,
+    "completed": false,
+    "callback_interval_ms": {
+      "n": 61,
+      "mean": 81.13922459016393,
+      "median": 78.5687,
+      "p95": 110.1295,
+      "p99": 112.765,
+      "max": 114.8311
+    },
+    "native_tic_interval_ms": {
+      "n": 173,
+      "mean": 28.59836994219653,
+      "median": 13.069000000001324,
+      "p95": 66.5305999999997,
+      "p99": 69.32878799999999,
+      "max": 71.71930000000066
+    },
+    "whole_run_max_tic_interval_ms": 179.92430000000058,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=140 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=315 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-2048.000 y=320.000 z=184.000 angle=180.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-2048.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 174,
+    "observed_interior_tics": 174,
+    "interior_wall_ms": 4947.518,
+    "measurement_window_complete": false,
+    "profile_scope": "Partial failed run; not a completed-window mean",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=0 other=0"
+    ],
+    "skip": [
+      "CA318 SKIP_PRECONDITION reason=CA_FAST_UNSAFE",
+      "CA318 FAIL native skip unavailable",
+      "CA318 FAIL siege never started",
+      "CA318 FAIL skip not completed"
+    ],
+    "watchdog_timeout": false,
+    "tics_per_second": 34.96702791177314,
+    "callbacks_per_second": 12.324495397275765,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": []
+  },
+  {
+    "label": "army1000-skip-02",
+    "variant": "army1000-base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "army1000-base",
+      "label": "army1000-skip-02",
+      "phase": 3,
+      "site": 4,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 175,
+      "warmup": 70,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 44192,
+    "completed": true,
+    "callback_interval_ms": {
+      "n": 10,
+      "mean": 816.6333999999999,
+      "median": 656.8505,
+      "p95": 1416.0167549999996,
+      "p99": 1485.451431,
+      "max": 1502.8101
+    },
+    "native_tic_interval_ms": {
+      "n": 173,
+      "mean": 47.781429479768796,
+      "median": 29.366000000001804,
+      "p95": 113.86946000000104,
+      "p99": 254.84110399999977,
+      "max": 384.241
+    },
+    "whole_run_max_tic_interval_ms": 1289.4381000000012,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=140 actors=19918 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=0 corpses=0 flames=124",
+      "CA318 CENSUS end tic=315 actors=19857 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=4 corpses=0 flames=81"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 174,
+    "observed_interior_tics": 174,
+    "interior_wall_ms": 8266.187300000001,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=62 other=0",
+      "CA318 BREATHS end mandinga=39 other=0"
+    ],
+    "skip": [
+      "CA318 SKIP_PRECONDITION reason=",
+      "CA318 SKIP started=1",
+      "CA318 SKIP_END elapsed=8193 active=0 reason=CA_EVENT_SIEGE_INTERRUPT"
+    ],
+    "watchdog_timeout": false,
+    "tics_per_second": 20.928632962381577,
+    "callbacks_per_second": 1.2245396771672579,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": [],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 9,
+        "mean": 820.7475444444444,
+        "median": 628.1984,
+        "p95": 1425.7825599999999,
+        "p99": 1487.523232,
+        "max": 1502.9584
+      },
+      "MsBetweenDisplayChange": {
+        "n": 9,
+        "mean": 820.3520777777778,
+        "median": 633.3673,
+        "p95": 1426.6468399999999,
+        "p99": 1485.317688,
+        "max": 1499.9854
+      },
+      "MsCPUBusy": {
+        "n": 9,
+        "mean": 820.7475444444444,
+        "median": 628.1984,
+        "p95": 1425.7825599999999,
+        "p99": 1487.523232,
+        "max": 1502.9584
+      },
+      "MsCPUWait": {
+        "n": 9,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 9,
+        "mean": 4.232666666666667,
+        "median": 4.3601,
+        "p95": 9.187699999999998,
+        "p99": 10.80706,
+        "max": 11.2119
+      },
+      "MsGPUWait": {
+        "n": 9,
+        "mean": 816.4,
+        "median": 623.0947,
+        "p95": 1424.0716599999998,
+        "p99": 1485.596172,
+        "max": 1500.9773
+      },
+      "MsUntilDisplayed": {
+        "n": 9,
+        "mean": 24.342433333333332,
+        "median": 21.3563,
+        "p95": 33.77534,
+        "p99": 34.690827999999996,
+        "max": 34.9197
+      },
+      "application_present_fps": 1.218401452150417,
+      "sample_count": 9,
+      "short_sample_warning": true,
+      "display_change_fps": 1.2189888062560454,
+      "qpc_bounds_ms": [
+        69169933.8132,
+        69177369.82530001
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 9
+      }
+    }
+  },
+  {
+    "label": "army1000-final-profile",
+    "variant": "army1000-profile-deep",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "army1000-profile-deep",
+      "label": "army1000-final-profile",
+      "phase": 1,
+      "site": 4,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 175,
+      "warmup": 70,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 37604,
+    "completed": true,
+    "callback_interval_ms": {},
+    "native_tic_interval_ms": {
+      "n": 173,
+      "mean": 53.33145780346821,
+      "median": 32.64730000000054,
+      "p95": 122.14901999999968,
+      "p99": 300.2817679999987,
+      "max": 406.09079999999994
+    },
+    "whole_run_max_tic_interval_ms": 406.09079999999994,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=140 actors=19680 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=315 actors=19929 soldiers=600 demons=1000 blockers=7680 doors=960 missiles=4 corpses=0 flames=132"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 174,
+    "observed_interior_tics": 174,
+    "interior_wall_ms": 9226.342200000001,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=62 other=0"
+    ],
+    "skip": [],
+    "watchdog_timeout": false,
+    "tics_per_second": 18.750659389156407,
+    "bursts": [
+      {
+        "tic": 0,
+        "name": "CaelumCombatActor.InitializeCombatProfile",
+        "calls": 604,
+        "inclusive_ms": 0.56,
+        "exclusive_ms": 0.1862
+      },
+      {
+        "tic": 0,
+        "name": "CaelumCityWorld.Prepare",
+        "calls": 2,
+        "inclusive_ms": 14.0574,
+        "exclusive_ms": 14.0574
+      },
+      {
+        "tic": 0,
+        "name": "CaelumPortDefender.AssignHome",
+        "calls": 600,
+        "inclusive_ms": 3.4517,
+        "exclusive_ms": 3.3083
+      },
+      {
+        "tic": 0,
+        "name": "CaelumPortSiege.Deploy",
+        "calls": 1,
+        "inclusive_ms": 16.0872,
+        "exclusive_ms": 12.6351
+      },
+      {
+        "tic": 106,
+        "name": "CaelumCombatActor.InitializeCombatProfile",
+        "calls": 1001,
+        "inclusive_ms": 0.6912,
+        "exclusive_ms": 0.6912
+      },
+      {
+        "tic": 106,
+        "name": "CaelumPortSiege.AddDemon",
+        "calls": 1000,
+        "inclusive_ms": 3.0598,
+        "exclusive_ms": 1.6792
+      },
+      {
+        "tic": 106,
+        "name": "CaelumPortSiege.Deploy",
+        "calls": 1,
+        "inclusive_ms": 22.7444,
+        "exclusive_ms": 19.6817
+      },
+      {
+        "tic": 106,
+        "name": "CaelumSiegeEncounter.RegisterAttacker",
+        "calls": 1001,
+        "inclusive_ms": 1.3835,
+        "exclusive_ms": 1.3835
+      }
+    ],
+    "profile_sample_tics": 10,
+    "profile": [
+      {
+        "name": "CaelumHingedDoorLeaf.PlaceAtProgress",
+        "inclusive_ms_per_sample_tic": 7.51003,
+        "exclusive_ms_per_sample_tic": 7.49294,
+        "calls_per_sample_tic": 32.0
+      },
+      {
+        "name": "CaelumSlidingDoorBlocker.Tick",
+        "inclusive_ms_per_sample_tic": 7.16187,
+        "exclusive_ms_per_sample_tic": 6.6476,
+        "calls_per_sample_tic": 7680.0
+      },
+      {
+        "name": "CaelumPortSiege.AttackerTarget",
+        "inclusive_ms_per_sample_tic": 5.968629999999999,
+        "exclusive_ms_per_sample_tic": 5.968629999999999,
+        "calls_per_sample_tic": 282.2
+      },
+      {
+        "name": "CaelumCombatActor.Tick",
+        "inclusive_ms_per_sample_tic": 25.20771,
+        "exclusive_ms_per_sample_tic": 3.4192100000000005,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumThermalFire.AbsorbedAt",
+        "inclusive_ms_per_sample_tic": 2.0359000000000003,
+        "exclusive_ms_per_sample_tic": 2.0359000000000003,
+        "calls_per_sample_tic": 181.0
+      },
+      {
+        "name": "CaelumElementalStream.Contact",
+        "inclusive_ms_per_sample_tic": 1.95494,
+        "exclusive_ms_per_sample_tic": 1.86767,
+        "calls_per_sample_tic": 4562.7
+      },
+      {
+        "name": "CaelumThermalShelter.WindBlocked",
+        "inclusive_ms_per_sample_tic": 1.3000099999999999,
+        "exclusive_ms_per_sample_tic": 1.3000099999999999,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumDemonBreath.PaidTick",
+        "inclusive_ms_per_sample_tic": 6.30417,
+        "exclusive_ms_per_sample_tic": 1.2011499999999997,
+        "calls_per_sample_tic": 62.0
+      },
+      {
+        "name": "CaelumDemonBreath.Mouth",
+        "inclusive_ms_per_sample_tic": 0.7987799999999999,
+        "exclusive_ms_per_sample_tic": 0.7987799999999999,
+        "calls_per_sample_tic": 1125.0
+      },
+      {
+        "name": "CaelumDemonService.UpdateBreath",
+        "inclusive_ms_per_sample_tic": 8.057720000000002,
+        "exclusive_ms_per_sample_tic": 0.77715,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumElementalStatus.Tick",
+        "inclusive_ms_per_sample_tic": 0.7626700000000001,
+        "exclusive_ms_per_sample_tic": 0.7100299999999999,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumWeightPressure.MassAbove",
+        "inclusive_ms_per_sample_tic": 0.67781,
+        "exclusive_ms_per_sample_tic": 0.67781,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumCombatActor.UpdateCombatHealthEffects",
+        "inclusive_ms_per_sample_tic": 0.74612,
+        "exclusive_ms_per_sample_tic": 0.6409899999999998,
+        "calls_per_sample_tic": 1601.1
+      },
+      {
+        "name": "CaelumPortSiege.Pulse",
+        "inclusive_ms_per_sample_tic": 8.128340000000001,
+        "exclusive_ms_per_sample_tic": 0.6054099999999999,
+        "calls_per_sample_tic": 462.2
+      },
+      {
+        "name": "CaelumWeightPressure.Update",
+        "inclusive_ms_per_sample_tic": 1.26537,
+        "exclusive_ms_per_sample_tic": 0.5875600000000001,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumThermalBody.Get",
+        "inclusive_ms_per_sample_tic": 0.56714,
+        "exclusive_ms_per_sample_tic": 0.56714,
+        "calls_per_sample_tic": 5722.8
+      },
+      {
+        "name": "CaelumHingedDoorLeaf.BlockerPosition",
+        "inclusive_ms_per_sample_tic": 0.53136,
+        "exclusive_ms_per_sample_tic": 0.53136,
+        "calls_per_sample_tic": 7936.0
+      },
+      {
+        "name": "CaelumPortSiege.WalkTo",
+        "inclusive_ms_per_sample_tic": 0.7317,
+        "exclusive_ms_per_sample_tic": 0.49420000000000003,
+        "calls_per_sample_tic": 180.0
+      },
+      {
+        "name": "CaelumElementalStream.Visible",
+        "inclusive_ms_per_sample_tic": 0.48802,
+        "exclusive_ms_per_sample_tic": 0.48802,
+        "calls_per_sample_tic": 685.0
+      },
+      {
+        "name": "CaelumCombatActor.UpdateActorOffensiveStatistics",
+        "inclusive_ms_per_sample_tic": 0.48737,
+        "exclusive_ms_per_sample_tic": 0.48737,
+        "calls_per_sample_tic": 1601.1
+      },
+      {
+        "name": "CaelumCombatActor.NativeTick",
+        "inclusive_ms_per_sample_tic": 8.320960000000001,
+        "exclusive_ms_per_sample_tic": 0.47506999999999994,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumDemonBreath.Contact",
+        "inclusive_ms_per_sample_tic": 2.3873,
+        "exclusive_ms_per_sample_tic": 0.43235999999999997,
+        "calls_per_sample_tic": 4562.7
+      },
+      {
+        "name": "CaelumThermalBody.Refresh",
+        "inclusive_ms_per_sample_tic": 0.4148599999999999,
+        "exclusive_ms_per_sample_tic": 0.4148599999999999,
+        "calls_per_sample_tic": 412.3
+      },
+      {
+        "name": "CaelumPopulationState.Refresh",
+        "inclusive_ms_per_sample_tic": 0.34253,
+        "exclusive_ms_per_sample_tic": 0.34253,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumWeightPressure.WorldTick",
+        "inclusive_ms_per_sample_tic": 1.58801,
+        "exclusive_ms_per_sample_tic": 0.32264,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumPortDefender.AdvanceDeployment",
+        "inclusive_ms_per_sample_tic": 0.9915800000000001,
+        "exclusive_ms_per_sample_tic": 0.25988,
+        "calls_per_sample_tic": 180.0
+      },
+      {
+        "name": "CaelumPortSiege.Tick",
+        "inclusive_ms_per_sample_tic": 0.3331,
+        "exclusive_ms_per_sample_tic": 0.25958000000000003,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumSlidingDoorLeaf.Tick",
+        "inclusive_ms_per_sample_tic": 7.769540000000001,
+        "exclusive_ms_per_sample_tic": 0.25951,
+        "calls_per_sample_tic": 960.0
+      },
+      {
+        "name": "CaelumThermalRuntime.NPCStep",
+        "inclusive_ms_per_sample_tic": 1.98486,
+        "exclusive_ms_per_sample_tic": 0.22776999999999997,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumCombatActor.IsCombatIdle",
+        "inclusive_ms_per_sample_tic": 0.22347,
+        "exclusive_ms_per_sample_tic": 0.22347,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumThermalService.Integrate",
+        "inclusive_ms_per_sample_tic": 0.21144,
+        "exclusive_ms_per_sample_tic": 0.21144,
+        "calls_per_sample_tic": 46.7
+      },
+      {
+        "name": "CaelumCityCarbine.Tick",
+        "inclusive_ms_per_sample_tic": 0.36197,
+        "exclusive_ms_per_sample_tic": 0.2097,
+        "calls_per_sample_tic": 600.0
+      },
+      {
+        "name": "CaelumDemonBreath.CanReach",
+        "inclusive_ms_per_sample_tic": 0.9497,
+        "exclusive_ms_per_sample_tic": 0.19371999999999998,
+        "calls_per_sample_tic": 1063.0
+      },
+      {
+        "name": "CaelumCombatActor.ResourceRecoveryActive",
+        "inclusive_ms_per_sample_tic": 0.18275,
+        "exclusive_ms_per_sample_tic": 0.18275,
+        "calls_per_sample_tic": 2525.4
+      },
+      {
+        "name": "CaelumThermalMotion.Physics",
+        "inclusive_ms_per_sample_tic": 0.19175999999999999,
+        "exclusive_ms_per_sample_tic": 0.16673000000000002,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumDemonService.Initialize",
+        "inclusive_ms_per_sample_tic": 0.16546000000000002,
+        "exclusive_ms_per_sample_tic": 0.16546000000000002,
+        "calls_per_sample_tic": 2602.0
+      },
+      {
+        "name": "CaelumPortDefender.Tick",
+        "inclusive_ms_per_sample_tic": 5.7983899999999995,
+        "exclusive_ms_per_sample_tic": 0.15869,
+        "calls_per_sample_tic": 600.0
+      },
+      {
+        "name": "CaelumDemonService.UpdatePotions",
+        "inclusive_ms_per_sample_tic": 0.18619999999999998,
+        "exclusive_ms_per_sample_tic": 0.14826,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumHostileMachine.ObserveGuards",
+        "inclusive_ms_per_sample_tic": 0.14749,
+        "exclusive_ms_per_sample_tic": 0.14749,
+        "calls_per_sample_tic": 48.0
+      },
+      {
+        "name": "CaelumDemonFlameVisual.Tick",
+        "inclusive_ms_per_sample_tic": 0.12669000000000002,
+        "exclusive_ms_per_sample_tic": 0.12669000000000002,
+        "calls_per_sample_tic": 125.6
+      },
+      {
+        "name": "CaelumThermalMotion.Support",
+        "inclusive_ms_per_sample_tic": 0.12261999999999998,
+        "exclusive_ms_per_sample_tic": 0.12261999999999998,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumCarbineWorld.Apply",
+        "inclusive_ms_per_sample_tic": 0.12354000000000001,
+        "exclusive_ms_per_sample_tic": 0.11735999999999999,
+        "calls_per_sample_tic": 602.1
+      },
+      {
+        "name": "CaelumPlayer.Tick",
+        "inclusive_ms_per_sample_tic": 0.14621,
+        "exclusive_ms_per_sample_tic": 0.11243,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumThermalMotion.Path",
+        "inclusive_ms_per_sample_tic": 0.48963,
+        "exclusive_ms_per_sample_tic": 0.10308000000000002,
+        "calls_per_sample_tic": 368.1
+      },
+      {
+        "name": "CaelumDemonService.StopBreath",
+        "inclusive_ms_per_sample_tic": 0.08005000000000001,
+        "exclusive_ms_per_sample_tic": 0.08005000000000001,
+        "calls_per_sample_tic": 939.0
+      },
+      {
+        "name": "CaelumDiningTable.Tick",
+        "inclusive_ms_per_sample_tic": 0.07457,
+        "exclusive_ms_per_sample_tic": 0.07457,
+        "calls_per_sample_tic": 160.0
+      },
+      {
+        "name": "CaelumCarbineWorld.Restore",
+        "inclusive_ms_per_sample_tic": 0.0716,
+        "exclusive_ms_per_sample_tic": 0.0716,
+        "calls_per_sample_tic": 603.1
+      },
+      {
+        "name": "CaelumElementalStream.ApplyContact",
+        "inclusive_ms_per_sample_tic": 0.06172000000000001,
+        "exclusive_ms_per_sample_tic": 0.06172000000000001,
+        "calls_per_sample_tic": 87.4
+      },
+      {
+        "name": "CaelumElementalStream.ReceivedWatts",
+        "inclusive_ms_per_sample_tic": 2.32078,
+        "exclusive_ms_per_sample_tic": 0.05544,
+        "calls_per_sample_tic": 87.4
+      },
+      {
+        "name": "CaelumElementalStatus.TickBurnHeat",
+        "inclusive_ms_per_sample_tic": 0.052640000000000006,
+        "exclusive_ms_per_sample_tic": 0.052640000000000006,
+        "calls_per_sample_tic": 1602.0
+      },
+      {
+        "name": "CaelumCombatActor.UpdateImpactContactLatch",
+        "inclusive_ms_per_sample_tic": 0.05182,
+        "exclusive_ms_per_sample_tic": 0.05182,
+        "calls_per_sample_tic": 1601.0
+      },
+      {
+        "name": "CaelumThermalEnvironment.Sample",
+        "inclusive_ms_per_sample_tic": 1.43905,
+        "exclusive_ms_per_sample_tic": 0.04499,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumThermalService.Advance",
+        "inclusive_ms_per_sample_tic": 0.32378,
+        "exclusive_ms_per_sample_tic": 0.04473,
+        "calls_per_sample_tic": 46.7
+      },
+      {
+        "name": "CaelumThermalShelter.Roof",
+        "inclusive_ms_per_sample_tic": 0.04463,
+        "exclusive_ms_per_sample_tic": 0.04463,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumCannon.Tick",
+        "inclusive_ms_per_sample_tic": 0.06614,
+        "exclusive_ms_per_sample_tic": 0.03805,
+        "calls_per_sample_tic": 42.0
+      },
+      {
+        "name": "CaelumCityInteriorDoors.Ensure",
+        "inclusive_ms_per_sample_tic": 0.03762,
+        "exclusive_ms_per_sample_tic": 0.03762,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumCityCarbine.Initialize",
+        "inclusive_ms_per_sample_tic": 0.03604,
+        "exclusive_ms_per_sample_tic": 0.03604,
+        "calls_per_sample_tic": 1200.0
+      },
+      {
+        "name": "CaelumPortSiege.Calendar",
+        "inclusive_ms_per_sample_tic": 0.032819999999999995,
+        "exclusive_ms_per_sample_tic": 0.032819999999999995,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumThermalBody.SampleCoverage",
+        "inclusive_ms_per_sample_tic": 0.02966,
+        "exclusive_ms_per_sample_tic": 0.02966,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumDemonBreath.Visible",
+        "inclusive_ms_per_sample_tic": 0.19682999999999998,
+        "exclusive_ms_per_sample_tic": 0.025520000000000004,
+        "calls_per_sample_tic": 248.0
+      },
+      {
+        "name": "CaelumDemonBreath.Tick",
+        "inclusive_ms_per_sample_tic": 0.023119999999999998,
+        "exclusive_ms_per_sample_tic": 0.023119999999999998,
+        "calls_per_sample_tic": 62.0
+      },
+      {
+        "name": "CaelumSealClimate.ApplyThermal",
+        "inclusive_ms_per_sample_tic": 0.021060000000000002,
+        "exclusive_ms_per_sample_tic": 0.021060000000000002,
+        "calls_per_sample_tic": 92.4
+      },
+      {
+        "name": "CaelumDemonBreath.Burn",
+        "inclusive_ms_per_sample_tic": 0.07004,
+        "exclusive_ms_per_sample_tic": 0.00832,
+        "calls_per_sample_tic": 87.4
+      },
+      {
+        "name": "CaelumThermalEnvironment.SampleWater",
+        "inclusive_ms_per_sample_tic": 0.007680000000000001,
+        "exclusive_ms_per_sample_tic": 0.007680000000000001,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumElementalStatus.ApplyBurnHeat",
+        "inclusive_ms_per_sample_tic": 0.0036199999999999995,
+        "exclusive_ms_per_sample_tic": 0.0036199999999999995,
+        "calls_per_sample_tic": 87.4
+      },
+      {
+        "name": "CaelumThermalFire.Sample",
+        "inclusive_ms_per_sample_tic": 0.00302,
+        "exclusive_ms_per_sample_tic": 0.00302,
+        "calls_per_sample_tic": 45.7
+      },
+      {
+        "name": "CaelumElementalStatus.TakeBurnHeat",
+        "inclusive_ms_per_sample_tic": 0.00271,
+        "exclusive_ms_per_sample_tic": 0.00271,
+        "calls_per_sample_tic": 46.7
+      },
+      {
+        "name": "CaelumThermalRuntime.PlayerStep",
+        "inclusive_ms_per_sample_tic": 0.01702,
+        "exclusive_ms_per_sample_tic": 0.00266,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumPortSiege.OrderGuns",
+        "inclusive_ms_per_sample_tic": 0.0014400000000000003,
+        "exclusive_ms_per_sample_tic": 0.0014400000000000003,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumInteractionHint.Find",
+        "inclusive_ms_per_sample_tic": 0.00143,
+        "exclusive_ms_per_sample_tic": 0.00143,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumSiegeEncounter.Tick",
+        "inclusive_ms_per_sample_tic": 0.00133,
+        "exclusive_ms_per_sample_tic": 0.00133,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumCorpseArchive.Tick",
+        "inclusive_ms_per_sample_tic": 0.00053,
+        "exclusive_ms_per_sample_tic": 0.00053,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumTimeSkipState.Pump",
+        "inclusive_ms_per_sample_tic": 0.00048000000000000007,
+        "exclusive_ms_per_sample_tic": 0.00048000000000000007,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumSiegeReinforcements.Tick",
+        "inclusive_ms_per_sample_tic": 0.00031,
+        "exclusive_ms_per_sample_tic": 0.00031,
+        "calls_per_sample_tic": 1.0
+      },
+      {
+        "name": "CaelumCombatActor.CollidedWith",
+        "inclusive_ms_per_sample_tic": 0.00020999999999999998,
+        "exclusive_ms_per_sample_tic": 0.00020999999999999998,
+        "calls_per_sample_tic": 1.1
+      }
+    ],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 9,
+        "mean": 892.8123222222223,
+        "median": 702.7226,
+        "p95": 1522.7935599999998,
+        "p99": 1761.250552,
+        "max": 1820.8648
+      },
+      "MsBetweenDisplayChange": {
+        "n": 9,
+        "mean": 892.5776444444444,
+        "median": 683.3234,
+        "p95": 1529.9662999999998,
+        "p99": 1759.28838,
+        "max": 1816.6189000000002
+      },
+      "MsCPUBusy": {
+        "n": 9,
+        "mean": 892.8123222222222,
+        "median": 702.7226,
+        "p95": 1522.7935599999998,
+        "p99": 1761.250552,
+        "max": 1820.8648
+      },
+      "MsCPUWait": {
+        "n": 9,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 9,
+        "mean": 9.524566666666667,
+        "median": 6.1711,
+        "p95": 19.620859999999997,
+        "p99": 23.584892,
+        "max": 24.5759
+      },
+      "MsGPUWait": {
+        "n": 9,
+        "mean": 882.8231777777778,
+        "median": 696.9092,
+        "p95": 1516.5380199999997,
+        "p99": 1754.892644,
+        "max": 1814.4813
+      },
+      "MsUntilDisplayed": {
+        "n": 9,
+        "mean": 29.981277777777777,
+        "median": 27.2824,
+        "p95": 42.22334,
+        "p99": 45.669068,
+        "max": 46.5305
+      },
+      "application_present_fps": 1.1200562258269309,
+      "sample_count": 9,
+      "short_sample_warning": true,
+      "display_change_fps": 1.1203507125953363,
+      "qpc_bounds_ms": [
+        69041663.8907,
+        69050242.547
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 9
+      }
+    }
+  },
+  {
+    "label": "city-final-down",
+    "variant": "base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "base",
+      "label": "city-final-down",
+      "phase": 0,
+      "site": 1,
+      "pitch": 75,
+      "map": "MAP06",
+      "window": 350,
+      "warmup": 140,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 41072,
+    "completed": true,
+    "callback_interval_ms": {
+      "n": 85,
+      "mean": 117.60576352941176,
+      "median": 115.4353,
+      "p95": 136.56578000000002,
+      "p99": 145.866032,
+      "max": 150.2111
+    },
+    "native_tic_interval_ms": {
+      "n": 348,
+      "mean": 28.661611494252874,
+      "median": 12.31774999999925,
+      "p95": 83.29757999999946,
+      "p99": 88.87072999999916,
+      "max": 100.59530000000086
+    },
+    "whole_run_max_tic_interval_ms": 198.78689999999915,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=210 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=560 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-2048.000 y=320.000 z=184.000 angle=180.000 pitch=75.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-2048.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000"
+    ],
+    "expected_interior_tics": 349,
+    "observed_interior_tics": 349,
+    "interior_wall_ms": 9974.2408,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=0 other=0"
+    ],
+    "skip": [],
+    "watchdog_timeout": false,
+    "tics_per_second": 34.889873523005384,
+    "callbacks_per_second": 8.502984632635902,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": [],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 77,
+        "mean": 118.16332077922078,
+        "median": 115.7839,
+        "p95": 136.48242,
+        "p99": 146.22411999999997,
+        "max": 150.2601
+      },
+      "MsBetweenDisplayChange": {
+        "n": 77,
+        "mean": 118.17958571428572,
+        "median": 116.6667,
+        "p95": 136.69902000000005,
+        "p99": 150.02031200000002,
+        "max": 150.0213
+      },
+      "MsCPUBusy": {
+        "n": 77,
+        "mean": 118.16332077922078,
+        "median": 115.7839,
+        "p95": 136.48242,
+        "p99": 146.22411999999997,
+        "max": 150.2601
+      },
+      "MsCPUWait": {
+        "n": 77,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 77,
+        "mean": 23.737653246753247,
+        "median": 24.9146,
+        "p95": 33.88028,
+        "p99": 36.982035999999994,
+        "max": 38.2466
+      },
+      "MsGPUWait": {
+        "n": 77,
+        "mean": 94.43067402597403,
+        "median": 93.2115,
+        "p95": 115.16078,
+        "p99": 127.37178399999998,
+        "max": 130.2629
+      },
+      "MsUntilDisplayed": {
+        "n": 77,
+        "mean": 28.140023376623375,
+        "median": 26.6294,
+        "p95": 39.0017,
+        "p99": 63.04283599999998,
+        "max": 66.5798
+      },
+      "application_present_fps": 8.462863039101823,
+      "sample_count": 77,
+      "short_sample_warning": false,
+      "display_change_fps": 8.46169830394928,
+      "qpc_bounds_ms": [
+        69093178.7094,
+        69102223.10170001
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 77
+      }
+    }
+  },
+  {
+    "label": "city-final-front",
+    "variant": "base",
+    "options": {
+      "directory": "issue318-contact-02",
+      "variant": "base",
+      "label": "city-final-front",
+      "phase": 0,
+      "site": 1,
+      "pitch": 0,
+      "map": "MAP06",
+      "window": 350,
+      "warmup": 140,
+      "width": 1280,
+      "height": 720,
+      "timeout": 240,
+      "freeze": false,
+      "commands": "",
+      "load": "",
+      "user_config": false,
+      "global_presentmon": true,
+      "addon": "",
+      "addon2": "",
+      "postwait": 5,
+      "fixture": "observer.pk3",
+      "script": ""
+    },
+    "pid": 37364,
+    "completed": true,
+    "callback_interval_ms": {
+      "n": 126,
+      "mean": 79.29210158730159,
+      "median": 80.24465000000001,
+      "p95": 92.33905,
+      "p99": 94.879175,
+      "max": 95.3742
+    },
+    "native_tic_interval_ms": {
+      "n": 348,
+      "mean": 28.64909109195403,
+      "median": 12.204500000000735,
+      "p95": 62.08411499999984,
+      "p99": 66.82091800000083,
+      "max": 68.15090000000055
+    },
+    "whole_run_max_tic_interval_ms": 177.98070000000007,
+    "census": [
+      "CA318 CENSUS begin tic=70 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS window tic=210 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0",
+      "CA318 CENSUS end tic=560 actors=13618 soldiers=600 demons=0 blockers=7680 doors=960 missiles=0 corpses=0 flames=0"
+    ],
+    "camera": [
+      "CA318 CAMERA tic=70 x=-2048.000 y=320.000 z=184.000 angle=180.000 pitch=0.000 fits=1",
+      "CA318 CAMERA_WINDOW x=-2048.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000"
+    ],
+    "expected_interior_tics": 349,
+    "observed_interior_tics": 349,
+    "interior_wall_ms": 9969.883700000002,
+    "measurement_window_complete": true,
+    "profile_scope": "Completed measurement window",
+    "breaths": [
+      "CA318 BREATHS begin mandinga=0 other=0",
+      "CA318 BREATHS window mandinga=0 other=0",
+      "CA318 BREATHS end mandinga=0 other=0"
+    ],
+    "skip": [],
+    "watchdog_timeout": false,
+    "tics_per_second": 34.90512131049231,
+    "callbacks_per_second": 12.61159661531972,
+    "bursts": [],
+    "profile_sample_tics": 0,
+    "profile": [],
+    "presentmon": {
+      "MsBetweenPresents": {
+        "n": 114,
+        "mean": 79.67285877192982,
+        "median": 80.34675,
+        "p95": 92.32974499999999,
+        "p99": 95.17863100000001,
+        "max": 95.965
+      },
+      "MsBetweenDisplayChange": {
+        "n": 114,
+        "mean": 79.67668684210527,
+        "median": 83.32665,
+        "p95": 89.23224999999991,
+        "p99": 100.007683,
+        "max": 100.00930000000001
+      },
+      "MsCPUBusy": {
+        "n": 114,
+        "mean": 79.67285877192982,
+        "median": 80.34675,
+        "p95": 92.32974499999999,
+        "p99": 95.17863100000001,
+        "max": 95.965
+      },
+      "MsCPUWait": {
+        "n": 114,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "MsGPUBusy": {
+        "n": 114,
+        "mean": 17.431890350877193,
+        "median": 15.731300000000001,
+        "p95": 27.103625,
+        "p99": 28.341509000000002,
+        "max": 29.8275
+      },
+      "MsGPUWait": {
+        "n": 114,
+        "mean": 62.23466403508772,
+        "median": 62.839200000000005,
+        "p95": 70.36806,
+        "p99": 77.642212,
+        "max": 79.2577
+      },
+      "MsUntilDisplayed": {
+        "n": 114,
+        "mean": 24.72231842105263,
+        "median": 24.7725,
+        "p95": 31.494999999999994,
+        "p99": 33.019695,
+        "max": 33.3922
+      },
+      "application_present_fps": 12.551325701297891,
+      "sample_count": 114,
+      "short_sample_warning": false,
+      "display_change_fps": 12.550722672262879,
+      "qpc_bounds_ms": [
+        69067939.89829999,
+        69076984.76099999
+      ],
+      "synchronization": "Host log detection; 200ms polling; trim 300ms at start and 500ms at end. No exact per-tic correlation claimed.",
+      "present_modes": {
+        "Composed: Copy with GPU GDI": 114
+      }
+    }
+  }
+]

@@ -4,6 +4,208 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-114 - Repeated emitter-to-world scans multiply thermal cost
+
+Status/evidence: ENGINE-VERIFIED old-runtime cost and isolated contact-only
+behavior/persistence, #318 / 5.4.28, 2026-10-17. Baseline/environment: CA-KP-110.
+Scope: CaelumDemonBreath.PaidTick/FlushHeat, CaelumElementalStatus and
+CaelumThermalRuntime. [Evidence](../assets/validation_issue318/RESULTS.md).
+
+The old breath invoked CaelumElementalStream.Transfer, scanning every actor per
+emitter and computing reception for every supported living body. Two transfers
+in a full-army sampled tic inspected 6,602 recipients each and consumed
+1,653-1,829 ms inclusive. The deeper profile records 26,408 AbsorbedAt calls
+per sampled tic; each uses 16 receiver-visibility traces (422,528 derived trace
+calls, not separately timed native calls). Only 62 Mandinga streams were active
+at the short window's end. Thousands of enemies do not need to emit simultaneously
+for this multiplicative cost to make the game appear frozen.
+
+The author's 2026-10-17 correction removes demon-breath radiation. Query local
+contact bodies through the blockmap, deduplicate them, retain the existing
+absorption calculation/budget/armor once at contact, and store the absorbed
+watts on the burning receiver. Queue real-tic joules locally and consume them
+through the normal thermal scheduler. Do not force every NPC's full thermal
+update per tic or turn health damage into heat. Unknown legacy burn power starts
+at zero until contact; already-paid untransferred legacy radiation is discarded
+without refunds or replaying applied energy. Both migrations are revisioned and
+idempotent. Fire duration remains independent of Toughness's health response.
+
+Regression: local/wall/multiple-contact budget tests, real versus logical time,
+armor retention, queue conservation, temperature increase, save/reload/hub and
+genuine previous-runtime saves; compare matched 1,000-attacker windows. The
+1,000 population is a diagnostic control, not a new production encounter total.
+The utility staff retains its separately approved radiation behavior and global
+Transfer path: it is an identified remaining scan, not an approved permanent
+performance exemption. Existing accelerated-time safety scans also remain to
+be measured and redesigned without dropping safety checks. Wider MAP06
+playability and author acceptance are pending.
+
+## CA-KP-115 - Global actor scans require a narrow, measured exception
+
+Status/evidence: AUTHOR-REQUIRED engineering policy, #318, 2026-10-17;
+ENGINE-VERIFIED motivating example: CA-KP-114. Scope: all future affected code.
+Author acceptance: policy explicitly requested; no runtime acceptance implied.
+
+Do not use traversal of every possible actor as the routine implementation of
+a per-tic, per-NPC, per-emitter or per-recipient operation. Prefer local spatial
+queries, event-maintained typed registries and one shared result for common
+questions. Measure the resulting local/registry work too: a registry is not a
+license to repeat an equally large scan for each consumer.
+
+A permitted exception must record why correctness requires it, its trigger and
+frequency, the maximum measured population, ownership/invalidation, and measured
+worst-case cost on a representative large map. Initialization, save migration
+and a shared census are possible exceptions, not automatic exemptions. Include
+offscreen living combatants in the authoritative >=500 policy; visibility does
+not authorize suspending their resources, collision or combat. Review existing
+scans in the subsystem being changed and record deferred violations explicitly.
+
+Code review must identify traversal callers and multiplicative nesting, then
+test cost and behavior at representative populations. Scan count alone is not
+an exact CPU cost: measure recipient work, native calls and frame-time stalls.
+The source of this policy is the author's instruction, recorded also in AGENTS.
+
+## CA-KP-110 - Simulation throughput does not establish playable frame presentation
+
+Status/evidence: ENGINE-VERIFIED measurement distinction; AUTHOR-REPORTED
+performance requirement, #318, 2026-10-17. Baseline 006a2fff, release 5.4.27;
+GZDoom 4.14.2, Windows 11, Vulkan, Ryzen 9 5950X / RTX 3070 Ti, 1280x720.
+Evidence: [controlled audit](../assets/validation_issue318/RESULTS.md).
+
+The peaceful 600-soldier MAP06 can maintain about 35 simulation tics/s while
+presenting only 8-12 application frames/s. Report simulation rate, application
+presentation intervals (mean/p95/p99/worst stall), and renderer/thinker costs
+separately. A 60-FPS goal implies a 16.67-ms frame interval; an average above
+60 alone does not establish smooth traversal. The author expects at least
+60 FPS in the mansion and sewers and requires performance to be considered in
+future changes. Fixed entrance tests are references, not whole-map acceptance.
+
+Use an immutable package/configuration, fixed camera and actual population;
+repeat matched controls without simultaneous engine/package builds. Follow
+CA-KP-041 for background/audio settings and CA-KP-053 for presentation and
+population-divergence controls. Disclose changed visuals/gameplay; preserve
+raw samples and failures. Native success is not author acceptance.
+
+`profilethinkers -t` is one simulation-tic snapshot. Instrumented inclusive and
+exclusive scopes include probe overhead; nested costs cannot be added twice.
+Native `bench` is a later renderer CPU snapshot, not GPU duration or a window
+mean; leave the console closed and allow at least five wall seconds to write it.
+Main/worker CPU scopes overlap. In this audit PresentMon reports `Other` /
+`Composed: Copy with GPU GDI`; its application-present cadence agrees with
+callbacks, but compositor display-change coverage varies. Neither callbacks nor
+`MsGPUTime` establish scene GPU execution or monitor refresh. Preserve that limit
+instead of presenting a false exact CPU/GPU split. See the pinned
+[native counters](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.cpp).
+
+Regression: repeat city pitch 0/75 and reference-map runs with the final build.
+Production improvement and author acceptance under #318 remain pending.
+
+## CA-KP-111 - A ground-facing view can increase large-map geometry work
+
+Status/evidence: CODE-VERIFIED engine cause and ENGINE-VERIFIED MAP06 symptom,
+#318, 2026-10-17; baseline/environment as CA-KP-110. Sources: GZDoom
+[FrustumAngle](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_drawinfo.cpp#L386),
+[BSP clipping](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp#L335)
+and the [audit](../assets/validation_issue318/RESULTS.md).
+
+At MAP06 (-2048,320), yaw 180, changing pitch from 0 to 75 degrees increases
+native wall-processing calls from 64,565 to 83,010. Removing every door leaves
+those counts unchanged. `Walls` counts `HWWall.Process` work, not unique walls
+visible in the final picture. GZDoom 4.14.2 broadens its ordinary horizontal
+frustum with tilt and removes that angular restriction above 46 degrees. The
+ordinary camera also lacks the extra vertical subsection clipping used by its
+out-of-bounds views. Seeing mainly floor therefore does not imply cheap rendering.
+Do not fix this by restricting the player's pitch or blaming the floor texture.
+The measured 45-degree view already reaches 83,010 calls: 46 degrees is a code
+branch, not a proven first performance-drop angle for every FOV/aspect/map.
+
+Opaque one-sided walls and qualifying closed sector boundaries can stop angular
+traversal; a decorative solid actor, masked middle texture or two-sided moving
+polyobject is not an equivalent occluder. Open sky and low/3D-floor structures
+can leave substantial surrounding geometry to process. A corridor's total wall
+count is a poor comparison with an open city's per-frame workload.
+
+Current MAP06 has 2,264 Line_Horizon definitions and 752 3D-floor control lines.
+The observed 2/4 portal counts are setup operations, not evidence of 2/4 complete
+city redraws: native horizon rendering emits plane strips. See
+[horizon rendering](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_portal.cpp).
+Measure portal types/depth and a matched `gl_portals false` control before
+assigning cost to them. Regression: fixed pitches 0/45/47/75, renderer counts,
+application presentation, unchanged camera/population. Geometry fixes and
+whole-route author acceptance remain pending; recheck engine-version changes.
+
+## CA-KP-112 - Large-map optimization starts with boundaries and visibility
+
+Status/evidence: CODE-VERIFIED generator structure; research/proposed remedies
+explicitly distinguished from native results, #318, 2026-10-17.
+Scope: `generate_coastal_trials.py:CoastalMap.write`, MAP06 generation and future
+large maps. Baseline 006a2fff; [audit](../assets/validation_issue318/RESULTS.md).
+
+MAP06 has 86,382 linedefs and 81,469 vertices. Its compact generator removes
+internal edges between identical cells but retains many collinear 64-MU boundary
+segments. Merge only compatible boundaries: preserve topology, sector sides,
+flags, specials/IDs, and continuous texture coordinates on both faces. Existing
+offset-zero 64-MU pieces often use textures with a 128-MU repeat; naively joining
+them changes appearance. The diagnostic merger explicitly permits that change
+and is not a production or save-compatible replacement. Longer lines also change
+the endpoints used by `CaelumThermalShelter.WindBlocked/Connected`; identical
+physical boundaries do not prove identical shelter/thermal behavior.
+
+| Technique to evaluate | Constraint and required evidence |
+| --- | --- |
+| Merge redundant collinear boundaries | Compare native wall/BSP counts and FPS; preserve texture phase, interactions and collision. |
+| Improve real occlusion | Design opaque boundaries and short sightlines where appropriate; retain approved routes, roofs and sight/combat rules. |
+| Reduce decorative sector/3D-floor detail | Replace only dispensable detail after a matched test. Sprites/models also have costs; #304's model control was slower. |
+| Separate distant districts/interiors | Physical map sections or hub maps can limit work. Portals are not free streaming; preserve saved state and obtain approval for layout/continuous-siege changes. |
+| Tune/prebuild GL nodes | Compare identical geometry and node settings. Faster loading or compressed nodes alone is not an FPS improvement. |
+| Reduce lights, shadows or resolution | Use controls to distinguish GPU/pixel cost from CPU submission. Do not remove visuals on speculation. |
+
+Primary references: pinned [map-section construction](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/renderinfo.cpp),
+[clipping](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp)
+and [ZDBSP options](https://github.com/rheit/zdbsp#node-tuning-options).
+ZDBSP exposes splitter/search tradeoffs, not a universal best preset; REJECT is
+not a renderer visibility/streaming solution. Rebuild nodes after geometry edits.
+Compact and remap referenced sidedefs: retaining sparse old indices after line
+removal can produce native "has no front sector" errors. The
+[4.14.2 UDMF loader](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/udmf.cpp#L2395)
+allocates from referenced-side count and rejects original side indices at or
+above that count.
+Changes to line/vertex indices require an explicit save/hub compatibility plan.
+Never substitute a diagnostic map for an existing campaign save. Production
+geometry optimization and route/visual/collision acceptance remain pending.
+
+## CA-KP-113 - Invisible door collision helpers can dominate peaceful simulation
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED diagnostic controls, #318,
+2026-10-17; baseline/environment as CA-KP-110.
+Scope: `CaelumSlidingDoorBlocker.Tick`, `CaelumHingedDoorLeaf.BlockerPosition`,
+`CaelumSlidingDoorLeaf`, and city placement. [Evidence](../assets/validation_issue318/RESULTS.md).
+
+The peaceful city contains 960 door leaves, each using eight solid helper actors:
+7,680 blockers, within 13,618 actors despite only 600 soldiers. Every blocker
+currently computes its location and calls `SetOrigin` each tic, even when its
+door is closed and stationary. In instrumented samples the blocker class costs
+about 6.27 ms/tic inclusive; the 600 common combat-actor ticks cost about 3.42 ms.
+These inclusive scopes contain child calls and probe overhead; do not add them
+to their child costs or label them exact uninstrumented costs. Peaceful soldiers
+do not execute the siege's normal target/pathfinding
+pulse; physiology, statistics, equipment and other shared work remain active.
+
+Removing exactly 960 leaves plus 7,680 blockers, retaining 600 soldiers, increases
+application presents from 11.35-11.82 to 19.41-19.44/s forward and from 8.44-8.68
+to 12.41-14.27/s downward. This measures the combined door system, not rendering
+alone. It remains far below comfortable performance.
+
+Proposed first step: eliminate unchanged-position relinking and update helpers
+when their door moves, retaining closed-door collision. Native sector doors and
+PolyObject sliding/swing doors are alternative representations, not guaranteed
+faster replacements; they require map integration and anti-crush/use/save tests.
+See native [sector-door implementation](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_doors.cpp)
+and [PolyObject movement](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/po_man.cpp).
+Do not simply delete production blockers or suspend living combatants. Regression:
+matched idle/moving-door timing plus use, reopening, obstruction, collision and
+save/hub checks. Production fix/author acceptance remain pending.
+
 ## CA-KP-109 - Convert native chase steps before assigning continuous velocity
 
 Status/evidence: ENGINE-VERIFIED, #307 / 5.4.27, 2026-10-16. GZDoom 4.14.2,

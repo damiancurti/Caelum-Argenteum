@@ -1,6 +1,34 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)
+
+The author requires exhaustive measurement, a functional peaceful city and siege,
+bounded normal deployment, and diagnosis of ground-facing slowdown. Audit evidence:
+[validation_issue318](../assets/validation_issue318/RESULTS.md). KNOWN_PITFALLS
+CA-KP-110 onward is the maintained performance guidance requested by the author.
+The authorized contact-only breath heat is implemented with receiver-owned
+energy and revisioned save migration. The 1,000-Mandinga control retains 600
+soldiers and does not change production counts. The global-scan exception policy
+is in AGENTS/CA-KP-115. Maps, doors and ordinary deployment remain unchanged.
+
+Remaining implementation/acceptance work:
+
+- Bound ordinary attacker creation/registration; resolve any new design budget
+  explicitly, preserve finite reserves, crews, commander and victory accounting.
+- Remove or justify inherited global scans in affected systems, including the
+  utility wand's separately approved radiation. Preserve its rules until an
+  equivalent measured implementation or author-approved change is available.
+- Eliminate verified unnecessary stationary-door work while preserving interaction,
+  obstruction, collision and saves; compare native alternatives only as needed.
+- Reduce measured city geometry cost with texture, thermal-shelter, route, roof,
+  collision and save/hub equivalence. A diagnostic merge is not that delivery.
+- Verify peaceful traversal, pitch changes, actual time skip, approach and sustained
+  combat using application presentation and simulation metrics on the final build.
+- Preserve fresh/pre-siege/full-army saves and hub state; obtain author playability
+  acceptance. CA318-01 in pending_test.txt covers the contact-heat change;
+  it is not acceptance of full MAP06 performance. No unconfirmed pass is recorded.
 
 ## 5.4.27 - Normal prisoner escort speed (#307, accepted)
 

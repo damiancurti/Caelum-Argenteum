@@ -1,0 +1,546 @@
+# MAP06 performance audit — issue #318
+
+Audit delivery: 5.4.28, 2026-10-17. Tested gameplay baseline: 5.4.27,
+`006a2fff1f2505df8f4c26e123557ad885162a6e`. Issue:
+[#318](https://github.com/damiancurti/Caelum-Argenteum/issues/318).
+
+## Outcome and scope
+
+The peaceful city and ground-facing slowdown are reproduced. About 35 simulation
+tics/s coexist with 8–12 application presents/s. Removing doors helps substantially
+but does not solve the problem. A diagnostic collinear-boundary merger greatly
+reduces renderer wall work; it is not a production-compatible map. Full-army siege
+simulation also stalls severely. The author then removed demon-breath radiation
+and approved retaining absorbed contact power on burning victims. This delivery
+implements that correction, with revisioned status/breath migration, alongside
+the measurements and standing policy against routine global actor scans. #318
+remains open for deployment, door/geometry fixes and author playability acceptance.
+
+The author requested exhaustive attribution before removing dispensable work.
+This audit probes 89 selected methods (90 in the deeper radiation profile,
+93 in the final contact-heat profile),
+component ablations, doors, geometry, renderer controls and reference-map entries.
+It does **not** establish an exact, additive partition of every CPU/GPU operation.
+Unexecuted branches, uninstrumented native calls, instrumentation overhead,
+scheduling interactions and compositor coverage are explicit limits. Disabling
+gameplay in a diagnostic control does not establish that it is dispensable.
+
+## Reproduction and measurement
+
+- GZDoom 4.14.2, Windows 11, Ryzen 9 5950X, NVIDIA RTX 3070 Ti; Vulkan hardware
+  polygon renderer, native 1280×720 except the labelled 640×360 control.
+- Fresh maps, skill 2, RNG seed 116, controlled character profile, invulnerable
+  player. No user campaign save is modified. Fixed input, background simulation
+  and rendering enabled, master audio 0.05, VSync and frame caps disabled.
+- One engine at a time; no package build during timing. Each owned process has a
+  watchdog and its temporary keep-awake request is released in `finally`.
+- Main peaceful view: MAP06 `(-2048,320,0)`, yaw 180, pitch 0/75. Additional
+  entrance/centre positions: `(0,320,0)` and `(-4096,320,0)`. Siege reference:
+  `(-14464,-14000,0)`, yaw 270. Coordinates are diagnostic observations, not new
+  gameplay data. Full camera/population samples are retained in each log.
+- Ordinary peaceful windows use 140 warm-up tics and 350 observation tics.
+  Reference MAP01 uses its native `(-1600,0,0)`, yaw 0 entry; MAP02 uses
+  `(0,0,0)`, yaw 90. Pitches are 0/75. These are fixed entry references, not full
+  traversal or boss-combat certification.
+- Raw `WorldTick` timestamps measure simulation progress. `RenderOverlay`
+  intervals are labelled callbacks, not displayed frames. Interior samples
+  exclude both boundary tics. Long windows and short siege-onset windows must
+  not be treated as equally representative steady-state samples.
+- PresentMon 2.6.0 ETW collection was explicitly authorized for Windows elevation.
+  Matching uses PID and host-QPC log detection with 200-ms polling, trimming
+  300 ms after window detection and 500 ms before end detection. It is not exact
+  per-tic correlation. FPS is `1000 / mean(MsBetweenPresents)`, not a mean of
+  instantaneous reciprocal FPS. Raw CSV and distributions remain available.
+- ETW reports `Other`, swapchain `0x0`, `Composed: Copy with GPU GDI` here.
+  Application-present cadence agrees with native callbacks; display-change
+  coverage varies. These are application presents, not guaranteed monitor
+  frames. GPU/wait fields do not isolate scene shader execution.
+- `profilethinkers -t` is one later simulation-tic snapshot. Native `bench`
+  counts/timers are a later single CPU-renderer snapshot, not window means or
+  GPU duration; worker/main scopes overlap. Runs with the longer postwait leave
+  enough time for its five-wall-second capture delay. Earlier missing bench
+  output is retained and is not evidence of zero renderer cost.
+- Selected ZScript methods are wrapped every 17th tic, with separate always-on
+  startup/Pump scopes. Exclusive time subtracts only instrumented children;
+  native work and probe overhead remain. Independent review verified original
+  method bodies/fields in the normal profile and the deeper `AbsorbedAt` body.
+
+## Peaceful city: doors and shared simulation
+
+The native census has 13,618 actors, 600 soldiers, zero Mandingas, 960 door
+leaves and 7,680 invisible solid door blockers. Eight blockers approximate each
+leaf's collision. Their `Tick` computes a position and calls `SetOrigin` even
+when the closed door has not moved. Ordinary siege target/pathfinding pulses
+are absent in this peaceful phase; soldiers still run shared physiology,
+statistics, equipment and collision-related work.
+
+Matched ABBA door-removal controls destroy exactly 960 leaves and 7,680 blockers
+after placement, leaving 4,978 actors and all 600 soldiers:
+
+| View | Baseline application presents/s | No doors application presents/s |
+| --- | ---: | ---: |
+| Forward | 11.82, 11.35 | 19.41, 19.44 |
+| Down 75° | 8.44, 8.68 | 12.41, 14.27 |
+
+This is the combined door system's effect: updates, collision helpers, sprites
+and resulting visibility/interactions. It does not isolate rendering or native
+relink cost. Doors remain in production. A promising equivalent-work reduction
+is avoiding unchanged-position relinking; moving-door/use/anti-crush/save tests
+are still required. Sector doors and PolyObject sliding/swing doors are native
+alternatives, not automatically faster or drop-in replacements.
+
+The peaceful profile (`components-01-profile`, 20 sampled interior tics) reports:
+
+| Scope | Inclusive ms/sample tic | Exclusive ms/sample tic | Calls/sample tic |
+| --- | ---: | ---: | ---: |
+| SlidingDoorBlocker.Tick | 6.271 | 5.761 | 7,680 |
+| CombatActor.Tick | 3.421 | 1.109 | 600 |
+| ThermalShelter.WindBlocked | 0.859 | 0.859 | 17.2 |
+| HingedDoorLeaf.BlockerPosition | 0.510 | 0.510 | 7,680 |
+| WeightPressure.WorldTick | 0.431 | 0.182 | 1 |
+| CityCarbine.Tick | 0.330 | 0.191 | 600 |
+| CombatActor.UpdateCombatHealthEffects | 0.245 | 0.204 | 600 |
+| SlidingDoorLeaf.Tick | 0.193 | 0.193 | 960 |
+| CombatActor.UpdateActorOffensiveStatistics | 0.167 | 0.167 | 600 |
+| PopulationState.Refresh | 0.155 | 0.155 | 1 |
+
+Full measured methods, calls, bursts and exact values are in `evidence/analysis.json`.
+Inclusive parent/child values must not be summed as independent costs. The
+post-window native thinker snapshot independently identifies blocker work
+(5.305 ms) above defenders (2.591 ms); it is not the same sample/window mean.
+
+Component variants independently disable common combat Tick, NPC thermal work,
+health/offensive-stat updates, carbine Tick, contact-latch updates, population
+refresh, pressure updates, interaction hints or custom HUD overlays. A common
+combat-Tick ablation does not disable descendant equipment work; HUD removal
+does not remove the native status bar. Carbine removal also changes visuals.
+Each variant's exact injection is in `prepare.py`; manifests hash changed members.
+Small single-run gains are exploratory, not established independent cost shares.
+
+## Geometry, camera and renderer controls
+
+MAP06 contains 86,382 linedefs, 81,469 vertices and 1,574 sectors. Its generator
+removes identical-cell interior edges but retains many collinear 64-MU boundary
+segments. Per-frame work, rather than map area or total walls alone, matters:
+
+| Diagnostic snapshot | Wall-processing calls | Flats | Sprites | Portal setups |
+| --- | ---: | ---: | ---: | ---: |
+| Original, forward | 64,565 | 2,193 | 2,483 | 2 |
+| Original, down 75° | 83,010 | 2,573 | 3,087 | 4 |
+| Collinear merger, forward | 19,283 | 2,202 | 2,516 | 2 |
+| Collinear merger, down 75° | 24,874 | 2,573 | 3,087 | 4 |
+
+`Walls` counts native `HWWall.Process` calls, not unique final visible walls.
+Removing doors leaves the original wall counts unchanged. GZDoom 4.14.2 broadens
+the horizontal frustum with pitch; above 46° it removes that angular restriction.
+At this FOV/aspect, 45° already reaches 83,010 calls, as do 47° and 75°. This is
+not proof of a universal sudden slowdown at exactly 46°. The ordinary camera
+does not use the additional vertical subsection clipping of out-of-bounds views.
+
+Opaque one-sided walls and qualifying closed sectors can occlude angular
+traversal. An actor, masked middle texture or two-sided moving PolyObject is
+not an equivalent occluder. Corridors can therefore be much cheaper than an
+open city despite having many walls in the complete map. MAP06 has 2,264
+Line_Horizon and 752 3D-floor control definitions, without explicit map
+portals/mirrors. Its measured portal setups are not classified by type and do
+not establish several full-city redraws. Disabling portals drops the portal
+count to zero but retains 64,565 /
+83,010 wall calls; it does not remove the dominant geometry work.
+
+Matched controls at the downward view measure about 8.48 baseline presents/s,
+8.90 at 640×360, 9.00 with dynamic lights/actor shadows disabled, 8.74 with the
+weapon hidden and 8.92 using the user's other settings at controlled resolution/
+caps. Those single runs do not establish a meaningful small gain. Freezing
+non-player actors gives 22.36 forward / 16.29 downward; player/events remain
+active and geometry remains expensive. None of these is a production fix.
+
+The merger reduces linedefs to 27,900, vertices to 22,987 and referenced sides
+to 50,528. It retains all sectors/things and normalized special-line records,
+joining only compatible oriented, collinear degree-two boundaries. It knowingly
+changes texture phase where original 64-MU pieces reset a 128-MU pattern.
+Longer line endpoints can also alter `ThermalShelter.WindBlocked/Connected`
+classification. It is therefore a diagnostic ablation, not proven visual,
+thermal, collision-route or save equivalence. No existing campaign save was
+loaded with it. Combining this geometry with removed doors still falls short
+of a general 60-FPS guarantee. See final individual runs below.
+
+The first merger retained sparse old sidedef indices and failed native loading
+with `has no front sector`. Corrected v2 densely remaps referenced sides and
+vertices. GZDoom's 4.14.2 UDMF loader allocates from referenced-side count and
+rejects original indices at or above that count. The failure and its diagnostics are
+preserved; it is not counted as a successful performance run.
+
+## Mansion and sewer references
+
+| Native entry | Forward application presents/s | Down 75° application presents/s |
+| --- | ---: | ---: |
+| MAP01 mansion | 89.93, 88.97 | 66.66, 65.28 |
+| MAP02 sewers | 256.49, 261.88 | 246.74, 239.96 |
+
+MAP01 native snapshots process 7,742 / 12,358 walls; MAP02 processes 422 / 1,226.
+They are reference entry locations with normal actors, not stripped copies.
+The mansion's downward p99 callback interval is around 21 ms, so average FPS
+above 60 does not mean every frame meets 16.67 ms. No entire route, later hub
+state or boss battle is certified by these fixed entries.
+
+## Siege, thermal radiation and time advancement
+
+Normal gameplay still deploys 6,000 Mandingas plus the commander synchronously.
+The existing opt-in staged mode is a separate diagnostic control; it is not
+automatically enabled by this audit. The production >=500-living-combatant
+policy is already active and counts offscreen living combatants.
+
+In the full-army profile, deployment/registration takes 221.14 ms inclusive.
+That is a startup spike, but does not account for subsequent severe stalls.
+At tic 153, two elemental-stream heat transfers take 1,657.50 ms in total.
+They evaluate 13,204 recipients (6,602 per transfer); `ReceivedWatts` takes
+1,485.70 ms inclusive. Its 1,452.88-ms exclusive bucket includes the originally
+uninstrumented `ThermalFire.AbsorbedAt`, not merely loop overhead. A simulation
+tic has a nominal 28.57-ms wall budget. The longer initial profile reaches only
+tic 253, exits after 243.34 wall seconds without a completed-window marker, and
+is retained as incomplete evidence. Its record does not identify a watchdog
+termination; the reason for the early end is unconfirmed.
+Windows also reports the measured process as unresponsive during these stalls;
+continued tic progress does not establish an infinite loop or deadlock.
+
+Each transfer scans all actors and processes every supported living recipient.
+Four flame segments each repeat source-to-segment visibility; each unoccluded
+segment then calls `AbsorbedAt`, with a 4×4 receiver visibility grid. At that
+sample this permits up to 845,056 receiver traces; the bound is not an observed
+count. Cost scales with active transfers × eligible recipients as well as
+whole-actor scans. Caching receiver-independent segment work is a candidate,
+but measured segment visibility is only about 33 ms of the much larger total.
+
+In the previous runtime, the approved four-metre range bounds direct contact;
+thermal radiation has inverse-square falloff without a finite cutoff, allows self-radiation and
+normalizes received power to the emitter budget. Arbitrarily skipping distant
+or offscreen bodies changes thermal rules and possibly other recipients' shares.
+A Mandinga-breath-off control removes that attack/heat/resource behavior only
+in a diagnostic package; its result cannot justify deleting production physiology.
+Deeper attribution and full per-run outcomes follow in the generated tables.
+
+The deeper old-runtime profile measures 1,653.35/1,828.76 ms in two Transfer
+calls at tics 153/170. AbsorbedAt accounts for 1,436.86/1,612.55 ms and
+26,408 calls in each sampled tic. Its 16 receiver traces per call imply 422,528
+receiver traces, derived from call counts; native trace time is not isolated.
+There are 62 active Mandinga streams at the end, not 6,000 simultaneous emitters.
+The deep window completes, but process shutdown does not; retain the distinction
+between a completed measurement window and a successfully completed process.
+
+Disabling Mandinga breath from spawn with 6,000 attackers reduces a 35-tic onset
+window from 54.90 s to 3.48 s. A longer 350-tic disabled control still takes
+41.47 s. Native catch-up batches tics between renders, so this is not playable
+frame presentation. Disabling all breath only after tic 140 has a 52.16-second
+transition stall: StopBreath settles pending radiation synchronously. That
+source-supported explanation is a hypothesis, not a separately instrumented
+settlement measurement. The controls retain distinct labels and scopes.
+
+## Production contact-heat correction and compatibility
+
+The final breath uses BlockThingsIterator only for local contacts, preserves
+native cone/wall and faction/Redemption restrictions, and divides the previous
+absorption budget among current contacts before applying armor once. The victim
+stores the absorbed watts with the existing unresisted burn duration and
+nonstacking priority. Real tics accumulate joules; normal player/NPC thermal
+updates consume them once. No per-emitter whole-world scan or forced per-tic NPC
+environment update remains in this breath path. Existing resource spending,
+health DOT, cold/combat activation, visuals and normal army counts remain.
+Cold-triggered breath no longer warms its own emitter; this follows the explicit
+no-radiation correction without inventing a replacement AI rule.
+
+Revision 1 of status heat initializes old unknown contact power to zero.
+Revision 1 of breath heat discards old paid-but-untransferred radiation once,
+preserving paid-resource history and already-integrated heat. Resurrection clears
+queued/active heat. Generic burns do not silently add or extend contact power.
+Rest acceleration and journey forecasting are blocked while heat is active or
+pending. The utility wand retains its separately approved radiation and global
+Transfer scan; that remaining scan and the existing time-skip safety searches
+are recorded remediation work under the new strict-exception policy.
+
+`prepare_contact.py` freezes the exact current source and the real old runtime.
+`contact_suite.py` covers direct/distant/outside-cone/walled/self reception,
+multiple contacts above the shared 7-kW budget, armor once, duration/nonstacking,
+fractional final tics, health-healing Toughness, logical versus real steps,
+fire visuals, resurrection, isolated NPC temperature increase by joules/inertia,
+scheduled queue retention, player consumption, save/reload/repeat, post-load
+consumption, hub return and genuine previous-runtime upgrade/repeated upgrade.
+NPC temperature checks use an isolated frozen actor and controlled elapsed time;
+they do not claim exhaustive autonomous movement or campaign-hub coverage.
+Earlier fixture compile/setup/path failures are preserved and explained below.
+
+### Final 1,000-attacker result
+
+All controls retain 600 soldiers and the commander. These are short onset
+windows, not sustained-battle acceptance; ETW has only 9-12 intervals per run.
+
+| Runtime/control | Wall seconds for 175 tics | Interior tics/s | Observed application FPS |
+| --- | ---: | ---: | ---: |
+| Previous radiation | 88.13 | 1.97 | 0.11 |
+| Mandinga breath disabled from spawn | 6.59 | 26.50 | 2.09 |
+| Final contact heat, run 1 | 8.87 | 19.71 | 1.20 |
+| Final contact heat, run 2 | 8.63 | 20.90 | 1.20 |
+
+This is a major reduction of the thermal stall, **not a playable result**.
+The new runs still have maximum observed presentation intervals of 1.67/2.01 s.
+Final peaceful views remain 12.55 FPS forward / 8.46 downward, with approximately
+35 simulation tics/s. Remaining onset costs include moving door placement
+(7.51 ms/sample tic inclusive), 7,680 blockers (7.16 ms), attacker target queries
+(5.97 ms), and common combat ticking (25.21 ms, containing other profiled work).
+Local breath PaidTick costs 6.30 ms/sample tic; no global Transfer call occurs.
+These are ten instrumented sample tics, not exact additive uninstrumented costs.
+
+The actual accelerated-time API succeeds from site 4: 8,193 accelerated tics,
+terminal CA_EVENT_SIEGE_INTERRUPT, target reached and siege deployed. Its onset
+still presents about 1.22 FPS. The earlier site-1 attempts return CA_FAST_UNSAFE
+and never start; they remain failed reproduction attempts, not passing siege
+tests. This does not certify the author's original save or the full 6,000-army
+time-skip path. The #132 staged control averages 8.01 application FPS at about
+30.72 simulation tics/s in its shorter, growing-population window; it does not
+establish the required normal deployment solution.
+
+## Researched large-map optimization priorities
+
+1. Avoid redundant stationary-door work while preserving collision and use.
+2. Merge unnecessary boundaries with deliberate UV treatment and verified
+   thermal/collision behavior; plan line-index/save migration before production.
+3. Improve real occlusion and shorten simultaneous sightlines where the approved
+   layout permits it. Remove only measured dispensable sector/3D-floor detail.
+4. Evaluate physically separate interiors/districts or hub maps if needed.
+   This requires state continuity and author approval for layout/siege changes;
+   a portal is not free map streaming.
+5. Bound ordinary deployment and eliminate repeated per-emitter/per-body work
+   without silently changing combat, resources or thermal rules. Recheck both
+   ongoing combat and time-skip catch-up; a fast spawn alone is insufficient.
+6. Compare node-builder settings on identical geometry. ZDBSP's partition,
+   split-cost and diagonal-cost tradeoffs are candidates, not a universal preset.
+   Prebuilding/compression may help loading/storage without increasing runtime
+   FPS. REJECT is not a rendering streaming system.
+
+Primary sources, checked 2026-10-17 (engine code pinned to `g4.14.2`):
+
+- [Frustum and pitch](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_drawinfo.cpp#L386)
+- [BSP traversal, clipping and wall counters](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp#L335)
+- [Horizon/portal rendering](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_portal.cpp)
+- [Renderer CPU counters](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.cpp)
+- [Physical map sections](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/renderinfo.cpp)
+- [UDMF sidedef loading](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/udmf.cpp#L2395)
+- [Sector doors](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_doors.cpp),
+  [PolyObjects](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/po_man.cpp)
+- [ZDBSP's documented node-tuning options](https://github.com/rheit/zdbsp#node-tuning-options)
+- [Graf's historical renderer/play-simulation distinction](https://forum.drdteam.org/viewtopic.php?t=6180)
+  is context, not a modern GZDoom settings recipe. Current engine source and
+  measured controls govern the claims above. Wiki pages blocked by Anubis were
+  not treated as inspected documentation.
+
+The maintained lessons are [CA-KP-110 onward](../../docs/KNOWN_PITFALLS.md).
+
+## Evidence and rerunning
+
+`EVIDENCE_MANIFEST.json` records local-original and sanitized public-content
+SHA-256 values. `evidence/` contains compressed native logs, run records,
+config commands, manifests, closed PresentMon CSVs and selected captures.
+No executable, IWAD, generated PK3, campaign save or full personal INI is
+distributed. Paths/unrelated configuration are redacted. `analysis.json`
+contains per-run cadence distributions, calls and startup bursts.
+
+Use a local licensed development IWAD and installed engine. `prepare.py` creates
+isolated immutable packages; `prepare_addons.py` creates the door-removal addon;
+`geometry_probe.py` creates the explicitly non-equivalent geometry control.
+`refresh_observer.py` freezes observer revisions. `run.py` refuses overlapping
+engine processes and reused labels. `suite.py` defines the matched groups.
+`analyze.py` reads raw logs and closed collector CSVs; `archive_evidence.py`
+publishes sanitized evidence. Observer revisions actually used are retained in
+`evidence/observers/`, with their package hashes in run records.
+
+Example commands from the repository root (use a fresh directory/labels when
+repeating; never overwrite earlier failures):
+
+```powershell
+python assets/validation_issue318/prepare.py --directory issue318-rerun --variants base profile
+python assets/validation_issue318/run.py --directory issue318-rerun --variant base --label city-front --site 1 --pitch 0
+python assets/validation_issue318/run.py --directory issue318-rerun --variant base --label city-down --site 1 --pitch 75
+python assets/validation_issue318/analyze.py --directory issue318-rerun
+```
+
+For the old-runtime migration fixture, retain the frozen baseline package under
+build/issue318-audit-02/base/runtime.pk3 (expected hash is checked explicitly).
+On a fresh Windows checkout, reproduce it using a detached baseline worktree
+and the owned instrumentation; neither that checkout nor its IWAD is published:
+
+```powershell
+git worktree add --detach build/issue318-baseline-source 006a2fff1f2505df8f4c26e123557ad885162a6e
+python assets/validation_issue318/prepare.py --directory issue318-audit-02 --source build/issue318-baseline-source/src --variants base
+python assets/validation_issue318/prepare_contact.py --directory issue318-contact-rerun
+python assets/validation_issue318/contact_suite.py --directory issue318-contact-rerun
+```
+
+The expected baseline hash deliberately rejects different bytes, including a
+different checkout line-ending policy. Keep the original Windows checkout
+conventions when reproducing that exact fixture. Functional runs do not require
+ETW; their `--global-presentmon` option suppresses starting a local collector.
+
+If ETW collection is unavailable, callbacks remain labelled callbacks; no
+presented-FPS value is invented. The audit does not claim input-to-photon latency,
+an exact GPU breakdown or comprehensive save regression of hypothetical fixes.
+
+## Final individual measurements and validation
+
+<!-- MEASUREMENTS_START -->
+Application-present intervals are ETW observations, not monitor refresh. N<30 is a short sample: tails are omitted here; raw descriptive quantiles remain in JSON. A transition stall may lie outside the trimmed ETW intervals; consult full native window/tic timestamps and raw CSV too.
+
+### issue318-audit-02
+
+| Run | Window/process | Tics/s | App FPS | N | Mean ms | p95 ms | p99 ms | Max ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| army1000-01-old | complete | 1.97 | 0.11 | 9 | 9236.92 | - | - | 10846.09 |
+| army1000-02-off | complete | 26.50 | 2.09 | 12 | 478.09 | - | - | 1528.35 |
+| army1000-03-old-profile | incomplete/failed | - | - | 0 | - | - | - | - |
+| components-02-base | complete | 34.87 | 12.27 | 113 | 81.53 | 90.65 | 94.86 | 99.44 |
+| components-04-base | complete | 34.94 | 12.21 | 110 | 81.89 | 104.89 | 122.81 | 126.58 |
+| components-15-base | complete | 35.07 | 11.58 | 107 | 86.35 | 118.00 | 129.31 | 145.61 |
+| doors-01-base | complete | 35.16 | 11.82 | 109 | 84.59 | 90.92 | 96.09 | 107.36 |
+| doors-02-base | complete | 35.11 | 19.41 | 176 | 51.52 | 58.16 | 59.78 | 63.51 |
+| doors-03-base | complete | 35.07 | 19.44 | 180 | 51.44 | 57.09 | 59.00 | 63.03 |
+| doors-04-base | complete | 35.12 | 11.35 | 105 | 88.13 | 104.27 | 109.48 | 111.47 |
+| doors-05-base | complete | 34.97 | 8.44 | 78 | 118.46 | 138.17 | 144.76 | 151.37 |
+| doors-06-base | complete | 34.96 | 12.41 | 115 | 80.60 | 118.36 | 137.10 | 158.03 |
+| doors-07-base | complete | 34.96 | 14.27 | 129 | 70.08 | 77.35 | 78.97 | 92.60 |
+| doors-08-base | complete | 34.91 | 8.68 | 78 | 115.20 | 139.09 | 144.73 | 150.10 |
+| encounter-01-base | complete | 0.62 | 0.03 | 1 | 31218.37 | - | - | 31218.37 |
+| geometry-01-base | incomplete/failed | - | - | 0 | - | - | - | - |
+| geometry2-01-base | complete | 35.03 | 20.04 | 185 | 49.90 | 63.38 | 75.36 | 79.53 |
+| geometry2-02-base | complete | 35.07 | 16.72 | 154 | 59.81 | 74.65 | 99.88 | 106.66 |
+| geometry2-03-base | complete | 35.07 | 15.32 | 138 | 65.27 | 80.16 | 85.02 | 86.92 |
+| geometry2-04-base | complete | 35.03 | 20.94 | 194 | 47.75 | 58.26 | 61.38 | 70.20 |
+| geometry2-05-base | complete | 35.07 | 33.46 | 309 | 29.89 | 35.12 | 38.19 | 39.28 |
+| geometry2-06-base | complete | 34.97 | 26.09 | 241 | 38.33 | 45.25 | 50.57 | 60.95 |
+| pitch-01-base | complete | 34.93 | 8.76 | 81 | 114.15 | 147.23 | 154.61 | 162.22 |
+| pitch-02-base | complete | 35.10 | 7.93 | 73 | 126.11 | 147.33 | 163.19 | 179.47 |
+| pitch-03-base | complete | 34.94 | 8.18 | 74 | 122.19 | 137.71 | 144.26 | 150.78 |
+| pitch-04-base | complete | 35.06 | 8.40 | 78 | 119.06 | 132.46 | 138.73 | 146.23 |
+| portals-01-base | complete | 35.01 | 11.57 | 107 | 86.47 | 102.66 | 111.12 | 126.72 |
+| portals-02-base | complete | 35.18 | 8.81 | 81 | 113.52 | 126.08 | 135.93 | 146.53 |
+| references-01-base | complete | 34.99 | 89.93 | 832 | 11.12 | 12.90 | 14.10 | 20.00 |
+| references-02-base | complete | 35.02 | 66.66 | 617 | 15.00 | 17.61 | 20.78 | 23.87 |
+| references-03-base | complete | 35.05 | 65.28 | 604 | 15.32 | 18.47 | 21.07 | 26.08 |
+| references-04-base | complete | 35.01 | 88.97 | 822 | 11.24 | 13.04 | 13.96 | 14.31 |
+| references-06-base | complete | 34.99 | 256.49 | 2371 | 3.90 | 5.48 | 6.12 | 7.08 |
+| references-07-base | complete | 35.00 | 246.74 | 2231 | 4.05 | 5.31 | 6.17 | 7.85 |
+| references-08-base | complete | 35.00 | 239.96 | 2171 | 4.17 | 5.71 | 6.80 | 8.67 |
+| references-09-base | complete | 34.99 | 261.88 | 2420 | 3.82 | 5.43 | 6.54 | 8.85 |
+| render-01-base | complete | 34.86 | 11.74 | 108 | 85.16 | 97.84 | 100.65 | 106.89 |
+| render-02-base | complete | 34.92 | 19.82 | 183 | 50.44 | 55.55 | 64.49 | 67.33 |
+| render-03-base | complete | 34.85 | 8.48 | 79 | 117.92 | 136.84 | 144.78 | 147.41 |
+| render-04-base | complete | 34.97 | 14.10 | 130 | 70.94 | 79.97 | 83.10 | 93.24 |
+| render-05-base | complete | 34.96 | 22.36 | 206 | 44.72 | 50.41 | 53.28 | 76.14 |
+| render-06-base | complete | 35.12 | 16.29 | 151 | 61.40 | 66.91 | 68.63 | 73.97 |
+| render-07-base | complete | 34.91 | 8.90 | 82 | 112.32 | 136.68 | 144.88 | 146.61 |
+| render-08-base | complete | 35.07 | 9.00 | 81 | 111.07 | 118.63 | 126.58 | 128.75 |
+| render-09-base | complete | 35.01 | 8.74 | 81 | 114.37 | 130.64 | 137.89 | 141.28 |
+| render-10-base | complete | 34.95 | 8.92 | 82 | 112.15 | 121.37 | 125.00 | 130.04 |
+| render-11-base | complete | 35.03 | 10.46 | 96 | 95.61 | 109.92 | 130.50 | 136.72 |
+| render-12-base | complete | 34.97 | 8.65 | 80 | 115.60 | 131.53 | 139.52 | 147.89 |
+| render-13-base | complete | 35.07 | 11.73 | 109 | 85.23 | 95.94 | 104.56 | 112.43 |
+| render-14-base | complete | 35.21 | 8.32 | 77 | 120.16 | 135.57 | 141.46 | 142.25 |
+| staged-01-base | complete | 30.72 | 8.01 | 175 | 124.91 | 572.39 | 953.04 | 1150.28 |
+| components-03-blockers-off | complete | 35.11 | 17.12 | 155 | 58.41 | 64.43 | 69.26 | 74.08 |
+| components-05-blockers-stationary | complete | 35.02 | 15.90 | 147 | 62.90 | 75.62 | 82.87 | 86.30 |
+| encounter-02-breath-off | complete | 0.60 | 0.58 | 1 | 1738.92 | - | - | 1738.92 |
+| components-09-carbine-off | complete | 35.03 | 10.99 | 102 | 90.96 | 111.48 | 117.77 | 119.90 |
+| components-10-contacts-off | complete | 35.13 | 12.41 | 115 | 80.55 | 93.70 | 106.64 | 109.98 |
+| components-13-hints-off | complete | 35.06 | 13.00 | 120 | 76.91 | 89.96 | 93.16 | 98.78 |
+| components-14-hud-off | complete | 35.19 | 12.82 | 118 | 77.99 | 93.08 | 105.24 | 111.92 |
+| mandinga-02-off | complete | 9.86 | 0.55 | 1 | 1814.44 | - | - | 1814.44 |
+| mandinga-03-off-long | complete | 8.42 | 0.49 | 19 | 2053.35 | - | - | 4488.92 |
+| components-06-npc-tick-off | complete | 34.89 | 14.24 | 132 | 70.23 | 83.61 | 89.58 | 94.43 |
+| components-11-population-off | complete | 34.97 | 13.00 | 120 | 76.93 | 85.94 | 91.01 | 100.81 |
+| components-12-pressure-off | complete | 34.91 | 13.38 | 121 | 74.76 | 84.11 | 85.31 | 92.09 |
+| components-01-profile | complete | 35.07 | 12.11 | 111 | 82.56 | 90.12 | 97.05 | 109.49 |
+| references-05-profile | complete | 34.98 | 88.05 | 810 | 11.36 | 13.42 | 14.88 | 16.91 |
+| references-10-profile | complete | 35.01 | 244.48 | 2245 | 4.09 | 5.67 | 6.37 | 7.25 |
+| siege-01-profile | incomplete/failed | - | - | 0 | - | - | - | - |
+| skip-01-profile | incomplete/failed | 34.23 | - | 0 | - | - | - | - |
+| smoke-profile-02 | complete | 34.86 | 10.52 | 14 | 95.07 | - | - | 111.46 |
+| mandinga-04-deep-full | window complete / exit failed | 0.61 | - | 0 | - | - | - | - |
+| mandinga-01-profile-off | complete | 9.05 | 0.54 | 1 | 1863.05 | - | - | 1863.05 |
+| components-08-stats-off | complete | 34.97 | 13.56 | 126 | 73.72 | 82.75 | 87.37 | 89.94 |
+| components-07-thermal-off | complete | 34.90 | 13.97 | 129 | 71.59 | 83.25 | 92.23 | 93.74 |
+
+### issue318-contact-01
+
+| Run | Window/process | Tics/s | App FPS | N | Mean ms | p95 ms | p99 ms | Max ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| army1000-new-01 | complete | 19.44 | 1.15 | 8 | 871.99 | - | - | 1786.39 |
+| army1000-new-02 | complete | 19.69 | 1.16 | 9 | 865.15 | - | - | 1774.40 |
+| army1000-new-profile-01 | complete | 19.34 | 1.16 | 9 | 863.41 | - | - | 1504.85 |
+
+### issue318-contact-02
+
+| Run | Window/process | Tics/s | App FPS | N | Mean ms | p95 ms | p99 ms | Max ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| army1000-final-01 | complete | 19.71 | 1.20 | 10 | 834.22 | - | - | 1669.15 |
+| army1000-final-02 | complete | 20.90 | 1.20 | 9 | 835.15 | - | - | 2013.40 |
+| army1000-skip-01 | incomplete/failed | 34.97 | - | 0 | - | - | - | - |
+| army1000-skip-02 | complete | 20.93 | 1.22 | 9 | 820.75 | - | - | 1502.96 |
+| army1000-final-profile | complete | 18.75 | 1.12 | 9 | 892.81 | - | - | 1820.86 |
+| city-final-down | complete | 34.89 | 8.46 | 77 | 118.16 | 136.48 | 146.22 | 150.26 |
+| city-final-front | complete | 34.91 | 12.55 | 114 | 79.67 | 92.33 | 95.18 | 95.97 |
+
+### Final 1,000-attacker profile
+
+10 sampled onset tics; inclusive/exclusive times include probe overhead. Do not add nested inclusive costs. No ElementalStream.Transfer call occurs in this window.
+
+| Method | Inclusive ms/sample tic | Exclusive ms/sample tic | Calls/sample tic |
+| --- | ---: | ---: | ---: |
+| CaelumHingedDoorLeaf.PlaceAtProgress | 7.5100 | 7.4929 | 32.00 |
+| CaelumSlidingDoorBlocker.Tick | 7.1619 | 6.6476 | 7680.00 |
+| CaelumPortSiege.AttackerTarget | 5.9686 | 5.9686 | 282.20 |
+| CaelumCombatActor.Tick | 25.2077 | 3.4192 | 1601.00 |
+| CaelumThermalFire.AbsorbedAt | 2.0359 | 2.0359 | 181.00 |
+| CaelumElementalStream.Contact | 1.9549 | 1.8677 | 4562.70 |
+| CaelumThermalShelter.WindBlocked | 1.3000 | 1.3000 | 45.70 |
+| CaelumDemonBreath.PaidTick | 6.3042 | 1.2011 | 62.00 |
+| CaelumDemonBreath.Mouth | 0.7988 | 0.7988 | 1125.00 |
+| CaelumDemonService.UpdateBreath | 8.0577 | 0.7772 | 1601.00 |
+| CaelumElementalStatus.Tick | 0.7627 | 0.7100 | 1602.00 |
+| CaelumWeightPressure.MassAbove | 0.6778 | 0.6778 | 1602.00 |
+| CaelumCombatActor.UpdateCombatHealthEffects | 0.7461 | 0.6410 | 1601.10 |
+| CaelumPortSiege.Pulse | 8.1283 | 0.6054 | 462.20 |
+| CaelumWeightPressure.Update | 1.2654 | 0.5876 | 1602.00 |
+| CaelumThermalBody.Get | 0.5671 | 0.5671 | 5722.80 |
+| CaelumHingedDoorLeaf.BlockerPosition | 0.5314 | 0.5314 | 7936.00 |
+| CaelumPortSiege.WalkTo | 0.7317 | 0.4942 | 180.00 |
+| CaelumElementalStatus.TickBurnHeat | 0.0526 | 0.0526 | 1602.00 |
+| CaelumElementalStatus.ApplyBurnHeat | 0.0036 | 0.0036 | 87.40 |
+| CaelumElementalStatus.TakeBurnHeat | 0.0027 | 0.0027 | 46.70 |
+<!-- MEASUREMENTS_END -->
+
+Final validation:
+
+- `issue318-functional-06`: 12 runs, 69 new assertions and one legacy seed marker;
+  exit 0, no native errors/FAIL/watchdog and keep-awake released in every run.
+  Saved DONE counters are cumulative and are not summed as new assertions.
+- Independent read-only review verified those outcomes and exact source/fixture
+  member equivalence; no additional production blocker was found.
+- The project validator required updating two diagnostic release labels and
+  shortening CONTEXT below its existing 2,500-word limit. The final native
+  `issue318-functional-07/contact-final-labels` passes another 13 contact checks.
+  All gameplay bytes match the complete suite; only the two release strings
+  differ. `PACKAGE_VERIFICATION.json` verifies this exact qualification and all
+  16,193 final source/native/normal-package members.
+- `python build_document_index.py`, `python validate_project.py` and the normal
+  `build_dev.ps1` packaging pass. No production diagnostic hook is included.
+  The final PK3 SHA-256 is recorded in PACKAGE_VERIFICATION.json.
+- Failed functional-01/02 runs expose fixture API/class-name errors and deferred
+  PostBeginPlay setup respectively; functional-03 has an incorrect test
+  precondition; functional-04 has a duplicated absolute save path. They were
+  fixed in the tooling, preserved and followed by successful final tests.
+- Earlier geometry v1 fails native sparse-sidedef loading; incomplete old profiles
+  and unsafe-site skip attempts are not passing measurements. Missing callbacks
+  are unavailable data, never zero rendering cost. Unrun extra component repeats
+  remain unrun, so single-component ablations are exploratory.
+- Author acceptance is pending as CA318-01. Whole MAP06 playability, bounded
+  ordinary deployment and sustained combat remain unresolved under #318.
+- Owned engines and all four authorized ETW sessions are stopped; temporary
+  keep-awake requests are released. Dependency hashes are collected after the
+  runs and explicitly labelled retrospective, not per-run attestations.

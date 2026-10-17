@@ -37,6 +37,7 @@ class CaelumResurrection : Object play
         {old.BaseRemaining[i]=0;old.HealthFraction[i]=0;old.PulseSeconds[i]=0;old.SetRemaining(i,0);}
         old.BurnVisual=old.PoisonVisual=old.FreezeVisual=old.LightningVisual=null;
         old.BurnVisualRemaining=old.PoisonVisualRemaining=0;
+        old.ClearBurnHeat();
         old.CutRemaining=old.FreezeRemaining=old.DazzleRemaining=0;
         old.EarthPenaltyRemaining=old.LightningStunRemaining=0;
         let cry=CaelumBattleCry.Status(body);if(cry!=null)cry.Destroy();

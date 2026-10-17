@@ -39,7 +39,8 @@ class CaelumThermalRuntime : Object play
             if(user.DebugShieldBlocking && user.HasActiveBlockSource())
                 activity+=CaelumThermalEffects.BlockingWatts(thermal.MovedMassKg,user.GetActiveBlockWeight());
         }
-        CaelumThermalService.Advance(user,WorldTicSeconds(),realStep ? 1.0/TICRATE : 0,activity,0,thermal.FireWatts,firearm);
+        double burn=realStep && user.ElementalStatus!=null ? user.ElementalStatus.TakeBurnHeat()*TICRATE : 0;
+        CaelumThermalService.Advance(user,WorldTicSeconds(),realStep ? 1.0/TICRATE : 0,activity,burn,thermal.FireWatts,firearm);
     }
 
     static void NPCStep(CaelumCombatActor npc,bool force=false)
@@ -79,7 +80,8 @@ class CaelumThermalRuntime : Object play
         // vez: acelerar el calendario no multiplica el daño ni crea acciones.
         int steps=Max(1,int(Ceil(dw/60.0)));
         double firearm=dr>0 ? thermal.PendingFirearmJoules/dr : 0;
-        for(int i=0;i<steps && npc.health>0;i++)CaelumThermalService.Advance(npc,dw/steps,dr/steps,dr>0 ? thermal.PendingActivityJoules/dr : 0,0,thermal.FireWatts,firearm);
+        double burn=dr>0 && npc.ElementalStatus!=null ? npc.ElementalStatus.TakeBurnHeat()/dr : 0;
+        for(int i=0;i<steps && npc.health>0;i++)CaelumThermalService.Advance(npc,dw/steps,dr/steps,dr>0 ? thermal.PendingActivityJoules/dr : 0,burn,thermal.FireWatts,firearm);
         if(dr>0)thermal.PendingFirearmJoules=0;
         thermal.PendingActivityJoules=0;
         thermal.LastRealTic=level.maptime;thermal.LastWorldStamp=now;

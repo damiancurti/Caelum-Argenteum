@@ -1,0 +1,53 @@
+{
+  "tag": "g4.14.2",
+  "sources": [
+    {
+      "path": "src/rendering/hwrenderer/scene/hw_drawinfo.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/rendering/hwrenderer/scene/hw_drawinfo.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_drawinfo.cpp",
+      "sha256": "475dc3616942b146231ec9b1b4445eb84ce71e73e552bacba3e5c5ce21f65e13"
+    },
+    {
+      "path": "src/rendering/hwrenderer/scene/hw_bsp.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_bsp.cpp",
+      "sha256": "39be874941dd9752ffc1120785df24a21316e76511082604b3d97bce5d37ce9c"
+    },
+    {
+      "path": "src/rendering/hwrenderer/scene/hw_portal.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/rendering/hwrenderer/scene/hw_portal.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_portal.cpp",
+      "sha256": "af6bf69fc388fa43fd042315e4718ee15032b519c3cd7d7758ee96a9502510f9"
+    },
+    {
+      "path": "src/rendering/hwrenderer/scene/hw_walls.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/rendering/hwrenderer/scene/hw_walls.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_walls.cpp",
+      "sha256": "70db7a7f68bd9e281ade1ac7aa4f74608ab18d817bd75081e16943c4bdd4f8cc"
+    },
+    {
+      "path": "src/common/rendering/hwrenderer/data/hw_clock.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_clock.cpp",
+      "sha256": "53cddb87fb5237ce0e8f8bd9220c44f145a185ba51c9c0e34ed4c5b6b6d9de5a"
+    },
+    {
+      "path": "src/common/rendering/hwrenderer/data/hw_clock.h",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.h",
+      "local": "build\\issue318-audit-02\\engine-source\\hw_clock.h",
+      "sha256": "b7485fddf7d08a7911237e67a8b81f30b37b09a4b5c67bb595837400358ac345"
+    },
+    {
+      "path": "src/common/engine/stats.h",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/common/engine/stats.h",
+      "local": "build\\issue318-audit-02\\engine-source\\stats.h",
+      "sha256": "257492477d71d428181cae70b832ecdd428ca396aa8d99c8df5195167ce99b88"
+    },
+    {
+      "path": "src/maploader/udmf.cpp",
+      "url": "https://raw.githubusercontent.com/ZDoom/gzdoom/g4.14.2/src/maploader/udmf.cpp",
+      "local": "build\\issue318-audit-02\\engine-source\\udmf.cpp",
+      "sha256": "5a903545cd9af00d083c286034ef60620b9bdea2c6b8e9dd4e66fd09faf7bc81"
+    }
+  ]
+}

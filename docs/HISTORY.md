@@ -1,6 +1,47 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
+
+On 2026-10-17 the author requested exhaustive cost/FPS evidence for the slow
+600-soldier city, ground-facing views and unresponsive November siege. Matched
+controls identify expensive stationary door helpers, large renderer boundary
+work and repeated whole-world breath reception. The author then removed demon
+breath radiation, selected absorbed contact power for ongoing burning heat,
+requested a 1,000-attacker test and prohibited routine global actor scans except
+for narrow documented/measured cases. AGENTS and CA-KP-110 through CA-KP-115
+record this standing priority and primary GZDoom research.
+
+Breath now uses local contact bodies and stores absorbed watts on each burning
+victim. Real-tic joules feed the normal player/NPC thermal scheduler; armor is
+applied once, Toughness health healing cannot reverse heat, and generic burns
+do not invent contact power. Status/breath revision 1 migration is idempotent;
+old unknown watts start at zero, old untransferred radiation is discarded
+without replay/refund, and prior applied heat/resource history remains. Rest/
+journey guards and resurrection handle the new queue. Map geometry, door actors,
+ordinary encounter counts and utility-wand radiation remain unchanged.
+
+Final isolated correctness suite passes 69 assertions across 12 runs, plus one
+genuine prior-runtime seed marker, including multiple local
+contacts, walls, armor, duration, energy/temperature, player/NPC scheduling,
+save/reload/repetition, hub return and old-save migration. Counters persist in
+saves; the total counts new PASS lines rather than adding cumulative DONE values.
+The 1,000-Mandinga/600-soldier onset window takes 8.63-8.87 s for 175 tics,
+versus 88.13 s with old radiation. It remains slower than nominal simulation;
+full frame distributions, profiles, failures and packaging checks are in
+assets/validation_issue318/RESULTS.md. The 1,000 count is diagnostic only.
+Observed application presentation is only about 1.20 FPS in both final short
+onset runs, versus 0.11 with old radiation; the improvement is not playability.
+The actual skip API reaches the siege from an allowed location, still slow.
+Final native release-label smoke adds 13 passing contact assertions; all 16,193
+packaged members match source. Document index, project validation and normal
+packaging pass. Independent review found no additional production blocker.
+
+#318 remains open for bounded ordinary deployment, door/geometry changes,
+sustained-combat fluency and author playability acceptance. CA318-01 is pending;
+native tests and a PR do not establish author acceptance. Earlier diagnostic
+fixture failures and incomplete measurements are retained, not counted as passes.
 
 ## 5.4.27 - Normal-speed prisoner following (#307)
 

@@ -6,8 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.27.** Obtain and update the complete repository, validate
+**Current release: 5.4.28.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.4.28 records the [#318](https://github.com/damiancurti/Caelum-Argenteum/issues/318)
+performance audit, contact-only demon-breath heat and standing engineering lessons. Ordinary MAP06 remains
+unresolved: the peaceful city presents about 8-12 application frames/s in the
+measured views despite maintaining about 35 simulation tics/s. Removing the
+960 door leaves and 7,680 blockers in an isolated control improves it to about
+12-19 frames/s; large geometry costs remain. Matched entrance references measure
+65-90 frames/s in MAP01 and 240-262 in MAP02. These are application presentation
+rates on the recorded hardware, not whole-map acceptance or compositor refresh.
+See [evidence and limits](assets/validation_issue318/RESULTS.md) and
+[performance lessons](docs/KNOWN_PITFALLS.md#ca-kp-110---simulation-throughput-does-not-establish-playable-frame-presentation).
+Breath now heats only bodies it touches. Burning receivers retain the power
+absorbed at contact and feed it into their normal thermal update; revisioned
+migrations preserve prior applied heat without replaying old radiation. The
+1,000-attacker benchmark is a diagnostic control, not a production count change.
+Routine global actor scans are prohibited without a narrow, measured exception.
+Normal full-army deployment, stationary-door work and geometry still need fixes;
+#318 remains open and author acceptance is pending.
 
 5.4.27 implements [#307](https://github.com/damiancurti/Caelum-Argenteum/issues/307):
 freed prisoners follow at their normal resolved speed, including health,
@@ -40,7 +58,8 @@ Production thermal rules and target timing remain unchanged.
 
 The author confirmed all tests passed and authorized merge and issue closure for
 #304, #305 and #307 on 2026-10-16. No author checks remain in
-[pending_test.txt](pending_test.txt). Release 5.4.27 and the tested runtime are unchanged.
+[pending_test.txt](pending_test.txt). That acceptance retained release 5.4.27
+and its tested runtime; #318 records the subsequent performance defect.
 
 The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
 are implemented and accepted within their documented scopes. Their individual

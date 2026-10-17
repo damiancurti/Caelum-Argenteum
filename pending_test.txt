@@ -1,0 +1,13 @@
+CA318-01 | Origin 5.4.28 / issue #318 | Contact-only demon-breath heat
+Prerequisites: rebuild 5.4.28; retain a backup of an existing save. Use a reachable
+Mandinga or Zupay and the normal thermal display. MAP06 performance acceptance is
+separate and remains unresolved; this check does not require a full-army siege.
+Steps: receive direct breath, then leave its cone/range. Observe burning heat;
+repeat behind a solid wall and near breath without direct contact. Save/reload
+while burning, then test an existing pre-5.4.28 save with a demon present.
+Expected: direct contact burns and contributes positive heat while its fire lasts
+(ambient exchange still affects the net temperature);
+nearby untouched bodies and the emitter receive no breath radiation. Walls block
+contact. Reload preserves the remaining effect without a heat spike or reset;
+old saves load without replaying pending radiation. Report any visual, resource,
+temperature, interruption or save regression. Author confirmation is pending.

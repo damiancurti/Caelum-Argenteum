@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python",
+        "build_document_index.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Wrote docs/DOCUMENT_INDEX.md\nASSETS.md: 29798 words, 189 section entries\nHISTORY.md: 217912 words, 343 section entries\nKNOWN_PITFALLS.md: 26260 words, 122 section entries\nMAP01.txt: 34829 words, 95 section entries\nPROJECT.md: 56250 words, 260 section entries\nSYSTEMS.md: 99154 words, 276 section entries\nTASKS.md: 19681 words, 159 section entries\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "validate_project.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"version\": \"5.4.28\",\n  \"documents\": 11,\n  \"audio_files\": 111,\n  \"station_models\": 12,\n  \"spanish_caella_keys\": 25,\n  \"premise_numbers\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20\n  ],\n  \"context_words\": 2497,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "normal_build": "build_dev.ps1 completed successfully; 16193 members; fingerprint/member equivalence in PACKAGE_VERIFICATION.json",
+  "independent_review": "Existing audit_review agent: no additional source blocker; final functional-06 exact source/fixture and native outcomes verified",
+  "final_native": "functional-07 contact-final-labels: 13 assertions; exact final source package verified"
+}

@@ -9123,7 +9123,7 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumThermalRuntime.PlayerStep(self,realStep);
         CaelumTarotService.Advance(self);
-        if (ElementalStatus != null) { ElementalStatus.Tick(self); }
+        if (ElementalStatus != null) { ElementalStatus.Tick(self,realStep); }
         IlluminationRemaining = Max(
             0.0, IlluminationRemaining - 1.0 / TICRATE
         );

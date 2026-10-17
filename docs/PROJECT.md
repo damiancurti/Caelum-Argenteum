@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
+
+The author reports an unresponsive November siege transition, a slow peaceful
+600-soldier city, and further slowdown when looking down after one or two streets.
+The audit reproduces poor city frame presentation independently of demons:
+35 simulation tics/s can coexist with 8-12 application presents/s. Repeated
+door removal improves presentation without making the city comfortably playable.
+Native renderer counts and pinned GZDoom 4.14.2 source explain additional
+ground-facing geometry work. Matched mansion/sewer entrance references exceed
+60 application presents/s on the recorded PC; they are not full-route acceptance.
+
+Evidence and qualifications: [validation_issue318](../assets/validation_issue318/RESULTS.md).
+The author requires performance to be treated as an ongoing engineering priority;
+KNOWN_PITFALLS records measured causes, candidate large-map techniques and test
+requirements. The author additionally removed demon-breath radiation and chose
+to retain absorbed contact power while a victim burns. This production change
+uses local contact queries and normal thermal scheduling, with revisioned,
+idempotent migration. Routine whole-world actor scans require a narrow measured
+exception. A 1,000-attacker benchmark does not alter the normal encounter total.
+#318 remains open: normal deployment still creates the full army together;
+door/geometry fixes, sustained-combat fluency and author acceptance are outstanding.
+Prior #304/#305 acceptance does not resolve this defect.
 
 ## 5.4.27 - Prisoner escort speed (#307)
 

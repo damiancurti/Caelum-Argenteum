@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - Performance evidence without production art changes (#318)
+
+validation_issue318 retains owned diagnostic sources, sanitized native logs,
+frame-presentation evidence and selected captures. Production textures, sprites,
+models and maps are unchanged. Runtime packages, installed IWAD/engine, collector
+executables and generated map fixtures remain local under build; they are not
+redistributed. The collinear map control permits changed texture phase and thermal
+shelter classification, so it is not accepted artwork or a production replacement.
+See its [results and provenance](../assets/validation_issue318/RESULTS.md).
 
 ## 5.4.25 - Soldier representation benchmark (#304)
 

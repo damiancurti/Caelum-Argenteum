@@ -1,24 +1,24 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
 
-**5.4.27/#307:** ordinary prisoner following uses resolved normal Speed, with
-health/thermal/elemental modifiers and existing proximity/teleport distances.
-The author confirmed retaining the recovery teleport. Native checks pass with
-334 current-runtime and 14 legacy-control assertions; validation/build pass.
-Evidence: validation_5427; delivery PR317. CA307-01 passed author review on
-2026-10-16 without reported exceptions.
+**5.4.28/#318:** contact-only breath retains absorbed watts on burning bodies;
+normal thermal scheduling consumes real-tic energy, with idempotent legacy
+migration; 69 native assertions pass. MAP06 remains unplayable; doors and
+geometry dominate peaceful cost. Army counts/maps are unchanged. #318 stays
+open for bounded deployment, door/geometry fixes and author acceptance.
+Evidence: validation_issue318/RESULTS.md. AGENTS/CA-KP-110..115 establish the
+performance priority and restrict global scans to measured exceptions.
 
-**5.4.26/#305 implemented:** author-requested active-seal registry preserves
-climate/thermal rules. Branch feat/issue305-active-seal-registry; validation_5426.
-Lifecycle/save/performance checks pass; resumed delivery verifies all 16,193
-runtime members and repeats 27 native equivalence checks. No test helper remains
-active. Delivery PR308 (83f79cc1) is accepted. #304 is delivered in PR306
-(41b40476): native archive and performance checks pass; CA304-01 passed author
-review on 2026-10-16 without reported exceptions. See
-validation_5425/RESULTS.md for measured costs and limitations.
-All tests accepted; merge/closure of #304/#305/#307 authorized on 2026-10-16.
-pending_test.txt is empty; release 5.4.27 and runtime unchanged.
+**5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
+retained by author decision. Native checks: 334 current/14 legacy assertions;
+validation/build pass. PR317, validation_5427; CA307-01 accepted 2026-10-16.
+
+**5.4.26/#305:** active-seal registry preserves thermal rules; lifecycle/save/
+performance and 16,193-member equivalence pass. PR308 (83f79cc1), validation_5426.
+#304 archive delivered in PR306 (41b40476), validation_5425; CA304-01 accepted
+2026-10-16. All #304/#305/#307 tests accepted; merge/closure authorized that day.
+At that acceptance pending_test.txt was empty; 5.4.27's runtime was unchanged.
 **5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;

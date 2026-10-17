@@ -1,6 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - Contact-only breath and performance boundaries (#318)
+
+The author requires a functional normal MAP06 and rejects creating its full
+6,000-plus attacking population in one update. This is an outstanding production
+requirement: this patch does not change deployment or authored counts. The
+author-requested 1,000-Mandinga control is a benchmark only, with 600 soldiers
+retained. The existing #132 reinforcement CVar is
+still an opt-in experiment, not completion of the new normal-play requirement.
+Do not silently adopt a new live population/group budget from a benchmark.
+
+The author removed demon-breath radiation and selected the absorbed contact
+power for persistent burning heat. Only accepted local contacts receive it,
+including the existing summoned-demon and Redemption restrictions. The previous
+four-source geometry, 20 kW source, 35% budget and armor retention determine
+contact watts; normalize across simultaneous contacts and apply armor once.
+Store watts for the existing base burn duration times emitter power, with the
+existing stronger-power/longer-duration nonstacking priority. Toughness still
+governs health effects; it does not reverse thermal energy. Generic burns do not
+invent or extend contact heat. Fire visuals remain while this heat duration runs.
+
+Each receiver accrues watts times real simulation seconds. The player consumes
+queued joules on its real thermal step; NPCs retain them until their normal
+scheduled update, without forcing per-tic environmental sampling. Logical
+personal steps do not create heat. Save/load and hub state preserve power,
+remaining duration and queued energy. Status revision 1 initializes unknown
+legacy contact power to zero; breath revision 1 discards already-paid but
+untransferred legacy radiation once, preserving resources and applied thermal
+history. Resurrection clears active/pending heat. Rest acceleration and journey
+forecasts remain blocked while heat is active or queued.
+
+This supersedes only demon-breath radiation. The utility wand retains its
+approved heat/cold radiation; its global Transfer scan remains an identified
+performance task. Existing cold-triggered breath activation is unchanged, even
+though breath no longer warms its emitter. Routine global actor scans now require
+a documented correctness need, bounded trigger/frequency and measured large-map
+cost; see AGENTS and CA-KP-115.
+
+Door removal, idle-blocker controls, component disabling, scene freezing and
+geometry simplification under validation_issue318 are isolated diagnostics.
+Their improved timings do not authorize removing required collision, physiology,
+resources or individual combat. In particular, collinear merging may change
+texture phase and line-endpoint-based thermal shelter classification, even when
+physical boundaries are retained. It needs equivalence and save/hub validation
+before any production use. Keep the >=500 automatic policy authoritative.
+
+Performance acceptance must distinguish frame presentation from simulation
+throughput. The author expects 60 FPS in mansion/sewers; fixed entrance checks
+do not certify every view, route or battle. See
+[evidence](../assets/validation_issue318/RESULTS.md) and KNOWN_PITFALLS CA-KP-110
+onward for reproducible controls, source-backed causes and measurement limits.
 
 ## 5.4.27 - Normal-speed prisoner following (#307)
 
@@ -351,7 +402,7 @@ one and a new duration, never stacking or renewing its damaged body.
 
 The summon follows its caster when not fighting and independently engages
 enemies with its existing combat. Its attacks, ground-launch impulse, projectiles,
-breath burning and thermal radiation protect the caster, allies and neutrals.
+breath burning and contact heat protect the caster, allies and neutrals.
 Projectile ownership/policy persists after the creature disappears. Normal solid
 body collision is retained. Death of the summon or caster, or expiry, removes
 the summon without corpse, loot, kill count or nearby ally-death reward.
@@ -2797,8 +2848,9 @@ distance attenuation, wall visibility, the existing 35% radiative budget and
 armor area retention exactly once. Therefore 20 kW is source power, not 20 kW
 absorbed by each actor. Radiation extends beyond contact range without an
 arbitrary cutoff; cooling/heating affects supported thermal bodies, including
-the emitter. No projectile push or direct ice damage is added. Demon breath uses
-the same geometry/contact/heat service with its accepted balance and visuals.
+the emitter. No projectile push or direct ice damage is added. Since 5.4.28,
+demon breath shares geometry/contact calculations but heats only contact victims;
+this wand's independently approved radiation remains unchanged.
 
 Each mode costs 10 Anima per simulation second before existing wand cost
 reductions, once per real tic. Natural regeneration continues. Primary wins
@@ -3230,18 +3282,15 @@ or contact. Interruption restores AI from any phase. Contact extends
 the existing T1 fire burn: shared base duration times Charisma's Type-4 factor,
 and the shared DOT ratio of T1 staff damage times that factor. There is no
 additional direct-hit damage; refreshing contact preserves the burn pulse clock.
-Radiation alone never adds the burn status and has no distance cutoff.
-
-Total emitted flame power is 20 kW, the existing campfire profile. Four cone
-samples reuse the thermal fire projection, distance attenuation, 35% radiative
-fraction, 0.95 surface absorption and wall visibility. Combined absorption is
-capped to the emitted radiative budget before shared magical armor retention.
-The emitter can receive its own radiation but not its own direct flame burn.
-Cost/contact run each real tic; radiation integrates only paid real seconds in
-staggered one-second samples, with the residual interval settled on stopping.
-Moving sources use the sampled pose at interval end, matching the thermal
-scheduler's temporal approximation; this is not sub-tic fluid/fire simulation.
-The owned source, paid residual time, potion units and ongoing powers serialize.
+Since the author's 5.4.28 correction, breath emits no heat to noncontact bodies
+or its own emitter. Total source power remains 20 kW. Four cone samples retain
+the previous projection, attenuation, 35% budget, 0.95 surface absorption and
+wall visibility only to calculate watts for local contact victims. Combined
+contact absorption is capped before magical armor retention. The victim keeps
+that absorbed power while burning, using the real-time queue and migration rules
+at the start of this document. Cost/contact still run each real tic; stopping
+the stream creates no final radiation scan. Potion units and paid-resource
+history remain serialized. Cold/combat activation rules are unchanged.
 Native evidence and outstanding acceptance are recorded separately in HISTORY.
 
 ## Functional port city contract (#133)

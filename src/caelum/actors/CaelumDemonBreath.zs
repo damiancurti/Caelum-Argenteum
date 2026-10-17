@@ -1,6 +1,7 @@
 // Perfil aprobado #135. Las subdivisiones son cuadratura, no más potencia.
 class CaelumDemonBreathRules : Object
 {
+    const CONTACT_HEAT_REVISION=1;
     const ANIMA_PER_SECOND=10.0;
     const RANGE_METERS=4.0;
     const CONE_DEGREES=60.0;
@@ -44,6 +45,7 @@ class CaelumDemonBreath : Actor
     CaelumCombatActor Emitter;
     double PaidSeconds,TotalPaidSeconds;
     int NextHeatTic;
+    int ContactHeatRevision;
     Vector3 Direction;
     Actor FlameVisuals[4];
 
@@ -89,8 +91,9 @@ class CaelumDemonBreath : Actor
     void PaidTick()
     {
         if(Emitter==null || CaelumBattleCry.Active(Emitter))return;
-        // Contacto y coste siguen cada tic; la radiación usa la cadencia
-        // térmica de un segundo, con fase repartida entre emisores.
+        EnsureContactHeat();
+        // Contacto y coste siguen cada tic. Sólo los cuerpos tocados reciben
+        // potencia de quemadura; ningún barrido global ni radiación a distancia.
         vector3 next=Mouth(Emitter);
         vector3 nextDirection=(Cos(Emitter.Angle),Sin(Emitter.Angle),0);
         if(Emitter.target!=null && CanReach(Emitter,Emitter.target))
@@ -99,9 +102,7 @@ class CaelumDemonBreath : Actor
             if(aim.Length()>0)nextDirection=aim/aim.Length();
         }
         SetOrigin(next,false);Direction=nextDirection;
-        if(NextHeatTic<=0)NextHeatTic=level.time+1+(Emitter.ThermalState!=null
-            ? Emitter.ThermalState.NextUpdateTic%TICRATE : 0);
-        PaidSeconds+=1.0/TICRATE;TotalPaidSeconds+=1.0/TICRATE;
+        TotalPaidSeconds+=1.0/TICRATE;
         for(int i=0;i<CaelumDemonBreathRules.SEGMENTS;i++)
         {
             double along=CaelumDemonBreathRules.Range()*(i+0.5)/CaelumDemonBreathRules.SEGMENTS;
@@ -122,8 +123,35 @@ class CaelumDemonBreath : Actor
             }
         }
         let nearby=BlockThingsIterator.Create(Emitter,CaelumDemonBreathRules.Range()+Emitter.Radius);
-        while(nearby.Next())if(Contact(nearby.thing))Burn(nearby.thing);
-        if(level.time>=NextHeatTic){FlushHeat();NextHeatTic=level.time+TICRATE;}
+        Array<Actor> bodies;Array<double> received;double sum=0;
+        while(nearby.Next())
+        {
+            let body=nearby.thing;
+            if(!Contact(body))continue;
+            bool known=false;
+            for(int i=0;i<bodies.Size();i++)if(bodies[i]==body){known=true;break;}
+            if(known)continue;
+            let summoned=CaelumSummonedZupay(Emitter);
+            if(summoned!=null && !summoned.CanAffect(body))continue;
+            if(!CaelumRedemption.AllowsDamage(Emitter,body))continue;
+            Burn(body);
+            let thermal=CaelumThermalBody.Get(body,true);
+            if(thermal==null)continue;
+            if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(body,thermal);
+            double watts=ReceivedWatts(body,thermal);
+            bodies.Push(body);received.Push(watts);sum+=watts;
+        }
+        // Se conserva el presupuesto emitido existente entre los contactos
+        // actuales. Armadura se aplica una vez, antes de guardar la potencia.
+        double budget=CaelumDemonBreathRules.Watts()*CaelumThermalData.FIRE_RADIATIVE_FRACTION;
+        double scale=sum>budget ? budget/sum : 1;
+        double power=CaelumElementalStream.Power(Emitter);
+        for(int i=0;i<bodies.Size();i++)
+        {
+            let status=CaelumElementalStream.Status(bodies[i]);
+            if(status!=null)status.ApplyBurnHeat(CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,
+                power,received[i]*scale*CaelumThermalMagic.AreaRetention(bodies[i]));
+        }
     }
 
     double ReceivedWatts(Actor body,CaelumThermalState thermal)
@@ -133,8 +161,16 @@ class CaelumDemonBreath : Actor
 
     void FlushHeat()
     {
-        double seconds=PaidSeconds;PaidSeconds=0;
-        CaelumElementalStream.Transfer(self,Direction,seconds);
+        EnsureContactHeat();PaidSeconds=0;
+    }
+
+    void EnsureContactHeat()
+    {
+        if(ContactHeatRevision>=CaelumDemonBreathRules.CONTACT_HEAT_REVISION)return;
+        // El autor retiró la radiación: el saldo antiguo ya pagado no se emite
+        // al cargar o detenerse. Se conservan recursos e historial de emisión.
+        PaidSeconds=0;NextHeatTic=0;
+        ContactHeatRevision=CaelumDemonBreathRules.CONTACT_HEAT_REVISION;
     }
 
     override void Tick()
