@@ -249,3 +249,6 @@
 # Preserve #307 native evidence and deterministic fixture fingerprints.
 /assets/validation_5427/** -text whitespace=cr-at-eol
 /assets/validation_5427/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #318 native evidence, observer revisions and recorded byte hashes.
+/assets/validation_issue318/** -text whitespace=cr-at-eol

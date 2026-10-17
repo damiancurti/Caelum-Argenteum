@@ -225,7 +225,7 @@ SHA-256: `45f06b7bdedaafeeacefefffbb12a09ba646b3b454aa4a555d2352f534033c39`
 
 ## [HISTORY.md](HISTORY.md) - 218519 words
 
-SHA-256: `0a1fd4b4ee90c1df0cfd0ea2e10464afedb462874e7fa01f28cb1a03b5f16081`
+SHA-256: `3270cb839009ab36a5ad3a1453f3e1a97044c2e8a4b885328f0d72c64569b935`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-111 - [5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)](HISTORY.md#5428---contact-only-breath-map06-audit-and-scan-policy-318) - context: Caelum Argenteum — Consolidated history
@@ -573,7 +573,7 @@ SHA-256: `0a1fd4b4ee90c1df0cfd0ea2e10464afedb462874e7fa01f28cb1a03b5f16081`
 
 ## [KNOWN_PITFALLS.md](KNOWN_PITFALLS.md) - 28034 words
 
-SHA-256: `2d5ff6ccb21f06a48199a830d6b130f40fb6db322a5082a5291f6058f0af7265`
+SHA-256: `1365ee84eeb1fcd878de5919a4afb9b106231b4edd2c9f8d4dc2557ad883309e`
 
 - Lines 1-6 - [Known pitfalls and verified lessons â€” Caelum Argenteum](KNOWN_PITFALLS.md#known-pitfalls-and-verified-lessons-â-caelum-argenteum) - context: -
 - Lines 7-69 - [CA-KP-119 - Flat army tests must separate simulation, inventory and drawing](KNOWN_PITFALLS.md#ca-kp-119---flat-army-tests-must-separate-simulation-inventory-and-drawing) - context: Known pitfalls and verified lessons â€” Caelum Argenteum
@@ -804,7 +804,7 @@ SHA-256: `f88cf4c414876fddf236e0eb011f17d0dfdba2ce9f17e72915283f630f37817a`
 
 ## [PROJECT.md](PROJECT.md) - 56525 words
 
-SHA-256: `d9030b6e771331e65b207b75f3d3485249d81ccb49d3ed35499f714e08042a28`
+SHA-256: `d85963819679ff4f49978cb3c4d782cd16db9277194fc2dbc41f02ce0f4da4b5`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-56 - [5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)](PROJECT.md#5428---map06-audit-contact-only-breath-and-scan-policy-318) - context: Caelum Argenteum — Project, status and roadmap
@@ -1069,7 +1069,7 @@ SHA-256: `d9030b6e771331e65b207b75f3d3485249d81ccb49d3ed35499f714e08042a28`
 
 ## [SYSTEMS.md](SYSTEMS.md) - 99673 words
 
-SHA-256: `9a724cb5467948616600d0bdfad31c1bcf02e9e35720d32559e33d5f3fbe21bc`
+SHA-256: `b2b7fe63db6edac04eec72b50186a53ad2c0fb576e9d00dbe3341c0f696d6adc`
 
 - Lines 1-4 - [Caelum Argenteum — Current systems and rules](SYSTEMS.md#caelum-argenteum--current-systems-and-rules) - context: -
 - Lines 5-105 - [5.4.28 - Contact-only breath and performance boundaries (#318)](SYSTEMS.md#5428---contact-only-breath-and-performance-boundaries-318) - context: Caelum Argenteum — Current systems and rules
@@ -1350,7 +1350,7 @@ SHA-256: `9a724cb5467948616600d0bdfad31c1bcf02e9e35720d32559e33d5f3fbe21bc`
 
 ## [TASKS.md](TASKS.md) - 19952 words
 
-SHA-256: `d5f53b63707a23caa66116f318081301ddadd372c62a58b81e45ab4821feea25`
+SHA-256: `4455aee3ed44e56221633f28d0f7c2ccaf33edf2e2b4aa605e5bc65511f4a334`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-60 - [5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)](TASKS.md#5428---map06-issue-318-contact-heat-implemented-map-performance-unresolved) - context: TASKS.md — Active tasks
@@ -1513,6 +1513,6 @@ SHA-256: `d5f53b63707a23caa66116f318081301ddadd372c62a58b81e45ab4821feea25`
 - Lines 2423-2435 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "45f06b7bdedaafeeacefefffbb12a09ba646b3b454aa4a555d2352f534033c39", "words": 29798}, {"path": "HISTORY.md", "sha256": "0a1fd4b4ee90c1df0cfd0ea2e10464afedb462874e7fa01f28cb1a03b5f16081", "words": 218519}, {"path": "KNOWN_PITFALLS.md", "sha256": "2d5ff6ccb21f06a48199a830d6b130f40fb6db322a5082a5291f6058f0af7265", "words": 28034}, {"path": "MAP01.txt", "sha256": "f88cf4c414876fddf236e0eb011f17d0dfdba2ce9f17e72915283f630f37817a", "words": 34829}, {"path": "PROJECT.md", "sha256": "d9030b6e771331e65b207b75f3d3485249d81ccb49d3ed35499f714e08042a28", "words": 56525}, {"path": "SYSTEMS.md", "sha256": "9a724cb5467948616600d0bdfad31c1bcf02e9e35720d32559e33d5f3fbe21bc", "words": 99673}, {"path": "TASKS.md", "sha256": "d5f53b63707a23caa66116f318081301ddadd372c62a58b81e45ab4821feea25", "words": 19952}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "45f06b7bdedaafeeacefefffbb12a09ba646b3b454aa4a555d2352f534033c39", "words": 29798}, {"path": "HISTORY.md", "sha256": "3270cb839009ab36a5ad3a1453f3e1a97044c2e8a4b885328f0d72c64569b935", "words": 218519}, {"path": "KNOWN_PITFALLS.md", "sha256": "1365ee84eeb1fcd878de5919a4afb9b106231b4edd2c9f8d4dc2557ad883309e", "words": 28034}, {"path": "MAP01.txt", "sha256": "f88cf4c414876fddf236e0eb011f17d0dfdba2ce9f17e72915283f630f37817a", "words": 34829}, {"path": "PROJECT.md", "sha256": "d85963819679ff4f49978cb3c4d782cd16db9277194fc2dbc41f02ce0f4da4b5", "words": 56525}, {"path": "SYSTEMS.md", "sha256": "b2b7fe63db6edac04eec72b50186a53ad2c0fb576e9d00dbe3341c0f696d6adc", "words": 99673}, {"path": "TASKS.md", "sha256": "4455aee3ed44e56221633f28d0f7c2ccaf33edf2e2b4aa605e5bc65511f4a334", "words": 19952}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

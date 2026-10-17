@@ -2,26 +2,17 @@
   "checks": [
     {
       "command": [
-        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "python",
         "validate_project.py"
       ],
       "exit_code": 0,
       "stdout": "{\n  \"version\": \"5.4.28\",\n  \"documents\": 11,\n  \"audio_files\": 111,\n  \"station_models\": 12,\n  \"spanish_caella_keys\": 25,\n  \"premise_numbers\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20\n  ],\n  \"context_words\": 2493,\n  \"errors\": []\n}\n",
       "stderr": ""
-    },
-    {
-      "command": [
-        "git",
-        "diff",
-        "--check"
-      ],
-      "exit_code": 0,
-      "stdout": "",
-      "stderr": "warning: in the working copy of 'assets/validation_issue318/analyze.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/archive_evidence.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/analysis.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/issue318-audit-02/analysis.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/issue318-contact-01/analysis.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/issue318-contact-02/analysis.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/issue318-functional-06/analysis.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/observers/observer-v2.zs', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/observers/observer-v3.zs', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/observers/observer-v4.zs', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/observers/observer-v5.zs', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/evidence/research/review-source-manifest.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/report.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'assets/validation_issue318/run.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'docs/CONTEXT.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/HISTORY.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/KNOWN_PITFALLS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/PROJECT.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/SYSTEMS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'docs/TASKS.md', CRLF will be replaced by LF the next time Git touches it\nwarning: in the working copy of 'src/caelum/data/CaelumCartographyCatalogueData.zs', LF will be replaced by CRLF the next time Git touches it\n"
     }
   ],
   "normal_build": "build_dev.ps1 completed: 16197 members; report.py verified full source/normal-package/native08 equivalence after all edits",
   "independent_review": "Existing audit_review reviewed native door physics and the flat fixture. No execution blocker. Inventory changes weight/air/mass; frozen stat changes event iterators; first-tic latency is wall time; tails are empirical. These qualifications are documented.",
   "final_native": "NATIVE_VERIFICATION.json: 9 runs / 230 new assertions. FLAT_VERIFICATION.json: 40 complete flat benchmarks with ETW, matching model-variant outcomes, verified inventory removal and keep-awake cleanup.",
-  "author_acceptance": "CA318-01/02/03 pending. MAP06 playability and bounded normal deployment unresolved."
+  "author_acceptance": "CA318-01/02/03 pending. MAP06 playability and bounded normal deployment unresolved.",
+  "checkout_integrity": "Versioned docs use LF per .gitattributes; #318 evidence is byte-preserved. Index is regenerated after line-ending normalization."
 }
