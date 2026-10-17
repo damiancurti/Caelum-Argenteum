@@ -4,7 +4,12 @@ class CaelumCartographyCatalogueData : Object
 {
     const MAP01_CHECKSUM = "359c5aa1daa71a0fb91bba6848818f46";
     const MAP02_CHECKSUM = "d8d3ca328f2c155e49f0216c2fea0643";
-    const MAP06_CHECKSUM = "26eb59c84f2028e436acaa4914b42727";
+    const MAP06_CHECKSUM = "46bfab9600149d7e4425c8da7278cf18";
+    const MAP06_FURNISHED_CHECKSUM = "26eb59c84f2028e436acaa4914b42727";
+    static bool MatchesCityGeometry(String checksum)
+    {
+        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM;
+    }
     const MANSION_ROOMS = 10;
     static bool MansionContains(int index,Vector3 point)
     {

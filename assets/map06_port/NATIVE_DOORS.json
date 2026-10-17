@@ -1,0 +1,13 @@
+{
+  "issue": 318,
+  "schema_revision": 1,
+  "provenance": "Native MAP06 replacement authorized 2026-10-17. Motion, wait, use distance and collision thickness retain the existing CaelumSlidingDoor/CaelumHingedDoor values; width, height and angle remain in map01_mansion/DOORS.json. IDs and storage packing are technical map metadata.",
+  "line_id_base": 30000,
+  "silent_sequence": 63,
+  "progress_max": 64,
+  "progress_per_tic": 4,
+  "hold_tics": 105,
+  "blocked_hold_tics": 18,
+  "use_vertical_distance": 64,
+  "half_thickness": 4
+}

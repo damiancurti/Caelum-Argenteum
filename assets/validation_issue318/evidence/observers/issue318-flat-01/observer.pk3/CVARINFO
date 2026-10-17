@@ -1,0 +1,2 @@
+server int ca318_warmup=35;
+server int ca318_window=175;

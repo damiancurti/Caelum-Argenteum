@@ -9,8 +9,21 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.4.28.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Native door checkpoint: 230 new native assertions pass, including current save/hub,
+obstruction/roof behavior and 600 NPC home references. ETW forward 18.46-18.84 FPS
+and ground-facing 12.61-12.69 FPS improve on old-door repeats 10.30-14.58 and
+8.46-9.57 FPS; MAP06 remains below its playability target. Detailed controls,
+limitations and failed iterations: assets/validation_issue318/RESULTS.md.
+
+The flat 1,000-Mandinga/600-soldier battle maintains normal simulation speed,
+but its sustained application FPS averages 53.54 (sprites) or 43.76 (Domingo 3D).
+The 6,000/1,000 battle remains near 1 FPS. All 40 diagnostic comparisons,
+inventory controls, frame distributions and limits are in the linked audit;
+these are not MAP06 playability acceptance or new production army/art rules.
+
 5.4.28 records the [#318](https://github.com/damiancurti/Caelum-Argenteum/issues/318)
-performance audit, contact-only demon-breath heat and standing engineering lessons. Ordinary MAP06 remains
+performance audit, contact-only demon-breath heat, native city doors, map reduction
+and standing engineering lessons. The original ordinary MAP06 remains
 unresolved: the peaceful city presents about 8-12 application frames/s in the
 measured views despite maintaining about 35 simulation tics/s. Removing the
 960 door leaves and 7,680 blockers in an isolated control improves it to about
@@ -24,8 +37,25 @@ absorbed at contact and feed it into their normal thermal update; revisioned
 migrations preserve prior applied heat without replaying old radiation. The
 1,000-attacker benchmark is a diagnostic control, not a production count change.
 Routine global actor scans are prohibited without a narrow, measured exception.
-Normal full-army deployment, stationary-door work and geometry still need fixes;
-#318 remains open and author acceptance is pending.
+The conservative MAP06 pass reduces 86,382 lines to 61,817 and
+1,574 sectors to 1,563 while preserving physical walls, roofs, materials and actors.
+Native geometry checks match at 3,006 locations, including saved reloads. Its
+measured improvement is modest; #318 remains open for deployment, further
+geometry work and author acceptance. The opaque-house experiment reaches a much
+faster native counter by changing upper space and is excluded from production.
+
+MAP06's 960 visible door leaves now use finite-height native PolyObjects, removing
+all 7,680 scripted collision helpers. The existing models, paired opening,
+NPC requests and obstruction protection remain. Closed pairs have no movement
+controller; active pairs inspect only nearby bodies. Adding their native contours
+leaves the final map at 1,565 sectors and 65,661 lines. Other maps retain their
+existing doors. This is automatic in a fresh or previously unvisited MAP06.
+
+The author waived previous-save compatibility for this replacement on 2026-10-17.
+Use a new campaign for acceptance. Original map/save backups and the optional
+`--legacy-map06-furnished` / `-LegacyMap06Furnished` recovery build remain available;
+they retain old geometry rather than converting it. Current-game save/reload and
+hub behavior are still tested. See the detailed audit for measured gains and limits.
 
 5.4.27 implements [#307](https://github.com/damiancurti/Caelum-Argenteum/issues/307):
 freed prisoners follow at their normal resolved speed, including health,

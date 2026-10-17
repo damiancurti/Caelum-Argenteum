@@ -4,11 +4,12 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 **5.4.28/#318:** contact-only breath retains absorbed watts on burning bodies;
 normal thermal scheduling consumes real-tic energy, with idempotent legacy
-migration; 69 native assertions pass. MAP06 remains unplayable; doors and
-geometry dominate peaceful cost. Army counts/maps are unchanged. #318 stays
-open for bounded deployment, door/geometry fixes and author acceptance.
-Evidence: validation_issue318/RESULTS.md. AGENTS/CA-KP-110..115 establish the
-performance priority and restrict global scans to measured exceptions.
+migration; 69 native assertions pass. MAP06 remains unplayable. MAP06 removes redundant open boundaries and
+replaces 7,680 door blockers with finite native collision for 960 visual leaves.
+The author waived old-save compatibility; current save/hub tests still apply.
+#318 needs bounded deployment, further geometry work and playability acceptance.
+40 flat tests: 1600 bodies ~35 tics/s, sustained 54/44 FPS (sprites/Domingo).
+validation_issue318/RESULTS.md; CA-KP-110..119.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;
@@ -289,8 +290,7 @@ and bow appearance. The author also confirmed the complete 4.36.1 Windows
 validator/launcher/header check. The bow stall and final flail pose are now accepted;
 detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
-The accepted #17 export remains historical. #82 closes the implemented
-V4.37 slice with a new export; remaining powers/missions, teams/network play
+Historical exports remain archived; remaining powers/missions, teams/network play
 and campaign expansion stay in V5, starting with V5.0 architecture. Current route: mansion MAP01 -> maze MAP02 -> port MAP06. The accepted
 port siege replaces the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
@@ -302,9 +302,7 @@ The #15 fronts and #80 powers are integrated; Tarot author checks passed 2026-10
 Siege rules retain their separate acceptance.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
-PROJECT contains the authoritative scope and dependency order. The author
-discontinued further weekly-allowance measurements on 2026-10-01; historical
-usage evidence remains preserved.
+PROJECT contains the authoritative scope and dependency order. Historical usage evidence remains preserved.
 
 ## Repository structure (summarized)
 

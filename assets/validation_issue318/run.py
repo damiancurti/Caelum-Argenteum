@@ -20,7 +20,7 @@ def main():
     p.add_argument('--directory',default='issue318-audit-02');p.add_argument('--variant',default='base')
     p.add_argument('--label',required=True);p.add_argument('--phase',type=int,default=0)
     p.add_argument('--site',type=int,default=1);p.add_argument('--pitch',type=int,default=0)
-    p.add_argument('--map',choices=['MAP01','MAP02','MAP06','MAP98','MAP99'],default='MAP06')
+    p.add_argument('--map',choices=['MAP01','MAP02','MAP06','MAP98','MAP99','OPENCITY'],default='MAP06')
     p.add_argument('--window',type=int,default=350);p.add_argument('--warmup',type=int,default=140)
     p.add_argument('--width',type=int,default=1280);p.add_argument('--height',type=int,default=720)
     p.add_argument('--timeout',type=int,default=240);p.add_argument('--freeze',action='store_true')

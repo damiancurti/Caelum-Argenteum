@@ -11,7 +11,35 @@ CA-KP-110 onward is the maintained performance guidance requested by the author.
 The authorized contact-only breath heat is implemented with receiver-owned
 energy and revisioned save migration. The 1,000-Mandinga control retains 600
 soldiers and does not change production counts. The global-scan exception policy
-is in AGENTS/CA-KP-115. Maps, doors and ordinary deployment remain unchanged.
+is in AGENTS/CA-KP-115. Conservative MAP06 boundary reduction is integrated;
+native finite-height city doors are also integrated. Ordinary deployment remains
+unchanged. CA-KP-116/118 record the geometry and native-door limits.
+
+On 2026-10-17 the author additionally authorized replacing MAP06's 960 door
+leaves with native PolyObjects after inspecting gz_bigcity's working swing door,
+and explicitly waived compatibility with previous saves for this work. Preserve
+the existing backups, but prioritize fresh-game behavior and measured performance.
+The replacement removes 7,680 blockers, retaining the current models, paired
+operation, access checks, NPC requests, finite height and obstruction protection.
+Native DoorSwing alone thrusts bodies and cannot renew an active wait; production
+instead uses guarded native rotations and a temporary controller per active pair.
+Current-game save/hub checks remain relevant despite the old-save waiver.
+
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
 
 Remaining implementation/acceptance work:
 
@@ -20,14 +48,14 @@ Remaining implementation/acceptance work:
 - Remove or justify inherited global scans in affected systems, including the
   utility wand's separately approved radiation. Preserve its rules until an
   equivalent measured implementation or author-approved change is available.
-- Eliminate verified unnecessary stationary-door work while preserving interaction,
-  obstruction, collision and saves; compare native alternatives only as needed.
-- Reduce measured city geometry cost with texture, thermal-shelter, route, roof,
-  collision and save/hub equivalence. A diagnostic merge is not that delivery.
+- Obtain author acceptance of the integrated native doors and measured improvement.
+- Continue reducing city geometry cost beyond the integrated conservative pass.
+  Preserve roof/flight, views, thermal shelter and current-game hub continuity. The
+  closed-house control changes upper space and is not an approved design.
 - Verify peaceful traversal, pitch changes, actual time skip, approach and sustained
   combat using application presentation and simulation metrics on the final build.
-- Preserve fresh/pre-siege/full-army saves and hub state; obtain author playability
-  acceptance. CA318-01 in pending_test.txt covers the contact-heat change;
+- Verify fresh/pre-siege/full-army saves and hub state; obtain author playability
+  acceptance. CA318-01/02/03 in pending_test.txt cover contact heat, geometry and doors;
   it is not acceptance of full MAP06 performance. No unconfirmed pass is recorded.
 
 ## 5.4.27 - Normal prisoner escort speed (#307, accepted)

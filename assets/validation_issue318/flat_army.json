@@ -1,0 +1,15 @@
+{
+  "scope": "Owned diagnostic layout, not gameplay balance. Author requested 6000 Mandingas versus 1000 soldiers, then the same tests at 1000 versus 600, with and without Mandinga inventory. Domingo is the approved visual substitute for both armies.",
+  "mandingas": 6000,
+  "soldiers": 1000,
+  "columns": 100,
+  "spacing": 48,
+  "front_x": 64,
+  "map_extent": 12000,
+  "ceiling": 12000,
+  "camera": [6500, -8500, 5000],
+  "yaw": 133,
+  "pitch": 25,
+  "warmup_tics": 35,
+  "window_tics": 175
+}

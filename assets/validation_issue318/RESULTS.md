@@ -1,4 +1,4 @@
-# MAP06 performance audit — issue #318
+# MAP06 performance audit â€” issue #318
 
 Audit delivery: 5.4.28, 2026-10-17. Tested gameplay baseline: 5.4.27,
 `006a2fff1f2505df8f4c26e123557ad885162a6e`. Issue:
@@ -7,14 +7,23 @@ Audit delivery: 5.4.28, 2026-10-17. Tested gameplay baseline: 5.4.27,
 ## Outcome and scope
 
 The peaceful city and ground-facing slowdown are reproduced. About 35 simulation
-tics/s coexist with 8–12 application presents/s. Removing doors helps substantially
+tics/s coexist with 8â€“12 application presents/s. Removing doors helps substantially
 but does not solve the problem. A diagnostic collinear-boundary merger greatly
 reduces renderer wall work; it is not a production-compatible map. Full-army siege
 simulation also stalls severely. The author then removed demon-breath radiation
 and approved retaining absorbed contact power on burning victims. This delivery
 implements that correction, with revisioned status/breath migration, alongside
 the measurements and standing policy against routine global actor scans. #318
-remains open for deployment, door/geometry fixes and author playability acceptance.
+remains open for bounded deployment, further geometry work and playability acceptance.
+The later conservative geometry pass is integrated; its evidence follows.
+The earlier unrestricted merge remains diagnostic.
+
+Native city doors are now integrated and verified (230 assertions): forward
+ETW means 18.46-18.84 FPS, pitch75 means 12.61-12.69 FPS; still below target.
+The later flat-army battery passes 40 runs. At 1,000/600, sustained means are
+53.54 FPS (sprites) and 43.76 (Domingo), with normal tic throughput but visible
+frame-time spikes. At 6,000/1,000, sustained means remain 0.86/0.81 FPS. The final
+flat section preserves all repeats, inventory ablations and limitations.
 
 The author requested exhaustive attribution before removing dispensable work.
 This audit probes 89 selected methods (90 in the deeper radiation profile,
@@ -28,7 +37,7 @@ gameplay in a diagnostic control does not establish that it is dispensable.
 ## Reproduction and measurement
 
 - GZDoom 4.14.2, Windows 11, Ryzen 9 5950X, NVIDIA RTX 3070 Ti; Vulkan hardware
-  polygon renderer, native 1280×720 except the labelled 640×360 control.
+  polygon renderer, native 1280Ã—720 except the labelled 640Ã—360 control.
 - Fresh maps, skill 2, RNG seed 116, controlled character profile, invulnerable
   player. No user campaign save is modified. Fixed input, background simulation
   and rendering enabled, master audio 0.05, VSync and frame caps disabled.
@@ -80,7 +89,7 @@ after placement, leaving 4,978 actors and all 600 soldiers:
 | View | Baseline application presents/s | No doors application presents/s |
 | --- | ---: | ---: |
 | Forward | 11.82, 11.35 | 19.41, 19.44 |
-| Down 75° | 8.44, 8.68 | 12.41, 14.27 |
+| Down 75Â° | 8.44, 8.68 | 12.41, 14.27 |
 
 This is the combined door system's effect: updates, collision helpers, sprites
 and resulting visibility/interactions. It does not isolate rendering or native
@@ -126,15 +135,15 @@ segments. Per-frame work, rather than map area or total walls alone, matters:
 | Diagnostic snapshot | Wall-processing calls | Flats | Sprites | Portal setups |
 | --- | ---: | ---: | ---: | ---: |
 | Original, forward | 64,565 | 2,193 | 2,483 | 2 |
-| Original, down 75° | 83,010 | 2,573 | 3,087 | 4 |
+| Original, down 75Â° | 83,010 | 2,573 | 3,087 | 4 |
 | Collinear merger, forward | 19,283 | 2,202 | 2,516 | 2 |
-| Collinear merger, down 75° | 24,874 | 2,573 | 3,087 | 4 |
+| Collinear merger, down 75Â° | 24,874 | 2,573 | 3,087 | 4 |
 
 `Walls` counts native `HWWall.Process` calls, not unique final visible walls.
 Removing doors leaves the original wall counts unchanged. GZDoom 4.14.2 broadens
-the horizontal frustum with pitch; above 46° it removes that angular restriction.
-At this FOV/aspect, 45° already reaches 83,010 calls, as do 47° and 75°. This is
-not proof of a universal sudden slowdown at exactly 46°. The ordinary camera
+the horizontal frustum with pitch; above 46Â° it removes that angular restriction.
+At this FOV/aspect, 45Â° already reaches 83,010 calls, as do 47Â° and 75Â°. This is
+not proof of a universal sudden slowdown at exactly 46Â°. The ordinary camera
 does not use the additional vertical subsection clipping of out-of-bounds views.
 
 Opaque one-sided walls and qualifying closed sectors can occlude angular
@@ -148,7 +157,7 @@ count to zero but retains 64,565 /
 83,010 wall calls; it does not remove the dominant geometry work.
 
 Matched controls at the downward view measure about 8.48 baseline presents/s,
-8.90 at 640×360, 9.00 with dynamic lights/actor shadows disabled, 8.74 with the
+8.90 at 640Ã—360, 9.00 with dynamic lights/actor shadows disabled, 8.74 with the
 weapon hidden and 8.92 using the user's other settings at controlled resolution/
 caps. Those single runs do not establish a meaningful small gain. Freezing
 non-player actors gives 22.36 forward / 16.29 downward; player/events remain
@@ -170,9 +179,145 @@ vertices. GZDoom's 4.14.2 UDMF loader allocates from referenced-side count and
 rejects original indices at or above that count. The failure and its diagnostics are
 preserved; it is not counted as a successful performance run.
 
+## Author-supplied city examples
+
+The local archives are `gz_bigcity.zip` (inkoalawetrust; SHA-256
+69458227134e8584f4ebd23c7468f5562694dfa4f28eb26ea5f6dbc4759d54c3)
+and `HGCCITY-R1.zip` (Hans George Campbell, 2023-10-01; SHA-256
+711d358eff567afad570021ba3e20170faa5ebe9a322d2d8097e9032d76147d2).
+The supplied forum URL could not be read because access was denied; conclusions
+come from the actual local packages. No external WAD/PK3, models, textures,
+IWAD or executable is incorporated into Caelum or distributed as evidence.
+
+| Authored topology | gz_bigcity OPENCITY | HGC City MAP01 | Original MAP06 |
+| --- | ---: | ---: | ---: |
+| Sectors | 2,995 | 5,596 | 1,574 |
+| Lines | 13,744 | 27,154 | 86,382 |
+| One-sided lines | 844 | 2,889 | Not counted in this comparison |
+| 3D-floor control definitions (special 160) | 83 | 9 | 752 |
+| Placed things | 7,512 | 3,397 | 427 |
+
+Placed things are not runtime population. gz_bigcity has 5,784 static trees
+moved to STAT_INFO, outside the default thinking-actor iterator; the extended
+census reports 1,687 thinking actors plus those trees, and zero living monsters.
+HGC reports 2,889 thinking actors and 339 living monsters in its initial census.
+Neither loads Caelum's 600 soldiers, physiology, custom door helpers or siege.
+HGC has no MODELDEF/ZSCRIPT lump and uses substantial sector/slope architecture;
+gz_bigcity combines ordinary map geometry, decorative models/voxels and a
+parallax sky camera. Its SmallCityModel is a miniature monument, not proof that
+whole playable houses were converted to models. Models alone are not native BSP
+occluders and do not supply an arbitrary walkable house collision mesh.
+
+The final `*-03` fixed-view runs use the same 4.14.2/Vulkan/1280x720 setup,
+140 warm-up and 350 measurement tics, unpaused background and 5% audio. Position,
+pitch and yaw are restored every tic; monsters remain active. Native bench FPS
+below are later point samples, **not ETW frame-window means**. PresentMon is
+unavailable for these examples. Separate callback distributions remain in JSON.
+
+| Map/view, body coordinates and yaw | Native bench FPS | Wall calls | Flats | Sprites |
+| --- | ---: | ---: | ---: | ---: |
+| gz_bigcity street (0,2000,-8), yaw90 | 73 | 5,087 | 731 | 2,694 |
+| Same, pitch75 | 39 | 11,891 | 1,718 | 7,290 |
+| gz_bigcity west street (-6000,2000,-8), yaw0 | 46 | 9,067 | 1,374 | 6,791 |
+| Same, pitch75 | 42 | 11,791 | 1,619 | 6,937 |
+| HGC quay street (-3500,-3200,-8), yaw90, facing facade | 306 | 3,462 | 587 | 1,088 |
+| Same, forced pitch75 | 184 | 7,150 | 1,293 | 1,554 |
+| HGC north position (0,7000,0), yaw0, near wall | 256 | 5,576 | 1,102 | 1,004 |
+| Same, forced pitch75 | 135 | 10,675 | 1,983 | 1,661 |
+
+Additional HGC views: quay-east close garage 223 FPS (5,205 walls); riverbank
+between containers 246 FPS (5,072 walls); open south avenue (0,-5600,-8), yaw0,
+140 FPS (2,796 walls/550 flats/888 sprites); same forced pitch75, 134 FPS
+(7,361/1,263/1,542). The open avenue captures establish a broad street view.
+Their earlier window callback rates were 155.10/68.29 per second, so the later
+bench points 140/134 cannot stand in for whole-window frame distributions.
+
+All twelve windows maintain about 35 simulation tics/s. HGC disables freelook,
+jumping and crouching; downward views are forced diagnostics outside its authored
+rules. Captures show the northern HGC position close to a wall and the quay view
+facing a facade with active monsters; these do not certify an open panoramic
+city route. gz_bigcity street captures show open scenery and its downward views
+also fall below 60. Total sector count therefore cannot predict the result.
+Walls, flats, sprite/model work, camera direction, occlusion and simulation must
+be distinguished. This comparison does not isolate texture cost independently.
+
+Earlier runs are preserved with qualifications: initial fixtures failed UI field/
+STAT_INFO qualification; both were corrected. Early labels containing 'aerial'
+actually returned to ground height and are **not aerial evidence**. Early HGC
+views began in the ship cabin and later bench coordinates drifted. The `*-02`
+auxiliary-camera experiment produced a uniformly obscured image; all its timings
+are excluded. The final `*-03` native player-camera captures were inspected.
+No two engines ran concurrently in these measurements; the author's separate
+instance started after the first suite and was retained until they closed it.
+
+The author's door near (-800,-1550) is PolyObject 2, with start spot
+(-832,-1588), anchor (-856,-1176), Polyobj_StartLine and two use/push faces
+calling Polyobj_DoorSwing(2,-16,64,105). Its source rectangle is 48x8 MU.
+The native engine supplies movement/collision; it does not approximate this leaf
+with eight custom blocker actors. The nearby garage switch is a separate ACS
+script moving tagged floors. Copying the example's blocking flag verbatim would
+block above the door too; finite-height MAP06 collision needs separate validation.
+Native non-crushing PolyObjects can still thrust bodies on obstruction. Their
+active DoorSwing also rejects repeated activation rather than renewing the hold.
+
+On 2026-10-17 the author authorized a measured native-door replacement and
+explicitly waived old-save compatibility. This supersedes the migration gate
+for the forthcoming door map; existing backups and prior save evidence remain.
+The replacement is integrated and validated as described below.
+
+## Integrated native doors: final checkpoint
+
+MAP06 now retains 960 visual leaves and uses 960 finite-height native PolyObjects,
+with zero custom blocker actors (7,680 removed). The authored city boundaries
+and materials are unchanged by the native insertion; the final map has 1,565
+sectors and 65,661 lines. Four contour lines per leaf add renderer work, but
+removing the blocker simulation still improves FPS. Other maps retain their
+existing door implementation. Old MAP06 saves are outside the author-approved
+compatibility scope; current saves and hub transitions remain tested.
+
+Final uninstrumented ABBA measurements use Vulkan, 1280x720, seed 116, skill 2,
+600 active soldiers and the same camera (-2048,320,0), yaw 180. These are ETW
+application-present means, not display refresh or callback rates:
+
+| View | Conservative geometry + old doors | Native doors |
+| --- | ---: | ---: |
+| Forward | 14.58 / 10.30 FPS | 18.84 / 18.46 FPS |
+| Pitch75 | 8.46 / 9.57 FPS | 12.69 / 12.61 FPS |
+| One repeatedly operated pair | 9.10 FPS | 19.11 FPS |
+
+All 12 performance runs (including two instrumented controls) maintain about
+35 simulation tics/s. Baseline variability is retained; no single exact speedup
+is claimed. The old blocker Tick averages 6.31277 ms/sample tic across 7,680
+calls. Native retained leaf Tick averages 0.18136 ms across 960 calls; the active
+pair guard averages 0.00465 ms inclusive. That guard number excludes native C++
+rotation and rendering; nested profile scopes cannot be added. Native thinking
+actors fall from 13,618 to 5,938. Complete intervals/tails are recorded below
+and in issue318-native-perf-01/analysis.json. MAP06 still falls far short of 60 FPS.
+
+Final native correctness evidence: issue318-native-08 has 214 new PASS assertions
+across eight runs, and issue318-door-collision-01 adds 16, totaling 230. Saved DONE
+counters are cumulative and are not summed. Coverage includes every leaf/face,
+600 correct NPC home references and a real defender request, both axes/sides,
+actual use outside the visual proxy, player touch, hold/reversal, shootable and
+mid-tic moving obstruction without thrust/damage, roof passage, model alignment,
+active-motion save/reload, current MAP06 save/hub and cartography. Closed/open
+missiles, default hitscan and thermal rays match the legacy pair: these doors
+are not opaque walls and do not block every trace type. Native tests are not
+author acceptance; CA318-01/02/03 remain pending.
+
+The deterministic verifier regenerates the map twice byte-identically, compares
+its pre-native geometry prefix against the conservative checkpoint, and checks
+960 IDs/contours and finite collision flags. Final MAP06 SHA256:
+983eedc138878cc333fa84262f8d9d9b811fc0536ee8e5468b6ee5a14c014393.
+Independent engine-source review explains the local guard ordering, floating
+angle division, back-side use flag and NOINTERACTION visual fix (CA-KP-118).
+Failed intermediate tests remain preserved: native01/05 fixture compilation,
+native02/07 fixture timing, and native04/06 exposed the model rising to its own
+midtexture floor. Final08 fixes and retests those cases.
+
 ## Mansion and sewer references
 
-| Native entry | Forward application presents/s | Down 75° application presents/s |
+| Native entry | Forward application presents/s | Down 75Â° application presents/s |
 | --- | ---: | ---: |
 | MAP01 mansion | 89.93, 88.97 | 66.66, 65.28 |
 | MAP02 sewers | 256.49, 261.88 | 246.74, 239.96 |
@@ -205,9 +350,9 @@ continued tic progress does not establish an infinite loop or deadlock.
 
 Each transfer scans all actors and processes every supported living recipient.
 Four flame segments each repeat source-to-segment visibility; each unoccluded
-segment then calls `AbsorbedAt`, with a 4×4 receiver visibility grid. At that
+segment then calls `AbsorbedAt`, with a 4Ã—4 receiver visibility grid. At that
 sample this permits up to 845,056 receiver traces; the bound is not an observed
-count. Cost scales with active transfers × eligible recipients as well as
+count. Cost scales with active transfers Ã— eligible recipients as well as
 whole-actor scans. Caching receiver-independent segment work is a candidate,
 but measured segment visibility is only about 33 ms of the much larger total.
 
@@ -282,7 +427,7 @@ windows, not sustained-battle acceptance; ETW has only 9-12 intervals per run.
 
 This is a major reduction of the thermal stall, **not a playable result**.
 The new runs still have maximum observed presentation intervals of 1.67/2.01 s.
-Final peaceful views remain 12.55 FPS forward / 8.46 downward, with approximately
+Contact-stage peaceful views remain 12.55 FPS forward / 8.46 downward, with approximately
 35 simulation tics/s. Remaining onset costs include moving door placement
 (7.51 ms/sample tic inclusive), 7,680 blockers (7.16 ms), attacker target queries
 (5.97 ms), and common combat ticking (25.21 ms, containing other profiled work).
@@ -297,6 +442,85 @@ tests. This does not certify the author's original save or the full 6,000-army
 time-skip path. The #132 staged control averages 8.01 application FPS at about
 30.72 simulation tics/s in its shorter, growing-population window; it does not
 establish the required normal deployment solution.
+
+## Integrated conservative geometry and opaque-space control
+
+The author requested fewer redundant sectors and effective opaque boundaries.
+`compact_open_geometry.py`, enabled only by the MAP06 port extension, merges
+identical untagged world sectors, removes invisible boundaries within them and
+joins collinear physically open boundaries. It rejects unsupported plane/tag/
+vertex fields and preserves unknown linedef flags. It does not merge physical
+wall or 3D-roof-edge segments, whose endpoints affect thermal shelter.
+
+| Structure | Original | Conservative production map |
+| --- | ---: | ---: |
+| Sectors | 1,574 | 1,563 |
+| Linedefs | 86,382 | 61,817 |
+| Sidedefs | 167,492 | 118,362 |
+| Vertices | 81,469 | 57,350 |
+| Things | 427 | 427 |
+| Separate 3D control sectors | 752 | 752 |
+
+The pass removes 2,544 redundant invisible lines and performs 22,021 open-boundary
+joins. Independent verification compares every oriented boundary on the original
+grid, full physical endpoints, resolved materials/lights/sector properties,
+specials, tagged sectors and things. Unoptimized serialization is byte-identical
+to the original; two independent optimized generations match the delivered WAD:
+`fa9a6932ef20e79115d7dc211df864400e87f529f9d1c966a26215d404efda00`.
+The original owned WAD is archived with provenance under `legacy_5427`:
+`8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c`.
+
+Native original/candidate/fresh-reload probes sample 3,006 authored-data-derived
+positions: all houses' rooms, entrances, internal doorways, windows, roofs and
+above-roof space, plus gates, gun routes/platforms, street/entry and river.
+All 35,353 placement, floor/ceiling, roof/wind, 3D-volume and ten-ray records match
+exactly in all four runs. These traces ignore actors and do not certify actual
+NPC pathfinding or every interactive route. Street captures preserve the visible
+layout. `issue318-geometry-02/{STATIC,NATIVE,samples}.json` records this evidence.
+
+Twelve separate normal/legacy native runs pass 117 new assertions: inside MAP06
+save continuation, repeated load/save, save outside with a visited MAP06 hub,
+return/reload, rollback to the original package/save pair, and fresh compact-map
+save/hub round trips. These peaceful-city fixtures verify the controller, population revision/counts,
+first/last defender identity, inactive siege phase, one door reference/position
+and player creation state; they do not certify an active siege or every identity. The normal and
+`-LegacyMap06Furnished` packages differ only in maps/MAP06.wad. Compatibility
+continues old geometry; it does not convert indices or reset the campaign.
+Use `run_dev.bat --legacy-map06-furnished` for an already visited furnished city,
+including off-map saves. Keep the original save/package pair for rollback.
+
+`issue318-geometry-01` uses original/safe/safe/original order at pitches 0/75,
+followed by separately labelled closed-house controls. All retain 600 soldiers,
+960 doors and 7,680 blockers. Forward native wall work falls 64,565 to 44,775;
+flats 2,193 to 1,723. Native forward counters are 12-14 original versus 14-15 safe;
+window callbacks are 12.56-13.71 versus 14.80-14.97/s. Ground native wall work falls
+83,010 to 58,757; flats 2,573 to 1,999. These are modest improvements, not 60 FPS.
+One original ground repeat's later bench records pitch 0 despite pitch 75 at its
+window and screenshot; that bench is excluded from matched ground attribution.
+Confirmation runs pin pitch and record it at the window end. The baseline
+confirmation partially overlapped package hashing, so confirmation timings/FPS
+are excluded from attribution; their later renderer counts support geometry
+inspection only. Raw anomalies and measurements remain.
+The geometry PresentMon elevation was canceled by Windows and launched no
+collector (`pid:null`); runner text saying "global collector" merely means local
+collection was suppressed. No geometry result is claimed as ETW-presented FPS.
+
+The separate `closed-interiors` experiment lowers 160 house interior ceilings
+and closes two shared wall sectors with non-sky planes. Forward native work falls
+to 1,737 walls / 145 flats, with a native counter near 60 and 59.50 callbacks/s;
+the downward control has 2,863 walls / 217 flats and 58.52 callbacks/s. Captures
+show the cost: facades extend upward and overhead/roof space is lost. This is
+not equivalent and is **excluded from production**. Transparent walls cannot
+correctly hide visible background, and invisible occluders would produce missing
+scenery. Distance-triggered real closures also alter collision, shots, sight and
+flight; 1,000 MU was an illustrative question, not an approved gameplay value.
+No district split, dynamic closure or flight restriction is implemented.
+
+Reproduce static/native preparation with `geometry_verify.py --directory <new>`;
+run `run.py` with its generated scan/reload scripts. Build normal and furnished
+legacy packages into a fresh evidence directory's current/legacy/runtime.pk3,
+then run `geometry_save_suite.py --directory <new>`. Preserve old outputs and
+frozen source packages. CA318-02 covers author geometry/continuity checks.
 
 ## Researched large-map optimization priorities
 
@@ -486,6 +710,23 @@ Application-present intervals are ETW observations, not monitor refresh. N<30 is
 | city-final-down | complete | 34.89 | 8.46 | 77 | 118.16 | 136.48 | 146.22 | 150.26 |
 | city-final-front | complete | 34.91 | 12.55 | 114 | 79.67 | 92.33 | 95.18 | 95.97 |
 
+### issue318-native-perf-01
+
+| Run | Window/process | Tics/s | App FPS | N | Mean ms | p95 ms | p99 ms | Max ms |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| active-pair | complete | 35.13 | 9.10 | 82 | 109.95 | 157.34 | 183.44 | 185.63 |
+| idle-0-1 | complete | 34.97 | 14.58 | 132 | 68.61 | 78.62 | 83.46 | 93.80 |
+| idle-0-4 | complete | 34.98 | 10.30 | 95 | 97.09 | 135.68 | 146.43 | 147.97 |
+| idle-75-1 | complete | 35.06 | 8.46 | 78 | 118.26 | 147.60 | 169.48 | 174.24 |
+| idle-75-4 | complete | 34.92 | 9.57 | 88 | 104.53 | 114.25 | 117.98 | 118.22 |
+| active-pair | complete | 34.96 | 13.33 | 123 | 75.05 | 86.26 | 93.62 | 97.14 |
+| active-pair | complete | 35.04 | 19.11 | 177 | 52.32 | 61.18 | 66.62 | 67.35 |
+| idle-0-2 | complete | 35.04 | 18.84 | 170 | 53.07 | 61.95 | 65.34 | 69.08 |
+| idle-0-3 | complete | 34.92 | 18.46 | 171 | 54.17 | 61.90 | 70.77 | 82.99 |
+| idle-75-2 | complete | 35.02 | 12.69 | 118 | 78.83 | 89.44 | 97.77 | 102.75 |
+| idle-75-3 | complete | 34.96 | 12.61 | 116 | 79.32 | 92.43 | 95.54 | 103.55 |
+| active-pair | complete | 35.03 | 17.05 | 157 | 58.67 | 67.69 | 71.59 | 77.78 |
+
 ### Final 1,000-attacker profile
 
 10 sampled onset tics; inclusive/exclusive times include probe overhead. Do not add nested inclusive costs. No ElementalStream.Transfer call occurs in this window.
@@ -527,7 +768,10 @@ Final validation:
   `issue318-functional-07/contact-final-labels` passes another 13 contact checks.
   All gameplay bytes match the complete suite; only the two release strings
   differ. `PACKAGE_VERIFICATION.json` verifies this exact qualification and all
-  16,193 final source/native/normal-package members.
+  16,193 contact-stage members. The final native08 runtime is checked against
+  every current source and normal-package member; the exact post-contact
+  geometry/cartography/door member list is recorded in PACKAGE_VERIFICATION.json.
+  The geometry03 furnished legacy package preserves the contact-stage runtime.
 - `python build_document_index.py`, `python validate_project.py` and the normal
   `build_dev.ps1` packaging pass. No production diagnostic hook is included.
   The final PK3 SHA-256 is recorded in PACKAGE_VERIFICATION.json.
@@ -539,8 +783,201 @@ Final validation:
   and unsafe-site skip attempts are not passing measurements. Missing callbacks
   are unavailable data, never zero rendering cost. Unrun extra component repeats
   remain unrun, so single-component ablations are exploratory.
-- Author acceptance is pending as CA318-01. Whole MAP06 playability, bounded
+- Author acceptance is pending as CA318-01/02/03. Whole MAP06 playability, bounded
   ordinary deployment and sustained combat remain unresolved under #318.
-- Owned engines and all four authorized ETW sessions are stopped; temporary
+- Owned engines and completed authorized ETW sessions are stopped; temporary
   keep-awake requests are released. Dependency hashes are collected after the
   runs and explicitly labelled retrospective, not per-run attestations.
+
+<!-- FLAT_START -->
+## Flat armies: sprites, Domingo model and inventory ablation
+
+The author requested 6,000 Mandingas versus 1,000 soldiers, then the same
+battery at 1,000 versus 600, and explicitly authorized removing Mandinga
+inventory for a diagnostic comparison. These changes are fixtures only.
+Normal gameplay army totals, inventory and art are unchanged.
+
+Both counts use one flat sector/four boundary lines, Vulkan 1280x720,
+seed 116, skill 2, 48-MU spacing, 100 columns, identical overhead camera and
+35 warmup tics. All bodies activate together with opposing native hate
+groups and valid targets, retain solid collisions, production stats,
+thermal simulation, breath, damage and resources. The soldiers use their
+native sword/shield AI outside the MAP06 siege controller: there are no
+city routes, carbine orders, cannon crews, commander or reinforcements.
+This isolates the flat battle; it does not certify the full MAP06 siege.
+
+The visual addon contains only MODELDEF mappings. Both army classes use
+the existing Domingo MD3 (10,689 vertices, 17,447 triangles, 375 frames;
+SHA256 bdc078573426bf82d94dc6b1d6a97f7236cdf31cdf271eabd9ef5512e1f81fa5).
+Sparse pose samples follow existing actor sprite-state timings, with
+native interpolation, existing scale and double-sided drawing. It adds
+no body/proxy/animation thinker and changes no combat state. This is an
+approved substitute, not a final Mandinga asset or a model LOD study.
+
+Inventory removal occurs once after deferred PostBeginPlay initializes
+the bodies and before the measurement window. It removes all native
+inventory objects from each Mandinga, keeps the supply revision and
+verifies zero inventory at removal, window start and end. The 6,000-body
+case removes 18,000 stacked objects/108,000 units; the 1,000-body case
+removes 3,000 objects/18,000 units. No recurring cleanup scan is installed.
+Absence of potions can change longer combat outcomes; that is a gameplay
+qualification, not permission to remove them from production.
+
+Removing inventory also changes carried weight, effective collision mass
+and attack air cost. The difference measures the complete inventory
+ablation, not exclusively the Tick cost of the removed objects. Matching
+short-run casualties/health does not prove identical resource histories.
+
+Short onset windows cover 175 tics (5 simulated seconds); sustained
+windows cover 1,050 tics (30 simulated seconds). Frozen controls stop all
+nonplayer actor thinkers at the window boundary and measure 350 tics:
+they isolate drawing plus remaining player/events, not playable combat.
+DORMANT_STAT also excludes those bodies from ordinary thinker iterators:
+event workloads change and the final ordinary census reads zero, although
+the bodies remain visible. Do not subtract this result as pure AI cost.
+The initial catch-up burst can put frozen-window tic throughput above 35;
+it is not evidence of faster combat. Profiling is a separate instrumented
+run sampled every 17 tics; inclusive nested scopes must not be added.
+
+ETW records application presents, not monitor refresh. Short windows with
+fewer than 30 intervals do not support meaningful tail claims.
+Reported percentiles are empirical values of each capture, not stable
+estimates of future tails; a threshold of 30 does not make p99 precise.
+Frozen-control FPS must never be reported as active combat. No two engines
+run together; background simulation/rendering and 5% audio remain enabled.
+
+### 6,000 versus 1,000
+
+| Run | Tics/s | App FPS | ETW N | Mean frame ms | p95 ms | p99 ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| frozen-models-02 | 36.60 | 26.16 | 226 | 38.23 | 39.17 | 39.48 |
+| frozen-models-03 | 36.60 | 26.16 | 226 | 38.22 | 39.11 | 39.39 |
+| frozen-sprites-01 | 37.31 | 169.40 | 1464 | 5.90 | 7.88 | 9.32 |
+| frozen-sprites-04 | 37.32 | 170.06 | 1469 | 5.88 | 7.68 | 8.73 |
+| inventory-empty-02 | 19.21 | 1.12 | 9 | 894.45 | - | - |
+| inventory-empty-03 | 19.53 | 1.14 | 9 | 879.29 | - | - |
+| inventory-empty-models-01 | 20.51 | 1.23 | 9 | 815.26 | - | - |
+| inventory-empty-models-02 | 20.41 | 1.23 | 9 | 813.82 | - | - |
+| inventory-kept-01 | 14.48 | 0.85 | 10 | 1178.23 | - | - |
+| inventory-kept-04 | 15.43 | 0.90 | 10 | 1105.11 | - | - |
+| models-02 | 15.81 | 0.93 | 9 | 1075.59 | - | - |
+| models-03 | 16.34 | 0.96 | 9 | 1038.02 | - | - |
+| sprites-01 | 15.83 | 0.93 | 10 | 1074.88 | - | - |
+| sprites-04 | 15.66 | 0.92 | 10 | 1087.89 | - | - |
+| sustained-empty-models | 18.17 | 1.07 | 61 | 936.95 | 1082.58 | 1114.28 |
+| sustained-empty-sprites | 19.29 | 1.14 | 61 | 880.36 | 1028.27 | 1117.23 |
+| sustained-models | 13.75 | 0.81 | 61 | 1238.32 | 1443.67 | 1498.79 |
+| sustained-sprites | 14.68 | 0.86 | 61 | 1157.81 | 1329.33 | 1398.78 |
+| combat-profile | 15.13 | 0.89 | 10 | 1127.51 | - | - |
+| inventory-empty-profile | 18.66 | 1.10 | 10 | 912.06 | - | - |
+
+Native counts, health and startup (raw log fields):
+First-tic delay is wall latency until the next WorldTick. It includes
+deferred initialization, remaining tic work and initial drawing, not
+exclusive PostBeginPlay CPU time. Spawn+activation alone is incomplete.
+
+| Run | Spawn+activation ms | First-tic delay ms | Final native census | Total living health |
+| --- | ---: | ---: | --- | ---: |
+| inventory-empty-02 | 21.319 | 211.220 | actors=7077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| inventory-empty-03 | 21.204 | 210.195 | actors=7077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| inventory-empty-models-01 | 22.849 | 526.973 | actors=7077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| inventory-empty-models-02 | 25.537 | 497.310 | actors=7077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| inventory-kept-01 | 22.294 | 210.607 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| inventory-kept-04 | 21.244 | 208.311 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| models-02 | 22.364 | 469.865 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| models-03 | 20.771 | 456.778 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| sprites-01 | 22.709 | 209.168 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| sprites-04 | 22.703 | 208.655 | actors=25077 mandingas=6000 soldiers=855 valid_targets=6770 dead=145 hurt=78 breaths=4 | 5292829 |
+| sustained-empty-models | 21.771 | 463.679 | actors=7166 mandingas=5549 soldiers=648 valid_targets=6193 dead=803 hurt=278 breaths=14 | 4705386 |
+| sustained-empty-sprites | 21.867 | 207.183 | actors=7166 mandingas=5549 soldiers=648 valid_targets=6193 dead=803 hurt=278 breaths=14 | 4705386 |
+| sustained-models | 22.866 | 475.354 | actors=25613 mandingas=5620 soldiers=627 valid_targets=6247 dead=753 hurt=268 breaths=18 | 4736832 |
+| sustained-sprites | 21.459 | 208.725 | actors=25613 mandingas=5620 soldiers=627 valid_targets=6247 dead=753 hurt=268 breaths=18 | 4736832 |
+
+### 1,000 versus 600
+
+| Run | Tics/s | App FPS | ETW N | Mean frame ms | p95 ms | p99 ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| frozen-models-02 | 36.00 | 105.40 | 953 | 9.49 | 10.24 | 10.70 |
+| frozen-models-03 | 36.13 | 106.09 | 938 | 9.43 | 10.13 | 10.47 |
+| frozen-sprites-01 | 35.67 | 472.47 | 4176 | 2.12 | 2.50 | 2.89 |
+| frozen-sprites-04 | 35.69 | 469.08 | 4148 | 2.13 | 2.56 | 2.93 |
+| inventory-empty-02 | 36.39 | 40.56 | 158 | 24.65 | 94.01 | 200.84 |
+| inventory-empty-03 | 36.47 | 37.16 | 148 | 26.91 | 96.23 | 208.92 |
+| inventory-empty-models-01 | 36.87 | 43.81 | 165 | 22.83 | 32.66 | 131.09 |
+| inventory-empty-models-02 | 37.22 | 42.78 | 164 | 23.38 | 47.65 | 128.53 |
+| inventory-kept-01 | 36.57 | 33.09 | 132 | 30.22 | 102.13 | 217.62 |
+| inventory-kept-04 | 36.60 | 26.58 | 107 | 37.62 | 132.05 | 222.88 |
+| models-02 | 36.66 | 35.46 | 140 | 28.20 | 59.89 | 149.13 |
+| models-03 | 37.37 | 40.79 | 156 | 24.52 | 43.75 | 128.55 |
+| sprites-01 | 36.59 | 36.34 | 145 | 27.52 | 100.90 | 213.45 |
+| sprites-04 | 36.56 | 30.10 | 115 | 33.22 | 114.99 | 243.01 |
+| sustained-empty-models | 35.28 | 42.74 | 1233 | 23.40 | 30.99 | 52.51 |
+| sustained-empty-sprites | 35.21 | 49.86 | 1441 | 20.06 | 28.45 | 94.56 |
+| sustained-models | 35.36 | 43.76 | 1268 | 22.85 | 27.27 | 42.98 |
+| sustained-sprites | 35.26 | 53.54 | 1548 | 18.68 | 22.31 | 99.76 |
+| combat-profile | 36.84 | 28.96 | 107 | 34.53 | 115.87 | 255.13 |
+| inventory-empty-profile | 36.50 | 36.78 | 146 | 27.19 | 90.53 | 197.34 |
+
+Native counts, health and startup (raw log fields):
+First-tic delay is wall latency until the next WorldTick. It includes
+deferred initialization, remaining tic work and initial drawing, not
+exclusive PostBeginPlay CPU time. Spawn+activation alone is incomplete.
+
+| Run | Spawn+activation ms | First-tic delay ms | Final native census | Total living health |
+| --- | ---: | ---: | --- | ---: |
+| inventory-empty-02 | 4.591 | 128.578 | actors=1663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| inventory-empty-03 | 4.160 | 127.601 | actors=1663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| inventory-empty-models-01 | 4.788 | 364.190 | actors=1663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| inventory-empty-models-02 | 4.180 | 363.132 | actors=1663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| inventory-kept-01 | 4.681 | 128.348 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| inventory-kept-04 | 4.371 | 128.415 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| models-02 | 4.703 | 371.961 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| models-03 | 4.468 | 363.549 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| sprites-01 | 4.705 | 128.954 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| sprites-04 | 4.656 | 128.378 | actors=4663 mandingas=1000 soldiers=438 valid_targets=1357 dead=162 hurt=63 breaths=5 | 1180297 |
+| sustained-empty-models | 4.878 | 364.782 | actors=1702 mandingas=592 soldiers=278 valid_targets=869 dead=730 hurt=218 breaths=9 | 683507 |
+| sustained-empty-sprites | 5.042 | 133.302 | actors=1702 mandingas=592 soldiers=278 valid_targets=869 dead=730 hurt=218 breaths=9 | 683507 |
+| sustained-models | 4.700 | 364.226 | actors=5036 mandingas=638 soldiers=240 valid_targets=877 dead=722 hurt=163 breaths=3 | 692777 |
+| sustained-sprites | 4.568 | 130.621 | actors=5036 mandingas=638 soldiers=240 valid_targets=877 dead=722 hurt=163 breaths=3 | 692777 |
+
+### Sampled subsystem costs
+
+Values below are **exclusive ms/sample tic**, not GPU costs. Nested
+inclusive costs and call counts are retained in analysis.json.
+The CombatActor.Tick remainder includes code and native work outside
+the selected probes; this table is not a complete engine profiler.
+
+| Method | 7000 full | 7000 empty | 1600 full | 1600 empty |
+| --- | ---: | ---: | ---: | ---: |
+| CaelumCombatActor.Tick | 13.90 | 13.78 | 3.06 | 2.97 |
+| CaelumDemonBreath.Mouth | 4.74 | 4.54 | 0.71 | 0.69 |
+| CaelumCombatActor.NativeTick | 4.54 | 4.25 | 0.93 | 0.87 |
+| CaelumWeightPressure.MassAbove | 4.41 | 4.06 | 0.80 | 0.79 |
+| CaelumDemonService.UpdateBreath | 3.58 | 3.44 | 0.57 | 0.55 |
+| CaelumWeightPressure.Update | 3.10 | 1.21 | 0.31 | 0.19 |
+| CaelumElementalStatus.Tick | 2.69 | 2.67 | 0.60 | 0.58 |
+| CaelumCombatActor.UpdateCombatHealthEffects | 2.39 | 2.44 | 0.52 | 0.54 |
+| CaelumThermalBody.Get | 2.33 | 2.32 | 0.48 | 0.51 |
+| CaelumCarbineWorld.Restore | 2.20 | 2.18 | 1.30 | 1.28 |
+| CaelumCombatActor.UpdateActorOffensiveStatistics | 2.13 | 2.14 | 0.46 | 0.48 |
+| CaelumCombatActor.CollidedWith | 1.88 | 0.66 | 0.65 | 0.35 |
+| CaelumThermalBody.Refresh | 1.39 | 0.94 | 0.28 | 0.22 |
+| CaelumThermalRuntime.NPCStep | 1.17 | 1.04 | 0.23 | 0.17 |
+| CaelumDemonBreath.CanReach | 0.94 | 0.99 | 0.16 | 0.17 |
+| CaelumCombatActor.IsCombatIdle | 0.87 | 0.87 | 0.19 | 0.18 |
+| CaelumDemonService.Initialize | 0.83 | 0.83 | 0.14 | 0.13 |
+| CaelumCombatActor.ResourceRecoveryActive | 0.76 | 0.75 | 0.15 | 0.12 |
+| CaelumDemonService.UpdatePotions | 0.71 | 0.71 | 0.13 | 0.13 |
+| CaelumWeightPressure.WorldTick | 0.68 | 0.52 | 0.15 | 0.11 |
+| CaelumThermalMotion.Physics | 0.62 | 0.61 | 0.14 | 0.13 |
+| CaelumDemonService.StopBreath | 0.46 | 0.47 | 0.08 | 0.08 |
+| CaelumPopulationState.Refresh | 0.43 | 0.19 | 0.06 | 0.03 |
+| CaelumThermalMotion.Path | 0.40 | 0.39 | 0.09 | 0.08 |
+
+Reproduce with flat_army_fixture.py (default 6,000/1,000, or
+--mandingas 1000 --soldiers 600), flat_controls.py, flat_suite.py and
+flat_inventory_suite.py. Use fresh directories; preserve old labels.
+Stop the authorized ETW collector before analyze.py reads its CSV, then
+run flat_report.py. Runtime/member hashes, exact commands, native logs,
+CPU samples, raw ETW and selected captures accompany the evidence.
+<!-- FLAT_END -->

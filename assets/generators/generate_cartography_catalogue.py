@@ -9,13 +9,17 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def map_checksum(name, root=ROOT):
-    data = (root / 'src/maps' / (name + '.wad')).read_bytes()
+    return wad_checksum(root / 'src/maps' / (name + '.wad'))
+
+
+def wad_checksum(path):
+    data = path.read_bytes()
     _, count, directory = struct.unpack_from('<4sii', data)
     for i in range(count):
         start, size, lump = struct.unpack_from('<ii8s', data, directory + i * 16)
         if lump.rstrip(b'\0') == b'TEXTMAP':
             return hashlib.md5(data[start:start + size]).hexdigest()
-    raise ValueError(f'Missing TEXTMAP: {name}')
+    raise ValueError(f'Missing TEXTMAP: {path}')
 
 
 def render(root=ROOT):
@@ -30,6 +34,12 @@ def render(root=ROOT):
              'class CaelumCartographyCatalogueData : Object', '{']
     for name in ['MAP01', 'MAP02', 'MAP06']:
         lines.append(f'    const {name}_CHECKSUM = "{map_checksum(name, root)}";')
+    # Both layouts share exactly the same authored POI coordinates and IDs.
+    furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
+    lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',
+              '    static bool MatchesCityGeometry(String checksum)', '    {',
+              '        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM;',
+              '    }']
     lines += [f'    const MANSION_ROOMS = {len(rooms)};',
               '    static bool MansionContains(int index,Vector3 point)', '    {',
               '        switch(index)', '        {']

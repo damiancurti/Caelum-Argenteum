@@ -50,6 +50,9 @@ def main():
             else:public=sanitize(path.read_text(encoding='utf-8',errors='replace')).encode()
             save(path.relative_to(ROOT/'build').as_posix(),path.read_bytes(),public)
         for path in sorted(folder.glob('*.json')):
+            # These local inspections contain copied external UDMF excerpts.
+            # Publish derived counts/attribution, not the supplied map source.
+            if path.name in ('DOOR_INSPECTION.json','POLY2.json'):continue
             save(path.relative_to(ROOT/'build').as_posix(),path.read_bytes(),sanitize(path.read_text()).encode(),compressed=path.name!='analysis.json')
         csv=folder/'presentmon-global.csv'
         if csv.exists():save(csv.relative_to(ROOT/'build').as_posix(),csv.read_bytes())
@@ -65,6 +68,36 @@ def main():
     for label in ('render-01-base','render-03-base','references-01-base','references-06-base','geometry2-01-base'):
         path=work/'base'/(label+'.png')
         if path.exists():save('captures/'+path.name,path.read_bytes(),compressed=False)
+    for label in ('geometry-0-1-base','geometry-0-2-safe','geometry-0-5-closed-interiors'):
+        path=ROOT/'build/issue318-geometry-01/base'/(label+'.png')
+        if path.exists():save('captures/'+path.name,path.read_bytes(),compressed=False)
+    for directory,label in [('issue318-city-example-03','street-north'),
+                            ('issue318-city-example-03','street-down'),
+                            ('issue318-hgc-city-03','south-avenue-east')]:
+        path=ROOT/'build'/directory/'original'/(label+'.png')
+        if path.exists():save('captures/'+directory+'-'+path.name,path.read_bytes(),compressed=False)
+    for label in ('native-doors','native-map06-door'):
+        path=ROOT/'build/issue318-native-08/current'/(label+'.png')
+        if path.exists():save('captures/'+path.name,path.read_bytes(),compressed=False)
+    for directory in ('issue318-flat-01','issue318-flat-1600-01'):
+        for label in ('sprites-01','models-02','frozen-sprites-01','frozen-models-02',
+                      'inventory-empty-02','sustained-sprites','sustained-models'):
+            path=ROOT/'build'/directory/'current'/(label+'.png')
+            if path.exists():save('captures/'+directory+'-'+path.name,path.read_bytes(),compressed=False)
+        for fixture in ('observer.pk3','domingo.pk3','freeze.pk3','no-inventory.pk3'):
+            path=ROOT/'build'/directory/'current'/fixture
+            if path.exists():
+                with zipfile.ZipFile(path) as archive:
+                    for member in archive.namelist():
+                        if member.endswith('.zs') or member in ('MODELDEF','MAPINFO','CVARINFO'):
+                            save('observers/'+directory+'/'+fixture+'/'+member,archive.read(member),compressed=False)
+    for directory,fixture,member in [('issue318-city-example','observer.pk3','probe.zs'),
+                                   ('issue318-city-example-02','observer.pk3','probe.zs'),
+                                   ('issue318-city-example-03','observer.pk3','probe.zs')]:
+        path=ROOT/'build'/directory/'original'/fixture
+        if path.exists():
+            with zipfile.ZipFile(path) as archive:raw=archive.read(member)
+            save('observers/'+directory+'.zs',raw,compressed=False)
     # External engine source stays local; publish only URLs/hashes and short research notes.
     for name in ('review-source-manifest.json',):
         path=work/'engine-source'/name

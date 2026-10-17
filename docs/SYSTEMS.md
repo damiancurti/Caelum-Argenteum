@@ -12,6 +12,14 @@ retained. The existing #132 reinforcement CVar is
 still an opt-in experiment, not completion of the new normal-play requirement.
 Do not silently adopt a new live population/group budget from a benchmark.
 
+The additional flat-map tests compare 6,000 Mandingas/1,000 sword-and-shield
+soldiers with 1,000/600, including the author-approved Domingo visual substitute
+and author-requested empty Mandinga inventory. These are isolated diagnostics:
+normal inventory, army budgets, RPG resources/collision and production art remain
+authoritative. Inventory removal changes carried weight, attack air and collision
+mass as well as potion use; it is not a gameplay-equivalent optimization.
+The recorded 1,000/600 result does not validate MAP06's geometry or controller.
+
 The author removed demon-breath radiation and selected the absorbed contact
 power for persistent burning heat. Only accepted local contacts receive it,
 including the existing summoned-demon and Redemption restrictions. The previous
@@ -40,12 +48,54 @@ a documented correctness need, bounded trigger/frequency and measured large-map
 cost; see AGENTS and CA-KP-115.
 
 Door removal, idle-blocker controls, component disabling, scene freezing and
-geometry simplification under validation_issue318 are isolated diagnostics.
+unrestricted collinear merging under validation_issue318 are isolated diagnostics.
 Their improved timings do not authorize removing required collision, physiology,
 resources or individual combat. In particular, collinear merging may change
 texture phase and line-endpoint-based thermal shelter classification, even when
 physical boundaries are retained. It needs equivalence and save/hub validation
 before any production use. Keep the >=500 automatic policy authoritative.
+
+The subsequent author-requested conservative MAP06 reduction is integrated into
+normal generation: 1,574 to 1,563 sectors and 86,382 to 61,817 lines. Only identical
+untagged world sectors and physically open boundaries are simplified. Every
+physical wall endpoint, texture, light, tagged sector, 3D control and map actor
+is preserved. Native probes compare 3,006 positions, including roofs, windows,
+interiors and gun routes. This static map reduction applies to fresh/unvisited
+MAP06 regardless of population; it adds no per-tic actor scan or hidden barrier.
+
+The author then authorized replacing MAP06's 960 leaves with native PolyObjects
+and waived previous-save compatibility (2026-10-17). The original models remain
+nonphysical visuals; finite two-sided 3D middle textures provide 64-by-8-MU
+collision up to 120 MU. Both sides of each native face accept Use. Six mapped
+leaves per home replace runtime interior placement and all 7,680 blocker actors.
+The final geometry has 1,565 sectors and 65,661 lines, including disconnected
+storage for the native contours; physical city boundaries remain unchanged.
+
+Requests address the registered pair directly, preserving its existing access
+checks, swing-away direction, 90-degree travel in 16 movement tics, 105-tic wait,
+wait renewal and interrupted-close reopening. One temporary controller guards
+each active pair. Moving/blocked pairs inspect only nearby solid bodies, using
+the native axis-aligned actor boxes against the swept door rectangle. Fresh
+controller/action ordering prevents a body from moving between the check and
+native rotation. No thrust or crushing is permitted. Closed pairs have no such
+controller. The existing owned opening sound remains; native motion is silent.
+Other maps and legacy MAP06 layouts keep their prior actor-door path.
+
+Fresh/unvisited MAP06 uses this geometry automatically. Current saves preserve
+native line references, pair registry and active controller/action order; do not
+re-register an already rotated leaf on reload. Previous-save conversion is not a
+delivery gate under the author's waiver. Exact backups and optional
+LegacyMap06Furnished recovery builds remain; these retain rather than convert
+old geometry. The earlier geometry-continuation evidence is historical proof
+for that checkpoint, not certification of every old save on the native map.
+
+Opaque closure is a separate design control: closing the house walls/interiors
+makes the native renderer discard much more geometry, but extends facades upward
+and removes overhead/roof space. It is excluded from production. Transparent
+walls cannot correctly discard visible background; invisible occluders would
+hide visible scenery. A distance trigger can change a real closure, but also
+changes collision, shots, AI sight and flight. The suggested 1,000 MU is an
+example, not an approved rule. District/map splitting remains a design option.
 
 Performance acceptance must distinguish frame presentation from simulation
 throughput. The author expects 60 FPS in mansion/sewers; fixed entrance checks
@@ -1203,7 +1253,7 @@ No new warning, quest, route permission, map geometry or gameplay actor is added
 | MAP06 `city-east-exit` | CITY.json east-arch bounds/headroom | Crossing the arch plane inside its passage |
 | MAP06 `city-tower-0..3` | CITY.json tower footprints and walk/deck heights | Entry at the tower's physical heights |
 | MAP06 `city-shop-<ShopIdentity>`, `city-bed-<house>` | Existing merchant identity or furniture slot | Service interaction |
-| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
+| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current compact or exact legacy_5427 furnished TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
 | MAP06 `port-covered-cart`, `port-merchant-ship` | Existing vehicle instance | Boarding interaction, even when route 10 remains unavailable |
 
 Room bounds deliberately omit secret spaces, labels and connections. Entering a
@@ -1232,7 +1282,11 @@ though it dispatches through their controller; lower-grate use records them.
 Use hooks grant no key, permission, faction standing or quest progress.
 
 Generated room/tower/crossing data is guarded by the loaded level's native
-TEXTMAP checksum. Unsupported older geometry receives no current-layout region
+TEXTMAP checksum. MAP06 accepts the compact current map and exact legacy_5427
+furnished layout, whose authored coordinates and IDs are identical. Future
+coordinate/ID edits must preserve a separate legacy table or remove eligibility
+explicitly; a new checksum alone cannot prove catalogue compatibility.
+Unsupported older geometry receives no current-layout region
 coordinates. Real services keep actor-relative observations and explicit saved
 identities; old port gates use their own layout ID and neutral label. Transient
 crossing samples reset on load, so loading beside the arch is not a crossing.

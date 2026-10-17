@@ -4,6 +4,29 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
 
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
+
+
+Native door checkpoint: 230 new native assertions pass, including current save/hub,
+obstruction/roof behavior and 600 NPC home references. ETW forward 18.46-18.84 FPS
+and ground-facing 12.61-12.69 FPS improve on old-door repeats 10.30-14.58 and
+8.46-9.57 FPS; MAP06 remains below its playability target. Detailed controls,
+limitations and failed iterations: assets/validation_issue318/RESULTS.md.
+
 On 2026-10-17 the author requested exhaustive cost/FPS evidence for the slow
 600-soldier city, ground-facing views and unresponsive November siege. Matched
 controls identify expensive stationary door helpers, large renderer boundary
@@ -19,8 +42,10 @@ applied once, Toughness health healing cannot reverse heat, and generic burns
 do not invent contact power. Status/breath revision 1 migration is idempotent;
 old unknown watts start at zero, old untransferred radiation is discarded
 without replay/refund, and prior applied heat/resource history remains. Rest/
-journey guards and resurrection handle the new queue. Map geometry, door actors,
-ordinary encounter counts and utility-wand radiation remain unchanged.
+journey guards and resurrection handle the new queue. That first checkpoint
+leaves map geometry unchanged; the subsequent geometry change is recorded below.
+Ordinary counts and utility-wand radiation remain unchanged; subsequent
+native-door work is recorded below.
 
 Final isolated correctness suite passes 69 assertions across 12 runs, plus one
 genuine prior-runtime seed marker, including multiple local
@@ -38,8 +63,49 @@ Final native release-label smoke adds 13 passing contact assertions; all 16,193
 packaged members match source. Document index, project validation and normal
 packaging pass. Independent review found no additional production blocker.
 
-#318 remains open for bounded ordinary deployment, door/geometry changes,
-sustained-combat fluency and author playability acceptance. CA318-01 is pending;
+The author subsequently requested redundant-sector reduction and valid opaque
+boundaries. The conservative production pass changes MAP06 from 1,574 sectors /
+86,382 lines to 1,563 / 61,817, preserving physical wall endpoints, materials,
+lights, 3D controls/target sectors and actors. Unoptimized serialization matches
+the old WAD; two optimized generations are byte-identical. Native placement,
+thermal shelter, 3D-volume and ten-ray checks at 3,006 positions produce 35,353
+identical records before/after and after each saved reload. Twelve additional
+save/continuation/hub/rollback runs pass 117 new assertions. The exact previous
+furnished WAD is preserved under legacy_5427 with hash/provenance and the public
+LegacyMap06Furnished option. Existing campaigns retain that geometry; fresh or
+unvisited MAP06 uses the reduced map. No population/layout revision is reset.
+The closed-house control reaches about 60 on the native counter but extends
+facades upward and removes roof/flight space; it remains explicitly diagnostic.
+Its result is not ETW evidence or approval of that layout. CA-KP-116 records the
+occlusion, distance-trigger and compatibility limits. CA318-02 remains pending.
+
+The author supplied gz_bigcity and HGC City for comparative testing, then
+authorized replacing MAP06 doors after inspecting a native PolyObject swing
+door in gz_bigcity. On 2026-10-17 he explicitly waived old-save compatibility
+for this work. That waiver withdraws the old-map continuation acceptance gate;
+it is not confirmation that CA318-02 or a previous-save test passed. Backups and
+the optional exact furnished recovery build remain available.
+
+MAP06 now maps all 960 finite native leaves and retains their owned models.
+It removes 7,680 scripted blockers and runtime interior-door insertion. Closed
+pairs have no movement controller; a temporary local guard preserves paired
+use, wait renewal, reversing and non-thrusting obstruction behavior. Other maps
+keep their actor-door behavior. Native geometry adds two storage sectors and
+3,844 lines to the reduced layout (final 1,565 sectors / 65,661 lines). Two
+regenerations match byte-for-byte; removing only the native addition reproduces
+the previously verified conservative map exactly.
+
+Isolated native tests cover both axes/sides, direct Use outside the visual proxy,
+moving shootable obstructions, model/collision alignment, current saved motion,
+all 960 physical leaf positions, roof passage, hub return and cartography.
+The tests exposed and corrected touching-body rejection, the visual actor rising
+onto its own native collision, integer angle truncation and a fixture that kept
+the player at the closing doorway. Failures remain in the evidence. CA-KP-118
+records the verified engine behavior; the external examples retain their own
+attribution and are not incorporated or distributed as project assets.
+
+#318 remains open for bounded ordinary deployment, further geometry changes,
+sustained-combat fluency and author playability acceptance. CA318-01/02/03 are pending;
 native tests and a PR do not establish author acceptance. Earlier diagnostic
 fixture failures and incomplete measurements are retained, not counted as passes.
 

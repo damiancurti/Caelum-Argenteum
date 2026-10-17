@@ -4,6 +4,23 @@ Documentation version: **5.4.28** — 2026-10-17.
 
 ## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
 
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
+
+
 The author reports an unresponsive November siege transition, a slow peaceful
 600-soldier city, and further slowdown when looking down after one or two streets.
 The audit reproduces poor city frame presentation independently of demons:
@@ -22,7 +39,19 @@ uses local contact queries and normal thermal scheduling, with revisioned,
 idempotent migration. Routine whole-world actor scans require a narrow measured
 exception. A 1,000-attacker benchmark does not alter the normal encounter total.
 #318 remains open: normal deployment still creates the full army together;
-door/geometry fixes, sustained-combat fluency and author acceptance are outstanding.
+further geometry work, sustained-combat fluency and acceptance remain.
+The authorized conservative map pass removes 11 redundant sectors and 24,565
+open/redundant boundaries without changing physical walls, materials or actors.
+Native probes at 3,006 positions match before/after and reload. Existing furnished
+MAP06 campaigns had an exact `LegacyMap06Furnished` continuation checkpoint.
+The author subsequently authorized native city doors and waived previous-save
+compatibility. MAP06 now retains 960 visual leaves with finite native collision,
+removing 7,680 scripted blockers; a local active-pair controller prevents thrust
+and preserves normal paired operation. Other maps keep their accepted doors.
+Fresh gameplay, current saves/hub return and measured performance are the gates;
+the exact old map and recovery option remain available. CA-KP-118 records the
+native collision, visual-physics and activation lessons.
+The much faster closed-house experiment changes upper space and stays diagnostic.
 Prior #304/#305 acceptance does not resolve this defect.
 
 ## 5.4.27 - Prisoner escort speed (#307)

@@ -1,13 +1,40 @@
 CA318-01 | Origin 5.4.28 / issue #318 | Contact-only demon-breath heat
-Prerequisites: rebuild 5.4.28; retain a backup of an existing save. Use a reachable
+Prerequisites: rebuild 5.4.28 and use a fresh campaign. Use a reachable
 Mandinga or Zupay and the normal thermal display. MAP06 performance acceptance is
 separate and remains unresolved; this check does not require a full-army siege.
 Steps: receive direct breath, then leave its cone/range. Observe burning heat;
 repeat behind a solid wall and near breath without direct contact. Save/reload
-while burning, then test an existing pre-5.4.28 save with a demon present.
+while burning. Previous-save acceptance was waived by the author on 2026-10-17.
 Expected: direct contact burns and contributes positive heat while its fire lasts
 (ambient exchange still affects the net temperature);
 nearby untouched bodies and the emitter receive no breath radiation. Walls block
 contact. Reload preserves the remaining effect without a heat spike or reset;
-old saves load without replaying pending radiation. Report any visual, resource,
+Report any visual, resource,
 temperature, interruption or save regression. Author confirmation is pending.
+
+CA318-02 | Origin 5.4.28 / issue #318 | Conservative MAP06 geometry
+Prerequisites: use a fresh campaign and the normal 5.4.28 build. Existing backups
+remain available; previous-save continuation was explicitly waived by the author
+on 2026-10-17 and is not reported as passed.
+Steps: walk the first streets, enter/leave houses, use doors, inspect windows and
+rooftops, fly over buildings and follow wall/tower stairs. Check ground-facing views.
+Save/reload; leave and return through the hub.
+Expected: unchanged visible layout, materials, collision, roof/flight space and
+interactions; no lost or duplicated defenders, doors or campaign progress. Compare
+frame behavior and report location/view for any regression. This partial reduction
+does not establish that the peaceful city or siege is playable. Author acceptance
+and remaining MAP06 performance work are pending.
+
+CA318-03 | Origin 5.4.28 / issue #318 | Native MAP06 doors
+Prerequisites: fresh MAP06 using the normal 5.4.28 build; this check does not
+require loading an old campaign or starting the full-army siege.
+Steps: use front and interior doors from both sides, including while touching
+their visible faces. Reuse an open/closing pair; stand or place a body in its
+swing path. Move out of the path, walk through, and fly above roof height.
+Save during opening or an obstructed pause, reload, then leave/return through
+the hub. Observe the retained models and sound. Compare the first street and
+ground-facing FPS with the documented benchmark on the same settings.
+Expected: paired normal opening, renewed wait, unobstructed passage when open,
+no pushing/crushing, no rising or detached models, and finite vertical collision.
+No duplicated/missing leaves after reload/hub return. Native checks and measured
+gains do not establish 60 FPS or full MAP06 playability. Author acceptance pending.

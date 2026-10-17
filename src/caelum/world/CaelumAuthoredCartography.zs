@@ -53,7 +53,7 @@ class CaelumAuthoredCartography : Object play
                 && bed.TrialSlot<CaelumCityData.FURNITURE_SLOT_BASE+CaelumCityData.HOUSE_COUNT)
             {id=String.Format("city-bed-%d",bed.TrialSlot-CaelumCityData.FURNITURE_SLOT_BASE);nameKey="CA_POI_CITY_BED";}
             else if(CaelumCityData.Enabled() && category==CaelumPoiData.STATION && station!=null
-                && level.GetChecksum()==CaelumCartographyCatalogueData.MAP06_CHECKSUM)
+                && CaelumCartographyCatalogueData.MatchesCityGeometry(level.GetChecksum()))
             {
                 // El origen identifica la instancia del mapa aunque después se mueva.
                 id=CaelumCartographyCatalogueData.CityStationId(station.SpawnPoint);
@@ -98,7 +98,7 @@ class CaelumAuthoredCartography : Object play
                         CaelumCartographyCatalogueData.MansionPosition(i));
         }
         else if(level.MapName=="MAP06" && CaelumCityData.Enabled()
-            && record.CartographyChecksum==CaelumCartographyCatalogueData.MAP06_CHECKSUM)
+            && CaelumCartographyCatalogueData.MatchesCityGeometry(record.CartographyChecksum))
         {
             for(int i=0;i<4;i++)if(CaelumCartographyCatalogueData.TowerContains(i,user.Pos))
                 CaelumPoiKnowledge.Record(user,String.Format("city-tower-%d",i),CaelumPoiData.TOWER,

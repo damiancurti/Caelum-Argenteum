@@ -76,7 +76,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--directory',default='issue318-audit-02');a=p.parse_args()
     out=ROOT/'build'/a.directory;results=analyze(out)
     etw=[]
-    for path in sorted((ROOT/'build').glob('issue318-audit-*/presentmon-global.csv')):
+    collectors=set((ROOT/'build').glob('issue318-audit-*/presentmon-global.csv'))
+    collectors.update((ROOT/'build').glob('issue318-flat-*/presentmon-global.csv'))
+    if (out/'presentmon-global.csv').exists():collectors.add(out/'presentmon-global.csv')
+    for path in sorted(collectors):
         try:
             with path.open(encoding='utf-8-sig',newline='') as stream:etw.extend(csv.DictReader(stream))
         except PermissionError:continue

@@ -1,0 +1,2 @@
+GameInfo { AddEventHandlers="CA318FlatArmy" }
+map MAP98 "Flat army diagnostic" { next="MAP98" }

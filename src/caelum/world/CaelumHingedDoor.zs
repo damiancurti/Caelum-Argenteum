@@ -4,6 +4,12 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
 {
     int LastProgress;
     int SwingSide;
+    Line NativeReferenceLine;
+    Array<Line> NativeFaces;
+    double NativeClosedAngle;
+    CaelumPolyDoorMotion NativeMotion;
+
+    override bool NativeDoorCollision(){return args[4]>0;}
 
     override void PostBeginPlay()
     {
@@ -12,10 +18,18 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
         Angle = (args[2] == 0 ? 0 : 90) + (args[1] > 0 ? 180 : 0);
         bWallSprite = false;
         Scale = (1, 1);
+        if(NativeDoorCollision())
+        {
+            // La hoja es sólo representación: no debe subirse sobre su propio
+            // midtexture al detenerse. El uso se recibe por las caras nativas.
+            bSolid=false;bNoInteraction=true;
+            let events=CaelumPolyDoorEvents.Get();if(events!=null)events.Register(self);
+        }
     }
 
     override bool RequestDoorGroup(Actor user)
     {
+        if(NativeDoorCollision())return CaelumPolyDoors.Request(self,user);
         if (!Super.RequestDoorGroup(user)) return false;
         // Las conexiones indicadas abren hacia los cuartos centrales para
         // evitar las camas. Las otras hojas abren al lado opuesto al usuario.

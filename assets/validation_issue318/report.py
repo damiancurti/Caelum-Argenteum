@@ -8,7 +8,7 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).resolve().parent
 def digest(data):return hashlib.sha256(data).hexdigest()
 def number(value):return '-' if value is None else f'{value:.2f}'
-directories=('issue318-audit-02','issue318-contact-01','issue318-contact-02')
+directories=('issue318-audit-02','issue318-contact-01','issue318-contact-02','issue318-native-perf-01')
 lines=['Application-present intervals are ETW observations, not monitor refresh. '
        'N<30 is a short sample: tails are omitted here; raw descriptive quantiles '
        'remain in JSON. A transition stall may lie outside the trimmed ETW '
@@ -42,19 +42,34 @@ source={p.relative_to(ROOT/'src').as_posix():digest(p.read_bytes()) for p in sor
 package=ROOT/'build/caelum_argenteum_dev.pk3'
 with zipfile.ZipFile(package) as z:packed={n:digest(z.read(n)) for n in z.namelist()}
 assert source==packed,'Normal package differs from source'
-with zipfile.ZipFile(ROOT/'build/issue318-functional-07/current/runtime.pk3') as z:
+with zipfile.ZipFile(ROOT/'build/issue318-native-08/current/runtime.pk3') as z:
     tested={n:digest(z.read(n)) for n in z.namelist()}
 assert source==tested,'Final native package differs from source'
+with zipfile.ZipFile(ROOT/'build/issue318-functional-07/current/runtime.pk3') as z:
+    contact={n:digest(z.read(n)) for n in z.namelist()}
+native_changes=['MAPINFO','TEXTURES','ZSCRIPT','SNDSEQ',
+ 'caelum/data/CaelumCartographyCatalogueData.zs','caelum/data/native_doors.textures',
+ 'caelum/world/CaelumAuthoredCartography.zs','caelum/world/CaelumCityInteriorDoors.zs',
+ 'caelum/world/CaelumHingedDoor.zs','caelum/world/CaelumSlidingDoor.zs',
+ 'caelum/world/CaelumNativeDoorData.zs','caelum/world/CaelumPolyDoors.zs','maps/MAP06.wad']
+assert sorted(n for n,h in source.items() if contact.get(n)!=h)==sorted(native_changes), 'Unexpected post-contact runtime change'
+assert not set(contact)-set(source), 'Unexpected removed contact member'
+with zipfile.ZipFile(ROOT/'build/issue318-geometry-03/legacy/runtime.pk3') as z:
+    legacy={n:digest(z.read(n)) for n in z.namelist()}
+assert legacy==contact, 'Legacy furnished package must preserve the tested contact runtime and old map'
 with zipfile.ZipFile(ROOT/'build/issue318-functional-06/current/runtime.pk3') as z:
     earlier={n:z.read(n) for n in z.namelist()}
-differences=[n for n,h in source.items() if digest(earlier[n])!=h]
+differences=[n for n,h in source.items() if n not in earlier or digest(earlier[n])!=h]
 labels=['caelum/world/CaelumPhysicalHazards.zs','caelum/world/CaelumSewerMaze.zs']
-assert sorted(differences)==sorted(labels)
+assert sorted(differences)==sorted(labels+native_changes)
 for n in labels:assert earlier[n].replace(b'[Caelum 5.4.27]',b'[Caelum 5.4.28]')==(ROOT/'src'/n).read_bytes()
 verification={'source_members':len(source),'normal_package_sha256':digest(package.read_bytes()),
  'source_tree_sha256':digest(json.dumps(source,sort_keys=True).encode()),
  'normal_package_matches_source':True,'final_native_package_matches_source':True,
- 'functional06_to_final_changes':'Only two diagnostic release-label strings; exact replacement verified',
- 'diagnostic_label_members':differences,'source_member_sha256':source}
+ 'final_native_directory':'issue318-native-08/current',
+ 'functional06_to_final_changes':'Two diagnostic release-label strings, conservative MAP06 geometry and the independently tested native door integration',
+ 'functional07_to_final_changes':native_changes,
+ 'legacy_furnished_matches_functional07':True,
+ 'diagnostic_label_members':labels,'source_member_sha256':source}
 (HERE/'PACKAGE_VERIFICATION.json').write_text(json.dumps(verification,indent=2)+'\n')
 print('Verified',len(source),'members; final package',verification['normal_package_sha256'])
