@@ -84,14 +84,3 @@ Expected: no reservoir trial props in the city; normal routes and individual
 resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
-
-CA323-01 | Origin 5.4.33 / issue #323 | Western sewer crusher stays local
-Prerequisites: fresh MAP02 in the current build, or the isolated preview.
-Existing revision-4 visited-map saves require the documented recovery build,
-which deliberately retains old geometry and is not the corrected test map.
-Steps: in the preview, walk forward onto the plate at (-5280,-1536), then
-inspect the ceiling and surrounding western corridors; save/reload if desired.
-Expected: only the 128x128-MU ceiling panel lowers and returns; the wider western
-ceiling stays in place. The plate cannot reactivate after use. Traps retain their
-damage rules and can kill; this check concerns the moving footprint, not #312.
-Close the preview and report whether the western ceiling now behaves correctly.

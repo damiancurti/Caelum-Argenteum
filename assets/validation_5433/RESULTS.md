@@ -1,7 +1,9 @@
 # 5.4.33 / #323 - Western ceiling isolation
 
 GZDoom 4.14.2 passes 108 current, 26 baseline and 10 old-map recovery
-assertions in thirteen final runs. Author preview CA323-01 remains pending.
+assertions in thirteen final runs. Author preview CA323-01 passed 2026-10-17:
+"Works; I have closed the test." This confirms the western walking preview;
+other cycles and save/recovery coverage remain agent evidence.
 
 ## Established cause and static verification
 

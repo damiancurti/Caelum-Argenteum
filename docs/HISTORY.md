@@ -20,8 +20,13 @@ and activates only the repaired local panel; all nine native cycles complete,
 return and refuse repeated use; before/during saves resume with their original
 geometry. The initial 30-tic walking fixture stopped short of the plate; its
 failed log is retained, and 350-tic input reaches it in both revisions. No
-production speed or damage change was made to satisfy the fixture. CA323-01
-remains pending for the author preview.
+production speed or damage change was made to satisfy the fixture.
+
+Author acceptance CA323-01 (origin 5.4.33/#323), 2026-10-17: the author
+confirmed "Works; I have closed the test" after walking onto the western plate
+and observing that only its local panel moves. The pending entry was retired
+on that explicit confirmation. Other crusher cycles and save/recovery checks
+remain agent evidence.
 The pre-change WAD/layout/manifest are preserved in map02_maze/legacy_5432.
 -LegacyMap02Revision4 restores the old geometry for visited-map saves; it does
 not claim to repair an already-saved old ceiling. Normal rebuilding restores

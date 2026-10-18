@@ -26,7 +26,8 @@ match; other trap/gate/loot/lower-network manifest fields remain equal. Evidence
 all panels and save/load pass: 108 current, 26 baseline, 10 recovery assertions.
 Revision-4 recovery preserves
 its original geometry and defect; it is not a migration to corrected sectors.
-Author acceptance is pending. Damage/pressure rules are unchanged.
+Author acceptance CA323-01 passed 2026-10-17 for the western walking preview.
+Damage/pressure rules are unchanged.
 
 ## CA-KP-123 - A reinforcement admission cap is not a resurrection limit
 

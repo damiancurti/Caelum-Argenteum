@@ -3,7 +3,7 @@
 Documentation version: **5.4.33** — 2026-10-17.
 
 **5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
-Only sixteen cells change. Static/native/save checks pass; CA323-01 pending.
+Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.
 Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 
 **5.4.32/#320:** author replaced #259 spread for Mandinga fire/Zupay stone
