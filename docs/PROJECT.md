@@ -7,7 +7,7 @@ Documentation version: **5.4.30** — 2026-10-17.
 The sleeping bag uses the native quick-item selector and opens the existing
 rest interaction for the same owned object. Box storage excludes it. No map,
 balance or save schema changes. Native input/ownership/persistence evidence is
-in assets/validation_5430; author acceptance remains CA319-01.
+in assets/validation_5430; author accepted CA319-01 on 2026-10-17.
 
 ## 5.4.29 - Adopt low-sky MAP03 and normal bounded reinforcements (#327)
 

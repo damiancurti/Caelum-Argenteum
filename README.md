@@ -11,8 +11,7 @@ it, then rebuild with `run_dev.bat` as described below.
 
 The sleeping bag is now available in the quick-item selector (#319). Use opens
 its existing rest interaction without consuming it; retrieve it from the Magic
-Box first. [Focused evidence](assets/validation_5430/RESULTS.md); CA319-01 awaits
-author testing.
+Box first. [Focused evidence](assets/validation_5430/RESULTS.md); CA319-01 accepted on 2026-10-17.
 
 The current campaign is **MAP01 -> MAP02 -> MAP03**. MAP03 is the city with the
 adopted roof-height sky (184 MU in residential/shop districts, 1,024 MU around

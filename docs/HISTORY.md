@@ -9,8 +9,14 @@ consumables. Selection now includes its exact owned, unboxed instance; native
 Use opens the existing bag rest interaction without consuming inventory. No
 balance, map or save-schema changes. Native #282 controls/fixture are reused
 for focused #319 verification; reproducible evidence and fixture corrections
-are recorded in assets/validation_5430/RESULTS.md. Author CA319-01 is pending;
-agent verification is not author acceptance.
+are recorded in assets/validation_5430/RESULTS.md. Author CA319-01 confirmation is recorded below;
+agent verification remains distinct from manual coverage.
+
+Author acceptance CA319-01 (origin 5.4.30/#319), 2026-10-17: the author
+confirmed "Works; I have closed the test" after checking selection, opening
+rest and retention of the bag. Box/drop/save/hub coverage above is agent evidence,
+not an additional claim of manual coverage. The corresponding pending entry
+was retired on this explicit confirmation; unrelated checks remain pending.
 
 Final verification: 30 native assertions across input/rest/transfers and
 save/load/hub; project validation/build pass. All 16,371 normal package members

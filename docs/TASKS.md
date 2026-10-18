@@ -6,8 +6,7 @@ Documentation version: **5.4.30** — 2026-10-17.
 
 Implementation delegates native Use to the existing bag interaction without
 consumption; selection includes only personally carried bags. Focused input,
-storage, rest and persistence checks: assets/validation_5430. Keep CA319-01
-pending until explicit author confirmation. Other issues #318/#320-325 retain
+storage, rest and persistence checks: assets/validation_5430. CA319-01 was accepted on 2026-10-17. Other issues #318/#320-325 retain
 their separate scope, commits, tests and PRs.
 
 ## 5.4.29 - Adopted MAP03 city (#327)

@@ -12,7 +12,7 @@ in force. A boxed bag is excluded until retrieved; stale selection reconciles
 on ordinary inventory changes and loading. No inventory/save schema is added.
 This extends the #282 eligible categories below; ordinary consumables and water
 containers retain their existing behavior. Evidence: assets/validation_5430.
-Author check CA319-01 remains pending.
+Author check CA319-01 accepted on 2026-10-17; scope in HISTORY.
 
 ## 5.4.29 - Current map catalogue and staged city siege (#327)
 

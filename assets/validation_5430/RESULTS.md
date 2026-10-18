@@ -1,6 +1,6 @@
 # Issue #319 - Sleeping bag quick items
 
-Release 5.4.30. Author acceptance CA319-01 remains pending.
+Release 5.4.30. Author accepted CA319-01 on 2026-10-17: selector, rest opening and bag retention. Other native checks remain agent evidence.
 
 Final runs pass 30 assertions (21 input/rest/transfers, 3 save, 6 load/hub).
 Project validation/build pass; all 16,371 normal package members equal both
