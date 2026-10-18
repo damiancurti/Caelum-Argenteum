@@ -74,7 +74,7 @@ class CaelumDemoNarrative : Object play
 
     static CaelumSiegeEncounter PortEncounter()
     {
-        if (level.MapName != "MAP06") return null;
+        if (level.MapName != "MAP03") return null;
         let it = ThinkerIterator.Create("CaelumSiegeEncounter");
         CaelumSiegeEncounter encounter;
         while ((encounter = CaelumSiegeEncounter(it.Next())) != null)

@@ -18,6 +18,12 @@ $ProjectRoot = $PSScriptRoot
 $SourcePath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Source))
 $DestinationPath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Destination))
 
+# An old WAD alone cannot restore the former map catalogue and hub identities.
+if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and
+    -not (Test-Path -LiteralPath (Join-Path $SourcePath 'maps/MAP06.wad'))) {
+    throw 'MAP06 compatibility switches require the pre-5.4.29 checkout (b9fd71ce). Restore that full checkout/package for old saves; the current city is MAP03. Existing output was not changed.'
+}
+
 if (-not (Test-Path -LiteralPath $SourcePath -PathType Container)) {
     throw "Source directory does not exist: $SourcePath"
 }
@@ -246,7 +252,7 @@ try {
     elseif ($LegacyMap06NorthCity) { Write-Host 'MAP06 layout: byte-identical first 4.37.9 city with the northern siege.' }
     elseif ($LegacyMap06SouthCity) { Write-Host 'MAP06 layout: exact 5.1.2 southern city compatibility geometry.' }
     elseif ($LegacyMap06Furnished) { Write-Host 'MAP06 layout: exact pre-5.4.28 furnished city for existing campaigns; open geometry reduction inactive.' }
-    else { Write-Host 'MAP06 layout: original house footprints with separate native hub interiors and native interior doors. Start a fresh MAP06; previous-save compatibility was waived by the author.' }
+    else { Write-Host 'MAP03: original house footprints, private hub interiors and roof-height district sky; taller exterior sky. Start a fresh campaign; the old catalogue remains recoverable at b9fd71ce.' }
     Write-Host "Directory entries: 0"
 }
 finally {

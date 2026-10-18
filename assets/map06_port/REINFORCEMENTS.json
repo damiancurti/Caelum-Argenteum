@@ -1,0 +1,11 @@
+{
+  "issue": 327,
+  "revision": 2,
+  "group_size": 100,
+  "living_cap": 1000,
+  "total": 6600,
+  "interval": 350,
+  "formation_slots": 6000,
+  "author_decision": "Normal MAP03 uses staged reinforcements automatically: at most 1000 living Mandingas before admitting more, until 6600 successful arrivals; Zupay and 600 defenders are separate.",
+  "retained_rules": "Keep the accepted 100-member/350-tic cadence and authored formation positions. A legitimate victory stops unused reserves; do not force spawning after victory. Author confirmed that resurrection remains unchanged and may exceed the deployment cap; new groups wait for room."
+}

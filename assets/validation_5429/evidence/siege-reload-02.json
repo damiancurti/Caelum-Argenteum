@@ -1,0 +1,14 @@
+{
+  "label": "siege-reload-02",
+  "script": "siege-reload",
+  "exit_code": 1,
+  "seconds": 8.219000000011874,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "684154eb3b6be1915180bf01f1a14acc9719925ed365961c827266f3b283199b",
+  "commands_sha256": "274ef5e48350972cb6ad5e58cb6de13a183a4d02495ca953767667c5a0b699a4",
+  "passes": 3,
+  "failures": 0,
+  "error": "Native failure; complete log retained",
+  "done": false,
+  "kind": "isolated native functionality; no FPS measurement"
+}

@@ -252,3 +252,9 @@
 
 # Preserve #318 native evidence, observer revisions and recorded byte hashes.
 /assets/validation_issue318/** -text whitespace=cr-at-eol
+
+# Preserve #327 evidence/source hashes and deterministic generated data.
+/assets/validation_5429/** -text whitespace=cr-at-eol
+/assets/map_catalogue/legacy_5428/** -text whitespace=cr-at-eol
+/src/caelum/data/CaelumReinforcementData.zs text eol=lf
+/src/caelum/data/CaelumCartographyCatalogueData.zs text eol=lf

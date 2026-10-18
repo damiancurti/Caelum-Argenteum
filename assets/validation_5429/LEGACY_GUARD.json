@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "output_preserved": true,
+  "package_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "message": "MAP06 compatibility switches require the complete pre-5.4.29 checkout; current output unchanged."
+}

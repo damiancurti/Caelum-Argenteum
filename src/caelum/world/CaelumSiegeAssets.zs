@@ -122,13 +122,13 @@ class CaelumSiegeGateArmored : CaelumSiegeGate
     }
 }
 
-// Galería de MAP03: retira los muebles de prueba y muestra todos los estados.
+// Galería de TRESERV: retira los muebles de prueba y muestra todos los estados.
 // Los tres materiales ocupan columnas; intacto, dañado y abierto, filas.
 class CaelumSiegePreviewWorld : Object play
 {
     static void RemoveTrialFurniture()
     {
-        if (level.MapName != "MAP03") return;
+        if (level.MapName != "TRESERV") return;
         // Primero reunir las instancias: destruir una mesa también retira
         // sus actores auxiliares y no debe alterar la búsqueda en curso.
         Array<Actor> retired;
@@ -173,7 +173,7 @@ class CaelumSiegePreviewWorld : Object play
 
     static bool Prepare()
     {
-        if (level.MapName != "MAP03") return true;
+        if (level.MapName != "TRESERV") return true;
         RemoveTrialFurniture();
 
         SpawnState("CaelumSiegeCannon", (-1500, 1500, 0), "Ready");

@@ -36,7 +36,7 @@ class CaelumPortCommander : CaelumZupayColossus
     }
 }
 
-// Controlador local guardado con MAP06. No recrea población al cargar el hub.
+// Controlador local guardado con MAP03. No recrea población al cargar el hub.
 class CaelumPortSiege : CaelumSiegeEncounter
 {
     Array<CaelumPortDefender> Defenders;
@@ -681,14 +681,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let agenda=CaelumScheduleState.Get(user,true);if(agenda==null)return;
         if(CaelumCityData.Enabled() && !Victory)
         {
-            let scheduled=agenda.Add("port16_siege_start",CaelumScheduleRules.SIEGE,"CA_PORT_OBJECTIVES","MAP06",
+            let scheduled=agenda.Add("port16_siege_start",CaelumScheduleRules.SIEGE,"CA_PORT_OBJECTIVES","MAP03",
                 CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour(),0,1,"port16_siege");
             if(scheduled!=null)scheduled.Value=1;
             CaelumScheduleState.Sync(user);return;
         }
         String key=Victory ? "port16_siege_end" : "port16_siege_start";
         if(agenda.FindKey(key)!=null)return;
-        let e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP06",0,0,1,"port16_siege");
+        let e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",0,0,1,"port16_siege");
         if(e!=null)e.Value=Victory ? 0 : 1;
         CaelumScheduleState.Sync(user);
     }

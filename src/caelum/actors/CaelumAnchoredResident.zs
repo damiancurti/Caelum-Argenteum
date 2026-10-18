@@ -116,7 +116,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             ? CaelumConstants.PRISONER_STATE_CAPTIVE
             : owner.GetPrisonerRescueState(prisonerId);
 
-        if (level.MapName == "MAP06")
+        if (level.MapName == "MAP03")
         {
             if (rescueState != CaelumConstants.PRISONER_STATE_EXTRACTED)
             {

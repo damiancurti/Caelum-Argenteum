@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
+
+5.4.29 - Preserve mansion/sewers; adopt the city as MAP03 (#327)
+
+The author retains MAP01 and MAP02 and assigns the tested low-sky Barracas al Sud
+city to MAP03. Existing campaign progression now reads MAP01 -> MAP02 -> MAP03;
+quest/route IDs and prerequisites are unchanged. Other standalone scenarios use
+descriptive test identifiers (SYSTEMS table), preserving their content. House
+interiors remain private city hub maps. No new story, shop identity or balance is
+invented. The siege reserve is author-set at 6,600 Mandingas plus Zupay, admitted
+in existing 100-member/350-tic groups under a 1,000-living reinforcement cap;
+600 soldiers remain. Resurrection and the existing victory rule are retained.
+Historical map-number references below identify their original release.
 
 5.4.14 - Resident movement at the protected floor (#253)
 

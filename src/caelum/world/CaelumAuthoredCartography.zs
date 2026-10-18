@@ -30,7 +30,7 @@ class CaelumAuthoredCartography : Object play
                 && CaelumMazeLayout.IsReturnGrate(subject.args[0]))
             {id=String.Format("maze-return-%d",subject.args[0]);nameKey="CA_POI_RETURN_GRATE";}
         }
-        else if(level.MapName=="MAP06")
+        else if(level.MapName=="MAP03")
         {
             let port=CaelumPortSiege.Get();
             if(category==CaelumPoiData.EXIT && subject is "CaelumBreakableGate" && port!=null)
@@ -66,7 +66,7 @@ class CaelumAuthoredCartography : Object play
         }
         let travel=CaelumSewerTravelGate(subject);
         if(category==CaelumPoiData.EXIT && travel!=null && travel.Placed
-            && (level.MapName=="MAP02" || level.MapName=="MAP06")
+            && (level.MapName=="MAP02" || level.MapName=="MAP03")
             && CaelumWorldCatalogue.IsSewerConnection(travel.ConnectionId))
         {id=String.Format("travel-%d",travel.ConnectionId);nameKey=CaelumWorldCatalogue.ConnectionNameKey(travel.ConnectionId);}
         if(id.Length()>0)CaelumPoiRegistration.Bind(subject,id,category,nameKey);
@@ -97,7 +97,7 @@ class CaelumAuthoredCartography : Object play
                         CaelumPoiData.ROOM,CaelumCartographyCatalogueData.MansionName(i),
                         CaelumCartographyCatalogueData.MansionPosition(i));
         }
-        else if(level.MapName=="MAP06" && CaelumCityData.Enabled()
+        else if(level.MapName=="MAP03" && CaelumCityData.Enabled()
             && CaelumCartographyCatalogueData.MatchesCityGeometry(record.CartographyChecksum))
         {
             for(int i=0;i<4;i++)if(CaelumCartographyCatalogueData.TowerContains(i,user.Pos))

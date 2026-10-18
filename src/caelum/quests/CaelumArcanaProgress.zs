@@ -96,7 +96,7 @@ class CaelumArcanaProgress : Object play
             EnsureRevision(record);
             if (level.MapName == "MAP02" && controller != null && controller.SewerBossDefeated)
                 record.SewerZupayDefeated = true;
-            if (level.MapName == "MAP06" && user.CharacterCreationComplete
+            if (level.MapName == "MAP03" && user.CharacterCreationComplete
                 && !user.CreationWizardOpen && record.ProfileCommitted && CaelumDemoNarrative.PortCardReady(record))
                 record.ArcanaAvailable[CaelumConstants.TAROT_WANDS_KNIGHT] = true;
             knightNeeded = knightNeeded || CanCapture(record, CaelumConstants.TAROT_WANDS_KNIGHT);

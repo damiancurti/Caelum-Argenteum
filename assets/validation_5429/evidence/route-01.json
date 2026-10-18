@@ -1,0 +1,14 @@
+{
+  "label": "route-01",
+  "script": "route",
+  "exit_code": 0,
+  "seconds": 18.796999999991385,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "2dcb714c26f5232a1a6d49a2a6ea93cd1b2bae397aeaa13dc36e2fac22d562de",
+  "commands_sha256": "818c05f7039396c7e77ab4c056b89591eb1a0dc7945aac37f38dc53d2f7558bf",
+  "passes": 14,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

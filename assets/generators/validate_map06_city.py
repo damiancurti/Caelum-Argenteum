@@ -66,4 +66,5 @@ def audit():
     print(f'{len(checks)} static checks passed; MAP06 SHA256 {current}')
     return captures
 
-if __name__=='__main__':audit()
+if __name__=='__main__':
+    raise SystemExit('Historical #77 auditor: use python assets/validation_5429/verify.py for the current MAP03. Reproduce this auditor only in its original checkout.')

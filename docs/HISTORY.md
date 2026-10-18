@@ -1,6 +1,64 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
+
+## 5.4.29 - Adopt low-sky MAP03 and staged normal siege (#327)
+
+Author decisions, 2026-10-17: retain MAP01/mansion and MAP02/sewers; use the
+selected low physical sky city as MAP03. Other standalone maps become named
+tests (TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS), preserving their
+contents and connections. Private CAH interiors and stable world IDs remain.
+Original renamed WADs and hashes are preserved in map_catalogue/legacy_5428;
+complete previous runtime recovery is b9fd71ce. Old-save compatibility was
+explicitly waived; WAD-only legacy MAP06 swaps now fail before changing output.
+
+The normal generator adopts the exact #318 low-sky TEXTMAP: 184-MU house/shop
+districts, existing 1,024-MU exterior/wall/tower sky, opaque closed roofs, original
+house footprints and street widths. Two normal generations match byte-for-byte;
+four renamed sewer generators reproduce their shipped output. Runtime selectors,
+quests, travel, houses, test guards, cartography and export inventory follow the
+new catalogue. No localization-key or stable location/connection ID reassignment.
+
+The author sets 6,600 cumulative Mandinga arrivals plus Zupay and keeps 600
+soldiers. Normal MAP03 uses staged 100-member groups every 350 simulation tics,
+with a 1,000-living reinforcement admission cap. The author explicitly preserves
+resurrection even if it exceeds this cap; further refills wait. Existing victory
+stops unused reserves. Owned-body census moves from every tic to eligible spawn
+opportunities; formation positions are reused within their authored bounds.
+Revisioned partial state, deadline, crews and successful totals are retained.
+
+Validation: 336 static checks; 12 successful isolated native runs / 1,072 PASS
+assertions covering ceilings, named-map launches, actual campaign travel and
+house Use, resident state, 600-defender deployment, cap/vacancies/retries,
+current saves/hub, victory, resurrection and idempotent policy migration.
+The complete-budget fixture creates 6,600 cumulatively with peak100 living and
+6,601 encounter records; separate checks reach1,000 and revive to1,001.
+No6,000-simultaneous test was made. TACTORS' historical16,508things were preserved
+and checked statically, not launched. No new FPS/fluency claim is made.
+
+Three failed fixture attempts remain qualified evidence: an invalid save path,
+an insufficient hub wait and restoration before native actor initialization.
+No production change was needed to correct those tests. The first portal's
+post-run fixture hash was corrected against the recovered exact v1; original
+metadata remains. Later runs snapshot/hash fixture and commands before launch.
+Evidence: assets/validation_5429; lessons CA-KP-122/123 and adopted scope in121.
+Independent review checked selectors/census and prompted fixture gate/provenance
+corrections. A final rebuilt-package geometry smoke adds 832 passing assertions:
+13 successful runs / 1,904 total. The builder's ZIP timestamps change archive
+hashes; FINAL_PACKAGE.json records the final artifact and all 16,371 source-member
+matches. Immutable runtime snapshots are retained locally for later checks.
+Project validation, document-index freshness and the normal build pass.
+CA318-01..05 and new CA327-01 remain outstanding author tests;
+adoption, native checks and Git integration do not remove them.
+
+The author also requested only main remain locally and on GitHub (#328).
+Branch audit found146local branches,146stored remote refs but only5actual remote
+branches; all tips were ancestors of the current integration. Six auxiliary
+worktree registrations pointed to already-missing directories; their metadata
+is backed up before clearing branch ownership. No project directories are removed.
+PR326 integrated
+the previous performance work as c9c44615; #318 remains open for performance
+acceptance. Final #327 integration and branch cleanup are recorded on #328.
 
 ## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
 

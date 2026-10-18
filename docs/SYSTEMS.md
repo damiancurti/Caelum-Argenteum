@@ -1,6 +1,74 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
+
+## 5.4.29 - Current map catalogue and staged city siege (#327)
+
+The author adopted the low-sky city as MAP03 on 2026-10-17 and retained MAP01
+and MAP02. assets/map_catalogue/MAPS.json supplies generator map identities;
+CaelumWorldCatalogue retains its stable location/connection IDs. In particular,
+LOCATION_PORT remains 6 and LOCATION_RESERVOIR remains 3: IDs are not lump numbers.
+Historical CA_MAPxx_NAME localization keys remain content identities, not selectors.
+
+| Current lump | Content | Previous lump |
+| --- | --- | --- |
+| MAP01 | Mansion, campaign | MAP01 |
+| MAP02 | Sewers, campaign | MAP02 |
+| MAP03 | Barracas al Sud, campaign | MAP06 |
+| TRESERV | Reservoir and siege-asset trials | MAP03 |
+| TTAROT | Tarot chambers test | MAP04 |
+| TMAINT | Maintenance test | MAP05 |
+| TCOAST | River coast test | MAP07 |
+| THAZARD | Hazard gallery test | MAP08 |
+| TACTORS | Historical actor stress fixture | CADEV02 |
+
+CAH000..CAH159 remain private city interiors. Existing ancillary connections
+and content remain available, without granting these scenarios campaign status.
+TACTORS is retained for provenance, not authorized as a routine stress launch:
+it contains 16,508 placed things. No 6,000-simultaneous-attacker run is permitted.
+
+generate_city_ceilings.py applies CEILINGS.json's adopted policy: house/shop lots
+plus half the authored road width receive INTERIORS.json's 184-MU roof-height
+physical sky. Retained houses use their existing doorstep/road bounds. The outer
+wall-walk belt, elevated floors and taller volumes keep their previous ceiling
+(1,024 MU outdoors). Marking cells before compaction splits shared sectors; a
+roof closed at floor==ceiling uses its opaque flat. Ground geometry, footprints,
+shop doors/windows and high wall/tower access are retained. Sky streets remain
+thermally outdoors. Flight stops at low ceilings; closed roofs cannot be stood on.
+
+REINFORCEMENTS.json and generated CaelumReinforcementData are authoritative:
+revision 2, groups of 100, interval 350 simulation tics, deployment living cap
+1,000, total 6,600. The 74 initial attacking operators count within the first
+100. Zupay appears at the existing siege start, separate from the Mandinga budget;
+600 soldiers, 12 hostile machines and 42 guns retain their rules. Normal MAP03
+enables staged deployment automatically, even when ca_test_siege_reinforcements
+is false. The old CVar cannot select a full simultaneous army in this city.
+
+The first group enters at siege deployment; later groups follow the inherited
+350-tic cadence. A complete new group needs 100 vacancies; partial groups retry
+their missing slots before another group. Failed placements consume no budget.
+Recount only owned registered bodies at each eligible opportunity, including
+offscreen and revived bodies; there is no new map-wide per-tic scan. Living is
+therefore the last opportunity census, not an always-current HUD population.
+Missed opportunities do not accumulate. Six thousand authored formation positions
+are reused cyclically for the 6,600 arrivals; no extra coordinates are invented.
+
+Author clarification: the cap limits reinforcements, not resurrection. A revived
+body may temporarily exceed 1,000; new groups wait for sufficient room. Resurrection,
+resources, collisions and ordinary corpse retention are unchanged. Existing
+victory (all 12 hostile machines plus commander defeat/confirmed retreat) stops
+unused reserves before that tic's spawn opportunity. 6,600 is the available
+cumulative budget, not a requirement to continue spawning after victory.
+
+Counters, placed bitmap, deadline, crew identities and formation cursor are saved
+with the city; hub return does not redeploy them. Revision 1 data updates once,
+preserving successful arrivals, pending slots and deadline; enabled remaining
+budget becomes max(0,6600-successful). This schema handling does not make old
+MAP06 hub saves compatible with renamed maps. Start a fresh campaign under the
+author's explicit waiver; retain old saves and full b9fd71ce package/checkout.
+Old MAP06 compatibility switches now reject the new catalogue before overwriting
+any output. The preceding #132 opt-in/full-army text is historical and superseded
+for current gameplay by this section.
 
 ## 5.4.28 - Contact-only breath and performance boundaries (#318)
 

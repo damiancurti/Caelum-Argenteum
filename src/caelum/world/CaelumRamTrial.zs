@@ -1,4 +1,4 @@
-// Carril optativo de #20; jamás se crea en MAP06 ni suma a sus 1.000 enemigos.
+// Carril optativo de #20; jamás se crea en MAP03 ni suma a sus 1.000 enemigos.
 class CaelumRamTrialEncounter : CaelumSiegeEncounter { }
 class CaelumRamTrialOperator : CaelumMandinga
 {
@@ -16,7 +16,7 @@ class CaelumDebugRamTrial : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
-        if (level.MapName!="MAP03") return false;
+        if (level.MapName!="TRESERV") return false;
         let it=ThinkerIterator.Create("CaelumRamTrialEncounter");
         if (it.Next()!=null) return true;
         let encounter=CaelumRamTrialEncounter(Actor.Spawn("CaelumRamTrialEncounter",Owner.Pos,NO_REPLACE));

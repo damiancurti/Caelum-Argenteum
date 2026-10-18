@@ -1,0 +1,13 @@
+{
+  "label": "geometry-01",
+  "script": "geometry",
+  "exit_code": 0,
+  "seconds": 9.75,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "d5dd46edd41464aef573b2f249cc7c4c6fc9b27ed46a55dfdc810e3afee35a19",
+  "passes": 831,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

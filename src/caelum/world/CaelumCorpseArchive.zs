@@ -4,7 +4,7 @@ class CaelumCorpseArchiveData : Object
     const REVISION=1;
     const DORMANT_STAT=Thinker.STAT_FIRST_THINKING-1;
     const VISIBLE_LIMIT=100;
-    const MAP="MAP06";
+    const MAP="MAP03";
 }
 
 class CaelumArchivedCorpse : Inventory

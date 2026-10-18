@@ -1,0 +1,14 @@
+{
+  "label": "deploy-01",
+  "script": "deploy",
+  "exit_code": 0,
+  "seconds": 75.18700000000536,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "684154eb3b6be1915180bf01f1a14acc9719925ed365961c827266f3b283199b",
+  "commands_sha256": "48e0abd03a76e09f1829f8d7215114e7b465e7fa553c5ae4b743adfcc5149c81",
+  "passes": 3,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

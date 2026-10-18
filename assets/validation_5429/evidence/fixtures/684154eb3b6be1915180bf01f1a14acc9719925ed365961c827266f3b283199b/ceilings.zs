@@ -1,0 +1,194 @@
+class CA318CeilingChecks : CA318HouseChecks
+{
+vector3 ShopDoor(int i){switch(i){
+case 0:return (-16416.0,-12160.0,0);
+case 1:return (-14880.0,-12160.0,0);
+case 2:return (-13344.0,-12160.0,0);
+case 3:return (-16416.0,-10432.0,0);
+case 4:return (-14880.0,-10432.0,0);
+case 5:return (-13344.0,-10432.0,0);
+case 6:return (-16416.0,-8704.0,0);
+case 7:return (-14880.0,-8704.0,0);
+case 8:return (-13344.0,-8704.0,0);
+case 9:return (-16416.0,-6976.0,0);
+case 10:return (-14880.0,-6976.0,0);
+case 11:return (-13344.0,-6976.0,0);
+case 12:return (-16416.0,-5248.0,0);
+case 13:return (-14880.0,-5248.0,0);
+case 14:return (-13344.0,-5248.0,0);
+case 15:return (-16416.0,-3520.0,0);
+case 16:return (-14880.0,-3520.0,0);
+case 17:return (-13344.0,-3520.0,0);
+case 18:return (-27168.0,-1792.0,0);
+case 19:return (-25632.0,-1792.0,0);
+case 20:return (-24096.0,-1792.0,0);
+case 21:return (-22560.0,-1792.0,0);
+case 22:return (-21024.0,-1792.0,0);
+case 23:return (-19488.0,-1792.0,0);
+case 24:return (-17952.0,-1792.0,0);
+case 25:return (-16416.0,-1792.0,0);
+case 26:return (-14880.0,-1792.0,0);
+case 27:return (-13344.0,-1792.0,0);
+case 28:return (-11808.0,-1792.0,0);
+case 29:return (-10272.0,-1792.0,0);
+case 30:return (-8736.0,-1792.0,0);
+case 31:return (-7200.0,-1792.0,0);
+case 32:return (-5664.0,-1792.0,0);
+case 33:return (-4128.0,-1792.0,0);
+case 34:return (-2592.0,-1792.0,0);
+case 35:return (-1056.0,-1792.0,0);
+case 36:return (-27168.0,-64.0,0);
+case 37:return (-25632.0,-64.0,0);
+case 38:return (-24096.0,-64.0,0);
+case 39:return (-22560.0,-64.0,0);
+case 40:return (-21024.0,-64.0,0);
+case 41:return (-19488.0,-64.0,0);
+case 42:return (-17952.0,-64.0,0);
+case 43:return (-16416.0,-64.0,0);
+case 44:return (-14880.0,-64.0,0);
+case 45:return (-13344.0,-64.0,0);
+case 46:return (-11808.0,-64.0,0);
+case 47:return (-10272.0,-64.0,0);
+case 48:return (-8736.0,-64.0,0);
+case 49:return (-7200.0,-64.0,0);
+case 50:return (-5664.0,-64.0,0);
+case 51:return (-4128.0,-64.0,0);
+case 52:return (-2592.0,-64.0,0);
+case 53:return (-27168.0,1664.0,0);
+case 54:return (-25632.0,1664.0,0);
+case 55:return (-24096.0,1664.0,0);
+case 56:return (-22560.0,1664.0,0);
+case 57:return (-21024.0,1664.0,0);
+case 58:return (-14880.0,1664.0,0);
+case 59:return (-14880.0,3392.0,0);
+case 60:return (-14880.0,5120.0,0);
+case 61:return (-14880.0,6848.0,0);
+case 62:return (-14880.0,8576.0,0);
+case 63:return (-14880.0,10304.0,0);
+}return (0,0,0);}
+vector3 ShopWindow(int i){switch(i){
+case 0:return (-16992.0,-12512.0,32);
+case 1:return (-15456.0,-12512.0,32);
+case 2:return (-13920.0,-12512.0,32);
+case 3:return (-16992.0,-10784.0,32);
+case 4:return (-15456.0,-10784.0,32);
+case 5:return (-13920.0,-10784.0,32);
+case 6:return (-16992.0,-9056.0,32);
+case 7:return (-15456.0,-9056.0,32);
+case 8:return (-13920.0,-9056.0,32);
+case 9:return (-16992.0,-7328.0,32);
+case 10:return (-15456.0,-7328.0,32);
+case 11:return (-13920.0,-7328.0,32);
+case 12:return (-16992.0,-5600.0,32);
+case 13:return (-15456.0,-5600.0,32);
+case 14:return (-13920.0,-5600.0,32);
+case 15:return (-16992.0,-3872.0,32);
+case 16:return (-15456.0,-3872.0,32);
+case 17:return (-13920.0,-3872.0,32);
+case 18:return (-27744.0,-2144.0,32);
+case 19:return (-26208.0,-2144.0,32);
+case 20:return (-24672.0,-2144.0,32);
+case 21:return (-23136.0,-2144.0,32);
+case 22:return (-21600.0,-2144.0,32);
+case 23:return (-20064.0,-2144.0,32);
+case 24:return (-18528.0,-2144.0,32);
+case 25:return (-16992.0,-2144.0,32);
+case 26:return (-15456.0,-2144.0,32);
+case 27:return (-13920.0,-2144.0,32);
+case 28:return (-12384.0,-2144.0,32);
+case 29:return (-10848.0,-2144.0,32);
+case 30:return (-9312.0,-2144.0,32);
+case 31:return (-7776.0,-2144.0,32);
+case 32:return (-6240.0,-2144.0,32);
+case 33:return (-4704.0,-2144.0,32);
+case 34:return (-3168.0,-2144.0,32);
+case 35:return (-1632.0,-2144.0,32);
+case 36:return (-27744.0,-416.0,32);
+case 37:return (-26208.0,-416.0,32);
+case 38:return (-24672.0,-416.0,32);
+case 39:return (-23136.0,-416.0,32);
+case 40:return (-21600.0,-416.0,32);
+case 41:return (-20064.0,-416.0,32);
+case 42:return (-18528.0,-416.0,32);
+case 43:return (-16992.0,-416.0,32);
+case 44:return (-15456.0,-416.0,32);
+case 45:return (-13920.0,-416.0,32);
+case 46:return (-12384.0,-416.0,32);
+case 47:return (-10848.0,-416.0,32);
+case 48:return (-9312.0,-416.0,32);
+case 49:return (-7776.0,-416.0,32);
+case 50:return (-6240.0,-416.0,32);
+case 51:return (-4704.0,-416.0,32);
+case 52:return (-3168.0,-416.0,32);
+case 53:return (-27744.0,1312.0,32);
+case 54:return (-26208.0,1312.0,32);
+case 55:return (-24672.0,1312.0,32);
+case 56:return (-23136.0,1312.0,32);
+case 57:return (-21600.0,1312.0,32);
+case 58:return (-15456.0,1312.0,32);
+case 59:return (-15456.0,3040.0,32);
+case 60:return (-15456.0,4768.0,32);
+case 61:return (-15456.0,6496.0,32);
+case 62:return (-15456.0,8224.0,32);
+case 63:return (-15456.0,9952.0,32);
+}return (0,0,0);}
+override void NetworkProcess(ConsoleEvent e)
+{
+Super.NetworkProcess(e);
+let user=CaelumPlayer(players[0].mo);
+if(e.Name=="ceilings_check"){
+let probe=Actor.Spawn("CaelumSummoningProbe",(0,0,0),NO_REPLACE);
+probe.A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
+for(int i=0;i<160;i++){probe.SetOrigin(CaelumCityData.DoorOutside(i),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),String.Format("house%d doorstep fits defender",i));Check(probe.CeilingZ==184,String.Format("house%d expected ceiling",i));Check(!CaelumThermalShelter.Roof(probe),String.Format("house%d doorstep remains thermally outdoors",i));}
+for(int i=0;i<64;i++){probe.SetOrigin(ShopDoor(i),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),String.Format("shop%d entrance fits",i));Check(probe.CeilingZ==160,String.Format("shop%d interior headroom retained",i));Check(CaelumThermalShelter.Roof(probe),String.Format("shop%d retains real roof",i));probe.SetOrigin(ShopWindow(i),false);probe.FindFloorCeiling();Check(probe.FloorZ==32 && probe.CeilingZ==128,String.Format("shop%d window heights retained",i));}
+probe.SetOrigin((-29824.0,15872.0,384),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower0 standing room");Check(probe.CeilingZ==1024,"wall/tower0 high ceiling retained");
+probe.SetOrigin((896.0,15872.0,384),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower1 standing room");Check(probe.CeilingZ==1024,"wall/tower1 high ceiling retained");
+probe.SetOrigin((-29824.0,-14336.0,384),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower2 standing room");Check(probe.CeilingZ==1024,"wall/tower2 high ceiling retained");
+probe.SetOrigin((896.0,-14336.0,384),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower3 standing room");Check(probe.CeilingZ==1024,"wall/tower3 high ceiling retained");
+probe.SetOrigin((-27776.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower4 standing room");Check(probe.CeilingZ==1024,"wall/tower4 high ceiling retained");
+probe.SetOrigin((-23936.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower5 standing room");Check(probe.CeilingZ==1024,"wall/tower5 high ceiling retained");
+probe.SetOrigin((-20096.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower6 standing room");Check(probe.CeilingZ==1024,"wall/tower6 high ceiling retained");
+probe.SetOrigin((-16256.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower7 standing room");Check(probe.CeilingZ==1024,"wall/tower7 high ceiling retained");
+probe.SetOrigin((-12416.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower8 standing room");Check(probe.CeilingZ==1024,"wall/tower8 high ceiling retained");
+probe.SetOrigin((-8576.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower9 standing room");Check(probe.CeilingZ==1024,"wall/tower9 high ceiling retained");
+probe.SetOrigin((-4736.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower10 standing room");Check(probe.CeilingZ==1024,"wall/tower10 high ceiling retained");
+probe.SetOrigin((-896.0,-14368.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower11 standing room");Check(probe.CeilingZ==1024,"wall/tower11 high ceiling retained");
+probe.SetOrigin((-29472.0,15456.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower12 standing room");Check(probe.CeilingZ==1024,"wall/tower12 high ceiling retained");
+probe.SetOrigin((544.0,15456.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower13 standing room");Check(probe.CeilingZ==1024,"wall/tower13 high ceiling retained");
+probe.SetOrigin((-29472.0,-13920.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower14 standing room");Check(probe.CeilingZ==1024,"wall/tower14 high ceiling retained");
+probe.SetOrigin((544.0,-13920.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower15 standing room");Check(probe.CeilingZ==1024,"wall/tower15 high ceiling retained");
+probe.SetOrigin((-27776.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower16 standing room");Check(probe.CeilingZ==1024,"wall/tower16 high ceiling retained");
+probe.SetOrigin((-23936.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower17 standing room");Check(probe.CeilingZ==1024,"wall/tower17 high ceiling retained");
+probe.SetOrigin((-20096.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower18 standing room");Check(probe.CeilingZ==1024,"wall/tower18 high ceiling retained");
+probe.SetOrigin((-16256.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower19 standing room");Check(probe.CeilingZ==1024,"wall/tower19 high ceiling retained");
+probe.SetOrigin((-12416.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower20 standing room");Check(probe.CeilingZ==1024,"wall/tower20 high ceiling retained");
+probe.SetOrigin((-8576.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower21 standing room");Check(probe.CeilingZ==1024,"wall/tower21 high ceiling retained");
+probe.SetOrigin((-4736.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower22 standing room");Check(probe.CeilingZ==1024,"wall/tower22 high ceiling retained");
+probe.SetOrigin((-896.0,15904.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower23 standing room");Check(probe.CeilingZ==1024,"wall/tower23 high ceiling retained");
+probe.SetOrigin((-29600.0,-12544.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower24 standing room");Check(probe.CeilingZ==1024,"wall/tower24 high ceiling retained");
+probe.SetOrigin((-29600.0,-8704.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower25 standing room");Check(probe.CeilingZ==1024,"wall/tower25 high ceiling retained");
+probe.SetOrigin((-29600.0,-4864.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower26 standing room");Check(probe.CeilingZ==1024,"wall/tower26 high ceiling retained");
+probe.SetOrigin((-29600.0,-1024.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower27 standing room");Check(probe.CeilingZ==1024,"wall/tower27 high ceiling retained");
+probe.SetOrigin((-29600.0,2816.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower28 standing room");Check(probe.CeilingZ==1024,"wall/tower28 high ceiling retained");
+probe.SetOrigin((-29600.0,6656.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower29 standing room");Check(probe.CeilingZ==1024,"wall/tower29 high ceiling retained");
+probe.SetOrigin((-29600.0,10496.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower30 standing room");Check(probe.CeilingZ==1024,"wall/tower30 high ceiling retained");
+probe.SetOrigin((-29600.0,14336.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower31 standing room");Check(probe.CeilingZ==1024,"wall/tower31 high ceiling retained");
+probe.SetOrigin((672.0,-12544.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower32 standing room");Check(probe.CeilingZ==1024,"wall/tower32 high ceiling retained");
+probe.SetOrigin((672.0,-8704.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower33 standing room");Check(probe.CeilingZ==1024,"wall/tower33 high ceiling retained");
+probe.SetOrigin((672.0,-4864.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower34 standing room");Check(probe.CeilingZ==1024,"wall/tower34 high ceiling retained");
+probe.SetOrigin((672.0,-1024.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower35 standing room");Check(probe.CeilingZ==1024,"wall/tower35 high ceiling retained");
+probe.SetOrigin((672.0,2816.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower36 standing room");Check(probe.CeilingZ==1024,"wall/tower36 high ceiling retained");
+probe.SetOrigin((672.0,6656.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower37 standing room");Check(probe.CeilingZ==1024,"wall/tower37 high ceiling retained");
+probe.SetOrigin((672.0,10496.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower38 standing room");Check(probe.CeilingZ==1024,"wall/tower38 high ceiling retained");
+probe.SetOrigin((672.0,14336.0,256),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower39 standing room");Check(probe.CeilingZ==1024,"wall/tower39 high ceiling retained");
+probe.SetOrigin((-21408.0,-12192.0,184),false);probe.FindFloorCeiling();Check(!probe.TestMobjLocation(),"closed roof has no standing headroom");probe.Destroy();}
+if(e.Name=="ceilings_fly"){user.SetOrigin(CaelumCityData.DoorOutside(0),false);user.FindFloorCeiling();user.bNoGravity=true;user.Vel=(0,0,user.CeilingZ);}
+if(e.Name=="ceilings_fly_checked"){Check(user.Pos.Z+user.Height<=user.CeilingZ+0.01,"upward movement stops below low sky");Check(user.Pos.Z>user.FloorZ,"upward movement actually occurred");user.bNoGravity=false;user.Vel=(0,0,0);}
+if(e.Name=="ceilings_view"){switch(e.Args[0]){
+case 0:user.SetOrigin((-20832,-12416,0),false);user.Angle=180;user.Pitch=0;break;
+case 1:user.SetOrigin((-29824.0,15872.0,384),false);user.Angle=315;user.Pitch=0;break;
+case 2:user.SetOrigin((-14464,-14000,0),false);user.Angle=90;user.Pitch=-20;break;
+case 3:user.SetOrigin((0,320,0),false);user.Angle=180;user.Pitch=-20;break;
+}user.FindFloorCeiling();user.Vel=(0,0,0);Check(user.TestMobjLocation(),"capture viewpoint fits");}
+}
+}

@@ -105,5 +105,5 @@ user float ca_notification_seconds = 8.0;
 user int ca_journal_quest_kind = 0;
 user int ca_journal_quest_status = 0;
 
-// #132: prueba optativa, capturada al crear MAP06; no convierte partidas existentes.
+// Compatibilidad #132: MAP03 usa refuerzos automáticamente, sin depender del CVar.
 server bool ca_test_siege_reinforcements = false;

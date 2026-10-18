@@ -1,4 +1,4 @@
-// Trampas aprobadas 4.36.0b. Sus parámetros de MAP08 son valores de ensayo.
+// Trampas aprobadas 4.36.0b. Sus parámetros de THAZARD son valores de ensayo.
 // El mapeador asigna daño/radio/destino; no se fija un balance de campaña.
 class CaelumPressureTrap : Actor
 {
@@ -176,7 +176,7 @@ class CaelumCrusherTrap : CaelumPressureTrap
     // args[0] queda reservado; args[1]=MU/tic; args[2]=muestreo XY.
     // La masa es el volumen completo entre techo inicial y final, en piedra.
     // 0 en args[2] mueve sólo el sector del actor; 32 selecciona los cuatro
-    // paneles de 64 MU usados en MAP08. No toca sectores vecinos adicionales.
+    // paneles de 64 MU usados en THAZARD. No toca sectores vecinos adicionales.
     bool Release()
     {
         if (Spent || args[1] <= 0) return false;
@@ -240,7 +240,7 @@ class CaelumMagicHazardWorld : Object play
 {
     static void Prepare()
     {
-        if (level.MapName != "MAP08") return;
+        if (level.MapName != "THAZARD") return;
         // Sólo lo llama una vez la revisión guardada del controlador existente.
         let mine = CaelumMagicMine(Actor.Spawn("CaelumMagicMine", (1728,640,0.5), NO_REPLACE));
         if (mine != null) { mine.args[0]=100; mine.args[1]=128; mine.ChangeTid(43610); }

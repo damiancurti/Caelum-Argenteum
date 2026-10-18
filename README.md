@@ -6,8 +6,30 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.28.** Obtain and update the complete repository, validate
+**Current release: 5.4.29.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+The current campaign is **MAP01 -> MAP02 -> MAP03**. MAP03 is the city with the
+adopted roof-height sky (184 MU in residential/shop districts, 1,024 MU around
+the exterior walls/towers), original house footprints and private interiors.
+The remaining standalone scenarios are **TRESERV, TTAROT, TMAINT, TCOAST,
+THAZARD and TACTORS**, retained as tests. The historical localization keys do
+not determine map numbers.
+
+The normal siege now admits groups of 100 every 350 simulation tics, up to
+1,000 living Mandingas before admitting more, from a reserve of 6,600 plus
+Zupay. The 600 soldiers remain. Resurrection may exceed the cap; new groups
+wait. Existing victory stops unused reserves. No diagnostic CVar is required.
+
+Start a fresh campaign. Recover old catalogue saves with the complete
+`b9fd71ce` checkout/package; MAP06 compatibility flags reject the new catalogue.
+Current validation: [#327 evidence](assets/validation_5429/RESULTS.md).
+Manual checks remain in pending_test.txt. This adopts geometry and deployment
+rules, not a guarantee of 60 FPS. Never run 6,000 simultaneous attackers again.
+
+The following performance summaries retain their original #318 scope and map
+names; references to unchanged normal geometry or undecided production budgets
+describe the stage before #327 adoption above.
 
 Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
 
@@ -1354,8 +1376,8 @@ individual notices in licenses/ retain their terms and attribution.
    this folder. On the first launch it applies the controls below; later launches
    preserve your remapping and other settings. Start a NEW GAME for this route;
    do not copy old saves into it.
-   Preserve your original saves/packages. Campaigns that visited earlier MAP02
-   or MAP06 geometry still use the repository's documented legacy builds.
+   Preserve your original saves/packages. Old catalogue campaigns require the complete pre-5.4.29 package/checkout
+   (b9fd71ce); do not combine an old MAP06 save with the new MAP03 catalogue.
 4. The first launch sets Tab to Journal/inventory, M to automap, B to the
    equipped Seal, R to Reload, F to Zoom and T to selected Tarot powers.
    Review or remap movement, look, Jump, Crouch, Use, Fire and other controls in
@@ -1375,16 +1397,16 @@ individual notices in licenses/ retain their terms and attribution.
    and recipe-based repair stations. Food, water and repair supplies are finite.
 6. Rescue any prisoners you choose and lead them alive to the extraction area
    BEFORE the northern boss fight. They do not fight that boss. Defeat the MAP02
-   Zupay, capture the Ace of Cups, and plan the direct port journey to MAP06.
-   MAP03 is a diagnostic map, outside the ordinary campaign route.
+   Zupay, capture the Ace of Cups, and plan the direct port journey to MAP03.
+   TRESERV is the separate reservoir diagnostic, outside the campaign route.
 7. At the port each rescued prisoner pays 25 gold and +10 own-faction reputation
    once. Stop all twelve hostile siege machines and defeat the commander to
    capture the Knight of Wands. Survivors withdraw; use the port endpoint sign.
    Verify saves before/after travel retain cards, keys, quests, resources and
    reward status. Repeat interactions and reloads must not duplicate rewards.
 
-CADEV02 is a console-only diagnostic map, outside this route. MAP04/MAP05/MAP07/
-MAP08 and diagnostic commands remain inherited development content; they are
+TACTORS is a retained historical stress fixture; do not launch its large population
+as a routine test. TRESERV/TTAROT/TMAINT/TCOAST/THAZARD and diagnostic commands are
 not extra finished chapters. Do not use cheats, direct map commands or QA
 overlays for ordinary campaign acceptance.
 

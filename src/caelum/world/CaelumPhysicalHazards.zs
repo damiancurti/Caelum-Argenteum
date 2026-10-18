@@ -112,7 +112,7 @@ class CaelumHazardRock : CaelumRockGraniteHalf
     {
         // Recupera la galería antigua sin relanzar una roca ya liberada.
         // Otros mapas y velocidades elegidas por el mapeador se conservan.
-        if (level.MapName == "MAP08" && tid == 43602 && args[0] == 8)
+        if (level.MapName == "THAZARD" && tid == 43602 && args[0] == 8)
             return GALLERY_ROLL_SPEED;
         return Max(0, args[0]);
     }
@@ -411,7 +411,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 5.4.28] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 5.4.29] Peligros físicos y mágicos: mapa=%s", level.MapName);
         Console.Printf("Techos: bloque sólido de piedra, masa x g x compresión. Peso estático: exceso de kg x g x 0.0001 m/s. 1 J = 1 HP bruto; Dureza final una vez.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
@@ -448,6 +448,6 @@ class CaelumHazardDiagnostics : Object play
         CaelumMagicHazardWorld.Report();
         let reset=CaelumHazardResetSwitch(ThinkerIterator.Create("CaelumHazardResetSwitch").Next());
         if(reset!=null)Console.Printf("Reinicio galería TID=%d usos=%d impedimento=%s",reset.tid,reset.ResetCount,CaelumHazardResetSwitch.BlockReason());
-        if (count == 0) Console.Printf("La galería de peligros está en MAP08, conectada desde MAP05.");
+        if (count == 0) Console.Printf("La galería de peligros está en THAZARD, conectada desde TMAINT.");
     }
 }

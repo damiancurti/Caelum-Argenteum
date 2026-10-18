@@ -3,7 +3,7 @@ class CaelumHouseHub : Object play
 {
     static bool IsCity(CaelumPortSiege port=null)
     {
-        if(level.MapName!="MAP06")return false;
+        if(level.MapName!="MAP03")return false;
         if(port==null)port=CaelumPortSiege.Get();
         return port!=null && port.args[3]==1;
     }
@@ -58,7 +58,7 @@ class CaelumHousePortal : Actor
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
         user.FolkloreInteractionUseLatched=true;
         user.FolkloreInteractionReleaseGuardTics=0;
-        Level.ChangeLevel(args[1]==0?CaelumHouseHubData.MapName(args[0]):"MAP06",
+        Level.ChangeLevel(args[1]==0?CaelumHouseHubData.MapName(args[0]):"MAP03",
             args[1]==0?0:args[0]+1,CHANGELEVEL_NOINTERMISSION);
         return true;
     }

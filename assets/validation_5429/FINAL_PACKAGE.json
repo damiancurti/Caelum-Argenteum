@@ -1,0 +1,19 @@
+{
+  "final_package_sha256": "8d57e7d2242ac283cf76a5ea910e40f072d65398e3070639dbdd6d70cacd3b9e",
+  "members": 16371,
+  "source_tree_sha256": "87f5ac78eeb8bdcae2ff5e9935a9b16bc0d8db6fb738b313a484a395548eb749",
+  "zip_entry_dates": [
+    "(2026, 10, 17, 21, 20, 10)",
+    "(2026, 10, 17, 21, 20, 12)",
+    "(2026, 10, 17, 21, 20, 14)",
+    "(2026, 10, 17, 21, 20, 16)",
+    "(2026, 10, 17, 21, 20, 18)",
+    "(2026, 10, 17, 21, 20, 2)",
+    "(2026, 10, 17, 21, 20, 20)",
+    "(2026, 10, 17, 21, 20, 4)",
+    "(2026, 10, 17, 21, 20, 6)",
+    "(2026, 10, 17, 21, 20, 8)"
+  ],
+  "all_members_equal_src": true,
+  "note": "Normal builder uses current ZIP entry timestamps. Final rebuild followed documentation/tooling-only changes; full earlier native suite records the original archive hash. Final native geometry smoke records this rebuilt artifact; immutable package link retained locally."
+}

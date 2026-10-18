@@ -51,7 +51,7 @@ skill Caelum
 }
 
 // MAP01 cierra el prólogo; MAP02 contiene la llegada a las alcantarillas.
-// El campo diagnóstico completo se conserva aparte en CADEV02.
+// El campo diagnóstico completo se conserva aparte en TACTORS.
 AddDefaultMap
 {
     // Cuerpo y cabeza comparten profundidad: el orden nativo dibuja después
@@ -87,7 +87,7 @@ cluster 434
     hub
 }
 
-map MAP03 "$CA_MAP03_NAME"
+map TRESERV "$CA_MAP03_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
@@ -95,7 +95,7 @@ map MAP03 "$CA_MAP03_NAME"
     cluster = 434
 }
 
-map MAP04 "$CA_MAP04_NAME"
+map TTAROT "$CA_MAP04_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
@@ -103,7 +103,7 @@ map MAP04 "$CA_MAP04_NAME"
     cluster = 434
 }
 
-map MAP05 "$CA_MAP05_NAME"
+map TMAINT "$CA_MAP05_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
@@ -111,7 +111,7 @@ map MAP05 "$CA_MAP05_NAME"
     cluster = 434
 }
 
-map MAP06 "$CA_MAP06_NAME"
+map MAP03 "$CA_MAP06_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS04_PORT"
@@ -120,7 +120,7 @@ map MAP06 "$CA_MAP06_NAME"
     cluster = 434
 }
 
-map MAP07 "$CA_MAP07_NAME"
+map TCOAST "$CA_MAP07_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS05_COAST"
@@ -129,14 +129,14 @@ map MAP07 "$CA_MAP07_NAME"
     cluster = 434
 }
 
-map CADEV02 "Campo de pruebas de actores"
+map TACTORS "Campo de pruebas de actores"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
 }
 
-// Anexo de peligros: se conecta a MAP05 sin modificar su geometría guardada.
-map MAP08 "$CA_MAP08_NAME"
+// Anexo de peligros: se conecta a TMAINT sin modificar su geometría guardada.
+map THAZARD "$CA_MAP08_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
@@ -479,7 +479,7 @@ DoomEdNums
 // Referencia climática regional: args[0]=región 1..9, args[1]=hábitat.
 DoomEdNums { 30950 = CaelumClimateRegion }
 
-// Galería física de MAP08, sin reutilizar números del juego base.
+// Galería física de THAZARD, sin reutilizar números del juego base.
 DoomEdNums
 {
     30960 = CaelumTrapdoor

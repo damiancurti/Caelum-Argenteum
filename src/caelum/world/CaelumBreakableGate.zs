@@ -433,12 +433,12 @@ class CaelumGateBlocker : Actor
 }
 
 // Ensayo optativo en la galería ya aceptada: activa solamente sus tres portones
-// intactos. No altera los ejemplos dañados/abiertos ni el encuentro de MAP06.
+// intactos. No altera los ejemplos dañados/abiertos ni el encuentro de MAP03.
 class CaelumDebugGateTrial : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
-        if (level.MapName != "MAP03") return false;
+        if (level.MapName != "TRESERV") return false;
         let it = ThinkerIterator.Create("CaelumSiegeGate");
         CaelumSiegeGate visual;
         Array<CaelumSiegeGate> selected;

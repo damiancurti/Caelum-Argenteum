@@ -233,7 +233,7 @@ class CaelumTarotService : Object play
         if (card == CaelumConstants.TAROT_CUPS_ACE)
             return level.MapName == "MAP02" && record.SewerZupayDefeated;
         if (card == CaelumConstants.TAROT_WANDS_KNIGHT)
-            return level.MapName == "MAP06" && record.ArcanaAvailable[card]
+            return level.MapName == "MAP03" && record.ArcanaAvailable[card]
                 && CaelumDemoNarrative.PortCardReady(record);
         return false;
     }

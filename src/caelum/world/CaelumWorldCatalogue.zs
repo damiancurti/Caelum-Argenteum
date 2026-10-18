@@ -50,13 +50,13 @@ class CaelumWorldCatalogue : Object
     {
         if (mapName ~== "MAP01") return LOCATION_MANSION;
         if (mapName ~== "MAP02") return LOCATION_SEWERS;
-        if (mapName ~== "MAP03") return LOCATION_RESERVOIR;
-        if (mapName ~== "MAP04") return LOCATION_TAROT_CHAMBERS;
-        if (mapName ~== "MAP05") return LOCATION_MAINTENANCE;
-        if (mapName ~== "MAP06") return LOCATION_PORT;
+        if (mapName ~== "TRESERV") return LOCATION_RESERVOIR;
+        if (mapName ~== "TTAROT") return LOCATION_TAROT_CHAMBERS;
+        if (mapName ~== "TMAINT") return LOCATION_MAINTENANCE;
+        if (mapName ~== "MAP03") return LOCATION_PORT;
         if (CaelumHouseHubData.HouseForMap(mapName)>=0) return LOCATION_PORT;
-        if (mapName ~== "MAP07") return LOCATION_COAST;
-        if (mapName ~== "MAP08") return LOCATION_HAZARD_GALLERY;
+        if (mapName ~== "TCOAST") return LOCATION_COAST;
+        if (mapName ~== "THAZARD") return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;
     }
 
@@ -64,12 +64,12 @@ class CaelumWorldCatalogue : Object
     {
         if (id == LOCATION_MANSION) return "MAP01";
         if (id == LOCATION_SEWERS) return "MAP02";
-        if (id == LOCATION_RESERVOIR) return "MAP03";
-        if (id == LOCATION_TAROT_CHAMBERS) return "MAP04";
-        if (id == LOCATION_MAINTENANCE) return "MAP05";
-        if (id == LOCATION_PORT) return "MAP06";
-        if (id == LOCATION_COAST) return "MAP07";
-        if (id == LOCATION_HAZARD_GALLERY) return "MAP08";
+        if (id == LOCATION_RESERVOIR) return "TRESERV";
+        if (id == LOCATION_TAROT_CHAMBERS) return "TTAROT";
+        if (id == LOCATION_MAINTENANCE) return "TMAINT";
+        if (id == LOCATION_PORT) return "MAP03";
+        if (id == LOCATION_COAST) return "TCOAST";
+        if (id == LOCATION_HAZARD_GALLERY) return "THAZARD";
         return "";
     }
 

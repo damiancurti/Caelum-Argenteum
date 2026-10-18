@@ -478,9 +478,9 @@ class CaelumMainM00QuestController : EventHandler
         CaelumWeightPressure.WorldTick();
         CaelumDemoNarrative.WorldTick();
         CaelumArcanaProgress.WorldTick();
-        // También limpia MAP03 ya guardado y actores que aún eran nuevos al
+        // También limpia TRESERV ya guardado y actores que aún eran nuevos al
         // preparar la galería. No depende de reiniciar sus banderas guardadas.
-        if (level.MapName == "MAP03" && level.maptime % TICRATE == 0)
+        if (level.MapName == "TRESERV" && level.maptime % TICRATE == 0)
             CaelumSiegePreviewWorld.RemoveTrialFurniture();
         // Este controlador ya existe en guardados antiguos. No depender sólo
         // de la incorporación de un EventHandler nuevo al cargar esas partidas.

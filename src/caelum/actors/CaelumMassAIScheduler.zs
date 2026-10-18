@@ -1,4 +1,4 @@
-// Coordinador determinista de la IA masiva de CADEV02. El EventHandler existe
+// Coordinador determinista de la IA masiva de TACTORS. El EventHandler existe
 // una sola vez por partida y permite imponer un techo real a A_Chase sin que
 // cada actor tenga que buscar o recorrer a los demas miembros del campo.
 // #128 reutiliza su ciclo de mapa para actualizar Population; las opciones
@@ -25,7 +25,7 @@ class CaelumMassAIScheduler : EventHandler
     double MassFollowerSpeedScale;
     bool SettingsInitialized;
 
-    // CADEV02 usa un solo objetivo compartido para demostrar que los seguidores
+    // TACTORS usa un solo objetivo compartido para demostrar que los seguidores
     // pueden adoptar la detección de su escuadra sin repetir A_Look. No es aún
     // el registro definitivo por facción/zona de los mapas jugables.
     Actor SharedMassTarget;
