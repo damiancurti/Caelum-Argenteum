@@ -1,0 +1,8 @@
+{
+  "directory": "issue318-isolation-final01",
+  "prefix": "matrix",
+  "sites": "0,1",
+  "rounds": 3,
+  "modes": "-1,0,1,2,3,4,5,6,7,8",
+  "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d"
+}

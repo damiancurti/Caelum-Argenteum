@@ -1,6 +1,19 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
+
+## Isolated performance controls (#318, 5.4.41)
+
+The nine-family benchmark is a diagnostic, not a gameplay mode. It retains
+actor identities/inventories and replays recorded calls over a frozen MAP03
+scene while gating other families, attack effects and impact-energy response.
+Copied thermal/status states and pose restoration prevent those effects from
+turning it into an evolving battle. Caches/navigation are not fully rolled back.
+Results include instrumentation and cannot be summed as removable production
+costs or converted directly into normal-combat FPS. No resource, targeting,
+collision, thermal or inventory rule changes in this delivery. The automatic
+500-living-combatant policy and approved siege budget remain authoritative.
+See [evidence and exclusions](../assets/validation_5441/RESULTS.md).
 
 ## Shared rest and acceleration safety (#325, 5.4.40)
 

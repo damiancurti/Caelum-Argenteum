@@ -1,0 +1,596 @@
+[
+  {
+    "label": "matrix-s0-r0-n0-m-1",
+    "site": 0,
+    "repeat": 0,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 0,
+    "bench_end": 714
+  },
+  {
+    "label": "matrix-s0-r0-n1-m0",
+    "site": 0,
+    "repeat": 0,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 714,
+    "bench_end": 1428
+  },
+  {
+    "label": "matrix-s0-r0-n2-m1",
+    "site": 0,
+    "repeat": 0,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 1428,
+    "bench_end": 2142
+  },
+  {
+    "label": "matrix-s0-r0-n3-m2",
+    "site": 0,
+    "repeat": 0,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 2142,
+    "bench_end": 2856
+  },
+  {
+    "label": "matrix-s0-r0-n4-m3",
+    "site": 0,
+    "repeat": 0,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 2856,
+    "bench_end": 3570
+  },
+  {
+    "label": "matrix-s0-r0-n5-m4",
+    "site": 0,
+    "repeat": 0,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 3570,
+    "bench_end": 4284
+  },
+  {
+    "label": "matrix-s0-r0-n6-m5",
+    "site": 0,
+    "repeat": 0,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 4284,
+    "bench_end": 4998
+  },
+  {
+    "label": "matrix-s0-r0-n7-m6",
+    "site": 0,
+    "repeat": 0,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 4998,
+    "bench_end": 5712
+  },
+  {
+    "label": "matrix-s0-r0-n8-m7",
+    "site": 0,
+    "repeat": 0,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 5712,
+    "bench_end": 6426
+  },
+  {
+    "label": "matrix-s0-r0-n9-m8",
+    "site": 0,
+    "repeat": 0,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 6426,
+    "bench_end": 7140
+  },
+  {
+    "label": "matrix-s0-r0-n10-m-1",
+    "site": 0,
+    "repeat": 0,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 7140,
+    "bench_end": 7854
+  },
+  {
+    "label": "matrix-s1-r0-n0-m-1",
+    "site": 1,
+    "repeat": 0,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 7854,
+    "bench_end": 8578
+  },
+  {
+    "label": "matrix-s1-r0-n1-m0",
+    "site": 1,
+    "repeat": 0,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 8578,
+    "bench_end": 9301
+  },
+  {
+    "label": "matrix-s1-r0-n2-m1",
+    "site": 1,
+    "repeat": 0,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 9301,
+    "bench_end": 10025
+  },
+  {
+    "label": "matrix-s1-r0-n3-m2",
+    "site": 1,
+    "repeat": 0,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 10025,
+    "bench_end": 10749
+  },
+  {
+    "label": "matrix-s1-r0-n4-m3",
+    "site": 1,
+    "repeat": 0,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 10749,
+    "bench_end": 11473
+  },
+  {
+    "label": "matrix-s1-r0-n5-m4",
+    "site": 1,
+    "repeat": 0,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 11473,
+    "bench_end": 12197
+  },
+  {
+    "label": "matrix-s1-r0-n6-m5",
+    "site": 1,
+    "repeat": 0,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 12197,
+    "bench_end": 12921
+  },
+  {
+    "label": "matrix-s1-r0-n7-m6",
+    "site": 1,
+    "repeat": 0,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 12921,
+    "bench_end": 13645
+  },
+  {
+    "label": "matrix-s1-r0-n8-m7",
+    "site": 1,
+    "repeat": 0,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 13645,
+    "bench_end": 14369
+  },
+  {
+    "label": "matrix-s1-r0-n9-m8",
+    "site": 1,
+    "repeat": 0,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 14369,
+    "bench_end": 15093
+  },
+  {
+    "label": "matrix-s1-r0-n10-m-1",
+    "site": 1,
+    "repeat": 0,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 15093,
+    "bench_end": 15817
+  },
+  {
+    "label": "matrix-s0-r1-n0-m-1",
+    "site": 0,
+    "repeat": 1,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 15817,
+    "bench_end": 16531
+  },
+  {
+    "label": "matrix-s0-r1-n1-m8",
+    "site": 0,
+    "repeat": 1,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 16531,
+    "bench_end": 17245
+  },
+  {
+    "label": "matrix-s0-r1-n2-m7",
+    "site": 0,
+    "repeat": 1,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 17245,
+    "bench_end": 17959
+  },
+  {
+    "label": "matrix-s0-r1-n3-m6",
+    "site": 0,
+    "repeat": 1,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 17959,
+    "bench_end": 18673
+  },
+  {
+    "label": "matrix-s0-r1-n4-m5",
+    "site": 0,
+    "repeat": 1,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 18673,
+    "bench_end": 19387
+  },
+  {
+    "label": "matrix-s0-r1-n5-m4",
+    "site": 0,
+    "repeat": 1,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 19387,
+    "bench_end": 20101
+  },
+  {
+    "label": "matrix-s0-r1-n6-m3",
+    "site": 0,
+    "repeat": 1,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 20101,
+    "bench_end": 20815
+  },
+  {
+    "label": "matrix-s0-r1-n7-m2",
+    "site": 0,
+    "repeat": 1,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 20815,
+    "bench_end": 21529
+  },
+  {
+    "label": "matrix-s0-r1-n8-m1",
+    "site": 0,
+    "repeat": 1,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 21529,
+    "bench_end": 22243
+  },
+  {
+    "label": "matrix-s0-r1-n9-m0",
+    "site": 0,
+    "repeat": 1,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 22243,
+    "bench_end": 22957
+  },
+  {
+    "label": "matrix-s0-r1-n10-m-1",
+    "site": 0,
+    "repeat": 1,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 22957,
+    "bench_end": 23671
+  },
+  {
+    "label": "matrix-s1-r1-n0-m-1",
+    "site": 1,
+    "repeat": 1,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 23671,
+    "bench_end": 24395
+  },
+  {
+    "label": "matrix-s1-r1-n1-m8",
+    "site": 1,
+    "repeat": 1,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 24395,
+    "bench_end": 25119
+  },
+  {
+    "label": "matrix-s1-r1-n2-m7",
+    "site": 1,
+    "repeat": 1,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 25119,
+    "bench_end": 25843
+  },
+  {
+    "label": "matrix-s1-r1-n3-m6",
+    "site": 1,
+    "repeat": 1,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 25843,
+    "bench_end": 26567
+  },
+  {
+    "label": "matrix-s1-r1-n4-m5",
+    "site": 1,
+    "repeat": 1,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 26567,
+    "bench_end": 27291
+  },
+  {
+    "label": "matrix-s1-r1-n5-m4",
+    "site": 1,
+    "repeat": 1,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 27291,
+    "bench_end": 28015
+  },
+  {
+    "label": "matrix-s1-r1-n6-m3",
+    "site": 1,
+    "repeat": 1,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 28015,
+    "bench_end": 28739
+  },
+  {
+    "label": "matrix-s1-r1-n7-m2",
+    "site": 1,
+    "repeat": 1,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 28739,
+    "bench_end": 29463
+  },
+  {
+    "label": "matrix-s1-r1-n8-m1",
+    "site": 1,
+    "repeat": 1,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 29463,
+    "bench_end": 30187
+  },
+  {
+    "label": "matrix-s1-r1-n9-m0",
+    "site": 1,
+    "repeat": 1,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 30187,
+    "bench_end": 30910
+  },
+  {
+    "label": "matrix-s1-r1-n10-m-1",
+    "site": 1,
+    "repeat": 1,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 30910,
+    "bench_end": 31634
+  },
+  {
+    "label": "matrix-s0-r2-n0-m-1",
+    "site": 0,
+    "repeat": 2,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 31634,
+    "bench_end": 32348
+  },
+  {
+    "label": "matrix-s0-r2-n1-m0",
+    "site": 0,
+    "repeat": 2,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 32348,
+    "bench_end": 33062
+  },
+  {
+    "label": "matrix-s0-r2-n2-m1",
+    "site": 0,
+    "repeat": 2,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 33062,
+    "bench_end": 33776
+  },
+  {
+    "label": "matrix-s0-r2-n3-m2",
+    "site": 0,
+    "repeat": 2,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 33776,
+    "bench_end": 34490
+  },
+  {
+    "label": "matrix-s0-r2-n4-m3",
+    "site": 0,
+    "repeat": 2,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 34490,
+    "bench_end": 35204
+  },
+  {
+    "label": "matrix-s0-r2-n5-m4",
+    "site": 0,
+    "repeat": 2,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 35204,
+    "bench_end": 35918
+  },
+  {
+    "label": "matrix-s0-r2-n6-m5",
+    "site": 0,
+    "repeat": 2,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 35918,
+    "bench_end": 36632
+  },
+  {
+    "label": "matrix-s0-r2-n7-m6",
+    "site": 0,
+    "repeat": 2,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 36632,
+    "bench_end": 37346
+  },
+  {
+    "label": "matrix-s0-r2-n8-m7",
+    "site": 0,
+    "repeat": 2,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 37346,
+    "bench_end": 38060
+  },
+  {
+    "label": "matrix-s0-r2-n9-m8",
+    "site": 0,
+    "repeat": 2,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 38060,
+    "bench_end": 38774
+  },
+  {
+    "label": "matrix-s0-r2-n10-m-1",
+    "site": 0,
+    "repeat": 2,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 38774,
+    "bench_end": 39488
+  },
+  {
+    "label": "matrix-s1-r2-n0-m-1",
+    "site": 1,
+    "repeat": 2,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 39488,
+    "bench_end": 40212
+  },
+  {
+    "label": "matrix-s1-r2-n1-m0",
+    "site": 1,
+    "repeat": 2,
+    "mode": 0,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 40212,
+    "bench_end": 40935
+  },
+  {
+    "label": "matrix-s1-r2-n2-m1",
+    "site": 1,
+    "repeat": 2,
+    "mode": 1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 40935,
+    "bench_end": 41658
+  },
+  {
+    "label": "matrix-s1-r2-n3-m2",
+    "site": 1,
+    "repeat": 2,
+    "mode": 2,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 41658,
+    "bench_end": 42382
+  },
+  {
+    "label": "matrix-s1-r2-n4-m3",
+    "site": 1,
+    "repeat": 2,
+    "mode": 3,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 42382,
+    "bench_end": 43106
+  },
+  {
+    "label": "matrix-s1-r2-n5-m4",
+    "site": 1,
+    "repeat": 2,
+    "mode": 4,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 43106,
+    "bench_end": 43830
+  },
+  {
+    "label": "matrix-s1-r2-n6-m5",
+    "site": 1,
+    "repeat": 2,
+    "mode": 5,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 43830,
+    "bench_end": 44554
+  },
+  {
+    "label": "matrix-s1-r2-n7-m6",
+    "site": 1,
+    "repeat": 2,
+    "mode": 6,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 44554,
+    "bench_end": 45278
+  },
+  {
+    "label": "matrix-s1-r2-n8-m7",
+    "site": 1,
+    "repeat": 2,
+    "mode": 7,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 45278,
+    "bench_end": 46002
+  },
+  {
+    "label": "matrix-s1-r2-n9-m8",
+    "site": 1,
+    "repeat": 2,
+    "mode": 8,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 46002,
+    "bench_end": 46726
+  },
+  {
+    "label": "matrix-s1-r2-n10-m-1",
+    "site": 1,
+    "repeat": 2,
+    "mode": -1,
+    "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+    "bench_start": 46726,
+    "bench_end": 47450
+  }
+]

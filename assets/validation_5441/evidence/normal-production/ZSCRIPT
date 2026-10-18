@@ -1,0 +1,2 @@
+version "4.14"
+class CA318NormalSmoke:EventHandler {int Age;override void WorldTick(){if(++Age==35)Console.Printf("CA282 DONE passes=1 failures=0");}}

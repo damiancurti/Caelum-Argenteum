@@ -1,0 +1,18 @@
+{
+  "normal_package": {
+    "issue": 318,
+    "release": "5.4.41",
+    "purpose": "Normal production compilation/loading smoke; no isolated-workload gates.",
+    "runtime_sha256": "3526c8f1af503652abe57e9a313fff8c2d6595ecb607f2807530340122bf3f42",
+    "fixture_sha256": "89525371a9690b2c4885831ec50c02ccb25ddd4c2768ee01530154fdf8ff80e9",
+    "exact_source_members": 16376,
+    "source_byte_equality": true,
+    "isolated_probe_absent": true
+  },
+  "normal_smoke": "passed, one loading/compilation assertion; all 16,376 members match src byte for byte",
+  "power_request_released": true,
+  "normal_fixture_draft": "production01 rejected an extraneous semicolon after its ZScript version directive; only the fixture changed for passing production02",
+  "independent_review": "Final harness, representative raw logs, reported numbers and archive provenance reviewed; elapsed-wall-time and exact-source reproduction wording corrected.",
+  "matrix_engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+  "source_changes": "Only two informational 5.4.40 -> 5.4.41 diagnostic labels; production gameplay unchanged."
+}

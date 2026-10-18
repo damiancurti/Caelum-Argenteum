@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
 
 **5.4.40/#325:** rest safety;278checks; CA325-01 accepted Oct18.
 
@@ -29,8 +29,8 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
-**5.4.37/#318:** eight current MAP03 measurements; gameplay unchanged.
-Siege native FPS snapshots48/35, not stable60FPS. validation_5437/CA-KP-111.
+**5.4.41/#318:** 66 isolated windows; targeting/Tick dominate. validation_5441.
+No production removal or ETW. Siege48/35 snapshots: validation_5437.
 CA318-01..05/CA327-01 pending. No6000-simultaneous tests again.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport

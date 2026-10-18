@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
+
+## 5.4.41 - Isolated siege update costs (#318)
+
+The author requested each measured family alone against all nine disabled.
+66 native windows cover three repeats at two MAP03 cameras, retaining 600
+soldiers, 998 Mandingas and all 8,910 actors. Target selection adds about 3.15
+ms/tic; the residual combatant update adds 2.94-2.99 ms/tic in these instrumented
+controls. Calls, population, poses and provenance pass their guards. This
+prioritizes investigation, not removal of gameplay rules or an FPS guarantee.
+Native bench snapshots remain distinct from unavailable ETW presentation data.
+Evidence: [validation_5441](../assets/validation_5441/RESULTS.md). #318/#327
+manual checks and production performance work remain open.
 
 ## 5.4.40 - Shared rest safety (#325)
 

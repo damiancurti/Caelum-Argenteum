@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
+
+## 5.4.41 - Isolated siege update costs (#318)
+
+Completed: 66 windows / 23,100 sampled tics, nine individual families plus
+bracketing all-off controls, three repeats and two cameras; zero unexpected
+spawns, losses, external pose changes or health loss. All windows preserve
+600/998 living soldiers/Mandingas and 8,910 actors. Reproducible scripts, raw
+logs and hashes are in validation_5441. Target selection and the residual Tick
+are the first paths to investigate. No subsystem is declared dispensable.
+Static validation, index, normal build/member equality and native compilation/loading smoke pass; temporary keep-awake released.
+Next: validate any production optimization in matched normal combat, including
+presented-frame timing when the collector is available. Do not sum isolated
+cores or interpret their FPS as normal combat. Existing author checks remain.
 
 ## 5.4.40 - Shared rest safety (#325)
 
