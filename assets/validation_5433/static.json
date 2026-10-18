@@ -1,0 +1,91 @@
+{
+  "issue": 323,
+  "baseline": "6502e4c0",
+  "layout_revision": 5,
+  "changed_cells": [
+    [
+      -5344,
+      -1600
+    ],
+    [
+      -5344,
+      -1568
+    ],
+    [
+      -5344,
+      -1536
+    ],
+    [
+      -5344,
+      -1504
+    ],
+    [
+      -5312,
+      -1600
+    ],
+    [
+      -5312,
+      -1568
+    ],
+    [
+      -5312,
+      -1536
+    ],
+    [
+      -5312,
+      -1504
+    ],
+    [
+      -5280,
+      -1600
+    ],
+    [
+      -5280,
+      -1568
+    ],
+    [
+      -5280,
+      -1536
+    ],
+    [
+      -5280,
+      -1504
+    ],
+    [
+      -5248,
+      -1600
+    ],
+    [
+      -5248,
+      -1568
+    ],
+    [
+      -5248,
+      -1536
+    ],
+    [
+      -5248,
+      -1504
+    ]
+  ],
+  "upper_cells_changed_identically": true,
+  "other_manifest_content_equal": true,
+  "things_changed_only_revision_marker": true,
+  "deterministic_generation": true,
+  "hashes": {
+    "src/maps/MAP02.wad": "617c4c5718bd2fc0f375390842cb4284a263f515dc326edf6a90310fb4e7f527",
+    "assets/map02_maze/MAP02_MANIFEST.json": "64803c853c1481a745861f003ae6ae6234b7fcb4e2893c51add96f02270ed57f",
+    "src/caelum/world/CaelumMazeLayout.zs": "6c6ee621f923c1b255e02ee261c25893fa4c36b3b8088e58d2951c6fff86b1df",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022"
+  },
+  "old_geometry": {
+    "sectors": 84,
+    "lines": 11525,
+    "vertices": 11386
+  },
+  "new_geometry": {
+    "sectors": 85,
+    "lines": 11541,
+    "vertices": 11402
+  }
+}

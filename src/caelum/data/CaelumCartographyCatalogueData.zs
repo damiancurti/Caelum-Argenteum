@@ -3,7 +3,7 @@
 class CaelumCartographyCatalogueData : Object
 {
     const MAP01_CHECKSUM = "359c5aa1daa71a0fb91bba6848818f46";
-    const MAP02_CHECKSUM = "d8d3ca328f2c155e49f0216c2fea0643";
+    const MAP02_CHECKSUM = "49135418d62184a8b76ec6ab426a95f2";
     const MAP06_CHECKSUM = "bfbf3d4ac39f36e7d61a450dbb47b1a2";
     const MAP06_FURNISHED_CHECKSUM = "26eb59c84f2028e436acaa4914b42727";
     static bool MatchesCityGeometry(String checksum)

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
 
 ## 5.4.31 - Collapsible automap legend (#321)
 
@@ -2272,6 +2272,14 @@ contact counts one tic, subsequent continuous pulses use elapsed tics; same-tic
 panel/callback repeats add zero. The old args[0] damage percentage is reserved
 and ignored. Unknown native crushers derive footprint/stroke from their native
 sector and ceiling thinker. Special native telefrag sentinels remain separate.
+
+MAP02 revision 5 / #323 retains each authored crusher's 128x128-MU footprint.
+Finalizing its sector after corridor construction prevents the western refuge
+from merging trap 43921 into the shared district ceiling. Native speed, stroke,
+density, pressure and one-shot activation are unchanged. This is a geometry
+correction, separate from #312's damage audit. Visited revision-4 snapshots need
+the archived geometry via -LegacyMap02Revision4; that reversible recovery mode
+keeps the original defect. The corrected geometry requires a fresh MAP02 visit.
 
 Additive saved contact/work fields preserve active state. Weight EnergyRevision
 1 discards legacy percentage carry once; it cannot reinterpret it as joules.

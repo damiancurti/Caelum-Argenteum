@@ -2,6 +2,7 @@ param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
     [switch]$LegacyMap02,
+    [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap06,
     [switch]$LegacyMap06Siege,
     [switch]$LegacyMap06NorthCity,
@@ -10,6 +11,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if ($LegacyMap02 -and $LegacyMap02Revision4) {
+    throw 'Select only one MAP02 compatibility revision: -LegacyMap02 or -LegacyMap02Revision4.'
+}
 if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$LegacyMap06NorthCity.IsPresent + [int]$LegacyMap06SouthCity.IsPresent + [int]$LegacyMap06Furnished.IsPresent) -gt 1) {
     throw 'Select only one MAP06 compatibility revision: -LegacyMap06, -LegacyMap06Siege, -LegacyMap06NorthCity, -LegacyMap06SouthCity or -LegacyMap06Furnished.'
 }
@@ -40,9 +44,15 @@ if ($Files.Count -eq 0) {
 # Keep the established package name so GZDoom can restore existing saves.
 # Compatibility replaces only selected map lumps; runtime code stays current.
 $LegacyMap02Bytes = $null
-if ($LegacyMap02) {
-    $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_4364/MAP02.wad"
-    $LegacyMap02Hash = "9095BDA962F5410BA869B3780DFF2A58C11FF0A011E35D451A43052B851406D2"
+if ($LegacyMap02 -or $LegacyMap02Revision4) {
+    if ($LegacyMap02Revision4) {
+        $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_5432/MAP02.wad"
+        $LegacyMap02Hash = "6337BC73CA32BB9DB9936052AC341D34ACE75B3C66858DFC4EAA0E6833CE55F1"
+    }
+    else {
+        $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_4364/MAP02.wad"
+        $LegacyMap02Hash = "9095BDA962F5410BA869B3780DFF2A58C11FF0A011E35D451A43052B851406D2"
+    }
     if (-not (Test-Path -LiteralPath $LegacyMap02Path -PathType Leaf)) {
         throw "Legacy MAP02 source is missing: $LegacyMap02Path"
     }
@@ -170,7 +180,7 @@ try {
                 )
                 $EntryStream = $Entry.Open()
                 try {
-                    if ($LegacyMap02 -and $EntryName -ieq "maps/MAP02.wad") {
+                    if (($LegacyMap02 -or $LegacyMap02Revision4) -and $EntryName -ieq "maps/MAP02.wad") {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
                     }
@@ -192,7 +202,7 @@ try {
                     $EntryStream.Dispose()
                 }
             }
-            if ($LegacyMap02 -and $LegacyReplacementCount -ne 1) {
+            if (($LegacyMap02 -or $LegacyMap02Revision4) -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
             }
             if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $LegacyPortReplacementCount -ne 1) {
@@ -239,12 +249,16 @@ try {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
     Write-Host "PK3 created successfully: $DestinationPath"
-    if ($LegacyMap02) {
+    if ($LegacyMap02Revision4) {
+        Write-Host "MAP02 compatibility: exact pre-5.4.33 revision 4 for existing visited-map saves."
+        Write-Host "The old western crusher defect remains in that geometry. Rebuild without -LegacyMap02Revision4 and start a fresh MAP02 to use the corrected panel."
+    }
+    elseif ($LegacyMap02) {
         Write-Host "MAP02 compatibility: original 4.36.4 layout retained for existing saves."
         Write-Host "New four-section MAP02 is not active in this build. Rebuild without -LegacyMap02 to restore it."
     }
     else {
-        Write-Host "MAP02 layout: current source. Use -LegacyMap02 for saves that already visited the old maze."
+        Write-Host "MAP02 layout: current source. Visited-map saves need their exact revision: -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4)."
     }
     Write-Host "Files included: $($Files.Count)"
     if ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }

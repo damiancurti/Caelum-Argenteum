@@ -1,5 +1,5 @@
 {
-  "revision": 4,
+  "revision": 5,
   "seed": 436009,
   "grid": 32,
   "nodes_per_axis": 5,
@@ -326,5 +326,7 @@
       -128,
       0
     ]
-  ]
+  ],
+  "crusher_panel_half_width": 64,
+  "crusher_panel_basis": "Retains the existing 128x128-MU authored footprint. Issue #323 stamps these panels after all upper corridors so refuge construction cannot overwrite their sector group."
 }

@@ -1,0 +1,330 @@
+{
+  "revision": 4,
+  "seed": 436009,
+  "grid": 32,
+  "nodes_per_axis": 5,
+  "node_spacing": 768,
+  "room_width": 640,
+  "passage_width": 384,
+  "channel_width": 64,
+  "channel_depth": 16,
+  "ceiling": 320,
+  "gate_height": 128,
+  "arrival": {
+    "chair": [
+      -448,
+      -448,
+      0
+    ],
+    "bed": [
+      -448,
+      320,
+      0
+    ],
+    "workbench": [
+      320,
+      -448,
+      0
+    ]
+  },
+  "section_names": [
+    "south",
+    "west",
+    "east",
+    "north"
+  ],
+  "section_tints": [
+    "C8C4B0",
+    "ADBDAF",
+    "B6ADB9",
+    "A6BDCC"
+  ],
+  "chests_per_section": [
+    10,
+    10,
+    10,
+    9
+  ],
+  "traps_per_section": [
+    12,
+    11,
+    11,
+    11
+  ],
+  "mandingas_per_section": [
+    24,
+    24,
+    24,
+    24
+  ],
+  "rats_per_mandinga": 2,
+  "arrow_bundles_per_section": [
+    3,
+    3,
+    3,
+    3
+  ],
+  "bolt_bundles_per_section": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "bullet_bundles_per_section": [
+    2,
+    1,
+    2,
+    1
+  ],
+  "ammunition_bundle_units": 20,
+  "largest_player_radius": 21.333333,
+  "largest_prisoner_radius": 21.3,
+  "largest_supported_height": 74.7,
+  "clearance_basis": "Two 160-MU dry walkways flank a 64-MU, 16-deep channel. Each walkway exceeds three maximum player diameters (128 MU); level crossings and open gates provide 384 MU. Endpoint-cell and refuge routes use the same clearance. Existing supported player and prisoner collision sizes are unchanged.",
+  "gate_rule": "Transparent barred rendering with native closed movement, Use, hitscan, projectile and AI-sight blocking. Accepted runtime sight blocking keeps the boss from alerting through the closed arena gate. Keys open permanently without consumption.",
+  "section_origins": [
+    [
+      -1536,
+      -5280
+    ],
+    [
+      -5280,
+      -1536
+    ],
+    [
+      2208,
+      -1536
+    ],
+    [
+      -1536,
+      2208
+    ]
+  ],
+  "entry_nodes": [
+    [
+      2,
+      4
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      0
+    ]
+  ],
+  "hub_bounds": [
+    -640,
+    -640,
+    640,
+    640
+  ],
+  "player_start": [
+    0,
+    0
+  ],
+  "entrance_gates": [
+    [
+      0,
+      -1536
+    ],
+    [
+      -1536,
+      0
+    ],
+    [
+      1536,
+      0
+    ],
+    [
+      0,
+      1536
+    ]
+  ],
+  "elevator_reservation": [
+    -256,
+    -256,
+    256,
+    256
+  ],
+  "cardinal_spacing_basis": "Author requested minimum-length hub approaches on 2026-10-02. Entry distance = half the junction grid span + room width + one collision-grid cell. Adjacent section floors retain exactly one 32-MU solid wall strip; no overlap or unintended connection.",
+  "return_network": {
+    "revision": 1,
+    "floor": -160,
+    "ceiling": -32,
+    "water_depth": 16,
+    "width": 128,
+    "ring_radius": 512,
+    "elevator_tag": 44900,
+    "elevator_speed": 16,
+    "grate_tags": [
+      44910,
+      44911,
+      44912,
+      44913
+    ],
+    "grate_width": 384,
+    "grate_thickness": 32,
+    "control_origin": [
+      -16000,
+      -16000
+    ],
+    "paths": [
+      {
+        "trap": 43905,
+        "points": [
+          [
+            -832,
+            -4544
+          ],
+          [
+            -832,
+            -512
+          ],
+          [
+            0,
+            -512
+          ]
+        ],
+        "grate": 44910
+      },
+      {
+        "trap": 43916,
+        "points": [
+          [
+            -3808,
+            1504
+          ],
+          [
+            -3808,
+            1856
+          ],
+          [
+            -512,
+            1856
+          ],
+          [
+            -512,
+            0
+          ]
+        ],
+        "grate": 44911
+      },
+      {
+        "trap": 43925,
+        "points": [
+          [
+            5216,
+            736
+          ],
+          [
+            5216,
+            640
+          ],
+          [
+            512,
+            640
+          ],
+          [
+            512,
+            0
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43929,
+        "points": [
+          [
+            5216,
+            -1568
+          ],
+          [
+            5216,
+            640
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43930,
+        "points": [
+          [
+            2912,
+            1504
+          ],
+          [
+            2912,
+            640
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43933,
+        "points": [
+          [
+            2144,
+            1504
+          ],
+          [
+            2048,
+            1504
+          ],
+          [
+            2048,
+            640
+          ]
+        ],
+        "grate": 44913
+      }
+    ],
+    "basis": "128 MU width/headroom derives from four existing 32-MU grid cells and exceeds the accepted 74.7-MU maximum actor height. Lower ceiling -32 keeps one grid cell of solid slab under the upper floor. Water reuses the existing 16-MU harmless channel depth; no current or damage. Elevator uses the accepted MAP01 speed 16. Pits retain their 128x128 openings; no ladder or stair exit.",
+    "activation": "Four independent permanent keyless grates: south/west/east/north, opened only from outside the lift enclosure below the upper slab. Use at either face then calls the platform from either landing; Use from inside sends it to the other landing.",
+    "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible.",
+    "save_policy": "Author explicitly waived prior-save compatibility for issue #74 on 2026-10-02. New-layout mechanism state must persist through save/load and hub travel.",
+    "moving_sector_isolation": "Lower paths avoid every surface gate and crusher panel. East branches detour around crusher 43923 so its original base floor and complete sector remain unchanged."
+  },
+  "shotgun_bundles_per_section": [
+    2,
+    1,
+    2,
+    1
+  ],
+  "ammunition_replacements": {
+    "CaelumCarbineAmmo": "CaelumArrowAmmo",
+    "CaelumShotgunAmmo": "CaelumBoltAmmo"
+  },
+  "refuge_station_offsets": [
+    [
+      18004,
+      -64,
+      -64
+    ],
+    [
+      18000,
+      0,
+      0
+    ],
+    [
+      18001,
+      64,
+      -64
+    ],
+    [
+      18003,
+      0,
+      -128
+    ],
+    [
+      18002,
+      -128,
+      0
+    ]
+  ]
+}

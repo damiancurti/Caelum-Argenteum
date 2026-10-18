@@ -1,0 +1,11 @@
+{
+  "members": 16371,
+  "normal_equals_frozen_source": true,
+  "compatibility_changed_members": [
+    "maps/MAP02.wad"
+  ],
+  "legacy_wad_exact": true,
+  "conflicting_flags_rejected_before_mutation": true,
+  "normal_sha256": "deb8114662389c65039b34b3cf0f92ba7b34db35ec67f7849493be6e144fd5e5",
+  "compatibility_sha256": "789fdb53d079d94c5602accf37d4a37664a935a5ec9f27307a8650794dd30b0c"
+}

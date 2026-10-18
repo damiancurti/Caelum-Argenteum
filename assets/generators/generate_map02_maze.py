@@ -101,7 +101,7 @@ for z in range(4):
   elif kind=='teleport':
    dx,dy=coord(z,start);thing(30965,dx+128,dy,tid=tid+100);thing(30964,x,y,z=.5,tid=tid,args=[tid+100])
   elif kind=='crusher':
-   room(x-64,y-64,x+64,y+64,group=tid);thing(30966,x,y,z=.5,tid=tid,args=[10,8,0])
+   thing(30966,x,y,z=.5,tid=tid,args=[10,8,0])
   elif kind=='rolling_rock':
    thing(30961,x,y+80,angle=270,tid=tid+100,args=[32]);thing(30975,x,y-48,z=.5,tid=tid,args=[tid+100])
   elif kind=='falling_rock':
@@ -169,6 +169,12 @@ time_advance_zones += [dict(position=r['center']+[0],role='refuge',zone=r['zone'
 time_advance_zones += [dict(position=p['bed']+[0],role='cell_bed',zone=p['zone']) for p in prisoners]
 # Lower passages are overlaid on the original upper geometry. Solid native
 # 3D floors preserve upper routes; only the six trap apertures connect levels.
+# Finalize local moving panels after corridors/refuges have finished painting.
+# Otherwise the western refuge corridor replaces crusher 43921 with zone 2.
+panel_half=cfg['crusher_panel_half_width']
+for trap in features:
+ if trap['type']=='crusher':
+  x,y=trap['position'];room(x-panel_half,y-panel_half,x+panel_half,y+panel_half,group=trap['tid'])
 upper_cells=dict(cells);lower=set();return_grates=[];floor_controls={}
 net=cfg['return_network'];lf=net['floor'];lc=net['ceiling'];half=net['width']//2
 def lower_rect(x1,y1,x2,y2):
@@ -215,6 +221,13 @@ for x,y in sorted(lower):
  tag=composites[signature]
  cells[x,y]=(lf,ceil,group,tag,kind=='tunnel')
  lower_cells.append([x,y,kind,tag])
+# Moving sectors must retain exactly their authored footprint and base floor.
+for trap in features:
+ if trap['type']!='crusher':continue
+ x,y=trap['position'];footprint={(px,py) for px in range(x-panel_half,x+panel_half,CELL) for py in range(y-panel_half,y+panel_half,CELL)}
+ actual={p for p,v in cells.items() if v[2]==trap['tid']}
+ assert actual==footprint, f"Crusher {trap['tid']} lost its isolated footprint"
+ assert all(cells[p]==(0,cfg['ceiling'],trap['tid'],0,False) for p in footprint), f"Crusher {trap['tid']} overlaps a lower passage"
 # Native map-thing heights are relative to the base floor, including above a
 # 3D slab. Keep each upper actor at precisely its former authored world height.
 for t in things:
@@ -280,7 +293,7 @@ for tag,c in floor_controls.items():
  if c['slab']:control(tag,c['bottom'],c['top'],gate_tag=c['grate'],top_texture=c['top_texture'])
  if c['water']:control(tag,lf,lf+net['water_depth'],water=True)
 def value(v):return str(v).lower() if isinstance(v,bool) else json.dumps(v) if isinstance(v,str) else str(v)
-text=['namespace = "ZDoom";\n// MAP02 revision 4, 4.37.7; generated from LAYOUT.json.\n']
+text=[f'namespace = "ZDoom";\n// MAP02 revision {cfg["revision"]}; generated from LAYOUT.json.\n']
 for kind,entries in [('vertex',vertices),('sector',sectors),('sidedef',sides),('linedef',lines),('thing',things)]:
  for entry in entries:text.append(kind+'\n{\n'+''.join(f'    {k} = {value(v)};\n' for k,v in entry.items())+'}\n')
 body=bytearray();directory=bytearray()
@@ -318,7 +331,7 @@ for key in ('cells','upper_cells','lower_cells'):
  cell_text='[\n'+',\n'.join('    '+json.dumps(row) for row in manifest[key])+'\n  ]'
  manifest_text=manifest_text.replace('"__'+key.upper()+'__"',cell_text)
 (OUT/'MAP02_MANIFEST.json').write_text(manifest_text+'\n',encoding='utf-8')
-runtime=['// Generado desde LAYOUT.json y generate_map02_maze.py.','class CaelumMazeLayout : Object play','{','    const REVISION = 4;','    static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}','    static vector3 TravelPosition(int id)','    {']
+runtime=['// Generado desde LAYOUT.json y generate_map02_maze.py.','class CaelumMazeLayout : Object play','{',f'    const REVISION = {cfg["revision"]};','    static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}','    static vector3 TravelPosition(int id)','    {']
 for key,pos in travel.items():runtime.append(f'        if(id=={key})return ({pos[0]},{pos[1]},0);')
 runtime+=['        return (0,0,0);','    }',f'    const TIME_ADVANCE_ZONE_COUNT = {len(time_advance_zones)};','    static vector3 TimeAdvanceZonePosition(int index)','    {']
 for index,zone in enumerate(time_advance_zones):

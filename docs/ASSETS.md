@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
+
+## 5.4.33 - MAP02 crusher geometry provenance (#323)
+
+The authoritative generate_map02_maze.py / LAYOUT.json now stamp isolated
+crusher footprints after upper corridor construction. Original panel dimensions
+are unchanged. Revision-4 WAD, manifest and layout remain in
+assets/map02_maze/legacy_5432 for reversible recovery; no external assets were
+added. Static evidence: assets/validation_5433; native checks remain pending.
 
 ## 5.4.29 - Map catalogue and exact geometry provenance (#327)
 
