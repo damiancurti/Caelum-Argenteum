@@ -258,3 +258,6 @@
 /assets/map_catalogue/legacy_5428/** -text whitespace=cr-at-eol
 /src/caelum/data/CaelumReinforcementData.zs text eol=lf
 /src/caelum/data/CaelumCartographyCatalogueData.zs text eol=lf
+
+# Preserve #319 native evidence and fixture fingerprints.
+/assets/validation_5430/** -text whitespace=cr-at-eol
