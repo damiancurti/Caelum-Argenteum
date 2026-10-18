@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+## 5.4.34 - Native autosave verification (#324)
+
+assets/validation_5434 holds focused reproducible native fixtures and evidence;
+only test sources, launch metadata and logs are deliverable. Engine/IWAD,
+packages and private saved games remain local. No art/audio resource changes.
+Final evidence records 36 runs/138 assertions and exact 16,373-member package
+equivalence. Failed/intermediate fixtures retain their own sources and hashes.
 
 ## 5.4.33 - MAP02 crusher geometry provenance (#323)
 

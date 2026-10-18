@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+## 5.4.34 - Active-play autosaving (#324)
+
+Implemented the shared periodic/checkpoint/arrival owner and last-autosave clock.
+Native validation passes 36 runs/138 assertions: the full 300-second interval,
+pause/menu/console, acceleration, deferred/late invalid bodies, queue/travel races,
+native slot settings and generated-file loading with retained state. Independent
+review, project validation, build and all 16,373 package-member comparisons pass.
+Evidence: assets/validation_5434. CA324-01 bag/follower reload is author-confirmed
+on October 18; remaining author checks stay pending. The short preview seeds ten
+seconds remaining without changing production timing. Follower turning/slowness
+reported during that preview belongs to #322, not autosave acceptance.
 
 ## 5.4.33 - Western crusher sector isolation (#323)
 

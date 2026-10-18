@@ -269,3 +269,8 @@
 # Preserve #323 evidence and the exact prior MAP02 recovery geometry.
 /assets/validation_5433/** -text whitespace=cr-at-eol
 /assets/map02_maze/legacy_5432/** -text whitespace=cr-at-eol
+
+# Preserve #324 native evidence and fixture fingerprints.
+/assets/validation_5434/** -text whitespace=cr-at-eol
+/src/caelum/data/CaelumSaveRules.zs text eol=lf
+/src/caelum/world/CaelumAutosaveEvents.zs text eol=lf
