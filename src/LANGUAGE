@@ -5899,3 +5899,12 @@ CA_QUICK_WATER = "Cantidad: %d | Agua: %.2f / %.2f L";
 CA_QUICK_PREVIOUS = "Anterior";
 CA_QUICK_NEXT = "Siguiente";
 CA_QUICK_USE = "Usar";
+
+[enu default]
+CA_REST_ENEMY = "You cannot rest or advance time with a visible enemy within 32 metres.";
+CA_REST_EFFECT = "An active effect prevents resting or advancing time.";
+CA_REST_CLOUD = "You cannot rest or advance time while the arcane cloud is active.";
+[es esp]
+CA_REST_ENEMY = "No puedes descansar ni avanzar el tiempo con un enemigo visible a 32 metros o menos.";
+CA_REST_EFFECT = "Un efecto activo impide descansar o avanzar el tiempo.";
+CA_REST_CLOUD = "No puedes descansar ni avanzar el tiempo mientras la nube arcana está activa.";

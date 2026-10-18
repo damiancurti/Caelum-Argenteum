@@ -1,0 +1,521 @@
+{
+  "issue": 325,
+  "release": "5.4.40",
+  "runs": [
+    {
+      "directory": "issue325-baseline01",
+      "label": "safety",
+      "sha256": "ef95c31ec70b419cdd83f24ddb57f211e4e037117014ff1304cdd1e1087fe17e",
+      "passes": 0,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-baseline02",
+      "label": "bag",
+      "sha256": "dc05bdec5df069c97e8fe208f0918ef93215d273126e957b72a450aa6539e02d",
+      "passes": 6,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-baseline02",
+      "label": "bed",
+      "sha256": "e04612a3de52d8efb50544025f5d430944bbfcc6f4af0c7b6ccfd4cb6351fac3",
+      "passes": 6,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-baseline02",
+      "label": "safety",
+      "sha256": "8a991eca323afca2848dd2dc443b3811d1ec07d34e8719f333eb3dbca211b42b",
+      "passes": 8,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-baseline02",
+      "label": "save-legacy",
+      "sha256": "6e44cdf3c743176e051b5db716225b41c509329c0b87ed9b26d625ac5adefa97",
+      "passes": 4,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft04",
+      "label": "bag",
+      "sha256": "bb7ab5891c3c1569b27fe3291b31a44c1194c239c2ee05f8e80bfc2967505081",
+      "passes": 8,
+      "failures": 2,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft04",
+      "label": "safety",
+      "sha256": "b3e2787c233345dbea47b0a27a2427d61fba6dc5508fc3277246328a30a25d4f",
+      "passes": 9,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft05",
+      "label": "bag",
+      "sha256": "65f7eca16473e77d9d08c48f9c1ce790a6790b10098cf40c0416109b685908f2",
+      "passes": 8,
+      "failures": 2,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft06",
+      "label": "bag",
+      "sha256": "7927ce52c551eae8058ed19927124f3d8138b1dc2f23dd20cbc0824ee5649e62",
+      "passes": 8,
+      "failures": 2,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft06",
+      "label": "bed",
+      "sha256": "0fb9275b59524d570da32df94e450f38a06922b139e6a6e9143177b39e211699",
+      "passes": 8,
+      "failures": 2,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft07",
+      "label": "bag",
+      "sha256": "da055abe6e929469a0409b1b7fd0bb98c77a8af5061b089fe1021040c2a59220",
+      "passes": 10,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft07",
+      "label": "bed",
+      "sha256": "aab799a91acdf5200d3f33ac7fe9060ee5c7e36e8183dc1af78c9472b4f520d6",
+      "passes": 10,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft07",
+      "label": "safety",
+      "sha256": "17732595db6500955add4d1f10dd65cb7a392e505677718095e2c25a974aef35",
+      "passes": 9,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "attack",
+      "sha256": "b14bbd86b2b6ce91b8fa9c13fdd757180fab4e0e2f45ea12e1ea73e6c63074f6",
+      "passes": 12,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "death0",
+      "sha256": "980cdda39da2441950b1690173e4ebacb3766c2ca420a8699275ee5c8441cf39",
+      "passes": 8,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "death1",
+      "sha256": "39a0dbd5ca132852ebcf4b0a6c077fff9d5b695d930d640c18123dfa9062683c",
+      "passes": 8,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect0",
+      "sha256": "8f663346a28d429928571dcb74b0c82bdcad6b466f07f2cb4843f09f191d0bea",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect1",
+      "sha256": "6fa61361d466ba6e6c9b606fb130dd8072b11dd323cfb5f73fc6006af2170890",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect2",
+      "sha256": "8dba2e4219ffdac2da0a01dd7f3efee87808295d8eac84fcd329bf556603d6f1",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect3",
+      "sha256": "0d4314156fc70a2e9c1ed82418fbc60b75d1a17a1fe405763dc83d2f755b938b",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect4",
+      "sha256": "39e9bc315579163c33f1d757d3e9530f272db6acd08360870c82575ee26861b2",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft08",
+      "label": "effect5",
+      "sha256": "1ab82ad6d15308a04c545baa168d96f9c7c8f8f3f967a11cdb58376481318ec3",
+      "passes": 19,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft09",
+      "label": "danger0",
+      "sha256": "bb6da9aa8954a755c44c149df350b52774c3229aaa58dd6fe4435b7dde06d9c7",
+      "passes": 9,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft09",
+      "label": "danger1",
+      "sha256": "60093e2010d92d2619f81df418fdd94edb02f7daf98325f0e3167cce933ba479",
+      "passes": 11,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft09",
+      "label": "load-current",
+      "sha256": "be2c139a1faa5eba0364f392d26663c8b13b8f56cdeea8c0c85860084337c5c1",
+      "passes": 6,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft09",
+      "label": "load-legacy",
+      "sha256": "913e78f21ca37bf7c3d4ebe48bf752c493ce5aeb8ecc3a18ecd0d8705901feb5",
+      "passes": 4,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft09",
+      "label": "save",
+      "sha256": "a9f1415d458d2ed77306f82bbb937cd86a521f7138ac5aab14717a5f9ea497e8",
+      "passes": 7,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft10",
+      "label": "bed",
+      "sha256": "7ba24f5a2e8e600845a6b61f523afec80cc3f756383cbee7b8685f16d331560f",
+      "passes": 10,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft10",
+      "label": "forecast",
+      "sha256": "cfdc7cf2197c1569de75d4ab01b7bdda8a8e321ae6d1daf87147acc8f716e92c",
+      "passes": 5,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft10",
+      "label": "regeneration",
+      "sha256": "efbb2c035e9cb6ac2888fa58442f1888202a42e399df48fec9890f53a1f3f3ba",
+      "passes": 11,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft12",
+      "label": "cloud",
+      "sha256": "14524248588b467b4a6edf3637d1407a9432854eb07c6d4e9c1a254f34e343a8",
+      "passes": 5,
+      "failures": 1,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft13",
+      "label": "cloud",
+      "sha256": "826c28302d75e0cbd14f2db3b0ea1e018081095a92201d550859121fa2cdc581",
+      "passes": 6,
+      "failures": 1,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft14",
+      "label": "clearnegative",
+      "sha256": "1fd36d8ae1cbafa4bf22e44635a7a25b9da89e686699aee56ec40090174a46bf",
+      "passes": 5,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft14",
+      "label": "cloud",
+      "sha256": "c4623500009dc2b7dee443d62c0c7f9bad15ff31caaa01773ecfb6ab8f0ddbe5",
+      "passes": 7,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-draft14",
+      "label": "ruloreset",
+      "sha256": "fad59eedcd4cb3efa51428d917e31c5dad4e389975963175979d29ccdde513af",
+      "passes": 6,
+      "failures": 0,
+      "final": false
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "attack",
+      "sha256": "7c61bba2f62f5679ea7ea7945566d28b3bc5b89c0475166b466d776d78fccd9f",
+      "passes": 12,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "bag",
+      "sha256": "e15f7ce8ff94aa671b118826f88d1308eeaf642daba36e8f80f1bd62a7e46344",
+      "passes": 10,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "bed",
+      "sha256": "8b8429c0b213e3b52d03b1f6a6f9910f8f4f8b64756e1dbc00aa65b6a3e9a3b0",
+      "passes": 10,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "clearnegative",
+      "sha256": "82e6687ed43d1382594c90c5dfabe70b5dbcde9feada736af0f83901d8c04c6f",
+      "passes": 5,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "cloud",
+      "sha256": "b445e18035c4247583e330cb70b8b76b623206d82a85bc872f9a2d3bf7a65f1c",
+      "passes": 7,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "danger0",
+      "sha256": "a3b07cc6638088cbe9388b44328305b57c70477119633f8f9d99e2d38c6b4ec3",
+      "passes": 9,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "danger1",
+      "sha256": "f31064d8df4e46ab3b68cf35c83f2f81fabda33b4860b71c7043670d98215b8a",
+      "passes": 11,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "death0",
+      "sha256": "ccf5ff005da9fd8b3860eaeb80effaf470cca07a6f820787c92ae3b94de83a90",
+      "passes": 8,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "death1",
+      "sha256": "68cdaa937be59f28ca7785e9400e66bba7a909d4b45297ce4e3ccb02036b204e",
+      "passes": 8,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect0",
+      "sha256": "059dec860b3dda4c44036406cc6cc084d8f824eefdb14822dba1763a11fec701",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect1",
+      "sha256": "5a0fcd181935eb7c70b5324ed923bb67936b80caaffa1115dbc59ecc7aec79c7",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect2",
+      "sha256": "e293503fe105e6271598854b500d1a131898a0454477fd9124bee5efaeca5b87",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect3",
+      "sha256": "579507025e4415a1e2d69847ac1bed7370db23403a5a3b99e1b9ff48af4a0d8c",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect4",
+      "sha256": "86cec1821447ce38aee5ce57ab1936566198616b17fec5808779154b7bc57b0e",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "effect5",
+      "sha256": "027349e95da965d16feb471f948bd73ed99fb57ba6956ddd226659663e1f9894",
+      "passes": 19,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "forecast",
+      "sha256": "3effa901b9e1d512f8920a2291ec8df6327db0740d39fa4a654a180f32db1410",
+      "passes": 5,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "load",
+      "sha256": "16faf58a687c6b18635d32b6a025963ca76432cf211b6f725541451f5329fede",
+      "passes": 6,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "mapfurniture",
+      "sha256": "21a5e7d93f69e3a3a8ccd877f8115ff23323f82d86672ece9771b52b31c53bcd",
+      "passes": 4,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "mapstation",
+      "sha256": "4ea7cdde9db1571e16ef414a03471996a39f7da8be0e795e9111d704427df59e",
+      "passes": 4,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "regeneration",
+      "sha256": "31a837b93114a44b22d41c3b1cd091405642b6821be3cd153cb040dcc6710783",
+      "passes": 11,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "ruloreset",
+      "sha256": "9a748ff7f5e5fb791f36b736fcb8fba514f71c94ba18eb17cb01cb4fdf975733",
+      "passes": 6,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "safety",
+      "sha256": "a2298641a5439d32960b9549357fb2f4bf8b7068d50183afd3abf20575b31233",
+      "passes": 9,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final01",
+      "label": "save",
+      "sha256": "b5939c92b8fdf9b1719da45d3fc604505a8e188a14b4d6640dddf56b881e7f32",
+      "passes": 7,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final02",
+      "label": "cloud",
+      "sha256": "56bf0d4ea2bf2a5e4236419f1290cf453e18454b567269113c86ce323fb71a4d",
+      "passes": 7,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final02",
+      "label": "jump-ascent",
+      "sha256": "aaffbbe66f0387073e6d1b4fcadb2628fa1f28439f939ca19bcc6ee41776d0bc",
+      "passes": 7,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final02",
+      "label": "jump-descent",
+      "sha256": "1de9f0390d5322954a9ecc7ad9968060d7df29cf802ae520c6204e8fbf359d85",
+      "passes": 8,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final02",
+      "label": "jump-immobilized",
+      "sha256": "587409ada9f729f41ea14c3244c104b227438c3f5e44a02daa7a57d6a38beeea",
+      "passes": 6,
+      "failures": 0,
+      "final": true
+    },
+    {
+      "directory": "issue325-final02",
+      "label": "legacy",
+      "sha256": "fbb419d6d3d26c4fc70f9333992d3999690281f7a218a2d356fcbca383ac84e6",
+      "passes": 4,
+      "failures": 0,
+      "final": true
+    }
+  ],
+  "final_runs": 28,
+  "final_passes": 278,
+  "normal_package_members": 16376,
+  "matrix_to_final_only_text_and_localization_index": [
+    "LANGUAGE",
+    "caelum/world/CaelumRestSafety.zs",
+    "localization/INDEX.md",
+    "localization/index.json"
+  ],
+  "normal_equals_tested_source": true,
+  "author_acceptance": "pending CA325-01"
+}

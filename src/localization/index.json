@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "443196ebd1f81adc9336186f9084b3d112511915d67ad4473de200807f7448fd",
+  "sha256": "6829903bdf6645ce877d0c7ba163d32b71335642a1f85ca83f6dac07e512d7e6",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[350,350]],"default":[[350,350]],"es":[[1038,1038]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[893,893]],"default":[[893,893]],"es":[[1581,1581]]},
@@ -2044,6 +2044,7 @@
     "CA_REST_CHAIR_INFO": {"default":[[3819,3819]],"es":[[3828,3828]]},
     "CA_REST_CHAIR_TITLE": {"default":[[3817,3817]],"es":[[3826,3826]]},
     "CA_REST_CLOSE": {"default":[[3755,3755]],"es":[[3791,3791]]},
+    "CA_REST_CLOUD": {"enu":[[5906,5906]],"default":[[5906,5906]],"es":[[5910,5910]],"esp":[[5910,5910]]},
     "CA_REST_COMBAT": {"default":[[3766,3766]],"es":[[3802,3802]]},
     "CA_REST_COMFORT": {"default":[[3843,3843]],"es":[[3854,3854]]},
     "CA_REST_COMPLETED": {"default":[[3773,3773]],"es":[[3809,3809]]},
@@ -2052,6 +2053,8 @@
     "CA_REST_DURATION_480": {"default":[[3754,3754]],"es":[[3790,3790]]},
     "CA_REST_DURATION_5": {"default":[[3751,3751]],"es":[[3787,3787]]},
     "CA_REST_DURATION_60": {"default":[[3752,3752]],"es":[[3788,3788]]},
+    "CA_REST_EFFECT": {"enu":[[5905,5905]],"default":[[5905,5905]],"es":[[5909,5909]],"esp":[[5909,5909]]},
+    "CA_REST_ENEMY": {"enu":[[5904,5904]],"default":[[5904,5904]],"es":[[5908,5908]],"esp":[[5908,5908]]},
     "CA_REST_FURNITURE_SPACE": {"default":[[3822,3822]],"es":[[3831,3831]]},
     "CA_REST_FURNITURE_UNAVAILABLE": {"default":[[3821,3821]],"es":[[3830,3830]]},
     "CA_REST_GROUND": {"default":[[3767,3767]],"es":[[3803,3803]]},

@@ -133,42 +133,7 @@ class CaelumRestState : Inventory
     // Una sola validación de contexto para la oferta, el inicio diferido y
     // cada tic activo. No considera a la propia sesión una actividad ajena.
     static String BlockReason(CaelumPlayer user,bool allowTimelessFurniture=false)
-    {
-        if (user == null || user.player == null || user.health <= 0
-            || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
-            || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)) return "CA_REST_UNAVAILABLE";
-        for (int i = 0; i < MAXPLAYERS; i++)
-            if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
-        let active=Get(user);
-        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture
-            && !(active!=null && active.Status==CaelumRestRules.STATUS_ACTIVE && active.Untimed && active.Furniture!=null))
-            return "CA_REST_TIMELESS";
-        if (user.CombatTimeRemaining > 0.0) return "CA_REST_COMBAT";
-        if (CaelumScheduleState.SiegeActive(user, level.MapName)) return "CA_EVENT_SIEGE_INTERRUPT";
-        if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen
-            || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive
-            || user.StaffCastPending || user.WeaponChargeActive || user.WeaponChargedStateActive
-            || user.RangedReloadActive || user.CombatBlockModeActive || user.DebugShieldBlocking
-            || (user.IsPhysicallyImmobilized() && !(IsSleeping(user)
-                && user.PainImmobilizationRemaining <= 0
-                && (user.ElementalStatus == null || !user.ElementalStatus.IsLightningStunned())))
-            || (user.player.cheats & (CF_TOTALLYFROZEN | CF_FROZEN)))
-            return "CA_REST_BUSY";
-        if (!user.player.onground || user.WaterLevel != 0
-            || user.Vel.X * user.Vel.X + user.Vel.Y * user.Vel.Y > 0.01
-            || Abs(user.Vel.Z) > 0.01) return "CA_REST_GROUND";
-        if (!user.SurvivalResourcesInitialized || user.DerivedStats == null) return "CA_REST_UNAVAILABLE";
-        let record = user.GetPersistentCharacterState(false);
-        let clock = CaelumWorldClock.Get(user);
-        let journey = CaelumJourneyState.Get(user);
-        if (record == null || !record.ProfileCommitted || record.WorldPendingConnection != 0
-            || clock == null || (journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED))
-            return "CA_REST_BUSY";
-        if (user.CurrentHunger <= CaelumConstants.SURVIVAL_MAXIMUM * CaelumConstants.SURVIVAL_CRITICAL_THRESHOLD
-            || user.CurrentThirst <= CaelumConstants.SURVIVAL_MAXIMUM * CaelumConstants.SURVIVAL_CRITICAL_THRESHOLD)
-            return "CA_REST_NEEDS";
-        return "";
-    }
+    { return CaelumRestSafety.BlockReason(user,allowTimelessFurniture,false,!CaelumRestSafety.PersonalSubstep(user)); }
 
     static bool Begin(CaelumPlayer user, int mode, int minutes, CaelumRestFurniture furniture = null)
     {

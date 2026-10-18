@@ -1,0 +1,3 @@
+GameInfo { AddEventHandlers="CA325Effects" }
+cluster 99 { hub }
+map MAP99 "Rest safety fixture" { cluster=99 nointermission sky1="SKY1",0 }

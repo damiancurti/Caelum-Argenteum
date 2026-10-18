@@ -126,10 +126,10 @@ class CaelumRestBag : CaelumRestFurniture
             probe.Destroy();
             if (!fits) return false;
         }
-        let it = ThinkerIterator.Create("Actor");
-        Actor other;
-        while ((other = Actor(it.Next())) != null)
+        let it = BlockThingsIterator.Create(user,46);
+        while (it.Next())
         {
+            let other=it.thing;
             if (other == user || !other.bSolid || other.bNoBlockmap) continue;
             if (other.Pos.Z < user.Pos.Z+Max(8.0,user.Height)
                 && other.Pos.Z+other.Height > user.Pos.Z

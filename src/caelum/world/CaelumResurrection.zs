@@ -65,6 +65,7 @@ class CaelumResurrection : Object play
             user.ElementalStatus=old;
             user.ForcedSleepTics=0;user.SpellSleep=null;
             user.LucidityPhysicalStunRemaining=0;user.PainImmobilizationRemaining=0;
+            user.RestPeriodicPainRemaining=user.RestNonPeriodicPainRemaining=0;
             user.SurvivalDamageAccumulator=0;
             CaelumClassAbilityRules.Cancel(user);CaelumRacialAbilityRules.Deactivate(user);
             user.CancelCombatBlockMode();user.CancelRangedAim();user.CancelRangedReload();

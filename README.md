@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.39.** Obtain and update the complete repository, validate
+**Current release: 5.4.40.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Rest and time advance now share safety checks (#325): visible enemies within
+32 m and active arcane cloud block both. Existing periodic injuries continue
+during acceleration; new attacks and death interrupt it. Native checks pass (28 runs, 278 assertions), along with validation and normal
+packaging. CA325-01 remains pending.
 
 A confirmed voluntary jump now retains biological cushioning against walls through
 its descent (#339), using the existing capacity. Falls and pushes without a jump

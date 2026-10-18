@@ -39,8 +39,8 @@ class CaelumThermalRuntime : Object play
             if(user.DebugShieldBlocking && user.HasActiveBlockSource())
                 activity+=CaelumThermalEffects.BlockingWatts(thermal.MovedMassKg,user.GetActiveBlockWeight());
         }
-        double burn=realStep && user.ElementalStatus!=null ? user.ElementalStatus.TakeBurnHeat()*TICRATE : 0;
-        CaelumThermalService.Advance(user,WorldTicSeconds(),realStep ? 1.0/TICRATE : 0,activity,burn,thermal.FireWatts,firearm);
+        double burn=user.ElementalStatus!=null ? user.ElementalStatus.TakeBurnHeat()*TICRATE : 0;
+        CaelumThermalService.Advance(user,WorldTicSeconds(),1.0/TICRATE,activity,burn,thermal.FireWatts,firearm);
     }
 
     static void NPCStep(CaelumCombatActor npc,bool force=false)

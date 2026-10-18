@@ -224,6 +224,7 @@ class CaelumElementalStatus : Object
         if (owner == null || owner.health <= 0 || damage <= 0) { return; }
         if(visualKind==0)CaelumBolas.FireContact(owner);
         let user=CaelumPlayer(owner);
+        int before=owner.health;
         int previous=user!=null ? user.PendingDamageVFXKind : 0;
         if(user!=null)user.PendingDamageVFXKind=visualKind+1;
         owner.DamageMobj(
@@ -234,7 +235,12 @@ class CaelumElementalStatus : Object
             DMG_NO_ARMOR,
             0.0
         );
-        if(user!=null)user.PendingDamageVFXKind=previous;
+        if(user!=null)
+        {
+            user.PendingDamageVFXKind=previous;
+            CaelumRestSafety.PeriodicLoss(user,Max(0,before-owner.health));
+            if(user.health<=0)CaelumRestSafety.Interrupt(user,"CA_REST_UNAVAILABLE");
+        }
     }
 
     play void HealStatus(Actor owner,int amount)
@@ -342,7 +348,7 @@ class CaelumElementalStatus : Object
 
     play void Tick(Actor owner,bool realStep=true)
     {
-        if(realStep)TickBurnHeat(owner);
+        TickBurnHeat(owner);
         TickDamageOverTime(owner);
         double ticSeconds = 1.0 / TICRATE;
         FreezeRemaining = Max(0.0, FreezeRemaining - ticSeconds);

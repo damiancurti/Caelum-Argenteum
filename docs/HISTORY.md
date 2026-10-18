@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+## 5.4.40 - Shared rest and acceleration safety (#325, 2026-10-18)
+
+Author decisions: 32 m with LOS, allow existing periodic injury/thermal damage
+while resting and advancing, continue through that damage, interrupt on new
+attacks, and block all modes while the arcane cloud is active. A common policy
+replaces divergent geographic/effect vetoes; bounded enemy/bag queries replace
+whole-Actor scans. Damage provenance, pain clocks, burn heat and forecast honesty
+are integrated with revisioned saves. Twenty-eight final native runs pass 278 assertions, including real MAP01/MAP02
+contexts, each injury/heat state, new attacks/death, current/legacy saves, cloud
+refusal/recovery and #339 regressions. The 350-W diagnostic burn accounts for
+3150/4240 J over 315/424 personal tics. Review, validation/build and all 16,376
+source/tested/normal package members pass. Only a Spanish accent, a comment
+and regenerated localization indexes differ from the main matrix; final native
+checks cover that corrected runtime. CA325-01 remains pending.
+Evidence: assets/validation_5440.
 
 ## 5.4.39 - Voluntary-jump wall cushioning (#339, 2026-10-18)
 

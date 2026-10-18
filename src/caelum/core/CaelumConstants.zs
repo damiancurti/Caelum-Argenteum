@@ -226,6 +226,8 @@ class CaelumConstants : Object
     const PRISONER_BESTIA = 2;
     const PRISONER_TAROT = 3;
     const PRISONER_COUNT = 4;
+    // 32 m, inclusivos y con línea de visión; decisión del autor en #325.
+    const REST_HOSTILE_RADIUS = 1024;
     // Intención de presentación, nunca un tipo que se envíe al wipe nativo.
     const TRAVEL_WIPE_HOUSE_DOOR = -1;
     const PRISONER_STATE_CAPTIVE = 0;

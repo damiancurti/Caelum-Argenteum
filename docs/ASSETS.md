@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+## 5.4.40 - Rest and acceleration evidence (#325)
+
+validation_5440 preserves the focused probe, scripts, native logs and hashes.
+The patch adds three bilingual refusal messages and refreshes localization
+indexes; no art changes. Runtime packages, engine/IWAD and private saves remain
+local. Earlier isolated drafts are evidence, not earlier production delivery.
 
 ## 5.4.39 - Jump-wall diagnostic evidence (#339)
 

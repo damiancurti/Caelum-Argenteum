@@ -284,6 +284,9 @@ class CaelumPlayerResources : Object play
     static void UpdatePainImmobilization(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumRestSafety.EnsureDamageState(user);
+        user.RestPeriodicPainRemaining=Max(0.0,user.RestPeriodicPainRemaining-1.0/TICRATE);
+        user.RestNonPeriodicPainRemaining=Max(0.0,user.RestNonPeriodicPainRemaining-1.0/TICRATE);
         if (user.PainImmobilizationRemaining > 0.0)
         {
             user.PainImmobilizationRemaining = Max(

@@ -139,6 +139,7 @@ class CaelumMainM00RuloTrial : Object play
         user.CurrentAnima = user.DerivedStats.MaximumAnima;
         user.CurrentLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
         user.PainImmobilizationRemaining = 0; user.LucidityPhysicalStunRemaining = 0;
+        user.RestPeriodicPainRemaining=user.RestNonPeriodicPainRemaining=0;
         user.ElementalStatus = new("CaelumElementalStatus");
         user.UpdateAirStateEffects();
         // Rulo acondiciona el arma inicial; conserva su ItemId, tier y esencia.

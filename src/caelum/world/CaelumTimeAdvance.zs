@@ -1,5 +1,5 @@
-// Zonas expresamente habilitadas por el mapa. Los muebles no convierten por
-// sí mismos un combate o una zona desconocida en un lugar seguro.
+// Los marcadores conservan la accesibilidad de apoyos distantes; la seguridad
+// compartida depende del contexto personal y de amenazas visibles cercanas.
 class CaelumTimeAdvanceZone : Actor
 {
     Default { Radius 224; Height 128; +NOBLOCKMAP +NOGRAVITY +NOTARGET RenderStyle "None"; }
@@ -8,7 +8,6 @@ class CaelumTimeAdvanceZone : Actor
 
 class CaelumTimeAdvanceState : Inventory
 {
-    const UNSUPPORTED_ACTOR_RADIUS = 1024;
     bool Active;
     bool Pumping;
     int LastPumpTic;
@@ -36,105 +35,14 @@ class CaelumTimeAdvanceState : Inventory
     static int StepSerial(CaelumPlayer user)
     {let advance=Get(user);return advance!=null?advance.PersonalStepSerial:0;}
 
-    // La bolsa habilita acelerar solo el sueño en las alcantarillas; no
-    // convierte el sitio en zona segura para oficios, espera u otros muebles.
-    static bool IsSewerBagSleep(CaelumPlayer user,bool skipping=false)
-    {
-        if(user==null || CaelumWorldCatalogue.LocationForMap(level.MapName)!=CaelumWorldCatalogue.LOCATION_SEWERS
-            || user.CraftingTaskActive)return false;
-        let rest=CaelumRestState.Get(user);
-        if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.Mode==CaelumRestRules.MODE_SLEEP
-            && rest.OriginMap==level.MapName && (user.Pos-rest.OriginPosition).Length()<=4)
-        {
-            let mat=CaelumRestBag(rest.Furniture);
-            if(mat!=null && mat.SupportsRest(user))return true;
-        }
-        if(!skipping)return false;
-        let skip=CaelumTimeSkipState.Get(user);
-        let bag=CaelumSleepingBag(user.FindInventory("CaelumSleepingBag"));
-        return skip!=null && skip.Open && skip.Sleeping && skip.BagSupport && !skip.HadTask
-            && skip.OriginMap==level.MapName && (user.Pos-skip.OriginPosition).Length()<=4
-            && bag!=null && bag.AvailableTo(user);
-    }
-
-    static bool InSafeZone(CaelumPlayer user)
-    {
-        // La ciudad habitada es segura hasta el asedio; el resto de controles
-        // sigue rechazando combate, peligros y efectos sin adaptador.
-        if(CaelumCityWorld.Peaceful())return true;
-        if(level.MapName=="MAP01")
-        {
-            let skip=CaelumTimeSkipState.Get(user);
-            if (skip!=null && skip.Open && skip.OriginMap==level.MapName
-                && (user.Pos-skip.OriginPosition).Length()<=4
-                && skip.AnchorFurniture!=null) return true;
-            let rest=CaelumRestState.Get(user);
-            if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.Furniture!=null)return true;
-            let station=CaelumCraftingStation(user.ActiveCraftingStationActor);
-            return station!=null && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5
-                && station.CanReachFrom(user) && (user.Pos-station.Pos).Length()<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
-        }
-        let it = ThinkerIterator.Create("CaelumTimeAdvanceZone"); CaelumTimeAdvanceZone zone;
-        while ((zone = CaelumTimeAdvanceZone(it.Next())) != null)
-            if (user.Distance2D(zone) <= zone.Radius && Abs(user.Pos.Z-zone.Pos.Z) <= 16
-                && user.CheckSight(zone, SF_IGNOREVISIBILITY)) return true;
-        return false;
-    }
-
     static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
-        if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
-            || user.CreationWizardOpen || user.DerivedStats == null || (user.player.cheats & CF_PREDICTING)) return "CA_FAST_ACTIVITY";
-        for (int i=0; i<MAXPLAYERS; i++) if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
-        if (CaelumScheduleState.SiegeActive(user, level.MapName)) return "CA_EVENT_SIEGE_INTERRUPT";
-        bool resting = CaelumRestState.IsActive(user);
-        bool crafting = user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor != null;
-        if (!resting && !crafting && !skipping) return "CA_FAST_ACTIVITY";
-        if (crafting && !user.RefreshActiveCraftingStationSession()) return "CA_FAST_ACTIVITY";
-        if (user.CombatTimeRemaining > 0 || user.HasActiveConversation() || user.ForcedSleepTics > 0
-            || user.PalomoMerchantMenuOpen || user.CombatChannelModeActive || user.StaffCastPending
-            || user.WeaponChargeActive || user.WeaponChargedStateActive || user.RangedReloadActive
-            || user.WaterLevel != 0 || !user.player.onground || user.Vel.Length() > 0.1) return "CA_FAST_UNSAFE";
-        if (user.CurrentHunger <= 10 || user.CurrentThirst <= 10
-            || (!skipping && user.CurrentSleep <= 10 && !CaelumRestState.IsSleeping(user))) return "CA_REST_NEEDS";
-        let thermal=CaelumThermalBody.Get(user);
-        if(thermal!=null && CaelumThermalRules.Severity(thermal.Exposure,user.Attributes.Toughness)>0)
-            return "CA_REST_THERMAL";
-        let status = user.ElementalStatus;
-        if (status != null && (status.HasBurnHeat() || status.BurnRemaining > 0 || status.PoisonRemaining > 0 || status.DiseaseRemaining > 0
-            || status.CutRemaining > 0 || status.IsLightningStunned())) return "CA_FAST_UNSAFE";
-        // El salto revalida la bolsa también entre subpasos: despertar o
-        // perderla no debe conceder el resto del lote como espera acelerada.
-        bool bagSleep=IsSewerBagSleep(user,skipping);
-        if((scanWorld || (skipping && CaelumWorldCatalogue.LocationForMap(level.MapName)==CaelumWorldCatalogue.LOCATION_SEWERS))
-            && !bagSleep && !InSafeZone(user))return "CA_FAST_ZONE";
-        if (scanWorld)
-        {
-            if(bagSleep && !CaelumRestBag.HasRoom(user))return "CA_SLEEPING_BAG_SPACE";
-            // Un efecto nativo ajeno carece de adaptador: no se le regalan horas.
-            for (Inventory item=user.Inv; item!=null; item=item.Inv)
-                if (Powerup(item)!=null && CaelumRegenerationPower(item)==null) return "CA_FAST_EFFECT";
-            let it = ThinkerIterator.Create("Actor"); Actor other;
-            while ((other=Actor(it.Next()))!=null)
-            {
-                if (other==user || (Inventory(other)!=null && Inventory(other).Owner!=null)
-                    || other.Distance2D(user)>UNSUPPORTED_ACTOR_RADIUS) continue;
-                if (UnsupportedActor(other)) return "CA_FAST_UNSAFE";
-            }
-        }
+        bool crafting=user!=null && user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null;
+        String reason=CaelumRestSafety.BlockReason(user,false,crafting,scanWorld);
+        if(reason.Length()!=0)return reason;
+        if(!CaelumRestState.IsActive(user) && !crafting && !skipping)return "CA_FAST_ACTIVITY";
+        if(crafting && !user.RefreshActiveCraftingStationSession())return "CA_FAST_ACTIVITY";
         return "";
-    }
-
-    static bool UnsupportedActor(Actor other)
-    {
-        if(other==null)return false;
-        let sleeper=CaelumCombatActor(other);
-        let hazard=CaelumHazardRock(other);
-        let crusher=CaelumCrusherTrap(other);
-        return (sleeper!=null && sleeper.ForcedSleepTics>0)
-            || (hazard!=null && hazard.Released && hazard.Vel.Length()>0.1)
-            || (crusher!=null && crusher.IsMoving()) || other.bMissile
-            || (other.bIsMonster && other.health>0 && !other.bFriendly);
     }
 
     static bool Toggle(CaelumPlayer user)
@@ -201,6 +109,8 @@ class CaelumTimeAdvanceState : Inventory
         AdvancePowers(user);
         user.UpdateCraftingTask();
         user.AdvancePersonalTimeTic(false);
+        if(user.health<=0 || user.player.playerstate!=PST_LIVE)
+        {CaelumRestSafety.Interrupt(user,"CA_REST_UNAVAILABLE");return;}
         user.HUDAbilitySuccessRemaining=Max(0.0,user.HUDAbilitySuccessRemaining-1.0/TICRATE);
         CaelumRestState.Advance(user);
     }

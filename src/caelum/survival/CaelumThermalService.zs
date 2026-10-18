@@ -72,11 +72,13 @@ class CaelumThermalService : Object play
         thermal.DamageRemainder=Max(0.0,thermal.DamageRemainder-damage);
         if(user!=null)damage=CaelumTutorialSafety.HealthLoss(user,damage);
         thermal.AppliedDamageHP+=Min(damage,body.health);
+        int healthBefore=body.health;
         body.health=Max(0,body.health-damage);
         if(user!=null)
         {
             user.player.health=user.health;
-            CaelumRestState.Interrupt(user,"CA_REST_THERMAL");
+            CaelumRestSafety.PeriodicLoss(user,healthBefore-body.health);
+            if(user.health<=0)CaelumRestSafety.Interrupt(user,"CA_REST_UNAVAILABLE");
         }
         if(body.health<=0)body.Die(null,null,0,'CaelumThermal');
     }
