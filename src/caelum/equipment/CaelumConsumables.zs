@@ -4,6 +4,21 @@ class CaelumConsumableItem : PowerupGiver
 {
     bool InMagicBox;
 
+    override bool HandlePickup(Inventory item)
+    {
+        bool result=Super.HandlePickup(item);
+        CaelumActorMaintenance.InventoryChanged(Owner);
+        return result;
+    }
+    override Inventory CreateTossable(int amount)
+    {
+        let previousOwner=Owner;
+        let result=Super.CreateTossable(amount);
+        CaelumActorMaintenance.InventoryChanged(previousOwner);
+        return result;
+    }
+
+
     Default
     {
         Radius 12;
@@ -107,6 +122,7 @@ class CaelumConsumableItem : PowerupGiver
         // Sólo un uso nativo aceptado acredita la práctica; recoger, mirar o
         // intentar consumir desde la Caja no llega a este observador.
         if (used) CaelumMainM00RonnieTrial.RecordNeedsUse(CaelumPlayer(Owner), GetConsumableType());
+        CaelumActorMaintenance.InventoryChanged(Owner);
         return used;
     }
 

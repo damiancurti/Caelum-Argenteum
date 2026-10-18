@@ -4,6 +4,65 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-131 - Validate the game presentation chain after startup changes
+
+Status/evidence: ENGINE-VERIFIED capture control, #353 / 5.4.43, 2026-10-18.
+[validation_5443](../assets/validation_5443/RESULTS.md) preserves the native
+startup controls and matched comparison. This is a capture lesson, not a
+general explanation of Vulkan/Windows driver behavior.
+
+Symptom: a completed native replay can yield PresentMon records with swapchain
+0x0, runtime Other and Composed: Copy with GPU GDI instead of game presentations.
+Thirty-six initial comparison windows were excluded. A larger ETW buffer alone
+did not fix the startup pilot. With the same observer/engine/initial settings,
+waiting 35 tics before uncapping restored a nonzero DXGI Composed: Flip chain.
+The underlying driver/window startup mechanism was not established.
+
+Remedy: preserve the tested capped startup, uncap after 35 tics, then begin the
+presentation window at tic +70. Keep the initial simulation census at the first
+restored tic. Do not silently shift the saved-state comparison to the FPS start.
+Track the full 700-tic replay separately from the shorter warmed presentation
+window and its one-second end trims. Callback counts are not replacement FPS.
+
+Regression: require PID/runtime/fixture identity, the validated nonzero DXGI
+chain, positive complete intervals, monotonic QPC timestamps, surrounding
+coverage, and host/engine duration agreement. Reject missing or GDI-only frames;
+do not relax the gate to obtain a number. Compare gains only against controls
+in the same new batch. Atomically replace collector request files; release both
+the capture supervisor and the temporary power request after testing.
+
+## CA-KP-130 - Derived caches and target subscriptions need map-local lifetimes
+
+Status/evidence: ENGINE-VERIFIED, #353 / 5.4.43, 2026-10-18.
+[validation_5443](../assets/validation_5443/RESULTS.md): 3,705 final-runtime
+assertions, save/reload/forward migration, native hub round trip and two
+700-tic cached-read audits with zero mismatches. Author CA353-01 remains pending.
+
+Symptom/cause: a transient reference is omitted from serialization but can still
+survive travel on the actual player or carried actor object. A cache deadline
+from another map can delay refresh; subscribers can retain a departed player
+or a former command leader. Clearing only the dead target's incoming list does
+not remove a dead leader from its own target's outgoing subscription.
+
+Remedy: use map-local deadlines and explicitly discard derived caches/population
+references on house/summon/converted travel. Bind through the existing population
+census, without another global discovery pass. Clear player subscriptions in
+PreTravelled; invalidate a retiring target and unwatch its own leader entry.
+Unwatch entries that lose leadership. Serialized revisions migrate idempotently;
+actual health, inventory and resources are not replaced by cached values.
+
+Regression: test actual native death/destruction, leader withdrawal, player and
+three carried-body travel paths, old/new saves and repeated cache initialization.
+Require both legs of a hub test: an early DONE marker alone is insufficient.
+For a saved observation handler, start through a transient first-WorldTick latch
+and compare exact initial tics/state; do not assume WorldLoaded starts a restored
+handler. Keep native cached-read audits separate from normal-runtime FPS windows.
+
+Limits: a per-map phase spreads fallback work, not simultaneous cold creation.
+The 500-body census is an existing opportunity count, not an instantaneous HUD
+count. Raw timings from an audit contain extra calculations and are not normal
+gameplay performance. Changes to target cadence change the evolving battle.
+
 ## CA-KP-129 - A staggered cache must preserve assignments and active clocks
 
 Status/evidence: ENGINE-VERIFIED diagnostic, #318 / 5.4.42, 2026-10-18.

@@ -5,6 +5,7 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    transient CaelumTargetSubscriptions TargetSubscribers;
     override Weapon PickWeapon(int slot, bool checkammo)
     {
         // El dispatcher nativo ya resolvió teclas, aliases y doble clic.
@@ -6163,6 +6164,7 @@ class CaelumPlayer : DoomPlayer
 
     override void PreTravelled()
     {
+        CaelumTargetSubscriptions.Invalidate(self);
         VoluntaryJumpActive = false;
         let journey = CaelumJourneyState.Get(self);
         int mode = journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED

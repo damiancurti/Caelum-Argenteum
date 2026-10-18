@@ -125,6 +125,7 @@ class CaelumDemonService : Object play
         if(drop==null)return;
         drop.Amount=1;
         supply.Amount--;
+        CaelumActorMaintenance.InventoryChanged(npc);
         if(supply.Amount<=0)supply.Destroy();
     }
 }

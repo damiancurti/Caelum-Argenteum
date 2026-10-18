@@ -8,6 +8,8 @@ class CaelumConstants : Object
     const TUTORIAL_MINIMUM_HEALTH = 1;
     // Autor, #128: combatientes vivos del mapa completo, incluidos jugadores.
     const HIGH_DENSITY_COMBATANTS = 500;
+    // Autor, #353: respaldo distribuido y percepción compartida de alta densidad.
+    const ACTOR_MAINTENANCE_TICS = 100;
     const DEBUG_ALL_ATTRIBUTES_LEVEL_75 = 75;
     const DEBUG_ALL_ATTRIBUTES_LEVEL_100 = 100;
     // The design document defines twelve primary character attributes.

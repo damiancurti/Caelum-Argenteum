@@ -2,6 +2,7 @@
 class CaelumPopulationState : Object play
 {
     int Revision, LivingCombatants;
+    int NextMaintenancePhase;
     bool HighDensity;
     Array<CaelumSiegeCombatant> UnlinkedGuards;
 
@@ -20,6 +21,12 @@ class CaelumPopulationState : Object play
         CaelumCombatActor body;
         while((body=CaelumCombatActor(it.Next()))!=null)
         {
+            // Reutilizar el censo autorizado: enlazar cambios de mapa sin otro recorrido.
+            if(body.MaintenancePopulation!=self)
+            {
+                body.ResetMaintenanceForTravel();
+                body.MaintenancePopulation=self;
+            }
             if(body.health<=0)continue;
             if(body.bShootable)LivingCombatants++;
             if(body.bNoBlockmap && body.SiegeCombatant!=null)

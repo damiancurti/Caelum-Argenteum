@@ -195,7 +195,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
     void ElectCommands()
     {
         Groups=0;CommandDirty=false;
-        for(int i=0;i<Attackers.Size();i++){Attackers[i].CommandGroup=-1;Attackers[i].CommandLeader=null;}
+        for(int i=0;i<Attackers.Size();i++)
+        {
+            let entry=Attackers[i];
+            if(entry.SharedTargetSubscription!=null && !ActiveEntry(entry))CaelumTargetSubscriptions.Unwatch(entry);
+            entry.CommandGroup=-1;entry.CommandLeader=null;
+        }
         Array<CaelumSiegeCombatant> queue;
         for(int seed=0;seed<Attackers.Size();seed++)
         {
@@ -222,7 +227,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
                     other.CommandGroup=Groups;queue.Push(other);
                 }
             }
-            for(int i=0;i<queue.Size();i++)queue[i].CommandLeader=leader;
+            for(int i=0;i<queue.Size();i++)
+            {
+                queue[i].CommandLeader=leader;
+                if(queue[i]!=leader)CaelumTargetSubscriptions.Unwatch(queue[i]);
+            }
             Groups++;
         }
     }
@@ -252,11 +261,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void EnsureTargetingRevision()
     {
-        if(TargetingRevision>=2)return;
+        if(TargetingRevision>=3)return;
         // Sólo se reconstruye la percepción derivada; se conservan las
         // identidades, los puestos, las bajas y los mandos guardados.
         ResetPerception();CommandDirty=true;
-        TargetingRevision=2;
+        TargetingRevision=3;
     }
 
     void ResetPerception()
@@ -265,7 +274,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         {
             let entry=Attackers[i];
             entry.CombatTarget=null;entry.TargetRefreshTic=0;
-            entry.SharedTarget=null;entry.SharedTargetValid=false;
+            CaelumTargetSubscriptions.Unwatch(entry);
+            entry.SharedTarget=null;entry.SharedTargetValid=false;entry.SharedTargetWasPresent=false;
             entry.NextSharedTargetTic=0;
         }
         CandidatesValid=false;TargetCandidates.Clear();
@@ -318,11 +328,16 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void UpdateSharedTarget(CaelumSiegeCombatant leader)
     {
+        CaelumTargetSubscriptions.Unwatch(leader);
         leader.SharedTarget=LeaderTarget(leader);
+        leader.SharedTargetWasPresent=leader.SharedTarget!=null;
         leader.SharedTargetValid=true;
         // Se consulta al actuar un miembro; no se mantiene una segunda agenda
         // que haga pensar también a grupos sin actividad de combate.
-        leader.NextSharedTargetTic=level.time+CaelumPortData.TARGET_UPDATE_TICS;
+        int period=CaelumConstants.ACTOR_MAINTENANCE_TICS;
+        int phase=Max(0,leader.CommandGroup)*period/Max(1,Groups);
+        leader.NextSharedTargetTic=level.time+1+(phase-(level.time+1)%period+period)%period;
+        CaelumTargetSubscriptions.Watch(leader);
     }
 
     Actor AttackerTarget(CaelumSiegeCombatant entry)
@@ -330,8 +345,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(!HighDensity)return IndividualAttackerTarget(entry);
         let leader=entry.CommandLeader;
         if(leader==null || !ActiveEntry(leader))leader=entry;
+        if(leader.SharedTargetWasPresent && (leader.SharedTarget==null
+            || leader.SharedTarget.health<=0 || !leader.SharedTarget.bShootable))leader.SharedTargetValid=false;
         if(!leader.SharedTargetValid || level.time>=leader.NextSharedTargetTic)
             UpdateSharedTarget(leader);
+        else CaelumTargetSubscriptions.Watch(leader);
         let victim=leader.SharedTarget;
         // Una baja nunca se adopta como blanco vivo entre turnos de percepción.
         return victim!=null && victim.health>0 && victim.bShootable ? victim : null;
