@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.31** — 2026-10-17.
+Documentation version: **5.4.32** — 2026-10-17.
+
+## 5.4.32 - Direct demon projectile aim (#320)
+
+Implement the author's explicit direct-aim exception after identifying #259
+spread as the cause. Verify current target position/elevation, native attack
+states, the >=500 population path, unrelated spread and previous-runtime saves.
+Completed: 504 current/488 baseline native assertions, validation/build and
+package equivalence pass. Evidence: assets/validation_5432. CA320-01 is pending.
 
 ## 5.4.31 - Collapsible map legend (#321)
 

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.31** — 2026-10-17.
+Documentation version: **5.4.32** — 2026-10-17.
 
 ## 5.4.31 - Collapsible automap legend (#321)
 
@@ -3223,6 +3223,15 @@ target and elemental payload; dispersion changes their initial velocity only.
 The book retains acquisition along the original aim and its guided trajectory.
 For example, T3 staff at Insight 100 and Lucidity <10% uses 0.625–6.25 degrees;
 T3 bell/shotgun at that Lucidity reaches the cap, 7–70 degrees before accuracy.
+
+**#320 / 5.4.32 exception (author decision, 2026-10-17):** Mandinga fire and
+Zupay stone projectiles use native direct aim at the current target when released.
+They skip weapon dispersion at every Lucidity/precision value. This supersedes
+#259 only for those two enemy families, including their existing subclasses;
+it adds neither homing nor target-motion prediction. Other weapons, melee,
+breath, accuracy-dependent rules, damage, Anima cost, speed and maximum range
+remain unchanged. Previously launched projectiles retain their saved velocity;
+future launches use the class policy without a save migration.
 
 This supersedes #222's staff/statuette equality and the pre-#259 fixed assignments.
 Their historical values remain in HISTORY and the corresponding issue evidence.

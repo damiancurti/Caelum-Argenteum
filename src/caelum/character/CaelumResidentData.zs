@@ -4,6 +4,8 @@ class CaelumResidentData : Object
 {
     const REVISION=1;
     const DEMON_PERSONALITY_REVISION=2;
+    // #320: el autor conserva el apuntado nativo al blanco, sin dispersión.
+    const DEMON_PROJECTILE_DISPERSION=0;
     const MANDINGA_PERSONALITY=6; // 0,2,0,0.
     const ZUPAY_PERSONALITY=80;   // 2,2,2,2.
     const RULO_PERSONALITY=0;     // 0,0,0,0; también Santos Barrera.

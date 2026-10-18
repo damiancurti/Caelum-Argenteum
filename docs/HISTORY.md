@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.31** — 2026-10-17.
+Documentation version: **5.4.32** — 2026-10-17.
+
+## 5.4.32 - Direct demon projectile aim (#320, 2026-10-17)
+
+The author identified fire/stone projectiles and explicitly chose "Both must
+aim directly at the target" after being told that #259 intentionally applied
+staff/statuette spread. This is an approved rule change, not a claim that the
+old implementation violated #259. Mandinga/Zupay skip that post-launch spread;
+native target aim at release, projectile payload and resource rules remain.
+No homing, prediction, new scan or saved field is added. Existing flying shots
+keep their saved trajectory; future shots use the current class rule.
+Focused baseline/native/save evidence is recorded in assets/validation_5432.
+Author acceptance CA320-01 remains pending; #309's broader combat audit remains
+outside this patch.
+Final verification: 504 current-runtime and 488 baseline native assertions;
+project validation/build, all 16,371 package members and independent source
+review pass. Early fixture failures and their corrections remain in the archive.
 
 ## 5.4.31 - Collapsible map legend (#321, 2026-10-17)
 

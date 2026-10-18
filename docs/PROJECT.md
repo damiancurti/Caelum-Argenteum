@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.31** — 2026-10-17.
+Documentation version: **5.4.32** — 2026-10-17.
+
+## 5.4.32 - Direct demon projectile aim (#320)
+
+The author's 2026-10-17 decision supersedes #259 dispersion for Mandinga fire
+and Zupay stone projectiles only. Launches retain native target aim at release,
+without homing or prediction; damage, resources, speed, range and other weapons
+retain their rules. Evidence: assets/validation_5432; CA320-01 remains pending.
 
 ## 5.4.31 - Collapsible automap help (#321)
 

@@ -923,6 +923,15 @@ ENGINE-VERIFIED evidence: assets/validation_537/cityfix_evidence.json. The autho
 accepted the focused city correction retest on 2026-10-14; ordinary exploration
 remains pending. Gameplay control timing was not modified.
 
+#320 / 5.4.32 follow-up (GZDoom 4.14.2, 2026-10-17): assigning a target and
+chase state before deferred PostBeginPlay made a two-enemy attack fixture miss
+one launch. Wait for native initialization before arming the natural actors.
+Frozen same-tic action tests may initialize explicitly, but label them as isolated
+and do not silently call PostBeginPlay twice on a natural actor. Compare moving
+target aim in the release tic; a next-tic reference can measure different geometry.
+ENGINE-VERIFIED evidence: assets/validation_5432/RESULTS.md, release/final02 logs.
+Production initialization is unchanged; author check CA320-01 remains pending.
+
 ## CA-KP-092 - Automap colors do not provide floor selection or private markers
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #231 / 5.3.4,

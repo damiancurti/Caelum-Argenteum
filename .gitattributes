@@ -262,3 +262,6 @@
 # Preserve #319 native evidence and fixture fingerprints.
 /assets/validation_5430/** -text whitespace=cr-at-eol
 /assets/validation_5431/** -text whitespace=cr-at-eol
+
+# Preserve #320 native evidence and fixture fingerprints.
+/assets/validation_5432/** -text whitespace=cr-at-eol
