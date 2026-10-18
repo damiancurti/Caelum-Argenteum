@@ -203,6 +203,7 @@ AddOptionMenu "MapControlsMenu"
 {
     Control "$CNTRLMNU_AUTOMAP", "togglemap"
     Control "$CA_NOTE_TITLE", "ca_map_notes"
+    Control "$CA_MAP_LEGEND_CONTROL", "ca_map_legend"
 }
 
 ListMenu "CaelumMapNoteMenu"
