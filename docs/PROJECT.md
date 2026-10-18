@@ -61,7 +61,8 @@ attributes and penalties on October 18. Native validation passes 23 runs/375
 assertions: corners, doors, group stillness/resumption, floor levels, saves and
 the full four-prisoner rescue/port-reward itinerary. All 16,375 normal package
 members equal tested source. SYSTEMS owns the contract; validation_5435 holds
-evidence. Author acceptance remains pending under CA322-01.
+evidence. The author accepted CA322-01 on 2026-10-18. This approval does not
+claim a new fix for the documented packed-row obstruction.
 
 ## 5.4.34 - Active-play autosaving (#324)
 

@@ -187,5 +187,8 @@ runtime fingerprint. Each fixture fingerprint, source, command and sampling
 duration remains attached to its own run; added save/campaign diagnostics do not
 retroactively change the fixture used for earlier movement cases.
 
-CA322-01 author acceptance is pending. Isolated conversation flags are not manual
-dialogue acceptance, and native test passes do not confirm the author's experience.
+Author acceptance: CA322-01 (origin 5.4.35 / #322) passed on 2026-10-18, when
+the author explicitly approved prisoners after the earlier following/idle
+confirmation. No qualifications were reported. Native results and their limits
+remain unchanged, including the documented packed-row obstruction; approval
+does not claim a new fix for it.

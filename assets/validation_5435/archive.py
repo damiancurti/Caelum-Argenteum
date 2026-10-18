@@ -108,7 +108,7 @@ def main():
     result={'issue':322,'release':'5.4.35','baseline_ref':'b74ca613','final_directory':args.final_directory,
         **manifest,'final_gate_passed':valid,'normal_equals_tested_source':equivalent,'normal_package_members':member_count,
         'final_runs':len(current),'final_assertions':sum(r['passed'] for r in current),
-        'selected_runs':[(r['directory'],r['label']) for r in current],'runs':records,'author_acceptance':'pending CA322-01'}
+        'selected_runs':[(r['directory'],r['label']) for r in current],'runs':records,'author_acceptance':'CA322-01 accepted 2026-10-18; explicit prisoner approval; known packed-row limit retained'}
     (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({key:value for key,value in result.items() if key not in ('runs','selected_runs')}))
 

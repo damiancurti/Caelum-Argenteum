@@ -12,8 +12,10 @@ then explicitly answered "Funciona; ya cerré la prueba" to the follow-up asking
 whether prisoners still turned/walked while idle. This confirms observed following
 and idle behavior. It does not independently confirm the unmentioned campaign
 extraction/rewards or every narrow-corridor/save scenario in CA322-01; those
-remain actionable there. No production code or release increment accompanies
-this acceptance of the existing patch.
+remained pending after that initial confirmation. Later on 2026-10-18 the author
+explicitly approved prisoners, completing CA322-01 without reported
+qualifications. No production code or release increment accompanies acceptance;
+the original preview evidence and known packed-row limit remain unchanged.
 
 Frozen preview source, launch/config records, raw compressed logs and the
 native restart capture remain here. Runtime/fixture hashes are in manifest.json.
