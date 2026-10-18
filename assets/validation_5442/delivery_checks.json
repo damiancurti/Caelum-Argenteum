@@ -1,0 +1,82 @@
+{
+  "issue": 318,
+  "release": "5.4.42",
+  "source_baseline": "ae8408f58a49e3fd20d3bcf592338d5e54191445",
+  "project_validation": {
+    "command": "python validate_project.py",
+    "exit_code": 0,
+    "errors": [],
+    "version": "5.4.42",
+    "documents": 11,
+    "context_words": 2497
+  },
+  "document_index": {
+    "command": "python build_document_index.py",
+    "freshness_validated": true,
+    "sha256": "4b6de31458555d985edd5e745203d2da358d6c6c0978380e25c10af541404440"
+  },
+  "python_compilation": {
+    "command": "python -m py_compile assets/validation_5442/prepare.py assets/validation_5442/prepare_normal.py assets/validation_5442/report.py assets/validation_5442/run_matrix.py assets/validation_5442/archive.py",
+    "exit_code": 0
+  },
+  "normal_package": {
+    "issue": 318,
+    "release": "5.4.42",
+    "purpose": "Normal package compilation/loading; no scheduling prototype.",
+    "runtime_sha256": "a3c887560a07edca77621f229856ac830b2e082a7bd7d4c79f8ec8950473bebd",
+    "fixture_sha256": "925513eb7b8db91005fb0243cda9aa8e567c92fbaf59dfd30155f083fc80d327",
+    "exact_source_members": 16376,
+    "source_byte_equality": true,
+    "stagger_probe_absent": true
+  },
+  "normal_smoke": {
+    "label": "smoke01",
+    "passes": 1,
+    "failures": 0,
+    "map": "MAP03"
+  },
+  "native_correctness": {
+    "assertions": 1068,
+    "failures": 0,
+    "cache_audits": 3,
+    "audit_tics_each": 700,
+    "audit_mismatches": 0
+  },
+  "matched_performance": {
+    "windows": 72,
+    "start_tic": 3750,
+    "end_tic": 4450,
+    "selected_etw_intervals": 56144,
+    "nontrivial_aggregate_comparisons": 36,
+    "aggregate_failures": 0,
+    "self_reference_rows": 6
+  },
+  "archive_integrity": {
+    "sha256": "eec106f0bc4b755a3a3e616421ae5ccb890a3cb28792c8bd35dc14c5c22cca2b",
+    "members_verified": 557,
+    "forbidden_game_dependencies_absent": true
+  },
+  "determinism": {
+    "inputs": "Same unmodified src at ae8408f5; --extended-checks; fresh directories",
+    "files": {
+      "production.pk3": {
+        "first": "34763cc801daa92cd242ec72713fe0e3c7480d51f5033ab59c04dcaa937ba401",
+        "second": "34763cc801daa92cd242ec72713fe0e3c7480d51f5033ab59c04dcaa937ba401",
+        "identical": true
+      },
+      "quick.pk3": {
+        "first": "ef849c4d8f29d2cdf84afa6773b6defa36828161449b5f47f30707b8004fd117",
+        "second": "ef849c4d8f29d2cdf84afa6773b6defa36828161449b5f47f30707b8004fd117",
+        "identical": true
+      }
+    }
+  },
+  "power_request_released": true,
+  "power_released_utc": "2026-10-18T19:32:48.2758050Z",
+  "power_plan_unchanged": true,
+  "collector": "Stopped and CSV flushed; process handle exit metadata null, not asserted as exit 0. All final window coverage checks pass.",
+  "independent_review": "Read-only second-agent review of cache/dependency correctness, native fixture, exact-tic matching, ETW selection, numeric results and reproduction wording; findings corrected before final evidence.",
+  "source_changes": "Only two informational 5.4.41 -> 5.4.42 diagnostic labels. Normal gameplay does not contain the scheduling/siege-focus prototype.",
+  "author_acceptance": "No new manual acceptance; existing pending_test.txt remains unchanged.",
+  "excluded_attempts": "Final02 console-wait matrix: all 22 engine windows excluded, including 21 recorded before stopping runner. Earlier compile/fixture/methodology failures retained locally and described in RESULTS.md."
+}

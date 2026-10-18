@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
+
+## 5.4.42 - Staggered actor updates and siege focus trial (#318, 2026-10-18)
+
+The author requested local change notifications plus fallback distributed across
+100 tics, comparing statistics/inventory/resources before targets/temperature.
+They additionally approved maximum adrenaline for siege participants, explicit
+wound-formula simplification, and ignoring hunger/thirst performance penalties
+while retaining consumption and damage. The request does not authorize an
+unreported thermal approximation as an equivalent optimization.
+
+The candidate is a private normal-combat runtime, not the earlier frozen replay.
+Final native checks pass 1,068 assertions; three 700-tic audits pass without
+cached-read mismatch. Review caught reload Speed compounding and an early
+maximum-adrenaline return that stopped the combat timer; both are covered by
+checks in the measured candidate. The normal active resource step is preserved;
+only saturated balances skip redundant recovery. Twenty-four thermal integration
+controls establish non-equivalence, without an accepted error tolerance.
+
+All 72 matched windows start/end at simulation tics 3750/4450 and provide
+56,144 selected ETW intervals. Combined caches/resources yield 44.70/38.93
+city/front FPS versus 43.52/37.55 baseline; paired gains are 2.81%/3.35%.
+Target100 raises this to 51.26/46.50 while changing combat response/outcomes.
+Thermal100 is numerically different. Comparing the original/simplified wound
+formulas at the same maximum adrenaline shows no consistent extra FPS gain.
+No tested combination reaches 60 FPS in both views. All 36 nontrivial aggregate
+comparisons pass; this does not prove full individual-state equivalence.
+The generator reproduces byte-identical private packages. Normal compilation/
+loading, 16,376-member source equality, validation/index and review pass.
+Normal source changes are informational labels only. The collector is stopped
+and its CSV flushed; temporary keep-awake is released without power-plan edits.
+Existing CA318-01..05/CA327-01 remain pending. Evidence and limitations:
+assets/validation_5442/RESULTS.md. No new author acceptance is inferred.
 
 ## 5.4.41 - Individual siege workload controls (#318, 2026-10-18)
 

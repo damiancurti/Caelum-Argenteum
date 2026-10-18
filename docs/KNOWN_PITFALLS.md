@@ -4,6 +4,50 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-129 - A staggered cache must preserve assignments and active clocks
+
+Status/evidence: ENGINE-VERIFIED diagnostic, #318 / 5.4.42, 2026-10-18.
+[validation_5442](../assets/validation_5442/RESULTS.md) contains 1,068 native checks,
+three audited normal-combat windows and the presented-frame comparison. The
+candidate is not yet a production deployment or a complete save/hub proof.
+
+Symptom/cause: skipping a derived-stat method on unchanged inputs can leave
+outputs modified by another consumer. The carbine multiplies Speed while
+reloading; a cache that only returns compounds that penalty. Moving an entire
+resource/timer block behind a 100-tic gate changes active recovery, stun and
+combat deadlines. An early maximum-adrenaline return also stopped the player's
+combat timer. A global scan to discover changes would reproduce the original
+scaling problem instead of solving it.
+
+Remedy: cache the actual dependencies and restore every assigned output. Send
+native ownership/use/stack/split and damage/death notifications to the affected
+owner or subscribed group. Direct item-field writes need explicit invalidation;
+a later fallback is not a same-tic correctness guarantee. Distribute fallback
+deadlines by stable actor/group phase, while retaining active resource steps,
+physics and independent timers. The saturated-resource fast path must not bank
+unearned elapsed recovery. Audit cached reads against original calculations in
+separate correctness runs, then disable that extra audit for FPS measurements.
+
+Limits: this prototype still pays lightweight per-call dependency guards and
+common observer/counter overhead. A 100-tic phase distribution does not bound
+cold-cache initialization. Maximum adrenaline is an authored rule change;
+compare original/simplified formulas at the same maximum to isolate its algebra.
+The thermal solver already ran periodically at 35 tics; changing to 100 changes
+integration and reaction timing. Numerical controls that flush old environments
+before events do not bound runtime paths that remap the new environment over
+elapsed time. Target search at 100 tics also changes combat outcomes; retain
+native attack LOS/range checks and report that behavior change explicitly.
+
+Regression: mutate each dependency, break/repair armor, spend/recover resources,
+reload repeatedly, consume/stack/split/transfer the last item, kill a shared
+target, preserve combat clocks and compare normal-combat checkpoints. Aggregate
+HP/resource totals alone do not prove each actor's state. Require exact native
+read audits, matched seed/camera, full ETW interval bounds and repeated controls.
+Console `wait` dispatch can differ by one or two simulation tics across runs.
+Arm the experiment in advance, start inside WorldTick at an absolute saved-map
+tic, record the arming/start/end tics and reject late or unarmed runs. Never
+conceal a shifted initial state with a tolerance on its resulting HP/resources.
+
 ## CA-KP-128 - Freezing a map does not isolate an update subsystem
 
 Status/evidence: ENGINE-VERIFIED diagnostic controls, #318 / 5.4.41,

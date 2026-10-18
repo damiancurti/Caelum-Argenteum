@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
+
+## 5.4.42 - Distributed actor maintenance experiment (#318)
+
+The current diagnostic compares owner-local statistics/inventory caches,
+saturated-resource skipping, grouped target100, thermal100 and author-approved
+maximum siege adrenaline with explicit wound-formula simplification. Hunger/
+thirst consumption and damage remain. Normal src gameplay is not replaced by
+the prototype. The final native fixture passes 1,068 checks and three 700-tic
+cache audits. Across 72 matched ETW windows, combined caches/resources yield
+44.70/38.93 city/front FPS versus 43.52/37.55 baseline; target100 yields
+51.26/46.50 but changes combat. Extra wound simplification has no consistent
+FPS gain. Normal build/loading and static validation pass. Thermal100 is
+not equivalent, and target100 changes combat response. The normal >=500 policy,
+existing pending author checks and production integration requirement remain.
+Evidence: [validation_5442](../assets/validation_5442/RESULTS.md).
 
 ## 5.4.41 - Isolated siege update costs (#318)
 

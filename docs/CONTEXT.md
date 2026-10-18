@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
 
 **5.4.40/#325:** rest safety;278checks; CA325-01 accepted Oct18.
 
@@ -29,9 +29,12 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
-**5.4.41/#318:** 66 isolated windows; targeting/Tick dominate. validation_5441.
-No production removal or ETW. Siege48/35 snapshots: validation_5437.
-CA318-01..05/CA327-01 pending. No6000-simultaneous tests again.
+**5.4.42/#318:** 100-tic prototype;1,068 checks/3audits/72ETW windows pass.
+Caches/resources:+3%FPS;targets100 more but changes combat. Maximum siege adrenaline approved; hunger/thirst
+penalties ignored, consumption/damage retained. Target100 changes combat;
+thermal100 is not equivalent. Production integration remains. validation_5442;
+earlier isolated costs: validation_5441. CA318-01..05/CA327-01 pending.
+No6000-simultaneous tests again.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;
@@ -322,11 +325,9 @@ Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
 ## Critical premises
 
-Follow all 20 premises in AGENTS.md and PROJECT.md. Key requirements: English
-sources/docs, Spanish gameplay comments, native GZDoom APIs, deterministic
-generators, no invented design values or unapproved file deletion, issue-scoped
-branches/PRs, updated canonical docs, explicit save policy and separate evidence
-levels. Cross-review where possible; keep data outside logic and preserve history.
+Follow all 20 premises in AGENTS.md and PROJECT.md, including issue-scoped work,
+current documentation, deterministic generators, explicit save policy and
+separate agent evidence/author acceptance. Preserve history and unique content.
 
 The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 
