@@ -1,0 +1,166 @@
+{
+  "issue": 320,
+  "release": "5.4.32",
+  "runs": [
+    {
+      "directory": "issue320-01",
+      "log": "matrix.txt",
+      "sha256": "23346f311a06864d83dfd3d334ee90a24e860cdc20fd3226e8babf19f5203164",
+      "passed": 0,
+      "failed": 0,
+      "done": false,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-02",
+      "log": "matrix.txt",
+      "sha256": "1249eefb0033ab0e465977864d7e632eccd8ece395fac1993321a21ab157e5d8",
+      "passed": 0,
+      "failed": 0,
+      "done": false,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-03",
+      "log": "matrix.txt",
+      "sha256": "5b2eebd6dd29b2b0d3d02f174c9cdf6f5a895d3d44f1b9e9a9764af210bccaa6",
+      "passed": 0,
+      "failed": 0,
+      "done": false,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-04",
+      "log": "matrix.txt",
+      "sha256": "6ee79fcd61e01be85f7b42b59c82bf650d0841a141c9a909b45fdccfb470918a",
+      "passed": 486,
+      "failed": 0,
+      "done": true,
+      "matrix": [
+        "CA320 MATRIX baseline=0 demonVelocityErrorMin=0.000000000 max=0.000000000\r"
+      ]
+    },
+    {
+      "directory": "issue320-04",
+      "log": "native.txt",
+      "sha256": "063f5567b3485a71d10bc5940db2d9356c4065788b4cc54cc8f6b6fa67e83510",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-before",
+      "log": "matrix.txt",
+      "sha256": "a9935b431baa387d9a39540891c47dd9af3c3d2000900d705eb29cbe28c25e4e",
+      "passed": 486,
+      "failed": 0,
+      "done": true,
+      "matrix": [
+        "CA320 MATRIX baseline=1 demonVelocityErrorMin=0.731155369 max=12.820037913\r"
+      ]
+    },
+    {
+      "directory": "issue320-before",
+      "log": "save.txt",
+      "sha256": "f4195d20cbe3920e2f07dde61517e711a973a9096959ecd4e0f942faaa1d1fb7",
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-release",
+      "log": "legacy-load.txt",
+      "sha256": "3bce084f8f3891ef35e901f08e9581436b9cff5820fbb98e26a8af75dc3ff769",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-release",
+      "log": "matrix.txt",
+      "sha256": "3c20ecbd6a21a1f013becc118409057ed6c253b060ad58aa3805e9354c518319",
+      "passed": 486,
+      "failed": 0,
+      "done": true,
+      "matrix": [
+        "CA320 MATRIX baseline=0 demonVelocityErrorMin=0.000000000 max=0.000000000\r"
+      ]
+    },
+    {
+      "directory": "issue320-release",
+      "log": "native.txt",
+      "sha256": "ec298a84fcf9ff07b954d040e4fcdcd11111269310f4e6888063a02a62133ea8",
+      "passed": 2,
+      "failed": 1,
+      "done": false,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "dense.txt",
+      "sha256": "9cfcb5ce43584a2c7e05458aa431f5e1f08b65f05ff6953863651f9181331b57",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "legacy-load.txt",
+      "sha256": "1864c109b16d4d879cb8f69cb54ca8d22cbc0c20cbb53043e989bd5055be5fca",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "load.txt",
+      "sha256": "805936c183a698681a0b27c5cee2f7b8d81e3e4f47b5412f61784e0115167a37",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "matrix.txt",
+      "sha256": "5f8df7d65aec7799bb5a0bca50bca74bfb27f5f426f785380b14d8115205b150",
+      "passed": 486,
+      "failed": 0,
+      "done": true,
+      "matrix": [
+        "CA320 MATRIX baseline=0 demonVelocityErrorMin=0.000000000 max=0.000000000\r"
+      ]
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "native.txt",
+      "sha256": "f91272bcef647e95d0e98467db8dae18c95e9fefcba3aa4e770680394281ce21",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    },
+    {
+      "directory": "issue320-final02",
+      "log": "save.txt",
+      "sha256": "6a1f6157fac4401b65d21601761e6a6598c60a558a3a379150724c5ac655db96",
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "matrix": []
+    }
+  ],
+  "final_passes": 504,
+  "baseline_passes": 488,
+  "normal_package_members": 16371,
+  "normal_equals_tested_source": true,
+  "runtime_sha256": "cff1c8d819e22d898c9faaefc5876feb1d5779896f99968ef70b149296b36c93",
+  "fixture_sha256": "40944cc67473e16d679ecc8009398d591001f8565c7a645a93dfab2cd6797e81",
+  "baseline_ref": "fae45fb6",
+  "author_acceptance": "pending CA320-01"
+}

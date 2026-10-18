@@ -6,8 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.31.** Obtain and update the complete repository, validate
+**Current release: 5.4.32.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Mandingas and Zupay now aim fire/stone projectiles directly at the target at
+release (#320, author decision). Other weapon dispersion remains unchanged.
+[Evidence](assets/validation_5432/RESULTS.md); author check CA320-01 passed on 2026-10-17.
 
 Automap help starts collapsed (#321); use its displayed key to toggle the legend.
 L is the new-install/reset default; existing bindings remain configurable under

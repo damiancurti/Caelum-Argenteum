@@ -453,6 +453,8 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    override bool UsesWeaponProjectileDispersion()
+    { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
     override CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage)
     {
         let hit=new("CaelumMixedMeleeDamage");
@@ -611,6 +613,8 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    override bool UsesWeaponProjectileDispersion()
+    { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
     override int GetApprovedPersonality(){return CaelumResidentData.ZUPAY_PERSONALITY;}
     override int GetApprovedPersonalityRevision(){return CaelumResidentData.DEMON_PERSONALITY_REVISION;}
     override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }

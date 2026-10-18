@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.31** — 2026-10-17.
+Documentation version: **5.4.32** — 2026-10-17.
 
 ## 5.4.29 - Map catalogue and exact geometry provenance (#327)
 

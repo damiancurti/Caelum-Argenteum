@@ -1602,9 +1602,11 @@ class CaelumCombatActor : Actor
         return (roll<0 ? -1.0 : 1.0)*(minimum+(maximum-minimum)*Abs(roll)/100000.0);
     }
 
+    virtual bool UsesWeaponProjectileDispersion() { return true; }
+
     void ApplyWeaponProjectileDispersion(CaelumActorProjectile missile,int weaponType)
     {
-        if(missile==null)return;
+        if(missile==null || !UsesWeaponProjectileDispersion())return;
         double accuracy=Max(1.0,CombatMagicalAccuracyPercent
             *(ElementalStatus!=null ? ElementalStatus.GetAccuracyMultiplier() : 1.0));
         double minimum=CaelumDispersionRules.EffectiveTier(
