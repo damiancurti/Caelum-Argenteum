@@ -35,7 +35,7 @@ author checks remain open. [Measurement and limits](assets/validation_5437/RESUL
 House doors now clear unfinished vehicle presentation (#334). Native door,
 vehicle and autosave reload checks pass: 8 runs/64 assertions;
 [evidence](assets/validation_5436/RESULTS.md). Loading icons and arrival autosaves
-remain. CA334-01 still needs author confirmation of the originally reported fade.
+remain. The author approved house transitions (CA334-01) on 2026-10-18.
 
 Prisoner escorts now use one movement owner, stable waiting/dialogue poses,
 player-formula walking with individual modifiers, local navigation and checked

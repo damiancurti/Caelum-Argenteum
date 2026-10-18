@@ -57,5 +57,7 @@ label. Private saves, generated packages, engine and development IWAD are not
 distributed. archive.py retains raw compressed logs, frozen fixture sources,
 launch metadata and save identities and checks normal/tested/source equivalence.
 
-CA334-01 author acceptance remains pending, especially the ordinary entry that
-originally showed a fade. A passing early-entry diagnostic is not that acceptance.
+The author explicitly approved house transitions on 2026-10-18: CA334-01
+(origin 5.4.36 / #334) passed without reported qualifications. This confirmation
+is separate from the early-entry diagnostic and does not broaden its root-cause
+attribution or change the original run counts and tested-runtime hashes.

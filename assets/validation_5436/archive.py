@@ -68,7 +68,7 @@ def main():
             for name,raw in files.items():assert z.read(name)==raw,(p,name)
     report={'issue':334,'release':'5.4.36','baseline_commit':'5ac918a8','final_runtime_sha256':checks[0]['runtime_sha256'],
         'runs':len(checks),'assertions':sum(c['assertions'] for c in checks),'checks':checks,
-        'normal_source_tested_members':len(files),'gate_passed':True,'author_acceptance':'pending CA334-01',
+        'normal_source_tested_members':len(files),'gate_passed':True,'author_acceptance':'CA334-01 accepted 2026-10-18; explicit house-transition approval; no reported qualifications',
         'limitation':'Early house approach is injected after real vehicle travel; ordinary author-reported wipe remains unconfirmed.'}
     (HERE/'evidence.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='checks'}))

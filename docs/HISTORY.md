@@ -84,8 +84,13 @@ ship/cart arrivals, and inside/outside native autosave reloads. Source/tested/
 normal package equivalence covers16,375 members. Review and validation/build
 pass. The first cart fixture lacked58 water rations required by its own forecast;
 its death/failure remains archived, and the corrected fixture supplies that
-finite requirement without changing gameplay. CA334-01 remains pending;
-the author's ordinary fade is not declared reproduced. Evidence: validation_5436.
+finite requirement without changing gameplay. The author's ordinary fade is not
+declared reproduced by that diagnostic. Evidence: validation_5436.
+
+Author acceptance, 2026-10-18: CA334-01 (origin 5.4.36 / #334) passed. The author
+explicitly approved house transitions, without reported qualifications. Its
+entry is removed from pending_test.txt; the original native evidence and its
+attribution limits remain unchanged.
 
 ## 5.4.35 - Prisoner escort replacement (#322, 2026-10-18)
 

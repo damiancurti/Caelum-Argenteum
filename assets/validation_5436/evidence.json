@@ -65,6 +65,6 @@
   ],
   "normal_source_tested_members": 16375,
   "gate_passed": true,
-  "author_acceptance": "pending CA334-01",
+  "author_acceptance": "CA334-01 accepted 2026-10-18; explicit house-transition approval; no reported qualifications",
   "limitation": "Early house approach is injected after real vehicle travel; ordinary author-reported wipe remains unconfirmed."
 }

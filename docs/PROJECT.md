@@ -47,7 +47,8 @@ House portals now carry explicit presentation intent and discard that leftover
 overlay. Native verification passes 8 runs/64 assertions, including normal
 cart/ship presentation and both actual door-arrival autosave reloads. Independent
 review, project validation/build and all16,375 source/tested/package members
-agree. CA334-01 author acceptance remains pending.
+agree. The author approved house transitions (CA334-01) on 2026-10-18; the
+diagnostic attribution limit above remains unchanged.
 
 ## 5.4.35 - Replace competing prisoner escort movement (#322)
 
