@@ -13,6 +13,9 @@ A confirmed voluntary jump now retains biological cushioning against walls throu
 its descent (#339), using the existing capacity. Falls and pushes without a jump
 do not create it. Native checks pass (135 current assertions, 41 baseline); CA339-01 remains pending.
 
+Prisoner following/idle behavior is author-confirmed; remaining campaign and
+passage/save checks stay in CA322-01.
+
 The map legend now stays at the top. Hiding it removes the complete cartography
 panel, leaving only its localized show hint and current key (#321). Native checks pass (five runs, 28 assertions); CA321-02 author acceptance remains
 pending. Evidence: assets/validation_5438.

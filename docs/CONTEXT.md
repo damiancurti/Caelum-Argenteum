@@ -5,7 +5,7 @@ Documentation version: **5.4.39** — 2026-10-18.
 **5.4.39/#339:** jump-wall cushioning;135 current/41 baseline checks; CA339-01 pending.
 
 **5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 pending.
-**5.4.35/#322:** escort;375checks; CA322-01 pending.
+**5.4.35/#322:** escort/idle accepted; CA322-01 partially pending.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
 CA324-01 bag/follower accepted Oct18; other checks pending. validation_5434.
@@ -18,7 +18,7 @@ Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 with native direct aim at release. Other attacks unchanged. validation_5432;
 CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
-**#319/#321:** original checks accepted Oct17.5.4.38 collapses the whole map
+**#319/#321:** accepted Oct17.5.4.38 collapses the map
 panel at the top; validation_5438:5runs/28checks, CA321-02 pending.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
