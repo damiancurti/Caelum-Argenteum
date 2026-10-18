@@ -1,6 +1,6 @@
 # Issue #321 - Collapsible automap legend
 
-Release 5.4.31. Author CA321-01 pending.
+Release 5.4.31. Author CA321-01 accepted 2026-10-17.
 
 Final native result: 28 assertions, no failures. Source review, validation and
 build pass; all 16,371 normal package members match tested runtime/source bytes.

@@ -4,7 +4,7 @@ Documentation version: **5.4.31** — 2026-10-17.
 
 **5.4.31/#321:** automap legend defaults hidden, native binding hint/toggle
 (L for new/reset controls), reset on close/load/travel. Evidence validation_5431;
-CA321-01 pending. Existing bindings are preserved.
+CA321-01 accepted 2026-10-17. Existing bindings are preserved.
 
 **5.4.30/#319:** sleeping bag in native quick items, same owned object/rest
 interaction, no consumption; Box exclusion. Evidence validation_5430;

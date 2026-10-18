@@ -11,7 +11,7 @@ it, then rebuild with `run_dev.bat` as described below.
 
 Automap help starts collapsed (#321); use its displayed key to toggle the legend.
 L is the new-install/reset default; existing bindings remain configurable under
-Automap Controls. [Evidence](assets/validation_5431/RESULTS.md); CA321-01 pending.
+Automap Controls. [Evidence](assets/validation_5431/RESULTS.md); CA321-01 accepted 2026-10-17.
 
 The sleeping bag is now available in the quick-item selector (#319). Use opens
 its existing rest interaction without consuming it; retrieve it from the Magic

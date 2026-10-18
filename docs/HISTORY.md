@@ -10,7 +10,12 @@ Hints follow remapping/clearing and automap binding priority. Help resets when
 leaving the map, loading or travelling; location and objective data remain.
 No character save schema changes. The controls generator now preserves aliases
 following its generated block. Evidence and early fixture/lookup corrections:
-assets/validation_5431/RESULTS.md. Author CA321-01 remains pending.
+assets/validation_5431/RESULTS.md. Author acceptance is recorded below.
+
+Author acceptance CA321-01 (origin 5.4.31/#321), 2026-10-17: the author
+confirmed "Works; I have closed the test" after the MAP02 preview, specifically
+hidden help on map entry and L toggling it. Rebinding/save/hub coverage remains
+agent evidence. The pending entry was retired on that explicit confirmation.
 
 Final verification: 28 native assertions across toggle/binding/language,
 save/load/hub and three window sizes; captures inspected. Actual largest client

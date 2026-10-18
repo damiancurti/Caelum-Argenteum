@@ -17,7 +17,7 @@ command. Hints query both native binding tables, including map-only shadowing,
 and reflect remapping/unbinding immediately in English and Spanish. No polling
 code or repeated KEYCONF defaultbind restores cleared keys. The controls
 regenerator now preserves independently maintained aliases after its generated
-block. Evidence: assets/validation_5431; manual CA321-01 pending.
+block. Evidence: assets/validation_5431; manual CA321-01 accepted 2026-10-17.
 
 ## 5.4.30 - Sleeping bag in quick items (#319)
 
