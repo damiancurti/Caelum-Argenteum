@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.46** — 2026-10-18.
+Documentation version: **5.4.47** — 2026-10-18.
+
+## 5.4.47 - Maximum siege adrenaline (#361)
+
+The approved siege focus is now production behavior for registered MAP03
+attackers, defenders and the player in the active city. Private houses and
+victory resume ordinary decay. Wound calculations use their saturated result;
+real injury, consumption, critical damage, inventory, thermal/elemental effects
+and combat timers remain. Encounter ownership and a transient event reference
+provide lifecycle handling without new serialized state or recurring scans.
+Correctness evidence is in validation_5447; FPS evaluation is deferred. All
+older CA318-01..05/CA327-01 functional checks were explicitly accepted Oct18.
 
 ## 5.4.46 - Symmetric house-door Melt (#334)
 

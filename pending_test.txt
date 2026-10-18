@@ -1,0 +1,10 @@
+CA361-01 | Origin 5.4.47 / issue #361 | Maximum siege adrenaline
+Prerequisites: current build and the supplied private siege preview. Older
+CA318/CA327 checks are approved; no FPS evaluation is requested here.
+Steps: observe the player's adrenaline in the active city; enter a house and
+allow the ordinary combat timer/decay to resume, then return to the city.
+Check that injured participants remain active while real damage still applies.
+Expected: city participants/player stay at their existing maximum; house entry
+stops forcing it without erasing the current reserve; returning restores it.
+Report any new discrepancy. Native correctness/save checks remain separate
+from author acceptance of this newly integrated behavior.

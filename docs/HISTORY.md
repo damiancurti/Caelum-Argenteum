@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.46** — 2026-10-18.
+Documentation version: **5.4.47** — 2026-10-18.
+
+## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
+
+The author requests production adoption of the previously approved siege rule
+and defers FPS evaluation. Confirmed scope: registered MAP03 attackers/defenders
+and the player while in the active city; entering a house stops forcing the
+player. Current maximum values are reused, with exact saturated wound/pain
+formulas. Real health loss, needs consumption/critical damage, thermal/elemental
+effects, immobilization, finite inventory and timers remain. Seal-channel
+validation/spending still runs and its adrenaline reserve is replenished by
+the siege. The first incoming damage also refreshes the reserve before pain.
+
+Existing encounter ownership drives NPC eligibility. A transient port reference
+in the existing event handler resolves once after load and follows native spawn,
+destruction and travel events. No new saved schema or recurring discovery scan
+is added. Independent review caught the initial repeated player lookup and the
+between-update channel-spending case; both are covered by the revised code.
+The first real old-save replay exposed missing eager reconstruction; lazy
+initialization fixes that lifecycle without touching the saved army or resources.
+
+Six final native runs pass 6,830 assertions, including old/current saves, both
+hub legs and rollback to the previous runtime. Evidence and qualified failed
+drafts are retained in validation_5447. Project validation/index and normal build
+pass; all16,379 package members equal the final tested source. Original private
+saves remain unchanged;117 archived text members verify by hash.
+Author check CA361-01 covers only the newly integrated rule. All six older
+CA318-01..05/CA327-01 checks were explicitly confirmed on2026-10-18 and are
+recorded in their originating entries. This delivery makes no FPS claim.
 
 ## 5.4.46 - House entry and exit use Melt (#334, 2026-10-18)
 

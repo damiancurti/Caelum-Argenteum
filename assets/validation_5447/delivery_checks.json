@@ -1,0 +1,12 @@
+{
+  "issue": 361,
+  "release": "5.4.47",
+  "package_sha256": "dd1d02f375a5a385919c6e6973e9e4b872b2e9db0b47d510ca2665aca2726c0c",
+  "package_members": 16379,
+  "exact_tested_source_equality": true,
+  "probes_in_normal_package": false,
+  "original_private_saves_unchanged": true,
+  "evidence_members_verified": 117,
+  "final_native_runs": 6,
+  "final_native_assertions": 6830
+}

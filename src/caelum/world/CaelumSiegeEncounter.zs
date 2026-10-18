@@ -321,11 +321,27 @@ class CaelumHostileMachine : Actor
 
 class CaelumSiegeEvents : EventHandler
 {
+    // Referencia derivada local: reconstrucción única al cargar, sin búsquedas por tic.
+    transient CaelumPortSiege FocusPort;
+    transient bool FocusReady;
+    void EnsureFocusPort()
+    {
+        if(FocusReady)return;
+        FocusPort=CaelumPortSiege.Get();FocusReady=true;
+    }
+    override void WorldLoaded(WorldEvent e) { FocusPort=null;FocusReady=false; }
+    override void WorldUnloaded(WorldEvent e) { FocusPort=null;FocusReady=false; }
+    override void WorldThingSpawned(WorldEvent e)
+    { if(e.Thing is "CaelumPortSiege")FocusPort=CaelumPortSiege(e.Thing); }
     override void WorldThingDestroyed(WorldEvent e)
-    { CaelumTargetSubscriptions.Retire(e.Thing); }
+    {
+        if(e.Thing==FocusPort)FocusPort=null;
+        CaelumTargetSubscriptions.Retire(e.Thing);
+    }
 
     override void WorldTick()
     {
+        EnsureFocusPort();
         let archive=CaelumCorpseArchive.Get(true);if(archive!=null)archive.Tick();
     }
     override void WorldThingDied(WorldEvent e)

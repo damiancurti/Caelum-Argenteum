@@ -7753,6 +7753,7 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
+        CaelumSiegeFocus.ApplyToPlayer(self);
         bool periodic=mod=='CaelumElementalDOT';
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
@@ -8988,6 +8989,7 @@ class CaelumPlayer : DoomPlayer
 
     override void Tick()
     {
+        CaelumSiegeFocus.ApplyToPlayer(self);
         // También repara flags/selección de saves anteriores sin duplicar stock.
         CaelumQuickUse.Reconcile(self);
         CaelumCharacterIdentity.Ensure(self);
@@ -11247,6 +11249,7 @@ class CaelumPlayer : DoomPlayer
         CombatChannelCooldownRemaining = Max(0.0,
             CombatChannelCooldownRemaining - 1.0 / TICRATE);
         if (!CombatChannelModeActive) return;
+        CaelumSiegeFocus.ApplyToPlayer(self);
         CaelumEquipmentItem seal = GetEquippedSeal();
         bool interrupted = player == null || player.playerstate != PST_LIVE
             || health <= 0 || seal == null
@@ -11261,6 +11264,8 @@ class CaelumPlayer : DoomPlayer
         }
         CurrentAdrenaline = Max(0.0,
             CurrentAdrenaline - CombatChannelAdrenalinePerTic);
+        // El asedio repone la reserva sin suprimir validación, coste ni otros efectos del canal.
+        CaelumSiegeFocus.ApplyToPlayer(self);
         CaelumMainM00MagicTrial.RecordChannel(self);
         Vel.X = 0.0; Vel.Y = 0.0;
         CancelCombatBlockMode();

@@ -1,12 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.46** — 2026-10-18.
+Documentation version: **5.4.47** — 2026-10-18.
 
 Current acceptance, 2026-10-18: CA318-01..05 and CA327-01 are explicitly
 approved, including the old city/breath/doors/residents/sky/waves checks.
 No existing author checks remain. Older pending statements below are historical
 checkpoints superseded by this confirmation and HISTORY. FPS work under #318
-is deferred by the author. Siege-adrenaline production integration is next.
+is deferred by the author. Siege-adrenaline production integration is #361.
+
+## 5.4.47 - Production siege adrenaline (#361)
+
+Implement the approved maximum for active MAP03 attackers/defenders and player,
+with ordinary player decay inside private houses. Preserve real consumption,
+damage, inventory, thermal/elemental effects and timers. Native controls cover
+formula equality, owner-local cache inputs, exclusions, channel spending and
+first damage; saved battle replay covers load and house-hub lifetime. Six final
+runs pass 6,830 assertions, including previous-runtime rollback. FPS work is
+deliberately deferred. Author check CA361-01 is limited to this new behavior;
+all six old CA318/CA327 checks are already accepted.
 
 ## 5.4.46 - Revised house transition (#334)
 
