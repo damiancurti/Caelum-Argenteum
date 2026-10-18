@@ -16,10 +16,12 @@ for folder in ('issue323-before','issue323-before02','issue323-final02','issue32
     with zipfile.ZipFile(source/'quick.pk3') as package:
         for name in ('probe.zs','data.zs'):(target/name).write_bytes(package.read(name))
     for p in sorted(source.iterdir()):
+        if p.name.startswith('author-preview'):continue
         if p.suffix=='.txt':
             raw=p.read_bytes();(target/(p.name+'.gz')).write_bytes(gzip.compress(raw,mtime=0))
             text=raw.decode('utf-8','replace')
-            records.append({'directory':folder,'log':p.name,'sha256':hashlib.sha256(raw).hexdigest(),
+            metadata=json.loads((source/(p.stem+'-run.json')).read_text(encoding='utf-8-sig'))
+            records.append({'directory':folder,'log':p.name,'sha256':hashlib.sha256(raw).hexdigest(),'exit_code':metadata['exit_code'],
                 'passed':len(re.findall(r'^CA282 PASS ',text,re.M)),
                 'failed':len(re.findall(r'^CA282 FAIL ',text,re.M)),
                 'done':bool(re.search(r'CA282 DONE passes=\d+ failures=0',text)),
@@ -36,7 +38,7 @@ current=[r for r in records if r['directory']=='issue323-final02']
 baseline=[r for r in records if r['directory']=='issue323-before02']
 recovery=[r for r in records if r['directory']=='issue323-recovery03']
 assert len(current)==7 and len(baseline)==4 and len(recovery)==2
-assert all(r['done'] and r['failed']==0 for r in current+baseline+recovery)
+assert all(r['done'] and r['failed']==0 and r['exit_code']==0 for r in current+baseline+recovery)
 result={'issue':323,'release':'5.4.33','runs':records,
     'current_passes':sum(r['passed'] for r in current),
     'baseline_passes':sum(r['passed'] for r in baseline),

@@ -65,7 +65,8 @@ Physics/damage changes belong to #312 and remain outside this geometry patch.
 The final runs are build/issue323-before02, issue323-final02 and
 issue323-recovery03. Raw logs are archived compressed with deterministic headers,
 alongside launch metadata, exact command scripts and fixture sources; no engine,
-IWAD, PK3 or private save is distributed. evidence.json gives hashes and counts.
+IWAD, PK3 or private save is distributed. evidence.json gives hashes and counts;
+the archiver also requires every final native process to exit with code zero.
 
 The initial baseline geometry audit passed, but its 30-tic forward-input run
 stopped short of the plate and failed two assertions. The preserved failed log
