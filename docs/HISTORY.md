@@ -147,9 +147,11 @@ Independent review, project validation, normal build and all 16,373 source/teste
 package members pass. On 2026-10-18 the author loaded the preview autosave and
 explicitly confirmed preservation of the bag and released follower (CA324-01,
 origin 5.4.34 / #324). The same preview exposed excessive follower turning and
-slow movement, tracked separately in #322. This is partial author acceptance:
-calendar/mission, normal timing, arrival and manual-save checks remain pending;
-their automated evidence does not substitute for author confirmation.
+slow movement, tracked separately in #322. That initial confirmation covered
+only bag/follower reload. Later on 2026-10-18 the author explicitly approved
+autosave, completing CA324-01 (origin 5.4.34 / #324) without reported
+qualifications. Its entry is removed from pending_test.txt; native evidence
+and the unrelated remaining #322 checks retain their own scope.
 
 ## 5.4.33 - Western sewer crusher sector isolation (#323, 2026-10-17)
 
