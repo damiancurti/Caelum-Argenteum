@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.37** — 2026-10-18.
+Documentation version: **5.4.38** — 2026-10-18.
+
+## Complete map-legend collapse (#321, 5.4.38)
+
+The author moved the cartography panel to its existing8-pixel top margin,
+without reserving additional space for console notices. Collapse hides its
+background, border, location, calendar/orientation, controls, notes/POI labels
+and tracked-quest rows. Only "ver leyenda (L)" remains in Spanish with the
+default key; English and rebound/unbound-key hints remain supported. This is
+presentation only: discovery, notes, quest tracking and native map data persist.
 
 ## House doors do not inherit vehicle presentation (#334)
 

@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.37** — 2026-10-18.
+Documentation version: **5.4.38** — 2026-10-18.
 
 **5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 pending.
 **5.4.35/#322:** player-formula escort;23runs/375checks; CA322-01 pending.
@@ -16,8 +16,8 @@ Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 with native direct aim at release. Other attacks unchanged. validation_5432;
 CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
-**#319/#321:** bag quick-use and hidden legend accepted 2026-10-17;
-validation_5430/5431. Separate commits/tests/PRs.
+**#319/#321:** original checks accepted Oct17.5.4.38 collapses the whole map
+panel at the top; validation_5438:5runs/28checks, CA321-02 pending.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
 1024-MU exterior sky, original footprints and private CAH interiors. Other maps:

@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.37** — 2026-10-18.
+Documentation version: **5.4.38** — 2026-10-18.
+
+## 5.4.38 - Map-legend presentation evidence (#321)
+
+validation_5438 retains focused native UI scripts, screenshots, logs and hashes.
+The existing fonts/art remain; only two bilingual hint texts change. Regenerate
+the dialogue/localization index after LANGUAGE edits. No engine/IWAD distribution.
 
 ## 5.4.37 - Current MAP03 attribution evidence (#318)
 

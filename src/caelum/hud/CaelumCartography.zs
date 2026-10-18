@@ -92,26 +92,25 @@ class CaelumCartography : Object ui
         double scale=Min(double(CaelumPresentation.UIScale()),Min(width/CaelumCartographyLayout.REFERENCE_WIDTH,Screen.GetHeight()/CaelumCartographyLayout.REFERENCE_HEIGHT));
         scale=Max(0.001,scale);
         double top=CaelumCartographyLayout.TOP;
-        Vector2 messages=CaelumPresentation.MessageScale();
-        if(CVar.GetCVar("con_notifytime").GetFloat()>0)
-            top+=Clamp(CVar.GetCVar("con_notifylines").GetInt(),0,4)*CaelumCartographyLayout.NATIVE_NOTICE_HEIGHT*messages.Y;
+        // Ocultar retira toda la cartela, incluido lugar, reloj y misiones.
+        // El único resto es la acción para volver a desplegarla.
+        if(!LegendExpanded())
+            return Text(font,Font.CR_WHITE,left,top,width,scale,LegendHint())
+                +CaelumCartographyLayout.AFTER_GAP*scale;
         String location=StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(CaelumWorldCatalogue.LocationForMap(level.MapName)),false);
         bool rotated=CVar.GetCVar("am_rotate").GetInt()==1 || (CVar.GetCVar("am_rotate").GetInt()==2 && viewactive);
         String stamp=ClockText(user).."  |  "..StringTable.Localize(rotated?"CA_MAP_HEADING_UP":"CA_MAP_NORTH_UP",false);
         Array<String> rows;
+        rows.Push(LegendHint());
         rows.Push(stamp);
         if(!viewactive)
         {
-            rows.Push(LegendHint());
-            if(LegendExpanded())
-            {
             rows.Push(StringTable.Localize("CA_MAP_LEGEND",false));
             rows.Push(Controls());
             rows.Push(String.Format(StringTable.Localize("CA_NOTE_OPEN_HINT",false),Keys("ca_map_notes")));
             rows.Push(String.Format(StringTable.Localize("CA_NAV_MAP_HINT",false),Keys("ca_exploration"),Keys("ca_journal_toggle")));
             rows.Push(StringTable.Localize(CVar.GetCVar("am_followplayer").GetBool()?"CA_MAP_FOLLOW_PAN":"CA_MAP_FREE_PAN",false));
             if(level.MapName=="MAP01")rows.Push(StringTable.Localize("CA_MAP_STACKED",false));
-            }
             String knownPoi=CaelumPoiView.CenterLabel(user);
             if(knownPoi.Length()>0)rows.Push(knownPoi);
             String manual=CaelumMapNoteMenu.CenterLabel(user,Max(1,width/scale-2*CaelumCartographyLayout.PADDING));
@@ -123,9 +122,8 @@ class CaelumCartography : Object ui
         titleLines.Destroy();
         for(int i=0;i<rows.Size();i++)
         {let lines=font.BreakLines(rows[i],Max(1,int(inner/scale)));height+=lines.Count()*(font.GetHeight()+CaelumCartographyLayout.TEXT_GAP)*scale;lines.Destroy();}
-        // La reserva preferida de avisos nativos no puede empujar la cartela
-        // sobre las barras. Las preferencias grandes conservan su valor;
-        // sólo se limita la posición de esta presentación local.
+        // La cartela queda arriba incluso con avisos nativos configurados.
+        // Conservar el presupuesto disponible antes de las barras inferiores.
         double bottom=Screen.GetHeight()-(CaelumPresentation.RESOURCE_BOTTOM_EDGE-CaelumPresentation.RESOURCE_TOP_BAR+CaelumPresentation.RESOURCE_LABEL_OFFSET)*resources.Y-CaelumCartographyLayout.MARGIN;
         Array<String> tracked;
         double lineHeight=(font.GetHeight()+CaelumCartographyLayout.TEXT_GAP)*scale;
@@ -148,7 +146,6 @@ class CaelumCartography : Object ui
         CaelumQuestTrackingView.MapRows(user,font,Max(1,int(inner/scale)),budget,tracked);
         for(int i=0;i<tracked.Size();i++)rows.Push(tracked[i]);
         height+=tracked.Size()*lineHeight;
-        top=Min(top,Max(CaelumCartographyLayout.TOP,bottom-height));
         Screen.Dim(CaelumCartographyLayout.PANEL_COLOR,CaelumCartographyLayout.PANEL_ALPHA,int(left),int(top),int(width),int(height));
         Screen.DrawThickLine(left,top,left+width,top,Max(1,scale),CaelumCartographyLayout.RULE_COLOR);
         double y=Text(title,Font.CR_GOLD,left+CaelumCartographyLayout.PADDING*scale,top+CaelumCartographyLayout.PADDING*scale/2,inner,scale,location);

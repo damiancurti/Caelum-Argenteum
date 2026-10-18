@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.37** — 2026-10-18.
+Documentation version: **5.4.38** — 2026-10-18.
+
+## 5.4.38 - Complete top-aligned map legend (#321)
+
+Verify the entire collapsed panel disappears except its localized show hint;
+expansion stays at the top with normal/large UI, English/Spanish and remapped
+keys. Five runs/28 assertions and three inspected rendered configurations pass;
+normal packaging matches the tested source. CA321-02 remains pending.
 
 ## 5.4.37 - Current MAP03 attribution supplement (#318)
 
