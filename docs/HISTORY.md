@@ -1,6 +1,61 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.46** — 2026-10-18.
+Documentation version: **5.4.47** — 2026-10-18.
+
+## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
+
+Author acceptance, 2026-10-18: "Listo, dio correcta la prueba." confirms
+CA361-01 (origin 5.4.47 / #361) for the revised NPC-only preview. Siege NPCs and
+monsters retain maximum adrenaline; the player's ordinary reserve, seal costs
+and house/city behavior remain. The confirmed entry is removed from
+pending_test.txt, which is now empty. FPS evaluation remains explicitly
+deferred. This acceptance changes documentation only; native evidence below
+is reused without claiming a new engine run or performance measurement.
+
+Author revision, same patch: exclude the player completely to avoid unbalancing
+seals; only siege NPCs and monsters receive maximum adrenaline. The player and
+resource services are restored exactly to their pre-issue source, including
+ordinary needs/wound formulas and channel spending/exhaustion. The now-unused
+transient player-port cache is removed from the siege event handler. NPC focus
+is retained unchanged. Existing preview saves keep their current player reserve
+and resume ordinary rules, without an invented reset. CA361-01 was revised to
+this scope before the acceptance above. FPS remains deferred. The initial candidate and
+its evidence below are preserved history, superseded for player behavior.
+
+Revised verification: six complete native cases pass6,928 assertions, including
+642 rule/formula/seal controls, the old battle, a current city/house/city trip,
+both earlier player-inclusive preview saves and a current interior reload.
+The final hub case requires all three checkpoints and final city arrival before
+reporting success. Earlier incomplete save/hub drafts are retained as partial
+evidence. Independent review confirms restored player/event source equality.
+Normal build, validation and16,379-member tested-source equality pass. Revised
+text evidence and hashes are npc_evidence and npc_delivery_checks in validation_5447.
+
+The author requests production adoption of the previously approved siege rule
+and defers FPS evaluation. Confirmed scope: registered MAP03 attackers/defenders
+and the player while in the active city; entering a house stops forcing the
+player. Current maximum values are reused, with exact saturated wound/pain
+formulas. Real health loss, needs consumption/critical damage, thermal/elemental
+effects, immobilization, finite inventory and timers remain. Seal-channel
+validation/spending still runs and its adrenaline reserve is replenished by
+the siege. The first incoming damage also refreshes the reserve before pain.
+
+Existing encounter ownership drives NPC eligibility. A transient port reference
+in the existing event handler resolves once after load and follows native spawn,
+destruction and travel events. No new saved schema or recurring discovery scan
+is added. Independent review caught the initial repeated player lookup and the
+between-update channel-spending case; both are covered by the revised code.
+The first real old-save replay exposed missing eager reconstruction; lazy
+initialization fixes that lifecycle without touching the saved army or resources.
+
+Six final native runs pass 6,830 assertions, including old/current saves, both
+hub legs and rollback to the previous runtime. Evidence and qualified failed
+drafts are retained in validation_5447. Project validation/index and normal build
+pass; all16,379 package members equal the final tested source. Original private
+saves remain unchanged;117 archived text members verify by hash.
+Author check CA361-01 covers only the newly integrated rule. All six older
+CA318-01..05/CA327-01 checks were explicitly confirmed on2026-10-18 and are
+recorded in their originating entries. This delivery makes no FPS claim.
 
 ## 5.4.46 - House entry and exit use Melt (#334, 2026-10-18)
 

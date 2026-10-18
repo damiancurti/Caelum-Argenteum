@@ -4,6 +4,43 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-135 - Transient encounter ownership must rebuild after save load
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #361/5.4.47, 2026-10-18.
+Evidence: assets/validation_5447; the author accepted revised NPC-only CA361-01
+on 2026-10-18. The cache lesson below concerns the superseded initial candidate.
+
+Scope update: the author subsequently excluded the player from siege focus to
+preserve seal balance. The final #361 code therefore removes this player cache
+entirely; the verified initial-candidate lifecycle lesson remains historical
+engineering evidence, not a description of a cache still used in production.
+
+Symptom/cause: the isolated focus controls passed, but the old real siege save
+left the player's transient encounter reference null. NPCs used their existing
+saved ownership and correctly reached maximum adrenaline. Eager WorldLoaded
+assignment alone did not establish the reference in that restored event-handler
+lifecycle. The private control also initially parked a new port before its native
+spawn lifecycle had published it; that is a fixture defect, not a production fix.
+
+Fix/prevention: reconstruct the transient reference lazily once after load, then
+maintain it with native spawn/destruction/travel events. Remember that an empty
+result has been resolved, so peaceful maps do not repeat discovery every tic.
+Use existing per-body ownership for crowds. Read-time cache inputs must observe
+the forced adrenaline before testing a hit. Channels can spend it between normal
+updates; verify the first damage and post-spend state as well as periodic ticks.
+
+Validate with old/current saves and both real hub legs, not only a fresh isolated
+map. Preserve resource costs, damage and combat timers. Do not infer a measured
+FPS benefit from eliminated arithmetic; #361 explicitly defers FPS evaluation.
+
+QA follow-up: the NPC-only revision's first hub draft printed intermediate DONE
+markers but quit before its last queued city assertion executed. A wrapper that
+accepts any DONE cannot certify the complete route. Emit final success only after
+checking every expected checkpoint and the final map, and leave a native update
+window after network/save requests before quitting or travelling again. Preserve
+partial logs as partial evidence; never count their first checkpoint as a full
+round-trip test. Final npc_evidence verifies the ordered three-stage route.
+
 ## CA-KP-134 - Hub wipe protection counts presentations, not tics
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #334/5.4.46, 2026-10-18.

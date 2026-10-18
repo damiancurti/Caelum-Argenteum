@@ -1,6 +1,31 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.46** — 2026-10-18.
+Documentation version: **5.4.47** — 2026-10-18.
+
+## Maximum siege adrenaline in production (#361, 5.4.47)
+
+During the active MAP03 siege, only registered NPC/monster attackers (including
+Zupay and new reinforcements) and bound defenders retain their existing individual
+maximum adrenaline. The player is always excluded, including inside the city,
+to preserve seal-channel balance. Peaceful residents and unrelated actors do not
+join by proximity. Victory, departure from the city or lost encounter ownership
+ends the forced maximum. Dead bodies are not refilled; a living resurrected
+participant qualifies again. This gameplay rule remains consistent as population
+changes; maintenance caches independently retain their >=500-body threshold.
+
+NPC saturated wound-performance and pain formulas use their exact result of
+one. Actual damage, thermal/elemental penalties, immobilization, individual
+inventory/resources and combat timers remain. The player's original adrenaline
+gain/decay, needs/wound mitigation and seal spending/exhaustion run unchanged.
+No tick, damage event, city arrival or channel cost grants a forced player refill.
+A save from the earlier player-inclusive preview keeps its current reserve and
+then follows ordinary rules; it is neither refilled nor arbitrarily reset.
+
+NPC membership uses existing ownership. No player-port cache, recurring actor
+scan or saved schema is added. The author explicitly removed the player from
+the initial candidate on2026-10-18. See validation_5447 for revised native
+correctness and old/current/earlier-preview save/hub evidence.
+FPS evaluation is deferred by the author; no measured gain is claimed.
 
 ## Demon breath excludes navigation markers (#357, 5.4.45)
 
@@ -22,8 +47,8 @@ including wear with zero HP damage and Rulo repair. It retained scalar/weight
 guards and 100-tic fallback. Correctness checks and matched combat state passed,
 but paired FPS gains were inconsistent. This is not an adopted rules change.
 Future writer notices cannot replace immediate correctness with a delayed
-fallback. The 35-tic thermal cadence and pending siege-adrenaline policy remain
-as documented below. Evidence: validation_5444/RESULTS.md and CA-KP-132.
+fallback. The 35-tic thermal cadence remains; #361 separately adopts siege
+adrenaline above. Evidence: validation_5444/RESULTS.md and CA-KP-132.
 
 ## Production actor maintenance (#353, 5.4.43)
 
@@ -48,7 +73,7 @@ maintenance revision 1 and targeting revision 3 are idempotent migrations.
 No new recurring actor-wide scan is introduced: population phases are assigned
 through the existing census and lazy owner-local initialization.
 Temperature remains at its existing 35-tic cadence. The separately approved
-maximum-adrenaline rule below is still a prototype, outside this patch.
+maximum-adrenaline rule was outside #353 and is adopted by #361 above.
 
 ## Actor-local maintenance experiment and siege focus (#318, 5.4.42)
 
@@ -68,9 +93,10 @@ injury, consumption, critical-state damage and other thermal/elemental/reload or
 immobilization effects. The maximum-adrenaline wound formula may use its exact
 simplified result. The player's existing maximum-adrenaline rule already
 suppresses hunger/thirst performance penalties; NPCs do not run that player
-needs calculation. Combat timers must continue. This approved policy is tested
-in the diagnostic runtime, not yet activated in normal gameplay; production
-adoption must define participant/lifetime ownership and preserve save/hub state.
+needs calculation. The later #361 production decision above excludes the player.
+Combat timers must continue. This policy was tested only in
+the diagnostic runtime at this checkpoint; #361 above completes production
+ownership and lifetime handling without adding persistent state.
 
 Target100 changes the existing shared 8-tic search cadence to 100 tics; death
 notifications and native attack LOS/range checks remain. Thermal100 changes

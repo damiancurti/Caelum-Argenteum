@@ -3652,6 +3652,7 @@ class CaelumCombatActor : Actor
 
     double GetCombatAdrenalineRatio()
     {
+        CaelumSiegeFocus.ApplyToActor(self);
         if (MaximumCombatAdrenaline <= 0.0) { return 0.0; }
         return Clamp(
             CurrentCombatAdrenaline / MaximumCombatAdrenaline,
@@ -3678,6 +3679,7 @@ class CaelumCombatActor : Actor
 
     void UpdateCombatHealthEffects()
     {
+        CaelumSiegeFocus.ApplyToActor(self);
         let cache=GetActorMaintenance();
         if(cache!=null && !cache.HealthChanged(self))
         {
@@ -3716,20 +3718,25 @@ class CaelumCombatActor : Actor
             CombatHealthState = CaelumConstants.HEALTH_STATE_NORMAL;
         }
 
-        int effectivePatience = CombatPatience
-            + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
         int effectiveAgility = CombatAgility
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_AGILITY);
-        double patienceMultiplier = CaelumGrowthRules.Remaining(effectivePatience);
         double adrenalineRatio = GetCombatAdrenalineRatio();
-        double patienceAdjustedPerformance = 1.0
-            - (1.0 - rawPerformance) * patienceMultiplier;
-        CombatHealthPerformanceMultiplier = patienceAdjustedPerformance
-            + (1.0 - patienceAdjustedPerformance) * adrenalineRatio;
-        CombatHealthPainMultiplier = 1.0
-            + (rawIntensity - 1.0)
-                * patienceMultiplier
-                * (1.0 - adrenalineRatio);
+        if(adrenalineRatio>=1.0)
+        {
+            // Resultado exacto de la fórmula saturada; conserva heridas y otros efectos.
+            CombatHealthPerformanceMultiplier=1.0;
+            CombatHealthPainMultiplier=1.0;
+        }
+        else
+        {
+            int effectivePatience=CombatPatience
+                + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
+            double patienceMultiplier=CaelumGrowthRules.Remaining(effectivePatience);
+            double patienceAdjustedPerformance=1.0-(1.0-rawPerformance)*patienceMultiplier;
+            CombatHealthPerformanceMultiplier=patienceAdjustedPerformance
+                +(1.0-patienceAdjustedPerformance)*adrenalineRatio;
+            CombatHealthPainMultiplier=1.0+(rawIntensity-1.0)*patienceMultiplier*(1.0-adrenalineRatio);
+        }
         CombatAdrenalineGainMultiplier = rawIntensity*CaelumPersonalityRules.Adrenaline(self);
 
         double baseEvasion = CaelumGrowthRules.Bonus(effectiveAgility);
@@ -3914,6 +3921,7 @@ class CaelumCombatActor : Actor
         EnsureCombatPersonality();
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
+        CaelumSiegeFocus.ApplyToActor(self);
         CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();
         CaelumDemonService.UpdateBreath(self);
@@ -4056,7 +4064,7 @@ class CaelumCombatActor : Actor
                 CombatTimeRemaining - 1.0 / TICRATE
             );
         }
-        else if (CurrentCombatAdrenaline > 0.0)
+        else if (CurrentCombatAdrenaline > 0.0 && !CaelumSiegeFocus.ApplyToActor(self))
         {
             CurrentCombatAdrenaline = Max(
                 0.0,
