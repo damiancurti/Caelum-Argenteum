@@ -3,12 +3,13 @@
 The author replaced the no-animation contract with Melt on both entry and exit.
 Global wipetype, native loading icons, arrival autosaves and hub residents remain.
 The source view belongs to the current door, independently of ship/cart overlays.
-No geometry, combat or balance values change. CA334-02 is pending author review.
+No geometry, combat or balance values change. The author accepted CA334-02 on
+2026-10-18 after the focused exit retest. Earlier failed drafts remain below.
 
 ## Author-reported double Melt: follow-up in the same release
 
 On 2026-10-18 the author rejected two visible wipes on house exit and approved
-the other preview checks. CA334-02 now contains only the exit retest; CA353-01
+the other preview checks. CA334-02 then retained only the exit retest; CA353-01
 acceptance is recorded separately under #357. The original 13-run evidence below
 is retained as evidence of the initial implementation, not final visual approval.
 
@@ -32,7 +33,7 @@ The screenshot service's native pipe remained unavailable. A target-only fallbac
 captured84 samples in23.26seconds, but included black frames even outside wipes.
 Those samples cannot prove the animation; no pixels or personal INI are archived.
 The new native run records omit initial_config and retain the original record
-hash. Author visual acceptance remains pending; no FPS benefit is claimed.
+hash. Subsequent author visual acceptance passed2026-10-18; no FPS benefit is claimed.
 
 ## Native cause and implementation
 

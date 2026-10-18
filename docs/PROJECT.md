@@ -10,7 +10,7 @@ request Melt without changing global video settings. Cancellation and native
 save/hub controls pass13 runs/82 checks in validation_5446. No map geometry or combat
 rules change. The author accepted the other preview checks but reported a double
 exit Melt. Its initial native pass now uses Fade on the held source; only the
-final pass melts to the destination. CA334-02 retains that exit retest.
+final pass melts to the destination. CA334-02 passed on2026-10-18.
 
 ## 5.4.45 - Navigation markers are not breath targets (#357)
 

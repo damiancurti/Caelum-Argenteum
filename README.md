@@ -17,7 +17,7 @@ CA353-01, including the artillery follow-up, was accepted on 2026-10-18.
 House doors now request Melt in both directions, following the revised author
 decision (#334). Arrival autosaves and global video settings are retained.
 See [native transition evidence](assets/validation_5446/RESULTS.md); visual
-only the reported double-Melt exit needs retesting (CA334-02).
+the author accepted the corrected exit (CA334-02) on 2026-10-18.
 
 The structural-cache investigation (#354) is complete: native mutation checks
 and matched combat replays pass, but the additional guard removal does not

@@ -84,12 +84,3 @@ Expected: no reservoir trial props in the city; normal routes and individual
 resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
-
-CA334-02 | Origin 5.4.46 / issue #334 | Double exit Melt retest
-Author feedback2026-10-18: exit still wiped twice; other preview checks passed.
-The earlier CA334-01 acceptance remains history. Arrival autosaves and entry
-were not reported as failures and are not reopened as outstanding author tasks.
-Prerequisites: updated build, normal Melt setting; the preview starts inside
-house8. Steps: use the door to leave, watching the full transition.
-Expected: one visible Melt from the house to the city, with no preceding
-distortion of the same door image, wrong scene or unresponsive portal.

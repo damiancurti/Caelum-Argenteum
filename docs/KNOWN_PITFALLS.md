@@ -8,8 +8,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #334/5.4.46, 2026-10-18.
 Native g4.14.2 replay and lifecycle evidence: assets/validation_5446. Source
-image preservation was visually checked; final author animation acceptance is
-CA334-02, pending. No FPS or general rendering-performance result is claimed.
+image preservation was visually checked; the author accepted the corrected
+animation in CA334-02 on2026-10-18. No FPS result is claimed.
 
 Author feedback2026-10-18 rejected the initial candidate's double exit wipe.
 Identical endpoint images do NOT make Melt neutral: Wiper_Melt shifts source

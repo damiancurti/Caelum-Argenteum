@@ -7,7 +7,7 @@ Documentation version: **5.4.46** — 2026-10-18.
 **5.4.39/#339:** jump-wall cushioning;135/41 checks; CA339-01 accepted Oct18.
 
 **5.4.46/#334:** revised contract: Melt both house directions; native saves retained.
-validation_5446; double-exit-Melt retest pending; other preview checks accepted.
+validation_5446; CA334-02 accepted Oct18; current preview checks complete.
 **5.4.35/#322:** CA322-01 accepted Oct18; packed-row limit retained.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.

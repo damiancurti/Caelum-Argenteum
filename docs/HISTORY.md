@@ -38,6 +38,12 @@ source, then retains the final Melt1. No global CVar is changed. New native
 default-Melt controls pass5 runs/25 checks, recorded separately in validation_5446; they do not
 replace the author's visual retest. This remains the same5.4.46/#334 patch.
 
+Author acceptance2026-10-18: CA334-02 (origin5.4.46/#334) passed. The author
+confirmed that the focused exit test was correct after the double-Melt fix;
+other preview checks were already approved. The pending entry was removed.
+This accepts the house presentation and does not close the older six CA318/CA327
+checks or establish stable siege FPS. Runtime and release version are unchanged.
+
 ## 5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)
 
 The author reported stationary fire near cannons. Their untouched MAP03
