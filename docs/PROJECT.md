@@ -15,7 +15,7 @@ Native voluntary takeoff now retains the existing wall absorption through
 descent. Falls/pushes without jumping do not arm it; immobilization still gives
 zero capacity. Saves carry a revisioned, conservatively migrated pawn state.
 Native 135 current/41 baseline assertions, validation/build and package equality
-pass. CA339-01 remains pending; validation_5439.
+pass. CA339-01 was accepted by the author on 2026-10-18; validation_5439.
 
 ## 5.4.38 - Complete top-aligned map legend (#321)
 

@@ -31,7 +31,12 @@ pass; actual midair save/load, old-save migration, travel and existing impact
 rules are covered. The matched 1495.376282-J contact changes from fatal 1864 HP
 loss to zero retained energy/damage. Excess energy remains harmful. Independent
 review, validation, normal build and 16,375-member source/package equality pass.
-Evidence: assets/validation_5439; author CA339-01 remains pending.
+Evidence: assets/validation_5439.
+
+Author acceptance, 2026-10-18: CA339-01 (origin 5.4.39, issue #339) passed.
+The author explicitly confirmed that both the legend and cushioning work, with
+no reported qualifications, after the current 5.4.40 preview. Only this jump
+entry is removed from pending_test.txt; native evidence remains distinct.
 
 ## 5.4.38 - Complete top-aligned map legend (#321, 2026-10-18)
 

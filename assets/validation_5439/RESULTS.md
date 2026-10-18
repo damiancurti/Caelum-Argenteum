@@ -38,7 +38,11 @@ Old saves load conservatively without inferring a voluntary jump. The next real
 jump arms the new state. Current airborne saves retain it. Impact latches and
 existing grounded predicates are unchanged. Independent code review found no
 blocker. Project validation and normal packaging pass; all 16,375 source,
-tested-runtime and normal-package members agree. Author CA339-01 remains pending.
+tested-runtime and normal-package members agree.
+
+Author acceptance: CA339-01 (origin 5.4.39 / #339) passed on 2026-10-18, with no
+reported qualifications, after the current 5.4.40 preview. This confirmation
+does not change the original native run counts or tested-runtime hashes.
 
 Reproduction: prepare.py --directory issue339-recheck; use the shared
 assets/validation_5422/run_native.ps1 with the generated scripts, -Map MAPQA,

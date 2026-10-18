@@ -4,7 +4,7 @@ Documentation version: **5.4.40** — 2026-10-18.
 
 **5.4.40/#325:** rest safety;278checks; CA325-01 pending.
 
-**5.4.39/#339:** jump-wall cushioning;135 current/41 baseline checks; CA339-01 pending.
+**5.4.39/#339:** jump-wall cushioning;135 current/41 baseline checks; CA339-01 accepted Oct18.
 
 **5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 pending.
 **5.4.35/#322:** escort/idle accepted; CA322-01 partially pending.
