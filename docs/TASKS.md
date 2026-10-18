@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
+
+## 5.4.42 - Actor-local 100-tic maintenance trial (#318)
+
+Requested: compare statistics/inventory/resources first, then targets and
+temperature, with local invalidation and staggered fallback. Include maximum
+siege adrenaline and simplified wound penalties; preserve hunger/thirst
+consumption/damage. The private candidate passes 1,068 assertions and three
+700-tic audited comparisons with zero cached-read mismatches. The 72-window
+presented-frame comparison is complete: caches/resources improve paired FPS
+2.81% city / 3.35% front. Target100 adds more but changes combat; thermal100
+changes numerical results. Wound simplification has no consistent extra FPS
+gain. Normal build/loading, source equality, static validation and review pass.
+Next: select improvements using matched FPS plus gameplay evidence, then apply
+accepted changes automatically under the existing >=500 policy with participant
+scope, complete mutation hooks and save/hub/lifetime checks. Target100 and
+thermal100 require a deliberate behavior decision; the solver is not equivalent.
+No existing author test is confirmed by these agent measurements.
 
 ## 5.4.41 - Isolated siege update costs (#318)
 

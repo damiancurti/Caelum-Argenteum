@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
+
+## Actor-local maintenance experiment and siege focus (#318, 5.4.42)
+
+The author requests actor-local change notifications, with fallback work spread
+across 100 tics, first for statistics/inventory/resources and then for target
+selection/temperature. The private experiment caches derived values, not actual
+health or damage. Active resource recovery, movement, physics, stun and combat
+timers retain their existing tic cadence; only already-full resource balances
+skip redundant recovery. Cache hits restore assigned outputs such as Speed.
+Native inventory ownership/use/stack/split changes notify their owner. Direct
+inventory writes require explicit notification; a fallback deadline is not
+proof of same-tic correctness. No recurring actor-wide discovery scan is added.
+
+Approved siege design: participants remain at their existing maximum adrenaline.
+Ignore injury/pain and hunger/thirst performance penalties while retaining real
+injury, consumption, critical-state damage and other thermal/elemental/reload or
+immobilization effects. The maximum-adrenaline wound formula may use its exact
+simplified result. The player's existing maximum-adrenaline rule already
+suppresses hunger/thirst performance penalties; NPCs do not run that player
+needs calculation. Combat timers must continue. This approved policy is tested
+in the diagnostic runtime, not yet activated in normal gameplay; production
+adoption must define participant/lifetime ownership and preserve save/hub state.
+
+Target100 changes the existing shared 8-tic search cadence to 100 tics; death
+notifications and native attack LOS/range checks remain. Thermal100 changes
+an existing 35-tic periodic solver step, retaining forced updates. Neither is
+numerically/behaviorally equivalent to its baseline, and no thermal error
+tolerance is approved. Maximum adrenaline is itself a gameplay-rule change;
+only a comparison against the same rule isolates formula simplification.
+See [methods, evidence and limits](../assets/validation_5442/RESULTS.md).
+The >=500 living-combatant automatic policy remains authoritative for accepted
+production optimizations; this prototype does not complete that delivery.
 
 ## Isolated performance controls (#318, 5.4.41)
 

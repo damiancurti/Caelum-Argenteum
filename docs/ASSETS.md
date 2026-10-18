@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.41** — 2026-10-18.
+Documentation version: **5.4.42** — 2026-10-18.
+
+## 5.4.42 - Distributed update evidence (#318)
+
+validation_5442 owns the deterministic private-runtime builder, owner-local
+worker, native probe/checks, sequential runner, strict ETW report and textual
+evidence archive. The measured runtime is based on ae8408f5, not a shipped
+gameplay replacement. Source members are transformed in memory; private PK3s,
+saves, engine and IWAD remain local. No art or audio asset changes. Prototype
+objects, CVars and handlers are absent from the verified normal package. The
+archive includes 72 matched windows, three cache audits, 1,068 native assertions
+and filtered ETW rows with coverage context; evidence.json hashes each member.
 
 ## 5.4.41 - Isolated workload evidence (#318)
 

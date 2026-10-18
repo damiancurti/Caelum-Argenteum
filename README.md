@@ -6,10 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.41.** Obtain and update the complete repository, validate
+**Current release: 5.4.42.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-The siege update investigation (#318) now includes 66 isolated workload windows,
+The current siege experiment (#318) tests owner-local caches and staggered
+100-tic maintenance in normal combat, including the approved maximum-adrenaline
+rule while retaining hunger/thirst consumption and damage. It passes 1,068 native
+checks and three cache audits. Across 72 matched ETW windows, conservative
+caches/resources improve FPS by about 3%; target100 helps more but changes
+combat response. Neither camera reaches 60 FPS with any tested combination.
+The prototype is separate from normal gameplay. Target/thermal timing changes
+are not equivalent optimizations. See [evidence](assets/validation_5442/RESULTS.md).
+
+The earlier siege update investigation (#318) includes 66 isolated workload windows,
 with 600 soldiers and 998 Mandingas retained. Target selection and the residual
 combatant update dominate these controls. No gameplay system is removed; native
 FPS snapshots are not presented-frame averages. See the
