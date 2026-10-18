@@ -240,7 +240,6 @@ class CaelumMainM00RuloTrial : Object play
             }
     }
 
-    const AUTOSAVE_SPECIAL = 15;
 
     static void StartFight(CaelumPlayer user, CaelumM00Bull bull)
     {
@@ -254,7 +253,7 @@ class CaelumMainM00RuloTrial : Object play
         // Autosave nativo: respeta la rotación y las preferencias del motor.
         // La gracia ya existente mantiene inactivos al Toro y sus aliados.
         // TrialFighter persiste y evita volver a guardar al cargar el punto.
-        user.A_CallSpecial(AUTOSAVE_SPECIAL);
+        CaelumAutosaveEvents.Checkpoint(user);
         CaelumMainM00MagicTrial.Feedback(user, "CA_M01_RULO_FIGHT_BEGIN");
     }
 

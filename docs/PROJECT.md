@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+## 5.4.34 - Active-play autosaving (#324)
+
+A single owner requests the native autosave after 300 real active seconds,
+independent of accelerated calendar ticks. Pause, menus, console, dead/unready
+players and loading time are excluded. Native slots/settings and manual saves
+remain authoritative; Rulo's existing checkpoint shares the request owner.
+Loading starts a fresh interval. The author's October 18 clarification preserves
+map-transition autosaves and restarts five active minutes after the latest
+autosave, including native arrivals. Native validation passes 36 runs/138 checks,
+the full real interval and generated-file reloads. Build/validation and all
+16,373 package members match the tested sources. CA324-01 awaits author acceptance.
 
 ## 5.4.33 - Isolate the western sewer crusher (#323)
 

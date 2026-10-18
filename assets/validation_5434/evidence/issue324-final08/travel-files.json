@@ -1,0 +1,182 @@
+[
+  {
+    "delay": 0,
+    "exit": 0,
+    "files": {
+      "auto00.zds": {
+        "changed": true,
+        "sha256": "dcb3c9dea98a1d3afdc4fce50eb6b47761fb32b92da8a5bcd56e3725cbfcf6e4",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:31",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:31",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      },
+      "auto01.zds": {
+        "changed": true,
+        "sha256": "c31b81b0bd4c07d81fbb90dc73f5af16f5a087155d94210127a5defd801a69a5",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:31",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:31",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      }
+    }
+  },
+  {
+    "delay": 1,
+    "exit": 0,
+    "files": {
+      "auto00.zds": {
+        "changed": true,
+        "sha256": "4266c204e1b9daac065c6d9e094dd2da2bbfc1500f79511e5c598d02cc1ed068",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:43",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:43",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      },
+      "auto01.zds": {
+        "changed": true,
+        "sha256": "8072bb91a472c5c1b9cf6690b30f7357a9de3259ea6fc1cdd6d5682857ed5a8d",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:43",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:43",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      }
+    }
+  },
+  {
+    "delay": 2,
+    "exit": 0,
+    "files": {
+      "auto00.zds": {
+        "changed": false,
+        "sha256": "4266c204e1b9daac065c6d9e094dd2da2bbfc1500f79511e5c598d02cc1ed068",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:43",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:43",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      },
+      "auto01.zds": {
+        "changed": true,
+        "sha256": "2595d2ff8517326b197e253b67844da25090749d236c6b57aa19b6a9c0b56679",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:00:56",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:00:56",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      }
+    }
+  },
+  {
+    "delay": 3,
+    "exit": 0,
+    "files": {
+      "auto00.zds": {
+        "changed": true,
+        "sha256": "c0395157b79ee24e68de35bf7fecd44a0838b3d5b3e84b4a650648a320d77384",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:01:10",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:01:10",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      },
+      "auto01.zds": {
+        "changed": true,
+        "sha256": "b479c17a27935d5c986fc7abe16a1dcd198d08220daa31dbead7309a5b1778fe",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:01:10",
+          "Current Map": "MAP99",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:01:10",
+          "Comment": "MAP99 - Autosave fixture\nTime: 00:00:02"
+        }
+      }
+    }
+  },
+  {
+    "delay": 4,
+    "exit": 0,
+    "files": {
+      "auto00.zds": {
+        "changed": true,
+        "sha256": "94fd024df2b69152992f705a9ce5f39da299c2e22d98792227327dd293978aac",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:01:23",
+          "Current Map": "MAP98",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:01:23",
+          "Comment": "MAP98 - Autosave hub\nTime: 00:00:02"
+        }
+      },
+      "auto01.zds": {
+        "changed": true,
+        "sha256": "4ecb08535b65ce3fec21461b3bebb2c91b0c8ffbd52c3b6a619f1ddcae533172",
+        "info": {
+          "Software": "GZDoom g4.14.2",
+          "Engine": "GZDOOM",
+          "Save Version": 4560,
+          "Title": "Autosave 2026-10-18 00:01:23",
+          "Current Map": "MAP99",
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "quick.pk3",
+          "Creation Time": "2026-10-18 00:01:23",
+          "Comment": "MAP99 - Autosave fixture\nTime: 00:00:02"
+        }
+      }
+    }
+  }
+]

@@ -1,6 +1,42 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+## Automatic saves after five minutes of active play (#324)
+
+CaelumSaveRules.ACTIVE_INTERVAL_SECONDS = 300 is authoritative. The local
+monotonic timer counts only living, initialized single-player gameplay outside
+pause, menus and console. Time spent loading is excluded. Calendar fast-forward
+does not multiply this clock. The author's 2026-10-18 clarification starts each
+interval after the latest autosave, including map/house entry and checkpoints.
+Transition autosaves remain enabled according to native settings. Travel without
+an enabled arrival save carries elapsed time and one due request; new games and
+loading any save restart the interval and discard stale requests, avoiding
+load-save loops. Manual saves do not reset the interval.
+
+CaelumAutosaveEvents is the sole owner for periodic requests and the existing
+Rulo checkpoint. It adopts the native arrival request through special 15, once
+per map transition, preserving its enable/disable policy. Requests that will
+write the same destination coalesce; a completed checkpoint in the previous map
+does not suppress the destination's arrival save. Encounter preparation remains.
+A temporarily invalid body or
+pending native game action retains one due request. Native disableautosave and
+autosavecount determine whether a file is written and which rotating slot is
+used; no private filenames, manual-slot overwrite or unbounded archive is added.
+
+Autosave (native special 15) is asynchronous. Two ordered network acknowledgements
+track native eligibility and dispatch; death before eligibility retains one due
+request. Settings-disabled requests wait a fresh interval. Observing native
+ga_autosave at PostUiTick and its following network message starts the clock
+after the write action,
+including external native requests and a single rotating slot. Neither an ACK
+nor action observation confirms successful disk IO. After native acceptance,
+GZDoom retains its queued-write behavior, including a death or map change before
+the write. Actual generated-file loading is separate evidence from request counts.
+One STAT_DEFAULT query per map arrival locates native Autosaver, whose class has
+no ZScript type. This group can contain actors; it is a single global traversal
+at transition, with no recurring global scan during play.
+No new persisted character fields or save migration are needed.
 
 ## 5.4.31 - Collapsible automap legend (#321)
 

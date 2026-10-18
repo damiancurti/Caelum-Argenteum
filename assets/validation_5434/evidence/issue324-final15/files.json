@@ -1,0 +1,283 @@
+[
+  {
+    "label": "timer",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {},
+    "after": {
+      "auto01.zds": {
+        "sha256": "ef336594e926006ff633e53f23a1d2767e67a9ea0a09ef16e32e3dfa4b88f678",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "ef336594e926006ff633e53f23a1d2767e67a9ea0a09ef16e32e3dfa4b88f678",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-timer",
+    "exit": 0,
+    "native_writes": 0,
+    "before": {
+      "auto01.zds": {
+        "sha256": "ef336594e926006ff633e53f23a1d2767e67a9ea0a09ef16e32e3dfa4b88f678",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "ef336594e926006ff633e53f23a1d2767e67a9ea0a09ef16e32e3dfa4b88f678",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {}
+  },
+  {
+    "label": "pause",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "ef336594e926006ff633e53f23a1d2767e67a9ea0a09ef16e32e3dfa4b88f678",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "9d85171e8dc43e38116646c86b305ae67f6ab17b412f4f079e80be1976db5686",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "9d85171e8dc43e38116646c86b305ae67f6ab17b412f4f079e80be1976db5686",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "menu",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "9d85171e8dc43e38116646c86b305ae67f6ab17b412f4f079e80be1976db5686",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "ec87aa37f932b04c5c6d150160ec950c8343339998e43e3d1f53a19ad724fa6f",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "ec87aa37f932b04c5c6d150160ec950c8343339998e43e3d1f53a19ad724fa6f",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "console",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "ec87aa37f932b04c5c6d150160ec950c8343339998e43e3d1f53a19ad724fa6f",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "2cc49978103db0297dcb585b03fbdbc6417eb61fa6ca63981bb4a6f3d0088ea1",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "2cc49978103db0297dcb585b03fbdbc6417eb61fa6ca63981bb4a6f3d0088ea1",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "checkpoint",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "2cc49978103db0297dcb585b03fbdbc6417eb61fa6ca63981bb4a6f3d0088ea1",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "80b5f9b08f80096e2918e2929683a44db4e159d865d4cb31f04f88b56bf6a1e7",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "80b5f9b08f80096e2918e2929683a44db4e159d865d4cb31f04f88b56bf6a1e7",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "defer",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "80b5f9b08f80096e2918e2929683a44db4e159d865d4cb31f04f88b56bf6a1e7",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "0ec52ecd292e43431f855b5b412ed6eb92844c6fcae14a987dfca22fd961db52",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "0ec52ecd292e43431f855b5b412ed6eb92844c6fcae14a987dfca22fd961db52",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "queued-death",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "0ec52ecd292e43431f855b5b412ed6eb92844c6fcae14a987dfca22fd961db52",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "d687624627bf73ff4f61997aceeeacf2ff0609c132bfabbd3cdd66c50b371962",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "d687624627bf73ff4f61997aceeeacf2ff0609c132bfabbd3cdd66c50b371962",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "travel",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "d687624627bf73ff4f61997aceeeacf2ff0609c132bfabbd3cdd66c50b371962",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "1cfba6f970c6a25234f2149f3336d8d74f1c11567ecf7557e6fa741b5e5d591f",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "1cfba6f970c6a25234f2149f3336d8d74f1c11567ecf7557e6fa741b5e5d591f",
+        "map": "MAP98"
+      }
+    }
+  },
+  {
+    "label": "travel-disabled",
+    "exit": 0,
+    "native_writes": 0,
+    "before": {
+      "auto01.zds": {
+        "sha256": "1cfba6f970c6a25234f2149f3336d8d74f1c11567ecf7557e6fa741b5e5d591f",
+        "map": "MAP98"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "1cfba6f970c6a25234f2149f3336d8d74f1c11567ecf7557e6fa741b5e5d591f",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {}
+  },
+  {
+    "label": "roundtrip",
+    "exit": 0,
+    "native_writes": 2,
+    "before": {
+      "auto01.zds": {
+        "sha256": "1cfba6f970c6a25234f2149f3336d8d74f1c11567ecf7557e6fa741b5e5d591f",
+        "map": "MAP98"
+      }
+    },
+    "after": {
+      "auto00.zds": {
+        "sha256": "9573e607bdc657e3224187da94fb56acb3525250deaf5c8b294f15ccaaf06582",
+        "map": "MAP99"
+      },
+      "auto01.zds": {
+        "sha256": "dac02835655dd9c5f9919a450a8f09097d88a3fe0724112a9e25d1fb65fade27",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {
+      "auto00.zds": {
+        "sha256": "9573e607bdc657e3224187da94fb56acb3525250deaf5c8b294f15ccaaf06582",
+        "map": "MAP99"
+      },
+      "auto01.zds": {
+        "sha256": "dac02835655dd9c5f9919a450a8f09097d88a3fe0724112a9e25d1fb65fade27",
+        "map": "MAP98"
+      }
+    }
+  },
+  {
+    "label": "direct-travel",
+    "exit": 1,
+    "native_writes": 2,
+    "before": {
+      "auto00.zds": {
+        "sha256": "9573e607bdc657e3224187da94fb56acb3525250deaf5c8b294f15ccaaf06582",
+        "map": "MAP99"
+      },
+      "auto01.zds": {
+        "sha256": "dac02835655dd9c5f9919a450a8f09097d88a3fe0724112a9e25d1fb65fade27",
+        "map": "MAP98"
+      }
+    },
+    "after": {
+      "auto00.zds": {
+        "sha256": "172457f8b7f6adc833f0fc761392df3c0651288eb942e64a7283f195cbf6f036",
+        "map": "MAP98"
+      },
+      "auto01.zds": {
+        "sha256": "f4d035fd7c88a275a81c7595820a6c5b2c06993e47f424affd84d6e60c6cf5df",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {
+      "auto00.zds": {
+        "sha256": "172457f8b7f6adc833f0fc761392df3c0651288eb942e64a7283f195cbf6f036",
+        "map": "MAP98"
+      },
+      "auto01.zds": {
+        "sha256": "f4d035fd7c88a275a81c7595820a6c5b2c06993e47f424affd84d6e60c6cf5df",
+        "map": "MAP98"
+      }
+    }
+  }
+]

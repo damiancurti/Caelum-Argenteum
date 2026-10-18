@@ -1,6 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+**5.4.34/#324:** five active real minutes since latest autosave, including
+preserved map-entry saves (author Oct18). Native36runs/138checks, files/build pass;
+validation_5434. CA324-01 pending author preview.
 
 **5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
 Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.
@@ -10,10 +14,8 @@ Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 with native direct aim at release. Other attacks unchanged. validation_5432;
 CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
-**5.4.31/#321:** hidden automap legend/L toggle, preserving bindings;
-validation_5431, CA321-01 accepted 2026-10-17.
-**5.4.30/#319:** owned/unboxed sleeping bag in quick items, no consumption;
-validation_5430, CA319-01 accepted 2026-10-17. Separate issue commits/tests/PRs.
+**#319/#321:** bag quick-use and hidden legend accepted 2026-10-17;
+validation_5430/5431. Separate commits/tests/PRs.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
 1024-MU exterior sky, original footprints and private CAH interiors. Other maps:

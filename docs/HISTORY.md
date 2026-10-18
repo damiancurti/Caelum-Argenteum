@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.33** — 2026-10-17.
+Documentation version: **5.4.34** — 2026-10-17.
+
+## 5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)
+
+The author requested autosaving every five minutes. The issue specifies real
+active play rather than calendar time, excluding pauses and menus. The shared
+StaticEventHandler measures monotonic milliseconds in UI scope and delegates
+one due request to play scope; Rulo's existing checkpoint uses the same owner.
+No recurring actor query or saved character schema is added. On October 18 the author
+specified five active minutes since the latest autosave and explicitly retained
+map-transition saves. Native arrivals share the request owner; ordered CHECK/DO
+acknowledgements prevent duplicate destination saves without suppressing a valid
+old-map checkpoint followed by a new-map arrival. One global STAT_DEFAULT query
+runs per arrival; that native group can contain actors. Native policies control creation
+and rotation; native action observation restarts the interval after writing,
+without claiming successful disk IO. GZDoom 4.14.2 passes 36 final runs/138
+assertions. A 320.044-second observation produces one periodic autosave and
+reloads its exact inventory, follower, calendar and mission state. Ordering
+regressions, paused external saves, disabled/one/two slots, untouched manual
+saves, Rulo preparation, hub round trips and a prior-runtime save pass. Actual
+file hashes/maps and all failed development fixtures remain in validation_5434.
+Independent review, project validation, normal build and all 16,373 source/tested
+package members pass. CA324-01 is pending; no author acceptance is inferred.
 
 ## 5.4.33 - Western sewer crusher sector isolation (#323, 2026-10-17)
 

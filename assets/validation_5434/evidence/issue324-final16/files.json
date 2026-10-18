@@ -1,0 +1,112 @@
+[
+  {
+    "label": "direct-travel",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {},
+    "after": {
+      "auto01.zds": {
+        "sha256": "985dc96d48cb6e6ef302552b3c7fd68d1a140730900426528f81c92160532b8e",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "985dc96d48cb6e6ef302552b3c7fd68d1a140730900426528f81c92160532b8e",
+        "map": "MAP98"
+      }
+    }
+  },
+  {
+    "label": "native-paused",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "985dc96d48cb6e6ef302552b3c7fd68d1a140730900426528f81c92160532b8e",
+        "map": "MAP98"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "ac24f50a5abb83fd4df28a59332cd012e958e93b0e085c9779154ace739dbc9c",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "ac24f50a5abb83fd4df28a59332cd012e958e93b0e085c9779154ace739dbc9c",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "cancel-travel",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "ac24f50a5abb83fd4df28a59332cd012e958e93b0e085c9779154ace739dbc9c",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "ba168c71f35e2f2c2bb29210331b87e2a127b36b3c8cdda281eefcf0b7cde03b",
+        "map": "MAP98"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "ba168c71f35e2f2c2bb29210331b87e2a127b36b3c8cdda281eefcf0b7cde03b",
+        "map": "MAP98"
+      }
+    }
+  },
+  {
+    "label": "saved-travel",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "ba168c71f35e2f2c2bb29210331b87e2a127b36b3c8cdda281eefcf0b7cde03b",
+        "map": "MAP98"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "25b620b1150266bef50da8d741eb6240b33826cfad64dc42c27082195a3a3a2a",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "25b620b1150266bef50da8d741eb6240b33826cfad64dc42c27082195a3a3a2a",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "late-travel",
+    "exit": 0,
+    "native_writes": 1,
+    "before": {
+      "auto01.zds": {
+        "sha256": "25b620b1150266bef50da8d741eb6240b33826cfad64dc42c27082195a3a3a2a",
+        "map": "MAP99"
+      }
+    },
+    "after": {
+      "auto01.zds": {
+        "sha256": "a70917703a3963b4daedf598e66769fc1b2d4f6177af801b85ce92665960c9ec",
+        "map": "MAP99"
+      }
+    },
+    "changed_auto": {
+      "auto01.zds": {
+        "sha256": "a70917703a3963b4daedf598e66769fc1b2d4f6177af801b85ce92665960c9ec",
+        "map": "MAP99"
+      }
+    }
+  }
+]

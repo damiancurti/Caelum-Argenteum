@@ -1,0 +1,1390 @@
+{
+  "issue": 324,
+  "release": "5.4.34",
+  "baseline_ref": "20857d9c",
+  "final_directory": "issue324-final17",
+  "runtime_sha256": "36072c154b6c9bb99e944745ae4f83301c4456937233cc0eb5f060df8d3ef6b1",
+  "fixture_sha256": "24eff235d32f84746319865dbb316e2921c3684f8f3f5cd702b8258502009e26",
+  "final_runs": 36,
+  "final_assertions": 138,
+  "normal_package_members": 16373,
+  "normal_equals_tested_source": true,
+  "runs": [
+    {
+      "directory": "issue324-01",
+      "log": "timer.txt",
+      "sha256": "1d12b14d365a22d51761c5e68811f038cf5ce3ffa28a7874d385110dd531ee22",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.189 elapsedMs1433.158 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "checkpoint.txt",
+      "sha256": "213ecb09afc135033102445922c23d4dbf292209cd8f3f6c18319db9100aee34",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.231 elapsedMs2002.771 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "console.txt",
+      "sha256": "4336d9222b77a09d06dccfa7ead653b54b301f785e0b1163658cee9bf98bc89f",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4047.155 elapsedMs1299.966 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "defer.txt",
+      "sha256": "9166925061b6cb38fe6fce1606a54b68fead32d20f2faff03ba78eb5022a05c1",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2023.340 elapsedMs2005.660 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "menu.txt",
+      "sha256": "b14e11f242ec01fc1673b163c7250dd4b3b16c9463d7d84c8d6e48a98fe03e4d",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4046.568 elapsedMs1465.086 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "pause.txt",
+      "sha256": "02e52c4ceefdfb83153126a9e0d6689443a67443bc70a05f4045fb8a78028123",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4052.729 elapsedMs1473.844 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "queued-death.txt",
+      "sha256": "3cd6d53169d865430b9dbfbf1e527cceb1acf13a7ec41df26fee6c332ac4dae1",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2029.647 elapsedMs2013.624 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "timer.txt",
+      "sha256": "2aa293c25e6181592c5db634bdc55dfac6c73f3fd4a4fc3847ef696b4814dd24",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.287 elapsedMs1466.645 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-02",
+      "log": "travel.txt",
+      "sha256": "efcbba3a4acfd6ce75490078adda70e9a85fd4e8983f60ef216123cdd9a93947",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-debug06",
+      "log": "fast.txt",
+      "sha256": "f6bcafcad268bb2e738c1f8636f89d3a9f1df43fe737f83db0e986b4436995c4",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 3,
+      "done": false,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated0\r"
+      ]
+    },
+    {
+      "directory": "issue324-debug07",
+      "log": "fast.txt",
+      "sha256": "bea617bedf6e100b6cd5492630f44f4599bde12b9356117d3dae6c11ab892bde",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 3,
+      "done": false,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated0\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "checkpoint.txt",
+      "sha256": "2cbfdc59bcbc7180f2e6e5a1e9b315a70f7d885936d69f0f4530b5134dfbe13a",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2031.662 elapsedMs1998.261 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "console.txt",
+      "sha256": "f4a30b71cc21e1aed950f0056e63b86b184adf1e8371c98346872c4ecb7f857a",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4035.708 elapsedMs1317.410 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "defer.txt",
+      "sha256": "632d60b2752a3ff78b55da8dc341a366a0ceb54bc163e2e111fc59a105d5fca9",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2032.011 elapsedMs2000.190 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "fast.txt",
+      "sha256": "76c30ca1a22a6955d3e0905abe7fe49da4486f00b5994a63f357174e15779cf8",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 3,
+      "done": false,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated0\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "load-timer.txt",
+      "sha256": "ce2fd8e0127b0804aec47e7bc51a7a01c7bdf8df6b78533b84c66c8d98ee858a",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "menu.txt",
+      "sha256": "17c52c9204959c8f8da41d9f43102695fdce84729ea827f49312d999b302d651",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4035.613 elapsedMs1452.477 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "pause.txt",
+      "sha256": "d4bd2d308f2f414822e0837017be0fcf28a60163cf5a84e8cbb053a2dc4402be",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4052.612 elapsedMs1466.440 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "queued-death.txt",
+      "sha256": "4aa1c05b78e467e185e37c1ce97093a82e66e743ef5792457f92e7bb120cb06d",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2036.773 elapsedMs2003.364 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "timer.txt",
+      "sha256": "46ce9fadfa9064238479796b82e054f9036c1a6468289a845d548e4ce9b64658",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2029.889 elapsedMs1450.091 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final03",
+      "log": "travel.txt",
+      "sha256": "138a477004f83a900f59191689e0d4f8adaad9ec42b4881fc856e491b26cee82",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "disabled.txt",
+      "sha256": "41e5713d747ae0ac0e0481e50e884e64833280b7131604bb5b749ffc426af19d",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 SAVED wallMs1998.110 elapsedMs1431.225 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "fast.txt",
+      "sha256": "ec538c9730c78199cb94918c8d31f055c838607cd8d91998d95e99205bb0162d",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 3,
+      "done": false,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated0\r"
+      ]
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "load-legacy.txt",
+      "sha256": "8e556e10a23ba4fe96745d6eb93a414a9b46629ee1a2853ab87d5b1bff8e9d15",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "load-long.txt",
+      "sha256": "d66e0db2ea69f8080cff8a113e62e1f8a81611d2a56347c750cb9d35c2591920",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "load-rulo.txt",
+      "sha256": "7d4e8273ad653167a0929de451e9d6f4080b03b2946ad33c1947cd6e0538b9e6",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "long.txt",
+      "sha256": "26a13c0751486709704033552aed6b46b7348cdf6171ab55af9f49593795fe59",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 LONG wallMs320030.194 elapsedMs20082.950 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "manual-save.txt",
+      "sha256": "170b69ef77dca612520d099c3ab9b5ab80211cde49b182c909b0b7d8ffc4bc49",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "queued-travel.txt",
+      "sha256": "86bc6feea177816821d8c109e0b5e204941aade05f08046228d0ff17b3ec8815",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2085.746 elapsedMs1878.567 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "reload.txt",
+      "sha256": "c194b999c795156880805abfb4f16a4611f0a0b081fda0ae40e56f673a270335",
+      "exit_code": 0,
+      "passed": 8,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.256 elapsedMs1466.602 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "rulo.txt",
+      "sha256": "fae400bb3e6ee29d7c6162bf354160abb666487ee7605e0f5da320e2704a69fc",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "slots.txt",
+      "sha256": "030a14644c98be090d1d58c3e4c3184e7dc98e1ec86324543f5d00a7c7cc7acd",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 5,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final05",
+      "log": "zero-slots.txt",
+      "sha256": "3b27103af64636dcbeb08643a69b18d50148f5c83d728aa8a3a27d7942a5aa04",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 SAVED wallMs1999.160 elapsedMs1466.594 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "fast.txt",
+      "sha256": "80e9f64a536024aa929f43b901d82bbde107437885d1775898d6aed86caa833f",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated2080\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "travel-delay0.txt",
+      "sha256": "c020c3d07e8f8329ce5a52400db814778d102c9163355c403fc809afeb9e228b",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2063.417 elapsedMs1959.467 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "travel-delay1.txt",
+      "sha256": "9ec84f3d6a740a00abaabf87e7540f0747788a3aa0834a6d7ea1f9488adec6f3",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2098.133 elapsedMs1962.062 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "travel-delay2.txt",
+      "sha256": "64bf1ca2509d69b30295dab1bb0e178910d34765e5ccdd17bf199e15b1d21ccf",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2085.113 elapsedMs1939.542 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "travel-delay3.txt",
+      "sha256": "3ef565547082cf2e21b22ec0996fe6e61c517b41c724de2c87cae2487530bf33",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2167.598 elapsedMs1970.939 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final08",
+      "log": "travel-delay4.txt",
+      "sha256": "f59a64474aa267da1f019ed8daff027883b8aff70d1ff9c83f5128d05477eaaf",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2185.772 elapsedMs2065.155 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "checkpoint.txt",
+      "sha256": "33239c5cd456e75c6d9da0c156d5485574efa86b21c8f052400eef021dc03508",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.380 elapsedMs1879.434 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "console.txt",
+      "sha256": "58ab85aba765afd13bd7f9661e828f5b4da50dc64a13e871c56fe02f671b088a",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4038.378 elapsedMs1164.323 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "defer.txt",
+      "sha256": "448023b673f5c92eb89adf5367fb7895ff9bf777e6f07bcf3f764b437897253b",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.216 elapsedMs1882.973 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "direct-travel.txt",
+      "sha256": "ea154d7eebbb09d15b120818b95a34ced057107f4ea8d379b0d54537d1e5ef63",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2028.754 elapsedMs1881.028 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "load-timer.txt",
+      "sha256": "3c4e2cfff28ee76694d859dce546b999f13b8dcc5a4a1a0f4b4b1a7ba65a04c7",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "menu.txt",
+      "sha256": "3706b52301eeb085efb04330f405e97b0249e550ce96b00dd4d7c408a7108175",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4034.579 elapsedMs1334.348 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "pause.txt",
+      "sha256": "bcd1b4197cf757077d95eb59b6bca23ded72ad2c99fc3f3ed48d77a8616b9d72",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4035.043 elapsedMs1336.724 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "queued-death.txt",
+      "sha256": "209cc29beafbee67ae4e62de7673f5b797fb20c5c147f8831bb47f57567e1283",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.098 elapsedMs1885.147 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "roundtrip.txt",
+      "sha256": "714195f07b97d574f08f14fe744dc97c6dfe8c40ad6d958640147d87494acdaf",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "timer.txt",
+      "sha256": "30df9c8704560df71516acf021d704d80eab38c6d8263fcc29dc54018628f8e6",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2027.508 elapsedMs1331.048 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "travel-delay0.txt",
+      "sha256": "126584741c95f2feb3288df7559fd87177fe58b90fe2e3b17f85d4e57178a706",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2032.253 elapsedMs1869.422 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "travel-delay1.txt",
+      "sha256": "df8a689b79b1a2a4e13c8ab793e173cb01aa3d84cb9d2b55c74354f30810b54d",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2049.715 elapsedMs1862.231 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "travel-delay2.txt",
+      "sha256": "4fd044974d5bb1d228b749e4db986a9eee75bcf189b5b7bed352b22a962e7af6",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 1,
+      "done": false,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2103.207 elapsedMs1867.491 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "travel-disabled.txt",
+      "sha256": "e430378a0b39e82574383e77446d5f6b8526ed3d69214c584dc9e7200b8c9621",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final14",
+      "log": "travel.txt",
+      "sha256": "5612f4763d8fbcd34446b6ea96cfe38094a3626a4aaf90fa0c5881f7a976e484",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "checkpoint.txt",
+      "sha256": "eb10d00363a93f7172b1500220a438e25a4d904107c92beafe752112fbbfa720",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2031.959 elapsedMs1880.598 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "console.txt",
+      "sha256": "1ec073cc4729ae601c30e1fbfee97b58fafcdfa21ba08ebd49483aadef65f55e",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4044.219 elapsedMs1168.321 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "defer.txt",
+      "sha256": "7e0097cbd5184ff24f316a8af092f58aeffc9b3f6a024b175fb4e9980ff5e993",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2032.552 elapsedMs1883.717 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "direct-travel.txt",
+      "sha256": "919d7ec278473868a66f0c74f568d87467b5514c994e65837aab6c3581d0e4fc",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 1,
+      "done": false,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2050.209 elapsedMs1766.700 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "load-timer.txt",
+      "sha256": "c275f664e37d1de66f0000a1c378df790776ce4031ebe8c102d875b751532eaa",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "menu.txt",
+      "sha256": "e8abd136d54197c82c3e1eeba130f7b2c5c58ac36c7a5aa6f50ff1b872d67be5",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4040.960 elapsedMs1350.988 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "pause.txt",
+      "sha256": "c66c8359107b83f4af2592c3fc1a45c6b2526b706cac08e62d042f37fde03646",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4044.222 elapsedMs1337.277 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "queued-death.txt",
+      "sha256": "8971463ca5ac5d21b877d0de78c853f68bc29bbbe926da2ad9b05f6e252c5b55",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2034.825 elapsedMs1882.217 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "roundtrip.txt",
+      "sha256": "bd7fc9132bba22a6fe8b0ee2ca73b1fc68e9de97c04d83d7ecb08d5ed3b31f26",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "timer.txt",
+      "sha256": "59bc06d74e2dba12865c6efbdb75e39f494b5f006343ebd0a6180f7d61a3c788",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2031.456 elapsedMs1332.278 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "travel-disabled.txt",
+      "sha256": "c82f1930029ac199b68a6d5dba9766b3f078c41f2b0957f9766690c9561fd00b",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final15",
+      "log": "travel.txt",
+      "sha256": "e059fa36612d80f052c608c28927bdb20f7edf95c0609379ec3c4742c10d5b1b",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final16",
+      "log": "cancel-travel.txt",
+      "sha256": "fbb1d60ab689e6bf72df7154e8ecff72264eb3a82662ec1dcc1a1f6ced38cc56",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2098.328 elapsedMs1824.409 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final16",
+      "log": "direct-travel.txt",
+      "sha256": "1c19b501a6e25b5ce9725e3adb081eda6b7fba12961d4888956ec8a2549dde55",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2031.902 elapsedMs1865.399 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final16",
+      "log": "late-travel.txt",
+      "sha256": "25b3126aba01fce0226dccf6e956b47cf709366836fb9818791c0a3ec38e79b7",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2043.960 elapsedMs1804.868 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final16",
+      "log": "native-paused.txt",
+      "sha256": "8d8dfcaf35c9081361e36a509596e802db2b767d2d737f837d2ec636f90342d7",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final16",
+      "log": "saved-travel.txt",
+      "sha256": "ca6ee87b3ac58cf209305b03709929b5ad4e44f3a982db2eb3b191a7f30ee531",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2130.060 elapsedMs1901.108 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "cancel-travel.txt",
+      "sha256": "783fbc602d9adb21f88b4a2ee82076c90644af4c1bf08e271762a8445c7b6d37",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2096.468 elapsedMs1829.239 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "checkpoint.txt",
+      "sha256": "44c5eca5601bbcb297c561de304979e739d2cf980fedba36b7fe04bbeac123a3",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.128 elapsedMs1881.442 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "consecutive.txt",
+      "sha256": "ac66dca0a45daa43f8493e4eb4ad0eb15d248077e217e9f4e311c2a8db840c85",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "console.txt",
+      "sha256": "c030b2e550894fcac6d11bf47ad28f52c6d683ed54a9e613444b02dbf7c9ba6a",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4033.178 elapsedMs1166.095 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "defer.txt",
+      "sha256": "50cd1162698d1207f59eb8f5676a13465f0e341e1c4b99da217852192bf135db",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2036.859 elapsedMs1885.857 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "direct-travel.txt",
+      "sha256": "77c621b3957e5960b941008ecd8da335d41db654648314d7c058e5198ff272bb",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2015.323 elapsedMs1838.342 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "disabled.txt",
+      "sha256": "a6dfd8d5bb8450e9b81b122fbfb7dddf7b0d45a0877203871bcecf01370f9ab9",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 SAVED wallMs1996.911 elapsedMs1399.807 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "fast.txt",
+      "sha256": "25b891bfbc3ef4a9a97c077f52389a4849b6c8d0b5f2a70a6b7728ff13787fd3",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 FAST simulated2080\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "late-invalid.txt",
+      "sha256": "eb67e66acbd1038a739b414f34b00ecdd3b42298df3ff33e5ec30886d493396f",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs3070.377 elapsedMs1888.755 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "late-travel.txt",
+      "sha256": "7d4603b1c37cbb875ce7a24ffb868a4ac98cbdb74bd7c832743e4cef967cb8e1",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2033.279 elapsedMs1811.964 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "load-legacy.txt",
+      "sha256": "547819b1d0635ef6ebd4ed969486898f7a2b06b1a2a0d086fbb37a0730b905e7",
+      "exit_code": 0,
+      "passed": 1,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "load-long.txt",
+      "sha256": "bba2d19b2ef36c497a95cf220bed2d58f0c9cc54053e012afe8bff550bd05c0e",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "load-rulo.txt",
+      "sha256": "1f1fd1811de5f2a2ef959149a57d615544990da6850652096b84afe22049a60b",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "load-timer.txt",
+      "sha256": "57d181f4af01dd2e44ae10ec09f50940eb5fa79d8e7b177771fcf8e4c3cb1d58",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "long.txt",
+      "sha256": "3d075b9dc648779200e70b1e75691424b9c59acde9fdec2e6859790a4df2499c",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 LONG wallMs320043.685 elapsedMs19915.743 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "manual-save.txt",
+      "sha256": "14a97328f42754adf1535a725dea88b8ca7642ded12762121ed62906bff99032",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "menu.txt",
+      "sha256": "835293ba6c73dcafbaaa02db9115e98235caa02422df79cd3462ef411dfc1036",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4035.899 elapsedMs1333.143 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "native-paused.txt",
+      "sha256": "930cd244a0fd19d8e498abb03f3a630b767693b3ac267e8f86dba854e5011768",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "native.txt",
+      "sha256": "96555f0a0ec78cb3353ab0f4421c59bf1bc65471d83aab975e4d504442039d90",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "one-slot.txt",
+      "sha256": "a80a8daf95cfad9129cb440f9f07958866f689a7ec80aff07be4b874611dace7",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "pause.txt",
+      "sha256": "7e7bc4f0ee1c51745aba1146b69e64a4eaa1f113daba4a071e88025e3cf92dc1",
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs4036.171 elapsedMs1348.774 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "queued-death.txt",
+      "sha256": "0a51db91c0f925070b5c309a56e17954b8c01950bd5631b64a3e7ba0064b4e33",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2038.791 elapsedMs1887.780 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "reload.txt",
+      "sha256": "52a6d85c3084f0a9e28d4ab73942af2115d9acc6791b4fb3bc8d186656595af5",
+      "exit_code": 0,
+      "passed": 8,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2032.777 elapsedMs1348.542 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "roundtrip.txt",
+      "sha256": "5f3ed8fb8551949cf1278e24a1525560ad36aa23d1800160ffa327fe5b0832e2",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "rulo.txt",
+      "sha256": "893402a0c17d24a05d6c5cc74684ee1f32fad632d447d4a46d643f1fe8c0fd6a",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "saved-travel.txt",
+      "sha256": "31f79a725834071b154e2cdc1e0b1b2b1e3718717fe426e091ec0dd261203b21",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2115.720 elapsedMs1890.785 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "slots.txt",
+      "sha256": "c2f55f8ef8d5202b61484a674fd57543f6443bc8c406628bb336e0194d59fa76",
+      "exit_code": 0,
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "native_writes": 5,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "timer.txt",
+      "sha256": "fd46b0d93f22cb021ec6fee7f2b2205d0fc58086f30e6c117548fed18b892632",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2032.036 elapsedMs1313.726 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-delay0.txt",
+      "sha256": "8adcfaf338437f82857549e0f01256262b46d51daf9346a33bea890d083b43f4",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2012.809 elapsedMs1857.121 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-delay1.txt",
+      "sha256": "45406cd6a684e846694bf699adb905d73b43b0a6ba44b5448e4f0d3312cc2fc5",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2048.481 elapsedMs1866.735 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-delay2.txt",
+      "sha256": "fa46430e228b9d1f6a2a55dc249d4ad344c7202b11d006289fb1b856ce43f941",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2098.610 elapsedMs1827.891 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-delay3.txt",
+      "sha256": "82fbf386b517f1176bed09b3c06e019a8a8b9a95dd27f0a453d60308ebc50a02",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2163.625 elapsedMs1813.024 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-delay4.txt",
+      "sha256": "c7647613ad89e94cb56a8a1c411652802d614cf9ebd1cca573f67dcc187bfd06",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2180.192 elapsedMs1798.583 requests2\r"
+      ]
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel-disabled.txt",
+      "sha256": "b26ac30cf3acfa3132beba04fe63da0660c391fd827004135639f74520545cc2",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "travel.txt",
+      "sha256": "1dcac2474c51085e97077e006c1829103a18d95276239b26f1ecaa4aaad7b4c4",
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-final17",
+      "log": "zero-slots.txt",
+      "sha256": "d3de7ba2afbb95e174531cc5a679c02531b4e6a0fe2e816eaa32ffb2358d5691",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "native_writes": 0,
+      "measurements": [
+        "CA324 SAVED wallMs2015.054 elapsedMs1414.393 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-trace09",
+      "log": "queued.txt",
+      "sha256": "c09304e8143853f4393f0eb47199ecf43cdacadddce3fceef58e817e1421e06b",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 2,
+      "measurements": [
+        "CA324 SAVED wallMs2081.761 elapsedMs1964.718 requests1\r"
+      ]
+    },
+    {
+      "directory": "issue324-trace10",
+      "log": "queued.txt",
+      "sha256": "276b1f583d0f6c93b684632835616c714f6c00fac484df6a2e86d273bbf2371d",
+      "exit_code": null,
+      "passed": 0,
+      "failed": 0,
+      "done": false,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-trace11",
+      "log": "queued.txt",
+      "sha256": "24e84b38f804c9a7e967df9f49b846db5fe0c414ce5e21dbd0990da190044c7f",
+      "exit_code": null,
+      "passed": 0,
+      "failed": 0,
+      "done": false,
+      "native_writes": 0,
+      "measurements": []
+    },
+    {
+      "directory": "issue324-unified12",
+      "log": "queued.txt",
+      "sha256": "d1975cef0403c37f15e16d2a208b6ff9250da4f0d8d253c1d488ea87a5dd39b2",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "native_writes": 1,
+      "measurements": [
+        "CA324 SAVED wallMs2048.344 elapsedMs1866.383 requests1\r"
+      ]
+    }
+  ],
+  "author_acceptance": "pending CA324-01"
+}

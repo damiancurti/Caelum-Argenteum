@@ -1443,6 +1443,26 @@ death did not reset the fight. Observe loaded fields through a StaticEventHandle
 before simulation, as CA-KP-072 requires. Sources: GZDoom g4.14.2 p_lnspec.cpp,
 d_net.cpp and g_game.cpp; evidence assets/validation_5118.
 
+#324 / 5.4.34 follow-up (2026-10-18, ENGINE-VERIFIED, baseline 20857d9c): CHECK and
+DO are separate network stages. An ACK immediately after CHECK can mirror its
+eligibility, but cannot confirm file writing. DO does not repeat the life check.
+ChangeLevel calls WorldUnloaded immediately and can overwrite pending ga_autosave.
+Observe the final action in PostUiTick, after delayed commands and simulation;
+its subsequent message runs after the native action, even while paused. Record
+whether departure interrupted action 10 or followed an already executed write.
+Network delivery can lag, so do not reinterpret an already reported completion
+as cancellation while waiting for its message. Disk success still needs a real
+file/reload check; autosavenum alone cannot detect repeated one-slot saves.
+
+The native arrival Autosaver is created after WorldLoaded and runs on its first
+thinker tick. It is not declared as a ZScript type: a typed iterator fails to
+compile. Adoption requires one STAT_DEFAULT scan at arrival; this statistic can
+include actors. Never turn that exceptional scan into a per-tic census. Preserve
+native disableautosave=1 arrival policy and do not suppress a destination save
+just because the previous map already wrote a checkpoint. Native/failure logs
+and the exact ordering fixtures are in assets/validation_5434 (36 final runs,
+138 assertions, successful file reloads). CA324-01 author acceptance is pending.
+
 ## CA-KP-073 - Separate front and rear arcs around a billboard actor
 
 Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16 visual follow-up, 2026-10-10.

@@ -6,6 +6,8 @@ version "4.14"
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
 #include "caelum/data/CaelumReinforcementData.zs"
+#include "caelum/data/CaelumSaveRules.zs"
+#include "caelum/world/CaelumAutosaveEvents.zs"
 #include "caelum/statistics/CaelumGrowthRules.zs"
 #include "caelum/statistics/CaelumToughnessRules.zs"
 #include "caelum/statistics/CaelumGrowthMigration.zs"

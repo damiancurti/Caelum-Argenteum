@@ -1,0 +1,32 @@
+[
+  {
+    "label": "long",
+    "generated_saves": {
+      "auto01.zds": "15591efc38589d339a128d2ea17ca877e804f3624313cc4da9cd903e125b01ee"
+    }
+  },
+  {
+    "label": "disabled",
+    "save_hashes_unchanged": true,
+    "hashes": {
+      "auto00.zds": "f8a3e7989d0869c13de466accdbc227852be92d6bb47044f30665d8e7b961a01",
+      "auto01.zds": "6824c98fb8160682617ecedc7e91eed8f929141208dfe01d492c033840a5893a"
+    }
+  },
+  {
+    "label": "zero-slots",
+    "save_hashes_unchanged": true,
+    "hashes": {
+      "auto00.zds": "f8a3e7989d0869c13de466accdbc227852be92d6bb47044f30665d8e7b961a01",
+      "auto01.zds": "6824c98fb8160682617ecedc7e91eed8f929141208dfe01d492c033840a5893a"
+    }
+  },
+  {
+    "label": "slots",
+    "manual_sha256_unchanged": "fac23ff064edd5c3cf7c945ef84dd1d579197d2f4912cb3042e87f359bd1fe69",
+    "autosave_slots": [
+      "auto00.zds",
+      "auto01.zds"
+    ]
+  }
+]

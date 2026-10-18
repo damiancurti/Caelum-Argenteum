@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.33.** Obtain and update the complete repository, validate
+**Current release: 5.4.34.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Automatic saves are requested every five minutes of real active play (#324).
+The interval restarts after the latest autosave, including map transitions and
+checkpoints. Pause, menus, console and loading time do not count. Native settings
+and slot rotation remain authoritative; loading a save starts a fresh interval.
+Native validation passes 36 runs/138 assertions, including the full interval and
+actual file reloads; [evidence](assets/validation_5434/RESULTS.md). CA324-01 awaits author review.
 
 MAP02's western crusher now owns its original 128x128-MU panel (#323), instead
 of the shared western ceiling. Fresh MAP02 geometry is revision 5. Native walking,
