@@ -13,6 +13,8 @@ Only siege NPCs and monsters in active MAP03 remain at their existing maximum
 adrenaline (#361). The player keeps ordinary adrenaline and finite seal-channel
 costs everywhere. NPC wound/pain penalties are suppressed; real damage and
 thermal/elemental effects remain. FPS evaluation is deferred.
+The author accepted the revised NPC-only rule (CA361-01) on 2026-10-18;
+no author checks remain outstanding.
 See [correctness evidence](assets/validation_5447/RESULTS.md).
 
 Mandingas no longer breathe fire at their invisible route markers (#357).

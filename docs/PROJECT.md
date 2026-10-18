@@ -12,6 +12,8 @@ wounds and seal spending/exhaustion retain their original rules. Existing
 encounter ownership handles lifetime without new serialized state or scans.
 Correctness evidence is in validation_5447; FPS evaluation is deferred. All
 older CA318-01..05/CA327-01 functional checks were explicitly accepted Oct18.
+The author also accepted revised NPC-only CA361-01 on 2026-10-18; the author
+test queue is empty.
 
 ## 5.4.46 - Symmetric house-door Melt (#334)
 

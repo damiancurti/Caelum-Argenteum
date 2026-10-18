@@ -4,14 +4,22 @@ Documentation version: **5.4.47** — 2026-10-18.
 
 ## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
 
+Author acceptance, 2026-10-18: "Listo, dio correcta la prueba." confirms
+CA361-01 (origin 5.4.47 / #361) for the revised NPC-only preview. Siege NPCs and
+monsters retain maximum adrenaline; the player's ordinary reserve, seal costs
+and house/city behavior remain. The confirmed entry is removed from
+pending_test.txt, which is now empty. FPS evaluation remains explicitly
+deferred. This acceptance changes documentation only; native evidence below
+is reused without claiming a new engine run or performance measurement.
+
 Author revision, same patch: exclude the player completely to avoid unbalancing
 seals; only siege NPCs and monsters receive maximum adrenaline. The player and
 resource services are restored exactly to their pre-issue source, including
 ordinary needs/wound formulas and channel spending/exhaustion. The now-unused
 transient player-port cache is removed from the siege event handler. NPC focus
 is retained unchanged. Existing preview saves keep their current player reserve
-and resume ordinary rules, without an invented reset. CA361-01 is revised to
-this scope, not marked passed. FPS remains deferred. The initial candidate and
+and resume ordinary rules, without an invented reset. CA361-01 was revised to
+this scope before the acceptance above. FPS remains deferred. The initial candidate and
 its evidence below are preserved history, superseded for player behavior.
 
 Revised verification: six complete native cases pass6,928 assertions, including

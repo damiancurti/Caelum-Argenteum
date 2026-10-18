@@ -32,9 +32,11 @@ three checkpoints and the final map. The archive verifier also requires that
 ordered city/house/city evidence. Other successful single-checkpoint controls
 remain valid for their actual recorded runtime and fixture.
 
-FPS remains deferred. CA361-01 is revised to the NPC-only contract and remains
-unconfirmed. The private preview's F9 now contrasts NPC maxima with the player's
-ordinary reserve; house/city travel must never grant a player refill.
+FPS remains deferred. The author accepted revised NPC-only CA361-01 on
+2026-10-18: "Listo, dio correcta la prueba." The private preview's F9 contrasts
+NPC maxima with the player's ordinary reserve; house/city travel must never
+grant a player refill. This explicit acceptance is separate from the native
+evidence below; no new engine run or FPS measurement accompanies it.
 
 Six complete revised native runs pass **6,928 assertions**:
 

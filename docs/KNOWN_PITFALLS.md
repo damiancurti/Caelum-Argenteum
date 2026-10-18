@@ -7,7 +7,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 ## CA-KP-135 - Transient encounter ownership must rebuild after save load
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #361/5.4.47, 2026-10-18.
-Evidence: assets/validation_5447; author check CA361-01 remains separate.
+Evidence: assets/validation_5447; the author accepted revised NPC-only CA361-01
+on 2026-10-18. The cache lesson below concerns the superseded initial candidate.
 
 Scope update: the author subsequently excluded the player from siege focus to
 preserve seal balance. The final #361 code therefore removes this player cache

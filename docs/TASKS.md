@@ -17,8 +17,9 @@ cover NPC formulas/lifetime plus ordinary player penalties, decay and finite
 seal spending/exhaustion. Recheck old/current/earlier-preview saves and hub travel;
 Six complete revised cases pass6,928 assertions, including642 isolated controls;
 the initial6,830 assertions belong to the superseded player-inclusive candidate.
-FPS work remains deferred. Revised author check CA361-01 covers this behavior;
-all six old CA318/CA327 checks are already accepted.
+The author accepted the revised NPC-only CA361-01 on 2026-10-18. No author
+checks remain outstanding; all six old CA318/CA327 checks are also accepted.
+FPS work remains deferred.
 
 ## 5.4.46 - Revised house transition (#334)
 
