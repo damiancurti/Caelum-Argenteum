@@ -85,16 +85,6 @@ resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
 
-CA353-01 | Origin 5.4.43 / issue #353; follow-up #357 | Artillery group retest
-Prerequisites: current normal build, a separate MAP03 siege save, accepted
-1,000-living attacker admission cap and 600 defenders. Other steps of this
-preview were accepted 2026-10-18; this reported exception remains outstanding.
-Steps: observe Mandingas near the attackers' cannons for several seconds, then
-observe combat against a nearby visible soldier. An earlier save is usable.
-Expected: they resume their route or operate artillery instead of endlessly
-burning an invisible point. Breath against a real target and for cold/restraint
-remains legitimate. This is not a stable-FPS or all-groups pathfinding guarantee.
-
 CA334-02 | Origin 5.4.46 / issue #334 | Melt on both house-door directions
 Prerequisites: current build; use the open preview or MAP03 and a house portal.
 This revises the earlier no-animation request; CA334-01 remains accepted history.

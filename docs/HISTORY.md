@@ -40,7 +40,11 @@ retirement of an already-active emitter. Existing saves need no schema change.
 Evidence: validation_5445. Independent read-only review requested a candidate
 observer gate and real-restraint cases; both were added. Initial fixture failures
 are retained and explained in RESULTS; no FPS improvement is asserted.
-Author retest of the reported group behavior remains pending under CA353-01.
+Author acceptance2026-10-18: CA353-01 (origin5.4.43/#353, follow-up5.4.45/#357)
+passed. The author reported only the separate house-exit double wipe and stated
+that the other preview tests passed. The artillery exception is therefore
+resolved; this does not certify stable FPS or all group pathfinding and does
+not close older CA318/CA327 checks. Its pending entry was removed.
 
 ## 5.4.44 - Structural cache notification investigation (#354, 2026-10-18)
 

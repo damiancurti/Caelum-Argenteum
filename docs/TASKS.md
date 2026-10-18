@@ -14,9 +14,9 @@ the narrowed CA353-01 artillery retest and unchanged CA318/CA327 checks.
 
 Implemented and verified against the author's real siege autosave: 20 false
 navigation attacks become zero; all 20 tracked bodies move again within 175
-tics. Isolated Mandinga/Zupay controls pass 41 assertions. Retest the narrowed
-CA353-01 group-behavior exception; other current preview checks were accepted
-2026-10-18. Older CA318/CA327 checks are not implicitly closed. The author also
+tics. Isolated Mandinga/Zupay controls pass 41 assertions. The author accepted
+the narrowed CA353-01 group-behavior retest on2026-10-18; other steps were already
+accepted. CA318/CA327 checks are not implicitly closed. The author also
 reported house exit presentation; that follow-up remains scoped to #334.
 
 ## 5.4.44 - Structural-cache investigation delivered (#354)

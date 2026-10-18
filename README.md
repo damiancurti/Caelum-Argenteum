@@ -13,7 +13,7 @@ Mandingas no longer breathe fire at their invisible route markers (#357).
 The author's saved siege reproduces 20 stuck artillery operators; all 20 resume
 movement after correction. Real attacks, cold, restraints and finite resources
 retain their rules. See [native evidence](assets/validation_5445/RESULTS.md).
-CA353-01 is partially accepted; only the reported group behavior needs retesting.
+CA353-01, including the artillery follow-up, was accepted on 2026-10-18.
 House doors now request Melt in both directions, following the revised author
 decision (#334). Arrival autosaves and global video settings are retained.
 See [native transition evidence](assets/validation_5446/RESULTS.md); visual

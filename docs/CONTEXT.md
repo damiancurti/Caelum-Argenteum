@@ -31,7 +31,7 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
 **5.4.45/#357:** excludes route markers from breath;41 checks;20/20 saved
-artillery bodies resume. CA353-01 otherwise accepted Oct18; group retest pending.
+artillery bodies resume. CA353-01 fully accepted Oct18, including group retest.
 **5.4.43/#353:** caches/resources/target100 automatic >=500; validation_5443.
 **5.4.44/#354:** retain structural guards; inconsistent extra FPS benefit.
 validation_5444. Thermal35 unchanged; siege adrenaline approved,
