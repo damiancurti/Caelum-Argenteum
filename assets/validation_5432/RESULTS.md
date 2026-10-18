@@ -60,4 +60,6 @@ an invulnerable player and remains open for the author.
 Project validation, normal packaging and archive.py verify the final source
 and every normal package member against the tested runtime. Independent source
 review found no production defect; its initialization caveat was addressed in
-the final native fixture. Author acceptance remains pending as CA320-01.
+the final native fixture. Author acceptance CA320-01 (origin 5.4.32/#320)
+passed on 2026-10-17 after the two-enemy direct-aim preview. The author confirmed
+"That test passed"; save/dense/matrix checks remain agent evidence.

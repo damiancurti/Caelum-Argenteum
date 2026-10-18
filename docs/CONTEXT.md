@@ -8,7 +8,7 @@ Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 
 **5.4.32/#320:** author replaced #259 spread for Mandinga fire/Zupay stone
 with native direct aim at release. Other attacks unchanged. validation_5432;
-CA320-01 pending. Shared #325 decision: 32m plus line of sight.
+CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
 **5.4.31/#321:** hidden automap legend/L toggle, preserving bindings;
 validation_5431, CA321-01 accepted 2026-10-17.
