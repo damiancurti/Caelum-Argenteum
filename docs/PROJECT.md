@@ -8,7 +8,7 @@ A real author autosave exposes 20 artillery Mandingas breathing continuously
 at their own invisible route points. The shared breath reach/aim predicate now
 rejects that technical class, retaining native chase flags and legitimate fire.
 Native replay frees all 20 bodies; 41 isolated checks pass. No FPS gain is
-inferred. CA353-01 is partially accepted with this group behavior outstanding;
+inferred. CA353-01 and this group behavior were accepted on2026-10-18;
 house presentation is separate #334 work. Evidence: validation_5445.
 
 ## 5.4.44 - Structural-cache research completed (#354)
