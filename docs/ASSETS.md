@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
+
+## 5.4.36 - House-door presentation checks (#334)
+
+validation_5436 owns native portal and vehicle-transition probes. No art/audio
+assets change. Preserve source fixtures, hashes and compressed logs; generated
+packages, engine, IWAD and private saved files remain local development inputs.
 
 ## 5.4.35 - Prisoner escort test sources (#322)
 

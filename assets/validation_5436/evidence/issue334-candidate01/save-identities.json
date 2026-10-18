@@ -1,0 +1,152 @@
+[
+  {
+    "file": "auto01.zds",
+    "sha256": "98f824aef92edb511109b46271e4453d7d07031d93b38914ba7cd9372e243107",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:28:29",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:28:29",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:04"
+    }
+  },
+  {
+    "file": "auto02.zds",
+    "sha256": "895751b73f9f13b2412ac2f48830531cb0e7eb328746ca301f1f370263ecefd4",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:50",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:50",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  },
+  {
+    "file": "private-saves/normal1/auto01.zds",
+    "sha256": "c764ef6ddc1412cfaa5d2ebe944b8f6b8cf80c83ddb8bdf5198980a9173eb326",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:31",
+      "Current Map": "CAH000",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:31",
+      "Comment": "CAH000 - Barracas al Sud \u2014 fortified port\nTime: 00:00:02"
+    }
+  },
+  {
+    "file": "private-saves/normal1/auto02.zds",
+    "sha256": "f43c6013c929f151785a381c70569248c7fc7cefa7e08d83f8fe64d0955fef3e",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:35",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:35",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  },
+  {
+    "file": "private-saves/normal3/auto01.zds",
+    "sha256": "bf2e9ff035fe1a7560b01cd48941d931e3bb36a4669454e2ef8f7c917158b647",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:47",
+      "Current Map": "CAH000",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:47",
+      "Comment": "CAH000 - Barracas al Sud \u2014 fortified port\nTime: 00:00:02"
+    }
+  },
+  {
+    "file": "private-saves/normal3/auto02.zds",
+    "sha256": "895751b73f9f13b2412ac2f48830531cb0e7eb328746ca301f1f370263ecefd4",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:50",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:50",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  },
+  {
+    "file": "private-saves/vehicle4-0/auto01.zds",
+    "sha256": "98f824aef92edb511109b46271e4453d7d07031d93b38914ba7cd9372e243107",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:28:29",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:28:29",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:04"
+    }
+  },
+  {
+    "file": "private-saves/vehicle4-0/auto02.zds",
+    "sha256": "895751b73f9f13b2412ac2f48830531cb0e7eb328746ca301f1f370263ecefd4",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:50",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:50",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  },
+  {
+    "file": "private-saves/vehicle4-1/auto01.zds",
+    "sha256": "bc0836993821bf463b3e6f2b357588b97bab4acada209b05d54a7a73a9a73ae3",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:28:04",
+      "Current Map": "CAH158",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:28:04",
+      "Comment": "CAH158 - Barracas al Sud \u2014 fortified port\nTime: 00:00:04"
+    }
+  },
+  {
+    "file": "private-saves/vehicle4-1/auto02.zds",
+    "sha256": "895751b73f9f13b2412ac2f48830531cb0e7eb328746ca301f1f370263ecefd4",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:50",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:50",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  }
+]

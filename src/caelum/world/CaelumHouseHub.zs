@@ -58,6 +58,8 @@ class CaelumHousePortal : Actor
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
         user.FolkloreInteractionUseLatched=true;
         user.FolkloreInteractionReleaseGuardTics=0;
+        // El portal descarta la presentación de otro viaje antes de cruzar.
+        user.PendingTravelWipe=CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR;
         Level.ChangeLevel(args[1]==0?CaelumHouseHubData.MapName(args[0]):"MAP03",
             args[1]==0?0:args[0]+1,CHANGELEVEL_NOINTERMISSION);
         return true;

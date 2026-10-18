@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
+
+## 5.4.36 - House-door presentation isolation (#334)
+
+The author requested no full-screen fade/wipe when entering or leaving a house,
+while retaining loading icons and arrival autosaves. GZDoom already suppresses
+the ordinary same-hub wipe. A real ship journey followed by an artificially
+early approach to a real house portal reproduces a retained vehicle snapshot
+inside that house. It does not prove the cause of the author's ordinary entry.
+House portals now carry explicit presentation intent and discard that leftover
+overlay. Native verification passes 8 runs/64 assertions, including normal
+cart/ship presentation and both actual door-arrival autosave reloads. Independent
+review, project validation/build and all16,375 source/tested/package members
+agree. CA334-01 author acceptance remains pending.
 
 ## 5.4.35 - Replace competing prisoner escort movement (#322)
 

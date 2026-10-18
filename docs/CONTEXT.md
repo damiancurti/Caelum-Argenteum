@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
 
-**5.4.35/#322:** one escort owner; player-formula walking approved Oct18.
-23runs/375 native checks; full rescue/rewards/save recovery pass. CA322-01 pending.
+**5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 pending.
+**5.4.35/#322:** player-formula escort;23runs/375checks; CA322-01 pending.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
 CA324-01 bag/follower accepted Oct18; other checks pending. validation_5434.

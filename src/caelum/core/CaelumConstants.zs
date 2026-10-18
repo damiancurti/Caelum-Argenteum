@@ -226,6 +226,8 @@ class CaelumConstants : Object
     const PRISONER_BESTIA = 2;
     const PRISONER_TAROT = 3;
     const PRISONER_COUNT = 4;
+    // Intención de presentación, nunca un tipo que se envíe al wipe nativo.
+    const TRAVEL_WIPE_HOUSE_DOOR = -1;
     const PRISONER_STATE_CAPTIVE = 0;
     const PRISONER_STATE_FOLLOWING = 1;
     const PRISONER_STATE_EXTRACTED = 2;

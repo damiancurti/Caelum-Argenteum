@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
+
+## 5.4.36 - House-door presentation isolation (#334, 2026-10-18)
+
+The author specified the full-screen fade/wipe, preserving native loading icons
+and map-arrival autosaves. Ordinary baseline house Use with wipetype1 already
+emits no explicit wipe request. A second baseline uses native Board/Confirm
+from TCOAST to MAP03, then positions the player at house158 immediately: the
+resolved journey is ARRIVED, but its previous snapshot remains active inside
+CAH158 (frame4, TravelWipe0). This is a proven overlay-lifecycle defect, not yet
+a reproduction of the author's ordinary walk to a door or a native fade.
+An explicit house request now clears inherited presentation before arrival;
+negative intent is never forwarded to native setTransition. Native verification
+passes8 runs/64 assertions: two ordinary door round trips, early and normal
+ship/cart arrivals, and inside/outside native autosave reloads. Source/tested/
+normal package equivalence covers16,375 members. Review and validation/build
+pass. The first cart fixture lacked58 water rations required by its own forecast;
+its death/failure remains archived, and the corrected fixture supplies that
+finite requirement without changing gameplay. CA334-01 remains pending;
+the author's ordinary fade is not declared reproduced. Evidence: validation_5436.
 
 ## 5.4.35 - Prisoner escort replacement (#322, 2026-10-18)
 

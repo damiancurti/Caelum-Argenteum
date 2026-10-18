@@ -1,0 +1,17 @@
+[
+  {
+    "file": "auto01.zds",
+    "sha256": "7bd23517893f9f12c9c0cacddbf8acaaf80980d7f82da6cb80b5bad442fe6839",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:24:40",
+      "Current Map": "CAH158",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:24:40",
+      "Comment": "CAH158 - Barracas al Sud \u2014 fortified port\nTime: 00:00:04"
+    }
+  }
+]

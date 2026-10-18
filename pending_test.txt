@@ -1,3 +1,13 @@
+CA334-01 | Origin 5.4.36 / issue #334 | House doors without a full-screen transition
+Prerequisites: current normal build and MAP03; loading icons remain enabled.
+Steps: enter and leave several houses through their actual doors. Repeat after
+a vehicle journey. Check that no previous vehicle image, fade or wipe covers
+house entry/exit, and that map-arrival autosaves still load in the proper map.
+Expected: immediate house view, retained native loading icon/autosave, and
+normal vehicle presentation on actual journeys. If a fade remains, report the
+house, route and whether it followed a journey or a saved-game load. The native
+early-entry diagnostic does not establish the cause of every reported fade.
+
 CA322-01 | Origin 5.4.35 / issue #322 | Stable prisoner following and individual walking speed
 Prerequisites: the current build, or the isolated four-prisoner corridor preview
 launched with assets/validation_5435/preview.ps1. Use only that preview's saves.

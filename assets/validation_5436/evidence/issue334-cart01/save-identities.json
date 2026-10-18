@@ -1,0 +1,17 @@
+[
+  {
+    "file": "auto01.zds",
+    "sha256": "4d81167c18e98db1ed63bfe67a12c48fbb1a768f1133f6f7759e47bbf13bb2a0",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:31:52",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:31:52",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:04"
+    }
+  }
+]
