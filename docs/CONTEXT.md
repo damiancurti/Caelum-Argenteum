@@ -34,8 +34,8 @@ validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
 artillery bodies resume. CA353-01 fully accepted Oct18, including group retest.
 **5.4.43/#353:** caches/resources/target100 automatic >=500; validation_5443.
 **5.4.44/#354:** retain structural guards; inconsistent extra FPS benefit.
-validation_5444; thermal35 retained. **5.4.47/#361:** siege adrenaline; ordinary
-house/victory decay. validation_5447; CA361-01 pending.
+validation_5444; thermal35 retained. **5.4.47/#361:** siege NPC/monster adrenaline;
+player/seals unchanged. validation_5447; revised CA361-01 pending.
 CA318-01..05/CA327-01 accepted; FPS deferred; no6000tests.
 
 **5.4.27/#307:** resolved prisoner Speed; retained recovery teleport. Native:

@@ -1,0 +1,18 @@
+{
+  "issue": 361,
+  "release": "5.4.47",
+  "package_sha256": "d5dcb9583eeb0706ef2f5bf235ef232c45a4cca5fcba3a8ccdd2b8d982cb0715",
+  "package_members": 16379,
+  "exact_tested_source_equality": true,
+  "probes_in_normal_package": false,
+  "original_private_saves_unchanged": true,
+  "evidence_members_verified": 62,
+  "final_native_runs": 6,
+  "final_native_assertions": 6928,
+  "player_and_event_sources_restored_to": "f3fedf95",
+  "restored_files": [
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/player/CaelumPlayerResources.zs",
+    "caelum/world/CaelumSiegeEncounter.zs"
+  ]
+}

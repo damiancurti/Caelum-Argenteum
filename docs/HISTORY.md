@@ -4,6 +4,25 @@ Documentation version: **5.4.47** — 2026-10-18.
 
 ## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
 
+Author revision, same patch: exclude the player completely to avoid unbalancing
+seals; only siege NPCs and monsters receive maximum adrenaline. The player and
+resource services are restored exactly to their pre-issue source, including
+ordinary needs/wound formulas and channel spending/exhaustion. The now-unused
+transient player-port cache is removed from the siege event handler. NPC focus
+is retained unchanged. Existing preview saves keep their current player reserve
+and resume ordinary rules, without an invented reset. CA361-01 is revised to
+this scope, not marked passed. FPS remains deferred. The initial candidate and
+its evidence below are preserved history, superseded for player behavior.
+
+Revised verification: six complete native cases pass6,928 assertions, including
+642 rule/formula/seal controls, the old battle, a current city/house/city trip,
+both earlier player-inclusive preview saves and a current interior reload.
+The final hub case requires all three checkpoints and final city arrival before
+reporting success. Earlier incomplete save/hub drafts are retained as partial
+evidence. Independent review confirms restored player/event source equality.
+Normal build, validation and16,379-member tested-source equality pass. Revised
+text evidence and hashes are npc_evidence and npc_delivery_checks in validation_5447.
+
 The author requests production adoption of the previously approved siege rule
 and defers FPS evaluation. Confirmed scope: registered MAP03 attackers/defenders
 and the player while in the active city; entering a house stops forcing the

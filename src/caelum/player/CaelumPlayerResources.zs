@@ -60,7 +60,6 @@ class CaelumPlayerResources : Object play
     static void UpdateAdrenalineDecay(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        bool siegeFocus=CaelumSiegeFocus.ApplyToPlayer(user);
         if (!user.AdrenalineResourceInitialized)
         {
             user.CombatTimeRemaining = Max(0.0, user.CombatTimeRemaining);
@@ -76,7 +75,7 @@ class CaelumPlayerResources : Object play
             return;
         }
 
-        if (siegeFocus || user.CurrentAdrenaline <= 0.0) { return; }
+        if (user.CurrentAdrenaline <= 0.0) { return; }
         user.CurrentAdrenaline = Max(
             0.0,
             user.CurrentAdrenaline
@@ -395,7 +394,6 @@ class CaelumPlayerResources : Object play
     static void UpdateSurvivalStates(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        CaelumSiegeFocus.ApplyToPlayer(user);
         user.HungerState = user.CalculateSurvivalState(user.CurrentHunger);
         user.ThirstState = user.CalculateSurvivalState(user.CurrentThirst);
         user.SleepState = user.CalculateSurvivalState(user.CurrentSleep);
@@ -405,7 +403,9 @@ class CaelumPlayerResources : Object play
             * user.GetSurvivalStateMultiplier(user.ThirstState)
             * user.GetSurvivalStateMultiplier(user.SleepState);
 
-        // La proporción de adrenalina compensa esa misma fracción de la penalización.
+        // Adrenaline ignores the same percentage of the missing performance
+        // as its current share of maximum. Example: raw x0.50 with 50%
+        // adrenaline becomes x0.75.
         user.AdrenalinePenaltyIgnoreRatio = 0.0;
         if (user.DerivedStats != null && user.DerivedStats.MaximumAdrenaline > 0.0)
         {
@@ -415,8 +415,7 @@ class CaelumPlayerResources : Object play
                 1.0
             );
         }
-        user.SurvivalPerformanceMultiplier = user.AdrenalinePenaltyIgnoreRatio>=1.0 ? 1.0
-            : user.SurvivalRawPerformanceMultiplier
+        user.SurvivalPerformanceMultiplier = user.SurvivalRawPerformanceMultiplier
             + (1.0 - user.SurvivalRawPerformanceMultiplier)
             * user.AdrenalinePenaltyIgnoreRatio;
         user.UpdateEffectiveOffensiveDamageMultiplier();
@@ -425,7 +424,6 @@ class CaelumPlayerResources : Object play
     static void UpdateHealthStateEffects(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        CaelumSiegeFocus.ApplyToPlayer(user);
         double healthRatio = 1.0;
         if (user.CaelumMaximumHealth > 0)
         {
@@ -474,12 +472,10 @@ class CaelumPlayerResources : Object play
         user.HealthPatienceMitigatedPerformanceMultiplier = 1.0
             - (1.0 - user.HealthRawPerformanceMultiplier)
                 * user.HealthPatienceMitigationMultiplier;
-        // Mantener los valores crudos para diagnóstico; saturación elimina sólo penalizaciones.
-        user.HealthPerformanceMultiplier = adrenalineRatio>=1.0 ? 1.0
-            : user.HealthPatienceMitigatedPerformanceMultiplier
+        user.HealthPerformanceMultiplier = user.HealthPatienceMitigatedPerformanceMultiplier
             + (1.0 - user.HealthPatienceMitigatedPerformanceMultiplier)
                 * adrenalineRatio;
-        user.HealthPainMultiplier = adrenalineRatio>=1.0 ? 1.0 : 1.0
+        user.HealthPainMultiplier = 1.0
             + (rawIntensityMultiplier - 1.0)
                 * user.HealthPatienceMitigationMultiplier
                 * (1.0 - adrenalineRatio);

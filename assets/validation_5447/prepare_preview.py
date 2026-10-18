@@ -37,8 +37,26 @@ class CA361Preview : StaticEventHandler
             Level.ChangeLevel(house>=0?"MAP03":CaelumHouseHubData.MapName(7),
                 house>=0?house+1:0,CHANGELEVEL_NOINTERMISSION);
         }
-        if(e.Name=="ca361_status")Console.Printf("ADRENALINA %.3f / %.3f | %s",
-            user.CurrentAdrenaline,user.DerivedStats.MaximumAdrenaline,level.MapName);
+        if(e.Name=="ca361_status")
+        {
+            int total,full;let port=CaelumPortSiege.Get();
+            if(port!=null)
+            {
+                for(int i=0;i<port.Attackers.Size();i++)
+                {
+                    let entry=port.Attackers[i];let body=entry.Body;
+                    if(body==null || body.health<=0 || entry.Exited)continue;
+                    total++;if(body.CurrentCombatAdrenaline==body.MaximumCombatAdrenaline)full++;
+                }
+                for(int i=0;i<port.Defenders.Size();i++)
+                {
+                    let body=port.Defenders[i];if(body==null || body.health<=0 || body.Port!=port)continue;
+                    total++;if(body.CurrentCombatAdrenaline==body.MaximumCombatAdrenaline)full++;
+                }
+            }
+            Console.Printf("ADRENALINA jugador %.3f / %.3f | NPC al maximo %d/%d | %s",
+                user.CurrentAdrenaline,user.DerivedStats.MaximumAdrenaline,full,total,level.MapName);
+        }
     }
 }
 '''
@@ -49,13 +67,15 @@ class CA361Preview : StaticEventHandler
     (out/'preview.cfg').write_text('bind F8 "netevent ca361_visit"\nbind F9 "netevent ca361_status"\nbind F10 "load author.zds"\nsnd_mastervolume 0.05\ni_pauseinbackground false\nvid_activeinbackground true\ni_soundinbackground true\nuse_mouse true\n', encoding='utf-8')
     launcher = r'''$ErrorActionPreference='Stop'
 Set-Location -LiteralPath $PSScriptRoot
+$Host.UI.RawUI.WindowTitle='Caelum #361 - Solo NPC (actualizado)'
 if(Get-CimInstance Win32_Process -Filter "Name='gzdoom.exe'"){throw 'Ya hay una ventana de GZDoom abierta.'}
-Write-Host 'PRUEBA #361 - ADRENALINA DEL ASEDIO' -ForegroundColor Cyan
+Write-Host 'PRUEBA ACTUALIZADA #361 - ADRENALINA SOLO PARA NPC Y MONSTRUOS' -ForegroundColor Cyan
 Write-Host 'Estas en tu asedio real de MAP03, en una copia privada del guardado.'
-Write-Host 'F9: muestra adrenalina actual y maxima. En la ciudad deben ser iguales.'
+Write-Host 'F9: muestra tu reserva normal y cuantos NPC del asedio estan al maximo.'
 Write-Host 'F8: entra a una casa / vuelve a la ciudad para comprobar la regla.'
-Write-Host 'Dentro: espera a que termine el temporizador de combate; vuelve el descenso normal.'
-Write-Host 'Al regresar a la ciudad: la adrenalina vuelve al maximo.'
+Write-Host 'Tu adrenalina NO se fuerza al maximo, ni en ciudad ni en casas.'
+Write-Host 'Prueba un sello equipado: debe consumir y poder agotar su reserva normal.'
+Write-Host 'Volver a la ciudad NO repone tu adrenalina. Solo NPC y monstruos tienen el beneficio.'
 Write-Host 'F10: recarga el punto inicial si el combate avanzo o moriste.'
 Write-Host 'No se miden FPS. El resto de las pruebas antiguas ya esta aprobado.'
 Write-Host 'Al terminar, cierra GZDoom y confirma solamente este nuevo comportamiento.'

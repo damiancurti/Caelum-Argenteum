@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -13,17 +14,22 @@ def digest(data):
 
 
 def main():
-    evidence = json.loads((HERE/'evidence.json').read_text(encoding='utf-8'))
-    archive_path = HERE/'evidence.zip'
+    evidence = json.loads((HERE/'npc_evidence.json').read_text(encoding='utf-8'))
+    archive_path = HERE/'npc_evidence.zip'
     assert digest(archive_path.read_bytes()) == evidence['archive_sha256']
     with zipfile.ZipFile(archive_path) as archive:
         assert set(archive.namelist()) == set(evidence['members'])
         for name, expected in evidence['members'].items():
             assert digest(archive.read(name)) == expected, name
-        manifest = json.loads(archive.read('issue361-final-checks/manifest.json'))
+        manifest = json.loads(archive.read('issue361-npc-checks/manifest.json'))
     sources = {p.relative_to(ROOT/'src').as_posix(): digest(p.read_bytes())
                for p in (ROOT/'src').rglob('*') if p.is_file()}
     assert sources == manifest['source_hashes'], 'Normal sources differ from final tested runtime'
+    restored = ['caelum/player/CaelumPlayer.zs', 'caelum/player/CaelumPlayerResources.zs',
+                'caelum/world/CaelumSiegeEncounter.zs']
+    for name in restored:
+        original = subprocess.check_output(['git', 'show', 'f3fedf95:src/'+name], cwd=ROOT)
+        assert (ROOT/'src'/name).read_bytes().replace(b'\r\n', b'\n') == original.replace(b'\r\n', b'\n'), name
     package_path = ROOT/'build/caelum_argenteum_dev.pk3'
     with zipfile.ZipFile(package_path) as package:
         assert set(package.namelist()) == set(sources), 'Unexpected package members'
@@ -41,8 +47,9 @@ def main():
                   probes_in_normal_package=False, original_private_saves_unchanged=True,
                   evidence_members_verified=len(evidence['members']),
                   final_native_runs=evidence['successful_final_runs'],
-                  final_native_assertions=evidence['successful_final_assertions'])
-    (HERE/'delivery_checks.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+                  final_native_assertions=evidence['successful_final_assertions'],
+                  player_and_event_sources_restored_to='f3fedf95', restored_files=restored)
+    (HERE/'npc_delivery_checks.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report))
 
 

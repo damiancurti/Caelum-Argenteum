@@ -10,13 +10,14 @@ is deferred by the author. Siege-adrenaline production integration is #361.
 
 ## 5.4.47 - Production siege adrenaline (#361)
 
-Implement the approved maximum for active MAP03 attackers/defenders and player,
-with ordinary player decay inside private houses. Preserve real consumption,
-damage, inventory, thermal/elemental effects and timers. Native controls cover
-formula equality, owner-local cache inputs, exclusions, channel spending and
-first damage; saved battle replay covers load and house-hub lifetime. Six final
-runs pass 6,830 assertions, including previous-runtime rollback. FPS work is
-deliberately deferred. Author check CA361-01 is limited to this new behavior;
+Revised author scope: maximum only for active MAP03 NPC/monster attackers and
+defenders; the player is always excluded to preserve seal balance. Restore the
+pre-issue player code and remove its now-unused encounter cache. Native controls
+cover NPC formulas/lifetime plus ordinary player penalties, decay and finite
+seal spending/exhaustion. Recheck old/current/earlier-preview saves and hub travel;
+Six complete revised cases pass6,928 assertions, including642 isolated controls;
+the initial6,830 assertions belong to the superseded player-inclusive candidate.
+FPS work remains deferred. Revised author check CA361-01 covers this behavior;
 all six old CA318/CA327 checks are already accepted.
 
 ## 5.4.46 - Revised house transition (#334)

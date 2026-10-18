@@ -4,28 +4,27 @@ Documentation version: **5.4.47** — 2026-10-18.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
-During the active MAP03 siege, registered attackers (including Zupay and new
-reinforcements), bound defenders and the live city player retain their existing
-individual maximum adrenaline. Peaceful residents and unrelated actors do not
+During the active MAP03 siege, only registered NPC/monster attackers (including
+Zupay and new reinforcements) and bound defenders retain their existing individual
+maximum adrenaline. The player is always excluded, including inside the city,
+to preserve seal-channel balance. Peaceful residents and unrelated actors do not
 join by proximity. Victory, departure from the city or lost encounter ownership
 ends the forced maximum. Dead bodies are not refilled; a living resurrected
-participant qualifies again. Entering a private house stops forcing the player
-and ordinary decay resumes from the current reserve. Returning to the active
-city restores the maximum. This gameplay rule remains consistent as population
+participant qualifies again. This gameplay rule remains consistent as population
 changes; maintenance caches independently retain their >=500-body threshold.
 
-The saturated wound-performance and pain formulas use their exact result of
-one. Raw injury/needs states, actual damage, hunger/thirst consumption and
-critical damage remain. Existing maximum-adrenaline needs mitigation is retained.
-Thermal/elemental penalties, immobilization, individual inventory/resources and
-combat timers are unchanged. Seal channels still validate and spend their cost,
-then the siege replenishes adrenaline. Incoming damage refreshes the reserve
-before calculating pain and interruption.
+NPC saturated wound-performance and pain formulas use their exact result of
+one. Actual damage, thermal/elemental penalties, immobilization, individual
+inventory/resources and combat timers remain. The player's original adrenaline
+gain/decay, needs/wound mitigation and seal spending/exhaustion run unchanged.
+No tick, damage event, city arrival or channel cost grants a forced player refill.
+A save from the earlier player-inclusive preview keeps its current reserve and
+then follows ordinary rules; it is neither refilled nor arbitrarily reset.
 
-NPC membership uses existing ownership. The existing siege event handler keeps
-a transient player-port reference: one lazy lookup after load, then native
-spawn/destruction/travel notifications. No recurring actor scan or saved schema
-is added. See validation_5447 for native correctness and save/hub evidence.
+NPC membership uses existing ownership. No player-port cache, recurring actor
+scan or saved schema is added. The author explicitly removed the player from
+the initial candidate on2026-10-18. See validation_5447 for revised native
+correctness and old/current/earlier-preview save/hub evidence.
 FPS evaluation is deferred by the author; no measured gain is claimed.
 
 ## Demon breath excludes navigation markers (#357, 5.4.45)
@@ -94,7 +93,8 @@ injury, consumption, critical-state damage and other thermal/elemental/reload or
 immobilization effects. The maximum-adrenaline wound formula may use its exact
 simplified result. The player's existing maximum-adrenaline rule already
 suppresses hunger/thirst performance penalties; NPCs do not run that player
-needs calculation. Combat timers must continue. This policy was tested only in
+needs calculation. The later #361 production decision above excludes the player.
+Combat timers must continue. This policy was tested only in
 the diagnostic runtime at this checkpoint; #361 above completes production
 ownership and lifetime handling without adding persistent state.
 

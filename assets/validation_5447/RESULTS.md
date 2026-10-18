@@ -1,5 +1,60 @@
 # Production siege adrenaline — #361 / 5.4.47
 
+## Final author revision: NPCs and monsters only
+
+The author explicitly excludes the player to preserve seal balance. The final
+rule retains maximum adrenaline only for registered siege attackers/defenders;
+the NPC implementation is unchanged. CaelumPlayer, CaelumPlayerResources and
+CaelumSiegeEncounter are restored to their pre-issue f3fedf95 source. This removes
+every forced player refill, player formula change and the now-unused transient
+player-port cache. Native player gain/decay, needs/wound penalties and seal
+cost/exhaustion remain unchanged everywhere. Earlier preview saves keep their
+current reserve and follow those ordinary rules; no artificial reset is added.
+
+Revised controls assert ordinary player reserve/penalties during the active
+siege, exact seal cost and eventual exhaustion, while repeating the NPC formula
+and lifecycle controls. Saved controls cover the old battle, new battle and
+both hub legs, and city/house saves written by the superseded player-inclusive
+candidate. New evidence is kept separately in npc_evidence.json/zip and
+npc_delivery_checks.json; the original archive below remains historical.
+The saved-scene observer is protected from ordinary attacks so it can write
+saves; damage preservation is checked separately in the isolated controls.
+
+The first revised city attempt produced no focus-city.zds despite completing
+its rule assertions; the next load failed because the file was absent. This is
+not counted as a completed save test. Revised fixtures assert that the observer
+is alive, protect it from ordinary attacks, allow more time for native save
+completion and explicitly require the written save before attempting reload.
+The next hub draft reached both maps but exited before its final city assertion
+ran; its earlier DONE markers are not a complete round-trip pass. The final
+fixture waits after each network request and emits DONE only after checking all
+three checkpoints and the final map. The archive verifier also requires that
+ordered city/house/city evidence. Other successful single-checkpoint controls
+remain valid for their actual recorded runtime and fixture.
+
+FPS remains deferred. CA361-01 is revised to the NPC-only contract and remains
+unconfirmed. The private preview's F9 now contrasts NPC maxima with the player's
+ordinary reserve; house/city travel must never grant a player refill.
+
+Six complete revised native runs pass **6,928 assertions**:
+
+| Revised case | Assertions |
+| --- | ---: |
+| Isolated NPC rules and player/seal exclusions | 642 |
+| Old author battle save | 1,578 |
+| Current city save and complete city/house/city trip | 3,128 |
+| Earlier player-inclusive city save | 1,568 |
+| Earlier player-inclusive house save | 6 |
+| Current house save | 6 |
+
+Independent review confirms that player/resource/event code matches f3fedf95;
+the removed cache fields were transient. Normal build and project validation
+pass, and all16,379 normal members match both source and the tested runtime.
+The earlier evidence archive remains unchanged. Use archive.py --npc-only for
+the revised archive; verify_evidence.py now checks this final NPC-only delivery.
+
+## Initial candidate: superseded player-inclusive scope
+
 The author requested production adoption and explicitly deferred FPS evaluation.
 This delivery verifies behavior and compatibility; it contains no new benchmark
 or assertion of a measured performance gain. Existing caches retain their

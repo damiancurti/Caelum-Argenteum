@@ -38,20 +38,16 @@ class CA361Checks : EventHandler
     }
     void Checks(CaelumPlayer user)
     {
-        let events=CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
-        Check(events!=null && events.FocusPort==Port,"native spawn publishes port reference");
         Check(NPC.CombatProfileInitialized && Soldier.CombatProfileInitialized && Boss.CombatProfileInitialized,"native profiles initialized");
         Port.RegisterAttacker(NPC);Port.RegisterAttacker(Boss);Soldier.Port=Port;
-        Check(!CaelumSiegeFocus.ApplyToActor(NPC) && !CaelumSiegeFocus.ApplyToPlayer(user),"peaceful city excluded");
+        Check(!CaelumSiegeFocus.ApplyToActor(NPC),"peaceful city excluded");
         Port.SiegeStarted=true;
         Check(CaelumSiegeFocus.ApplyToActor(NPC) && CaelumSiegeFocus.ApplyToActor(Soldier) && CaelumSiegeFocus.ApplyToActor(Boss),"registered attackers defenders and boss included");
         Check(!CaelumSiegeFocus.ApplyToActor(Other),"unregistered demon excluded");
-        Check(CaelumSiegeFocus.ApplyToPlayer(user),"city player included");
-        user.CurrentAdrenaline=0;user.player.cheats|=CF_PREDICTING;
-        Check(!CaelumSiegeFocus.ApplyToPlayer(user) && user.CurrentAdrenaline==0,"prediction does not mutate reserve");
-        user.player.cheats&=~CF_PREDICTING;
+        user.CurrentAdrenaline=0;user.UpdateHealthStateEffects();user.UpdateSurvivalStates();
+        Check(user.CurrentAdrenaline==0,"city player excluded from maximum");
         user.DerivedStats.MaximumAdrenaline*=2;user.UpdateHealthStateEffects();
-        Check(user.CurrentAdrenaline==user.DerivedStats.MaximumAdrenaline,"player changed maximum refreshed");
+        Check(user.CurrentAdrenaline==0,"player maximum change does not refill reserve");
         user.DerivedStats.MaximumAdrenaline/=2;
         Check(NPC.CurrentCombatAdrenaline==NPC.MaximumCombatAdrenaline && Soldier.CurrentCombatAdrenaline==Soldier.MaximumCombatAdrenaline && Boss.CurrentCombatAdrenaline==Boss.MaximumCombatAdrenaline,"individual existing maxima");
         for(int density=0;density<2;density++)
@@ -87,20 +83,22 @@ class CA361Checks : EventHandler
         NPC.CombatTimeRemaining=0;NPC.Tick();Check(NPC.CurrentCombatAdrenaline==NPC.MaximumCombatAdrenaline,"no idle decay during active siege");
         Port.Victory=true;double before=NPC.CurrentCombatAdrenaline;NPC.Tick();
         Check(NPC.CurrentCombatAdrenaline<before,"normal decay resumes after victory");Port.Victory=false;
-        user.AdrenalineResourceInitialized=true;user.CombatTimeRemaining=1;
+        user.AdrenalineResourceInitialized=true;user.CombatTimeRemaining=1;user.CurrentAdrenaline=user.DerivedStats.MaximumAdrenaline/2;
+        double playerReserve=user.CurrentAdrenaline;
         CaelumPlayerResources.UpdateAdrenalineDecay(user);
-        Check(user.CombatTimeRemaining<1 && user.CurrentAdrenaline==user.DerivedStats.MaximumAdrenaline,"player combat timer retained");
+        Check(user.CombatTimeRemaining<1 && user.CurrentAdrenaline==playerReserve,"player combat timer holds earned reserve without refill");
         user.CombatTimeRemaining=0;CaelumPlayerResources.UpdateAdrenalineDecay(user);
-        Check(user.CurrentAdrenaline==user.DerivedStats.MaximumAdrenaline,"player idle focus");
+        Check(user.CurrentAdrenaline<playerReserve,"ordinary player decay during active siege");
         user.SurvivalResourcesInitialized=true;user.CurrentHunger=user.CurrentThirst=CaelumConstants.SURVIVAL_MAXIMUM/2;
         double hunger=user.CurrentHunger,thirst=user.CurrentThirst;
         CaelumPlayerResources.UpdateSurvivalResources(user);
         Check(user.CurrentHunger<hunger && user.CurrentThirst<thirst,"needs still consumed");
         user.CurrentHunger=user.CurrentThirst=0;user.CurrentSleep=CaelumConstants.SURVIVAL_MAXIMUM;
         user.health=Max(2,user.CaelumMaximumHealth/4);user.player.health=user.health;
+        user.CurrentAdrenaline=0;
         user.UpdateSurvivalStates();user.UpdateHealthStateEffects();
         Check(user.HungerState==CaelumConstants.SURVIVAL_STATE_CRITICAL && user.ThirstState==CaelumConstants.SURVIVAL_STATE_CRITICAL,"critical needs retained");
-        Check(user.SurvivalPerformanceMultiplier==1 && user.HealthPerformanceMultiplier==1 && user.HealthPainMultiplier==1,"player performance and pain saturation");
+        Check(user.SurvivalPerformanceMultiplier<1 && user.HealthPerformanceMultiplier<1 && user.HealthPainMultiplier>1,"player ordinary needs wounds and pain penalties during siege");
         int hp=user.health;user.SurvivalDamageAccumulator=1;CaelumPlayerResources.ApplyCriticalSurvivalDamage(user);
         Check(user.health<hp,"critical starvation dehydration damage retained");
         Port.Victory=true;user.CurrentAdrenaline=0;user.UpdateSurvivalStates();user.UpdateHealthStateEffects();
@@ -108,7 +106,7 @@ class CA361Checks : EventHandler
         user.CurrentAdrenaline=user.DerivedStats.MaximumAdrenaline;before=user.CurrentAdrenaline;
         CaelumPlayerResources.UpdateAdrenalineDecay(user);Check(user.CurrentAdrenaline<before,"player ordinary decay after victory");
         Port.Victory=false;Port.args[3]=0;
-        Check(!CaelumSiegeFocus.ApplyToActor(NPC) && !CaelumSiegeFocus.ApplyToPlayer(user),"non-city encounter excluded");
+        Check(!CaelumSiegeFocus.ApplyToActor(NPC),"non-city encounter excluded");
         Port.args[3]=1;
         NPC.ElementalStatus=new("CaelumElementalStatus");
         NPC.ElementalStatus.FreezeRemaining=10;NPC.ElementalStatus.FreezePowerPercent=50;
@@ -124,7 +122,7 @@ class CA361Checks : EventHandler
         Check(NPC.CurrentCombatAnima>anima && NPC.CurrentCombatAnima<NPC.MaximumCombatAnima,"individual active resource recovery retained");
         Check(CaelumDemonService.Potion(NPC,0).Amount==units,"focus does not refill finite inventory");
         ChannelChecks(user);
-        Port.Destroy();Check(events.FocusPort==null && !CaelumSiegeFocus.ApplyToPlayer(user),"destroyed port clears derived owner reference");
+        Port.Destroy();Check(!CaelumSiegeFocus.ApplyToActor(NPC),"destroyed encounter stops NPC focus");
         Console.Printf("CA282 DONE passes=%d failures=%d",Passes,Failures);
     }
     void ChannelChecks(CaelumPlayer user)
@@ -139,11 +137,17 @@ class CA361Checks : EventHandler
         user.CombatChannelModeActive=true;user.CombatChannelSealType=seal.ItemType;user.CombatChannelSealTier=seal.Tier;
         user.CombatChannelAdrenalinePerTic=user.GetSealChannelAdrenalinePerTic(seal.Tier);
         user.CurrentAdrenaline=0;user.UpdateSealChannel();
-        Check(user.CombatChannelModeActive && user.CurrentAdrenaline==user.DerivedStats.MaximumAdrenaline,"channel validates and spends without leaving focused reserve below maximum");
+        Check(!user.CombatChannelModeActive && user.CurrentAdrenaline==0,"active siege does not fund an exhausted seal channel");
+        user.CombatChannelModeActive=true;user.CurrentAdrenaline=user.CombatChannelAdrenalinePerTic*2;
+        double reserve=user.CurrentAdrenaline;user.UpdateSealChannel();
+        Check(user.CombatChannelModeActive && user.CurrentAdrenaline==reserve-user.CombatChannelAdrenalinePerTic,"active siege seal spends exact ordinary cost");
+        user.UpdateSealChannel();user.UpdateSealChannel();
+        Check(!user.CombatChannelModeActive && user.CurrentAdrenaline==0,"seal channel exhausts finite reserve during siege");
         user.CurrentAdrenaline=0;user.bInvulnerable=false;int hp=user.health;
         user.ReceiveCaelumDamage(null,null,5,'Drowning',DMG_FORCED,0);
         Check(user.health<hp,"first incoming resolved damage retained");
-        Check(user.CurrentAdrenaline==user.DerivedStats.MaximumAdrenaline && user.PainImmobilizationRemaining==0,"first incoming damage uses maximum pain mitigation");
+        Check(user.CurrentAdrenaline==0,"incoming resolved damage does not grant forced maximum");
+        user.PainImmobilizationRemaining=user.LucidityPhysicalStunRemaining=0;
         user.StopSealChannel(false,false);Port.Victory=true;
         user.CombatChannelModeActive=true;user.CurrentAdrenaline=user.DerivedStats.MaximumAdrenaline;
         user.UpdateSealChannel();

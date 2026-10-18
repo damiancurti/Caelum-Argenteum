@@ -65,6 +65,12 @@ def main():
     for name, commands in scripts.items():
         if args.scenario != 'checks':
             commands = 'cl_capfps true; wipetype 0; '+commands.replace('wait 70;', 'wait 350;').replace('wait 140;', 'wait 350;')
+            commands = commands.replace('wait 2; storesavepic', 'wait 35; storesavepic').replace('save focus-city; wait 3;', 'save focus-city; wait 35;').replace('save focus-house; wait 3;', 'save focus-house; wait 35;')
+        if args.scenario == 'live':
+            commands = commands.replace('wait 2;', 'wait 35;').replace('wait 3;', 'wait 35;')
+            expected = 3 if name == 'roundtrip' else 2 if name == 'house' else 1
+            hub = int(name in ['roundtrip', 'house'])
+            commands = commands.replace('quit', f'netevent ca361_finish {expected} {hub}; wait 35; quit')
         (out/(name+'.cfg')).write_text(commands+'\n', encoding='utf-8')
     print(json.dumps({k: v for k, v in manifest.items() if k != 'source_hashes'}))
 

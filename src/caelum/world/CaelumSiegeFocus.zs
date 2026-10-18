@@ -21,15 +21,4 @@ class CaelumSiegeFocus : Object play
         return true;
     }
 
-    static bool ApplyToPlayer(CaelumPlayer user)
-    {
-        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0
-            || user.DerivedStats==null || level.MapName!="MAP03")return false;
-        let events=CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
-        if(events==null)return false;
-        events.EnsureFocusPort();
-        if(!Active(events.FocusPort))return false;
-        user.CurrentAdrenaline=user.DerivedStats.MaximumAdrenaline;
-        return true;
-    }
 }
