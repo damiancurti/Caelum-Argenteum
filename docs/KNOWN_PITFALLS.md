@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-133 - Shootable navigation markers are not combat targets
+
+Status/evidence: ENGINE-VERIFIED, #357 / 5.4.45, 2026-10-18.
+[validation_5445](../assets/validation_5445/RESULTS.md): the author's actual
+autosave and isolated 41-assertion Mandinga/Zupay controls. Author retest pending.
+
+Symptom/cause: native chase assigns an invisible, shootable and invulnerable
+CaelumSewerEscapeTarget to Actor.target. Breath accepted those flags plus reach
+and sight, entered a looping firing state and prevented route advancement.
+Twenty artillery operators in the saved siege were paying for this false fire.
+
+Remedy: exclude the technical navigation class at the shared breath reach/aim
+predicate. Preserve its native chase flags. Cold and restraints remain separate
+reasons to fire; do not suppress them merely because target is a route marker.
+The existing per-body update retires active emitters without scanning actors.
+
+Regression: replay the same private save, track the original affected IDs,
+assert no navigation-only fire after update, and check their displacement.
+Exercise real targets, range, finite resources, cold, real bolas and saved
+emitters. Broad NOTARGET rejection would change unrelated target rules.
+
+Limits: these checks establish the local bug fix, not a measured FPS gain or
+general pathfinding correctness. The inherited +/-32768-MU flat diagnostic made
+native CheckSight false for a valid nearby dummy; the bounded +/-16384 control
+passes. Preserve that fixture failure; do not infer the exact engine cause or
+alter gameplay geometry from it.
+
 ## CA-KP-132 - Structural notices must cover wear even without HP damage
 
 Status/evidence: ENGINE-VERIFIED private candidate, #354 / 5.4.44, 2026-10-18.

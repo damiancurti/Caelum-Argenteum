@@ -1,6 +1,17 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.44** — 2026-10-18.
+Documentation version: **5.4.45** — 2026-10-18.
+
+## Demon breath excludes navigation markers (#357, 5.4.45)
+
+CaelumSewerEscapeTarget is an invisible technical destination used by native
+chase, including artillery routes. Its shootable/invulnerable flags do not make
+it a combat target. Demon breath must neither start an attack against it nor
+aim cold/restraint fire at it. Actual targets retain existing range/visibility
+checks. Cold and real bolas independently permit fire with the existing cost,
+contact heat and release behavior. An already-running false attack stops through
+the ordinary per-body update, including when loading an earlier save. No actor
+scan, new target-selection rule or saved schema is added.
 
 ## Structural-cache research outcome (#354, 5.4.44)
 

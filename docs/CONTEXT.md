@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.44** — 2026-10-18.
+Documentation version: **5.4.45** — 2026-10-18.
 
-**5.4.40/#325:** rest safety;278checks; CA325-01 accepted Oct18.
+**5.4.40/#325:** rest;278checks; CA325-01 accepted Oct18.
 
-**5.4.39/#339:** jump-wall cushioning;135 current/41 baseline checks; CA339-01 accepted Oct18.
+**5.4.39/#339:** jump-wall cushioning;135/41 checks; CA339-01 accepted Oct18.
 
 **5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 accepted Oct18.
 **5.4.35/#322:** CA322-01 accepted Oct18; packed-row limit retained.
@@ -29,13 +29,14 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
-**5.4.43/#353:** adopted caches/resources/target100 automatic at >=500 living
-combatants. Evidence: validation_5443; CA353-01 pending.
+**5.4.45/#357:** excludes route markers from breath;41 checks;20/20 saved
+artillery bodies resume. CA353-01 fully accepted Oct18, including group retest.
+**5.4.43/#353:** caches/resources/target100 automatic >=500; validation_5443.
 **5.4.44/#354:** retain structural guards; inconsistent extra FPS benefit.
-Evidence: validation_5444. Thermal35 unchanged; maximum siege adrenaline approved,
-pending production. Prototype: validation_5442; isolated costs: validation_5441.
+validation_5444. Thermal35 unchanged; siege adrenaline approved,
+pending production. Trials: validation_5442/5441.
 CA318-01..05/CA327-01 pending.
-No6000-simultaneous tests again.
+No6000 tests.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;

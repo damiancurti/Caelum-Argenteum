@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.44** — 2026-10-18.
+Documentation version: **5.4.45** — 2026-10-18.
+
+## 5.4.45 - Private breath regression evidence (#357)
+
+validation_5445 contains deterministic diagnostic sources, native logs and
+manifest hashes. The author's save, runtime packages, engine and development
+IWAD remain local. No art/audio resources change. The normal gameplay change
+only excludes technical navigation targets from demon breath.
 
 ## 5.4.42 - Distributed update evidence (#318)
 

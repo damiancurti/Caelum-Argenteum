@@ -1,0 +1,48 @@
+{
+  "issue": 357,
+  "release": "5.4.45",
+  "validation": {
+    "version": "5.4.45",
+    "documents": 11,
+    "audio_files": 111,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "normal_package_sha256": "964c9ba1a94712815f1507ac2c9534171bda4171d21b0754e204e8a26859cf75",
+  "source_byte_equality": true,
+  "members": 16378,
+  "tested_gameplay_identical": true,
+  "only_diagnostic_label_differences": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "native_assertions": 41,
+  "baseline_affected": 20,
+  "candidate_recovered": 20,
+  "author_acceptance": "Partial CA353-01; reported artillery behavior still needs retest.",
+  "review": "Independent review requested gated save observation and actual bolas; both are included."
+}
