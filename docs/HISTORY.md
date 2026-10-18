@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
+
+## 5.4.35 - Prisoner escort replacement (#322, 2026-10-18)
+
+The author again reported excessive turning and slow movement during #324's
+autosave preview. This does not invalidate the separately confirmed bag/follower
+reload. A native friendly SoundAlert reproduced 504.804 MU of wandering and
+53 angle changes (5,150.891 accumulated degrees) in 140 tics while the player
+stood still. The replacement's initial matched control records zero travel,
+turning and idle state changes. The original healthy Unitario walked 87.5 MU/s
+(2.734375 m/s). The author explicitly chose the player's movement formula with
+the prisoner's own attributes and penalties instead of that source-actor pace.
+
+One movement owner replaces the competing state action/Tick authorities; standing
+and walking poses no longer execute native enemy search/wandering. Bounded trail
+and local detours retain collision, and recovery validates body fit/support and
+solid non-shootable props before moving. The overlapping fallback is retired.
+The final runtime passes 23 native runs/375 assertions, including four-body
+corners/reversal, a closed/reopened narrow door, stillness and resumption without
+resetting controllers, supporting-floor/stair geometry, current/legacy saves,
+hub return and the complete 136-point MAP02 rescue itinerary. Four original
+prisoners reach extraction without overlap or recovery teleport; their port
+representations pay exactly four authored rewards and retain paid state after
+reload and a sewer/port return. No combatants or puzzle survival are tested by
+that isolated route driver. Independent code review found no remaining blocker;
+project validation and all 16,375 normal/tested/source members agree.
+
+An unreachable upper goal uses at most 4,225 position queries per search across
+all sampling phases. Thirty-five isolated searches average 2.415323 ms, with a
+2.448400-ms peak on this machine; this is not a siege FPS measurement. Earlier
+compile, controller and fixture failures remain archived with their own hashes.
+CA322-01 is outstanding; native conversation flags and automated movement do
+not establish author acceptance. Evidence: assets/validation_5435.
 
 ## 5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)
 

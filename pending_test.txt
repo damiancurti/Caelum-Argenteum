@@ -1,3 +1,21 @@
+CA322-01 | Origin 5.4.35 / issue #322 | Stable prisoner following and individual walking speed
+Prerequisites: the current build, or the isolated four-prisoner corridor preview
+launched with assets/validation_5435/preview.ps1. Use only that preview's saves.
+Steps: release a prisoner, walk around corners and through an opened door,
+stop, reverse direction and approach the follower. In a narrow passage, also
+try stepping aside. Speak with it and resume walking. Repeat with all four;
+wait for them to settle and move again. Save/reload while following or waiting
+at a closed door, then open it. In the campaign, escort them to extraction and
+check their port dialogue/reward; report any obstruction and its location.
+Expected: no persistent idle turning or walking animation; the player-derived
+pace retains each prisoner's own load/attributes and penalties. Collision,
+conversation, combat, rescue identity and one-time rewards remain functional.
+No replacement copies or overlapping recovery teleport. Native checks do not
+replace author acceptance. Close GZDoom when finished; its terminal stays open.
+Known limit: a compact row of all four can still block reversal in the 96-MU
+test corridor. Moving away and being followed is a separate check; report this
+passage limitation explicitly rather than treating successful following as its fix.
+
 CA324-01 | Origin 5.4.34 / issue #324 | Five active minutes since the latest autosave
 Prerequisites: the current normal build, or the isolated #324 preview launched
 with assets/validation_5434/preview.ps1. Its initial timer has only ten active

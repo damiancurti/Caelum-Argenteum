@@ -1,0 +1,313 @@
+[
+  {
+    "label": "route",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "corridor",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "kind0",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "kind1",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "kind2",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "kind3",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "edges",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "stairs",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "platform",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "budget",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "combat",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "snapshot",
+    "exit": 0,
+    "saves": {
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-current",
+    "exit": 0,
+    "saves": {
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "hub",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "ongoing",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-ongoing",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "blocked-save",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-blocked.zds": {
+        "sha256": "f030a8cd48f18f72c456ed572fc0654234c0da07a8372ef2eae3cb16db40623c",
+        "map": "MAP97"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-blocked",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-blocked.zds": {
+        "sha256": "f030a8cd48f18f72c456ed572fc0654234c0da07a8372ef2eae3cb16db40623c",
+        "map": "MAP97"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-legacy",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "8430d1b302ec74f8e870d8ef9d546258923f41ffdc459a6eca8f80fd4e84e99e",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "9d1a57967aba92bb482737b1d39764ef9b105284ceefea065182365ab6713e99",
+        "map": "MAP99"
+      },
+      "escort-blocked.zds": {
+        "sha256": "f030a8cd48f18f72c456ed572fc0654234c0da07a8372ef2eae3cb16db40623c",
+        "map": "MAP97"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-legacy.zds": {
+        "sha256": "f40d78c9c362b14b22719ecd393445e3d587d7150ef06e803d3c885476a37ecd",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "campaign",
+    "exit": 0,
+    "saves": {
+      "auto00.zds": {
+        "sha256": "f59d66963376563ab0c627605d78652802c20ad50df9162eb18238433d685bab",
+        "map": "MAP03"
+      },
+      "auto01.zds": {
+        "sha256": "1d22f5f97b3cb13caa871355f4b79c733c37ca1de737b849ea23b64de0d71cee",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "a224cec4ab0e330f650a59e0f796bfeca1bad973730aec75b47da6464648414d",
+        "map": "MAP02"
+      },
+      "auto03.zds": {
+        "sha256": "8349b0c7c4d2b0a4857b76c7a93917d5faf3d546d021352568ba448b8699fe1e",
+        "map": "MAP02"
+      },
+      "campaign-finish.zds": {
+        "sha256": "e0eda0714d28c256e9c8dcd81c8aee94d3f36c8faf2767dcd6b6cdc61f2128b3",
+        "map": "MAP02"
+      },
+      "campaign-port.zds": {
+        "sha256": "6f79a519cb2cec0a7e1632f2b265b195d4ee79bd1f2a1b61fe2dac34d67f63bf",
+        "map": "MAP03"
+      },
+      "escort-blocked.zds": {
+        "sha256": "f030a8cd48f18f72c456ed572fc0654234c0da07a8372ef2eae3cb16db40623c",
+        "map": "MAP97"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-legacy.zds": {
+        "sha256": "f40d78c9c362b14b22719ecd393445e3d587d7150ef06e803d3c885476a37ecd",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "port-reload",
+    "exit": 1,
+    "saves": {
+      "auto00.zds": {
+        "sha256": "f59d66963376563ab0c627605d78652802c20ad50df9162eb18238433d685bab",
+        "map": "MAP03"
+      },
+      "auto01.zds": {
+        "sha256": "1d22f5f97b3cb13caa871355f4b79c733c37ca1de737b849ea23b64de0d71cee",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "a224cec4ab0e330f650a59e0f796bfeca1bad973730aec75b47da6464648414d",
+        "map": "MAP02"
+      },
+      "auto03.zds": {
+        "sha256": "8349b0c7c4d2b0a4857b76c7a93917d5faf3d546d021352568ba448b8699fe1e",
+        "map": "MAP02"
+      },
+      "campaign-finish.zds": {
+        "sha256": "e0eda0714d28c256e9c8dcd81c8aee94d3f36c8faf2767dcd6b6cdc61f2128b3",
+        "map": "MAP02"
+      },
+      "campaign-port.zds": {
+        "sha256": "6f79a519cb2cec0a7e1632f2b265b195d4ee79bd1f2a1b61fe2dac34d67f63bf",
+        "map": "MAP03"
+      },
+      "escort-blocked.zds": {
+        "sha256": "f030a8cd48f18f72c456ed572fc0654234c0da07a8372ef2eae3cb16db40623c",
+        "map": "MAP97"
+      },
+      "escort-four.zds": {
+        "sha256": "b58bb806252584826591c31cfb67233590d0fd31e37a37e650d5d17041364ba3",
+        "map": "MAP99"
+      },
+      "escort-legacy.zds": {
+        "sha256": "f40d78c9c362b14b22719ecd393445e3d587d7150ef06e803d3c885476a37ecd",
+        "map": "MAP99"
+      },
+      "escort-ongoing.zds": {
+        "sha256": "28fc0982cbfea1dc92e6bf71f6a5d5b1f944d87efcd84792f052fd036446922b",
+        "map": "MAP99"
+      }
+    }
+  }
+]

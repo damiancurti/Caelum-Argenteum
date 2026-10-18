@@ -70,10 +70,13 @@ class CaelumPrisonerUnitario : CaelumCaella
         PUNI BBBB 10;
         Goto Spawn;
     EscortFollow:
-        PUNC ABCD 1 A_CaelumPrisonerFollow;
+        PUNC ABCD CaelumConstants.PRISONER_WALK_STATE_TICS;
         Loop;
     Run:
         Goto See;
+    EscortIdle:
+        PUNI A -1;
+        Stop;
     }
 }
 
@@ -146,10 +149,13 @@ class CaelumPrisonerFederal : CaelumRonnie
         PFED BBBB 10;
         Goto Spawn;
     EscortFollow:
-        PFEC ABCD 1 A_CaelumPrisonerFollow;
+        PFEC ABCD CaelumConstants.PRISONER_WALK_STATE_TICS;
         Loop;
     Run:
         Goto See;
+    EscortIdle:
+        PFED A -1;
+        Stop;
     }
 }
 
@@ -222,10 +228,13 @@ class CaelumPrisonerBestia : CaelumRulo
         PBES BBBB 10;
         Goto Spawn;
     EscortFollow:
-        PBRN ABCD 1 A_CaelumPrisonerFollow;
+        PBRN ABCD CaelumConstants.PRISONER_WALK_STATE_TICS;
         Loop;
     Run:
         Goto See;
+    EscortIdle:
+        PBES A -1;
+        Stop;
     }
 }
 
@@ -298,9 +307,12 @@ class CaelumPrisonerTarot : CaelumArgento
         PTAR BBBB 10;
         Goto Spawn;
     EscortFollow:
-        PTRN ABCD 1 A_CaelumPrisonerFollow;
+        PTRN ABCD CaelumConstants.PRISONER_WALK_STATE_TICS;
         Loop;
     Run:
         Goto See;
+    EscortIdle:
+        PTAR A -1;
+        Stop;
     }
 }

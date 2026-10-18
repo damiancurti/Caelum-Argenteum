@@ -1,0 +1,12 @@
+[
+  {
+    "label": "campaign",
+    "exit": 1,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "a42ad34e240b19ffb570ec1320ee1122d1d13024b6a403a617956b3553553300",
+        "map": "MAP02"
+      }
+    }
+  }
+]

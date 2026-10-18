@@ -1,10 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
 
-**5.4.34/#324:** five active real minutes since latest autosave, including
-preserved map-entry saves (author Oct18). Native36runs/138checks, files/build pass;
-validation_5434. CA324-01: bag/follower reload accepted Oct18; other checks pending.
+**5.4.35/#322:** one escort owner; player-formula walking approved Oct18.
+23runs/375 native checks; full rescue/rewards/save recovery pass. CA322-01 pending.
+
+**5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
+CA324-01 bag/follower accepted Oct18; other checks pending. validation_5434.
 
 **5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
 Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.

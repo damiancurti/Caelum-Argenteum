@@ -1,0 +1,30 @@
+[
+  {
+    "label": "port-reload",
+    "exit": 0,
+    "saves": {
+      "campaign-port.zds": {
+        "sha256": "6f79a519cb2cec0a7e1632f2b265b195d4ee79bd1f2a1b61fe2dac34d67f63bf",
+        "map": "MAP03"
+      }
+    }
+  },
+  {
+    "label": "port-roundtrip",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "700fd93b756dc1f5cf9990892531962964802deb9792f22cedccbfe7e8e5eab3",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d8eb2a80c9aa7584731be92466b218968ac90f721e085878361af96035041da7",
+        "map": "MAP03"
+      },
+      "campaign-port.zds": {
+        "sha256": "6f79a519cb2cec0a7e1632f2b265b195d4ee79bd1f2a1b61fe2dac34d67f63bf",
+        "map": "MAP03"
+      }
+    }
+  }
+]
