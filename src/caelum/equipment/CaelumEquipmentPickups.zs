@@ -181,6 +181,7 @@ class CaelumEquipmentItem : Inventory
             {
                 let model=new("CaelumWeaponModel");
                 UnitWeight=model.GetWeightFor(ItemType,Tier,EquipmentSize);
+                CaelumActorMaintenance.InventoryChanged(Owner);
             }
         }
         ShotgunRevision=CaelumShotgunRules.REVISION;
@@ -454,6 +455,7 @@ class CaelumEquipmentItem : Inventory
     override Inventory CreateTossable(int tossAmount)
     {
         if (IsLimboTemporary() || IsLimboFirstWeapon()) return null;
+        let previousOwner=Owner;
         CaelumEquipmentItem copy = CaelumEquipmentItem(
             Super.CreateTossable(tossAmount)
         );
@@ -481,6 +483,7 @@ class CaelumEquipmentItem : Inventory
             copy.AcquisitionResolved = HasAcquiredIdentity();
             TransferProjectileWearIdentity(copy);
         }
+        CaelumActorMaintenance.InventoryChanged(previousOwner);
         return copy;
     }
 

@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.42** — 2026-10-18.
+Documentation version: **5.4.43** — 2026-10-18.
+
+## 5.4.43 - Adopted production caches and group targeting (#353)
+
+Scope: production adoption of the three author-approved #318 improvements,
+automatic at the existing >=500 threshold. Derived state, native mutation hooks,
+subscriber lifecycle and reversible save/hub migration are implemented.
+Native regression passes 3,705 assertions, save/reload/forward migration, both
+hub legs and two cached-read audits. Presented-frame evidence is recorded in
+validation_5443. CA353-01 remains an actionable author check. This does not close
+the wider #318/#327 performance/route work. #354 separately investigates fewer
+structural dependency reads; no research approximation is adopted here.
+The18-run production comparison improves every paired candidate, but city46.80
+and front32.20 median FPS plus high frame-time tails do not meet stable50FPS.
+Retain the broad control ranges in validation_5443 when interpreting gains.
 
 ## 5.4.42 - Actor-local 100-tic maintenance trial (#318)
 

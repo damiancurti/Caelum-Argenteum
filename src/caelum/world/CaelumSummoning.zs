@@ -120,6 +120,7 @@ class CaelumSummoningEffect : Inventory
     override void Travelled()
     {
         if(Body==null)return;
+        Body.ResetMaintenanceForTravel();
         Body.ChangeStatNum(STAT_DEFAULT);
         Body.SetOrigin(Owner.Pos,false);Body.FindFloorCeiling();
         for(Inventory item=Body.Inv;item!=null;item=item.Inv)

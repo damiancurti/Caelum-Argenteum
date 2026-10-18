@@ -58,6 +58,7 @@ class CaelumHouseResident : Object play
     {
         if(Body==null || !Suspended)return Body!=null;
         if(!Body.CombatProfileInitialized)return false;
+        Body.ResetMaintenanceForTravel();
         Body.SetOrigin(point,false);Body.FindFloorCeiling();
         // Un acceso ocupado aplaza la colocación; no consume ni duplica al soldado.
         if(Body.health>0)

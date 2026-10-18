@@ -6,17 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.42.** Obtain and update the complete repository, validate
+**Current release: 5.4.43.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-The current siege experiment (#318) tests owner-local caches and staggered
-100-tic maintenance in normal combat, including the approved maximum-adrenaline
-rule while retaining hunger/thirst consumption and damage. It passes 1,068 native
-checks and three cache audits. Across 72 matched ETW windows, conservative
-caches/resources improve FPS by about 3%; target100 helps more but changes
-combat response. Neither camera reaches 60 FPS with any tested combination.
-The prototype is separate from normal gameplay. Target/thermal timing changes
-are not equivalent optimizations. See [evidence](assets/validation_5442/RESULTS.md).
+Production actor maintenance (#353) adopts the author's selected #318 changes:
+derived-statistics/carried-weight caches, redundant full-resource recovery skips,
+and staggered port attacker group targeting. They activate automatically at
+500 living combatants map-wide. Individual bodies, active recovery, physics and
+35-tic thermal updates remain. Target response changes deliberately; native
+attack visibility/range checks remain. See [evidence](assets/validation_5443/RESULTS.md).
+Author acceptance is pending; further structural-cache research belongs to #354.
+The earlier [prototype](assets/validation_5442/RESULTS.md) does not substitute for
+measurements of this integrated runtime.
 
 The earlier siege update investigation (#318) includes 66 isolated workload windows,
 with 600 soldiers and 998 Mandingas retained. Target selection and the residual

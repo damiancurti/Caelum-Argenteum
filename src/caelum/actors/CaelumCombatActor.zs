@@ -3,6 +3,52 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    int MaintenanceRevision;
+    transient CaelumActorMaintenance Maintenance;
+    transient CaelumPopulationState MaintenancePopulation;
+    transient CaelumTargetSubscriptions TargetSubscribers;
+
+    void ResetMaintenanceForTravel()
+    {
+        // Los plazos y suscriptores pertenecen al mapa, no al cuerpo trasladado.
+        Maintenance=null;MaintenancePopulation=null;
+        CaelumTargetSubscriptions.Invalidate(self);
+        if(SiegeCombatant!=null)CaelumTargetSubscriptions.Unwatch(SiegeCombatant);
+    }
+
+    CaelumActorMaintenance GetActorMaintenance()
+    {
+        if(MaintenanceRevision<CaelumActorMaintenance.REVISION)
+        {
+            Maintenance=null;MaintenancePopulation=null;
+            MaintenanceRevision=CaelumActorMaintenance.REVISION;
+        }
+        if(MaintenancePopulation==null)MaintenancePopulation=CaelumPopulationState.Get();
+        if(MaintenancePopulation==null || !MaintenancePopulation.HighDensity)
+        {
+            if(Maintenance!=null)Maintenance.Invalidate();
+            return null;
+        }
+        if(Maintenance==null)
+        {
+            Maintenance=new("CaelumActorMaintenance");
+            Maintenance.Phase=MaintenancePopulation.NextMaintenancePhase;
+            MaintenancePopulation.NextMaintenancePhase=(Maintenance.Phase+1)%CaelumConstants.ACTOR_MAINTENANCE_TICS;
+        }
+        return Maintenance;
+    }
+
+    override void AddInventory(Inventory item)
+    { Super.AddInventory(item);CaelumActorMaintenance.InventoryChanged(self); }
+    override void RemoveInventory(Inventory item)
+    { Super.RemoveInventory(item);CaelumActorMaintenance.InventoryChanged(self); }
+    override bool UseInventory(Inventory item)
+    {
+        bool used=Super.UseInventory(item);
+        CaelumActorMaintenance.InventoryChanged(self);
+        return used;
+    }
+
     // La postura cambia colisión/anatomía, no la talla fisiológica del cuerpo.
     virtual double GetPhysiologicalHeight() { return Height; }
     bool ThermalBluntDelivery;
@@ -1051,6 +1097,18 @@ class CaelumCombatActor : Actor
 
     virtual double GetAttackCarriedWeight()
     {
+        let cache=GetActorMaintenance();
+        if(cache==null)return CalculateAttackCarriedWeight();
+        if(cache.WeightChanged(self))
+        {
+            cache.Weight=CalculateAttackCarriedWeight();cache.InventoryHead=Inv;
+            cache.WeightReady=true;cache.WeightDue=cache.NextDue();
+        }
+        return cache.Weight;
+    }
+
+    double CalculateAttackCarriedWeight()
+    {
         double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
         for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
         {
@@ -1269,6 +1327,18 @@ class CaelumCombatActor : Actor
     }
 
     void UpdateActorOffensiveStatistics()
+    {
+        let cache=GetActorMaintenance();
+        if(cache!=null && !cache.OffenseChanged(self))
+        {
+            // Restaurar también asignaciones alteradas por consumidores, como la recarga.
+            cache.RestoreOffense(self);return;
+        }
+        CalculateActorOffensiveStatistics();
+        if(cache!=null)cache.StoreOffense(self);
+    }
+
+    void CalculateActorOffensiveStatistics()
     {
         CombatEffectiveDexterity = CombatDexterity
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
@@ -3608,6 +3678,18 @@ class CaelumCombatActor : Actor
 
     void UpdateCombatHealthEffects()
     {
+        let cache=GetActorMaintenance();
+        if(cache!=null && !cache.HealthChanged(self))
+        {
+            // Restaurar también asignaciones alteradas por consumidores, como la recarga.
+            cache.RestoreHealth(self);return;
+        }
+        CalculateCombatHealthEffects();
+        if(cache!=null)cache.StoreHealth(self);
+    }
+
+    void CalculateCombatHealthEffects()
+    {
         double healthRatio = CombatMaximumHealth > 0
             ? Clamp(double(health) / CombatMaximumHealth, 0.0, 1.0)
             : 1.0;
@@ -3773,6 +3855,59 @@ class CaelumCombatActor : Actor
         return moved;
     }
 
+    void UpdateCombatResourceRecovery(bool sleeping)
+    {
+        let cache=GetActorMaintenance();
+        if(cache!=null)
+        {
+            if(level.maptime<cache.ResourceDue && health>=CombatMaximumHealth
+                && CurrentCombatAnima>=MaximumCombatAnima && CurrentCombatAir>=MaximumCombatAir
+                && CurrentCombatLucidity>=CaelumConstants.MAXIMUM_LUCIDITY)return;
+            cache.ResourceDue=cache.NextDue();
+        }
+        CalculateCombatResourceRecovery(sleeping);
+    }
+
+    void CalculateCombatResourceRecovery(bool sleeping)
+    {
+        double idleFactor=IsCombatIdle() ? CaelumRestRules.CHAIR_RESOURCE_FACTOR : 1;
+        if (idleFactor>1 && health>0 && health<CombatMaximumHealth)
+        {
+            IdleHealthAccumulator+=CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+                *CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;
+            int recovered=int(IdleHealthAccumulator);
+            IdleHealthAccumulator-=recovered;health=Min(CombatMaximumHealth,health+recovered);
+        }
+        if (health > 0 && CurrentCombatAnima < MaximumCombatAnima)
+        {
+            CurrentCombatAnima = Min(
+                MaximumCombatAnima,
+                CurrentCombatAnima
+                    + CombatAnimaRegenerationPerSecond * idleFactor / TICRATE
+            );
+        }
+        if (health > 0 && !CombatAirSpending
+            && CurrentCombatAir < MaximumCombatAir)
+        {
+            CurrentCombatAir = Min(
+                MaximumCombatAir,
+                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor * CaelumBreathing.ActorFactor(self) / TICRATE
+            );
+        }
+        if (health > 0 && !sleeping
+            && CurrentCombatLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
+        {
+            CurrentCombatLucidity = Min(
+                CaelumConstants.MAXIMUM_LUCIDITY,
+                CurrentCombatLucidity
+                    + CaelumConstants.MAXIMUM_LUCIDITY
+                        / CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS
+                        / TICRATE
+            );
+            UpdateActorLucidityState();
+        }
+    }
+
     override void Tick()
     {
         if(CaelumRedemption.Pending(self))return;
@@ -3905,42 +4040,7 @@ class CaelumCombatActor : Actor
 
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
-        double idleFactor=IsCombatIdle() ? CaelumRestRules.CHAIR_RESOURCE_FACTOR : 1;
-        if (idleFactor>1 && health>0 && health<CombatMaximumHealth)
-        {
-            IdleHealthAccumulator+=CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
-                *CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;
-            int recovered=int(IdleHealthAccumulator);
-            IdleHealthAccumulator-=recovered;health=Min(CombatMaximumHealth,health+recovered);
-        }
-        if (health > 0 && CurrentCombatAnima < MaximumCombatAnima)
-        {
-            CurrentCombatAnima = Min(
-                MaximumCombatAnima,
-                CurrentCombatAnima
-                    + CombatAnimaRegenerationPerSecond * idleFactor / TICRATE
-            );
-        }
-        if (health > 0 && !CombatAirSpending
-            && CurrentCombatAir < MaximumCombatAir)
-        {
-            CurrentCombatAir = Min(
-                MaximumCombatAir,
-                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor * CaelumBreathing.ActorFactor(self) / TICRATE
-            );
-        }
-        if (health > 0 && !sleeping
-            && CurrentCombatLucidity < CaelumConstants.MAXIMUM_LUCIDITY)
-        {
-            CurrentCombatLucidity = Min(
-                CaelumConstants.MAXIMUM_LUCIDITY,
-                CurrentCombatLucidity
-                    + CaelumConstants.MAXIMUM_LUCIDITY
-                        / CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS
-                        / TICRATE
-            );
-            UpdateActorLucidityState();
-        }
+        UpdateCombatResourceRecovery(sleeping);
         if (CombatLucidityPhysicalStunRemaining > 0.0)
         {
             if(!CaelumTelekinesisRules.Held(self)){Vel.X=0;Vel.Y=0;}

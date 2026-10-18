@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.42** — 2026-10-18.
+Documentation version: **5.4.43** — 2026-10-18.
+
+## 5.4.43 - Production maintenance and target subscriptions (#353, 2026-10-18)
+
+The author approved production adoption of derived-statistics/carried-weight
+caches, saturated-resource skips and phased port attacker group targeting.
+Implementation retains per-owner guards, all assigned outputs and active clocks;
+native inventory changes notify their owner. Dead/destroyed targets notify only
+subscribed command groups. Player, housed, summoned and converted body travel
+clears stale derived state. Idempotent revisions reconstruct caches on load.
+Temperature and siege adrenaline rules are not changed in this focused patch.
+Independent review identified player travel and outgoing-leader subscription
+cleanup; both were corrected before final tests. Native checks pass 3,705
+assertions, save/reload/forward migration, both legs of a 20-check native hub
+round trip and two 700-tic cached-read audits with zero mismatches.
+Final old->new->old save loading adds five passing rollback assertions, preserving
+actual HP/resources/inventory/weight. Full-resource
+skips retain active recovery and timers. Evidence: validation_5443; manual
+CA353-01 remains pending. #354 is a separate investigation.
+
+The final18-run normal-runtime comparison supplies9,007 validated DXGI intervals:
+city34.40->46.80 and front20.58->32.20 median FPS; paired median gains26.16%/70.70%.
+All six candidate comparisons improve, but controls vary substantially and p99
+tails remain high (integrated71.26/120.95ms). This does not certify stable50FPS.
+All same-condition checkpoints match; target cadence changes all12 paired
+cross-condition state comparisons. Initial36 GDI-only comparison windows are
+excluded. A controlled startup wait restored DXGI capture; CA-KP-131 records
+the finding without claiming an established driver-level cause.
+Normal packaging matches all16,378 source members. The city preview loads the
+saved siege with free controls. The collector and temporary power request were
+released after the shared measurements without changing the power plan.
 
 ## 5.4.42 - Staggered actor updates and siege focus trial (#318, 2026-10-18)
 

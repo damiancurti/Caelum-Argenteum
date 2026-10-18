@@ -274,3 +274,6 @@
 /assets/validation_5434/** -text whitespace=cr-at-eol
 /src/caelum/data/CaelumSaveRules.zs text eol=lf
 /src/caelum/world/CaelumAutosaveEvents.zs text eol=lf
+
+# Preserve #353 production-cache tooling and measured evidence byte hashes.
+/assets/validation_5443/** -text whitespace=cr-at-eol

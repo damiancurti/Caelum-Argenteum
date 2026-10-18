@@ -84,3 +84,15 @@ Expected: no reservoir trial props in the city; normal routes and individual
 resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
+
+CA353-01 | Origin 5.4.43 / issue #353 | Automatic maintenance in live siege
+Prerequisites: current normal build, MAP03 siege with the accepted 1,000-living
+attacker admission cap and 600 defenders; keep a separate save before testing.
+Steps: observe combat in city streets and near the attackers; kill a current
+target and observe nearby groups retargeting. Use/transfer finite items, save
+and reload during the siege, then enter a house and return. Watch reloading
+soldiers, wounded bodies and resource recovery. Report FPS, location and view.
+Expected: inventory/resource state persists without duplication; no cumulative
+reload slowdown or stuck groups. Shared searches may take up to 100 tics at
+high population; attacks still require native visibility/range. No general
+50-FPS guarantee or manual acceptance is inferred from automated measurements.

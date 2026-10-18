@@ -21,6 +21,8 @@ class CaelumSiegeCombatant : Object play
     Actor SharedTarget;
     int NextSharedTargetTic;
     bool SharedTargetValid;
+    bool SharedTargetWasPresent;
+    transient Actor SharedTargetSubscription;
     Actor NavigationTarget;
     vector3 CrewOffset;
     int Lane;
@@ -319,12 +321,16 @@ class CaelumHostileMachine : Actor
 
 class CaelumSiegeEvents : EventHandler
 {
+    override void WorldThingDestroyed(WorldEvent e)
+    { CaelumTargetSubscriptions.Retire(e.Thing); }
+
     override void WorldTick()
     {
         let archive=CaelumCorpseArchive.Get(true);if(archive!=null)archive.Tick();
     }
     override void WorldThingDied(WorldEvent e)
     {
+        CaelumTargetSubscriptions.Retire(e.Thing);
         CaelumSiegeCombatant.ConfirmDeath(CaelumCombatActor(e.Thing));
         CaelumCorpseArchive.Died(e.Thing);
     }

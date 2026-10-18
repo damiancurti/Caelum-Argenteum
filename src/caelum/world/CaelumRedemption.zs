@@ -150,6 +150,8 @@ class CaelumRedemptionEffect : Inventory
             let bond=Converts[i];
             if(bond==null || bond.Conversion!=self || bond.Owner==null || !bond.AwaitingPlacement)continue;
             Actor body=bond.Owner;body.ChangeStatNum(STAT_DEFAULT);
+            let npc=CaelumCombatActor(body);
+            if(npc!=null)npc.ResetMaintenanceForTravel();
             body.SetOrigin(Owner.Pos,false);body.FindFloorCeiling();
             for(Inventory item=body.Inv;item!=null;item=item.Inv)
             {item.ChangeStatNum(STAT_INVENTORY);item.SetOrigin(body.Pos,false);}

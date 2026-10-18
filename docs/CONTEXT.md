@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.42** — 2026-10-18.
+Documentation version: **5.4.43** — 2026-10-18.
 
 **5.4.40/#325:** rest safety;278checks; CA325-01 accepted Oct18.
 
@@ -29,11 +29,11 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
-**5.4.42/#318:** 100-tic prototype;1,068 checks/3audits/72ETW windows pass.
-Caches/resources:+3%FPS;targets100 more but changes combat. Maximum siege adrenaline approved; hunger/thirst
-penalties ignored, consumption/damage retained. Target100 changes combat;
-thermal100 is not equivalent. Production integration remains. validation_5442;
-earlier isolated costs: validation_5441. CA318-01..05/CA327-01 pending.
+**5.4.43/#353:** adopted #318 caches/resources/target100 now automatic at >=500
+living combatants; native/save/hub/FPS evidence in validation_5443. CA353-01
+pending. #354 investigates structural guards separately. Thermal35 unchanged;
+maximum siege adrenaline approved but not yet production. Prototype evidence:
+validation_5442; isolated costs: validation_5441. CA318-01..05/CA327-01 pending.
 No6000-simultaneous tests again.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport

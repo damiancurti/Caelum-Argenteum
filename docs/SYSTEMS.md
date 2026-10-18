@@ -1,6 +1,31 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.42** — 2026-10-18.
+Documentation version: **5.4.43** — 2026-10-18.
+
+## Production actor maintenance (#353, 5.4.43)
+
+At the existing automatic threshold of at least 500 living shootable combatants
+across the map, NPC derived health/offensive statistics and carried weight use
+owner-local caches with fallback phases distributed over 100 tics. Scalar and
+armor/personality guards still detect changed inputs at the point of use.
+Native add/remove/use/stack/split and current direct item writes invalidate the
+affected owner's weight. Cache hits restore all assigned outputs, including
+Speed; actual health, damage, resource spending and inventory remain individual.
+Below the threshold the original calculations run and derived caches invalidate.
+Only redundant recovery when health, anima, air and lucidity are already full
+is skipped; active recovery and combat/status timers retain their original step.
+
+Only the port attackers' existing command groups adopt phased 100-tic shared
+target searches at high density. Other factions keep their existing AI rules.
+Death/destruction invalidates subscribed groups locally; native attack LOS/range
+checks still apply. This deliberately changes target response from the old
+8-tic high-density cadence. Empty searches also expire within 100 tics.
+Transient caches/subscriptions rebuild after load and clear on body travel;
+maintenance revision 1 and targeting revision 3 are idempotent migrations.
+No new recurring actor-wide scan is introduced: population phases are assigned
+through the existing census and lazy owner-local initialization.
+Temperature remains at its existing 35-tic cadence. The separately approved
+maximum-adrenaline rule below is still a prototype, outside this patch.
 
 ## Actor-local maintenance experiment and siege focus (#318, 5.4.42)
 
@@ -488,8 +513,9 @@ order, so their one-time revision-1 import uses stable thinker order.
 
 The 6,660 total / 1,000 living Mandinga budget, NPC thermal disable, 105-tic
 perception interval and soldier model substitution are isolated diagnostics.
-They do not change ordinary encounter population, thermal rules or the existing
-8-tic perception period. High-density targeting remains automatic at 500 living
+Those historical diagnostic settings did not change ordinary encounter rules.
+The later #353 adoption below uses 100-tic port group targeting; thermal rules
+remain unchanged. High-density targeting remains automatic at 500 living
 combatants across the entire map. Thermal-off changes subsequent survival and
 combat workload; results must report that divergence. The 3D control reuses the
 accepted fixed Domingo prototype, not a completed modular soldier asset.
@@ -4308,14 +4334,15 @@ Actual attack preparation/release still checks each member's own range, line
 of sight and resource costs. Sharing an order does not authorize attacks
 through a wall or disable recovery, individual movement, collision or status.
 
-Perception reuses a group decision for the existing eight-tic period. The
-first active member queries immediately; after expiry, the next requesting
-member refreshes it once for the group. Groups with no requests do no background
-perception work. Visibility/position changes can remain cached until that
-refresh; individual attacks still validate their own current conditions.
-Dead or destroyed targets are never returned by the selector and are reacquired
-on the next expired query. The tested background staggering alternative is
-not shipped because it worsened congestion frame-time tails.
+As adopted in #353, perception reuses a group decision until its next phase in
+the shared 100-tic period. The first active member queries immediately; after
+expiry, the next requesting member refreshes it once for the group. Groups with
+no requests do no background perception work. Visibility/position changes can
+remain cached until that refresh; individual attacks still validate their own
+current conditions. Dead or destroyed targets notify their subscribed groups
+locally and are reacquired on the next request. The selector also rejects a
+dead, destroyed or unshootable cached target directly. This demand-driven phase
+distribution is distinct from the earlier rejected background-query experiment.
 An inactive leader falls back to the live member until ordinary regrouping.
 The roster of living target candidates is reused among leaders in the same
 tic; positions, health, shootability and visibility remain live query inputs.
@@ -4336,7 +4363,7 @@ ammunition, ballistics and reload timing are unchanged.
 
 Below the threshold, per-member targeting and full guard scans resume and
 negative cannon searches have no added retry delay. Mode transitions clear
-only derived perception/deadline caches. Targeting revision 2 initializes the
+only derived perception/deadline caches. Targeting revision 3 initializes the
 new caches idempotently; population revision 1 is rebuilt from native actors
 on load/travel and each tic. Rosters, identities, casualties, crews, resources
 and saved inventory/Tarot state are not reconstructed. The population gate is

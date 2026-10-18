@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.42** — 2026-10-18.
+Documentation version: **5.4.43** — 2026-10-18.
+
+## 5.4.43 - Production actor maintenance (#353)
+
+The author adopted statistics/carried-weight caches, saturated-resource skips
+and phased port attacker targeting from #318. They now activate automatically
+at the existing map-wide threshold of 500 living shootable combatants. Movement,
+physics, active recovery, combat timers and thermal cadence are retained.
+Owner-local changes invalidate inventory caches; subscribed command groups are
+notified when a target dies, is destroyed or travels. Save and hub checks cover
+derived-state reconstruction. Native evidence passes 3,705 assertions, save/reload,
+both hub legs and two combat cached-read audits without mismatches. Presented-frame
+evidence is in validation_5443; author acceptance remains CA353-01.
+Eighteen matched runs yield city34.40->46.80 and front20.58->32.20 median FPS.
+All six paired comparisons improve, but broad control variation and high p99
+times preclude a stable50FPS claim. These are this session's observations.
+Further structural-guard reduction is a separate investigation, #354.
 
 ## 5.4.42 - Distributed actor maintenance experiment (#318)
 
