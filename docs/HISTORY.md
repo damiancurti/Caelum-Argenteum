@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.29** — 2026-10-17.
+Documentation version: **5.4.30** — 2026-10-17.
+
+## 5.4.30 - Sleeping bag quick-item access (#319, 2026-10-17)
+
+The author requested the sleeping bag in the same bottom-center selector as
+consumables. Selection now includes its exact owned, unboxed instance; native
+Use opens the existing bag rest interaction without consuming inventory. No
+balance, map or save-schema changes. Native #282 controls/fixture are reused
+for focused #319 verification; reproducible evidence and fixture corrections
+are recorded in assets/validation_5430/RESULTS.md. Author CA319-01 is pending;
+agent verification is not author acceptance.
+
+Final verification: 30 native assertions across input/rest/transfers and
+save/load/hub; project validation/build pass. All 16,371 normal package members
+match the tested source bytes. Independent bounded source review passes.
 
 ## 5.4.29 - Adopt low-sky MAP03 and staged normal siege (#327)
 

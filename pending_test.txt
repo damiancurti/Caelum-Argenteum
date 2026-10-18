@@ -84,3 +84,13 @@ Expected: no reservoir trial props in the city; normal routes and individual
 resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
+
+CA319-01 | Origin 5.4.30 / issue #319 | Sleeping bag quick-item input
+Prerequisites: current build, personally carried sleeping bag and a consumable;
+use a safe, level area with room to deploy. The isolated preview provides these.
+Steps: use previous/next quick-item controls to select the bag; press Use twice.
+Choose sleep, stand up, repeat. Store/retrieve it in the Magic Box; select again,
+then save/reload and travel. Try deployment beside a wall and use during combat.
+Expected: icon/name/quantity identify the bag; one rest interaction opens;
+no loss or duplicate bag. Boxed bags disappear from selection; blocked rest
+explains its reason. Existing consumables still work. Author confirmation pending.

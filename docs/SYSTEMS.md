@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.29** — 2026-10-17.
+Documentation version: **5.4.30** — 2026-10-17.
+
+## 5.4.30 - Sleeping bag in quick items (#319)
+
+The owned sleeping bag now joins consumables in the bottom-center native
+previous/next selector. Its existing icon, name and quantity identify the exact
+Inventory instance. Native Use opens its existing live rest interaction without
+consuming the bag. Deployment, pickup, capacity, ownership and rest guards remain
+in force. A boxed bag is excluded until retrieved; stale selection reconciles
+on ordinary inventory changes and loading. No inventory/save schema is added.
+This extends the #282 eligible categories below; ordinary consumables and water
+containers retain their existing behavior. Evidence: assets/validation_5430.
+Author check CA319-01 remains pending.
 
 ## 5.4.29 - Current map catalogue and staged city siege (#327)
 

@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.29.** Obtain and update the complete repository, validate
+**Current release: 5.4.30.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+The sleeping bag is now available in the quick-item selector (#319). Use opens
+its existing rest interaction without consuming it; retrieve it from the Magic
+Box first. [Focused evidence](assets/validation_5430/RESULTS.md); CA319-01 awaits
+author testing.
 
 The current campaign is **MAP01 -> MAP02 -> MAP03**. MAP03 is the city with the
 adopted roof-height sky (184 MU in residential/shop districts, 1,024 MU around
