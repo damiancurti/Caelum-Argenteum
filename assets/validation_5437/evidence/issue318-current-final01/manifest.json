@@ -1,0 +1,8 @@
+{
+  "base": "ac7a71430daddc5ec233847a59f2024cc0321c9a",
+  "scope": "Current MAP03 native CPU/renderer attribution; no ETW/presented FPS claim",
+  "army": "Unchanged production admission cap, group size, cadence, reserve total and resurrection rules",
+  "retired": "No 6000-simultaneous scenario exists in this fixture",
+  "runtime_sha256": "0bc63675367b8c705ab44b9712d95ca1828ff44b593aadfb24c92dd72d5b202d",
+  "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c"
+}

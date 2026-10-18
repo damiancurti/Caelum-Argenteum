@@ -1,0 +1,87 @@
+{
+  "directory": "issue318-current-base03",
+  "runtime": "dd8a768d020548a027035c62225832658f2ca0625e33b564991ab2fa1b976347",
+  "cases": {
+    "peace-forward": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=240 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=590 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 35.004101080482585,
+      "window_wall_ms": [
+        11824.6747,
+        21823.5031
+      ],
+      "ui_callback_count": 5249,
+      "ui_callback_mean_ms_not_presentation": 1.9045086683177748,
+      "ui_callback_p99_ms_not_presentation": 2.6337,
+      "sampled_costs": []
+    },
+    "peace-ground": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=240 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=590 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1"
+      ],
+      "simulation_tics_per_second": 34.99163594925905,
+      "window_wall_ms": [
+        11820.9508,
+        21823.3411
+      ],
+      "ui_callback_count": 1739,
+      "ui_callback_mean_ms_not_presentation": 5.748591891891892,
+      "ui_callback_p99_ms_not_presentation": 7.8509,
+      "sampled_costs": []
+    },
+    "siege-city": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=3600 actors=8901 soldiers=600 demons=998 blockers=0 doors=0 missiles=14 corpses=2 flames=4",
+        "CA318 CENSUS end tic=3950 actors=8916 soldiers=600 demons=994 blockers=0 doors=0 missiles=13 corpses=6 flames=4"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 34.99781753609848,
+      "window_wall_ms": [
+        107816.9428,
+        117817.5664
+      ],
+      "ui_callback_count": 461,
+      "ui_callback_mean_ms_not_presentation": 21.65954360086768,
+      "ui_callback_p99_ms_not_presentation": 68.8829,
+      "sampled_costs": []
+    },
+    "siege-front": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=3600 actors=8912 soldiers=600 demons=997 blockers=0 doors=0 missiles=14 corpses=3 flames=4",
+        "CA318 CENSUS end tic=3950 actors=8919 soldiers=600 demons=993 blockers=0 doors=0 missiles=11 corpses=7 flames=4"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 34.73854141023213,
+      "window_wall_ms": [
+        107849.3787,
+        117924.6434
+      ],
+      "ui_callback_count": 424,
+      "ui_callback_mean_ms_not_presentation": 23.716861556603774,
+      "ui_callback_p99_ms_not_presentation": 83.5199,
+      "sampled_costs": []
+    }
+  },
+  "verification_passed": true
+}

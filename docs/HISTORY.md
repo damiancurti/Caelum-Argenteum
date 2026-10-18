@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
+
+## 5.4.37 - Current MAP03 attribution supplement (#318, 2026-10-18)
+
+The author's current normal siege is measured without restoring retired MAP06
+or6,000-simultaneous fixtures. Eight native runs complete with frozen hashes,
+camera/census/settings checks and continuous350-tic windows. Native bench
+snapshots report546/177FPS peaceful forward/down and48/35FPS siege city/front;
+these are later samples, not ETW presentation distributions. Looking down raises
+wall-processing calls235->4,243. The city/front simulation measures35.00/34.74tics/s.
+Sampled own costs include combat Tick3.08/2.92ms, attacker targeting2.80/2.59ms,
+thermal integration0.92/0.91ms; these include probe overhead/uninstrumented work.
+Review corrected callback containment by wall-clock boundaries and reconciled
+two profiler flush phases. Raw logs, all method rows, screenshots, benchmarks,
+sources and launch metadata are retained in validation_5437. Only two runtime
+diagnostic release labels change after the measured build. No full-siege,
+stable60FPS, author acceptance or production optimization is claimed.
 
 ## 5.4.36 - House-door presentation isolation (#334, 2026-10-18)
 

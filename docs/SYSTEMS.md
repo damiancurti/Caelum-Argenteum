@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
 
 ## House doors do not inherit vehicle presentation (#334)
 
