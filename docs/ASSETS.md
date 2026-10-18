@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
+
+## 5.4.41 - Isolated workload evidence (#318)
+
+validation_5441 owns the deterministic diagnostic builder, captured-cadence
+replay harness, sequential runner, strict report, tables and evidence archive.
+The matrix retains 66 native logs/configurations, benchmark slices, package,
+engine and private-seed hashes. Its diagnostic runtime is based on 8eb04042;
+no art or gameplay asset is replaced. Packages, private saves and engine/IWAD
+remain local. Release 5.4.41 changes diagnostic release labels only in src.
 
 ## 5.4.40 - Rest and acceleration evidence (#325)
 

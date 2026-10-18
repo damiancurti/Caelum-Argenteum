@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.40** — 2026-10-18.
+Documentation version: **5.4.41** — 2026-10-18.
+
+## 5.4.41 - Individual siege workload controls (#318, 2026-10-18)
+
+The author requested each update group separately with the others disabled,
+compared with all disabled, and temporary prevention of sleep. The diagnostic
+records one second of normal siege call cadence, then loads the identical
+frozen scene for 66 windows: three repeats, two cameras, nine selected families
+and two all-off controls per pass. No retired 6,000-simultaneous case runs.
+600 soldiers, 998 Mandingas and all 8,910 actors/inventories remain present.
+
+All 23,100 measured tics pass exact call-count and scene guards. Target selection
+adds 3.150/3.146 ms per tic city/front; the residual combatant Tick adds
+2.986/2.942. Health-derived statistics, breath management and offensive statistics
+follow. These are instrumented isolated-core deltas, not additive production
+savings. All-off native FPS snapshot medians are 180/149; general Tick 108/96;
+target selection 129/116. Restoration/invariants also consume frame time.
+PresentMon preflight failed with access denied and Windows reported cancellation
+of the authorized UAC launch: no presented-frame series or GPU timing is claimed.
+
+Powerup expiry despite level freeze, overwritten pre-load CVars, transient
+thermal caches and a final restore masking external changes were corrected
+before the final matrix. Failed drafts remain identifiable and excluded.
+Independent review checked the final harness and sample evidence. No gameplay
+system is removed and no new author acceptance is inferred. CA318-01..05 and
+CA327-01 remain pending. Evidence: assets/validation_5441/RESULTS.md and CA-KP-128.
+Project validation/index and normal build pass; all 16,376 packaged members
+match src. The normal native loading/compilation smoke passes with a separate
+minimal fixture. Temporary keep-awake released at 16:51:49 UTC with the power
+plan unchanged; the release record is archived. No ETW collector remains active.
 
 ## 5.4.40 - Shared rest and acceleration safety (#325, 2026-10-18)
 

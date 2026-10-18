@@ -1,0 +1,6621 @@
+{
+  "verification_passed": true,
+  "runtime_sha256": "d05760796b10194627e9370ef19e9562f7546c45ad73c064d4f385cc74d23e5b",
+  "baseline_definition": "Nine named families disabled; common trace traversal, cloning, renderer and engine remain.",
+  "delta_definition": "Instrumented isolated core against bracketing all-off controls; not pure production method time or additive normal-combat savings.",
+  "presented_frames": "Unavailable unless separately collected through PresentMon.",
+  "cases": [
+    {
+      "label": "matrix-s0-r0-n0-m-1",
+      "site": 0,
+      "repeat": 0,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 0,
+      "bench_end": 714,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.9102468571428571,
+      "batch_p95_ms": 1.0299,
+      "restore_mean_ms": 0.598128,
+      "simulation_tics_per_second": 35.03888467836617,
+      "window_wall_ms": 9962.359400000001,
+      "native_bench_fps_snapshot": 176,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 44180,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n1-m0",
+      "site": 0,
+      "repeat": 0,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 714,
+      "bench_end": 1428,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.839866,
+      "batch_p95_ms": 4.2253,
+      "restore_mean_ms": 0.5727811428571429,
+      "simulation_tics_per_second": 35.03306609494844,
+      "window_wall_ms": 9966.8647,
+      "native_bench_fps_snapshot": 108,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 49000,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n2-m1",
+      "site": 0,
+      "repeat": 0,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 1428,
+      "bench_end": 2142,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.925437142857143,
+      "batch_p95_ms": 13.9437,
+      "restore_mean_ms": 0.6199434285714286,
+      "simulation_tics_per_second": 35.02181989833436,
+      "window_wall_ms": 9966.957500000002,
+      "native_bench_fps_snapshot": 129,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 35284,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n3-m2",
+      "site": 0,
+      "repeat": 0,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 2142,
+      "bench_end": 2856,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7813111428571429,
+      "batch_p95_ms": 1.9566,
+      "restore_mean_ms": 0.6567005714285714,
+      "simulation_tics_per_second": 35.02946083045336,
+      "window_wall_ms": 9966.2534,
+      "native_bench_fps_snapshot": 149,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 38248,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n4-m3",
+      "site": 0,
+      "repeat": 0,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 2856,
+      "bench_end": 3570,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.144523142857143,
+      "batch_p95_ms": 2.3602,
+      "restore_mean_ms": 0.6925711428571428,
+      "simulation_tics_per_second": 35.05499777596631,
+      "window_wall_ms": 9959.184,
+      "native_bench_fps_snapshot": 142,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 36488,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n5-m4",
+      "site": 0,
+      "repeat": 0,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 3570,
+      "bench_end": 4284,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6962705714285715,
+      "batch_p95_ms": 1.8935,
+      "restore_mean_ms": 0.7112057142857143,
+      "simulation_tics_per_second": 35.02774759659468,
+      "window_wall_ms": 9966.928899999999,
+      "native_bench_fps_snapshot": 151,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 40016,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n6-m5",
+      "site": 0,
+      "repeat": 0,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 4284,
+      "bench_end": 4998,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.676796857142857,
+      "batch_p95_ms": 1.8413,
+      "restore_mean_ms": 0.673906,
+      "simulation_tics_per_second": 35.05042133669592,
+      "window_wall_ms": 9960.138799999999,
+      "native_bench_fps_snapshot": 150,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 45136,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n7-m6",
+      "site": 0,
+      "repeat": 0,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 4998,
+      "bench_end": 5712,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.293265142857143,
+      "batch_p95_ms": 2.529,
+      "restore_mean_ms": 0.6984034285714286,
+      "simulation_tics_per_second": 35.05301235795457,
+      "window_wall_ms": 9959.732100000001,
+      "native_bench_fps_snapshot": 140,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 36960,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n8-m7",
+      "site": 0,
+      "repeat": 0,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 5712,
+      "bench_end": 6426,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.9555637142857143,
+      "batch_p95_ms": 2.1854,
+      "restore_mean_ms": 0.6574494285714286,
+      "simulation_tics_per_second": 35.04442578844787,
+      "window_wall_ms": 9961.775899999999,
+      "native_bench_fps_snapshot": 143,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 11444,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n9-m8",
+      "site": 0,
+      "repeat": 0,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 6426,
+      "bench_end": 7140,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8004894285714286,
+      "batch_p95_ms": 1.9687,
+      "restore_mean_ms": 0.6483891428571429,
+      "simulation_tics_per_second": 35.04828473644288,
+      "window_wall_ms": 9961.396900000002,
+      "native_bench_fps_snapshot": 152,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 6784,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r0-n10-m-1",
+      "site": 0,
+      "repeat": 0,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 7140,
+      "bench_end": 7854,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.8767382857142857,
+      "batch_p95_ms": 0.9925,
+      "restore_mean_ms": 0.5308871428571429,
+      "simulation_tics_per_second": 35.05207201234266,
+      "window_wall_ms": 9958.1018,
+      "native_bench_fps_snapshot": 182,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 29608,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n0-m-1",
+      "site": 1,
+      "repeat": 0,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 7854,
+      "bench_end": 8578,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.7841285714285714,
+      "batch_p95_ms": 0.891,
+      "restore_mean_ms": 0.6627614285714286,
+      "simulation_tics_per_second": 35.037658756736164,
+      "window_wall_ms": 9963.0992,
+      "native_bench_fps_snapshot": 150,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 40936,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n1-m0",
+      "site": 1,
+      "repeat": 0,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 8578,
+      "bench_end": 9301,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.81656,
+      "batch_p95_ms": 4.3055,
+      "restore_mean_ms": 0.7423337142857143,
+      "simulation_tics_per_second": 35.045487134379925,
+      "window_wall_ms": 9963.842200000001,
+      "native_bench_fps_snapshot": 98,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 31816,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n2-m1",
+      "site": 1,
+      "repeat": 0,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 9301,
+      "bench_end": 10025,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.8643122857142855,
+      "batch_p95_ms": 13.7526,
+      "restore_mean_ms": 0.62845,
+      "simulation_tics_per_second": 35.01374249262472,
+      "window_wall_ms": 9969.6642,
+      "native_bench_fps_snapshot": 117,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 44180,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n3-m2",
+      "site": 1,
+      "repeat": 0,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 10025,
+      "bench_end": 10749,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7057334285714285,
+      "batch_p95_ms": 1.9411,
+      "restore_mean_ms": 0.5377845714285714,
+      "simulation_tics_per_second": 35.0514140468572,
+      "window_wall_ms": 9959.5154,
+      "native_bench_fps_snapshot": 129,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 42728,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n4-m3",
+      "site": 1,
+      "repeat": 0,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 10749,
+      "bench_end": 11473,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.0491865714285713,
+      "batch_p95_ms": 2.3225,
+      "restore_mean_ms": 0.6421145714285714,
+      "simulation_tics_per_second": 35.035002477145326,
+      "window_wall_ms": 9965.088399999999,
+      "native_bench_fps_snapshot": 123,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 13752,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n5-m4",
+      "site": 1,
+      "repeat": 0,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 11473,
+      "bench_end": 12197,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.4675191428571428,
+      "batch_p95_ms": 1.6393,
+      "restore_mean_ms": 0.6387231428571428,
+      "simulation_tics_per_second": 35.03523530758255,
+      "window_wall_ms": 9963.557200000001,
+      "native_bench_fps_snapshot": 135,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 20120,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n6-m5",
+      "site": 1,
+      "repeat": 0,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 12197,
+      "bench_end": 12921,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.5577065714285714,
+      "batch_p95_ms": 1.7945,
+      "restore_mean_ms": 0.7662342857142858,
+      "simulation_tics_per_second": 35.042645996499196,
+      "window_wall_ms": 9961.770799999998,
+      "native_bench_fps_snapshot": 122,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 20916,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n7-m6",
+      "site": 1,
+      "repeat": 0,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 12921,
+      "bench_end": 13645,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.190664,
+      "batch_p95_ms": 2.5296,
+      "restore_mean_ms": 0.5429434285714285,
+      "simulation_tics_per_second": 35.03185359118357,
+      "window_wall_ms": 9965.146,
+      "native_bench_fps_snapshot": 121,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 21956,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n8-m7",
+      "site": 1,
+      "repeat": 0,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 13645,
+      "bench_end": 14369,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8588362857142857,
+      "batch_p95_ms": 2.0387,
+      "restore_mean_ms": 0.6442065714285714,
+      "simulation_tics_per_second": 35.0262879818443,
+      "window_wall_ms": 9967.486799999999,
+      "native_bench_fps_snapshot": 126,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 46340,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n9-m8",
+      "site": 1,
+      "repeat": 0,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 14369,
+      "bench_end": 15093,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.709346,
+      "batch_p95_ms": 1.8808,
+      "restore_mean_ms": 0.6879722857142857,
+      "simulation_tics_per_second": 35.039485886205526,
+      "window_wall_ms": 9962.6379,
+      "native_bench_fps_snapshot": 124,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 44508,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r0-n10-m-1",
+      "site": 1,
+      "repeat": 0,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 15093,
+      "bench_end": 15817,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.781584,
+      "batch_p95_ms": 0.8965,
+      "restore_mean_ms": 0.6154748571428571,
+      "simulation_tics_per_second": 35.03821489591778,
+      "window_wall_ms": 9962.448199999999,
+      "native_bench_fps_snapshot": 148,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 33404,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n0-m-1",
+      "site": 0,
+      "repeat": 1,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 15817,
+      "bench_end": 16531,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.9048502857142857,
+      "batch_p95_ms": 1.0402,
+      "restore_mean_ms": 0.6056594285714286,
+      "simulation_tics_per_second": 35.05251911909022,
+      "window_wall_ms": 9959.0061,
+      "native_bench_fps_snapshot": 180,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 18472,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n1-m8",
+      "site": 0,
+      "repeat": 1,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 16531,
+      "bench_end": 17245,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7941994285714287,
+      "batch_p95_ms": 2.0216,
+      "restore_mean_ms": 0.8600411428571428,
+      "simulation_tics_per_second": 35.07449032820929,
+      "window_wall_ms": 9953.831999999999,
+      "native_bench_fps_snapshot": 144,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 30048,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n2-m7",
+      "site": 0,
+      "repeat": 1,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 17245,
+      "bench_end": 17959,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.9754165714285714,
+      "batch_p95_ms": 2.16,
+      "restore_mean_ms": 0.6515688571428572,
+      "simulation_tics_per_second": 35.04622089420141,
+      "window_wall_ms": 9961.155499999999,
+      "native_bench_fps_snapshot": 150,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 40664,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n3-m6",
+      "site": 0,
+      "repeat": 1,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 17959,
+      "bench_end": 18673,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.263579142857143,
+      "batch_p95_ms": 2.4772,
+      "restore_mean_ms": 0.7407182857142857,
+      "simulation_tics_per_second": 35.053660877285054,
+      "window_wall_ms": 9959.9244,
+      "native_bench_fps_snapshot": 136,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 32184,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n4-m5",
+      "site": 0,
+      "repeat": 1,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 18673,
+      "bench_end": 19387,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6256911428571428,
+      "batch_p95_ms": 1.8099,
+      "restore_mean_ms": 0.600452,
+      "simulation_tics_per_second": 35.026839541616496,
+      "window_wall_ms": 9966.3741,
+      "native_bench_fps_snapshot": 156,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 6336,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n5-m4",
+      "site": 0,
+      "repeat": 1,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 19387,
+      "bench_end": 20101,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6908845714285714,
+      "batch_p95_ms": 1.9703,
+      "restore_mean_ms": 0.492518,
+      "simulation_tics_per_second": 35.04137759161737,
+      "window_wall_ms": 9962.621299999999,
+      "native_bench_fps_snapshot": 161,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 7016,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n6-m3",
+      "site": 0,
+      "repeat": 1,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 20101,
+      "bench_end": 20815,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.1282474285714286,
+      "batch_p95_ms": 2.3476,
+      "restore_mean_ms": 0.536338,
+      "simulation_tics_per_second": 35.02773107329997,
+      "window_wall_ms": 9967.181400000001,
+      "native_bench_fps_snapshot": 146,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 18992,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n7-m2",
+      "site": 0,
+      "repeat": 1,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 20815,
+      "bench_end": 21529,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8124334285714285,
+      "batch_p95_ms": 2.0082,
+      "restore_mean_ms": 0.6908491428571428,
+      "simulation_tics_per_second": 35.05121690844992,
+      "window_wall_ms": 9960.126800000002,
+      "native_bench_fps_snapshot": 148,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 41032,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n8-m1",
+      "site": 0,
+      "repeat": 1,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 21529,
+      "bench_end": 22243,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 4.055436,
+      "batch_p95_ms": 14.2159,
+      "restore_mean_ms": 0.66206,
+      "simulation_tics_per_second": 35.00020313155141,
+      "window_wall_ms": 9974.395799999998,
+      "native_bench_fps_snapshot": 131,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 45432,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n9-m0",
+      "site": 0,
+      "repeat": 1,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 22243,
+      "bench_end": 22957,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.955104,
+      "batch_p95_ms": 4.8655,
+      "restore_mean_ms": 0.6162368571428571,
+      "simulation_tics_per_second": 35.029169713025084,
+      "window_wall_ms": 9968.5058,
+      "native_bench_fps_snapshot": 113,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 40936,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r1-n10-m-1",
+      "site": 0,
+      "repeat": 1,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 22957,
+      "bench_end": 23671,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.9029534285714286,
+      "batch_p95_ms": 1.0384,
+      "restore_mean_ms": 0.542102,
+      "simulation_tics_per_second": 35.03698022752774,
+      "window_wall_ms": 9963.250999999998,
+      "native_bench_fps_snapshot": 186,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 32184,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n0-m-1",
+      "site": 1,
+      "repeat": 1,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 23671,
+      "bench_end": 24395,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.7807757142857142,
+      "batch_p95_ms": 0.9374,
+      "restore_mean_ms": 0.64309,
+      "simulation_tics_per_second": 35.05455940843332,
+      "window_wall_ms": 9958.0034,
+      "native_bench_fps_snapshot": 146,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 21780,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n1-m8",
+      "site": 1,
+      "repeat": 1,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 24395,
+      "bench_end": 25119,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7228405714285715,
+      "batch_p95_ms": 1.9481,
+      "restore_mean_ms": 0.7446597142857143,
+      "simulation_tics_per_second": 35.05480411827455,
+      "window_wall_ms": 9958.571,
+      "native_bench_fps_snapshot": 124,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 27284,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n2-m7",
+      "site": 1,
+      "repeat": 1,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 25119,
+      "bench_end": 25843,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8507137142857142,
+      "batch_p95_ms": 2.1371,
+      "restore_mean_ms": 0.6235111428571428,
+      "simulation_tics_per_second": 35.0243107353637,
+      "window_wall_ms": 9967.264600000002,
+      "native_bench_fps_snapshot": 122,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 25248,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n3-m6",
+      "site": 1,
+      "repeat": 1,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 25843,
+      "bench_end": 26567,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.1937194285714288,
+      "batch_p95_ms": 2.5294,
+      "restore_mean_ms": 0.7258485714285714,
+      "simulation_tics_per_second": 35.04958708121631,
+      "window_wall_ms": 9960.679800000002,
+      "native_bench_fps_snapshot": 115,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 9072,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n4-m5",
+      "site": 1,
+      "repeat": 1,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 26567,
+      "bench_end": 27291,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6159322857142857,
+      "batch_p95_ms": 1.8329,
+      "restore_mean_ms": 0.5475008571428571,
+      "simulation_tics_per_second": 35.04175757567907,
+      "window_wall_ms": 9962.8237,
+      "native_bench_fps_snapshot": 130,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 42296,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n5-m4",
+      "site": 1,
+      "repeat": 1,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 27291,
+      "bench_end": 28015,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.4954822857142858,
+      "batch_p95_ms": 1.7361,
+      "restore_mean_ms": 0.5646514285714286,
+      "simulation_tics_per_second": 35.04727003055921,
+      "window_wall_ms": 9960.8278,
+      "native_bench_fps_snapshot": 131,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 42392,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n6-m3",
+      "site": 1,
+      "repeat": 1,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 28015,
+      "bench_end": 28739,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.070652,
+      "batch_p95_ms": 2.3576,
+      "restore_mean_ms": 0.5369611428571428,
+      "simulation_tics_per_second": 35.02873128805823,
+      "window_wall_ms": 9966.3999,
+      "native_bench_fps_snapshot": 123,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 2688,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n7-m2",
+      "site": 1,
+      "repeat": 1,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 28739,
+      "bench_end": 29463,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6880434285714285,
+      "batch_p95_ms": 1.9547,
+      "restore_mean_ms": 0.7131582857142857,
+      "simulation_tics_per_second": 35.0229051806925,
+      "window_wall_ms": 9968.363700000002,
+      "native_bench_fps_snapshot": 117,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 41036,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n8-m1",
+      "site": 1,
+      "repeat": 1,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 29463,
+      "bench_end": 30187,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.942925142857143,
+      "batch_p95_ms": 14.4447,
+      "restore_mean_ms": 0.7159394285714286,
+      "simulation_tics_per_second": 35.01282603085836,
+      "window_wall_ms": 9969.332100000001,
+      "native_bench_fps_snapshot": 116,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 6712,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n9-m0",
+      "site": 1,
+      "repeat": 1,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 30187,
+      "bench_end": 30910,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.7177394285714285,
+      "batch_p95_ms": 4.363,
+      "restore_mean_ms": 0.6408425714285714,
+      "simulation_tics_per_second": 35.019978446156536,
+      "window_wall_ms": 9970.957900000001,
+      "native_bench_fps_snapshot": 96,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 39876,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r1-n10-m-1",
+      "site": 1,
+      "repeat": 1,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 30910,
+      "bench_end": 31634,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.7589417142857143,
+      "batch_p95_ms": 0.8753,
+      "restore_mean_ms": 0.5022374285714286,
+      "simulation_tics_per_second": 35.03066789431258,
+      "window_wall_ms": 9965.080500000002,
+      "native_bench_fps_snapshot": 151,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 29932,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n0-m-1",
+      "site": 0,
+      "repeat": 2,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 31634,
+      "bench_end": 32348,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.8711608571428572,
+      "batch_p95_ms": 0.9976,
+      "restore_mean_ms": 0.6242585714285714,
+      "simulation_tics_per_second": 35.059853297518835,
+      "window_wall_ms": 9956.450900000002,
+      "native_bench_fps_snapshot": 180,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 40920,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n1-m0",
+      "site": 0,
+      "repeat": 2,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 32348,
+      "bench_end": 33062,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.8544554285714288,
+      "batch_p95_ms": 4.2077,
+      "restore_mean_ms": 0.5876228571428571,
+      "simulation_tics_per_second": 35.03598341061244,
+      "window_wall_ms": 9966.880900000002,
+      "native_bench_fps_snapshot": 108,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 39544,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n2-m1",
+      "site": 0,
+      "repeat": 2,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 33062,
+      "bench_end": 33776,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 4.162350285714286,
+      "batch_p95_ms": 14.617,
+      "restore_mean_ms": 0.7256588571428572,
+      "simulation_tics_per_second": 35.00713864768848,
+      "window_wall_ms": 9971.9899,
+      "native_bench_fps_snapshot": 127,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 41168,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n3-m2",
+      "site": 0,
+      "repeat": 2,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 33776,
+      "bench_end": 34490,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8392291428571428,
+      "batch_p95_ms": 2.1225,
+      "restore_mean_ms": 0.5312471428571428,
+      "simulation_tics_per_second": 35.0487320985588,
+      "window_wall_ms": 9960.5267,
+      "native_bench_fps_snapshot": 152,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 5008,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n4-m3",
+      "site": 0,
+      "repeat": 2,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 34490,
+      "bench_end": 35204,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.120657714285714,
+      "batch_p95_ms": 2.3156,
+      "restore_mean_ms": 0.6032051428571429,
+      "simulation_tics_per_second": 35.054843201745456,
+      "window_wall_ms": 9959.3536,
+      "native_bench_fps_snapshot": 142,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 22532,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n5-m4",
+      "site": 0,
+      "repeat": 2,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 35204,
+      "bench_end": 35918,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7310317142857143,
+      "batch_p95_ms": 1.8965,
+      "restore_mean_ms": 0.6357517142857143,
+      "simulation_tics_per_second": 35.04836005861169,
+      "window_wall_ms": 9960.803700000002,
+      "native_bench_fps_snapshot": 144,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 32140,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n6-m5",
+      "site": 0,
+      "repeat": 2,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 35918,
+      "bench_end": 36632,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6170422857142857,
+      "batch_p95_ms": 1.7878,
+      "restore_mean_ms": 0.5744145714285714,
+      "simulation_tics_per_second": 35.047576583097275,
+      "window_wall_ms": 9960.818399999998,
+      "native_bench_fps_snapshot": 160,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 8952,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n7-m6",
+      "site": 0,
+      "repeat": 2,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 36632,
+      "bench_end": 37346,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.285454,
+      "batch_p95_ms": 2.6244,
+      "restore_mean_ms": 0.6534502857142858,
+      "simulation_tics_per_second": 35.03973144104058,
+      "window_wall_ms": 9963.6706,
+      "native_bench_fps_snapshot": 136,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 37700,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n8-m7",
+      "site": 0,
+      "repeat": 2,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 37346,
+      "bench_end": 38060,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.0016028571428572,
+      "batch_p95_ms": 2.2631,
+      "restore_mean_ms": 0.5563734285714286,
+      "simulation_tics_per_second": 35.03522968022432,
+      "window_wall_ms": 9964.609699999999,
+      "native_bench_fps_snapshot": 146,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 45768,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n9-m8",
+      "site": 0,
+      "repeat": 2,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 38060,
+      "bench_end": 38774,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7876782857142857,
+      "batch_p95_ms": 2.0048,
+      "restore_mean_ms": 0.861414,
+      "simulation_tics_per_second": 35.051989281242285,
+      "window_wall_ms": 9960.0808,
+      "native_bench_fps_snapshot": 143,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 18808,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s0-r2-n10-m-1",
+      "site": 0,
+      "repeat": 2,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 38774,
+      "bench_end": 39488,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        0.0,
+        320.0,
+        41.0,
+        -180.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.9177548571428571,
+      "batch_p95_ms": 1.0551,
+      "restore_mean_ms": 0.5062271428571429,
+      "simulation_tics_per_second": 35.040612370946626,
+      "window_wall_ms": 9961.701000000001,
+      "native_bench_fps_snapshot": 177,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 26396,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n0-m-1",
+      "site": 1,
+      "repeat": 2,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 39488,
+      "bench_end": 40212,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.7848,
+      "batch_p95_ms": 0.9773,
+      "restore_mean_ms": 0.5042525714285714,
+      "simulation_tics_per_second": 35.02412760969643,
+      "window_wall_ms": 9966.4513,
+      "native_bench_fps_snapshot": 150,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 28664,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n1-m0",
+      "site": 1,
+      "repeat": 2,
+      "mode": 0,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 40212,
+      "bench_end": 40935,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.6373471428571427,
+      "batch_p95_ms": 4.0152,
+      "restore_mean_ms": 0.6673682857142857,
+      "simulation_tics_per_second": 35.02680087210512,
+      "window_wall_ms": 9968.590600000001,
+      "native_bench_fps_snapshot": 96,
+      "counts": [
+        [
+          0,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 6912,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n2-m1",
+      "site": 1,
+      "repeat": 2,
+      "mode": 1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 40935,
+      "bench_end": 41658,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 3.97613,
+      "batch_p95_ms": 14.1364,
+      "restore_mean_ms": 0.7076457142857143,
+      "simulation_tics_per_second": 35.00841756836748,
+      "window_wall_ms": 9970.686399999999,
+      "native_bench_fps_snapshot": 98,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          123790,
+          123790,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 12152,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n3-m2",
+      "site": 1,
+      "repeat": 2,
+      "mode": 2,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 41658,
+      "bench_end": 42382,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.6609637142857143,
+      "batch_p95_ms": 1.905,
+      "restore_mean_ms": 0.5974174285714285,
+      "simulation_tics_per_second": 35.045129943475814,
+      "window_wall_ms": 9961.1933,
+      "native_bench_fps_snapshot": 122,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          16350,
+          16350,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 38924,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n4-m3",
+      "site": 1,
+      "repeat": 2,
+      "mode": 3,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 42382,
+      "bench_end": 43106,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.002251142857143,
+      "batch_p95_ms": 2.2017,
+      "restore_mean_ms": 0.601506,
+      "simulation_tics_per_second": 35.02479896267183,
+      "window_wall_ms": 9967.561799999998,
+      "native_bench_fps_snapshot": 124,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 39284,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n5-m4",
+      "site": 1,
+      "repeat": 2,
+      "mode": 4,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 43106,
+      "bench_end": 43830,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.5047831428571428,
+      "batch_p95_ms": 1.6854,
+      "restore_mean_ms": 0.6151051428571429,
+      "simulation_tics_per_second": 35.04659781586791,
+      "window_wall_ms": 9961.295199999999,
+      "native_bench_fps_snapshot": 137,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          349880,
+          349880,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 42896,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n6-m5",
+      "site": 1,
+      "repeat": 2,
+      "mode": 5,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 43830,
+      "bench_end": 44554,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.5279594285714286,
+      "batch_p95_ms": 1.7645,
+      "restore_mean_ms": 0.5971648571428572,
+      "simulation_tics_per_second": 35.05086769728605,
+      "window_wall_ms": 9959.657900000002,
+      "native_bench_fps_snapshot": 132,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          560350,
+          560350,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 45648,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n7-m6",
+      "site": 1,
+      "repeat": 2,
+      "mode": 6,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 44554,
+      "bench_end": 45278,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 2.1366108571428573,
+      "batch_p95_ms": 2.3336,
+      "restore_mean_ms": 0.7753842857142857,
+      "simulation_tics_per_second": 35.037963030571774,
+      "window_wall_ms": 9964.084899999998,
+      "native_bench_fps_snapshot": 113,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          560690,
+          560690,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 47424,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n8-m7",
+      "site": 1,
+      "repeat": 2,
+      "mode": 7,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 45278,
+      "bench_end": 46002,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.8792882857142856,
+      "batch_p95_ms": 2.0664,
+      "restore_mean_ms": 0.6677457142857143,
+      "simulation_tics_per_second": 35.04421606058548,
+      "window_wall_ms": 9962.392999999998,
+      "native_bench_fps_snapshot": 122,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          560650,
+          560650,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 27284,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n9-m8",
+      "site": 1,
+      "repeat": 2,
+      "mode": 8,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 46002,
+      "bench_end": 46726,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 1.7465314285714286,
+      "batch_p95_ms": 1.9578,
+      "restore_mean_ms": 0.9499557142857142,
+      "simulation_tics_per_second": 35.03727604755432,
+      "window_wall_ms": 9964.240699999998,
+      "native_bench_fps_snapshot": 115,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          52440,
+          52440,
+          5244
+        ]
+      ],
+      "pid": 47236,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    },
+    {
+      "label": "matrix-s1-r2-n10-m-1",
+      "site": 1,
+      "repeat": 2,
+      "mode": -1,
+      "seed_sha256": "cd7d0fdc9714a4b9ed822d58b566f62a28a8d3f41a82a1dd10d9ccbfc5c6ad9d",
+      "bench_start": 46726,
+      "bench_end": 47450,
+      "actors": 8910,
+      "samples": 350,
+      "start_tic": 3774,
+      "native_camera": [
+        -14464.0,
+        -14000.0,
+        41.0,
+        -90.0,
+        0.0
+      ],
+      "final_settings": {
+        "vid_vsync": "false",
+        "vid_maxfps": "0",
+        "cl_capfps": "false",
+        "i_pauseinbackground": "false",
+        "vid_activeinbackground": "true",
+        "vid_lowerinbackground": "false",
+        "snd_mastervolume": "0.05",
+        "vid_defwidth": "1280",
+        "vid_defheight": "720",
+        "vid_preferbackend": "1"
+      },
+      "batch_mean_ms": 0.7984794285714286,
+      "batch_p95_ms": 0.9872,
+      "restore_mean_ms": 0.583616,
+      "simulation_tics_per_second": 35.03261350614457,
+      "window_wall_ms": 9964.087100000002,
+      "native_bench_fps_snapshot": 138,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          56035
+        ],
+        [
+          1,
+          0,
+          0,
+          12379
+        ],
+        [
+          2,
+          0,
+          0,
+          1635
+        ],
+        [
+          3,
+          0,
+          0,
+          56035
+        ],
+        [
+          4,
+          0,
+          0,
+          34988
+        ],
+        [
+          5,
+          0,
+          0,
+          56035
+        ],
+        [
+          6,
+          0,
+          0,
+          56069
+        ],
+        [
+          7,
+          0,
+          0,
+          56065
+        ],
+        [
+          8,
+          0,
+          0,
+          5244
+        ]
+      ],
+      "pid": 41996,
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA"
+    }
+  ],
+  "summary": [
+    {
+      "site": 0,
+      "mode": -1,
+      "runs": 6,
+      "batch_mean_ms": 0.8972840952380953,
+      "delta_mean_ms": -3.700743415417188e-17,
+      "delta_range_ms": [
+        -0.023297000000000012,
+        0.0232969999999999
+      ],
+      "fps_snapshot_median": 180.0,
+      "fps_snapshot_range": [
+        176,
+        186
+      ],
+      "restore_mean_ms": 0.5678770476190477
+    },
+    {
+      "site": 0,
+      "mode": 0,
+      "runs": 3,
+      "batch_mean_ms": 3.8831418095238095,
+      "delta_mean_ms": 2.9858577142857143,
+      "delta_range_ms": [
+        2.9463734285714285,
+        3.051202142857143
+      ],
+      "fps_snapshot_median": 108,
+      "fps_snapshot_range": [
+        108,
+        113
+      ],
+      "restore_mean_ms": 0.592213619047619
+    },
+    {
+      "site": 0,
+      "mode": 1,
+      "runs": 3,
+      "batch_mean_ms": 4.047741142857143,
+      "delta_mean_ms": 3.1504570476190477,
+      "delta_range_ms": [
+        3.0319445714285718,
+        3.267892428571429
+      ],
+      "fps_snapshot_median": 129,
+      "fps_snapshot_range": [
+        127,
+        131
+      ],
+      "restore_mean_ms": 0.6692207619047619
+    },
+    {
+      "site": 0,
+      "mode": 2,
+      "runs": 3,
+      "batch_mean_ms": 1.810991238095238,
+      "delta_mean_ms": 0.9137071428571428,
+      "delta_range_ms": [
+        0.8878185714285715,
+        0.9447712857142856
+      ],
+      "fps_snapshot_median": 149,
+      "fps_snapshot_range": [
+        148,
+        152
+      ],
+      "restore_mean_ms": 0.626265619047619
+    },
+    {
+      "site": 0,
+      "mode": 3,
+      "runs": 3,
+      "batch_mean_ms": 2.131142761904762,
+      "delta_mean_ms": 1.2338586666666667,
+      "delta_range_ms": [
+        1.2243455714285714,
+        1.2510305714285717
+      ],
+      "fps_snapshot_median": 142,
+      "fps_snapshot_range": [
+        142,
+        146
+      ],
+      "restore_mean_ms": 0.6107047619047619
+    },
+    {
+      "site": 0,
+      "mode": 4,
+      "runs": 3,
+      "batch_mean_ms": 1.7060622857142858,
+      "delta_mean_ms": 0.8087781904761905,
+      "delta_range_ms": [
+        0.7869827142857142,
+        0.8365738571428571
+      ],
+      "fps_snapshot_median": 151,
+      "fps_snapshot_range": [
+        144,
+        161
+      ],
+      "restore_mean_ms": 0.6131584761904763
+    },
+    {
+      "site": 0,
+      "mode": 5,
+      "runs": 3,
+      "batch_mean_ms": 1.6398434285714285,
+      "delta_mean_ms": 0.7425593333333332,
+      "delta_range_ms": [
+        0.7217892857142856,
+        0.7833042857142857
+      ],
+      "fps_snapshot_median": 156,
+      "fps_snapshot_range": [
+        150,
+        160
+      ],
+      "restore_mean_ms": 0.6162575238095238
+    },
+    {
+      "site": 0,
+      "mode": 6,
+      "runs": 3,
+      "batch_mean_ms": 2.2807660952380955,
+      "delta_mean_ms": 1.383482,
+      "delta_range_ms": [
+        1.3596772857142858,
+        1.3997725714285716
+      ],
+      "fps_snapshot_median": 136,
+      "fps_snapshot_range": [
+        136,
+        140
+      ],
+      "restore_mean_ms": 0.697524
+    },
+    {
+      "site": 0,
+      "mode": 7,
+      "runs": 3,
+      "batch_mean_ms": 1.9775277142857144,
+      "delta_mean_ms": 1.080243619047619,
+      "delta_range_ms": [
+        1.062071142857143,
+        1.107145
+      ],
+      "fps_snapshot_median": 146,
+      "fps_snapshot_range": [
+        143,
+        150
+      ],
+      "restore_mean_ms": 0.6217972380952381
+    },
+    {
+      "site": 0,
+      "mode": 8,
+      "runs": 3,
+      "batch_mean_ms": 1.794122380952381,
+      "delta_mean_ms": 0.8968382857142857,
+      "delta_range_ms": [
+        0.8902975714285715,
+        0.9069968571428572
+      ],
+      "fps_snapshot_median": 144,
+      "fps_snapshot_range": [
+        143,
+        152
+      ],
+      "restore_mean_ms": 0.7899480952380953
+    },
+    {
+      "site": 1,
+      "mode": -1,
+      "runs": 6,
+      "batch_mean_ms": 0.7814515714285715,
+      "delta_mean_ms": 0.0,
+      "delta_range_ms": [
+        -0.010916999999999955,
+        0.010916999999999955
+      ],
+      "fps_snapshot_median": 149.0,
+      "fps_snapshot_range": [
+        138,
+        151
+      ],
+      "restore_mean_ms": 0.5852387142857143
+    },
+    {
+      "site": 1,
+      "mode": 0,
+      "runs": 3,
+      "batch_mean_ms": 3.7238821904761905,
+      "delta_mean_ms": 2.942430619047619,
+      "delta_range_ms": [
+        2.845707428571428,
+        3.033703714285714
+      ],
+      "fps_snapshot_median": 96,
+      "fps_snapshot_range": [
+        96,
+        98
+      ],
+      "restore_mean_ms": 0.6835148571428571
+    },
+    {
+      "site": 1,
+      "mode": 1,
+      "runs": 3,
+      "batch_mean_ms": 3.9277891428571428,
+      "delta_mean_ms": 3.146337571428571,
+      "delta_range_ms": [
+        3.0814559999999998,
+        3.1844902857142854
+      ],
+      "fps_snapshot_median": 116,
+      "fps_snapshot_range": [
+        98,
+        117
+      ],
+      "restore_mean_ms": 0.6840117142857143
+    },
+    {
+      "site": 1,
+      "mode": 2,
+      "runs": 3,
+      "batch_mean_ms": 1.6849135238095239,
+      "delta_mean_ms": 0.9034619523809524,
+      "delta_range_ms": [
+        0.869324,
+        0.9228771428571428
+      ],
+      "fps_snapshot_median": 122,
+      "fps_snapshot_range": [
+        117,
+        129
+      ],
+      "restore_mean_ms": 0.6161200952380952
+    },
+    {
+      "site": 1,
+      "mode": 3,
+      "runs": 3,
+      "batch_mean_ms": 2.040696571428571,
+      "delta_mean_ms": 1.259245,
+      "delta_range_ms": [
+        1.2106114285714284,
+        1.3007932857142857
+      ],
+      "fps_snapshot_median": 123,
+      "fps_snapshot_range": [
+        123,
+        124
+      ],
+      "restore_mean_ms": 0.5935272380952381
+    },
+    {
+      "site": 1,
+      "mode": 4,
+      "runs": 3,
+      "batch_mean_ms": 1.4892615238095237,
+      "delta_mean_ms": 0.7078099523809523,
+      "delta_range_ms": [
+        0.6846628571428571,
+        0.7256235714285715
+      ],
+      "fps_snapshot_median": 135,
+      "fps_snapshot_range": [
+        131,
+        137
+      ],
+      "restore_mean_ms": 0.6061599047619047
+    },
+    {
+      "site": 1,
+      "mode": 5,
+      "runs": 3,
+      "batch_mean_ms": 1.5671994285714286,
+      "delta_mean_ms": 0.7857478571428571,
+      "delta_range_ms": [
+        0.7363197142857143,
+        0.8460735714285714
+      ],
+      "fps_snapshot_median": 130,
+      "fps_snapshot_range": [
+        122,
+        132
+      ],
+      "restore_mean_ms": 0.6369666666666667
+    },
+    {
+      "site": 1,
+      "mode": 6,
+      "runs": 3,
+      "batch_mean_ms": 2.173664761904762,
+      "delta_mean_ms": 1.3922131904761905,
+      "delta_range_ms": [
+        1.344971142857143,
+        1.4238607142857145
+      ],
+      "fps_snapshot_median": 115,
+      "fps_snapshot_range": [
+        113,
+        121
+      ],
+      "restore_mean_ms": 0.6813920952380952
+    },
+    {
+      "site": 1,
+      "mode": 7,
+      "runs": 3,
+      "batch_mean_ms": 1.8629460952380952,
+      "delta_mean_ms": 1.0814945238095237,
+      "delta_range_ms": [
+        1.07598,
+        1.0876485714285713
+      ],
+      "fps_snapshot_median": 122,
+      "fps_snapshot_range": [
+        122,
+        126
+      ],
+      "restore_mean_ms": 0.6451544761904762
+    },
+    {
+      "site": 1,
+      "mode": 8,
+      "runs": 3,
+      "batch_mean_ms": 1.7262393333333335,
+      "delta_mean_ms": 0.944787761904762,
+      "delta_range_ms": [
+        0.9264897142857144,
+        0.9548917142857143
+      ],
+      "fps_snapshot_median": 124,
+      "fps_snapshot_range": [
+        115,
+        124
+      ],
+      "restore_mean_ms": 0.7941959047619047
+    }
+  ]
+}

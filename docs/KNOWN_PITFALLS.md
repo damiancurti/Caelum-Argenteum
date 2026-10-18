@@ -4,6 +4,42 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-128 - Freezing a map does not isolate an update subsystem
+
+Status/evidence: ENGINE-VERIFIED diagnostic controls, #318 / 5.4.41,
+2026-10-18. [validation_5441](../assets/validation_5441/RESULTS.md) retains
+66 valid windows and the limitations of the fixed-scene replay.
+
+Symptom/cause: disabling a parent Tick can also prevent the supposedly enabled
+child from running, producing a false zero cost. Level freeze alone does not
+stop code before Super.Tick, custom WorldTick handlers, or the inherited
+Powerup.Tick countdown. An initial control lost 22 regeneration helpers.
+Loading a save can overwrite diagnostic server CVars; transient thermal caches
+must be warmed again. Restoring immediately before checking poses can conceal
+external mutation instead of detecting it.
+
+Remedy: preserve an immutable scene/call trace, dispatch the selected family
+directly, count actual executions, gate dependencies explicitly and check all
+other family counters remain zero. Include native inherited behavior in the
+freeze boundary. Start controls after load, warm caches outside the window,
+and compare poses before restoration. Reject changed populations, unexpected
+spawns, health loss or missing actors. Repeat and bracket each pass with all-off.
+Pin the seed, source, runtime, engine, camera and configuration; reject partial
+matrices. Neutralized effects and fields not fully restored must be documented.
+
+Limits: the baseline still runs the engine, renderer and diagnostic traversal.
+MSTimeF measures elapsed wall time, including possible descheduling, not thread
+or process CPU time; label the batch delta accordingly.
+Its subtraction includes instrumented wrappers/dependencies, not a theoretical
+zero-overhead body cost. Restoration and guard costs remain in diagnostic FPS.
+Native bench must fall inside the active window and remains a snapshot; do not
+substitute it for ETW presentation percentiles or sum isolated cores as normal
+combat savings. A measured cost alone does not make a gameplay rule dispensable.
+
+Regression: exact call counts and zero off-family executions, stable actors,
+poses/references before restore, and matching provenance across all 66 cases.
+Use normal-play A/B tests to validate a later production optimization.
+
 ## CA-KP-127 - Rest interruption needs damage provenance and personal-time effects
 
 Status/evidence: ENGINE-VERIFIED, #325 / 5.4.40, 2026-10-18. GZDoom 4.14.2,
