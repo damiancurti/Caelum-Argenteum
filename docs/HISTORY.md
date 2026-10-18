@@ -107,7 +107,7 @@ all sampling phases. Thirty-five isolated searches average 2.415323 ms, with a
 2.448400-ms peak on this machine; this is not a siege FPS measurement. Earlier
 compile, controller and fixture failures remain archived with their own hashes.
 CA322-01 partial author confirmation, 2026-10-18: the author answered
-"Funciona; ya cerr? la prueba" for observed following and idle turning/walking.
+"Funciona; ya cerré la prueba" for observed following and idle turning/walking.
 The repaired preview reseeds after restart (10 native assertions), restores
 save references and keeps the waiting observer alive. Unmentioned campaign
 extraction/rewards and the remaining passage/save checks stay pending; this

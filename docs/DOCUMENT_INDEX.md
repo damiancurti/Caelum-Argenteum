@@ -234,7 +234,7 @@ SHA-256: `23f81bf9d1f4f7e5ecc921a9fc3abd4b6408a44fd6da411fc58af5b2462cce4d`
 
 ## [HISTORY.md](HISTORY.md) - 221877 words
 
-SHA-256: `da9a51378beaa2ec87f95b313349dfe37c55aab7d9951631fd4d43f929d715c7`
+SHA-256: `a5a7750a8a9e53a63309e8bd5f28cc0d5ad5202f2e594474bd32dafb188896de`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-20 - [5.4.40 - Shared rest and acceleration safety (#325, 2026-10-18)](HISTORY.md#5440---shared-rest-and-acceleration-safety-325-2026-10-18) - context: Caelum Argenteum — Consolidated history
@@ -1575,6 +1575,6 @@ SHA-256: `0c7d4acf14130b8ffc3a1f53284c4998906b1c3a748f8bcdcafe946e66a0e241`
 - Lines 2573-2585 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "23f81bf9d1f4f7e5ecc921a9fc3abd4b6408a44fd6da411fc58af5b2462cce4d", "words": 30420}, {"path": "HISTORY.md", "sha256": "da9a51378beaa2ec87f95b313349dfe37c55aab7d9951631fd4d43f929d715c7", "words": 221877}, {"path": "KNOWN_PITFALLS.md", "sha256": "c20ca43b9bc7c5b83087f491c3ac663eb9e3c9bd5551a674b500c6cfc3752068", "words": 31861}, {"path": "MAP01.txt", "sha256": "7c346f3c0afb73ff4e8ed360c1d8b7ee9993e9225bf2de116fe7f80128cb71f7", "words": 34939}, {"path": "PROJECT.md", "sha256": "66c7e0490cd3bdd2e0bc4c18bfca703a2193313cf3d5401f0e76a6dd6f1bf6e8", "words": 58038}, {"path": "SYSTEMS.md", "sha256": "64cde9bd9d746b9684e0c927fac7f470eeff7ac7915848844737e445a7e5424a", "words": 102552}, {"path": "TASKS.md", "sha256": "0c7d4acf14130b8ffc3a1f53284c4998906b1c3a748f8bcdcafe946e66a0e241", "words": 21173}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "23f81bf9d1f4f7e5ecc921a9fc3abd4b6408a44fd6da411fc58af5b2462cce4d", "words": 30420}, {"path": "HISTORY.md", "sha256": "a5a7750a8a9e53a63309e8bd5f28cc0d5ad5202f2e594474bd32dafb188896de", "words": 221877}, {"path": "KNOWN_PITFALLS.md", "sha256": "c20ca43b9bc7c5b83087f491c3ac663eb9e3c9bd5551a674b500c6cfc3752068", "words": 31861}, {"path": "MAP01.txt", "sha256": "7c346f3c0afb73ff4e8ed360c1d8b7ee9993e9225bf2de116fe7f80128cb71f7", "words": 34939}, {"path": "PROJECT.md", "sha256": "66c7e0490cd3bdd2e0bc4c18bfca703a2193313cf3d5401f0e76a6dd6f1bf6e8", "words": 58038}, {"path": "SYSTEMS.md", "sha256": "64cde9bd9d746b9684e0c927fac7f470eeff7ac7915848844737e445a7e5424a", "words": 102552}, {"path": "TASKS.md", "sha256": "0c7d4acf14130b8ffc3a1f53284c4998906b1c3a748f8bcdcafe946e66a0e241", "words": 21173}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
