@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.30** — 2026-10-17.
+Documentation version: **5.4.31** — 2026-10-17.
+
+## 5.4.31 - Collapsible map legend (#321, 2026-10-17)
+
+The author requested a hidden default legend with the key to display it.
+The local toggle uses native bindings; L is only a new-install/reset default.
+Hints follow remapping/clearing and automap binding priority. Help resets when
+leaving the map, loading or travelling; location and objective data remain.
+No character save schema changes. The controls generator now preserves aliases
+following its generated block. Evidence and early fixture/lookup corrections:
+assets/validation_5431/RESULTS.md. Author CA321-01 remains pending.
+
+Final verification: 28 native assertions across toggle/binding/language,
+save/load/hub and three window sizes; captures inspected. Actual largest client
+size is 1920x1061 (Windows fitted the requested 1920x1080). Project validation,
+build, 16,371-member source/package equivalence and independent review pass.
+The affected Spanish block now supports the user's actual es locale as well
+as esp; old English-fallback captures are preserved as superseded evidence.
 
 ## 5.4.30 - Sleeping bag quick-item access (#319, 2026-10-17)
 

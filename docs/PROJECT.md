@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.30** — 2026-10-17.
+Documentation version: **5.4.31** — 2026-10-17.
+
+## 5.4.31 - Collapsible automap help (#321)
+
+The map legend is hidden on entry, with a live binding hint and a localized
+Automap Controls entry. New/reset controls use L; existing controls remain.
+Closing/loading/travel resets only this presentation. Native/UI evidence:
+assets/validation_5431; author check CA321-01 pending.
 
 ## 5.4.30 - Sleeping bag quick-item access (#319)
 

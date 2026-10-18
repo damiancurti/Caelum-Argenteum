@@ -1,0 +1,124 @@
+{
+  "issue": 321,
+  "release": "5.4.31",
+  "runs": [
+    {
+      "directory": "issue321-01",
+      "log": "ui.txt",
+      "sha256": "d3fbd0907a8ec172707bfcf21100920deb77975a795fbfe5a094a7e080b04814",
+      "passed": 6,
+      "failed": 1,
+      "done": false
+    },
+    {
+      "directory": "issue321-02",
+      "log": "load.txt",
+      "sha256": "6171a89545b4f62fceacf30c218dea2b8b42634bb6b9f36a4a11ac6b3badb89e",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-02",
+      "log": "save.txt",
+      "sha256": "6de4d995c74c31d398596b7b69bbd9cc0614aeab1668b451fbd2f412c97935c2",
+      "passed": 1,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-02",
+      "log": "ui.txt",
+      "sha256": "fe527a7dce1644c6269d95aecb5d6c09deef47b464264c2e8fba821bba758f27",
+      "passed": 7,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-release",
+      "log": "load.txt",
+      "sha256": "fc638f4c00be676baabfb2ab257ff6fc2ed98ba172d76537fe884d3bdab99ba5",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-release",
+      "log": "save.txt",
+      "sha256": "3ef4560939ab166d3f22fc3bccea04156ec78ff3116c7742342cb889ef0a13c8",
+      "passed": 1,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-release",
+      "log": "ui1080.txt",
+      "sha256": "3ff4a98d23f6c285ee100afe781b8717b29e60eb02c23a742db5519e1d6f183d",
+      "passed": 7,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-release",
+      "log": "ui720.txt",
+      "sha256": "d380d1642d73a8037cbb08defd3157f0fa5e005982ed297b100e33dad51902a8",
+      "passed": 7,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-release",
+      "log": "ui768.txt",
+      "sha256": "e882e71804cd1e622e9387c6c289c99756cff6aec0184c9642c18477aa2d7aab",
+      "passed": 7,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-final02",
+      "log": "load.txt",
+      "sha256": "5c6e6bfa81dbcd391882be4605c3b781d9e1d28acde2701de2c922f9f5971c7a",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-final02",
+      "log": "save.txt",
+      "sha256": "69224c31d22834dd69065ff34b95b27053a60b4f5bc18ce8e38d6b6df9690148",
+      "passed": 1,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-final02",
+      "log": "ui1080.txt",
+      "sha256": "0611ce7b0f3e4e833d37b11f478ad4a0aae70c6e6f9ed93fff96d370c6195c74",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-final02",
+      "log": "ui720.txt",
+      "sha256": "8e108f3c06bb117dcd34e2afe5def6d862ebf3ba910fc49c60e0ecdc231c72c5",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-final02",
+      "log": "ui768.txt",
+      "sha256": "7572dd56c50d18ec22dcd9f702199a41356dd8aa6d97bf3ffda110fd176cb231",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    }
+  ],
+  "final_passes": 28,
+  "normal_package_members": 16371,
+  "normal_equals_tested_source": true,
+  "runtime_sha256": "93dcc95372da943d4dfae20727e495e3c18b4a7cc86a17b367bcf3e03c2271b2",
+  "fixture_sha256": "8b54f88e9cf745298dc3ccba1bc172bde512b5447c4a020ddc7642d5a46ac3e6",
+  "author_acceptance": "pending CA321-01"
+}
