@@ -4,7 +4,7 @@ Documentation version: **5.4.32** — 2026-10-17.
 
 **5.4.32/#320:** author replaced #259 spread for Mandinga fire/Zupay stone
 with native direct aim at release. Other attacks unchanged. validation_5432;
-CA320-01 pending. Shared #325 decision: 32m plus line of sight.
+CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
 **5.4.31/#321:** automap legend defaults hidden, native binding hint/toggle
 (L for new/reset controls), reset on close/load/travel. Evidence validation_5431;

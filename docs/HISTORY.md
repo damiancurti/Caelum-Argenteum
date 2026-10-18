@@ -12,8 +12,12 @@ native target aim at release, projectile payload and resource rules remain.
 No homing, prediction, new scan or saved field is added. Existing flying shots
 keep their saved trajectory; future shots use the current class rule.
 Focused baseline/native/save evidence is recorded in assets/validation_5432.
-Author acceptance CA320-01 remains pending; #309's broader combat audit remains
-outside this patch.
+Author acceptance CA320-01 (origin 5.4.32/#320), 2026-10-17: the author
+confirmed "That test passed" after the two-enemy preview, specifically Mandinga
+fire and Zupay stone aiming directly toward the player at release. Save, dense
+population and controlled matrix coverage remain agent evidence. The pending
+entry was retired on that explicit confirmation. #309's broader combat audit
+remains outside this patch.
 Final verification: 504 current-runtime and 488 baseline native assertions;
 project validation/build, all 16,371 package members and independent source
 review pass. Early fixture failures and their corrections remain in the archive.

@@ -8,7 +8,8 @@ Implement the author's explicit direct-aim exception after identifying #259
 spread as the cause. Verify current target position/elevation, native attack
 states, the >=500 population path, unrelated spread and previous-runtime saves.
 Completed: 504 current/488 baseline native assertions, validation/build and
-package equivalence pass. Evidence: assets/validation_5432. CA320-01 is pending.
+package equivalence pass. Evidence: assets/validation_5432. CA320-01 passed
+on 2026-10-17; author observed direct fire/stone aim in the preview.
 
 ## 5.4.31 - Collapsible map legend (#321)
 

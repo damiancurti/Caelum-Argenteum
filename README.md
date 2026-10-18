@@ -11,7 +11,7 @@ it, then rebuild with `run_dev.bat` as described below.
 
 Mandingas and Zupay now aim fire/stone projectiles directly at the target at
 release (#320, author decision). Other weapon dispersion remains unchanged.
-[Evidence](assets/validation_5432/RESULTS.md); author check CA320-01 is pending.
+[Evidence](assets/validation_5432/RESULTS.md); author check CA320-01 passed on 2026-10-17.
 
 Automap help starts collapsed (#321); use its displayed key to toggle the legend.
 L is the new-install/reset default; existing bindings remain configurable under
