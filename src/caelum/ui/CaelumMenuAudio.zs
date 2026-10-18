@@ -92,6 +92,13 @@ class CaelumMenuAudio : StaticEventHandler
             TravelPresentationPending = true;
             TravelWipe = e.Args[0];
             TravelSound = e.Args[1];
+            if(TravelWipe==CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR)
+            {
+                // El hub ya evita el barrido nativo; no arrastrar una imagen
+                // de vehículo aún pendiente ni pasar -1 a setTransition.
+                VehicleArrival=false;SnapshotFrames=0;ArrivalFrames=0;
+                TravelWipe=0;
+            }
         }
         else if (e.Name == "ca_tarot_reveal")
         {

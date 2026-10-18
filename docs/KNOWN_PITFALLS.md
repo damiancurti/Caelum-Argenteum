@@ -4,6 +4,38 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-126 - Native no-wipe does not clear a custom travel overlay
+
+Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED, #334 /5.4.36,2026-10-18.
+GZDoom4.14.2 Windows. Evidence: assets/validation_5436;8 native runs/64 checks,
+two baseline routes and16,375-member source/package equivalence. CA334-01 pending.
+
+Symptom/cause: real Board/Confirm TCOAST->MAP03 followed by an artificially
+early approach to house158 leaves the previous vehicle snapshot covering CAH158.
+The journey is already ARRIVED. The first house frame still has VehicleArrival
+at frame4 even though ordinary departure reset TravelWipe to0. An engine no-wipe
+rule does not clear a custom RenderOverlay owner. GZDoom's same-hub NoWipe counter
+and loading icon are separate from this overlay. setTransition(0) is a no-op;
+a negative transition selects Melt, not cancellation.
+
+Fix/prevention: send explicit one-use house-door presentation intent, preserve it
+through PreTravelled, clear the prior overlay and normalize to0 in UI. Never
+forward the sentinel to the native transition API. Keep native autosaves, loading
+icons, global settings and normal vehicle transitions. No saved schema changes.
+
+Validation: capture UI state before portal Used resets it, then inspect the first
+destination frame. Native Board/Confirm and portal entry remain real, but moving
+the player1,085.888MU immediately to that portal is an explicit fixture operation.
+Do not call this a reproduction of ordinary walking or of every native fade.
+Final-frame screenshots do not prove the absence of a wipe. Test normal vehicle
+arrival separately and reload actual inside/outside autosave files. A long cart
+control needs its forecast's258 water rations;200 caused a genuine diagnostic
+death, not a door regression. Preserve the failed fixture and correct its stock.
+
+References: GZDoom[g4.14.2](https://github.com/ZDoom/gzdoom/tree/g4.14.2),
+g_level.cpp same-hub ChangeLevel and d_main.cpp NoWipe/setTransition; production
+CaelumHousePortal, CaelumPlayer.PreTravelled and CaelumMenuAudio.
+
 ## CA-KP-125 - Escort poses must not compete with the movement owner
 
 Status/evidence: ENGINE-VERIFIED, #322 / 5.4.35, 2026-10-18. GZDoom 4.14.2

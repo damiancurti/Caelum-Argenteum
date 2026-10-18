@@ -6153,7 +6153,7 @@ class CaelumPlayer : DoomPlayer
         CaelumPlayerPresentation.SyncHUDLoadState(self);
     }
 
-    // Solicitud de una salida confirmada por tarot; se consume en el cruce.
+    // Solicitud de presentación del próximo cruce; se consume una sola vez.
     int PendingTravelWipe;
 
     override void PreTravelled()
@@ -6163,8 +6163,11 @@ class CaelumPlayer : DoomPlayer
             ? journey.TravelMode : 0;
         int wipe = PendingTravelWipe;
         int cue = 0;
-        if (mode == CaelumJourneyState.MODE_SHIP) { wipe=1; cue=2; }
-        else if (mode == CaelumJourneyState.MODE_CART || mode == CaelumJourneyState.MODE_CARAVAN) { wipe=3; cue=1; }
+        if(wipe!=CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR)
+        {
+            if (mode == CaelumJourneyState.MODE_SHIP) { wipe=1; cue=2; }
+            else if (mode == CaelumJourneyState.MODE_CART || mode == CaelumJourneyState.MODE_CARAVAN) { wipe=3; cue=1; }
+        }
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
         WorldCarbineShotUntil = 0;

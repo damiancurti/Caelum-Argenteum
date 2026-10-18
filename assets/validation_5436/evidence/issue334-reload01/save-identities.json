@@ -1,0 +1,32 @@
+[
+  {
+    "file": "inside.zds",
+    "sha256": "c764ef6ddc1412cfaa5d2ebe944b8f6b8cf80c83ddb8bdf5198980a9173eb326",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:31",
+      "Current Map": "CAH000",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:31",
+      "Comment": "CAH000 - Barracas al Sud \u2014 fortified port\nTime: 00:00:02"
+    }
+  },
+  {
+    "file": "outside.zds",
+    "sha256": "f43c6013c929f151785a381c70569248c7fc7cefa7e08d83f8fe64d0955fef3e",
+    "info": {
+      "Software": "GZDoom g4.14.2",
+      "Engine": "GZDOOM",
+      "Save Version": 4560,
+      "Title": "Autosave 2026-10-18 03:27:35",
+      "Current Map": "MAP03",
+      "Game WAD": "DOOM2.WAD",
+      "Map WAD": "production.pk3",
+      "Creation Time": "2026-10-18 03:27:35",
+      "Comment": "MAP03 - Barracas al Sud \u2014 fortified port\nTime: 00:00:05"
+    }
+  }
+]

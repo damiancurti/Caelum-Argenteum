@@ -1,6 +1,17 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
+
+## House doors do not inherit vehicle presentation (#334)
+
+MAP03/CAH house-door travel requests no full-screen animation. Portals set the
+one-use TRAVEL_WIPE_HOUSE_DOOR intent; PreTravelled preserves it instead of
+inheriting a vehicle mode. The UI clears any unfinished vehicle snapshot and
+normalizes the intent to zero. Never pass the negative sentinel to native
+setTransition: it means Melt there, not cancellation. Native same-hub travel
+keeps its loading icon and arrival autosave. Vehicle travel, tarot presentation,
+user wipetype and intermission settings retain their existing behavior. No
+saved schema changes: the already serialized pending request is consumed once.
 
 ## 5.4.35 - Coherent prisoner escort movement (#322)
 

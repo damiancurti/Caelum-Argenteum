@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.35** — 2026-10-18.
+Documentation version: **5.4.36** — 2026-10-18.
+
+## 5.4.36 - House-door presentation isolation (#334)
+
+Implemented explicit house-door intent and inherited-overlay cleanup. Native
+verification passes8 runs/64 assertions: normal cart/ship effects, both directions
+of real portal Use and inside/outside autosave reloads. Review, project validation,
+build and16,375-member equivalence pass. The early vehicle/house reproduction
+injects only the approach; the originally reported ordinary entry still requires
+CA334-01 confirmation. Evidence: validation_5436. No merge/acceptance is inferred.
 
 ## 5.4.35 - Prisoner escort replacement (#322)
 
