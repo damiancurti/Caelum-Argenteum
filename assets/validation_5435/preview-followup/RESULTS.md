@@ -8,7 +8,7 @@ waiting. It adds Spanish/English on-screen instructions and faces the companions
 This fixture does not change production gameplay or the known packed-row limit.
 
 The actual native map restart passes 10 assertions across two seeds. The author
-then explicitly answered "Funciona; ya cerr? la prueba" to the follow-up asking
+then explicitly answered "Funciona; ya cerré la prueba" to the follow-up asking
 whether prisoners still turned/walked while idle. This confirms observed following
 and idle behavior. It does not independently confirm the unmentioned campaign
 extraction/rewards or every narrow-corridor/save scenario in CA322-01; those
