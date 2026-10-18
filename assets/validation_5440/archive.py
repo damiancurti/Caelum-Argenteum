@@ -56,6 +56,6 @@ with zipfile.ZipFile(ROOT/'build/issue325-final01/production.pk3') as matrix,zip
 result={'issue':325,'release':'5.4.40','runs':records,'final_runs':len(final),
     'final_passes':sum(r['passes'] for r in final),'normal_package_members':len(expected),
     'matrix_to_final_only_text_and_localization_index':sorted(changed),
-    'normal_equals_tested_source':True,'author_acceptance':'pending CA325-01'}
+    'normal_equals_tested_source':True,'author_acceptance':'CA325-01 accepted 2026-10-18; explicit rest approval; no reported qualifications'}
 (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({k:v for k,v in result.items() if k!='runs'}))
