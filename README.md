@@ -48,8 +48,8 @@ The interval restarts after the latest autosave, including map transitions and
 checkpoints. Pause, menus, console and loading time do not count. Native settings
 and slot rotation remain authoritative; loading a save starts a fresh interval.
 Native validation passes 36 runs/138 assertions, including the full interval and
-actual file reloads; [evidence](assets/validation_5434/RESULTS.md). The author confirmed
-bag/follower reload on October 18; CA324-01's remaining checks are still pending.
+actual file reloads; [evidence](assets/validation_5434/RESULTS.md). The author approved
+autosave on 2026-10-18, completing CA324-01.
 
 MAP02's western crusher now owns its original 128x128-MU panel (#323), instead
 of the shared western ceiling. Fresh MAP02 geometry is revision 5. Native walking,

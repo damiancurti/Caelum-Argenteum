@@ -62,7 +62,7 @@ def main():
         'fixture_sha256':hashlib.sha256((final/'quick.pk3').read_bytes()).hexdigest(),
         'final_runs':len(current),'final_assertions':sum(r['passed'] for r in current),
         'normal_package_members':len(expected),'normal_equals_tested_source':True,'runs':records,
-        'author_acceptance':'pending CA324-01'}
+        'author_acceptance':'CA324-01 accepted 2026-10-18; explicit autosave approval; no reported qualifications'}
     (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({key:value for key,value in result.items() if key!='runs'}))
 

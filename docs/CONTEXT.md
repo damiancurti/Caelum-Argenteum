@@ -10,7 +10,7 @@ Documentation version: **5.4.40** — 2026-10-18.
 **5.4.35/#322:** escort/idle accepted; CA322-01 partially pending.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
-CA324-01 bag/follower accepted Oct18; other checks pending. validation_5434.
+CA324-01 accepted Oct18. validation_5434.
 
 **5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
 Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.

@@ -4,8 +4,9 @@ The author clarified on 2026-10-18 that the timer starts after the latest
 autosave, including map transitions; those arrival saves must remain. Native
 file creation and slot rotation still follow the user's settings. Manual saves
 do not restart the timer. On 2026-10-18 the author confirmed CA324-01's preview
-reload retains its bag and follower. Remaining author checks stay pending;
-excessive follower turning and slow movement reported there are tracked in #322.
+reload retains its bag and follower, then explicitly approved autosave later
+that day. CA324-01 (origin 5.4.34 / #324) is fully accepted without reported
+qualifications. Follower behavior reported there remains a separate #322 scope.
 
 ## Implementation and boundaries
 
@@ -59,7 +60,8 @@ failures and all processes exiting successfully. The full observation lasts
 320.043685 seconds and produces one periodic autosave; its reload preserves all
 four recorded state categories. The normal build and all 16,373 source/package
 members match. Project validation and independent review pass. Author acceptance
-remains pending, separate from the automated/native results.
+was confirmed on 2026-10-18, separately from these automated/native results;
+the original run counts and tested-runtime hashes are unchanged.
 
 The seven final ordering regressions pass 25 assertions with expected native
 file counts: direct travel, paused external save with a pending request, cancelled
