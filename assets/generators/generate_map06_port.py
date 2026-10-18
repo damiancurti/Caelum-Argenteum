@@ -4,6 +4,8 @@ from pathlib import Path
 from generate_coastal_trials import generate
 from generate_port_city import expand_city
 import generate_city_interiors as interiors
+import generate_city_ceilings
+from map_catalogue import map_name
 
 ROOT = Path(__file__).resolve().parents[2]
 D = json.loads((ROOT/'assets/map06_port/LAYOUT.json').read_text(encoding='utf-8'))
@@ -25,6 +27,7 @@ def extend(port):
     import generate_house_hubs
     if generate_house_hubs.DATA['enabled']:
         generate_house_hubs.exterior(port)
+    generate_city_ceilings.apply(port, generate_house_hubs.CITY)
 
 def runtime():
     import generate_native_city_doors
@@ -34,7 +37,7 @@ def runtime():
     code = '// Generado desde assets/map06_port/{LAYOUT,SOUTH,CITY}.json.\nclass CaelumPortData : Object play\n{\n'
     code += ''.join(f'    const {k} = {v:.12g};\n' for k, v in values.items())
     code += '    static bool IsSouth(){let p=CaelumPortSiege.Get();return p!=null && p.args[0]>=2;}\n'
-    code += f'    static int MandingaCount(){{return IsSouth()?{S["mandingas"]}:MANDINGAS;}}\n'
+    code += '    static int MandingaCount(){return IsSouth()?CaelumReinforcementData.TOTAL:MANDINGAS;}\n'
     code += f'    static int DefenderCount(){{return IsSouth()?{S["defenders"]}:DEFENDERS;}}\n'
     code += f'    static int GunCount(){{return IsSouth()?{len(S["defending_guns"])+6}:18;}}\n'
     code += '    static bool ActiveGun(int i){return !IsSouth() || i<6'
@@ -87,7 +90,8 @@ def runtime():
     code += '    static vector3 CrewRoutePoint(int i,int p){switch(i){\n'+''.join(f'        case {i}:return CrewRoute{i}(p);\n' for i in range(len(S['crew_routes'])))+'        }return (0,0,0);}\n'
     for i,r in enumerate(S['crew_routes']):
         code += f'    static vector3 CrewRoute{i}(int p){{\n'+''.join(f'        if(p=={n})return ({",".join(map(str,v))});\n' for n,v in enumerate(r))+'        return (0,0,0);}\n'
-    code += '    static bool IsCurrent(){return level.MapName=="MAP06" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}\n}\n'
+    code += '    static bool IsCurrent(){return level.MapName=="PORT_MAP_NAME" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}\n}\n'
+    code = code.replace('PORT_MAP_NAME', map_name('port'))
     (ROOT/'src/caelum/world/CaelumPortData.zs').write_text(code, encoding='utf-8')
 
 if __name__ == '__main__':

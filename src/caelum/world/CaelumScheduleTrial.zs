@@ -126,7 +126,7 @@ class CaelumScheduleTrial : Object
         if (user == null) return false;
         let source = CaelumMaterialPickup(user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL, CaelumConstants.MATERIAL_WOOD, 1));
         let agenda = CaelumScheduleState.Get(user, true);
-        String destination = level.MapName == "MAP06" ? "MAP07" : "MAP06";
+        String destination = level.MapName == "MAP03" ? "TCOAST" : "MAP03";
         let entry = CaelumScheduleState.DispatchCargo(user, String.Format("trial_cargo_%d", agenda.NextId + 1), source, 100, destination, 30);
         if (entry == null) { user.A_Print(StringTable.Localize("CA_EVENT_CARGO_FAILED", false)); return false; }
         entry.Trial = true;

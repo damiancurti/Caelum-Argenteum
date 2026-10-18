@@ -4,6 +4,10 @@ import hashlib
 import json
 import struct
 import argparse
+try:
+    from .map_catalogue import map_name
+except ImportError:
+    from map_catalogue import map_name
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -33,7 +37,8 @@ def render(root=ROOT):
              '// La suma nativa identifica la geometrÃ­a cargada, tambiÃ©n en hubs antiguos.',
              'class CaelumCartographyCatalogueData : Object', '{']
     for name in ['MAP01', 'MAP02', 'MAP06']:
-        lines.append(f'    const {name}_CHECKSUM = "{map_checksum(name, root)}";')
+        current = map_name('port', root) if name=='MAP06' else name
+        lines.append(f'    const {name}_CHECKSUM = "{map_checksum(current, root)}";')
     # Both layouts share exactly the same authored POI coordinates and IDs.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
     lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',

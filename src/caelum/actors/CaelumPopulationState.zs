@@ -1,4 +1,4 @@
-// #128: población derivada del mapa, independiente de la cámara y de CADEV02.
+// #128: población derivada del mapa, independiente de la cámara y de TACTORS.
 class CaelumPopulationState : Object play
 {
     int Revision, LivingCombatants;

@@ -1,6 +1,6 @@
 CA318-01 | Origin 5.4.28 / issue #318 | Contact-only demon-breath heat
-Prerequisites: rebuild 5.4.28 and use a fresh campaign. Use a reachable
-Mandinga or Zupay and the normal thermal display. MAP06 performance acceptance is
+Prerequisites: rebuild the current release and use a fresh campaign. Use a reachable
+Mandinga or Zupay and the normal thermal display. MAP03 performance acceptance is
 separate and remains unresolved; this check does not require a full-army siege.
 Steps: receive direct breath, then leave its cone/range. Observe burning heat;
 repeat behind a solid wall and near breath without direct contact. Save/reload
@@ -12,8 +12,8 @@ contact. Reload preserves the remaining effect without a heat spike or reset;
 Report any visual, resource,
 temperature, interruption or save regression. Author confirmation is pending.
 
-CA318-02 | Origin 5.4.28 / issue #318 | Conservative MAP06 geometry
-Prerequisites: use a fresh campaign and the normal 5.4.28 build. Existing backups
+CA318-02 | Origin 5.4.28 / issue #318 | Conservative MAP03 geometry
+Prerequisites: use a fresh campaign and the normal current build. Existing backups
 remain available; previous-save continuation was explicitly waived by the author
 on 2026-10-17 and is not reported as passed.
 Current scope: the author subsequently authorized separate house interiors;
@@ -22,15 +22,15 @@ now changes hub maps and interior windows do not show the exterior city.
 Steps: walk the first streets, enter/leave houses, use doors, inspect windows and
 rooftops, fly over buildings and follow wall/tower stairs. Check ground-facing views.
 Save/reload; leave and return through the hub.
-Expected: unchanged exterior footprint, street widths, materials and roof/flight
-space; the authorized separate interiors work without lost or duplicated
+Expected: unchanged exterior footprint, street widths and materials; adopted low-sky
+flight/roof restrictions are intentional (CA318-05); the authorized separate interiors work without lost or duplicated
 defenders, doors or campaign progress. Compare
 frame behavior and report location/view for any regression. This partial reduction
 does not establish that the peaceful city or siege is playable. Author acceptance
-and remaining MAP06 performance work are pending.
+and remaining MAP03 performance work are pending.
 
-CA318-03 | Origin 5.4.28 / issue #318 | Native MAP06 doors
-Prerequisites: fresh MAP06 using the normal 5.4.28 build; this check does not
+CA318-03 | Origin 5.4.28 / issue #318 | Native MAP03 doors
+Prerequisites: fresh MAP03 using the normal current build; this check does not
 require loading an old campaign or starting the full-army siege.
 Current scope: front house doors now change maps (CA318-04). This check applies
 to the retained native moving pairs inside the private house maps.
@@ -44,10 +44,10 @@ ground-facing FPS with the documented benchmark on the same settings.
 Expected: paired normal opening, renewed wait, unobstructed passage when open,
 no pushing/crushing, no rising or detached models, and finite vertical collision.
 No duplicated/missing leaves after reload/hub return. Native checks and measured
-gains do not establish 60 FPS or full MAP06 playability. Author acceptance pending.
+gains do not establish 60 FPS or full MAP03 playability. Author acceptance pending.
 
 CA318-04 | Origin 5.4.28 / issue #318 | Separate house interiors and shop signs
-Prerequisites: fresh MAP06 in the current house-hub build. This author test
+Prerequisites: fresh MAP03 in the current house-hub build. This author test
 covers peaceful exploration; full-army siege performance remains unresolved.
 Steps: walk around several houses and compare their size/street widths. Use a
 front door, interact with the soldiers, injure one, save/reload inside, leave
@@ -60,11 +60,9 @@ the nineteenth-century setting. Report FPS and location/view while walking.
 The brief preview was reviewed positively, with an explicit size-preservation
 requirement; that is not confirmation of this complete acceptance test.
 
-CA318-05 | Origin 5.4.28 / issue #318 | Variable-height sky diagnostic
-Prerequisites: close any existing GZDoom. Use the prepared local test package;
-from the repository run:
-python assets/validation_issue318/house_preview.py --directory issue318-ceilings-01 --variant zoned-1000
-This opens an isolated preview with its own config/saves and visible FPS.
+CA318-05 | Origin 5.4.28 / issue #318 | Adopted variable-height sky
+Prerequisites: rebuild the current normal package and start a fresh MAP03.
+The author adopted this design on 2026-10-17; visual route checks remain pending.
 Steps: walk several residential streets, look forward/down/up, use house and
 shop doors, and inspect the city from the wall and tower routes. Try upward
 movement near the low/high sky boundary and a house roof. Compare house size,
@@ -72,6 +70,17 @@ street widths and the skyline. Report any visual gaps or blocked public routes.
 Expected: original house footprints and 184-MU roof height; residential physical
 sky at that height; the outer wall/tower region keeps 1,024 MU. The sky remains
 visible. Low districts intentionally limit flight and closed roofs cannot be
-stood on. Decide whether those restrictions and the visible transitions are
-acceptable before adopting this diagnostic geometry. This is not a full-army
-performance acceptance test; normal production geometry is unchanged.
+stood on. Inspect the visible transitions and report blocked public routes or visual gaps.
+This is not siege performance acceptance; the geometry is now adopted normally.
+
+CA327-01 | Origin 5.4.29 / issue #327 | Current route and bounded siege
+Prerequisites: current normal build, fresh campaign; keep old catalogue saves
+with their original package. Do not enable a 6,000-simultaneous diagnostic.
+Steps: follow MAP01 -> MAP02 -> MAP03, enter/return from houses, save/reload,
+and reach the November 15 siege through normal calendar progression. Observe
+defenders leaving homes and successive reinforcement groups; save/reload during
+the siege and return through a house. Report location/view and FPS problems.
+Expected: no reservoir trial props in the city; normal routes and individual
+resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
+plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
+unused reserves. Native fixture checks do not certify natural battle fluency.

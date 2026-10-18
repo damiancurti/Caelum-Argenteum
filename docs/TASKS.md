@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
+
+## 5.4.29 - Adopted MAP03 city (#327)
+
+Implement the author's MAP01/MAP02 preservation, low-sky MAP03 adoption and named
+test scenarios; retain private interiors and stable world identities. Normal
+reinforcements use a 6,600 reserve and 1,000 deployment cap with resurrection
+unchanged. Current static/native evidence is assets/validation_5429; manual
+checks remain in the single pending_test.txt. #318's unresolved performance
+acceptance is not closed by renaming maps or merging code.
+
+Follow-up performance work: the cumulative Attackers history can reach 6,601
+entries. Machine observation below the density threshold and command/target
+consumers still traverse historical entries. Profile the late battle with few
+living bodies before choosing a registry optimization. Do not repeat a 6,000
+simultaneous body test or infer a measured cost from source inspection alone.
 
 ## 5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)
 

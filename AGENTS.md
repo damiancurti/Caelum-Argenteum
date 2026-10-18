@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -197,6 +197,9 @@ Hiding actors from the renderer does not authorize ignoring their gameplay.
    desktop Codex implements the issue and runs relevant tests. Review the linked
    PR and test evidence, then obtain author acceptance where required. A merged
    PR or closed issue does not confirm a manual test.
+   The author requested branch consolidation on 2026-10-17 (#328): keep only
+   main after integrating completed work. Preserve branch-tip ancestry and
+   local changes; detach retained auxiliary worktrees instead of deleting files.
 
 ## Selective file reading
 

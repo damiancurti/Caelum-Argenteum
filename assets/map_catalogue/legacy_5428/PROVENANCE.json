@@ -1,0 +1,13 @@
+{
+  "issue": 327,
+  "source_commit": "b9fd71ce2cb5acb9bdf09fabc2b4b9be443ea057",
+  "files": {
+    "MAP03.wad": "1af7849f7dc78fd5ff9d89995dd7cf89f0d4a59cb0c40dc01c062c999b3493f9",
+    "MAP04.wad": "30db5783c666e2a00dfed3a74b158d77debf08ab20730e514153cba4b133a197",
+    "MAP05.wad": "1273bfdaa0026280c35a5bf0e80e25aa81da83044c3a135b5b4994373153dc06",
+    "MAP06.wad": "e2b37efbca283a42247ec7da5419fa882ed60e280c408adbe8f8e1c766be108a",
+    "MAP07.wad": "b0f0584d55a9ec89a4b78b1a9df280d3562784bc115f6a2f67a07fa358835392",
+    "MAP08.wad": "04222ba67f7477f1495fc28417091a00e39d25067a28d836962cd55b557b92df",
+    "CADEV02.wad": "4e2a50ddc6445c10ea92582d66faceff71464cbf5d88921c9d1533918a8ed79f"
+  }
+}

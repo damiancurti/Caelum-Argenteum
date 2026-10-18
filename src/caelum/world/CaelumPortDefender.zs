@@ -134,7 +134,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     override bool Used(Actor activator)
     {
         let user = CaelumPlayer(activator);
-        if ((level.MapName != "MAP06" && CaelumHouseHubData.HouseForMap(level.MapName)<0) || user == null || user.player == null
+        if ((level.MapName != "MAP03" && CaelumHouseHubData.HouseForMap(level.MapName)<0) || user == null || user.player == null
             || health <= 0 || !CaelumUseGeometry.AimedAt(user, self)) return false;
         if ((user.player.cmd.buttons & BT_USE) == 0 || user.FolkloreInteractionUseLatched)
             return true;

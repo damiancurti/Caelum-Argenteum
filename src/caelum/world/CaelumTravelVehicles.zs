@@ -20,7 +20,7 @@ class CaelumTravelVehicle : Actor
     CaelumVehiclePart Parts[32];
     vector3 BoardingPoint;
     virtual clearscope int TravelMode(){return CaelumJourneyState.MODE_CART;}
-    clearscope int Connection(){return level.MapName=="MAP06"?10:level.MapName=="MAP07"?11:0;}
+    clearscope int Connection(){return level.MapName=="MAP03"?10:level.MapName=="TCOAST"?11:0;}
     bool CanBoard(CaelumPlayer user)
     {
         return Ready && Connection()!=0 && user!=null && user.player!=null && user.health>0
@@ -147,8 +147,8 @@ class CaelumVehicleWorld : StaticEventHandler
     {let it=ThinkerIterator.Create(kind);return Actor(it.Next());}
     static bool Prepare()
     {
-        if(level.MapName!="MAP06" && level.MapName!="MAP07")return true;
-        bool port=level.MapName=="MAP06";
+        if(level.MapName!="MAP03" && level.MapName!="TCOAST")return true;
+        bool port=level.MapName=="MAP03";
         vector3 ranchPos=port?(-640,192,0):(-512,384,0);
         let ranch=CaelumVehicleRanch(Find("CaelumVehicleRanch"));
         if(ranch==null)ranch=CaelumVehicleRanch(Actor.Spawn("CaelumVehicleRanch",ranchPos,NO_REPLACE));

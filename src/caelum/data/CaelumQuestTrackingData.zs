@@ -12,7 +12,7 @@ class CaelumQuestTrackingData : Object
     {
         if(quest==CaelumConstants.QUEST_MAIN_M00_THE_FOOL)return "MAP01";
         if(quest==CaelumConstants.QUEST_SEWERS || CaelumQuestCatalogue.IsRescue(quest))return "MAP02";
-        if(quest==CaelumConstants.QUEST_PORT_SIEGE)return "MAP06";
+        if(quest==CaelumConstants.QUEST_PORT_SIEGE)return "MAP03";
         return "";
     }
     // La clave es la misma que el Diario eligió para la etapa actual.

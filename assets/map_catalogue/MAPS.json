@@ -1,0 +1,17 @@
+{
+  "issue": 327,
+  "revision": 1,
+  "maps": {
+    "mansion": {"lump": "MAP01", "previous": "MAP01", "kind": "campaign"},
+    "sewers": {"lump": "MAP02", "previous": "MAP02", "kind": "campaign"},
+    "reservoir": {"lump": "TRESERV", "previous": "MAP03", "kind": "test"},
+    "tarot": {"lump": "TTAROT", "previous": "MAP04", "kind": "test"},
+    "maintenance": {"lump": "TMAINT", "previous": "MAP05", "kind": "test"},
+    "port": {"lump": "MAP03", "previous": "MAP06", "kind": "campaign"},
+    "coast": {"lump": "TCOAST", "previous": "MAP07", "kind": "test"},
+    "hazards": {"lump": "THAZARD", "previous": "MAP08", "kind": "test"},
+    "actors": {"lump": "TACTORS", "previous": "CADEV02", "kind": "test"}
+  },
+  "private_interiors": "CAH000 through CAH159 retain their identities and link to port",
+  "recovery": "The complete previous runtime is git commit b9fd71ce2cb5acb9bdf09fabc2b4b9be443ea057; original renamed WADs are preserved in legacy_5428/maps. Do not combine old hub saves with the new catalogue."
+}

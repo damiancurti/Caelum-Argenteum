@@ -6,6 +6,7 @@ texturas propias ya incluidas. No coloca población masiva ni concede Tarot.
 Ejecutar desde cualquier directorio; --output permite comparar otra salida.
 """
 from pathlib import Path
+from map_catalogue import map_name
 import argparse
 import struct
 
@@ -75,7 +76,7 @@ class SewerMap:
 
 def generate(folder):
     folder.mkdir(parents=True, exist_ok=True)
-    reservoir = SewerMap('MAP03')
+    reservoir = SewerMap(map_name('reservoir'))
     reservoir.room(-256, 0, 256, 512)
     reservoir.room(-2048, 512, 2048, 3584, ceiling=512)
     # Dos canales laterales con cruces secos y un depósito central despejado.
@@ -88,7 +89,7 @@ def generate(folder):
             reservoir.cells.pop((x, y))
     reservoir.write(folder)
 
-    tarot = SewerMap('MAP04')
+    tarot = SewerMap(map_name('tarot'))
     tarot.room(-256, 0, 256, 512)
     tarot.room(-512, 512, 512, 1536, ceiling=384)
     tarot.room(-1280, 896, 1280, 1152, ceiling=256)
@@ -102,7 +103,7 @@ def generate(folder):
     tarot.room(-512, 896, 512, 1152, ceiling=384)
     tarot.write(folder)
 
-    maintenance = SewerMap('MAP05', cell=64)
+    maintenance = SewerMap(map_name('maintenance'), cell=64)
     maintenance.room(-256, 0, 256, 512)
     maintenance.room(-768, 512, 768, 1024, ceiling=320)
     # Dos escaleras paralelas de ocho peldaños: 12 MU de alto, 64 de huella.
@@ -115,7 +116,7 @@ def generate(folder):
     maintenance.room(-256, 768, 256, 1024, floor=-12, ceiling=320, water=True)
     maintenance.write(folder)
     # Un mapa nuevo conserva el checksum de MAP05 y sus partidas guardadas.
-    maintenance.name = 'MAP08'
+    maintenance.name = map_name('hazards')
     # 4.36.0a: galería oriental de ensayos en un anexo independiente.
     # El foso tiene geometría permanente; un puente-actor retira solamente la tapa.
     maintenance.room(768, 640, 1024, 896, ceiling=320)

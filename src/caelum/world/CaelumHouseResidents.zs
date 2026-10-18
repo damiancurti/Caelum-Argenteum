@@ -252,7 +252,7 @@ class CaelumHouseResidents : Inventory
             let entry=Residents[identity];
             if(entry.Resume(entry.Position))
             {
-                if(entry.Emitted && level.MapName=="MAP06")Bind(CaelumPortSiege.Get(),identity);
+                if(entry.Emitted && level.MapName=="MAP03")Bind(CaelumPortSiege.Get(),identity);
             }
             else PlacementPending.Push(identity);
         }
@@ -265,7 +265,7 @@ class CaelumHouseResidents : Inventory
             {PrepareCity(port);Ready=true;}
             else if(!CaelumHouseHub.IsCity(port)){PrepareOtherMap();Ready=true;}
         }
-        if(!DeploymentPending || level.MapName!="MAP06")return;
+        if(!DeploymentPending || level.MapName!="MAP03")return;
         let port=CaelumPortSiege.Get();if(!CaelumHouseHub.IsCity(port) || !port.SiegeStarted)return;
         // Un intento por tic: presupuesto fijo independiente del total de actores.
         int identity=PendingCursor;PendingCursor=(PendingCursor+1)%Residents.Size();

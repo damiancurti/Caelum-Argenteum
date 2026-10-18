@@ -47,7 +47,7 @@ class CaelumHazardResetSwitch : CaelumHazardReleaseSwitch
     override bool Used(Actor activator)
     {
         let user=CaelumPlayer(activator);
-        if(level.MapName!="MAP08" || user==null || user.player==null || user.health<=0
+        if(level.MapName!="THAZARD" || user==null || user.player==null || user.health<=0
             || !user.CharacterCreationComplete || user.CreationWizardOpen
             || (user.player.cheats & CF_PREDICTING) || !CaelumUseGeometry.AimedAt(user,self)
             || !user.CheckSight(self,SF_IGNOREVISIBILITY))return false;
@@ -88,7 +88,7 @@ class CaelumHazardGallery : Object play
 {
     static void Prepare()
     {
-        if(level.MapName!="MAP08")return;
+        if(level.MapName!="THAZARD")return;
         if(ThinkerIterator.Create("CaelumHazardResetSwitch").Next()==null)
         {
             let lever=Actor.Spawn("CaelumHazardResetSwitch",(1088,1088,0),NO_REPLACE);

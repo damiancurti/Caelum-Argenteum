@@ -1,0 +1,14 @@
+{
+  "label": "final-geometry-01",
+  "script": "geometry",
+  "exit_code": 0,
+  "seconds": 10.187000000005355,
+  "runtime_sha256": "8d57e7d2242ac283cf76a5ea910e40f072d65398e3070639dbdd6d70cacd3b9e",
+  "fixture_sha256": "2dcb714c26f5232a1a6d49a2a6ea93cd1b2bae397aeaa13dc36e2fac22d562de",
+  "commands_sha256": "5ece33407fd0bcd407e339c85bbb73f4c0627e0491ba8b58c4e27cacf4759808",
+  "passes": 832,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

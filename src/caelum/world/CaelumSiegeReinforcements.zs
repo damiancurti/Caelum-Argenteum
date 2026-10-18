@@ -1,13 +1,3 @@
-// #132: datos de la prueba optativa; no modifica el encuentro ya guardado.
-class CaelumReinforcementData : Object
-{
-    const REVISION = 1;
-    const GROUP_SIZE = 100;
-    const LIVING_CAP = 2000;
-    const TOTAL = 6000;
-    const INTERVAL = 350;
-}
-
 class CaelumSiegeCrewSlot : Object play
 {
     Actor Machine;
@@ -21,14 +11,22 @@ class CaelumSiegeReinforcements : Object play
     int Revision, Successful, Living, Remaining, Pending, GroupStart;
     int NextOpportunity, PlacementCursor, PlacementFailures, Opportunities;
     bool Enabled, Stopped, Registering;
-    bool Placed[100];
+    bool Placed[CaelumReinforcementData.GROUP_SIZE];
     Array<CaelumSiegeCrewSlot> InitialCrew;
 
     void Initialize(CaelumPortSiege port, bool fresh)
     {
         if(Revision>=CaelumReinforcementData.REVISION)return;
+        if(Revision>0)
+        {
+            // Revisión idempotente: conservar identidades, tanda y plazo.
+            if(Enabled)Remaining=Max(0,CaelumReinforcementData.TOTAL-Successful);
+            Revision=CaelumReinforcementData.REVISION;
+            RefreshLiving(port);
+            return;
+        }
         Enabled=fresh && CaelumPortData.IsSouth()
-            && CVar.GetCVar("ca_test_siege_reinforcements").GetBool();
+            && (CaelumCityData.Enabled() || CVar.GetCVar("ca_test_siege_reinforcements").GetBool());
         if(!fresh)
             for(int i=0;i<port.Attackers.Size();i++)
                 if(port.Attackers[i]!=port.Boss)Successful++;
@@ -76,7 +74,7 @@ class CaelumSiegeReinforcements : Object play
         int ordinal=GroupStart+slot;
         CaelumSiegeCrewSlot crew=ordinal<InitialCrew.Size() ? InitialCrew[ordinal] : null;
         vector3 position=crew!=null ? crew.Position : CaelumPortData.FormationPosition(PlacementCursor);
-        if(crew==null)PlacementCursor=(PlacementCursor+1)%CaelumReinforcementData.TOTAL;
+        if(crew==null)PlacementCursor=(PlacementCursor+1)%CaelumReinforcementData.FORMATION_SLOTS;
         let body=CaelumMandinga(Actor.Spawn("CaelumMandinga",position,NO_REPLACE));
         if(body==null){PlacementFailures++;return false;}
         if(!Fits(body))
@@ -86,7 +84,7 @@ class CaelumSiegeReinforcements : Object play
             // por la formación y camina a su máquina con la IA ya existente.
             if(crew==null)return false;
             position=CaelumPortData.FormationPosition(PlacementCursor);
-            PlacementCursor=(PlacementCursor+1)%CaelumReinforcementData.TOTAL;
+            PlacementCursor=(PlacementCursor+1)%CaelumReinforcementData.FORMATION_SLOTS;
             body=CaelumMandinga(Actor.Spawn("CaelumMandinga",position,NO_REPLACE));
             if(body==null)return false;
             if(!Fits(body)){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
@@ -111,10 +109,12 @@ class CaelumSiegeReinforcements : Object play
     void Tick(CaelumPortSiege port)
     {
         if(!Enabled)return;
-        RefreshLiving(port);
         if(Stopped)return;
         if(port.Victory){Stopped=true;return;}
         if(Remaining==0 || level.time<NextOpportunity)return;
+        // Censo sólo al admitir una tanda: incluye cuerpos fuera de cámara,
+        // revividos y referencias destruidas, sin recorrer el mapa cada tic.
+        RefreshLiving(port);
         // No se acumulan oportunidades, tampoco después de cargar o viajar.
         NextOpportunity=level.time+CaelumReinforcementData.INTERVAL;Opportunities++;
         if(Pending==0)

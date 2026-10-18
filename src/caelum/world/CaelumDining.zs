@@ -447,10 +447,10 @@ class CaelumDiningWorld : Object play
     }
     static bool Prepare()
     {
-        // MAP03 queda reservado a la galería, incluso desde el diagnóstico.
-        if(level.MapName=="MAP03")return true;
-        if(level.MapName=="MAP06")return CaelumCityData.Enabled() ? CaelumCityWorld.Prepare() : Place(601,(-800,800,0),1);
-        if(level.MapName=="MAP07")return Place(701,(-256,1280,0),1);
+        // TRESERV queda reservado a la galería, incluso desde el diagnóstico.
+        if(level.MapName=="TRESERV")return true;
+        if(level.MapName=="MAP03")return CaelumCityData.Enabled() ? CaelumCityWorld.Prepare() : Place(601,(-800,800,0),1);
+        if(level.MapName=="TCOAST")return Place(701,(-256,1280,0),1);
         if(CaelumMazeLayout.IsCurrent())
         {
             // Habilita los espacios trasladados; enemigos y combate siguen
@@ -461,7 +461,7 @@ class CaelumDiningWorld : Object play
         }
         if(!CaelumSewerTrialSupport.IsTrialMap())return true;
         Zone(level.MapName=="MAP02"?(-224,160,0):(0,320,0),1);
-        if(level.MapName!="MAP03")return true;
+        if(level.MapName!="TRESERV")return true;
         bool a=Place(1,(-600,1000,0));bool b=Place(2,(0,1550,0));bool c=Place(3,(700,2500,0));
         return a && b && c;
     }

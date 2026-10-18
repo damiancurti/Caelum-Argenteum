@@ -1,0 +1,9 @@
+{
+  "issue": 327,
+  "enabled": true,
+  "height_source": "INTERIORS.json:height",
+  "districts": "House and shop lots expanded by half CITY.json urban_grid road_width; retained houses include their authored doorstep and road endpoint.",
+  "exclusions": "Keep the existing outer wall-walk belt, floors above the house roof and volumes extending above it at their existing ceiling height.",
+  "closed_roof": "Use the original opaque roof flat when floor equals ceiling.",
+  "author_decision": "Adopt the tested residential roof-height sky as normal MAP03; retain the taller exterior sky. House footprints and street widths stay unchanged."
+}

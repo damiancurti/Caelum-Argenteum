@@ -18,7 +18,7 @@ class CaelumDebugCannonTrial : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
-        if(level.MapName!="MAP03")return false;
+        if(level.MapName!="TRESERV")return false;
         let it=ThinkerIterator.Create("CaelumCannonTrialEncounter");
         if(it.Next()!=null)return true;
         let encounter=CaelumCannonTrialEncounter(Actor.Spawn("CaelumCannonTrialEncounter",Owner.Pos));

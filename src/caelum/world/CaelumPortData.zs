@@ -33,7 +33,7 @@ class CaelumPortData : Object play
     const TARGET_UPDATE_TICS = 8;
     const DEFENDER_HEIGHT = 57.6;
     static bool IsSouth(){let p=CaelumPortSiege.Get();return p!=null && p.args[0]>=2;}
-    static int MandingaCount(){return IsSouth()?6000:MANDINGAS;}
+    static int MandingaCount(){return IsSouth()?CaelumReinforcementData.TOTAL:MANDINGAS;}
     static int DefenderCount(){return IsSouth()?600:DEFENDERS;}
     static int GunCount(){return IsSouth()?42:18;}
     static bool ActiveGun(int i){return !IsSouth() || i<6 || i==6 || i==7 || i==8 || i==9 || i==10 || i==11 || i==12 || i==13 || i==14 || i==15 || i==16 || i==17;}
@@ -1551,5 +1551,5 @@ class CaelumPortData : Object play
         if(p==16)return (672,14336,256);
         if(p==17)return (736,14336,256);
         return (0,0,0);}
-    static bool IsCurrent(){return level.MapName=="MAP06" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}
+    static bool IsCurrent(){return level.MapName=="MAP03" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}
 }

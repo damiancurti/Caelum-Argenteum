@@ -1,18 +1,24 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
 
-**5.4.28/#318:** contact-only heat, native doors and160 private house interiors;
-original footprints retained, real resident state/deployment, six shop signs.
-Variable-sky diagnostic:184 MU districts/1024 exterior;871 native checks and24
-fresh ETW windows. Zoned peaceful exterior forward 330.73-337.53 FPS;
-residential 261.85-268.56;1,000-attacker city 6.42-7.16.
-Control also slower this session;cause unproven. Author retired6000 tests forever;
-last run stopped. Flight/roof restrictions need CA318-05 review.
-Normal geometry unchanged; deployment/playability open. Prior normal shells~37
-peaceful FPS;private CAH158>1000. Flat1600 bodies~54/44 FPS sprites/Domingo,
-not stable60. Full controls/limits:validation_issue318/RESULTS.md;CA-KP110..121.
-CA318-01..05 pending;old-save waiver applies.
+**5.4.29/#327:** current campaign MAP01 -> MAP02 -> MAP03. City adopts the exact
+tested 184-MU district/1024-MU exterior sky, original footprints and private CAH
+interiors. Other standalone maps: TRESERV, TTAROT, TMAINT, TCOAST, THAZARD,
+TACTORS. Stable location IDs and historical localization keys are unchanged.
+Normal siege: 100/group,350 tics,1,000 living deployment cap,6,600 cumulative
+reserve plus Zupay;600 defenders. Resurrection may exceed the cap by explicit
+author decision; new groups wait. Existing victory stops unused reserves.
+Static/native evidence:validation_5429. Manual checks remain pending. No new
+FPS promise; no6,000 simultaneous tests. Old catalogue recovery requires full
+b9fd71ce checkout/package; original WADs also preserved in map_catalogue.
+The following5.4.28 summary records the previous diagnostic stage.
+
+**5.4.28/#318:** contact-only breath, native doors, private house interiors and
+shop signs. Low-sky adoption is now5.4.29; prior comparisons and unexplained
+session variance remain in validation_issue318/RESULTS.md and CA-KP110..121.
+Neither flat1600-body nor city controls established stable60FPS. No6000
+simultaneous tests again; CA318-01..05 remain pending.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;
@@ -29,25 +35,10 @@ validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototyp
 full modular migration remains V5.17. Earlier map/Journal
 batch #231-236/#255-258 is accepted/merged/closed.
 
-**5.2.18-27 accepted:** HISTORY preserves #209/#211 and six 5.2.20-25 checks,
-#225's LF fix, CA227/229-01 (2026-10-13, PR228/230) and CA209-01/02
-(2026-10-12, PR210 merged 4549991a). Current rest/provisions/x105; empty Box 1g.
-**5.2.17/#207 accepted:** MAP01 minimum1 HP; PR208 merged/closed;
-CA207-01 2026-10-12, validation_5217.
-**5.2.16/#204 accepted:** Vulkan cursor/VSync; CA204-01 2026-10-12;
-PR205/206 merged (1bf5087e), refreshed LANGUAGE LF hash.
-**5.2.15/#150, 5.2.14/#149, 5.2.13/#148 accepted:** readability/comfort,
-controls/M automap, modular cosmetics/hands. CA150/149/148-01 passed 2026-10-12;
-PR203/202/201 merged, issues closed. Evidence validation_5215/5214/5213;
-SPRITE_ART_DIRECTION governs generation.
-
-**5.2.12 / #195 accepted:** CA195-01 on 2026-10-11, PR200 merged 74c31ca5,
-issue closed. Bull 10 m/s, 10 m/s^2 tracking charge, biological cushioning;
-finite resident tools/control priority. Evidence validation_5212.
-**5.2.11/#194 and 5.2.10/#192 accepted:** PR199/198 merged, issues closed.
-Collision 1 J/HP/body; ranged ideology exclusions, active shotgun naming.
-5.2.9 personality/power/bell12 and #188 Toughness accepted; PR193/196/197 merged.
-Evidence: validation_5211/5210/529/528; acceptance records: HISTORY.
+**5.2.8-27 accepted:** author confirmations, merged PRs, validation folders and
+individual checks remain in HISTORY. Current rules include automatic rest
+provisions/x105, the1-g empty Box, modular appearance, comfort controls and
+protected MAP01 life. SYSTEMS retains authoritative balance and behavior.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:
@@ -85,9 +76,8 @@ Journal clue. Paid prisoners share siege/calendar guidance; future timing pendin
 Selene service/implanted souls stay concealed. Zupay retreats in Chapter I,
 dies in II. Evidence: assets/validation_43711 and validation_43710.
 
-**Accepted #77 (2026-10-03):** MAP06 has 6,000 Mandingas plus commander and 600
-soldiers. Geometry/legacy options/10 km route: README/SYSTEMS. Evidence:
-assets/validation_4379/south/COMBAT_RECOVERY.json. Performance: #86 (13.5/35 tics/s).
+**#77 accepted historically:** original city/army design, now superseded by
+5.4.29; provenance and performance evidence remain in HISTORY/SYSTEMS.
 
 **Accepted #73/#74/#75:** maze, supplies and returns; HISTORY retains acceptance
 and the specific old-save waiver.

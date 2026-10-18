@@ -1,0 +1,14 @@
+{
+  "label": "policy-02",
+  "script": "policy",
+  "exit_code": 0,
+  "seconds": 8.51600000000326,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "2dcb714c26f5232a1a6d49a2a6ea93cd1b2bae397aeaa13dc36e2fac22d562de",
+  "commands_sha256": "7c67277e9716f3efa08c4d1139803bbcabeb94b62e78f69cad68b00325d19c47",
+  "passes": 26,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

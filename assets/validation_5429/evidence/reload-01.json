@@ -1,0 +1,14 @@
+{
+  "label": "reload-01",
+  "script": "reload",
+  "exit_code": 0,
+  "seconds": 11.546999999991385,
+  "runtime_sha256": "479f91fa0dc2564cb3d161cc69212fb1311a8b2d4acab0a180af0e8cdb176847",
+  "fixture_sha256": "684154eb3b6be1915180bf01f1a14acc9719925ed365961c827266f3b283199b",
+  "commands_sha256": "18bc8259172f69dc638f177a5f1c0091081498b367c8722291c6ec954b325338",
+  "passes": 9,
+  "failures": 0,
+  "error": null,
+  "done": true,
+  "kind": "isolated native functionality; no FPS measurement"
+}

@@ -4,11 +4,58 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-123 - A reinforcement admission cap is not a resurrection limit
+
+Status/evidence: ENGINE-VERIFIED isolated GZDoom 4.14.2 lifecycle checks,
+#327 / 5.4.29, 2026-10-17. See [evidence](../assets/validation_5429/RESULTS.md).
+
+Counting the whole encounter history each tic adds work as the battle progresses;
+refusing spawns at 1,000 does not prevent a dead body being revived after its
+replacement arrived. The author explicitly retained resurrection. Normal deployment
+recounts its owned registered bodies only at eligible 350-tic opportunities. It
+checks health and exit state, including offscreen bodies and destroyed references.
+One 100-member group needs enough room; failed placements retain budget and partial
+identities. Living is a cached opportunity census, not a continuously current HUD count.
+
+Native checks reached the 1,000 cap, rejected a full field and 99 vacancies,
+admitted a group after 100 deaths, preserved partial state through reload/hub,
+and completed 6,600 cumulative arrivals with at most 100 live in that budget
+fixture. A separate native resurrection check reached 1,001 without another
+arrival, then blocked new reinforcements as intended. The budget fixture removes
+dead test bodies and accelerates deadlines; it is not natural-combat/corpse/FPS
+evidence. No 6,000 simultaneous stress run was made or authorized.
+
+Follow-up, CODE-VERIFIED only: Attackers retains up to 6,601 historical records.
+ObserveGuards below the high-density threshold, ElectCommands and CannonTarget
+still traverse history. A living-body cap does not bound that list length.
+Measure the late battle before changing those consumers; no measured cost or
+complete registry optimization is claimed by this patch.
+
+## CA-KP-122 - Map lump numbers are not stable world identities
+
+Status/evidence: CODE-VERIFIED selectors and deterministic generation;
+ENGINE-VERIFIED travel, map launches and current saves, #327 / 5.4.29.
+
+Assigning a city to the former reservoir's MAP03 can silently enable reservoir
+trials or leave travel destinations pointing to the wrong map. Map old/new
+selectors simultaneously, including events, quests, physics diagnostics, house
+returns, generators, cartography and MAPINFO. Preserve stable location IDs
+(port=6, reservoir=3) and content localization keys independently. Check WAD
+markers and native numbered transition specials, not just filenames.
+
+Keep old WADs and hashes, but do not advertise a WAD-only swap as save compatibility
+after a hub catalogue change. #327 uses the author's old-save waiver; old saves
+require the full b9fd71ce package/checkout. Legacy switches fail before output
+mutation. MAP02 -> MAP03 -> CAH158 -> MAP03 travel, resident inventories and
+pending siege save/hub state passed native checks. TACTORS retains 16,508 placed
+things: validate its identity without launching that historical stress population.
+
 ## CA-KP-121 - Sky ceilings can defeat an apparently opaque city barrier
 
 Status/evidence: CODE-VERIFIED GZDoom g4.14.2 hw_CheckClip and ENGINE-VERIFIED
 matched native renderer samples; #318 / 5.4.28, 2026-10-17. Scope: the isolated
-house-height comparison, not an adopted production height or flight rule.
+house-height comparison. The author subsequently adopted its low-sky variant
+as normal MAP03 in #327 / 5.4.29; the measurements below retain their original scope.
 [Evidence](../assets/validation_issue318/RESULTS.md).
 
 Author decision, 2026-10-17: the 6,000-attacker stress scale is retired and must

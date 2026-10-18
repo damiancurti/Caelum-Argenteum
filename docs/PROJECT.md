@@ -1,6 +1,31 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.28** — 2026-10-17.
+Documentation version: **5.4.29** — 2026-10-17.
+
+## 5.4.29 - Adopt low-sky MAP03 and normal bounded reinforcements (#327)
+
+Author decision, 2026-10-17: keep MAP01 (mansion) and MAP02 (sewers); make the
+tested low-sky city MAP03. Other standalone scenarios are named test maps,
+not numbered campaign chapters. The three-map campaign is MAP01 -> MAP02 ->
+MAP03. Private CAH000..CAH159 interiors retain their identities and residents.
+This adopts #318's tested geometry; it does not confirm all pending manual tests.
+
+Normal city generation now uses 184-MU physical sky over residential/shop
+districts, with the existing 1,024-MU exterior/wall/tower sky. House footprints,
+street widths, roof elevations, signs and separate interiors stay unchanged.
+Closed roofs use their opaque material; low districts restrict flight and roof
+standing. The exact tested TEXTMAP is retained, with only its map marker renamed.
+
+The author set a 6,600-Mandinga reserve, admitted at no more than 1,000 living
+registered Mandingas before a new group, plus the existing Zupay and 600 soldiers.
+Resurrection is explicitly preserved and can exceed that deployment cap; further
+reinforcements wait. Existing victory still cancels unused reserves. See SYSTEMS
+for authoritative cadence, save scope and map names. No 6,000-simultaneous test
+is authorized. Existing #318 performance limitations remain; this is no 60-FPS claim.
+
+Delivery evidence: assets/validation_5429; native/manual status in HISTORY and
+pending_test.txt. Previous catalogue recovery: complete commit b9fd71ce, not an
+old MAP06 WAD inserted into the new runtime. The author's old-save waiver applies.
 
 ## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
 

@@ -5,6 +5,7 @@ Geometría UDMF propia; recursos entregados por el autor. Techos y agua usan
 volúmenes nativos. Las áreas son de ensayo, no reconstrucciones históricas.
 """
 from pathlib import Path
+from map_catalogue import map_name
 import argparse
 import struct
 
@@ -149,7 +150,7 @@ class CoastalMap:
 
 def generate(folder, port_extension=None, include_coast=True):
     folder.mkdir(parents=True,exist_ok=True)
-    port=CoastalMap('MAP06')
+    port=CoastalMap(map_name('port'))
     port.volume(100,-128,-24,'CVPL06','CVPL06',water=True)
     port.room(-1280,-128,896,2304)
     port.room(896,-128,2304,2304,floor=-128,flat='CVPL02',volume=100)
@@ -189,7 +190,7 @@ def generate(folder, port_extension=None, include_coast=True):
     if not include_coast:
         return
 
-    coast=CoastalMap('MAP07')
+    coast=CoastalMap(map_name('coast'))
     coast.volume(100,-128,-24,'CVPL06','CVPL06',water=True)
     coast.room(-896,-128,320,2304,flat='CMGR02')
     coast.room(-128,-128,192,2304,flat='CMGR03')

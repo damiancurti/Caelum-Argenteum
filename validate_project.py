@@ -7,6 +7,7 @@ import re
 import struct
 from build_dialogue_index import validate as dialogue_problems
 from assets.generators.generate_cartography_catalogue import render as cartography_catalogue
+from assets.generators.generate_siege_reinforcements import render as reinforcement_data
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -64,6 +65,15 @@ def index_problems(root):
 
 def validate(root):
     errors = dialogue_problems(root)
+    try:
+        if (root/'src/caelum/data/CaelumReinforcementData.zs').read_bytes() != reinforcement_data(root):
+            errors.append('Stale reinforcement policy; run python assets/generators/generate_siege_reinforcements.py')
+        maps = json.loads((root/'assets/map_catalogue/MAPS.json').read_text(encoding='utf-8'))['maps']
+        expected = {item['lump'] for item in maps.values()} | {f'CAH{i:03}' for i in range(160)}
+        if {path.stem for path in (root/'src/maps').glob('*.wad')} != expected:
+            errors.append('Current map inventory differs from assets/map_catalogue/MAPS.json and private interiors')
+    except (OSError, ValueError, KeyError) as error:
+        errors.append(f'Map/deployment catalogue: {error}')
     try:
         output = root/'src/caelum/data/CaelumCartographyCatalogueData.zs'
         if output.read_bytes() != cartography_catalogue(root):
