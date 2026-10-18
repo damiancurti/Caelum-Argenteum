@@ -22,8 +22,8 @@ Prisoner following/idle behavior is author-confirmed; remaining campaign and
 passage/save checks stay in CA322-01.
 
 The map legend now stays at the top. Hiding it removes the complete cartography
-panel, leaving only its localized show hint and current key (#321). Native checks pass (five runs, 28 assertions); CA321-02 author acceptance remains
-pending. Evidence: assets/validation_5438.
+panel, leaving only its localized show hint and current key (#321). Native checks pass (five runs, 28 assertions); CA321-02 was accepted by the author
+on 2026-10-18. Evidence: assets/validation_5438.
 
 Current MAP03 attribution covers eight native peaceful/siege runs (#318).
 The unprofiled engine reports FPS snapshots of 546/177 looking forward/down,

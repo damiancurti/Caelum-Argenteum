@@ -40,7 +40,12 @@ collapsed, except "ver leyenda (L)". The previous accepted #321 hid only help
 rows, leaving its frame, location, clock and tracked information. The new early
 collapsed rendering path draws just the hint; expansion retains all information
 and uses the existing top margin. Five native runs pass 28 assertions; three rendered configurations inspected.
-Validation/build and 16,375-member package equality pass; CA321-02 pending.
+Validation/build and 16,375-member package equality pass.
+
+Author acceptance, 2026-10-18: CA321-02 (origin 5.4.38, issue #321) passed.
+The author explicitly confirmed that both the legend and cushioning work, with
+no reported qualifications, after the current 5.4.40 preview. Only this legend
+entry is removed from pending_test.txt; native evidence remains distinct.
 
 ## 5.4.37 - Current MAP03 attribution supplement (#318, 2026-10-18)
 

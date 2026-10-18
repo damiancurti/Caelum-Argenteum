@@ -22,7 +22,7 @@ pass. CA339-01 remains pending; validation_5439.
 The collapsed cartography panel now leaves only the localized show hint with
 the actual bound key. Expanded content starts at the existing top margin.
 Discovery/notes/tracking preferences are preserved. Five native runs/28 assertions, validation and normal packaging pass
-in validation_5438; CA321-02 author acceptance remains pending.
+in validation_5438; CA321-02 was accepted by the author on 2026-10-18.
 
 ## 5.4.37 - Current MAP03 attribution supplement (#318)
 
