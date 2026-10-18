@@ -263,5 +263,5 @@
   "baseline_passes": 41,
   "normal_package_members": 16375,
   "normal_equals_tested_source": true,
-  "author_acceptance": "pending CA339-01"
+  "author_acceptance": "CA339-01 accepted 2026-10-18; no reported qualifications; current 5.4.40 preview"
 }

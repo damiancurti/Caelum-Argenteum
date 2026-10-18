@@ -51,6 +51,6 @@ with zipfile.ZipFile(ROOT/'build/issue339-final01/production.pk3') as tested,zip
     assert all(tested.read(n)==normal.read(n)==p.read_bytes() for n,p in expected.items())
 result={'issue':339,'release':'5.4.39','runs':records,'current_passes':sum(r['passes'] for r in current),
     'baseline_passes':sum(r['passes'] for r in baseline),'normal_package_members':len(expected),
-    'normal_equals_tested_source':True,'author_acceptance':'pending CA339-01'}
+    'normal_equals_tested_source':True,'author_acceptance':'CA339-01 accepted 2026-10-18; no reported qualifications; current 5.4.40 preview'}
 (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({k:v for k,v in result.items() if k!='runs'}))

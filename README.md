@@ -16,7 +16,8 @@ packaging. CA325-01 remains pending.
 
 A confirmed voluntary jump now retains biological cushioning against walls through
 its descent (#339), using the existing capacity. Falls and pushes without a jump
-do not create it. Native checks pass (135 current assertions, 41 baseline); CA339-01 remains pending.
+do not create it. Native checks pass (135 current assertions, 41 baseline); CA339-01 was accepted
+by the author on 2026-10-18.
 
 Prisoner following/idle behavior is author-confirmed; remaining campaign and
 passage/save checks stay in CA322-01.

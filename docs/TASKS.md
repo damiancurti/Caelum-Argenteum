@@ -16,7 +16,8 @@ Compare native jump ascent/descent against the unchanged runtime, then exclusion
 excess energy, HP, landing, buckler and save/travel lifecycle. Keep displacement
 controls distinct from normal native input and recorded author acceptance.
 Completed: 135 current/41 baseline native assertions, review, validation/build.
-CA339-01 remains pending. No new biological coefficient or collision exemption.
+CA339-01 was accepted by the author on 2026-10-18; no jump-cushioning author
+checks remain. No new biological coefficient or collision exemption.
 
 ## 5.4.38 - Complete top-aligned map legend (#321)
 
