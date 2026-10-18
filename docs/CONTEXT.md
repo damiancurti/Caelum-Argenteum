@@ -21,7 +21,7 @@ with native direct aim at release. Other attacks unchanged. validation_5432;
 CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
 **#319/#321:** accepted Oct17.5.4.38 collapses the map
-panel at the top; validation_5438:5runs/28checks, CA321-02 pending.
+panel at the top; validation_5438:5runs/28checks, CA321-02 accepted Oct18.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
 1024-MU exterior sky, original footprints and private CAH interiors. Other maps:

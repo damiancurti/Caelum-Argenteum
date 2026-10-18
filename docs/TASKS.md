@@ -23,7 +23,8 @@ CA339-01 remains pending. No new biological coefficient or collision exemption.
 Verify the entire collapsed panel disappears except its localized show hint;
 expansion stays at the top with normal/large UI, English/Spanish and remapped
 keys. Five runs/28 assertions and three inspected rendered configurations pass;
-normal packaging matches the tested source. CA321-02 remains pending.
+normal packaging matches the tested source. CA321-02 was accepted by the author
+on 2026-10-18; no legend author checks remain.
 
 ## 5.4.37 - Current MAP03 attribution supplement (#318)
 

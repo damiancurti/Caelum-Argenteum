@@ -49,5 +49,5 @@
   "runtime_sha256": "249eceeced484bc7d241acd1de75150ec966363bd8a763b278cb4758f9e2aa57",
   "fixture_sha256": "01528ef735e98c0ceb41e42b243b7b83aa83a08ad898138dffd4158a4bdc9d4c",
   "saved_game_sha256": "bab4867014d160972c02a41ab64abe4c976a772cb530f303f8c74d4d00f076aa",
-  "author_acceptance": "pending CA321-02"
+  "author_acceptance": "CA321-02 accepted 2026-10-18; no reported qualifications; current 5.4.40 preview"
 }

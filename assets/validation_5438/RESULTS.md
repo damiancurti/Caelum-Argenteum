@@ -10,7 +10,11 @@ native notifications are independent and remain visible.
 Real console commands exercise default/rebound/shadowed/unbound keys, map
 close/reopen, save/load and a hub transition. The actual saved game is loaded;
 its hash is archived, not the private save. Discovery and tracking data are not
-mutated by the rendering-only change. Author check CA321-02 remains pending.
+mutated by the rendering-only change.
+
+Author acceptance: CA321-02 (origin 5.4.38 / #321) passed on 2026-10-18, with no
+reported qualifications, after the current 5.4.40 preview. This confirmation
+does not change the original native run counts or tested-runtime hashes.
 
 Reproduce with prepare.py --directory issue321-panel-recheck, then the shared
 assets/validation_5422/run_native.ps1 using distinct labels for ui.cfg in es/enu

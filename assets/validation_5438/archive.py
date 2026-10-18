@@ -43,6 +43,6 @@ result={'issue':321,'release':'5.4.38','runs':records,
     'runtime_sha256':hashlib.sha256(runtime.read_bytes()).hexdigest(),
     'fixture_sha256':hashlib.sha256((runtime.parent/'quick.pk3').read_bytes()).hexdigest(),
     'saved_game_sha256':hashlib.sha256((runtime.parent/'legend.zds').read_bytes()).hexdigest(),
-    'author_acceptance':'pending CA321-02'}
+    'author_acceptance':'CA321-02 accepted 2026-10-18; no reported qualifications; current 5.4.40 preview'}
 (HERE/'evidence.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({k:v for k,v in result.items() if k!='runs'}))
