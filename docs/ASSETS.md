@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
+
+## 5.4.35 - Prisoner escort test sources (#322)
+
+validation_5435 contains deterministic native follow/collision fixtures. Existing
+prisoner sprites supply the new inert waiting poses; no new art or audio assets
+are introduced. Test packages, engine, IWAD and private saves remain local;
+Source fixtures, compressed logs, launch hashes and save identities preserve
+23 final runs/375 assertions plus failed development evidence in validation_5435.
 
 ## 5.4.34 - Native autosave verification (#324)
 

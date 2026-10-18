@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
+
+## 5.4.35 - Prisoner escort replacement (#322)
+
+Implemented one movement owner, inert waiting poses, individual player-formula
+walking, bounded local navigation and collision-safe recovery. Native validation
+passes 23 runs/375 assertions, including group stillness/resumption, narrow doors,
+height changes, current/legacy saves and the full rescue/reward itinerary. Review,
+project validation and 16,375-member package equivalence pass. CA322-01 author
+acceptance remains outstanding. The isolated preview launcher is
+assets/validation_5435/preview.ps1; its terminal stays open after the game closes.
 
 ## 5.4.34 - Active-play autosaving (#324)
 

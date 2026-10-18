@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
+
+## 5.4.35 - Coherent prisoner escort movement (#322)
+
+The author's October 18 decision replaces #307's source-actor walking pace for
+ordinary escort with the player's walking formula, using each prisoner's own
+effective Agility, carried load/capacity, Air, health, temperature and elemental
+penalties. The shared base is 4 m/s; Agility uses the existing Type-2 curve.
+Acceleration uses the player's three-second reference at 100 kg, scaled by the
+prisoner's body plus carried mass. NPCs acquire no new hunger/thirst/sleep needs
+or automatic running policy. Combat and boss escape retain their existing rules.
+
+One Tick owner chooses waiting, following, conversation, recovery, combat,
+boss escape and extraction. Escort poses perform no Look/Chase action: they use
+the existing four-tic walking cadence during movement and an inert standing pose
+while waiting/speaking. Nearby friendly sound cannot switch the escort into native
+wandering. The approved 96-MU follow radius and 1,024-MU recovery distance remain.
+An approaching player's current movement command can request a traversable
+sidestep or retreat; body collision is never disabled to yield the passage.
+
+A bounded trail starts at release; a local footprint-aware grid detours around
+corners and bodies. Closed doors and impassable geometry require waiting or an
+available route. No global actor scan is added. Recovery validates native body
+fit, all solid bodies including non-shootable props, floor support, step/dropoff
+limits and separation from the player. No candidate means no relocation; the
+old fallback onto the player's position is retired. Physical immobilization
+prevents navigation and recovery.
+
+The original actors, identities, rescue/reward records and state offsets remain.
+A lazily initialized revision-1 controller migrates old escorts without changing
+their health, inventories or progress. New idle states are appended after the
+existing states. Native/save verification passes 23 runs/375 assertions,
+including full rescue progression and one-time port rewards. CA322-01 author
+acceptance remains pending; assets/validation_5435 retains the focused evidence.
 
 ## Automatic saves after five minutes of active play (#324)
 

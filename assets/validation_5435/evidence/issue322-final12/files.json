@@ -1,0 +1,86 @@
+[
+  {
+    "label": "campaign",
+    "exit": 1,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  },
+  {
+    "label": "kind0",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  },
+  {
+    "label": "kind1",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  },
+  {
+    "label": "kind2",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  },
+  {
+    "label": "kind3",
+    "exit": 0,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  },
+  {
+    "label": "route",
+    "exit": 1,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "00b1020179afc82ec530605920a5f732477d07c3abf0ab95d1c85ab884dbaa28",
+        "map": "MAP02"
+      },
+      "auto02.zds": {
+        "sha256": "d805b2aa4a9b3e502b0251006561dd426616f42f69a9083bace9c6cebc472280",
+        "map": "MAP02"
+      }
+    }
+  }
+]

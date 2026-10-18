@@ -242,6 +242,9 @@ class CaelumConstants : Object
     // Cadencia de marcha ya usada por los cuatro estados See de prisioneros.
     const PRISONER_WALK_STATE_TICS = 4;
     const PRISONER_FOLLOW_TELEPORT_DISTANCE = 1024.0;
+    const PRISONER_RECOVERY_CLEARANCE = 24.0;
+    const PRISONER_RECOVERY_CANDIDATES = 12;
+    const PRISONER_RECOVERY_DIRECTIONS = 8;
     const PRISONER_EXTRACTION_RADIUS = 96.0;
     const PRISONER_THREAT_RADIUS = 512.0;
     const PRISONER_BOSS_STAYBACK_RADIUS = 1400.0;

@@ -1,0 +1,75 @@
+[
+  {
+    "label": "kind2",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "kind3",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "route",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "corridor",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "edges",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "stairs",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "combat",
+    "exit": 0,
+    "saves": {}
+  },
+  {
+    "label": "snapshot",
+    "exit": 0,
+    "saves": {
+      "escort-four.zds": {
+        "sha256": "ab34617d0dfc2227e81fccf631885a12e16b0cb870896bccfcfab3a09061559f",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "load-current",
+    "exit": 0,
+    "saves": {
+      "escort-four.zds": {
+        "sha256": "ab34617d0dfc2227e81fccf631885a12e16b0cb870896bccfcfab3a09061559f",
+        "map": "MAP99"
+      }
+    }
+  },
+  {
+    "label": "hub",
+    "exit": 1,
+    "saves": {
+      "auto01.zds": {
+        "sha256": "90b884651b9ce3209e4946326f207b7d3f3ae380edce29faaa06ba737414bf62",
+        "map": "MAP98"
+      },
+      "auto02.zds": {
+        "sha256": "5d0b9b93355dbbc613b5d11a185afe83e0937a575e828ec77b4151bfd3f93c4f",
+        "map": "MAP99"
+      },
+      "escort-four.zds": {
+        "sha256": "ab34617d0dfc2227e81fccf631885a12e16b0cb870896bccfcfab3a09061559f",
+        "map": "MAP99"
+      }
+    }
+  }
+]

@@ -46,6 +46,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     CaelumPlayer EscortPrisonerLeader;
     int EscortPrisonerThreatScanTics;
     double EscortPrisonerHealthRegenAccumulator;
+    CaelumPrisonerEscort EscortControl;
 
     bool IsProtectedStoryResident()
     {
@@ -155,6 +156,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Target = null; LastEnemy = null;
         ClearStoryCombatState();
         EscortPrisonerLeader = GetEscortOwnerPlayer();
+        if(EscortControl!=null)
+        {EscortControl.ClearTrail();EscortControl.Path=null;EscortControl.Acceleration=0;}
         SetStateLabel("EscortFollow");
     }
 
@@ -312,6 +315,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             return;
         }
 
+        if(EscortControl==null)EscortControl=new("CaelumPrisonerEscort");
+        EscortControl.Observe(self,owner);
         if (bInConversation)
         {
             Actor threat = FindEscortThreat();
@@ -321,7 +326,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             }
             else
             {
-                Vel = (0,0,0);
+                EscortControl.Hold(self);
                 Target = null;
                 ClearStoryCombatState();
                 return;
@@ -330,7 +335,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
         if (owner == null || owner.health <= 0)
         {
-            Vel = (0,0,0);
+            EscortControl.Hold(self);
             Target = null;
             ClearStoryCombatState();
             return;
@@ -342,8 +347,11 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             return;
         }
 
+        // Los bloqueos físicos también impiden recuperación y pasos de ruta.
+        if(EscortControl.Immobilized(self)){EscortControl.Yield(self);return;}
         if (IsNearMap02Boss())
         {
+            EscortControl.Yield(self);
             Target = null;
             ClearStoryCombatState();
             FleeEscortBoss();
@@ -352,10 +360,19 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
         // Las salidas de historia anteriores prevalecen; el combate común
         // conserva su retirada/descanso sin que el seguimiento lo reinicie.
-        if(ResourceRecoveryActive())return;
+        if(ResourceRecoveryActive())
+        {
+            EscortControl.Yield(self);
+            // La fase quieta usa poses sin acciones. Comprobar su final aquí;
+            // la retirada conserva los pulsos de su estado nativo de cuatro tics.
+            if(RecoveryPhase==2 && level.time%CaelumConstants.PRISONER_WALK_STATE_TICS==0)
+                PulseResourceRecovery();
+            return;
+        }
         Actor threat = FindEscortThreat();
         if (threat != null)
         {
+            EscortControl.Yield(self);
             Target = threat;
             bInvulnerable = false;
             State seeState = FindState("See");
@@ -365,18 +382,11 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             return;
         }
 
-        if (Distance2D(owner) > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
-        {
-            TeleportEscortPrisonerToLeader(owner);
-            return;
-        }
-
         RegenerateEscortPrisonerHealth();
         EscortPrisonerLeader = owner;
         Target = null;
         ClearStoryCombatState();
-        State followState = FindState("EscortFollow");
-        if (!InStateSequence(CurState, followState)) { SetState(followState); }
+        EscortControl.Follow(self,owner);
     }
 
     void FleeEscortBoss()
@@ -394,54 +404,6 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Vel.X = Cos(Angle) * speed;
         Vel.Y = Sin(Angle) * speed;
         CaelumThermalMotion.SetVelocity(self);
-    }
-
-    void MoveEscortPrisonerTowardLeader(CaelumPlayer leader)
-    {
-        if (leader == null) { Vel = (0,0,0); return; }
-        Vector2 offset = leader.Pos.XY - Pos.XY;
-        double distance = offset.Length();
-        if (distance <= 0.001) { Vel = (0,0,0); return; }
-        Angle = VectorAngle(offset.X, offset.Y);
-        // Speed mide el paso de See, ejecutado cada cuatro tics. La velocidad
-        // continua conserva esa marcha y sus ajustes de salud, frío y estados.
-        double speed = Max(0.0, Speed) / CaelumConstants.PRISONER_WALK_STATE_TICS;
-        double resolvedSpeed = Min(speed, Max(0.0,
-            distance - CaelumConstants.PRISONER_FOLLOW_DISTANCE));
-        Vel.X = Cos(Angle) * resolvedSpeed;
-        Vel.Y = Sin(Angle) * resolvedSpeed;
-        CaelumThermalMotion.SetVelocity(self);
-    }
-
-    void TeleportEscortPrisonerToLeader(CaelumPlayer leader)
-    {
-        if (leader == null) return;
-        double spacing = Radius + 24.0;
-        double baseAngle = leader.Angle + 180.0;
-        for (int attempt = 0; attempt < 12; attempt++)
-        {
-            int ring = attempt / 8;
-            double angle = baseAngle + (attempt % 8) * 45.0;
-            double distance = spacing + ring * spacing;
-            Vector3 candidate = (
-                leader.Pos.X + Cos(angle) * distance,
-                leader.Pos.Y + Sin(angle) * distance,
-                leader.Pos.Z
-            );
-            if (TeleportMove(candidate, false))
-            {
-                Vel = (0,0,0);
-                Angle = leader.Angle;
-                ClearInterpolation();
-                return;
-            }
-        }
-        if (TeleportMove(leader.Pos, false))
-        {
-            Vel = (0,0,0);
-            Angle = leader.Angle;
-            ClearInterpolation();
-        }
     }
 
     bool UseEscortPrisoner(CaelumPlayer user)
@@ -685,69 +647,6 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         A_CaelumBudgetedChase();
     }
 
-    action void A_CaelumPrisonerFollow()
-    {
-        CaelumAnchoredResident resident = CaelumAnchoredResident(self);
-        if (resident == null || resident.EscortPrisonerPort) { return; }
-        if (resident.bInConversation)
-        {
-            resident.Vel = (0,0,0);
-            return;
-        }
-        if (resident.IsNearMap02Boss())
-        {
-            resident.FleeEscortBoss();
-            return;
-        }
-
-        CaelumPlayer leader = resident.EscortPrisonerLeader;
-        if (leader == null || leader.health <= 0)
-        {
-            leader = resident.GetEscortOwnerPlayer();
-        }
-        if (leader == null || leader.health <= 0)
-        {
-            resident.Vel = (0,0,0);
-            return;
-        }
-        resident.EscortPrisonerLeader = leader;
-
-        if (resident.Distance2D(leader)
-            > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
-        {
-            resident.TeleportEscortPrisonerToLeader(leader);
-            return;
-        }
-
-        if (resident.Distance2D(leader)
-            <= CaelumConstants.PRISONER_FOLLOW_DISTANCE)
-        {
-            resident.Vel = (0,0,0);
-            resident.Angle = VectorAngle(
-                leader.Pos.X - resident.Pos.X,
-                leader.Pos.Y - resident.Pos.Y
-            );
-            if (resident.Target == null || resident.Target == leader
-                || resident.IsFriend(resident.Target))
-            {
-                resident.A_CaelumResidentLook();
-                if (resident.Target != null && resident.Target != leader
-                    && resident.Target.health > 0
-                    && !resident.IsFriend(resident.Target))
-                {
-                    State seeState = resident.FindState("See");
-                    if (!resident.InStateSequence(resident.CurState, seeState))
-                    {
-                        resident.SetState(seeState);
-                    }
-                }
-            }
-            return;
-        }
-
-        resident.Target = leader;
-        resident.MoveEscortPrisonerTowardLeader(leader);
-    }
     override void Tick()
     {
         if(CaelumRedemption.Pending(self))return;

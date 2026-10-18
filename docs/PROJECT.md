@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.34** — 2026-10-17.
+Documentation version: **5.4.35** — 2026-10-18.
+
+## 5.4.35 - Replace competing prisoner escort movement (#322)
+
+The same friendly sound reproduced 53 turns/504.804 MU of unwanted travel in
+four seconds with the player stationary. Native Look/Chase fought the escort
+owner; one-tic walking frames also continued during rest. One owner now controls
+following and inert/moving poses; navigation/recovery retain native collision.
+The author explicitly adopted player-formula walking with each prisoner's own
+attributes and penalties on October 18. Native validation passes 23 runs/375
+assertions: corners, doors, group stillness/resumption, floor levels, saves and
+the full four-prisoner rescue/port-reward itinerary. All 16,375 normal package
+members equal tested source. SYSTEMS owns the contract; validation_5435 holds
+evidence. Author acceptance remains pending under CA322-01.
 
 ## 5.4.34 - Active-play autosaving (#324)
 

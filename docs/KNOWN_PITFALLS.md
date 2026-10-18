@@ -4,6 +4,76 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-125 - Escort poses must not compete with the movement owner
+
+Status/evidence: ENGINE-VERIFIED, #322 / 5.4.35, 2026-10-18. GZDoom 4.14.2
+Windows; baseline b74ca613 (runtime unchanged from #324). Focused evidence:
+assets/validation_5435. The final 23-run/375-assertion native gate includes the
+full rescue/reward itinerary; CA322-01 author acceptance remains separate.
+
+A Tick controller forced EscortFollow and cleared Target, while that state's
+action called resident Look near the leader. Friendly SoundAlert could enter
+See/A_Chase and native wandering before Tick forced following again. Four
+one-tic walking frames also animated stationary conversations. In the matched
+140-tic control this produced 504.804498 MU of travel, 53 angle changes and
+5,150.890932 accumulated degrees; the single owner/inert idle pose produced zero
+for all three. Keep visual states free of steering and enemy acquisition when
+another owner controls locomotion. Combat and retreat must receive explicit
+ownership; quiet resource-recovery states also need a completion pulse.
+
+Distance2D and one sight ray do not prove a traversable body route. Preserve a
+bounded footprint-aware route around corners and require compatible support
+levels before declaring arrival. Player input distinguishes intended reversal
+from collision recoil; stale direction must not initiate a new sidestep.
+Narrow two-way passage can require both bodies to move aside. A diagnostic
+driver rigidly following the centerline is not evidence that collision should
+be removed. Keep closed-door, reversal, height, crowd and native-step checks.
+
+Breadcrumb arrival precision must agree with body clearance and local sampling.
+In MAP02 a Federal stopped 5.89 MU from a breadcrumb beside a chest: farther
+than one walking step but nearer than the grid unit. A footprint-aware arrival
+threshold fixes that dead zone; also require compatible supporting height so a
+point directly above the body is not consumed. Partial routes must continue
+from the reached floor instead of selecting the same XY on a lower floor.
+An old breadcrumb can also become occupied by a settled companion. Test map
+geometry separately when deciding whether to replace the old trail with the
+leader's current position. The temporary geometry query ignores all actors,
+including solid props; restore its flag immediately and retain complete actor
+collision in the local detour and real movement. Do not erase that detour every
+four tics once only the leader goal remains. A loose end-distance check can pass
+while a body still circles an obsolete waypoint: also sample group stillness
+after arrival, including turning, walking poses and restored collision flags.
+Two waiting bodies can span a narrow corridor. When the leader is stationary
+and the trail contains only that goal, accept the nearest reachable progress
+and wait if no route gets closer. An unconditional lateral escape makes rear
+followers circle behind the stationary row indefinitely. Preserve lateral escape
+for moving intent, older trail points and height changes; retain native collision
+and the existing retry cadence. Extending a diagnostic's deadline distinguishes
+late arrival from this persistent oscillation; a distance-only pass is insufficient.
+Narrow stairs can fall between grid samples. Shift the sampling origin only
+when needed, validate its first link from the actual body, and share a single
+query budget across all phases. In the 32-MU stair fixture the body reaches the
+upper floor by tic 280. The unreachable-height control measured 35 searches at
+2.415323 ms mean/2.448400 ms peak, with at most 4,225 native position queries
+per search. This is isolated elapsed cost on the test machine, not an FPS claim.
+
+TeleportMove(false) is not a full destination-fit test: its native actor test
+omits non-shootable solids, and flags can still permit telefragging. Validate
+footprint, all local solid bodies, support, ceiling and separation first.
+TestMobjLocation alone can accept a candidate outside the map outline because
+the BSP supplies a neighboring sector and no nearby wall intersects that spot.
+For the short recovery ring, also require sight from the leader, then perform
+the fit/support checks. No valid candidate means no relocation, never a fallback
+onto the player. Corridor and blocked/low-ceiling/unsupported/void cases exercise
+these distinctions. Local blockmap/TID queries and bounded route memory avoid
+adding a per-tic traversal of the map's entire actor population.
+
+The author's October 18 decision replaces the escort pace described in CA-KP-109
+with the player's walking formula, individual NPC modifiers and mass-based ramp.
+Do not multiply native chase-step Speed into continuous velocity. The ramp must
+also respect the player's grounded/water/flight rule; ordinary airtime must not
+increase it. No new NPC needs or cloud-riding benefit is implied.
+
 ## CA-KP-124 - Later corridor painting can merge a local moving ceiling
 
 Status/evidence: ENGINE-VERIFIED, deterministic comparison and native walking,
@@ -635,6 +705,9 @@ including low speeds, proximity and restarting. Author acceptance: CA307-01
 passed on 2026-10-16 without reported exceptions (origin 5.4.27 / #307).
 Limits: this conversion applies to these existing chase states, not arbitrary
 velocity-driven actors or a new global movement policy.
+On 2026-10-18, #322 explicitly superseded that escort pace with player-formula
+walking using each prisoner's own attributes/penalties. The native combat-state
+cadence and the warning about step-versus-velocity units remain applicable.
 
 ## CA-KP-108 - Register queryable channels before deferred PostBeginPlay
 
