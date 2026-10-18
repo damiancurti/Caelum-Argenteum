@@ -43,8 +43,9 @@ Implemented explicit house-door intent and inherited-overlay cleanup. Native
 verification passes8 runs/64 assertions: normal cart/ship effects, both directions
 of real portal Use and inside/outside autosave reloads. Review, project validation,
 build and16,375-member equivalence pass. The early vehicle/house reproduction
-injects only the approach; the originally reported ordinary entry still requires
-CA334-01 confirmation. Evidence: validation_5436. No merge/acceptance is inferred.
+injects only the approach. The author approved house transitions on 2026-10-18,
+completing CA334-01; no house-transition author checks remain. Evidence:
+validation_5436. The diagnostic attribution limit remains unchanged.
 
 ## 5.4.35 - Prisoner escort replacement (#322)
 

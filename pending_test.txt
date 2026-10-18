@@ -8,16 +8,6 @@ modes. Periodic damage and effects continue during allowed rest/advance; a new
 attack interrupts, and death ends advance. Existing saves retain bag/support,
 effects and partial progress. Report map/place and refusal text if inconsistent.
 
-CA334-01 | Origin 5.4.36 / issue #334 | House doors without a full-screen transition
-Prerequisites: current normal build and MAP03; loading icons remain enabled.
-Steps: enter and leave several houses through their actual doors. Repeat after
-a vehicle journey. Check that no previous vehicle image, fade or wipe covers
-house entry/exit, and that map-arrival autosaves still load in the proper map.
-Expected: immediate house view, retained native loading icon/autosave, and
-normal vehicle presentation on actual journeys. If a fade remains, report the
-house, route and whether it followed a journey or a saved-game load. The native
-early-entry diagnostic does not establish the cause of every reported fade.
-
 CA322-01 | Origin 5.4.35 / issue #322 | Remaining escort campaign/passage/save checks
 Confirmed 2026-10-18: observed following and no persistent idle turning/walking
 in preview03. That accepted subset is recorded in HISTORY; do not repeat it.
