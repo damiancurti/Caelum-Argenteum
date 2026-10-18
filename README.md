@@ -19,8 +19,8 @@ its descent (#339), using the existing capacity. Falls and pushes without a jump
 do not create it. Native checks pass (135 current assertions, 41 baseline); CA339-01 was accepted
 by the author on 2026-10-18.
 
-Prisoner following/idle behavior is author-confirmed; remaining campaign and
-passage/save checks stay in CA322-01.
+Prisoner behavior (CA322-01) was accepted by the author on 2026-10-18.
+The previously documented packed-row obstruction remains a known limit.
 
 The map legend now stays at the top. Hiding it removes the complete cartography
 panel, leaving only its localized show hint and current key (#321). Native checks pass (five runs, 28 assertions); CA321-02 was accepted by the author
@@ -41,7 +41,7 @@ Prisoner escorts now use one movement owner, stable waiting/dialogue poses,
 player-formula walking with individual modifiers, local navigation and checked
 recovery placement (#322). Native validation passes 23 runs/375 assertions,
 including the full rescue route and saved rewards;
-[evidence](assets/validation_5435/RESULTS.md). Author check CA322-01 remains pending.
+[evidence](assets/validation_5435/RESULTS.md). Author check CA322-01 passed on 2026-10-18.
 
 Automatic saves are requested every five minutes of real active play (#324).
 The interval restarts after the latest autosave, including map transitions and

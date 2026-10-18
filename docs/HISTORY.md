@@ -127,10 +127,14 @@ compile, controller and fixture failures remain archived with their own hashes.
 CA322-01 partial author confirmation, 2026-10-18: the author answered
 "Funciona; ya cerré la prueba" for observed following and idle turning/walking.
 The repaired preview reseeds after restart (10 native assertions), restores
-save references and keeps the waiting observer alive. Unmentioned campaign
-extraction/rewards and the remaining passage/save checks stay pending; this
-confirmation does not establish them. Evidence: assets/validation_5435, including
-preview-followup; the existing packed-row limit is not declared resolved.
+save references and keeps the waiting observer alive. That initial confirmation
+covered only following/idle; campaign/passage/save checks remained pending at
+that point. Evidence: assets/validation_5435, including preview-followup.
+
+Later on 2026-10-18, the author explicitly confirmed that prisoners also worked,
+completing CA322-01 (origin 5.4.35 / #322) without reported qualifications. Its
+entry is removed from pending_test.txt. Native evidence and the previously
+documented packed-row obstruction remain unchanged; no new fix is claimed.
 
 ## 5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)
 

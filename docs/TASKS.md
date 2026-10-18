@@ -54,12 +54,14 @@ Implemented one movement owner, inert waiting poses, individual player-formula
 walking, bounded local navigation and collision-safe recovery. Native validation
 passes 23 runs/375 assertions, including group stillness/resumption, narrow doors,
 height changes, current/legacy saves and the full rescue/reward itinerary. Review,
-project validation and 16,375-member package equivalence pass. CA322-01 author
-acceptance remains outstanding. The isolated preview launcher is
+project validation and 16,375-member package equivalence pass. CA322-01 was
+accepted by the author on 2026-10-18. The isolated preview launcher is
 assets/validation_5435/preview.ps1; its terminal stays open after the game closes.
 
-Author confirmed observed following/idle on 2026-10-18 in repaired preview03.
-Remaining campaign/passage/save author checks stay under CA322-01.
+The earlier following/idle confirmation was completed by explicit prisoner
+approval on 2026-10-18; no CA322-01 author checks remain. Known development
+limit: a compact row of all four can still block reversal in a 96-MU corridor;
+this acceptance does not establish a fix for that obstruction.
 
 ## 5.4.34 - Active-play autosaving (#324)
 

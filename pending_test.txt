@@ -1,15 +1,3 @@
-CA322-01 | Origin 5.4.35 / issue #322 | Remaining escort campaign/passage/save checks
-Confirmed 2026-10-18: observed following and no persistent idle turning/walking
-in preview03. That accepted subset is recorded in HISTORY; do not repeat it.
-Prerequisites: current campaign build, the four original prisoners.
-Steps: check an opened/closed narrow door, conversation then resumed following,
-and save/reload while following or waiting at the door. Escort to extraction;
-verify port dialogue and one-time rewards for each original prisoner.
-Expected: collision, conversation, combat, rescue identity and rewards remain
-functional, with no duplicate bodies or overlapping recovery teleport.
-Known limit: a compact row of all four can still block reversal in a 96-MU
-corridor. Report any obstruction and its location; this remains unresolved.
-
 CA318-01 | Origin 5.4.28 / issue #318 | Contact-only demon-breath heat
 Prerequisites: rebuild the current release and use a fresh campaign. Use a reachable
 Mandinga or Zupay and the normal thermal display. MAP03 performance acceptance is
