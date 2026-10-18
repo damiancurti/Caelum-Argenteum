@@ -2,6 +2,12 @@
 
 Documentation version: **5.4.46** — 2026-10-18.
 
+Current acceptance, 2026-10-18: CA318-01..05 and CA327-01 are explicitly
+approved, including the old city/breath/doors/residents/sky/waves checks.
+No existing author checks remain. Older pending statements below are historical
+checkpoints superseded by this confirmation and HISTORY. FPS work under #318
+is deferred by the author. Siege-adrenaline production integration is next.
+
 ## 5.4.46 - Revised house transition (#334)
 
 Implement the author's replacement contract: Melt in both directions, retaining

@@ -441,6 +441,12 @@ match the tested source bytes. Independent bounded source review passes.
 
 ## 5.4.29 - Adopt low-sky MAP03 and staged normal siege (#327)
 
+Author acceptance, 2026-10-18: CA327-01 (origin 5.4.29/#327) passed. The author
+explicitly confirmed that the earlier approval also covered the normal siege
+waves and city/campaign checks. FPS evaluation alone is deferred; this records
+functional acceptance and does not certify a frame-rate target. The confirmed
+entry was retired from pending_test.txt together with CA318-01..05 below.
+
 Author decisions, 2026-10-17: retain MAP01/mansion and MAP02/sewers; use the
 selected low physical sky city as MAP03. Other standalone maps become named
 tests (TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS), preserving their
@@ -498,6 +504,14 @@ the previous performance work as c9c44615; #318 remains open for performance
 acceptance. Final #327 integration and branch cleanup are recorded on #328.
 
 ## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
+
+Author acceptance, 2026-10-18: CA318-01, CA318-02, CA318-03, CA318-04 and
+CA318-05 (all origin 5.4.28/#318) passed. The author explicitly confirmed that
+the previous approval included contact-only breath, the adopted low-sky city,
+interior doors, residents/shop signs and normal waves. These five entries were
+retired from pending_test.txt. Earlier pending statements below describe their
+historical checkpoint. FPS evaluation remains deferred, with no new fluency
+claim and no repeated author check required for accepted behavior.
 
 Variable-sky follow-up, 2026-10-17, same 5.4.28 patch. Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
 

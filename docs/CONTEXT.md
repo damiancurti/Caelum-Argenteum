@@ -6,8 +6,8 @@ Documentation version: **5.4.46** — 2026-10-18.
 
 **5.4.39/#339:** jump-wall cushioning;135/41 checks; CA339-01 accepted Oct18.
 
-**5.4.46/#334:** revised contract: Melt both house directions; native saves retained.
-validation_5446; CA334-02 accepted Oct18; current preview checks complete.
+**5.4.46/#334:** Melt both house directions; saves retained.
+validation_5446; CA334-02 accepted Oct18.
 **5.4.35/#322:** CA322-01 accepted Oct18; packed-row limit retained.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
@@ -36,8 +36,7 @@ artillery bodies resume. CA353-01 fully accepted Oct18, including group retest.
 **5.4.44/#354:** retain structural guards; inconsistent extra FPS benefit.
 validation_5444. Thermal35 unchanged; siege adrenaline approved,
 pending production. Trials: validation_5442/5441.
-CA318-01..05/CA327-01 pending.
-No6000 tests.
+CA318-01..05/CA327-01 accepted; FPS deferred; no6000tests.
 
 **5.4.27/#307:** resolved prisoner Speed; retained recovery teleport. Native:
 334 current/14 legacy checks;
