@@ -1,0 +1,93 @@
+{
+  "issue": 318,
+  "release": "5.4.37",
+  "measurement_base": "ac7a7143",
+  "runs": 8,
+  "cases": [
+    {
+      "directory": "issue318-current-base03",
+      "case": "peace-forward",
+      "runtime_sha256": "dd8a768d020548a027035c62225832658f2ca0625e33b564991ab2fa1b976347",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 546,
+      "simulation_tics_per_second": 35.004101080482585
+    },
+    {
+      "directory": "issue318-current-base03",
+      "case": "peace-ground",
+      "runtime_sha256": "dd8a768d020548a027035c62225832658f2ca0625e33b564991ab2fa1b976347",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 177,
+      "simulation_tics_per_second": 34.99163594925905
+    },
+    {
+      "directory": "issue318-current-base03",
+      "case": "siege-city",
+      "runtime_sha256": "dd8a768d020548a027035c62225832658f2ca0625e33b564991ab2fa1b976347",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 48,
+      "simulation_tics_per_second": 34.99781753609848
+    },
+    {
+      "directory": "issue318-current-base03",
+      "case": "siege-front",
+      "runtime_sha256": "dd8a768d020548a027035c62225832658f2ca0625e33b564991ab2fa1b976347",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 35,
+      "simulation_tics_per_second": 34.73854141023213
+    },
+    {
+      "directory": "issue318-current-profile02",
+      "case": "peace-forward",
+      "runtime_sha256": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 482,
+      "simulation_tics_per_second": 35.000492456928875
+    },
+    {
+      "directory": "issue318-current-profile02",
+      "case": "peace-ground",
+      "runtime_sha256": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 174,
+      "simulation_tics_per_second": 34.998508013603384
+    },
+    {
+      "directory": "issue318-current-profile02",
+      "case": "siege-city",
+      "runtime_sha256": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 47,
+      "simulation_tics_per_second": 35.02801505616172
+    },
+    {
+      "directory": "issue318-current-profile02",
+      "case": "siege-front",
+      "runtime_sha256": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+      "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c",
+      "native_fps_snapshot": 33,
+      "simulation_tics_per_second": 34.72048550904826
+    }
+  ],
+  "measurement_gate_passed": true,
+  "source_members": 16375,
+  "post_measurement_differences": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "final_label_smoke": {
+    "directory": "issue318-current-final01",
+    "case": "peace-forward",
+    "runtime_sha256": "0bc63675367b8c705ab44b9712d95ca1828ff44b593aadfb24c92dd72d5b202d",
+    "assertions": 1,
+    "normal_tested_source_members": 16375,
+    "benchmark_excluded": "Final compile smoke overlapped packaging; not a performance sample."
+  },
+  "limits": [
+    "Native bench FPS/CPU values are later snapshots, not window means or ETW presentation.",
+    "UI callback intervals use full wall-clock containment and are not displayed FPS.",
+    "Exclusive method scopes include uninstrumented children and probe overhead; the table is not a whole CPU partition.",
+    "One matrix per runtime, roughly ten seconds per observation; no full-siege or stable60FPS acceptance."
+  ],
+  "author_acceptance": "All existing #318 checks remain pending; no manual acceptance inferred."
+}

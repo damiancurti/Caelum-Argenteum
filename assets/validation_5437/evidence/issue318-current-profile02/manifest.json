@@ -1,0 +1,661 @@
+{
+  "base": "ac7a7143",
+  "scope": "Current MAP03 native CPU/renderer attribution; no ETW/presented FPS claim",
+  "army": "Unchanged production admission cap, group size, cadence, reserve total and resurrection rules",
+  "retired": "No 6000-simultaneous scenario exists in this fixture",
+  "methods": [
+    {
+      "id": 0,
+      "class": "CaelumCombatActor",
+      "method": "InitializeCombatProfile",
+      "signature": "void InitializeCombatProfile( int strength, int toughness, int constitution, int agility, int dexterity, int resilience, int charisma, int empathy, int eloquence, int intelligence, int patience, int insight )",
+      "always": true
+    },
+    {
+      "id": 1,
+      "class": "CaelumCombatActor",
+      "method": "ResourceRecoveryActive",
+      "signature": "bool ResourceRecoveryActive()",
+      "always": false
+    },
+    {
+      "id": 2,
+      "class": "CaelumCombatActor",
+      "method": "IsCombatIdle",
+      "signature": "bool IsCombatIdle()",
+      "always": false
+    },
+    {
+      "id": 3,
+      "class": "CaelumCombatActor",
+      "method": "UpdateActorOffensiveStatistics",
+      "signature": "void UpdateActorOffensiveStatistics()",
+      "always": false
+    },
+    {
+      "id": 4,
+      "class": "CaelumCombatActor",
+      "method": "UpdateImpactContactLatch",
+      "signature": "void UpdateImpactContactLatch()",
+      "always": false
+    },
+    {
+      "id": 5,
+      "class": "CaelumCombatActor",
+      "method": "CollidedWith",
+      "signature": "override void CollidedWith(Actor other, bool passive)",
+      "always": false
+    },
+    {
+      "id": 6,
+      "class": "CaelumCombatActor",
+      "method": "UpdateCombatHealthEffects",
+      "signature": "void UpdateCombatHealthEffects()",
+      "always": false
+    },
+    {
+      "id": 7,
+      "class": "CaelumCombatActor",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 8,
+      "class": "CaelumCombatActor",
+      "method": "NativeTick",
+      "signature": "void NativeTick()",
+      "always": false
+    },
+    {
+      "id": 9,
+      "class": "CaelumDemonFlameVisual",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 10,
+      "class": "CaelumDemonBreath",
+      "method": "Mouth",
+      "signature": "static Vector3 Mouth(Actor owner)",
+      "always": false
+    },
+    {
+      "id": 11,
+      "class": "CaelumDemonBreath",
+      "method": "CanReach",
+      "signature": "static bool CanReach(Actor owner,Actor victim)",
+      "always": false
+    },
+    {
+      "id": 12,
+      "class": "CaelumDemonBreath",
+      "method": "Visible",
+      "signature": "bool Visible(Vector3 point)",
+      "always": false
+    },
+    {
+      "id": 13,
+      "class": "CaelumDemonBreath",
+      "method": "Contact",
+      "signature": "bool Contact(Actor body)",
+      "always": false
+    },
+    {
+      "id": 14,
+      "class": "CaelumDemonBreath",
+      "method": "Burn",
+      "signature": "void Burn(Actor body)",
+      "always": false
+    },
+    {
+      "id": 15,
+      "class": "CaelumDemonBreath",
+      "method": "PaidTick",
+      "signature": "void PaidTick()",
+      "always": false
+    },
+    {
+      "id": 16,
+      "class": "CaelumDemonBreath",
+      "method": "FlushHeat",
+      "signature": "void FlushHeat()",
+      "always": false
+    },
+    {
+      "id": 17,
+      "class": "CaelumDemonBreath",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 18,
+      "class": "CaelumDemonService",
+      "method": "StopBreath",
+      "signature": "static void StopBreath(CaelumCombatActor npc,bool settle=true,bool resume=true)",
+      "always": false
+    },
+    {
+      "id": 19,
+      "class": "CaelumDemonService",
+      "method": "UpdateBreath",
+      "signature": "static void UpdateBreath(CaelumCombatActor npc)",
+      "always": false
+    },
+    {
+      "id": 20,
+      "class": "CaelumDemonService",
+      "method": "Initialize",
+      "signature": "static void Initialize(CaelumCombatActor npc)",
+      "always": false
+    },
+    {
+      "id": 21,
+      "class": "CaelumDemonService",
+      "method": "UpdatePotions",
+      "signature": "static void UpdatePotions(CaelumCombatActor npc)",
+      "always": false
+    },
+    {
+      "id": 22,
+      "class": "CaelumElementalStatus",
+      "method": "ApplyBurnHeat",
+      "signature": "play void ApplyBurnHeat(double duration,double power,double absorbedWatts)",
+      "always": false
+    },
+    {
+      "id": 23,
+      "class": "CaelumElementalStatus",
+      "method": "TickBurnHeat",
+      "signature": "play void TickBurnHeat(Actor owner)",
+      "always": false
+    },
+    {
+      "id": 24,
+      "class": "CaelumElementalStatus",
+      "method": "TakeBurnHeat",
+      "signature": "play double TakeBurnHeat()",
+      "always": false
+    },
+    {
+      "id": 25,
+      "class": "CaelumElementalStatus",
+      "method": "Tick",
+      "signature": "play void Tick(Actor owner,bool realStep=true)",
+      "always": false
+    },
+    {
+      "id": 26,
+      "class": "CaelumElementalStream",
+      "method": "Visible",
+      "signature": "static bool Visible(Actor source, Vector3 point)",
+      "always": false
+    },
+    {
+      "id": 27,
+      "class": "CaelumElementalStream",
+      "method": "Contact",
+      "signature": "static bool Contact(Actor source,Actor emitter,Vector3 direction,Actor body)",
+      "always": false
+    },
+    {
+      "id": 28,
+      "class": "CaelumElementalStream",
+      "method": "ApplyContact",
+      "signature": "static void ApplyContact(Actor emitter,Actor body,bool ice=false)",
+      "always": false
+    },
+    {
+      "id": 29,
+      "class": "CaelumElementalStream",
+      "method": "ReceivedWatts",
+      "signature": "static double ReceivedWatts(Actor source,Vector3 direction,Actor body,CaelumThermalState thermal)",
+      "always": false
+    },
+    {
+      "id": 30,
+      "class": "CaelumElementalStream",
+      "method": "Transfer",
+      "signature": "static void Transfer(Actor source,Vector3 direction,double seconds,bool ice=false)",
+      "always": false
+    },
+    {
+      "id": 31,
+      "class": "CaelumPopulationState",
+      "method": "Refresh",
+      "signature": "void Refresh()",
+      "always": false
+    },
+    {
+      "id": 32,
+      "class": "CaelumCarbineWorld",
+      "method": "Restore",
+      "signature": "static void Restore(Actor owner)",
+      "always": false
+    },
+    {
+      "id": 33,
+      "class": "CaelumCarbineWorld",
+      "method": "Apply",
+      "signature": "static void Apply(Actor owner,bool held,bool moving,bool firing,double reload,double total)",
+      "always": false
+    },
+    {
+      "id": 34,
+      "class": "CaelumCityCarbine",
+      "method": "Initialize",
+      "signature": "void Initialize(CaelumPortDefender owner)",
+      "always": false
+    },
+    {
+      "id": 35,
+      "class": "CaelumCityCarbine",
+      "method": "Tick",
+      "signature": "void Tick(CaelumPortDefender owner)",
+      "always": false
+    },
+    {
+      "id": 36,
+      "class": "CaelumPlayer",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 37,
+      "class": "CaelumThermalBody",
+      "method": "Get",
+      "signature": "static CaelumThermalState Get(Actor body,bool create=false)",
+      "always": false
+    },
+    {
+      "id": 38,
+      "class": "CaelumThermalBody",
+      "method": "Refresh",
+      "signature": "static void Refresh(Actor body,CaelumThermalState thermal)",
+      "always": false
+    },
+    {
+      "id": 39,
+      "class": "CaelumThermalBody",
+      "method": "SampleCoverage",
+      "signature": "static void SampleCoverage(Actor body,CaelumThermalState thermal,double waterHeight,int rowMask=-1)",
+      "always": false
+    },
+    {
+      "id": 40,
+      "class": "CaelumThermalShelter",
+      "method": "Roof",
+      "signature": "static bool Roof(Actor body)",
+      "always": false
+    },
+    {
+      "id": 41,
+      "class": "CaelumThermalShelter",
+      "method": "WindBlocked",
+      "signature": "static bool WindBlocked(Actor body)",
+      "always": false
+    },
+    {
+      "id": 42,
+      "class": "CaelumThermalEnvironment",
+      "method": "SampleWater",
+      "signature": "static double SampleWater(Actor body,CaelumThermalState thermal,double fallback)",
+      "always": false
+    },
+    {
+      "id": 43,
+      "class": "CaelumThermalEnvironment",
+      "method": "Sample",
+      "signature": "static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)",
+      "always": false
+    },
+    {
+      "id": 44,
+      "class": "CaelumThermalFire",
+      "method": "AbsorbedAt",
+      "signature": "static double AbsorbedAt(Actor body,CaelumThermalState thermal,Actor tracer, vector3 origin,double watts,double sourceRadius)",
+      "always": false
+    },
+    {
+      "id": 45,
+      "class": "CaelumThermalFire",
+      "method": "Sample",
+      "signature": "static double Sample(Actor body,CaelumThermalState thermal)",
+      "always": false
+    },
+    {
+      "id": 46,
+      "class": "CaelumThermalMotion",
+      "method": "Path",
+      "signature": "static void Path(Actor body,vector3 before,vector3 after,bool running)",
+      "always": false
+    },
+    {
+      "id": 47,
+      "class": "CaelumThermalMotion",
+      "method": "Support",
+      "signature": "static F3DFloor Support(Actor body)",
+      "always": false
+    },
+    {
+      "id": 48,
+      "class": "CaelumThermalMotion",
+      "method": "Physics",
+      "signature": "static void Physics(Actor body,vector3 before,vector3 velocity,bool grounded,vector2 propelled, Sector supportSector,F3DFloor supportFloor,double supportHeight)",
+      "always": false
+    },
+    {
+      "id": 49,
+      "class": "CaelumThermalRuntime",
+      "method": "PlayerStep",
+      "signature": "static void PlayerStep(CaelumPlayer user,bool realStep)",
+      "always": false
+    },
+    {
+      "id": 50,
+      "class": "CaelumThermalRuntime",
+      "method": "NPCStep",
+      "signature": "static void NPCStep(CaelumCombatActor npc,bool force=false)",
+      "always": false
+    },
+    {
+      "id": 51,
+      "class": "CaelumThermalService",
+      "method": "Advance",
+      "signature": "static void Advance(Actor body,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0)",
+      "always": false
+    },
+    {
+      "id": 52,
+      "class": "CaelumThermalService",
+      "method": "Integrate",
+      "signature": "static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0,double firearmWatts=0)",
+      "always": false
+    },
+    {
+      "id": 53,
+      "class": "CaelumCannon",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 54,
+      "class": "CaelumCityInteriorDoors",
+      "method": "Ensure",
+      "signature": "static void Ensure(CaelumPortSiege port)",
+      "always": false
+    },
+    {
+      "id": 55,
+      "class": "CaelumCityWorld",
+      "method": "Prepare",
+      "signature": "static bool Prepare()",
+      "always": true
+    },
+    {
+      "id": 56,
+      "class": "CaelumCityWorld",
+      "method": "Peaceful",
+      "signature": "static bool Peaceful()",
+      "always": false
+    },
+    {
+      "id": 57,
+      "class": "CaelumCityWorld",
+      "method": "SiegeDue",
+      "signature": "static bool SiegeDue()",
+      "always": false
+    },
+    {
+      "id": 58,
+      "class": "CaelumCorpseArchive",
+      "method": "Tick",
+      "signature": "void Tick()",
+      "always": false
+    },
+    {
+      "id": 59,
+      "class": "CaelumDiningTable",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 60,
+      "class": "CaelumHingedDoorLeaf",
+      "method": "BlockerPosition",
+      "signature": "override vector3 BlockerPosition(double offset)",
+      "always": false
+    },
+    {
+      "id": 61,
+      "class": "CaelumHingedDoorLeaf",
+      "method": "PlaceAtProgress",
+      "signature": "override void PlaceAtProgress()",
+      "always": false
+    },
+    {
+      "id": 62,
+      "class": "CaelumInteractionHint",
+      "method": "ForActor",
+      "signature": "static String ForActor(CaelumPlayer user,Actor object)",
+      "always": false
+    },
+    {
+      "id": 63,
+      "class": "CaelumInteractionHint",
+      "method": "Find",
+      "signature": "static String Find(CaelumPlayer user)",
+      "always": false
+    },
+    {
+      "id": 64,
+      "class": "CaelumPortDefender",
+      "method": "AssignHome",
+      "signature": "void AssignHome(int identity)",
+      "always": true
+    },
+    {
+      "id": 65,
+      "class": "CaelumPortDefender",
+      "method": "AdvanceDeployment",
+      "signature": "bool AdvanceDeployment()",
+      "always": false
+    },
+    {
+      "id": 66,
+      "class": "CaelumPortDefender",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 67,
+      "class": "CaelumPortSiege",
+      "method": "AddDemon",
+      "signature": "CaelumSiegeCombatant AddDemon(vector3 position, int lane)",
+      "always": true
+    },
+    {
+      "id": 68,
+      "class": "CaelumPortSiege",
+      "method": "Deploy",
+      "signature": "void Deploy(bool attackOnly=false)",
+      "always": true
+    },
+    {
+      "id": 69,
+      "class": "CaelumPortSiege",
+      "method": "ElectCommands",
+      "signature": "void ElectCommands()",
+      "always": false
+    },
+    {
+      "id": 70,
+      "class": "CaelumPortSiege",
+      "method": "RefreshTargets",
+      "signature": "void RefreshTargets()",
+      "always": false
+    },
+    {
+      "id": 71,
+      "class": "CaelumPortSiege",
+      "method": "AttackerTarget",
+      "signature": "Actor AttackerTarget(CaelumSiegeCombatant entry)",
+      "always": false
+    },
+    {
+      "id": 72,
+      "class": "CaelumPortSiege",
+      "method": "RefillCrews",
+      "signature": "void RefillCrews()",
+      "always": false
+    },
+    {
+      "id": 73,
+      "class": "CaelumPortSiege",
+      "method": "CannonTarget",
+      "signature": "Actor CannonTarget(CaelumCannon gun)",
+      "always": false
+    },
+    {
+      "id": 74,
+      "class": "CaelumPortSiege",
+      "method": "OrderGuns",
+      "signature": "void OrderGuns()",
+      "always": false
+    },
+    {
+      "id": 75,
+      "class": "CaelumPortSiege",
+      "method": "WalkTo",
+      "signature": "static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)",
+      "always": false
+    },
+    {
+      "id": 76,
+      "class": "CaelumPortSiege",
+      "method": "Pulse",
+      "signature": "static bool Pulse(CaelumCombatActor body)",
+      "always": false
+    },
+    {
+      "id": 77,
+      "class": "CaelumPortSiege",
+      "method": "Calendar",
+      "signature": "void Calendar(CaelumPlayer user)",
+      "always": false
+    },
+    {
+      "id": 78,
+      "class": "CaelumPortSiege",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 79,
+      "class": "CaelumSealClimate",
+      "method": "ApplyThermal",
+      "signature": "static void ApplyThermal(Actor body,CaelumThermalState thermal)",
+      "always": false
+    },
+    {
+      "id": 80,
+      "class": "CaelumSiegeEncounter",
+      "method": "RegisterAttacker",
+      "signature": "CaelumSiegeCombatant RegisterAttacker(CaelumCombatActor body)",
+      "always": true
+    },
+    {
+      "id": 81,
+      "class": "CaelumSiegeEncounter",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 82,
+      "class": "CaelumHostileMachine",
+      "method": "ObserveGuards",
+      "signature": "void ObserveGuards()",
+      "always": false
+    },
+    {
+      "id": 83,
+      "class": "CaelumSiegeReinforcements",
+      "method": "RefreshLiving",
+      "signature": "void RefreshLiving(CaelumPortSiege port)",
+      "always": false
+    },
+    {
+      "id": 84,
+      "class": "CaelumSiegeReinforcements",
+      "method": "Place",
+      "signature": "bool Place(CaelumPortSiege port, int slot)",
+      "always": false
+    },
+    {
+      "id": 85,
+      "class": "CaelumSiegeReinforcements",
+      "method": "Tick",
+      "signature": "void Tick(CaelumPortSiege port)",
+      "always": false
+    },
+    {
+      "id": 86,
+      "class": "CaelumSlidingDoorBlocker",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 87,
+      "class": "CaelumSlidingDoorLeaf",
+      "method": "Tick",
+      "signature": "override void Tick()",
+      "always": false
+    },
+    {
+      "id": 88,
+      "class": "CaelumTimeSkipState",
+      "method": "Pump",
+      "signature": "static void Pump(CaelumPlayer user)",
+      "always": true
+    },
+    {
+      "id": 89,
+      "class": "CaelumWeightPressure",
+      "method": "SupportCount",
+      "signature": "static int SupportCount(Actor upper)",
+      "always": false
+    },
+    {
+      "id": 90,
+      "class": "CaelumWeightPressure",
+      "method": "MassAbove",
+      "signature": "static double MassAbove(Actor lower)",
+      "always": false
+    },
+    {
+      "id": 91,
+      "class": "CaelumWeightPressure",
+      "method": "Update",
+      "signature": "static void Update(Actor victim)",
+      "always": false
+    },
+    {
+      "id": 92,
+      "class": "CaelumWeightPressure",
+      "method": "WorldTick",
+      "signature": "static void WorldTick()",
+      "always": false
+    }
+  ],
+  "runtime_sha256": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+  "fixture_sha256": "d5549b5aeffcc9e98e0994c793ddbb574e354b7eb8041c1ca6902d2a610d911c"
+}

@@ -1,0 +1,15 @@
+Map MAP03: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = -180.0000, pitch = 0.0000
+546 fps
+
+Walls: 235 (0 splits, 0 t-splits, 948 vertices)
+Flats: 65 (65 primitives, 41763 vertices)
+Sprites: 395, Decals=0, Portals: 1, Command buffers: 3
+BSP = 0.020, Clip=0.032
+W: Render=0.062, Setup=0.085
+F: Render=0.014, Setup=0.005
+S: Render=0.305, Setup=0.053
+2D: 0.061 Finish3D: 0.002
+Main thread total=0.158, Main thread waiting=0.106 Worker thread total=0.146, Worker thread waiting=0.004
+All=1.400, Render=0.388, Setup=0.163, Portal=0.008, Drawcalls=0.212, Postprocess=0.010, Finish=0.804
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered

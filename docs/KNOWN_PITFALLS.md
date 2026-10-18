@@ -647,6 +647,26 @@ assigning cost to them. Regression: fixed pitches 0/45/47/75, renderer counts,
 application presentation, unchanged camera/population. Geometry fixes and
 whole-route author acceptance remain pending; recheck engine-version changes.
 
+Current MAP03 follow-up (#318 /5.4.37,2026-10-18): eight native runs preserve
+the adopted district sky/private houses and normal bounded deployment. At
+(0,320), pitch0/75 raises wall processing235->4,243, flat vertices41,763->90,492
+and native CPU All1.400->4.416ms. These are single later bench snapshots, not
+whole-window CPU/GPU averages. Native FPS snapshots546/177 peaceful and48/35
+siege city/front do not establish stable60FPS. Ordinary siege windows contain
+600 defenders and993-998 living Mandingas, with simulation35.00/34.74tics/s.
+Do not compare ratios against older simultaneous-deployment sessions.
+
+Measurement safeguards: the UI callback tic label has a different phase from
+WorldTick. Select complete [end_ms-interval,end_ms] intervals within measured
+wall-clock bounds, not callback tic labels; this still is not presented FPS.
+Some sampled method costs flush before/after WorldTick and need addition into
+the same sampled tic. Exclusive time removes instrumented children only; it
+retains uninstrumented work/probe overhead and is not a predicted saving.
+bench waits5seconds then records native counters/timing, not a5-second mean.
+Use one completed benchmark per recorded byte range and reject incomplete logs,
+wrong hashes, failed exits or missing/duplicate tic boundaries. Source/launch
+records, all method rows and qualifications: assets/validation_5437/RESULTS.md.
+
 ## CA-KP-112 - Large-map optimization starts with boundaries and visibility
 
 Status/evidence: CODE-VERIFIED generator structure; research/proposed remedies

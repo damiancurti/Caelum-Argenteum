@@ -1,0 +1,1491 @@
+{
+  "directory": "issue318-current-profile02",
+  "runtime": "373fee5ec382a2e975c6d8a316f4a28b8c3e2b43da94ad6ff1437fa4bf7f3925",
+  "cases": {
+    "peace-forward": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=240 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=590 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 35.000492456928875,
+      "window_wall_ms": [
+        11827.5352,
+        21827.3945
+      ],
+      "ui_callback_count": 5232,
+      "ui_callback_mean_ms_not_presentation": 1.9109353593272171,
+      "ui_callback_p99_ms_not_presentation": 2.5838,
+      "sampled_costs": [
+        {
+          "method": "CaelumPlayer.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.09435,
+          "exclusive_ms_per_sample_tic": 0.06828
+        },
+        {
+          "method": "CaelumPopulationState.Refresh",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.02202,
+          "exclusive_ms_per_sample_tic": 0.02202
+        },
+        {
+          "method": "CaelumWeightPressure.WorldTick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.021655,
+          "exclusive_ms_per_sample_tic": 0.019545
+        },
+        {
+          "method": "CaelumCarbineWorld.Restore",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 3.1,
+          "inclusive_ms_per_sample_tic": 0.008575000000000001,
+          "exclusive_ms_per_sample_tic": 0.008575000000000001
+        },
+        {
+          "method": "CaelumCannon.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 36.0,
+          "inclusive_ms_per_sample_tic": 0.008425,
+          "exclusive_ms_per_sample_tic": 0.006915
+        },
+        {
+          "method": "CaelumThermalService.Advance",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00969,
+          "exclusive_ms_per_sample_tic": 0.0038399999999999997
+        },
+        {
+          "method": "CaelumPortSiege.Calendar",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0033,
+          "exclusive_ms_per_sample_tic": 0.0033
+        },
+        {
+          "method": "CaelumThermalBody.Get",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 8.0,
+          "inclusive_ms_per_sample_tic": 0.00307,
+          "exclusive_ms_per_sample_tic": 0.00307
+        },
+        {
+          "method": "CaelumThermalService.Integrate",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.003035,
+          "exclusive_ms_per_sample_tic": 0.003035
+        },
+        {
+          "method": "CaelumPortSiege.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.007915,
+          "exclusive_ms_per_sample_tic": 0.0029749999999999998
+        },
+        {
+          "method": "CaelumThermalBody.Refresh",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00207,
+          "exclusive_ms_per_sample_tic": 0.00207
+        },
+        {
+          "method": "CaelumElementalStatus.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.001985,
+          "exclusive_ms_per_sample_tic": 0.0018599999999999999
+        },
+        {
+          "method": "CaelumThermalRuntime.PlayerStep",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.01178,
+          "exclusive_ms_per_sample_tic": 0.001635
+        },
+        {
+          "method": "CaelumHostileMachine.ObserveGuards",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 36.0,
+          "inclusive_ms_per_sample_tic": 0.0015099999999999998,
+          "exclusive_ms_per_sample_tic": 0.0015099999999999998
+        },
+        {
+          "method": "CaelumWeightPressure.MassAbove",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00148,
+          "exclusive_ms_per_sample_tic": 0.00148
+        },
+        {
+          "method": "CaelumCityInteriorDoors.Ensure",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0011049999999999999,
+          "exclusive_ms_per_sample_tic": 0.0011049999999999999
+        },
+        {
+          "method": "CaelumInteractionHint.Find",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0008399999999999999,
+          "exclusive_ms_per_sample_tic": 0.0008399999999999999
+        },
+        {
+          "method": "CaelumCarbineWorld.Apply",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 2.1,
+          "inclusive_ms_per_sample_tic": 0.006719999999999999,
+          "exclusive_ms_per_sample_tic": 0.0007099999999999999
+        },
+        {
+          "method": "CaelumWeightPressure.Update",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00211,
+          "exclusive_ms_per_sample_tic": 0.00063
+        },
+        {
+          "method": "CaelumThermalShelter.WindBlocked",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 0.05,
+          "inclusive_ms_per_sample_tic": 0.00063,
+          "exclusive_ms_per_sample_tic": 0.00063
+        },
+        {
+          "method": "CaelumThermalMotion.Physics",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000865,
+          "exclusive_ms_per_sample_tic": 0.00057
+        },
+        {
+          "method": "CaelumCityWorld.SiegeDue",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000535,
+          "exclusive_ms_per_sample_tic": 0.000535
+        },
+        {
+          "method": "CaelumSealClimate.ApplyThermal",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00051,
+          "exclusive_ms_per_sample_tic": 0.00051
+        },
+        {
+          "method": "CaelumTimeSkipState.Pump",
+          "sample_tics": 350,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0003185714285714286,
+          "exclusive_ms_per_sample_tic": 0.0003185714285714286
+        },
+        {
+          "method": "CaelumElementalStatus.TakeBurnHeat",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00020500000000000002,
+          "exclusive_ms_per_sample_tic": 0.00020500000000000002
+        },
+        {
+          "method": "CaelumCorpseArchive.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00019500000000000002,
+          "exclusive_ms_per_sample_tic": 0.00019500000000000002
+        },
+        {
+          "method": "CaelumThermalMotion.Support",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000145,
+          "exclusive_ms_per_sample_tic": 0.000145
+        },
+        {
+          "method": "CaelumThermalShelter.Roof",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 0.05,
+          "inclusive_ms_per_sample_tic": 0.00013,
+          "exclusive_ms_per_sample_tic": 0.00013
+        },
+        {
+          "method": "CaelumElementalStatus.TickBurnHeat",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000125,
+          "exclusive_ms_per_sample_tic": 0.000125
+        }
+      ]
+    },
+    "peace-ground": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=240 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=590 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1"
+      ],
+      "simulation_tics_per_second": 34.998508013603384,
+      "window_wall_ms": [
+        11825.9814,
+        21826.4077
+      ],
+      "ui_callback_count": 1670,
+      "ui_callback_mean_ms_not_presentation": 5.9850416766467065,
+      "ui_callback_p99_ms_not_presentation": 8.427,
+      "sampled_costs": [
+        {
+          "method": "CaelumPlayer.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.130585,
+          "exclusive_ms_per_sample_tic": 0.095475
+        },
+        {
+          "method": "CaelumPopulationState.Refresh",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.023164999999999998,
+          "exclusive_ms_per_sample_tic": 0.023164999999999998
+        },
+        {
+          "method": "CaelumWeightPressure.WorldTick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.023100000000000002,
+          "exclusive_ms_per_sample_tic": 0.01998
+        },
+        {
+          "method": "CaelumCarbineWorld.Restore",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 3.1,
+          "inclusive_ms_per_sample_tic": 0.009245,
+          "exclusive_ms_per_sample_tic": 0.009245
+        },
+        {
+          "method": "CaelumCannon.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 36.0,
+          "inclusive_ms_per_sample_tic": 0.009565,
+          "exclusive_ms_per_sample_tic": 0.007555000000000001
+        },
+        {
+          "method": "CaelumThermalService.Advance",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.014180000000000002,
+          "exclusive_ms_per_sample_tic": 0.00532
+        },
+        {
+          "method": "CaelumThermalService.Integrate",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00483,
+          "exclusive_ms_per_sample_tic": 0.00483
+        },
+        {
+          "method": "CaelumPortSiege.Calendar",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00429,
+          "exclusive_ms_per_sample_tic": 0.00429
+        },
+        {
+          "method": "CaelumThermalBody.Get",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 8.0,
+          "inclusive_ms_per_sample_tic": 0.004045,
+          "exclusive_ms_per_sample_tic": 0.004045
+        },
+        {
+          "method": "CaelumPortSiege.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.010235,
+          "exclusive_ms_per_sample_tic": 0.003825
+        },
+        {
+          "method": "CaelumThermalBody.Refresh",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0032849999999999997,
+          "exclusive_ms_per_sample_tic": 0.0032849999999999997
+        },
+        {
+          "method": "CaelumElementalStatus.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0030499999999999998,
+          "exclusive_ms_per_sample_tic": 0.0028049999999999998
+        },
+        {
+          "method": "CaelumThermalRuntime.PlayerStep",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.01738,
+          "exclusive_ms_per_sample_tic": 0.00251
+        },
+        {
+          "method": "CaelumWeightPressure.MassAbove",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.002205,
+          "exclusive_ms_per_sample_tic": 0.002205
+        },
+        {
+          "method": "CaelumHostileMachine.ObserveGuards",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 36.0,
+          "inclusive_ms_per_sample_tic": 0.00201,
+          "exclusive_ms_per_sample_tic": 0.00201
+        },
+        {
+          "method": "CaelumCityInteriorDoors.Ensure",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00156,
+          "exclusive_ms_per_sample_tic": 0.00156
+        },
+        {
+          "method": "CaelumInteractionHint.Find",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.001115,
+          "exclusive_ms_per_sample_tic": 0.001115
+        },
+        {
+          "method": "CaelumCarbineWorld.Apply",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 2.1,
+          "inclusive_ms_per_sample_tic": 0.007549999999999999,
+          "exclusive_ms_per_sample_tic": 0.001095
+        },
+        {
+          "method": "CaelumThermalMotion.Physics",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0014,
+          "exclusive_ms_per_sample_tic": 0.001085
+        },
+        {
+          "method": "CaelumWeightPressure.Update",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00312,
+          "exclusive_ms_per_sample_tic": 0.000915
+        },
+        {
+          "method": "CaelumThermalShelter.WindBlocked",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 0.05,
+          "inclusive_ms_per_sample_tic": 0.000715,
+          "exclusive_ms_per_sample_tic": 0.000715
+        },
+        {
+          "method": "CaelumCityWorld.SiegeDue",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00056,
+          "exclusive_ms_per_sample_tic": 0.00056
+        },
+        {
+          "method": "CaelumSealClimate.ApplyThermal",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0005250000000000001,
+          "exclusive_ms_per_sample_tic": 0.0005250000000000001
+        },
+        {
+          "method": "CaelumTimeSkipState.Pump",
+          "sample_tics": 350,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0005137142857142856,
+          "exclusive_ms_per_sample_tic": 0.0005137142857142856
+        },
+        {
+          "method": "CaelumCorpseArchive.Tick",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00048000000000000007,
+          "exclusive_ms_per_sample_tic": 0.00048000000000000007
+        },
+        {
+          "method": "CaelumElementalStatus.TakeBurnHeat",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00042500000000000003,
+          "exclusive_ms_per_sample_tic": 0.00042500000000000003
+        },
+        {
+          "method": "CaelumThermalMotion.Support",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000295,
+          "exclusive_ms_per_sample_tic": 0.000295
+        },
+        {
+          "method": "CaelumElementalStatus.TickBurnHeat",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000245,
+          "exclusive_ms_per_sample_tic": 0.000245
+        },
+        {
+          "method": "CaelumThermalShelter.Roof",
+          "sample_tics": 20,
+          "calls_per_sample_tic": 0.05,
+          "inclusive_ms_per_sample_tic": 0.00017999999999999998,
+          "exclusive_ms_per_sample_tic": 0.00017999999999999998
+        }
+      ]
+    },
+    "siege-city": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=3600 actors=8901 soldiers=600 demons=998 blockers=0 doors=0 missiles=14 corpses=2 flames=4",
+        "CA318 CENSUS end tic=3950 actors=8916 soldiers=600 demons=994 blockers=0 doors=0 missiles=13 corpses=6 flames=4"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 35.02801505616172,
+      "window_wall_ms": [
+        107832.3531,
+        117824.3552
+      ],
+      "ui_callback_count": 426,
+      "ui_callback_mean_ms_not_presentation": 23.413919953051643,
+      "ui_callback_p99_ms_not_presentation": 75.5536,
+      "sampled_costs": [
+        {
+          "method": "CaelumCombatActor.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 14.995538095238095,
+          "exclusive_ms_per_sample_tic": 3.0755190476190473
+        },
+        {
+          "method": "CaelumPortSiege.AttackerTarget",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 347.6190476190476,
+          "inclusive_ms_per_sample_tic": 2.8007666666666666,
+          "exclusive_ms_per_sample_tic": 2.8007666666666666
+        },
+        {
+          "method": "CaelumThermalService.Integrate",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.9224,
+          "exclusive_ms_per_sample_tic": 0.9224
+        },
+        {
+          "method": "CaelumDemonService.UpdateBreath",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 1.751585714285714,
+          "exclusive_ms_per_sample_tic": 0.7413857142857143
+        },
+        {
+          "method": "CaelumPortSiege.Pulse",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 497.3809523809524,
+          "inclusive_ms_per_sample_tic": 5.079823809523809,
+          "exclusive_ms_per_sample_tic": 0.6556047619047619
+        },
+        {
+          "method": "CaelumElementalStatus.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.6766,
+          "exclusive_ms_per_sample_tic": 0.6279571428571429
+        },
+        {
+          "method": "CaelumDemonBreath.Mouth",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 998.8571428571429,
+          "inclusive_ms_per_sample_tic": 0.6087095238095238,
+          "exclusive_ms_per_sample_tic": 0.6087095238095238
+        },
+        {
+          "method": "CaelumCombatActor.UpdateCombatHealthEffects",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.952380952381,
+          "inclusive_ms_per_sample_tic": 0.7059857142857142,
+          "exclusive_ms_per_sample_tic": 0.6056761904761905
+        },
+        {
+          "method": "CaelumPortSiege.WalkTo",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 149.95238095238096,
+          "inclusive_ms_per_sample_tic": 0.7518142857142858,
+          "exclusive_ms_per_sample_tic": 0.5492904761904762
+        },
+        {
+          "method": "CaelumThermalBody.Get",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 5659.142857142857,
+          "inclusive_ms_per_sample_tic": 0.5099190476190476,
+          "exclusive_ms_per_sample_tic": 0.5099190476190476
+        },
+        {
+          "method": "CaelumCombatActor.UpdateActorOffensiveStatistics",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.8095238095239,
+          "inclusive_ms_per_sample_tic": 0.49831428571428565,
+          "exclusive_ms_per_sample_tic": 0.49831428571428565
+        },
+        {
+          "method": "CaelumThermalShelter.WindBlocked",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.4894428571428571,
+          "exclusive_ms_per_sample_tic": 0.4894428571428571
+        },
+        {
+          "method": "CaelumWeightPressure.MassAbove",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1598.4285714285713,
+          "inclusive_ms_per_sample_tic": 0.4818571428571429,
+          "exclusive_ms_per_sample_tic": 0.4818571428571429
+        },
+        {
+          "method": "CaelumPortSiege.CannonTarget",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 0.09523809523809523,
+          "inclusive_ms_per_sample_tic": 0.46166666666666667,
+          "exclusive_ms_per_sample_tic": 0.46166666666666667
+        },
+        {
+          "method": "CaelumCombatActor.NativeTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 5.190709523809524,
+          "exclusive_ms_per_sample_tic": 0.4328428571428572
+        },
+        {
+          "method": "CaelumWeightPressure.Update",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.8952285714285715,
+          "exclusive_ms_per_sample_tic": 0.41337142857142856
+        },
+        {
+          "method": "CaelumThermalBody.Refresh",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 415.76190476190476,
+          "inclusive_ms_per_sample_tic": 0.37574761904761905,
+          "exclusive_ms_per_sample_tic": 0.37574761904761905
+        },
+        {
+          "method": "CaelumPortDefender.AdvanceDeployment",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 147.28571428571428,
+          "inclusive_ms_per_sample_tic": 1.0005428571428572,
+          "exclusive_ms_per_sample_tic": 0.25625714285714285
+        },
+        {
+          "method": "CaelumPortDefender.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 600.0,
+          "inclusive_ms_per_sample_tic": 5.026971428571429,
+          "exclusive_ms_per_sample_tic": 0.23933333333333331
+        },
+        {
+          "method": "CaelumThermalRuntime.NPCStep",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 1.8367285714285715,
+          "exclusive_ms_per_sample_tic": 0.22616190476190473
+        },
+        {
+          "method": "CaelumCityCarbine.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 600.0,
+          "inclusive_ms_per_sample_tic": 0.3564904761904762,
+          "exclusive_ms_per_sample_tic": 0.20358571428571426
+        },
+        {
+          "method": "CaelumWeightPressure.WorldTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 1.0928904761904763,
+          "exclusive_ms_per_sample_tic": 0.19766190476190476
+        },
+        {
+          "method": "CaelumCombatActor.IsCombatIdle",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.19615238095238097,
+          "exclusive_ms_per_sample_tic": 0.19615238095238097
+        },
+        {
+          "method": "CaelumCombatActor.ResourceRecoveryActive",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 2595.809523809524,
+          "inclusive_ms_per_sample_tic": 0.18330476190476191,
+          "exclusive_ms_per_sample_tic": 0.18330476190476191
+        },
+        {
+          "method": "CaelumDemonBreath.CanReach",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 997.8571428571429,
+          "inclusive_ms_per_sample_tic": 0.7706380952380952,
+          "exclusive_ms_per_sample_tic": 0.16247142857142857
+        },
+        {
+          "method": "CaelumDemonService.Initialize",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 2598.4285714285716,
+          "inclusive_ms_per_sample_tic": 0.1497190476190476,
+          "exclusive_ms_per_sample_tic": 0.1497190476190476
+        },
+        {
+          "method": "CaelumThermalMotion.Physics",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.17236190476190477,
+          "exclusive_ms_per_sample_tic": 0.14876666666666666
+        },
+        {
+          "method": "CaelumDemonService.UpdatePotions",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.16911428571428572,
+          "exclusive_ms_per_sample_tic": 0.13253333333333334
+        },
+        {
+          "method": "CaelumPopulationState.Refresh",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.1317047619047619,
+          "exclusive_ms_per_sample_tic": 0.1317047619047619
+        },
+        {
+          "method": "CaelumCarbineWorld.Apply",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 602.0952380952381,
+          "inclusive_ms_per_sample_tic": 0.12262857142857143,
+          "exclusive_ms_per_sample_tic": 0.11673333333333333
+        },
+        {
+          "method": "CaelumPortSiege.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.6073095238095239,
+          "exclusive_ms_per_sample_tic": 0.11111428571428572
+        },
+        {
+          "method": "CaelumThermalMotion.Path",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 381.42857142857144,
+          "inclusive_ms_per_sample_tic": 0.4646142857142857,
+          "exclusive_ms_per_sample_tic": 0.10146666666666668
+        },
+        {
+          "method": "CaelumPlayer.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.11624761904761906,
+          "exclusive_ms_per_sample_tic": 0.08703809523809523
+        },
+        {
+          "method": "CaelumDemonService.StopBreath",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1000.0,
+          "inclusive_ms_per_sample_tic": 0.08094285714285714,
+          "exclusive_ms_per_sample_tic": 0.08094285714285714
+        },
+        {
+          "method": "CaelumHostileMachine.ObserveGuards",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 48.0,
+          "inclusive_ms_per_sample_tic": 0.07817142857142857,
+          "exclusive_ms_per_sample_tic": 0.07817142857142857
+        },
+        {
+          "method": "CaelumThermalFire.AbsorbedAt",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 5.142857142857143,
+          "inclusive_ms_per_sample_tic": 0.06705238095238095,
+          "exclusive_ms_per_sample_tic": 0.06705238095238095
+        },
+        {
+          "method": "CaelumThermalMotion.Support",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.0627047619047619,
+          "exclusive_ms_per_sample_tic": 0.0627047619047619
+        },
+        {
+          "method": "CaelumElementalStatus.TickBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.048576190476190474,
+          "exclusive_ms_per_sample_tic": 0.048576190476190474
+        },
+        {
+          "method": "CaelumCombatActor.UpdateImpactContactLatch",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.04843333333333333,
+          "exclusive_ms_per_sample_tic": 0.04843333333333333
+        },
+        {
+          "method": "CaelumCarbineWorld.Restore",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 603.0952380952381,
+          "inclusive_ms_per_sample_tic": 0.04638095238095238,
+          "exclusive_ms_per_sample_tic": 0.04638095238095238
+        },
+        {
+          "method": "CaelumThermalEnvironment.Sample",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.6026238095238095,
+          "exclusive_ms_per_sample_tic": 0.04222380952380952
+        },
+        {
+          "method": "CaelumThermalService.Advance",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.61904761904762,
+          "inclusive_ms_per_sample_tic": 1.0131285714285714,
+          "exclusive_ms_per_sample_tic": 0.039338095238095235
+        },
+        {
+          "method": "CaelumCityCarbine.Initialize",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1198.952380952381,
+          "inclusive_ms_per_sample_tic": 0.037,
+          "exclusive_ms_per_sample_tic": 0.037
+        },
+        {
+          "method": "CaelumElementalStream.Contact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 88.57142857142857,
+          "inclusive_ms_per_sample_tic": 0.04025714285714286,
+          "exclusive_ms_per_sample_tic": 0.035742857142857146
+        },
+        {
+          "method": "CaelumThermalShelter.Roof",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.0313,
+          "exclusive_ms_per_sample_tic": 0.0313
+        },
+        {
+          "method": "CaelumPortSiege.Calendar",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.030642857142857142,
+          "exclusive_ms_per_sample_tic": 0.030642857142857142
+        },
+        {
+          "method": "CaelumDemonBreath.PaidTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.15933809523809522,
+          "exclusive_ms_per_sample_tic": 0.027495238095238097
+        },
+        {
+          "method": "CaelumThermalBody.SampleCoverage",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.02675238095238095,
+          "exclusive_ms_per_sample_tic": 0.02675238095238095
+        },
+        {
+          "method": "CaelumCannon.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 42.0,
+          "inclusive_ms_per_sample_tic": 0.03845238095238095,
+          "exclusive_ms_per_sample_tic": 0.02157142857142857
+        },
+        {
+          "method": "CaelumSealClimate.ApplyThermal",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 92.28571428571429,
+          "inclusive_ms_per_sample_tic": 0.018133333333333335,
+          "exclusive_ms_per_sample_tic": 0.018133333333333335
+        },
+        {
+          "method": "CaelumElementalStream.Visible",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 13.428571428571429,
+          "inclusive_ms_per_sample_tic": 0.012785714285714286,
+          "exclusive_ms_per_sample_tic": 0.012785714285714286
+        },
+        {
+          "method": "CaelumDemonBreath.Contact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 88.57142857142857,
+          "inclusive_ms_per_sample_tic": 0.04821428571428571,
+          "exclusive_ms_per_sample_tic": 0.007957142857142857
+        },
+        {
+          "method": "CaelumDemonFlameVisual.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.0,
+          "inclusive_ms_per_sample_tic": 0.0048047619047619046,
+          "exclusive_ms_per_sample_tic": 0.0048047619047619046
+        },
+        {
+          "method": "CaelumThermalFire.Sample",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.002938095238095238,
+          "exclusive_ms_per_sample_tic": 0.002938095238095238
+        },
+        {
+          "method": "CaelumThermalEnvironment.SampleWater",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.002638095238095238,
+          "exclusive_ms_per_sample_tic": 0.002638095238095238
+        },
+        {
+          "method": "CaelumElementalStream.ApplyContact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.285714285714286,
+          "inclusive_ms_per_sample_tic": 0.002461904761904762,
+          "exclusive_ms_per_sample_tic": 0.002461904761904762
+        },
+        {
+          "method": "CaelumElementalStatus.TakeBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.0021380952380952384,
+          "exclusive_ms_per_sample_tic": 0.0021380952380952384
+        },
+        {
+          "method": "CaelumThermalRuntime.PlayerStep",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.014985714285714285,
+          "exclusive_ms_per_sample_tic": 0.0018285714285714283
+        },
+        {
+          "method": "CaelumElementalStream.ReceivedWatts",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.2857142857142858,
+          "inclusive_ms_per_sample_tic": 0.07276190476190476,
+          "exclusive_ms_per_sample_tic": 0.001819047619047619
+        },
+        {
+          "method": "CaelumCorpseArchive.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0015380952380952381,
+          "exclusive_ms_per_sample_tic": 0.0015380952380952381
+        },
+        {
+          "method": "CaelumCityInteriorDoors.Ensure",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0014476190476190476,
+          "exclusive_ms_per_sample_tic": 0.0014476190476190476
+        },
+        {
+          "method": "CaelumPortSiege.OrderGuns",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.4628999999999999,
+          "exclusive_ms_per_sample_tic": 0.0012333333333333332
+        },
+        {
+          "method": "CaelumInteractionHint.Find",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0010952380952380953,
+          "exclusive_ms_per_sample_tic": 0.0010952380952380953
+        },
+        {
+          "method": "CaelumSiegeEncounter.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.000980952380952381,
+          "exclusive_ms_per_sample_tic": 0.000980952380952381
+        },
+        {
+          "method": "CaelumCombatActor.CollidedWith",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 3.857142857142857,
+          "inclusive_ms_per_sample_tic": 0.0009523809523809524,
+          "exclusive_ms_per_sample_tic": 0.0009523809523809524
+        },
+        {
+          "method": "CaelumDemonBreath.Visible",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.0,
+          "inclusive_ms_per_sample_tic": 0.005200000000000001,
+          "exclusive_ms_per_sample_tic": 0.0008190476190476191
+        },
+        {
+          "method": "CaelumDemonBreath.Burn",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.285714285714286,
+          "inclusive_ms_per_sample_tic": 0.003157142857142857,
+          "exclusive_ms_per_sample_tic": 0.0006952380952380952
+        },
+        {
+          "method": "CaelumDemonBreath.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0006047619047619047,
+          "exclusive_ms_per_sample_tic": 0.0006047619047619047
+        },
+        {
+          "method": "CaelumTimeSkipState.Pump",
+          "sample_tics": 350,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0003511428571428571,
+          "exclusive_ms_per_sample_tic": 0.0003511428571428571
+        },
+        {
+          "method": "CaelumSiegeReinforcements.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00022380952380952383,
+          "exclusive_ms_per_sample_tic": 0.00022380952380952383
+        },
+        {
+          "method": "CaelumElementalStatus.ApplyBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.2857142857142858,
+          "inclusive_ms_per_sample_tic": 0.00014285714285714287,
+          "exclusive_ms_per_sample_tic": 0.00014285714285714287
+        }
+      ]
+    },
+    "siege-front": {
+      "complete": true,
+      "failures": [],
+      "census": [
+        "CA318 CENSUS window tic=3600 actors=8912 soldiers=600 demons=997 blockers=0 doors=0 missiles=14 corpses=3 flames=4",
+        "CA318 CENSUS end tic=3950 actors=8919 soldiers=600 demons=993 blockers=0 doors=0 missiles=11 corpses=7 flames=4"
+      ],
+      "camera": [
+        "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1"
+      ],
+      "simulation_tics_per_second": 34.72048550904826,
+      "window_wall_ms": [
+        107822.8135,
+        117903.3177
+      ],
+      "ui_callback_count": 398,
+      "ui_callback_mean_ms_not_presentation": 25.279357788944722,
+      "ui_callback_p99_ms_not_presentation": 88.3887,
+      "sampled_costs": [
+        {
+          "method": "CaelumCombatActor.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 14.40450476190476,
+          "exclusive_ms_per_sample_tic": 2.9224761904761904
+        },
+        {
+          "method": "CaelumPortSiege.AttackerTarget",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 346.1904761904762,
+          "inclusive_ms_per_sample_tic": 2.5896238095238098,
+          "exclusive_ms_per_sample_tic": 2.5896238095238098
+        },
+        {
+          "method": "CaelumThermalService.Integrate",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.57142857142857,
+          "inclusive_ms_per_sample_tic": 0.9089380952380953,
+          "exclusive_ms_per_sample_tic": 0.9089380952380953
+        },
+        {
+          "method": "CaelumPortSiege.CannonTarget",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 0.14285714285714285,
+          "inclusive_ms_per_sample_tic": 0.7214190476190476,
+          "exclusive_ms_per_sample_tic": 0.7214190476190476
+        },
+        {
+          "method": "CaelumPortSiege.Pulse",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 496.04761904761904,
+          "inclusive_ms_per_sample_tic": 4.8342238095238095,
+          "exclusive_ms_per_sample_tic": 0.6515761904761904
+        },
+        {
+          "method": "CaelumDemonService.UpdateBreath",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 1.5978714285714286,
+          "exclusive_ms_per_sample_tic": 0.6487952380952381
+        },
+        {
+          "method": "CaelumCombatActor.UpdateCombatHealthEffects",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.2857142857142,
+          "inclusive_ms_per_sample_tic": 0.7292333333333334,
+          "exclusive_ms_per_sample_tic": 0.6257047619047619
+        },
+        {
+          "method": "CaelumElementalStatus.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.6515095238095238,
+          "exclusive_ms_per_sample_tic": 0.6021904761904763
+        },
+        {
+          "method": "CaelumDemonBreath.Mouth",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 996.8095238095239,
+          "inclusive_ms_per_sample_tic": 0.5718809523809524,
+          "exclusive_ms_per_sample_tic": 0.5718809523809524
+        },
+        {
+          "method": "CaelumPortSiege.WalkTo",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 149.85714285714286,
+          "inclusive_ms_per_sample_tic": 0.7419714285714286,
+          "exclusive_ms_per_sample_tic": 0.5447380952380952
+        },
+        {
+          "method": "CaelumCombatActor.UpdateActorOffensiveStatistics",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.142857142857,
+          "inclusive_ms_per_sample_tic": 0.5104619047619048,
+          "exclusive_ms_per_sample_tic": 0.5104619047619048
+        },
+        {
+          "method": "CaelumThermalBody.Get",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 5656.333333333333,
+          "inclusive_ms_per_sample_tic": 0.5103285714285715,
+          "exclusive_ms_per_sample_tic": 0.5103285714285715
+        },
+        {
+          "method": "CaelumThermalShelter.WindBlocked",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.4610904761904762,
+          "exclusive_ms_per_sample_tic": 0.4610904761904762
+        },
+        {
+          "method": "CaelumWeightPressure.MassAbove",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1597.2380952380952,
+          "inclusive_ms_per_sample_tic": 0.4476380952380952,
+          "exclusive_ms_per_sample_tic": 0.4476380952380952
+        },
+        {
+          "method": "CaelumCombatActor.NativeTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 4.945261904761905,
+          "exclusive_ms_per_sample_tic": 0.42340952380952385
+        },
+        {
+          "method": "CaelumWeightPressure.Update",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.8546666666666667,
+          "exclusive_ms_per_sample_tic": 0.4070285714285714
+        },
+        {
+          "method": "CaelumThermalBody.Refresh",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 415.3809523809524,
+          "inclusive_ms_per_sample_tic": 0.3647952380952381,
+          "exclusive_ms_per_sample_tic": 0.3647952380952381
+        },
+        {
+          "method": "CaelumPortDefender.AdvanceDeployment",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 147.1904761904762,
+          "inclusive_ms_per_sample_tic": 0.9878904761904762,
+          "exclusive_ms_per_sample_tic": 0.2539047619047619
+        },
+        {
+          "method": "CaelumPortDefender.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 600.0,
+          "inclusive_ms_per_sample_tic": 4.981447619047619,
+          "exclusive_ms_per_sample_tic": 0.24127619047619048
+        },
+        {
+          "method": "CaelumThermalRuntime.NPCStep",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 1.7921761904761904,
+          "exclusive_ms_per_sample_tic": 0.22293333333333332
+        },
+        {
+          "method": "CaelumCombatActor.IsCombatIdle",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.20747142857142856,
+          "exclusive_ms_per_sample_tic": 0.20747142857142856
+        },
+        {
+          "method": "CaelumCityCarbine.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 600.0,
+          "inclusive_ms_per_sample_tic": 0.35910000000000003,
+          "exclusive_ms_per_sample_tic": 0.1989047619047619
+        },
+        {
+          "method": "CaelumWeightPressure.WorldTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 1.0476238095238095,
+          "exclusive_ms_per_sample_tic": 0.19295714285714288
+        },
+        {
+          "method": "CaelumCombatActor.ResourceRecoveryActive",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 2593.3333333333335,
+          "inclusive_ms_per_sample_tic": 0.17367619047619048,
+          "exclusive_ms_per_sample_tic": 0.17367619047619048
+        },
+        {
+          "method": "CaelumDemonBreath.CanReach",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 995.8095238095239,
+          "inclusive_ms_per_sample_tic": 0.7366619047619047,
+          "exclusive_ms_per_sample_tic": 0.1653095238095238
+        },
+        {
+          "method": "CaelumThermalMotion.Physics",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.17345238095238097,
+          "exclusive_ms_per_sample_tic": 0.14793333333333333
+        },
+        {
+          "method": "CaelumDemonService.UpdatePotions",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.17425714285714283,
+          "exclusive_ms_per_sample_tic": 0.14061904761904762
+        },
+        {
+          "method": "CaelumDemonService.Initialize",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 2597.2380952380954,
+          "inclusive_ms_per_sample_tic": 0.1392857142857143,
+          "exclusive_ms_per_sample_tic": 0.1392857142857143
+        },
+        {
+          "method": "CaelumCarbineWorld.Apply",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 602.0952380952381,
+          "inclusive_ms_per_sample_tic": 0.12878095238095238,
+          "exclusive_ms_per_sample_tic": 0.12297619047619048
+        },
+        {
+          "method": "CaelumPopulationState.Refresh",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.11840952380952381,
+          "exclusive_ms_per_sample_tic": 0.11840952380952381
+        },
+        {
+          "method": "CaelumPortSiege.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.859552380952381,
+          "exclusive_ms_per_sample_tic": 0.10491904761904762
+        },
+        {
+          "method": "CaelumThermalMotion.Path",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 380.5238095238095,
+          "inclusive_ms_per_sample_tic": 0.4504238095238095,
+          "exclusive_ms_per_sample_tic": 0.09876190476190476
+        },
+        {
+          "method": "CaelumPlayer.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.12156666666666667,
+          "exclusive_ms_per_sample_tic": 0.0905904761904762
+        },
+        {
+          "method": "CaelumHostileMachine.ObserveGuards",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 48.0,
+          "inclusive_ms_per_sample_tic": 0.0801952380952381,
+          "exclusive_ms_per_sample_tic": 0.0801952380952381
+        },
+        {
+          "method": "CaelumDemonService.StopBreath",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1000.047619047619,
+          "inclusive_ms_per_sample_tic": 0.07877142857142856,
+          "exclusive_ms_per_sample_tic": 0.07877142857142856
+        },
+        {
+          "method": "CaelumThermalMotion.Support",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.06028571428571429,
+          "exclusive_ms_per_sample_tic": 0.06028571428571429
+        },
+        {
+          "method": "CaelumThermalFire.AbsorbedAt",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.0,
+          "inclusive_ms_per_sample_tic": 0.05046190476190476,
+          "exclusive_ms_per_sample_tic": 0.05046190476190476
+        },
+        {
+          "method": "CaelumCombatActor.UpdateImpactContactLatch",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1601.0,
+          "inclusive_ms_per_sample_tic": 0.050371428571428574,
+          "exclusive_ms_per_sample_tic": 0.050371428571428574
+        },
+        {
+          "method": "CaelumElementalStatus.TickBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1602.0,
+          "inclusive_ms_per_sample_tic": 0.04929047619047618,
+          "exclusive_ms_per_sample_tic": 0.04929047619047618
+        },
+        {
+          "method": "CaelumCarbineWorld.Restore",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 603.0952380952381,
+          "inclusive_ms_per_sample_tic": 0.04748095238095238,
+          "exclusive_ms_per_sample_tic": 0.04748095238095238
+        },
+        {
+          "method": "CaelumThermalEnvironment.Sample",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.5733761904761905,
+          "exclusive_ms_per_sample_tic": 0.0429
+        },
+        {
+          "method": "CaelumThermalService.Advance",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.57142857142857,
+          "inclusive_ms_per_sample_tic": 1.0023619047619048,
+          "exclusive_ms_per_sample_tic": 0.04196190476190476
+        },
+        {
+          "method": "CaelumCityCarbine.Initialize",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1198.857142857143,
+          "inclusive_ms_per_sample_tic": 0.03811428571428571,
+          "exclusive_ms_per_sample_tic": 0.03811428571428571
+        },
+        {
+          "method": "CaelumElementalStream.Contact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 88.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.03725714285714286,
+          "exclusive_ms_per_sample_tic": 0.034076190476190475
+        },
+        {
+          "method": "CaelumThermalShelter.Roof",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.666666666666664,
+          "inclusive_ms_per_sample_tic": 0.030804761904761908,
+          "exclusive_ms_per_sample_tic": 0.030804761904761908
+        },
+        {
+          "method": "CaelumPortSiege.Calendar",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.02932857142857143,
+          "exclusive_ms_per_sample_tic": 0.02932857142857143
+        },
+        {
+          "method": "CaelumThermalBody.SampleCoverage",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.026580952380952382,
+          "exclusive_ms_per_sample_tic": 0.026580952380952382
+        },
+        {
+          "method": "CaelumDemonBreath.PaidTick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.13436190476190477,
+          "exclusive_ms_per_sample_tic": 0.023785714285714285
+        },
+        {
+          "method": "CaelumCannon.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 42.0,
+          "inclusive_ms_per_sample_tic": 0.040652380952380954,
+          "exclusive_ms_per_sample_tic": 0.021880952380952383
+        },
+        {
+          "method": "CaelumSealClimate.ApplyThermal",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 92.19047619047619,
+          "inclusive_ms_per_sample_tic": 0.018204761904761904,
+          "exclusive_ms_per_sample_tic": 0.018204761904761904
+        },
+        {
+          "method": "CaelumElementalStream.Visible",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 11.0,
+          "inclusive_ms_per_sample_tic": 0.010433333333333334,
+          "exclusive_ms_per_sample_tic": 0.010433333333333334
+        },
+        {
+          "method": "CaelumDemonBreath.Contact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 88.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.04575714285714286,
+          "exclusive_ms_per_sample_tic": 0.008499999999999999
+        },
+        {
+          "method": "CaelumDemonFlameVisual.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.0,
+          "inclusive_ms_per_sample_tic": 0.004590476190476191,
+          "exclusive_ms_per_sample_tic": 0.004590476190476191
+        },
+        {
+          "method": "CaelumThermalEnvironment.SampleWater",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.002961904761904762,
+          "exclusive_ms_per_sample_tic": 0.002961904761904762
+        },
+        {
+          "method": "CaelumThermalFire.Sample",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 45.61904761904762,
+          "inclusive_ms_per_sample_tic": 0.0028285714285714286,
+          "exclusive_ms_per_sample_tic": 0.0028285714285714286
+        },
+        {
+          "method": "CaelumElementalStream.ApplyContact",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 3.0,
+          "inclusive_ms_per_sample_tic": 0.002142857142857143,
+          "exclusive_ms_per_sample_tic": 0.002142857142857143
+        },
+        {
+          "method": "CaelumThermalRuntime.PlayerStep",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.016423809523809525,
+          "exclusive_ms_per_sample_tic": 0.0021142857142857144
+        },
+        {
+          "method": "CaelumCorpseArchive.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0019142857142857143,
+          "exclusive_ms_per_sample_tic": 0.0019142857142857143
+        },
+        {
+          "method": "CaelumElementalStatus.TakeBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 46.57142857142857,
+          "inclusive_ms_per_sample_tic": 0.0017238095238095237,
+          "exclusive_ms_per_sample_tic": 0.0017238095238095237
+        },
+        {
+          "method": "CaelumElementalStream.ReceivedWatts",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.05485238095238095,
+          "exclusive_ms_per_sample_tic": 0.001461904761904762
+        },
+        {
+          "method": "CaelumPortSiege.OrderGuns",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.7227285714285715,
+          "exclusive_ms_per_sample_tic": 0.0013095238095238095
+        },
+        {
+          "method": "CaelumCityInteriorDoors.Ensure",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0012904761904761904,
+          "exclusive_ms_per_sample_tic": 0.0012904761904761904
+        },
+        {
+          "method": "CaelumInteractionHint.Find",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0010904761904761905,
+          "exclusive_ms_per_sample_tic": 0.0010904761904761905
+        },
+        {
+          "method": "CaelumSiegeEncounter.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0009857142857142857,
+          "exclusive_ms_per_sample_tic": 0.0009857142857142857
+        },
+        {
+          "method": "CaelumCombatActor.CollidedWith",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 3.761904761904762,
+          "inclusive_ms_per_sample_tic": 0.0008047619047619047,
+          "exclusive_ms_per_sample_tic": 0.0008047619047619047
+        },
+        {
+          "method": "CaelumDemonBreath.Visible",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 4.0,
+          "inclusive_ms_per_sample_tic": 0.0051095238095238095,
+          "exclusive_ms_per_sample_tic": 0.0007857142857142857
+        },
+        {
+          "method": "CaelumTimeSkipState.Pump",
+          "sample_tics": 350,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0006082857142857143,
+          "exclusive_ms_per_sample_tic": 0.0006082857142857143
+        },
+        {
+          "method": "CaelumDemonBreath.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.0005857142857142858,
+          "exclusive_ms_per_sample_tic": 0.0005857142857142858
+        },
+        {
+          "method": "CaelumDemonBreath.Burn",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 3.0,
+          "inclusive_ms_per_sample_tic": 0.0027,
+          "exclusive_ms_per_sample_tic": 0.0005571428571428572
+        },
+        {
+          "method": "CaelumSiegeReinforcements.Tick",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00030000000000000003,
+          "exclusive_ms_per_sample_tic": 0.00030000000000000003
+        },
+        {
+          "method": "CaelumElementalStatus.ApplyBurnHeat",
+          "sample_tics": 21,
+          "calls_per_sample_tic": 1.0,
+          "inclusive_ms_per_sample_tic": 0.00022380952380952383,
+          "exclusive_ms_per_sample_tic": 0.00022380952380952383
+        }
+      ]
+    }
+  },
+  "verification_passed": true
+}

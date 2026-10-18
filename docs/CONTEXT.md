@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
 
 **5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 pending.
 **5.4.35/#322:** player-formula escort;23runs/375checks; CA322-01 pending.
@@ -25,9 +25,9 @@ TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal sie
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
-**#318:** contact-only breath, native doors, private houses/signs integrated.
-Performance/author acceptance remain unresolved (CA318-01..05/CA327-01).
-Reuse validation_issue318 and CA-KP110..123; no6000-simultaneous tests again.
+**5.4.37/#318:** eight current MAP03 measurements; gameplay unchanged.
+Siege native FPS snapshots48/35, not stable60FPS. validation_5437/CA-KP-111.
+CA318-01..05/CA327-01 pending. No6000-simultaneous tests again.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;

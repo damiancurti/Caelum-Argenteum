@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
+
+## 5.4.37 - Current MAP03 attribution supplement (#318)
+
+Eight native runs measure the accepted low-sky/private-house MAP03 and normal
+100-per-350-tic deployment, with its 1,000-living admission cap and 600 defenders.
+No production optimization or gameplay rule changes here. Peaceful city contains
+2,203 actors and no active city defenders; residents occupy private interiors.
+Both siege windows retain 600 defenders and 993-998 living Mandingas. Native
+simulation stays near35tics/s, while unprofiled bench FPS snapshots are48 city/
+35 front line. This does not establish stable60FPS or author acceptance.
+The sampled combat-update and targeting scopes justify further measurement;
+none is declared dispensable. Evidence: validation_5437; pending checks remain.
 
 ## 5.4.36 - House-door presentation isolation (#334)
 

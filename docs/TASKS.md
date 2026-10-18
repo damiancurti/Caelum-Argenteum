@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
+
+## 5.4.37 - Current MAP03 attribution supplement (#318)
+
+Eight measured native runs are retained in validation_5437. Normal bounded
+deployment now underlies the comparison; do not reuse old full-population
+fixtures. Remaining work: isolate shared-target/LOS search bursts and combat
+update work with matched controls, then measure any safe improvement through
+presentation data and a longer normal siege. Preserve perception cadence,
+individual combat/resources/collision and author-approved caps. No subsystem is
+removed based on an inclusive profile. CA318-01..05/CA327-01 remain pending.
 
 ## 5.4.36 - House-door presentation isolation (#334)
 

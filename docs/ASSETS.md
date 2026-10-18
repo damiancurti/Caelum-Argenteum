@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.36** — 2026-10-18.
+Documentation version: **5.4.37** — 2026-10-18.
+
+## 5.4.37 - Current MAP03 attribution evidence (#318)
+
+validation_5437 contains source-only preparation/analysis tools, compressed raw
+native logs, scene screenshots, benchmark byte ranges and immutable launch/hash
+records. It reuses validation_issue318's diagnostic wrappers and observer, never
+that retired fixture's MAP06/6,000-actor entry point. Engine, IWAD, generated
+packages and private saves stay local. No art or audio changes.
 
 ## 5.4.36 - House-door presentation checks (#334)
 

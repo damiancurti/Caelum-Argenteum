@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.36.** Obtain and update the complete repository, validate
+**Current release: 5.4.37.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Current MAP03 attribution covers eight native peaceful/siege runs (#318).
+The unprofiled engine reports FPS snapshots of 546/177 looking forward/down,
+and 48/35 during the city/front-line siege views. These are not ETW averages or
+a stable 60-FPS result. Gameplay remains unchanged; full siege performance and
+author checks remain open. [Measurement and limits](assets/validation_5437/RESULTS.md).
 
 House doors now clear unfinished vehicle presentation (#334). Native door,
 vehicle and autosave reload checks pass: 8 runs/64 assertions;
