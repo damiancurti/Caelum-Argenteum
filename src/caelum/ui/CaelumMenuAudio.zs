@@ -223,7 +223,13 @@ class CaelumMenuAudio : StaticEventHandler
             {
                 // Override nativo de una sola transición: no modifica wipetype.
                 if((TravelWipe==1 || TravelWipe==3) && SnapshotFrames>=2)
-                {VehicleArrival=true;ArrivalFrames=0;}
+                {
+                    // Un Melt inicial de dos imágenes idénticas aún desplaza
+                    // sus columnas. Fade mantiene esa captura estable mientras
+                    // vence NoWipe; luego se presenta el único Melt visible.
+                    if(HouseArrival)ScreenJobRunner.setTransition(3);
+                    VehicleArrival=true;ArrivalFrames=0;
+                }
                 else if (TravelWipe >= 1 && TravelWipe <= 3) ScreenJobRunner.setTransition(TravelWipe);
                 // Emisión posterior a la limpieza de audio del mapa anterior.
                 Sound cue = TravelSound == 1 ? "caelum/travel/carriage"

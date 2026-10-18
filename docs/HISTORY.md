@@ -28,6 +28,16 @@ package equals source and reloads both newly generated arrival saves. No
 screenshot of the final destination alone is treated as proof of the
 animation, and no FPS benefit is claimed. Author visual acceptance is pending.
 
+Author feedback2026-10-18: exiting still produced two visible wipes; the other
+preview checks passed. CA334-02 remains failed for that exit; CA353-01 acceptance
+is recorded under5.4.45 below. Source review establishes why identical captures
+were insufficient: native Melt shifts source columns even when both endpoints
+match. The earlier globalwipe3 controls used Fade and missed this default-Melt
+case. The follow-up overrides only the initial house pass to Fade3 on the held
+source, then retains the final Melt1. No global CVar is changed. New native
+default-Melt controls pass5 runs/25 checks, recorded separately in validation_5446; they do not
+replace the author's visual retest. This remains the same5.4.46/#334 patch.
+
 ## 5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)
 
 The author reported stationary fire near cannons. Their untouched MAP03

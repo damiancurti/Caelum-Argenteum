@@ -167,6 +167,9 @@ source image independently of any unfinished vehicle presentation. The one-use
 TRAVEL_WIPE_HOUSE_DOOR intent still survives PreTravelled and is explicitly
 resolved to Melt in UI. Native arrival protection is allowed to expire while
 the source image remains visible; the destination then appears through Melt.
+The possible initial native pass is explicitly Fade between the held source
+images: unlike Melt, it does not shift identical columns. Only the final pass
+uses Melt. This is a per-transition override, not a global wipetype change.
 Native loading icons, arrival autosaves, resident/hub state, global wipetype and
 intermission settings remain. Ship/cart and tarot presentation keep their rules.
 No saved schema changes: transient capture ownership is cancelled on load, new

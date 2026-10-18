@@ -11,6 +11,14 @@ Native g4.14.2 replay and lifecycle evidence: assets/validation_5446. Source
 image preservation was visually checked; final author animation acceptance is
 CA334-02, pending. No FPS or general rendering-performance result is claimed.
 
+Author feedback2026-10-18 rejected the initial candidate's double exit wipe.
+Identical endpoint images do NOT make Melt neutral: Wiper_Melt shifts source
+columns downward. Fade blends corresponding pixels without that displacement.
+Controls using globalwipe3 therefore missed the defaultwipe1 failure. Select
+Fade3 for the possible initial house pass, then Melt1 after the source hold;
+keep the user's global setting unchanged. Native selection/count assertions
+still do not constitute author visual acceptance. Test default Melt explicitly.
+
 Symptom/cause: native same-hub NoWipe can expire before queued ChangeLevel
 completion at uncapped FPS. An actual exit shows28 presentations in28.27ms before
 PreTravelled, versus1 capped. setTransition(0) is a no-op, not cancellation.

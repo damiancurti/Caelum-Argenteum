@@ -85,12 +85,11 @@ resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
 
-CA334-02 | Origin 5.4.46 / issue #334 | Melt on both house-door directions
-Prerequisites: current build; use the open preview or MAP03 and a house portal.
-This revises the earlier no-animation request; CA334-01 remains accepted history.
-Steps: enter a house, leave it, then enter again. Observe the image during each
-transition. Load the latest inside and outside arrival autosaves and repeat.
-Expected: Melt on both directions, showing the correct source/destination, with
-no stuck dark screen or leftover ship/cart image. Arrival autosaves remain and
-reload normally. Global wipe settings and ordinary ship/cart effects stay intact.
-Report any duplicate visible wipe, wrong view or unresponsive portal.
+CA334-02 | Origin 5.4.46 / issue #334 | Double exit Melt retest
+Author feedback2026-10-18: exit still wiped twice; other preview checks passed.
+The earlier CA334-01 acceptance remains history. Arrival autosaves and entry
+were not reported as failures and are not reopened as outstanding author tasks.
+Prerequisites: updated build, normal Melt setting; the preview starts inside
+house8. Steps: use the door to leave, watching the full transition.
+Expected: one visible Melt from the house to the city, with no preceding
+distortion of the same door image, wrong scene or unresponsive portal.

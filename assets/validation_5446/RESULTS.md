@@ -5,6 +5,35 @@ Global wipetype, native loading icons, arrival autosaves and hub residents remai
 The source view belongs to the current door, independently of ship/cart overlays.
 No geometry, combat or balance values change. CA334-02 is pending author review.
 
+## Author-reported double Melt: follow-up in the same release
+
+On 2026-10-18 the author rejected two visible wipes on house exit and approved
+the other preview checks. CA334-02 now contains only the exit retest; CA353-01
+acceptance is recorded separately under #357. The original 13-run evidence below
+is retained as evidence of the initial implementation, not final visual approval.
+
+Native Wiper_Melt shifts source columns even when both images are identical.
+The original uncapped controls with globalwipe3 (Fade) missed the default-Melt
+failure. The follow-up sets Fade3 only for the possible initial house pass on
+the held source, then keeps the final Melt1. Fade blends corresponding pixels
+without shifting columns. The global CVar, vehicle transition and native loading
+icon are unchanged. Relevant g4.14.2 source: wipe.cpp274–295/324–367,
+g_level.cpp1346–1347 and d_main.cpp3015–3017. RenderUnderlay/RenderOverlay both
+run before WipeEndScreen; moving between those events would not fix this defect.
+
+Five focused native runs pass25 assertions, recorded in single_melt_evidence.json/zip
+and verified by single_melt_evidence.py. They include capped/uncapped default-Melt roundtrips,
+actual generated inside/outside save reloads with the normal package, and house
+entry during ship arrival with a different global setting. Traces distinguish
+the initial Fade3 from the final Melt1; they establish selections, not a complete
+visual sequence. The source/package check is single_melt_delivery.json.
+
+The screenshot service's native pipe remained unavailable. A target-only fallback
+captured84 samples in23.26seconds, but included black frames even outside wipes.
+Those samples cannot prove the animation; no pixels or personal INI are archived.
+The new native run records omit initial_config and retain the original record
+hash. Author visual acceptance remains pending; no FPS benefit is claimed.
+
 ## Native cause and implementation
 
 The private CAH008 autosave SHA-256 is
@@ -34,9 +63,9 @@ to make that extra engine pass visually neutral. Screenshots prove source-image
 preservation, not the complete animation or absence of a perceptible second wipe.
 The author checks that sequence in CA334-02. No FPS improvement is claimed.
 
-## Scope of checks
+## Initial implementation checks (before the double-Melt correction)
 
-Thirteen final native runs pass 82 assertions, listed in evidence.json and
+Thirteen initial native runs pass 82 assertions, listed in evidence.json and
 verified with 128 archived text members by verify_evidence.py. They cover real
 Use in both visited-hub directions, capped
 and uncapped rendering with another global wipetype, old/new save loads, pending

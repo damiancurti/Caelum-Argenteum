@@ -7,8 +7,9 @@ Documentation version: **5.4.46** — 2026-10-18.
 Implement the author's replacement contract: Melt in both directions, retaining
 arrival autosaves and global settings. Own-source capture, cancellation and
 visited-hub controls pass13 runs/82 checks in validation_5446. The older CA334-01 acceptance
-does not approve this revised presentation. Leave CA334-02 actionable alongside
-the narrowed CA353-01 artillery retest and unchanged CA318/CA327 checks.
+does not approve this revised presentation. The author accepted the other preview
+checks, including CA353-01, but found a double exit Melt. Retain only that reported
+CA334-02 failure for retest; older CA318/CA327 checks remain unchanged.
 
 ## 5.4.45 - Artillery navigation breath fixed (#357)
 

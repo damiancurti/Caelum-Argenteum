@@ -9,6 +9,8 @@ evidence. The player's own view supplies the runtime transition image; no new
 art/audio asset is added. Saves, PK3s, engine/IWAD dependencies and diagnostic
 captures remain local. Hashes identify inspected native screenshots without
 distributing their contents. Inconclusive capture attempts are not visual proof.
+The single-Melt follow-up has a separate textual evidence archive; original
+draft evidence is retained, including the initially missed default-Melt case.
 
 ## 5.4.45 - Private breath regression evidence (#357)
 

@@ -13,6 +13,7 @@ def main():
     p.add_argument('--roundtrip',action='store_true')
     p.add_argument('--hold',action='store_true')
     p.add_argument('--long-arrival',action='store_true')
+    p.add_argument('--trace-transitions',action='store_true')
     p.add_argument('--vehicle',type=int,choices=[3,4])
     p.add_argument('--early',action='store_true')
     p.add_argument('--lifecycle',choices=['controls','pending','arrival','interrupt','newgame'])
@@ -29,6 +30,14 @@ def main():
     if a.long_arrival:
         key='caelum/ui/CaelumMenuAudio.zs'
         members[key]=members[key].replace(b'ArrivalFrames<35',b'ArrivalFrames<350').replace(b'ArrivalFrames==35',b'ArrivalFrames==350')
+    if a.trace_transitions:
+        key='caelum/ui/CaelumMenuAudio.zs'
+        old=b'if(HouseArrival)ScreenJobRunner.setTransition(3);'
+        assert members[key].count(old)==1
+        members[key]=members[key].replace(old,b'if(HouseArrival){Console.Printf("CA334 SELECT map=%s phase=initial type=3 global=%d",level.MapName,CVar.FindCVar("wipetype").GetInt());ScreenJobRunner.setTransition(3);}')
+        old=b'if(ArrivalFrames==35)ScreenJobRunner.setTransition(TravelWipe);'
+        assert members[key].count(old)==1
+        members[key]=members[key].replace(old,b'if(ArrivalFrames==35){Console.Printf("CA334 SELECT map=%s phase=visible type=%d global=%d",level.MapName,TravelWipe,CVar.FindCVar("wipetype").GetInt());ScreenJobRunner.setTransition(TravelWipe);}')
     package=base.base.prior.base.package
     runtime=package(out/'baseline.pk3',members)
     fixture_members={'ZSCRIPT':b'version "4.14"\n#include "probe.zs"\n',
@@ -50,7 +59,7 @@ def main():
     seed=ROOT/'build/issue354-preview01/auto03.zds'
     (out/'author.zds').write_bytes(seed.read_bytes())
     manifest=dict(runtime_sha256=runtime,fixture_sha256=fixture,seed_sha256=hashlib.sha256(seed.read_bytes()).hexdigest(),cap=a.cap,wipe=a.wipe,hold=a.hold,vehicle=a.vehicle,early=a.early,long_arrival=a.long_arrival,lifecycle=a.lifecycle,
-        effective_cap=1 if a.hold or a.vehicle or a.lifecycle else a.cap,
+        trace_transitions=a.trace_transitions,effective_cap=1 if a.hold or a.vehicle or a.lifecycle else a.cap,
         effective_wipe=1 if a.lifecycle else 2 if a.vehicle else 3 if a.hold else a.wipe)
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     leg='netevent c334_position; wait 5; +use; wait 10; -use; wait 350; '
