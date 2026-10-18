@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.45** — 2026-10-18.
+Documentation version: **5.4.46** — 2026-10-18.
+
+## 5.4.46 - Symmetric house-door Melt (#334)
+
+The author now requests the existing exit Melt on entry too. House portals
+capture their own view, retain it through native hub arrival protection, then
+request Melt without changing global video settings. Cancellation and native
+save/hub controls pass13 runs/82 checks in validation_5446. No map geometry or combat
+rules change. The author accepted the other preview checks but reported a double
+exit Melt. Its initial native pass now uses Fade on the held source; only the
+final pass melts to the destination. CA334-02 passed on2026-10-18.
 
 ## 5.4.45 - Navigation markers are not breath targets (#357)
 

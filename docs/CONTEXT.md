@@ -1,12 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.45** — 2026-10-18.
+Documentation version: **5.4.46** — 2026-10-18.
 
 **5.4.40/#325:** rest;278checks; CA325-01 accepted Oct18.
 
 **5.4.39/#339:** jump-wall cushioning;135/41 checks; CA339-01 accepted Oct18.
 
-**5.4.36/#334:** house-door presentation isolated;8runs/64checks; CA334-01 accepted Oct18.
+**5.4.46/#334:** revised contract: Melt both house directions; native saves retained.
+validation_5446; CA334-02 accepted Oct18; current preview checks complete.
 **5.4.35/#322:** CA322-01 accepted Oct18; packed-row limit retained.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
@@ -16,8 +17,8 @@ CA324-01 accepted Oct18. validation_5434.
 Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.
 Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 
-**5.4.32/#320:** author replaced #259 spread for Mandinga fire/Zupay stone
-with native direct aim at release. Other attacks unchanged. validation_5432;
+**5.4.32/#320:** #259 spread replaced by direct aim for Mandinga fire/Zupay stone.
+Other attacks unchanged. validation_5432;
 CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 
 **#319/#321:** accepted Oct17.5.4.38 collapses the map
@@ -38,8 +39,8 @@ pending production. Trials: validation_5442/5441.
 CA318-01..05/CA327-01 pending.
 No6000 tests.
 
-**5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
-retained by author decision. Native checks: 334 current/14 legacy assertions;
+**5.4.27/#307:** resolved prisoner Speed; retained recovery teleport. Native:
+334 current/14 legacy checks;
 validation/build pass. PR317, validation_5427; CA307-01 accepted 2026-10-16.
 
 **5.4.26/#305:** active-seal registry preserves thermal rules; lifecycle/save/

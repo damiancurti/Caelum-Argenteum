@@ -1,0 +1,42 @@
+{
+  "issue": 334,
+  "release": "5.4.46",
+  "normal_package_sha256": "c87a4bbc10f5b18285e8e6e30b7e4a61b1c648f3b5f9d192e350170eeadb1338",
+  "members": 16378,
+  "source_byte_equality": true,
+  "tested_runtime_sha256": "15ac271fa6dd495bafde5995ca929812136db3369103256baa273985e1c885f3",
+  "tested_gameplay_identical": true,
+  "only_runtime_difference": "One private queued trace event removed.",
+  "validation": {
+    "version": "5.4.46",
+    "documents": 11,
+    "audio_files": 111,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "author_status": "Other preview checks accepted; CA334-02 double exit Melt retest pending."
+}

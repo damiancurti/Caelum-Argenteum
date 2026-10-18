@@ -84,4 +84,3 @@ Expected: no reservoir trial props in the city; normal routes and individual
 resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
-

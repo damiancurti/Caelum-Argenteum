@@ -56,14 +56,23 @@ class CaelumHousePortal : Actor
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
             || user.FolkloreInteractionUseLatched || !CaelumUseGeometry.AimedAt(user,self))return false;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
+        let audio=CaelumMenuAudio(StaticEventHandler.Find("CaelumMenuAudio"));
+        if(audio==null || !audio.RequestHouseDoor(user,self))return false;
         user.FolkloreInteractionUseLatched=true;
         user.FolkloreInteractionReleaseGuardTics=0;
-        // El portal descarta la presentación de otro viaje antes de cruzar.
+        return true;
+    }
+    bool CompleteTravel(CaelumPlayer user)
+    {
+        if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
+            || !CaelumUseGeometry.AimedAt(user,self))return false;
+        // Sólo el ACK de la captura vigente puede confirmar este viaje.
         user.PendingTravelWipe=CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR;
-        Level.ChangeLevel(args[1]==0?CaelumHouseHubData.MapName(args[0]):"MAP03",
+        Level.ChangeLevel(DestinationMap(),
             args[1]==0?0:args[0]+1,CHANGELEVEL_NOINTERMISSION);
         return true;
     }
+    String DestinationMap(){return args[1]==0?CaelumHouseHubData.MapName(args[0]):"MAP03";}
     Default { Radius 20; Height 120; +NOGRAVITY +INVISIBLE }
     States { Spawn: TNT1 A -1; Stop; }
 }

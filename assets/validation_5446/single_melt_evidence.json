@@ -1,0 +1,61 @@
+{
+  "issue": 334,
+  "release": "5.4.46",
+  "cases": [
+    [
+      "issue334-single-melt01",
+      "roundtrip",
+      1
+    ],
+    [
+      "issue334-single-melt02",
+      "roundtrip",
+      1
+    ],
+    [
+      "issue334-single-melt03",
+      "roundtrip",
+      1
+    ],
+    [
+      "issue334-single-reload04",
+      "reload",
+      9
+    ],
+    [
+      "issue334-single-vehicle05",
+      "vehicle",
+      13
+    ]
+  ],
+  "native_assertions": 25,
+  "sha256": {
+    "issue334-single-melt01/manifest.json": "0f78ab6c5c99fcfe5ecfdf8c3dc8530b6035d0bf4a9037d83c019457cb7f5ef0",
+    "issue334-single-melt01/probe.cfg": "40a7da624c8e75dbe8f687f0bb3e3af59d2b3ded54e30820a952f9113733e580",
+    "issue334-single-melt01/roundtrip-commands.cfg": "40a7da624c8e75dbe8f687f0bb3e3af59d2b3ded54e30820a952f9113733e580",
+    "issue334-single-melt01/roundtrip-run.json": "825da4b7c1e7779fe15ecaa8072665a133debc894b5a47b50e5df82ab9c63f16",
+    "issue334-single-melt01/roundtrip.txt": "4c814bb787a39e76c982d65eaee8774cb61513c1f58df35d9a84aa9ca1e76046",
+    "issue334-single-melt02/manifest.json": "fa00b63ecaeb861015d04f908b91156fa9a271c95fd0f0a47956cb0c6aee1c7e",
+    "issue334-single-melt02/probe.cfg": "37d3b5b01f762aea39f4528bc684ce3c28ebcc56571521e9f58e23d787ea912e",
+    "issue334-single-melt02/roundtrip-commands.cfg": "37d3b5b01f762aea39f4528bc684ce3c28ebcc56571521e9f58e23d787ea912e",
+    "issue334-single-melt02/roundtrip-run.json": "bf01eb773c4ba0c58670e156e1ca3ba77eb0249b15bdbfe5ec37643821970756",
+    "issue334-single-melt02/roundtrip.txt": "7d6618d0c3e3c22ae15182938113d449e21d13bb78358ca1b4b2560b2fd82627",
+    "issue334-single-melt03/manifest.json": "7b211d85fa6047b8e61acfea6828be73099becf52259d0fcb71270f5a42b9651",
+    "issue334-single-melt03/probe.cfg": "40a7da624c8e75dbe8f687f0bb3e3af59d2b3ded54e30820a952f9113733e580",
+    "issue334-single-melt03/roundtrip-commands.cfg": "40a7da624c8e75dbe8f687f0bb3e3af59d2b3ded54e30820a952f9113733e580",
+    "issue334-single-melt03/roundtrip-run.json": "b3f1a9de69b612cc82f928de2ebec1c53e12aeccf4c8326d3bc2945d5b3a9705",
+    "issue334-single-melt03/roundtrip.txt": "83cb60bbf4ea37f44848d53cdd827896ad485e736ac02890915fa16a6e11e245",
+    "issue334-single-reload04/manifest.json": "765c6fee0dd09175c95515b24b47fe1b2db7a83f317e93426db4d485758a3ebb",
+    "issue334-single-reload04/probe.cfg": "9f47b77079828efc2f27d7aea6d7448f55e279d3761cc27f1a611d90ae0a0100",
+    "issue334-single-reload04/reload-commands.cfg": "9f47b77079828efc2f27d7aea6d7448f55e279d3761cc27f1a611d90ae0a0100",
+    "issue334-single-reload04/reload-run.json": "d4511c211144303b1d77f8fbd5adf7f226581cc2b3ce8b61c5562d579a52170b",
+    "issue334-single-reload04/reload.txt": "46e342c1bfd4b0514a84d3911a03bfa5e6f2942fc12beac46f763598bd59ee9f",
+    "issue334-single-vehicle05/manifest.json": "a28dce432a7d91e43bfb5421dd9af9bf7d04aec9f8a86430b9fd0cf9345f6bfd",
+    "issue334-single-vehicle05/probe.cfg": "609b5952e513bc082204c3ef14b6a69db39ba36cd0119acdfec34dcddaf3cbd9",
+    "issue334-single-vehicle05/vehicle-commands.cfg": "609b5952e513bc082204c3ef14b6a69db39ba36cd0119acdfec34dcddaf3cbd9",
+    "issue334-single-vehicle05/vehicle-run.json": "c894df30cbebd96991cfd0a2029e3ad59724c208a5ecd83115ac01ee34698e3f",
+    "issue334-single-vehicle05/vehicle.txt": "651104ae9446714b9eae88bf2e62655c865fa4f5b240d74ceff1e2b073ca97e0"
+  },
+  "visual_limit": "84 target-window samples in melt03 include black frames; no full-animation proof.",
+  "author_status": "Other preview checks accepted 2026-10-18; double exit Melt retest pending."
+}
