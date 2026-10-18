@@ -1419,6 +1419,16 @@ tic and is not a duplicate. Native motion/pressure/save-load results and correct
 failed attempts are retained in assets/validation_5211/RESULTS.md. These tests
 are agent evidence; CA194-01 remains pending author acceptance.
 
+Follow-up #339 / 5.4.39, 2026-10-18: ENGINE-VERIFIED voluntary jump origin.
+Native CheckJump updates jumpTics/Vel.Z before onground changes on the next
+movement pass. Record only the confirmed terrestrial takeoff, then clear after
+physics using physical support, not the stale onground flag alone. A held key
+or positive velocity cannot distinguish a voluntary jump from a push. Serialize
+origin with a conservative idempotent migration; never infer it for old saves.
+The ascent/descent/native-input/save/travel controls in validation_5439 verify
+this rule. Sample the expected capacity before an impact: lethal trauma can
+zero its live getter after damage without invalidating the applied mitigation.
+
 ## CA-KP-080 - Native projectile preparation must precede custom mitigation
 
 Status/evidence: ENGINE-VERIFIED, #192 / 5.2.9, 2026-10-11.

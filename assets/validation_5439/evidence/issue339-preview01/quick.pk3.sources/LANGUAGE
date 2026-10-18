@@ -1,0 +1,8 @@
+[enu default]
+CA339_PREVIEW_0="Jump-wall test: run toward the wall and jump (Space).";
+CA339_PREVIEW_1="Try rising and descending. F6 restarts this isolated test.";
+CA339_PREVIEW_2="M opens the map; L shows/hides the full legend.";
+[es esp]
+CA339_PREVIEW_0="Prueba: corre hacia la pared y salta (Espacio).";
+CA339_PREVIEW_1="Prueba al subir y bajar. F6 reinicia este escenario aislado.";
+CA339_PREVIEW_2="M abre el mapa; L muestra/oculta toda la leyenda.";

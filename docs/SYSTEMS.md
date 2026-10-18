@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.38** — 2026-10-18.
+Documentation version: **5.4.39** — 2026-10-18.
+
+## Voluntary-jump wall cushioning (#339, 5.4.39)
+
+The author extends biological wall cushioning ONLY to an actual voluntary
+terrestrial jump, including ascent, apex and descent after releasing jump.
+A fall from an edge or a push without takeoff does not establish this state.
+This supersedes the earlier ordinary airborne exclusion only for map walls;
+airborne contact with actors or props gains no new allowance. The existing
+1.5 * jump absorption speed and squared residual-energy fraction remain;
+load, health, Agility, elemental modifiers, buckler and immobilization retain
+their rules. Excess energy can still cause injury or death.
+
+Only confirmed native CheckJump takeoff arms the pawn's revision-1 state.
+Physical support ends it; so do death, hub travel, swimming, flight and being
+held by telekinesis. Ordinary immobilization suppresses capacity without
+reclassifying the original jump. A push during an already voluntary jump does
+not erase its origin or separate impulse components. Current airborne saves
+retain the state; old saves migrate idempotently without inferring a jump from
+velocity or a held key. The next real jump establishes it normally.
 
 ## Complete map-legend collapse (#321, 5.4.38)
 
@@ -1947,8 +1966,9 @@ capacity, retained energy is zero before anatomy, regional armor and final
 Toughness. This replaces the horizontal Agility-0 bonus ratio and 50% cap;
 Agility 0 now has nonzero capacity when the body can absorb its own landing.
 
-Player ordinary eligibility remains walking/running/crouching into walls or
-scenery stationary before contact. Moving scenery and incoming bodies have
+Player ordinary eligibility includes walking/running/crouching into walls or
+scenery stationary before contact. The later #339 amendment also permits wall
+contacts during a confirmed voluntary jump, including its descent. Moving scenery and incoming bodies have
 no ordinary movement allowance. The active buckler retains its broader contact
 eligibility and its x2 landing enhancement: horizontal capacity is 3 * JumpZ,
 not a sum of ordinary and buckler absorption. Immobilization suppresses both.
@@ -2317,7 +2337,8 @@ This is a box-face approximation, not a mesh/skin or deformable-body solver.
 Eligible biological cushioning reduces the recipient's assigned energy by
 `(retainedDeltaSpeed / rawDeltaSpeed)^2`. Landing subtracts the existing
 biological absorption speed once. Walking/running/crouching absorption remains
-limited to walls and previously stationary scenery; incoming cannonballs and
+limited to walls and previously stationary scenery; #339 additionally permits
+wall cushioning during a confirmed voluntary jump. Incoming cannonballs and
 rams receive no ordinary running/landing allowance. Existing active acrobatic
 defense stays separate. Collision mass includes existing load/charge modifiers;
 #188 biological Toughness continues to use natural body mass.

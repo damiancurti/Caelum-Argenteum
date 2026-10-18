@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.38** — 2026-10-18.
+Documentation version: **5.4.39** — 2026-10-18.
+
+## 5.4.39 - Voluntary-jump wall cushioning (#339, 2026-10-18)
+
+The author reports fatal wall collisions while jumping and explicitly restricts
+the requested allowance to voluntary jumps. Ground-only eligibility previously
+returned zero for an upright airborne body. A confirmed native takeoff now
+records eligibility through descent, with revisioned save migration and physical
+support/death/travel/medium cleanup. Existing biological formula, ordinary
+landing, buckler, incoming bodies, crushing and impact latches remain unchanged.
+Fourteen current runs/135 assertions and seven baseline runs/41 expectations
+pass; actual midair save/load, old-save migration, travel and existing impact
+rules are covered. The matched 1495.376282-J contact changes from fatal 1864 HP
+loss to zero retained energy/damage. Excess energy remains harmful. Independent
+review, validation, normal build and 16,375-member source/package equality pass.
+Evidence: assets/validation_5439; author CA339-01 remains pending.
 
 ## 5.4.38 - Complete top-aligned map legend (#321, 2026-10-18)
 

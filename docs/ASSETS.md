@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.4.38** — 2026-10-18.
+Documentation version: **5.4.39** — 2026-10-18.
+
+## 5.4.39 - Jump-wall diagnostic evidence (#339)
+
+validation_5439 owns the isolated native probe, reproducible package preparation,
+configs, source/runtime hashes and logs. Its inputs are QA controls, not game
+balance data. No visual assets change; engine/IWAD/packages/private saves remain
+local. Earlier failed probe attempts stay identifiable as diagnostic evidence.
 
 ## 5.4.38 - Map-legend presentation evidence (#321)
 
