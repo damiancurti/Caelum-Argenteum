@@ -620,6 +620,9 @@ class CaelumPlayer : DoomPlayer
 
     bool ImpactGroundTrackingInitialized;
     bool ImpactWasGroundedLastTick;
+    // Sólo el despegue nativo voluntario abre esta ventana; se guarda con el cuerpo.
+    int VoluntaryJumpRevision;
+    bool VoluntaryJumpActive;
     double LastImpactFallingVelocityZ;
     bool ImpactWasWallBlockedLastTick;
     int ImpactStaticClearTics;
@@ -6158,6 +6161,7 @@ class CaelumPlayer : DoomPlayer
 
     override void PreTravelled()
     {
+        VoluntaryJumpActive = false;
         let journey = CaelumJourneyState.Get(self);
         int mode = journey != null && journey.Status == CaelumJourneyState.STATUS_DEPARTED
             ? journey.TravelMode : 0;
@@ -6184,6 +6188,7 @@ class CaelumPlayer : DoomPlayer
     override void Travelled()
     {
         Super.Travelled();
+        VoluntaryJumpActive = false;
         // level.time pertenece al mapa: ningún destello de daño cruza con él.
         CaelumDamageFeedback.ClearFlash(self);
         RestorePersistentCharacterState();
@@ -6610,6 +6615,8 @@ class CaelumPlayer : DoomPlayer
         // Caminar, correr o agacharse permite ceder ante paredes y escenario
         // quieto. El contacto guarda el reposo previo a transmitir impulso;
         // no concede este beneficio a cuerpos ni rocas que ya venían moviéndose.
+        bool jumpWall = VoluntaryJumpRevision == 1 && VoluntaryJumpActive
+            && impactKind == CaelumConstants.IMPACT_KIND_WALL;
         bool carefulMovement = (IsCrouching || IsWalkingOnGround() || IsRunningOnGround())
             && (impactKind == CaelumConstants.IMPACT_KIND_WALL
                 || (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT
@@ -6617,8 +6624,31 @@ class CaelumPlayer : DoomPlayer
 
         // La rodela conserva su versión más potente y también funciona contra
         // actores. La capacidad de caída incorpora esa mejora una sola vez.
-        if (!carefulMovement && !IsBucklerAcrobaticDefenseActive()) return 0.0;
+        if (!carefulMovement && !jumpWall && !IsBucklerAcrobaticDefenseActive()) return 0.0;
         return GetBiologicalLandingAbsorptionSpeed();
+    }
+
+    void EnsureVoluntaryJumpState()
+    {
+        if (!CaelumPlayerAuthority.CanMutate(self)) return;
+        // Un save previo no permite reconstruir si hubo salto o empujón.
+        if (VoluntaryJumpRevision < 1)
+        {
+            VoluntaryJumpActive = false;
+            VoluntaryJumpRevision = 1;
+        }
+    }
+
+    void UpdateVoluntaryJumpState()
+    {
+        if (!CaelumPlayerAuthority.CanMutate(self)) return;
+        EnsureVoluntaryJumpState();
+        // onground sigue reflejando el apoyo previo en el tic del despegue.
+        // Tras la física se comprueba el apoyo real, sin acortar el descenso.
+        if (health <= 0 || player.playerstate != PST_LIVE || WaterLevel >= 2
+            || bNOGRAVITY || CaelumTelekinesisRules.Held(self)
+            || bONMOBJ || (Pos.Z <= FloorZ && Vel.Z <= 0))
+            VoluntaryJumpActive = false;
     }
 
     double GetBiologicalJumpAbsorptionSpeed()
@@ -7643,6 +7673,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         CaelumUtilityStaff.EndEmission(self);
+        VoluntaryJumpActive = false;
         let dyingRest=CaelumRestState.Get(self);
         if(dyingRest!=null)dyingRest.Exhaustion=false;
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
@@ -8974,6 +9005,7 @@ class CaelumPlayer : DoomPlayer
         CaelumTelekinesisRules.Physics(self);
         if(CaelumTelekinesisRules.Held(self))prePhysicsVelocity=Vel;
         Super.Tick();
+        UpdateVoluntaryJumpState();
         CaelumUtilityStaff.Update(self);
         CaelumBolas.Update(self);
         CaelumRestState.Validate(self);
@@ -11474,6 +11506,11 @@ class CaelumPlayer : DoomPlayer
         // pulsada cuando onground se actualiza en el tic siguiente.
         if(eligible && player.jumpTics==-1 && Vel.Z>before)
         {
+            if (CaelumPlayerAuthority.CanMutate(self))
+            {
+                EnsureVoluntaryJumpState();
+                VoluntaryJumpActive = true;
+            }
             ConsumeJumpAir();
             if(DerivedStats!=null)
                 CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,

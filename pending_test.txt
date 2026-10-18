@@ -1,3 +1,12 @@
+CA339-01 | Origin 5.4.39 / issue #339 | Voluntary jumps into map walls
+Prerequisites: current normal build or the isolated jump-wall preview; use its saves.
+Steps: jump into a wall while rising and descending, releasing the jump key.
+Repeat with your usual load and health, then save/reload during a jump if desired.
+Expected: the existing biological capacity cushions the wall contact during a
+voluntary jump, including descent. Excess energy can still hurt; immobilization
+still disables cushioning. Falling or being launched without jumping gains no
+new wall allowance. Landing ends the jump state. Report location/load if fatal.
+
 CA321-02 | Origin 5.4.38 / issue #321 | Entire legend at the top, complete hiding
 Prerequisites: current build, automap; default L or your configured legend key.
 Steps: open the map, show the legend, then hide it. Repeat with a tracked quest

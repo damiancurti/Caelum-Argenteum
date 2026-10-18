@@ -1,0 +1,267 @@
+{
+  "issue": 339,
+  "release": "5.4.39",
+  "runs": [
+    {
+      "directory": "issue339-baseline03",
+      "label": "ascent",
+      "sha256": "3ae34060ecd4821ee85485fd48e1b978c264c76e1f4e8d532edfacabe9e6626f",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "descent",
+      "sha256": "521b00292efcc4c4ef7e3ea9539712d34eeb8ea713f4f8579f8372dd7b36c6a9",
+      "passes": 7,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "excess",
+      "sha256": "9d6104bb71a208b146ca777324f4470551c9987b20a7f11f12c8589225bfdb2a",
+      "passes": 7,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "fall",
+      "sha256": "272a299c97c05bf84f214ee53f990a697ce138972cf93f7b4b3be20cc5df83c2",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "immobilized",
+      "sha256": "a889d90df61335cdeff9aa65185d650be6f8b423bb83508b945644cb6820e283",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "push",
+      "sha256": "47af1e8283fb204854472573e497207acddf0988953c48170cf1b65dd066532c",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-baseline03",
+      "label": "save",
+      "sha256": "3dcab8ef8094b97c26a9754c4de00073e2afad5e34f81949e1459806f7f20b75",
+      "passes": 3,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-current01",
+      "label": "ascent",
+      "sha256": "8beff14ca7f05e5a443a978dad40771cb57391afd57da94931b45809ee766824",
+      "passes": 7,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current01",
+      "label": "descent",
+      "sha256": "4aca73ae72a1f6a33bb8630cda34afd7dfcbae45b65d842a489e040e1608e4ba",
+      "passes": 7,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current01",
+      "label": "fall",
+      "sha256": "6849d4c73663c39ce1cef2377756bc93aa8025ca9b578ef00c63d6b23c16fadb",
+      "passes": 0,
+      "failures": 1,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current02",
+      "label": "ascent",
+      "sha256": "d6ecef70d554bc22cf80415ef2f463719d0e4d5887269a98b45fd5932f5cee35",
+      "passes": 0,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current03",
+      "label": "ascent",
+      "sha256": "fda02d4da14ca5ea72e2cad7fb90e1d2851495c48851bcac2b37efbc83e04160",
+      "passes": 7,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current03",
+      "label": "descent",
+      "sha256": "99b5644d04e96d55ed535cba60211635e06b856645a7a9aa731b918d512591bf",
+      "passes": 8,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current03",
+      "label": "excess",
+      "sha256": "082836fec39d643b13e6940428c021b4cd40cbbfa1bfaab1aecafa2d98a5e8b7",
+      "passes": 5,
+      "failures": 2,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current03",
+      "label": "fall",
+      "sha256": "35cbb554dfe3c18fa3321e4bd3fb74229eae3913bb68efb51522603ecac3ea16",
+      "passes": 6,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-current03",
+      "label": "push",
+      "sha256": "30b06033fadd00b0d2ab9eb4ea4720d6aed6e4fc9ed0bf80bf123594834cc60c",
+      "passes": 6,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-extra01",
+      "label": "native",
+      "sha256": "09869910bf95bd159f5ef2a856cc15f97d7aaaadbca75820b1e1292d4e77174b",
+      "passes": 6,
+      "failures": 0,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-extra01",
+      "label": "rules",
+      "sha256": "0f7e753678d855de42ab7a9b71596e9ed24b4cb3a416cdf6b8954a81d131d036",
+      "passes": 59,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-extra02",
+      "label": "native",
+      "sha256": "56415e1332d7b83b0d6388fb17fafda132e91ebd380a018a10338e7fba78d42a",
+      "passes": 10,
+      "failures": 1,
+      "accepted": false
+    },
+    {
+      "directory": "issue339-extra03",
+      "label": "native",
+      "sha256": "40291936b8d961f764d927f1703ed35081afe2a8c4ec3714a0c2b295c3874d51",
+      "passes": 11,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "ascent",
+      "sha256": "f95256087e2697363c32f3cf0fb5bf45ff66eba7d703e9afb1ce6085fc919ac6",
+      "passes": 7,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "controls",
+      "sha256": "02e2d3d6cb5d202db9bd5ee2e59134bfbb297473afa7aeb3bfe8a8b616f38962",
+      "passes": 11,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "descent",
+      "sha256": "fc6e0edb74be7c91185f4990702e23d14e1c7b65c78f9613d512f238dbfd14d5",
+      "passes": 8,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "excess",
+      "sha256": "3a7fcc2f291d8757d67e22fd27307bbdeab40d065be26fb970c0693ce5899d36",
+      "passes": 7,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "fall",
+      "sha256": "a1d5325919e00d785f38ced6ec0baf2ef016bdced3691d1554d5c0eee1d5d59f",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "immobilized",
+      "sha256": "1613430e1986b6bc219fc220ba0966741f48676faf38abfdf3308111ede378c7",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "legacy",
+      "sha256": "7906850af67e8910e5cf4184bfa1ce17d20457260ce9139cc61a400dab416941",
+      "passes": 4,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "load",
+      "sha256": "e2f221f6296ad26db5b77ed8bfc6fee1a326da57a2517b23f823d3a5517c9449",
+      "passes": 4,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "push",
+      "sha256": "114ad62574660208a03a0b4745f4ef855e5d7ec7392aaffc60af9ee3a76f96eb",
+      "passes": 6,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "save",
+      "sha256": "4474fdb725c8b039fb2ce7e44ddf1f4f5605dcaa6dae97c81e76b6c07379d37c",
+      "passes": 3,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-final01",
+      "label": "travel",
+      "sha256": "b255faf6673067b419fe0fe5574b55419f37805cf58e517c7d23b5b3908ff195",
+      "passes": 1,
+      "failures": 0,
+      "accepted": true
+    },
+    {
+      "directory": "issue339-preview01",
+      "label": "smoke",
+      "sha256": "6bb933f8a45f614aff61860a41b17fd468476e0e91e203e0b85f56834dd1da18",
+      "passes": 2,
+      "failures": 0,
+      "accepted": true
+    }
+  ],
+  "current_passes": 135,
+  "baseline_passes": 41,
+  "normal_package_members": 16375,
+  "normal_equals_tested_source": true,
+  "author_acceptance": "pending CA339-01"
+}

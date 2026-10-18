@@ -1,0 +1,4 @@
+GameInfo { AddEventHandlers="CA339Probe" }
+cluster 99 { hub }
+map MAPQA "Voluntary jump fixture" { cluster=99 nointermission }
+map MAPQB "Jump travel" { cluster=99 nointermission }
