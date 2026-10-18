@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.43** — 2026-10-18.
+Documentation version: **5.4.44** — 2026-10-18.
+
+## 5.4.44 - Structural-cache investigation delivered (#354)
+
+Completed private writer-notification prototype,3,958 native assertions, two
+cached-read audits and 18 normal-combat presented-frame comparisons. All nine
+checkpoints match across variants. Paired medians+0.20% city/+2.95% front include
+negative pairs; no consistent FPS benefit is established. Retain conservative
+production guards; do not promote the private candidate. Evidence is archived
+in validation_5444. Next profiling should localize remaining update/render
+stalls. The approved siege-adrenaline production work remains separate;
+CA353-01 and wider #318/#327 author checks are still pending.
 
 ## 5.4.43 - Adopted production caches and group targeting (#353)
 
