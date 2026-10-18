@@ -36,8 +36,7 @@ artillery bodies resume. CA353-01 fully accepted Oct18, including group retest.
 **5.4.44/#354:** retain structural guards; inconsistent extra FPS benefit.
 validation_5444. Thermal35 unchanged; siege adrenaline approved,
 pending production. Trials: validation_5442/5441.
-CA318-01..05/CA327-01 pending.
-No6000 tests.
+CA318-01..05/CA327-01 accepted; FPS deferred; no6000tests.
 
 **5.4.27/#307:** resolved prisoner Speed; retained recovery teleport. Native:
 334 current/14 legacy checks;

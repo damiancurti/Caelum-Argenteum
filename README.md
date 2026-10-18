@@ -16,7 +16,7 @@ retain their rules. See [native evidence](assets/validation_5445/RESULTS.md).
 CA353-01, including the artillery follow-up, was accepted on 2026-10-18.
 House doors now request Melt in both directions, following the revised author
 decision (#334). Arrival autosaves and global video settings are retained.
-See [native transition evidence](assets/validation_5446/RESULTS.md); visual
+See [native transition evidence](assets/validation_5446/RESULTS.md);
 the author accepted the corrected exit (CA334-02) on 2026-10-18.
 
 The structural-cache investigation (#354) is complete: native mutation checks
@@ -30,7 +30,7 @@ and staggered port attacker group targeting. They activate automatically at
 500 living combatants map-wide. Individual bodies, active recovery, physics and
 35-tic thermal updates remain. Target response changes deliberately; native
 attack visibility/range checks remain. See [evidence](assets/validation_5443/RESULTS.md).
-Author acceptance CA353-01 is partial; #354 remains a private research result.
+Author acceptance CA353-01 is complete; #354 remains a private research result.
 The earlier [prototype](assets/validation_5442/RESULTS.md) does not substitute for
 measurements of this integrated runtime.
 
@@ -60,8 +60,9 @@ on 2026-10-18. Evidence: assets/validation_5438.
 Current MAP03 attribution covers eight native peaceful/siege runs (#318).
 The unprofiled engine reports FPS snapshots of 546/177 looking forward/down,
 and 48/35 during the city/front-line siege views. These are not ETW averages or
-a stable 60-FPS result. Gameplay remains unchanged; full siege performance and
-author checks remain open. [Measurement and limits](assets/validation_5437/RESULTS.md).
+a stable 60-FPS result. The author confirmed all older functional checks
+(CA318-01..05/CA327-01) on 2026-10-18; FPS evaluation is deferred.
+[Measurement and limits](assets/validation_5437/RESULTS.md).
 
 House doors now clear unfinished vehicle presentation (#334). Native door,
 vehicle and autosave reload checks pass: 8 runs/64 assertions;
