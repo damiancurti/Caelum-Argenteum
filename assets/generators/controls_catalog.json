@@ -8,6 +8,7 @@
     "R": "+reload",
     "F": "+zoom",
     "T": "+user3",
-    "Y": "ca_time_skip"
+    "Y": "ca_time_skip",
+    "L": "ca_map_legend"
   }
 }

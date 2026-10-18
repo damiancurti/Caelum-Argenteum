@@ -1,6 +1,35 @@
+// Estado local de presentación: cada entrada/carga empieza con la ayuda oculta.
+class CaelumMapLegendEvents : StaticEventHandler
+{
+    int WorldSerial;
+    ui int SeenWorldSerial;
+    ui bool Expanded;
+    override void WorldLoaded(WorldEvent e) { WorldSerial++; }
+    override void UiTick()
+    {
+        if(!automapactive || WorldSerial!=SeenWorldSerial)Expanded=false;
+        SeenWorldSerial=WorldSerial;
+    }
+    override void ConsoleProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca_map_legend" || consoleplayer<0)return;
+        let user=CaelumPlayer(players[consoleplayer].mo);
+        if(CaelumCartography.Visible(user))Expanded=!Expanded;
+    }
+}
+
 // Cartela local sobre el automapa nativo: no escribe geometría, marcas ni CVars.
 class CaelumCartography : Object ui
 {
+    static bool LegendExpanded()
+    {
+        let state=CaelumMapLegendEvents(StaticEventHandler.Find("CaelumMapLegendEvents"));
+        return state!=null && state.Expanded;
+    }
+    static String LegendHint()
+    {
+        return String.Format(StringTable.Localize(LegendExpanded()?"CA_MAP_HIDE_LEGEND":"CA_MAP_SHOW_LEGEND",false),Keys("ca_map_legend"));
+    }
     static bool Visible(CaelumPlayer user)
     {
         let rest=user==null?null:CaelumRestState(user.FindInventory("CaelumRestState"));
@@ -73,12 +102,16 @@ class CaelumCartography : Object ui
         rows.Push(stamp);
         if(!viewactive)
         {
+            rows.Push(LegendHint());
+            if(LegendExpanded())
+            {
             rows.Push(StringTable.Localize("CA_MAP_LEGEND",false));
             rows.Push(Controls());
             rows.Push(String.Format(StringTable.Localize("CA_NOTE_OPEN_HINT",false),Keys("ca_map_notes")));
             rows.Push(String.Format(StringTable.Localize("CA_NAV_MAP_HINT",false),Keys("ca_exploration"),Keys("ca_journal_toggle")));
             rows.Push(StringTable.Localize(CVar.GetCVar("am_followplayer").GetBool()?"CA_MAP_FOLLOW_PAN":"CA_MAP_FREE_PAN",false));
             if(level.MapName=="MAP01")rows.Push(StringTable.Localize("CA_MAP_STACKED",false));
+            }
             String knownPoi=CaelumPoiView.CenterLabel(user);
             if(knownPoi.Length()>0)rows.Push(knownPoi);
             String manual=CaelumMapNoteMenu.CenterLabel(user,Max(1,width/scale-2*CaelumCartographyLayout.PADDING));

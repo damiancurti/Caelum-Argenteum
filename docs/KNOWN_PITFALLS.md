@@ -1159,6 +1159,13 @@ comparison. CA150-01 passed author visual/comfort acceptance on 2026-10-12.
 
 ## CA-KP-083 - Native bindings, modal priority and automap use different paths
 
+#321 / 5.4.31 follow-up (ENGINE-VERIFIED): look up static UI handlers with
+StaticEventHandler.Find, not EventHandler.Find. Wait after screenshot commands
+before changing presentation: capture occurs on the subsequent rendered frame.
+The Spanish automap LANGUAGE block must include the actual `es` locale, not
+only `esp`; test the localized result with the user's configured language.
+Evidence: assets/validation_5431, including retained failed/earlier attempts.
+
 Status/evidence: ENGINE-VERIFIED for reset, persistence, hint enumeration,
 slot commands and modal cancellation; CODE-VERIFIED for native double-binding
 and controller navigation dispatch. #149 / 5.2.14, 2026-10-12, GZDoom 4.14.2.

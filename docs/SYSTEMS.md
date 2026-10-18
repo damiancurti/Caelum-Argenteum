@@ -1,6 +1,23 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.30** — 2026-10-17.
+Documentation version: **5.4.31** — 2026-10-17.
+
+## 5.4.31 - Collapsible automap legend (#321)
+
+The full-map legend starts collapsed and shows its current native toggle binding.
+The local command ca_map_legend expands/collapses help. Location, clock, focused
+POI/notes and tracked objectives remain independent of the legend. Closing the
+map, loading a save or entering another map collapses help again. This UI-only
+state is not character progress and adds no save schema. The expanded layout
+retains the existing font, wrapping, scaling and resource-area bounds.
+
+L is the new-install/reset default, declared in controls_catalog.json; existing
+INI assignments/cleared bindings are preserved. Automap Controls exposes the
+command. Hints query both native binding tables, including map-only shadowing,
+and reflect remapping/unbinding immediately in English and Spanish. No polling
+code or repeated KEYCONF defaultbind restores cleared keys. The controls
+regenerator now preserves independently maintained aliases after its generated
+block. Evidence: assets/validation_5431; manual CA321-01 accepted 2026-10-17.
 
 ## 5.4.30 - Sleeping bag in quick items (#319)
 

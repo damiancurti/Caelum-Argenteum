@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.30** — 2026-10-17.
+Documentation version: **5.4.31** — 2026-10-17.
+
+## 5.4.31 - Collapsible map legend (#321)
+
+Implement hidden-by-default help, real binding hints and a discoverable toggle.
+Native UI, rebinding, save/load/travel and resolution checks are recorded in
+assets/validation_5431. Author check CA321-01 accepted on 2026-10-17; scope in HISTORY. The controls
+generator preserves its nongenerated aliases; no map/progression rule changes.
 
 ## 5.4.30 - Sleeping bag quick-item access (#319)
 
