@@ -8924,6 +8924,11 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override bool UseInventory(Inventory item)
     {
+        // La bolsa abre su interacción existente sin consumir el Inventory.
+        let bag=CaelumSleepingBag(item);
+        if(bag!=null)
+            return CaelumPlayerAuthority.CanMutate(self)
+                && CaelumQuickUse.Available(self,bag) && bag.Open(self);
         // InvUse y el inventario formal llegan al mismo objeto nativo.
         // Los recipientes conservan su instancia: Drink consume agua, no Amount.
         let consumable=CaelumConsumableItem(item);

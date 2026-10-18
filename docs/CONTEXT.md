@@ -1,24 +1,21 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.29** — 2026-10-17.
+Documentation version: **5.4.30** — 2026-10-17.
 
-**5.4.29/#327:** current campaign MAP01 -> MAP02 -> MAP03. City adopts the exact
-tested 184-MU district/1024-MU exterior sky, original footprints and private CAH
-interiors. Other standalone maps: TRESERV, TTAROT, TMAINT, TCOAST, THAZARD,
-TACTORS. Stable location IDs and historical localization keys are unchanged.
-Normal siege: 100/group,350 tics,1,000 living deployment cap,6,600 cumulative
-reserve plus Zupay;600 defenders. Resurrection may exceed the cap by explicit
-author decision; new groups wait. Existing victory stops unused reserves.
-Static/native evidence:validation_5429. Manual checks remain pending. No new
-FPS promise; no6,000 simultaneous tests. Old catalogue recovery requires full
-b9fd71ce checkout/package; original WADs also preserved in map_catalogue.
-The following5.4.28 summary records the previous diagnostic stage.
+**5.4.30/#319:** sleeping bag in native quick items, same owned object/rest
+interaction, no consumption; Box exclusion. Evidence validation_5430;
+CA319-01 accepted 2026-10-17. Issues318-325 have separate commits/tests/PRs. Author chose
+32m plus line of sight for #325 and identified fire/stone projectiles for #320.
 
-**5.4.28/#318:** contact-only breath, native doors, private house interiors and
-shop signs. Low-sky adoption is now5.4.29; prior comparisons and unexplained
-session variance remain in validation_issue318/RESULTS.md and CA-KP110..121.
-Neither flat1600-body nor city controls established stable60FPS. No6000
-simultaneous tests again; CA318-01..05 remain pending.
+**5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
+1024-MU exterior sky, original footprints and private CAH interiors. Other maps:
+TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal siege:
+100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
+Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
+validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
+**#318:** contact-only breath, native doors, private houses/signs integrated.
+Performance/author acceptance remain unresolved (CA318-01..05/CA327-01).
+Reuse validation_issue318 and CA-KP110..123; no6000-simultaneous tests again.
 
 **5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
 retained by author decision. Native checks: 334 current/14 legacy assertions;

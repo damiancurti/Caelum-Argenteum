@@ -1,0 +1,100 @@
+{
+  "issue": 319,
+  "release": "5.4.30",
+  "runs": [
+    {
+      "directory": "issue319-01",
+      "log": "input-01.txt",
+      "sha256": "00b137f2003227950af08ee476745441e6c8d217f896eaf3578d9e0280acec89",
+      "passed": 15,
+      "failed": 3,
+      "done": false
+    },
+    {
+      "directory": "issue319-02",
+      "log": "input-02.txt",
+      "sha256": "9f8758a2ad14b8ead73c4ec92a651cf2dc2bac4c9df3dfe34eed601764efd21c",
+      "passed": 10,
+      "failed": 1,
+      "done": false
+    },
+    {
+      "directory": "issue319-03",
+      "log": "input-03.txt",
+      "sha256": "7e98252d3b072b1b746988ae79f00a9f04a015aa0a8c4ee3661561117181c6c1",
+      "passed": 15,
+      "failed": 3,
+      "done": false
+    },
+    {
+      "directory": "issue319-04",
+      "log": "input-04.txt",
+      "sha256": "de717d2d65acab83b84e134d04444c02218556c344542b0a3b14a2924dff2fc2",
+      "passed": 0,
+      "failed": 0,
+      "done": false
+    },
+    {
+      "directory": "issue319-05",
+      "log": "input-05.txt",
+      "sha256": "56e7a2853814e461cfd2b15a2ec7c636b830d4947f3430cd3085e199ae2fb872",
+      "passed": 20,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-05",
+      "log": "load-01.txt",
+      "sha256": "ccbc733a6cf1828d5c9719b6db02f4ccae1cce3b686692f125f23f8ae6f11603",
+      "passed": 6,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-05",
+      "log": "save-01.txt",
+      "sha256": "2abbbb3a8c1fac09d0d320c342d2b85b5f3a44a95ada5c214e8bcbaf670f9b71",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-final",
+      "log": "input-final.txt",
+      "sha256": "547c329dd6b97c78654e7c96450a8d59e0bb8cecd341e71cabcacf822401ee92",
+      "passed": 20,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-release",
+      "log": "input.txt",
+      "sha256": "564ec7c76ac6787538ec913451544916e7594ccff5e68dda876ae8ed2962a56b",
+      "passed": 21,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-release",
+      "log": "load.txt",
+      "sha256": "cb781a9bc044fac1b1ee510103bd636dbc738dd51cfbdb9cb0d08e45d93aac0e",
+      "passed": 6,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue319-release",
+      "log": "save.txt",
+      "sha256": "efdfab4253064eb30d46af55035a035d70337c977b4df17e5fe2675d15803506",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    }
+  ],
+  "final_passes": 30,
+  "normal_package_members": 16371,
+  "normal_equals_tested_source": true,
+  "runtime_sha256": "d0ebf46e7be16dd4beeea15e1944e3a7dfaf40d229fef136744212e455dbfb1c",
+  "fixture_sha256": "abcd59752ff57afc8af1ec92366f348c9e8605e84eca86bf269c1b4822613cdf",
+  "author_acceptance": "pending CA319-01"
+}

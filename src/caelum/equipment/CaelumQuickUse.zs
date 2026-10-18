@@ -3,9 +3,12 @@ class CaelumQuickUse : Object
 {
     static clearscope bool Eligible(CaelumPlayer user,Inventory item)
     {
+        if(user==null || item==null || item.Owner!=user
+            || item.Amount<=0 || item.bDestroyed)return false;
         let consumable=CaelumConsumableItem(item);
-        return user!=null && consumable!=null && item.Owner==user
-            && item.Amount>0 && !item.bDestroyed && !consumable.InMagicBox;
+        let bag=CaelumSleepingBag(item);
+        return (consumable!=null && !consumable.InMagicBox)
+            || (bag!=null && bag.Amount==1 && !bag.InMagicBox);
     }
 
     static play void Reconcile(CaelumPlayer user)
@@ -17,7 +20,8 @@ class CaelumQuickUse : Object
             // La munición no tiene una acción Use. No alterar otros objetos
             // nativos ni convertir llaves, documentos o equipo en consumibles.
             if(item is "CaelumCarbineAmmo")item.bInvBar=false;
-            if(item is "CaelumConsumableItem")item.bInvBar=Eligible(user,item);
+            if(item is "CaelumConsumableItem" || item is "CaelumSleepingBag")
+                item.bInvBar=Eligible(user,item);
             if(first==null && Eligible(user,item))first=item;
         }
         if(!Eligible(user,user.InvSel))user.InvSel=first;
