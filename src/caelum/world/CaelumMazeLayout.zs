@@ -1,7 +1,7 @@
 // Generado desde LAYOUT.json y generate_map02_maze.py.
 class CaelumMazeLayout : Object play
 {
-    const REVISION = 4;
+    const REVISION = 5;
     static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}
     static vector3 TravelPosition(int id)
     {

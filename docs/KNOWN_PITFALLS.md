@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-124 - Later corridor painting can merge a local moving ceiling
+
+Status/evidence: CODE-VERIFIED, deterministic geometry comparison; native
+reproduction pending. #323 / 5.4.33, baseline 6502e4c0, GZDoom 4.14.2 target.
+Scope: generate_map02_maze.py room/corridor painting and crusher 43921.
+
+The generator initially stamped a unique 128x128-MU panel, then a later refuge
+corridor overwrote those cells with west-zone group 2. Sector compaction correctly
+merged equal cell signatures; the trap consequently selected 12,709,888 MU2 of
+ceiling. A unique trap TID cannot protect sector geometry that was overwritten.
+Finalize moving-sector footprints after overlapping static construction, before
+layered floors; assert that each exact authored footprint/group/base floor
+survives the complete generation. Do not infer correct isolation merely from
+the early room() call or from a one-panel runtime array.
+
+The correction changes only 16 cells and keeps all existing panel dimensions.
+Current geometry has 85 sectors/11,541 lines versus 84/11,525. Repeated output bytes
+match; other trap/gate/loot/lower-network manifest fields remain equal. Evidence:
+[focused checks](../assets/validation_5433/RESULTS.md). Native walking, neighbors,
+all panels and save/load checks remain pending. Revision-4 recovery preserves
+its original geometry and defect; it is not a migration to corrected sectors.
+Author acceptance is pending. Damage/pressure rules are unchanged.
+
 ## CA-KP-123 - A reinforcement admission cap is not a resurrection limit
 
 Status/evidence: ENGINE-VERIFIED isolated GZDoom 4.14.2 lifecycle checks,

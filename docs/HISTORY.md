@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
+
+## 5.4.33 - Western sewer crusher sector isolation (#323, 2026-10-17)
+
+The author reported the western ceiling falling while walking. Static analysis
+located crusher 43921 at (-5280,-1536): later refuge-corridor construction had
+overwritten its unique sector group with zone 2. Its resulting footprint was
+12,709,888 MU2, versus the intended 128x128-MU panel (16,384 MU2).
+The generator now stamps all nine panels after upper routes and asserts their
+footprint/base floor survive lower passage construction. Revision 5 changes
+only the sixteen western panel cells, adds one sector and sixteen lines/vertices,
+and preserves other gates, traps, loot, prisoners and lower cells unchanged
+in their manifest fields. Two generations match. Validation, normal/compatibility
+builds and 16,371-member package equivalence pass; independent static review
+found no blocker. Native evidence is pending.
+The pre-change WAD/layout/manifest are preserved in map02_maze/legacy_5432.
+-LegacyMap02Revision4 restores the old geometry for visited-map saves; it does
+not claim to repair an already-saved old ceiling. Normal rebuilding restores
+the corrected map for a fresh visit. No damage, pressure or timing rule changes.
 
 ## 5.4.32 - Direct demon projectile aim (#320, 2026-10-17)
 

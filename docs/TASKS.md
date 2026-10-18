@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
+
+## 5.4.33 - Western crusher sector isolation (#323)
+
+Implemented the generator ordering correction and exact-footprint invariants.
+Static comparison changes only the intended sixteen cells; repeated generation
+matches. Pending: native baseline/current walking, all nine crusher cycles,
+neighboring ceilings, before/during saves and revision-4 recovery. The #320
+manual preview is still open, so no second engine is launched. Evidence:
+assets/validation_5433. #312 damage/pressure rules are outside this patch.
 
 ## 5.4.32 - Direct demon projectile aim (#320)
 

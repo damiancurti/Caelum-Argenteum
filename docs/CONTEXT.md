@@ -1,18 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
+
+**5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
+Only sixteen cells change. Static/determinism pass; native/author pending.
+Revision-4 recovery: -LegacyMap02Revision4 retains old geometry/defect.
 
 **5.4.32/#320:** author replaced #259 spread for Mandinga fire/Zupay stone
 with native direct aim at release. Other attacks unchanged. validation_5432;
 CA320-01 pending. Shared #325 decision: 32m plus line of sight.
 
-**5.4.31/#321:** automap legend defaults hidden, native binding hint/toggle
-(L for new/reset controls), reset on close/load/travel. Evidence validation_5431;
-CA321-01 accepted 2026-10-17. Existing bindings are preserved.
-
-**5.4.30/#319:** sleeping bag in native quick items, same owned object/rest
-interaction, no consumption; Box exclusion. Evidence validation_5430;
-CA319-01 accepted 2026-10-17. Issues318-325 have separate commits/tests/PRs.
+**5.4.31/#321:** hidden automap legend/L toggle, preserving bindings;
+validation_5431, CA321-01 accepted 2026-10-17.
+**5.4.30/#319:** owned/unboxed sleeping bag in quick items, no consumption;
+validation_5430, CA319-01 accepted 2026-10-17. Separate issue commits/tests/PRs.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
 1024-MU exterior sky, original footprints and private CAH interiors. Other maps:

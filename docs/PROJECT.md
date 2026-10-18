@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.32** — 2026-10-17.
+Documentation version: **5.4.33** — 2026-10-17.
+
+## 5.4.33 - Isolate the western sewer crusher (#323)
+
+The refuge corridor overwrote crusher 43921's local sector at (-5280,-1536),
+linking it to 12,709,888 MU2 of western ceiling instead of 16,384 MU2. The
+revision-5 generator finalizes the nine authored panels after upper corridors
+and asserts their exact footprints survive the lower-network overlay. Only
+sixteen existing 32-MU cells change group; other content remains identical.
+Static/deterministic checks pass; native and author verification are pending.
+Revision-4 saves remain recoverable with the exact archived map via
+-LegacyMap02Revision4; that mode deliberately retains the old geometry/defect.
 
 ## 5.4.32 - Direct demon projectile aim (#320)
 

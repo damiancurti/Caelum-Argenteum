@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.32.** Obtain and update the complete repository, validate
+**Current release: 5.4.33.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+MAP02's western crusher now owns its original 128x128-MU panel (#323), instead
+of the shared western ceiling. Fresh MAP02 geometry is revision 5. Native
+verification is pending; [evidence](assets/validation_5433/RESULTS.md).
+For a save that already visited revision 4, rebuild with `-LegacyMap02Revision4`:
+this restores the exact old geometry, including its defect, solely for recovery.
+Rebuild without that switch and start a fresh MAP02 to use the correction.
 
 Mandingas and Zupay now aim fire/stone projectiles directly at the target at
 release (#320, author decision). Other weapon dispersion remains unchanged.
