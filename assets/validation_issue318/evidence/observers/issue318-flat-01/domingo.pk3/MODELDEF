@@ -1,0 +1,71 @@
+// Diagnostic visual substitution approved by the author.
+Model CaelumMandinga
+{
+Path "models/caelum/domingo"
+Model 0 "domingo.md3"
+Skin 0 "domingo_skin.png"
+Scale 1 1 1
+DontCullBackFaces
+FrameIndex MIID A 0 0
+FrameIndex MIID B 0 7
+FrameIndex MIRN A 0 22
+FrameIndex MIRN B 0 25
+FrameIndex MIRN C 0 28
+FrameIndex MIRN D 0 31
+FrameIndex MIWK A 0 14
+FrameIndex MIWK B 0 18
+FrameIndex MDBR A 0 48
+FrameIndex MDBR B 0 52
+FrameIndex MDBR C 0 56
+FrameIndex MDBR D 0 60
+FrameIndex SLMD A 0 136
+FrameIndex MNDG A 0 64
+FrameIndex MNDG B 0 65
+FrameIndex MNDG C 0 66
+FrameIndex MNDG D 0 34
+FrameIndex MNDG E 0 41
+FrameIndex MNDG F 0 64
+FrameIndex MNDG G 0 72
+FrameIndex MNDG H 0 76
+FrameIndex MNDG I 0 80
+FrameIndex MNDG J 0 84
+FrameIndex MNDG K 0 92
+FrameIndex MNDG L 0 100
+}
+Model CaelumPortDefender
+{
+Path "models/caelum/domingo"
+Model 0 "domingo.md3"
+Skin 0 "domingo_skin.png"
+Scale 1 1 1
+DontCullBackFaces
+FrameIndex DOID A 0 0
+FrameIndex DOWK A 0 14
+FrameIndex DOWK B 0 18
+FrameIndex DOMI A 0 64
+FrameIndex DOMI B 0 65
+FrameIndex DOMI C 0 48
+FrameIndex DOMI D 0 49
+FrameIndex DOMI E 0 50
+FrameIndex DOMI F 0 51
+FrameIndex DOMI G 0 52
+FrameIndex DOMI H 0 53
+FrameIndex DOMI I 0 54
+FrameIndex DOMI J 0 55
+FrameIndex DOMI K 0 34
+FrameIndex DOMI L 0 35
+FrameIndex DOMI M 0 36
+FrameIndex DOMI N 0 37
+FrameIndex DOMI O 0 38
+FrameIndex DOMI P 0 39
+FrameIndex DOMI Q 0 41
+FrameIndex DOMI R 0 47
+FrameIndex DOMI S 0 72
+FrameIndex DOMI T 0 76
+FrameIndex DOMI U 0 80
+FrameIndex DOMI V 0 84
+FrameIndex DOMI W 0 88
+FrameIndex DOMI X 0 92
+FrameIndex DOMI Y 0 96
+FrameIndex DOMI Z 0 100
+}

@@ -2,6 +2,56 @@
 // temporizadores en un Object evita duplicar la lógica de prioridad.
 class CaelumElementalStatus : Object
 {
+    const BURN_HEAT_REVISION=1;
+    int BurnHeatRevision;
+    double BurnHeatWatts,BurnHeatRemaining,BurnHeatPower,PendingBurnHeatJoules;
+
+    play void EnsureBurnHeat()
+    {
+        if(BurnHeatRevision>=BURN_HEAT_REVISION)return;
+        // Un guardado anterior no conserva potencia absorbida de contacto.
+        // No se inventa ni se repite calor ya integrado: empieza al próximo contacto.
+        BurnHeatWatts=BurnHeatRemaining=BurnHeatPower=PendingBurnHeatJoules=0;
+        BurnHeatRevision=BURN_HEAT_REVISION;
+    }
+
+    play void ClearBurnHeat()
+    {
+        EnsureBurnHeat();
+        BurnHeatWatts=BurnHeatRemaining=BurnHeatPower=PendingBurnHeatJoules=0;
+    }
+
+    bool HasBurnHeat(){return BurnHeatRemaining>0 || PendingBurnHeatJoules>0;}
+
+    play void ApplyBurnHeat(double duration,double power,double absorbedWatts)
+    {
+        EnsureBurnHeat();
+        duration=Max(0.0,duration);power=Max(0.0,power);absorbedWatts=Max(0.0,absorbedWatts);
+        if(duration<=0 || absorbedWatts<=0)return;
+        // La misma prioridad no acumulativa del estado; Dureza sólo altera vida.
+        if(!ShouldReplace(power,duration,BurnHeatPower,BurnHeatRemaining))return;
+        BurnHeatRemaining=duration;BurnHeatPower=power;BurnHeatWatts=absorbedWatts;
+    }
+
+    play void TickBurnHeat(Actor owner)
+    {
+        EnsureBurnHeat();
+        if(owner==null || owner.health<=0){ClearBurnHeat();return;}
+        if(BurnHeatRemaining<=0)return;
+        double step=Min(1.0/TICRATE,BurnHeatRemaining);
+        // El receptor es el único dueño del calor. La integración térmica normal
+        // consume estos julios, sin forzar NPCStep ni repetir armadura por tic.
+        PendingBurnHeatJoules+=BurnHeatWatts*step;
+        BurnHeatRemaining=Max(0.0,BurnHeatRemaining-step);
+        if(BurnHeatRemaining<=0){BurnHeatWatts=0;BurnHeatPower=0;}
+    }
+
+    play double TakeBurnHeat()
+    {
+        EnsureBurnHeat();
+        double joules=PendingBurnHeatJoules;PendingBurnHeatJoules=0;return joules;
+    }
+
     double BurnRemaining;
     double BurnPower;
     int BurnDamagePerSecond;
@@ -276,7 +326,7 @@ class CaelumElementalStatus : Object
     play void UpdateVisualEffects(Actor owner)
     {
         BurnVisual = UpdateVisual(
-            owner, BurnVisual, "CaelumBurnVisual", BurnVisualRemaining > 0.0
+            owner, BurnVisual, "CaelumBurnVisual", BurnVisualRemaining > 0.0 || BurnHeatRemaining > 0.0
         );
         PoisonVisual = UpdateVisual(
             owner, PoisonVisual, "CaelumPoisonVisual", PoisonVisualRemaining > 0.0
@@ -290,8 +340,9 @@ class CaelumElementalStatus : Object
         );
     }
 
-    play void Tick(Actor owner)
+    play void Tick(Actor owner,bool realStep=true)
     {
+        if(realStep)TickBurnHeat(owner);
         TickDamageOverTime(owner);
         double ticSeconds = 1.0 / TICRATE;
         FreezeRemaining = Max(0.0, FreezeRemaining - ticSeconds);

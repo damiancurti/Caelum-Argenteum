@@ -7,7 +7,7 @@ class CaelumGuardCaptainDialogue : Object play
 
     static bool Open(CaelumPlayer user, CaelumPortDefender guard)
     {
-        if (level.MapName != "MAP06" || user == null || guard == null
+        if ((level.MapName != "MAP06" && CaelumHouseHubData.HouseForMap(level.MapName)<0) || user == null || guard == null
             || guard.health <= 0 || guard.ForcedSleepTics > 0
             || guard.CombatLucidityPhysicalStunRemaining > 0
             || !CaelumUseGeometry.AimedAt(user, guard)) return false;

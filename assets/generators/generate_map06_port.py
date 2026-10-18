@@ -11,6 +11,8 @@ S = json.loads((ROOT/'assets/map06_port/SOUTH.json').read_text(encoding='utf-8')
 
 def extend(port):
     port.compact = True
+    port.optimize_open_geometry = True
+    port.native_city_doors = True
     port.room(*S['field_bounds'], flat='CMGR03', wall='CMST01')
     port.room(*S['field_boundary'],floor=D['wall_height'],flat='CMST01')
     expand_city(port)
@@ -20,8 +22,13 @@ def extend(port):
     port.prop(30987, *D['resource_bed'][:2])
     port.prop(18004, *D['resource_workbench'][:2])
     port.prop(31051, *D['completion_position'][:2])
+    import generate_house_hubs
+    if generate_house_hubs.DATA['enabled']:
+        generate_house_hubs.exterior(port)
 
 def runtime():
+    import generate_native_city_doors
+    generate_native_city_doors.runtime()
     values = {k.upper(): v for k, v in D.items() if isinstance(v, (int, float))}
     values['DEFENDER_HEIGHT'] = D['defender_height_m']*32
     code = '// Generado desde assets/map06_port/{LAYOUT,SOUTH,CITY}.json.\nclass CaelumPortData : Object play\n{\n'
@@ -87,3 +94,7 @@ if __name__ == '__main__':
     generate(ROOT/'src/maps', port_extension=extend, include_coast=False)
     runtime()
     interiors.runtime(json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8')))
+    import generate_house_hubs
+    if generate_house_hubs.DATA['enabled']:
+        generate_house_hubs.generate(ROOT/'src/maps')
+        generate_house_hubs.runtime()

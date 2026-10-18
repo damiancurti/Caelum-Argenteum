@@ -1,0 +1,70 @@
+{
+  "runs": [
+    {
+      "directory": "issue318-native-08",
+      "label": "catalogue",
+      "new_pass_lines": 8,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "e726baa9178157566e26e3ceba7c7ca38ed5d99c7684d20cc1262c52473cf8ce"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "city-hub-leave",
+      "new_pass_lines": 10,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "e726baa9178157566e26e3ceba7c7ca38ed5d99c7684d20cc1262c52473cf8ce"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "city-hub-return",
+      "new_pass_lines": 23,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "e726baa9178157566e26e3ceba7c7ca38ed5d99c7684d20cc1262c52473cf8ce"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "city-save",
+      "new_pass_lines": 24,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "e726baa9178157566e26e3ceba7c7ca38ed5d99c7684d20cc1262c52473cf8ce"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "motion-reload",
+      "new_pass_lines": 26,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "1a153f29a26e24865487bcd8f9b657789bcc8c832b2e4367516b833673bc71ba"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "motion-save",
+      "new_pass_lines": 45,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "1a153f29a26e24865487bcd8f9b657789bcc8c832b2e4367516b833673bc71ba"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "npc-home-doors-fixed",
+      "new_pass_lines": 4,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "8e3b28bbcfc8032f96917710cb390c40c7bbcaa4403415831298149eed4d22a7"
+    },
+    {
+      "directory": "issue318-native-08",
+      "label": "pairs",
+      "new_pass_lines": 74,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "1a153f29a26e24865487bcd8f9b657789bcc8c832b2e4367516b833673bc71ba"
+    },
+    {
+      "directory": "issue318-door-collision-01",
+      "label": "rays-and-missiles",
+      "new_pass_lines": 16,
+      "runtime_sha256": "6c454a64960a9b1d90c95e0a045829ba0e5f7ce9b17d575c8e438404af54214c",
+      "fixture_sha256": "c12952bb3de3e8a20a0e8165f7803b759400177257f396330e724d924256e85d"
+    }
+  ],
+  "new_assertions": 230,
+  "all_exit_zero": true,
+  "all_keep_awake_released": true
+}

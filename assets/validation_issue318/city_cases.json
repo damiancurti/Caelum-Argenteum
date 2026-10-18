@@ -1,0 +1,101 @@
+{
+  "scope": "Diagnostic coordinates selected from the supplied maps' UDMF plans; not gameplay data. Native player camera, with position and orientation restored every tic.",
+  "cases": [
+    {
+      "kind": "bigcity",
+      "label": "street-north",
+      "x": 0,
+      "y": 2000,
+      "yaw": 90,
+      "pitch": 0
+    },
+    {
+      "kind": "bigcity",
+      "label": "street-down",
+      "x": 0,
+      "y": 2000,
+      "yaw": 90,
+      "pitch": 75
+    },
+    {
+      "kind": "bigcity",
+      "label": "west-street-east",
+      "x": -6000,
+      "y": 2000,
+      "yaw": 0,
+      "pitch": 0
+    },
+    {
+      "kind": "bigcity",
+      "label": "west-street-down",
+      "x": -6000,
+      "y": 2000,
+      "yaw": 0,
+      "pitch": 75
+    },
+    {
+      "kind": "hgc",
+      "label": "quayside-north",
+      "x": -3500,
+      "y": -3200,
+      "yaw": 90,
+      "pitch": 0
+    },
+    {
+      "kind": "hgc",
+      "label": "quayside-down-forced",
+      "x": -3500,
+      "y": -3200,
+      "yaw": 90,
+      "pitch": 75
+    },
+    {
+      "kind": "hgc",
+      "label": "north-street-east",
+      "x": 0,
+      "y": 7000,
+      "yaw": 0,
+      "pitch": 0
+    },
+    {
+      "kind": "hgc",
+      "label": "north-street-down-forced",
+      "x": 0,
+      "y": 7000,
+      "yaw": 0,
+      "pitch": 75
+    },
+    {
+      "kind": "hgc",
+      "label": "quay-east",
+      "x": -3500,
+      "y": -3200,
+      "yaw": 0,
+      "pitch": 0
+    },
+    {
+      "kind": "hgc",
+      "label": "riverbank-north",
+      "x": 0,
+      "y": -1500,
+      "yaw": 90,
+      "pitch": 0
+    },
+    {
+      "kind": "hgc",
+      "label": "south-avenue-east",
+      "x": 0,
+      "y": -5600,
+      "yaw": 0,
+      "pitch": 0
+    },
+    {
+      "kind": "hgc",
+      "label": "south-avenue-down-forced",
+      "x": 0,
+      "y": -5600,
+      "yaw": 0,
+      "pitch": 75
+    }
+  ]
+}

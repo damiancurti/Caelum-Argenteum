@@ -1,0 +1,42 @@
+{
+  "source_members": 16370,
+  "source_tree_sha256": "e30513e24317c1167ff6ebbbba01bf86b8891523188740b0b24bd6e5fcef5e11",
+  "normal_package_sha256": "ef92439edd9d99018c7d20578dabde04de1f3f318a7264af5cb7c318bb4f85fc",
+  "native09_package_sha256": "5fb035c8e369fe0d383b8ce6904b058dcd75d248dfb06f644a97396f2a2ac04c",
+  "normal_package_matches_source": true,
+  "native09_matches_source": true,
+  "functional07_to_08_changed_members": [
+    "caelum/data/CaelumCartographyCatalogueData.zs"
+  ],
+  "functional08_to_09_changed_members": [
+    "graphics/caelum/shop_signs/CASG00.png",
+    "graphics/caelum/shop_signs/CASG01.png",
+    "graphics/caelum/shop_signs/CASG02.png",
+    "graphics/caelum/shop_signs/CASG03.png",
+    "graphics/caelum/shop_signs/CASG04.png",
+    "graphics/caelum/shop_signs/CASG05.png",
+    "licenses/SHOP_SIGNS_5428.txt"
+  ],
+  "matched_uninstrumented_packages": [
+    {
+      "population": 6000,
+      "pair_changed_members": [
+        "caelum/data/CaelumCartographyCatalogueData.zs",
+        "maps/MAP06.wad"
+      ],
+      "source_changed_members": []
+    },
+    {
+      "population": 1000,
+      "pair_changed_members": [
+        "caelum/data/CaelumCartographyCatalogueData.zs",
+        "maps/MAP06.wad"
+      ],
+      "source_changed_members": [
+        "caelum/world/CaelumPortData.zs"
+      ]
+    }
+  ],
+  "diagnostic_text_newlines": "The existing prepare.replace helper normalizes edited diagnostic PortData to LF; the expected byte comparison includes this normalization.",
+  "scope": "Exact member-byte verification, not a new native playthrough or author acceptance."
+}

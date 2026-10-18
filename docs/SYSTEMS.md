@@ -1,6 +1,164 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - Contact-only breath and performance boundaries (#318)
+
+Latest author decision, 2026-10-17: 6,000 simultaneous attackers are ruled out
+for the game and must never be stress-tested again. The last active diagnostic
+was stopped on request; earlier results remain historical evidence. Current
+geometry comparisons use peaceful scenes and 1,000 attackers/600 defenders.
+Normal code still contains the rejected full-army deployment until its bounded
+replacement is implemented; no new production budget is silently selected.
+
+The author subsequently authorized separate house interiors. Fresh MAP06 keeps
+all 160 houses at their original XY bounds, width, depth and roof height (184 MU).
+Their solid exterior shells preserve street widths, lots and public routes.
+Front-door Use enters the corresponding CAH000..CAH159 hub map; Use inside
+returns to that house's original doorstep. Windows in an isolated interior do
+not show or connect to the city. Shops/factories remain in MAP06; six original
+painted trade signs identify the existing shop categories without changing stock.
+
+The author also requested an isolated comparison with these same interiors and
+house walls extended to the existing 1,024-MU sky ceiling. This diagnostic keeps
+XY boundaries and street widths; it changes sight, projectile paths, flight and
+thermal geometry. Its closed sector uses an opaque roof ceiling material to
+avoid GZDoom's both-sky clipping exception. It is not a renderer-only switch
+or a production height change. Measured peaceful rendering improves strongly;
+the 1,000-attacker siege still misses 60 FPS and 6,000 attackers remain near
+0.7 FPS / 12 tics/s. The experiment does not authorize new army counts or walls.
+
+The later author-requested variable-sky diagnostic keeps the same house shells
+and separate interiors. House/shop districts use the existing 184-MU roof height
+as their physical sky ceiling; the wall-walk belt, towers and nonresidential
+exterior retain 1,024 MU. Districts derive from authored lots plus half the road
+width, with footprint/door/road bounds for retained houses. Higher floor or
+3D-volume cells are excluded. Closed roof sectors use their own opaque material;
+open streets retain F_SKY1 and remain thermally outdoors. Shops keep their real
+160-MU interiors and existing windows. This geometry preserves XY footprints
+and street widths, but limits upward movement and removes standing space on
+the closed house roofs. It is a measured test variant, not an adopted flight,
+roof-access or production-map rule. Normal MAP06 and army totals are unchanged.
+
+The 600 defenders keep stable individual identities. A first house visit creates
+its original three/four residents. The player-owned native travel carrier keeps
+each created body, inventory, injury, gear, ammunition and active state; unloaded
+residents are suspended, not reconstructed or simulated. Unvisited house bodies
+are instantiated on their first visit or deployment. Native hub clock semantics
+remain: a siege date reached inside a house starts the city encounter on return.
+Each city tic attempts one pending defender at its own door. Occupied exits
+retry; dead or previously raised identities do not create replacement soldiers.
+Effective cannon assignments survive travel, including replacements and pending
+placement. Redemption owns active converted followers; the house registry still
+owns their bound auxiliary and preserves bodies after conversion expires.
+
+Registry passes are bounded by 600 identities and run only on initialization,
+map transition or deployment start. Ordinary ticks attempt at most one pending
+placement and one deployment identity. There is no new global actor census.
+This prototype changes defender placement; the existing synchronous 6,000
+attacker path is still unresolved. Do not report the defender-only diagnostic
+as proof of a playable complete siege. Current saves/hub behavior pass isolated
+native checks; author checks remain pending. The previous-save waiver remains
+in force.
+
+The author requires a functional normal MAP06 and rejects creating its full
+6,000-plus attacking population in one update. This is an outstanding production
+requirement: this patch does not yet change attacker deployment or authored counts. The
+author-requested 1,000-Mandinga control is a benchmark only, with 600 soldiers
+retained. The existing #132 reinforcement CVar is
+still an opt-in experiment, not completion of the new normal-play requirement.
+Do not silently adopt a new live population/group budget from a benchmark.
+
+The additional flat-map tests compare 6,000 Mandingas/1,000 sword-and-shield
+soldiers with 1,000/600, including the author-approved Domingo visual substitute
+and author-requested empty Mandinga inventory. These are isolated diagnostics:
+normal inventory, army budgets, RPG resources/collision and production art remain
+authoritative. Inventory removal changes carried weight, attack air and collision
+mass as well as potion use; it is not a gameplay-equivalent optimization.
+The recorded 1,000/600 result does not validate MAP06's geometry or controller.
+
+The author removed demon-breath radiation and selected the absorbed contact
+power for persistent burning heat. Only accepted local contacts receive it,
+including the existing summoned-demon and Redemption restrictions. The previous
+four-source geometry, 20 kW source, 35% budget and armor retention determine
+contact watts; normalize across simultaneous contacts and apply armor once.
+Store watts for the existing base burn duration times emitter power, with the
+existing stronger-power/longer-duration nonstacking priority. Toughness still
+governs health effects; it does not reverse thermal energy. Generic burns do not
+invent or extend contact heat. Fire visuals remain while this heat duration runs.
+
+Each receiver accrues watts times real simulation seconds. The player consumes
+queued joules on its real thermal step; NPCs retain them until their normal
+scheduled update, without forcing per-tic environmental sampling. Logical
+personal steps do not create heat. Save/load and hub state preserve power,
+remaining duration and queued energy. Status revision 1 initializes unknown
+legacy contact power to zero; breath revision 1 discards already-paid but
+untransferred legacy radiation once, preserving resources and applied thermal
+history. Resurrection clears active/pending heat. Rest acceleration and journey
+forecasts remain blocked while heat is active or queued.
+
+This supersedes only demon-breath radiation. The utility wand retains its
+approved heat/cold radiation; its global Transfer scan remains an identified
+performance task. Existing cold-triggered breath activation is unchanged, even
+though breath no longer warms its emitter. Routine global actor scans now require
+a documented correctness need, bounded trigger/frequency and measured large-map
+cost; see AGENTS and CA-KP-115.
+
+Door removal, idle-blocker controls, component disabling, scene freezing and
+unrestricted collinear merging under validation_issue318 are isolated diagnostics.
+Their improved timings do not authorize removing required collision, physiology,
+resources or individual combat. In particular, collinear merging may change
+texture phase and line-endpoint-based thermal shelter classification, even when
+physical boundaries are retained. It needs equivalence and save/hub validation
+before any production use. Keep the >=500 automatic policy authoritative.
+
+The subsequent author-requested conservative MAP06 reduction is integrated into
+normal generation: 1,574 to 1,563 sectors and 86,382 to 61,817 lines. Only identical
+untagged world sectors and physically open boundaries are simplified. Every
+physical wall endpoint, texture, light, tagged sector, 3D control and map actor
+is preserved. Native probes compare 3,006 positions, including roofs, windows,
+interiors and gun routes. This static map reduction applies to fresh/unvisited
+MAP06 regardless of population; it adds no per-tic actor scan or hidden barrier.
+
+The author then authorized replacing MAP06's 960 leaves with native PolyObjects
+and waived previous-save compatibility (2026-10-17). The original models remain
+nonphysical visuals; finite two-sided 3D middle textures provide 64-by-8-MU
+collision up to 120 MU. Both sides of each native face accept Use. Six mapped
+leaves per home replace runtime interior placement and all 7,680 blocker actors.
+The final geometry has 1,565 sectors and 65,661 lines, including disconnected
+storage for the native contours; physical city boundaries remain unchanged.
+
+Requests address the registered pair directly, preserving its existing access
+checks, swing-away direction, 90-degree travel in 16 movement tics, 105-tic wait,
+wait renewal and interrupted-close reopening. One temporary controller guards
+each active pair. Moving/blocked pairs inspect only nearby solid bodies, using
+the native axis-aligned actor boxes against the swept door rectangle. Fresh
+controller/action ordering prevents a body from moving between the check and
+native rotation. No thrust or crushing is permitted. Closed pairs have no such
+controller. The existing owned opening sound remains; native motion is silent.
+Other maps and legacy MAP06 layouts keep their prior actor-door path.
+
+Fresh/unvisited MAP06 uses this geometry automatically. Current saves preserve
+native line references, pair registry and active controller/action order; do not
+re-register an already rotated leaf on reload. Previous-save conversion is not a
+delivery gate under the author's waiver. Exact backups and optional
+LegacyMap06Furnished recovery builds remain; these retain rather than convert
+old geometry. The earlier geometry-continuation evidence is historical proof
+for that checkpoint, not certification of every old save on the native map.
+
+Opaque closure is a separate design control: closing the house walls/interiors
+makes the native renderer discard much more geometry, but extends facades upward
+and removes overhead/roof space. It is excluded from production. Transparent
+walls cannot correctly discard visible background; invisible occluders would
+hide visible scenery. A distance trigger can change a real closure, but also
+changes collision, shots, AI sight and flight. The suggested 1,000 MU is an
+example, not an approved rule. District/map splitting remains a design option.
+
+Performance acceptance must distinguish frame presentation from simulation
+throughput. The author expects 60 FPS in mansion/sewers; fixed entrance checks
+do not certify every view, route or battle. See
+[evidence](../assets/validation_issue318/RESULTS.md) and KNOWN_PITFALLS CA-KP-110
+onward for reproducible controls, source-backed causes and measurement limits.
 
 ## 5.4.27 - Normal-speed prisoner following (#307)
 
@@ -351,7 +509,7 @@ one and a new duration, never stacking or renewing its damaged body.
 
 The summon follows its caster when not fighting and independently engages
 enemies with its existing combat. Its attacks, ground-launch impulse, projectiles,
-breath burning and thermal radiation protect the caster, allies and neutrals.
+breath burning and contact heat protect the caster, allies and neutrals.
 Projectile ownership/policy persists after the creature disappears. Normal solid
 body collision is retained. Death of the summon or caster, or expiry, removes
 the summon without corpse, loot, kill count or nearby ally-death reward.
@@ -1152,7 +1310,7 @@ No new warning, quest, route permission, map geometry or gameplay actor is added
 | MAP06 `city-east-exit` | CITY.json east-arch bounds/headroom | Crossing the arch plane inside its passage |
 | MAP06 `city-tower-0..3` | CITY.json tower footprints and walk/deck heights | Entry at the tower's physical heights |
 | MAP06 `city-shop-<ShopIdentity>`, `city-bed-<house>` | Existing merchant identity or furniture slot | Service interaction |
-| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
+| MAP06 `city-factory-<building-id>-<station-kind>` (96 stations) | CITY.json building IDs and INTERIORS.json profiles/slots, matched to the actor's original SpawnPoint under the current compact or exact legacy_5427 furnished TEXTMAP checksum | Interaction with that individual station; network membership reveals no other station |
 | MAP06 `port-covered-cart`, `port-merchant-ship` | Existing vehicle instance | Boarding interaction, even when route 10 remains unavailable |
 
 Room bounds deliberately omit secret spaces, labels and connections. Entering a
@@ -1181,7 +1339,11 @@ though it dispatches through their controller; lower-grate use records them.
 Use hooks grant no key, permission, faction standing or quest progress.
 
 Generated room/tower/crossing data is guarded by the loaded level's native
-TEXTMAP checksum. Unsupported older geometry receives no current-layout region
+TEXTMAP checksum. MAP06 accepts the compact current map and exact legacy_5427
+furnished layout, whose authored coordinates and IDs are identical. Future
+coordinate/ID edits must preserve a separate legacy table or remove eligibility
+explicitly; a new checksum alone cannot prove catalogue compatibility.
+Unsupported older geometry receives no current-layout region
 coordinates. Real services keep actor-relative observations and explicit saved
 identities; old port gates use their own layout ID and neutral label. Transient
 crossing samples reset on load, so loading beside the arch is not a crossing.
@@ -2797,8 +2959,9 @@ distance attenuation, wall visibility, the existing 35% radiative budget and
 armor area retention exactly once. Therefore 20 kW is source power, not 20 kW
 absorbed by each actor. Radiation extends beyond contact range without an
 arbitrary cutoff; cooling/heating affects supported thermal bodies, including
-the emitter. No projectile push or direct ice damage is added. Demon breath uses
-the same geometry/contact/heat service with its accepted balance and visuals.
+the emitter. No projectile push or direct ice damage is added. Since 5.4.28,
+demon breath shares geometry/contact calculations but heats only contact victims;
+this wand's independently approved radiation remains unchanged.
 
 Each mode costs 10 Anima per simulation second before existing wand cost
 reductions, once per real tic. Natural regeneration continues. Primary wins
@@ -3230,18 +3393,15 @@ or contact. Interruption restores AI from any phase. Contact extends
 the existing T1 fire burn: shared base duration times Charisma's Type-4 factor,
 and the shared DOT ratio of T1 staff damage times that factor. There is no
 additional direct-hit damage; refreshing contact preserves the burn pulse clock.
-Radiation alone never adds the burn status and has no distance cutoff.
-
-Total emitted flame power is 20 kW, the existing campfire profile. Four cone
-samples reuse the thermal fire projection, distance attenuation, 35% radiative
-fraction, 0.95 surface absorption and wall visibility. Combined absorption is
-capped to the emitted radiative budget before shared magical armor retention.
-The emitter can receive its own radiation but not its own direct flame burn.
-Cost/contact run each real tic; radiation integrates only paid real seconds in
-staggered one-second samples, with the residual interval settled on stopping.
-Moving sources use the sampled pose at interval end, matching the thermal
-scheduler's temporal approximation; this is not sub-tic fluid/fire simulation.
-The owned source, paid residual time, potion units and ongoing powers serialize.
+Since the author's 5.4.28 correction, breath emits no heat to noncontact bodies
+or its own emitter. Total source power remains 20 kW. Four cone samples retain
+the previous projection, attenuation, 35% budget, 0.95 surface absorption and
+wall visibility only to calculate watts for local contact victims. Combined
+contact absorption is capped before magical armor retention. The victim keeps
+that absorbed power while burning, using the real-time queue and migration rules
+at the start of this document. Cost/contact still run each real tic; stopping
+the stream creates no final radiation scan. Potion units and paid-resource
+history remain serialized. Cold/combat activation rules are unchanged.
 Native evidence and outstanding acceptance are recorded separately in HISTORY.
 
 ## Functional port city contract (#133)

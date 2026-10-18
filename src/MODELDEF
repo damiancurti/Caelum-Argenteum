@@ -3408,6 +3408,16 @@ Model CaelumHingedDoorLeaf
     FrameIndex CDLS A 0 0
 }
 
+Model CaelumHouseDoorVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_mansion_door.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+
 Model CaelumSiegeGate
 {
     Path "models/caelum/siege"

@@ -91,6 +91,8 @@ class CaelumCannon : CaelumHostileMachine
         for(int i=0;i<Operators.Size();i++)
         {
             let body=Operators[i];
+            let resident=CaelumPortDefender(body);
+            if(resident!=null && resident.Residence!=null && resident.Residence.Suspended)continue;
             if(body!=null && body.health>0 && body.bFriendly==Defending
                 && (body.Pos-Pos).Length()<=GuardRadius
                 && (!attacking || !CaelumBattleCry.Active(body)))count++;

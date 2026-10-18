@@ -318,6 +318,15 @@ The implementations are `src/playsim/p_sight.cpp`,
 `src/common/engine/stats.h` and
 `src/common/rendering/vulkan/system/vk_commandbuffer.cpp` at tag `g4.14.2`.
 
+For unattended ETW capture, plan the collector's normal shutdown as well as its
+elevation. In #318, elevated PresentMon continued to own an exclusive CSV handle
+after the engines exited; the unelevated controller could neither terminate its
+session nor attach to its console (Windows error5), and shared CSV reads failed
+with sharing violation32. Use a bounded capture duration and an explicitly
+authorized shutdown path. Preserve the file until the collector closes it;
+a locked CSV is not evidence of missing frames, and callback/HUD counters do not
+replace the pending presentation data. Do not bypass Windows access controls.
+
 For #128, `assets/validation_506/prepare.py --baseline` reconstructs the pinned
 5.0.5 baseline and the first experimental source commit, then packages current
 `src/` separately as `production.pk3`. The historical `current-a/b` labels mean

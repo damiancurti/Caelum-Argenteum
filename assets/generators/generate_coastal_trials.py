@@ -116,24 +116,35 @@ class CoastalMap:
                 for key in ('sidefront','sideback'):
                     if key in line: line[key] = side_remap[line[key]]
                 for key in ('v1','v2'): line[key] = vertex_remap[line[key]]
-        self.prop(1,0,320,90)
-        self.prop(30950,0,352)  # Marcador regional explícito, Buenos Aires, superficie.
-        self.things[-1].update(arg0=1,arg1=0)
+        if getattr(self, 'add_default_things', True):
+            self.prop(1,0,320,90)
+            self.prop(30950,0,352)
+            self.things[-1].update(arg0=1,arg1=0)
         def value(v):
             if isinstance(v,bool): return str(v).lower()
             if isinstance(v,str): return '"'+v+'"'
             return str(v)
         chunks=['namespace = "ZDoom";\n// Caelum 4.35.0m: entorno de ensayo ribereño.\n']
-        for kind,entries in [('vertex',vertices),('sector',sectors),('sidedef',sides),('linedef',lines),('thing',self.things)]:
+        groups={kind:[{k:value(v) for k,v in entry.items()} for entry in entries]
+                for kind,entries in [('vertex',vertices),('sector',sectors),('sidedef',sides),('linedef',lines),('thing',self.things)]}
+        if getattr(self,'optimize_open_geometry',False):
+            from compact_open_geometry import compact_open_geometry
+            self.geometry_reduction=compact_open_geometry(groups)
+        if getattr(self, 'transform_groups', None):
+            self.transform_groups(groups)
+        if getattr(self,'native_city_doors',False):
+            import generate_native_city_doors
+            self.native_door_geometry=generate_native_city_doors.append(groups, getattr(self, 'native_door_specs', None))
+        for kind,entries in groups.items():
             for entry in entries:
-                chunks.append(kind+'\n{\n'+''.join('    '+k+' = '+value(v)+';\n' for k,v in entry.items())+'}\n')
+                chunks.append(kind+'\n{\n'+''.join('    '+k+' = '+v+';\n' for k,v in entry.items())+'}\n')
         lumps=[(self.name,b''),('TEXTMAP','\n'.join(chunks).encode()),('ENDMAP',b'')]
         body,directory=bytearray(),bytearray()
         for name,data in lumps:
             directory+=struct.pack('<ii8s',12+len(body),len(data),name.encode().ljust(8,b'\0'))
             body+=data
         (folder/(self.name+'.wad')).write_bytes(struct.pack('<4sii',b'PWAD',len(lumps),12+len(body))+body+directory)
-        print(f'{self.name}: {len(sectors)} sectores, {len(lines)} líneas, {len(self.things)} actores')
+        print(f'{self.name}: {len(groups["sector"])} sectors, {len(groups["linedef"])} lines, {len(groups["thing"])} things')
 
 
 def generate(folder, port_extension=None, include_coast=True):

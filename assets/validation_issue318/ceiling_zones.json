@@ -1,0 +1,20 @@
+{
+  "issue": 318,
+  "author_decision": "2026-10-17: Test different physical sky heights: house districts at roof height, exterior areas higher for the city walls.",
+  "retired_test_policy": "2026-10-17: The author ruled out 6000 simultaneous actors and instructed that this size never be tested again. The final active run was stopped on request; earlier evidence is retained. Current performance comparisons use peaceful scenes and 1000 attackers with 600 defenders.",
+  "scope": "Isolated diagnostic; normal MAP06 and gameplay data remain unchanged pending measurement and author review.",
+  "low_height_source": "assets/map06_port/INTERIORS.json:height",
+  "high_height_policy": "Preserve each existing ceiling (1024 MU in the outdoor map).",
+  "district_policy": "House and shop lots plus half the authored road width. Retained houses use their footprint, authored doorstep and road endpoint plus that same margin. Exclude the perimeter wall-walk belt and any cells whose floor or 3D volume extends above the house roof.",
+  "closed_roof_policy": "When a selected solid floor reaches the low ceiling, use its existing opaque floor material as ceiling material; open streets retain F_SKY1.",
+  "comparison": "Fresh opaque-high-wall versus variable-sky repeats; reuse the previously verified normal geometry checkpoint only as qualified historical context.",
+  "order": ["opaque", "zoned", "zoned", "opaque"],
+  "camera_poses": {
+    "0": {"x": 0, "y": 320, "z": 0, "angle": 180},
+    "4": {"x": -14464, "y": -14000, "z": 0, "angle": 270},
+    "5": {"x": -20608, "y": -12416, "z": 0, "angle": 90}
+  },
+  "camera_authority": "Existing observer sites0/4; site5 is CaelumCityData.HouseRoad(0), facing along its street. Diagnostic observation coordinates, not gameplay values.",
+  "evidence_directory": "issue318-ceilings-01",
+  "baseline_directory": "issue318-houses-perf-03"
+}

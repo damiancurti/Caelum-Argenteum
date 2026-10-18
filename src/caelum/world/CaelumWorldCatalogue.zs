@@ -54,6 +54,7 @@ class CaelumWorldCatalogue : Object
         if (mapName ~== "MAP04") return LOCATION_TAROT_CHAMBERS;
         if (mapName ~== "MAP05") return LOCATION_MAINTENANCE;
         if (mapName ~== "MAP06") return LOCATION_PORT;
+        if (CaelumHouseHubData.HouseForMap(mapName)>=0) return LOCATION_PORT;
         if (mapName ~== "MAP07") return LOCATION_COAST;
         if (mapName ~== "MAP08") return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;

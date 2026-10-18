@@ -1,0 +1,249 @@
+"""Build and measure roof-height residential sky zones without changing src (#318)."""
+from pathlib import Path
+import argparse
+import collections
+import hashlib
+import json
+import os
+import re
+import subprocess
+import sys
+import zipfile
+
+import house_perf as hp
+from geometry_probe import read_wad, parse
+import generate_coastal_trials as coastal
+import generate_map06_port as portgen
+from generate_port_city import tower_rect
+
+ROOT, HERE = hp.ROOT, hp.HERE
+DATA = json.loads((HERE/'ceiling_zones.json').read_text())
+MARKER = '__CA318_LOW'
+
+
+def contains(rect, x, y):
+    a, b, c, d = rect
+    return a <= x < c and b <= y < d
+
+
+def zone_rectangles():
+    city, homes, interior = hp.hubs.CITY, hp.hubs.interiors.houses(hp.hubs.CITY), hp.hubs.interiors.DATA
+    margin = city['urban_grid']['road_width']//2
+    rects = []
+    for building in [*homes, *(b for b in city['buildings'] if b['kind']=='shop')]:
+        rect = building.get('lot')
+        if rect is None:
+            x, y, x2, y2 = building['bounds']
+            identity = homes.index(building)
+            road = interior.get('house_road_overrides', {}).get(str(identity), interior['house_road'])
+            rect = [x, y, max(x2, x+road[0], x+interior['door_outside'][0]),
+                    max(y2, y+road[1], y+interior['door_outside'][1])]
+        a, b, c, d = rect
+        rects.append([a-margin, b-margin, c+margin, d+margin])
+    return rects
+
+
+def build_geometry(folder):
+    folder.mkdir(parents=True, exist_ok=False)
+    baseline = folder/'baseline'; baseline.mkdir()
+    zoned = folder/'zoned'; zoned.mkdir()
+    original_runtime = hp.hubs.interiors.runtime
+    hp.hubs.interiors.runtime = lambda *args, **kwargs: None
+    result = {'rectangles': zone_rectangles(), 'floor_geometry_unchanged': True,
+              'low_height': hp.hubs.interiors.DATA['height'], 'exceptions': {}}
+    selected = set()
+
+    def extend(port):
+        portgen.extend(port)
+        city = hp.hubs.CITY
+        a,b,c,d = city['bounds']; belt = city['walk_width']
+        inside = [a+belt,b+belt,c-belt,d-belt]
+        height = result['low_height']; reasons = collections.Counter()
+        for (x,y), cell in list(port.cells.items()):
+            cx,cy=x+port.CELL/2,y+port.CELL/2
+            if not contains(inside,cx,cy) or not any(contains(r,cx,cy) for r in result['rectangles']):
+                continue
+            floor,flat,wall,light,tag = cell
+            if floor>height:
+                reasons['floor_above_roof']+=1;continue
+            if tag in port.volumes and port.volumes[tag][1]>height:
+                reasons['volume_above_roof']+=1;continue
+            selected.add((x,y))
+            port.cells[x,y]=(floor,flat+MARKER,wall,light,tag)
+            assert port.cells[x,y][0:1]+(port.cells[x,y][1].removesuffix(MARKER),)+port.cells[x,y][2:]==cell
+        result['selected_cells']=len(selected);result['exceptions']=dict(reasons)
+        result['wall_walk_exclusion']=inside
+        result['selected_cells_sha256']=hashlib.sha256(json.dumps(sorted(selected)).encode()).hexdigest()
+        def transform(groups):
+            closed=0; changed=0
+            for sector in groups['sector']:
+                flat=sector['texturefloor'].strip('"')
+                if not flat.endswith(MARKER):continue
+                changed+=1;flat=flat.removesuffix(MARKER)
+                sector['texturefloor']='"'+flat+'"'
+                assert int(sector['heightfloor'])<=height
+                sector['heightceiling']=str(height)
+                if int(sector['heightfloor'])==height:
+                    assert flat!='F_SKY1'
+                    sector['textureceiling']=sector['texturefloor'];closed+=1
+            result['low_sectors']=changed;result['closed_opaque_sectors']=closed
+        port.transform_groups=transform
+    try:
+        coastal.generate(baseline, port_extension=portgen.extend, include_coast=False)
+        assert (baseline/'MAP06.wad').read_bytes()==(ROOT/'src/maps/MAP06.wad').read_bytes(), 'Baseline generator is stale'
+        coastal.generate(zoned, port_extension=extend, include_coast=False)
+        repeat=folder/'repeat';repeat.mkdir()
+        coastal.generate(repeat, port_extension=extend, include_coast=False)
+        raw=(zoned/'MAP06.wad').read_bytes()
+        assert raw==(repeat/'MAP06.wad').read_bytes(), 'Nondeterministic geometry'
+    finally:
+        hp.hubs.interiors.runtime=original_runtime
+    before=parse(dict(read_wad(baseline/'MAP06.wad'))['TEXTMAP'].decode())
+    after=parse(dict(read_wad(zoned/'MAP06.wad'))['TEXTMAP'].decode())
+    assert before['thing']==after['thing'], 'Map things changed'
+    text=dict(read_wad(zoned/'MAP06.wad'))['TEXTMAP']
+    assert MARKER.encode() not in text
+    result.update(wad_sha256=hashlib.sha256(raw).hexdigest(), textmap_md5=hashlib.md5(text).hexdigest(),
+                  baseline_counts={k:len(v) for k,v in before.items()},counts={k:len(v) for k,v in after.items()},
+                  things_unchanged=True,regenerates_byte_identically=True)
+    (folder/'GEOMETRY.json').write_text(json.dumps(result,indent=2)+'\n')
+    # A bounded native fixture will use these authored/data-derived locations.
+    homes=hp.hubs.interiors.houses(hp.hubs.CITY)
+    probes=[]
+    for i,home in enumerate(homes):
+        x,y,_,_=home['bounds'];offset=hp.hubs.interiors.DATA['door_outside']
+        point=[x+offset[0],y+offset[1],offset[2]]
+        cell=(int(point[0])//coastal.CoastalMap.CELL*coastal.CoastalMap.CELL,
+              int(point[1])//coastal.CoastalMap.CELL*coastal.CoastalMap.CELL)
+        probes.append({'house':i,'position':point,'low':cell in selected})
+    result['doorstep_probes']=probes
+    (folder/'GEOMETRY.json').write_text(json.dumps(result,indent=2)+'\n')
+    return raw,result
+
+
+def prepare(directory):
+    out=ROOT/'build'/directory;out.mkdir(parents=True,exist_ok=False)
+    raw,geometry=build_geometry(out/'geometry')
+    original=ROOT/'build'/DATA['baseline_directory']
+    for shape in ('opaque','zoned'):
+        for count in (6000,1000):
+            source=original/f'{"opaque" if shape=="opaque" else "houses"}-{count}'
+            work=out/f'{shape}-{count}';work.mkdir()
+            meta=json.loads((source/'manifest.json').read_text());meta.update(shape=shape,source=str(source.relative_to(ROOT)))
+            if shape=='opaque':os.link(source/'runtime.pk3',work/'runtime.pk3')
+            else:
+                with zipfile.ZipFile(source/'runtime.pk3') as z:members={n:z.read(n) for n in z.namelist()}
+                members['maps/MAP06.wad']=raw
+                name='caelum/data/CaelumCartographyCatalogueData.zs'
+                members[name]=re.sub(rb'(MAP06_CHECKSUM = ")[^"]+',lambda m:m[1]+geometry['textmap_md5'].encode(),members[name])
+                meta['runtime_sha256']=hp.prepare.package(work/'runtime.pk3',members)
+                meta['geometry']=geometry
+            os.link(source/'observer.pk3',work/'observer.pk3')
+            (work/'manifest.json').write_text(json.dumps(meta,indent=2)+'\n')
+    (out/'GEOMETRY.json').write_text(json.dumps(geometry,indent=2)+'\n')
+    prepare_checks(out,geometry)
+    print('Prepared',directory,flush=True)
+
+
+def prepare_checks(out,geometry):
+    city=hp.hubs.CITY;homes=hp.hubs.interiors.houses(city)
+    points=[]
+    for tower in city['towers']:
+        x,y,x2,y2=tower_rect(tower,city['tower_deck_local'])
+        points.append([(x+x2)/2,(y+y2)/2,city['tower_deck_height']])
+    for stair in city['access_stairs']:
+        x,y,x2,y2,z=stair['steps'][-1];points.append([(x+x2)/2,(y+y2)/2,z])
+    code='class CA318CeilingChecks : CA318HouseChecks\n{\n'
+    shops=[b for b in city['buildings'] if b['kind']=='shop']
+    for method,window in (('ShopDoor',False),('ShopWindow',True)):
+        code+=f'vector3 {method}(int i){{switch(i){{\n'
+        for i,b in enumerate(shops):
+            x,y,x2,y2=b['bounds'];half=coastal.CoastalMap.CELL/2
+            pos=[x+coastal.CoastalMap.CELL*2+half,y+half,city['profiles']['shop']['window_sill']] if window else [x2-half,b['door_y']+city['profiles']['shop']['door_width']/2,0]
+            code+=f'case {i}:return ({",".join(map(str,pos))});\n'
+        code+='}return (0,0,0);}\n'
+    code+='override void NetworkProcess(ConsoleEvent e)\n{\nSuper.NetworkProcess(e);\nlet user=CaelumPlayer(players[0].mo);\n'
+    code+='if(e.Name=="ceilings_check"){\nlet probe=Actor.Spawn("CaelumSummoningProbe",(0,0,0),NO_REPLACE);\nprobe.A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);\n'
+    assert all(p['low'] for p in geometry['doorstep_probes'])
+    code+=f'for(int i=0;i<{len(homes)};i++){{probe.SetOrigin(CaelumCityData.DoorOutside(i),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),String.Format("house%d doorstep fits defender",i));Check(probe.CeilingZ=={geometry["low_height"]},String.Format("house%d expected ceiling",i));Check(!CaelumThermalShelter.Roof(probe),String.Format("house%d doorstep remains thermally outdoors",i));}}\n'
+    code+=f'for(int i=0;i<{len(shops)};i++){{probe.SetOrigin(ShopDoor(i),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),String.Format("shop%d entrance fits",i));Check(probe.CeilingZ=={city["profiles"]["shop"]["headroom"]},String.Format("shop%d interior headroom retained",i));Check(CaelumThermalShelter.Roof(probe),String.Format("shop%d retains real roof",i));probe.SetOrigin(ShopWindow(i),false);probe.FindFloorCeiling();Check(probe.FloorZ=={city["profiles"]["shop"]["window_sill"]} && probe.CeilingZ=={city["profiles"]["shop"]["window_head"]},String.Format("shop%d window heights retained",i));}}\n'
+    for i,p in enumerate(points):
+        code+=f'probe.SetOrigin(({",".join(map(str,p))}),false);probe.FindFloorCeiling();Check(probe.TestMobjLocation(),"wall/tower{i} standing room");Check(probe.CeilingZ==1024,"wall/tower{i} high ceiling retained");\n'
+    x,y,x2,y2=homes[0]['bounds']
+    code+=f'probe.SetOrigin(({(x+x2)/2},{(y+y2)/2},{geometry["low_height"]}),false);probe.FindFloorCeiling();Check(!probe.TestMobjLocation(),"closed roof has no standing headroom");probe.Destroy();}}\n'
+    code+='if(e.Name=="ceilings_fly"){user.SetOrigin(CaelumCityData.DoorOutside(0),false);user.FindFloorCeiling();user.bNoGravity=true;user.Vel=(0,0,user.CeilingZ);}\n'
+    code+='if(e.Name=="ceilings_fly_checked"){Check(user.Pos.Z+user.Height<=user.CeilingZ+0.01,"upward movement stops below low sky");Check(user.Pos.Z>user.FloorZ,"upward movement actually occurred");user.bNoGravity=false;user.Vel=(0,0,0);}\n'
+    code+='if(e.Name=="ceilings_view"){switch(e.Args[0]){\n'
+    views=[[*geometry['doorstep_probes'][0]['position'],180,0],
+           [*points[0],315,0],[-14464,-14000,0,90,-20],[0,320,0,180,-20]]
+    for i,p in enumerate(views):
+        code+=f'case {i}:user.SetOrigin(({",".join(map(str,p[:3]))}),false);user.Angle={p[3]};user.Pitch={p[4]};break;\n'
+    code+='}user.FindFloorCeiling();user.Vel=(0,0,0);Check(user.TestMobjLocation(),"capture viewpoint fits");}\n}\n}\n'
+    fixture={'ZSCRIPT':b'version "4.14"\n#include "houses.zs"\n#include "ceilings.zs"\n',
+             'houses.zs':(HERE/'house_checks.zs').read_bytes(),'ceilings.zs':code.encode(),
+             'MAPINFO':b'GameInfo { AddEventHandlers="CA318CeilingChecks" }\n'}
+    work=out/'zoned-6000'
+    assert not (work/'checks-v3.pk3').exists()
+    hp.prepare.package(work/'checks-v3.pk3',fixture)
+    commands='wait 70; netevent ceilings_check; netevent ceilings_fly; wait 1; netevent ceilings_fly_checked; '
+    commands+=''.join(f'netevent ceilings_view {i}; wait 10; screenshot ceiling-view-v3-{i}.png; ' for i in range(len(views)))
+    commands+='netevent houses_done; wait 5; quit\n'
+    (work/'geometry.cfg').write_text(commands)
+    for name in ('portals','deploy'):
+        original=ROOT/'build/issue318-houses-07/current'/f'{name}.cfg'
+        (work/f'{name}.cfg').write_bytes(original.read_bytes())
+
+
+def prepare_observer(directory):
+    out=ROOT/'build'/directory
+    observer=(HERE/'observer.zs').read_text().replace(
+        'vector3 point=Site==0?', 'vector3 point=Site==5?CaelumCityData.HouseRoad(0):Site==0?')
+    observer=observer.replace('User.Angle=Site==4?270:180;', 'User.Angle=Site==5?90:Site==4?270:180;')
+    observer=observer.replace('fits=%d"','fits=%d ceiling=%.3f"').replace(
+        'User.TestMobjLocation());','User.TestMobjLocation(),User.CeilingZ);')
+    for work in sorted(out.iterdir()):
+        if not (work/'runtime.pk3').exists():continue
+        with zipfile.ZipFile(work/'observer.pk3') as z:members={n:z.read(n) for n in z.namelist()}
+        members['observer.zs']=observer.encode()
+        assert not (work/'ceiling-observer-v2.pk3').exists()
+        sha=hp.prepare.package(work/'ceiling-observer-v2.pk3',members)
+        meta=json.loads((work/'manifest.json').read_text());meta['ceiling_fixture_sha256']=sha
+        meta['residential_camera']='Site5: authored CaelumCityData.HouseRoad(0), yaw90 along the street; compare pitch0/75. Native markers record physical ceiling.'
+        (work/'manifest.json').write_text(json.dumps(meta,indent=2)+'\n')
+
+
+def run(directory,part):
+    plans=[]
+    if part=='peace':
+        for site in (0,5):
+            for pitch in (0,75):
+                for repeat,shape in enumerate(DATA['order'],1):
+                    plans.append((shape+'-6000',f'peace-{site}-{pitch}-{repeat}',0,site,pitch,140,350,240))
+    elif part=='siege1000':
+        for site in (0,4):
+            for repeat,shape in enumerate(DATA['order'],1):
+                plans.append((shape+'-1000',f'siege1000-{site}-{repeat}',1,site,0,700,1050,600))
+    elif part=='siege6000':
+        for repeat,shape in enumerate(DATA['order'],1):
+            plans.append((shape+'-6000',f'siege6000-{repeat}',1,0,0,700,1050,600))
+    outcomes=[]
+    for variant,label,phase,site,pitch,warmup,window,timeout in plans:
+        cmd=[sys.executable,str(HERE/'run.py'),'--directory',directory,'--variant',variant,'--label',label,
+             '--phase',str(phase),'--site',str(site),'--pitch',str(pitch),'--warmup',str(warmup),
+             '--window',str(window),'--timeout',str(timeout),'--global-presentmon','--postwait','210']
+        cmd+=['--fixture','ceiling-observer-v2.pk3']
+        code=subprocess.run(cmd,cwd=ROOT).returncode
+        outcomes.append({'variant':variant,'label':label,'returncode':code})
+        (ROOT/'build'/directory/f'{part}-outcomes.json').write_text(json.dumps(outcomes,indent=2)+'\n')
+        if code:raise RuntimeError(f'Native run failed: {variant}/{label}')
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('mode',choices=('prepare','checks','observer','peace','siege1000','siege6000'))
+    parser.add_argument('--directory',default=DATA['evidence_directory'])
+    args=parser.parse_args()
+    if args.mode=='prepare':prepare(args.directory)
+    elif args.mode=='checks':prepare_checks(ROOT/'build'/args.directory,json.loads((ROOT/'build'/args.directory/'GEOMETRY.json').read_text()))
+    elif args.mode=='observer':prepare_observer(args.directory)
+    else:run(args.directory,args.mode)

@@ -1,24 +1,28 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
 
-**5.4.27/#307:** ordinary prisoner following uses resolved normal Speed, with
-health/thermal/elemental modifiers and existing proximity/teleport distances.
-The author confirmed retaining the recovery teleport. Native checks pass with
-334 current-runtime and 14 legacy-control assertions; validation/build pass.
-Evidence: validation_5427; delivery PR317. CA307-01 passed author review on
-2026-10-16 without reported exceptions.
+**5.4.28/#318:** contact-only heat, native doors and160 private house interiors;
+original footprints retained, real resident state/deployment, six shop signs.
+Variable-sky diagnostic:184 MU districts/1024 exterior;871 native checks and24
+fresh ETW windows. Zoned peaceful exterior forward 330.73-337.53 FPS;
+residential 261.85-268.56;1,000-attacker city 6.42-7.16.
+Control also slower this session;cause unproven. Author retired6000 tests forever;
+last run stopped. Flight/roof restrictions need CA318-05 review.
+Normal geometry unchanged; deployment/playability open. Prior normal shells~37
+peaceful FPS;private CAH158>1000. Flat1600 bodies~54/44 FPS sprites/Domingo,
+not stable60. Full controls/limits:validation_issue318/RESULTS.md;CA-KP110..121.
+CA318-01..05 pending;old-save waiver applies.
 
-**5.4.26/#305 implemented:** author-requested active-seal registry preserves
-climate/thermal rules. Branch feat/issue305-active-seal-registry; validation_5426.
-Lifecycle/save/performance checks pass; resumed delivery verifies all 16,193
-runtime members and repeats 27 native equivalence checks. No test helper remains
-active. Delivery PR308 (83f79cc1) is accepted. #304 is delivered in PR306
-(41b40476): native archive and performance checks pass; CA304-01 passed author
-review on 2026-10-16 without reported exceptions. See
-validation_5425/RESULTS.md for measured costs and limitations.
-All tests accepted; merge/closure of #304/#305/#307 authorized on 2026-10-16.
-pending_test.txt is empty; release 5.4.27 and runtime unchanged.
+**5.4.27/#307:** prisoner following uses resolved normal Speed; recovery teleport
+retained by author decision. Native checks: 334 current/14 legacy assertions;
+validation/build pass. PR317, validation_5427; CA307-01 accepted 2026-10-16.
+
+**5.4.26/#305:** active-seal registry preserves thermal rules; lifecycle/save/
+performance and 16,193-member equivalence pass. PR308 (83f79cc1), validation_5426.
+#304 archive delivered in PR306 (41b40476), validation_5425; CA304-01 accepted
+2026-10-16. All #304/#305/#307 tests accepted; merge/closure authorized that day.
+At that acceptance pending_test.txt was empty; 5.4.27's runtime was unchanged.
 **5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
@@ -289,8 +293,7 @@ and bow appearance. The author also confirmed the complete 4.36.1 Windows
 validator/launcher/header check. The bow stall and final flail pose are now accepted;
 detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
-The accepted #17 export remains historical. #82 closes the implemented
-V4.37 slice with a new export; remaining powers/missions, teams/network play
+Historical exports remain archived; remaining powers/missions, teams/network play
 and campaign expansion stay in V5, starting with V5.0 architecture. Current route: mansion MAP01 -> maze MAP02 -> port MAP06. The accepted
 port siege replaces the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
@@ -302,9 +305,7 @@ The #15 fronts and #80 powers are integrated; Tarot author checks passed 2026-10
 Siege rules retain their separate acceptance.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
-PROJECT contains the authoritative scope and dependency order. The author
-discontinued further weekly-allowance measurements on 2026-10-01; historical
-usage evidence remains preserved.
+PROJECT contains the authoritative scope and dependency order. Historical usage evidence remains preserved.
 
 ## Repository structure (summarized)
 

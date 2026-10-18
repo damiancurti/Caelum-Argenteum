@@ -1,8 +1,549 @@
-# Known pitfalls and verified lessons — Caelum Argenteum
+# Known pitfalls and verified lessons â€” Caelum Argenteum
 
 Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
+
+## CA-KP-121 - Sky ceilings can defeat an apparently opaque city barrier
+
+Status/evidence: CODE-VERIFIED GZDoom g4.14.2 hw_CheckClip and ENGINE-VERIFIED
+matched native renderer samples; #318 / 5.4.28, 2026-10-17. Scope: the isolated
+house-height comparison, not an adopted production height or flight rule.
+[Evidence](../assets/validation_issue318/RESULTS.md).
+
+Author decision, 2026-10-17: the 6,000-attacker stress scale is retired and must
+never be run again. The earlier measurements below are historical evidence,
+not a request to repeat that population. The last active run was intentionally
+stopped on the author's instruction; its incomplete-run traceback is not an
+engine-crash finding. Continue the geometry comparison at 1,000/600 and in peace.
+
+A wall can visibly reach the sky while the renderer still traverses the city
+behind it. In [hw_CheckClip](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_fakeflat.cpp),
+closed-sector tests return false when both ceiling textures are skyflatnum.
+Raising the house floor to the 1,024-MU outdoor ceiling while retaining F_SKY1
+therefore does not establish real occlusion. The final diagnostic sets that
+closed sector's ceiling to the existing opaque roof material. Valid lower-wall
+textures, distinct front/back sectors and the absence of other portal/dither
+bypasses also matter. Verify rendered work, not only the geometry or screenshot.
+
+From the same legal `(0,320,0)` camera, the first matched native bench snapshots
+drop from 34,297 to 738 wall jobs and 1,127 to 65 flats. These are renderer work
+counts, not counts of unique authored walls. CPU-side bench clocks and the HUD
+counter are not ETW presentation FPS. Full measurements remain in the audit.
+The completed ETW comparison measures peaceful forward means of 36.62-37.03
+versus 402.03-405.19 FPS, and ground-facing means of 28.54-29.76 versus
+165.66-166.03. The 1,000-attacker central view rises from 6.81-8.33 to
+27.97-29.88 FPS, still below 60 with p99 frame intervals of 112-131 ms. Its
+front-line view does not improve (24.76-24.89 versus 22.24-22.68 FPS); both
+native snapshots contain 1,146 wall jobs. Do not generalize a large gain from
+one view to every route or attribute every combat difference to the renderer.
+An occluder cannot remove unrelated offscreen actor simulation.
+
+The completed four 6,000-attacker/600-defender runs illustrate that limit:
+11.76-11.79 tics/s with ordinary shells and 11.96-12.15 with real occlusion,
+against the nominal 35; both remain near 0.7 ETW application FPS. Separate
+profiles sample 20 tics per 10-simulated-second
+window. AttackerTarget costs 18.72-18.82 exclusive ms/sample tic, including its
+uninstrumented shared-target helpers; the CombatActor.Tick remainder costs
+12.69-12.75. At 1,000 attackers these scopes cost 3.50-3.56 and 3.00-3.05 ms.
+These are selected CPU scopes, not an exhaustive additive engine/GPU budget.
+The typed target registry still supplies up to 600 defenders to leader searches:
+bounded/typed does not mean free when many leaders repeat the work. Any spatial
+optimization must preserve target eligibility, sight/RNG semantics and offscreen
+combat rather than silently impose a new range, faction or civilian policy.
+
+The generated city shares its 184-MU roof sector with unrelated structures.
+Clone the house sector and redirect only its authored boundary sides; raising
+the shared sector would alter other buildings. Check every house footprint,
+unchanged street widths and the paired package diff. The tall-wall control also
+changes sight, projectiles, flight and thermal geometry, so a total-gameplay
+timing difference is not a pure renderer subtraction or automatic design approval.
+
+The variable-height follow-up uses the existing 184-MU house roof as physical
+sky over residential/shop lots and keeps the exterior/wall-walk belt at 1,024 MU.
+Changing a shared sector directly would lower unrelated exterior areas. Mark
+eligible generator cells before compaction, split their shared groups, restore
+their original flat and set only those ceilings. The resulting diagnostic adds
+two sectors and 55 lines; normal regeneration remains byte-exact and repeated
+diagnostic generation is identical. Disable generator runtime-source writes
+when building an isolated map: changing the output directory alone is not enough.
+
+Low F_SKY1 streets remain thermally outdoors, but their ceiling is physical:
+flight stops below it and a closed floor/ceiling roof has no standing headroom.
+Check shop entry/window headroom and wall/tower access, not just house doors.
+The successful native follow-up logs 823 geometry assertions, 45 actual portal
+assertions and three deployment assertions. Count PASS records across hub
+transitions: a reconstructed event handler can reset its local DONE counter.
+An unrolled 160-door fixture exceeded the ZScript register limit; a loop passed.
+An upward-launch check must observe motion before gravity returns the player to
+the floor; its corrected one-tic observation passed. Preserve those failed
+fixture attempts with their diagnoses instead of reporting gameplay regressions.
+
+Keep an observation site inside the changed region. The earlier city/front-line
+sites both remain under 1,024 MU; the added residential HouseRoad(0) site confirms
+184 MU natively. Validate full camera pose, measurement options, population
+censuses and identical observer hashes. An ETW file existing is insufficient:
+events for that process must bracket the entire trimmed QPC window. Give the
+collector enough wall time for slow simulation and wait for its CSV handle to
+close. Do not combine historical and fresh runs into an unpaired improvement.
+
+Fresh variable-sky ETW evidence (24 windows, two means per condition):
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+Compare these fresh controls with each other; earlier normal-shell results
+belong to their own session. The full report preserves frame tails and end
+censuses. Neither a lower physical sky nor opaque walls removes offscreen AI.
+
+Do not place a benchmark camera on the old interior/house boundary after making
+it solid. Check native placement and actual coordinates at the measurement
+boundary. Retain invalid-camera and ineffective-sky-closure attempts as qualified
+controls; they must not become evidence against the corrected occluder.
+Native bench waits five wall seconds before writing when invoked with an
+already-visible FPS counter; a short post-command tic wait may quit too soon.
+
+## CA-KP-120 - House hubs need body ownership, initialization and placement checks
+
+Status/evidence: CODE-VERIFIED native g4.14.2 travel/thinker order and
+ENGINE-VERIFIED house transitions, current saves, finite inventory, fresh
+birth/travel, blocked placement, burning, bolas and Redemption; #318 / 5.4.28.
+Scope: CaelumHouseResidents and the generated CAH000..CAH159 interiors.
+Evidence: validation_issue318 house fixtures and RESULTS.md.
+
+Keep exterior footprints separate from interior representation. The generated
+MAP06 preserves all four outer boundaries and original height of every house;
+the private interiors use ordinary ceilings. Fewer sectors alone does not
+certify FPS, nor does a high interior HUD counter certify the city or siege.
+Compare city/ground/interior windows, native tics and presented frame intervals.
+A startup changemap may be ignored before the initial level finishes loading.
+Wait for the first map, then assert the actual loaded map name and its resident
+population; a successful measurement callback alone does not prove the scene.
+
+Do not serialize a partial hand-written copy of a complex NPC. Native
+Inventory.PreTravelled/Travelled can carry its real body and finite inventory
+through STAT_TRAVELLING; remove them from that list before native cleanup.
+Use a distinct nonthinking stat for absent residents, not STAT_STATIC or the
+corpse archive's stat. A fresh actor moved to a nonthinking list loses
+OF_JustSpawned. Keep it in STAT_TRAVELLING until native PostBeginPlay can run,
+then park it without executing absent-map combat. Assert real gear/anatomy,
+not only one initialized boolean. Rebase absolute clocks and map-bound caches.
+
+Historical resurrection memory does not prove another carrier owns travel.
+Delegate only active conversions actually registered with the travelling
+effect; retain permanent exclusion from historical siege orders separately.
+A bolas binding is an independent actor with its own finite item. Transport
+that auxiliary exactly once, including when Redemption owns the victim body;
+destroying the binding resolves/drops its piece and is not harmless cleanup.
+
+An occupied saved position must defer placement. Use a solid probe with the
+actual body's dimensions; testing the nonsolid parked body misses collisions.
+Retain cannon replacement assignments and reserve a pending operator's slot
+without counting it as present service. Otherwise a vacancy can be reassigned
+and then overwritten when the original body returns. Check the real Use path,
+save/reload, deaths, status composition and deployment independently.
+
+Native hub snapshots can copy travelling objects into stored map state. Measure
+save size, memory and transition latency after many visits and a grown roster;
+one house's FPS does not establish bounded campaign storage. This remains a
+measurement requirement, not a demonstrated leak.
+
+## CA-KP-119 - Flat army tests must separate simulation, inventory and drawing
+
+Status/evidence: ENGINE-VERIFIED isolated GZDoom 4.14.2 flat-sector tests,
+#318 / 5.4.28, 2026-10-17. [Evidence and full measurements](../assets/validation_issue318/RESULTS.md).
+Scope: real Mandinga/PortDefender bodies, native faction targeting, one sector,
+four boundary lines, sprites versus the author-approved Domingo model substitute.
+
+A flat floor does not make thousands of full RPG combatants cheap. In the
+6,000/1,000 onset, all 7,000 bodies have targets and collisions, yet combat
+advances below 35 tics/s and presentation falls to about one frame per second.
+Raw callbacks show many simulation tics between presented frames. A high FPS
+result with actor thinkers frozen certifies drawing only, not usable combat.
+The diagnostic DORMANT_STAT also hides bodies from ordinary thinker iterators,
+changing event workloads and producing a zero final ordinary census despite
+visible retained bodies. Its FPS difference is not a pure AI-cost subtraction.
+The same geometry can therefore have very different costs with active AI.
+
+Count inventory actors separately from combatants and visible bodies. Each
+Mandinga has three native inventory stacks; 6,000 Mandingas add 18,000 thinker
+objects representing 108,000 potion units. Removing them once after deferred
+PostBeginPlay reduces the window census from 25,613 to 7,613 actors. Keep the
+supply revision intact and verify inventories stay empty: otherwise a supposedly
+empty control can silently replenish. This author-requested ablation does not
+authorize removing gameplay inventory. Short-run casualties/health match;
+longer battles may diverge once missing potion use matters.
+Removal also changes carried weight, effective collision mass and attack air
+cost. A full-inventory ablation does not isolate only item Tick overhead, even
+when short-run health and casualties match.
+
+For a visual-only comparison, override MODELDEF on the existing classes and
+map their existing state frames. Do not substitute lightweight AI, add thousands
+of model proxy thinkers, disable collisions or change resources. Report mesh
+complexity and animation mapping: this Domingo MD3 has 17,447 triangles per
+body and uses sampled poses with native interpolation. Its result cannot be
+generalized to every 3D model, an optimized LOD or final Mandinga art.
+
+Record spawn calls and deferred initialization separately. Actor.Spawn can
+return before expensive PostBeginPlay work and inventory creation, so its short
+duration is not total deployment cost.
+The first subsequent WorldTick marker measures wall latency including other
+tic/render work, not exclusive initialization CPU time. Keep full-combat,
+frozen render controls, inventory ablations and instrumented profiles distinct. Use
+matched repeats, raw ETW intervals, simulation tics/s and sustained windows;
+do not interpret fewer than 30 intervals as reliable percentile evidence.
+
+The isolated soldiers use native sword/shield AI outside MAP06's controller;
+city routes, carbine orders, cannons and reinforcements are absent. The lower
+1,000/600 repetition therefore tests population stability on the same flat
+fixture, not whole-city or siege acceptance. Reproduce using the owned
+flat_army/flat_controls/flat_suite/flat_inventory_suite tooling and retain all
+native counts, source hashes and failed attempts.
+
+The completed 40-run battery records sustained 1,000/600 means of 53.54 FPS
+(sprites) and 43.76 (Domingo), at about 35 tics/s. Sprite p95/p99 frame intervals
+are 22.31/99.76 ms: a final HUD snapshot near 77 FPS does not establish stable
+60 FPS. Empty inventories improve onset, but sustained means 49.86/42.74 FPS
+do not establish a lasting benefit and have different combat outcomes. The
+6,000/1,000 sustained battle remains at 0.86/0.81 FPS (14.68/13.75 tics/s), or
+1.14/1.07 FPS after inventory removal (19.29/18.17 tics/s). These figures are
+application presents from ETW, not display refresh; all conditions and repeats
+remain in the report. Independent review confirmed the methodological limits;
+the final verifier checks all 40 populations, model-variant outcomes and cleanup.
+
+## CA-KP-118 - Native PolyObject doors need finite collision and ordered guards
+
+Status/evidence: CODE-VERIFIED GZDoom g4.14.2 `po_man.cpp`, `dthinker.cpp`,
+`p_mobj.cpp` and native Use handling; ENGINE-VERIFIED isolated pairs and MAP06,
+#318 / 5.4.28, 2026-10-17. Scope: CaelumPolyDoors, native city generator and
+the original hinged-door fallback. [Evidence](../assets/validation_issue318/RESULTS.md).
+
+Stock non-crushing Polyobj_DoorSwing still thrusts obstructing actors and ignores
+CANNOTPUSH/DONTTHRUST there. An active action also rejects repeated activation
+rather than renewing its wait. Replacing eight blockers per leaf therefore
+requires a controller that preserves the accepted interaction contract. Native
+rotations are guarded locally; always spawn a NEW guard immediately before both
+actions. The engine preserves that contiguous order from the fresh thinker list
+to STAT_DEFAULT and through save serialization. Reusing an older guard permits
+another actor to move between the check and the newly appended actions.
+
+Check the native actor AABB against the swept rectangle, including intermediate
+angles and finite-height step margins. Cast angle division to floating point:
+assigning an integer quotient to a double does not restore its fractional part.
+Exclude the original pose from a sweep so a touching player can open away from
+the door. Use a shootable obstructing body: a nonshootable dummy does not expose
+the stock thrust behavior. Test a body moving in its own Tick during closure,
+not only one placed before a request.
+
+Finite collision uses two-sided 3D midtextures with a valid height, bottom
+pegging and compatible front/back planes. Blocking=true makes the line block
+above the leaf. Alpha0 preserves collision and allows the retained owned model
+to supply the appearance; it is not a BSP visibility closure. A visual proxy
+must use NOINTERACTION: NOGRAVITY and NOCLIP do not prevent native Z movement
+from raising it onto its own midtexture while paused. That reproduced Z=120
+fault also caused later Use rejection. NOINTERACTION removes the proxy from
+the blockmap, so native faces must accept Use from both sides; test away from
+the proxy's radius to prove the line path. Direct NPC requests still work.
+
+The per-map registry and line/actor references are saved state. Do not re-register
+rotated leaves on load, which would duplicate faces and redefine the closed angle.
+IDs above360 are valid PolyObject IDs in UDMF thing angles; do not normalize them.
+Keep every storage contour's vertices separate. Suppress native sound sequences
+when the existing owned actor sound remains. Treat native rays, sight, missiles,
+walking and roof flight as separate checks. The author waived previous-save
+conversion for this map replacement; this does not waive current save/hub tests.
+
+The replacement removes 7,680 per-tic blocker actors, but native contours still
+add renderer work. Measure net frame presentation and active/idle costs; this
+change alone does not establish a playable 600-soldier city or full siege.
+
+## CA-KP-117 - Reference cities need matched cameras and separate simulation counts
+
+Status/evidence: CODE-VERIFIED local archives; ENGINE-VERIFIED isolated views,
+#318 / 5.4.28, 2026-10-17. Environment: CA-KP-110. External input hashes and
+attribution: [audit evidence](../assets/validation_issue318/RESULTS.md#author-supplied-city-examples).
+
+HGC City has 5,596 sectors versus original MAP06's 1,574, yet its measured
+views process far fewer walls. It uses 9 special-160 controls, gz_bigcity 83,
+and MAP06 752. These counts describe structure, not independent causal costs.
+Use native wall/flat/sprite work and matched frame timing; do not blame texture
+resolution or total sectors without a controlled ablation. Early HGC views
+face nearby structures; a later south-avenue capture shows a clear street.
+HGC forbids freelook/jump/crouch. Forced downward
+views are diagnostic. gz_bigcity's open streets still fall below 60 on the native
+counter, with increased work looking down. Neither runs Caelum's simulation.
+
+StaticCityTree moves 5,784 decorations to STAT_INFO. A default thinker census
+therefore omits them; enumerate relevant non-ticking categories separately.
+Static decoration can avoid per-tic scripts while retaining render/memory cost.
+Both examples retain real sector architecture; decorative models and a parallax
+sky camera do not prove that model houses automatically occlude or supply
+walkable collision. The miniature SmallCityModel is a monument.
+
+The supplied working door is a native PolyObject using Polyobj_DoorSwing.
+This avoids eight scripted blockers per leaf, but stock non-crushing motion
+still thrusts obstructing bodies and active DoorSwing does not refresh its wait
+on repeated use. Do not copy blocking=true if passage above the leaf matters.
+Validate finite height, paired requests, AI use, collision, rays and motion at
+production scale. The implemented replacement and its pitfalls are in CA-KP-118.
+
+Record real camera coordinates and inspect captures: early 'aerial' probes fell
+to the ground; an auxiliary camera obscured the view. Both failures are retained,
+not accepted as aerial or street performance. Native counters, callback cadence
+and ETW presentation are distinct evidence. No full-route acceptance is implied.
+
+## CA-KP-116 - Opaque closure and safe boundary reduction are different changes
+
+Status/evidence: CODE-VERIFIED GZDoom g4.14.2 occlusion; ENGINE-VERIFIED isolated
+MAP06 controls and geometry/save comparisons, #318 / 5.4.28, 2026-10-17.
+Baseline/environment: CA-KP-110. Scope: CoastalMap, compact_open_geometry,
+CaelumThermalShelter, native BSP visibility and visited-map compatibility.
+[Evidence](../assets/validation_issue318/RESULTS.md).
+
+A raised floor with open sky above and a 3D roof is not a full-height opaque
+BSP closure. The hardware renderer's [hw_CheckClip](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_fakeflat.cpp#L50)
+uses real front/back sector planes and sky conditions; it does not inspect 3D
+floors there. AddLine only adds an occluding angular range for a one-sided line
+or a qualifying closure. Blocking flags, actor walls or a transparent middle
+texture do not make hidden background free. A transparent wall must retain the
+visible background. An invisible wall that discards it creates visual omissions.
+
+The closed-house control changes 160 ceilings and two shared wall sectors.
+Its native forward bench falls from 64,565 to 1,737 wall calls and shows about
+60 FPS, but the capture reveals facades extended upward and lost overhead/roof
+space. This is a non-equivalent experiment, excluded from production. Do not
+promise the same gain while preserving every sightline and flight path. Native
+counters/callbacks are not ETW application presents; the geometry collector launch
+was canceled and produced no ETW frames. Dynamic distance-based closure also
+changes collision, shots and AI sight offscreen. Hide transitions behind real
+obstructions, use separate open/close thresholds, and account for every player;
+no 1,000-MU gameplay threshold or district split is approved by this experiment.
+
+The conservative production pass instead removes 11 duplicate untagged world
+sectors and 24,565 redundant/open boundary lines. It preserves every physical
+wall endpoint, including the endpoint-sensitive WindBlocked rule, material/light
+boundary, 3D control owner, tagged sector and map actor. Fail closed on unknown
+plane/portal/tag fields; never discard a future collision/activation flag.
+Independent oriented-grid comparison, exact physical-endpoint comparison and
+byte-identical regeneration accompany native traces at 3,006 locations. All
+35,353 native records match before/after and on each layout's saved reload.
+
+Sector/line indices still change. A script migration cannot bypass native save
+geometry rejection. Preserve the exact old furnished WAD and its hash; use
+LegacyMap06Furnished with current runtime for visited MAP06, including off-map
+hub saves. Do not reuse LegacyMap06SouthCity: it stores an older, different map.
+Twelve peaceful-city save/continuation/hub/rollback runs pass 117 new assertions
+for controller/counts and selected identities; active siege coverage is pending. This
+is old-layout continuation, not conversion to the reduced map. Regenerate dependent
+TEXTMAP fingerprints: authored cartography explicitly accepts both layouts because
+their POI coordinates/IDs are identical. Future coordinate edits require a legacy
+table or explicit eligibility change. New/unvisited
+maps use the reduction automatically, without a population-dependent runtime
+scan. The later native-door replacement has a specific author waiver for old
+saves; the exact-layout continuation above remains checkpoint evidence, not a
+new conversion promise. Modest measured gains do not satisfy MAP06 playability;
+CA318-02 is pending.
+
+## CA-KP-114 - Repeated emitter-to-world scans multiply thermal cost
+
+Status/evidence: ENGINE-VERIFIED old-runtime cost and isolated contact-only
+behavior/persistence, #318 / 5.4.28, 2026-10-17. Baseline/environment: CA-KP-110.
+Scope: CaelumDemonBreath.PaidTick/FlushHeat, CaelumElementalStatus and
+CaelumThermalRuntime. [Evidence](../assets/validation_issue318/RESULTS.md).
+
+The old breath invoked CaelumElementalStream.Transfer, scanning every actor per
+emitter and computing reception for every supported living body. Two transfers
+in a full-army sampled tic inspected 6,602 recipients each and consumed
+1,653-1,829 ms inclusive. The deeper profile records 26,408 AbsorbedAt calls
+per sampled tic; each uses 16 receiver-visibility traces (422,528 derived trace
+calls, not separately timed native calls). Only 62 Mandinga streams were active
+at the short window's end. Thousands of enemies do not need to emit simultaneously
+for this multiplicative cost to make the game appear frozen.
+
+The author's 2026-10-17 correction removes demon-breath radiation. Query local
+contact bodies through the blockmap, deduplicate them, retain the existing
+absorption calculation/budget/armor once at contact, and store the absorbed
+watts on the burning receiver. Queue real-tic joules locally and consume them
+through the normal thermal scheduler. Do not force every NPC's full thermal
+update per tic or turn health damage into heat. Unknown legacy burn power starts
+at zero until contact; already-paid untransferred legacy radiation is discarded
+without refunds or replaying applied energy. Both migrations are revisioned and
+idempotent. Fire duration remains independent of Toughness's health response.
+
+Regression: local/wall/multiple-contact budget tests, real versus logical time,
+armor retention, queue conservation, temperature increase, save/reload/hub and
+genuine previous-runtime saves; compare matched 1,000-attacker windows. The
+1,000 population is a diagnostic control, not a new production encounter total.
+The utility staff retains its separately approved radiation behavior and global
+Transfer path: it is an identified remaining scan, not an approved permanent
+performance exemption. Existing accelerated-time safety scans also remain to
+be measured and redesigned without dropping safety checks. Wider MAP06
+playability and author acceptance are pending.
+
+## CA-KP-115 - Global actor scans require a narrow, measured exception
+
+Status/evidence: AUTHOR-REQUIRED engineering policy, #318, 2026-10-17;
+ENGINE-VERIFIED motivating example: CA-KP-114. Scope: all future affected code.
+Author acceptance: policy explicitly requested; no runtime acceptance implied.
+
+Do not use traversal of every possible actor as the routine implementation of
+a per-tic, per-NPC, per-emitter or per-recipient operation. Prefer local spatial
+queries, event-maintained typed registries and one shared result for common
+questions. Measure the resulting local/registry work too: a registry is not a
+license to repeat an equally large scan for each consumer.
+
+A permitted exception must record why correctness requires it, its trigger and
+frequency, the maximum measured population, ownership/invalidation, and measured
+worst-case cost on a representative large map. Initialization, save migration
+and a shared census are possible exceptions, not automatic exemptions. Include
+offscreen living combatants in the authoritative >=500 policy; visibility does
+not authorize suspending their resources, collision or combat. Review existing
+scans in the subsystem being changed and record deferred violations explicitly.
+
+Code review must identify traversal callers and multiplicative nesting, then
+test cost and behavior at representative populations. Scan count alone is not
+an exact CPU cost: measure recipient work, native calls and frame-time stalls.
+The source of this policy is the author's instruction, recorded also in AGENTS.
+
+## CA-KP-110 - Simulation throughput does not establish playable frame presentation
+
+Status/evidence: ENGINE-VERIFIED measurement distinction; AUTHOR-REPORTED
+performance requirement, #318, 2026-10-17. Baseline 006a2fff, release 5.4.27;
+GZDoom 4.14.2, Windows 11, Vulkan, Ryzen 9 5950X / RTX 3070 Ti, 1280x720.
+Evidence: [controlled audit](../assets/validation_issue318/RESULTS.md).
+
+The peaceful 600-soldier MAP06 can maintain about 35 simulation tics/s while
+presenting only 8-12 application frames/s. Report simulation rate, application
+presentation intervals (mean/p95/p99/worst stall), and renderer/thinker costs
+separately. A 60-FPS goal implies a 16.67-ms frame interval; an average above
+60 alone does not establish smooth traversal. The author expects at least
+60 FPS in the mansion and sewers and requires performance to be considered in
+future changes. Fixed entrance tests are references, not whole-map acceptance.
+
+Use an immutable package/configuration, fixed camera and actual population;
+repeat matched controls without simultaneous engine/package builds. Follow
+CA-KP-041 for background/audio settings and CA-KP-053 for presentation and
+population-divergence controls. Disclose changed visuals/gameplay; preserve
+raw samples and failures. Native success is not author acceptance.
+
+`profilethinkers -t` is one simulation-tic snapshot. Instrumented inclusive and
+exclusive scopes include probe overhead; nested costs cannot be added twice.
+Native `bench` is a later renderer CPU snapshot, not GPU duration or a window
+mean; leave the console closed and allow at least five wall seconds to write it.
+Main/worker CPU scopes overlap. In this audit PresentMon reports `Other` /
+`Composed: Copy with GPU GDI`; its application-present cadence agrees with
+callbacks, but compositor display-change coverage varies. Neither callbacks nor
+`MsGPUTime` establish scene GPU execution or monitor refresh. Preserve that limit
+instead of presenting a false exact CPU/GPU split. See the pinned
+[native counters](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.cpp).
+
+Regression: repeat city pitch 0/75 and reference-map runs with the final build.
+Production improvement and author acceptance under #318 remain pending.
+
+## CA-KP-111 - A ground-facing view can increase large-map geometry work
+
+Status/evidence: CODE-VERIFIED engine cause and ENGINE-VERIFIED MAP06 symptom,
+#318, 2026-10-17; baseline/environment as CA-KP-110. Sources: GZDoom
+[FrustumAngle](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_drawinfo.cpp#L386),
+[BSP clipping](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp#L335)
+and the [audit](../assets/validation_issue318/RESULTS.md).
+
+At MAP06 (-2048,320), yaw 180, changing pitch from 0 to 75 degrees increases
+native wall-processing calls from 64,565 to 83,010. Removing every door leaves
+those counts unchanged. `Walls` counts `HWWall.Process` work, not unique walls
+visible in the final picture. GZDoom 4.14.2 broadens its ordinary horizontal
+frustum with tilt and removes that angular restriction above 46 degrees. The
+ordinary camera also lacks the extra vertical subsection clipping used by its
+out-of-bounds views. Seeing mainly floor therefore does not imply cheap rendering.
+Do not fix this by restricting the player's pitch or blaming the floor texture.
+The measured 45-degree view already reaches 83,010 calls: 46 degrees is a code
+branch, not a proven first performance-drop angle for every FOV/aspect/map.
+
+Opaque one-sided walls and qualifying closed sector boundaries can stop angular
+traversal; a decorative solid actor, masked middle texture or two-sided moving
+polyobject is not an equivalent occluder. Open sky and low/3D-floor structures
+can leave substantial surrounding geometry to process. A corridor's total wall
+count is a poor comparison with an open city's per-frame workload.
+
+Current MAP06 has 2,264 Line_Horizon definitions and 752 3D-floor control lines.
+The observed 2/4 portal counts are setup operations, not evidence of 2/4 complete
+city redraws: native horizon rendering emits plane strips. See
+[horizon rendering](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_portal.cpp).
+Measure portal types/depth and a matched `gl_portals false` control before
+assigning cost to them. Regression: fixed pitches 0/45/47/75, renderer counts,
+application presentation, unchanged camera/population. Geometry fixes and
+whole-route author acceptance remain pending; recheck engine-version changes.
+
+## CA-KP-112 - Large-map optimization starts with boundaries and visibility
+
+Status/evidence: CODE-VERIFIED generator structure; research/proposed remedies
+explicitly distinguished from native results, #318, 2026-10-17.
+Scope: `generate_coastal_trials.py:CoastalMap.write`, MAP06 generation and future
+large maps. Baseline 006a2fff; [audit](../assets/validation_issue318/RESULTS.md).
+
+MAP06 has 86,382 linedefs and 81,469 vertices. Its compact generator removes
+internal edges between identical cells but retains many collinear 64-MU boundary
+segments. Merge only compatible boundaries: preserve topology, sector sides,
+flags, specials/IDs, and continuous texture coordinates on both faces. Existing
+offset-zero 64-MU pieces often use textures with a 128-MU repeat; naively joining
+them changes appearance. The diagnostic merger explicitly permits that change
+and is not a production or save-compatible replacement. Longer lines also change
+the endpoints used by `CaelumThermalShelter.WindBlocked/Connected`; identical
+physical boundaries do not prove identical shelter/thermal behavior.
+
+| Technique to evaluate | Constraint and required evidence |
+| --- | --- |
+| Merge redundant collinear boundaries | Compare native wall/BSP counts and FPS; preserve texture phase, interactions and collision. |
+| Improve real occlusion | Design opaque boundaries and short sightlines where appropriate; retain approved routes, roofs and sight/combat rules. |
+| Reduce decorative sector/3D-floor detail | Replace only dispensable detail after a matched test. Sprites/models also have costs; #304's model control was slower. |
+| Separate distant districts/interiors | Physical map sections or hub maps can limit work. Portals are not free streaming; preserve saved state and obtain approval for layout/continuous-siege changes. |
+| Tune/prebuild GL nodes | Compare identical geometry and node settings. Faster loading or compressed nodes alone is not an FPS improvement. |
+| Reduce lights, shadows or resolution | Use controls to distinguish GPU/pixel cost from CPU submission. Do not remove visuals on speculation. |
+
+Primary references: pinned [map-section construction](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/renderinfo.cpp),
+[clipping](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/rendering/hwrenderer/scene/hw_bsp.cpp)
+and [ZDBSP options](https://github.com/rheit/zdbsp#node-tuning-options).
+ZDBSP exposes splitter/search tradeoffs, not a universal best preset; REJECT is
+not a renderer visibility/streaming solution. Rebuild nodes after geometry edits.
+Compact and remap referenced sidedefs: retaining sparse old indices after line
+removal can produce native "has no front sector" errors. The
+[4.14.2 UDMF loader](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/udmf.cpp#L2395)
+allocates from referenced-side count and rejects original side indices at or
+above that count.
+Changes to line/vertex indices require an explicit save/hub compatibility plan.
+Never substitute a diagnostic map for an existing campaign save. Production
+geometry optimization and route/visual/collision acceptance remain pending.
+
+## CA-KP-113 - Invisible door collision helpers can dominate peaceful simulation
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED diagnostic controls, #318,
+2026-10-17; baseline/environment as CA-KP-110.
+Scope: `CaelumSlidingDoorBlocker.Tick`, `CaelumHingedDoorLeaf.BlockerPosition`,
+`CaelumSlidingDoorLeaf`, and city placement. [Evidence](../assets/validation_issue318/RESULTS.md).
+
+The peaceful city contains 960 door leaves, each using eight solid helper actors:
+7,680 blockers, within 13,618 actors despite only 600 soldiers. Every blocker
+currently computes its location and calls `SetOrigin` each tic, even when its
+door is closed and stationary. In instrumented samples the blocker class costs
+about 6.27 ms/tic inclusive; the 600 common combat-actor ticks cost about 3.42 ms.
+These inclusive scopes contain child calls and probe overhead; do not add them
+to their child costs or label them exact uninstrumented costs. Peaceful soldiers
+do not execute the siege's normal target/pathfinding
+pulse; physiology, statistics, equipment and other shared work remain active.
+
+Removing exactly 960 leaves plus 7,680 blockers, retaining 600 soldiers, increases
+application presents from 11.35-11.82 to 19.41-19.44/s forward and from 8.44-8.68
+to 12.41-14.27/s downward. This measures the combined door system, not rendering
+alone. It remains far below comfortable performance.
+
+Proposed first step: eliminate unchanged-position relinking and update helpers
+when their door moves, retaining closed-door collision. Native sector doors and
+PolyObject sliding/swing doors are alternative representations, not guaranteed
+faster replacements; they require map integration and anti-crush/use/save tests.
+See native [sector-door implementation](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_doors.cpp)
+and [PolyObject movement](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/po_man.cpp).
+Do not simply delete production blockers or suspend living combatants. Regression:
+matched idle/moving-door timing plus use, reopening, obstruction, collision and
+save/hub checks. Production fix/author acceptance remain pending.
 
 ## CA-KP-109 - Convert native chase steps before assigning continuous velocity
 
@@ -1525,13 +2066,13 @@ background unpaused. Scope: `CaelumThermalWorld` and shelter/body sampling.
 
 The initial per-body roof query constructed a filtered `ThinkerIterator` for
 vehicle ranches. The native search still walked the global thinker population;
-doing this for thousands of bodies reduced tics 105–700 to 9.05 tics/s.
+doing this for thousands of bodies reduced tics 105â€“700 to 9.05 tics/s.
 Caching the small source/ranch lists once per real second restored 28.07.
 Reusing the NPC's due time before climate/attribute lookups, caching mass/area,
 and removing repeated health recomputation restored 32.76 in that intermediate
 build. Matched intermediate logs retain identical exposure aggregates and
 populations: this saving did not exempt offscreen actors or drop elapsed time.
-Final arrival samples reach 33.62–34.15, versus 34.48–34.95 in the accepted
+Final arrival samples reach 33.62â€“34.15, versus 34.48â€“34.95 in the accepted
 baseline; later motion/load corrections slightly change final heat aggregates.
 
 Regression check: deterministic full-roster performance fixture plus the seeded
@@ -1575,15 +2116,15 @@ First recorded / last checked: 2026-10-07. Issue #128 / 5.0.6.
 Reusing candidate lists removes repeated eligibility enumeration. A separate
 eight-tic background group schedule distributes perception phases but also
 queries groups without an active member request. In two normal-combat runs,
-the staggered variant's congestion p95 callback gap is 341–413 ms versus
-267–268 ms for shared perception on demand. Late throughput differs by about
+the staggered variant's congestion p95 callback gap is 341â€“413 ms versus
+267â€“268 ms for shared perception on demand. Late throughput differs by about
 one percent; this does not justify shipping the worse congestion tail.
 
 Keep the shared decision and candidate cache on demand. Candidate sharing
 alone has no resolved independent throughput gain in these repetitions;
 report reduced enumeration separately from speed. Exact cannon pruning adds
-a modest improvement: congestion callbacks rise from 7.55–7.59/s to
-8.17–8.20/s, with p95 gaps falling from 267–268 to 245–265 ms in the isolated
+a modest improvement: congestion callbacks rise from 7.55â€“7.59/s to
+8.17â€“8.20/s, with p95 gaps falling from 267â€“268 to 245â€“265 ms in the isolated
 pairs. Desktop load is not exclusive and these are callback observations,
 not GPU/presentation timings. The 35-tic/30-FPS goal remains unmet.
 The shared-candidate counter builds 700 lists versus 6,412; both perform
@@ -1606,7 +2147,7 @@ revival and shootability changes without depending on camera visibility or
 incomplete lifecycle callbacks. Keep the census stable for the tic and use
 one shared threshold source. Native checks cover 499/500/501, death/removal,
 revival and both threshold directions. Cold load and hub travel produce
-500 → 1 → 500 living combatants; the old full-army save upgrades without
+500 â†’ 1 â†’ 500 living combatants; the old full-army save upgrades without
 redeployment and the untouched original still loads in the old package.
 
 The blockmap fallback must also cover a NOBLOCKMAP guard registered after the
@@ -1655,17 +2196,17 @@ Baseline: `bc086979`, GZDoom 4.14.2, Windows 11/Vulkan, full MAP06 army.
 
 The grouped march makes repeated negative cannon searches expensive.
 Caching only failed searches for the existing eight-tic target-update period
-raises its repeated whole-window throughput from 13.115–13.330 to
-32.644–32.825 tics/s. Adding spatial guard queries raises it to 34.865–34.989.
+raises its repeated whole-window throughput from 13.115â€“13.330 to
+32.644â€“32.825 tics/s. Adding spatial guard queries raises it to 34.865â€“34.989.
 These comparisons retain the same sampled scene rows; their final movement
 success/error observations also match. This is a positive interaction result,
 but the shared march still replaces Mandinga combat and cannot preserve rigid
 alignment when native collision blocks individual members.
 
-The final march combination yields only 20.243–22.818 overlay callbacks/s,
-with p95 gaps of 128.496–209.216 ms. Normal combat with shared perception,
+The final march combination yields only 20.243â€“22.818 overlay callbacks/s,
+with p95 gaps of 128.496â€“209.216 ms. Normal combat with shared perception,
 spatial guards and cannon retry improves late simulation from 3.057 to
-23.686–25.209 tics/s, yet has 835.627–902.145 ms p95 callback gaps. Neither
+23.686â€“25.209 tics/s, yet has 835.627â€“902.145 ms p95 callback gaps. Neither
 meets the author's stable-35-tics/s, at-least-30-FPS target. Cannon retry alone
 has no resolved benefit in the normal common window. Do not add independent
 percentage gains, assume a saved AI query removes per-body collision/Tick cost,
@@ -1713,15 +2254,15 @@ Baseline: `bc086979`, GZDoom 4.14.2, Windows 11/Vulkan, seed 116, full MAP06 arm
 Command groups of 100 already exist, but `CaelumPortSiege.AttackerTarget` still
 does repeated per-member enumeration and sight checks. Sharing one leader's
 query per tic, while retaining normal placement, individual attacks and native
-movement, raises throughput from 9.373–9.575 to 30.130–30.415 tics/s over
-tics 35–2100. Target-selection exclusive cost drops to 0.661 ms/tic in shared-a;
+movement, raises throughput from 9.373â€“9.575 to 30.130â€“30.415 tics/s over
+tics 35â€“2100. Target-selection exclusive cost drops to 0.661 ms/tic in shared-a;
 the ordinary later target scope reaches 303.683 ms/tic including its sight calls.
 This is positive evidence for reducing repeated perception, not a shipping fix:
 followers inherit a different position's visibility and nearest target.
 
 The aligned march prototype confirms the interaction risk. Sixty shared plans
-reach nominal 35 tics/s early versus 18.610–18.919 with 6,000 independent plans.
-Across tics 35–1715 it is instead 27.2–27.3% slower: its changed trajectories
+reach nominal 35 tics/s early versus 18.610â€“18.919 with 6,000 independent plans.
+Across tics 35â€“1715 it is instead 27.2â€“27.3% slower: its changed trajectories
 provoke expensive repeated cannon searches. Native movement still runs for each
 body, blocked moves break alignment, and the prototype replaces Mandinga attacks.
 Neither percentage is an additive causal share of the original battle.
@@ -1975,7 +2516,7 @@ before click/drag verification. CA-43716-UI-03 passed author acceptance on 2026-
 inspect actual bitmap dimensions/offset, then test menu clicks and slider
 dragging at the intended DPI. Evidence: assets/validation_43716/RESULTS.json.
 
-## CA-KP-033 — Refresh dialogue text after successful-open rewards
+## CA-KP-033 â€” Refresh dialogue text after successful-open rewards
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
 First recorded / last checked: 2026-10-04. Issues #97 / 4.37.14 and #96 / 4.37.19.
@@ -2010,7 +2551,7 @@ ENGINE-VERIFIED in GZDoom 4.14.2, Windows 11/Vulkan; all #96 author checks
 passed 2026-10-04. Regression: save on an old page, load the new build and inspect
 both the restored text and unchanged choice, rather than only its node number.
 
-## CA-KP-032 — Test ability input through the native ready weapon
+## CA-KP-032 â€” Test ability input through the native ready weapon
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
 First recorded / last checked: 2026-10-04.
@@ -2033,7 +2574,7 @@ The Journal test invokes its UI helper and real network event; it does not
 claim physical keyboard/controller testing. Author acceptance remains pending
 under CA-43712-TAROT-02. This lesson does not expand other ability contracts.
 
-## CA-KP-031 — Clamp projectile travel before native collision
+## CA-KP-031 â€” Clamp projectile travel before native collision
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED on GZDoom 4.14.2.
 First recorded / last checked: 2026-10-03. Issue #77 / 4.37.9, from e08487c9.
@@ -2051,7 +2592,7 @@ Actual player firing assigns catalogue/ability limits, and midflight save/reload
 preserves the original total budget. See south/COMBAT_RECOVERY.json under
 assets/validation_4379. This evidence does not establish full-battle performance.
 
-## CA-KP-030 — Join per-instance evidence by identity, not array position
+## CA-KP-030 â€” Join per-instance evidence by identity, not array position
 
 Status/evidence: CODE-VERIFIED report defect; ENGINE-VERIFIED unchanged budgets.
 First recorded / last checked: 2026-10-02. Issue #75 / 4.37.8, baseline a99f266e.
@@ -2069,7 +2610,7 @@ with unchanged totals; MUTATIONS.json records the negative case. Native
 completion confirms 325 outputs with fixture-provided crafting prerequisites
 and skipped elapsed time, separate from ordinary campaign acceptance.
 
-## CA-KP-029 — Lowering a base sector changes upper map-thing spawn heights
+## CA-KP-029 â€” Lowering a base sector changes upper map-thing spawn heights
 
 Status/evidence: CODE-VERIFIED spawn adjustment; ENGINE-VERIFIED layered traversal.
 First recorded / last checked: 2026-10-02. Issue: #74 / 4.37.7, implementation
@@ -2096,7 +2637,7 @@ not individually inspect every upper actor's rendering; that position comparison
 is static. The author accepted CA-MAP02-PIT-RETURN-01 on 2026-10-02
 without reported exceptions; see HISTORY for the separate acceptance record.
 
-## CA-KP-028 — Temporal forecasts must preserve within-tic ordering
+## CA-KP-028 â€” Temporal forecasts must preserve within-tic ordering
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, issue #64, 4.37.4.
 First recorded / last checked: 2026-10-02 / 2026-10-02.
@@ -2118,7 +2659,7 @@ also cover actual servings and productive work. Do not replace chronological
 substeps with a final-date assignment or apply forecast inventory as a reward.
 Author acceptance remains separate in pending_test.txt.
 
-## CA-KP-027 — Terrain relief can invalidate absolute-height relocation filters
+## CA-KP-027 â€” Terrain relief can invalidate absolute-height relocation filters
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
@@ -2148,7 +2689,7 @@ Evidence: [station repair](../assets/validation_4370/STATIONS.json).
 Author acceptance: CA-4370-STATIONS-01 confirmed 2026-10-01. Already prepared older worlds
 are outside this fix under the author's explicit old-save waiver.
 
-## CA-KP-026 — Detached control rooms must remain outside playable geometry
+## CA-KP-026 â€” Detached control rooms must remain outside playable geometry
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
@@ -2179,7 +2720,7 @@ The black region is absent in the final views. This does not establish the
 cause of the earlier oversized-floor defect in CA-KP-024 or cover every camera.
 Author accepted this repair as CA-4370-EXTERIOR-01 on 2026-10-01.
 
-## CA-KP-025 — Normalize all four coefficients of generated UDMF planes
+## CA-KP-025 â€” Normalize all four coefficients of generated UDMF planes
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
@@ -2204,7 +2745,7 @@ Evidence: assets/validation_4370/CAVE.json and its retained diagnostic/final
 logs. Original reports and failed local trials remain available separately.
 New cave author acceptance CA-4370-CAVE-01 was confirmed on 2026-10-01.
 
-## CA-KP-024 — A valid oversized floor can disappear in the renderer
+## CA-KP-024 â€” A valid oversized floor can disappear in the renderer
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
@@ -2237,7 +2778,7 @@ assets/map01_mansion/EXTERIOR.json. Original CA-4370-MANSION-01 is author-accept
 CA-4370-CAVE-01 was subsequently accepted on 2026-10-01. The later distinct
 auxiliary-room defect and its pending repair are covered by CA-KP-026.
 
-## CA-KP-023 — OBJ height and map headroom use different vertical scales
+## CA-KP-023 â€” OBJ height and map headroom use different vertical scales
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / 4.37.0.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
@@ -2262,7 +2803,7 @@ native closed/open views from both sides. Reference: GZDoom g4.14.2
 model transform around lines 143-192. This evidence establishes this map/model
 combination, not a universal scale for sprites, voxels or other map ratios.
 
-## CA-KP-022 — A magic-resource wait can strand an otherwise mobile army
+## CA-KP-022 â€” A magic-resource wait can strand an otherwise mobile army
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED.
 First recorded / last checked: 2026-09-30 / 2026-09-30.
@@ -2287,7 +2828,7 @@ Evidence: assets/validation_43627/relief, including native before/after movement
 full-roster operation and saved-wait continuation. The author accepted the final
 resource trial and all #16 tests on 2026-09-30; see HISTORY for the test IDs.
 
-## CA-KP-021 — Cannon target sight must originate at the raised barrel
+## CA-KP-021 â€” Cannon target sight must originate at the raised barrel
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #16 / 4.36.27.
 First recorded / last checked: 2026-09-30 / 2026-09-30.
@@ -2312,7 +2853,7 @@ The final run records eighteen shots/contacts by tic 385. This verifies the
 tested platform geometry and native selector, not unrestricted ballistic
 accuracy. Separate author acceptance of the battle was confirmed on 2026-09-30.
 
-## CA-KP-020 — Repeated OBJ material declarations create unsafe surface counts
+## CA-KP-020 â€” Repeated OBJ material declarations create unsafe surface counts
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.
 First recorded / last checked: 2026-09-29 / 2026-09-29.
@@ -2342,7 +2883,7 @@ and [surface limit](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/mode
 The author still needs to confirm ordinary play and new-character startup in
 CA-43625-MANSION-01.
 
-## CA-KP-019 — A 3D wall inherits its control texture, not its visible face
+## CA-KP-019 â€” A 3D wall inherits its control texture, not its visible face
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.
 First recorded / last checked: 2026-09-28 / 2026-09-28.
@@ -2383,7 +2924,7 @@ For stacked-actor traversal probes, CANPASS is needed to match the player's
 vertical actor separation. Evidence: assets/validation_43625/followup; generic
 body probes and direct Use calls are not full companion/Bull play acceptance.
 
-## CA-KP-015 — Git checkout can invalidate raw document hashes
+## CA-KP-015 â€” Git checkout can invalidate raw document hashes
 
 Status/evidence: RESOLVED-VERIFIED tooling contract, #21 /4.36.19.
 Observation: after merge 8e8b5d3f and Windows checkout, validation reported stale
@@ -2404,7 +2945,7 @@ archive metadata and hashes; two subsequent archives matched byte for byte.
 See [4.36.28 evidence](../assets/validation_43628/RESULTS.json). This is static
 packaging evidence; export author acceptance remains pending.
 
-## CA-KP-016 — Register dynamically selected Arcana front sprites
+## CA-KP-016 â€” Register dynamically selected Arcana front sprites
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction.
 First recorded / last checked: 2026-09-27 / 2026-09-27.
@@ -2447,7 +2988,7 @@ nonnegative and checks the selected image, then captures all five ground marks.
 The earlier flat-flag/scale assertions did not establish image correctness.
 See assets/validation_5421/RESULTS.md; CA252-01 was accepted on 2026-10-15.
 
-## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
+## CA-KP-017 â€” Unregistered NPC secondary-wind sprite freezes rendering
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.
 First recorded / last checked: 2026-09-27 / 2026-09-27.
@@ -2470,7 +3011,7 @@ This is related to CA-KP-016 but has a distinct measured invalid-index exception
 Author rescue/rats retest passed 2026-09-27 (CA-43622-NARRATIVE-01). See
 [evidence](../assets/validation_43622/wind_render_fix.json).
 
-## CA-KP-018 — USDF page insertion shifts saved conversations
+## CA-KP-018 â€” USDF page insertion shifts saved conversations
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.
 First recorded / last checked: 2026-09-27 / 2026-09-27.
@@ -2510,7 +3051,7 @@ Evidence labels:
 CA-KP-003 records the focused 4.36.2 native runtime verification. CA-KP-001
 is a resolved tooling contract. Author acceptance remains explicitly separate.
 
-## CA-KP-001 — Adding a guide to docs breaks the current exact-file check
+## CA-KP-001 â€” Adding a guide to docs breaks the current exact-file check
 
 Status/evidence: RESOLVED-VERIFIED tooling contract (issue #22, patch 4.36.1b).
 
@@ -2524,7 +3065,7 @@ Verification: before the patch, a disposable copy with the two guides failed the
 
 Author acceptance: recorded separately for the 4.36.1b documentation patch; this entry describes the tooling fix, not a runtime defect.
 
-## CA-KP-002 — Default equipment size is not the character's raw body tier
+## CA-KP-002 â€” Default equipment size is not the character's raw body tier
 
 Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2. Scope: shared recipient-size policy, native equipment acquisition and legacy MAP02 chest migration; author acceptance: CA-4364-T1-LOOT-01 passed on 2026-09-23.
 
@@ -2546,7 +3087,7 @@ never assign identity or change size, wear, loot counts or stock state.
 
 Verification: 232 native sizing checks passed across all seven body tiers; actual two-client small/large collection and stale confirmation passed. Fresh and baseline-save chest probes cover rejected legacy pickups, preservation of acquired T3 and looted holes, and reversible/idempotent migration. See assets/validation_4364/RESULTS.json for persistence and presentation evidence. These isolated checks do not constitute author acceptance.
 
-## CA-KP-003 — Nested bow crop composition stalls on first presentation
+## CA-KP-003 â€” Nested bow crop composition stalls on first presentation
 
 Status/evidence: RESOLVED-VERIFIED in 4.36.2 (#8, fix commit `abdae0d`, PR #24).
 Author acceptance: CA-4362-BOW-EMPTY-01 passed, explicitly confirmed on
@@ -2560,7 +3101,7 @@ and 5,210.706 ms when its loaded pose was first shown. Repeated equips were
 responsive; the equip callback itself returned in 0.055 ms. The original
 author's exact bow/tier remains unknown.
 
-Cause: TEXTURES nested 167–173 row crops per tier through a full recolored
+Cause: TEXTURES nested 167â€“173 row crops per tier through a full recolored
 sheet. This is first-use resource work, not evidence of an infinite state loop.
 The generator now writes six deterministic crop-only RGBA caches, retaining
 native palette operations and the existing sprite declarations. No gameplay,
@@ -2576,7 +3117,7 @@ reload/fire, arrow overlay visibility, aim and switch-away/back. Callback
 automation does not replace physical-binding/normal-route author acceptance
 or establish results on untested renderers.
 
-## CA-KP-004 — Flail rotation must be judged around the rendered grip
+## CA-KP-004 â€” Flail rotation must be judged around the rendered grip
 
 Status/evidence: ENGINE-VERIFIED transform correction in 4.36.3 (#9).
 Author acceptance: CA-4360I-VISUAL-01 (origin 4.36.0i) passed after the
@@ -2598,7 +3139,7 @@ angle. Keep layer 46 behind handle 50 and hand 52. A plausible numeric sign or
 a rotated screenshot is not proof of native screen-space direction.
 
 Verification: GZDoom g4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / development
-Doom II, fresh isolated MAP03 games. T1–T3 native before/after rest captures,
+Doom II, fresh isolated MAP03 games. T1â€“T3 native before/after rest captures,
 grip/joint checks, 45-degree attack increments through 360 degrees, return and
 holster/re-equip passed with zero failures. The chain's 17.424612-degree native
 rest offset stayed unchanged. [Evidence and conditions](../assets/validation_4363/RESULTS.json)
@@ -2606,7 +3147,7 @@ include filtered native logs; capture-only HUD suppression reveals the layers.
 Automated native callbacks do not replace final author aesthetic approval or
 prove untested renderers. No save field/state schema or combat timing changes.
 
-## CA-KP-005 — A green validator or a built PK3 is not a gameplay pass
+## CA-KP-005 â€” A green validator or a built PK3 is not a gameplay pass
 
 Status/evidence: CODE-VERIFIED tool scope. Baseline validate_project.py and build_dev.ps1.
 
@@ -2616,7 +3157,7 @@ Prevention: report static validation, packaging, engine load, scenario behavior 
 
 Resolution: this is a workflow safeguard, not a bug awaiting a code fix. Each PR supplies the levels relevant to its change.
 
-## CA-KP-006 — Planned state can drift between issues and canonical documents
+## CA-KP-006 â€” Planned state can drift between issues and canonical documents
 
 Status/evidence: CODE/DOCUMENT-VERIFIED discrepancy plus explicit author clarification.
 
@@ -2626,7 +3167,7 @@ Prevention: compare the exact commit and dirty-tree status, distinguish author-a
 
 Acceptance: issue #22 reconciled the then-confirmed T1/recipient-size rule. The later #10/#14 author decision supersedes that reward formula with fixed 25 gold plus 10 own-faction reputation, implemented in future #14. Issue #10 reconciles current references and preserves the displaced formula in HISTORY. Historical fixed-M and price-average discussions remain historical.
 
-## CA-KP-007 — New serialized event handlers are absent from older saves
+## CA-KP-007 â€” New serialized event handlers are absent from older saves
 
 Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2.
 
@@ -2669,7 +3210,7 @@ cases in assets/validation_5213. A null retained UI reference after load is not 
 failed invalidation. Never infer successful disposal solely from a zero failure
 counter when a fixture printed a separate FAIL line.
 
-## CA-KP-008 — Changed map geometry prevents old saves from loading
+## CA-KP-008 â€” Changed map geometry prevents old saves from loading
 
 Status/evidence: ENGINE-VERIFIED in 4.36.5 (#11), GZDoom g4.14.2.
 Baseline: integrated 4.36.4, `3f3fa0c`; implementation evidence uses the #11
@@ -2704,7 +3245,7 @@ Loading with its exact archived WAD passed and kept the current room catalogue
 disabled. Evidence: assets/validation_537/legacy-reload-01.txt (rejection) and
 legacy-reload-02.txt (matching geometry); this patch changes no production WAD.
 
-## CA-KP-009 — MODELDEF slots overlay state meshes
+## CA-KP-009 â€” MODELDEF slots overlay state meshes
 
 Status/evidence: ENGINE-VERIFIED, 2026-09-26; #18 follow-up, 4.36.14a.
 Affected baseline: `95d8f111` MODELDEF bindings; reproduced with remeshed
@@ -2734,7 +3275,7 @@ runs. Render affected states in the target engine after binding changes.
 Author acceptance: `CA-43614A-SIEGE-ART-01` passed on 2026-09-26. This verifies visual
 previews, not future breakable-gate physics or historical machinery dimensions.
 
-## CA-KP-010 — Damage proxies must preserve native projectile damage callbacks
+## CA-KP-010 â€” Damage proxies must preserve native projectile damage callbacks
 
 Status/evidence: RESOLVED-VERIFIED in the #19 working tree (runtime hashes in evidence).
 First recorded / last checked: 2026-09-26 / 2026-09-26.
@@ -2762,7 +3303,7 @@ Regression: fire a fixed-DoSpecialDamage projectile at a multi-block gate and
 check one correctly reduced health loss. Recheck callback order if the target
 engine changes. Author acceptance: CA-43611-GATES-01 passed on 2026-09-26.
 
-## CA-KP-011 — A solid damageable actor is not automatically an Impact Physics body
+## CA-KP-011 â€” A solid damageable actor is not automatically an Impact Physics body
 
 Status/evidence: RESOLVED-VERIFIED in the #19 correction; author-accepted on 2026-09-26.
 First recorded / last checked: 2026-09-26 / 2026-09-26.
@@ -2789,7 +3330,7 @@ CA-43611-GATES-01 fully passed on 2026-09-26, including the collision retest. Te
 speed/health reserves are not gameplay tuning. Low-energy collisions can still
 correctly cause zero damage under the existing formulas.
 
-## CA-KP-012 — A composite mover must query collision with a solid active proxy
+## CA-KP-012 â€” A composite mover must query collision with a solid active proxy
 
 Status/evidence: ENGINE-VERIFIED. Recorded/checked 2026-09-26, issue #20,
 4.36.16 worktree based on 40ca8919. Environment: Windows GZDoom 4.14.2,
@@ -2814,7 +3355,7 @@ also reject floor-height changes rather than floating over a step or ditch.
 This does not establish support for ramps or rotating sectors. Author visual
 acceptance CA-43612-RAM-01 remains pending.
 
-## CA-KP-013 — Old map saves can retain the pre-feature EventHandler list
+## CA-KP-013 â€” Old map saves can retain the pre-feature EventHandler list
 
 Status/evidence: ENGINE-VERIFIED. Recorded/checked 2026-09-26, issue #20,
 4.36.16 worktree based on 40ca8919. Windows GZDoom 4.14.2, existing 4.36.15
@@ -2840,7 +3381,7 @@ Evidence: before/after legacy runs and source hashes in
 scoped to the tested EventHandler/save lifecycle, not every GZDoom callback.
 The author confirmed CA-43612-RAM-01 passed on 2026-09-26 (HISTORY).
 
-## CA-KP-014 — FastProjectile collision does not integrate gravity
+## CA-KP-014 â€” FastProjectile collision does not integrate gravity
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
 First recorded / last checked: 2026-09-26 / 2026-09-26.
@@ -2857,17 +3398,17 @@ native freeze. Calendar acceleration is unrelated. Its 400 m/s converts to
 
 Native evidence: [#21 manifest](../assets/validation_43617/manifest.json).
 In the isolated default-gravity map, a 10-tic unobstructed flight matched
-z=z0+v0z*n-g*n*(n+1)/2 and vz=v0z-g*n; native g was 1 MU/tic². Thin wall,
+z=z0+v0z*n-g*n*(n+1)/2 and vz=v0z-g*n; native g was 1 MU/ticÂ². Thin wall,
 blocked muzzle, floor/ceiling and actor contacts were tested separately. A
 subclass that adds gravity should not also run ordinary Actor movement, which
 would advance the projectile twice. Default engine gravity here corresponds
-to 38.28125 m/s² at project units, not Earth's 9.80665 m/s².
+to 38.28125 m/sÂ² at project units, not Earth's 9.80665 m/sÂ².
 
 This finding is scoped to GZDoom 4.14.2 FastProjectile, not all actors. The
 game's accepted general collision damage/crushing formulas remain unchanged.
 Author acceptance CA-43613-CATAPULT-01 is pending.
 
-## CA-KP-015 — Input and multi-frame attacks need one absolute clock
+## CA-KP-015 â€” Input and multi-frame attacks need one absolute clock
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
 First recorded / last checked: 2026-09-30 / 2026-09-30.
@@ -2905,7 +3446,7 @@ These isolated engine checks do not constitute author gameplay acceptance.
 6. Record failed approaches only when they explain a trap or prevent a likely repeat. Do not paste entire conversations, speculative reasoning or raw session logs.
 7. Link to durable repository/PR artifacts. Temporary sandbox paths and expiring downloads are not permanent evidence. Never commit credentials or private installation paths.
 8. Recheck an entry when its owning code or engine version changes. Mark obsolete advice SUPERSEDED with a replacement reference; preserve unique history in HISTORY.
-9. Keep entries concise (normally 150–300 words excluding a necessary small reproducer). Link to canonical formulas rather than copying large tables.
+9. Keep entries concise (normally 150â€“300 words excluding a necessary small reproducer). Link to canonical formulas rather than copying large tables.
 10. Review only the touched entries and connected rules during a patch. Do not add a full historical audit or additional engine run solely to expand this register.
 
 ## CA-KP-016 - Dormant map actors must not use STAT_STATIC
@@ -2941,7 +3482,7 @@ Limitations: dormant corpses retain memory; this is not actor destruction.
 ## Copyable entry template
 
 ```text
-## CA-KP-NNN — Concrete symptom or constraint
+## CA-KP-NNN â€” Concrete symptom or constraint
 Status/evidence: AUTHOR-REPORTED | CODE-VERIFIED | ENGINE-VERIFIED |
                  RESOLVED-VERIFIED | HYPOTHESIS | SUPERSEDED
 First recorded / last checked: YYYY-MM-DD / YYYY-MM-DD

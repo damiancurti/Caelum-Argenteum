@@ -5,6 +5,8 @@ class CaelumCityWorld : Object play
     static bool Prepare()
     {
         if(!CaelumCityData.Enabled())return true;
+        if(CaelumHouseHub.IsCity())
+            return CaelumHouseResidents.Get(true)!=null && CaelumCityMerchant.Prepare();
         bool ready=true;
         for(int i=0;i<CaelumCityData.HOUSE_COUNT;i++)
         {
@@ -17,6 +19,7 @@ class CaelumCityWorld : Object play
 
     static bool Peaceful()
     {
+        if(CaelumHouseHubData.HouseForMap(level.MapName)>=0)return !SiegeDue();
         if(level.MapName!="MAP06" || !CaelumCityData.Enabled())return false;
         let port=CaelumPortSiege.Get();
         return port!=null && !port.SiegeStarted && !port.Victory && !SiegeDue();

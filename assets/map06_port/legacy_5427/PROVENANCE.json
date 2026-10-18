@@ -1,0 +1,9 @@
+{
+  "issue": 318,
+  "origin_release": "5.4.27",
+  "origin_commit": "006a2fff1f2505df8f4c26e123557ad885162a6e",
+  "purpose": "Exact owned furnished MAP06 before open-boundary simplification. Continue visited-map and hub saves with current runtime and this geometry; this is not conversion to the compact layout. Retain original package/save pair for rollback. No layout or population revision changes.",
+  "files": {
+    "MAP06.wad": "8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c"
+  }
+}

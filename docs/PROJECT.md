@@ -1,6 +1,88 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)
+
+Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
+
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+All 24 current matched measurement windows complete with ETW events bracketing their trimmed QPC intervals. The same observer is used across variants; full poses/options/populations are verified. Three successful native runs log 871 passing assertions. Two earlier fixture failures are retained and qualified. Deterministic map generation and exact package comparisons pass: only MAP06 and its cartography checksum differ from the corresponding house baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+The low sky limits flight and removes standing room on closed house roofs. Streets remain thermally outdoors; shops retain their real roof and windows. These are diagnostic geometry choices pending author review (CA318-05), not adopted production restrictions. No new army budget or playable full-siege guarantee follows.
+
+Current follow-up: the author-approved house-hub prototype preserves all 160
+exterior footprints/roof heights and the surrounding streets. Each front door
+enters its own five-sector interior. Residents preserve individual bodies and
+inventory across travel and emerge through their own doors at siege deployment.
+MAP06 is reduced to 765 sectors / 42,945 lines; shops receive six trade signs.
+Native portal, state, save/reload, status/death/blocked placement and 600-defender
+deployment checks pass. Matched FPS measurements include an author-requested
+diagnostic with the same interiors and house walls extended to the sky ceiling.
+All 28 valid windows have ETW data. Peaceful forward/ground means are
+36.62-37.03 / 28.54-29.76 FPS with ordinary shells and 402.03-405.19 /
+165.66-166.03 with opaque closure. The 1,000-attacker central view improves
+from 6.81-8.33 to 27.97-29.88 FPS; the front-line view does not improve
+(24.76-24.89 versus 22.24-22.68). At 6,000 attackers both remain near 0.7 FPS
+and 12 tics/s. CAH158 exceeds 1,000 FPS with three residents; this is not a
+whole-city guarantee. The 13 functional runs and exact 16,370-member normal/
+native/source check pass. Tall walls remain diagnostic. Normal attacker
+deployment and author acceptance remain open.
+
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
+
+
+The author reports an unresponsive November siege transition, a slow peaceful
+600-soldier city, and further slowdown when looking down after one or two streets.
+The audit reproduces poor city frame presentation independently of demons:
+35 simulation tics/s can coexist with 8-12 application presents/s. Repeated
+door removal improves presentation without making the city comfortably playable.
+Native renderer counts and pinned GZDoom 4.14.2 source explain additional
+ground-facing geometry work. Matched mansion/sewer entrance references exceed
+60 application presents/s on the recorded PC; they are not full-route acceptance.
+
+Evidence and qualifications: [validation_issue318](../assets/validation_issue318/RESULTS.md).
+The author requires performance to be treated as an ongoing engineering priority;
+KNOWN_PITFALLS records measured causes, candidate large-map techniques and test
+requirements. The author additionally removed demon-breath radiation and chose
+to retain absorbed contact power while a victim burns. This production change
+uses local contact queries and normal thermal scheduling, with revisioned,
+idempotent migration. Routine whole-world actor scans require a narrow measured
+exception. A 1,000-attacker benchmark does not alter the normal encounter total.
+#318 remains open: normal deployment still creates the full army together;
+further geometry work, sustained-combat fluency and acceptance remain.
+The authorized conservative map pass removes 11 redundant sectors and 24,565
+open/redundant boundaries without changing physical walls, materials or actors.
+Native probes at 3,006 positions match before/after and reload. Existing furnished
+MAP06 campaigns had an exact `LegacyMap06Furnished` continuation checkpoint.
+The author subsequently authorized native city doors and waived previous-save
+compatibility. MAP06 now retains 960 visual leaves with finite native collision,
+removing 7,680 scripted blockers; a local active-pair controller prevents thrust
+and preserves normal paired operation. Other maps keep their accepted doors.
+Fresh gameplay, current saves/hub return and measured performance are the gates;
+the exact old map and recovery option remain available. CA-KP-118 records the
+native collision, visual-physics and activation lessons.
+The much faster closed-house experiment changes upper space and stays diagnostic.
+Prior #304/#305 acceptance does not resolve this defect.
 
 ## 5.4.27 - Prisoner escort speed (#307)
 

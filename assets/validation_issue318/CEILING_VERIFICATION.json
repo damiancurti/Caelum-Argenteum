@@ -1,0 +1,795 @@
+{
+  "directory": "issue318-ceilings-01",
+  "runs": [
+    {
+      "variant": "opaque-1000",
+      "label": "siege1000-0-1",
+      "etw_intervals": 152,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9042 soldiers=600 demons=1000 blockers=0 doors=0 missiles=0 corpses=0 flames=108",
+        "CA318 CENSUS end tic=1820 actors=9027 soldiers=600 demons=970 blockers=0 doors=0 missiles=0 corpses=30 flames=97"
+      ],
+      "fps": 5.053264180432542,
+      "tics_per_second": 34.320055449682265,
+      "p95_frame_ms": 496.56877,
+      "p99_frame_ms": 543.7027690000002
+    },
+    {
+      "variant": "opaque-1000",
+      "label": "siege1000-0-4",
+      "etw_intervals": 116,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9042 soldiers=600 demons=1000 blockers=0 doors=0 missiles=0 corpses=0 flames=108",
+        "CA318 CENSUS end tic=1820 actors=9027 soldiers=600 demons=970 blockers=0 doors=0 missiles=0 corpses=30 flames=97"
+      ],
+      "fps": 3.8499382614275546,
+      "tics_per_second": 33.871475339689766,
+      "p95_frame_ms": 535.2783750000001,
+      "p99_frame_ms": 597.2397699999999
+    },
+    {
+      "variant": "opaque-1000",
+      "label": "siege1000-4-1",
+      "etw_intervals": 134,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9044 soldiers=600 demons=1000 blockers=0 doors=0 missiles=1 corpses=0 flames=110",
+        "CA318 CENSUS end tic=1820 actors=9043 soldiers=600 demons=973 blockers=0 doors=0 missiles=0 corpses=27 flames=112"
+      ],
+      "fps": 4.440357342197471,
+      "tics_per_second": 33.80035915268266,
+      "p95_frame_ms": 541.16804,
+      "p99_frame_ms": 559.8188909999999
+    },
+    {
+      "variant": "opaque-1000",
+      "label": "siege1000-4-4",
+      "etw_intervals": 116,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9044 soldiers=600 demons=1000 blockers=0 doors=0 missiles=1 corpses=0 flames=110",
+        "CA318 CENSUS end tic=1820 actors=9043 soldiers=600 demons=973 blockers=0 doors=0 missiles=0 corpses=27 flames=112"
+      ],
+      "fps": 3.723593697929374,
+      "tics_per_second": 33.0912790472753,
+      "p95_frame_ms": 561.604825,
+      "p99_frame_ms": 594.441365
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-0-0-1",
+      "etw_intervals": 2628,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 284.0789477880081,
+      "tics_per_second": 35.00644244282479,
+      "p95_frame_ms": 5.177465,
+      "p99_frame_ms": 6.304101
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-0-0-4",
+      "etw_intervals": 2542,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 280.7930071715992,
+      "tics_per_second": 35.00813315387708,
+      "p95_frame_ms": 5.216564999999999,
+      "p99_frame_ms": 6.550032000000001
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-0-75-1",
+      "etw_intervals": 957,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 103.46601752714336,
+      "tics_per_second": 34.991874092479954,
+      "p95_frame_ms": 11.57916,
+      "p99_frame_ms": 12.510671999999987
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-0-75-4",
+      "etw_intervals": 1063,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 114.88605529704692,
+      "tics_per_second": 34.99474892730787,
+      "p95_frame_ms": 10.679939999999998,
+      "p99_frame_ms": 12.007611999999986
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-5-0-1",
+      "etw_intervals": 2488,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 268.9346010933489,
+      "tics_per_second": 34.99125625819373,
+      "p95_frame_ms": 5.483155,
+      "p99_frame_ms": 6.4442450000000004
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-5-0-4",
+      "etw_intervals": 2472,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 272.95744354948556,
+      "tics_per_second": 34.97748274293419,
+      "p95_frame_ms": 5.263309999999999,
+      "p99_frame_ms": 6.399882999999998
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-5-75-1",
+      "etw_intervals": 1865,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 205.89724371818272,
+      "tics_per_second": 34.987585590266356,
+      "p95_frame_ms": 6.63866,
+      "p99_frame_ms": 7.664391999999989
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "peace-5-75-4",
+      "etw_intervals": 2264,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 244.9386256723073,
+      "tics_per_second": 34.99205529516975,
+      "p95_frame_ms": 6.233035,
+      "p99_frame_ms": 8.295315999999996
+    },
+    {
+      "variant": "zoned-1000",
+      "label": "siege1000-0-2",
+      "etw_intervals": 211,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9042 soldiers=600 demons=1000 blockers=0 doors=0 missiles=0 corpses=0 flames=108",
+        "CA318 CENSUS end tic=1820 actors=9027 soldiers=600 demons=970 blockers=0 doors=0 missiles=0 corpses=30 flames=97"
+      ],
+      "fps": 7.16111281697567,
+      "tics_per_second": 34.87824616629501,
+      "p95_frame_ms": 318.1532,
+      "p99_frame_ms": 389.8667600000001
+    },
+    {
+      "variant": "zoned-1000",
+      "label": "siege1000-0-3",
+      "etw_intervals": 188,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9042 soldiers=600 demons=1000 blockers=0 doors=0 missiles=0 corpses=0 flames=108",
+        "CA318 CENSUS end tic=1820 actors=9027 soldiers=600 demons=970 blockers=0 doors=0 missiles=0 corpses=30 flames=97"
+      ],
+      "fps": 6.416654664735066,
+      "tics_per_second": 34.81471079393167,
+      "p95_frame_ms": 398.0415850000002,
+      "p99_frame_ms": 469.261537
+    },
+    {
+      "variant": "zoned-1000",
+      "label": "siege1000-4-2",
+      "etw_intervals": 132,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9044 soldiers=600 demons=1000 blockers=0 doors=0 missiles=1 corpses=0 flames=110",
+        "CA318 CENSUS end tic=1820 actors=9043 soldiers=600 demons=973 blockers=0 doors=0 missiles=0 corpses=27 flames=112"
+      ],
+      "fps": 4.389550382677344,
+      "tics_per_second": 34.18856786160768,
+      "p95_frame_ms": 525.5904,
+      "p99_frame_ms": 548.744349
+    },
+    {
+      "variant": "zoned-1000",
+      "label": "siege1000-4-3",
+      "etw_intervals": 109,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-14464.000 y=-14000.000 z=0.000 angle=270.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=770 actors=9044 soldiers=600 demons=1000 blockers=0 doors=0 missiles=1 corpses=0 flames=110",
+        "CA318 CENSUS end tic=1820 actors=9043 soldiers=600 demons=973 blockers=0 doors=0 missiles=0 corpses=27 flames=112"
+      ],
+      "fps": 3.533830055402285,
+      "tics_per_second": 33.33506497544904,
+      "p95_frame_ms": 553.31964,
+      "p99_frame_ms": 576.2150560000001
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-0-0-2",
+      "etw_intervals": 3122,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 337.5336159209741,
+      "tics_per_second": 35.003583994836525,
+      "p95_frame_ms": 4.45629,
+      "p99_frame_ms": 5.718051
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-0-0-3",
+      "etw_intervals": 3060,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=0.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 330.7261270451993,
+      "tics_per_second": 35.00426388145384,
+      "p95_frame_ms": 4.613354999999999,
+      "p99_frame_ms": 5.729591999999999
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-0-75-2",
+      "etw_intervals": 1119,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 123.65137675586612,
+      "tics_per_second": 35.005177949828,
+      "p95_frame_ms": 9.976299999999998,
+      "p99_frame_ms": 11.579645999999995
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-0-75-3",
+      "etw_intervals": 1127,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=0.000 y=320.000 z=-0.000 angle=180.000 pitch=75.000 fits=1 ceiling=1024.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 121.75265704647823,
+      "tics_per_second": 35.00714885211709,
+      "p95_frame_ms": 9.9429,
+      "p99_frame_ms": 10.754426
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-5-0-2",
+      "etw_intervals": 2485,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=0.000 fits=1 ceiling=184.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 268.56255184959406,
+      "tics_per_second": 35.01058622540478,
+      "p95_frame_ms": 5.490479999999998,
+      "p99_frame_ms": 6.62563199999999
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-5-0-3",
+      "etw_intervals": 2424,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=0.000 fits=1 ceiling=184.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 261.85149988787595,
+      "tics_per_second": 34.986444512127356,
+      "p95_frame_ms": 5.58849,
+      "p99_frame_ms": 6.785403
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-5-75-2",
+      "etw_intervals": 2032,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=75.000 fits=1 ceiling=184.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 219.6055965621695,
+      "tics_per_second": 34.993172811873386,
+      "p95_frame_ms": 6.458345,
+      "p99_frame_ms": 7.690698000000002
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "peace-5-75-3",
+      "etw_intervals": 2336,
+      "etw_brackets_window": true,
+      "camera": "CA318 CAMERA_WINDOW x=-20608.000 y=-12416.000 z=0.000 angle=90.000 pitch=75.000 fits=1 ceiling=184.000",
+      "censuses": [
+        "CA318 CENSUS begin tic=70 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS window tic=210 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0",
+        "CA318 CENSUS end tic=560 actors=2203 soldiers=0 demons=0 blockers=0 doors=0 missiles=0 corpses=0 flames=0"
+      ],
+      "fps": 252.59631107525504,
+      "tics_per_second": 34.99798218530297,
+      "p95_frame_ms": 5.09635,
+      "p99_frame_ms": 6.308760000000007
+    }
+  ],
+  "comparisons": {
+    "peace-0-0-": {
+      "opaque": {
+        "fps": [
+          280.7930071715992,
+          284.0789477880081
+        ],
+        "tics_per_second": [
+          35.00644244282479,
+          35.00813315387708
+        ],
+        "p95_frame_ms": [
+          5.177465,
+          5.216564999999999
+        ],
+        "p99_frame_ms": [
+          6.304101,
+          6.550032000000001
+        ]
+      },
+      "zoned": {
+        "fps": [
+          330.7261270451993,
+          337.5336159209741
+        ],
+        "tics_per_second": [
+          35.003583994836525,
+          35.00426388145384
+        ],
+        "p95_frame_ms": [
+          4.45629,
+          4.613354999999999
+        ],
+        "p99_frame_ms": [
+          5.718051,
+          5.729591999999999
+        ]
+      }
+    },
+    "peace-0-75-": {
+      "opaque": {
+        "fps": [
+          103.46601752714336,
+          114.88605529704692
+        ],
+        "tics_per_second": [
+          34.991874092479954,
+          34.99474892730787
+        ],
+        "p95_frame_ms": [
+          10.679939999999998,
+          11.57916
+        ],
+        "p99_frame_ms": [
+          12.007611999999986,
+          12.510671999999987
+        ]
+      },
+      "zoned": {
+        "fps": [
+          121.75265704647823,
+          123.65137675586612
+        ],
+        "tics_per_second": [
+          35.005177949828,
+          35.00714885211709
+        ],
+        "p95_frame_ms": [
+          9.9429,
+          9.976299999999998
+        ],
+        "p99_frame_ms": [
+          10.754426,
+          11.579645999999995
+        ]
+      }
+    },
+    "peace-5-0-": {
+      "opaque": {
+        "fps": [
+          268.9346010933489,
+          272.95744354948556
+        ],
+        "tics_per_second": [
+          34.97748274293419,
+          34.99125625819373
+        ],
+        "p95_frame_ms": [
+          5.263309999999999,
+          5.483155
+        ],
+        "p99_frame_ms": [
+          6.399882999999998,
+          6.4442450000000004
+        ]
+      },
+      "zoned": {
+        "fps": [
+          261.85149988787595,
+          268.56255184959406
+        ],
+        "tics_per_second": [
+          34.986444512127356,
+          35.01058622540478
+        ],
+        "p95_frame_ms": [
+          5.490479999999998,
+          5.58849
+        ],
+        "p99_frame_ms": [
+          6.62563199999999,
+          6.785403
+        ]
+      }
+    },
+    "peace-5-75-": {
+      "opaque": {
+        "fps": [
+          205.89724371818272,
+          244.9386256723073
+        ],
+        "tics_per_second": [
+          34.987585590266356,
+          34.99205529516975
+        ],
+        "p95_frame_ms": [
+          6.233035,
+          6.63866
+        ],
+        "p99_frame_ms": [
+          7.664391999999989,
+          8.295315999999996
+        ]
+      },
+      "zoned": {
+        "fps": [
+          219.6055965621695,
+          252.59631107525504
+        ],
+        "tics_per_second": [
+          34.993172811873386,
+          34.99798218530297
+        ],
+        "p95_frame_ms": [
+          5.09635,
+          6.458345
+        ],
+        "p99_frame_ms": [
+          6.308760000000007,
+          7.690698000000002
+        ]
+      }
+    },
+    "siege1000-0-": {
+      "opaque": {
+        "fps": [
+          3.8499382614275546,
+          5.053264180432542
+        ],
+        "tics_per_second": [
+          33.871475339689766,
+          34.320055449682265
+        ],
+        "p95_frame_ms": [
+          496.56877,
+          535.2783750000001
+        ],
+        "p99_frame_ms": [
+          543.7027690000002,
+          597.2397699999999
+        ]
+      },
+      "zoned": {
+        "fps": [
+          6.416654664735066,
+          7.16111281697567
+        ],
+        "tics_per_second": [
+          34.81471079393167,
+          34.87824616629501
+        ],
+        "p95_frame_ms": [
+          318.1532,
+          398.0415850000002
+        ],
+        "p99_frame_ms": [
+          389.8667600000001,
+          469.261537
+        ]
+      }
+    },
+    "siege1000-4-": {
+      "opaque": {
+        "fps": [
+          3.723593697929374,
+          4.440357342197471
+        ],
+        "tics_per_second": [
+          33.0912790472753,
+          33.80035915268266
+        ],
+        "p95_frame_ms": [
+          541.16804,
+          561.604825
+        ],
+        "p99_frame_ms": [
+          559.8188909999999,
+          594.441365
+        ]
+      },
+      "zoned": {
+        "fps": [
+          3.533830055402285,
+          4.389550382677344
+        ],
+        "tics_per_second": [
+          33.33506497544904,
+          34.18856786160768
+        ],
+        "p95_frame_ms": [
+          525.5904,
+          553.31964
+        ],
+        "p99_frame_ms": [
+          548.744349,
+          576.2150560000001
+        ]
+      }
+    }
+  },
+  "functional": [
+    {
+      "label": "geometry-03",
+      "assertions": 823,
+      "runtime_sha256": "e80727eaab4cbb10e68bf92c67fdb77c779f09e6c143a15c904c5432debb4fbc",
+      "fixture_sha256": "c7f69ee83d820e52c80c046fd9d6dcc6044cd9dfb7bae06150d2831125052359"
+    },
+    {
+      "label": "portals-01",
+      "assertions": 45,
+      "runtime_sha256": "e80727eaab4cbb10e68bf92c67fdb77c779f09e6c143a15c904c5432debb4fbc",
+      "fixture_sha256": "c7f69ee83d820e52c80c046fd9d6dcc6044cd9dfb7bae06150d2831125052359"
+    },
+    {
+      "label": "deploy-01",
+      "assertions": 3,
+      "runtime_sha256": "e80727eaab4cbb10e68bf92c67fdb77c779f09e6c143a15c904c5432debb4fbc",
+      "fixture_sha256": "c7f69ee83d820e52c80c046fd9d6dcc6044cd9dfb7bae06150d2831125052359"
+    }
+  ],
+  "packages": {
+    "variants": [
+      {
+        "variant": "opaque-1000",
+        "changed_members": [],
+        "runtime_sha256": "599f50034ba2735709559a3cec8e9090951c13d1b58ef4dea7196d30887745ac"
+      },
+      {
+        "variant": "zoned-1000",
+        "changed_members": [
+          "caelum/data/CaelumCartographyCatalogueData.zs",
+          "maps/MAP06.wad"
+        ],
+        "runtime_sha256": "7292fce91e405377976111bbc2ed3bcfab98a5abc399a823fde98d334ed00423"
+      },
+      {
+        "variant": "opaque-6000",
+        "changed_members": [],
+        "runtime_sha256": "bce3b210c3a5427af01a17f3ddd31ad91a0fb9d39d78ec96e3132ba3430dfabb"
+      },
+      {
+        "variant": "zoned-6000",
+        "changed_members": [
+          "caelum/data/CaelumCartographyCatalogueData.zs",
+          "maps/MAP06.wad"
+        ],
+        "runtime_sha256": "e80727eaab4cbb10e68bf92c67fdb77c779f09e6c143a15c904c5432debb4fbc"
+      }
+    ],
+    "shared_observer_sha256": "78800246e095dad3dad46e3bf9a240b26d0deb78f401887b7527334377fa7cab"
+  },
+  "retired_runs": [
+    {
+      "variant": "opaque-6000",
+      "label": "siege6000-1",
+      "completed": true,
+      "reason": "Retired by author decision; not part of the current comparison"
+    },
+    {
+      "variant": "opaque-6000",
+      "label": "siege6000-4",
+      "completed": false,
+      "reason": "Retired by author decision; not part of the current comparison"
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "siege6000-2",
+      "completed": true,
+      "reason": "Retired by author decision; not part of the current comparison"
+    },
+    {
+      "variant": "zoned-6000",
+      "label": "siege6000-3",
+      "completed": true,
+      "reason": "Retired by author decision; not part of the current comparison"
+    }
+  ],
+  "retired_test_policy": "2026-10-17: The author ruled out 6000 simultaneous actors and instructed that this size never be tested again. The final active run was stopped on request; earlier evidence is retained. Current performance comparisons use peaceful scenes and 1000 attackers with 600 defenders.",
+  "historical_control_comparison": [
+    {
+      "site": 0,
+      "matched_runtime_engine_config_censuses": true,
+      "observations": [
+        {
+          "directory": "issue318-houses-perf-03",
+          "label": "siege1000-0-2",
+          "fps": 27.96807504262923,
+          "callbacks_per_second": 28.255810830849278,
+          "mean_tics_between_callbacks": 1.2387706855791962,
+          "process_cpu_seconds_per_second": 0.9428818439219491,
+          "cpu_observation_seconds": 28.105324299991132
+        },
+        {
+          "directory": "issue318-ceilings-01",
+          "label": "siege1000-0-1",
+          "fps": 5.053264180432542,
+          "callbacks_per_second": 5.191622968042307,
+          "mean_tics_between_callbacks": 6.630573248407643,
+          "process_cpu_seconds_per_second": 1.0269109575837194,
+          "cpu_observation_seconds": 26.1098587000072
+        }
+      ]
+    },
+    {
+      "site": 0,
+      "matched_runtime_engine_config_censuses": true,
+      "observations": [
+        {
+          "directory": "issue318-houses-perf-03",
+          "label": "siege1000-0-3",
+          "fps": 29.884942250973076,
+          "callbacks_per_second": 30.19229972785362,
+          "mean_tics_between_callbacks": 1.1592920353982301,
+          "process_cpu_seconds_per_second": 0.9345994769166407,
+          "cpu_observation_seconds": 28.103616200014947
+        },
+        {
+          "directory": "issue318-ceilings-01",
+          "label": "siege1000-0-4",
+          "fps": 3.8499382614275546,
+          "callbacks_per_second": 3.951020417574863,
+          "mean_tics_between_callbacks": 8.603305785123966,
+          "process_cpu_seconds_per_second": 0.9790550201660503,
+          "cpu_observation_seconds": 28.12022760000825
+        }
+      ]
+    },
+    {
+      "site": 4,
+      "matched_runtime_engine_config_censuses": true,
+      "observations": [
+        {
+          "directory": "issue318-houses-perf-03",
+          "label": "siege1000-4-2",
+          "fps": 22.67891014515877,
+          "callbacks_per_second": 22.924204368354296,
+          "mean_tics_between_callbacks": 1.5276967930029155,
+          "process_cpu_seconds_per_second": 0.9278975171674001,
+          "cpu_observation_seconds": 28.10453149999678
+        },
+        {
+          "directory": "issue318-ceilings-01",
+          "label": "siege1000-4-1",
+          "fps": 4.440357342197471,
+          "callbacks_per_second": 4.809941287370972,
+          "mean_tics_between_callbacks": 7.0608108108108105,
+          "process_cpu_seconds_per_second": 0.9958204349397318,
+          "cpu_observation_seconds": 28.117518999993802
+        }
+      ]
+    },
+    {
+      "site": 4,
+      "matched_runtime_engine_config_censuses": true,
+      "observations": [
+        {
+          "directory": "issue318-houses-perf-03",
+          "label": "siege1000-4-3",
+          "fps": 22.23580504182273,
+          "callbacks_per_second": 22.653208805675256,
+          "mean_tics_between_callbacks": 1.5457227138643068,
+          "process_cpu_seconds_per_second": 0.9518496990964502,
+          "cpu_observation_seconds": 28.103176400005818
+        },
+        {
+          "directory": "issue318-ceilings-01",
+          "label": "siege1000-4-4",
+          "fps": 3.723593697929374,
+          "callbacks_per_second": 3.9288405235946753,
+          "mean_tics_between_callbacks": 8.463414634146341,
+          "process_cpu_seconds_per_second": 1.0141477174157778,
+          "cpu_observation_seconds": 28.1178219999969
+        }
+      ]
+    }
+  ]
+}

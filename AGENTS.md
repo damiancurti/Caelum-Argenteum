@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -149,6 +149,34 @@ do not invent faction, civilian, targeting or combat rules for unrelated AI.
 Retain individual combat/resources/collision unless the author explicitly
 changes that policy. Native tests run unpaused in the background at 5% audio;
 temporary keep-awake requests must be released afterward.
+
+On 2026-10-17, under #318, the author rejected the 6,000-simultaneous-attacker
+scale for the game and instructed that it never be tested again. Do not rerun
+the retired 6,000-attacker city or 6,000/1,000 flat stress cases. Preserve their
+historical evidence without treating old reproduction scripts as authorization.
+Current approved comparisons use peaceful scenes and 1,000 attackers against
+600 defenders. This is a diagnostic scope, not an invented production army cap.
+
+The author made performance a standing engineering priority on 2026-10-17
+(#318). Apply the measurement and large-map lessons in
+`docs/KNOWN_PITFALLS.md` (CA-KP-110 through CA-KP-115) to affected work. Report
+frame presentation and frame-time tails as well as simulation throughput;
+35 tics/s alone cannot establish playable rendering. Preserve representative
+mansion/sewer references and city/ground-facing/siege scenarios. The author's
+60-FPS expectation for mansion/sewers is measured on a recorded environment,
+not assumed from map size or a successful build. Verify suspected costs before
+removing gameplay or visual features; diagnostic ablations are not production
+acceptance. Document new reusable performance findings in KNOWN_PITFALLS.
+
+On 2026-10-17 (#318), the author prohibited routine global actor scans as an
+implementation default. Prefer local spatial queries, event-maintained typed
+registries and shared results. Do not scan every possible actor per tic, NPC,
+emitter or recipient. Exceptions are narrow: document the correctness need,
+trigger/frequency, population bound, ownership and measured worst-case cost.
+Initialization, save migration and shared censuses are candidates for justified
+exceptions, not automatic exemptions. Review existing scans in affected code;
+preserve required offscreen behavior and the authoritative >=500 census rule.
+Hiding actors from the renderer does not authorize ignoring their gameplay.
 
 ### Patch workflow
 

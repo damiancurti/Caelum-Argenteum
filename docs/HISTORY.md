@@ -1,6 +1,178 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)
+
+Variable-sky follow-up, 2026-10-17, same 5.4.28 patch. Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
+
+All 24 current matched measurement windows complete with ETW events bracketing their trimmed QPC intervals. The same observer is used across variants; full poses/options/populations are verified. Three successful native runs log 871 passing assertions. Two earlier fixture failures are retained and qualified. Deterministic map generation and exact package comparisons pass: only MAP06 and its cartography checksum differ from the corresponding house baseline.
+
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+The low sky limits flight and removes standing room on closed house roofs. Streets remain thermally outdoors; shops retain their real roof and windows. These are diagnostic geometry choices pending author review (CA318-05), not adopted production restrictions. No new army budget or playable full-siege guarantee follows. The 30-minute PresentMon collector closes automatically; the temporary keep-awake request is released afterward. No author acceptance is inferred from native checks.
+
+Final follow-up gates: project validation and regenerated document index pass
+(5.4.28, no errors); tooling compilation and whitespace checks pass. The normal
+package retains SHA-256 ef92439edd9d99018c7d20578dabde04de1f3f318a7264af5cb7c318bb4f85fc
+and src has no changes. The retired runner is verified to reject execution
+before launching an engine. PresentMon exited and the keep-awake release is
+confirmed. Independent review found no source/configuration explanation for
+the session variance; that uncertainty remains explicit in the report.
+
+House-hub follow-up, 2026-10-17: the author requested solid exterior house
+shells, one map per interior, residents present/interactable before the siege
+with retained individual state, doorstep deployment and period shop signage.
+After a brief native preview, the author explicitly required unchanged house
+size so street widths remain intact. Static source and final-WAD checks confirm
+all 160 original footprints and 184-MU roof heights. MAP06 now has 765 sectors,
+42,945 lines and 491 things; each private interior has five sectors/194 lines.
+
+Native isolated checks pass for actual Use/return in houses 0/119/120/158/159,
+resident population, gear/health/ammunition/finite inventory, save/reload on
+both sides, fresh birth plus immediate travel, 600 unique doorstep emissions,
+cannon replacement assignment, blocked arrival/retry, death, burning, bolas,
+resurrection memory and active/expired Redemption. Earlier failed fixtures are
+retained: string switch syntax, sparse PolyObject storage, NPC pickup setup and
+a diagnostic controller parked outside typed discovery. They are superseded by
+successful corrected runs; they were not silently counted as passes.
+
+The subsequent matched house experiment completes 28 valid native windows:
+peaceful forward/ground, two 1,000-attacker siege views, 6,000 attackers, four
+private-interior repeats and separate profiles at both army sizes. Initial
+controls are retained: one camera lay on a solid house boundary; raising a
+floor while retaining sky ceilings failed to activate native BSP occlusion;
+three premature startup changemap attempts remained in MAP06. Corrected cameras,
+opaque closed-sector ceilings and CAH158 plus three-resident checks supersede
+those attempts. Full exterior regeneration and exact 16,370-member normal/native/
+source verification pass. PresentMon released its CSV at the scheduled four-hour
+deadline after Windows denied ordinary shutdown and reported a canceled elevated
+stop request. The completed ETW analysis covers all 28 valid windows. Peaceful
+forward means are 36.62-37.03 FPS with ordinary shells versus 402.03-405.19 with
+opaque closure; ground-facing means are 28.54-29.76 versus 165.66-166.03. At
+1,000 attackers the central view improves from 6.81-8.33 to 27.97-29.88, but the
+front-line view records 24.76-24.89 versus 22.24-22.68. Both 6,000-attacker
+variants remain near 0.7 FPS and 12 tics/s. Private CAH158 measures
+1,065.57-1,128.91 FPS across both variants with three residents/44 actors.
+These are application presents, not display refresh or a stable whole-map
+guarantee. Independent source/evidence review found no remaining execution
+blocker; tall walls remain diagnostic and author acceptance remains pending.
+
+Six original trade-sign PNGs use existing merchandise categories and owned
+procedural vector artwork. Windows PowerShell/.NET Framework rasterization is
+pinned; identical repeat output is verified in that environment. The pre-hub
+MAP06 backup is retained. The brief author preview is qualified feedback;
+CA318-01..04 remain pending. Full attacker deployment and city/siege performance
+acceptance remain open; no diagnostic population becomes a new production rule.
+
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
+
+
+Native door checkpoint: 230 new native assertions pass, including current save/hub,
+obstruction/roof behavior and 600 NPC home references. ETW forward 18.46-18.84 FPS
+and ground-facing 12.61-12.69 FPS improve on old-door repeats 10.30-14.58 and
+8.46-9.57 FPS; MAP06 remains below its playability target. Detailed controls,
+limitations and failed iterations: assets/validation_issue318/RESULTS.md.
+
+On 2026-10-17 the author requested exhaustive cost/FPS evidence for the slow
+600-soldier city, ground-facing views and unresponsive November siege. Matched
+controls identify expensive stationary door helpers, large renderer boundary
+work and repeated whole-world breath reception. The author then removed demon
+breath radiation, selected absorbed contact power for ongoing burning heat,
+requested a 1,000-attacker test and prohibited routine global actor scans except
+for narrow documented/measured cases. AGENTS and CA-KP-110 through CA-KP-115
+record this standing priority and primary GZDoom research.
+
+Breath now uses local contact bodies and stores absorbed watts on each burning
+victim. Real-tic joules feed the normal player/NPC thermal scheduler; armor is
+applied once, Toughness health healing cannot reverse heat, and generic burns
+do not invent contact power. Status/breath revision 1 migration is idempotent;
+old unknown watts start at zero, old untransferred radiation is discarded
+without replay/refund, and prior applied heat/resource history remains. Rest/
+journey guards and resurrection handle the new queue. That first checkpoint
+leaves map geometry unchanged; the subsequent geometry change is recorded below.
+Ordinary counts and utility-wand radiation remain unchanged; subsequent
+native-door work is recorded below.
+
+Final isolated correctness suite passes 69 assertions across 12 runs, plus one
+genuine prior-runtime seed marker, including multiple local
+contacts, walls, armor, duration, energy/temperature, player/NPC scheduling,
+save/reload/repetition, hub return and old-save migration. Counters persist in
+saves; the total counts new PASS lines rather than adding cumulative DONE values.
+The 1,000-Mandinga/600-soldier onset window takes 8.63-8.87 s for 175 tics,
+versus 88.13 s with old radiation. It remains slower than nominal simulation;
+full frame distributions, profiles, failures and packaging checks are in
+assets/validation_issue318/RESULTS.md. The 1,000 count is diagnostic only.
+Observed application presentation is only about 1.20 FPS in both final short
+onset runs, versus 0.11 with old radiation; the improvement is not playability.
+The actual skip API reaches the siege from an allowed location, still slow.
+Final native release-label smoke adds 13 passing contact assertions; all 16,193
+packaged members match source. Document index, project validation and normal
+packaging pass. Independent review found no additional production blocker.
+
+The author subsequently requested redundant-sector reduction and valid opaque
+boundaries. The conservative production pass changes MAP06 from 1,574 sectors /
+86,382 lines to 1,563 / 61,817, preserving physical wall endpoints, materials,
+lights, 3D controls/target sectors and actors. Unoptimized serialization matches
+the old WAD; two optimized generations are byte-identical. Native placement,
+thermal shelter, 3D-volume and ten-ray checks at 3,006 positions produce 35,353
+identical records before/after and after each saved reload. Twelve additional
+save/continuation/hub/rollback runs pass 117 new assertions. The exact previous
+furnished WAD is preserved under legacy_5427 with hash/provenance and the public
+LegacyMap06Furnished option. Existing campaigns retain that geometry; fresh or
+unvisited MAP06 uses the reduced map. No population/layout revision is reset.
+The closed-house control reaches about 60 on the native counter but extends
+facades upward and removes roof/flight space; it remains explicitly diagnostic.
+Its result is not ETW evidence or approval of that layout. CA-KP-116 records the
+occlusion, distance-trigger and compatibility limits. CA318-02 remains pending.
+
+The author supplied gz_bigcity and HGC City for comparative testing, then
+authorized replacing MAP06 doors after inspecting a native PolyObject swing
+door in gz_bigcity. On 2026-10-17 he explicitly waived old-save compatibility
+for this work. That waiver withdraws the old-map continuation acceptance gate;
+it is not confirmation that CA318-02 or a previous-save test passed. Backups and
+the optional exact furnished recovery build remain available.
+
+MAP06 now maps all 960 finite native leaves and retains their owned models.
+It removes 7,680 scripted blockers and runtime interior-door insertion. Closed
+pairs have no movement controller; a temporary local guard preserves paired
+use, wait renewal, reversing and non-thrusting obstruction behavior. Other maps
+keep their actor-door behavior. Native geometry adds two storage sectors and
+3,844 lines to the reduced layout (final 1,565 sectors / 65,661 lines). Two
+regenerations match byte-for-byte; removing only the native addition reproduces
+the previously verified conservative map exactly.
+
+Isolated native tests cover both axes/sides, direct Use outside the visual proxy,
+moving shootable obstructions, model/collision alignment, current saved motion,
+all 960 physical leaf positions, roof passage, hub return and cartography.
+The tests exposed and corrected touching-body rejection, the visual actor rising
+onto its own native collision, integer angle truncation and a fixture that kept
+the player at the closing doorway. Failures remain in the evidence. CA-KP-118
+records the verified engine behavior; the external examples retain their own
+attribution and are not incorporated or distributed as project assets.
+
+#318 remains open for bounded ordinary deployment, further geometry changes,
+sustained-combat fluency and author playability acceptance. CA318-01/02/03 are pending;
+native tests and a PR do not establish author acceptance. Earlier diagnostic
+fixture failures and incomplete measurements are retained, not counted as passes.
 
 ## 5.4.27 - Normal-speed prisoner following (#307)
 

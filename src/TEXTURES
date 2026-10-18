@@ -1,3 +1,4 @@
+#include "caelum/data/native_doors.textures"
 // Roca propia del catálogo ambiental para paredes y techo de la cueva.
 Texture "CACVROCK", 256, 256
 {
@@ -5785,3 +5786,4 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "graphics/caelum/domingo_pilot.textures"
 
 #include "graphics/caelum/zupay_rock.textures"
+#include "caelum/data/shop_signs.textures"

@@ -1,0 +1,424 @@
+[
+  {
+    "directory": "issue318-flat-01",
+    "runs": 20,
+    "initial_combatants": 7000,
+    "runtime_sha256": "bd08c83643e2fcd241d84c3deacb81f1b69ce3770b0b2a9ba96ba9997e39ae81",
+    "visual_end_states_match": true,
+    "inventory_absence_verified_runs": [
+      "inventory-empty-02",
+      "inventory-empty-03",
+      "inventory-empty-models-01",
+      "inventory-empty-models-02",
+      "sustained-empty-models",
+      "sustained-empty-sprites",
+      "inventory-empty-profile"
+    ],
+    "end_states": {
+      "inventory-empty-02": {
+        "census": {
+          "actors": 7077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-empty-03": {
+        "census": {
+          "actors": 7077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-empty-models-01": {
+        "census": {
+          "actors": 7077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-empty-models-02": {
+        "census": {
+          "actors": 7077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-kept-01": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-kept-04": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "models-02": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "models-03": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "sprites-01": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "sprites-04": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "sustained-empty-models": {
+        "census": {
+          "actors": 7166,
+          "mandingas": 5549,
+          "soldiers": 648,
+          "valid_targets": 6193,
+          "dead": 803,
+          "hurt": 278,
+          "breaths": 14
+        },
+        "living_health": 4705386
+      },
+      "sustained-empty-sprites": {
+        "census": {
+          "actors": 7166,
+          "mandingas": 5549,
+          "soldiers": 648,
+          "valid_targets": 6193,
+          "dead": 803,
+          "hurt": 278,
+          "breaths": 14
+        },
+        "living_health": 4705386
+      },
+      "sustained-models": {
+        "census": {
+          "actors": 25613,
+          "mandingas": 5620,
+          "soldiers": 627,
+          "valid_targets": 6247,
+          "dead": 753,
+          "hurt": 268,
+          "breaths": 18
+        },
+        "living_health": 4736832
+      },
+      "sustained-sprites": {
+        "census": {
+          "actors": 25613,
+          "mandingas": 5620,
+          "soldiers": 627,
+          "valid_targets": 6247,
+          "dead": 753,
+          "hurt": 268,
+          "breaths": 18
+        },
+        "living_health": 4736832
+      },
+      "combat-profile": {
+        "census": {
+          "actors": 25077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      },
+      "inventory-empty-profile": {
+        "census": {
+          "actors": 7077,
+          "mandingas": 6000,
+          "soldiers": 855,
+          "valid_targets": 6770,
+          "dead": 145,
+          "hurt": 78,
+          "breaths": 4
+        },
+        "living_health": 5292829
+      }
+    },
+    "all_keep_awake_released": true
+  },
+  {
+    "directory": "issue318-flat-1600-01",
+    "runs": 20,
+    "initial_combatants": 1600,
+    "runtime_sha256": "bd08c83643e2fcd241d84c3deacb81f1b69ce3770b0b2a9ba96ba9997e39ae81",
+    "visual_end_states_match": true,
+    "inventory_absence_verified_runs": [
+      "inventory-empty-02",
+      "inventory-empty-03",
+      "inventory-empty-models-01",
+      "inventory-empty-models-02",
+      "sustained-empty-models",
+      "sustained-empty-sprites",
+      "inventory-empty-profile"
+    ],
+    "end_states": {
+      "inventory-empty-02": {
+        "census": {
+          "actors": 1663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-empty-03": {
+        "census": {
+          "actors": 1663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-empty-models-01": {
+        "census": {
+          "actors": 1663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-empty-models-02": {
+        "census": {
+          "actors": 1663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-kept-01": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-kept-04": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "models-02": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "models-03": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "sprites-01": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "sprites-04": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "sustained-empty-models": {
+        "census": {
+          "actors": 1702,
+          "mandingas": 592,
+          "soldiers": 278,
+          "valid_targets": 869,
+          "dead": 730,
+          "hurt": 218,
+          "breaths": 9
+        },
+        "living_health": 683507
+      },
+      "sustained-empty-sprites": {
+        "census": {
+          "actors": 1702,
+          "mandingas": 592,
+          "soldiers": 278,
+          "valid_targets": 869,
+          "dead": 730,
+          "hurt": 218,
+          "breaths": 9
+        },
+        "living_health": 683507
+      },
+      "sustained-models": {
+        "census": {
+          "actors": 5036,
+          "mandingas": 638,
+          "soldiers": 240,
+          "valid_targets": 877,
+          "dead": 722,
+          "hurt": 163,
+          "breaths": 3
+        },
+        "living_health": 692777
+      },
+      "sustained-sprites": {
+        "census": {
+          "actors": 5036,
+          "mandingas": 638,
+          "soldiers": 240,
+          "valid_targets": 877,
+          "dead": 722,
+          "hurt": 163,
+          "breaths": 3
+        },
+        "living_health": 692777
+      },
+      "combat-profile": {
+        "census": {
+          "actors": 4663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      },
+      "inventory-empty-profile": {
+        "census": {
+          "actors": 1663,
+          "mandingas": 1000,
+          "soldiers": 438,
+          "valid_targets": 1357,
+          "dead": 162,
+          "hurt": 63,
+          "breaths": 5
+        },
+        "living_health": 1180297
+      }
+    },
+    "all_keep_awake_released": true
+  }
+]

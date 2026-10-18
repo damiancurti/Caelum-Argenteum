@@ -5,12 +5,13 @@ param(
     [switch]$LegacyMap06,
     [switch]$LegacyMap06Siege,
     [switch]$LegacyMap06NorthCity,
-    [switch]$LegacyMap06SouthCity
+    [switch]$LegacyMap06SouthCity,
+    [switch]$LegacyMap06Furnished
 )
 
 $ErrorActionPreference = "Stop"
-if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$LegacyMap06NorthCity.IsPresent + [int]$LegacyMap06SouthCity.IsPresent) -gt 1) {
-    throw 'Select only one MAP06 compatibility revision: -LegacyMap06, -LegacyMap06Siege, -LegacyMap06NorthCity or -LegacyMap06SouthCity.'
+if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$LegacyMap06NorthCity.IsPresent + [int]$LegacyMap06SouthCity.IsPresent + [int]$LegacyMap06Furnished.IsPresent) -gt 1) {
+    throw 'Select only one MAP06 compatibility revision: -LegacyMap06, -LegacyMap06Siege, -LegacyMap06NorthCity, -LegacyMap06SouthCity or -LegacyMap06Furnished.'
 }
 
 $ProjectRoot = $PSScriptRoot
@@ -79,6 +80,14 @@ if ($LegacyMap06SouthCity) {
     $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_512/MAP06.wad'
     if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne '84F0C18FDB4BE7A91EFF146845F78DDA5082D5B0C9D996928F0652D7C6FC7EFD') {
         throw 'Legacy south-city MAP06 checksum mismatch; refusing to replace the existing PK3.'
+    }
+    $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
+}
+
+if ($LegacyMap06Furnished) {
+    $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_5427/MAP06.wad'
+    if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne '8D62EF32AD584ED43E21613BC216CDFAC4423469481EBA8CE594DA3E0B3ED26C') {
+        throw 'Legacy furnished MAP06 checksum mismatch; refusing to replace the existing PK3.'
     }
     $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
 }
@@ -159,7 +168,7 @@ try {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
                     }
-                    elseif (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity) -and $EntryName -ieq 'maps/MAP06.wad') {
+                    elseif (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $EntryName -ieq 'maps/MAP06.wad') {
                         $EntryStream.Write($LegacyMap06Bytes, 0, $LegacyMap06Bytes.Length)
                         $LegacyPortReplacementCount++
                     }
@@ -180,7 +189,7 @@ try {
             if ($LegacyMap02 -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
             }
-            if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity) -and $LegacyPortReplacementCount -ne 1) {
+            if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $LegacyPortReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP06.wad entry in the source.'
             }
         }
@@ -236,7 +245,8 @@ try {
     elseif ($LegacyMap06Siege) { Write-Host 'MAP06 layout: byte-identical 4.37.8 siege port for existing campaigns; expanded city inactive.' }
     elseif ($LegacyMap06NorthCity) { Write-Host 'MAP06 layout: byte-identical first 4.37.9 city with the northern siege.' }
     elseif ($LegacyMap06SouthCity) { Write-Host 'MAP06 layout: exact 5.1.2 southern city compatibility geometry.' }
-    else { Write-Host 'MAP06 layout: furnished city with integrated southern siege. Select the matching legacy MAP06 option for previously visited ports.' }
+    elseif ($LegacyMap06Furnished) { Write-Host 'MAP06 layout: exact pre-5.4.28 furnished city for existing campaigns; open geometry reduction inactive.' }
+    else { Write-Host 'MAP06 layout: original house footprints with separate native hub interiors and native interior doors. Start a fresh MAP06; previous-save compatibility was waived by the author.' }
     Write-Host "Directory entries: 0"
 }
 finally {

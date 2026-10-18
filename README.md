@@ -6,8 +6,81 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.27.** Obtain and update the complete repository, validate
+**Current release: 5.4.28.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Variable-height sky follow-up (#318): the isolated city uses 184-MU physical sky over house/shop districts and retains 1,024 MU around walls, towers and the nonresidential exterior. Original house footprints, roof heights and street widths remain. Normal source MAP06, gameplay code and the normal package are unchanged.
+
+Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+The low sky limits flight and removes standing room on closed house roofs. Streets remain thermally outdoors; shops retain their real roof and windows. These are diagnostic geometry choices pending author review (CA318-05), not adopted production restrictions. No new army budget or playable full-siege guarantee follows. See the [full comparison](assets/validation_issue318/RESULTS.md#variable-height-physical-sky-over-house-districts).
+
+House-interior prototype (#318): MAP06 now keeps the 160 original house
+footprints and roof heights as solid exterior shells. Front-door Use loads one
+private hub interior; the same soldier bodies and inventories return through
+their house doors for the siege. Shops retain their geometry and receive six
+painted trade-sign designs. Exterior geometry is 765 sectors / 42,945 lines;
+each house interior has five sectors / 194 lines. Native transition, state,
+save/reload, status and 600-defender deployment checks pass in 13 isolated runs.
+The 28-window ETW comparison measures 36.62-37.03 FPS in the peaceful forward
+view and 28.54-29.76 looking down. Diagnostic opaque walls improve these to
+402.03-405.19 and 165.66-166.03 FPS, but the 1,000-attacker central siege still
+averages only 27.97-29.88 FPS and 6,000 attackers remain near 0.7 FPS / 12 tics/s.
+The private CAH158 interior exceeds 1,000 FPS with three residents. Tall walls
+remain diagnostic; normal roof heights are unchanged. Normal attacker deployment
+and author acceptance remain open. See the audit and pending_test.txt.
+
+Earlier native door checkpoint: 230 new native assertions pass, including current save/hub,
+obstruction/roof behavior and 600 NPC home references. ETW forward 18.46-18.84 FPS
+and ground-facing 12.61-12.69 FPS improve on old-door repeats 10.30-14.58 and
+8.46-9.57 FPS; MAP06 remains below its playability target. Detailed controls,
+limitations and failed iterations: assets/validation_issue318/RESULTS.md.
+
+The flat 1,000-Mandinga/600-soldier battle maintains normal simulation speed,
+but its sustained application FPS averages 53.54 (sprites) or 43.76 (Domingo 3D).
+The 6,000/1,000 battle remains near 1 FPS. All 40 diagnostic comparisons,
+inventory controls, frame distributions and limits are in the linked audit;
+these are not MAP06 playability acceptance or new production army/art rules.
+
+5.4.28 records the [#318](https://github.com/damiancurti/Caelum-Argenteum/issues/318)
+performance audit, contact-only demon-breath heat, native city doors, map reduction
+and standing engineering lessons. The original ordinary MAP06 remains
+unresolved: the peaceful city presents about 8-12 application frames/s in the
+measured views despite maintaining about 35 simulation tics/s. Removing the
+960 door leaves and 7,680 blockers in an isolated control improves it to about
+12-19 frames/s; large geometry costs remain. Matched entrance references measure
+65-90 frames/s in MAP01 and 240-262 in MAP02. These are application presentation
+rates on the recorded hardware, not whole-map acceptance or compositor refresh.
+See [evidence and limits](assets/validation_issue318/RESULTS.md) and
+[performance lessons](docs/KNOWN_PITFALLS.md#ca-kp-110---simulation-throughput-does-not-establish-playable-frame-presentation).
+Breath now heats only bodies it touches. Burning receivers retain the power
+absorbed at contact and feed it into their normal thermal update; revisioned
+migrations preserve prior applied heat without replaying old radiation. The
+1,000-attacker benchmark is a diagnostic control, not a production count change.
+Routine global actor scans are prohibited without a narrow, measured exception.
+The conservative MAP06 pass reduces 86,382 lines to 61,817 and
+1,574 sectors to 1,563 while preserving physical walls, roofs, materials and actors.
+Native geometry checks match at 3,006 locations, including saved reloads. Its
+measured improvement is modest; #318 remains open for deployment, further
+geometry work and author acceptance. The opaque-house experiment reaches a much
+faster native counter by changing upper space and is excluded from production.
+
+MAP06's 960 visible door leaves now use finite-height native PolyObjects, removing
+all 7,680 scripted collision helpers. The existing models, paired opening,
+NPC requests and obstruction protection remain. Closed pairs have no movement
+controller; active pairs inspect only nearby bodies. Adding their native contours
+leaves the final map at 1,565 sectors and 65,661 lines. Other maps retain their
+existing doors. This is automatic in a fresh or previously unvisited MAP06.
+
+The author waived previous-save compatibility for this replacement on 2026-10-17.
+Use a new campaign for acceptance. Original map/save backups and the optional
+`--legacy-map06-furnished` / `-LegacyMap06Furnished` recovery build remain available;
+they retain old geometry rather than converting it. Current-game save/reload and
+hub behavior are still tested. See the detailed audit for measured gains and limits.
 
 5.4.27 implements [#307](https://github.com/damiancurti/Caelum-Argenteum/issues/307):
 freed prisoners follow at their normal resolved speed, including health,
@@ -40,7 +113,8 @@ Production thermal rules and target timing remain unchanged.
 
 The author confirmed all tests passed and authorized merge and issue closure for
 #304, #305 and #307 on 2026-10-16. No author checks remain in
-[pending_test.txt](pending_test.txt). Release 5.4.27 and the tested runtime are unchanged.
+[pending_test.txt](pending_test.txt). That acceptance retained release 5.4.27
+and its tested runtime; #318 records the subsequent performance defect.
 
 The 24 issues in the requested V5.4 batch (#237-254, #259-261 and #282-284)
 are implemented and accepted within their documented scopes. Their individual

@@ -1,0 +1,4 @@
+// Native motion is silent; the retained leaf plays the owned door sound.
+:CaelumNativeDoorSilent
+door 63
+end

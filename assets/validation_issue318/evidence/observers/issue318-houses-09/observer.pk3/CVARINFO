@@ -1,0 +1,1 @@
+server int ca318_phase=0; server int ca318_site=1; server int ca318_pitch=0; server int ca318_window=350; server int ca318_warmup=140; server bool ca318_freeze=false; server bool ca318_save=false;

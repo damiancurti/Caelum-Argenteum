@@ -63,10 +63,13 @@ class CaelumSlidingDoorLeaf : Actor
     bool RuloArenaLocked;
     CaelumFactionCondition AccessCondition;
 
+    virtual bool NativeDoorCollision(){return false;}
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
         ClosedPosition = Pos;
+        if(NativeDoorCollision())return;
 
         // El actor visible ocupa el centro; estos ocho cilindros completan
         // una hoja de 64 MU sin invadir innecesariamente sus alrededores.
@@ -223,6 +226,9 @@ class CaelumSlidingDoorLeaf : Actor
     override void Tick()
     {
         Super.Tick();
+
+        if(NativeDoorCollision())
+        {if(LockedSoundCooldown>0)LockedSoundCooldown--;return;}
 
         if (RuloArenaLocked)
         {

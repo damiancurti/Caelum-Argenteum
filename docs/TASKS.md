@@ -1,6 +1,98 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.27** — 2026-10-16.
+Documentation version: **5.4.28** — 2026-10-17.
+
+## 5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)
+
+Variable-sky follow-up completed as an isolated experiment: 184-MU house/shop
+districts, 1,024-MU wall/exterior region; 871 native assertions and 24 fresh
+ETW windows. Fresh paired ETW means (tall opaque walls versus zoned sky): exterior forward 280.79-284.08 versus 330.73-337.53 FPS; exterior ground 103.47-114.89 versus 121.75-123.65.
+Within the residential street, forward means are 268.93-272.96 versus 261.85-268.56 FPS; ground-facing means are 205.90-244.94 versus 219.61-252.60.
+With 600 defenders, the 1,000-attacker city view measures 3.85-5.05 versus 6.42-7.16 FPS and the front line 3.72-4.44 versus 3.53-4.39. The unchanged opaque control is substantially slower than in the earlier session despite identical package/config/population records; the cause is not established. Compare fresh pairs only, not historical FPS as a new baseline.
+
+During this batch the author permanently retired the 6,000-simultaneous-attacker scale. The final active test was stopped immediately; three already-completed runs and the interrupted fourth remain archived outside the current comparison. Never rerun that scale. Continue with peace and 1,000/600 controls; do not invent a new production budget.
+
+Next: author review of sky transitions and physical flight/roof restrictions
+(CA318-05), then a production-compatible geometry decision. Normal geometry
+and army counts remain unchanged. Bounded attacker deployment and repeated
+target/body simulation remain outstanding; these tests do not close #318.
+
+Earlier house-hub implementation (author decision 2026-10-17): preserve the 160 house
+footprints, heights and every street width; move interiors to individual native
+hub maps; keep residents present/interactable and retain each body's state;
+deploy them from their own doors; add period-style signs for existing shop stock.
+Native portal/state/save/deployment and status/death/placement checks pass;
+private-map, exterior-map and sign regeneration is byte-identical. The normal
+16,370-member package matches the native runtime and source. The ETW report
+is complete; author tests remain pending. The comparison
+includes the author's second variant: the same interiors with house walls raised
+to the existing sky ceiling, without changing XY boundaries or production height.
+All 28 valid native measurement windows are complete, including separate
+1,000/6,000 profiles and CAH158. Three premature startup changemap attempts are
+excluded from interior results. Opaque closure improves peaceful forward FPS
+from 36.62-37.03 to 402.03-405.19 and ground-facing FPS from 28.54-29.76 to
+165.66-166.03. The 1,000-attacker central siege remains 27.97-29.88 FPS with
+closure; its front-line view does not improve. Both 6,000-attacker variants
+remain near 0.7 FPS / 12 tics/s. CAH158 exceeds 1,000 FPS with three residents.
+Next: choose a production-compatible occlusion design and address bounded
+attacker deployment plus repeated target/actor work without inventing budgets
+or perception rules. The diagnostic 1,024-MU walls are not adopted geometry.
+Do not close #318 on these house tests: synchronous attacker deployment and full
+siege playability remain separate outstanding acceptance requirements.
+
+The author requires exhaustive measurement, a functional peaceful city and siege,
+bounded normal deployment, and diagnosis of ground-facing slowdown. Audit evidence:
+[validation_issue318](../assets/validation_issue318/RESULTS.md). KNOWN_PITFALLS
+CA-KP-110 onward is the maintained performance guidance requested by the author.
+The authorized contact-only breath heat is implemented with receiver-owned
+energy and revisioned save migration. The 1,000-Mandinga control retains 600
+soldiers and does not change production counts. The global-scan exception policy
+is in AGENTS/CA-KP-115. Conservative MAP06 boundary reduction is integrated;
+native finite-height city doors are also integrated. Ordinary deployment remains
+unchanged. CA-KP-116/118 record the geometry and native-door limits.
+
+On 2026-10-17 the author additionally authorized replacing MAP06's 960 door
+leaves with native PolyObjects after inspecting gz_bigcity's working swing door,
+and explicitly waived compatibility with previous saves for this work. Preserve
+the existing backups, but prioritize fresh-game behavior and measured performance.
+The replacement removes 7,680 blockers, retaining the current models, paired
+operation, access checks, NPC requests, finite height and obstruction protection.
+Native DoorSwing alone thrusts bodies and cannot renew an active wait; production
+instead uses guarded native rotations and a temporary controller per active pair.
+Current-game save/hub checks remain relevant despite the old-save waiver.
+
+The author-requested flat-map comparison is complete: 40 native measurements
+cover 6,000/1,000 and 1,000/600 combatants, sprites/Domingo MODELDEF, inventory
+removal, frozen render controls and sampled profiles. The 1,600-body battle
+maintains about 35 tics/s; its 30-simulated-second windows average 53.54 FPS
+with sprites and 43.76 with Domingo, versus 0.86/0.81 FPS at 7,000 bodies.
+This is not stable 60 FPS: the 1,600-body sprite window has empirical p95/p99
+frame intervals of 22.31/99.76 ms. Its final HUD snapshot near 77 FPS is a point
+sample, not the window mean. Inventory removal improves onset, but sustained
+1,600-body measurements (49.86/42.74 FPS) do not establish a lasting benefit;
+weight, attack air, collision mass and longer combat outcomes also change.
+Fixtures preserve individual bodies/resources/collision and omit MAP06's city
+routes, carbine orders, cannons and reinforcement controller. No army total,
+inventory rule or production art changes follow from these diagnostic results.
+FLAT_VERIFICATION.json checks all populations, matching visual-variant end
+states, empty inventories and process cleanup. CA-KP-119 records the limits.
+
+Remaining implementation/acceptance work:
+
+- Bound ordinary attacker creation/registration; resolve any new design budget
+  explicitly, preserve finite reserves, crews, commander and victory accounting.
+- Remove or justify inherited global scans in affected systems, including the
+  utility wand's separately approved radiation. Preserve its rules until an
+  equivalent measured implementation or author-approved change is available.
+- Obtain author acceptance of the integrated native doors and measured improvement.
+- Continue reducing city geometry cost beyond the integrated conservative pass.
+  Preserve roof/flight, views, thermal shelter and current-game hub continuity. The
+  closed-house control changes upper space and is not an approved design.
+- Verify peaceful traversal, pitch changes, actual time skip, approach and sustained
+  combat using application presentation and simulation metrics on the final build.
+- Verify fresh/pre-siege/full-army saves and hub state; obtain author playability
+  acceptance. CA318-01/02/03 in pending_test.txt cover contact heat, geometry and doors;
+  it is not acceptance of full MAP06 performance. No unconfirmed pass is recorded.
 
 ## 5.4.27 - Normal prisoner escort speed (#307, accepted)
 
