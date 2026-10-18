@@ -714,6 +714,8 @@ class CaelumPlayer : DoomPlayer
     int LastMovementNoiseEventTic;
     int MovementNoiseEventSerial;
     double PainImmobilizationRemaining;
+    int RestDamageRevision;
+    double RestPeriodicPainRemaining,RestNonPeriodicPainRemaining;
     double LastPainAnimationDuration;
 
     // Survival values represent the percentage remaining, not accumulated
@@ -7748,14 +7750,16 @@ class CaelumPlayer : DoomPlayer
         double angle
     )
     {
-        CaelumTimeAdvanceState.Halt(self);
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
+        bool periodic=mod=='CaelumElementalDOT';
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
         if (CreationWizardOpen && !CharacterCreationComplete)
         {
             return 0;
         }
+
+        if(!periodic)CaelumRestSafety.Interrupt(self,"CA_REST_DAMAGE");
 
         // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
@@ -7799,7 +7803,8 @@ class CaelumPlayer : DoomPlayer
                 CalculateAndTriggerPain(
                     actualDrowningHealthLost,
                     adrenalineRatioBeforeDrowning,
-                    false
+                    false,
+                    periodic
                 );
             }
             return drowningResult;
@@ -8704,10 +8709,11 @@ class CaelumPlayer : DoomPlayer
     void CalculateAndTriggerPain(
         int actualHealthLost,
         double adrenalineRatioBeforeDamage,
-        bool grantPainAdrenaline
+        bool grantPainAdrenaline,
+        bool periodic=false
     )
     {
-        if (actualHealthLost > 0) CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
+        if (actualHealthLost > 0 && !periodic) CaelumRestSafety.Interrupt(self, "CA_REST_DAMAGE");
         LastHealthLossPercent = 0.0;
         LastPainChancePercent = 0.0;
         LastPainTriggered = false;
@@ -8739,6 +8745,7 @@ class CaelumPlayer : DoomPlayer
             if (painState != null)
             {
                 LastPainAnimationDuration = CalculatePainAnimationDuration(painState);
+                CaelumRestSafety.RecordPain(self,LastPainAnimationDuration,periodic);
                 PainImmobilizationRemaining = Max(
                     PainImmobilizationRemaining,
                     LastPainAnimationDuration
@@ -9162,8 +9169,10 @@ class CaelumPlayer : DoomPlayer
     void AdvancePersonalTimeTic(bool realStep=true)
     {
         CaelumThermalRuntime.PlayerStep(self,realStep);
+        if(health<=0)return;
         CaelumTarotService.Advance(self);
         if (ElementalStatus != null) { ElementalStatus.Tick(self,realStep); }
+        if(health<=0)return;
         IlluminationRemaining = Max(
             0.0, IlluminationRemaining - 1.0 / TICRATE
         );
@@ -9208,6 +9217,7 @@ class CaelumPlayer : DoomPlayer
 
         UpdateSurvivalResources();
         ApplyCriticalSurvivalDamage();
+        if(health<=0)return;
         ApplyNaturalHealthRegeneration();
 
         UpdateCombatBlockMode();
@@ -11631,17 +11641,17 @@ class CaelumPlayer : DoomPlayer
             ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,Attributes.Agility)*jumpFactor : 0;
     }
 
-    bool IsPhysicallyImmobilized()
+    bool IsPhysicallyImmobilized(bool ignorePain=false)
     {
-        return CaelumExhaustion.Active(self) || CaelumTelekinesisRules.Held(self) || IsOtherwiseImmobilized();
+        return CaelumExhaustion.Active(self) || CaelumTelekinesisRules.Held(self) || IsOtherwiseImmobilized(ignorePain);
     }
 
-    bool IsOtherwiseImmobilized()
+    bool IsOtherwiseImmobilized(bool ignorePain=false)
     {
         return CaelumBolas.Restrained(self) || CombatChannelModeActive
             || ForcedSleepTics > 0
             || LucidityPhysicalStunRemaining > 0.0
-            || PainImmobilizationRemaining > 0.0
+            || (!ignorePain && PainImmobilizationRemaining > 0.0)
             || (ElementalStatus != null
                 && ElementalStatus.IsLightningStunned());
     }

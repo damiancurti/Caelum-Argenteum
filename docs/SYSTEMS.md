@@ -1,6 +1,41 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+## Shared rest and acceleration safety (#325, 5.4.40)
+
+The author requires the same safety policy for lying down, T acceleration and
+Y destination advance. Living hostile bodies at an inclusive 1024 MU (32 m)
+block them only with line of sight; walls, friendly and dead bodies do not.
+An active arcane cloud blocks all three, including in-progress personal batches.
+Existing life/profile/solo/combat/siege/ground/water/busy/needs checks remain.
+T still needs an actual rest or work session. MAP01 retains its timeless
+furniture/workshop exceptions with actual reach/height checks. Safety no longer
+requires an authored zone merely because the player accelerates a valid rest.
+Reachable/current furniture is available locally; remote support access retains
+its existing map/zone rules and excludes threats around that support.
+
+Burning, poison, disease, bleeding and thermal exposure permit rest and both
+advances. They consume their existing durations and inflict their actual damage;
+burn heat accrues once per personal tic, while physical movement/action heat
+continues to use real world steps. Permitted periodic damage reduces session HP
+baselines by its actual loss, without interruption. A new accepted attack stops
+rest/T/Y even if mitigation or subsequent healing conceals its net HP loss.
+Death ends all three. This does not weaken injury, pain or resource rules.
+
+Revision-1 pain provenance keeps separate periodic and nonperiodic timers.
+Old unidentified pain migrates as nonperiodic until its own timer expires;
+new DOT cannot reclassify an earlier hit. Resurrection/training resets and
+journey elapsed time synchronize these clocks. Current saves retain their
+individual states, supports, effects and personal clocks. Unsupported task
+forecasts explicitly report an active-effect limitation; manually selected
+future destinations remain available under the shared execution policy.
+
+Generic unadapted powerups block all three; supported regeneration and Tarot
+flight retain their adapters and ordinary physical constraints. Enemy queries
+use the native blockmap plus the existing unlinked-guard registry, once per
+physical validation batch; sleeping-bag body checks use a bounded blockmap
+query. No per-substep whole-Actor census is introduced.
 
 ## Voluntary-jump wall cushioning (#339, 5.4.39)
 
@@ -5234,9 +5269,8 @@ MAP01 receive no automatic initial or daily supplies.
 
 ## 4.37.4 — Explicit time skipping and separate Limbo clock (#64)
 
-Y opens a destination day/hour/minute selector in an existing safe rest or work
-context (or an authored safe zone outside MAP01), including the MAP02 bag-sleep
-exception below. Left/Right select the field,
+Y opens a destination day/hour/minute selector under the shared #325 safety
+policy above; valid rest/work contexts no longer need a separate geographic veto. Left/Right select the field,
 Up/Down change it, Enter confirms, R recalculates the task default, and Q closes
 or interrupts. Escape retains native pause. T remains the existing x105
 fast-forward, with 104 extra integrated personal steps per normal engine step.
@@ -5261,8 +5295,8 @@ or interruption the automatic session ends with its actual resource values.
 
 Automatic care may use the whole safe location. MAP01 uses its actual available
 tables and unoccupied furniture; other maps use the authored safe zone containing
-the player and the support. Existing threat guards also cover the remote supports,
-so a distant unrelated encounter does not make all of MAP01 one safe region.
+the player and the support. The #325 local visible-enemy guard filters each remote support independently;
+a remote threat does not veto the player's entire rest context.
 No teleportation or additional travel-time balance is introduced. Work remains
 standing. Waiting uses an available chair; sleep prefers the best available real
 support, then an accessible owned sleeping bag with room, then existing ground
@@ -5272,7 +5306,7 @@ Provisions are real inventory transactions: accessible tables first, then carrie
 items, then the owned Box reserve. Partial water containers preserve their identity,
 remaining volume and storage location. Automatic servings reuse the journey
 trigger: wait until the whole dose fits, and never refresh an active food/water
-effect. No new portion begins while asleep. Critical needs, damage, movement,
+effect. No new portion begins while asleep. Critical needs, new attacks, movement,
 combat, invalid stations, unsupported effects or hazards interrupt safely.
 
 With an active crafting task, the numeric preview accounts for real stock, food
@@ -7713,7 +7747,8 @@ not directly add a number of hours to the clock. The calendar derives from the s
 clock. Between batches it returns control to the engine; T disables, Q/actions cancels
 the rest and Escape retains the native pause.
 
-The initial scope requires an enabled zone, dry ground, rest and a player. It rejects
+Historical initial scope, superseded by #325 shared safety above: it required
+an enabled zone, dry ground, rest and a player. It rejected
 combat, projectiles, nearby hostile monsters (1024 MU), burn/poison/cut, water,
 incompatible actions and Powerup without adapter. It also rejects a nearby actor with
 induced Sleep, so as not to omit the remaining time of that effect. A chair or bag alone
@@ -7722,7 +7757,7 @@ points/furniture/workbench of MAP02–MAP05 and the MAP03 tables. Outside of the
 normal rest remains available. From 0i MAP01 allows personal advancement in
 furniture/workshops; it keeps schedule stopped and furniture sessions without duration.
 
-Author-approved 5.2.23/#219 exception: actual sleep with the owned sleeping bag
+Historical 5.2.23/#219 exception, generalized by #325 shared safety: actual sleep with the owned sleeping bag
 on dry, clear MAP02 ground permits T and Y outside marked safe zones. The bag
 must remain carried outside the Box; ground waiting, chairs and crafting gain
 no permission. Y may start from deployed bag sleep and retains its bag support

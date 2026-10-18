@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+## 5.4.40 - Shared rest safety (#325)
+
+Rest/T/Y share inclusive 32-m visible-enemy and cloud blocks. Existing periodic
+injury/thermal damage continues; new attacks/death stop all modes. Local native
+queries replace global Actor scans. Native 28 runs/278 assertions, review, validation/build and package equality
+pass. CA325-01 remains pending, validation_5440.
 
 ## 5.4.39 - Voluntary-jump wall cushioning (#339)
 

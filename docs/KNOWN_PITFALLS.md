@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-127 - Rest interruption needs damage provenance and personal-time effects
+
+Status/evidence: ENGINE-VERIFIED, #325 / 5.4.40, 2026-10-18. GZDoom 4.14.2,
+Windows; assets/validation_5440, 28 native runs/278 assertions. CA325-01 pending.
+
+Symptom/cause: lying down and time advance used different geographic/effect
+vetoes. Treating any HP decrease as a new attack interrupted permitted periodic
+injury; comparing only net health also lets healing conceal a new hit. A single
+pain remainder cannot distinguish an earlier attack from later, longer DOT pain.
+
+Remedy: share the entry/batch policy, classify the existing periodic emitter,
+subtract its actual HP loss from active session baselines, and interrupt on new
+accepted attacks independently of net loss. Keep separate revisioned pain clocks;
+old pain remains nonperiodic until expiry, with all reset/journey paths aligned.
+Death remains an explicit stop. Personal heat must account once per personal tic;
+physical activity/firearm heat remains real-step-only. Refuse exact forecasts
+when their model omits a state that real execution integrates.
+
+Validate through real bag/bed dialogue, T/Y, effect-duration and integrated-plus-
+pending heat accounting, mitigated attacks, concurrent healing, lethal effects,
+current/old saves and cleanup paths. A cleared cloud does not imply immediate
+ground contact: native flight takeoff can still be falling. Threat scans belong
+once per physical batch through local queries, never a whole-Actor census for
+every accelerated personal step. These findings do not establish siege FPS gains.
+
 ## CA-KP-126 - Native no-wipe does not clear a custom travel overlay
 
 Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED, #334 /5.4.36,2026-10-18.

@@ -18,7 +18,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 2;
+    const PROVISION_REVISION = 3;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -91,6 +91,15 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
             if(Powerup(cursor)!=null && cursor!=food && cursor!=water)
             {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+        let status=user.ElementalStatus;
+        let thermal=CaelumThermalBody.Get(user);
+        // La ejecución integra estos estados; el modelo de fecha todavía no.
+        // No presentar como exacta una previsión que omite daño o penalizaciones.
+        if((status!=null && (status.HasBurnHeat() || status.BurnRemaining>0
+            || status.PoisonRemaining>0 || status.DiseaseRemaining>0 || status.CutRemaining>0
+            || status.FreezeRemaining>0 || status.DazzleRemaining>0 || status.EarthPenaltyRemaining>0))
+            || (thermal!=null && thermal.Exposure!=0))
+        {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         if(user.CraftingTaskActive && !user.RefreshActiveCraftingStationSession())
         {Reason="CA_FAST_ACTIVITY";Done=true;}
         let agenda=CaelumScheduleState.Get(user);

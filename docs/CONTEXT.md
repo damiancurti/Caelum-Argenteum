@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+**5.4.40/#325:** rest safety;278checks; CA325-01 pending.
 
 **5.4.39/#339:** jump-wall cushioning;135 current/41 baseline checks; CA339-01 pending.
 
@@ -80,7 +82,7 @@ follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
 old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
 **#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
 
-Earlier accepted deliveries and evidence: HISTORY.
+Earlier evidence: HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
@@ -109,7 +111,7 @@ the existing divisions and weaken the resistance. Both threats come from the
 plan of an infernal prince who, after repeatedly failing to conquer the Earth
 by force, decided to corrupt the Moon and break the Earth from within.
 
-The protagonist is captain of fortified Barracas al Sud's guard. He wakes in a
+The protagonist captains Barracas al Sud's guard. He wakes in a
 mansion unaware it is Limbo. After returning, guards recognize him, but he cannot
 remember his past. Captaincy changes neither customization, class nor faction.
 The main species are allegorical of nineteenth-century Argentina: the Beast Men

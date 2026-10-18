@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.39** — 2026-10-18.
+Documentation version: **5.4.40** — 2026-10-18.
+
+## 5.4.40 - Shared rest safety (#325)
+
+Verify visible/hidden/friendly/dead boundaries, real bag/bed and MAP01/MAP02
+contexts, each periodic effect and heat, actual attacks/death, current/legacy
+saves, cloud refusal and subsequent recovery. Keep unsupported exact forecasts
+explicit. Completed: 28 native runs/278 assertions, review, validation/build and package
+equality. CA325-01 remains pending.
 
 ## 5.4.39 - Voluntary-jump wall cushioning (#339)
 

@@ -443,7 +443,10 @@ class CaelumJourneyPlan : Inventory
         CaelumRedemption.AdvanceJourney(user,model.ElapsedTics);
         CaelumArcaneCloud.AdvanceJourney(user,model.ElapsedTics);
         user.HUDAbilitySuccessRemaining = Max(0.0, user.HUDAbilitySuccessRemaining - seconds);
+        CaelumRestSafety.EnsureDamageState(user);
         user.PainImmobilizationRemaining = Max(0.0, user.PainImmobilizationRemaining - seconds);
+        user.RestPeriodicPainRemaining=Max(0.0,user.RestPeriodicPainRemaining-seconds);
+        user.RestNonPeriodicPainRemaining=Max(0.0,user.RestNonPeriodicPainRemaining-seconds);
         user.UpdateSurvivalStates(); user.UpdateHealthStateEffects(); user.UpdateLucidityState();
         user.LucidityPhysicalStunRemaining = model.Stun;
         // Una porción comenzada casi al llegar conserva sus pulsos pendientes.

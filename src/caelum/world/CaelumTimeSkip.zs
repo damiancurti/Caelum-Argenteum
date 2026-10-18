@@ -37,7 +37,9 @@ class CaelumTimeSkipRules : Object play
 
     static bool Accessible(CaelumPlayer user, Actor item)
     {
-        if (user==null || item==null) return false;
+        if (user==null || item==null || CaelumRestSafety.EnemyNear(user,item)) return false;
+        let furniture=CaelumRestFurniture(item);
+        if(furniture!=null && (furniture.Occupant==user || furniture.CanReach(user)))return true;
         if (level.MapName=="MAP01") return true;
         if(CaelumCityWorld.Peaceful())
         {
@@ -73,34 +75,7 @@ class CaelumTimeSkipRules : Object play
     {
         String reason=CaelumTimeAdvanceState.BlockReason(user,scan,true);
         if(reason.Length()!=0)return reason;
-        if(user.Attributes==null || !user.SurvivalResourcesInitialized || CaelumWorldClock.Get(user)==null)
-            return "CA_REST_UNAVAILABLE";
         if(CaelumTimeSkipState.NowDay(user)<0)return "CA_CALENDAR_OUT_OF_RANGE";
-        if (user.EquipmentMenuOpen || user.CombatBlockModeActive || user.PainImmobilizationRemaining>0
-            || user.UnderwaterAirRecoveryDebt>0 || user.UnderwaterAirRecoveryTicsRemaining>0
-            || (user.player.cheats & (CF_FROZEN|CF_TOTALLYFROZEN))) return "CA_REST_BUSY";
-        let status=user.ElementalStatus;
-        if(status!=null && (status.FreezeRemaining>0 || status.DazzleRemaining>0 || status.EarthPenaltyRemaining>0))
-            return "CA_FAST_UNSAFE";
-        let record=user.GetPersistentCharacterState(false);
-        let journey=CaelumJourneyState.Get(user);
-        if (record==null || !record.ProfileCommitted || record.WorldPendingConnection!=0
-            || (journey!=null && journey.Status==CaelumJourneyState.STATUS_DEPARTED)) return "CA_REST_BUSY";
-        // Todo el lugar debe ser seguro para poder usar muebles distantes.
-        if(scan)
-        {
-            let it=ThinkerIterator.Create("Actor"); Actor other;
-            while ((other=Actor(it.Next()))!=null)
-            {
-                if(other==user || !CaelumTimeAdvanceState.UnsupportedActor(other))continue;
-                let supports=ThinkerIterator.Create("CaelumRestFurniture");CaelumRestFurniture furniture;
-                while((furniture=CaelumRestFurniture(supports.Next()))!=null)
-                    if(Accessible(user,furniture) && furniture.Distance2D(other)<=CaelumTimeAdvanceState.UNSUPPORTED_ACTOR_RADIUS)return "CA_FAST_UNSAFE";
-                let tables=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable table;
-                while((table=CaelumDiningTable(tables.Next()))!=null)
-                    if(Accessible(user,table) && table.Distance2D(other)<=CaelumTimeAdvanceState.UNSUPPORTED_ACTOR_RADIUS)return "CA_FAST_UNSAFE";
-            }
-        }
         return "";
     }
 }
@@ -289,6 +264,8 @@ class CaelumTimeSkipState : Inventory
     {
         let s=Get(user);if(s==null || !s.Active)return;
         s.ElapsedTics++;if(s.Sleeping)s.SleepTics++;
+        if(user.health<=0 || user.player.playerstate!=PST_LIVE)
+        {FinishSkip(user,"CA_REST_UNAVAILABLE");return;}
         if(user.health<s.LastHealth){FinishSkip(user,"CA_REST_DAMAGE");return;}
         s.LastHealth=user.health;
         if(CaelumScheduleState.SiegeActive(user,level.MapName)){FinishSkip(user,"CA_EVENT_SIEGE_INTERRUPT");return;}
