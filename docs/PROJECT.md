@@ -12,7 +12,8 @@ Loading starts a fresh interval. The author's October 18 clarification preserves
 map-transition autosaves and restarts five active minutes after the latest
 autosave, including native arrivals. Native validation passes 36 runs/138 checks,
 the full real interval and generated-file reloads. Build/validation and all
-16,373 package members match the tested sources. CA324-01 awaits author acceptance.
+16,373 package members match the tested sources. CA324-01 has partial author
+acceptance on October 18: bag/follower reload passed; other checks remain pending.
 
 ## 5.4.33 - Isolate the western sewer crusher (#323)
 

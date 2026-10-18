@@ -3,7 +3,9 @@
 The author clarified on 2026-10-18 that the timer starts after the latest
 autosave, including map transitions; those arrival saves must remain. Native
 file creation and slot rotation still follow the user's settings. Manual saves
-do not restart the timer. Author acceptance CA324-01 is pending.
+do not restart the timer. On 2026-10-18 the author confirmed CA324-01's preview
+reload retains its bag and follower. Remaining author checks stay pending;
+excessive follower turning and slow movement reported there are tracked in #322.
 
 ## Implementation and boundaries
 

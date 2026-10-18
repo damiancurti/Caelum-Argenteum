@@ -4,7 +4,7 @@ Documentation version: **5.4.34** — 2026-10-17.
 
 **5.4.34/#324:** five active real minutes since latest autosave, including
 preserved map-entry saves (author Oct18). Native36runs/138checks, files/build pass;
-validation_5434. CA324-01 pending author preview.
+validation_5434. CA324-01: bag/follower reload accepted Oct18; other checks pending.
 
 **5.4.33/#323:** revision-5 MAP02 isolates western crusher43921 after corridors.
 Only sixteen cells change. Static/native/save checks pass; CA323-01 accepted 2026-10-17.

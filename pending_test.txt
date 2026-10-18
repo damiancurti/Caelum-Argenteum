@@ -3,14 +3,15 @@ Prerequisites: the current normal build, or the isolated #324 preview launched
 with assets/validation_5434/preview.ps1. Its initial timer has only ten active
 seconds remaining; the production interval remains 300 seconds. Use only the
 preview's own saves when testing that fixture.
-Steps: leave menus closed until the native saved-game notification appears.
-Load that latest autosave and check the bag, released follower, calendar and
-mission progress. In ordinary play, verify that pause/menu time does not count,
+Confirmed 2026-10-18: the preview autosave loads with its bag and released
+follower. Excessive follower turning and slow movement remain open under #322.
+Remaining steps: load an autosave and check calendar and mission progress.
+In ordinary play, verify that pause/menu time does not count,
 map entry still autosaves, and the next periodic save follows five active minutes
 after the latest autosave. A manual save must remain available and unchanged.
 Expected: native rotating autosaves load without lost state, bursts or immediate
 save loops. Closing the game does not close the preview terminal. Report the
-preview and any ordinary-play checks separately; author confirmation is pending.
+remaining ordinary-play checks separately; this entry has partial acceptance.
 
 CA318-01 | Origin 5.4.28 / issue #318 | Contact-only demon-breath heat
 Prerequisites: rebuild the current release and use a fresh campaign. Use a reachable

@@ -9,8 +9,10 @@ Native validation passes 36 runs/138 assertions: the full 300-second interval,
 pause/menu/console, acceleration, deferred/late invalid bodies, queue/travel races,
 native slot settings and generated-file loading with retained state. Independent
 review, project validation, build and all 16,373 package-member comparisons pass.
-Evidence: assets/validation_5434. CA324-01 remains pending author acceptance;
-the short preview seeds ten seconds remaining without changing production timing.
+Evidence: assets/validation_5434. CA324-01 bag/follower reload is author-confirmed
+on October 18; remaining author checks stay pending. The short preview seeds ten
+seconds remaining without changing production timing. Follower turning/slowness
+reported during that preview belongs to #322, not autosave acceptance.
 
 ## 5.4.33 - Western crusher sector isolation (#323)
 
