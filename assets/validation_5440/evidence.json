@@ -517,5 +517,5 @@
     "localization/index.json"
   ],
   "normal_equals_tested_source": true,
-  "author_acceptance": "pending CA325-01"
+  "author_acceptance": "CA325-01 accepted 2026-10-18; explicit rest approval; no reported qualifications"
 }

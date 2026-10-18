@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Rest and time advance now share safety checks (#325): visible enemies within
 32 m and active arcane cloud block both. Existing periodic injuries continue
 during acceleration; new attacks and death interrupt it. Native checks pass (28 runs, 278 assertions), along with validation and normal
-packaging. CA325-01 remains pending.
+packaging. The author accepted rest (CA325-01) on 2026-10-18.
 
 A confirmed voluntary jump now retains biological cushioning against walls through
 its descent (#339), using the existing capacity. Falls and pushes without a jump

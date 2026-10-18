@@ -1,13 +1,3 @@
-CA325-01 | Origin 5.4.40 / issue #325 | Shared rest and time-advance safety
-Prerequisites: current build; a carried sleeping bag or reachable bed/chair.
-Steps: lie down and try T, then Y. Repeat in the sewers and near a visible enemy
-within 32 m; compare an enemy behind an opaque wall. Try while burning or under
-another existing periodic injury, and with the arcane cloud active.
-Expected: the same safety rules apply. Cloud/visible nearby hostiles block all
-modes. Periodic damage and effects continue during allowed rest/advance; a new
-attack interrupts, and death ends advance. Existing saves retain bag/support,
-effects and partial progress. Report map/place and refusal text if inconsistent.
-
 CA322-01 | Origin 5.4.35 / issue #322 | Remaining escort campaign/passage/save checks
 Confirmed 2026-10-18: observed following and no persistent idle turning/walking
 in preview03. That accepted subset is recorded in HISTORY; do not repeat it.

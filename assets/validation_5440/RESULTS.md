@@ -4,7 +4,11 @@ Twenty-eight qualified native runs pass 278 assertions on GZDoom 4.14.2,
 Windows 11, Vulkan 1280x720, seed 282, one engine at a time, unpaused background,
 5% audio. These are behavioral/resource checks, not presented-FPS measurements.
 Earlier prototype successes and failures are archived separately and not added
-to this final count. Author check CA325-01 remains pending.
+to this final count.
+
+Author acceptance: CA325-01 (origin 5.4.40 / #325) passed on 2026-10-18. The
+author explicitly confirmed rest worked, without reported qualifications.
+The original native results and tested-runtime hashes remain unchanged.
 
 The same policy now governs lying down, T and Y: living visible hostiles at
 1023/1024 MU block; 1025 MU, an opaque intervening wall, friendly/dead bodies

@@ -15,8 +15,11 @@ refusal/recovery and #339 regressions. The 350-W diagnostic burn accounts for
 3150/4240 J over 315/424 personal tics. Review, validation/build and all 16,376
 source/tested/normal package members pass. Only a Spanish accent, a comment
 and regenerated localization indexes differ from the main matrix; final native
-checks cover that corrected runtime. CA325-01 remains pending.
-Evidence: assets/validation_5440.
+checks cover that corrected runtime. Evidence: assets/validation_5440.
+
+Author acceptance, 2026-10-18: CA325-01 (origin 5.4.40 / #325) passed. The author
+explicitly confirmed that rest worked, without reported qualifications. Only
+this rest entry is removed from pending_test.txt; native evidence is unchanged.
 
 ## 5.4.39 - Voluntary-jump wall cushioning (#339, 2026-10-18)
 
