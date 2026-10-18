@@ -90,8 +90,13 @@ An unreachable upper goal uses at most 4,225 position queries per search across
 all sampling phases. Thirty-five isolated searches average 2.415323 ms, with a
 2.448400-ms peak on this machine; this is not a siege FPS measurement. Earlier
 compile, controller and fixture failures remain archived with their own hashes.
-CA322-01 is outstanding; native conversation flags and automated movement do
-not establish author acceptance. Evidence: assets/validation_5435.
+CA322-01 partial author confirmation, 2026-10-18: the author answered
+"Funciona; ya cerr? la prueba" for observed following and idle turning/walking.
+The repaired preview reseeds after restart (10 native assertions), restores
+save references and keeps the waiting observer alive. Unmentioned campaign
+extraction/rewards and the remaining passage/save checks stay pending; this
+confirmation does not establish them. Evidence: assets/validation_5435, including
+preview-followup; the existing packed-row limit is not declared resolved.
 
 ## 5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)
 

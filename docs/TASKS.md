@@ -46,6 +46,9 @@ project validation and 16,375-member package equivalence pass. CA322-01 author
 acceptance remains outstanding. The isolated preview launcher is
 assets/validation_5435/preview.ps1; its terminal stays open after the game closes.
 
+Author confirmed observed following/idle on 2026-10-18 in repaired preview03.
+Remaining campaign/passage/save author checks stay under CA322-01.
+
 ## 5.4.34 - Active-play autosaving (#324)
 
 Implemented the shared periodic/checkpoint/arrival owner and last-autosave clock.
