@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.43.** Obtain and update the complete repository, validate
+**Current release: 5.4.44.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+The structural-cache investigation (#354) is complete: native mutation checks
+and matched combat replays pass, but the additional guard removal does not
+provide a consistent FPS gain. The conservative production caches remain.
+See [research evidence and recommendation](assets/validation_5444/RESULTS.md).
 
 Production actor maintenance (#353) adopts the author's selected #318 changes:
 derived-statistics/carried-weight caches, redundant full-resource recovery skips,
@@ -15,7 +20,7 @@ and staggered port attacker group targeting. They activate automatically at
 500 living combatants map-wide. Individual bodies, active recovery, physics and
 35-tic thermal updates remain. Target response changes deliberately; native
 attack visibility/range checks remain. See [evidence](assets/validation_5443/RESULTS.md).
-Author acceptance is pending; further structural-cache research belongs to #354.
+Author acceptance CA353-01 is pending; #354 remains a private research result.
 The earlier [prototype](assets/validation_5442/RESULTS.md) does not substitute for
 measurements of this integrated runtime.
 

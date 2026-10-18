@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.43** — 2026-10-18.
+Documentation version: **5.4.44** — 2026-10-18.
+
+## 5.4.44 - Structural cache notification investigation (#354, 2026-10-18)
+
+The author requested the next cache investigation while adopting recommendations
+1-3 through #353. The private candidate replaces 17 armor/personality reads per
+health/offense guard with owner-local notifications at 11 identified mutation
+paths. It preserves all scalar/weight guards, active state and 100-tic fallback.
+Real armor wear before zero-HP early returns and Rulo repair are covered.
+
+The candidate passes 3,958 native assertions, including 253 added research checks,
+and two 700-tic cached-read audits with zero mismatches. All 18 same-condition and
+all 12 cross-condition comparisons match nine combat checkpoints. The 18-window
+final capture supplies 10,822 valid DXGI intervals. Paired median FPS changes
+are +0.20% city (range -0.52..+19.67%) and +2.95% front (-1.70..+3.96%). Each view
+contains a negative pair; control variation and frame-time tails preclude a
+consistent-benefit or stable 50 FPS claim. The recommendation is to retain the
+conservative production guards. The prototype remains outside normal gameplay.
+
+Research 01's initial 18 GDI-only capture windows are excluded from FPS; native
+correctness evidence remains valid for the same candidate bytes. Research 02
+uses the corrected common warmup. The candidate runtime/check fixture reproduce
+identically. Normal source changes only two diagnostic release labels; project,
+package/source equality and city smoke checks accompany the archived evidence.
+No manual acceptance or wider #318/#327 closure is inferred. CA353-01 remains
+pending. Evidence: validation_5444/RESULTS.md; mutation-contract lesson CA-KP-132.
 
 ## 5.4.43 - Production maintenance and target subscriptions (#353, 2026-10-18)
 

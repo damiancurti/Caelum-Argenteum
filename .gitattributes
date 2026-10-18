@@ -277,3 +277,4 @@
 
 # Preserve #353 production-cache tooling and measured evidence byte hashes.
 /assets/validation_5443/** -text whitespace=cr-at-eol
+/assets/validation_5444/** -text whitespace=cr-at-eol

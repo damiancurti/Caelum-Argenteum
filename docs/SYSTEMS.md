@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.43** — 2026-10-18.
+Documentation version: **5.4.44** — 2026-10-18.
+
+## Structural-cache research outcome (#354, 5.4.44)
+
+Normal gameplay retains the conservative #353 armor/personality dependency
+guards. A private prototype removed 17 structural reads per health/offense query
+and invalidated the owning NPC at current armor/personality mutation sites,
+including wear with zero HP damage and Rulo repair. It retained scalar/weight
+guards and 100-tic fallback. Correctness checks and matched combat state passed,
+but paired FPS gains were inconsistent. This is not an adopted rules change.
+Future writer notices cannot replace immediate correctness with a delayed
+fallback. The 35-tic thermal cadence and pending siege-adrenaline policy remain
+as documented below. Evidence: validation_5444/RESULTS.md and CA-KP-132.
 
 ## Production actor maintenance (#353, 5.4.43)
 

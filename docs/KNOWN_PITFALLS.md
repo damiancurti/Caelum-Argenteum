@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-132 - Structural notices must cover wear even without HP damage
+
+Status/evidence: ENGINE-VERIFIED private candidate, #354 / 5.4.44, 2026-10-18.
+[validation_5444](../assets/validation_5444/RESULTS.md): 3,958 native assertions,
+two cached-read combat audits and 18 matched presentation windows. The candidate
+is not adopted; no consistent extra FPS benefit was demonstrated.
+
+Symptom/cause: an impact can wear armor while Toughness cancels all HP damage.
+Returning before notifying the owner's cache leaves derived values stale.
+Native initialization, personality migration, replacement and scripted repair
+are separate writers; observing only health changes cannot cover them.
+
+Remedy for experiments: notify the affected NPC before zero-HP early returns
+and after each inspected structural write. Keep ownership at the caller when
+the armor-state object has no owner; never discover it by scanning all actors.
+Keep scalar/weight guards and the staggered fallback until separately justified.
+
+Regression: compare every assigned cached output immediately with the original
+calculation; exercise real armor wear/repair, initialization and migration. Use
+an unnotified-write negative control. Its forced expired deadline proves the
+refresh path, not a real 100-tic wait or immediate correctness. Aggregate battle
+equality supplements, but cannot replace, individual cached-read audits.
+
+Limits: future writers must maintain the notification contract. Removing guard
+reads does not establish a useful whole-game FPS gain. Report each candidate
+against its adjacent controls, including negative pairs, rather than using the
+ratio of overall medians. Retain conservative production guards when the added
+contract has no demonstrated consistent benefit.
+
 ## CA-KP-131 - Validate the game presentation chain after startup changes
 
 Status/evidence: ENGINE-VERIFIED capture control, #353 / 5.4.43, 2026-10-18.

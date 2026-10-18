@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.43** — 2026-10-18.
+Documentation version: **5.4.44** — 2026-10-18.
+
+## 5.4.44 - Structural-cache research completed (#354)
+
+A private candidate replaces 17 armor/personality guard reads per health/offense
+query with owner-local notices at the inspected writers. Its 3,958 native checks
+and two cached-read audits pass; all nine battle checkpoints match in 18 runs.
+The paired FPS change is +0.20% city / +2.95% front, with a negative pair in each
+view and substantial variation. This does not establish a consistent benefit
+or stable 50 FPS. Retain the conservative production #353 guards; research remains
+private. Evidence: validation_5444. CA353-01 remains pending. Next: localize
+remaining update/render stalls; siege-adrenaline adoption remains separate.
 
 ## 5.4.43 - Production actor maintenance (#353)
 
