@@ -94,3 +94,13 @@ observe combat against a nearby visible soldier. An earlier save is usable.
 Expected: they resume their route or operate artillery instead of endlessly
 burning an invisible point. Breath against a real target and for cold/restraint
 remains legitimate. This is not a stable-FPS or all-groups pathfinding guarantee.
+
+CA334-02 | Origin 5.4.46 / issue #334 | Melt on both house-door directions
+Prerequisites: current build; use the open preview or MAP03 and a house portal.
+This revises the earlier no-animation request; CA334-01 remains accepted history.
+Steps: enter a house, leave it, then enter again. Observe the image during each
+transition. Load the latest inside and outside arrival autosaves and repeat.
+Expected: Melt on both directions, showing the correct source/destination, with
+no stuck dark screen or leftover ship/cart image. Arrival autosaves remain and
+reload normally. Global wipe settings and ordinary ship/cart effects stay intact.
+Report any duplicate visible wipe, wrong view or unresponsive portal.

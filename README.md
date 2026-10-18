@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.45.** Obtain and update the complete repository, validate
+**Current release: 5.4.46.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 Mandingas no longer breathe fire at their invisible route markers (#357).
@@ -14,7 +14,10 @@ The author's saved siege reproduces 20 stuck artillery operators; all 20 resume
 movement after correction. Real attacks, cold, restraints and finite resources
 retain their rules. See [native evidence](assets/validation_5445/RESULTS.md).
 CA353-01 is partially accepted; only the reported group behavior needs retesting.
-House-door presentation is tracked separately in #334.
+House doors now request Melt in both directions, following the revised author
+decision (#334). Arrival autosaves and global video settings are retained.
+See [native transition evidence](assets/validation_5446/RESULTS.md); visual
+acceptance of this revised behavior remains CA334-02.
 
 The structural-cache investigation (#354) is complete: native mutation checks
 and matched combat replays pass, but the additional guard removal does not

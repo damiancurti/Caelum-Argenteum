@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.45** — 2026-10-18.
+Documentation version: **5.4.46** — 2026-10-18.
+
+## 5.4.46 - House entry and exit use Melt (#334, 2026-10-18)
+
+After reporting residual Melt on exit, the author replaced the no-wipe request:
+"Dejarlo como está, aplicarlo también a la entrada para que sea parejo."
+The previous CA334-01 acceptance remains valid for its original release; this
+new contract has its own pending visual check, CA334-02. No global wipe setting
+is changed. Native arrival autosaves, loading icons and resident state remain.
+
+GZDoom 4.14.2 consumes the hub NoWipe counter per presentation, not per simulation
+tic. The author's real CAH008 exit produces 28 presentations in 28.27 ms before
+PreTravelled with uncapped FPS, versus one when capped. Native setTransition(0)
+does not cancel a wipe. House Use now captures its own view, confirms the same
+request once, retains the source through arrival protection and requests Melt.
+Transient ownership is cancelled on load/new game or unrelated travel.
+
+An auxiliary camera captured the player's own body; visual inspection rejected
+that candidate despite passing event checks. The final source uses the player
+camera and retires its canvas binding via a destroyed helper, also after hub
+restoration. Native screenshots verify the detailed source survives arrival;
+ordinary vehicle controls and private old/new save loads are recorded with
+hashes in validation_5446. Earlier fixture and capture failures are disclosed
+there. Final native validation passes13 runs/82 checks; the normal16,378-member
+package equals source and reloads both newly generated arrival saves. No
+screenshot of the final destination alone is treated as proof of the
+animation, and no FPS benefit is claimed. Author visual acceptance is pending.
 
 ## 5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)
 

@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.45** — 2026-10-18.
+Documentation version: **5.4.46** — 2026-10-18.
+
+## 5.4.46 - Revised house transition (#334)
+
+Implement the author's replacement contract: Melt in both directions, retaining
+arrival autosaves and global settings. Own-source capture, cancellation and
+visited-hub controls pass13 runs/82 checks in validation_5446. The older CA334-01 acceptance
+does not approve this revised presentation. Leave CA334-02 actionable alongside
+the narrowed CA353-01 artillery retest and unchanged CA318/CA327 checks.
 
 ## 5.4.45 - Artillery navigation breath fixed (#357)
 
@@ -109,7 +117,7 @@ verification passes8 runs/64 assertions: normal cart/ship effects, both directio
 of real portal Use and inside/outside autosave reloads. Review, project validation,
 build and16,375-member equivalence pass. The early vehicle/house reproduction
 injects only the approach. The author approved house transitions on 2026-10-18,
-completing CA334-01; no house-transition author checks remain. Evidence:
+completing CA334-01 for that release; revised CA334-02 is pending. Evidence:
 validation_5436. The diagnostic attribution limit remains unchanged.
 
 ## 5.4.35 - Prisoner escort replacement (#322)

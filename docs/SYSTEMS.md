@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.45** — 2026-10-18.
+Documentation version: **5.4.46** — 2026-10-18.
 
 ## Demon breath excludes navigation markers (#357, 5.4.45)
 
@@ -160,14 +160,17 @@ presentation only: discovery, notes, quest tracking and native map data persist.
 
 ## House doors do not inherit vehicle presentation (#334)
 
-MAP03/CAH house-door travel requests no full-screen animation. Portals set the
-one-use TRAVEL_WIPE_HOUSE_DOOR intent; PreTravelled preserves it instead of
-inheriting a vehicle mode. The UI clears any unfinished vehicle snapshot and
-normalizes the intent to zero. Never pass the negative sentinel to native
-setTransition: it means Melt there, not cancellation. Native same-hub travel
-keeps its loading icon and arrival autosave. Vehicle travel, tarot presentation,
-user wipetype and intermission settings retain their existing behavior. No
-saved schema changes: the already serialized pending request is consumed once.
+The author's revised October 18 decision supersedes the previous no-animation
+request: MAP03/CAH house doors use Melt on both entry and exit. Each accepted Use
+captures the current view before committing the travel; the house owns its
+source image independently of any unfinished vehicle presentation. The one-use
+TRAVEL_WIPE_HOUSE_DOOR intent still survives PreTravelled and is explicitly
+resolved to Melt in UI. Native arrival protection is allowed to expire while
+the source image remains visible; the destination then appears through Melt.
+Native loading icons, arrival autosaves, resident/hub state, global wipetype and
+intermission settings remain. Ship/cart and tarot presentation keep their rules.
+No saved schema changes: transient capture ownership is cancelled on load, new
+game, failed confirmation or an unrelated transition. Old saves remain usable.
 
 ## 5.4.35 - Coherent prisoner escort movement (#322)
 

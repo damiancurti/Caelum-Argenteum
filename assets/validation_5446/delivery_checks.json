@@ -1,0 +1,49 @@
+{
+  "issue": 334,
+  "release": "5.4.46",
+  "validation": {
+    "version": "5.4.46",
+    "documents": 11,
+    "audio_files": 111,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "normal_package_sha256": "a9a1552c748c8c34b64c7ec2ae4dec0416ce707f2280b7ad742fda0690324737",
+  "source_byte_equality": true,
+  "members": 16378,
+  "tested_runtime_sha256": "ff8713f0d9df3aa784097b2aa56c59f9e0fb6c07a272c774f42c570ff3914199",
+  "tested_gameplay_identical": true,
+  "permitted_differences": [
+    "caelum/ui/CaelumMenuAudio.zs",
+    "caelum/world/CaelumHouseHub.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "difference_explanation": "One private queued trace event removed; two diagnostic labels (with LF normalized to CRLF in those two files) and one explanatory comment updated.",
+  "original_private_save_unchanged": true,
+  "author_acceptance": "CA334-02 pending visual acceptance."
+}

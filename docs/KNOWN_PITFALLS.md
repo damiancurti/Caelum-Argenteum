@@ -4,6 +4,40 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-134 - Hub wipe protection counts presentations, not tics
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #334/5.4.46, 2026-10-18.
+Native g4.14.2 replay and lifecycle evidence: assets/validation_5446. Source
+image preservation was visually checked; final author animation acceptance is
+CA334-02, pending. No FPS or general rendering-performance result is claimed.
+
+Symptom/cause: native same-hub NoWipe can expire before queued ChangeLevel
+completion at uncapped FPS. An actual exit shows28 presentations in28.27ms before
+PreTravelled, versus1 capped. setTransition(0) is a no-op, not cancellation.
+Separate the engine counter from custom arrival overlays and the loading icon.
+
+Fix/prevention: following the revised author contract, house Use captures its
+own source image and requests Melt after arrival protection, independently of
+ship/cart presentation. Capture with the player to hide their own body. An
+auxiliary camera at the same point can show its interior instead. Do not pass
+null to SetCameraToTexture: native code dereferences viewpoint->Level. Binding
+a harmless helper and destroying it immediately retires the native renderer
+reference without clearing the pixels. Repeat after hub restoration: saved
+canvas bindings can otherwise overwrite the source despite CaptureSuspended.
+Scope ownership to the request/destination and consume its ACK once; cancel on
+save load, new game, death before commitment or unrelated travel. No actor-wide
+search is added for doors; capture starts only after a valid Use.
+
+Validation: observe both visited hub directions with capped/uncapped FPS and
+another global wipetype. Check old/new saves, duplicate/stale ACKs and incomplete
+vehicle arrival. Inspect a frozen source before and after arrival; passing
+event counts cannot detect a wrong camera image. A final screenshot alone cannot
+prove a wipe. Record fixture failures separately from runtime defects.
+
+References: GZDoom[g4.14.2](https://github.com/ZDoom/gzdoom/tree/g4.14.2),
+g_level.cpp, d_main.cpp, r_data/r_canvastexture.cpp, common/objects/dobjgc.h,
+common/objects/dobject.cpp, p_saveg.cpp; CaelumMenuAudio and CaelumHousePortal.
+
 ## CA-KP-133 - Shootable navigation markers are not combat targets
 
 Status/evidence: ENGINE-VERIFIED, #357 / 5.4.45, 2026-10-18.
@@ -228,7 +262,8 @@ every accelerated personal step. These findings do not establish siege FPS gains
 
 Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED, #334 /5.4.36,2026-10-18.
 GZDoom4.14.2 Windows. Evidence: assets/validation_5436;8 native runs/64 checks,
-two baseline routes and16,375-member source/package equivalence. CA334-01 pending.
+two baseline routes and16,375-member source/package equivalence. CA334-01 accepted
+October18. The revised5.4.46 contract is covered by CA-KP-134.
 
 Symptom/cause: real Board/Confirm TCOAST->MAP03 followed by an artificially
 early approach to house158 leaves the previous vehicle snapshot covering CAH158.
@@ -239,7 +274,8 @@ and loading icon are separate from this overlay. setTransition(0) is a no-op;
 a negative transition selects Melt, not cancellation.
 
 Fix/prevention: send explicit one-use house-door presentation intent, preserve it
-through PreTravelled, clear the prior overlay and normalize to0 in UI. Never
+through PreTravelled and clear the prior overlay. The original5.4.36 fix
+normalized to0; the revised5.4.46 contract explicitly selects Melt. Never
 forward the sentinel to the native transition API. Keep native autosaves, loading
 icons, global settings and normal vehicle transitions. No saved schema changes.
 
