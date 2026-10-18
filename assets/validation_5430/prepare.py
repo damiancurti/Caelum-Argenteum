@@ -1,4 +1,4 @@
-﻿"""Reuse the accepted native quick-item fixture for isolated issue #319 checks."""
+"""Reuse the accepted native quick-item fixture for isolated issue #319 checks."""
 from pathlib import Path
 import argparse
 import importlib.util
@@ -41,4 +41,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
