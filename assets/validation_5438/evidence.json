@@ -1,0 +1,53 @@
+{
+  "issue": 321,
+  "release": "5.4.38",
+  "runs": [
+    {
+      "directory": "issue321-panel01",
+      "log": "load.txt",
+      "sha256": "ab64b0e39b25d9bee34d8c574a7d0e92b4d0c19007eccf525356a3164c0f40e7",
+      "passed": 3,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-panel01",
+      "log": "save.txt",
+      "sha256": "71874b8211aa82f289af888d3ff0d578ad115f87fa96f838e6d0da741e8b3ede",
+      "passed": 1,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-panel01",
+      "log": "ui-en.txt",
+      "sha256": "43c6a330ac7c5e839991ad983da16e9ce1fed1495cfc4bbd05d1fac44ed02ff9",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-panel01",
+      "log": "ui-es.txt",
+      "sha256": "a397019f71512ea944268d625b346bae63058e8b5551a8b92897e22d70ae2f29",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    },
+    {
+      "directory": "issue321-panel01",
+      "log": "ui-small.txt",
+      "sha256": "75b1e9e2affb895ff1e6afda5f12853fa2c3cc169a9e0ba7130045d5c998bd0a",
+      "passed": 8,
+      "failed": 0,
+      "done": true
+    }
+  ],
+  "final_passes": 28,
+  "normal_package_members": 16375,
+  "normal_equals_tested_source": true,
+  "runtime_sha256": "249eceeced484bc7d241acd1de75150ec966363bd8a763b278cb4758f9e2aa57",
+  "fixture_sha256": "01528ef735e98c0ceb41e42b243b7b83aa83a08ad898138dffd4158a4bdc9d4c",
+  "saved_game_sha256": "bab4867014d160972c02a41ab64abe4c976a772cb530f303f8c74d4d00f076aa",
+  "author_acceptance": "pending CA321-02"
+}

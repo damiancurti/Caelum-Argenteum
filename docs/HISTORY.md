@@ -1,6 +1,15 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.37** — 2026-10-18.
+Documentation version: **5.4.38** — 2026-10-18.
+
+## 5.4.38 - Complete top-aligned map legend (#321, 2026-10-18)
+
+The author requested the legend at the top and its complete disappearance when
+collapsed, except "ver leyenda (L)". The previous accepted #321 hid only help
+rows, leaving its frame, location, clock and tracked information. The new early
+collapsed rendering path draws just the hint; expansion retains all information
+and uses the existing top margin. Five native runs pass 28 assertions; three rendered configurations inspected.
+Validation/build and 16,375-member package equality pass; CA321-02 pending.
 
 ## 5.4.37 - Current MAP03 attribution supplement (#318, 2026-10-18)
 

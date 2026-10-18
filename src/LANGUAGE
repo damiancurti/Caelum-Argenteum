@@ -5605,8 +5605,8 @@ CA_EXHAUSTION_LOCK = "No puedes levantarte hasta superar el 10% de Sueño.";
 [enu default]
 CA_MAP_NORTH_UP = "North up";
 CA_MAP_LEGEND_CONTROL = "Toggle map legend";
-CA_MAP_SHOW_LEGEND = "Legend [%s]";
-CA_MAP_HIDE_LEGEND = "Hide legend [%s]";
+CA_MAP_SHOW_LEGEND = "show legend (%s)";
+CA_MAP_HIDE_LEGEND = "hide legend (%s)";
 CA_MAP_HEADING_UP = "Heading up";
 CA_MAP_LEGEND = "Lines: explored terrain | Arrow: you | 0-9: numbered marks";
 CA_MAP_CONTROLS = "Zoom [%s / %s] | Follow [%s] | Mark [%s] | Map [%s]";
@@ -5617,8 +5617,8 @@ CA_MAP_STACKED = "Mansion: linework from different floors can overlap.";
 [esp es]
 CA_MAP_NORTH_UP = "Norte arriba";
 CA_MAP_LEGEND_CONTROL = "Mostrar/ocultar leyenda del mapa";
-CA_MAP_SHOW_LEGEND = "Leyenda [%s]";
-CA_MAP_HIDE_LEGEND = "Ocultar leyenda [%s]";
+CA_MAP_SHOW_LEGEND = "ver leyenda (%s)";
+CA_MAP_HIDE_LEGEND = "ocultar leyenda (%s)";
 CA_MAP_HEADING_UP = "Rumbo arriba";
 CA_MAP_LEGEND = "Líneas: terreno explorado | Flecha: tú | 0-9: marcas numeradas";
 CA_MAP_CONTROLS = "Zoom [%s / %s] | Seguir [%s] | Marca [%s] | Mapa [%s]";
