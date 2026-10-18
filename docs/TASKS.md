@@ -6,10 +6,10 @@ Documentation version: **5.4.33** — 2026-10-17.
 
 Implemented the generator ordering correction and exact-footprint invariants.
 Static comparison changes only the intended sixteen cells; repeated generation
-matches. Pending: native baseline/current walking, all nine crusher cycles,
-neighboring ceilings, before/during saves and revision-4 recovery. The #320
-manual preview is still open, so no second engine is launched. Evidence:
-assets/validation_5433. #312 damage/pressure rules are outside this patch.
+matches. Native baseline/current walking, all nine crusher cycles, neighboring
+ceilings, before/during saves and exact revision-4 recovery pass (108 current,
+26 baseline and 10 recovery assertions). CA323-01 awaits the author preview.
+Evidence: assets/validation_5433. #312 damage/pressure rules remain separate.
 
 ## 5.4.32 - Direct demon projectile aim (#320)
 

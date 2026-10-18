@@ -1,0 +1,201 @@
+{
+  "issue": 323,
+  "release": "5.4.33",
+  "runs": [
+    {
+      "directory": "issue323-before",
+      "log": "geometry.txt",
+      "sha256": "b9f5da8691d4f0fdb9f0db5da5c4985d8b41b6c5bd2311cbe4d197e076eb4222",
+      "passed": 19,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 GEOMETRY tid43900 x0 y-2976 sector35 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43909 x-1536 y-4512 sector19 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43915 x-3744 y-1536 sector8 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43921 x-5280 y-1536 sector0 areaM212412.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43923 x2208 y768 sector49 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43924 x4512 y-1536 sector54 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43932 x3744 y1536 sector53 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43938 x-1536 y2976 sector20 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43941 x0 y2976 sector36 areaM216.000 ceiling320.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-before",
+      "log": "walk.txt",
+      "sha256": "4e80d285e7f22fae2edeaa12ab78c166a7ae3db6eadcb99d1c5102599503f05a",
+      "passed": 1,
+      "failed": 2,
+      "done": false,
+      "measurements": [
+        "CA323 MOVED tid43921 sector0 areaM212412.000 changedSectors0 playerX-5438.407 playerY-1536.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-before02",
+      "log": "before.txt",
+      "sha256": "cd11a2c53f0531b7eb6a1c19a3834c79907e48f4581da752c452cfe22a9d9cdb",
+      "passed": 1,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    },
+    {
+      "directory": "issue323-before02",
+      "log": "during.txt",
+      "sha256": "fb954f52c7503b947125116f45e8bd0bbb7baa0d262a741217a8aa4a24acf2ea",
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    },
+    {
+      "directory": "issue323-before02",
+      "log": "geometry.txt",
+      "sha256": "4a757cc24a12c83eefd4e96bfa4386385d5edbdcc0d8b24b6964c471da0cebd3",
+      "passed": 19,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 GEOMETRY tid43900 x0 y-2976 sector35 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43909 x-1536 y-4512 sector19 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43915 x-3744 y-1536 sector8 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43921 x-5280 y-1536 sector0 areaM212412.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43923 x2208 y768 sector49 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43924 x4512 y-1536 sector54 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43932 x3744 y1536 sector53 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43938 x-1536 y2976 sector20 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43941 x0 y2976 sector36 areaM216.000 ceiling320.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-before02",
+      "log": "walk.txt",
+      "sha256": "5dadfc777591932a2532a03e67db6b9c4d50d9bcebb32e1297d844ae7ca3e60e",
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 MOVED tid43921 sector0 areaM212412.000 changedSectors1 playerX-5211.495 playerY-1536.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "all.txt",
+      "sha256": "c09a651e649d8ccf1dfe19abdcdd9c15c303623d20e35778f2fada56900b8dba",
+      "passed": 72,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 MOVED tid43900 sector36 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43909 sector20 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43915 sector9 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43921 sector4 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43923 sector50 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43924 sector55 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43932 sector54 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43938 sector21 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r",
+        "CA323 MOVED tid43941 sector37 areaM216.000 changedSectors1 playerX0.000 playerY0.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "before.txt",
+      "sha256": "e01dfd7c8f26ec3a1d9fb87fe8112700098ac1229f47447b4ff47fbd9b23e5c5",
+      "passed": 1,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "during.txt",
+      "sha256": "85a72f62b76abe52de22eeed9068af2f5bab1a8e1a30dba8664d0b8d808bb409",
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "geometry.txt",
+      "sha256": "6240f775c077326ce1df82deab703905dcfb50008750c058398d4e440b3c9592",
+      "passed": 19,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 GEOMETRY tid43900 x0 y-2976 sector36 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43909 x-1536 y-4512 sector20 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43915 x-3744 y-1536 sector9 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43921 x-5280 y-1536 sector4 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43923 x2208 y768 sector50 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43924 x4512 y-1536 sector55 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43932 x3744 y1536 sector54 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43938 x-1536 y2976 sector21 areaM216.000 ceiling320.000\r",
+        "CA323 GEOMETRY tid43941 x0 y2976 sector37 areaM216.000 ceiling320.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "load-before.txt",
+      "sha256": "cb1dbacdcb4cc3da98bec772bd5f013af0e3a4a79569c829b757cfd32f570636",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 MOVED tid43921 sector4 areaM216.000 changedSectors1 playerX-5211.613 playerY-1536.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "load-during.txt",
+      "sha256": "037c65aae2af54dc2478bcc35a12abb2a2c048cfc9e67557ee6769c7ecf3d3f0",
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    },
+    {
+      "directory": "issue323-final02",
+      "log": "walk.txt",
+      "sha256": "db10bb742a5243ab556484d7d2cdf59872de4de52de3253c924c5de5f2282752",
+      "passed": 3,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 MOVED tid43921 sector4 areaM216.000 changedSectors1 playerX-5211.495 playerY-1536.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-recovery03",
+      "log": "load-before.txt",
+      "sha256": "55d6b5b9a0675da26b4dfddd2d14eeb305701ff258f6f6944c89a965763177ee",
+      "passed": 4,
+      "failed": 0,
+      "done": true,
+      "measurements": [
+        "CA323 MOVED tid43921 sector0 areaM212412.000 changedSectors1 playerX-5211.748 playerY-1536.000\r"
+      ]
+    },
+    {
+      "directory": "issue323-recovery03",
+      "log": "load-during.txt",
+      "sha256": "d0ea41cd10c63d75bc11b47b8ca3da77e2e9a4f946c50d5786bf0b375346228c",
+      "passed": 6,
+      "failed": 0,
+      "done": true,
+      "measurements": []
+    }
+  ],
+  "current_passes": 108,
+  "baseline_passes": 26,
+  "recovery_passes": 10,
+  "normal_package_members": 16371,
+  "normal_equals_tested_source": true,
+  "recovery_only_changes_exact_old_map": true,
+  "runtime_sha256": "e8b2b48b11533fd32c207eff76c6d5f2a236869eec0c025322d6763728532094",
+  "fixture_sha256": "47387ec7f12da5c6a2912786ff4b09a9a3bdc7e9102b17776eb9be61c95146ec",
+  "baseline_ref": "6502e4c0",
+  "author_acceptance": "pending CA323-01"
+}

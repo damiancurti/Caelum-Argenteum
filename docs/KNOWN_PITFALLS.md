@@ -6,8 +6,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-124 - Later corridor painting can merge a local moving ceiling
 
-Status/evidence: CODE-VERIFIED, deterministic geometry comparison; native
-reproduction pending. #323 / 5.4.33, baseline 6502e4c0, GZDoom 4.14.2 target.
+Status/evidence: ENGINE-VERIFIED, deterministic comparison and native walking,
+cycles/save recovery. #323 / 5.4.33, baseline 6502e4c0, GZDoom 4.14.2 Windows.
 Scope: generate_map02_maze.py room/corridor painting and crusher 43921.
 
 The generator initially stamped a unique 128x128-MU panel, then a later refuge
@@ -23,7 +23,8 @@ The correction changes only 16 cells and keeps all existing panel dimensions.
 Current geometry has 85 sectors/11,541 lines versus 84/11,525. Repeated output bytes
 match; other trap/gate/loot/lower-network manifest fields remain equal. Evidence:
 [focused checks](../assets/validation_5433/RESULTS.md). Native walking, neighbors,
-all panels and save/load checks remain pending. Revision-4 recovery preserves
+all panels and save/load pass: 108 current, 26 baseline, 10 recovery assertions.
+Revision-4 recovery preserves
 its original geometry and defect; it is not a migration to corrected sectors.
 Author acceptance is pending. Damage/pressure rules are unchanged.
 

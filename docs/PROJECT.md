@@ -9,7 +9,8 @@ linking it to 12,709,888 MU2 of western ceiling instead of 16,384 MU2. The
 revision-5 generator finalizes the nine authored panels after upper corridors
 and asserts their exact footprints survive the lower-network overlay. Only
 sixteen existing 32-MU cells change group; other content remains identical.
-Static/deterministic checks pass; native and author verification are pending.
+Static/deterministic checks and native walking, all nine crusher cycles and
+save/load verification pass; CA323-01 awaits author confirmation.
 Revision-4 saves remain recoverable with the exact archived map via
 -LegacyMap02Revision4; that mode deliberately retains the old geometry/defect.
 

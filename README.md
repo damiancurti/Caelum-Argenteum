@@ -10,8 +10,9 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 MAP02's western crusher now owns its original 128x128-MU panel (#323), instead
-of the shared western ceiling. Fresh MAP02 geometry is revision 5. Native
-verification is pending; [evidence](assets/validation_5433/RESULTS.md).
+of the shared western ceiling. Fresh MAP02 geometry is revision 5. Native walking,
+all nine crushers and save/load checks pass; [evidence](assets/validation_5433/RESULTS.md).
+Author preview CA323-01 is pending.
 For a save that already visited revision 4, rebuild with `-LegacyMap02Revision4`:
 this restores the exact old geometry, including its defect, solely for recovery.
 Rebuild without that switch and start a fresh MAP02 to use the correction.

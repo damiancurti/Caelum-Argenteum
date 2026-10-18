@@ -14,7 +14,14 @@ only the sixteen western panel cells, adds one sector and sixteen lines/vertices
 and preserves other gates, traps, loot, prisoners and lower cells unchanged
 in their manifest fields. Two generations match. Validation, normal/compatibility
 builds and 16,371-member package equivalence pass; independent static review
-found no blocker. Native evidence is pending.
+found no blocker. Native GZDoom 4.14.2 passes 108 current, 26 baseline and
+10 recovery assertions: ordinary forward input reproduces the old broad ceiling
+and activates only the repaired local panel; all nine native cycles complete,
+return and refuse repeated use; before/during saves resume with their original
+geometry. The initial 30-tic walking fixture stopped short of the plate; its
+failed log is retained, and 350-tic input reaches it in both revisions. No
+production speed or damage change was made to satisfy the fixture. CA323-01
+remains pending for the author preview.
 The pre-change WAD/layout/manifest are preserved in map02_maze/legacy_5432.
 -LegacyMap02Revision4 restores the old geometry for visited-map saves; it does
 not claim to repair an already-saved old ceiling. Normal rebuilding restores

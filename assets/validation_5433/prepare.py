@@ -37,7 +37,7 @@ def main():
         'CVARINFO':b'server bool ca323_baseline=false;\n'})}
     start=f'wait 70; ca323_baseline {str(bool(args.baseline_runtime)).lower()}; netevent c282_setup; wait 3; netevent c323_setup; wait 3; '
     done='netevent c282_done; wait 5; quit\n'
-    walk='netevent c323_place; wait 3; +forward; wait 30; -forward; wait 1; netevent c323_walk_check; wait 5; '
+    walk='netevent c323_place; wait 3; +forward; wait 350; -forward; wait 1; netevent c323_walk_check; wait 5; '
     commands={
         'geometry.cfg':start+'netevent c323_geometry; wait 5; '+done,
         'walk.cfg':start+walk+done,

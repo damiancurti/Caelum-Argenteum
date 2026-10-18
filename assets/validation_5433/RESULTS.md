@@ -1,7 +1,7 @@
 # 5.4.33 / #323 - Western ceiling isolation
 
-Native reproduction and author acceptance are pending. The author's #320
-preview remains open; no second engine has been launched.
+GZDoom 4.14.2 passes 108 current, 26 baseline and 10 old-map recovery
+assertions in thirteen final runs. Author preview CA323-01 remains pending.
 
 ## Established cause and static verification
 
@@ -25,8 +25,10 @@ Independent source review confirmed the same isolated changes and backup hash.
 Project validation and normal/compatibility builds pass. All 16,371 normal
 package members match the frozen source; compatibility changes only MAP02.wad.
 Conflicting compatibility flags fail before modifying the existing package.
-See packaging.json. The native launcher correctly refused a second engine
-while the author preview remained open; no native #323 result is claimed.
+See packaging.json and evidence.json. The final normal package matches every
+member of the tested current runtime; final recovery differs only in MAP02.wad.
+The launcher preserved the author's earlier #320 preview and tests ran only
+after it closed.
 
 ## Save recovery boundary
 
@@ -44,7 +46,7 @@ The native engine checks map geometry before restoring script state. The
 author previously waived save concerns; preserving the old revision also
 retains the project's established reversible legacy-layout workflow.
 
-## Native checks prepared, not yet run
+## Native checks and limitations
 
 prepare.py freezes current sources, or accepts --baseline-runtime with the
 previous production PK3. Reuse validation_5422/run_native.ps1 with -Map MAP02.
@@ -59,3 +61,23 @@ be attributed to the selected plate. It does not alter crusher code.
 - Prior-runtime saves loaded with the current runtime and exact revision-4 map.
 
 Physics/damage changes belong to #312 and remain outside this geometry patch.
+
+The final runs are build/issue323-before02, issue323-final02 and
+issue323-recovery03. Raw logs are archived compressed with deterministic headers,
+alongside launch metadata, exact command scripts and fixture sources; no engine,
+IWAD, PK3 or private save is distributed. evidence.json gives hashes and counts.
+
+The initial baseline geometry audit passed, but its 30-tic forward-input run
+stopped short of the plate and failed two assertions. The preserved failed log
+is in evidence/issue323-before. Extending ordinary input to 350 tics reaches the
+plate in both revisions; neither production movement nor the pressure formula
+was altered. Native crushing can kill this fixture player, so that input check
+establishes activation and geometry isolation, not survivability or #312 damage
+correctness. All nine direct-release cycles separately verify completion,
+restored ceiling height, exactly one changed sector and no retrigger.
+
+Current saves before/during activation load and continue. The two baseline saves
+load under current code plus the exact revision-4 map, retaining the original
+large western sector. This verifies recovery, not conversion to revision 5.
+The compatibility package was rebuilt after branch checkout to match current
+source bytes exactly outside the intentionally replaced WAD.
