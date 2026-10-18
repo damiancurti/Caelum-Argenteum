@@ -69,6 +69,9 @@ class CaelumDemonBreath : Actor
 
     static bool CanReach(Actor owner,Actor victim)
     {
+        // El destino nativo de una ruta es disparable para A_Chase, pero no
+        // es un enemigo ni un punto al que orientar el aliento por frio o sogas.
+        if(victim is 'CaelumSewerEscapeTarget')return false;
         vector3 delta=victim.Pos+(0,0,victim.Height/2)-Mouth(owner);
         return delta.Length()-victim.Radius<=CaelumDemonBreathRules.Range() && owner.CheckSight(victim);
     }

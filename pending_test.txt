@@ -85,14 +85,12 @@ resident state persist. Reinforcements use the 1,000-living cap and 6,600 budget
 plus Zupay; resurrection is unchanged and may exceed the cap. Victory stops
 unused reserves. Native fixture checks do not certify natural battle fluency.
 
-CA353-01 | Origin 5.4.43 / issue #353 | Automatic maintenance in live siege
-Prerequisites: current normal build, MAP03 siege with the accepted 1,000-living
-attacker admission cap and 600 defenders; keep a separate save before testing.
-Steps: observe combat in city streets and near the attackers; kill a current
-target and observe nearby groups retargeting. Use/transfer finite items, save
-and reload during the siege, then enter a house and return. Watch reloading
-soldiers, wounded bodies and resource recovery. Report FPS, location and view.
-Expected: inventory/resource state persists without duplication; no cumulative
-reload slowdown or stuck groups. Shared searches may take up to 100 tics at
-high population; attacks still require native visibility/range. No general
-50-FPS guarantee or manual acceptance is inferred from automated measurements.
+CA353-01 | Origin 5.4.43 / issue #353; follow-up #357 | Artillery group retest
+Prerequisites: current normal build, a separate MAP03 siege save, accepted
+1,000-living attacker admission cap and 600 defenders. Other steps of this
+preview were accepted 2026-10-18; this reported exception remains outstanding.
+Steps: observe Mandingas near the attackers' cannons for several seconds, then
+observe combat against a nearby visible soldier. An earlier save is usable.
+Expected: they resume their route or operate artillery instead of endlessly
+burning an invisible point. Breath against a real target and for cold/restraint
+remains legitimate. This is not a stable-FPS or all-groups pathfinding guarantee.

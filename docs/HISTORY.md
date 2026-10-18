@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.44** — 2026-10-18.
+Documentation version: **5.4.45** — 2026-10-18.
+
+## 5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)
+
+The author reported stationary fire near cannons. Their untouched MAP03
+autosave contains 20 artillery Mandingas breathing at their own invisible
+CaelumSewerEscapeTarget; none is cold or tied. Five simulated seconds leave all
+20 stationary in the old runtime. The corrected runtime stops all false fire
+and moves all 20, while real nearby enemies can still receive breath. Forty-one
+isolated checks cover both species, finite Anima, range, cold, actual bolas and
+retirement of an already-active emitter. Existing saves need no schema change.
+Evidence: validation_5445. Independent read-only review requested a candidate
+observer gate and real-restraint cases; both were added. Initial fixture failures
+are retained and explained in RESULTS; no FPS improvement is asserted.
+Author retest of the reported group behavior remains pending under CA353-01.
 
 ## 5.4.44 - Structural cache notification investigation (#354, 2026-10-18)
 
@@ -56,6 +70,12 @@ the finding without claiming an established driver-level cause.
 Normal packaging matches all16,378 source members. The city preview loads the
 saved siege with free controls. The collector and temporary power request were
 released after the shared measurements without changing the power plan.
+
+CA353-01 (origin 5.4.43 / #353): on 2026-10-18 the author said the
+remaining current preview checks passed, except stationary Mandinga fire and
+the separately reported house-exit wipe. Record partial acceptance of those
+other steps; keep the group-behavior exception pending under #357. This does
+not accept older CA318/CA327 checks or establish a stable FPS threshold.
 
 ## 5.4.42 - Staggered actor updates and siege focus trial (#318, 2026-10-18)
 
