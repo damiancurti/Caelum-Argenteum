@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.4.47** — 2026-10-18.
+Documentation version: **5.5.0** — 2026-10-18.
+
+## 5.5.0 - Weapon/input audit (#309, 2026-10-18)
+
+Author decision: one charge/reload action per Reload press. Native Ready loops
+previously reset held Reload in all six representative charge/ranged routes;
+repeated Fire also reset all four empty-magazine reloads. Native button-edge
+filtering and an active-reload guard correct those paths without saved fields.
+The giant-gauntlet uppercut was classified as Block; it now correctly delivers
+blunt damage, including cold amplification. No new damage/cost/cadence values.
+The matrix reconciles Bell's accepted twelve projectiles and adds missing tool
+rows. All 111 configurations and 444 input entries are catalogued, separating
+native metadata, actual input checks and reused accepted evidence.
+
+Evidence, preserved baseline faults and diagnostic corrections are recorded in
+assets/validation_550/RESULTS.md. Native metadata covers all 111 configurations;
+44 actual magical casts pass 440 checks. Current/5.4.47 saves, hub travel, held-R
+loading, real equipment switching, interruption and empty reserves pass.
+Static validation and normal packaging pass; no FPS measurement is claimed.
+CA309-01 remains pending; no author acceptance
+or merge is claimed. Independent V5.5 follow-ups retain their own issues.
 
 ## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
 

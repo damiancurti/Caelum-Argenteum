@@ -344,7 +344,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
                 return CaelumConstants.CATALOGUE_ACTION_THROW;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
-                return CaelumConstants.CATALOGUE_ACTION_BLOCK;
+                return CaelumConstants.CATALOGUE_DAMAGE_BLUNT;
             default: return CaelumConstants.CATALOGUE_DAMAGE_NONE;
         }
     }

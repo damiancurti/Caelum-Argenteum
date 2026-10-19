@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-136 - Held native Reload can continually reset an action
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #309/5.5.0, 2026-10-18.
+Baseline: 1da6beb7; GZDoom 4.14.2, Windows/Vulkan.
+Evidence: assets/validation_550; author confirmation remains CA309-01.
+
+Symptom: R held never completes a charge/reload; empty-magazine Fire also
+continually resets automatic reload. A native Ready state can redispatch held
+buttons every tic. Direct calls and pulse-only tests do not exercise this loop.
+Apply the authored one-request-per-press rule at the native callback with
+`player.oldbuttons`, and make a same-weapon active reload request idempotent.
+Do not add a saved latch where the engine already owns button history. Requests
+during unavailable weapon states are not buffered by this edge-only policy.
+
+Regression: all six representative manual routes under held/pulse input,
+prepared-charge expiry, four automatic empty-magazine routes, and existing
+interruption/persistence boundaries. Observe whether a shot happened during
+the interval: a later failed attempt can reset the last-shot diagnostic flag.
+Clear that flag at case start to avoid counting an earlier weapon's shot.
+Keep baseline failures and probe failures distinct from production changes.
+
+For long native command tests, chain bounded `exec` files explicitly. An
+oversized one-line matrix lost its setup; splitting it into independent lines
+scheduled separate wait continuations and allowed the final line to quit early.
+Require ordered checkpoints and the final completion marker, and hash all
+chained scripts alongside the runtime/fixture. See preserved #309 magic runs.
+
 ## CA-KP-135 - Transient encounter ownership must rebuild after save load
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #361/5.4.47, 2026-10-18.

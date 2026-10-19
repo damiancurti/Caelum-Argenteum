@@ -10378,6 +10378,10 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        // Fire con el cargador vacío puede solicitarla otra vez durante la recarga.
+        // Conservar el progreso evita reinicios y doble inicio del esfuerzo térmico.
+        if (RangedReloadActive && RangedReloadWeaponType == requestedWeaponType) return;
+
         int ammoType = GetRangedAmmoType(requestedWeaponType);
         Inventory ammo = FindNativeAmmunition(ammoType);
         int available = ammo != null ? ammo.Amount : 0;

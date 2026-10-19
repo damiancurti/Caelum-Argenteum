@@ -447,6 +447,9 @@ class CaelumPhysicalSelectorWeapon : Weapon
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
+            // #309: una solicitud por pulsación; Ready puede reenviar Reload al mantener R.
+            if (caelumPlayer.player == null
+                || (caelumPlayer.player.oldbuttons & BT_RELOAD) != 0) return;
             caelumPlayer.RequestWeaponReloadOrCharge(
                 invoker.GetCaelumWeaponType(), false
             );
@@ -1131,6 +1134,9 @@ class CaelumMagicSelectorWeapon : Weapon
         CaelumPlayer caelumPlayer = CaelumPlayer(invoker.Owner);
         if (caelumPlayer != null)
         {
+            // #309: el comando nativo conserva el flanco sin otro estado guardado.
+            if (caelumPlayer.player == null
+                || (caelumPlayer.player.oldbuttons & BT_RELOAD) != 0) return;
             caelumPlayer.RequestWeaponReloadOrCharge(
                 invoker.GetCaelumWeaponType(), true
             );
