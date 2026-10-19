@@ -1,0 +1,2 @@
+# Preserve executed evidence byte-for-byte against its recorded SHA-256 hashes.
+evidence/** -text
