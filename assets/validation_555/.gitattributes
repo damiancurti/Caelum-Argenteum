@@ -1,2 +1,4 @@
 # Preserve executed evidence byte-for-byte against its recorded SHA-256 hashes.
-evidence/** -text
+** -text whitespace=cr-at-eol
+evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidence/*.ini whitespace=-blank-at-eof,cr-at-eol
