@@ -238,7 +238,7 @@ SHA-256: `cfacd21163a2daeb96418f500d9e13250a16dfc122bcf20083db2e56e96d21f0`
 
 ## [HISTORY.md](HISTORY.md) - 225133 words
 
-SHA-256: `15720c4af093d64ed188674fbd9651ea27ca04380777a4b633374314cb1bbd40`
+SHA-256: `336b4e17176870815265b86c368fcb251f89bbf5d848ee8f709589521495c8bd`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-21 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Consolidated history
@@ -858,7 +858,7 @@ SHA-256: `66bd413624873833aba6dc1ac4120a5c9f84a7011bd04ce8b642de52c38cfe58`
 
 ## [PROJECT.md](PROJECT.md) - 59172 words
 
-SHA-256: `b375f4b705ca18502788a0a184f8127cbadc3bf08aec2d486e73cd0641ff9f9c`
+SHA-256: `e19cf3151137d5cc9ada32c6bfc77373f8dfffa4335cdf4aa1f15fa2135f1905`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-19 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Project, status and roadmap
@@ -1445,7 +1445,7 @@ SHA-256: `509b9d162d91bea81243f0b2130d09da80f953199e314a141f6016082a15d15a`
 
 ## [TASKS.md](TASKS.md) - 22347 words
 
-SHA-256: `926d5810283ac5c678c811679754f5245ba0e4286f5d0c69e2b77e2503bcbbe9`
+SHA-256: `81ca609066cfbadae96ba96ef7e2262685d91337e0f0016fa05948a2820b8fae`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-19 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: TASKS.md — Active tasks
@@ -1631,6 +1631,6 @@ SHA-256: `926d5810283ac5c678c811679754f5245ba0e4286f5d0c69e2b77e2503bcbbe9`
 - Lines 2715-2727 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "cfacd21163a2daeb96418f500d9e13250a16dfc122bcf20083db2e56e96d21f0", "words": 30701}, {"path": "HISTORY.md", "sha256": "15720c4af093d64ed188674fbd9651ea27ca04380777a4b633374314cb1bbd40", "words": 225133}, {"path": "KNOWN_PITFALLS.md", "sha256": "5b3fd5b6ad74360ac2aa50f0c2af77a4a239f1f15d7a9216d31fd9b9b0fc437f", "words": 34836}, {"path": "MAP01.txt", "sha256": "66bd413624873833aba6dc1ac4120a5c9f84a7011bd04ce8b642de52c38cfe58", "words": 34939}, {"path": "PROJECT.md", "sha256": "b375f4b705ca18502788a0a184f8127cbadc3bf08aec2d486e73cd0641ff9f9c", "words": 59172}, {"path": "SYSTEMS.md", "sha256": "509b9d162d91bea81243f0b2130d09da80f953199e314a141f6016082a15d15a", "words": 104724}, {"path": "TASKS.md", "sha256": "926d5810283ac5c678c811679754f5245ba0e4286f5d0c69e2b77e2503bcbbe9", "words": 22347}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "cfacd21163a2daeb96418f500d9e13250a16dfc122bcf20083db2e56e96d21f0", "words": 30701}, {"path": "HISTORY.md", "sha256": "336b4e17176870815265b86c368fcb251f89bbf5d848ee8f709589521495c8bd", "words": 225133}, {"path": "KNOWN_PITFALLS.md", "sha256": "5b3fd5b6ad74360ac2aa50f0c2af77a4a239f1f15d7a9216d31fd9b9b0fc437f", "words": 34836}, {"path": "MAP01.txt", "sha256": "66bd413624873833aba6dc1ac4120a5c9f84a7011bd04ce8b642de52c38cfe58", "words": 34939}, {"path": "PROJECT.md", "sha256": "e19cf3151137d5cc9ada32c6bfc77373f8dfffa4335cdf4aa1f15fa2135f1905", "words": 59172}, {"path": "SYSTEMS.md", "sha256": "509b9d162d91bea81243f0b2130d09da80f953199e314a141f6016082a15d15a", "words": 104724}, {"path": "TASKS.md", "sha256": "81ca609066cfbadae96ba96ef7e2262685d91337e0f0016fa05948a2820b8fae", "words": 22347}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
