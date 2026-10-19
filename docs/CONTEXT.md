@@ -2,7 +2,7 @@
 
 Documentation version: **5.5.5** — 2026-10-19.
 
-**5.5.5/#363:** unarmed User2 restored; validation_555. CA363-01 pending.
+**5.5.5/#363:** unarmed User2 restored; validation_555. CA363-01 accepted Oct19.
 #314/#315/#369 separate; #316 deferred.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.

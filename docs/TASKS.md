@@ -12,7 +12,9 @@ The new states are appended; previous state indices and saved fields are unchang
 Native baseline/revised input, exact spending, rejection, old/current saves,
 rollback and hub evidence are recorded in assets/validation_555/RESULTS.md.
 Static validation and normal packaging pass. Independent review found no
-production defect. Author check CA363-01 remains pending; no FPS claim is made.
+production defect. The author accepted CA363-01 (origin 5.5.5 / #363) on
+2026-10-19: "La prueba dio correcta", without qualifications. Its pending entry
+is removed. Existing native evidence is reused; no new engine test or FPS claim.
 
 ## 5.5.4 - Ammunition mass and finished-component contract (#313)
 

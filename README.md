@@ -11,7 +11,7 @@ it, then rebuild with `run_dev.bat` as described below.
 
 V5.5.5 restores equipped-Seal User2 input while unarmed (#363), preserving the
 shared channel costs, toggle and cooldown rules. Native input/save checks pass;
-author check CA363-01 is pending. See [evidence](assets/validation_555/RESULTS.md).
+the author accepted CA363-01 on 2026-10-19. See [evidence](assets/validation_555/RESULTS.md).
 
 V5.5.4 separates complete cartridge mass: 40 g carbine / 45 g shotgun (#313),
 author-approved design approximations. See [ammunition evidence](assets/validation_554/RESULTS.md).

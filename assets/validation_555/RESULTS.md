@@ -36,7 +36,7 @@ pointer-equality assumptions across hub transfers. None is counted as a pass.
 
 `python validate_project.py` and normal `build_dev.ps1` packaging pass. The
 normal builder's package contents match the tested revised runtime. The
-generated document index is current. Author acceptance is pending: CA363-01.
+generated document index is current. The author accepted CA363-01 (origin 5.5.5 / #363) on 2026-10-19: "La prueba dio correcta", without qualifications. This confirmation reuses the recorded native evidence; it is not another engine run.
 
 Reproduce current input checks in a fresh directory:
 

@@ -218,8 +218,15 @@
   "native_runs": 19,
   "checks": 175,
   "limits": [
-    "Author acceptance pending; no performance claim.",
+    "Author accepted CA363-01 on 2026-10-19 without qualifications. No performance claim.",
     "Old punch save establishes successful load and later native User2 usability; no in-flight punch-phase assertion.",
     "Fire/User1/User3/User4 preservation is static evidence; these controls were not exercised by the native fixture."
-  ]
+  ],
+  "author_acceptance": {
+    "id": "CA363-01",
+    "origin": "5.5.5 / #363",
+    "date": "2026-10-19",
+    "confirmation": "La prueba dio correcta",
+    "qualifications": null
+  }
 }
