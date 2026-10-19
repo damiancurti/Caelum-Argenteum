@@ -1,0 +1,42 @@
+{
+  "source_commit": "15da97040d2bd1f9aa3a7b5813be4d00a0413211",
+  "runtime_sha256": "4c09ed116ce56b7bb55d382033356cde4aa9950dfe1f2efdce375f5e7750efd5",
+  "fixtures": {
+    "energy.pk3": "cf5d54d2ab207ecafd11eb5848438a0320f8d464c32fb549c0aa3c21fba034c5",
+    "combat.pk3": "79359bd7aefaee7449438993be4aad6822da9b536ba8408d9caebf67f8b7c6f2",
+    "player.pk3": "d55437fbac5f921fd848ff21225592aa28acf552d8c8b208741a6367e717202c",
+    "motion.pk3": "ac19fd207a27071d498ab98c5f114b5ba582e9116b21c092c3eccd0e93e2fe36",
+    "siege.pk3": "f6f0e60c9a0b38ffe54a5ab011d51e562f121ffd204c2b019dec9041518ccf7d",
+    "contacts.pk3": "e76f2a2326e453644ccc75988024379558ea4934e39c3ef287818eddd1ecca35",
+    "multiple.pk3": "7527ecf5c8674d021446d72cd48e9249841c19c2b5d74e098cc2c47aba5dd5c6",
+    "dense.pk3": "9382615211b61df781350d7bc3ff68af9534122335afe4067e7e0426f7321c54"
+  },
+  "reused_sources": {
+    "combat.zs": "d8b9d0d16a508cba54a2caa871fd792a77e6e7f4f19da5c34dc6c48ae16a3f1e",
+    "compile.zs": "ce6c4029aec0e2bb4cbcf96aaf45d68b169b39d433ba5b0bc279f4c2470652d9",
+    "contacts.zs": "568e7390a867e2174964d37df31f026bf07008edb6119bafa77f2aeda0f3f6da",
+    "energy.zs": "6b6f698ef02def2bc91885ddd8e160e50848904542125ff80955dd8994236b05",
+    "legacy.zs": "278d82848cad199018bae887182604de56ed6d188246c91372c3eabde982ebea",
+    "motion.zs": "2c6a235e99ebef66fe46aad03b056fc9b2f12921747fed09a4d0cded7a47ea96",
+    "player.zs": "8f2e5a2b603aa91a893c5297636560f87796eb5c1ef09aa91bdccf2c23af989c",
+    "pressure.zs": "995b7dfda8ad51231af8e3df492728814fbc9f6d67e1a9b5137b4de5c8ec2160",
+    "siege.zs": "f4e559c879184a3f92dd8b26de20d70a0d00e47d4eb9312e5484a3c736f1dfbd"
+  },
+  "script_hashes": {
+    "combat.cfg": "009d59e5654b4fc67768dea5b581035c2d8ba9a3a85cb11f2200b529f8bf23cc",
+    "contacts.cfg": "5b3d7c1b7f688367e81f544870b84e66e128d1b6a9e430f544912fce7066a583",
+    "contacts_reload.cfg": "5bbebca6253ec2a018d4f0ce9246c26ec78d02bd642de36cb595d48dd72cb906",
+    "dense-512-0.cfg": "6ce979b55c0736ccc86dff7a50755159c213a5dbb3185b7b3e812ac7efb8fbc4",
+    "dense-512-1.cfg": "1b4d91723686fd5d3955e2d27caf21acb5e974a239dc5ba7234ef5b0361c2e6a",
+    "dense-64-0.cfg": "a49706938f2a3a1792359134da55c5611a46461968e7432a04e49f02bc5b1c7a",
+    "dense-64-1.cfg": "88e5f9f220a3c48b8d5a6f1e05611c793d85c913000a0f34f708bc4cc0bec695",
+    "energy.cfg": "009d59e5654b4fc67768dea5b581035c2d8ba9a3a85cb11f2200b529f8bf23cc",
+    "legacy-save.cfg": "443c06705926ca5d533964ddb17df4cee45e0bbd04378dc6039eb31f36281099",
+    "motion.cfg": "8578809fbc9ad58add75823dfc12ddcbf61719c66682ce34ef55d1387d1dde17",
+    "multi-load.cfg": "879b216a7cd0231592b56bf5fe26081e7f500749a2ccd07ee7fe4dd0a74db18f",
+    "multi-save.cfg": "d8757389e4dcb2bd2e20a6470f2490601fe7af1f841aff76a073707e4de4fc5c",
+    "multiple.cfg": "08fda39bd2952c8b41a9d523655574a8b2a3fcbf83177485b49036989173b196",
+    "player.cfg": "5bbebca6253ec2a018d4f0ce9246c26ec78d02bd642de36cb595d48dd72cb906",
+    "siege.cfg": "009d59e5654b4fc67768dea5b581035c2d8ba9a3a85cb11f2200b529f8bf23cc"
+  }
+}

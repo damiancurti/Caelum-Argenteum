@@ -1,0 +1,44 @@
+Log started: 2026-10-18 23:12:50
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 282 set.
+Could not open "preview.cfg;"
+Could not open "wait"
+Could not open "50;"
+Could not open "netevent"
+Could not open "c311_demo"
+Could not open "0;"
+Could not open "wait"
+Could not open "70;"
+Could not open "netevent"
+Could not open "c311_demo"
+Could not open "1;"
+Could not open "wait"
+Could not open "70;"
+Could not open "netevent"
+Could not open "c311_demo"
+Could not open "2;"
+Could not open "wait"
+Could not open "80;"
+Could not open "screenshot"
+Could not open "preview-smoke.png;"
+Could not open "wait"
+Could not open "5;"
+Could not open "quit"
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final03/production.pk3, 16380 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final03/preview.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick

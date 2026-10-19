@@ -1,0 +1,10 @@
+CA311-01 | Origin 5.5.2 / #311 | Multiple body contacts
+Prerequisite: the #311 preview and visible terminal; no other GZDoom instance.
+1. Three visible bodies are in front of the protected player. F6 makes the two
+   outer bodies strike the center. Watch the on-screen hit counters.
+2. F7 separates the same bodies and repeats: new collisions add hits once;
+   remaining together must not repeatedly add initial impacts.
+3. F8 drops a body onto the other two. Save/load after a collision or during motion;
+   confirm bodies remain usable and no completed impact replays. F10 resets the room.
+Expected: visible, stable contacts and a usable scene after load. This author
+check is separate from numeric damage/migration tests. Close GZDoom and report.

@@ -1,0 +1,413 @@
+Log started: 2026-10-18 23:20:45
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 282 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final04/production.pk3, 16380 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final04/dense.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2266.76 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAPQA - Unnamed
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA311 COST mode=1 population=512 layout=1 tic=106 body_ms=16.357000 contact_ms=10.297400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=107 body_ms=31.732900 contact_ms=27.952400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=108 body_ms=15.034800 contact_ms=10.975500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=109 body_ms=13.138600 contact_ms=9.768800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=110 body_ms=14.825200 contact_ms=10.366800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=111 body_ms=17.610700 contact_ms=11.465500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=112 body_ms=13.491300 contact_ms=10.636900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=113 body_ms=11.630800 contact_ms=8.654300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=114 body_ms=13.716500 contact_ms=9.493000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=115 body_ms=12.391400 contact_ms=9.321600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=116 body_ms=18.740000 contact_ms=12.340000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=117 body_ms=16.729000 contact_ms=13.449500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=118 body_ms=16.116700 contact_ms=12.691800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=119 body_ms=17.506500 contact_ms=13.032700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=120 body_ms=14.856100 contact_ms=11.831300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=121 body_ms=15.495700 contact_ms=10.135900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=122 body_ms=14.133700 contact_ms=11.044500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=123 body_ms=11.581800 contact_ms=8.816800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=124 body_ms=12.520900 contact_ms=9.559600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=125 body_ms=12.962500 contact_ms=9.767000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=126 body_ms=15.991400 contact_ms=9.777600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=127 body_ms=14.308400 contact_ms=11.398400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=128 body_ms=10.614500 contact_ms=7.742800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=129 body_ms=9.028100 contact_ms=6.756800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=130 body_ms=11.706900 contact_ms=8.501700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=131 body_ms=15.043600 contact_ms=9.197400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=132 body_ms=15.723800 contact_ms=11.946800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=133 body_ms=13.558300 contact_ms=10.161800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=134 body_ms=11.183800 contact_ms=8.383200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=135 body_ms=12.683000 contact_ms=9.720300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=136 body_ms=17.406000 contact_ms=10.967100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=137 body_ms=12.971000 contact_ms=10.455200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=138 body_ms=11.506500 contact_ms=8.382600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=139 body_ms=10.710200 contact_ms=8.156500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=140 body_ms=14.324500 contact_ms=10.551700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=141 body_ms=14.184500 contact_ms=8.297100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=142 body_ms=30.056600 contact_ms=26.146100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=143 body_ms=9.625400 contact_ms=7.260100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=144 body_ms=9.428700 contact_ms=6.998000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=145 body_ms=10.323100 contact_ms=7.590800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=146 body_ms=12.299500 contact_ms=7.674400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=147 body_ms=12.487300 contact_ms=9.787100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=148 body_ms=12.408100 contact_ms=9.061400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=149 body_ms=9.422100 contact_ms=6.996500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=150 body_ms=9.516700 contact_ms=6.939100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=151 body_ms=14.039000 contact_ms=8.563100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=152 body_ms=17.577200 contact_ms=14.574500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=153 body_ms=13.012400 contact_ms=9.732600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=154 body_ms=11.492800 contact_ms=8.271200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=155 body_ms=12.450800 contact_ms=9.164100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=156 body_ms=15.087400 contact_ms=9.311900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=157 body_ms=15.172100 contact_ms=11.753500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=158 body_ms=13.079700 contact_ms=9.720000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=159 body_ms=13.191000 contact_ms=9.272400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=160 body_ms=12.909900 contact_ms=9.236100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=161 body_ms=14.405200 contact_ms=8.641900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=162 body_ms=14.462600 contact_ms=11.308700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=163 body_ms=9.268400 contact_ms=6.492700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=164 body_ms=11.929900 contact_ms=9.004900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=165 body_ms=12.636800 contact_ms=8.756800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=166 body_ms=12.788400 contact_ms=8.006300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=167 body_ms=15.358500 contact_ms=12.309800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=168 body_ms=9.297000 contact_ms=6.890700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=169 body_ms=11.819000 contact_ms=9.051400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=170 body_ms=12.142800 contact_ms=8.457800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=171 body_ms=14.938500 contact_ms=9.398300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=172 body_ms=14.819600 contact_ms=10.913400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=173 body_ms=11.862400 contact_ms=8.790400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=174 body_ms=10.091800 contact_ms=7.425300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=175 body_ms=11.650500 contact_ms=8.560800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=176 body_ms=15.075700 contact_ms=8.462400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=177 body_ms=28.954300 contact_ms=25.833200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=178 body_ms=13.110000 contact_ms=9.701900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=179 body_ms=13.154200 contact_ms=9.403500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=180 body_ms=12.302200 contact_ms=8.528700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=181 body_ms=14.054600 contact_ms=7.624600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=182 body_ms=13.986300 contact_ms=10.906200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=183 body_ms=11.910400 contact_ms=7.934600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=184 body_ms=12.101600 contact_ms=9.054900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=185 body_ms=11.957700 contact_ms=9.133000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=186 body_ms=15.450300 contact_ms=9.905500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=187 body_ms=15.065200 contact_ms=12.254000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=188 body_ms=9.944200 contact_ms=7.023300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=189 body_ms=12.107900 contact_ms=8.912600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=190 body_ms=12.148400 contact_ms=8.199600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=191 body_ms=14.988700 contact_ms=9.202100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=192 body_ms=13.733000 contact_ms=10.984100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=193 body_ms=9.710400 contact_ms=7.164600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=194 body_ms=10.409700 contact_ms=7.600800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=195 body_ms=11.650200 contact_ms=8.051000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=196 body_ms=12.579700 contact_ms=7.496900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=197 body_ms=13.972100 contact_ms=10.894200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=198 body_ms=10.268400 contact_ms=7.466700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=199 body_ms=12.562800 contact_ms=9.153200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=200 body_ms=11.895600 contact_ms=8.281200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=201 body_ms=16.035500 contact_ms=9.420100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=202 body_ms=15.635000 contact_ms=12.426000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=203 body_ms=10.140600 contact_ms=7.390100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=204 body_ms=12.024600 contact_ms=8.570700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=205 body_ms=12.038200 contact_ms=9.106200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=206 body_ms=13.817600 contact_ms=8.555300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=207 body_ms=10.996800 contact_ms=8.657900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=208 body_ms=12.031600 contact_ms=8.316600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=209 body_ms=12.457700 contact_ms=9.430100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=210 body_ms=12.940900 contact_ms=8.640200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=211 body_ms=12.798000 contact_ms=7.598000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=212 body_ms=28.900800 contact_ms=25.456000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=213 body_ms=11.631100 contact_ms=8.420900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=214 body_ms=12.120600 contact_ms=8.695200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=215 body_ms=10.614800 contact_ms=7.728300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=216 body_ms=16.043000 contact_ms=10.448600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=217 body_ms=21.020600 contact_ms=17.346000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=218 body_ms=11.714500 contact_ms=8.673100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=219 body_ms=11.858300 contact_ms=8.253700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=220 body_ms=11.119800 contact_ms=8.374100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=221 body_ms=14.209200 contact_ms=9.085200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=222 body_ms=15.635600 contact_ms=12.269500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=223 body_ms=11.397900 contact_ms=8.274000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=224 body_ms=9.651600 contact_ms=7.087500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=225 body_ms=10.005400 contact_ms=7.387800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=226 body_ms=14.376200 contact_ms=8.131500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=227 body_ms=12.704800 contact_ms=9.849200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=228 body_ms=11.636400 contact_ms=8.500300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=229 body_ms=13.172700 contact_ms=9.247800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=230 body_ms=13.670700 contact_ms=10.053100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=231 body_ms=12.886700 contact_ms=7.975700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=232 body_ms=14.744400 contact_ms=11.744900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=233 body_ms=11.969500 contact_ms=9.029000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=234 body_ms=13.359200 contact_ms=9.809400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=235 body_ms=11.036300 contact_ms=7.919400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=236 body_ms=13.256400 contact_ms=7.931100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=237 body_ms=17.564200 contact_ms=13.852300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=238 body_ms=11.477100 contact_ms=8.457700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=239 body_ms=10.760300 contact_ms=8.084100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=240 body_ms=12.112300 contact_ms=8.059500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=241 body_ms=14.566200 contact_ms=8.790500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=242 body_ms=15.457500 contact_ms=11.116100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=243 body_ms=9.571100 contact_ms=7.017800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=244 body_ms=12.058300 contact_ms=8.223400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=245 body_ms=10.332400 contact_ms=7.488700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=246 body_ms=14.663100 contact_ms=8.391600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=247 body_ms=24.390500 contact_ms=21.478600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=248 body_ms=11.755600 contact_ms=8.605200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=249 body_ms=12.297500 contact_ms=7.891300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=250 body_ms=11.742200 contact_ms=8.600200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=251 body_ms=11.266700 contact_ms=6.639300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=252 body_ms=15.934600 contact_ms=12.921300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=253 body_ms=12.320400 contact_ms=8.302400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=254 body_ms=11.836900 contact_ms=8.471000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=255 body_ms=10.138100 contact_ms=7.315900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=256 body_ms=15.579600 contact_ms=9.149800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=257 body_ms=14.410200 contact_ms=11.258700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=258 body_ms=12.746600 contact_ms=8.674100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=259 body_ms=10.661700 contact_ms=7.972600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=260 body_ms=9.713500 contact_ms=6.935000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=261 body_ms=11.534900 contact_ms=6.883700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=262 body_ms=15.155800 contact_ms=11.431800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=263 body_ms=11.411800 contact_ms=8.224100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=264 body_ms=9.496000 contact_ms=7.003000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=265 body_ms=9.695800 contact_ms=7.047700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=266 body_ms=13.461800 contact_ms=7.550200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=267 body_ms=13.242900 contact_ms=10.343700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=268 body_ms=13.701300 contact_ms=10.336500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=269 body_ms=12.243800 contact_ms=9.332700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=270 body_ms=12.861100 contact_ms=9.372900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=271 body_ms=13.877700 contact_ms=8.141100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=272 body_ms=13.154400 contact_ms=10.464100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=273 body_ms=9.727800 contact_ms=7.020500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=274 body_ms=12.331500 contact_ms=8.440800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=275 body_ms=11.752200 contact_ms=8.826000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=276 body_ms=12.844100 contact_ms=7.922000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=277 body_ms=13.342900 contact_ms=10.384300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=278 body_ms=9.780900 contact_ms=7.201600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=279 body_ms=10.870500 contact_ms=8.080900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=280 body_ms=11.489500 contact_ms=7.085300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=281 body_ms=13.886900 contact_ms=8.260900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=282 body_ms=26.961500 contact_ms=23.854400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=283 body_ms=9.788700 contact_ms=7.127900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=284 body_ms=9.258700 contact_ms=6.665400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=285 body_ms=10.687000 contact_ms=7.914000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=286 body_ms=14.364100 contact_ms=8.110600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=287 body_ms=18.815300 contact_ms=15.336400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=288 body_ms=13.785800 contact_ms=10.029900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=289 body_ms=10.614200 contact_ms=7.989100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=290 body_ms=11.652400 contact_ms=8.302600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=291 body_ms=17.335200 contact_ms=9.203200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=292 body_ms=15.882100 contact_ms=12.376700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=293 body_ms=15.239300 contact_ms=11.374700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=294 body_ms=13.191600 contact_ms=9.446600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=295 body_ms=10.461500 contact_ms=7.629300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=296 body_ms=15.169900 contact_ms=9.345400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=297 body_ms=15.341100 contact_ms=12.241400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=298 body_ms=10.363600 contact_ms=7.619900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=299 body_ms=10.670500 contact_ms=7.820700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=300 body_ms=10.322300 contact_ms=7.553800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=301 body_ms=12.414800 contact_ms=7.533400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=302 body_ms=16.054900 contact_ms=12.638900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=303 body_ms=13.502300 contact_ms=10.514600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=304 body_ms=11.479700 contact_ms=8.819700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=305 body_ms=10.880900 contact_ms=7.369300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=306 body_ms=12.497900 contact_ms=7.529900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=307 body_ms=14.425500 contact_ms=10.367500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=308 body_ms=12.670900 contact_ms=8.171800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=309 body_ms=12.518800 contact_ms=9.184500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=310 body_ms=11.015400 contact_ms=7.947900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=311 body_ms=14.584600 contact_ms=8.864600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=312 body_ms=14.994900 contact_ms=10.948700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=313 body_ms=9.689100 contact_ms=7.162700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=314 body_ms=12.381900 contact_ms=8.699900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=315 body_ms=8.694200 contact_ms=6.334800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=316 body_ms=13.155000 contact_ms=7.630000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=317 body_ms=26.628500 contact_ms=23.216100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=318 body_ms=11.726100 contact_ms=8.553500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=319 body_ms=10.965500 contact_ms=8.177700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=320 body_ms=10.297100 contact_ms=7.519300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=321 body_ms=16.068900 contact_ms=11.335400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=322 body_ms=14.125400 contact_ms=10.882700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=323 body_ms=9.602700 contact_ms=6.972000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=324 body_ms=10.441200 contact_ms=7.585600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=325 body_ms=10.985000 contact_ms=7.955000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=326 body_ms=13.091900 contact_ms=7.431300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=327 body_ms=13.690900 contact_ms=11.015600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=328 body_ms=10.851100 contact_ms=7.928400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=329 body_ms=13.490500 contact_ms=9.972500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=330 body_ms=10.595900 contact_ms=7.649800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=331 body_ms=13.495400 contact_ms=8.283000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=332 body_ms=14.451500 contact_ms=11.627700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=333 body_ms=11.306900 contact_ms=8.610100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=334 body_ms=11.162900 contact_ms=8.189600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=335 body_ms=9.736300 contact_ms=7.117900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=336 body_ms=13.571400 contact_ms=8.115700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=337 body_ms=15.319600 contact_ms=12.202600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=338 body_ms=14.717100 contact_ms=10.938600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=339 body_ms=12.843200 contact_ms=9.431100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=340 body_ms=9.575000 contact_ms=7.032400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=341 body_ms=15.485700 contact_ms=8.202100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=342 body_ms=15.759500 contact_ms=12.505700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=343 body_ms=10.657800 contact_ms=7.819300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=344 body_ms=11.486400 contact_ms=8.276400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=345 body_ms=11.984200 contact_ms=8.956800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=346 body_ms=14.355800 contact_ms=8.688400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=347 body_ms=14.142500 contact_ms=10.979100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=348 body_ms=11.866700 contact_ms=8.340500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=349 body_ms=10.742700 contact_ms=7.272100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=350 body_ms=9.049100 contact_ms=6.530200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=351 body_ms=13.388200 contact_ms=7.797900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=352 body_ms=30.354300 contact_ms=26.933000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=353 body_ms=10.406100 contact_ms=7.330900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=354 body_ms=13.242900 contact_ms=8.845700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=355 body_ms=12.429700 contact_ms=9.353400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=356 body_ms=13.024700 contact_ms=8.337500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=357 body_ms=14.482100 contact_ms=10.636000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=358 body_ms=11.983000 contact_ms=8.433500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=359 body_ms=11.788500 contact_ms=8.605500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=360 body_ms=11.179300 contact_ms=7.929200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=361 body_ms=14.954100 contact_ms=8.492800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=362 body_ms=14.122300 contact_ms=10.898500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=363 body_ms=12.766800 contact_ms=8.851800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=364 body_ms=11.970100 contact_ms=7.838200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=365 body_ms=9.444400 contact_ms=7.003300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=366 body_ms=12.488900 contact_ms=7.109600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=367 body_ms=17.339600 contact_ms=13.715100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=368 body_ms=12.776100 contact_ms=8.588100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=369 body_ms=8.919300 contact_ms=6.577200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=370 body_ms=13.254700 contact_ms=9.194900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=371 body_ms=15.784100 contact_ms=9.695900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=372 body_ms=12.788900 contact_ms=10.128900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=373 body_ms=12.688900 contact_ms=9.403300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=374 body_ms=13.577500 contact_ms=10.169300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=375 body_ms=9.515700 contact_ms=6.841700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=376 body_ms=13.187000 contact_ms=8.174500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=377 body_ms=11.391300 contact_ms=8.904600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=378 body_ms=12.754900 contact_ms=9.170200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=379 body_ms=9.832000 contact_ms=7.190600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=380 body_ms=10.880100 contact_ms=7.993800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=381 body_ms=14.178900 contact_ms=7.289800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=382 body_ms=13.367400 contact_ms=10.296300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=383 body_ms=9.719600 contact_ms=7.084100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=384 body_ms=11.170500 contact_ms=8.481500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=385 body_ms=10.252600 contact_ms=7.824500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=386 body_ms=12.082700 contact_ms=7.258500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=387 body_ms=29.859900 contact_ms=26.213000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=388 body_ms=11.055500 contact_ms=8.341600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=389 body_ms=13.999700 contact_ms=11.083200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=390 body_ms=11.385900 contact_ms=8.732000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=391 body_ms=14.727700 contact_ms=9.783200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=392 body_ms=13.111100 contact_ms=10.067500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=393 body_ms=10.923100 contact_ms=8.001900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=394 body_ms=9.097900 contact_ms=6.575400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=395 body_ms=12.223800 contact_ms=9.311100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=396 body_ms=14.915700 contact_ms=8.971100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=397 body_ms=15.054000 contact_ms=10.908400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=398 body_ms=12.044300 contact_ms=8.904300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=399 body_ms=12.201200 contact_ms=8.797800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=400 body_ms=11.304900 contact_ms=8.050100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=401 body_ms=14.921500 contact_ms=9.288000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=402 body_ms=14.505000 contact_ms=11.304200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=403 body_ms=11.569000 contact_ms=8.153400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=404 body_ms=12.182100 contact_ms=8.807900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=405 body_ms=12.833000 contact_ms=9.613900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=406 body_ms=16.336400 contact_ms=9.332200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=407 body_ms=14.327500 contact_ms=11.459300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=408 body_ms=10.838600 contact_ms=7.852300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=409 body_ms=11.551600 contact_ms=8.735600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=410 body_ms=9.136600 contact_ms=6.684000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=411 body_ms=11.355100 contact_ms=6.745300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=412 body_ms=13.753800 contact_ms=10.859500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=413 body_ms=11.113400 contact_ms=8.181600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=414 body_ms=12.284800 contact_ms=8.427800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=415 body_ms=13.222500 contact_ms=9.607100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=416 body_ms=12.324600 contact_ms=7.245200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=417 body_ms=13.995200 contact_ms=11.252500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=418 body_ms=11.835100 contact_ms=8.628800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=419 body_ms=12.170900 contact_ms=8.523300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=420 body_ms=12.131500 contact_ms=9.010200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=421 body_ms=13.753500 contact_ms=8.650000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=422 body_ms=28.039000 contact_ms=24.846700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=423 body_ms=9.699000 contact_ms=7.158300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=424 body_ms=14.503800 contact_ms=10.788800 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=425 body_ms=11.041900 contact_ms=7.920000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=426 body_ms=11.317500 contact_ms=6.738600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=427 body_ms=14.192900 contact_ms=11.361100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=428 body_ms=12.115600 contact_ms=8.992700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=429 body_ms=8.822900 contact_ms=6.455000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=430 body_ms=11.506900 contact_ms=8.227600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=431 body_ms=12.000700 contact_ms=6.706400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=432 body_ms=12.455000 contact_ms=9.387700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=433 body_ms=12.269000 contact_ms=8.922200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=434 body_ms=12.889000 contact_ms=9.184700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=435 body_ms=12.868900 contact_ms=9.601000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=436 body_ms=13.857500 contact_ms=8.082100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=437 body_ms=12.485000 contact_ms=9.890500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=438 body_ms=12.744200 contact_ms=8.823600 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=439 body_ms=12.732000 contact_ms=8.614500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=440 body_ms=13.811300 contact_ms=10.932100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=441 body_ms=16.777400 contact_ms=10.118100 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=442 body_ms=15.179000 contact_ms=11.094200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=443 body_ms=11.935400 contact_ms=8.861500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=444 body_ms=11.253200 contact_ms=8.260900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=445 body_ms=9.417000 contact_ms=6.958400 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=446 body_ms=14.794900 contact_ms=8.956500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=447 body_ms=13.573200 contact_ms=10.652500 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=448 body_ms=10.995900 contact_ms=7.941200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=449 body_ms=12.080000 contact_ms=8.911700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=450 body_ms=10.172700 contact_ms=7.287200 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=451 body_ms=13.537000 contact_ms=7.718000 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=452 body_ms=14.638100 contact_ms=11.377900 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=453 body_ms=10.895000 contact_ms=7.221300 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=454 body_ms=11.040900 contact_ms=7.995700 ticks=512 callbacks=830
+CA311 COST mode=1 population=512 layout=1 tic=455 body_ms=11.695800 contact_ms=8.479500 ticks=512 callbacks=830
+CA194 PASS dense population survives actual=512.000000000 expected=512.000000000
+CA194 PASS dense contact mode actually exercised actual=1.000000000 expected=1.000000000
+CA194 PASS grid has more than independent pairs actual=1.000000000 expected=1.000000000
+CA311 DENSE mode=1 population=512 layout=1 edges=688 unique=183820 duplicates=183820
+CA194 DONE failures=0 passes=3

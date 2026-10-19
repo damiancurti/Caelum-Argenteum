@@ -4,6 +4,29 @@ class CaelumImpactEnergy : Object
 {
     const HP_PER_JOULE = 1.0;
 
+    // #311: reparación local e idempotente de aristas guardadas con distancia
+    // cero. No recrea contactos ni repite daño o trabajo pendiente.
+    static play void RepairLegacyContact(ImpactContactState contact)
+    {
+        if (contact==null || contact.ReleaseDistanceRevision>=1) return;
+        Actor first=contact.FirstActor, second=contact.SecondActor;
+        if (first==null || second==null) return;
+        if (contact.ReleaseDistance<=0)
+        {
+            let firstPlayer=CaelumPlayer(first); let secondPlayer=CaelumPlayer(second);
+            let firstNPC=CaelumCombatActor(first); let secondNPC=CaelumCombatActor(second);
+            double firstHeight=firstPlayer!=null ? firstPlayer.GetImpactReferenceHeight()
+                : firstNPC!=null ? firstNPC.GetImpactReferenceHeight() : Max(1.0,first.Height);
+            double secondHeight=secondPlayer!=null ? secondPlayer.GetImpactReferenceHeight()
+                : secondNPC!=null ? secondNPC.GetImpactReferenceHeight() : Max(1.0,second.Height);
+            contact.ReleaseDistance=first.Radius+second.Radius
+                +Min(firstHeight,secondHeight)*CaelumConstants.IMPACT_CONTACT_REARM_HEIGHT_FRACTION
+                +CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
+            contact.SeparatedTics=0;
+        }
+        contact.ReleaseDistanceRevision=1;
+    }
+
     static double Received(double selfMass, double otherMass, double closingSpeed)
     {
         return ImpactPhysics.ReceivedEnergySI(selfMass,otherMass,

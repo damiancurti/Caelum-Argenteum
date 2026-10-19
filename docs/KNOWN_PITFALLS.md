@@ -2487,6 +2487,15 @@ and `Secondary=secondary` assigned the parameters to themselves. Distinct
 Check the serialized selection and actual damage, not just the preparation
 timer; validation_5212 retains the failing and corrected native runs.
 
+Reverified in #311 / 5.5.2 (ENGINE-VERIFIED, 2026-10-18):
+`Initialize(double releaseDistance)` assigned `ReleaseDistance` to the parameter,
+leaving the serialized field zero. Native pairs expired after five updates even
+with fresh callbacks: geometric separation and callback expiry are independent.
+Use `self.ReleaseDistance` and test the stored field, a sustained native contact,
+separation/recontact and old saves. Local revision-1 repair preserves the shared
+edge and pending work, without replaying damage. Evidence: validation_552;
+author acceptance remains separate. Compilation alone cannot detect this error.
+
 Street routes need a floor-height constraint as well as XY reachability; an
 otherwise valid local shortcut can climb an artillery stair and strand a guard
 above a ground post. Use native floor/step/dropoff checks. Formation entry also

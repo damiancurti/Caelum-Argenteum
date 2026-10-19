@@ -1,0 +1,412 @@
+Log started: 2026-10-18 23:03:35
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 282 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final01/production.pk3, 16380 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final01/dense.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2135.64 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAPQA - Unnamed
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA311 COST mode=1 population=64 tic=106 body_ms=1.365400 contact_ms=1.007200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=107 body_ms=2.151800 contact_ms=1.820100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=108 body_ms=2.034000 contact_ms=1.644200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=109 body_ms=1.195600 contact_ms=0.951000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=110 body_ms=1.373800 contact_ms=1.119400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=111 body_ms=1.050100 contact_ms=0.842400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=112 body_ms=1.711200 contact_ms=1.360400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=113 body_ms=1.681500 contact_ms=1.389200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=114 body_ms=1.588600 contact_ms=1.282900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=115 body_ms=1.097300 contact_ms=0.884200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=116 body_ms=1.965600 contact_ms=1.594900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=117 body_ms=1.123000 contact_ms=0.919100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=118 body_ms=1.843400 contact_ms=1.508700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=119 body_ms=1.963000 contact_ms=1.620000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=120 body_ms=1.782300 contact_ms=1.425300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=121 body_ms=1.796800 contact_ms=1.412700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=122 body_ms=1.712100 contact_ms=1.314700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=123 body_ms=2.072500 contact_ms=1.625300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=124 body_ms=2.059700 contact_ms=1.674800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=125 body_ms=1.294900 contact_ms=1.056500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=126 body_ms=1.495500 contact_ms=1.189100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=127 body_ms=1.136500 contact_ms=0.881800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=128 body_ms=1.377800 contact_ms=1.054600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=129 body_ms=1.545200 contact_ms=1.270600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=130 body_ms=1.320200 contact_ms=1.086100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=131 body_ms=1.057000 contact_ms=0.837900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=132 body_ms=2.178400 contact_ms=1.673100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=133 body_ms=2.356200 contact_ms=2.025500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=134 body_ms=1.410500 contact_ms=1.125500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=135 body_ms=1.537900 contact_ms=1.220200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=136 body_ms=1.038600 contact_ms=0.843600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=137 body_ms=1.303800 contact_ms=1.038700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=138 body_ms=1.612600 contact_ms=1.283900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=139 body_ms=1.395600 contact_ms=1.104500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=140 body_ms=2.041000 contact_ms=1.606000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=141 body_ms=1.280600 contact_ms=1.057800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=142 body_ms=1.792600 contact_ms=1.548000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=143 body_ms=1.098900 contact_ms=0.866300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=144 body_ms=1.845700 contact_ms=1.342600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=145 body_ms=2.068600 contact_ms=1.738900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=146 body_ms=1.624200 contact_ms=1.290900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=147 body_ms=1.562300 contact_ms=1.184400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=148 body_ms=1.410800 contact_ms=1.136900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=149 body_ms=1.347500 contact_ms=1.072100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=150 body_ms=1.761800 contact_ms=1.407600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=151 body_ms=1.098900 contact_ms=0.866500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=152 body_ms=1.305600 contact_ms=1.073500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=153 body_ms=1.604100 contact_ms=1.268600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=154 body_ms=1.794600 contact_ms=1.477200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=155 body_ms=2.321900 contact_ms=1.360600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=156 body_ms=1.272900 contact_ms=1.040600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=157 body_ms=1.520400 contact_ms=1.141200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=158 body_ms=2.125000 contact_ms=1.826600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=159 body_ms=1.052000 contact_ms=0.846500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=160 body_ms=1.776700 contact_ms=1.380700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=161 body_ms=1.668400 contact_ms=1.377900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=162 body_ms=1.619100 contact_ms=1.315100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=163 body_ms=2.903700 contact_ms=2.442700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=164 body_ms=1.130100 contact_ms=0.859100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=165 body_ms=0.976300 contact_ms=0.771900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=166 body_ms=2.583200 contact_ms=2.213000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=167 body_ms=1.581600 contact_ms=1.257700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=168 body_ms=1.740800 contact_ms=1.408700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=169 body_ms=1.496000 contact_ms=1.228300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=170 body_ms=2.586400 contact_ms=2.172600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=171 body_ms=1.159400 contact_ms=0.937900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=172 body_ms=1.659600 contact_ms=1.318900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=173 body_ms=1.424400 contact_ms=1.174800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=174 body_ms=1.585000 contact_ms=1.282000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=175 body_ms=1.792600 contact_ms=1.506400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=176 body_ms=1.102700 contact_ms=0.885100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=177 body_ms=1.491200 contact_ms=1.256000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=178 body_ms=1.652000 contact_ms=1.206000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=179 body_ms=1.644200 contact_ms=1.340200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=180 body_ms=3.225900 contact_ms=2.682800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=181 body_ms=1.053200 contact_ms=0.843700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=182 body_ms=1.921600 contact_ms=1.552000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=183 body_ms=1.137400 contact_ms=0.913500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=184 body_ms=1.634600 contact_ms=1.374700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=185 body_ms=1.013100 contact_ms=0.821100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=186 body_ms=1.099100 contact_ms=0.895600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=187 body_ms=1.326800 contact_ms=1.073500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=188 body_ms=1.933200 contact_ms=1.493600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=189 body_ms=1.501700 contact_ms=1.227500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=190 body_ms=1.250900 contact_ms=1.012900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=191 body_ms=1.123700 contact_ms=0.902500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=192 body_ms=0.997200 contact_ms=0.806300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=193 body_ms=1.175100 contact_ms=0.943700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=194 body_ms=1.064700 contact_ms=0.857200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=195 body_ms=1.335200 contact_ms=1.120600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=196 body_ms=1.675100 contact_ms=1.368100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=197 body_ms=1.537000 contact_ms=1.233400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=198 body_ms=1.451000 contact_ms=1.177100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=199 body_ms=1.435700 contact_ms=1.088500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=200 body_ms=1.400700 contact_ms=1.122300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=201 body_ms=2.021500 contact_ms=1.567800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=202 body_ms=1.405500 contact_ms=1.103800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=203 body_ms=2.055700 contact_ms=1.693400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=204 body_ms=1.436700 contact_ms=1.145800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=205 body_ms=1.138100 contact_ms=0.901300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=206 body_ms=2.206400 contact_ms=1.829400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=207 body_ms=1.623600 contact_ms=1.272900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=208 body_ms=2.187400 contact_ms=1.894800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=209 body_ms=1.761000 contact_ms=1.347500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=210 body_ms=2.364900 contact_ms=1.884500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=211 body_ms=1.644100 contact_ms=1.302900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=212 body_ms=3.075200 contact_ms=2.570800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=213 body_ms=1.920000 contact_ms=1.572200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=214 body_ms=1.547400 contact_ms=1.241100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=215 body_ms=1.658700 contact_ms=1.274900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=216 body_ms=1.977200 contact_ms=1.554700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=217 body_ms=1.145900 contact_ms=0.914900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=218 body_ms=1.327400 contact_ms=1.061200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=219 body_ms=1.274200 contact_ms=1.039300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=220 body_ms=2.018400 contact_ms=1.693500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=221 body_ms=1.709400 contact_ms=1.374500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=222 body_ms=1.030000 contact_ms=0.815300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=223 body_ms=1.480700 contact_ms=1.203100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=224 body_ms=1.707300 contact_ms=1.400800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=225 body_ms=2.212800 contact_ms=1.388600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=226 body_ms=1.300300 contact_ms=1.074500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=227 body_ms=1.140900 contact_ms=0.927000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=228 body_ms=1.537100 contact_ms=1.212700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=229 body_ms=1.563800 contact_ms=1.270800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=230 body_ms=0.929000 contact_ms=0.736200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=231 body_ms=1.171100 contact_ms=0.886900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=232 body_ms=1.137800 contact_ms=0.909200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=233 body_ms=1.734500 contact_ms=1.398400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=234 body_ms=2.393100 contact_ms=1.938700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=235 body_ms=1.303000 contact_ms=1.055200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=236 body_ms=1.750600 contact_ms=1.088400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=237 body_ms=2.363700 contact_ms=2.071600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=238 body_ms=1.142100 contact_ms=0.916200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=239 body_ms=1.234000 contact_ms=0.927100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=240 body_ms=1.272800 contact_ms=1.047800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=241 body_ms=1.372300 contact_ms=1.091900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=242 body_ms=2.899500 contact_ms=2.515400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=243 body_ms=1.239100 contact_ms=1.024500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=244 body_ms=1.281800 contact_ms=1.019300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=245 body_ms=0.940900 contact_ms=0.738100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=246 body_ms=1.925300 contact_ms=1.570300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=247 body_ms=2.945300 contact_ms=2.662900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=248 body_ms=2.196500 contact_ms=1.794900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=249 body_ms=1.360500 contact_ms=1.098700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=250 body_ms=1.957700 contact_ms=1.652300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=251 body_ms=1.231000 contact_ms=0.974000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=252 body_ms=1.712800 contact_ms=1.392100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=253 body_ms=1.792100 contact_ms=1.380300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=254 body_ms=1.934300 contact_ms=1.617200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=255 body_ms=1.834600 contact_ms=1.398800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=256 body_ms=1.263500 contact_ms=1.028600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=257 body_ms=1.129200 contact_ms=0.901900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=258 body_ms=1.008200 contact_ms=0.801400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=259 body_ms=1.568600 contact_ms=1.262600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=260 body_ms=1.731500 contact_ms=1.415400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=261 body_ms=1.862100 contact_ms=1.513600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=262 body_ms=1.494600 contact_ms=1.181600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=263 body_ms=2.224200 contact_ms=1.853800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=264 body_ms=1.635200 contact_ms=1.325900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=265 body_ms=1.674300 contact_ms=1.359300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=266 body_ms=1.259000 contact_ms=1.036200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=267 body_ms=1.104900 contact_ms=0.889800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=268 body_ms=1.531100 contact_ms=1.243300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=269 body_ms=1.788400 contact_ms=1.400900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=270 body_ms=2.164100 contact_ms=1.764700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=271 body_ms=2.329600 contact_ms=1.819000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=272 body_ms=2.712900 contact_ms=2.277600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=273 body_ms=1.303800 contact_ms=1.040700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=274 body_ms=2.155300 contact_ms=1.721100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=275 body_ms=1.754600 contact_ms=1.425700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=276 body_ms=1.869600 contact_ms=1.528500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=277 body_ms=2.390200 contact_ms=1.956900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=278 body_ms=2.554900 contact_ms=2.141700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=279 body_ms=1.432600 contact_ms=1.116100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=280 body_ms=1.236700 contact_ms=0.968100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=281 body_ms=1.088800 contact_ms=0.862800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=282 body_ms=1.337800 contact_ms=1.147400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=283 body_ms=1.737000 contact_ms=1.367800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=284 body_ms=1.481800 contact_ms=1.210100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=285 body_ms=2.341200 contact_ms=2.014400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=286 body_ms=1.732500 contact_ms=1.356600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=287 body_ms=1.966200 contact_ms=1.555500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=288 body_ms=2.070100 contact_ms=1.656600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=289 body_ms=1.323200 contact_ms=1.047800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=290 body_ms=1.501100 contact_ms=1.213900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=291 body_ms=1.543700 contact_ms=1.266800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=292 body_ms=1.215700 contact_ms=0.997500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=293 body_ms=1.136000 contact_ms=0.901000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=294 body_ms=0.992900 contact_ms=0.784700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=295 body_ms=1.053600 contact_ms=0.839000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=296 body_ms=1.642900 contact_ms=1.312100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=297 body_ms=1.717400 contact_ms=1.467700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=298 body_ms=1.636600 contact_ms=1.349600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=299 body_ms=1.575500 contact_ms=1.279500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=300 body_ms=1.836100 contact_ms=1.490900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=301 body_ms=1.661400 contact_ms=1.349100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=302 body_ms=1.319200 contact_ms=1.055300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=303 body_ms=1.153600 contact_ms=0.927700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=304 body_ms=1.312200 contact_ms=1.040800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=305 body_ms=1.741300 contact_ms=1.415500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=306 body_ms=2.074300 contact_ms=1.660300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=307 body_ms=2.208100 contact_ms=1.782700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=308 body_ms=1.118700 contact_ms=0.900800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=309 body_ms=0.937900 contact_ms=0.734600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=310 body_ms=1.504200 contact_ms=1.176000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=311 body_ms=1.280200 contact_ms=1.040900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=312 body_ms=1.116200 contact_ms=0.852800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=313 body_ms=1.395600 contact_ms=1.138700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=314 body_ms=1.318600 contact_ms=0.991400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=315 body_ms=1.447600 contact_ms=1.153100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=316 body_ms=1.432200 contact_ms=1.125000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=317 body_ms=2.213000 contact_ms=1.857900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=318 body_ms=2.013600 contact_ms=1.601800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=319 body_ms=1.672100 contact_ms=1.312000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=320 body_ms=1.863500 contact_ms=1.643200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=321 body_ms=1.201400 contact_ms=0.983500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=322 body_ms=1.585600 contact_ms=1.286200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=323 body_ms=1.472400 contact_ms=1.153500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=324 body_ms=2.121000 contact_ms=1.707900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=325 body_ms=1.558300 contact_ms=1.201600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=326 body_ms=1.206100 contact_ms=0.908100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=327 body_ms=0.962200 contact_ms=0.722400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=328 body_ms=0.791800 contact_ms=0.610300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=329 body_ms=1.256000 contact_ms=1.037600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=330 body_ms=1.810100 contact_ms=1.410000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=331 body_ms=1.214600 contact_ms=0.961900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=332 body_ms=1.019400 contact_ms=0.796300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=333 body_ms=0.904100 contact_ms=0.706000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=334 body_ms=0.929100 contact_ms=0.677800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=335 body_ms=0.965900 contact_ms=0.753100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=336 body_ms=1.408500 contact_ms=1.126100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=337 body_ms=2.387100 contact_ms=1.932900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=338 body_ms=1.426200 contact_ms=1.082300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=339 body_ms=0.997300 contact_ms=0.788000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=340 body_ms=0.933300 contact_ms=0.740200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=341 body_ms=1.566200 contact_ms=1.280700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=342 body_ms=2.217100 contact_ms=1.826100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=343 body_ms=1.152100 contact_ms=0.924200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=344 body_ms=1.039000 contact_ms=0.842400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=345 body_ms=1.307900 contact_ms=1.095700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=346 body_ms=1.501600 contact_ms=1.189200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=347 body_ms=2.221300 contact_ms=1.806200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=348 body_ms=2.283800 contact_ms=1.979600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=349 body_ms=1.321700 contact_ms=1.074100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=350 body_ms=1.230900 contact_ms=0.994400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=351 body_ms=1.497900 contact_ms=1.208000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=352 body_ms=2.190000 contact_ms=1.856500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=353 body_ms=1.702900 contact_ms=1.316700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=354 body_ms=1.235300 contact_ms=1.024600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=355 body_ms=1.810800 contact_ms=1.495500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=356 body_ms=1.281800 contact_ms=1.034200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=357 body_ms=2.452500 contact_ms=1.952500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=358 body_ms=1.522500 contact_ms=1.170200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=359 body_ms=1.044200 contact_ms=0.846600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=360 body_ms=1.066900 contact_ms=0.851300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=361 body_ms=0.977600 contact_ms=0.774100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=362 body_ms=2.538500 contact_ms=2.230700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=363 body_ms=2.225100 contact_ms=1.860100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=364 body_ms=1.754800 contact_ms=1.405700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=365 body_ms=2.160100 contact_ms=1.745100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=366 body_ms=1.291400 contact_ms=1.044800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=367 body_ms=1.376300 contact_ms=1.053300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=368 body_ms=1.225500 contact_ms=0.953300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=369 body_ms=1.491900 contact_ms=1.163100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=370 body_ms=1.146000 contact_ms=0.886700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=371 body_ms=1.069400 contact_ms=0.871700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=372 body_ms=1.830400 contact_ms=1.462900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=373 body_ms=1.487300 contact_ms=1.194600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=374 body_ms=1.081000 contact_ms=0.864800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=375 body_ms=0.999600 contact_ms=0.781300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=376 body_ms=1.041700 contact_ms=0.831300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=377 body_ms=1.206900 contact_ms=0.988900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=378 body_ms=1.021700 contact_ms=0.835900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=379 body_ms=1.156700 contact_ms=0.939600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=380 body_ms=1.472400 contact_ms=1.192400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=381 body_ms=1.793200 contact_ms=1.499200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=382 body_ms=1.119800 contact_ms=0.926500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=383 body_ms=1.012400 contact_ms=0.829800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=384 body_ms=1.313300 contact_ms=1.062100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=385 body_ms=0.992700 contact_ms=0.808900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=386 body_ms=1.245800 contact_ms=1.008200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=387 body_ms=2.351600 contact_ms=1.812200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=388 body_ms=1.715400 contact_ms=1.374400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=389 body_ms=1.510300 contact_ms=1.248800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=390 body_ms=1.987600 contact_ms=1.665000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=391 body_ms=1.838600 contact_ms=1.509300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=392 body_ms=2.371000 contact_ms=2.063900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=393 body_ms=1.885300 contact_ms=1.451500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=394 body_ms=1.308500 contact_ms=1.041800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=395 body_ms=1.268300 contact_ms=1.035600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=396 body_ms=1.957500 contact_ms=1.615900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=397 body_ms=1.944800 contact_ms=1.623000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=398 body_ms=2.347400 contact_ms=1.923200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=399 body_ms=2.124100 contact_ms=1.785900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=400 body_ms=3.389300 contact_ms=2.945800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=401 body_ms=1.427500 contact_ms=1.090700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=402 body_ms=1.941000 contact_ms=1.555000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=403 body_ms=1.034200 contact_ms=0.819500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=404 body_ms=2.330700 contact_ms=1.915400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=405 body_ms=1.330400 contact_ms=1.085400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=406 body_ms=1.678400 contact_ms=1.398100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=407 body_ms=1.112800 contact_ms=0.901500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=408 body_ms=1.093400 contact_ms=0.889000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=409 body_ms=1.561200 contact_ms=1.295600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=410 body_ms=2.288900 contact_ms=1.410200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=411 body_ms=2.335300 contact_ms=1.860500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=412 body_ms=2.032700 contact_ms=1.769100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=413 body_ms=0.967200 contact_ms=0.781000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=414 body_ms=1.566200 contact_ms=1.252500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=415 body_ms=1.323900 contact_ms=1.069300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=416 body_ms=2.678600 contact_ms=2.345400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=417 body_ms=1.205100 contact_ms=0.982600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=418 body_ms=1.355400 contact_ms=1.092600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=419 body_ms=1.515600 contact_ms=1.238700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=420 body_ms=1.624800 contact_ms=1.248800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=421 body_ms=1.964800 contact_ms=1.508500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=422 body_ms=1.863300 contact_ms=1.618300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=423 body_ms=0.896700 contact_ms=0.697600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=424 body_ms=0.844500 contact_ms=0.651200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=425 body_ms=0.997500 contact_ms=0.736900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=426 body_ms=1.591800 contact_ms=1.202000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=427 body_ms=1.848200 contact_ms=1.487400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=428 body_ms=1.236400 contact_ms=0.936100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=429 body_ms=1.228300 contact_ms=0.918200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=430 body_ms=1.031900 contact_ms=0.768700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=431 body_ms=0.947700 contact_ms=0.724000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=432 body_ms=1.029100 contact_ms=0.789100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=433 body_ms=2.308900 contact_ms=1.844100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=434 body_ms=2.134500 contact_ms=1.716700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=435 body_ms=1.042300 contact_ms=0.839000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=436 body_ms=2.223600 contact_ms=1.615000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=437 body_ms=2.785300 contact_ms=2.363600 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=438 body_ms=2.632500 contact_ms=2.257100 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=439 body_ms=1.523700 contact_ms=1.200300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=440 body_ms=1.656800 contact_ms=1.327400 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=441 body_ms=1.206300 contact_ms=0.959200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=442 body_ms=1.117400 contact_ms=0.906200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=443 body_ms=1.461400 contact_ms=1.150000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=444 body_ms=2.637600 contact_ms=2.004500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=445 body_ms=2.192300 contact_ms=1.721000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=446 body_ms=1.127300 contact_ms=0.895900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=447 body_ms=1.808700 contact_ms=1.454900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=448 body_ms=1.737200 contact_ms=1.401700 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=449 body_ms=1.545700 contact_ms=1.241900 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=450 body_ms=1.071500 contact_ms=0.857500 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=451 body_ms=1.447000 contact_ms=1.184000 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=452 body_ms=1.602300 contact_ms=1.294300 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=453 body_ms=1.626200 contact_ms=1.275800 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=454 body_ms=1.649500 contact_ms=1.305200 ticks=64 callbacks=64
+CA311 COST mode=1 population=64 tic=455 body_ms=1.481100 contact_ms=1.210800 ticks=64 callbacks=64
+CA194 PASS dense population survives actual=64.000000000 expected=64.000000000
+CA194 PASS dense contact mode actually exercised actual=1.000000000 expected=1.000000000
+CA311 DENSE mode=1 population=64 edges=64 unique=14560 duplicates=14560
+CA194 DONE failures=0 passes=2

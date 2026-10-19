@@ -58,6 +58,7 @@ class ImpactContactState : Object
     Actor FirstActor;
     Actor SecondActor;
     double ReleaseDistance;
+    int ReleaseDistanceRevision;
     int SeparatedTics;
     int LastUpdatedTick;
     int LastCollisionTick;
@@ -74,7 +75,9 @@ class ImpactContactState : Object
     {
         FirstActor = first;
         SecondActor = second;
-        ReleaseDistance = Max(0.0, releaseDistance);
+        // ZScript no distingue mayúsculas: el parámetro ocultaba al campo.
+        self.ReleaseDistance = Max(0.0, releaseDistance);
+        ReleaseDistanceRevision = 1;
         SeparatedTics = 0;
         LastUpdatedTick = -1;
         LastCollisionTick = -1;

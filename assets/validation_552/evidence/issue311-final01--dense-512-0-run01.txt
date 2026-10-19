@@ -1,0 +1,412 @@
+Log started: 2026-10-18 23:06:18
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 282 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final01/production.pk3, 16380 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue311-final01/dense.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2271.69 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAPQA - Unnamed
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA311 COST mode=0 population=512 tic=106 body_ms=1.743300 contact_ms=0.121300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=107 body_ms=1.436600 contact_ms=0.110300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=108 body_ms=1.951500 contact_ms=0.149300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=109 body_ms=2.055800 contact_ms=0.151800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=110 body_ms=2.422800 contact_ms=0.155800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=111 body_ms=2.431100 contact_ms=0.149300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=112 body_ms=2.659800 contact_ms=0.161800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=113 body_ms=3.180900 contact_ms=0.160600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=114 body_ms=2.599800 contact_ms=0.194400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=115 body_ms=2.836200 contact_ms=0.181600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=116 body_ms=3.330400 contact_ms=0.200000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=117 body_ms=2.829400 contact_ms=0.208000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=118 body_ms=1.991500 contact_ms=0.141700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=119 body_ms=2.493300 contact_ms=0.149000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=120 body_ms=1.514400 contact_ms=0.108000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=121 body_ms=1.666700 contact_ms=0.124400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=122 body_ms=1.515400 contact_ms=0.117200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=123 body_ms=1.424600 contact_ms=0.109000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=124 body_ms=2.442600 contact_ms=0.155000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=125 body_ms=1.498400 contact_ms=0.112800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=126 body_ms=1.762100 contact_ms=0.131700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=127 body_ms=1.477300 contact_ms=0.123500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=128 body_ms=1.906700 contact_ms=0.136100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=129 body_ms=1.632000 contact_ms=0.124200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=130 body_ms=1.451100 contact_ms=0.110800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=131 body_ms=1.681700 contact_ms=0.127100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=132 body_ms=1.680200 contact_ms=0.165500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=133 body_ms=1.606300 contact_ms=0.122400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=134 body_ms=2.277900 contact_ms=0.162500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=135 body_ms=1.872000 contact_ms=0.125000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=136 body_ms=2.666600 contact_ms=0.154600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=137 body_ms=1.918600 contact_ms=0.137700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=138 body_ms=2.124200 contact_ms=0.140300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=139 body_ms=1.460000 contact_ms=0.108700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=140 body_ms=1.534500 contact_ms=0.117200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=141 body_ms=1.958200 contact_ms=0.156400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=142 body_ms=2.238000 contact_ms=0.140200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=143 body_ms=2.292100 contact_ms=0.142700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=144 body_ms=2.128000 contact_ms=0.141600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=145 body_ms=2.247300 contact_ms=0.148700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=146 body_ms=2.413700 contact_ms=0.152900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=147 body_ms=3.079400 contact_ms=0.178100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=148 body_ms=1.830100 contact_ms=0.132000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=149 body_ms=1.734100 contact_ms=0.126500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=150 body_ms=1.759100 contact_ms=0.121700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=151 body_ms=1.715400 contact_ms=0.125700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=152 body_ms=2.440900 contact_ms=0.147200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=153 body_ms=1.937400 contact_ms=0.130000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=154 body_ms=1.950800 contact_ms=0.127700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=155 body_ms=1.644100 contact_ms=0.115900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=156 body_ms=2.152700 contact_ms=0.173600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=157 body_ms=2.280400 contact_ms=0.151500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=158 body_ms=2.252700 contact_ms=0.143100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=159 body_ms=3.246300 contact_ms=0.160400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=160 body_ms=2.854500 contact_ms=0.169800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=161 body_ms=2.693400 contact_ms=0.168700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=162 body_ms=3.071800 contact_ms=0.207700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=163 body_ms=2.702700 contact_ms=0.177000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=164 body_ms=3.495700 contact_ms=0.190900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=165 body_ms=1.490900 contact_ms=0.109100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=166 body_ms=2.082300 contact_ms=0.140100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=167 body_ms=3.341300 contact_ms=0.151100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=168 body_ms=2.804900 contact_ms=0.161600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=169 body_ms=2.663800 contact_ms=0.163700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=170 body_ms=2.517800 contact_ms=0.160200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=171 body_ms=2.439400 contact_ms=0.151200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=172 body_ms=2.503000 contact_ms=0.172500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=173 body_ms=1.892900 contact_ms=0.139400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=174 body_ms=2.207700 contact_ms=0.140800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=175 body_ms=2.157300 contact_ms=0.144200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=176 body_ms=3.631900 contact_ms=0.162000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=177 body_ms=2.831000 contact_ms=0.159700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=178 body_ms=2.421000 contact_ms=0.148000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=179 body_ms=2.295700 contact_ms=0.144200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=180 body_ms=1.863300 contact_ms=0.126900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=181 body_ms=2.337900 contact_ms=0.156900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=182 body_ms=2.374600 contact_ms=0.140100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=183 body_ms=2.288500 contact_ms=0.172200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=184 body_ms=2.337000 contact_ms=0.150700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=185 body_ms=2.245300 contact_ms=0.144300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=186 body_ms=3.541900 contact_ms=0.219800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=187 body_ms=2.769700 contact_ms=0.152900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=188 body_ms=2.841300 contact_ms=0.165300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=189 body_ms=2.321700 contact_ms=0.149200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=190 body_ms=1.957300 contact_ms=0.132900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=191 body_ms=1.486400 contact_ms=0.108600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=192 body_ms=1.707300 contact_ms=0.126200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=193 body_ms=2.072100 contact_ms=0.145700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=194 body_ms=3.483100 contact_ms=0.164000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=195 body_ms=2.359900 contact_ms=0.153300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=196 body_ms=1.821100 contact_ms=0.125600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=197 body_ms=2.142500 contact_ms=0.152700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=198 body_ms=1.689900 contact_ms=0.128000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=199 body_ms=2.734800 contact_ms=0.151300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=200 body_ms=2.647400 contact_ms=0.157100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=201 body_ms=1.900800 contact_ms=0.130200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=202 body_ms=1.562100 contact_ms=0.113400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=203 body_ms=1.480200 contact_ms=0.111500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=204 body_ms=4.152700 contact_ms=0.179400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=205 body_ms=3.765200 contact_ms=0.205300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=206 body_ms=2.192000 contact_ms=0.154300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=207 body_ms=1.623100 contact_ms=0.119200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=208 body_ms=2.007300 contact_ms=0.144000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=209 body_ms=2.319600 contact_ms=0.140100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=210 body_ms=1.351900 contact_ms=0.102500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=211 body_ms=1.802900 contact_ms=0.117700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=212 body_ms=1.589600 contact_ms=0.118200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=213 body_ms=2.592600 contact_ms=0.158600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=214 body_ms=2.143800 contact_ms=0.144800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=215 body_ms=1.697400 contact_ms=0.125300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=216 body_ms=1.353600 contact_ms=0.104300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=217 body_ms=1.813500 contact_ms=0.123500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=218 body_ms=2.158200 contact_ms=0.152600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=219 body_ms=2.373400 contact_ms=0.137200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=220 body_ms=3.388800 contact_ms=0.211100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=221 body_ms=1.405800 contact_ms=0.109200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=222 body_ms=1.976000 contact_ms=0.127500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=223 body_ms=1.415600 contact_ms=0.105300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=224 body_ms=2.318300 contact_ms=0.145400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=225 body_ms=2.223800 contact_ms=0.151400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=226 body_ms=1.572300 contact_ms=0.110400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=227 body_ms=1.534100 contact_ms=0.118800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=228 body_ms=3.279800 contact_ms=0.162400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=229 body_ms=1.459300 contact_ms=0.119400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=230 body_ms=1.894400 contact_ms=0.131700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=231 body_ms=3.305000 contact_ms=0.173500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=232 body_ms=2.700500 contact_ms=0.160500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=233 body_ms=1.492000 contact_ms=0.111700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=234 body_ms=2.153900 contact_ms=0.137400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=235 body_ms=1.570000 contact_ms=0.119100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=236 body_ms=1.979100 contact_ms=0.138800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=237 body_ms=2.788500 contact_ms=0.150300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=238 body_ms=1.828000 contact_ms=0.129300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=239 body_ms=3.323700 contact_ms=0.171800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=240 body_ms=2.282400 contact_ms=0.143600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=241 body_ms=2.570700 contact_ms=0.155900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=242 body_ms=3.055900 contact_ms=0.141200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=243 body_ms=2.843900 contact_ms=0.168400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=244 body_ms=2.259700 contact_ms=0.180000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=245 body_ms=3.069000 contact_ms=0.211900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=246 body_ms=2.954800 contact_ms=0.192600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=247 body_ms=2.658800 contact_ms=0.172100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=248 body_ms=2.718200 contact_ms=0.186800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=249 body_ms=2.766300 contact_ms=0.162400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=250 body_ms=3.100000 contact_ms=0.197100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=251 body_ms=1.914100 contact_ms=0.124600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=252 body_ms=2.990300 contact_ms=0.182700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=253 body_ms=2.448200 contact_ms=0.131100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=254 body_ms=1.796000 contact_ms=0.141300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=255 body_ms=1.926300 contact_ms=0.140400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=256 body_ms=1.628300 contact_ms=0.134500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=257 body_ms=2.455400 contact_ms=0.153200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=258 body_ms=1.378200 contact_ms=0.104300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=259 body_ms=1.431000 contact_ms=0.121700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=260 body_ms=1.483200 contact_ms=0.110600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=261 body_ms=1.772600 contact_ms=0.131800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=262 body_ms=1.521600 contact_ms=0.112300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=263 body_ms=1.620000 contact_ms=0.116500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=264 body_ms=2.349300 contact_ms=0.149700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=265 body_ms=2.232000 contact_ms=0.155400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=266 body_ms=2.434900 contact_ms=0.165500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=267 body_ms=2.916500 contact_ms=0.154700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=268 body_ms=2.346800 contact_ms=0.175600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=269 body_ms=3.548800 contact_ms=0.187300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=270 body_ms=4.031600 contact_ms=0.247800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=271 body_ms=3.390600 contact_ms=0.186700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=272 body_ms=3.273100 contact_ms=0.176700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=273 body_ms=3.559400 contact_ms=0.165700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=274 body_ms=3.623100 contact_ms=0.179300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=275 body_ms=3.357000 contact_ms=0.207400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=276 body_ms=1.682400 contact_ms=0.123400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=277 body_ms=1.487000 contact_ms=0.109900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=278 body_ms=1.843400 contact_ms=0.135000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=279 body_ms=1.557300 contact_ms=0.125500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=280 body_ms=1.464900 contact_ms=0.112700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=281 body_ms=2.284200 contact_ms=0.153600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=282 body_ms=2.100300 contact_ms=0.133700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=283 body_ms=3.210100 contact_ms=0.147100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=284 body_ms=2.560900 contact_ms=0.163600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=285 body_ms=2.163800 contact_ms=0.148100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=286 body_ms=2.950400 contact_ms=0.175200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=287 body_ms=3.415400 contact_ms=0.178800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=288 body_ms=2.967500 contact_ms=0.169600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=289 body_ms=2.707400 contact_ms=0.172100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=290 body_ms=3.062100 contact_ms=0.189300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=291 body_ms=3.071000 contact_ms=0.155500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=292 body_ms=3.350200 contact_ms=0.192400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=293 body_ms=2.665900 contact_ms=0.170400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=294 body_ms=2.590200 contact_ms=0.157200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=295 body_ms=3.735000 contact_ms=0.185100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=296 body_ms=2.855000 contact_ms=0.172700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=297 body_ms=4.498900 contact_ms=0.223100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=298 body_ms=3.934100 contact_ms=0.527700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=299 body_ms=3.556000 contact_ms=0.202100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=300 body_ms=2.506100 contact_ms=0.156500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=301 body_ms=2.880100 contact_ms=0.171700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=302 body_ms=2.988500 contact_ms=0.172500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=303 body_ms=3.496100 contact_ms=0.198700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=304 body_ms=3.837800 contact_ms=0.193800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=305 body_ms=2.123400 contact_ms=0.149400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=306 body_ms=2.698200 contact_ms=0.139300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=307 body_ms=2.537400 contact_ms=0.149100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=308 body_ms=2.205500 contact_ms=0.145700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=309 body_ms=2.991500 contact_ms=0.168300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=310 body_ms=2.641500 contact_ms=0.185700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=311 body_ms=2.296300 contact_ms=0.147400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=312 body_ms=2.005300 contact_ms=0.129300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=313 body_ms=2.818000 contact_ms=0.134500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=314 body_ms=3.209700 contact_ms=0.155600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=315 body_ms=1.455300 contact_ms=0.107500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=316 body_ms=1.522200 contact_ms=0.113700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=317 body_ms=2.199400 contact_ms=0.135100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=318 body_ms=1.897700 contact_ms=0.131900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=319 body_ms=2.347800 contact_ms=0.146900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=320 body_ms=1.958800 contact_ms=0.150200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=321 body_ms=2.724500 contact_ms=0.184100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=322 body_ms=2.766600 contact_ms=0.190400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=323 body_ms=2.725700 contact_ms=0.187900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=324 body_ms=2.564800 contact_ms=0.151200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=325 body_ms=1.433200 contact_ms=0.108600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=326 body_ms=2.210900 contact_ms=0.164500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=327 body_ms=2.889200 contact_ms=0.201400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=328 body_ms=1.583200 contact_ms=0.116200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=329 body_ms=1.678900 contact_ms=0.128100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=330 body_ms=2.376100 contact_ms=0.155800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=331 body_ms=2.884300 contact_ms=0.165200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=332 body_ms=1.736700 contact_ms=0.121700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=333 body_ms=2.217500 contact_ms=0.140600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=334 body_ms=1.829300 contact_ms=0.123900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=335 body_ms=2.118900 contact_ms=0.144800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=336 body_ms=1.618900 contact_ms=0.117600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=337 body_ms=1.605200 contact_ms=0.114100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=338 body_ms=1.517600 contact_ms=0.120200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=339 body_ms=2.160600 contact_ms=0.142400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=340 body_ms=2.402900 contact_ms=0.161400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=341 body_ms=1.733400 contact_ms=0.120900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=342 body_ms=2.030700 contact_ms=0.138600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=343 body_ms=2.513900 contact_ms=0.165400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=344 body_ms=2.364700 contact_ms=0.165900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=345 body_ms=2.408800 contact_ms=0.153900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=346 body_ms=3.059400 contact_ms=0.165400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=347 body_ms=2.762400 contact_ms=0.184100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=348 body_ms=1.524800 contact_ms=0.110100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=349 body_ms=1.439700 contact_ms=0.110200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=350 body_ms=2.245800 contact_ms=0.152800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=351 body_ms=3.256100 contact_ms=0.146900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=352 body_ms=3.226500 contact_ms=0.143400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=353 body_ms=2.244700 contact_ms=0.144600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=354 body_ms=2.723800 contact_ms=0.309100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=355 body_ms=2.415600 contact_ms=0.165100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=356 body_ms=2.647500 contact_ms=0.180400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=357 body_ms=2.987400 contact_ms=0.206800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=358 body_ms=2.693800 contact_ms=0.157000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=359 body_ms=2.680300 contact_ms=0.165200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=360 body_ms=2.835100 contact_ms=0.185000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=361 body_ms=2.781800 contact_ms=0.187700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=362 body_ms=3.802500 contact_ms=0.197000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=363 body_ms=2.291500 contact_ms=0.172300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=364 body_ms=3.093800 contact_ms=0.186500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=365 body_ms=2.833400 contact_ms=0.143400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=366 body_ms=1.645600 contact_ms=0.158900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=367 body_ms=1.969900 contact_ms=0.139700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=368 body_ms=1.557000 contact_ms=0.119400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=369 body_ms=2.397500 contact_ms=0.151600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=370 body_ms=1.547000 contact_ms=0.115700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=371 body_ms=2.221100 contact_ms=0.139100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=372 body_ms=2.119900 contact_ms=0.139500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=373 body_ms=1.532600 contact_ms=0.114900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=374 body_ms=2.243000 contact_ms=0.144900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=375 body_ms=2.213000 contact_ms=0.137900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=376 body_ms=1.925500 contact_ms=0.134600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=377 body_ms=2.055400 contact_ms=0.155600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=378 body_ms=2.337900 contact_ms=0.146700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=379 body_ms=3.635100 contact_ms=0.153100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=380 body_ms=3.632700 contact_ms=0.176800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=381 body_ms=3.146500 contact_ms=0.178400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=382 body_ms=2.954000 contact_ms=0.169400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=383 body_ms=2.081800 contact_ms=0.150000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=384 body_ms=1.926000 contact_ms=0.147400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=385 body_ms=2.514400 contact_ms=0.163800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=386 body_ms=2.278800 contact_ms=0.148100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=387 body_ms=3.638900 contact_ms=0.160400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=388 body_ms=3.194700 contact_ms=0.198300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=389 body_ms=2.898400 contact_ms=0.795200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=390 body_ms=3.154400 contact_ms=0.174200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=391 body_ms=2.132200 contact_ms=0.147800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=392 body_ms=1.614800 contact_ms=0.119800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=393 body_ms=1.656300 contact_ms=0.122500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=394 body_ms=2.315000 contact_ms=0.146800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=395 body_ms=1.621800 contact_ms=0.120500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=396 body_ms=2.504000 contact_ms=0.145500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=397 body_ms=1.955600 contact_ms=0.148200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=398 body_ms=2.215000 contact_ms=0.152100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=399 body_ms=2.256100 contact_ms=0.143700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=400 body_ms=1.941300 contact_ms=0.139700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=401 body_ms=2.410900 contact_ms=0.132000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=402 body_ms=2.706300 contact_ms=0.155600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=403 body_ms=2.512400 contact_ms=0.172700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=404 body_ms=3.079500 contact_ms=0.180400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=405 body_ms=2.361300 contact_ms=0.167100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=406 body_ms=2.982400 contact_ms=0.197900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=407 body_ms=2.400600 contact_ms=0.168200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=408 body_ms=3.644000 contact_ms=0.192900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=409 body_ms=3.035900 contact_ms=0.186100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=410 body_ms=3.092200 contact_ms=0.189300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=411 body_ms=2.378800 contact_ms=0.155000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=412 body_ms=2.160300 contact_ms=0.137000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=413 body_ms=2.960200 contact_ms=0.172800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=414 body_ms=2.452800 contact_ms=0.175700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=415 body_ms=2.275800 contact_ms=0.160500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=416 body_ms=2.803000 contact_ms=0.179000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=417 body_ms=3.195000 contact_ms=0.183900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=418 body_ms=3.020600 contact_ms=0.180700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=419 body_ms=2.573600 contact_ms=0.159900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=420 body_ms=1.676500 contact_ms=0.131200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=421 body_ms=1.680200 contact_ms=0.126400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=422 body_ms=2.355600 contact_ms=0.189900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=423 body_ms=1.836500 contact_ms=0.141200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=424 body_ms=2.190200 contact_ms=0.138200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=425 body_ms=2.123700 contact_ms=0.494700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=426 body_ms=2.773900 contact_ms=0.142200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=427 body_ms=1.849200 contact_ms=0.130600 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=428 body_ms=2.917400 contact_ms=0.183100 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=429 body_ms=1.556200 contact_ms=0.107300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=430 body_ms=1.640900 contact_ms=0.123000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=431 body_ms=1.448600 contact_ms=0.110500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=432 body_ms=2.038000 contact_ms=0.142200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=433 body_ms=1.698300 contact_ms=0.113400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=434 body_ms=1.597000 contact_ms=0.114700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=435 body_ms=1.447900 contact_ms=0.111300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=436 body_ms=1.605400 contact_ms=0.119200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=437 body_ms=1.482200 contact_ms=0.114900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=438 body_ms=1.859300 contact_ms=0.121500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=439 body_ms=1.580000 contact_ms=0.116200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=440 body_ms=1.819200 contact_ms=0.122200 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=441 body_ms=1.802600 contact_ms=0.137400 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=442 body_ms=1.514400 contact_ms=0.121700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=443 body_ms=2.249300 contact_ms=0.146500 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=444 body_ms=2.216900 contact_ms=0.148800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=445 body_ms=2.131500 contact_ms=0.143300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=446 body_ms=3.045200 contact_ms=0.174700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=447 body_ms=2.641400 contact_ms=0.180900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=448 body_ms=2.848000 contact_ms=0.163300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=449 body_ms=2.312100 contact_ms=0.143800 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=450 body_ms=1.791700 contact_ms=0.138300 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=451 body_ms=1.689600 contact_ms=0.120900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=452 body_ms=1.860200 contact_ms=0.137700 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=453 body_ms=2.087800 contact_ms=0.138900 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=454 body_ms=2.115000 contact_ms=0.133000 ticks=512 callbacks=1024
+CA311 COST mode=0 population=512 tic=455 body_ms=2.428000 contact_ms=0.160000 ticks=512 callbacks=1024
+CA194 PASS dense population survives actual=512.000000000 expected=512.000000000
+CA194 PASS dense contact mode actually exercised actual=1.000000000 expected=1.000000000
+CA311 DENSE mode=0 population=512 edges=0 unique=0 duplicates=0
+CA194 DONE failures=0 passes=2
