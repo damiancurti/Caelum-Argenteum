@@ -9,7 +9,7 @@ zero, expiring pairs after five geometric separation checks even while callbacks
 continued. Explicit field assignment and local revision-1 migration restore the
 existing radius/height/margin rule. Contact identity, pending work and accepted
 energy, anatomy and armor rules remain. Evidence: validation_552; all 24 required
-native runs pass, author check CA311-01 is pending. #312–315 remain separate;
+native runs pass; author check CA311-01 was accepted on 2026-10-18. #312–315 remain separate;
 #316 remains deferred and campaign FPS work is postponed.
 
 ## 5.5.1 - Bounded combat dispatch extraction (#310)

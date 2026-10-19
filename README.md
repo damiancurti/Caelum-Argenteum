@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.5.2 fixes a zero release distance in persistent body contacts (#311).
 Local revision-1 migration repairs older live contacts without replaying damage.
 Multiple contacts and anatomical armor retain their accepted rules.
-See [native audit](assets/validation_552/RESULTS.md); CA311-01 is pending.
+See [native audit](assets/validation_552/RESULTS.md); CA311-01 was accepted on 2026-10-18.
 
 V5.5.1 isolates three combat dispatch routes in a stateless service (#310),
 preserving native weapon execution, saved state and existing combat rules.

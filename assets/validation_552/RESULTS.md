@@ -105,5 +105,7 @@ their creation/copy provenance and exact invocations are in evidence.json and
 the run records. Local frozen packages/saves remain in build for reproduction
 and rollback. The read-only cross-review found no production/migration blocker.
 
-Author acceptance CA311-01 (origin 5.5.2 / #311) is pending. Native checks and
-the preview do not constitute author acceptance.
+Author acceptance CA311-01 (origin 5.5.2 / #311) passed on 2026-10-18:
+"Si, las pruebas dieron bien." The author confirmed the explained interactive
+collision/separation/stack/save-load preview. Numeric native checks remain a
+separate evidence level; campaign FPS remains postponed.

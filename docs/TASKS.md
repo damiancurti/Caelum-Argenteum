@@ -8,8 +8,8 @@ Correct the reproduced zero release distance, validate native simultaneous and
 chained collisions, shared-region armor, distinct event identities and save
 continuity. Preserve original saves and test a previous-runtime checkpoint.
 Record bounded dense-contact CPU costs separately from deferred campaign FPS.
-Evidence: validation_552; all 24 required native runs pass. CA311-01 remains pending
-author acceptance. Keep #312–315 and deferred #316 separate.
+Evidence: validation_552; all 24 required native runs pass. CA311-01 was accepted
+by the author on 2026-10-18. Keep #312–315 and deferred #316 separate.
 
 Current acceptance, 2026-10-18: CA318-01..05 and CA327-01 are explicitly
 approved, including the old city/breath/doors/residents/sky/waves checks.

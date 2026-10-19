@@ -20,7 +20,11 @@ Six bounded CPU controls cover 64/512 paired bodies and a compact 512-body grid.
 Enabled grid body updates average 13.139 ms/tic versus 2.788 with Caelum contacts
 bypassed; nested contact time is included, and resolution/callback counts differ.
 This is synthetic CPU evidence, not city or siege FPS. The visible preview was
-inspected; CA311-01 remains pending author acceptance.
+inspected. CA311-01 (origin 5.5.2 / #311) passed: on 2026-10-18 the author
+confirmed the multiple-contact preview, including the explained collision,
+separation, stack and save/load checks: "Si, las pruebas dieron bien."
+Its actionable entry was removed from pending_test.txt. This confirms the manual
+preview, separately from the numeric native evidence; campaign FPS remains deferred.
 
 ## 5.5.1 - Combat dispatch extraction (#310, 2026-10-18)
 
