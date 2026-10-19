@@ -1,0 +1,184 @@
+{
+  "result": "PASS",
+  "required_runs": [
+    [
+      "issue310-final02",
+      "guards-02"
+    ],
+    [
+      "issue310-final03",
+      "normal-package-sweep"
+    ],
+    [
+      "issue310-final03",
+      "paired-03"
+    ],
+    [
+      "issue310-old-controls03",
+      "paired-03"
+    ],
+    [
+      "issue310-final03",
+      "two-pawns-01"
+    ],
+    [
+      "issue310-final03",
+      "auto-01"
+    ],
+    [
+      "issue310-final03",
+      "held-load-current"
+    ],
+    [
+      "issue310-final03",
+      "boundaries-current"
+    ],
+    [
+      "issue310-final03",
+      "stun-0-current"
+    ],
+    [
+      "issue310-old-controls03",
+      "stun-0-baseline"
+    ],
+    [
+      "issue310-cast02",
+      "switch-cast-current"
+    ],
+    [
+      "issue310-old-cast02",
+      "switch-cast-baseline"
+    ],
+    [
+      "issue310-death01",
+      "death-0-current"
+    ],
+    [
+      "issue310-death01",
+      "death-1-current"
+    ],
+    [
+      "issue310-old-death01",
+      "death-0-baseline"
+    ],
+    [
+      "issue310-old-death01",
+      "death-1-baseline"
+    ],
+    [
+      "issue310-final03",
+      "save-0-current"
+    ],
+    [
+      "issue310-final03",
+      "load-0-current"
+    ],
+    [
+      "issue310-final03",
+      "hub-0-current"
+    ],
+    [
+      "issue310-final03",
+      "switch-0-current"
+    ],
+    [
+      "issue310-final03",
+      "save-1-current"
+    ],
+    [
+      "issue310-final03",
+      "load-1-current"
+    ],
+    [
+      "issue310-final03",
+      "hub-1-current"
+    ],
+    [
+      "issue310-final03",
+      "switch-1-current"
+    ],
+    [
+      "issue310-final03",
+      "save-2-current"
+    ],
+    [
+      "issue310-final03",
+      "load-2-current"
+    ],
+    [
+      "issue310-final03",
+      "hub-2-current"
+    ],
+    [
+      "issue310-final03",
+      "switch-2-current"
+    ],
+    [
+      "issue310-final03",
+      "load-0-legacy"
+    ],
+    [
+      "issue310-final03",
+      "load-1-legacy"
+    ],
+    [
+      "issue310-final03",
+      "load-2-legacy"
+    ]
+  ],
+  "old_saves": [
+    {
+      "origin": "5.5.0 / #309",
+      "source": "build\\issue309-persist03\\action-0.zds",
+      "loaded_copy": "build\\issue310-final03\\legacy-action-0.zds",
+      "sha256": "c12b89c0d0f894e3d1b178b140dac835deb45b99b8a852eedfd21b707568f055"
+    },
+    {
+      "origin": "5.5.0 / #309",
+      "source": "build\\issue309-persist04\\action-1.zds",
+      "loaded_copy": "build\\issue310-final03\\legacy-action-1.zds",
+      "sha256": "359d68c10e5dab6b9d8fa955a63d4fd0c3553235a8168db1a4d8acd7370b732f"
+    },
+    {
+      "origin": "5.5.0 / #309",
+      "source": "build\\issue309-persist04\\action-2.zds",
+      "loaded_copy": "build\\issue310-final03\\legacy-action-2.zds",
+      "sha256": "31d7c8cf172069a7f61cadc477552c5f5c8a8431f9a1fd617cc88999cbaf5911"
+    }
+  ],
+  "death_pairs": [
+    "CA310 DEATH physical=1 magic=0 serial=1 air=1084.000000000 anima=1248.640000000 shots=0 wear=10000",
+    "CA310 DEATH physical=0 magic=0 serial=1 air=1084.000000000 anima=1248.640000000 shots=0 wear=8000"
+  ],
+  "paired_directories": [
+    "issue310-old-controls03",
+    "issue310-final03"
+  ],
+  "identical_observations": 1793,
+  "cases": [
+    "CA310 CASE id=0 serials=1 wear=0 hits=1 lost=156",
+    "CA310 CASE id=1 serials=1 wear=0 hits=1 lost=50",
+    "CA310 CASE id=2 serials=1 wear=0 hits=1 lost=156",
+    "CA310 CASE id=3 serials=1 wear=0 hits=1 lost=156",
+    "CA310 CASE id=4 serials=1 wear=0 hits=1 lost=93",
+    "CA310 CASE id=5 serials=1 wear=4 hits=1 lost=3122",
+    "CA310 CASE id=6 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=7 serials=1 wear=0 hits=1 lost=148",
+    "CA310 CASE id=8 serials=1 wear=0 hits=1 lost=346",
+    "CA310 CASE id=9 serials=1 wear=1 hits=5 lost=438",
+    "CA310 CASE id=10 serials=1 wear=0 hits=1 lost=346",
+    "CA310 CASE id=11 serials=1 wear=2 hits=2 lost=1546",
+    "CA310 CASE id=12 serials=1 wear=0 hits=1 lost=28",
+    "CA310 CASE id=13 serials=1 wear=1 hits=0 lost=0",
+    "CA310 CASE id=14 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=15 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=16 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=17 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=18 serials=0 wear=0 hits=0 lost=0",
+    "CA310 CASE id=19 serials=0 wear=0 hits=0 lost=0"
+  ],
+  "normal_package_members": 16380,
+  "normal_package_sha256": "5cdc6bb297c70e0ca6f8571d60e973499b94749dc53a39d2f4fe9b0da27a50d1",
+  "baseline_sha256": "ae298e17262bc1dcc49876316394e3cdc4436a6bcb98cbccd6e0ed727bec869f",
+  "current_sha256": "4c09ed116ce56b7bb55d382033356cde4aa9950dfe1f2efdce375f5e7750efd5"
+}

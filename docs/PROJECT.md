@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.0** — 2026-10-18.
+Documentation version: **5.5.1** — 2026-10-18.
+
+## 5.5.1 - Bounded combat dispatch extraction (#310)
+
+The combat portion of F2 now delegates equipped primary/secondary and sweep
+coordination to stateless `CaelumCombatDispatch`. Compatible pawn adapters,
+native weapon states, movement, start/commit functions and saved fields remain.
+The sole added precondition is the established current, non-predicted pawn
+authority check before any clock refresh or mutation. Source equivalence and
+native comparison evidence: assets/validation_551. All 31 required native runs
+pass; the 20 paired scenarios retain 1,793 identical observations. No FPS claim or new save
+migration. CA310-01 passed author acceptance on 2026-10-18. Narrative F2 remains V5.9;
+crafting/merchant coordination remains
+V5.6. #311–315 and deferred #316 remain separate issues.
 
 ## 5.5.0 - Weapon/input audit (#309)
 

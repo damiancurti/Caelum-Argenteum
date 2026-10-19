@@ -9665,54 +9665,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformEquippedWeaponPrimaryAttack()
     {
-        if(CaelumBattleCry.Active(self))return;
-        if(CaelumClassCastView.Active(self))return;
-        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
-        {CaelumBolas.Throw(self);return;}
-        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
-        {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.FIRE);return;}
-        RefreshWeaponAttackClock();
-        if (WeaponModel == null || !WeaponModel.Equipped
-            || WeaponModel.Durability <= 0
-            || EquipmentMenuOpen || CreationWizardOpen
-            || EquippedWeaponCooldownRemaining > 0.0
-            || IsPhysicallyImmobilized())
-        {
-            return;
-        }
-
-        if (WeaponChargeActive) { return; }
-
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                WeaponModel.WeaponType
-            );
-
-        // Fire rompe Block y continúa con el ataque en la misma pulsación.
-        if (CombatBlockModeActive)
-        {
-            CancelCombatBlockMode();
-        }
-
-        if (catalogueWeapon >= 0
-            && CaelumWeaponCatalogue.GetFamily(catalogueWeapon)
-                == CaelumConstants.CATALOGUE_FAMILY_RANGED)
-        {
-            BeginPhysicalAttackCycle(false);
-            return;
-        }
-        switch (WeaponModel.WeaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_STAFF:
-            case CaelumConstants.WEAPON_TYPE_BELL:
-            case CaelumConstants.WEAPON_TYPE_BOOK:
-            case CaelumConstants.WEAPON_TYPE_STATUETTE:
-                PerformDebugStaffAttack(false);
-                break;
-            default:
-                BeginPhysicalAttackCycle(false);
-                break;
-        }
+        CaelumCombatDispatch.PerformEquippedWeaponPrimaryAttack(self);
     }
 
     bool SupportsLargeWeaponSweep(int weaponType)
@@ -9726,17 +9679,7 @@ class CaelumPlayer : DoomPlayer
     // triple Aire. Los guanteletes siguen usando su bloqueo contextual.
     void PerformLargeWeaponSweep(int weaponType)
     {
-        RefreshWeaponAttackClock();
-        if (!SupportsLargeWeaponSweep(weaponType)
-            || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
-            || CombatChannelModeActive || StaffCastPending || WeaponChargeActive
-            || EquippedWeaponCooldownRemaining > 0.0
-            || IsPhysicallyImmobilized()
-            || !ActivateEquippedWeaponType(weaponType)
-            || WeaponModel == null || !WeaponModel.Equipped
-            || WeaponModel.Durability <= 0) return;
-        CancelCombatBlockMode();
-        BeginPhysicalAttackCycle(false,true);
+        CaelumCombatDispatch.PerformLargeWeaponSweep(self, weaponType);
     }
 
     // AltFire pertenece exclusivamente al arma activa. El escudo ya no
@@ -9744,73 +9687,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
-        if(CaelumBattleCry.Active(self))return;
-        if(CaelumClassCastView.Active(self))return;
-        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
-        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
-        {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.ICE);return;}
-        RefreshWeaponAttackClock();
-        if (WeaponModel == null || !WeaponModel.Equipped
-            || WeaponModel.Durability <= 0
-            || EquipmentMenuOpen || CreationWizardOpen
-            || IsPhysicallyImmobilized()
-            || StaffCastPending)
-        {
-            return;
-        }
-
-        if (WeaponChargeActive) { return; }
-
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                WeaponModel.WeaponType
-            );
-
-        if (IsRangedWeaponType(WeaponModel.WeaponType))
-        {
-            // AltFire, igual que Zoom, alterna ADS una sola vez por pulsación.
-            // El bloqueo es propio de esta tecla y no afecta ataques secundarios.
-            if (RangedAimSecondaryLatched) { return; }
-            RangedAimSecondaryLatched = true;
-            ToggleRangedAim(WeaponModel.WeaponType);
-            return;
-        }
-
-        if (CombatBlockModeActive)
-        {
-            CancelCombatBlockMode();
-        }
-
-        if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
-        {
-            if (JavelinSecondaryLatched) { return; }
-            JavelinSecondaryLatched = true;
-        }
-
-        if (EquippedWeaponCooldownRemaining > 0.0
-            || StaffCastCooldownRemaining > 0.0)
-        {
-            return;
-        }
-
-        if (WeaponModel.IsMagicalType(WeaponModel.WeaponType))
-        {
-            PerformDebugStaffAttack(true);
-            return;
-        }
-
-        if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
-            && !HasJavelinMeleeFallbackTarget())
-        {
-            BeginPhysicalAttackCycle(true);
-            return;
-        }
-
-        if (catalogueWeapon >= 0
-            && CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon) > 0.0)
-        {
-            BeginPhysicalAttackCycle(true);
-        }
+        CaelumCombatDispatch.PerformEquippedWeaponSecondaryAttack(self);
     }
 
     // Reutiliza exactamente la curva de desgaste de armaduras: por cada

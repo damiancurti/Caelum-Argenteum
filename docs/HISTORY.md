@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.0** — 2026-10-18.
+Documentation version: **5.5.1** — 2026-10-18.
+
+## 5.5.1 - Combat dispatch extraction (#310, 2026-10-18)
+
+From accepted #309 at ca8206bc, extract three coordination bodies into stateless
+CaelumCombatDispatch. The 653 pawn field declarations, 562 signatures and 559
+other method bodies remain; normalized moved bodies preserve every original
+statement/literal and branch order. Compatible pawn adapters delegate once.
+The only added precondition is #120's current/non-predicted receiver guard,
+before even RefreshWeaponAttackClock can commit a mature action. Native weapon
+states, start/commit/resource/ammunition/wear ownership and NPC consumers remain.
+There is no new serialization schema, migration or performance claim.
+
+The responsibility map and native evidence are in validation_551. The read-only
+independent reviewer found no production blocker and requested specific mature
+pending-action authority and special-branch controls. All 31 required native runs
+pass: 20 paired scenarios have 1,793 identical observations; current/#309 saves,
+hub travel, exact items, held inputs, unavailable reserves, death, interruption
+and human-to-bot non-interference pass. The 31 invalid-receiver checks reject
+mature commits before mutation. All 16,380 normal-package members match the
+tested frozen runtime. Validation and packaging pass; no FPS claim. Forty runs
+are preserved, including seven explained fixture failures and two superseded
+cast setup controls. Author check **CA310-01** (origin **5.5.1 / #310**) passed
+on **2026-10-18**: the author explicitly confirmed "La prueba dio bien."
+No qualification was reported. Its pending entry is removed; this acceptance
+does not imply a new native run or a merge. #309 acceptance is retained below.
 
 ## 5.5.0 - Weapon/input audit (#309, 2026-10-18)
 
