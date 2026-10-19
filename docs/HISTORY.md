@@ -22,8 +22,10 @@ and human-to-bot non-interference pass. The 31 invalid-receiver checks reject
 mature commits before mutation. All 16,380 normal-package members match the
 tested frozen runtime. Validation and packaging pass; no FPS claim. Forty runs
 are preserved, including seven explained fixture failures and two superseded
-cast setup controls. CA310-01 remains pending author acceptance; #309 acceptance
-is retained below.
+cast setup controls. Author check **CA310-01** (origin **5.5.1 / #310**) passed
+on **2026-10-18**: the author explicitly confirmed "La prueba dio bien."
+No qualification was reported. Its pending entry is removed; this acceptance
+does not imply a new native run or a merge. #309 acceptance is retained below.
 
 ## 5.5.0 - Weapon/input audit (#309, 2026-10-18)
 

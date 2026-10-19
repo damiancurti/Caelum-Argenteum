@@ -15,8 +15,8 @@ adapters, saved fields and native start/commit paths. Reuse #309 fixtures and
 compare actual per-tic actions, resources, ammunition, hits and exact-item wear.
 New authority checks must reject prediction/stale/detached receivers before a
 mature action can commit. All 31 required native runs pass, with 1,793 identical
-observations in 20 paired scenarios. Evidence: validation_551; CA310-01 is pending author
-acceptance. No FPS conclusion is inferred from moving code. Continue #311–315
+observations in 20 paired scenarios. Evidence: validation_551; CA310-01 passed author
+acceptance on 2026-10-18. No FPS conclusion is inferred from moving code. Continue #311–315
 separately; #316 remains deferred.
 
 ## 5.5.0 - Weapon/input audit (#309)

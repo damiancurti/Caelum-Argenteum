@@ -3,7 +3,7 @@
 Documentation version: **5.5.1** — 2026-10-18.
 
 **5.5.1/#310:** stateless dispatch;31 native runs/1793 matched observations.
-validation_551; CA310-01 pending. **#309:** CA309-01 accepted Oct18; validation_550.
+validation_551; CA310-01 accepted Oct18. **#309:** CA309-01 accepted Oct18; validation_550.
 #311–315 separate; #316 deferred. Older author acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.

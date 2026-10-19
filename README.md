@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.5.1 isolates three combat dispatch routes in a stateless service (#310),
 preserving native weapon execution, saved state and existing combat rules.
 See [extraction and native comparison evidence](assets/validation_551/RESULTS.md).
-Author check CA310-01 is pending, separately from accepted #309.
+Author check CA310-01 passed on 2026-10-18, separately from accepted #309.
 
 V5.5 begins with the weapon/input audit (#309). Holding Reload now completes
 one action per press; empty-magazine Fire no longer restarts the reload timer.

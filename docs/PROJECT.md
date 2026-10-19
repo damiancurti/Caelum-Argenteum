@@ -11,7 +11,7 @@ The sole added precondition is the established current, non-predicted pawn
 authority check before any clock refresh or mutation. Source equivalence and
 native comparison evidence: assets/validation_551. All 31 required native runs
 pass; the 20 paired scenarios retain 1,793 identical observations. No FPS claim or new save
-migration. CA310-01 is pending author acceptance. Narrative F2 remains V5.9;
+migration. CA310-01 passed author acceptance on 2026-10-18. Narrative F2 remains V5.9;
 crafting/merchant coordination remains
 V5.6. #311–315 and deferred #316 remain separate issues.
 

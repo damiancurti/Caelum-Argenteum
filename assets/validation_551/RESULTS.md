@@ -130,6 +130,8 @@ old-save copies and any observation difference. The normal PK3 may have a
 different ZIP byte hash; that explicit exception requires both its actual tested
 hash and byte-for-byte equality of every package member with the frozen runtime.
 
-Author acceptance **CA310-01** (origin 5.5.1 / #310) is pending. The prepared
-`issue310-preview01` uses the same production runtime with three visible dummies
-and Spanish on-screen/terminal controls. Opening it is not author acceptance.
+Author acceptance **CA310-01** (origin **5.5.1 / #310**) passed on **2026-10-18**:
+the author explicitly confirmed "La prueba dio bien," without qualifications.
+The `issue310-preview01` uses the same production runtime with three visible
+dummies and Spanish on-screen/terminal controls. Acceptance is distinct from
+the native evidence above; no additional engine run or merge is implied.
