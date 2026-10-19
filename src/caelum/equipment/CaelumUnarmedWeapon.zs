@@ -109,9 +109,15 @@ class CaelumUnarmedWeapon : Weapon
         if(user!=null)user.ReserveRacialAbilityInput();
     }
 
+    action void A_CaelumChannelInput()
+    {
+        let user=CaelumPlayer(invoker.Owner);
+        if(user!=null)user.RequestCombatChannelInput();
+    }
+
     action void A_CaelumReady()
     {
-        int flags=WRF_ALLOWUSER1|WRF_ALLOWUSER3|WRF_ALLOWUSER4;
+        int flags=WRF_ALLOWUSER1|WRF_ALLOWUSER2|WRF_ALLOWUSER3|WRF_ALLOWUSER4;
         if(CaelumClassCastView.Active(CaelumPlayer(invoker.Owner)))
             flags|=WRF_NOSWITCH|WRF_NOFIRE;
         A_WeaponReady(flags);
@@ -150,6 +156,10 @@ class CaelumUnarmedWeapon : Weapon
         Goto Ready;
     User4:
         TNT1 A 0 A_CaelumClassInput;
+        TNT1 A 1;
+        Goto Ready;
+    User2:
+        TNT1 A 0 A_CaelumChannelInput;
         TNT1 A 1;
         Goto Ready;
     }

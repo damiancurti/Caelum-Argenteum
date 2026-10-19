@@ -1,10 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.4** — 2026-10-19.
+Documentation version: **5.5.5** — 2026-10-19.
+
+**5.5.5/#363:** unarmed User2 restored; validation_555. CA363-01 pending.
+#314/#315/#369 separate; #316 deferred.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.
 CA313-01 accepted Oct19; oldsave/rollback verified.
-V5.6 finished-component contract; exact breakdown pending. #314–315 separate; #316 deferred.
+V5.6 finished-component contract; exact breakdown pending.
 #309–312 accepted; validation_550–553; older evidence/acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.

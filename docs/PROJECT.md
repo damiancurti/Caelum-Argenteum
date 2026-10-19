@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.4** — 2026-10-19.
+Documentation version: **5.5.5** — 2026-10-19.
+
+## 5.5.5 - Equipped-Seal input while unarmed (#363)
+
+The unarmed fallback now opts into native User2 and delegates to the existing
+equipped-Seal channel authority. Press starts, release keeps the channel active,
+and a second press stops it; holding never creates repeated effects or payments.
+Resource exhaustion, missing seals and cooldown retain their existing rules.
+The new states are appended; previous state indices and saved fields are unchanged.
+Native baseline/revised input, exact spending, rejection, old/current saves,
+rollback and hub evidence are recorded in assets/validation_555/RESULTS.md.
+Static validation and normal packaging pass. Independent review found no
+production defect. Author check CA363-01 remains pending; no FPS claim is made.
 
 ## 5.5.4 - Ammunition mass and finished-component contract (#313)
 
