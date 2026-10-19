@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.3** — 2026-10-19.
+Documentation version: **5.5.4** — 2026-10-19.
 
-**5.5.3/#312:** pressure release/crusher sampling; validation_553:20runs/306checks;
-CA312-01 accepted Oct19; old/current saves and rollback pass.
-#309–311 accepted Oct18; validation_550–552. #313–315 separate; #316 deferred.
-Older acceptance: HISTORY.
+**5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.
+CA313-01 accepted Oct19; oldsave/rollback verified.
+V5.6 finished-component contract; exact breakdown pending. #314–315 separate; #316 deferred.
+#309–312 accepted; validation_550–553; older evidence/acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
 CA324-01 accepted Oct18. validation_5434.

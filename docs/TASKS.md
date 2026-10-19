@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.3** — 2026-10-19.
+Documentation version: **5.5.4** — 2026-10-19.
+
+## 5.5.4 - Ammunition mass and finished-component contract (#313)
+
+The author selected Argentine Remington 1879 and late-nineteenth-century paper
+12-bore shotgun references. Complete cartridge masses are explicitly approved
+design approximations: 40 g carbine and 45 g shotgun, replacing the shared 3 g
+placeholder. Historical exact component weights were not established. V5.6
+receives a finished-component assembly contract; no playable recipe or new
+material interaction is introduced. Count/type identities, magazines, damage,
+armor penetration, shields and projectile physics retain their accepted rules.
+Native validation_554: 12 required runs / 1,323 checks pass, including old-save
+upgrade/rollback and unchanged defense rules. Build/static checks pass.
+CA313-01 (origin 5.5.4 / #313) passed on 2026-10-19: the author confirmed
+"La prueba dio bien", without qualifications. The confirmed pending entry is
+removed. This acceptance reuses native evidence; no new engine test is claimed.
+The author also authorized merging PRs #364-368 and closing #309-313.
+#314, #315 and #363 remain open for a later session; #316 and campaign FPS
+stay deferred.
 
 ## 5.5.3 - Sustained pressure lifecycle and native descent (#312)
 

@@ -57,6 +57,7 @@ class CaelumShotgunPellet : CaelumCarbineProjectile
 class CaelumShotgunAmmo : CaelumCarbineAmmo
 {
     override int GetAmmoType(){return CaelumConstants.AMMUNITION_SHOTGUN;}
+    override double GetUnitWeight(){return CaelumConstants.SHOTGUN_AMMO_UNIT_WEIGHT;}
     override bool HandlePickup(Inventory item)
     {
         // Ammo agrupa subclases por su padre: no aceptar balas en esta pila.

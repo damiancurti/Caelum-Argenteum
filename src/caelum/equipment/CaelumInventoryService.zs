@@ -4066,6 +4066,8 @@ class CaelumInventoryService : Object play
     {
         switch (ammunitionType)
         {
+            case CaelumConstants.AMMUNITION_SHOTGUN:
+                return CaelumConstants.SHOTGUN_AMMO_UNIT_WEIGHT;
             case CaelumConstants.AMMUNITION_ARROW:
                 return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
             case CaelumConstants.AMMUNITION_BOLT:
