@@ -4,6 +4,9 @@ class CaelumThermalState : Object play
 {
     int Revision;
     transient CaelumThermalCoefficients Coefficients;
+    // Proyección de contacto reconstruida al avanzar; no serializa geometría.
+    transient int SurfaceKind;
+    transient double SurfaceC,SurfaceCoverage[4];
     double Exposure,Acclimation,ActivityWatts,DamageRemainder;
     // Desde revisión 7, ActivityWatts sólo informa del intervalo actual.
     double AcclimationMultiplier;

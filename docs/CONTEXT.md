@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.5** — 2026-10-19.
+Documentation version: **5.5.6** — 2026-10-19.
 
-**5.5.5/#363:** unarmed User2 restored; validation_555. CA363-01 accepted Oct19.
-#314/#315/#369 separate; #316 deferred.
+**5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 pending.
+**5.5.5/#363:** User2 accepted Oct19. #315/#369 separate; #316 deferred.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.
 CA313-01 accepted Oct19; oldsave/rollback verified.
@@ -293,7 +293,7 @@ Pending:
   scope. #17 exported-package acceptance passed on 2026-10-01.
 - Extract Impact Physics only after its separate integration/save/reset closure. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
-  maps and damaging surfaces await temperature effects (no acid/lava requested).
+  campaign surfaces await placement; #314 permits private ice/lava tests.
   Those three items do not block closed 4.36; remaining expansion stays in V5.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
@@ -333,7 +333,7 @@ separate agent evidence/author acceptance. Preserve history and unique content.
 
 The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 
-Keep agent evidence and author acceptance distinct.
+Evidence differs from acceptance.
 
 [pending_test.txt](../pending_test.txt) holds outstanding author tests across
 versions. Only author-confirmed passes move their ID, version/issue, result,

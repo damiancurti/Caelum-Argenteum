@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.5** — 2026-10-19.
+Documentation version: **5.5.6** — 2026-10-19.
+
+## 5.5.6 - Thermal surface fixture (#314)
+
+`assets/validation_556/scene.json` owns private fixture coordinates. Its generator
+uses the project's existing granite image and explicit blue/orange TEXTURES
+recolors for ice/lava, plus existing owned wall/sky textures. No external art,
+IWAD asset or executable is added. Labels are bilingual; the existing thermal
+HUD supplies exposure feedback. Generated test maps, packages and saves stay
+under build/, outside campaign distribution. Original granite provenance is
+unchanged. This is a contact test presentation, not final volcanic landscape art.
 
 ## 5.5.5 - Unarmed input evidence (#363)
 

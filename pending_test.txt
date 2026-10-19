@@ -1,0 +1,12 @@
+CA314-01 | Origin: 5.5.6 / #314 | Ice/lava contact
+Prerequisites: final #314 private fixture; run assets/validation_556/preview.ps1
+in PowerShell. F6 ice (-40 C), F7 lava (1,000 C), F8 neutral, F9 water over ice.
+F10 restores fixture health/exposure; this is a test control, not a game ability.
+Steps: stand and crouch on ice/lava, observe the existing thermal HUD, then
+jump or move onto neutral floor. Compare clothing insulation and water. Save
+and reload on a surface. Report whether visual identification is clear.
+Expected: ice cools and lava heats; exposure changes progressively. Existing
+temperature severity causes HP loss; there is no separate contact damage pulse.
+Jumping/flight removes ground exchange. Accumulated heat/cold persists after
+leaving and follows normal recovery. Water uses its own temperature instead.
+Save/load keeps exposure and rebuilds contact. Report any qualification.

@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.5.5.** Obtain and update the complete repository, validate
+**Current release: 5.5.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.5.6 adds approved ice/lava contact through the shared temperature model (#314),
+limited to a private test room. Ice is -40 C; lava is 1,000 C. Clothing insulates
+the lowest 1/16 body row; jumping/flight and water interrupt dry contact.
+See [evidence](assets/validation_556/RESULTS.md). Author check CA314-01 is pending.
 
 V5.5.5 restores equipped-Seal User2 input while unarmed (#363), preserving the
 shared channel costs, toggle and cooldown rules. Native input/save checks pass;
@@ -2488,7 +2493,7 @@ V4.35 is accepted and closed through 0q. V4.36 includes the trapdoor, rocks,
 approved magical traps and ceiling crusher. Per the author's 2026-09-23
 clarification in #8, the existing crushing ceiling and native elevator cover
 moving sectors. Avalanches are deferred until additional maps; damaging
-surfaces until environmental temperature effects (no acid/lava requested).
+campaign surfaces pending placement; #314 adds an approved private ice/lava room.
 These three items no longer block 4.36. Rams, catapults and remaining
 integration/save/reset checks still do; the Tarot and demo gates remain.
 Coastal timed journeys are implemented in 0n, event timing and the calendar in 0o. Buenos Aires is confirmed for MAP02–07 and

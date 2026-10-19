@@ -24,6 +24,8 @@ class CaelumThermalJourney : Object play
     bool Forecast(CaelumPlayer user,int mode,int elapsedTics,double speedKmh,int destinationRegion=-1,CaelumJourneyModel supplies=null)
     {
         Result=CaelumThermalService.CaptureForecast(user);Failure="";WorstExposure=0;
+        // El viaje abstracto no arrastra el suelo de su punto de partida.
+        if(Result!=null)CaelumThermalSurface.Clear(Result);
         let weather=CaelumWeatherState.Get(user);
         let clock=CaelumWorldClock.Get(user);
         let calendar=CaelumCalendarState.Get(user);

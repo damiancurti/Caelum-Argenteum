@@ -1,0 +1,18 @@
+{
+  "scope": "Private #314 contact fixture, not authored campaign placement",
+  "outer": [-1600, -1000, 1600, 1000],
+  "zone_half_size": 192,
+  "ceiling": 384,
+  "performance": {"population": 512, "columns": 32, "spacing": 64, "origin": [-992,-480,0]},
+  "spawn": [-1200, -650, 0],
+  "zones": [
+    {"name": "Neutral", "position": [-1050, -350, 0], "kind": 0},
+    {"name": "Ice", "position": [-350, -350, 0], "kind": 1},
+    {"name": "Lava", "position": [350, -350, 0], "kind": 2},
+    {"name": "Ice under water", "position": [1050, -350, 0], "kind": 1, "water": true},
+    {"name": "Roofed ice", "position": [-1050, 350, 0], "kind": 1, "roof": true},
+    {"name": "Raised ice", "position": [-350, 350, 64], "kind": 0, "platform": 1},
+    {"name": "Under raised lava", "position": [350, 350, 0], "kind": 0, "platform": 2},
+    {"name": "NPC lava", "position": [1050, 350, 0], "kind": 2}
+  ]
+}

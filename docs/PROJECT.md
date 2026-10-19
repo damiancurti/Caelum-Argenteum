@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.5** — 2026-10-19.
+Documentation version: **5.5.6** — 2026-10-19.
+
+## 5.5.6 - Ice and lava ground contact (#314)
+
+The author approved a private test room with ice at -40 C and lava at 1,000 C,
+using existing temperature exposure and damage. The approved first approximation
+uses 100 W/m² K and the lowest anatomical row (1/16 of body area); the current
+clothing path insulates it. Ground contact replaces that area's air exchange;
+water takes priority. Jumping, flight and unsupported floors stop contact.
+Native supporting floors and solid 3D platforms are distinguished. Current
+temperature defenses and real-time damage remain authoritative; no direct lava
+damage, elemental fire status or new immunity is added. The obsolete Pilgrim
+Amparo reference is superseded by the existing Redemption rules (#250).
+No campaign placement is authorized. Transient projections require no save
+schema migration. Native evidence: assets/validation_556/RESULTS.md.
+Static validation and normal packaging pass. Sixteen native runs contain 93
+passing checks, including old/current saves, rollback and hub return. Independent
+review found no blocker. Five performance windows retain simulation and render
+callback tails; ETW access was denied, so no presentation/FPS acceptance is claimed.
+Author check CA314-01 remains pending. #315/#369 stay separate; #316 is deferred.
 
 ## 5.5.5 - Equipped-Seal input while unarmed (#363)
 

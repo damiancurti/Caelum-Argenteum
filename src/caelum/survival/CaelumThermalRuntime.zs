@@ -19,10 +19,13 @@ class CaelumThermalRuntime : Object play
         let thermal=CaelumThermalBody.Get(user,true);
         let weather=CaelumWeatherState.Get(user);
         if(thermal==null || weather==null)return;
+        let surfaceWorld=CaelumThermalWorld.Get();
+        bool surfaceChanged=surfaceWorld!=null && surfaceWorld.HasThermalSurfaces
+            && thermal.SurfaceKind!=CaelumThermalSurface.KindAt(user);
         bool changed=thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || thermal.LastEnvironmentTic>level.maptime
             || level.maptime-thermal.LastEnvironmentTic>=CaelumThermalData.ENVIRONMENT_SAMPLE_TICS
             || thermal.LastWaterLevel!=user.WaterLevel || thermal.EnvironmentDate!=weather.SampleDate
-            || thermal.EnvironmentMinute!=weather.SampleMinute;
+            || thermal.EnvironmentMinute!=weather.SampleMinute || surfaceChanged;
         if(changed)
         {
             CaelumThermalEnvironment.Sample(user,thermal,thermal.LocalMotionMps);
@@ -46,6 +49,18 @@ class CaelumThermalRuntime : Object play
     static void NPCStep(CaelumCombatActor npc,bool force=false)
     {
         if(npc.health<=0)return;
+        int surfaceKind=CaelumThermalSurfaceData.NONE;
+        if(npc.ThermalState!=null)
+        {
+            let contact=npc.ThermalState.Coefficients;
+            if(contact==null)force=true;
+            else if(contact.SurfaceMap)
+            {
+                surfaceKind=CaelumThermalSurface.KindAt(npc);
+                force=force || surfaceKind!=CaelumThermalSurfaceData.NONE
+                    || contact.PreviousSurface!=CaelumThermalSurfaceData.NONE;
+            }
+        }
         // La programación ya pertenece al NPC: los tics intermedios no
         // reconstruyen reloj, atributos ni búsquedas globales.
         if(!force && npc.ThermalState!=null && npc.ThermalState.RuntimeReady
@@ -56,6 +71,13 @@ class CaelumThermalRuntime : Object play
         if(world==null || world.ReferenceClock==null || world.ReferenceWeather==null)return;
         let thermal=CaelumThermalBody.Get(npc,true);
         if(thermal==null)return;
+        let contact=CaelumThermalCoefficients.Get(thermal);
+        if(!contact.SurfaceScheduleReady)
+        {
+            contact.SurfaceScheduleReady=true;contact.SurfaceMap=world.HasThermalSurfaces;
+            surfaceKind=contact.SurfaceMap ? CaelumThermalSurface.KindAt(npc) : CaelumThermalSurfaceData.NONE;
+            contact.PreviousSurface=surfaceKind;
+        }
         double now=Stamp(world.ReferenceClock);
         if(!thermal.RuntimeReady || thermal.RuntimeMap!=level.MapName || thermal.LastRealTic>level.maptime)
         {
@@ -69,7 +91,7 @@ class CaelumThermalRuntime : Object play
         double dw=Max(0.0,now-thermal.LastWorldStamp);
         if(thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || level.maptime-thermal.LastEnvironmentTic>=TICRATE
             || thermal.LastWaterLevel!=npc.WaterLevel || thermal.EnvironmentDate!=world.ReferenceWeather.SampleDate
-            || thermal.EnvironmentMinute!=world.ReferenceWeather.SampleMinute)
+            || thermal.EnvironmentMinute!=world.ReferenceWeather.SampleMinute || surfaceKind!=contact.PreviousSurface)
         {
             CaelumThermalEnvironment.Sample(npc,thermal,thermal.LocalMotionMps);
             thermal.FireWatts=CaelumThermalFire.Sample(npc,thermal);
@@ -81,7 +103,13 @@ class CaelumThermalRuntime : Object play
         int steps=Max(1,int(Ceil(dw/60.0)));
         double firearm=dr>0 ? thermal.PendingFirearmJoules/dr : 0;
         double burn=dr>0 && npc.ElementalStatus!=null ? npc.ElementalStatus.TakeBurnHeat()/dr : 0;
-        for(int i=0;i<steps && npc.health>0;i++)CaelumThermalService.Advance(npc,dw/steps,dr/steps,dr>0 ? thermal.PendingActivityJoules/dr : 0,burn,thermal.FireWatts,firearm);
+        // Al entrar se cierra el intervalo anterior con su superficie anterior,
+        // sin aplicar lava/hielo retroactivamente al segundo ambiental acumulado.
+        for(int i=0;i<steps && npc.health>0;i++)CaelumThermalService.Advance(npc,dw/steps,dr/steps,dr>0 ? thermal.PendingActivityJoules/dr : 0,burn,thermal.FireWatts,firearm,contact.PreviousSurface);
+        contact.PreviousSurface=surfaceKind;
+        // La proyección visible corresponde al soporte actual, aunque el
+        // intervalo cerrado haya pertenecido al soporte anterior.
+        if(thermal.SurfaceKind!=surfaceKind)CaelumThermalSurface.Sample(npc,thermal,surfaceKind);
         if(dr>0)thermal.PendingFirearmJoules=0;
         thermal.PendingActivityJoules=0;
         thermal.LastRealTic=level.maptime;thermal.LastWorldStamp=now;

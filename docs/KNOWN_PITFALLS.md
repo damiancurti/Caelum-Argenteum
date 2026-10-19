@@ -2455,6 +2455,15 @@ Do not label such a run "no thermal damage". Preserve initial/final reserve,
 energy, moisture and cumulative damage records. Uncommanded input contaminated
 pool-wet-b; it was stopped and repeated with isolated unbound test controls.
 
+Follow-up #314 / 5.5.6, 2026-10-19 (ENGINE-VERIFIED): when a thermal
+contact transition closes the preceding interval, its coefficients must use
+the previous support. Then resample the current support without integrating
+again. Otherwise an exiting NPC can expose stale ground contact until its
+next staggered update even though the next energy interval is correct. The
+native enter/exit fixture reproduced this projection delay; the corrected
+fixture verifies immediate clearing and repeated-callback nonduplication.
+Evidence: `assets/validation_556/RESULTS.md`; author CA314-01 pending.
+
 ## CA-KP-055 - Sweat must share both the water budget and the thermal solver
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.
