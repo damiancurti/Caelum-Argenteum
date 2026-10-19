@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.5.4 separates complete cartridge mass: 40 g carbine / 45 g shotgun (#313),
 author-approved design approximations. See [ammunition evidence](assets/validation_554/RESULTS.md).
 Native validation: 12 runs / 1,323 checks pass; build/static checks pass.
-CA313-01 awaits author acceptance.
+The author accepted CA313-01 on 2026-10-19; #309-313 are approved.
 
 V5.5.3 completes sustained pressure interruption and native crusher descent accounting (#312).
 See [pressure validation](assets/validation_553/RESULTS.md). The author accepted CA312-01 on 2026-10-19.

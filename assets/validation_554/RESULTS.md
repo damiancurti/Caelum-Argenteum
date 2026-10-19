@@ -85,7 +85,10 @@ pairs; do not overwrite them. collect.py validates the recorded delivery runs.
 Only scripts, logs, configuration and hashes are tracked; no IWAD, executable,
 runtime package or save fixture is distributed.
 
-Normal packaging and project validation pass. CA313-01 remains in pending_test.txt
-for author verification. preview.ps1 opens the game with F6 carbine, F7 shotgun,
-F8 Box transfer and F10 reset; R reloads normally. Author acceptance is separate
-from all agent checks above. #314–315 remain separate and #316 stays deferred.
+Normal packaging and project validation pass. The author accepted CA313-01
+(origin 5.5.4 / #313) on 2026-10-19: "La prueba dio bien", without qualifications.
+Its confirmed entry is removed from pending_test.txt. Acceptance is separate
+from the agent checks above and reuses their evidence; no new native run is
+claimed. preview.ps1 retains the reproducible F6/F7/F8/F10 controls and native R.
+The author authorized merge/closure of the accepted #309–313 batch; #314, #315
+and #363 remain for a later session, with #316 and campaign FPS deferred.

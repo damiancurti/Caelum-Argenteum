@@ -3,7 +3,7 @@
 Documentation version: **5.5.4** — 2026-10-19.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.
-CA313-01 pending; oldsave/rollback verified.
+CA313-01 accepted Oct19; oldsave/rollback verified.
 V5.6 finished-component contract; exact breakdown pending. #314–315 separate; #316 deferred.
 #309–312 accepted; validation_550–553; older evidence/acceptance: HISTORY.
 

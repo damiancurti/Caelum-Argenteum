@@ -13,8 +13,12 @@ material interaction is introduced. Count/type identities, magazines, damage,
 armor penetration, shields and projectile physics retain their accepted rules.
 Native validation_554: 12 required runs / 1,323 checks pass, including old-save
 upgrade/rollback and unchanged defense rules. Build/static checks pass.
-CA313-01 remains pending author acceptance; no merge or closure is claimed.
-#314–315 remain separate; #316 and campaign FPS stay deferred.
+CA313-01 (origin 5.5.4 / #313) passed on 2026-10-19: the author confirmed
+"La prueba dio bien", without qualifications. The confirmed pending entry is
+removed. This acceptance reuses native evidence; no new engine test is claimed.
+The author also authorized merging PRs #364-368 and closing #309-313.
+#314, #315 and #363 remain open for a later session; #316 and campaign FPS
+stay deferred.
 
 ## 5.5.3 - Sustained pressure lifecycle and native descent (#312)
 
