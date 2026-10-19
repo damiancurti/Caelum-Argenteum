@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.5.3.** Obtain and update the complete repository, validate
+**Current release: 5.5.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.5.4 separates complete cartridge mass: 40 g carbine / 45 g shotgun (#313),
+author-approved design approximations. See [ammunition evidence](assets/validation_554/RESULTS.md).
+Native validation: 12 runs / 1,323 checks pass; build/static checks pass.
+CA313-01 awaits author acceptance.
 
 V5.5.3 completes sustained pressure interruption and native crusher descent accounting (#312).
 See [pressure validation](assets/validation_553/RESULTS.md). The author accepted CA312-01 on 2026-10-19.
@@ -2503,8 +2508,9 @@ successful rescue, independent of character size, are defined in the roadmap.
 SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
 The historical audit deferral was superseded by 5.4.0/#237's source-to-consumer review; accepted runtime rules remain unchanged and its explicit design gaps remain pending.
-Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
-defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
+Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. The #313 ammunition contract defines finished-component assembly for V5.6.
+Complete cartridge masses are now 40 g / 45 g design approximations; exact
+component proportions and playable recipes remain pending in SYSTEMS. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system
 testing. MAP02 now contains the authorized maze and encounters; MAP03–05
 retain their test spaces. The accepted three-map playtest slice was delivered through

@@ -282,3 +282,8 @@
 # Preserve #312 native logs and frozen input/evidence fingerprints exactly.
 /assets/validation_553/** -text whitespace=cr-at-eol
 /assets/validation_553/evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #313 native evidence and frozen input fingerprints exactly.
+/assets/validation_554/** -text whitespace=cr-at-eol
+/assets/validation_554/evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_554/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol

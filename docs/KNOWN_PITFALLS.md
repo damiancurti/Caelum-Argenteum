@@ -2320,6 +2320,14 @@ assets/validation_517 cover both directions and actual MAP02 death supplies.
 This is a targeted Ammo rule, not permission to replace ordinary Inventory
 stacking. Author appearance acceptance remains separate.
 
+Follow-up evidence: #313 / 5.5.4, 2026-10-19, validation_554. Changing an ammo
+subclass's virtual GetUnitWeight is insufficient: first-stack admission also
+uses the shared ammunition-type weight lookup. Keep both bound to the same
+authoritative constant. Native capacity/Box/drop tests cover new and existing
+stacks. Reload changes the magazine count, not the stack; do not count loaded
+rounds twice. The fixture must select the ammunition row and clear any prior
+equipment ItemId, as ApplyFormalInventorySelection does, before reading its mass.
+
 ## CA-KP-059 - Check sprite rotation order for every animation family
 
 Status/evidence: RESOLVED-VERIFIED, #135 / 5.1.5, 2026-10-08.

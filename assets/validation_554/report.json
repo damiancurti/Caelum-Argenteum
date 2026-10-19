@@ -1,0 +1,795 @@
+{
+  "required": [
+    {
+      "directory": "issue313-current03",
+      "label": "current-save",
+      "exit_code": 0,
+      "checks": 2,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "c546d9df0bb62db571c93ea706fb9f1652d214053d1942afd2b634045e61852c",
+      "log_sha256": "a4190398b0b3ec23b40bccd393536b6444a2f6c10c65cdeada76362f3b5155ce",
+      "executed_script_sha256": "ec0a5460f8f48c0bc72f7d3d636f91e873db3caf45e25dde22c318ec4c42ef7c",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current03",
+      "label": "fire",
+      "exit_code": 0,
+      "checks": 32,
+      "markers": [
+        [
+          "0",
+          "32"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "d2e685fac74d531564772b9cf283adb703c8d83cabb9db3a04b3bf15a132ef0c",
+      "log_sha256": "47d816653443625db5432ffb3603c7c34be465318a3a8c636d7502af0d280d87",
+      "executed_script_sha256": "d8b7788f0da6b0af603756871a855bb065e2ddd075c3744742698f6ad6f5332a",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current03",
+      "label": "inventory",
+      "exit_code": 0,
+      "checks": 65,
+      "markers": [
+        [
+          "0",
+          "65"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "c7d37e484c90a73adf3370905911a5c78c12eee16ecfc6b7a95be5d6a423cef8",
+      "log_sha256": "2506223c782ed9b3dee677b4a69550108b2c120fb2be61b62765858b6ac9ff45",
+      "executed_script_sha256": "477bc44d541b806e820f3c166d122927887210c97c0019dc2e4b94d7ecd1de7a",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current03",
+      "label": "ranged",
+      "exit_code": 0,
+      "checks": 1028,
+      "markers": [
+        [
+          "0",
+          "1028"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "18e51b5ee83396b442d832f534a51b7cb792fb9d3cd3198a7fd6c0d7b676526b",
+      "log_sha256": "41418a7d624b139fe3ba83d372bc5e835ae655b65402f5aed77807bfe15047c6",
+      "executed_script_sha256": "962d93ed4ad5898bc5045c1ca33a484c3562c95b37ff775923d8f66d6311ef4b",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "current-load",
+      "exit_code": 0,
+      "checks": 33,
+      "markers": [
+        [
+          "0",
+          "35"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "494059ed028b11b7fb1476626f0bc5ff666ab3826ccbcd36479a2c81e307f17c",
+      "log_sha256": "6a3e3ba4f0fb35277d7264ed6293b09773613a127fc97715bea7106982867f1f",
+      "executed_script_sha256": "19a53d8d83759b1a6f751eb674bbd5d4a63f0478916f60fcdd34d06d3e51edf0",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "old-upgrade",
+      "exit_code": 0,
+      "checks": 33,
+      "markers": [
+        [
+          "0",
+          "35"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "5a1cec936e8df46f6a9ad4f2bd5f91392104523cc031932153511b6a745b348e",
+      "log_sha256": "42d3ff9b65ad094934ec4eb2448176257750287b3f934c5d11c696ebe7687c59",
+      "executed_script_sha256": "19a53d8d83759b1a6f751eb674bbd5d4a63f0478916f60fcdd34d06d3e51edf0",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "original-rollback",
+      "exit_code": 0,
+      "checks": 33,
+      "markers": [
+        [
+          "0",
+          "35"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "51b386d832c64047f85948ab78b54eae87d96bfe8e26c8843863112a02fb27bc",
+      "log_sha256": "6aee140773eb7e2a51e486b4e6f375d864a2251504ee2e5a0300be3cccd53727",
+      "executed_script_sha256": "b6b9b766c265075f8d06128ef7a2543561077e9ccb24184fc2ec26308d6a904e",
+      "runtime_sha256": "4693f37eb27a0d3bd7502f8c6bb4f379ac697243dbd69e3d606b9040d329a5de"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "upgraded-reload",
+      "exit_code": 0,
+      "checks": 33,
+      "markers": [
+        [
+          "0",
+          "68"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "66297ede4486c62f66d37183fac3ccfb25a0fe39d6cde725ef62094a932daac3",
+      "log_sha256": "05ce67a298a129480d3fc019781076aab24e73b21aecedd8c424457cc4ee4616",
+      "executed_script_sha256": "19a53d8d83759b1a6f751eb674bbd5d4a63f0478916f60fcdd34d06d3e51edf0",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "upgraded-rollback",
+      "exit_code": 0,
+      "checks": 33,
+      "markers": [
+        [
+          "0",
+          "68"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "e0d98c528182bbd495f42143e087470f3c7847eebb01136207ec21df6d1b0d2a",
+      "log_sha256": "ea8914b87b0701d22fca72035df803cc50b09ca7cc66644bd90c85746750a2b4",
+      "executed_script_sha256": "b6b9b766c265075f8d06128ef7a2543561077e9ccb24184fc2ec26308d6a904e",
+      "runtime_sha256": "4693f37eb27a0d3bd7502f8c6bb4f379ac697243dbd69e3d606b9040d329a5de"
+    },
+    {
+      "directory": "issue313-current05",
+      "label": "hub",
+      "exit_code": 0,
+      "checks": 29,
+      "markers": [
+        [
+          "0",
+          "29"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "edcb5d7f8c97df7f6a5e63ff905cba41b333d44a9c0025d8fe4cbe3583067aea",
+      "log_sha256": "e3ba540cd25a24dbeeb489005ee14a46f512549d6baae3fcb887b05987a15176",
+      "executed_script_sha256": "5d5d2f817ae79bf318a5591aac51b99bfdde3827b200e1c6b1fc6d321f58ee71",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-current08",
+      "label": "preview-smoke",
+      "exit_code": 0,
+      "checks": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "88803a51ebf3e5d89d853ac53c67e854b6d4eb57c82fa3cfc6c5ed282531ac41",
+      "log_sha256": "fb23b5782dede2f014fd1a28759082a2345dd739ac1171849f17c5304e9610de",
+      "executed_script_sha256": "a82dce40f2da52befcdb416087d79d65bd47b46a325b93776a1cc2c0645dbc41",
+      "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9"
+    },
+    {
+      "directory": "issue313-original02",
+      "label": "original-save",
+      "exit_code": 0,
+      "checks": 2,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "a06016c0ff494ea3b588da5c47aca0ab063e0ec9e06a00f22f1b479c7d0e418d",
+      "log_sha256": "29e715edaa6a147c0c0f6c8a4b3cfa266938b408ef28bff8c99139f670373107",
+      "executed_script_sha256": "b2fde878101d52e23a04ca6766015346d18ce0e552077e26b6e5eaa9adb541ff",
+      "runtime_sha256": "4693f37eb27a0d3bd7502f8c6bb4f379ac697243dbd69e3d606b9040d329a5de"
+    }
+  ],
+  "excluded": [
+    {
+      "directory": "issue313-current01",
+      "label": "inventory",
+      "exit_code": null,
+      "checks": 0,
+      "markers": [],
+      "problems": [
+        "Script error, \"qa.pk3:probe.zs\" line 389:",
+        "Script error, \"qa.pk3:probe.zs\" line 392:",
+        "Script error, \"qa.pk3:probe.zs\" line 399:",
+        "Script error, \"qa.pk3:probe.zs\" line 425:",
+        "Script error, \"qa.pk3:probe.zs\" line 500:",
+        "Script error, \"qa.pk3:probe.zs\" line 500:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:",
+        "Script error, \"qa.pk3:probe.zs\" line 503:"
+      ],
+      "record_sha256": "50e474c870d50184c7e973a2af1f7c4538b4ef2a1371c97b654f9800195d9637",
+      "log_sha256": "4cd351fcd07f540dc3e676f3d76106250146c7fe7792d159fb639377211c3034"
+    },
+    {
+      "directory": "issue313-current02",
+      "label": "inventory",
+      "exit_code": 0,
+      "checks": 51,
+      "markers": [
+        [
+          "2",
+          "51"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL world stack mass actual=0.200000000 expected=0.600000000",
+        "CA194 FAIL repickup preserves amount actual=5.000000000 expected=15.000000000"
+      ],
+      "record_sha256": "1ccb04c4234a9acadbbc410f1cee3eac97b55cc32572c4aab6ea9d9b16a99fc3",
+      "log_sha256": "a037e81e66c215da6c3087d9735d755e342cdf2896747182fae8fb50e601d123"
+    },
+    {
+      "directory": "issue313-current03",
+      "label": "current-load",
+      "exit_code": null,
+      "checks": 0,
+      "markers": [],
+      "problems": [
+        "**** DIED WITH FATAL ERROR:",
+        "Cannot find savegame C:/GZDooMProjects/CaelumArgenteum/build/issue313-current03/C:/GZDooMProjects/CaelumArgenteum/build/issue313-current03/ca313-ammo.zds"
+      ],
+      "record_sha256": "341490b37e3f58edf726922abf3592d4851f1c587bb22508eaa6a8ac9ef240aa",
+      "log_sha256": "b0e20061555bf71deb9ca80732b71425f4386a4452bcd125b45b5c59138def9b"
+    },
+    {
+      "directory": "issue313-current03",
+      "label": "current-load02",
+      "exit_code": 0,
+      "checks": 29,
+      "markers": [
+        [
+          "4",
+          "31"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL selection full stack actual=12.000000000 expected=4.000000000",
+        "CA194 FAIL selection full stack actual=12.000000000 expected=4.500000000",
+        "CA194 FAIL selection full stack actual=12.000000000 expected=5.000000000",
+        "CA194 FAIL selection full stack actual=12.000000000 expected=5.000000000"
+      ],
+      "record_sha256": "d844278a855424adaa0560772e2e4165872035a98a2c40569b2b12699ee84c0a",
+      "log_sha256": "dc2dbd99bef2c5f990c034e4ab1b4823d32f76e5f1d4c805eb037c3587712c31"
+    },
+    {
+      "directory": "issue313-current04",
+      "label": "hub",
+      "exit_code": 0,
+      "checks": 29,
+      "markers": [
+        [
+          "1",
+          "29"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL loaded in-flight actor actual=0.000000000 expected=1.000000000"
+      ],
+      "record_sha256": "bf5a66ffaae40688aaad2ed788e740e4fbbcb2ef39c9bd8075b906a06446866a",
+      "log_sha256": "3810d2a58db8718b7cd20a95c64cee98a2e644ea64e07ba9e44700c07157e9ef"
+    },
+    {
+      "directory": "issue313-current05",
+      "label": "preview-clean",
+      "exit_code": 0,
+      "checks": 0,
+      "markers": [],
+      "problems": [],
+      "record_sha256": "79c6a746f4d2732222e0146653477d82ecefc222845c15dae00df6a87b55429b",
+      "log_sha256": "85f41753675976ae8a6770c49ceb6408f2cb533117c5c5bfe7a9955542b832cf"
+    },
+    {
+      "directory": "issue313-current05",
+      "label": "preview-smoke",
+      "exit_code": 0,
+      "checks": 0,
+      "markers": [],
+      "problems": [],
+      "record_sha256": "25d7c7762bd5a83a50aa4f656bd3c0dcb0e894a60de46cfbd0a726f9d18b3904",
+      "log_sha256": "dc2f896cff4bb0d17f6ad3cad2b63cda6ba30e5945b95bfbfb7d97aa22535cb7"
+    },
+    {
+      "directory": "issue313-current06",
+      "label": "preview-smoke",
+      "exit_code": 0,
+      "checks": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "9e67ea8732f54abc628ae662cec67a0600230c484d5f3b515cd71130d34f8ea1",
+      "log_sha256": "b39ef9d907f3c5c5e940b4d3e555ad402293e0c9ddf6440c4b13e376a2faca65"
+    },
+    {
+      "directory": "issue313-current07",
+      "label": "preview-smoke",
+      "exit_code": 0,
+      "checks": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "record_sha256": "9e0a7711afa6a5127a89ee730839fb3440a4055c597dc385a87666c0ca32b58b",
+      "log_sha256": "8356b097cf6c604aff343f5d52da72d68909f331f33caef658acb478d7959175"
+    }
+  ],
+  "saves": {
+    "current": {
+      "sha256": "3c622d419209cffc940f0ce3ad6d5e4a4137d6dad660a332426606a9bbf3371d",
+      "ammo": [
+        {
+          "class": "CaelumCarbineAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumShotgunAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumArrowAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumBoltAmmo",
+          "amount": 100,
+          "in_box": 0
+        }
+      ],
+      "projectile": {
+        "class:CaelumActorProjectile": {
+          "CaelumAttackAccuracySucceeded": 1,
+          "CaelumPreparedDamage": 100,
+          "CaelumPushMultiplier": 1.0,
+          "CaelumSecondaryElement": 0,
+          "CaelumDebuffPowerPercent": 0.0,
+          "CaelumBuffPowerPercent": 0.0,
+          "CaelumActorExplosionDamage": 0,
+          "CaelumActorExplosionRadius": 0.0,
+          "CaelumMaximumTravelDistance": 1920.0,
+          "CaelumTravelRevision": 0,
+          "CaelumTravelledDistance": 0.0,
+          "CaelumDiagnosticCompletionRecorded": 0,
+          "CaelumVFXAge": 0,
+          "CaelumVFXRevision": 0,
+          "CaelumRockVisualRevision": 0,
+          "CaelumZupayRockVisual": 0,
+          "CaelumVFXImpactShown": 0,
+          "CaelumSummonShot": 0,
+          "CaelumWearWeaponSize": 2,
+          "CaelumWearSourceItem": 19,
+          "CaelumWeaponWearPrepared": 1,
+          "CaelumWearWeaponType": 2,
+          "CaelumMagicalAttack": 0,
+          "CaelumPersonalityRevision": 1,
+          "CaelumIdeologyPenetration": 0.125,
+          "CaelumElementalPayloadPrepared": 0,
+          "CaelumEssenceType": 0,
+          "CaelumWearWeaponTier": 1,
+          "CaelumAttackPrepared": 1,
+          "MainM00ChargedPractice": 0,
+          "MainM00MobilePractice": 0,
+          "CaelumCriticalHit": 0,
+          "CaelumCriticalRevision": 0,
+          "CaelumHunterEligible": 0,
+          "CaelumCriticalBaseChance": 0.0,
+          "CaelumCriticalRollPercent": 0.0
+        },
+        "class:CaelumCarbineProjectile": {
+          "PhysicsRevision": 0
+        },
+        "vel": [
+          80.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "magazines": {
+        "LongbowMagazine": 0,
+        "CrossbowMagazine": 0,
+        "CarbineMagazine": 7,
+        "HUDRangedMagazineCount": 0,
+        "HUDRangedMagazineCapacity": 0
+      },
+      "probe": {
+        "TrackShots": 0,
+        "Checks": 2,
+        "Errors": 0,
+        "BeforeCount": 0,
+        "BeforeMagazine": 0,
+        "BeforeWeight": 0.0,
+        "SavedWeight": 30.5,
+        "SavedUnit": 0.04,
+        "SavedFlight": 3,
+        "SavedVelocity": {
+          "X": 80.0,
+          "Y": 0.0,
+          "Z": -0.0
+        },
+        "FlightDamage": 100,
+        "FlightType": 2,
+        "baseline": 0,
+        "ViewCarbine": 0,
+        "ViewShells": 0,
+        "ViewCarbineMass": 0.0,
+        "ViewShellMass": 0.0,
+        "Ready": 1,
+        "FlightTier": 1,
+        "Shots": 0
+      }
+    },
+    "original": {
+      "sha256": "820722935963e084d8e582567e2045e0f4f4db5292bcf119b3f552d8b11c1894",
+      "ammo": [
+        {
+          "class": "CaelumCarbineAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumShotgunAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumArrowAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumBoltAmmo",
+          "amount": 100,
+          "in_box": 0
+        }
+      ],
+      "projectile": {
+        "class:CaelumActorProjectile": {
+          "CaelumPreparedDamage": 100,
+          "CaelumPushMultiplier": 1.0,
+          "CaelumSecondaryElement": 0,
+          "CaelumDebuffPowerPercent": 0.0,
+          "CaelumBuffPowerPercent": 0.0,
+          "CaelumActorExplosionDamage": 0,
+          "CaelumActorExplosionRadius": 0.0,
+          "CaelumMaximumTravelDistance": 1920.0,
+          "CaelumTravelRevision": 0,
+          "CaelumTravelledDistance": 0.0,
+          "CaelumDiagnosticCompletionRecorded": 0,
+          "CaelumVFXAge": 0,
+          "CaelumVFXRevision": 0,
+          "CaelumRockVisualRevision": 0,
+          "CaelumZupayRockVisual": 0,
+          "CaelumVFXImpactShown": 0,
+          "CaelumSummonShot": 0,
+          "CaelumWearWeaponSize": 2,
+          "CaelumWearSourceItem": 19,
+          "CaelumWeaponWearPrepared": 1,
+          "CaelumWearWeaponType": 2,
+          "CaelumMagicalAttack": 0,
+          "CaelumPersonalityRevision": 1,
+          "CaelumIdeologyPenetration": 0.125,
+          "CaelumElementalPayloadPrepared": 0,
+          "CaelumEssenceType": 0,
+          "CaelumWearWeaponTier": 1,
+          "CaelumAttackPrepared": 1,
+          "MainM00ChargedPractice": 0,
+          "MainM00MobilePractice": 0,
+          "CaelumCriticalHit": 0,
+          "CaelumCriticalRevision": 0,
+          "CaelumHunterEligible": 0,
+          "CaelumCriticalBaseChance": 0.0,
+          "CaelumCriticalRollPercent": 0.0,
+          "CaelumAttackAccuracySucceeded": 1
+        },
+        "class:CaelumCarbineProjectile": {
+          "PhysicsRevision": 0
+        },
+        "vel": [
+          80.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "magazines": {
+        "LongbowMagazine": 0,
+        "CrossbowMagazine": 0,
+        "CarbineMagazine": 7,
+        "HUDRangedMagazineCount": 0,
+        "HUDRangedMagazineCapacity": 0
+      },
+      "probe": {
+        "TrackShots": 0,
+        "Checks": 2,
+        "Errors": 0,
+        "BeforeCount": 0,
+        "BeforeMagazine": 0,
+        "BeforeWeight": 0.0,
+        "SavedWeight": 22.6,
+        "SavedUnit": 0.003,
+        "SavedFlight": 3,
+        "SavedVelocity": {
+          "X": 80.0,
+          "Y": 0.0,
+          "Z": -0.0
+        },
+        "FlightDamage": 100,
+        "FlightType": 2,
+        "baseline": 1,
+        "ViewCarbine": 0,
+        "ViewShells": 0,
+        "ViewCarbineMass": 0.0,
+        "ViewShellMass": 0.0,
+        "Ready": 1,
+        "Shots": 0,
+        "FlightTier": 1
+      }
+    },
+    "original_copy": {
+      "sha256": "820722935963e084d8e582567e2045e0f4f4db5292bcf119b3f552d8b11c1894",
+      "ammo": [
+        {
+          "class": "CaelumCarbineAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumShotgunAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumArrowAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumBoltAmmo",
+          "amount": 100,
+          "in_box": 0
+        }
+      ],
+      "projectile": {
+        "class:CaelumActorProjectile": {
+          "CaelumPreparedDamage": 100,
+          "CaelumPushMultiplier": 1.0,
+          "CaelumSecondaryElement": 0,
+          "CaelumDebuffPowerPercent": 0.0,
+          "CaelumBuffPowerPercent": 0.0,
+          "CaelumActorExplosionDamage": 0,
+          "CaelumActorExplosionRadius": 0.0,
+          "CaelumMaximumTravelDistance": 1920.0,
+          "CaelumTravelRevision": 0,
+          "CaelumTravelledDistance": 0.0,
+          "CaelumDiagnosticCompletionRecorded": 0,
+          "CaelumVFXAge": 0,
+          "CaelumVFXRevision": 0,
+          "CaelumRockVisualRevision": 0,
+          "CaelumZupayRockVisual": 0,
+          "CaelumVFXImpactShown": 0,
+          "CaelumSummonShot": 0,
+          "CaelumWearWeaponSize": 2,
+          "CaelumWearSourceItem": 19,
+          "CaelumWeaponWearPrepared": 1,
+          "CaelumWearWeaponType": 2,
+          "CaelumMagicalAttack": 0,
+          "CaelumPersonalityRevision": 1,
+          "CaelumIdeologyPenetration": 0.125,
+          "CaelumElementalPayloadPrepared": 0,
+          "CaelumEssenceType": 0,
+          "CaelumWearWeaponTier": 1,
+          "CaelumAttackPrepared": 1,
+          "MainM00ChargedPractice": 0,
+          "MainM00MobilePractice": 0,
+          "CaelumCriticalHit": 0,
+          "CaelumCriticalRevision": 0,
+          "CaelumHunterEligible": 0,
+          "CaelumCriticalBaseChance": 0.0,
+          "CaelumCriticalRollPercent": 0.0,
+          "CaelumAttackAccuracySucceeded": 1
+        },
+        "class:CaelumCarbineProjectile": {
+          "PhysicsRevision": 0
+        },
+        "vel": [
+          80.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "magazines": {
+        "LongbowMagazine": 0,
+        "CrossbowMagazine": 0,
+        "CarbineMagazine": 7,
+        "HUDRangedMagazineCount": 0,
+        "HUDRangedMagazineCapacity": 0
+      },
+      "probe": {
+        "TrackShots": 0,
+        "Checks": 2,
+        "Errors": 0,
+        "BeforeCount": 0,
+        "BeforeMagazine": 0,
+        "BeforeWeight": 0.0,
+        "SavedWeight": 22.6,
+        "SavedUnit": 0.003,
+        "SavedFlight": 3,
+        "SavedVelocity": {
+          "X": 80.0,
+          "Y": 0.0,
+          "Z": -0.0
+        },
+        "FlightDamage": 100,
+        "FlightType": 2,
+        "baseline": 1,
+        "ViewCarbine": 0,
+        "ViewShells": 0,
+        "ViewCarbineMass": 0.0,
+        "ViewShellMass": 0.0,
+        "Ready": 1,
+        "Shots": 0,
+        "FlightTier": 1
+      }
+    },
+    "upgraded": {
+      "sha256": "c265137d53325a9e4944b5130685cbc705ea99e94389e4ac30a31eed107b5d11",
+      "ammo": [
+        {
+          "class": "CaelumCarbineAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumShotgunAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumArrowAmmo",
+          "amount": 100,
+          "in_box": 0
+        },
+        {
+          "class": "CaelumBoltAmmo",
+          "amount": 100,
+          "in_box": 0
+        }
+      ],
+      "projectile": {
+        "class:CaelumActorProjectile": {
+          "CaelumAttackAccuracySucceeded": 1,
+          "CaelumPreparedDamage": 100,
+          "CaelumPushMultiplier": 1.0,
+          "CaelumSecondaryElement": 0,
+          "CaelumDebuffPowerPercent": 0.0,
+          "CaelumBuffPowerPercent": 0.0,
+          "CaelumActorExplosionDamage": 0,
+          "CaelumActorExplosionRadius": 0.0,
+          "CaelumMaximumTravelDistance": 1920.0,
+          "CaelumTravelRevision": 0,
+          "CaelumTravelledDistance": 0.0,
+          "CaelumDiagnosticCompletionRecorded": 0,
+          "CaelumVFXAge": 0,
+          "CaelumVFXRevision": 0,
+          "CaelumRockVisualRevision": 0,
+          "CaelumZupayRockVisual": 0,
+          "CaelumVFXImpactShown": 0,
+          "CaelumSummonShot": 0,
+          "CaelumWearWeaponSize": 2,
+          "CaelumWearSourceItem": 19,
+          "CaelumWeaponWearPrepared": 1,
+          "CaelumWearWeaponType": 2,
+          "CaelumMagicalAttack": 0,
+          "CaelumPersonalityRevision": 1,
+          "CaelumIdeologyPenetration": 0.125,
+          "CaelumElementalPayloadPrepared": 0,
+          "CaelumEssenceType": 0,
+          "CaelumWearWeaponTier": 1,
+          "CaelumAttackPrepared": 1,
+          "MainM00ChargedPractice": 0,
+          "MainM00MobilePractice": 0,
+          "CaelumCriticalHit": 0,
+          "CaelumCriticalRevision": 0,
+          "CaelumHunterEligible": 0,
+          "CaelumCriticalBaseChance": 0.0,
+          "CaelumCriticalRollPercent": 0.0
+        },
+        "class:CaelumCarbineProjectile": {
+          "PhysicsRevision": 0
+        },
+        "vel": [
+          80.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "magazines": {
+        "LongbowMagazine": 0,
+        "CrossbowMagazine": 0,
+        "CarbineMagazine": 7,
+        "HUDRangedMagazineCount": 7,
+        "HUDRangedMagazineCapacity": 10
+      },
+      "probe": {
+        "TrackShots": 0,
+        "Checks": 68,
+        "Errors": 0,
+        "BeforeCount": 0,
+        "BeforeMagazine": 0,
+        "BeforeWeight": 0.0,
+        "SavedWeight": 22.6,
+        "SavedUnit": 0.003,
+        "SavedFlight": 3,
+        "SavedVelocity": {
+          "X": 80.0,
+          "Y": 0.0,
+          "Z": -0.0
+        },
+        "FlightDamage": 100,
+        "FlightType": 2,
+        "baseline": 0,
+        "ViewCarbine": 0,
+        "ViewShells": 0,
+        "ViewCarbineMass": 0.0,
+        "ViewShellMass": 0.0,
+        "Ready": 1,
+        "FlightTier": 1,
+        "Shots": 0
+      }
+    }
+  },
+  "notes": [
+    "Author acceptance is separate. No FPS claim.",
+    "Current03 production is final; current04 only clears the fixture selection ItemId before selecting ammunition.",
+    "Saved projectile is a real missile suspended with STAT_STATIC: serialization is tested, resumed flight is not.",
+    "Hub checks inventory and magazines only; the injected static missile is absent on return. It is tested by direct save/load.",
+    "Exploratory failures are retained and excluded from successful gates."
+  ],
+  "changed_production_members": [
+    "caelum/core/CaelumConstants.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/equipment/CaelumShotgunRules.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "native_checks": 1323,
+  "runtime_sha256": "faf4d3e0b391533316c0a0d68300758e73987a5959f4d30385ad0a02c9bc46a9",
+  "preview_image_sha256": "58566d117f03a5ce0378ca74b481e9c40da88b788de7ecfe5007e57eafdb700c"
+}

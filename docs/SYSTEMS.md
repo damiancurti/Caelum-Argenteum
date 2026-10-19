@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.3** — 2026-10-19.
+Documentation version: **5.5.4** — 2026-10-19.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -3714,8 +3714,10 @@ in flight cannot change penetration. Player and NPC damage/contact solvers
 share this rule, including armor's contribution to contact lucidity protection.
 
 Shotgun cartridges are independent ammunition ID 6; arrow, bolt, bullet and
-javelin IDs are unchanged. Their mass is 0.003 kg and base price equals carbine
-cartridges. Armories receive 100 once, including an idempotent old-stock upgrade;
+javelin IDs are unchanged. The original 0.003 kg placeholder is superseded by
+the #313 complete-cartridge contract below: 0.045 kg shotgun and 0.040 kg carbine.
+The shotgun base price still equals carbine cartridges. Armories receive 100
+once, including an idempotent old-stock upgrade;
 reopening does not replenish stock. MAP02 adds six 20-cartridge drops to previously
 unassigned living enemy slots: 2/1/2/1 per section. Existing supplies and keys
 remain assigned to the same enemies; map geometry is unchanged.
@@ -10429,6 +10431,61 @@ modify these combat routes.
 | Longbow | Fires its native longbow arrow. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Crossbow | Fires its native bolt. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Carbine | Fires its native carbine projectile. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
+
+### Ammunition composition and mass contract (#313, 2026-10-19)
+
+The author first requested historical references, then explicitly accepted the
+following **design approximations**, because exact complete-cartridge/component
+weights were not established. They are not claimed as measured historical data.
+The old 3 g value described a complete inventory unit, not a documented bullet
+payload, and shotgun cartridges inherited it. The authoritative runtime values
+are now CARBINE_AMMO_UNIT_WEIGHT=0.040 kg and SHOTGUN_AMMO_UNIT_WEIGHT=0.045 kg.
+
+| Ammunition / stable ID | Complete inventory unit | Composition contract and status |
+| --- | ---: | --- |
+| Carbine / 0 | 40 g | Argentine Remington 1879 reference; projectile, metallic case, finished propellant and primer components. Exact alloys, constituent masses and proportions remain unassigned. |
+| Shotgun / 6 | 45 g | Late-nineteenth-century paper 12-bore cartridge reference, selected by the author; shot payload, paper-bodied case with metal base, finished propellant and primer components. Wads/closures belong to the prepared case assembly. Exact constituent masses/proportions remain unassigned. |
+| Longbow arrow / 1 | 50 g, unchanged | Existing arrow/component recipe remains authoritative. |
+| Crossbow bolt / 2 | 50 g, unchanged | Existing bolt/component recipe remains authoritative. |
+
+One shotgun inventory unit still creates twelve gameplay pellets; it does not
+weigh twelve cartridges. No 45/12-g ballistic pellet mass is inferred: case,
+propellant and primer are not the flying payload, and its exact mass is pending.
+No native Actor.Mass, prepared damage, range, spread, velocity or gravity changes.
+Carbine/shotgun armor bypass remains 70/80/90% and 60/70/80%; longbow/crossbow
+20/30/40% and 40/50/60%. These four families retain the #192 ideology exclusion,
+armor-only bypass, shield behavior, innate defense and Toughness ordering.
+There is no new ricochet, penetration-through-world, breakage, heat or material
+coefficient. Existing wood/metal gate damage and other accepted interactions remain.
+
+V5.6 assembly starts with finished projectile/shot, prepared case, propellant and
+primer components. This is a game data contract, not a real manufacturing recipe.
+No recipe is activated here. Component quantities and masses must add to the
+approved complete unit before recipes are implemented; do not invent a remainder
+allocation, metal proportions or powder formula. Recipe IDs, batches, learning,
+efficiency/losses, time, stations, prices and sources stay with V5.6/V5.7 and require
+authored data. No new gatherable resource or merchant stock is introduced.
+
+The inventory stack already includes loaded rounds; reloading only changes the
+magazine counter. Count mass once; firing consumes one unit (40/45 g). The existing
+ability to fire a loaded magazine after moving its stack is retained; this patch
+does not introduce separate physical magazine storage. NPC infinite reserves
+remain nonphysical. Personal/Box summaries, first-stack capacity admission,
+existing-stack pickup, selection previews and world drops share the same values.
+Old saves retain classes, IDs, amounts, locations and in-flight projectile state;
+normal load refresh applies the new mass. No serialized field or schema is added.
+Retain original save/runtime pairs for rollback. Heavier ammunition may increase
+existing encumbrance penalties without removing items.
+
+Historical context: W. W. Greener, *The Gun and Its Development* (1897), Cornell
+copy [Internet Archive](https://archive.org/details/cu31924097286177), discusses
+period cartridge construction and twelve-bore shotguns; it does not establish
+our complete-unit 40/45-g values. The [.43 Spanish overview](https://en.wikipedia.org/wiki/.43_Spanish)
+identifies the Argentine Modelo 1879 family and distinguishes later variants;
+its projectile mass is not the full cartridge mass. The [CONICET record for
+Landa's 2006 thesis](https://bicyt.conicet.gov.ar/fichas/produccion/9046341) confirms
+bibliographic identity only. An earlier secondary-copy 40-g lead was not verified
+and is not evidence for the chosen mass. The author decision above is authoritative.
 
 ### Utility tools
 

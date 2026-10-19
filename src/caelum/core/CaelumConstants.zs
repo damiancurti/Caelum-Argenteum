@@ -997,7 +997,10 @@ class CaelumConstants : Object
     // para compatibilidad con partidas de desarrollo anteriores, pero quedan
     // fuera del selector y de todas las rutas normales de juego.
     const AMMUNITION_TYPE_COUNT = 3;
-    const CARBINE_AMMO_UNIT_WEIGHT = 0.003;
+    // #313: masa del cartucho completo, aproximaciones de diseño aprobadas.
+    // No representa masa del proyectil ni cambia el daño balístico.
+    const CARBINE_AMMO_UNIT_WEIGHT = 0.040;
+    const SHOTGUN_AMMO_UNIT_WEIGHT = 0.045;
     const ARROW_AMMO_UNIT_WEIGHT = 0.05;
     const BOLT_AMMO_UNIT_WEIGHT = 0.05;
     // Valores heredados de la prueba de munición de jabalinas. Se conservan
