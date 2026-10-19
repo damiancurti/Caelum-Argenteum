@@ -6,15 +6,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.4.47.** Obtain and update the complete repository, validate
+**Current release: 5.5.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.5 begins with the weapon/input audit (#309). Holding Reload now completes
+one action per press; empty-magazine Fire no longer restarts the reload timer.
+The giant-gauntlet uppercut correctly counts as blunt damage. The canonical
+matrix includes tools and the accepted twelve-projectile Bell.
+See [audit evidence](assets/validation_550/RESULTS.md); the author accepted
+CA309-01 on 2026-10-18. Later V5.5 issues retain separate scope and deliveries.
 
 Only siege NPCs and monsters in active MAP03 remain at their existing maximum
 adrenaline (#361). The player keeps ordinary adrenaline and finite seal-channel
 costs everywhere. NPC wound/pain penalties are suppressed; real damage and
 thermal/elemental effects remain. FPS evaluation is deferred.
 The author accepted the revised NPC-only rule (CA361-01) on 2026-10-18;
-no author checks remain outstanding.
+its author checks are complete.
 See [correctness evidence](assets/validation_5447/RESULTS.md).
 
 Mandingas no longer breathe fire at their invisible route markers (#357).

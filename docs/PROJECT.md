@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.4.47** — 2026-10-18.
+Documentation version: **5.5.0** — 2026-10-18.
+
+## 5.5.0 - Weapon/input audit (#309)
+
+First V5.5 delivery: audit all 111 weapon/tool configurations and four input
+routes, retaining authored gaps and accepted combat rules. Correct held Reload,
+repeated empty-magazine reload requests and gauntlet uppercut classification.
+Evidence and coverage: assets/validation_550. CA309-01 accepted 2026-10-18.
+Combat extraction, impact/pressure audits, ammunition composition, thermal
+surfaces and melee-physics design remain separate #310–315 deliveries.
+#316 stays deferred until a suitable authored map exists. FPS remains deferred.
 
 ## 5.4.47 - Maximum siege adrenaline (#361)
 

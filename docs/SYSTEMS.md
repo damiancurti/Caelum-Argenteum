@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.4.47** — 2026-10-18.
+Documentation version: **5.5.0** — 2026-10-18.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -10269,7 +10269,7 @@ returns its corresponding materials.
 | --- | --- |
 | Fire | Primary attack of the weapon; cancel Block while attacking. |
 | AltFire | Secondary weapon attack; for ranged weapons, alternative Aim. |
-| Reload | Reload ranged weapons; charge the next melee/magical attack. |
+| Reload | One request per press: reload ranged weapons or charge the next melee/magical attack. |
 | Zoom | Sweeping with greatsword/war axe/halberd; Block with compatible equipment (including giant gauntlets); ADS for ranged weapons. |
 | User1 | Interface reserved for racial ability; pending content. |
 | User2 | Channel the equipped Seal. |
@@ -10283,6 +10283,14 @@ next attack doubles damage and cost, and explosions double area (radius × sqrt(
 Incompatible pain and changes interrupt charging. The sword uses slashing Fire and
 piercing AltFire, so it serves for trees and veins of the tutorial. The special hatchet
 removed in 0d is not needed.
+
+V5.5.0 / #309: holding Reload neither restarts its timer nor starts another
+charge after the prepared window expires. Release and press again for a new
+request. Native button edges are used; requests made while the weapon cannot
+accept input are not queued. Repeated empty-magazine Fire requests preserve an
+already active reload of that weapon. Switching equipment, immobilization and
+the existing interruption rules retain their authority. No new saved latch is
+introduced.
 
 ## Damage and Anima cost: Type 4 divisor (4.33.0aa)
 
@@ -10350,7 +10358,8 @@ modify these combat routes.
 | Greatsword | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
 | War Axe | Slashing primary attack. | Stronger blunt attack with shorter range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
 | Halberd | Slashing primary attack. | Stronger piercing attack with longer range. | Charge next melee attack. | Sweep 360°: damage, scope and recovery of the primary; triple Air. |
-| Giant Gauntlets | Blunt primary punch. | Same damage, range and Air cost as Fire, with additional upward push. | Charge next melee attack. | Weapon-based Block using Buckler coverage, defense and special rules. |
+| Giant Gauntlets | Blunt primary punch. | Blunt uppercut: same damage, range and Air cost as Fire, with additional upward push. | Charge next melee attack. | Weapon-based Block using Buckler coverage, defense and special rules. |
+| Pickaxe (one tier) | Axe-statistics slashing attack. | Axe-statistics attack with piercing classification. | Charge next melee attack. | Shield Block. |
 
 ### Ranged weapons
 
@@ -10361,13 +10370,15 @@ modify these combat routes.
 | Crossbow | Fires its native bolt. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Carbine | Fires its native carbine projectile. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 
-### Utility tool
+### Utility tools
 
-| Implement (family 1) | Fire | AltFire | Reload |
-| --- | --- | --- | --- |
-| Utility staff / Bastón, one tier | Hold for flame, burn and heat. | Hold for ice, Freeze and cooling. | No charge or reload. |
+| Implement (family 1) | Fire | AltFire | Reload | Zoom |
+| --- | --- | --- | --- | --- |
+| Utility staff / Bastón, one tier | Hold for flame, burn and heat. | Hold for ice, Freeze and cooling. | No charge or reload. | Shield Block; interrupts emission. |
+| Bolas, one tier | Throw the exact equipped item; consume Air once. | Hold to prepare the throw and reduce dispersion. | No weapon charge/reload; the separate restraint-cutting action retains its rules. | Contextual shield Block; preparing/throwing retains its own guards. |
 
-Both modes use the continuous cost/contact-wear contract in the 5.1.15 section.
+Both staff modes use the continuous cost/contact-wear contract in the 5.1.15
+section. Bolas use the #163 preparation/restraint contract and binary integrity.
 
 ### Magical implements
 
@@ -10378,7 +10389,7 @@ equipped essence and `AltFire` selects its secondary side.
 | Implement | Fire and AltFire delivery | Reload | Zoom |
 | --- | --- | --- | --- |
 | Wand | One normal-speed direct magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
-| Bell | Seven slow projectiles in a broad cone; every projectile rolls its own critical. Uses the confirmed half-damage/double-Anima baseline. | Charge next magical attack. | Shield Block when a shield is equipped. |
+| Bell | Twelve slow projectiles in a broad cone; every projectile rolls its own critical. Uses the confirmed half-damage/double-Anima baseline; cost is paid once per cast. | Charge next magical attack. | Shield Block when a shield is equipped. |
 | Book | One fast homing magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
 | Statuette | One explosive magical projectile; charged attacks double explosion area. | Charge next magical attack. | Shield Block when a shield is equipped. |
 
@@ -10404,6 +10415,39 @@ totaling sixty magical weapons:
 | Earth / Poison | Earth Wand T1–T3 | Earth Bell T1–T3 | Earth Book T1–T3 | Earth Statuette T1–T3 |
 | Air / Lightning | Air Wand T1–T3 | Air Bell T1–T3 | Air Book T1–T3 | Air Statuette T1–T3 |
 | Quintessence | Quintessence Wand T1–T3 | Quintessence Bell T1–T3 | Quintessence Book T1–T3 | Quintessence Statuette T1–T3 |
+
+### V5.5.0 audit ownership and evidence (#309)
+
+The catalogue contains 111 supported configurations: 48 tiered physical weapons,
+three single-tier tools and 60 magical variants. Each has four recorded input
+routes (444 entries); an undefined spear secondary and intentional tool Reload
+no-ops are explicit, not unfinished attacks. The Bell row above reconciles the
+old seven-projectile text with the later accepted twelve-projectile #192 rule.
+
+`CaelumPlayableWeapons` owns native selector/state entry. The player's family
+adapters select the exact equipped item, then dispatch through
+`PerformEquippedWeaponPrimaryAttack`, `PerformEquippedWeaponSecondaryAttack`,
+`RequestWeaponReloadOrCharge` and contextual Zoom. Physical preparation/release
+uses `CaelumAttackRules` and `CaelumWeaponUseRules`; values come from
+`CaelumWeaponCatalogue`/`CaelumWeaponModel`. Ranged magazine/ammo/penetration and
+pellets remain in `CaelumRangedRules`/`CaelumShotgunRules`. Magic casts retain
+their captured item identity, essence, critical and charged state; Bell and
+Statuette cost is per cast, not per projectile or victim. Utility staff and
+bolas retain their separate continuous/preparation controllers.
+
+Cooldown and attack duration use the existing attribute/weight formulas, not
+the selector's one-tic polling interval. Damage-based melee wear is charged to
+the captured actual item; a javelin throw costs one durability, bolas transfer
+their physical item, and continuous staff contact retains #162 wear. No NPC
+gains an attack or equipment from this audit. Resident tools share catalogue
+classification; accepted demon profiles/direct projectile aiming remain.
+
+The generated audit matrix and source/evidence mapping live in
+`assets/validation_550`; native metadata checks are distinguished from actual
+input tests and reused accepted #192/#195/#259/#284 evidence. The only new
+production changes are Reload button-edge filtering, idempotent active ranged
+reload and the uppercut's corrected blunt classification. User2 on the unarmed
+selector is independently tracked in #363, outside this four-input audit.
 
 ## Economy
 

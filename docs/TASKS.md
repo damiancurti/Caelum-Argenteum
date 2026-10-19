@@ -1,12 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.4.47** — 2026-10-18.
+Documentation version: **5.5.0** — 2026-10-18.
 
 Current acceptance, 2026-10-18: CA318-01..05 and CA327-01 are explicitly
 approved, including the old city/breath/doors/residents/sky/waves checks.
-No existing author checks remain. Older pending statements below are historical
+All pre-V5.5 author checks are complete. Older pending statements below are historical
 checkpoints superseded by this confirmation and HISTORY. FPS work under #318
 is deferred by the author. Siege-adrenaline production integration is #361.
+
+## 5.5.0 - Weapon/input audit (#309)
+
+Implement only reproduced authored deviations: one Reload action per press,
+idempotent empty-magazine reload, and blunt uppercut classification. Preserve
+native state ordering and existing saved fields. Evidence: validation_550.
+CA309-01 passed author acceptance on 2026-10-18; the author queue is empty.
+#310–315 remain separate; #316 remains deferred by explicit author instruction.
+Record new #313 historical-mass and #314 ice/lava decisions in their own patches.
 
 ## 5.4.47 - Production siege adrenaline (#361)
 
