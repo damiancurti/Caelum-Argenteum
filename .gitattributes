@@ -278,3 +278,7 @@
 # Preserve #353 production-cache tooling and measured evidence byte hashes.
 /assets/validation_5443/** -text whitespace=cr-at-eol
 /assets/validation_5444/** -text whitespace=cr-at-eol
+
+# Preserve #312 native logs and frozen input/evidence fingerprints exactly.
+/assets/validation_553/** -text whitespace=cr-at-eol
+/assets/validation_553/evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

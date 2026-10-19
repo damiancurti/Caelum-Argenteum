@@ -374,6 +374,7 @@ class CaelumCrushingDamage : Object play
         if (pressure==null) return 0;
         if (!pressure.Initialized) { pressure.LastPulseTick=-1; pressure.Initialized=true; }
         if (pressure.LastPulseTick==level.time) return 0;
+        pressure.SampleDescent(receiver,true);
         Object source=ceiling;
         double mass=SectorArea(sector)*CaelumPhysicsUnits.Meters(Abs(ceiling.m_TopHeight-ceiling.m_BottomHeight))
             *CaelumPhysicsUnits.STONE_DENSITY_KG_M3;
@@ -387,9 +388,21 @@ class CaelumCrushingDamage : Object play
         int elapsed=pressure.PressureSource==source && pressure.LastPulseTick>=0
             && level.time-pressure.LastPulseTick<=NATIVE_PULSE_TICS
             ? Max(1,level.time-pressure.LastPulseTick) : 1;
+        double step=CaelumPhysicsUnits.Meters(Max(0.0,ceiling.m_Speed));
+        double compression=step;
+        if (!pressure.SourceInterrupted && pressure.PressureSource==source && pressure.LastPulseTick>=0
+            && level.time-pressure.LastPulseTick<=NATIVE_PULSE_TICS)
+        {
+            // Sólo el primer intervalo de un guardado anterior carece de muestras.
+            // Conserva su aproximación previa para esos tics, sin duplicar los nuevos.
+            int unrecorded=Clamp(pressure.FirstSampleTick-pressure.LastPulseTick-1,0,elapsed-1);
+            compression=pressure.PendingCompressionMeters+step*unrecorded;
+        }
+        pressure.PendingCompressionMeters=0;
+        pressure.SourceInterrupted=false;
         pressure.LastPulseTick=level.time; pressure.PressureSource=source;
         pressure.LastMassKg=mass;
-        pressure.LastCompressionMeters=CaelumPhysicsUnits.Meters(Max(0.0,ceiling.m_Speed))*elapsed;
+        pressure.LastCompressionMeters=compression;
         // El intento de avance contra el cuerpo representa compresión interna,
         // aunque el motor revierta el plano por falta de espacio.
         pressure.LastWorkJoules=mass*CaelumPhysicsUnits.EARTH_GRAVITY_MPS2*pressure.LastCompressionMeters;
@@ -403,6 +416,51 @@ class CaelumCeilingPressure : Inventory
     bool Initialized;
     Object PressureSource;
     double LastMassKg, LastWorkJoules, LastCompressionMeters;
+    int SamplingRevision, FirstSampleTick, LastSampleTick;
+    double PendingCompressionMeters, LastSampleMeters;
+    bool SourceInterrupted;
+
+    // Muestreo local: ninguna búsqueda de actores. La llamada desde NativeWork
+    // cubre el primer contacto y el orden entre inventario y pensador del techo.
+    void SampleDescent(Actor receiver, bool actualPulse=false)
+    {
+        if (SamplingRevision<1)
+        {
+            SamplingRevision=1;FirstSampleTick=level.time;LastSampleTick=-1;
+            PendingCompressionMeters=0;LastSampleMeters=0;SourceInterrupted=false;
+        }
+        if (LastSampleTick==level.time)
+        {
+            if(!actualPulse)return;
+            // Un Actor.Tick puede reanudar el techo después del inventario.
+            // Reemplaza la muestra anticipada por el intento nativo real.
+            PendingCompressionMeters-=LastSampleMeters;
+        }
+        LastSampleTick=level.time;
+        LastSampleMeters=0;
+        if (receiver==null || receiver.health<=0 || !receiver.bSolid || receiver.bNoClip)
+        { SourceInterrupted=true; return; }
+        Sector sector=receiver.ceilingsector;
+        let ceiling=sector!=null?Ceiling(sector.ceilingdata):null;
+        if (PressureSource!=null)
+        {
+            bool sameSource=PressureSource==ceiling;
+            let trap=CaelumCrusherTrap(PressureSource);
+            if (trap!=null)
+                for(int i=0;i<trap.Panels.Size();i++)
+                    if(trap.Panels[i]==sector){sameSource=true;break;}
+            if(!sameSource) SourceInterrupted=true;
+        }
+        if (ceiling!=null && ceiling.IsCrusher() && ceiling.GetDirection()==Ceiling.dirDown)
+            LastSampleMeters=CaelumPhysicsUnits.Meters(Max(0.0,ceiling.m_Speed));
+        PendingCompressionMeters+=LastSampleMeters;
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        SampleDescent(Owner);
+    }
     Default { Inventory.MaxAmount 1; +INVENTORY.UNDROPPABLE -INVENTORY.INVBAR }
     States { Spawn: TNT1 A -1; Stop; }
 }
@@ -411,7 +469,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 5.5.2] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 5.5.3] Peligros físicos y mágicos: mapa=%s", level.MapName);
         Console.Printf("Techos: bloque sólido de piedra, masa x g x compresión. Peso estático: exceso de kg x g x 0.0001 m/s. 1 J = 1 HP bruto; Dureza final una vez.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;

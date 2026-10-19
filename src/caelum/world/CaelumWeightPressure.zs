@@ -71,27 +71,45 @@ class CaelumWeightPressure : Inventory
         if (damage>0) victim.DamageMobj(null,null,damage,'CaelumPressure',DMG_NO_ARMOR|DMG_THRUSTLESS);
     }
 
+    // Cierra el tramo antes de ocultar, retirar o trasladar el soporte.
+    // Un muerto no recibe daño diferido al resucitar; el saldo antiguo sin
+    // revisión conserva su migración y nunca se interpreta como julios.
+    static void Finish(Actor victim)
+    {
+        if (victim==null) return;
+        let user=CaelumPlayer(victim);
+        if (user!=null && user.player!=null && (user.player.cheats & CF_PREDICTING)) return;
+        let pressure=CaelumWeightPressure(victim.FindInventory("CaelumWeightPressure"));
+        if (pressure==null) return;
+        pressure.FinishWork(victim);
+    }
+
+    void FinishWork(Actor victim)
+    {
+        if (EnergyRevision<1 || victim.health<=0) DamageCarry=0;
+        EnergyRevision=1;
+        SupportedMass=0; LastDamagePerSecond=0; ContactTics=0;
+        ApplyWork(victim);
+    }
+
     static void Update(Actor victim)
     {
-        if (victim == null || victim.health <= 0 || !victim.bSolid || victim.bNoClip) return;
+        if (victim == null) return;
         let user = CaelumPlayer(victim);
         let npc = CaelumCombatActor(victim);
         if (user != null && (user.player == null || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.DerivedStats == null
             || (user.player.cheats & CF_PREDICTING))) return;
         if (user == null && npc == null) return;
+        if (victim.health<=0 || !victim.bSolid || victim.bNoClip)
+        { Finish(victim); return; }
         double above = MassAbove(victim);
         let pressure = CaelumWeightPressure(victim.FindInventory("CaelumWeightPressure"));
         if (pressure!=null && pressure.EnergyRevision<1)
         { pressure.DamageCarry=0; pressure.ContactTics=0; pressure.EnergyRevision=1; }
         if (above <= 0)
         {
-            if (pressure != null)
-            {
-                pressure.ApplyWork(victim);
-                pressure.SupportedMass = 0; pressure.LastDamagePerSecond = 0;
-                pressure.ContactTics = 0;
-            }
+            if (pressure!=null) pressure.FinishWork(victim);
             return;
         }
         if (pressure == null)

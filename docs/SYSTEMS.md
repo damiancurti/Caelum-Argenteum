@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.2** — 2026-10-18.
+Documentation version: **5.5.3** — 2026-10-19.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -2570,6 +2570,29 @@ Additive saved contact/work fields preserve active state. Weight EnergyRevision
 No actor class or state sequence is removed. Existing original save/package
 pairs remain the rollback baseline; native current-version save/load and a
 5.2.10-to-5.2.11 contact/weight migration are tested.
+
+The #312 / 5.5.3 completion closes a saved moving-work sample even when its
+other actor has been destroyed; the surviving receiver uses the captured mass
+and geometry. The shared balance is consumed before delivery, so the other list
+cannot replay it. Static weight closes its current interval when a living body
+loses support, becomes non-solid/noclip or is parked as a house resident. A dead
+receiver discards that interval; revival cannot charge it later. Legacy
+EnergyRevision=0 carry is still discarded, never reinterpreted as joules.
+
+Native ceiling pressure now samples the local ceiling's downward attempted
+steps once per tic. A pause contributes zero; blocked-plane restoration still
+counts the attempted movement. First contact remains one tic, the existing
+four-tic continuity window and same-tic panel guard remain, and a source change
+starts a fresh pulse, including a brief visit to another source before returning.
+Panels belonging to one authored trap remain the same source. The native callback
+reconciles the current tic's sample when Actor.Tick has resumed motion after
+Inventory.Tick. SamplingRevision=1, FirstSampleTick, LastSampleTick,
+PendingCompressionMeters, LastSampleMeters and SourceInterrupted are additive
+saved fields. New saves preserve the
+unfinished sample. An older save cannot reconstruct past pauses: only unrecorded
+tics before its first sample retain the former current-speed approximation for
+that first interval. Migration is idempotent; retain original save/runtime pairs
+for rollback. No global actor search is added by the sampler.
 
 ### Reference values and evidence
 

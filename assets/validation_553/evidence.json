@@ -1,0 +1,1319 @@
+{
+  "required": [
+    {
+      "directory": "issue312-final01",
+      "label": "combat",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "47"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 47,
+      "record_sha256": "419a9dd1e74a24f933a0c105b7a87caca10e7f8858a52830e3263c4d630e8eaf",
+      "log_sha256": "00f97d2c3361705d9210be333c6db0dd4c6c19779c18daad0c25fb12d848b02d",
+      "executed_script_sha256": "d6d83f974b984578ab6dde346b08fa4457b91c2f45460d4d7db7f411e39d5985",
+      "completed_phase_checks": 47
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-load",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "75463730c9b335d846c0a6421b0aa3e425a16c7e9d0500c77f822f1dd6f9e6de",
+      "log_sha256": "ce4c17f2d98ab30b8385859d6c916eef34445b96b8ff5862be7df1863be5e0be",
+      "executed_script_sha256": "30194559c61c90fe357522e8815456a25e8aa4d4cff12b671ce15d7b480df42a",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 6,
+      "record_sha256": "cf49052114ae8799c3d3a85f7c4ea82709c08fa65d1b7ce738587bdf3e2531e0",
+      "log_sha256": "ce06ad6c12e326daacf2880efe167ecc38635dac4ba70160c2910abadddcf566",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 6
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 2,
+      "record_sha256": "3d5d419cdc419bd2e1cff4314cae2688b926eb53e2e4477232a0ee1e7e401893",
+      "log_sha256": "7610f77e28fb3093322d63e94b7613af3aecab367d27d57740a24958964953d2",
+      "executed_script_sha256": "50a3df96c992dbd3bdc7883a54829e5f4f2bea953d9164653b802d8fbb67bcff",
+      "completed_phase_checks": 2
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "flow",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "19"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 19,
+      "record_sha256": "a8636d7451c57ce9a6abf16bcc07519c6bc3cb4e1f79550f121a090ccedd5877",
+      "log_sha256": "2d2232d3111871532ed7786ed3edf99ceaf07e5eeb47ae73f72fa96ef25dc79b",
+      "executed_script_sha256": "a05d41450ffc7352bb8b092fd128f7a59b9a25a420cc96994fe154645df27791",
+      "completed_phase_checks": 19
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "hub",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "5a271a546a22d3a3abe38f812b08d532c0b38c7fba7d2ad984e3690d78cff022",
+      "log_sha256": "9e03221b523c54867ab3ec2a3a0236284baf40044c4bab1b032253590edbf423",
+      "executed_script_sha256": "a2296ac79affe5831e9b08fb3f359d0f6cf7a7a7dca119269e91f559147b2cc3",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "motion",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "15"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "2fea548af95104bd66c03f423ee4658b74ea3d9738f3b661a6586c492b7ae3cb",
+      "log_sha256": "03b4dae7eafb498aff08b4709f197d27e7bbb343fd21cbdabebca3f3bd06b86b",
+      "executed_script_sha256": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8",
+      "completed_phase_checks": 15
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "old-upgrade",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "195ef6b410b11329e1e9aad8c1333c078efebc4a484f8f2b1f3d0c217350ed27",
+      "log_sha256": "9a143a42e18bc29a38aaf44d91711a7530f26ccf6c35a1d9be8a48d0f19d357b",
+      "executed_script_sha256": "5d40d680091a6eb39918a4c324c7df74310171196cebcc4e2900f2ef296df214",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "original-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 6,
+      "record_sha256": "c92638966da0c8a29ffdca8316c14c0e24d3bf4cb020ef300955d258200927dc",
+      "log_sha256": "0259533fdb9da428d7b8ff9f3cbcf952083ce118861b0d0304fa71f28c18b3d9",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 6
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "probe",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "35"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 35,
+      "record_sha256": "faae8cae7842d44633fd13eaf2a330365cbe42dc624df8ca10210994b7e1a513",
+      "log_sha256": "c1a5058817fea276e4200984e1e714507f9bd6af23f2afbbb59550a7079e290d",
+      "executed_script_sha256": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8",
+      "completed_phase_checks": 35
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-load",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "7b6b2c301f9a0e5cae083bad2b49b18fc8d55b73a38a3587915f86a674ffac44",
+      "log_sha256": "6b04bdbb6a1e03601464742055271b7aabbec605ae597201a16145fea812f8fe",
+      "executed_script_sha256": "572d45195b62e0ab9895da34b5b80fad3dd11c620c3c1a2319cb218700dabdaf",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-pause",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "56"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 56,
+      "record_sha256": "adf339ecf7b143f672e1d6d3c3ec1cd7de85fbc6bae54453b2205197b1cf91c4",
+      "log_sha256": "224863b36b434fe310fd89ef1113fb762e0898c4435a2b9fb46389872f0246b1",
+      "executed_script_sha256": "973c753b34d8f26a332b503ac97c7af76aac14437b364fb8646bdf7323533ce8",
+      "completed_phase_checks": 56
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 10,
+      "record_sha256": "98fe1a93e973ab5e16d016202f7f810b1a8509c23c896b19474253cf9c1cd82a",
+      "log_sha256": "6c167f7ce61b75893f340f9c37498c22d0c42d183eb02f7b6b455a31ea868f2f",
+      "executed_script_sha256": "8e78adb69458a286d7c0ae4e38ea7e4828f738415fb0ec09e8779b5f9bfd45d4",
+      "completed_phase_checks": 4
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "pressure",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "23"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 23,
+      "record_sha256": "94382a4561ff88c56950707c1efdbe78c54e521f9200586aca44e322e5a93304",
+      "log_sha256": "aebcc224978659bbd73fa90d458f650585e6601805fd0863a5ded30ed7d555da",
+      "executed_script_sha256": "a8312ed8eae4e13f08ee79df9258132a499461044725ec60fa2f70cec008bd48",
+      "completed_phase_checks": 23
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-old-upgrade",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "ded5e5f364dce4df05ad699f983e55cf3a4375b6de1d532b462d0047bd423dbd",
+      "log_sha256": "ae4342f75e36ba3669d28a595163265a9df38806b07235e447127c8708fea5c9",
+      "executed_script_sha256": "e29730a7d866f289e203132b0936bbd7b2251fc700affabab9afd2d6df8d3b9c",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-original-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 24,
+      "record_sha256": "ac2edc20cae38e64d36b58c62a0e7f1a2201e17cf0021acec40a1a7f9918060b",
+      "log_sha256": "ddc84c7d986900ab77172b91512189d44e26af67ccf8679ade309e307d2f6e7a",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-upgraded-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 21,
+      "record_sha256": "73e312e7ee6504b527708c99d15d34a25860b1650bd11086738b906ec578d7dd",
+      "log_sha256": "5e324b7ce0535bd09813e66bebda8fb988174f00343cba997dc9e4f5ac63e07e",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-old-ceiling",
+      "label": "old-ceiling-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 10,
+      "record_sha256": "8a10cf7c52daea7fbe6c7d5a21fdd99efec65219058635a1f70bbe83302266ec",
+      "log_sha256": "1220822c5c5f07acab4adfe1d33f88cb8f05baef6b55efaaaa9bd572e0fedfbd",
+      "executed_script_sha256": "8e78adb69458a286d7c0ae4e38ea7e4828f738415fb0ec09e8779b5f9bfd45d4",
+      "completed_phase_checks": 4
+    },
+    {
+      "directory": "issue312-preview04",
+      "label": "preview-visible",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 0,
+      "record_sha256": "2f06ba8502cb186b6e4b272498fc4f4fa31e05c857e43270872c5d45b90f03ed",
+      "log_sha256": "6ba3f828d55721d508b4a12aaae227363b28b5596e8eed73628857874f05dab8",
+      "executed_script_sha256": "f7097fca6804316c8a941513f180fe734f94d7a67f5d4955655afb5553151078",
+      "completed_phase_checks": 0
+    },
+    {
+      "directory": "issue312-save-old",
+      "label": "original-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 2,
+      "record_sha256": "69682bf919b5c52a7a0ed781d9bee3d3cfaf95904dfb2c0743e337952c180c2e",
+      "log_sha256": "586844ed23f1b103dcd5c259a1c610bf99bc60b6cd5e55979e7c71e2aeb27e31",
+      "executed_script_sha256": "50a3df96c992dbd3bdc7883a54829e5f4f2bea953d9164653b802d8fbb67bcff",
+      "completed_phase_checks": 2
+    }
+  ],
+  "all_runs": [
+    {
+      "directory": "issue312-baseline01",
+      "label": "removal-baseline",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "5",
+          "12"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL destroyed peer flushes surviving NPC raw work actual=0.000000000 expected=1000.000000000",
+        "CA194 FAIL destroyed peer consumes pending work actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL destroyed peer flushes surviving player raw work actual=0.000000000 expected=1000.000000000",
+        "CA194 FAIL player flush consumes pending work actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL player receives pending damage actual=0.000000000 expected=1.000000000"
+      ],
+      "pass_lines": 12,
+      "record_sha256": "b7c7b65d1b17765ebf05c945bc60822a868264412a6fb7ed511ab5ad8ec7bb86",
+      "log_sha256": "c1a493aa3f58da97a3f16a751093b55fb85c9c27a58bfc48964b5ec3748d58cd"
+    },
+    {
+      "directory": "issue312-ceiling01",
+      "label": "ceiling-pause",
+      "required": false,
+      "exit_code": null,
+      "markers": [],
+      "problems": [
+        "Script error, \"ceiling.pk3:checks.zs\" line 341:",
+        "Script error, \"ceiling.pk3:checks.zs\" line 361:",
+        "Script error, \"ceiling.pk3:checks.zs\" line 368:"
+      ],
+      "pass_lines": 0,
+      "record_sha256": "6a068f7097109feef933fc3ea6649e9014d43b59cbce792d998c2ceda29a1747",
+      "log_sha256": "68837a3e60d2ebbf3ff0e4fd832f59715084978cc4ade43e6ba02825da59987f"
+    },
+    {
+      "directory": "issue312-ceiling02",
+      "label": "ceiling-pause",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "2",
+          "35"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL native attempted descent excludes paused tics actual=1.000000000 expected=0.500000000",
+        "CA194 FAIL native damage work uses attempted descent actual=1589220.000000000 expected=794610.000000000"
+      ],
+      "pass_lines": 51,
+      "record_sha256": "d1ceeb54ad9fdbe56bd3747559a42ad119915457b4e391baa8ede704a018cf48",
+      "log_sha256": "1999de9123fa5e6dd11833f56a9bda03f56395f3f6301b3479fa6d52aa9855ea"
+    },
+    {
+      "directory": "issue312-ceiling03",
+      "label": "ceiling-fixed",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "37"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 53,
+      "record_sha256": "a257cead91614071c2a7cacb0350541dad2f580ff59866a1a831a43f0ce6eb98",
+      "log_sha256": "c3b9403970d3c6835ac466624ab387374097dfe71159ff066797d80e39ab4a8c"
+    },
+    {
+      "directory": "issue312-current01",
+      "label": "ceiling-control",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "23"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 23,
+      "record_sha256": "c21541f66c500437fcdf382d4bdb6058c3aa4be16d9dc5945f90477be33a6c06",
+      "log_sha256": "f71ce3eecdab1888b1421f41ca381bf8af6ad21377bf95dca894f61327eaba77"
+    },
+    {
+      "directory": "issue312-current01",
+      "label": "flow01",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "19"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 19,
+      "record_sha256": "45a7572f2a1e4b5237d52f78ddea7ff818183554b752997b61c862f2f7e06bbb",
+      "log_sha256": "f463a49c14d2043dc17863ac27286da5b17f945e34e6f286c172375bd26ddfe0"
+    },
+    {
+      "directory": "issue312-current01",
+      "label": "removal-fixed",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "1",
+          "16"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL player receives pending damage actual=0.000000000 expected=1.000000000"
+      ],
+      "pass_lines": 16,
+      "record_sha256": "dbb017e89e793e97fe438bc8d3bcae08ca097b752a39e6a7d42ac9c905424003",
+      "log_sha256": "bae326c3d86c8598a48a388f9d04f3c746255d4df9af4bb8ac4062ed3db10b70"
+    },
+    {
+      "directory": "issue312-current02",
+      "label": "interruption-fixed",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "31"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 31,
+      "record_sha256": "2894a391f53745e8267cbec70f2f4117b99e516f164637b22234e6ab3315e49c",
+      "log_sha256": "b1b4e5fd0c74e9ace843fe9f60cce29922d4b2649742b66d725cd7851b43b783"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-load",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "4f3675c6a0c6308776c75139a8fdc8860de8a08100e4d25d960a59f807f91485",
+      "log_sha256": "7a3227ea08ed59ae1be2df1098a027055c69c14aa484d40a856d1af14791d4ea"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-old-upgrade",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "5d91a6dea38d7f5f59ff55876fc92191e4b94a2f1d706c571d140daf81d5e047",
+      "log_sha256": "de14b9160298fa3e748bff1dbca0ee00a59299102aeaf5ef26e22d71a3479c1e"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-original-rollback",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 24,
+      "record_sha256": "b35c9185b0038ac2065e8ebe405452ac43567d7eedf97a504c76f685a028eb46",
+      "log_sha256": "0a3b5b90084235bd621ec2a9794f5d6dfb4f5de4ff19751e05eddf7f38072f8c"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-pause",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "37"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 37,
+      "record_sha256": "425e512f652ea98aafa757985c1f7ce2784756a949c23373310b6cf1659bbe09",
+      "log_sha256": "826c716e29e93cd0ff7acafd4c70d882ff3c3ee0ae084383d294c9133f30c658"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-save",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 10,
+      "record_sha256": "47bb48805fdc424b43eeb5f7162ba1eaaa72344e66c1418e92c60422b60c7240",
+      "log_sha256": "e71d227c00a7673e5f18562df03f0e4948b96d1acc806b94138ec7ea6ace9505"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "ceiling-upgraded-rollback",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 21,
+      "record_sha256": "8091ae6dccceaed11305a5d85a3a7fe2384f5e6d260fc33049baec3e62bf4048",
+      "log_sha256": "d4eb168aa7bde89b43d1e0b75b914aa243006e9877e885ca02405da3ebd23568"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "combat",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "47"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 47,
+      "record_sha256": "419a9dd1e74a24f933a0c105b7a87caca10e7f8858a52830e3263c4d630e8eaf",
+      "log_sha256": "00f97d2c3361705d9210be333c6db0dd4c6c19779c18daad0c25fb12d848b02d",
+      "executed_script_sha256": "d6d83f974b984578ab6dde346b08fa4457b91c2f45460d4d7db7f411e39d5985",
+      "completed_phase_checks": 47
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-load",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "75463730c9b335d846c0a6421b0aa3e425a16c7e9d0500c77f822f1dd6f9e6de",
+      "log_sha256": "ce4c17f2d98ab30b8385859d6c916eef34445b96b8ff5862be7df1863be5e0be",
+      "executed_script_sha256": "30194559c61c90fe357522e8815456a25e8aa4d4cff12b671ce15d7b480df42a",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 6,
+      "record_sha256": "cf49052114ae8799c3d3a85f7c4ea82709c08fa65d1b7ce738587bdf3e2531e0",
+      "log_sha256": "ce06ad6c12e326daacf2880efe167ecc38635dac4ba70160c2910abadddcf566",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 6
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "current-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 2,
+      "record_sha256": "3d5d419cdc419bd2e1cff4314cae2688b926eb53e2e4477232a0ee1e7e401893",
+      "log_sha256": "7610f77e28fb3093322d63e94b7613af3aecab367d27d57740a24958964953d2",
+      "executed_script_sha256": "50a3df96c992dbd3bdc7883a54829e5f4f2bea953d9164653b802d8fbb67bcff",
+      "completed_phase_checks": 2
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "flow",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "19"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 19,
+      "record_sha256": "a8636d7451c57ce9a6abf16bcc07519c6bc3cb4e1f79550f121a090ccedd5877",
+      "log_sha256": "2d2232d3111871532ed7786ed3edf99ceaf07e5eeb47ae73f72fa96ef25dc79b",
+      "executed_script_sha256": "a05d41450ffc7352bb8b092fd128f7a59b9a25a420cc96994fe154645df27791",
+      "completed_phase_checks": 19
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "hub",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "5a271a546a22d3a3abe38f812b08d532c0b38c7fba7d2ad984e3690d78cff022",
+      "log_sha256": "9e03221b523c54867ab3ec2a3a0236284baf40044c4bab1b032253590edbf423",
+      "executed_script_sha256": "a2296ac79affe5831e9b08fb3f359d0f6cf7a7a7dca119269e91f559147b2cc3",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "motion",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "15"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "2fea548af95104bd66c03f423ee4658b74ea3d9738f3b661a6586c492b7ae3cb",
+      "log_sha256": "03b4dae7eafb498aff08b4709f197d27e7bbb343fd21cbdabebca3f3bd06b86b",
+      "executed_script_sha256": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8",
+      "completed_phase_checks": 15
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "old-upgrade",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "195ef6b410b11329e1e9aad8c1333c078efebc4a484f8f2b1f3d0c217350ed27",
+      "log_sha256": "9a143a42e18bc29a38aaf44d91711a7530f26ccf6c35a1d9be8a48d0f19d357b",
+      "executed_script_sha256": "5d40d680091a6eb39918a4c324c7df74310171196cebcc4e2900f2ef296df214",
+      "completed_phase_checks": 13
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "original-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 6,
+      "record_sha256": "c92638966da0c8a29ffdca8316c14c0e24d3bf4cb020ef300955d258200927dc",
+      "log_sha256": "0259533fdb9da428d7b8ff9f3cbcf952083ce118861b0d0304fa71f28c18b3d9",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 6
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "pressure",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "23"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 23,
+      "record_sha256": "0524bdd9236a5ce111e0be785a4d57a15df14be6f9530059869622c4325ca7bc",
+      "log_sha256": "1c1615dd045e3ae0a666f5f899e52d26f282ea9c47c22d69e696d4a8773f6d47"
+    },
+    {
+      "directory": "issue312-final01",
+      "label": "probe",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "35"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 35,
+      "record_sha256": "faae8cae7842d44633fd13eaf2a330365cbe42dc624df8ca10210994b7e1a513",
+      "log_sha256": "c1a5058817fea276e4200984e1e714507f9bd6af23f2afbbb59550a7079e290d",
+      "executed_script_sha256": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8",
+      "completed_phase_checks": 35
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-load",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "7b6b2c301f9a0e5cae083bad2b49b18fc8d55b73a38a3587915f86a674ffac44",
+      "log_sha256": "6b04bdbb6a1e03601464742055271b7aabbec605ae597201a16145fea812f8fe",
+      "executed_script_sha256": "572d45195b62e0ab9895da34b5b80fad3dd11c620c3c1a2319cb218700dabdaf",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-old-upgrade",
+      "required": false,
+      "exit_code": 0,
+      "markers": [],
+      "problems": [
+        "Savegame is from a different level",
+        "Not in a level"
+      ],
+      "pass_lines": 0,
+      "record_sha256": "a3c28700cc27eeda694cf2db317a5663f1904afb403483b82990247d0dfbb2d5",
+      "log_sha256": "f96c4804aab211133ae36509168326be10f2cafced42a239be855b9cab9f3eff"
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-pause",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "56"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 56,
+      "record_sha256": "adf339ecf7b143f672e1d6d3c3ec1cd7de85fbc6bae54453b2205197b1cf91c4",
+      "log_sha256": "224863b36b434fe310fd89ef1113fb762e0898c4435a2b9fb46389872f0246b1",
+      "executed_script_sha256": "973c753b34d8f26a332b503ac97c7af76aac14437b364fb8646bdf7323533ce8",
+      "completed_phase_checks": 56
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "ceiling-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 10,
+      "record_sha256": "98fe1a93e973ab5e16d016202f7f810b1a8509c23c896b19474253cf9c1cd82a",
+      "log_sha256": "6c167f7ce61b75893f340f9c37498c22d0c42d183eb02f7b6b455a31ea868f2f",
+      "executed_script_sha256": "8e78adb69458a286d7c0ae4e38ea7e4828f738415fb0ec09e8779b5f9bfd45d4",
+      "completed_phase_checks": 4
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "pressure",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "23"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 23,
+      "record_sha256": "94382a4561ff88c56950707c1efdbe78c54e521f9200586aca44e322e5a93304",
+      "log_sha256": "aebcc224978659bbd73fa90d458f650585e6601805fd0863a5ded30ed7d555da",
+      "executed_script_sha256": "a8312ed8eae4e13f08ee79df9258132a499461044725ec60fa2f70cec008bd48",
+      "completed_phase_checks": 23
+    },
+    {
+      "directory": "issue312-final02",
+      "label": "preview-visible",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 0,
+      "record_sha256": "050c096358f031cd3a9b67b0a7132f181e036b7653da500f2bb07265c3ad77a9",
+      "log_sha256": "fe098613a4a117db82c4d0f3d06cd000d67b7ca9549ef691ac3f1ed6d56ebadf"
+    },
+    {
+      "directory": "issue312-final03",
+      "label": "ceiling-old-upgrade",
+      "required": false,
+      "exit_code": null,
+      "markers": [],
+      "problems": [
+        "This savegame needs these files:"
+      ],
+      "pass_lines": 0,
+      "record_sha256": "7768968fbc1f47da1e7a7f99f6739a397224d376f7a897e94d964cbd699add41",
+      "log_sha256": "4da5b46bbf6cc1985a2e48f7ae9ab0791d7214b10314157d4c64724516516cb3"
+    },
+    {
+      "directory": "issue312-final03",
+      "label": "ceiling-original-rollback",
+      "required": false,
+      "exit_code": null,
+      "markers": [],
+      "problems": [
+        "This savegame needs these files:"
+      ],
+      "pass_lines": 0,
+      "record_sha256": "e8fecd24032aebf0c2d49770fd85aaa1fb8033b422c910cb073e3b7dba6fa39f",
+      "log_sha256": "c05e117b2eff5f1066c8ba961ac19d24e5fadbb1fad5f0fdccfe7c258f7cba32"
+    },
+    {
+      "directory": "issue312-final03",
+      "label": "ceiling-upgraded-rollback",
+      "required": false,
+      "exit_code": null,
+      "markers": [],
+      "problems": [
+        "**** DIED WITH FATAL ERROR:"
+      ],
+      "pass_lines": 0,
+      "record_sha256": "8437720dc8eee3fa31c3f8d96e04fc86b9b73d912c773d94a620bae3ed344254",
+      "log_sha256": "546adecd83750c0a1ad91a08a808b89ad128953034e9a0e4edc3f8ddb6741e84"
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-old-upgrade",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 15,
+      "record_sha256": "ded5e5f364dce4df05ad699f983e55cf3a4375b6de1d532b462d0047bd423dbd",
+      "log_sha256": "ae4342f75e36ba3669d28a595163265a9df38806b07235e447127c8708fea5c9",
+      "executed_script_sha256": "e29730a7d866f289e203132b0936bbd7b2251fc700affabab9afd2d6df8d3b9c",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-original-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 24,
+      "record_sha256": "ac2edc20cae38e64d36b58c62a0e7f1a2201e17cf0021acec40a1a7f9918060b",
+      "log_sha256": "ddc84c7d986900ab77172b91512189d44e26af67ccf8679ade309e307d2f6e7a",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-final04",
+      "label": "ceiling-upgraded-rollback",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "12"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 21,
+      "record_sha256": "73e312e7ee6504b527708c99d15d34a25860b1650bd11086738b906ec578d7dd",
+      "log_sha256": "5e324b7ce0535bd09813e66bebda8fb988174f00343cba997dc9e4f5ac63e07e",
+      "executed_script_sha256": "8d8b044b0011e9ca57493487d7d8908ab6e25d46ba5b2429683dfac4f512bd3e",
+      "completed_phase_checks": 12
+    },
+    {
+      "directory": "issue312-interrupt01",
+      "label": "interrupt-before",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "13",
+          "18"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL interrupted static clears pending work actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL interrupted static closes age actual=20.000000000 expected=0.000000000",
+        "CA194 FAIL interrupted static living flush or dead discard actual=1000000.000000000 expected=999080.000000000",
+        "CA194 FAIL resumed body cannot replay old pressure actual=999080.000000000 expected=1000000.000000000",
+        "CA194 FAIL interrupted static clears pending work actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL interrupted static closes age actual=20.000000000 expected=0.000000000",
+        "CA194 FAIL interrupted static living flush or dead discard actual=1000000.000000000 expected=999080.000000000",
+        "CA194 FAIL resumed body cannot replay old pressure actual=999080.000000000 expected=1000000.000000000",
+        "CA194 FAIL interrupted static clears pending work actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL interrupted static closes age actual=20.000000000 expected=0.000000000",
+        "CA194 FAIL resumed body cannot replay old pressure actual=999080.000000000 expected=1000000.000000000",
+        "CA194 FAIL resident suspension closes static work before parking actual=1000.000000000 expected=0.000000000",
+        "CA194 FAIL resident suspension applies existing final toughness actual=1000000.000000000 expected=999080.000000000"
+      ],
+      "pass_lines": 18,
+      "record_sha256": "7f2299835b03593dc0490b38b33aec6cd7ac24d9d4cf5b016e91f957ef363fbe",
+      "log_sha256": "c71258a05cc16da1e87c2152764927886dbfa9bbd374a4c4415cbe05a95b51e5"
+    },
+    {
+      "directory": "issue312-old-ceiling",
+      "label": "old-ceiling-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 10,
+      "record_sha256": "8a10cf7c52daea7fbe6c7d5a21fdd99efec65219058635a1f70bbe83302266ec",
+      "log_sha256": "1220822c5c5f07acab4adfe1d33f88cb8f05baef6b55efaaaa9bd572e0fedfbd",
+      "executed_script_sha256": "8e78adb69458a286d7c0ae4e38ea7e4828f738415fb0ec09e8779b5f9bfd45d4",
+      "completed_phase_checks": 4
+    },
+    {
+      "directory": "issue312-order-before",
+      "label": "source-order-before",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "4",
+          "52"
+        ]
+      ],
+      "problems": [
+        "CA194 FAIL native attempted descent excludes paused tics actual=0.781250000 expected=0.250000000",
+        "CA194 FAIL native damage work uses attempted descent actual=1241578.125000000 expected=397305.000000000",
+        "CA194 FAIL native attempted descent excludes paused tics actual=0.000000000 expected=0.250000000",
+        "CA194 FAIL native damage work uses attempted descent actual=0.000000000 expected=397305.000000000"
+      ],
+      "pass_lines": 52,
+      "record_sha256": "394e1c8d2cbcbf9e0f6c8af1f6aa49786a23faf1bab76c7c33821ecf7da10b7e",
+      "log_sha256": "e9582650e7f8e34a6f29714029c6ab561c0bbb6b954aa96ca6f627b7e6a6c131"
+    },
+    {
+      "directory": "issue312-preview02",
+      "label": "preview-visible",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 0,
+      "record_sha256": "793401eb9fe67d32b68e1016edd4e839aa14e8bfc0017c528af9f57ad53aaf57",
+      "log_sha256": "30495e42bb0101daa3002368da0f83e49a4a7d47b72b73d5355096a7e267dfdf"
+    },
+    {
+      "directory": "issue312-preview03",
+      "label": "preview-visible",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 0,
+      "record_sha256": "235cabeb7737c9e090ca04c883e21ebb89d3be63d2a12d27b198bb87f2bfd409",
+      "log_sha256": "fb47fa21d0fba2622300edd13896711ef54c23f45707afcb50b7c1e934db43ac"
+    },
+    {
+      "directory": "issue312-preview04",
+      "label": "preview-visible",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 0,
+      "record_sha256": "2f06ba8502cb186b6e4b272498fc4f4fa31e05c857e43270872c5d45b90f03ed",
+      "log_sha256": "6ba3f828d55721d508b4a12aaae227363b28b5596e8eed73628857874f05dab8",
+      "executed_script_sha256": "f7097fca6804316c8a941513f180fe734f94d7a67f5d4955655afb5553151078",
+      "completed_phase_checks": 0
+    },
+    {
+      "directory": "issue312-save-old",
+      "label": "original-save",
+      "required": true,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 2,
+      "record_sha256": "69682bf919b5c52a7a0ed781d9bee3d3cfaf95904dfb2c0743e337952c180c2e",
+      "log_sha256": "586844ed23f1b103dcd5c259a1c610bf99bc60b6cd5e55979e7c71e2aeb27e31",
+      "executed_script_sha256": "50a3df96c992dbd3bdc7883a54829e5f4f2bea953d9164653b802d8fbb67bcff",
+      "completed_phase_checks": 2
+    },
+    {
+      "directory": "issue312-travel-before",
+      "label": "hub-before",
+      "required": false,
+      "exit_code": 0,
+      "markers": [
+        [
+          "0",
+          "6"
+        ],
+        [
+          "0",
+          "13"
+        ]
+      ],
+      "problems": [],
+      "pass_lines": 13,
+      "record_sha256": "e29c41e1b86d5779620314a8200f2f46ef175607e7a062493b2ee5b8996b1468",
+      "log_sha256": "3a441ed5fc89db7fe95bdf32c48777f26941fc05fd7b799d16d79f240c9897b0"
+    }
+  ],
+  "saves": {
+    "old_body": {
+      "path": "build\\issue312-save-old\\ca312-ongoing.zds",
+      "sha256": "6b5a483bdb3949a823fa95fa8b72b7fb9f94a7b394e3f93a0e215debb0d33055",
+      "CaelumWeightPressure": [
+        {
+          "ContactTics": 17,
+          "EnergyRevision": 1,
+          "LastPostToughness": 0.0,
+          "LastWorkJoules": 0.0,
+          "SupportedMass": 1000000.0,
+          "LastDamagePerSecond": 980.9215200000002,
+          "DamageCarry": 448.4212662857144
+        }
+      ],
+      "CaelumCeilingPressure": [],
+      "ImpactContactState": [
+        {
+          "LastUpdatedTick": 4294967295,
+          "LastCollisionTick": 4,
+          "LastResolutionTick": 4294967295,
+          "LastSustainedTick": 4294967295,
+          "SustainedTics": 0,
+          "LastClosingSpeed": 0.0,
+          "LastTransmittedImpulse": 0.0,
+          "PendingWorkJoules": 1000.0,
+          "PendingGeometry": 53,
+          "ReleaseDistance": 48.0,
+          "FirstActor": 16,
+          "SecondActor": 17,
+          "Active": 1,
+          "ReleaseDistanceRevision": 1,
+          "SeparatedTics": 0
+        }
+      ]
+    },
+    "current_body": {
+      "path": "build\\issue312-final01\\ca312-ongoing.zds",
+      "sha256": "650e709fc98759fd8c71d4287c91c3c637d1d8a5d43bff9839c94acc91352dfc",
+      "CaelumWeightPressure": [
+        {
+          "SupportedMass": 1000000.0,
+          "LastDamagePerSecond": 980.9215200000002,
+          "DamageCarry": 448.4212662857144,
+          "ContactTics": 17,
+          "EnergyRevision": 1,
+          "LastPostToughness": 0.0,
+          "LastWorkJoules": 0.0
+        }
+      ],
+      "CaelumCeilingPressure": [],
+      "ImpactContactState": [
+        {
+          "LastUpdatedTick": 4294967295,
+          "LastCollisionTick": 4,
+          "LastResolutionTick": 4294967295,
+          "LastSustainedTick": 4294967295,
+          "SustainedTics": 0,
+          "LastClosingSpeed": 0.0,
+          "LastTransmittedImpulse": 0.0,
+          "PendingWorkJoules": 1000.0,
+          "PendingGeometry": 53,
+          "ReleaseDistance": 48.0,
+          "FirstActor": 16,
+          "SecondActor": 17,
+          "Active": 1,
+          "ReleaseDistanceRevision": 1,
+          "SeparatedTics": 0
+        }
+      ]
+    },
+    "old_body_released": {
+      "path": "build\\issue312-final01\\ca312-old-after.zds",
+      "sha256": "543f66878a4f5b8ff7964546b1da7e4b43dc1147f181af21227a6db3b9a2b898",
+      "CaelumWeightPressure": [
+        {
+          "SupportedMass": 0.0,
+          "LastDamagePerSecond": 0.0,
+          "DamageCarry": 0.0,
+          "ContactTics": 0,
+          "EnergyRevision": 1,
+          "LastPostToughness": 564.6055702857143,
+          "LastWorkJoules": 644.6055702857143
+        }
+      ],
+      "CaelumCeilingPressure": [],
+      "ImpactContactState": []
+    },
+    "old_ceiling": {
+      "path": "build\\issue312-old-ceiling\\ca312-ceiling.zds",
+      "sha256": "7eeb678d054f6049e62706c80c95c62f89b296378272eff9ea3182cde55d3da2",
+      "CaelumWeightPressure": [],
+      "CaelumCeilingPressure": [
+        {
+          "PressureSource": 4,
+          "LastMassKg": 162000.0,
+          "LastCompressionMeters": 1.0,
+          "LastWorkJoules": 1589220.0,
+          "LastPulseTick": 16,
+          "Initialized": 1
+        }
+      ],
+      "ImpactContactState": []
+    },
+    "current_ceiling": {
+      "path": "build\\issue312-final02\\ca312-ceiling.zds",
+      "sha256": "a018ab8e2a768cfa6bed8cec9c0944f18c54c047e66d3162b107f1a1b2ef3a58",
+      "CaelumWeightPressure": [],
+      "CaelumCeilingPressure": [
+        {
+          "Initialized": 1,
+          "PressureSource": 4,
+          "SourceInterrupted": 0,
+          "FirstSampleTick": 12,
+          "PendingCompressionMeters": 0.75,
+          "LastMassKg": 162000.0,
+          "LastCompressionMeters": 1.0,
+          "LastWorkJoules": 1589220.0,
+          "SamplingRevision": 1,
+          "LastSampleTick": 19,
+          "LastPulseTick": 16,
+          "LastSampleMeters": 0.25
+        }
+      ],
+      "ImpactContactState": []
+    },
+    "converted_ceiling": {
+      "path": "build\\issue312-final04\\ca312-legacy-converted.zds",
+      "sha256": "d4e32cd3db8fef7a6a41e6efbfdcdcfa86e19cc7d3d4d1fd06d56f9a06ee17f7",
+      "CaelumWeightPressure": [],
+      "CaelumCeilingPressure": [
+        {
+          "Initialized": 1,
+          "PressureSource": 5,
+          "SourceInterrupted": 0,
+          "FirstSampleTick": 20,
+          "PendingCompressionMeters": 0.5,
+          "LastMassKg": 162000.0,
+          "LastCompressionMeters": 1.0,
+          "LastWorkJoules": 1589220.0,
+          "SamplingRevision": 1,
+          "LastSampleTick": 34,
+          "LastPulseTick": 32,
+          "LastSampleMeters": 0.25
+        }
+      ],
+      "ImpactContactState": []
+    }
+  },
+  "notes": [
+    "Native checks and author CA312-01 acceptance are separate; FPS is deferred.",
+    "Ten final01 runs are reused: only the isolated ceiling-pressure classes differ from final02.",
+    "The final ceiling tests and preview use the normal final PK3; all inputs are frozen.",
+    "The original ceiling save requires both its original QA sector tag and the ceilingsave.pk3 basename; final04 preserves both.",
+    "Excluded failures remain evidence, not passed gates."
+  ],
+  "final_runtime_sha256": "4693f37eb27a0d3bd7502f8c6bb4f379ac697243dbd69e3d606b9040d329a5de",
+  "runtime_members": 16380,
+  "reused_runtime_differences": [
+    "caelum/world/CaelumPhysicalHazards.zs"
+  ],
+  "gate": "PASS",
+  "completed_phase_checks": 306
+}

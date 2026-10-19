@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.2** — 2026-10-18.
+Documentation version: **5.5.3** — 2026-10-19.
 
-**5.5.2/#311:** contact repair/migration;24 native runs; validation_552.
-CA311-01 accepted Oct18. **#309/#310:** author accepted Oct18; validation_550/551.
-#312–315 separate; #316 deferred. Older acceptance: HISTORY.
+**5.5.3/#312:** pressure release/crusher sampling; validation_553:20runs/306checks;
+CA312-01 pending; old/current saves and rollback pass.
+#309–311 accepted Oct18; validation_550–552. #313–315 separate; #316 deferred.
+Older acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
 CA324-01 accepted Oct18. validation_5434.

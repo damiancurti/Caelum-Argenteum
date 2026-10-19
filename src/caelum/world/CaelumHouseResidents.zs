@@ -21,6 +21,7 @@ class CaelumHouseResident : Object play
             CaelumImpactEnergy.ConsumeWork(contact);contact.Active=false;
         }
         Body.ImpactContacts.Clear();
+        CaelumWeightPressure.Finish(Body);
         ResidentMap=level.MapName;
         Position=Body.Pos;Velocity=Body.Vel;ParkTic=level.time;
         Invisible=Body.bInvisible;Solid=Body.bSolid;Shootable=Body.bShootable;

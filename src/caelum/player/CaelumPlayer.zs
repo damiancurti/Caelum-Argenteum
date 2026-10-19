@@ -7236,13 +7236,9 @@ class CaelumPlayer : DoomPlayer
             );
             if (!contact.Active)
             {
-                Actor peer=contact.FirstActor==self ? contact.SecondActor : contact.FirstActor;
-                if (peer!=null && contact.PendingWorkJoules>0)
-                {
-                    Vector3 normal=ImpactPhysics.NormalizeHorizontal(peer.Pos-Pos);
-                    if (normal.LengthSquared()==0) normal=(1,0,0);
-                    ApplySustainedCrush(peer,normal.X,normal.Y,contact);
-                }
+                // La muestra guardada conserva el trabajo aunque el otro cuerpo
+                // ya haya sido destruido. ConsumeWork omite receptores ausentes.
+                CaelumImpactEnergy.ConsumeWork(contact);
                 ImpactContacts.Delete(index);
                 ImpactDiagnosticContactsRemoved++;
             }
