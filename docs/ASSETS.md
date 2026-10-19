@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.1** — 2026-10-18.
+Documentation version: **5.5.2** — 2026-10-18.
 
 ## 5.4.46 - House-transition evidence (#334)
 

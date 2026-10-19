@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.1** — 2026-10-18.
+Documentation version: **5.5.2** — 2026-10-18.
+
+## 5.5.2 - Persistent contact release distance (#311)
+
+The #311 audit reproduced ReleaseDistance=0 despite refreshing collision
+callbacks: the Initialize parameter shadowed the field in case-insensitive
+ZScript. The field now receives the intended existing geometry rule. Saved
+revision-0 contacts are repaired locally before separation updates, preserving
+the shared object, timestamps and pending work; only a defective geometric
+separation count is reset. No new damage or balance rule is introduced.
+All 24 required native runs pass; 37 runs, including defect reproductions and
+explained fixture failures, are retained in validation_552. Actual old-save
+upgrade, upgraded reload, partial-separation persistence and original/converted
+save rollback to the prior runtime pass. Shared pending-work/geometry and
+revision idempotence are verified separately. The normal package's 16,380 members
+match the final frozen runtime; validation and packaging pass.
+Six bounded CPU controls cover 64/512 paired bodies and a compact 512-body grid.
+Enabled grid body updates average 13.139 ms/tic versus 2.788 with Caelum contacts
+bypassed; nested contact time is included, and resolution/callback counts differ.
+This is synthetic CPU evidence, not city or siege FPS. The visible preview was
+inspected. CA311-01 (origin 5.5.2 / #311) passed: on 2026-10-18 the author
+confirmed the multiple-contact preview, including the explained collision,
+separation, stack and save/load checks: "Si, las pruebas dieron bien."
+Its actionable entry was removed from pending_test.txt. This confirms the manual
+preview, separately from the numeric native evidence; campaign FPS remains deferred.
 
 ## 5.5.1 - Combat dispatch extraction (#310, 2026-10-18)
 

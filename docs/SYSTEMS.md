@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.1** — 2026-10-18.
+Documentation version: **5.5.2** — 2026-10-18.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -2511,6 +2511,19 @@ their target receives damage. Cannon disposal remains its spent-projectile
 lifecycle. Shared contact latches, gate strike serials and projectile spent
 state prevent duplicate passive/proxy/sweep callbacks. Save/load retains
 contacts and pending work; separation flushes outstanding work once.
+
+The #311 / 5.5.2 audit corrects a parameter-shadowing defect in that latch:
+release distance is the two radii plus one quarter of the smaller reference
+body height plus the existing 2-MU margin. Five genuinely separated tics or
+five tics without collision callbacks rearm the pair. A zero stored distance
+previously expired an otherwise refreshed contact after five updates.
+`ReleaseDistanceRevision=1` repairs old zero-distance edges locally, before
+either participant updates separation. It preserves the shared object, pending
+energy/geometry and timestamps, resets the invalid geometric separation count,
+and keeps valid positive legacy distances. Repeated migration is inert. No
+global actor scan, new damage formula or anatomy approximation is introduced.
+Keep original saves and their package for rollback; validation_552 records the
+native upgrade and original-runtime rollback separately from author acceptance.
 
 ### Continuous pressure, static load and crushing ceilings
 

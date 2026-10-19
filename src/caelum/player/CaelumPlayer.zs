@@ -7229,6 +7229,7 @@ class CaelumPlayer : DoomPlayer
                 ImpactDiagnosticContactsRemoved++;
                 continue;
             }
+            CaelumImpactEnergy.RepairLegacyContact(contact);
             contact.UpdateSeparation(
                 level.time,
                 CaelumConstants.IMPACT_CONTACT_REARM_SEPARATED_TICS
