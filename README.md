@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.5.0.** Obtain and update the complete repository, validate
+**Current release: 5.5.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.5.1 isolates three combat dispatch routes in a stateless service (#310),
+preserving native weapon execution, saved state and existing combat rules.
+See [extraction and native comparison evidence](assets/validation_551/RESULTS.md).
+Author check CA310-01 is pending, separately from accepted #309.
 
 V5.5 begins with the weapon/input audit (#309). Holding Reload now completes
 one action per press; empty-magazine Fire no longer restarts the reload timer.

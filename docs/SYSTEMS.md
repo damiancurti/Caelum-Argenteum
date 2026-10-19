@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.0** — 2026-10-18.
+Documentation version: **5.5.1** — 2026-10-18.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -10264,6 +10264,30 @@ Proportional repair and disassembly use recipe and durability; elemental equipme
 returns its corresponding materials.
 
 ## Common controls
+
+### Combat dispatch ownership (#310, 5.5.1)
+
+`player/CaelumCombatDispatch` coordinates the equipped primary attack, secondary
+attack and large-weapon sweep. The three existing pawn methods remain compatible
+adapters. The service is stateless and takes the requesting pawn explicitly;
+`CaelumPlayerAuthority.CanMutate` rejects null, detached, stale and predicted
+receivers before refreshing clocks, starting actions or spending resources.
+It never resolves a fallback local player or owns a second combat state.
+
+| Boundary | Caller and retained authority |
+| --- | --- |
+| Input/native states | `CaelumPlayableWeapons` callbacks and retained family/magic adapters resolve the selector's owner. Native Ready/Fire/AltFire/Reload/Zoom states and player input latches keep their ordering. |
+| Coordination | The three dispatch adapters delegate to the service. Existing Battle Cry/class cast, bolas/utility staff, cooldown, immobilization, ranged ADS, block cancellation and javelin fallback branches retain their original order and conditions. |
+| Physical start/commit | Pawn `BeginPhysicalAttackCycle` and `AdvancePhysicalAttackCycle` own preparation, interruption and release. `PerformCarbineAttack`, `PerformDebugSwordAttack` and `PerformJavelinThrow` retain effects, costs, ammunition and wear. |
+| Magic start/commit | Pawn `PerformDebugStaffAttack` and `CompletePendingStaffCast` retain paid snapshots, completion validation, charged-state consumption and one resource payment before projectile release. |
+| Equipment/resources | The requesting pawn's native inventory, exact `ItemId`, weapon model and existing inventory/resource services remain authoritative. UI reads projections; NPC combat callers and shared damage/catalogue consumers do not move. |
+| Persistence/travel | All 653 pawn field declarations and 562 method signatures remain. Charge/reload/animation/pending fields, native selectors and record handoffs remain owned by the pawn and native engine. No new saved field, class replacement, state-label change or migration is required. |
+
+This is a bounded organization change, not a measured performance improvement or
+a claim of complete multiplayer support. Native comparisons and their coverage
+limits are recorded in `assets/validation_551/RESULTS.md`.
+
+### Input bindings
 
 | Input | Current function |
 | --- | --- |

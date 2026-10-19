@@ -1,12 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.0** — 2026-10-18.
+Documentation version: **5.5.1** — 2026-10-18.
 
 Current acceptance, 2026-10-18: CA318-01..05 and CA327-01 are explicitly
 approved, including the old city/breath/doors/residents/sky/waves checks.
 All pre-V5.5 author checks are complete. Older pending statements below are historical
 checkpoints superseded by this confirmation and HISTORY. FPS work under #318
 is deferred by the author. Siege-adrenaline production integration is #361.
+
+## 5.5.1 - Combat dispatch extraction (#310)
+
+Extract only equipped primary/secondary/sweep coordination, retaining all pawn
+adapters, saved fields and native start/commit paths. Reuse #309 fixtures and
+compare actual per-tic actions, resources, ammunition, hits and exact-item wear.
+New authority checks must reject prediction/stale/detached receivers before a
+mature action can commit. All 31 required native runs pass, with 1,793 identical
+observations in 20 paired scenarios. Evidence: validation_551; CA310-01 is pending author
+acceptance. No FPS conclusion is inferred from moving code. Continue #311–315
+separately; #316 remains deferred.
 
 ## 5.5.0 - Weapon/input audit (#309)
 

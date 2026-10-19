@@ -1,0 +1,25 @@
+{
+  "baseline": "ca8206bc98b2713c7ec5159df63c07a5276501ff",
+  "result": "PASS",
+  "moved": [
+    "PerformEquippedWeaponPrimaryAttack",
+    "PerformLargeWeaponSweep",
+    "PerformEquippedWeaponSecondaryAttack"
+  ],
+  "unchanged_fields": 653,
+  "unchanged_signatures": 562,
+  "unchanged_other_bodies": 559,
+  "sole_added_guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;",
+  "stateless_service": true,
+  "package_added": [
+    "caelum/player/CaelumCombatDispatch.zs"
+  ],
+  "package_changed": [
+    "ZSCRIPT",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "package_removed": [],
+  "normal_package_sha256": "5cdc6bb297c70e0ca6f8571d60e973499b94749dc53a39d2f4fe9b0da27a50d1"
+}

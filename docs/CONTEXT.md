@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.0** — 2026-10-18.
+Documentation version: **5.5.1** — 2026-10-18.
 
-**5.5.0/#309:** weapon/input audit; validation_550. Single-press Reload,
-idempotent automatic reload, blunt uppercut. CA309-01 accepted Oct18.
-#310–315 separate; #316 deferred. Prior rest/jump/house/escort acceptance: HISTORY.
+**5.5.1/#310:** stateless dispatch;31 native runs/1793 matched observations.
+validation_551; CA310-01 pending. **#309:** CA309-01 accepted Oct18; validation_550.
+#311–315 separate; #316 deferred. Older author acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
 CA324-01 accepted Oct18. validation_5434.

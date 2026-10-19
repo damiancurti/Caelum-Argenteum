@@ -4,6 +4,27 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-137 - A combat clock refresh can commit an attack
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #310/5.5.1, 2026-10-18.
+Baseline: accepted #309, ca8206bc. GZDoom 4.14.2, Windows 11, Vulkan,
+private native fixtures. Scope: CaelumCombatDispatch and pawn attack adapters.
+
+`RefreshWeaponAttackClock` is not a read-only timer query: a mature physical
+preparation can release its hit, and a completed magical preparation can pay
+Anima and spawn projectiles. Checking receiver authority only immediately before
+starting the next action is too late. Apply `CaelumPlayerAuthority.CanMutate`
+before any refresh or special-weapon request in a dispatch service. Keep the
+original branch order and native state owner behind compatible pawn adapters.
+
+Regression: prepare real physical and magical actions, make their clocks mature,
+then invoke each dispatch route with prediction enabled or a stale player.mo.
+No resource, timer, pending-state, latch, block or projectile count may change.
+Test null/detached receivers and restore legitimate authority as a positive
+control. #310's 31 native guard checks and exact source normalization are in
+assets/validation_551. These checks do not establish full network multiplayer
+support or a performance improvement; author acceptance remains separate.
+
 ## CA-KP-136 - Held native Reload can continually reset an action
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #309/5.5.0, 2026-10-18.
