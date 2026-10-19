@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.5.6 adds approved ice/lava contact through the shared temperature model (#314),
 limited to a private test room. Ice is -40 C; lava is 1,000 C. Clothing insulates
 the lowest 1/16 body row; jumping/flight and water interrupt dry contact.
-See [evidence](assets/validation_556/RESULTS.md). Author check CA314-01 is pending.
+See [evidence](assets/validation_556/RESULTS.md). The author accepted CA314-01 on 2026-10-19.
 
 V5.5.5 restores equipped-Seal User2 input while unarmed (#363), preserving the
 shared channel costs, toggle and cooldown rules. Native input/save checks pass;

@@ -2,7 +2,7 @@
 
 Documentation version: **5.5.6** — 2026-10-19.
 
-**5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 pending.
+**5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.
 **5.5.5/#363:** User2 accepted Oct19. #315/#369 separate; #316 deferred.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.

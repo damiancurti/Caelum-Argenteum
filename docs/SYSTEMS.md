@@ -4186,8 +4186,8 @@ Persistent thermal revision stays 9. Abstract journeys clear origin-floor
 contact; the destination is sampled on arrival. Repeated sampling carries no
 energy and repeated same-tic NPC callbacks consume no additional interval.
 Fixture, native evidence and limitations: assets/validation_556/RESULTS.md.
-Author check CA314-01 is pending; campaign placement is not accepted by testing
-this private room.
+The author accepted CA314-01 on 2026-10-19; testing this private room does not
+approve campaign placement.
 
 ### Energy, effort and clocks
 

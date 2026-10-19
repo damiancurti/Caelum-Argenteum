@@ -19,7 +19,10 @@ Static validation and normal packaging pass. Sixteen native runs contain 93
 passing checks, including old/current saves, rollback and hub return. Independent
 review found no blocker. Five performance windows retain simulation and render
 callback tails; ETW access was denied, so no presentation/FPS acceptance is claimed.
-Author check CA314-01 remains pending. #315/#369 stay separate; #316 is deferred.
+The author accepted CA314-01 (origin 5.5.6 / #314) on 2026-10-19:
+"La prueba dio correcto", without qualifications. Its pending entry is removed.
+This confirmation reuses native evidence; it does not establish ETW presentation
+or campaign placement acceptance. #315/#369 stay separate; #316 is deferred.
 
 ## 5.5.5 - Equipped-Seal input while unarmed (#363)
 

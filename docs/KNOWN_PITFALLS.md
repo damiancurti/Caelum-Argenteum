@@ -2462,7 +2462,7 @@ again. Otherwise an exiting NPC can expose stale ground contact until its
 next staggered update even though the next energy interval is correct. The
 native enter/exit fixture reproduced this projection delay; the corrected
 fixture verifies immediate clearing and repeated-callback nonduplication.
-Evidence: `assets/validation_556/RESULTS.md`; author CA314-01 pending.
+Evidence: `assets/validation_556/RESULTS.md`; CA314-01 accepted 2026-10-19.
 
 ## CA-KP-055 - Sweat must share both the water budget and the thermal solver
 

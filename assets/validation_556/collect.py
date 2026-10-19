@@ -71,7 +71,8 @@ def main():
     for name in ('ice.png','lava.png','lava-es.png'):
         shutil.copyfile(ROOT/'build/issue314-current07'/name,evidence/name)
     report['native_runs']=len(report['required']);report['checks']=sum(r['checks'] for r in report['required'])
-    report['author_acceptance']='CA314-01 pending'
+    previous=HERE/'report.json'
+    report['author_acceptance']=json.loads(previous.read_text()).get('author_acceptance','CA314-01 pending') if previous.exists() else 'CA314-01 pending'
     report['limits']=['Private room only; no campaign placement or realism claim.',
         'Old/current/rollback saves restore exposure and live pawns; no persisted fields were added.',
         'Water takes priority over submerged solid contact; no historical geometry reconstruction.',

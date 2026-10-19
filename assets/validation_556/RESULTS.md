@@ -57,7 +57,9 @@ claimed. The lava tail reaches 50.28 ms. Native mansion/sewer populations were
 not separately counted; those samples are fixed spawn references, not full-map
 traversal or the deferred campaign FPS acceptance.
 
-**Author:** CA314-01 remains pending. `preview.ps1` opens the final room with
+**Author:** CA314-01 (origin 5.5.6 / #314) passed on 2026-10-19. The author
+confirmed "La prueba dio correcto", without qualifications. Its pending entry
+is removed; this reuses the recorded native evidence. `preview.ps1` opens the final room with
 F6 ice, F7 lava, F8 neutral, F9 water, F10 fixture health/exposure reset.
 Accumulated heat/cold persists after leaving and follows ordinary recovery.
 The manual check does not approve campaign placement.

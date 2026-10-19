@@ -287,7 +287,13 @@
   ],
   "native_runs": 16,
   "checks": 93,
-  "author_acceptance": "CA314-01 pending",
+  "author_acceptance": {
+    "id": "CA314-01",
+    "origin": "5.5.6 / #314",
+    "date": "2026-10-19",
+    "confirmation": "La prueba dio correcto",
+    "qualifications": null
+  },
   "limits": [
     "Private room only; no campaign placement or realism claim.",
     "Old/current/rollback saves restore exposure and live pawns; no persisted fields were added.",
