@@ -2,7 +2,7 @@
 
 **Technical gate: PASS — 20 required native runs, 306 completed-phase checks;
 45 runs preserved, including excluded failures and superseded previews.**
-Author check CA312-01 is separate and pending. The visual smoke contributes zero
+The author accepted CA312-01 on 2026-10-19 (pressure/release/save-load preview). The visual smoke contributes zero
 numeric checks; later PASS lines after a completed phase are not counted again.
 Project validation and normal build_dev.ps1 packaging pass. Read-only peer review
 found no production blockers; evidence guards were strengthened from its findings.

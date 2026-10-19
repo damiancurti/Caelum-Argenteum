@@ -14,7 +14,9 @@ instead of multiplying the whole pulse gap by the latest speed. Sampling revisio
 retain the former approximation. No map geometry or native telefrag change.
 Evidence: validation_553; 20 required native runs with 306 completed-phase checks,
 including old/current saves and rollback. The visual smoke contributes no numeric
-assertions. Project validation and normal packaging pass. Author CA312-01 is pending.
+assertions. Project validation and normal packaging pass. CA312-01 (origin 5.5.3 / #312) passed: the author confirmed the pressure,
+release and save/load preview on 2026-10-19. Native precision checks and
+author acceptance remain distinct; campaign FPS was not part of this approval.
 Campaign FPS remains deferred; #313–315 stay separate and #316 stays deferred.
 
 ## 5.5.2 - Persistent contact release distance (#311)

@@ -10,7 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 V5.5.3 completes sustained pressure interruption and native crusher descent accounting (#312).
-See [pressure validation](assets/validation_553/RESULTS.md). Author check CA312-01 is pending.
+See [pressure validation](assets/validation_553/RESULTS.md). The author accepted CA312-01 on 2026-10-19.
 
 V5.5.2 fixes a zero release distance in persistent body contacts (#311).
 Local revision-1 migration repairs older live contacts without replaying damage.

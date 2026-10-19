@@ -3,7 +3,7 @@
 Documentation version: **5.5.3** — 2026-10-19.
 
 **5.5.3/#312:** pressure release/crusher sampling; validation_553:20runs/306checks;
-CA312-01 pending; old/current saves and rollback pass.
+CA312-01 accepted Oct19; old/current saves and rollback pass.
 #309–311 accepted Oct18; validation_550–552. #313–315 separate; #316 deferred.
 Older acceptance: HISTORY.
 
