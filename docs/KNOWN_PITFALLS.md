@@ -1778,6 +1778,23 @@ The ascent/descent/native-input/save/travel controls in validation_5439 verify
 this rule. Sample the expected capacity before an impact: lethal trauma can
 zero its live getter after damage without invalidating the applied mitigation.
 
+Follow-up #312 / 5.5.3, 2026-10-19: ENGINE-VERIFIED pressure interruption.
+Destroy nullifies actor references before a contact's saved geometry/work is
+necessarily consumed. Do not require the absent peer to close that saved sample;
+consume before delivering and skip missing/dead recipients. A parked resident
+also needs its static-load interval closed before leaving the active thinker list.
+Keep player prediction guards and discard legacy percentage carry before damage.
+
+Native crusher pulse spacing is not attempted movement. The tagged pause fixture
+stops a ceiling for two of four tics: the old calculation charged 1 m instead of
+0.5 m. Sample local downward steps with a saved unique-tic guard; call the same
+sampler at the first callback to handle inventory/ceiling thinker ordering.
+Reconcile the current tic if Actor.Tick resumes motion after Inventory.Tick;
+retain source interruption until the pulse, even if the body returns immediately.
+Panels belonging to the same trap do not interrupt that source.
+Preserve blocked attempts and clearly qualify unrecorded pre-migration tics.
+Evidence: validation_553; native checks are separate from CA312-01 acceptance.
+
 ## CA-KP-080 - Native projectile preparation must precede custom mitigation
 
 Status/evidence: ENGINE-VERIFIED, #192 / 5.2.9, 2026-10-11.

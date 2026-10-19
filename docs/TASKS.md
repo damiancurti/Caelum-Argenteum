@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.2** — 2026-10-18.
+Documentation version: **5.5.3** — 2026-10-19.
+
+## 5.5.3 - Sustained pressure lifecycle and native descent (#312)
+
+Pending moving work now reaches the surviving receiver after its peer is
+destroyed. Static pressure closes on support loss, non-solid/noclip interruption
+and resident suspension; dead receivers discard the old interval before revival.
+Existing energy, armor/cushioning, Toughness, capacity, creep and cadence remain.
+Native ceiling pressure records local per-tic attempted descent, excluding pauses
+instead of multiplying the whole pulse gap by the latest speed. Sampling revision
+1 preserves saved samples; only pre-sampling tics in an old save's first pulse
+retain the former approximation. No map geometry or native telefrag change.
+Evidence: validation_553; 20 required native runs with 306 completed-phase checks,
+including old/current saves and rollback. The visual smoke contributes no numeric
+assertions. Project validation and normal packaging pass. The author accepted CA312-01 on 2026-10-19.
+Campaign FPS remains deferred; #313–315 stay separate and #316 stays deferred.
 
 ## 5.5.2 - Multiple-contact identity and armor (#311)
 

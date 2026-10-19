@@ -1,0 +1,26 @@
+{
+  "source_commit": "4b7cbfcd4aa3676a2fd00df2a105be75d1f7e0e2",
+  "runtime_sha256": "47d92bb8a03cc46aa7b57cec18a5694b290f89c0bc4ea37558aab092ca1a603b",
+  "fixtures": {
+    "probe.pk3": "40fce624e2314db591e4db5daae29e4e494f7e7770d46bd68ec7613d843e5a1b",
+    "pressure.pk3": "61b1a13287427fb541dbef389ddcd75f288e8c8cfbbdc37cca323c59e75b9abd",
+    "motion.pk3": "e4b528f22d891c843e03bffe5e17c43bdfc7d4de572f880ae0f3845e3e04d3ba",
+    "combat.pk3": "39cc43828d4e734de6511377f000d3f0cab786216b459cd4912133585e73b5a1"
+  },
+  "source_hashes": {
+    "assets\\validation_553\\probe.zs": "b7a8c0e26d6ae72043774ce13da67728874859c90afab295148d54fd7f3575b1",
+    "assets\\validation_553\\prepare.py": "4e06c428b334902b81d89d787b48244e150a7f8e1ce43f607887cf903b8d2c72"
+  },
+  "reused_sources": {
+    "energy": "6b6f698ef02def2bc91885ddd8e160e50848904542125ff80955dd8994236b05",
+    "combat": "d8b9d0d16a508cba54a2caa871fd792a77e6e7f4f19da5c34dc6c48ae16a3f1e",
+    "motion": "2c6a235e99ebef66fe46aad03b056fc9b2f12921747fed09a4d0cded7a47ea96",
+    "pressure": "995b7dfda8ad51231af8e3df492728814fbc9f6d67e1a9b5137b4de5c8ec2160"
+  },
+  "script_hashes": {
+    "combat.cfg": "d6d83f974b984578ab6dde346b08fa4457b91c2f45460d4d7db7f411e39d5985",
+    "motion.cfg": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8",
+    "pressure.cfg": "a8312ed8eae4e13f08ee79df9258132a499461044725ec60fa2f70cec008bd48",
+    "probe.cfg": "d1006151c09902a0f1e9ea8d0a4fb8761b7e34be6340d07a9e53d7478b0a18d8"
+  }
+}
