@@ -13,8 +13,8 @@ V5.5 begins with the weapon/input audit (#309). Holding Reload now completes
 one action per press; empty-magazine Fire no longer restarts the reload timer.
 The giant-gauntlet uppercut correctly counts as blunt damage. The canonical
 matrix includes tools and the accepted twelve-projectile Bell.
-See [audit evidence](assets/validation_550/RESULTS.md); author check CA309-01
-is pending. Later V5.5 issues retain separate scope and deliveries.
+See [audit evidence](assets/validation_550/RESULTS.md); the author accepted
+CA309-01 on 2026-10-18. Later V5.5 issues retain separate scope and deliveries.
 
 Only siege NPCs and monsters in active MAP03 remain at their existing maximum
 adrenaline (#361). The player keeps ordinary adrenaline and finite seal-channel

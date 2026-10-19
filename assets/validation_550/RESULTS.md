@@ -74,7 +74,8 @@ All 16,379 package entries match the final frozen source manifest byte-for-byte.
 
 The final source changes pass `validate_project.py` and normal packaging.
 The independent read-only reviewer found no production blocker and identified
-probe/evidence corrections incorporated here. Author acceptance remains pending.
+probe/evidence corrections incorporated here. The author accepted CA309-01
+(origin 5.5.0 / #309) on 2026-10-18: "La prueba dio bien."
 `evidence.json` preserves every completed and failed run, command text, log and
 package hashes, engine invocation and individual observations. Previously saved
 probe counters are not presented as a count of new unique assertions.
@@ -142,5 +143,6 @@ For the author, run `run_native.ps1` with `-Script manual.cfg -Interactive` in
 a visible PowerShell terminal. F6 sword, F7 wand, F8 empty shotgun, F9 gauntlets;
 R charges/reloads, mouse buttons attack. Visible practice dummies and on-screen
 instructions explain the task. F10 restarts the private room. Saves stay in the
-private build directory. The outstanding check is **CA309-01** in root
-`pending_test.txt`; the preview does not count as author acceptance.
+private build directory. **CA309-01** passed explicit author acceptance on
+2026-10-18 and has been removed from `pending_test.txt`. Launching the preview
+alone is not acceptance; the author's confirmation supplies that evidence.

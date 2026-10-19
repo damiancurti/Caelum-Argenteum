@@ -19,8 +19,11 @@ assets/validation_550/RESULTS.md. Native metadata covers all 111 configurations;
 44 actual magical casts pass 440 checks. Current/5.4.47 saves, hub travel, held-R
 loading, real equipment switching, interruption and empty reserves pass.
 Static validation and normal packaging pass; no FPS measurement is claimed.
-CA309-01 remains pending; no author acceptance
-or merge is claimed. Independent V5.5 follow-ups retain their own issues.
+Author acceptance, 2026-10-18: "La prueba dio bien." confirms CA309-01
+(origin 5.5.0 / #309), without qualifications. Its confirmed entry is removed
+from pending_test.txt, leaving the tracked file empty. This documentation-only
+acceptance reuses the recorded native checks; no new engine run or merge is
+claimed. Independent V5.5 follow-ups retain their own issues.
 
 ## 5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)
 

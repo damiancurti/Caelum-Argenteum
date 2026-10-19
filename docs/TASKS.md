@@ -13,7 +13,7 @@ is deferred by the author. Siege-adrenaline production integration is #361.
 Implement only reproduced authored deviations: one Reload action per press,
 idempotent empty-magazine reload, and blunt uppercut classification. Preserve
 native state ordering and existing saved fields. Evidence: validation_550.
-CA309-01 is the new outstanding author check; old accepted checks stay closed.
+CA309-01 passed author acceptance on 2026-10-18; the author queue is empty.
 #310–315 remain separate; #316 remains deferred by explicit author instruction.
 Record new #313 historical-mass and #314 ice/lava decisions in their own patches.
 

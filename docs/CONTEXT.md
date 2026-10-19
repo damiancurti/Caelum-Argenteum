@@ -3,7 +3,7 @@
 Documentation version: **5.5.0** — 2026-10-18.
 
 **5.5.0/#309:** weapon/input audit; validation_550. Single-press Reload,
-idempotent automatic reload, blunt uppercut. CA309-01 pending.
+idempotent automatic reload, blunt uppercut. CA309-01 accepted Oct18.
 #310–315 separate; #316 deferred. Prior rest/jump/house/escort acceptance: HISTORY.
 
 **5.4.34/#324:** five active minutes; arrival saves retained.36runs/138checks.
