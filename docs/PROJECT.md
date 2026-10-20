@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.6** — 2026-10-19.
+Documentation version: **5.5.7** — 2026-10-19.
+
+## 5.5.7 - Future melee energy contract; conversion deferred (#315)
+
+The author decided on 2026-10-19: "Documentar el diseño y aplazar la conversión;
+conservar el daño actual". SYSTEMS now separates the current damage pipeline
+from a future energy candidate, inventories existing/missing data, and compares
+T1-T3 weapon damage, nominal Air and thermal work. Worked matched player/NPC
+calculations reuse Rulo's authored mass/Strength; they are not new character
+defaults. Body-collision 1 J/HP and muscular work do not define blade damage.
+No future impact coefficients or production conversion are approved. Required
+speed, effective-mass, contact/material, penetration and resource calibration
+remain author decisions for a focused follow-up. Current combat and saves remain
+unchanged; only release diagnostics change at runtime. No manual test is queued
+for a deferred design. Static validation and normal build pass; a final native
+MAP01 compile/startup smoke passes. Packaged gameplay bytes match 5.5.6; only
+release diagnostics differ. Independent review verified the nine comparisons
+and their sources. Evidence: assets/validation_557/RESULTS.md.
+#369 remains separate; #316 retains its authored-map
+prerequisite and deferral.
 
 ## 5.5.6 - Ice and lava ground contact (#314)
 
