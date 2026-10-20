@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+## 5.6.3 - Original reading bookshelf (#378)
+
+`assets/generators/generate_reading_shelf.py` deterministically builds
+`src/models/caelum/props/reading/ca_reading_shelf.obj` and placement constants from
+`assets/map01_mansion/READING.json`. The original procedural frame, shelves and
+thirty books reuse project-owned stash wood and station paper/leather/cloth
+textures; no external asset or license is introduced. Existing texture provenance
+remains in their generator/license sources. MODELDEF binds the new actor without
+changing existing furniture. Native placement and bilingual UI captures are
+recorded under `assets/validation_563`; author visual acceptance is pending.
 
 ## 5.5.8 - Cleaned animated bull model (#369)
 

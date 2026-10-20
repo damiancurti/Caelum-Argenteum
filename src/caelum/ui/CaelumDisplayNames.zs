@@ -122,6 +122,7 @@ class CaelumDisplayNames : Object
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
+            if (specialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK) return "CA_KEY_ITEM_RECIPE_BOOK";
             return specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
                 ? "CA_KEY_ITEM_PROCESSING_MANUAL"
                 : "CA_KEY_ITEM_SEALED_LETTER";

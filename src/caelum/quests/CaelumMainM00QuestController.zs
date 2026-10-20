@@ -526,11 +526,11 @@ class CaelumMainM00QuestController : EventHandler
         PrepareExpandedStations();
         if(level.maptime%TICRATE==0)
         {
-            if(!MansionFurniturePrepared || !MansionAccessPrepared || MansionDiningRevision<1)
+            if(!MansionFurniturePrepared || !MansionAccessPrepared || MansionDiningRevision<2)
             {
                 MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
                 MansionAccessPrepared=MansionFurniturePrepared;
-                if(MansionFurniturePrepared)MansionDiningRevision=1;
+                if(MansionFurniturePrepared)MansionDiningRevision=2;
             }
             RuloWorldPrepared=CaelumMainM00RuloTrial.EnsurePracticeTarget()!=null;
         }

@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-142 - Normalize work before reversing rounded material quantities
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #378/5.6.3, 2026-10-20.
+Environment: GZDoom 4.14.2 / Windows 11; `assets/validation_563`.
+
+Trigger: introducing a shared time base across efficiencies while material loss
+already affects rounded input quantities. Multiplying the rounded inputs by the
+inverse efficiency does not recover that base. One proportional bronze output
+uses 5/3/2 inputs at 25/50/100%; naive inverse scaling produces bases 5/6/8.
+
+Rule: preserve the requested output and operation shape. For proportional
+subrecipes, recompute each input at the reference efficiency before summing.
+For fixed-input batches with rounded output yields, preserve the reference batch
+duration and normalize by its actual output. Keep actual material consumption
+separate from the time calculation; freezing a started task also freezes its
+output-based practice claim.
+
+Verification: native tests cover one-unit bronze convergence at mastery, the
+fixed bronze batch's original 25% time per unit, stock-partial recursive output
+credit, cancellation and frozen started-task time. This is a numerical lesson,
+not authorization to change recipe proportions or material yield.
+
 ## CA-KP-141 - Nested native owners need explicit travel and TID restoration
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #381/5.6.2, 2026-10-20.

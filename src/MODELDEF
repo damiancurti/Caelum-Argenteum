@@ -4839,3 +4839,14 @@ Model CaelumBullModelBody
     FrameIndex B305 F 0 135
 }
 // END BULL 3D MODEL
+
+Model CaelumReadingShelf
+{
+    Path "models/caelum/props/reading"
+    Model 0 "ca_reading_shelf.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CBOO A 0 0
+}

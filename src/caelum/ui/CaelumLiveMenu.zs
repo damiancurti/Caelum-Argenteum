@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -19,6 +19,8 @@ class CaelumLiveMenu : ListMenu
         let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
         if((truco!=null && truco.Visible) || (trucazo!=null && trucazo.Visible))return 0;
         if(user.CreationWizardOpen)return CTX_CREATION;
+        let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
+        if(recipes!=null && recipes.Open)return CaelumJournalInput.SkipOpen(user)?CTX_SKIP:CTX_RECIPES;
         let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
         if(storage!=null && storage.Chest!=null)return CTX_CHEST;
         let preview=CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
@@ -78,6 +80,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_MERCHANT)result+=Subject.PalomoMerchantSelection*10+Subject.PalomoMerchantMode
             +Subject.PalomoMerchantSelectedQuantity*71+Subject.PalomoMerchantSelectedLotPrice*31
             +(Subject.CityTrade==null?0:Subject.CityTrade.Selection*97);
+        if(Context==CTX_RECIPES){let recipes=CaelumRecipeSession(Subject.FindInventory("CaelumRecipeSession"));if(recipes!=null)result+=recipes.Selection+recipes.Filter*1000;}
         if(Context==CTX_CHEST)
         {
             let storage=CaelumContainerSession(Subject.FindInventory("CaelumContainerSession"));
@@ -96,6 +99,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_CREATION)debug.DrawCreationWizard(Subject);
         else if(Context==CTX_EQUIPMENT)debug.DrawEquipmentMenu(Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
+        else if(Context==CTX_RECIPES)CaelumRecipeEvents.Draw(Subject);
         else Journal().DrawMenu();
         Controls.Layout(self,true);
         CaelumPresentation.End();
@@ -123,6 +127,7 @@ class CaelumLiveMenu : ListMenu
             return CaelumDebugOverlay(EventHandler.Find("CaelumDebugOverlay")).PanelKey(type,scan,character,keyString);
         if(Context==CTX_CHEST)
             return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
+        if(Context==CTX_RECIPES)return CaelumRecipeEvents.Key(Subject,type,scan,keyString);
         // Las acciones del panel y sus accesos remapeados preceden a la salida
         // por controles de juego: F/G/T pueden compartir +zoom/+user1/+user3.
         bool restAction=keyString~=="f" || keyString~=="g" || keyString~=="t"

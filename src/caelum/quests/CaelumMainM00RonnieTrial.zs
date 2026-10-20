@@ -235,14 +235,14 @@ class CaelumMainM00RonnieTrial : Object play
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00PickaxeRevision >= CaelumConstants.PICKAXE_TUTORIAL_REVISION)
             return true;
-        record.LearnCraftingRecipe(CaelumConstants.CRAFTING_PICKAXE_RECIPE);
+        record.OfferCraftingRecipe(CaelumConstants.CRAFTING_PICKAXE_RECIPE);
         // El mismo grafo del hacha enseña componentes, sin regalar otra receta de arma.
         let dependencies = new("CaelumMainM00StarterMaterials");
         dependencies.Build(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(
             CaelumConstants.CATALOGUE_WEAPON_AXE), record.MainM00StarterSize);
         for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
             if (dependencies.Recipes[i] && !CaelumMainM00StarterRules.IsWeaponRecipe(i))
-                record.LearnCraftingRecipe(i);
+                record.OfferCraftingRecipe(i);
         int size = CaelumEquipmentRules.ResolveAcquisitionSize(user,
             CaelumEquipmentRules.CHARACTER_DEFAULT, record.MainM00StarterSize);
         double weight = user.WeaponModel.GetWeightFor(CaelumConstants.WEAPON_TYPE_PICKAXE, 1, size);
@@ -338,7 +338,7 @@ class CaelumMainM00RonnieTrial : Object play
             : (record.MainM00StarterOption == 14)
             ? CaelumConstants.CRAFTING_ARROW_RECIPE : -1;
         if (recipe < 0 || record.KnowsCraftingRecipe(recipe)) return;
-        record.LearnCraftingRecipe(recipe);
+        record.OfferCraftingRecipe(recipe);
         let dependencies = new("CaelumMainM00StarterMaterials");
         dependencies.Build(record.MainM00StarterOption, record.MainM00StarterSize);
         double weight = user.GetAmmunitionUnitWeight(CaelumCraftingRules.GetRecipeAmmunitionType(recipe))
@@ -348,7 +348,7 @@ class CaelumMainM00RonnieTrial : Object play
         dependencies.Expand(CaelumConstants.MATERIAL_POINT, dependencies.ScaleUnits(
             CaelumCraftingRules.GetRoundedMaterialUnits(weight, 0.3)));
         for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
-            if (dependencies.Recipes[i]) record.LearnCraftingRecipe(i);
+            if (dependencies.Recipes[i]) record.OfferCraftingRecipe(i);
         user.RefreshCraftingRecipeBookSummary();
     }
 

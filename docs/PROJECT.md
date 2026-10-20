@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+## 5.6.3 - Physical recipe learning (#378)
+
+Implemented the authored per-tier paper/book model, first learning, capped
+rereading/practice and normalized 25% time base. Intelligence M3 controls reading;
+existing source eligibility/material gifts remain. The new original bookshelf
+stands opposite the MAP01 dummy. RecipeLearningRevision 1 retains old knowledge
+and grants corresponding sheets. Native storage/save/travel use existing owners.
+See SYSTEMS for the approved source table/formula and
+`assets/validation_563/RESULTS.md` for validation and limits. CA378-01 remains
+pending. #383 owns approved library commerce/replacement of repeated shops;
+#379-380/#382-387 remain separate issues. This is not author acceptance or merge.
 
 ## 5.6.2 - Ordinary native storage (#381)
 

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+## 5.6.3 - Recipe acquisition and study (#378)
+
+Physical sheets/book, per-tier learning, source retry, Intelligence M3 reading,
+practice snapshots and capped time reductions are implemented. Furniture and
+bilingual controls are included. Evidence: `assets/validation_563/RESULTS.md`;
+CA378-01 awaits author review. Keep CA377-01/CA381-01 outstanding.
+The author left again after answering follow-ups; a second temporary keep-awake
+request is active until return (12-hour fallback). No manual tests while away.
+Next: #383 library commerce uses all approved recipe/tier books and replaces
+some repeated city shops, grouped by existing recipe categories. Other balance,
+source/ownership and clothing decisions remain in their own issue scopes.
 
 ## 5.6.2 - Native ordinary containers (#381)
 
@@ -9,8 +21,7 @@ on native chest inventories. Exact transactional guards and the live menu retain
 existing locks, quotas and protected items. Revision-1 migration and carried
 save/travel checks are recorded in `assets/validation_562/RESULTS.md`.
 CA381-01 remains the actionable author test; CA377-01 is also outstanding.
-The author is unavailable for questions/testing for several hours. Continue only
-authored scope; missing recipe/catalogue/balance decisions in #378-380/#382-387
+At that delivery the author was away. Remaining catalogue/balance decisions
 stay in their separate issues, not the author-test queue.
 
 ## 5.6.1 - Merchant coordination (#377)

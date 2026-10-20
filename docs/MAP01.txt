@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+5.6.3 - Recipe sheets and the reading bookshelf (#378)
+
+Place the original bookshelf in the ground-floor room opposite the training
+dummy: assets/map01_mansion/READING.json owns position (368,-576,0), facing 270
+and the reused furniture footprint. MansionDiningRevision 2 installs it once,
+including visited-map migration; a failed collision fit is not committed.
+Ronnie/Caella keep their existing approved choices, eligibility and material
+quotas but now supply recipe sheets. Read at a dining table or this bookshelf
+before crafting. No new quest completion condition or recipe choice is added.
+Library commerce belongs separately to #383.
 
 5.5.6 / #314: ice/lava contact is limited to a private generated test room.
 No MAP01 or other campaign surface placement is introduced.

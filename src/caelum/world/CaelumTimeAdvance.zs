@@ -38,9 +38,10 @@ class CaelumTimeAdvanceState : Inventory
     static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
         bool crafting=user!=null && user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null;
-        String reason=CaelumRestSafety.BlockReason(user,false,crafting,scanWorld);
+        bool reading=CaelumRecipeSession.Working(user);
+        String reason=CaelumRestSafety.BlockReason(user,false,crafting || reading,scanWorld);
         if(reason.Length()!=0)return reason;
-        if(!CaelumRestState.IsActive(user) && !crafting && !skipping)return "CA_FAST_ACTIVITY";
+        if(!CaelumRestState.IsActive(user) && !crafting && !reading && !skipping)return "CA_FAST_ACTIVITY";
         if(crafting && !user.RefreshActiveCraftingStationSession())return "CA_FAST_ACTIVITY";
         return "";
     }
@@ -54,7 +55,7 @@ class CaelumTimeAdvanceState : Inventory
         if(reason.Length()!=0) { advance.LastReason=reason; CaelumNotifications.Notify(user,StringTable.Localize(reason,false)); return false; }
         advance.Active=true;advance.Pumping=false;advance.LastPumpTic=-1;advance.SimulatedTics=0;
         advance.OriginMap=level.MapName;advance.Session=CaelumRestState.IsActive(user)?CaelumRestState.Get(user):null;
-        advance.Station=advance.Session==null?user.ActiveCraftingStationActor:null;advance.LastReason="";
+        advance.Station=advance.Session==null?CaelumTimeSkipState.TaskAnchor(user):null;advance.LastReason="";
         CaelumNotifications.Notify(user,StringTable.Localize("CA_FAST_ON",false));return true;
     }
 
@@ -86,14 +87,14 @@ class CaelumTimeAdvanceState : Inventory
         for(int i=1;i<CaelumWorldClock.TicsPerHour()/60 && advance.Active;i++)
         {
             if(advance.Session!=null && (!CaelumRestState.IsActive(user) || CaelumRestState.Get(user)!=advance.Session)) { Halt(user);break; }
-            if(advance.Station!=null && (!user.CraftingTaskActive || user.ActiveCraftingStationActor!=advance.Station)) { Halt(user);break; }
+            if(advance.Station!=null && (!CaelumTimeSkipState.TaskActive(user) || CaelumTimeSkipState.TaskAnchor(user)!=advance.Station)) { Halt(user);break; }
             reason=BlockReason(user,false);
             if(reason.Length()!=0) {advance.LastReason=reason;Halt(user);break;}
             // Cada lugar conserva su escala de calendario durante el avance.
             // El serial evita acreditar dos veces un paso de descanso.
             SimulatePersonalTic(user);
             advance.SimulatedTics++;
-            if(!user.CraftingTaskActive && advance.Station!=null) Halt(user);
+            if(!CaelumTimeSkipState.TaskActive(user) && advance.Station!=null) Halt(user);
         }
         advance.Pumping=false;
     }
@@ -108,6 +109,7 @@ class CaelumTimeAdvanceState : Inventory
         CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
         AdvancePowers(user);
         user.UpdateCraftingTask();
+        let reading=CaelumRecipeSession.Get(user);if(reading!=null)reading.Advance();
         user.AdvancePersonalTimeTic(false);
         if(user.health<=0 || user.player.playerstate!=PST_LIVE)
         {CaelumRestSafety.Interrupt(user,"CA_REST_UNAVAILABLE");return;}

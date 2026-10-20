@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
 
+**5.6.3/#378:** recipe sheets/study/practice; validation_563; CA378-01 pending. Library shops: #383.
 **5.6.2/#381:** native chest storage/transport; validation_562; CA381-01 pending.
 **5.6.1/#377:** merchant coordination; validation_561; CA377-01 pending.
 **5.6.0/#376:** crafting; validation_560; CA376-01 accepted2026-10-20.
@@ -91,7 +92,6 @@ follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
 old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
 **#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
 
-Earlier evidence: HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
@@ -317,7 +317,7 @@ The #15 fronts and #80 powers are integrated; Tarot author checks passed 2026-10
 Siege rules retain their separate acceptance.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
-PROJECT contains the authoritative scope and dependency order. Historical usage evidence remains preserved.
+PROJECT owns scope/dependencies; HISTORY preserves earlier evidence.
 
 ## Repository structure (summarized)
 

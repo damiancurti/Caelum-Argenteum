@@ -38,10 +38,10 @@ class CaelumOnboarding : Object play
                 : item.ItemType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF ? CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
                 : item.ItemType == CaelumConstants.WEAPON_TYPE_BOLAS ? CaelumConstants.CRAFTING_BOLAS_RECIPE
                 : CaelumMainM00StarterRules.GetRecipe(r.MainM00StarterOption);
-            r.LearnCraftingRecipe(recipe);
+            r.OfferCraftingRecipe(recipe);
         }
         else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-            r.LearnCraftingRecipe(CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
+            r.OfferCraftingRecipe(CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
                 + item.ItemType * CaelumConstants.ARMOR_SLOT_COUNT + item.ArmorSlot);
     }
 
@@ -138,7 +138,7 @@ class CaelumOnboarding : Object play
         let r = user.GetPersistentCharacterState(false);
         let needs = LessonMaterials(user);
         for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
-            if (needs.Recipes[recipe]) r.LearnCraftingRecipe(recipe);
+            if (needs.Recipes[recipe]) r.OfferCraftingRecipe(recipe);
         r.MainM00SealRecipesLearned = r.MainM00SealChoice > 0;
         if (!user.CraftingTaskActive) { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
         user.RefreshCraftingRecipeBookSummary();

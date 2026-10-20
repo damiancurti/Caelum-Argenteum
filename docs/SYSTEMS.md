@@ -1,6 +1,83 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+## Recipe sheets, reading and practice (#378, 5.6.3)
+
+The author's 2026-10-20 decisions supersede historical instant-learning text.
+A recipe is a retained 5-g sheet stored in a native recipe book (100 g empty,
+capacity for every recipe). The first sheet grants the book. A final recipe
+includes the recipes of its recursive components; it grants no materials.
+Each valid item tier has separate knowledge, rereadings and practice. Existing
+single-tier ammunition, utility and fixed-output processing recipes retain
+only their defined tiers. No new crafting catalogue is introduced.
+
+| Source | Authorized contents and behavior | Status |
+| --- | --- | --- |
+| Ronnie starter lesson | Existing selected weapon, Pickaxe and current component/process routes; T1 source offers | Physical sheets; existing eligibility and gift allocation retained |
+| Ronnie bow/crossbow help | Existing arrow/bolt recipe and components | Physical sheets; no added mission requirement |
+| Ronnie Seal / Caella amulet | Existing confirmed choice and component recipes | Physical sheets; existing source checks and raw-material quotas retained |
+| Retained processing-manual class | Existing processing set | Offers sheets; removed MAP01 manual remains removed |
+| Old known recipes | Previously accessible valid tiers and their component sheets | Knowledge retained; new progress starts at zero |
+| Library commerce | All final-recipe/tier books with components, grouped by existing categories; replace some repeated city shops | Approved; implemented separately under #383 |
+| Other shops, loot and discoveries | No newly approved recipe assignments | Deferred to their own issues |
+
+Source confirmation records pending entitlements once. Preview, back and rejected
+source eligibility do not grant pages. Delivery checks the complete added mass,
+including the first book, before attaching pages. Capacity failure leaves the
+entitlement pending and retries without charging or repeating source rewards.
+Duplicate source claims do not duplicate sheets. Pages are native book state;
+knowledge/progress remain the existing character record. Moving the exact book
+through inventory, Box or a chest preserves its pages and mass. Native unique
+key-item rules allow one player-owned recipe book; no second ledger is added.
+
+Use the book from inventory, or use the bookshelf while carrying it. A dining
+table or bookshelf within the existing 96-MU interaction range and line of sight
+is required. The live menu supports category, row selection, read/resume, cancel
+and close. Closing or leaving range pauses; explicit cancellation discards only
+partial reading. Losing the book releases the interrupted task. No page is
+consumed. First completion teaches the selected tier and component recipes;
+only subsequent complete readings increment that recipe/tier's rereading count.
+T uses the existing x105 personal advance; Y opens the existing date skip and
+its task-duration forecast. Both use actual reading tics and the existing
+survival, sleep, provision, threat and thermal-effect guards. Sleeping grants no
+reading progress; closing the book stops acceleration. No new time scale or
+survival benefit is added.
+
+For each recipe/tier, R = min(rereadings/10, 1), P = min(practice/limit, 1).
+The limit is 10 equipment outputs or 1,000 consumable outputs (including native
+material units for processing/components). A = 10 - 9*max(R,P), B = 10 - 9*P.
+Time multipliers are 1 at 25%, A at 50%, A*B at 100%. Ten rereadings alone leave
+100% at x10; full practice alone reaches x1. Caps never overflow. Only successful
+manufacturing grants practice; reserved existing components, repair, dismantle,
+cancellation, failed output and repeated completion grant none. Direct plans
+credit only components actually made, alongside their final output.
+
+The common time base is the same operation's 25% time. Equipment uses its exact
+25% inputs; proportional subrecipes recompute each 25% input before rounding.
+Fixed processing/component batches retain their original 25% batch duration and
+normalize it by actual output units; their different yield is not mistaken for
+an efficiency bonus. Material consumption/yield is unchanged. Each operation
+applies its own factor once; recursive material loss still changes the number
+of required suboperations. Started craft/reading durations and reserved practice
+claims are snapshots, so later progress cannot rewrite a paused task.
+
+Reading references the recipe's own tier, largest equipment size, 100% efficiency
+and current per-recipe progress. It uses the full component graph with technical
+attributes at zero, then divides by Intelligence M3 (I=0: x1; I=100: /8).
+Equipment reading lasts one such craft; consumable reading lasts ten unit crafts,
+normalizing existing batches by output. Subsequent readings become faster.
+Approved library prices are 10% of equipment value or ten consumable unit values,
+using that same tier/largest-size reference; actual sale integration is #383.
+
+RecipeLearningRevision 1 maps old known IDs to their formerly accessible valid
+tiers, retains the legacy bool, queues sheets and initializes progress to zero.
+Reapplying it is idempotent. The reading task/book serialize as native inventory.
+Retain the original save and matching package for rollback; revised saves are
+not claimed compatible with the old executable package. Focused upgrade, reload,
+travel and original-pair rollback evidence: assets/validation_563/RESULTS.md.
+No routine global actor scan is added. Nearby reading furniture uses a blockmap
+query; a typed bookshelf census runs only at mansion setup/migration.
 
 ## Ordinary native containers (#381, 5.6.2)
 

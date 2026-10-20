@@ -1186,6 +1186,7 @@ class CaelumConstants : Object
     const KEY_TYPE_COUNT = 4;
     const KEY_ITEM_SEALED_LETTER = 0;
     const KEY_ITEM_PROCESSING_MANUAL = 1;
+    const KEY_ITEM_RECIPE_BOOK = 2;
     const KEY_ITEM_SLEEPING_BAG = 2;
     const KEY_ITEM_TAROT_DECK = 3;
     const KEY_ITEM_TYPE_COUNT = 4;
