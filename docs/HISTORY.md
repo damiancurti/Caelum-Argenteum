@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.3** — 2026-10-20.
+Documentation version: **5.6.3a** — 2026-10-20.
+
+## 5.6.3a - Lock tools and ownership proposal (#382), 2026-10-20
+
+After #378 delivery in PR #391, the author requested a concrete lockpick/master-key
+proposal, retained current loot tables for #384, requested a clothing proposal,
+and confirmed no renewal for products without a defined game recipe. They then
+left for several hours and explicitly requested temporary prevention of sleep.
+The second thread-scoped keep-awake request is active, without a power-plan change.
+
+SYSTEMS now separates already confirmed lock rules from proposed tool balance,
+acquisition, prices and title/alert defaults. No gameplay/catalogue/save change
+is made and no #382 implementation or acceptance is claimed. The only source
+changes synchronize two diagnostic release labels. Static validation and normal
+packaging are recorded in assets/validation_563a; no native behavior retest is
+claimed for this proposal. CA377-01/CA381-01/CA378-01 remain pending.
 
 ## 5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20
 

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.3** — 2026-10-20.
+Documentation version: **5.6.3a** — 2026-10-20.
+
+## 5.6.3a - Lock-tool proposal requested by the author (#382)
+
+SYSTEMS contains a concrete, explicitly unapproved proposal covering acquisition,
+steel recipes/masses, existing-margin prices, station access and lawful-title
+rules. Confirmed padlock/key masses, geometry scaling and warning-only theft
+remain separate. This delivery changes documentation and required diagnostic
+release labels; #382 implementation awaits the author's decisions. The frozen
+5.6.3 CA378-01 package remains available for its pending author check.
 
 ## 5.6.3 - Physical recipe learning (#378)
 
