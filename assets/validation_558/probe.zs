@@ -4,6 +4,8 @@ class CA369Probe : CA369ProbeBase
     double PoseMotion;
     int SavedModelFrame;
     int ManualResetAt,ManualStopAt;
+    int IdlePoseRequestedAt,IdlePoseReadyAt;
+    bool DeferredWalkPose;
     bool SawPrepareTrial,SawCharge,EncounterObserved;
     CaelumBullModelBody FadingModel;
     override void WorldTick()
@@ -15,6 +17,14 @@ class CA369Probe : CA369ProbeBase
             SawCharge|=Subject.BullModel.Pose==CaelumBullModelFrames.CHARGE;
         }
         Super.WorldTick();
+        if(IdlePoseReadyAt>0 && level.time>=IdlePoseReadyAt)
+        {
+            IdlePoseReadyAt=0;
+            Console.Printf("CA369 IDLE_GATE setup_tic=%d check_tic=%d helper_tic=%d",
+                IdlePoseRequestedAt,level.time,Subject.BullModel.LastDistanceTic);
+            ExpectPose(0);
+            if(DeferredWalkPose){DeferredWalkPose=false;PoseView(1);}
+        }
         if(ManualResetAt>0 && level.time>=ManualResetAt){ManualResetAt=0;PoseView(0);FrontView();}
         if(ManualStopAt>0 && level.time>=ManualStopAt){ManualStopAt=0;PoseMotion=0;}
         if(PoseMotion>0 && Subject!=null)
@@ -24,7 +34,7 @@ class CA369Probe : CA369ProbeBase
     {
         PoseMotion=0;Subject.StopBullCharge();Subject.target=null;
         Subject.Angle=0;User.SetOrigin(Subject.Pos+(20,-150,0),false);User.Angle=90;User.Pitch=5;
-        if(stage==0){Subject.SetState(Subject.SpawnState,true);Subject.tics=-1;}
+        if(stage==0){Subject.SetState(Subject.SpawnState,true);Subject.tics=-1;IdlePoseRequestedAt=level.time;}
         else if(stage==1 || stage==2)
         {Subject.SetState(Subject.SeeState.NextState,true);Subject.tics=-1;PoseMotion=stage==1?.4:2;}
         else if(stage==3){Subject.SetState(Subject.MeleeState,true);Subject.tics=-1;}
@@ -40,7 +50,14 @@ class CA369Probe : CA369ProbeBase
         else if(stage==8){Subject.CombatLucidityPhysicalStunRemaining=10;Subject.SetState(Subject.FindState('LucidityStun'),true);Subject.tics=-1;}
     }
     void FrontView()
-    {User.SetOrigin(Subject.Pos+(90,0,0),false);User.Angle=180;User.Pitch=8;}
+    {User.SetOrigin(Subject.Pos+(120,0,0),false);User.Angle=180;User.Pitch=-5;}
+    void ExpectPose(int expected)
+    {
+        Check(Subject.BullModel!=null && Subject.BullModel.Pose==expected,
+            String.Format("native presentation pose %d actual %d frame %d tics %d gore_remaining %d",
+                expected,Subject.BullModel!=null?Subject.BullModel.Pose:-1,
+                Subject.CurState.Frame,Subject.tics,Subject.BullModelGoreUntil-level.time));
+    }
     void ModelCheck()
     {
         Check(Subject!=null && Subject.BullModel!=null,"bull creates local model helper");
@@ -74,9 +91,18 @@ class CA369Probe : CA369ProbeBase
         if(e.Name=="c369_check")ModelCheck();
         else if(e.Name=="c369_checkmodels")CheckModels();
         else if(e.Name=="c369_disabled")Disabled();
-        else if(e.Name=="c369_pose")PoseView(e.Args[0]);
+        else if(e.Name=="c369_pose")
+        {
+            if(e.Args[0]==1 && IdlePoseReadyAt>0)DeferredWalkPose=true;
+            else PoseView(e.Args[0]);
+        }
         else if(e.Name=="c369_expect")
-        {Check(Subject.BullModel!=null && Subject.BullModel.Pose==e.Args[0],String.Format("native presentation pose %d actual %d frame %d tics %d gore_remaining %d",e.Args[0],Subject.BullModel!=null?Subject.BullModel.Pose:-1,Subject.CurState.Frame,Subject.tics,Subject.BullModelGoreUntil-level.time));}
+        {
+            // Los netevents iniciales pueden llegar juntos tras cargar el mapa.
+            // Esperar tics reales del auxiliar, sin forzar UpdateVisual.
+            if(e.Args[0]==0)IdlePoseReadyAt=level.time+2;
+            else ExpectPose(e.Args[0]);
+        }
         else if(e.Name=="c369_stop")
         {PoseMotion=0;SavedModelFrame=Subject.BullModel.ModelFrame;}
         else if(e.Name=="c369_stopped")
@@ -103,7 +129,9 @@ class CA369Probe : CA369ProbeBase
         else if(e.Name=="c369_manual")Manual=true;
         else if(e.Name=="c369_front")FrontView();
         else if(e.Name=="c369_faceangle")
-        {User.SetOrigin(Subject.Pos+(95,-80,0),false);User.Angle=140;User.Pitch=5;}
+        {User.SetOrigin(Subject.Pos+(130,-100,0),false);User.Angle=142;User.Pitch=-4;}
+        else if(e.Name=="c369_bodyview")
+        {User.SetOrigin(Subject.Pos+(90,-210,0),false);User.Angle=113;User.Pitch=0;}
         else if(e.Name=="c369_reset")
         {if(Subject!=null)Subject.Destroy();Setup();ManualResetAt=level.time+3;PoseMotion=0;}
         else if(e.Name=="c369_manualpose" && Subject!=null && Subject.health>0)

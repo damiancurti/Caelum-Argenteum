@@ -3,7 +3,8 @@ Prerequisites: built 5.5.8 package; assets/validation_558/preview.ps1 opens the
 isolated bull preview and retains the terminal. GZDoom 4.14.2, 5% audio.
 1. Inspect the bull from front and both sides; check the cleaned body, rebuilt
    symmetric forehead/horns, eyelids/irises, broad bovine muzzle and lateral
-   nostrils, retained colors and floor contact. F10 returns to a close front view.
+   nostrils, matching body/head coat and modeled brows/forelock. Check the approved
+   50% visual enlargement and floor contact. F10: front; F11: whole-body view.
 2. Use the preview controls to inspect breathing, walk/run, charge preparation,
    gore, pain, rest and death/corpse. Look for surface tearing or foot sliding.
 3. Open the MAP01 encounter from the preview and check the native tutorial grace,

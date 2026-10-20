@@ -30,7 +30,7 @@ uses a centered facial contour with paired cheeks, ears and horns, contoured
 eyelids, brown irises, horizontal pupils and restrained corneal highlights.
 A broad muzzle has recessed lateral nostrils and defined lips. The old facial
 volume is nested inside the replacement and the neck transition is smoothed;
-the existing rig, 23 bones and action keyframes are retained. The current model
+the existing rig, 23 bones and action keyframes are retained. That facial candidate
 has 9,108 triangles, 7,381 UV-split vertices and a single 2048-square albedo atlas
 to keep the eyes legible. Render bounds accommodate the new face; gameplay
 dimensions do not change. Native appearance/performance checks are repeated for
@@ -39,14 +39,25 @@ this geometry rather than treating the first candidate's captures as current.
 its input hash and editable parameters are in DESIGN.json. The source remains
 editable art, with deterministic MD3 export. CA369-01 remains pending.
 
+The next author inspection requested the same body/head coat, more threatening
+brows or hair, and a larger whole bull. On 2026-10-19 the author explicitly
+approved a 50% uniform visual enlargement with existing physical collision and
+combat retained. The current head, ears and modeled brow/forehead locks reuse a
+continuous brown-fur patch from the retained body albedo, avoiding seams across
+atlas islands. Rounded tapered locks provide volume above the eyes. The current
+mesh has 10,580 triangles, 9,273 UV-split vertices and the same 136 poses/2048
+atlas. DESIGN.json records the coat patch and author-approved visual factor.
+The exporter scales all geometry and visual gait stride by 1.5; native action
+timing and movement remain unchanged. Current evidence is report-coat.json.
+
 The editable `bull.blend` contains a 23-bone quadruped rig, normalized painted
 skin weights, IK feet and 12 actions: idle breathing, walk, run, ordinary and
 tutorial charge preparation, charge, gore, pain, death, corpse, rest and stun.
 There are 136 exported pose samples in one MD3 surface. Death reaches its final
 pose at the original frame-N boundary (25 tics); the original corpse hold and
-tutorial fade remain native. A uniform art scale aligns neutral height to the
-existing 51.8-unit bull; actor radius 15.6, height and mass are not changed to
-fit art. Floor correction belongs to resting/falling artwork, not physics.
+tutorial fade remain native. The initial art scale used the existing 51.8-unit
+height; the author-approved revision multiplies that visual scale by 1.5. Actor
+radius 15.6, height 51.8 and mass 900 remain unchanged. Floor correction belongs to resting/falling artwork, not physics.
 
 `authoring.py`, `rigging.py` and `refine_head.py` retain construction history; the frozen `.blend`
 is authoritative editable art input and is not promised to serialize identically

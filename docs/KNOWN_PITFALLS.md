@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-139 - Console waits do not prove queued fixture events have advanced
+
+Status/evidence: ENGINE-VERIFIED, #369/5.5.8, 2026-10-20.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan; isolated bull inspection room.
+Evidence: `assets/validation_558/evidence-coat`, superseded pose failure,
+diagnostic07 and final coat-poses logs.
+
+At initial map load, the idle screenshot ran before the queued idle setup
+event. Setup and its assertion then arrived at tic 17; the helper still held
+its previous tic-16 charge pose despite an idle owner. A diagnostic direct
+UpdateVisual selected idle immediately, ruling out incorrect pose routing.
+That forced call is diagnostic evidence only, not a passing native-tick test.
+
+Gate the check from WorldTick after setup, and defer the following pose until
+the check runs. The final test records setup 17, helper update 18 and check 19,
+then passes all 13 pose checks without forcing UpdateVisual. Console `wait`
+and screenshot ordering alone do not establish simulation-event completion.
+Retain failed/diagnostic logs separately; this finding required no production
+combat or presentation-logic change.
+
 ## CA-KP-138 - Hub teardown must prevent lazy recreation through the final tic
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #369/5.5.8, 2026-10-19.

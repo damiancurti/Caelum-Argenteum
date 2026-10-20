@@ -44,7 +44,8 @@ def main():
     # Sample counts/timings are art data. Runtime action timings remain native.
     design = json.loads((ART / 'DESIGN.json').read_text(encoding='utf-8'))
     config = design['export_actions']
-    export_scale = design['export_transform']['scale']
+    visual_scale = design.get('visual_scale_revision', {}).get('factor', 1)
+    export_scale = design['export_transform']['scale'] * visual_scale
     bounds = []
     frames = []
     sample_times = []
@@ -132,8 +133,8 @@ def main():
     textures = []
     states = ['// Generado desde DESIGN.json y el Blender editable del #369.',
               'class CaelumBullModelFrames : Actor', '{']
-    states.append(f'    const WALK_STRIDE={design["motion"]["walk_stride_mu"]};')
-    states.append(f'    const RUN_STRIDE={design["motion"]["run_stride_mu"]};')
+    states.append(f'    const WALK_STRIDE={design["motion"]["walk_stride_mu"] * visual_scale:g};')
+    states.append(f'    const RUN_STRIDE={design["motion"]["run_stride_mu"] * visual_scale:g};')
     states.append(f'    const VISUAL_RADIUS={math.ceil(max(max(abs(b["min"][i]),abs(b["max"][i])) for b in bounds for i in (0,1)))};')
     states.append(f'    const VISUAL_HEIGHT={math.ceil(max(b["max"][2] for b in bounds))};')
     for index, name in enumerate(actions):

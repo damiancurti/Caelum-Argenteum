@@ -45,6 +45,19 @@ pass. A saved helper's old render dimensions are refreshed idempotently in the
 existing typed load census; the original bull's collision and save schema do
 not change. Callback measurements retain the prior presentation limitations.
 
+The next 2026-10-19 inspection requested matching head/body fur, more threatening
+brows or hair, and a larger whole bull. The author approved a 50% visual increase
+while retaining physical collision/combat. A continuous body-albedo patch now
+colors the head and rounded brow/forehead locks. The exporter multiplies mesh
+geometry and visual gait stride by 1.5. The 10,580-triangle / 9,273-vertex mesh
+keeps the same rig, poses and native timing. This remains #369 / PR #373 / 5.5.8;
+CA369-01 stays pending. Current validation and captures are in report-coat.json
+and evidence-coat; earlier candidate reports remain historical. On 2026-10-20,
+six final native runs passed 46 checks, with unchanged 181-tic encounter trace,
+static validation/build and repeated export passing. CA-KP-139 records a
+reproduced fixture event-order race; WorldTick-gated checks replace the flawed
+initial assertion. Diagnostic forced updates are excluded from final evidence.
+
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 
 The author decided on 2026-10-19: "Documentar el diseño y aplazar la conversión;

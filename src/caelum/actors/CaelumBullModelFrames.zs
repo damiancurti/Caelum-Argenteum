@@ -1,10 +1,10 @@
 // Generado desde DESIGN.json y el Blender editable del #369.
 class CaelumBullModelFrames : Actor
 {
-    const WALK_STRIDE=26;
-    const RUN_STRIDE=52;
-    const VISUAL_RADIUS=44;
-    const VISUAL_HEIGHT=61;
+    const WALK_STRIDE=39;
+    const RUN_STRIDE=78;
+    const VISUAL_RADIUS=65;
+    const VISUAL_HEIGHT=92;
     const IDLE=0;
     const WALK=1;
     const RUN=2;

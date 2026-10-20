@@ -39,14 +39,70 @@ def sphere(name,center,radii,mat,segments=24,rings=12):
     return obj
 
 
-def fur_material(config):
+def fur_material(config,source_image):
     mat=colored_material('Symmetric_head_brown',config['fur_color'])
     nodes=mat.node_tree.nodes;links=mat.node_tree.links
-    noise=nodes.new('ShaderNodeTexNoise');noise.inputs['Scale'].default_value=48;noise.inputs['Detail'].default_value=2
-    geo=nodes.new('ShaderNodeNewGeometry');links.new(geo.outputs['Position'],noise.inputs['Vector'])
-    ramp=nodes.new('ShaderNodeValToRGB');ramp.color_ramp.elements[0].color=config['fur_color'];ramp.color_ramp.elements[1].color=config['fur_variation']
-    links.new(noise.outputs['Fac'],ramp.inputs[0]);links.new(ramp.outputs[0],nodes['Principled BSDF'].inputs['Base Color'])
+    tex=nodes.new('ShaderNodeTexImage');tex.image=source_image
+    uv=nodes.new('ShaderNodeUVMap');uv.uv_map='BodyFurUV'
+    links.new(uv.outputs[0],tex.inputs['Vector'])
+    links.new(tex.outputs['Color'],nodes['Principled BSDF'].inputs['Base Color'])
     return mat
+
+
+def body_fur_projection(mesh,config):
+    """Use a continuous brown coat patch, without crossing body atlas seams."""
+    def project(point):
+        u0,u1,v0,v1=config['body_fur_patch_uv']
+        u=u0+(u1-u0)*max(0,min(1,abs(point.y)/.22))
+        v=v0+(v1-v0)*max(0,min(1,(point.x-.13)/.40))
+        return (u,v)
+    return project
+
+
+def brow_and_forelock(config,side,head_surface,fur):
+    """Model fur volume above the eyes; keep irises and pupils unobstructed."""
+    surface=BVHTree.FromObject(head_surface,bpy.context.evaluated_depsgraph_get())
+    center=Vector(config['eye_center']);center.y*=side
+    normal=Vector(config['eye_normal']);normal.y*=side;normal.normalize()
+    horizontal=Vector((normal.y*side,-normal.x*side,0)).normalized()
+    vertices=[];faces=[]
+    def conform(p,depth):
+        hit,n,_,_=surface.ray_cast(Vector((p.x,side*.6,p.z)),Vector((0,-side,0)))
+        if hit is None:raise RuntimeError('Brow must lie on the forehead')
+        return hit+n*depth
+    width,height,depth=config['brow_extent']
+    def lock(start,end,width,normal):
+        base=len(vertices);axis=(end-start).normalized()
+        cross=axis.cross(normal).normalized()
+        for k in range(5):
+            t=k/4;radius=width*math.sin(math.pi*(.18+.82*t))
+            for j in range(6):
+                a=math.tau*j/6
+                vertices.append(start.lerp(end,t)+cross*(radius*math.cos(a))+normal*(radius*.55*math.sin(a)+width*.6*math.sin(math.pi*t)))
+        for k in range(4):
+            for j in range(6):faces.append((base+k*6+j,base+k*6+(j+1)%6,base+(k+1)*6+(j+1)%6,base+(k+1)*6+j))
+    for i in range(11):
+        t=(i-5)/5
+        p=center+horizontal*(width*t)+Vector((0,0,height-t*.006))
+        for j in range(8):
+            a=math.tau*j/8
+            vertices.append(conform(p+Vector((0,0,.009*math.sin(a)*(1-.55*abs(t)))),depth*(1+math.cos(a))*(1-.6*abs(t))))
+    for i in range(10):
+        for j in range(8):faces.append((i*8+j,i*8+(j+1)%8,(i+1)*8+(j+1)%8,(i+1)*8+j))
+    # Short overlapping tapered locks soften the brow and forehead silhouette.
+    for i in range(7):
+        t=(i-3)/3
+        p=center+horizontal*(width*.85*t)+Vector((0,0,height+.002-t*.006))
+        lock(conform(p,.012),conform(p+horizontal*.004-Vector((0,0,.013)),.006),.006,normal)
+    for i in range(5):
+        y=side*(.014+i*.018)
+        x=.274+i*.003
+        hit,n,_,_=surface.ray_cast(Vector((x,y,.8)),Vector((0,0,-1)))
+        if hit is None:raise RuntimeError('Forelock must lie on the forehead')
+        length=config['forelock_length']*(1-.07*i)
+        tip,tip_normal,_,_=surface.ray_cast(Vector((x+length,y,.8)),Vector((0,0,-1)))
+        lock(hit+n*.003,tip+tip_normal*.002,.012,n)
+    return new_mesh('Furred_brow_and_forelock_'+str(side),vertices,faces,[fur])
 
 
 def head(config,mat):
@@ -124,7 +180,9 @@ def main():
     before_bones=len(rig.data.bones);before_actions={name:len(bpy.data.actions[name].fcurves) for name in design['export_actions']}
     # Preserve the accepted body vertices, UV coordinates, weights and actions.
     # Only the old head/details are removed from the editable runtime mesh.
-    fur=fur_material(cfg);mesh.data.materials.append(fur);fur_index=len(mesh.data.materials)-1
+    source_image=next(n.image for n in mesh.data.materials[0].node_tree.nodes if n.type=='TEX_IMAGE' and n.image)
+    project_fur=body_fur_projection(mesh,cfg)
+    fur=fur_material(cfg,source_image);mesh.data.materials.append(fur);fur_index=len(mesh.data.materials)-1
     activate(mesh);bm=bmesh.new();bm.from_mesh(mesh.data);region=bm.faces.layers.int['bake_region']
     detail_vertices={v for face in bm.faces if face[region]>0 for v in face.verts}
     cut=list(detail_vertices)
@@ -156,6 +214,7 @@ def main():
     for side in (-1,1):
         horn_config=dict(design['head_repair']);horn_config['center']=[.3,0,.39]
         details.append(horn(horn_config,side));details.extend(eye(cfg,side,details[0],fur));details.append(ear(cfg,side,fur))
+        details.append(brow_and_forelock(cfg,side,details[0],fur))
     nose=sphere('Broad_bovine_muzzle',cfg['muzzle_center'],cfg['muzzle_radii'],colored_material('Muzzle_leather',cfg['muzzle_color']))
     nose.data.materials.append(colored_material('Nostril_cavity',cfg['cavity_color']))
     for side in (-1,1):
@@ -187,11 +246,16 @@ def main():
     # Normalize the orientation of all newly constructed surfaces before export.
     activate(mesh);bm=bmesh.new();bm.from_mesh(mesh.data);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(mesh.data);bm.free()
     tri=mesh.modifiers.new('Final facial triangulation','TRIANGULATE');bpy.ops.object.modifier_apply(modifier=tri.name)
+    projected=mesh.data.uv_layers.new(name='BodyFurUV')
+    for polygon in mesh.data.polygons:
+        if mesh.data.materials[polygon.material_index]!=fur:continue
+        for loop in polygon.loop_indices:
+            projected.data[loop].uv=project_fur(mesh.data.vertices[mesh.data.loops[loop].vertex_index].co)
     # Bake a new atlas using preserved UVMap for the old body material.
     for mat in mesh.data.materials:
         if mat is None:continue
         for node in mat.node_tree.nodes:
-            if node.type=='TEX_IMAGE':
+            if node.type=='TEX_IMAGE' and not node.inputs['Vector'].is_linked:
                 uv=mat.node_tree.nodes.new('ShaderNodeUVMap');uv.uv_map='UVMap';mat.node_tree.links.new(uv.outputs[0],node.inputs['Vector'])
     mesh.data.uv_layers.new(name='RefinedAtlas');mesh.data.uv_layers.active=mesh.data.uv_layers['RefinedAtlas']
     mesh.data.uv_layers['RefinedAtlas'].active_render=True

@@ -1,3 +1,4 @@
 * -text whitespace=cr-at-eol
 evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 evidence-face/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidence-coat/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

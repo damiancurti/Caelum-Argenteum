@@ -8,6 +8,12 @@ Artwork revisions refresh saved helper render bounds during the existing
 typed load census. This changes only the non-colliding visual helper; the
 original bull's physical cylinder and save schema remain unchanged.
 
+On 2026-10-19 the author approved a uniform 1.5 visual enlargement for inspection,
+retaining the original physical cylinder and combat. The MD3 geometry and
+distance-driven visual gait stride share that factor (39/78 map units for
+walk/run), without changing native speed or state timing. The visible body
+therefore intentionally extends beyond its unchanged physical cylinder.
+
 All ordinary bulls and the existing MAP01 tutorial subclass use the cleaned
 animated model by default. This is a visual replacement: attributes, damage,
 Air costs, charge acceleration/cap, cushioning, anatomy, health effects,

@@ -1,6 +1,62 @@
 # #369 / 5.5.8 bull model validation
 
-## Current facial revision after author inspection
+## Current coat, brows and scale revision
+
+The author requested the same head/body texture, more threatening brows or hair,
+and a larger whole bull. On 2026-10-19 the author approved a uniform **1.5 visual
+scale**, retaining existing physical collision and combat. The head/ears and
+modeled brow/forehead locks now reuse a continuous brown coat patch from the
+retained body albedo. Rounded tapered locks preserve visible irises/pupils.
+The model has 10,580 triangles, 9,273 UV-split vertices, 136 samples, 23 bones
+and one 2048-square atlas. The exporter scales geometry and visual walk/run
+stride together (39/78 MU); native animation timing and movement are unchanged.
+Render bounds are 65/92 and refresh through the existing load hook. Physical
+radius/height/mass remain 15.6/51.8/900, intentionally smaller than the artwork.
+
+Current verification: `collect_coat.py`, `report-coat.json`, `evidence-coat/`.
+The frozen ordinary package SHA256 is `2c78110b858a6192e34c067ed74232178885dc8526617500e2499a6d9e99612a`.
+Both pinned Blender exports match byte for byte. Only MD3, skin, generated
+visual stride/bounds and the provenance notice differ from candidate c3519ea4.
+All other packaged bytes, including combat and helper lifecycle logic, match.
+Project validation and normal build pass. Native checks completed 2026-10-20.
+
+Six final runs pass 46 newly logged checks: front/angle/full-body inspection,
+all pose transitions and stopped gait, prior candidate save loading, MAP01
+encounter, 512 peaceful bulls and the MAP01 performance reference. The 181-tic
+combat trace equals the original baseline apart from the sprite registration
+index. The population remains alive=512, census=513, high-density=1. Read-only
+review found no source blocker; author acceptance CA369-01 remains pending.
+
+| Condition | tics/s | Render-callback mean / p95 / p99 / maximum (ms) |
+| --- | ---: | --- |
+| 512 peaceful bulls | 34.99 | 16.67 / 17.77 / 18.21 / 18.93 |
+| MAP01 fixed spawn | 35.00 | 16.67 / 18.08 / 18.95 / 20.55 |
+
+Same recorded environment/method as the historical sections below; single
+windows are not statistical performance claims. Application presentation remains
+unmeasured after the earlier ETW denial; callbacks do not establish display FPS.
+No retired stress case was run.
+
+Retained iteration evidence: coat01 projected UVs across body-atlas seams and
+used angular locks; coat02 uses a continuous coat patch and rounded locks.
+An early shell invocation was blocked by local script policy; the normal
+launcher invocation completed the build. coat-final02 is an earlier appearance
+check before the provenance notice update. final03/04/05 each exposed the same
+initial idle fixture failure. Clearing charge/target did not solve it and that
+hypothesis was rejected. diagnostic06/07 showed queued setup/assertion events:
+the helper held its tic-16 pose at the tic-17 assertion; a direct UpdateVisual
+selected idle, but that diagnostic call is excluded from native pass counts.
+The final08 fixture gates the idle assertion in WorldTick and defers the next
+pose. It records setup=17, helper=18, check=19 and passes without forced updates.
+CA-KP-139 records the reusable lesson. Failed and diagnostic logs are retained
+separately; this required no production behavior change.
+
+`preview.ps1` opens the final08 inspection room immediately and keeps the terminal.
+F1 resets, F10 shows the face and F11 shows the whole body. Other pose/toggle
+controls remain listed in the terminal. Close GZDoom to open MAP01 from its menu.
+The earlier reports below are historical candidates, not current art acceptance.
+
+## Facial revision at commit c3519ea4 (historical)
 
 The author requested a more symmetric head, defined eyes rather than black
 points, and a more bovine muzzle. This follow-up remains in #369 / PR #373 and
@@ -61,7 +117,7 @@ Author acceptance of symmetry, eyes, muzzle and motion is still required.
 
 The remaining inventory, hashes, captures and `report.json` describe the first
 candidate. Its `verify.py`/`collect.py` reproduce that frozen source revision;
-use `collect_face.py` to validate the current follow-up.
+use `collect_coat.py` to validate the current follow-up.
 
 The author supplied the GLB and approved local forehead/horn reconstruction
 on 2026-10-19. The original source and both embedded images are retained.

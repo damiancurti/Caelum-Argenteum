@@ -21,6 +21,11 @@ pain, death/corpse, rest and stun animation. The author's subsequent 2026-10-19
 review requested a more symmetric head, defined eyes and a bovine muzzle.
 The refined head has mirrored cheeks/ears/horns, eyelids, brown irises and
 horizontal pupils, with a broad muzzle, recessed lateral nostrils and lips.
+The next author review requested matching body/head fur, a more threatening
+brow and a larger bull. The head now reuses a continuous patch of the retained
+body albedo; modeled brow/forehead locks add fur volume. The author approved
+a uniform 1.5 visual scale, with proportional visual gait stride and unchanged
+physical collision, mass and combat.
 The stocky body, tail and brown/ivory palette are retained. No additional external mesh or Doom art is
 incorporated. Original project bull sprites remain available for rollback.
 

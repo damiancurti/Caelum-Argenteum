@@ -944,7 +944,25 @@
       0.012,
       1
     ],
-    "target_triangles": 9500,
-    "atlas_size": 2048
+    "target_triangles": 11200,
+    "atlas_size": 2048,
+    "brow_extent": [
+      0.036,
+      0.02,
+      0.009
+    ],
+    "forelock_length": 0.052,
+    "fur_feedback": "2026-10-19: reuse the body coat on the head; add eyebrows or hair for a more threatening expression.",
+    "body_fur_patch_uv": [
+      0.33,
+      0.36,
+      0.4,
+      0.59
+    ]
+  },
+  "visual_scale_revision": {
+    "author_decision": "2026-10-19: approve a 50 percent uniform visual enlargement for inspection; retain current physical collision and combat.",
+    "factor": 1.5,
+    "gait_stride": "Scale distance-driven visual stride by the same factor; native movement and attack timing remain unchanged."
   }
 }
