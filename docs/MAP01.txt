@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.5.4** — 2026-10-19.
+Documentation version: **5.5.5** — 2026-10-19.
 
 5.4.29 - Preserve mansion/sewers; adopt the city as MAP03 (#327)
 

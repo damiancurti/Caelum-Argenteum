@@ -1,0 +1,232 @@
+{
+  "required": [
+    {
+      "directory": "issue363-baseline02",
+      "label": "unarmed",
+      "checks": 10,
+      "runtime_sha256": "a10dfc983243266fc2d151cdb1857c242a076cb1853b02bb271a249039595579",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "09717c66c41e976b5861d7ae28878edbbb8a75c8b6732b750090a800fa25b761",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-baseline02",
+      "label": "sword",
+      "checks": 16,
+      "runtime_sha256": "a10dfc983243266fc2d151cdb1857c242a076cb1853b02bb271a249039595579",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "4a8c18b8433325f1cdcadd60f891a541f3843eb19a21412dc588dba632e9a035",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-baseline02",
+      "label": "save",
+      "checks": 0,
+      "runtime_sha256": "a10dfc983243266fc2d151cdb1857c242a076cb1853b02bb271a249039595579",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "152716804965b7d79cdaa39e59cb17686992771b241f80ea06b35257bdcc1b9e",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-baseline02",
+      "label": "rollback-final",
+      "checks": 3,
+      "runtime_sha256": "a10dfc983243266fc2d151cdb1857c242a076cb1853b02bb271a249039595579",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "ea90ba6beb2b6d2ac07b43a0d7b0f575add129579f6f4f0eda112fe5ac32b28c",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "input--1",
+      "checks": 17,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "15797aff420ed8c3acb80e217ac674183982f5b6af1d465754a39e98b9470082",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "input-0",
+      "checks": 17,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "bcfaa5f47ba356d54a5e78c4b27e24345bdc8746929704b64b78149694709d1d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "input-1",
+      "checks": 17,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "79c68805227dfd7c94c7c6a48915b6605e88e6142a7ecd2910a90287477dba8a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "reject-1",
+      "checks": 4,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "f44d67efc2de9207e49ac332178e50c1ee9b50ec78c496ffbb33ec1eed3f37ae",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "reject-2",
+      "checks": 4,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "32402d25edbe6c1f6ca0f38ff51beabc25762c53358dec39243271e92066d149",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "exhaust",
+      "checks": 10,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "7aee516df268d09b4cab567fd7448c5e40bdf8f3f8bb34beb7b9640b292b1f27",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "save",
+      "checks": 0,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "157bf50b5ecd0b929a14dc4849227ae37d9359022ea696f8153791a38c75855a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "active-save",
+      "checks": 7,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "a4469499cbd029181ea998e1dfdd01bd8476453809f80efaf437300d871baafb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "old-unarmed-final",
+      "checks": 10,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "4cb261cc60d0b0bb974da6ab6eee131102379c29b6f42e6eb04b54cc06968c4b",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "old-punch-final",
+      "checks": 10,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "391cc6c7c286bdb5902453c68c40c281f425f143b1ac4262105c50fb7ae16204",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "current-load",
+      "checks": 10,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "4e08cb2fdc6603118825a1b45ae636eadc19f01aa50c8d2e4e68afa82f6b40f6",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "active-load",
+      "checks": 12,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "a4660eed455f9e49dec8c85157efc6b8eab2d28174583b812db01086cd0479a0",
+      "log_sha256": "9164437579f76f75b74ebd8d4e82b297cdddf01be490c12143175311797b5929",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current03",
+      "label": "cooldown",
+      "checks": 5,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "53028e8de2ee947ddfbaccaa038086bfeef3bb0b5852406e2964b186f06e8e27",
+      "log_sha256": "b6dac301b98ce943558c8e4742316a652fe99ca0d0ca60fdc6c3655fe771da91",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current04",
+      "label": "hub",
+      "checks": 6,
+      "runtime_sha256": "f01d5e5dcb79c182f2ee41dbeefac29310995f3524ff7783496d4cea50789f52",
+      "fixture_sha256": "0d39cf12909ed0ddbc1ed8ee92d54caab5210e485de75843e5162db599d55bc9",
+      "log_sha256": "e399a325e0d50cf726b2775d1ccb0f25d4165d3e0b22017470bbd031ebcc4dbb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue363-current05",
+      "label": "final-input",
+      "checks": 17,
+      "runtime_sha256": "ca212da4020d2c674a1a9a3aadedf2f680a6ca967e66a296e2d089d192444473",
+      "fixture_sha256": "0d39cf12909ed0ddbc1ed8ee92d54caab5210e485de75843e5162db599d55bc9",
+      "log_sha256": "caad4c1ef45053afdcaa07aec979eb79554fbe9267ee890cdf3ecbfa107be46d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    }
+  ],
+  "excluded": [
+    {
+      "directory": "issue363-baseline01",
+      "label": "sword",
+      "reason": "Fixture initially supplied only 100 Adrenaline; the valid channel exhausted before the hold check. Superseded by maximum-resource fixture.",
+      "log_sha256": "db07e9ac98a8c18fdd084b6fd64def5be903fd2b7439625492a89e42a8c22c10"
+    },
+    {
+      "directory": "issue363-current01",
+      "label": "unarmed-early",
+      "reason": "Same insufficient-resource fixture; not a production failure.",
+      "log_sha256": "b6d8d8b001ff0e249c89e00e13956b4a71bb96439020bc518f179082e953521f"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "old-unarmed",
+      "reason": "Harness supplied an absolute -loadgame path; GZDoom prepended savedir. Corrected with preserved save copies and relative basenames.",
+      "log_sha256": "77f564563108cde9f46c86dda4df0198911a2f6d132923671b15787acece1602"
+    },
+    {
+      "directory": "issue363-current02",
+      "label": "hub",
+      "reason": "Hub transfers reconstruct inventory identities and EventHandlers. Fixture incorrectly required pointer equality; corrected checks retain the observed stable ItemId.",
+      "log_sha256": "9c4e0a14fd2629e5ec5864e7fa63298b6bcd87acf326d656bf1d8ea1a2c0933b"
+    },
+    {
+      "directory": "issue363-baseline02",
+      "label": "rollback",
+      "reason": "The stopped suite had not copied the checkpoint yet. Retried after preserving the current checkpoint under the baseline savedir.",
+      "log_sha256": "6eb9f168940b848be4e1afbe5146c3563b0b0c8c178135a5ea050f4ae8e3747a"
+    }
+  ],
+  "static": {
+    "runtime_changes": [
+      "caelum/equipment/CaelumUnarmedWeapon.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "old_state_sequence_unchanged": true,
+    "baseline_sha256": "a10dfc983243266fc2d151cdb1857c242a076cb1853b02bb271a249039595579",
+    "current_sha256": "ca212da4020d2c674a1a9a3aadedf2f680a6ca967e66a296e2d089d192444473",
+    "save_schema": "No saved fields added or changed. User2 appended after all previous states."
+  },
+  "native_runs": 19,
+  "checks": 175,
+  "limits": [
+    "Author accepted CA363-01 on 2026-10-19 without qualifications. No performance claim.",
+    "Old punch save establishes successful load and later native User2 usability; no in-flight punch-phase assertion.",
+    "Fire/User1/User3/User4 preservation is static evidence; these controls were not exercised by the native fixture."
+  ],
+  "author_acceptance": {
+    "id": "CA363-01",
+    "origin": "5.5.5 / #363",
+    "date": "2026-10-19",
+    "confirmation": "La prueba dio correcta",
+    "qualifications": null
+  }
+}

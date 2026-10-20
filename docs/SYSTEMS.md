@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.4** — 2026-10-19.
+Documentation version: **5.5.5** — 2026-10-19.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -10324,6 +10324,17 @@ It never resolves a fallback local player or owns a second combat state.
 This is a bounded organization change, not a measured performance improvement or
 a claim of complete multiplayer support. Native comparisons and their coverage
 limits are recorded in `assets/validation_551/RESULTS.md`.
+
+### Unarmed Seal input (#363, 5.5.5)
+
+Native User2 now reaches the same equipped-Seal authority through the unarmed
+fallback, physical selectors and magical selectors. Its accepted toggle rule is
+unchanged: first press starts, releasing keeps channeling, next press stops.
+Holding does not recreate the channel or multiply its per-tic cost. Eligibility,
+resource exhaustion, cooldown and interruptions stay with the shared pawn rules.
+Unarmed Fire/User1/User3/User4 states retain their original indices; User2 is
+appended. No saved field or migration is introduced. Input/save evidence and
+coverage limits: assets/validation_555/RESULTS.md; author CA363-01 accepted on 2026-10-19.
 
 ### Input bindings
 

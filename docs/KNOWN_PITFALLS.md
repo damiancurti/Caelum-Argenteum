@@ -3200,6 +3200,14 @@ The Journal test invokes its UI helper and real network event; it does not
 claim physical keyboard/controller testing. Author acceptance remains pending
 under CA-43712-TAROT-02. This lesson does not expand other ability contracts.
 
+Follow-up #363 / 5.5.5, 2026-10-19: native +user2 reproduced the same unarmed
+entry gap for equipped Seals. Append the matching state and opt-in, preserving
+all existing state indices. The established channel is a toggle, so release
+keeps it active and the next press stops it. Baseline/current native controls,
+exact per-tic spending and save evidence: `assets/validation_555/RESULTS.md`.
+An initially underfunded test exhausted legitimately before its hold assertion;
+seed enough existing maximum resource rather than changing production costs.
+
 ## CA-KP-031 â€” Clamp projectile travel before native collision
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED on GZDoom 4.14.2.

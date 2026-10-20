@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.4** — 2026-10-19.
+Documentation version: **5.5.5** — 2026-10-19.
+
+## 5.5.5 - Unarmed input evidence (#363)
+
+No art or audio is changed. The native fixture, reproducible scripts and evidence
+live in `assets/validation_555/`; private runtime packages and save copies remain
+under `build/`. Runtime changes are the unarmed input source and diagnostic
+release labels. The fixture is not campaign content or a distributable IWAD.
 
 ## 5.4.46 - House-transition evidence (#334)
 
