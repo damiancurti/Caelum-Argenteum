@@ -1,0 +1,305 @@
+{
+  "issue": 314,
+  "release": "5.5.6",
+  "required": [
+    {
+      "directory": "issue314-baseline01",
+      "label": "save",
+      "checks": 0,
+      "runtime_sha256": "ca212da4020d2c674a1a9a3aadedf2f680a6ca967e66a296e2d089d192444473",
+      "fixture_sha256": "21a5bb17389f449a1e57b1664f2ebcefd6b2e11e6e9cee7c762cc782d5308300",
+      "log_sha256": "b66fb3722dbab77d72d80a799d509c813e81088ba9d7c3e4ad68ce7af117bda7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-baseline01",
+      "label": "rollback",
+      "checks": 1,
+      "runtime_sha256": "ca212da4020d2c674a1a9a3aadedf2f680a6ca967e66a296e2d089d192444473",
+      "fixture_sha256": "21a5bb17389f449a1e57b1664f2ebcefd6b2e11e6e9cee7c762cc782d5308300",
+      "log_sha256": "be09d9c182ea0e43c572bc4a2cb4cd91d38b96befbc0f683085614cf111d7cc3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-baseline01",
+      "label": "neutral-before",
+      "checks": 0,
+      "runtime_sha256": "ca212da4020d2c674a1a9a3aadedf2f680a6ca967e66a296e2d089d192444473",
+      "fixture_sha256": "21a5bb17389f449a1e57b1664f2ebcefd6b2e11e6e9cee7c762cc782d5308300",
+      "log_sha256": "ec6a179fa5480ebeef55051991f0dd7120fd0c9b23115fc0db3249164ba72030",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "smoke",
+      "checks": 36,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "d9c712910af354537e44e5b398a40375735b2c7ed8df31edc601be45585db3ea",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "solver",
+      "checks": 14,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "815456d6dff27771533d7f5cd375907a7599e9156d34b5502e8f07abc91a897d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "npc",
+      "checks": 16,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "f4502db7c4c4dfd7cb6fee977bbf0520ce99dd4b144fe13aea995b7c9022a2d4",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "crouch",
+      "checks": 9,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "b18c18b0dad5bf6b92e2ffb1017ae969ffa456eb9c0f4a811b3acab88b25c1f9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "save",
+      "checks": 1,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "0ee1b87e0dd36050c4c04c978ac88e8f71a20607c3e444ce733d0e896814633d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "hub",
+      "checks": 10,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "71f8402342943d7dcd24eabf12bb68d61aa08d3d773a5e7cfdd116c57d32a7b1",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "load",
+      "checks": 3,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "c3a6b0a556b86520f5e388e109a71a1d27d634b9c74875cc3c603cfec27ad452",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "old-load",
+      "checks": 3,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "3e168a97b4f87ae0c502bc0ae1341cf636d84e3620147ea19d4f08d175106a03",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "neutral-after",
+      "checks": 0,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "6240a053a29983cea2b98d63b5f721e69d2248d640d53e74bd3ec74b82bfd26f",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current06",
+      "label": "lava-population",
+      "checks": 0,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "7bf160c7c9c34cdf7b87a8f34fabc3cf52d2e87c5aecad6343578bc6cc8bb3d6",
+      "log_sha256": "d38f077e2d8df1f48d6557c81dd61d724e96d4381d084146bf2a0125071486bf",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current07",
+      "label": "visual",
+      "checks": 0,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "401353aa7dddc7366e7e6f00eead9b13c25ecb0aac235bb1b8feac7d50322d4e",
+      "log_sha256": "e285b76086005e2ca1d501c2e92f657aa445cb98c2ae7aff3b976f28f12ae25f",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current07",
+      "label": "mansion-reference",
+      "checks": 0,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "401353aa7dddc7366e7e6f00eead9b13c25ecb0aac235bb1b8feac7d50322d4e",
+      "log_sha256": "4806e55ba34acaba82239b9260f9fdf42c596e4d99a7ffdb89394985a79bcbeb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    {
+      "directory": "issue314-current07",
+      "label": "sewer-reference",
+      "checks": 0,
+      "runtime_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+      "fixture_sha256": "401353aa7dddc7366e7e6f00eead9b13c25ecb0aac235bb1b8feac7d50322d4e",
+      "log_sha256": "d9df6b233af15d5c38c20cbcec6e7bebfcb23a2be23ef6e694760c990a67f597",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    }
+  ],
+  "excluded": [
+    {
+      "directory": "issue314-current01",
+      "label": "smoke",
+      "reason": "Fixture called unavailable CheckWater; replaced with elapsed native tics.",
+      "log_sha256": "10269fe404d1622e35c9f6c71de8f47a85d8132adea591248fb487ff0324b355"
+    },
+    {
+      "directory": "issue314-current03",
+      "label": "smoke",
+      "reason": "Fixture used reserved state identifier; renamed.",
+      "log_sha256": "c3189a52b5b9858963e1689f5800978489f8d43b061074bb9c40e229d6919375"
+    },
+    {
+      "directory": "issue314-current04",
+      "label": "npc",
+      "reason": "Production NPC current-contact projection remained stale after exit; fixed by resampling after closing the previous interval.",
+      "log_sha256": "167c49137639a7817174c0147b8d833710fd688fbf0b6269eba38a522a8e6787"
+    },
+    {
+      "directory": "issue314-current05",
+      "label": "hub",
+      "reason": "Fixture expected player return to the previous coordinates. Native changemap arrives at the map start; corrected expected support, retained NPC persistence assertion.",
+      "log_sha256": "f06855589cf18dd17176d82477eb6903ef27e2460a87904b96def79b630f3622"
+    }
+  ],
+  "performance": [
+    {
+      "label": "neutral-before",
+      "fixture_spawned_population": 512,
+      "fixture_alive": 512,
+      "simulation_tics_per_second": 34.975940400358,
+      "simulation_intervals": {
+        "count": 350,
+        "mean_ms": 28.591082571428572,
+        "p95_ms": 34.77897000000112,
+        "p99_ms": 36.264651999998094,
+        "maximum_ms": 38.667199999999866
+      },
+      "render_callback_intervals": {
+        "count": 599,
+        "mean_ms": 16.674030884808012,
+        "p95_ms": 19.25094,
+        "p99_ms": 20.546595999999997,
+        "maximum_ms": 22.3972
+      },
+      "application_presentation": "Unavailable: ETW access denied; reference runs do not retry.",
+      "mean_exposure": -0.566452
+    },
+    {
+      "label": "neutral-after",
+      "fixture_spawned_population": 512,
+      "fixture_alive": 512,
+      "simulation_tics_per_second": 34.99066519034052,
+      "simulation_intervals": {
+        "count": 350,
+        "mean_ms": 28.579050857142857,
+        "p95_ms": 35.54411999999902,
+        "p99_ms": 36.93795300000034,
+        "maximum_ms": 48.23649999999907
+      },
+      "render_callback_intervals": {
+        "count": 599,
+        "mean_ms": 16.66245792988314,
+        "p95_ms": 19.12014,
+        "p99_ms": 20.411383999999998,
+        "maximum_ms": 22.8553
+      },
+      "application_presentation": "Unavailable: ETW access denied; reference runs do not retry.",
+      "mean_exposure": -0.566452
+    },
+    {
+      "label": "lava-population",
+      "fixture_spawned_population": 512,
+      "fixture_alive": 512,
+      "simulation_tics_per_second": 35.007887977319044,
+      "simulation_intervals": {
+        "count": 350,
+        "mean_ms": 28.56499085714286,
+        "p95_ms": 36.97136499999961,
+        "p99_ms": 37.529851,
+        "maximum_ms": 51.2468000000008
+      },
+      "render_callback_intervals": {
+        "count": 597,
+        "mean_ms": 16.722535510887774,
+        "p95_ms": 20.60554,
+        "p99_ms": 24.76316399999999,
+        "maximum_ms": 50.2799
+      },
+      "application_presentation": "Unavailable: ETW access denied; reference runs do not retry.",
+      "mean_exposure": 58.22233
+    },
+    {
+      "label": "mansion-reference",
+      "fixture_spawned_population": 0,
+      "fixture_alive": 0,
+      "simulation_tics_per_second": 34.97727701198916,
+      "simulation_intervals": {
+        "count": 350,
+        "mean_ms": 28.589990000000004,
+        "p95_ms": 34.578414999999765,
+        "p99_ms": 35.45668999999849,
+        "maximum_ms": 40.61230000000069
+      },
+      "render_callback_intervals": {
+        "count": 599,
+        "mean_ms": 16.669375792988316,
+        "p95_ms": 18.0753,
+        "p99_ms": 19.098609999999997,
+        "maximum_ms": 20.6136
+      },
+      "application_presentation": "Unavailable: ETW access denied; reference runs do not retry.",
+      "mean_exposure": 0.0
+    },
+    {
+      "label": "sewer-reference",
+      "fixture_spawned_population": 0,
+      "fixture_alive": 0,
+      "simulation_tics_per_second": 34.99847756622587,
+      "simulation_intervals": {
+        "count": 350,
+        "mean_ms": 28.57267142857143,
+        "p95_ms": 36.432819999998905,
+        "p99_ms": 37.576974000000696,
+        "maximum_ms": 40.95520000000033
+      },
+      "render_callback_intervals": {
+        "count": 599,
+        "mean_ms": 16.6686878130217,
+        "p95_ms": 20.38068,
+        "p99_ms": 21.48954399999999,
+        "maximum_ms": 25.1159
+      },
+      "application_presentation": "Unavailable: ETW access denied; reference runs do not retry.",
+      "mean_exposure": 0.0
+    }
+  ],
+  "native_runs": 16,
+  "checks": 93,
+  "author_acceptance": {
+    "id": "CA314-01",
+    "origin": "5.5.6 / #314",
+    "date": "2026-10-19",
+    "confirmation": "La prueba dio correcto",
+    "qualifications": null
+  },
+  "limits": [
+    "Private room only; no campaign placement or realism claim.",
+    "Old/current/rollback saves restore exposure and live pawns; no persisted fields were added.",
+    "Water takes priority over submerged solid contact; no historical geometry reconstruction.",
+    "One ten-second observation per performance condition; no statistically established speedup.",
+    "Render callbacks are not application presents or monitor refresh. ETW was unavailable; no 60-FPS presentation acceptance.",
+    "Mansion/sewer samples are fixed spawn references, not full traversal acceptance; their native populations were not counted by the fixture."
+  ]
+}

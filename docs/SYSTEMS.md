@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.5** — 2026-10-19.
+Documentation version: **5.5.6** — 2026-10-19.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -4143,6 +4143,51 @@ warm a colder body. Eight local traces within 1024 map units identify at least
 three connected wall planes, blocking exterior wind; two walls do not. Roof
 testing is independent and stops rain. Authored ranch roofs are also supported.
 This finite geometry sampler is an approximation for irregular/segmented rooms.
+
+### Solid thermal surfaces (#314, 5.5.6)
+
+Author decisions on 2026-10-19 approve only ice **-40 C** and lava **1,000 C**
+in an isolated test room. These are game approximations, not universal Antarctic
+or volcanic temperatures. Campaign placement, other materials, remote radiation,
+melting/freezing, burning equipment and new elemental statuses are outside scope.
+The existing air/water solver lacked solid-floor contact; the author explicitly
+approved reusing **100 W/m² K** and the lowest **1/16** anatomical body row.
+`CaelumThermalSurfaceData` owns the surface catalog and coefficient reference.
+
+A supporting sector declares `user_ca_thermal_surface`: 0 none, 1 ice, 2 lava.
+A solid 3D floor uses its model sector, not a tagged floor underneath it.
+Contact requires a living, grounded body with no upward velocity, flight or
+noclip. Crouching preserves contact. Native water level or a sampled water row
+covering the feet takes priority. The approximation does not simulate submerged
+solid conduction in parallel with water. Existing anatomy maps the bottom row
+to actual clothing slots, including quadrupeds. For each contact area A and
+existing regional clo, G = A / (0.155 × clo + 1/100), in W/K. This area is removed
+from air exchange. Wetness does not multiply ground conductance a second time.
+Equipped broken clothing retains its existing physical insulation.
+
+G enters the shared world-time thermal balance at the authored surface
+temperature. Existing exposure, physiology, Toughness mitigation and real-time
+HP loss remain unchanged. There is no additional periodic/direct floor damage
+or Fire/Burn bypass. Redemption retains its existing temperature exclusion;
+the earlier Amparo wording does not establish another immunity.
+
+Player contact is sampled with existing thermal steps. On tagged maps, a local
+support query detects NPC contact transitions; touching NPCs close intervals
+each tic. Entry closes the previous interval with its previous surface, avoiding
+retroactive heating. After exit the current projection clears immediately.
+The current water/environment sample is used at interval boundaries; exact
+historical geometry reconstruction is not claimed. Untagged maps retain the
+usual staggered NPC cadence. One sector census at WorldLoaded owns the map flag;
+no new actor traversal or emitter is introduced. Existing shared fire/ranch
+and hub-reset traversals remain; this patch does not broaden them.
+
+Surface projections and schedules are transient, rebuilt on save/hub loading.
+Persistent thermal revision stays 9. Abstract journeys clear origin-floor
+contact; the destination is sampled on arrival. Repeated sampling carries no
+energy and repeated same-tic NPC callbacks consume no additional interval.
+Fixture, native evidence and limitations: assets/validation_556/RESULTS.md.
+The author accepted CA314-01 on 2026-10-19; testing this private room does not
+approve campaign placement.
 
 ### Energy, effort and clocks
 

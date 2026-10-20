@@ -9,6 +9,7 @@ class CaelumThermalService : Object play
         let copy=live.CopyForForecast();
         CaelumThermalBody.Refresh(body,copy);
         CaelumThermalEnvironment.Sample(body,copy);
+        CaelumThermalSurface.Sample(body,copy);
         copy.Bare=CaelumThermalBody.FurryAnimal(body);
         for(int slot=0;slot<4;slot++)
         {
@@ -93,7 +94,7 @@ class CaelumThermalService : Object play
     }
 
     static void Advance(Actor body,double worldSeconds,double realSeconds,
-        double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0)
+        double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0,int surfaceKind=-1)
     {
         let thermal=CaelumThermalBody.Get(body,true);
         if(thermal==null || body.health<=0)return;
@@ -102,6 +103,7 @@ class CaelumThermalService : Object play
         if(thermal.Inertia<=0)return;
         if(thermal.Coverage[0]+thermal.Coverage[1]+thermal.Coverage[2]+thermal.Coverage[3]<=0)
             CaelumThermalBody.SampleCoverage(body,thermal,0);
+        CaelumThermalSurface.Sample(body,thermal,surfaceKind);
         for(int slot=0;slot<4;slot++)
         {
             thermal.Material[slot]=CaelumThermalBody.Material(body,slot);
@@ -229,9 +231,11 @@ class CaelumThermalService : Object play
             double wetFactor=1+CaelumThermalData.WET_EXCHANGE_PER_PERCENT*(beforeWet+afterWet)/2.0;
             double airG=coefficients.AirConductance[slot]*wetFactor;
             double waterG=coefficients.WaterConductance[slot];
-            conductance+=airG+waterG;
+            double contactG=coefficients.ContactConductance[slot];
+            conductance+=airG+waterG+contactG;
             imbalance+=airG*(thermal.AirC-center-referenceOffset)
-                +waterG*(thermal.SubmergedTemperatureC[slot]-center-referenceOffset);
+                +waterG*(thermal.SubmergedTemperatureC[slot]-center-referenceOffset)
+                +contactG*(thermal.SurfaceC-center-referenceOffset);
         }
         double respiration=coefficients.RespirationConductance
             *(CaelumBreathing.Factor(thermal.BreathingAirRatio,thermal.Exposure,thermal.Toughness,thermal.CanBreathe)-1);

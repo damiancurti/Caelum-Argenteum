@@ -8,6 +8,9 @@ class CaelumThermalCoefficients : Object play
     double Fraction[4],Immersion[4],PieceArea[4],ExposedArea[4],Capacity[4];
     int Material[4];
     double AirConductance[4],WaterConductance[4],SurfaceScale[4],EvaporationFactor[4];
+    double Contact[4],ContactConductance[4];
+    bool SurfaceScheduleReady,SurfaceMap;
+    int PreviousSurface;
     CaelumAnatomyProfile Anatomy;
     int AnatomyGeneration;
     double RowCoverage[64];
@@ -52,14 +55,15 @@ class CaelumThermalCoefficients : Object play
         for(int slot=0;slot<4;slot++)
         {
             bool shape=geometry || !Ready || Fraction[slot]!=thermal.Coverage[slot]
-                || Immersion[slot]!=thermal.SubmergedCoverage[slot];
+                || Immersion[slot]!=thermal.SubmergedCoverage[slot] || Contact[slot]!=thermal.SurfaceCoverage[slot];
             bool materialChanged=!Ready || Material[slot]!=thermal.Material[slot];
             if(shape || materialChanged)
             {
                 Fraction[slot]=thermal.Coverage[slot];Immersion[slot]=thermal.SubmergedCoverage[slot];
+                Contact[slot]=thermal.SurfaceCoverage[slot];
                 Material[slot]=thermal.Material[slot];MaterialBuilds++;changed=true;
                 PieceArea[slot]=Area*Fraction[slot];
-                ExposedArea[slot]=Area*Max(0.0,Fraction[slot]-Min(Fraction[slot],Immersion[slot]));
+                ExposedArea[slot]=Area*Max(0.0,Fraction[slot]-Min(Fraction[slot],Immersion[slot])-Contact[slot]);
                 Capacity[slot]=PieceArea[slot]*CaelumThermalMoisture.CapacityPerArea(Material[slot]);
             }
             if(shape || materialChanged || windChanged)
@@ -68,6 +72,8 @@ class CaelumThermalCoefficients : Object play
                 AirConductance[slot]=ExposedArea[slot]*CaelumThermalRules.ConductancePerArea(clo,Film);
                 WaterConductance[slot]=Area*Min(Fraction[slot],Immersion[slot])
                     *CaelumThermalRules.ConductancePerArea(clo,CaelumThermalData.WATER_CONVECTION);
+                ContactConductance[slot]=Area*Contact[slot]
+                    *CaelumThermalRules.ConductancePerArea(clo,CaelumThermalSurfaceData.CONTACT_CONDUCTANCE);
                 SurfaceScale[slot]=1.0/(1+CaelumThermalData.CLO_RESISTANCE*clo*Film);
                 EvaporationFactor[slot]=CaelumThermalData.Permeability(Material[slot])*CaelumThermalData.LEWIS_K_PER_KPA
                     *Convection/CaelumThermalData.LATENT_J_PER_KG;

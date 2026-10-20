@@ -1,0 +1,23 @@
+{
+  "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+  "args": [
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+    "--process_name",
+    "gzdoom.exe",
+    "--output_file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue314-baseline01\\neutral-before.csv",
+    "--no_console_stats",
+    "--qpc_time_ms",
+    "--session_name",
+    "CaelumIssue314",
+    "--timed",
+    "180",
+    "--terminate_after_timed",
+    "--terminate_on_proc_exit"
+  ],
+  "markers": {
+    "CA314 PERF BEGIN": 311644602.3921,
+    "CA314 PERF END": 311654640.2782
+  },
+  "collector_exit": 6
+}

@@ -70,10 +70,17 @@ class CaelumThermalWorld : StaticEventHandler
     Array<CaelumThermalFireSource> FireSources;
     Array<CaelumVehicleRanch> Ranches;
     int FireSampleTic;
+    bool HasThermalSurfaces;
     override void WorldLoaded(WorldEvent e)
     {
         ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;NextPhase=0;FireSources.Clear();Ranches.Clear();FireSampleTic=-TICRATE;
         SampleSource=null;for(int i=0;i<5;i++)Samples[i]=null;
+        // Una lectura de los sectores al cargar identifica mapas con catálogo
+        // térmico. No recorre actores ni agrega consultas por tic a mapas ajenos.
+        HasThermalSurfaces=false;
+        for(int i=0;i<level.Sectors.Size();i++)
+            if(CaelumThermalSurfaceData.Valid(level.Sectors[i].GetUDMFInt('user_ca_thermal_surface')))
+            {HasThermalSurfaces=true;break;}
         // Los mapas descargados no simulan fisiología. Al volver de un hub,
         // conservar el estado personal y reiniciar sólo los relojes locales.
         if(e.IsReopen && !e.IsSaveGame)
