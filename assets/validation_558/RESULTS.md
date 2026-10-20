@@ -3,7 +3,7 @@
 ## Current coat, brows and scale revision
 
 Author acceptance CA369-01 (5.5.8 / #369): passed on 2026-10-20. The author
-confirmed "El toro qued? bien" and authorized merge/issue closure. The final
+confirmed "El toro quedó bien" and authorized merge/issue closure. The final
 visual candidate is accepted; native technical evidence and its presentation
 limitations remain as recorded below. No additional manual route or FPS result
 is inferred. This acceptance update changes no runtime bytes or release version.

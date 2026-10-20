@@ -9,7 +9,7 @@ forehead/horn reconstruction, reduced mesh, quadruped rig/skin, native animated
 export and inherited MAP01 coverage. Combat/state timing and collision remain
 unchanged; rollback is documented in SYSTEMS. Isolated QA and limitations live
 in `assets/validation_558/RESULTS.md`. The author accepted CA369-01 on 2026-10-20:
-"El toro qued? bien", and authorized merge/closure. The final coat, brows and
+"El toro quedó bien", and authorized merge/closure. The final coat, brows and
 1.5 visual scale are accepted; the confirmed entry is removed from pending_test.
 Native checks remain distinct from author-reported visual approval; no display
 FPS result is inferred. Keep #316 deferred and all issue PRs separate.

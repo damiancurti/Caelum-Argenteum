@@ -5,7 +5,7 @@ Documentation version: **5.5.8** — 2026-10-19.
 ## 5.5.8 - Cleaned animated bull model (#369)
 
 **Author acceptance, 2026-10-20:** CA369-01 (origin 5.5.8 / #369) passed.
-The author confirmed "El toro qued? bien" for the final coat/brows/1.5 visual
+The author confirmed "El toro quedó bien" for the final coat/brows/1.5 visual
 scale candidate and explicitly authorized issue closure and PR integration.
 The confirmed entry is removed from pending_test.txt, which is now empty.
 This supersedes the earlier candidate-pending notes below; release 5.5.8 and
