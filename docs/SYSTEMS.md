@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## Bull presentation and reversible saves (#369, 5.5.8)
+
+All ordinary bulls and the existing MAP01 tutorial subclass use the cleaned
+animated model by default. This is a visual replacement: attributes, damage,
+Air costs, charge acceleration/cap, cushioning, anatomy, health effects,
+collision cylinder, AI, native state indices/tics and tutorial grace/fade remain
+authoritative. The gore wrapper calls the original melee action exactly once.
+Its three-tic visual notification can overlap the next preparation; charge,
+pain and death take priority. This does not introduce an attack delay.
+
+Each bull owns at most one non-interacting model actor. Visual revision 1 is
+idempotent and initializes lazily in old saves, including tutorial early returns.
+Archived corpses retire their helper; Recall recreates it when ticking resumes.
+Redemption invisibility and tutorial alpha/fade are mirrored. The shared >=500
+living-combatant census is unchanged; model actors are not combatants.
+
+`ca_bull_3d false` restores original sprites and retires helpers. Before opening
+a new save in a pre-5.5.8 build, disable the CVar, allow several unpaused tics,
+and save a separate copy. Keep the original save/package. Load that copy with
+its matching map revision; `ca_bull_3d true` restores models in the current
+build. A save made with active helper instances requires the current build.
+The visual registry blocks recreation from WorldUnloaded until WorldLoaded,
+so inactive hub snapshots contain native bulls without the helper class. Native
+old/current/rollback and inactive-hub tests establish this procedure; do not
+infer backward compatibility merely from an active-map screenshot.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 

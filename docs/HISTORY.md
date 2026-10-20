@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Cleaned animated bull model (#369)
+
+The author requested cleanup of generated 3D surface artifacts and approved:
+"Reconstruir localmente frente y cuernos para dejarlos limpios" on 2026-10-19.
+The supplied GLB and both embedded images are preserved with their actual
+material roles. Cleanup, local repair, albedo rebake, a quadruped rig and native
+MD3 export replace bull presentation everywhere, including the tutorial.
+Original sprites remain. Combat statistics, costs, collision and native state
+ordering/tics are unchanged; a visual helper follows each original body.
+
+Native tests cover old/current saves, documented rollback, archived corpses,
+tutorial idle/grace and inactive hubs. The original MAP01 encounter's 181-tic
+combat trace matches the baseline, excluding the presentation sprite index.
+An initial hub teardown was insufficient: a final tic after WorldUnloaded
+recreated helpers before the snapshot. A transition gate fixes the reproduced
+old-runtime load failure; CA-KP-138 records the lesson. Fixture defects and
+superseded visual drafts remain distinguished from production failures in QA.
+Static validation and normal packaging pass; two frozen-source exports match.
+The retained native inventory contains 18 runs and 147 newly logged PASS checks,
+including archive Recall, Redemption visibility and tutorial corpse fade/removal.
+Static/build results, deterministic hashes, native run inventory and performance
+tails are recorded in `assets/validation_558/RESULTS.md` and `report.json`.
+Render callbacks are not application display presentation; ETW access remains
+unavailable. Author surface/animation/gameplay acceptance remains CA369-01,
+pending. No 6,000-attacker case was run and no performance policy was changed.
 
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 

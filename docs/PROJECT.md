@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Cleaned animated bull presentation (#369)
+
+The author's GLB is cleaned, reduced, rigged and exported to native MD3 for all
+bulls, including MAP01. Forehead/horn reconstruction follows the explicit
+2026-10-19 decision. Existing combat and physical dimensions remain unchanged.
+Source provenance, editable art, deterministic export and isolated native
+evidence are retained under `assets/source/art/bull_3d` and `assets/validation_558`.
+CA369-01 is pending author visual/gameplay acceptance. Performance callback
+measurements do not establish display presentation/FPS acceptance. #363 and
+#314 are accepted; #315's design-only delivery retains current damage; #316
+remains deferred until a suitable authored map/encounter exists.
 
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 

@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.5.7.** Obtain and update the complete repository, validate
+**Current release: 5.5.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.5.8 replaces the bull presentation with the author's cleaned, rigged 3D model
+(#369), including the MAP01 tutorial bull. Native combat, timings and collision
+remain authoritative. Original sprites are retained; see the reversible-save
+procedure in SYSTEMS and [validation](assets/validation_558/RESULTS.md).
+Author visual/gameplay acceptance is pending as CA369-01.
 
 V5.5.7 documents the future melee-energy contract (#315). The author deferred
 conversion and retained current damage. No new combat balance or save schema

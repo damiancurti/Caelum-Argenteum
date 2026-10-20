@@ -1,0 +1,55 @@
+{
+  "bones": 23,
+  "vertices": 3014,
+  "actions": {
+    "Idle": {
+      "keyframes": 81,
+      "samples": 20
+    },
+    "Walk": {
+      "keyframes": 33,
+      "samples": 16
+    },
+    "Run": {
+      "keyframes": 17,
+      "samples": 16
+    },
+    "Prepare": {
+      "keyframes": 4,
+      "samples": 3
+    },
+    "PrepareTrial": {
+      "keyframes": 19,
+      "samples": 9
+    },
+    "Charge": {
+      "keyframes": 17,
+      "samples": 16
+    },
+    "Gore": {
+      "keyframes": 4,
+      "samples": 3
+    },
+    "Pain": {
+      "keyframes": 9,
+      "samples": 8
+    },
+    "Death": {
+      "keyframes": 26,
+      "samples": 14
+    },
+    "Corpse": {
+      "keyframes": 2,
+      "samples": 1
+    },
+    "Rest": {
+      "keyframes": 81,
+      "samples": 20
+    },
+    "Stun": {
+      "keyframes": 41,
+      "samples": 10
+    }
+  },
+  "scale": 83.63801331256103
+}

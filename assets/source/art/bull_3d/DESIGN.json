@@ -1,0 +1,725 @@
+{
+  "issue": 369,
+  "source": {
+    "file": "original.glb",
+    "author_supplier": "Damián Curti",
+    "generator_label": "Copilot3D",
+    "attachment": "https://github.com/user-attachments/files/33690117/Copilot3D-96376942-c600-4bc5-94a1-3c860b6d4131.zip",
+    "original_name": "Copilot3D-96376942-c600-4bc5-94a1-3c860b6d4131.glb",
+    "source_zip_sha256": "4c554f8bc9ef91ffd9af7fb7359dba96c877de2884d9726a0479a0ab0d9c69b3"
+  },
+  "blender": "4.5.3",
+  "scope": "Visual cleanup, quadruped rig, animation and runtime export. No combat dimensions or timing changes.",
+  "author_decision": "2026-10-19: reconstruct forehead and horns locally while preserving silhouette and colors.",
+  "head_repair": {
+    "cut_x": 0.22,
+    "cut_z": 0.34,
+    "center": [
+      0.3,
+      0.06,
+      0.39
+    ],
+    "radii": [
+      0.115,
+      0.13,
+      0.135
+    ],
+    "color": [
+      0.006,
+      0.004,
+      0.0025,
+      1
+    ],
+    "horn_path": [
+      [
+        0.28,
+        0.105,
+        0.46
+      ],
+      [
+        0.25,
+        0.2,
+        0.485
+      ],
+      [
+        0.26,
+        0.225,
+        0.54
+      ],
+      [
+        0.3,
+        0.2,
+        0.6
+      ],
+      [
+        0.33,
+        0.15,
+        0.62
+      ]
+    ],
+    "horn_radius": 0.037,
+    "horn_rings": 20,
+    "horn_sides": 10,
+    "horn_base_color": [
+      0.28,
+      0.11,
+      0.065,
+      1
+    ],
+    "horn_mid_color": [
+      0.82,
+      0.66,
+      0.48,
+      1
+    ],
+    "horn_tip_color": [
+      0.16,
+      0.09,
+      0.055,
+      1
+    ],
+    "eye_position": [
+      0.384,
+      0.078,
+      0.363
+    ],
+    "eye_radii": [
+      0.011,
+      0.004,
+      0.007
+    ],
+    "eye_color": [
+      0.003,
+      0.0015,
+      0.0008,
+      1
+    ],
+    "bake_cut_z": 0.48
+  },
+  "cleanup": {
+    "voxel_size": 0.009,
+    "smooth_factor": 1.0,
+    "smooth_iterations": 20,
+    "target_triangles": 6000,
+    "bake_size": 1024,
+    "bake_samples": 16,
+    "bake_cage": 0.04
+  },
+  "orientation": {
+    "rotate_z_degrees": 180,
+    "source_floor_z": -0.31093481183052063,
+    "height_mu": 51.8,
+    "source_height": 0.6218696236610413
+  },
+  "rig": {
+    "root": [
+      0,
+      0,
+      0.28
+    ],
+    "pelvis": [
+      -0.24,
+      0,
+      0.36
+    ],
+    "chest": [
+      0.12,
+      0,
+      0.38
+    ],
+    "neck": [
+      0.2,
+      0,
+      0.4
+    ],
+    "head": [
+      0.23,
+      0.04,
+      0.37
+    ],
+    "muzzle": [
+      0.43,
+      0.08,
+      0.29
+    ],
+    "tail_base": [
+      -0.33,
+      -0.04,
+      0.35
+    ],
+    "tail_mid": [
+      -0.43,
+      -0.08,
+      0.23
+    ],
+    "tail_tip": [
+      -0.47,
+      -0.14,
+      0.07
+    ],
+    "leg_y": 0.105,
+    "front": [
+      [
+        0.16,
+        0,
+        0.29
+      ],
+      [
+        0.19,
+        0,
+        0.14
+      ],
+      [
+        0.23,
+        0,
+        0.025
+      ]
+    ],
+    "hind": [
+      [
+        -0.27,
+        0,
+        0.3
+      ],
+      [
+        -0.22,
+        0,
+        0.14
+      ],
+      [
+        -0.31,
+        0,
+        0.025
+      ]
+    ],
+    "legs": {
+      "Front_L": {
+        "hip": [
+          0.12,
+          -0.12,
+          0.31
+        ],
+        "knee": [
+          0.135,
+          -0.12,
+          0.15
+        ],
+        "foot": [
+          0.195,
+          -0.12,
+          0.024
+        ]
+      },
+      "Front_R": {
+        "hip": [
+          0.1,
+          0.09,
+          0.31
+        ],
+        "knee": [
+          0.12,
+          0.09,
+          0.15
+        ],
+        "foot": [
+          0.17,
+          0.09,
+          0.024
+        ]
+      },
+      "Hind_L": {
+        "hip": [
+          -0.24,
+          -0.16,
+          0.3
+        ],
+        "knee": [
+          -0.17,
+          -0.16,
+          0.15
+        ],
+        "foot": [
+          -0.15,
+          -0.16,
+          0.037
+        ]
+      },
+      "Hind_R": {
+        "hip": [
+          -0.26,
+          0.045,
+          0.3
+        ],
+        "knee": [
+          -0.21,
+          0.045,
+          0.15
+        ],
+        "foot": [
+          -0.24,
+          0.045,
+          0.037
+        ]
+      }
+    }
+  },
+  "motion": {
+    "walk_stride_mu": 26,
+    "run_stride_mu": 52,
+    "walk_lift": 0.055,
+    "run_lift": 0.085,
+    "walk_stance": 0.62,
+    "run_stance": 0.34,
+    "body_breath": 0.007,
+    "death_roll_degrees": 86,
+    "death_drop": 0.22
+  },
+  "actions": {
+    "Idle": {
+      "tics": 80,
+      "samples": 20,
+      "loop": true
+    },
+    "Walk": {
+      "tics": 32,
+      "samples": 16,
+      "loop": true
+    },
+    "Run": {
+      "tics": 16,
+      "samples": 16,
+      "loop": true
+    },
+    "Prepare": {
+      "tics": 3,
+      "samples": 3,
+      "loop": false
+    },
+    "PrepareTrial": {
+      "tics": 18,
+      "samples": 9,
+      "loop": false
+    },
+    "Charge": {
+      "tics": 16,
+      "samples": 16,
+      "loop": true
+    },
+    "Gore": {
+      "tics": 3,
+      "samples": 3,
+      "loop": false
+    },
+    "Pain": {
+      "tics": 8,
+      "samples": 8,
+      "loop": false
+    },
+    "Death": {
+      "tics": 25,
+      "samples": 14,
+      "loop": false
+    },
+    "Corpse": {
+      "tics": 1,
+      "samples": 1,
+      "loop": false
+    },
+    "Rest": {
+      "tics": 80,
+      "samples": 20,
+      "loop": true
+    },
+    "Stun": {
+      "tics": 40,
+      "samples": 10,
+      "loop": true
+    }
+  },
+  "export_actions": {
+    "Idle": {
+      "tics": 80,
+      "samples": 20,
+      "loop": true,
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76
+      ],
+      "sample_tics": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76
+      ]
+    },
+    "Walk": {
+      "tics": 32,
+      "samples": 16,
+      "loop": true,
+      "frames": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30
+      ],
+      "sample_tics": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30
+      ]
+    },
+    "Run": {
+      "tics": 16,
+      "samples": 16,
+      "loop": true,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sample_tics": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "Prepare": {
+      "tics": 3,
+      "samples": 3,
+      "loop": false,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "sample_tics": [
+        0,
+        1,
+        2
+      ]
+    },
+    "PrepareTrial": {
+      "tics": 18,
+      "samples": 9,
+      "loop": false,
+      "frames": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        11,
+        13,
+        15,
+        17
+      ],
+      "sample_tics": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        11,
+        13,
+        15,
+        17
+      ]
+    },
+    "Charge": {
+      "tics": 16,
+      "samples": 16,
+      "loop": true,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sample_tics": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "Gore": {
+      "tics": 3,
+      "samples": 3,
+      "loop": false,
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "sample_tics": [
+        0,
+        1,
+        2
+      ]
+    },
+    "Pain": {
+      "tics": 8,
+      "samples": 8,
+      "loop": false,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sample_tics": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "Death": {
+      "tics": 25,
+      "samples": 14,
+      "loop": false,
+      "frames": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        18,
+        20,
+        22,
+        24
+      ],
+      "sample_tics": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        18,
+        20,
+        22,
+        24
+      ]
+    },
+    "Corpse": {
+      "tics": 1,
+      "samples": 1,
+      "loop": false,
+      "frames": [
+        0
+      ],
+      "sample_tics": [
+        0
+      ]
+    },
+    "Rest": {
+      "tics": 80,
+      "samples": 20,
+      "loop": true,
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76
+      ],
+      "sample_tics": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68,
+        72,
+        76
+      ]
+    },
+    "Stun": {
+      "tics": 40,
+      "samples": 10,
+      "loop": true,
+      "frames": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "sample_tics": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ]
+    }
+  },
+  "export_transform": {
+    "scale": 83.63801331256103,
+    "floor": 0.0013999160146340728
+  }
+}

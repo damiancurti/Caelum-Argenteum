@@ -107,3 +107,6 @@ user int ca_journal_quest_status = 0;
 
 // Compatibilidad #132: MAP03 usa refuerzos automáticamente, sin depender del CVar.
 server bool ca_test_siege_reinforcements = false;
+
+// Presentación reversible del toro; desactivar antes de guardar para rollback.
+server bool ca_bull_3d = true;

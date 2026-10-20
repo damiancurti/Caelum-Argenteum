@@ -631,6 +631,7 @@ class CaelumM00Bull : CaelumBull
 
     override void Tick()
     {
+        EnsureBullModel();
         if (health > 0)
         {
             if (!TrialReleased && TrialFighter == null) { Vel = (0,0,0); Target = null; bShootable = false; return; }
@@ -665,7 +666,7 @@ class CaelumM00Bull : CaelumBull
     Melee:
         BULL F 18 A_FaceTarget;
         BULL G 5 A_CaelumBeginBullCharge;
-        BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
+        BULL G 0 A_CaelumBullModelGore(CaelumConstants.BULL_GORE_BASE_DAMAGE);
         BULL G 0 A_CaelumEndBullCharge;
         Goto See;
     Death:

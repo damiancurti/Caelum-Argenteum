@@ -1,6 +1,54 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Cleaned animated bull model (#369)
+
+The author supplied the Copilot3D GLB linked in
+`assets/source/art/bull_3d/DESIGN.json`. Its original 7,511,584 bytes are preserved
+as `original.glb` (SHA-256
+`21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97`).
+The input contains 106,519 vertices, 148,524 triangles, one material and no rig
+or animation. Embedded image 0 is base color; image 1 is metallic/roughness
+(G roughness, B metallic). It is not a normal map. Both original PNGs and their
+actual source roles are retained; MD3 samples the baked albedo only. Provenance
+and modifications ship in `src/licenses/BULL_3D_MODEL.txt`; no new generator
+license is inferred from the author's attachment.
+
+On 2026-10-19 the author requested surface cleanup and explicitly approved
+local reconstruction of the forehead and horns while preserving silhouette and
+colors. Voxel cleanup removes the thin generated folds before the head repair;
+the repaired transition is blended into the closed body. The muzzle, stocky
+body, tail and brown/ivory palette remain. Component-isolated baking prevents
+horn colors from projecting onto the forehead. The new forehead's dark color
+blends into the original albedo. The runtime mesh has 6,000 triangles and 4,983
+UV-split MD3 vertices, compared with the source's 148,524 triangles.
+
+The editable `bull.blend` contains a 23-bone quadruped rig, normalized painted
+skin weights, IK feet and 12 actions: idle breathing, walk, run, ordinary and
+tutorial charge preparation, charge, gore, pain, death, corpse, rest and stun.
+There are 136 exported pose samples in one MD3 surface. Death reaches its final
+pose at the original frame-N boundary (25 tics); the original corpse hold and
+tutorial fade remain native. A uniform art scale aligns neutral height to the
+existing 51.8-unit bull; actor radius 15.6, height and mass are not changed to
+fit art. Floor correction belongs to resting/falling artwork, not physics.
+
+`authoring.py` and `rigging.py` retain construction history; the frozen `.blend`
+is authoritative editable art input and is not promised to serialize identically
+when rebuilt. Runtime export is deterministic with pinned Blender 4.5.3:
+`blender -b --python assets/generators/export_bull_model.py -- --output <fresh-directory> --install`.
+The generator samples only `Bull_surface`, excluding retained references and
+bake proxies. It writes MD3, skin, native frame states, MODELDEF and owned
+transparent sprite aliases. It reuses the accepted Domingo MD3 format pattern,
+without changing the Domingo pilot. No external replacement mesh, executable,
+IWAD or fixture is packaged. Original bull sprites are preserved.
+
+The presentation helper follows the original bull locally. Distance-driven
+gaits use discrete simulation samples to avoid native time interpolation moving
+feet on a stopped body; other clips retain native model interpolation. Visual
+frames never delay attacks. Native appearance, saves, hub rollback and a real
+MAP01 encounter are checked separately from author acceptance. See
+`assets/validation_558/RESULTS.md`; CA369-01 remains pending.
 
 ## 5.5.6 - Thermal surface fixture (#314)
 

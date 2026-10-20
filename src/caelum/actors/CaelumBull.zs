@@ -7,6 +7,32 @@ class CaelumBull : CaelumCombatActor
     double BullRunningSpeed;
     double BullChargeSpeed;
     int BullChargeRevision;
+    CaelumBullModelBody BullModel;
+    int BullModelRevision,BullModelGoreUntil;
+
+    void EnsureBullModel()
+    {
+        // Revisión visual idempotente: no altera estados, salud ni recursos.
+        if(BullModelRevision<1)BullModelRevision=1;
+        if(!CaelumBullModelBody.Enabled() || (health<=0 && CaelumCorpseArchive.Suspended(self)))
+        {
+            if(BullModel!=null)BullModel.ReleaseOwner();
+            return;
+        }
+        if(BullModel==null)
+        {
+            BullModel=CaelumBullModelBody(Actor.Spawn('CaelumBullModelBody',Pos,NO_REPLACE));
+            if(BullModel!=null){BullModel.Master=self;BullModel.UpdateVisual();}
+        }
+    }
+
+    action void A_CaelumBullModelGore(double damage)
+    {
+        // Una sola llamada original; el aviso sólo anima la presentación.
+        A_CaelumProfiledMeleeAttack(damage);
+        let bull=CaelumBull(self);
+        if(bull!=null)bull.BullModelGoreUntil=level.time+CaelumBullModelFrames.Duration(CaelumBullModelFrames.GORE);
+    }
 
     double GetBullRunningSpeed()
     {
@@ -189,10 +215,12 @@ class CaelumBull : CaelumCombatActor
         BullRunningSpeed = GetBullRunningSpeed();
         StopBullCharge();
         BullChargeRevision=CaelumBullRules.REVISION;
+        EnsureBullModel();
     }
 
     override void Tick()
     {
+        EnsureBullModel();
         if(CaelumRedemption.Pending(self))return;
         EnsureBullChargeRevision();
         if (BullChargeActive)
@@ -245,7 +273,7 @@ class CaelumBull : CaelumCombatActor
         // avance. Sus 45 puntos son la base previa a Fuerza, masa y defensas.
         BULL F 3 A_FaceTarget;
         BULL G 5 A_CaelumBeginBullCharge;
-        BULL G 0 A_CaelumProfiledMeleeAttack(
+        BULL G 0 A_CaelumBullModelGore(
             CaelumConstants.BULL_GORE_BASE_DAMAGE
         );
         BULL G 0 A_CaelumEndBullCharge;
@@ -277,7 +305,7 @@ class CaelumBull : CaelumCombatActor
         BURN ABCD 4;
         Loop;
     BullChargeFinish:
-        BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
+        BULL G 0 A_CaelumBullModelGore(CaelumConstants.BULL_GORE_BASE_DAMAGE);
         Goto See;
     RestLying:
         SLBU A -1;

@@ -2,6 +2,11 @@
 /docs/*.md text eol=lf
 /docs/MAP01.txt text eol=lf
 
+# Preserve deterministic #369 generated text across Windows checkouts.
+/src/caelum/actors/CaelumBullModelFrames.zs text eol=lf
+/src/graphics/caelum/bull_model.textures text eol=lf
+/assets/generators/export_bull_model.py text eol=lf
+
 # Preserve #255 native evidence and source fingerprints across checkouts.
 /assets/validation_530/** -text whitespace=cr-at-eol
 /assets/validation_530/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

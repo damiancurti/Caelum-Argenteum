@@ -1,0 +1,29 @@
+Caelum Argenteum - bull model, issue #369, release 5.5.8.
+Author/project: Damian Curti / Caelum Argenteum.
+
+Source supplied by the author:
+https://github.com/user-attachments/files/33690117/Copilot3D-96376942-c600-4bc5-94a1-3c860b6d4131.zip
+Original generator label: Copilot3D. The attachment and label are provenance;
+this notice does not assert a new license or ownership of the generator.
+Original GLB SHA256:
+21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97
+
+The original GLB and its two embedded PNGs are retained under
+assets/source/art/bull_3d. Image 0 is base color. Image 1 is metallic/roughness
+(green roughness, blue metallic), not a normal map. The MD3 uses baked albedo;
+the source material roles remain recorded in the editable artwork/provenance.
+
+Project modifications: closed/remeshed and smoothed generated folds; reduced
+topology; locally rebuilt forehead and horns, as approved by the author on
+2026-10-19; retopologized UV atlas, component-isolated albedo bake, quadruped
+armature/painted weights, breathing, walk/run, charge preparation/charge/gore,
+pain, death/corpse, rest and stun animation. The original muzzle, body form and
+brown/ivory palette are retained. No additional external mesh or Doom art is
+incorporated. Original project bull sprites remain available for rollback.
+
+Blender 4.5.3 LTS authoring source: assets/source/art/bull_3d/bull.blend.
+The .blend is editable art input, not byte-identically generated runtime output.
+authoring.py and rigging.py are construction transcripts. Deterministic export
+from the frozen source: assets/generators/export_bull_model.py. Only the MD3,
+baked skin, owned transparent fallback, registrations and this notice ship.
+No Blender executable, development IWAD, savegame or test fixture ships.
