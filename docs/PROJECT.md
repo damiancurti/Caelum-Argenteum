@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.1** — 2026-10-20.
+Documentation version: **5.6.2** — 2026-10-20.
+
+## 5.6.2 - Ordinary native storage (#381)
+
+All stash-derived chests support native physical storage with the author's
+10/25/100 slots, 100/1,000/10,000 kg capacity and 10% empty mass. Tier dimensions
+double; the existing chest stays medium. Transport, placement, destruction,
+reservation/temporary protection and exact transfer are integrated with the
+inventory service and live menu. Native keys and existing reward quotas remain.
+Revision-1 initialization and source-bound labyrinth policy preserve old gaps;
+carried owners/contents and TIDs survive travel. Evidence and compatibility
+limits: `assets/validation_562/RESULTS.md`. CA381-01 awaits author testing.
+The issue has its own branch/PR above #377; #378 and other design-dependent
+deliveries remain separate. No merge or author acceptance is implied.
 
 ## 5.6.1 - Merchant coordination (#377)
 

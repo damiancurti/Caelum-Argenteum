@@ -990,6 +990,8 @@ class CaelumJournalOverlay : EventHandler
         int essenceType
     )
     {
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER)
+            return StringTable.Localize(CaelumContainerRules.NameKey(itemType),false);
         String sizeName = StringTable.Localize(
             CaelumDisplayNames.GetEquipmentSizeKey(equipmentSize), false
         );

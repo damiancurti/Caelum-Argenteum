@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.1** — 2026-10-20.
+Documentation version: **5.6.2** — 2026-10-20.
+
+## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
+
+The author approved all chest classes, stack-based spaces, three capacities,
+10% empty mass, transportation, no nesting, exact full requested transfers and
+spilled contents on destruction. A later clarification doubles each linear
+dimension between tiers and retains the existing model as medium. The author
+is away during implementation; manual tests remain pending.
+
+The chest remains the native Actor owner of stored objects. A carried handle
+preserves that owner through saves/travel; the live-menu projection routes exact
+transactions through InventoryService. Existing locks, reward quotas and retired
+loot backups remain. New storage and source-policy state have revision 1.
+
+Independent review found and corrected water-container stacking, protected
+temporary/Tarot transfers, processing-manual acquisition and inherited boxed
+arrow routing. Native tests exposed lost map-local TID registration during
+travel and a placement sight test against the intentionally hidden carried body;
+both were corrected. Visual inspection exposed a missing LiveMenu context,
+then verified the integrated bilingual storage display. Early fixture errors
+(small-tier initialization, null legacy catalogue slots and premature map
+commands) remain separate from passing evidence.
+
+Fifteen final native runs pass 175 assertions; static validation reports no
+errors. See `assets/validation_562/RESULTS.md` for results, original and
+reversed-save rollback, retained hashes and limitations. CA381-01 is outstanding
+in pending_test.txt. This entry records implementation, not author acceptance,
+merge or issue closure.
 
 ## 5.6.1 - Merchant coordinator (#377), 2026-10-20
 

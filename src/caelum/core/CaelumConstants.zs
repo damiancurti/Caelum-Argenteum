@@ -528,7 +528,8 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_AMULET = 8;
     const EQUIPMENT_KIND_SEAL = 9;
     const EQUIPMENT_KIND_CURRENCY = 10;
-    const EQUIPMENT_KIND_COUNT = 11;
+    const EQUIPMENT_KIND_CONTAINER = 11;
+    const EQUIPMENT_KIND_COUNT = 12;
 
     // La Caja Mágica es una capacidad permanente del personaje: su estructura
     // pesa siempre 1 gramo. El contenido comparte una reducción igual a la

@@ -19,6 +19,8 @@ class CaelumLiveMenu : ListMenu
         let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
         if((truco!=null && truco.Visible) || (trucazo!=null && trucazo.Visible))return 0;
         if(user.CreationWizardOpen)return CTX_CREATION;
+        let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
+        if(storage!=null && storage.Chest!=null)return CTX_CHEST;
         let preview=CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
         if(preview!=null && preview.IsOpen())return CTX_CHEST;
         if(user.EquipmentMenuOpen)return CTX_EQUIPMENT;
@@ -76,7 +78,13 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_MERCHANT)result+=Subject.PalomoMerchantSelection*10+Subject.PalomoMerchantMode
             +Subject.PalomoMerchantSelectedQuantity*71+Subject.PalomoMerchantSelectedLotPrice*31
             +(Subject.CityTrade==null?0:Subject.CityTrade.Selection*97);
-        if(Context==CTX_CHEST){let preview=CaelumChestPreviewState(Subject.FindInventory("CaelumChestPreviewState"));if(preview!=null)result+=preview.Page;}
+        if(Context==CTX_CHEST)
+        {
+            let storage=CaelumContainerSession(Subject.FindInventory("CaelumContainerSession"));
+            if(storage!=null && storage.Chest!=null)
+                result+=1000+storage.Selection*31+storage.QuantityIndex*7+int(storage.Depositing)*503;
+            else {let preview=CaelumChestPreviewState(Subject.FindInventory("CaelumChestPreviewState"));if(preview!=null)result+=preview.Page;}
+        }
         return result;
     }
     override void Drawer()
@@ -114,13 +122,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_EQUIPMENT || Context==CTX_CREATION)
             return CaelumDebugOverlay(EventHandler.Find("CaelumDebugOverlay")).PanelKey(type,scan,character,keyString);
         if(Context==CTX_CHEST)
-        {
-            if(type!=InputEvent.Type_KeyDown)return true;
-            if(keyString~=="n")EventHandler.SendNetworkEvent("ca_chest_next");
-            else if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)EventHandler.SendNetworkEvent("ca_chest_collect");
-            else if(scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B || keyString~=="q")EventHandler.SendNetworkEvent("ca_chest_cancel");
-            return true;
-        }
+            return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
         // Las acciones del panel y sus accesos remapeados preceden a la salida
         // por controles de juego: F/G/T pueden compartir +zoom/+user1/+user3.
         bool restAction=keyString~=="f" || keyString~=="g" || keyString~=="t"

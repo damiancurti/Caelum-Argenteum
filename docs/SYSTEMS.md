@@ -1,6 +1,76 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.1** — 2026-10-20.
+Documentation version: **5.6.2** — 2026-10-20.
+
+## Ordinary native containers (#381, 5.6.2)
+
+The author approved these rules on 2026-10-20. Every stash-derived chest,
+including tutorial and labyrinth chests, supports deposit and withdrawal of
+admitted physical inventory. One space is one native stack or individual item.
+The existing chest is medium; each subsequent tier doubles height, length and
+width. Existing meshes are scaled, without replacing art or changing maps.
+
+| Tier | Spaces | Contents capacity | Empty mass | Relative linear size | Collision radius / height |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Small | 10 | 100 kg | 10 kg | 0.5 | 16 / 30 MU |
+| Medium | 25 | 1,000 kg | 100 kg | 1 | 32 / 60 MU |
+| Large | 100 | 10,000 kg | 1,000 kg | 2 | 64 / 120 MU |
+
+`CaelumContainerRules` centralizes these data. Editor `args[4]` is 1/2/3 for
+small/medium/large; zero preserves the existing medium default. No new campaign
+placement, chest recipe, hit points or damage rule is invented.
+
+`CaelumStashChest` remains an Actor. Its native `Inv` owns every stored physical
+object. UI rows reference those objects; there is no second item ledger.
+Transfers require the requesting pawn's current session, reach, existing lock
+access, exact owner/object/amount and sufficient final capacity. Selecting or
+previewing an entry never resolves unclaimed equipment size. Only a committed
+withdrawal resolves it for that recipient. Acquired equipment retains identity,
+size and wear; liquids retain their per-instance contents. A changed displayed
+quantity or item invalidates confirmation. The requested quantity moves wholly
+or nothing moves; partial stack requests preallocate their split before mutation.
+
+Equipped or crafting-reserved objects, reserved material stacks, temporary quest
+materials, protected initial/temporary equipment, Magic Box, Tarot deck and other
+chests cannot be deposited. Existing single-instance personal restrictions and
+MAP01 raw-material quotas still apply on withdrawal. The processing manual still
+teaches its existing recipes when acquired. Arrows/bolts and native keys may
+enter ordinary chests; withdrawals use only personal inventory.
+A legacy boxed arrow/bolt receiving stack is rejected unchanged;
+the inherited city-trade routing discrepancy is recorded, not silently normalized.
+
+Use opens storage on ordinary chests. In tutorial/labyrinth previews, **D** opens
+stored objects; their existing explicit collection remains available. Those
+authored reward/material quotas are not cloned into a physical inventory or
+reseeded during migration. Existing retired `LegacyLoot` remains excluded.
+Storage uses Up/Down, Left/Right quantity (all/1/5/10), Space deposit/withdraw,
+Enter transfer, C carry/place and Q/Tab close, with equivalent native-menu
+buttons, row selection and mouse wheel. The live menu does not pause simulation.
+Run+Use can carry a closed chest. The carried inventory entry opens its contents;
+the ordinary drop action places it only where collision and sight checks pass.
+
+Carried mass is empty mass plus all physical contents, without Box compression.
+`CaelumChestCargo` is a player inventory handle to the same chest Actor, not an
+Inventory containing another Inventory list. Chest and contents travel together;
+their thinker lists, world links and map-local TID registrations are restored
+at arrival. Destruction detaches and drops exact physical contents. Existing
+locks retain native keys and unlock state; ownership, new padlocks and theft
+consequences belong to #382.
+
+Storage migration revision 1 initializes legacy chests as medium without
+replacing bodies, opening/lock fields, contents, looted gaps or visited-map
+geometry. Labyrinth storage-loot policy revision 1 captures the source policy:
+transporting a cardinal chest outside MAP02 never enables its retired equipment
+catalogue. Initialization is idempotent. Preserve an exact original save/package
+pair before upgrading; the isolated fixture also removes the new session,
+restores the prior open state and loads that save with 5.5.8a, which ignores the
+added metadata. New carried-container classes are
+a new-runtime feature, not an unrestricted old-runtime save guarantee.
+
+Native and static evidence, exploratory failures, source/package hashes and
+rollback boundaries: `assets/validation_562/RESULTS.md`. No routine global actor
+scan, measured FPS improvement, network multiplayer or author acceptance is
+claimed. Author check CA381-01 remains outstanding.
 
 ## Merchant coordination and commit ownership (#377, 5.6.1)
 

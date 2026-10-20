@@ -1,4 +1,40 @@
 [enu default]
+CA_CONTAINER_SMALL = "Small chest";
+CA_CONTAINER_MEDIUM = "Medium chest";
+CA_CONTAINER_LARGE = "Large chest";
+CA_CONTAINER_CAPACITY = "%d/%d slots · %.3f/%.0f kg inside · %.3f kg total";
+CA_CONTAINER_DEPOSIT = "Deposit · selected quantity";
+CA_CONTAINER_WITHDRAW = "Withdraw · selected quantity";
+CA_CONTAINER_KEYS = "Arrows: select / quantity · Space: deposit / withdraw · Enter: transfer";
+CA_CONTAINER_CARRY_KEYS = "C: carry / place · Q: close · Run + Use: carry a closed chest";
+CA_CONTAINER_LEGACY_KEYS = "D: stored objects / deposit · C: carry chest";
+CA_CONTAINER_CHANGED = "The selected objects changed. Review the list before confirming.";
+CA_CONTAINER_TRANSFERRED = "Transfer completed.";
+CA_CONTAINER_REJECTED = "Transfer rejected. Check access, reserved objects and capacity.";
+CA_CONTAINER_MODE = "Deposit / withdraw";
+CA_CONTAINER_TRANSFER = "Transfer";
+CA_CONTAINER_CARRY = "Carry / place";
+CA_CONTAINER_STORAGE = "Stored objects";
+
+[es]
+CA_CONTAINER_SMALL = "Cofre pequeño";
+CA_CONTAINER_MEDIUM = "Cofre mediano";
+CA_CONTAINER_LARGE = "Cofre grande";
+CA_CONTAINER_CAPACITY = "%d/%d espacios · %.3f/%.0f kg dentro · %.3f kg total";
+CA_CONTAINER_DEPOSIT = "Depositar · cantidad seleccionada";
+CA_CONTAINER_WITHDRAW = "Retirar · cantidad seleccionada";
+CA_CONTAINER_KEYS = "Flechas: selección / cantidad · Espacio: depositar / retirar · Enter: transferir";
+CA_CONTAINER_CARRY_KEYS = "C: cargar / colocar · Q: cerrar · Correr + Usar: cargar un cofre cerrado";
+CA_CONTAINER_LEGACY_KEYS = "D: objetos guardados / depositar · C: cargar cofre";
+CA_CONTAINER_CHANGED = "Los objetos seleccionados cambiaron. Revisa la lista antes de confirmar.";
+CA_CONTAINER_TRANSFERRED = "Transferencia completada.";
+CA_CONTAINER_REJECTED = "Transferencia rechazada. Revisa acceso, objetos reservados y capacidad.";
+CA_CONTAINER_MODE = "Depositar / retirar";
+CA_CONTAINER_TRANSFER = "Transferir";
+CA_CONTAINER_CARRY = "Cargar / colocar";
+CA_CONTAINER_STORAGE = "Objetos guardados";
+
+[enu default]
 CA_APPEARANCE_TITLE = "Appearance";
 CA_APPEARANCE_TONE = "Skin / fur tone";
 CA_APPEARANCE_FACE = "Face";

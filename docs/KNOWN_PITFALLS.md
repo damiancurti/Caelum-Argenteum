@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-141 - Nested native owners need explicit travel and TID restoration
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #381/5.6.2, 2026-10-20.
+Environment: GZDoom 4.14.2 / Windows 11; `assets/validation_562`.
+Primary source: [GZDoom 4.14.2 g_level.cpp](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/g_level.cpp),
+`FLevelLocals::StartTravel` and `FinishTravel`.
+
+Native travel moves the pawn and its direct inventory. A chest Actor referenced
+by an inventory handle and that chest's own inventory need explicit lifecycle
+hooks. Merely retaining pointers does not keep them alive. Do not give an
+Inventory item its own Inv list: Inv is also its sibling link in its owner's list.
+
+The focused probe moved the owner and contents through STAT_TRAVELLING and back
+to their original statistic lists in the handle's Travelled hook. Their identity,
+owner and quantities survived. A stronger test with a nonzero chest TID then
+failed lookup after every transition despite those other checks passing.
+Unlink the map-local TID chain before departure (retain the integer separately),
+and reinsert it on arrival as well as restoring world/thinker links. The corrected
+runtime passes both hub returns and non-hub travel. Bookkeeping is bounded by
+the carried owner's native inventory, not a global actor scan.
+
+Also bind content policy to the travelling owner: a cardinal labyrinth chest
+must not consult its new map to decide whether to seed its old catalogue.
+Tests preserve a partial allocation through MAP02 -> THAZARD -> MAP02.
+These results do not establish full multiplayer or rendering performance.
+
 ## CA-KP-140 - Revalidate the selected trade item as well as its price
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #377/5.6.1, 2026-10-20.

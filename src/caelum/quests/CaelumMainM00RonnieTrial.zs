@@ -581,6 +581,9 @@ class CaelumMainM00SupplyChest : CaelumStashChest
 
     override bool Used(Actor user)
     {
+        let playerUser=CaelumPlayer(user);
+        if(playerUser!=null && playerUser.player!=null
+            && (playerUser.player.cmd.buttons & BT_SPEED)!=0)return Super.Used(user);
         if (user == null || Abs(user.Pos.Z - Pos.Z) > 64 || !user.CheckSight(self)) return false;
         if (UseLatched && LastChestUser == user) return true;
         UseLatched = true;

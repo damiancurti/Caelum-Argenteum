@@ -1,0 +1,158 @@
+{
+  "issue": 381,
+  "release": "5.6.2",
+  "runs": [
+    {
+      "label": "legacy-save-02",
+      "passes": 10,
+      "runtime": "baseline",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "40e9151fa755c6c371aff5403112f87c998c9052d08da1af0d09be163105e7ad",
+      "log_sha256": "1446fabe588e300bfc833106a047a038d2d7b185cb7a6c587b979e00232595bb"
+    },
+    {
+      "label": "release-suite",
+      "passes": 51,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "a9929064b3e2077e1629d9834a651052fad3c29635121adbe2c767a693a21f72"
+    },
+    {
+      "label": "release-save",
+      "passes": 2,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "caf0d96dc79bfb0536abdd538f70d2781b20471a10022cd6ed713cc520422886"
+    },
+    {
+      "label": "release-reload",
+      "passes": 7,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "5cd0d8126ddea9edc1fffb2188e7afbb6386222fb95cb883b5ba1bb92e1a6631"
+    },
+    {
+      "label": "release-travel",
+      "passes": 30,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "b330984aa1c74f8691393605e79792dea5d62adbb5ff7eb2db9b8fdd7a0307cf"
+    },
+    {
+      "label": "release-upgrade",
+      "passes": 12,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "321d3e0d87db8a88e4de98fd2b7f35fc1efd1559230cda3c539b02e6b7b569b0"
+    },
+    {
+      "label": "release-upgraded-reload",
+      "passes": 13,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "dcfa00a90acdf3f6b7edaeb1579b2b5d10150f1ac2d5c4d91eead2662b99703d"
+    },
+    {
+      "label": "release-reverse",
+      "passes": 1,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "22f5aab50cfb2424bf9f0aff707a8a1fdc1c3d89cb833a19829711a676e7b57a"
+    },
+    {
+      "label": "release-reversed-rollback",
+      "passes": 10,
+      "runtime": "baseline",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "40e9151fa755c6c371aff5403112f87c998c9052d08da1af0d09be163105e7ad",
+      "log_sha256": "064415808531df8703591e5b44cb145cd922d0c0386abcf30b632e6a1f0f4129"
+    },
+    {
+      "label": "original-rollback-01",
+      "passes": 10,
+      "runtime": "baseline",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "40e9151fa755c6c371aff5403112f87c998c9052d08da1af0d09be163105e7ad",
+      "log_sha256": "65bfa979e721d75c902bffb94612fbc7980d9403843feda8c99f8169aa3c3ad3"
+    },
+    {
+      "label": "release-cardinal",
+      "passes": 17,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "219402161058f8ced4775917a71c3f0d37ae7f44e3be9dc2c18560e2743bebc8"
+    },
+    {
+      "label": "release-cardinal-reload",
+      "passes": 5,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "e35de17bf31e903c4a5236628d7f72a8f45c5bfa55409dbedc2f9005c0e495cb"
+    },
+    {
+      "label": "release-supply",
+      "passes": 5,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "584241dab9f84e2a8252d8d839ccac3137a93195cfed1e9d39e839afa54cdbb7"
+    },
+    {
+      "label": "release-ui",
+      "passes": 2,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "ee660c77c4df849875607ca530bd9874d4c75a251c6680b5c9f7dabb39f3c36f",
+      "log_sha256": "98321ec755954172c2604fbf9be6c120e488d6421d6c3255b87a7a642ede4996"
+    },
+    {
+      "label": "release-smoke",
+      "passes": 0,
+      "runtime": "current",
+      "package_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+      "addon_sha256": "",
+      "log_sha256": "9aae6e0341ef76ee6c106c4f14e12431ac1efec1b041abf1cbc0936533ed308d"
+    }
+  ],
+  "passing_assertions": 175,
+  "unexpected_failures": 0,
+  "package_changed_members": [
+    "LANGUAGE",
+    "ZSCRIPT",
+    "caelum/core/CaelumConstants.zs",
+    "caelum/equipment/CaelumContainerStorage.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/quests/CaelumMainM00RonnieTrial.zs",
+    "caelum/ui/CaelumChestPreview.zs",
+    "caelum/ui/CaelumLiveMenu.zs",
+    "caelum/ui/CaelumLiveMenuControls.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "caelum/world/CaelumStashChest.zs",
+    "localization/INDEX.md",
+    "localization/index.json"
+  ],
+  "comparison_package_561_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+  "synthetic_saves_retained_locally": {
+    "ca381-cardinal.zds": "f1fa02d8046a1e14d2b6b58c9e7fae42157d60695114275c987ace5ae1a630a4",
+    "ca381-current.zds": "c544dc648c893a59ef00a9fe45acec857b6cc8cccb5ca9327c2d87efdcdf9a82",
+    "ca381-legacy.zds": "b41d2e2ef225c8740ec9c02bcffc7079b915490abc2042b05b03b093cc052776",
+    "ca381-reversed.zds": "731b86b4acf2d1541d15d27e7819b0ed377e2f65a9b9cb28eb53ebd942977d94",
+    "ca381-upgraded.zds": "e389d6b6b27ace44d7e56f47eed4a37d4ede477295a07ffcc6099830c4e0601a"
+  },
+  "images": {
+    "storage-en.png": "425dc746803d46c781feabe0470c12b98edea1cfbbe2b829ab496f6e0feae0a0",
+    "storage-es.png": "0f770f48deb067e0086f7e3323aad863af96b821cc8d9c8d8002dd978e4894a6"
+  },
+  "author_acceptance": "pending CA381-01"
+}
