@@ -1,0 +1,104 @@
+{
+  "issue": 315,
+  "release": "5.5.7",
+  "decision": "Author explicitly deferred conversion and retained current damage on 2026-10-19.",
+  "runtime_changes": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "gameplay_member_bytes_unchanged": true,
+  "baseline_sha256": "3ddd551ad2358d78e22626e753ebd6b164508ec6cd1a00adb176ac6323ce3799",
+  "current_sha256": "3599f916301f9b4129aa7de745223ed32a8ad8f42a9e3569eff80a4aa4143acf",
+  "matrix_sha256": "a2486450f26d9147ef12a89eff76eb816c44bafdbd6921675dde1bef8359fa29",
+  "comparison_profile": {
+    "source": "CaelumRulo authored mass/Strength; neutral extra modifiers, healthy; not a new player default.",
+    "body_mass_kg": 200,
+    "strength": 20,
+    "raw_multiplier": 3.008
+  },
+  "comparisons": [
+    {
+      "weapon": "Sword",
+      "tier": 1,
+      "base_hp": 120.0,
+      "nominal_air": 5.0,
+      "matched_rulo_profile_raw_hp": 360.96
+    },
+    {
+      "weapon": "Sword",
+      "tier": 2,
+      "base_hp": 144.0,
+      "nominal_air": 5.0,
+      "matched_rulo_profile_raw_hp": 433.152
+    },
+    {
+      "weapon": "Sword",
+      "tier": 3,
+      "base_hp": 180.0,
+      "nominal_air": 5.0,
+      "matched_rulo_profile_raw_hp": 541.44
+    },
+    {
+      "weapon": "Dagger",
+      "tier": 1,
+      "base_hp": 60.0,
+      "nominal_air": 2.0,
+      "matched_rulo_profile_raw_hp": 180.48
+    },
+    {
+      "weapon": "Dagger",
+      "tier": 2,
+      "base_hp": 72.0,
+      "nominal_air": 2.0,
+      "matched_rulo_profile_raw_hp": 216.576
+    },
+    {
+      "weapon": "Dagger",
+      "tier": 3,
+      "base_hp": 90.0,
+      "nominal_air": 2.0,
+      "matched_rulo_profile_raw_hp": 270.72
+    },
+    {
+      "weapon": "Greatsword",
+      "tier": 1,
+      "base_hp": 200.0,
+      "nominal_air": 12.0,
+      "matched_rulo_profile_raw_hp": 601.6
+    },
+    {
+      "weapon": "Greatsword",
+      "tier": 2,
+      "base_hp": 240.0,
+      "nominal_air": 12.0,
+      "matched_rulo_profile_raw_hp": 721.92
+    },
+    {
+      "weapon": "Greatsword",
+      "tier": 3,
+      "base_hp": 300.0,
+      "nominal_air": 12.0,
+      "matched_rulo_profile_raw_hp": 902.4
+    }
+  ],
+  "war_axe_raw": {
+    "normal": 661.76,
+    "charged": 1323.52,
+    "existing_native_rounded": [
+      662,
+      1324
+    ],
+    "evidence": "validation_5212/tools.zs; forced Dexterity secures hit, not ordinary accuracy/timing."
+  },
+  "candidate_physical_parameters": "Unapproved and unresolved; no production implementation.",
+  "pending_author_tests": null,
+  "native_smoke": {
+    "checks": 1,
+    "files": {
+      "smoke-run.json": "273dbf1c76b638a5d99d93603155ba2d68003e842d4c163270fe521390c2b110",
+      "smoke.cfg": "84c1e544b158b4ee853bb29901efd52ed0e744e3d7f6cdf99e271c3eeb0c35ab",
+      "smoke.ini": "fd4c06117f3735ddf481f66ff1a68fefe79862ef0e054f20a8b8880d85662f9b",
+      "smoke.txt": "a976ce7c88cfb47ebccecc722bf5e7fffe662a1cdf9eeef0477822a163bdf9ec"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+** -text whitespace=cr-at-eol
+evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidence/*.ini whitespace=-blank-at-eof,cr-at-eol

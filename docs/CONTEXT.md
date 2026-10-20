@@ -1,9 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.6** — 2026-10-19.
+Documentation version: **5.5.7** — 2026-10-19.
 
 **5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.
-**5.5.5/#363:** User2 accepted Oct19. #315/#369 separate; #316 deferred.
+**5.5.7/#315:** energy contract; conversion deferred, damage retained.
+#363 accepted; #369 pending; #316 deferred.
 
 **5.5.4/#313:** cartridge40/45g approximations; validation_554:12runs/1323checks.
 CA313-01 accepted Oct19; oldsave/rollback verified.
@@ -331,7 +332,7 @@ Follow all 20 premises in AGENTS.md and PROJECT.md, including issue-scoped work,
 current documentation, deterministic generators, explicit save policy and
 separate agent evidence/author acceptance. Preserve history and unique content.
 
-The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
+Premises: `AGENTS.md`, `docs/PROJECT.md`.
 
 Evidence differs from acceptance.
 

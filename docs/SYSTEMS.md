@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.6** — 2026-10-19.
+Documentation version: **5.5.7** — 2026-10-19.
 
 ## Maximum siege adrenaline in production (#361, 5.4.47)
 
@@ -10455,6 +10455,150 @@ it. Recovery is primary. Keep Zoom does not repeat: release and re-press. An alr
 prepared charge is consumed and retained ×2 damage/cost, so a charged sweep costs 6
 uncharged primary attacks. Giant gauntlets keep Zoom/Block; Rulo continues to count the
 side dodge as defense of the greatsword. The sweep does not replace that test.
+
+## Future melee energy contract - design only (#315, 5.5.7)
+
+**Author decision, 2026-10-19:** document the design, defer conversion and retain
+current damage. The author selected "Documentar el diseño y aplazar la conversión;
+conservar el daño actual". This section specifies the boundary and unresolved
+inputs; it does not approve an energy-to-HP rule or implement future combat.
+
+### Current authority and proposed replacement boundary
+
+Current physical attacks choose the authored catalogue base, tier multiplier
+(1/1.2/1.5), actor physical power, charge and applicable offensive/health effects.
+The existing action commits resources and heat once; hit/critical/anatomy,
+shield/armor/Toughness and final rounding retain their current owners. Player
+dispatch is `CaelumCombatDispatch`; physical action ownership remains on the
+pawn. Resident tools reuse `CaelumWeaponUseRules.PhysicalDamage`; other NPC
+authored attacks retain their own existing callers. This contract does not
+silently assign a weapon to natural attacks or convert their authored bases.
+
+Body collision under #194 separately computes normal-contact energy using
+reduced mass and applies the author's 1 J/HP body-contact rule. That rule does
+not specify a blade edge, penetration, cutting, stabbing or a held weapon's
+effective inertia. Thermal `WeaponWork` is an action-work budget, not measured
+delivered impact energy. Neither existing value is an automatic melee conversion.
+
+The deferred candidate would snapshot an approved action at release, derive
+relative normal strike speed and effective mass, estimate kinetic energy
+`K = 0.5 * m_eff * v_normal²`, then apply an authored transfer/contact model.
+`D_raw = Phi(received energy, contact geometry, material, technique)` remains
+undefined until the author supplies its rules and units. Energy alone cannot
+establish injury, armor penetration or game balance. A future switch must select
+exactly one raw-melee authority for an action: catalogue damage OR the approved
+replacement. It must never add the candidate result to the current melee hit.
+Distinct actual body collisions keep their accepted owner and event identity;
+a visual weapon trace must not manufacture a second body-contact damage event.
+
+### Field, source and unit inventory
+
+| Input | Current source / unit | Deferred model status |
+| --- | --- | --- |
+| Family, tier, size, primary/secondary | `CaelumWeaponCatalogue`, `CaelumWeaponModel`; identifiers | Existing dispatch data; no new categories approved. |
+| Base damage and tier | #309 `assets/validation_550/matrix.json`, catalogue/model; HP and dimensionless 1/1.2/1.5 | Authoritative until replacement approval. Matrix weight 0 is an unequipped model observation, not zero physical mass. |
+| Carried weapon mass | `CaelumConstants` + `CaelumEquipmentRules.CalculateTieredEquipmentWeight`; kg | Existing size-M dagger 2/3/4, sword 6/9/12, greatsword 18/27/36 kg. These game masses are not effective strike masses or historical measurements. |
+| Body mass and Strength | `CaelumDerivedStats`, `CaelumCombatActor`, `CaelumGrowthRules`; kg, attribute, multiplier | Existing raw physical power; mapping to energy/velocity must avoid multiplying the same benefit twice. |
+| Cadence and capacity | `CaelumAttackRules.Duration`; tics, kg | Existing `14 * attributeDurationMultiplier / (1 - (weapon+gloves)/capacity)`; weight at/above capacity blocks. Animation duration does not establish tip speed. |
+| Strike speed and trajectory | No physical weapon-tip trajectory/velocity contract; m/s, direction, time | Author must choose per action/technique and attribute/tier effects. Do not substitute pawn travel speed for arm/weapon speed. |
+| Effective mass/inertia | No authored held-weapon inertia/arm coupling; kg or kg·m² plus lever arm | Requires grip, technique and body coupling model. Inventory mass is only an input. |
+| Contact area/edge | Existing anatomy and hit classification; no edge/contact patch data | Author must define m², edge/tip geometry or a deliberate simpler abstraction. #194 box faces cannot stand in for blade edges. |
+| Material and penetration | Existing equipment tiers, armor coverage and damage classifications | No approved material hardness/fracture/penetration thresholds for the candidate. No automatic armor bypass. |
+| Air, charge, sweep | Catalogue nominal costs and current actor modifiers; resource points | Existing costs remain. Future work-to-Air conversion, if any, needs authored units and calibration. |
+| Action heat | `CaelumThermalData.WeaponWork`, `CaelumThermalEffects.RecordWeaponAction`, `CaelumPhysicsUnits`; J, efficiency | Existing `Q = W*(1/eta-1)`; charge ×2, sweep ×3. It is paid once per performed action, including a miss. No second muscular heat payment from impact delivery. |
+| Defenses and wear | Current shared damage/anatomy/armor/Toughness services; HP, regional coverage, durability units | Preserve ordering and one rounding/wear commit unless a separately authored replacement explicitly changes it. |
+| Event identity/persistence | Existing pawn/NPC action and inventory ItemId owners | No new state now. Any future ledger/snapshot needs a versioned, idempotent and reversible save migration. |
+
+### Worked comparisons and gameplay implications
+
+These comparisons use existing catalogue data and equations. No strike speed,
+effective mass, transfer fraction or physical injury coefficient is invented.
+The counterfactual column illustrates the rejected shortcut of treating the
+thermal work budget as 1 J/HP; it is not a proposed balance table.
+
+| Primary, size M | Current base HP T1/T2/T3 | Nominal Air | Existing work J (all tiers) | Counterfactual HP T1/T2/T3 |
+| --- | --- | ---: | ---: | --- |
+| Dagger | 60 / 72 / 90 | 2 | 50 | 50 / 50 / 50 |
+| Sword | 120 / 144 / 180 | 5 | 125 | 125 / 125 / 125 |
+| Greatsword | 200 / 240 / 300 | 12 | 300 | 300 / 300 / 300 |
+
+For the sword, that shortcut changes base damage by +4.17%, -13.19% and -30.56%
+across tiers. Base HP per nominal Air changes from 24/28.8/36 to 25/25/25.
+The greatsword gains 50% at T1 but 0% at T3; the dagger loses 16.67% at T1 and
+44.44% at T3. These ratios exclude actor modifiers, misses and defenses; final
+Air cost remains the existing actor calculation. Thus even a superficially
+similar T1 number can erase progression and change weapon efficiency.
+
+For a matched player/NPC calculation, reuse Rulo's authored **200 kg, Strength
+20** profile, healthy and with neutral additional offensive multipliers. The
+existing legacy Type-1 adapter calls growth family 3:
+`P = (200/100) * (1 + 7*(20²+25*20)/(125*100)) = 3.008`.
+This is a comparison input copied from `CaelumRulo`, not a new player default.
+The shared player/resident-tool raw result before target defenses and rounding is:
+
+| Primary | T1 raw HP | T2 raw HP | T3 raw HP |
+| --- | ---: | ---: | ---: |
+| Dagger | 180.480 | 216.576 | 270.720 |
+| Sword | 360.960 | 433.152 | 541.440 |
+| Greatsword | 601.600 | 721.920 | 902.400 |
+
+Existing native evidence provides an actual NPC cross-check: Rulo's T1 War Axe
+base 220 gives 661.76 raw HP, rounded to **662**, and charged 1323.52, rounded
+to **1324** (`assets/validation_5212/tools.zs`, RESULTS). That old fixture forced
+extreme Dexterity to secure its hit; it is evidence of raw damage, not ordinary
+accuracy, timing or a newly executed test. The authored War Axe work budget is
+350 J normal / 700 J charged. Work therefore cannot simply replace either raw
+result. A matched player uses the same raw multiplication; final delivery and
+rounding retain the actual player/NPC paths rather than assuming full parity.
+
+At unchanged speed, using full carried mass as effective mass would make T3
+kinetic energy twice T1 (mass ×2), while current damage rises only ×1.5.
+Matching that damage ratio under a linear energy candidate would require a
+T3/T1 speed ratio `sqrt(1.5/2) = 0.866025...`, or another explicitly authored
+effective-mass/transfer rule. This is a derived ratio, not an approved speed.
+Conversely, a fixed work budget with full mass gives lower speed at higher
+tiers but the same energy. Neither shortcut reproduces the current progression.
+
+A charged greatsword sweep currently pays **72 nominal Air** (12×3×2) and
+records **1,800 J** of action work (300×3×2), once per sweep. It can hit each
+eligible target once with charged primary damage. The future model must decide
+whether impact energy is a per-target gameplay severity or a finite budget
+shared among targets. Assigning the full budget repeatedly and also claiming
+physical conservation would be contradictory. Current sweep targeting and costs
+remain unchanged while that decision is deferred.
+
+### Required integration and approval gate
+
+Retain current hit eligibility, friendly/resource exclusions, spatial queries,
+line-of-sight, armor location, shield applicability, critical metadata and
+Toughness order. A candidate must declare where penetration changes a regional
+defense, then apply that change once; it cannot bypass shields or apply general
+and collision Toughness paths together. Wear uses the existing committed damage
+and pre-wear defenses until the author approves another basis. Preserve natural
+NPC attacks, tools, charge interruptions and actor-specific behavior; parity
+means shared approved physical inputs/rules, not forced identical AI.
+
+Muscular action work and recipient impact heating are different ledgers. Keep
+the current action heat once per release, and route any approved impact heat
+through the existing receiver authority without charging the attacker again.
+Do not derive extra Air from heat or count visual animation callbacks as new
+hits. Cosmetic animation and render rate must not own simulation energy.
+
+Before any production conversion, a follow-up must record: action speed and
+effective mass/inertia; contact/material/penetration parameters; the HP mapping
+and tier/attribute targets; charge/sweep allocation; Air/cadence and heat
+calibration; defense/wear ordering; natural attacks and player/NPC scope. The
+author must approve both the model and its numbers. Begin with a private
+comparison against the accepted catalogue, including misses, blocked attacks,
+multiple targets, offscreen NPCs, resources and repeated callbacks. Native
+active-attack/charge/sweep saves, old-save upgrade, rollback and hub return must
+precede any migration release. Measure simulation and presentation tails at
+approved populations. No retired 6,000-attacker scene is authorized.
+
+**Status:** design contract recorded; conversion explicitly deferred. All
+physical calibration fields above remain unresolved. Current damage, resources,
+durability, controls and saves are unchanged by #315. There is no executable
+author test for an unimplemented model and no such entry in pending_test.txt.
 
 ## Detailed matrix of weapons
 

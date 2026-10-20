@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.6** — 2026-10-19.
+Documentation version: **5.5.7** — 2026-10-19.
 
 ## 5.5.6 - Thermal surface fixture (#314)
 
