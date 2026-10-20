@@ -1,6 +1,73 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Cleaned animated bull model (#369)
+
+**Author acceptance, 2026-10-20:** CA369-01 (origin 5.5.8 / #369) passed.
+The author confirmed "El toro qued? bien" for the final coat/brows/1.5 visual
+scale candidate and explicitly authorized issue closure and PR integration.
+The confirmed entry is removed from pending_test.txt, which is now empty.
+This supersedes the earlier candidate-pending notes below; release 5.5.8 and
+all tested runtime bytes remain unchanged. The author reported visual approval;
+native encounter, save/lifecycle and performance checks remain agent evidence,
+without inventing a separate author-reported route or display-FPS measurement.
+#363 and #314 retain their earlier recorded acceptance; #315 is a completed
+design/deferral decision. #316 remains open with its authored-map prerequisite.
+
+The author requested cleanup of generated 3D surface artifacts and approved:
+"Reconstruir localmente frente y cuernos para dejarlos limpios" on 2026-10-19.
+The supplied GLB and both embedded images are preserved with their actual
+material roles. Cleanup, local repair, albedo rebake, a quadruped rig and native
+MD3 export replace bull presentation everywhere, including the tutorial.
+Original sprites remain. Combat statistics, costs, collision and native state
+ordering/tics are unchanged; a visual helper follows each original body.
+
+Native tests cover old/current saves, documented rollback, archived corpses,
+tutorial idle/grace and inactive hubs. The original MAP01 encounter's 181-tic
+combat trace matches the baseline, excluding the presentation sprite index.
+An initial hub teardown was insufficient: a final tic after WorldUnloaded
+recreated helpers before the snapshot. A transition gate fixes the reproduced
+old-runtime load failure; CA-KP-138 records the lesson. Fixture defects and
+superseded visual drafts remain distinguished from production failures in QA.
+Static validation and normal packaging pass; two frozen-source exports match.
+The retained native inventory contains 18 runs and 147 newly logged PASS checks,
+including archive Recall, Redemption visibility and tutorial corpse fade/removal.
+Static/build results, deterministic hashes, native run inventory and performance
+tails are recorded in `assets/validation_558/RESULTS.md` and `report.json`.
+Render callbacks are not application display presentation; ETW access remains
+unavailable. Author surface/animation/gameplay acceptance remains CA369-01,
+pending. No 6,000-attacker case was run and no performance policy was changed.
+
+The author's later inspection on 2026-10-19 requested a more symmetric head,
+defined eyes rather than black points, and a more bovine muzzle. This is a
+revision of the same pending #369 delivery, retaining version 5.5.8 and PR #373.
+Centered facial geometry, eyelids/brown irises/horizontal pupils, a broad muzzle
+with lateral nostrils and lips replace the first candidate. The 23-bone rig and
+action timing remain; the new atlas is 2048 square and the mesh has 9,108
+triangles / 7,381 MD3 vertices. New geometry gets new native appearance, pose,
+save-load, encounter and performance evidence in validation_558/report-face.json.
+The earlier report/captures remain historical; CA369-01 is still pending and
+this feedback is not recorded as author acceptance. The preview now opens the
+inspection room immediately, with F10 returning to a close frontal view.
+Six final native runs pass 46 new checks; the 181-tic baseline encounter still
+matches. Static validation, normal build and repeated deterministic export
+pass. A saved helper's old render dimensions are refreshed idempotently in the
+existing typed load census; the original bull's collision and save schema do
+not change. Callback measurements retain the prior presentation limitations.
+
+The next 2026-10-19 inspection requested matching head/body fur, more threatening
+brows or hair, and a larger whole bull. The author approved a 50% visual increase
+while retaining physical collision/combat. A continuous body-albedo patch now
+colors the head and rounded brow/forehead locks. The exporter multiplies mesh
+geometry and visual gait stride by 1.5. The 10,580-triangle / 9,273-vertex mesh
+keeps the same rig, poses and native timing. This remains #369 / PR #373 / 5.5.8;
+CA369-01 stays pending. Current validation and captures are in report-coat.json
+and evidence-coat; earlier candidate reports remain historical. On 2026-10-20,
+six final native runs passed 46 checks, with unchanged 181-tic encounter trace,
+static validation/build and repeated export passing. CA-KP-139 records a
+reproduced fixture event-order race; WorldTick-gated checks replace the flawed
+initial assertion. Diagnostic forced updates are excluded from final evidence.
 
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 

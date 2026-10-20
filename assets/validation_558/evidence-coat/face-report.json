@@ -1,0 +1,9 @@
+{
+  "retained_source_body_vertices": 2080,
+  "refined_old_head_neck_vertices": 514,
+  "vertices": 5518,
+  "triangles": 10580,
+  "bones": 23,
+  "actions_unchanged": true,
+  "facial_mirrored_surface_max_distance": 0.00031622659298591316
+}

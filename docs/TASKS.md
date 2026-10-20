@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Bull visual replacement (#369)
+
+Implementation includes source preservation, surface cleanup, author-approved
+forehead/horn reconstruction, reduced mesh, quadruped rig/skin, native animated
+export and inherited MAP01 coverage. Combat/state timing and collision remain
+unchanged; rollback is documented in SYSTEMS. Isolated QA and limitations live
+in `assets/validation_558/RESULTS.md`. The author accepted CA369-01 on 2026-10-20:
+"El toro qued? bien", and authorized merge/closure. The final coat, brows and
+1.5 visual scale are accepted; the confirmed entry is removed from pending_test.
+Native checks remain distinct from author-reported visual approval; no display
+FPS result is inferred. Keep #316 deferred and all issue PRs separate.
 
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 

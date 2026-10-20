@@ -1,6 +1,80 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.7** — 2026-10-19.
+Documentation version: **5.5.8** — 2026-10-19.
+
+## 5.5.8 - Cleaned animated bull model (#369)
+
+The author supplied the Copilot3D GLB linked in
+`assets/source/art/bull_3d/DESIGN.json`. Its original 7,511,584 bytes are preserved
+as `original.glb` (SHA-256
+`21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97`).
+The input contains 106,519 vertices, 148,524 triangles, one material and no rig
+or animation. Embedded image 0 is base color; image 1 is metallic/roughness
+(G roughness, B metallic). It is not a normal map. Both original PNGs and their
+actual source roles are retained; MD3 samples the baked albedo only. Provenance
+and modifications ship in `src/licenses/BULL_3D_MODEL.txt`; no new generator
+license is inferred from the author's attachment.
+
+On 2026-10-19 the author requested surface cleanup and explicitly approved
+local reconstruction of the forehead and horns while preserving silhouette and
+colors. Voxel cleanup removes the thin generated folds before the head repair;
+the repaired transition is blended into the closed body. The stocky
+body, tail and brown/ivory palette remain. Component-isolated baking prevents
+horn colors from projecting onto the forehead. The new forehead's dark color
+blends into the original albedo. The first candidate had 6,000 triangles and
+4,983 UV-split MD3 vertices, compared with the source's 148,524 triangles.
+
+The author's subsequent inspection requested a more symmetric head, eyes that
+are more than black points, and a more bovine muzzle. The same #369 patch now
+uses a centered facial contour with paired cheeks, ears and horns, contoured
+eyelids, brown irises, horizontal pupils and restrained corneal highlights.
+A broad muzzle has recessed lateral nostrils and defined lips. The old facial
+volume is nested inside the replacement and the neck transition is smoothed;
+the existing rig, 23 bones and action keyframes are retained. That facial candidate
+has 9,108 triangles, 7,381 UV-split vertices and a single 2048-square albedo atlas
+to keep the eyes legible. Render bounds accommodate the new face; gameplay
+dimensions do not change. Native appearance/performance checks are repeated for
+this geometry rather than treating the first candidate's captures as current.
+`refine_head.py` records this edit from the frozen input in commit `885fe498`;
+its input hash and editable parameters are in DESIGN.json. The source remains
+editable art, with deterministic MD3 export. CA369-01 was accepted by the author on 2026-10-20.
+
+The next author inspection requested the same body/head coat, more threatening
+brows or hair, and a larger whole bull. On 2026-10-19 the author explicitly
+approved a 50% uniform visual enlargement with existing physical collision and
+combat retained. The current head, ears and modeled brow/forehead locks reuse a
+continuous brown-fur patch from the retained body albedo, avoiding seams across
+atlas islands. Rounded tapered locks provide volume above the eyes. The current
+mesh has 10,580 triangles, 9,273 UV-split vertices and the same 136 poses/2048
+atlas. DESIGN.json records the coat patch and author-approved visual factor.
+The exporter scales all geometry and visual gait stride by 1.5; native action
+timing and movement remain unchanged. Current evidence is report-coat.json.
+
+The editable `bull.blend` contains a 23-bone quadruped rig, normalized painted
+skin weights, IK feet and 12 actions: idle breathing, walk, run, ordinary and
+tutorial charge preparation, charge, gore, pain, death, corpse, rest and stun.
+There are 136 exported pose samples in one MD3 surface. Death reaches its final
+pose at the original frame-N boundary (25 tics); the original corpse hold and
+tutorial fade remain native. The initial art scale used the existing 51.8-unit
+height; the author-approved revision multiplies that visual scale by 1.5. Actor
+radius 15.6, height 51.8 and mass 900 remain unchanged. Floor correction belongs to resting/falling artwork, not physics.
+
+`authoring.py`, `rigging.py` and `refine_head.py` retain construction history; the frozen `.blend`
+is authoritative editable art input and is not promised to serialize identically
+when rebuilt. Runtime export is deterministic with pinned Blender 4.5.3:
+`blender -b --python assets/generators/export_bull_model.py -- --output <fresh-directory> --install`.
+The generator samples only `Bull_surface`, excluding retained references and
+bake proxies. It writes MD3, skin, native frame states, MODELDEF and owned
+transparent sprite aliases. It reuses the accepted Domingo MD3 format pattern,
+without changing the Domingo pilot. No external replacement mesh, executable,
+IWAD or fixture is packaged. Original bull sprites are preserved.
+
+The presentation helper follows the original bull locally. Distance-driven
+gaits use discrete simulation samples to avoid native time interpolation moving
+feet on a stopped body; other clips retain native model interpolation. Visual
+frames never delay attacks. Native appearance, saves, hub rollback and a real
+MAP01 encounter are checked separately from author acceptance. See
+`assets/validation_558/RESULTS.md`; CA369-01 was accepted by the author on 2026-10-20.
 
 ## 5.5.6 - Thermal surface fixture (#314)
 

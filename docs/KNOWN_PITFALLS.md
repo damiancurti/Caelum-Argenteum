@@ -4,6 +4,54 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-139 - Console waits do not prove queued fixture events have advanced
+
+Status/evidence: ENGINE-VERIFIED, #369/5.5.8, 2026-10-20.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan; isolated bull inspection room.
+Evidence: `assets/validation_558/evidence-coat`, superseded pose failure,
+diagnostic07 and final coat-poses logs.
+
+At initial map load, the idle screenshot ran before the queued idle setup
+event. Setup and its assertion then arrived at tic 17; the helper still held
+its previous tic-16 charge pose despite an idle owner. A diagnostic direct
+UpdateVisual selected idle immediately, ruling out incorrect pose routing.
+That forced call is diagnostic evidence only, not a passing native-tick test.
+
+Gate the check from WorldTick after setup, and defer the following pose until
+the check runs. The final test records setup 17, helper update 18 and check 19,
+then passes all 13 pose checks without forcing UpdateVisual. Console `wait`
+and screenshot ordering alone do not establish simulation-event completion.
+Retain failed/diagnostic logs separately; this finding required no production
+combat or presentation-logic change.
+
+## CA-KP-138 - Hub teardown must prevent lazy recreation through the final tic
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #369/5.5.8, 2026-10-19.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan; private two-map hub and actual
+pre-5.5.8 runtime. Evidence: `assets/validation_558`, failed current06 hub save
+and corrected current07 save/return.
+
+WorldUnloaded runs before SnapshotLevel, but that ordering does not prove that
+no actor Tick can occur between them. The first bull-model registry released
+all helpers on WorldUnloaded; the final tic lazily recreated four helpers.
+Their saved spawntime was 56 and the map snapshot time 57. The old runtime
+loaded the active map, then failed on hub return with Unknown object class.
+
+Set a map-transition gate before teardown, and keep lazy recreation disabled
+until WorldLoaded resets it. Restore the owner's native sprite before retiring
+the helper. Maintain a typed registry by spawn/destruction; rebuild once on
+WorldLoaded, with population bounded by the map's presentation helpers. No
+routine global actor scan is needed. Test both active and inactive map JSON
+for helper instances, then load and return with the actual previous runtime.
+The corrected snapshots contain zero helpers and both native return paths pass.
+Archived owners need independent helper retirement because their Tick is stopped.
+
+Related animation check: native MD3 interpolation follows state time, even
+when a custom frame selector follows distance. Repeating an integer frame can
+produce forward interpolation and snapback on a stationary body. #369 disables
+interpolation only for distance-driven gaits and checks stopped rendered samples;
+time-driven clips retain native interpolation. This is not an FPS acceptance.
+
 ## CA-KP-137 - A combat clock refresh can commit an attack
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #310/5.5.1, 2026-10-18.

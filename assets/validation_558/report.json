@@ -1,0 +1,496 @@
+{
+  "gameplay_preserved": true,
+  "current_source_matches_frozen_package": true,
+  "changed_members": [
+    "CVARINFO",
+    "MAPINFO",
+    "MODELDEF",
+    "TEXTURES",
+    "ZSCRIPT",
+    "caelum/actors/CaelumBull.zs",
+    "caelum/quests/CaelumMainM00QuestController.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "added_members": [
+    "caelum/actors/CaelumBullModel.zs",
+    "caelum/actors/CaelumBullModelFrames.zs",
+    "graphics/caelum/bull_invisible.png",
+    "graphics/caelum/bull_model.textures",
+    "licenses/BULL_3D_MODEL.txt",
+    "models/caelum/bull/bull.md3",
+    "models/caelum/bull/bull_skin.png"
+  ],
+  "export_repeat_sha256": {
+    "bull.md3": "8bd61cf23abfe68b66df0b9fa98500882b106edd3fd048c7bac7f537ad57a9f3",
+    "bull_invisible.png": "2aa4fa20701cdd6d8d56046069001186b5267e3ee7d0ef618ad2f4a683723e11",
+    "bull_skin.png": "80430927a55902965d94cd3d9008cb0bfe61199448fa96eda7fdd117ad4b7918",
+    "frames.zs": "176d988cbf8b9eafe7c912f0b1dea2aa35f689f0683ed3bc4749513ee73d857a",
+    "manifest.json": "95c12971ec26c93764d25df2d3c6eb68b0e4ecba79bc00d8adce35ddd1afbf80",
+    "MODELDEF": "f069c78831e111a1f8caa436a47adb55cee34dc97d9df372c23bca19c2ccc52a",
+    "TEXTURES": "4bd11d0cd1b08b3c022e0efc734a3c304d48263044f27ee3bab9587fc5413076"
+  },
+  "art_source_sha256": {
+    ".gitattributes": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d",
+    "authoring.py": "be8ae62d03d6c17825fb37dabbea418531090639bc2eed0eb61417971524a847",
+    "bull.blend": "8d9122a18ea5e863efe9321cfbbdfc5aff465af312f7c3f3eed52d9f90506d45",
+    "bull_skin.png": "80430927a55902965d94cd3d9008cb0bfe61199448fa96eda7fdd117ad4b7918",
+    "DESIGN.json": "00d4a8e5c0cb25d36771d769eed5dceae7b1ade80a9eeceade03adb7fc180c37",
+    "original.glb": "21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97",
+    "original_image_0.png": "f442deeedfe8362868cb2ab07016277f422b72dd942364ecc35a05093d538eed",
+    "original_image_1.png": "7f71434c2e1b20614abb6e4964b5c5c9ac3fec61f7637599a3a385fa7909146c",
+    "rigging.py": "920671463529c51789aca3c3be9a600789bb115269241d1220da7719e31b4ea6"
+  },
+  "runtime_sha256": "4205d286abf7078c5b20d1b33f83377a87fafa2bb9464871dd4ff7ff14496931",
+  "issue": 369,
+  "version": "5.5.8",
+  "runs": [
+    {
+      "directory": "issue369-final01",
+      "label": "final-poses",
+      "pass_lines": 13,
+      "log": {
+        "file": "evidence/issue369-final01--final-poses.txt",
+        "sha256": "acd1f857efc3a2dd39ad31fa19766c022c3308759d0a184cd5ae4b467cf8c338"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-poses-run.json",
+        "sha256": "386c32359c1ac289f6757caaa1cbfbccf2c5996ad1f25c0a15358589ce2a99e8"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-cast",
+      "pass_lines": 18,
+      "log": {
+        "file": "evidence/issue369-final01--final-cast.txt",
+        "sha256": "f4a877376671600b7a7622cfcb597cdd6d282ba373c131d530bcf7392d9fab33"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-cast-run.json",
+        "sha256": "a0956911d6126291de3e3f352b03917ea5c9fb60aa804f0d683c0a6fe5aaefbf"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-encounter",
+      "pass_lines": 4,
+      "log": {
+        "file": "evidence/issue369-final01--final-encounter.txt",
+        "sha256": "baad9440f680d38687b10adb3e9d1c4347aee9e19c3d3fed9c59d77df0a30ee5"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-encounter-run.json",
+        "sha256": "1a0bcd16fd5615dffe65b61058d8842a899ae4f9bde23e7417aaf34f6e6c216b"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-recall",
+      "pass_lines": 19,
+      "log": {
+        "file": "evidence/issue369-final01--final-recall.txt",
+        "sha256": "9ee0849231efcff4438615b0b1f9a4cf1fb1898b8b5399d2c5e31e1e30de7511"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-recall-run.json",
+        "sha256": "1a2ca95b9788eec6a51491e2d371f248c6bc1be29d22018a96055da0e244188a"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-fade",
+      "pass_lines": 2,
+      "log": {
+        "file": "evidence/issue369-final01--final-fade.txt",
+        "sha256": "a2447393470f4135bd437102aa80999e2f48a2efc68f5e3f8cfa9a49f268fb86"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-fade-run.json",
+        "sha256": "b5936c684e45e4cfe5364e617a4ff6a05085934687b4d625565a57492c7fc284"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-upgrade",
+      "pass_lines": 18,
+      "log": {
+        "file": "evidence/issue369-final01--final-upgrade.txt",
+        "sha256": "93763be3294d6c67fb3511c8464962968499180c9091b69569e659c946bfbf55"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-upgrade-run.json",
+        "sha256": "0c9fa627f184fdab620367d383337dea54f2b9f913398b0b509a71eb38228bc5"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-reload",
+      "pass_lines": 18,
+      "log": {
+        "file": "evidence/issue369-final01--final-reload.txt",
+        "sha256": "56d052dcd2d9fcd9463e82774d5262d6d818ed465a63658801dd3ad91faedc6e"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-reload-run.json",
+        "sha256": "8c9bcbedcca9353222c2558abf3dcae8e5af0088c851ffee437c5589ca4bcc6a"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-rollback-prep",
+      "pass_lines": 9,
+      "log": {
+        "file": "evidence/issue369-final01--final-rollback-prep.txt",
+        "sha256": "cfab8731173cc941563c7b9d0e11675c4666459af5c792baa5c000d94ad2c5f9"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-rollback-prep-run.json",
+        "sha256": "013e753d2df325a4f82758638538a84adf927341abead526632a25b6ec86fd81"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-hub-out",
+      "pass_lines": 18,
+      "log": {
+        "file": "evidence/issue369-final01--final-hub-out.txt",
+        "sha256": "9c95456e4886ec467c1ee7de85106cceab53466af43d0ea268c0be695d3aeae5"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-hub-out-run.json",
+        "sha256": "42d785bd85f08b2c49fcae0e6e7bd2b92dc92f48575a34231b1dd8a2fde08f10"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-hub-current",
+      "pass_lines": 6,
+      "log": {
+        "file": "evidence/issue369-final01--final-hub-current.txt",
+        "sha256": "2327683e891c7794e2ce690423d902cd6a410559a612c1ef47f88f0bfe44f2de"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-hub-current-run.json",
+        "sha256": "8e07e67cd022b34e12d8030108f41d4f7933708befb11fbcffc98ea6f040b9c7"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-perf-model",
+      "pass_lines": 1,
+      "log": {
+        "file": "evidence/issue369-final01--final-perf-model.txt",
+        "sha256": "a3ddb9d479ba8547785235163b36c7687ea2af7d7f8afbca96720776d4ce65af"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-perf-model-run.json",
+        "sha256": "86e75ffe3995b2d933a02411d2f78d4747a4c7d85152414e250dee1e28ad1b28"
+      }
+    },
+    {
+      "directory": "issue369-final01",
+      "label": "final-map01-model",
+      "pass_lines": 0,
+      "log": {
+        "file": "evidence/issue369-final01--final-map01-model.txt",
+        "sha256": "52d85dbff3151665afc832210531ffbe795edc718073ff22360010febac0d634"
+      },
+      "run": {
+        "file": "evidence/issue369-final01--final-map01-model-run.json",
+        "sha256": "e0d336f7fbabc03638feb6b1ace486993c27486706d0dc6d87d7c493093cb59a"
+      }
+    },
+    {
+      "directory": "issue369-baseline02",
+      "label": "final-rollback-old",
+      "pass_lines": 6,
+      "log": {
+        "file": "evidence/issue369-baseline02--final-rollback-old.txt",
+        "sha256": "8ac990705a7e6715ca421181bad08a241a0de7eaac1b9cb50851d96305ac1e56"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline02--final-rollback-old-run.json",
+        "sha256": "7934086e747ebb2e19fb759d231d937c76ba2973871d49f9371ab5c9b903abb1"
+      }
+    },
+    {
+      "directory": "issue369-baseline02",
+      "label": "final-hub-old",
+      "pass_lines": 6,
+      "log": {
+        "file": "evidence/issue369-baseline02--final-hub-old.txt",
+        "sha256": "75425adc8797080e18640fd422f443b0926743c73292629e4c34770d028df592"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline02--final-hub-old-run.json",
+        "sha256": "99e3f83255a85c964f0ff77b651374ccd45447624956e48db954374f23ea08f9"
+      }
+    },
+    {
+      "directory": "issue369-baseline02",
+      "label": "final-perf-old",
+      "pass_lines": 1,
+      "log": {
+        "file": "evidence/issue369-baseline02--final-perf-old.txt",
+        "sha256": "712886117c5d184421d50138b2e262aaa119bc1c74fa51829e6c7c2db5079291"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline02--final-perf-old-run.json",
+        "sha256": "8f6414a1a05e56855c321a1212cf5adf119a10ed91050554123baa27822dafbe"
+      }
+    },
+    {
+      "directory": "issue369-baseline02",
+      "label": "final-map01-old",
+      "pass_lines": 0,
+      "log": {
+        "file": "evidence/issue369-baseline02--final-map01-old.txt",
+        "sha256": "61b28eb6bdc877a14118a81559812a51eec03963d7982ac24b784eb24baecc8a"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline02--final-map01-old-run.json",
+        "sha256": "d0f8afff85af736112c01cf91bb9c338a325783cec75e374ba6bd7e0b5a31426"
+      }
+    },
+    {
+      "directory": "issue369-baseline01",
+      "label": "baseline-cast01",
+      "pass_lines": 6,
+      "log": {
+        "file": "evidence/issue369-baseline01--baseline-cast01.txt",
+        "sha256": "17ebe5fb3e1f9eedb07bf9ae53ee2e0cae7e4e86c8a1240419098064cdbb1434"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline01--baseline-cast01-run.json",
+        "sha256": "34dd33d24047080d61f6befb94f7c29698be35e251367a07f5d19a5096667e14"
+      }
+    },
+    {
+      "directory": "issue369-baseline01",
+      "label": "baseline-encounter01",
+      "pass_lines": 2,
+      "log": {
+        "file": "evidence/issue369-baseline01--baseline-encounter01.txt",
+        "sha256": "16decfde217c4a2d555d89fad7960fc5f7eaeb17a480370eb5e9b5006026beed"
+      },
+      "run": {
+        "file": "evidence/issue369-baseline01--baseline-encounter01-run.json",
+        "sha256": "59546c7ea34d46c30c5967b6c7d2c67b16c27b18d018cb576252d2cffb9953d0"
+      }
+    }
+  ],
+  "failed_attempts": [
+    {
+      "reason": "Unavailable owner.DeathState accessor; use FindState(Death).",
+      "log": {
+        "file": "evidence/issue369-current01--smoke01.txt",
+        "sha256": "78402bb266d99098cdd6af24bb2dd9148f97540eed9efdc0c211661a8a0984ae"
+      }
+    },
+    {
+      "reason": "Fixture used unqualified GetSpriteIndex; qualify Actor.GetSpriteIndex.",
+      "log": {
+        "file": "evidence/issue369-current02--smoke02.txt",
+        "sha256": "4c8a174fa3af9c8c6039a9c736be60d40ef116bc1f4bbf1b70def2e0282ecdde"
+      }
+    },
+    {
+      "reason": "Fixture killed before deferred PostBeginPlay profile initialization; wait, then native DamageMobj.",
+      "log": {
+        "file": "evidence/issue369-current04--cast04.txt",
+        "sha256": "d6796ade0c64e85bd41d9cc43b8fafdb7268e115bc9bc34645dea288618a5db3"
+      }
+    },
+    {
+      "reason": "Production lifecycle defect: final tic recreated helpers after WorldUnloaded; fixed transition gate.",
+      "log": {
+        "file": "evidence/issue369-baseline01--hub-rollback-old01.txt",
+        "sha256": "d67dd831500a9301ba034f55671319477aadad8513139b27f5dc54ca4d7e6059"
+      }
+    },
+    {
+      "reason": "Invalid fixture gore target/timing; also exposed preparation priority hiding the gore notification (fixed).",
+      "log": {
+        "file": "evidence/issue369-current08--poses08.txt",
+        "sha256": "59ff1adbb4b55fdaf609a9c17c9fbba8116cad40d0c784910b322ce8896ea2b9"
+      }
+    },
+    {
+      "reason": "Fixture sampled gore before the following helper tick; reorder independent poses and wait two tics.",
+      "log": {
+        "file": "evidence/issue369-current09--poses09.txt",
+        "sha256": "010a91879f3d3d6e1acd192cc8bb72642cf36f92af9916d656bf3ef03494ca76"
+      }
+    }
+  ],
+  "performance": {
+    "final-perf-model": {
+      "callback_count": 599,
+      "mean_ms": 16.671359766277128,
+      "p95_ms": 19.1301,
+      "p99_ms": 19.8816,
+      "max_ms": 20.1103,
+      "simulation_tics_per_second": 35.04555291058423,
+      "population": [
+        "CA369 PERF BEGIN population=512 census=513 high_density=1",
+        "CA369 PERF END alive=512 mean_exposure=0.000000"
+      ]
+    },
+    "final-map01-model": {
+      "callback_count": 599,
+      "mean_ms": 16.669038063439064,
+      "p95_ms": 17.9354,
+      "p99_ms": 18.4352,
+      "max_ms": 19.5162,
+      "simulation_tics_per_second": 35.03951791870389,
+      "population": [
+        "CA369 PERF BEGIN population=0 census=6 high_density=0",
+        "CA369 PERF END alive=0 mean_exposure=0.000000"
+      ]
+    },
+    "final-perf-old": {
+      "callback_count": 599,
+      "mean_ms": 16.672665609348915,
+      "p95_ms": 20.9413,
+      "p99_ms": 22.5338,
+      "max_ms": 24.8362,
+      "simulation_tics_per_second": 34.99019399813202,
+      "population": [
+        "CA369 PERF BEGIN population=512 census=513 high_density=1",
+        "CA369 PERF END alive=512 mean_exposure=0.000000"
+      ]
+    },
+    "final-map01-old": {
+      "callback_count": 599,
+      "mean_ms": 16.666902337228713,
+      "p95_ms": 18.5769,
+      "p99_ms": 19.0834,
+      "max_ms": 19.5754,
+      "simulation_tics_per_second": 34.99552687175525,
+      "population": [
+        "CA369 PERF BEGIN population=0 census=6 high_density=0",
+        "CA369 PERF END alive=0 mean_exposure=0.000000"
+      ]
+    }
+  },
+  "author_acceptance": {
+    "id": "CA369-01",
+    "accepted": false
+  },
+  "combat_trace": {
+    "equal_rows": 181,
+    "excluded_field": "numeric native sprite registration index only"
+  },
+  "hub_snapshot_helper_mentions": {
+    "tbull.map.json": 0,
+    "tbull2.map.json": 0
+  },
+  "stopped_mesh_pixels": {
+    "rectangle": [
+      400,
+      290,
+      400,
+      205
+    ],
+    "pixels": 82000,
+    "changed": 0
+  },
+  "stopped_mesh_evidence": {
+    "file": "evidence/stopped-pixels.json",
+    "sha256": "98c9482f92538eaa4ec22f9221e2fd257c0f96d767f5b51a10137feeab06c852"
+  },
+  "export_manifest": {
+    "file": "evidence/export-manifest.json",
+    "sha256": "95c12971ec26c93764d25df2d3c6eb68b0e4ecba79bc00d8adce35ddd1afbf80"
+  },
+  "exporter_sha256": "7a9e32187bab15c5b279820dc9f018e16650c9259615ca342bdc7fa444fca6fe",
+  "static_validation": {
+    "file": "evidence/issue369-static-final.json",
+    "sha256": "b1cf02e3c2eddd3ae1a4d0a0aeac46556f0c98c5b2b1938876ec82cae712e544"
+  },
+  "normal_build_log": {
+    "file": "evidence/issue369-final-build-log.txt",
+    "sha256": "675c07a39a5e36d6924bff6a5670846b0b8f710cd47df76952c40bd29d51f434"
+  },
+  "export_log": {
+    "file": "evidence/issue369-export04-log.txt",
+    "sha256": "7a21976b43a399796fd9099c85491a87bce1fec4550fdf13766fbbe0968718fd"
+  },
+  "rig_report": {
+    "file": "evidence/rig-report.json",
+    "sha256": "ec169f5c87fe7ad429d425928a51fc20835d5d53f342da5a54ead5e6a005cb90"
+  },
+  "captures": [
+    {
+      "file": "evidence/final-poses-quick-idle-side.png",
+      "sha256": "3543c88aff23b437d33354e62f95303f6cd0c0ad059b6385bcef4fc1864c3ccf"
+    },
+    {
+      "file": "evidence/final-poses-quick-walk.png",
+      "sha256": "c7fedd470da1a9476d9c5055a913c9bbac8176683ba473b68baf3214f508b89b"
+    },
+    {
+      "file": "evidence/final-poses-quick-stopped-a.png",
+      "sha256": "4de104327b67abb3e5af6515be18ad1c1f10fa8056828ac65d852392dddd29f5"
+    },
+    {
+      "file": "evidence/final-poses-quick-stopped-b.png",
+      "sha256": "4de104327b67abb3e5af6515be18ad1c1f10fa8056828ac65d852392dddd29f5"
+    },
+    {
+      "file": "evidence/quick-run.png",
+      "sha256": "cf6075ac2196374828c6fc5bbccd33f457639b7e80388e0128cc8fedafdebdf4"
+    },
+    {
+      "file": "evidence/quick-gore.png",
+      "sha256": "21152154bcf39adc32e80c3fb9475b2812bbe7e4b0cceb5a67e3ae1d1338f78c"
+    },
+    {
+      "file": "evidence/quick-death.png",
+      "sha256": "4617c5ace53e9a1353012b0571d8937a8489551db7185274c29a7df137221f68"
+    },
+    {
+      "file": "evidence/quick-corpse.png",
+      "sha256": "032d575fe9a5560b73c42216fe7dacd6dbf70f66a71520150af3ad4f5549423f"
+    },
+    {
+      "file": "evidence/final-encounter-quick-map01.png",
+      "sha256": "e6df1dd462206506b484d2eb45bce55c04b9d0ca081949d05595872258e4cd28"
+    },
+    {
+      "file": "evidence/final-perf-model-quick-perf.png",
+      "sha256": "69563ccc6305b7e8d3ddee17b1adb274006047ad6cfcd5a98355ea35e037dac0"
+    },
+    {
+      "file": "evidence/final-map01-model-quick-reference.png",
+      "sha256": "1e08c2884a0bb5d321b4656c2609282e38e128c9266607b0c5929dba70a0e1bc"
+    },
+    {
+      "file": "evidence/cleaned-front.png",
+      "sha256": "87118d2bd3a7f3dbb87e792b9a83baa7ca08d707585f0812c30c580742380e4e"
+    },
+    {
+      "file": "evidence/cleaned-angle.png",
+      "sha256": "1ab7305e9a135f8cdd10d700302186ed73b2659be74a642ed105d0b460cb5d81"
+    }
+  ],
+  "presentation": {
+    "available": false,
+    "reason": "Earlier same-session PresentMon ETW access denied; not retried or elevated. Callbacks are not presents.",
+    "prior_evidence": "../validation_556/evidence/issue314-baseline01--neutral-before-presentmon.txt"
+  },
+  "run_count": 18,
+  "pass_lines": 147,
+  "tooling_sha256": {
+    "baseline.zs": "471ff10e1888f39266478c133ce641b6b08972806eb613a499744a6d8b862614",
+    "collect.py": "f7cb312e8802ed262610b678c8420e8249ed8a5d9077d200f0d2bc8f99fd426b",
+    "common.zs": "a9f505033d824e36414cb7e8608c1fdd53318f8b01b70286016880a8d7f83aa8",
+    "perf.zs": "5a73fe408a3c3d25a95bf7c06436345dfa42c4345443c54fe3df135645224a19",
+    "prepare.py": "f2e724ad9cfbba1b6214aebc21a4f2c8764fed83373ab76f4e547956e7927e4f",
+    "preview.ps1": "d25d3f5a84fa57ad6ece3a28530b1fc8318476338c732bbbf8df2695791d4dbd",
+    "probe.zs": "5dc91b60a861ce8afa475fc807b32f9777af42cb143db0a8b17c6dbc6d661548",
+    "run_native.ps1": "981be9dab74659d77666dc7c0027138531f94de7860da00282ecf772a87cb020",
+    "verify.py": "b0105136af23fe8d6ea19258733d6b5cc36c5c8838c9911a28b7abacd66fb560"
+  }
+}

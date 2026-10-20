@@ -1,0 +1,275 @@
+{
+  "issue": 369,
+  "version": "5.5.8",
+  "previous_commit": "c3519ea4",
+  "previous_report": "report-face.json",
+  "author_feedback": "Reuse the body coat on the head, modeled threatening brows/forelock; author approved a uniform 50% visual enlargement with original collision/combat retained.",
+  "author_acceptance": {
+    "id": "CA369-01",
+    "origin_version": "5.5.8",
+    "issue": 369,
+    "accepted": true,
+    "date": "2026-10-20",
+    "confirmation": "El toro qued? bien",
+    "merge_and_issue_closure_authorized": true,
+    "qualification": "Author approval of the final visual candidate. Native encounter/save/lifecycle results remain agent evidence; no separate manual route or display-FPS measurement was reported."
+  },
+  "changed_members": [
+    "caelum/actors/CaelumBullModelFrames.zs",
+    "licenses/BULL_3D_MODEL.txt",
+    "models/caelum/bull/bull.md3",
+    "models/caelum/bull/bull_skin.png"
+  ],
+  "original_combat_bytes_unchanged": true,
+  "native_action_timing_unchanged": true,
+  "runtime_sha256": "2c78110b858a6192e34c067ed74232178885dc8526617500e2499a6d9e99612a",
+  "export_repeat_sha256": {
+    "bull.md3": "2b81a402f57c1db427cb5f860ea1a1bfccfaa2a3dffcc3b688ec4654feeffc99",
+    "bull_invisible.png": "2aa4fa20701cdd6d8d56046069001186b5267e3ee7d0ef618ad2f4a683723e11",
+    "bull_skin.png": "e37184cafca3f09b2c6aa8a6e6c3a980fc068d7883de37109b0e185f1c7bbe33",
+    "frames.zs": "38cda23e4a5b9053620230bcb02587a0fb1f6994f763de70f0129b97d4766550",
+    "manifest.json": "28b0645f37b2438326000d2a3d1caf378e299c0d5b1e02fb47f71746bda3ef9c",
+    "MODELDEF": "f069c78831e111a1f8caa436a47adb55cee34dc97d9df372c23bca19c2ccc52a",
+    "TEXTURES": "4bd11d0cd1b08b3c022e0efc734a3c304d48263044f27ee3bab9587fc5413076"
+  },
+  "source_sha256": {
+    ".gitattributes": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d",
+    "authoring.py": "be8ae62d03d6c17825fb37dabbea418531090639bc2eed0eb61417971524a847",
+    "bull.blend": "c28b9701ff2a2727d6cd27c017165aef6976c094e718d76810b26c6163cb0a52",
+    "bull_skin.png": "e37184cafca3f09b2c6aa8a6e6c3a980fc068d7883de37109b0e185f1c7bbe33",
+    "DESIGN.json": "03fce5aec78d6bb1ec7549d9100ef4c66f8b2162d4bbf6f3e124657f8a7ae016",
+    "original.glb": "21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97",
+    "original_image_0.png": "f442deeedfe8362868cb2ab07016277f422b72dd942364ecc35a05093d538eed",
+    "original_image_1.png": "7f71434c2e1b20614abb6e4964b5c5c9ac3fec61f7637599a3a385fa7909146c",
+    "refine_head.py": "6b35639c8aaf5fc30289c22e2786b80d2ebd59a12eacfa3eca4849760bf1072a",
+    "rigging.py": "920671463529c51789aca3c3be9a600789bb115269241d1220da7719e31b4ea6"
+  },
+  "runs": [
+    {
+      "label": "coat-front",
+      "pass_lines": 9,
+      "log": {
+        "file": "evidence-coat/coat-front.txt",
+        "sha256": "01ecb25309785377b7de9de0e262051e731b1aad0b6b850961f2c3e577f7233c"
+      },
+      "record": {
+        "file": "evidence-coat/coat-front-run.json",
+        "sha256": "ca63c82c08fc2986b9b27e43dae7e0eb11081942c1853701ed286c100bafd4e3"
+      }
+    },
+    {
+      "label": "coat-load",
+      "pass_lines": 19,
+      "log": {
+        "file": "evidence-coat/coat-load.txt",
+        "sha256": "384014c34b711213997368d3bc30f3933bafba35786beafd4c11b4a954225204"
+      },
+      "record": {
+        "file": "evidence-coat/coat-load-run.json",
+        "sha256": "93ea0aa7278b2de5ebaaf69a0aabf64cb83bfc7c2cbd4a4d0b20cd3c45f33cd3"
+      }
+    },
+    {
+      "label": "coat-poses",
+      "pass_lines": 13,
+      "log": {
+        "file": "evidence-coat/coat-poses.txt",
+        "sha256": "5bb1b5b2887386ae4849bb73741557548dbded19340d9a69f3e941d3379422c3"
+      },
+      "record": {
+        "file": "evidence-coat/coat-poses-run.json",
+        "sha256": "45efe3995d9bd4539877b875e255895f00477d989623d18464a47bacb920589b"
+      }
+    },
+    {
+      "label": "coat-encounter",
+      "pass_lines": 4,
+      "log": {
+        "file": "evidence-coat/coat-encounter.txt",
+        "sha256": "22de6d68ca512f05357d836a44557e462dcc7f919b17766bed96964aab0ed658"
+      },
+      "record": {
+        "file": "evidence-coat/coat-encounter-run.json",
+        "sha256": "b88db548653782b07b09c8190a77862083ebaa78172cfd21bef9d0dd8906427f"
+      }
+    },
+    {
+      "label": "coat-population",
+      "pass_lines": 1,
+      "log": {
+        "file": "evidence-coat/coat-population.txt",
+        "sha256": "bbd88ab6c248df92b73ac779d52ec5b0cbcee9ed99c89bd1b6c72c65a96fe7b5"
+      },
+      "record": {
+        "file": "evidence-coat/coat-population-run.json",
+        "sha256": "72481e60780fa4c9999c174efbd2702efc0ba39d02fe1d22c2fa052472995c4e"
+      }
+    },
+    {
+      "label": "coat-map01",
+      "pass_lines": 0,
+      "log": {
+        "file": "evidence-coat/coat-map01.txt",
+        "sha256": "42cf30208e1a2c16038d7db7a502055e2471496ee5afd4950843904976212571"
+      },
+      "record": {
+        "file": "evidence-coat/coat-map01-run.json",
+        "sha256": "bda8559aea5489a4c217782696b4e25732a22f2b5627ea67ba568c641dfcc268"
+      }
+    }
+  ],
+  "performance": {
+    "coat-population": {
+      "mean_ms": 16.669776627712857,
+      "p95_ms": 17.7688,
+      "p99_ms": 18.2131,
+      "max_ms": 18.9346,
+      "callback_count": 599,
+      "tics_per_second": 34.994754636227576,
+      "population": [
+        "CA369 PERF BEGIN population=512 census=513 high_density=1",
+        "CA369 PERF END alive=512 mean_exposure=0.000000"
+      ]
+    },
+    "coat-map01": {
+      "mean_ms": 16.67073205342237,
+      "p95_ms": 18.084,
+      "p99_ms": 18.9464,
+      "max_ms": 20.5506,
+      "callback_count": 599,
+      "tics_per_second": 34.9977706420101,
+      "population": [
+        "CA369 PERF BEGIN population=0 census=6 high_density=0",
+        "CA369 PERF END alive=0 mean_exposure=0.000000"
+      ]
+    }
+  },
+  "combat_trace_equal_rows": 181,
+  "visual_scale_factor": 1.5,
+  "superseded_pose_failure": {
+    "reason": "Initial console requests were queued together: idle setup and check ran before the next native helper update. Final fixture gates the assertion in WorldTick and defers the following pose.",
+    "log": {
+      "file": "evidence-coat/superseded-coat-poses.txt",
+      "sha256": "431d09709708bf1369a6c8cfba6f50a3d30a2bd403046fa6e2c60937c70f55ac"
+    },
+    "run": {
+      "file": "evidence-coat/superseded-coat-poses-run.json",
+      "sha256": "47495d74709617d07e9d80b2df1555645212427d5adac0a31a29c1e97d6fcf26"
+    }
+  },
+  "idle_diagnostic": {
+    "log": {
+      "file": "evidence-coat/diagnostic07.txt",
+      "sha256": "4d265f5dde10987ebe7039efb7845594fd2b6849d107e547950815e56955ec71"
+    },
+    "run": {
+      "file": "evidence-coat/diagnostic07-run.json",
+      "sha256": "47660c48775a87c3069ef9d593edb4b19539d1f2b1bac692cabc2a1dc1c472db"
+    },
+    "qualification": "Direct UpdateVisual was diagnostic only; its checks are excluded from final native pass counts."
+  },
+  "idle_gate": {
+    "setup_tic": 17,
+    "check_tic": 19,
+    "helper_tic": 18
+  },
+  "bounds_neutral": {
+    "pose": "Idle",
+    "sample": 0,
+    "min": [
+      -61.229984283447266,
+      -30.915210723876953,
+      7.025062586762942e-06
+    ],
+    "max": [
+      63.60670852661133,
+      30.915206909179688,
+      77.70000457763672
+    ]
+  },
+  "art_report": {
+    "file": "evidence-coat/face-report.json",
+    "sha256": "340d687dea6dabb1ebcbb1c91b80dd4db3073fafc75145151e6f355bc4b32445"
+  },
+  "export_manifest": {
+    "file": "evidence-coat/export-manifest.json",
+    "sha256": "28b0645f37b2438326000d2a3d1caf378e299c0d5b1e02fb47f71746bda3ef9c"
+  },
+  "build_log": {
+    "file": "evidence-coat/issue369-coat-final-build-log.txt",
+    "sha256": "675c07a39a5e36d6924bff6a5670846b0b8f710cd47df76952c40bd29d51f434"
+  },
+  "static_validation": {
+    "file": "evidence-coat/issue369-coat-static.json",
+    "sha256": "7681b3da4fb69c4847665a969e5c56e00b50b33693b8584569fb35b29f1bdf57"
+  },
+  "captures": [
+    {
+      "file": "evidence-coat/coat-front-quick-face-front.png",
+      "sha256": "d32a89c289038abf7e6593762644bc8d8c7a6e1175b55f53a2f895d6a541b5d9"
+    },
+    {
+      "file": "evidence-coat/coat-front-quick-face-angle.png",
+      "sha256": "d5c76f9846f80870cbfe47a218d3b2692ff27647c8ea59f77eee0126144b1661"
+    },
+    {
+      "file": "evidence-coat/coat-front-quick-body-size.png",
+      "sha256": "c0d917c61c353b5f791281d4ee60a2ec91b3783b7e7fd13354e7d36e546dd478"
+    },
+    {
+      "file": "evidence-coat/coat-poses-quick-walk.png",
+      "sha256": "7bafcb8f6f12f9ac6f0f40c15c79d0787ff699fdc5aa3109b5462e006a448cfe"
+    },
+    {
+      "file": "evidence-coat/quick-run.png",
+      "sha256": "ffc9a10133eae0280b776ed0e5ab8f7b3e2b1d126fe6cead1d4605827a7871b3"
+    },
+    {
+      "file": "evidence-coat/quick-gore.png",
+      "sha256": "924540d7aec5fb910810f901cd1718f953cfb1cdda97bc98ce842740c7f3af7f"
+    },
+    {
+      "file": "evidence-coat/quick-death.png",
+      "sha256": "59b8bbc5331283e04d3975a20062efb43ab7ec9eac1e47aae524e08e9f07ece3"
+    },
+    {
+      "file": "evidence-coat/quick-corpse.png",
+      "sha256": "0b96f0b6cd518bf94de5b59c4f0bad17272da8bf6cb69e55efcf2a352b92aa21"
+    },
+    {
+      "file": "evidence-coat/coat-encounter-quick-map01.png",
+      "sha256": "019beda599135070a6c47900601616f5a91fc6b3d98ac1eaa78321ec6e590180"
+    },
+    {
+      "file": "evidence-coat/coat-population-quick-perf.png",
+      "sha256": "fbe9c9ca291bbed8b9031901efda9ad7846328e99401eccf75d54346fc678106"
+    },
+    {
+      "file": "evidence-coat/authoring-front.png",
+      "sha256": "d558623019ccde7b75e535a485684390c4677cc7d4b8dae4fdbc2ad8d1f2b698"
+    },
+    {
+      "file": "evidence-coat/authoring-angle.png",
+      "sha256": "887853a2d538e7a7d616b9f3ac14ef776ccd47784c0372935780956b89e61f46"
+    },
+    {
+      "file": "evidence-coat/authoring-side.png",
+      "sha256": "40491e9adb5d8901a3731e1ce6cfdd4b2ab29907d6d7e7b83f090173fc87730c"
+    }
+  ],
+  "presentation": "Unmeasured; same-session ETW access denial retained in initial report. Callback timings are not display FPS.",
+  "passed_checks": 46,
+  "tooling_sha256": {
+    "baseline.zs": "471ff10e1888f39266478c133ce641b6b08972806eb613a499744a6d8b862614",
+    "collect.py": "f7cb312e8802ed262610b678c8420e8249ed8a5d9077d200f0d2bc8f99fd426b",
+    "collect_coat.py": "c2daa1edc5b990610985457bb2de39bcc3bfec942077233615e2780012fe3324",
+    "collect_face.py": "04ca9db89679e9bb47112e393be5c0f1cfea6f7aaafb77469cd51cecda70b830",
+    "common.zs": "a9f505033d824e36414cb7e8608c1fdd53318f8b01b70286016880a8d7f83aa8",
+    "perf.zs": "5a73fe408a3c3d25a95bf7c06436345dfa42c4345443c54fe3df135645224a19",
+    "prepare.py": "2102fa256cd8a660f79c35d745de9f49db416ad59dea897e9c477e7a95b97e44",
+    "preview.ps1": "a6b3a1ffde8a84765d90be837ad77ff23cfac312c61f72eab0b482de3a8b28c3",
+    "probe.zs": "25dfe842b73d1da2cdd4ddedf068fdfd79090c884735ab84ad4f23270f224bba",
+    "run_native.ps1": "981be9dab74659d77666dc7c0027138531f94de7860da00282ecf772a87cb020",
+    "verify.py": "b0105136af23fe8d6ea19258733d6b5cc36c5c8838c9911a28b7abacd66fb560"
+  }
+}
