@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-140 - Revalidate the selected trade item as well as its price
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #377/5.6.1, 2026-10-20.
+Environment: GZDoom 4.14.2 / Windows 11; isolated native merchant fixtures.
+Baseline: `2c90af69` (5.6.0), `assets/validation_561`.
+
+Palomo's sale snapshot rebuilds the visible rows and may select another product
+when the prior row disappears. The old Execute path compared only the quoted
+price after refreshing. Removing selected raw copper while raw tin remained
+allowed the equal-price replacement to be sold. The baseline fixture reproduces
+the unintended quantity/payment change; the revised fixture rejects it.
+
+Capture product, mode, quantity and price before refresh, and reject any changed
+part before committing. City rows additionally retain the exact native object
+reference. A UI snapshot is neither ownership nor permission: the city service
+also checks that the session belongs to the requesting pawn and active vendor.
+This lesson concerns the tested synchronous trade path, not a claim of complete
+multiplayer support or fault injection for native allocation exhaustion.
+
 ## CA-KP-139 - Console waits do not prove queued fixture events have advanced
 
 Status/evidence: ENGINE-VERIFIED, #369/5.5.8, 2026-10-20.

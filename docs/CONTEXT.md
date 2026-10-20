@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.0** — 2026-10-20.
+Documentation version: **5.6.1** — 2026-10-20.
 
-**5.6.0/#376:** crafting extraction; validation_560; CA376-01 accepted2026-10-20.
-#377 next; #378-387 need design.
+**5.6.1/#377:** merchant coordination; validation_561; CA377-01 pending.
+**5.6.0/#376:** crafting; validation_560; CA376-01 accepted2026-10-20.
 
 **5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.
 **5.5.8/#369:** accepted; validation_558; CA369-01 passed.

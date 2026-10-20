@@ -2,6 +2,143 @@
 // Cada operación recibe al propietario; esta clase no guarda estado.
 class CaelumInventoryService : Object play
 {
+    // #377: reservar instancias separadas antes de alterar objetos o saldos.
+    // El plan monetario existente sigue siendo la única fuente de cantidades.
+    static bool PrepareMerchantCurrencyObjects(CaelumPlayer user, out Array<CaelumCurrencyItem> coins)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        coins.Clear();
+        bool ready = true;
+        for (int c = 0; c < CaelumConstants.CURRENCY_TYPE_COUNT; c++)
+        {
+            CaelumCurrencyItem created = null;
+            if (user.PalomoCurrencyPlanAmount[c] > 0 && user.FindNativeCurrency(c) == null)
+            {
+                created = CaelumCurrencyItem(Actor.Spawn(
+                    CaelumEconomyRules.GetCurrencyClassName(c), user.Pos, NO_REPLACE));
+                if (created == null) ready = false;
+            }
+            coins.Push(created);
+        }
+        if (!ready)
+            for (int c = 0; c < coins.Size(); c++)
+                if (coins[c] != null) coins[c].Destroy();
+        return ready;
+    }
+
+    static void AttachMerchantCurrencyObjects(CaelumPlayer user, out Array<CaelumCurrencyItem> coins)
+    {
+        for (int c = 0; c < coins.Size(); c++)
+            if (coins[c] != null)
+            {
+                coins[c].Amount = 0;
+                coins[c].AttachToOwner(user);
+            }
+    }
+
+    static bool CommitPalomoProductAndCurrency(CaelumPlayer user, int merchantItem, int quantity, bool selling)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user) || user.CityTrade != null
+            || !user.IsActivePalomoMerchantSessionValid() || quantity <= 0) return false;
+        Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
+        if (existing != null && existing.Owner != user) return false;
+        if (selling && (existing == null || existing.Amount < quantity)) return false;
+        if (!selling && existing != null && existing.Amount > existing.MaxAmount - quantity) return false;
+        Inventory prepared = null;
+        if (!selling && existing == null)
+        {
+            int consumableType = user.GetPalomoMerchantConsumableType(merchantItem);
+            if (consumableType >= 0)
+                prepared = Inventory(Actor.Spawn(user.GetConsumableClassName(consumableType), user.Pos, NO_REPLACE));
+            else
+            {
+                int materialType = user.GetPalomoMerchantMaterialType(merchantItem);
+                if (materialType < 0) return false;
+                let material = CaelumMaterialPickup(Actor.Spawn("CaelumMaterialPickup", user.Pos, NO_REPLACE));
+                if (material != null)
+                {
+                    material.args[0] = materialType;
+                    material.args[1] = CaelumMaterialRules.ResolveTier(materialType, 1);
+                }
+                prepared = material;
+            }
+            if (prepared == null) return false;
+        }
+        Array<CaelumCurrencyItem> coins;
+        if (!PrepareMerchantCurrencyObjects(user, coins))
+        {
+            if (prepared != null) prepared.Destroy();
+            return false;
+        }
+        // No quedan asignaciones que puedan fallar entre los dos pagos nativos.
+        AttachMerchantCurrencyObjects(user, coins);
+        if (selling)
+        {
+            user.RemovePalomoMerchantProduct(merchantItem, quantity);
+            user.ApplyPalomoCurrencyPlan();
+        }
+        else
+        {
+            user.ApplyPalomoCurrencyPlan();
+            if (prepared != null)
+            {
+                prepared.Amount = 0;
+                prepared.AttachToOwner(user);
+            }
+            user.AddPalomoMerchantProduct(merchantItem, quantity);
+        }
+        return true;
+    }
+
+    static Inventory CommitCityMerchantTransfer(CaelumPlayer user, CaelumCityTradeSession session,
+        Inventory item, int quantity, int price, Inventory receiving)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user) || session == null || user.CityTrade != session
+            || session.Vendor == null || user.ActivePalomoMerchant != session.Vendor
+            || !user.IsActivePalomoMerchantSessionValid() || item == null || quantity <= 0
+            || item.Amount < quantity) return null;
+        Actor owner = session.Selling ? Actor(user) : Actor(session.Vendor);
+        Actor receiver = session.Selling ? Actor(session.Vendor) : Actor(user);
+        if (item.Owner != owner || (receiving != null && receiving.Owner != receiver)) return null;
+        Inventory split = null;
+        if (receiving == null && quantity < item.Amount)
+        {
+            split = Inventory(Actor.Spawn(item.GetClass(), user.Pos, NO_REPLACE));
+            if (split == null) return null;
+        }
+        Array<CaelumCurrencyItem> coins;
+        if (!PrepareMerchantCurrencyObjects(user, coins))
+        {
+            if (split != null) split.Destroy();
+            return null;
+        }
+        AttachMerchantCurrencyObjects(user, coins);
+        user.ApplyPalomoCurrencyPlan();
+        if (receiving != null)
+        {
+            receiving.Amount += quantity; item.Amount -= quantity;
+            if (item.Amount == 0) item.Destroy();
+        }
+        else if (split != null)
+        {
+            split.Amount = quantity; item.Amount -= quantity;
+            split.AttachToOwner(receiver); receiving = split;
+        }
+        else
+        {
+            item.Owner.RemoveInventory(item); item.AttachToOwner(receiver); receiving = item;
+        }
+        CaelumCityTradeSession.SetBoxed(receiving, !session.Selling && user.PalomoIncomingItemInMagicBox);
+        let equipment = CaelumEquipmentItem(receiving);
+        if (!session.Selling && equipment != null)
+        {
+            equipment.AcquisitionResolved = true;
+            user.EnsureEquipmentItemId(equipment);
+        }
+        session.Vendor.WalletCopper += session.Selling ? -price : price;
+        return receiving;
+    }
+
     static void SyncLiveMagicBoxOwnershipFromPersistentState(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;

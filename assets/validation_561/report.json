@@ -1,0 +1,131 @@
+{
+  "issue": 377,
+  "release": "5.6.1",
+  "runs": [
+    {
+      "label": "current-suite-final-02",
+      "passes": 62,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "d4489d96b4117c982467fafe72c3e2d01380758d5a62e236f4e74d956bd795df",
+      "log_sha256": "c5b3d0a3df843a4a3eb60ac025bfe9335feec5cd84687458b0ef5742afa41a7e"
+    },
+    {
+      "label": "baseline-suite-final-02",
+      "passes": 59,
+      "expected_baseline_defects": [
+        "foreign session cannot transact",
+        "Palomo stale row cannot sell equal-price alternative",
+        "city to Palomo clears projection"
+      ],
+      "runtime": "baseline",
+      "package_sha256": "a048d86a8a4eb5a7daa42ebec830050523989f94f66436a7b82f9d0438746e73",
+      "addon_sha256": "d4489d96b4117c982467fafe72c3e2d01380758d5a62e236f4e74d956bd795df",
+      "log_sha256": "d71330c9b15228394130b89374a9ad03624752aca6d65b8234cbf7a005b70341"
+    },
+    {
+      "label": "legacy-save-01",
+      "passes": 2,
+      "expected_baseline_defects": [],
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "32ff29c56158e7e2af42b2356f37087148b5d3a48278ced34a95572735ee1304",
+      "log_sha256": "cf90ae8c87c76649eab343e6ed6321d1341eea890de7ec39c5891f790c953757"
+    },
+    {
+      "label": "upgrade-final-02",
+      "passes": 7,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "eff5bda555b135a7637f841dcb5c1c16c6128acf8ea24e328bd0827111cd834e"
+    },
+    {
+      "label": "current-save-final",
+      "passes": 2,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "126232b952fcbce5aa2a873ed27f040bf89756e2f622faaeb033f659bf121dc7"
+    },
+    {
+      "label": "current-reload-final",
+      "passes": 7,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "25783cf830b7fe4142dab7d9e7f216dd04f852bff2775e436ed90ac41e7a23a5"
+    },
+    {
+      "label": "upgraded-reload-final",
+      "passes": 7,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "342d378506701d30f61a01cb24ccb009cc3ea89376f5b2539472722a23293c48"
+    },
+    {
+      "label": "current-travel-final",
+      "passes": 26,
+      "expected_baseline_defects": [],
+      "runtime": "current",
+      "package_sha256": "c1948986d866c730a01e978b3d9720851999569dd7bb17ec1a8f76bf25481a1f",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "568fa6301d08333a967a3e2fdff22e9d78e3c43a0dc0056c26cf5b391b7460dc"
+    },
+    {
+      "label": "baseline-travel-final",
+      "passes": 26,
+      "expected_baseline_defects": [],
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "033d8bcb4ae0092b74f0e37e34955c1211209186c15bd92bd4a8838a6607123a"
+    },
+    {
+      "label": "original-rollback-final",
+      "passes": 7,
+      "expected_baseline_defects": [],
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "e0eb65f377136639bd3b8d805fc2e425640fe79398b071a4c0d1d88384ac1ce4"
+    },
+    {
+      "label": "revised-rollback-final",
+      "passes": 7,
+      "expected_baseline_defects": [],
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "c7f5af171a564ce51fc3e12b1db2884b779f8376cc6f97748625bffab77c0001",
+      "log_sha256": "1f8bbf0fd9492857a9426fb9ba61339fdfca16289faf604c9bad992cccc3a700"
+    }
+  ],
+  "passing_assertions": 212,
+  "expected_baseline_defects": [
+    "Palomo stale row cannot sell equal-price alternative",
+    "city to Palomo clears projection",
+    "foreign session cannot transact"
+  ],
+  "unexpected_failures": 0,
+  "package_changed_members": [
+    "ZSCRIPT",
+    "caelum/equipment/CaelumCityTrade.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/equipment/CaelumMerchantCoordinator.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "synthetic_saves_retained_locally": {
+    "ca377-baseline.zds": "899ff0b87c6f4e52ec67bb72eeb54f5d22d23fa8fbda2b45868e136dc4412769",
+    "ca377-current.zds": "f50e2627a9844ac9daed5ab1c6a3b019682be33017fe8857e9e63d118b245a80",
+    "ca377-upgraded.zds": "e9aeb9232b1d637602e78177175c49b985fa707a0fe78b85c5cc2083fc7d1735"
+  },
+  "author_acceptance": "pending CA377-01"
+}

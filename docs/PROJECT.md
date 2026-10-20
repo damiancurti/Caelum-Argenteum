@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.0** — 2026-10-20.
+Documentation version: **5.6.1** — 2026-10-20.
+
+## 5.6.1 - Merchant coordination (#377)
+
+Thirteen pawn and five city-session policies delegate through compatible
+adapters to `CaelumMerchantCoordinator`. Palomo's character record, the city
+vendor's native inventory/wallet and session projection fields retain their
+owners and serialized identities. `CaelumInventoryService` now prepares all
+needed instances before either merchant family commits payment and products.
+The city path rejects foreign sessions/items; Palomo rejects changed product,
+quantity, mode or price rather than selling an equal-price replacement row.
+Changing from city trade to Palomo clears the prior projection.
+
+Scope is coordination and transaction correctness, with unchanged prices,
+access, stock, wallets, recipe knowledge and replenishment policy. Evidence:
+`assets/validation_561/RESULTS.md`; author check CA377-01 remains pending.
+#378-387 remain separate dependent deliveries with the author's design inputs.
 
 ## 5.6.0 - Crafting planning and session extraction (#376)
 

@@ -165,18 +165,7 @@ class CaelumCityTradeSession : Object play
 
     static void Open(CaelumPlayer user,CaelumCityMerchant vendor)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || user.CreationWizardOpen || !user.MagicBoxOwned)return;
-        if(user.StaffCastPending)user.CancelPendingStaffCast(false);
-        user.EquipmentMenuOpen=false;user.CloseCraftingStationSession();user.SetCraftingJournalState(false);
-        user.ClosePalomoMerchant();
-        vendor.EnsureStock(user);
-        let session=new("CaelumCityTradeSession");session.Vendor=vendor;user.CityTrade=session;
-        user.ActivePalomoMerchant=vendor;user.PalomoMerchantTitleKey=String.Format("CA_CITY_SHOP_%d",vendor.Category);
-        user.PalomoMerchantMenuOpen=true;user.PalomoMerchantSelection=0;
-        user.PalomoMerchantMode=CaelumConstants.PALOMO_MERCHANT_MODE_BUY;
-        user.PalomoMerchantDiscountGranted=false;user.PalomoMerchantReputationDiscount=false;
-        user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
-        session.Refresh(user);
+        CaelumMerchantCoordinator.OpenCityTrade(user, vendor);
     }
 
     static bool Boxed(Inventory item)
@@ -205,140 +194,20 @@ class CaelumCityTradeSession : Object play
     }
     void Refresh(CaelumPlayer user)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || Vendor==null)return;
-        Selling=user.PalomoMerchantMode==CaelumConstants.PALOMO_MERCHANT_MODE_SELL;
-        Inventory selected=Selection<Rows.Size() ? Rows[Selection] : null;
-        Rows.Clear();Names.Clear();Quantities.Clear();Prices.Clear();
-        Actor owner=Selling ? Actor(user) : Actor(Vendor);
-        for(Inventory item=owner.Inv;item!=null;item=item.Inv)
-        {
-            if(item.Amount<=0 || !Vendor.Accepts(item) || (Selling && !Sellable(user,item)))continue;
-            double value=CaelumEconomyRules.GetInventoryUnitBaseValue(item);
-            if(value<=0)continue;
-            int price=Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value) : CaelumEconomyRules.GetPriceChargedByMerchant(value);
-            Rows.Push(item);Names.Push(CaelumNotifications.Describe(user,item,0));Quantities.Push(item.Amount);Prices.Push(price);
-            if(item==selected)Selection=Rows.Size()-1;
-        }
-        Selection=Clamp(Selection,0,Max(0,Rows.Size()-1));
-        user.PalomoMerchantVisibleItemCount=Rows.Size();
-        user.PalomoMerchantWalletCopper=Vendor.WalletCopper;
-        int quantity=user.GetPalomoMerchantQuantityForIndex(user.PalomoMerchantQuantityIndex);
-        if(Rows.Size()>0 && Rows[Selection] is "CaelumEquipmentItem")quantity=1;
-        user.PalomoMerchantSelectedQuantity=quantity;
-        user.PalomoMerchantSelectedLotPrice=0;
-        if(Rows.Size()>0)
-        {
-            double value=CaelumEconomyRules.GetInventoryUnitBaseValue(Rows[Selection]);
-            user.PalomoMerchantSelectedLotPrice=Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value,quantity)
-                : CaelumEconomyRules.GetPriceChargedByMerchant(value,quantity);
-        }
-        user.RefreshCarriedInventorySummary();
+        CaelumMerchantCoordinator.RefreshCityTrade(self, user);
     }
     void Cycle(CaelumPlayer user,int direction)
     {
-        Refresh(user);if(Rows.Size()==0)return;
-        Selection=(Selection+(direction<0 ? Rows.Size()-1 : 1))%Rows.Size();
-        user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;Refresh(user);
+        CaelumMerchantCoordinator.CycleCityTrade(self, user, direction);
     }
 
     bool Capacity(CaelumPlayer user,Inventory item,int quantity,int price,Inventory receiving)
     {
-        double unit=user.GetFormalInventoryEntryWeight(item)/Max(1,item.Amount);
-        bool oldBox=Boxed(Selling ? item : receiving);
-        for(int moneyRoute=0;moneyRoute<2;moneyRoute++)
-        {
-            if(!(Selling ? user.BuildPalomoCurrencyCreditPlan(price) : user.BuildPalomoCurrencyPaymentPlan(price)))return false;
-            if(moneyRoute==1){if(!user.MagicBoxOwned)continue;user.RoutePalomoCurrencyGainsToMagicBox();}
-            bool canBox=item is "CaelumEquipmentItem" || item is "CaelumConsumableItem" || item is "CaelumCarbineAmmo";
-            for(int productRoute=0;productRoute<(Selling || !canBox ? 1 : 2);productRoute++)
-            {
-                bool box=oldBox || productRoute==1;
-                if(box && !user.MagicBoxOwned)continue;
-                double personal=user.GetPalomoCurrencyPlanPersonalWeightDelta(),raw=user.GetPalomoCurrencyPlanBoxRawWeightDelta();
-                int slots=user.GetPalomoCurrencyPlanBoxSlotDelta();
-                double weight=quantity*unit;
-                if(Selling)
-                {
-                    if(oldBox){raw-=weight;if(quantity==item.Amount)slots--;}
-                    else personal-=weight;
-                }
-                else if(box)
-                {
-                    raw+=weight;
-                    if(!oldBox)
-                    {
-                        slots++;
-                        if(receiving!=null){double moved=receiving.Amount*unit;personal-=moved;raw+=moved;}
-                    }
-                }
-                else personal+=weight;
-                if(user.PalomoTransactionCapacityFits(personal,raw,slots))
-                {user.PalomoIncomingItemInMagicBox=box;return true;}
-            }
-        }
-        return false;
+        return CaelumMerchantCoordinator.CapacityCityTrade(self, user, item, quantity, price, receiving);
     }
 
     void Execute(CaelumPlayer user)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || !user.IsActivePalomoMerchantSessionValid())return;
-        if(Selection>=Rows.Size())return;
-        Inventory item=Rows[Selection];int quote=user.PalomoMerchantSelectedLotPrice;
-        Refresh(user);
-        if(Selection>=Rows.Size() || Rows[Selection]!=item || quote!=user.PalomoMerchantSelectedLotPrice)
-        {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;return;}
-        int quantity=user.PalomoMerchantSelectedQuantity,price=user.PalomoMerchantSelectedLotPrice;
-        if(item==null || item.Amount<quantity)
-        {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK;return;}
-        if((Selling && Vendor.WalletCopper<price) || (!Selling && user.GetOwnedMoneyCopperValue()<price))
-        {user.LastPalomoMerchantAction=Selling ? CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY
-            : CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY;return;}
-        if(!Selling && Vendor.WalletCopper>2147483647-price)return;
-        Actor receiver=Selling ? Actor(Vendor) : Actor(user);
-        Inventory receiving=Stack(receiver,item);
-        if(receiving!=null && receiving.Amount>receiving.MaxAmount-quantity)
-        {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;return;}
-        if(!Capacity(user,item,quantity,price,receiving))
-        {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;return;}
-        // Reservar todas las instancias antes de cambiar un solo saldo.
-        Inventory split=null;
-        if(receiving==null && quantity<item.Amount)
-        {
-            split=Inventory(Actor.Spawn(item.GetClass(),user.Pos,NO_REPLACE));
-            if(split==null)return;
-        }
-        Array<CaelumCurrencyItem> coins;
-        bool ready=true;
-        for(int c=0;c<CaelumConstants.CURRENCY_TYPE_COUNT;c++)
-        {
-            CaelumCurrencyItem created=null;
-            if(user.PalomoCurrencyPlanAmount[c]>0 && user.FindNativeCurrency(c)==null)
-            {
-                created=CaelumCurrencyItem(Actor.Spawn(CaelumEconomyRules.GetCurrencyClassName(c),user.Pos,NO_REPLACE));
-                if(created==null)ready=false;
-            }
-            coins.Push(created);
-        }
-        if(!ready)
-        {
-            if(split!=null)split.Destroy();
-            for(int c=0;c<coins.Size();c++)if(coins[c]!=null)coins[c].Destroy();
-            return;
-        }
-        for(int c=0;c<coins.Size();c++)if(coins[c]!=null){coins[c].Amount=0;coins[c].AttachToOwner(user);}
-        user.ApplyPalomoCurrencyPlan();
-        if(receiving!=null){receiving.Amount+=quantity;item.Amount-=quantity;if(item.Amount==0)item.Destroy();}
-        else if(split!=null){split.Amount=quantity;item.Amount-=quantity;split.AttachToOwner(receiver);receiving=split;}
-        else{item.Owner.RemoveInventory(item);item.AttachToOwner(receiver);receiving=item;}
-        SetBoxed(receiving,!Selling && user.PalomoIncomingItemInMagicBox);
-        let equipment=CaelumEquipmentItem(receiving);
-        if(!Selling && equipment!=null)
-        {equipment.AcquisitionResolved=true;user.EnsureEquipmentItemId(equipment);}
-        Vendor.WalletCopper+=Selling ? -price : price;
-        if(!Selling)CaelumNotifications.Acquired(user,receiving,quantity);
-        user.LastPalomoMerchantAction=Selling ? CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD : CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT;
-        user.OnNativeInventoryChanged();user.ApplyCharacterProfile();user.RefreshFormalInventorySnapshot();
-        Refresh(user);user.PersistCharacterState();
-        user.A_StartSound("caelum/ui/menu_select",CHAN_6,CHANF_LOCAL|CHANF_UI);
+        CaelumMerchantCoordinator.ExecuteCityTrade(self, user);
     }
 }

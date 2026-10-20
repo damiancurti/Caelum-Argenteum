@@ -1,0 +1,21 @@
+CA377-01 | 5.6.1 | Issue #377 | Merchant transactions and session continuity
+Prerequisites: use the isolated #377 package/addon and disposable character.
+Keep original campaign saves separate. From the repository root:
+python assets/validation_561/prepare.py
+powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_561/run_native.ps1 -Label author377-01 -Checks -Interactive -Script interactive
+Use a new label for each launch. The frozen package is
+build/issue377/current/caelum_argenteum_dev.pk3.
+Steps:
+1. Close the console. Inspect the nearby ranged merchant's partially depleted
+   ammunition stock and the bought worn bow in your inventory.
+2. Buy and sell one stack; change quantity. Confirm the displayed lot price,
+   exact money change and remaining stock. Try holding Enter and releasing it;
+   each accepted purchase must correspond to the displayed stock/payment.
+3. Sell the worn bow, reopen the vendor, and buy that same copy back. Its size
+   and durability must remain unchanged; other copies must remain distinct.
+4. Close/reopen, move out of reach, and save/reload with trade open. Reopening
+   must retain stock and money without repeating payment or replenishing stock.
+5. Open a workbench while trading, then reopen the vendor. Crafting and trade
+   views must remain mutually exclusive; a paused craft must retain its work.
+Expected: familiar merchant controls and margins, exact item/quantity transfer,
+clear rejections and no duplicated payment, objects or vendor stock.

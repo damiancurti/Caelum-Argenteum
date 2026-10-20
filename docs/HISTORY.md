@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.0** — 2026-10-20.
+Documentation version: **5.6.1** — 2026-10-20.
+
+## 5.6.1 - Merchant coordinator (#377), 2026-10-20
+
+The next isolated V5.6 delivery extracts thirteen pawn and five city-session
+policies without moving their saved fields or changing their signatures.
+Existing inventory commits remain authoritative; shared helpers preallocate
+missing currencies and product/split objects before transfers.
+
+Review found three inherited transaction/session defects within #377's scope:
+a foreign city-session object could execute while another vendor was active;
+switching from city trade to Palomo retained the city projection; and Palomo
+could sell another product when a vanished sale row was replaced by one with
+the same price. Explicit session identity, projection cleanup and full quote
+identity checks address these. Prices, stock, wallets and replenishment remain
+unchanged; future author design decisions belong to their individual issues.
+
+The independent AI review checked fields, signatures/defaults, owner routing
+and preallocation. Native comparison, synthetic save upgrade/reload/travel and
+rollback evidence are retained in `assets/validation_561/RESULTS.md`. Early
+equipment identity checks exposed a fixture error: assigning a player's ID to
+a vendor-owned item correctly fails the existing authority guard. The corrected
+fixture assigns identity while player-owned before returning the item to stock.
+Initial failed logs remain preserved and are not counted as passing gates.
+Author check CA377-01 remains pending; this delivery does not claim acceptance,
+merge or issue closure.
 
 ## 5.6.0 - Crafting coordinator (#376), 2026-10-20
 

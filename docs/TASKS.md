@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.0** — 2026-10-20.
+Documentation version: **5.6.1** — 2026-10-20.
+
+## 5.6.1 - Merchant coordination (#377)
+
+Implemented compatible adapters, stateless session/quote coordination and
+shared inventory commits with preallocation. Focused static/native/save checks
+and retained baseline regressions: `assets/validation_561/RESULTS.md`.
+CA377-01 is the outstanding author check in pending_test.txt.
+The author accepted CA376-01 on 2026-10-20. #378 follows on its own branch;
+recipe learning, ammunition, containers, ownership, shop content/replenishment
+and clothing remain separately scoped #378-387 work.
 
 ## 5.6.0 - Crafting coordination (#376)
 

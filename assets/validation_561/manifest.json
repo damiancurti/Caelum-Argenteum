@@ -1,0 +1,124 @@
+{
+  "baseline": "2c90af69",
+  "methods": [
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "GetPalomoMerchantQuantityForIndex",
+      "coordinator": "GetPalomoMerchantQuantityForIndex"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "GetPalomoMerchantConsumableType",
+      "coordinator": "GetPalomoMerchantConsumableType"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "GetPalomoMerchantMaterialType",
+      "coordinator": "GetPalomoMerchantMaterialType"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "HasPalomoMerchantReputationDiscount",
+      "coordinator": "HasPalomoMerchantReputationDiscount"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "RefreshPalomoMerchantSnapshot",
+      "coordinator": "RefreshPalomoMerchantSnapshot"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "IsActivePalomoMerchantSessionValid",
+      "coordinator": "IsActivePalomoMerchantSessionValid"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "OpenPalomoMerchant",
+      "coordinator": "OpenPalomoMerchant"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "ClosePalomoMerchant",
+      "coordinator": "ClosePalomoMerchant"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "UpdatePalomoMerchantSession",
+      "coordinator": "UpdatePalomoMerchantSession"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "CyclePalomoMerchantSelection",
+      "coordinator": "CyclePalomoMerchantSelection"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "TogglePalomoMerchantMode",
+      "coordinator": "TogglePalomoMerchantMode"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "CyclePalomoMerchantQuantity",
+      "coordinator": "CyclePalomoMerchantQuantity"
+    },
+    {
+      "source": "src/caelum/player/CaelumPlayer.zs",
+      "method": "ExecutePalomoMerchantTransaction",
+      "coordinator": "ExecutePalomoMerchantTransaction"
+    },
+    {
+      "source": "src/caelum/equipment/CaelumCityTrade.zs",
+      "method": "Open",
+      "coordinator": "OpenCityTrade"
+    },
+    {
+      "source": "src/caelum/equipment/CaelumCityTrade.zs",
+      "method": "Refresh",
+      "coordinator": "RefreshCityTrade"
+    },
+    {
+      "source": "src/caelum/equipment/CaelumCityTrade.zs",
+      "method": "Cycle",
+      "coordinator": "CycleCityTrade"
+    },
+    {
+      "source": "src/caelum/equipment/CaelumCityTrade.zs",
+      "method": "Capacity",
+      "coordinator": "CapacityCityTrade"
+    },
+    {
+      "source": "src/caelum/equipment/CaelumCityTrade.zs",
+      "method": "Execute",
+      "coordinator": "ExecuteCityTrade"
+    }
+  ],
+  "owners": [
+    {
+      "class": "CaelumPlayer",
+      "fields": 653,
+      "methods": 562
+    },
+    {
+      "class": "CaelumCityTradeSession",
+      "fields": 6,
+      "methods": 9
+    },
+    {
+      "class": "CaelumCityMerchant",
+      "fields": 2,
+      "methods": 8
+    }
+  ],
+  "reviewed_policy_changes": [
+    "CapacityCityTrade",
+    "CycleCityTrade",
+    "ExecuteCityTrade",
+    "ExecutePalomoMerchantTransaction",
+    "OpenCityTrade",
+    "OpenPalomoMerchant",
+    "RefreshCityTrade"
+  ],
+  "new_stateless_session_guard": "IsCurrentCityTrade",
+  "existing_inventory_methods_unchanged": true,
+  "production_schema_delta": false
+}
