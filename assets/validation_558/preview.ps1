@@ -1,4 +1,4 @@
-param([string]$Directory = 'issue369-final01')
+param([string]$Directory = 'issue369-face-final02', [switch]$MenuOnly)
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 Set-Location -LiteralPath $root
@@ -8,9 +8,12 @@ Write-Host 'Preview player is invulnerable. This is a visual/encounter fixture.'
 Write-Host 'Room: F1 reset; F2 walk; F3 run; F4 prepare; F5 gore; F6 pain; F7 rest; F8 death.'
 Write-Host 'MAP01: F5 releases the native encounter; F8 defeats the bull to inspect its fade.'
 Write-Host 'Both: F9 toggles original sprites/model; normal movement looks around the bull.'
+Write-Host 'Room F10 returns to the close frontal inspection view.'
 Write-Host 'Close GZDoom to return here. This terminal remains open.'
+$first = !$MenuOnly
 while ($true) {
-    $choice = Read-Host '1 = visual room, 2 = MAP01 encounter, 0 = finish'
+    if ($first) { $choice='1'; $first=$false }
+    else { $choice = Read-Host '1 = visual room, 2 = MAP01 encounter, 0 = finish' }
     if ($choice -eq '0') { break }
     if ($choice -notin @('1','2')) { continue }
     $script = if ($choice -eq '1') { 'manual.cfg' } else { 'manual-map.cfg' }

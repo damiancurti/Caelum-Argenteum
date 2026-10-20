@@ -15,7 +15,7 @@ class CA369Probe : CA369ProbeBase
             SawCharge|=Subject.BullModel.Pose==CaelumBullModelFrames.CHARGE;
         }
         Super.WorldTick();
-        if(ManualResetAt>0 && level.time>=ManualResetAt){ManualResetAt=0;PoseView(0);}
+        if(ManualResetAt>0 && level.time>=ManualResetAt){ManualResetAt=0;PoseView(0);FrontView();}
         if(ManualStopAt>0 && level.time>=ManualStopAt){ManualStopAt=0;PoseMotion=0;}
         if(PoseMotion>0 && Subject!=null)
         {Subject.SetOrigin(Subject.Pos+(PoseMotion,0,0),false);User.SetOrigin(User.Pos+(PoseMotion,0,0),false);}
@@ -39,6 +39,8 @@ class CA369Probe : CA369ProbeBase
         else if(stage==7)Subject.SetStateLabel("RestLying");
         else if(stage==8){Subject.CombatLucidityPhysicalStunRemaining=10;Subject.SetState(Subject.FindState('LucidityStun'),true);Subject.tics=-1;}
     }
+    void FrontView()
+    {User.SetOrigin(Subject.Pos+(90,0,0),false);User.Angle=180;User.Pitch=8;}
     void ModelCheck()
     {
         Check(Subject!=null && Subject.BullModel!=null,"bull creates local model helper");
@@ -48,6 +50,7 @@ class CA369Probe : CA369ProbeBase
         Check(Subject.sprite==Actor.GetSpriteIndex('TNT1'),"native sprite hidden while model active");
         Check(Subject.BullModel.Pos==Subject.Pos && Subject.BullModel.Angle==Subject.Angle,"model follows owner position and angle");
         Check(Subject.BullModel.Radius>=Subject.Radius && Subject.BullModel.Height>=Subject.Height,"render bounds contain native cylinder");
+        Check(Subject.BullModel.Radius==CaelumBullModelFrames.VISUAL_RADIUS && Subject.BullModel.Height==CaelumBullModelFrames.VISUAL_HEIGHT,"loaded or new model uses current artwork render bounds");
         Check(Subject.BullModelRevision==1,"visual migration revision is current");
         Check(Subject.Radius==15.6 && Subject.Height==51.8 && Subject.Mass==900,"native collision dimensions and mass retained");
     }
@@ -98,6 +101,9 @@ class CA369Probe : CA369ProbeBase
         else if(e.Name=="c369_done" && EncounterObserved)
         {Check(SawPrepareTrial,"actual MAP01 encounter displays tutorial preparation");Check(SawCharge,"actual MAP01 encounter displays charge");Console.Printf("CA369 DONE passes=%d failures=%d",Passed,Failed);}
         else if(e.Name=="c369_manual")Manual=true;
+        else if(e.Name=="c369_front")FrontView();
+        else if(e.Name=="c369_faceangle")
+        {User.SetOrigin(Subject.Pos+(95,-80,0),false);User.Angle=140;User.Pitch=5;}
         else if(e.Name=="c369_reset")
         {if(Subject!=null)Subject.Destroy();Setup();ManualResetAt=level.time+3;PoseMotion=0;}
         else if(e.Name=="c369_manualpose" && Subject!=null && Subject.health>0)

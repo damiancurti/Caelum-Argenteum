@@ -18,11 +18,26 @@ license is inferred from the author's attachment.
 On 2026-10-19 the author requested surface cleanup and explicitly approved
 local reconstruction of the forehead and horns while preserving silhouette and
 colors. Voxel cleanup removes the thin generated folds before the head repair;
-the repaired transition is blended into the closed body. The muzzle, stocky
+the repaired transition is blended into the closed body. The stocky
 body, tail and brown/ivory palette remain. Component-isolated baking prevents
 horn colors from projecting onto the forehead. The new forehead's dark color
-blends into the original albedo. The runtime mesh has 6,000 triangles and 4,983
-UV-split MD3 vertices, compared with the source's 148,524 triangles.
+blends into the original albedo. The first candidate had 6,000 triangles and
+4,983 UV-split MD3 vertices, compared with the source's 148,524 triangles.
+
+The author's subsequent inspection requested a more symmetric head, eyes that
+are more than black points, and a more bovine muzzle. The same #369 patch now
+uses a centered facial contour with paired cheeks, ears and horns, contoured
+eyelids, brown irises, horizontal pupils and restrained corneal highlights.
+A broad muzzle has recessed lateral nostrils and defined lips. The old facial
+volume is nested inside the replacement and the neck transition is smoothed;
+the existing rig, 23 bones and action keyframes are retained. The current model
+has 9,108 triangles, 7,381 UV-split vertices and a single 2048-square albedo atlas
+to keep the eyes legible. Render bounds accommodate the new face; gameplay
+dimensions do not change. Native appearance/performance checks are repeated for
+this geometry rather than treating the first candidate's captures as current.
+`refine_head.py` records this edit from the frozen input in commit `885fe498`;
+its input hash and editable parameters are in DESIGN.json. The source remains
+editable art, with deterministic MD3 export. CA369-01 remains pending.
 
 The editable `bull.blend` contains a 23-bone quadruped rig, normalized painted
 skin weights, IK feet and 12 actions: idle breathing, walk, run, ordinary and
@@ -33,7 +48,7 @@ tutorial fade remain native. A uniform art scale aligns neutral height to the
 existing 51.8-unit bull; actor radius 15.6, height and mass are not changed to
 fit art. Floor correction belongs to resting/falling artwork, not physics.
 
-`authoring.py` and `rigging.py` retain construction history; the frozen `.blend`
+`authoring.py`, `rigging.py` and `refine_head.py` retain construction history; the frozen `.blend`
 is authoritative editable art input and is not promised to serialize identically
 when rebuilt. Runtime export is deterministic with pinned Blender 4.5.3:
 `blender -b --python assets/generators/export_bull_model.py -- --output <fresh-directory> --install`.

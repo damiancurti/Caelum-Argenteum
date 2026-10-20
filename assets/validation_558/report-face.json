@@ -1,0 +1,223 @@
+{
+  "issue": 369,
+  "version": "5.5.8",
+  "initial_commit": "885fe498",
+  "initial_report": "report.json",
+  "author_feedback": "More symmetric head, defined eyes instead of black points, bovine muzzle.",
+  "author_acceptance": {
+    "id": "CA369-01",
+    "accepted": false
+  },
+  "changed_members": [
+    "caelum/actors/CaelumBullModel.zs",
+    "caelum/actors/CaelumBullModelFrames.zs",
+    "licenses/BULL_3D_MODEL.txt",
+    "models/caelum/bull/bull.md3",
+    "models/caelum/bull/bull_skin.png"
+  ],
+  "original_combat_bytes_unchanged": true,
+  "native_action_timing_unchanged": true,
+  "runtime_sha256": "b80b2c82daf7fd32f8c83d88eb4fa6cd3538c1a9c757b9dbab87815379f531f7",
+  "export_repeat_sha256": {
+    "bull.md3": "a73a26a8a5896d7f1f7e021cd8f71d470abfe1ffbd50f335293283ad8846c069",
+    "bull_invisible.png": "2aa4fa20701cdd6d8d56046069001186b5267e3ee7d0ef618ad2f4a683723e11",
+    "bull_skin.png": "6e1418cb9378b66f2e3a3724306451afe99f9676e024d1ffe328b0f721fca83b",
+    "frames.zs": "0e2e3104394773bcfedb348a7a986b5eae5bd218ba32d74d642421d74b67229b",
+    "manifest.json": "7ae40fb863e9e700119578eb96ad2cdc24b3cf46796421da7ddb5d7870cf6c8c",
+    "MODELDEF": "f069c78831e111a1f8caa436a47adb55cee34dc97d9df372c23bca19c2ccc52a",
+    "TEXTURES": "4bd11d0cd1b08b3c022e0efc734a3c304d48263044f27ee3bab9587fc5413076"
+  },
+  "source_sha256": {
+    ".gitattributes": "730a35ae3d558080083c3103d9ac8100c3f6561678092abe341701dfa331eb1d",
+    "authoring.py": "be8ae62d03d6c17825fb37dabbea418531090639bc2eed0eb61417971524a847",
+    "bull.blend": "2ad863d02e24f805ebca3058ed7d892b464c95f142c53ff7a1acc44a0a4178a1",
+    "bull_skin.png": "6e1418cb9378b66f2e3a3724306451afe99f9676e024d1ffe328b0f721fca83b",
+    "DESIGN.json": "a9fb7b8b21755969b22499a8c0e49047121ead6c4139190c0dee5b19f08d914b",
+    "original.glb": "21c6c3413a009d18512a6106ba52e5032c4423c33f8c67bccf3b01a71d9c0c97",
+    "original_image_0.png": "f442deeedfe8362868cb2ab07016277f422b72dd942364ecc35a05093d538eed",
+    "original_image_1.png": "7f71434c2e1b20614abb6e4964b5c5c9ac3fec61f7637599a3a385fa7909146c",
+    "refine_head.py": "da7c90889bd472242908fc1be7d286b833f83c881ef83b5acebc8e724977f189",
+    "rigging.py": "920671463529c51789aca3c3be9a600789bb115269241d1220da7719e31b4ea6"
+  },
+  "runs": [
+    {
+      "label": "face-front",
+      "pass_lines": 9,
+      "log": {
+        "file": "evidence-face/face-front.txt",
+        "sha256": "eaf7d97892b3f3c2934e29edca59dbaeb4854879e73dd37010cea8b8b49f6070"
+      },
+      "record": {
+        "file": "evidence-face/face-front-run.json",
+        "sha256": "0bc22f1ade9ed9c8c8dde84f147e80ef1f298f99f7e05c5ecd28bd378601c5ed"
+      }
+    },
+    {
+      "label": "face-load",
+      "pass_lines": 19,
+      "log": {
+        "file": "evidence-face/face-load.txt",
+        "sha256": "122154b286cab3e43e70781c7d16c7dbbabdb40a72cf90bb135227e082ca3039"
+      },
+      "record": {
+        "file": "evidence-face/face-load-run.json",
+        "sha256": "e858c3476269dd1051417115163234ac2347b6f5c9495bc3ae82d9235e9f2fa7"
+      }
+    },
+    {
+      "label": "face-poses",
+      "pass_lines": 13,
+      "log": {
+        "file": "evidence-face/face-poses.txt",
+        "sha256": "2afbfec09f51636bf79a1771ed0aad4fdd03292ee53a2043e2ace503bc21f1de"
+      },
+      "record": {
+        "file": "evidence-face/face-poses-run.json",
+        "sha256": "194134d14415f8df9c618557aab2b4517252aaad0ad6e057bf351b1b46f5d510"
+      }
+    },
+    {
+      "label": "face-encounter",
+      "pass_lines": 4,
+      "log": {
+        "file": "evidence-face/face-encounter.txt",
+        "sha256": "54dad1f5a6d7d4539a8f28d2a071e7b9e10acd5a52ca4d51baa92ed289ce6364"
+      },
+      "record": {
+        "file": "evidence-face/face-encounter-run.json",
+        "sha256": "6426b201a06e11f213b672db1ecb8a32f09cb273ea92e1691762ccb8eb4576d2"
+      }
+    },
+    {
+      "label": "face-population",
+      "pass_lines": 1,
+      "log": {
+        "file": "evidence-face/face-population.txt",
+        "sha256": "019a3abfd514dbb3afcc4efb7f763dfcb3fdf0270dbd2efd069cb6c179d92e3d"
+      },
+      "record": {
+        "file": "evidence-face/face-population-run.json",
+        "sha256": "14fb7dba1cdd10a01aa5557a3a5fdeab997c5467bf9254b344dd46d47a234e95"
+      }
+    },
+    {
+      "label": "face-map01",
+      "pass_lines": 0,
+      "log": {
+        "file": "evidence-face/face-map01.txt",
+        "sha256": "6359d4458b1eed1f24c8a796bfeada085c0484dec2f091311169016ba082201d"
+      },
+      "record": {
+        "file": "evidence-face/face-map01-run.json",
+        "sha256": "f3595b649d2cab3dcf90eb1c83e5cd36dde5adf9abaaadd1c49de54f959fde7c"
+      }
+    }
+  ],
+  "performance": {
+    "face-population": {
+      "mean_ms": 16.67016060100167,
+      "p95_ms": 17.8752,
+      "p99_ms": 18.8149,
+      "max_ms": 19.6319,
+      "callback_count": 599,
+      "tics_per_second": 34.993926804003166,
+      "population": [
+        "CA369 PERF BEGIN population=512 census=513 high_density=1",
+        "CA369 PERF END alive=512 mean_exposure=0.000000"
+      ]
+    },
+    "face-map01": {
+      "mean_ms": 16.666940233722872,
+      "p95_ms": 18.2957,
+      "p99_ms": 18.5705,
+      "max_ms": 19.0713,
+      "callback_count": 599,
+      "tics_per_second": 34.985906627233355,
+      "population": [
+        "CA369 PERF BEGIN population=0 census=6 high_density=0",
+        "CA369 PERF END alive=0 mean_exposure=0.000000"
+      ]
+    }
+  },
+  "combat_trace_equal_rows": 181,
+  "art_report": {
+    "file": "evidence-face/face-report.json",
+    "sha256": "a4b82616a545400668f4d3412dc90d6d9ef10180609d69889def84dfce93fef1"
+  },
+  "export_manifest": {
+    "file": "evidence-face/export-manifest.json",
+    "sha256": "7ae40fb863e9e700119578eb96ad2cdc24b3cf46796421da7ddb5d7870cf6c8c"
+  },
+  "build_log": {
+    "file": "evidence-face/issue369-face-final-build-log.txt",
+    "sha256": "675c07a39a5e36d6924bff6a5670846b0b8f710cd47df76952c40bd29d51f434"
+  },
+  "static_validation": {
+    "file": "evidence-face/issue369-face-static.json",
+    "sha256": "b1cf02e3c2eddd3ae1a4d0a0aeac46556f0c98c5b2b1938876ec82cae712e544"
+  },
+  "captures": [
+    {
+      "file": "evidence-face/face-front-quick-face-front.png",
+      "sha256": "71a0987f3765b22513e394341874403d908ffffb8fd6a9d331df479dbcd8c1c9"
+    },
+    {
+      "file": "evidence-face/face-front-quick-face-angle.png",
+      "sha256": "38cf1181e7899cb80fbbe7674443f34fc273cfb4914c08d27e9902a52c1b2f3d"
+    },
+    {
+      "file": "evidence-face/face-poses-quick-walk.png",
+      "sha256": "7c1002c961513f2b4e6dcbef889bd57cb0897f5e98623eadd9663cdf86be5463"
+    },
+    {
+      "file": "evidence-face/quick-run.png",
+      "sha256": "3a653d0caa3d0d363c43bbb1b5b77dfa22daae5ad4576d01369ad5eae80399e0"
+    },
+    {
+      "file": "evidence-face/quick-gore.png",
+      "sha256": "5b0d78eb3fdbc0978cab2f35fa82a337927119ee609783421cc269514fc17135"
+    },
+    {
+      "file": "evidence-face/quick-death.png",
+      "sha256": "43a5600aa4f1b8d87afcf53cdbad456da0eb0a1f984c3e87a09d691995cabd86"
+    },
+    {
+      "file": "evidence-face/quick-corpse.png",
+      "sha256": "037539751310c95f69a81223542ae4fb52d9a559c3dcd2fc4c28a6776bea54e8"
+    },
+    {
+      "file": "evidence-face/face-encounter-quick-map01.png",
+      "sha256": "aea1bb51999c6e76e95cbf84cdce810a3443640b8bc1ad505afe76bcd05f0d78"
+    },
+    {
+      "file": "evidence-face/face-population-quick-perf.png",
+      "sha256": "6c79a60f592a81c6828a49f8196327b3027a0e9e761c698f18afdb4b0ff85d9b"
+    },
+    {
+      "file": "evidence-face/authoring-front.png",
+      "sha256": "a07577db8607c33f22d766509b1966a2098a9ef1f6ce041871a3f7303201f9a5"
+    },
+    {
+      "file": "evidence-face/authoring-angle.png",
+      "sha256": "4153b2582713515735ddb60ed5a3dab7c17e9e87b7ea85750ecbca775f495f36"
+    },
+    {
+      "file": "evidence-face/authoring-side.png",
+      "sha256": "2a1555cf2344671c821d7dd429a77d3dc13c892f0b4c4aae34cf0bdbc0d9f662"
+    }
+  ],
+  "presentation": "Unmeasured; same-session ETW access denial retained in initial report. Callback timings are not display FPS.",
+  "passed_checks": 46,
+  "tooling_sha256": {
+    "baseline.zs": "471ff10e1888f39266478c133ce641b6b08972806eb613a499744a6d8b862614",
+    "collect.py": "f7cb312e8802ed262610b678c8420e8249ed8a5d9077d200f0d2bc8f99fd426b",
+    "collect_face.py": "04ca9db89679e9bb47112e393be5c0f1cfea6f7aaafb77469cd51cecda70b830",
+    "common.zs": "a9f505033d824e36414cb7e8608c1fdd53318f8b01b70286016880a8d7f83aa8",
+    "perf.zs": "5a73fe408a3c3d25a95bf7c06436345dfa42c4345443c54fe3df135645224a19",
+    "prepare.py": "3cc3e8d82f8bf29c8610c6ed7c96504df1fa947738c07813acab28634ec66d0f",
+    "preview.ps1": "2a3d803cb17d1eda8bb0cc826a78451253853c556b08345ad7ff4ec7028b3ecf",
+    "probe.zs": "6209e065ab443a5dc1eb36bc2f2dfad6cfd19dc78f6406bfc5deb098249f4689",
+    "run_native.ps1": "981be9dab74659d77666dc7c0027138531f94de7860da00282ecf772a87cb020",
+    "verify.py": "b0105136af23fe8d6ea19258733d6b5cc36c5c8838c9911a28b7abacd66fb560"
+  }
+}

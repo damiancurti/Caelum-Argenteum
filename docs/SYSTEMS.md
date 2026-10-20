@@ -4,6 +4,10 @@ Documentation version: **5.5.8** — 2026-10-19.
 
 ## Bull presentation and reversible saves (#369, 5.5.8)
 
+Artwork revisions refresh saved helper render bounds during the existing
+typed load census. This changes only the non-colliding visual helper; the
+original bull's physical cylinder and save schema remain unchanged.
+
 All ordinary bulls and the existing MAP01 tutorial subclass use the cleaned
 animated model by default. This is a visual replacement: attributes, damage,
 Air costs, charge acceleration/cap, cushioning, anatomy, health effects,

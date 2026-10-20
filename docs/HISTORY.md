@@ -28,6 +28,23 @@ Render callbacks are not application display presentation; ETW access remains
 unavailable. Author surface/animation/gameplay acceptance remains CA369-01,
 pending. No 6,000-attacker case was run and no performance policy was changed.
 
+The author's later inspection on 2026-10-19 requested a more symmetric head,
+defined eyes rather than black points, and a more bovine muzzle. This is a
+revision of the same pending #369 delivery, retaining version 5.5.8 and PR #373.
+Centered facial geometry, eyelids/brown irises/horizontal pupils, a broad muzzle
+with lateral nostrils and lips replace the first candidate. The 23-bone rig and
+action timing remain; the new atlas is 2048 square and the mesh has 9,108
+triangles / 7,381 MD3 vertices. New geometry gets new native appearance, pose,
+save-load, encounter and performance evidence in validation_558/report-face.json.
+The earlier report/captures remain historical; CA369-01 is still pending and
+this feedback is not recorded as author acceptance. The preview now opens the
+inspection room immediately, with F10 returning to a close frontal view.
+Six final native runs pass 46 new checks; the 181-tic baseline encounter still
+matches. Static validation, normal build and repeated deterministic export
+pass. A saved helper's old render dimensions are refreshed idempotently in the
+existing typed load census; the original bull's collision and save schema do
+not change. Callback measurements retain the prior presentation limitations.
+
 ## 5.5.7 - Future melee energy contract; conversion deferred (#315)
 
 The author decided on 2026-10-19: "Documentar el diseño y aplazar la conversión;

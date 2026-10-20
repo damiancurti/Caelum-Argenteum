@@ -1,5 +1,68 @@
 # #369 / 5.5.8 bull model validation
 
+## Current facial revision after author inspection
+
+The author requested a more symmetric head, defined eyes rather than black
+points, and a more bovine muzzle. This follow-up remains in #369 / PR #373 and
+version 5.5.8, with CA369-01 pending. The current editable source has centered
+facial geometry, paired ears/horns, contoured eyelids, brown irises, horizontal
+pupils, a broad muzzle with recessed lateral nostrils and lips, and a softened
+neck join. A 2048-square atlas retains the brown/ivory palette and provides
+soft bilateral shape/cavity shading for the face under native sector lighting.
+The runtime mesh has 9,108 triangles, 7,381 UV-split vertices and 136 samples.
+The 23-bone rig and existing action keyframes/sample timing remain intact.
+
+`report-face.json` and `evidence-face/` are the current evidence; `collect_face.py`
+verifies the final package/source, repeat export, native logs and unchanged
+combat bytes. The final ordinary runtime SHA256 is
+`b80b2c82daf7fd32f8c83d88eb4fa6cd3538c1a9c757b9dbab87815379f531f7`.
+Two frozen-source exports match byte for byte. Source inspection measures a
+maximum mirrored facial surface deviation of 0.000187 source units (about
+0.016 map units, at the MD3 positional quantization scale). This measures the
+new face, not the deliberately retained original body's asymmetry.
+
+Six final native runs pass 46 new checks: close frontal/angled appearance,
+poses, a prior candidate's live/dead/archived/tutorial save, the actual MAP01
+encounter, 512 peaceful bulls and a fixed MAP01 performance reference. The
+181-tic encounter trace still matches the pre-model baseline except for the
+numeric sprite registration index. The only executable follow-up changes
+refresh the non-colliding helpers' saved render bounds during the existing
+typed load census (44 radius / 61 height); actual bull collision stays
+15.6 / 51.8, mass 900. No combat code, state timing or save schema changes.
+Project validation, normal build and read-only independent review pass.
+Earlier lifecycle/rollback evidence below remains applicable to the unchanged
+ownership/teardown logic; its screenshots are not current visual evidence.
+
+Same environment/method as below, single ten-second windows, no statistical
+speedup or display-FPS claim:
+
+| Condition | tics/s | Render-callback mean / p95 / p99 / maximum (ms) |
+| --- | ---: | --- |
+| 512 peaceful bulls, revised face | 34.99 | 16.67 / 17.88 / 18.81 / 19.63 |
+| MAP01 fixed spawn, revised face | 34.99 | 16.67 / 18.30 / 18.57 / 19.07 |
+
+The population still reports 512 surviving bulls, census 513, high-density=1.
+The earlier sprite baseline and first model comparison below are retained for
+context; no retired stress case was repeated. Presentation remains unmeasured
+because of the recorded same-session ETW denial.
+
+The final art is `build/issue369-face06`, exported twice in face-export03/04 and
+frozen in `build/issue369-face-final02`. Earlier face01/02 cut-and-cap drafts
+produced a poor neck seam; face03 exposed part of the retained muzzle. The
+final source nests that old volume inside the replacement, blends the neck
+and bakes readable facial shading. Superseded drafts remain local evidence.
+
+`preview.ps1` now opens the inspection room immediately and leaves its terminal
+open. F1 resets, F10 returns to the close frontal view, and F2-F9 retain their
+listed functions. Close the game to select MAP01 from the terminal menu.
+Author acceptance of symmetry, eyes, muzzle and motion is still required.
+
+## Initial candidate at commit 885fe498 (historical)
+
+The remaining inventory, hashes, captures and `report.json` describe the first
+candidate. Its `verify.py`/`collect.py` reproduce that frozen source revision;
+use `collect_face.py` to validate the current follow-up.
+
 The author supplied the GLB and approved local forehead/horn reconstruction
 on 2026-10-19. The original source and both embedded images are retained.
 Image 1 is metallic/roughness, not a normal map. The editable Blender source

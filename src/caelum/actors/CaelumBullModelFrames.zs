@@ -3,8 +3,8 @@ class CaelumBullModelFrames : Actor
 {
     const WALK_STRIDE=26;
     const RUN_STRIDE=52;
-    const VISUAL_RADIUS=43;
-    const VISUAL_HEIGHT=64;
+    const VISUAL_RADIUS=44;
+    const VISUAL_HEIGHT=61;
     const IDLE=0;
     const WALK=1;
     const RUN=2;

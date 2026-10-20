@@ -14,7 +14,13 @@ class CaelumBullModelRegistry : StaticEventHandler
     {
         Unloading=false;
         Bodies.Clear();let it=ThinkerIterator.Create("CaelumBullModelBody");CaelumBullModelBody body;
-        while((body=CaelumBullModelBody(it.Next()))!=null)Bodies.Push(body);
+        while((body=CaelumBullModelBody(it.Next()))!=null)
+        {
+            // Una revisión del arte puede cambiar el volumen de render guardado;
+            // actualiza sólo el auxiliar sin colisión, nunca el cuerpo original.
+            body.A_SetSize(body.VISUAL_RADIUS,body.VISUAL_HEIGHT);
+            Bodies.Push(body);
+        }
     }
     override void WorldUnloaded(WorldEvent e)
     {

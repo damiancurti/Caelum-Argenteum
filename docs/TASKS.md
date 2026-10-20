@@ -9,7 +9,8 @@ forehead/horn reconstruction, reduced mesh, quadruped rig/skin, native animated
 export and inherited MAP01 coverage. Combat/state timing and collision remain
 unchanged; rollback is documented in SYSTEMS. Isolated QA and limitations live
 in `assets/validation_558/RESULTS.md`. The outstanding author check is CA369-01:
-inspect surface, silhouette, movement, attack readability and corpse behavior
+inspect the revised facial symmetry, eyes and muzzle, surface, silhouette,
+movement, attack readability and corpse behavior
 in the preview and MAP01 encounter. Record explicit acceptance in HISTORY
 before removing that entry. Keep #316 deferred and all issue PRs separate.
 

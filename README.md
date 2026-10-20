@@ -13,7 +13,8 @@ V5.5.8 replaces the bull presentation with the author's cleaned, rigged 3D model
 (#369), including the MAP01 tutorial bull. Native combat, timings and collision
 remain authoritative. Original sprites are retained; see the reversible-save
 procedure in SYSTEMS and [validation](assets/validation_558/RESULTS.md).
-Author visual/gameplay acceptance is pending as CA369-01.
+The latest author-requested revision centers the face and adds defined eyes
+and a bovine muzzle. Author visual/gameplay acceptance is pending as CA369-01.
 
 V5.5.7 documents the future melee-energy contract (#315). The author deferred
 conversion and retained current damage. No new combat balance or save schema
