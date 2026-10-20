@@ -241,7 +241,7 @@ SHA-256: `4d3d3763f53d676cd51c3e0fdee5101bd55d44a347e160ad250a796b8df99ec3`
 
 ## [HISTORY.md](HISTORY.md) - 226442 words
 
-SHA-256: `5cb3e607fbb1886024858adf8248f1d2c2225a22ea5955636c716ff7c1da2cfc`
+SHA-256: `e56897b0ba205060fa35a327fad081ffc653bd1b6f1cafc90a4e8236d0029b16`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-71 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Consolidated history
@@ -1161,7 +1161,7 @@ SHA-256: `c2baf80735bf6831ccc3997af80ab2fb04d563b9767926e2bd00dd050a004125`
 
 ## [SYSTEMS.md](SYSTEMS.md) - 107701 words
 
-SHA-256: `5d19982e09135b3fd42f4b620fe0b0cc229c6395320d6af3345db266fecf30dd`
+SHA-256: `ec4c58359d5cf2f7c2c47d297acce352fd352a6a920e67f064a602cb0ff3237a`
 
 - Lines 1-4 - [Caelum Argenteum — Current systems and rules](SYSTEMS.md#caelum-argenteum--current-systems-and-rules) - context: -
 - Lines 5-40 - [Bull presentation and reversible saves (#369, 5.5.8)](SYSTEMS.md#bull-presentation-and-reversible-saves-369-558) - context: Caelum Argenteum — Current systems and rules
@@ -1469,7 +1469,7 @@ SHA-256: `5d19982e09135b3fd42f4b620fe0b0cc229c6395320d6af3345db266fecf30dd`
 
 ## [TASKS.md](TASKS.md) - 23108 words
 
-SHA-256: `06e2d5dc87660007d8532fba974828ea7a4616f8bb7423841005c15deede8521`
+SHA-256: `026fda2fa38968e7ce9e55973076b0fcf267cb524f81af5aac4601fbea1fee58`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-16 - [5.5.8 - Bull visual replacement (#369)](TASKS.md#558---bull-visual-replacement-369) - context: TASKS.md — Active tasks
@@ -1660,6 +1660,6 @@ SHA-256: `06e2d5dc87660007d8532fba974828ea7a4616f8bb7423841005c15deede8521`
 - Lines 2800-2812 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "4d3d3763f53d676cd51c3e0fdee5101bd55d44a347e160ad250a796b8df99ec3", "words": 31549}, {"path": "HISTORY.md", "sha256": "5cb3e607fbb1886024858adf8248f1d2c2225a22ea5955636c716ff7c1da2cfc", "words": 226442}, {"path": "KNOWN_PITFALLS.md", "sha256": "0a3aed4503c71a691753786675cd4a8f148f51207e94f5f8f962c14516f3a72e", "words": 35462}, {"path": "MAP01.txt", "sha256": "7d9a2c2f7c7bbd5402b42819149118e753ae5e740af5cb31a6a357a7c9343f5c", "words": 34961}, {"path": "PROJECT.md", "sha256": "c2baf80735bf6831ccc3997af80ab2fb04d563b9767926e2bd00dd050a004125", "words": 59964}, {"path": "SYSTEMS.md", "sha256": "5d19982e09135b3fd42f4b620fe0b0cc229c6395320d6af3345db266fecf30dd", "words": 107701}, {"path": "TASKS.md", "sha256": "06e2d5dc87660007d8532fba974828ea7a4616f8bb7423841005c15deede8521", "words": 23108}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "4d3d3763f53d676cd51c3e0fdee5101bd55d44a347e160ad250a796b8df99ec3", "words": 31549}, {"path": "HISTORY.md", "sha256": "e56897b0ba205060fa35a327fad081ffc653bd1b6f1cafc90a4e8236d0029b16", "words": 226442}, {"path": "KNOWN_PITFALLS.md", "sha256": "0a3aed4503c71a691753786675cd4a8f148f51207e94f5f8f962c14516f3a72e", "words": 35462}, {"path": "MAP01.txt", "sha256": "7d9a2c2f7c7bbd5402b42819149118e753ae5e740af5cb31a6a357a7c9343f5c", "words": 34961}, {"path": "PROJECT.md", "sha256": "c2baf80735bf6831ccc3997af80ab2fb04d563b9767926e2bd00dd050a004125", "words": 59964}, {"path": "SYSTEMS.md", "sha256": "ec4c58359d5cf2f7c2c47d297acce352fd352a6a920e67f064a602cb0ff3237a", "words": 107701}, {"path": "TASKS.md", "sha256": "026fda2fa38968e7ce9e55973076b0fcf267cb524f81af5aac4601fbea1fee58", "words": 23108}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
