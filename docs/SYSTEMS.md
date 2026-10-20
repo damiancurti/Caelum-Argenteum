@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.8** — 2026-10-19.
+Documentation version: **5.5.8a** — 2026-10-20.
 
 ## Bull presentation and reversible saves (#369, 5.5.8)
 

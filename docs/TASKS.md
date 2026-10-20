@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.8** — 2026-10-19.
+Documentation version: **5.5.8a** — 2026-10-20.
+
+## 5.5.8a - Deferred issue closed at author request (#316)
+
+#316 was closed as not planned on 2026-10-20. It is no longer an active issue;
+avalanches remain unimplemented. A future authored map/encounter and explicit
+design decision would require a new focused issue. Older deferred/open notes
+below are historical status, not a current instruction to keep #316 open.
+PRs #370-373 are merged, #363/#314/#315/#369 are closed, and pending_test.txt is
+empty. Wider roadmap topics do not become implemented through issue closure.
 
 ## 5.5.8 - Bull visual replacement (#369)
 
