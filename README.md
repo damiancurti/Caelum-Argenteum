@@ -15,7 +15,8 @@ remain authoritative. Original sprites are retained; see the reversible-save
 procedure in SYSTEMS and [validation](assets/validation_558/RESULTS.md).
 The revised face has defined eyes and a bovine muzzle; its fur now reuses the
 body coat, with modeled brows/forelock. The author approved a 50% visual size
-increase. Author visual/gameplay acceptance is pending as CA369-01.
+increase. The author accepted CA369-01 on 2026-10-20 and authorized integration.
+#316 remains deferred until a suitable authored map/encounter exists.
 
 V5.5.7 documents the future melee-energy contract (#315). The author deferred
 conversion and retained current damage. No new combat balance or save schema

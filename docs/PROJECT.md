@@ -12,7 +12,8 @@ adds matching body/head fur, brow/forehead locks and an explicitly approved
 50% visual enlargement. Existing combat and physical dimensions remain unchanged.
 Source provenance, editable art, deterministic export and isolated native
 evidence are retained under `assets/source/art/bull_3d` and `assets/validation_558`.
-CA369-01 is pending author visual/gameplay acceptance. Performance callback
+The author accepted CA369-01 on 2026-10-20 and authorized merge/issue closure.
+Performance callback
 measurements do not establish display presentation/FPS acceptance. #363 and
 #314 are accepted; #315's design-only delivery retains current damage; #316
 remains deferred until a suitable authored map/encounter exists.

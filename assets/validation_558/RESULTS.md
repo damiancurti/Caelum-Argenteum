@@ -2,6 +2,12 @@
 
 ## Current coat, brows and scale revision
 
+Author acceptance CA369-01 (5.5.8 / #369): passed on 2026-10-20. The author
+confirmed "El toro qued? bien" and authorized merge/issue closure. The final
+visual candidate is accepted; native technical evidence and its presentation
+limitations remain as recorded below. No additional manual route or FPS result
+is inferred. This acceptance update changes no runtime bytes or release version.
+
 The author requested the same head/body texture, more threatening brows or hair,
 and a larger whole bull. On 2026-10-19 the author approved a uniform **1.5 visual
 scale**, retaining existing physical collision and combat. The head/ears and
@@ -25,7 +31,7 @@ all pose transitions and stopped gait, prior candidate save loading, MAP01
 encounter, 512 peaceful bulls and the MAP01 performance reference. The 181-tic
 combat trace equals the original baseline apart from the sprite registration
 index. The population remains alive=512, census=513, high-density=1. Read-only
-review found no source blocker; author acceptance CA369-01 remains pending.
+review found no source blocker; author acceptance CA369-01 is recorded above.
 
 | Condition | tics/s | Render-callback mean / p95 / p99 / maximum (ms) |
 | --- | ---: | --- |

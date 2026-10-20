@@ -6,7 +6,13 @@
   "author_feedback": "Reuse the body coat on the head, modeled threatening brows/forelock; author approved a uniform 50% visual enlargement with original collision/combat retained.",
   "author_acceptance": {
     "id": "CA369-01",
-    "accepted": false
+    "origin_version": "5.5.8",
+    "issue": 369,
+    "accepted": true,
+    "date": "2026-10-20",
+    "confirmation": "El toro qued? bien",
+    "merge_and_issue_closure_authorized": true,
+    "qualification": "Author approval of the final visual candidate. Native encounter/save/lifecycle results remain agent evidence; no separate manual route or display-FPS measurement was reported."
   },
   "changed_members": [
     "caelum/actors/CaelumBullModelFrames.zs",

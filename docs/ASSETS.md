@@ -37,7 +37,7 @@ dimensions do not change. Native appearance/performance checks are repeated for
 this geometry rather than treating the first candidate's captures as current.
 `refine_head.py` records this edit from the frozen input in commit `885fe498`;
 its input hash and editable parameters are in DESIGN.json. The source remains
-editable art, with deterministic MD3 export. CA369-01 remains pending.
+editable art, with deterministic MD3 export. CA369-01 was accepted by the author on 2026-10-20.
 
 The next author inspection requested the same body/head coat, more threatening
 brows or hair, and a larger whole bull. On 2026-10-19 the author explicitly
@@ -74,7 +74,7 @@ gaits use discrete simulation samples to avoid native time interpolation moving
 feet on a stopped body; other clips retain native model interpolation. Visual
 frames never delay attacks. Native appearance, saves, hub rollback and a real
 MAP01 encounter are checked separately from author acceptance. See
-`assets/validation_558/RESULTS.md`; CA369-01 remains pending.
+`assets/validation_558/RESULTS.md`; CA369-01 was accepted by the author on 2026-10-20.
 
 ## 5.5.6 - Thermal surface fixture (#314)
 

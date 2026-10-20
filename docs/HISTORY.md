@@ -4,6 +4,17 @@ Documentation version: **5.5.8** — 2026-10-19.
 
 ## 5.5.8 - Cleaned animated bull model (#369)
 
+**Author acceptance, 2026-10-20:** CA369-01 (origin 5.5.8 / #369) passed.
+The author confirmed "El toro qued? bien" for the final coat/brows/1.5 visual
+scale candidate and explicitly authorized issue closure and PR integration.
+The confirmed entry is removed from pending_test.txt, which is now empty.
+This supersedes the earlier candidate-pending notes below; release 5.5.8 and
+all tested runtime bytes remain unchanged. The author reported visual approval;
+native encounter, save/lifecycle and performance checks remain agent evidence,
+without inventing a separate author-reported route or display-FPS measurement.
+#363 and #314 retain their earlier recorded acceptance; #315 is a completed
+design/deferral decision. #316 remains open with its authored-map prerequisite.
+
 The author requested cleanup of generated 3D surface artifacts and approved:
 "Reconstruir localmente frente y cuernos para dejarlos limpios" on 2026-10-19.
 The supplied GLB and both embedded images are preserved with their actual
