@@ -11,8 +11,8 @@ preview, task and station-session methods now delegate to the stateless
 accepted inventory reservation/completion commits retain their owners.
 All 653 pawn fields, 562 signatures and 514 other method bodies are preserved.
 Native comparison, old/current save/reload, hub/non-hub travel and rollback
-evidence are in `assets/validation_560/RESULTS.md`; author check CA376-01 remains
-pending. No recipe, balance, station or save-schema revision is introduced.
+evidence are in `assets/validation_560/RESULTS.md`; author check CA376-01 passed
+on 2026-10-20. No recipe, balance, station or save-schema revision is introduced.
 
 The twelve-issue V5.6 batch retains separate scope, commits, tests and linked
 PRs. #377 follows the crafting boundary. #378-387 retain their issue-specific

@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.6.0 extracts crafting planning, task and session coordination (#376),
 preserving native inventory commits and save fields. Baseline/revised native
 and persistence checks are recorded in [validation](assets/validation_560/RESULTS.md).
-Manual check CA376-01 awaits the author's confirmation. Other V5.6 issues
+Manual check CA376-01 passed with author confirmation on 2026-10-20. Other V5.6 issues
 remain separate deliveries with their own design prerequisites.
 
 V5.5.8a records the author-requested closure of deferred avalanche issue #316

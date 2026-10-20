@@ -17,8 +17,12 @@ are recorded in `assets/validation_560/RESULTS.md`. Static validation and normal
 packaging are separate gates. Synthetic fixture materials, characters and
 stations are isolated from the production package. Initial fixture failures
 and corrections remain recorded and are not counted as successful gates.
-CA376-01 is awaiting explicit author confirmation; no merge, issue closure or
-ordinary campaign acceptance is implied.
+**Author acceptance, 2026-10-20:** CA376-01 (origin 5.6.0 / #376) passed.
+The author confirmed "La prueba que me diste dio correcto", without reported
+exceptions, after the supplied interactive crafting fixture. Its confirmed
+entry is removed from pending_test.txt. Release 5.6.0 and tested runtime bytes
+are unchanged. This records the supplied test's acceptance; no additional
+campaign route, PR merge or issue closure is implied.
 
 ## 5.5.8a - Author-requested deferred issue closure (#316), 2026-10-20
 
