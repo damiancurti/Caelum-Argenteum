@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
+
+## 5.6.0 - Crafting coordination (#376)
+
+The 48-method stateless extraction is implemented with unchanged fields,
+signatures, lifecycle and inventory commits. Static/native/save evidence:
+`assets/validation_560/RESULTS.md`. CA376-01 is the actionable author check in
+`pending_test.txt`; confirmation remains outstanding.
+
+Next technical slice: #377 merchant coordination. The remaining V5.6 issues
+#378-387 require the individual author decisions listed in their GitHub design
+gates. Missing design stays here/in its issue, never in the manual-test queue.
+No new recipes, finished-ammunition components, containers, title/theft rules,
+shop/loot stock, renewal policy or physical clothing is claimed by #376.
 
 ## 5.5.8a - Deferred issue closed at author request (#316)
 

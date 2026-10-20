@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
+
+## 5.6.0 - Crafting planning and session extraction (#376)
+
+The author's 2026-10-20 implementation request advances the first V5.6 issue
+from planning to a focused runtime delivery. Forty-eight remaining planning,
+preview, task and station-session methods now delegate to the stateless
+`CaelumCraftingCoordinator`. The live pawn, explicit travel snapshots and
+accepted inventory reservation/completion commits retain their owners.
+All 653 pawn fields, 562 signatures and 514 other method bodies are preserved.
+Native comparison, old/current save/reload, hub/non-hub travel and rollback
+evidence are in `assets/validation_560/RESULTS.md`; author check CA376-01 remains
+pending. No recipe, balance, station or save-schema revision is introduced.
+
+The twelve-issue V5.6 batch retains separate scope, commits, tests and linked
+PRs. #377 follows the crafting boundary. #378-387 retain their issue-specific
+author decisions and dependencies; an implementation request does not supply
+missing catalogue, component, ownership, capacity, renewal or artwork values.
 
 ## 5.5.8a - Close the deferred avalanche issue (#316)
 
@@ -2156,7 +2173,7 @@ a rewrite or silently expand #116 further.
 | A3 — #118, after A2 | Implemented: exact-item lookup, IDs, queries, mutation, projections and equipment reconciliation in one service; native pickup/selector adapters retained | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
 | A4 — #119, after A3 | Implemented: one stateless Tarot service with saved record and compatible adapters; separate Trucazo/Truco state and physical inventory contract | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timer reset. Restore the missing native flight instance across non-hub travel. |
 | A5 — #120, after A4 | Implemented: explicit per-player receiver/record/item/preview contracts, guarded native event routing and integrated validation; retain all adapters | Native two-pawn owner isolation, current/old/re-saved loads and original-pair rollback; integrated MAP01/MAP02/MAP06 path; original Architecture 1 performance comparison with separate simulation/overlay/input evidence. |
-| F1 — future focused issues | Extract remaining crafting planning/task coordination and merchant session/transaction coordination; reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
+| F1 — #376 / #377 | Crafting planning/task coordination is extracted in #376; merchant session/transaction coordination follows in #377. Reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
 | F2 — future focused issues | Further isolate combat dispatch and narrative transitions individually; keep resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
 | F3 — measured performance follow-up | Isolate measured map-local targeting, command rebuild and siege costs individually; no actor replacement or AI cadence change in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; each optimization needs its own measured purpose. |
 | F4 — explicit multiplayer design | Define shared-session authority and supported participant model | Author decisions for shared time/progress/rewards precede implementation; native multi-client join/leave/reconnect/respawn/transfer tests are mandatory before claiming network support. |

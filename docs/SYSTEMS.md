@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
+
+## Crafting coordinator and unchanged state ownership (#376, 5.6.0)
+
+`crafting/CaelumCraftingCoordinator` is a stateless `Object play` receiving the
+requesting pawn. Forty-eight retained `CaelumPlayer` adapters delegate the
+existing blueprint, recursive plan, preview, selection, task start/cancel/time
+and station-session policies without changing statements or quoted literals.
+
+| Boundary | Owner and call direction |
+| --- | --- |
+| Live task | Pawn fields retain kind, stable recipe/target ItemId, tier/size, efficiency, network, reservations/output arrays and remaining time. Coordinator methods operate on that same pawn; no service instance or second task exists. |
+| Planning and UI | Station, browser, Journal and time-advance callers retain their pawn adapters. Preview/layer/direct-plan fields remain reconstructible projections. They do not replace a started task's snapshots. |
+| Reservations and outputs | Coordinator calls pawn adapters into the accepted `CaelumInventoryService`. Its existing reservation/consumption, capacity and completion authorities remain unchanged, including repair/dismantle exact targeting and tutorial output. |
+| Persistence | `StoreCraftingTaskState`/`LoadCraftingTaskState` remain unchanged. PreTravelled closes sessions then persists; Travelled restores the explicit record snapshot. Native save/load retains the original field and class identities. |
+| Lifecycle | Input, Tick and personal-time ordering are unchanged. A closed/distant/dead session pauses; combat pauses; explicit cancel releases reservations; completion clears the task. Existing final-capacity rejection is retained. |
+
+Existing per-layer 25/50/100% efficiency and 1/10/100 time factors, recursive
+quantities, station requirements, ammunition/utility and knowledge rules stand.
+Recipe learning remains with its accepted record owner for #378.
+The active station class is `src/caelum/crafting/CaelumCraftingStation.zs`;
+the inactive `src/crafting` duplicate is neither activated nor removed.
+
+The existing station graph traversal is reviewed, not altered: the requesting
+session rebuilds on interaction and at its existing once-per-second validation
+boundary, with the existing shared time-skip guard. Each reached station uses a
+typed `CaelumCraftingStation` iterator and the existing player/token cycle guard.
+It is bounded by the stations present in the loaded map, not by combatants;
+its cost grows with reachable stations times total stations. The isolated
+12-added-station fixture measures this inherited path separately. This evidence
+does not establish a general maximum for dynamically added networks, display FPS
+or a new optimization; no new global scan is introduced.
+
+No migration is needed for this stateless move. Keep original 5.5.8a package/save
+copies and upgraded saves separately. Native-created paused-task checkpoints
+retain exact worn duplicates, knowledge, input reservations and remaining time
+through reload and hub/non-hub travel. Original and upgraded checkpoints were
+also tested with the original package; see `assets/validation_560/RESULTS.md`
+for actual packages, hashes, commands, fixture limits and author-test status.
 
 ## Bull presentation and reversible saves (#369, 5.5.8)
 

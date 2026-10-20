@@ -1,0 +1,396 @@
+{
+  "issue": 376,
+  "baseline": "92be078e7ee2902a98f2c29603717a35b51647a8",
+  "moved_methods": [
+    {
+      "method": "GetCraftingDexterityPercent",
+      "baseline_lines": [
+        3384,
+        3393
+      ],
+      "body_sha256": "f6ede16c64b1537807e6ec76c0cec9d87936ae22bf95e199d723020a827e13b4"
+    },
+    {
+      "method": "GetCraftingMaterialWorkSeconds",
+      "baseline_lines": [
+        3393,
+        3406
+      ],
+      "body_sha256": "9cfb733d0bc9a31e2dd76e3eaf3b34ea5a2887c57b2daefaf5c692c818560ec7"
+    },
+    {
+      "method": "GetCurrentCraftingInputUnits",
+      "baseline_lines": [
+        3406,
+        3414
+      ],
+      "body_sha256": "b8e2114203b0185c4cabb5cc0a450ea32185710c0b36730506e5aa297172a9fc"
+    },
+    {
+      "method": "ResetCraftingLayerChoices",
+      "baseline_lines": [
+        3414,
+        3427
+      ],
+      "body_sha256": "bfd63b82680b8d276716a77f50b6d00a15f405ca1ab824175742c68ae0a10151"
+    },
+    {
+      "method": "EnsureCraftingLayerChoiceRoot",
+      "baseline_lines": [
+        3427,
+        3441
+      ],
+      "body_sha256": "eb12422b1e7bddaadedeecc4898e40a93d6581ca4cf9169a5d3890640a584504"
+    },
+    {
+      "method": "FindCraftingLayerChoice",
+      "baseline_lines": [
+        3441,
+        3455
+      ],
+      "body_sha256": "6296f16e942a51d1a04572e66d7c059773b890d15d885df5f8d14faac482490f"
+    },
+    {
+      "method": "GetOrCreateCraftingLayerChoice",
+      "baseline_lines": [
+        3455,
+        3476
+      ],
+      "body_sha256": "61f4c6cc04c03aa4b7b8e962084eb36f47059ecf7a699bac0c625a01e367db4e"
+    },
+    {
+      "method": "GetCraftingLayerEfficiencyIndex",
+      "baseline_lines": [
+        3476,
+        3488
+      ],
+      "body_sha256": "b5507fdf8e2a7dad28d2f7b9c2864670b4852ba322a3f7fa5cb58126091c86ca"
+    },
+    {
+      "method": "SetCraftingLayerEfficiencyIndex",
+      "baseline_lines": [
+        3488,
+        3502
+      ],
+      "body_sha256": "5b27e40039481f4fc737aa1cf5713e4e3f296cdbaccbae6726bfd9b817907813"
+    },
+    {
+      "method": "ClearCraftingBlueprint",
+      "baseline_lines": [
+        3502,
+        3525
+      ],
+      "body_sha256": "c0ffd1fb7d9b390863969162f405533a3bd28f100079f4eb459374f60d5cc4ff"
+    },
+    {
+      "method": "FindCraftingBlueprintNode",
+      "baseline_lines": [
+        3525,
+        3554
+      ],
+      "body_sha256": "80fd956b6c114947f0b5896e35648cc0968c37308452a28fa2c948b6a690d07f"
+    },
+    {
+      "method": "AddOrAccumulateCraftingBlueprintNode",
+      "baseline_lines": [
+        3554,
+        3596
+      ],
+      "body_sha256": "48dcafba6a7d9fb5beb26d23270342063f45b1333b94e7bd55727b65e0917fc1"
+    },
+    {
+      "method": "ExpandCraftingBlueprintMaterial",
+      "baseline_lines": [
+        3596,
+        3701
+      ],
+      "body_sha256": "1ef57dfec66864c24fed9c7f0a0284c563361086954bd7ce183ba4e29bf9ea78"
+    },
+    {
+      "method": "BuildCraftingBlueprint",
+      "baseline_lines": [
+        3701,
+        3773
+      ],
+      "body_sha256": "243f1dbae5f2a06b1112a2c10f8ae3ce6cd722253ab1da4d56a7d88d2d8e9901"
+    },
+    {
+      "method": "CycleCraftingBlueprintSelection",
+      "baseline_lines": [
+        3773,
+        3793
+      ],
+      "body_sha256": "2483bfa05afed5b313e09c17b918d93e8d4dd4f0773e9d73fdff2d7ae2a130f0"
+    },
+    {
+      "method": "MarkCraftingBlueprintStepExecuted",
+      "baseline_lines": [
+        3793,
+        3811
+      ],
+      "body_sha256": "3d7e00f37906d8c328f8aa7d56cb33c99e4bedf1e4d1994598259be6264bcbbd"
+    },
+    {
+      "method": "ReserveCurrentCraftingPreview",
+      "baseline_lines": [
+        3811,
+        3839
+      ],
+      "body_sha256": "2b9ef92aaf89037ed6ff8f2aee50309f5e1f1eeeda177abb97a92882bca28812"
+    },
+    {
+      "method": "ClearDirectCraftingPlan",
+      "baseline_lines": [
+        3839,
+        3864
+      ],
+      "body_sha256": "3df7e2e46589aad5673dd145fdc00274c2c184f4877201abf2b95a0abf44f8c4"
+    },
+    {
+      "method": "GetDirectPlanReservedUnits",
+      "baseline_lines": [
+        3864,
+        3883
+      ],
+      "body_sha256": "f261c57781caf61fc1d1a8a0e8bf9c92a16dd5edf198b44ece5662cea86ccc8e"
+    },
+    {
+      "method": "AddDirectPlanReservation",
+      "baseline_lines": [
+        3883,
+        3916
+      ],
+      "body_sha256": "532ac17993b0f7addf0da7e1f6c8f15cefaa7a836ea51811f52f34af9f90fe13"
+    },
+    {
+      "method": "RegisterDirectCraftingStep",
+      "baseline_lines": [
+        3916,
+        3942
+      ],
+      "body_sha256": "e684d55d622267a75a330dcbf4cded95d91d917c581890cb9c92f8315af04a4b"
+    },
+    {
+      "method": "AddDirectCraftingStepWork",
+      "baseline_lines": [
+        3942,
+        3960
+      ],
+      "body_sha256": "2980c8b78a6750633ec9294d9cc2d2e9e69a9cd7a2ad2c8f1f9124c8d509b354"
+    },
+    {
+      "method": "GetRoundedUpProportionalUnits",
+      "baseline_lines": [
+        3960,
+        3973
+      ],
+      "body_sha256": "d8d60524cf2993abda11b80acbd14d1602685d38daeeb645cbaefc6f9541e5a9"
+    },
+    {
+      "method": "DirectCraftingRecipeKnown",
+      "baseline_lines": [
+        3973,
+        3981
+      ],
+      "body_sha256": "ddc6d764f3e8ab4774c6661eee0da71a3898c4455cc12eb190838c8136add81b"
+    },
+    {
+      "method": "RequireDirectCraftingMaterial",
+      "baseline_lines": [
+        3981,
+        4121
+      ],
+      "body_sha256": "b4d81c404fd6b3dd0dae233ab588ff96e691c81b4d789958d203287ca880d500"
+    },
+    {
+      "method": "IsDirectWeaponCraftingRecipe",
+      "baseline_lines": [
+        4121,
+        4135
+      ],
+      "body_sha256": "4db30e228d3081607f743b4e32aa01155c1239fa45f59cd493111d216364c5ef"
+    },
+    {
+      "method": "RefreshDirectWeaponCraftingPlan",
+      "baseline_lines": [
+        4135,
+        4185
+      ],
+      "body_sha256": "97e64a00c11448291608a919565826258a2202443398481278a52c3dc57d637a"
+    },
+    {
+      "method": "HasSelectedWeaponCraftingMaterials",
+      "baseline_lines": [
+        4190,
+        4201
+      ],
+      "body_sha256": "b994d4a4634f699ef06247758dbba0f06976c8d33ee467570358e5b6ed4fc4a9"
+    },
+    {
+      "method": "CanStartCraftingTask",
+      "baseline_lines": [
+        4206,
+        4233
+      ],
+      "body_sha256": "454dfe142ad00d4b5ad30db4675469b03ecf17cddc790fa8e2a855f12022c2ee"
+    },
+    {
+      "method": "StartPreparedCraftingTask",
+      "baseline_lines": [
+        4233,
+        4259
+      ],
+      "body_sha256": "7753d7dc7c68c8d02bde483deedada2e908c2687e6de5dbba9a92a04ab4a68df"
+    },
+    {
+      "method": "BeginSelectedCraftingTask",
+      "baseline_lines": [
+        4259,
+        4363
+      ],
+      "body_sha256": "6f07369991a60aa24ba0e298f96265523120dfc3655370289bf9d8c47a3de8b8"
+    },
+    {
+      "method": "CancelCraftingTask",
+      "baseline_lines": [
+        4363,
+        4382
+      ],
+      "body_sha256": "e6fd5565b17989532416ab2f7d83bb5c446460f54ff0a0e2687b0716682267af"
+    },
+    {
+      "method": "RefreshCraftingPreview",
+      "baseline_lines": [
+        4633,
+        5160
+      ],
+      "body_sha256": "20063ea303e07ff142178b331f440014604e934471d189cdef8c4706d9f69864"
+    },
+    {
+      "method": "BeginCraftingNetworkScan",
+      "baseline_lines": [
+        5160,
+        5168
+      ],
+      "body_sha256": "33cc65dca3f19cf8192f8d12becfdbe6e2523c9a4a9783284df88c2d6221734e"
+    },
+    {
+      "method": "SetCraftingJournalState",
+      "baseline_lines": [
+        5168,
+        5177
+      ],
+      "body_sha256": "deaef8c0625e47215056f3bd9d9ec859ce026f0a8017c272d0852cfdadfab66b"
+    },
+    {
+      "method": "OpenCraftingNetwork",
+      "baseline_lines": [
+        5177,
+        5196
+      ],
+      "body_sha256": "80c3fc94d5b07307ddfb96cd6381b6d1ae61861abb8435359e81f299532e4ef4"
+    },
+    {
+      "method": "OpenCraftingStation",
+      "baseline_lines": [
+        5196,
+        5220
+      ],
+      "body_sha256": "5d7faa23fe30869985a5410bab70772bfbd607980b4522fb62ca164df023c8ae"
+    },
+    {
+      "method": "CloseCraftingStationSession",
+      "baseline_lines": [
+        5220,
+        5230
+      ],
+      "body_sha256": "7c7b949c09d744c57896936411b5da325210d6f49865ee495d99d89ca0bec114"
+    },
+    {
+      "method": "RefreshActiveCraftingStationSession",
+      "baseline_lines": [
+        5230,
+        5292
+      ],
+      "body_sha256": "cfd9544f4d85310777c1d13265e311565a33f47f662cb6f2b4c8133eb5c7b3c8"
+    },
+    {
+      "method": "ToggleCraftingMenu",
+      "baseline_lines": [
+        5292,
+        5304
+      ],
+      "body_sha256": "5051621fdcac2057fd8cd5c1fc091e7f83ba960937534c2e59493b3fb96f7810"
+    },
+    {
+      "method": "CycleCraftingRecipe",
+      "baseline_lines": [
+        5304,
+        5330
+      ],
+      "body_sha256": "d6911ef5c756018a701549ae371c9b183666b07579267994b6da31f8149ff385"
+    },
+    {
+      "method": "CycleCraftingRecipeFilter",
+      "baseline_lines": [
+        5330,
+        5348
+      ],
+      "body_sha256": "a2f100a52200474c3333a9028aa236fe44bd41560a39c61c350cf6d0f2760c2a"
+    },
+    {
+      "method": "CycleCraftingTier",
+      "baseline_lines": [
+        5348,
+        5365
+      ],
+      "body_sha256": "5765b43ae9cbb927c7f12a4e5c4535bd995a3e58e9f89dfd3e2e6a07295c6d39"
+    },
+    {
+      "method": "CycleCraftingSize",
+      "baseline_lines": [
+        5365,
+        5389
+      ],
+      "body_sha256": "a1cdd162de24b4d3b8e39098912718c4dfb230f7d0ee399583139827a52d190f"
+    },
+    {
+      "method": "CycleCraftingEfficiency",
+      "baseline_lines": [
+        5389,
+        5421
+      ],
+      "body_sha256": "72fb21b4bca0ffca1201cf2c8828ff5acd47f8014d3e0d044ad1e7d6a680cae5"
+    },
+    {
+      "method": "CycleCraftingBatch",
+      "baseline_lines": [
+        5421,
+        5437
+      ],
+      "body_sha256": "3afaffd701dba64f4e8dbd49e03d0db689c4032184cb5a3cb881eeb62fe0a1de"
+    },
+    {
+      "method": "AdvanceDebugCraftingTime",
+      "baseline_lines": [
+        5978,
+        6004
+      ],
+      "body_sha256": "71a1a0cc8b73901f04644029f87aec5ce3931abf117ed169f6c54274ee3341d4"
+    },
+    {
+      "method": "UpdateCraftingTask",
+      "baseline_lines": [
+        6004,
+        6023
+      ],
+      "body_sha256": "ec00fef39ef0f07246d1f9deaa6035287a4a44946f2a55d09e5a69dfb61c5bcf"
+    }
+  ],
+  "preserved_fields": 653,
+  "preserved_signatures": 562,
+  "unchanged_other_method_bodies": 514,
+  "quoted_literals_preserved": true,
+  "stateless_service": true,
+  "production_schema_delta": false
+}

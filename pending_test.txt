@@ -1,0 +1,18 @@
+CA376-01 | 5.6.0 | Issue #376 | Crafting session and task continuity
+Prerequisites: use the retained #376 package and disposable test character; keep
+original campaign saves separate. From the repository root run:
+powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_560/run_native.ps1 -Label author376-01 -Checks -Interactive -Script interactive
+Use a fresh label on later launches. Prepare the addon/scripts first with
+python assets/validation_560/prepare.py if needed; the frozen runtime package is
+build/issue376/current/caelum_argenteum_dev.pk3.
+Steps:
+1. Close the console, open the nearby workbench, and inspect the paused repair.
+   Confirm that the selected worn copy is the task target.
+2. Resume, close the crafting view, reopen it, and move away/return. The task
+   pauses and retains its remaining work; changing the preview does not replace it.
+3. Cancel, then craft a known equipment/ammunition recipe. Use the existing time
+   controls to finish. Confirm one output and the expected material consumption.
+4. Save/reload a paused task, then complete repair and dismantle a spare copy.
+   Distinct copies retain their wear; completion does not duplicate outputs.
+Expected: accepted crafting controls, station requirements, inventory and task
+behavior remain intact. Report any unexpected UI/session/item behavior.
