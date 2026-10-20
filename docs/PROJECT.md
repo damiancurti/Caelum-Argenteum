@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.5.8** — 2026-10-19.
+Documentation version: **5.5.8a** — 2026-10-20.
+
+## 5.5.8a - Close the deferred avalanche issue (#316)
+
+On 2026-10-20 the author explicitly requested closure of the deferred issue.
+#316 is closed as not planned; no avalanche feature or suitable map/encounter
+has been implemented. This status supersedes older open/deferred issue notes,
+while preserving the authored-map and design prerequisites. Any revival needs
+a new focused issue and author-approved encounter/physical data.
+PRs #370-373 integrated #363, #314, #315 and #369 with separate commits and
+evidence. Their author decisions stand; the manual-test queue is empty.
+This documentation patch only updates release diagnostic strings at runtime.
 
 ## 5.5.8 - Cleaned animated bull presentation (#369)
 

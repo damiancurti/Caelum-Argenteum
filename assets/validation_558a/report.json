@@ -1,0 +1,36 @@
+{
+  "issue": 316,
+  "version": "5.5.8a",
+  "date": "2026-10-20",
+  "author_decision": "Close the deferred issue as well.",
+  "github_state": "closed",
+  "state_reason": "not_planned",
+  "avalanche_implemented": false,
+  "pending_author_tests": 0,
+  "packaged_members": 16389,
+  "accepted_runtime_sha256": "2c78110b858a6192e34c067ed74232178885dc8526617500e2499a6d9e99612a",
+  "current_runtime_sha256": "1e494fd742f7c91ca90b62f303ccdfb6967903acfc0eac77793f87e3dee4786a",
+  "release_diagnostic_members": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "line_ending_only_members": [
+    "caelum/actors/CaelumBullModel.zs",
+    "caelum/data/CaelumThermalSurfaceData.zs",
+    "caelum/quests/CaelumMainM00QuestController.zs",
+    "caelum/survival/CaelumThermalRuntime.zs",
+    "caelum/survival/CaelumThermalService.zs",
+    "caelum/survival/CaelumThermalSurface.zs",
+    "licenses/BULL_3D_MODEL.txt",
+    "MAPINFO",
+    "MODELDEF",
+    "TEXTURES",
+    "ZSCRIPT"
+  ],
+  "all_other_packaged_bytes_identical": true,
+  "native_tests": "Not repeated: documentation, diagnostic text and checkout line endings only. Accepted 5.5.8 evidence remains applicable.",
+  "validation": {
+    "issue316-closure-static.json": "db4b36965ed11af931070834cb41fd89a9b39ca4522d9c95f0c693fbbc50625a",
+    "issue316-closure-build.txt": "675c07a39a5e36d6924bff6a5670846b0b8f710cd47df76952c40bd29d51f434"
+  }
+}

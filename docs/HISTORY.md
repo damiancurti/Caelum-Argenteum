@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.8** — 2026-10-19.
+Documentation version: **5.5.8a** — 2026-10-20.
+
+## 5.5.8a - Author-requested deferred issue closure (#316), 2026-10-20
+
+After accepting the final bull, the author requested merging the finished PRs.
+PRs #370/#371/#372/#373 were merged into main in issue order, preserving each
+branch tip and focused commits; #363/#314/#315/#369 are closed. The author then
+explicitly requested closure of the deferred issue as well: #316 is closed as
+not planned. This supersedes its preceding open/deferred issue status without
+claiming avalanche implementation, a suitable map or new physical data.
+Future work requires a new issue and the existing authored-map/design inputs.
+The manual-test queue is empty; prior accepted test IDs remain recorded below.
+
+This author-requested documentation patch is 5.5.8a. Static validation and normal
+packaging pass; all packaged members equal accepted 5.5.8 except its two release
+diagnostic strings and checkout-only CRLF differences in eleven text members.
+No new native test is required for these text changes;
+accepted runtime behavior/evidence is reused without implying avalanche tests.
+Evidence: assets/validation_558a. No local user file is removed by consolidation.
 
 ## 5.5.8 - Cleaned animated bull model (#369)
 
