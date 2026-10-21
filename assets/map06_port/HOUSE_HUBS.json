@@ -18,6 +18,6 @@
   "city_marker_argument": 3,
   "city_marker_value": 1,
   "start_index_base": 1,
-  "sign_categories": ["provisions", "melee", "ranged", "jewelry", "physical_armor", "magic"],
-  "sign_labels": ["ALMACÉN", "ARMAS BLANCAS", "ARMAS Y MUNICIONES", "JOYERÍA", "ARMERÍA", "ARTES ARCANAS"]
+  "sign_categories": ["provisions", "melee", "ranged", "jewelry", "physical_armor", "magic", "library", "clothing"],
+  "sign_labels": ["ALMACÉN", "ARMAS BLANCAS", "ARMAS Y MUNICIONES", "JOYERÍA", "ARMERÍA", "ARTES ARCANAS", "BIBLIOTECA", "SASTRERÍA"]
 }
