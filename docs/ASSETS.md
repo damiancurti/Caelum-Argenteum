@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
 
 ## 5.6.3 - Original reading bookshelf (#378)
 

@@ -1,0 +1,204 @@
+{
+  "issue": 384,
+  "release": "5.6.4",
+  "comparison_commit": "a3e25502",
+  "runs": [
+    {
+      "label": "legacy-save-01",
+      "passes": 6,
+      "failures": 0,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "9def2606defd4b1a1c5dda952cad4d37d716cfecf977ac02dfab0804d0acd690",
+      "log_sha256": "d5a885b90f5d4c793e6b2e27e21808bb3f498e1b92579e3448cba3b255627913"
+    },
+    {
+      "label": "legacy-ice-save-01",
+      "passes": 4,
+      "failures": 0,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "9f94fdc109f04fcc80076e42ed384a2aa3968ece66d84f8e00e224a3cf4b007a",
+      "log_sha256": "a3d2b03a1b5d57b378afd402eb60b111965e4dbd7b0feedada041aa7a12cadf5"
+    },
+    {
+      "label": "ice-upgrade-01",
+      "passes": 7,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "f78ba146611468e84468541dd80a33b577a6f55728cbeda1068f61a5c24fb464",
+      "log_sha256": "b96f5dfad7724714307cb30a23f92701142e060fa3570b9b99998177de9bbf60"
+    },
+    {
+      "label": "final-probe",
+      "passes": 7,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "72bf07477ed818cd7eb992981fa3cfb8b24e910e2b66487af1b24acf4d3e752b",
+      "log_sha256": "7bfdf226d99b20cba9e589d128ee9347f2fa1599cb1917a7fc1ccf1a02522f7b"
+    },
+    {
+      "label": "final-tables",
+      "passes": 16,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "72bf07477ed818cd7eb992981fa3cfb8b24e910e2b66487af1b24acf4d3e752b",
+      "log_sha256": "de527dec45eb217cc554f7bb0c7a8e71e984e9571d8e3c8945fbc3c3366e9818"
+    },
+    {
+      "label": "final-tables-reload-02",
+      "passes": 4,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "72bf07477ed818cd7eb992981fa3cfb8b24e910e2b66487af1b24acf4d3e752b",
+      "log_sha256": "1b8c6eb59445b8839996447339888ed926917e80b073a8a8d8cfde20d2b01b1c"
+    },
+    {
+      "label": "final-upgrade-02",
+      "passes": 14,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "4b31dc39c7660481339860192a4ba201d5df1959b84d274949b583ae57f79c56"
+    },
+    {
+      "label": "final-reload-02",
+      "passes": 6,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "c375bf386b9336f11c32ae52428c604364ca911c47c036c2857c0b6665418f9e"
+    },
+    {
+      "label": "final-hub-02",
+      "passes": 12,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "86e268570b6c3db3dc29e70c88f112f486dc3bb8e3aa341f4f684ae1ab59aff0"
+    },
+    {
+      "label": "final-original-rollback",
+      "passes": 6,
+      "failures": 0,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "a4a094d139942c7123629c82764f1d475851ecdd8d9a1f4fa48da296bc72870e",
+      "log_sha256": "055355c7961414b74a458a2bed1ac8da549b05214a533be3ceb8205cb6ee89b2"
+    },
+    {
+      "label": "final-legacy-tables",
+      "passes": 16,
+      "failures": 0,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "a4a094d139942c7123629c82764f1d475851ecdd8d9a1f4fa48da296bc72870e",
+      "log_sha256": "afab880332b5acb5269de0bc10dea41da96021aed85e160facf185b441fa96df"
+    },
+    {
+      "label": "final-legacy-tables-upgrade",
+      "passes": 4,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "e55cf1a557d1d9588c8f15c11ae2402796dac9fccbc51a72406ad6ce1af16fbf"
+    },
+    {
+      "label": "final-legacy-tables-rollback",
+      "passes": 4,
+      "failures": 0,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "a4a094d139942c7123629c82764f1d475851ecdd8d9a1f4fa48da296bc72870e",
+      "log_sha256": "cc6fd53e56977b4654393df649078e6fd7673c71e70e853f4b33d5f6429e89a2"
+    },
+    {
+      "label": "final-current-ice-save",
+      "passes": 4,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "ce9693960e791f03558accfe4357c25822afffc4502603737576c8f7891a0afe"
+    },
+    {
+      "label": "final-current-ice-reload",
+      "passes": 3,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "651cb7cc0d76bfe2573a9106ce0dcf3306813a2405fd7dae2f77cd1f6485c5fe",
+      "log_sha256": "8d04e9dcf54baaf2060dabbb8ae6b3948693c127d70dec132b832ca9b8d49a31"
+    },
+    {
+      "label": "final-smoke",
+      "passes": 0,
+      "failures": 0,
+      "runtime": "current",
+      "package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+      "addon_sha256": "",
+      "log_sha256": "565d0e7e13e87d4288f228c208df020cd5e44e2d8b14721cf89c355f48b54579"
+    }
+  ],
+  "expected_baseline_regressions": [
+    {
+      "label": "final-baseline-probe",
+      "passes": 3,
+      "failures": 4,
+      "runtime": "baseline",
+      "package_sha256": "924b9bbb7983af18d90445609f7a21f559b88cf5e33618b6e8756d290263f4ef",
+      "addon_sha256": "a4a094d139942c7123629c82764f1d475851ecdd8d9a1f4fa48da296bc72870e",
+      "log_sha256": "c7344d63a6ae36eed469a2ad10ffe6e53245b4472b1754459aef2054fa96a234"
+    },
+    {
+      "label": "legacy-ice-finish-01",
+      "passes": 2,
+      "failures": 1,
+      "runtime": "legacy",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "9f94fdc109f04fcc80076e42ed384a2aa3968ece66d84f8e00e224a3cf4b007a",
+      "log_sha256": "9ea752a9afc2cac55038c3e1899cc5e4e71191cbbac09ed55e5a7a89ca59c229"
+    }
+  ],
+  "passing_assertions": 113,
+  "unexpected_failures": 0,
+  "final_package_sha256": "fc0c50f63bec6898887799e1d01b69034634c71c2ff2b32f00388e0e6feee84a",
+  "comparison_package_sha256": "924b9bbb7983af18d90445609f7a21f559b88cf5e33618b6e8756d290263f4ef",
+  "package_changed_members": [
+    "caelum/actors/CaelumCombatActor.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "unchanged_source_sha256_lf": {
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "95889f1daf0db7f50fd10e739f0e3fd99970315251f010e8412977c21e6bbbbf",
+    "src/caelum/world/CaelumMazeLayout.zs": "3da36f1579c894c1448c129e95ff95ad13e85d8f0a7640f1198eec89279097c5",
+    "src/caelum/world/CaelumStashChest.zs": "bacd160cc4fd7fdebe444b507786771cc70a50e535b217991253b4798e308c45",
+    "src/caelum/ui/CaelumChestPreview.zs": "a3a86447e7a5184000c17d6a74e1d3c716a4aa9c2d7bcc23509b0ffe6c305cbe",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "994ac2756717cee80c2f36b29357f245f1dbe932414a9d8b6dc2bd2696fa83a3",
+    "src/caelum/equipment/CaelumInventoryService.zs": "151de75c75e41b3d760497fc2b9fdf16808cce89749637a26bafa65833c8574b",
+    "src/caelum/actors/CaelumDemonService.zs": "830e197646964a85785ddd784365bbfa0a1bc980409102be13dbd3dfd25bd2a4",
+    "src/caelum/actors/CaelumBull.zs": "2b7723bfb2a72feac9d68c6e59b24b848e5dccb4604db7f15310027c334f4da5",
+    "src/caelum/player/CaelumPlayer.zs": "44a731b085941bbd3e2d67be437ecc01a816ba1bf07f7b3377a3f3e32b3acfb2",
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": "b221379e650c49c219cccf45ff98aef7920eaa016afa7a43cd294713dab258c5",
+    "src/caelum/quests/CaelumSideQuestRules.zs": "ca710a9acea511416c34b71101b5ff3e96e41d6471ed460376d66ec65596754a",
+    "src/caelum/dialogue/CaelumPrisonerRescue.zs": "f98d8cfec2ab97ca026312dc7ec42ad18997a13970c9618ddde1286fa4262be0",
+    "assets/generators/generate_map02_maze.py": "f39ddd1aad968fad3a6841333aea937f075119be9c590ad0055f8ef8220ce5bc"
+  },
+  "retained_local_saves": {
+    "ca384-current-ice.zds": "30f1613b6cf3027950f223c601ca0955832d574303e05ef316576bc14bfdd633",
+    "ca384-ice.zds": "8c51841dd1f637e6daca337c81f82cc9b05eb619ff61a4250f68ea55f61e63c9",
+    "ca384-original.zds": "42a26fbaee028f82d0994c697cffdfec122aa6a59a68dc2ee5a281bc2829fcc3",
+    "ca384-tables-legacy.zds": "24261ec78766e96d9cb08e1f8e09e8257cbc96630356d13d28c752e624e9f490",
+    "ca384-tables.zds": "582982ee9b02974bc87e93fa7bb62f507c452b68a789c458200ee31ce67e93f4",
+    "ca384-upgraded.zds": "e504d1332ed0c674627fb4a82f8c73a39f4a07e8c25ed7a4c045a4f4c8bfac8d"
+  },
+  "author_acceptance": "passed CA384-01 on 2026-10-20; initial startup qualification in HISTORY"
+}

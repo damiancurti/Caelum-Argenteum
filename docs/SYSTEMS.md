@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
+
+## One-time loot with existing tables (#384, 5.6.4)
+
+The author retained current distributions and requested only their one-time
+delivery review. No added pool, randomization, item, quantity, respawn or map
+refill is implied. The #384 issue's opening 65-entry baseline is historical:
+#183's accepted material quotas remain authoritative for current MAP02 chests.
+
+| Source | Approved/current contract | #384 treatment and evidence |
+| --- | --- | --- |
+| 39 current MAP02 chests | Frozen initial-equipment repair/replacement material quotas; partial remainder freezes on first successful receipt | Unchanged; #381 covers preview/cancel/capacity, competing requests, partial collection, saves and hub/non-hub item travel |
+| Legacy maze catalogue | 65 distinct T1 combinations, recipient sizing on successful receipt, retained looted gaps and migration backup | Preserve provenance and existing migration; do not reseed current/visited maps |
+| Mapped creature drops | Existing 38 Mandinga/192 rat assignments; current ammunition/key/ration quantities and dry anchors | No table/generator changes; actual MAP02 deaths, repeats, old/current saves and original-pair rollback rerun |
+| Unassigned supported demons | One remaining native potion, weighted by actual remaining supply; no potion when assigned loot or native DropItem has priority | Existing #220 debit/exhaustion rules unchanged; native actual-death tests rerun |
+| Native combat-actor death/unblock | No duplicate death event or native entitlement on reentry, repeated callback, resurrection, reload or hub return | New guarded dispatch and revision-1 claim; isolated DropItem carrier proves native route without adding campaign loot |
+| MAP01 Bull and tutorial supplies | Bull drops no leather; existing gifts and Ronnie's finite material entitlement remain authoritative | Unchanged; source review and applicable #183/#378 evidence, no new campaign replay claimed |
+| Prisoner/side-quest rewards | Existing successful-transfer/receipt and persistent claim flags | Unchanged; source-reviewed, no new reward or chance |
+| New recipe/clothing/ammunition loot and new ownership | Additional mappings require their own approved data/access rules | Pending respective issues; not introduced by #384 |
+
+Combat actors serialize NativeDeathLootRevision 1 and NativeDeathLootReleased.
+New actors initialize the revision before first death. Old previously raised
+or killed/nonblocking bodies import a spent claim; a still-solid dying body
+keeps its pending claim. Suspended archive bodies use their saved pre-suspension
+solid flag. Initialization is idempotent and local, with no global actor scan.
+The claim commits before calling the engine; repeating unblock may clear
+collision but cannot create another native drop. A transient guard covers
+OwnerDied/WorldThingDied reentry before the engine sets KILLED. Native revival
+permits a subsequent real death while preserving the already spent loot claim.
+
+Frozen death keeps native timing/chunk effects. A plain Actor proxy has no
+inventory, conversation or DropItems; the original body keeps BossDeath and its
+guarded entitlement. Existing native ice phase references are redirected locally
+without replaying entry actions or changing remaining tics. New states append
+after existing class states. Keep original save/package pairs for rollback;
+loading new frozen-state indices with an old runtime is not a promised reversal.
+
+Evidence and limits: assets/validation_564/RESULTS.md. Native tests do not claim
+new campaign balance, multiplayer synchronization or author acceptance.
+CA384-01 passed author review on 2026-10-20; existing native locks/access rules remain.
 
 ## Ordinary clothing: catalogue proposal for review (#386, 5.6.3b)
 

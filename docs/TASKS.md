@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
+
+## 5.6.4 - Review one-time death loot (#384)
+
+Implementation retains current tables and closes native death callback/unblock
+repetition, including frozen resurrected bodies. Revision-1 migration preserves
+old pending/spent claims and frozen phase timers. The focused native set passes
+16 runs / 113 assertions; source/package comparison preserves unrelated paths.
+See assets/validation_564/RESULTS.md for evidence and reused-test boundaries.
+CA384-01, CA381-01 and CA378-01 passed author review on 2026-10-20.
+All delivered author checks have passed; the pending queue is empty.
+No new table, ownership rule, random pool or historical-map refill is authorized.
 
 ## 5.6.3b - Review ordinary-clothing data before implementation (#386)
 
@@ -8,8 +19,8 @@ The author requested the full table, now in SYSTEMS. Approval is still needed
 for its concrete garment rows, balance, layering, durability and one-time legacy
 outfit/capacity policy. Preserve all accepted armor and thermal baselines until
 then. The #382 tool proposal remains pending; #387 art needs its separate coverage
-and visual approval after #386. Author checks CA377-01/CA381-01/CA378-01 remain
-pending and use their frozen packages, not this proposal's diagnostic labels.
+and visual approval after #386. CA377-01 passed on 2026-10-20; CA381-01/CA378-01 passed on 2026-10-20.
+Each check uses its frozen package, not this proposal's diagnostic labels.
 
 ## 5.6.3a - Review the lock-tool proposal (#382)
 

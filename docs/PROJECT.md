@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
+
+## 5.6.4 - One-time death loot, existing tables (#384)
+
+The author retained existing tables and narrowed #384 to one-time delivery.
+Native death callbacks now reject reentry/repetition, and a revision-1 native
+drop claim survives saves and resurrection. Frozen deaths reuse native effects
+through the same guarded claim; old ice phases retain their remaining timer.
+No new loot, quantity, chance, refill, ownership rule or map geometry is added.
+Current MAP02 material quotas supersede the issue's historical 65-item baseline;
+the legacy catalogue and already looted gaps remain intact.
+
+Validation: 16 native runs / 113 passing assertions, plus separate old-code
+regressions, static validation, normal packaging and independent review in
+assets/validation_564. CA384-01 passed author review on 2026-10-20; no merge is implied. #382/#386 proposals still require review and #387 art remains pending.
 
 ## 5.6.3b - Ordinary-clothing catalogue proposal (#386)
 
@@ -18,7 +32,7 @@ steel recipes/masses, existing-margin prices, station access and lawful-title
 rules. Confirmed padlock/key masses, geometry scaling and warning-only theft
 remain separate. This delivery changes documentation and required diagnostic
 release labels; #382 implementation awaits the author's decisions. The frozen
-5.6.3 CA378-01 package remains available for its pending author check.
+5.6.3 CA378-01 package remains available; that author check passed on 2026-10-20.
 
 ## 5.6.3 - Physical recipe learning (#378)
 

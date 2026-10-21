@@ -1,6 +1,46 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
+
+## 5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20
+
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+The author fixture also warps to the existing 20-arrow dry anchor
+(-1344, -5472), taken from CaelumMazeLayout; it creates no replacement loot.
+
+The author explicitly retained current tables and requested their one-time
+delivery review. The issue's historical 65 T1 entries are not restored over
+#183's accepted material quotas. Chest/source identities, acquisition, quests,
+current assignments and native access remain unchanged.
+
+Reproduced reentrant OwnerDied/WorldThingDied, repeated Die and repeated native
+unblock with an isolated DropItem carrier; production has no DropItem metadata.
+A transient dispatch guard and serialized revision-1 claim prevent repeats.
+Old pending, completed, living and archived bodies preserve their entitlement.
+Independent review identified the engine's direct ice-unblock route; native
+visual chunks now run through a metadata-free proxy while the original body
+owns its guarded drop/BossDeath. Old frozen states migrate without restarting
+their timer, and appended state indices preserve existing class states.
+
+Sixteen required native runs pass 113 assertions with no unexpected failures.
+Two separate old-code runs reproduce five expected failures. Current/5.5.8a
+MAP02, save/reload, hub return, resurrection, both ice phases and original-pair
+rollback are covered. Static validation, normal packaging, exact changed-member
+comparison and reviewed limits are in assets/validation_564/RESULTS.md.
+Early compilation/setup/queued-event/fixture-pointer failures are retained and
+excluded from those counts. On 2026-10-20 the author confirmed CA384-01
+(origin 5.6.4 / #384): "La prueba 384 dio bien." The initial interactive setup
+was missing; the corrected launcher and an in-game console recovery command
+were supplied before confirmation. No further exceptions were reported.
+The pending entry is retired. No merge/closure or version increment is implied.
+CA378-01 and CA381-01 also passed; CA377-01 remains pending. The author returned
+and temporary keep-awake was released with the Windows power plan unchanged.
 
 ## 5.6.3b - Requested clothing-table proposal (#386), 2026-10-20
 
