@@ -1,0 +1,18 @@
+CA383-01 — City catalogues, library and shop signs
+Origin: 5.6.10 / issue #383. Awaiting explicit author confirmation.
+Prerequisites: prepared #383 game and terminal, with four merchants, a reading
+shelf, Magic Box, silver and 1,000 gold coins. Use a fresh isolated CLTHQA room;
+do not load an unrelated campaign save for this check.
+1. The library starts open. Use Left/Right for categories and Up/Down to select.
+   Buy a book: stock falls from 10 to 9; the notebook contains its final/component
+   pages. Buying does not learn them. Attempt the same purchase again: a duplicate
+   message appears and money/stock stay unchanged.
+2. Close with Tab. Use the shelf behind you to inspect/study the received pages.
+   Check that a notebook is present, with 100 g plus 5 g per distinct page.
+3. Clothing shop is ahead-left, ranged shop ahead-right, tools behind-left.
+   Inspect garment sizes, both sealed kits and the three matched lock/key pairs.
+   Buy/sell one garment or kit; buy a padlock and verify its matching key arrives.
+4. Inspect the library/clothing signs. Save/reload and reopen the shops: purchases,
+   pages, stock and money remain. No automatic replenishment is expected in #383.
+Expected: readable Spanish/English menus, correct categories/objects/quantities,
+no duplicate charges, no knowledge granted by purchase and no lost items.
