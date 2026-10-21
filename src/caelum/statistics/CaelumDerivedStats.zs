@@ -48,6 +48,7 @@ class CaelumDerivedStats : Object
     double MagicalPowerMultiplier;
     double MagicalPushMultiplier;
     double ArmorWeight;
+    double ClothingWeight;
     double ShieldWeight;
     double WeaponWeight;
     double DebugWeight;
@@ -142,7 +143,7 @@ class CaelumDerivedStats : Object
         ArmorWeight = Max(0.0, newArmorWeight);
         ShieldWeight = Max(0.0, newShieldWeight);
         WeaponWeight = Max(0.0, newWeaponWeight);
-        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + ClothingWeight;
         CarriedItemWeight = EquippedWeight + InventoryWeight;
         RefreshCarriedWeightTotals();
     }
@@ -150,7 +151,7 @@ class CaelumDerivedStats : Object
     void SetInventoryWeight(double newInventoryWeight)
     {
         InventoryWeight = Max(0.0, newInventoryWeight);
-        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + ClothingWeight;
         CarriedItemWeight = EquippedWeight + InventoryWeight;
         RefreshCarriedWeightTotals();
     }
@@ -162,13 +163,14 @@ class CaelumDerivedStats : Object
         double newShieldWeight,
         double newWeaponWeight,
         double newInventoryWeight,
-        double newCarriedItemWeight
+        double newCarriedItemWeight,double newClothingWeight=0
     )
     {
+        ClothingWeight=Max(0.0,newClothingWeight);
         ArmorWeight = Max(0.0, newArmorWeight);
         ShieldWeight = Max(0.0, newShieldWeight);
         WeaponWeight = Max(0.0, newWeaponWeight);
-        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + ClothingWeight;
         InventoryWeight = Max(0.0, newInventoryWeight);
         CarriedItemWeight = Max(
             Max(0.0, newCarriedItemWeight),
@@ -182,7 +184,7 @@ class CaelumDerivedStats : Object
     // evita que el HUD quede mostrando una carga anterior indefinidamente.
     void RefreshCarriedWeightTotals()
     {
-        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight;
+        EquippedWeight = ArmorWeight + ShieldWeight + WeaponWeight + ClothingWeight;
         CarriedWeight = CarriedItemWeight + DebugWeight;
         TotalMass = BaseMass + CarriedWeight;
         LoadRatio = CarryCapacity > 0.0 ? CarriedWeight / CarryCapacity : 0.0;

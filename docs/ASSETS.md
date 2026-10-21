@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
+
+## 5.6.6 - Clothing gameplay representation (#386)
+
+Native garments temporarily reuse the project-owned material-fabric inventory
+icon and M018 world sprite from the existing material catalogue. No new model,
+texture, source art or external asset is introduced. The approved #386 values do
+not authorize the separate #387 cuts/colors/body coverage/rendering decisions.
 
 ## 5.6.3 - Original reading bookshelf (#378)
 
@@ -11,7 +18,7 @@ thirty books reuse project-owned stash wood and station paper/leather/cloth
 textures; no external asset or license is introduced. Existing texture provenance
 remains in their generator/license sources. MODELDEF binds the new actor without
 changing existing furniture. Native placement and bilingual UI captures are
-recorded under `assets/validation_563`; author visual acceptance is pending.
+recorded under `assets/validation_563`; CA378-01 passed on 2026-10-20.
 
 ## 5.5.8 - Cleaned animated bull model (#369)
 

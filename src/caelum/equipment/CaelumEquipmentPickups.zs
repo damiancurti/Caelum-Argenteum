@@ -222,6 +222,7 @@ class CaelumEquipmentItem : Inventory
     int PreviewEquipmentKind()
     {
         if (PickupDataInitialized || HasAcquiredIdentity()) return EquipmentKind;
+        if (self is "CaelumClothingPickup") return CaelumConstants.EQUIPMENT_KIND_CLOTHING;
         if (self is "CaelumArmorPickup") return CaelumConstants.EQUIPMENT_KIND_ARMOR;
         if (self is "CaelumShieldPickup") return CaelumConstants.EQUIPMENT_KIND_SHIELD;
         if (self is "CaelumWeaponPickup") return CaelumConstants.EQUIPMENT_KIND_WEAPON;
@@ -233,6 +234,7 @@ class CaelumEquipmentItem : Inventory
     {
         if (PickupDataInitialized || HasAcquiredIdentity()) return ItemType;
         int kind=PreviewEquipmentKind();
+        if (kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING) return Clamp(args[0],0,CaelumClothingData.COUNT-1);
         if (kind==CaelumConstants.EQUIPMENT_KIND_ARMOR) return args[1];
         int count=kind==CaelumConstants.EQUIPMENT_KIND_WEAPON ? CaelumConstants.WEAPON_TYPE_COUNT
             : kind==CaelumConstants.EQUIPMENT_KIND_SHIELD ? CaelumConstants.SHIELD_TYPE_COUNT
@@ -244,12 +246,14 @@ class CaelumEquipmentItem : Inventory
     int PreviewArmorSlot()
     {
         if (PickupDataInitialized || HasAcquiredIdentity()) return ArmorSlot;
+        if(PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.Region(PreviewItemType());
         return PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_ARMOR
             ? Clamp(args[0], 0, CaelumConstants.ARMOR_SLOT_COUNT - 1) : -1;
     }
 
     int PreviewTier()
     {
+        if(PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return 1;
         if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_WEAPON
             && CaelumWeaponModel.IsSingleTierType(PreviewItemType())) return 1;
         if (HasAcquiredIdentity()) return Tier;
@@ -269,7 +273,8 @@ class CaelumEquipmentItem : Inventory
     bool HasEquipmentSize()
     {
         int kind = PreviewEquipmentKind();
-        return kind == CaelumConstants.EQUIPMENT_KIND_ARMOR
+        return kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING
+            || kind == CaelumConstants.EQUIPMENT_KIND_ARMOR
             || kind == CaelumConstants.EQUIPMENT_KIND_SHIELD
             || kind == CaelumConstants.EQUIPMENT_KIND_WEAPON;
     }
@@ -292,6 +297,7 @@ class CaelumEquipmentItem : Inventory
         if (HasAcquiredIdentity() || user==null) return UnitWeight;
         int kind=PreviewEquipmentKind(), type=PreviewItemType(), tier=PreviewTier();
         int size=PreviewEquipmentSize(user);
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.Weight(type,size);
         if (kind==CaelumConstants.EQUIPMENT_KIND_ARMOR && user.ArmorModel!=null)
             return user.ArmorModel.GetWeightFor(PreviewArmorSlot(),type,tier,size);
         if (kind==CaelumConstants.EQUIPMENT_KIND_SHIELD && user.ShieldModel!=null)
@@ -303,6 +309,7 @@ class CaelumEquipmentItem : Inventory
 
     int PreviewMaximumDurability(CaelumPlayer user)
     {
+        if(PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return 100;
         if (user==null) return 0;
         int kind=PreviewEquipmentKind(), type=PreviewItemType(), tier=PreviewTier();
         int size=PreviewEquipmentSize(user);
@@ -317,6 +324,7 @@ class CaelumEquipmentItem : Inventory
 
     int PreviewDurability(CaelumPlayer user)
     {
+        if(PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return 100;
         MigrateWeaponDurability();
         if (HasAcquiredIdentity()) return Durability;
         int maximum=PreviewMaximumDurability(user);
@@ -407,11 +415,13 @@ class CaelumEquipmentItem : Inventory
             && EquipmentSize == requestedEquipmentSize;
     }
 
+    double GetTotalUnitWeight(){return Max(0.0,UnitWeight)+Max(0.0,ThermalWaterKg);}
+
     double GetCarriedWeight()
     {
         // El peso reducido compartido de la Caja Mágica pertenece al resumen
         // agregado del jugador, no a una pieza individual.
-        return InMagicBox ? 0.0 : Max(0.0, UnitWeight) * Amount;
+        return InMagicBox ? 0.0 : GetTotalUnitWeight() * Amount;
     }
 
     // Las piezas no son apilables. Devolver false permite que el motor añada

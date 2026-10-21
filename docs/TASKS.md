@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
+
+## 5.6.6 - Native ordinary clothing (#386)
+
+The approved 25 rows now use native item IDs, size, prices, fabric/leather/rope
+recipes and a separate layer under armor. ClothingRevision 1 grants four initial
+pieces once and transfers implicit base moisture without changing equipped armor.
+Stored garments retain moisture; wet mass counts in transfer/carry limits and
+water above changed capacity becomes runoff without cooling. No wear/repair.
+Static/native evidence and screenshots: assets/validation_566/RESULTS.md.
+CA386-01 passed author acceptance on 2026-10-21; #386 has no remaining author check
+and is ready for integration under the standing merge instruction.
+Library and vendor integration remain #383; model coverage/art remain #387.
+The accepted batch PRs #388–395 was merged on 2026-10-21; issues #376, #377,
+#378, #381, #382 and #384 are closed. Remaining issues: #379, #380, #383,
+#385 and #387 after integrating accepted #386. Keep their scopes, tests and PRs separate.
 
 ## 5.6.4 - Review one-time death loot (#384)
 
@@ -17,7 +32,7 @@ No new table, ownership rule, random pool or historical-map refill is authorized
 
 The author approved the full SYSTEMS table on 2026-10-20, including garment rows,
 balance, layering, durability and one-time legacy outfit/capacity policy.
-Implementation remains pending. #387 art needs separate coverage and visual
+Implementation is delivered in 5.6.6. #387 art needs separate coverage and visual
 approval after #386. CA377-01, CA381-01 and CA378-01 passed on 2026-10-20.
 Each check uses its frozen package, not this proposal's diagnostic labels.
 

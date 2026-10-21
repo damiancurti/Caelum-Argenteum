@@ -25,7 +25,7 @@ class CaelumPlayer : DoomPlayer
     int UtilityStaffRequestedMode;
     bool ThermalBluntDelivery;
     const FORMAL_INVENTORY_VISIBLE_ROWS = 6;
-    const FORMAL_INVENTORY_FILTER_COUNT = 10;
+    const FORMAL_INVENTORY_FILTER_COUNT = 11;
 
     // This object owns the twelve primary attributes for this player.
     // Each player receives a separate instance, including in multiplayer.
@@ -300,6 +300,8 @@ class CaelumPlayer : DoomPlayer
     int EquipmentSelectionSpecialType;
     int EquipmentSelectionAmuletType;
     int EquipmentSelectionSealType;
+    int EquipmentSelectionClothingType;
+    transient bool ClothingMigrationReady;
     int EquipmentSelectionTier;
     int EquipmentSelectionSize;
     bool EquipmentSelectionOwned;
@@ -3484,6 +3486,7 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.ICON;
         if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe))
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE
                 ? "graphics/caelum/icons/ca_sleeping_bag.png" : "graphics/caelum/icons/water/canteen_large.png";
@@ -3903,6 +3906,8 @@ class CaelumPlayer : DoomPlayer
         }
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
             EquipmentSelectionAmuletType=(EquipmentSelectionAmuletType+direction+CaelumConstants.AMULET_TYPE_COUNT)%CaelumConstants.AMULET_TYPE_COUNT;
+        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            EquipmentSelectionClothingType=(EquipmentSelectionClothingType+direction+CaelumClothingData.COUNT)%CaelumClothingData.COUNT;
         else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
             EquipmentSelectionSealType=(EquipmentSelectionSealType+direction+CaelumConstants.SEAL_TYPE_COUNT)%CaelumConstants.SEAL_TYPE_COUNT;
         else
@@ -3917,6 +3922,7 @@ class CaelumPlayer : DoomPlayer
 
     void CycleEquipmentTier()
     {
+        if(EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return;
         EquipmentSelectionItemId = 0;
         if (EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
@@ -3943,8 +3949,8 @@ class CaelumPlayer : DoomPlayer
                 == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             || EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
-            || EquipmentSelectionKind
-                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+            || (EquipmentSelectionKind>=CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                && EquipmentSelectionKind!=CaelumConstants.EQUIPMENT_KIND_CLOTHING))
         {
             return;
         }
@@ -7160,6 +7166,7 @@ class CaelumPlayer : DoomPlayer
         CaelumUtilityStaff.Update(self);
         CaelumBolas.Update(self);
         CaelumRestState.Validate(self);
+        if(!ClothingMigrationReady)CaelumClothing.Migrate(self);
         if (level.time % TICRATE == 0) CaelumRecipeLearning.DeliverPending(self);
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();

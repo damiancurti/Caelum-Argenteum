@@ -4,6 +4,8 @@ class CaelumCityMerchant : Actor
 {
     int ShopIdentity, Category, Revision, WalletCopper;
     bool StockInitialized;
+    // Capacidad explícita para #383; ningún comercio actual se convierte aquí.
+    bool TradesClothing;
 
     static CaelumCityMerchant Find(int identity)
     {
@@ -33,6 +35,7 @@ class CaelumCityMerchant : Actor
         {
             if(equipment.Tier!=CaelumCityData.SHOP_TIER || equipment.ItemFlags!=0)return false;
             int kind=equipment.EquipmentKind,type=equipment.ItemType;
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return TradesClothing;
             if(kind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
                 return Category==WeaponCategory(type);
             if(kind==CaelumConstants.EQUIPMENT_KIND_ARMOR)
@@ -57,7 +60,8 @@ class CaelumCityMerchant : Actor
 
     void SeedEquipment(CaelumPlayer user,int kind,int type,int slot,int size,int essence)
     {
-        Name itemClass=kind==CaelumConstants.EQUIPMENT_KIND_WEAPON ? 'CaelumWeaponPickup'
+        Name itemClass=kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING ? 'CaelumClothingPickup'
+            : kind==CaelumConstants.EQUIPMENT_KIND_WEAPON ? 'CaelumWeaponPickup'
             : kind==CaelumConstants.EQUIPMENT_KIND_ARMOR ? 'CaelumArmorPickup'
             : kind==CaelumConstants.EQUIPMENT_KIND_SHIELD ? 'CaelumShieldPickup'
             : kind==CaelumConstants.EQUIPMENT_KIND_AMULET ? 'CaelumAmuletPickup' : 'CaelumSealPickup';

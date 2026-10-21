@@ -696,6 +696,7 @@ class CaelumEconomyRules : Object
     static clearscope double GetEquipmentBaseValueFor(int kind, int type,
         int slot, int requestedTier, int essence, double weight)
     {
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.ValueForWeight(type,weight);
         int tier = Clamp(requestedTier, 1, 3);
         double finalWeight = Max(0.0, weight);
         if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)

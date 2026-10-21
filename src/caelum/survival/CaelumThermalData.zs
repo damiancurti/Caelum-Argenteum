@@ -126,6 +126,7 @@ class CaelumThermalData : Object
 
     static clearscope double Clo(int material)
     {
+        if(material>=CaelumClothingData.THERMAL_FIRST)return CaelumClothingData.Clo(material-CaelumClothingData.THERMAL_FIRST);
         if(material<0)return 0;
         if(material==THICK_CLOTH)return 1.0;
         if(material==LEATHER)return 1.2;
@@ -135,6 +136,7 @@ class CaelumThermalData : Object
     }
     static clearscope double Permeability(int material)
     {
+        if(material>=CaelumClothingData.THERMAL_FIRST)return CaelumClothingData.Permeability(material-CaelumClothingData.THERMAL_FIRST);
         if(material<0)return 1;
         if(material==THICK_CLOTH)return 0.75;
         if(material==LEATHER)return 0.45;
@@ -146,6 +148,7 @@ class CaelumThermalData : Object
     // Derivación reproducible: validation_510/calibrate_drying.py.
     static clearscope double WaterCapacityKgPerArea(int material)
     {
+        if(material>=CaelumClothingData.THERMAL_FIRST)return CaelumClothingData.Capacity(material-CaelumClothingData.THERMAL_FIRST);
         if(material==THICK_CLOTH)return 0.332367940848569;
         if(material==LEATHER)return 0.346983535001855;
         if(material==THICK_LEATHER)return 0.420869697057457;

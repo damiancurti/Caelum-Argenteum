@@ -338,8 +338,8 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingTierRequired
         );
         user.ExpandCraftingBlueprintMaterial(
-            CaelumConstants.MATERIAL_SILVER_INGOT,
-            1,
+            CaelumClothing.ThirdMaterial(user),
+            CaelumClothing.ThirdTier(user),
             user.CraftingSilverRequired
         );
         user.ExpandCraftingBlueprintMaterial(
@@ -423,8 +423,8 @@ class CaelumCraftingCoordinator : Object play
                 user.CraftingTierRequired
             )
             || !user.AddCraftingTaskReservation(
-                CaelumConstants.MATERIAL_SILVER_INGOT,
-                1,
+                CaelumClothing.ThirdMaterial(user),
+                CaelumClothing.ThirdTier(user),
                 user.CraftingSilverRequired
             )
             || !user.AddCraftingTaskReservation(
@@ -718,7 +718,8 @@ class CaelumCraftingCoordinator : Object play
 
     static bool IsDirectWeaponCraftingRecipe(CaelumPlayer user)
     {
-        return user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
+        return user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING
+            || user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
             || user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
             || user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
             || user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
@@ -751,8 +752,8 @@ class CaelumCraftingCoordinator : Object play
                 user.CraftingTierRequired
             )
             && user.RequireDirectCraftingMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT,
-                1,
+                CaelumClothing.ThirdMaterial(user),
+                CaelumClothing.ThirdTier(user),
                 user.CraftingSilverRequired
             )
             && user.RequireDirectCraftingMaterial(
@@ -1345,6 +1346,10 @@ class CaelumCraftingCoordinator : Object play
                     user.CraftingOutputMaterialType
                 );
         }
+        else if (CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))
+        {
+            CaelumClothing.Preview(user);
+        }
         else if (CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
         {
             user.CraftingSelectionTier=CaelumLockRules.RecipeTier(user.CraftingSelectionRecipe);
@@ -1433,6 +1438,8 @@ class CaelumCraftingCoordinator : Object play
                 );
             }
 
+            if(CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))CaelumClothing.Preview(user);
+
             // El montaje y la reparación producen un objeto indivisible. Una
             // eficiencia menor conserva el resultado completo y aumenta cada
             // entrada por separado para representar la merma elegida.
@@ -1463,7 +1470,7 @@ class CaelumCraftingCoordinator : Object play
             ) : 0;
         user.CraftingSilverOwned = user.CraftingSilverRequired > 0
             ? user.CountCraftingMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT, 1
+                CaelumClothing.ThirdMaterial(user), CaelumClothing.ThirdTier(user)
             ) : 0;
         user.CraftingGoldOwned = user.CraftingGoldRequired > 0
             ? user.CountCraftingMaterial(

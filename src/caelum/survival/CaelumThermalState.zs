@@ -11,6 +11,7 @@ class CaelumThermalState : Object play
     // Desde revisión 7, ActivityWatts sólo informa del intervalo actual.
     double AcclimationMultiplier;
     double BaseWaterKg[4];
+    double BareWaterKg[4],ClothingRunoffKg;
     double ActorWaterKg[4];
     double Coverage[4];
     int Material[4];
@@ -70,6 +71,8 @@ class CaelumThermalState : Object play
         copy.ActivityWatts=ActivityWatts;
         copy.DamageRemainder=DamageRemainder;
         for(int i=0;i<4;i++)copy.BaseWaterKg[i]=BaseWaterKg[i];
+        for(int i=0;i<4;i++)copy.BareWaterKg[i]=BareWaterKg[i];
+        copy.ClothingRunoffKg=ClothingRunoffKg;
         for(int i=0;i<4;i++)copy.ActorWaterKg[i]=ActorWaterKg[i];
         for(int i=0;i<4;i++)copy.Coverage[i]=Coverage[i];
         for(int i=0;i<4;i++)copy.Material[i]=Material[i];

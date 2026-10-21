@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.5.** Obtain and update the complete repository, validate
+**Current release: 5.6.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.6 implements the 25 approved ordinary garments (#386), with a separate
+four-region clothing layer under armor, native inventory/Box/chest transport,
+T1 recipes, exact material grades and persistent moisture. New and legacy players
+receive the approved summer outfit once; its real mass counts toward load.
+See [validation](assets/validation_566/RESULTS.md). CA386-01 passed author playtest on 2026-10-21;
+library/vendor availability remains #383 and garment models remain #387.
 
 V5.6.5 implements approved padlock/key crafting, lawful chest title and local
 theft witnesses (#382). Each city house receives one small locked household chest
@@ -25,7 +32,7 @@ for 16 native runs / 113 passing assertions and test boundaries. CA384-01 passed
 
 V5.6.3b records the requested clothing catalogue proposal (#386) in SYSTEMS.
 The author approved its garment, thermal and migration values on 2026-10-20.
-Clothing gameplay and models remain separate implementation work.
+Gameplay follows in 5.6.6; separate garment art remains #387.
 
 V5.6.3a records the requested lock-tool and ownership proposal for #382 in
 SYSTEMS. The author approved those values on 2026-10-20; implementation follows
