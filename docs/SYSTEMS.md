@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
 
 ## One-time loot with existing tables (#384, 5.6.4)
 
@@ -43,12 +43,12 @@ CA384-01 passed author review on 2026-10-20; existing native locks/access rules 
 
 ## Ordinary clothing: approved native catalogue (#386, 5.6.6)
 
-**APPROVED 2026-10-20; IMPLEMENTED 5.6.6, AUTHOR PLAYTEST PENDING.** The author requested formal and
+**APPROVED 2026-10-20; IMPLEMENTED 5.6.6, AUTHOR-ACCEPTED 2026-10-21.** The author requested formal and
 warm formal clothing, plus casual, country and poor-quality variants for summer,
 autumn/spring and winter, in the setting's nineteenth-century Argentine style.
 On 2026-10-20 they approved the complete table, including the garment choices,
 quantities, coefficients and migration below. These are authored balance values,
-not historical measurements. CA386-01 awaits author acceptance; art belongs to #387.
+not historical measurements. CA386-01 passed on 2026-10-21; distinct garment art belongs to #387.
 
 ### Authorities and native item boundary
 
@@ -218,14 +218,18 @@ The author already selected the style families, three seasons and period; those
 decisions are retained. CA386-01 passed author acceptance on 2026-10-21; HISTORY
 records the completed gameplay check separately from #387 visual acceptance.
 
-Recommend late-nineteenth-century Argentine civilian silhouettes: shirts,
-waistcoats, frock/short coats, trousers, bombachas, wool ponchos, felt hats and
-alpargatas. These are a design brief, not licensed/reference assets or final
-approved geometry. Preserve existing sex/species/body choices; adapt fit rather
-than changing identity or mass. #387 must separately approve colors, exact cuts,
-all supported bodies/sizes, equipped/world/preview/first-person coverage, poses
-and measured rendering budget before generating models. The gameplay patch reuses the existing owned cloth icon/world sprite; it creates
-no garment model, binding or migration of the wider sprite pipeline.
+On 2026-10-21 the author approved the period brief: dark formal clothing,
+earth-toned country wool, and faded/patched poor clothing, covering all supported
+bodies, sexes, species and sizes in worn/world/preview/first-person views. Preserve
+identity and gameplay size/mass; reuse modular poses and fittings. They also
+explicitly required each garment to have its own sprites.
+
+5.6.7 delivers 25 distinct inventory/crafting icons and dropped-item sprites,
+with original sources and exact prompts retained. These derive from the garment
+type; they change no balance, identity or saved entitlement. Worn-character,
+preview and first-person coverage remain unfinished under #387, as does author
+visual acceptance. The temporary generic cloth icon/world sprite used in 5.6.6
+is superseded only for the implemented object views. No NPC outfit is reassigned.
 
 Implementation uses equipment kind 12, appended recipe IDs 141–165 and recipe-book
 revision 10; old recipe IDs and knowledge retain their meaning. ClothingRevision

@@ -1,0 +1,20 @@
+CA387-01 | 5.6.7 | #387 | Individual clothing object sprites
+Prerequisites: launch the prepared #387 test with the current package and checks
+addon using assets/validation_567/run_native.ps1 -Checks -Script interactive
+-Interactive and a unique -Label. The isolated CLTHQA room grants all 25 garments
+in the Magic Box, known recipes, materials, workbench, sewing machine and chest;
+25 additional garment copies are laid out on the floor. Spanish controls/UI load
+automatically. Do not enter the game's exec command in PowerShell.
+1. Close the game console, inspect the Journal's Clothing/Ropa inventory rows
+   and Magic Box. Scroll through outfits, hats, gloves and footwear. Each garment
+   must show its own legible icon, with clean transparent edges.
+2. Withdraw several contrasting garments (formal outfit, poncho, cap, gloves,
+   alpargatas), drop them and pick them up. Ground sprites must match the garment;
+   no piece should turn into the formal outfit or generic cloth after a transfer.
+3. At the workbench/sewing machine, select several clothing recipes and confirm
+   their preview icons match the same garments. Save and reload, then inspect
+   carried and dropped pieces again.
+Expected: distinct, consistent art across inventory, crafting and ground items;
+existing size, weight, moisture, equipment and armor behavior stay unchanged.
+Scope: this checks the delivered object artwork. Worn-character, character-preview
+and first-person garment coverage are separate unfinished work under #387.

@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
+
+## 5.6.7 - Individual clothing object sprites (#387)
+
+Delivered for author review: 25 unique inventory/crafting icons and dropped-item
+sprites, source provenance and deterministic exports. CA387-01 in pending_test.txt
+covers the implemented object artwork; assets/validation_567/RESULTS.md separates
+static/native evidence from author acceptance.
+Still required for #387: worn-character, character-preview and first-person
+coverage for supported body/sex/species/size combinations, plus visual acceptance
+and measured rendering evidence for those bindings. No new NPC wardrobe assignment
+is implied. Keep #387 open; this stage is not completion of the full issue.
+#386 is accepted, merged in PR #396 and closed. Remaining catalogue/ammunition/
+restock work stays in #379/#380/#383/#385, with its own commits, tests and PRs.
 
 ## 5.6.6 - Native ordinary clothing (#386)
 

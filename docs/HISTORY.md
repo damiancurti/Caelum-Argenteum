@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
+
+## 5.6.7 - Individual clothing object sprites (#387), 2026-10-21
+
+After accepting CA386-01, the author requested a distinct sprite for every
+garment. All 25 now have original RGBA inventory/crafting icons and ground
+sprites. Exact image_gen prompts, original sources and hashes are preserved;
+the pinned exporter deterministically crops/resamples alpha without painting.
+The local pickup presentation cache is transient and resolves unacquired actor
+arguments as well as native ItemType. It does not add item/recipe revisions,
+change accepted masses, prices, warmth or grant another outfit.
+
+Evidence: assets/validation_567/RESULTS.md records 12 native runs / 293 passing
+assertions, zero failures, static validation and source/package agreement.
+Native Journal/ground captures and the source contact sheet were reviewed;
+independent static review found no outstanding P1/P2 for the implemented scope.
+CA387-01 remains pending author visual review. This object-art stage does not
+complete the approved worn-character, preview and first-person coverage; #387
+remains open. #386 was accepted on 2026-10-21 and merged in PR #396 at
+f4c87d6e5ec42f3f96e601149b5574b5142e6195; issue #386 is closed.
 
 ## 5.6.6 - Native ordinary clothing (#386), 2026-10-21
 
