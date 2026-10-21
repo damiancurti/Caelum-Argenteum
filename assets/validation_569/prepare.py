@@ -50,7 +50,7 @@ scripts = {
     'legacy-verify':'wait 5; netevent ca380_legacy_verify; wait 5; quit',
     'legacy-upgrade':'wait 5; netevent ca380_legacy_verify; save ca380-arrow-upgraded; wait 5; quit',
     'upgrade-clothing':'wait 5; netevent ca386_verify; save ca380-clothing-upgraded; wait 5; quit',
-    'interactive':'exec ../../assets/playtest/default_controls.cfg; language es; wait 35; changemap CLTHQA; wait 35; netevent ca380_author; wait 5; toggleconsole',
+    'interactive':'exec ../../assets/playtest/default_controls.cfg\nlanguage es; wait 35; changemap CLTHQA; wait 35; netevent ca380_author; wait 5; toggleconsole',
     'world':'wait 35; changemap CLTHQA; wait 35; netevent ca380_author; ca_journal_open false; r_drawplayersprites false; +lookdown; wait 5; -lookdown; wait 35; screenshot kits-world.png; wait 5; quit',
 }
 for name,script in scripts.items():

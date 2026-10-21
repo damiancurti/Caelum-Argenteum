@@ -16,6 +16,8 @@ members match src. Current task save/reload/travel/completion, actual 5.5.8a arr
 task migration and original recovery, 5.6.6 clothing, firing/reload and defenses
 are covered. Diagnostic fixture errors/timeouts remain separately identified.
 Author acceptance is pending CA380-01; no merge or completed playtest is claimed.
+The interactive launcher separates its nested control-file exec from delayed
+setup commands; the live author room's CA380 READY marker confirms supplied kits.
 
 ## 5.6.8 - Approved sealed cartridge kits (#379), 2026-10-21
 

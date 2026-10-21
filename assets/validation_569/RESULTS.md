@@ -63,4 +63,9 @@ are recorded. Saves, fixtures, IWAD and executable remain private under `build/`
 
 **CA380-01 is pending.** The isolated author room supplies both sets of kits,
 recetario, learned recipes, two ground pickups and the required stations.
+The interactive startup initially stayed in TMAINT because a nested `exec` shared
+the delayed command line. Loading the control file on its own line restores the
+queued room setup. `author-20261021-kits-02` reached CLTHQA and logged `CA380 READY`
+with 1,000 kits of each type, recetario and two ground pickups. This launcher fix
+does not change the tested production package or assertion fixtures.
 Shop/library availability belongs to #383; renewal belongs to #385.
