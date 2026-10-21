@@ -25,9 +25,9 @@ Coverage includes world/worn, character preview and first-person views.
 
 The 5.6.7 object-art stage supplies individual inventory/crafting icons and
 dropped-item billboards. Review the contact sheet in assets/art_source/clothing;
-ASSETS owns its source prompts, hashes and export process. These candidates do
+ASSETS owns its source prompts, hashes and export process. These object views do
 not establish approval of unfinished worn/preview/first-person bindings or NPC
-wardrobe assignments. CA387-01 covers only the implemented object views.
+wardrobe assignments. CA387-01 passed on 2026-10-21 for the implemented object views.
 
 ## Navigation
 

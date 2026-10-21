@@ -6,7 +6,10 @@ arguments. The transient local cache validates the actual sprite/frame because
 GZDoom can restore Spawn when dropping the same native object.
 
 This is an object-art stage: worn-character, character-preview and first-person
-coverage remain unfinished under #387. CA387-01 is pending author visual review.
+coverage remain unfinished under #387. The author confirmed CA387-01 (5.6.7 / #387)
+passed on 2026-10-21: "La prueba dio correcto." This accepts the implemented
+inventory/crafting and dropped-item views without additional qualifications.
+The confirmation changes no runtime/artwork; applicable native evidence is reused.
 It changes no garment mass, recipe, price, warmth, size or saved entitlement.
 
 The pinned Pillow 11.3.0 exporter reproduces all 25 images, the TEXTURES aliases,

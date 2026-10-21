@@ -92,7 +92,7 @@ def main():
               'source_manifest_sha256': hashlib.sha256(json.dumps(members, sort_keys=True).encode()).hexdigest(),
               'runs': runs, 'native_runs': len(runs), 'passes': sum(r['passes'] for r in runs), 'failures': 0,
               'early_diagnostics': diagnostics, 'screenshots': screens, 'distinct_garment_outputs': 25,
-              'author_acceptance': 'CA387-01 pending',
+              'author_acceptance': 'CA387-01 passed on 2026-10-21; inventory/crafting and dropped-item views only',
               'limitations': ['Worn-character, preview and first-person coverage unfinished.',
                               'Not a frame-presentation or large-map performance benchmark.']}
     (HERE/'report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')

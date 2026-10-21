@@ -4,10 +4,10 @@ Documentation version: **5.6.7** — 2026-10-21.
 
 ## 5.6.7 - Individual clothing object sprites (#387)
 
-Delivered for author review: 25 unique inventory/crafting icons and dropped-item
-sprites, source provenance and deterministic exports. CA387-01 in pending_test.txt
-covers the implemented object artwork; assets/validation_567/RESULTS.md separates
-static/native evidence from author acceptance.
+Author-accepted on 2026-10-21: 25 unique inventory/crafting icons and dropped-item
+sprites, source provenance and deterministic exports. CA387-01 is recorded in
+HISTORY and removed from pending_test.txt; assets/validation_567/RESULTS.md
+separates static/native evidence from author acceptance.
 Still required for #387: worn-character, character-preview and first-person
 coverage for supported body/sex/species/size combinations, plus visual acceptance
 and measured rendering evidence for those bindings. No new NPC wardrobe assignment

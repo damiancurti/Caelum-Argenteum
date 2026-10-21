@@ -16,9 +16,15 @@ Evidence: assets/validation_567/RESULTS.md records 12 native runs / 293 passing
 assertions, zero failures, static validation and source/package agreement.
 Native Journal/ground captures and the source contact sheet were reviewed;
 independent static review found no outstanding P1/P2 for the implemented scope.
-CA387-01 remains pending author visual review. This object-art stage does not
-complete the approved worn-character, preview and first-person coverage; #387
-remains open. #386 was accepted on 2026-10-21 and merged in PR #396 at
+The author confirmed **CA387-01**, originating in **5.6.7 / #387**, passed on
+**2026-10-21**: "La prueba dio correcto." No object-art qualification was raised.
+The confirmed entry is removed from pending_test.txt; the tracked queue is empty.
+The acceptance update changes no runtime or artwork, retains version 5.6.7 and
+reuses the applicable native evidence above after static validation.
+This acceptance covers inventory/crafting icons and dropped-item sprites only.
+Worn-character, character-preview and first-person coverage and their rendering
+measurements remain unfinished; #387 and draft PR #397 remain open for that work.
+#386 was accepted on 2026-10-21 and merged in PR #396 at
 f4c87d6e5ec42f3f96e601149b5574b5142e6195; issue #386 is closed.
 
 ## 5.6.6 - Native ordinary clothing (#386), 2026-10-21

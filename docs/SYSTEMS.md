@@ -227,8 +227,8 @@ explicitly required each garment to have its own sprites.
 5.6.7 delivers 25 distinct inventory/crafting icons and dropped-item sprites,
 with original sources and exact prompts retained. These derive from the garment
 type; they change no balance, identity or saved entitlement. Worn-character,
-preview and first-person coverage remain unfinished under #387, as does author
-visual acceptance. The temporary generic cloth icon/world sprite used in 5.6.6
+preview and first-person coverage remain unfinished under #387. CA387-01 passed
+author review on 2026-10-21 for the object views. The temporary generic cloth icon/world sprite used in 5.6.6
 is superseded only for the implemented object views. No NPC outfit is reassigned.
 
 Implementation uses equipment kind 12, appended recipe IDs 141–165 and recipe-book

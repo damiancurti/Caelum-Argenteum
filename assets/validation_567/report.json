@@ -905,7 +905,7 @@
     "clothing-world.png": "caa77e4e8dceb6e2063a32cf22714aed40be3b985e13739aa9827c12a4b6e76f"
   },
   "distinct_garment_outputs": 25,
-  "author_acceptance": "CA387-01 pending",
+  "author_acceptance": "CA387-01 passed on 2026-10-21; inventory/crafting and dropped-item views only",
   "limitations": [
     "Worn-character, preview and first-person coverage unfinished.",
     "Not a frame-presentation or large-map performance benchmark."

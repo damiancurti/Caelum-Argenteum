@@ -4,7 +4,7 @@ Documentation version: **5.6.7** — 2026-10-21.
 
 **5.6.4/#384:** accepted; validation_564.
 **5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
-**5.6.7/#387:**25 object sprites; validation_567; CA387-01 pending. Worn/preview/first-person unfinished.
+**5.6.7/#387:**25 object sprites; validation_567; CA387-01 accepted2026-10-21. Worn/preview/first-person unfinished.
 **5.6.6/#386:** accepted/merged PR396; validation_566. Shops:#383.
 **5.6.3/#378:** sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library:#383.
 **5.6.2/#381:** chest storage; validation_562; CA381-01 accepted2026-10-20.
