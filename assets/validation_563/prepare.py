@@ -40,7 +40,7 @@ scripts = {
           'netevent ca_recipe_move 0; wait 10; screenshot recipe-es.png; '
           'netevent ca_recipe_close; changemap MAP01; wait 70; netevent ca378_shelf_view; '
           'wait 10; screenshot shelf.png; wait 5; quit',
-    'interactive': 'exec ../../assets/playtest/default_controls.cfg; language es; wait 35; '
+    'interactive': 'exec ../../assets/playtest/default_controls.cfg\nlanguage es; wait 35; '
                    'netevent ca378_ui; netevent ca_recipe_close; changemap MAP01; wait 70; '
                    'netevent ca378_author; wait 5; toggleconsole',
 }
