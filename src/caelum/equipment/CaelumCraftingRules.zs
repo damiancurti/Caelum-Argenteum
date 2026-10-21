@@ -204,6 +204,10 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeAmmunitionType(int recipeIndex)
     {
+        if (recipeIndex == CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE)
+            return CaelumConstants.AMMUNITION_CARBINE;
+        if (recipeIndex == CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE)
+            return CaelumConstants.AMMUNITION_SHOTGUN;
         if (recipeIndex == CaelumConstants.CRAFTING_ARROW_RECIPE)
             return CaelumConstants.AMMUNITION_ARROW;
         if (recipeIndex == CaelumConstants.CRAFTING_BOLT_RECIPE)
@@ -213,11 +217,22 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeAmmunitionBatch(int recipeIndex)
     {
+        if (GetRecipeCartridgeKit(recipeIndex) >= 0)
+            return CaelumConstants.CRAFTING_CARTRIDGE_BATCH;
         if (recipeIndex == CaelumConstants.CRAFTING_ARROW_RECIPE)
             return CaelumConstants.CRAFTING_ARROW_BATCH;
         if (recipeIndex == CaelumConstants.CRAFTING_BOLT_RECIPE)
             return CaelumConstants.CRAFTING_BOLT_BATCH;
         return 0;
+    }
+
+    static int GetRecipeCartridgeKit(int recipeIndex)
+    {
+        if (recipeIndex == CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE)
+            return CaelumConstants.MATERIAL_CARBINE_KIT;
+        if (recipeIndex == CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE)
+            return CaelumConstants.MATERIAL_SHOTGUN_KIT;
+        return -1;
     }
 
     static bool IsSingleTierRecipe(int recipeIndex)
@@ -545,6 +560,8 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeComplexityTics(int recipeIndex)
     {
+        if (GetRecipeCartridgeKit(recipeIndex) >= 0)
+            return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
         if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumClothingData.Complexity(recipeIndex-CaelumClothingData.FIRST_RECIPE);
         if(CaelumLockRules.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
         int recipeKind = GetUnifiedRecipeKind(recipeIndex);
@@ -1640,6 +1657,8 @@ class CaelumCraftingRules : Object
 
     static bool IsMaterialUsedByAnyRecipe(int materialType)
     {
+        if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT
+            || materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT) return true;
         if (materialType < CaelumConstants.MATERIAL_FIRST_ACTIVE
             || materialType >= CaelumConstants.MATERIAL_TYPE_COUNT)
         {

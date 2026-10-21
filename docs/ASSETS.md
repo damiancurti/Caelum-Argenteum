@@ -1,6 +1,19 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
+
+## 5.6.9 - Prepared cartridge-kit sprites (#380)
+
+The author requested sprites for cartridge components on 2026-10-21. Each of the
+two approved prepared-kit inputs has a distinct 128x128 RGBA inventory icon and
+world alias M079A0/M080A0. Bronze case/projectile and paper case/shot silhouettes
+distinguish carbine and shotgun; sealed packets preserve the abstract kit design.
+OpenAI's built-in imagegen generated the two original sources separately. Exact
+prompts, generation identifiers and source paths are in
+assets/art_source/cartridge_kits/manifest.json. exports.json records hashes,
+alpha bounds and ground pivots; generate_cartridge_kit_sprites.py performs only
+deterministic cropping/resizing/registration with Pillow 11.3.0. Sources remain
+in assets, exported artwork in src. CA380-01 passed author review on 2026-10-21.
 
 ## 5.6.7 - Distinct garment object artwork (#387)
 

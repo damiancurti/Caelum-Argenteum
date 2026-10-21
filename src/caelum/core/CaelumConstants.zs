@@ -727,7 +727,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 12 + CaelumClothingData.COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 14 + CaelumClothingData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -735,7 +735,12 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 10;
+    const CRAFTING_RECIPE_BOOK_VERSION = 11;
+    // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
+    const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
+    const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;
+    const CRAFTING_CARTRIDGE_BATCH = 10;
+    const CARTRIDGE_KIT_VALUE_RATIO = 0.80;
     const CRAFTING_RECIPE_KIND_CLOTHING = 10;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
@@ -1174,7 +1179,9 @@ class CaelumConstants : Object
     const MATERIAL_COW_HIDE = 76;
     const MATERIAL_PREDATOR_HIDE = 77;
     const MATERIAL_MONSTER_HIDE = 78;
-    const MATERIAL_TYPE_COUNT = 79;
+    const MATERIAL_CARBINE_KIT = 79;
+    const MATERIAL_SHOTGUN_KIT = 80;
+    const MATERIAL_TYPE_COUNT = 81;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

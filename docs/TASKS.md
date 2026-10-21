@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
+
+## 5.6.9 - Native cartridge assembly (#380)
+
+Implementation adds two terminal kit inputs and two assembly recipes with native
+reservation, mass/capacity, price, knowledge and presentation adapters. Record
+final static/native results in validation_569. CA380-01 passed on 2026-10-21.
+Final evidence: 15 native runs / 1,259 PASS / zero FAIL and static validation pass.
+Keep #383 commerce, #385 renewal and #387 worn/preview/first-person work separate.
 
 ## 5.6.8 - Approved sealed cartridge kits (#379)
 

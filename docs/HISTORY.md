@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
+
+## 5.6.9 - Native cartridge assembly (#380), 2026-10-21
+
+Two appended kit/material and recipe identities implement the approved #379
+contract through native reservations and existing cartridge outputs. Recipe
+revision 11 preserves previous knowledge; capacity uses real kit mass and the
+existing ammo stack's destination. The author additionally requested distinct
+component sprites: two original kit sources and deterministic exports are kept.
+Read-only cross-review found the old 1-g blueprint label assumption; the live
+panel now uses each kit's mass. Final test evidence: assets/validation_569.
+Final static/native checks pass: 15 runs, 1,259 PASS, zero FAIL; 16,428 package
+members match src. Current task save/reload/travel/completion, actual 5.5.8a arrow
+task migration and original recovery, 5.6.6 clothing, firing/reload and defenses
+are covered. Diagnostic fixture errors/timeouts remain separately identified.
+CA380-01 (originating 5.6.9, #380) passed on 2026-10-21: the author confirmed
+"La prueba dio correcto" after the supplied live cartridge/kit-sprite test.
+Its pending_test.txt entry is removed; no merge is claimed.
+The interactive launcher separates its nested control-file exec from delayed
+setup commands; the live author room's CA380 READY marker confirms supplied kits.
 
 ## 5.6.8 - Approved sealed cartridge kits (#379), 2026-10-21
 

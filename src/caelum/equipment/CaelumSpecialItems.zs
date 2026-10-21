@@ -209,7 +209,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     override double GetUnitWeight()
     {
-        return CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        return CaelumMaterialRules.UnitWeight(GetSpecialType());
     }
 
     override int GetSpecialType()
@@ -239,6 +239,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     {
         switch (materialType)
         {
+            case CaelumConstants.MATERIAL_CARBINE_KIT: return "graphics/caelum/icons/materials/ca_material_carbine_kit.png";
+            case CaelumConstants.MATERIAL_SHOTGUN_KIT: return "graphics/caelum/icons/materials/ca_material_shotgun_kit.png";
             case CaelumConstants.MATERIAL_IRON_INGOT: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";
             case CaelumConstants.MATERIAL_BLADE: return "graphics/caelum/icons/materials/ca_material_blade.png";
             case CaelumConstants.MATERIAL_SMALL_BLADE: return "graphics/caelum/icons/materials/ca_material_small_blade.png";
@@ -435,6 +437,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M076 A 0;
         M077 A 0;
         M078 A 0;
+        M079 A 0;
+        M080 A 0;
         Stop;
     }
 }
@@ -443,6 +447,15 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 // cuero o tejido. Los componentes secundarios son genericos y usan tier 1.
 class CaelumMaterialRules : Object
 {
+    static double UnitWeight(int materialType)
+    {
+        if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT)
+            return CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
+        if (materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT)
+            return CaelumConstants.SHOTGUN_AMMO_UNIT_WEIGHT;
+        return CaelumConstants.MATERIAL_UNIT_WEIGHT;
+    }
+
     static int GetFamily(int materialType)
     {
         if (materialType == CaelumConstants.MATERIAL_IRON_INGOT

@@ -1,0 +1,3 @@
+// #380: kits preparados, pivotes apoyados sobre el suelo.
+Sprite "M079A0", 128, 128 { Offset 64, 99 Patch "graphics/caelum/icons/materials/ca_material_carbine_kit.png", 0, 0 }
+Sprite "M080A0", 128, 128 { Offset 64, 115 Patch "graphics/caelum/icons/materials/ca_material_shotgun_kit.png", 0, 0 }

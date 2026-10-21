@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
+
+## Cartridge assembly (#380, 5.6.9)
+
+Recipes 166/167 append carbine/shotgun assembly; native materials 79/80 are the
+prepared kits below. The kit is the indivisible accounting unit: the existing
+complex rate is four tics per employed kit, with the 25% common time base and
+reading/practice multipliers. At zero Technical attributes, one batch has a
+40*4/35-second base, before learning multipliers. Recipe-book revision 11 adds
+both recipes locked without changing previous knowledge, pages or progress.
+The existing workbench/ranged network gates start and completion. Native tasks
+reserve 40/20/10 kits, consume once, and deliver ten existing cartridges. Inputs
+retain their 40/45 g unit mass in capacity and UI calculations; outputs reuse the
+existing ammunition stack's personal/Box location and reject stack overflow.
+Both material identities have distinct inventory icons and ground sprites.
+Commerce and merchant renewal remain separate #383/#385 work.
 
 ## Approved cartridge kits and assembly handoff (#379, 5.6.8)
 

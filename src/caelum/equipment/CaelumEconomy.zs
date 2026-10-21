@@ -488,6 +488,11 @@ class CaelumEconomyRules : Object
         int materialType, int materialTier = 1
     )
     {
+        if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT
+            || materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT)
+            return CaelumConstants.CARTRIDGE_KIT_VALUE_RATIO * GetAmmunitionUnitBaseValue(
+                materialType == CaelumConstants.MATERIAL_CARBINE_KIT
+                    ? CaelumConstants.AMMUNITION_CARBINE : CaelumConstants.AMMUNITION_SHOTGUN);
         int resolvedType = Clamp(
             materialType,
             CaelumConstants.MATERIAL_FIRST_ACTIVE,

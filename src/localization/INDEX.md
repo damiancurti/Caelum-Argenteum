@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `73a4349f693faaef4136d34bb47dd45144fd774375710b786576774375e6726d`. Locations include every definition; the last one per language wins.
+SHA-256: `d5c3aab6fce3012a80cef78c5ea4e5ab16f098e247d5c3fe25f378cf4e1f95b2`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -45,7 +45,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTAINER | 16 | CA_CONTAINER_CAPACITY | CA_CONTAINER_WITHDRAW |
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
-| CA_CRAFTING | 69 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_BOLTS |
+| CA_CRAFTING | 71 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_SHOTGUN_CARTRIDGES |
 | CA_CREATE | 51 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
@@ -99,7 +99,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAP06 | 1 | CA_MAP06_NAME | CA_MAP06_NAME |
 | CA_MAP07 | 1 | CA_MAP07_NAME | CA_MAP07_NAME |
 | CA_MAP08 | 1 | CA_MAP08_NAME | CA_MAP08_NAME |
-| CA_MATERIAL | 101 | CA_MATERIAL_BARREL | CA_MATERIAL_WOOL |
+| CA_MATERIAL | 103 | CA_MATERIAL_BARREL | CA_MATERIAL_WOOL |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
 | CA_MENU | 4 | CA_MENU_LOAD_CHARACTER | CA_MENU_SAVE_CHARACTER |
 | CA_MERCHANT | 3 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |

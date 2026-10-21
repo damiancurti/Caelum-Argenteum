@@ -1,0 +1,24 @@
+{
+  "issue": 380,
+  "tool": "imagegen built-in",
+  "date": "2026-10-21",
+  "brief": "docs/SPRITE_ART_DIRECTION.md",
+  "author_request": "Distinct sprites for cartridge components; approved prepared-kit abstraction.",
+  "sources": [
+    {
+      "id": "carbine_kit",
+      "material_type": 79,
+      "source": "assets/art_source/cartridge_kits/carbine-kit-v1.png",
+      "origin": "C:/Users/dcc70/.codex/generated_images/01a15980-f4fe-7c80-9286-fc3d7b3e713a/exec-53504d4d-2365-4433-8e12-d9d6b0bd0e20.png",
+      "prompt": "Use case: stylized-concept. Create ONE original game inventory and dropped-item sprite for Caelum Argenteum, a painted pixel-oriented dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a compact prepared CARBINE CARTRIDGE COMPONENT KIT, represented as an open small plain brown paper packet containing one bronze empty cartridge case and one separate dull lead projectile, with one sealed plain paper charge packet beside them. This is a fictional abstract game pickup, not an assembly diagram: no cutaways, measurements, quantities, instructions or exposed powder. Bronze case and projectile are visibly separate so it reads as a kit, not finished ammunition. Keep all pieces tightly grouped as one coherent icon. Three-quarter view from slightly above, bronze case dominant diagonal silhouette. Painted textured material shading, dark edges, restrained earth/brown/bronze palette, soft upper-left lighting, clear silhouette readable after downsampling to 128x128 pixels. Centered square composition with 12% transparent margins, all objects fully visible, no lettering, no symbols, no people, no scenery, no ground plane or cast shadow. Genuine transparent RGBA background. No modern packaging, no glossy 3D, no photograph, no comic outline."
+    },
+    {
+      "id": "shotgun_kit",
+      "material_type": 80,
+      "source": "assets/art_source/cartridge_kits/shotgun-kit-v1.png",
+      "origin": "C:/Users/dcc70/.codex/generated_images/01a15980-f4fe-7c80-9286-fc3d7b3e713a/exec-b2003ecc-3927-4249-9cf4-815fba85692e.png",
+      "prompt": "Use case: stylized-concept. Create ONE original game inventory and dropped-item sprite for Caelum Argenteum, a painted pixel-oriented dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a compact prepared SHOTGUN CARTRIDGE COMPONENT KIT, represented as an open small plain brown paper packet containing one short broad empty tan paper shotgun case with a small bronze-colored base, a small cluster of dull lead shot pellets and one sealed plain paper charge packet beside them. This is a fictional abstract game pickup, not an assembly diagram: no cutaways, measurements, quantities, instructions or exposed powder. The paper case and separate cluster of pellets distinguish this from a finished cartridge and from a long bronze carbine case. Keep all pieces tightly grouped as one coherent icon. Three-quarter view from slightly above, short cylindrical tan paper case dominant diagonal silhouette. Painted textured material shading, dark edges, restrained earth/brown/tan palette, soft upper-left lighting, clear silhouette readable after downsampling to 128x128 pixels. Centered square composition with 12% transparent margins, all objects fully visible, no lettering, no symbols, no people, no scenery, no ground plane or cast shadow. Genuine transparent RGBA background. No modern plastic hull, no modern packaging, no glossy 3D, no photograph, no comic outline."
+    }
+  ],
+  "author_visual_acceptance": "CA380-01 passed on 2026-10-21; distinct inventory and ground kit sprites"
+}

@@ -31,6 +31,10 @@ class CaelumCraftingBrowser : Object play
         int kind = CaelumCraftingRules.GetUnifiedRecipeKind(recipe);
         if (kind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
             return StringTable.Localize(CaelumUtilityCrafting.NameKey(recipe), false);
+        if (recipe == CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE)
+            return StringTable.Localize("CA_CRAFTING_TEN_CARBINE_CARTRIDGES", false);
+        if (recipe == CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE)
+            return StringTable.Localize("CA_CRAFTING_TEN_SHOTGUN_CARTRIDGES", false);
         if (kind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
             return StringTable.Localize(recipe == CaelumConstants.CRAFTING_BOLT_RECIPE
                 ? "CA_CRAFTING_TEN_BOLTS" : "CA_CRAFTING_TEN_ARROWS", false);

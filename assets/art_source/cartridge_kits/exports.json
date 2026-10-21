@@ -1,0 +1,50 @@
+{
+  "issue": 380,
+  "pillow": "11.3.0",
+  "exports": [
+    {
+      "id": "carbine_kit",
+      "source": "assets/art_source/cartridge_kits/carbine-kit-v1.png",
+      "source_sha256": "3eb8041ffd888ec066281dab564fbb97e0bea15a00fa0abf0c8d64394214b4fa",
+      "output": "src/graphics/caelum/icons/materials/ca_material_carbine_kit.png",
+      "output_sha256": "c5e64dbd0438bc9b045f59481474be710b03c9f237ab8a542f7e801c8fd1e438",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "source_alpha_bounds": [
+        0,
+        31,
+        1234,
+        1236
+      ],
+      "sprite": "M079A0",
+      "pivot": [
+        64,
+        99
+      ]
+    },
+    {
+      "id": "shotgun_kit",
+      "source": "assets/art_source/cartridge_kits/shotgun-kit-v1.png",
+      "source_sha256": "ee796fe58b297521cd9f5c09b9c668502180920e855d67aba884e3b03965067e",
+      "output": "src/graphics/caelum/icons/materials/ca_material_shotgun_kit.png",
+      "output_sha256": "6415614d13d84ceb61209271ab2b44eed508ecda132c0d2871791cc80292a923",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "source_alpha_bounds": [
+        0,
+        21,
+        1240,
+        1254
+      ],
+      "sprite": "M080A0",
+      "pivot": [
+        64,
+        115
+      ]
+    }
+  ]
+}

@@ -3490,6 +3490,10 @@ class CaelumPlayer : DoomPlayer
         if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe))
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE
                 ? "graphics/caelum/icons/ca_sleeping_bag.png" : "graphics/caelum/icons/water/canteen_large.png";
+        if (CraftingSelectionRecipe == CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE)
+            return "graphics/caelum/icons/ca_carbine_ammo.png";
+        if (CraftingSelectionRecipe == CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE)
+            return "CA_SHOTGUN_AMMO";
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_BOLT_RECIPE
                 ? "graphics/caelum/icons/ca_bolt_ammo.png" : "graphics/caelum/icons/ca_arrow_ammo.png";
