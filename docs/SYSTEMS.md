@@ -1,6 +1,50 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.7** — 2026-10-21.
+Documentation version: **5.6.8** — 2026-10-21.
+
+## Approved cartridge kits and assembly handoff (#379, 5.6.8)
+
+**AUTHOR-APPROVED 2026-10-21.** The author accepted the concrete sealed-kit
+proposal and its price. This supersedes the earlier pending separate-component
+mass/price table. A kit is one native playable input representing all finished
+parts together; no individual charge mass, real loading ratio or component
+manufacturing process is defined. The complete 40 g/45 g masses remain the
+accepted game approximations from #313.
+
+| Game input | Description of the sealed set | Unit mass | Base value | Output at 100% efficiency |
+| --- | --- | ---: | --- | --- |
+| Carbine cartridge kit | Prepared bronze case with integrated primer, sealed finished charge and projectile | 0.040 kg | 0.80 times the existing carbine cartridge base value | 10 kits yield 10 existing carbine cartridges |
+| Shotgun cartridge kit | Prepared paper case including integrated primer and closures, sealed finished charge and shot | 0.045 kg | 0.80 times the existing shotgun cartridge base value | 10 kits yield 10 existing shotgun cartridges |
+
+Both existing cartridge prices remain four times the arrow's unit base value.
+The kit's 80% factor applies before merchant margins; use the existing 150%/50%
+buy/sell margins and rounding exactly once. Do not derive the finished cartridge
+price recursively from its kit. The separate-components proposal is superseded:
+there are two kit products, not separate saleable case/charge/projectile products.
+
+Lower efficiencies use the existing material-loss rule: a ten-cartridge output
+requires 40/20/10 indivisible kits at 25%/50%/100% efficiency. The corresponding
+input game masses are 1.600/0.800/0.400 kg for carbine or 1.800/0.900/0.450 kg for
+shotgun; the difference from completed output is the existing crafting loss.
+No fractional kit is consumed. Both types use Workbench plus Ranged Workshop,
+the padlock's existing complex work rate, the common 25%-efficiency time base
+and the accepted reading/practice factors. Recipes are consumables: the existing
+1,000-output practice cap and ten-unit reading/price reference apply.
+
+#380 appends two recipe/material identities, preserving every existing ID,
+arrow/bolt recipe, ammunition count and magazine. The shotgun retains its twelve
+gameplay pellets. Recipe books are sold by the library; finished kits by ranged
+shops under #383. No kit-manufacturing recipe is approved, so #385 leaves kit
+stock unrenewed until such a recipe is separately defined. Assembly renews finished
+cartridges using the approved merchant policy; it does not simulate supply chains.
+
+Implementation must use native inventory, reservations and task completion.
+Verify both batches and all efficiencies, kit shortages, unknown recipes/wrong
+stations, full inventory/Box, pause/cancel/save/reload/travel, duplicate completion,
+and preservation of existing firing/reload and arrow/bolt behavior. Preserve actual
+5.5.8a/current saves and original package/save recovery pairs; any appended schema
+needs an idempotent numbered migration. This design issue introduces no gameplay
+or art; native assembly and author playtest evidence belong to #380.
 
 ## One-time loot with existing tables (#384, 5.6.4)
 
