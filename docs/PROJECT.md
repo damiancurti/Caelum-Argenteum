@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
+
+## 5.6.7 - Individual clothing object sprites (#387)
+
+The 25 native garments now use distinct original inventory/crafting icons and
+dropped-item sprites. Item identity and accepted #386 gameplay are preserved;
+only local derived presentation is refreshed. Source prompts/hashes and a
+reproducible technical exporter are retained under assets/art_source/clothing.
+Validation: 12 native runs / 293 passing assertions, static/package checks.
+Evidence and limits: assets/validation_567/RESULTS.md. CA387-01 passed on 2026-10-21.
+Worn-character, preview and first-person coverage remain unfinished under #387.
+#386 was accepted on 2026-10-21, merged through PR #396 and closed; #379, #380,
+#383, #385 and #387 remain open with separate delivery scopes.
 
 ## 5.6.6 - Native ordinary clothing (#386)
 

@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
 
-**5.6.4/#384:** unchanged tables, once-only death/ice; validation_564:16runs/113PASS; CA384-01 accepted2026-10-20.
+**5.6.4/#384:** accepted; validation_564.
 **5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
-**5.6.6/#386:** native clothing; validation_566. CA386-01 accepted2026-10-21; shops:#383/art:#387.
+**5.6.7/#387:**25 object sprites; validation_567; CA387-01 accepted2026-10-21. Worn/preview/first-person unfinished.
+**5.6.6/#386:** accepted/merged PR396; validation_566. Shops:#383.
 **5.6.3/#378:** sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library:#383.
 **5.6.2/#381:** chest storage; validation_562; CA381-01 accepted2026-10-20.
 **5.6.1/#377:** merchants; validation_561; CA377-01 accepted2026-10-20.

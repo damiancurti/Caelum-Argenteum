@@ -1,0 +1,26 @@
+// #387: sprites propios; el pivote apoya la imagen sobre el suelo.
+Sprite "WC00A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/clothing/ca_clothing_00.png", 0, 0 }
+Sprite "WC01A0", 128, 128 { Offset 64, 124 Patch "graphics/caelum/icons/clothing/ca_clothing_01.png", 0, 0 }
+Sprite "WC02A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/clothing/ca_clothing_02.png", 0, 0 }
+Sprite "WC03A0", 128, 128 { Offset 64, 124 Patch "graphics/caelum/icons/clothing/ca_clothing_03.png", 0, 0 }
+Sprite "WC04A0", 128, 128 { Offset 64, 118 Patch "graphics/caelum/icons/clothing/ca_clothing_04.png", 0, 0 }
+Sprite "WC05A0", 128, 128 { Offset 64, 116 Patch "graphics/caelum/icons/clothing/ca_clothing_05.png", 0, 0 }
+Sprite "WC06A0", 128, 128 { Offset 64, 124 Patch "graphics/caelum/icons/clothing/ca_clothing_06.png", 0, 0 }
+Sprite "WC07A0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/clothing/ca_clothing_07.png", 0, 0 }
+Sprite "WC08A0", 128, 128 { Offset 64, 121 Patch "graphics/caelum/icons/clothing/ca_clothing_08.png", 0, 0 }
+Sprite "WC09A0", 128, 128 { Offset 64, 124 Patch "graphics/caelum/icons/clothing/ca_clothing_09.png", 0, 0 }
+Sprite "WC10A0", 128, 128 { Offset 64, 118 Patch "graphics/caelum/icons/clothing/ca_clothing_10.png", 0, 0 }
+Sprite "WC11A0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/clothing/ca_clothing_11.png", 0, 0 }
+Sprite "WC12A0", 128, 128 { Offset 64, 94 Patch "graphics/caelum/icons/clothing/ca_clothing_12.png", 0, 0 }
+Sprite "WC13A0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/clothing/ca_clothing_13.png", 0, 0 }
+Sprite "WC14A0", 128, 128 { Offset 64, 116 Patch "graphics/caelum/icons/clothing/ca_clothing_14.png", 0, 0 }
+Sprite "WC15A0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/clothing/ca_clothing_15.png", 0, 0 }
+Sprite "WC16A0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/clothing/ca_clothing_16.png", 0, 0 }
+Sprite "WC17A0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/clothing/ca_clothing_17.png", 0, 0 }
+Sprite "WC18A0", 128, 128 { Offset 64, 108 Patch "graphics/caelum/icons/clothing/ca_clothing_18.png", 0, 0 }
+Sprite "WC19A0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/clothing/ca_clothing_19.png", 0, 0 }
+Sprite "WC20A0", 128, 128 { Offset 64, 96 Patch "graphics/caelum/icons/clothing/ca_clothing_20.png", 0, 0 }
+Sprite "WC21A0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/clothing/ca_clothing_21.png", 0, 0 }
+Sprite "WC22A0", 128, 128 { Offset 64, 117 Patch "graphics/caelum/icons/clothing/ca_clothing_22.png", 0, 0 }
+Sprite "WC23A0", 128, 128 { Offset 64, 98 Patch "graphics/caelum/icons/clothing/ca_clothing_23.png", 0, 0 }
+Sprite "WC24A0", 128, 128 { Offset 64, 103 Patch "graphics/caelum/icons/clothing/ca_clothing_24.png", 0, 0 }

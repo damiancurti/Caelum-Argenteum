@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-148 - Native inventory transitions can reset a cached world sprite
+
+Status/evidence: ENGINE-VERIFIED. First recorded / last checked: 2026-10-21.
+Issue: #387; baseline f4c87d6e plus the 5.6.7 object-art patch. Environment:
+GZDoom 4.14.2 / Windows 11, private CLTHQA/TMAINT fixtures, unpaused, 5% audio.
+Scope: CaelumClothingPickup's local derived presentation cache.
+
+Symptom: an unchanged garment type is insufficient to validate its sprite cache.
+CreateTossable may return the same native object and reset it to Spawn. The cached
+type then still matches while the visible sprite is the default formal outfit.
+Acquisition also hides the native object's sprite until its next ownership tick.
+
+Prevention: cache the resolved sprite index as transient data and require the
+actual sprite/frame to match before skipping the refresh. Resolve unacquired
+items through PreviewItemType, not the default ItemType. Rebuild owned and world
+presentation locally after native transitions; do not add a global actor scan,
+saved visual identity or another item grant.
+
+Evidence/regression: validation_567 suite-02 reproduced 24 wrong dropped sprites;
+final native checks drop/reacquire all 25 types and inspect their next engine tick,
+plus HC/BS argument pickups rejected for capacity. Current and actual old saves
+and hub/non-hub travel verify transient reconstruction. Native fixture compile
+errors and pre-tick diagnostic failures are retained separately from passing runs.
+This evidence covers object presentation, not unfinished worn/preview/first-person
+art or a rendering-performance acceptance.
+
 ## CA-KP-147 - Move clothing moisture ownership without duplicating armor profiles
 
 Status/evidence: ENGINE-VERIFIED. First recorded / last checked: 2026-10-21.
@@ -28,7 +54,7 @@ Evidence/regression: validation_566's suite crafts all 25 garments and exercises
 wet chest capacity refusal, exact transfers, armor coexistence and runoff mass
 conservation. Actual wet armored 5.5.8a and 5.6.5 saves migrate; original-package
 rollback, revised saves and hub/non-hub travel are tested separately. CA386-01
-author acceptance remains pending. No NPC wardrobe or large-map performance
+passed author acceptance on 2026-10-21. No NPC wardrobe or large-map performance
 claim follows from these isolated checks.
 
 ## CA-KP-146 - Manual combat thrust must respect DONTTHRUST

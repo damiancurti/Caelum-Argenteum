@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -12,6 +12,22 @@ Author decisions take precedence. [ASSETS](ASSETS.md) owns resource inventories,
 provenance and technical integration evidence; [SYSTEMS](SYSTEMS.md) owns gameplay;
 [MAP01](MAP01.txt) owns story and character canon. This document owns the visual
 requirements and reusable generation brief. Keep those responsibilities separate.
+
+## Clothing brief approved for #387 (2026-10-21)
+
+Use the 25 native garment identities in SYSTEMS: formal and warm formal, plus
+casual/country/poor summer, midseason and winter outfits, hats, gloves and footwear.
+The approved palette/cuts follow late-nineteenth-century Argentina: dark formal,
+earth tones and wool for country clothes, faded fabric and patches for poor
+clothes. Every garment needs its own sprites. Preserve body/sex/species identity
+and supported sizes; adapt modular fit without changing gameplay mass or warmth.
+Coverage includes world/worn, character preview and first-person views.
+
+The 5.6.7 object-art stage supplies individual inventory/crafting icons and
+dropped-item billboards. Review the contact sheet in assets/art_source/clothing;
+ASSETS owns its source prompts, hashes and export process. These object views do
+not establish approval of unfinished worn/preview/first-person bindings or NPC
+wardrobe assignments. CA387-01 passed on 2026-10-21 for the implemented object views.
 
 ## Navigation
 

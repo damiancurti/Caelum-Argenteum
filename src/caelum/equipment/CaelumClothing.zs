@@ -148,8 +148,34 @@ class CaelumClothing : Object play
 
 class CaelumClothingPickup : CaelumEquipmentItem
 {
-    Default {Tag "$CA_EQUIPMENT_CATEGORY_CLOTHING";Inventory.Icon "graphics/caelum/icons/materials/ca_material_fabric.png";}
-    // Icono de tela existente; los modelos de cada prenda pertenecen a #387.
-    States {Spawn: M018 A -1; Stop;}
+    transient bool ClothingVisualReady;
+    transient int ClothingVisualType;
+    transient int ClothingVisualSprite;
+    // Caché local de presentación; no agrega identidad ni revisión de inventario.
+    override void UpdateWorldSprite()
+    {
+        int type=Clamp(PreviewItemType(),0,CaelumClothingData.COUNT-1);
+        // El motor puede restaurar Spawn al soltar la misma instancia.
+        if(ClothingVisualReady && ClothingVisualType==type
+            && sprite==ClothingVisualSprite && frame==0)return;
+        sprite=GetSpriteIndex(CaelumClothingData.SpriteName(type));frame=0;
+        Icon=TexMan.CheckForTexture(CaelumClothingData.Icon(type),TexMan.Type_MiscPatch);
+        ClothingVisualType=type;ClothingVisualSprite=sprite;ClothingVisualReady=true;
+    }
+    override void Tick()
+    {Super.Tick();if(Owner!=null)UpdateWorldSprite();}
+    Default {Tag "$CA_EQUIPMENT_CATEGORY_CLOTHING";Inventory.Icon "graphics/caelum/icons/clothing/ca_clothing_00.png";}
+    States
+    {
+    Spawn: WC00 A -1; Stop;
+    // Registro explícito para la selección dinámica del sprite de cada prenda.
+    Catalogue:
+        WC00 A 1; WC01 A 1; WC02 A 1; WC03 A 1; WC04 A 1;
+        WC05 A 1; WC06 A 1; WC07 A 1; WC08 A 1; WC09 A 1;
+        WC10 A 1; WC11 A 1; WC12 A 1; WC13 A 1; WC14 A 1;
+        WC15 A 1; WC16 A 1; WC17 A 1; WC18 A 1; WC19 A 1;
+        WC20 A 1; WC21 A 1; WC22 A 1; WC23 A 1; WC24 A 1;
+        Stop;
+    }
     override bool TryPickup(in out Actor toucher){return TryEquipmentPickup(toucher);}
 }

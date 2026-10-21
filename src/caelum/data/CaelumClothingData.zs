@@ -5,7 +5,10 @@ class CaelumClothingData : Object
     const FIRST_RECIPE=141;
     const THERMAL_FIRST=16;
     const MIGRATION_REVISION=1;
-    const ICON="graphics/caelum/icons/materials/ca_material_fabric.png";
+    static clearscope String Icon(int type)
+    {return String.Format("graphics/caelum/icons/clothing/ca_clothing_%02d.png",Clamp(type,0,COUNT-1));}
+    static clearscope String SpriteName(int type)
+    {return String.Format("WC%02d",Clamp(type,0,COUNT-1));}
     static clearscope bool IsRecipe(int recipe)
     {return recipe>=FIRST_RECIPE && recipe<FIRST_RECIPE+COUNT;}
     const F=0;

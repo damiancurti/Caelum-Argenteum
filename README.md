@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.6.** Obtain and update the complete repository, validate
+**Current release: 5.6.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.7 gives each of the 25 garments its own inventory/crafting icon and dropped-item
+sprite (#387). Original source artwork, exact prompts and deterministic exports
+are retained. [Evidence](assets/validation_567/RESULTS.md) and the
+[contact sheet](assets/art_source/clothing/contact-sheet.png) distinguish this
+object-art stage from unfinished worn-character, preview and first-person coverage.
+CA387-01 passed author review on 2026-10-21. #386 was accepted and merged in PR #396.
 
 V5.6.6 implements the 25 approved ordinary garments (#386), with a separate
 four-region clothing layer under armor, native inventory/Box/chest transport,
