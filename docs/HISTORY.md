@@ -40,12 +40,16 @@ separately from release evidence.
 
 Fifteen final native runs pass 170 assertions with zero failures. Static results,
 package hashes, migration and original-pair rollback are recorded in
-`assets/validation_563/RESULTS.md`. CA378-01 remains pending; no author
-acceptance, merge or issue closure is implied. CA377-01/CA381-01 remain pending;
-CA376-01 was accepted previously. The author's return ended the first Windows keep-awake request without changing
+`assets/validation_563/RESULTS.md`. The author confirmed CA378-01 (origin
+5.6.3 / #378) passed on 2026-10-20: "La prueba de 378 dio bien." The initial
+test session lacked its book; manual book/setup commands were supplied before
+that confirmation. This acceptance does not establish automatic fixture startup.
+No further exceptions were reported. Its actionable queue entry is retired;
+CA377-01/CA381-01 remain pending. No merge or issue closure is implied, and
+the existing 5.6.3 version is retained. CA376-01 was accepted previously. The author's return ended the first Windows keep-awake request without changing
 the power plan. A second temporary request was explicitly authorized when the
-author left again; it is thread-scoped and will be released on return (12-hour
-fallback).
+author left again. On the second return, 2026-10-20, the thread-scoped request
+was released and the original Balanced power plan remained unchanged.
 
 ## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
 

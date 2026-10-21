@@ -17,7 +17,7 @@ V5.6.3 adds physical recipe sheets, per-tier learning and capped reading/practic
 bonuses (#378). Receive a recipe book with the first sheet and read beside a
 table or the new mansion bookshelf opposite the training dummy. Intelligence
 uses M3 for reading speed. Existing knowledge remains; library commerce belongs
-to #383. See [validation](assets/validation_563/RESULTS.md); CA378-01 is pending.
+to #383. See [validation](assets/validation_563/RESULTS.md); CA378-01 passed author review on 2026-10-20.
 
 V5.6.2 adds ordinary native chest storage (#381): three authored capacities,
 exact deposit/withdrawal, full carried mass, safe placement and spilled contents
