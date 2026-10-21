@@ -3,6 +3,7 @@
 class CaelumCityMerchant : Actor
 {
     int ShopIdentity, Category, Revision, WalletCopper;
+    int CatalogueRevision,CatalogueCursor;
     bool StockInitialized;
     // Capacidad explícita para #383; ningún comercio actual se convierte aquí.
     bool TradesClothing;
@@ -19,17 +20,49 @@ class CaelumCityMerchant : Actor
     {
         for(int i=0;i<CaelumCityData.SHOP_COUNT;i++)
         {
-            if(Find(i)!=null)continue;
-            let vendor=CaelumCityMerchant(Actor.Spawn("CaelumCityMerchant",CaelumCityData.ShopPosition(i),NO_REPLACE));
-            if(vendor==null)return false;
-            vendor.ShopIdentity=i;vendor.Category=i%CaelumCityData.SHOP_CATEGORIES;
-            vendor.WalletCopper=CaelumCityData.MERCHANT_COPPER;vendor.Revision=1;
+            let vendor=Find(i);
+            if(vendor==null)
+            {
+                vendor=CaelumCityMerchant(Actor.Spawn("CaelumCityMerchant",CaelumCityData.ShopPosition(i),NO_REPLACE));
+                if(vendor==null)return false;
+                vendor.ShopIdentity=i;vendor.WalletCopper=CaelumCityData.MERCHANT_COPPER;vendor.Revision=1;
+            }
+            vendor.Category=CaelumShopCatalogue.Category(i);
+            vendor.TradesClothing=vendor.Category==CaelumShopCatalogue.CLOTHING;
         }
+        CaelumShopSign.RefreshAuthored();
         return true;
+    }
+
+    static void MigrateCatalogue()
+    {
+        // Una sola pasada tipada de los 64 comercios al actualizar este mapa.
+        // Conserva dueño, dinero, mercancía vendida y agotamientos; no crea stock.
+        let it=ThinkerIterator.Create("CaelumCityMerchant");CaelumCityMerchant vendor;
+        while((vendor=CaelumCityMerchant(it.Next()))!=null)
+            if(vendor.ShopIdentity>=0 && vendor.ShopIdentity<CaelumCityData.SHOP_COUNT)
+            {
+                vendor.Category=CaelumShopCatalogue.Category(vendor.ShopIdentity);
+                vendor.TradesClothing=vendor.Category==CaelumShopCatalogue.CLOTHING;
+            }
+        CaelumShopSign.RefreshAuthored();
     }
 
     bool Accepts(Inventory item)
     {
+        if(item==null)return false;
+        let special=CaelumSpecialInventoryItem(item);if(special!=null && special.LimboQuestUnits>0)return false;
+        let protectedEquipment=CaelumEquipmentItem(item);if(protectedEquipment!=null && protectedEquipment.ItemFlags!=0)return false;
+        let lock=CaelumLockItem(item);
+        if(lock!=null && lock.MerchantPairedSale && lock.LockItemType>=3 && lock.LockItemType<6)return false;
+        // La conversión aprobada conserva la mercancía previa, incluso agotada
+        // parcialmente. Nunca se vacía un inventario para imponer el rubro nuevo.
+        if(item.Owner==self)return CaelumEconomyRules.GetInventoryUnitBaseValue(item)>0;
+        if(item is "CaelumRecipeOffer")return false;
+        if(lock!=null)return Category==1;
+        let material=CaelumMaterialPickup(item);
+        if(material!=null)return Category==2 && (material.GetSpecialType()==CaelumConstants.MATERIAL_CARBINE_KIT
+            || material.GetSpecialType()==CaelumConstants.MATERIAL_SHOTGUN_KIT);
         let equipment=CaelumEquipmentItem(item);
         if(equipment!=null)
         {
@@ -58,7 +91,7 @@ class CaelumCityMerchant : Actor
         return 1;
     }
 
-    void SeedEquipment(CaelumPlayer user,int kind,int type,int slot,int size,int essence)
+    CaelumEquipmentItem SeedEquipment(CaelumPlayer user,int kind,int type,int slot,int size,int essence)
     {
         Name itemClass=kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING ? 'CaelumClothingPickup'
             : kind==CaelumConstants.EQUIPMENT_KIND_WEAPON ? 'CaelumWeaponPickup'
@@ -66,7 +99,7 @@ class CaelumCityMerchant : Actor
             : kind==CaelumConstants.EQUIPMENT_KIND_SHIELD ? 'CaelumShieldPickup'
             : kind==CaelumConstants.EQUIPMENT_KIND_AMULET ? 'CaelumAmuletPickup' : 'CaelumSealPickup';
         let item=CaelumEquipmentItem(Actor.Spawn(itemClass,Pos,NO_REPLACE));
-        if(item==null)return;
+        if(item==null)return null;
         item.EquipmentKind=kind;item.ItemType=type;item.ArmorSlot=slot;
         item.Tier=CaelumCityData.SHOP_TIER;item.EquipmentSize=size;item.EssenceType=essence;
         item.PickupDataInitialized=true;item.SizePolicy=CaelumEquipmentRules.FIXED_SIZE;
@@ -76,6 +109,7 @@ class CaelumCityMerchant : Actor
         item.WeaponDurabilityRevision=CaelumAttackRules.DURABILITY_REVISION;
         item.ShotgunRevision=CaelumShotgunRules.REVISION;
         item.Amount=CaelumCityData.EQUIPMENT_STOCK;item.AttachToOwner(self);
+        return item;
     }
 
     void SeedShotgunAmmo(CaelumPlayer user)
@@ -96,6 +130,7 @@ class CaelumCityMerchant : Actor
         if(StockInitialized)
         {
             SeedShotgunAmmo(user);
+            EnsureCatalogue(user);
             return;
         }
         // Sólo materializar al abrir: 64 tiendas vacías de compradores no
@@ -137,6 +172,63 @@ class CaelumCityMerchant : Actor
             for(int type=0;type<CaelumConstants.SEAL_TYPE_COUNT;type++)
                 SeedEquipment(user,CaelumConstants.EQUIPMENT_KIND_SEAL,type,0,CaelumConstants.EQUIPMENT_SIZE_M,0);
         }
+        EnsureCatalogue(user);
+    }
+
+    void EnsureCatalogue(CaelumPlayer user)
+    {
+        if(CatalogueRevision>=CaelumShopCatalogue.REVISION)return;
+        if(Category==CaelumShopCatalogue.CLOTHING)
+            for(int type=0;type<CaelumClothingData.COUNT;type++)
+                for(int size=0;size<CaelumConstants.EQUIPMENT_SIZE_COUNT;size++)
+                {
+                    int entry=type*CaelumConstants.EQUIPMENT_SIZE_COUNT+size;if(entry<CatalogueCursor)continue;
+                    if(SeedEquipment(user,CaelumConstants.EQUIPMENT_KIND_CLOTHING,type,CaelumClothingData.Region(type),size,0)==null)return;
+                    CatalogueCursor=entry+1;
+                }
+        if(Category==CaelumShopCatalogue.LIBRARY)
+            for(int recipe=0;recipe<CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;recipe++)
+                for(int tier=1;tier<=CaelumRecipeLearning.TIERS;tier++)
+                {
+                    int entry=recipe*CaelumRecipeLearning.TIERS+tier-1;if(entry<CatalogueCursor)continue;
+                    if(CaelumRecipeLearning.Tier(recipe,tier)!=tier)continue;
+                    double value=CaelumLibrary.BookValue(user,recipe,tier);if(value<=0)continue;
+                    let offer=CaelumRecipeOffer(Actor.Spawn("CaelumRecipeOffer",Pos,NO_REPLACE));if(offer==null)return;
+                    offer.Recipe=recipe;offer.Tier=tier;offer.BaseValue=value;
+                    offer.Amount=CaelumShopCatalogue.BOOK_STOCK;offer.AttachToOwner(self);
+                    CatalogueCursor=entry+1;
+                }
+        if(Category==2)
+            for(int n=0;n<2;n++)
+            {
+                if(n<CatalogueCursor)continue;
+                let kit=user.CreateDetachedMaterialStack(n==0 ? CaelumConstants.MATERIAL_CARBINE_KIT
+                    : CaelumConstants.MATERIAL_SHOTGUN_KIT,1,CaelumCityData.AMMUNITION_STOCK);
+                if(kit==null)return;kit.AttachToOwner(self);
+                CatalogueCursor=n+1;
+            }
+        if(Category==1)
+            for(int type=0;type<CaelumLockRules.MASTER+1;type++)
+            {
+                if(type<CatalogueCursor)continue;
+                if(type>=3 && type<6)continue;
+                let pair=type<3 ? new("CaelumLockIdentity") : null;
+                let item=CaelumLockRules.Create(type,Pos,pair);if(item==null)return;
+                CaelumLockItem key=type<3 ? CaelumLockRules.Create(type+3,Pos,pair) : null;
+                if(type<3 && key==null){item.Destroy();return;}
+                item.MerchantPairedSale=type<3;item.AttachToOwner(self);
+                if(key!=null){key.MerchantPairedSale=true;key.AttachToOwner(self);}
+                CatalogueCursor=type+1;
+            }
+        if(Category==0)
+            for(int type=CaelumConstants.CONSUMABLE_LIFE_MEDIUM;type<CaelumConstants.CONSUMABLE_TYPE_COUNT;type++)
+            {
+                if(type<CatalogueCursor)continue;
+                let item=Inventory(Actor.Spawn(user.GetConsumableClassName(type),Pos,NO_REPLACE));
+                if(item==null)return;item.Amount=CaelumCityData.CONSUMABLE_STOCK;item.AttachToOwner(self);
+                CatalogueCursor=type+1;
+            }
+        CatalogueRevision=CaelumShopCatalogue.REVISION;
     }
 
     override bool Used(Actor activator)
@@ -164,7 +256,7 @@ class CaelumCityTradeSession : Object play
     Array<Inventory> Rows;
     Array<String> Names;
     Array<int> Quantities, Prices;
-    int Selection;
+    int Selection,CategoryFilter;
     bool Selling;
 
     static void Open(CaelumPlayer user,CaelumCityMerchant vendor)
@@ -174,28 +266,55 @@ class CaelumCityTradeSession : Object play
 
     static bool Boxed(Inventory item)
     {
+        let special=CaelumSpecialInventoryItem(item);if(special!=null)return special.InMagicBox;
         let eq=CaelumEquipmentItem(item);if(eq!=null)return eq.InMagicBox;
         let food=CaelumConsumableItem(item);if(food!=null)return food.InMagicBox;
         let ammo=CaelumCarbineAmmo(item);return ammo!=null && ammo.InMagicBox;
     }
     static void SetBoxed(Inventory item,bool value)
     {
+        let special=CaelumSpecialInventoryItem(item);if(special!=null)special.InMagicBox=value;
         let eq=CaelumEquipmentItem(item);if(eq!=null)eq.InMagicBox=value;
         let food=CaelumConsumableItem(item);if(food!=null)food.InMagicBox=value;
         let ammo=CaelumCarbineAmmo(item);if(ammo!=null)ammo.InMagicBox=value;
     }
     static bool Sellable(CaelumPlayer user,Inventory item)
     {
+        let special=CaelumSpecialInventoryItem(item);
+        if(special!=null && special.LimboQuestUnits>0)return false;
+        let material=CaelumMaterialPickup(item);
+        if(material!=null && user.GetReservedCraftingMaterialUnits(material.GetSpecialType(),material.GetSpecialTier())>0)return false;
         let eq=CaelumEquipmentItem(item);
         return eq==null || (!eq.Equipped && eq.ItemFlags==0 && !user.IsEquipmentItemCraftingLocked(eq.ItemId));
     }
     static Inventory Stack(Actor owner,Inventory item)
     {
-        if(item is "CaelumEquipmentItem")return null;
+        if(item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer")return null;
         for(Inventory current=owner.Inv;current!=null;current=current.Inv)
-            if(current.GetClass()==item.GetClass())return current;
+        {
+            if(current.GetClass()!=item.GetClass())continue;
+            let special=CaelumSpecialInventoryItem(item);let match=CaelumSpecialInventoryItem(current);
+            if(special!=null && (special.GetSpecialType()!=match.GetSpecialType() || special.GetSpecialTier()!=match.GetSpecialTier()))continue;
+            return current;
+        }
         return null;
     }
+    static CaelumLockItem Companion(Inventory item)
+    {
+        let lock=CaelumLockItem(item);
+        if(lock==null || !lock.MerchantPairedSale || lock.LockItemType>=3 || lock.Owner==null)return null;
+        for(Inventory current=lock.Owner.Inv;current!=null;current=current.Inv)
+        {
+            let key=CaelumLockItem(current);
+            if(key!=null && key.Amount==1 && key.MerchantPairedSale && key.LockItemType==lock.LockItemType+3
+                && CaelumLockRules.SamePair(lock.PairIdentity,key.PairIdentity))return key;
+        }
+        return null;
+    }
+    static double Value(Inventory item)
+    {let key=Companion(item);return CaelumEconomyRules.GetInventoryUnitBaseValue(item)+(key==null?0:CaelumEconomyRules.GetInventoryUnitBaseValue(key));}
+    static bool Single(Inventory item)
+    {return item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer";}
     void Refresh(CaelumPlayer user)
     {
         CaelumMerchantCoordinator.RefreshCityTrade(self, user);

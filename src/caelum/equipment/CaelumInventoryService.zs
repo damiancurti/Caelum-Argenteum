@@ -253,7 +253,7 @@ class CaelumInventoryService : Object play
     }
 
     static Inventory CommitCityMerchantTransfer(CaelumPlayer user, CaelumCityTradeSession session,
-        Inventory item, int quantity, int price, Inventory receiving)
+        Inventory item, int quantity, int price, Inventory receiving, CaelumLockItem companion=null)
     {
         if (!CaelumPlayerAuthority.CanMutate(user) || session == null || user.CityTrade != session
             || session.Vendor == null || user.ActivePalomoMerchant != session.Vendor
@@ -262,11 +262,16 @@ class CaelumInventoryService : Object play
         Actor owner = session.Selling ? Actor(user) : Actor(session.Vendor);
         Actor receiver = session.Selling ? Actor(session.Vendor) : Actor(user);
         if (item.Owner != owner || (receiving != null && receiving.Owner != receiver)) return null;
+        if(companion!=null && (session.Selling || companion.Owner!=owner || companion.Amount!=1
+            || CaelumCityTradeSession.Companion(item)!=companion))return null;
         Inventory split = null;
         if (receiving == null && quantity < item.Amount)
         {
             split = Inventory(Actor.Spawn(item.GetClass(), user.Pos, NO_REPLACE));
             if (split == null) return null;
+            // Materiales comparten clase: copiar su identidad antes de mover la
+            // fracción. Amount y ubicación se aplican después del pago atómico.
+            if(item is "CaelumMaterialPickup")for(int i=0;i<5;i++)split.args[i]=item.args[i];
         }
         Array<CaelumCurrencyItem> coins;
         if (!PrepareMerchantCurrencyObjects(user, coins))
@@ -291,6 +296,12 @@ class CaelumInventoryService : Object play
             item.Owner.RemoveInventory(item); item.AttachToOwner(receiver); receiving = item;
         }
         CaelumCityTradeSession.SetBoxed(receiving, !session.Selling && user.PalomoIncomingItemInMagicBox);
+        if(companion!=null)
+        {
+            companion.Owner.RemoveInventory(companion);companion.AttachToOwner(receiver);
+            companion.InMagicBox=user.PalomoIncomingItemInMagicBox;companion.MerchantPairedSale=false;
+            CaelumLockItem(receiving).MerchantPairedSale=false;
+        }
         let equipment = CaelumEquipmentItem(receiving);
         if (!session.Selling && equipment != null)
         {
@@ -299,6 +310,33 @@ class CaelumInventoryService : Object play
         }
         session.Vendor.WalletCopper += session.Selling ? -price : price;
         return receiving;
+    }
+
+    static CaelumRecipeBook CommitLibraryPurchase(CaelumPlayer user,CaelumCityTradeSession session,
+        CaelumRecipeOffer offer,CaelumLibraryPurchase plan,int price)
+    {
+        if(!CaelumMerchantCoordinator.IsCurrentCityTrade(session,user) || !user.IsActivePalomoMerchantSessionValid()
+            || session.Selling || offer==null || offer.Owner!=session.Vendor || offer.Amount<=0 || plan==null
+            || plan.Quote==null || price!=CaelumEconomyRules.GetPriceChargedByMerchant(offer.BaseValue)
+            || user.GetOwnedMoneyCopperValue()<price || session.Vendor.WalletCopper>2147483647-price)return null;
+        let book=CaelumRecipeBook(user.FindInventory("CaelumRecipeBook"));if(book!=plan.Book)return null;
+        int missing=0;
+        for(int i=0;i<plan.Quote.Sheets.Size();i++)
+        {
+            int slot=plan.Quote.Sheets[i];if(slot<0 || slot>=CaelumRecipeLearning.SLOT_COUNT)return null;
+            if(book==null || !book.Sheets[slot])missing++;
+        }
+        if(missing<=0 || missing!=plan.ExtraPages)return null;
+        bool created=book==null;
+        if(created)book=CaelumRecipeBook(Actor.Spawn("CaelumRecipeBook",user.Pos,NO_REPLACE));
+        if(book==null)return null;
+        Array<CaelumCurrencyItem> coins;
+        if(!PrepareMerchantCurrencyObjects(user,coins)){if(created)book.Destroy();return null;}
+        AttachMerchantCurrencyObjects(user,coins);user.ApplyPalomoCurrencyPlan();
+        if(created){book.InMagicBox=user.PalomoIncomingItemInMagicBox;book.AttachToOwner(user);}
+        for(int i=0;i<plan.Quote.Sheets.Size();i++)book.Sheets[plan.Quote.Sheets[i]]=true;
+        offer.Amount--;session.Vendor.WalletCopper+=price;
+        return book;
     }
 
     static void SyncLiveMagicBoxOwnershipFromPersistentState(CaelumPlayer user)

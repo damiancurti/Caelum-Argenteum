@@ -473,6 +473,7 @@ class CaelumMainM00QuestController : EventHandler
         }
     }
 
+    int ShopCatalogueRevision;
     override void WorldTick()
     {
         CaelumWeightPressure.WorldTick();
@@ -497,6 +498,10 @@ class CaelumMainM00QuestController : EventHandler
             TravelVehiclesPrepared = CaelumVehicleWorld.Prepare();
         if (!DiningPrepared && level.maptime % TICRATE == 0)
             DiningPrepared = CaelumDiningWorld.Prepare();
+        if(level.MapName=="MAP03" && DiningPrepared && ShopCatalogueRevision<CaelumShopCatalogue.REVISION)
+        {
+            CaelumCityMerchant.MigrateCatalogue();ShopCatalogueRevision=CaelumShopCatalogue.REVISION;
+        }
         if (!RestFurniturePrepared && level.maptime % TICRATE == 0)
             RestFurniturePrepared = CaelumRestFurnitureTrial.PrepareWorld();
         if (!SewerSupportPrepared)

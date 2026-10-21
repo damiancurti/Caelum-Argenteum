@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.9** — 2026-10-21.
+Documentation version: **5.6.10** — 2026-10-21.
+
+## 5.6.10 status — city catalogues (#383)
+
+Library/clothing replacements, signs, complete valid recipe/tier offers,
+cartridge kits and paired lock/key commerce are implemented. Notebook purchases
+preserve study, page weight, duplicate rejection and atomic payment. Numbered
+catalogue migration preserves old merchandise and wallets. Static/native evidence
+is kept in assets/validation_5610 (13 runs / 576 PASS / zero FAIL, static pass);
+CA383-01 awaits author confirmation. #385
+replenishment and #387 worn/preview/first-person coverage remain separate.
 
 ## 5.6.9 - Native cartridge assembly (#380)
 

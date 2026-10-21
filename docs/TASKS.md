@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.9** — 2026-10-21.
+Documentation version: **5.6.10** — 2026-10-21.
+
+## 5.6.10 — city catalogue extension (#383)
+
+Implemented approved library/clothing shops, signs, all recipe/tier offers,
+garment sizes, cartridge kits, lock/key pairs and provision quantities. Native
+inventory remains authoritative; migration preserves prior stock and wallets.
+Final validation_5610 evidence: 13 native runs / 576 PASS / zero FAIL, static
+validation pass. CA383-01 remains the author check. Keep replenishment (#385) and worn garments (#387)
+separate; neither is completed by catalogue availability.
 
 ## 5.6.9 - Native cartridge assembly (#380)
 

@@ -775,6 +775,8 @@ class CaelumEconomyRules : Object
     play static double GetInventoryUnitBaseValue(Inventory item)
     {
         if (item == null) { return 0.0; }
+        let offer=CaelumRecipeOffer(item);
+        if(offer!=null)return offer.BaseValue;
         let lockItem=CaelumLockItem(item);
         if(lockItem!=null)return lockItem.LimboQuestUnits>0 ? 0.0 : CaelumLockRules.Value(lockItem.LockItemType);
         if(item is "CaelumArrowAmmo")return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW);

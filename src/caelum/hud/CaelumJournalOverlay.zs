@@ -983,6 +983,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_PALOMO_MERCHANT_ACTION_FAILED_SESSION";
             case CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED:
                 return "CA_REP_TRADE_PRICE_CHANGED";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_DUPLICATE:
+                return "CA_LIBRARY_ALREADY_OWNED";
             default:
                 return "CA_PALOMO_MERCHANT_ACTION_NONE";
         }
@@ -2205,6 +2207,8 @@ class CaelumJournalOverlay : EventHandler
         DrawPanel(16,12,608,336);
         DrawCenteredText(TitleFont,Font.CR_GOLD,320,20,StringTable.Localize(user.PalomoMerchantTitleKey,false));
         DrawTextLine(TextFont,Font.CR_GOLD,42,60,StringTable.Localize(trade.Selling ? "CA_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_BUY",false));
+        bool library=trade.Vendor.Category==CaelumShopCatalogue.LIBRARY && !trade.Selling;
+        if(library)DrawTextLine(SmallFont,Font.CR_CYAN,175,64,String.Format("%s: %s",StringTable.Localize("CA_LIBRARY_CATEGORY",false),StringTable.Localize(GetCraftingFilterKey(trade.CategoryFilter),false)));
         DrawTextLine(InventoryFont,Font.CR_WHITE,42,86,String.Format("%s: %.0f c",StringTable.Localize("CA_PALOMO_MERCHANT_YOUR_MONEY",false),user.HUDTotalMoneyCopperValue));
         DrawTextLine(InventoryFont,Font.CR_WHITE,355,86,String.Format("%s: %d c",StringTable.Localize("CA_MERCHANT_CASH",false),user.PalomoMerchantWalletCopper));
         DrawTextLine(SmallFont,Font.CR_GRAY,42,111,StringTable.Localize("CA_PALOMO_MERCHANT_ITEM",false));
@@ -2230,7 +2234,7 @@ class CaelumJournalOverlay : EventHandler
             StringTable.Localize("CA_PALOMO_MERCHANT_TOTAL",false),user.PalomoMerchantSelectedLotPrice));
         DrawTextLine(SmallFont,Font.CR_GRAY,543,280,String.Format("%d/%d",trade.Rows.Size()==0 ? 0 : trade.Selection+1,trade.Rows.Size()));
         DrawCenteredText(InventoryFont,Font.CR_GOLD,320,306,StringTable.Localize(GetPalomoMerchantActionKey(user.LastPalomoMerchantAction),false));
-        DrawCenteredText(SmallFont,Font.CR_GRAY,320,329,StringTable.Localize("CA_REP_TRIAL_TRADE_HELP",false));
+        DrawCenteredText(SmallFont,Font.CR_GRAY,320,329,StringTable.Localize(library?"CA_LIBRARY_HELP":"CA_REP_TRIAL_TRADE_HELP",false));
     }
 
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)

@@ -234,6 +234,13 @@ class CaelumMerchantCoordinator : Object play
     static void CyclePalomoMerchantQuantity(CaelumPlayer user, int direction)
     {
         if (!user.IsActivePalomoMerchantSessionValid()) { return; }
+        if(user.CityTrade!=null && user.CityTrade.Vendor.Category==CaelumShopCatalogue.LIBRARY && !user.CityTrade.Selling)
+        {
+            user.CityTrade.CategoryFilter=(user.CityTrade.CategoryFilter+(direction<0 ? CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT-1 : 1))
+                %CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT;
+            user.CityTrade.Selection=0;user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
+            user.CityTrade.Refresh(user);return;
+        }
         user.PalomoMerchantQuantityIndex = (user.PalomoMerchantQuantityIndex
             + (direction < 0
                 ? CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1
@@ -386,22 +393,26 @@ class CaelumMerchantCoordinator : Object play
         for(Inventory item=owner.Inv;item!=null;item=item.Inv)
         {
             if(item.Amount<=0 || !session.Vendor.Accepts(item) || (session.Selling && !CaelumCityTradeSession.Sellable(user,item)))continue;
-            double value=CaelumEconomyRules.GetInventoryUnitBaseValue(item);
+            let offer=CaelumRecipeOffer(item);
+            if(offer!=null && !CaelumLibrary.MatchesCategory(offer.Recipe,session.CategoryFilter))continue;
+            double value=CaelumCityTradeSession.Value(item);
             if(value<=0)continue;
             int price=session.Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value) : CaelumEconomyRules.GetPriceChargedByMerchant(value);
-            session.Rows.Push(item);session.Names.Push(CaelumNotifications.Describe(user,item,0));session.Quantities.Push(item.Amount);session.Prices.Push(price);
+            String label=offer!=null ? CaelumLibrary.NameFor(offer) : CaelumNotifications.Describe(user,item,0);
+            if(CaelumCityTradeSession.Companion(item)!=null)label=String.Format(StringTable.Localize("CA_MERCHANT_LOCK_PAIR",false),label);
+            session.Rows.Push(item);session.Names.Push(label);session.Quantities.Push(item.Amount);session.Prices.Push(price);
             if(item==selected)session.Selection=session.Rows.Size()-1;
         }
         session.Selection=Clamp(session.Selection,0,Max(0,session.Rows.Size()-1));
         user.PalomoMerchantVisibleItemCount=session.Rows.Size();
         user.PalomoMerchantWalletCopper=session.Vendor.WalletCopper;
         int quantity=user.GetPalomoMerchantQuantityForIndex(user.PalomoMerchantQuantityIndex);
-        if(session.Rows.Size()>0 && session.Rows[session.Selection] is "CaelumEquipmentItem")quantity=1;
+        if(session.Rows.Size()>0 && CaelumCityTradeSession.Single(session.Rows[session.Selection]))quantity=1;
         user.PalomoMerchantSelectedQuantity=quantity;
         user.PalomoMerchantSelectedLotPrice=0;
         if(session.Rows.Size()>0)
         {
-            double value=CaelumEconomyRules.GetInventoryUnitBaseValue(session.Rows[session.Selection]);
+            double value=CaelumCityTradeSession.Value(session.Rows[session.Selection]);
             user.PalomoMerchantSelectedLotPrice=session.Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value,quantity)
                 : CaelumEconomyRules.GetPriceChargedByMerchant(value,quantity);
         }
@@ -420,12 +431,14 @@ class CaelumMerchantCoordinator : Object play
     {
         if(!IsCurrentCityTrade(session,user) || item==null)return false;
         double unit=user.GetFormalInventoryEntryWeight(item)/Max(1,item.Amount);
+        let companion=CaelumCityTradeSession.Companion(item);
+        if(companion!=null)unit+=companion.GetUnitWeight();
         bool oldBox=CaelumCityTradeSession.Boxed(session.Selling ? item : receiving);
         for(int moneyRoute=0;moneyRoute<2;moneyRoute++)
         {
             if(!(session.Selling ? user.BuildPalomoCurrencyCreditPlan(price) : user.BuildPalomoCurrencyPaymentPlan(price)))return false;
             if(moneyRoute==1){if(!user.MagicBoxOwned)continue;user.RoutePalomoCurrencyGainsToMagicBox();}
-            bool canBox=item is "CaelumEquipmentItem" || item is "CaelumConsumableItem" || item is "CaelumCarbineAmmo";
+            bool canBox=item is "CaelumEquipmentItem" || item is "CaelumConsumableItem" || item is "CaelumCarbineAmmo" || item is "CaelumSpecialInventoryItem";
             for(int productRoute=0;productRoute<(session.Selling || !canBox ? 1 : 2);productRoute++)
             {
                 bool box=oldBox || productRoute==1;
@@ -443,7 +456,7 @@ class CaelumMerchantCoordinator : Object play
                     raw+=weight;
                     if(!oldBox)
                     {
-                        slots++;
+                        slots+=companion==null?1:2;
                         if(receiving!=null){double moved=receiving.Amount*unit;personal-=moved;raw+=moved;}
                     }
                 }
@@ -466,19 +479,37 @@ class CaelumMerchantCoordinator : Object play
         int quantity=user.PalomoMerchantSelectedQuantity,price=user.PalomoMerchantSelectedLotPrice;
         if(item==null || item.Amount<quantity)
         {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK;return;}
+        let offer=CaelumRecipeOffer(item);CaelumLibraryPurchase library=null;
+        if(offer!=null)
+        {
+            if(session.Selling)return;
+            library=new("CaelumLibraryPurchase");library.Build(user,offer);
+            if(library.ExtraPages==0)
+            {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_DUPLICATE;return;}
+        }
         if((session.Selling && session.Vendor.WalletCopper<price) || (!session.Selling && user.GetOwnedMoneyCopperValue()<price))
         {user.LastPalomoMerchantAction=session.Selling ? CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY
             : CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY;return;}
         if(!session.Selling && session.Vendor.WalletCopper>2147483647-price)return;
+        let companion=CaelumCityTradeSession.Companion(item);let lock=CaelumLockItem(item);
+        if(lock!=null && lock.MerchantPairedSale && companion==null)
+        {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK;return;}
         Actor receiver=session.Selling ? Actor(session.Vendor) : Actor(user);
         Inventory receiving=CaelumCityTradeSession.Stack(receiver,item);
         if(receiving!=null && receiving.Amount>receiving.MaxAmount-quantity)
         {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;return;}
-        if(!session.Capacity(user,item,quantity,price,receiving))
+        if(!(library!=null ? library.Capacity(user,price) : session.Capacity(user,item,quantity,price,receiving)))
         {user.LastPalomoMerchantAction=CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;return;}
-        receiving=CaelumInventoryService.CommitCityMerchantTransfer(user,session,item,quantity,price,receiving);
+        if(library!=null)receiving=CaelumInventoryService.CommitLibraryPurchase(user,session,offer,library,price);
+        else receiving=CaelumInventoryService.CommitCityMerchantTransfer(user,session,item,quantity,price,receiving,companion);
         if(receiving==null)return;
-        if(!session.Selling)CaelumNotifications.Acquired(user,receiving,quantity);
+        if(!session.Selling)
+        {
+            if(library!=null)CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_RECIPE_RECEIVED",false),
+                CaelumCraftingBrowser.RecipeName(offer.Recipe,offer.Tier),offer.Tier));
+            else CaelumNotifications.Acquired(user,receiving,quantity);
+            if(companion!=null)CaelumNotifications.Acquired(user,companion,1);
+        }
         user.LastPalomoMerchantAction=session.Selling ? CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD : CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT;
         user.OnNativeInventoryChanged();user.ApplyCharacterProfile();user.RefreshFormalInventorySnapshot();
         session.Refresh(user);user.PersistCharacterState();

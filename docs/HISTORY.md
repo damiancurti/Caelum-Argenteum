@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.9** — 2026-10-21.
+Documentation version: **5.6.10** — 2026-10-21.
+
+## 5.6.10 - City catalogue extension (#383), 2026-10-21
+
+The author approved two repeated-shop replacements with signs, all recipe/tier
+books (ten per offer), clothing sizes, prepared kits and lock/key pairs. Buying
+books incorporates missing pages without teaching or duplicate charges. A
+numbered lazy catalogue adds genuinely new entries once and preserves old
+merchandise, depletion and money. Cross-review caught lock-book pricing/names
+and the visited-city migration hook; both were corrected before final testing.
+Evidence: assets/validation_5610; 13 native runs / 576 PASS / zero FAIL, static
+validation pass. Actual 5.5.8a visited-city migration, current/hub/non-hub saves,
+original recovery and bilingual menus are covered. Isolated library frame
+intervals average 60.05/s, p99 17.659 ms; no large-map performance claim.
+CA383-01 author review remains pending.
+No restock or full worn-clothing completion is claimed.
 
 ## 5.6.9 - Native cartridge assembly (#380), 2026-10-21
 

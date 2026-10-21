@@ -27,6 +27,7 @@ class CaelumCraftingBrowser : Object play
 
     static clearscope String RecipeName(int recipe, int tier = 1)
     {
+        if(CaelumLockRules.IsRecipe(recipe))return StringTable.Localize(CaelumLockRules.NameKey(CaelumLockRules.RecipeItem(recipe)),false);
         if(CaelumClothingData.IsRecipe(recipe))return StringTable.Localize(CaelumClothingData.NameKey(recipe-CaelumClothingData.FIRST_RECIPE),false);
         int kind = CaelumCraftingRules.GetUnifiedRecipeKind(recipe);
         if (kind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)

@@ -4,6 +4,7 @@ import json
 from generate_coastal_trials import CoastalMap
 import generate_city_interiors as interiors
 import generate_native_city_doors as doors
+import generate_shop_catalogue as catalogue
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = json.loads((ROOT/'assets/map06_port/HOUSE_HUBS.json').read_text(encoding='utf-8'))
@@ -38,7 +39,7 @@ def exterior(port):
     for i,b in enumerate(b for b in CITY['buildings'] if b['kind']=='shop'):
         profile=CITY['profiles']['shop'];detail=CITY['detail']
         port.prop(DATA['sign_editor'],b['bounds'][2]+detail['awning_depth']+doors.DATA['half_thickness'],
-                  b['door_y']+profile['door_width']//2,args=(i%d['constants']['SHOP_CATEGORIES'],))
+                  b['door_y']+profile['door_width']//2,args=(catalogue.category(i,d['constants']['SHOP_CATEGORIES']),))
         port.things[-1]['height']=detail['awning_top']-port.CELL
 
 

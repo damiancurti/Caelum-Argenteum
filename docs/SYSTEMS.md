@@ -1,6 +1,47 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.9** — 2026-10-21.
+Documentation version: **5.6.10** — 2026-10-21.
+
+## City catalogue extension (#383, 5.6.10)
+
+SHOP_CATALOGUE.json is authoritative for the two replacements: city shop 34 is
+the library and shop 35 the clothing shop, on the accessible central commercial
+row. All six earlier specializations remain elsewhere. Matching book/coat signs
+use the existing sign renderer and generator; generated hub entrances use the
+same category source. Existing MAP03 geometry is unchanged.
+
+| Vendor | Approved additions / initial stock | Retained rules |
+| --- | --- | --- |
+| Library | Every valid recipe/tier, ten books per offer; categories | Book base value is 10% of the XL equipment output, or ten consumable units, using the represented tier |
+| Clothing | 25 garments x five sizes, one native T1 instance each | Approved garment price, mass, durability and moisture |
+| Ranged | 1,000 of each of the two sealed cartridge kits | 80% finished-ammunition base value, before normal margins |
+| Melee/tools | One matched padlock/key pair per tier, one lockpick set and one master key | Pair weight/value includes the key; no separately purchasable half-pair |
+| Provisions | 1,000 per food/water/potion product, including medium/large potion variants | Existing eleven product identities and values |
+| Existing equipment/ammunition | One ordinary T1 instance per authored variant; 1,000 per ammunition product | Existing specializations, valuation and eligibility |
+
+The existing 150% selling / 50% buying margins and rounding apply once. A library
+purchase incorporates final/component sheets into the player's notebook: 100 g
+for the first binder plus 5 g per missing page; existing pages add no weight.
+It grants no recipe knowledge. The existing notebook stays in its personal/Box
+location; a new binder may use available Box capacity. Currency change and page
+weight are preflighted together. No spare purchased book remains in inventory.
+If all pages are present, reject without charging or reducing stock. Library
+Left/Right controls cycle categories; each confirmation buys one book.
+Lock/tool recipe books use equipment pricing and their real names, shown under
+Utilities in the library, independently of their older crafting-kind adapter.
+
+Native vendor inventory remains authoritative. Catalogue revision 1 adds only
+new entries once, with a per-vendor cursor for interrupted allocation. The
+existing map controller applies category/sign migration once to a previously
+visited city. Existing money, depleted stock and exact player-sold items remain;
+converted vendors may sell old goods regardless of their new specialization.
+Equipped, reserved and quest items remain excluded. No merchant wallet refill,
+automatic stock renewal, raw-node or loot renewal is introduced here (#385).
+
+Initialization uses bounded typed registries: at most 64 city merchants and 64
+signs in one revision migration, owned by the existing map controller. No new
+global per-tic scan is added. Catalogues remain lazy until a shop is opened;
+the library computes prices without spawning a preview object per offer.
 
 ## Cartridge assembly (#380, 5.6.9)
 
@@ -11546,9 +11587,12 @@ Therefore, each stage retains its own labor and the value accumulates recursivel
 
 `CaelumEconomyRules` exposes the calculation by material, by object family and by native
 inventory instance. Food and water rations already have authorized base value.
-Ammunition, other consumables, keys and key objects do not yet enter the commercial
-catalog because they lack a recipe or an authorized base value; returning an invented
-price to them would violate this rule.
+The older blanket ammunition/key exclusion is superseded by the functional port
+city contract and #383: approved ammunition, eleven provision products, sealed
+cartridge kits, matched locks/keys, lock tools, clothing and recipe offers have
+explicit values and vendor eligibility. Other key/quest objects remain excluded;
+absence of an approved value never authorizes inventing a price. Products without
+a manufacturing recipe retain initial stock but await #385's renewal rules.
 
 ### 4. Trader Margins
 
