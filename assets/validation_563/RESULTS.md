@@ -1,7 +1,7 @@
 # Issue #378 validation - release 5.6.3
 
 The final recipe runtime passes **15 native runs, 170
-assertions and zero failures**. CA378-01 awaits author acceptance.
+assertions and zero failures**. CA378-01 passed author review on 2026-10-20; see HISTORY for the initial fixture-setup qualification.
 
 | Run | Runtime | Passing assertions |
 | --- | --- | ---: |
@@ -56,7 +56,8 @@ and revised pairs remain local, with save hashes in report.json.
 Native checks establish one fitting bookshelf at the authored opposite-room
 position and idempotent installation. English/Spanish menu and shelf captures
 are retained for visual review. Manual mouse/keyboard feel and campaign NPC
-interaction remain the author's CA378-01 review, not automated acceptance.
+interaction have separate author acceptance (CA378-01, 2026-10-20);
+automated checks alone did not establish it.
 Native source checks exercise Ronnie/Caella eligibility rejection, confirmed
 sheet receipt, duplicate handling and no premature learning/quest progress.
 These call existing helpers with a controlled speaker context; no broad tutorial replay or
@@ -77,5 +78,5 @@ production test is silently counted as a pass.
 
 The native checks establish behavior, not sustained performance or campaign
 playability. No retired large-battle stress scenario was run. Temporary keep-awake
-was released after the first return; a second explicitly requested thread-scoped
-request is active during the new absence. No power plan was modified.
+was released after each author return, most recently on 2026-10-20.
+No power plan was modified.
