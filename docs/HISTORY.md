@@ -33,6 +33,14 @@ claimed for this proposal. CA377-01/CA381-01/CA378-01 remain pending.
 
 ## 5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20
 
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
 The author approved a physical 5-g sheet and 100-g unlimited recipe book,
 separate recipes/progress per tier, first reading without bonus, ten rereadings,
 and practice limits of ten equipment/1,000 consumables. The final formula lets
@@ -67,11 +75,19 @@ was released and the original Balanced power plan remained unchanged.
 
 ## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
 
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
 The author approved all chest classes, stack-based spaces, three capacities,
 10% empty mass, transportation, no nesting, exact full requested transfers and
 spilled contents on destruction. A later clarification doubles each linear
 dimension between tiers and retains the existing model as medium. The author
-is away during implementation; manual tests remain pending.
+was away during implementation; author acceptance is recorded below.
 
 The chest remains the native Actor owner of stored objects. A carried handle
 preserves that owner through saves/travel; the live-menu projection routes exact
@@ -89,11 +105,22 @@ commands) remain separate from passing evidence.
 
 Fifteen final native runs pass 175 assertions; static validation reports no
 errors. See `assets/validation_562/RESULTS.md` for results, original and
-reversed-save rollback, retained hashes and limitations. CA381-01 is outstanding
-in pending_test.txt. This entry records implementation, not author acceptance,
-merge or issue closure.
+reversed-save rollback, retained hashes and limitations. On 2026-10-20 the
+author confirmed CA381-01 (origin 5.6.2 / #381): "La prueba 381 dio bien."
+They had reported missing startup supplies and received the manual ca381_save
+command before confirming the test. No further exceptions were reported.
+This confirms the gameplay check, not a new automatic-launch test. Its pending
+entry is retired; version 5.6.2 remains unchanged. No merge/closure is implied.
 
 ## 5.6.1 - Merchant coordinator (#377), 2026-10-20
+
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
 
 The next isolated V5.6 delivery extracts thirteen pawn and five city-session
 policies without moving their saved fields or changing their signatures.

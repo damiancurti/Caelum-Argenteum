@@ -37,7 +37,7 @@ scripts = {
     "supply": "wait 35; changemap MAP01; wait 35; netevent ca381_supply; wait 5; quit",
     "ui": "wait 35; netevent ca381_save; wait 10; screenshot storage-en.png; wait 5; "
           "language es; wait 5; netevent ca_container_move 1; wait 10; screenshot storage-es.png; wait 5; quit",
-    "interactive": "exec ../../assets/playtest/default_controls.cfg; wait 35; netevent ca381_save; "
+    "interactive": "exec ../../assets/playtest/default_controls.cfg\nwait 35; netevent ca381_save; "
                    "wait 5; netevent ca_container_close; toggleconsole",
     "travel": "wait 5; netevent ca381_verify; changemap THAZARD; wait 35; netevent ca381_verify; "
               "changemap TMAINT; wait 35; netevent ca381_verify; changemap MAP02; wait 35; "

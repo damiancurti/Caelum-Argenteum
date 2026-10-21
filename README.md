@@ -27,7 +27,7 @@ V5.6.2 adds ordinary native chest storage (#381): three authored capacities,
 exact deposit/withdrawal, full carried mass, safe placement and spilled contents
 on destruction. Each larger tier doubles every linear dimension; the existing
 chest remains medium. Native locks and tutorial/labyrinth allocation remain.
-See [validation](assets/validation_562/RESULTS.md); CA381-01 awaits author testing.
+See [validation](assets/validation_562/RESULTS.md); CA381-01 passed author review on 2026-10-20.
 
 V5.6.1 isolates merchant coordination (#377) while retaining Palomo's character
 record and each city vendor's native inventory/wallet. Transactions reject

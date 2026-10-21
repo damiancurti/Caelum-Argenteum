@@ -40,7 +40,7 @@ reservation/temporary protection and exact transfer are integrated with the
 inventory service and live menu. Native keys and existing reward quotas remain.
 Revision-1 initialization and source-bound labyrinth policy preserve old gaps;
 carried owners/contents and TIDs survive travel. Evidence and compatibility
-limits: `assets/validation_562/RESULTS.md`. CA381-01 awaits author testing.
+limits: `assets/validation_562/RESULTS.md`. CA381-01 passed author review on 2026-10-20.
 The issue has its own branch/PR above #377; #378 and other design-dependent
 deliveries remain separate. No merge or author acceptance is implied.
 
