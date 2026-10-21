@@ -4,6 +4,14 @@ Documentation version: **5.6.2** — 2026-10-20.
 
 ## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
 
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
 The author approved all chest classes, stack-based spaces, three capacities,
 10% empty mass, transportation, no nesting, exact full requested transfers and
 spilled contents on destruction. A later clarification doubles each linear
