@@ -1,0 +1,17 @@
+{
+  "issue": 383,
+  "revision": 1,
+  "library_category": 6,
+  "clothing_category": 7,
+  "book_stock": 10,
+  "replacements": [
+    {"shop_identity": 34, "category": 6},
+    {"shop_identity": 35, "category": 7}
+  ],
+  "placement": "Two adjacent repeated shops on the eastern end of the central commercial row; preserve all six original specializations and every shop footprint.",
+  "author_decisions": [
+    "Replace two repeated shops with one library and one clothing shop, including signs.",
+    "Library stocks ten books per valid recipe/tier; clothing stocks one instance per garment/size.",
+    "Old converted shops may retain their remaining original merchandise, wallets and player-sold exact items. Add new catalogue entries once."
+  ]
+}

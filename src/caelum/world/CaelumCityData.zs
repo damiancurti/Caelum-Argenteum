@@ -9,8 +9,8 @@ class CaelumCityData : Object play
     const SIEGE_HOUR = 13;
     const SHOP_TIER = 1;
     const EQUIPMENT_STOCK = 1;
-    const CONSUMABLE_STOCK = 20;
-    const AMMUNITION_STOCK = 100;
+    const CONSUMABLE_STOCK = 1000;
+    const AMMUNITION_STOCK = 1000;
     const MERCHANT_COPPER = 200;
     const SHOP_CATEGORIES = 6;
     const FURNITURE_SLOT_BASE = 6000;

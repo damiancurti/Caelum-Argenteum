@@ -6,7 +6,7 @@ Add-Type -AssemblyName System.Drawing
 $design = Get-Content -LiteralPath (Join-Path $ProjectRoot 'assets/map06_port/HOUSE_HUBS.json') -Encoding UTF8 -Raw | ConvertFrom-Json
 $outDir = Join-Path $ProjectRoot 'src/graphics/caelum/shop_signs'
 New-Item -ItemType Directory -Path $outDir -Force | Out-Null
-$colors = @('#263D2E', '#532C24', '#253D43', '#30364C', '#3C3831', '#46334B')
+$colors = @('#263D2E', '#532C24', '#253D43', '#30364C', '#3C3831', '#46334B', '#3D3431', '#2E3A42')
 function ColorBrush([string]$color) { return [Drawing.SolidBrush]::new([Drawing.ColorTranslator]::FromHtml($color)) }
 $cream = ColorBrush '#EEE0B5'
 $wood = ColorBrush '#39291F'
@@ -18,7 +18,7 @@ $smallFont = [Drawing.Font]::new('Georgia', 43, [Drawing.FontStyle]::Bold, [Draw
 $format = [Drawing.StringFormat]::new()
 $format.Alignment = [Drawing.StringAlignment]::Center
 $format.LineAlignment = [Drawing.StringAlignment]::Center
-for ($category=0; $category -lt 6; $category++) {
+for ($category=0; $category -lt $design.sign_categories.Count; $category++) {
     $canvas = [Drawing.Bitmap]::new(1024,256,[Drawing.Imaging.PixelFormat]::Format32bppArgb)
     $g = [Drawing.Graphics]::FromImage($canvas)
     $g.SmoothingMode = [Drawing.Drawing2D.SmoothingMode]::AntiAlias
@@ -65,6 +65,15 @@ for ($category=0; $category -lt 6; $category++) {
             $g.DrawLine($ink,93,55,93,89);$g.DrawLine($ink,76,72,110,72)
             $g.DrawLine($ink,185,139,185,165);$g.DrawLine($ink,172,152,198,152)
         }
+        6 {
+            $g.DrawRectangle($ink,51,65,73,130);$g.DrawRectangle($ink,124,65,73,130)
+            foreach($y in @(94,119,144,169)) {$g.DrawLine($edge,66,$y,109,$y);$g.DrawLine($edge,139,$y,182,$y)}
+            $g.DrawLine($ink,124,57,124,205)
+        }
+        7 {
+            $points=[Drawing.Point[]]@([Drawing.Point]::new(98,52),[Drawing.Point]::new(64,73),[Drawing.Point]::new(43,143),[Drawing.Point]::new(70,154),[Drawing.Point]::new(89,107),[Drawing.Point]::new(80,204),[Drawing.Point]::new(170,204),[Drawing.Point]::new(161,107),[Drawing.Point]::new(180,154),[Drawing.Point]::new(207,143),[Drawing.Point]::new(186,73),[Drawing.Point]::new(152,52),[Drawing.Point]::new(125,86))
+            $g.DrawPolygon($ink,$points);$g.DrawLine($ink,125,86,125,204)
+        }
     }
     $label = $design.sign_labels[$category]
     $selectedFont = $font
@@ -74,4 +83,4 @@ for ($category=0; $category -lt 6; $category++) {
     $paint.Dispose();$g.Dispose();$canvas.Dispose()
 }
 $format.Dispose();$font.Dispose();$smallFont.Dispose();$grain.Dispose();$ink.Dispose();$edge.Dispose();$cream.Dispose();$wood.Dispose()
-Write-Output 'Six deterministic original trade-sign textures generated (Georgia raster outlines; font file not distributed).'
+Write-Output 'Eight deterministic original trade-sign textures generated (Georgia raster outlines; font file not distributed).'

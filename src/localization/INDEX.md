@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `d5c3aab6fce3012a80cef78c5ea4e5ab16f098e247d5c3fe25f378cf4e1f95b2`. Locations include every definition; the last one per language wins.
+SHA-256: `bfa2aa0877583dba6cb2bd79da5c62b221445eedd2b5d767e2e83e9c6325fbf9`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -35,7 +35,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
 | CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |
 | CA_CHEST | 11 | CA_CHEST_MATERIAL_ADAPTIVE | CA_CHEST_TUTORIAL_PLAN |
-| CA_CITY | 7 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_5 |
+| CA_CITY | 9 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_7 |
 | CA_CLASS | 4 | CA_CLASS_EXPLORER | CA_CLASS_WARRIOR |
 | CA_CLIMATE | 12 | CA_CLIMATE_CANOPY | CA_CLIMATE_REGION_9 |
 | CA_CLOTHING | 25 | CA_CLOTHING_BC | CA_CLOTHING_RW |
@@ -83,6 +83,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_JOURNEY | 36 | CA_JOURNEY_ARRIVED | CA_JOURNEY_WATER_LINE |
 | CA_KEY | 4 | CA_KEY_ITEM_PROCESSING_MANUAL | CA_KEY_SILVER |
 | CA_LAYER | 4 | CA_LAYER_MENTAL | CA_LAYER_TECHNICAL |
+| CA_LIBRARY | 4 | CA_LIBRARY_ALREADY_OWNED | CA_LIBRARY_HELP |
 | CA_LOAD | 3 | CA_LOAD_CAPACITY_EXCEEDED | CA_LOAD_OVERLOAD |
 | CA_LOADOUT | 65 | CA_LOADOUT_ACTION_0 | CA_LOADOUT_WEIGHT |
 | CA_LOCK | 16 | CA_LOCK_ITEM_0 | CA_LOCK_TOGGLE |
@@ -102,7 +103,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MATERIAL | 103 | CA_MATERIAL_BARREL | CA_MATERIAL_WOOL |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
 | CA_MENU | 4 | CA_MENU_LOAD_CHARACTER | CA_MENU_SAVE_CHARACTER |
-| CA_MERCHANT | 3 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
+| CA_MERCHANT | 4 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
 | CA_MESSAGES | 5 | CA_MESSAGES_EMPTY | CA_MESSAGES_TITLE |
 | CA_MIRACLE | 1 | CA_MIRACLE_CAST | CA_MIRACLE_CAST |
 | CA_MONTH | 12 | CA_MONTH_01 | CA_MONTH_12 |

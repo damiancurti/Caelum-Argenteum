@@ -79,7 +79,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_CALENDAR)result+=CaelumScheduleCalendar.SelectedDay(Subject)*31+CaelumScheduleCalendar.Setting("ca_calendar_event")*2+CaelumScheduleCalendar.Setting("ca_calendar_detail");
         if(Context==CTX_MERCHANT)result+=Subject.PalomoMerchantSelection*10+Subject.PalomoMerchantMode
             +Subject.PalomoMerchantSelectedQuantity*71+Subject.PalomoMerchantSelectedLotPrice*31
-            +(Subject.CityTrade==null?0:Subject.CityTrade.Selection*97);
+            +(Subject.CityTrade==null?0:Subject.CityTrade.Selection*97+Subject.CityTrade.CategoryFilter*131);
         if(Context==CTX_RECIPES){let recipes=CaelumRecipeSession(Subject.FindInventory("CaelumRecipeSession"));if(recipes!=null)result+=recipes.Selection+recipes.Filter*1000;}
         if(Context==CTX_CHEST)
         {

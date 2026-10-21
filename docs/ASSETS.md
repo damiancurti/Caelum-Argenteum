@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.9** — 2026-10-21.
+Documentation version: **5.6.10** — 2026-10-21.
+
+## 5.6.10 — library and clothing shop signs (#383)
+
+CASG06/CASG07 extend the existing generated sign system with a book and period
+coat emblem. Sources: assets/generators/generate_shop_signs.ps1 and
+assets/map06_port/HOUSE_HUBS.json; runtime aliases: shop_signs.textures.
+The six earlier sign PNGs remain byte-identical. The two additions use the same
+code-native vector drawing style, palette and layout; no external art is added.
+Catalogue placements derive from SHOP_CATALOGUE.json and original city door
+data. Native/visual evidence: assets/validation_5610; CA383-01 passed on 2026-10-21.
 
 ## 5.6.9 - Prepared cartridge-kit sprites (#380)
 

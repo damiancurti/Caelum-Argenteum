@@ -113,7 +113,10 @@ class CaelumLiveMenuControls : Object ui
         {
             Row(326);PrevNext();Button("CA_UI_MODE",InputEvent.Key_Space);Button("CA_UI_TRADE",InputEvent.Key_Enter);Back();
             // La cantidad queda junto al total sin tapar el estado de la transacción.
-            NextX=440;RowY=275;Button("CA_UI_MINUS",InputEvent.Key_LeftArrow,0,"",32);Button("CA_UI_PLUS",InputEvent.Key_RightArrow,0,"",32);
+            bool library=user.CityTrade!=null && user.CityTrade.Vendor.Category==CaelumShopCatalogue.LIBRARY && !user.CityTrade.Selling;
+            NextX=library?520:440;RowY=library?57:275;
+            Button(library?"CA_UI_PREVIOUS":"CA_UI_MINUS",InputEvent.Key_LeftArrow,0,"",library?44:32);
+            Button(library?"CA_UI_NEXT":"CA_UI_PLUS",InputEvent.Key_RightArrow,0,"",library?44:32);
             if(user.CityTrade!=null)
             {
                 int first=user.CityTrade.Selection/5*5;

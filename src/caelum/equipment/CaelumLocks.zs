@@ -171,6 +171,7 @@ class CaelumLockRules : Object play
 class CaelumLockItem : CaelumSpecialInventoryItem
 {
     int LockItemType;
+    bool MerchantPairedSale;
     CaelumLockIdentity PairIdentity;
     void ToggleBox(CaelumPlayer user)
     {

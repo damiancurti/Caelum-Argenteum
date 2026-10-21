@@ -4,3 +4,5 @@ Sprite CSSGC0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG
 Sprite CSSGD0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG03.png",0,0 }
 Sprite CSSGE0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG04.png",0,0 }
 Sprite CSSGF0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG05.png",0,0 }
+Sprite CSSGG0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG06.png",0,0 }
+Sprite CSSGH0, 1024, 256 { Offset 512,256 Patch "graphics/caelum/shop_signs/CASG07.png",0,0 }
