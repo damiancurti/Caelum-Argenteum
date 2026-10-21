@@ -19,30 +19,3 @@ Steps:
    views must remain mutually exclusive; a paused craft must retain its work.
 Expected: familiar merchant controls and margins, exact item/quantity transfer,
 clear rejections and no duplicated payment, objects or vendor stock.
-
-
-CA381-01 | 5.6.2 | Issue #381 | Native chest storage and transport
-Prerequisites: isolated #381 package/addon and disposable character; preserve
-original campaign saves with their matching package. From the repository root:
-python assets/validation_562/prepare.py
-powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_562/run_native.ps1 -Label author381-01 -Checks -Interactive -Script interactive
-Use a fresh label. Frozen package: build/issue381/current/caelum_argenteum_dev.pk3.
-Steps:
-1. Close the console. Open inventory, select the small carried chest and use it.
-   Confirm its worn bow and 23 wood units, slot limit and exact total mass.
-2. Withdraw a partial wood quantity, switch to Deposit and return it. Change
-   selection/quantity with keyboard, buttons and mouse wheel; cancel and reopen.
-   No selection or cancellation should move anything.
-3. Withdraw/redeposit the bow; its size, identity and wear remain. Equipped and
-   reserved objects, another chest and protected Tarot/temporary items cannot
-   be deposited. Verify a rejected request leaves both inventories unchanged.
-4. Press C to place the chest in clear space; reopen, collect/deposit and carry
-   again. A blocked placement must keep it carried with its contents intact.
-5. Save/reload with storage open and travel/return using disposable saves.
-   Contents, slots, exact load and native lock state must persist.
-6. In a disposable campaign inspect a tutorial/labyrinth chest: existing Collect
-   remains available; D opens stored objects without refilling its rewards.
-   Hold/release Use and Enter; each accepted transfer must match displayed data.
-Expected: readable bilingual controls, a live unpaused menu, exact transfers and
-full chest mass, no duplicated or lost contents. Native scripted destruction,
-capacity boundaries, migration and TID travel are recorded separately.

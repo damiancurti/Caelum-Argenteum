@@ -16,7 +16,7 @@ a clothing table proposal; #385 leaves products without a game recipe unrenewed.
 Physical sheets/book, per-tier learning, source retry, Intelligence M3 reading,
 practice snapshots and capped time reductions are implemented. Furniture and
 bilingual controls are included. Evidence: `assets/validation_563/RESULTS.md`;
-CA378-01 passed author review on 2026-10-20. Keep CA377-01/CA381-01 outstanding.
+CA378-01 passed author review on 2026-10-20. CA381-01 also passed; keep CA377-01 outstanding.
 The author returned; the second temporary keep-awake request was released
 on 2026-10-20 without changing the Windows power plan.
 Next: #383 library commerce uses all approved recipe/tier books and replaces
@@ -29,7 +29,7 @@ Implemented the author's capacity, size, mass, transport and destruction rules
 on native chest inventories. Exact transactional guards and the live menu retain
 existing locks, quotas and protected items. Revision-1 migration and carried
 save/travel checks are recorded in `assets/validation_562/RESULTS.md`.
-CA381-01 remains the actionable author test; CA377-01 is also outstanding.
+CA381-01 passed author review on 2026-10-20; CA377-01 remains outstanding.
 At that delivery the author was away. Remaining catalogue/balance decisions
 stay in their separate issues, not the author-test queue.
 

@@ -2,7 +2,7 @@
 
 The final storage runtime passes **15 required native runs,
 175 assertions and zero failures**, including a normal
-package-only startup. **CA381-01 remains pending author acceptance.**
+package-only startup. **CA381-01 passed author review on 2026-10-20 (startup qualification in HISTORY).**
 
 | Run | Runtime | Passing assertions |
 | --- | --- | ---: |
@@ -62,8 +62,8 @@ full rollback before adopting new content.
 
 The English and Spanish screenshots were inspected after integrating storage
 with CaelumLiveMenu. Keyboard, mouse rows/buttons and wheel share PanelKey/
-network commands. Real focus/hold/release interaction remains CA381-01; image
-inspection and scripted commands are not author acceptance.
+network commands. Real interaction received separate author acceptance CA381-01 on
+2026-10-20; image inspection and scripted commands alone did not establish it.
 Independent static AI review covered transfer safeguards and final menu routing.
 
 ## Exploratory findings
