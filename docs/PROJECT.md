@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
+
+## 5.6.9 - Native cartridge assembly (#380)
+
+Both approved prepared-kit recipes now use the existing crafting transaction,
+learning and ammunition paths. Appended IDs and recipe-book revision 11 preserve
+existing identities. Distinct kit sprites cover inventory and world pickups.
+Evidence is maintained in assets/validation_569; author review remains pending.
+#383 commerce, #385 renewal and #387 worn/preview/first-person clothing remain open.
 
 ## 5.6.8 - Approved sealed cartridge kits (#379)
 

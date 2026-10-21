@@ -1,0 +1,1442 @@
+{
+  "issue": 380,
+  "version": "5.6.9",
+  "base_commit": "5fbeaac7",
+  "package_sha256": "eb8b42df28ab71ca86491bae104dcc891bf9b4e2d2049929dbf5e1395f6dfdce",
+  "source_member_count": 16428,
+  "runs": [
+    {
+      "label": "suite-final-01",
+      "record": {
+        "label": "suite-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:40:41.4432920Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\suite-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\suite-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\suite.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_suite; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 26864,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:40:50.3746766Z"
+      },
+      "passes": 95,
+      "raw_log_sha256": "0090cebecfb106cab56d4538b47dfb02e918e8dc88cf9843d8a18081c42b5742",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "save-final-01",
+      "record": {
+        "label": "save-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:41:04.6610349Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\save-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\save-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\save.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_save; wait 5; save ca380-current; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 15000,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:41:13.4675602Z"
+      },
+      "passes": 8,
+      "raw_log_sha256": "13e3877e40772556e08ec58ffe219264885c522a06dba26f616343d14bab2f3a",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "reload-final-01",
+      "record": {
+        "label": "reload-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:41:13.9371519Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\reload-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\reload-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-current.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\verify.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_verify; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 6600,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:41:23.9586209Z"
+      },
+      "passes": 8,
+      "raw_log_sha256": "a48c3d29d235b500a1e28726ca975021b3c325ca1ed179649832f19cd1099bf3",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "travel-final-01",
+      "record": {
+        "label": "travel-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:41:42.3750761Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\travel-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\travel-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-current.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\travel.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_verify; changemap THAZARD; wait 35; netevent ca380_verify; changemap TMAINT; wait 35; netevent ca380_verify; changemap CLTHQA; wait 35; netevent ca380_verify; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 31592,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:41:55.5223731Z"
+      },
+      "passes": 32,
+      "raw_log_sha256": "d7be964596b4d120f8d4a5ae574cc0cdff40fa18991b8cd76bd07b72df4937c9",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "baseline-upgrade-final-01",
+      "record": {
+        "label": "baseline-upgrade-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:41:56.0521602Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\baseline-upgrade-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\baseline-upgrade-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-arrow-baseline.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\legacy-upgrade.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca380_legacy_verify; save ca380-arrow-upgraded; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 47476,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:42:05.2252835Z"
+      },
+      "passes": 5,
+      "raw_log_sha256": "d512b7db366371ab6afdcb159a8493ab147358c7eef2963f47d2e1d9837158af",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "upgraded-reload-final-01",
+      "record": {
+        "label": "upgraded-reload-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:42:05.7476114Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\upgraded-reload-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\upgraded-reload-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-arrow-upgraded.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\legacy-verify.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca380_legacy_verify; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 14932,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:42:14.8922082Z"
+      },
+      "passes": 5,
+      "raw_log_sha256": "fd055f264a6e90e7a66ccf369be85912c7adc3a4a3ca73d7ce101e2859254d97",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "clothing-upgrade-final-01",
+      "record": {
+        "label": "clothing-upgrade-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:43:29.1966816Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\clothing-upgrade-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\clothing-upgrade-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca386-current.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\upgrade-clothing.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca386_verify; save ca380-clothing-upgraded; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 29668,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:43:38.4257431Z"
+      },
+      "passes": 6,
+      "raw_log_sha256": "b0feada540f1abce1317216b1b0911c75d18569f8463dca41b63e7a6c9674b72",
+      "fixture": "checks.pk3"
+    },
+    {
+      "label": "baseline-arrow-save-01",
+      "record": {
+        "label": "baseline-arrow-save-01",
+        "runtime": "baseline",
+        "started_utc": "2026-10-21T13:40:25.8003973Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "24BD261B40FFF56311815D4B203C4DEE9B16F80B7DBC1F34960CDC759889AD8A",
+        "addon_sha256": "4F22DF844E9762DD10E4D316CF7C9806561D9DC55082BCE65F12082FD686F850",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\baseline\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\legacy-checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\baseline-arrow-save-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\baseline-arrow-save-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\legacy-save.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_legacy_save; wait 5; save ca380-arrow-baseline; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 22956,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:40:35.1431284Z"
+      },
+      "passes": 7,
+      "raw_log_sha256": "111a6986d3ba5cb74c90e64facca8c3af4095d0c2e8ef2d189da59b119fbfc8d",
+      "fixture": "legacy-checks.pk3"
+    },
+    {
+      "label": "baseline-rollback-final-01",
+      "record": {
+        "label": "baseline-rollback-final-01",
+        "runtime": "baseline",
+        "started_utc": "2026-10-21T13:42:50.6442868Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "24BD261B40FFF56311815D4B203C4DEE9B16F80B7DBC1F34960CDC759889AD8A",
+        "addon_sha256": "4F22DF844E9762DD10E4D316CF7C9806561D9DC55082BCE65F12082FD686F850",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\baseline\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\legacy-checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\baseline-rollback-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\baseline-rollback-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-arrow-baseline.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\legacy-verify.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca380_legacy_verify; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 33456,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:42:59.8093532Z"
+      },
+      "passes": 5,
+      "raw_log_sha256": "19c1a7cad23d0166cf5359fda54f6e86b4f407ef25198e5bac34ac3f6c8e9c32",
+      "fixture": "legacy-checks.pk3"
+    },
+    {
+      "label": "resume-final-01",
+      "record": {
+        "label": "resume-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:47:00.2630740Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "C2B388A1EC28105AF32AC4D7F545E3C2B30F07DD61A351A0C6375C705990456B",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\resume-checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\resume-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\resume-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-current.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\resume.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_resume; save ca380-completed; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 35252,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:47:10.5243677Z"
+      },
+      "passes": 15,
+      "raw_log_sha256": "e0efa410471c172c16fb16cce221afce5cc0cce94207aa12e4c501e3cceef9b4",
+      "fixture": "resume-checks.pk3"
+    },
+    {
+      "label": "completed-reload-final-01",
+      "record": {
+        "label": "completed-reload-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:47:11.0709367Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "C2B388A1EC28105AF32AC4D7F545E3C2B30F07DD61A351A0C6375C705990456B",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\resume-checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\completed-reload-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\completed-reload-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-completed.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\completed.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca380_completed; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 24768,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:47:20.4554775Z"
+      },
+      "passes": 3,
+      "raw_log_sha256": "3c825e358c7d34e9b2a3cf4525131ebc6011f3a58fce817a8f0bce07df7eed92",
+      "fixture": "resume-checks.pk3"
+    },
+    {
+      "label": "legacy-resume-final-01",
+      "record": {
+        "label": "legacy-resume-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:47:21.0046176Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "C2B388A1EC28105AF32AC4D7F545E3C2B30F07DD61A351A0C6375C705990456B",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\resume-checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\legacy-resume-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\legacy-resume-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "-loadgame",
+          "\"ca380-arrow-upgraded.zds\"",
+          "+exec",
+          "\"<repo>\\build\\issue380\\resume-legacy.cfg\""
+        ],
+        "command_script": "wait 5; netevent ca380_legacy_verify; netevent ca380_resume_legacy; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 15340,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:47:30.3515953Z"
+      },
+      "passes": 10,
+      "raw_log_sha256": "f1b5049a070219a620a3fb4ac3cfbad02bf1228919b6906e3879a121b834c976",
+      "fixture": "resume-checks.pk3"
+    },
+    {
+      "label": "fire-final-02",
+      "record": {
+        "label": "fire-final-02",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:45:23.0800398Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "70D2352148EE7A5603A68E54452BEEE721C3F9F27B07E87487334908D0B54DE3",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\ballistics-qa.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\fire-final-02.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\fire-final-02.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "MAPQA",
+          "+exec",
+          "\"<repo>\\build\\issue380\\..\\issue380-ballistics\\fire.cfg\""
+        ],
+        "command_script": "vid_maxfps 60; wait 180; netevent c313_setup; wait 80; netevent c313_equip 2; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 14; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 15; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 16; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_done; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 36756,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:46:31.8762093Z"
+      },
+      "passes": 32,
+      "raw_log_sha256": "160bbc8bb3453ed2e0923169a9e7f4cf9eeb01c48e159696e553d10281f122f0",
+      "fixture": "ballistics-qa.pk3"
+    },
+    {
+      "label": "ranged-final-01",
+      "record": {
+        "label": "ranged-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:47:43.5462713Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "546610E4EA1C07F32F40F7CFD24F570D05DC9D385B8B8A39340E77C39E3B8E3B",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\ballistics-ranged.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\ranged-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\ranged-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "MAPQA",
+          "+exec",
+          "\"<repo>\\build\\issue380\\..\\issue380-ballistics\\ranged.cfg\""
+        ],
+        "command_script": "wait 190; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 11092,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:47:57.0851411Z"
+      },
+      "passes": 1028,
+      "raw_log_sha256": "9ec03506a8015af44bf17aad86f76036b2551b230da0c2ac679cf8473ac941e8",
+      "fixture": "ballistics-ranged.pk3"
+    },
+    {
+      "label": "world-final-02",
+      "record": {
+        "label": "world-final-02",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:47:57.6693957Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "6FA745B8737B9124CB1AB6C9DD70A7612BF11DCD793947265CB9283099CA4BC0",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\world-final-02.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\world-final-02.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\world.cfg\""
+        ],
+        "command_script": "wait 35; changemap CLTHQA; wait 35; netevent ca380_author; ca_journal_open false; r_drawplayersprites false; +lookdown; wait 5; -lookdown; wait 35; screenshot kits-world.png; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 34404,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:48:09.0075934Z"
+      },
+      "passes": 0,
+      "raw_log_sha256": "1854272e593aa3b45d5676cac13bf05fa3c908b6c428a5e16de7be412809a9df",
+      "fixture": "checks.pk3"
+    }
+  ],
+  "native_runs": 15,
+  "passes": 1259,
+  "failures": 0,
+  "diagnostics": [
+    {
+      "label": "smoke-01",
+      "record": {
+        "label": "smoke-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:35:57.3885749Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "FD94530E422AF624D7BEFE9730E03FF89E6472E5513DB3F045863E30FCB5A161",
+        "addon_sha256": "C2D066EA7800AEE61C845B405CCD4B0C8E7E55692D2C3CE9F4A665B4C58E94D6",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\smoke-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\smoke-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\smoke.cfg\""
+        ],
+        "command_script": "wait 70; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 47288,
+        "exit_code": -1,
+        "finished_utc": "2026-10-21T13:36:32.7649424Z"
+      },
+      "raw_log_sha256": "4ca2463e03f8c1b62fbd41bdd4cf4344dc2d7399b18e1ac8c46ba5141816ac9f",
+      "counts_as_passing": false
+    },
+    {
+      "label": "smoke-02",
+      "record": {
+        "label": "smoke-02",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:36:33.1852424Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "FD94530E422AF624D7BEFE9730E03FF89E6472E5513DB3F045863E30FCB5A161",
+        "addon_sha256": "9E93E8199C33ADD850A390F67AAE6FBDF057A21664846A6461C6CE78C9520D64",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\smoke-02.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\smoke-02.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\smoke.cfg\""
+        ],
+        "command_script": "wait 70; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 5260,
+        "exit_code": -1,
+        "finished_utc": "2026-10-21T13:37:20.3278113Z"
+      },
+      "raw_log_sha256": "a35e225af21b0c8aabe72a0d2a9a5c7fa158d0fdb1aaa767ec053edf357deb5e",
+      "counts_as_passing": false
+    },
+    {
+      "label": "suite-01",
+      "record": {
+        "label": "suite-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:37:20.7312499Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "FD94530E422AF624D7BEFE9730E03FF89E6472E5513DB3F045863E30FCB5A161",
+        "addon_sha256": "2B5AAB105C27EA5F2E6D1FAD5CCDB075EB8770880C4E34CAC9D8A12193B4C310",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\checks.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\suite-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\suite-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "TMAINT",
+          "+exec",
+          "\"<repo>\\build\\issue380\\suite.cfg\""
+        ],
+        "command_script": "wait 35; netevent ca380_suite; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 1916,
+        "exit_code": 0,
+        "finished_utc": "2026-10-21T13:37:29.9520063Z"
+      },
+      "raw_log_sha256": "2e6243eef73dfb709b33b2a177d03d9fccccdb03726827ff43982131491797f8",
+      "counts_as_passing": false
+    },
+    {
+      "label": "fire-final-01",
+      "record": {
+        "label": "fire-final-01",
+        "runtime": "current",
+        "started_utc": "2026-10-21T13:43:58.7709667Z",
+        "engine": "<engine>",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "EB8B42DF28AB71CA86491BAE104DCC891BF9B4E2D2049929DBF5E1395F6DFDCE",
+        "addon_sha256": "70D2352148EE7A5603A68E54452BEEE721C3F9F27B07E87487334908D0B54DE3",
+        "initial_config": "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"<iwad>\"",
+          "-file",
+          "\"<repo>\\build\\issue380\\current\\caelum_argenteum_dev.pk3\"",
+          "\"<repo>\\build\\issue380\\ballistics-qa.pk3\"",
+          "-config",
+          "\"<repo>\\build\\issue380\\fire-final-01.ini\"",
+          "-savedir",
+          "\"<repo>\\build\\issue380\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "380",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"<repo>\\build\\issue380\\fire-final-01.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "MAPQA",
+          "+exec",
+          "\"<repo>\\build\\issue380\\..\\issue380-ballistics\\fire.cfg\""
+        ],
+        "command_script": "vid_maxfps 60; wait 180; netevent c313_setup; wait 80; netevent c313_equip 2; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 14; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 15; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_equip 16; wait 70; netevent c313_before; wait 2; +reload; wait 1; -reload; wait 320; netevent c313_after 0; wait 5; netevent c313_before; wait 2; +attack; wait 1; -attack; wait 60; netevent c313_after 1; wait 5; netevent c313_done; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 43636,
+        "timed_out": true,
+        "exit_code": -1,
+        "finished_utc": "2026-10-21T13:45:00.9844899Z"
+      },
+      "raw_log_sha256": "a8cee7c32eb3017e21b67e7ddb5f7f1c0a8bd5acae79f8b43181d760e41def02",
+      "counts_as_passing": false
+    }
+  ],
+  "art_exports": {
+    "issue": 380,
+    "pillow": "11.3.0",
+    "exports": [
+      {
+        "id": "carbine_kit",
+        "source": "assets/art_source/cartridge_kits/carbine-kit-v1.png",
+        "source_sha256": "3eb8041ffd888ec066281dab564fbb97e0bea15a00fa0abf0c8d64394214b4fa",
+        "output": "src/graphics/caelum/icons/materials/ca_material_carbine_kit.png",
+        "output_sha256": "c5e64dbd0438bc9b045f59481474be710b03c9f237ab8a542f7e801c8fd1e438",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_alpha_bounds": [
+          0,
+          31,
+          1234,
+          1236
+        ],
+        "sprite": "M079A0",
+        "pivot": [
+          64,
+          99
+        ]
+      },
+      {
+        "id": "shotgun_kit",
+        "source": "assets/art_source/cartridge_kits/shotgun-kit-v1.png",
+        "source_sha256": "ee796fe58b297521cd9f5c09b9c668502180920e855d67aba884e3b03965067e",
+        "output": "src/graphics/caelum/icons/materials/ca_material_shotgun_kit.png",
+        "output_sha256": "6415614d13d84ceb61209271ab2b44eed508ecda132c0d2871791cc80292a923",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_alpha_bounds": [
+          0,
+          21,
+          1240,
+          1254
+        ],
+        "sprite": "M080A0",
+        "pivot": [
+          64,
+          115
+        ]
+      }
+    ]
+  },
+  "screenshot_sha256": "5eb4600a4c6435a08422100f631f3d070cbf042f9d3e536d0946d48d0f19c5d5",
+  "saves": {
+    "ca380-arrow-baseline.zds": "f2b053d43fbe4894fa9133740870138a5b6addc249d721e4ce535449e87f7c86",
+    "ca380-arrow-upgraded.zds": "ddc864b4992d5ea88944532d3f0716adb00cf387de541f9416ba21ed436c012a",
+    "ca380-clothing-upgraded.zds": "1cd8c987ef7d91d5c9fd836485a9f7ff5f2f9496fc9cea4f2e545e906031fb5a",
+    "ca380-completed.zds": "dc54f43122bedf32de6203f519afc572194d00d4dfb6e3ce293d3481480174bf",
+    "ca380-current.zds": "7c59363bc2c9b890889bf3d10c7e65c84a53bac3bd6aeec119809729055a7bcc"
+  },
+  "author_acceptance": "CA380-01 pending",
+  "limitations": [
+    "Shop availability and stock renewal are #383/#385.",
+    "Not a frame-presentation or large-map performance benchmark."
+  ]
+}

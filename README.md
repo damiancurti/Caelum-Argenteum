@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.8.** Obtain and update the complete repository, validate
+**Current release: 5.6.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.9 implements carbine/shotgun cartridge assembly (#380) using the approved
+prepared kits, native reservations and existing ammunition identities. Both kits
+have their own inventory/world sprites. Native evidence is recorded in
+assets/validation_569; author check CA380-01 is pending. Commerce remains #383.
 
 V5.6.8 records the author-approved sealed cartridge-kit contract (#379): one
 40 g/45 g game kit per carbine/shotgun cartridge at 100% efficiency, worth 80%

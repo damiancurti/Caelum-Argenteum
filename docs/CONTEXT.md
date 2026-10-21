@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.8** — 2026-10-21.
+Documentation version: **5.6.9** — 2026-10-21.
 
-**5.6.8/#379:** kits approved; SYSTEMS. Assembly:#380.
+**5.6.9/#380:** kits/sprites; validation_569:15runs/1259PASS; CA380-01 pending.
 **5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
 **5.6.7/#387:**25 object sprites; validation_567; CA387-01 accepted2026-10-21. Worn/preview/first-person unfinished.
 **5.6.6/#386:** accepted/merged PR396; validation_566. Shops:#383.

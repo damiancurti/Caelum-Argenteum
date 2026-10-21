@@ -1,0 +1,13 @@
+CA380-01 | 5.6.9 | Issue #380 | Cartridge assembly and kit sprites
+Prerequisites: use the isolated #380 terminal/game prepared by the agent.
+The room supplies 1,000 carbine kits and 1,000 shotgun kits in the Box, a recipe
+book with both sheets, learned recipes, Workbench and Ranged Workshop, plus two
+ground pickups. No console item grants are required. Close the game console to play.
+1. Inspect both ground kits and their inventory/Box icons and names.
+2. Use the workbench, select the ammunition category and each ten-cartridge recipe.
+3. At 25/50/100% efficiency check the preview requires 40/20/10 matching kits.
+   Weight must show 1.600/0.800/0.400 kg carbine, 1.800/0.900/0.450 kg shotgun.
+4. Complete a batch of each: exactly ten existing cartridges appear and only the
+   matching kit count decreases. Close/reopen the station during one task to resume.
+Expected: distinct readable sprites; correct Spanish labels; no unexpected item
+grants or loss; both recipes operate through the normal crafting UI.
