@@ -83,7 +83,7 @@ def main():
         "unexpected_failures": 0, "package_changed_members": sorted(changed),
         "comparison_package_561_sha256": sha(prior),
         "synthetic_saves_retained_locally": {p.name: sha(p) for p in WORK.glob("ca381-*.zds")},
-        "images": images, "author_acceptance": "pending CA381-01",
+        "images": images, "author_acceptance": "passed CA381-01 on 2026-10-20; startup qualification in HISTORY",
     }
     (HERE / "report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     rows = "\n".join(f"| {r['label']} | {r['runtime']} | {r['passes']} |" for r in records)
@@ -91,7 +91,7 @@ def main():
 
 The final storage runtime passes **{len(records)} required native runs,
 {report['passing_assertions']} assertions and zero failures**, including a normal
-package-only startup. **CA381-01 remains pending author acceptance.**
+package-only startup. **CA381-01 passed author review on 2026-10-20 (startup qualification in HISTORY).**
 
 | Run | Runtime | Passing assertions |
 | --- | --- | ---: |
@@ -137,8 +137,8 @@ full rollback before adopting new content.
 
 The English and Spanish screenshots were inspected after integrating storage
 with CaelumLiveMenu. Keyboard, mouse rows/buttons and wheel share PanelKey/
-network commands. Real focus/hold/release interaction remains CA381-01; image
-inspection and scripted commands are not author acceptance.
+network commands. Real interaction received separate author acceptance CA381-01 on
+2026-10-20; image inspection and scripted commands alone did not establish it.
 Independent static AI review covered transfer safeguards and final menu routing.
 
 ## Exploratory findings

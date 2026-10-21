@@ -154,5 +154,5 @@
     "storage-en.png": "425dc746803d46c781feabe0470c12b98edea1cfbbe2b829ab496f6e0feae0a0",
     "storage-es.png": "0f770f48deb067e0086f7e3323aad863af96b821cc8d9c8d8002dd978e4894a6"
   },
-  "author_acceptance": "pending CA381-01"
+  "author_acceptance": "passed CA381-01 on 2026-10-20; startup qualification in HISTORY"
 }
