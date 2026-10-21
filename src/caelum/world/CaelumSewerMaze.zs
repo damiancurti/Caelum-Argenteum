@@ -49,6 +49,26 @@ class CaelumMazeChest : CaelumStashChest
     bool MaterialAllocated;
     int MaterialSize;
     int MaterialRemaining[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int StorageLootPolicyRevision;
+    bool StorageMaterialPolicy;
+
+    // La procedencia acompaña al cofre; viajar no cambia su catálogo.
+    bool UsesMaterialStoragePolicy()
+    {
+        if(StorageLootPolicyRevision<1)
+        {
+            StorageMaterialPolicy=CaelumMazeLayout.IsCardinal();
+            StorageLootPolicyRevision=1;
+        }
+        return StorageMaterialPolicy;
+    }
+
+    override bool IsStorageItem(Inventory item)
+    {
+        // Las piezas retiradas por la migración histórica no vuelven al catálogo.
+        for(int i=0;i<5;i++)if(LegacyLoot[i]==item)return false;
+        return Super.IsStorageItem(item);
+    }
 
     int PreviewMaterial(int material,CaelumMazeMaterialBudget budget)
     {
@@ -145,7 +165,7 @@ class CaelumMazeChest : CaelumStashChest
 
     void EnsureLoot()
     {
-        if(CaelumMazeLayout.IsCardinal())return;
+        if(UsesMaterialStoragePolicy())return;
         MigrateLegacyLoot();
         if(Stocked)return;
         while(Seeded<5)
@@ -172,6 +192,7 @@ class CaelumMazeChest : CaelumStashChest
     {
         let user=CaelumPlayer(activator);
         if(!CanInspect(user))return false;
+        if((user.player.cmd.buttons & BT_SPEED)!=0)return Super.Used(activator);
         if(UseLatched && LastChestUser==user)return true;
         UseLatched=true;LastChestUser=user;
         if(!ChestOpen)
@@ -187,7 +208,7 @@ class CaelumMazeChest : CaelumStashChest
     {
         // Confirmar vuelve a consultar el receptor y las existencias reales.
         if(!CanInspect(user))return;
-        if(CaelumMazeLayout.IsCardinal()){CollectMaterials(user);return;}
+        if(UsesMaterialStoragePolicy()){CollectMaterials(user);return;}
         int taken=0,remaining=0;
         for(int i=0;i<5;i++)
         {
@@ -318,7 +339,7 @@ class CaelumSewerMaze : Object play
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
         let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
         while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
-        Console.Printf("[Caelum 5.6.1] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        Console.Printf("[Caelum 5.6.2] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
         if(CaelumMazeLayout.IsCardinal())Console.Printf("Contenido inicial: 39 cofres de materiales equivalentes a 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas; drops: 96 comida, 96 agua, 360 flechas, 240 virotes. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

@@ -55,8 +55,7 @@ class CaelumStashChestLockedVisual : CaelumStashChestVisual
     }
 }
 
-// Primer prototipo de alijo tridimensional. Todavía no almacena objetos: esta
-// clase valida modelo, colisión, estados, interacción y cerradura reutilizable.
+// #381: el Actor.Inv es el único dueño de los contenidos físicos del cofre.
 class CaelumStashChest : Actor
 {
     bool ChestOpen;
@@ -64,6 +63,108 @@ class CaelumStashChest : Actor
     bool UseLatched;
     Actor LastChestUser;
     CaelumStashChestVisual ChestVisual;
+    int StorageRevision, StorageTier;
+    CaelumChestCargo Cargo;
+
+    void EnsureStorage()
+    {
+        if(StorageRevision>=CaelumContainerRules.REVISION)return;
+        StorageTier=args[4]>0 ? Clamp(args[4]-1,0,2) : CaelumContainerRules.MEDIUM;
+        StorageRevision=CaelumContainerRules.REVISION;
+        // El cofre anterior sigue siendo mediano; no se cambia su geometría.
+        if(StorageTier!=CaelumContainerRules.MEDIUM)ApplyStorageSize();
+        Mass=CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;
+    }
+    void ApplyStorageSize()
+    {
+        double factor=CaelumContainerRules.ScaleFor(StorageTier);
+        let defaults=GetDefaultByType("CaelumStashChest");
+        A_SetSize(defaults.Radius*factor,defaults.Height*factor,false);
+        Mass=CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;
+        RefreshChestVisual();
+    }
+    virtual bool IsStorageItem(Inventory item)
+    {
+        return item!=null && item.Owner==self && item.Amount>0;
+    }
+    virtual int StorageSlots()
+    {
+        int count=0;
+        for(Inventory item=Inv;item!=null;item=item.Inv)
+            if(IsStorageItem(item))count++;
+        return count;
+    }
+    virtual double StorageWeight(CaelumPlayer user)
+    {
+        double weight=0;
+        for(Inventory item=Inv;item!=null;item=item.Inv)
+            if(IsStorageItem(item))weight+=CaelumContainerRules.Weight(user,item);
+        return weight;
+    }
+    double TotalStorageWeight(CaelumPlayer user)
+    {
+        return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION
+            +StorageWeight(user);
+    }
+    bool CanReachStorage(CaelumPlayer user)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.CreationWizardOpen)return false;
+        if(Cargo!=null)return Cargo.Owner==user;
+        return user.Distance3D(self)<=user.UseRange+Radius && user.CheckSight(self);
+    }
+    virtual bool CanStore(CaelumPlayer user)
+    {
+        return CanReachStorage(user) && !IsChestLocked();
+    }
+    void HideCarriedStorage()
+    {
+        bSolid=false;bNoGravity=true;bInvisible=true;
+        A_ChangeLinkFlags(1,1);
+        if(ChestVisual!=null){ChestVisual.Destroy();ChestVisual=null;}
+    }
+    void RestoreWorldStorage(vector3 position)
+    {
+        bNoGravity=false;bInvisible=false;bSolid=true;
+        A_ChangeLinkFlags(0,0);SetOrigin(position,false);
+        RefreshChestVisual();
+    }
+    bool TryPlaceStorage(CaelumPlayer user)
+    {
+        if(Cargo==null || Cargo.Owner!=user)return false;
+        vector3 original=Pos;
+        double offset=user.Radius+Radius+1.0;
+        vector3 destination=user.Pos+(Cos(user.Angle)*offset,Sin(user.Angle)*offset,0);
+        bSolid=true;A_ChangeLinkFlags(0,0);SetOrigin(destination,false);
+        if(!TestMobjLocation() || !user.CheckSight(self,SF_IGNOREVISIBILITY))
+        {SetOrigin(original,false);HideCarriedStorage();return false;}
+        let token=Cargo;Cargo=null;token.Chest=null;token.Destroy();
+        RestoreWorldStorage(destination);
+        user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();
+        return true;
+    }
+    override void OnDestroy()
+    {
+        if(Cargo!=null)
+        {
+            let token=Cargo;Cargo=null;token.Chest=null;token.Destroy();
+        }
+        Inventory item=Inv;
+        while(item!=null)
+        {
+            Inventory next=item.Inv;
+            if(IsStorageItem(item))
+            {
+                let equipment=CaelumEquipmentItem(item);
+                bool unclaimed=equipment!=null && !equipment.AcquisitionResolved;
+                CaelumContainerRules.SetBoxed(item,false);
+                item.BecomePickup();item.SetOrigin(Pos,false);
+                if(unclaimed)item.bDropped=false;
+            }
+            item=next;
+        }
+        if(ChestVisual!=null){ChestVisual.Destroy();ChestVisual=null;}
+        Super.OnDestroy();
+    }
 
     virtual int GetChestLockNumber()
     {
@@ -82,6 +183,7 @@ class CaelumStashChest : Actor
             ChestVisual.Destroy();
             ChestVisual = null;
         }
+        if(Cargo!=null)return;
 
         String visualClass = "CaelumStashChestClosedVisual";
         if (IsChestLocked())
@@ -102,18 +204,23 @@ class CaelumStashChest : Actor
         {
             ChestVisual.master = self;
             ChestVisual.Angle = Angle;
+            double factor=CaelumContainerRules.ScaleFor(StorageTier);
+            ChestVisual.Scale=(factor,factor);
         }
     }
 
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        EnsureStorage();
         RefreshChestVisual();
     }
 
     override void Tick()
     {
         Super.Tick();
+        EnsureStorage();
+        if(Cargo!=null)return;
 
         // Si una partida antigua o una transición no conserva el ayudante
         // visual, se reconstruye desde el estado persistente del alijo.
@@ -139,12 +246,19 @@ class CaelumStashChest : Actor
 
     override bool Used(Actor user)
     {
+        let playerUser=CaelumPlayer(user);
+        if(!CanReachStorage(playerUser) || !CaelumUseGeometry.AimedAt(playerUser,self))return false;
         if (UseLatched && LastChestUser == user)
         {
             return true;
         }
         UseLatched = true;
         LastChestUser = user;
+        if((playerUser.player.cmd.buttons & BT_SPEED)!=0)
+        {
+            CaelumInventoryService.CarryStorageChest(playerUser,self);
+            return true;
+        }
 
         if (IsChestLocked())
         {
@@ -160,8 +274,7 @@ class CaelumStashChest : Actor
             ChestUnlocked = true;
         }
 
-        ChestOpen = !ChestOpen;
-        RefreshChestVisual();
+        CaelumContainerSession.Open(playerUser,self);
         A_StartSound("caelum/world/door_open", CHAN_BODY);
         return true;
     }

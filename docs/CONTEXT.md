@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.1** — 2026-10-20.
+Documentation version: **5.6.2** — 2026-10-20.
 
+**5.6.2/#381:** native chest storage/transport; validation_562; CA381-01 accepted2026-10-20.
 **5.6.1/#377:** merchant coordination; validation_561; CA377-01 accepted2026-10-20.
 **5.6.0/#376:** crafting; validation_560; CA376-01 accepted2026-10-20.
 
@@ -29,8 +30,7 @@ CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 panel at the top; validation_5438:5runs/28checks, CA321-02 accepted Oct18.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
-1024-MU exterior sky, original footprints and private CAH interiors. Other maps:
-TRESERV, TTAROT, TMAINT, TCOAST, THAZARD, TACTORS. Stable IDs remain. Normal siege:
+1024-MU exterior sky, original footprints and private CAH interiors. Stable IDs remain. Normal siege:
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.

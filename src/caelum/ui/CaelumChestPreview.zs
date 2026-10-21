@@ -52,7 +52,7 @@ class CaelumChestPreviewState : Inventory
         if (TutorialChest != null) { RefreshTutorial(user); return; }
         if(Chest==null)return;
         if(!Chest.CanInspect(user)){Chest=null;return;}
-        Materials=CaelumMazeLayout.IsCardinal();
+        Materials=Chest.UsesMaterialStoragePolicy();
         if(Materials)
         {
             let budget=Chest.PreviewBudget(user);
@@ -120,21 +120,80 @@ class CaelumChestPreview : StaticEventHandler
     {
         if(consoleplayer<0 || menuactive!=0)return false;
         let user=CaelumPlayer(players[consoleplayer].mo);
+        return PanelKey(user,e.Type,e.KeyScan,e.KeyString);
+    }
+
+    static ui bool PanelKey(CaelumPlayer user,int type,int scan,String keyString)
+    {
+        let storage=user!=null ? CaelumContainerSession(user.FindInventory("CaelumContainerSession")) : null;
+        if(storage!=null && storage.Chest!=null)
+        {
+            if(type!=InputEvent.Type_KeyDown || scan==InputEvent.Key_Grave)return false;
+            if(scan==InputEvent.Key_DownArrow)EventHandler.SendNetworkEvent("ca_container_move",1);
+            else if(scan==InputEvent.Key_UpArrow)EventHandler.SendNetworkEvent("ca_container_move",-1);
+            else if(scan==InputEvent.Key_RightArrow)EventHandler.SendNetworkEvent("ca_container_quantity",1);
+            else if(scan==InputEvent.Key_LeftArrow)EventHandler.SendNetworkEvent("ca_container_quantity",-1);
+            else if(scan==InputEvent.Key_Space)EventHandler.SendNetworkEvent("ca_container_mode");
+            else if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)
+                EventHandler.SendNetworkEvent("ca_container_transfer");
+            else if(keyString~=="c")EventHandler.SendNetworkEvent("ca_container_carry");
+            else if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Tab
+                || scan==InputEvent.Key_Pad_B || keyString~=="q")
+                EventHandler.SendNetworkEvent("ca_container_close");
+            return true;
+        }
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
         if(preview==null || !preview.IsOpen())return false;
         // Las liberaciones llegan al motor y no dejan Use o marcha retenidos.
-        if(e.Type!=InputEvent.Type_KeyDown || e.KeyScan==InputEvent.Key_Grave)return false;
-        if(e.KeyString~=="n")EventHandler.SendNetworkEvent("ca_chest_next");
-        else if(e.KeyScan==InputEvent.Key_Enter || e.KeyScan==InputEvent.Key_Pad_A)
+        if(type!=InputEvent.Type_KeyDown || scan==InputEvent.Key_Grave)return false;
+        if(keyString~=="d")EventHandler.SendNetworkEvent("ca_container_open");
+        else if(keyString~=="c")EventHandler.SendNetworkEvent("ca_container_carry");
+        else if(keyString~=="n")EventHandler.SendNetworkEvent("ca_chest_next");
+        else if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)
             EventHandler.SendNetworkEvent("ca_chest_collect");
-        else if(e.KeyScan==InputEvent.Key_Escape || e.KeyScan==InputEvent.Key_Tab
-            || e.KeyScan==InputEvent.Key_Pad_B || e.KeyString~=="q")
+        else if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Tab
+            || scan==InputEvent.Key_Pad_B || keyString~=="q")
             EventHandler.SendNetworkEvent("ca_chest_cancel");
         return true;
     }
 
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_container_open" || e.Name=="ca_container_close"
+            || e.Name=="ca_container_move" || e.Name=="ca_container_quantity"
+            || e.Name=="ca_container_mode" || e.Name=="ca_container_transfer"
+            || e.Name=="ca_container_carry")
+        {
+            if(e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
+            let user=CaelumPlayer(players[e.Player].mo);
+            let storage=CaelumContainerSession.Get(user);
+            let preview=CaelumChestPreviewState.Get(user);
+            CaelumStashChest chest=storage!=null ? storage.Chest : null;
+            if(chest==null && preview!=null)
+                chest=preview.Chest!=null ? CaelumStashChest(preview.Chest) : CaelumStashChest(preview.TutorialChest);
+            if(e.Name=="ca_container_open"){CaelumContainerSession.Open(user,chest);return;}
+            if(e.Name=="ca_container_carry")
+            {
+                if(chest!=null)
+                {
+                    bool ok=chest.Cargo!=null ? chest.TryPlaceStorage(user)
+                        : CaelumInventoryService.CarryStorageChest(user,chest);
+                    if(ok && storage!=null)storage.Close();
+                    else if(storage!=null)storage.Status="CA_CONTAINER_REJECTED";
+                }
+                return;
+            }
+            if(storage==null || storage.Chest==null)return;
+            if(e.Name=="ca_container_transfer"){storage.Execute();return;}
+            if(e.Name=="ca_container_close"){storage.Close();return;}
+            storage.Refresh();
+            if(e.Name=="ca_container_mode"){storage.Depositing=!storage.Depositing;storage.Selection=0;}
+            if(e.Name=="ca_container_move" && storage.Rows.Size()>0)
+                storage.Selection=(storage.Selection+(e.Args[0]<0 ? storage.Rows.Size()-1 : 1))%storage.Rows.Size();
+            if(e.Name=="ca_container_quantity")
+                storage.QuantityIndex=(storage.QuantityIndex+(e.Args[0]<0 ? 3 : 1))%4;
+            storage.Status="";storage.Refresh();return;
+        }
         if(e.Name!="ca_chest_collect" && e.Name!="ca_chest_cancel" && e.Name!="ca_chest_next")return;
         if(e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
         let user=CaelumPlayer(players[e.Player].mo);
@@ -162,6 +221,8 @@ class CaelumChestPreview : StaticEventHandler
     {
         if(consoleplayer<0)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
+        let storage=user!=null ? CaelumContainerSession(user.FindInventory("CaelumContainerSession")) : null;
+        if(storage!=null && storage.Chest!=null){DrawStorage(storage);return;}
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
         if(preview==null || !preview.IsOpen())return;
         let font=Font.GetFont("CaelumSmall");
@@ -180,5 +241,29 @@ class CaelumChestPreview : StaticEventHandler
             lines.Destroy();y+=6;
         }
         if(preview.Count>5)DrawLine(font,Font.CR_GRAY,284,String.Format("N: %d / %d",preview.Page+1,(preview.Count+4)/5));
+    }
+
+    static ui void DrawStorage(CaelumContainerSession storage)
+    {
+        let font=Font.GetFont("CaelumSmall");
+        CaelumPresentation.MenuBackground(0x05070A,0.94);
+        DrawLine(Font.GetFont("CaelumDisplay"),Font.CR_GOLD,28,
+            StringTable.Localize(CaelumContainerRules.NameKey(storage.Chest.StorageTier),false));
+        DrawLine(font,Font.CR_GRAY,58,String.Format(StringTable.Localize("CA_CONTAINER_CAPACITY",false),
+            storage.UsedSlots,storage.MaximumSlots,storage.UsedWeight,storage.MaximumWeight,storage.TotalWeight));
+        DrawLine(font,Font.CR_WHITE,79,StringTable.Localize(storage.Depositing ? "CA_CONTAINER_DEPOSIT"
+            : "CA_CONTAINER_WITHDRAW",false)..String.Format(" · %d",storage.Quantity()));
+        int first=(storage.Selection/4)*4;
+        double y=104;
+        if(storage.Labels.Size()==0)DrawLine(font,Font.CR_GRAY,y,StringTable.Localize("CA_CHEST_PREVIEW_EMPTY",false));
+        for(int i=first;i<Min(first+4,storage.Labels.Size());i++)
+        {
+            String text=(i==storage.Selection ? "> " : "  ")..storage.Labels[i];
+            let lines=font.BreakLines(text,550);
+            for(int row=0;row<Min(2,lines.Count());row++)
+            {DrawLine(font,i==storage.Selection ? Font.CR_GOLD : Font.CR_WHITE,y,lines.StringAt(row));y+=14;}
+            lines.Destroy();y+=7;
+        }
+        if(storage.Status!="")DrawLine(font,Font.CR_WHITE,256,StringTable.Localize(storage.Status,false));
     }
 }

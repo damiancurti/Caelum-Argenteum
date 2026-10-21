@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.1** — 2026-10-20.
+Documentation version: **5.6.2** — 2026-10-20.
+
+## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
+
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
+The author approved all chest classes, stack-based spaces, three capacities,
+10% empty mass, transportation, no nesting, exact full requested transfers and
+spilled contents on destruction. A later clarification doubles each linear
+dimension between tiers and retains the existing model as medium. The author
+was away during implementation; author acceptance is recorded below.
+
+The chest remains the native Actor owner of stored objects. A carried handle
+preserves that owner through saves/travel; the live-menu projection routes exact
+transactions through InventoryService. Existing locks, reward quotas and retired
+loot backups remain. New storage and source-policy state have revision 1.
+
+Independent review found and corrected water-container stacking, protected
+temporary/Tarot transfers, processing-manual acquisition and inherited boxed
+arrow routing. Native tests exposed lost map-local TID registration during
+travel and a placement sight test against the intentionally hidden carried body;
+both were corrected. Visual inspection exposed a missing LiveMenu context,
+then verified the integrated bilingual storage display. Early fixture errors
+(small-tier initialization, null legacy catalogue slots and premature map
+commands) remain separate from passing evidence.
+
+Fifteen final native runs pass 175 assertions; static validation reports no
+errors. See `assets/validation_562/RESULTS.md` for results, original and
+reversed-save rollback, retained hashes and limitations. On 2026-10-20 the
+author confirmed CA381-01 (origin 5.6.2 / #381): "La prueba 381 dio bien."
+They had reported missing startup supplies and received the manual ca381_save
+command before confirming the test. No further exceptions were reported.
+This confirms the gameplay check, not a new automatic-launch test. Its pending
+entry is retired; version 5.6.2 remains unchanged. No merge/closure is implied.
 
 ## 5.6.1 - Merchant coordinator (#377), 2026-10-20
 

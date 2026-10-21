@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.1.** Obtain and update the complete repository, validate
+**Current release: 5.6.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.2 adds ordinary native chest storage (#381): three authored capacities,
+exact deposit/withdrawal, full carried mass, safe placement and spilled contents
+on destruction. Each larger tier doubles every linear dimension; the existing
+chest remains medium. Native locks and tutorial/labyrinth allocation remain.
+See [validation](assets/validation_562/RESULTS.md); CA381-01 passed author review on 2026-10-20.
 
 V5.6.1 isolates merchant coordination (#377) while retaining Palomo's character
 record and each city vendor's native inventory/wallet. Transactions reject

@@ -144,8 +144,32 @@ class CaelumLiveMenuControls : Object ui
         }
         else if(context==host.CTX_CHEST)
         {
-            Row(303);Button("CA_UI_COLLECT",InputEvent.Key_Enter,0,"",280);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
-            Row(325);Button("CA_UI_NEXT",0,110,"n");
+            let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
+            if(storage!=null && storage.Chest!=null)
+            {
+                Row(278);Button("CA_UI_PREVIOUS",InputEvent.Key_UpArrow,0,"",140);
+                Button("CA_UI_NEXT",InputEvent.Key_DownArrow,0,"",140);
+                Button("CA_UI_MINUS",InputEvent.Key_LeftArrow,0,"",140);
+                Button("CA_UI_PLUS",InputEvent.Key_RightArrow,0,"",140);
+                Row(300);Button("CA_CONTAINER_MODE",InputEvent.Key_Space,0,"",188);
+                Button("CA_CONTAINER_TRANSFER",InputEvent.Key_Enter,0,"",188);
+                Button("CA_CONTAINER_CARRY",0,99,"c",188);
+                Row(322);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",188);
+                int first=storage.Selection/4*4;double y=104;
+                let font=Font.GetFont("CaelumSmall");
+                for(int i=first;i<Min(first+4,storage.Labels.Size());i++)
+                {
+                    let lines=font.BreakLines("> "..storage.Labels[i],550);
+                    double height=Min(2,lines.Count())*14+7;lines.Destroy();
+                    Region(8000+i,42,y,550,height);y+=height;
+                }
+            }
+            else
+            {
+                Row(303);Button("CA_UI_COLLECT",InputEvent.Key_Enter,0,"",280);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
+                Row(325);Button("CA_UI_NEXT",0,110,"n");
+                Button("CA_CONTAINER_STORAGE",0,100,"d",188);Button("CA_CONTAINER_CARRY",0,99,"c",188);
+            }
         }
         else if(context==host.CTX_EQUIPMENT)
         {
@@ -167,6 +191,14 @@ class CaelumLiveMenuControls : Object ui
         let view=host.Journal();let user=host.Subject;
         if(id==9001){host.ResetInput();Menu.SetMenu("CaelumNavigationMenu");return;}
         if(id==9000){host.ResetInput();Menu.SetMenu("CaelumNotificationMenu");return;}
+        if(id>=8000)
+        {
+            let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
+            if(storage==null || storage.Chest==null)return;
+            int delta=id-8000-storage.Selection;
+            for(int i=0;i<Abs(delta);i++)EventHandler.SendNetworkEvent("ca_container_move",delta<0 ? -1 : 1);
+            return;
+        }
         if(id>=7000){CaelumScheduleCalendar.Set("ca_calendar_event",id-7000);return;}
         if(id>=6000)
         {
@@ -216,7 +248,12 @@ class CaelumLiveMenuControls : Object ui
         if(host.Context==4)CaelumCraftingUI.Mouse(host.Journal(),host.Subject,direction<0?UIEvent.Type_WheelUp:UIEvent.Type_WheelDown,point);
         else if(host.Context==host.CTX_SKIP)CaelumTimeSkipPanel.PointerInput(host.Journal(),host.Subject,direction<0?UIEvent.Type_WheelUp:UIEvent.Type_WheelDown,point);
         else if(host.Context==host.CTX_CALENDAR)host.Stroke(direction<0?InputEvent.Key_PgUp:InputEvent.Key_PgDn);
-        else if(host.Context==host.CTX_CHEST)host.Stroke(0,110,"n");
+        else if(host.Context==host.CTX_CHEST)
+        {
+            let storage=CaelumContainerSession(host.Subject.FindInventory("CaelumContainerSession"));
+            if(storage!=null && storage.Chest!=null)host.Stroke(direction<0?InputEvent.Key_UpArrow:InputEvent.Key_DownArrow);
+            else host.Stroke(0,110,"n");
+        }
         else host.Stroke(direction<0?InputEvent.Key_UpArrow:InputEvent.Key_DownArrow);
     }
 }

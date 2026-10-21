@@ -2,6 +2,168 @@
 // Cada operación recibe al propietario; esta clase no guarda estado.
 class CaelumInventoryService : Object play
 {
+    // #381: preparar la ficha antes de ocultar el cuerpo o alterar la carga.
+    static bool CarryStorageChest(CaelumPlayer user,CaelumStashChest chest)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || chest==null
+            || !chest.CanReachStorage(user) || chest.Cargo!=null)return false;
+        chest.EnsureStorage();user.RefreshCarriedInventorySummary();
+        let maze=CaelumMazeChest(chest);
+        if(maze!=null)maze.UsesMaterialStoragePolicy();
+        if(!user.CanAddWeightToPersonalInventory(chest.TotalStorageWeight(user)))return false;
+        let cargo=CaelumChestCargo(Actor.Spawn("CaelumChestCargo",user.Pos,NO_REPLACE));
+        if(cargo==null)return false;
+        let session=CaelumContainerSession.Get(user);if(session!=null)session.Close();
+        let preview=CaelumChestPreviewState.Get(user);if(preview!=null)preview.Close();
+        cargo.Chest=chest;cargo.AttachToOwner(user);chest.Cargo=cargo;
+        chest.HideCarriedStorage();
+        user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();
+        return true;
+    }
+
+    static bool TransferContainerItem(CaelumPlayer user,CaelumStashChest chest,
+        Inventory item,int quantity,bool depositing)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || chest==null || !chest.CanStore(user)
+            || item==null || quantity<=0 || quantity>item.Amount
+            || !CaelumContainerRules.Allowed(user,item,depositing))return false;
+        let session=CaelumContainerSession.Get(user);
+        if(session==null || session.Chest!=chest)return false;
+        Actor source=depositing ? Actor(user) : Actor(chest);
+        Actor receiver=depositing ? Actor(chest) : Actor(user);
+        if(item.Owner!=source || (!depositing && !chest.IsStorageItem(item)))return false;
+        let material=CaelumMaterialPickup(item);
+        bool limitedSupply=!depositing && material!=null && material.GetSpecialTier()==1
+            && CaelumMainM00SupplyRules.IsLimited(user)
+            && CaelumMainM00SupplyRules.IsRawSupply(material.GetSpecialType());
+        bool prepaid=limitedSupply && material.LimboQuotaReserved;
+        int materialType=material!=null ? material.GetSpecialType() : -1;
+        int newlyTemporary=limitedSupply ? quantity-Min(quantity,material.LimboQuestUnits) : 0;
+        if(limitedSupply)
+        {
+            if(prepaid && material.LimboQuotaPlayer!=user.PlayerNumber())return false;
+            int quota=prepaid ? material.Amount
+                : CaelumMainM00SupplyRules.Remaining(user,material.GetSpecialType());
+            if(quantity>quota || quantity>CaelumMainM00SupplyRules.CarryRoom(user))return false;
+        }
+        bool partial=quantity<item.Amount;
+        if(partial && !CaelumContainerRules.Stackable(item))return false;
+        Inventory receiving=CaelumContainerRules.MatchingStack(receiver,item);
+        if(receiving!=null && receiving.Amount>receiving.MaxAmount-quantity)return false;
+        double unit=CaelumContainerRules.Weight(user,item)/Max(1,item.Amount);
+        double weight=quantity*unit;
+        int slots=chest.StorageSlots();
+        double content=chest.StorageWeight(user);
+        if(depositing)
+        {
+            int newSlots=slots+int(receiving==null);
+            if(newSlots>CaelumContainerRules.Slots(chest.StorageTier) && newSlots>slots)return false;
+            if(content+weight>CaelumContainerRules.Capacity(chest.StorageTier))return false;
+        }
+        user.RefreshCarriedInventorySummary();
+        bool carried=chest.Cargo!=null && chest.Cargo.Owner==user;
+        bool oldBox=CaelumContainerRules.Boxed(depositing ? item : receiving);
+        if(!depositing && oldBox && !CaelumContainerRules.CanBox(item))return false;
+        bool destinationBox=false, fits=false;
+        for(int route=0;route<(depositing || !CaelumContainerRules.CanBox(item) ? 1 : 2);route++)
+        {
+            double personal=carried ? (depositing ? weight : -weight) : 0.0;
+            double boxWeight=0.0;int boxSlots=0;
+            destinationBox=!depositing && (oldBox || route==1);
+            if(limitedSupply && destinationBox)continue;
+            if(depositing)
+            {
+                if(oldBox){boxWeight-=weight;if(!partial)boxSlots--;}
+                else personal-=weight;
+            }
+            else if(destinationBox)
+            {
+                if(!user.MagicBoxOwned)continue;
+                boxWeight+=weight;
+                if(!oldBox)
+                {
+                    boxSlots++;
+                    if(receiving!=null)
+                    {
+                        double moved=CaelumContainerRules.Weight(user,receiving);
+                        personal-=moved;boxWeight+=moved;
+                    }
+                }
+            }
+            else personal+=weight;
+            if(user.PalomoTransactionCapacityFits(personal,boxWeight,boxSlots))
+            {fits=true;break;}
+        }
+        if(!fits)return false;
+        Inventory split=null;
+        if(partial && receiving==null)
+        {
+            split=Inventory(Actor.Spawn(item.GetClass(),user.Pos,NO_REPLACE));
+            if(split==null)return false;
+            for(int arg=0;arg<5;arg++)split.args[arg]=item.args[arg];
+        }
+        let equipment=CaelumEquipmentItem(item);
+        if(!depositing && equipment!=null && !equipment.HasAcquiredIdentity())
+        {
+            // Resolver mientras el dueño sigue siendo el cofre, sólo tras el preflight.
+            int kind=equipment.PreviewEquipmentKind(),type=equipment.PreviewItemType();
+            int slot=equipment.PreviewArmorSlot(),tier=equipment.PreviewTier();
+            int size=equipment.PreviewEquipmentSize(user),essence=equipment.PreviewEssenceType();
+            int wear=equipment.PreviewDurability(user);
+            double resolvedWeight=equipment.PreviewUnitWeight(user);
+            equipment.EquipmentKind=kind;equipment.ItemType=type;equipment.ArmorSlot=slot;
+            equipment.Tier=tier;equipment.EquipmentSize=size;equipment.EssenceType=essence;
+            equipment.Durability=wear;equipment.UnitWeight=resolvedWeight;
+            equipment.PickupDataInitialized=true;
+        }
+        // Las pilas de materiales temporales conservan su procedencia al dividirse.
+        let special=CaelumSpecialInventoryItem(item);
+        int questUnits=special!=null ? Min(quantity,special.LimboQuestUnits) : 0;
+        int supplyUnits=special!=null ? Min(quantity,special.LimboSupplyUnits) : 0;
+        Inventory result=receiving!=null ? receiving : split!=null ? split : item;
+        let resultSpecial=CaelumSpecialInventoryItem(result);
+        if(result!=item && special!=null && resultSpecial!=null)
+        {
+            resultSpecial.LimboQuestUnits+=questUnits;resultSpecial.LimboSupplyUnits+=supplyUnits;
+            resultSpecial.LimboQuotaReserved=special.LimboQuotaReserved;
+            resultSpecial.LimboQuotaPlayer=special.LimboQuotaPlayer;
+            special.LimboQuestUnits-=questUnits;special.LimboSupplyUnits-=supplyUnits;
+        }
+        if(receiving!=null)
+        {
+            receiving.Amount+=quantity;item.Amount-=quantity;
+            if(item.Amount==0)item.Destroy();
+        }
+        else if(split!=null)
+        {
+            split.Amount=quantity;item.Amount-=quantity;split.AttachToOwner(receiver);
+        }
+        else
+        {
+            source.RemoveInventory(item);item.AttachToOwner(receiver);
+        }
+        CaelumContainerRules.SetBoxed(result,destinationBox);
+        if(limitedSupply)
+        {
+            let received=CaelumSpecialInventoryItem(result);
+            received.LimboQuestUnits=Min(received.Amount,received.LimboQuestUnits+newlyTemporary);
+            if(!prepaid)CaelumMainM00SupplyRules.Issue(user,materialType,quantity);
+            user.RefreshSocialJournalSnapshot();
+        }
+        if(!depositing && equipment!=null)
+        {
+            equipment.AcquisitionResolved=true;
+            equipment.SizePolicyRevision=CaelumEquipmentRules.SIZE_POLICY_REVISION;
+            user.EnsureEquipmentItemId(equipment);
+        }
+        chest.Mass=chest.TotalStorageWeight(user);
+        if(!depositing && result is "CaelumProcessingManual")user.LearnAllProcessingRecipes();
+        if(!depositing)CaelumNotifications.Acquired(user,result,quantity);
+        user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();
+        user.PersistCharacterState();
+        return true;
+    }
+
     // #377: reservar instancias separadas antes de alterar objetos o saldos.
     // El plan monetario existente sigue siendo la única fuente de cantidades.
     static bool PrepareMerchantCurrencyObjects(CaelumPlayer user, out Array<CaelumCurrencyItem> coins)
@@ -2021,6 +2183,13 @@ class CaelumInventoryService : Object play
             carriedItemWeight += keyWeight;
         }
 
+        // Los cofres cargados no reciben la compresión de la Caja Mágica.
+        for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
+        {
+            let cargo=CaelumChestCargo(cursor);if(cargo==null || cargo.Chest==null)continue;
+            double weight=cargo.CarriedWeight(user);
+            user.PersonalInventoryItemCount++;personalInventoryWeight+=weight;carriedItemWeight+=weight;
+        }
         user.HUDMagicBoxRawContentWeight = Max(0.0, magicBoxRawContentWeight);
         user.HUDMagicBoxReducedContentWeight =
             user.CalculateMagicBoxReducedContentWeight(
@@ -2061,6 +2230,7 @@ class CaelumInventoryService : Object play
 
     static int GetFormalInventoryEntryKind(CaelumPlayer user, Inventory entry)
     {
+        if(entry is "CaelumChestCargo")return CaelumConstants.EQUIPMENT_KIND_CONTAINER;
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
         if (equipment != null) { return equipment.EquipmentKind; }
         CaelumConsumableItem consumable = CaelumConsumableItem(entry);
@@ -2152,6 +2322,8 @@ class CaelumInventoryService : Object play
 
     static double GetFormalInventoryEntryWeight(CaelumPlayer user, Inventory entry)
     {
+        let cargo=CaelumChestCargo(entry);
+        if(cargo!=null)return cargo.CarriedWeight(user);
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
         if (equipment != null) { return Max(0.0, equipment.UnitWeight); }
         CaelumConsumableItem consumable = CaelumConsumableItem(entry);
@@ -2245,6 +2417,12 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowAmount[row] = Max(1, entry.Amount);
         user.FormalInventoryRowWeight[row] =
             user.GetFormalInventoryEntryWeight(entry);
+        let cargo=CaelumChestCargo(entry);
+        if(cargo!=null)
+        {
+            user.FormalInventoryRowType[row]=cargo.Chest!=null ? cargo.Chest.StorageTier : CaelumContainerRules.MEDIUM;
+            user.FormalInventoryRowAmount[row]=1;return;
+        }
 
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
         if (equipment != null)
@@ -2462,6 +2640,8 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        let cargo=CaelumChestCargo(entry);
+        if(cargo!=null){CaelumContainerSession.Open(user,cargo.Chest);return;}
         user.ApplyFormalInventorySelection(entry);
         let bag = CaelumSleepingBag(entry);
         if (bag != null && !bag.InMagicBox)
@@ -2497,6 +2677,7 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        if(entry is "CaelumChestCargo")return;
         user.ApplyFormalInventorySelection(entry);
         user.ToggleSelectedMagicBox();
         user.RefreshFormalInventorySnapshot();
@@ -2508,6 +2689,12 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        let cargo=CaelumChestCargo(entry);
+        if(cargo!=null)
+        {
+            if(cargo.Chest!=null)cargo.Chest.TryPlaceStorage(user);
+            return;
+        }
         user.ApplyFormalInventorySelection(entry);
         user.DropSelectedEquipment();
         user.RefreshFormalInventorySnapshot();
