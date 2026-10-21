@@ -1244,7 +1244,7 @@
     "ca383-legacy.zds": "0bf0eabf71d6cb3ab62b436fc3fe9a03cdd95c6509a05442c232183076c5f765",
     "ca383-upgraded.zds": "37361437cc744667ec51cd73cf0d36e0ecc3ef888afe8e01af391fb042f24f54"
   },
-  "author_acceptance": "CA383-01 pending",
+  "author_acceptance": "CA383-01 passed on 2026-10-21: live library/shop test",
   "limitations": [
     "Stock replenishment is #385.",
     "Worn/preview/first-person clothing is #387."

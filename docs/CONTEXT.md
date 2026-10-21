@@ -2,7 +2,7 @@
 
 Documentation version: **5.6.10** — 2026-10-21.
 
-**5.6.10/#383:**library/clothing/kits/locks;validation_5610;CA383-01 pending.
+**5.6.10/#383:**library/clothing/kits/locks;validation_5610;CA383-01 accepted2026-10-21.
 **5.6.9/#380:** accepted2026-10-21; validation_569:15runs/1259PASS.
 **5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
 **5.6.7/#387:**25 object sprites; validation_567; CA387-01 accepted2026-10-21. Worn/preview/first-person unfinished.

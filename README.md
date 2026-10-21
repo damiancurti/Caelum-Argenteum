@@ -13,7 +13,7 @@ V5.6.10 adds the city library and clothing shop (#383), with matching signs,
 all approved recipe/tier books, sized clothing, sealed cartridge kits and matched
 padlock/key pairs. Purchases deliver only missing notebook sheets and require
 study; duplicate books cannot charge money. See assets/validation_5610.
-Author check CA383-01 is pending; merchant replenishment remains #385.
+CA383-01 passed on 2026-10-21; merchant replenishment remains #385.
 
 V5.6.9 implements carbine/shotgun cartridge assembly (#380) using the approved
 prepared kits, native reservations and existing ammunition identities. Both kits

@@ -72,7 +72,7 @@ def main():
     report=dict(issue=383,version='5.6.10',base_commit='c492a1bc',package_sha256=sha(package),source_member_count=len(names),
         runs=runs,native_runs=len(runs),passes=sum(r['passes'] for r in runs),failures=0,diagnostics=diagnostics,
         generator_hashes=before,performance=performance,saves={p.name:sha(p) for p in WORK.glob('ca383-*.zds')},
-        author_acceptance='CA383-01 pending',limitations=['Stock replenishment is #385.','Worn/preview/first-person clothing is #387.'])
+        author_acceptance='CA383-01 passed on 2026-10-21: live library/shop test',limitations=['Stock replenishment is #385.','Worn/preview/first-person clothing is #387.'])
     (HERE/'report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     print(json.dumps({k:report[k] for k in ['native_runs','passes','failures','package_sha256','performance']}))
 if __name__=='__main__':main()

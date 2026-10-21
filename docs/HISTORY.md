@@ -14,7 +14,9 @@ Evidence: assets/validation_5610; 13 native runs / 576 PASS / zero FAIL, static
 validation pass. Actual 5.5.8a visited-city migration, current/hub/non-hub saves,
 original recovery and bilingual menus are covered. Isolated library frame
 intervals average 60.05/s, p99 17.659 ms; no large-map performance claim.
-CA383-01 author review remains pending.
+CA383-01 (originating 5.6.10, #383) passed on 2026-10-21: the author confirmed
+"La prueba dio correcto" after the supplied live library/shop test. Its pending
+entry is removed; no merge is claimed.
 No restock or full worn-clothing completion is claimed.
 
 ## 5.6.9 - Native cartridge assembly (#380), 2026-10-21

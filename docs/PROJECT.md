@@ -9,7 +9,7 @@ cartridge kits and paired lock/key commerce are implemented. Notebook purchases
 preserve study, page weight, duplicate rejection and atomic payment. Numbered
 catalogue migration preserves old merchandise and wallets. Static/native evidence
 is kept in assets/validation_5610 (13 runs / 576 PASS / zero FAIL, static pass);
-CA383-01 awaits author confirmation. #385
+CA383-01 passed on 2026-10-21. #385
 replenishment and #387 worn/preview/first-person coverage remain separate.
 
 ## 5.6.9 - Native cartridge assembly (#380)

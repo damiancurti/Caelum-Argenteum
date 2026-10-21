@@ -1,7 +1,7 @@
 # #383 city catalogues — 5.6.10
 
 Static validation passes. Thirteen final native runs on GZDoom 4.14.2 / Windows
-11 record **576 PASS, zero FAIL**. CA383-01 author acceptance is pending.
+11 record **576 PASS, zero FAIL**. CA383-01 passed author review on 2026-10-21.
 `report.json` records commands, configurations, environment and hashes;
 `native/` preserves sanitized complete logs, including failed diagnostics.
 

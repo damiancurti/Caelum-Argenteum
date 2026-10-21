@@ -10,7 +10,7 @@ assets/map06_port/HOUSE_HUBS.json; runtime aliases: shop_signs.textures.
 The six earlier sign PNGs remain byte-identical. The two additions use the same
 code-native vector drawing style, palette and layout; no external art is added.
 Catalogue placements derive from SHOP_CATALOGUE.json and original city door
-data. Native/visual evidence: assets/validation_5610; author review is pending.
+data. Native/visual evidence: assets/validation_5610; CA383-01 passed on 2026-10-21.
 
 ## 5.6.9 - Prepared cartridge-kit sprites (#380)
 
