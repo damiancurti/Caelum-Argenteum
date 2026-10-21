@@ -33,7 +33,7 @@ V5.6.1 isolates merchant coordination (#377) while retaining Palomo's character
 record and each city vendor's native inventory/wallet. Transactions reject
 foreign sessions and stale selections before payment; product and currency
 instances are prepared together. See [validation](assets/validation_561/RESULTS.md).
-Author check CA377-01 remains in pending_test.txt.
+Author check CA377-01 passed on 2026-10-20; no author checks remain queued.
 
 V5.6.0 extracts crafting planning, task and session coordination (#376),
 preserving native inventory commits and save fields. Baseline/revised native

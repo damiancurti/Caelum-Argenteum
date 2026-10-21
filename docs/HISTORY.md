@@ -142,8 +142,12 @@ equipment identity checks exposed a fixture error: assigning a player's ID to
 a vendor-owned item correctly fails the existing authority guard. The corrected
 fixture assigns identity while player-owned before returning the item to stock.
 Initial failed logs remain preserved and are not counted as passing gates.
-Author check CA377-01 remains pending; this delivery does not claim acceptance,
-merge or issue closure.
+The author confirmed CA377-01 (origin 5.6.1 / #377) passed on 2026-10-20,
+with no reported exceptions. Its actionable pending entry is retired; the
+tracked queue remains empty. The corrected interactive launcher also emitted
+its two setup checks in the observed author session; this is distinct from
+the author's gameplay acceptance and does not add to the automated suite count.
+Version 5.6.1 is unchanged. No merge or issue closure is implied.
 
 ## 5.6.0 - Crafting coordinator (#376), 2026-10-20
 
