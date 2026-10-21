@@ -1,6 +1,84 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.3** — 2026-10-20.
+Documentation version: **5.6.3a** — 2026-10-20.
+
+## Lock tools and lawful access: proposal for review (#382, 5.6.3a)
+
+**PROPOSAL ONLY.** On 2026-10-20 the author requested a concrete proposal for
+lockpicks/master-key acquisition, mass, price and recipes. This section separates
+already confirmed rules from recommendations. None of the new values below is
+implemented or approved merely by appearing in this document.
+
+Confirmed: padlocks are 100% steel, weighing 1/3/5 kg for the three chest tiers;
+crafting includes a matching key weighing 10% of the lock (0.1/0.3/0.5 kg), so the
+combined outputs require 1.1/3.3/5.5 kg at 100% material efficiency. Each tier
+doubles height, width and depth relative to the previous. A matching key, master key or lockpicks
+opens a lock; tools have no durability/consumption. A single blunt hit breaks a
+lock for now. Opening someone else's locked chest shows a theft warning only;
+hostility/faction consequences remain deferred.
+
+### Proposed tools and sources
+
+Use the existing medium chest as the geometry reference, fit the medium padlock
+to its latch, and scale each dimension by tier. There is no existing padlock model
+whose dimensions have already been accepted.
+
+| Item | Finished mass | Recipe at 100% efficiency | Complexity / stations | Availability |
+| --- | ---: | --- | --- | --- |
+| Lockpick set | 0.100 kg | 0.100 kg steel, one reusable set | Existing complex rate (4 tics/material unit); Workbench + Forge + Anvil | Existing city melee/metal-tool vendors, one copy per vendor; recipe book in the library |
+| Master key | 0.500 kg | 0.500 kg steel, one reusable key | Existing complex rate; same stations plus Master Workbench | Existing city melee/metal-tool vendors, one copy per vendor; recipe book in the library |
+| Small / medium / large padlock + its key | 1.100 / 3.300 / 5.500 kg total | Exactly the confirmed steel mass; one lock and its paired key | Existing complex rate; Workbench + Forge + Anvil, with specialist/master access matching chest tier | Existing city melee/metal-tool vendors, one matched pair per tier; recipe books in the library |
+
+No extra quest, NPC, rare component, probability or minigame is proposed. Both
+bypass tools open the new ordinary padlocks deterministically, without spending
+the tool. They do not bypass existing mission/native locks or quest permissions.
+A master key's station requirement distinguishes its manufacture from lockpicks;
+no unapproved combat bonus or material adornment is introduced.
+
+Proposed pricing is fully derived, not a second price table. Let Vsteel be the
+current base value of one steel material unit (0.001 kg). Base values are
+100*Vsteel*1.25 for lockpicks, 500*Vsteel*2 for the master key, and respectively
+1100*Vsteel*1.25, 3300*Vsteel*1.50, 5500*Vsteel*2 for each lock/key pair. Apply the
+existing vendor 150% buy / 50% sell margin exactly once with existing rounding.
+These proposed manufacturing multipliers are the existing T1/T2/T3 margins;
+100% steel excludes the usual silver/gold decoration. Split a pair's base value
+between lock and key in their 10:1 mass ratio. Recipe books use the author's
+10%-of-equipment rule. Other efficiencies consume materials and take time through
+#378; neither balance nor replenishment is silently changed by this proposal.
+
+### Proposed ownership and alert matrix
+
+| Situation | Recommended entitlement and result |
+| --- | --- |
+| Existing unmodified chest or item | Preserve current native key, quest, quota and acquisition rules; no retroactive crime inferred |
+| New chest explicitly granted to or crafted by a player | Record that character's lawful title separately from native physical possession |
+| Public chest | Current permitted access remains public; depositing an item does not privatize it |
+| Installing/removing a padlock | Only the recorded lawful chest owner may fit/remove it; tier must match; fitting does not transfer title |
+| Owner opens a new padlock with matching key or tool | Open without theft warning |
+| Another character opens a new padlock | Allow the confirmed bypass; warn exactly once on that committed closed-to-open transition |
+| Preview, failed access, cancel or repeated held input | No warning, no transferred item and no changed claim |
+| Breaking the new padlock with a blunt hit | One committed break opens it and runs the same owner/alert check; it does not damage or destroy chest contents |
+| Explicit reward/gift or purchase | Existing authorized delivery transfers lawful title when it transfers the item successfully |
+| Quest loan, equipped/reserved or temporary object | Existing exclusions remain; possession alone cannot turn a loan into a saleable gift |
+| Existing world/death drops | Preserve current pickup entitlement and quantities; no retrospective title or crime is invented |
+| Sell/recover ordinary owned items | Existing trade rules; no new stolen-price penalty, recovery demand or confiscation |
+
+The ownership proposal uses an explicit saved character/source identity, not
+Inventory.Owner as proof of legal title. Native Actor.Inv/Owner and ItemId remain
+physical inventory authority. Unclassified legacy objects retain existing access;
+new lock ownership is assigned only by a recorded grant/craft/installation rule.
+Old native locks are not converted into the new padlock system automatically.
+A numbered, idempotent migration must retain native owners and quest restrictions.
+
+### Review decisions still required
+
+Approve or amend the two tool masses/recipes, station access and derived pricing;
+the ordinary-vendor/library availability; the proposed ownership defaults and
+alert moment; and fitting the new medium padlock to the existing chest latch.
+The confirmed lock masses, key ratio, doubled dimensions, no durability and
+warning-only consequence are not reopened. No requested author test is added
+until an implementation exists. #384 may audit existing exactly-once acquisition
+without inventing this still-unapproved legal ownership delta.
 
 ## Recipe sheets, reading and practice (#378, 5.6.3)
 

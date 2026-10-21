@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.3** — 2026-10-20.
+Documentation version: **5.6.3a** — 2026-10-20.
 
+**5.6.3a/#382:** proposal in SYSTEMS; approval pending.
 **5.6.3/#378:** recipe sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library shops: #383.
 **5.6.2/#381:** native chest storage/transport; validation_562; CA381-01 accepted2026-10-20.
 **5.6.1/#377:** merchant coordination; validation_561; CA377-01 accepted2026-10-20.
@@ -337,11 +338,8 @@ separate agent evidence/author acceptance. Preserve history and unique content.
 
 Premises: `AGENTS.md`, `docs/PROJECT.md`.
 
-Evidence differs from acceptance.
-
 [pending_test.txt](../pending_test.txt) holds outstanding author tests across
 versions. Only author-confirmed passes move their ID, version/issue, result,
 date and qualifications to [HISTORY.md](HISTORY.md); remove the entry together.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 Docs and AGENTS declare the current version; ancillary guides inherit README.
-Historical labels retain their meaning.

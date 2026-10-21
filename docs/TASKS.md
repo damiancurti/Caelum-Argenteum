@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.3** — 2026-10-20.
+Documentation version: **5.6.3a** — 2026-10-20.
+
+## 5.6.3a - Review the lock-tool proposal (#382)
+
+The author requested the proposal, now recorded in SYSTEMS. Do not implement its
+new tool masses, prices, sources or legal-title defaults before approval. #381
+and #377 prerequisites are delivered. Existing access/quest protections remain.
+The author is away again; prepare independent work and keep tests separated.
+#384 is narrowed to current tables and exactly-once acquisition. #386-387 require
+a clothing table proposal; #385 leaves products without a game recipe unrenewed.
 
 ## 5.6.3 - Recipe acquisition and study (#378)
 
