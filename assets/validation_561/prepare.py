@@ -23,7 +23,7 @@ scripts = {
     "travel": "wait 5; netevent ca377_travelcheck; changemap THAZARD; wait 35; netevent ca377_verify; "
               "changemap TMAINT; wait 35; netevent ca377_travelcheck; changemap MAP02; wait 35; "
               "netevent ca377_travelcheck; changemap MAP01; wait 35; netevent ca377_verify; wait 5; quit",
-    "interactive": "exec ../../assets/playtest/default_controls.cfg; wait 35; netevent ca377_save; wait 5; toggleconsole",
+    "interactive": "exec ../../assets/playtest/default_controls.cfg\nwait 35; netevent ca377_save; wait 5; toggleconsole",
 }
 for name, commands in scripts.items():
     (OUT / f"{name}.cfg").write_text(commands + "\n", encoding="utf-8", newline="\n")
