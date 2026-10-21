@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.6.4 preserves current loot tables and prevents repeated native death/drop
 callbacks, including frozen resurrected bodies (#384). Old pending/spent claims
 and frozen timers migrate locally. See [validation](assets/validation_564/RESULTS.md)
-for 16 native runs / 113 passing assertions and test boundaries. CA384-01 is pending.
+for 16 native runs / 113 passing assertions and test boundaries. CA384-01 passed author review on 2026-10-20.
 
 V5.6.3b records the requested clothing catalogue proposal (#386) in SYSTEMS.
 Its garment, thermal and migration values await author review. No clothing

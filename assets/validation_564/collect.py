@@ -100,13 +100,13 @@ report = dict(issue=384, release='5.6.4', comparison_commit=BASE,
               comparison_package_sha256=sha(comparison), package_changed_members=changed,
               unchanged_source_sha256_lf=unchanged,
               retained_local_saves={path.name: sha(path) for path in sorted(WORK.glob('ca384-*.zds'))},
-              author_acceptance='pending CA384-01')
+              author_acceptance='passed CA384-01 on 2026-10-20; initial startup qualification in HISTORY')
 (HERE / 'report.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
 rows = '\n'.join(f"| {r['label']} | {r['runtime']} | {r['passes']} |" for r in runs)
 (HERE / 'RESULTS.md').write_text(f'''# Issue #384 validation - release 5.6.4
 
 The required set passes **{len(runs)} native runs, {report['passing_assertions']}
-assertions and zero unexpected failures**. CA384-01 awaits author acceptance.
+assertions and zero unexpected failures**. CA384-01 passed author review on 2026-10-20; initial startup qualification is in HISTORY.
 Old-code regression runs are separate and reproduce five expected failures.
 
 | Run | Runtime | Passing assertions |
@@ -191,8 +191,8 @@ corrected fixture finds the retained local bodies by TID and asserts their claim
 Failed and superseded logs remain under build/issue384 and are excluded from
 the required set. No failed production test is counted as passing.
 
-The author is away and the explicitly requested temporary system-awake request
-remains active, without changing the power plan; release on return (12-hour cap).
+The author returned on 2026-10-20 and the temporary system-awake request
+was released without changing the Windows power plan.
 New lock/ownership and clothing proposals remain unapproved and separate.
 ''', encoding='utf-8')
 print(json.dumps({'runs': len(runs), 'passes': report['passing_assertions'],

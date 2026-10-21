@@ -2,7 +2,7 @@
 
 Documentation version: **5.6.4** — 2026-10-20.
 
-**5.6.4/#384:** unchanged tables, once-only death/ice; validation_564:16runs/113PASS; CA384-01 pending.
+**5.6.4/#384:** unchanged tables, once-only death/ice; validation_564:16runs/113PASS; CA384-01 accepted2026-10-20.
 **#382/#386:** lock/clothing proposals unapproved (SYSTEMS).
 **5.6.3/#378:** sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library:#383.
 **5.6.2/#381:** chest storage; validation_562; CA381-01 accepted2026-10-20.

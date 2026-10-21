@@ -52,8 +52,8 @@ final tests pass, including saved phase/timer checks. Allow deferred
 PostBeginPlay before fixture damage, and reacquire map-local fixture bodies by
 TID after hub travel: player inventory pointers to a departed map are cleared.
 No new per-tic global census or drop catalogue is involved. Native tokens are
-fixture-only; current campaign DropItem metadata is empty. CA384-01 remains
-pending, and this evidence does not establish campaign balance or performance.
+fixture-only; current campaign DropItem metadata is empty. CA384-01 passed
+author review on 2026-10-20; the fixture does not establish campaign balance or performance.
 
 ## CA-KP-142 - Normalize work before reversing rounded material quantities
 

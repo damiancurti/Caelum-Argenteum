@@ -19,25 +19,3 @@ Steps:
    views must remain mutually exclusive; a paused craft must retain its work.
 Expected: familiar merchant controls and margins, exact item/quantity transfer,
 clear rejections and no duplicated payment, objects or vendor stock.
-
-
-CA384-01 | 5.6.4 | Issue #384 | Current loot after native death guard
-Prerequisites: disposable #384 campaign/save; preserve original campaign saves
-with their matching package. Run Start-CA384Test in the prepared terminal.
-Frozen package: build/issue384/current/caelum_argenteum_dev.pk3.
-The terminal starts the actual MAP02 test save with existing assigned drops;
-no new loot tables or synthetic DropItem carriers are added to that save.
-Steps:
-1. Close the console and explore the saved labyrinth. Collect the existing
-   ammunition/key/potion drops; ordinary acquisition notices and inventory
-   changes must match the objects actually received.
-2. Defeat another living Mandinga or rat. Assigned loot retains priority;
-   an unassigned demon can drop one remaining potion, and a rat one ration.
-   An exhausted demon need not drop a potion. Revisit the corpse/collected spot:
-   no second copy or refill should appear.
-3. Save/reload and leave/return through connected sewer rooms. Previously
-   collected objects stay collected, and uncollected drops remain recoverable.
-   Use disposable saves only. Existing chest-specific UI checks remain CA381-01.
-Expected: unchanged current loot rules, successful acquisitions only, no repeated
-entitlements. Reentrant callbacks, old/current ice phases, native resurrection
-and save migration have separate scripted evidence, not a manual acceptance claim.

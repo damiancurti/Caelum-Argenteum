@@ -200,5 +200,5 @@
     "ca384-tables.zds": "582982ee9b02974bc87e93fa7bb62f507c452b68a789c458200ee31ce67e93f4",
     "ca384-upgraded.zds": "e504d1332ed0c674627fb4a82f8c73a39f4a07e8c25ed7a4c045a4f4c8bfac8d"
   },
-  "author_acceptance": "pending CA384-01"
+  "author_acceptance": "passed CA384-01 on 2026-10-20; initial startup qualification in HISTORY"
 }

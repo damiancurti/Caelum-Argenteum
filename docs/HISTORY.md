@@ -34,8 +34,13 @@ MAP02, save/reload, hub return, resurrection, both ice phases and original-pair
 rollback are covered. Static validation, normal packaging, exact changed-member
 comparison and reviewed limits are in assets/validation_564/RESULTS.md.
 Early compilation/setup/queued-event/fixture-pointer failures are retained and
-excluded from those counts. CA384-01 is pending; no author acceptance, merge or
-closure is claimed. The author remains away; temporary keep-awake stays active.
+excluded from those counts. On 2026-10-20 the author confirmed CA384-01
+(origin 5.6.4 / #384): "La prueba 384 dio bien." The initial interactive setup
+was missing; the corrected launcher and an in-game console recovery command
+were supplied before confirmation. No further exceptions were reported.
+The pending entry is retired. No merge/closure or version increment is implied.
+CA378-01 and CA381-01 also passed; CA377-01 remains pending. The author returned
+and temporary keep-awake was released with the Windows power plan unchanged.
 
 ## 5.6.3b - Requested clothing-table proposal (#386), 2026-10-20
 

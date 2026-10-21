@@ -39,7 +39,7 @@ loading new frozen-state indices with an old runtime is not a promised reversal.
 
 Evidence and limits: assets/validation_564/RESULTS.md. Native tests do not claim
 new campaign balance, multiplayer synchronization or author acceptance.
-CA384-01 remains pending; existing native locks/access rules are retained.
+CA384-01 passed author review on 2026-10-20; existing native locks/access rules remain.
 
 ## Ordinary clothing: catalogue proposal for review (#386, 5.6.3b)
 

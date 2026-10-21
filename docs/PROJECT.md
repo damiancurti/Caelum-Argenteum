@@ -14,8 +14,7 @@ the legacy catalogue and already looted gaps remain intact.
 
 Validation: 16 native runs / 113 passing assertions, plus separate old-code
 regressions, static validation, normal packaging and independent review in
-assets/validation_564. CA384-01 remains pending; no merge or author acceptance
-is implied. #382/#386 proposals still require review and #387 art remains pending.
+assets/validation_564. CA384-01 passed author review on 2026-10-20; no merge is implied. #382/#386 proposals still require review and #387 art remains pending.
 
 ## 5.6.3b - Ordinary-clothing catalogue proposal (#386)
 
@@ -33,7 +32,7 @@ steel recipes/masses, existing-margin prices, station access and lawful-title
 rules. Confirmed padlock/key masses, geometry scaling and warning-only theft
 remain separate. This delivery changes documentation and required diagnostic
 release labels; #382 implementation awaits the author's decisions. The frozen
-5.6.3 CA378-01 package remains available for its pending author check.
+5.6.3 CA378-01 package remains available; that author check passed on 2026-10-20.
 
 ## 5.6.3 - Physical recipe learning (#378)
 

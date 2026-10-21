@@ -1,7 +1,7 @@
 # Issue #384 validation - release 5.6.4
 
 The required set passes **16 native runs, 113
-assertions and zero unexpected failures**. CA384-01 awaits author acceptance.
+assertions and zero unexpected failures**. CA384-01 passed author review on 2026-10-20; initial startup qualification is in HISTORY.
 Old-code regression runs are separate and reproduce five expected failures.
 
 | Run | Runtime | Passing assertions |
@@ -101,6 +101,6 @@ corrected fixture finds the retained local bodies by TID and asserts their claim
 Failed and superseded logs remain under build/issue384 and are excluded from
 the required set. No failed production test is counted as passing.
 
-The author is away and the explicitly requested temporary system-awake request
-remains active, without changing the power plan; release on return (12-hour cap).
+The author returned on 2026-10-20 and the temporary system-awake request
+was released without changing the Windows power plan.
 New lock/ownership and clothing proposals remain unapproved and separate.
