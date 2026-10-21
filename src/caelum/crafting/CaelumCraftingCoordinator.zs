@@ -4,7 +4,7 @@ class CaelumCraftingCoordinator : Object play
 {
     static double GetCraftingDexterityPercent(CaelumPlayer user)
     {
-        if (user.DerivedStats == null || user.Attributes == null) { return 100.0; }
+        if (user.RecipeQuoteActive || user.DerivedStats == null || user.Attributes == null) { return 100.0; }
         return Max(
             100.0,
             user.DerivedStats.CalculateType1Percent(user.Attributes.Dexterity)
@@ -242,10 +242,10 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingBlueprintNodeInputUnits[node] +=
                 efficiencyAdjustedOutput;
             user.CraftingBlueprintNodeSeconds[node] +=
-                user.GetCraftingMaterialWorkSeconds(
+                CaelumRecipeLearning.WorkSeconds(user, recipeIndex, resolvedTier,
                     efficiencyAdjustedOutput,
                     user.CraftingBlueprintNodeComplexityTics[node],
-                    efficiencyIndex
+                    efficiencyIndex, requiredUnits
                 );
             user.ExpandCraftingBlueprintMaterial(
                 CaelumCraftingRules.GetComponentBaseMaterial(
@@ -277,10 +277,10 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingBlueprintNodeInputUnits[node] +=
             inputOneUnits + inputTwoUnits;
         user.CraftingBlueprintNodeSeconds[node] +=
-            user.GetCraftingMaterialWorkSeconds(
+            CaelumRecipeLearning.WorkSeconds(user, recipeIndex, 1,
                 inputOneUnits + inputTwoUnits,
                 user.CraftingBlueprintNodeComplexityTics[node],
-                efficiencyIndex
+                efficiencyIndex, requiredUnits
             );
         user.ExpandCraftingBlueprintMaterial(
             CaelumCraftingRules.GetProcessingInputOneMaterial(recipeIndex),
@@ -321,8 +321,9 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingBlueprintNodeInputUnits[0] = rootInputs;
         user.CraftingBlueprintNodeEfficiency[0] = user.CraftingEfficiencyIndex;
         user.CraftingBlueprintNodeComplexityTics[0] = rootComplexity;
-        user.CraftingBlueprintNodeSeconds[0] = user.GetCraftingMaterialWorkSeconds(
-            rootInputs, rootComplexity, user.CraftingEfficiencyIndex
+        user.CraftingBlueprintNodeSeconds[0] = CaelumRecipeLearning.WorkSeconds(user, user.CraftingSelectionRecipe, user.CraftingSelectionTier,
+            rootInputs, rootComplexity, user.CraftingEfficiencyIndex,
+            user.CraftingOutputAmount, user.CraftingProcessingBatchIndex
         );
         user.CraftingBlueprintNodeExecuted[0] = true;
 
@@ -457,6 +458,7 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingPlanStepTier[step] = 1;
             user.CraftingPlanStepEfficiency[step] = 0;
             user.CraftingPlanStepInputUnits[step] = 0;
+            user.CraftingPlanStepOutputUnits[step] = 0;
             user.CraftingPlanStepComplexityTics[step] = 0;
             user.CraftingPlanStepSeconds[step] = 0.0;
         }
@@ -538,7 +540,7 @@ class CaelumCraftingCoordinator : Object play
         return step;
     }
 
-    static void AddDirectCraftingStepWork(CaelumPlayer user, int step, int employedMaterialUnits)
+    static void AddDirectCraftingStepWork(CaelumPlayer user, int step, int employedMaterialUnits, int outputUnits=0)
     {
         if (step < 0 || step >= user.CraftingDirectPlanStepCount
             || employedMaterialUnits <= 0)
@@ -546,10 +548,10 @@ class CaelumCraftingCoordinator : Object play
             return;
         }
         user.CraftingPlanStepInputUnits[step] += employedMaterialUnits;
-        user.CraftingPlanStepSeconds[step] += user.GetCraftingMaterialWorkSeconds(
+        user.CraftingPlanStepSeconds[step] += CaelumRecipeLearning.WorkSeconds(user, user.CraftingPlanStepRecipe[step], user.CraftingPlanStepTier[step],
                 employedMaterialUnits,
                 user.CraftingPlanStepComplexityTics[step],
-                user.CraftingPlanStepEfficiency[step]
+                user.CraftingPlanStepEfficiency[step], outputUnits
             );
         user.MarkCraftingBlueprintStepExecuted(
             user.CraftingPlanStepRecipe[step], user.CraftingPlanStepTier[step]
@@ -567,12 +569,12 @@ class CaelumCraftingCoordinator : Object play
         ));
     }
 
-    static bool DirectCraftingRecipeKnown(CaelumPlayer user, int recipeIndex)
+    static bool DirectCraftingRecipeKnown(CaelumPlayer user, int recipeIndex, int tier = 1)
     {
         CaelumPersistentCharacterState persistentState =
             user.GetPersistentCharacterState(false);
         return persistentState != null
-            && persistentState.KnowsCraftingRecipe(recipeIndex);
+            && (user.RecipeQuoteActive || persistentState.KnowsCraftingRecipe(recipeIndex, tier));
     }
 
     static bool RequireDirectCraftingMaterial(CaelumPlayer user, int materialType, int materialTier, int requiredUnits, int depth = 0)
@@ -606,7 +608,7 @@ class CaelumCraftingCoordinator : Object play
             CaelumCraftingRules.FindComponentRecipeForOutput(materialType);
         if (componentRecipe >= 0)
         {
-            if (!user.DirectCraftingRecipeKnown(componentRecipe)) { return false; }
+            if (!user.DirectCraftingRecipeKnown(componentRecipe, resolvedTier)) { return false; }
             int missingStation = CaelumCraftingRules.GetMissingComponentStation(
                 user.CraftingNetworkCapabilities, resolvedTier, materialType
             );
@@ -631,7 +633,8 @@ class CaelumCraftingCoordinator : Object play
                     missingUnits,
                     user.CraftingPlanStepEfficiency[planStep]
                 );
-            user.AddDirectCraftingStepWork(planStep, baseUnits);
+            user.AddDirectCraftingStepWork(planStep, baseUnits, missingUnits);
+            user.CraftingPlanStepOutputUnits[planStep] += missingUnits;
             return user.RequireDirectCraftingMaterial(
                 baseMaterial,
                 baseTier,
@@ -645,7 +648,7 @@ class CaelumCraftingCoordinator : Object play
                 materialType, resolvedTier
             );
         if (processingRecipe < 0
-            || !user.DirectCraftingRecipeKnown(processingRecipe))
+            || !user.DirectCraftingRecipeKnown(processingRecipe, 1))
         {
             return false;
         }
@@ -692,8 +695,9 @@ class CaelumCraftingCoordinator : Object play
         );
         user.AddDirectCraftingStepWork(
             planStep,
-            inputOneUnits + inputTwoUnits
+            inputOneUnits + inputTwoUnits, missingUnits
         );
+        user.CraftingPlanStepOutputUnits[planStep] += missingUnits;
         if (!user.RequireDirectCraftingMaterial(
             CaelumCraftingRules.GetProcessingInputOneMaterial(processingRecipe),
             CaelumCraftingRules.GetProcessingInputOneTier(processingRecipe),
@@ -834,6 +838,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
         user.CraftingTaskRemainingSeconds = user.CraftingTaskTotalSeconds;
         user.CraftingTaskActive = true;
+        CaelumRecipeLearning.CapturePractice(user);
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
         user.PersistCharacterState();
         user.RefreshFormalInventorySnapshot();
@@ -1042,10 +1047,10 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingSelectionRecipe =
                 unifiedCatalogue ? firstKnown : CaelumCraftingRules.GetFirstRecipeMatchingFilter(user.CraftingRecipeFilter);
         }
-        user.CraftingSelectedRecipeKnown = persistentState != null
-            && persistentState.KnowsCraftingRecipe(user.CraftingSelectionRecipe);
         user.CraftingSelectionTier = CaelumCraftingRules.IsSingleTierRecipe(user.CraftingSelectionRecipe)
             ? 1 : Clamp(user.CraftingSelectionTier, 1, 3);
+        user.CraftingSelectedRecipeKnown = persistentState != null
+            && (user.RecipeQuoteActive || persistentState.KnowsCraftingRecipe(user.CraftingSelectionRecipe, user.CraftingSelectionTier));
         user.CraftingSelectionSize = Clamp(
             user.CraftingSelectionSize,
             0,
@@ -1456,12 +1461,13 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingMissingStationType
                 == CaelumConstants.CRAFTING_STATION_NONE;
 
-        user.CraftingPreviewSeconds = user.GetCraftingMaterialWorkSeconds(
+        user.CraftingPreviewSeconds = CaelumRecipeLearning.WorkSeconds(user, user.CraftingSelectionRecipe, user.CraftingSelectionTier,
             user.GetCurrentCraftingInputUnits(),
             CaelumCraftingRules.GetRecipeComplexityTics(
                 user.CraftingSelectionRecipe
             ),
-            user.CraftingEfficiencyIndex
+            user.CraftingEfficiencyIndex, user.CraftingOutputAmount,
+            user.CraftingProcessingBatchIndex
         );
 
         // El árbol completo permanece visible aunque ya existan componentes;

@@ -32,6 +32,19 @@ class CaelumMansionFurniture : Object play
         table.MoveLayout(oldTable,oldAngle);
         return false;
     }
+    static bool ReadingShelf()
+    {
+        // Consulta tipada s?lo durante instalaci?n/migraci?n del mobiliario.
+        let it=ThinkerIterator.Create("CaelumReadingShelf");
+        if(it.Next()!=null)return true;
+        vector3 position=CaelumReadingFurnitureData.Position();
+        let shelf=CaelumReadingShelf(Actor.Spawn("CaelumReadingShelf",position,NO_REPLACE));
+        if(shelf==null)return false;
+        shelf.Angle=CaelumReadingFurnitureData.Facing();
+        if(!shelf.TestMobjLocation() || Abs(shelf.FloorZ-position.Z)>1){shelf.Destroy();return false;}
+        return true;
+    }
+
     static bool Prepare()
     {
         if(level.MapName!="MAP01")return true;
@@ -53,6 +66,7 @@ class CaelumMansionFurniture : Object play
         if(!CaelumDiningWorld.Place(105,(1652,0,0),2,90))ready=false;
         if(!Align(105,(1652,0,0)))ready=false;
         if(!CaelumDiningWorld.Place(106,(496,-192,264),3))ready=false;
+        if(!ReadingShelf())ready=false;
         return ready;
     }
 }

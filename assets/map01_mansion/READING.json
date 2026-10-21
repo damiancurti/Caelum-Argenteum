@@ -1,0 +1,10 @@
+{
+  "issue": 378,
+  "position": [368, -576, 0],
+  "angle": 270,
+  "width": 60,
+  "height": 72,
+  "depth": 20,
+  "radius": 30,
+  "provenance": "Author 2026-10-20: reading furniture in the room opposite the practice dummy. X and the opposite ground-floor room derive from PRACTICE.json and the existing MAP01 geometry; leave a gap from the south wall. The footprint/height reuse existing crafting furniture bounds. Original procedural wood/books reuse the project's owned stash wood and station paper/leather/cloth textures. Native placement and collision are validated separately."
+}

@@ -444,6 +444,7 @@ class CaelumDebugOverlay : EventHandler
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
+            if (specialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK) return "CA_KEY_ITEM_RECIPE_BOOK";
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
                 return "CA_KEY_ITEM_PROCESSING_MANUAL";
@@ -1304,6 +1305,7 @@ class CaelumDebugOverlay : EventHandler
                 return "graphics/caelum/icons/ca_sleeping_bag.png";
             return localPlayer.EquipmentSelectionSpecialType
                     == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
+                || localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK
                 ? "graphics/caelum/icons/ca_book.png"
                 : "graphics/caelum/icons/ca_sealed_letter.png";
         }

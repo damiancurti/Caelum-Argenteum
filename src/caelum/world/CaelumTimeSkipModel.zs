@@ -58,11 +58,11 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         let clock=CaelumWorldClock.Get(user);
         EndDay=CaelumTimeSkipState.NowDay(user);StartDay=EndDay;
         EndTics=CaelumTimeSkipState.NowTics(user);SubTics=Limbo?clock.LimboSubTics:0;
-        RequiredTics=Max(0,int(Ceil(user.CraftingTaskRemainingSeconds*TICRATE-0.000001)));
+        RequiredTics=Max(0,int(Ceil(CaelumTimeSkipState.TaskSeconds(user)*TICRATE-0.000001)));
         Sleeping=alreadySleeping;NextThreat=-1;
         let bed=CaelumTimeSkipRules.FindFurniture(user,true);
         BedFactor=bed!=null?bed.ComfortFactor():Bag && CaelumRestBag.HasRoom(user)?3:1;
-        let chair=user.CraftingTaskActive?null:CaelumTimeSkipRules.FindFurniture(user,false);
+        let chair=CaelumTimeSkipState.TaskActive(user)?null:CaelumTimeSkipRules.FindFurniture(user,false);
         ChairFactor=chair!=null?chair.ComfortFactor():1;HasChair=chair!=null;
         let it=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable table;
         while((table=CaelumDiningTable(it.Next()))!=null)

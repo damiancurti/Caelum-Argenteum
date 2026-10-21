@@ -93,7 +93,10 @@ class CaelumRestSafety : Object play
         bool timelessCraft=crafting && level.MapName=="MAP01" && station!=null
             && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5
             && station.CanReachFrom(user) && (user.Pos-station.Pos).Length()<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
-        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture && !anchored && !timelessCraft
+        bool timelessReading=level.MapName=="MAP01" && (CaelumRecipeSession.Working(user)
+            || (skip!=null && skip.Open && skip.OriginMap==level.MapName
+                && CaelumRecipeSession.CanReach(user,skip.Station)));
+        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture && !anchored && !timelessCraft && !timelessReading
             && !(active!=null && active.Status==CaelumRestRules.STATUS_ACTIVE && active.Untimed && active.Furniture!=null))
             return "CA_REST_TIMELESS";
         // La nube activa impide tanto descansar como acelerar; decisión #325.

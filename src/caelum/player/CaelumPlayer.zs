@@ -176,6 +176,7 @@ class CaelumPlayer : DoomPlayer
     int CraftingSelectedWeapon;
     int CraftingRecipeFilter;
     bool CraftingSelectedRecipeKnown;
+    bool RecipeQuoteActive;
     int CraftingKnownRecipeCount;
     int CraftingKnownPhysicalRecipeCount;
     int CraftingKnownArmorRecipeCount;
@@ -219,6 +220,7 @@ class CaelumPlayer : DoomPlayer
     int CraftingPlanStepTier[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
     int CraftingPlanStepEfficiency[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
     int CraftingPlanStepInputUnits[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
+    int CraftingPlanStepOutputUnits[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
     int CraftingPlanStepComplexityTics[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
     double CraftingPlanStepSeconds[CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT];
 
@@ -3223,9 +3225,9 @@ class CaelumPlayer : DoomPlayer
         return CaelumCraftingCoordinator.RegisterDirectCraftingStep(self, recipeIndex, materialTier);
     }
 
-    void AddDirectCraftingStepWork(int step, int employedMaterialUnits)
+    void AddDirectCraftingStepWork(int step, int employedMaterialUnits, int outputUnits=0)
     {
-        CaelumCraftingCoordinator.AddDirectCraftingStepWork(self, step, employedMaterialUnits);
+        CaelumCraftingCoordinator.AddDirectCraftingStepWork(self, step, employedMaterialUnits, outputUnits);
     }
 
     int GetRoundedUpProportionalUnits(
@@ -3235,9 +3237,9 @@ class CaelumPlayer : DoomPlayer
         return CaelumCraftingCoordinator.GetRoundedUpProportionalUnits(self, requiredOutput, numerator, denominator);
     }
 
-    bool DirectCraftingRecipeKnown(int recipeIndex)
+    bool DirectCraftingRecipeKnown(int recipeIndex, int tier = 1)
     {
-        return CaelumCraftingCoordinator.DirectCraftingRecipeKnown(self, recipeIndex);
+        return CaelumCraftingCoordinator.DirectCraftingRecipeKnown(self, recipeIndex, tier);
     }
 
     bool RequireDirectCraftingMaterial(
@@ -3305,7 +3307,7 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
-        return persistentState.KnowsCraftingRecipe(recipeIndex);
+        return RecipeQuoteActive || persistentState.KnowsCraftingRecipe(recipeIndex, 0);
     }
 
     void RefreshCraftingRecipeBookSummary()
@@ -3407,7 +3409,7 @@ class CaelumPlayer : DoomPlayer
             recipeIndex < CaelumCraftingRules.GetComponentRecipeStart();
             recipeIndex++)
         {
-            if (persistentState.LearnCraftingRecipe(recipeIndex))
+            if (persistentState.OfferCraftingRecipe(recipeIndex))
             {
                 learnedAny = true;
             }
@@ -7158,6 +7160,7 @@ class CaelumPlayer : DoomPlayer
         CaelumUtilityStaff.Update(self);
         CaelumBolas.Update(self);
         CaelumRestState.Validate(self);
+        if (level.time % TICRATE == 0) CaelumRecipeLearning.DeliverPending(self);
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
 

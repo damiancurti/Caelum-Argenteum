@@ -2857,7 +2857,7 @@ class CaelumJournalOverlay : EventHandler
         else if(e.Name=="ca_skip_forecast")
         {
             let s=CaelumTimeSkipState.Get(requestingPlayer);
-            if(s!=null && s.Open && !s.Active && !s.ConfirmPending){s.UseTaskDefault=true;s.HadTask=requestingPlayer.CraftingTaskActive;s.Recalculate(requestingPlayer);}
+            if(s!=null && s.Open && !s.Active && !s.ConfirmPending){s.UseTaskDefault=true;s.HadTask=CaelumTimeSkipState.TaskActive(requestingPlayer);s.Recalculate(requestingPlayer);}
         }
         else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
         {

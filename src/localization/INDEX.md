@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `80d879e81aef07ad3a914ac03e90629bc9705e1ed8b42aafb55955adbc60c167`. Locations include every definition; the last one per language wins.
+SHA-256: `637f616dde73af70c9e8dd41bf65fe5c6f9f40d79133d8a76d550b16036ce500`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -80,7 +80,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_INTRO | 9 | CA_INTRO_AWAKENING | CA_INTRO_WELCOME |
 | CA_JOURNAL | 44 | CA_JOURNAL_CHARACTER | CA_JOURNAL_WORLD_PENDING |
 | CA_JOURNEY | 36 | CA_JOURNEY_ARRIVED | CA_JOURNEY_WATER_LINE |
-| CA_KEY | 3 | CA_KEY_ITEM_PROCESSING_MANUAL | CA_KEY_SILVER |
+| CA_KEY | 4 | CA_KEY_ITEM_PROCESSING_MANUAL | CA_KEY_SILVER |
 | CA_LAYER | 4 | CA_LAYER_MENTAL | CA_LAYER_TECHNICAL |
 | CA_LOAD | 3 | CA_LOAD_CAPACITY_EXCEEDED | CA_LOAD_OVERLOAD |
 | CA_LOADOUT | 65 | CA_LOADOUT_ACTION_0 | CA_LOADOUT_WEIGHT |
@@ -126,6 +126,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
 | CA_RACIAL | 2 | CA_RACIAL_ANIMA | CA_RACIAL_UNAVAILABLE |
 | CA_RALLY | 1 | CA_RALLY_CAST | CA_RALLY_CAST |
+| CA_RECIPE | 18 | CA_RECIPE_CANCEL | CA_RECIPE_UNREAD |
 | CA_REDEMPTION | 1 | CA_REDEMPTION_CAST | CA_REDEMPTION_CAST |
 | CA_REP | 29 | CA_REP_NEEDS_MEMBER | CA_REP_UNKNOWN_FACTION |
 | CA_REPUTATION | 2 | CA_REPUTATION_FOUNDATION_NOTE | CA_REPUTATION_VALUE_LABEL |

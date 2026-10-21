@@ -1,0 +1,179 @@
+{
+  "issue": 378,
+  "release": "5.6.3",
+  "runs": [
+    {
+      "label": "legacy-save-05",
+      "passes": 1,
+      "runtime": "baseline",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "f2156a4ed9fb89c995793943c3b11da13457c56eecad2299747d0ab3f32fc0ad",
+      "log_sha256": "8638193df16362c55b8cefb5fe48a1f312e66332208358b8319f4fe1afd5e163"
+    },
+    {
+      "label": "final-rollback",
+      "passes": 1,
+      "runtime": "baseline",
+      "package_sha256": "24bd261b40fff56311815d4b203c4dee9b16f80b7dbc1f34960cdc759889ad8a",
+      "addon_sha256": "f2156a4ed9fb89c995793943c3b11da13457c56eecad2299747d0ab3f32fc0ad",
+      "log_sha256": "7b95f7ff9e20a7fd26c9cb02750db9e3ccb9bffe42d36dceaee0b49dc5def62a"
+    },
+    {
+      "label": "verified-time",
+      "passes": 12,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "9bdbc077256ed86f89d122f4aed910109bb725a2691bef0546a171dd75a19ae7"
+    },
+    {
+      "label": "verified-mansion-time",
+      "passes": 12,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "93ea0fbe1ec94965f7479102a5122723f9d28687fb944d0fef74de7e26cf2651"
+    },
+    {
+      "label": "verified-suite",
+      "passes": 48,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "671c495f9ab7ff65eeb585908b0963b4af4e9bcfb671ec2c52cdf83cc5f66b83"
+    },
+    {
+      "label": "verified-craft",
+      "passes": 16,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "6c3c6806c2d2b038366e3666e0a1cb9fafb25c2a3489e75492a50b126fe30afb"
+    },
+    {
+      "label": "verified-save",
+      "passes": 48,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "91332a2aa4a186a77073274201202181b7ecdea9c6b238efdb69d8b53d9b646c"
+    },
+    {
+      "label": "verified-reload",
+      "passes": 3,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "08e725b619253ee752b5b371fdf5c32696c8a2e57123b86275fc2e89f19435b0"
+    },
+    {
+      "label": "verified-travel",
+      "passes": 9,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "4cd0192660e39fc3dbee8c6cb7e64a2a5ffb16011bb07235eeab181e3f23a237"
+    },
+    {
+      "label": "verified-mansion",
+      "passes": 4,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "8702bf732ef12a2e2b74bd2e5ff9bfe658aefbc8cc8c3a9f167b1a07b95ccd0f"
+    },
+    {
+      "label": "verified-upgrade",
+      "passes": 4,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "c218486c56c634f0f12397f514b7fc3951d7d3fbd569b50b651328a4d7f220f3"
+    },
+    {
+      "label": "verified-upgraded-reload",
+      "passes": 4,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "6774f8d09e840591df539be07aa7d7d10062e8d7d137d9de66113ce2e0ff121d",
+      "log_sha256": "6c2ea3cb4eaf7d89be2b989738b83a1c2a3592916a313640f8572a9f53d34030"
+    },
+    {
+      "label": "verified-ui-02",
+      "passes": 0,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "04982e2de11223aaac89d857db7fea338e9174f58989a92357ee9f42938f7ff7",
+      "log_sha256": "8ec5ab4ff1314102755557c603e1b3c1af44fc78812b0de6adc0cbfcaf8f5f00"
+    },
+    {
+      "label": "verified-smoke",
+      "passes": 0,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "",
+      "log_sha256": "6cca5c3b93335c493f4d156ff33ff2d9641d6a1504d097871a72203f5b3710cf"
+    },
+    {
+      "label": "verified-sources",
+      "passes": 8,
+      "runtime": "current",
+      "package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+      "addon_sha256": "04982e2de11223aaac89d857db7fea338e9174f58989a92357ee9f42938f7ff7",
+      "log_sha256": "db745d975308a30da92aa74f9a00321e9483ff63c986270bfddd86cf5ec8ff80"
+    }
+  ],
+  "passing_assertions": 170,
+  "unexpected_failures": 0,
+  "final_package_sha256": "c6c9e3111bc23a01775242034674dc9118682bbc16c36af531a72f7e9095fa48",
+  "comparison_package_562_sha256": "efe323702f98d3cabd8465cb554f9d0ca00d37aafeaa0d2818ae94349b51da4a",
+  "package_changed_members": [
+    "LANGUAGE",
+    "MAPINFO",
+    "MODELDEF",
+    "ZSCRIPT",
+    "caelum/core/CaelumConstants.zs",
+    "caelum/crafting/CaelumCraftingCoordinator.zs",
+    "caelum/crafting/CaelumRecipeLearning.zs",
+    "caelum/crafting/CaelumRecipeSession.zs",
+    "caelum/debug/CaelumDebugOverlay.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/equipment/CaelumPersistentCharacterState.zs",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/quests/CaelumMainM00Necklace.zs",
+    "caelum/quests/CaelumMainM00QuestController.zs",
+    "caelum/quests/CaelumMainM00RonnieTrial.zs",
+    "caelum/quests/CaelumOnboarding.zs",
+    "caelum/ui/CaelumDisplayNames.zs",
+    "caelum/ui/CaelumLiveMenu.zs",
+    "caelum/ui/CaelumLiveMenuControls.zs",
+    "caelum/world/CaelumInteractionHint.zs",
+    "caelum/world/CaelumMansionFurniture.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumReadingFurnitureData.zs",
+    "caelum/world/CaelumRestSafety.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "caelum/world/CaelumTimeAdvance.zs",
+    "caelum/world/CaelumTimeSkip.zs",
+    "caelum/world/CaelumTimeSkipModel.zs",
+    "localization/INDEX.md",
+    "localization/index.json",
+    "models/caelum/props/reading/ca_reading_shelf.obj"
+  ],
+  "deterministic_outputs": {
+    "src\\models\\caelum\\props\\reading\\ca_reading_shelf.obj": "6a3872d5fba1309fb03ab9340ef201b2134088640efa5e5b9945ce7fd3ace549",
+    "src\\caelum\\world\\CaelumReadingFurnitureData.zs": "71d0dd371bce7948a865436ccd9bec7717fc3f19555aa372a7b06bf2584b4b06"
+  },
+  "retained_local_saves": {
+    "ca378-legacy.zds": "595fba915a20450a05f04365e96d0dd808005d1bd25bba65b6f49d56f7d1c957",
+    "ca378-reading.zds": "53f6a282e5ed9a4a4061f1f7150dfdb4e4c9bab478dab368d2b535e2437fdaf6",
+    "ca378-upgraded.zds": "3d2ec3bcd5d1457bad666e7d191da8d481fe5ae7a1fbc048ef8a9a73d1ed009e"
+  },
+  "images": {
+    "recipe-en.png": "250c363436d14411c5ece072877ec048897c68319601296749eff5c75e1b3aad",
+    "recipe-es.png": "83b1b8217c4c0850f3e376bb06613bc866ff08a2e39ed656468b50229fbd4461",
+    "shelf.png": "7e0cac2f2590c1965b3b1ca00b6b6f53a2edaa0918f36a1f1ad8966a366af1c8"
+  },
+  "author_acceptance": "passed CA378-01 on 2026-10-20; initial fixture setup qualification in HISTORY"
+}

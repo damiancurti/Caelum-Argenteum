@@ -276,6 +276,14 @@ class CaelumPersistentCharacterState : Inventory
     // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
     bool KnownCraftingRecipe[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
+    int RecipeLearningRevision;
+    int KnownRecipeTiers[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
+    int PendingRecipeSheets[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
+    int IssuedRecipeSheets[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
+    int RecipeRereadings[CaelumRecipeLearning.SLOT_COUNT];
+    int RecipePractice[CaelumRecipeLearning.SLOT_COUNT];
+    bool HasPendingRecipeSheets;
+    Array<int> RecipeClaimSlots, RecipeClaimAmounts;
     int MainM00PickaxeRevision;
     int MainM00PickaxeId;
     // #96: cero mantiene pendiente el regalo; sólo la entrega fija revisión/ID.
@@ -1492,38 +1500,67 @@ class CaelumPersistentCharacterState : Inventory
         RecipeBookVersion = CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION;
     }
 
-    bool KnowsCraftingRecipe(int recipeIndex)
+    void EnsureTierRecipeBook()
     {
         EnsureRecipeBookInitialized();
+        if (RecipeLearningRevision >= CaelumRecipeLearning.REVISION) return;
+        for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
+        {
+            if (!KnownCraftingRecipe[recipe]) continue;
+            int tiers = CaelumRecipeLearning.TierMask(recipe);
+            KnownRecipeTiers[recipe] = tiers;
+            PendingRecipeSheets[recipe] |= tiers;
+            HasPendingRecipeSheets = true;
+        }
+        RecipeLearningRevision = CaelumRecipeLearning.REVISION;
+    }
+
+    bool OfferCraftingRecipe(int recipe, int tier = 1)
+    {
+        EnsureTierRecipeBook();
+        if (CaelumRecipeLearning.Slot(recipe, tier) < 0) return false;
+        int bit = 1 << (CaelumRecipeLearning.Tier(recipe,tier) - 1);
+        if ((IssuedRecipeSheets[recipe] & bit) != 0) return false;
+        PendingRecipeSheets[recipe] |= bit;
+        HasPendingRecipeSheets = true;
+        return true;
+    }
+
+    bool KnowsCraftingRecipe(int recipeIndex, int tier = 1)
+    {
+        EnsureTierRecipeBook();
         if (recipeIndex < 0
             || recipeIndex >= CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT)
         {
             return false;
         }
-        return KnownCraftingRecipe[recipeIndex];
+        return tier <= 0 ? KnownRecipeTiers[recipeIndex] != 0
+            : (KnownRecipeTiers[recipeIndex] & (1 << (CaelumRecipeLearning.Tier(recipeIndex,tier) - 1))) != 0;
     }
 
-    bool LearnCraftingRecipe(int recipeIndex)
+    bool LearnCraftingRecipe(int recipeIndex, int tier = 1)
     {
-        EnsureRecipeBookInitialized();
+        EnsureTierRecipeBook();
         if (recipeIndex < 0
             || recipeIndex >= CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
-            || KnownCraftingRecipe[recipeIndex])
+            || KnowsCraftingRecipe(recipeIndex, tier))
         {
             return false;
         }
         KnownCraftingRecipe[recipeIndex] = true;
+        KnownRecipeTiers[recipeIndex] |= 1 << (CaelumRecipeLearning.Tier(recipeIndex,tier) - 1);
         return true;
     }
 
     void SetAllCraftingRecipesKnown(bool known)
     {
-        EnsureRecipeBookInitialized();
+        EnsureTierRecipeBook();
         for (int recipeIndex = 0;
             recipeIndex < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;
             recipeIndex++)
         {
             KnownCraftingRecipe[recipeIndex] = known;
+            KnownRecipeTiers[recipeIndex] = known ? CaelumRecipeLearning.TierMask(recipeIndex) : 0;
         }
     }
 

@@ -94,7 +94,7 @@ class CaelumMainM00Necklace : Object play
         let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
         needs.AddAmulet(type);
         for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
-            if (needs.Recipes[recipe]) record.LearnCraftingRecipe(recipe);
+            if (needs.Recipes[recipe]) record.OfferCraftingRecipe(recipe);
         record.MainM00SealRecipesLearned = true;
         if (FindOwned(user, type) != null)
         { record.MainM00AmuletPrepared = true; record.MainM00AmuletOwnedAtLearning = true; }

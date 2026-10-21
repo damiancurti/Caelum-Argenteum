@@ -104,6 +104,13 @@ class CaelumTimeSkipState : Inventory
         return skip;
     }
     static bool IsOpen(CaelumPlayer user) {let s=Get(user);return s!=null && s.Open;}
+    // Fabricacion y lectura comparten el avance personal y su prevision.
+    static bool TaskActive(CaelumPlayer user)
+    {return user!=null && (user.CraftingTaskActive || CaelumRecipeSession.Working(user));}
+    static Actor TaskAnchor(CaelumPlayer user)
+    {let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.ActiveCraftingStationActor:reading!=null?reading.Anchor:null;}
+    static double TaskSeconds(CaelumPlayer user)
+    {let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.CraftingTaskRemainingSeconds:reading!=null?reading.RemainingSeconds:0;}
     static bool IsActive(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active;}
     static bool IsSleeping(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active && s.Sleeping;}
     static bool UsesFurniture(CaelumPlayer user,CaelumRestFurniture item)
@@ -174,7 +181,7 @@ class CaelumTimeSkipState : Inventory
         if(rest!=null)rest.Finish(user,CaelumRestRules.STATUS_CANCELLED,"");
         CaelumTimeAdvanceState.Halt(user);
         s.Open=true;s.Active=false;s.Completed=false;s.OriginMap=level.MapName;s.OriginPosition=user.Pos;
-        s.HadTask=user.CraftingTaskActive;s.TaskDone=false;s.Station=user.ActiveCraftingStationActor;
+        s.HadTask=TaskActive(user);s.TaskDone=false;s.Station=TaskAnchor(user);
         // El soporte desplegado desaparece al cerrar el descanso; conservar
         // la decisión desde la bolsa real, sin depender de ese actor temporal.
         s.RefreshSupports(user);
@@ -188,7 +195,7 @@ class CaelumTimeSkipState : Inventory
     void Recalculate(CaelumPlayer user)
     {
         Forecast=null;
-        if(!user.CraftingTaskActive)return;
+        if(!TaskActive(user))return;
         Forecast=new("CaelumTimeSkipModel");Forecast.CaptureSkip(user,Sleeping);
     }
     void Shift(CaelumPlayer user,int minutes)
@@ -220,7 +227,7 @@ class CaelumTimeSkipState : Inventory
         String reason=CaelumTimeSkipRules.BlockReason(user);
         if(reason.Length()==0 && s.UseTaskDefault && s.Forecast!=null
             && (!s.Forecast.Done || s.Forecast.Reason.Length()!=0))reason="CA_SKIP_NO_FORECAST";
-        if(reason.Length()==0 && s.UseTaskDefault && user.CraftingTaskActive && !checkedForecast)
+        if(reason.Length()==0 && s.UseTaskDefault && TaskActive(user) && !checkedForecast)
         {
             // Confirmar vuelve a observar las provisiones y la tarea reales.
             // La previsión se procesa por lotes y sigue siendo cancelable.
@@ -232,7 +239,7 @@ class CaelumTimeSkipState : Inventory
         if(reason.Length()!=0){s.LastReason=reason;return false;}
         s.Active=true;s.Completed=false;s.LastReason="";s.Pumping=false;s.LastPumpTic=-1;
         s.ElapsedTics=0;s.WorkTics=0;s.SleepTics=0;s.LastHealth=user.health;
-        s.HadTask=user.CraftingTaskActive;s.TaskDone=false;s.Station=user.ActiveCraftingStationActor;
+        s.HadTask=TaskActive(user);s.TaskDone=false;s.Station=TaskAnchor(user);
         s.RefreshSupports(user);
         PrepareStep(user);return s.Active;
     }
@@ -252,10 +259,10 @@ class CaelumTimeSkipState : Inventory
         String reason=CaelumTimeSkipRules.BlockReason(user,false);
         if(s.OriginMap!=level.MapName || (user.Pos-s.OriginPosition).Length()>4)reason="CA_REST_MOVED";
         if(user.health<s.LastHealth)reason="CA_REST_DAMAGE";
-        if(s.HadTask && !s.TaskDone && (!user.CraftingTaskActive
-            || user.ActiveCraftingStationActor!=s.Station))reason="CA_SKIP_TASK_CHANGED";
+        if(s.HadTask && !s.TaskDone && (!TaskActive(user)
+            || TaskAnchor(user)!=s.Station))reason="CA_SKIP_TASK_CHANGED";
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
-        let support=s.Sleeping?s.Bed:user.CraftingTaskActive?null:s.Chair;
+        let support=s.Sleeping?s.Bed:TaskActive(user)?null:s.Chair;
         if(support!=null && support.Occupant!=null && support.Occupant!=user)support=null;
         if(s.Furniture!=support)
         {s.ReleaseFurniture(user);s.Furniture=support;if(support!=null)support.Occupant=user;}
@@ -269,7 +276,7 @@ class CaelumTimeSkipState : Inventory
         if(user.health<s.LastHealth){FinishSkip(user,"CA_REST_DAMAGE");return;}
         s.LastHealth=user.health;
         if(CaelumScheduleState.SiegeActive(user,level.MapName)){FinishSkip(user,"CA_EVENT_SIEGE_INTERRUPT");return;}
-        if(s.HadTask && !user.CraftingTaskActive)s.TaskDone=true;
+        if(s.HadTask && !TaskActive(user))s.TaskDone=true;
         int day=NowDay(user),tics=NowTics(user);
         if(day>s.TargetDay || (day==s.TargetDay && tics>=s.TargetTics))FinishSkip(user,"CA_SKIP_COMPLETE");
     }

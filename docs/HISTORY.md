@@ -1,6 +1,48 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.2** — 2026-10-20.
+Documentation version: **5.6.3** — 2026-10-20.
+
+## 5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20
+
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
+The author approved a physical 5-g sheet and 100-g unlimited recipe book,
+separate recipes/progress per tier, first reading without bonus, ten rereadings,
+and practice limits of ten equipment/1,000 consumables. The final formula lets
+practice improve both efficiency factors, while reading improves only the first.
+Later answers fixed the common 25% base, largest-size/own-tier/100% reference,
+Intelligence M3 and faster rereadings. Old knowledge receives corresponding
+sheets. The mansion bookshelf belongs opposite the dummy. All categorized recipe
+books in replacement library shops are approved for separate commerce issue #383.
+
+Implemented native book pages, existing-record progress and revision-1 migration,
+source entitlements/capacity retry, live reading, manufacturing claims and the
+original bookshelf. Source wording now describes receipt followed by reading.
+Independent review found and corrected canonical processing-tier lookup,
+interrupted-book task cleanup, duplicate-book pickup, preview node restoration
+and proportional alloy rounding. A native use command verifies reusable book
+retention. The focused fixture also covers partial component stock and successful
+recursive practice. Early fixture compilation and visual iterations are retained
+separately from release evidence.
+
+Fifteen final native runs pass 170 assertions with zero failures. Static results,
+package hashes, migration and original-pair rollback are recorded in
+`assets/validation_563/RESULTS.md`. The author confirmed CA378-01 (origin
+5.6.3 / #378) passed on 2026-10-20: "La prueba de 378 dio bien." The initial
+test session lacked its book; manual book/setup commands were supplied before
+that confirmation. This acceptance does not establish automatic fixture startup.
+No further exceptions were reported. Its actionable queue entry is retired;
+CA377-01/CA381-01 remain pending. No merge or issue closure is implied, and
+the existing 5.6.3 version is retained. CA376-01 was accepted previously. The author's return ended the first Windows keep-awake request without changing
+the power plan. A second temporary request was explicitly authorized when the
+author left again. On the second return, 2026-10-20, the thread-scoped request
+was released and the original Balanced power plan remained unchanged.
 
 ## 5.6.2 - Ordinary chest storage (#381), 2026-10-20
 

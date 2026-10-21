@@ -2642,6 +2642,8 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null){CaelumContainerSession.Open(user,cargo.Chest);return;}
+        let book=CaelumRecipeBook(entry);
+        if(book!=null){CaelumRecipeSession.OpenBook(user,book);return;}
         user.ApplyFormalInventorySelection(entry);
         let bag = CaelumSleepingBag(entry);
         if (bag != null && !bag.InMagicBox)
@@ -3343,6 +3345,8 @@ class CaelumInventoryService : Object play
     static void ClearCraftingTaskData(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        let recipeRecord=user.GetPersistentCharacterState(false);
+        if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
         user.CraftingTaskActive = false;
         user.CraftingTaskCompleting = false;
         user.CraftingTaskKind = CaelumConstants.CRAFTING_TASK_NONE;
@@ -5773,7 +5777,7 @@ class CaelumInventoryService : Object play
             return false;
         int physical = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(item.ItemType);
         if (physical >= 0)
-            return user.DirectCraftingRecipeKnown(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(physical));
+            return user.DirectCraftingRecipeKnown(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(physical), item.Tier);
         // La receta del arma completa autoriza la reparación; tener sus
         // componentes no sustituye ese conocimiento. La esencia distingue variantes.
         for (int option = 0; option < CaelumMainM00StarterRules.OPTION_COUNT; option++)
@@ -5784,7 +5788,7 @@ class CaelumInventoryService : Object play
                     == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
                 && CaelumCraftingRules.GetUnifiedEssenceType(recipe) != item.EssenceType)
                 continue;
-            return user.DirectCraftingRecipeKnown(recipe);
+            return user.DirectCraftingRecipeKnown(recipe, item.Tier);
         }
         return false;
     }
@@ -6076,6 +6080,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskActive) { return; }
         int completedKind = user.CraftingTaskKind;
+        user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         int oldStation = user.ActiveCraftingStationType;
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
@@ -6110,6 +6115,9 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
+        if(user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
+            || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED)
+            CaelumRecipeLearning.CommitPractice(user);
         user.ClearCraftingTaskData();
         user.CraftingMenuOpen = menuWasOpen;
         user.ActiveCraftingStationType = oldStation;

@@ -142,6 +142,18 @@ class CaelumLiveMenuControls : Object ui
                 for(int row=0;row<5 && row+offset<entries.Size();row++)Region(7000+row+offset,355,115+row*32,243,32);
             }
         }
+        else if(context==host.CTX_RECIPES)
+        {
+            let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
+            if(recipes!=null)
+            {
+                int first=Max(0,recipes.Selection-2);
+                for(int i=first;i<Min(first+5,int(recipes.Rows.Size()));i++)Region(10000+i,40,80+(i-first)*21,560,21);
+            }
+            Row(294);Button("CA_RECIPE_READ",InputEvent.Key_Enter,0,"",136);
+            Button("CA_RECIPE_CATEGORY",0,103,"g",136);Button("CA_RECIPE_CANCEL",0,99,"c",136);
+            Row(326);PrevNext();Back();Button("CA_UI_FAST",0,116,"t",130);Button("CA_UI_SKIP",0,121,"y",130);
+        }
         else if(context==host.CTX_CHEST)
         {
             let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
@@ -189,6 +201,8 @@ class CaelumLiveMenuControls : Object ui
     void Activate(CaelumLiveMenu host,int id)
     {
         let view=host.Journal();let user=host.Subject;
+        if(host.Context==host.CTX_RECIPES && id>=10000)
+        {EventHandler.SendNetworkEvent("ca_recipe_select",id-10000);return;}
         if(id==9001){host.ResetInput();Menu.SetMenu("CaelumNavigationMenu");return;}
         if(id==9000){host.ResetInput();Menu.SetMenu("CaelumNotificationMenu");return;}
         if(id>=8000)

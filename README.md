@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.2.** Obtain and update the complete repository, validate
+**Current release: 5.6.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.3 adds physical recipe sheets, per-tier learning and capped reading/practice
+bonuses (#378). Receive a recipe book with the first sheet and read beside a
+table or the new mansion bookshelf opposite the training dummy. Intelligence
+uses M3 for reading speed. Existing knowledge remains; library commerce belongs
+to #383. See [validation](assets/validation_563/RESULTS.md); CA378-01 passed author review on 2026-10-20.
 
 V5.6.2 adds ordinary native chest storage (#381): three authored capacities,
 exact deposit/withdrawal, full carried mass, safe placement and spilled contents

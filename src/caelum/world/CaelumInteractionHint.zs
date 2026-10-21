@@ -13,6 +13,7 @@ class CaelumInteractionHint : Object play
                 && offset.X*Cos(user.Angle)+offset.Y*Sin(user.Angle)>=distance*0.85;
         }
         if(!aimed || !user.CheckSight(object,SF_IGNOREVISIBILITY))return "";
+        if(object is 'CaelumReadingShelf')return StringTable.Localize("CA_RECIPE_SHELF",false);
         if(object is 'CaelumMazeChest')return StringTable.Localize("CA_MAZE_USE_CHEST",false);
         if(object is 'CaelumCupsAceEssence')return StringTable.Localize("CA_MAZE_USE_CARD",false);
         if(object is 'CaelumSewerTravelGate')return StringTable.Localize("CA_MAZE_USE_GATE",false);
