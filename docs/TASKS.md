@@ -10,11 +10,12 @@ pieces once and transfers implicit base moisture without changing equipped armor
 Stored garments retain moisture; wet mass counts in transfer/carry limits and
 water above changed capacity becomes runoff without cooling. No wear/repair.
 Static/native evidence and screenshots: assets/validation_566/RESULTS.md.
-CA386-01 is the outstanding author test; no author acceptance or merge is claimed.
+CA386-01 passed author acceptance on 2026-10-21; #386 has no remaining author check
+and is ready for integration under the standing merge instruction.
 Library and vendor integration remain #383; model coverage/art remain #387.
 The accepted batch PRs #388–395 was merged on 2026-10-21; issues #376, #377,
 #378, #381, #382 and #384 are closed. Remaining issues: #379, #380, #383,
-#385, #386 and #387. Keep their scopes, tests and PRs separate.
+#385 and #387 after integrating accepted #386. Keep their scopes, tests and PRs separate.
 
 ## 5.6.4 - Review one-time death loot (#384)
 

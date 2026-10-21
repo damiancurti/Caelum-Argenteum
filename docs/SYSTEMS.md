@@ -215,7 +215,8 @@ The author approved the 25 garment rows and 11 combinations, one-tier scope,
 four-region ensembles, materials/masses/derived prices, station/work rates,
 thermal profiles and armor limitation, no-wear rule and migration/capacity grant.
 The author already selected the style families, three seasons and period; those
-decisions are retained. CA386-01 now covers the delivered gameplay; see pending_test.txt.
+decisions are retained. CA386-01 passed author acceptance on 2026-10-21; HISTORY
+records the completed gameplay check separately from #387 visual acceptance.
 
 Recommend late-nineteenth-century Argentine civilian silhouettes: shirts,
 waistcoats, frock/short coats, trousers, bombachas, wool ponchos, felt hats and

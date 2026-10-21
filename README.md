@@ -13,7 +13,7 @@ V5.6.6 implements the 25 approved ordinary garments (#386), with a separate
 four-region clothing layer under armor, native inventory/Box/chest transport,
 T1 recipes, exact material grades and persistent moisture. New and legacy players
 receive the approved summer outfit once; its real mass counts toward load.
-See [validation](assets/validation_566/RESULTS.md). CA386-01 awaits author playtest;
+See [validation](assets/validation_566/RESULTS.md). CA386-01 passed author playtest on 2026-10-21;
 library/vendor availability remains #383 and garment models remain #387.
 
 V5.6.5 implements approved padlock/key crafting, lawful chest title and local

@@ -12,9 +12,10 @@ ClothingRevision 1 converts the implicit outfit once, including legacy moisture
 and the approved one-time capacity exception. Existing NPC outfit/loot stays
 unchanged. Existing cloth art is a temporary inventory/world representation;
 the #387 model brief and #383 vendor/library integration are separate work.
-Validation: assets/validation_566/RESULTS.md. CA386-01 awaits author acceptance.
+Validation: assets/validation_566/RESULTS.md. CA386-01 passed author acceptance
+on 2026-10-21; #386 is ready for integration under the standing merge instruction.
 The accepted PR batch #388–395 was merged on 2026-10-21, closing #376, #377,
-#378, #381, #382 and #384. This does not close the six remaining issues.
+#378, #381, #382 and #384. #379/#380/#383/#385/#387 remain outstanding.
 
 ## 5.6.4 - One-time death loot, existing tables (#384)
 

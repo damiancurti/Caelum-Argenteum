@@ -28,7 +28,9 @@ and water, and worn garments cannot be sold.
 Independent review of gameplay, legacy debug/UI paths and the trade extension
 found no outstanding P1/P2. Both bilingual screenshots were visually reviewed;
 the separate Clothing/Ropa filter and complete garment names are visible.
-CA386-01 remains pending; isolated checks do not imply author acceptance.
+The author confirmed CA386-01 (5.6.6 / #386) passed on 2026-10-21 without
+gameplay qualifications. This is separate from the isolated technical checks;
+temporary garment art is not final visual acceptance for #387.
 Library and clothing stock are #383; original garment models/coverage are #387.
 
 Reproduce from PowerShell: run `python assets/validation_566/prepare.py`, build
