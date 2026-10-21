@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.10** — 2026-10-21.
+Documentation version: **5.6.11** — 2026-10-21.
+
+## 5.6.11 status — calendar replenishment (#385)
+
+City shops now produce missing stock from complete recipe/component chains,
+sequentially per product and concurrently across products. Civil calendar
+catch-up is bounded by native stock targets; wallets, finite loot, tutorial
+quotas and recipe-less products are excluded. Revision 1 preserves depleted old
+shops without retroactive grants. Validation is recorded in assets/validation_5611
+(14 native runs / 2,278 PASS / zero FAIL, static pass);
+CA385-01 passed on 2026-10-21. #387 worn/preview/first-person art remains open.
 
 ## 5.6.10 status — city catalogues (#383)
 

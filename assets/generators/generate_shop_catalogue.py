@@ -16,6 +16,8 @@ def main():
           'class CaelumShopCatalogue : Object', '{',
           f'    const REVISION={DATA["revision"]};',f'    const LIBRARY={DATA["library_category"]};',
           f'    const CLOTHING={DATA["clothing_category"]};',f'    const BOOK_STOCK={DATA["book_stock"]};',
+          f'    const RESTOCK_REVISION={DATA["restock_revision"]};',
+          f'    const RESTOCK_INCLUDE_COMPONENTS={int(DATA["restock_include_components"])};',
           '    static int Category(int identity)', '    {']
     for row in DATA['replacements']:
         code.append(f'        if(identity=={row["shop_identity"]})return {row["category"]};')

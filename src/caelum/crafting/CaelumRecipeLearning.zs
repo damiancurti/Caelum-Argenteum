@@ -237,10 +237,25 @@ class CaelumRecipeBook : CaelumSpecialInventoryItem
 class CaelumRecipeQuote : Object play
 {
     Array<int> Sheets;
-    double Seconds;
-    void Build(CaelumPlayer user, int recipe, int tier)
+    double Seconds,ManufactureSeconds,CompleteManufactureSeconds;
+    int OutputUnits;
+    double MasteredNodeSeconds(CaelumPlayer user,int node)
     {
-        Sheets.Clear(); Seconds = 0;
+        int recipe=user.CraftingBlueprintNodeRecipe[node];
+        if(recipe<0)return 0;
+        int tier=node==0 ? user.CraftingSelectionTier : Max(1,user.CraftingBlueprintNodeMaterialTier[node]);
+        int slot=CaelumRecipeLearning.Slot(recipe,tier);
+        let record=user.GetPersistentCharacterState(false);
+        int readings=record!=null && slot>=0 ? record.RecipeRereadings[slot] : 0;
+        int practice=record!=null && slot>=0 ? record.RecipePractice[slot] : 0;
+        // Quitar exclusivamente atributos/progreso de la misma duración nativa;
+        // el cálculo de cantidades, redondeos y complejidad permanece compartido.
+        return user.CraftingBlueprintNodeSeconds[node]*user.GetCraftingDexterityPercent()/100.0
+            /CaelumRecipeLearning.TimeFactor(readings,practice,recipe,user.CraftingBlueprintNodeEfficiency[node]);
+    }
+    void Build(CaelumPlayer user, int recipe, int tier,int referenceSize=CaelumConstants.EQUIPMENT_SIZE_XL)
+    {
+        Sheets.Clear(); Seconds = 0;ManufactureSeconds=0;CompleteManufactureSeconds=0;OutputUnits=0;
         if (user == null || CaelumRecipeLearning.Slot(recipe, tier) < 0) return;
         int oldRecipe=user.CraftingSelectionRecipe, oldTier=user.CraftingSelectionTier;
         int oldSize=user.CraftingSelectionSize, oldEfficiency=user.CraftingEfficiencyIndex;
@@ -254,15 +269,20 @@ class CaelumRecipeQuote : Object play
         { recipes.Push(user.CraftingLayerChoiceRecipe[i]); tiers.Push(user.CraftingLayerChoiceTier[i]); efficiencies.Push(user.CraftingLayerChoiceEfficiency[i]); }
         user.RecipeQuoteActive=true;
         user.CraftingSelectionRecipe=recipe; user.CraftingSelectionTier=tier;
-        user.CraftingSelectionSize=CaelumConstants.EQUIPMENT_SIZE_XL;
+        user.CraftingSelectionSize=referenceSize;
         user.CraftingEfficiencyIndex=2; user.CraftingProcessingBatchIndex=0;
         user.CraftingRecipeFilter=CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
         user.ActiveCraftingStationType=CaelumConstants.CRAFTING_STATION_WORKBENCH;
         user.ResetCraftingLayerChoices(); user.RefreshCraftingPreview();
         Sheets.Push(CaelumRecipeLearning.Slot(recipe,tier));
         Seconds=user.CraftingBlueprintFullSeconds;
+        ManufactureSeconds=MasteredNodeSeconds(user,0);CompleteManufactureSeconds=ManufactureSeconds;
+        OutputUnits=CaelumCraftingRules.GetRecipeAmmunitionBatch(recipe);
+        if(OutputUnits<=0)OutputUnits=Max(1,user.CraftingOutputAmount);
         for(int i=1;i<user.CraftingBlueprintNodeCount;i++)
         {
+            if(user.CraftingBlueprintNodeKind[i]==CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
+                CompleteManufactureSeconds+=MasteredNodeSeconds(user,i);
             int child=user.CraftingBlueprintNodeRecipe[i];
             int childTier=user.CraftingBlueprintNodeMaterialTier[i];
             if(child<0)continue;

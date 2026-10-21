@@ -386,6 +386,7 @@ class CaelumMerchantCoordinator : Object play
     static void RefreshCityTrade(CaelumCityTradeSession session,CaelumPlayer user)
     {
         if(!IsCurrentCityTrade(session,user))return;
+        CaelumShopRestock.Sync(session.Vendor,user);
         session.Selling=user.PalomoMerchantMode==CaelumConstants.PALOMO_MERCHANT_MODE_SELL;
         Inventory selected=session.Selection<session.Rows.Size() ? session.Rows[session.Selection] : null;
         session.Rows.Clear();session.Names.Clear();session.Quantities.Clear();session.Prices.Clear();
@@ -503,6 +504,7 @@ class CaelumMerchantCoordinator : Object play
         if(library!=null)receiving=CaelumInventoryService.CommitLibraryPurchase(user,session,offer,library,price);
         else receiving=CaelumInventoryService.CommitCityMerchantTransfer(user,session,item,quantity,price,receiving,companion);
         if(receiving==null)return;
+        CaelumShopRestock.Sync(session.Vendor,user,true);
         if(!session.Selling)
         {
             if(library!=null)CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_RECIPE_RECEIVED",false),

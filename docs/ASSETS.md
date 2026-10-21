@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.10** — 2026-10-21.
+Documentation version: **5.6.11** — 2026-10-21.
 
 ## 5.6.10 — library and clothing shop signs (#383)
 

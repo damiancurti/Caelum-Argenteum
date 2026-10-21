@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.10** — 2026-10-21.
+Documentation version: **5.6.11** — 2026-10-21.
+
+## City replenishment and source policy (#385, 5.6.11)
+
+The author approved full production chains on 2026-10-21: start from raw
+materials, include every required component operation and the final operation,
+with Technical attributes zero and fully mastered 100% efficiency. Each
+operation uses the common 25% time base approved in #378. Native blueprint
+quantities, batch rounding, material tiers and equipment sizes remain the sole
+source. Merchants know all their recipes and do not consume the player's inputs.
+The quote restores the player's crafting selection and does not teach recipes.
+
+| Source | Production / limit | Clock and exclusions |
+| --- | --- | --- |
+| City consumables/ammunition with a recipe | One unit after full-chain batch duration divided by output count; cap 1,000 per product | Sequential within a product; products run simultaneously |
+| City equipment | One fresh matching tier/size/essence/slot variant after its complete chain; cap one | Exact returned equipment counts as existing stock; no cloning of wear, identity or sold non-catalogue variants |
+| Library | One book after the entire represented recipe batch; cap ten per recipe/tier | XL equipment reference; no ten-unit study-time multiplier; duplicate-page purchase rejection remains |
+| Prepared cartridge kits | No renewal | No manufacturing recipe is defined; finished cartridges do renew |
+| Eleven provisions | No renewal | Small/medium/large life potions, Anima potions and energy drinks, plus food and water rations, have no manufacturing recipe |
+| City and Palomo wallets; Palomo stock | No new refill rule | Preserve their existing ownership and balances; city production does not apply to Palomo |
+| Chest/enemy loot and finite salvage | No renewal | Retain #384 one-time delivery and exact native contents |
+| Natural resource nodes | Existing capacity recovery only | Existing world-clock delta, fractional yield, stable per-node calendar entry and first-sync migration; #385 does not retune recovery |
+| MAP01 tutorial supplies | Existing issued quotas | No periodic reset or grants from shop renewal |
+| MAP01 dining tables | Existing local-midnight #65 policy | Remains independent of city commerce and finite lesson supplies |
+
+Civil game-calendar elapsed time includes ordinary play, rest/travel advances
+and time spent away from an initialized shop's map. Limbo uses its separate
+local clock, so it does not advance this civil production. Pausing the engine or
+closing the game adds no production time. Inactive vendors catch up arithmetically
+when opened; only the active trade checks its earliest due date each world tic.
+No global actor scan or simulation of historical NPC activity is introduced.
+At a deadline exactly one unit is available; excess elapsed time can produce
+further sequential units up to the target. Full stock discards idle production
+time. A later purchase starts a new period. Padlocks are manufactured with a new
+matching key, using the existing paired-item factory.
+
+Restock revision 1 adds product descriptors and serialized fractional deadlines
+to each vendor. Actor.Inv remains authoritative for quantities and exact items;
+descriptors are not a second inventory. Unopened shops retain lazy initial stock.
+The first revised synchronization of an old initialized vendor preserves its
+remaining stock/wallet and starts missing products at now + period, awarding no
+retroactive output. Repeated opening, save/load and hub return retain that same
+deadline. Rollback uses the preserved original package and original save.
+SHOP_CATALOGUE.json owns the revision and full-chain policy flag.
 
 ## City catalogue extension (#383, 5.6.10)
 
@@ -591,7 +634,7 @@ Thirteen retained pawn methods and five retained session methods are adapters.
 | Boundary | Authoritative owner and lifetime |
 | --- | --- |
 | Palomo stock/wallet | The existing persistent character record owns product counts, wallet and negotiated discount; pawn arrays are refreshed projections. They are never shared with city vendors. |
-| City stock/wallet | Each `CaelumCityMerchant` owns native `Actor.Inv`, initialization/revision flags and WalletCopper. Lazy first-open seeding remains unchanged; reopening depleted stock does not replenish it. |
+| City stock/wallet | Each `CaelumCityMerchant` owns native `Actor.Inv`, initialization/revision flags and WalletCopper. Lazy first-open seeding remains unchanged; #385 subsequently adds elapsed-calendar production without reseeding on open. |
 | Session/UI | Pawn fields retain active actor, conditions, selection, quantities and quote. The existing city-session object retains vendor, native row references and display arrays. Closing clears the projection, not inventory; existing travel hooks close it before persisting. |
 | Preflight | Coordinator revalidates session, selected product/instance, quote, quantity, stock, money, stack bounds, personal load and Box capacity. City operations require the requesting pawn's actual current session and active vendor. Palomo refresh may not silently substitute a same-price row. |
 | Commit | `CaelumInventoryService` prepares missing currency instances and any new product or split stack before attaching, debiting, crediting or transferring. Existing currency plans remain authoritative. Exact equipment retains its state/ItemId, subject to the existing native acquisition collision rule. |
@@ -4537,7 +4580,9 @@ new revision: the old 14-position grid crossed the wall and exterior. Its
 
 Shop equipment is **T1 only**, with one unit per matching equipment variant,
 20 per food/drink type, 100 per ammunition type, and 200 copper per independent
-vendor; **no automatic restocking**. The six specializations are provisions,
+vendor; **no automatic restocking in that original release**. #383 supersedes
+these initial quantities with 1,000 consumables/ammunition and adds library/
+clothing; #385 adds the calendar production policy above. The six original specializations are provisions,
 melee, ranged/ammunition, jewelry, physical armor, and magic weapons/armor.
 Existing purchase/sale margins remain 150%/50%, rounded per lot as before.
 Author clarification: medikit/life potion, Anima potion and energy drink each

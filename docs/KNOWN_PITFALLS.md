@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-149 - Cache production quotes and process only elapsed stock deficits
+
+Status/evidence: ENGINE-VERIFIED; #385, 2026-10-21. Baseline e38871f5 plus
+the 5.6.11 patch; final package identity in assets/validation_5611/report.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, Ryzen 9 5950X / RTX 3070 Ti,
+1280x720, 60-FPS cap, unpaused background at 5% audio.
+
+Scope: CaelumShopRestock and the existing full crafting-blueprint quote. The
+392-product library takes 18.2631 ms to quote every product at once in a deliberately
+fully depleted fixture. Repeating those quotes each world tic would introduce
+unnecessary work. Cache each product's duration when its first deficit appears;
+retain a next-due timestamp and one earliest deadline per merchant. Full native
+stock needs no quote. An inactive merchant catches up only when opened, using
+arithmetic capped at its current deficit, never a loop over historical units.
+
+Measured 30-day catch-up was 0.0146 ms; idle active-shop guard averaged 0.000086 ms
+over 1,000 calls. There is no world-actor scan. Ten seconds of isolated open-library
+callbacks averaged 60.019 FPS, p95 16.792 ms, p99 17.069 ms, worst 29.173 ms. These
+are application callbacks, not OS presentation or city/mansion acceptance.
+Reproduce with validation_5611 prepare.py and the generated perf.cfg; report.json
+contains complete commands/environment and native/perf-final-01.txt raw samples.
+Regression: serial/concurrent deadlines, no repeated load/open output, exact-item
+trade-ins and full catalogue coverage in checks.zs. CA385-01 passed author review on 2026-10-21.
+
 ## CA-KP-148 - Native inventory transitions can reset a cached world sprite
 
 Status/evidence: ENGINE-VERIFIED. First recorded / last checked: 2026-10-21.
