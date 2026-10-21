@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -21,7 +21,11 @@ The approved palette/cuts follow late-nineteenth-century Argentina: dark formal,
 earth tones and wool for country clothes, faded fabric and patches for poor
 clothes. Every garment needs its own sprites. Preserve body/sex/species identity
 and supported sizes; adapt modular fit without changing gameplay mass or warmth.
-Coverage includes world/worn, character preview and first-person views.
+The originally approved coverage includes world/worn, character preview and
+first-person views. On 2026-10-21 the author postponed the unfinished worn,
+preview and first-person clothing appearance until 3D character models exist.
+Retain this brief for that later stage; current closure covers the accepted
+object views and does not claim the deferred bindings or their visual checks.
 
 The 5.6.7 object-art stage supplies individual inventory/crafting icons and
 dropped-item billboards. Review the contact sheet in assets/art_source/clothing;

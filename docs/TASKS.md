@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
+
+## 5.6.11a — close accepted V5.6 scope; defer clothing appearance (#387)
+
+The author accepted every delivered test and requested closing/merging the batch
+on 2026-10-21. PRs #397–401 are merged; #379/#380/#383/#385 are closed. The current
+#387 scope is the accepted 25 inventory/crafting icons and dropped-item sprites.
+There is no pending manual test. Earlier patch-stage lists below are historical.
+
+Deferred until 3D character models are available: worn/equipped garments,
+character-preview and first-person clothing appearance across supported bodies,
+sexes, species and sizes, animations/fit, saved equipment continuity and measured
+rendering/visual acceptance. Retain this work under PROJECT's V5.17 modular 3D
+handoff; create a focused implementation issue when that prerequisite is ready.
+Preserve approved clothing gameplay, period cuts, existing object artwork and
+provenance. Do not infer new NPC outfits or claim deferred views were implemented.
 
 ## 5.6.11 — calendar replenishment (#385)
 
@@ -43,10 +58,11 @@ Author-accepted on 2026-10-21: 25 unique inventory/crafting icons and dropped-it
 sprites, source provenance and deterministic exports. CA387-01 is recorded in
 HISTORY and removed from pending_test.txt; assets/validation_567/RESULTS.md
 separates static/native evidence from author acceptance.
-Still required for #387: worn-character, character-preview and first-person
+Deferred to the 3D-model prerequisite by the author on 2026-10-21: worn-character, character-preview and first-person
 coverage for supported body/sex/species/size combinations, plus visual acceptance
 and measured rendering evidence for those bindings. No new NPC wardrobe assignment
-is implied. Keep #387 open; this stage is not completion of the full issue.
+is implied. The author subsequently requested closing the current issue; the
+deferred scope is retained in the V5.17 handoff above.
 #386 is accepted, merged in PR #396 and closed. Remaining catalogue/ammunition/
 restock work stays in #379/#380/#383/#385, with its own commits, tests and PRs.
 

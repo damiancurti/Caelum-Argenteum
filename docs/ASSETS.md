@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
 
 ## 5.6.10 — library and clothing shop signs (#383)
 
@@ -48,7 +48,10 @@ complete #387's approved worn-character, character-preview or first-person
 coverage across supported bodies, sexes, species and sizes. Source and native
 visual evidence: `assets/validation_567/RESULTS.md`. CA387-01 passed author visual
 review on 2026-10-21 for these object views; no new NPC wardrobe assignment or
-performance acceptance is implied.
+performance acceptance is implied. On 2026-10-21 the author deferred the remaining
+clothing appearance until 3D character models are available and requested closure
+of the current batch. Preserve this artwork and provenance for that later stage;
+PROJECT/TASKS retain the deferred coverage and its visual/performance checks.
 
 ## 5.6.6 - Clothing gameplay representation (#386)
 

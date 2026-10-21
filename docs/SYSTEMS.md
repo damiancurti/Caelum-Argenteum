@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
 
 ## City replenishment and source policy (#385, 5.6.11)
 
@@ -370,7 +370,9 @@ explicitly required each garment to have its own sprites.
 5.6.7 delivers 25 distinct inventory/crafting icons and dropped-item sprites,
 with original sources and exact prompts retained. These derive from the garment
 type; they change no balance, identity or saved entitlement. Worn-character,
-preview and first-person coverage remain unfinished under #387. CA387-01 passed
+preview and first-person appearance were explicitly deferred on 2026-10-21
+until 3D character models are available (PROJECT V5.17). The current #387 scope
+closes without claiming those views were implemented. CA387-01 passed
 author review on 2026-10-21 for the object views. The temporary generic cloth icon/world sprite used in 5.6.6
 is superseded only for the implemented object views. No NPC outfit is reassigned.
 

@@ -6,15 +6,23 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.11.** Obtain and update the complete repository, validate
+**Current release: 5.6.11a.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.11a records the author-directed clothing appearance deferral (#387).
+PRs #397–401 are merged, including the accepted object sprites, cartridge contract
+and assembly, city catalogues and calendar replenishment. All delivered author
+tests passed; pending_test.txt is empty. Worn clothing, character-preview and
+first-person garment appearance will resume when the 3D character models are
+available, under the V5.17 modular presentation roadmap. This is a documentation
+closure, not implementation or visual acceptance of those deferred views.
 
 V5.6.11 implements calendar-based city shop replenishment (#385): sequential
 units per product and simultaneous products, using fully mastered recipe chains
 from raw materials with Technical attributes zero. Books replenish too; prepared
 kits and eleven provisions lack recipes and remain finite. Vendor money and
 player-sold unique items are never copied. Evidence: assets/validation_5611.
-CA385-01 passed on 2026-10-21. Worn/preview/first-person clothing remains #387.
+CA385-01 passed on 2026-10-21. Worn/preview/first-person clothing is deferred to the 3D-model stage (#387).
 
 V5.6.10 adds the city library and clothing shop (#383), with matching signs,
 all approved recipe/tier books, sized clothing, sealed cartridge kits and matched
