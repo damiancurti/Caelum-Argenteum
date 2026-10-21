@@ -4,6 +4,16 @@ Documentation version: **5.6.4** — 2026-10-20.
 
 ## 5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20
 
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+The author fixture also warps to the existing 20-arrow dry anchor
+(-1344, -5472), taken from CaelumMazeLayout; it creates no replacement loot.
+
 The author explicitly retained current tables and requested their one-time
 delivery review. The issue's historical 65 T1 entries are not restored over
 #183's accepted material quotas. Chest/source identities, acquisition, quests,

@@ -36,7 +36,7 @@ scripts = {
     'tables-legacy':'wait 35; changemap MAP02; wait 70; netevent ca384_tables; save ca384-tables-legacy; wait 5; quit',
     'tables-reload':'wait 70; netevent ca384_tables_reload; wait 35; quit',
     'ice-save-current':'wait 35; netevent ca384_ice_spawn; wait 5; netevent ca384_ice_normal; wait 15; netevent ca384_ice_freeze; save ca384-current-ice; wait 5; quit',
-    'interactive':'exec ../../assets/playtest/default_controls.cfg; language es; wait 70; god; toggleconsole',
+    'interactive':'exec ../../assets/playtest/default_controls.cfg\nlanguage es; wait 70; god; warp -1344 -5472; toggleconsole',
 }
 for name, script in scripts.items():
     (OUT / (name + '.cfg')).write_text(script+'\n', encoding='utf-8')
