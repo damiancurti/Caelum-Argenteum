@@ -10,7 +10,7 @@ old pending/spent claims and frozen phase timers. The focused native set passes
 16 runs / 113 assertions; source/package comparison preserves unrelated paths.
 See assets/validation_564/RESULTS.md for evidence and reused-test boundaries.
 CA384-01, CA381-01 and CA378-01 passed author review on 2026-10-20.
-CA377-01 is the remaining delivered author check.
+All delivered author checks have passed; the pending queue is empty.
 No new table, ownership rule, random pool or historical-map refill is authorized.
 
 ## 5.6.3b - Review ordinary-clothing data before implementation (#386)
@@ -19,7 +19,7 @@ The author requested the full table, now in SYSTEMS. Approval is still needed
 for its concrete garment rows, balance, layering, durability and one-time legacy
 outfit/capacity policy. Preserve all accepted armor and thermal baselines until
 then. The #382 tool proposal remains pending; #387 art needs its separate coverage
-and visual approval after #386. CA377-01 remains pending; CA381-01/CA378-01 passed on 2026-10-20.
+and visual approval after #386. CA377-01 passed on 2026-10-20; CA381-01/CA378-01 passed on 2026-10-20.
 Each check uses its frozen package, not this proposal's diagnostic labels.
 
 ## 5.6.3a - Review the lock-tool proposal (#382)
@@ -36,7 +36,7 @@ a clothing table proposal; #385 leaves products without a game recipe unrenewed.
 Physical sheets/book, per-tier learning, source retry, Intelligence M3 reading,
 practice snapshots and capped time reductions are implemented. Furniture and
 bilingual controls are included. Evidence: `assets/validation_563/RESULTS.md`;
-CA378-01 passed author review on 2026-10-20. CA381-01 also passed; keep CA377-01 outstanding.
+CA378-01 passed author review on 2026-10-20. CA381-01 also passed; CA377-01 also passed.
 The author returned; the second temporary keep-awake request was released
 on 2026-10-20 without changing the Windows power plan.
 Next: #383 library commerce uses all approved recipe/tier books and replaces
@@ -49,7 +49,7 @@ Implemented the author's capacity, size, mass, transport and destruction rules
 on native chest inventories. Exact transactional guards and the live menu retain
 existing locks, quotas and protected items. Revision-1 migration and carried
 save/travel checks are recorded in `assets/validation_562/RESULTS.md`.
-CA381-01 passed author review on 2026-10-20; CA377-01 remains outstanding.
+CA381-01 passed author review on 2026-10-20; CA377-01 also passed on 2026-10-20.
 At that delivery the author was away. Remaining catalogue/balance decisions
 stay in their separate issues, not the author-test queue.
 
@@ -58,7 +58,7 @@ stay in their separate issues, not the author-test queue.
 Implemented compatible adapters, stateless session/quote coordination and
 shared inventory commits with preallocation. Focused static/native/save checks
 and retained baseline regressions: `assets/validation_561/RESULTS.md`.
-CA377-01 is the outstanding author check in pending_test.txt.
+CA377-01 passed author review on 2026-10-20. The author-test queue is empty.
 The author accepted CA376-01 on 2026-10-20. #378 follows on its own branch;
 recipe learning, ammunition, containers, ownership, shop content/replenishment
 and clothing remain separately scoped #378-387 work.
