@@ -230,7 +230,8 @@ no art, bindings or migration of the wider sprite pipeline.
 
 The author approved the complete 5.6.3a proposal on 2026-10-20. The rules and
 values below are the implemented design contract. Native evidence is recorded
-in validation_565; author acceptance of the implementation remains separate.
+in validation_565; CA382-01 passed author acceptance on 2026-10-21, including
+the chest-push correction. Native evidence and author acceptance remain distinct.
 
 Confirmed: padlocks are 100% steel, weighing 1/3/5 kg for the three chest tiers;
 crafting includes a matching key weighing 10% of the lock (0.1/0.3/0.5 kg), so the

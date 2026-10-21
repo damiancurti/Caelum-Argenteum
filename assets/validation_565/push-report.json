@@ -373,5 +373,5 @@
     "caelum/player/CaelumPlayer.zs": "9f13f05873a9a01014e766cf9a674cb296ce9006710b67a72c4ac72304e9c71e"
   },
   "independent_review": "Both guards and zeroed uppercut impulse reviewed statically; no outstanding P1/P2.",
-  "author_status": "Reported chest push defect; corrected retest pending"
+  "author_status": "CA382-01 accepted 2026-10-21 after corrected retest; runtime 18e01aa4"
 }

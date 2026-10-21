@@ -22,8 +22,8 @@ cannot leak into the player's uppercut vertical addition.
 Evidence: assets/validation_565/push-report.json records real-hit and save/reload
 passes plus positive controls for ordinary combatants and rocks. Movable rocks
 explicitly clear DONTTHRUST; rooted/fixed objects retain it. The runtime delta
-is limited to those two helpers. Independent review is static; author retest
-remains pending. This does not redefine pushes from unrelated systems such as
+is limited to those two helpers. Independent review is static; the author
+accepted the corrected CA382-01 retest on 2026-10-21. This does not redefine pushes from unrelated systems such as
 PolyObjects (CA-KP-118), nor teleport a chest moved by an earlier saved hit.
 
 ## CA-KP-145 - Compare saved identity values across hub graph reconstruction
@@ -50,7 +50,7 @@ pickup/drop and same-map save tests cover different serialization paths.
 
 Evidence: validation_565 retains the failed and corrected run logs plus current
 save/reload/travel checks. Independent review confirmed the affected boundaries.
-Author acceptance is pending. This establishes the tested hub behavior, not a
+CA382-01 passed author acceptance on 2026-10-21. This establishes the tested hub behavior, not a
 general guarantee for every engine object graph or mathematically unique RNG IDs.
 
 ## CA-KP-144 - Keep a nested exec on its own configuration line

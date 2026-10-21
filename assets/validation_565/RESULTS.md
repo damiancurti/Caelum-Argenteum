@@ -13,7 +13,9 @@ the uppercut guard. No serialized fields or balance values change.
 package: real flail break, unchanged contents/one theft, stationary position and
 velocity, player/NPC push controls on ordinary combatants and movable rocks,
 clearing a previous positive impulse, and actual attack after scene save/reload.
-Independent static review found no outstanding P1/P2. Author retest is pending.
+Independent static review found no outstanding P1/P2. CA382-01 passed author
+acceptance on 2026-10-21, including the corrected retest on runtime 18e01aa4
+(author-live-02). Its pending entry is retired; no outstanding author checks remain.
 `collect_push.py` verifies that only the two helpers changed in the runtime and
 that the normal package matches all tested members. Reuse the other original
 checks within their documented boundaries; the 20-run report below remains
@@ -45,7 +47,8 @@ hashes, configuration, commands and machine environment. GZDoom 4.14.2 / Windows
 11, unpaused background execution, 5% audio; native runs are sequential.
 `collect.py` checks that the normal build and tested frozen runtime contain the
 same bytes and that runtime sources match. `project-validation.json` is the
-separate read-only static validation. No author acceptance is claimed.
+separate read-only static validation. The original automated evidence predates
+the corrected retest and its author acceptance recorded above.
 
 - Suite: access/ownership, key identity, reusable picks/master, native quest
   protection, pure-steel reservations, all five recipes and repeat completion.

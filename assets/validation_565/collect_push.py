@@ -57,6 +57,6 @@ report=dict(issue=382,version='5.6.5',baseline_commit='59f9844c',baseline_packag
             package_sha256=current_hash,runs=runs,passing_runs=len(LABELS),
             passes=sum(r['passes'] for r in runs if not r['failures']),changed_runtime_members=sources,
             independent_review='Both guards and zeroed uppercut impulse reviewed statically; no outstanding P1/P2.',
-            author_status='Reported chest push defect; corrected retest pending')
+            author_status='CA382-01 accepted 2026-10-21 after corrected retest; runtime 18e01aa4')
 (HERE/'push-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(f"{len(LABELS)} focused passing runs, {report['passes']} assertions; original movement failure reproduced.")

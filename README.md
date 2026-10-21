@@ -14,8 +14,9 @@ theft witnesses (#382). Each city house receives one small locked household ches
 with ten gold coins. The [validation](assets/validation_565/RESULTS.md) records
 20 native runs and 134 passing assertions.
 The author's remaining chest-push defect is corrected: manual combat impulse now
-respects the chest's DONTTHRUST flag for player and NPC hits. The focused retest
-remains pending. New vendor/library stock belongs to #383.
+respects the chest's DONTTHRUST flag for player and NPC hits. CA382-01 passed
+author review on 2026-10-21, including the corrected retest. New vendor/library
+stock belongs to #383.
 
 V5.6.4 preserves current loot tables and prevents repeated native death/drop
 callbacks, including frozen resurrected bodies (#384). Old pending/spent claims
