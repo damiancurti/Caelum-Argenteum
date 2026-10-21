@@ -3519,7 +3519,7 @@ class CaelumInventoryService : Object play
             );
             if (inputStack == null) { return false; }
             double inputWeight = user.CraftingTaskReservedUnits[slot]
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                * inputStack.GetUnitWeight();
             if (inputStack.InMagicBox)
             {
                 boxRawDelta -= inputWeight;
@@ -3531,7 +3531,7 @@ class CaelumInventoryService : Object play
         }
 
         double outputWeight = user.CraftingTaskOutputUnits[outputSlot]
-            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+            * CaelumMaterialRules.UnitWeight(user.CraftingTaskOutputType[outputSlot]);
         if (outputToMagicBox)
         {
             if (existingOutput != null && !existingOutput.InMagicBox)
@@ -3544,7 +3544,7 @@ class CaelumInventoryService : Object play
                     )
                 );
                 double remainingWeight = remainingUnits
-                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                    * existingOutput.GetUnitWeight();
                 personalDelta -= remainingWeight;
                 boxRawDelta += remainingWeight;
             }
@@ -3602,6 +3602,17 @@ class CaelumInventoryService : Object play
         bool personalOutput = CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             || CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe) >= 0
             || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(user);
+        int ammoType = CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe);
+        if (ammoType >= 0)
+        {
+            let existingAmmo = CaelumCarbineAmmo(user.FindInventory(user.GetAmmunitionClassName(ammoType)));
+            if (existingAmmo != null)
+            {
+                if (existingAmmo.Amount > existingAmmo.MaxAmount
+                    - CaelumCraftingRules.GetRecipeAmmunitionBatch(user.CraftingSelectionRecipe)) return false;
+                personalOutput = !existingAmmo.InMagicBox;
+            }
+        }
         double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
         double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
         for (int slot = 0;
@@ -3615,7 +3626,7 @@ class CaelumInventoryService : Object play
             );
             if (inputStack == null) { return false; }
             double inputWeight = user.CraftingTaskReservedUnits[slot]
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                * inputStack.GetUnitWeight();
             if (inputStack.InMagicBox) { boxRawDelta -= inputWeight; }
             else { personalDelta -= inputWeight; }
         }

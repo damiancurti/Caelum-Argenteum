@@ -1373,8 +1373,8 @@ class CaelumCraftingCoordinator : Object play
         }
         else if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         {
-            // Flechas y virotes conservan sus masas nativas y comparten la
-            // base T1: 70 % asta y 30 % punta. Merma por capa en el bloque común.
+            // El kit completo es indivisible. Flechas/virotes conservan sus
+            // dos materiales; el bloque común aplica la merma una sola vez.
             user.CraftingSelectionTier = 1;
             user.CraftingFinalWeight = user.GetAmmunitionUnitWeight(
                 CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe))
@@ -1383,6 +1383,14 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingTierMaterialType = CaelumConstants.MATERIAL_POINT;
             user.CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(user.CraftingFinalWeight, CaelumConstants.AMMUNITION_SHAFT_SHARE);
             user.CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(user.CraftingFinalWeight, CaelumConstants.AMMUNITION_POINT_SHARE);
+            int kit = CaelumCraftingRules.GetRecipeCartridgeKit(user.CraftingSelectionRecipe);
+            if (kit >= 0)
+            {
+                user.CraftingBasicMaterialType = kit;
+                user.CraftingTierMaterialType = kit;
+                user.CraftingBasicRequired = CaelumConstants.CRAFTING_CARTRIDGE_BATCH;
+                user.CraftingTierRequired = 0;
+            }
             user.CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
                 user.CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_LONGBOW);
         }

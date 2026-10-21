@@ -1467,7 +1467,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 9)
+        if (RecipeBookVersion >= 10)
+        {
+            addedRecipeStart = CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;
+        }
+        else if (RecipeBookVersion >= 9)
         {
             addedRecipeStart = CaelumClothingData.FIRST_RECIPE;
         }

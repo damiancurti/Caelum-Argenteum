@@ -52,7 +52,8 @@ class CaelumCraftingUI : Object
             if (user.CraftingBlueprintNodeKind[node] == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
                 result = result .. String.Format(" · %s: %d u (%.3f kg) · %d%% · %d t/u · %.1f s",
                     L("CA_JOURNAL_CRAFTING_MATERIAL_USED"), user.CraftingBlueprintNodeInputUnits[node],
-                    user.CraftingBlueprintNodeInputUnits[node]*CaelumConstants.MATERIAL_UNIT_WEIGHT,
+                    user.CraftingBlueprintNodeInputUnits[node]*CaelumMaterialRules.UnitWeight(
+                        CaelumCraftingRules.GetRecipeCartridgeKit(user.CraftingBlueprintNodeRecipe[node])),
                     view.GetCraftingEfficiencyPercentForIndex(user.CraftingBlueprintNodeEfficiency[node]),
                     user.CraftingBlueprintNodeComplexityTics[node],user.CraftingBlueprintNodeSeconds[node]);
             else

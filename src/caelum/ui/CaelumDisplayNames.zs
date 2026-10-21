@@ -244,6 +244,8 @@ class CaelumDisplayNames : Object
             case CaelumConstants.MATERIAL_COW_HIDE: return "CA_MATERIAL_COW_HIDE";
             case CaelumConstants.MATERIAL_PREDATOR_HIDE: return "CA_MATERIAL_PREDATOR_HIDE";
             case CaelumConstants.MATERIAL_MONSTER_HIDE: return "CA_MATERIAL_MONSTER_HIDE";
+            case CaelumConstants.MATERIAL_CARBINE_KIT: return "CA_MATERIAL_CARBINE_KIT";
+            case CaelumConstants.MATERIAL_SHOTGUN_KIT: return "CA_MATERIAL_SHOTGUN_KIT";
             default: return "CA_MATERIAL_IRON_INGOT";
         }
     }
