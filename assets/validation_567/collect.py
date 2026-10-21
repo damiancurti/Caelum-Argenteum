@@ -42,9 +42,13 @@ def collect_run(work, label, package, addon, category):
     assert record['package_sha256'].lower() == sha(package), label
     if record['addon_sha256']:
         assert record['addon_sha256'].lower() == sha(addon), label
-    (HERE/'native'/(label+'.txt')).write_text(redact(log), encoding='utf-8')
+    (HERE/'native'/(label+'.txt')).write_text(clean_log(log), encoding='utf-8')
     return {'label': label, 'category': category, 'record': redact(record),
             'passes': len(re.findall(r'CA38[67] PASS ', log)), 'raw_log_sha256': sha(log_path)}
+
+
+def clean_log(log):
+    return '\n'.join(line.rstrip() for line in redact(log).splitlines()).rstrip()+'\n'
 
 
 def main():
@@ -81,7 +85,7 @@ def main():
     diagnostics = []
     for label in ['suite-01', 'suite-02', 'suite-03', 'suite-04', 'suite-05']:
         path = WORK/(label+'.txt')
-        (HERE/'native'/('diagnostic-'+label+'.txt')).write_text(redact(path.read_text(encoding='utf-8', errors='replace')), encoding='utf-8')
+        (HERE/'native'/('diagnostic-'+label+'.txt')).write_text(clean_log(path.read_text(encoding='utf-8', errors='replace')), encoding='utf-8')
         diagnostics.append({'label': label, 'raw_log_sha256': sha(path), 'counts_as_passing': False})
     report = {'issue': 387, 'version': '5.6.7', 'base_commit': 'f4c87d6e5ec42f3f96e601149b5574b5142e6195',
               'package_sha256': sha(package), 'source_member_count': len(members),

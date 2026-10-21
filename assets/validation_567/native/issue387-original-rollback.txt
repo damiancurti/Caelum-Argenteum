@@ -30,7 +30,7 @@ Resolution: 1280 x 720
 I_Init: Setting up machine state.
 CPU speed: 3400 MHz
 CPU Vendor ID: AuthenticAMD
-  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Name: AMD Ryzen 9 5950X 16-Core Processor
   Family 25 (25), Model 33, Stepping 0
   Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
 V_Init: allocate screen.
