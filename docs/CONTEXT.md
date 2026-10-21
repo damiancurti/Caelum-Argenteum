@@ -2,7 +2,7 @@
 
 Documentation version: **5.6.1** — 2026-10-20.
 
-**5.6.1/#377:** merchant coordination; validation_561; CA377-01 pending.
+**5.6.1/#377:** merchant coordination; validation_561; CA377-01 accepted2026-10-20.
 **5.6.0/#376:** crafting; validation_560; CA376-01 accepted2026-10-20.
 
 **5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.

@@ -3,7 +3,7 @@
 The final 5.6.1 runtime passes the focused transaction and persistence gates.
 Across 11 required native runs: **212 passing
 assertions, three expected defects reproduced only on 5.6.0, zero unexpected
-failures**. Author check **CA377-01 remains pending**.
+failures**. Author check **CA377-01 passed author review on 2026-10-20**.
 
 | Run | Runtime | Passing assertions | Expected old-runtime defects |
 | --- | --- | ---: | ---: |
@@ -34,7 +34,7 @@ foreign inventory item and unbound pawn rejection, close/reopen and distance
 loss. Three baseline regressions are isolated: foreign city-session execution,
 Palomo's equal-price replacement row, and city-to-Palomo projection cleanup.
 Repeated execution after depletion/closure cannot repeat a completed payment.
-UI hold behavior remains an explicit author check; input code is unchanged.
+UI hold behavior has separate author acceptance CA377-01 (2026-10-20); input code is unchanged.
 
 The old save is created by actual **5.5.8a**, with an open session, purchased
 equipment and depleted stock. Upgrade, new/upgraded reload, TMAINT → THAZARD →
