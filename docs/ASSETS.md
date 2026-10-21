@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.7** — 2026-10-21.
+Documentation version: **5.6.8** — 2026-10-21.
 
 ## 5.6.7 - Distinct garment object artwork (#387)
 

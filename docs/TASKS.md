@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.7** — 2026-10-21.
+Documentation version: **5.6.8** — 2026-10-21.
+
+## 5.6.8 - Approved sealed cartridge kits (#379)
+
+Design contract complete and author-approved on 2026-10-21; SYSTEMS contains the
+two-kit table, exact accounting and #380 handoff. No author gameplay check is
+queued for a design-only delivery. Implement #380 with native reservations,
+existing efficiency/learning, unchanged ammunition identities and real save tests.
+Keep kit/library commerce in #383 and renewal in #385. Kits have no manufacturing
+recipe, so they remain unrenewed under the already approved policy.
 
 ## 5.6.7 - Individual clothing object sprites (#387)
 

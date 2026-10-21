@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.7** — 2026-10-21.
+Documentation version: **5.6.8** — 2026-10-21.
+
+## 5.6.8 - Approved sealed cartridge kits (#379), 2026-10-21
+
+The author answered "Aceptar kits y precio propuestos": each playable input
+represents the complete prepared case, sealed charge and projectile/shot set.
+The 40 g/45 g game masses and 80%-of-finished-base-price proposal are approved.
+At 100% efficiency ten kits yield ten cartridges; existing lower efficiencies,
+stations, complexity, learning and final prices remain authoritative. The earlier
+separate-component allocation is superseded; no real charge proportions exist.
+SYSTEMS records the precise handoff. No new native run or gameplay acceptance is
+claimed for this design-only patch; static validation and absence of gameplay
+delta are checked. Only current diagnostic version labels change in src.
 
 ## 5.6.7 - Individual clothing object sprites (#387), 2026-10-21
 

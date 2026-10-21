@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.7** — 2026-10-21.
+Documentation version: **5.6.8** — 2026-10-21.
+
+## 5.6.8 - Approved sealed cartridge kits (#379)
+
+The author approved one complete prepared kit per cartridge, 40 g carbine / 45 g
+shotgun, priced at 80% of the existing finished cartridge base value. The final
+table and implementation handoff are in SYSTEMS. This supersedes the pending
+separate-component allocation. #380 owns assembly; #383 owns ranged-shop/library
+availability; #385 owns finished-product restocking. No gameplay or art changed.
 
 ## 5.6.7 - Individual clothing object sprites (#387)
 
