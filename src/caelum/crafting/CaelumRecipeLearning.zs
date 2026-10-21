@@ -15,6 +15,7 @@ class CaelumRecipeLearning : Object play
 
     static int Tier(int recipe, int tier)
     {
+        if(CaelumLockRules.IsRecipe(recipe))return CaelumLockRules.RecipeTier(recipe);
         if(CaelumCraftingRules.IsSingleTierRecipe(recipe)
             || CaelumCraftingRules.GetRecipeAmmunitionType(recipe)>=0)return 1;
         int kind=CaelumCraftingRules.GetUnifiedRecipeKind(recipe);

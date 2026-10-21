@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.4.** Obtain and update the complete repository, validate
+**Current release: 5.6.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.5 implements approved padlock/key crafting, lawful chest title and local
+theft witnesses (#382). Each city house receives one small locked household chest
+with ten gold coins. The [validation](assets/validation_565/RESULTS.md) records
+20 native runs and 134 passing assertions.
+The author's remaining chest-push defect is corrected: manual combat impulse now
+respects the chest's DONTTHRUST flag for player and NPC hits. CA382-01 passed
+author review on 2026-10-21, including the corrected retest. New vendor/library
+stock belongs to #383.
 
 V5.6.4 preserves current loot tables and prevents repeated native death/drop
 callbacks, including frozen resurrected bodies (#384). Old pending/spent claims
@@ -15,12 +24,12 @@ and frozen timers migrate locally. See [validation](assets/validation_564/RESULT
 for 16 native runs / 113 passing assertions and test boundaries. CA384-01 passed author review on 2026-10-20.
 
 V5.6.3b records the requested clothing catalogue proposal (#386) in SYSTEMS.
-Its garment, thermal and migration values await author review. No clothing
-gameplay or models are implemented by this proposal.
+The author approved its garment, thermal and migration values on 2026-10-20.
+Clothing gameplay and models remain separate implementation work.
 
 V5.6.3a records the requested lock-tool and ownership proposal for #382 in
-SYSTEMS. New proposed values await author review; gameplay remains 5.6.3.
-Only the required diagnostic release labels change in runtime sources.
+SYSTEMS. The author approved those values on 2026-10-20; implementation follows
+in 5.6.5. The subsequent 32-meter witness rule supersedes warning-only theft.
 
 V5.6.3 adds physical recipe sheets, per-tier learning and capped reading/practice
 bonuses (#378). Receive a recipe book with the first sheet and read beside a

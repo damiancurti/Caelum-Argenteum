@@ -543,6 +543,7 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeComplexityTics(int recipeIndex)
     {
+        if(CaelumLockRules.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
         int recipeKind = GetUnifiedRecipeKind(recipeIndex);
         if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)
         {

@@ -166,7 +166,8 @@ class CaelumLiveMenuControls : Object ui
                 Row(300);Button("CA_CONTAINER_MODE",InputEvent.Key_Space,0,"",188);
                 Button("CA_CONTAINER_TRANSFER",InputEvent.Key_Enter,0,"",188);
                 Button("CA_CONTAINER_CARRY",0,99,"c",188);
-                Row(322);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",188);
+                Row(322);Button("CA_LOCK_TOGGLE",0,108,"l",188);
+                Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",188);
                 int first=storage.Selection/4*4;double y=104;
                 let font=Font.GetFont("CaelumSmall");
                 for(int i=first;i<Min(first+4,storage.Labels.Size());i++)

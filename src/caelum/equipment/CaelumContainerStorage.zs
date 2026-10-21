@@ -71,7 +71,7 @@ class CaelumContainerRules : Object play
                 || user.IsEquipmentItemCraftingLocked(equipment.ItemId)))return false;
         let special=CaelumSpecialInventoryItem(item);
         if(depositing && special!=null && special.LimboQuestUnits>0)return false;
-        if(!depositing && equipment==null && item.MaxAmount<=1
+        if(!depositing && equipment==null && !(item is "CaelumLockItem") && item.MaxAmount<=1
             && user.FindInventory(item.GetClassName())!=null)return false;
         if(depositing && special!=null && special.GetSpecialCategory()==CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && user.GetReservedCraftingMaterialUnits(special.GetSpecialType(),special.GetSpecialTier())>0)return false;
@@ -203,19 +203,25 @@ class CaelumContainerSession : Inventory
     }
     static void Open(CaelumPlayer user,CaelumStashChest chest)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || chest==null || !chest.CanStore(user))return;
+        if(!CaelumPlayerAuthority.CanMutate(user) || chest==null || !chest.CanReachStorage(user)
+            || (chest.GetChestLockNumber()>0 && !chest.ChestUnlocked))return;
+        if(chest.InstalledPadlock!=null && !chest.PadlockReleased && !CaelumLockRules.HasAccess(user,chest.InstalledPadlock))
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_LOCK_NEEDS_KEY",false));return;}
         let session=Get(user,true);if(session==null)return;
+        if(session.Chest==chest && chest.ChestOpen)return;
         user.EquipmentMenuOpen=false;user.ClosePalomoMerchant();
         user.CloseCraftingStationSession();user.SetCraftingJournalState(false);
         let old=CaelumChestPreviewState.Get(user);if(old!=null)old.Close();
         session.Close();session.Chest=chest;session.Selection=0;session.Depositing=false;
         session.QuantityIndex=0;session.Status="";
-        chest.ChestOpen=true;chest.RefreshChestVisual();session.Refresh();
+        bool opening=!chest.ChestOpen;
+        chest.PadlockReleased=true;chest.ChestOpen=true;chest.RefreshChestVisual();session.Refresh();
+        if(opening && chest.InstalledPadlock!=null)chest.CommitTheft(user);
     }
     void Close()
     {
         if(Chest!=null)
-        {Chest.ChestOpen=false;Chest.RefreshChestVisual();}
+        {Chest.ChestOpen=false;Chest.PadlockReleased=false;Chest.RefreshChestVisual();}
         Chest=null;Rows.Clear();Labels.Clear();Amounts.Clear();
     }
     clearscope int Quantity()

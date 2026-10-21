@@ -1522,6 +1522,8 @@ class CaelumInventoryService : Object play
             specialItem.GetSpecialCategory(), specialItem.GetSpecialType(),
             specialItem.GetSpecialTier()
         );
+        // Las llaves emparejadas no son duplicados de una pila ya pesada.
+        if(specialItem is "CaelumLockItem")existing=null;
         if (existing != null)
         {
             if (specialItem.GetSpecialCategory()
@@ -2644,6 +2646,8 @@ class CaelumInventoryService : Object play
         if(cargo!=null){CaelumContainerSession.Open(user,cargo.Chest);return;}
         let book=CaelumRecipeBook(entry);
         if(book!=null){CaelumRecipeSession.OpenBook(user,book);return;}
+        let lockItem=CaelumLockItem(entry);
+        if(lockItem!=null){lockItem.ToggleBox(user);return;}
         user.ApplyFormalInventorySelection(entry);
         let bag = CaelumSleepingBag(entry);
         if (bag != null && !bag.InMagicBox)
@@ -2679,6 +2683,8 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        let lockItem=CaelumLockItem(entry);
+        if(lockItem!=null){lockItem.ToggleBox(user);return;}
         if(entry is "CaelumChestCargo")return;
         user.ApplyFormalInventorySelection(entry);
         user.ToggleSelectedMagicBox();
@@ -2691,6 +2697,8 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        let lockItem=CaelumLockItem(entry);
+        if(lockItem!=null){lockItem.DropInstance(user);return;}
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)
         {

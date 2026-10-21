@@ -1,6 +1,6 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.4** — 2026-10-20.
+Documentation version: **5.6.5** — 2026-10-21.
 
 ## 5.6.4 - One-time death loot, existing tables (#384)
 

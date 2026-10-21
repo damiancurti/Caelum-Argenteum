@@ -10367,7 +10367,8 @@ class CaelumPlayer : DoomPlayer
     void ApplyAttackPushToTarget(Actor target, double attackAngle, double attackerMultiplier)
     {
         LastAttackPushForce = 0.0;
-        if (target == null || target.health <= 0) { return; }
+        // Thrust directo no respeta por sí solo la inmovilidad frente a golpes.
+        if (target == null || target.health <= 0 || target.bDONTTHRUST) { return; }
         LastAttackPushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
             * Max(0.0, attackerMultiplier)
             * GetTargetKnockbackMultiplier(target);

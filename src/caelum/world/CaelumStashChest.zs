@@ -65,9 +65,73 @@ class CaelumStashChest : Actor
     CaelumStashChestVisual ChestVisual;
     int StorageRevision, StorageTier;
     CaelumChestCargo Cargo;
+    int LawfulRevision, TheftOpenings;
+    CaelumLawfulIdentity LawfulOwner;
+    CaelumLockItem InstalledPadlock;
+    bool PadlockReleased;
+
+    void EnsureLawfulAccess()
+    {
+        if(LawfulRevision>=CaelumLockRules.REVISION)return;
+        // Los cofres anteriores siguen públicos/sin clasificar; no se adjudican.
+        LawfulRevision=CaelumLockRules.REVISION;
+    }
+    void GrantLawfulTitle(CaelumPlayer user)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user))return;
+        EnsureLawfulAccess();LawfulOwner=CaelumLockRules.Character(user,true);
+    }
+    bool IsLawfulOwner(CaelumPlayer user)
+    {return CaelumLockRules.SameTitle(LawfulOwner,CaelumLockRules.Character(user));}
+    bool TogglePadlock(CaelumPlayer user)
+    {
+        if(!CanStore(user) || !ChestOpen || !IsLawfulOwner(user) || GetChestLockNumber()>0)return false;
+        if(InstalledPadlock!=null)
+        {
+            user.RefreshCarriedInventorySummary();
+            if(Cargo==null && !user.CanAddWeightToPersonalInventory(InstalledPadlock.GetUnitWeight()))return false;
+            let item=InstalledPadlock;InstalledPadlock=null;RemoveInventory(item);item.AttachToOwner(user);
+            bShootable=false;
+        }
+        else
+        {
+            CaelumLockItem selected=null;
+            for(Inventory item=user.Inv;item!=null;item=item.Inv)
+            {
+                let candidate=CaelumLockItem(item);
+                if(candidate!=null && candidate.LockItemType==StorageTier && !candidate.InMagicBox
+                    && candidate.PairIdentity!=null && candidate.LimboQuestUnits==0){selected=candidate;break;}
+            }
+            if(selected==null)return false;
+            user.RemoveInventory(selected);selected.AttachToOwner(self);InstalledPadlock=selected;
+            bShootable=true;
+        }
+        let session=CaelumContainerSession.Get(user);if(session!=null)session.Close();
+        user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();RefreshChestVisual();
+        return true;
+    }
+    void CommitTheft(CaelumPlayer user)
+    {
+        if(LawfulOwner==null || IsLawfulOwner(user))return;
+        TheftOpenings++;
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_LOCK_THEFT",false));
+        CaelumTheftWitnesses.Alert(user);
+    }
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double hitAngle)
+    {
+        let user=CaelumPlayer(source);let npc=CaelumCombatActor(source);
+        bool blunt=(user!=null && user.ThermalBluntDelivery) || (npc!=null && npc.ThermalBluntDelivery);
+        if(damage<=0 || !blunt || InstalledPadlock==null || PadlockReleased || GetChestLockNumber()>0)return 0;
+        let padlock=InstalledPadlock;InstalledPadlock=null;padlock.Destroy();
+        bShootable=false;
+        ChestOpen=true;RefreshChestVisual();
+        if(user!=null)CommitTheft(user);
+        return 1;
+    }
 
     void EnsureStorage()
     {
+        EnsureLawfulAccess();
         if(StorageRevision>=CaelumContainerRules.REVISION)return;
         StorageTier=args[4]>0 ? Clamp(args[4]-1,0,2) : CaelumContainerRules.MEDIUM;
         StorageRevision=CaelumContainerRules.REVISION;
@@ -85,7 +149,7 @@ class CaelumStashChest : Actor
     }
     virtual bool IsStorageItem(Inventory item)
     {
-        return item!=null && item.Owner==self && item.Amount>0;
+        return item!=null && item!=InstalledPadlock && item.Owner==self && item.Amount>0;
     }
     virtual int StorageSlots()
     {
@@ -104,7 +168,7 @@ class CaelumStashChest : Actor
     double TotalStorageWeight(CaelumPlayer user)
     {
         return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION
-            +StorageWeight(user);
+            +StorageWeight(user)+(InstalledPadlock!=null ? InstalledPadlock.GetUnitWeight() : 0.0);
     }
     bool CanReachStorage(CaelumPlayer user)
     {
@@ -144,6 +208,7 @@ class CaelumStashChest : Actor
     }
     override void OnDestroy()
     {
+        InstalledPadlock=null;
         if(Cargo!=null)
         {
             let token=Cargo;Cargo=null;token.Chest=null;token.Destroy();
@@ -173,7 +238,7 @@ class CaelumStashChest : Actor
 
     bool IsChestLocked()
     {
-        return GetChestLockNumber() > 0 && !ChestUnlocked;
+        return (GetChestLockNumber() > 0 && !ChestUnlocked) || (InstalledPadlock!=null && !PadlockReleased);
     }
 
     void RefreshChestVisual()
@@ -260,7 +325,7 @@ class CaelumStashChest : Actor
             return true;
         }
 
-        if (IsChestLocked())
+        if (GetChestLockNumber()>0 && !ChestUnlocked)
         {
             int lockNumber = GetChestLockNumber();
             if (user == null || !user.CheckKeys(lockNumber, false))

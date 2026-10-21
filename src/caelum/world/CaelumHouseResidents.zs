@@ -101,6 +101,7 @@ class CaelumHouseResident : Object play
 // Sólo recorre sus residentes conocidos durante una transición, nunca actores globales.
 class CaelumHouseResidents : Inventory
 {
+    bool HouseChestIssued[CaelumCityData.HOUSE_COUNT];
     const PARKED_STAT=Thinker.STAT_FIRST_THINKING-2;
     int Revision, PendingCursor, Unresolved;
     bool Ready, DeploymentPending;

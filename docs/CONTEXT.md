@@ -1,9 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.4** — 2026-10-20.
+Documentation version: **5.6.5** — 2026-10-21.
 
 **5.6.4/#384:** unchanged tables, once-only death/ice; validation_564:16runs/113PASS; CA384-01 accepted2026-10-20.
-**#382/#386:** lock/clothing proposals unapproved (SYSTEMS).
+**5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
+**#386:** clothing approved; implementation pending (SYSTEMS).
 **5.6.3/#378:** sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library:#383.
 **5.6.2/#381:** chest storage; validation_562; CA381-01 accepted2026-10-20.
 **5.6.1/#377:** merchants; validation_561; CA377-01 accepted2026-10-20.
@@ -339,8 +340,7 @@ separate agent evidence/author acceptance. Preserve history and unique content.
 
 Premises: `AGENTS.md`, `docs/PROJECT.md`.
 
-[pending_test.txt](../pending_test.txt) holds outstanding author tests across
-versions. Only author-confirmed passes move their ID, version/issue, result,
+[pending_test.txt](../pending_test.txt) lists outstanding author tests. Confirmed passes move ID, version/issue, result,
 date and qualifications to [HISTORY.md](HISTORY.md); remove the entry together.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 Docs and AGENTS declare the current version; ancillary guides inherit README.

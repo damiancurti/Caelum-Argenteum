@@ -3,6 +3,7 @@
 // mapas sin convertir los controles temporales en objetos visibles todavia.
 class CaelumPersistentCharacterState : Inventory
 {
+    CaelumLawfulIdentity LawfulIdentity;
     bool ProfileCommitted;
     // #147: autoridad compartida. Los campos planos se conservan para saves
     // anteriores y rollback, pero sólo reflejan estos objetos tras la migración.
@@ -1464,7 +1465,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 6)
+        if (RecipeBookVersion >= 8)
+        {
+            addedRecipeStart = CaelumLockRules.FIRST_RECIPE;
+        }
+        else if (RecipeBookVersion >= 6)
         {
             addedRecipeStart = CaelumConstants.CRAFTING_BOLAS_RECIPE;
         }

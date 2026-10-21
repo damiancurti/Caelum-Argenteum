@@ -258,6 +258,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     Actor FindEscortThreat()
     {
+        if(CaelumTheftWitnesses.HasTarget(self))return TheftTarget;
         BlockThingsIterator iterator = BlockThingsIterator.Create(
             self, CaelumConstants.PRISONER_THREAT_RADIUS);
         while (iterator.Next())
