@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
 
 ## 5.5.8 - Cleaned animated bull model (#369)
 

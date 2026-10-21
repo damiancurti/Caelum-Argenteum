@@ -1,6 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
+
+**5.6.0/#376:** crafting extraction; validation_560; CA376-01 accepted2026-10-20.
+#377 next; #378-387 need design.
 
 **5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.
 **5.5.8/#369:** accepted; validation_558; CA369-01 passed.
@@ -117,9 +120,9 @@ the existing divisions and weaken the resistance. Both threats come from the
 plan of an infernal prince who, after repeatedly failing to conquer the Earth
 by force, decided to corrupt the Moon and break the Earth from within.
 
-The protagonist captains Barracas al Sud's guard. He wakes in a
-mansion unaware it is Limbo. After returning, guards recognize him, but he cannot
-remember his past. Captaincy changes neither customization, class nor faction.
+Barracas al Sud's guard captain awakens unknowingly in Limbo's mansion.
+Returning guards recognize him despite his amnesia.
+Captaincy leaves customization, class and faction unchanged.
 The main species are allegorical of nineteenth-century Argentina: the Beast Men
 represent the native peoples, the Caelith European colonialism, the duendes
 the gauchos and rural culture, and the humans the urban porteño society.

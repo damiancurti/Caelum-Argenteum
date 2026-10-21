@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.5.8a** — 2026-10-20.
+Documentation version: **5.6.0** — 2026-10-20.
+
+## 5.6.0 - Crafting coordinator (#376), 2026-10-20
+
+The author requested implementation of all open issues, separate deliveries and
+live tests, commit/push, and a terminal for manual review. #376 is the first
+technical slice. The extraction preserves all pawn fields and signatures,
+explicit task record handoff and the accepted inventory completion authority.
+Its 48 moved bodies and 514 unchanged bodies pass literal-preserving static
+comparison against 5.5.8a `92be078e`.
+
+GZDoom 4.14.2 / Windows 11 baseline/revised manufacturing and session checks,
+native-created paused-task save upgrade/reload, hub/non-hub travel and rollback
+are recorded in `assets/validation_560/RESULTS.md`. Static validation and normal
+packaging are separate gates. Synthetic fixture materials, characters and
+stations are isolated from the production package. Initial fixture failures
+and corrections remain recorded and are not counted as successful gates.
+**Author acceptance, 2026-10-20:** CA376-01 (origin 5.6.0 / #376) passed.
+The author confirmed "La prueba que me diste dio correcto", without reported
+exceptions, after the supplied interactive crafting fixture. Its confirmed
+entry is removed from pending_test.txt. Release 5.6.0 and tested runtime bytes
+are unchanged. This records the supplied test's acceptance; no additional
+campaign route, PR merge or issue closure is implied.
 
 ## 5.5.8a - Author-requested deferred issue closure (#316), 2026-10-20
 

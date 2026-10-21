@@ -3385,11 +3385,7 @@ class CaelumPlayer : DoomPlayer
 
     double GetCraftingDexterityPercent()
     {
-        if (DerivedStats == null || Attributes == null) { return 100.0; }
-        return Max(
-            100.0,
-            DerivedStats.CalculateType1Percent(Attributes.Dexterity)
-        );
+        return CaelumCraftingCoordinator.GetCraftingDexterityPercent(self);
     }
 
     double GetCraftingMaterialWorkSeconds(
@@ -3397,131 +3393,53 @@ class CaelumPlayer : DoomPlayer
         int efficiencyIndex
     )
     {
-        return CaelumCraftingRules.GetMaterialWorkSeconds(
-            employedMaterialUnits,
-            complexityTics,
-            GetCraftingDexterityPercent(),
-            efficiencyIndex
-        );
+        return CaelumCraftingCoordinator.GetCraftingMaterialWorkSeconds(self, employedMaterialUnits, complexityTics, efficiencyIndex);
     }
 
     int GetCurrentCraftingInputUnits()
     {
-        return Max(0, CraftingBasicRequired)
-            + Max(0, CraftingTierRequired)
-            + Max(0, CraftingSilverRequired)
-            + Max(0, CraftingGoldRequired);
+        return CaelumCraftingCoordinator.GetCurrentCraftingInputUnits(self);
     }
 
     void ResetCraftingLayerChoices()
     {
-        CraftingLayerChoiceCount = 0;
-        CraftingBlueprintSelectedNode = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT; slot++)
-        {
-            CraftingLayerChoiceRecipe[slot] = -1;
-            CraftingLayerChoiceTier[slot] = 1;
-            CraftingLayerChoiceEfficiency[slot] = 0;
-        }
+        CaelumCraftingCoordinator.ResetCraftingLayerChoices(self);
     }
 
     void EnsureCraftingLayerChoiceRoot()
     {
-        if (CraftingLayerChoiceRootRecipe == CraftingSelectionRecipe
-            && CraftingLayerChoiceRootTier == CraftingSelectionTier
-            && CraftingLayerChoiceRootSize == CraftingSelectionSize)
-        {
-            return;
-        }
-        CraftingLayerChoiceRootRecipe = CraftingSelectionRecipe;
-        CraftingLayerChoiceRootTier = CraftingSelectionTier;
-        CraftingLayerChoiceRootSize = CraftingSelectionSize;
-        ResetCraftingLayerChoices();
+        CaelumCraftingCoordinator.EnsureCraftingLayerChoiceRoot(self);
     }
 
     int FindCraftingLayerChoice(int recipeIndex, int materialTier)
     {
-        int resolvedTier = Clamp(materialTier, 1, 3);
-        for (int slot = 0; slot < CraftingLayerChoiceCount; slot++)
-        {
-            if (CraftingLayerChoiceRecipe[slot] == recipeIndex
-                && CraftingLayerChoiceTier[slot] == resolvedTier)
-            {
-                return slot;
-            }
-        }
-        return -1;
+        return CaelumCraftingCoordinator.FindCraftingLayerChoice(self, recipeIndex, materialTier);
     }
 
     int GetOrCreateCraftingLayerChoice(
         int recipeIndex, int materialTier
     )
     {
-        int existing = FindCraftingLayerChoice(recipeIndex, materialTier);
-        if (existing >= 0) { return existing; }
-        if (CraftingLayerChoiceCount
-            >= CaelumConstants.CRAFTING_LAYER_CHOICE_SLOT_COUNT)
-        {
-            return -1;
-        }
-        int slot = CraftingLayerChoiceCount++;
-        CraftingLayerChoiceRecipe[slot] = recipeIndex;
-        CraftingLayerChoiceTier[slot] = Clamp(materialTier, 1, 3);
-        CraftingLayerChoiceEfficiency[slot] = Clamp(
-            CraftingEfficiencyIndex, 0,
-            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
-        );
-        return slot;
+        return CaelumCraftingCoordinator.GetOrCreateCraftingLayerChoice(self, recipeIndex, materialTier);
     }
 
     int GetCraftingLayerEfficiencyIndex(
         int recipeIndex, int materialTier
     )
     {
-        int choice = GetOrCreateCraftingLayerChoice(
-            recipeIndex, materialTier
-        );
-        return choice >= 0
-            ? CraftingLayerChoiceEfficiency[choice]
-            : CraftingEfficiencyIndex;
+        return CaelumCraftingCoordinator.GetCraftingLayerEfficiencyIndex(self, recipeIndex, materialTier);
     }
 
     void SetCraftingLayerEfficiencyIndex(
         int recipeIndex, int materialTier, int efficiencyIndex
     )
     {
-        int choice = GetOrCreateCraftingLayerChoice(
-            recipeIndex, materialTier
-        );
-        if (choice < 0) { return; }
-        CraftingLayerChoiceEfficiency[choice] = Clamp(
-            efficiencyIndex, 0,
-            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
-        );
+        CaelumCraftingCoordinator.SetCraftingLayerEfficiencyIndex(self, recipeIndex, materialTier, efficiencyIndex);
     }
 
     void ClearCraftingBlueprint()
     {
-        CraftingBlueprintNodeCount = 0;
-        CraftingBlueprintFullSeconds = 0.0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT; slot++)
-        {
-            CraftingBlueprintNodeKind[slot] =
-                CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW;
-            CraftingBlueprintNodeDepth[slot] = 0;
-            CraftingBlueprintNodeRecipe[slot] = -1;
-            CraftingBlueprintNodeMaterialType[slot] = -1;
-            CraftingBlueprintNodeMaterialTier[slot] = 1;
-            CraftingBlueprintNodeUnits[slot] = 0;
-            CraftingBlueprintNodeOwnedUnits[slot] = 0;
-            CraftingBlueprintNodeInputUnits[slot] = 0;
-            CraftingBlueprintNodeEfficiency[slot] = -1;
-            CraftingBlueprintNodeComplexityTics[slot] = 0;
-            CraftingBlueprintNodeSeconds[slot] = 0.0;
-            CraftingBlueprintNodeExecuted[slot] = false;
-        }
+        CaelumCraftingCoordinator.ClearCraftingBlueprint(self);
     }
 
     int FindCraftingBlueprintNode(
@@ -3529,28 +3447,7 @@ class CaelumPlayer : DoomPlayer
         int materialType, int materialTier
     )
     {
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
-        {
-            if (CraftingBlueprintNodeKind[node] != nodeKind) { continue; }
-            if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
-            {
-                if (CraftingBlueprintNodeRecipe[node] == recipeIndex
-                    && CraftingBlueprintNodeMaterialTier[node]
-                        == resolvedTier)
-                {
-                    return node;
-                }
-            }
-            else if (CraftingBlueprintNodeMaterialType[node] == materialType
-                && CraftingBlueprintNodeMaterialTier[node] == resolvedTier)
-            {
-                return node;
-            }
-        }
-        return -1;
+        return CaelumCraftingCoordinator.FindCraftingBlueprintNode(self, nodeKind, recipeIndex, materialType, materialTier);
     }
 
     int AddOrAccumulateCraftingBlueprintNode(
@@ -3558,41 +3455,7 @@ class CaelumPlayer : DoomPlayer
         int materialType, int materialTier, int units
     )
     {
-        if (units <= 0) { return -1; }
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        int existing = FindCraftingBlueprintNode(
-            nodeKind, recipeIndex, materialType, resolvedTier
-        );
-        if (existing >= 0)
-        {
-            CraftingBlueprintNodeUnits[existing] += units;
-            CraftingBlueprintNodeDepth[existing] = Min(
-                CraftingBlueprintNodeDepth[existing], depth
-            );
-            return existing;
-        }
-        if (CraftingBlueprintNodeCount
-            >= CaelumConstants.CRAFTING_BLUEPRINT_NODE_SLOT_COUNT)
-        {
-            return -1;
-        }
-        int node = CraftingBlueprintNodeCount++;
-        CraftingBlueprintNodeKind[node] = nodeKind;
-        CraftingBlueprintNodeDepth[node] = Clamp(depth, 0, 8);
-        CraftingBlueprintNodeRecipe[node] = recipeIndex;
-        CraftingBlueprintNodeMaterialType[node] = materialType;
-        CraftingBlueprintNodeMaterialTier[node] = resolvedTier;
-        CraftingBlueprintNodeUnits[node] = units;
-        if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
-        {
-            CraftingBlueprintNodeEfficiency[node] =
-                GetCraftingLayerEfficiencyIndex(recipeIndex, resolvedTier);
-            CraftingBlueprintNodeComplexityTics[node] =
-                CaelumCraftingRules.GetRecipeComplexityTics(recipeIndex);
-        }
-        return node;
+        return CaelumCraftingCoordinator.AddOrAccumulateCraftingBlueprintNode(self, nodeKind, depth, recipeIndex, materialType, materialTier, units);
     }
 
     void ExpandCraftingBlueprintMaterial(
@@ -3600,384 +3463,68 @@ class CaelumPlayer : DoomPlayer
         int depth = 1
     )
     {
-        // La merma modifica las cantidades transmitidas a cada subreceta. El
-        // tiempo de una operacion usa solo la eficiencia elegida en ese nodo.
-        if (requiredUnits <= 0 || depth > 8) { return; }
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        int recipeIndex =
-            CaelumCraftingRules.FindComponentRecipeForOutput(materialType);
-        bool componentRecipe = recipeIndex >= 0;
-        if (!componentRecipe)
-        {
-            recipeIndex = CaelumCraftingRules.FindProcessingRecipeForOutput(
-                materialType, resolvedTier
-            );
-        }
-        if (recipeIndex < 0)
-        {
-            AddOrAccumulateCraftingBlueprintNode(
-                CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW,
-                depth, -1, materialType, resolvedTier, requiredUnits
-            );
-            return;
-        }
-
-        int node = AddOrAccumulateCraftingBlueprintNode(
-            CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE,
-            depth, recipeIndex, materialType, resolvedTier, requiredUnits
-        );
-        if (node < 0) { return; }
-        int efficiencyIndex = GetCraftingLayerEfficiencyIndex(
-            recipeIndex, resolvedTier
-        );
-        int efficiencyAdjustedOutput =
-            CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                requiredUnits, efficiencyIndex
-            );
-        if (componentRecipe)
-        {
-            CraftingBlueprintNodeInputUnits[node] +=
-                efficiencyAdjustedOutput;
-            CraftingBlueprintNodeSeconds[node] +=
-                GetCraftingMaterialWorkSeconds(
-                    efficiencyAdjustedOutput,
-                    CraftingBlueprintNodeComplexityTics[node],
-                    efficiencyIndex
-                );
-            ExpandCraftingBlueprintMaterial(
-                CaelumCraftingRules.GetComponentBaseMaterial(
-                    materialType, resolvedTier
-                ),
-                CaelumCraftingRules.GetComponentBaseTier(
-                    materialType, resolvedTier
-                ),
-                efficiencyAdjustedOutput,
-                depth + 1
-            );
-            return;
-        }
-
-        int theoreticalOutput = Max(
-            1,
-            CaelumCraftingRules.GetProcessingOutputUnits(recipeIndex, 0)
-        );
-        int inputOneUnits = GetRoundedUpProportionalUnits(
-            efficiencyAdjustedOutput,
-            CaelumCraftingRules.GetProcessingInputOneUnits(recipeIndex, 0),
-            theoreticalOutput
-        );
-        int inputTwoUnits = GetRoundedUpProportionalUnits(
-            efficiencyAdjustedOutput,
-            CaelumCraftingRules.GetProcessingInputTwoUnits(recipeIndex, 0),
-            theoreticalOutput
-        );
-        CraftingBlueprintNodeInputUnits[node] +=
-            inputOneUnits + inputTwoUnits;
-        CraftingBlueprintNodeSeconds[node] +=
-            GetCraftingMaterialWorkSeconds(
-                inputOneUnits + inputTwoUnits,
-                CraftingBlueprintNodeComplexityTics[node],
-                efficiencyIndex
-            );
-        ExpandCraftingBlueprintMaterial(
-            CaelumCraftingRules.GetProcessingInputOneMaterial(recipeIndex),
-            CaelumCraftingRules.GetProcessingInputOneTier(recipeIndex),
-            inputOneUnits,
-            depth + 1
-        );
-        int inputTwoMaterial =
-            CaelumCraftingRules.GetProcessingInputTwoMaterial(recipeIndex);
-        if (inputTwoMaterial >= 0 && inputTwoUnits > 0)
-        {
-            ExpandCraftingBlueprintMaterial(
-                inputTwoMaterial,
-                CaelumCraftingRules.GetProcessingInputTwoTier(recipeIndex),
-                inputTwoUnits,
-                depth + 1
-            );
-        }
+        CaelumCraftingCoordinator.ExpandCraftingBlueprintMaterial(self, materialType, materialTier, requiredUnits, depth);
     }
 
     void BuildCraftingBlueprint()
     {
-        EnsureCraftingLayerChoiceRoot();
-        ClearCraftingBlueprint();
-        int rootInputs = GetCurrentCraftingInputUnits();
-        int rootComplexity = CaelumCraftingRules.GetRecipeComplexityTics(
-            CraftingSelectionRecipe
-        );
-
-        CraftingBlueprintNodeCount = 1;
-        CraftingBlueprintNodeKind[0] =
-            CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL;
-        CraftingBlueprintNodeDepth[0] = 0;
-        CraftingBlueprintNodeRecipe[0] = CraftingSelectionRecipe;
-        CraftingBlueprintNodeMaterialType[0] = CraftingOutputMaterialType;
-        CraftingBlueprintNodeMaterialTier[0] = CraftingOutputMaterialTier;
-        CraftingBlueprintNodeUnits[0] = 1;
-        CraftingBlueprintNodeInputUnits[0] = rootInputs;
-        CraftingBlueprintNodeEfficiency[0] = CraftingEfficiencyIndex;
-        CraftingBlueprintNodeComplexityTics[0] = rootComplexity;
-        CraftingBlueprintNodeSeconds[0] = GetCraftingMaterialWorkSeconds(
-            rootInputs, rootComplexity, CraftingEfficiencyIndex
-        );
-        CraftingBlueprintNodeExecuted[0] = true;
-
-        ExpandCraftingBlueprintMaterial(
-            CraftingBasicMaterialType,
-            CraftingBasicMaterialTier,
-            CraftingBasicRequired
-        );
-        ExpandCraftingBlueprintMaterial(
-            CraftingTierMaterialType,
-            CraftingTierMaterialTier,
-            CraftingTierRequired
-        );
-        ExpandCraftingBlueprintMaterial(
-            CaelumConstants.MATERIAL_SILVER_INGOT,
-            1,
-            CraftingSilverRequired
-        );
-        ExpandCraftingBlueprintMaterial(
-            CaelumConstants.MATERIAL_GOLD_INGOT,
-            1,
-            CraftingGoldRequired
-        );
-
-        CraftingBlueprintFullSeconds = CraftingBlueprintNodeSeconds[0];
-        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
-        {
-            CraftingBlueprintNodeOwnedUnits[node] = CountCraftingMaterial(
-                CraftingBlueprintNodeMaterialType[node],
-                CraftingBlueprintNodeMaterialTier[node]
-            );
-            if (CraftingBlueprintNodeKind[node]
-                != CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
-            {
-                continue;
-            }
-            CraftingBlueprintFullSeconds +=
-                CraftingBlueprintNodeSeconds[node];
-        }
-        CraftingBlueprintSelectedNode = Clamp(
-            CraftingBlueprintSelectedNode,
-            0, Max(0, CraftingBlueprintNodeCount - 1)
-        );
-        if (CraftingBlueprintNodeKind[CraftingBlueprintSelectedNode]
-            == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
-        {
-            CraftingBlueprintSelectedNode = 0;
-        }
+        CaelumCraftingCoordinator.BuildCraftingBlueprint(self);
     }
 
     void CycleCraftingBlueprintSelection(int direction)
     {
-        RefreshCraftingPreview();
-        if (CraftingBlueprintNodeCount <= 1) { return; }
-        int step = direction < 0 ? -1 : 1;
-        int candidate = CraftingBlueprintSelectedNode;
-        for (int attempt = 0;
-            attempt < CraftingBlueprintNodeCount; attempt++)
-        {
-            candidate = (candidate + step + CraftingBlueprintNodeCount)
-                % CraftingBlueprintNodeCount;
-            if (CraftingBlueprintNodeKind[candidate]
-                != CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
-            {
-                CraftingBlueprintSelectedNode = candidate;
-                return;
-            }
-        }
+        CaelumCraftingCoordinator.CycleCraftingBlueprintSelection(self, direction);
     }
 
     void MarkCraftingBlueprintStepExecuted(
         int recipeIndex, int materialTier
     )
     {
-        int resolvedTier = Clamp(materialTier, 1, 3);
-        for (int node = 1; node < CraftingBlueprintNodeCount; node++)
-        {
-            if (CraftingBlueprintNodeKind[node]
-                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE
-                && CraftingBlueprintNodeRecipe[node] == recipeIndex
-                && CraftingBlueprintNodeMaterialTier[node] == resolvedTier)
-            {
-                CraftingBlueprintNodeExecuted[node] = true;
-                return;
-            }
-        }
+        CaelumCraftingCoordinator.MarkCraftingBlueprintStepExecuted(self, recipeIndex, materialTier);
     }
 
     bool ReserveCurrentCraftingPreview()
     {
-        if (!AddCraftingTaskReservation(
-                CraftingBasicMaterialType,
-                CraftingBasicMaterialTier,
-                CraftingBasicRequired
-            )
-            || !AddCraftingTaskReservation(
-                CraftingTierMaterialType,
-                CraftingTierMaterialTier,
-                CraftingTierRequired
-            )
-            || !AddCraftingTaskReservation(
-                CaelumConstants.MATERIAL_SILVER_INGOT,
-                1,
-                CraftingSilverRequired
-            )
-            || !AddCraftingTaskReservation(
-                CaelumConstants.MATERIAL_GOLD_INGOT,
-                1,
-                CraftingGoldRequired
-            ))
-        {
-            return false;
-        }
-        return ValidateCraftingTaskReservations();
+        return CaelumCraftingCoordinator.ReserveCurrentCraftingPreview(self);
     }
 
     void ClearDirectCraftingPlan()
     {
-        CraftingDirectPlanAvailable = false;
-        CraftingDirectPlanUsed = false;
-        CraftingDirectPlanStepCount = 0;
-        CraftingPreparedEquipmentInputUnits = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            CraftingPlanReservedType[slot] = -1;
-            CraftingPlanReservedTier[slot] = 1;
-            CraftingPlanReservedUnits[slot] = 0;
-        }
-        for (int step = 0;
-            step < CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT; step++)
-        {
-            CraftingPlanStepRecipe[step] = -1;
-            CraftingPlanStepTier[step] = 1;
-            CraftingPlanStepEfficiency[step] = 0;
-            CraftingPlanStepInputUnits[step] = 0;
-            CraftingPlanStepComplexityTics[step] = 0;
-            CraftingPlanStepSeconds[step] = 0.0;
-        }
+        CaelumCraftingCoordinator.ClearDirectCraftingPlan(self);
     }
 
     int GetDirectPlanReservedUnits(int materialType, int materialTier)
     {
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        int reserved = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingPlanReservedUnits[slot] > 0
-                && CraftingPlanReservedType[slot] == materialType
-                && CraftingPlanReservedTier[slot] == resolvedTier)
-            {
-                reserved += CraftingPlanReservedUnits[slot];
-            }
-        }
-        return reserved;
+        return CaelumCraftingCoordinator.GetDirectPlanReservedUnits(self, materialType, materialTier);
     }
 
     bool AddDirectPlanReservation(
         int materialType, int materialTier, int units
     )
     {
-        if (units <= 0) { return true; }
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingPlanReservedUnits[slot] > 0
-                && CraftingPlanReservedType[slot] == materialType
-                && CraftingPlanReservedTier[slot] == resolvedTier)
-            {
-                CraftingPlanReservedUnits[slot] += units;
-                return true;
-            }
-        }
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingPlanReservedUnits[slot] <= 0)
-            {
-                CraftingPlanReservedType[slot] = materialType;
-                CraftingPlanReservedTier[slot] = resolvedTier;
-                CraftingPlanReservedUnits[slot] = units;
-                return true;
-            }
-        }
-        return false;
+        return CaelumCraftingCoordinator.AddDirectPlanReservation(self, materialType, materialTier, units);
     }
 
     int RegisterDirectCraftingStep(int recipeIndex, int materialTier)
     {
-        int resolvedTier = Clamp(materialTier, 1, 3);
-        for (int step = 0; step < CraftingDirectPlanStepCount; step++)
-        {
-            if (CraftingPlanStepRecipe[step] == recipeIndex
-                && CraftingPlanStepTier[step] == resolvedTier)
-            {
-                return step;
-            }
-        }
-        if (CraftingDirectPlanStepCount
-            >= CaelumConstants.CRAFTING_DIRECT_STEP_SLOT_COUNT)
-        {
-            return -1;
-        }
-        int step = CraftingDirectPlanStepCount++;
-        CraftingPlanStepRecipe[step] = recipeIndex;
-        CraftingPlanStepTier[step] = resolvedTier;
-        CraftingPlanStepEfficiency[step] =
-            GetCraftingLayerEfficiencyIndex(recipeIndex, resolvedTier);
-        CraftingPlanStepComplexityTics[step] =
-            CaelumCraftingRules.GetRecipeComplexityTics(recipeIndex);
-        return step;
+        return CaelumCraftingCoordinator.RegisterDirectCraftingStep(self, recipeIndex, materialTier);
     }
 
     void AddDirectCraftingStepWork(int step, int employedMaterialUnits)
     {
-        if (step < 0 || step >= CraftingDirectPlanStepCount
-            || employedMaterialUnits <= 0)
-        {
-            return;
-        }
-        CraftingPlanStepInputUnits[step] += employedMaterialUnits;
-        CraftingPlanStepSeconds[step] += GetCraftingMaterialWorkSeconds(
-                employedMaterialUnits,
-                CraftingPlanStepComplexityTics[step],
-                CraftingPlanStepEfficiency[step]
-            );
-        MarkCraftingBlueprintStepExecuted(
-            CraftingPlanStepRecipe[step], CraftingPlanStepTier[step]
-        );
+        CaelumCraftingCoordinator.AddDirectCraftingStepWork(self, step, employedMaterialUnits);
     }
 
     int GetRoundedUpProportionalUnits(
         int requiredOutput, int numerator, int denominator
     )
     {
-        if (requiredOutput <= 0 || numerator <= 0 || denominator <= 0)
-        {
-            return 0;
-        }
-        return int(Ceil(
-            double(requiredOutput) * double(numerator) / double(denominator)
-        ));
+        return CaelumCraftingCoordinator.GetRoundedUpProportionalUnits(self, requiredOutput, numerator, denominator);
     }
 
     bool DirectCraftingRecipeKnown(int recipeIndex)
     {
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        return persistentState != null
-            && persistentState.KnowsCraftingRecipe(recipeIndex);
+        return CaelumCraftingCoordinator.DirectCraftingRecipeKnown(self, recipeIndex);
     }
 
     bool RequireDirectCraftingMaterial(
@@ -3985,203 +3532,17 @@ class CaelumPlayer : DoomPlayer
         int depth = 0
     )
     {
-        // La ruta real omite el trabajo de componentes ya existentes. Cada
-        // operacion pendiente aplica solo su propia eficiencia temporal.
-        if (requiredUnits <= 0) { return true; }
-        if (depth > 8) { return false; }
-
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        int unreserved = Max(
-            0,
-            CountCraftingMaterial(materialType, resolvedTier)
-                - GetDirectPlanReservedUnits(materialType, resolvedTier)
-        );
-        int availableUnits = Min(requiredUnits, unreserved);
-        if (availableUnits > 0
-            && !AddDirectPlanReservation(
-                materialType, resolvedTier, availableUnits
-            ))
-        {
-            return false;
-        }
-
-        int missingUnits = requiredUnits - availableUnits;
-        if (missingUnits <= 0) { return true; }
-
-        int componentRecipe =
-            CaelumCraftingRules.FindComponentRecipeForOutput(materialType);
-        if (componentRecipe >= 0)
-        {
-            if (!DirectCraftingRecipeKnown(componentRecipe)) { return false; }
-            int missingStation = CaelumCraftingRules.GetMissingComponentStation(
-                CraftingNetworkCapabilities, resolvedTier, materialType
-            );
-            if (missingStation != CaelumConstants.CRAFTING_STATION_NONE)
-            {
-                CraftingMissingStationType = missingStation;
-                CraftingSelectedInfrastructureAvailable = false;
-                return false;
-            }
-            int planStep = RegisterDirectCraftingStep(
-                componentRecipe, resolvedTier
-            );
-            if (planStep < 0) { return false; }
-            int baseMaterial = CaelumCraftingRules.GetComponentBaseMaterial(
-                materialType, resolvedTier
-            );
-            int baseTier = CaelumCraftingRules.GetComponentBaseTier(
-                materialType, resolvedTier
-            );
-            int baseUnits =
-                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                    missingUnits,
-                    CraftingPlanStepEfficiency[planStep]
-                );
-            AddDirectCraftingStepWork(planStep, baseUnits);
-            return RequireDirectCraftingMaterial(
-                baseMaterial,
-                baseTier,
-                baseUnits,
-                depth + 1
-            );
-        }
-
-        int processingRecipe =
-            CaelumCraftingRules.FindProcessingRecipeForOutput(
-                materialType, resolvedTier
-            );
-        if (processingRecipe < 0
-            || !DirectCraftingRecipeKnown(processingRecipe))
-        {
-            return false;
-        }
-        int missingStation = CaelumCraftingRules.GetMissingProcessingStation(
-            CraftingNetworkCapabilities, processingRecipe
-        );
-        if (missingStation != CaelumConstants.CRAFTING_STATION_NONE)
-        {
-            CraftingMissingStationType = missingStation;
-            CraftingSelectedInfrastructureAvailable = false;
-            return false;
-        }
-        int planStep = RegisterDirectCraftingStep(
-            processingRecipe, resolvedTier
-        );
-        if (planStep < 0) { return false; }
-
-        int efficiencyAdjustedOutput =
-            CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                missingUnits,
-                CraftingPlanStepEfficiency[planStep]
-            );
-        int theoreticalOutput = Max(
-            1,
-            CaelumCraftingRules.GetProcessingOutputUnits(
-                processingRecipe, 0
-            )
-        );
-        int inputOneUnits = GetRoundedUpProportionalUnits(
-            efficiencyAdjustedOutput,
-            CaelumCraftingRules.GetProcessingInputOneUnits(
-                processingRecipe, 0
-            ),
-            theoreticalOutput
-        );
-        int inputTwoMaterial =
-            CaelumCraftingRules.GetProcessingInputTwoMaterial(processingRecipe);
-        int inputTwoUnits = GetRoundedUpProportionalUnits(
-            efficiencyAdjustedOutput,
-            CaelumCraftingRules.GetProcessingInputTwoUnits(
-                processingRecipe, 0
-            ),
-            theoreticalOutput
-        );
-        AddDirectCraftingStepWork(
-            planStep,
-            inputOneUnits + inputTwoUnits
-        );
-        if (!RequireDirectCraftingMaterial(
-            CaelumCraftingRules.GetProcessingInputOneMaterial(processingRecipe),
-            CaelumCraftingRules.GetProcessingInputOneTier(processingRecipe),
-            inputOneUnits,
-            depth + 1
-        ))
-        {
-            return false;
-        }
-        if (inputTwoMaterial < 0) { return true; }
-        return RequireDirectCraftingMaterial(
-            inputTwoMaterial,
-            CaelumCraftingRules.GetProcessingInputTwoTier(processingRecipe),
-            inputTwoUnits,
-            depth + 1
-        );
+        return CaelumCraftingCoordinator.RequireDirectCraftingMaterial(self, materialType, materialTier, requiredUnits, depth);
     }
 
     bool IsDirectWeaponCraftingRecipe()
     {
-        return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
+        return CaelumCraftingCoordinator.IsDirectWeaponCraftingRecipe(self);
     }
 
     void RefreshDirectWeaponCraftingPlan()
     {
-        ClearDirectCraftingPlan();
-        if (!IsDirectWeaponCraftingRecipe()
-            || !CraftingSelectedRecipeKnown
-            || !CraftingSelectedInfrastructureAvailable)
-        {
-            return;
-        }
-
-        bool valid = RequireDirectCraftingMaterial(
-                CraftingBasicMaterialType,
-                CraftingBasicMaterialTier,
-                CraftingBasicRequired
-            )
-            && RequireDirectCraftingMaterial(
-                CraftingTierMaterialType,
-                CraftingTierMaterialTier,
-                CraftingTierRequired
-            )
-            && RequireDirectCraftingMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT,
-                1,
-                CraftingSilverRequired
-            )
-            && RequireDirectCraftingMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT,
-                1,
-                CraftingGoldRequired
-            );
-        CraftingDirectPlanAvailable = valid;
-        CraftingDirectPlanUsed = valid && CraftingDirectPlanStepCount > 0;
-        if (valid)
-        {
-            for (int step = 0;
-                step < CraftingDirectPlanStepCount; step++)
-            {
-                CraftingPreviewSeconds += CraftingPlanStepSeconds[step];
-            }
-        }
-        else
-        {
-            for (int node = 1;
-                node < CraftingBlueprintNodeCount; node++)
-            {
-                CraftingBlueprintNodeExecuted[node] = false;
-            }
-        }
+        CaelumCraftingCoordinator.RefreshDirectWeaponCraftingPlan(self);
     }
 
     bool ReservePreparedDirectCraftingPlan()
@@ -4191,13 +3552,7 @@ class CaelumPlayer : DoomPlayer
 
     bool HasSelectedWeaponCraftingMaterials()
     {
-        if (CraftingTaskCompleting && CraftingTaskUsesDirectPlan)
-        {
-            return ValidateCraftingTaskReservations();
-        }
-        return CraftingBasicOwned >= CraftingBasicRequired
-            && CraftingTierOwned >= CraftingTierRequired
-            && HasCraftingFinishMaterials();
+        return CaelumCraftingCoordinator.HasSelectedWeaponCraftingMaterials(self);
     }
 
     bool ConsumeSelectedWeaponCraftingMaterials()
@@ -4207,178 +3562,22 @@ class CaelumPlayer : DoomPlayer
 
     bool CanStartCraftingTask(bool recipeInfrastructure = true)
     {
-        if (CraftingTaskActive)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_TASK_ACTIVE;
-            return false;
-        }
-        if (CombatTimeRemaining > 0.0)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT;
-            return false;
-        }
-        if (player == null || player.playerstate != PST_LIVE || health <= 0)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
-            return false;
-        }
-        if (!RefreshActiveCraftingStationSession(recipeInfrastructure))
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return false;
-        }
-        return true;
+        return CaelumCraftingCoordinator.CanStartCraftingTask(self, recipeInfrastructure);
     }
 
     void StartPreparedCraftingTask(int taskKind, double durationSeconds)
     {
-        CraftingTaskUsesLimboMaterials = false;
-        for (int slot = 0; slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0) continue;
-            let input = FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskReservedType[slot], CraftingTaskReservedTier[slot]);
-            if (input != null && input.LimboQuestUnits > 0) CraftingTaskUsesLimboMaterials = true;
-        }
-        CraftingTaskKind = taskKind;
-        CraftingTaskRecipeIndex = CraftingSelectionRecipe;
-        CraftingTaskTier = CraftingSelectionTier;
-        CraftingTaskSize = CraftingSelectionSize;
-        CraftingTaskBatchIndex = CraftingProcessingBatchIndex;
-        CraftingTaskEfficiencyIndex = CraftingEfficiencyIndex;
-        CraftingTaskNetworkCapabilities = CraftingNetworkCapabilities;
-        CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
-        CraftingTaskRemainingSeconds = CraftingTaskTotalSeconds;
-        CraftingTaskActive = true;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
-        PersistCharacterState();
-        RefreshFormalInventorySnapshot();
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.StartPreparedCraftingTask(self, taskKind, durationSeconds);
     }
 
     void BeginSelectedCraftingTask()
     {
-        RefreshCraftingPreview();
-        if (!CanStartCraftingTask()) { return; }
-        if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe)
-            && FindInventory(CaelumUtilityCrafting.ItemClass(CraftingSelectionRecipe)) != null)
-        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
-        if (!CraftingSelectedRecipeKnown)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED;
-            return;
-        }
-        if (!CraftingSelectedInfrastructureAvailable)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-
-        int taskKind = CaelumConstants.CRAFTING_TASK_ASSEMBLY;
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
-        {
-            taskKind = CaelumConstants.CRAFTING_TASK_PROCESSING;
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            taskKind = CaelumConstants.CRAFTING_TASK_COMPONENT;
-        }
-
-        RefreshCarriedInventorySummary();
-        if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY
-            && CraftingSelectedRecipeKind != CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
-            && CraftingSelectedRecipeKind != CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
-            && !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)
-            && MagicBoxUsedSlots + 1 > MagicBoxMaximumSlots)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-
-        ClearCraftingTaskData();
-        bool directWeaponTask = IsDirectWeaponCraftingRecipe()
-            && CraftingDirectPlanAvailable;
-        bool reserved = directWeaponTask
-            ? ReservePreparedDirectCraftingPlan()
-            : ReserveCurrentCraftingPreview();
-        if (!reserved)
-        {
-            ClearCraftingTaskData();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-        CraftingTaskUsesDirectPlan = directWeaponTask;
-        if (taskKind == CaelumConstants.CRAFTING_TASK_PROCESSING
-            || taskKind == CaelumConstants.CRAFTING_TASK_COMPONENT)
-        {
-            if (!AddCraftingTaskOutput(
-                    CraftingOutputMaterialType,
-                    CraftingOutputMaterialTier,
-                    CraftingOutputAmount
-                ))
-            {
-                ClearCraftingTaskData();
-                LastCraftingAction =
-                    CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-                return;
-            }
-            CraftingTaskReservedBoxSlots = GetPreparedMaterialOutputBoxSlots();
-            if (CraftingTaskReservedBoxSlots < 0)
-            {
-                ClearCraftingTaskData();
-                LastCraftingAction =
-                    CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
-                return;
-            }
-        }
-        else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
-        {
-            CraftingTaskReservedBoxSlots = (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe) || CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0 || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
-            if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
-            {
-                ClearCraftingTaskData();
-                LastCraftingAction =
-                    CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
-                return;
-            }
-        }
-        if (DerivedStats == null
-            || CountNativeMagicBoxSlots() + CraftingTaskReservedBoxSlots
-                > DerivedStats.MagicBoxCapacity)
-        {
-            ClearCraftingTaskData();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-        StartPreparedCraftingTask(taskKind, CraftingPreviewSeconds);
+        CaelumCraftingCoordinator.BeginSelectedCraftingTask(self);
     }
 
     void CancelCraftingTask()
     {
-        if (!CraftingTaskActive) { return; }
-        bool equipmentTask = CraftingTaskKind
-                == CaelumConstants.CRAFTING_TASK_REPAIR
-            || CraftingTaskKind
-                == CaelumConstants.CRAFTING_TASK_DISMANTLE;
-        ClearCraftingTaskData();
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_CANCELLED;
-        if (equipmentTask)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-        }
-        PersistCharacterState();
-        RefreshFormalInventorySnapshot();
-        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        CaelumCraftingCoordinator.CancelCraftingTask(self);
     }
 
     int GetFirstKnownCraftingRecipe()
@@ -4634,806 +3833,72 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshCraftingPreview()
     {
-        // Los filtros recorren el catálogo global del Banco de Trabajo. Las
-        // estaciones especializadas conservan sus índices locales y no deben
-        // recibir selecciones pertenecientes a otra familia.
-        if (ActiveCraftingStationType
-            != CaelumConstants.CRAFTING_STATION_WORKBENCH
-            && ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_NONE)
-        {
-            CraftingRecipeFilter =
-                CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
-        }
-        CraftingRecipeFilter = CaelumCraftingRules.ResolveRecipeFilter(
-            CraftingRecipeFilter
-        );
-        RefreshCraftingRecipeBookSummary();
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-
-        int stationRecipeCount = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE
-            ? CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
-            : CaelumCraftingRules.GetStationRecipeCount(ActiveCraftingStationType);
-        bool unifiedCatalogue = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_WORKBENCH
-            || ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE;
-        int firstKnown = unifiedCatalogue ? GetFirstKnownCraftingRecipe() : 0;
-        if (firstKnown < 0) stationRecipeCount = 0;
-        if (stationRecipeCount <= 0)
-        {
-            CraftingSelectionRecipe = -1;
-            CraftingSelectedRecipeKnown = false;
-            CraftingSelectedWeapon = -1;
-            CraftingSelectedRecipeKind =
-                CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
-            CraftingSelectedArmorType = CaelumConstants.ARMOR_TYPE_MAGIC;
-            CraftingSelectedArmorSlot = CaelumConstants.ARMOR_SLOT_HEAD;
-            CraftingSelectedShieldType = CaelumConstants.SHIELD_TYPE_BUCKLER;
-            CraftingSelectedEssenceWeaponType = CaelumConstants.WEAPON_TYPE_STAFF;
-            CraftingSelectedEssenceType = CaelumConstants.ESSENCE_FIRE;
-            CraftingSelectedProcessingRecipe = -1;
-            CraftingProcessingBatchMultiplier = 1;
-            CraftingEfficiencyPercent =
-                CaelumConstants.CRAFTING_EFFICIENCY_FAST_PERCENT;
-            CraftingPreviewSeconds = 0.0;
-            CraftingOutputMaterialType = 0;
-            CraftingOutputMaterialTier = 1;
-            CraftingOutputAmount = 0;
-            CraftingPreviewIconPath = "";
-            CraftingBasicMaterialType = 0;
-            CraftingBasicMaterialTier = 1;
-            CraftingBasicRequired = 0;
-            CraftingBasicOwned = 0;
-            CraftingTierMaterialType = 0;
-            CraftingTierMaterialTier = 1;
-            CraftingTierRequired = 0;
-            CraftingTierOwned = 0;
-            CraftingSilverRequired = 0;
-            CraftingSilverOwned = 0;
-            CraftingGoldRequired = 0;
-            CraftingGoldOwned = 0;
-            CraftingFinalWeight = 0.0;
-            CraftingSelectedInfrastructureAvailable = false;
-            CraftingMissingStationType =
-                CaelumConstants.CRAFTING_STATION_NONE;
-            ClearCraftingBlueprint();
-            ClearDirectCraftingPlan();
-            RefreshCarriedInventorySummary();
-            return;
-        }
-
-        CraftingSelectionRecipe = Clamp(
-            CraftingSelectionRecipe, 0, stationRecipeCount - 1
-        );
-        if ((unifiedCatalogue && !IsCraftingRecipeKnown(CraftingSelectionRecipe)) || !CaelumCraftingRules.RecipeMatchesFilter(
-            CraftingSelectionRecipe, CraftingRecipeFilter
-        ))
-        {
-            CraftingSelectionRecipe =
-                unifiedCatalogue ? firstKnown : CaelumCraftingRules.GetFirstRecipeMatchingFilter(CraftingRecipeFilter);
-        }
-        CraftingSelectedRecipeKnown = persistentState != null
-            && persistentState.KnowsCraftingRecipe(CraftingSelectionRecipe);
-        CraftingSelectionTier = CaelumCraftingRules.IsSingleTierRecipe(CraftingSelectionRecipe)
-            ? 1 : Clamp(CraftingSelectionTier, 1, 3);
-        CraftingSelectionSize = Clamp(
-            CraftingSelectionSize,
-            0,
-            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        CraftingProcessingBatchIndex = Clamp(
-            CraftingProcessingBatchIndex, 0,
-            CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT - 1
-        );
-        CraftingEfficiencyIndex = Clamp(
-            CraftingEfficiencyIndex, 0,
-            CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
-        );
-        CraftingEfficiencyPercent =
-            CaelumCraftingRules.GetCraftingEfficiencyPercent(
-                CraftingEfficiencyIndex
-            );
-
-        CraftingSelectedRecipeKind =
-            CaelumCraftingRules.GetUnifiedRecipeKind(
-                CraftingSelectionRecipe
-            );
-        CraftingSelectedWeapon = -1;
-        CraftingSelectedProcessingRecipe = -1;
-        CraftingProcessingBatchMultiplier =
-            CaelumCraftingRules.GetProcessingBatchMultiplier(
-                CraftingProcessingBatchIndex
-            );
-        CraftingOutputMaterialType = 0;
-        CraftingOutputMaterialTier = 1;
-        CraftingOutputAmount = 0;
-        CraftingSilverRequired = 0;
-        CraftingGoldRequired = 0;
-
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)
-        {
-            int physicalIndex =
-                CaelumCraftingRules.GetUnifiedPhysicalRecipeIndex(
-                    CraftingSelectionRecipe
-                );
-            CraftingSelectedWeapon =
-                CaelumCraftingRules.GetStationRecipeWeapon(
-                    CaelumConstants.CRAFTING_STATION_WORKBENCH,
-                    physicalIndex
-                );
-
-            CraftingBasicMaterialType =
-                CaelumCraftingRules.GetBasicMaterial(
-                    CraftingSelectedWeapon
-                );
-            CraftingTierMaterialType =
-                CaelumCraftingRules.GetTierMaterial(
-                    CraftingSelectedWeapon
-                );
-            CraftingFinalWeight =
-                CaelumCraftingRules.GetCraftedWeaponWeight(
-                    CaelumCraftingRules.GetPlayableTierOneWeight(
-                        CraftingSelectedWeapon
-                    ),
-                    CraftingSelectionTier,
-                    CraftingSelectionSize
-                );
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-                    CraftingSelectedWeapon, CraftingFinalWeight
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetRequiredTierMaterialUnits(
-                    CraftingSelectedWeapon, CraftingFinalWeight
-                );
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingNetworkStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionTier,
-                    CraftingSelectedWeapon
-                );
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
-        {
-            CraftingSelectedArmorType =
-                CaelumCraftingRules.GetUnifiedArmorType(
-                    CraftingSelectionRecipe
-                );
-            CraftingSelectedArmorSlot =
-                CaelumCraftingRules.GetUnifiedArmorSlot(
-                    CraftingSelectionRecipe
-                );
-
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_STRAP;
-            CraftingTierMaterialType =
-                CaelumCraftingRules.GetArmorTierMaterial(
-                    CraftingSelectedArmorType
-                );
-            CraftingFinalWeight = ArmorModel != null
-                ? ArmorModel.GetWeightFor(
-                    CraftingSelectedArmorSlot,
-                    CraftingSelectedArmorType,
-                    CraftingSelectionTier,
-                    CraftingSelectionSize
-                )
-                : 0.0;
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetRequiredArmorBaseUnits(
-                    CraftingSelectedArmorSlot, CraftingFinalWeight
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetRequiredArmorTierUnits(
-                    CraftingSelectedArmorSlot, CraftingFinalWeight
-                );
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingArmorStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionTier,
-                    CraftingSelectedArmorType
-                );
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
-        {
-            CraftingSelectedShieldType =
-                CaelumCraftingRules.GetUnifiedShieldType(
-                    CraftingSelectionRecipe
-                );
-
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_STRAP;
-            CraftingTierMaterialType =
-                CaelumCraftingRules.GetShieldPlateMaterial(
-                    CraftingSelectedShieldType
-                );
-            CraftingFinalWeight = ShieldModel != null
-                ? ShieldModel.GetWeightFor(
-                    CraftingSelectedShieldType,
-                    CraftingSelectionTier,
-                    CraftingSelectionSize
-                )
-                : 0.0;
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetRequiredShieldStrapUnits(
-                    CraftingFinalWeight
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetRequiredShieldPlateUnits(
-                    CraftingFinalWeight
-                );
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingShieldStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionTier
-                );
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
-        {
-            CraftingSelectedEssenceWeaponType =
-                CaelumCraftingRules.GetUnifiedEssenceWeaponType(
-                    CraftingSelectionRecipe
-                );
-            CraftingSelectedEssenceType =
-                CaelumCraftingRules.GetUnifiedEssenceType(
-                    CraftingSelectionRecipe
-                );
-
-            CraftingBasicMaterialType =
-                CaelumCraftingRules.GetEssenceBaseMaterial(
-                    CraftingSelectedEssenceWeaponType
-                );
-            CraftingTierMaterialType =
-                CaelumCraftingRules.GetEssenceMaterial(
-                    CraftingSelectedEssenceType
-                );
-            CraftingFinalWeight =
-                CaelumCraftingRules.GetCraftedWeaponWeight(
-                    CaelumCraftingRules.GetEssenceTierOneWeight(
-                        CraftingSelectedEssenceWeaponType
-                    ),
-                    CraftingSelectionTier,
-                    CraftingSelectionSize
-                );
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetRequiredEssenceBaseUnits(
-                    CraftingFinalWeight
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetRequiredEssenceUnits(
-                    CraftingFinalWeight
-                );
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingEssenceStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionTier
-                );
-        }
-
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
-        {
-            CraftingSelectedProcessingRecipe =
-                CaelumCraftingRules.GetUnifiedProcessingRecipeIndex(
-                    CraftingSelectionRecipe
-                );
-            CraftingBasicMaterialType =
-                CaelumCraftingRules.GetProcessingInputOneMaterial(
-                    CraftingSelectionRecipe
-                );
-            CraftingBasicMaterialTier =
-                CaelumCraftingRules.GetProcessingInputOneTier(
-                    CraftingSelectionRecipe
-                );
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetProcessingInputOneUnits(
-                    CraftingSelectionRecipe,
-                    CraftingProcessingBatchIndex
-                );
-            CraftingTierMaterialType =
-                CaelumCraftingRules.GetProcessingInputTwoMaterial(
-                    CraftingSelectionRecipe
-                );
-            CraftingTierMaterialTier =
-                CaelumCraftingRules.GetProcessingInputTwoTier(
-                    CraftingSelectionRecipe
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetProcessingInputTwoUnits(
-                    CraftingSelectionRecipe,
-                    CraftingProcessingBatchIndex
-                );
-            CraftingOutputMaterialType =
-                CaelumCraftingRules.GetProcessingOutputMaterial(
-                    CraftingSelectionRecipe
-                );
-            CraftingOutputMaterialTier =
-                CaelumCraftingRules.GetProcessingOutputTier(
-                    CraftingSelectionRecipe
-                );
-            CraftingOutputAmount =
-                CaelumCraftingRules.GetProcessingOutputUnitsAtEfficiency(
-                    CraftingSelectionRecipe,
-                    CraftingProcessingBatchIndex,
-                    CraftingEfficiencyIndex
-                );
-            CraftingFinalWeight = CraftingOutputAmount
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingProcessingStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionRecipe
-                );
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            CraftingOutputMaterialType =
-                CaelumCraftingRules.GetComponentOutputMaterial(
-                    CraftingSelectionRecipe
-                );
-            CraftingOutputMaterialTier =
-                CaelumCraftingRules.GetComponentOutputTier(
-                    CraftingOutputMaterialType,
-                    CraftingSelectionTier
-                );
-            CraftingOutputAmount =
-                CaelumCraftingRules.GetComponentOutputUnits(
-                    CraftingProcessingBatchIndex,
-                    CraftingEfficiencyIndex
-                );
-            CraftingBasicMaterialType =
-                CaelumCraftingRules.GetComponentBaseMaterial(
-                    CraftingOutputMaterialType,
-                    CraftingOutputMaterialTier
-                );
-            CraftingBasicMaterialTier =
-                CaelumCraftingRules.GetComponentBaseTier(
-                    CraftingOutputMaterialType,
-                    CraftingOutputMaterialTier
-                );
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetComponentInputUnits(
-                    CraftingProcessingBatchIndex
-                );
-            CraftingTierMaterialType = 0;
-            CraftingTierMaterialTier = 1;
-            CraftingTierRequired = 0;
-            CraftingFinalWeight = CraftingOutputAmount
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingComponentStation(
-                    CraftingNetworkCapabilities,
-                    CraftingOutputMaterialTier,
-                    CraftingOutputMaterialType
-                );
-        }
-        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
-        {
-            CraftingSelectionTier = 1;
-            CraftingFinalWeight = CaelumUtilityCrafting.Weight(CraftingSelectionRecipe);
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_LEATHER;
-            CraftingTierMaterialType = CaelumConstants.MATERIAL_ROPE;
-            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumOnboardingCatalogue.LEATHER_SHARE);
-            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumOnboardingCatalogue.ROPE_SHARE);
-            CraftingMissingStationType = CaelumCraftingRules.NetworkHasStation(CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_WORKBENCH) ? CaelumConstants.CRAFTING_STATION_NONE : CaelumConstants.CRAFTING_STATION_WORKBENCH;
-        }
-        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-        {
-            // Flechas y virotes conservan sus masas nativas y comparten la
-            // base T1: 70 % asta y 30 % punta. Merma por capa en el bloque común.
-            CraftingSelectionTier = 1;
-            CraftingFinalWeight = GetAmmunitionUnitWeight(
-                CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe))
-                * CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SHAFT;
-            CraftingTierMaterialType = CaelumConstants.MATERIAL_POINT;
-            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_SHAFT_SHARE);
-            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_POINT_SHARE);
-            CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
-                CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_LONGBOW);
-        }
-        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
-        {
-            CraftingSelectedAmuletType = CaelumCraftingRules.GetUnifiedAmuletType(CraftingSelectionRecipe);
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SILVER_CHAIN;
-            CraftingTierMaterialType = CaelumCraftingRules.GetAmuletTierMaterial(CraftingSelectedAmuletType);
-            CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
-            CraftingBasicRequired = CaelumCraftingRules.GetRequiredAmuletBaseUnits(CraftingFinalWeight);
-            CraftingTierRequired = CaelumCraftingRules.GetRequiredAmuletTierUnits(CraftingFinalWeight);
-            CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
-        }
-        else if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
-        {
-            CraftingSelectedSealType = CaelumCraftingRules.GetUnifiedSealType(CraftingSelectionRecipe);
-            CraftingBasicMaterialType = CaelumConstants.MATERIAL_SEAL_BASE;
-            CraftingTierMaterialType = CaelumCraftingRules.GetSealTierMaterial(CraftingSelectedSealType);
-            CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
-            CraftingBasicRequired = CaelumCraftingRules.GetRequiredSealBaseUnits(CraftingFinalWeight);
-            CraftingTierRequired = CaelumCraftingRules.GetRequiredSealTierUnits(CraftingFinalWeight);
-            CraftingMissingStationType = CaelumCraftingRules.GetMissingJewelryStation(CraftingNetworkCapabilities, CraftingSelectionTier);
-        }
-
-        if (CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            // El material base siempre es estructural y permanece en tier 1.
-            CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
-                CraftingBasicMaterialType, 1
-            );
-            CraftingTierMaterialTier = CaelumMaterialRules.ResolveTier(
-                CraftingTierMaterialType, CraftingSelectionTier
-            );
-            CraftingSilverRequired =
-                CaelumCraftingRules.GetRequiredSilverDetailUnits(
-                    CraftingFinalWeight, CraftingSelectionTier
-                );
-            CraftingGoldRequired =
-                CaelumCraftingRules.GetRequiredGoldDetailUnits(
-                    CraftingFinalWeight, CraftingSelectionTier
-                );
-            if (CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
-            {
-                CraftingBasicMaterialTier = CaelumMaterialRules.ResolveTier(
-                    CraftingBasicMaterialType, CraftingSelectionTier
-                );
-            }
-
-            // El montaje y la reparación producen un objeto indivisible. Una
-            // eficiencia menor conserva el resultado completo y aumenta cada
-            // entrada por separado para representar la merma elegida.
-            CraftingBasicRequired =
-                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                    CraftingBasicRequired, CraftingEfficiencyIndex
-                );
-            CraftingTierRequired =
-                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                    CraftingTierRequired, CraftingEfficiencyIndex
-                );
-            CraftingSilverRequired =
-                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                    CraftingSilverRequired, CraftingEfficiencyIndex
-                );
-            CraftingGoldRequired =
-                CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                    CraftingGoldRequired, CraftingEfficiencyIndex
-                );
-        }
-
-        CraftingBasicOwned = CountCraftingMaterial(
-            CraftingBasicMaterialType, CraftingBasicMaterialTier
-        );
-        CraftingTierOwned = CraftingTierRequired > 0
-            ? CountCraftingMaterial(
-                CraftingTierMaterialType, CraftingTierMaterialTier
-            ) : 0;
-        CraftingSilverOwned = CraftingSilverRequired > 0
-            ? CountCraftingMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT, 1
-            ) : 0;
-        CraftingGoldOwned = CraftingGoldRequired > 0
-            ? CountCraftingMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT, 1
-            ) : 0;
-
-        CraftingSelectedInfrastructureAvailable =
-            CraftingMissingStationType
-                == CaelumConstants.CRAFTING_STATION_NONE;
-
-        CraftingPreviewSeconds = GetCraftingMaterialWorkSeconds(
-            GetCurrentCraftingInputUnits(),
-            CaelumCraftingRules.GetRecipeComplexityTics(
-                CraftingSelectionRecipe
-            ),
-            CraftingEfficiencyIndex
-        );
-
-        // El árbol completo permanece visible aunque ya existan componentes;
-        // la ruta real añade tiempo sólo por pasos que deban ejecutarse.
-        BuildCraftingBlueprint();
-        RefreshDirectWeaponCraftingPlan();
-        CraftingPreviewIconPath = ResolveCraftingPreviewIconPath();
-        if (CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
-        {
-            CraftingPreviewIconPath = CaelumIconResolver.ResolveTierPath(
-                CraftingPreviewIconPath, CraftingSelectionTier
-            );
-        }
-
-        RefreshCarriedInventorySummary();
+        CaelumCraftingCoordinator.RefreshCraftingPreview(self);
     }
 
     int BeginCraftingNetworkScan()
     {
-        CraftingNetworkCapabilities = 0;
-        CraftingNetworkScanToken++;
-        if (CraftingNetworkScanToken <= 0) { CraftingNetworkScanToken = 1; }
-        return CraftingNetworkScanToken;
+        return CaelumCraftingCoordinator.BeginCraftingNetworkScan(self);
     }
 
     void SetCraftingJournalState(bool shouldOpen)
     {
-        if (player == null) { return; }
-        CVar openState = CVar.GetCVar("ca_journal_open", player);
-        CVar pageState = CVar.GetCVar("ca_journal_page", player);
-        if (openState != null) { openState.SetBool(shouldOpen); }
-        if (shouldOpen && pageState != null) { pageState.SetInt(3); }
+        CaelumCraftingCoordinator.SetCraftingJournalState(self, shouldOpen);
     }
 
     void OpenCraftingNetwork(Actor sourceStation)
     {
-        if (!CaelumCraftingRules.NetworkHasStation(
-            CraftingNetworkCapabilities,
-            CaelumConstants.CRAFTING_STATION_WORKBENCH
-        ))
-        {
-            A_Log("$CA_CRAFTING_NETWORK_MISSING_WORKBENCH");
-            CraftingMenuOpen = false;
-            ActiveCraftingStationActor = null;
-            return;
-        }
-
-        // Cualquier estación conectada abre el mismo menú central.
-        ActiveCraftingStationActor = sourceStation;
-        CraftingSessionValidationTics = 0;
-        OpenCraftingStation(CaelumConstants.CRAFTING_STATION_WORKBENCH);
+        CaelumCraftingCoordinator.OpenCraftingNetwork(self, sourceStation);
     }
 
     void OpenCraftingStation(int stationType)
     {
-        if (CreationWizardOpen) { return; }
-        int resolvedStation = CaelumCraftingRules.ResolveStationType(stationType);
-        if (resolvedStation == CaelumConstants.CRAFTING_STATION_NONE) { return; }
-
-        if (StaffCastPending) { CancelPendingStaffCast(false); }
-        ClosePalomoMerchant();
-        EquipmentMenuOpen = false;
-        CraftingMenuOpen = true;
-        ActiveCraftingStationType = resolvedStation;
-        CraftingSelectionRecipe = 0;
-        CraftingRecipeFilter = CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
-        if (CraftingSelectionTier <= 0)
-        {
-            CraftingSelectionTier = 1;
-            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
-        }
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
-        RefreshCraftingPreview();
-        SetCraftingJournalState(true);
+        CaelumCraftingCoordinator.OpenCraftingStation(self, stationType);
     }
 
     void CloseCraftingStationSession()
     {
-        CaelumTimeAdvanceState.Halt(self);
-        CraftingMenuOpen = false;
-        ActiveCraftingStationType = CaelumConstants.CRAFTING_STATION_NONE;
-        ActiveCraftingStationActor = null;
-        CraftingSessionValidationTics = 0;
-        CraftingTaskProgressing = false;
+        CaelumCraftingCoordinator.CloseCraftingStationSession(self);
     }
 
     bool RefreshActiveCraftingStationSession(bool recipeInfrastructure = true)
     {
-        CaelumCraftingStation station =
-            CaelumCraftingStation(ActiveCraftingStationActor);
-        if (!CraftingMenuOpen)
-        {
-            return false;
-        }
-        if (station == null || player == null
-            || player.playerstate != PST_LIVE || health <= 0)
-        {
-            CloseCraftingStationSession();
-            SetCraftingJournalState(false);
-            return false;
-        }
-        double dx = station.Pos.X - Pos.X;
-        double dy = station.Pos.Y - Pos.Y;
-        double dz = station.Pos.Z - Pos.Z;
-        double maximumDistance =
-            CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
-        if (!station.CanReachFrom(self) || dx * dx + dy * dy + dz * dz
-            > maximumDistance * maximumDistance)
-        {
-            CloseCraftingStationSession();
-            SetCraftingJournalState(false);
-            return false;
-        }
-
-        // Entrar en combate no cancela ni libera la reserva. La tarea queda
-        // pausada hasta que el personaje vuelva a estar fuera de combate y
-        // continúe atendiendo esta misma estación.
-        if (CombatTimeRemaining > 0.0)
-        {
-            return false;
-        }
-
-        // Durante un lote de salto no avanzan los actores ni la geometría.
-        // Pump valida la red antes del lote; cada subpaso conserva las guardas
-        // de sesión y capacidades sin reconstruir el mismo grafo inmóvil.
-        let skip = CaelumTimeSkipState.Get(self);
-        bool sharedBatch = skip != null && skip.Active && skip.Pumping
-            && skip.Station == station;
-        if (!sharedBatch && CraftingSessionValidationTics <= 0)
-        {
-            int scanToken = BeginCraftingNetworkScan();
-            station.CollectCraftingNetwork(self, scanToken);
-            CraftingSessionValidationTics = TICRATE;
-            RefreshCraftingPreview();
-        }
-        else if (!sharedBatch)
-        {
-            CraftingSessionValidationTics--;
-        }
-        if (CraftingTaskActive)
-        {
-            return (CraftingNetworkCapabilities
-                & CraftingTaskNetworkCapabilities)
-                == CraftingTaskNetworkCapabilities;
-        }
-        return !recipeInfrastructure || CraftingSelectedInfrastructureAvailable;
+        return CaelumCraftingCoordinator.RefreshActiveCraftingStationSession(self, recipeInfrastructure);
     }
 
     void ToggleCraftingMenu()
     {
-        // La tecla de crafteo ya no abre una estación virtual desde cualquier
-        // lugar. Sirve para cerrar el menú; la apertura real ocurre usando
-        // un actor CaelumCraftingStation del escenario.
-        if (CraftingMenuOpen)
-        {
-            CloseCraftingStationSession();
-            SetCraftingJournalState(false);
-        }
+        CaelumCraftingCoordinator.ToggleCraftingMenu(self);
     }
 
     void CycleCraftingRecipe(int direction)
     {
-        bool unifiedCatalogue = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_WORKBENCH
-            || ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE;
-        int stationRecipeCount = unifiedCatalogue ? CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
-            : CaelumCraftingRules.GetStationRecipeCount(ActiveCraftingStationType);
-        if (stationRecipeCount <= 0) { return; }
-        int step = direction < 0 ? -1 : 1;
-        for (int offset = 1; offset <= stationRecipeCount; offset++)
-        {
-            int candidate = (
-                CraftingSelectionRecipe + step * offset
-                    + stationRecipeCount * 2
-            ) % stationRecipeCount;
-            if ((!unifiedCatalogue || IsCraftingRecipeKnown(candidate)) && CaelumCraftingRules.RecipeMatchesFilter(
-                candidate, CraftingRecipeFilter
-            ))
-            {
-                CraftingSelectionRecipe = candidate;
-                break;
-            }
-        }
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingRecipe(self, direction);
     }
 
     void CycleCraftingRecipeFilter()
     {
-        if (ActiveCraftingStationType
-            != CaelumConstants.CRAFTING_STATION_WORKBENCH
-            && ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_NONE)
-        {
-            CraftingRecipeFilter =
-                CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
-            return;
-        }
-        CraftingRecipeFilter = (CraftingRecipeFilter + 1)
-            % CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT;
-        CraftingSelectionRecipe =
-            GetFirstKnownCraftingRecipe();
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingRecipeFilter(self);
     }
 
     void CycleCraftingTier()
     {
-        RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
-        {
-            CraftingProcessingBatchIndex = (CraftingProcessingBatchIndex + 1)
-                % CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT;
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-            RefreshCraftingPreview();
-            return;
-        }
-        CraftingSelectionTier = CraftingSelectionTier % 3 + 1;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingTier(self);
     }
 
     void CycleCraftingSize()
     {
-        RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-        {
-            return;
-        }
-        if (CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            CycleCraftingEfficiency();
-            return;
-        }
-        CraftingSelectionSize = (CraftingSelectionSize + 1)
-            % CaelumConstants.EQUIPMENT_SIZE_COUNT;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingSize(self);
     }
 
     void CycleCraftingEfficiency()
     {
-        RefreshCraftingPreview();
-        int selectedNode = Clamp(
-            CraftingBlueprintSelectedNode,
-            0, Max(0, CraftingBlueprintNodeCount - 1)
-        );
-        if (selectedNode > 0
-            && CraftingBlueprintNodeKind[selectedNode]
-                == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
-        {
-            int recipeIndex = CraftingBlueprintNodeRecipe[selectedNode];
-            int materialTier =
-                CraftingBlueprintNodeMaterialTier[selectedNode];
-            int nextEfficiency =
-                (GetCraftingLayerEfficiencyIndex(
-                    recipeIndex, materialTier
-                ) + 1)
-                % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
-            SetCraftingLayerEfficiencyIndex(
-                recipeIndex, materialTier, nextEfficiency
-            );
-        }
-        else
-        {
-            CraftingEfficiencyIndex = (CraftingEfficiencyIndex + 1)
-                % CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT;
-        }
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingEfficiency(self);
     }
 
     void CycleCraftingBatch()
     {
-        RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            return;
-        }
-        CraftingProcessingBatchIndex = (CraftingProcessingBatchIndex + 1)
-            % CaelumConstants.CRAFTING_PROCESSING_BATCH_OPTION_COUNT;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        RefreshCraftingPreview();
+        CaelumCraftingCoordinator.CycleCraftingBatch(self);
     }
 
     bool ConsumeCraftingMaterial(
@@ -5979,47 +4444,12 @@ class CaelumPlayer : DoomPlayer
 
     void AdvanceDebugCraftingTime()
     {
-        if (!CraftingTaskActive || CraftingTaskCompleting
-            || !RefreshActiveCraftingStationSession())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_BLOCKED;
-            return;
-        }
-        CraftingTaskRemainingSeconds = Max(
-            0.0,
-            CraftingTaskRemainingSeconds
-                - CaelumConstants.CRAFTING_DEBUG_ADVANCE_SECONDS
-        );
-        LastCraftingAction =
-            CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_ADVANCED;
-        if (CraftingTaskRemainingSeconds <= 0.0)
-        {
-            CompleteCraftingTask();
-            return;
-        }
-        PersistCharacterState();
-        RefreshFormalInventorySnapshot();
-        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        CaelumCraftingCoordinator.AdvanceDebugCraftingTime(self);
     }
 
     void UpdateCraftingTask()
     {
-        CraftingTaskProgressing = false;
-        if (CaelumSleepRules.IsSleeping(self)
-            || (CaelumTimeSkipState.IsActive(self) && CaelumScheduleState.SiegeActive(self,level.MapName))) return;
-        if (!CraftingTaskActive || CraftingTaskCompleting) { return; }
-        if (!RefreshActiveCraftingStationSession()) { return; }
-        CraftingTaskProgressing = true;
-        CaelumTimeSkipState.RecordWork(self);
-        CraftingTaskRemainingSeconds = Max(
-            0.0,
-            CraftingTaskRemainingSeconds - 1.0 / TICRATE
-        );
-        if (CraftingTaskRemainingSeconds <= 0.0)
-        {
-            CompleteCraftingTask();
-        }
+        CaelumCraftingCoordinator.UpdateCraftingTask(self);
     }
 
     void BreakSelectedNativeEquipment()
