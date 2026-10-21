@@ -4,6 +4,14 @@ Documentation version: **5.6.3** — 2026-10-20.
 
 ## 5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20
 
+Author-startup correction, 2026-10-20: the interactive fixture now puts the
+nested controls `exec` on its own physical line. GZDoom 4.14.2 parses a line
+starting with `exec` recursively as filenames, so the previous semicolon chain
+did not schedule its setup. This is a fixture-only fix; the frozen production
+package and prior native results are unchanged. Source verification: upstream
+g4.14.2 `src/common/console/c_dispatch.cpp`, `FExecList::AddCommand` (CA-KP-144).
+No new automated native startup pass is claimed while the author's game is open.
+
 The author approved a physical 5-g sheet and 100-g unlimited recipe book,
 separate recipes/progress per tier, first reading without bonus, ten rereadings,
 and practice limits of ten equipment/1,000 consumables. The final formula lets
