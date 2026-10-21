@@ -1,0 +1,94 @@
+param(
+    [Parameter(Mandatory=$true)][string]$Label,
+    [string]$Runtime = 'current',
+    [string]$Script = 'smoke',
+    [string]$LoadGame = '',
+    [switch]$Checks,
+    [switch]$LegacyChecks,
+    [switch]$ExpectRegression,
+    [switch]$Interactive
+)
+$ErrorActionPreference = 'Stop'
+if (Get-Process gzdoom -ErrorAction SilentlyContinue) {
+    throw 'An existing GZDoom session is running; native tests must not overlap.'
+}
+$repo = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
+$work = Join-Path $repo 'build\issue384'
+if ($LoadGame -and [IO.Path]::IsPathRooted($LoadGame)) {
+    throw 'LoadGame must be a filename relative to build/issue384; GZDoom prepends savedir.'
+}
+$engine = 'C:\Program Files (x86)\GZDoom\gzdoom.exe'
+$iwad = 'C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD'
+$package = Join-Path $work "$Runtime\caelum_argenteum_dev.pk3"
+$config = Join-Path $work "$Label.ini"
+if (Test-Path -LiteralPath $config) { throw 'Use a new label to preserve prior evidence.' }
+$initial = @"
+[LastRun]
+Version=225
+[GlobalSettings]
+vid_preferbackend=1
+vid_vsync=false
+vid_maxfps=60
+vid_activeinbackground=true
+i_pauseinbackground=false
+vid_lowerinbackground=false
+i_soundinbackground=true
+cl_capfps=false
+vid_fullscreen=false
+vid_defwidth=1280
+vid_defheight=720
+win_w=1296
+win_h=759
+win_maximized=false
+use_mouse=false
+snd_mastervolume=0.05
+language=enu
+"@
+if ($Interactive) { $initial = $initial.Replace('use_mouse=false', 'use_mouse=true') }
+[IO.File]::WriteAllText($config, $initial, [Text.UTF8Encoding]::new($false))
+$arguments = @('-noautoload', '-iwad', "`"$iwad`"", '-file', "`"$package`"")
+$addon = if($LegacyChecks){'legacy-checks.pk3'}else{'checks.pk3'}
+if ($Checks -or $LegacyChecks) { $arguments += "`"$work\$addon`"" }
+$arguments += @('-config', "`"$config`"", '-savedir', "`"$work`"",
+    '-width', '1280', '-height', '720', '-window', '-rngseed', '384',
+    '-skill', '2', '+logfile', "`"$work\$Label.txt`"", '+con_notifytime', '0')
+if (!$Interactive) { $arguments += '-nomouse' }
+if ($LoadGame) { $arguments += @('-loadgame', "`"$LoadGame`"") }
+else { $arguments += @('+map', 'TMAINT') }
+$scriptPath = Join-Path $work "$Script.cfg"
+if ($Script -eq 'smoke') { [IO.File]::WriteAllText($scriptPath, "wait 70; quit`n") }
+$arguments += @('+exec', "`"$scriptPath`"")
+$record = [ordered]@{
+    label=$Label; runtime=$Runtime; started_utc=[DateTime]::UtcNow.ToString('o');
+    engine=$engine; engine_sha256=(Get-FileHash -LiteralPath $engine).Hash;
+    iwad_sha256=(Get-FileHash -LiteralPath $iwad).Hash;
+    package_sha256=(Get-FileHash -LiteralPath $package).Hash;
+    addon_sha256=$(if($Checks -or $LegacyChecks){(Get-FileHash -LiteralPath "$work\$addon").Hash}else{''});
+    initial_config=$initial; arguments=$arguments;
+    command_script=[IO.File]::ReadAllText($scriptPath);
+    cpu=@(Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors);
+    gpu=@(Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion);
+    os=Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version
+}
+$style = if ($Interactive) { 'Normal' } else { 'Hidden' }
+$process = Start-Process -FilePath $engine -ArgumentList $arguments -WorkingDirectory $work -WindowStyle $style -PassThru
+$record.pid = $process.Id
+$record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
+Write-Output "Started $Label, PID $($process.Id)"
+if ($Interactive) { return }
+$null = $process.Handle
+if (!$process.WaitForExit(60000)) {
+    $process.Kill()
+    $record.timed_out = $true
+    $process.WaitForExit()
+}
+$record.exit_code = $process.ExitCode
+$record.finished_utc = [DateTime]::UtcNow.ToString('o')
+$record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
+if ($record.exit_code -ne 0 -or $record.timed_out) { throw "Native run failed: $Label" }
+$log = Get-Content -LiteralPath "$work\$Label.txt"
+$log | Select-String 'CA384 (FAIL|RESULT|PERSIST|LEGACY|CARDINAL)|Script error|Error|Warning|VM execution aborted'
+if ($log | Select-String 'Script error|VM execution aborted') { throw "Native VM failed: $Label" }
+$failed = [bool]($log | Select-String 'CA384 FAIL')
+if ($ExpectRegression -ne $failed) { throw "Unexpected assertion result: $Label" }
+if (($Checks -or $LegacyChecks) -and !($log | Select-String 'CA384 RESULT')) { throw "Missing completion: $Label" }

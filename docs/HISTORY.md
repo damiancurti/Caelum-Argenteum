@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.3b** — 2026-10-20.
+Documentation version: **5.6.4** — 2026-10-20.
+
+## 5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20
+
+The author explicitly retained current tables and requested their one-time
+delivery review. The issue's historical 65 T1 entries are not restored over
+#183's accepted material quotas. Chest/source identities, acquisition, quests,
+current assignments and native access remain unchanged.
+
+Reproduced reentrant OwnerDied/WorldThingDied, repeated Die and repeated native
+unblock with an isolated DropItem carrier; production has no DropItem metadata.
+A transient dispatch guard and serialized revision-1 claim prevent repeats.
+Old pending, completed, living and archived bodies preserve their entitlement.
+Independent review identified the engine's direct ice-unblock route; native
+visual chunks now run through a metadata-free proxy while the original body
+owns its guarded drop/BossDeath. Old frozen states migrate without restarting
+their timer, and appended state indices preserve existing class states.
+
+Sixteen required native runs pass 113 assertions with no unexpected failures.
+Two separate old-code runs reproduce five expected failures. Current/5.5.8a
+MAP02, save/reload, hub return, resurrection, both ice phases and original-pair
+rollback are covered. Static validation, normal packaging, exact changed-member
+comparison and reviewed limits are in assets/validation_564/RESULTS.md.
+Early compilation/setup/queued-event/fixture-pointer failures are retained and
+excluded from those counts. CA384-01 is pending; no author acceptance, merge or
+closure is claimed. The author remains away; temporary keep-awake stays active.
 
 ## 5.6.3b - Requested clothing-table proposal (#386), 2026-10-20
 

@@ -302,6 +302,7 @@ class CaelumCombatActor : Actor
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        NativeDeathLootRevision = NATIVE_DEATH_LOOT_REVISION;
         CollisionDamageMultiplier = 1.0;
         CollisionEffectiveMassMultiplier = 1.0;
         CombatBaseSpeed = Speed;
@@ -3800,9 +3801,64 @@ class CaelumCombatActor : Actor
         return total;
     }
 
-    // El estado de muerte conserva su índice; sólo cambia la política de drop.
+    const NATIVE_DEATH_LOOT_REVISION = 1;
+    int NativeDeathLootRevision;
+    bool NativeDeathLootReleased;
+    transient bool DispatchingDeath;
+
+    void EnsureNativeDeathLootState()
+    {
+        if(NativeDeathLootRevision>=NATIVE_DEATH_LOOT_REVISION)return;
+        // En saves viejos, NoBlocking ya retiró SOLID. Un cadáver archivado
+        // conserva el valor previo: suspenderlo no demuestra una entrega.
+        let archived=CaelumArchivedCorpse(FindInventory("CaelumArchivedCorpse"));
+        bool solid=archived!=null && archived.Suspended ? archived.WasSolid : bSolid;
+        NativeDeathLootReleased=CaelumRedemption.PreviouslyRaised(self) || (bKilled && !solid);
+        NativeDeathLootRevision=NATIVE_DEATH_LOOT_REVISION;
+    }
+
+    // El estado conserva su índice. Confirmar antes del callback nativo evita
+    // repetir DropItems incluso si se vuelve a entrar desde una entrega.
     action void A_CaelumNoBlocking()
-    { A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self)); }
+    {
+        let body=CaelumCombatActor(self);if(body==null)return;
+        body.EnsureNativeDeathLootState();
+        if(body.NativeDeathLootReleased){body.bSolid=false;return;}
+        body.NativeDeathLootReleased=true;
+        A_NoBlocking(!CaelumRedemption.PreviouslyRaised(self));
+    }
+
+    void MigrateNativeFrozenDeathState()
+    {
+        if(!bIceCorpse || !bKilled)return;
+        // Los saves conservan estados de Actor. Redirigir ambas fases sin
+        // repetir efectos, sorteo del plazo ni el temporizador ya transcurrido.
+        let inherited=GetDefaultByType("Actor").FindState("GenericFreezeDeath");
+        State next=null;
+        if(CurState==inherited)next=FindState("GenericFreezeDeath");
+        else if(CurState==inherited.NextState)next=FindState("CaelumFreezeDeathChunks");
+        if(next==null)return;
+        int remaining=tics;
+        SetState(next,true);tics=remaining;
+        EnsureNativeDeathLootState();
+    }
+
+    void FinishFrozenDeath()
+    {
+        // La espera y los fragmentos siguen siendo los del motor 4.14.2.
+        if(Vel!=(0,0,0) && !bShattering){tics=3*TICRATE;return;}
+        // Actor carece de inventario, conversación y DropItems: su función
+        // nativa sólo produce la misma rotura visual/sonora en esta geometría.
+        let visual=Actor.Spawn("Actor",Pos,NO_REPLACE);
+        if(visual==null){tics=1;return;}
+        visual.A_ChangeLinkFlags(1,1);visual.bNoInteraction=true;
+        visual.A_SetSize(Radius,Height);
+        Vel=(0,0,0);A_StopSound(CHAN_BODY);
+        visual.A_FreezeDeathChunks();
+        if(bBossDeath)A_BossDeath();
+        A_CaelumNoBlocking();
+        SetStateLabel('null');
+    }
 
     override int DoSpecialDamage(Actor victim,int damage,Name mod)
     {
@@ -3824,6 +3880,11 @@ class CaelumCombatActor : Actor
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        // OwnerDied/WorldThingDied ocurren antes de KILLED en GZDoom 4.14.2.
+        // El guard transitorio cubre esa reentrada; KILLED cubre la repetición.
+        if(DispatchingDeath || bKilled)return;
+        DispatchingDeath=true;
+        EnsureNativeDeathLootState();
         if(CaelumRedemption.PreviouslyRaised(self)){MazeDropReleased=true;DemonDeathLootReleased=true;}
         // La posición seca original recupera incluso bajas en pozos/aplastamientos.
         if(!MazeDropReleased && CaelumMazeLayout.IsCardinal())
@@ -3835,6 +3896,7 @@ class CaelumCombatActor : Actor
         CaelumDemonService.StopBreath(self);
         CaelumBreathing.StopAudio(self);
         Super.Die(source,inflictor,dmgflags,MeansOfDeath);
+        DispatchingDeath=false;
         // Los saves previos retienen sus EventHandlers. La misma confirmación
         // idempotente cubre su muerte nativa sin convertir ausencia en muerte.
         if(SiegeCombatant!=null)CaelumSiegeCombatant.ConfirmDeath(self);
@@ -3915,6 +3977,7 @@ class CaelumCombatActor : Actor
     override void Tick()
     {
         if(CaelumRedemption.Pending(self))return;
+        MigrateNativeFrozenDeathState();
         EnsureCombatPersonality();
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
@@ -4085,6 +4148,16 @@ class CaelumCombatActor : Actor
     AttackOutOfRange:
         "####" "#" 1;
         "####" "#" 0 A_CaelumResumeCombat;
+        Wait;
+    // Al final: los índices históricos de esta clase no cambian.
+    GenericFreezeDeath:
+        "####" "#" 5 A_GenericFreezeDeath;
+    CaelumFreezeDeathChunks:
+        "----" A 1
+        {
+            let body=CaelumCombatActor(self);
+            if(body!=null)body.FinishFrozenDeath();
+        }
         Wait;
     }
 

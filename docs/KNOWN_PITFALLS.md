@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-143 - Guard native death callbacks and every unblock route
+
+Status/evidence: RESOLVED-VERIFIED, #384/5.6.4, 2026-10-20.
+Baseline: a3e25502; final source/package hashes in assets/validation_564/report.json.
+Environment: GZDoom 4.14.2 / Windows 11, native DropItem fixture and actual MAP02.
+Scope: CaelumCombatActor.Die, A_CaelumNoBlocking and frozen-death states.
+
+Native Actor.Die calls OwnerDied and WorldThingDied before setting KILLED.
+A KILLED check alone does not prevent reentry; use a transient dispatch guard
+as well. A_NoBlocking clears solidity but does not itself consume DropItem
+metadata. Commit a serialized entitlement before calling it, and retain it
+across resurrection. An old suspended archive's current non-solid flag is not
+proof of prior delivery: inspect the archived pre-suspension state.
+
+GenericFreezeDeath/A_FreezeDeathChunks calls native A_NoBlocking directly,
+bypassing a differently named project wrapper. Audit inherited states as well
+as local calls. The correction delegates chunks to a metadata-free plain Actor
+while the original owns BossDeath/drop. Do not copy engine implementation code
+when the native routine can provide the effect. Old serialized Actor ice states
+need both phases redirected, entry functions suppressed and remaining tics
+preserved; append new states instead of shifting historical indices.
+
+Reproduce with validation_564's probe and old ice-save/ice-finish scripts.
+Separate baselines fail four dispatch/drop checks and one resurrected-ice check;
+final tests pass, including saved phase/timer checks. Allow deferred
+PostBeginPlay before fixture damage, and reacquire map-local fixture bodies by
+TID after hub travel: player inventory pointers to a departed map are cleared.
+No new per-tic global census or drop catalogue is involved. Native tokens are
+fixture-only; current campaign DropItem metadata is empty. CA384-01 remains
+pending, and this evidence does not establish campaign balance or performance.
+
 ## CA-KP-142 - Normalize work before reversing rounded material quantities
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #378/5.6.3, 2026-10-20.
