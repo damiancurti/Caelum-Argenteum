@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.4** — 2026-10-20.
+Documentation version: **5.6.5** — 2026-10-21.
+
+## 5.6.5 - Approved padlocks and local theft witnesses (#382), 2026-10-21
+
+The author approved all 5.6.3a lock/tool/title values. A subsequent instruction
+replaces warning-only theft with local hostility: only another owner's padlocked
+chest, living combat-capable witnesses within 32 meters, direct sight of the
+player. Normal keys, picks, master keys and blunt breaking use the same committed
+opening event. Existing native locks and legacy entitlement are retained.
+On 2026-10-21 the author assigned one small locked chest to every city household,
+with ten gold coins each. Native issuance is once-only, even after removal or
+destruction; occupied positions retry and absent residents are not recreated.
+The key goes to an existing household resident when available.
+
+Static validation and normal packaging pass. The focused native set passes
+20 runs / 134 assertions; evidence and limitations are in assets/validation_565/RESULTS.md.
+Saved value tokens preserve title and key pairing across hub graph reconstruction.
+Per-instance pickup/storage/drop keeps native ownership and capacity checks.
+Witnesses retain sleep, stun, active Redemption, conversations, escort priorities
+and finite weapon resources. Vendor/library integration remains #383.
+CA382-01 remains pending author acceptance in pending_test.txt.
 
 ## 5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20
 

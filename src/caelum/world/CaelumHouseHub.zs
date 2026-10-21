@@ -16,6 +16,7 @@ class CaelumHouseHub : Object play
         int slot=CaelumCityData.FURNITURE_SLOT_BASE+house;
         bool ready=CaelumDiningWorld.Place(slot,CaelumCityData.TablePosition(house),2,90);
         if(!CaelumMansionFurniture.Bed(slot,CaelumCityData.BedPosition(house),90))ready=false;
+        if(!CaelumHouseChestRules.Prepare())ready=false;
         return ready;
     }
 }
@@ -23,8 +24,54 @@ class CaelumHouseHub : Object play
 class CaelumHouseHubEvents : EventHandler
 {
     bool Prepared;
-    override void WorldLoaded(WorldEvent e){Prepared=false;}
-    override void WorldTick(){if(!Prepared)Prepared=CaelumHouseHub.Prepare();}
+    int NextPrepareTic;
+    override void WorldLoaded(WorldEvent e){Prepared=false;NextPrepareTic=0;}
+    override void WorldTick()
+    {
+        if(!Prepared && level.time>=NextPrepareTic)
+        {Prepared=CaelumHouseHub.Prepare();NextPrepareTic=level.time+TICRATE;}
+    }
+}
+
+// #382: un alta por vivienda, incluso si el cofre sale del mapa o se destruye.
+class CaelumHouseChestRules : Object play
+{
+    const GOLD_COINS=10;
+    static bool Prepare()
+    {
+        int house=CaelumHouseHubData.HouseForMap(level.MapName);
+        if(house<0)return true;
+        let roster=CaelumHouseResidents.Get(true);
+        if(roster!=null && roster.HouseChestIssued[house])return true;
+        if(roster==null || !roster.Ready)return false;
+        CaelumPortDefender resident=null;
+        for(int i=house;i<roster.Residents.Size();i+=CaelumCityData.HOUSE_COUNT)
+            if(roster.Residents[i].Body!=null){resident=roster.Residents[i].Body;break;}
+        vector3 point=CaelumCityData.ChestPosition(house);
+        let chest=CaelumStashChest(Actor.Spawn("CaelumStashChest",point,NO_REPLACE));
+        if(chest==null)return false;
+        chest.EnsureStorage();chest.StorageTier=CaelumContainerRules.SMALL;chest.ApplyStorageSize();
+        // Una posición ocupada no consume el alta ni crea llaves/botín huérfanos.
+        if(!chest.TestMobjLocation()){chest.Destroy();return false;}
+        let pair=new("CaelumLockIdentity");
+        let padlock=CaelumLockRules.Create(CaelumContainerRules.SMALL,point,pair);
+        CaelumLockItem key=null;
+        if(resident!=null)key=CaelumLockRules.Create(CaelumContainerRules.SMALL+3,point,pair);
+        let coins=Inventory(Actor.Spawn(CaelumEconomyRules.GetCurrencyClassName(CaelumConstants.CURRENCY_GOLD),point,NO_REPLACE));
+        if(padlock==null || (resident!=null && key==null) || coins==null)
+        {
+            if(padlock!=null)padlock.Destroy();if(key!=null)key.Destroy();if(coins!=null)coins.Destroy();
+            chest.Destroy();return false;
+        }
+        chest.LawfulOwner=new("CaelumLawfulIdentity");
+        chest.LawfulOwner.Token="house:"..CaelumHouseHubData.MapName(house);
+        padlock.AttachToOwner(chest);chest.InstalledPadlock=padlock;chest.bShootable=true;
+        coins.Amount=GOLD_COINS;coins.AttachToOwner(chest);
+        if(key!=null)key.AttachToOwner(resident);
+        chest.RefreshChestVisual();
+        roster.HouseChestIssued[house]=true;
+        return true;
+    }
 }
 
 class CaelumHouseMarker : Actor

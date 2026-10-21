@@ -906,6 +906,7 @@ class CaelumCityData : Object play
         if(p.X>=0 && p.Y>=0 && p.X<960 && p.Y<1216 && Abs(p.Z)<=16)return i;
         }return -1;}
     static vector3 TablePosition(int i){return HouseOrigin(i)+(672,832,0);}
+    static vector3 ChestPosition(int i){return HouseOrigin(i)+(864,832,0);}
     static vector3 BedPosition(int i){return HouseOrigin(i)+(256,640,0);}
     static vector3 DoorInside(int i){return HouseOrigin(i)+(800,384,0);}
     static vector3 DoorOutside(int i){return HouseOrigin(i)+(1056,384,0);}

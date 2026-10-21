@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.4** — 2026-10-20.
+Documentation version: **5.6.5** — 2026-10-21.
 
 ## 5.6.4 - Review one-time death loot (#384)
 
@@ -10,26 +10,27 @@ old pending/spent claims and frozen phase timers. The focused native set passes
 16 runs / 113 assertions; source/package comparison preserves unrelated paths.
 See assets/validation_564/RESULTS.md for evidence and reused-test boundaries.
 CA384-01, CA381-01 and CA378-01 passed author review on 2026-10-20.
-All delivered author checks have passed; the pending queue is empty.
+At this delivery all author checks had passed and the pending queue was empty.
 No new table, ownership rule, random pool or historical-map refill is authorized.
 
 ## 5.6.3b - Review ordinary-clothing data before implementation (#386)
 
-The author requested the full table, now in SYSTEMS. Approval is still needed
-for its concrete garment rows, balance, layering, durability and one-time legacy
-outfit/capacity policy. Preserve all accepted armor and thermal baselines until
-then. The #382 tool proposal remains pending; #387 art needs its separate coverage
-and visual approval after #386. CA377-01 passed on 2026-10-20; CA381-01/CA378-01 passed on 2026-10-20.
+The author approved the full SYSTEMS table on 2026-10-20, including garment rows,
+balance, layering, durability and one-time legacy outfit/capacity policy.
+Implementation remains pending. #387 art needs separate coverage and visual
+approval after #386. CA377-01, CA381-01 and CA378-01 passed on 2026-10-20.
 Each check uses its frozen package, not this proposal's diagnostic labels.
 
-## 5.6.3a - Review the lock-tool proposal (#382)
+## 5.6.5 - Implement approved locks and ownership (#382)
 
-The author requested the proposal, now recorded in SYSTEMS. Do not implement its
-new tool masses, prices, sources or legal-title defaults before approval. #381
-and #377 prerequisites are delivered. Existing access/quest protections remain.
-The author is away again; prepare independent work and keep tests separated.
-#384 is narrowed to current tables and exactly-once acquisition. #386-387 require
-a clothing table proposal; #385 leaves products without a game recipe unrenewed.
+The author approved the complete proposal on 2026-10-20 and then added hostile
+witnesses: living combat-capable NPCs within 32 meters and direct sight of the
+player, only for another owner's new padlocked chest. On 2026-10-21 the author
+assigned a small locked chest with ten gold coins to each city household.
+Native evidence covers crafting, pickup, storage, saves, hub travel, household
+issuance and witness controls (20 runs / 134 passing assertions). CA382-01 remains pending.
+Vendor/library availability is a separate #383 integration. #381/#377 are accepted.
+#384 retains current tables; #385 leaves products without a game recipe unrenewed.
 
 ## 5.6.3 - Recipe acquisition and study (#378)
 

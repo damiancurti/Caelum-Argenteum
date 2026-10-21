@@ -2,19 +2,22 @@
 class CaelumUtilityCrafting : Object
 {
     static bool IsRecipe(int recipe)
-    { return recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
+    { return CaelumLockRules.IsRecipe(recipe) || recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
     static Name ItemClass(int recipe)
-    { return recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? 'CaelumSleepingBag' : 'CaelumCanteenLarge'; }
+    { return CaelumLockRules.IsRecipe(recipe) ? 'CaelumLockItem' : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? 'CaelumSleepingBag' : 'CaelumCanteenLarge'; }
     static clearscope String NameKey(int recipe)
-    { return recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? "CA_SLEEPING_BAG_NAME" : "CA_WATER_CANTEEN_LARGE"; }
+    { return CaelumLockRules.IsRecipe(recipe) ? CaelumLockRules.NameKey(CaelumLockRules.RecipeItem(recipe)) : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? "CA_SLEEPING_BAG_NAME" : "CA_WATER_CANTEEN_LARGE"; }
     static play double Weight(int recipe)
     {
+        if (CaelumLockRules.IsRecipe(recipe)) return CaelumLockRules.RecipeWeight(recipe);
         if (recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE)
             return GetDefaultByType("CaelumSleepingBag").GetUnitWeight();
         return GetDefaultByType("CaelumCanteenLarge").GetUnitWeight();
     }
     static play void Complete(CaelumPlayer user)
     {
+        if (CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
+        { CaelumLockRules.Complete(user); return; }
         if (user.FindInventory(ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!user.CraftingTaskCompleting || !user.CraftingSelectedInfrastructureAvailable

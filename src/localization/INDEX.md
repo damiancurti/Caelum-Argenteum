@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `637f616dde73af70c9e8dd41bf65fe5c6f9f40d79133d8a76d550b16036ce500`. Locations include every definition; the last one per language wins.
+SHA-256: `f8404c6df41e4f487c031bdb0332edf342bfd9189359f489c077debdd4fabf7c`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -84,7 +84,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_LAYER | 4 | CA_LAYER_MENTAL | CA_LAYER_TECHNICAL |
 | CA_LOAD | 3 | CA_LOAD_CAPACITY_EXCEEDED | CA_LOAD_OVERLOAD |
 | CA_LOADOUT | 65 | CA_LOADOUT_ACTION_0 | CA_LOADOUT_WEIGHT |
-| CA_LOCK | 4 | CA_LOCK_SILVER_ACTION | CA_LOCK_TEST_GRANTED |
+| CA_LOCK | 16 | CA_LOCK_ITEM_0 | CA_LOCK_TOGGLE |
 | CA_LUCIDITY | 3 | CA_LUCIDITY_STATE_DIZZY | CA_LUCIDITY_STATE_STUNNED |
 | CA_M01 | 321 | CA_M01_AIR_ASK | CA_M01_WEAPON_OPTION_9 |
 | CA_MAGIC | 2 | CA_MAGIC_BOX_NOT_ACQUIRED | CA_MAGIC_MINE |

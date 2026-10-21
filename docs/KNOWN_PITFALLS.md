@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-145 - Compare saved identity values across hub graph reconstruction
+
+Status/evidence: RESOLVED-VERIFIED, #382/5.6.5, 2026-10-21.
+Baseline: cee86040 plus the uncommitted #382 implementation; final source/package
+hashes are recorded in assets/validation_565/report.json.
+Environment: GZDoom 4.14.2 / Windows 11; TMAINT -> THAZARD -> TMAINT.
+Scope: CaelumLawfulIdentity, CaelumLockIdentity and native chest/key access.
+
+A stationary chest and traveling key/profile can reference the same Object
+before leaving a hub map but distinct reconstructed Object copies on return.
+Pointer equality therefore rejected the owner's key and lawful title even
+though native item ownership and contents survived. A same-map save/load alone
+did not expose this defect. The isolated hub-01 reproducer failed two identity
+checks; hub-02 passes all four after comparing nonempty serialized value tokens.
+
+Generate an identity once, save it and compare its value at entitlement/access
+boundaries. Household title uses the authored map identity; new player titles
+and lock pairs use a dedicated random stream with four 31-bit words. Never
+replace native Actor.Inv/Owner or regenerate identities during load. Keep the
+stationary-world/traveling-player round trip in the regression set; direct
+pickup/drop and same-map save tests cover different serialization paths.
+
+Evidence: validation_565 retains the failed and corrected run logs plus current
+save/reload/travel checks. Independent review confirmed the affected boundaries.
+Author acceptance is pending. This establishes the tested hub behavior, not a
+general guarantee for every engine object graph or mathematically unique RNG IDs.
+
 ## CA-KP-144 - Keep a nested exec on its own configuration line
 
 Status/evidence: AUTHOR-REPORTED and CODE-VERIFIED, 2026-10-20.

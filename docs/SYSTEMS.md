@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.4** — 2026-10-20.
+Documentation version: **5.6.5** — 2026-10-21.
 
 ## One-time loot with existing tables (#384, 5.6.4)
 
@@ -43,12 +43,12 @@ CA384-01 passed author review on 2026-10-20; existing native locks/access rules 
 
 ## Ordinary clothing: catalogue proposal for review (#386, 5.6.3b)
 
-**PROPOSAL ONLY, NOT APPROVED OR IMPLEMENTED.** The author requested formal and
+**APPROVED 2026-10-20; IMPLEMENTATION PENDING.** The author requested formal and
 warm formal clothing, plus casual, country and poor-quality variants for summer,
 autumn/spring and winter, in the setting's nineteenth-century Argentine style.
-On 2026-10-20 they requested a complete table for review. The garment choices,
-quantities, coefficients and migration below are recommendations, not historical
-measurements or new current gameplay rules. Art implementation belongs to #387.
+On 2026-10-20 they approved the complete table, including the garment choices,
+quantities, coefficients and migration below. These are authored balance values,
+not historical measurements. Gameplay remains pending; art belongs to #387.
 
 ### Existing authorities and the proposed item boundary
 
@@ -207,11 +207,11 @@ no migration grant becomes new corpse loot or vendor stock.
 Recommend library recipes for every row and ordinary city clothing stock through
 #383, using its approved one-unit equipment rule per garment/size. Actual vendor
 selection and shop conversion belong to #383; no new chest/enemy loot is proposed
-under #384. Until approved and integrated, these entries are absent from gameplay.
+under #384. Until integrated, these approved entries are absent from gameplay.
 
 ### Review boundary and handoff to #387
 
-The review must decide the 25 garment rows and 11 combinations, one-tier scope,
+The author approved the 25 garment rows and 11 combinations, one-tier scope,
 four-region ensembles, materials/masses/derived prices, station/work rates,
 thermal profiles and armor limitation, no-wear rule and migration/capacity grant.
 The author already selected the style families, three seasons and period; those
@@ -226,26 +226,34 @@ all supported bodies/sizes, equipped/world/preview/first-person coverage, poses
 and measured rendering budget before generating models. This proposal creates
 no art, bindings or migration of the wider sprite pipeline.
 
-## Lock tools and lawful access: proposal for review (#382, 5.6.3a)
+## Lock tools, lawful access and theft witnesses (#382, 5.6.5)
 
-**PROPOSAL ONLY.** On 2026-10-20 the author requested a concrete proposal for
-lockpicks/master-key acquisition, mass, price and recipes. This section separates
-already confirmed rules from recommendations. None of the new values below is
-implemented or approved merely by appearing in this document.
+The author approved the complete 5.6.3a proposal on 2026-10-20. The rules and
+values below are the implemented design contract. Native evidence is recorded
+in validation_565; author acceptance of the implementation remains separate.
 
 Confirmed: padlocks are 100% steel, weighing 1/3/5 kg for the three chest tiers;
 crafting includes a matching key weighing 10% of the lock (0.1/0.3/0.5 kg), so the
 combined outputs require 1.1/3.3/5.5 kg at 100% material efficiency. Each tier
 doubles height, width and depth relative to the previous. A matching key, master key or lockpicks
 opens a lock; tools have no durability/consumption. A single blunt hit breaks a
-lock for now. Opening someone else's locked chest shows a theft warning only;
-hostility/faction consequences remain deferred.
+lock for now. A later author instruction on 2026-10-20 supersedes warning-only:
+opening another owner's new padlocked chest also makes living combat-capable
+NPCs within 32 meters hostile when they have direct line of sight to the player.
+This applies to matching keys, bypass tools and blunt breaking; own/public
+chests do not trigger it. No faction-wide propagation, fine or confiscation is
+introduced. One local spatial query runs on the committed opening, never per tic.
+Story-protected residents and inactive/captive actors retain their protection;
+sleep, stun, recovery, active Redemption, conversations, weapon resources and
+escort priorities remain authoritative. An active theft target prevents starting
+the guard's ordinary dialogue; an already active conversation pauses pursuit.
 
-### Proposed tools and sources
+### Approved tools and sources
 
-Use the existing medium chest as the geometry reference, fit the medium padlock
-to its latch, and scale each dimension by tier. There is no existing padlock model
-whose dimensions have already been accepted.
+Use the existing medium chest as the geometry reference. Its existing locked
+mesh supplies the latch and installed padlock; scaling the complete mesh by
+0.5/1/2 doubles each chest and installed-lock dimension at successive tiers.
+Native carried tools reuse the existing key icon/sprite.
 
 | Item | Finished mass | Recipe at 100% efficiency | Complexity / stations | Availability |
 | --- | ---: | --- | --- | --- |
@@ -259,27 +267,27 @@ the tool. They do not bypass existing mission/native locks or quest permissions.
 A master key's station requirement distinguishes its manufacture from lockpicks;
 no unapproved combat bonus or material adornment is introduced.
 
-Proposed pricing is fully derived, not a second price table. Let Vsteel be the
+Approved pricing is fully derived, not a second price table. Let Vsteel be the
 current base value of one steel material unit (0.001 kg). Base values are
 100*Vsteel*1.25 for lockpicks, 500*Vsteel*2 for the master key, and respectively
 1100*Vsteel*1.25, 3300*Vsteel*1.50, 5500*Vsteel*2 for each lock/key pair. Apply the
 existing vendor 150% buy / 50% sell margin exactly once with existing rounding.
-These proposed manufacturing multipliers are the existing T1/T2/T3 margins;
+These approved manufacturing multipliers are the existing T1/T2/T3 margins;
 100% steel excludes the usual silver/gold decoration. Split a pair's base value
 between lock and key in their 10:1 mass ratio. Recipe books use the author's
 10%-of-equipment rule. Other efficiencies consume materials and take time through
 #378; neither balance nor replenishment is silently changed by this proposal.
 
-### Proposed ownership and alert matrix
+### Approved ownership and alert matrix
 
-| Situation | Recommended entitlement and result |
+| Situation | Entitlement and result |
 | --- | --- |
 | Existing unmodified chest or item | Preserve current native key, quest, quota and acquisition rules; no retroactive crime inferred |
 | New chest explicitly granted to or crafted by a player | Record that character's lawful title separately from native physical possession |
 | Public chest | Current permitted access remains public; depositing an item does not privatize it |
 | Installing/removing a padlock | Only the recorded lawful chest owner may fit/remove it; tier must match; fitting does not transfer title |
 | Owner opens a new padlock with matching key or tool | Open without theft warning |
-| Another character opens a new padlock | Allow the confirmed bypass; warn exactly once on that committed closed-to-open transition |
+| Another character opens a new padlock | Allow the confirmed bypass; warn and alert eligible witnesses exactly once on that committed closed-to-open transition |
 | Preview, failed access, cancel or repeated held input | No warning, no transferred item and no changed claim |
 | Breaking the new padlock with a blunt hit | One committed break opens it and runs the same owner/alert check; it does not damage or destroy chest contents |
 | Explicit reward/gift or purchase | Existing authorized delivery transfers lawful title when it transfers the item successfully |
@@ -287,22 +295,29 @@ between lock and key in their 10:1 mass ratio. Recipe books use the author's
 | Existing world/death drops | Preserve current pickup entitlement and quantities; no retrospective title or crime is invented |
 | Sell/recover ordinary owned items | Existing trade rules; no new stolen-price penalty, recovery demand or confiscation |
 
-The ownership proposal uses an explicit saved character/source identity, not
+The ownership contract uses an explicit saved character/source identity, not
 Inventory.Owner as proof of legal title. Native Actor.Inv/Owner and ItemId remain
 physical inventory authority. Unclassified legacy objects retain existing access;
 new lock ownership is assigned only by a recorded grant/craft/installation rule.
 Old native locks are not converted into the new padlock system automatically.
 A numbered, idempotent migration must retain native owners and quest restrictions.
 
-### Review decisions still required
+### Household placement and delivery boundaries
 
-Approve or amend the two tool masses/recipes, station access and derived pricing;
-the ordinary-vendor/library availability; the proposed ownership defaults and
-alert moment; and fitting the new medium padlock to the existing chest latch.
-The confirmed lock masses, key ratio, doubled dimensions, no durability and
-warning-only consequence are not reopened. No requested author test is added
-until an implementation exists. #384 may audit existing exactly-once acquisition
-without inventing this still-unapproved legal ownership delta.
+Author decision, 2026-10-21: each city house (CAH000 through CAH159) receives one
+small locked chest belonging to that household, initially containing ten native
+gold coins. It uses the small 10-slot/100-kg storage tier. A matching native key
+goes to the first existing household resident. A missing resident is not respawned;
+if none remain, the chest still appears without creating an orphan key.
+An occupied placement retries once per second without consuming the source.
+The traveling household roster records issuance only after placement and native
+contents succeed. Carrying away, emptying or destroying the chest never refills it.
+Existing unrelated chests keep their prior access and contents. This explicit
+household addition belongs to #382; #384's retained loot tables are unchanged.
+
+Vendor/library availability is integrated separately under #383. Ordinary
+prices, lock crafting and household availability are implemented here; there is
+no new shop/replenishment rule or implicit gift/quest-title conversion.
 
 ## Recipe sheets, reading and practice (#378, 5.6.3)
 

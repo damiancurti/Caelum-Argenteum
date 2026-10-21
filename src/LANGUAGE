@@ -1,4 +1,32 @@
 [enu default]
+CA_LOCK_ITEM_0 = "Small padlock";
+CA_LOCK_ITEM_1 = "Medium padlock";
+CA_LOCK_ITEM_2 = "Large padlock";
+CA_LOCK_ITEM_3 = "Small padlock key";
+CA_LOCK_ITEM_4 = "Medium padlock key";
+CA_LOCK_ITEM_5 = "Large padlock key";
+CA_LOCK_ITEM_6 = "Lockpick set";
+CA_LOCK_ITEM_7 = "Master key";
+CA_LOCK_TOGGLE = "L: install / remove lock";
+CA_LOCK_THEFT = "Theft! You opened another owner's locked chest.";
+CA_LOCK_NEEDS_KEY = "You need its key, lockpicks or a master key.";
+CA_LOCK_REJECTED = "Only the owner can install or remove a matching lock; check tools and capacity.";
+
+[es]
+CA_LOCK_ITEM_0 = "Candado pequeño";
+CA_LOCK_ITEM_1 = "Candado mediano";
+CA_LOCK_ITEM_2 = "Candado grande";
+CA_LOCK_ITEM_3 = "Llave de candado pequeño";
+CA_LOCK_ITEM_4 = "Llave de candado mediano";
+CA_LOCK_ITEM_5 = "Llave de candado grande";
+CA_LOCK_ITEM_6 = "Juego de ganzúas";
+CA_LOCK_ITEM_7 = "Llave maestra";
+CA_LOCK_TOGGLE = "L: instalar / retirar candado";
+CA_LOCK_THEFT = "¡Robo! Abriste un cofre con candado de otro propietario.";
+CA_LOCK_NEEDS_KEY = "Necesitas su llave, ganzúas o una llave maestra.";
+CA_LOCK_REJECTED = "Solo el dueño puede instalar o retirar el candado correspondiente; revisa los objetos y la capacidad.";
+
+[enu default]
 CA_CONTAINER_SMALL = "Small chest";
 CA_CONTAINER_MEDIUM = "Medium chest";
 CA_CONTAINER_LARGE = "Large chest";

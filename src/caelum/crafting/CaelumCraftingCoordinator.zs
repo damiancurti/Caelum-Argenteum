@@ -850,6 +850,7 @@ class CaelumCraftingCoordinator : Object play
         user.RefreshCraftingPreview();
         if (!user.CanStartCraftingTask()) { return; }
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
+            && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
             && user.FindInventory(CaelumUtilityCrafting.ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!user.CraftingSelectedRecipeKnown)
@@ -1344,6 +1345,16 @@ class CaelumCraftingCoordinator : Object play
                     user.CraftingOutputMaterialType
                 );
         }
+        else if (CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
+        {
+            user.CraftingSelectionTier=CaelumLockRules.RecipeTier(user.CraftingSelectionRecipe);
+            user.CraftingFinalWeight=CaelumLockRules.RecipeWeight(user.CraftingSelectionRecipe);
+            user.CraftingBasicMaterialType=CaelumConstants.MATERIAL_STEEL_INGOT;
+            user.CraftingTierMaterialType=CaelumConstants.MATERIAL_STEEL_INGOT;
+            user.CraftingBasicRequired=CaelumCraftingRules.GetRoundedMaterialUnits(user.CraftingFinalWeight,1.0);
+            user.CraftingTierRequired=0;
+            user.CraftingMissingStationType=CaelumLockRules.MissingStation(user.CraftingSelectionRecipe,user.CraftingNetworkCapabilities);
+        }
         else if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
         {
             user.CraftingSelectionTier = 1;
@@ -1412,6 +1423,8 @@ class CaelumCraftingCoordinator : Object play
                 CaelumCraftingRules.GetRequiredGoldDetailUnits(
                     user.CraftingFinalWeight, user.CraftingSelectionTier
                 );
+            if(CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
+            {user.CraftingSilverRequired=0;user.CraftingGoldRequired=0;}
             if (user.CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
             {

@@ -52,6 +52,7 @@ class CaelumCombatActor : Actor
     // La postura cambia colisión/anatomía, no la talla fisiológica del cuerpo.
     virtual double GetPhysiologicalHeight() { return Height; }
     bool ThermalBluntDelivery;
+    CaelumPlayer TheftTarget;
     // Nulo en campañas anteriores y fuera del encuentro optativo de #20.
     CaelumSiegeCombatant SiegeCombatant;
     bool NextRangedSecondaryElement;
@@ -589,6 +590,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (combatActor.PulseResourceRecovery()) return;
+        if (CaelumTheftWitnesses.Pursue(combatActor)) return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // El primer miembro que ve al jugador publica el objetivo. Los demás
@@ -627,6 +629,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (combatActor.PulseResourceRecovery()) return;
+        if (CaelumTheftWitnesses.Pursue(combatActor)) return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // La prueba de escuadras separa decisión y combate de la consulta

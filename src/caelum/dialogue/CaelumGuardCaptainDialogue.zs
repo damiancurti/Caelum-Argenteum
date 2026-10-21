@@ -8,7 +8,7 @@ class CaelumGuardCaptainDialogue : Object play
     static bool Open(CaelumPlayer user, CaelumPortDefender guard)
     {
         if ((level.MapName != "MAP03" && CaelumHouseHubData.HouseForMap(level.MapName)<0) || user == null || guard == null
-            || guard.health <= 0 || guard.ForcedSleepTics > 0
+            || guard.health <= 0 || guard.ForcedSleepTics > 0 || CaelumTheftWitnesses.HasTarget(guard)
             || guard.CombatLucidityPhysicalStunRemaining > 0
             || !CaelumUseGeometry.AimedAt(user, guard)) return false;
         // Respetar el combate nativo. Una marca INCOMBAT vieja no bloquea a

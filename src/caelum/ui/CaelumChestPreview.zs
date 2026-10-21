@@ -136,6 +136,7 @@ class CaelumChestPreview : StaticEventHandler
             else if(scan==InputEvent.Key_Space)EventHandler.SendNetworkEvent("ca_container_mode");
             else if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)
                 EventHandler.SendNetworkEvent("ca_container_transfer");
+            else if(keyString~=="l")EventHandler.SendNetworkEvent("ca_container_lock");
             else if(keyString~=="c")EventHandler.SendNetworkEvent("ca_container_carry");
             else if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Tab
                 || scan==InputEvent.Key_Pad_B || keyString~=="q")
@@ -162,7 +163,7 @@ class CaelumChestPreview : StaticEventHandler
         if(e.Name=="ca_container_open" || e.Name=="ca_container_close"
             || e.Name=="ca_container_move" || e.Name=="ca_container_quantity"
             || e.Name=="ca_container_mode" || e.Name=="ca_container_transfer"
-            || e.Name=="ca_container_carry")
+            || e.Name=="ca_container_carry" || e.Name=="ca_container_lock")
         {
             if(e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
             let user=CaelumPlayer(players[e.Player].mo);
@@ -184,6 +185,8 @@ class CaelumChestPreview : StaticEventHandler
                 return;
             }
             if(storage==null || storage.Chest==null)return;
+            if(e.Name=="ca_container_lock")
+            {if(!storage.Chest.TogglePadlock(user))storage.Status="CA_LOCK_REJECTED";return;}
             if(e.Name=="ca_container_transfer"){storage.Execute();return;}
             if(e.Name=="ca_container_close"){storage.Close();return;}
             storage.Refresh();
