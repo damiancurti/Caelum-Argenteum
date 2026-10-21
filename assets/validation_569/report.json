@@ -1434,7 +1434,7 @@
     "ca380-completed.zds": "dc54f43122bedf32de6203f519afc572194d00d4dfb6e3ce293d3481480174bf",
     "ca380-current.zds": "7c59363bc2c9b890889bf3d10c7e65c84a53bac3bd6aeec119809729055a7bcc"
   },
-  "author_acceptance": "CA380-01 pending",
+  "author_acceptance": "CA380-01 passed on 2026-10-21: live cartridge assembly and kit sprites",
   "limitations": [
     "Shop availability and stock renewal are #383/#385.",
     "Not a frame-presentation or large-map performance benchmark."

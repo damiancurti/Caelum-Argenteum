@@ -6,7 +6,7 @@ Documentation version: **5.6.9** — 2026-10-21.
 
 Implementation adds two terminal kit inputs and two assembly recipes with native
 reservation, mass/capacity, price, knowledge and presentation adapters. Record
-final static/native results in validation_569 and obtain CA380-01 acceptance.
+final static/native results in validation_569. CA380-01 passed on 2026-10-21.
 Final evidence: 15 native runs / 1,259 PASS / zero FAIL and static validation pass.
 Keep #383 commerce, #385 renewal and #387 worn/preview/first-person work separate.
 

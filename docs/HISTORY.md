@@ -15,7 +15,9 @@ Final static/native checks pass: 15 runs, 1,259 PASS, zero FAIL; 16,428 package
 members match src. Current task save/reload/travel/completion, actual 5.5.8a arrow
 task migration and original recovery, 5.6.6 clothing, firing/reload and defenses
 are covered. Diagnostic fixture errors/timeouts remain separately identified.
-Author acceptance is pending CA380-01; no merge or completed playtest is claimed.
+CA380-01 (originating 5.6.9, #380) passed on 2026-10-21: the author confirmed
+"La prueba dio correcto" after the supplied live cartridge/kit-sprite test.
+Its pending_test.txt entry is removed; no merge is claimed.
 The interactive launcher separates its nested control-file exec from delayed
 setup commands; the live author room's CA380 READY marker confirms supplied kits.
 

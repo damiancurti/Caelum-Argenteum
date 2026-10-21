@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.6.9 implements carbine/shotgun cartridge assembly (#380) using the approved
 prepared kits, native reservations and existing ammunition identities. Both kits
 have their own inventory/world sprites. Native evidence is recorded in
-assets/validation_569; author check CA380-01 is pending. Commerce remains #383.
+assets/validation_569; CA380-01 passed on 2026-10-21. Commerce remains #383.
 
 V5.6.8 records the author-approved sealed cartridge-kit contract (#379): one
 40 g/45 g game kit per carbine/shotgun cartridge at 100% efficiency, worth 80%

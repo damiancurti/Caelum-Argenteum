@@ -61,7 +61,7 @@ retained original private 5.5.8a package; never substitute a rebuilt current tre
 Ballistics preparation reuses `assets/validation_554/prepare.py`; exact arguments
 are recorded. Saves, fixtures, IWAD and executable remain private under `build/`.
 
-**CA380-01 is pending.** The isolated author room supplies both sets of kits,
+**CA380-01 passed author review on 2026-10-21** ("La prueba dio correcto"). The isolated author room supplies both sets of kits,
 recetario, learned recipes, two ground pickups and the required stations.
 The interactive startup initially stayed in TMAINT because a nested `exec` shared
 the delayed command line. Loading the control file on its own line restores the

@@ -72,7 +72,7 @@ def main():
         'runs':runs,'native_runs':len(runs),'passes':sum(r['passes'] for r in runs),'failures':0,'diagnostics':diagnostics,
         'art_exports':data,'screenshot_sha256':sha(HERE/'kits-world.png'),
         'saves':{p.name:sha(p) for p in WORK.glob('ca380-*.zds')},
-        'author_acceptance':'CA380-01 pending',
+        'author_acceptance':'CA380-01 passed on 2026-10-21: live cartridge assembly and kit sprites',
         'limitations':['Shop availability and stock renewal are #383/#385.','Not a frame-presentation or large-map performance benchmark.']}
     (HERE/'report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     print(json.dumps({k:report[k] for k in ['native_runs','passes','failures','package_sha256']}))
