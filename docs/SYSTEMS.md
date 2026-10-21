@@ -1,6 +1,191 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
+
+## Ordinary clothing: catalogue proposal for review (#386, 5.6.3b)
+
+**PROPOSAL ONLY, NOT APPROVED OR IMPLEMENTED.** The author requested formal and
+warm formal clothing, plus casual, country and poor-quality variants for summer,
+autumn/spring and winter, in the setting's nineteenth-century Argentine style.
+On 2026-10-20 they requested a complete table for review. The garment choices,
+quantities, coefficients and migration below are recommendations, not historical
+measurements or new current gameplay rules. Art implementation belongs to #387.
+
+### Existing authorities and the proposed item boundary
+
+Current base clothing is implicit (`ARMOR_TYPE_BASE_CLOTHING`), not a physical
+craftable/tradeable item. Armor has four anatomical regions: head, body, hands
+and feet. The thermal model includes underclothes in each armor profile; its
+light-cloth baseline is 0.5 clo, permeability 0.90 and water capacity
+0.192336119324285 kg/m2. Fabric already distinguishes wool T1, cotton T2 and silk
+T3; these material grades do not identify seasonal warmth or social status.
+Current native equipment identity, size, Box and trade paths remain authorities.
+
+Propose a separate ordinary-clothing layer in those same four regions. A body
+item is one complete torso/leg ensemble, including its named jacket or poncho;
+its parts cannot separately stack, trade or add protection. This avoids adding
+unapproved trouser/coat slots. Headwear, pairs of gloves and pairs of shoes are
+separate items. One garment per region; an armor piece may coexist above it.
+No change to hit regions, armor slots, defense, hitboxes or combat attributes.
+
+All proposed garment recipes have one output and **one clothing tier, T1**, with
+their own recipe identity. No T2/T3 garment upgrades are proposed yet. Their
+inputs may use existing higher-grade cloth without implying higher armor tier.
+Proposed stations are Workbench + Sewing Machine for every garment. Cloth,
+leather and rope processing retain their current recipes and station checks.
+Buttons, stitching and small ties are abstracted into the listed material mass;
+there are no new thread, dye, felt or shoe-component material IDs.
+
+### Proposed garments, recipes, price and work
+
+Weights and inputs below are for size M and 100% material efficiency. W = wool
+fabric T1, C = cotton fabric T2, S = silk fabric T3, L = cow leather T1 and
+R = plant-fiber rope T1. Their current processed base prices are respectively
+2.5, 5, 10, 3.75 and 3.75 copper per gram. Material amounts sum exactly to dry
+finished mass. Rate is the existing 2/3/4 tics per material unit for normal,
+detailed/complex work. These are proposed per-garment assignments.
+
+| ID / region | Garment (one native item) | Dry kg, M | Processed inputs, grams | Dry clo | Rate | Base copper | Base work, seconds |
+| --- | --- | ---: | --- | ---: | ---: | ---: | ---: |
+| F / Body | Formal: shirt, waistcoat, trousers, frock coat | 1.800 | 1200W + 500C + 100S | 0.75 | 4 | 8125 | 822.86 |
+| FW / Body | Warm formal: F with wool overcoat | 3.400 | 2800W + 500C + 100S | 1 | 4 | 13125 | 1554.29 |
+| CS / Body | Casual summer: cotton shirt and light trousers | 1.000 | 50W + 950C | 0.5 | 3 | 6093.75 | 342.86 |
+| CE / Body | Casual mid-season: shirt, trousers and short jacket | 1.750 | 850W + 900C | 0.75 | 3 | 8281.25 | 600.00 |
+| CW / Body | Casual winter: shirt, wool trousers, waistcoat and coat | 2.500 | 1900W + 600C | 1 | 3 | 9687.5 | 857.14 |
+| RS / Body | Country summer: work shirt, bombachas and sash | 1.250 | 1100C + 150L | 0.5 | 3 | 7578.125 | 428.57 |
+| RE / Body | Country mid-season: shirt, bombachas, sash and short wool jacket | 2.000 | 800W + 1000C + 200L | 0.75 | 3 | 9687.5 | 685.71 |
+| RW / Body | Country winter: shirt, bombachas, sash and wool poncho | 3.250 | 2200W + 800C + 250L | 1 | 3 | 13046.875 | 1114.29 |
+| PS / Body | Poor summer: patched shirt and worn trousers | 0.800 | 600W + 200C | 0.4 | 2 | 3125 | 182.86 |
+| PE / Body | Poor mid-season: patched shirt, trousers and jacket | 1.400 | 1200W + 200C | 0.6 | 2 | 5000 | 320.00 |
+| PW / Body | Poor winter: patched trousers, shirt and coarse coat | 2.000 | 1800W + 200C | 0.8 | 2 | 6875 | 457.14 |
+| HF / Head | Formal felt hat with silk band | 0.150 | 125W + 25S | 0.75 | 4 | 703.125 | 68.57 |
+| HC / Head | Urban cotton cap | 0.100 | 100C | 0.5 | 3 | 625 | 34.29 |
+| HR / Head | Country felt hat with leather band | 0.180 | 150W + 30L | 0.5 | 3 | 609.375 | 61.71 |
+| HW / Head | Winter wool cap | 0.140 | 140W | 1 | 2 | 437.5 | 32.00 |
+| HP / Head | Patched cloth cap | 0.080 | 80W | 0.4 | 2 | 250 | 18.29 |
+| GF / Hands | Formal cotton gloves with silk trim | 0.080 | 60C + 20S | 0.5 | 4 | 625 | 36.57 |
+| GC / Hands | Thin cotton work gloves | 0.060 | 60C | 0.5 | 2 | 375 | 13.71 |
+| GW / Hands | Wool gloves | 0.120 | 120W | 1 | 2 | 375 | 27.43 |
+| GP / Hands | Patched wool gloves | 0.100 | 100W | 0.8 | 2 | 312.5 | 22.86 |
+| BF / Feet | Formal leather shoes | 0.900 | 880L + 20C | 1.2 | 4 | 4250 | 411.43 |
+| BC / Feet | Urban leather ankle boots | 1.100 | 1000L + 100C | 1.2 | 3 | 5312.5 | 377.14 |
+| BR / Feet | Country leather boots | 1.500 | 1450L + 50C | 1.2 | 3 | 7109.375 | 514.29 |
+| BS / Feet | Cotton and rope-soled alpargatas | 0.600 | 200C + 400R | 0.5 | 2 | 3125 | 137.14 |
+| BP / Feet | Patched wool and rope-soled alpargatas | 0.500 | 200W + 300R | 0.4 | 2 | 2031.25 | 114.29 |
+
+Base copper = sum(processed input value at 100%) * the existing T1 markup 1.25.
+No extra silver/gold decoration or independent luxury discount is proposed.
+NPC sale = ceil(base * 1.50); NPC purchase = floor(base * 0.50), once per lot.
+For example, the proposed M casual summer ensemble has base 6,093.75 copper,
+vendor sale 9,141 and vendor purchase 3,046. These large prices follow the
+existing per-gram anchors; lowering those anchors is a separate author decision.
+
+The work column is the common 25% reference with prepared inputs and zero
+attributes: ceil-per-input grams at 25% * rate / 35, before time acceleration.
+M inputs in this table divide exactly, so this is 4 * dry grams * rate / 35.
+For CS it is 342.86 seconds. Use #378's unchanged A/B factors, practice cap and
+Dexterity work scaling thereafter; raw-material processing is additional work.
+Each clothing recipe is equipment: price reference 10% of XL finished value;
+first reading and reread durations use XL/100% efficiency, current recipe
+progress and Intelligence M3. The existing source/reading rules teach component
+recipes without granting ingredients.
+
+Reuse XS/S/M/L/XL masses 0.50/0.75/1/1.25/1.50 and existing body-tier fit rules.
+Round each material through the existing gram-precision quote; derive the final
+mass/price/time from those units. Warmth is coverage-based and does not multiply
+by size or by number of visual subgarments. Every item keeps its size and ItemId
+through equip, drop, pickup, Box, craft and trade.
+
+### Proposed complete combinations and condition
+
+| Requested style | Body | Head | Hands | Feet |
+| --- | --- | --- | --- | --- |
+| Formal | F | HF | GF | BF |
+| Warm formal | FW | HF | GW | BF |
+| Casual summer | CS | HC | GC | BS |
+| Casual autumn/spring | CE | HC | GC | BC |
+| Casual winter | CW | HW | GW | BC |
+| Country summer | RS | HR | GC | BS |
+| Country autumn/spring | RE | HR | GC | BR |
+| Country winter | RW | HW | GW | BR |
+| Poor summer | PS | HP | None | BP |
+| Poor autumn/spring | PE | HP | None | BP |
+| Poor winter | PW | HP | GP | BP |
+
+These are suggested combinations, not compulsory outfits or new loot tables.
+Players may mix pieces that fit. Poor-quality pieces have visible repairs,
+simpler cuts and lower proposed insulation; they grant no social/faction penalty.
+For the initial clothing feature, propose no wear or combat durability: condition
+remains 100%, ordinary clothing absorbs zero damage, and repair/dismantling are
+unavailable. This deliberately requires approval; armor durability is unchanged.
+No bonus to attributes, charisma, movement, carrying capacity or item slots.
+
+### Proposed thermal and wetness contract
+
+The clo column is a local region profile, not a bonus for the whole body from
+each garment. The existing anatomy coverage calculation combines regions once.
+For cloth, let w=clamp((clo-0.5)/0.5,0,1). Proposed permeability is 0.90-0.15*w
+and water capacity is lerp(0.192336119324285,0.332367940848569,w) kg/m2. This
+interpolates the two accepted cloth anchors; the intermediate values and the
+poor-cloth clo reductions are new proposed game approximations. Leather shoes
+reuse the existing 1.2-clo / 0.45 / 0.3469835350-kg/m2 leather profile.
+Mixed-fabric trim is included in the row's single profile, not added again.
+
+For a region covered by armor, initially keep that armor's existing complete
+thermal profile, including its underclothing, rather than adding garment clo.
+Thus warm clothing improves uncovered regions; it does not improve insulation
+beneath armor in this first proposal. This limitation needs explicit approval.
+The armor's approved combined water capacity also stays fixed: assign up to the
+existing light-cloth capacity to its worn undergarment and the remainder to the
+outer armor. Transfer any water above a new region capacity to runoff without
+evaporative cooling. This must conserve total water on every transition.
+
+Native garments own their moisture; no duplicate character BaseWaterKg remains
+after conversion. Stored garments retain moisture without passive drying and
+Box contents stay sealed, matching existing equipment. Wet carried mass is
+counted once. Keep the accepted Fwet, rain, immersion, evaporation and runoff
+rules; no second wet-insulation multiplier. A converted region with no garment
+or armor has zero cloth insulation and the existing bare-surface water reference.
+
+### Proposed initial/legacy entitlement and acquisition
+
+Recommend one casual summer combination (CS/HC/GC/BS) in the character's existing
+default equipment size for a new character and once for each legacy player.
+At M it adds 1.760 kg of real carried mass. Each region's profile is 0.5 clo,
+preserving the old base-clothing thermal reference. This is a proposed conversion
+of the outfit already represented visually, not an approved free wardrobe.
+
+The migration must be separately numbered and idempotent: create four native
+instances atomically, keep existing armor/equipped identities, move base water
+once, mark completion only after all references resolve, and never repeat the
+grant on reload/travel. Preserve original save/package copies for rollback.
+Recommend allowing this one-time worn conversion even if it puts a legacy save
+over carried capacity, showing its actual added mass; do not discard, sell,
+resize or silently place items in the Box. This capacity exception is unapproved.
+Existing NPC implicit clothing remains until explicit NPC outfit mapping exists;
+no migration grant becomes new corpse loot or vendor stock.
+
+Recommend library recipes for every row and ordinary city clothing stock through
+#383, using its approved one-unit equipment rule per garment/size. Actual vendor
+selection and shop conversion belong to #383; no new chest/enemy loot is proposed
+under #384. Until approved and integrated, these entries are absent from gameplay.
+
+### Review boundary and handoff to #387
+
+The review must decide the 25 garment rows and 11 combinations, one-tier scope,
+four-region ensembles, materials/masses/derived prices, station/work rates,
+thermal profiles and armor limitation, no-wear rule and migration/capacity grant.
+The author already selected the style families, three seasons and period; those
+decisions are retained. No pending author gameplay test is added before code exists.
+
+Recommend late-nineteenth-century Argentine civilian silhouettes: shirts,
+waistcoats, frock/short coats, trousers, bombachas, wool ponchos, felt hats and
+alpargatas. These are a design brief, not licensed/reference assets or final
+approved geometry. Preserve existing sex/species/body choices; adapt fit rather
+than changing identity or mass. #387 must separately approve colors, exact cuts,
+all supported bodies/sizes, equipped/world/preview/first-person coverage, poses
+and measured rendering budget before generating models. This proposal creates
+no art, bindings or migration of the wider sprite pipeline.
 
 ## Lock tools and lawful access: proposal for review (#382, 5.6.3a)
 
