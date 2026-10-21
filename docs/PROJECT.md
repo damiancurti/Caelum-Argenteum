@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
+
+## 5.6.11a status — accepted batch and 3D clothing handoff (#387)
+
+The author postponed clothing appearance until 3D character models are available
+on 2026-10-21 and instructed merging/closing the current batch. PRs #397–401 are
+merged separately; #379/#380/#383/#385 are closed. #387 closes its accepted
+V5.6 object-art scope, while the unimplemented worn/preview/first-person coverage
+and its visual/performance checks move to the V5.17 modular 3D migration below.
+No current author tests remain. No wardrobe assignments or new model work are
+authorized by this documentation patch. Earlier release snapshots below retain
+the status at their delivery; this section supersedes their open-issue lists.
 
 ## 5.6.11 status — calendar replenishment (#385)
 
@@ -5598,6 +5609,12 @@ On 2026-10-15 the author completed the Domingo prototype and assigned the actual
 sprite-to-model conversion to the later presentation roadmap. This is future
 work under V5.17, not a new current issue or a claim of completed conversion.
 
+- On 2026-10-21 the author deferred #387's worn/equipped, character-preview and
+  first-person clothing appearance until these 3D character models are available.
+  Carry the 25 approved garments and body/sex/species/size coverage into this
+  stage, with fit/animation, save continuity, native rendering measurements and
+  separate author visual review. Existing inventory/crafting and dropped sprites
+  are accepted and remain in use. This deferral is not completed model work.
 - Models must be modular: interchangeable weapon, shield, armor, hair and face,
   with compatible attachment landmarks and reusable rigs/animations. Native
   equipment and saved appearance remain authoritative; changing presentation

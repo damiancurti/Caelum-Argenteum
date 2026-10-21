@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.11** — 2026-10-21.
+Documentation version: **5.6.11a** — 2026-10-21.
+
+## 5.6.11a - Defer clothing appearance and close the accepted batch (#387), 2026-10-21
+
+The author instructed: "La apariencia de la ropa se pospondrá a cuando estén los
+modelos 3d", followed by "Entonces cierra los issues y haz los merge". The
+accepted 25 garment icons/dropped sprites remain delivered (CA387-01); worn,
+preview and first-person appearance and their supported-identity/size checks
+are deferred to the existing V5.17 modular 3D handoff. This changes the current
+scope, not the historical evidence or clothing gameplay. No deferred view is
+claimed as implemented or tested, and no NPC wardrobe is invented.
+
+Merged separately with original commit ancestry retained: PR #397 (object art,
+ee26357d), #398 (cartridge contract, d87c4de5), #399 (assembly, a9b34a23), #400
+(catalogues, c2663836), #401 (replenishment, 96d5a218). Issues #379/#380/#383/#385
+are closed; #387 closes the accepted current scope by author instruction, with
+the remainder retained in PROJECT/TASKS. All delivered author checks are already
+recorded under their original releases; pending_test.txt remains empty.
+
+Validation: project validation and document-index freshness pass. Runtime changes
+are only the two diagnostic release labels; the existing native evidence remains
+applicable to gameplay. No new gameplay test or 3D visual acceptance is claimed.
+Local unrelated changes and retained auxiliary worktrees are preserved.
 
 ## 5.6.11 - Calendar shop replenishment (#385), 2026-10-21
 
