@@ -8,7 +8,7 @@ Implemented the author's capacity, size, mass, transport and destruction rules
 on native chest inventories. Exact transactional guards and the live menu retain
 existing locks, quotas and protected items. Revision-1 migration and carried
 save/travel checks are recorded in `assets/validation_562/RESULTS.md`.
-CA381-01 passed author review on 2026-10-20; CA377-01 remains outstanding.
+CA381-01 passed author review on 2026-10-20; CA377-01 also passed on 2026-10-20.
 The author is unavailable for questions/testing for several hours. Continue only
 authored scope; missing recipe/catalogue/balance decisions in #378-380/#382-387
 stay in their separate issues, not the author-test queue.
@@ -18,7 +18,7 @@ stay in their separate issues, not the author-test queue.
 Implemented compatible adapters, stateless session/quote coordination and
 shared inventory commits with preallocation. Focused static/native/save checks
 and retained baseline regressions: `assets/validation_561/RESULTS.md`.
-CA377-01 is the outstanding author check in pending_test.txt.
+CA377-01 passed author review on 2026-10-20. The author-test queue is empty.
 The author accepted CA376-01 on 2026-10-20. #378 follows on its own branch;
 recipe learning, ammunition, containers, ownership, shop content/replenishment
 and clothing remain separately scoped #378-387 work.

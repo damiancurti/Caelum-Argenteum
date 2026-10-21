@@ -127,5 +127,5 @@
     "ca377-current.zds": "f50e2627a9844ac9daed5ab1c6a3b019682be33017fe8857e9e63d118b245a80",
     "ca377-upgraded.zds": "e9aeb9232b1d637602e78177175c49b985fa707a0fe78b85c5cc2083fc7d1735"
   },
-  "author_acceptance": "pending CA377-01"
+  "author_acceptance": "passed CA377-01 on 2026-10-20 without reported exceptions"
 }
