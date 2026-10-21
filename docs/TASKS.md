@@ -8,7 +8,7 @@ Implemented the author's capacity, size, mass, transport and destruction rules
 on native chest inventories. Exact transactional guards and the live menu retain
 existing locks, quotas and protected items. Revision-1 migration and carried
 save/travel checks are recorded in `assets/validation_562/RESULTS.md`.
-CA381-01 remains the actionable author test; CA377-01 is also outstanding.
+CA381-01 passed author review on 2026-10-20; CA377-01 remains outstanding.
 The author is unavailable for questions/testing for several hours. Continue only
 authored scope; missing recipe/catalogue/balance decisions in #378-380/#382-387
 stay in their separate issues, not the author-test queue.

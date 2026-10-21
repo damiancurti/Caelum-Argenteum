@@ -16,7 +16,7 @@ The author approved all chest classes, stack-based spaces, three capacities,
 10% empty mass, transportation, no nesting, exact full requested transfers and
 spilled contents on destruction. A later clarification doubles each linear
 dimension between tiers and retains the existing model as medium. The author
-is away during implementation; manual tests remain pending.
+was away during implementation; author acceptance is recorded below.
 
 The chest remains the native Actor owner of stored objects. A carried handle
 preserves that owner through saves/travel; the live-menu projection routes exact
@@ -34,9 +34,12 @@ commands) remain separate from passing evidence.
 
 Fifteen final native runs pass 175 assertions; static validation reports no
 errors. See `assets/validation_562/RESULTS.md` for results, original and
-reversed-save rollback, retained hashes and limitations. CA381-01 is outstanding
-in pending_test.txt. This entry records implementation, not author acceptance,
-merge or issue closure.
+reversed-save rollback, retained hashes and limitations. On 2026-10-20 the
+author confirmed CA381-01 (origin 5.6.2 / #381): "La prueba 381 dio bien."
+They had reported missing startup supplies and received the manual ca381_save
+command before confirming the test. No further exceptions were reported.
+This confirms the gameplay check, not a new automatic-launch test. Its pending
+entry is retired; version 5.6.2 remains unchanged. No merge/closure is implied.
 
 ## 5.6.1 - Merchant coordinator (#377), 2026-10-20
 
