@@ -1369,10 +1369,10 @@ class CaelumInventoryService : Object play
         user.RefreshCarriedInventorySummary();
         item.Equipped = false;
         item.InMagicBox = false;
-        if (!user.CanAddWeightToPersonalInventory(item.UnitWeight))
+        if (!user.CanAddWeightToPersonalInventory(item.GetTotalUnitWeight()))
         {
             if (!user.HasNativeMagicBoxSlotAvailable()
-                || !user.CanAddRawWeightToMagicBox(item.UnitWeight))
+                || !user.CanAddRawWeightToMagicBox(item.GetTotalUnitWeight()))
             {
                 return false;
             }
@@ -2018,6 +2018,7 @@ class CaelumInventoryService : Object play
     static void RefreshCarriedInventorySummary(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumClothing.ReconcileWater(user);
         user.SyncLiveMagicBoxOwnershipFromPersistentState();
         user.NormalizeUnownedMagicBoxStorage();
         user.PersonalInventoryItemCount = 0;
@@ -2038,6 +2039,7 @@ class CaelumInventoryService : Object play
         double personalInventoryWeight = 0.0;
         double carriedItemWeight = 0.0;
         double armorWeight = 0.0;
+        double clothingWeight = 0.0;
         double shieldWeight = 0.0;
         double weaponWeight = 0.0;
         double magicBoxRawContentWeight = 0.0;
@@ -2062,7 +2064,7 @@ class CaelumInventoryService : Object play
             if (item.InMagicBox)
             {
                 user.MagicBoxUsedSlots++;
-                magicBoxRawContentWeight += Max(0.0, item.UnitWeight)
+                magicBoxRawContentWeight += item.GetTotalUnitWeight()
                     * Max(0, item.Amount);
                 continue;
             }
@@ -2072,6 +2074,7 @@ class CaelumInventoryService : Object play
             if (item.Equipped)
             {
                 user.EquippedItemSlotCount++;
+                if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)clothingWeight+=itemWeight;
                 if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
                 {
                     armorWeight += itemWeight;
@@ -2210,7 +2213,7 @@ class CaelumInventoryService : Object play
                 shieldWeight,
                 weaponWeight,
                 personalInventoryWeight,
-                carriedItemWeight
+                carriedItemWeight,clothingWeight
             );
             user.SyncHUDLoadState();
         }
@@ -2260,6 +2263,7 @@ class CaelumInventoryService : Object play
     {
         if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON) { return 1; }
         if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR) { return 2; }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING) { return 10; }
         if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD) { return 3; }
         if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET
             || kind == CaelumConstants.EQUIPMENT_KIND_SEAL) { return 4; }
@@ -2327,7 +2331,7 @@ class CaelumInventoryService : Object play
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)return cargo.CarriedWeight(user);
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null) { return Max(0.0, equipment.UnitWeight); }
+        if (equipment != null) { return equipment.GetTotalUnitWeight(); }
         CaelumConsumableItem consumable = CaelumConsumableItem(entry);
         if (consumable != null)
         {
@@ -2362,6 +2366,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (item == null) { return 0; }
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return 100;
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
             && user.ArmorModel != null)
         {
@@ -2505,6 +2510,7 @@ class CaelumInventoryService : Object play
             user.EquipmentSelectionItemId = equipment.ItemId;
             user.EquipmentSelectionTier = equipment.Tier;
             user.EquipmentSelectionSize = equipment.EquipmentSize;
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)user.EquipmentSelectionClothingType=equipment.ItemType;
             if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
             {
                 user.EquipmentSelectionArmorType = equipment.ItemType;
@@ -2724,6 +2730,7 @@ class CaelumInventoryService : Object play
             user.EquipmentSelectionKind = identifiedItem.EquipmentKind;
             user.EquipmentSelectionTier = identifiedItem.Tier;
             user.EquipmentSelectionSize = identifiedItem.EquipmentSize;
+            if(identifiedItem.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)user.EquipmentSelectionClothingType=identifiedItem.ItemType;
             if (identifiedItem.EquipmentKind
                 == CaelumConstants.EQUIPMENT_KIND_ARMOR)
             {
@@ -2936,6 +2943,19 @@ class CaelumInventoryService : Object play
             user.EquipmentSelectionWeight = user.EquipmentSelectionOwned
                 ? keyItem.GetCarriedWeight()
                 : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT;
+            return;
+        }
+
+        if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+        {
+            user.EquipmentSelectionTier=1;
+            user.EquipmentSelectionClothingType=Clamp(user.EquipmentSelectionClothingType,0,CaelumClothingData.COUNT-1);
+            if(identifiedItem==null)identifiedItem=user.GetSelectedNativeEquipmentItem();
+            user.EquipmentSelectionOwned=identifiedItem!=null;
+            user.EquipmentSelectionEquipped=identifiedItem!=null && identifiedItem.Equipped;
+            user.EquipmentSelectionInMagicBox=identifiedItem!=null && identifiedItem.InMagicBox;
+            user.EquipmentSelectionWeight=identifiedItem!=null ? identifiedItem.GetTotalUnitWeight() : CaelumClothingData.Weight(user.EquipmentSelectionClothingType,user.EquipmentSelectionSize);
+            user.EquipmentSelectionDurability=100;user.EquipmentSelectionMaximumDurability=100;
             return;
         }
 
@@ -4222,6 +4242,8 @@ class CaelumInventoryService : Object play
             return;
         }
 
+        if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING)
+        { CaelumClothing.Complete(user); return; }
         if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
         { CaelumUtilityCrafting.Complete(user); return; }
         if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
@@ -4567,6 +4589,8 @@ class CaelumInventoryService : Object play
         CaelumEquipmentItem identifiedItem =
             user.FindNativeEquipmentItemById(user.EquipmentSelectionItemId);
         if (identifiedItem != null) { return identifiedItem; }
+        if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            return user.FindNativeEquipmentItem(CaelumConstants.EQUIPMENT_KIND_CLOTHING,user.EquipmentSelectionClothingType,-1,1,user.EquipmentSelectionSize);
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             if (user.WeaponModel != null
@@ -4645,7 +4669,7 @@ class CaelumInventoryService : Object play
             return;
         }
         if (item.InMagicBox
-            && !user.CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
+            && !user.CanMoveRawWeightFromMagicBoxToPersonal(item.GetTotalUnitWeight()))
         {
             user.LastEquipmentAction =
                 CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -4653,7 +4677,9 @@ class CaelumInventoryService : Object play
         }
         item.InMagicBox = false;
 
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+        {CaelumClothing.Equip(user,item,true);}
+        else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
         {
             for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
             {
@@ -4750,7 +4776,9 @@ class CaelumInventoryService : Object play
             return;
         }
         item.Equipped = false;
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+        {CaelumClothing.Equip(user,item,false);}
+        else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
         {
             if (user.EquippedArmorItemId[item.ArmorSlot] == item.ItemId)
             {
@@ -4999,7 +5027,7 @@ class CaelumInventoryService : Object play
         if (item == null) { return; }
         if (item.InMagicBox)
         {
-            if (!user.CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
+            if (!user.CanMoveRawWeightFromMagicBoxToPersonal(item.GetTotalUnitWeight()))
             {
                 user.LastEquipmentAction =
                     CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
@@ -5326,7 +5354,12 @@ class CaelumInventoryService : Object play
             8.0
         );
         Actor pickup;
-        if (user.IsSpecialInventoryKind(user.EquipmentSelectionKind))
+        if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+        {
+            pickup=Actor.Spawn("CaelumClothingPickup",spawnPos,NO_REPLACE);
+            if(pickup!=null){pickup.args[0]=user.EquipmentSelectionClothingType;pickup.args[2]=user.EquipmentSelectionSize+1;CaelumEquipmentItem(pickup).SizePolicy=CaelumEquipmentRules.FIXED_SIZE;}
+        }
+        else if (user.IsSpecialInventoryKind(user.EquipmentSelectionKind))
         {
             Name specialClass = user.GetSpecialItemClassName(
                 user.EquipmentSelectionKind, user.EquipmentSelectionSpecialType

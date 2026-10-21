@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
+
+## 5.6.6 - Native ordinary clothing (#386)
+
+The author-approved 25 garments are native items with one T1 recipe each, five
+sizes and a separate head/body/hands/feet clothing layer. Armor retains its full
+thermal profile. Clothes own their moisture, contribute real wet carried mass,
+and retain identity through crafting, drops, Box, chest storage and travel.
+ClothingRevision 1 converts the implicit outfit once, including legacy moisture
+and the approved one-time capacity exception. Existing NPC outfit/loot stays
+unchanged. Existing cloth art is a temporary inventory/world representation;
+the #387 model brief and #383 vendor/library integration are separate work.
+Validation: assets/validation_566/RESULTS.md. CA386-01 awaits author acceptance.
+The accepted PR batch #388–395 was merged on 2026-10-21, closing #376, #377,
+#378, #381, #382 and #384. This does not close the six remaining issues.
 
 ## 5.6.4 - One-time death loot, existing tables (#384)
 
@@ -14,24 +28,23 @@ the legacy catalogue and already looted gaps remain intact.
 
 Validation: 16 native runs / 113 passing assertions, plus separate old-code
 regressions, static validation, normal packaging and independent review in
-assets/validation_564. CA384-01 passed author review on 2026-10-20; no merge is implied. #382/#386 proposals still require review and #387 art remains pending.
+assets/validation_564. CA384-01 passed author review on 2026-10-20 and the batch merged on 2026-10-21. The #382/#386 proposals were approved on 2026-10-20; #387 art remains pending.
 
 ## 5.6.3b - Ordinary-clothing catalogue proposal (#386)
 
 The requested review table is in SYSTEMS: 25 proposed native garments, 11 style/
 season combinations, recipes and derived prices/work, thermal/armor layering,
-and explicit initial/legacy entitlement. These are unapproved design proposals;
-no garment, coefficient, stock, save or artwork change is implemented. #387 art
-remains dependent on catalogue approval. Only diagnostic release labels change
-in runtime sources. Static validation and packaging: assets/validation_563b.
+and explicit initial/legacy entitlement. The author approved this table on
+2026-10-20; gameplay follows in 5.6.6. The proposal itself changed no garments,
+stock, saves or artwork. Its static evidence remains assets/validation_563b.
 
 ## 5.6.3a - Lock-tool proposal requested by the author (#382)
 
-SYSTEMS contains a concrete, explicitly unapproved proposal covering acquisition,
+SYSTEMS records the proposal approved on 2026-10-20 covering acquisition,
 steel recipes/masses, existing-margin prices, station access and lawful-title
 rules. Confirmed padlock/key masses, geometry scaling and warning-only theft
 remain separate. This delivery changes documentation and required diagnostic
-release labels; #382 implementation awaits the author's decisions. The frozen
+release labels; #382 was implemented and accepted in 5.6.5. The frozen
 5.6.3 CA378-01 package remains available; that author check passed on 2026-10-20.
 
 ## 5.6.3 - Physical recipe learning (#378)

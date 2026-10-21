@@ -529,7 +529,8 @@ class CaelumConstants : Object
     const EQUIPMENT_KIND_SEAL = 9;
     const EQUIPMENT_KIND_CURRENCY = 10;
     const EQUIPMENT_KIND_CONTAINER = 11;
-    const EQUIPMENT_KIND_COUNT = 12;
+    const EQUIPMENT_KIND_CLOTHING = 12;
+    const EQUIPMENT_KIND_COUNT = 13;
 
     // La Caja Mágica es una capacidad permanente del personaje: su estructura
     // pesa siempre 1 gramo. El contenido comparte una reducción igual a la
@@ -726,7 +727,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 12;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 12 + CaelumClothingData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -734,7 +735,8 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 9;
+    const CRAFTING_RECIPE_BOOK_VERSION = 10;
+    const CRAFTING_RECIPE_KIND_CLOTHING = 10;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
     const CRAFTING_RECIPE_KIND_ARMOR = 1;
@@ -762,7 +764,8 @@ class CaelumConstants : Object
     const CRAFTING_RECIPE_FILTER_PROCESSING = 7;
     const CRAFTING_RECIPE_FILTER_COMPONENT = 8;
     const CRAFTING_RECIPE_FILTER_AMMUNITION = 9;
-    const CRAFTING_RECIPE_FILTER_COUNT = 10;
+    const CRAFTING_RECIPE_FILTER_CLOTHING = 11;
+    const CRAFTING_RECIPE_FILTER_COUNT = 12;
     const CRAFTING_AMULET_BASE_WEIGHT_RATIO = 0.20;
     const CRAFTING_SEAL_BASE_WEIGHT_RATIO = 0.40;
     const CRAFTING_ACTION_NONE = 0;

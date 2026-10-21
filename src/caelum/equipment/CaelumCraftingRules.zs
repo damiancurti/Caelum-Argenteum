@@ -222,7 +222,7 @@ class CaelumCraftingRules : Object
 
     static bool IsSingleTierRecipe(int recipeIndex)
     {
-        return CaelumUtilityCrafting.IsRecipe(recipeIndex)
+        return CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)
             || recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE;
@@ -230,6 +230,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING;
         if (CaelumUtilityCrafting.IsRecipe(recipeIndex)) return CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY;
         if (IsSingleTierRecipe(recipeIndex))
             return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
@@ -259,7 +260,8 @@ class CaelumCraftingRules : Object
     static bool RecipeUsesEquipmentSize(int recipeIndex)
     {
         int kind = GetUnifiedRecipeKind(recipeIndex);
-        return kind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
+        return kind == CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING
+            || kind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             || kind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
             || kind == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
             || kind == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
@@ -543,6 +545,7 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeComplexityTics(int recipeIndex)
     {
+        if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumClothingData.Complexity(recipeIndex-CaelumClothingData.FIRST_RECIPE);
         if(CaelumLockRules.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
         int recipeKind = GetUnifiedRecipeKind(recipeIndex);
         if (recipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON)

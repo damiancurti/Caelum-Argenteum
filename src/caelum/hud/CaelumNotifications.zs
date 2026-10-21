@@ -200,7 +200,9 @@ class CaelumNotifications : Object
             int slot = preview ? equipment.PreviewArmorSlot() : equipment.ArmorSlot;
             int size = preview ? equipment.PreviewEquipmentSize(user) : equipment.EquipmentSize;
             int essence = preview ? equipment.PreviewEssenceType() : equipment.EssenceType;
-            if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+                label=StringTable.Localize(CaelumClothingData.NameKey(type),false);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
                 label = CaelumDisplayNames.FormatWeaponName(type, tier);
             else if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
                 label = String.Format("%s · %s", CaelumDisplayNames.FormatArmorTypeName(type, tier),
@@ -211,7 +213,8 @@ class CaelumNotifications : Object
                 label = CaelumDisplayNames.FormatAmuletName(type, tier);
             else label = CaelumDisplayNames.FormatSealName(type, tier);
             label.AppendFormat(" · T%d", tier);
-            if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING
+                || kind == CaelumConstants.EQUIPMENT_KIND_WEAPON
                 || kind == CaelumConstants.EQUIPMENT_KIND_ARMOR
                 || kind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
                 label.AppendFormat(" · %s", StringTable.Localize(CaelumDisplayNames.GetEquipmentSizeKey(size), false));

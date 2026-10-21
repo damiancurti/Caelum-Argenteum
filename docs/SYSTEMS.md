@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
 
 ## One-time loot with existing tables (#384, 5.6.4)
 
@@ -41,48 +41,48 @@ Evidence and limits: assets/validation_564/RESULTS.md. Native tests do not claim
 new campaign balance, multiplayer synchronization or author acceptance.
 CA384-01 passed author review on 2026-10-20; existing native locks/access rules remain.
 
-## Ordinary clothing: catalogue proposal for review (#386, 5.6.3b)
+## Ordinary clothing: approved native catalogue (#386, 5.6.6)
 
-**APPROVED 2026-10-20; IMPLEMENTATION PENDING.** The author requested formal and
+**APPROVED 2026-10-20; IMPLEMENTED 5.6.6, AUTHOR PLAYTEST PENDING.** The author requested formal and
 warm formal clothing, plus casual, country and poor-quality variants for summer,
 autumn/spring and winter, in the setting's nineteenth-century Argentine style.
 On 2026-10-20 they approved the complete table, including the garment choices,
 quantities, coefficients and migration below. These are authored balance values,
-not historical measurements. Gameplay remains pending; art belongs to #387.
+not historical measurements. CA386-01 awaits author acceptance; art belongs to #387.
 
-### Existing authorities and the proposed item boundary
+### Authorities and native item boundary
 
-Current base clothing is implicit (`ARMOR_TYPE_BASE_CLOTHING`), not a physical
-craftable/tradeable item. Armor has four anatomical regions: head, body, hands
-and feet. The thermal model includes underclothes in each armor profile; its
+Before 5.6.6 base clothing was implicit (`ARMOR_TYPE_BASE_CLOTHING`).
+Clothing now has native item identity in the four existing anatomical regions:
+head, body, hands and feet. The thermal model includes underclothes in each armor profile; its
 light-cloth baseline is 0.5 clo, permeability 0.90 and water capacity
 0.192336119324285 kg/m2. Fabric already distinguishes wool T1, cotton T2 and silk
 T3; these material grades do not identify seasonal warmth or social status.
 Current native equipment identity, size, Box and trade paths remain authorities.
 
-Propose a separate ordinary-clothing layer in those same four regions. A body
+Use a separate ordinary-clothing layer in those same four regions. A body
 item is one complete torso/leg ensemble, including its named jacket or poncho;
 its parts cannot separately stack, trade or add protection. This avoids adding
 unapproved trouser/coat slots. Headwear, pairs of gloves and pairs of shoes are
 separate items. One garment per region; an armor piece may coexist above it.
 No change to hit regions, armor slots, defense, hitboxes or combat attributes.
 
-All proposed garment recipes have one output and **one clothing tier, T1**, with
+All garment recipes have one output and **one clothing tier, T1**, with
 their own recipe identity. No T2/T3 garment upgrades are proposed yet. Their
 inputs may use existing higher-grade cloth without implying higher armor tier.
-Proposed stations are Workbench + Sewing Machine for every garment. Cloth,
+Stations are Workbench + Sewing Machine for every garment. Cloth,
 leather and rope processing retain their current recipes and station checks.
 Buttons, stitching and small ties are abstracted into the listed material mass;
 there are no new thread, dye, felt or shoe-component material IDs.
 
-### Proposed garments, recipes, price and work
+### Garments, recipes, price and work
 
 Weights and inputs below are for size M and 100% material efficiency. W = wool
 fabric T1, C = cotton fabric T2, S = silk fabric T3, L = cow leather T1 and
 R = plant-fiber rope T1. Their current processed base prices are respectively
 2.5, 5, 10, 3.75 and 3.75 copper per gram. Material amounts sum exactly to dry
 finished mass. Rate is the existing 2/3/4 tics per material unit for normal,
-detailed/complex work. These are proposed per-garment assignments.
+detailed/complex work. These are approved per-garment assignments.
 
 | ID / region | Garment (one native item) | Dry kg, M | Processed inputs, grams | Dry clo | Rate | Base copper | Base work, seconds |
 | --- | --- | ---: | --- | ---: | ---: | ---: | ---: |
@@ -188,26 +188,26 @@ or armor has zero cloth insulation and the existing bare-surface water reference
 
 ### Proposed initial/legacy entitlement and acquisition
 
-Recommend one casual summer combination (CS/HC/GC/BS) in the character's existing
+Grant one casual summer combination (CS/HC/GC/BS) in the character's existing
 default equipment size for a new character and once for each legacy player.
 At M it adds 1.760 kg of real carried mass. Each region's profile is 0.5 clo,
-preserving the old base-clothing thermal reference. This is a proposed conversion
-of the outfit already represented visually, not an approved free wardrobe.
+preserving the old base-clothing thermal reference. This converts the outfit already represented visually into four native items.
 
 The migration must be separately numbered and idempotent: create four native
 instances atomically, keep existing armor/equipped identities, move base water
 once, mark completion only after all references resolve, and never repeat the
 grant on reload/travel. Preserve original save/package copies for rollback.
-Recommend allowing this one-time worn conversion even if it puts a legacy save
+Allow this one-time worn conversion even if it puts a legacy save
 over carried capacity, showing its actual added mass; do not discard, sell,
-resize or silently place items in the Box. This capacity exception is unapproved.
+resize or silently place items in the Box. This one-time capacity exception is approved.
 Existing NPC implicit clothing remains until explicit NPC outfit mapping exists;
 no migration grant becomes new corpse loot or vendor stock.
 
-Recommend library recipes for every row and ordinary city clothing stock through
+The approved acquisition plan is library recipes for every row and ordinary city clothing stock through
 #383, using its approved one-unit equipment rule per garment/size. Actual vendor
 selection and shop conversion belong to #383; no new chest/enemy loot is proposed
-under #384. Until integrated, these approved entries are absent from gameplay.
+under #384. Until #383 integrates these sources, the starter outfit is available normally;
+additional garments/recipes are reachable through isolated development fixtures.
 
 ### Review boundary and handoff to #387
 
@@ -215,7 +215,7 @@ The author approved the 25 garment rows and 11 combinations, one-tier scope,
 four-region ensembles, materials/masses/derived prices, station/work rates,
 thermal profiles and armor limitation, no-wear rule and migration/capacity grant.
 The author already selected the style families, three seasons and period; those
-decisions are retained. No pending author gameplay test is added before code exists.
+decisions are retained. CA386-01 now covers the delivered gameplay; see pending_test.txt.
 
 Recommend late-nineteenth-century Argentine civilian silhouettes: shirts,
 waistcoats, frock/short coats, trousers, bombachas, wool ponchos, felt hats and
@@ -223,8 +223,16 @@ alpargatas. These are a design brief, not licensed/reference assets or final
 approved geometry. Preserve existing sex/species/body choices; adapt fit rather
 than changing identity or mass. #387 must separately approve colors, exact cuts,
 all supported bodies/sizes, equipped/world/preview/first-person coverage, poses
-and measured rendering budget before generating models. This proposal creates
-no art, bindings or migration of the wider sprite pipeline.
+and measured rendering budget before generating models. The gameplay patch reuses the existing owned cloth icon/world sprite; it creates
+no garment model, binding or migration of the wider sprite pipeline.
+
+Implementation uses equipment kind 12, appended recipe IDs 141–165 and recipe-book
+revision 10; old recipe IDs and knowledge retain their meaning. ClothingRevision
+1 is separate from recipe/thermal revisions. Equipped IDs reside in the traveling
+character record; native items own size, dry mass and ThermalWaterKg. BaseWaterKg
+is cleared at conversion; uncovered skin uses BareWaterKg. Capacity runoff has its
+own counter and never contributes to evaporated mass or latent cooling. The
+original save and matching 5.6.5 package remain the reversible recovery pair.
 
 ## Lock tools, lawful access and theft witnesses (#382, 5.6.5)
 
@@ -4445,8 +4453,10 @@ Catalogue rows per specialization: 5 provision types, 65 melee variants,
 20 ranged weapon variants plus 3 ammunition stacks, 9 jewelry variants,
 75 physical armor/shield variants, and 125 magical weapon/armor/shield variants.
 Sized equipment covers XS through XL; essence weapons cover all five essences.
-Magic shields belong to the magical specialization. Basic clothing is not a
-manufactured stock item. Tiers 2/3, filled water containers and javelin ammunition
+Magic shields belong to the magical specialization. Native clothing is craftable
+in 5.6.6 but is not assigned to city stock until #383. The merchant's explicit
+TradesClothing capability defaults off; it does not convert existing shops.
+Tiers 2/3, filled water containers and javelin ammunition
 outside the three-type ammunition catalogue are not added to shop stock.
 
 New-city soldiers carry their existing sword/shield and a normal T1/M carbine.
@@ -4676,7 +4686,11 @@ One clo is 0.155 m² K/W. These include underclothes and are apportioned by a
 not a full outfit bonus per item. Broken equipped pieces retain physical
 insulation; their ordinary magical defense remains zero. Wet outer pieces own
 their water mass through equipment identity and copy/drop paths. The character
-owns base-layer water. Unequipped pieces retain their moisture without passive
+owned implicit base-layer water before 5.6.6. Converted players now keep it on
+native garments; uncovered skin has its own bare-surface reserve. The approved
+ordinary-clothing catalogue above supplies each uncovered region's profile,
+while armor retains this table's complete profile without adding garment clo.
+Existing NPC implicit clothing is unchanged. Unequipped pieces retain moisture without passive
 drying; Box contents remain sealed. This is an explicit first-model storage
 rule, not a new waterproof treatment. Metal's outer moisture capacity is zero;
 its included cloth retains water.

@@ -266,6 +266,8 @@ class CaelumPersistentCharacterState : Inventory
     // Identidad formal 4.29.0bc. Estos campos viajan junto con el registro y
     // evitan que dos piezas iguales compartan selección o durabilidad.
     int NextEquipmentItemId;
+    int ClothingRevision;
+    int EquippedClothingItemId[4];
     int EquippedArmorItemId[4];
     int EquippedShieldItemId;
     int ActiveWeaponItemId;
@@ -1465,7 +1467,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 8)
+        if (RecipeBookVersion >= 9)
+        {
+            addedRecipeStart = CaelumClothingData.FIRST_RECIPE;
+        }
+        else if (RecipeBookVersion >= 8)
         {
             addedRecipeStart = CaelumLockRules.FIRST_RECIPE;
         }

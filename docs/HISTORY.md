@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
+
+## 5.6.6 - Native ordinary clothing (#386), 2026-10-21
+
+Implements the table approved on 2026-10-20: 25 native T1 garments and recipes,
+five sizes, a four-region clothing layer, component-grade pricing and the existing
+study/practice/crafting authority. Armor retains its complete thermal profile;
+clothing moisture follows the item and wet weight participates in carry/storage.
+Excess water becomes runoff without evaporative cooling. Revision-1 conversion
+grants CS/HC/GC/BS once at default size, preserves armor IDs and moves old base
+water, including the approved one-time overcapacity exception.
+No NPC outfit/loot, vendor/library stock or garment model is introduced.
+
+Static and isolated native evidence: assets/validation_566/RESULTS.md, including
+real 5.6.5 wet armored migration, current saves/travel, all garment recipes, wet
+transfers and bilingual inventory. CA386-01 is pending; the author is away and
+questions are postponed. No manual acceptance is implied by these checks.
+The prior accepted batch PRs #388–395 was merged on 2026-10-21; issues #376,
+#377, #378, #381, #382 and #384 closed. #379/#380/#383/#385/#386/#387 stay open.
 
 ## 5.6.5 - Approved padlocks and local theft witnesses (#382), 2026-10-21
 

@@ -204,6 +204,8 @@ class CaelumThermalService : Object play
             double exposed=Max(0.0,fraction-submerged);
             double capacity=coefficients.Capacity[slot];
             double water=thermal.WorkWaterKg[slot];
+            thermal.ClothingRunoffKg+=Max(0.0,water-capacity);
+            water=Min(water,capacity);
             // Entrada por inmersión no se confunde con evaporación ni escurrido.
             if(fraction>0)water=Max(water,capacity*submerged/fraction);
             double beforeWet=capacity>0 ? Clamp(100.0*water/capacity,0.0,100.0) : 0;

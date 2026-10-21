@@ -131,11 +131,19 @@ class CaelumThermalBody : Object play
         let npc=CaelumCombatActor(body);
         if(npc!=null && npc.CombatArmor!=null)
             return CaelumThermalData.MaterialForArmor(npc.CombatArmor.ArmorType[slot]);
+        let user=CaelumPlayer(body);
+        if(CaelumClothing.Converted(user))
+        {
+            let garment=CaelumClothing.Equipped(user,slot);
+            return garment!=null ? CaelumClothingData.THERMAL_FIRST+garment.ItemType : -1;
+        }
         return CaelumThermalData.LIGHT_CLOTH;
     }
 
     static double Water(Actor body,CaelumThermalState thermal,int slot)
     {
+        let user=CaelumPlayer(body);
+        if(CaelumClothing.Converted(user))return CaelumClothing.Water(user,thermal,slot);
         let piece=EquippedPiece(body,slot);
         if(piece!=null)return piece.ThermalWaterKg+thermal.BaseWaterKg[slot];
         return CaelumPlayer(body)!=null ? thermal.BaseWaterKg[slot] : thermal.ActorWaterKg[slot];
@@ -144,6 +152,8 @@ class CaelumThermalBody : Object play
     static void SetWater(Actor body,CaelumThermalState thermal,int slot,double kg)
     {
         kg=Max(0.0,kg);
+        let user=CaelumPlayer(body);
+        if(CaelumClothing.Converted(user)){CaelumClothing.SetWater(user,thermal,slot,kg);return;}
         let piece=EquippedPiece(body,slot);
         if(piece!=null)
         {

@@ -782,6 +782,7 @@ class CaelumJournalOverlay : EventHandler
             case 7: return "CA_JOURNAL_FILTER_AMMUNITION";
             case 8: return "CA_JOURNAL_FILTER_KEY_ITEMS";
             case 9: return "CA_JOURNAL_FILTER_CURRENCY";
+            case 10: return "CA_EQUIPMENT_CATEGORY_CLOTHING";
             default: return "CA_JOURNAL_FILTER_ALL";
         }
     }
@@ -804,6 +805,8 @@ class CaelumJournalOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_SEALS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
                 return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_CLOTHING: return "CA_EQUIPMENT_CATEGORY_CLOTHING";
+            case 10: return "CA_CRAFTING_FILTER_UTILITIES";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_AMMUNITION:
                 return "CA_CRAFTING_FILTER_AMMUNITION";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
@@ -995,6 +998,8 @@ class CaelumJournalOverlay : EventHandler
         String sizeName = StringTable.Localize(
             CaelumDisplayNames.GetEquipmentSizeKey(equipmentSize), false
         );
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            return StringTable.Localize(CaelumClothingData.NameKey(itemType),false).." · "..sizeName;
         if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             String weaponName =
@@ -1752,6 +1757,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String FormatCraftingRecipeName(CaelumPlayer localPlayer)
     {
+        if(CaelumClothingData.IsRecipe(localPlayer.CraftingSelectionRecipe))return CaelumCraftingBrowser.RecipeName(localPlayer.CraftingSelectionRecipe);
         if (!localPlayer.CraftingSelectedRecipeKnown)
         {
             return StringTable.Localize("CA_CRAFTING_RECIPE_UNKNOWN", false);

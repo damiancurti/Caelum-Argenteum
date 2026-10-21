@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.5** — 2026-10-21.
+Documentation version: **5.6.6** — 2026-10-21.
 
 **5.6.4/#384:** unchanged tables, once-only death/ice; validation_564:16runs/113PASS; CA384-01 accepted2026-10-20.
 **5.6.5/#382:** validation_565; CA382-01 accepted2026-10-21.
-**#386:** clothing approved; implementation pending (SYSTEMS).
+**5.6.6/#386:** native clothing; validation_566. CA386-01 pending; shops:#383/art:#387.
 **5.6.3/#378:** sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library:#383.
 **5.6.2/#381:** chest storage; validation_562; CA381-01 accepted2026-10-20.
 **5.6.1/#377:** merchants; validation_561; CA377-01 accepted2026-10-20.
@@ -58,11 +58,11 @@ At that acceptance pending_test.txt was empty; 5.4.27's runtime was unchanged.
 **5.4.0-24 accepted:** all 24 issues #237-254/#259-261/#282-284 merged/closed via
 PR303 (351b949a); per-release evidence in HISTORY and validation_540 through
 validation_5424. CA284-01 passed 2026-10-15. #283 is an accepted opt-in prototype;
-full modular migration remains V5.17. Earlier map/Journal
+modular migration remains V5.17. Earlier map/Journal
 batch #231-236/#255-258 is accepted/merged/closed.
 
 **5.2.8-27 accepted:** author confirmations, merged PRs, validation folders and
-individual checks remain in HISTORY. Current rules include automatic rest
+individual checks remain in HISTORY. Rules include automatic rest
 provisions/x105, the1-g empty Box, modular appearance, comfort controls and
 protected MAP01 life. SYSTEMS retains authoritative balance and behavior.
 

@@ -375,6 +375,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_CRAFTING_FILTER_SEALS";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
                 return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_CLOTHING: return "CA_EQUIPMENT_CATEGORY_CLOTHING";
+            case 10: return "CA_CRAFTING_FILTER_UTILITIES";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_AMMUNITION:
                 return "CA_CRAFTING_FILTER_AMMUNITION";
             case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
@@ -1376,7 +1378,7 @@ class CaelumDebugOverlay : EventHandler
 
     ui void DrawEquipmentMenu(CaelumPlayer localPlayer)
     {
-        String categoryKey = "CA_EQUIPMENT_CATEGORY_ARMOR";
+        String categoryKey = localPlayer.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING ? "CA_EQUIPMENT_CATEGORY_CLOTHING" : "CA_EQUIPMENT_CATEGORY_ARMOR";
         if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
@@ -1429,7 +1431,10 @@ class CaelumDebugOverlay : EventHandler
         }
         String category = StringTable.Localize(categoryKey, false);
         String selection;
-        if (localPlayer.EquipmentSelectionKind
+        if(localPlayer.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            selection=StringTable.Localize(CaelumClothingData.NameKey(localPlayer.EquipmentSelectionClothingType),false)
+                .." · "..StringTable.Localize(GetEquipmentSizeKey(localPlayer.EquipmentSelectionSize),false);
+        else if (localPlayer.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             String materialName = StringTable.Localize(

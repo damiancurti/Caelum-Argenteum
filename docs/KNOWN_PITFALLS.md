@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-147 - Move clothing moisture ownership without duplicating armor profiles
+
+Status/evidence: ENGINE-VERIFIED. First recorded / last checked: 2026-10-21.
+Issue: #386; baseline b92de0b3 plus the 5.6.6 clothing patch. Environment:
+GZDoom 4.14.2 / Windows 11, private Doom II development fixture, unpaused,
+5% audio; exact package/configuration hashes in assets/validation_566/report.json.
+Scope: CaelumClothing, CaelumThermalBody/Data/Service, native inventory weight.
+
+Constraint: existing armor profiles already include underclothes. Turning the
+implicit outfit into inventory items must neither add that insulation twice nor
+leave its old water reserve behind as a second copy. Native dry UnitWeight also
+does not by itself include ThermalWaterKg in capacity or display calculations.
+
+Prevention: a numbered, one-time conversion moves BaseWaterKg onto four native
+garments and preserves equipped armor IDs. Armor still selects the complete
+thermal profile. Water is shared within its existing capacity; changes of
+capacity drain excess into an explicit runoff counter before evaporation, with
+no latent cooling. Stored pieces retain their own water. Native transfer and
+equipped/carry summaries use wet mass once, while valuation uses dry inputs.
+
+Evidence/regression: validation_566's suite crafts all 25 garments and exercises
+wet chest capacity refusal, exact transfers, armor coexistence and runoff mass
+conservation. Actual wet armored 5.5.8a and 5.6.5 saves migrate; original-package
+rollback, revised saves and hub/non-hub travel are tested separately. CA386-01
+author acceptance remains pending. No NPC wardrobe or large-map performance
+claim follows from these isolated checks.
+
 ## CA-KP-146 - Manual combat thrust must respect DONTTHRUST
 
 Status/evidence: AUTHOR-REPORTED and RESOLVED-VERIFIED, #382/5.6.5, 2026-10-21.
