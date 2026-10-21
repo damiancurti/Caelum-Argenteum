@@ -1,5 +1,31 @@
 # V5.6.5 / #382 — padlocks, household title and local witnesses
 
+## Author follow-up: keep the chest stationary when breaking its lock
+
+The author reported chest movement after the original delivery (`59f9844c`).
+`push-before-01` reproduces it with real flail input: four checks pass but the
+new position/velocity check fails. Both manual combat push helpers now honor
+the receiver's existing DONTTHRUST flag, retaining zero recorded impulse for
+the uppercut guard. No serialized fields or balance values change.
+
+**Four focused native runs / 17 passing assertions.**
+`push-report.json` and `push-project-validation.json` cover the corrected
+package: real flail break, unchanged contents/one theft, stationary position and
+velocity, player/NPC push controls on ordinary combatants and movable rocks,
+clearing a previous positive impulse, and actual attack after scene save/reload.
+Independent static review found no outstanding P1/P2. Author retest is pending.
+`collect_push.py` verifies that only the two helpers changed in the runtime and
+that the normal package matches all tested members. Reuse the other original
+checks within their documented boundaries; the 20-run report below remains
+historical evidence for its exact original package, not a rerun of this fix.
+
+Reproduce with the current runner's `attack`, `push-controls`, `push-save` and
+`push-reload` scripts (`-LoadGame ca382-push.zds` for the latter). The original
+package is retained privately in `build/issue382/pre-push-fix`. `collect.py`
+describes collection at the original commit; use `collect_push.py` for this fix.
+
+## Original delivery
+
 The approved steel locks and paired keys use native inventory, individual saved
 identities and five existing crafting tasks. Another owner's locked chest raises
 theft once on opening or a blunt break. A local spatial query alerts living

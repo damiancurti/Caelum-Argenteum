@@ -1485,7 +1485,8 @@ class CaelumCombatActor : Actor
     void ApplyActorAttackPush(Actor receiver, double attackAngle, double attackerMultiplier)
     {
         LastCombatPushForce = 0.0;
-        if (receiver == null || receiver.health <= 0) { return; }
+        // La protección nativa también rige para el impulso manual del combate.
+        if (receiver == null || receiver.health <= 0 || receiver.bDONTTHRUST) { return; }
         LastCombatPushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
             * Max(0.0, attackerMultiplier)
             * GetActorKnockbackMultiplier(receiver);

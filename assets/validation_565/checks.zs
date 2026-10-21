@@ -9,6 +9,7 @@ class CA382Checkpoint : Inventory
 class CA382Checks : StaticEventHandler
 {
     int Passed,Failed;
+    vector3 AttackChestOrigin;
     void Check(bool ok,String label)
     {if(ok)Passed++;else Failed++;Console.Printf("CA382 %s %s",ok?"PASS":"FAIL",label);}
     void Prepare(CaelumPlayer u)
@@ -215,6 +216,29 @@ class CA382Checks : StaticEventHandler
         burden.Destroy();existing.Destroy();incoming.Destroy();u.MagicBoxOwned=oldBox;u.OnNativeInventoryChanged();
         Console.Printf("CA382 RESULT %d PASS %d FAIL",Passed,Failed);
     }
+    void PushControls(CaelumPlayer u)
+    {
+        Prepare(u);
+        let chest=Chest(u,0);let npc=Witness(u,(0,96,0));
+        let rock=Actor.Spawn("CaelumRockGraniteHalf",u.Pos+(0,-128,0),NO_REPLACE);
+        Check(chest!=null && chest.bDONTTHRUST && rock!=null && !rock.bDONTTHRUST,
+            "push controls use fixed chest and native movable rock");
+        if(chest==null || rock==null)return;
+        u.ApplyAttackPushToTarget(npc,0,1);
+        Check(npc.Vel.Length()>0 && u.LastAttackPushForce>0,"player still pushes ordinary combatants");
+        npc.Vel=(0,0,0);u.ApplyAttackPushToTarget(chest,0,1);
+        Check(chest.Vel.Length()==0 && u.LastAttackPushForce==0,"player fixed-target rejection clears previous impulse");
+        u.ApplyAttackPushToTarget(rock,0,1);
+        Check(rock.Vel.Length()>0 && u.LastAttackPushForce>0,"player still pushes movable rocks");
+        rock.Vel=(0,0,0);npc.ApplyActorAttackPush(rock,0,1);
+        Check(rock.Vel.Length()>0 && npc.LastCombatPushForce>0,"NPC still pushes movable rocks");
+        npc.ApplyActorAttackPush(chest,0,1);
+        Check(chest.Vel.Length()==0 && npc.LastCombatPushForce==0,"NPC fixed-target rejection clears previous impulse");
+        npc.ApplyActorAttackPush(u,0,1);
+        Check(u.Vel.Length()>0 && npc.LastCombatPushForce>0,"NPC still pushes ordinary player");
+        u.Vel=(0,0,0);rock.Destroy();npc.Destroy();chest.Destroy();
+        Console.Printf("CA382 RESULT %d PASS %d FAIL",Passed,Failed);
+    }
     void House(CaelumPlayer u,bool returning)
     {
         Prepare(u);int house=CaelumHouseHubData.HouseForMap(level.MapName);
@@ -346,6 +370,7 @@ class CA382Checks : StaticEventHandler
         if(e.Name=="ca382_hub_setup")Hub(u,false);
         if(e.Name=="ca382_hub_verify")Hub(u,true);
         if(e.Name=="ca382_visibility")Visibility(u);
+        if(e.Name=="ca382_push_controls")PushControls(u);
         if(e.Name=="ca382_house")House(u,false);
         if(e.Name=="ca382_house_return")House(u,true);
         if(e.Name=="ca382_house_migration")HouseMigration(u);
@@ -363,7 +388,17 @@ class CA382Checks : StaticEventHandler
         }
         if(e.Name=="ca382_author")Author(u);
         if(e.Name=="ca382_ui")Author(u,true);
-        if(e.Name=="ca382_attack_setup"){Author(u);u.SetOrigin((48,0,0),false);u.Pitch=45;}
+        if(e.Name=="ca382_attack_setup")
+        {
+            Author(u);u.SetOrigin((48,0,0),false);u.Pitch=45;
+            let iterator=ActorIterator.Create(38202);let chest=CaelumStashChest(iterator.Next());
+            if(chest!=null)AttackChestOrigin=chest.Pos;
+        }
+        if(e.Name=="ca382_attack_capture")
+        {
+            let iterator=ActorIterator.Create(38202);let chest=CaelumStashChest(iterator.Next());
+            if(chest!=null)AttackChestOrigin=chest.Pos;
+        }
         if(e.Name=="ca382_attack_verify")
         {
             let iterator=ActorIterator.Create(38202);let chest=CaelumStashChest(iterator.Next());
@@ -371,6 +406,8 @@ class CA382Checks : StaticEventHandler
                 && chest.TheftOpenings==1,"real flail attack breaks lock and commits theft once");
             Check(chest!=null && chest.FindInventory("CaelumGoldCoin")!=null
                 && chest.FindInventory("CaelumGoldCoin").Amount==10,"real blunt break preserves contents");
+            Check(chest!=null && (chest.Pos-AttackChestOrigin).Length()<0.001
+                && chest.Vel.Length()<0.001,"real blunt break leaves chest position and velocity unchanged");
             Console.Printf("CA382 RESULT %d PASS %d FAIL",Passed,Failed);
         }
     }

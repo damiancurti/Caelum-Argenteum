@@ -29,6 +29,8 @@ player, only for another owner's new padlocked chest. On 2026-10-21 the author
 assigned a small locked chest with ten gold coins to each city household.
 Native evidence covers crafting, pickup, storage, saves, hub travel, household
 issuance and witness controls (20 runs / 134 passing assertions). CA382-01 remains pending.
+The author reported chest movement on a padlock hit; corrected manual thrust
+respects DONTTHRUST for player/NPC hits. Only that reported defect needs retesting.
 Vendor/library availability is a separate #383 integration. #381/#377 are accepted.
 #384 retains current tables; #385 leaves products without a game recipe unrenewed.
 

@@ -61,6 +61,9 @@ scripts={
     'ui-en':'wait 35; changemap LOCKTEST; wait 35; netevent ca382_ui; language enu; wait 35; screenshot locks-english.png; wait 35; quit',
     'author-check':'wait 35; changemap LOCKTEST; wait 35; netevent ca382_author; wait 70; screenshot author.png; wait 5; quit',
     'attack':'wait 35; changemap LOCKTEST; wait 35; netevent ca382_attack_setup; use CaelumFlailSelectorWeapon; wait 70; +attack; wait 35; -attack; wait 5; netevent ca382_attack_verify; screenshot attack.png; wait 5; quit',
+    'push-controls':'wait 35; changemap LOCKTEST; wait 35; netevent ca382_push_controls; wait 5; quit',
+    'push-save':'wait 35; changemap LOCKTEST; wait 35; netevent ca382_attack_setup; wait 5; save ca382-push; wait 5; quit',
+    'push-reload':'wait 35; netevent ca382_attack_capture; use CaelumFlailSelectorWeapon; wait 70; +attack; wait 35; -attack; wait 5; netevent ca382_attack_verify; wait 5; quit',
     'interactive':'exec ../../assets/playtest/default_controls.cfg\nbind e +use; bind mouse1 +attack; language es; wait 35; changemap LOCKTEST; wait 35; netevent ca382_author; wait 5; toggleconsole',
 }
 for name,script in scripts.items():(OUT/(name+'.cfg')).write_text(script+'\n',encoding='utf-8')

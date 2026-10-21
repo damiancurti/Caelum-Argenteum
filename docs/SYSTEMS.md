@@ -237,7 +237,9 @@ crafting includes a matching key weighing 10% of the lock (0.1/0.3/0.5 kg), so t
 combined outputs require 1.1/3.3/5.5 kg at 100% material efficiency. Each tier
 doubles height, width and depth relative to the previous. A matching key, master key or lockpicks
 opens a lock; tools have no durability/consumption. A single blunt hit breaks a
-lock for now. A later author instruction on 2026-10-20 supersedes warning-only:
+lock for now; it does not push the chest. Manual player/NPC combat impulses
+respect the chest's existing DONTTHRUST protection. A later author instruction
+on 2026-10-20 supersedes warning-only:
 opening another owner's new padlocked chest also makes living combat-capable
 NPCs within 32 meters hostile when they have direct line of sight to the player.
 This applies to matching keys, bypass tools and blunt breaking; own/public

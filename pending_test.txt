@@ -1,4 +1,8 @@
 CA382-01 | Origin: 5.6.5 / issue #382 | Padlocks, theft witnesses and household chests
+Author follow-up 2026-10-21: remaining observed defect was chest movement on a
+padlock hit. Retest only step 3: the flail must break the closed padlock without
+moving the chest, preserving its contents and theft response. Other steps below
+remain the original reference; they do not need repeating for this correction.
 Prerequisites: frozen #382 package and supplied interactive scene; no other GZDoom session.
 Launch from repository PowerShell:
 powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_565/run_native.ps1 -Label author-382-review -Checks -Interactive -Script interactive

@@ -12,8 +12,10 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.6.5 implements approved padlock/key crafting, lawful chest title and local
 theft witnesses (#382). Each city house receives one small locked household chest
 with ten gold coins. The [validation](assets/validation_565/RESULTS.md) records
-20 native runs and 134 passing assertions;
-author acceptance remains pending. New vendor/library stock belongs to #383.
+20 native runs and 134 passing assertions.
+The author's remaining chest-push defect is corrected: manual combat impulse now
+respects the chest's DONTTHRUST flag for player and NPC hits. The focused retest
+remains pending. New vendor/library stock belongs to #383.
 
 V5.6.4 preserves current loot tables and prevents repeated native death/drop
 callbacks, including frozen resurrected bodies (#384). Old pending/spent claims

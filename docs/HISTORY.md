@@ -22,6 +22,16 @@ Witnesses retain sleep, stun, active Redemption, conversations, escort prioritie
 and finite weapon resources. Vendor/library integration remains #383.
 CA382-01 remains pending author acceptance in pending_test.txt.
 
+Author follow-up, 2026-10-21: CA382-01 reported one remaining observed defect:
+breaking the padlock also pushed the chest. The real flail reproducer confirmed
+movement while preserving the single theft and contents. Player/NPC manual
+combat thrust now respects the existing DONTTHRUST flag and clears the recorded
+impulse before returning, including the uppercut's vertical addition. Native
+position/velocity, movable combatant/rock controls and saved-scene replay are
+recorded separately in validation_565/push-report.json (four runs / 17 passes). Original 20-run evidence
+remains attached to 59f9844c; this follow-up changes only the two push helpers.
+No schema or balance changes. Corrected CA382-01 retest is pending.
+
 ## 5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20
 
 Author-startup correction, 2026-10-20: the interactive fixture now puts the
