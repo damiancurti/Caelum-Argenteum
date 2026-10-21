@@ -1969,38 +1969,17 @@ class CaelumPlayer : DoomPlayer
 
     int GetPalomoMerchantQuantityForIndex(int quantityIndex)
     {
-        switch (Clamp(quantityIndex, 0,
-            CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1))
-        {
-            case 1: return 5;
-            case 2: return 20;
-            case 3: return 50;
-            case 4: return 100;
-            default: return 1;
-        }
+        return CaelumMerchantCoordinator.GetPalomoMerchantQuantityForIndex(self, quantityIndex);
     }
 
     int GetPalomoMerchantConsumableType(int merchantItem)
     {
-        if (merchantItem == CaelumConstants.PALOMO_MERCHANT_ITEM_FOOD)
-        { return CaelumConstants.CONSUMABLE_FOOD_RATION; }
-        if (merchantItem == CaelumConstants.PALOMO_MERCHANT_ITEM_WATER)
-        { return CaelumConstants.CONSUMABLE_WATER_RATION; }
-        return -1;
+        return CaelumMerchantCoordinator.GetPalomoMerchantConsumableType(self, merchantItem);
     }
 
     int GetPalomoMerchantMaterialType(int merchantItem)
     {
-        switch (merchantItem)
-        {
-            case CaelumConstants.PALOMO_MERCHANT_ITEM_WOOD:
-                return CaelumConstants.MATERIAL_WOOD;
-            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_COPPER:
-                return CaelumConstants.MATERIAL_RAW_COPPER;
-            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_TIN:
-                return CaelumConstants.MATERIAL_RAW_TIN;
-            default: return -1;
-        }
+        return CaelumMerchantCoordinator.GetPalomoMerchantMaterialType(self, merchantItem);
     }
 
     Inventory FindPalomoMerchantProduct(int merchantItem)
@@ -2093,319 +2072,53 @@ class CaelumPlayer : DoomPlayer
 
     bool HasPalomoMerchantReputationDiscount()
     {
-        return ActivePalomoMerchantDiscountCondition != null
-            && CaelumFactionCondition.Check(self, ActivePalomoMerchantDiscountCondition)
-                == CaelumFactionCondition.ALLOWED;
+        return CaelumMerchantCoordinator.HasPalomoMerchantReputationDiscount(self);
     }
 
     void RefreshPalomoMerchantSnapshot()
     {
-        if(CityTrade!=null){CityTrade.Refresh(self);return;}
-        PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
-            CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1);
-        PalomoMerchantMode = Clamp(PalomoMerchantMode,
-            CaelumConstants.PALOMO_MERCHANT_MODE_BUY,
-            CaelumConstants.PALOMO_MERCHANT_MODE_SELL);
-        PalomoMerchantQuantityIndex = Clamp(PalomoMerchantQuantityIndex, 0,
-            CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1);
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return; }
-        persistentState.EnsurePalomoMerchantInitialized();
-        persistentState.EnsurePalomoDiscountInitialized();
-        PalomoMerchantDiscountGranted =
-            persistentState.PalomoDiscountGranted;
-        // Esta rebaja es de la sesión: nunca se guarda como rebaja negociada.
-        PalomoMerchantReputationDiscount = HasPalomoMerchantReputationDiscount();
-        for (int merchantItem = 0;
-            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT; merchantItem++)
-        {
-            PalomoMerchantStock[merchantItem] = Max(0,
-                persistentState.PalomoMerchantStock[merchantItem]);
-            PalomoMerchantPlayerOwned[merchantItem] =
-                CountPalomoMerchantProduct(merchantItem, false);
-        }
-        PalomoMerchantWalletCopper = Max(0,
-            persistentState.PalomoMerchantWalletCopper);
-        PalomoMerchantVisibleItemCount = 0;
-        bool currentSelectionVisible = false;
-        for (int merchantItem = 0;
-            merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
-            merchantItem++)
-        {
-            bool visible = PalomoMerchantMode
-                    == CaelumConstants.PALOMO_MERCHANT_MODE_BUY
-                || (PalomoMerchantPlayerOwned[merchantItem] > 0
-                    && PalomoMerchantWalletCopper
-                        >= CaelumEconomyRules.GetPalomoMerchantLotPrice(
-                            merchantItem, 1,
-                            CaelumConstants.PALOMO_MERCHANT_MODE_SELL,
-                            PalomoMerchantDiscountGranted || PalomoMerchantReputationDiscount
-                        ));
-            if (!visible) { continue; }
-
-            PalomoMerchantVisibleItems[PalomoMerchantVisibleItemCount] =
-                merchantItem;
-            PalomoMerchantVisibleItemCount++;
-            if (merchantItem == PalomoMerchantSelection)
-            {
-                currentSelectionVisible = true;
-            }
-        }
-        for (int visibleIndex = PalomoMerchantVisibleItemCount;
-            visibleIndex < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT;
-            visibleIndex++)
-        {
-            PalomoMerchantVisibleItems[visibleIndex] = -1;
-        }
-        if (!currentSelectionVisible && PalomoMerchantVisibleItemCount > 0)
-        {
-            PalomoMerchantSelection = PalomoMerchantVisibleItems[0];
-        }
-        PalomoMerchantSelectedQuantity =
-            GetPalomoMerchantQuantityForIndex(PalomoMerchantQuantityIndex);
-        PalomoMerchantSelectedLotPrice = PalomoMerchantVisibleItemCount > 0
-            ? CaelumEconomyRules.GetPalomoMerchantLotPrice(
-                PalomoMerchantSelection, PalomoMerchantSelectedQuantity,
-                PalomoMerchantMode, PalomoMerchantDiscountGranted || PalomoMerchantReputationDiscount)
-            : 0;
-        RefreshCarriedInventorySummary();
+        CaelumMerchantCoordinator.RefreshPalomoMerchantSnapshot(self);
     }
 
     bool IsActivePalomoMerchantSessionValid()
     {
-        if (!PalomoMerchantMenuOpen || ActivePalomoMerchant == null
-            || ActivePalomoMerchant.health <= 0 || health <= 0) { return false; }
-        return Distance3D(ActivePalomoMerchant)
-            <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
-            && CaelumFactionCondition.Check(self, ActivePalomoMerchantRequirement)
-                == CaelumFactionCondition.ALLOWED;
+        return CaelumMerchantCoordinator.IsActivePalomoMerchantSessionValid(self);
     }
 
     void OpenPalomoMerchant(Actor merchant, CaelumFactionCondition requirement = null,
         CaelumFactionCondition discount = null, String titleKey = "CA_PALOMO_MERCHANT_TITLE")
     {
-        SyncPalomoDialogueTokens();
-        if (CreationWizardOpen || merchant == null) { return; }
-        CaelumPoiKnowledge.RecordUse(self,merchant,CaelumPoiData.MERCHANT);
-        if (!MagicBoxOwned) { return; }
-        if (!CaelumFactionCondition.Require(self, requirement)) return;
-        if (StaffCastPending) { CancelPendingStaffCast(false); }
-        EquipmentMenuOpen = false;
-        CloseCraftingStationSession();
-        SetCraftingJournalState(false);
-        ActivePalomoMerchant = merchant;
-        ActivePalomoMerchantRequirement = requirement;
-        ActivePalomoMerchantDiscountCondition = discount;
-        PalomoMerchantTitleKey = titleKey;
-        PalomoMerchantMenuOpen = true;
-        PalomoMerchantSessionValidationTics = 0;
-        PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
-            CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1);
-        PalomoMerchantMode = Clamp(PalomoMerchantMode,
-            CaelumConstants.PALOMO_MERCHANT_MODE_BUY,
-            CaelumConstants.PALOMO_MERCHANT_MODE_SELL);
-        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
-        RefreshPalomoMerchantSnapshot();
+        CaelumMerchantCoordinator.OpenPalomoMerchant(self, merchant, requirement, discount, titleKey);
     }
 
     void ClosePalomoMerchant()
     {
-        CityTrade=null;
-        PalomoMerchantMenuOpen = false;
-        ActivePalomoMerchant = null;
-        ActivePalomoMerchantRequirement = null;
-        ActivePalomoMerchantDiscountCondition = null;
-        PalomoMerchantReputationDiscount = false;
-        PalomoMerchantTitleKey = "";
-        PalomoMerchantSessionValidationTics = 0;
-        if (FolkloreInteractionUseLatched)
-        {
-            FolkloreInteractionReleaseGuardTics =
-                CaelumConstants.PALOMO_INTERACTION_REARM_GUARD_TICS;
-        }
+        CaelumMerchantCoordinator.ClosePalomoMerchant(self);
     }
 
     void UpdatePalomoMerchantSession()
     {
-        if (!PalomoMerchantMenuOpen) { return; }
-        PalomoMerchantSessionValidationTics++;
-        if (PalomoMerchantSessionValidationTics < 4) { return; }
-        PalomoMerchantSessionValidationTics = 0;
-        if (!IsActivePalomoMerchantSessionValid())
-        {
-            CaelumFactionCondition.Require(self, ActivePalomoMerchantRequirement);
-            LastPalomoMerchantAction =
-                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
-            ClosePalomoMerchant();
-        }
-        else if (PalomoMerchantReputationDiscount != HasPalomoMerchantReputationDiscount())
-        {
-            RefreshPalomoMerchantSnapshot();
-            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;
-        }
+        CaelumMerchantCoordinator.UpdatePalomoMerchantSession(self);
     }
 
     void CyclePalomoMerchantSelection(int direction)
     {
-        if (!IsActivePalomoMerchantSessionValid()) { return; }
-        if(CityTrade!=null){CityTrade.Cycle(self,direction);return;}
-        RefreshPalomoMerchantSnapshot();
-        if (PalomoMerchantVisibleItemCount <= 0) { return; }
-        int currentVisibleIndex = 0;
-        for (int visibleIndex = 0;
-            visibleIndex < PalomoMerchantVisibleItemCount; visibleIndex++)
-        {
-            if (PalomoMerchantVisibleItems[visibleIndex]
-                == PalomoMerchantSelection)
-            {
-                currentVisibleIndex = visibleIndex;
-                break;
-            }
-        }
-        currentVisibleIndex = (currentVisibleIndex
-            + (direction < 0 ? PalomoMerchantVisibleItemCount - 1 : 1))
-            % PalomoMerchantVisibleItemCount;
-        PalomoMerchantSelection =
-            PalomoMerchantVisibleItems[currentVisibleIndex];
-        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
-        RefreshPalomoMerchantSnapshot();
+        CaelumMerchantCoordinator.CyclePalomoMerchantSelection(self, direction);
     }
 
     void TogglePalomoMerchantMode()
     {
-        if (!IsActivePalomoMerchantSessionValid()) { return; }
-        PalomoMerchantMode = PalomoMerchantMode
-            == CaelumConstants.PALOMO_MERCHANT_MODE_BUY
-            ? CaelumConstants.PALOMO_MERCHANT_MODE_SELL
-            : CaelumConstants.PALOMO_MERCHANT_MODE_BUY;
-        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
-        RefreshPalomoMerchantSnapshot();
+        CaelumMerchantCoordinator.TogglePalomoMerchantMode(self);
     }
 
     void CyclePalomoMerchantQuantity(int direction)
     {
-        if (!IsActivePalomoMerchantSessionValid()) { return; }
-        PalomoMerchantQuantityIndex = (PalomoMerchantQuantityIndex
-            + (direction < 0
-                ? CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT - 1
-                : 1))
-            % CaelumConstants.PALOMO_MERCHANT_QUANTITY_OPTION_COUNT;
-        LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_NONE;
-        RefreshPalomoMerchantSnapshot();
+        CaelumMerchantCoordinator.CyclePalomoMerchantQuantity(self, direction);
     }
 
     void ExecutePalomoMerchantTransaction()
     {
-        if(CityTrade!=null){CityTrade.Execute(self);return;}
-        if (!IsActivePalomoMerchantSessionValid())
-        {
-            CaelumFactionCondition.Require(self, ActivePalomoMerchantRequirement);
-            LastPalomoMerchantAction =
-                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
-            ClosePalomoMerchant();
-            return;
-        }
-        int quotedPrice = PalomoMerchantSelectedLotPrice;
-        RefreshCarriedInventorySummary();
-        RefreshPalomoMerchantSnapshot();
-        if (quotedPrice != PalomoMerchantSelectedLotPrice)
-        {
-            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;
-            return;
-        }
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return; }
-        persistentState.EnsurePalomoMerchantInitialized();
-        persistentState.EnsurePalomoDiscountInitialized();
-        PalomoMerchantDiscountGranted =
-            persistentState.PalomoDiscountGranted;
-        int merchantItem = PalomoMerchantSelection;
-        int quantity = PalomoMerchantSelectedQuantity;
-        int price = PalomoMerchantSelectedLotPrice;
-        if (PalomoMerchantVisibleItemCount <= 0)
-        {
-            LastPalomoMerchantAction =
-                CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK;
-            return;
-        }
-        if (PalomoMerchantMode == CaelumConstants.PALOMO_MERCHANT_MODE_BUY)
-        {
-            if (persistentState.PalomoMerchantStock[merchantItem] < quantity)
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK;
-                return;
-            }
-            if (GetOwnedMoneyCopperValue() + 0.0001 < price)
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY;
-                return;
-            }
-            if (!PreparePalomoPurchaseCapacity(merchantItem, quantity, price))
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;
-                return;
-            }
-            if (!ApplyPalomoCurrencyPlan()
-                || !AddPalomoMerchantProduct(merchantItem, quantity))
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
-                return;
-            }
-            persistentState.PalomoMerchantStock[merchantItem] -= quantity;
-            if (persistentState.PalomoMerchantWalletCopper > 2147483647 - price)
-            { persistentState.PalomoMerchantWalletCopper = 2147483647; }
-            else { persistentState.PalomoMerchantWalletCopper += price; }
-            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT;
-        }
-        else
-        {
-            int available = CountPalomoMerchantProduct(merchantItem, false);
-            if (available < quantity)
-            {
-                int physical = CountPalomoMerchantProduct(merchantItem, true);
-                LastPalomoMerchantAction = physical >= quantity
-                    ? CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_RESERVED
-                    : CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK;
-                return;
-            }
-            if (persistentState.PalomoMerchantWalletCopper < price)
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY;
-                return;
-            }
-            if (!PreparePalomoSaleCapacity(merchantItem, quantity, price))
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY;
-                return;
-            }
-            if (!RemovePalomoMerchantProduct(merchantItem, quantity)
-                || !ApplyPalomoCurrencyPlan())
-            {
-                LastPalomoMerchantAction =
-                    CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
-                return;
-            }
-            if (persistentState.PalomoMerchantStock[merchantItem]
-                > 2147483647 - quantity)
-            { persistentState.PalomoMerchantStock[merchantItem] = 2147483647; }
-            else { persistentState.PalomoMerchantStock[merchantItem] += quantity; }
-            persistentState.PalomoMerchantWalletCopper -= price;
-            LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD;
-        }
-        ApplyCharacterProfile();
-        RefreshCarriedInventorySummary();
-        RefreshFormalInventorySnapshot();
-        RefreshPalomoMerchantSnapshot();
-        PersistCharacterState();
-        A_StartSound("caelum/ui/menu_select", CHAN_6, CHANF_LOCAL | CHANF_UI);
+        CaelumMerchantCoordinator.ExecutePalomoMerchantTransaction(self);
     }
 
     CaelumWeightedKey FindNativeKey(int keyType)

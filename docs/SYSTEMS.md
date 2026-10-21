@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.0** — 2026-10-20.
+Documentation version: **5.6.1** — 2026-10-20.
+
+## Merchant coordination and commit ownership (#377, 5.6.1)
+
+`equipment/CaelumMerchantCoordinator` is a stateless `Object play`, receiving
+the requesting pawn and, for city trade, its current `CaelumCityTradeSession`.
+Thirteen retained pawn methods and five retained session methods are adapters.
+
+| Boundary | Authoritative owner and lifetime |
+| --- | --- |
+| Palomo stock/wallet | The existing persistent character record owns product counts, wallet and negotiated discount; pawn arrays are refreshed projections. They are never shared with city vendors. |
+| City stock/wallet | Each `CaelumCityMerchant` owns native `Actor.Inv`, initialization/revision flags and WalletCopper. Lazy first-open seeding remains unchanged; reopening depleted stock does not replenish it. |
+| Session/UI | Pawn fields retain active actor, conditions, selection, quantities and quote. The existing city-session object retains vendor, native row references and display arrays. Closing clears the projection, not inventory; existing travel hooks close it before persisting. |
+| Preflight | Coordinator revalidates session, selected product/instance, quote, quantity, stock, money, stack bounds, personal load and Box capacity. City operations require the requesting pawn's actual current session and active vendor. Palomo refresh may not silently substitute a same-price row. |
+| Commit | `CaelumInventoryService` prepares missing currency instances and any new product or split stack before attaching, debiting, crediting or transferring. Existing currency plans remain authoritative. Exact equipment retains its state/ItemId, subject to the existing native acquisition collision rule. |
+
+Successful operations refresh UI/derived load and persist through existing
+hooks. No new saved ledger, schema revision, price, stock, wallet rule, access
+condition or automatic replenishment is introduced. Existing city wallet
+overflow rejection and Palomo's saturating wallet behavior remain distinct.
+Input routing and crafting close/pause order are preserved; changing merchant
+families now clears the old city projection.
+
+No routine actor scan is added. Quotes traverse only the selected owner's
+native inventory; the existing city initialization uses its 64-shop preparation
+and typed lookup, unchanged by this patch. This extraction claims no measured
+FPS improvement or stress-scale acceptance. Static/native/save evidence and
+limits are recorded in `assets/validation_561/RESULTS.md`.
 
 ## Crafting coordinator and unchanged state ownership (#376, 5.6.0)
 

@@ -4,6 +4,45 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-144 - Keep a nested exec on its own configuration line
+
+Status/evidence: AUTHOR-REPORTED and CODE-VERIFIED, 2026-10-20.
+Scope: interactive fixtures #377/#381/#378/#384, GZDoom 4.14.2.
+The author reported missing book/chest setup in #378/#381; their startup logs
+contain no setup events. #384 similarly omitted its interactive preparation.
+Upstream g4.14.2 src/common/console/c_dispatch.cpp FExecList::AddCommand parses
+a line beginning with exec specially: every remaining argument is a filename.
+Consequently `exec controls.cfg; wait 35; netevent setup` does not enqueue the
+following gameplay commands as intended. Put the controls exec on one physical
+line and the complete wait/setup chain on the next. Do not split an intentional
+wait chain across physical lines (CA-KP-098 still applies).
+
+The isolated automated suites did not use that nested exec prefix; their passes
+did not verify the author launcher. Manual setup commands recovered the objects;
+the author then accepted CA378-01 and CA381-01. The corrected automatic launch
+is source-verified, not yet a new native startup result. Keep that distinction
+until a fresh launch actually confirms readiness. Each fixture correction is
+committed to its own issue branch and leaves frozen production packages intact.
+
+## CA-KP-140 - Revalidate the selected trade item as well as its price
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #377/5.6.1, 2026-10-20.
+Environment: GZDoom 4.14.2 / Windows 11; isolated native merchant fixtures.
+Baseline: `2c90af69` (5.6.0), `assets/validation_561`.
+
+Palomo's sale snapshot rebuilds the visible rows and may select another product
+when the prior row disappears. The old Execute path compared only the quoted
+price after refreshing. Removing selected raw copper while raw tin remained
+allowed the equal-price replacement to be sold. The baseline fixture reproduces
+the unintended quantity/payment change; the revised fixture rejects it.
+
+Capture product, mode, quantity and price before refresh, and reject any changed
+part before committing. City rows additionally retain the exact native object
+reference. A UI snapshot is neither ownership nor permission: the city service
+also checks that the session belongs to the requesting pawn and active vendor.
+This lesson concerns the tested synchronous trade path, not a claim of complete
+multiplayer support or fault injection for native allocation exhaustion.
+
 ## CA-KP-139 - Console waits do not prove queued fixture events have advanced
 
 Status/evidence: ENGINE-VERIFIED, #369/5.5.8, 2026-10-20.
