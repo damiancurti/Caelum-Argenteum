@@ -26,7 +26,7 @@ are application callbacks, not OS presentation or city/mansion acceptance.
 Reproduce with validation_5611 prepare.py and the generated perf.cfg; report.json
 contains complete commands/environment and native/perf-final-01.txt raw samples.
 Regression: serial/concurrent deadlines, no repeated load/open output, exact-item
-trade-ins and full catalogue coverage in checks.zs. CA385-01 author check pending.
+trade-ins and full catalogue coverage in checks.zs. CA385-01 passed author review on 2026-10-21.
 
 ## CA-KP-148 - Native inventory transitions can reset a cached world sprite
 

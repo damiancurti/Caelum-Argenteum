@@ -1,7 +1,7 @@
 # #385 — Calendar shop replenishment, 5.6.11
 
 Static validation passes. Fourteen final GZDoom 4.14.2 runs pass **2,278
-assertions, zero failures**. CA385-01 author acceptance remains pending.
+assertions, zero failures**. CA385-01 passed author review on 2026-10-21.
 The frozen package has 16,433 source members and SHA-256
 `b4d75590e5f16edaccfb3e05377d6c2e633b59a8e04f3553030e520e90a0fd69`.
 The collector compares every packaged member to the final runtime source.
@@ -94,5 +94,6 @@ no IWAD, engine, PK3 or save is distributed in this patch.
 source member, deterministic catalogue generation and project validation. The
 supplied interactive room has coins, Box, ranged/library/clothing/tool vendors,
 a reading shelf and **F6** to advance one civil day for this fixture only.
-pending_test.txt contains the outstanding CA385-01 steps. Worn/preview/first-person
+The author confirmed the supplied CA385-01 test passed on 2026-10-21; its
+pending_test.txt entry was cleared, with the result recorded in HISTORY. Worn/preview/first-person
 garment art remains the separate unfinished #387 scope.

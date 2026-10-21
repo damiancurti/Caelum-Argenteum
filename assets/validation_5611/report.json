@@ -1520,7 +1520,7 @@
     "ca385-legacy.zds": "1b3e151331b8c8475a6abff3cef09dac772851f9a004d1062f76b5aecb07a9a0",
     "ca385-upgraded.zds": "6539425c63000c976cd56d214a71457d981b56fd0833c291f363cddb7245684b"
   },
-  "author_acceptance": "CA385-01 pending",
+  "author_acceptance": "CA385-01 passed on 2026-10-21: supplied live shop-replenishment test",
   "limitations": [
     "Single-player calendar authority only.",
     "Render callbacks do not prove OS frame presentation.",

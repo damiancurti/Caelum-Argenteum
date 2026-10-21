@@ -61,7 +61,7 @@ def main():
     report=dict(issue=385,version='5.6.11',base_commit='e38871f5',package_sha256=sha(package),source_member_count=len(names),
         runs=runs,native_runs=len(runs),passes=sum(r['passes'] for r in runs),failures=0,diagnostics=diagnostics,
         generator_sha256=before,performance=performance,saves={p.name:sha(p) for p in WORK.glob('ca385-*.zds')},
-        author_acceptance='CA385-01 pending',limitations=['Single-player calendar authority only.','Render callbacks do not prove OS frame presentation.','Worn/preview/first-person clothing is #387.'])
+        author_acceptance='CA385-01 passed on 2026-10-21: supplied live shop-replenishment test',limitations=['Single-player calendar authority only.','Render callbacks do not prove OS frame presentation.','Worn/preview/first-person clothing is #387.'])
     (HERE/'report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     print(json.dumps({k:report[k] for k in ['native_runs','passes','failures','package_sha256','performance']}))
 if __name__=='__main__':main()

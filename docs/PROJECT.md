@@ -10,7 +10,7 @@ catch-up is bounded by native stock targets; wallets, finite loot, tutorial
 quotas and recipe-less products are excluded. Revision 1 preserves depleted old
 shops without retroactive grants. Validation is recorded in assets/validation_5611
 (14 native runs / 2,278 PASS / zero FAIL, static pass);
-CA385-01 awaits author acceptance. #387 worn/preview/first-person art remains open.
+CA385-01 passed on 2026-10-21. #387 worn/preview/first-person art remains open.
 
 ## 5.6.10 status — city catalogues (#383)
 

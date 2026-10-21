@@ -8,7 +8,7 @@ Implemented approved full-chain production, product-specific serial deadlines,
 concurrent products, civil-calendar catch-up and revisioned old-stock migration.
 Keep finite sources, wallets, player-sold identities and recipe-less products
 unchanged. Final checks: 14 native runs / 2,278 PASS / zero FAIL, static pass;
-evidence and limitations: assets/validation_5611. CA385-01 pending;
+evidence and limitations: assets/validation_5611. CA385-01 passed on 2026-10-21;
 the independent #387 worn/preview/first-person scope remains unfinished.
 
 ## 5.6.10 — city catalogue extension (#383)

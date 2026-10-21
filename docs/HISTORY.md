@@ -13,8 +13,10 @@ initializes old depleted stock without retroactive output and preserves deadline
 Native/static evidence and failed diagnostic explanations: assets/validation_5611:
 14 final native runs, 2,278 PASS, zero FAIL; static validation passes. CA-KP-149
 records the bounded quote/catch-up measurement and its presentation limits.
-CA385-01 is pending, separately from automated validation. No author acceptance
-is inferred from an engine run. #383 acceptance remains recorded in 5.6.10.
+CA385-01 (origin 5.6.11 / #385) passed on 2026-10-21. The author confirmed
+"La prueba dio correcto" for the supplied live shop-replenishment room, without
+reported qualifications. Its pending entry was removed in this acceptance
+update; version and runtime remain unchanged. #383 acceptance remains in 5.6.10.
 
 ## 5.6.10 - City catalogue extension (#383), 2026-10-21
 

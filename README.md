@@ -14,7 +14,7 @@ units per product and simultaneous products, using fully mastered recipe chains
 from raw materials with Technical attributes zero. Books replenish too; prepared
 kits and eleven provisions lack recipes and remain finite. Vendor money and
 player-sold unique items are never copied. Evidence: assets/validation_5611.
-Author check CA385-01 is pending. Worn/preview/first-person clothing remains #387.
+CA385-01 passed on 2026-10-21. Worn/preview/first-person clothing remains #387.
 
 V5.6.10 adds the city library and clothing shop (#383), with matching signs,
 all approved recipe/tier books, sized clothing, sealed cartridge kits and matched
