@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
+
+## 5.6.3b - Ordinary-clothing catalogue proposal (#386)
+
+The requested review table is in SYSTEMS: 25 proposed native garments, 11 style/
+season combinations, recipes and derived prices/work, thermal/armor layering,
+and explicit initial/legacy entitlement. These are unapproved design proposals;
+no garment, coefficient, stock, save or artwork change is implemented. #387 art
+remains dependent on catalogue approval. Only diagnostic release labels change
+in runtime sources. Static validation and packaging: assets/validation_563b.
 
 ## 5.6.3a - Lock-tool proposal requested by the author (#382)
 

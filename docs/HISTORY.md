@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
+
+## 5.6.3b - Requested clothing-table proposal (#386), 2026-10-20
+
+Prepared the requested catalogue while the author was away: formal/warm formal
+and casual/country/poor variants for summer, autumn/spring and winter. SYSTEMS
+separates the confirmed style brief from 25 proposed garment definitions and
+their materials, mass, insulation, recipes, work, prices, layers and migration.
+No production clothing data, entitlement, thermal coefficient or art is changed.
+Two required diagnostic release strings track the documentation version.
+
+Static project validation and normal packaging are recorded in
+assets/validation_563b; no new native behavior test or author acceptance is
+claimed. #386 remains open pending design approval and implementation; #387
+models are not delivered. Existing outstanding author checks are retained.
 
 ## 5.6.3a - Lock tools and ownership proposal (#382), 2026-10-20
 

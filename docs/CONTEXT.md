@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
 
-**5.6.3a/#382:** proposal in SYSTEMS; approval pending.
+**#382/#386:** lock/clothing proposals in SYSTEMS; unapproved.
 **5.6.3/#378:** recipe sheets/study/practice; validation_563; CA378-01 pending. Library shops: #383.
 **5.6.2/#381:** native chest storage/transport; validation_562; CA381-01 pending.
 **5.6.1/#377:** merchant coordination; validation_561; CA377-01 pending.

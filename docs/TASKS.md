@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
+
+## 5.6.3b - Review ordinary-clothing data before implementation (#386)
+
+The author requested the full table, now in SYSTEMS. Approval is still needed
+for its concrete garment rows, balance, layering, durability and one-time legacy
+outfit/capacity policy. Preserve all accepted armor and thermal baselines until
+then. The #382 tool proposal remains pending; #387 art needs its separate coverage
+and visual approval after #386. Author checks CA377-01/CA381-01/CA378-01 remain
+pending and use their frozen packages, not this proposal's diagnostic labels.
 
 ## 5.6.3a - Review the lock-tool proposal (#382)
 

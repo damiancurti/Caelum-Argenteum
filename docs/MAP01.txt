@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.6.3a** — 2026-10-20.
+Documentation version: **5.6.3b** — 2026-10-20.
 
 5.6.3 - Recipe sheets and the reading bookshelf (#378)
 
