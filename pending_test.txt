@@ -48,34 +48,6 @@ full chest mass, no duplicated or lost contents. Native scripted destruction,
 capacity boundaries, migration and TID travel are recorded separately.
 
 
-CA378-01 | 5.6.3 | Issue #378 | Recipe sheets, study and practice
-Prerequisites: isolated #378 package/addon and disposable character; keep campaign
-saves separate. Run Start-CA378Test in the prepared terminal, or from the root:
-python assets/validation_563/prepare.py
-powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_563/run_native.ps1 -Label author378-01 -Checks -Interactive -Script interactive
-Use a fresh label. Frozen package: build/issue378/current/caelum_argenteum_dev.pk3.
-Steps:
-1. Close the console. The character faces the new bookshelf in the room opposite
-   the training dummy. Approach it and Use; alternatively open the Recipe book
-   from inventory. The fixture supplies Longbow T1/T2/T3 and component sheets.
-2. Select a tier, inspect the category, unread state, book mass and time. Start
-   reading; close and reopen. Partial reading pauses and does not teach.
-3. Complete a first reading. T enables existing x105 advance; Y offers the date
-   skip with its existing survival checks. For a quick isolated UI check only,
-   enter `netevent ca378_finish_reading` in the console after starting a read.
-   The fixture shortcut finishes that task without changing production timings.
-4. Confirm the selected tier and components become learned, other final tiers
-   remain unread, sheets remain, and reread count is still 0. Complete a reread:
-   count becomes 1/10, and the next reading and efficiency penalties decrease.
-5. Test keyboard/buttons/mouse/category selection, cancel, out-of-range pause,
-   save/reload and reuse. Check legibility in English and Spanish and the new
-   bookshelf's placement/appearance. Do not overwrite campaign saves.
-Expected: retained pages, separate tier learning, no materials from reading,
-correct pause/cancel and gradual capped progress. Actual equipment/consumable
-and recursive practice, capacities, migration and travel have separate native
-scripted evidence; library sales are delivered separately under #383.
-
-
 CA384-01 | 5.6.4 | Issue #384 | Current loot after native death guard
 Prerequisites: disposable #384 campaign/save; preserve original campaign saves
 with their matching package. Run Start-CA384Test in the prepared terminal.
