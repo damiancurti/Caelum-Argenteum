@@ -108,7 +108,7 @@ class CaelumIconResolver : Object
         String basePath = "";
         switch (equipmentKind)
         {
-            case CaelumConstants.EQUIPMENT_KIND_CLOTHING: return CaelumClothingData.ICON;
+            case CaelumConstants.EQUIPMENT_KIND_CLOTHING: return CaelumClothingData.Icon(itemType);
             case CaelumConstants.EQUIPMENT_KIND_WEAPON:
                 basePath = GetWeaponBasePath(itemType);
                 break;

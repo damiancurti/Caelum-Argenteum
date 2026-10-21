@@ -3486,7 +3486,7 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
-        if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.ICON;
+        if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.Icon(CraftingSelectionRecipe-CaelumClothingData.FIRST_RECIPE);
         if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe))
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE
                 ? "graphics/caelum/icons/ca_sleeping_bag.png" : "graphics/caelum/icons/water/canteen_large.png";

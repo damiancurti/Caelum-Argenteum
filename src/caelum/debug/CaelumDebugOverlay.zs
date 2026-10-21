@@ -1167,6 +1167,8 @@ class CaelumDebugOverlay : EventHandler
             selectedType = localPlayer.EquipmentSelectionAmuletType;
         else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
             selectedType = localPlayer.EquipmentSelectionSealType;
+        else if (selectedKind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            selectedType = localPlayer.EquipmentSelectionClothingType;
 
         String tierIcon = CaelumIconResolver.ResolveEquipmentPath(
             selectedKind, selectedType, localPlayer.EquipmentSelectionSlot,
