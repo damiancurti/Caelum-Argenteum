@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.10** — 2026-10-21.
+Documentation version: **5.6.11** — 2026-10-21.
+
+## 5.6.11 — calendar replenishment (#385)
+
+Implemented approved full-chain production, product-specific serial deadlines,
+concurrent products, civil-calendar catch-up and revisioned old-stock migration.
+Keep finite sources, wallets, player-sold identities and recipe-less products
+unchanged. Final checks: 14 native runs / 2,278 PASS / zero FAIL, static pass;
+evidence and limitations: assets/validation_5611. CA385-01 pending;
+the independent #387 worn/preview/first-person scope remains unfinished.
 
 ## 5.6.10 — city catalogue extension (#383)
 

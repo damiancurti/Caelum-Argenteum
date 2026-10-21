@@ -5,6 +5,8 @@ class CaelumShopCatalogue : Object
     const LIBRARY=6;
     const CLOTHING=7;
     const BOOK_STOCK=10;
+    const RESTOCK_REVISION=1;
+    const RESTOCK_INCLUDE_COMPONENTS=1;
     static int Category(int identity)
     {
         if(identity==34)return 6;

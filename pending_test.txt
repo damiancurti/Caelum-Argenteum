@@ -1,0 +1,13 @@
+CA385-01 — City shop replenishment
+Origin: 5.6.11 / #385. Author acceptance pending.
+Prerequisites: supplied isolated GZDoom 4.14.2 room, coins and Box; use a fresh game.
+1. Buy five or ten cartridges from the open ranged shop. Observe stock returning
+   one unit at a time while the menu remains open, capped at 1,000. Buy a prepared
+   kit too: its stock must remain depleted.
+2. Visit the library (left) and clothing shop (right), buy a book and a garment.
+   F6 advances one game-calendar day in this private fixture. Reopen each shop:
+   stock recovers to ten books / one garment, without copies in player inventory.
+3. Save/reload or close/reopen a shop; it must not duplicate stock or reset money.
+   Sell a garment back: the same exact item remains, with no cloned trade-in.
+Expected: production follows elapsed calendar time and stock caps, kits remain
+finite, purchases and wallets remain correct. F6 is a fixture-only time shortcut.

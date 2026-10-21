@@ -180,6 +180,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         if (calendar == null || !calendar.EnsureCampaign(clock)) return;
         CaelumTimeSkipState.PrepareStep(user);
         clock.AdvanceOnMap(level.MapName);
+        CaelumShopRestock.UpdateActive(user);
         CaelumWeatherState.Sync(user, clock, calendar);
         // WorldTick sigue la simulación nativa. Las conversaciones de Caelum
         // continúan; la pausa voluntaria y la carga no se compensan con tiempo

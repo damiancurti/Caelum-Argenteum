@@ -6,8 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.10.** Obtain and update the complete repository, validate
+**Current release: 5.6.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.6.11 implements calendar-based city shop replenishment (#385): sequential
+units per product and simultaneous products, using fully mastered recipe chains
+from raw materials with Technical attributes zero. Books replenish too; prepared
+kits and eleven provisions lack recipes and remain finite. Vendor money and
+player-sold unique items are never copied. Evidence: assets/validation_5611.
+Author check CA385-01 is pending. Worn/preview/first-person clothing remains #387.
 
 V5.6.10 adds the city library and clothing shop (#383), with matching signs,
 all approved recipe/tier books, sized clothing, sealed cartridge kits and matched
