@@ -48,7 +48,7 @@ Changing from city trade to Palomo clears the prior projection.
 
 Scope is coordination and transaction correctness, with unchanged prices,
 access, stock, wallets, recipe knowledge and replenishment policy. Evidence:
-`assets/validation_561/RESULTS.md`; author check CA377-01 remains pending.
+`assets/validation_561/RESULTS.md`; author check CA377-01 passed on 2026-10-20.
 #378-387 remain separate dependent deliveries with the author's design inputs.
 
 ## 5.6.0 - Crafting planning and session extraction (#376)

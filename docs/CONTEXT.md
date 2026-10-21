@@ -5,7 +5,7 @@ Documentation version: **5.6.3a** — 2026-10-20.
 **5.6.3a/#382:** proposal in SYSTEMS; approval pending.
 **5.6.3/#378:** recipe sheets/study/practice; validation_563; CA378-01 accepted2026-10-20. Library shops: #383.
 **5.6.2/#381:** native chest storage/transport; validation_562; CA381-01 accepted2026-10-20.
-**5.6.1/#377:** merchant coordination; validation_561; CA377-01 pending.
+**5.6.1/#377:** merchant coordination; validation_561; CA377-01 accepted2026-10-20.
 **5.6.0/#376:** crafting; validation_560; CA376-01 accepted2026-10-20.
 
 **5.5.6/#314:** ice−40/lava1000 C, private room; validation_556. CA314-01 accepted.
