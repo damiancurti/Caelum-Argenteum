@@ -1,0 +1,165 @@
+{
+  "issue": 387,
+  "revision": 1,
+  "created": "2026-10-21",
+  "tool": "OpenAI image_gen built-in tool",
+  "status": "candidate artwork; author visual acceptance pending",
+  "brief": "docs/SPRITE_ART_DIRECTION.md",
+  "views": [
+    "inventory",
+    "dropped-item billboard"
+  ],
+  "other_views": "Worn character, preview and first-person garment coverage remain unfinished under #387.",
+  "sources": [
+    {
+      "id": "F",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum, garment F (formal outfit). Create one isolated late-nineteenth-century Argentine civilian formal outfit, shown empty, no wearer or mannequin: dark charcoal wool frock coat opened over an ivory cotton shirt and restrained silk necktie, waistcoat and matching neatly folded trousers tucked behind the lower coat so it reads as a single compact inventory ensemble. Painted pixel-oriented dark fantasy RPG equipment art, clear silhouette, modeled fabric folds, restrained soft upper-left lighting, medium-dark outlines integrated into shading. Material must read as cloth, not armor. Slight three-quarter front presentation, centered, all parts inside frame with generous transparent margin. Readable at 128px. Not photographic, not glossy 3D, no text, no labels, no frame, no ground plane, no cast ground shadow, no human body, no shoes, hat, gloves, weapons or extra props. Actual transparent RGBA background.",
+      "source": "assets/art_source/clothing/F-v1.png",
+      "generation_file": "exec-bd8d6a5b-ff13-47c5-86c8-f9ea924d9f7b.png"
+    },
+    {
+      "id": "FW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Warm formal outfit: dark charcoal heavy wool overcoat with tall collar and broad lapels, ivory shirt, a narrow restrained dark silk necktie and waistcoat visible inside, matching dark wool trousers folded behind. Clearly thicker and longer silhouette than a light formal frock coat, no fur.",
+      "source": "assets/art_source/clothing/FW-v1.png",
+      "generation_file": "exec-3eb5a0f4-aad3-48ce-a6e4-1b0cccc53244.png"
+    },
+    {
+      "id": "CS",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Casual summer outfit: lightweight off-white cotton shirt with rolled sleeves and simple open stand collar, light warm gray cotton trousers folded behind it. Very light layers, simple everyday civilian cut, a single compact ensemble. No outer coat or waistcoat.",
+      "source": "assets/art_source/clothing/CS-v1.png",
+      "generation_file": "exec-5d7777a6-2e9c-459e-b7e1-7561af765c02.png"
+    },
+    {
+      "id": "CE",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Casual midseason outfit: modest muted slate-blue short wool jacket open over an ivory cotton shirt, brown cotton trousers folded behind; intermediate warm layers, practical urban Argentine civilian cut.",
+      "source": "assets/art_source/clothing/CE-v1.png",
+      "generation_file": "exec-d8745a2b-e27d-4e03-ae0e-41b8a205cbdf.png"
+    },
+    {
+      "id": "CW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Casual winter outfit: thick dark brown wool short coat with high collar over a muted gray wool waistcoat and cream cotton shirt, dark trousers folded behind; substantial warm layered silhouette, no fur.",
+      "source": "assets/art_source/clothing/CW-v1.png",
+      "generation_file": "exec-105e8b62-7093-4753-a78d-3ce84aee91e1.png"
+    },
+    {
+      "id": "RS",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Country summer outfit: warm ivory cotton gaucho shirt with rolled sleeves and loose gathered cotton bombacha trousers folded below/behind, a simple brown leather waist belt. Lightweight rural Argentine civilian clothing, no poncho.",
+      "source": "assets/art_source/clothing/RS-v1.png",
+      "generation_file": "exec-585ba745-796f-4a26-bdb2-1f5e7cc63f30.png"
+    },
+    {
+      "id": "RE",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Country midseason outfit: muted ochre wool short rural jacket over an ivory cotton gaucho shirt, broad gathered cotton bombacha trousers folded behind, simple brown leather waist belt. Rural Argentine working outfit, intermediate warmth.",
+      "source": "assets/art_source/clothing/RE-v1.png",
+      "generation_file": "exec-6770f750-034b-41f6-bec2-c9a210037856.png"
+    },
+    {
+      "id": "RW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Country winter outfit: thick earth-brown wool poncho with a restrained natural woven stripe and short fringe, an ivory cotton shirt collar visible beneath, gathered dark rural trousers folded behind and a plain leather waist belt partly visible. Heavy warm wool, rural Argentina.",
+      "source": "assets/art_source/clothing/RW-v1.png",
+      "generation_file": "exec-924123c5-7643-4a8b-bc63-dabec095d8f6.png"
+    },
+    {
+      "id": "PS",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Poor-quality summer outfit: faded beige thin coarse wool-cotton shirt, loose open collar and rolled sleeves, visible simple rectangular repair patches, worn muted brown trousers folded behind. Lightweight inexpensive nineteenth-century Argentine clothing, no holes exposing a body.",
+      "source": "assets/art_source/clothing/PS-v1.png",
+      "generation_file": "exec-30076517-b0e2-40fe-87bc-c69319d71684.png"
+    },
+    {
+      "id": "PE",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Poor-quality midseason outfit: faded gray-brown coarse wool short jacket with patched elbows, dull beige cotton shirt underneath, patched brown trousers folded behind. Restrained repaired working clothing, clear intermediate layering.",
+      "source": "assets/art_source/clothing/PE-v1.png",
+      "generation_file": "exec-6bb4513d-fb94-409d-9c07-98188fa67d1e.png"
+    },
+    {
+      "id": "PW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: Poor-quality winter outfit: bulky dull gray coarse wool coat with large mismatched brown cloth repair patches and a high collar, beige cotton shirt underneath, patched dark wool trousers folded behind. Clearly thick inexpensive winter clothing, no fur.",
+      "source": "assets/art_source/clothing/PW-v1.png",
+      "generation_file": "exec-68034310-309a-476f-a460-b155ef034ff5.png"
+    },
+    {
+      "id": "HF",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One formal felt hat: late nineteenth-century Argentine civilian dark charcoal wool felt top hat, medium-height cylindrical crown, curved brim, restrained dark silk hatband. Three-quarter view, empty, no head.",
+      "source": "assets/art_source/clothing/HF-v1.png",
+      "generation_file": "exec-b4391248-76cc-4257-9e27-d23a9193d606.png"
+    },
+    {
+      "id": "HC",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One casual summer cotton cap: late nineteenth-century Argentine civilian lightweight warm beige cotton peaked cap, low soft round crown, short curved visor, visible cloth seams. No modern logo or button hardware, no head.",
+      "source": "assets/art_source/clothing/HC-v1.png",
+      "generation_file": "exec-8903c8ce-dd2c-441f-bd7f-37cde3720bc3.png"
+    },
+    {
+      "id": "HR",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One country hat: late nineteenth-century Argentine gaucho broad-brim earth-brown wool felt hat with a low dented crown and plain brown leather hatband. Clearly wide brim, weathered clean felt, no feather or head.",
+      "source": "assets/art_source/clothing/HR-v1.png",
+      "generation_file": "exec-d3ce9c12-9b69-4037-a768-3e90e61ad384.png"
+    },
+    {
+      "id": "HW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One winter wool cap: late nineteenth-century civilian thick dark brown knitted wool stocking cap with folded ribbed cuff, soft rounded crown without pompom, visible warm knitted fabric. No head.",
+      "source": "assets/art_source/clothing/HW-v1.png",
+      "generation_file": "exec-909b5568-264a-4a98-9c0b-f57a65ca56f2.png"
+    },
+    {
+      "id": "HP",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One poor-quality cap: late nineteenth-century faded gray-brown coarse wool flat cap, short brim, visibly mended with two small muted brown cloth patches. Inexpensive worn cloth, no head.",
+      "source": "assets/art_source/clothing/HP-v1.png",
+      "generation_file": "exec-1d5aae30-a3ee-457e-a607-5e26d06d3cfd.png"
+    },
+    {
+      "id": "GF",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of formal gloves: slender ivory cotton dress gloves with restrained dark silk edging at the wrist, five separate fingers per glove, empty gloves casually overlapping, late nineteenth-century Argentine civilian attire. No hands or skin.",
+      "source": "assets/art_source/clothing/GF-v1.png",
+      "generation_file": "exec-1c4ea69f-0842-4424-831e-82afa8ec7e70.png"
+    },
+    {
+      "id": "GC",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of casual cotton gloves: simple light beige thin cotton full-finger gloves, short plain cuffs, practical civilian cut, five fingers each, empty gloves slightly overlapping. No leather, armor, hands or skin.",
+      "source": "assets/art_source/clothing/GC-v1.png",
+      "generation_file": "exec-c371c3d3-b94d-49a7-97d8-9c315c2d237b.png"
+    },
+    {
+      "id": "GW",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of warm winter wool gloves: thick dark brown knitted wool full-finger gloves with wide ribbed cuffs, visibly substantial soft wool, five fingers each, empty gloves slightly overlapping. No hands or skin.",
+      "source": "assets/art_source/clothing/GW-v1.png",
+      "generation_file": "exec-e29b3c77-d64d-4bdc-9e79-14da431314f0.png"
+    },
+    {
+      "id": "GP",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of poor-quality wool gloves: faded gray coarse wool full-finger gloves, uneven brown cloth mending at palms and cuffs, five fingers each, empty gloves slightly overlapping. Worn yet intact; no holes with skin, no hands.",
+      "source": "assets/art_source/clothing/GP-v1.png",
+      "generation_file": "exec-b56eeced-ed63-46d0-bc4f-6b36a29c565e.png"
+    },
+    {
+      "id": "BF",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of formal leather shoes: dark near-black low ankle nineteenth-century Argentine civilian lace-up dress shoes, simple clean leather uppers and modest heels, subtle cream cotton lining glimpsed inside. No feet, no boot buckles.",
+      "source": "assets/art_source/clothing/BF-v1.png",
+      "generation_file": "exec-7a828340-1d5e-4b8b-914a-1460cf66fac3.png"
+    },
+    {
+      "id": "BC",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of casual leather boots: practical medium-brown ankle-high nineteenth-century civilian lace-up boots, rounded toes, plain leather uppers and worn soles, cotton lining glimpsed inside. No feet, no modern rubber tread.",
+      "source": "assets/art_source/clothing/BC-v1.png",
+      "generation_file": "exec-4da705ce-fda5-463e-ad35-6c9a4116a58e.png"
+    },
+    {
+      "id": "BR",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of country leather boots: sturdy dark earth-brown tall riding/work boots for nineteenth-century Argentine rural civilian wear, plain broad shafts and simple seams, low heels, heavy cowhide. No feet, no spurs or ornaments.",
+      "source": "assets/art_source/clothing/BR-v1.png",
+      "generation_file": "exec-d096c93a-2b90-4479-b7a9-f5cb03fa2b4a.png"
+    },
+    {
+      "id": "BS",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of summer alpargatas: late nineteenth-century Argentine espadrilles with undyed ivory cotton uppers, clearly braided natural rope soles, simple rounded slip-on shape, no laces. No feet, no rubber or modern branding.",
+      "source": "assets/art_source/clothing/BS-v1.png",
+      "generation_file": "exec-77b51834-0517-475a-aad0-4bc1efc98094.png"
+    },
+    {
+      "id": "BP",
+      "prompt": "Use case: stylized-concept. Asset type: production game inventory / dropped-item sprite for Caelum Argenteum. Generate one isolated item or clothing ensemble as described. Painted pixel-oriented dark fantasy RPG equipment illustration, late-nineteenth-century Argentina, readable silhouette, modeled material folds and soft upper-left light, restrained earth/dark/ivory palette, clear edges, readable downsampled to 128 pixels. Slight three-quarter front presentation centered with generous transparent margin. The image shows ONLY the empty clothing item, no person, mannequin, body, head, skin, additional accessories, weapons, labels, letters, borders, backdrop, floor or cast ground shadow. No modern logos, zippers, glossy 3D or photographic look. Actual transparent RGBA background. Subject: One pair of poor-quality alpargatas: late nineteenth-century worn slip-on espadrilles with faded brown coarse wool uppers, mismatched cloth repair patches, clearly braided frayed but intact rope soles. No feet, no modern rubber or branding.",
+      "source": "assets/art_source/clothing/BP-v1.png",
+      "generation_file": "exec-25c051d8-e46c-43d1-8370-4eb727793e73.png"
+    }
+  ]
+}

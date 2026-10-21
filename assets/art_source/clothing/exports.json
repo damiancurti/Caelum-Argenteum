@@ -1,0 +1,581 @@
+{
+  "issue": 387,
+  "pillow": "11.3.0",
+  "exports": [
+    {
+      "type": 0,
+      "id": "F",
+      "source": "assets/art_source/clothing/F-v1.png",
+      "source_sha256": "e51ddca40c8b75f250f48c24b36dd07f7492aa1edf3dcd45abbf7a3c8a954f4d",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_00.png",
+      "output_sha256": "e12a9e9832aedf4faaae7f763e97c39778db485624541e5f8585a44e6a40101e",
+      "source_size": [
+        1199,
+        1312
+      ],
+      "source_alpha_bounds": [
+        0,
+        19,
+        1175,
+        1312
+      ],
+      "sprite": "WC00A0",
+      "pivot": [
+        64,
+        120
+      ]
+    },
+    {
+      "type": 1,
+      "id": "FW",
+      "source": "assets/art_source/clothing/FW-v1.png",
+      "source_sha256": "ca9ffd807eaa326b02624f3fa3034f99d09fddc01d20225113418e727cc3bbc9",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_01.png",
+      "output_sha256": "497e39ea69b3f748a45620d3f263dca286ba2cd005d347f708da1fe3bfdc4afe",
+      "source_size": [
+        1261,
+        1247
+      ],
+      "source_alpha_bounds": [
+        0,
+        7,
+        1172,
+        1247
+      ],
+      "sprite": "WC01A0",
+      "pivot": [
+        64,
+        124
+      ]
+    },
+    {
+      "type": 2,
+      "id": "CS",
+      "source": "assets/art_source/clothing/CS-v1.png",
+      "source_sha256": "bd1ec47e5249e12996d1812eedddd3a475126387454594e2db5379a2e448ec13",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_02.png",
+      "output_sha256": "3ebae11e61a0736b7dad65a5bd4577832d0cca55b5f6986690b417be89715590",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        49,
+        19,
+        1274,
+        1158
+      ],
+      "sprite": "WC02A0",
+      "pivot": [
+        64,
+        120
+      ]
+    },
+    {
+      "type": 3,
+      "id": "CE",
+      "source": "assets/art_source/clothing/CE-v1.png",
+      "source_sha256": "e9fce10d974fa36253feed3c02743889207f0802eade40983522042788d97a03",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_03.png",
+      "output_sha256": "93706364f5e1efc05a8d184de325df49168d0915229aa3fbef231853b234b1af",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "source_alpha_bounds": [
+        79,
+        57,
+        924,
+        1472
+      ],
+      "sprite": "WC03A0",
+      "pivot": [
+        64,
+        124
+      ]
+    },
+    {
+      "type": 4,
+      "id": "CW",
+      "source": "assets/art_source/clothing/CW-v1.png",
+      "source_sha256": "2645631d3518206e6362887d1c38b8aaed7c74555160fb1fd74bdc026f353c14",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_04.png",
+      "output_sha256": "6e4b6c977e30114724fefb60ab26836bc05a9fc448a81138410f421ef44c57ad",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        0,
+        19,
+        1296,
+        1199
+      ],
+      "sprite": "WC04A0",
+      "pivot": [
+        64,
+        118
+      ]
+    },
+    {
+      "type": 5,
+      "id": "RS",
+      "source": "assets/art_source/clothing/RS-v1.png",
+      "source_sha256": "cb86321dbcb5a4ec86243677fb5a2677e92986b6b53270a9b3acb10d64fe45df",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_05.png",
+      "output_sha256": "ed3da7e2559e071abfdb80ba9b72097d931ec0fead93c7e12e9a124a00149c76",
+      "source_size": [
+        1145,
+        1374
+      ],
+      "source_alpha_bounds": [
+        25,
+        93,
+        1117,
+        1374
+      ],
+      "sprite": "WC05A0",
+      "pivot": [
+        64,
+        116
+      ]
+    },
+    {
+      "type": 6,
+      "id": "RE",
+      "source": "assets/art_source/clothing/RE-v1.png",
+      "source_sha256": "772de4cc36dd8862a6407441f4c9f7e8d48f7f4e4508cad2b576bfda63f633ac",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_06.png",
+      "output_sha256": "08ccc7288356bcc73ec93e738641e6e865f02ec0afcaf1c2377beb3d3b91dddc",
+      "source_size": [
+        1214,
+        1295
+      ],
+      "source_alpha_bounds": [
+        0,
+        14,
+        1178,
+        1271
+      ],
+      "sprite": "WC06A0",
+      "pivot": [
+        64,
+        124
+      ]
+    },
+    {
+      "type": 7,
+      "id": "RW",
+      "source": "assets/art_source/clothing/RW-v1.png",
+      "source_sha256": "4b75a18329001b441a9acc0fc1a83ce6e2c13df434f1b398db1d161973ce15a5",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_07.png",
+      "output_sha256": "64cf6dca2f1ad340e2753912bfe4cb2340351c47a47e16c5028ad69739e99d94",
+      "source_size": [
+        1199,
+        1312
+      ],
+      "source_alpha_bounds": [
+        27,
+        25,
+        1183,
+        1312
+      ],
+      "sprite": "WC07A0",
+      "pivot": [
+        64,
+        119
+      ]
+    },
+    {
+      "type": 8,
+      "id": "PS",
+      "source": "assets/art_source/clothing/PS-v1.png",
+      "source_sha256": "3acd5546a8e04c9533e02b55f5870079c79040cf1bee719ee0316d11a97ef8cb",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_08.png",
+      "output_sha256": "927912066f0ac80c2b41e5c83bdddaf9571dac308b51c16c5e72c556e8e4d9fe",
+      "source_size": [
+        1275,
+        1234
+      ],
+      "source_alpha_bounds": [
+        33,
+        34,
+        1253,
+        1234
+      ],
+      "sprite": "WC08A0",
+      "pivot": [
+        64,
+        121
+      ]
+    },
+    {
+      "type": 9,
+      "id": "PE",
+      "source": "assets/art_source/clothing/PE-v1.png",
+      "source_sha256": "1614e3f8bc2bd0b5bfe7f92b68c662af061ecad7218e2fdb12d26ad1994b86f1",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_09.png",
+      "output_sha256": "12e9afdc4b38e3a13c9f148324e5ade0c3559dcf2ec523ecc5e7828091260c6d",
+      "source_size": [
+        1161,
+        1355
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1147,
+        1355
+      ],
+      "sprite": "WC09A0",
+      "pivot": [
+        64,
+        124
+      ]
+    },
+    {
+      "type": 10,
+      "id": "PW",
+      "source": "assets/art_source/clothing/PW-v1.png",
+      "source_sha256": "683c3a83c1502110729a8429e9c1dee89dd4fad0483ba2942453265917ffc686",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_10.png",
+      "output_sha256": "91c6c8dc612836383b96b51e4bb50c092fc957e74cce0a75bed5493dd1dc0220",
+      "source_size": [
+        1145,
+        1374
+      ],
+      "source_alpha_bounds": [
+        0,
+        61,
+        1115,
+        1374
+      ],
+      "sprite": "WC10A0",
+      "pivot": [
+        64,
+        118
+      ]
+    },
+    {
+      "type": 11,
+      "id": "HF",
+      "source": "assets/art_source/clothing/HF-v1.png",
+      "source_sha256": "7060691afa5f33a25d6da692e917cda29d8e81faa4f5634a51fe72dc08ac3e7a",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_11.png",
+      "output_sha256": "bebc7216a857c0dd35b13d246facf48e066f3d018f2fb1caad79399549d6962e",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        0,
+        17,
+        1296,
+        1199
+      ],
+      "sprite": "WC11A0",
+      "pivot": [
+        64,
+        109
+      ]
+    },
+    {
+      "type": 12,
+      "id": "HC",
+      "source": "assets/art_source/clothing/HC-v1.png",
+      "source_sha256": "1979a1aff413195c553f6da1da24e8e7b3bda38ce08859356781a25ff3a422e3",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_12.png",
+      "output_sha256": "aff2464a78aa8e4804edbbbe88ce26b87202bb727655899b0302c0c81c0c7c92",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        9,
+        1510,
+        1000
+      ],
+      "sprite": "WC12A0",
+      "pivot": [
+        64,
+        94
+      ]
+    },
+    {
+      "type": 13,
+      "id": "HR",
+      "source": "assets/art_source/clothing/HR-v1.png",
+      "source_sha256": "f8bfeb5d819307da495e30badcf59dd4752311d606b60c946795fe52f1ed8482",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_13.png",
+      "output_sha256": "4d4b5064668469385b34995040f937a46ef29a22ec5d5cf09975c055197acc6f",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1535,
+        1024
+      ],
+      "sprite": "WC13A0",
+      "pivot": [
+        64,
+        104
+      ]
+    },
+    {
+      "type": 14,
+      "id": "HW",
+      "source": "assets/art_source/clothing/HW-v1.png",
+      "source_sha256": "12fba97a60a8849c1de7276837bf698b4e3b5ae39a5ca0daadcbbf233d18c53c",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_14.png",
+      "output_sha256": "f012683c5ca65afbc8b068faae362e030b0007fb62af14815aeac14d48d447da",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1306,
+        1199
+      ],
+      "sprite": "WC14A0",
+      "pivot": [
+        64,
+        116
+      ]
+    },
+    {
+      "type": 15,
+      "id": "HP",
+      "source": "assets/art_source/clothing/HP-v1.png",
+      "source_sha256": "4eb429c66aee43166f5ddd9ba98726c245d6a15f033e3642b18ba83e9d18910d",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_15.png",
+      "output_sha256": "621c83c675348f3e02577870edc43083ec24f0b177bacda1751e5f2d7ad5b5bd",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1492,
+        1024
+      ],
+      "sprite": "WC15A0",
+      "pivot": [
+        64,
+        104
+      ]
+    },
+    {
+      "type": 16,
+      "id": "GF",
+      "source": "assets/art_source/clothing/GF-v1.png",
+      "source_sha256": "ff3b56b8c0d2338ab7c063e6817161f8cfb6836c0d33cf32876a4595e282467d",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_16.png",
+      "output_sha256": "0625b5a45b74837ced424768568fe4f4d8e4d7bb4845e034eadedd1324ed637a",
+      "source_size": [
+        1448,
+        1086
+      ],
+      "source_alpha_bounds": [
+        91,
+        40,
+        1434,
+        1039
+      ],
+      "sprite": "WC16A0",
+      "pivot": [
+        64,
+        108
+      ]
+    },
+    {
+      "type": 17,
+      "id": "GC",
+      "source": "assets/art_source/clothing/GC-v1.png",
+      "source_sha256": "e88859d46c83b95544d75a59990c698e18e3d47314cf69c669ddde176047b5bd",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_17.png",
+      "output_sha256": "c9fbbfcc5faa31db3323399222a4e0d51b5e076257b614ff1cd92922ef259c2e",
+      "source_size": [
+        1402,
+        1122
+      ],
+      "source_alpha_bounds": [
+        0,
+        23,
+        1374,
+        1122
+      ],
+      "sprite": "WC17A0",
+      "pivot": [
+        64,
+        108
+      ]
+    },
+    {
+      "type": 18,
+      "id": "GW",
+      "source": "assets/art_source/clothing/GW-v1.png",
+      "source_sha256": "cb5a2ab7ffefa637bc688bae6bdb67633e7258e41554bce1b14baaeb785c268a",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_18.png",
+      "output_sha256": "c04d81f0e5ff5bc2e53a831dcd5c28f2a8ea5fcfc7128f1ffd0b31c5e0c6887d",
+      "source_size": [
+        1437,
+        1095
+      ],
+      "source_alpha_bounds": [
+        23,
+        9,
+        1423,
+        1095
+      ],
+      "sprite": "WC18A0",
+      "pivot": [
+        64,
+        108
+      ]
+    },
+    {
+      "type": 19,
+      "id": "GP",
+      "source": "assets/art_source/clothing/GP-v1.png",
+      "source_sha256": "c859729b2a9ece615ed0e8a22bf2ec69f7ac5b86d42e164cd25768928a7855c6",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_19.png",
+      "output_sha256": "82b40c02881e868e1b891f95ff6fc2240219d9af42fdd05b8b89faca7c7a06c9",
+      "source_size": [
+        1374,
+        1145
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1360,
+        1145
+      ],
+      "sprite": "WC19A0",
+      "pivot": [
+        64,
+        111
+      ]
+    },
+    {
+      "type": 20,
+      "id": "BF",
+      "source": "assets/art_source/clothing/BF-v1.png",
+      "source_sha256": "a02abdf526fe36d30a952e9c5138e062af44949d1b0b900405994872a3892270",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_20.png",
+      "output_sha256": "be79b369a0f06de909ccdbd681fab0f6de6a32353c4b1041bdfe1f07ef10a681",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1516,
+        1024
+      ],
+      "sprite": "WC20A0",
+      "pivot": [
+        64,
+        96
+      ]
+    },
+    {
+      "type": 21,
+      "id": "BC",
+      "source": "assets/art_source/clothing/BC-v1.png",
+      "source_sha256": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_21.png",
+      "output_sha256": "cc5add5c156d8e36cc2b8877cb14d20470aab697c1a5d59712c154248ec20178",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        0,
+        9,
+        1304,
+        1199
+      ],
+      "sprite": "WC21A0",
+      "pivot": [
+        64,
+        114
+      ]
+    },
+    {
+      "type": 22,
+      "id": "BR",
+      "source": "assets/art_source/clothing/BR-v1.png",
+      "source_sha256": "a1f691a457aefc62b0a0d1bd5bb52a5793873fe8c4d345fe97c1e1e6fade1855",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_22.png",
+      "output_sha256": "53bfe1a381cfce4c6900fb707495ffcf406ab0ab82dac219092d4d320b54505a",
+      "source_size": [
+        1290,
+        1219
+      ],
+      "source_alpha_bounds": [
+        0,
+        30,
+        1268,
+        1219
+      ],
+      "sprite": "WC22A0",
+      "pivot": [
+        64,
+        117
+      ]
+    },
+    {
+      "type": 23,
+      "id": "BS",
+      "source": "assets/art_source/clothing/BS-v1.png",
+      "source_sha256": "b38dafaedd06fd0e878ff80d82fb10219a5f22cb1316a50d1820c19dc60eedd3",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_23.png",
+      "output_sha256": "cc44242cf40baca17c6f3e20e44b748083835c5b8dbcf8b1f99d50ded43d5e45",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        21,
+        1535,
+        1008
+      ],
+      "sprite": "WC23A0",
+      "pivot": [
+        64,
+        98
+      ]
+    },
+    {
+      "type": 24,
+      "id": "BP",
+      "source": "assets/art_source/clothing/BP-v1.png",
+      "source_sha256": "e3b57c6bfef1abe4a7c4fd6ca72be3c9392714344c2a8dbcaf9580fded968b31",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_24.png",
+      "output_sha256": "88fe56a4af313dca9bf791a3a3730134e9370c3aebcbd94ba9d6a7b3406654c3",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1512,
+        1024
+      ],
+      "sprite": "WC24A0",
+      "pivot": [
+        64,
+        103
+      ]
+    }
+  ]
+}

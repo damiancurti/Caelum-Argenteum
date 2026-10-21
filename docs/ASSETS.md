@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.6.6** — 2026-10-21.
+Documentation version: **5.6.7** — 2026-10-21.
+
+## 5.6.7 - Distinct garment object artwork (#387)
+
+All 25 approved garments now have individual 128x128 RGBA icons and WC00-WC24
+world sprites. Inventory, crafting and ground pickups share the same garment
+art; the native item identity, size, mass and thermal rules are unchanged.
+The world sprite's pivot is centered horizontally at its actual alpha bottom.
+The existing pickup scale/collision remain unchanged.
+
+OpenAI's built-in image_gen generated each source separately on 2026-10-21.
+`assets/art_source/clothing/manifest.json` retains exact prompts, source names,
+generation identifiers and candidate-review status. `exports.json` records source
+and output SHA-256, crop bounds, pivots and dimensions. The 25 original RGBA sources
+and contact sheet remain in assets; only exported images and TEXTURES aliases
+enter the PK3. No external/Doom art or generated reference fixture is distributed.
+`assets/generators/generate_clothing_sprites.py` pins Pillow 11.3.0 and performs
+only alpha cropping, premultiplied resampling, centering and packing. It neither
+paints nor replaces sources. Repeating it produces byte-identical exports.
+
+This stage covers inventory/crafting and dropped-item billboards. It does not
+complete #387's approved worn-character, character-preview or first-person
+coverage across supported bodies, sexes, species and sizes. Source and native
+visual evidence: `assets/validation_567/RESULTS.md`. Author visual review remains
+CA387-01; no new NPC wardrobe assignment or performance acceptance is implied.
 
 ## 5.6.6 - Clothing gameplay representation (#386)
 
