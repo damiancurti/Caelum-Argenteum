@@ -175,5 +175,5 @@
     "recipe-es.png": "83b1b8217c4c0850f3e376bb06613bc866ff08a2e39ed656468b50229fbd4461",
     "shelf.png": "7e0cac2f2590c1965b3b1ca00b6b6f53a2edaa0918f36a1f1ad8966a366af1c8"
   },
-  "author_acceptance": "pending CA378-01"
+  "author_acceptance": "passed CA378-01 on 2026-10-20; initial fixture setup qualification in HISTORY"
 }

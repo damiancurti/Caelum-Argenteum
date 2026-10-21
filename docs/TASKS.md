@@ -7,9 +7,9 @@ Documentation version: **5.6.3** — 2026-10-20.
 Physical sheets/book, per-tier learning, source retry, Intelligence M3 reading,
 practice snapshots and capped time reductions are implemented. Furniture and
 bilingual controls are included. Evidence: `assets/validation_563/RESULTS.md`;
-CA378-01 awaits author review. Keep CA377-01/CA381-01 outstanding.
-The author left again after answering follow-ups; a second temporary keep-awake
-request is active until return (12-hour fallback). No manual tests while away.
+CA378-01 passed author review on 2026-10-20. Keep CA377-01/CA381-01 outstanding.
+The author returned; the second temporary keep-awake request was released
+on 2026-10-20 without changing the Windows power plan.
 Next: #383 library commerce uses all approved recipe/tier books and replaces
 some repeated city shops, grouped by existing recipe categories. Other balance,
 source/ownership and clothing decisions remain in their own issue scopes.
