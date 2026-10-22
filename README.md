@@ -19,7 +19,7 @@ contamination when mixed; unsafe water cannot be consumed through drinking,
 rest or travel. Inventory adds Collect water (R) and Empty (V), with mouse
 buttons and ES/EN quality labels. Existing quantities and potable automatic
 refill remain. Tests: [water evidence](assets/validation_570/RESULTS.md).
-Author check CA408-01 is pending; the remaining V5.7 issues are separate work.
+Author check CA408-01 passed on 2026-10-21; the remaining V5.7 issues are separate work.
 
 V5.6.11a records the author-directed clothing appearance deferral (#387).
 PRs #397–401 are merged, including the accepted object sprites, cartridge contract

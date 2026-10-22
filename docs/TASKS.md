@@ -20,7 +20,7 @@ explicit unsafe-water collection and prohibition on drinking unsafe water.
 Scope includes native containers, displayed quality, automatic meal/travel
 consumers and additive save migration. No source geography, boiling, Alchemy
 or mate is included. Evidence: `assets/validation_570/RESULTS.md`.
-CA408-01 remains pending until explicit author confirmation. Continue V5.7
+CA408-01 passed author review on 2026-10-21. Continue V5.7
 through separate #404/#405/#406/#407/#470/#409/#471/#472 patches and PRs.
 
 ## 5.6.11a — close accepted V5.6 scope; defer clothing appearance (#387)

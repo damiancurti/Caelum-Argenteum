@@ -207,7 +207,7 @@ No global actor scan is introduced. Quality uses the current sector and native
 container state; existing inventory/provision traversal is reused. Unchanged
 rest-furniture and time-zone queries are outside this patch; no new rendering
 performance claim or whole-map stress test is made. Static and native results
-are tracked in `assets/validation_570/RESULTS.md`; CA408-01 requires author review.
+are tracked in `assets/validation_570/RESULTS.md`; CA408-01 passed author review on 2026-10-21.
 
 ## City replenishment and source policy (#385, 5.6.11)
 

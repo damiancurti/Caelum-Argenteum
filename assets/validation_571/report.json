@@ -99,8 +99,8 @@
   "source_hashes": {
     "assets/generators/generate_environment_models.py": "8e9f1b3158cc583a0c67ef30649f4e29bb269205338a08960f76bb4917719e25",
     "assets/generators/generate_mineral_veins.py": "92861f40af969596fa11b8a1d93c1ad8186d1fa09f1c2b5961dfdad874c3922e",
-    "assets/generators/resource_catalog.json": "4f1bfcbc19c8674ea8ee4a6fc3468fcf378f7f382a2e014f59c168429eb10395",
-    "docs/SYSTEMS.md": "8d4887d6f5fe8772435643e522f6f45cdc20a64535fa2d80a4c0205edeca3ccf",
+    "assets/generators/resource_catalog.json": "1ac5270fa6e6b43e53374d36ac77bd6f45fb93a5dfd843e43109c660cad6fedd",
+    "docs/SYSTEMS.md": "2d4795928bc934b14a87aeac9132a4ba11054d64a07598605a697155f80c5450",
     "src/caelum/core/CaelumConstants.zs": "85878bc116b2e17d05e0f271eb246665ca6458cbb30286b0cb3e6327bb684497",
     "src/caelum/equipment/CaelumEconomy.zs": "424c8b509e9f0703ee4c58e62a92a783e230a17e33e5bb5c9b7e1f46ff17d63b",
     "src/caelum/quests/CaelumMainM00RonnieTrial.zs": "f3f4c013ed02dcb186c0aae0794b666f043afe92c4d7d897fe34c4cbb62f7dcd",
