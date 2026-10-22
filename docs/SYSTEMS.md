@@ -1,11 +1,11 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.1** — 2026-10-21.
+Documentation version: **5.7.2** — 2026-10-21.
 
 ## Regional resource contract (#404, 5.7.1)
 
-This is the reviewed V5.7 data contract, not delivery of the subsequent source,
-recipe or merchant integrations. Author decisions were approved on 2026-10-21.
+This is the reviewed V5.7 data contract. Land/source/merchant integration is
+now delivered in #405 below; processing remains in its separate issues. Author decisions were approved on 2026-10-21.
 `assets/generators/resource_catalog.json` stores the new authored data and
 references the existing authorities; missing values remain explicit, never
 silently defaulted. #405 owns land integration/placements; #406 owns renewal
@@ -47,8 +47,8 @@ args[4]/mass rule. Their 21 base species retain the generator's desert, jungle,
 tundra, mountain, plains, coast and city biome groupings. This is an art/source
 catalogue, not authorization to place every species in MAP01 or MAP03.
 `CaelumFiberBush` yields plant fiber (ID 74, 3 copper/g), inherits hardness 2.5
-and abundance 1, and has 10 kg capacity without a mapper override. It is a
-billboard; the existing resource trees and veins use owned 3D models. Ordinary
+and abundance 1, and has 10 kg capacity without a mapper override. It now uses
+an owned 3D model (#405), as do existing resource trees and veins. Ordinary
 movable rocks are not mineral sources. Mansion scenery trees/shrubs are
 decorative Actors, not resource nodes.
 
@@ -72,7 +72,7 @@ delivery counters, other resource restrictions and scenery stay intact.
 Source recovery cannot replenish tutorial issuance or vendor stock. The #385
 merchant renewal rules remain a separate authority.
 
-### Newly approved sources: runtime integration remains #405/#406
+### Approved sources: #405 integration; #406 recovery verification
 
 Reserves below measure useful material, not whole plant/collision mass. Plants
 use hardness 2.5, abundance 1 and slashing, with no new skill gate. Hive
@@ -98,7 +98,7 @@ references are retained in the JSON; they do not establish gameplay rarity,
 yield or medicinal effects. Yerba mate is Ilex paraguariensis. No cultivar or
 additional medical effect is implied for sugarcane, cotton or honey.
 
-Exact coordinates and source counts remain an author-reviewed #405 table.
+Exact coordinates and source counts are the approved #405 table below.
 Counts control gameplay rarity; the description "rare Anima flowers" does not
 create an unapproved probability or a claim of botanical scarcity. Existing
 vein coordinates and underground access remain as authored. New plant/hive
@@ -154,9 +154,58 @@ No optional herb effects are yet approved. Thermal coefficients, vessel
 mass/construction/prices/recipes and cooling still belong to #472; the approved
 6 mm canteen leather wall does not silently revise its provisional 100 g mass.
 
-This patch changes no gameplay, map, material ID or save schema. Evidence is
+The original #404 data-only patch changed no gameplay or save schema. Its evidence is
 `assets/validation_571/RESULTS.md`; native tests are required when these rows
 are integrated in their owning issues, not claimed here.
+
+## Land source integration (#405, 5.7.2)
+
+Author-approved data lives in assets/generators/land_resources.json and its
+referenced resource_catalog.json. Generated runtime data is read-only. IDs
+81-86 append yerba, marcela, irupe flower, lirio flower, cane and honey; cotton
+remains 72. All use the existing one-gram material unit. Base values per 100 g
+are respectively 2, 10, 50, 50, 1 and 2 copper; cotton retains 4 copper/g.
+Existing merchant margins, lot selectors and rounding apply.
+
+| Map | Source | Positions (x,y) | Collectible reserve |
+| --- | --- | --- | --- |
+| MAP03 | Marcela | (-30272,320), (-30144,448), (-30336,1216), (-30144,2112) | 4 x 50 g |
+| MAP03 | Lirio del bajo | (-30080,1280), (-30080,1920) | 2 x 10 g |
+| MAP03 | Hive | (-30464,1536) | 500 g |
+| MAP01 | Marcela | (-1856,832), (-1664,864) | decoration only |
+| MAP01 | Lirio del bajo | (-2016,1024) | decoration only |
+| MAP01 | Hive | (-1792,1056) | decoration only |
+
+Positions use the native floor plane; campaign WAD geometry is unchanged.
+Plants use existing slashing, fractional carry and Pickaxe factors. Aim at a
+hive and press Use for up to 50 g as a physical pickup; holding Use collects
+once per press. Damage cannot extract honey. Reserve is deducted after a
+successful spawn. Honey also obeys tutorial supply limits. Useful reserve is
+independent of inherited fiber-bush collision/mass. Source recovery reuses the
+shared clock; detailed elapsed-time verification belongs to #406.
+
+Each provisions shop starts with 1000 g yerba, 20 g irupe flowers and 10000 g
+cane; each clothing shop with 1000 g cotton. Imports recover 0.1% of their own
+maximum per game day, capped at target. Fractional daily production accumulates
+until a whole gram is due (irupe: 1 g per 50 days). Local marcela/lirio/honey
+can be sold to provisions shops; no local initial stock or production target
+is invented. Existing kits remain finite and merchant money never replenishes.
+Queues reuse the existing earliest-deadline shop system, without actor scans.
+
+Revision 1 initializes only six new tutorial-array slots. Vendor revision and
+cursor seed each import row once, preserving previous stock, money and clocks.
+A StaticEventHandler performs one typed roster lookup per MAP01/MAP03 load,
+including old saves. The map-owned roster retains issued IDs: loading neither
+resets reserves nor reissues a removed position. The lookup is bounded to its
+own roster type (one normal instance) and at most eleven authored placements
+across both maps. It is required for old-save correctness and runs once per
+load, never routinely per actor/tic. Source amounts/carry/calendar IDs remain
+their existing saved authority. Native evidence: assets/validation_572.
+
+All source profiles, new material drops and existing fiber/decorative shrubs
+use owned 3D models; reused inventory thumbnails are UI-only. New ingredient
+consumers/recipes remain #471/#472. Acquiring an ingredient grants no potion,
+healing effect or learned recipe. Author check CA405-01 remains pending.
 
 ## Water quality and native containers (#408, 5.7.0)
 

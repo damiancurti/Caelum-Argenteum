@@ -1,0 +1,14 @@
+CA405-01 | 5.7.2 | #405 | Land sources, imports and 3D presentation
+Prerequisite: prepared #405 game/terminal, or fresh build of this branch.
+Private controls: F1 gallery; F2 hive; F3 provisions; F4 marcela and sword;
+F5 actual MAP03 west gate; F6 actual MAP01 decorative garden.
+Move/attack normally; aim at the hive and press Use (E).
+Expected: all new plants, hives, dropped materials and both existing shrubs
+are 3D from different angles. Sword cutting releases marcela; hive Use releases
+up to 50 g once per press. Gather physical drops and inspect names/mass.
+MAP03 has four marcelas, two lirios and one hive at approved positions.
+MAP01's two marcelas, lirio and hive cannot be harvested.
+Provisions initially offer 1000 g yerba, 20 g irupe, 10000 g cane; a MAP03
+clothing shop offers 1000 g cotton. Buying/reselling conserves quantities.
+Save/reload preserves depletion and purchased stock without reset.
+Confirm gameplay and visual acceptability; recipes belong to later issues.

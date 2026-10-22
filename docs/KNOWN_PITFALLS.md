@@ -4316,6 +4316,15 @@ Evidence: before/after legacy runs and source hashes in
 scoped to the tested EventHandler/save lifecycle, not every GZDoom callback.
 The author confirmed CA-43612-RAM-01 passed on 2026-09-26 (HISTORY).
 
+#405 reconfirmed this on 2026-10-21 (b425c0aa plus the 5.7.2 dirty patch).
+Fresh MAP01 passed, but mapupgrade-01 restored no new resource coordinator or
+roster from a real pre-feature save. Making the stateless coordinator a
+StaticEventHandler fixed the same input (mapupgrade-02: 8 PASS); subsequent
+save/reload also passed. Issued IDs and resource reserves stay in map actors.
+Fixtures and before/after logs: assets/validation_572; original saves remain
+for rollback. CA405-01 is pending. MAPINFO registration alone cannot prove
+that a new ordinary handler works on existing saved maps.
+
 ## CA-KP-014 â€” FastProjectile collision does not integrate gravity
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

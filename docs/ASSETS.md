@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.1** — 2026-10-21.
+Documentation version: **5.7.2** — 2026-10-21.
+
+## 5.7.2 - Owned 3D land resources (#405)
+
+generate_land_resource_models.py produces fourteen deterministic owned OBJ
+meshes: seven source profiles, six dropped-material bundles and one fiber bush.
+The latter also replaces the decorative mansion shrub, preserving both existing
+classes' collision/mass/gameplay. Volumetric geometry reuses owned project
+foliage, wood, wax, paper and gem textures; no external or Doom art is added.
+land_resource_models.json records mesh counts and texture provenance. Outputs
+are in src/models/caelum/world/land_resources; MODELDEF compensates actor scale.
+M081-M086 must be registered before MODELDEF parsing. Existing owned inventory
+thumbnails remain UI-only. The optional generator uses the existing Mesh utility
+and Pillow; byte-for-byte regeneration is checked. Front/side/close-up native
+captures belong to validation_572. Visual acceptance CA405-01 remains pending.
 
 ## 5.6.10 — library and clothing shop signs (#383)
 
