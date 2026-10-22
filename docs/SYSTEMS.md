@@ -195,7 +195,7 @@ author-design gates for their own issues.
 | Yeast | Acquisition not yet authored | Fermentation; #471 | Acquisition, price/stock, quantity |
 | Sugar | Acquisition/processing not yet authored | Alternative energy-drink sweetener; #471 | Acquisition, amount, price/stock |
 | Gunpowder | Abstract game ingredient; acquisition pending | Existing compatible kits, then ten cartridges; #471 | Other kit inputs, quantities, price/stock |
-| Dried cachiyuyo | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Implemented in 5.7.5; author test pending |
+| Dried cachiyuyo | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Implemented in 5.7.5; CA407-01 accepted 2026-10-22 |
 | Iodine | Dried cachiyuyo at Workbench + Alchemy | Consumer not yet authored; #407 | Downstream purpose; no inferred benefits |
 
 Existing medikit/energy-drink/Anima identities, dose sizes, effects and prices

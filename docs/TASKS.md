@@ -14,12 +14,12 @@ The ordinary library supplies its recipe sheet under the existing catalogue,
 stock and price rules. No coastal map or natural marine node is introduced.
 Two owned 3D material models accompany append-only material IDs 87/88 and
 recipe ID 168. Revisioned migration preserves purchases, old recipes and tasks.
-Evidence and remaining author check: assets/validation_575/RESULTS.md.
+Evidence and author acceptance: assets/validation_575/RESULTS.md.
 Static validation and two deterministic generations pass. Native checks:
 263 PASS in 22 selected current runs, plus 19 PASS in three baseline/rollback
-runs; zero FAIL. CA407-01 remains pending author confirmation.
-Next: #409 boiling, #471 consumables and #472 mate; unresolved design questions
-are deferred while the author is away. Each issue retains a separate patch/PR.
+runs; zero FAIL. CA407-01 passed author review on 2026-10-22.
+Next: #409 boiling, #471 consumables and #472 mate; remaining design decisions
+are tracked in their respective issues. Each retains a separate patch/PR.
 
 ## 5.7.4 - Fixed Alchemy station (#470)
 

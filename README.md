@@ -13,7 +13,8 @@ V5.7.5 adds dried cachiyuyo imports in MAP03 and the abstract iodine recipe
 at Workbench + Alchemy (#407), with owned 3D material models and additive save
 migration. Existing learning and efficiency rules apply. Static validation and
 263 native checks pass, plus 19 baseline/rollback checks. A resumed live check
-adds 80 passing assertions in six runs; CA407-01 is pending. [Marine evidence](assets/validation_575/RESULTS.md).
+adds 80 passing assertions in six runs. The author passed all CA407-01 checks
+on 2026-10-22. [Marine evidence](assets/validation_575/RESULTS.md).
 
 V5.7.4 adds the fixed 3D Alchemy station at Ronnie's workshop and beside the
 MAP03 Workbench (#470), including additive old-save installation. Concrete

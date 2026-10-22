@@ -7,8 +7,9 @@ benefit is introduced. Two owned 3D models reuse existing owned textures.
 
 **Static validation passes; 263 native assertions pass in 22 selected current
 runs, plus 19 in three baseline/rollback runs; zero selected failures.**
-CA407-01 remains pending author confirmation. CONTEXT contains 2,495 words;
-all release markers agree on 5.7.5. Two generations preserve seven output
+CA407-01 passed explicit author review on 2026-10-22, without qualifications.
+At the initial delivery CONTEXT contained 2,495 words and all release markers
+agreed on 5.7.5. Two generations preserve seven output
 hashes. The meshes have 316 and 169 faces.
 
 The delivered package is `a316970fbb773925472db86f09859c4e7aa3f3c52f181938540276bc858d6763`.
@@ -64,6 +65,16 @@ preserves the previous saves and full regression evidence.
 A foreground Computer Use snapshot during the live completion run showed the
 iodine crafting panel and its successful-processing message. The original
 matrix still supplies old-save, rollback, hub, model and performance evidence;
-this repeat adds no new frame-time claim or author acceptance. CA407-01 remains
-pending. The existing `manual.ps1` launcher supplies the Spanish instructions
+this repeat adds no new frame-time claim or author acceptance by itself.
+The existing `manual.ps1` launcher supplies the Spanish instructions
 and prepared interactive scene for the author's review.
+
+## Author acceptance - 2026-10-22
+
+The author explicitly confirmed that all #407 tests passed, without
+qualifications. CA407-01 (5.7.5 / #407) is therefore accepted and its pending
+entry is removed. HISTORY records its fabrication, cancellation/efficiency,
+commerce, 3D-model and save/load scope. The original `report.json` and
+`resume-report.json` retain the pending status recorded when those agent runs
+were collected; this later author confirmation supersedes that status.
+No runtime change, new release number or acceptance of #409/#471/#472 follows.
