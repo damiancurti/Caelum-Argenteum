@@ -1,6 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.6.11a** — 2026-10-21.
+Documentation version: **5.7.0** — 2026-10-21.
+
+## Water quality and native containers (#408, 5.7.0)
+
+The author approved this contract on 2026-10-21. Water carries independent
+biological, salt and chemical contamination flags; potable water has none.
+Mixing retains the union of all flags even when the added portion is potable.
+Non-potable water cannot be drunk, served during rest, counted as journey
+provisions or consumed by accelerated time. The container still contributes
+its complete water mass and retains normal inventory/Box ownership.
+
+The existing submerged-entry refill remains automatic only for potable sources.
+In Inventory, select a bottle/canteen and use **Collect water (R)** to top it up
+from the current identified, fully submerged source, or **Empty (V)** to discard
+its contents. Both also have native mouse buttons. Filling is all-or-nothing
+for the missing volume; personal carrying capacity includes the existing 1 g
+margin. Full, unknown-source, over-capacity, foreign-owned or Box operations
+cannot change water. Emptying does not return materials. Unknown unmarked water
+is not implicitly safe. Collecting does not consume a finite source reservoir;
+finite water-source quantities are outside this issue.
+
+Mapper data: `user_ca_water_quality` is a bitmask (1 biological, 2 salt,
+4 chemical). Nonzero contamination overrides `user_ca_potable_water`.
+With zero quality, the existing potable marker is required. Unsupported flag
+values fail closed. This patch preserves campaign map geometry and markers;
+the isolated test map exercises every combination without assigning unsupported
+geographical properties to existing rivers or seas. Later source placement
+must author the appropriate flags.
+
+Existing saves contained only potable water. Additive saved fields
+`WaterQuality` (default zero) and `WaterQualityRevision` (revision 1) preserve
+their exact volume. Migration is idempotent and never refills a vessel; native
+copy/drop, save/load and hub travel retain quality. Rest forecasts use revision
+4 and are rebuilt from real inventory when older projections are encountered.
+Mansion table replenishment mixes potable additions with the existing contents;
+it never purifies a deposited contaminated portion. Empty vessels can be filled
+with fresh potable water normally. Original pre-patch saves/packages remain the
+rollback path; do not load a contaminated new save in the old unaware runtime.
+
+Sizes (1/2.5/5 L), provisional 0.1 kg empty mass, and the current hydration
+contract are unchanged: a full sip uses body mass/400 L, with ten pulses and
+total recovery `4000 * liters / bodyMass` Thirst points, capped at 100.
+The older 4.33.0ai M/500 discussion below is historical; the later food/water
+contract and current shared constants prevail. No thermal or treatment recipe
+is implemented here. #409 owns boiling (biological removal only), and #472 owns
+the separately approved mate/temperature work.
+
+No global actor scan is introduced. Quality uses the current sector and native
+container state; existing inventory/provision traversal is reused. Unchanged
+rest-furniture and time-zone queries are outside this patch; no new rendering
+performance claim or whole-map stress test is made. Static and native results
+are tracked in `assets/validation_570/RESULTS.md`; CA408-01 requires author review.
 
 ## City replenishment and source policy (#385, 5.6.11)
 

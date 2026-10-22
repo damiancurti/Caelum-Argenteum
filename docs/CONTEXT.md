@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.6.11a** — 2026-10-21.
+Documentation version: **5.7.0** — 2026-10-21.
+
+**5.7.0/#408:** water quality; validation_570. CA408-01 pending.
 
 **5.6.11/#385:**restock;validation_5611;CA385-01 accepted2026-10-21.
 **5.6.10/#383:**library/clothing/kits/locks;validation_5610;CA383-01accepted2026-10-21.
@@ -337,9 +339,9 @@ Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
 ## Critical premises
 
-Follow all 20 premises in AGENTS.md and PROJECT.md, including issue-scoped work,
-current documentation, deterministic generators, explicit save policy and
-separate agent evidence/author acceptance. Preserve history and unique content.
+Follow AGENTS.md/PROJECT.md: issue-scoped work, current documentation,
+deterministic generators, save compatibility and separate agent evidence/author
+acceptance. Preserve history and unique content.
 
 Premises: `AGENTS.md`, `docs/PROJECT.md`.
 

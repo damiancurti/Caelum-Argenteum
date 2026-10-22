@@ -1,0 +1,17 @@
+CA408-01 | 5.7.0 | issue #408 | Water quality and collection
+Prerequisites: GZDoom 4.14.2, frozen #408 runtime and isolated checks prepared in
+build/issue408; use the author launch left open by the agent. This is a private
+test scene and does not use or overwrite campaign saves.
+Steps:
+1. Open Inventory (Tab). Select the canteen. Check its ES/EN water quality.
+2. F1 enters potable water; F2 biological; F3 salty; F4 chemical; F5 mixed.
+   R collects water into the selected container, V empties it, Enter drinks.
+   Also test the Collect water / Empty buttons with the mouse.
+3. Empty and collect potable water; it can be drunk when thirsty. Collect an
+   unsafe source; it cannot be drunk. Topping up unsafe water with potable
+   water preserves its contamination. Unsafe immersion alone does not refill.
+4. Save/reload the private scene. Confirm amount/quality and inventory selection
+   remain usable. Empty, then refill potable water to recover the vessel.
+Expected: exact conserved liters and weight, readable labels, no unwanted
+collection, purification, duplicated water or unsafe consumption. Boiling is
+the separate #409 patch and is not expected in this check.

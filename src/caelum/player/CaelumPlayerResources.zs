@@ -326,9 +326,7 @@ class CaelumPlayerResources : Object play
     static bool IsSubmergedInPotableWater(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return false;
-        return user.WaterLevel >= 3
-            && user.CurSector != null
-            && user.CurSector.GetUDMFInt('user_ca_potable_water') != 0;
+        return CaelumWaterQuality.Source(user) == CaelumWaterQuality.POTABLE;
     }
 
     static void UpdateSurvivalResources(CaelumPlayer user)

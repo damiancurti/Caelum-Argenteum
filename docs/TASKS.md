@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.6.11a** — 2026-10-21.
+Documentation version: **5.7.0** — 2026-10-21.
+
+## 5.7.0 - Persistent water quality (#408)
+
+Implemented the author's 2026-10-21 water identities, contamination-union rule,
+explicit unsafe-water collection and prohibition on drinking unsafe water.
+Scope includes native containers, displayed quality, automatic meal/travel
+consumers and additive save migration. No source geography, boiling, Alchemy
+or mate is included. Evidence: `assets/validation_570/RESULTS.md`.
+CA408-01 remains pending until explicit author confirmation. Continue V5.7
+through separate #404/#405/#406/#407/#470/#409/#471/#472 patches and PRs.
 
 ## 5.6.11a — close accepted V5.6 scope; defer clothing appearance (#387)
 
