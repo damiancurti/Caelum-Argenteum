@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "d476fdfd1e33977719aa29a3260f9bd7364015785a9ba4f2223c2bf2aa18fe9a",
+  "sha256": "f6bfb3bfb9a916dab5babd28ab17493bbfa4b7ff86d4391329f0cf799a491b26",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[428,428]],"default":[[428,428]],"es":[[1116,1116]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[971,971]],"default":[[971,971]],"es":[[1659,1659]]},
@@ -419,6 +419,7 @@
     "CA_CRAFTING_RECIPE_BOOK": {"enu":[[535,535]],"default":[[535,535]],"es":[[1223,1223]]},
     "CA_CRAFTING_RECIPE_LOCKED": {"enu":[[537,537]],"default":[[537,537]],"es":[[1225,1225]]},
     "CA_CRAFTING_RECIPE_UNKNOWN": {"enu":[[536,536]],"default":[[536,536]],"es":[[1224,1224]]},
+    "CA_CRAFTING_STATION_ALCHEMY": {"enu":[[6159,6159]],"default":[[6159,6159]],"es":[[6161,6161]]},
     "CA_CRAFTING_STATION_ANVIL": {"enu":[[1711,1711]],"default":[[1711,1711]],"es":[[1725,1725]]},
     "CA_CRAFTING_STATION_ARMOR_WORKSHOP": {"enu":[[522,522]],"default":[[522,522]],"es":[[1210,1210]]},
     "CA_CRAFTING_STATION_BOW_WORKSHOP": {"enu":[[521,521]],"default":[[521,521]],"es":[[1209,1209]]},

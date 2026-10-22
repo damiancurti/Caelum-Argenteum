@@ -73,11 +73,15 @@ class CaelumCraftingStation : CaelumMovableProp
 
         // La red se recalcula al interactuar y luego, mientras el Diario sigue
         // en esta estación, a una frecuencia acotada de una vez por segundo.
-        let iterator = ThinkerIterator.Create('CaelumCraftingStation');
-        CaelumCraftingStation other;
-        while ((other = CaelumCraftingStation(iterator.Next())))
+        // La búsqueda espacial cubre también vecinos elevados; el filtro
+        // original conserva distancia tridimensional, grupo y transitividad.
+        double reach = CaelumConstants.CRAFTING_NETWORK_LINK_DISTANCE;
+        let iterator = BlockThingsIterator.CreateFromPos(
+            Pos.X,Pos.Y,Pos.Z-reach,Height+2*reach,reach,false);
+        while (iterator.Next())
         {
-            if (other != self && IsNetworkNeighbor(other))
+            let other = CaelumCraftingStation(iterator.thing);
+            if (other != null && IsNetworkNeighbor(other))
             {
                 other.CollectCraftingNetwork(user, scanToken);
             }
@@ -250,4 +254,14 @@ class CaelumMasterBenchStation : CaelumCraftingStation
         return CaelumConstants.CRAFTING_STATION_MASTER_BENCH;
     }
     States { Spawn: CMST A -1; Stop; }
+}
+
+class CaelumAlchemyStation : CaelumCraftingStation
+{
+    Default { Tag "$CA_CRAFTING_STATION_ALCHEMY"; }
+    override int GetCraftingStationType()
+    {
+        return CaelumConstants.CRAFTING_STATION_ALCHEMY;
+    }
+    States { Spawn: CALC A -1; Stop; }
 }
