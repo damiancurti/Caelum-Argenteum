@@ -1,0 +1,111 @@
+{
+  "issue": 405,
+  "provenance": "Original deterministic geometry by the project; only existing owned project textures are referenced.",
+  "textures": [
+    "models/caelum/world/environment/foliage_plains.png",
+    "models/caelum/props/stations/ca_station_wood.png",
+    "models/caelum/props/stations/ca_station_wax.png",
+    "models/caelum/props/stations/ca_station_paper.png",
+    "models/caelum/props/stations/ca_station_gem.png"
+  ],
+  "models": [
+    {
+      "key": "yerba_mate",
+      "bundle": false,
+      "file": "yerba_mate.obj",
+      "vertices": 1450,
+      "faces": 435
+    },
+    {
+      "key": "yerba_mate",
+      "bundle": true,
+      "file": "yerba_mate_bundle.obj",
+      "vertices": 870,
+      "faces": 261
+    },
+    {
+      "key": "marcela",
+      "bundle": false,
+      "file": "marcela.obj",
+      "vertices": 2050,
+      "faces": 615
+    },
+    {
+      "key": "marcela",
+      "bundle": true,
+      "file": "marcela_bundle.obj",
+      "vertices": 1230,
+      "faces": 369
+    },
+    {
+      "key": "irupe_flower",
+      "bundle": false,
+      "file": "irupe_flower.obj",
+      "vertices": 870,
+      "faces": 261
+    },
+    {
+      "key": "irupe_flower",
+      "bundle": true,
+      "file": "irupe_flower_bundle.obj",
+      "vertices": 1950,
+      "faces": 585
+    },
+    {
+      "key": "cypella_flower",
+      "bundle": false,
+      "file": "cypella_flower.obj",
+      "vertices": 2350,
+      "faces": 705
+    },
+    {
+      "key": "cypella_flower",
+      "bundle": true,
+      "file": "cypella_flower_bundle.obj",
+      "vertices": 1410,
+      "faces": 423
+    },
+    {
+      "key": "sugarcane",
+      "bundle": false,
+      "file": "sugarcane.obj",
+      "vertices": 2150,
+      "faces": 645
+    },
+    {
+      "key": "sugarcane",
+      "bundle": true,
+      "file": "sugarcane_bundle.obj",
+      "vertices": 1290,
+      "faces": 387
+    },
+    {
+      "key": "cotton",
+      "bundle": false,
+      "file": "cotton.obj",
+      "vertices": 2050,
+      "faces": 615
+    },
+    {
+      "key": "honey",
+      "bundle": false,
+      "file": "honey.obj",
+      "vertices": 1080,
+      "faces": 324
+    },
+    {
+      "key": "honey",
+      "bundle": true,
+      "file": "honey_bundle.obj",
+      "vertices": 200,
+      "faces": 60
+    },
+    {
+      "key": "fiber_bush",
+      "bundle": false,
+      "file": "fiber_bush.obj",
+      "vertices": 2450,
+      "faces": 735
+    }
+  ]
+}

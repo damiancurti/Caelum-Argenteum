@@ -4850,3 +4850,5 @@ Model CaelumReadingShelf
     DontCullBackFaces
     FrameIndex CBOO A 0 0
 }
+// #405: fuentes, materiales y arbustos con geometría 3D propia.
+#include "caelum/data/land_resources.modeldef"

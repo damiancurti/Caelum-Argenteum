@@ -1,0 +1,163 @@
+// Modelos 3D propios, generados para #405.
+Model CaelumSourceYerbaMate
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "yerba_mate.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "yerba_mate_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M081 A 0 0
+}
+Model CaelumSourceMarcela
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "marcela.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumSourceMarcelaDecoration
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "marcela.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "marcela_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M082 A 0 0
+}
+Model CaelumSourceIrupeFlower
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "irupe_flower.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "irupe_flower_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M083 A 0 0
+}
+Model CaelumSourceCypellaFlower
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "cypella_flower.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumSourceCypellaFlowerDecoration
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "cypella_flower.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "cypella_flower_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M084 A 0 0
+}
+Model CaelumSourceSugarcane
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "sugarcane.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "sugarcane_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M085 A 0 0
+}
+Model CaelumSourceCotton
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "cotton.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumSourceHoney
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "honey.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumSourceHoneyDecoration
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "honey.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "honey_bundle.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M086 A 0 0
+}
+Model CaelumFiberBush
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "fiber_bush.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
+Model CaelumMansionSceneryShrub
+{
+    Path "models/caelum/world/land_resources"
+    Model 0 "fiber_bush.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFBH A 0 0
+}
