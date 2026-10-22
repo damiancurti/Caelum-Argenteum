@@ -2,14 +2,29 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - #479 foundation asset boundary
+## 5.7.8 - Support implement presentation (#479)
 
-This partial patch adds no runtime art and does not repurpose accepted #471
-assets. assets/validation_578 contains only an isolated deterministic fixture,
-source audit and native evidence. No engine, IWAD, PK3 or save is distributed.
-New implement artwork belongs to the remaining #479 integration scope.
-The subsequent runtime integration retains this art boundary; its isolated
-gameplay/save fixtures and evidence are also under validation_578.
+Six owned designs cover Scepter, Orb, support Book, Censer, Statuette and Ritual
+Effigy. Each has T1/T2/T3 world OBJ, a 128-square inventory icon and a 320x200
+weapon-only first-person projection. Existing character appearance hands remain
+separate and authoritative. T2 adds silver details; T3 adds gold. The three new
+component bases reuse their corresponding T1 body presentation.
+
+Sources: assets/generators/support_implements.json and
+assets/generators/generate_support_implements.py. The manifest records all
+18 meshes, material/surface counts and output hashes; the contact sheet is in
+assets/art_source/support_implements. Generation reuses the owned mesh writer
+and depth rasterizer, with new procedural geometry/palette and no external or
+Doom art. Two consecutive runs were byte-identical (manifest SHA-256
+`dc60908cd9c6abf066e55acac92ca20d02c1ab6c4892345adf1ba73b342b2f9c`).
+Runtime sources and provenance are in src/licenses/SUPPORT_IMPLEMENTS_578.md.
+
+World frames are S479 A-R; weapon/overlay frames H479 A-R. Long PNG names live
+under graphics, outside the sprite-name parser. New frame states declare Actor,
+Weapon and Overlay usage; the existing hand overlay is retained across frames.
+Old state classes/indices remain available to saves. Native gallery/control
+coverage is recorded in assets/validation_578/RESULTS.md. Author visual review
+remains pending; no performance or art acceptance is inferred from generation.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

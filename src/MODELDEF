@@ -4863,3 +4863,5 @@ Model CaelumAlchemyStation
     DontCullBackFaces
     FrameIndex CALC A 0 0
 }
+
+#include "caelum/data/support_implements.modeldef"

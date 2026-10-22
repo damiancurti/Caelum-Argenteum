@@ -3476,6 +3476,7 @@ class CaelumPlayer : DoomPlayer
 
     String GetWeaponCraftingPreviewIcon(int weaponType)
     {
+        String supportIcon=CaelumSupportArt.Icon(weaponType);if(supportIcon!="")return supportIcon;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_DAGGER: return "graphics/caelum/icons/ca_dagger.png";

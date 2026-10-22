@@ -429,6 +429,7 @@ class CaelumFirstPersonView : Object play
 
     static State Pose(int weaponType, int tier, int phase)
     {
+        if(CaelumSupportArt.Index(weaponType)>=0)return CaelumSupportArt.Pose(weaponType,tier);
         if (weaponType == CaelumConstants.WEAPON_TYPE_BOLAS)
             return GetDefaultByType("CaelumBolasFrames").FindStateByString(phase==1 ? "Spin" : phase==2 ? "Release" : phase==3 ? "Recover" : "Ready");
         if (weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
@@ -443,6 +444,8 @@ class CaelumFirstPersonView : Object play
 
     static Vector2 Pivot(int weaponType, int tier, int phase)
     {
+        if(CaelumSupportArt.Index(weaponType)>=0)
+        {vector2 grip=CaelumFirstPersonLayers.Grip(weaponType);return (grip.X/320.0,grip.Y/200.0);}
         if (CaelumWeaponModel.IsSingleTierType(weaponType)) return (216.0/320, 160.0/200);
         // Porcentaje distinto por caja visible; todos vienen del manifiesto.
         int index = Clamp(weaponType,0,19)*9 + (Clamp(tier,1,3)-1)*3 + Clamp(phase,0,2);
@@ -547,7 +550,7 @@ class CaelumFirstPersonView : Object play
             phase = reloading ? 2 : magazine <= 0 || attack ? 1 : 0;
         else if (CaelumRangedRules.IsFirearm(kind))
             phase = reloading ? 2 : attack ? 1 : 0;
-        else if (kind == CaelumConstants.WEAPON_TYPE_BOOK)
+        else if (kind == CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK)
             phase = blocking || baseView.y > WEAPONTOP + 1 ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS)
             phase = attack && !blocking ? AttackSide : 0;

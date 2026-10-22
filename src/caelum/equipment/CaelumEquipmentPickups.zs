@@ -508,7 +508,7 @@ class CaelumEquipmentItem : Inventory
         SupportMigrationRevision=CaelumSupportImplementData.MIGRATION_REVISION;
         if(PreviewEquipmentKind()!=CaelumConstants.EQUIPMENT_KIND_WEAPON
             || CaelumSupportImplementData.ValidEssence(PreviewItemType(),PreviewEssenceType()))return true;
-        // El autor autoriz? retirar estas piezas de prueba, sin borrar archivos de partida.
+        // El autor autorizó retirar estas piezas de prueba, sin borrar archivos de partida.
         let user=CaelumPlayer(Owner);
         if(user!=null && user.ActiveWeaponItemId==ItemId)
         {
@@ -675,6 +675,8 @@ class CaelumWeaponPickup : CaelumEquipmentItem
     {
         int weaponType = EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
             ? ItemType : Clamp(args[0], 0, CaelumConstants.WEAPON_TYPE_COUNT - 1);
+        int supportIndex=CaelumSupportArt.Index(weaponType);
+        if(supportIndex>=0){sprite=GetSpriteIndex("S479");frame=supportIndex*3+Clamp(PreviewTier(),1,3)-1;return;}
         String visual = "CSWD";
         switch (weaponType)
         {

@@ -5,6 +5,8 @@ class CaelumIconResolver : Object
     static clearscope String ResolveTierPath(String basePath, int tier)
     {
         int resolvedTier = Clamp(tier, 1, 3);
+        if(basePath.Left(41)=="graphics/caelum/icons/support_implements/")
+            return basePath.Left(basePath.Length()-5)..String.Format("%d.png",resolvedTier);
         if(basePath=="CA_SHOTGUN_T1")return String.Format("CA_SHOTGUN_T%d",resolvedTier);
         if (resolvedTier <= 1 || basePath.Length() < 5)
         {
@@ -16,6 +18,8 @@ class CaelumIconResolver : Object
 
     static clearscope String GetWeaponBasePath(int weaponType)
     {
+        String supportIcon=CaelumSupportArt.Icon(weaponType);
+        if(supportIcon!="")return supportIcon;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_SWORD: return "graphics/caelum/icons/ca_sword.png";

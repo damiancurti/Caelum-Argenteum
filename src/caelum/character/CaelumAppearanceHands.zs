@@ -40,6 +40,7 @@ class CaelumAppearanceHands : Object play
 
     static State Composed(CaelumPlayer user,int kind,int tier,int phase,State original)
     {
+        if(CaelumSupportArt.Index(kind)>=0)return original;
         if(kind!=1 && kind!=6 && kind!=9 && kind!=17 && kind!=18 && kind!=19)return original;
         return Resolve(user,String.Format("%s_T%d_%s",CaelumFirstPersonView.Family(kind),
             Clamp(tier,1,3),phase==1?"B":phase==2?"C":"A"),original);
