@@ -4,7 +4,7 @@
   "rules": "Representation only: vessels and model dimensions imply no inventory mass, capacity, recipe or price. Regional deposit candidates are not placed in MAP03. No real propellant formulation is represented.",
   "inputs": {
     "assets/generators/alchemy_ingredients.json": "60ab680dbe5f7f66e21812c4f935077d00b548611ce9d91a0ece988f52a706ed",
-    "assets/generators/generate_alchemy_ingredients.py": "b49aa160e17a2f947d717d8b2f665b1fb2a8c0f87e6acbffec7f3268eec0e00a",
+    "assets/generators/generate_alchemy_ingredients.py": "ff7a91e69ad573873c8fde25a898546f47e8edc22ec5a475b2bfb6cad6dc6ca2",
     "assets/generators/generate_marine_models.py": "349c9899fba7c66e70b81e73bca31c10822e669b1b2d664f7a69c5b61aa07477",
     "assets/generators/generate_environment_models.py": "ca9440caa509f97a9959ed886c0e3a34e8c4af585b6380b70d369af0e5643c18"
   },
@@ -133,6 +133,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_iodine.png",
       "vertices": 564,
       "faces": 169,
+      "surface_runs": 4,
       "bounds_xyz_y_up": [
         [
           -3.04,
@@ -166,6 +167,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_saltpeter.png",
       "vertices": 854,
       "faces": 249,
+      "surface_runs": 8,
       "bounds_xyz_y_up": [
         [
           -4.3814,
@@ -180,7 +182,7 @@
           4.2798
         ]
       ],
-      "model_sha256": "11a21759b63ead6f77d3533034fd00590e8c22bcae50d50e9259490b3afb5543",
+      "model_sha256": "9c056c33379fce44d4c0065613c3c1f51d510e7218e713a96a99686e04f1ee92",
       "icon_sha256": "7cabfb259bd8c944e9611f51dd7d706005f08f9ce7204668f4f64c454a25516b",
       "textures": [
         "models/caelum/world/alchemy_ingredients/salt_shade0.png",
@@ -203,6 +205,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_sulfur.png",
       "vertices": 504,
       "faces": 144,
+      "surface_runs": 8,
       "bounds_xyz_y_up": [
         [
           -4.3814,
@@ -217,7 +220,7 @@
           4.2798
         ]
       ],
-      "model_sha256": "d3a339674b85af6fe62aa015637c5d061425141a97a1275c101e13404e528cf7",
+      "model_sha256": "ced08f9844d4260fe0e2d2c720d4a04ad3928f8e608236440bb2a7a1d14a95f8",
       "icon_sha256": "02bfa2febf85a75b05433e4c6f9866acdc8b5783172d35f0c4a26ebc89bd8f9e",
       "textures": [
         "models/caelum/world/alchemy_ingredients/sulfur_shade0.png",
@@ -240,6 +243,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_charcoal.png",
       "vertices": 420,
       "faces": 126,
+      "surface_runs": 8,
       "bounds_xyz_y_up": [
         [
           -4.1333,
@@ -254,7 +258,7 @@
           3.9716
         ]
       ],
-      "model_sha256": "b1711b842fe8462c0be9377a820c4f3b3656d6a4865c1cdd68de2e88d6fc657a",
+      "model_sha256": "2e02ba9af1a2873aaa3bc46cb7270b040e7a065e68b6d66e017305b235b19819",
       "icon_sha256": "ff2e4b7ec12b855cabd3a106457e88c2ba097ae13d6421159d7bffd9875bf313",
       "textures": [
         "models/caelum/world/alchemy_ingredients/charcoal_shade0.png",
@@ -277,6 +281,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_molasses.png",
       "vertices": 720,
       "faces": 216,
+      "surface_runs": 14,
       "bounds_xyz_y_up": [
         [
           -4.75,
@@ -291,7 +296,7 @@
           3.8
         ]
       ],
-      "model_sha256": "26bdeca32d82e9b293538dc140e420d57ba0707aea8b789b8118b08cea5e903b",
+      "model_sha256": "f16fb907a30772a5ba8637693170da29bcd10ed5e1affc224e0dab01a29af538",
       "icon_sha256": "7d5b85cfc6a65b79d7a9bdc9dc59b99e2de487d03e5b8e0e40e012b51d1849bd",
       "textures": [
         "models/caelum/world/alchemy_ingredients/ceramic_shade0.png",
@@ -320,6 +325,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_fermented_intermediate.png",
       "vertices": 960,
       "faces": 288,
+      "surface_runs": 19,
       "bounds_xyz_y_up": [
         [
           -4.1,
@@ -334,7 +340,7 @@
           4.1
         ]
       ],
-      "model_sha256": "a40c6da2259129ce109e08fb53cb2e97bcf328f802d9c7d1958279c47e42d20e",
+      "model_sha256": "e8878bd6e5701789312213de21ff8d92f84561f0c988555178cb68ed7a04c81e",
       "icon_sha256": "b9ac995246cd92afee318b2a6e3d91caab30f7bbfdc86c131714f0a74490eebd",
       "textures": [
         "models/caelum/world/alchemy_ingredients/cork_shade0.png",
@@ -368,6 +374,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_alcohol.png",
       "vertices": 600,
       "faces": 180,
+      "surface_runs": 20,
       "bounds_xyz_y_up": [
         [
           -2.3,
@@ -382,7 +389,7 @@
           2.3
         ]
       ],
-      "model_sha256": "858226b9275385dddf770bfe20221e43f84bb5aefabe538b706b1c3b53ef42ba",
+      "model_sha256": "d14b25018a954d53ca78b625c17bf8a5ae2a88de2a3fbd914e553c8224b91f46",
       "icon_sha256": "2da7309e7705d906793765fc3cf94f18283f85d810f332804f29c6b600de081c",
       "textures": [
         "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
@@ -417,6 +424,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_yeast.png",
       "vertices": 260,
       "faces": 78,
+      "surface_runs": 12,
       "bounds_xyz_y_up": [
         [
           -4.6882,
@@ -431,7 +439,7 @@
           3.1639
         ]
       ],
-      "model_sha256": "68d37383355cf81bf71af6e6604ba0976618dab00e4ad40d8f00a7c98193b409",
+      "model_sha256": "fe8a6477da0ecdaac65ccaef79831ee22dc97f8f5c69c5253d1fb73b02ef662d",
       "icon_sha256": "1b41548e575b1a26fb8bd06ad8e4fe693b559e95a3916da5c2fd282c896476ec",
       "textures": [
         "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
@@ -458,6 +466,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_gunpowder.png",
       "vertices": 480,
       "faces": 144,
+      "surface_runs": 12,
       "bounds_xyz_y_up": [
         [
           -3.9,
@@ -472,7 +481,7 @@
           3.9
         ]
       ],
-      "model_sha256": "7e34893decd4da1018d8f5d9e2636d4bfae3abd84c577da2ea8ba558ab13b736",
+      "model_sha256": "a48e60a01044bd6437170ee17dcf6f66ddcfbb03b209b64a3f135536498da702",
       "icon_sha256": "fcef7d45acf82620798ebcf4040a3f660bf6e10c449fff377da9d620d78fb883",
       "textures": [
         "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
@@ -499,6 +508,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_saltpeter_deposit.png",
       "vertices": 784,
       "faces": 224,
+      "surface_runs": 15,
       "bounds_xyz_y_up": [
         [
           -16.8738,
@@ -513,7 +523,7 @@
           11.1485
         ]
       ],
-      "model_sha256": "e148bd589c86a625d240788e2e64b5fd0e929b5cda82834209324a478ea26c5c",
+      "model_sha256": "bd6fba2feae30ba6be41eca93c6149084939ac112e3385008fbbe6ff53467888",
       "icon_sha256": "6fdb208c6eb05afeebf0b77b777dbaf17ebfd3581b607e46e3fa942949f8cdcc",
       "textures": [
         "models/caelum/world/alchemy_ingredients/host_shade0.png",
@@ -543,6 +553,7 @@
       "icon": "graphics/caelum/icons/materials/ca_material_sulfur_deposit.png",
       "vertices": 784,
       "faces": 224,
+      "surface_runs": 15,
       "bounds_xyz_y_up": [
         [
           -16.8738,
@@ -557,7 +568,7 @@
           11.1485
         ]
       ],
-      "model_sha256": "e14e88fdde7533e29b2af852212fb8ff53e2fa81fecdf8bf3acf3787073293ca",
+      "model_sha256": "5a7c7c12676cb6d9c677651b47f4fa30d1e3adf779ca37d088ce32843933eceb",
       "icon_sha256": "f88d0b688a1ed9a400162fd7c852395c4aa1af0b5cc03ea096a73779d90f3a53",
       "textures": [
         "models/caelum/world/alchemy_ingredients/host_shade0.png",

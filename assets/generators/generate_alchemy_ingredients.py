@@ -207,6 +207,13 @@ def main():
     records = []
     for spec in DATA['assets']:
         mesh = geometry(spec['shape'])
+        if spec['key'] != 'iodine':
+            # Each usemtl run becomes an OBJ surface. GZDoom 4.14.2 has 32 skin slots.
+            # Keep one contiguous surface per material, not one per shaded face.
+            mesh.faces.sort(key=lambda face:face[0])
+        surface_runs=sum(i==0 or mesh.faces[i-1][0]!=face[0] for i,face in enumerate(mesh.faces))
+        if surface_runs>32:
+            raise ValueError(f'{spec["key"]}: {surface_runs} OBJ surfaces exceed the engine skin array')
         model = ROOT/'src/models/caelum/world/marine_resources/iodine.obj' if spec['key']=='iodine' else OUT/f"{spec['key']}.obj"
         if spec['key'] != 'iodine':
             mesh.write(model)
@@ -214,7 +221,7 @@ def main():
         icon(mesh, sprite)
         records.append({**spec, 'model': model.relative_to(ROOT/'src').as_posix(),
                         'icon': sprite.relative_to(ROOT/'src').as_posix(),
-                        'vertices': len(mesh.vertices), 'faces': len(mesh.faces),
+                        'vertices': len(mesh.vertices), 'faces': len(mesh.faces), 'surface_runs':surface_runs,
                         'bounds_xyz_y_up': [[round(min(v[i] for v in mesh.vertices),4), round(max(v[i] for v in mesh.vertices),4)] for i in range(3)],
                         'model_sha256': digest(model), 'icon_sha256': digest(sprite),
                         'textures': sorted({m for m, _ in mesh.faces})})
