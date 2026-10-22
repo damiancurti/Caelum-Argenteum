@@ -25,7 +25,8 @@ def main():
     for name, typ, field, fallback in [('Price', 'double', 'copper_per_gram', '-1'),
                                        ('MaterialKey', 'String', 'key', '""'),
                                        ('MaterialIcon', 'String', 'icon', '""')]:
-        lines += [f'    static {typ} {name}(int material)', '    {', '        switch(material)', '        {']
+        scope = ' clearscope' if name == 'MaterialIcon' else ''
+        lines += [f'    static{scope} {typ} {name}(int material)', '    {', '        switch(material)', '        {']
         for row in rows:
             value = row[field]
             if field == 'key': value = '"CA_MATERIAL_' + row['symbol'] + '"'

@@ -29,12 +29,12 @@ class CaelumMarineData : Object
         }
         return "";
     }
-    static String MaterialIcon(int material)
+    static clearscope String MaterialIcon(int material)
     {
         switch(material)
         {
             case 87: return "graphics/caelum/icons/materials/ca_material_plant_fiber.png";
-            case 88: return "graphics/caelum/icons/materials/ca_material_raw_opal.png";
+            case 88: return "graphics/caelum/icons/materials/ca_material_iodine.png";
         }
         return "";
     }

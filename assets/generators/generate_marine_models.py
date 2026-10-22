@@ -51,7 +51,10 @@ def main():
     definitions=['// Geometría propia #407; cada material se representa en 3D.']
     textures=['// Alias de reserva del material; MODELDEF define su representación 3D.']
     records=[]
-    for key,number,mesh,icon in [('dried_kelp',87,kelp(),'plant_fiber'),('iodine',88,iodine(),'raw_opal')]:
+    data=json.loads(Path(__file__).with_name('marine_resources.json').read_text(encoding='utf-8'))
+    icons={row['id']:row['icon'] for row in data['materials']}
+    for key,number,mesh in [('dried_kelp',87,kelp()),('iodine',88,iodine())]:
+        icon=icons[number]
         mesh.write(OUT/f'{key}.obj')
         definitions += ['Model CaelumMaterialPickup','{','    Path "models/caelum/world/marine_resources"',
                         f'    Model 0 "{key}.obj"','    Scale 4 4 4','    CorrectPixelStretch',
@@ -60,7 +63,7 @@ def main():
         records.append({'file':f'{key}.obj','vertices':len(mesh.vertices),'faces':len(mesh.faces)})
     for extension,lines in [('modeldef',definitions),('textures',textures)]:
         (ROOT/f'src/caelum/data/marine_resources.{extension}').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
-    manifest={'issue':407,'provenance':'Original deterministic project geometry; existing owned project textures. Inventory icons reuse owned material art.',
+    manifest={'issue':407,'provenance':'Original deterministic project geometry; existing owned project textures. Icon paths follow marine_resources.json; #471 renders iodine from the accepted mesh.',
               'textures':[WOOD,PAPER,IRON,GEM],'models':records}
     Path(__file__).with_name('marine_models.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Generated two owned 3D marine-material models.')
