@@ -4,6 +4,15 @@ Documentation version: **5.7.5** — 2026-10-22.
 
 ## 5.7.5 - Marine imports and iodine (#407)
 
+Live recheck after the interrupted terminal, 2026-10-22: six fresh GZDoom
+4.14.2 runs pass 80 assertions for the contract, trade, crafting, actual
+save/reload and ordinary unpaused completion. Every run uses the original
+delivered package hash; a separate save name preserves earlier evidence.
+A foreground visual inspection showed successful iodine processing. Details:
+assets/validation_575/resume-report.json and the matching raw native logs.
+No gameplay change or new performance claim; CA407-01 still requires explicit
+author confirmation. This supplements the same 5.7.5 delivery.
+
 Approved dried cachiyuyo (Macrocystis pyrifera) from the Patagonian coast is
 available in MAP03 provisions shops: 1 kg initially, 0.1% of the maximum per
 game day, base value 5 copper per 100 g. Alchemy with a connected Workbench

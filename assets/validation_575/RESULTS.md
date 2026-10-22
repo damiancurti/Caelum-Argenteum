@@ -51,3 +51,19 @@ Rendering callback intervals and simulation throughput are separate evidence.
 Application presentation/monitor/GPU timing is unavailable: Windows denied
 PresentMon access during #470 in this environment. This small scene cannot
 establish campaign-wide 60-FPS acceptance or claim a rendering improvement.
+
+## Live recheck after terminal interruption - 2026-10-22
+
+At the author's request, six new visible GZDoom 4.14.2 runs repeated the
+contract, commerce, crafting, actual save/reload and ordinary unpaused task
+completion: **80 PASS, zero FAIL**. `resume-report.json` records each run,
+its configuration, package hash and raw log hash. All runs use the delivered
+package identified above; no runtime source changed. A distinct save name
+preserves the previous saves and full regression evidence.
+
+A foreground Computer Use snapshot during the live completion run showed the
+iodine crafting panel and its successful-processing message. The original
+matrix still supplies old-save, rollback, hub, model and performance evidence;
+this repeat adds no new frame-time claim or author acceptance. CA407-01 remains
+pending. The existing `manual.ps1` launcher supplies the Spanish instructions
+and prepared interactive scene for the author's review.

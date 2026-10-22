@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.5** — 2026-10-22.
 
-**5.7.5/#407:**kelp/iodine;263+19PASS;validation_575;CA407-01:pending.
+**5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:pending.
 **5.7.4/#470:**Alchemy;validation_574;CA470-01:accepted2026-10-22.
 **5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.
 **5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22.
