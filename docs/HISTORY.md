@@ -2,18 +2,24 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support calculation foundation (#479, partial)
+## 5.7.8 - Support implements (#479, in progress)
 
-2026-10-22: recorded the author's approved M2, F, stacking, targeting, migration
-and casting parameters. Added shared support data and a serializable calculation
-state with fractional integration and expiry; existing gameplay is unchanged.
-Source audit found native slot 0 is occupied by offensive Quintessence selectors,
-new support economy/fabrication lacks values, and current seals already mitigate
-Quintessence. Questions and manual tests are deferred until the author returns.
-Native model/save checks passed 56 assertions; final processes exited 0, the
-16,598-entry package matched src bytes and the project validator passed.
-Evidence: assets/validation_578/RESULTS.md. Full integration, migration and author
-acceptance remain outstanding. #481 retains its separate CA481-01 pending entry.
+2026-10-22: the initial foundation added the approved M2/F calculation and
+serializable fractional state. Its 56 native model/save assertions passed;
+the 16,598-entry package matched src and static validation passed. That earlier
+package remains recorded separately in assets/validation_578.
+
+The author subsequently retired offensive Quintessence, approved separate
+per-implement stacks, existing-seal intensity mitigation without new resistance
+distributions, and the concrete fabrication/acquisition proposal. The author
+explicitly allowed discarding offensive Quintessence test items; no save files
+are deleted. Other offensive Books/Statuettes retain numeric identities as
+Scepters/Orbs. Runtime integration adds selectors, local targeting, health and
+secondary modifiers, append-only recipes and additive shop migration. New native
+evidence: 62 gameplay and four real-tic assertions pass. Artwork and final
+save/end-to-end validation are still in progress. The author again postponed
+questions/manual tests while away; there is no #479 author acceptance.
+#481 acceptance remains recorded in its own 5.7.7 entry and branch.
 
 ## 5.7.7 - Aimed-target information (#481)
 

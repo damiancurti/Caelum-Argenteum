@@ -8,6 +8,8 @@ This partial patch adds no runtime art and does not repurpose accepted #471
 assets. assets/validation_578 contains only an isolated deterministic fixture,
 source audit and native evidence. No engine, IWAD, PK3 or save is distributed.
 New implement artwork belongs to the remaining #479 integration scope.
+The subsequent runtime integration retains this art boundary; its isolated
+gameplay/save fixtures and evidence are also under validation_578.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

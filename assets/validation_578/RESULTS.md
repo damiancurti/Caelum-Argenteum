@@ -60,3 +60,22 @@ Run validate_project.py and build_dev.ps1 with destination
 build/issue479/current/caelum_argenteum_dev.pk3. Run prepare.py, then run_native.ps1
 with -Checks for smoke, -Script save, and -Script load -LoadGame ca479-state.zds,
 using a fresh label for each process. collect.py verifies the final artifacts.
+
+## Subsequent runtime integration (2026-10-22, in progress)
+
+The author's later approvals are recorded in SYSTEMS. Development overlay
+`gameplay-04` passed 62 gameplay assertions; `live-01` passed four real-tic
+assertions (40 elapsed tics, 2.857142857 s remaining, health 960/1000).
+The overlay is only a development diagnostic; the foundation package above is
+not the integrated final build. New preparation/fixture sources are tracked.
+Artwork, legacy/current saves and final full-package evidence remain in progress.
+Author manual tests/questions are postponed during the renewed absence.
+Earlier failed iterations remain in local logs; none is acceptance evidence.
+
+`live-save-02` / `live-load-02` also passed four native receiver/inventory/
+caster/duration checks after a real save/load. At elapsed tic 41 the loaded
+receiver had 960 HP, 2.828571429 s remaining and 6.857142857 fractional HP.
+`integration_report.json` records the diagnostic package/overlay hashes; logs
+and launch metadata are in native/. The first save attempt quit before the
+engine wrote its file; the corrected fixture waits five frames before quitting.
+No production save defect was inferred from that fixture error.

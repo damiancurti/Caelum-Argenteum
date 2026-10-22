@@ -9,10 +9,12 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.7.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-V5.7.8 adds the support-effect calculation foundation (#479), with native
-model/save checks in `assets/validation_578/RESULTS.md`. Playable integration,
-migration and pending design values remain unfinished. Manual tests and
-questions are deferred until the author returns.
+V5.7.8 integrates the approved support implements (#479): native selectors,
+local targeting, health/damage/movement effects, fabrication and merchant
+catalogues. Quintessence is support only; Scepter/Orb preserve the old offensive
+roles for the four elements. Artwork and final save/end-to-end checks remain
+in progress. [Evidence](assets/validation_578/RESULTS.md). Author tests and
+questions are postponed during the author's absence.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

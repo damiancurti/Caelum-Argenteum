@@ -2,52 +2,65 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## #479 approved support contract and 5.7.8 implementation boundary
+## #479 support implements and 5.7.8 integration
 
-The following author-approved target design supersedes the old Book/Statuette
-roles when #479 is fully integrated. Current playable behavior is still the
-offensive matrix below; 5.7.8 adds calculation/data classes without wiring them
-into actors or selectors. This is an incomplete implementation, not a balance
-change to existing weapons.
+Quintessence is exclusively support. Offensive Wand/Bell retain their attacks;
+Scepter inherits the old offensive Book and Orb the old offensive Statuette,
+including charge, costs and tiers, for Fire, Water, Earth and Air. Numeric item
+IDs 18/19 remain stable. The author explicitly authorized discarding existing
+offensive Quintessence test items; save files are never deleted. Other items
+retain ID, tier, element, wear and learned recipe indices. Retired Quintessence
+recipe slots remain reserved; new recipes append without reindexing old data.
 
-| Support role | Polarity / scope | T1 Anima | Secondary speed/damage modifiers |
-| --- | --- | --- | --- |
-| Book | Curse / area | 70 | No |
-| Censer | Benefit / same area | 70 | No |
-| Statuette | Benefit / single target | 100 | Yes |
-| Ritual effigy | Curse / single target | 100 | Yes |
+| Support implement | Scope | T1 Anima | T1/M mass | Body |
+| --- | --- | --- | --- | --- |
+| Book | Enemy area | 70 | 6 kg | Plant fiber |
+| Censer | Allied area / self | 70 | 5 kg | Bronze, Bell manufacturing rules |
+| Statuette | Allied single / self | 100 | 8 kg | Carved wood |
+| Ritual effigy | Enemy single | 100 | 8 kg | Carved wood |
 
-All use Quintessence; base area references ESSENCE_EXPLOSION_BASE_RADIUS (128),
-and preparation references the current 14-tic cycle. T2/T3 costs multiply by
-1.6/2.5; existing Eloquence modifiers remain required at the future integration
-boundary. Support is instantaneous at the visible target, beneficial secondary
-attack permits self-targeting, and initial support has no charged attack.
-Benefits target self/allies and curses target enemies.
+Support selectors occupy native slot 0. The visible aim point receives the
+instantaneous effect after the existing 14-tic preparation cycle and Eloquence
+modifiers. Area radius reuses 128 map units and existing ability-range scaling;
+local blockmap selection checks distance, teams and sight. Beneficial secondary
+attack targets the caster; curse secondary is inert. Support has no charge.
+Costs use T2 x1.6/T3 x2.5 and the existing Eloquence reduction.
 
-Each application contributes 1% times current M2 per second and resets duration
-to 1 second times M2. Charisma supplies curse M2; Empathy supplies benefit M2.
-M2 is 1 at level 0 and 4 at level 100; existing effective levels remain uncapped.
-Casters share stacks of the same effect class, with no cap; opposite polarities
-coexist. Each integration interval samples current maximum health. For intensity
-p, F=1+p/100: enhancement multiplies movement and outgoing damage and divides
-incoming damage; weakening does the inverse. Independent action timers are not
-changed. The calculation state never mutates base attributes, so expiry returns
-its factor to one without cumulative drift. It retains fractional seconds and
-returns fractional HP before recipient mitigation/rounding. Revision 1 is
-idempotent; unknown future revisions are preserved without execution.
+Each application adds 1% x M2 per second and refreshes duration to 1 s x M2:
+Charisma for curses, Empathy for benefits. M2 is 1 at 0 and 4 at 100; effective
+levels remain uncapped. Each implement has its own shared, uncapped stack;
+different casters add to the same implement, with the most recent caster used
+for damage attribution. Book/Effigy health contributions sum, as do
+Censer/Statuette. Opposing effects coexist. Only Statuette/Effigy modify speed
+and damage: F=1+p/100; benefit multiplies movement/dealt damage and divides
+received damage, curse does the inverse. Movement includes jump, swimming,
+flight, dash and NPC movement; independent action clocks are unchanged.
 
-Approved migration maps old offensive Books to Scepters and Statuettes to Orbs,
-preserving item IDs, element, tier, wear and learned recipes. Offensive attack,
-charge and cost behavior follows the old implements. New support entries remain
-separate. No migration has run in this foundation patch.
+Health integration samples the recipient's current maximum, retains fractional
+HP and elapsed seconds, and delivers whole HP at second/expiry boundaries.
+Support damage factors are integrated before expiry, once, so the last pulse
+keeps its effect. Healing caps at current maximum; effects cannot resurrect.
+No base attribute or speed is rewritten. Receiver inventory state persists
+stacks, duration, fractions and attribution with idempotent revision 1.
+Existing Quintessence seals retain 85% of curse intensity, including secondary
+modifiers; duration and benefits are unaffected. No new resistance distribution
+is introduced. Selection is local; no global per-tic actor scan is added.
 
-Source audit: native slot 0 currently holds offensive Quintessence variants,
-whereas the internal magical family is 6. Reserving slot 0 exclusively for
-support therefore also needs the destination of those offensive selectors.
-New support masses, fabrication and economy are not supplied. Existing seal
-resistance to Quintessence is 0.85; how support mitigation and the requested rare
-distribution interact remains to be decided. These are deferred decisions,
-not authorization to invent values or bypass current resistances.
+Fabrication keeps 90% body / 10% essence. Support uses Quintessence; Scepter
+(6 kg T1/M) and Orb (8 kg) use wooden bases and the four offensive elements.
+Existing XS/S/M/L/XL factors 0.5/0.75/1/1.25/1.5, T2/T3 mass factors 1.5/2,
+silver/gold details, learning and production times apply. Workbench and Essence
+Altar are required, plus Globe at T2 and Master Bench at T3. MAP03 magic shops
+stock one T1 piece per type/size; libraries stock ten recipe copies per tier.
+New shop entries append without resetting old money, stock or production.
+Prices derive from current recursive manufacturing values and commerce margins:
+T1/M purchases cost Book 741,094, Censer 668,335 and Statuette/Effigy 971,250
+copper each. New component recipes are 173-175; support recipes are 169-172.
+
+Runtime integration is implemented and has isolated native evidence. Artwork,
+older-save and end-to-end coverage remain in progress; author tests and
+questions are postponed during the author's absence. Historical offensive
+Quintessence descriptions below are superseded by this contract.
 
 ## Aimed-target panel (#481, 5.7.7)
 

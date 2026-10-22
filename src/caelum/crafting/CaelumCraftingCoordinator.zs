@@ -794,6 +794,8 @@ class CaelumCraftingCoordinator : Object play
 
     static bool CanStartCraftingTask(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(user.CraftingSelectionRecipe))
+        {user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED;return false;}
         if (user.CraftingTaskActive)
         {
             user.LastCraftingAction =

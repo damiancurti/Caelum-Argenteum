@@ -2,16 +2,16 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support calculation foundation (#479, incomplete delivery)
+## 5.7.8 - Support implements (#479, integration in progress)
 
-The author approved four support roles, M2 potency/duration, shared uncapped
-stacks with refresh, independent benefits/curses, current-max-health integration,
-secondary factor F, costs/preparation and offensive-item migration. This patch
-implements only the shared data and serializable effect calculation state.
-It does not yet change playable weapons, selectors, recipes, damage or movement.
-Native model/save tests are recorded in assets/validation_578/RESULTS.md.
-The complete #479 implementation remains open; see TASKS for unresolved data.
-The author requested deferring questions and manual tests until returning.
+The approved support roles now connect to native selectors, local targeting,
+health/damage/movement, recipes, merchant catalogues and item migration.
+Quintessence is support only; Scepter/Orb inherit the old offensive roles for
+the four elements with stable item IDs. SYSTEMS records the complete approved
+stack, mitigation, fabrication and acquisition contract. Isolated integration
+checks pass; artwork, legacy-save coverage and final delivery remain underway.
+See assets/validation_578/RESULTS.md. Author tests and questions are postponed
+during the author's absence; this is not manual acceptance or issue closure.
 
 ## 5.7.7 - Centered target information (#481)
 

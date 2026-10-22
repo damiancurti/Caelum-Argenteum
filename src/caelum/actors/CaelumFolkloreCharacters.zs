@@ -326,7 +326,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
             }
 
             double returnDirection = VectorAngle(homeOffset.X, homeOffset.Y);
-            double returnSpeed = CombatBaseSpeed
+            double returnSpeed = CombatBaseSpeed * CaelumSupportMagic.Factor(self)
                 * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
                 / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
             double resolvedSpeed = Min(Max(0.0, returnSpeed), homeDistance);
@@ -671,7 +671,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
                 SewerEscapeTarget = Spawn("CaelumSewerEscapeTarget", exitPos, NO_REPLACE);
             else SewerEscapeTarget.SetOrigin(exitPos, false);
             target = SewerEscapeTarget; LastEnemy = null;
-            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(self);
             Vector2 delta = exitPos.XY - Pos.XY;
             // A_Chase avanza por pasos y la puerta colisiona en XY. Llegar a
             // un paso del contacto evita exigir penetrar su volumen sólido.
@@ -688,7 +688,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         }
         Super.Tick();
         if (SewerFleeing && health > 0)
-            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(self);
     }
 
     action void A_CaelumSewerEscapeMove()
@@ -696,7 +696,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         let boss = CaelumZupayColossus(self);
         if (boss == null || boss.SewerEscapeTarget == null) return;
         boss.target = boss.SewerEscapeTarget;
-        boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+        boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(boss);
         // Navegación nativa sin ataques; misma cadencia que la carrera normal.
         boss.ThermalChase(null, null, CHF_DONTLOOKALLAROUND);
     }

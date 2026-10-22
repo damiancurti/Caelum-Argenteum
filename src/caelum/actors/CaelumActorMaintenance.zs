@@ -81,8 +81,11 @@ class CaelumActorMaintenance : Object play
         if(HealthInputs[25]!=input25)changed=true;
         double input26=(body.ElementalStatus!=null ? body.ElementalStatus.GetMovementMultiplier() : 1.0);
         if(HealthInputs[26]!=input26)changed=true;
+        double input27=CaelumSupportMagic.Factor(body);
+        if(HealthInputs[27]!=input27)changed=true;
         if(changed)
         {
+            HealthInputs[27]=input27;
             HealthInputs[0]=input0;
             HealthInputs[1]=input1;
             HealthInputs[2]=input2;

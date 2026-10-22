@@ -144,6 +144,7 @@ class CaelumEquipmentItem : Inventory
     int WeaponDurabilityRevision;
     int UtilityStaffContactTics;
     int ShotgunRevision;
+    int SupportMigrationRevision;
     // La humedad sigue a esta pieza al equiparla, guardarla o soltarla.
     double ThermalWaterKg;
 
@@ -501,15 +502,37 @@ class CaelumEquipmentItem : Inventory
     // El inventario conserva Inventory.Icon por separado.
     virtual void UpdateWorldSprite() {}
 
+    bool MigrateSupportImplement()
+    {
+        if(SupportMigrationRevision>=CaelumSupportImplementData.MIGRATION_REVISION)return true;
+        SupportMigrationRevision=CaelumSupportImplementData.MIGRATION_REVISION;
+        if(PreviewEquipmentKind()!=CaelumConstants.EQUIPMENT_KIND_WEAPON
+            || CaelumSupportImplementData.ValidEssence(PreviewItemType(),PreviewEssenceType()))return true;
+        // El autor autoriz? retirar estas piezas de prueba, sin borrar archivos de partida.
+        let user=CaelumPlayer(Owner);
+        if(user!=null && user.ActiveWeaponItemId==ItemId)
+        {
+            user.ActiveWeaponItemId=0;
+            if(user.WeaponModel!=null)user.WeaponModel.Equipped=false;
+            user.CancelPendingStaffCast(false);user.CancelWeaponCharge();
+        }
+        CaelumActorMaintenance.InventoryChanged(Owner);
+        Destroy();
+        if(user!=null){user.ApplyCharacterProfile();user.RefreshCarriedInventorySummary();user.EnsureWeaponFamilySelectors();user.EnsureUnarmedFallback();user.PersistCharacterState();}
+        return false;
+    }
+
     override void Tick()
     {
         Super.Tick();
+        if(!MigrateSupportImplement())return;
         MigrateWeaponDurability();
         if (Owner == null) { UpdateWorldSprite(); }
     }
 
     protected bool TryCaelumPickup(in out Actor toucher)
     {
+        if(!MigrateSupportImplement())return false;
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
         if (caelumPlayer == null) return false;
         int oldId=ItemId, oldRevision=SizePolicyRevision;

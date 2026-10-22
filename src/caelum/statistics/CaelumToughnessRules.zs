@@ -45,7 +45,7 @@ class CaelumToughnessRules : Object
     { return 1.0-CaelumGrowthRules.Bonus(Max(0.0,toughness))/100.0; }
 
     static clearscope bool IsSustained(Name mod)
-    { return mod=='CaelumElementalDOT' || mod=='CaelumDiseaseDOT'; }
+    { return mod=='CaelumElementalDOT' || mod=='CaelumDiseaseDOT' || mod=='CaelumQuintessenceDOT'; }
 
     // El impacto desgasta la parte absorbida por la pieza, aunque Dureza
     // termine anulando la pérdida de vida. Usa las reglas de desgaste existentes.

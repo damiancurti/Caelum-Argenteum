@@ -20,8 +20,8 @@ for name, data in [('CSUP479', b''), ('TEXTMAP', '\n'.join(text).encode()), ('EN
     directory += struct.pack('<ii8s', 12 + len(body), len(data), name.encode().ljust(8, b'\0'))
     body += data
 members = {
-    'ZSCRIPT': b'version "4.14"\n' + (HERE / 'fixture.zs').read_bytes(),
-    'MAPINFO': b'GameInfo { AddEventHandlers="CA479Checks" }\nmap CSUP479 "Support-state checks" { }\n',
+    'ZSCRIPT': b'version "4.14"\n' + (HERE / 'fixture.zs').read_bytes()+b'\n'+(HERE / 'gameplay.zs').read_bytes(),
+    'MAPINFO': b'GameInfo { AddEventHandlers="CA479Checks", "CA479Gameplay" }\nmap CSUP479 "Support-state checks" { }\n',
     'TEXTURES': b'Texture S479FLAT, 64, 64 { Patch "models/caelum/props/stations/ca_station_wood.png", 0, 0 }\n',
     'maps/CSUP479.wad': b'PWAD' + struct.pack('<ii', 3, 12 + len(body)) + body + directory,
 }
@@ -29,6 +29,10 @@ with zipfile.ZipFile(OUT / 'fixture.pk3', 'w', zipfile.ZIP_STORED) as package:
     for name, data in sorted(members.items()):
         package.writestr(zipfile.ZipInfo(name, (2000, 1, 1, 0, 0, 0)), data)
 scripts = {
+    'live': 'wait 70; netevent ca479_tickseed; wait 40; netevent ca479_tickcheck; wait 1; quit',
+    'live-save': 'wait 70; netevent ca479_tickseed; wait 20; save ca479-live; wait 5; quit',
+    'live-load': 'wait 20; netevent ca479_tickcheck; wait 1; quit',
+    'gameplay': 'wait 70; netevent ca479_gameplay; wait 5; quit',
     'smoke': 'wait 70; netevent ca479_checks; wait 5; quit',
     'save': 'wait 70; netevent ca479_save; wait 5; save ca479-state; wait 5; quit',
     'load': 'wait 70; netevent ca479_load; wait 5; quit',

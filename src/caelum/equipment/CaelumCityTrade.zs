@@ -6,6 +6,7 @@ class CaelumCityMerchant : Actor
     int CatalogueRevision,CatalogueCursor;
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
+    int SupportCatalogueRevision;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -102,6 +103,7 @@ class CaelumCityMerchant : Actor
 
     CaelumEquipmentItem SeedEquipment(CaelumPlayer user,int kind,int type,int slot,int size,int essence)
     {
+        if(kind==CaelumConstants.EQUIPMENT_KIND_WEAPON && !CaelumSupportImplementData.ValidEssence(type,essence))return null;
         if(EnumeratingStock)
         {
             let product=CaelumShopProduct.Add(self,CaelumShopProduct.EQUIPMENT,CaelumCityData.EQUIPMENT_STOCK);
@@ -136,6 +138,7 @@ class CaelumCityMerchant : Actor
     }
     CaelumRecipeOffer SeedBook(int recipe,int tier,double value)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(recipe))return null;
         if(EnumeratingStock)
         {
             let product=CaelumShopProduct.Add(self,CaelumShopProduct.BOOK,CaelumShopCatalogue.BOOK_STOCK);
@@ -178,6 +181,7 @@ class CaelumCityMerchant : Actor
         EnsureCatalogue(user);CaelumShopRestock.Sync(self,user);
         CaelumLandImports.Ensure(self,user);
         CaelumMarineImports.Ensure(self,user);
+        CaelumSupportCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {
@@ -232,7 +236,7 @@ class CaelumCityMerchant : Actor
                 for(int tier=1;tier<=CaelumRecipeLearning.TIERS;tier++)
                 {
                     int entry=recipe*CaelumRecipeLearning.TIERS+tier-1;if(entry<CatalogueCursor && !EnumeratingStock)continue;
-                    if(CaelumRecipeLearning.Tier(recipe,tier)!=tier)continue;
+                    if(CaelumRecipeLearning.Tier(recipe,tier)!=tier || CaelumSupportImplementData.RetiredRecipe(recipe))continue;
                     double value=CaelumLibrary.BookValue(user,recipe,tier);if(value<=0)continue;
                     if(SeedBook(recipe,tier,value)==null && !EnumeratingStock)return;
                     if(!EnumeratingStock)CatalogueCursor=entry+1;

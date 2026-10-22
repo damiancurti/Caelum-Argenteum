@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `20d6e616929c24e7ebe246d3c95c9d5a778c7028e0d45c201d6311c63d1fce9c`. Locations include every definition; the last one per language wins.
+SHA-256: `9a212b4d3a43dc781fe76d16b443aa9f17af20723152853544974994a2c6473f`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -100,7 +100,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAP06 | 1 | CA_MAP06_NAME | CA_MAP06_NAME |
 | CA_MAP07 | 1 | CA_MAP07_NAME | CA_MAP07_NAME |
 | CA_MAP08 | 1 | CA_MAP08_NAME | CA_MAP08_NAME |
-| CA_MATERIAL | 111 | CA_MATERIAL_BARREL | CA_MATERIAL_YERBA_MATE |
+| CA_MATERIAL | 114 | CA_MATERIAL_BARREL | CA_MATERIAL_YERBA_MATE |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
 | CA_MENU | 4 | CA_MENU_LOAD_CHARACTER | CA_MENU_SAVE_CHARACTER |
 | CA_MERCHANT | 4 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
@@ -170,7 +170,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_VEIN | 11 | CA_VEIN_COAL | CA_VEIN_TOPAZ |
 | CA_VULNERABILITY | 7 | CA_VULNERABILITY_ARMORED | CA_VULNERABILITY_WEAK |
 | CA_WATER | 21 | CA_WATER_ACCEPT | CA_WATER_UNKNOWN |
-| CA_WEAPON | 52 | CA_WEAPON_AIR_COST | CA_WEAPON_TYPE_WAR_AXE |
+| CA_WEAPON | 56 | CA_WEAPON_AIR_COST | CA_WEAPON_TYPE_WAR_AXE |
 | CA_WEATHER | 19 | CA_WEATHER_CALM | CA_WEATHER_WIND_VALUE |
 | CA_WEEK | 7 | CA_WEEK_0 | CA_WEEK_6 |
 | CA_WORLD | 21 | CA_WORLD_CLOCK_LIMBO | CA_WORLD_VISITED |

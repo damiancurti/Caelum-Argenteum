@@ -2,27 +2,25 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## #479 / 5.7.8 - Partial foundation; integration remains open
+## #479 / 5.7.8 - Runtime integrated; presentation and final validation in progress
 
-Implemented: approved support data, uncapped M2 rate/duration, serializable
-same-class accumulation, duration reset, dynamic-maximum fractional integration
-and stateless secondary factor. Native model/save evidence belongs exclusively
-to assets/validation_578. There is no author acceptance claim or new manual test
-for this unexposed calculation layer.
+All requested design questions have been resolved: exclusive support
+Quintessence, separate per-implement stacks, seal intensity mitigation,
+authorized retirement of offensive Quintessence test items, and fabrication /
+acquisition proposal. SYSTEMS is the current contract.
 
-Deferred author decisions (questions postponed at the author's request):
-- Destination of offensive Quintessence selectors when native slot 0 is reserved
-  for support; internal magical family 6 is a different identifier.
-- New support implement masses, material recipes, prices, acquisition and stock.
-- Exact support mitigation/resistance rules and rare Quintessence distribution;
-  current seals already retain 85% of Quintessence health damage.
-- Effect-class identity when area and single-target implements overlap, so health
-  and secondary stacks cannot accidentally double or share unintended modifiers.
+Implemented: four selectors, local cast targeting, receiver status inventory,
+health/damage/movement integration, appended recipes, bilingual names, stable
+Scepter/Orb IDs, item retirement and additive merchant migration. Isolated
+native checks: 62 gameplay assertions and four real-tic assertions passed,
+following the foundation's 56 model/save assertions. Evidence is separate in
+assets/validation_578; no author acceptance is claimed.
 
-Remaining implementation: playable selectors/catalogue and bilingual views,
-approved save/learned-recipe migration, cast targeting/local area queries,
-authoritative health/damage/movement integration, owned art, profession/NPC/tutorial
-audit and native end-to-end tests. Do not close #479 on the foundation alone.
+Remaining: finish owned implement presentation, old/current save and end-to-end
+coverage, full-package validation and reviewable manual instructions. Audit
+profession/NPC/tutorial references against the final roles. Keep #479 open.
+The author requested postponing questions and manual tests while away again;
+temporary keep-awake remains local and must be released when that need ends.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

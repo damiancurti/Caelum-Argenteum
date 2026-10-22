@@ -9,6 +9,8 @@ class CaelumDisplayNames : Object
 
     static clearscope String GetWeaponKey(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType) || weaponType==CaelumConstants.WEAPON_TYPE_SCEPTER
+            || weaponType==CaelumConstants.WEAPON_TYPE_ORB)return CaelumSupportImplementData.WeaponKey(weaponType);
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
@@ -209,6 +211,9 @@ class CaelumDisplayNames : Object
             case CaelumConstants.MATERIAL_MECHANISM: return "CA_MATERIAL_MECHANISM";
             case CaelumConstants.MATERIAL_STAFF_BASE: return "CA_MATERIAL_STAFF_BASE";
             case CaelumConstants.MATERIAL_BELL_BASE: return "CA_MATERIAL_BELL_BASE";
+            case CaelumConstants.MATERIAL_CENSER_BASE: return "CA_MATERIAL_CENSER_BASE";
+            case CaelumConstants.MATERIAL_SCEPTER_BASE: return "CA_MATERIAL_SCEPTER_BASE";
+            case CaelumConstants.MATERIAL_ORB_BASE: return "CA_MATERIAL_ORB_BASE";
             case CaelumConstants.MATERIAL_BOOK_BASE: return "CA_MATERIAL_BOOK_BASE";
             case CaelumConstants.MATERIAL_STATUETTE_BASE: return "CA_MATERIAL_STATUETTE_BASE";
             case CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD: return "CA_MATERIAL_SMALL_WEAPON_HEAD";

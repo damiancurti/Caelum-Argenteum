@@ -469,6 +469,9 @@ class CaelumMaterialRules : Object
 
     static int GetFamily(int materialType)
     {
+        if(materialType==CaelumConstants.MATERIAL_CENSER_BASE)return CaelumConstants.MATERIAL_FAMILY_METAL;
+        if(materialType==CaelumConstants.MATERIAL_SCEPTER_BASE || materialType==CaelumConstants.MATERIAL_ORB_BASE)
+            return CaelumConstants.MATERIAL_FAMILY_WOOD;
         if (materialType == CaelumConstants.MATERIAL_IRON_INGOT
             || (materialType >= CaelumConstants.MATERIAL_COPPER_INGOT
                 && materialType <= CaelumConstants.MATERIAL_TIN_INGOT)
