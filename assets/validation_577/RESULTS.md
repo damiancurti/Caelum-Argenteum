@@ -15,7 +15,11 @@ live key remapping and current/5.7.6 save reloads. A final fixture-only guard
 prevents its F1/F2 commands from running after leaving CTGT481; its native smoke
 repeated all 36 selection assertions successfully. All final processes exited 0.
 Seven target captures and the Spanish remapped-key capture were inspected.
-Author acceptance CA481-01 is pending, deferred at the author's request until return.
+Author acceptance CA481-01 passed on 2026-10-22 after the interactive handoff:
+"La prueba que me diste quedó bien." The original report.json retains its
+collection-time pending status; this later confirmation is recorded here and in
+the originating 5.7.7 HISTORY entry. No runtime change or repeated native test
+was required for this acceptance-only update.
 
 The 16,596-entry package matches every source byte (SHA-256
 7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27).
@@ -54,4 +58,6 @@ The optional prepare.py --overlay is for development iterations only; final
 checks use the full package and a fixture without runtime overrides.
 manual.ps1 leaves an interactive native fixture and Spanish instructions;
 F1 selects a target and F2 toggles the controlled Insight threshold.
-The handoff is prepared but will not be opened while the author is away.
+The handoff was opened after the author returned, under label
+author-20261022-182920, using the validated package above. The visible instruction
+terminal was left open. The temporary keep-awake request was released at return.
