@@ -235,7 +235,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     // Cada material conserva una sola clase nativa y resuelve su arte desde
     // args[0]. Esto evita crear una subclase por componente de crafteo.
-    static String GetMaterialIconPathForType(int materialType)
+    static clearscope String GetMaterialIconPathForType(int materialType)
     {
         String resourceIcon = CaelumMarineData.MaterialIcon(materialType);
         if(resourceIcon == "") resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
