@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.0** — 2026-10-21.
 
-**5.7.0/#408:** water quality; validation_570. CA408-01 pending.
+**5.7.0/#408:** water quality; validation_570. CA408-01 accepted2026-10-21.
 
 **5.6.11/#385:**restock;validation_5611;CA385-01 accepted2026-10-21.
 **5.6.10/#383:**library/clothing/kits/locks;validation_5610;CA383-01accepted2026-10-21.

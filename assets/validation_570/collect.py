@@ -58,7 +58,7 @@ def main():
             'fail':0,'final_package_sha256':digest(package),'tested_package_sha256':digest(tested),
             'source_members':len(sources),'metadata_only_final_differences':metadata_only,
             'baseline_package_sha256':digest(baseline),'baseline_ref':'c6f13acd',
-            'author_acceptance':'pending CA408-01','performance_claim':None}
+            'author_acceptance':'CA408-01 accepted by author 2026-10-21','performance_claim':None}
     (HERE/'report.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     validation=subprocess.run([sys.executable,str(ROOT/'validate_project.py')],capture_output=True,text=True,encoding='utf-8')
     (HERE/'project-validation.json').write_text(validation.stdout,encoding='utf-8')

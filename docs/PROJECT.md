@@ -8,7 +8,7 @@ The first independent V5.7 patch adds persistent biological/salt/chemical water
 identity, conservative mixing, explicit collection/emptying, bilingual status
 and unsafe-water rejection across drinking, rest and travel. Existing hydration,
 container mass/capacity, potable refill and campaign placements remain intact.
-Evidence: `assets/validation_570/RESULTS.md`; manual acceptance CA408-01 pending.
+Evidence: `assets/validation_570/RESULTS.md`; CA408-01 accepted by the author on 2026-10-21.
 Boiling, Alchemy, land/marine sources, recipes and mate remain separate issues
 #404-#407/#409/#470-#472. This is not completion of the V5.7 batch.
 

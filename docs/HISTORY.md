@@ -12,7 +12,13 @@ The patch adds revision-1 container state and revision-4 rest forecasts, with
 original pre-patch saves retained for rollback. No campaign geometry changed.
 Evidence: `assets/validation_570/RESULTS.md`. Diagnostic compile failures and
 the corrected obsolete hydration expectation remain separate from final runs.
-CA408-01 is pending; no author acceptance, merge or full V5.7 completion is claimed.
+CA408-01 (origin 5.7.0, issue #408) passed author review on 2026-10-21.
+The author reported the open test successful and explicitly clarified that
+the report referred to #408: collection/emptying, potable drinking and unsafe
+water rejection in the F1-F5 scene. No exceptions were reported. The entry
+was removed from pending_test.txt. This confirms the water-quality check,
+not #409 boiling or completion of the entire V5.7 batch. PR #473 remains
+separate from the later resource patches; acceptance does not assert a merge.
 
 ## 5.6.11a - Defer clothing appearance and close the accepted batch (#387), 2026-10-21
 

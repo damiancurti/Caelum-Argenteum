@@ -1,7 +1,7 @@
 # #408 — Water quality, 5.7.0
 
 Fourteen selected native runs contain **166 PASS, zero FAIL**. Static validation
-and normal packaging pass. CA408-01 is pending explicit author review.
+and normal packaging pass. CA408-01 passed explicit author review on 2026-10-21.
 
 ## Scope
 
@@ -17,7 +17,7 @@ and normal packaging pass. CA408-01 is pending explicit author review.
   pinned by hash in report.json; original saves remain local in build/issue408.
 - Production network inventory actions collect/empty the selected container.
   ES/EN Inventory and ES quick-use captures were visually inspected. Actual
-  user mouse/keyboard acceptance remains CA408-01.
+  author acceptance was confirmed for CA408-01 on 2026-10-21; see HISTORY.
 - Final-package MAP01 startup without the diagnostic addon succeeds.
 
 The final source package has 16,434 members. `collect.py` compares every member
