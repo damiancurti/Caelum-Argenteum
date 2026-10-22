@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## 5.7.8 - Support calculation foundation (#479, partial)
+
+2026-10-22: recorded the author's approved M2, F, stacking, targeting, migration
+and casting parameters. Added shared support data and a serializable calculation
+state with fractional integration and expiry; existing gameplay is unchanged.
+Source audit found native slot 0 is occupied by offensive Quintessence selectors,
+new support economy/fabrication lacks values, and current seals already mitigate
+Quintessence. Questions and manual tests are deferred until the author returns.
+Native model/save checks passed 56 assertions; final processes exited 0, the
+16,598-entry package matched src bytes and the project validator passed.
+Evidence: assets/validation_578/RESULTS.md. Full integration, migration and author
+acceptance remain outstanding. #481 retains its separate CA481-01 pending entry.
 
 ## 5.7.7 - Aimed-target information (#481)
 

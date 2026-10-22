@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## 5.7.8 - #479 foundation asset boundary
+
+This partial patch adds no runtime art and does not repurpose accepted #471
+assets. assets/validation_578 contains only an isolated deterministic fixture,
+source audit and native evidence. No engine, IWAD, PK3 or save is distributed.
+New implement artwork belongs to the remaining #479 integration scope.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

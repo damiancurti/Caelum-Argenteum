@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## 5.7.8 - Support calculation foundation (#479, incomplete delivery)
+
+The author approved four support roles, M2 potency/duration, shared uncapped
+stacks with refresh, independent benefits/curses, current-max-health integration,
+secondary factor F, costs/preparation and offensive-item migration. This patch
+implements only the shared data and serializable effect calculation state.
+It does not yet change playable weapons, selectors, recipes, damage or movement.
+Native model/save tests are recorded in assets/validation_578/RESULTS.md.
+The complete #479 implementation remains open; see TASKS for unresolved data.
+The author requested deferring questions and manual tests until returning.
 
 ## 5.7.7 - Centered target information (#481)
 

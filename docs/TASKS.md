@@ -1,6 +1,28 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## #479 / 5.7.8 - Partial foundation; integration remains open
+
+Implemented: approved support data, uncapped M2 rate/duration, serializable
+same-class accumulation, duration reset, dynamic-maximum fractional integration
+and stateless secondary factor. Native model/save evidence belongs exclusively
+to assets/validation_578. There is no author acceptance claim or new manual test
+for this unexposed calculation layer.
+
+Deferred author decisions (questions postponed at the author's request):
+- Destination of offensive Quintessence selectors when native slot 0 is reserved
+  for support; internal magical family 6 is a different identifier.
+- New support implement masses, material recipes, prices, acquisition and stock.
+- Exact support mitigation/resistance rules and rare Quintessence distribution;
+  current seals already retain 85% of Quintessence health damage.
+- Effect-class identity when area and single-target implements overlap, so health
+  and secondary stacks cannot accidentally double or share unintended modifiers.
+
+Remaining implementation: playable selectors/catalogue and bilingual views,
+approved save/learned-recipe migration, cast targeting/local area queries,
+authoritative health/damage/movement integration, owned art, profession/NPC/tutorial
+audit and native end-to-end tests. Do not close #479 on the foundation alone.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

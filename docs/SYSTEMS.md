@@ -1,6 +1,53 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## #479 approved support contract and 5.7.8 implementation boundary
+
+The following author-approved target design supersedes the old Book/Statuette
+roles when #479 is fully integrated. Current playable behavior is still the
+offensive matrix below; 5.7.8 adds calculation/data classes without wiring them
+into actors or selectors. This is an incomplete implementation, not a balance
+change to existing weapons.
+
+| Support role | Polarity / scope | T1 Anima | Secondary speed/damage modifiers |
+| --- | --- | --- | --- |
+| Book | Curse / area | 70 | No |
+| Censer | Benefit / same area | 70 | No |
+| Statuette | Benefit / single target | 100 | Yes |
+| Ritual effigy | Curse / single target | 100 | Yes |
+
+All use Quintessence; base area references ESSENCE_EXPLOSION_BASE_RADIUS (128),
+and preparation references the current 14-tic cycle. T2/T3 costs multiply by
+1.6/2.5; existing Eloquence modifiers remain required at the future integration
+boundary. Support is instantaneous at the visible target, beneficial secondary
+attack permits self-targeting, and initial support has no charged attack.
+Benefits target self/allies and curses target enemies.
+
+Each application contributes 1% times current M2 per second and resets duration
+to 1 second times M2. Charisma supplies curse M2; Empathy supplies benefit M2.
+M2 is 1 at level 0 and 4 at level 100; existing effective levels remain uncapped.
+Casters share stacks of the same effect class, with no cap; opposite polarities
+coexist. Each integration interval samples current maximum health. For intensity
+p, F=1+p/100: enhancement multiplies movement and outgoing damage and divides
+incoming damage; weakening does the inverse. Independent action timers are not
+changed. The calculation state never mutates base attributes, so expiry returns
+its factor to one without cumulative drift. It retains fractional seconds and
+returns fractional HP before recipient mitigation/rounding. Revision 1 is
+idempotent; unknown future revisions are preserved without execution.
+
+Approved migration maps old offensive Books to Scepters and Statuettes to Orbs,
+preserving item IDs, element, tier, wear and learned recipes. Offensive attack,
+charge and cost behavior follows the old implements. New support entries remain
+separate. No migration has run in this foundation patch.
+
+Source audit: native slot 0 currently holds offensive Quintessence variants,
+whereas the internal magical family is 6. Reserving slot 0 exclusively for
+support therefore also needs the destination of those offensive selectors.
+New support masses, fabrication and economy are not supplied. Existing seal
+resistance to Quintessence is 0.85; how support mitigation and the requested rare
+distribution interact remains to be decided. These are deferred decisions,
+not authorization to invent values or bypass current resistances.
 
 ## Aimed-target panel (#481, 5.7.7)
 
