@@ -58,7 +58,8 @@ delivery-* runs are retained but superseded by verified-* after the deadline fix
 
 ## Author check
 
-CA406-01 remains pending in the root pending_test.txt. Run prepare.py, then the
+The author passed CA406-01 (5.7.3/#406) on 2026-10-22; its entry was removed
+from pending_test.txt. To reproduce, run prepare.py, then the
 manual.ps1 launcher with PowerShell execution-policy bypass. The visible terminal
 is a Spanish guide; all controls are pressed inside the private game. E extracts
 honey, F2 advances 100 days, F3 shows the reserve, F4/F5 save/load, and F6 rewinds

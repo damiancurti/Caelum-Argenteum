@@ -4,6 +4,11 @@ Documentation version: **5.7.3** — 2026-10-22.
 
 ## 5.7.3 - Monotonic source recovery (#406)
 
+Author acceptance, 2026-10-22: CA406-01 (originating release 5.7.3, issue
+#406) passed. The author confirmed the prepared recovery/save/load/clock-rewind
+test went well. Its pending entry is removed; subsequent V5.7 issues remain
+separate work and are not accepted by this confirmation.
+
 Natural sources retain the approved 0.1% of capacity per game day, capped at
 capacity. A backward calendar observation no longer rewinds a source's credited
 timestamp: returning to that time cannot apply the same recovery twice.
@@ -12,7 +17,7 @@ Recovery deadlines include the delay until a future credited stamp is reached.
 Existing saved amounts, fractional carry and calendar IDs retain their authority;
 no schema or balance change is introduced. Finite tutorial quotas remain finite.
 Native regression and save compatibility: 100 PASS / zero FAIL in fourteen
-selected runs, assets/validation_573. CA406-01 awaits author acceptance.
+selected runs, assets/validation_573. The author passed CA406-01 on 2026-10-22.
 Next: #470 Alchemy, #407 marine/iodine, #409 boiling, #471 recipes and #472 mate,
 with separate issue branches, commits, tests and PRs.
 

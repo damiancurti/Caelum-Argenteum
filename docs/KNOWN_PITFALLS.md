@@ -32,7 +32,7 @@ against baseline/current packages. The same native fixture tests a million-day
 catch-up without iterating missed days. Matrix/save/hub checks cover partitioned
 elapsed time, cap, finite/decorative exceptions and save compatibility. This
 clock-correctness result does not establish rendering performance or author
-acceptance; CA406-01 remains a separate manual test.
+acceptance by itself. The author separately passed CA406-01 on 2026-10-22.
 
 ## CA-KP-149 - Cache production quotes and process only elapsed stock deficits
 

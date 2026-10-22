@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.3** — 2026-10-22.
 
-**5.7.3/#406:**monotonic-recovery;validation_573;CA406-01:pending.
+**5.7.3/#406:**monotonic-recovery;validation_573;CA406-01:accepted2026-10-22.
 **5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22;next:#406/#407/#470/#409/#471/#472.
 **5.7.1/#404:**resource-contract;validation_571.
 

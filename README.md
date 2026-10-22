@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.7.3 prevents duplicate source recovery after a backward calendar observation
 (#406). The existing 0.1%-daily rate, capacities and finite tutorial quotas stay
 authoritative. Native checks: 100 PASS in fourteen selected runs; CA406-01
-awaits author review. [Recovery evidence](assets/validation_573/RESULTS.md).
+passed author review on 2026-10-22. [Recovery evidence](assets/validation_573/RESULTS.md).
 
 V5.7.2 adds approved land resources (#405): collectible marcela, flowers and
 honey outside MAP03's west gate, decorative counterparts in MAP01, and yerba,

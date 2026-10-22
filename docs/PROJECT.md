@@ -12,7 +12,7 @@ Recovery deadlines include the delay until a future credited stamp is reached.
 Existing saved amounts, fractional carry and calendar IDs retain their authority;
 no schema or balance change is introduced. Finite tutorial quotas remain finite.
 Native regression and save compatibility: 100 PASS / zero FAIL in fourteen
-selected runs, assets/validation_573. CA406-01 awaits author acceptance.
+selected runs, assets/validation_573. The author passed CA406-01 on 2026-10-22.
 Next: #470 Alchemy, #407 marine/iodine, #409 boiling, #471 recipes and #472 mate,
 with separate issue branches, commits, tests and PRs.
 

@@ -63,7 +63,7 @@ def main():
                   failed=0, package_sha256=sha(package), source_matching_members=members,
                   original_save=original, runs=records,
                   presentation='No renderer change or frame-rate improvement is claimed.',
-                  author_acceptance='CA406-01 pending')
+                  author_acceptance='CA406-01 passed by author on 2026-10-22')
     (HERE / 'report.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf8')
     result = subprocess.run([sys.executable, 'validate_project.py'], cwd=ROOT,
                             capture_output=True, check=True)
