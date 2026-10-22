@@ -69,6 +69,10 @@ class CaelumRecipeLearning : Object play
         int readings = record != null && slot >= 0 ? record.RecipeRereadings[slot] : 0;
         int practice = record != null && slot >= 0 ? record.RecipePractice[slot] : 0;
         // Comparar la misma salida: al 25% se emplea cuatro veces su material.
+        // El yodo tiene tiempo base aprobado; conserva aprendizaje y Destreza.
+        if(recipe==CaelumMarineData.IODINE_RECIPE)
+            return Max(0,employedUnits)*double(CaelumMarineData.WORK_SECONDS)/CaelumMarineData.INPUT_GRAMS
+                *TimeFactor(readings,practice,recipe,efficiency)*100.0/user.GetCraftingDexterityPercent();
         double baselineUnits = Max(0, employedUnits)
             * CaelumCraftingRules.GetCraftingEfficiencyPercent(efficiency) / 25.0;
         // La aleacion proporcional redondea cada entrada por separado. Un lote

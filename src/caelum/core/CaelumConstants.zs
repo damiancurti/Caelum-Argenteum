@@ -729,7 +729,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 14 + CaelumClothingData.COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -737,7 +737,7 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 11;
+    const CRAFTING_RECIPE_BOOK_VERSION = 12;
     // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
     const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
     const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;
@@ -795,6 +795,7 @@ class CaelumConstants : Object
     const CRAFTING_ACTION_DEBUG_TIME_ADVANCED = 17;
     const CRAFTING_ACTION_DEBUG_TIME_BLOCKED = 18;
     const CRAFTING_ACTION_FAILED_CARRY_CAPACITY = 19;
+    const CRAFTING_ACTION_FAILED_EMPTY_OUTPUT = 20;
 
     // Una sola tarea autoritativa por jugador. Los huecos adicionales permiten
     // reservar de forma atómica los materiales primarios de una ruta directa
@@ -1189,7 +1190,9 @@ class CaelumConstants : Object
     const MATERIAL_CYPELLA_FLOWER = 84;
     const MATERIAL_SUGARCANE = 85;
     const MATERIAL_HONEY = 86;
-    const MATERIAL_TYPE_COUNT = 87;
+    const MATERIAL_DRIED_KELP = 87;
+    const MATERIAL_IODINE = 88;
+    const MATERIAL_TYPE_COUNT = 89;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

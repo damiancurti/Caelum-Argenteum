@@ -237,7 +237,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     // args[0]. Esto evita crear una subclase por componente de crafteo.
     static String GetMaterialIconPathForType(int materialType)
     {
-        String resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
+        String resourceIcon = CaelumMarineData.MaterialIcon(materialType);
+        if(resourceIcon == "") resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
         if(resourceIcon != "") return resourceIcon;
         switch (materialType)
         {
@@ -447,6 +448,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M084 A 0;
         M085 A 0;
         M086 A 0;
+        M087 A 0;
+        M088 A 0;
         Stop;
     }
 }

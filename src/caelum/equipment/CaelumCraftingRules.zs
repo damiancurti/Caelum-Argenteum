@@ -245,6 +245,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
         if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING;
         if (CaelumUtilityCrafting.IsRecipe(recipeIndex)) return CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY;
         if (IsSingleTierRecipe(recipeIndex))
@@ -446,6 +447,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedProcessingRecipeIndex(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT;
         return Clamp(
             recipeIndex - GetProcessingRecipeStart(),
             0, CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT - 1
@@ -799,6 +801,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneMaterial(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_DRIED_KELP;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_TIN_INGOT:
@@ -834,6 +837,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoMaterial(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return -1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_BRONZE_ALLOY:
@@ -847,6 +851,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneTier(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         return GetUnifiedProcessingRecipeIndex(recipeIndex)
             == CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY ? 2 : 1;
     }
@@ -858,6 +863,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputMaterial(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_IODINE;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_TIN_INGOT:
@@ -889,6 +895,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputTier(int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
             case CaelumConstants.CRAFTING_PROCESSING_IRON_INGOT:
@@ -906,6 +913,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneUnits(int recipeIndex, int batchIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.INPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -921,6 +929,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoUnits(int recipeIndex, int batchIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 0;
         int units = 0;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -936,6 +945,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.OUTPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         // Esta es la salida teórica al 100 %. La eficiencia 25/50/100 se
         // aplica después al lote completo; 4 entradas producen 1/2/4 unidades.
         int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
@@ -965,6 +975,7 @@ class CaelumCraftingRules : Object
         int materialType, int materialTier
     )
     {
+        if(materialType==CaelumConstants.MATERIAL_IODINE)return CaelumMarineData.IODINE_RECIPE;
         int resolvedTier = CaelumMaterialRules.ResolveTier(
             materialType, materialTier
         );
@@ -995,6 +1006,7 @@ class CaelumCraftingRules : Object
 
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
     {
+        if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return GetMissingAlchemyStation(capabilities);
         if (!NetworkHasStation(
             capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH
         ))

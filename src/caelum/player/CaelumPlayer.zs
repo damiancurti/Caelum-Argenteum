@@ -889,7 +889,8 @@ class CaelumPlayer : DoomPlayer
                 GiveInventoryType("CaelumPersistentCharacterState")
             );
         }
-        if(persistentState != null && CaelumPlayerAuthority.CanMutate(self)) persistentState.EnsureLandMaterialSchema();
+        if(persistentState != null && CaelumPlayerAuthority.CanMutate(self))
+        {persistentState.EnsureLandMaterialSchema();persistentState.EnsureMarineMaterialSchema();}
         return persistentState;
     }
 

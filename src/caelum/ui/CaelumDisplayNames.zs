@@ -115,7 +115,8 @@ class CaelumDisplayNames : Object
     {
         if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
-            String resourceKey = CaelumLandResourceData.MaterialKey(specialType);
+            String resourceKey = CaelumMarineData.MaterialKey(specialType);
+            if(resourceKey == "") resourceKey = CaelumLandResourceData.MaterialKey(specialType);
             if(resourceKey != "") return resourceKey;
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)

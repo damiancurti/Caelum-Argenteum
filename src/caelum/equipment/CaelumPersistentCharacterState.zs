@@ -9,6 +9,18 @@ class CaelumPersistentCharacterState : Inventory
     // anteriores y rollback, pero sólo reflejan estos objetos tras la migración.
     int IdentityRevision;
     int LandMaterialSchemaRevision;
+    int MarineMaterialSchemaRevision;
+
+    void EnsureMarineMaterialSchema()
+    {
+        if(MarineMaterialSchemaRevision>=CaelumMarineData.REVISION)return;
+        for(int i=CaelumMarineData.FIRST_MATERIAL;i<=CaelumMarineData.LAST_MATERIAL;i++)
+        {
+            MainM00RepairSupply[i]=0;MainM00SupplyLimit[i]=0;MainM00SupplyIssued[i]=0;
+            MainM00MazeRepairUnits[i]=0;MainM00StarterRequired[i]=0;
+        }
+        MarineMaterialSchemaRevision=CaelumMarineData.REVISION;
+    }
 
     void EnsureLandMaterialSchema()
     {
@@ -1480,7 +1492,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 10)
+        if (RecipeBookVersion >= 11)
+        {
+            addedRecipeStart = CaelumMarineData.IODINE_RECIPE;
+        }
+        else if (RecipeBookVersion >= 10)
         {
             addedRecipeStart = CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;
         }
@@ -1524,6 +1540,12 @@ class CaelumPersistentCharacterState : Inventory
             recipeIndex++)
         {
             KnownCraftingRecipe[recipeIndex] = false;
+            KnownRecipeTiers[recipeIndex]=0;PendingRecipeSheets[recipeIndex]=0;IssuedRecipeSheets[recipeIndex]=0;
+            for(int tier=0;tier<CaelumRecipeLearning.TIERS;tier++)
+            {
+                int slot=recipeIndex*CaelumRecipeLearning.TIERS+tier;
+                RecipeRereadings[slot]=0;RecipePractice[slot]=0;
+            }
         }
         RecipeBookVersion = CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION;
     }

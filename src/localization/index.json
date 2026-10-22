@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "f6bfb3bfb9a916dab5babd28ab17493bbfa4b7ff86d4391329f0cf799a491b26",
+  "sha256": "bd10515e9c13e9de9ba0bfc7aec9fa32fb6b8a5c9df166803d4bf71cd30eab79",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[428,428]],"default":[[428,428]],"es":[[1116,1116]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[971,971]],"default":[[971,971]],"es":[[1659,1659]]},
@@ -377,6 +377,7 @@
     "CA_CRAFTING_ACTION_FAILED_CARRY_CAPACITY": {"enu":[[2210,2210]],"default":[[2210,2210]],"es":[[2238,2238]]},
     "CA_CRAFTING_ACTION_FAILED_COMBAT": {"enu":[[2208,2208]],"default":[[2208,2208]],"es":[[2236,2236]]},
     "CA_CRAFTING_ACTION_FAILED_DUPLICATE": {"enu":[[542,542]],"default":[[542,542]],"es":[[1230,1230]]},
+    "CA_CRAFTING_ACTION_FAILED_EMPTY_OUTPUT": {"enu":[[6167,6167]],"default":[[6167,6167]],"es":[[6171,6171]]},
     "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE": {"enu":[[1722,1722]],"default":[[1722,1722]],"es":[[1736,1736]]},
     "CA_CRAFTING_ACTION_FAILED_MATERIALS": {"enu":[[540,540]],"default":[[540,540]],"es":[[1228,1228]]},
     "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED": {"enu":[[545,545]],"default":[[545,545]],"es":[[1233,1233]]},
@@ -1491,6 +1492,7 @@
     "CA_MATERIAL_COW_HIDE": {"enu":[[2002,2002]],"default":[[2002,2002]],"es":[[2032,2032]]},
     "CA_MATERIAL_CURVED_BLADE": {"enu":[[560,560]],"default":[[560,560]],"es":[[1248,1248]]},
     "CA_MATERIAL_CYPELLA_FLOWER": {"enu":[[6134,6134]],"default":[[6134,6134]],"es":[[6148,6148]]},
+    "CA_MATERIAL_DRIED_KELP": {"enu":[[6165,6165]],"default":[[6165,6165]],"es":[[6169,6169]]},
     "CA_MATERIAL_EARTH_ESSENCE": {"enu":[[579,579]],"default":[[579,579]],"es":[[1267,1267]]},
     "CA_MATERIAL_EMERALD_GEM": {"enu":[[1783,1783]],"default":[[1783,1783]],"es":[[1807,1807]]},
     "CA_MATERIAL_EMERALD_PENDANT": {"enu":[[1779,1779]],"default":[[1779,1779]],"es":[[1803,1803]]},
@@ -1523,6 +1525,7 @@
     "CA_MATERIAL_HANDLE": {"enu":[[585,585]],"default":[[585,585]],"es":[[1273,1273]]},
     "CA_MATERIAL_HILT": {"enu":[[582,582]],"default":[[582,582]],"es":[[1270,1270]]},
     "CA_MATERIAL_HONEY": {"enu":[[6139,6139]],"default":[[6139,6139]],"es":[[6153,6153]]},
+    "CA_MATERIAL_IODINE": {"enu":[[6166,6166]],"default":[[6166,6166]],"es":[[6170,6170]]},
     "CA_MATERIAL_IRON_INGOT": {"enu":[[554,554]],"default":[[554,554]],"es":[[1242,1242]]},
     "CA_MATERIAL_IRUPE_FLOWER": {"enu":[[6132,6132]],"default":[[6132,6132]],"es":[[6146,6146]]},
     "CA_MATERIAL_KITE_PLATE": {"enu":[[570,570]],"default":[[570,570]],"es":[[1258,1258]]},
