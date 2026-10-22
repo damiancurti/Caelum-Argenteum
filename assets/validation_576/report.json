@@ -1,0 +1,206 @@
+{
+  "issue": 471,
+  "release": "5.7.6",
+  "package_sha256": "d5c059afd0706ce53ea4f936ee8891de559df809d57f66b0b6f22e38cf064f2b",
+  "package_members": 16593,
+  "exact_source_matches": 16593,
+  "runs": [
+    {
+      "label": "verified-views",
+      "pass": 12,
+      "fail": 0,
+      "log_sha256": "6ba5fb46a9cda5c922b8843e3fdb71776aa2fe6f3d628456eff44e64b32686e2",
+      "record": {
+        "label": "verified-views",
+        "runtime": "current",
+        "started_utc": "2026-10-22T15:37:32.7483970Z",
+        "visible_requested": true,
+        "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "D5C059AFD0706CE53EA4F936EE8891DE559DF809D57F66B0B6F22E38CF064F2B",
+        "addon_sha256": "0BE41B25777E8D4592938A60C9F3ECCEBF100D6A9DFE005900B664618294739B",
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\current\\caelum_argenteum_dev.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\gallery.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\verified-views.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "471",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\verified-views.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "CART471",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\gallery.cfg\""
+        ],
+        "command_script": "wait 70; netevent ca471_setup; wait 10; exec \"C:/GZDooMProjects/CaelumArgenteum/build/issue471-work/build/issue471/view-0.cfg\"\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 47252,
+        "exit_code": 0,
+        "finished_utc": "2026-10-22T15:37:54.3496510Z"
+      }
+    },
+    {
+      "label": "verified-inventory",
+      "pass": 12,
+      "fail": 0,
+      "log_sha256": "59bfd3eaeb0e45019f0969071c35b0bd302bcbbd781efef2483fcdff1ef8aa3d",
+      "record": {
+        "label": "verified-inventory",
+        "runtime": "current",
+        "started_utc": "2026-10-22T15:38:00.5032984Z",
+        "visible_requested": true,
+        "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+        "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+        "package_sha256": "D5C059AFD0706CE53EA4F936EE8891DE559DF809D57F66B0B6F22E38CF064F2B",
+        "addon_sha256": "0BE41B25777E8D4592938A60C9F3ECCEBF100D6A9DFE005900B664618294739B",
+        "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+        "arguments": [
+          "-noautoload",
+          "-iwad",
+          "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+          "-file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\current\\caelum_argenteum_dev.pk3\"",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\gallery.pk3\"",
+          "-config",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\verified-inventory.ini\"",
+          "-savedir",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\"",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-window",
+          "-rngseed",
+          "471",
+          "-skill",
+          "2",
+          "+logfile",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\verified-inventory.txt\"",
+          "+con_notifytime",
+          "0",
+          "-nomouse",
+          "+map",
+          "CART471",
+          "+exec",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue471-work\\build\\issue471\\inventory.cfg\""
+        ],
+        "command_script": "wait 70; netevent ca471_setup; wait 15; netevent ca471_inventory; wait 15; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue471-work/build/issue471/iodine-inventory.png\"; wait 5; quit\n",
+        "cpu": [
+          {
+            "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+            "NumberOfCores": 16,
+            "NumberOfLogicalProcessors": 32
+          }
+        ],
+        "gpu": [
+          {
+            "Name": "Parsec Virtual Display Adapter",
+            "DriverVersion": "0.45.0.0"
+          },
+          {
+            "Name": "NVIDIA GeForce RTX 3070 Ti",
+            "DriverVersion": "32.0.15.7688"
+          }
+        ],
+        "os": {
+          "Caption": "Microsoft Windows 11 Pro",
+          "Version": "10.0.26200"
+        },
+        "pid": 20668,
+        "exit_code": 0,
+        "finished_utc": "2026-10-22T15:38:11.5226616Z"
+      }
+    }
+  ],
+  "captures": {
+    "iodine-0.png": "09cebb1ac9a033fc2cc8ea8f21cc303ea5bbf3789b11d426457809f59dc9e409",
+    "iodine-1.png": "62ef6a4f07aae882b9d612fe9c39090bd6b14e6ce38ca907b17c04efd38fc8f9",
+    "iodine-2.png": "d540935b8193354b995cadc9c7963fc1d39be505fac8315b029bc484a468e9fa",
+    "saltpeter-0.png": "1c759a37324e4a8a49a004bf525105bce8ab6b01241b0dd3a571806a0676b602",
+    "saltpeter-1.png": "236f2a53671dbe5a34431008f78ec00b066ab4d759a2b23ce2cc7f311e1e2569",
+    "saltpeter-2.png": "e578dd28d2247d7a48edbe7deb034d9e28a49299d68130d0131bc3f1321fbc7f",
+    "sulfur-0.png": "3657f3f623979e8f063bd6302d0ac8edad9374de43758b50b0a03d845b86a5dd",
+    "sulfur-1.png": "489e7e33a618a768e9db94074d942d9d08f00112a80ad9806cf70259b5a7c209",
+    "sulfur-2.png": "a7a89a98a61863968061dec2aa1af081ed7d589be352a74630cd26c9981b89aa",
+    "charcoal-0.png": "0a88c6d8ce5317ba336c3426d395f10b1556febf9746f72f2605adfb7aa987c1",
+    "charcoal-1.png": "4fb6f78a6ba83c55404112292571cb00530ffca84ce5dd04966a1becba18918d",
+    "charcoal-2.png": "c7ae7c5f31c00049edbd9509f7e814b2ea2f5e4b9d5f68d89a2189765e34b70f",
+    "molasses-0.png": "d11b5be6cb94808f3b75586348379064ce903e4d228036ccc15ec5f657ee55e4",
+    "molasses-1.png": "2c118b474ec9fc6a7c2d7681e26029336240e68fc3f781f138ab65af8e4285fd",
+    "molasses-2.png": "b9c4be9c7ec715a762f668741a6d8f6ee78bdf6798e17cfd8f7b5d49e85a86fa",
+    "fermented_intermediate-0.png": "6135ab6813f44ca0f1149937705e30c84e8b6257208474444f7b6a246174cdb1",
+    "fermented_intermediate-1.png": "493484db13fa24fb7934c7a53cc6248b43ce3181683002c2fc2409c3ad8ffc03",
+    "fermented_intermediate-2.png": "a0c3a249ba22044611da105fdcbd38d50d8773e7778437fb572ea28daa8d2e86",
+    "alcohol-0.png": "ae57de0de73f352fe21cf0a651f855f3c1b183b9577a24dbdcfdafcd69a7d020",
+    "alcohol-1.png": "bf205d5007a888bb0f8fe6f059fc9791ab1f1d2f0696d4bc9116973c4aa1af0d",
+    "alcohol-2.png": "f32a354081a87ab6f53982ddfbb9779a6fdef32b2bd5355d18f299afb3b1c1e7",
+    "yeast-0.png": "deb56001d3384b30b3dbc2901d6fa69d53789403e3df68f56aadac5d954698bf",
+    "yeast-1.png": "a1c03400d8a78fdf5d3f1af795647768985eba8314d8d9fc749a9ff2a3a4764d",
+    "yeast-2.png": "e3f34d5af1708a6e0077cb61b1adc7be158cc16224db401de19e1f947a2c2813",
+    "gunpowder-0.png": "6854a7e685662aa1c1912200ffbb1fb9ac8d0883c27e2b4d81387bc838af4941",
+    "gunpowder-1.png": "eec222fc756584887431fe2b071cc5f57f9ad379c461422a2d68c4935d3110e1",
+    "gunpowder-2.png": "3cc15c0eb78bd0c19d5477c7bd659ff9ed6817468ca11bc931a869c975f4f87f",
+    "saltpeter_deposit-0.png": "07f3fe6a96d78c85a37cf12266c06a01ab824891feae5a77a3f75f005351abfc",
+    "saltpeter_deposit-1.png": "3ca107fd37331c32b1963d8e6d14ed83b33fdba65b16db758bcd8e08f0ee5b79",
+    "saltpeter_deposit-2.png": "57d8e458dfcb6592e5c6628a0edabc3f76e0747243a9118e74737ffca9f6a0de",
+    "sulfur_deposit-0.png": "d829f82f0e6cb0a82b7e1aa91c4cea3f4bbf140cdabc76c1f743c5f4c2fbb6ab",
+    "sulfur_deposit-1.png": "9824ec39cb2c3d4bcefe4710bf80889de2a39f2c6bbc150c85e904d421996837",
+    "sulfur_deposit-2.png": "5d6d737f347a645033a5b5a533013702e10b6d431c9b144eb87f2d7c262f2361",
+    "iodine-inventory.png": "0bc0d2b57e47fac50a5c71d81315864bb704e258e264e2d73a08c19f78f8ffd1"
+  },
+  "author_acceptance": "Pending CA471-ART-01",
+  "save_schema": "Unchanged; no stateful gameplay modifications",
+  "review_sheets": {
+    "crop_xyxy": [
+      480,
+      240,
+      800,
+      480
+    ],
+    "resize": "none",
+    "hashes": {
+      "native-views-1.png": "8bcf5190a9f1ecc226b30743897e8a9379c696e63c8f13357909534d49194165",
+      "native-views-2.png": "6c51a518aa958296c1c63301c7b63e61bf2fee90341269e9a0a37f640ffe509c"
+    }
+  }
+}

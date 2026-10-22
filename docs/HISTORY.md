@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.5** — 2026-10-22.
+Documentation version: **5.7.6** — 2026-10-22.
+
+## 5.7.6 - Alchemy ingredient artwork (#471)
+
+2026-10-22: the author requested sprites and 3D models for iodine, saltpeter,
+sulfur and the required Alchemy ingredients. Added 11 matching icons and 10
+original meshes; preserved the accepted iodine mesh and replaced its generic
+opal icon. Other new assets remain staged until gameplay values are approved.
+The author selected appropriate regions for natural mineral deposits and
+MAP03 trade in the interim. Art does not authorize new resource locations,
+economy values or real propellant recipes. Evidence is recorded separately
+in assets/validation_576/RESULTS.md: static validation, two deterministic
+regenerations, 24 native PASS and 33 model views. Material inventory rows now
+display their existing icons. The author reported a native zero-size texture
+crash during delivery; grouping shaded OBJ faces into at most 20 surfaces
+resolved the reproduced 32-slot overflow risk (CA-KP-152). CA471-ART-01 awaits
+author acceptance.
 
 ## 5.7.5 - Marine imports and iodine (#407)
 
