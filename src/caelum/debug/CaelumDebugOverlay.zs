@@ -438,6 +438,11 @@ class CaelumDebugOverlay : EventHandler
 
     ui String GetSpecialItemTypeKey(int specialCategory, int specialType)
     {
+        if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            String resourceKey = CaelumLandResourceData.MaterialKey(specialType);
+            if(resourceKey != "") return resourceKey;
+        }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
             return "CA_KEY_SILVER";
@@ -1055,6 +1060,8 @@ class CaelumDebugOverlay : EventHandler
 
     ui String GetMaterialSelectionIcon(int materialType)
     {
+        String resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
+        if(resourceIcon != "") return resourceIcon;
         switch (materialType)
         {
             case CaelumConstants.MATERIAL_IRON_INGOT: return "graphics/caelum/icons/materials/ca_material_iron_ingot.png";

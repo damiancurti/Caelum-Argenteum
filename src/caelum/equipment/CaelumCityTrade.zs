@@ -4,6 +4,7 @@ class CaelumCityMerchant : Actor
 {
     int ShopIdentity, Category, Revision, WalletCopper;
     int CatalogueRevision,CatalogueCursor;
+    int LandImportRevision,LandImportCursor;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -65,6 +66,7 @@ class CaelumCityMerchant : Actor
         if(item is "CaelumRecipeOffer")return false;
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);
+        if(material!=null && CaelumLandImports.Accepts(Category,material.GetSpecialType())) return true;
         if(material!=null)return Category==2 && (material.GetSpecialType()==CaelumConstants.MATERIAL_CARBINE_KIT
             || material.GetSpecialType()==CaelumConstants.MATERIAL_SHOTGUN_KIT);
         let equipment=CaelumEquipmentItem(item);
@@ -171,6 +173,7 @@ class CaelumCityMerchant : Actor
             StockInitialized=true;PopulateBaseStock(user);
         }
         EnsureCatalogue(user);CaelumShopRestock.Sync(self,user);
+        CaelumLandImports.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

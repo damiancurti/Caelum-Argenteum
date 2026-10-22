@@ -28,7 +28,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
 
     double GetEnvironmentImpactMultiplier() { return 1.0; }
 
-    double GetResourceCapacityUnits()
+    virtual double GetResourceCapacityUnits()
     {
         if (!IsNaturalResource()) { return 0.0; }
         // Arg4 permite al mapeador reemplazar la capacidad en kg.
@@ -109,7 +109,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
         }
     }
 
-    double TryExtractResource(
+    virtual double TryExtractResource(
         Actor extractor,
         int damageKind,
         double strikePower,

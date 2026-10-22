@@ -1,0 +1,7 @@
+// Alias de reserva; la representación normal de estos materiales es 3D.
+Sprite "M081A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
+Sprite "M082A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
+Sprite "M083A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
+Sprite "M084A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
+Sprite "M085A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_wood.png", 0, 0 }
+Sprite "M086A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }

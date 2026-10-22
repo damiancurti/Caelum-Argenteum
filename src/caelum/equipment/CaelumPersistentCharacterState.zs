@@ -8,6 +8,19 @@ class CaelumPersistentCharacterState : Inventory
     // #147: autoridad compartida. Los campos planos se conservan para saves
     // anteriores y rollback, pero sólo reflejan estos objetos tras la migración.
     int IdentityRevision;
+    int LandMaterialSchemaRevision;
+
+    void EnsureLandMaterialSchema()
+    {
+        if(LandMaterialSchemaRevision >= CaelumLandResourceData.REVISION) return;
+        // Los seis IDs nuevos se añaden al final; nunca desplazan IDs guardados.
+        for(int i=CaelumLandResourceData.FIRST_MATERIAL;i<=CaelumLandResourceData.LAST_MATERIAL;i++)
+        {
+            MainM00RepairSupply[i]=0; MainM00SupplyLimit[i]=0; MainM00SupplyIssued[i]=0;
+            MainM00MazeRepairUnits[i]=0; MainM00StarterRequired[i]=0;
+        }
+        LandMaterialSchemaRevision=CaelumLandResourceData.REVISION;
+    }
     CaelumCharacterProfile IdentityProfile;
     CaelumCharacterAllocation IdentityAllocation;
     // #130: estado aditivo y viajero; no sustituye recursos ni equipo aceptado.

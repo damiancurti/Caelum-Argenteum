@@ -393,6 +393,8 @@ class CaelumEconomyRules : Object
     // obtención, no vuelven a sobrescribir estos precios de diseño.
     static double GetRawMaterialUnitValue(int materialType)
     {
+        double resourcePrice = CaelumLandResourceData.Price(materialType);
+        if(resourcePrice >= 0) return resourcePrice;
         switch (materialType)
         {
             case CaelumConstants.MATERIAL_WOOD: return 2.0;
