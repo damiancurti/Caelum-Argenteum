@@ -10,7 +10,7 @@ interactions, lists contextual keys and displays combatant resources/attributes.
 Resources remain visible; each attribute requires strictly greater viewer
 Insight. Native tracing and a local Use-range line query preserve occlusion;
 no routine global actor scan is added. Saves reconstruct the transient cache.
-Evidence: assets/validation_577/RESULTS.md. Author check CA481-01 is pending.
+Evidence: assets/validation_577/RESULTS.md. Author check CA481-01 passed on 2026-10-22.
 #479 weapon/support migration remains a separate branch, test set and PR.
 
 ## 5.7.6 - Alchemy art stage (#471)

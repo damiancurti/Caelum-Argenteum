@@ -15,8 +15,13 @@ Final native checks: 41 assertions passed, including current/5.7.6 save reloads;
 36 selection assertions repeated after a fixture-only map guard. Eight captures
 were inspected. UI callback p99 was 16.9433 ms in the isolated capped fixture;
 PresentMon frame-presentation collection was unavailable (ETW access denied).
-CA481-01 remains pending and is deferred until the author returns, as requested;
-implementation checks are not author acceptance.
+CA481-01 (origin 5.7.7 / #481) passed on 2026-10-22. After returning, the author
+ran the prepared interactive fixture and confirmed: "La prueba que me diste
+quedó bien." The handoff used the validated full package (SHA-256
+7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27), with a visible
+instruction terminal. Removed only CA481-01 from pending_test.txt; the release
+version is unchanged. This is acceptance of the target-panel check, not a new
+frame-presentation or whole-map performance result.
 The concurrent #479 request and later approvals belong to its separate patch.
 
 ## 5.7.6 - Alchemy ingredient artwork (#471)

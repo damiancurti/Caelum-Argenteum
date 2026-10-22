@@ -9,7 +9,7 @@ centered above gameplay. Names and action hints reuse authoritative localized
 catalogues and current bindings; additional labels are bilingual. No sprite,
 model, texture or accepted #471 artwork changes. Layout constants are separate
 from selection logic. Visual/native evidence: assets/validation_577/RESULTS.md.
-Author check CA481-01 remains pending.
+Author check CA481-01 passed on 2026-10-22.
 
 ## 5.7.6 - Alchemy ingredient artwork (#471)
 

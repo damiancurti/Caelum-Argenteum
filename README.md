@@ -14,7 +14,7 @@ with current key bindings, and authoritative character resources. Attributes
 are revealed individually only below the viewer's Insight; resources remain
 visible. Native selection respects walls and includes actor/line interactions.
 Evidence: [target-panel checks](assets/validation_577/RESULTS.md).
-Author check CA481-01 is pending. Magic implement changes remain separate (#479).
+Author check CA481-01 passed on 2026-10-22. Magic implement changes remain separate (#479).
 
 V5.7.6 prepares Alchemy ingredient artwork (#471): 11 transparent icons and
 10 new 3D models, including regional saltpeter/sulfur deposit candidates. Iodine
