@@ -187,7 +187,10 @@ class CaelumEnvironmentProp : CaelumMovableProp
         // Migración: no inventar el tiempo ausente de una veta antigua.
         if (!ResourceClockInitialized)
         { ResourceClockInitialized = true; ResourceClockStamp = now; return; }
-        double elapsed = Max(0.0, now - ResourceClockStamp); ResourceClockStamp = now;
+        // Una observación anterior no puede rebobinar el tramo ya aplicado.
+        // Cargar/restaurar el reloj no vuelve a acreditar ese intervalo.
+        if(now <= ResourceClockStamp) return;
+        double elapsed = now - ResourceClockStamp; ResourceClockStamp = now;
         double capacity = GetResourceCapacityUnits();
         ResourceRemainingUnits = Min(capacity, ResourceRemainingUnits + elapsed * capacity
             * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY / CaelumWorldClock.TicsPerDay());
@@ -202,7 +205,12 @@ class CaelumEnvironmentProp : CaelumMovableProp
         if (now < 0 || rate <= 0 || ResourceRemainingUnits >= capacity) return;
         let agenda = CaelumScheduleState.Get(user, true);
         let entry = ResourceCalendarId > 0 ? agenda.FindId(ResourceCalendarId) : null;
-        double due = now + Ceil((capacity - ResourceRemainingUnits) / rate);
+        // La agenda usa fecha civil; la reserva usa tiempo transcurrido.
+        // Convertir sólo la espera, sin comparar sus orígenes diferentes.
+        let clock = CaelumWorldClock.Get(user);
+        double observed = double(clock.CompletedDays) * CaelumWorldClock.TicsPerDay() + clock.DayTics;
+        double wait = ResourceClockInitialized ? Max(0.0, ResourceClockStamp - observed) : 0.0;
+        double due = now + wait + Ceil((capacity - ResourceRemainingUnits) / rate);
         int day = int(Floor(due / CaelumWorldClock.TicsPerDay()));
         int tic = int(due - double(day) * CaelumWorldClock.TicsPerDay());
         if (!CaelumScheduleRules.ValidDate(day, tic)) return;
