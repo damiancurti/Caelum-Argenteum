@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.3** — 2026-10-22.
+Documentation version: **5.7.4** — 2026-10-22.
+
+## Alchemy station infrastructure (#470, 5.7.4)
+
+Adds the fixed Workbench-backed Alchemy station (#470), represented by an
+original 3D fermentation table and still. Approved positions are MAP01
+(1128,448,0), workshop group 2, connected through Ronnie's Forge, and MAP03
+(-656,1472,0), group 0, beside the Workbench. Collision is 60 x 60 x 72 units.
+Station ID 12 and editor ID 18013 append without changing existing IDs.
+A revision-1 map roster installs it once in fresh and previous saves, waiting
+if blocked; a removed installed station is not reissued. The coordinator is
+static so it also runs after loading pre-feature saved maps.
+Proximity traversal uses the native local blockmap, retaining 128-unit 3D links,
+room groups and transitive networks. No construction recipe or new recipe IDs
+are introduced. Concrete recipes and start/completion prerequisites remain
+owned by #407/#409/#471 through the existing coordinator; this patch supplies
+the shared Workbench-plus-Alchemy capability check.
+Validation status: PROJECT; actionable author check: pending_test.txt.
+Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
+issue branches, commits, tests and PRs.
 
 ## Source recovery (#406, 5.7.3)
 
@@ -160,10 +179,12 @@ or primer formulation is requested or recorded.
 ### Related approved boundaries for subsequent issues
 
 #470 is a fixed Workbench-backed Alchemy station with fermentation table/still
-at Ronnie's workshop and a MAP03 workshop; no construction recipe. Exact
-placement/footprint remains to review. #409 boiling removes biological
-contamination only; salt and chemicals persist. Heating time, fuel, loss and
-containers remain to author.
+at the approved MAP01/MAP03 positions above; no construction recipe. #409
+boiling removes biological contamination only; salt and chemicals persist.
+The author approved 60 seconds and 10 g mineral coal per litre (fuel rounded
+up to whole grams), the entire selected bottle/canteen, output at 100 C, and
+no water/vessel loss. Bottles and canteens also reject drinking above 85 C.
+Thermal implementation remains in its separate patch.
 
 #472 mate has 100/250/500 mL nominal capacity, respectively 20/50/100 g yerba
 and 60/150/300 mL useful water. Each hot use spends all water and one of twenty

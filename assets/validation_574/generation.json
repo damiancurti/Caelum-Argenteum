@@ -1,0 +1,19 @@
+{
+  "deterministic_runs": 2,
+  "outputs": {
+    "src/caelum/data/CaelumAlchemyData.zs": "2007599763e0f5796848be7f9370fe96e35abfada7dc17bd7ec9b4f1938fb80f",
+    "src/models/caelum/props/stations/ca_station_alchemy.obj": "2a89e1ab168fce6af3f90193b5db318fb0bab9e643f3c1d857274b2e65b4f979",
+    "src/sprites/CALCA0.png": "bc34ce9fce65f084597e4d04c6ad80dd43f3d6aaf7803fa48b823223f4ffe23c",
+    "assets/generators/alchemy_station_manifest.json": "935bda924571da9cbe06851975eabe16a92cedc285afccdb0bcc1eb7335516c8"
+  },
+  "model_extent_world_xyz_y_up": [
+    51,
+    72,
+    26.85
+  ],
+  "approved_footprint": [
+    60,
+    60
+  ],
+  "approved_height": 72
+}

@@ -292,3 +292,14 @@
 /assets/validation_554/** -text whitespace=cr-at-eol
 /assets/validation_554/evidence/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_554/evidence/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #470 generated data, owned art and native evidence byte hashes.
+/assets/validation_574/** -text whitespace=cr-at-eol
+/assets/generators/alchemy_station*.json text eol=lf
+/assets/generators/generate_alchemy*.py text eol=lf
+/src/models/caelum/props/stations/ca_station_alchemy.obj -text
+/src/caelum/data/CaelumAlchemyData.zs text eol=lf
+/src/caelum/crafting/CaelumAlchemyPlacement.zs text eol=lf
+/src/MAPINFO text eol=lf
+/src/caelum/world/CaelumPhysicalHazards.zs text eol=lf
+/src/caelum/world/CaelumSewerMaze.zs text eol=lf
