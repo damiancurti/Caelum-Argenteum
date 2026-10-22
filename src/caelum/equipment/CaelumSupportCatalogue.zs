@@ -1,4 +1,4 @@
-// #479: migraciÃ³n local al abrir una tienda; preserva stock y relojes de otros productos.
+// #479: migración local al abrir una tienda; preserva stock y relojes de otros productos.
 class CaelumSupportCatalogue : Object play
 {
     static bool Retired(CaelumShopProduct product)

@@ -857,7 +857,6 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
         choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_17"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_18"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_19"; closedialog = false; }
-        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_20"; closedialog = false; }
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
     }
     page { pagename = "loadout_magic_1"; userstring = "loadout_magic_1";
@@ -867,7 +866,6 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
         choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_22"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_23"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_24"; closedialog = false; }
-        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_25"; closedialog = false; }
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
     }
     page { pagename = "loadout_magic_2"; userstring = "loadout_magic_2";
@@ -877,7 +875,6 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
         choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_27"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_28"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_29"; closedialog = false; }
-        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_30"; closedialog = false; }
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
     }
     page { pagename = "loadout_magic_3"; userstring = "loadout_magic_3";
@@ -887,7 +884,6 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
         choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_32"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_33"; closedialog = false; }
         choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_34"; closedialog = false; }
-        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_35"; closedialog = false; }
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
     }
     page { pagename = "loadout_preview_0"; userstring = "loadout_preview_0";

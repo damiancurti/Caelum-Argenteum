@@ -59,7 +59,10 @@ $arguments += @('-config', "`"$config`"", '-savedir', "`"$work`"",
 if (!$Interactive) { $arguments += '-nomouse' }
 if ($LoadGame) { $arguments += @('-loadgame', "`"$LoadGame`"") }
 else { $arguments += @('+map', $StartMap) }
-$scriptPath = Join-Path $work "$Script.cfg"
+$sourceScript = Join-Path $work "$Script.cfg"
+$scriptPath = Join-Path $work "$Label-commands.cfg"
+$commands = [IO.File]::ReadAllText($sourceScript).Replace('screenshot art-', "screenshot $Label-art-")
+[IO.File]::WriteAllText($scriptPath, $commands, [Text.UTF8Encoding]::new($false))
 $arguments += @('+exec', "`"$scriptPath`"")
 $record = [ordered]@{
     label=$Label; runtime=$Runtime; started_utc=[DateTime]::UtcNow.ToString('o');
@@ -100,5 +103,5 @@ $record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$wo
 if ($record.exit_code -ne 0 -or $record.timed_out) { throw "Native run failed: $Label" }
 $log = Get-Content -LiteralPath "$work\$Label.txt"
 $log | Select-String 'CA479 (FAIL|RESULT|PERSIST|TIMING|PLACEMENT|ACCESS)|Script error|Error|Warning|VM execution aborted'
-if ($log | Select-String 'CA479 FAIL|Script error|VM execution aborted|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game') { throw "Native assertions, VM or save loading failed: $Label" }
+if ($log | Select-String 'CA479 FAIL|Script error|VM execution aborted|not flagged for use|Unknown (floor|ceiling|middle) texture|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game') { throw "Native assertions, VM or save loading failed: $Label" }
 if ($Checks -and !($log | Select-String 'CA479 RESULT' )) { throw "Expected native checks did not execute: $Label" }

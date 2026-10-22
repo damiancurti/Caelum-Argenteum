@@ -1,4 +1,90 @@
-# 5.7.8 / #479 - Support calculation foundation (partial)
+# 5.7.8 / #479 - Integrated support implements
+
+Status: ready for author review, not accepted. CA479-01 is outstanding in the
+root pending_test.txt. The author postponed manual tests/questions during the
+absence; the prepared launcher has not been opened for them.
+
+## Final evidence
+
+GZDoom 4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / Ryzen 9 5950X, 1280x720.
+Native processes ran sequentially, hidden, unpaused in the background, at 5%
+audio. `final_report.json` records package/source identity, deterministic fixture
+and art checks, exact launch/environment metadata and raw logs under native/.
+
+Full package SHA-256:
+`c63429a68820715d186bd9cecb0caf12022b0afdddc9de942f3986d6057d5fcd`.
+All 16,695 entries match src bytes. There are 176 PASS / 0 FAIL assertions on
+this package, with all eight native runs exiting normally:
+
+| Scope | PASS |
+| --- | ---: |
+| Gameplay, area/occlusion, team rules, health/damage/movement, prices, recipes, shops/libraries, profession starter mappings | 77 |
+| Native slot 0 and primary/secondary input, exact costs, no support charge | 14 |
+| Calculation model, curves, stacking, refresh, fraction/expiry and revision rules | 51 |
+| Real actor/inventory ticks | 4 |
+| Real receiver/source/active-effect save/load | 4 |
+| Earlier offensive item/Box/learning migration | 6 |
+| 18 type/tier gallery, repeated first selection and all icon/pose resolution | 20 |
+
+Two separate old-runtime checks establish the saved baseline and rollback with
+the retained foundation package (`bdff4ea858b89ccc080fedd76f69d5785167b05ddbbb11586bb8a6b2b006ad5b`).
+The original `ca479-legacy-v2.zds` retains offensive Quintessence for rollback;
+loading it with the new package retires that authorized test item while keeping
+old elemental IDs, tier, 1,234 wear, Box placement and learned recipe indices.
+Counts use emitted PASS lines; serialized cumulative counters are not new checks.
+
+The native gallery's 18 distinct captures were visually inspected. Full-resolution
+examples and the contact sheet are in visuals/. All models stay within 32 OBJ
+surface runs; the art manifest validates every input/output hash and two identical
+generation runs. Hands remain the existing appearance layers. Neither visual
+inspection by the agent nor asset loading establishes author art acceptance.
+
+## Corrections found during integration
+
+- Native primary input previously enumerated only the old magic types. Direct
+  effect tests passed but real support input failed. The shared magical type
+  classifier now routes primary casts; full-package controls validate the fix.
+- New frame states require Actor/Weapon/Overlay usage; long first-person PNG
+  names belong outside the sprite namespace. Persistent hand layers and the
+  shared grip align all six designs. Tier icon paths now resolve T1/T2/T3.
+- The first legacy fixture omitted the pre-existing durability revision, causing
+  the old runtime itself to multiply test wear by ten. Baseline inspection
+  established this before changing the fixture. No production migration was
+  weakened to satisfy the assertion; the corrected seed/current/rollback pass.
+- Early control cost assertions observed natural Anima recovery and character
+  profile recalculation. The private fixture now holds its authored test stats
+  and suspends only natural Anima recovery; production recovery is unchanged.
+
+Representative failed diagnostics are retained under diagnostics/. Earlier
+foundation/overlay results below remain historical evidence, not the final PK3.
+
+## Reproduction and limits
+
+Run `python validate_project.py`, rebuild with `build_dev.ps1 -Destination
+build/issue479/current/caelum_argenteum_dev.pk3`, then `python
+assets/validation_578/prepare.py`. Keep the earlier foundation package locally
+under build/issue479/foundation with the same PK3 basename; use run_native.ps1
+with `-Runtime foundation -Checks -Addon legacy-fixture.pk3 -Script legacy-save`
+to prepare the earlier save. `run_suite.ps1 -Prefix <fresh-label>` runs the eight
+current cases sequentially. Use fresh labels to retain logs; the final collector
+uses the recorded `complete-*` labels. Run legacy-rollback against the original
+save and foundation runtime, then collect_final.py. No engine, IWAD, PK3 or saved
+fixture is distributed. The historical collect.py belongs to the foundation
+checkpoint and must be reproduced at that earlier source revision.
+
+For author use after return: launch_author.ps1 defaults to combat; `-Mode gallery`
+opens manual F1 cycling. Launch it with PowerShell -NoExit so the terminal remains
+available. Test instructions and outstanding ordinary campaign acquisition/
+crafting checks are in pending_test.txt. Native effect/catalogue assertions do
+not claim an end-to-end author UI test. This patch adds local cast queries and
+four-slot receiver state; no routine global per-tic scan is introduced. No new
+frame-presentation or large-map performance claim is made.
+
+## Historical foundation checkpoint
+
+The following records the earlier partial commit, before runtime integration.
+Its open decisions were subsequently resolved in SYSTEMS and the issue.
+
 
 This is an implementation checkpoint, not delivery of playable support weapons.
 It packages the approved role/cost/radius data and a serializable per-effect-class

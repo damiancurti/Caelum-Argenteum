@@ -1,0 +1,32 @@
+CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
+Status: outstanding; author explicitly postponed manual tests/questions while away.
+Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in
+build/issue479. No other GZDoom process. Run assets/validation_578/launch_author.ps1
+with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File after the author returns.
+
+1. Combat mode (default): slot 0 must cycle only Book, Censer, Statuette and
+   Effigy. F1 also cycles Fire Scepter/Orb. Confirm names, inventory icons,
+   world/held models and the character's hand; no missing or floating artwork.
+2. F2 resets resources and effects. Book/Effigy primary harm the enemy; Censer/
+   Statuette primary heal the ally. Benefits' secondary affects self; curses'
+   secondary does nothing. R must not charge support. Base T1 costs are 70
+   Anima for Book/Censer and 100 for Statuette/Effigy at fixture Eloquence 0.
+   Natural Anima recovery is disabled only in this private scene; F2 refills it.
+3. F3 toggles Charisma/Empathy 100 (initial) and 0. At 100 each application adds
+   4%/s for 4 s; at 0, 1%/s for 1 s. Repeated casts stack and refresh duration.
+   Statuette/Effigy modify movement and damage while active, then restore them.
+   F4 toggles the enemy's Quintessence seal: curse intensity retains 85%, with
+   unchanged duration. Friendly targets must never take curse damage.
+4. Close the combat scene and launch with -Mode gallery. F1 cycles all 18
+   type/tier views. Check world models, first-person placement and silver/gold
+   details. Confirm Scepter homing and Orb explosive attacks in combat mode.
+5. In an ordinary fresh campaign, confirm Arcanist receives the offensive
+   Scepter and Priest the offensive Orb. In MAP03 inspect magic-shop support
+   stock and library recipes; buy/learn/craft one support implement through
+   the ordinary station network. Confirm bilingual names and recipe inputs.
+6. Save/load during an active support effect; it must resume without duplicate
+   damage/healing or persistent speed changes after expiry. Old elemental
+   Book/Statuette IDs, tier and wear must survive as Scepter/Orb; old offensive
+   Quintessence items are intentionally retired, with the original save retained.
+Expected: the approved roles, formulas, acquisition, visuals and migration work
+without engine/VM errors. Agent checks do not count as author acceptance.

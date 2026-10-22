@@ -7833,6 +7833,7 @@ class CaelumPlayer : DoomPlayer
 
     double MagicalCriticalChanceFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         if (DerivedStats == null || WeaponModel == null) return 0;
         return CaelumAttackRules.CriticalChance(WeaponModel.GetBaseCriticalChanceFor(weaponType),
             DerivedStats.MagicalCriticalChance, CrouchCriticalChanceMultiplier,

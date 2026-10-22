@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-153 - Declare overlay state use and keep shared hand layers stable
+
+Status/evidence: ENGINE-VERIFIED and agent visual inspection; #479, 2026-10-22,
+GZDoom 4.14.2 / Windows 11 / Vulkan / 1280x720. Evidence:
+assets/validation_578/RESULTS.md, diagnostics/gallery-01.txt and
+visuals/complete-gallery-contact.png. Author check CA479-01 remains pending.
+
+A new Actor frame bank used by weapon PSprites must declare
+`States(Actor,Weapon,Overlay)`; otherwise native loading reports states not
+flagged for weapon/overlay use even when their textures exist. Descriptive PNG
+filenames under sprites also enter the native frame-name parser: keep these
+first-person projections under graphics and reference them through TEXTURES.
+
+When reusing appearance hands, retain the hand overlay across frames. Clearing
+and recreating it each update lost the shared placement and left a floating hand.
+Use the same grip in the projected texture offsets, pose pivot and layer
+placement; review native captures for every type/tier. The final gallery resolves
+all 18 icon/pose variants and shows distinct native frames. Asset-resolution
+assertions alone do not prove grip alignment or author acceptance.
+
 ## CA-KP-152 - Bound OBJ surface runs when baking material shading
 
 Status/evidence: CODE-VERIFIED and isolated native reproduction; #471,

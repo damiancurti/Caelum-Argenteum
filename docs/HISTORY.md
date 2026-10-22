@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support implements (#479, in progress)
+## 5.7.8 - Support implements (#479, awaiting author acceptance)
 
 2026-10-22: the initial foundation added the approved M2/F calculation and
 serializable fractional state. Its 56 native model/save assertions passed;
@@ -16,9 +16,25 @@ explicitly allowed discarding offensive Quintessence test items; no save files
 are deleted. Other offensive Books/Statuettes retain numeric identities as
 Scepters/Orbs. Runtime integration adds selectors, local targeting, health and
 secondary modifiers, append-only recipes and additive shop migration. New native
-evidence: 62 gameplay and four real-tic assertions pass. Artwork and final
-save/end-to-end validation are still in progress. The author again postponed
-questions/manual tests while away; there is no #479 author acceptance.
+evidence initially covered 62 gameplay and four real-tic assertions. The complete
+package now passes 176 assertions: 77 gameplay/catalogue/onboarding, 14 native
+control, 51 model, four live-tic, four active-effect save/load, six older-item
+migration and 20 gallery checks. Two additional old-runtime checks establish
+the baseline and rollback. All 16,695 package entries match src bytes; exact
+hashes and launch records are in assets/validation_578/final_report.json.
+
+Six owned procedural designs supply 18 world models, icons and first-person
+views, with deterministic generation and separate character hand layers. Native
+input testing caught an old primary-dispatch switch that omitted support; the
+shared classifier now routes it. Presentation testing corrected overlay state
+flags, grip offsets and tier icon resolution. A legacy fixture initially allowed
+an unrelated old durability migration; the corrected baseline/rollback verifies
+1,234 wear unchanged, without a production workaround. Tutorial text follows
+Scepter/Orb names; all ten professions retain offensive starting equipment.
+
+CA479-01 is now the outstanding author check. The author postponed questions
+and manual tests while away; no #479 acceptance is claimed. The launcher is
+prepared, with no visible author session opened during the absence.
 #481 acceptance remains recorded in its own 5.7.7 entry and branch.
 
 ## 5.7.7 - Aimed-target information (#481)

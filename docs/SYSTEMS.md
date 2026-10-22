@@ -57,10 +57,14 @@ Prices derive from current recursive manufacturing values and commerce margins:
 T1/M purchases cost Book 741,094, Censer 668,335 and Statuette/Effigy 971,250
 copper each. New component recipes are 173-175; support recipes are 169-172.
 
-Runtime integration is implemented and has isolated native evidence. Artwork,
-older-save and end-to-end coverage remain in progress; author tests and
-questions are postponed during the author's absence. Historical offensive
-Quintessence descriptions below are superseded by this contract.
+Runtime and owned artwork are integrated. Native primary dispatch uses the
+shared magical classifier; support exposes no projectile spread or critical
+chance. The full package passed 176 assertions plus two baseline/rollback checks,
+including native input, old item migration and active-effect saves. Arcanist and
+Priest keep offensive Scepter/Orb starters. NPC numeric aliases preserve their
+existing offensive actions; no new NPC support AI is introduced. CA479-01 is
+pending, with manual checks/questions postponed during the author's absence.
+Historical offensive Quintessence descriptions below are superseded here.
 
 ## Aimed-target panel (#481, 5.7.7)
 

@@ -42,7 +42,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 Source SHA-256 fingerprints:
 
 - `dialogues/npc/unknown_voice.usdf`: `d42e187f60d26c424dbf0b654bf2099958d9a1fa7a9e53ce47b4fe66ffe83957`
-- `dialogues/npc/palomo.usdf`: `9836e5f9872c7f76d52372b098e488d095d17bed3a57937f375ae446ad11ea3f`
+- `dialogues/npc/palomo.usdf`: `ea8455379f855bd8eec28e02c8d844882e59e7af3daaf93a52cff77b588fb178`
 - `dialogues/npc/argento.usdf`: `01cf73641f01d1590417250eca88c60c09f84b7b48a7b773ce66c6cae67a71dc`
 - `dialogues/npc/rulo.usdf`: `6bb83911ca35ba3c85198560cc13ea60e509079ba23cf1246ae1b5573a861dd0`
 - `dialogues/npc/ronnie.usdf`: `c5cf18f9541d3b57bd4bdd05e4c961a8f8f07d9055b9aba609e45c4ca57e80c7`

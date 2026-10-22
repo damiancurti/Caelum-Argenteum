@@ -12,9 +12,10 @@ it, then rebuild with `run_dev.bat` as described below.
 V5.7.8 integrates the approved support implements (#479): native selectors,
 local targeting, health/damage/movement effects, fabrication and merchant
 catalogues. Quintessence is support only; Scepter/Orb preserve the old offensive
-roles for the four elements. Artwork and final save/end-to-end checks remain
-in progress. [Evidence](assets/validation_578/RESULTS.md). Author tests and
-questions are postponed during the author's absence.
+roles for the four elements. Owned models/icons/first-person views are included.
+The complete package passed 176 native assertions, plus two old-runtime baseline/
+rollback checks. [Evidence](assets/validation_578/RESULTS.md). CA479-01 awaits
+manual acceptance; author tests/questions remain postponed during the absence.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

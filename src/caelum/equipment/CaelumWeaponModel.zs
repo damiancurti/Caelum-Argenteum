@@ -226,6 +226,7 @@ class CaelumWeaponModel : Object
 
     double GetBaseCriticalChanceFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_BELL: return 5.0;
@@ -240,6 +241,7 @@ class CaelumWeaponModel : Object
     double GetMaximumSpreadFor(int weaponType,
         double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
         if (catalogueWeapon >= 0)
             return CaelumWeaponCatalogue.GetMaximumSpread(catalogueWeapon,Tier,lucidity);

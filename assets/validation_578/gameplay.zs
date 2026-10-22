@@ -95,6 +95,9 @@ class CA479Gameplay : EventHandler
         Check(affected==1 && CaelumSupportMagic.Status(enemy)!=null && CaelumSupportMagic.Status(ally)==null,"local area filters teams");
         Clear(enemy);enemy.SetOrigin((320,0,0),false);
         Check(CaelumSupportMagic.ApplyArea(user,(64,0,32),0,128)==0,"area range excludes distant actor");
+        enemy.SetOrigin((280,0,0),false);
+        Check(CaelumSupportMagic.InArea(enemy,(230,0,32),128) && CaelumSupportMagic.ApplyArea(user,(230,0,32),0,128)==0,"area cannot cross a native blocking wall");
+        Check(!CaelumSupportMagic.Release(user,CaelumConstants.WEAPON_TYPE_EFFIGY,false),"aim cannot acquire target beyond native wall");
         enemy.SetOrigin((64,0,0),false);user.Pitch=VectorAngle(192,user.ViewHeight-32);
         Check(CaelumSupportMagic.Release(user,CaelumConstants.WEAPON_TYPE_EFFIGY,false),"native aim applies single curse");
         Check(!CaelumSupportMagic.Release(user,CaelumConstants.WEAPON_TYPE_EFFIGY,true),"curse secondary inert");
@@ -147,7 +150,39 @@ class CA479Gameplay : EventHandler
         }
         CaelumSupportCatalogue.Ensure(vendor,user);
         Check(vendor.Products.Size()==products && vendor.WalletCopper==42 && preserved!=null && preserved.Stock.Amount==3,"old shop appends new products preserving existing stock and money");
-        vendor.Destroy();enemy.Destroy();ally.Destroy();
+        vendor.Destroy();
+        let library=CaelumCityMerchant(Actor.Spawn("CaelumCityMerchant",(192,192,0),NO_REPLACE));
+        library.Category=CaelumShopCatalogue.LIBRARY;library.EnsureStock(user);
+        int added=0;bool validStock=true;
+        for(int i=0;i<library.Products.Size();i++)
+        {
+            let p=library.Products[i];
+            if(p.Kind==CaelumShopProduct.BOOK && p.Recipe>=169 && p.Recipe<=175)
+            {added++;validStock=validStock && p.Stock!=null && p.Stock.Amount==10;}
+        }
+        Check(added==21 && validStock,"library offers seven new recipes at three tiers with ten copies");
+        products=library.Products.Size();library.SupportCatalogueRevision=0;library.WalletCopper=42;
+        for(int i=library.Products.Size()-1;i>=0;i--)
+        {
+            let p=library.Products[i];
+            if(p.Kind==CaelumShopProduct.BOOK && p.Recipe>=169 && p.Recipe<=175)
+            {if(p.Stock!=null)p.Stock.Destroy();library.Products.Delete(i);}
+        }
+        CaelumSupportCatalogue.Ensure(library,user);CaelumSupportCatalogue.Ensure(library,user);
+        Check(library.Products.Size()==products && library.WalletCopper==42,"old library appends new recipes once without resetting money");
+        library.Destroy();
+        for(int profession=0;profession<=CaelumConstants.PROFESSION_ARCANIST;profession++)
+        {
+            int option=CaelumOnboardingCatalogue.StarterOption(profession);
+            int type=CaelumOnboardingCatalogue.Weapon(profession);
+            Check(option>=0 && CaelumMainM00StarterRules.GetWeaponType(option)==type
+                && !CaelumSupportImplementData.IsSupport(type)
+                && !CaelumSupportImplementData.RetiredRecipe(CaelumMainM00StarterRules.GetRecipe(option)),
+                String.Format("profession %d retains viable offensive starter",profession));
+        }
+        Check(CaelumOnboardingCatalogue.Weapon(CaelumConstants.PROFESSION_ARCANIST)==18
+            && CaelumOnboardingCatalogue.Weapon(CaelumConstants.PROFESSION_PRIEST)==19,"Arcanist and Priest retain inherited offensive identities");
+        enemy.Destroy();ally.Destroy();
         Console.Printf("CA479 RESULT gameplay passed=%d failed=%d",Passed,Failed);
     }
     override void NetworkProcess(ConsoleEvent event)

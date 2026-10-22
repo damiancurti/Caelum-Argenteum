@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-**5.7.8/#479:** support-runtime;validation_578;art/final-QA-pending.
+**5.7.8/#479:**support+art;validation_578;176+2PASS;CA479-01pending.
 **5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.
 **5.7.6/#471:**ingredient-art;validation_576;CA471-ART-01:accepted2026-10-22;recipes/economy unresolved.
 **5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:accepted2026-10-22.

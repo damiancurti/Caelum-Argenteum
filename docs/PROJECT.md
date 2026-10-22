@@ -2,16 +2,18 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support implements (#479, integration in progress)
+## 5.7.8 - Support implements (#479, awaiting author review)
 
 The approved support roles now connect to native selectors, local targeting,
 health/damage/movement, recipes, merchant catalogues and item migration.
 Quintessence is support only; Scepter/Orb inherit the old offensive roles for
 the four elements with stable item IDs. SYSTEMS records the complete approved
 stack, mitigation, fabrication and acquisition contract. Isolated integration
-checks pass; artwork, legacy-save coverage and final delivery remain underway.
-See assets/validation_578/RESULTS.md. Author tests and questions are postponed
-during the author's absence; this is not manual acceptance or issue closure.
+checks pass: 176 full-package assertions and two baseline/rollback checks.
+Owned world models, icons and first-person views cover six types at three tiers.
+Old elemental identities/learning survive; active effects resume after saves.
+See assets/validation_578/RESULTS.md and pending_test.txt (CA479-01). Author
+checks/questions are postponed during the absence; no acceptance is inferred.
 
 ## 5.7.7 - Centered target information (#481)
 
