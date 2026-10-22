@@ -77,14 +77,14 @@
     {"key": "yeast", "source": null, "consumer": "Fermentation", "issue": 471},
     {"key": "sugar", "source": null, "consumer": "Energy drink, alternative to honey", "issue": 471},
     {"key": "gunpowder", "source": null, "consumer": "Abstract compatible carbine/shotgun kit recipes; kits then produce ten cartridges", "issue": 471},
-    {"key": "brown_algae", "source": "Patagonian coast; MAP03 imports", "consumer": "Abstract iodine processing at Workbench + Alchemy", "issue": 407},
-    {"key": "iodine", "source": "brown_algae at Workbench + Alchemy", "consumer": null, "issue": 407}
+    {"key": "dried_kelp", "source": "Dried Macrocystis pyrifera from the Patagonian coast; MAP03 provisions imports", "consumer": "Abstract iodine processing at Workbench + Alchemy", "issue": 407},
+    {"key": "iodine", "source": "dried_kelp at Workbench + Alchemy", "consumer": null, "issue": 407}
   ],
   "unresolved": {
     "source_placement": "Resolved for #405: approved positions/counts in land_resources.json. Existing nodes remain unchanged.",
     "tutorial_policy": "Resolved: new plants/hives are decorative in MAP01 and harvestable in MAP03. Preserve the tutorial gold-only rule and all existing quotas.",
     "imports": "Land prices/stock/categories/renewal resolved in land_resources.json (#405); marine/processing imports belong to #407/#471.",
-    "marine": "Specific algae species, traded form, processing quantities/work/yield/fuel/knowledge and iodine consumer remain open in #407.",
+    "marine": "Dried cachiyuyo, imports and abstract iodine processing are resolved in marine_resources.json (#407), using existing learning/library rules. The downstream iodine consumer remains open.",
     "processing": "Exact inputs, outputs, work/time, fuel, prices, learning, containers and renewal implications remain open in #471.",
     "regional_minerals": "No new geological depth, rarity, skill or region restrictions are approved for existing veins.",
     "cultivation": "No farming simulation, bee combat, wax output or extra herb effects are approved."
