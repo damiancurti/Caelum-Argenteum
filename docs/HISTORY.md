@@ -15,8 +15,15 @@ in assets/validation_576/RESULTS.md: static validation, two deterministic
 regenerations, 24 native PASS and 33 model views. Material inventory rows now
 display their existing icons. The author reported a native zero-size texture
 crash during delivery; grouping shaded OBJ faces into at most 20 surfaces
-resolved the reproduced 32-slot overflow risk (CA-KP-152). CA471-ART-01 awaits
-author acceptance.
+resolved the reproduced 32-slot overflow risk (CA-KP-152).
+
+Author acceptance, 2026-10-22: CA471-ART-01 (originating release 5.7.6,
+issue #471) passed in full. The author confirmed the corrected gallery test
+passed, without qualifications. This accepts the eleven ingredient/deposit
+representations, matching icons and real iodine inventory check. Its entry
+is removed from pending_test.txt; the tracked queue is now empty. The runtime
+and release number remain unchanged. Recipe, economy, catalogue and cartridge
+station-migration work under #471 remains open.
 
 ## 5.7.5 - Marine imports and iodine (#407)
 

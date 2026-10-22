@@ -58,7 +58,15 @@ production presentation defect caught and fixed before delivery.
 
 ## Author review and remaining work
 
-CA471-ART-01 is pending. `manual.ps1` opens the gallery and prints Spanish
+The author passed CA471-ART-01 (originating release 5.7.6, issue #471) in full
+on 2026-10-22 after testing the corrected gallery, without qualifications.
+This accepts all eleven ingredient/deposit representations, matching icons
+and the real iodine inventory check. The entry is removed from pending_test.txt.
+The pending author status in `report.json` is the preserved evidence-collection
+snapshot; this later confirmation supersedes it. Runtime assets are unchanged
+by the acceptance update, so the final native evidence remains applicable.
+
+`manual.ps1` opens the gallery and prints Spanish
 controls; leave the terminal open with PowerShell `-NoExit`. F1/F3 select all
 11 models, F2 shows four sides, F4 opens the real iodine inventory, Q closes it.
 Artwork acceptance does not approve unfinished #471 recipes, new prices/stock,

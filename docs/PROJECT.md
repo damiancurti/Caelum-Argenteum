@@ -12,7 +12,7 @@ This is a visual delivery within #471, not completion of its recipe, economy,
 learning or station-migration scope. #409 boiling and #472 mate remain separate.
 Static validation and 24 native checks pass; 33 model views were inspected.
 Native and static evidence: `assets/validation_576/RESULTS.md`.
-Author visual check CA471-ART-01 is outstanding.
+Author visual check CA471-ART-01 passed in full on 2026-10-22.
 
 ## 5.7.5 - Marine imports and iodine (#407)
 

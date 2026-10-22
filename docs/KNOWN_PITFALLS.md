@@ -8,7 +8,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: CODE-VERIFIED and isolated native reproduction; #471,
 2026-10-22, GZDoom 4.14.2 / Windows 11 / Vulkan. Author visual acceptance
-CA471-ART-01 remains pending. Evidence: assets/validation_576/RESULTS.md and
+CA471-ART-01 passed on 2026-10-22. Evidence: assets/validation_576/RESULTS.md and
 failure-diagnosis.json; deterministic generator and per-model surface counts
 in assets/generators/alchemy_ingredients_manifest.json.
 

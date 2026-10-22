@@ -9,7 +9,7 @@ intermediate, alcohol, yeast, abstract gunpowder and two regional deposits.
 Iodine uses its own sprite; the accepted model is preserved. Other assets are
 staged with an isolated native gallery, without invented gameplay values.
 Static validation and 24 native checks pass; 33 model views inspected.
-Acceptance pending: CA471-ART-01. Evidence: assets/validation_576/RESULTS.md.
+CA471-ART-01 passed author review on 2026-10-22. Evidence: assets/validation_576/RESULTS.md.
 
 Remaining #471 work: approved quantities, yields, work/fuel, knowledge routes,
 container reuse, prices/stock, new material catalogue and recipe integration;

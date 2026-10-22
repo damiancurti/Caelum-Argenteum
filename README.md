@@ -13,7 +13,7 @@ V5.7.6 prepares Alchemy ingredient artwork (#471): 11 transparent icons and
 10 new 3D models, including regional saltpeter/sulfur deposit candidates. Iodine
 now uses its own icon from the accepted model. Other assets await approved
 gameplay data; deposits are not placed in MAP03. Static validation and 24 native checks pass; 33 model views were inspected.
-Author check CA471-ART-01 remains pending in [art evidence](assets/validation_576/RESULTS.md).
+The author passed CA471-ART-01 on 2026-10-22. [Art evidence](assets/validation_576/RESULTS.md).
 
 V5.7.5 adds dried cachiyuyo imports in MAP03 and the abstract iodine recipe
 at Workbench + Alchemy (#407), with owned 3D material models and additive save

@@ -1,7 +1,0 @@
-CA471-ART-01 | Origin: 5.7.6 / #471 | Alchemy ingredient artwork
-Prerequisites: final #471 package and isolated gallery; run assets/validation_576/manual.ps1 after closing other GZDoom sessions.
-1. F1/F3: inspect all 11 ingredients/deposits and each matching icon.
-2. F2: view all four sides; confirm full geometry, textures, silhouettes and material identity.
-3. F4: open the real inventory; confirm iodine uses the dedicated bottle icon. Q closes it.
-Expected: all art is readable and acceptable; iodine model unchanged, no opal placeholder. Saltpeter/sulfur and charcoal/mineral coal are distinguishable. No new recipe, price, stock or campaign deposit is claimed.
-Report pass/fail and the specific asset/view needing changes.

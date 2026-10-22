@@ -1,6 +1,6 @@
 {
   "issue": 471,
-  "status": "Candidate artwork; author visual acceptance pending",
+  "status": "Artwork accepted by the author: CA471-ART-01, 5.7.6 / #471, 2026-10-22; gameplay integration remains separate",
   "brief": {
     "reference": "docs/SPRITE_ART_DIRECTION.md; docs/ASSETS.md",
     "purpose": "World ingredient models, transparent inventory sprites and regional deposit candidates",

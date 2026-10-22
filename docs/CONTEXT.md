@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.6** — 2026-10-22.
 
-**5.7.6/#471:**ingredient-art;validation_576;CA471-ART-01 pending;recipes/economy unresolved.
+**5.7.6/#471:**ingredient-art;validation_576;CA471-ART-01:accepted2026-10-22;recipes/economy unresolved.
 **5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:accepted2026-10-22.
 **5.7.4/#470:**Alchemy;validation_574;CA470-01:accepted2026-10-22.
 **5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.

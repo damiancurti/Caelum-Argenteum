@@ -31,8 +31,8 @@ No new catalogue IDs or campaign sources are installed. This follows the
 owned procedural model/icon workflow used for the accepted Alchemy station;
 no external artwork, newly painted raster source or Doom assets are introduced.
 
-Evidence: `assets/validation_576/RESULTS.md`. Author visual acceptance remains
-pending as CA471-ART-01; static integrity is not aesthetic acceptance.
+Evidence: `assets/validation_576/RESULTS.md`. The author passed visual check
+CA471-ART-01 in full on 2026-10-22, after the corrected gallery handoff.
 
 ## 5.7.5 - Owned marine material models (#407)
 
