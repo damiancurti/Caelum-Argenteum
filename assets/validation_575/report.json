@@ -1,0 +1,3290 @@
+{
+  "issue": 407,
+  "version": "5.7.5",
+  "selected_current_runs": 22,
+  "current_passed": 263,
+  "baseline_runs": 3,
+  "baseline_passed": 19,
+  "failed": 0,
+  "package_sha256": "a316970fbb773925472db86f09859c4e7aa3f3c52f181938540276bc858d6763",
+  "source_matching_members": 16464,
+  "tested_functional_package_sha256": "127c58b6c12aa7735db21a03c331c73953f6801e0d456071723309426170be34",
+  "delivery_delta": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "delivery_delta_validation": "Only two diagnostic release strings changed; exact byte replacement checked for both members. All other 16,462 members are identical. Contract and physical Use repeated on the shipped package.",
+  "original_saves": {
+    "ca407-legacy.zds": "e796632a15236eca4311c40c8e31c9d1b9e2a356344a996d11b5eec78e40853d",
+    "ca407-legacy-task.zds": "a88d25318a3b0603b34ab52b80f79088466f273e1a534dd71200a666d38f33ed"
+  },
+  "performance": {
+    "sample": "two new 3D material drops in the isolated room, visible window, 1280x720 Vulkan, 60-FPS cap",
+    "render_callbacks": 899,
+    "mean_ms": 16.662843047830922,
+    "p95_ms": 16.7797,
+    "p99_ms": 16.9824,
+    "worst_ms": 17.1389,
+    "render_callback_fps": 60.01376818646651,
+    "simulation_tics_per_second": 35.004936629529745,
+    "presentation": "Not measured: PresentMon access was denied in #470 on this same environment. Render callbacks are not application presentation, monitor refresh or GPU timing."
+  },
+  "local_captures": {
+    "marine-front.png": "a5bc632ac81e26b3a34cb963e596fddab3166659bf6f1011a58a7d1c2c24c9bc",
+    "marine-side.png": "0de1ee7f9b9fb80982493b6a62f1bd4b8334c8bb072c397a89b266eedd2fb4a0",
+    "iodine-menu.png": "26933860e0c7505d4f0e64df150b79a9617402fb9f1f2d6a6b7142c599142633"
+  },
+  "determinism": {
+    "iterations": 2,
+    "hashes": {
+      "src/caelum/data/CaelumMarineData.zs": "2f1fd1cc73f6be08e08b2109854e27c953ee864437d13c9b2dc67eb4be6fd6c9",
+      "src/LANGUAGE": "bd10515e9c13e9de9ba0bfc7aec9fa32fb6b8a5c9df166803d4bf71cd30eab79",
+      "src/caelum/data/marine_resources.modeldef": "074d62dd2c222b733c2e6e0f5417e6132be63d6b4aababcc6b85093152c8fac0",
+      "src/caelum/data/marine_resources.textures": "f5ef1789ddf2287ea8cd9d3f4d1fefad567559eb8038d357f90637396ac4e716",
+      "assets/generators/marine_models.json": "d36751329d3b4607810d97429642e0337e97a42149f317cbdcad9697495ccc50",
+      "src/models/caelum/world/marine_resources/dried_kelp.obj": "d4117d800f5c6f361762e7ad719326e52d97e73197cbfa739cbefe1351f717f1",
+      "src/models/caelum/world/marine_resources/iodine.obj": "b3d25cb891e337ba60e57a9450032fc55e4889ffc95c1c08dd9a6e0d2ea54b0e"
+    },
+    "models": [
+      {
+        "file": "dried_kelp.obj",
+        "vertices": 1170,
+        "faces": 316
+      },
+      {
+        "file": "iodine.obj",
+        "vertices": 564,
+        "faces": 169
+      }
+    ]
+  },
+  "static": {
+    "version": "5.7.5",
+    "documents": 11,
+    "audio_files": 111,
+    "station_models": 13,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2495,
+    "errors": []
+  },
+  "author_acceptance": "CA407-01 pending; previous issue acceptance does not accept this patch.",
+  "runs": [
+    {
+      "label": "delivery-author-smoke",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:39:15.2592265Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "A316970FBB773925472DB86F09859C4E7AA3F3C52F181938540276BC858D6763",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\delivery-author-smoke.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\delivery-author-smoke.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\author-smoke.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_author; wait 10; +use; wait 2; -use; wait 35; netevent ca407_use; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/iodine-menu.png\"; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 38360,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:39:26.2901070Z",
+      "selected": true,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "916ff527cd35a08e56b9dfe92e1ed1458ea0761ef76d8f2704323b74a23cc54b"
+    },
+    {
+      "label": "delivery-contract",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:39:05.1159452Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "A316970FBB773925472DB86F09859C4E7AA3F3C52F181938540276BC858D6763",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\delivery-contract.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\delivery-contract.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\contract.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_contract; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 47076,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:39:14.9898705Z",
+      "selected": true,
+      "passed": 41,
+      "failed": 0,
+      "log_sha256": "2cf2d643f9b3ff1574253da118c69c1da726f28e7e71882aa01dd0607f830f87"
+    },
+    {
+      "label": "final-author-load",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:35:36.3786766Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-author-check.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\author-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_alchemy; wait 5; netevent ca407_use; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 44972,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:35:46.9674110Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "ce02581b65341df0e4e085952f410e777c5ddfa8336638877ba12d5d693b3fae"
+    },
+    {
+      "label": "final-author-save",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:35:26.5914728Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\author-save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_author; netevent ca407_shop; wait 5; netevent ca407_alchemy; wait 5; netevent ca407_use; save ca407-author-check; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 22248,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:35:36.3592110Z",
+      "selected": true,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "12e54927bde568a240f98e1ae16686b00744215a77b50ba94e1e43a8f271e200"
+    },
+    {
+      "label": "final-author-smoke",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:35:15.8084269Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-smoke.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-author-smoke.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\author-smoke.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_author; wait 10; +use; wait 2; -use; wait 35; netevent ca407_use; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/iodine-menu.png\"; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 45192,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:35:26.5734562Z",
+      "selected": true,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "33006831e8fc641a386aa1df31de71791e06b09abe36a26d06c4de4145e3ef82"
+    },
+    {
+      "label": "final-campaign",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:34:52.8693613Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-campaign.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-campaign.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "MAP03",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\campaign.cfg\""
+      ],
+      "command_script": "wait 105; netevent ca407_campaign; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 20584,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:35:04.2922444Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "1a90f0a5f8dedbf4355dadcd9376304f199b31f050cfba95721fe79bfd56f90c"
+    },
+    {
+      "label": "final-contract",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:32:38.6812091Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-contract.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-contract.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\contract.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_contract; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 39644,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:32:48.3606700Z",
+      "selected": true,
+      "passed": 41,
+      "failed": 0,
+      "log_sha256": "d64cd04149ee385ca2e846cf4918704af8e9ddadb47b74f705ff0a9b305cef18"
+    },
+    {
+      "label": "final-craft",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:32:57.9119311Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-craft.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-craft.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\craft.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_craft; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 17952,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:07.3757371Z",
+      "selected": true,
+      "passed": 17,
+      "failed": 0,
+      "log_sha256": "9251920876a691408f63292fde517d5747097e267eaf2b1e17a13f25d51db1a2"
+    },
+    {
+      "label": "final-gallery",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:35:04.3102608Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-gallery.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-gallery.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\gallery.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_gallery; wait 35; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/marine-front.png\"; netevent ca407_side; wait 35; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/marine-side.png\"; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34984,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:35:15.7855685Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "4a788f99cb52aa82f0e531a93aabf663ee5712df0dcce7ef46c5c383c386aa4f"
+    },
+    {
+      "label": "final-legacy-task-load",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:47.6152586Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-legacy-task-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-legacy-task-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-legacy-task.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-task-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca376_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 9692,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:58.0713202Z",
+      "selected": true,
+      "passed": 7,
+      "failed": 0,
+      "log_sha256": "0c8bdf165a1b8ca521879d03f2c43cd107f031ff00a0bef9443d02626af61817"
+    },
+    {
+      "label": "final-live",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:35:46.9855486Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-live.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-live.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\live.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_live; wait 2140; netevent ca407_live_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 500,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:36:57.5587540Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "1b44e98b0db6a07911345a0d76db38eff70525b854316cacfba901893eb9f80d"
+    },
+    {
+      "label": "final-load",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:34:07.6974077Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-current.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 28684,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:34:18.2541251Z",
+      "selected": true,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "7ecee076332693ffd6db1acd0c6a69d9cf6865d3c104bf95adf7d6824c23831a"
+    },
+    {
+      "label": "final-performance",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:36:57.5791924Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-performance.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-performance.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\performance.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_perf; wait 560; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 18064,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:37:22.9465393Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "ca60acea6281d33a6d1ddb3a6241324368eebcbc809bdf6e0b12ab70e3d367b4"
+    },
+    {
+      "label": "final-regression",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:16.8884919Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-regression.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-regression.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\regression.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca376_suite; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 38132,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:26.4677903Z",
+      "selected": true,
+      "passed": 91,
+      "failed": 0,
+      "log_sha256": "9d5d766b1c0dff9ded822d1e04167e2be0783c68ef12b63293867df25e9b19b1"
+    },
+    {
+      "label": "final-save",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:58.0893450Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_save; wait 2; save ca407-current; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34916,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:34:07.6783903Z",
+      "selected": true,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "18d12918f1f22f30ee718a88a63e79cd5cc48248644fb09ed378df4a1f1e1020"
+    },
+    {
+      "label": "final-storage",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:07.3941665Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-storage.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-storage.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\storage.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_storage; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 6724,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:16.8656021Z",
+      "selected": true,
+      "passed": 6,
+      "failed": 0,
+      "log_sha256": "1503c89b908342c93b74b58c5f5acaf3c307d4c042d7e89d21781dda6f916f4f"
+    },
+    {
+      "label": "final-task-load",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:34:42.3868435Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-task-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-task-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-task.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\task-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_task_load; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 9136,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:34:52.8489201Z",
+      "selected": true,
+      "passed": 3,
+      "failed": 0,
+      "log_sha256": "43d5c108a34f90c333c0d2da88fbe268d22406949f19f3b1c99a3124466fa025"
+    },
+    {
+      "label": "final-task-save",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:34:32.8167858Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-task-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-task-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\task-save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_task_save; wait 2; save ca407-task; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 18456,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:34:42.3646871Z",
+      "selected": true,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "d2815324bc148307ba5f1a625f49499f762c56976a0ab916e9298e4ae8b0a89e"
+    },
+    {
+      "label": "final-trade",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:32:48.4035444Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-trade.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-trade.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\trade.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_trade; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 14064,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:32:57.8919125Z",
+      "selected": true,
+      "passed": 18,
+      "failed": 0,
+      "log_sha256": "90924ed3fc463d531f807d5c6f951ac4a86fcb0038f653cf10d7b50cae9425a4"
+    },
+    {
+      "label": "final-travel",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:34:18.2714012Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-travel.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-travel.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-current.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\travel.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_verify; changemap CARESR2; wait 70; netevent ca407_inventory; changemap CARESRC; wait 70; netevent ca407_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 20512,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:34:32.7964827Z",
+      "selected": true,
+      "passed": 5,
+      "failed": 0,
+      "log_sha256": "5d360bf72eba64dfd0dd25381827bbf80713ad31db0792dd0e160f418f131ce4"
+    },
+    {
+      "label": "final-upgrade-load",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:37.0692503Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-upgrade-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-upgrade-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-upgraded.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_upgrade; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 39308,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:47.5855699Z",
+      "selected": true,
+      "passed": 9,
+      "failed": 0,
+      "log_sha256": "d772adee17205323384633e8f261a295f708305f110b09c60cbb7efdb7868027"
+    },
+    {
+      "label": "final-upgrade",
+      "runtime": "final",
+      "started_utc": "2026-10-22T05:33:26.5003787Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "127C58B6C12AA7735DB21A03C331C73953F6801E0D456071723309426170BE34",
+      "addon_sha256": "AC4F80724D1AA6FD70F2D96E1103D2BE3EF7E38479F1C9CDA59345B880377C11",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-upgrade.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\final-upgrade.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-legacy.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_upgrade; save ca407-upgraded; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34228,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:33:37.0503903Z",
+      "selected": true,
+      "passed": 9,
+      "failed": 0,
+      "log_sha256": "ee2c3a5c4ba3eae812e8f735dde94d6123a43ae11579d10b606dcb4d988f5e36"
+    },
+    {
+      "label": "initial-contract",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:20:40.6781114Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "87AAECAF3EFF30A5122118FA932B5B9F97FFD6AEB6281F011E130F5DC0D0C267",
+      "addon_sha256": "8663112180A73AF4EB92A95F9D61BB348951AC237AFEA11DC6BF234D18E72E50",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-contract.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-contract.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\contract.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_contract; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 33100,
+      "exit_code": -1,
+      "finished_utc": "2026-10-22T05:21:04.6475169Z",
+      "selected": false,
+      "passed": 0,
+      "failed": 0,
+      "log_sha256": "997d4c4d6fd1f24d0827374a18f77cbd38efe63d799384669d5b143a7a9adfa7"
+    },
+    {
+      "label": "initial-craft",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:21:54.5590561Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "87AAECAF3EFF30A5122118FA932B5B9F97FFD6AEB6281F011E130F5DC0D0C267",
+      "addon_sha256": "D939E468392087F0A227EB100F864FF72BCE6A00CAFF0ACACE9BF537FD697EAC",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-craft.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-craft.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\craft.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_craft; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 15384,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:22:04.1738464Z",
+      "selected": false,
+      "passed": 17,
+      "failed": 0,
+      "log_sha256": "c240f2100e18b706bba3558e7c82e0388d1b56c12019d9891ede11fa9e5b56d4"
+    },
+    {
+      "label": "initial-storage",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:23:26.3353649Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "87AAECAF3EFF30A5122118FA932B5B9F97FFD6AEB6281F011E130F5DC0D0C267",
+      "addon_sha256": "D939E468392087F0A227EB100F864FF72BCE6A00CAFF0ACACE9BF537FD697EAC",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-storage.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial-storage.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\storage.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_storage; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 36120,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:23:35.9738617Z",
+      "selected": false,
+      "passed": 2,
+      "failed": 4,
+      "log_sha256": "863b968cb7035f0779a1a7cd22ff08ecc91f858469bad68e14f3754a335a408f"
+    },
+    {
+      "label": "initial2-contract",
+      "runtime": "current",
+      "started_utc": "2026-10-22T05:21:04.9481427Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "87AAECAF3EFF30A5122118FA932B5B9F97FFD6AEB6281F011E130F5DC0D0C267",
+      "addon_sha256": "DC1CA1FE3E5C3290B68CB4374AE6417DE517D7DC7E30FA9613F4CA0270D6ED86",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\current\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial2-contract.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\initial2-contract.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\contract.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_contract; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 14700,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:21:14.6839589Z",
+      "selected": false,
+      "passed": 14,
+      "failed": 27,
+      "log_sha256": "a599d8cf14ee9f4383d1926799b66c75c447c029d1e641b64ea1f78136d66597"
+    },
+    {
+      "label": "legacy-save",
+      "runtime": "baseline",
+      "started_utc": "2026-10-22T05:22:50.3747747Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "2A23C2B418598EC352F027AC1CFB0D08A963E85BDD5D023773413BFAF4B1FD77",
+      "addon_sha256": "273347232DAEBE2D5FF69A4FD54D8FF94D9137EC1E73D509B25CEF11A28A806A",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\baseline\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_legacy_save; wait 2; save ca407-legacy; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 45492,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:23:00.7150632Z",
+      "selected": true,
+      "passed": 5,
+      "failed": 0,
+      "log_sha256": "9a4baabd55ae07ee7ce468baa8d615c2542e7ad78b2c53c87b059fa6b5e7b4d4"
+    },
+    {
+      "label": "legacy-task-save",
+      "runtime": "baseline",
+      "started_utc": "2026-10-22T05:23:36.2898274Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "2A23C2B418598EC352F027AC1CFB0D08A963E85BDD5D023773413BFAF4B1FD77",
+      "addon_sha256": "273347232DAEBE2D5FF69A4FD54D8FF94D9137EC1E73D509B25CEF11A28A806A",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\baseline\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-task-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-task-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-task-save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca376_save; wait 2; save ca407-legacy-task; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34828,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:23:46.0244552Z",
+      "selected": true,
+      "passed": 9,
+      "failed": 0,
+      "log_sha256": "194a7cfa562f581ea5892b0a40d7a62e8be73759277b29ce5da0fd74745dc1e7"
+    },
+    {
+      "label": "revised-author-smoke",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:31:28.7613322Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "6888226451679683385879F59BC76933488EC4FFEB685230A9F7841D64291D9B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-author-smoke.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-author-smoke.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\author-smoke.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_author; wait 10; +use; wait 2; -use; wait 35; netevent ca407_use; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/iodine-menu.png\"; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 38120,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:31:39.9120059Z",
+      "selected": false,
+      "passed": 1,
+      "failed": 1,
+      "log_sha256": "5642c350670705d308cb99275f2e1b161b5b3fccc0c67c859bd49bd6194477cc"
+    },
+    {
+      "label": "revised-campaign",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:29:02.1060746Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "6888226451679683385879F59BC76933488EC4FFEB685230A9F7841D64291D9B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-campaign.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-campaign.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "MAP03",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\campaign.cfg\""
+      ],
+      "command_script": "wait 105; netevent ca407_campaign; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 29320,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:29:13.7118656Z",
+      "selected": false,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "58f0d5ff8692990d18e4fb41e8d79b5aedec05ed98e5cec72d7d20804bfc496b"
+    },
+    {
+      "label": "revised-contract",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:24:20.7108370Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-contract.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-contract.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\contract.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_contract; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 32628,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:24:30.4782967Z",
+      "selected": false,
+      "passed": 41,
+      "failed": 0,
+      "log_sha256": "78092b74d06e44d3919675a6d25fae81788caf3d5aa92b07adc80b1e5a4fa8c8"
+    },
+    {
+      "label": "revised-craft",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:24:40.0873887Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-craft.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-craft.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\craft.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_craft; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 31636,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:24:49.5566474Z",
+      "selected": false,
+      "passed": 17,
+      "failed": 0,
+      "log_sha256": "5378fb34f7aa60e305336e6eccd003654129e0b9ec3948e1e2a4c74700f39774"
+    },
+    {
+      "label": "revised-gallery",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:28:50.1440972Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "6888226451679683385879F59BC76933488EC4FFEB685230A9F7841D64291D9B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-gallery.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-gallery.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\gallery.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_gallery; wait 35; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/marine-front.png\"; netevent ca407_side; wait 35; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue407-work/build/issue407/marine-side.png\"; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 43368,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:29:01.8311768Z",
+      "selected": false,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "88101338c7050a04c85cc5caa214720cfe464ae0e9a6439c68de5225a7f70284"
+    },
+    {
+      "label": "revised-legacy-task-load",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:25:42.6737738Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-legacy-task-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-legacy-task-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-legacy-task.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-task-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca376_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 17372,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:25:54.9561139Z",
+      "selected": false,
+      "passed": 7,
+      "failed": 0,
+      "log_sha256": "6b8f811b29d1c3dcf3e161bbfe1cd1124dabaaf24f2157c8037036510e35e53a"
+    },
+    {
+      "label": "revised-load",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:26:04.5984430Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-current.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 37456,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:26:15.0575098Z",
+      "selected": false,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "1b4b22bf0b77e3c1c838a5d5aad5009c62293428272709c8002127fbdbe1a1c9"
+    },
+    {
+      "label": "revised-regression",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:24:59.0266266Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-regression.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-regression.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\regression.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca376_suite; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 9148,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:25:08.4872105Z",
+      "selected": false,
+      "passed": 91,
+      "failed": 0,
+      "log_sha256": "8375ce9e44ee8673af4eb954e58c4d343fee74308835b799597a7fe9a835cf74"
+    },
+    {
+      "label": "revised-save",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:25:54.9800145Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_save; wait 2; save ca407-current; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 33584,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:26:04.5757003Z",
+      "selected": false,
+      "passed": 2,
+      "failed": 0,
+      "log_sha256": "2de53b431ed7bfa2c78c6874a0e089c087e5c610f1b857a56f19c48348782ca3"
+    },
+    {
+      "label": "revised-storage",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:24:49.5750361Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-storage.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-storage.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\storage.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_storage; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 22512,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:24:59.0035622Z",
+      "selected": false,
+      "passed": 6,
+      "failed": 0,
+      "log_sha256": "12795a8de2fad78d0613e4f66bf6fc073dfae807fd90057e6c634428ced40b33"
+    },
+    {
+      "label": "revised-task-load",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:26:39.2189783Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-task-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-task-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-task.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\task-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_task_load; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 33080,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:26:49.6413307Z",
+      "selected": false,
+      "passed": 3,
+      "failed": 0,
+      "log_sha256": "73efecef8ce5cf9fba7ce7137ee029d620dee77273996a282860cddad643d06a"
+    },
+    {
+      "label": "revised-task-save",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:26:29.6628339Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-task-save.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-task-save.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\task-save.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_task_save; wait 2; save ca407-task; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 19792,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:26:39.1891007Z",
+      "selected": false,
+      "passed": 1,
+      "failed": 0,
+      "log_sha256": "506fe6a0af9e8073069473d4f70baf6499f23c72c960ab50e1f99ee48c059d2d"
+    },
+    {
+      "label": "revised-trade",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:24:30.5241643Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-trade.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-trade.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "+map",
+        "CARESRC",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\trade.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_trade; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34744,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:24:40.0679039Z",
+      "selected": false,
+      "passed": 18,
+      "failed": 0,
+      "log_sha256": "717f7042d54baf952e20ea73a9373fb5da3580f481e82581daf76d429392daf3"
+    },
+    {
+      "label": "revised-travel",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:26:15.0758827Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-travel.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-travel.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-current.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\travel.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_verify; changemap CARESR2; wait 70; netevent ca407_inventory; changemap CARESRC; wait 70; netevent ca407_verify; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 46676,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:26:29.6407410Z",
+      "selected": false,
+      "passed": 5,
+      "failed": 0,
+      "log_sha256": "fd8e9d80b2ac9b3267f85e24f0fa2fad58c6925b392ad2554b091b2d0b81cefb"
+    },
+    {
+      "label": "revised-upgrade-load",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:25:32.1878743Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-upgrade-load.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-upgrade-load.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-upgraded.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade-load.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_upgrade; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 22416,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:25:42.6557577Z",
+      "selected": false,
+      "passed": 9,
+      "failed": 0,
+      "log_sha256": "7aae3176c74c5e5ad94542fd2942e400de5053002e827f6d5ccaeadc9f84faa3"
+    },
+    {
+      "label": "revised-upgrade",
+      "runtime": "revised",
+      "started_utc": "2026-10-22T05:25:21.4970121Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "806D644B9E588FD501C26CC24A95C4FDE5056702D1E091E1C05424F9EB5903AC",
+      "addon_sha256": "F8648CCF8C30636E5F62ADBA5CF98A6FE0C5084ED9266E80659A0C6742D7487B",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade/legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-upgrade.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\revised-upgrade.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-legacy.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\upgrade.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_upgrade; save ca407-upgraded; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 14204,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:25:32.1438345Z",
+      "selected": false,
+      "passed": 9,
+      "failed": 0,
+      "log_sha256": "085d721688dbde0a40967bb5a8cf3fde2881cdfe888319c840041237d804ff8c"
+    },
+    {
+      "label": "rollback",
+      "runtime": "baseline",
+      "started_utc": "2026-10-22T05:23:46.2873837Z",
+      "visible_requested": true,
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "2A23C2B418598EC352F027AC1CFB0D08A963E85BDD5D023773413BFAF4B1FD77",
+      "addon_sha256": "273347232DAEBE2D5FF69A4FD54D8FF94D9137EC1E73D509B25CEF11A28A806A",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+      "arguments": [
+        "-noautoload",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\baseline\\caelum_argenteum_dev.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\legacy-checks.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\rollback.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "407",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\rollback.txt\"",
+        "+con_notifytime",
+        "0",
+        "-nomouse",
+        "-loadgame",
+        "\"ca407-legacy.zds\"",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue407-work\\build\\issue407\\rollback.cfg\""
+      ],
+      "command_script": "wait 70; netevent ca407_rollback; wait 5; quit\n",
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200"
+      },
+      "pid": 34056,
+      "exit_code": 0,
+      "finished_utc": "2026-10-22T05:23:56.9731572Z",
+      "selected": true,
+      "passed": 5,
+      "failed": 0,
+      "log_sha256": "b4ba3b4f5cc9e2a5f616d053a79134b9806a05f51c5cde183efccf6df06e5e5e"
+    }
+  ]
+}

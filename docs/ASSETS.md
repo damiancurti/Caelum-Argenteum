@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.4** — 2026-10-22.
+Documentation version: **5.7.5** — 2026-10-22.
+
+## 5.7.5 - Owned marine material models (#407)
+
+generate_marine_models.py builds two original volumetric OBJ meshes: a tied
+bundle of dried cachiyuyo blades and an iodine container with a violet marker.
+Only existing owned wood, paper, iron and gem textures are reused; inventory
+thumbnails reuse owned plant-fiber and raw-opal art. marine_models.json records
+provenance and mesh counts. No external art or development IWAD is distributed.
+M087/M088 are registered in the material actor's visual registry and bind through
+marine_resources.modeldef; model scale compensates the actor's 0.25 scale.
+The artwork is representation only and introduces no vessel mass or benefits.
+Byte determinism, visible front/side review and native evidence: validation_575.
 
 ## 5.7.4 - Owned Alchemy station (#470)
 

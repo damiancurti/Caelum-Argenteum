@@ -311,3 +311,4 @@
 /src/models/caelum/world/marine_resources/*.obj -text
 /src/caelum/data/CaelumMarineData.zs text eol=lf
 /src/caelum/data/marine_resources.* text eol=lf
+/src/caelum/equipment/CaelumMarineImports.zs text eol=lf
