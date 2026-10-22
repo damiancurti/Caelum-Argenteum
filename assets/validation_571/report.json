@@ -1,0 +1,111 @@
+{
+  "issue": 404,
+  "version": "5.7.1",
+  "status": "pass",
+  "existing_mineral_families": [
+    {
+      "actor": "CaelumVeinIron",
+      "material": "MATERIAL_RAW_IRON",
+      "material_id": 64,
+      "hardness": 5.5,
+      "abundance": 0.6,
+      "copper_per_gram": 7.0
+    },
+    {
+      "actor": "CaelumVeinCoal",
+      "material": "MATERIAL_COAL",
+      "material_id": 61,
+      "hardness": 2.5,
+      "abundance": 0.6,
+      "copper_per_gram": 5.0
+    },
+    {
+      "actor": "CaelumVeinCopper",
+      "material": "MATERIAL_RAW_COPPER",
+      "material_id": 62,
+      "hardness": 3.5,
+      "abundance": 0.5,
+      "copper_per_gram": 5.0
+    },
+    {
+      "actor": "CaelumVeinTin",
+      "material": "MATERIAL_RAW_TIN",
+      "material_id": 63,
+      "hardness": 6.5,
+      "abundance": 0.4,
+      "copper_per_gram": 5.0
+    },
+    {
+      "actor": "CaelumVeinSilver",
+      "material": "MATERIAL_RAW_SILVER",
+      "material_id": 65,
+      "hardness": 3.0,
+      "abundance": 0.2,
+      "copper_per_gram": 100.0
+    },
+    {
+      "actor": "CaelumVeinGold",
+      "material": "MATERIAL_RAW_GOLD",
+      "material_id": 66,
+      "hardness": 3.0,
+      "abundance": 0.1,
+      "copper_per_gram": 1000.0
+    },
+    {
+      "actor": "CaelumVeinOpal",
+      "material": "MATERIAL_RAW_OPAL",
+      "material_id": 58,
+      "hardness": 6.0,
+      "abundance": 0.075,
+      "copper_per_gram": 500.0
+    },
+    {
+      "actor": "CaelumVeinTopaz",
+      "material": "MATERIAL_RAW_TOPAZ",
+      "material_id": 57,
+      "hardness": 8.0,
+      "abundance": 0.05,
+      "copper_per_gram": 500.0
+    },
+    {
+      "actor": "CaelumVeinSapphire",
+      "material": "MATERIAL_RAW_SAPPHIRE",
+      "material_id": 55,
+      "hardness": 9.0,
+      "abundance": 0.04,
+      "copper_per_gram": 500.0
+    },
+    {
+      "actor": "CaelumVeinRuby",
+      "material": "MATERIAL_RAW_RUBY",
+      "material_id": 54,
+      "hardness": 9.0,
+      "abundance": 0.03,
+      "copper_per_gram": 500.0
+    },
+    {
+      "actor": "CaelumVeinEmerald",
+      "material": "MATERIAL_RAW_EMERALD",
+      "material_id": 56,
+      "hardness": 7.5,
+      "abundance": 0.02,
+      "copper_per_gram": 500.0
+    }
+  ],
+  "approved_source_rows": 7,
+  "processing_or_marine_rows": 9,
+  "gameplay_changed": false,
+  "native_test": "Not required for data/documentation-only scope",
+  "source_hashes": {
+    "assets/generators/generate_environment_models.py": "8e9f1b3158cc583a0c67ef30649f4e29bb269205338a08960f76bb4917719e25",
+    "assets/generators/generate_mineral_veins.py": "92861f40af969596fa11b8a1d93c1ad8186d1fa09f1c2b5961dfdad874c3922e",
+    "assets/generators/resource_catalog.json": "4f1bfcbc19c8674ea8ee4a6fc3468fcf378f7f382a2e014f59c168429eb10395",
+    "docs/SYSTEMS.md": "8d4887d6f5fe8772435643e522f6f45cdc20a64535fa2d80a4c0205edeca3ccf",
+    "src/caelum/core/CaelumConstants.zs": "85878bc116b2e17d05e0f271eb246665ca6458cbb30286b0cb3e6327bb684497",
+    "src/caelum/equipment/CaelumEconomy.zs": "424c8b509e9f0703ee4c58e62a92a783e230a17e33e5bb5c9b7e1f46ff17d63b",
+    "src/caelum/quests/CaelumMainM00RonnieTrial.zs": "f3f4c013ed02dcb186c0aae0794b666f043afe92c4d7d897fe34c4cbb62f7dcd",
+    "src/caelum/quests/CaelumMainM00StarterRules.zs": "09e081d630b3ed695bd8bb28a3d40629daa3ada251b50de0ac7d4ab81fa4fe33",
+    "src/caelum/world/CaelumEnvironmentProps.zs": "c1962d52c6ef3a86193b8a34d0a47e281a4ed2b42f75bd55eeee8f0ecff4f514",
+    "src/caelum/world/CaelumMineralVeins.zs": "3c5bc1602cfdef2b7b7af167a185da888e5ab6bae26c2cf3311b7710ecbd64b5"
+  }
+}

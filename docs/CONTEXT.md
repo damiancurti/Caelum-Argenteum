@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.0** — 2026-10-21.
+Documentation version: **5.7.1** — 2026-10-21.
+
+**5.7.1/#404:**resource-data;validation_571;MAP01-decoration/MAP03-harvest;integration-pending.
 
 **5.7.0/#408:** water quality; validation_570. CA408-01 pending.
 

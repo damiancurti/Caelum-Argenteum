@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.0.** Obtain and update the complete repository, validate
+**Current release: 5.7.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.7.1 records the reviewed regional resource contract (#404), including
+existing sources, approved plant/hive reserves and separate implementation
+gates. New MAP01 plants/hives are decorative; collection belongs in MAP03.
+This data patch changes no gameplay. [Resource audit](assets/validation_571/RESULTS.md).
 
 V5.7.0 implements persistent water quality (#408). Bottles and canteens retain
 contamination when mixed; unsafe water cannot be consumed through drinking,

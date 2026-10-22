@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.0** — 2026-10-21.
+Documentation version: **5.7.1** — 2026-10-21.
+
+## 5.7.1 - Reviewed regional resource data (#404)
+
+The existing-source audit and author-approved first MAP01/MAP03 resource
+contract are recorded in SYSTEMS and assets/generators/resource_catalog.json.
+Seven useful-source reserves/actions, regions and 0.1%-daily recovery are
+approved; new MAP01 plants/hives are decorative, with collection in MAP03.
+Remote plants and Patagonian brown algae use MAP03 imports. Algae -> iodine
+is approved as abstract Alchemy processing. Exact placements and remaining
+recipe/economy values stay explicit gates in #405/#407/#471/#472.
+No gameplay or save-schema change; assets/validation_571 records the audit.
 
 ## 5.7.0 - Water quality foundation (#408)
 

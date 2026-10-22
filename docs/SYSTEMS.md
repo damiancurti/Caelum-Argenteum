@@ -1,6 +1,162 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.0** — 2026-10-21.
+Documentation version: **5.7.1** — 2026-10-21.
+
+## Regional resource contract (#404, 5.7.1)
+
+This is the reviewed V5.7 data contract, not delivery of the subsequent source,
+recipe or merchant integrations. Author decisions were approved on 2026-10-21.
+`assets/generators/resource_catalog.json` stores the new authored data and
+references the existing authorities; missing values remain explicit, never
+silently defaulted. #405 owns land integration/placements; #406 owns renewal
+verification; #407 owns marine imports/iodine; #471 owns processing recipes.
+
+### Existing sources and consumers: preserve these values
+
+The unit is 1 g (`MATERIAL_UNIT_WEIGHT = 0.001 kg`). All eleven existing mineral
+families have three owned 3D variants. They require piercing damage; the
+accepted Pickaxe mining multiplier is 100. Their capacity is the mapper's
+positive args[4] in kg, otherwise actor mass times abundance. These are current
+game data, not newly inferred geological claims. No numeric depth, regional
+rarity or skill gate is implemented for these families; this patch adds none.
+
+| Material ID | Constant suffix | Hardness | Abundance | Copper/g |
+| ---: | --- | ---: | ---: | ---: |
+| 64 | RAW_IRON | 5.5 | 0.6 | 7 |
+| 61 | COAL | 2.5 | 0.6 | 5 |
+| 62 | RAW_COPPER | 3.5 | 0.5 | 5 |
+| 63 | RAW_TIN | 6.5 | 0.4 | 5 |
+| 65 | RAW_SILVER | 3 | 0.2 | 100 |
+| 66 | RAW_GOLD | 3 | 0.1 | 1000 |
+| 58 | RAW_OPAL | 6 | 0.075 | 500 |
+| 57 | RAW_TOPAZ | 8 | 0.05 | 500 |
+| 55 | RAW_SAPPHIRE | 9 | 0.04 | 500 |
+| 54 | RAW_RUBY | 9 | 0.03 | 500 |
+| 56 | RAW_EMERALD | 7.5 | 0.02 | 500 |
+
+Raw metal consumers are existing smelting/alloy/component recipes; raw gems
+feed existing gem/component recipes. Coal retains ID 61 and its existing
+processing roles. Charcoal is a distinct future wood-derived ingredient.
+Mineral data remains authored in `generate_mineral_veins.py`, not copied into
+a competing runtime table by #404. Prices remain the economy's accepted
+anchors; hardness and abundance do not recalculate them.
+
+Existing resource trees yield wood (ID 42, 2 copper/g), hardness 2.5, abundance
+1, slashing damage, Pickaxe chopping multiplier 10. Capacity uses the same
+args[4]/mass rule. Their 21 base species retain the generator's desert, jungle,
+tundra, mountain, plains, coast and city biome groupings. This is an art/source
+catalogue, not authorization to place every species in MAP01 or MAP03.
+`CaelumFiberBush` yields plant fiber (ID 74, 3 copper/g), inherits hardness 2.5
+and abundance 1, and has 10 kg capacity without a mapper override. It is a
+billboard; the existing resource trees and veins use owned 3D models. Ordinary
+movable rocks are not mineral sources. Mansion scenery trees/shrubs are
+decorative Actors, not resource nodes.
+
+Extraction releases `strikePower * (1 - hardness/10) * abundance`, with the
+existing Pickaxe factor, bounded by remaining reserve and tutorial allowance.
+Fractional grams persist; only whole grams spawn. Failed spawning does not
+deduct material. Exhausted renewable sources remain present; explicitly finite
+sources do not regenerate. Current saved capacity/remaining fraction/calendar
+ownership is reused, not reset by a new catalogue.
+
+Current recovery is 0.1% of capacity per game day, capped at capacity. An
+extraction updates one calendar entry; the agenda reports recovery, while the
+source owns the material. First observation of an older source initializes its
+clock without inventing absent years. #406 must verify equivalent elapsed-time
+results and idempotence. Off-map world expansion remains V5.8.
+
+MAP01 currently permits only Ronnie's trial gold extraction. The author
+explicitly chose **decoration only for the new MAP01 plants/hives**; collect
+their useful resources in MAP03. Existing gold and tutorial quotas, finite
+delivery counters, other resource restrictions and scenery stay intact.
+Source recovery cannot replenish tutorial issuance or vendor stock. The #385
+merchant renewal rules remain a separate authority.
+
+### Newly approved sources: runtime integration remains #405/#406
+
+Reserves below measure useful material, not whole plant/collision mass. Plants
+use hardness 2.5, abundance 1 and slashing, with no new skill gate. Hive
+interaction takes at most 50 g; no bee combat or wax is included. Every new
+source uses the approved 0.1%-per-day recovery. Import-only source profiles
+do not authorize local wild plants. Farming is outside this scope.
+
+| Source key | Useful reserve (g) | Region and first-slice access | Action | Consumer |
+| --- | ---: | --- | --- | --- |
+| `yerba_mate` | 250 | Litoral; MAP03 import | slashing | Energy drink and reusable mate |
+| `marcela` | 50 | Pampas; MAP03 harvest, MAP01 decoration | slashing | Existing medikit ingredient; no independent medicinal effect |
+| `irupe_flower` | 10 | Litoral; MAP03 import | slashing | Alternative flower for the existing fictional Anima potion |
+| `cypella_flower` | 10 | Pampas; MAP03 harvest, MAP01 decoration | slashing | Alternative flower for the existing fictional Anima potion |
+| `sugarcane` | 5000 | Northwest; MAP03 import | slashing | Molasses, fermented intermediate, alcohol chain |
+| `cotton` | 250 | Northeast; MAP03 import | slashing | Existing fabric processing and new medikit recipe |
+| `honey` | 500 | Pampas; MAP03 harvest, MAP01 decoration | interaction; up to 50 g/use | Alternative sweetener for the energy drink; no wax or bee combat |
+
+Cotton reuses material ID 72 (4 copper/g) and existing fabric processing; no
+duplicate cotton identity is permitted. Marcela is Achyrocline satureioides;
+the alternative Anima flowers are Victoria cruziana (irupé) and Cypella
+herbertii (lirio del bajo). Their Anima role is fictional. Botanical selection
+references are retained in the JSON; they do not establish gameplay rarity,
+yield or medicinal effects. Yerba mate is Ilex paraguariensis. No cultivar or
+additional medical effect is implied for sugarcane, cotton or honey.
+
+Exact coordinates and source counts remain an author-reviewed #405 table.
+Counts control gameplay rarity; the description "rare Anima flowers" does not
+create an unapproved probability or a claim of botanical scarcity. Existing
+vein coordinates and underground access remain as authored. New plant/hive
+profiles are surface sources; no invented numerical depth modifier is added.
+
+### Marine and processing audit: approved chains, unresolved numbers
+
+No algae or iodine material/source identity exists in the current runtime.
+The author approved brown algae imported from the Patagonian coast through
+MAP03, then abstract iodine processing at Workbench + Alchemy (#407).
+No coastal campaign source is authorized by the old TCOAST test map. Species,
+traded form, processing yield/work/fuel/learning, price/stock and iodine's
+consumer remain open; no medical/crafting effect is inferred.
+
+| Resource/product | Approved source or chain | Consumer / owner issue | Still unresolved |
+| --- | --- | --- | --- |
+| Charcoal | Wood processing; distinct from mineral coal | Fuel roles to author; #471 | Amounts, yield, work, fuel role, price |
+| Molasses | Sugarcane processing | Fermentation; #471 | Amounts, yield, work, price |
+| Fermented intermediate | Molasses + yeast + water + elapsed time | Distillation; #471 | Amounts, duration, yield |
+| Alcohol | Fermented intermediate + fuel | Existing medikit; #471 | Amounts, fuel, work, yield, containers |
+| Yeast | Acquisition not yet authored | Fermentation; #471 | Acquisition, price/stock, quantity |
+| Sugar | Acquisition/processing not yet authored | Alternative energy-drink sweetener; #471 | Acquisition, amount, price/stock |
+| Gunpowder | Abstract game ingredient; acquisition pending | Existing compatible kits, then ten cartridges; #471 | Other kit inputs, quantities, price/stock |
+| Brown algae | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Species/form, lot, price/stock, recipe |
+| Iodine | Brown algae at Workbench + Alchemy | Consumer not yet authored; #407 | Yield and purpose; no inferred benefits |
+
+Existing medikit/energy-drink/Anima identities, dose sizes, effects and prices
+remain unchanged. Medikit ingredients are cotton + alcohol + marcela; energy
+drink uses potable water + yerba + honey or sugar; Anima potion uses potable
+water + either approved flower. #471 must author quantities, work, containers,
+efficiency, recipe learning, stock and price implications before implementation.
+Existing sealed kits (IDs 79/80) remain compatible; the approved chain is
+gunpowder -> compatible kits -> ten cartridges at Alchemy. No real propellant
+or primer formulation is requested or recorded.
+
+### Related approved boundaries for subsequent issues
+
+#470 is a fixed Workbench-backed Alchemy station with fermentation table/still
+at Ronnie's workshop and a MAP03 workshop; no construction recipe. Exact
+placement/footprint remains to review. #409 boiling removes biological
+contamination only; salt and chemicals persist. Heating time, fuel, loss and
+containers remain to author.
+
+#472 mate has 100/250/500 mL nominal capacity, respectively 20/50/100 g yerba
+and 60/150/300 mL useful water. Each hot use spends all water and one of twenty
+cebados. Water refill never resets the counter; washed yerba is discarded
+without recovered materials and replaced by a new load. Potable water can
+come from any bottle/canteen; drinking needs no station. At 60-85 C it grants
+ordinary hydration plus one tenth of the nominal hydration percentage of
+maximum Air, Health and Anima, including when Thirst is full. Below 60 C it
+only hydrates and spends no cebado; above 85 C drinking is blocked until cool.
+No optional herb effects are yet approved. Thermal coefficients, vessel
+mass/construction/prices/recipes and cooling still belong to #472; the approved
+6 mm canteen leather wall does not silently revise its provisional 100 g mass.
+
+This patch changes no gameplay, map, material ID or save schema. Evidence is
+`assets/validation_571/RESULTS.md`; native tests are required when these rows
+are integrated in their owning issues, not claimed here.
 
 ## Water quality and native containers (#408, 5.7.0)
 
