@@ -303,3 +303,11 @@
 /src/MAPINFO text eol=lf
 /src/caelum/world/CaelumPhysicalHazards.zs text eol=lf
 /src/caelum/world/CaelumSewerMaze.zs text eol=lf
+
+# Preserve #407 generated geometry, data and native evidence fingerprints.
+/assets/validation_575/** -text whitespace=cr-at-eol
+/assets/generators/marine*.json text eol=lf
+/assets/generators/generate_marine*.py text eol=lf
+/src/models/caelum/world/marine_resources/*.obj -text
+/src/caelum/data/CaelumMarineData.zs text eol=lf
+/src/caelum/data/marine_resources.* text eol=lf

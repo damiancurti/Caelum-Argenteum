@@ -1,0 +1,19 @@
+// Geometría propia #407; cada material se representa en 3D.
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/marine_resources"
+    Model 0 "dried_kelp.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M087 A 0 0
+}
+Model CaelumMaterialPickup
+{
+    Path "models/caelum/world/marine_resources"
+    Model 0 "iodine.obj"
+    Scale 4 4 4
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex M088 A 0 0
+}
