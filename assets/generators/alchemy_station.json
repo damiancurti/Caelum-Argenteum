@@ -1,0 +1,15 @@
+{
+  "issue": 470,
+  "revision": 1,
+  "approved_date": "2026-10-22",
+  "actor": "CaelumAlchemyStation",
+  "sprite": "CALC",
+  "footprint": [60, 60],
+  "height": 72,
+  "placements": [
+    {"map": "MAP01", "position": [1128, 448, 0], "group": 2, "angle": 270},
+    {"map": "MAP03", "position": [-656, 1472, 0], "group": 0, "angle": 0}
+  ],
+  "labels": {"en": "Alchemy", "es": "Alquimia"},
+  "provenance": "Original procedural geometry for Caelum Argenteum; reuses the project's original station material textures. No external assets."
+}
