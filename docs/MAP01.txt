@@ -8,7 +8,7 @@ Approved placement: (1128,448,0), workshop group 2, footprint 60 x 60 and
 height 72. It connects to Ronnie's Workbench through the existing Forge.
 The new owned 3D table includes a fermentation cask and still. Installation
 is additive and idempotent in old saves; tutorial resources and quests retain
-their existing rules. Visual/access author check CA470-01 remains pending.
+their existing rules. Visual/access author check CA470-01 passed author review on 2026-10-22.
 
 5.7.3 - Source recovery boundary (#406)
 

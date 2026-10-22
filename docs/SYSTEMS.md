@@ -17,7 +17,7 @@ room groups and transitive networks. No construction recipe or new recipe IDs
 are introduced. Concrete recipes and start/completion prerequisites remain
 owned by #407/#409/#471 through the existing coordinator; this patch supplies
 the shared Workbench-plus-Alchemy capability check.
-Validation status: PROJECT; actionable author check: pending_test.txt.
+Validation status: PROJECT; CA470-01 passed author review on 2026-10-22.
 Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
 issue branches, commits, tests and PRs.
 

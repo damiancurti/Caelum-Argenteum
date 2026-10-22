@@ -12,7 +12,7 @@ manifest records deterministic hashes and provenance. Geometry reuses the
 project's original wood, iron and brass station textures; no external art.
 Mesh bounds at the combined 1.5 scale fit the approved 60 x 60 x 72 collision.
 The static binding lives in MODELDEF; native collision/visual tests and save
-migration evidence belong to assets/validation_574. Author visuals pending.
+migration evidence belong to assets/validation_574. CA470-01 passed on 2026-10-22.
 
 ## 5.7.3 - Recovery validation (#406)
 

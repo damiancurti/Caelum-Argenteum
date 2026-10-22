@@ -74,7 +74,7 @@ def main():
     report={'issue':470,'version':'5.7.4','selected_runs':len(FINAL),'passed':total,'failed':0,
         'package_sha256':package_hash,'source_matching_members':members,'runs':runs,
         'original_saves':originals,'performance':performance,
-        'author_acceptance':'CA470-01 pending; no manual acceptance inferred.',
+        'author_acceptance':'CA470-01 passed by explicit author confirmation on 2026-10-22.',
         'scope':'Infrastructure only; Alchemy recipes remain #407/#409/#471. #472 drinking needs no station.'}
     (HERE/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='runs'},indent=2))

@@ -3104,6 +3104,6 @@
       "presentation": "Unavailable: Windows denied PresentMon trace access; callbacks are not display/presentation intervals."
     }
   ],
-  "author_acceptance": "CA470-01 pending; no manual acceptance inferred.",
+  "author_acceptance": "CA470-01 passed by explicit author confirmation on 2026-10-22.",
   "scope": "Infrastructure only; Alchemy recipes remain #407/#409/#471. #472 drinking needs no station."
 }

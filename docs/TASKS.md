@@ -21,7 +21,7 @@ Static validation passes, including thirteen station bindings and two
 deterministic generations. Final native evidence: 216 PASS / zero FAIL in
 fifteen selected runs (assets/validation_574), including old/current saves,
 blocked installation, travel, real Use and the existing task lifecycle with
-Alchemy connected. Author check CA470-01 remains pending.
+Alchemy connected. Author check CA470-01 passed author review on 2026-10-22.
 Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
 issue branches, commits, tests and PRs.
 

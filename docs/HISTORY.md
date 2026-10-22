@@ -4,6 +4,11 @@ Documentation version: **5.7.4** — 2026-10-22.
 
 ## 5.7.4 - Fixed Alchemy station (#470)
 
+Author acceptance, 2026-10-22: CA470-01 (originating release 5.7.4, issue
+#470) passed. The author confirmed the prepared station visual, access, Use
+and save/load check was correct. Its pending entry is removed. This does not
+accept the remaining marine, boiling, consumable or mate patches.
+
 Adds the fixed Workbench-backed Alchemy station (#470), represented by an
 original 3D fermentation table and still. Approved positions are MAP01
 (1128,448,0), workshop group 2, connected through Ronnie's Forge, and MAP03
@@ -21,7 +26,7 @@ Static validation passes, including thirteen station bindings and two
 deterministic generations. Final native evidence: 216 PASS / zero FAIL in
 fifteen selected runs (assets/validation_574), including old/current saves,
 blocked installation, travel, real Use and the existing task lifecycle with
-Alchemy connected. Author check CA470-01 remains pending.
+Alchemy connected. Author check CA470-01 passed author review on 2026-10-22.
 Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
 issue branches, commits, tests and PRs.
 

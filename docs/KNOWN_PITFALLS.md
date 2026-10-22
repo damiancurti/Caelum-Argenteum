@@ -8,7 +8,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: ENGINE-VERIFIED; #470, 2026-10-22. Baseline 992da877 plus
 5.7.4; GZDoom 4.14.2 / Windows 11 / Vulkan / 1280 x 720. Author check
-CA470-01 remains pending. Evidence: assets/validation_574/report.json,
+CA470-01 passed author review on 2026-10-22. Evidence: assets/validation_574/report.json,
 final-hidden/final-visible logs and visuals/hidden-view.png versus mansion-view.png.
 
 The hidden native process accepted network events, moved the player to the

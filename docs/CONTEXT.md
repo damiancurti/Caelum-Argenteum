@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.4** — 2026-10-22.
 
-**5.7.4/#470:**Alchemy;216PASS/15runs;validation_574;CA470-01:pending.
+**5.7.4/#470:**Alchemy;216PASS/15runs;validation_574;CA470-01:accepted2026-10-22.
 **5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.
 **5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22.
 **5.7.1/#404:**resource-contract;validation_571.

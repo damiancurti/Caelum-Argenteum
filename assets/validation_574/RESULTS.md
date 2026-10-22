@@ -8,7 +8,7 @@ remain intact. No new recipe, fuel or construction balance is introduced.
 Static project validation passes (13 station models, CONTEXT 2499 words).
 Two full regenerations preserve all four generated-output hashes. Final native
 evidence: **216 PASS / zero FAIL in 15 selected runs**. Author check CA470-01
-is pending. No gameplay VM/parser failure occurred in this patch's tests.
+passed on 2026-10-22. No gameplay VM/parser failure occurred in this patch's tests.
 
 The final package is `2a23c2b418598ec352f027ac1cfb0d08a963e85bdd5d023773413bfaf4b1fd77`;
 all 16,458 members match the tested source tree. The selected runs cover:
