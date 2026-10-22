@@ -8,6 +8,9 @@ run labels, commands, environment and package identities. Project validation
 passed; twenty generated files reproduced byte-for-byte, including all fourteen
 volumetric models. All 16,454 final package members match their source bytes.
 CA405-01 remains pending author acceptance, including the 3D presentation.
+The manual launcher supplies a visible Spanish guide; F1 returns to a fresh
+private gallery after visiting the campaign maps. A supplemental manual-smoke
+native run passed after that fixture-only navigation change.
 
 Exploratory failures are preserved: compile-01 override default argument,
 compile-02 unsupported floor constant, compile-03 unregistered M081 sprite,

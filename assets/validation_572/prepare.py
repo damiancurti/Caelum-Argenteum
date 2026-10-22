@@ -56,7 +56,7 @@ scripts={
     'maplegacy-save':'wait 70; netevent ca405_legacy_save; wait 2; save ca405-maplegacy; wait 3; quit',
     'mapupgrade':'wait 70; netevent ca405_map; wait 2; save ca405-mapupgrade; wait 3; quit',
     'perf':'wait 70; netevent ca405_perf; wait 370; screenshot "presentation.png"; wait 5; quit',
-    'interactive':'exec ../../assets/playtest/default_controls.cfg\nlanguage es\nbind F1 "netevent ca405_author 0"\nbind F2 "netevent ca405_author 1"\nbind F3 "netevent ca405_author 2"\nbind F4 "netevent ca405_author 3"\nbind F5 "map MAP03; wait 70; netevent ca405_campaign"\nbind F6 "map MAP01; wait 70; netevent ca405_campaign"\nwait 35; netevent ca405_author 0; wait 5; toggleconsole',
+    'interactive':'exec ../../assets/playtest/default_controls.cfg\nlanguage es\nbind F1 "map CARESRC; wait 70; netevent ca405_author 0"\nbind F2 "netevent ca405_author 1"\nbind F3 "netevent ca405_author 2"\nbind F4 "netevent ca405_author 3"\nbind F5 "map MAP03; wait 70; netevent ca405_campaign"\nbind F6 "map MAP01; wait 70; netevent ca405_campaign"\nwait 35; netevent ca405_author 0; wait 5; toggleconsole',
 }
 for name,data in scripts.items(): (OUT/f'{name}.cfg').write_text(data+'\n',encoding='utf-8')
 print('Prepared #405 native fixtures and Spanish author controls.')

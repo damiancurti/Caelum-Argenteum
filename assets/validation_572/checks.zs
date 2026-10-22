@@ -13,6 +13,8 @@ class CA405Checks : StaticEventHandler
     CaelumLandSource UseHive;
     CaelumLandSource CutPlant;
     bool GalleryReady;
+    override void WorldLoaded(WorldEvent e)
+    {GalleryReady=false;UseHive=null;CutPlant=null;}
     void Check(bool ok,String label)
     {if(ok)Passed++;else Failed++;Console.Printf("CA405 %s %s",ok?"PASS":"FAIL",label);}
     void Result(){Console.Printf("CA405 RESULT passed=%d failed=%d",Passed,Failed);}
@@ -245,6 +247,7 @@ class CA405Checks : StaticEventHandler
         }
         else if(e.Name=="ca405_author")
         {
+            if(level.MapName!="CARESRC"){Console.Printf("CA405: pulsa F1 para volver a la sala de pruebas.");return;}
             Prepare(u);
             if(e.Args[0]==0){Gallery(u);Console.Printf("CA405 READY: F1 modelos; F2 colmena (E recoger); F3 tienda; F4 planta; F5 MAP03; F6 MAP01. Materiales en suelo: acercarse.");}
             else if(e.Args[0]==1){UseSetup(u);Console.Printf("CA405 READY: mira la colmena y pulsa E. Cada pulsacion extrae 50 g.");}
