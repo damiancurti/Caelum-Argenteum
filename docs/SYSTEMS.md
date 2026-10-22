@@ -1,6 +1,29 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.2** — 2026-10-21.
+Documentation version: **5.7.3** — 2026-10-22.
+
+## Source recovery (#406, 5.7.3)
+
+All renewable natural sources use `min(capacity, remaining + elapsed_days *
+capacity * 0.001)`. Elapsed campaign time is applied once; observed time at or
+below the saved stamp changes neither stamp nor amount. Only a later timestamp
+extends the processed interval. Catch-up uses arithmetic, not iteration over
+missed days. This preserves the existing rate and per-source cap.
+
+An old source without a timestamp initializes at its first observed campaign
+time without retroactive credit. Existing saved remaining material, extracted
+fractional carry and calendar-entry identity stay authoritative; the guard adds
+no saved fields and needs no schema migration. Normal source ticks observe time
+once per second, including offscreen sources; extraction also synchronizes it.
+Reload/hub restoration uses the same saved stamp. Off-map world coordination
+remains V5.8. Finite tutorial gold and decorative plants do not renew.
+
+Merchant imports keep their independent #385/#405 stock clock. Source recovery
+never writes stock or wallets, and merchant synchronization never credits a
+natural node. Repeated scheduling updates the existing source calendar entry.
+If its credited source stamp is ahead of observed time, the deadline includes
+that waiting interval, converted as a duration into civil calendar time.
+Evidence and the prior-runtime regression are in assets/validation_573.
 
 ## Regional resource contract (#404, 5.7.1)
 

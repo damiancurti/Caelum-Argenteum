@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.2** — 2026-10-21.
+Documentation version: **5.7.3** — 2026-10-22.
+
+## 5.7.3 - Recovery validation (#406)
+
+validation_573 reuses the frozen #405 private-room geometry locally. Its native
+fixtures, launch source and results cover source clocks and save compatibility.
+No production art or geometry is added or changed by #406; generated test maps,
+packages, engine/IWAD files and private saves are not distributed.
 
 ## 5.7.2 - Owned 3D land resources (#405)
 
