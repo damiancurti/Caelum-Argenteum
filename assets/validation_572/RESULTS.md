@@ -7,7 +7,9 @@ The final selection has **168 PASS, zero FAIL in 15 runs**. report.json records
 run labels, commands, environment and package identities. Project validation
 passed; twenty generated files reproduced byte-for-byte, including all fourteen
 volumetric models. All 16,454 final package members match their source bytes.
-CA405-01 remains pending author acceptance, including the 3D presentation.
+On 2026-10-22 the author confirmed CA405-01 (5.7.2/#405) passed, including
+the gameplay and 3D presentation in the prepared test. This does not accept
+the later regeneration, processing, boiling or mate issues.
 The manual launcher supplies a visible Spanish guide; F1 returns to a fresh
 private gallery after visiting the campaign maps. A supplemental manual-smoke
 native run passed after that fixture-only navigation change.

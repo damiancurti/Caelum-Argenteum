@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.2** — 2026-10-21.
 
-**5.7.2/#405:**3D/imports;validation_572;CA405-01:pending;next:#406/#407/#470/#409/#471/#472.
+**5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22;next:#406/#407/#470/#409/#471/#472.
 **5.7.1/#404:**resource-contract;validation_571.
 
 **5.7.0/#408:** water quality; validation_570. CA408-01 accepted2026-10-21.

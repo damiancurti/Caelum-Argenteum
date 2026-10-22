@@ -4,6 +4,11 @@ Documentation version: **5.7.2** — 2026-10-21.
 
 ## 5.7.2 - Land resources and owned 3D objects (#405)
 
+Author acceptance, 2026-10-22: CA405-01 (originating release 5.7.2, issue
+#405) passed. The author stated that the #405 test went well after the prepared
+land-resource/import/3D scene. The matching entry is removed from pending_test.txt;
+this confirmation does not accept subsequent V5.7 issues.
+
 Approved MAP03 sources and MAP01 decorations now use original 3D models.
 Six material IDs append to the catalogue; cotton retains ID 72. Plants use
 existing slashing; each hive Use releases up to 50 g. MAP03 provisions import
@@ -11,7 +16,7 @@ yerba, irupe and cane; clothing shops import cotton with approved stock/recovery
 Existing merchant margins apply. No new processing/potion recipe is included.
 Revisioned material/vendor migration preserves prior saves; map-owned issued
 IDs prevent reload duplication, including real pre-feature MAP01 saves.
-Evidence: assets/validation_572/RESULTS.md. CA405-01 awaits author review.
+Evidence: assets/validation_572/RESULTS.md. The author passed CA405-01 on 2026-10-22.
 Next: #406 recovery, #407 marine/iodine, #470 Alchemy, #409 boiling, #471 recipes,
 #472 mate. Each retains separate scope, commits, tests and PR.
 

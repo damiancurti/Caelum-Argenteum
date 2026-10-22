@@ -11,7 +11,7 @@ yerba, irupe and cane; clothing shops import cotton with approved stock/recovery
 Existing merchant margins apply. No new processing/potion recipe is included.
 Revisioned material/vendor migration preserves prior saves; map-owned issued
 IDs prevent reload duplication, including real pre-feature MAP01 saves.
-Evidence: assets/validation_572/RESULTS.md. CA405-01 awaits author review.
+Evidence: assets/validation_572/RESULTS.md. The author passed CA405-01 on 2026-10-22.
 Next: #406 recovery, #407 marine/iodine, #470 Alchemy, #409 boiling, #471 recipes,
 #472 mate. Each retains separate scope, commits, tests and PR.
 

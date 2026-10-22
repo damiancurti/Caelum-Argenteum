@@ -13,7 +13,7 @@ V5.7.2 adds approved land resources (#405): collectible marcela, flowers and
 honey outside MAP03's west gate, decorative counterparts in MAP01, and yerba,
 irupe, cane and cotton imports. Plants, hives, dropped new materials and existing
 shrubs use owned 3D models. [Evidence](assets/validation_572/RESULTS.md).
-CA405-01 awaits author review; processing, boiling and mate remain separate.
+The author passed CA405-01 on 2026-10-22; processing, boiling and mate remain separate.
 
 V5.7.1 records the reviewed regional resource contract (#404), including
 existing sources, approved plant/hive reserves and separate implementation

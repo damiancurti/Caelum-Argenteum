@@ -14,7 +14,7 @@ are in src/models/caelum/world/land_resources; MODELDEF compensates actor scale.
 M081-M086 must be registered before MODELDEF parsing. Existing owned inventory
 thumbnails remain UI-only. The optional generator uses the existing Mesh utility
 and Pillow; byte-for-byte regeneration is checked. Front/side/close-up native
-captures belong to validation_572. Visual acceptance CA405-01 remains pending.
+captures belong to validation_572. The author passed visual check CA405-01 on 2026-10-22.
 
 ## 5.6.10 — library and clothing shop signs (#383)
 

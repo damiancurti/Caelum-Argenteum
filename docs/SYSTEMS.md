@@ -205,7 +205,7 @@ their existing saved authority. Native evidence: assets/validation_572.
 All source profiles, new material drops and existing fiber/decorative shrubs
 use owned 3D models; reused inventory thumbnails are UI-only. New ingredient
 consumers/recipes remain #471/#472. Acquiring an ingredient grants no potion,
-healing effect or learned recipe. Author check CA405-01 remains pending.
+healing effect or learned recipe. The author passed CA405-01 on 2026-10-22.
 
 ## Water quality and native containers (#408, 5.7.0)
 
