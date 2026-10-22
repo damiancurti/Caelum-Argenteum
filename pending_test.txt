@@ -1,0 +1,7 @@
+CA481-01 | Origin: 5.7.7 / #481 | Centered aimed-target panel
+Prerequisites: final #481 package; run assets/validation_577/manual.ps1 with no other GZDoom session.
+1. F1 cycles the enemy, chest, door, chair, house transition, Alchemy station and bed. Aim away and back; confirm the centered panel follows the actual target and clears on empty aim.
+2. On the enemy, F2 toggles Insight 2/100. At Insight 2, Strength 1 is visible while Toughness 2 and Constitution 3 show question marks; all four resource values remain visible.
+3. Inspect contextual actions and keys; change Use in controls and confirm its new binding appears immediately. Open a chest/menu and confirm no overlapping target panel; close to restore it.
+4. Move freely, check occlusion and inspect the same presentation in normal MAP01/MAP03 gameplay. Report readability and any missing/misleading target or action.
+Expected: readable top-center panel, correct names/actions/bindings, strict Insight rule and no activation merely from looking. Report pass/fail for CA481-01.

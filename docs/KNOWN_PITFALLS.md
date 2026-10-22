@@ -2893,6 +2893,12 @@ and `Secondary=secondary` assigned the parameters to themselves. Distinct
 Check the serialized selection and actual damage, not just the preparation
 timer; validation_5212 retains the failing and corrected native runs.
 
+Reverified in #481 / 5.7.7 (ENGINE-VERIFIED, 2026-10-22): a local `distance`
+shadowed the target cache's `Distance`, breaking near-line range and occlusion
+comparison while compiling successfully. `candidateDistance` fixes the field
+update; native regression checks assert both the exact distance and an actor
+occluding a crossable transition. Evidence: assets/validation_577/RESULTS.md.
+
 Reverified in #311 / 5.5.2 (ENGINE-VERIFIED, 2026-10-18):
 `Initialize(double releaseDistance)` assigned `ReleaseDistance` to the parameter,
 leaving the serialized field zero. Native pairs expired after five updates even

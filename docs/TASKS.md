@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.6** — 2026-10-22.
+Documentation version: **5.7.7** — 2026-10-22.
+
+## 5.7.7 - Target-panel delivery (#481)
+
+Implemented the centered aimed-target panel, contextual bindings, authoritative
+resource values and strict Insight attribute masking. Native tests cover actor
+and linedef selection, occlusion and read-only inspection; further evidence is
+in assets/validation_577/RESULTS.md. CA481-01 awaits author acceptance.
+Keep #479 support implements and their approved migration/formulas separate.
 
 ## 5.7.6 - Alchemy art stage (#471)
 

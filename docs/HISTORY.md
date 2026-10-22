@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.6** — 2026-10-22.
+Documentation version: **5.7.7** — 2026-10-22.
+
+## 5.7.7 - Aimed-target information (#481)
+
+2026-10-22: the author requested a centered gameplay version of the #471 gallery
+box for actors, doors, chests, furniture and transitions, with contextual actions
+and keys. The author clarified Perception meant existing Insight/Perspicacia,
+confirmed strict less-than attribute visibility and explicitly kept resources
+visible. Added native/local selection and a transient cache, replacing the
+separate sewer hint/global scan. Existing art and gameplay actions are unchanged.
+Static/native evidence and diagnostic corrections: assets/validation_577/RESULTS.md.
+Final native checks: 41 assertions passed, including current/5.7.6 save reloads;
+36 selection assertions repeated after a fixture-only map guard. Eight captures
+were inspected. UI callback p99 was 16.9433 ms in the isolated capped fixture;
+PresentMon frame-presentation collection was unavailable (ETW access denied).
+CA481-01 remains pending and is deferred until the author returns, as requested;
+implementation checks are not author acceptance.
+The concurrent #479 request and later approvals belong to its separate patch.
 
 ## 5.7.6 - Alchemy ingredient artwork (#471)
 

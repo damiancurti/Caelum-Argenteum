@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.6** — 2026-10-22.
+Documentation version: **5.7.7** — 2026-10-22.
+
+## 5.7.7 - Centered target information (#481)
+
+The author requested a permanent version of the gallery information box at
+the top center. The panel now identifies aimed actors and nearby native line
+interactions, lists contextual keys and displays combatant resources/attributes.
+Resources remain visible; each attribute requires strictly greater viewer
+Insight. Native tracing and a local Use-range line query preserve occlusion;
+no routine global actor scan is added. Saves reconstruct the transient cache.
+Evidence: assets/validation_577/RESULTS.md. Author check CA481-01 is pending.
+#479 weapon/support migration remains a separate branch, test set and PR.
 
 ## 5.7.6 - Alchemy art stage (#471)
 

@@ -1,0 +1,241 @@
+{
+  "issue": 481,
+  "release": "5.7.7",
+  "date": "2026-10-22",
+  "package": {
+    "members": 16596,
+    "source_bytes_match": true,
+    "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27"
+  },
+  "runs": [
+    {
+      "label": "final-views",
+      "pass": 36,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-views.txt",
+          "sha256": "0d3a86a0501ddbd2b65340da6604bf59ecc75c25be9ffcfedbc05a8e40116b49"
+        },
+        {
+          "path": "native/final-views-run.json",
+          "sha256": "3c27c2aefb909eab9f0503770b45b97af31329c7c653d066d814e5005d5b75b6"
+        }
+      ]
+    },
+    {
+      "label": "final-remap",
+      "pass": 1,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-remap.txt",
+          "sha256": "3ca440fcafac2dee4dedba8ba08727527063309821cfd4a1c9077fde8c5ac608"
+        },
+        {
+          "path": "native/final-remap-run.json",
+          "sha256": "cbfade82d200107ce275f33904d7edbbecf9760352d09fc89560c34a9614c65b"
+        }
+      ]
+    },
+    {
+      "label": "final-save",
+      "pass": 0,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-save.txt",
+          "sha256": "e544db0be070afee31760b8864fdbef14baf375a4d292e6800636966c90dfbb9"
+        },
+        {
+          "path": "native/final-save-run.json",
+          "sha256": "f5f71817c7f7254c1909165f034da49b73eba513d0dbc7a3faefe10c327c9941"
+        }
+      ]
+    },
+    {
+      "label": "final-load",
+      "pass": 2,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-load.txt",
+          "sha256": "a29ba5029186ea13beb6b04e0274f5049baabcf412d87d4f270e8e5618fdf2bd"
+        },
+        {
+          "path": "native/final-load-run.json",
+          "sha256": "b2c23bf18e8830f31e1c6fcaf1be7ddcb8e702bdf35968c3ab498fece72aefb5"
+        }
+      ]
+    },
+    {
+      "label": "baseline-save",
+      "pass": 0,
+      "fail": 0,
+      "package_sha256": "d5c059afd0706ce53ea4f936ee8891de559df809d57f66b0b6f22e38cf064f2b",
+      "addon_sha256": "94e823e0412db58d60028cbb231faafbc213895e71d1b81a3abb81c00c4359f3",
+      "artifacts": [
+        {
+          "path": "native/baseline-save.txt",
+          "sha256": "23f15652973d640b23d10e5967e054303f6558edac081c28fcc4bb8cceb6a437"
+        },
+        {
+          "path": "native/baseline-save-run.json",
+          "sha256": "cc129077d66a74a32f7d20232d25018fe0ab4412af0a978957764bd69da2e223"
+        }
+      ]
+    },
+    {
+      "label": "final-oldsave-02",
+      "pass": 2,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-oldsave-02.txt",
+          "sha256": "e78ad92ff4a2a40894cf06492fd3953de40787776a8d013618019e342dd398ef"
+        },
+        {
+          "path": "native/final-oldsave-02-run.json",
+          "sha256": "8b2a69e7642876aa300501467a21b3c9ab8b156ad63f2afefd75c9dd0fe314c5"
+        }
+      ]
+    },
+    {
+      "label": "final-performance",
+      "pass": 0,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "d239074bb02654331fe17b42c6a8daf16756686c93201c4f741da3f349310f4a",
+      "artifacts": [
+        {
+          "path": "native/final-performance.txt",
+          "sha256": "dbfd5483105bfe10ab02145b4dcf08c55a7c9a8d3d36b44fe109c0f9b8ba76a8"
+        },
+        {
+          "path": "native/final-performance-run.json",
+          "sha256": "a0e38e498ef4b927bde0f45ca23735541a9a134b289b09a6fd8173d4e3a6b7d2"
+        }
+      ]
+    },
+    {
+      "label": "final-handoff-smoke",
+      "pass": 36,
+      "fail": 0,
+      "package_sha256": "7baaca0b9dbcbdada22b3cb304b47942dc7e88def532bd0932e56dac89eb1c27",
+      "addon_sha256": "99d76362218e2045bb3dd67dd43b9ce9eaa9e01ca23e8aad3bc0b5d895c77a57",
+      "artifacts": [
+        {
+          "path": "native/final-handoff-smoke.txt",
+          "sha256": "a7fc4b4e342f442ea84fe3ea1be84a33600fdf9b8705fd62268490f8471ed850"
+        },
+        {
+          "path": "native/final-handoff-smoke-run.json",
+          "sha256": "6a1bfa367bca8111df4abafb56ddd3b1070bd690051a5939224a1d96d6541ecf"
+        }
+      ]
+    }
+  ],
+  "unique_assertions_passed": 41,
+  "repeated_assertions_after_fixture_map_guard": 36,
+  "current_and_5_7_6_save_reload": "passed",
+  "ui_callback_intervals_ms": {
+    "samples": 599,
+    "mean": 16.66668814691152,
+    "p95_nearest_rank": 16.8419,
+    "p99_nearest_rank": 16.9433,
+    "maximum": 17.1968,
+    "simulation_tics_per_second": 35.00005495008628,
+    "scope": "Isolated fixture, 1280x720 Vulkan, 60 FPS cap; UI callbacks are not frame presentation."
+  },
+  "presentation_measurement": {
+    "status": "unavailable",
+    "reason": "PresentMon ETW access denied",
+    "artifacts": [
+      {
+        "path": "native/final-performance-presentmon.json",
+        "sha256": "4036609510816eedeeeacf9c1d839fc0ef9220b65fa1d1767e4a307185b24398"
+      },
+      {
+        "path": "native/final-performance-presentmon.txt",
+        "sha256": "b3d510ef04275ca8e698e5b3cbb0ece3949ef9252f0cdc839e9ee347409a2209"
+      },
+      {
+        "path": "native/final-performance-presentmon-error.txt",
+        "sha256": "3bec4df2ce8a9880475dfff83efb4bb5b616f929ddbd74edd6eb30de984cb34e"
+      }
+    ]
+  },
+  "visuals": [
+    {
+      "path": "visuals/target-0.png",
+      "sha256": "b66e50d0e2e4567dd94544061e5a1ee0a53d52b5221e91c4f97cdc940aba90a9"
+    },
+    {
+      "path": "visuals/target-1.png",
+      "sha256": "c748d3a71f3641e1cbb49732947ae757b06b99abb0a74ccda412b215c25378d5"
+    },
+    {
+      "path": "visuals/target-2.png",
+      "sha256": "74411faa59f6c7338b547b813b29d9c71054e6ff8db6142a779f08e152b72bb8"
+    },
+    {
+      "path": "visuals/target-3.png",
+      "sha256": "4e52bbc754667e2716a7226371034de39175fc272b2b9ac0a6b03a20bdd7827d"
+    },
+    {
+      "path": "visuals/target-4.png",
+      "sha256": "9c33c83cdf248c9b59b77919936172ba5109744231c965927bfd7db16102a824"
+    },
+    {
+      "path": "visuals/target-5.png",
+      "sha256": "6df897e42c6ff66f80a3b53d0368dce1779b681c972c19b99bfab4cca09c145e"
+    },
+    {
+      "path": "visuals/target-6.png",
+      "sha256": "45788946d02ee8749c6eba39c3b80615c673fdb95eee9244f7d5ff52605edbcd"
+    },
+    {
+      "path": "visuals/remapped-es.png",
+      "sha256": "135e67f3df7bf593ae6dd688538cb943c058c21b71efd85b330bcf9acab35d5b"
+    }
+  ],
+  "visual_review": "Seven targets and Spanish remapped-key capture inspected; no overlap found.",
+  "diagnostic_failures_preserved": [
+    {
+      "path": "diagnostics/compile-01.txt",
+      "sha256": "6a3d1e984dbde35f11d7cdfbfb061964b56e05c92e234fd9cb4dfecbd10df16a"
+    },
+    {
+      "path": "diagnostics/lines-04.txt",
+      "sha256": "ab2baac5e83160506be39edf2c9a892365aea186c086f193f2f54bccedfbece8"
+    },
+    {
+      "path": "diagnostics/lines-05.txt",
+      "sha256": "cf688a7a927b57e5447b76c4f09a515cdfe1d7fc7aa6947fd5174eca1ec5c4c4"
+    },
+    {
+      "path": "diagnostics/lines-06.txt",
+      "sha256": "b763c55fc3bbbc37219d2f0dbb97b2ccc62ba87b7f59b9f4311be0d056310d49"
+    },
+    {
+      "path": "diagnostics/final-oldsave.txt",
+      "sha256": "957ffe36f3f5d1e648c6edff42ec431f5c36ba0dc0874e66014dc23462c51231"
+    }
+  ],
+  "author_acceptance": "CA481-01 pending; author requested deferral until return.",
+  "limitations": [
+    "No whole-map performance acceptance.",
+    "No claim of measured GPU/frame presentation cadence.",
+    "Test fixture uses existing owned textures; no engine, IWAD, PK3 or save is distributed."
+  ]
+}
