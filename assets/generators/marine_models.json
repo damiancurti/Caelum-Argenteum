@@ -1,0 +1,22 @@
+{
+  "issue": 407,
+  "provenance": "Original deterministic project geometry; existing owned project textures. Inventory icons reuse owned material art.",
+  "textures": [
+    "models/caelum/props/stations/ca_station_wood.png",
+    "models/caelum/props/stations/ca_station_paper.png",
+    "models/caelum/props/stations/ca_station_iron.png",
+    "models/caelum/props/stations/ca_station_gem.png"
+  ],
+  "models": [
+    {
+      "file": "dried_kelp.obj",
+      "vertices": 1170,
+      "faces": 316
+    },
+    {
+      "file": "iodine.obj",
+      "vertices": 564,
+      "faces": 169
+    }
+  ]
+}

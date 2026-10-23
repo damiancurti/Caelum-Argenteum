@@ -5,6 +5,7 @@ class CaelumCityMerchant : Actor
     int ShopIdentity, Category, Revision, WalletCopper;
     int CatalogueRevision,CatalogueCursor;
     int LandImportRevision,LandImportCursor;
+    int MarineCatalogueRevision;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -67,6 +68,8 @@ class CaelumCityMerchant : Actor
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);
         if(material!=null && CaelumLandImports.Accepts(Category,material.GetSpecialType())) return true;
+        if(material!=null && Category==CaelumMarineData.IMPORT_CATEGORY
+            && material.GetSpecialType()==CaelumConstants.MATERIAL_DRIED_KELP)return true;
         if(material!=null)return Category==2 && (material.GetSpecialType()==CaelumConstants.MATERIAL_CARBINE_KIT
             || material.GetSpecialType()==CaelumConstants.MATERIAL_SHOTGUN_KIT);
         let equipment=CaelumEquipmentItem(item);
@@ -174,6 +177,7 @@ class CaelumCityMerchant : Actor
         }
         EnsureCatalogue(user);CaelumShopRestock.Sync(self,user);
         CaelumLandImports.Ensure(self,user);
+        CaelumMarineImports.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

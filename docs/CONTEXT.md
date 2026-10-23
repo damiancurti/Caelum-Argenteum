@@ -1,13 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.4** — 2026-10-22.
+Documentation version: **5.7.5** — 2026-10-22.
 
-**5.7.4/#470:**Alchemy;216PASS/15runs;validation_574;CA470-01:accepted2026-10-22.
+**5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:accepted2026-10-22.
+**5.7.4/#470:**Alchemy;validation_574;CA470-01:accepted2026-10-22.
 **5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.
 **5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22.
-**5.7.1/#404:**resource-contract;validation_571.
+**#404:**resource-contract;validation_571.
 
-**5.7.0/#408:** water quality; validation_570. CA408-01 accepted2026-10-21.
+**5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 
 **5.6.11/#385:**restock;validation_5611;CA385-01 accepted2026-10-21.
 **5.6.10/#383:**library/clothing/kits/locks;validation_5610;CA383-01accepted2026-10-21.

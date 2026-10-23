@@ -871,6 +871,8 @@ class CaelumCraftingCoordinator : Object play
         if (user.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
         {
+            if(user.CraftingOutputAmount<=0)
+            {user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_EMPTY_OUTPUT;return;}
             taskKind = CaelumConstants.CRAFTING_TASK_PROCESSING;
         }
         else if (user.CraftingSelectedRecipeKind

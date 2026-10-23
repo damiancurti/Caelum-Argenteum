@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.4** — 2026-10-22.
+Documentation version: **5.7.5** — 2026-10-22.
+
+## Marine imports and iodine (#407, 5.7.5)
+
+`assets/generators/marine_resources.json` owns the approved species, form,
+quantities, values and processing data. Dried cachiyuyo (Macrocystis pyrifera)
+comes from the Patagonian coast through MAP03 provisions shops. Each starts
+with 1,000 g and replenishes 0.1% of its maximum per game day (1 g/day), capped
+at 1,000 g, through the existing independent merchant calendar. Its base value
+is 5 copper/100 g; ordinary buying/selling margins apply. No coastal location,
+underwater collection route or TCOAST campaign source has been authorized.
+
+Workbench + Alchemy: 100 g dried cachiyuyo -> theoretical 1 g iodine, 60 seconds
+of base work, no additional fuel. Existing fixed batches, 25/50/100% output
+efficiency and whole-gram rounding apply. A nominal batch at 25/50% produces
+less than a gram and cannot start; the UI asks for a larger batch or efficiency.
+A tenfold batch consumes 1,000 g and yields 2/5/10 g. Work scales with input
+mass and the existing learning factor and Dexterity; it is not chemical elapsed
+time. At full practice and 100% Dexterity, a nominal batch takes 60 seconds.
+The abstract recipe contains no real extraction procedure or medical benefit.
+Iodine's explicit approved 10 copper/g overrides derived processing valuation.
+
+The library's existing all-recipe policy adds its tier-1 sheet: 10 books in stock,
+100 copper base price (ten consumable-unit values), normal merchant margins,
+study furniture and learning/practice rules. Owning the sheet does not itself
+learn the recipe. No iodine-consuming recipe is authored in this patch.
+
+Material IDs 87/88 and recipe ID 168 append; earlier IDs stay fixed. Marine
+material schema revision 1 initializes only the added supply-array slots.
+Recipe-book version 12 initializes only appended knowledge/progress slots.
+Merchant marine catalogue revision 1 appends the import or library product
+without rebuilding old stock, deadlines, purchases or wallets. Normal native
+inventory, Box, chest and task authority apply. Validation status: PROJECT.
 
 ## Alchemy station infrastructure (#470, 5.7.4)
 
@@ -148,12 +180,11 @@ profiles are surface sources; no invented numerical depth modifier is added.
 
 ### Marine and processing audit: approved chains, unresolved numbers
 
-No algae or iodine material/source identity exists in the current runtime.
-The author approved brown algae imported from the Patagonian coast through
-MAP03, then abstract iodine processing at Workbench + Alchemy (#407).
-No coastal campaign source is authorized by the old TCOAST test map. Species,
-traded form, processing yield/work/fuel/learning, price/stock and iodine's
-consumer remain open; no medical/crafting effect is inferred.
+The #407 marine contract is implemented in 5.7.5 as described above: dried
+cachiyuyo imports and abstract iodine processing. No coastal campaign source
+is authorized by the old TCOAST test map. Iodine's downstream consumer remains
+open; no medical/crafting benefit is inferred. The other chains below remain
+author-design gates for their own issues.
 
 | Resource/product | Approved source or chain | Consumer / owner issue | Still unresolved |
 | --- | --- | --- | --- |
@@ -164,8 +195,8 @@ consumer remain open; no medical/crafting effect is inferred.
 | Yeast | Acquisition not yet authored | Fermentation; #471 | Acquisition, price/stock, quantity |
 | Sugar | Acquisition/processing not yet authored | Alternative energy-drink sweetener; #471 | Acquisition, amount, price/stock |
 | Gunpowder | Abstract game ingredient; acquisition pending | Existing compatible kits, then ten cartridges; #471 | Other kit inputs, quantities, price/stock |
-| Brown algae | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Species/form, lot, price/stock, recipe |
-| Iodine | Brown algae at Workbench + Alchemy | Consumer not yet authored; #407 | Yield and purpose; no inferred benefits |
+| Dried cachiyuyo | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Implemented in 5.7.5; CA407-01 accepted 2026-10-22 |
+| Iodine | Dried cachiyuyo at Workbench + Alchemy | Consumer not yet authored; #407 | Downstream purpose; no inferred benefits |
 
 Existing medikit/energy-drink/Anima identities, dose sizes, effects and prices
 remain unchanged. Medikit ingredients are cotton + alcohol + marcela; energy

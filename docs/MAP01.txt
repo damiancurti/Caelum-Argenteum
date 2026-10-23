@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.7.4** — 2026-10-22.
+Documentation version: **5.7.5** — 2026-10-22.
+
+5.7.5 - Marine scope boundary (#407)
+
+Dried cachiyuyo is imported through MAP03; no marine node, coastline or stock
+is placed in MAP01. The existing connected Alchemy station can execute a
+learned iodine recipe when ordinary inventory and tutorial rules allow it.
+Ronnie's finite supplies, gold-only extraction and decorations stay intact.
 
 5.7.4 - Fixed Alchemy station (#470)
 

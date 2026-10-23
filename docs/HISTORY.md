@@ -1,6 +1,43 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.4** — 2026-10-22.
+Documentation version: **5.7.5** — 2026-10-22.
+
+## 5.7.5 - Marine imports and iodine (#407)
+
+Author acceptance, 2026-10-22: CA407-01 (originating release 5.7.5, issue
+#407) passed in full. The author explicitly confirmed that all #407 tests
+went well, without qualifications. This covers the prepared fabrication,
+cancellation/efficiency, commerce, 3D-material and save/load checks. Its entry
+is removed from pending_test.txt; no author checks remain in that queue.
+The runtime and release number remain unchanged. This does not accept later
+boiling, consumable or mate implementations.
+
+Live recheck after the interrupted terminal, 2026-10-22: six fresh GZDoom
+4.14.2 runs pass 80 assertions for the contract, trade, crafting, actual
+save/reload and ordinary unpaused completion. Every run uses the original
+delivered package hash; a separate save name preserves earlier evidence.
+A foreground visual inspection showed successful iodine processing. Details:
+assets/validation_575/resume-report.json and the matching raw native logs.
+No gameplay change or new performance claim; CA407-01 was awaiting explicit
+author confirmation at that recheck and is now accepted above. This supplements
+the same 5.7.5 delivery.
+
+Approved dried cachiyuyo (Macrocystis pyrifera) from the Patagonian coast is
+available in MAP03 provisions shops: 1 kg initially, 0.1% of the maximum per
+game day, base value 5 copper per 100 g. Alchemy with a connected Workbench
+processes 100 g into a theoretical 1 g of iodine with 60 seconds of base work
+and no extra fuel. Existing efficiency, learning and Dexterity apply; iodine
+has the approved explicit base value of 10 copper/g and no new medical effect.
+The ordinary library supplies its recipe sheet under the existing catalogue,
+stock and price rules. No coastal map or natural marine node is introduced.
+Two owned 3D material models accompany append-only material IDs 87/88 and
+recipe ID 168. Revisioned migration preserves purchases, old recipes and tasks.
+Evidence and author acceptance: assets/validation_575/RESULTS.md.
+Static validation and two deterministic generations pass. Native checks:
+263 PASS in 22 selected current runs, plus 19 PASS in three baseline/rollback
+runs; zero FAIL. CA407-01 passed author review on 2026-10-22.
+Next: #409 boiling, #471 consumables and #472 mate; remaining design decisions
+are tracked in their respective issues. Each retains a separate patch/PR.
 
 ## 5.7.4 - Fixed Alchemy station (#470)
 

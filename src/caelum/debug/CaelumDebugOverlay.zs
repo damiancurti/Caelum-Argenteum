@@ -315,6 +315,8 @@ class CaelumDebugOverlay : EventHandler
     {
         switch (craftingAction)
         {
+            case CaelumConstants.CRAFTING_ACTION_FAILED_EMPTY_OUTPUT:
+                return "CA_CRAFTING_ACTION_FAILED_EMPTY_OUTPUT";
             case CaelumConstants.CRAFTING_ACTION_CREATED:
                 return "CA_CRAFTING_ACTION_CREATED";
             case CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS:
@@ -440,7 +442,8 @@ class CaelumDebugOverlay : EventHandler
     {
         if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
-            String resourceKey = CaelumLandResourceData.MaterialKey(specialType);
+            String resourceKey = CaelumMarineData.MaterialKey(specialType);
+            if(resourceKey == "") resourceKey = CaelumLandResourceData.MaterialKey(specialType);
             if(resourceKey != "") return resourceKey;
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
@@ -1060,7 +1063,8 @@ class CaelumDebugOverlay : EventHandler
 
     ui String GetMaterialSelectionIcon(int materialType)
     {
-        String resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
+        String resourceIcon = CaelumMarineData.MaterialIcon(materialType);
+        if(resourceIcon == "") resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
         if(resourceIcon != "") return resourceIcon;
         switch (materialType)
         {
@@ -2170,6 +2174,8 @@ class CaelumDebugOverlay : EventHandler
         }
         else if (localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS
+            || localPlayer.LastCraftingAction
+                == CaelumConstants.CRAFTING_ACTION_FAILED_EMPTY_OUTPUT
             || localPlayer.LastCraftingAction
                 == CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL
             || localPlayer.LastCraftingAction

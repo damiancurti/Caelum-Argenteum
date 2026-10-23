@@ -1,0 +1,13 @@
+{
+  "issue": 407,
+  "revision": 1,
+  "approved": "2026-10-21",
+  "origin": "Patagonian coast; imported until a coastal map is approved",
+  "species": "Macrocystis pyrifera",
+  "materials": [
+    {"id": 87, "symbol": "DRIED_KELP", "key": "dried_kelp", "en": "Dried cachiyuyo", "es": "Cachiyuyo seco", "copper_per_gram": 0.05, "icon": "plant_fiber"},
+    {"id": 88, "symbol": "IODINE", "key": "iodine", "en": "Iodine", "es": "Yodo", "copper_per_gram": 10, "icon": "raw_opal"}
+  ],
+  "import": {"category": 0, "initial_grams": 1000, "recovery_per_day": 0.001},
+  "recipe": {"id": 168, "input_grams": 100, "theoretical_output_grams": 1, "base_work_seconds": 60, "additional_fuel_grams": 0}
+}

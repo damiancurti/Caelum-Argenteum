@@ -123,7 +123,8 @@ class CaelumShopRestock : Object play
     {
         if(product.ImportedMaterial)
             return CaelumWorldClock.TicsPerDay() / Max(0.000001,
-                product.Target * CaelumLandResourceData.IMPORT_RECOVERY_PER_DAY);
+                product.Target * (product.ItemType==CaelumConstants.MATERIAL_DRIED_KELP
+                    ? CaelumMarineData.IMPORT_RECOVERY_PER_DAY : CaelumLandResourceData.IMPORT_RECOVERY_PER_DAY));
         if(product.Recipe<0)return 0;
         let quote=new("CaelumRecipeQuote");quote.Build(user,product.Recipe,product.Tier,
             product.Kind==CaelumShopProduct.BOOK ? CaelumConstants.EQUIPMENT_SIZE_XL : product.Size);

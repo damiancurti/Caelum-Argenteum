@@ -6159,3 +6159,14 @@ CA_SOURCE_HONEY = "Colmena";
 CA_CRAFTING_STATION_ALCHEMY = "Alchemy";
 [es]
 CA_CRAFTING_STATION_ALCHEMY = "Alquimia";
+
+// BEGIN MARINE RESOURCE LABELS #407
+[enu default]
+CA_MATERIAL_DRIED_KELP = "Dried cachiyuyo";
+CA_MATERIAL_IODINE = "Iodine";
+CA_CRAFTING_ACTION_FAILED_EMPTY_OUTPUT = "The batch yields less than one gram: increase batch size or efficiency";
+[es]
+CA_MATERIAL_DRIED_KELP = "Cachiyuyo seco";
+CA_MATERIAL_IODINE = "Yodo";
+CA_CRAFTING_ACTION_FAILED_EMPTY_OUTPUT = "El lote rinde menos de un gramo: aumenta el lote o la eficiencia";
+// END MARINE RESOURCE LABELS #407

@@ -393,7 +393,8 @@ class CaelumEconomyRules : Object
     // obtención, no vuelven a sobrescribir estos precios de diseño.
     static double GetRawMaterialUnitValue(int materialType)
     {
-        double resourcePrice = CaelumLandResourceData.Price(materialType);
+        double resourcePrice = CaelumMarineData.Price(materialType);
+        if(resourcePrice < 0) resourcePrice = CaelumLandResourceData.Price(materialType);
         if(resourcePrice >= 0) return resourcePrice;
         switch (materialType)
         {
@@ -490,6 +491,9 @@ class CaelumEconomyRules : Object
         int materialType, int materialTier = 1
     )
     {
+        // El precio explícito aprobado prevalece sobre el valor derivado de receta.
+        double marinePrice=CaelumMarineData.Price(materialType);
+        if(marinePrice>=0)return marinePrice;
         if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT
             || materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT)
             return CaelumConstants.CARTRIDGE_KIT_VALUE_RATIO * GetAmmunitionUnitBaseValue(
