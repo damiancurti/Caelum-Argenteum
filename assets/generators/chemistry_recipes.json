@@ -1,0 +1,760 @@
+{
+  "schema_revision": 1,
+  "issue": 471,
+  "first_material": 92,
+  "first_recipe": 176,
+  "shared_barrels": true,
+  "materials": [
+    {
+      "id": 92,
+      "key": "saltpeter",
+      "en": "Saltpeter",
+      "es": "Salitre",
+      "base_value": 5,
+      "import_stock": 1000
+    },
+    {
+      "id": 93,
+      "key": "sulfur",
+      "en": "Sulfur",
+      "es": "Azufre",
+      "base_value": 5,
+      "import_stock": 1000
+    },
+    {
+      "id": 94,
+      "key": "charcoal",
+      "en": "Charcoal",
+      "es": "Carbón vegetal"
+    },
+    {
+      "id": 95,
+      "key": "molasses",
+      "en": "Molasses",
+      "es": "Melaza"
+    },
+    {
+      "id": 96,
+      "key": "fermented_intermediate",
+      "en": "Fermented intermediate",
+      "es": "Fermentado"
+    },
+    {
+      "id": 97,
+      "key": "alcohol",
+      "en": "Alcohol",
+      "es": "Alcohol"
+    },
+    {
+      "id": 98,
+      "key": "yeast",
+      "en": "Yeast",
+      "es": "Levadura",
+      "base_value": 0.05,
+      "import_stock": 100
+    },
+    {
+      "id": 99,
+      "key": "sugar",
+      "en": "Sugar",
+      "es": "Azúcar",
+      "base_value": 0.02,
+      "import_stock": 1000
+    },
+    {
+      "id": 100,
+      "key": "gunpowder",
+      "en": "Abstract gunpowder",
+      "es": "Pólvora abstracta",
+      "unit_weight_kg": 0.01
+    },
+    {
+      "id": 101,
+      "key": "prepared_reagents",
+      "en": "Prepared reagent set",
+      "es": "Juego de reactivos preparados",
+      "unit_weight_kg": 0.01,
+      "base_value": 20,
+      "import_stock": "CaelumCityData.AMMUNITION_STOCK"
+    },
+    {
+      "id": 102,
+      "key": "sealed_carbine_parts",
+      "en": "Sealed carbine components (ten kits)",
+      "es": "Componentes sellados de carabina (diez kits)",
+      "unit_weight_kg": 0.39,
+      "base_value": "CaelumChemistryEconomy.LegacySealedSetValue(CaelumConstants.AMMUNITION_CARBINE)",
+      "import_stock": "CaelumCityData.AMMUNITION_STOCK"
+    },
+    {
+      "id": 103,
+      "key": "sealed_shotgun_parts",
+      "en": "Sealed shotgun components (ten kits)",
+      "es": "Componentes sellados de escopeta (diez kits)",
+      "unit_weight_kg": 0.44,
+      "base_value": "CaelumChemistryEconomy.LegacySealedSetValue(CaelumConstants.AMMUNITION_SHOTGUN)",
+      "import_stock": "CaelumCityData.AMMUNITION_STOCK"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 176,
+      "key": "fermentation",
+      "en": "Ferment molasses",
+      "es": "Fermentar melaza",
+      "mode": "fermentation",
+      "inputs": [
+        [
+          95,
+          250
+        ],
+        [
+          98,
+          5
+        ]
+      ],
+      "water_liters": 0.8,
+      "working_liters": 1.0,
+      "output_material": 96,
+      "output_units": 1000,
+      "world_seconds": 259200,
+      "author_approved": "2026-10-23",
+      "notes": "Whole-litre multiples, fixed duration independent of batch size and Dexterity; simplified design yield includes process losses."
+    },
+    {
+      "id": 177,
+      "key": "charcoal",
+      "en": "Make charcoal",
+      "es": "Obtener carbón vegetal",
+      "mode": "attended",
+      "inputs": [
+        [
+          42,
+          1000
+        ]
+      ],
+      "output_material": 94,
+      "output_units": 250,
+      "world_seconds": 86400,
+      "author_approved": "2026-10-23",
+      "notes": "Part of the wood fuels the process; no additional fuel."
+    },
+    {
+      "id": 178,
+      "key": "molasses",
+      "en": "Prepare molasses",
+      "es": "Preparar melaza",
+      "mode": "attended",
+      "inputs": [
+        [
+          85,
+          1000
+        ],
+        [
+          61,
+          172
+        ]
+      ],
+      "output_material": 95,
+      "output_units": 100,
+      "world_seconds": 1200,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 179,
+      "key": "alcohol",
+      "en": "Obtain medicinal alcohol",
+      "es": "Obtener alcohol medicinal",
+      "mode": "attended",
+      "inputs": [
+        [
+          96,
+          1000
+        ],
+        [
+          61,
+          258
+        ]
+      ],
+      "output_material": 97,
+      "output_units": 100,
+      "world_seconds": 1800,
+      "author_approved": "2026-10-23",
+      "notes": "Abstract medicinal ingredient, fixed design yield."
+    },
+    {
+      "id": 180,
+      "key": "gunpowder_charge",
+      "en": "Prepare abstract charge",
+      "es": "Preparar carga abstracta",
+      "mode": "preparation",
+      "inputs": [
+        [
+          101,
+          1
+        ]
+      ],
+      "output_material": 100,
+      "output_units": 1,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 181,
+      "key": "carbine_kits",
+      "en": "Prepare ten carbine kits",
+      "es": "Preparar diez kits de carabina",
+      "mode": "preparation",
+      "inputs": [
+        [
+          100,
+          1
+        ],
+        [
+          102,
+          1
+        ]
+      ],
+      "output_material": 79,
+      "output_units": 10,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 182,
+      "key": "shotgun_kits",
+      "en": "Prepare ten shotgun kits",
+      "es": "Preparar diez kits de escopeta",
+      "mode": "preparation",
+      "inputs": [
+        [
+          100,
+          1
+        ],
+        [
+          103,
+          1
+        ]
+      ],
+      "output_material": 80,
+      "output_units": 10,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 183,
+      "key": "medikit_small",
+      "en": "Small medikit",
+      "es": "Preparar botiquín (pequeño)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          72,
+          5
+        ],
+        [
+          97,
+          10
+        ],
+        [
+          82,
+          2
+        ]
+      ],
+      "output_consumable": 0,
+      "output_units": 1,
+      "water_liters": 0,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 184,
+      "key": "medikit_medium",
+      "en": "Medium medikit",
+      "es": "Preparar botiquín (mediano)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          72,
+          12
+        ],
+        [
+          97,
+          23
+        ],
+        [
+          82,
+          5
+        ]
+      ],
+      "output_consumable": 11,
+      "output_units": 1,
+      "water_liters": 0,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 185,
+      "key": "medikit_large",
+      "en": "Large medikit",
+      "es": "Preparar botiquín (grande)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          72,
+          25
+        ],
+        [
+          97,
+          50
+        ],
+        [
+          82,
+          10
+        ]
+      ],
+      "output_consumable": 14,
+      "output_units": 1,
+      "water_liters": 0,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 186,
+      "key": "energy_honey_small",
+      "en": "Small energy drink (honey)",
+      "es": "Preparar bebida energética (miel) (pequeño)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          10
+        ],
+        [
+          86,
+          20
+        ]
+      ],
+      "output_consumable": 2,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 187,
+      "key": "energy_honey_medium",
+      "en": "Medium energy drink (honey)",
+      "es": "Preparar bebida energética (miel) (mediano)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          23
+        ],
+        [
+          86,
+          20
+        ]
+      ],
+      "output_consumable": 13,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 188,
+      "key": "energy_honey_large",
+      "en": "Large energy drink (honey)",
+      "es": "Preparar bebida energética (miel) (grande)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          50
+        ],
+        [
+          86,
+          20
+        ]
+      ],
+      "output_consumable": 16,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 189,
+      "key": "energy_sugar_small",
+      "en": "Small energy drink (sugar)",
+      "es": "Preparar bebida energética (azúcar) (pequeño)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          10
+        ],
+        [
+          99,
+          20
+        ]
+      ],
+      "output_consumable": 2,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 190,
+      "key": "energy_sugar_medium",
+      "en": "Medium energy drink (sugar)",
+      "es": "Preparar bebida energética (azúcar) (mediano)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          23
+        ],
+        [
+          99,
+          20
+        ]
+      ],
+      "output_consumable": 13,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 191,
+      "key": "energy_sugar_large",
+      "en": "Large energy drink (sugar)",
+      "es": "Preparar bebida energética (azúcar) (grande)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          81,
+          50
+        ],
+        [
+          99,
+          20
+        ]
+      ],
+      "output_consumable": 16,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 192,
+      "key": "anima_irupe_small",
+      "en": "Small Anima potion (irupe)",
+      "es": "Preparar poción de Ánima (irupé) (pequeño)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          83,
+          2
+        ]
+      ],
+      "output_consumable": 1,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 193,
+      "key": "anima_irupe_medium",
+      "en": "Medium Anima potion (irupe)",
+      "es": "Preparar poción de Ánima (irupé) (mediano)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          83,
+          5
+        ]
+      ],
+      "output_consumable": 12,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 194,
+      "key": "anima_irupe_large",
+      "en": "Large Anima potion (irupe)",
+      "es": "Preparar poción de Ánima (irupé) (grande)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          83,
+          10
+        ]
+      ],
+      "output_consumable": 15,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 195,
+      "key": "anima_lirio_small",
+      "en": "Small Anima potion (lirio)",
+      "es": "Preparar poción de Ánima (lirio) (pequeño)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          84,
+          2
+        ]
+      ],
+      "output_consumable": 1,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 196,
+      "key": "anima_lirio_medium",
+      "en": "Medium Anima potion (lirio)",
+      "es": "Preparar poción de Ánima (lirio) (mediano)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          84,
+          5
+        ]
+      ],
+      "output_consumable": 12,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    },
+    {
+      "id": 197,
+      "key": "anima_lirio_large",
+      "en": "Large Anima potion (lirio)",
+      "es": "Preparar poción de Ánima (lirio) (grande)",
+      "mode": "preparation",
+      "inputs": [
+        [
+          84,
+          10
+        ]
+      ],
+      "output_consumable": 15,
+      "output_units": 1,
+      "water_liters": 0.2,
+      "world_seconds": 600,
+      "author_approved": "2026-10-23"
+    }
+  ],
+  "consumable_specs": {
+    "author_approved": "2026-10-23",
+    "active_size_factors": [
+      1,
+      2.25,
+      5
+    ],
+    "round_active_grams_up": true,
+    "base_seconds_per_unit": 600,
+    "dexterity_reduction": true,
+    "additional_fuel": false,
+    "preserve_effects_doses_weights_and_abstract_containers": true,
+    "recipes": [
+      {
+        "key": "medikit",
+        "active_inputs": [
+          [
+            72,
+            5
+          ],
+          [
+            97,
+            10
+          ],
+          [
+            82,
+            2
+          ]
+        ]
+      },
+      {
+        "key": "energy_honey",
+        "active_inputs": [
+          [
+            81,
+            10
+          ]
+        ],
+        "fixed_inputs": [
+          [
+            86,
+            20
+          ]
+        ],
+        "water_liters": 0.2
+      },
+      {
+        "key": "energy_sugar",
+        "active_inputs": [
+          [
+            81,
+            10
+          ]
+        ],
+        "fixed_inputs": [
+          [
+            99,
+            20
+          ]
+        ],
+        "water_liters": 0.2
+      },
+      {
+        "key": "anima_irupe",
+        "active_inputs": [
+          [
+            83,
+            2
+          ]
+        ],
+        "water_liters": 0.2
+      },
+      {
+        "key": "anima_lirio",
+        "active_inputs": [
+          [
+            84,
+            2
+          ]
+        ],
+        "water_liters": 0.2
+      }
+    ]
+  },
+  "economy": {
+    "author_approved": "2026-10-23",
+    "derived_from_ingredients_and_fuel": true,
+    "processing_markup": 0.25,
+    "import_recovery_fraction_per_day": 0.001,
+    "library_copies_per_recipe": 10,
+    "identical_output_price": "lowest ingredient-cost recipe before processing markup"
+  },
+  "ammunition": {
+    "author_approved": "2026-10-23",
+    "prepared_reagents_mass_kg": 0.01,
+    "prepared_reagents_base_value": 20,
+    "charge_mass_kg": 0.01,
+    "seconds_per_recipe": 600,
+    "dexterity_reduction": true,
+    "charge_per_reagent_set": 1,
+    "kits_per_charge_and_sealed_set": 10,
+    "sealed_carbine_mass_kg": 0.39,
+    "sealed_shotgun_mass_kg": 0.44,
+    "sealed_set_base_value": "ten legacy kits",
+    "supplies_stock": "existing kit stock",
+    "notes": "Prepared sets abstract all reagents; no chemical proportions or real ammunition instructions."
+  },
+  "ui": {
+    "CA_FERMENT_ACTION_OK": {
+      "en": "Completed.",
+      "es": "Completado."
+    },
+    "CA_FERMENT_ACTION_REJECTED": {
+      "en": "Cannot complete: check recipe, supplies, station connection and carrying capacity.",
+      "es": "No se pudo completar: revisa receta, insumos, conexión y capacidad de carga."
+    },
+    "CA_FERMENT_DISCARDED": {
+      "en": "The batch was discarded. No ingredients returned.",
+      "es": "Lote descartado. No se devolvieron ingredientes."
+    },
+    "CA_FERMENT_COLLECT": {
+      "en": "Collect",
+      "es": "Retirar"
+    },
+    "CA_FERMENT_BEGIN": {
+      "en": "Start batch",
+      "es": "Iniciar lote"
+    },
+    "CA_FERMENT_DISCARD": {
+      "en": "Discard",
+      "es": "Descartar"
+    },
+    "CA_FERMENT_PROGRESS": {
+      "en": "%.0f L occupied | %d g remaining | %.2f h to finish",
+      "es": "%.0f L ocupados | %d g restantes | %.2f h para terminar"
+    },
+    "CA_FERMENT_READY": {
+      "en": "Ready. Partial collection is allowed without Chemistry.",
+      "es": "Listo. Puedes retirar parcialmente sin Química."
+    },
+    "CA_FERMENT_WAITING": {
+      "en": "Fermentation continues while you are away, even without Chemistry.",
+      "es": "La fermentación continúa cuando te alejas, incluso sin Química."
+    },
+    "CA_FERMENT_WITHDRAW_UNITS": {
+      "en": "Amount to collect: %d g",
+      "es": "Cantidad a retirar: %d g"
+    },
+    "CA_FERMENT_LOAD": {
+      "en": "New batch: %d L / maximum %d L",
+      "es": "Lote nuevo: %d L / máximo %d L"
+    },
+    "CA_FERMENT_INPUTS": {
+      "en": "Inputs: %d g molasses + %d g yeast + %.3f L potable water",
+      "es": "Insumos: %d g melaza + %d g levadura + %.3f L agua potable"
+    },
+    "CA_FERMENT_OUTPUT": {
+      "en": "Output: %d g fermented intermediate after %.0f world hours",
+      "es": "Resultado: %d g de fermentado tras %.0f horas del mundo"
+    },
+    "CA_FERMENT_REQUIREMENTS": {
+      "en": "Requires learned recipe, Workbench and Chemistry. Bottles and canteens are kept.",
+      "es": "Requiere receta aprendida, Banco de trabajo y Química. Conservas botellas y cantimploras."
+    },
+    "CA_FERMENT_CONFIRM_DISCARD": {
+      "en": "Press Discard again to destroy the entire batch without refund.",
+      "es": "Pulsa Descartar de nuevo para destruir todo el lote sin recuperar ingredientes."
+    },
+    "CA_CHEMISTRY_OUTPUT": {
+      "en": "Output: %d units (%.3f kg); fixed yield.",
+      "es": "Resultado: %d unidades (%.3f kg); rendimiento fijo."
+    },
+    "CA_CHEMISTRY_INPUT": {
+      "en": "%s: %d / %d units (%.3f kg required)",
+      "es": "%s: %d / %d unidades (%.3f kg necesarios)"
+    },
+    "CA_CHEMISTRY_WATER": {
+      "en": "Potable water in carried bottles/canteens: %.3f / %.3f L",
+      "es": "Agua potable en botellas/cantimploras personales: %.3f / %.3f L"
+    },
+    "CA_CHEMISTRY_TIME": {
+      "en": "%.1f world minutes. Attend Chemistry or use the wait.",
+      "es": "%.1f minutos del mundo. Atiende Química o usa la espera."
+    },
+    "CA_CHEMISTRY_CANCEL": {
+      "en": "Cancellation releases the reserved ingredients and water.",
+      "es": "Cancelar libera los ingredientes y el agua reservados."
+    },
+    "CA_FERMENT_MIN": {
+      "en": "Minimum",
+      "es": "Mínimo"
+    },
+    "CA_FERMENT_MAX": {
+      "en": "Maximum",
+      "es": "Máximo"
+    }
+  }
+}
