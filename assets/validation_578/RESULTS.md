@@ -1,8 +1,9 @@
 # 5.7.8 / #479 - Integrated support implements
 
-Status: the author returned and rejected the initial procedural presentation.
-The painted correction is ready for review, not accepted. CA479-01 remains in
-root pending_test.txt. Gameplay rules and item identities are unchanged.
+Status: author visual acceptance is complete as of 2026-10-22. After accepting
+the other five designs, the author confirmed the Orb handoff: "Ahora si dio bien
+la prueba." CA479-01 retains gameplay, campaign acquisition and save/load checks
+in root pending_test.txt. The initial procedural rejection remains historical.
 
 ## Current floating-Orb follow-up
 
@@ -23,8 +24,11 @@ on repeated runs. Static validation and document/localization freshness pass.
 
 Reproduce with prepare.py and run_native.ps1 -Checks -Script floating-orb;
 collect_orb.py uses the recorded final label. launch_author.ps1 -Mode orb opens
-the focused author scene. CA479-01 has partial visual confirmation only; the
-revised Orb and remaining gameplay/acquisition checks still await the author.
+the focused author scene. The author accepted this Orb retest on 2026-10-22
+using author-orb-20261022-231123 and package hash recorded in floating_orb_report.json.
+Visual approval is complete; remaining CA479-01 gameplay/acquisition/save checks
+still await confirmation. Report JSON files retain their original pre-acceptance
+run status; HISTORY records the subsequent author confirmation.
 The earlier 75-check package is retained under build/issue479/pre-floating-orb.
 
 ## Initial painted correction

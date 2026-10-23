@@ -18,8 +18,9 @@ The correction passes 75 native checks on the 16,721-entry full package;
 were inspected. See assets/validation_578/RESULTS.md and pending_test.txt
 (CA479-01). The author accepted the other five designs and requested only that
 the Orb lose its pedestal and float over the Book's open palm. That correction
-passes 23 focused native checks on the 16,722-entry package; Orb acceptance and
-the outstanding gameplay checks remain pending.
+passes 23 focused native checks on the 16,722-entry package. The author accepted
+the Orb retest on 2026-10-22, completing visual approval. Only the outstanding
+gameplay, acquisition and save/load checks remain in CA479-01.
 
 ## 5.7.7 - Centered target information (#481)
 

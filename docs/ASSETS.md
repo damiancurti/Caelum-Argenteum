@@ -44,7 +44,9 @@ glove variants referenced directly. Its pivot is the Book's existing pivot;
 other weapon images remain byte-identical. World and material sprites reuse
 the corrected icons. Native evidence: 23 checks, all three tiers in inventory,
 world, primary/return, Book switch and male/female palms; floating_orb_report.json.
-Orb visual acceptance and remaining CA479-01 gameplay checks stay pending.
+The author accepted the Orb retest on 2026-10-22, completing visual approval
+for all six designs, including inventory sprites. CA479-01 retains its
+outstanding gameplay, acquisition and save/load checks.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

@@ -17,8 +17,9 @@ Initial runtime validation passed 176 native assertions and two baseline/rollbac
 checks. The sprite correction passes 75 native checks and includes visible
 inventory row icons. [Evidence](assets/validation_578/RESULTS.md). The author
 accepted five corrected designs and requested a baseless Orb floating above the
-Book's open palm. That focused follow-up passes 23 native checks; CA479-01
-still awaits the Orb retest and outstanding gameplay checks.
+Book's open palm. That focused follow-up passes 23 native checks and the author
+accepted the Orb retest on 2026-10-22, completing visual approval. CA479-01
+retains only outstanding gameplay, acquisition and save/load checks.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

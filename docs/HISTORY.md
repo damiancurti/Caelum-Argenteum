@@ -70,6 +70,17 @@ native evidence and limits. The earlier 75-check sprite package is retained
 under build/issue479/pre-floating-orb. CA479-01 remains pending for this Orb
 retest and its other outstanding checks; no gameplay acceptance is inferred.
 
+2026-10-22, CA479-01 visual portion accepted (origin 5.7.8 / #479): the author
+confirmed the focused Orb handoff with "Ahora si dio bien la prueba."
+The tested scene was author-orb-20261022-231123, using the complete package
+SHA-256 1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de
+from b3d4a799. This completes visual approval for all six implements, including
+the Orb's three tiers, inventory/world sprites and open-palm presentation.
+Removed only the confirmed visual retest from pending_test.txt; CA479-01 retains
+its unconfirmed gameplay, campaign acquisition and save/load checks. No new
+runtime change or engine rerun was needed; documentation validation passed.
+The release remains 5.7.8. The author game and instruction terminal remain open.
+
 ## 5.7.7 - Aimed-target information (#481)
 
 2026-10-22: the author requested a centered gameplay version of the #471 gallery

@@ -18,14 +18,12 @@ separately. The painted correction passes 75 native assertions on the 16,721-ent
 full package; painted_report.json records inventory/world/held presentation and
 native controls. Static validation and author acceptance are distinct from these runs.
 
-Remaining: author check CA479-01 in pending_test.txt, including ordinary campaign
-shop/learning/crafting UI and visual review, then PR review/integration. Keep
-#479 open. The author returned; the temporary keep-awake was released. The first manual
-handoff failed visual acceptance. Recheck the painted correction, including
-inventory sprites, before collecting CA479-01 acceptance. Subsequent author
-review accepted the five non-Orb designs; the requested baseless Orb/open-palm
-correction passes 23 focused native checks (floating_orb_report.json). Retest
-that Orb and the outstanding gameplay/acquisition checks; do not reopen accepted art.
+Remaining: CA479-01 gameplay, ordinary campaign shop/learning/crafting UI and
+save/load checks, then PR review/integration. Keep #479 open. The author accepted
+the five non-Orb designs, then confirmed the baseless Orb/open-palm retest on
+2026-10-22. All six designs now have author visual approval, including inventory
+sprites. The focused Orb correction passes 23 native checks (floating_orb_report.json).
+Do not repeat accepted visual checks. The temporary keep-awake remains released.
 
 ## 5.7.7 - Target-panel delivery (#481)
 
