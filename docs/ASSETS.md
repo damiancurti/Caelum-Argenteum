@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.3** — 2026-10-22.
+Documentation version: **5.7.4** — 2026-10-22.
+
+## 5.7.4 - Owned Alchemy station (#470)
+
+assets/generators/alchemy_station.json is the approved placement/dimension
+source. generate_alchemy_data.py emits CaelumAlchemyData.zs;
+generate_alchemy_station.py builds the original station OBJ and transparent
+icon CALCA0 from the same mesh. The
+manifest records deterministic hashes and provenance. Geometry reuses the
+project's original wood, iron and brass station textures; no external art.
+Mesh bounds at the combined 1.5 scale fit the approved 60 x 60 x 72 collision.
+The static binding lives in MODELDEF; native collision/visual tests and save
+migration evidence belong to assets/validation_574. CA470-01 passed on 2026-10-22.
 
 ## 5.7.3 - Recovery validation (#406)
 

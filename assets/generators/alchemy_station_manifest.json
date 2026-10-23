@@ -1,0 +1,25 @@
+{
+  "issue": 470,
+  "provenance": "Original procedural geometry for Caelum Argenteum; reuses the project's original station material textures. No external assets.",
+  "vertices": 3284,
+  "faces": 958,
+  "model_bounds_xyz_y_up": [
+    [
+      -17.0,
+      17.0
+    ],
+    [
+      0.0,
+      48.0
+    ],
+    [
+      -8.95,
+      8.95
+    ]
+  ],
+  "actor_model_scale": 1.5,
+  "outputs": {
+    "src/models/caelum/props/stations/ca_station_alchemy.obj": "2a89e1ab168fce6af3f90193b5db318fb0bab9e643f3c1d857274b2e65b4f979",
+    "src/sprites/CALCA0.png": "bc34ce9fce65f084597e4d04c6ad80dd43f3d6aaf7803fa48b823223f4ffe23c"
+  }
+}

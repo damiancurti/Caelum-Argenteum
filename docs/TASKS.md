@@ -1,6 +1,29 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.3** — 2026-10-22.
+Documentation version: **5.7.4** — 2026-10-22.
+
+## 5.7.4 - Fixed Alchemy station (#470)
+
+Adds the fixed Workbench-backed Alchemy station (#470), represented by an
+original 3D fermentation table and still. Approved positions are MAP01
+(1128,448,0), workshop group 2, connected through Ronnie's Forge, and MAP03
+(-656,1472,0), group 0, beside the Workbench. Collision is 60 x 60 x 72 units.
+Station ID 12 and editor ID 18013 append without changing existing IDs.
+A revision-1 map roster installs it once in fresh and previous saves, waiting
+if blocked; a removed installed station is not reissued. The coordinator is
+static so it also runs after loading pre-feature saved maps.
+Proximity traversal uses the native local blockmap, retaining 128-unit 3D links,
+room groups and transitive networks. No construction recipe or new recipe IDs
+are introduced. Concrete recipes and start/completion prerequisites remain
+owned by #407/#409/#471 through the existing coordinator; this patch supplies
+the shared Workbench-plus-Alchemy capability check.
+Static validation passes, including thirteen station bindings and two
+deterministic generations. Final native evidence: 216 PASS / zero FAIL in
+fifteen selected runs (assets/validation_574), including old/current saves,
+blocked installation, travel, real Use and the existing task lifecycle with
+Alchemy connected. Author check CA470-01 passed author review on 2026-10-22.
+Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
+issue branches, commits, tests and PRs.
 
 ## 5.7.3 - Monotonic source recovery (#406)
 

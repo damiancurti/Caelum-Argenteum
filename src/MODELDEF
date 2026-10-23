@@ -4852,3 +4852,13 @@ Model CaelumReadingShelf
 }
 // #405: fuentes, materiales y arbustos con geometría 3D propia.
 #include "caelum/data/land_resources.modeldef"
+
+Model CaelumAlchemyStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_alchemy.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CALC A 0 0
+}

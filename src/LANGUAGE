@@ -6153,3 +6153,9 @@ CA_SOURCE_COTTON = "Algodón";
 CA_MATERIAL_HONEY = "Miel";
 CA_SOURCE_HONEY = "Colmena";
 // END #405 LAND RESOURCE LOCALIZATION
+
+// #470: fixed Alchemy station.
+[enu default]
+CA_CRAFTING_STATION_ALCHEMY = "Alchemy";
+[es]
+CA_CRAFTING_STATION_ALCHEMY = "Alquimia";

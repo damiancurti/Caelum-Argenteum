@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.3.** Obtain and update the complete repository, validate
+**Current release: 5.7.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.7.4 adds the fixed 3D Alchemy station at Ronnie's workshop and beside the
+MAP03 Workbench (#470), including additive old-save installation. Concrete
+recipes remain separate patches. Static validation and 216 native assertions
+pass; author check CA470-01 passed on 2026-10-22. [Alchemy evidence](assets/validation_574/RESULTS.md).
 
 V5.7.3 prevents duplicate source recovery after a backward calendar observation
 (#406). The existing 0.1%-daily rate, capacities and finite tutorial quotas stay

@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-151 - Hidden-window screenshots can retain a stale scene
+
+Status/evidence: ENGINE-VERIFIED; #470, 2026-10-22. Baseline 992da877 plus
+5.7.4; GZDoom 4.14.2 / Windows 11 / Vulkan / 1280 x 720. Author check
+CA470-01 passed author review on 2026-10-22. Evidence: assets/validation_574/report.json,
+final-hidden/final-visible logs and visuals/hidden-view.png versus mansion-view.png.
+
+The hidden native process accepted network events, moved the player to the
+station, opened crafting and reported passing assertions, but its screenshot
+still showed the initial outdoor view. Closing the introductory conversation
+was necessary for the fixture but did not resolve the hidden rendering issue.
+Matched hidden/visible launches with the same package and fixture confirmed
+that a visible window rendered the requested station view. Record window
+visibility in evidence. Do not infer visual correctness from simulation checks
+or use a hidden-window screenshot without confirming its scene/camera.
+This is a measured environment-specific behavior, not a claim about every
+GZDoom backend or every background window. Use a visible background window
+for visual/presentation capture when the author has authorized live tests;
+keep the usual unpaused/5%-audio settings and avoid overlapping native runs.
+PresentMon separately required Windows privileges unavailable in this session;
+render callbacks do not establish display cadence or GPU duration.
+
 ## CA-KP-150 - Clamping elapsed time does not prevent replay after a clock rewind
 
 Status/evidence: ENGINE-VERIFIED; #406, 2026-10-22. Baseline 5.7.2 versus the
@@ -4352,7 +4374,7 @@ roster from a real pre-feature save. Making the stateless coordinator a
 StaticEventHandler fixed the same input (mapupgrade-02: 8 PASS); subsequent
 save/reload also passed. Issued IDs and resource reserves stay in map actors.
 Fixtures and before/after logs: assets/validation_572; original saves remain
-for rollback. CA405-01 is pending. MAPINFO registration alone cannot prove
+for rollback. CA405-01 passed author review on 2026-10-22. MAPINFO registration alone cannot prove
 that a new ordinary handler works on existing saved maps.
 
 ## CA-KP-014 â€” FastProjectile collision does not integrate gravity

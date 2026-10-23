@@ -983,6 +983,16 @@ class CaelumCraftingRules : Object
         return -1;
     }
 
+    // Alquimia agrega una capacidad; las recetas concretas conservan sus IDs.
+    static int GetMissingAlchemyStation(int capabilities)
+    {
+        if (!NetworkHasStation(capabilities,CaelumConstants.CRAFTING_STATION_WORKBENCH))
+            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        if (!NetworkHasStation(capabilities,CaelumConstants.CRAFTING_STATION_ALCHEMY))
+            return CaelumConstants.CRAFTING_STATION_ALCHEMY;
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
     {
         if (!NetworkHasStation(

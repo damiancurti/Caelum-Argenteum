@@ -1,9 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.3** — 2026-10-22.
+Documentation version: **5.7.4** — 2026-10-22.
 
-**5.7.3/#406:**monotonic-recovery;validation_573;CA406-01:accepted2026-10-22.
-**5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22;next:#406/#407/#470/#409/#471/#472.
+**5.7.4/#470:**Alchemy;216PASS/15runs;validation_574;CA470-01:accepted2026-10-22.
+**5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.
+**5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22.
 **5.7.1/#404:**resource-contract;validation_571.
 
 **5.7.0/#408:** water quality; validation_570. CA408-01 accepted2026-10-21.
@@ -43,7 +44,7 @@ CA320-01 passed 2026-10-17. Shared #325 decision: 32m plus line of sight.
 panel at the top; validation_5438:5runs/28checks, CA321-02 accepted Oct18.
 
 **5.4.29/#327:** campaign MAP01 -> MAP02 -> MAP03; city has 184-MU district/
-1024-MU exterior sky, original footprints and private CAH interiors. Stable IDs remain. Normal siege:
+1024-MU exterior sky, original footprints and private CAH interiors. IDs remain. Normal siege:
 100/group/350tics,1000-living admission cap,6600 cumulative+Zupay,600 defenders.
 Resurrection may exceed cap; new groups wait; victory stops reserves. Evidence
 validation_5429. Old catalogue recovery requires complete b9fd71ce runtime.
