@@ -55,6 +55,8 @@ scripts['painted-gallery']='ca_journal_page 0; wait 70; netevent ca479_gallery; 
 scripts['painted-gallery-tail']='; '.join(painted_views[9:])+'; netevent ca479_artcheck; netevent ca479_legacyart; wait 5; quit'
 scripts['inventory-preview']='wait 70; netevent ca479_gallery; wait 45; netevent ca479_inventory; ca_journal_page 0; ca_journal_open true; wait 35; screenshot art-inventory-preview.png; netevent ca479_artcheck; wait 5; quit'
 scripts['painted-actions']='wait 70; netevent ca479_gallery; wait 45; '+ '; '.join(f'+attack; wait 4; -attack; screenshot art-action-{i:02}.png; wait 40; +user2; wait 6; screenshot art-block-{i:02}.png; -user2; wait 20; screenshot art-return-{i:02}.png; netevent ca479_next; netevent ca479_next; netevent ca479_next; wait 45' for i in range(6))+'; netevent ca479_artcheck; wait 5; quit'
+scripts['floating-orb']='wait 70; netevent ca479_orb; wait 45; '+ '; '.join(f'screenshot art-orb-world-{i}.png; netevent ca479_orbcheck; netevent ca479_inventory; ca_journal_open true; ca_journal_page 0; wait 20; screenshot art-orb-inventory-{i}.png; ca_journal_open false; +attack; wait 4; -attack; screenshot art-orb-action-{i}.png; wait 40; screenshot art-orb-return-{i}.png; netevent ca479_next; wait 45' for i in range(3))+'; screenshot art-book-return.png; netevent ca479_legacyart; netevent ca479_orb; netevent ca479_orbfemale; wait 45; screenshot art-orb-female.png; netevent ca479_orbcheck; wait 5; quit'
+scripts['orb-interactive']='language es; ca_journal_page 0; bind Tab ca_journal_toggle; bind M togglemap; bind F1 "netevent ca479_next"; wait 70; netevent ca479_orb'
 for name, data in scripts.items():
     (OUT / f'{name}.cfg').write_text(data + '\n', encoding='utf-8', newline='\n')
 print('Prepared isolated #479 support-state fixture.')

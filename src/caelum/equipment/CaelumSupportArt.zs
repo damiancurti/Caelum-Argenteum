@@ -48,6 +48,12 @@ class CaelumSupportArt : Object play
         user.A_ClearOverlays(46,49);user.A_ClearOverlays(51,51);user.A_ClearOverlays(53,53);
         vector2 grip=CaelumFirstPersonLayers.Grip(type)+(dx,dy);
         CaelumFirstPersonLayers.Place(user,50,Pose(type,tier),grip,CaelumFirstPersonLayers.Grip(type),1,rotation);
-        CaelumFirstPersonLayers.Hand(user,52,0,grip,(0,0),1,rotation);
+        if(type==CaelumConstants.WEAPON_TYPE_ORB)
+        {
+            int variant=CaelumAppearanceHands.Variant(user);
+            State palm=GetDefaultByType("CaelumOrbHandFrames").FindStateByString(variant<0?"Fallback":String.Format("Hand%d",variant));
+            CaelumFirstPersonLayers.Place(user,52,palm,grip,CaelumFirstPersonLayers.Grip(type),1,rotation);
+        }
+        else CaelumFirstPersonLayers.Hand(user,52,0,grip,(0,0),1,rotation);
     }
 }

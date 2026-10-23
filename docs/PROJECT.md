@@ -16,7 +16,10 @@ Old elemental identities/learning survive; active effects resume after saves.
 The correction passes 75 native checks on the 16,721-entry full package;
 18 world/held views, 18 actual inventory rows and six T1 input/return sequences
 were inspected. See assets/validation_578/RESULTS.md and pending_test.txt
-(CA479-01). The author has returned; visual acceptance remains pending.
+(CA479-01). The author accepted the other five designs and requested only that
+the Orb lose its pedestal and float over the Book's open palm. That correction
+passes 23 focused native checks on the 16,722-entry package; Orb acceptance and
+the outstanding gameplay checks remain pending.
 
 ## 5.7.7 - Centered target information (#481)
 

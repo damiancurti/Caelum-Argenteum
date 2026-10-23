@@ -16,7 +16,9 @@ roles for the four elements. Painted inventory/world/first-person sprites follow
 Initial runtime validation passed 176 native assertions and two baseline/rollback
 checks. The sprite correction passes 75 native checks and includes visible
 inventory row icons. [Evidence](assets/validation_578/RESULTS.md). The author
-returned and rejected the initial art; CA479-01 awaits review of the correction.
+accepted five corrected designs and requested a baseless Orb floating above the
+Book's open palm. That focused follow-up passes 23 native checks; CA479-01
+still awaits the Orb retest and outstanding gameplay checks.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

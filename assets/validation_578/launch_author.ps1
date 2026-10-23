@@ -1,11 +1,11 @@
-param([ValidateSet('combat','gallery')][string]$Mode='combat')
+param([ValidateSet('combat','gallery','orb')][string]$Mode='combat')
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 Push-Location -LiteralPath $repo
 try {
     & python (Join-Path $PSScriptRoot 'prepare.py')
     if($LASTEXITCODE -ne 0){throw 'Fixture preparation failed.'}
-    $script=if($Mode -eq 'gallery'){'gallery-interactive'}else{'interactive'}
+    $script=if($Mode -eq 'orb'){'orb-interactive'}elseif($Mode -eq 'gallery'){'gallery-interactive'}else{'interactive'}
     $label='author-'+$Mode+'-'+(Get-Date -Format 'yyyyMMdd-HHmmss')
     & (Join-Path $PSScriptRoot 'run_native.ps1') -Label $label -Checks -Script $script -Interactive
     Write-Host 'CA479-01: GZDoom is open. Keep this terminal open for the author.'

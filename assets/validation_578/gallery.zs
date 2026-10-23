@@ -32,6 +32,21 @@ class CA479Gallery : EventHandler
         if(level.MapName!="CSUP479")return;
         let user=CaelumPlayer(players[event.Player].mo);if(user==null)return;
         if(event.Name=="ca479_gallery"){Selection=0;Show(user);}
+        if(event.Name=="ca479_orb"){Selection=3;Show(user);}
+        if(event.Name=="ca479_orbfemale"){user.CharacterProfile.Sex=1;}
+        if(event.Name=="ca479_orbcheck")
+        {
+            bool palms=true;
+            for(int variant=-1;variant<37;variant++)
+                palms=palms && GetDefaultByType("CaelumOrbHandFrames").FindStateByString(variant<0?"Fallback":String.Format("Hand%d",variant))!=null;
+            int active=CaelumAppearanceHands.Variant(user);
+            State expected=GetDefaultByType("CaelumOrbHandFrames").FindStateByString(active<0?"Fallback":String.Format("Hand%d",active));
+            let hand=user.player.FindPSprite(52);
+            Console.Printf("CA479 %s all original Book palm variants resolve",palms?"PASS":"FAIL");
+            Console.Printf("CA479 %s Orb uses active appearance palm variant=%d",hand!=null && hand.CurState==expected?"PASS":"FAIL",active);
+            Console.Printf("CA479 %s Orb shares original Book palm pivot",CaelumFirstPersonLayers.Grip(19)==CaelumAppearanceHands.ComposedPivot(23,0)?"PASS":"FAIL");
+            Console.Printf("CA479 RESULT floating Orb presentation checked");
+        }
         if(event.Name=="ca479_next"){Selection=(Selection+1)%18;Show(user);}
         if(event.Name=="ca479_inventory" && Held!=null)
         {

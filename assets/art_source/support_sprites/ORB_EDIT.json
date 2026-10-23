@@ -1,0 +1,9 @@
+{
+  "issue": 479,
+  "tool": "built-in image_gen.imagegen",
+  "request": "Remove the Orb base and hold it like the Book; other designs accepted.",
+  "input": "assets/art_source/support_sprites/orb-source.png",
+  "input_role": "edit target",
+  "output": "assets/art_source/support_sprites/orb-floating-source.png",
+  "prompt": "Use case: precise-object-edit. Asset: Caelum Argenteum #479 painted equipment sprite atlas. Input image 1 is the EDIT TARGET, the current three-tier orb atlas. Change ONLY this: remove the pedestal/foot/base underneath EACH of the three spheres, restoring a clean round spherical lower contour where the stand was attached. Preserve the accepted carved wooden sphere, blue inlays, lighting, painted pixel-oriented dark fantasy style, view angle, and silver equatorial band on T2 / gold band on T3. No handle, no stem, no foot, no stand, no platform, no hands, no new adornments or aura. Each object must be a freely floating complete sphere. Keep the same three equal square cells in a single horizontal row: T1 left, T2 middle, T3 right, same scale and orientation, wide transparent gutters and generous clear margins. Preserve genuine transparent alpha background; no checkerboard, floor shadow, text or labels. This is a narrow correction of an approved design, not a redesign. The sprites will be cut and registered for inventory, world billboards, and floating above the existing open Book hand in first person."
+}

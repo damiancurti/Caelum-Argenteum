@@ -8,7 +8,7 @@
   "frame_order": ["scepter", "orb", "book", "censer", "statuette", "effigy"],
   "new_implements": {
     "scepter": {"first_person_height": 150, "grip_fraction": [0.30, 0.74]},
-    "orb": {"first_person_height": 100, "grip_fraction": [0.50, 0.92]},
+    "orb": {"source": "orb-floating-source.png", "first_person_height": 100, "grip_fraction": [0.50, 1.15], "grip": [227, 161], "hand": "Book open palm, appearance variant FH02"},
     "censer": {"first_person_height": 110, "grip_fraction": [0.50, 0.86]},
     "effigy": {"first_person_height": 112, "grip_fraction": [0.50, 0.91]}
   },

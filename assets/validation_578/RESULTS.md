@@ -4,7 +4,30 @@ Status: the author returned and rejected the initial procedural presentation.
 The painted correction is ready for review, not accepted. CA479-01 remains in
 root pending_test.txt. Gameplay rules and item identities are unchanged.
 
-## Current painted correction
+## Current floating-Orb follow-up
+
+The author accepted the five non-Orb designs and requested only a baseless Orb
+held like the Book. Three tier sprites now float over the original Book palm;
+inventory/world/component icons have the same baseless silhouette. All other
+weapon images and existing hand images match ee99a337 byte-for-byte. The original
+Orb source is retained beside the targeted edit and exact built-in imagegen prompt.
+
+The 16,722-entry full PK3 matches src bytes. GZDoom 4.14.2 passes 23 checks:
+five selections, three inventory resolutions, three original Book/Statuette
+identity checks, and four sets of three Orb palm/pivot checks. Agent inspection
+covers all tiers in world/inventory, primary/return, switching back to the Book,
+and the female palm variant. All 38 existing palm states resolve. Exact package
+hash, source hashes, native log and captures: floating_orb_report.json,
+native/floating-orb-01* and visuals/floating-orb-*. Registration is byte-identical
+on repeated runs. Static validation and document/localization freshness pass.
+
+Reproduce with prepare.py and run_native.ps1 -Checks -Script floating-orb;
+collect_orb.py uses the recorded final label. launch_author.ps1 -Mode orb opens
+the focused author scene. CA479-01 has partial visual confirmation only; the
+revised Orb and remaining gameplay/acquisition checks still await the author.
+The earlier 75-check package is retained under build/issue479/pre-floating-orb.
+
+## Initial painted correction
 
 Book/Statuette restore the original inventory/crafting icons, world billboards,
 first-person poses and appearance hands. Scepter/Orb/Censer/Effigy use twelve

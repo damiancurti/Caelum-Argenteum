@@ -25,6 +25,11 @@ painted sources and deterministic processing for registration. Do not substitute
 procedural 3D projections for the requested sprite style. Review inventory-scale
 legibility and native grip/action transitions before the next author handoff.
 
+Follow-up: the author accepted the other five corrected designs and requested
+only that the Orb have no pedestal and be held like the Book. Preserve its
+carved sphere and tier detailing; reuse the Book's open palm and let the sphere
+float above it. Apply the same baseless silhouette to inventory/world sprites.
+
 ## Clothing brief approved for #387 (2026-10-21)
 
 Use the 25 native garment identities in SYSTEMS: formal and warm formal, plus

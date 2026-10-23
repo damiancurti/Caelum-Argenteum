@@ -58,6 +58,18 @@ original Book/Statuette source pixels match the pre-correction revision.
 assets/validation_578/painted_report.json records the new package and evidence;
 the earlier 176+2 results remain tied to their retained pre-sprite package.
 
+2026-10-22, CA479-01 partial visual confirmation: the author stated, "Lo único
+que cambiaría es que la orbe no tenga base y se sostenga como el libro."
+This accepts the other five corrected designs, not the outstanding gameplay/
+acquisition checks. The focused Orb revision removes its pedestal across all
+three tiers and inventory/world/held sprites, reusing the Book's original open
+palm and appearance variants. Other weapon images remain byte-identical.
+The 16,722-entry full package matches src and passes 23 native checks; the
+registration reproduces identically. floating_orb_report.json records hashes,
+native evidence and limits. The earlier 75-check sprite package is retained
+under build/issue479/pre-floating-orb. CA479-01 remains pending for this Orb
+retest and its other outstanding checks; no gameplay acceptance is inferred.
+
 ## 5.7.7 - Aimed-target information (#481)
 
 2026-10-22: the author requested a centered gameplay version of the #471 gallery

@@ -35,7 +35,16 @@ MANIFEST.json record exact output/input hashes. Native presentation and inventor
 checks are recorded separately from the initial runtime evidence in
 assets/validation_578/RESULTS.md: 75 native checks on the full corrected package,
 18 world/held views, 18 inventory rows and six T1 input/return sequences.
-Author acceptance remains pending.
+The author subsequently accepted the other five designs and requested a
+baseless Orb held like the Book. orb-floating-source.png and ORB_EDIT.json
+retain the targeted imagegen edit; orb-source.png preserves the earlier design.
+The three updated Orb icons/first-person layers remove the pedestal. The held
+Orb floats above the original FH02 Book palm, with all 38 original appearance/
+glove variants referenced directly. Its pivot is the Book's existing pivot;
+other weapon images remain byte-identical. World and material sprites reuse
+the corrected icons. Native evidence: 23 checks, all three tiers in inventory,
+world, primary/return, Book switch and male/female palms; floating_orb_report.json.
+Orb visual acceptance and remaining CA479-01 gameplay checks stay pending.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

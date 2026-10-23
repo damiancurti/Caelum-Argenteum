@@ -348,6 +348,7 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Grip(int kind)
     {
+        if(kind==CaelumConstants.WEAPON_TYPE_ORB)return CaelumAppearanceHands.ComposedPivot(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK,0);
         if (CaelumWeaponModel.IsSingleTierType(kind)) return (216,160);
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==15;

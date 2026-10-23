@@ -22,7 +22,10 @@ Remaining: author check CA479-01 in pending_test.txt, including ordinary campaig
 shop/learning/crafting UI and visual review, then PR review/integration. Keep
 #479 open. The author returned; the temporary keep-awake was released. The first manual
 handoff failed visual acceptance. Recheck the painted correction, including
-inventory sprites, before collecting CA479-01 acceptance.
+inventory sprites, before collecting CA479-01 acceptance. Subsequent author
+review accepted the five non-Orb designs; the requested baseless Orb/open-palm
+correction passes 23 focused native checks (floating_orb_report.json). Retest
+that Orb and the outstanding gameplay/acquisition checks; do not reopen accepted art.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

@@ -5,11 +5,11 @@ Sprite "H479B0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_
 Sprite "S479C0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t3.png", 0, 0 }
 Sprite "H479C0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/scepter_t3.png", 0, 0 }
 Sprite "S479D0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t1.png", 0, 0 }
-Sprite "H479D0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t1.png", 0, 0 }
+Sprite "H479D0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/first_person/support_sprites/orb_t1.png", 0, 0 }
 Sprite "S479E0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t2.png", 0, 0 }
-Sprite "H479E0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t2.png", 0, 0 }
+Sprite "H479E0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/first_person/support_sprites/orb_t2.png", 0, 0 }
 Sprite "S479F0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t3.png", 0, 0 }
-Sprite "H479F0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t3.png", 0, 0 }
+Sprite "H479F0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/first_person/support_sprites/orb_t3.png", 0, 0 }
 Sprite "S479G0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book.png", 0, 0 }
 Sprite "H479G0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0 }
 Sprite "S479H0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book_t2.png", 0, 0 }
@@ -37,3 +37,41 @@ Sprite "H479R0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_
 Sprite "M089A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/censer_t1.png", 0, 0 }
 Sprite "M090A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t1.png", 0, 0 }
 Sprite "M091A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t1.png", 0, 0 }
+Sprite "O000A0", 320, 200 { NoTrim Offset 227, 161 Patch "sprites/caelum/first_person/v1/hands/FH02A0.png", 0, 0 }
+Sprite "O001A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/0/FH02.png", 0, 0 }
+Sprite "O002A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/1/FH02.png", 0, 0 }
+Sprite "O003A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/2/FH02.png", 0, 0 }
+Sprite "O004A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/3/FH02.png", 0, 0 }
+Sprite "O005A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/4/FH02.png", 0, 0 }
+Sprite "O006A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/5/FH02.png", 0, 0 }
+Sprite "O007A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/6/FH02.png", 0, 0 }
+Sprite "O008A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/7/FH02.png", 0, 0 }
+Sprite "O009A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/8/FH02.png", 0, 0 }
+Sprite "O010A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/9/FH02.png", 0, 0 }
+Sprite "O011A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/10/FH02.png", 0, 0 }
+Sprite "O012A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/11/FH02.png", 0, 0 }
+Sprite "O013A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/12/FH02.png", 0, 0 }
+Sprite "O014A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/13/FH02.png", 0, 0 }
+Sprite "O015A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/14/FH02.png", 0, 0 }
+Sprite "O016A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/15/FH02.png", 0, 0 }
+Sprite "O017A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/16/FH02.png", 0, 0 }
+Sprite "O018A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/17/FH02.png", 0, 0 }
+Sprite "O019A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/18/FH02.png", 0, 0 }
+Sprite "O020A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/19/FH02.png", 0, 0 }
+Sprite "O021A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/20/FH02.png", 0, 0 }
+Sprite "O022A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/21/FH02.png", 0, 0 }
+Sprite "O023A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/22/FH02.png", 0, 0 }
+Sprite "O024A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/23/FH02.png", 0, 0 }
+Sprite "O025A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/24/FH02.png", 0, 0 }
+Sprite "O026A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/25/FH02.png", 0, 0 }
+Sprite "O027A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/26/FH02.png", 0, 0 }
+Sprite "O028A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/27/FH02.png", 0, 0 }
+Sprite "O029A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/28/FH02.png", 0, 0 }
+Sprite "O030A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/29/FH02.png", 0, 0 }
+Sprite "O031A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/30/FH02.png", 0, 0 }
+Sprite "O032A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/31/FH02.png", 0, 0 }
+Sprite "O033A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/32/FH02.png", 0, 0 }
+Sprite "O034A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/33/FH02.png", 0, 0 }
+Sprite "O035A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/34/FH02.png", 0, 0 }
+Sprite "O036A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/35/FH02.png", 0, 0 }
+Sprite "O037A0", 320, 200 { NoTrim Offset 227, 161 Patch "graphics/caelum/appearance/hands/36/FH02.png", 0, 0 }
