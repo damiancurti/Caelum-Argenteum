@@ -99,6 +99,8 @@ exact built-in image_gen prompts and asset hashes are under
 assets/art_source/mate_sprites. Museum photos are not distributed.
 
 The updated terminal adds option 7 for world sprite review. Options 2-4 inspect
-each mate and option 6 shows crafting. Corrected artwork is **pending author
-acceptance**. Original functional evidence is reused for unchanged mechanics;
+each mate and option 6 shows crafting. On 2026-10-23 the author confirmed that
+all tests now passed: **CA472-01 is accepted in full**, including corrected
+artwork. Its outstanding entry is removed from pending_test.txt. The acceptance
+update changes documentation only. Original functional evidence is reused for unchanged mechanics;
 no full suite, multiplayer or performance benchmark is claimed for this art edit.

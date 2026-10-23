@@ -25,8 +25,9 @@ mate MODELDEF bindings are removed from the complete package. Legacy meshes,
 generator function, manifest and captures remain recovery evidence; the old
 generator entry point delegates to the painted exporter. Dry-gourd material
 art and accepted #479 weapon art are unchanged. The open-hemisphere mass/thermal
-approximation remains the accepted gameplay model. CA472-01 now awaits only
-visual acceptance; review the new contact sheet and native correction evidence.
+approximation remains the accepted gameplay model. The author accepted the
+corrected artwork and all CA472-01 checks on 2026-10-23. The contact sheet and
+native correction evidence preserve the accepted presentation.
 
 ## 5.7.13 - Chemistry supply presentation (#471)
 

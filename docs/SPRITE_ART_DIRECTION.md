@@ -24,7 +24,7 @@ the natural gourd stays modest. All retain the fixed bronze bombilla.
 Use the owned painted inventory style, not procedural 3D projections. Record
 museum references and their roles in assets/art_source/mate_sprites/PROMPTS.json.
 The approved hemisphere is a simplified thermal calculation, not a visual brief.
-Corrected artwork remains subject to author visual acceptance under CA472-01.
+The author accepted the corrected artwork under CA472-01 on 2026-10-23.
 
 ## Weapon continuity correction for #479 (2026-10-22)
 

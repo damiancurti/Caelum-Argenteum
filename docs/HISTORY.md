@@ -43,6 +43,14 @@ complete package passes 21 assertions in five native runs, including loading the
 pre-correction save. Eight new captures, six deterministic outputs and full
 source/package equality are recorded in assets/validation_5714/RESULTS.md.
 
+Final author confirmation on 2026-10-23: **CA472-01 (origin 5.7.14 / #472),
+passed in full**, including the corrected historical sprites. The author stated
+that all tests now passed, without qualifications. The outstanding visual entry
+is removed and the tracked pending_test.txt is empty. Functional and visual
+acceptance complete the approved V5.7 author-test scope. This documentation-only
+acceptance update preserves the tested runtime/package and release number;
+integration of the focused PRs remains a separate operation.
+
 ## 5.7.13 - Chemistry batch implementation (#471), 2026-10-23
 
 Initial foundation: CaelumFermentationBatch stores a revisioned lot with capacity,

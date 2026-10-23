@@ -12,8 +12,9 @@ it, then rebuild with `run_dev.bat` as described below.
 5.7.14 implements reusable gourd, silver-clad and gold-clad mates (#472), with
 individual contents, temperature, twenty hot uses, additive ten-second recovery,
 recipes and commerce. Inventory preparation shows the source and action keys.
-The functional package passed 163 native assertions and author checks. Corrected
-historical mate sprites await visual acceptance in CA472-01; see
+The functional package passed 163 native assertions; the corrected historical
+sprites passed 21 focused checks. CA472-01 passed full author acceptance on
+2026-10-23, completing the approved V5.7 test scope; see
 [evidence](assets/validation_5714/RESULTS.md). #471 is already accepted.
 
 5.7.13 implements #471 Chemistry recipes, shared fermentation batches, partial

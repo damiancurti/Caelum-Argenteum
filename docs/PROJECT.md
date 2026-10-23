@@ -11,8 +11,9 @@ and purchase. Owned inventory sprites match the painted world billboards and inc
 the fixed bronze bombilla. No optional herbs or new herb effects are included.
 Physical, crafting and acquisition data are documented in SYSTEMS and the
 approved generator table. Evidence: assets/validation_5714/RESULTS.md.
-The author passed functional CA472-01 checks on 2026-10-23; corrected historical
-mate artwork remains pending visual acceptance. #471 has passed CA471-BATCH-01; the issues
+The author passed all CA472-01 checks, including corrected historical artwork,
+on 2026-10-23. The approved V5.7 author test queue is empty; V5.8 is next in order.
+#471 has passed CA471-BATCH-01; the issues
 retain independent branches, commits, evidence and PRs.
 
 ## 5.7.13 - Chemistry batches (#471)
