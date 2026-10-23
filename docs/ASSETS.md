@@ -18,7 +18,7 @@ assets/validation_5713. Models use contiguous material surfaces below the native
 32-slot limit. Geometry represents the item identity, not an exposed chemical
 process or real ammunition assembly. Final native presentation passes with five
 inspected captures; two generator runs preserve all 13 data/art outputs. Author
-review remains pending; no new visual acceptance is claimed.
+review passed as part of CA471-BATCH-01 on 2026-10-23, without qualifications.
 
 ## 5.7.12 - Owned Fermentation Barrel (#487)
 

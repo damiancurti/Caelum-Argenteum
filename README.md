@@ -33,7 +33,7 @@ The remaining #471 fermentation design now defines one batch per barrel,
 ingredient consumption at start, discard on cancellation and continued progress
 without Chemistry. Finished product may also be collected without Chemistry,
 in partial withdrawals; the barrel stays occupied until empty. Recipes and
-batch gameplay are implemented in 5.7.13; author acceptance is pending.
+batch gameplay are implemented in 5.7.13 and accepted through CA471-BATCH-01 on 2026-10-23.
 
 V5.7.9 implements #409 water boiling: atomic station work, biological-only
 purification, temperature and hot-drink guards. The author approved ordinary
