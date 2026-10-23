@@ -6096,3 +6096,29 @@ CA_CLOTHING_BC = "Botines urbanos de cuero";
 CA_CLOTHING_BR = "Botas de campo de cuero";
 CA_CLOTHING_BS = "Alpargatas de algodón";
 CA_CLOTHING_BP = "Alpargatas remendadas";
+
+[es]
+CA_WATER_POTABLE = "Potable";
+CA_WATER_BIOLOGICAL = "Biológica";
+CA_WATER_SALT = "Sal";
+CA_WATER_CHEMICAL = "Química";
+CA_WATER_UNKNOWN = "Calidad desconocida";
+CA_WATER_EMPTY = "Vacío";
+CA_WATER_COLLECT = "Recoger agua";
+CA_WATER_EMPTY_ACTION = "Vaciar";
+CA_WATER_COLLECTED = "Agua recogida.";
+CA_WATER_EMPTIED = "Recipiente vaciado.";
+CA_WATER_TRANSFER_REJECTED = "No se puede recoger o vaciar agua aquí. Revisá el recipiente seleccionado, la fuente, el volumen y la carga.";
+
+[enu default]
+CA_WATER_POTABLE = "Potable";
+CA_WATER_BIOLOGICAL = "Biological";
+CA_WATER_SALT = "Salt";
+CA_WATER_CHEMICAL = "Chemical";
+CA_WATER_UNKNOWN = "Unknown quality";
+CA_WATER_EMPTY = "Empty";
+CA_WATER_COLLECT = "Collect water";
+CA_WATER_EMPTY_ACTION = "Empty";
+CA_WATER_COLLECTED = "Water collected.";
+CA_WATER_EMPTIED = "Container emptied.";
+CA_WATER_TRANSFER_REJECTED = "Cannot collect or empty water here. Check the selected container, source, volume and carried load.";

@@ -434,6 +434,46 @@ class CaelumWaterContainer : CaelumConsumableItem
 {
     double WaterLiters;
     bool WasSubmerged;
+    int WaterQuality;
+    int WaterQualityRevision;
+
+    // Los guardados anteriores sólo podían contener agua potable. Cero conserva
+    // esa identidad; migrar no rellena, vacía ni modifica una calidad existente.
+    void EnsureWaterQuality()
+    { if (WaterQualityRevision < CaelumWaterQuality.REVISION) WaterQualityRevision = CaelumWaterQuality.REVISION; }
+    clearscope bool IsPotable() { return CaelumWaterQuality.IsSafe(WaterQuality); }
+    clearscope String WaterLabel()
+    { return WaterLiters <= 0.000001 ? StringTable.Localize("CA_WATER_EMPTY", false) : CaelumWaterQuality.Label(WaterQuality); }
+    bool AddWater(double liters, int quality)
+    {
+        if (liters <= 0 || !CaelumWaterQuality.Valid(quality)
+            || WaterLiters < 0 || WaterLiters + liters > GetCapacityLiters() + 0.000001
+            || (WaterLiters > 0.000001 && !CaelumWaterQuality.Valid(WaterQuality))) return false;
+        EnsureWaterQuality();
+        WaterQuality = WaterLiters > 0.000001 ? WaterQuality | quality : quality;
+        WaterLiters += liters;
+        return true;
+    }
+    bool FillFromSource(CaelumPlayer user)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || user.health <= 0) return false;
+        int quality = CaelumWaterQuality.Source(user);
+        double missing = GetCapacityLiters() - WaterLiters;
+        if (missing <= 0.000001 || !CaelumWaterQuality.Valid(quality)
+            || !user.CanAddWeightToPersonalInventory(missing + 0.001)) return false;
+        if (!AddWater(missing, quality)) return false;
+        let record = user.GetPersistentCharacterState(false);
+        if (IsPotable() && record != null && record.MainM00WaterContainerGiven) record.MainM00WaterFilled = true;
+        user.OnNativeInventoryChanged(); user.PersistCharacterState();
+        return true;
+    }
+    bool EmptyWater(CaelumPlayer user)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || WaterLiters <= 0) return false;
+        EnsureWaterQuality(); WaterLiters = 0; WaterQuality = CaelumWaterQuality.POTABLE;
+        user.OnNativeInventoryChanged(); user.PersistCharacterState();
+        return true;
+    }
     Default
     {
         Inventory.MaxAmount 1;
@@ -456,14 +496,14 @@ class CaelumWaterContainer : CaelumConsumableItem
     override Inventory CreateCopy(Actor other)
     {
         let copy = CaelumWaterContainer(Super.CreateCopy(other));
-        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; }
+        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; }
         CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
     override Inventory CreateTossable(int amount)
     {
         let copy = CaelumWaterContainer(Super.CreateTossable(amount));
-        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.InMagicBox = InMagicBox; }
+        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.InMagicBox = InMagicBox; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; }
         CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
@@ -472,10 +512,11 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool Drink()
     {
         let user = CaelumPlayer(Owner);
-        if (user == null || user.health <= 0 || InMagicBox || WaterLiters <= 0.000001
+        if (user == null || user.health <= 0 || InMagicBox || !IsPotable() || WaterLiters <= 0.000001
             || user.DerivedStats == null || user.CurrentThirst >= 100) return false;
         // Un sorbo cubre diez puntos de Sed según la masa corporal, sin equipo.
         // Si queda menos agua, sólo recupera la proporción realmente bebida.
+        EnsureWaterQuality();
         double bodyMass = Max(1, user.DerivedStats.BaseMass);
         double amount = Min(bodyMass / CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE, WaterLiters);
         let power = CaelumRegenerationPower(user.GiveInventoryType("CaelumThirstRegeneration"));
@@ -499,15 +540,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         bool entered = submerged && !WasSubmerged;
         WasSubmerged = submerged;
         if (!entered || InMagicBox) return;
-        double missingLiters = Max(0.0, GetCapacityLiters() - WaterLiters);
-        if (missingLiters <= 0.000001) return;
-        // Completa vacíos y parciales; sólo el agua faltante añade peso.
-        // Nunca sobrecarga ni usa la reducción de la Caja.
-        if (!user.CanAddWeightToPersonalInventory(missingLiters + 0.001)) return;
-        WaterLiters = GetCapacityLiters();
-        let record = user.GetPersistentCharacterState(false);
-        if (record != null && record.MainM00WaterContainerGiven) record.MainM00WaterFilled = true;
-        user.OnNativeInventoryChanged(); user.PersistCharacterState();
+        FillFromSource(user);
     }
 }
 

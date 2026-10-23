@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.6.11a** — 2026-10-21.
+Documentation version: **5.7.0** — 2026-10-21.
+
+## 5.7.0 - Water quality and conservative mixing (#408), 2026-10-21
+
+The author approved independent biological/salt/chemical contamination, union
+on mixing, prohibition on unsafe drinking and explicit collection of unsafe
+water while retaining the potable automatic refill. Native consumers now share
+that quality rule; quantity, hydration, mass and inventory authority are retained.
+The patch adds revision-1 container state and revision-4 rest forecasts, with
+original pre-patch saves retained for rollback. No campaign geometry changed.
+Evidence: `assets/validation_570/RESULTS.md`. Diagnostic compile failures and
+the corrected obsolete hydration expectation remain separate from final runs.
+CA408-01 (origin 5.7.0, issue #408) passed author review on 2026-10-21.
+The author reported the open test successful and explicitly clarified that
+the report referred to #408: collection/emptying, potable drinking and unsafe
+water rejection in the F1-F5 scene. No exceptions were reported. The entry
+was removed from pending_test.txt. This confirms the water-quality check,
+not #409 boiling or completion of the entire V5.7 batch. PR #473 remains
+separate from the later resource patches; acceptance does not assert a merge.
 
 ## 5.6.11a - Defer clothing appearance and close the accepted batch (#387), 2026-10-21
 

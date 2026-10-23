@@ -6,13 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.6.11a.** Obtain and update the complete repository, validate
+**Current release: 5.7.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.7.0 implements persistent water quality (#408). Bottles and canteens retain
+contamination when mixed; unsafe water cannot be consumed through drinking,
+rest or travel. Inventory adds Collect water (R) and Empty (V), with mouse
+buttons and ES/EN quality labels. Existing quantities and potable automatic
+refill remain. Tests: [water evidence](assets/validation_570/RESULTS.md).
+Author check CA408-01 passed on 2026-10-21; the remaining V5.7 issues are separate work.
 
 V5.6.11a records the author-directed clothing appearance deferral (#387).
 PRs #397–401 are merged, including the accepted object sprites, cartridge contract
-and assembly, city catalogues and calendar replenishment. All delivered author
-tests passed; pending_test.txt is empty. Worn clothing, character-preview and
+and assembly, city catalogues and calendar replenishment. All V5.6 author
+tests passed; their acceptance remains recorded in HISTORY. Worn clothing, character-preview and
 first-person garment appearance will resume when the 3D character models are
 available, under the V5.17 modular presentation roadmap. This is a documentation
 closure, not implementation or visual acceptance of those deferred views.

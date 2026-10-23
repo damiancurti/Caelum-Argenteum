@@ -16,7 +16,8 @@ class CaelumTimeSkipRules : Object play
     static int Kind(CaelumConsumableItem item)
     {
         if (item==null) return 0;
-        if (CaelumWaterContainer(item)!=null) return 3;
+        let water = CaelumWaterContainer(item);
+        if (water != null) return water.IsPotable() ? 3 : 0;
         if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION) return 1;
         if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_WATER_RATION) return 2;
         return 0;

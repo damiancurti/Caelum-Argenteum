@@ -62,6 +62,14 @@ class CaelumLiveMenuControls : Object ui
                 for(int i=0;i<CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT;i++)Region(2000+i,50+i*57,122,40,28);
                 for(int i=0;i<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS;i++)
                     if(user.FormalInventoryRowKind[i]>=0)Region(3000+i,48,168+i*21,360,21);
+                int row=user.FormalInventorySelectionIndex-user.FormalInventoryVisibleStart;
+                if(user.FormalInventoryEntryCount>0 && row>=0 && row<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
+                    && user.FormalInventoryRowWaterLiters[row]>=0)
+                {
+                    NextX=414;RowY=146;
+                    Button("CA_WATER_COLLECT",0,114,"r",104,!user.FormalInventoryRowInMagicBox[row]);
+                    Button("CA_WATER_EMPTY_ACTION",0,118,"v",84,!user.FormalInventoryRowInMagicBox[row]);
+                }
             }
             else if(context==3)
             {

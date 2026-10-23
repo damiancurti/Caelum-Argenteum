@@ -77,7 +77,7 @@ class CaelumDiningTable : Actor
             else if(kind==CaelumConstants.CONSUMABLE_WATER_RATION)water+=item.Amount;
             let container=CaelumWaterContainer(item);
             if(container!=null)
-            {container.WaterLiters=container.GetCapacityLiters();water++;}
+            {container.AddWater(container.GetCapacityLiters()-container.WaterLiters,CaelumWaterQuality.POTABLE);water++;}
         }
         for(int i=0;i<Capacity();i++)
         {
@@ -89,7 +89,7 @@ class CaelumDiningTable : Actor
             if(ration==null)break;
             ration.Amount=1;ration.InMagicBox=false;ration.AttachToOwner(self);Items[i]=ration;
             let container=CaelumWaterContainer(ration);
-            if(container!=null)container.WaterLiters=container.GetCapacityLiters();
+            if(container!=null)container.AddWater(container.GetCapacityLiters(),CaelumWaterQuality.POTABLE);
             if(needsFood)food++;else water++;
         }
         RefreshDisplays();

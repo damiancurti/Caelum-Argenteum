@@ -1,0 +1,117 @@
+{
+  "issue": 408,
+  "version": "5.7.0",
+  "native_runs": [
+    {
+      "label": "final-suite-01",
+      "pass": 85,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "82588e69f98bb06586e74ca3bce458e4d69a8ea9b6f69bf32498e309b44a7ed7",
+      "log_sha256": "1ab1a8f882ced52f9899e9ac2310c1bcfa215b5853b95532f0a3b72680831b2e"
+    },
+    {
+      "label": "final-sources-01",
+      "pass": 64,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "82588e69f98bb06586e74ca3bce458e4d69a8ea9b6f69bf32498e309b44a7ed7",
+      "log_sha256": "2d3091866c05196e310c0eea52c91db0407771bf58dd005361e9647ce14ae2a5"
+    },
+    {
+      "label": "final-save-02",
+      "pass": 2,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "b40c50cb26d46af28b3811f78df94d0a23996f5965585c32bac29c3c1454c36d"
+    },
+    {
+      "label": "final-reload-02",
+      "pass": 2,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "f218188ec825bdd4225659f120809f00515e40e559dc8fbb07b20723dfb67099"
+    },
+    {
+      "label": "final-travel-01",
+      "pass": 6,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "f904dbf65720ca48528f8b5f58f9396684f7493c0b81d9f4f4fe51c7a45ffde0"
+    },
+    {
+      "label": "final-upgrade-01",
+      "pass": 2,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "5af2dae8acc5347f4b23b262db6b8d120a5d59aa865800634d7abd8b83a65aaa"
+    },
+    {
+      "label": "final-upgraded-reload-01",
+      "pass": 2,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "8a503eabc4008d1197e9009b47ce1f723175cd5b97625ba3339d25fef220de75"
+    },
+    {
+      "label": "final-rollback-01",
+      "pass": 1,
+      "package_sha256": "b4d75590e5f16edaccfb3e05377d6c2e633b59a8e04f3553030e520e90a0fd69",
+      "addon_sha256": "28766baa1eb48985bc3517ee99dcf255ff6844cbf9e2a6060e6d518bb3a2b956",
+      "log_sha256": "0acf348d8cb2f9343b83705dd6886324747e9794cf3ca3b111cf59791932a420"
+    },
+    {
+      "label": "final-ui-es-01",
+      "pass": 0,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "28b5a9dac589748d221da3c0da534b239f4bded80ab2d7d4561f1cf7d8954242"
+    },
+    {
+      "label": "final-ui-en-01",
+      "pass": 0,
+      "package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+      "addon_sha256": "c92ab4521dfce910036baf8f64ee63684259e0e7e9e0e47a1e5beec0cd6ac9c3",
+      "log_sha256": "e6a260075245cb78d110e6a7d933e9a44979135882760a9971e9524efd5250ec"
+    },
+    {
+      "label": "final-dispatch-01",
+      "pass": 2,
+      "package_sha256": "4ad418a1b8cafff5361afe9f2e42f2ddc27b02f24fd1632b8177c7639a0a782d",
+      "addon_sha256": "b4d0cc0007f8296f90161b76d878a00608e18e4860e2833403390b51bbcb72e8",
+      "log_sha256": "87d72f3ffd8af021636b44c377f35174e49969e6c7d08b54ec9691bd03eebede"
+    },
+    {
+      "label": "final-hud-01",
+      "pass": 0,
+      "package_sha256": "4ad418a1b8cafff5361afe9f2e42f2ddc27b02f24fd1632b8177c7639a0a782d",
+      "addon_sha256": "b273113301d1df975d3f6136961e56bc195897c3f0cd9543d653ea8d1774bbbb",
+      "log_sha256": "d0920e3e3b530155da179a1935d16349e7691122ffc70fce44982d9f748c8439"
+    },
+    {
+      "label": "final-map01-01",
+      "pass": 0,
+      "package_sha256": "4ad418a1b8cafff5361afe9f2e42f2ddc27b02f24fd1632b8177c7639a0a782d",
+      "addon_sha256": "",
+      "log_sha256": "37ca96e1930f539f6892f323b46e521628c52d7c5166a0ff3b17e3359b30ce1e"
+    },
+    {
+      "label": "baseline-save-01",
+      "pass": 0,
+      "package_sha256": "b4d75590e5f16edaccfb3e05377d6c2e633b59a8e04f3553030e520e90a0fd69",
+      "addon_sha256": "e5d31ea8459d03e20da8d3b5ec49cdcf01f72f4ff8b9e5f96cf6eaddbbe8de11",
+      "log_sha256": "a336818c5a6d45fcd3d8e5c5bfe8ea46bd716117f63da8197c226052855e89c7"
+    }
+  ],
+  "pass": 166,
+  "fail": 0,
+  "final_package_sha256": "4ad418a1b8cafff5361afe9f2e42f2ddc27b02f24fd1632b8177c7639a0a782d",
+  "tested_package_sha256": "7d5fd8df06c8fbc11d9de1bc424aaf910976072cd06006c3cf3c80b08f966018",
+  "source_members": 16434,
+  "metadata_only_final_differences": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "baseline_package_sha256": "b4d75590e5f16edaccfb3e05377d6c2e633b59a8e04f3553030e520e90a0fd69",
+  "baseline_ref": "c6f13acd",
+  "author_acceptance": "CA408-01 accepted by author 2026-10-21",
+  "performance_claim": null
+}

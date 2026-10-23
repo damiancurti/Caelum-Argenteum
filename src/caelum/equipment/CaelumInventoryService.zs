@@ -2446,6 +2446,8 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowEquipped[row] = false;
         user.FormalInventoryRowInMagicBox[row] = false;
         user.FormalInventoryRowReservedUnits[row] = 0;
+        user.FormalInventoryRowWaterLiters[row] = -1;
+        user.FormalInventoryRowWaterQuality[row] = CaelumWaterQuality.UNIDENTIFIED;
     }
 
     static void FillFormalInventoryRow(CaelumPlayer user, int row, Inventory entry)
@@ -2458,7 +2460,8 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowKind[row] = kind;
         user.FormalInventoryRowWaterLiters[row] = -1;
         let water = CaelumWaterContainer(entry);
-        if (water != null) user.FormalInventoryRowWaterLiters[row] = water.WaterLiters;
+        if (water != null)
+        { water.EnsureWaterQuality(); user.FormalInventoryRowWaterLiters[row] = water.WaterLiters; user.FormalInventoryRowWaterQuality[row] = water.WaterQuality; }
         user.FormalInventoryRowAmount[row] = Max(1, entry.Amount);
         user.FormalInventoryRowWeight[row] =
             user.GetFormalInventoryEntryWeight(entry);

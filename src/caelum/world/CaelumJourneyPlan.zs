@@ -154,7 +154,7 @@ class CaelumJourneyModel : Object play
             if (ration != null && !ration.InMagicBox && ration.Amount > 0)
             {
                 let container = CaelumWaterContainer(ration);
-                if (container != null) ContainerStock += Max(0.0, container.WaterLiters);
+                if (container != null) { if (container.IsPotable()) ContainerStock += Max(0.0, container.WaterLiters); }
                 else if (ration.GetConsumableType() == CaelumConstants.CONSUMABLE_FOOD_RATION)
                     FoodStock += Min(ration.Amount, 1000000000 - FoodStock);
                 else if (ration.GetConsumableType() == CaelumConstants.CONSUMABLE_WATER_RATION)
@@ -410,7 +410,7 @@ class CaelumJourneyPlan : Inventory
                 let container = CaelumWaterContainer(ration);
                 if (container != null)
                 {
-                    double amount = Min(liters, container.WaterLiters);
+                    double amount = container.IsPotable() ? Min(liters, container.WaterLiters) : 0;
                     container.WaterLiters -= amount; liters -= amount;
                 }
                 else

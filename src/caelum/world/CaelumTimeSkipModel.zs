@@ -1,15 +1,17 @@
 // La previsión sólo guarda valores; nunca presta, consume ni genera Inventory.
 class CaelumSkipSupply : Object play
 {
-    int Kind, Count;
+    int Kind, Count, WaterQuality;
     double Liters, CapacityLiters;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
         Count=item!=null?item.Amount:0;
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
+        if (bottle != null) { Kind=3; WaterQuality=bottle.WaterQuality; }
         CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
+    bool Usable() { return Count>0 && Kind!=0 && (Kind!=3 || CaelumWaterQuality.IsSafe(WaterQuality)); }
 }
 class CaelumSkipTableStock : Object play
 {
@@ -18,7 +20,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 3;
+    const PROVISION_REVISION = 4;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -117,7 +119,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         FoodTrigger=-1;WaterTrigger=-1;
         for(int i=0;i<Supplies.Size();i++)
         {
-            let row=Supplies[i];if(row.Count<=0 || row.Kind==0)continue;
+            let row=Supplies[i];if(!row.Usable())continue;
             double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);if(dose<=0.000001)continue;
             if(row.Kind==1)FoodTrigger=CaelumDiningSession.REST_TARGET;
             else WaterTrigger=CaelumDiningSession.REST_TARGET;
@@ -133,7 +135,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             || (WaterEffectTics<=0 && Thirst<Min(target,WaterTrigger))))return;
         for(int i=0;i<Supplies.Size();i++)
         {
-            let row=Supplies[i];if(row.Count<=0 || row.Kind==0)continue;
+            let row=Supplies[i];if(!row.Usable())continue;
             bool food=row.Kind==1;
             if(food?FoodEffectTics>0:WaterEffectTics>0)continue;
             double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);
@@ -200,7 +202,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 let row=Supplies[j];
                 if(row.Kind==1)food+=row.Count;
                 else if(row.Kind==2)water+=row.Count;
-                else if(row.Kind==3 && row.Count>0){row.Liters=row.CapacityLiters;water++;}
+                else if(row.Kind==3 && row.Count>0)
+                {if(row.Liters<=0.000001)row.WaterQuality=CaelumWaterQuality.POTABLE;row.Liters=row.CapacityLiters;water++;}
             }
             for(int j=table.First;j<table.First+table.Capacity;j++)
             {
@@ -210,7 +213,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 else if(water<table.Target)
                 {
                     let defaults=CaelumCanteenLarge(GetDefaultByType("CaelumCanteenLarge"));
-                    row.Kind=3;row.Count=1;row.CapacityLiters=defaults.GetCapacityLiters();
+                    row.Kind=3;row.Count=1;row.WaterQuality=CaelumWaterQuality.POTABLE;row.CapacityLiters=defaults.GetCapacityLiters();
                     row.Liters=row.CapacityLiters;water++;
                 }
             }
