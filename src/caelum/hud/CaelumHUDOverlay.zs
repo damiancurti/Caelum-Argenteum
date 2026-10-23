@@ -1004,6 +1004,7 @@ class CaelumHUDOverlay : EventHandler
         CaelumPresentation.End();
         CaelumQuickUseHUD.Draw(localPlayer,HUDFont,resourceScale);
         double noticeBottom=Max(12,CaelumCartography.Draw(localPlayer,resourceScale,debuffWidth));
+        noticeBottom=Max(noticeBottom,CaelumTargetPanel.Draw(localPlayer,HUDFont));
         if(menuactive==Menu.Off)
         {
             if(localPlayer.HUDActiveWeaponNoticeRemaining>0)

@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.6** — 2026-10-22.
+Documentation version: **5.7.7** — 2026-10-22.
+
+## Aimed-target panel (#481, 5.7.7)
+
+The permanent panel is centered at the top of gameplay. It names the aimed
+world object and lists existing applicable interactions with the current
+bindings, including doors, storage/maze chests, furniture, crafting stations,
+merchants, pickups and map transitions. Physical actors use the native sight
+trace; nearby actionable linedefs use a local blockmap query constrained by
+the same occlusion distance. Native player missile range bounds identification;
+actions retain their existing Use range and state checks. Looking never calls
+Used, opens a menu, spends resources or activates a line. Invisible collision
+helpers resolve to their visible owning object; invisible house portals remain
+identifiable as map transitions. Non-interactive engine helpers are omitted.
+
+For combatants, Health, Anima, Air and Adrenaline display their authoritative
+current/maximum values, including maxima derived from Constitution, Patience
+and Resilience respectively. The author explicitly confirmed resources always
+remain visible. Each of the twelve effective attributes is displayed only when
+strictly less than the viewer's effective Insight (Perspicacia); equal or larger
+values display `??`. This does not create a new Perception attribute or change
+stealth, detection, combat or resource formulas. Friendly combatants use the
+same information rule. Unsupported actor statistics are not fabricated.
+
+Menus/conversations suppress the panel. Target changes and empty aim clear it;
+notifications are placed below its occupied area. Bindings resolve in the UI,
+so remapping needs no restart. The target cache is transient and reconstructed
+after loading; no inventory/save schema changes. The previous separate sewer
+hint and its per-frame global gate scan are replaced by this shared selection.
 
 ## Alchemy art and regional source decision (#471, 5.7.6)
 

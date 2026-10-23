@@ -54,6 +54,7 @@ class CaelumPlayer : DoomPlayer
     // funciones de play scope desde el contexto de interfaz.
     bool HUDHasActiveWeapon;
     String HUDInteractionHint;
+    transient CaelumTargetInfo TargetInfo;
     int HUDActiveWeaponType;
     int HUDActiveWeaponTier;
     int HUDActiveWeaponSize;
@@ -7298,7 +7299,8 @@ class CaelumPlayer : DoomPlayer
 
         RefreshEquipmentLoadIfNeeded();
         EnsureUnarmedFallback();
-        HUDInteractionHint=CaelumInteractionHint.Find(self);
+        if(TargetInfo==null)TargetInfo=new("CaelumTargetInfo");
+        TargetInfo.Refresh(self);
         SyncHUDActiveWeaponState();
 
         CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);

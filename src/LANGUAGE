@@ -6170,3 +6170,49 @@ CA_MATERIAL_DRIED_KELP = "Cachiyuyo seco";
 CA_MATERIAL_IODINE = "Yodo";
 CA_CRAFTING_ACTION_FAILED_EMPTY_OUTPUT = "El lote rinde menos de un gramo: aumenta el lote o la eficiencia";
 // END MARINE RESOURCE LABELS #407
+
+// #481: aimed-target panel.
+[enu default]
+CA_TARGET_OBJECT = "Object";
+CA_TARGET_CHARACTER = "Character";
+CA_TARGET_DOOR = "Door";
+CA_TARGET_TRANSITION = "Map transition";
+CA_TARGET_SWITCH = "Mechanism";
+CA_TARGET_APPROACH = "Move closer to interact";
+CA_TARGET_OPEN = "{bind:+use}: open";
+CA_TARGET_UNLOCK = "{bind:+use}: open with key";
+CA_TARGET_CARRY_CHEST = "{bind:+speed} + {bind:+use}: carry chest";
+CA_TARGET_TRAVEL = "{bind:+use}: travel";
+CA_TARGET_USE = "{bind:+use}: activate";
+CA_TARGET_CROSS = "Cross to continue";
+CA_TARGET_ATTACK = "{bind:+attack}: strike";
+CA_TARGET_UNAVAILABLE = "Unavailable";
+CA_TARGET_LOCKED = "Locked: key required";
+CA_TARGET_CRAFT = "{bind:+use}: craft";
+CA_TARGET_TRADE = "{bind:+use}: trade";
+CA_TARGET_COLLECT = "{bind:+use}: collect";
+CA_TARGET_TALK = "{bind:+use}: talk";
+CA_TARGET_MOVE = "{bind:+use}: push";
+CA_TARGET_PICKUP = "Touch to pick up";
+[es]
+CA_TARGET_OBJECT = "Objeto";
+CA_TARGET_CHARACTER = "Personaje";
+CA_TARGET_DOOR = "Puerta";
+CA_TARGET_TRANSITION = "Transici?n de mapa";
+CA_TARGET_SWITCH = "Mecanismo";
+CA_TARGET_APPROACH = "Ac?rcate para interactuar";
+CA_TARGET_OPEN = "{bind:+use}: abrir";
+CA_TARGET_UNLOCK = "{bind:+use}: abrir con llave";
+CA_TARGET_CARRY_CHEST = "{bind:+speed} + {bind:+use}: recoger cofre";
+CA_TARGET_TRAVEL = "{bind:+use}: viajar";
+CA_TARGET_USE = "{bind:+use}: activar";
+CA_TARGET_CROSS = "Cruza para continuar";
+CA_TARGET_ATTACK = "{bind:+attack}: golpear";
+CA_TARGET_UNAVAILABLE = "No disponible";
+CA_TARGET_LOCKED = "Cerrada: requiere llave";
+CA_TARGET_CRAFT = "{bind:+use}: fabricar";
+CA_TARGET_TRADE = "{bind:+use}: comerciar";
+CA_TARGET_COLLECT = "{bind:+use}: recolectar";
+CA_TARGET_TALK = "{bind:+use}: hablar";
+CA_TARGET_MOVE = "{bind:+use}: empujar";
+CA_TARGET_PICKUP = "Toca para recoger";

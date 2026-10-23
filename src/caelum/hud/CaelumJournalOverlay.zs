@@ -2003,37 +2003,6 @@ class CaelumJournalOverlay : EventHandler
         CaelumCraftingUI.Draw(self, localPlayer);
     }
 
-    ui void DrawSewerTravelHint(CaelumPlayer localPlayer)
-    {
-        if (menuactive != 0 || localPlayer.CreationWizardOpen || !localPlayer.CharacterCreationComplete
-            || localPlayer.health <= 0 || localPlayer.CraftingMenuOpen
-            || (localPlayer.player.ConversationNPC != null && localPlayer.player.ConversationNPC.bInConversation)) return;
-        if(localPlayer.HUDInteractionHint!="")
-        {
-            CaelumPresentation.InteractionHint(SmallFont,localPlayer.HUDInteractionHint);
-            return;
-        }
-        let gates = ThinkerIterator.Create("CaelumSewerTravelGate");
-        CaelumSewerTravelGate gate;
-        CaelumSewerTravelGate nearest;
-        double distance = 224;
-        while ((gate = CaelumSewerTravelGate(gates.Next())) != null)
-        {
-            if (!gate.Placed || !CaelumWorldCatalogue.IsSewerConnection(gate.ConnectionId)) continue;
-            double candidateDistance = localPlayer.Distance2D(gate);
-            vector2 delta = gate.Pos.XY-localPlayer.Pos.XY;
-            if (candidateDistance >= distance || Abs(localPlayer.Pos.Z-gate.Pos.Z) > 64
-                || delta.X*Cos(localPlayer.Angle)+delta.Y*Sin(localPlayer.Angle) < candidateDistance*0.65
-                || (gate.VisibleToPlayers & (1 << consoleplayer)) == 0) continue;
-            distance = candidateDistance;
-            nearest = gate;
-        }
-        if (nearest == null) return;
-        CaelumPresentation.InteractionHint(SmallFont,
-            String.Format(StringTable.Localize("CA_SEWER_TRAVEL_HINT", false),
-                StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(nearest.ConnectionId), false)));
-    }
-
     ui void DrawWeather(CaelumPlayer localPlayer, bool trialDate)
     {
         let weather = CaelumWeatherState(localPlayer.FindInventory("CaelumWeatherState"));
@@ -3147,7 +3116,7 @@ class CaelumJournalOverlay : EventHandler
     override void RenderOverlay(RenderEvent event)
     {
         let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
-        if(user!=null && menuactive==0 && !IsJournalOpen())DrawSewerTravelHint(user);
+
     }
 
     ui void DrawMenu()
@@ -3175,7 +3144,7 @@ class CaelumJournalOverlay : EventHandler
             DrawPalomoMerchant(localPlayer);
             return;
         }
-        if (!IsJournalOpen()) { DrawSewerTravelHint(localPlayer); return; }
+        if (!IsJournalOpen()) { return; }
         int currentPage = GetJournalPage();
         if (currentPage == 2 && CaelumScheduleCalendar.IsOpen())
         { CaelumScheduleCalendar.Draw(self, localPlayer); return; }

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.6** — 2026-10-22.
+Documentation version: **5.7.7** — 2026-10-22.
+
+## 5.7.7 - Target-panel presentation (#481)
+
+Reuses the existing CaelumMono font and the gallery's muted dark panel style,
+centered above gameplay. Names and action hints reuse authoritative localized
+catalogues and current bindings; additional labels are bilingual. No sprite,
+model, texture or accepted #471 artwork changes. Layout constants are separate
+from selection logic. Visual/native evidence: assets/validation_577/RESULTS.md.
+Author check CA481-01 passed on 2026-10-22.
 
 ## 5.7.6 - Alchemy ingredient artwork (#471)
 
