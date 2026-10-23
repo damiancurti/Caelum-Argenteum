@@ -5,6 +5,38 @@ the other five designs, the author confirmed the Orb handoff: "Ahora si dio bien
 la prueba." CA479-01 retains gameplay, campaign acquisition and save/load checks
 in root pending_test.txt. The initial procedural rejection remains historical.
 
+## Lethal support damage correction - 2026-10-23
+
+The author gameplay run aborted in CaelumSupportStatus.Tick after a curse killed
+its recipient. Native DamageMobj calls OwnerDied, which removes the status and
+clears Owner before Tick returns. The tick now rechecks that reference before
+reading health or advancing another role. The private F2 reset replaces dead
+targets with live actors. No art, formulas, save fields or revision numbers change.
+
+The original 16,722-entry package reproduces the author's exact null-owner VM
+abort. The fixed full package matches src; its only changed runtime entry is
+CaelumSupportMagic.zs. 150 assertions pass across eight native runs: lethal
+Book/Effigy, concurrent curse/healing roles, removed caster, player death, repeated
+real attack/F2 cycles, two loads of a pre-fix lethal save, existing nonlethal
+gameplay/controls and an older active-effect save. Four additional assertions
+prepare the pre-fix save in its original runtime. The original active-effect
+save and pre-fix package are preserved byte-for-byte.
+
+Evidence: owner_death_report.json, native/owner_death/ and collect_owner_death.py.
+The initial automated probe set health before deferred PostBeginPlay completed;
+its eight failed assertions are preserved and excluded. The corrected probe
+waits for initialization and reproduces the exact reported failure before the fix.
+All counted fixed runs exit normally without VM errors. Tests run unpaused in
+the background at 5% audio; no rendering-performance claim is made.
+
+Reproduce the focused scenarios with prepare.py and run_native.ps1 -Checks,
+using Script lethal, lethal-player, lethal-controls, lethal-save/lethal-load,
+gameplay, controls and live-load. Use a fresh Label for each run; LoadGame names
+the corresponding retained save relative to build/issue479. current contains
+the corrected package; pre-owner-death preserves the original for reproduction.
+CA479-01 remains pending, including the failed lethal-damage check and ordinary
+campaign acquisition/save-load checks. Accepted visual checks are not repeated.
+
 ## Current floating-Orb follow-up
 
 The author accepted the five non-Orb designs and requested only a baseless Orb
