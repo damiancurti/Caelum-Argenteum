@@ -54,6 +54,7 @@ class CaelumWeaponModel : Object
 
     double GetTierOneWeightFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return CaelumSupportImplementData.Weight(weaponType);
         switch (Clamp(weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1))
         {
             case CaelumConstants.WEAPON_TYPE_SWORD: return CaelumConstants.WEAPON_SWORD_TIER_ONE_WEIGHT;
@@ -138,6 +139,7 @@ class CaelumWeaponModel : Object
 
     double GetDamageFor(int weaponType, int tier)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         double tierMultiplier = IsRangedPhysicalType(weaponType)
             ? GetRangedTierMultiplierFor(tier)
             : GetTierDamageMultiplierFor(tier);
@@ -204,6 +206,8 @@ class CaelumWeaponModel : Object
 
     double GetAnimaCostFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))
+            return CaelumSupportImplementData.BaseAnimaCost(CaelumSupportImplementData.RoleForWeapon(weaponType),1);
         if (weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
             return CaelumDemonBreathRules.ANIMA_PER_SECOND;
         switch (weaponType)
@@ -222,6 +226,7 @@ class CaelumWeaponModel : Object
 
     double GetBaseCriticalChanceFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_BELL: return 5.0;
@@ -236,6 +241,7 @@ class CaelumWeaponModel : Object
     double GetMaximumSpreadFor(int weaponType,
         double lucidity=CaelumConstants.MAXIMUM_LUCIDITY)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
         if (catalogueWeapon >= 0)
             return CaelumWeaponCatalogue.GetMaximumSpread(catalogueWeapon,Tier,lucidity);
@@ -254,6 +260,7 @@ class CaelumWeaponModel : Object
 
     bool IsMagicalType(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return true;
         return weaponType == CaelumConstants.WEAPON_TYPE_STAFF
             || weaponType == CaelumConstants.WEAPON_TYPE_BELL
             || weaponType == CaelumConstants.WEAPON_TYPE_BOOK

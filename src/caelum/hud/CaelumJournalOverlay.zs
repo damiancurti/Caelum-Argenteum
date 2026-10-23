@@ -1259,6 +1259,12 @@ class CaelumJournalOverlay : EventHandler
                 DrawTexture(CaelumMaterialPickup.GetMaterialIconPathForType(
                     localPlayer.FormalInventoryRowType[row]),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && CaelumSupportArt.Index(localPlayer.FormalInventoryRowType[row]) >= 0)
+                DrawTexture(CaelumIconResolver.ResolveEquipmentPath(kind,
+                    localPlayer.FormalInventoryRowType[row], 0,
+                    localPlayer.FormalInventoryRowTier[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
             DrawTextLine(
                 InventoryFont,
                 row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,

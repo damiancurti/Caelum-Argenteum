@@ -1,0 +1,41 @@
+// Generado por pack_support_sprites.py; palma original del Libro.
+class CaelumOrbHandFrames : Actor { States (Actor, Weapon, Overlay) {
+Fallback: O000 A -1; Stop;
+Hand0: O001 A -1; Stop;
+Hand1: O002 A -1; Stop;
+Hand2: O003 A -1; Stop;
+Hand3: O004 A -1; Stop;
+Hand4: O005 A -1; Stop;
+Hand5: O006 A -1; Stop;
+Hand6: O007 A -1; Stop;
+Hand7: O008 A -1; Stop;
+Hand8: O009 A -1; Stop;
+Hand9: O010 A -1; Stop;
+Hand10: O011 A -1; Stop;
+Hand11: O012 A -1; Stop;
+Hand12: O013 A -1; Stop;
+Hand13: O014 A -1; Stop;
+Hand14: O015 A -1; Stop;
+Hand15: O016 A -1; Stop;
+Hand16: O017 A -1; Stop;
+Hand17: O018 A -1; Stop;
+Hand18: O019 A -1; Stop;
+Hand19: O020 A -1; Stop;
+Hand20: O021 A -1; Stop;
+Hand21: O022 A -1; Stop;
+Hand22: O023 A -1; Stop;
+Hand23: O024 A -1; Stop;
+Hand24: O025 A -1; Stop;
+Hand25: O026 A -1; Stop;
+Hand26: O027 A -1; Stop;
+Hand27: O028 A -1; Stop;
+Hand28: O029 A -1; Stop;
+Hand29: O030 A -1; Stop;
+Hand30: O031 A -1; Stop;
+Hand31: O032 A -1; Stop;
+Hand32: O033 A -1; Stop;
+Hand33: O034 A -1; Stop;
+Hand34: O035 A -1; Stop;
+Hand35: O036 A -1; Stop;
+Hand36: O037 A -1; Stop;
+} }

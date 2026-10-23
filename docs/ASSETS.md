@@ -1,6 +1,52 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## 5.7.8 - Painted support implement correction (#479)
+
+The author rejected the procedural low-poly presentation after the first manual
+handoff: accepted Book/Statuette designs must remain, and equipment must use
+painted sprites consistent with SPRITE_ART_DIRECTION, including inventory icons.
+This supersedes the initial #479 presentation without changing gameplay.
+
+Support Book and Statuette reuse their original inventory/crafting icons,
+world billboards, first-person A/B poses and character-hand variants unchanged.
+Four new painted designs cover Scepter, Orb, Censer and Ritual Effigy, each at
+T1/T2/T3. Built-in image_gen.imagegen used owned weapon icons as style references;
+exact prompts, reference hashes and all four transparent source atlases are in
+assets/art_source/support_sprites. No Doom or external artwork is incorporated.
+
+pack_support_sprites.py performs deterministic cell extraction, alpha cleanup,
+downscaling and grip registration. Twelve 128-square inventory/crafting icons
+and twelve weapon-only 320x200 first-person layers live under
+src/graphics/caelum/{icons,first_person}/support_sprites. World pickups are native
+billboard sprites; MODELDEF no longer loads the rejected implement model bindings.
+Three component bases use the corresponding painted icon. Existing character
+hands remain authoritative. Sprite frames/state identities stay available to
+saves; Book/Statuette resolve their original states under the new support IDs.
+The Journal now draws the tier-resolved icon beside each of these six weapon
+types, using the existing inventory row layout. Other weapon rows are unchanged.
+
+The original procedural sources/outputs remain preserved for history/recovery,
+including assets/generators/support_implements_manifest.json; they are not the
+current visual contract. Current provenance is in
+src/licenses/SUPPORT_SPRITES_578.md. The new inventory contact sheet and
+MANIFEST.json record exact output/input hashes. Native presentation and inventory
+checks are recorded separately from the initial runtime evidence in
+assets/validation_578/RESULTS.md: 75 native checks on the full corrected package,
+18 world/held views, 18 inventory rows and six T1 input/return sequences.
+The author subsequently accepted the other five designs and requested a
+baseless Orb held like the Book. orb-floating-source.png and ORB_EDIT.json
+retain the targeted imagegen edit; orb-source.png preserves the earlier design.
+The three updated Orb icons/first-person layers remove the pedestal. The held
+Orb floats above the original FH02 Book palm, with all 38 original appearance/
+glove variants referenced directly. Its pivot is the Book's existing pivot;
+other weapon images remain byte-identical. World and material sprites reuse
+the corrected icons. Native evidence: 23 checks, all three tiers in inventory,
+world, primary/return, Book switch and male/female palms; floating_orb_report.json.
+The author accepted the Orb retest on 2026-10-22, completing visual approval
+for all six designs, including inventory sprites. CA479-01 retains its
+outstanding gameplay, acquisition and save/load checks.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

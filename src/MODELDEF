@@ -4863,3 +4863,5 @@ Model CaelumAlchemyStation
     DontCullBackFaces
     FrameIndex CALC A 0 0
 }
+
+// #479: rejected model bindings retained in source; active equipment uses sprites.

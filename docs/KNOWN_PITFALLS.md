@@ -4,6 +4,62 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-155 - Lethal native damage can detach a ticking inventory
+
+Status/evidence: ENGINE-VERIFIED; #479, 2026-10-23, GZDoom 4.14.2 / Windows 11.
+Evidence: assets/validation_578/owner_death_report.json and its native logs.
+
+CaelumSupportStatus.Tick validated Owner on entry, but DamageMobj could kill
+the recipient, synchronously call OwnerDied and destroy/detach the inventory.
+The later Owner.health read then aborted the VM. Revalidate the owner after
+callback-producing native damage before accessing it again or processing another
+effect. The fix does not require a global scan or a save-schema change.
+
+Include lethal outcomes and simultaneous effects in periodic-damage tests;
+nonlethal arithmetic, expiry and ordinary controls did not cover this lifetime.
+Private reset controls must recreate dead actors instead of changing corpse health.
+Set test damage/health after deferred PostBeginPlay when its initialization can
+overwrite those fields. Accepted art and unrelated gameplay need not be retested.
+
+## CA-KP-154 - Removing a MODELDEF include needs a complete-package check
+
+Status/evidence: ENGINE-VERIFIED and agent visual inspection; #479, 2026-10-22,
+GZDoom 4.14.2 / Windows 11 / Vulkan. Evidence:
+assets/validation_578/diagnostics/painted-gallery-01-art-00.png and its native
+log/launch record, contrasted with visuals/painted-final-gallery3-art-world-00.png
+and painted_report.json. Author art acceptance remains pending.
+
+The sprite correction removed a MODELDEF include, but a small add-on over the
+earlier full PK3 still displayed the previously registered world model. The
+new first-person sprite already loaded correctly, so texture/state assertions
+alone did not reveal that mismatch. Omitting a model definition in a later lump
+does not unregister the definition contributed by the earlier package.
+
+Validate removal/replacement of model bindings with a complete rebuilt package
+and no obsolete add-on. Match every packaged entry to src and inspect the world
+actor as well as inventory/first-person views. Keep overlay-only evidence
+separate; the rebuilt #479 package renders the requested billboard sprites.
+
+## CA-KP-153 - Declare overlay state use and keep shared hand layers stable
+
+Status/evidence: ENGINE-VERIFIED and agent visual inspection; #479, 2026-10-22,
+GZDoom 4.14.2 / Windows 11 / Vulkan / 1280x720. Evidence:
+assets/validation_578/RESULTS.md, diagnostics/gallery-01.txt and
+visuals/complete-gallery-contact.png. Author check CA479-01 remains pending.
+
+A new Actor frame bank used by weapon PSprites must declare
+`States(Actor,Weapon,Overlay)`; otherwise native loading reports states not
+flagged for weapon/overlay use even when their textures exist. Descriptive PNG
+filenames under sprites also enter the native frame-name parser: keep these
+first-person projections under graphics and reference them through TEXTURES.
+
+When reusing appearance hands, retain the hand overlay across frames. Clearing
+and recreating it each update lost the shared placement and left a floating hand.
+Use the same grip in the projected texture offsets, pose pivot and layer
+placement; review native captures for every type/tier. The final gallery resolves
+all 18 icon/pose variants and shows distinct native frames. Asset-resolution
+assertions alone do not prove grip alignment or author acceptance.
+
 ## CA-KP-152 - Bound OBJ surface runs when baking material shading
 
 Status/evidence: CODE-VERIFIED and isolated native reproduction; #471,

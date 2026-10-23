@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -12,6 +12,23 @@ Author decisions take precedence. [ASSETS](ASSETS.md) owns resource inventories,
 provenance and technical integration evidence; [SYSTEMS](SYSTEMS.md) owns gameplay;
 [MAP01](MAP01.txt) owns story and character canon. This document owns the visual
 requirements and reusable generation brief. Keep those responsibilities separate.
+
+## Weapon continuity correction for #479 (2026-10-22)
+
+The author rejected the new low-poly Book/Statuette replacements and specified
+sprites like the existing weapons, explicitly including inventory sprites.
+Preserve the accepted Book and Statuette designs and their inventory/crafting,
+world and first-person artwork. Their gameplay role change does not authorize
+redesigning those objects. Scepter, Orb, Censer and Effigy must match the owned
+painted pixel-oriented weapon style in every view; use imagegen for newly
+painted sources and deterministic processing for registration. Do not substitute
+procedural 3D projections for the requested sprite style. Review inventory-scale
+legibility and native grip/action transitions before the next author handoff.
+
+Follow-up: the author accepted the other five corrected designs and requested
+only that the Orb have no pedestal and be held like the Book. Preserve its
+carved sphere and tier detailing; reuse the Book's open palm and let the sphere
+float above it. Apply the same baseless silhouette to inventory/world sprites.
 
 ## Clothing brief approved for #387 (2026-10-21)
 

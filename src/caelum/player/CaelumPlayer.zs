@@ -2216,6 +2216,7 @@ class CaelumPlayer : DoomPlayer
 
     int GetWeaponFamilyForType(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         if (WeaponModel != null && WeaponModel.IsMagicalType(weaponType))
         {
             return 6;
@@ -2258,7 +2259,7 @@ class CaelumPlayer : DoomPlayer
         class<Inventory> selectorClass
     )
     {
-        bool shouldExist = HasEquippedNativeMagicWeapon(
+        bool shouldExist = CaelumSupportImplementData.ValidEssence(weaponType,essenceType) && HasEquippedNativeMagicWeapon(
             weaponType, essenceType, tier
         );
         if (shouldExist && FindInventory(selectorClass) == null)
@@ -2275,6 +2276,9 @@ class CaelumPlayer : DoomPlayer
         int weaponType, int essenceType, int tier
     )
     {
+        if(!CaelumSupportImplementData.ValidEssence(weaponType,essenceType))return '';
+        if(CaelumSupportImplementData.IsSupport(weaponType))
+            return CaelumSupportImplementData.Selector(weaponType,tier);
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_DAGGER:
@@ -2393,6 +2397,18 @@ class CaelumPlayer : DoomPlayer
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+0,CaelumConstants.ESSENCE_QUINTESSENCE,1,"CaelumSupportBookT1Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+0,CaelumConstants.ESSENCE_QUINTESSENCE,2,"CaelumSupportBookT2Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+0,CaelumConstants.ESSENCE_QUINTESSENCE,3,"CaelumSupportBookT3Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+1,CaelumConstants.ESSENCE_QUINTESSENCE,1,"CaelumCenserT1Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+1,CaelumConstants.ESSENCE_QUINTESSENCE,2,"CaelumCenserT2Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+1,CaelumConstants.ESSENCE_QUINTESSENCE,3,"CaelumCenserT3Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+2,CaelumConstants.ESSENCE_QUINTESSENCE,1,"CaelumSupportStatuetteT1Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+2,CaelumConstants.ESSENCE_QUINTESSENCE,2,"CaelumSupportStatuetteT2Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+2,CaelumConstants.ESSENCE_QUINTESSENCE,3,"CaelumSupportStatuetteT3Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+3,CaelumConstants.ESSENCE_QUINTESSENCE,1,"CaelumEffigyT1Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+3,CaelumConstants.ESSENCE_QUINTESSENCE,2,"CaelumEffigyT2Weapon");
+        EnsureMagicWeaponSelector(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+3,CaelumConstants.ESSENCE_QUINTESSENCE,3,"CaelumEffigyT3Weapon");
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_PICKAXE, "CaelumPickaxeSelectorWeapon");
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_UTILITY_STAFF, "CaelumUtilityStaffSelectorWeapon");
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_BOLAS, "CaelumBolasSelectorWeapon");
@@ -3460,6 +3476,7 @@ class CaelumPlayer : DoomPlayer
 
     String GetWeaponCraftingPreviewIcon(int weaponType)
     {
+        String supportIcon=CaelumSupportArt.Icon(weaponType);if(supportIcon!="")return supportIcon;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_DAGGER: return "graphics/caelum/icons/ca_dagger.png";
@@ -5889,7 +5906,7 @@ class CaelumPlayer : DoomPlayer
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
         double previousRallyFactor=RallyDamageFactor;
         int previousRallyBase=RallyPayloadBaseDamage,previousRallyResolved=RallyResolvedDamage;
-        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source)*(mod=='CaelumQuintessenceDOT'?1:CaelumSupportMagic.DamageFactor(self,source));
         RallyPayloadBaseDamage=RallyResolvedDamage=0;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
         RallyDamageFactor=previousRallyFactor;
@@ -5909,7 +5926,7 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
-        bool periodic=mod=='CaelumElementalDOT';
+        bool periodic=mod=='CaelumElementalDOT' || mod=='CaelumQuintessenceDOT';
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
         if (CreationWizardOpen && !CharacterCreationComplete)
@@ -7816,6 +7833,7 @@ class CaelumPlayer : DoomPlayer
 
     double MagicalCriticalChanceFor(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         if (DerivedStats == null || WeaponModel == null) return 0;
         return CaelumAttackRules.CriticalChance(WeaponModel.GetBaseCriticalChanceFor(weaponType),
             DerivedStats.MagicalCriticalChance, CrouchCriticalChanceMultiplier,
@@ -8321,6 +8339,7 @@ class CaelumPlayer : DoomPlayer
 
     void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
     {
+        if(CaelumSupportImplementData.IsSupport(requestedWeaponType))return;
         if(CaelumClassCastView.Active(self))return;
         if(CaelumBolas.Restrained(self))return; // El flanco de Reload inicia el corte en Update.
         if(requestedWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
@@ -8716,6 +8735,9 @@ class CaelumPlayer : DoomPlayer
 
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
+        if(WeaponModel!=null && !CaelumSupportImplementData.ValidEssence(WeaponModel.WeaponType,WeaponModel.EssenceType))return;
+        if(WeaponModel!=null && CaelumSupportImplementData.IsSupport(WeaponModel.WeaponType)
+            && secondaryAttack && !CaelumSupportImplementData.Beneficial(CaelumSupportImplementData.RoleForWeapon(WeaponModel.WeaponType)))return;
         if(CaelumBattleCry.Active(self))return;
         if(CaelumClassCastView.Active(self))return;
         if (GetEquippedAttackDurationTics() <= 0) return;
@@ -8759,7 +8781,7 @@ class CaelumPlayer : DoomPlayer
             * magicTierAnimaMultiplier
             * DerivedStats.StaffAnimaCost
             / CaelumConstants.DEBUG_STAFF_ANIMA_COST;
-        bool chargedAttack = WeaponChargedStateActive;
+        bool chargedAttack = WeaponChargedStateActive && !CaelumSupportImplementData.IsSupport(activeMagicType);
         if (chargedAttack)
         {
             animaCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
@@ -8797,6 +8819,9 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if(CaelumBattleCry.Active(self))return;
+        if(!CaelumSupportImplementData.ValidEssence(activeMagicType,activeEssenceType))return;
+        if(CaelumSupportImplementData.IsSupport(activeMagicType))
+        {CaelumSupportMagic.Release(self,activeMagicType,secondaryAttack);return;}
         double magicDamageScale = WeaponModel.GetDamage()
             / CaelumConstants.DEBUG_STAFF_BASE_DAMAGE;
         UpdateLucidityAccuracyEffects();
@@ -9544,8 +9569,8 @@ class CaelumPlayer : DoomPlayer
         Super.CheckMoveUpDown();
         // El motor asigna la propulsión vertical por separado de ForwardMove.
         // Se escala sólo el comando nuevo, nunca una caída o un empuje recibido.
-        if(player!=null && player.cmd.upmove!=0 && player.cmd.upmove!=-32768
-            && CaelumArcaneCloud.Active(self))Vel.Z*=CaelumArcaneCloud.SpeedFactor(self);
+        if(player!=null && player.cmd.upmove!=0 && player.cmd.upmove!=-32768)
+            Vel.Z*=CaelumArcaneCloud.SpeedFactor(self)*CaelumSupportMagic.Factor(self);
     }
 
     override void CheckJump()
@@ -9621,8 +9646,8 @@ class CaelumPlayer : DoomPlayer
     void ApplyPhysicalMovement()
     {
         double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0) * CaelumThermalEffects.Speed(self);
-        movementFactor*=CaelumArcaneCloud.SpeedFactor(self);
-        double jumpFactor = Max(0.0, EffectiveJumpHeightPercent / 100.0);
+        movementFactor*=CaelumArcaneCloud.SpeedFactor(self)*CaelumSupportMagic.Factor(self);
+        double jumpFactor = Max(0.0, EffectiveJumpHeightPercent / 100.0)*CaelumSupportMagic.Factor(self);
         if (ElementalStatus != null)
         {
             double elementalMovement = ElementalStatus.GetMovementMultiplier();

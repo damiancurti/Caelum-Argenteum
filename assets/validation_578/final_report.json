@@ -1,0 +1,128 @@
+{
+  "issue": 479,
+  "release": "5.7.8",
+  "date": "2026-10-22",
+  "status": "integrated; awaiting author check CA479-01",
+  "package_sha256": "c63429a68820715d186bd9cecb0caf12022b0afdddc9de942f3986d6057d5fcd",
+  "source_entries": 16695,
+  "source_bytes_match": true,
+  "fixture_sha256": "9f8e5d36a3551e89116ec1cf6688d3d4eaab3040f0fe6e1e77f9240f6cf8c719",
+  "fixture_deterministic": true,
+  "legacy_fixture_sha256": "4d1839d4e3507d3a8bf0513409311d7173bcf189ce7e3a75f458f6233baac1a7",
+  "foundation_package_sha256": "bdff4ea858b89ccc080fedd76f69d5785167b05ddbbb11586bb8a6b2b006ad5b",
+  "runs": [
+    {
+      "label": "complete-gameplay",
+      "pass": 77,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "cb136710dda31b05f6ff211a3473b9006d83f767643b2e7a9e8c0528cc79bb73"
+    },
+    {
+      "label": "complete-controls",
+      "pass": 14,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "01090d3fa029bb1d9f67b2be157cd88f1375c45897f911d07d1764a0472bc2aa"
+    },
+    {
+      "label": "complete-model",
+      "pass": 51,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "e57ad30ce49c6f8e66f6bc79082b4ab12f6789158e28992ba516258f56774f88"
+    },
+    {
+      "label": "complete-live",
+      "pass": 4,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "fd9b9ac528d59d2163994c8688c35f539aa4096a2779eda749cc35cb8876b2b3"
+    },
+    {
+      "label": "complete-save",
+      "pass": 0,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "c90cba9ea8309eac1b1a2682f148f12f9895dbb7d6a8b2db4d5958c8731d54ac"
+    },
+    {
+      "label": "complete-load",
+      "pass": 4,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "e367dff231b7c1ee5ee753b99a0cf8d3a2856b95ca216d16583e00a1d57ffe24"
+    },
+    {
+      "label": "complete-legacy",
+      "pass": 6,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "c43e5c22c206c7f70a984060652fdcb7aff611715e35c01f6c5f5f3ec8210771"
+    },
+    {
+      "label": "complete-gallery",
+      "pass": 20,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": false,
+      "log_sha256": "310d4adddee31a4a6b43ae40bca79d534e808341b7c372c4c5b950708509f114"
+    },
+    {
+      "label": "legacy-seed-02",
+      "pass": 1,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": true,
+      "log_sha256": "5412ac88d24dd53c83fc959c174fd89574f73cccf8ee4da6a5b334ff2e6a0db5"
+    },
+    {
+      "label": "legacy-rollback-02",
+      "pass": 1,
+      "fail": 0,
+      "exit_code": 0,
+      "baseline_runtime": true,
+      "log_sha256": "3bb694ed0f986c924a27e8b193ec57a13c61a12de0c4b207f5139bdb65a7e504"
+    }
+  ],
+  "full_package_assertions": 176,
+  "baseline_assertions": 2,
+  "pass_count_rule": "Count PASS lines emitted by each process, not serialized cumulative counters.",
+  "art_manifest_sha256": "dc60908cd9c6abf066e55acac92ca20d02c1ab6c4892345adf1ba73b342b2f9c",
+  "art_generation_byte_identical_twice": true,
+  "gallery_capture_sha256": {
+    "complete-gallery-art-00.png": "501a6a88dab3f109b12544fbdc122332d39505c058e6d3522cf67d0bfa4601e0",
+    "complete-gallery-art-01.png": "a8c9bea9c9d161e1d5340c9d8a89a9cbb23b5151500f9ba9767717bb22b4d3a6",
+    "complete-gallery-art-02.png": "51ac29448ffb92f0dd8a4054220c60eaf7fc13519604bb48e82ddabdff9d575e",
+    "complete-gallery-art-03.png": "a74ff46ee087a2f5833445196ad587e5156e8e7c7a2dd3becedb22213c080352",
+    "complete-gallery-art-04.png": "2b53c0210859f33fa470dcfaf6752e8ac6610e07fedb60f5d4c61af36fcc4883",
+    "complete-gallery-art-05.png": "688dea3fc2155626e5a68c4df84cf63edfcefc002b1b81f434979b3dc84cd588",
+    "complete-gallery-art-06.png": "84049bb97c34789c5b931fae05cb5277bc9dfb189de44152442cebcfda5b212d",
+    "complete-gallery-art-07.png": "39598591eedbc8e0dda8bc4a51caf4f5b1641727f271a905017fdfe615ccba1b",
+    "complete-gallery-art-08.png": "b36d9781720a9c9932315fb25b041186b8ce46ca74489340afc889f2d38e2fd6",
+    "complete-gallery-art-09.png": "dcc3e8ddd0e0f0dde77e7844246d4ee7ca6ee64028e68103182a5e88ed84fd16",
+    "complete-gallery-art-10.png": "47bbe6f5ccaf55dac048433305deb759ed162eb85f3cb20389e74e0ac7f3a2b3",
+    "complete-gallery-art-11.png": "c93c753bcc3420761027ce3538c72964570cd702a373647376d37d3db0279c18",
+    "complete-gallery-art-12.png": "2c8b102b0e5a1afa17b36cf60617e5ae452b7f6e6b978aba6894cade87a63f2a",
+    "complete-gallery-art-13.png": "d214917c178823b505cd11485ea92bbebbe63c16960e164f86a1aa1accf230fc",
+    "complete-gallery-art-14.png": "c31d861675a86d575708f2e87308b243c37ef2d2595ab33d241c3de25d011cb2",
+    "complete-gallery-art-15.png": "3307bd56b6d78501127f6a454b59c7a1de9b7fe083a1d1ac8ad9bb3080c013f3",
+    "complete-gallery-art-16.png": "c1a7bfa48f6c1f6479e6a6fdb2c396bfa4ec09c9e07f2b40c4a948e4fdfe4dd2",
+    "complete-gallery-art-17.png": "ec1e87311ee3bdbe4720636aaa8c45a8c4e8a8b2a94950381a44068a42f9add2"
+  },
+  "legacy_save_sha256": "b6018f9d1b565ef18e2a9f583dbcfaba79a0e0ffce0a3a73680d2f9da071763d",
+  "author_acceptance": "Pending; manual tests/questions postponed during absence.",
+  "limits": [
+    "Isolated native validation, not author acceptance.",
+    "No frame-presentation or large-map performance measurement.",
+    "Ordinary campaign purchase/learning/crafting UI awaits author check.",
+    "Foundation and overlay evidence remain separately labeled."
+  ]
+}

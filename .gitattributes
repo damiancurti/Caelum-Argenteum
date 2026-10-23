@@ -312,3 +312,18 @@
 /src/caelum/data/CaelumMarineData.zs text eol=lf
 /src/caelum/data/marine_resources.* text eol=lf
 /src/caelum/equipment/CaelumMarineImports.zs text eol=lf
+
+# Preserve #479 generated art and raw native evidence hashes on checkout.
+/assets/generators/generate_support_implements.py -text whitespace=cr-at-eol
+/assets/generators/generate_environment_models.py text eol=crlf
+/assets/generators/support_implements*.json -text whitespace=cr-at-eol
+/src/models/caelum/equipment/support_implements/*.obj -text whitespace=cr-at-eol
+/src/caelum/data/support_implements.* text eol=lf
+/src/caelum/equipment/CaelumSupportImplementFrames.zs text eol=lf
+/assets/generators/pack_support_sprites.py text eol=lf
+/assets/art_source/support_sprites/*.json text eol=lf
+/src/caelum/data/support_sprites.textures text eol=lf
+/src/caelum/data/orb_hand_frames.zs text eol=lf
+/assets/validation_578/** -text whitespace=cr-at-eol
+/assets/validation_578/native/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_578/diagnostics/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

@@ -1,6 +1,118 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## 5.7.8 - Support implements (#479, awaiting author acceptance)
+
+2026-10-22: the initial foundation added the approved M2/F calculation and
+serializable fractional state. Its 56 native model/save assertions passed;
+the 16,598-entry package matched src and static validation passed. That earlier
+package remains recorded separately in assets/validation_578.
+
+The author subsequently retired offensive Quintessence, approved separate
+per-implement stacks, existing-seal intensity mitigation without new resistance
+distributions, and the concrete fabrication/acquisition proposal. The author
+explicitly allowed discarding offensive Quintessence test items; no save files
+are deleted. Other offensive Books/Statuettes retain numeric identities as
+Scepters/Orbs. Runtime integration adds selectors, local targeting, health and
+secondary modifiers, append-only recipes and additive shop migration. New native
+evidence initially covered 62 gameplay and four real-tic assertions. The complete
+package now passes 176 assertions: 77 gameplay/catalogue/onboarding, 14 native
+control, 51 model, four live-tic, four active-effect save/load, six older-item
+migration and 20 gallery checks. Two additional old-runtime checks establish
+the baseline and rollback. All 16,695 package entries match src bytes; exact
+hashes and launch records are in assets/validation_578/final_report.json.
+
+Six owned procedural designs supply 18 world models, icons and first-person
+views, with deterministic generation and separate character hand layers. Native
+input testing caught an old primary-dispatch switch that omitted support; the
+shared classifier now routes it. Presentation testing corrected overlay state
+flags, grip offsets and tier icon resolution. A legacy fixture initially allowed
+an unrelated old durability migration; the corrected baseline/rollback verifies
+1,234 wear unchanged, without a production workaround. Tutorial text follows
+Scepter/Orb names; all ten professions retain offensive starting equipment.
+
+CA479-01 is now the outstanding author check. The author postponed questions
+and manual tests while away; no #479 acceptance is claimed. The launcher is
+prepared, with no visible author session opened during the absence.
+#481 acceptance remains recorded in its own 5.7.7 entry and branch.
+
+2026-10-22, author visual rejection: the first handoff's low-poly designs were
+not accepted. The author required preserving the existing Book and Statuette,
+following SPRITE_ART_DIRECTION and supplying inventory sprites too. The
+correction restores their original icons/world/first-person states and hands,
+paints Scepter/Orb/Censer/Effigy through imagegen, and replaces active 3D model
+bindings with native billboards. Sources and rejected candidates are preserved;
+no balance or item identity changes are part of this correction. The temporary
+keep-awake request was released on return. CA479-01 remains pending, with the
+rejected visual result recorded rather than treated as acceptance.
+
+The corrected full package has 16,721 entries matching src byte-for-byte and
+passes 75 native assertions: 41 gallery/original-binding checks, 14 real control
+checks and 20 selections/asset-resolution checks during primary/block-input/
+return capture. Agent inspection covers 18 world/held views, 18 actual Journal
+inventory rows and six T1 input sequences. The Journal needed an explicit draw
+path for these six weapon icons; merely resolving their textures did not display
+them. Painted source registration and the private fixture reproduce identically;
+original Book/Statuette source pixels match the pre-correction revision.
+assets/validation_578/painted_report.json records the new package and evidence;
+the earlier 176+2 results remain tied to their retained pre-sprite package.
+
+2026-10-22, CA479-01 partial visual confirmation: the author stated, "Lo único
+que cambiaría es que la orbe no tenga base y se sostenga como el libro."
+This accepts the other five corrected designs, not the outstanding gameplay/
+acquisition checks. The focused Orb revision removes its pedestal across all
+three tiers and inventory/world/held sprites, reusing the Book's original open
+palm and appearance variants. Other weapon images remain byte-identical.
+The 16,722-entry full package matches src and passes 23 native checks; the
+registration reproduces identically. floating_orb_report.json records hashes,
+native evidence and limits. The earlier 75-check sprite package is retained
+under build/issue479/pre-floating-orb. CA479-01 remains pending for this Orb
+retest and its other outstanding checks; no gameplay acceptance is inferred.
+
+2026-10-22, CA479-01 visual portion accepted (origin 5.7.8 / #479): the author
+confirmed the focused Orb handoff with "Ahora si dio bien la prueba."
+The tested scene was author-orb-20261022-231123, using the complete package
+SHA-256 1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de
+from b3d4a799. This completes visual approval for all six implements, including
+the Orb's three tiers, inventory/world sprites and open-palm presentation.
+Removed only the confirmed visual retest from pending_test.txt; CA479-01 retains
+its unconfirmed gameplay, campaign acquisition and save/load checks. No new
+runtime change or engine rerun was needed; documentation validation passed.
+The release remains 5.7.8. The author game and instruction terminal remain open.
+
+2026-10-23, CA479-01 gameplay failed (origin: 5.7.8 / #479). The author reported
+an error in the supplied terminal/session. Its native log identifies a null-owner
+read in CaelumSupportStatus.Tick after lethal damage calls OwnerDied and removes
+the status. The old package reproduces the same abort; the corrected tick checks
+Owner again before accessing health or advancing another role. The private F2
+reset now replaces dead recipients with live actors. No balance, art, save schema
+or accepted behavior changes; release 5.7.8 is retained for this patch correction.
+Focused evidence and original failure logs: assets/validation_578/owner_death_report.json.
+150 fixed-package assertions and four original-runtime save-seed assertions pass;
+all 16,722 packaged entries match source, with only the support lifetime guard
+changed at runtime. Old-save loading and repeated native attack/F2 cycles pass.
+The first automated probe set health before deferred PostBeginPlay; its failed
+assertions are retained but excluded from final evidence. The corrected probe
+waits for initialization and reproduces the author's exact VM failure.
+CA479-01 remains pending, including lethal damage, campaign acquisition and saves.
+
+2026-10-23, CA479-01 partial acceptance (origin: 5.7.8 / #479): the author
+confirmed "La prueba dio bien" after the focused lethal Book/Effigy and F2
+repopulation handoff. That retest passes without qualifications within its scope.
+The supplied run was author-combat-20261023-160550, package SHA-256
+a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6.
+Only the completed lethal-damage check was removed from pending_test.txt; other
+gameplay, ordinary campaign acquisition and save/load checks are not inferred
+accepted. Original agent evidence and version 5.7.8 remain unchanged.
+
+2026-10-23, CA479-01 full acceptance (origin: 5.7.8 / #479): after receiving the
+complete remaining checklist, the author confirmed "Las pruebas del 479 dieron
+bien." Gameplay, campaign acquisition/crafting, save/load and migration checks
+passed without qualifications. Previous visual and lethal-damage approvals remain
+valid. The completed pending_test.txt entry was removed; the file is now empty.
+This acceptance-only update keeps version 5.7.8 and the original native evidence.
+PR review/integration remains separate from manual acceptance.
 
 ## 5.7.7 - Aimed-target information (#481)
 

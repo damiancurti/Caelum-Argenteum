@@ -690,6 +690,7 @@ class CaelumEconomyRules : Object
 
     static bool IsEssenceWeaponType(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return true;
         return weaponType == CaelumConstants.WEAPON_TYPE_STAFF
             || weaponType == CaelumConstants.WEAPON_TYPE_BELL
             || weaponType == CaelumConstants.WEAPON_TYPE_BOOK

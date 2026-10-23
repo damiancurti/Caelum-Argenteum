@@ -1,0 +1,42 @@
+{
+  "issue": 479,
+  "release": "5.7.8",
+  "date": "2026-10-22",
+  "status": "partial foundation; not integrated into gameplay",
+  "package_sha256": "bdff4ea858b89ccc080fedd76f69d5785167b05ddbbb11586bb8a6b2b006ad5b",
+  "source_entries": 16598,
+  "source_bytes_match": true,
+  "fixture_sha256": "19ef9ba5e9b18bd68dfdcc08461dbe9248b5f527de35cb0c7ab4515c059d5aa2",
+  "fixture_deterministic": true,
+  "runs": [
+    {
+      "label": "model-02",
+      "pass": 51,
+      "fail": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "final-save",
+      "pass": 0,
+      "fail": 0,
+      "exit_code": 0
+    },
+    {
+      "label": "final-load",
+      "pass": 5,
+      "fail": 0,
+      "exit_code": 0
+    }
+  ],
+  "native_assertions_passed": 56,
+  "save_scope": "New model object state in a native save; not the future offensive-item migration.",
+  "author_acceptance": "Not requested for the unexposed foundation; manual tests/questions deferred by author.",
+  "remaining": [
+    "Selector destination for offensive Quintessence",
+    "Support economy/fabrication data",
+    "Mitigation and effect-class overlap decisions",
+    "Weapon/catalogue/art integration",
+    "Approved offensive-item migration",
+    "Combat, movement and end-to-end validation"
+  ]
+}

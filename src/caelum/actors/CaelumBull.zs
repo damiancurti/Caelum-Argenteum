@@ -37,7 +37,7 @@ class CaelumBull : CaelumCombatActor
     double GetBullRunningSpeed()
     {
         // Es el máximo final; no vuelve a multiplicarse por Agilidad ni clase.
-        return CaelumBullRules.MaximumSpeed();
+        return CaelumBullRules.MaximumSpeed()*CaelumSupportMagic.Factor(self);
     }
 
     bool BullChargeInterrupted()

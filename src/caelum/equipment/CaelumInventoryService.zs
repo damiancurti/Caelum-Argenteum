@@ -677,6 +677,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateEquippedMagicWeapon(CaelumPlayer user, int requestedWeaponType, int requestedEssenceType, int requestedTier)
     {
+        if(!CaelumSupportImplementData.ValidEssence(requestedWeaponType,requestedEssenceType))return false;
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.WeaponModel == null) { return false; }
 
@@ -1966,6 +1967,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (item != null && item.Owner != user) return false;
+        if(item!=null && !CaelumSupportImplementData.ValidEssence(item.ItemType,item.EssenceType))return false;
         if (item == null || user.WeaponModel == null || !item.Equipped
             || item.InMagicBox || item.Durability <= 0
             || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
@@ -6172,6 +6174,10 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskActive) { return; }
+        if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
+            && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
+        {user.CancelCraftingTask();return;}
         int completedKind = user.CraftingTaskKind;
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         int oldStation = user.ActiveCraftingStationType;

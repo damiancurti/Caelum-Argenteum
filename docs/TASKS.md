@@ -1,6 +1,34 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## #479 / 5.7.8 - Implemented and author accepted
+
+All design decisions are resolved in SYSTEMS. Four support implements, exclusive
+slot 0, local targeting, health/damage/movement effects, recipes/catalogues and
+stable offensive Scepter/Orb migration are implemented. The rejected low-poly stage is superseded by restored Book/Statuette sprites and
+four new painted families at three tiers. Native primary/secondary input, library migration and all ten
+profession starter mappings are checked; dialogue/action names match the roles.
+
+Initial runtime evidence: 176 assertions on the 16,695-entry full package, plus two old-
+runtime seed/rollback checks; assets/validation_578/final_report.json records
+hashes and limits. Old item IDs/tier/wear/Box placement and recipe learning pass;
+active receiver effects persist. Earlier foundation/overlay evidence is retained
+separately. The painted correction passes 75 native assertions on the 16,721-entry
+full package; painted_report.json records inventory/world/held presentation and
+native controls. Static validation and author acceptance are distinct from these runs.
+
+CA479-01 passed in full on 2026-10-23, including gameplay, ordinary campaign
+shop/learning/crafting UI and save/load. PR review/integration remains. The author accepted
+the five non-Orb designs, then confirmed the baseless Orb/open-palm retest on
+2026-10-22. All six designs now have author visual approval, including inventory
+sprites. The focused Orb correction passes 23 native checks (floating_orb_report.json).
+Do not repeat accepted visual checks. The temporary keep-awake remains released.
+The 2026-10-23 author run failed on lethal curse damage. The owner-lifetime guard
+and F2 dead-target reset are corrected; owner_death_report.json records focused
+native regression evidence. The author passed the lethal-curse/F2 retest on
+2026-10-23 and then explicitly confirmed all remaining #479 checks. The completed
+CA479-01 entry was removed from pending_test.txt; HISTORY records acceptance.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

@@ -1,0 +1,33 @@
+{
+  "status": "Runtime integration; artwork and old-save/full-build evidence pending. Development overlay only.",
+  "runs": [
+    {
+      "label": "gameplay-04",
+      "passed": 62,
+      "package_sha256": "BDFF4EA858B89CCC080FEDD76F69D5785167B05DDBBB11586BB8A6B2B006AD5B",
+      "overlay_sha256": "49E2D437E43275573413CF7F16F8B010D8199EC1BCAEC4FE5EA700482172FD5D",
+      "log_sha256": "52df215c495f3a15a08641fefba7d9a70cb7073574be7befe2f1c7ae572334e1"
+    },
+    {
+      "label": "live-01",
+      "passed": 4,
+      "package_sha256": "BDFF4EA858B89CCC080FEDD76F69D5785167B05DDBBB11586BB8A6B2B006AD5B",
+      "overlay_sha256": "49E2D437E43275573413CF7F16F8B010D8199EC1BCAEC4FE5EA700482172FD5D",
+      "log_sha256": "7c9476c7f67de978e023520f14ce370ced681edb82ac856f4288d6911e70df72"
+    },
+    {
+      "label": "live-save-02",
+      "passed": 0,
+      "package_sha256": "BDFF4EA858B89CCC080FEDD76F69D5785167B05DDBBB11586BB8A6B2B006AD5B",
+      "overlay_sha256": "49E2D437E43275573413CF7F16F8B010D8199EC1BCAEC4FE5EA700482172FD5D",
+      "log_sha256": "2893bff4cce1b82f6ef5e3ebde128bcb5f8a55f7e9596b72cb7809c560d9d90b"
+    },
+    {
+      "label": "live-load-02",
+      "passed": 4,
+      "package_sha256": "BDFF4EA858B89CCC080FEDD76F69D5785167B05DDBBB11586BB8A6B2B006AD5B",
+      "overlay_sha256": "49E2D437E43275573413CF7F16F8B010D8199EC1BCAEC4FE5EA700482172FD5D",
+      "log_sha256": "db2c7ca1460479707bd8a2cdb2a3248bb0f990a5011b639f94e92fe41cbfffd1"
+    }
+  ]
+}

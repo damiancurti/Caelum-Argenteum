@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.7.** Obtain and update the complete repository, validate
+**Current release: 5.7.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.7.8 integrates the approved support implements (#479): native selectors,
+local targeting, health/damage/movement effects, fabrication and merchant
+catalogues. Quintessence is support only; Scepter/Orb preserve the old offensive
+roles for the four elements. Painted inventory/world/first-person sprites follow the author's correction.
+Initial runtime validation passed 176 native assertions and two baseline/rollback
+checks. The sprite correction passes 75 native checks and includes visible
+inventory row icons. [Evidence](assets/validation_578/RESULTS.md). The author
+accepted five corrected designs and requested a baseless Orb floating above the
+Book's open palm. That focused follow-up passes 23 native checks and the author
+accepted the Orb retest on 2026-10-22, completing visual approval. The author
+passed all remaining CA479-01 checks on 2026-10-23, without qualifications.
+The 2026-10-23 gameplay retest exposed a lethal-curse crash. The corrected
+support tick checks its owner again after native damage. The author passed the
+lethal-curse/F2 retest and then all gameplay, acquisition and save/load checks.
+Acceptance is recorded in HISTORY; review/integration remains separate.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

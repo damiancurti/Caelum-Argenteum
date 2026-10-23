@@ -153,7 +153,7 @@ class CaelumPlayerPresentation : Object play
         bool utility = hasActiveWeapon && activeType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
         bool bolas = hasActiveWeapon && activeType == CaelumConstants.WEAPON_TYPE_BOLAS;
         user.HUDPhysicalCriticalApplies = !magical && !utility && !bolas;
-        user.HUDMagicalCriticalApplies = magical || utility;
+        user.HUDMagicalCriticalApplies = (magical && !CaelumSupportImplementData.IsSupport(activeType)) || utility;
         user.HUDPhysicalCriticalChance = hasActiveWeapon && user.HUDPhysicalCriticalApplies
             ? user.PhysicalCriticalChanceFor(CaelumCraftingRules.GetCatalogueWeaponForPlayableType(activeType),
                 user.IsRangedWeaponType(activeType)) : 0;

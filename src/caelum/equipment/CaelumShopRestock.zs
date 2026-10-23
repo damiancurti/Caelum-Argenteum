@@ -62,6 +62,7 @@ class CaelumShopProduct : Object play
         if(EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.FIRST_RECIPE+ItemType;
         for(int recipe=0;recipe<CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;recipe++)
         {
+            if(CaelumSupportImplementData.RetiredRecipe(recipe))continue;
             int kind=CaelumCraftingRules.GetUnifiedRecipeKind(recipe);
             if(EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
             {
@@ -86,7 +87,7 @@ class CaelumShopProduct : Object play
     }
     bool Produce(CaelumCityMerchant vendor,CaelumPlayer user,int amount)
     {
-        if(amount<=0)return false;
+        if(amount<=0 || CaelumSupportCatalogue.Retired(self))return false;
         if(Stock!=null && Stock.Owner==vendor)
         {Stock.Amount+=amount;return true;}
         Inventory item=null;

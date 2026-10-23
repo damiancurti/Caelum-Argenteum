@@ -41,18 +41,10 @@ class CaelumCombatDispatch : Object play
             user.BeginPhysicalAttackCycle(false);
             return;
         }
-        switch (user.WeaponModel.WeaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_STAFF:
-            case CaelumConstants.WEAPON_TYPE_BELL:
-            case CaelumConstants.WEAPON_TYPE_BOOK:
-            case CaelumConstants.WEAPON_TYPE_STATUETTE:
-                user.PerformDebugStaffAttack(false);
-                break;
-            default:
-                user.BeginPhysicalAttackCycle(false);
-                break;
-        }
+        // Todos los implementos comparten el clasificador, incluido el apoyo de #479.
+        if(user.WeaponModel.IsMagicalType(user.WeaponModel.WeaponType))
+            user.PerformDebugStaffAttack(false);
+        else user.BeginPhysicalAttackCycle(false);
     }
 
     static void PerformLargeWeaponSweep(CaelumPlayer user, int weaponType)

@@ -729,7 +729,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -967,7 +967,14 @@ class CaelumConstants : Object
     const WEAPON_TYPE_PICKAXE = 20;
     const WEAPON_TYPE_UTILITY_STAFF = 21;
     const WEAPON_TYPE_BOLAS = 22;
-    const WEAPON_TYPE_COUNT = 23;
+    // #479: los IDs ofensivos heredados 18/19 conservan objetos y recetas.
+    const WEAPON_TYPE_SCEPTER = WEAPON_TYPE_BOOK;
+    const WEAPON_TYPE_ORB = WEAPON_TYPE_STATUETTE;
+    const WEAPON_TYPE_SUPPORT_BOOK = 23;
+    const WEAPON_TYPE_CENSER = 24;
+    const WEAPON_TYPE_SUPPORT_STATUETTE = 25;
+    const WEAPON_TYPE_EFFIGY = 26;
+    const WEAPON_TYPE_COUNT = 27;
     // El aviso temporal acompana al indicador permanente al cambiar de arma.
     const ACTIVE_WEAPON_NOTICE_SECONDS = 1.5;
     const WEAPON_OWNERSHIP_COUNT = WEAPON_TYPE_COUNT * 3 * EQUIPMENT_SIZE_COUNT;
@@ -1192,7 +1199,10 @@ class CaelumConstants : Object
     const MATERIAL_HONEY = 86;
     const MATERIAL_DRIED_KELP = 87;
     const MATERIAL_IODINE = 88;
-    const MATERIAL_TYPE_COUNT = 89;
+    const MATERIAL_CENSER_BASE = 89;
+    const MATERIAL_SCEPTER_BASE = 90;
+    const MATERIAL_ORB_BASE = 91;
+    const MATERIAL_TYPE_COUNT = 92;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

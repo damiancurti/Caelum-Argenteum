@@ -1,6 +1,74 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+## #479 support implements and 5.7.8 integration
+
+Quintessence is exclusively support. Offensive Wand/Bell retain their attacks;
+Scepter inherits the old offensive Book and Orb the old offensive Statuette,
+including charge, costs and tiers, for Fire, Water, Earth and Air. Numeric item
+IDs 18/19 remain stable. The author explicitly authorized discarding existing
+offensive Quintessence test items; save files are never deleted. Other items
+retain ID, tier, element, wear and learned recipe indices. Retired Quintessence
+recipe slots remain reserved; new recipes append without reindexing old data.
+
+| Support implement | Scope | T1 Anima | T1/M mass | Body |
+| --- | --- | --- | --- | --- |
+| Book | Enemy area | 70 | 6 kg | Plant fiber |
+| Censer | Allied area / self | 70 | 5 kg | Bronze, Bell manufacturing rules |
+| Statuette | Allied single / self | 100 | 8 kg | Carved wood |
+| Ritual effigy | Enemy single | 100 | 8 kg | Carved wood |
+
+Support selectors occupy native slot 0. The visible aim point receives the
+instantaneous effect after the existing 14-tic preparation cycle and Eloquence
+modifiers. Area radius reuses 128 map units and existing ability-range scaling;
+local blockmap selection checks distance, teams and sight. Beneficial secondary
+attack targets the caster; curse secondary is inert. Support has no charge.
+Costs use T2 x1.6/T3 x2.5 and the existing Eloquence reduction.
+
+Each application adds 1% x M2 per second and refreshes duration to 1 s x M2:
+Charisma for curses, Empathy for benefits. M2 is 1 at 0 and 4 at 100; effective
+levels remain uncapped. Each implement has its own shared, uncapped stack;
+different casters add to the same implement, with the most recent caster used
+for damage attribution. Book/Effigy health contributions sum, as do
+Censer/Statuette. Opposing effects coexist. Only Statuette/Effigy modify speed
+and damage: F=1+p/100; benefit multiplies movement/dealt damage and divides
+received damage, curse does the inverse. Movement includes jump, swimming,
+flight, dash and NPC movement; independent action clocks are unchanged.
+
+Health integration samples the recipient's current maximum, retains fractional
+HP and elapsed seconds, and delivers whole HP at second/expiry boundaries.
+Support damage factors are integrated before expiry, once, so the last pulse
+keeps its effect. Healing caps at current maximum; effects cannot resurrect.
+No base attribute or speed is rewritten. Receiver inventory state persists
+stacks, duration, fractions and attribution with idempotent revision 1.
+Native lethal damage can synchronously remove that inventory; the tick rechecks
+its owner after damage and stops before processing further roles. No save fields
+or revision numbers change in this lifetime correction.
+Existing Quintessence seals retain 85% of curse intensity, including secondary
+modifiers; duration and benefits are unaffected. No new resistance distribution
+is introduced. Selection is local; no global per-tic actor scan is added.
+
+Fabrication keeps 90% body / 10% essence. Support uses Quintessence; Scepter
+(6 kg T1/M) and Orb (8 kg) use wooden bases and the four offensive elements.
+Existing XS/S/M/L/XL factors 0.5/0.75/1/1.25/1.5, T2/T3 mass factors 1.5/2,
+silver/gold details, learning and production times apply. Workbench and Essence
+Altar are required, plus Globe at T2 and Master Bench at T3. MAP03 magic shops
+stock one T1 piece per type/size; libraries stock ten recipe copies per tier.
+New shop entries append without resetting old money, stock or production.
+Prices derive from current recursive manufacturing values and commerce margins:
+T1/M purchases cost Book 741,094, Censer 668,335 and Statuette/Effigy 971,250
+copper each. New component recipes are 173-175; support recipes are 169-172.
+
+Runtime is integrated; the author's sprite correction restores accepted Book/
+Statuette art and paints the four new implements. Native primary dispatch uses the
+shared magical classifier; support exposes no projectile spread or critical
+chance. The full package passed 176 assertions plus two baseline/rollback checks,
+including native input, old item migration and active-effect saves. Arcanist and
+Priest keep offensive Scepter/Orb starters. NPC numeric aliases preserve their
+existing offensive actions; no new NPC support AI is introduced. CA479-01 is
+pending, with manual checks/questions postponed during the author's absence.
+Historical offensive Quintessence descriptions below are superseded here.
 
 ## Aimed-target panel (#481, 5.7.7)
 

@@ -17,6 +17,7 @@ class CaelumLibrary : Object play
     // ni recorrer el inventario cientos de veces al abrir el catálogo completo.
     static double ProductValue(CaelumPlayer user,int recipe,int requestedTier)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(recipe))return 0;
         int tier=CaelumRecipeLearning.Tier(recipe,requestedTier);
         int size=CaelumConstants.EQUIPMENT_SIZE_XL;
         int kind=CaelumCraftingRules.GetUnifiedRecipeKind(recipe);

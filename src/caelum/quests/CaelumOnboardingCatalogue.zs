@@ -23,8 +23,8 @@ class CaelumOnboardingCatalogue : Object
             case CaelumConstants.PROFESSION_EXPLORER: return CaelumConstants.WEAPON_TYPE_LONGBOW;
             case CaelumConstants.PROFESSION_PILGRIM: return CaelumConstants.WEAPON_TYPE_BELL;
             case CaelumConstants.PROFESSION_INVESTIGATOR: return CaelumConstants.WEAPON_TYPE_CROSSBOW;
-            case CaelumConstants.PROFESSION_PRIEST: return CaelumConstants.WEAPON_TYPE_STATUETTE;
-            case CaelumConstants.PROFESSION_ARCANIST: return CaelumConstants.WEAPON_TYPE_BOOK;
+            case CaelumConstants.PROFESSION_PRIEST: return CaelumConstants.WEAPON_TYPE_ORB;
+            case CaelumConstants.PROFESSION_ARCANIST: return CaelumConstants.WEAPON_TYPE_SCEPTER;
             default: return CaelumConstants.WEAPON_TYPE_STAFF;
         }
     }

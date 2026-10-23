@@ -2968,7 +2968,7 @@ class CaelumCombatActor : Actor
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
         double previousRallyFactor=RallyDamageFactor;
-        RallyDamageFactor=CaelumRally.DamageFactor(self,source);
+        RallyDamageFactor=CaelumRally.DamageFactor(self,source)*(mod=='CaelumQuintessenceDOT'?1:CaelumSupportMagic.DamageFactor(self,source));
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
         RallyDamageFactor=previousRallyFactor;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
@@ -3746,7 +3746,7 @@ class CaelumCombatActor : Actor
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
             * CombatHealthPerformanceMultiplier * CaelumPersonalityRules.Evasion(self);
-        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier * CaelumThermalEffects.Speed(self)
+        Speed = CombatBaseSpeed * CaelumSupportMagic.Factor(self) * CombatHealthPerformanceMultiplier * CaelumThermalEffects.Speed(self)
             * (ElementalStatus != null
                 ? ElementalStatus.GetMovementMultiplier() : 1.0);
     }

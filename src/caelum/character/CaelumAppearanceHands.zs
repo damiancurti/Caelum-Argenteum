@@ -40,6 +40,8 @@ class CaelumAppearanceHands : Object play
 
     static State Composed(CaelumPlayer user,int kind,int tier,int phase,State original)
     {
+        if(CaelumSupportArt.NewSprite(kind))return original;
+        if(CaelumSupportArt.Legacy(kind)>=0)kind=CaelumSupportArt.Legacy(kind);
         if(kind!=1 && kind!=6 && kind!=9 && kind!=17 && kind!=18 && kind!=19)return original;
         return Resolve(user,String.Format("%s_T%d_%s",CaelumFirstPersonView.Family(kind),
             Clamp(tier,1,3),phase==1?"B":phase==2?"C":"A"),original);
@@ -47,6 +49,7 @@ class CaelumAppearanceHands : Object play
 
     static clearscope Vector2 ComposedPivot(int kind,int phase)
     {
+        if(CaelumSupportArt.Legacy(kind)>=0)kind=CaelumSupportArt.Legacy(kind);
         // Coordenadas absolutas del manifiesto FP v1; no dependen del recorte alfa.
         if(kind==17)return (236.5,125);
         if(kind==18)return (227,161);

@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.7.7** — 2026-10-22.
+Documentation version: **5.7.8** — 2026-10-22.
+
+5.7.8 - Offensive starter continuity (#479)
+
+Arcanist keeps numeric weapon type 18 as the Scepter; Priest keeps type 19 as
+the Orb. Their Fire starters retain inherited offensive actions and recipe
+indices. Other professions retain their existing equipment. Tutorial action
+text now uses the current names; retired offensive Quintessence choices are
+removed from the preserved dialogue pages without changing page order. The
+current profession-based grant path does not offer a selectable starter weapon.
+NPC attacks using the old numeric aliases retain offensive behavior; this patch
+does not introduce a new NPC support-casting AI. Author tutorial review is pending.
 
 5.7.5 - Marine scope boundary (#407)
 

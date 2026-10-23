@@ -348,6 +348,7 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Grip(int kind)
     {
+        if(kind==CaelumConstants.WEAPON_TYPE_ORB)return CaelumAppearanceHands.ComposedPivot(CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK,0);
         if (CaelumWeaponModel.IsSingleTierType(kind)) return (216,160);
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==15;
@@ -396,6 +397,7 @@ class CaelumFirstPersonLayers : Object play
 
     static bool Handles(int kind)
     {
+        if(CaelumSupportArt.NewSprite(kind))return true;
         return CaelumWeaponModel.IsSingleTierType(kind) || kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
@@ -630,6 +632,7 @@ class CaelumFirstPersonLayers : Object play
     static void Draw(CaelumPlayer user,int kind,int tier,int phase,
         double dx,double dy,double rotation,double chainTurn=0)
     {
+        if(CaelumSupportArt.NewSprite(kind)){CaelumSupportArt.Draw(user,kind,tier,dx,dy,rotation);return;}
         if(kind==CaelumConstants.WEAPON_TYPE_SHOTGUN)
         {
             CaelumShotgunView.Draw(user,tier,dx,dy,rotation);

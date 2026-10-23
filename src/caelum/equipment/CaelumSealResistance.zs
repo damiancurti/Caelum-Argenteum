@@ -19,6 +19,8 @@ class CaelumSealResistance : Object
 
     static clearscope double Factor(int sealType,int essence)
     {
+        if(essence==CaelumConstants.ESSENCE_QUINTESSENCE)
+            return sealType==CaelumConstants.SEAL_QUINTESSENCE?QUINTESSENCE_FACTOR:1;
         if(essence<0 || essence>=CaelumConstants.ELEMENT_TYPE_COUNT)return 1;
         if(sealType==CaelumConstants.SEAL_QUINTESSENCE)return QUINTESSENCE_FACTOR;
         return sealType==essence ? MATCHED_FACTOR : 1;

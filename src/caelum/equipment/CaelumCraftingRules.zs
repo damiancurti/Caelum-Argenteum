@@ -245,6 +245,8 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if(CaelumSupportImplementData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
+        if(CaelumSupportImplementData.IsComponentRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
         if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_CLOTHING;
         if (CaelumUtilityCrafting.IsRecipe(recipeIndex)) return CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY;
@@ -302,6 +304,7 @@ class CaelumCraftingRules : Object
 
     static bool RecipeMatchesFilter(int recipeIndex, int recipeFilter)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(recipeIndex))return false;
         int resolvedFilter = ResolveRecipeFilter(recipeFilter);
         if (resolvedFilter == CaelumConstants.CRAFTING_RECIPE_FILTER_ALL)
         {
@@ -390,6 +393,8 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedEssenceWeaponType(int recipeIndex)
     {
+        if(CaelumSupportImplementData.IsRecipe(recipeIndex))
+            return CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK+recipeIndex-CaelumSupportImplementData.FIRST_RECIPE;
         int group = GetUnifiedEssenceRecipeIndex(recipeIndex)
             / CaelumConstants.ESSENCE_TYPE_COUNT;
         switch (group)
@@ -403,6 +408,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedEssenceType(int recipeIndex)
     {
+        if(CaelumSupportImplementData.IsRecipe(recipeIndex))return CaelumConstants.ESSENCE_QUINTESSENCE;
         return GetUnifiedEssenceRecipeIndex(recipeIndex)
             % CaelumConstants.ESSENCE_TYPE_COUNT;
     }
@@ -646,6 +652,8 @@ class CaelumCraftingRules : Object
     // no componentes. El orden salta esos tres IDs sin alterar 0..78.
     static int GetComponentOutputMaterial(int recipeIndex)
     {
+        if(CaelumSupportImplementData.IsComponentRecipe(recipeIndex))
+            return CaelumConstants.MATERIAL_CENSER_BASE+recipeIndex-CaelumSupportImplementData.FIRST_COMPONENT_RECIPE;
         int componentIndex = GetUnifiedComponentRecipeIndex(recipeIndex);
         if (componentIndex < 17) { return componentIndex + 1; }
         if (componentIndex < 39) { return componentIndex + 3; }
@@ -654,6 +662,7 @@ class CaelumCraftingRules : Object
 
     static bool IsWoodComponent(int componentType)
     {
+        if(componentType==CaelumConstants.MATERIAL_SCEPTER_BASE || componentType==CaelumConstants.MATERIAL_ORB_BASE)return true;
         return componentType == CaelumConstants.MATERIAL_SHAFT
             || componentType == CaelumConstants.MATERIAL_FRAME
             || componentType == CaelumConstants.MATERIAL_LONG_FRAME
@@ -787,6 +796,8 @@ class CaelumCraftingRules : Object
 
     static int FindComponentRecipeForOutput(int materialType)
     {
+        if(CaelumSupportImplementData.IsComponent(materialType))
+            return CaelumSupportImplementData.FIRST_COMPONENT_RECIPE+materialType-CaelumConstants.MATERIAL_CENSER_BASE;
         for (int recipeIndex = GetComponentRecipeStart();
             recipeIndex < GetComponentRecipeStart() + CaelumConstants.CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT;
             recipeIndex++)
@@ -1053,7 +1064,7 @@ class CaelumCraftingRules : Object
                 CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS
             );
         }
-        if (IsEssenceComponent(componentType)
+        if (CaelumSupportImplementData.IsComponent(componentType) || IsEssenceComponent(componentType)
             || (componentType >= CaelumConstants.MATERIAL_STAFF_BASE
                 && componentType <= CaelumConstants.MATERIAL_STATUETTE_BASE))
         {
@@ -1221,6 +1232,8 @@ class CaelumCraftingRules : Object
 
     static int GetEssenceBaseMaterial(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType) || weaponType==CaelumConstants.WEAPON_TYPE_SCEPTER
+            || weaponType==CaelumConstants.WEAPON_TYPE_ORB)return CaelumSupportImplementData.BaseMaterial(weaponType);
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF:
@@ -1255,6 +1268,7 @@ class CaelumCraftingRules : Object
 
     static double GetEssenceTierOneWeight(int weaponType)
     {
+        if(CaelumSupportImplementData.IsSupport(weaponType))return CaelumSupportImplementData.Weight(weaponType);
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF:

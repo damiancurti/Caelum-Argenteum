@@ -29,6 +29,7 @@ class CaelumRecipeLearning : Object play
 
     static int TierMask(int recipe)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(recipe))return 0;
         int mask=0;
         for(int tier=1;tier<=TIERS;tier++)mask|=1<<(Tier(recipe,tier)-1);
         return mask;
@@ -36,6 +37,7 @@ class CaelumRecipeLearning : Object play
 
     static int Slot(int recipe, int tier)
     {
+        if(CaelumSupportImplementData.RetiredRecipe(recipe))return -1;
         if (recipe < 0 || recipe >= CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
             || tier < 1 || tier > TIERS) return -1;
         return recipe * TIERS + Tier(recipe,tier) - 1;
