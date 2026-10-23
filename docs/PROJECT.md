@@ -46,8 +46,9 @@ the Orb retest on 2026-10-22, completing visual approval. Only the outstanding
 gameplay, acquisition and save/load checks remain in CA479-01.
 The 2026-10-23 author run exposed a null-owner read when a curse killed its
 recipient. The support tick now handles native inventory removal during damage.
-Focused regression evidence is in validation_578/owner_death_report.json; this
-does not repeat accepted visuals or establish author gameplay acceptance.
+Focused regression evidence is in validation_578/owner_death_report.json. The
+author passed the lethal-curse/F2 retest on 2026-10-23. Other CA479-01 gameplay,
+campaign acquisition and save/load checks remain unconfirmed; visuals stay accepted.
 
 ## 5.7.7 - Centered target information (#481)
 
