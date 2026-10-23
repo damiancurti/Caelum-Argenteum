@@ -1,0 +1,36 @@
+{
+  "issue": 472,
+  "date": "2026-10-23",
+  "version": "5.7.14",
+  "functional_author_acceptance": "Passed except artwork; CA472-01 narrowed to visual review",
+  "visual_author_acceptance": "Pending",
+  "package_sha256": "c20a786e6eb0f7aa318df3a76ff566fefe187a3b20830081d858913cee599686",
+  "package_entries": 16806,
+  "source_archive_equal": true,
+  "native_pass_by_run": {
+    "sprites-resume-01": 5,
+    "sprites-visual0-01": 5,
+    "sprites-visual1-01": 5,
+    "sprites-visual2-01": 5,
+    "sprites-workshop-01": 1
+  },
+  "deterministic_outputs": {
+    "src/graphics/caelum/icons/mate/gourd.png": "1add7dffcab6b7bcc92337820a624d1d16bd3eda7804863e446253a88f438ef0",
+    "src/graphics/caelum/icons/mate/silver.png": "e1e39bfe6a5c67786d81c3134120dc726499972c9f452143df1c8e2fa617c8fa",
+    "src/graphics/caelum/icons/mate/gold.png": "09b56c5e4a3d8b3a34087b0596ba828d7c662a007323c4930a1a76c911483307",
+    "src/caelum/data/mate.textures": "470c7527f52f4e1ab8f34a2d3645e34b85e9ac34cd11aeac6b26f47d28be46fe",
+    "src/caelum/data/mate.modeldef": "1fbfa4b4228040ce074f0357878ed695b71f30278c157ba82197a72fbb9c13c8",
+    "assets/art_source/mate_sprites/contact-sheet.png": "d64aa4c62cfcd48bccd4a87c78948c93c569df2e03982b10d3561256a4c63d1a"
+  },
+  "captures": {
+    "inventory-0.png": "4dceedfb849d40bb12328247a3f86b32794eea644a8b3015e8b96fc457f028dd",
+    "inventory-1.png": "3b4fdac681a58aea7dd024da392f7350763104d30c541716b97851340da5893a",
+    "inventory-2.png": "0ca11d96dd154b68f1fc6b48d1b0765e9477e244070467b44d73cff823e13cb9",
+    "mate-0.png": "1c01cca07cd19961ba42417d82c50b21677b3aa565a1f2568e0828562a708101",
+    "mate-1.png": "51b798681535149de60f18248569356022b8e4511332995e5cc17ec2de748a6a",
+    "mate-2.png": "04173bc4e1f1264b7d0502acd37ff7600c25def86191a98cdde42df49f59f288",
+    "workshop.png": "d8e8ed6f028d0e2f75ef68d630fd3a9bcfb4010e551356bf541172b4fdae6a11",
+    "world-0.png": "63ec82f20d7f6b118a345fb9b38655d2642c08901701d17fb30c56afea823b60"
+  },
+  "log_export": "Trailing whitespace normalized; original logs retained under build/issue472"
+}

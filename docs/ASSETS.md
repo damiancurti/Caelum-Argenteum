@@ -4,21 +4,29 @@ Documentation version: **5.7.14** — 2026-10-23.
 
 ## 5.7.14 - Mate vessels and inventory sprites (#472)
 
-Three original project-owned vessel meshes and matching 128-pixel inventory
-sprites represent gourd, silver-clad wood and gold-clad wood, each with a fixed
-bronze bombilla. A fourth mesh/icon represents dry gourd material. The artist
-brief in SPRITE_ART_DIRECTION was consulted: muted materials, readable silhouettes,
-restrained shading and consistency with the existing owned prop/icon family.
-The accepted weapon sprites from #479 are untouched.
+The author accepted functional tests on 2026-10-23 but rejected the original
+hemispherical procedural vessels/icons. Corrected, originally painted sprites
+show a complete porongo and ornamented silver/gold-clad wooden bodies with
+narrower mouths and fixed bronze bombillas. They follow SPRITE_ART_DIRECTION
+and the accepted owned inventory style. Silver has a central rosette and leafy
+scrolls; gold has an elongated body, oval floral panel and decorated borders.
 
-`generate_mate_art.py` extends the existing owned mesh and depth-tested icon
-renderer, using the approved geometry table in `mate_vessels.json`. It preserves
-contiguous material surfaces below GZDoom's 32-slot limit. MODELDEF compensates
-the established 0.25 pickup scale. `mate_art_manifest.json` records inputs and
-asset hashes; no external artwork or Doom assets were copied. Data dimensions
-and gameplay quantities remain in the separate approved table. Review captures
-and the contact sheet are in `assets/validation_5714`; author acceptance is
-pending as part of CA472-01.
+Sources, exact built-in image_gen prompts, museum references/roles and hashes:
+`assets/art_source/mate_sprites`. San Antonio Museum of Art's Argentine
+nineteenth-century mate (85.1.653.1-2) informed the closed silhouette; USC's
+mate informed vegetal ornament. The Museo de Artes Decorativas documents
+ovoid poros used in Argentina. These are original game interpretations, not
+reproductions of specific artifacts. Museum photographs are not packaged.
+
+`pack_mate_sprites.py` deterministically crops and downsamples generated alpha
+to 128-pixel inventory icons. World TEXTURES registration compensates the 0.25
+actor scale, keeping the former approximately 5.3-unit total height. The three
+mate MODELDEF bindings are removed from the complete package. Legacy meshes,
+generator function, manifest and captures remain recovery evidence; the old
+generator entry point delegates to the painted exporter. Dry-gourd material
+art and accepted #479 weapon art are unchanged. The open-hemisphere mass/thermal
+approximation remains the accepted gameplay model. CA472-01 now awaits only
+visual acceptance; review the new contact sheet and native correction evidence.
 
 ## 5.7.13 - Chemistry supply presentation (#471)
 

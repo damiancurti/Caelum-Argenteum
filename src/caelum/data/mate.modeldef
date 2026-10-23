@@ -1,4 +1,2 @@
-Model CaelumMateGourd { Path "models/caelum/world/mate" Model 0 "gourd.obj" Scale 4 4 4 FrameIndex CMA0 A 0 0 }
-Model CaelumMateSilver { Path "models/caelum/world/mate" Model 0 "silver.obj" Scale 4 4 4 FrameIndex CMA1 A 0 0 }
-Model CaelumMateGold { Path "models/caelum/world/mate" Model 0 "gold.obj" Scale 4 4 4 FrameIndex CMA2 A 0 0 }
+// Mate vessels use painted billboards; retained legacy meshes are unbound.
 Model CaelumMaterialPickup { Path "models/caelum/world/mate" Model 0 "dry_gourd.obj" Scale 4 4 4 FrameIndex M104 A 0 0 }

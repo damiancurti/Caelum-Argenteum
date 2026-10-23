@@ -1,24 +1,14 @@
-CA472-01 | Origin: 5.7.14 / #472 | Status: pending author acceptance
-Prerequisites: Windows 11, GZDoom 4.14.2, rebuilt #472 package and private fixtures.
-Launch assets/validation_5714/author_terminal.ps1; the prepared terminal offers
-separate options for automated checks, each mate, MAP03 and the workshop.
-1. Options 2-4: inspect each mate, its bronze bombilla and inventory/quick-use
-   sprites. Prepare (R) must reopen the selected mate from Inventory. Text and
-   controls must remain legible without overlapping the weight or contents.
-2. R loads 20/50/100 g yerba. Select the warm canteen with arrows and F to pour
-   60/150/300 mL. The source remains and loses only transferred water. Enter
-   drinks; water refills do not renew hot uses. Check cold hydration below 60 C,
-   hot benefits at 60-85 C and blocked drinking above 85 C.
-3. At full Thirst, hot fresh yerba still restores Health/Anima/Air over ten
-   seconds. Repeated doses retain earlier pending recovery. Washed yerba gives
-   hydration only; empty water with V, then press C twice to discard and R to
-   reload. Holding C must not discard. Optional private console command:
-   netevent ca472_sample 75 1 sets one remaining use at 75 C; 59/86 test bounds.
-4. Save/load with a partially filled mate and remaining uses; check that contents,
-   temperature and pending recovery persist. Box/chest/drop/sell/buyback must
-   retain contents, and boxed mates must be unavailable for drinking.
-5. Option 6: craft the three mates with approved materials and stations. Cancel
-   must spend nothing; completed crafting pays once. Option 5: buy mates/dry
-   gourd in Provisions and recipes in the library; verify three/ten initial stock.
-Expected: all behavior above, no crash or missing sprites. This confirms #472
-only; #471 CA471-BATCH-01 is already accepted. Agent checks are separate evidence.
+CA472-01 | Origin: 5.7.14 / #472 | Status: corrected artwork awaiting author review
+Prerequisites: Windows 11, GZDoom 4.14.2, rebuilt #472 painted-sprite package.
+Launch assets/validation_5714/author_terminal.ps1 (historical sprite review).
+Functional checks were explicitly accepted on 2026-10-23; only art remains.
+1. Options 2-4: inspect each mate in preparation, Inventory and quick use.
+   Expect complete porongo/ovoid bodies with narrower mouths, bronze bombillas,
+   natural gourd texture, and distinct chased ornament on silver and gold.
+2. Option 7: inspect the three enlarged world billboards. Walk around them;
+   the painted sprite must remain visible without reverting to an old 3D bowl.
+   The gallery enlarges objects eightfold for inspection.
+3. Option 6: inspect the three crafting icons; they must match the same designs.
+Expected: historical mate silhouettes, readable decoration and painted sprite
+style consistent across views, with no clipping or missing images. Author
+judgment is still required; agent rendering checks do not imply visual approval.

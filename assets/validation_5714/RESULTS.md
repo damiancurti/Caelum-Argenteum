@@ -1,12 +1,12 @@
 # #472 / 5.7.14 verification
 
-Final production package: `a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49` (SHA-256), 16,806 entries,
+Original functional package: `a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49` (SHA-256), 16,806 entries,
 byte-for-byte identical to src. Native target: GZDoom 4.14.2, Windows 11,
 Ryzen 9 5950X, RTX 3070 Ti, Vulkan, 1280x720. Launch records retain engine/IWAD
 hashes and private configuration: unpaused background operation, 5% audio,
 60 FPS presentation limit. This is functional verification, not a performance benchmark.
 
-## Final native checks
+## Original functional native checks
 
 16 isolated final-package runs, 163 passing assertions, no failures.
 Counts use PASS lines emitted during each run, excluding serialized seed counters.
@@ -70,7 +70,35 @@ probe was corrected by preserving the saved basename in the migrated fixture.
 
 ## Author handoff
 
-CA472-01 is pending in the single pending_test.txt. author_terminal.ps1 offers
-all three mates, a supplied crafting workshop, MAP03 commerce and the native suite.
-No author acceptance is inferred from agent checks. #471 was accepted separately.
-No cooperative multiplayer claim or unrelated system retest is made.
+On 2026-10-23 the author explicitly passed the functional tests and rejected the
+mate artwork. CA472-01 now retains only visual acceptance. The old screenshots
+remain evidence of that rejected appearance, not the current delivery.
+
+## Historical sprite correction, 2026-10-23
+
+Current complete package SHA-256:
+`c20a786e6eb0f7aa318df3a76ff566fefe187a3b20830081d858913cee599686`.
+All 16,806 entries match src. Only the three mate icons, their TEXTURES scale
+and MODELDEF bindings change in production. No gameplay logic/data changed.
+The original package remains locally preserved as pre-sprite-correction.
+
+Five GZDoom 4.14.2 runs of this package pass **21 assertions**: visual0/1/2
+(five each), workshop (one), and loading the existing pre-correction save
+(five new PASS lines; the RESULT includes the serialized seed counter).
+The same recorded Windows/Vulkan environment and background/audio rules apply.
+Retained logs/launch records and eight inspected captures are in sprite-correction/.
+The captures verify all preparation panels, all inventory selections, crafting,
+world billboards and quick-use icons. The world gallery uses eightfold inspection
+scale; the production height remains approximately 5.3 world units. The complete
+package is essential: an overlay cannot unregister prior MODELDEF bindings.
+
+The painted exporter and its compatibility entry point produce the same six
+outputs and manifest on repeat. Generated alpha is retained. Project validation,
+document-index freshness and whitespace checks pass. Historical references,
+exact built-in image_gen prompts and asset hashes are under
+assets/art_source/mate_sprites. Museum photos are not distributed.
+
+The updated terminal adds option 7 for world sprite review. Options 2-4 inspect
+each mate and option 6 shows crafting. Corrected artwork is **pending author
+acceptance**. Original functional evidence is reused for unchanged mechanics;
+no full suite, multiplayer or performance benchmark is claimed for this art edit.

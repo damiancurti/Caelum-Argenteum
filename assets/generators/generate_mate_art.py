@@ -1,4 +1,8 @@
-"""Generate owned mate props and inventory sprites using the established prop renderer."""
+"""Retain the rejected procedural source; the default entry exports painted sprites.
+
+The original main function and meshes remain recovery evidence for commit 438a2ec7.
+Do not run that legacy function against production outputs.
+"""
 import hashlib
 import json
 import math
@@ -105,4 +109,5 @@ def main():
     print("Generated three mate models/icons with fixed bronze straws and dry-gourd material")
 
 if __name__ == "__main__":
-    main()
+    from pack_mate_sprites import main as export_painted
+    export_painted()

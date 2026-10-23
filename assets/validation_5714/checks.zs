@@ -299,7 +299,7 @@ class CA472Checks : EventHandler
         for(int variant=0;variant<3;variant++)
         {
             let item=Actor.Spawn(CaelumMateData.ItemClass(variant),(-40+variant*40,0,24),NO_REPLACE);
-            item.Scale=(2,2);item.bNoGravity=true;Check(item!=null,String.Format("world mate model %d",variant));
+            item.Scale=(2,2);item.bNoGravity=true;Check(item!=null,String.Format("world mate artwork %d",variant));
         }
         Result();
     }

@@ -13,6 +13,19 @@ provenance and technical integration evidence; [SYSTEMS](SYSTEMS.md) owns gamepl
 [MAP01](MAP01.txt) owns story and character canon. This document owns the visual
 requirements and reusable generation brief. Keep those responsibilities separate.
 
+## Mate silhouette correction for #472 (2026-10-23)
+
+The author accepted functional tests but rejected the hemispherical, rendered
+mate appearance. Use painted sprites in inventory, preparation, crafting,
+quick use and the world. Historical nineteenth-century references establish
+closed ovoid/pear-shaped bodies and narrower mouths. Silver/gold-clad wooden
+mates need readable chased vegetal ornament, rosettes and decorated rims;
+the natural gourd stays modest. All retain the fixed bronze bombilla.
+Use the owned painted inventory style, not procedural 3D projections. Record
+museum references and their roles in assets/art_source/mate_sprites/PROMPTS.json.
+The approved hemisphere is a simplified thermal calculation, not a visual brief.
+Corrected artwork remains subject to author visual acceptance under CA472-01.
+
 ## Weapon continuity correction for #479 (2026-10-22)
 
 The author rejected the new low-poly Book/Statuette replacements and specified

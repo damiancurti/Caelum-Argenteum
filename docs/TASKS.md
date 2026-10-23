@@ -6,12 +6,14 @@ Documentation version: **5.7.14** — 2026-10-23.
 
 Implementation covers the three approved vessel types, yerba/water preparation,
 thermal mixing/cooling, hot/cold/washed behavior, additive ten-second recovery,
-owned models/icons, native crafting/learning and commerce. The recipe and material
+painted world/inventory sprites, native crafting/learning and commerce. The recipe and material
 schemas append identities and preserve older knowledge/stock. Used contents stay
 individual through shop, box, chest, save and map transitions. No design questions
 remain for this first delivery; optional herbs require a future authored scope.
-Agent evidence: assets/validation_5714/RESULTS.md. CA472-01 is the outstanding
-author test in pending_test.txt. Keep this delivery independent of accepted #471.
+Agent evidence: assets/validation_5714/RESULTS.md. The author passed functional
+CA472-01 checks on 2026-10-23 and rejected the initial hemispherical rendered art.
+Only corrected historical sprite review remains in pending_test.txt. Keep this
+delivery independent of accepted #471.
 
 ## #471 / 5.7.13 - Chemistry recipes and fermentation batches
 
