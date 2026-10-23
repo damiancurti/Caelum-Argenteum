@@ -1,4 +1,4 @@
-// #479: vistas del mismo modelo; manos y pivote compartidos del personaje.
+// #479: sprites pintados; Libro y Estatuilla conservan su arte aprobado.
 class CaelumSupportArt : Object play
 {
     static clearscope int Index(int type)
@@ -17,8 +17,19 @@ class CaelumSupportArt : Object play
         }
         return "";
     }
+    static clearscope int Legacy(int type)
+    {
+        if(type==CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK)return 18;
+        if(type==CaelumConstants.WEAPON_TYPE_SUPPORT_STATUETTE)return 19;
+        return -1;
+    }
+    static clearscope bool NewSprite(int type){return Index(type)>=0 && Legacy(type)<0;}
     static clearscope String Icon(int type)
-    {return Index(type)<0?"":String.Format("graphics/caelum/icons/support_implements/%s_t1.png",Key(type));}
+    {
+        if(Legacy(type)==18)return "graphics/caelum/icons/ca_book.png";
+        if(Legacy(type)==19)return "graphics/caelum/icons/ca_statuette.png";
+        return Index(type)<0?"":String.Format("graphics/caelum/icons/support_sprites/%s_t1.png",Key(type));
+    }
     static clearscope String MaterialIcon(int material)
     {
         if(material==CaelumConstants.MATERIAL_CENSER_BASE)return Icon(CaelumConstants.WEAPON_TYPE_CENSER);
@@ -26,8 +37,12 @@ class CaelumSupportArt : Object play
         if(material==CaelumConstants.MATERIAL_ORB_BASE)return Icon(CaelumConstants.WEAPON_TYPE_ORB);
         return "";
     }
-    static State Pose(int type,int tier)
-    {return GetDefaultByType("CaelumSupportImplementFrames").FindStateByString(String.Format("View%dT%d",type,Clamp(tier,1,3)));}
+    static State Pose(int type,int tier,int phase=0)
+    {
+        if(Legacy(type)>=0)return GetDefaultByType("CaelumFirstPersonFrames").FindStateByString(
+            String.Format("CA_FP1_%s_T%d_%s",Key(type),Clamp(tier,1,3),phase==1?"B":phase==2?"C":"A"));
+        return GetDefaultByType("CaelumSupportImplementFrames").FindStateByString(String.Format("View%dT%d",type,Clamp(tier,1,3)));
+    }
     static void Draw(CaelumPlayer user,int type,int tier,double dx,double dy,double rotation)
     {
         user.A_ClearOverlays(46,49);user.A_ClearOverlays(51,51);user.A_ClearOverlays(53,53);

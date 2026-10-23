@@ -1,0 +1,39 @@
+Sprite "S479A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t1.png", 0, 0 }
+Sprite "H479A0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/scepter_t1.png", 0, 0 }
+Sprite "S479B0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t2.png", 0, 0 }
+Sprite "H479B0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/scepter_t2.png", 0, 0 }
+Sprite "S479C0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t3.png", 0, 0 }
+Sprite "H479C0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/scepter_t3.png", 0, 0 }
+Sprite "S479D0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t1.png", 0, 0 }
+Sprite "H479D0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t1.png", 0, 0 }
+Sprite "S479E0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t2.png", 0, 0 }
+Sprite "H479E0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t2.png", 0, 0 }
+Sprite "S479F0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t3.png", 0, 0 }
+Sprite "H479F0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/orb_t3.png", 0, 0 }
+Sprite "S479G0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book.png", 0, 0 }
+Sprite "H479G0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/book/F151A0.png", 0, 0 }
+Sprite "S479H0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book_t2.png", 0, 0 }
+Sprite "H479H0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/book/F152A0.png", 0, 0 }
+Sprite "S479I0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_book_t3.png", 0, 0 }
+Sprite "H479I0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/book/F153A0.png", 0, 0 }
+Sprite "S479J0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/censer_t1.png", 0, 0 }
+Sprite "H479J0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/censer_t1.png", 0, 0 }
+Sprite "S479K0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/censer_t2.png", 0, 0 }
+Sprite "H479K0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/censer_t2.png", 0, 0 }
+Sprite "S479L0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/censer_t3.png", 0, 0 }
+Sprite "H479L0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/censer_t3.png", 0, 0 }
+Sprite "S479M0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_statuette.png", 0, 0 }
+Sprite "H479M0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/statuette/F131A0.png", 0, 0 }
+Sprite "S479N0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_statuette_t2.png", 0, 0 }
+Sprite "H479N0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/statuette/F132A0.png", 0, 0 }
+Sprite "S479O0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_statuette_t3.png", 0, 0 }
+Sprite "H479O0", 320, 200 { NoTrim Offset 235, 158 Patch "sprites/caelum/first_person/v1/statuette/F133A0.png", 0, 0 }
+Sprite "S479P0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/effigy_t1.png", 0, 0 }
+Sprite "H479P0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/effigy_t1.png", 0, 0 }
+Sprite "S479Q0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/effigy_t2.png", 0, 0 }
+Sprite "H479Q0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/effigy_t2.png", 0, 0 }
+Sprite "S479R0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/effigy_t3.png", 0, 0 }
+Sprite "H479R0", 320, 200 { NoTrim Offset 235, 158 Patch "graphics/caelum/first_person/support_sprites/effigy_t3.png", 0, 0 }
+Sprite "M089A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/censer_t1.png", 0, 0 }
+Sprite "M090A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/scepter_t1.png", 0, 0 }
+Sprite "M091A0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/support_sprites/orb_t1.png", 0, 0 }

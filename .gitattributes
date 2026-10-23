@@ -320,6 +320,9 @@
 /src/models/caelum/equipment/support_implements/*.obj -text whitespace=cr-at-eol
 /src/caelum/data/support_implements.* text eol=lf
 /src/caelum/equipment/CaelumSupportImplementFrames.zs text eol=lf
+/assets/generators/pack_support_sprites.py text eol=lf
+/assets/art_source/support_sprites/*.json text eol=lf
+/src/caelum/data/support_sprites.textures text eol=lf
 /assets/validation_578/** -text whitespace=cr-at-eol
 /assets/validation_578/native/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_578/diagnostics/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

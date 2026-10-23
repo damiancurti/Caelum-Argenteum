@@ -1,12 +1,12 @@
 CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
-Status: outstanding; author explicitly postponed manual tests/questions while away.
+Status: outstanding; initial low-poly visuals rejected 2026-10-22. Retest painted correction.
 Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in
 build/issue479. No other GZDoom process. Run assets/validation_578/launch_author.ps1
-with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File after the author returns.
+with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File.
 
 1. Combat mode (default): slot 0 must cycle only Book, Censer, Statuette and
    Effigy. F1 also cycles Fire Scepter/Orb. Confirm names, inventory icons,
-   world/held models and the character's hand; no missing or floating artwork.
+   world/held sprites and the character's hand; no missing or floating artwork.
 2. F2 resets resources and effects. Book/Effigy primary harm the enemy; Censer/
    Statuette primary heal the ally. Benefits' secondary affects self; curses'
    secondary does nothing. R must not charge support. Base T1 costs are 70
@@ -18,8 +18,11 @@ with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File after the autho
    F4 toggles the enemy's Quintessence seal: curse intensity retains 85%, with
    unchanged duration. Friendly targets must never take curse damage.
 4. Close the combat scene and launch with -Mode gallery. F1 cycles all 18
-   type/tier views. Check world models, first-person placement and silver/gold
-   details. Confirm Scepter homing and Orb explosive attacks in combat mode.
+   type/tier views. Tab opens the inventory: confirm the selected implement's
+   row icon and its tier. Book and Statuette must retain their original designs,
+   first-person poses and character hands. Check painted world sprites,
+   first-person placement and silver/gold details for the four new designs.
+   Confirm Scepter homing and Orb explosive attacks in combat mode.
 5. In an ordinary fresh campaign, confirm Arcanist receives the offensive
    Scepter and Priest the offensive Orb. In MAP03 inspect magic-shop support
    stock and library recipes; buy/learn/craft one support implement through

@@ -33,6 +33,36 @@ class CA479Gallery : EventHandler
         let user=CaelumPlayer(players[event.Player].mo);if(user==null)return;
         if(event.Name=="ca479_gallery"){Selection=0;Show(user);}
         if(event.Name=="ca479_next"){Selection=(Selection+1)%18;Show(user);}
+        if(event.Name=="ca479_inventory" && Held!=null)
+        {
+            user.FormalInventoryFilter=1;user.RefreshFormalInventorySnapshot();
+            bool selected=false;
+            for(int i=0;i<user.FormalInventoryEntryCount;i++)
+                if(user.GetFormalInventoryEntryAt(i)==Held){user.FormalInventorySelectionIndex=i;selected=true;break;}
+            user.RefreshFormalInventorySnapshot();
+            String path=CaelumIconResolver.ResolveEquipmentPath(Held.EquipmentKind,Held.ItemType,0,Held.Tier);
+            Console.Printf("CA479 %s inventory selection and icon kind=%d tier=%d",selected && TexMan.CheckForTexture(path,TexMan.Type_MiscPatch).IsValid()?"PASS":"FAIL",Held.ItemType,Held.Tier);
+        }
+        if(event.Name=="ca479_legacyart")
+        {
+            bool poses=true,icons=true,hands=true;
+            for(int which=0;which<2;which++)for(int tier=1;tier<=3;tier++)
+            {
+                int kind=which==0?23:25;String key=which==0?"book":"statuette";
+                String expected="graphics/caelum/icons/ca_"..key..(tier==1?"":String.Format("_t%d",tier))..".png";
+                icons=icons && CaelumIconResolver.ResolveEquipmentPath(CaelumConstants.EQUIPMENT_KIND_WEAPON,kind,0,tier)==expected;
+                for(int phase=0;phase<(which==0?2:1);phase++)
+                {
+                    String label=String.Format("%s_T%d_%s",key,tier,phase==1?"B":"A");
+                    State original=GetDefaultByType("CaelumFirstPersonFrames").FindStateByString("CA_FP1_"..label);
+                    poses=poses && original!=null && CaelumFirstPersonView.Pose(kind,tier,phase)==original;
+                    hands=hands && CaelumAppearanceHands.Composed(user,kind,tier,phase,original)==CaelumAppearanceHands.Resolve(user,label,original);
+                }
+            }
+            Console.Printf("CA479 %s accepted Book and Statuette pose identities restored",poses?"PASS":"FAIL");
+            Console.Printf("CA479 %s accepted Book and Statuette inventory icons restored",icons?"PASS":"FAIL");
+            Console.Printf("CA479 %s accepted character hand compositions restored",hands?"PASS":"FAIL");
+        }
         if(event.Name=="ca479_artcheck")
         {
             int invalid=0;

@@ -37,6 +37,27 @@ and manual tests while away; no #479 acceptance is claimed. The launcher is
 prepared, with no visible author session opened during the absence.
 #481 acceptance remains recorded in its own 5.7.7 entry and branch.
 
+2026-10-22, author visual rejection: the first handoff's low-poly designs were
+not accepted. The author required preserving the existing Book and Statuette,
+following SPRITE_ART_DIRECTION and supplying inventory sprites too. The
+correction restores their original icons/world/first-person states and hands,
+paints Scepter/Orb/Censer/Effigy through imagegen, and replaces active 3D model
+bindings with native billboards. Sources and rejected candidates are preserved;
+no balance or item identity changes are part of this correction. The temporary
+keep-awake request was released on return. CA479-01 remains pending, with the
+rejected visual result recorded rather than treated as acceptance.
+
+The corrected full package has 16,721 entries matching src byte-for-byte and
+passes 75 native assertions: 41 gallery/original-binding checks, 14 real control
+checks and 20 selections/asset-resolution checks during primary/block-input/
+return capture. Agent inspection covers 18 world/held views, 18 actual Journal
+inventory rows and six T1 input sequences. The Journal needed an explicit draw
+path for these six weapon icons; merely resolving their textures did not display
+them. Painted source registration and the private fixture reproduce identically;
+original Book/Statuette source pixels match the pre-correction revision.
+assets/validation_578/painted_report.json records the new package and evidence;
+the earlier 176+2 results remain tied to their retained pre-sprite package.
+
 ## 5.7.7 - Aimed-target information (#481)
 
 2026-10-22: the author requested a centered gameplay version of the #471 gallery

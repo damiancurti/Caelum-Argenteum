@@ -61,8 +61,16 @@ if ($LoadGame) { $arguments += @('-loadgame', "`"$LoadGame`"") }
 else { $arguments += @('+map', $StartMap) }
 $sourceScript = Join-Path $work "$Script.cfg"
 $scriptPath = Join-Path $work "$Label-commands.cfg"
-$commands = [IO.File]::ReadAllText($sourceScript).Replace('screenshot art-', "screenshot $Label-art-")
+$commands = [IO.File]::ReadAllText($sourceScript).Replace('screenshot art-', "screenshot $Label-art-").Replace('__RUN__', $Label)
 [IO.File]::WriteAllText($scriptPath, $commands, [Text.UTF8Encoding]::new($false))
+$tailPath = Join-Path $work "$Script-tail.cfg"
+$tailRecord = $null
+if (Test-Path -LiteralPath $tailPath) {
+    $tailCommands = [IO.File]::ReadAllText($tailPath).Replace('screenshot art-', "screenshot $Label-art-")
+    $tailOutput = Join-Path $work "$Label-tail.cfg"
+    [IO.File]::WriteAllText($tailOutput, $tailCommands, [Text.UTF8Encoding]::new($false))
+    $tailRecord = @{file=$tailOutput; sha256=(Get-FileHash -LiteralPath $tailOutput).Hash; commands=$tailCommands}
+}
 $arguments += @('+exec', "`"$scriptPath`"")
 $record = [ordered]@{
     label=$Label; runtime=$Runtime; started_utc=[DateTime]::UtcNow.ToString('o');
@@ -73,6 +81,7 @@ $record = [ordered]@{
     addon_sha256=$(if($Checks){(Get-FileHash -LiteralPath "$work\$addon").Hash}else{''});
     initial_config=$initial; arguments=$arguments;
     command_script=[IO.File]::ReadAllText($scriptPath);
+    chained_script=$tailRecord;
     cpu=@(Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors);
     gpu=@(Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion);
     os=Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version

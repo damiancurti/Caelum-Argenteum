@@ -4864,4 +4864,4 @@ Model CaelumAlchemyStation
     FrameIndex CALC A 0 0
 }
 
-#include "caelum/data/support_implements.modeldef"
+// #479: rejected model bindings retained in source; active equipment uses sprites.

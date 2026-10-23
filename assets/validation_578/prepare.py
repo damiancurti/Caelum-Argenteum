@@ -46,9 +46,15 @@ scripts = {
     'load': 'wait 70; netevent ca479_load; wait 5; quit',
 }
 scripts['controls']='wait 70; netevent ca479_manual; wait 45; netevent ca479_slotcheck; '+ 'slot 0; wait 45; netevent ca479_slotcheck; '*4+'netevent ca479_slotsdone; wait 45; netevent ca479_beforecast; +attack; wait 1; -attack; wait 30; +reload; wait 1; -reload; netevent ca479_aftercast; wait 45; netevent ca479_beforealt; +altattack; wait 1; -altattack; wait 30; netevent ca479_afteralt; wait 5; quit'
-scripts['interactive']='language es; bind F1 "netevent ca479_choose"; bind F2 "netevent ca479_reset"; bind F3 "netevent ca479_attributes"; bind F4 "netevent ca479_seal"; wait 70; netevent ca479_manual'
-scripts['gallery-interactive']='language es; bind F1 "netevent ca479_next"; wait 70; netevent ca479_gallery'
+scripts['interactive']='language es; bind Tab ca_journal_toggle; bind M togglemap; bind F1 "netevent ca479_choose"; bind F2 "netevent ca479_reset"; bind F3 "netevent ca479_attributes"; bind F4 "netevent ca479_seal"; wait 70; netevent ca479_manual'
+scripts['gallery-interactive']='language es; ca_journal_page 0; bind Tab ca_journal_toggle; bind M togglemap; bind F1 "netevent ca479_next"; wait 70; netevent ca479_gallery'
 scripts['gallery']='wait 70; netevent ca479_gallery; wait 45; '+ '; '.join(f'screenshot art-{i:02}.png; netevent ca479_next; wait 45' for i in range(18))+'; netevent ca479_artcheck; wait 5; quit'
+painted_views = [f'screenshot art-world-{i:02}.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot art-inventory-{i:02}.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45' for i in range(18)]
+# Keep ordered wait continuations below the native command-buffer limit (CA-KP-136).
+scripts['painted-gallery']='ca_journal_page 0; wait 70; netevent ca479_gallery; wait 45; '+ '; '.join(painted_views[:9])+'; exec __RUN__-tail.cfg'
+scripts['painted-gallery-tail']='; '.join(painted_views[9:])+'; netevent ca479_artcheck; netevent ca479_legacyart; wait 5; quit'
+scripts['inventory-preview']='wait 70; netevent ca479_gallery; wait 45; netevent ca479_inventory; ca_journal_page 0; ca_journal_open true; wait 35; screenshot art-inventory-preview.png; netevent ca479_artcheck; wait 5; quit'
+scripts['painted-actions']='wait 70; netevent ca479_gallery; wait 45; '+ '; '.join(f'+attack; wait 4; -attack; screenshot art-action-{i:02}.png; wait 40; +user2; wait 6; screenshot art-block-{i:02}.png; -user2; wait 20; screenshot art-return-{i:02}.png; netevent ca479_next; netevent ca479_next; netevent ca479_next; wait 45' for i in range(6))+'; netevent ca479_artcheck; wait 5; quit'
 for name, data in scripts.items():
     (OUT / f'{name}.cfg').write_text(data + '\n', encoding='utf-8', newline='\n')
 print('Prepared isolated #479 support-state fixture.')

@@ -1,10 +1,47 @@
 # 5.7.8 / #479 - Integrated support implements
 
-Status: ready for author review, not accepted. CA479-01 is outstanding in the
-root pending_test.txt. The author postponed manual tests/questions during the
-absence; the prepared launcher has not been opened for them.
+Status: the author returned and rejected the initial procedural presentation.
+The painted correction is ready for review, not accepted. CA479-01 remains in
+root pending_test.txt. Gameplay rules and item identities are unchanged.
 
-## Final evidence
+## Current painted correction
+
+Book/Statuette restore the original inventory/crafting icons, world billboards,
+first-person poses and appearance hands. Scepter/Orb/Censer/Effigy use twelve
+painted type/tier variants. Sources, exact imagegen prompts and registration
+manifest are in assets/art_source/support_sprites. Rejected sources are retained.
+The Journal now actually draws these six weapons' tier icons beside their rows.
+
+Full package SHA-256:
+`96d9fddaf7ebdb7498baf7616485daff625fa37dcb06c89ed1eb915943dec1a0`.
+All 16,721 entries match src bytes. Three sequential GZDoom 4.14.2 runs exit 0,
+with 75 PASS / 0 FAIL: 41 gallery/legacy-art checks, 14 native-control checks and
+20 selection/asset checks during T1 primary/block-input/return capture. The latter
+count verifies selections and texture resolution, not 20 combat assertions.
+Agent visual review covers all 18 held/world views, all 18 actual inventory rows
+and six T1 input sequences. See painted_report.json, native/painted-* and
+visuals/painted-*. No missing icons, model bindings, lost hand layers or VM errors
+were observed. Original Book/Statuette PNGs match commit 87089226 byte-for-byte;
+registration and fixture generation reproduce identically. Static validation
+and document/localization freshness pass. Author art acceptance remains pending.
+
+The earlier 176+2 runtime checks below remain tied to the retained pre-correction
+package under build/issue479/pre-sprite. No gameplay/balance logic changed, so
+the correction reruns affected presentation and native input rather than claiming
+a second complete gameplay/migration campaign. No performance claim is made.
+
+Reproduce with prepare.py, then run_native.ps1 -Checks using painted-gallery,
+controls and painted-actions (fresh labels). collect_painted.py records the
+final labels and requires Pillow for technical contact-sheet assembly. The
+gallery uses two ordered exec files to stay within the native command buffer;
+both contents and tail hash are recorded. Oversized and independently split-line
+attempts exited before checks and remain in diagnostics; neither is a pass.
+The initial alias-driven inventory capture did not open the Journal; the final
+fixture sets its UI CVars explicitly and the native captures show the actual UI.
+An overlay-only trial retained earlier world-model bindings: final evidence and
+author handoff use the complete rebuilt package, without that overlay.
+
+## Pre-correction integrated runtime evidence
 
 GZDoom 4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / Ryzen 9 5950X, 1280x720.
 Native processes ran sequentially, hidden, unpaused in the background, at 5%

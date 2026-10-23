@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-154 - Removing a MODELDEF include needs a complete-package check
+
+Status/evidence: ENGINE-VERIFIED and agent visual inspection; #479, 2026-10-22,
+GZDoom 4.14.2 / Windows 11 / Vulkan. Evidence:
+assets/validation_578/diagnostics/painted-gallery-01-art-00.png and its native
+log/launch record, contrasted with visuals/painted-final-gallery3-art-world-00.png
+and painted_report.json. Author art acceptance remains pending.
+
+The sprite correction removed a MODELDEF include, but a small add-on over the
+earlier full PK3 still displayed the previously registered world model. The
+new first-person sprite already loaded correctly, so texture/state assertions
+alone did not reveal that mismatch. Omitting a model definition in a later lump
+does not unregister the definition contributed by the earlier package.
+
+Validate removal/replacement of model bindings with a complete rebuilt package
+and no obsolete add-on. Match every packaged entry to src and inspect the world
+actor as well as inventory/first-person views. Keep overlay-only evidence
+separate; the rebuilt #479 package renders the requested billboard sprites.
+
 ## CA-KP-153 - Declare overlay state use and keep shared hand layers stable
 
 Status/evidence: ENGINE-VERIFIED and agent visual inspection; #479, 2026-10-22,

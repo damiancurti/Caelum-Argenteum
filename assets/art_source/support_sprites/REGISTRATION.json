@@ -1,0 +1,17 @@
+{
+  "issue": 479,
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "purpose": "Inventory/crafting icons, world billboards and modular first-person weapon sprites",
+  "protected": "Existing Book/Statuette pixels, character hands, grip/pivots and gameplay",
+  "atlas_layout": "Three equal square cells in one horizontal row: T1, T2, T3",
+  "alpha_floor": 16,
+  "frame_order": ["scepter", "orb", "book", "censer", "statuette", "effigy"],
+  "new_implements": {
+    "scepter": {"first_person_height": 150, "grip_fraction": [0.30, 0.74]},
+    "orb": {"first_person_height": 100, "grip_fraction": [0.50, 0.92]},
+    "censer": {"first_person_height": 110, "grip_fraction": [0.50, 0.86]},
+    "effigy": {"first_person_height": 112, "grip_fraction": [0.50, 0.91]}
+  },
+  "geometry_note": "Registration dimensions are sprite presentation only, not gameplay balance.",
+  "review": "Inspect all tiers at inventory scale and native held/world views; acceptance remains with the author."
+}

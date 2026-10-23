@@ -13,6 +13,18 @@ provenance and technical integration evidence; [SYSTEMS](SYSTEMS.md) owns gamepl
 [MAP01](MAP01.txt) owns story and character canon. This document owns the visual
 requirements and reusable generation brief. Keep those responsibilities separate.
 
+## Weapon continuity correction for #479 (2026-10-22)
+
+The author rejected the new low-poly Book/Statuette replacements and specified
+sprites like the existing weapons, explicitly including inventory sprites.
+Preserve the accepted Book and Statuette designs and their inventory/crafting,
+world and first-person artwork. Their gameplay role change does not authorize
+redesigning those objects. Scepter, Orb, Censer and Effigy must match the owned
+painted pixel-oriented weapon style in every view; use imagegen for newly
+painted sources and deterministic processing for registration. Do not substitute
+procedural 3D projections for the requested sprite style. Review inventory-scale
+legibility and native grip/action transitions before the next author handoff.
+
 ## Clothing brief approved for #387 (2026-10-21)
 
 Use the 25 native garment identities in SYSTEMS: formal and warm formal, plus

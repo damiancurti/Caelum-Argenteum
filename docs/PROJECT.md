@@ -10,10 +10,13 @@ Quintessence is support only; Scepter/Orb inherit the old offensive roles for
 the four elements with stable item IDs. SYSTEMS records the complete approved
 stack, mitigation, fabrication and acquisition contract. Isolated integration
 checks pass: 176 full-package assertions and two baseline/rollback checks.
-Owned world models, icons and first-person views cover six types at three tiers.
+The author rejected the initial low-poly art. Book/Statuette keep their accepted
+sprites; four new painted designs cover the other implements and all three tiers.
 Old elemental identities/learning survive; active effects resume after saves.
-See assets/validation_578/RESULTS.md and pending_test.txt (CA479-01). Author
-checks/questions are postponed during the absence; no acceptance is inferred.
+The correction passes 75 native checks on the 16,721-entry full package;
+18 world/held views, 18 actual inventory rows and six T1 input/return sequences
+were inspected. See assets/validation_578/RESULTS.md and pending_test.txt
+(CA479-01). The author has returned; visual acceptance remains pending.
 
 ## 5.7.7 - Centered target information (#481)
 

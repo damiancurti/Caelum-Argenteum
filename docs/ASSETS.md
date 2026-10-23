@@ -2,29 +2,40 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support implement presentation (#479)
+## 5.7.8 - Painted support implement correction (#479)
 
-Six owned designs cover Scepter, Orb, support Book, Censer, Statuette and Ritual
-Effigy. Each has T1/T2/T3 world OBJ, a 128-square inventory icon and a 320x200
-weapon-only first-person projection. Existing character appearance hands remain
-separate and authoritative. T2 adds silver details; T3 adds gold. The three new
-component bases reuse their corresponding T1 body presentation.
+The author rejected the procedural low-poly presentation after the first manual
+handoff: accepted Book/Statuette designs must remain, and equipment must use
+painted sprites consistent with SPRITE_ART_DIRECTION, including inventory icons.
+This supersedes the initial #479 presentation without changing gameplay.
 
-Sources: assets/generators/support_implements.json and
-assets/generators/generate_support_implements.py. The manifest records all
-18 meshes, material/surface counts and output hashes; the contact sheet is in
-assets/art_source/support_implements. Generation reuses the owned mesh writer
-and depth rasterizer, with new procedural geometry/palette and no external or
-Doom art. Two consecutive runs were byte-identical (manifest SHA-256
-`dc60908cd9c6abf066e55acac92ca20d02c1ab6c4892345adf1ba73b342b2f9c`).
-Runtime sources and provenance are in src/licenses/SUPPORT_IMPLEMENTS_578.md.
+Support Book and Statuette reuse their original inventory/crafting icons,
+world billboards, first-person A/B poses and character-hand variants unchanged.
+Four new painted designs cover Scepter, Orb, Censer and Ritual Effigy, each at
+T1/T2/T3. Built-in image_gen.imagegen used owned weapon icons as style references;
+exact prompts, reference hashes and all four transparent source atlases are in
+assets/art_source/support_sprites. No Doom or external artwork is incorporated.
 
-World frames are S479 A-R; weapon/overlay frames H479 A-R. Long PNG names live
-under graphics, outside the sprite-name parser. New frame states declare Actor,
-Weapon and Overlay usage; the existing hand overlay is retained across frames.
-Old state classes/indices remain available to saves. Native gallery/control
-coverage is recorded in assets/validation_578/RESULTS.md. Author visual review
-remains pending; no performance or art acceptance is inferred from generation.
+pack_support_sprites.py performs deterministic cell extraction, alpha cleanup,
+downscaling and grip registration. Twelve 128-square inventory/crafting icons
+and twelve weapon-only 320x200 first-person layers live under
+src/graphics/caelum/{icons,first_person}/support_sprites. World pickups are native
+billboard sprites; MODELDEF no longer loads the rejected implement model bindings.
+Three component bases use the corresponding painted icon. Existing character
+hands remain authoritative. Sprite frames/state identities stay available to
+saves; Book/Statuette resolve their original states under the new support IDs.
+The Journal now draws the tier-resolved icon beside each of these six weapon
+types, using the existing inventory row layout. Other weapon rows are unchanged.
+
+The original procedural sources/outputs remain preserved for history/recovery,
+including assets/generators/support_implements_manifest.json; they are not the
+current visual contract. Current provenance is in
+src/licenses/SUPPORT_SPRITES_578.md. The new inventory contact sheet and
+MANIFEST.json record exact output/input hashes. Native presentation and inventory
+checks are recorded separately from the initial runtime evidence in
+assets/validation_578/RESULTS.md: 75 native checks on the full corrected package,
+18 world/held views, 18 inventory rows and six T1 input/return sequences.
+Author acceptance remains pending.
 
 ## 5.7.7 - Target-panel presentation (#481)
 

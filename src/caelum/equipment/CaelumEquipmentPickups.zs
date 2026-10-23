@@ -676,6 +676,8 @@ class CaelumWeaponPickup : CaelumEquipmentItem
         int weaponType = EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
             ? ItemType : Clamp(args[0], 0, CaelumConstants.WEAPON_TYPE_COUNT - 1);
         int supportIndex=CaelumSupportArt.Index(weaponType);
+        int legacy=CaelumSupportArt.Legacy(weaponType);
+        if(legacy>=0){sprite=GetSpriteIndex(legacy==18?"CBOO":"CSTA");frame=0;return;}
         if(supportIndex>=0){sprite=GetSpriteIndex("S479");frame=supportIndex*3+Clamp(PreviewTier(),1,3)-1;return;}
         String visual = "CSWD";
         switch (weaponType)

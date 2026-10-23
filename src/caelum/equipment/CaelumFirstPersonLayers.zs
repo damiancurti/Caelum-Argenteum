@@ -396,7 +396,7 @@ class CaelumFirstPersonLayers : Object play
 
     static bool Handles(int kind)
     {
-        if(CaelumSupportArt.Index(kind)>=0)return true;
+        if(CaelumSupportArt.NewSprite(kind))return true;
         return CaelumWeaponModel.IsSingleTierType(kind) || kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
@@ -631,7 +631,7 @@ class CaelumFirstPersonLayers : Object play
     static void Draw(CaelumPlayer user,int kind,int tier,int phase,
         double dx,double dy,double rotation,double chainTurn=0)
     {
-        if(CaelumSupportArt.Index(kind)>=0){CaelumSupportArt.Draw(user,kind,tier,dx,dy,rotation);return;}
+        if(CaelumSupportArt.NewSprite(kind)){CaelumSupportArt.Draw(user,kind,tier,dx,dy,rotation);return;}
         if(kind==CaelumConstants.WEAPON_TYPE_SHOTGUN)
         {
             CaelumShotgunView.Draw(user,tier,dx,dy,rotation);

@@ -6,21 +6,23 @@ Documentation version: **5.7.8** — 2026-10-22.
 
 All design decisions are resolved in SYSTEMS. Four support implements, exclusive
 slot 0, local targeting, health/damage/movement effects, recipes/catalogues and
-stable offensive Scepter/Orb migration are implemented. Six owned visual designs
-cover three tiers. Native primary/secondary input, library migration and all ten
+stable offensive Scepter/Orb migration are implemented. The rejected low-poly stage is superseded by restored Book/Statuette sprites and
+four new painted families at three tiers. Native primary/secondary input, library migration and all ten
 profession starter mappings are checked; dialogue/action names match the roles.
 
-Final evidence: 176 assertions on the 16,695-entry full package, plus two old-
+Initial runtime evidence: 176 assertions on the 16,695-entry full package, plus two old-
 runtime seed/rollback checks; assets/validation_578/final_report.json records
 hashes and limits. Old item IDs/tier/wear/Box placement and recipe learning pass;
 active receiver effects persist. Earlier foundation/overlay evidence is retained
-separately. Static validation and author acceptance are distinct from these runs.
+separately. The painted correction passes 75 native assertions on the 16,721-entry
+full package; painted_report.json records inventory/world/held presentation and
+native controls. Static validation and author acceptance are distinct from these runs.
 
 Remaining: author check CA479-01 in pending_test.txt, including ordinary campaign
 shop/learning/crafting UI and visual review, then PR review/integration. Keep
-#479 open. The author postponed questions/manual tests during the renewed
-absence. The prepared launcher must not be opened for the author until return;
-temporary keep-awake remains local and is released when that need ends.
+#479 open. The author returned; the temporary keep-awake was released. The first manual
+handoff failed visual acceptance. Recheck the painted correction, including
+inventory sprites, before collecting CA479-01 acceptance.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

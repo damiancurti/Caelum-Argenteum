@@ -57,7 +57,8 @@ Prices derive from current recursive manufacturing values and commerce margins:
 T1/M purchases cost Book 741,094, Censer 668,335 and Statuette/Effigy 971,250
 copper each. New component recipes are 173-175; support recipes are 169-172.
 
-Runtime and owned artwork are integrated. Native primary dispatch uses the
+Runtime is integrated; the author's sprite correction restores accepted Book/
+Statuette art and paints the four new implements. Native primary dispatch uses the
 shared magical classifier; support exposes no projectile spread or critical
 chance. The full package passed 176 assertions plus two baseline/rollback checks,
 including native input, old item migration and active-effect saves. Arcanist and

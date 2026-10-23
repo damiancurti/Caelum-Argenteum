@@ -1,0 +1,72 @@
+﻿{
+    "label":  "painted-final-gallery3",
+    "runtime":  "current",
+    "started_utc":  "2026-10-23T01:46:27.4776264Z",
+    "visible_requested":  false,
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "96D9FDDAF7EBDB7498BAF7616485DAFF625FA37DCB06C89ED1EB915943DEC1A0",
+    "addon_sha256":  "266B365CD7DEC0604CB746EACA7C2363B6EAECB2E28C26C52B91DA6A0F8F14DD",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\current\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\fixture.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\painted-final-gallery3.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "479",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\painted-final-gallery3.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "CSUP479",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\painted-final-gallery3-commands.cfg\""
+                  ],
+    "command_script":  "ca_journal_page 0; wait 70; netevent ca479_gallery; wait 45; screenshot painted-final-gallery3-art-world-00.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-00.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-01.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-01.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-02.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-02.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-03.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-03.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-04.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-04.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-05.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-05.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-06.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-06.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-07.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-07.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-08.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-08.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; exec painted-final-gallery3-tail.cfg\n",
+    "chained_script":  {
+                           "commands":  "screenshot painted-final-gallery3-art-world-09.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-09.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-10.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-10.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-11.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-11.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-12.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-12.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-13.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-13.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-14.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-14.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-15.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-15.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-16.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-16.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; screenshot painted-final-gallery3-art-world-17.png; netevent ca479_inventory; ca_journal_open true; wait 25; screenshot painted-final-gallery3-art-inventory-17.png; ca_journal_open false; wait 5; netevent ca479_next; wait 45; netevent ca479_artcheck; netevent ca479_legacyart; wait 5; quit\n",
+                           "sha256":  "52B2FC8DDB5A72A5284F69F10657EC5963EA5E55D9389A5A24B0E46F56D4343B",
+                           "file":  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue479-work\\build\\issue479\\painted-final-gallery3-tail.cfg"
+                       },
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  5748,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-23T01:47:17.0126621Z"
+}

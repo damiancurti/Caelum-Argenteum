@@ -13,6 +13,6 @@ try {
         Write-Host 'F1: next implement; F2: reset resources; F3: Charisma/Empathy 0 or 100; F4: enemy seal.'
         Write-Host 'Slot 0: support. Primary: aim at enemy/ally. Secondary: self benefit. R: no support charge.'
         Write-Host 'This private scene suspends natural Anima regeneration; F2 refills it.'
-    }else{Write-Host 'F1: cycle six implements and their three tiers (18 views).'}
+    }else{Write-Host 'F1: cycle six implements and their three tiers (18 views). Tab: inventory and tier icon.'}
     Write-Host 'Report the result before CA479-01 can be accepted.'
 } finally {Pop-Location}
