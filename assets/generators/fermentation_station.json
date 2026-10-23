@@ -1,0 +1,25 @@
+{
+  "issue": 487,
+  "revision": 1,
+  "approved_date": "2026-10-23",
+  "actor": "CaelumFermentationStation",
+  "sprite": "CFER",
+  "footprint": [60, 60],
+  "height": 72,
+  "model_scale": 1.5,
+  "body_profile_y_radius": [[0, 16], [5, 17.5], [23, 18.5], [41, 17.5], [46, 16]],
+  "segments": 32,
+  "hoops_y_radius": [[5, 17.65], [23, 18.65], [41, 17.65]],
+  "hoop_tube_radius": 0.3,
+  "bung": {"bottom": [0, 46, 0], "top": [0, 48, 0], "radius": 1.4},
+  "tap": {"start": [0, 8, 16], "end": [0, 8, 19.5], "radius": 0.7},
+  "wall_and_lid_meters": 0.03,
+  "fermentation_headspace_fraction": 0.2,
+  "capacity_model": "Solid of revolution of the visible body profile, with 3 cm radial walls and top/bottom lids; useful capacity floors 80% of interior volume to whole litres. Polygon facets approximate that surface; the collision box and tap are not storage volume.",
+  "placements": [
+    {"map": "MAP01", "position": [1200, 448, 0], "group": 2, "angle": 270},
+    {"map": "MAP03", "position": [-584, 1472, 0], "group": 0, "angle": 0}
+  ],
+  "labels": {"en": "Fermentation Barrel", "es": "Barril de fermentación"},
+  "provenance": "Original procedural barrel geometry for Caelum Argenteum. Reuses the owned station wood/iron/brass textures and #470 mesh-to-sprite projection. No external assets."
+}

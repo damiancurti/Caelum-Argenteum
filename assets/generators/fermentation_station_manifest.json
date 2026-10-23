@@ -1,0 +1,30 @@
+{
+  "issue": 487,
+  "provenance": "Original procedural barrel geometry for Caelum Argenteum. Reuses the owned station wood/iron/brass textures and #470 mesh-to-sprite projection. No external assets.",
+  "vertices": 4924,
+  "faces": 1458,
+  "model_bounds_xyz_y_up": [
+    [
+      -18.948555418001657,
+      18.948555418001657
+    ],
+    [
+      0.0,
+      48.0
+    ],
+    [
+      -18.948555418001657,
+      19.5
+    ]
+  ],
+  "actor_model_scale": 1.5,
+  "map_units_per_meter": 32.0,
+  "interior_liters": 4252.967366561461,
+  "working_liters": 3402,
+  "capacity_model": "Solid of revolution of the visible body profile, with 3 cm radial walls and top/bottom lids; useful capacity floors 80% of interior volume to whole litres. Polygon facets approximate that surface; the collision box and tap are not storage volume.",
+  "outputs": {
+    "src/models/caelum/props/stations/ca_station_fermentation.obj": "b3492a02695f8f2775afc5697b14609d78d922f0a0cb73e53148eab0339ff3f1",
+    "src/sprites/CFERA0.png": "f0799b6e397db4130d321d5b694f83d0cff5a69b5bf3373fbecbc0d3f949b956",
+    "src/caelum/data/CaelumFermentationData.zs": "599721deb0500146dd770786f351f183eeac2c60ec814b1bdf9c425316cb4ec8"
+  }
+}
