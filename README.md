@@ -6,10 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.10.** Obtain and update the complete repository, validate
+**Current release: 5.7.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.7.10 moves existing cartridge assembly to Workbench + Alchemy (#471),
+5.7.11 renames the existing station to Chemistry / Química (#486), preserving
+its appearance, rules and saved identity. The extra Fermentation Barrel (#487)
+is tracked separately. See [focused evidence](assets/validation_5711/RESULTS.md).
+The author passed CA486-01 in full on 2026-10-23, without qualifications.
+
+5.7.10 moves existing cartridge assembly to Workbench + Chemistry (#471),
 preserving old in-progress tasks at their original station. Other #471 recipes
 remain undefined. Static checks and 186 native assertions pass; the author
 passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
@@ -50,23 +55,23 @@ visible. Native selection respects walls and includes actor/line interactions.
 Evidence: [target-panel checks](assets/validation_577/RESULTS.md).
 Author check CA481-01 passed on 2026-10-22. Magic implement changes remain separate (#479).
 
-V5.7.6 prepares Alchemy ingredient artwork (#471): 11 transparent icons and
+V5.7.6 prepares Chemistry ingredient artwork (#471): 11 transparent icons and
 10 new 3D models, including regional saltpeter/sulfur deposit candidates. Iodine
 now uses its own icon from the accepted model. Other assets await approved
 gameplay data; deposits are not placed in MAP03. Static validation and 24 native checks pass; 33 model views were inspected.
 The author passed CA471-ART-01 on 2026-10-22. [Art evidence](assets/validation_576/RESULTS.md).
 
 V5.7.5 adds dried cachiyuyo imports in MAP03 and the abstract iodine recipe
-at Workbench + Alchemy (#407), with owned 3D material models and additive save
+at Workbench + Chemistry (#407), with owned 3D material models and additive save
 migration. Existing learning and efficiency rules apply. Static validation and
 263 native checks pass, plus 19 baseline/rollback checks. A resumed live check
 adds 80 passing assertions in six runs. The author passed all CA407-01 checks
 on 2026-10-22. [Marine evidence](assets/validation_575/RESULTS.md).
 
-V5.7.4 adds the fixed 3D Alchemy station at Ronnie's workshop and beside the
+V5.7.4 adds the fixed 3D Chemistry station at Ronnie's workshop and beside the
 MAP03 Workbench (#470), including additive old-save installation. Concrete
 recipes remain separate patches. Static validation and 216 native assertions
-pass; author check CA470-01 passed on 2026-10-22. [Alchemy evidence](assets/validation_574/RESULTS.md).
+pass; author check CA470-01 passed on 2026-10-22. [Chemistry evidence](assets/validation_574/RESULTS.md).
 
 V5.7.3 prevents duplicate source recovery after a backward calendar observation
 (#406). The existing 0.1%-daily rate, capacities and finite tutorial quotas stay

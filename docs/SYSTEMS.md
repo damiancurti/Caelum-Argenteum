@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
 
 ## #471 approved fermentation lifecycle (not implemented)
 
@@ -116,7 +116,7 @@ so remapping needs no restart. The target cache is transient and reconstructed
 after loading; no inventory/save schema changes. The previous separate sewer
 hint and its per-frame global gate scan are replaced by this shared selection.
 
-## Alchemy art and regional source decision (#471, 5.7.6)
+## Chemistry art and regional source decision (#471, 5.7.6)
 
 The author requested ingredient sprites/models on 2026-10-22. This art stage
 binds a dedicated icon to existing iodine and prepares the other approved
@@ -126,7 +126,7 @@ charcoal remains distinct from mineral coal. The author selected collectible
 saltpeter/sulfur deposits only in appropriate regions, with MAP03 supplied by
 trade meanwhile. Regional placement, extraction/reserve values, trade prices,
 stock and abstract recipe units still require approval. The art stage installs
-neither deposits nor new trade items. Construction at Alchemy remains the
+neither deposits nor new trade items. Construction at Chemistry remains the
 approved acquisition for abstract gunpowder, followed by compatible kits and
 ten-cartridge batches. No real propellant proportions or procedures are part
 of the data contract. Representation details are documented in ASSETS.
@@ -141,7 +141,7 @@ at 1,000 g, through the existing independent merchant calendar. Its base value
 is 5 copper/100 g; ordinary buying/selling margins apply. No coastal location,
 underwater collection route or TCOAST campaign source has been authorized.
 
-Workbench + Alchemy: 100 g dried cachiyuyo -> theoretical 1 g iodine, 60 seconds
+Workbench + Chemistry: 100 g dried cachiyuyo -> theoretical 1 g iodine, 60 seconds
 of base work, no additional fuel. Existing fixed batches, 25/50/100% output
 efficiency and whole-gram rounding apply. A nominal batch at 25/50% produces
 less than a gram and cannot start; the UI asks for a larger batch or efficiency.
@@ -163,9 +163,14 @@ Merchant marine catalogue revision 1 appends the import or library product
 without rebuilding old stock, deadlines, purchases or wallets. Normal native
 inventory, Box, chest and task authority apply. Validation status: PROJECT.
 
-## Alchemy station infrastructure (#470, 5.7.4)
+## Chemistry station infrastructure (#470, 5.7.4)
 
-Adds the fixed Workbench-backed Alchemy station (#470), represented by an
+The author renamed this station Chemistry / Química on 2026-10-23 (#486,
+5.7.11). The internal Alchemy class/key/constant names remain compatibility
+identifiers. This changes displayed terminology only; #487 owns the separate
+Fermentation Barrel and its pending operating/placement decisions.
+
+Adds the fixed Workbench-backed Chemistry station (#470), represented by an
 original 3D fermentation table and still. Approved positions are MAP01
 (1128,448,0), workshop group 2, connected through Ronnie's Forge, and MAP03
 (-656,1472,0), group 0, beside the Workbench. Collision is 60 x 60 x 72 units.
@@ -177,7 +182,7 @@ Proximity traversal uses the native local blockmap, retaining 128-unit 3D links,
 room groups and transitive networks. No construction recipe or new recipe IDs
 are introduced. Concrete recipes and start/completion prerequisites remain
 owned by #407/#409/#471 through the existing coordinator; this patch supplies
-the shared Workbench-plus-Alchemy capability check.
+the shared Workbench-plus-Chemistry capability check.
 Validation status: PROJECT; CA470-01 passed author review on 2026-10-22.
 Next: #407 marine/iodine, #409 boiling, #471 recipes and #472 mate, with separate
 issue branches, commits, tests and PRs.
@@ -323,9 +328,9 @@ author-design gates for their own issues.
 | Alcohol | Fermented intermediate + fuel | Existing medikit; #471 | Amounts, fuel, work, yield, containers |
 | Yeast | Acquisition not yet authored | Fermentation; #471 | Acquisition, price/stock, quantity |
 | Sugar | Acquisition/processing not yet authored | Alternative energy-drink sweetener; #471 | Acquisition, amount, price/stock |
-| Gunpowder | Abstract game ingredient made at Alchemy | Existing compatible kits, then ten cartridges; #471 | Component quantities, other kit inputs, price/stock |
+| Gunpowder | Abstract game ingredient made at Chemistry | Existing compatible kits, then ten cartridges; #471 | Component quantities, other kit inputs, price/stock |
 | Dried cachiyuyo | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Implemented in 5.7.5; CA407-01 accepted 2026-10-22 |
-| Iodine | Dried cachiyuyo at Workbench + Alchemy | Consumer not yet authored; #407 | Downstream purpose; no inferred benefits |
+| Iodine | Dried cachiyuyo at Workbench + Chemistry | Consumer not yet authored; #407 | Downstream purpose; no inferred benefits |
 
 Existing medikit/energy-drink/Anima identities, dose sizes, effects and prices
 remain unchanged. Medikit ingredients are cotton + alcohol + marcela; energy
@@ -333,10 +338,10 @@ drink uses potable water + yerba + honey or sugar; Anima potion uses potable
 water + either approved flower. #471 must author quantities and work,
 efficiency, recipe learning, stock and price implications before implementation.
 Existing sealed kits (IDs 79/80) remain compatible; the approved chain is
-gunpowder -> compatible kits -> ten cartridges at Alchemy. No real propellant
+gunpowder -> compatible kits -> ten cartridges at Chemistry. No real propellant
 or primer formulation is requested or recorded.
 
-On 2026-10-23 the author approved fixed Alchemy vessels for these processes:
+On 2026-10-23 the author approved fixed Chemistry vessels for these processes:
 water is withdrawn from a bottle/canteen without consuming that container, and
 finished consumables retain their existing abstract packaging. No empty portable
 packaging objects are added. Fermentation continues in world time while the
@@ -349,7 +354,7 @@ not a claim that the new recipes or unattended fermentation are implemented.
 
 ### Related approved boundaries for subsequent issues
 
-#470 is a fixed Workbench-backed Alchemy station with fermentation table/still
+#470 is a fixed Workbench-backed Chemistry station with fermentation table/still
 at the approved MAP01/MAP03 positions above; no construction recipe. #409
 boiling removes biological contamination only; salt and chemicals persist.
 The author approved processing the whole selected bottle/canteen in fixed glass
@@ -377,7 +382,7 @@ remain; recontamination by mixing still uses the shared union of quality flags.
 Bottles/canteens reject drinking above 85 C, including quick use and automatic
 supplies. Reserved water cannot be drunk, filled, emptied, dropped, sold or
 moved into a chest/Box. In inventory, H starts boiling at a reachable connected
-Alchemy/Workbench network; C cancels in the crafting page and normal waiting
+Chemistry/Workbench network; C cancels in the crafting page and normal waiting
 remains available. The inventory shows temperature and estimated work/fuel.
 
 Approved cooling is a closed-vessel, equivalent-capacity sphere with no further
@@ -599,7 +604,7 @@ complex rate is four tics per employed kit, with the 25% common time base and
 reading/practice multipliers. At zero Technical attributes, one batch has a
 40*4/35-second base, before learning multipliers. Recipe-book revision 11 adds
 both recipes locked without changing previous knowledge, pages or progress.
-As of 5.7.10/#471, Workbench + Alchemy gates new starts and completion. An
+As of 5.7.10/#471, Workbench + Chemistry gates new starts and completion. An
 already active cartridge task from an older save retains its original network
 until cancellation/completion. The revision-1 compatibility flag is saved and
 mirrored to the travelling record; repeated migration does not reset time,
@@ -635,7 +640,7 @@ Lower efficiencies use the existing material-loss rule: a ten-cartridge output
 requires 40/20/10 indivisible kits at 25%/50%/100% efficiency. The corresponding
 input game masses are 1.600/0.800/0.400 kg for carbine or 1.800/0.900/0.450 kg for
 shotgun; the difference from completed output is the existing crafting loss.
-No fractional kit is consumed. Both types now use Workbench plus Alchemy (#471),
+No fractional kit is consumed. Both types now use Workbench plus Chemistry (#471),
 the padlock's existing complex work rate, the common 25%-efficiency time base
 and the accepted reading/practice factors. Recipes are consumables: the existing
 1,000-output practice cap and ten-unit reading/price reference apply.

@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
+
+## 5.7.11 - Station terminology (#486)
+
+The accepted #470 station model, sprites, generator filenames and provenance
+are unchanged. Its current displayed name is Chemistry / Química. No new art
+is introduced; the Fermentation Barrel is a separate request under #487.
 
 ## 5.7.10 - Existing cartridge and station art reused (#471)
 

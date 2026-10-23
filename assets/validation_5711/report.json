@@ -1,0 +1,35 @@
+{
+  "version": "5.7.11",
+  "issue": 486,
+  "package_sha256": "c70cc65948d0fe3d9f191577376fe453ae4829e3e65665cd7030d766c36d8f93",
+  "baseline_sha256": "0e4f8766e7399fffcae5211dc7c4628fe67b7cf63c36e569954a4220665a746e",
+  "source_entries": 16724,
+  "source_bytes_match": true,
+  "changed_package_entries": [
+    "LANGUAGE",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "localization/INDEX.md",
+    "localization/index.json"
+  ],
+  "runs": [
+    {
+      "label": "original-seed01",
+      "native_use_assertions": 0
+    },
+    {
+      "label": "spanish-load01",
+      "native_use_assertions": 1
+    },
+    {
+      "label": "english-city01",
+      "native_use_assertions": 1
+    }
+  ],
+  "native_use_assertions": 2,
+  "old_save_loaded": true,
+  "original_save_sha256": "30cbb159dc36118c8904989fa18cd7b3a83b90df61f83c5d5765b5b73a3c2c99",
+  "visuals_inspected": true,
+  "author_accepted": false,
+  "limits": "Presentation-only change. Two real Use assertions, old-save load, four inspected captures; no performance or new recipe claims."
+}

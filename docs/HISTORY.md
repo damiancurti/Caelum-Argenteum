@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
+
+## 5.7.11 - Chemistry station terminology (#486), 2026-10-23
+
+The author requested Chemistry / Química instead of Alchemy / Alquimia.
+The shared bilingual display key and boiling failure text now use that name;
+internal identifiers, capability and editor IDs, visuals and saved references
+are retained. Historical release names and asset provenance keep their original
+wording. #487 separately tracks the requested Fermentation Barrel. Native and
+static evidence are recorded under assets/validation_5711: 16,724 matching source
+entries, two passing real Use assertions, old-save loading and four inspected
+native captures.
+
+On 2026-10-23 the author confirmed "Las pruebas dieron correcto." CA486-01
+(origin: 5.7.11 / #486) passed in full, without qualifications: station naming
+in both languages and maps, preserved appearance and ordinary interaction.
+Its completed entry was removed from pending_test.txt. The separately prepared
+barrel check belongs to #487; unrelated #479 gameplay acceptance remains pending.
+This acceptance update keeps version 5.7.11 and the original runtime evidence.
 
 ## 5.7.10 - Cartridge station migration (#471), 2026-10-23
 

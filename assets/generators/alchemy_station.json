@@ -10,6 +10,7 @@
     {"map": "MAP01", "position": [1128, 448, 0], "group": 2, "angle": 270},
     {"map": "MAP03", "position": [-656, 1472, 0], "group": 0, "angle": 0}
   ],
-  "labels": {"en": "Alchemy", "es": "Alquimia"},
+  "labels": {"en": "Chemistry", "es": "Química"},
+  "label_revision": {"issue": 486, "approved_date": "2026-10-23"},
   "provenance": "Original procedural geometry for Caelum Argenteum; reuses the project's original station material textures. No external assets."
 }
