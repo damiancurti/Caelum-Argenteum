@@ -53,7 +53,7 @@ Evidence and limitations live in assets/validation_579/RESULTS.md. No source
 geography, consumable recipes, gunpowder balances or mate implementation belong
 to this patch. PR review and integration remain outstanding.
 
-## #479 / 5.7.8 - Integrated; CA479-01 awaits author review
+## #479 / 5.7.8 - Implemented and author accepted
 
 All design decisions are resolved in SYSTEMS. Four support implements, exclusive
 slot 0, local targeting, health/damage/movement effects, recipes/catalogues and
@@ -69,8 +69,8 @@ separately. The painted correction passes 75 native assertions on the 16,721-ent
 full package; painted_report.json records inventory/world/held presentation and
 native controls. Static validation and author acceptance are distinct from these runs.
 
-Remaining: CA479-01 gameplay, ordinary campaign shop/learning/crafting UI and
-save/load checks, then PR review/integration. Keep #479 open. The author accepted
+CA479-01 passed in full on 2026-10-23, including gameplay, ordinary campaign
+shop/learning/crafting UI and save/load. PR review/integration remains. The author accepted
 the five non-Orb designs, then confirmed the baseless Orb/open-palm retest on
 2026-10-22. All six designs now have author visual approval, including inventory
 sprites. The focused Orb correction passes 23 native checks (floating_orb_report.json).
@@ -78,8 +78,8 @@ Do not repeat accepted visual checks. The temporary keep-awake remains released.
 The 2026-10-23 author run failed on lethal curse damage. The owner-lifetime guard
 and F2 dead-target reset are corrected; owner_death_report.json records focused
 native regression evidence. The author passed the lethal-curse/F2 retest on
-2026-10-23; only that completed check is removed from CA479-01. The other
-gameplay, campaign acquisition and save/load checks remain outstanding.
+2026-10-23 and then explicitly confirmed all remaining #479 checks. The completed
+CA479-01 entry was removed from pending_test.txt; HISTORY records acceptance.
 
 ## 5.7.7 - Target-panel delivery (#481)
 
