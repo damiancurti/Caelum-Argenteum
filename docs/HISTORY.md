@@ -80,6 +80,15 @@ Static validation and two inspected final UI captures pass. CA409-01 is queued,
 with the terminal waiting for Enter because the author left again. No version
 bump or author gameplay acceptance is inferred from completing this same patch.
 
+On 2026-10-23 the author confirmed CA409-01 (origin 5.7.9 / #409) passed:
+"La prueba dio bien." This accepts the complete queued check without
+qualifications. The prepared terminal used the combined 5.7.10 package
+(SHA-256 0e4f8766e7399fffcae5211dc7c4628fe67b7cf63c36e569954a4220665a746e),
+whose separate integration evidence is in validation_5710/integration on #471's
+branch. Only CA409-01 was removed from pending_test.txt; other acceptance states
+are unchanged. The temporary sleep-prevention request was released on return.
+This acceptance follow-up does not increment the patch version.
+
 ## 5.7.8 - Support implements (#479, awaiting author acceptance)
 
 2026-10-22: the initial foundation added the approved M2/F calculation and

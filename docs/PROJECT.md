@@ -16,7 +16,7 @@ match across all 16,724 entries. Two UI captures were inspected. Evidence:
 assets/validation_5710. The author passed CA471-AMMO-01 in full on 2026-10-23,
 without qualifications. This is only the station-migration
 part of #471; new consumable/intermediate recipe values remain unresolved.
-#409 is implemented separately and awaits CA409-01 author acceptance.
+#409 is implemented separately; CA409-01 passed author acceptance on 2026-10-23.
 Its completed dependency is integrated here: 31 focused native checks pass on
 the combined full package, which matches src. See validation_5710/integration.
 
@@ -32,8 +32,8 @@ automatic consumption; cancellation spends nothing.
 The author approved the remaining glass-density datum (2,500 kg/m3) on
 2026-10-23. Both bottle and canteen cooling now use the approved model; 117
 native assertions pass on the completed package, including saved hot glass,
-dropped bottles and dated waiting. Author check CA409-01 remains separate and
-deferred during the author's renewed absence. Other issues retain their
+dropped bottles and dated waiting. The author passed CA409-01 on 2026-10-23
+without qualifications. Other issues retain their
 existing acceptance state and separate PRs.
 
 Static validation passes. The preserved initial draft contains 91 native assertions,

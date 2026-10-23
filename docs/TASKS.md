@@ -12,7 +12,7 @@ were inspected. Evidence: assets/validation_5710. The author passed
 CA471-AMMO-01 in full on 2026-10-23, without qualifications. Its pending entry
 was removed; the original launcher remains available for reproduction.
 The completed #409 base is integrated with 31 focused native checks and exact
-source/package identity; CA409-01 uses that combined build when the author returns.
+source/package identity; CA409-01 passed on that combined build on 2026-10-23.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
 unattended-batch cancellation/ownership, learning routes and trade/stock data. Preserve the accepted
@@ -39,8 +39,8 @@ The author approved ordinary glass density of 2,500 kg/m3 on 2026-10-23,
 completing the mass-derived wall model. Bottle cooling now uses that value;
 canteens retain the approved 6 mm leather wall. The completed full package passes
 117 native assertions, source/package identity and static validation, with two
-inspected UI captures. CA409-01 is queued; its terminal waits for Enter. The
-author is away again; postpone further questions and author-operated checks until return.
+inspected UI captures. The author passed CA409-01 on 2026-10-23 without
+qualifications. The temporary keep-awake request was released on return.
 
 Evidence and limitations live in assets/validation_579/RESULTS.md. No source
 geography, consumable recipes, gunpowder balances or mate implementation belong
