@@ -351,7 +351,7 @@ class CaelumPlayerResources : Object play
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             let container = CaelumWaterContainer(cursor);
-            if (container != null) container.ObserveImmersion(user);
+            if (container != null) { container.AdvanceTemperature(user,CaelumThermalRuntime.WorldTicSeconds()); container.ObserveImmersion(user); }
         }
         if (user.IsSubmergedInPotableWater())
         {

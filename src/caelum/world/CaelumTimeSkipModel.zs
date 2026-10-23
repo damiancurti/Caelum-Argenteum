@@ -3,15 +3,20 @@ class CaelumSkipSupply : Object play
 {
     int Kind, Count, WaterQuality;
     double Liters, CapacityLiters;
+    bool Reserved,Hot;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
         Count=item!=null?item.Amount:0;
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
-        if (bottle != null) { Kind=3; WaterQuality=bottle.WaterQuality; }
+        if (bottle != null)
+        {
+            Kind=3;WaterQuality=bottle.WaterQuality;Reserved=CaelumWaterBoiling.Locked(bottle);
+            Hot=bottle.WaterTemperatureRevision>0 && bottle.WaterTemperatureC>CaelumWaterThermalData.DRINK_MAX_C;
+        }
         CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
-    bool Usable() { return Count>0 && Kind!=0 && (Kind!=3 || CaelumWaterQuality.IsSafe(WaterQuality)); }
+    bool Usable() { return Count>0 && Kind!=0 && !Reserved && !Hot && (Kind!=3 || CaelumWaterQuality.IsSafe(WaterQuality)); }
 }
 class CaelumSkipTableStock : Object play
 {
@@ -20,7 +25,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 4;
+    const PROVISION_REVISION = 5;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -49,6 +54,9 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     void AddSupply(CaelumConsumableItem item)
     {
         let row=new("CaelumSkipSupply");row.Capture(item);Supplies.Push(row);
+        // No prometer una fecha exacta con una provisión que se enfría durante
+        // el pronóstico. La espera manual sigue integrando el agua real.
+        if(row.Hot && !row.Reserved){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
     }
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
     {

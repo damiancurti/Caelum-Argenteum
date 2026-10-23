@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
 
 ## #479 support implements and 5.7.8 integration
 
@@ -323,10 +323,44 @@ or primer formulation is requested or recorded.
 #470 is a fixed Workbench-backed Alchemy station with fermentation table/still
 at the approved MAP01/MAP03 positions above; no construction recipe. #409
 boiling removes biological contamination only; salt and chemicals persist.
-The author approved 60 seconds and 10 g mineral coal per litre (fuel rounded
-up to whole grams), the entire selected bottle/canteen, output at 100 C, and
-no water/vessel loss. Bottles and canteens also reject drinking above 85 C.
-Thermal implementation remains in its separate patch.
+The author approved processing the whole selected bottle/canteen in fixed glass
+equipment belonging to the station. The useful power is 1,000 W, thermal
+efficiency 25%, coal energy 28 MJ/kg, fixed glass mass 1 kg, water specific heat
+4,180 J/(kg K), glass specific heat 830 J/(kg K), boiling temperature 100 C and
+vaporization energy 2,257,000 J/kg. Warm-up is followed by 60 seconds of boiling:
+`Qwarm = (litres * 4180 + 1 * 830) * max(0, 100 - input_C)`;
+`seconds = Qwarm / 1000 + 60`; coal is rounded upward to whole grams from
+`seconds * 1000 / (0.25 * 28000000)` kg. Evaporation is `60000 / 2257000` L.
+For 1 L at 20 C this is 460.8 world seconds, 66 g coal and about 26.584 mL lost.
+Tiny volumes that would evaporate entirely cannot start. Portable vessels are
+retained and their existing provisional 100 g empty weight is unchanged.
+
+Dexterity and crafting efficiency do not shorten this thermal work. Work and
+cooling use the established thermal clock (Limbo 1:1, exterior 20:1); crafting
+timers store world seconds for this process, and waiting converts them to its
+simulation ticks. Other crafting tasks retain their current timing rules.
+Water and coal are reserved until completion. Cancellation releases both,
+without spending coal, heating, evaporation or purification. Paused work retains
+its input snapshot, including across save/load. Completion removes only the
+biological flag and applies evaporation/100 C once. Salt and chemical flags
+remain; recontamination by mixing still uses the shared union of quality flags.
+
+Bottles/canteens reject drinking above 85 C, including quick use and automatic
+supplies. Reserved water cannot be drunk, filled, emptied, dropped, sold or
+moved into a chest/Box. In inventory, H starts boiling at a reachable connected
+Alchemy/Workbench network; C cancels in the crafting page and normal waiting
+remains available. The inventory shows temperature and estimated work/fuel.
+
+Approved cooling is a closed-vessel, equivalent-capacity sphere with no further
+evaporation. Water mixing uses volume-weighted heat balance. Glass conductivity
+is 1.1 W/(m K), specific heat 830 J/(kg K); leather wall is 6 mm, conductivity
+0.14 and specific heat 1,500. Canteens use the existing provisional empty mass;
+glass wall thickness is derived from empty mass and the author-approved ordinary
+glass density of 2,500 kg/m3 (2026-10-23). Air convection and linearized radiation reuse the existing
+thermal rules. Exponential integration approaches ambient without overshoot;
+clock gaps use the current sampled environment, without inventing historical
+weather. This model does not add freezing, pressure or evaporation while stored.
+Author gameplay acceptance remains outstanding.
 
 #472 mate has 100/250/500 mL nominal capacity, respectively 20/50/100 g yerba
 and 60/150/300 mL useful water. Each hot use spends all water and one of twenty

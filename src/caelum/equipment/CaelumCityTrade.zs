@@ -324,6 +324,7 @@ class CaelumCityTradeSession : Object play
     }
     static bool Sellable(CaelumPlayer user,Inventory item)
     {
+        if(CaelumWaterBoiling.Locked(item))return false;
         let special=CaelumSpecialInventoryItem(item);
         if(special!=null && special.LimboQuestUnits>0)return false;
         let material=CaelumMaterialPickup(item);

@@ -69,6 +69,8 @@ class CaelumLiveMenuControls : Object ui
                     NextX=414;RowY=146;
                     Button("CA_WATER_COLLECT",0,114,"r",104,!user.FormalInventoryRowInMagicBox[row]);
                     Button("CA_WATER_EMPTY_ACTION",0,118,"v",84,!user.FormalInventoryRowInMagicBox[row]);
+                    if(!user.CraftingTaskActive)
+                    { NextX=414;RowY=302;Button("CA_WATER_BOIL",0,104,"h",192,!user.FormalInventoryRowInMagicBox[row]); }
                 }
             }
             else if(context==3)

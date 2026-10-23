@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
+
+**5.7.9/#409:** boiling/temperature; glass2500kg/m3 approved2026-10-23. 117nativePASS; validation_579/completion_report.json. CA409-01 accepted2026-10-23. Keep #471/#472 separate.
 
 **5.7.8/#479:** owner_death_report.json:150+4PASS;visual-accepted2026-10-22;CA479-01accepted2026-10-23.
 **5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.
@@ -348,12 +350,7 @@ Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
 ## Critical premises
 
-Follow AGENTS.md/PROJECT.md: focused issues, current docs, deterministic
-generation, migratable saves, separate test/acceptance evidence, preserved history.
-
-Premises: `AGENTS.md`, `docs/PROJECT.md`.
-
-[pending_test.txt](../pending_test.txt) lists outstanding author tests. Confirmed passes move ID, version/issue, result,
-date and qualifications to [HISTORY.md](HISTORY.md); remove the entry together.
-Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
-Docs and AGENTS declare the current version; ancillary guides inherit README.
+Follow AGENTS.md and PROJECT.md. Keep outstanding author checks in
+[pending_test.txt](../pending_test.txt); only explicit acceptance permits removal,
+with ID, origin, date and qualifications recorded in [HISTORY.md](HISTORY.md).
+Failed, partial and unconfirmed checks remain.

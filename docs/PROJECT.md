@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
+
+## 5.7.9 - Water boiling and temperature (#409)
+
+The approved thermal process is integrated with station reservations, ordinary
+waiting and persistent inventory. All six capacities use the fixed glass
+station vessel; portable canteens are never directly heated. Atomic completion
+retains salt/chemicals, removes biological contamination, evaporates the approved
+amount and returns 100 C water. Separate temperature guards cover direct and
+automatic consumption; cancellation spends nothing.
+
+The author approved the remaining glass-density datum (2,500 kg/m3) on
+2026-10-23. Both bottle and canteen cooling now use the approved model; 117
+native assertions pass on the completed package, including saved hot glass,
+dropped bottles and dated waiting. The author passed CA409-01 on 2026-10-23
+without qualifications. Other issues retain their
+existing acceptance state and separate PRs.
+
+Static validation passes. The preserved initial draft contains 91 native assertions,
+including actual waiting, pause/save/load and original-save rollback. All 16,724
+entries of that package match src; presentation-only corrections reuse
+server checks after a byte comparison and have fresh visible UI captures.
+The completed package also matches all 16,724 source entries; its exact hashes,
+117 assertions and two inspected final UI captures are in completion_report.json.
 
 ## 5.7.8 - Support implements (#479, author accepted)
 

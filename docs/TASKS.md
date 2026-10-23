@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
+
+## #409 / 5.7.9 - Boiling and stored-water temperature
+
+The fixed Alchemy/Workbench process reserves the whole selected water container
+and mineral coal. Completion applies evaporation, 100 C and biological-only
+purification once; cancellation releases reservations without changing contents
+or fuel. Inventory H starts the nearby station session, C cancels in crafting,
+and ordinary waiting uses the world's thermal time scale. Hot or reserved water
+is unavailable to drinking, travel supplies, automatic servings, selling and
+storage. New temperature fields and the task carrier are additive.
+
+The author approved ordinary glass density of 2,500 kg/m3 on 2026-10-23,
+completing the mass-derived wall model. Bottle cooling now uses that value;
+canteens retain the approved 6 mm leather wall. The completed full package passes
+117 native assertions, source/package identity and static validation, with two
+inspected UI captures. The author passed CA409-01 on 2026-10-23 without
+qualifications. The temporary keep-awake request was released on return.
+
+Evidence and limitations live in assets/validation_579/RESULTS.md. No source
+geography, consumable recipes, gunpowder balances or mate implementation belong
+to this patch. PR review and integration remain outstanding.
 
 ## #479 / 5.7.8 - Implemented and author accepted
 

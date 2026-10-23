@@ -6230,3 +6230,21 @@ CA_TARGET_COLLECT = "{bind:+use}: recolectar";
 CA_TARGET_TALK = "{bind:+use}: hablar";
 CA_TARGET_MOVE = "{bind:+use}: empujar";
 CA_TARGET_PICKUP = "Toca para recoger";
+
+
+// #409 — reusable water boiling.
+[enu default]
+CA_WATER_BOIL = "Boil water";
+CA_WATER_BOILED = "Boiling complete: biological contamination removed. Water is too hot to drink.";
+CA_WATER_BOIL_FAILED = "Requires water, sufficient mineral coal, a nearby Alchemy/Workbench network and no active task or combat.";
+CA_WATER_BOIL_PREVIEW = "%.1f s · %d g coal · %.3f L output";
+[es esp]
+CA_WATER_BOIL = "Hervir agua";
+CA_WATER_BOILED = "Hervido completo: contaminación biológica eliminada. El agua está demasiado caliente para beber.";
+CA_WATER_BOIL_FAILED = "Requiere agua, carbón mineral suficiente, Alquimia y Banco de Trabajo cercanos, sin otra tarea ni combate.";
+CA_WATER_BOIL_PREVIEW = "%.1f s · %d g carbón · %.3f L finales";
+
+[enu default]
+CA_WATER_BOIL_ESTIMATE = "Boil: %.0f s / %d g coal";
+[es esp]
+CA_WATER_BOIL_ESTIMATE = "Hervir: %.0f s / %d g carbón";

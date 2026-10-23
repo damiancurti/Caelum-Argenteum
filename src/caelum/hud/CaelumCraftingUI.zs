@@ -88,7 +88,7 @@ class CaelumCraftingUI : Object
     static ui String Status(CaelumJournalOverlay view, CaelumPlayer user, CaelumCraftingBrowser browser)
     {
         if (user.CraftingTaskActive)
-            return String.Format("%s: %.1f/%.1f s · %s", L("CA_CRAFTING_TASK_ACTIVE"),
+            return String.Format("%s: %.1f/%.1f s · %s", L(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL?"CA_WATER_BOIL":"CA_CRAFTING_TASK_ACTIVE"),
                 user.CraftingTaskRemainingSeconds,user.CraftingTaskTotalSeconds,
                 L(user.CraftingTaskProgressing ? "CA_JOURNAL_CRAFTING_RUNNING" : "CA_JOURNAL_CRAFTING_PAUSED"));
         if (user.LastCraftingAction != CaelumConstants.CRAFTING_ACTION_NONE) return L(view.GetCraftingActionKey(user.LastCraftingAction));
@@ -170,7 +170,17 @@ class CaelumCraftingUI : Object
     {
         let browser=user.CraftingBrowser;if(browser==null)return;
         int mode=browser.Mode;
-        if(browser.SelectedIndex>=0)
+        let boiling=CaelumWaterBoilingState.Find(user);
+        if(user.CraftingTaskActive && user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL && boiling!=null)
+        {
+            view.DrawTextLine(view.SmallFont,Font.CR_GOLD,244,149,L("CA_WATER_BOIL"));
+            if(boiling.Container!=null)view.DrawTextLine(view.SmallFont,Font.CR_WHITE,244,165,boiling.Container.GetTag());
+            Paragraph(view,String.Format("%.3f L / %.1f °C -> %.3f L / %.1f °C\n",boiling.InputLiters,boiling.InputC,
+                CaelumWaterThermalData.Output(boiling.InputLiters),CaelumWaterThermalData.BOILING_C)
+                ..String.Format(L("CA_WATER_BOIL_PREVIEW"),user.CraftingTaskTotalSeconds,boiling.FuelUnits,
+                    CaelumWaterThermalData.Output(boiling.InputLiters)),244,220,300,5,"ca_journal_craft_scroll");
+        }
+        else if(browser.SelectedIndex>=0)
         {
             bool craft=mode==CaelumCraftingBrowser.CRAFT;
             String icon=craft?user.CraftingPreviewIconPath:browser.Icon;

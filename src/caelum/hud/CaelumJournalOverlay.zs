@@ -1361,11 +1361,17 @@ class CaelumJournalOverlay : EventHandler
                             selectedRow
                         ]));
             }
+            if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] > 0)
+                DrawTextLine(InventoryFont,Font.CR_WHITE,414,246,
+                    String.Format(StringTable.Localize("CA_WATER_BOIL_ESTIMATE",false),
+                        CaelumWaterThermalData.Seconds(localPlayer.FormalInventoryRowWaterLiters[selectedRow],localPlayer.FormalInventoryRowWaterTemperature[selectedRow]),
+                        CaelumWaterThermalData.Fuel(localPlayer.FormalInventoryRowWaterLiters[selectedRow],localPlayer.FormalInventoryRowWaterTemperature[selectedRow])));
             if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] >= 0)
                 DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 278.0,
                     localPlayer.FormalInventoryRowWaterLiters[selectedRow] <= 0.000001
                     ? StringTable.Localize("CA_WATER_EMPTY", false)
-                    : CaelumWaterQuality.Label(localPlayer.FormalInventoryRowWaterQuality[selectedRow]));
+                    : CaelumWaterQuality.Label(localPlayer.FormalInventoryRowWaterQuality[selectedRow])
+                        ..String.Format(" / %.1f °C",localPlayer.FormalInventoryRowWaterTemperature[selectedRow]));
         }
         DrawTextLine(
             InventoryFont,
@@ -2772,6 +2778,8 @@ class CaelumJournalOverlay : EventHandler
         }
         else if (currentPage == 0 && (character == 114 || character == 82))
             SendNetworkEvent("ca_inventory_water", 0);
+        else if (currentPage == 0 && (character == 104 || character == 72))
+            SendNetworkEvent("ca_inventory_boil");
         else if (currentPage == 0 && (character == 118 || character == 86))
             SendNetworkEvent("ca_inventory_water", 1);
         return true;
@@ -2995,6 +3003,8 @@ class CaelumJournalOverlay : EventHandler
         {
             requestingPlayer.ToggleFormalInventoryStorage();
         }
+        else if (e.Name == "ca_inventory_boil")
+        { CaelumWaterBoiling.InventoryAction(requestingPlayer); }
         else if (e.Name == "ca_inventory_water")
         { CaelumWaterQuality.InventoryAction(requestingPlayer, e.Args[0] == 1); }
         else if (e.Name == "ca_inventory_drop")

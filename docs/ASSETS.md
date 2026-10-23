@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
+
+## 5.7.9 - Existing water/Alchemy art reused (#409)
+
+Boiling reuses the accepted six container icons, world items and fixed Alchemy
+station. No new art, models or licensed resources are introduced. The private
+water QA map and engine packages remain generated under build/issue409; tracked
+validation sources/evidence do not package the development IWAD or executable.
 
 ## 5.7.8 - Painted support implement correction (#479)
 
