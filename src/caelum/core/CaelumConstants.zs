@@ -681,7 +681,8 @@ class CaelumConstants : Object
     const CRAFTING_STATION_FINE_TOOLS_BENCH = 10;
     const CRAFTING_STATION_MASTER_BENCH = 11;
     const CRAFTING_STATION_ALCHEMY = 12;
-    const CRAFTING_STATION_COUNT = 13;
+    const CRAFTING_STATION_FERMENTATION = 13;
+    const CRAFTING_STATION_COUNT = 14;
 
     // Dos metros exactos en la escala de desarrollo (32 unidades = 1 m).
     // Las estaciones forman una red transitiva: cada enlace individual debe

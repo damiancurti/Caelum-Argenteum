@@ -107,6 +107,8 @@ class CaelumTargetInfo : Object play
         if(door!=null || house!=null)Title=L(house!=null?"CA_TARGET_TRANSITION":"CA_TARGET_DOOR");
         if(gate!=null)Title=L(CaelumWorldCatalogue.ConnectionNameKey(gate.ConnectionId));
         if(station!=null)Title=L(CaelumCartographyServiceData.StationName(station.GetCraftingStationType()));
+        if(Subject is 'CaelumFermentationStation')
+            Title=String.Format(L("CA_FERMENTATION_TITLE"),Title,double(CaelumFermentationData.WORKING_CAPACITY_LITERS));
         if(chest!=null)
         {
             if(reachable && chest.CanReachStorage(user))

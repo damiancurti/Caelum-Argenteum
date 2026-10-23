@@ -1,0 +1,67 @@
+{
+  "version": "5.7.12",
+  "issue": 487,
+  "package_sha256": "5bf47a785299cee1b66426a5558ee56e150ad71d1d18a7815ac70af0503aeba7",
+  "source_entries": 16728,
+  "source_bytes_match": true,
+  "runs": [
+    {
+      "label": "network02",
+      "passed": 10
+    },
+    {
+      "label": "mansion-es02",
+      "passed": 16
+    },
+    {
+      "label": "city-en02",
+      "passed": 16
+    },
+    {
+      "label": "old-upgrade02",
+      "passed": 15
+    },
+    {
+      "label": "reload02",
+      "passed": 15
+    },
+    {
+      "label": "removed-save02",
+      "passed": 1
+    },
+    {
+      "label": "removed-load02",
+      "passed": 1
+    },
+    {
+      "label": "blocked-save02",
+      "passed": 1
+    },
+    {
+      "label": "blocked-load02",
+      "passed": 16
+    },
+    {
+      "label": "collision03",
+      "passed": 2
+    },
+    {
+      "label": "views02",
+      "passed": 0
+    }
+  ],
+  "native_assertions": 93,
+  "original_runtime_rollback_assertions": 1,
+  "original_save_preserved_sha256": "30cbb159dc36118c8904989fa18cd7b3a83b90df61f83c5d5765b5b73a3c2c99",
+  "deterministic_generation": true,
+  "independent_capacity_liters": 4252.967366663344,
+  "working_liters": 3402,
+  "mesh_within_collision_bounds": true,
+  "six_native_views_inspected": true,
+  "author_accepted": false,
+  "limitations": [
+    "#471 recipes and actual unattended batches remain pending.",
+    "No rendering-performance claim; native checks are functional and visual.",
+    "Initial collision02 quit before its queued event; collision03 adds the required wait and passes."
+  ]
+}

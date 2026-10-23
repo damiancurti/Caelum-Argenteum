@@ -31,6 +31,8 @@ class CaelumCartographyServiceData : Object
                 return "CA_CRAFTING_STATION_MASTER_BENCH";
             case CaelumConstants.CRAFTING_STATION_ALCHEMY:
                 return "CA_CRAFTING_STATION_ALCHEMY";
+            case CaelumConstants.CRAFTING_STATION_FERMENTATION:
+                return "CA_CRAFTING_STATION_FERMENTATION";
             default:
                 return "CA_CRAFTING_STATION_NONE";
         }

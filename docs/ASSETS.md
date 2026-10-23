@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
+
+## 5.7.12 - Owned Fermentation Barrel (#487)
+
+fermentation_station.json records the approved footprint, placements, physical
+calibration and body profile. generate_fermentation_station.py emits the original
+OBJ, CFERA0 fallback sprite and CaelumFermentationData; its manifest records hashes
+and capacity. It reuses owned wood/iron/brass station textures and the accepted
+#470 mesh projection, preserving that station and its provenance. No external
+assets or portable inventory item are added. Native visual evidence belongs to
+assets/validation_5712; author visual acceptance remains pending.
 
 ## 5.7.11 - Station terminology (#486)
 

@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
+
+## #487 / 5.7.12 - Fermentation Barrel
+
+Implemented the approved station and geometry-derived capacity. Static validation,
+package identity, 93 native assertions and one original-runtime rollback check
+pass: placements, solid collision, native use, Chemistry disconnection/reconnection,
+old-save installation, blocked placement and no reissue after removal. Six final
+native captures and deterministic geometry/sprite generation pass agent inspection.
+CA487-01 author checks remain deferred
+while away. #471 separately owns actual fermentation batches/recipes; no amounts,
+yields or durations are inferred here. CA486-01 naming review remains separate.
 
 ## #486 / 5.7.11 - Chemistry station name
 
@@ -8,7 +19,7 @@ Apply the authored Chemistry / Química name to station UI and boiling feedback;
 retain internal Alchemy keys/classes for saved references. No gameplay or art
 changes. Native presentation evidence: assets/validation_5711. CA486-01 remains
 the author check. #487 separately tracks the new Fermentation Barrel, with its
-dependency meaning, process ownership and placements awaiting author answers.
+approved network dependency, process ownership, placements and capacity detailed above.
 
 ## #471 / 5.7.10 - Cartridge station migration
 

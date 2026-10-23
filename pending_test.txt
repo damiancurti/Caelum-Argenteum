@@ -1,3 +1,21 @@
+CA487-01 | Origin: 5.7.12 / issue #487 | Fermentation Barrel infrastructure
+Status: outstanding; deferred until the author returns.
+Prerequisites: GZDoom 4.14.2, full #487 package and prepared private fixture.
+Run assets/validation_5712/launch_author.ps1 with PowerShell -NoProfile
+-ExecutionPolicy Bypass -NoExit -File; press Enter when ready.
+
+1. Inspect the large wooden barrel with metal hoops beside Chemistry. The target
+   panel shows its name and 3,402 L working capacity. Walk around it and into it;
+   it must be solid, fixed and leave a usable approach to the workshop.
+2. E opens the shared crafting catalogue; Q closes it. F5 disconnects Chemistry
+   in this private fixture. Using the barrel must then fail. F6 reconnects it
+   and ordinary use must work again.
+3. F2 opens MAP03. Repeat the visual, approach and dependency checks. F1 returns
+   to MAP01. F3 saves; F4 loads. There must remain one barrel at the same location.
+4. F7 selects English; F8 restores Spanish. Check the target name/capacity.
+Expected: approved station presentation, dependency, solid collision and stable
+save/load. New fermentation recipes/batches are separate #471 work, not this test.
+
 CA486-01 | Origin: 5.7.11 / issue #486 | Chemistry station terminology
 Status: outstanding.
 Prerequisites: GZDoom 4.14.2 and the full #486 package/fixture prepared by

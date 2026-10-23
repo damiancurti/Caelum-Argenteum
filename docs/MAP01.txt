@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
+
+5.7.12 - Fermentation Barrel (#487)
+
+Approved fixed barrel: (1200,448,0), group 2, 60 x 60 x 72 units; connected to
+Chemistry through the existing network. A separate revision-1 roster supports
+old saves without moving existing actors. Capacity: 3,402 L useful, derived from
+the approved large-tun geometry. No new fermentation recipe belongs to this patch.
 
 5.7.8 - Offensive starter continuity (#479)
 

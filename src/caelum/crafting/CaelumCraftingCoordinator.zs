@@ -1562,6 +1562,16 @@ class CaelumCraftingCoordinator : Object play
             return;
         }
 
+        let station=CaelumCraftingStation(sourceStation);
+        if(station!=null && !CaelumCraftingRules.StationAccessAllowed(
+            station.GetCraftingStationType(),user.CraftingNetworkCapabilities))
+        {
+            user.A_Log("$CA_FERMENTATION_MISSING_CHEMISTRY");
+            user.CloseCraftingStationSession();
+            user.SetCraftingJournalState(false);
+            return;
+        }
+
         // Cualquier estación conectada abre el mismo menú central.
         user.ActiveCraftingStationActor = sourceStation;
         user.CraftingSessionValidationTics = 0;
@@ -1654,6 +1664,14 @@ class CaelumCraftingCoordinator : Object play
         else if (!sharedBatch)
         {
             user.CraftingSessionValidationTics--;
+        }
+        if(!CaelumCraftingRules.StationAccessAllowed(station.GetCraftingStationType(),
+            user.CraftingNetworkCapabilities))
+        {
+            user.A_Log("$CA_FERMENTATION_MISSING_CHEMISTRY");
+            user.CloseCraftingStationSession();
+            user.SetCraftingJournalState(false);
+            return false;
         }
         if (user.CraftingTaskActive)
         {

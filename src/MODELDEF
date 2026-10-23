@@ -4864,4 +4864,14 @@ Model CaelumAlchemyStation
     FrameIndex CALC A 0 0
 }
 
+Model CaelumFermentationStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_fermentation.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFER A 0 0
+}
+
 // #479: rejected model bindings retained in source; active equipment uses sprites.
