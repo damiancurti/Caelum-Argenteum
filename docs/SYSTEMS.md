@@ -2,6 +2,21 @@
 
 Documentation version: **5.7.10** — 2026-10-23.
 
+## #471 approved fermentation lifecycle (not implemented)
+
+Author decisions of 2026-10-23: one batch per Fermentation Barrel, including a
+partial fill within its approved working capacity (#487). The barrel stays
+occupied until the product is collected or the batch is emptied. Starting the
+batch consumes its ingredients. Cancelling after that discards the mixture
+without returning ingredients; cancelling before starting consumes nothing.
+
+An already-started batch continues fermenting if the barrel loses its Chemistry
+connection. This explicitly supersedes the proposed pause-on-disconnection rule;
+it also continues while the player is away or on another map. Starting still
+requires the approved station network. Collection/access details, recipe
+quantities, yields, realistic durations/fuel and economy remain to be authored.
+These decisions do not change cartridge recipes or claim batch implementation.
+
 ## #479 support implements and 5.7.8 integration
 
 Quintessence is exclusively support. Offensive Wand/Bell retain their attacks;

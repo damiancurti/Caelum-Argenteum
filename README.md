@@ -14,6 +14,9 @@ preserving old in-progress tasks at their original station. Other #471 recipes
 remain undefined. Static checks and 186 native assertions pass; the author
 passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
 [Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
+The remaining #471 fermentation design now defines one batch per barrel,
+ingredient consumption at start, discard on cancellation and continued progress
+without Chemistry. Recipes and batch gameplay remain pending.
 
 V5.7.9 implements #409 water boiling: atomic station work, biological-only
 purification, temperature and hot-drink guards. The author approved ordinary

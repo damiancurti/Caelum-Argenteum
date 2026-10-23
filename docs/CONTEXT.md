@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.10** — 2026-10-23.
 
-**5.7.10/#471:** cartridges/Alchemy; old tasks retain Ranged. validation_5710. CA471-AMMO-01 accepted2026-10-23. Other recipes unresolved.
+**5.7.10/#471:** cartridges accepted2026-10-23; batch lifecycle approved in SYSTEMS; recipes pending.
 **5.7.9/#409:** boiling/temperature; glass2500kg/m3 approved2026-10-23. 117nativePASS; validation_579/completion_report.json. CA409-01 accepted2026-10-23.
 
 **5.7.8/#479:** owner_death_report.json:150+4PASS;visual-accepted2026-10-22;CA479-01gameplay-pending.

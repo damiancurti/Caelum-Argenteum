@@ -35,6 +35,14 @@ data and unattended cancellation/ownership remain unauthored. These decisions
 are recorded for the remaining #471 scope, without changing the accepted
 cartridge runtime. Questions and author tests are deferred during the new absence.
 
+On returning on 2026-10-23, the author selected "un lote por barril", approved
+consumption at start/discard on cancellation, and explicitly chose "Continuar
+fermentando" if Chemistry disconnects. A partial fill is allowed; the barrel
+remains occupied until collection or emptying. This resolves those lifecycle
+decisions without assigning recipe quantities/yields/durations or implementing
+unattended batches. The #471 documentation commit is separate from the concurrent
+#479 lethal-curse correction. No gameplay or author test completion is claimed.
+
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,
