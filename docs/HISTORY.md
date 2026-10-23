@@ -27,6 +27,14 @@ cooling/process and 10 station requirements), source/package identity and static
 validation. Evidence: assets/validation_5710/integration/report.json. The #409
 author terminal uses this combined package; its acceptance remains pending.
 
+The author subsequently approved fixed Alchemy vessels, water withdrawal without
+consuming the source bottle/canteen, and existing abstract finished packaging.
+Fermentation may progress while away or on another map, with collection at the
+original station; heating/distillation require attendance. Exact recipe/batch
+data and unattended cancellation/ownership remain unauthored. These decisions
+are recorded for the remaining #471 scope, without changing the accepted
+cartridge runtime. Questions and author tests are deferred during the new absence.
+
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,

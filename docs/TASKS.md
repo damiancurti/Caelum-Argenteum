@@ -15,9 +15,15 @@ The completed #409 base is integrated with 31 focused native checks and exact
 source/package identity; CA409-01 uses that combined build when the author returns.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
-container reuse, learning routes and trade/stock data. Preserve the accepted
+unattended-batch cancellation/ownership, learning routes and trade/stock data. Preserve the accepted
 ingredient artwork, product effects and non-operational abstract ammunition
 chain. No new values are inferred from the station change.
+
+Author-approved on 2026-10-23: fixed Alchemy vessels; source bottles/canteens are
+retained; finished products use existing abstract packaging. Fermentation runs
+while away/across maps and is collected at its original station; heating and
+distillation require attendance. Implement those rules only with the remaining
+authored batch table. Further questions and author tests wait for the author's return.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 

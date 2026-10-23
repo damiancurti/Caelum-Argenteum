@@ -302,18 +302,29 @@ author-design gates for their own issues.
 | Alcohol | Fermented intermediate + fuel | Existing medikit; #471 | Amounts, fuel, work, yield, containers |
 | Yeast | Acquisition not yet authored | Fermentation; #471 | Acquisition, price/stock, quantity |
 | Sugar | Acquisition/processing not yet authored | Alternative energy-drink sweetener; #471 | Acquisition, amount, price/stock |
-| Gunpowder | Abstract game ingredient; acquisition pending | Existing compatible kits, then ten cartridges; #471 | Other kit inputs, quantities, price/stock |
+| Gunpowder | Abstract game ingredient made at Alchemy | Existing compatible kits, then ten cartridges; #471 | Component quantities, other kit inputs, price/stock |
 | Dried cachiyuyo | Patagonian import in MAP03 | Abstract iodine recipe; #407 | Implemented in 5.7.5; CA407-01 accepted 2026-10-22 |
 | Iodine | Dried cachiyuyo at Workbench + Alchemy | Consumer not yet authored; #407 | Downstream purpose; no inferred benefits |
 
 Existing medikit/energy-drink/Anima identities, dose sizes, effects and prices
 remain unchanged. Medikit ingredients are cotton + alcohol + marcela; energy
 drink uses potable water + yerba + honey or sugar; Anima potion uses potable
-water + either approved flower. #471 must author quantities, work, containers,
+water + either approved flower. #471 must author quantities and work,
 efficiency, recipe learning, stock and price implications before implementation.
 Existing sealed kits (IDs 79/80) remain compatible; the approved chain is
 gunpowder -> compatible kits -> ten cartridges at Alchemy. No real propellant
 or primer formulation is requested or recorded.
+
+On 2026-10-23 the author approved fixed Alchemy vessels for these processes:
+water is withdrawn from a bottle/canteen without consuming that container, and
+finished consumables retain their existing abstract packaging. No empty portable
+packaging objects are added. Fermentation continues in world time while the
+player is away, including on another map; its output is collected on return to
+the same station. Heating and distillation still require attendance. Realistic
+hours/days remain the approved timing style, with no exact batch durations yet.
+The unattended batch's cancellation/ownership rules, exact quantities, yields,
+fuel and acquisition/economic tables remain pending. These are design decisions,
+not a claim that the new recipes or unattended fermentation are implemented.
 
 ### Related approved boundaries for subsequent issues
 
