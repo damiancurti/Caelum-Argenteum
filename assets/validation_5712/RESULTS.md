@@ -32,8 +32,11 @@ run. collision03 adds the required final wait and passes two assertions; the
 incomplete collision02 probe is retained and excluded from the total. No production
 workaround was introduced for that test-script issue.
 
-CA487-01 remains pending; author checks are deferred while away. It covers this
-finished infrastructure and its visuals separately from #471 recipes/batches.
+The author passed CA487-01 (origin: 5.7.12 / #487) in full on 2026-10-23,
+without qualifications: "Las pruebas dieron correcto." This accepts the finished
+infrastructure and its visuals separately from #471 recipes/batches. The completed
+pending entry was removed and acceptance recorded in HISTORY. report.json retains
+the original agent-run snapshot; this later author result is separate evidence.
 
 Tracked log text normalizes line endings and trailing whitespace. Raw logs stay
 in build/issue487 (rollback: build/issue486 in its worktree); messages are retained.

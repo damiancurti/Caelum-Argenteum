@@ -9,9 +9,9 @@ package identity, 93 native assertions and one original-runtime rollback check
 pass: placements, solid collision, native use, Chemistry disconnection/reconnection,
 old-save installation, blocked placement and no reissue after removal. Six final
 native captures and deterministic geometry/sprite generation pass agent inspection.
-CA487-01 author checks remain deferred
-while away. #471 separately owns actual fermentation batches/recipes; no amounts,
-yields or durations are inferred here. CA486-01 naming review remains separate.
+The author passed CA487-01 in full on 2026-10-23, without qualifications; its
+pending entry was removed. #471 separately owns actual fermentation batches/recipes;
+no amounts, yields or durations are inferred here. CA486-01 acceptance is separate.
 
 ## #486 / 5.7.11 - Chemistry station name
 
@@ -43,7 +43,7 @@ Author-approved on 2026-10-23: fixed Alchemy vessels; source bottles/canteens ar
 retained; finished products use existing abstract packaging. Fermentation runs
 while away/across maps and is collected at its original station; heating and
 distillation require attendance. Implement those rules only with the remaining
-authored batch table. Further questions and author tests wait for the author's return.
+authored batch table. The author has returned; the remaining batch data still need definition.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 

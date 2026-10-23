@@ -11,7 +11,8 @@ wood/metal model and fallback sprite. Author-approved physical calibration yield
 and accepted recipes are retained. #471 still owns new fermentation batches and
 recipe values. Evidence: assets/validation_5712. Static/package identity and 93
 native assertions pass, plus one original-runtime rollback assertion. Six final
-captures and deterministic assets were inspected. CA487-01 is deferred while away.
+captures and deterministic assets were inspected. The author passed CA487-01 in
+full on 2026-10-23, without qualifications; acceptance is recorded in HISTORY.
 
 ## 5.7.11 - Chemistry station terminology (#486)
 

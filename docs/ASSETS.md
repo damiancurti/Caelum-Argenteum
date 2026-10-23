@@ -10,7 +10,8 @@ OBJ, CFERA0 fallback sprite and CaelumFermentationData; its manifest records has
 and capacity. It reuses owned wood/iron/brass station textures and the accepted
 #470 mesh projection, preserving that station and its provenance. No external
 assets or portable inventory item are added. Native visual evidence belongs to
-assets/validation_5712; author visual acceptance remains pending.
+assets/validation_5712. The author accepted the visuals with CA487-01 in full on
+2026-10-23, without qualifications; HISTORY records the confirmation.
 
 ## 5.7.11 - Station terminology (#486)
 

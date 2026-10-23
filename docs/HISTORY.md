@@ -15,9 +15,9 @@ The separate roster and appended capability preserve prior station identities.
 No #471 fermentation recipes or unattended batches are claimed implemented.
 
 The author left for several hours and requested temporary prevention of system
-sleep again. The local helper has a twelve-hour expiry and a release signal;
-author tests/questions are deferred until return. Validation and limitations are
-recorded under assets/validation_5712; acceptance remains outstanding.
+sleep again. The local helper had a twelve-hour expiry and a release signal;
+author tests/questions were deferred until return. Validation and limitations are
+recorded under assets/validation_5712.
 
 The completed package matches all 16,728 source entries and passes project
 validation plus 93 native assertions. One further assertion checks original-save
@@ -28,7 +28,13 @@ the new barrel explicitly enables it without changing existing station flags.
 An initial collision script quit before its queued assertion; the corrected
 collision03 script waits and passes, with the incomplete probe excluded. SHA-256:
 5bf47a785299cee1b66426a5558ee56e150ad71d1d18a7815ac70af0503aeba7.
-CA487-01 remains pending author acceptance; the launcher waits for return.
+On 2026-10-23 the author returned and confirmed "Las pruebas dieron correcto."
+CA487-01 (origin: 5.7.12 / #487) passed in full, without qualifications: visuals,
+capacity display, approach/collision, station dependency, both maps/languages
+and save/load. Its completed entry was removed from pending_test.txt. Actual
+fermentation batches remain #471 work; #479 gameplay acceptance remains pending.
+The temporary keep-awake request was released at 18:39:04 UTC on return.
+This acceptance update keeps version 5.7.12 and the original runtime evidence.
 
 ## 5.7.11 - Chemistry station terminology (#486), 2026-10-23
 
