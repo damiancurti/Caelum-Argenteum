@@ -23,7 +23,7 @@ The completed #409 base is integrated with 31 focused native checks and exact
 source/package identity; CA409-01 passed on that combined build on 2026-10-23.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
-unattended-batch cancellation/ownership, learning routes and trade/stock data. Preserve the accepted
+batch ownership/collection access, learning routes and trade/stock data. Preserve the accepted
 ingredient artwork, product effects and non-operational abstract ammunition
 chain. No new values are inferred from the station change.
 
@@ -31,7 +31,11 @@ Author-approved on 2026-10-23: fixed Alchemy vessels; source bottles/canteens ar
 retained; finished products use existing abstract packaging. Fermentation runs
 while away/across maps and is collected at its original station; heating and
 distillation require attendance. Implement those rules only with the remaining
-authored batch table. Further questions and author tests wait for the author's return.
+authored batch table. The author returned and approved one batch per barrel,
+including partial fills; it stays occupied until collection or emptying. Inputs
+are consumed at start; cancellation discards the mixture without refunds.
+Fermentation continues after Chemistry disconnection, overriding the proposed
+pause rule. These approvals are documented design, not implemented batch behavior.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 
@@ -76,6 +80,9 @@ the five non-Orb designs, then confirmed the baseless Orb/open-palm retest on
 2026-10-22. All six designs now have author visual approval, including inventory
 sprites. The focused Orb correction passes 23 native checks (floating_orb_report.json).
 Do not repeat accepted visual checks. The temporary keep-awake remains released.
+The 2026-10-23 author run failed on lethal curse damage. The owner-lifetime guard
+and F2 dead-target reset are corrected; owner_death_report.json records focused
+native regression evidence. CA479-01 includes the outstanding lethal-damage retest.
 
 ## 5.7.7 - Target-panel delivery (#481)
 
