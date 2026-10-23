@@ -1182,7 +1182,13 @@ class CaelumConstants : Object
     const MATERIAL_MONSTER_HIDE = 78;
     const MATERIAL_CARBINE_KIT = 79;
     const MATERIAL_SHOTGUN_KIT = 80;
-    const MATERIAL_TYPE_COUNT = 81;
+    const MATERIAL_YERBA_MATE = 81;
+    const MATERIAL_MARCELA = 82;
+    const MATERIAL_IRUPE_FLOWER = 83;
+    const MATERIAL_CYPELLA_FLOWER = 84;
+    const MATERIAL_SUGARCANE = 85;
+    const MATERIAL_HONEY = 86;
+    const MATERIAL_TYPE_COUNT = 87;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

@@ -1,0 +1,239 @@
+{
+  "issue": 405,
+  "version": "5.7.2",
+  "deterministic_files": {
+    "src\\caelum\\data\\CaelumLandResourceData.zs": "7e38caf0526bb26629a248644ba263332d3eb56806f351748006f651f346b9de",
+    "src\\caelum\\world\\CaelumLandSourceProfiles.zs": "dfd2c963d863f432a70c61c5c4c45de28dfd25a3ad2ada4ad2a40b8cbc23aa46",
+    "src\\LANGUAGE": "d476fdfd1e33977719aa29a3260f9bd7364015785a9ba4f2223c2bf2aa18fe9a",
+    "src\\caelum\\data\\land_resources.modeldef": "26296a29fedd6dff5c1fe063b373c51c32f8880c3baa892cb68c19a87bbac315",
+    "src\\caelum\\data\\land_resources.textures": "818ebb7224cb2dcdc7e220bb4ed6462b8c28fed6fd3a6f48b47f5695f10664db",
+    "assets\\generators\\land_resource_models.json": "73c0a6c7a22ec550c149c9d7880b80875f7f301feb2843f65b6f7be586feb1cd",
+    "src\\models\\caelum\\world\\land_resources\\cotton.obj": "affd7320a8e578ee43278eb56a7a3b67b9158c14613aa0aba2ab3a653ab1e26e",
+    "src\\models\\caelum\\world\\land_resources\\cypella_flower.obj": "b9540bb66918330563a991aad4aef97da06a72f99de01fda2b656c6b2944e88a",
+    "src\\models\\caelum\\world\\land_resources\\cypella_flower_bundle.obj": "49af7c8bdcefd779537a4d077cc98b1b18da87bc7d67aef79ec638ce2c867616",
+    "src\\models\\caelum\\world\\land_resources\\fiber_bush.obj": "a7fcaa865a1e6ca8aa2cf1460bab335f5a5bc421cc6e201ea220da7d307bca7f",
+    "src\\models\\caelum\\world\\land_resources\\honey.obj": "266543056edf071e402f64669a11b87a87a40adf124be2cde3c8f24c43803704",
+    "src\\models\\caelum\\world\\land_resources\\honey_bundle.obj": "1b447d910266ed29157019572ca6aea27c0602a779822caec89ae154d7a85b75",
+    "src\\models\\caelum\\world\\land_resources\\irupe_flower.obj": "a8fc691b364b59d7fc4414a9645c30bc2fd462ec48aad46da9bb206c1078b32d",
+    "src\\models\\caelum\\world\\land_resources\\irupe_flower_bundle.obj": "fb8bcb984392fe3c01dde28ffed9e672aa570cec470803174d9a958e79f4832c",
+    "src\\models\\caelum\\world\\land_resources\\marcela.obj": "3430ab066889b94ed7bafa8049b07a29ce5602199c79ac46ccf4cf3b3f9cd76a",
+    "src\\models\\caelum\\world\\land_resources\\marcela_bundle.obj": "5c460365612f6e1c14a935ef93afc28fcc08ca6b4d95ac91078270de37576a97",
+    "src\\models\\caelum\\world\\land_resources\\sugarcane.obj": "769a497e4650f8a6ffef8a1fd0a75c7da3c29d265be255cc2386fcc51e357516",
+    "src\\models\\caelum\\world\\land_resources\\sugarcane_bundle.obj": "b8bce52514a7bf634aac53f8b6d1d31435c8adde98ae9036e0e6f9d8d5d47f10",
+    "src\\models\\caelum\\world\\land_resources\\yerba_mate.obj": "8fa53e003a148e564ded5fd847d0f8c89301395624c6205f84d77dc8d8a06f5e",
+    "src\\models\\caelum\\world\\land_resources\\yerba_mate_bundle.obj": "56b4f42ea6a9fd3cb1f9301ab8c0c95dacfc47a73412fa81c3b2b757d6ac4153"
+  },
+  "models": [
+    {
+      "key": "yerba_mate",
+      "bundle": false,
+      "file": "yerba_mate.obj",
+      "vertices": 1450,
+      "faces": 435
+    },
+    {
+      "key": "yerba_mate",
+      "bundle": true,
+      "file": "yerba_mate_bundle.obj",
+      "vertices": 870,
+      "faces": 261
+    },
+    {
+      "key": "marcela",
+      "bundle": false,
+      "file": "marcela.obj",
+      "vertices": 2050,
+      "faces": 615
+    },
+    {
+      "key": "marcela",
+      "bundle": true,
+      "file": "marcela_bundle.obj",
+      "vertices": 1230,
+      "faces": 369
+    },
+    {
+      "key": "irupe_flower",
+      "bundle": false,
+      "file": "irupe_flower.obj",
+      "vertices": 870,
+      "faces": 261
+    },
+    {
+      "key": "irupe_flower",
+      "bundle": true,
+      "file": "irupe_flower_bundle.obj",
+      "vertices": 1950,
+      "faces": 585
+    },
+    {
+      "key": "cypella_flower",
+      "bundle": false,
+      "file": "cypella_flower.obj",
+      "vertices": 2350,
+      "faces": 705
+    },
+    {
+      "key": "cypella_flower",
+      "bundle": true,
+      "file": "cypella_flower_bundle.obj",
+      "vertices": 1410,
+      "faces": 423
+    },
+    {
+      "key": "sugarcane",
+      "bundle": false,
+      "file": "sugarcane.obj",
+      "vertices": 2150,
+      "faces": 645
+    },
+    {
+      "key": "sugarcane",
+      "bundle": true,
+      "file": "sugarcane_bundle.obj",
+      "vertices": 1290,
+      "faces": 387
+    },
+    {
+      "key": "cotton",
+      "bundle": false,
+      "file": "cotton.obj",
+      "vertices": 2050,
+      "faces": 615
+    },
+    {
+      "key": "honey",
+      "bundle": false,
+      "file": "honey.obj",
+      "vertices": 1080,
+      "faces": 324
+    },
+    {
+      "key": "honey",
+      "bundle": true,
+      "file": "honey_bundle.obj",
+      "vertices": 200,
+      "faces": 60
+    },
+    {
+      "key": "fiber_bush",
+      "bundle": false,
+      "file": "fiber_bush.obj",
+      "vertices": 2450,
+      "faces": 735
+    }
+  ],
+  "placements": [
+    {
+      "id": 1,
+      "map": "MAP03",
+      "key": "marcela",
+      "xy": [
+        -30272,
+        320
+      ],
+      "decorative": false
+    },
+    {
+      "id": 2,
+      "map": "MAP03",
+      "key": "marcela",
+      "xy": [
+        -30144,
+        448
+      ],
+      "decorative": false
+    },
+    {
+      "id": 3,
+      "map": "MAP03",
+      "key": "marcela",
+      "xy": [
+        -30336,
+        1216
+      ],
+      "decorative": false
+    },
+    {
+      "id": 4,
+      "map": "MAP03",
+      "key": "marcela",
+      "xy": [
+        -30144,
+        2112
+      ],
+      "decorative": false
+    },
+    {
+      "id": 5,
+      "map": "MAP03",
+      "key": "cypella_flower",
+      "xy": [
+        -30080,
+        1280
+      ],
+      "decorative": false
+    },
+    {
+      "id": 6,
+      "map": "MAP03",
+      "key": "cypella_flower",
+      "xy": [
+        -30080,
+        1920
+      ],
+      "decorative": false
+    },
+    {
+      "id": 7,
+      "map": "MAP03",
+      "key": "honey",
+      "xy": [
+        -30464,
+        1536
+      ],
+      "decorative": false
+    },
+    {
+      "id": 8,
+      "map": "MAP01",
+      "key": "marcela",
+      "xy": [
+        -1856,
+        832
+      ],
+      "decorative": true
+    },
+    {
+      "id": 9,
+      "map": "MAP01",
+      "key": "marcela",
+      "xy": [
+        -1664,
+        864
+      ],
+      "decorative": true
+    },
+    {
+      "id": 10,
+      "map": "MAP01",
+      "key": "cypella_flower",
+      "xy": [
+        -2016,
+        1024
+      ],
+      "decorative": true
+    },
+    {
+      "id": 11,
+      "map": "MAP01",
+      "key": "honey",
+      "xy": [
+        -1792,
+        1056
+      ],
+      "decorative": true
+    }
+  ],
+  "campaign_wads_unchanged": true
+}

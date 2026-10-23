@@ -1,0 +1,36 @@
+{
+  "issue": 405,
+  "revision": 1,
+  "approval_date": "2026-10-21",
+  "catalogue": "resource_catalog.json",
+  "new_material_ids": {"yerba_mate": 81, "marcela": 82, "irupe_flower": 83, "cypella_flower": 84, "sugarcane": 85, "honey": 86},
+  "base_copper_per_gram": {"yerba_mate": 0.02, "marcela": 0.1, "irupe_flower": 0.5, "cypella_flower": 0.5, "sugarcane": 0.01, "honey": 0.02},
+  "imports": [
+    {"key": "yerba_mate", "stock_g": 1000, "category": 0},
+    {"key": "irupe_flower", "stock_g": 20, "category": 0},
+    {"key": "sugarcane", "stock_g": 10000, "category": 0},
+    {"key": "cotton", "stock_g": 1000, "category": 7}
+  ],
+  "import_recovery_fraction_per_game_day": 0.001,
+  "trade_policy": "Imported plant ingredients use existing provision shops; cotton uses clothing. Local herb/honey sales use provision shops without initial stock or an invented production target.",
+  "placements": [
+    {"id": 1, "map": "MAP03", "key": "marcela", "xy": [-30272, 320], "decorative": false},
+    {"id": 2, "map": "MAP03", "key": "marcela", "xy": [-30144, 448], "decorative": false},
+    {"id": 3, "map": "MAP03", "key": "marcela", "xy": [-30336, 1216], "decorative": false},
+    {"id": 4, "map": "MAP03", "key": "marcela", "xy": [-30144, 2112], "decorative": false},
+    {"id": 5, "map": "MAP03", "key": "cypella_flower", "xy": [-30080, 1280], "decorative": false},
+    {"id": 6, "map": "MAP03", "key": "cypella_flower", "xy": [-30080, 1920], "decorative": false},
+    {"id": 7, "map": "MAP03", "key": "honey", "xy": [-30464, 1536], "decorative": false},
+    {"id": 8, "map": "MAP01", "key": "marcela", "xy": [-1856, 832], "decorative": true},
+    {"id": 9, "map": "MAP01", "key": "marcela", "xy": [-1664, 864], "decorative": true},
+    {"id": 10, "map": "MAP01", "key": "cypella_flower", "xy": [-2016, 1024], "decorative": true},
+    {"id": 11, "map": "MAP01", "key": "honey", "xy": [-1792, 1056], "decorative": true}
+  ],
+  "presentation": {
+    "note": "New plants inherit the existing fiber-bush collision envelope and nominal prop mass. Useful yield is separately authored. Model composition is an implementation choice; native visual/collision acceptance remains required.",
+    "radius": 20, "height": 48, "mass_kg": 10,
+    "sprite": "CFBH", "model_directory": "models/caelum/world/land_resources",
+    "world_art_policy": "Author 2026-10-21: all added shrubs, flowers, hives and world objects use 3D models, including dropped new materials. Convert the existing fiber bush and its decorative mansion counterpart to 3D without changing their gameplay.",
+    "material_icon_reuse": "Existing owned icons may remain as inventory thumbnails; world representations must use 3D models."
+  }
+}

@@ -469,7 +469,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 5.7.1] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 5.7.2] Peligros físicos y mágicos: mapa=%s", level.MapName);
         Console.Printf("Techos: bloque sólido de piedra, masa x g x compresión. Peso estático: exceso de kg x g x 0.0001 m/s. 1 J = 1 HP bruto; Dureza final una vez.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;

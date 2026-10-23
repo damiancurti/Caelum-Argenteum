@@ -1,6 +1,7 @@
 #include "caelum/data/native_doors.textures"
 #include "caelum/data/clothing_sprites.textures"
 #include "caelum/data/cartridge_kits.textures"
+#include "caelum/data/land_resources.textures"
 // Roca propia del catálogo ambiental para paredes y techo de la cueva.
 Texture "CACVROCK", 256, 256
 {

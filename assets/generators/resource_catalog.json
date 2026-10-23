@@ -81,9 +81,9 @@
     {"key": "iodine", "source": "brown_algae at Workbench + Alchemy", "consumer": null, "issue": 407}
   ],
   "unresolved": {
-    "source_placement": "Exact coordinates and counts in #405; these encode gameplay rarity. Existing nodes remain unchanged.",
+    "source_placement": "Resolved for #405: approved positions/counts in land_resources.json. Existing nodes remain unchanged.",
     "tutorial_policy": "Resolved: new plants/hives are decorative in MAP01 and harvestable in MAP03. Preserve the tutorial gold-only rule and all existing quotas.",
-    "imports": "Vendor, prices, stock, transaction lots and renewal must be authored before #405/#407/#471 integration.",
+    "imports": "Land prices/stock/categories/renewal resolved in land_resources.json (#405); marine/processing imports belong to #407/#471.",
     "marine": "Specific algae species, traded form, processing quantities/work/yield/fuel/knowledge and iodine consumer remain open in #407.",
     "processing": "Exact inputs, outputs, work/time, fuel, prices, learning, containers and renewal implications remain open in #471.",
     "regional_minerals": "No new geological depth, rarity, skill or region restrictions are approved for existing veins.",

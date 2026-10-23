@@ -113,6 +113,11 @@ class CaelumDisplayNames : Object
 
     static clearscope String GetSpecialItemKey(int specialCategory, int specialType)
     {
+        if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+        {
+            String resourceKey = CaelumLandResourceData.MaterialKey(specialType);
+            if(resourceKey != "") return resourceKey;
+        }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
         {
             if(specialType>=1 && specialType<=8)return String.Format("CA_MAZE_KEY_%d",specialType);

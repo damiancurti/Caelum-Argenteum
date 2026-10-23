@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `8b268f535c9b5054d134215ba46162fa22224bf7d12e5131f3db5d8f82f1a02a`. Locations include every definition; the last one per language wins.
+SHA-256: `d476fdfd1e33977719aa29a3260f9bd7364015785a9ba4f2223c2bf2aa18fe9a`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -100,7 +100,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAP06 | 1 | CA_MAP06_NAME | CA_MAP06_NAME |
 | CA_MAP07 | 1 | CA_MAP07_NAME | CA_MAP07_NAME |
 | CA_MAP08 | 1 | CA_MAP08_NAME | CA_MAP08_NAME |
-| CA_MATERIAL | 103 | CA_MATERIAL_BARREL | CA_MATERIAL_WOOL |
+| CA_MATERIAL | 109 | CA_MATERIAL_BARREL | CA_MATERIAL_YERBA_MATE |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
 | CA_MENU | 4 | CA_MENU_LOAD_CHARACTER | CA_MENU_SAVE_CHARACTER |
 | CA_MERCHANT | 4 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
@@ -145,6 +145,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SKIP | 25 | CA_SKIP_ACTIVE_HELP | CA_SKIP_TITLE |
 | CA_SLEEP | 4 | CA_SLEEP_CAST | CA_SLEEP_STATE_LOW |
 | CA_SLEEPING | 8 | CA_SLEEPING_BAG_CARRY | CA_SLEEPING_BAG_UNAVAILABLE |
+| CA_SOURCE | 7 | CA_SOURCE_COTTON | CA_SOURCE_YERBA_MATE |
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |

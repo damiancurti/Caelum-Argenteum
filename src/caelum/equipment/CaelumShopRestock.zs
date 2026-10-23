@@ -11,6 +11,7 @@ class CaelumShopProduct : Object play
     Name NativeClass;
     double BaseValue,UnitTics,NextDue;
     Inventory Stock;
+    bool ImportedMaterial;
 
     static CaelumShopProduct Add(CaelumCityMerchant vendor,int kind,int target)
     {
@@ -93,6 +94,11 @@ class CaelumShopProduct : Object play
         else if(Kind==BOOK)item=vendor.SeedBook(Recipe,Tier,BaseValue);
         else if(Kind==LOCK)item=vendor.SeedLock(ItemType);
         else if(Kind==SIMPLE)item=vendor.SeedSimple(NativeClass,amount);
+        else if(Kind==MATERIAL && ImportedMaterial)
+        {
+            item=user.CreateDetachedMaterialStack(ItemType,Tier,amount);
+            if(item!=null)item.AttachToOwner(vendor);
+        }
         if(item==null)return false;
         item.Amount=amount;Stock=item;return true;
     }
@@ -115,6 +121,9 @@ class CaelumShopRestock : Object play
     }
     static double Duration(CaelumShopProduct product,CaelumPlayer user)
     {
+        if(product.ImportedMaterial)
+            return CaelumWorldClock.TicsPerDay() / Max(0.000001,
+                product.Target * CaelumLandResourceData.IMPORT_RECOVERY_PER_DAY);
         if(product.Recipe<0)return 0;
         let quote=new("CaelumRecipeQuote");quote.Build(user,product.Recipe,product.Tier,
             product.Kind==CaelumShopProduct.BOOK ? CaelumConstants.EQUIPMENT_SIZE_XL : product.Size);
@@ -131,7 +140,7 @@ class CaelumShopRestock : Object play
         double earliest=-1;
         for(int i=0;i<vendor.Products.Size();i++)
         {
-            let product=vendor.Products[i];if(product.Recipe<0)continue;
+            let product=vendor.Products[i];if(product.Recipe<0 && !product.ImportedMaterial)continue;
             product.FindStock(vendor);int owned=product.Stock==null ? 0 : Max(0,product.Stock.Amount);
             int missing=Max(0,product.Target-owned);
             if(missing==0){product.NextDue=-1;continue;}

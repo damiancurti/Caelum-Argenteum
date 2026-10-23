@@ -6122,3 +6122,34 @@ CA_WATER_EMPTY_ACTION = "Empty";
 CA_WATER_COLLECTED = "Water collected.";
 CA_WATER_EMPTIED = "Container emptied.";
 CA_WATER_TRANSFER_REJECTED = "Cannot collect or empty water here. Check the selected container, source, volume and carried load.";
+
+// BEGIN #405 LAND RESOURCE LOCALIZATION
+[enu default]
+CA_MATERIAL_YERBA_MATE = "Yerba mate";
+CA_SOURCE_YERBA_MATE = "Yerba mate";
+CA_MATERIAL_MARCELA = "Marcela";
+CA_SOURCE_MARCELA = "Marcela";
+CA_MATERIAL_IRUPE_FLOWER = "Irupé flower";
+CA_SOURCE_IRUPE_FLOWER = "Irupé flower";
+CA_MATERIAL_CYPELLA_FLOWER = "Lirio del bajo flower";
+CA_SOURCE_CYPELLA_FLOWER = "Lirio del bajo flower";
+CA_MATERIAL_SUGARCANE = "Sugarcane";
+CA_SOURCE_SUGARCANE = "Sugarcane";
+CA_SOURCE_COTTON = "Cotton";
+CA_MATERIAL_HONEY = "Honey";
+CA_SOURCE_HONEY = "Bee hive";
+[es]
+CA_MATERIAL_YERBA_MATE = "Yerba mate";
+CA_SOURCE_YERBA_MATE = "Yerba mate";
+CA_MATERIAL_MARCELA = "Marcela";
+CA_SOURCE_MARCELA = "Marcela";
+CA_MATERIAL_IRUPE_FLOWER = "Flor de irupé";
+CA_SOURCE_IRUPE_FLOWER = "Flor de irupé";
+CA_MATERIAL_CYPELLA_FLOWER = "Flor de lirio del bajo";
+CA_SOURCE_CYPELLA_FLOWER = "Flor de lirio del bajo";
+CA_MATERIAL_SUGARCANE = "Caña de azúcar";
+CA_SOURCE_SUGARCANE = "Caña de azúcar";
+CA_SOURCE_COTTON = "Algodón";
+CA_MATERIAL_HONEY = "Miel";
+CA_SOURCE_HONEY = "Colmena";
+// END #405 LAND RESOURCE LOCALIZATION
