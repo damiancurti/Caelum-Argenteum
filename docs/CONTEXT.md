@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.2** — 2026-10-21.
+Documentation version: **5.7.3** — 2026-10-22.
 
+**5.7.3/#406:**monotonic-recovery;validation_573;CA406-01:accepted2026-10-22.
 **5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22;next:#406/#407/#470/#409/#471/#472.
 **5.7.1/#404:**resource-contract;validation_571.
 
@@ -336,7 +337,7 @@ PROJECT owns scope/dependencies; HISTORY preserves earlier evidence.
 - `docs/`: canonical/working documents, engineering guides and generated index.
 - `assets/`: sources, generators, manifests and validation; outside runtime.
 - `build/`: regenerable PK3; `archive/`: historical backups.
-- Root: README, build/launch scripts and validators. Full map: AGENTS.md.
+- Root: README, build/launch scripts and validators. Map: AGENTS.md.
 
 Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 

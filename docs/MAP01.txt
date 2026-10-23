@@ -1,6 +1,12 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.7.2** — 2026-10-21.
+Documentation version: **5.7.3** — 2026-10-22.
+
+5.7.3 - Source recovery boundary (#406)
+
+The timestamp guard does not enable tutorial harvesting or renewal. Ronnie's
+finite gold quota remains finite; the #405 plants and hive remain decorative.
+MAP01 geometry, coordinates and accepted source visuals are unchanged.
 
 5.7.2 - Decorative local plants and hive (#405)
 

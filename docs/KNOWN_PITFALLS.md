@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-150 - Clamping elapsed time does not prevent replay after a clock rewind
+
+Status/evidence: ENGINE-VERIFIED; #406, 2026-10-22. Baseline 5.7.2 versus the
+5.7.3 source-clock guard; package identities and commands are retained in
+assets/validation_573/report.json. GZDoom 4.14.2 / Windows 11 / Vulkan,
+Ryzen 9 5950X / RTX 3070 Ti, unpaused background, 5% audio.
+
+Scope: CaelumEnvironmentProp.SyncResourceClock, using persisted campaign time.
+The previous `max(0, now - stamp)` still assigned `stamp = now` when time moved
+backward. Returning to the previously credited time then regenerated the same
+interval a second time. The prior runtime fails three boundary assertions;
+the monotonic guard passes them without changing rates, capacity or saved data.
+
+Prevention: ignore observations at or below the credited stamp; advance the
+stamp only when applying a genuinely new interval. An unstamped legacy source
+initializes at its first observation without invented historical credit. Use
+one capped arithmetic catch-up, preserving fractional extraction carry and
+calendar identity. If a recovery deadline is recalculated during a rewind,
+include the delay until the credited stamp is reached. Calendar dates and
+source elapsed-time stamps have different origins: convert the delay only.
+The guard-only build reproduced an early deadline; the final patch corrects
+it. Merchants retain their own authoritative stock clocks.
+
+Reproduce with validation_573/prepare.py and run_native.ps1, Script boundaries,
+against baseline/current packages. The same native fixture tests a million-day
+catch-up without iterating missed days. Matrix/save/hub checks cover partitioned
+elapsed time, cap, finite/decorative exceptions and save compatibility. This
+clock-correctness result does not establish rendering performance or author
+acceptance by itself. The author separately passed CA406-01 on 2026-10-22.
+
 ## CA-KP-149 - Cache production quotes and process only elapsed stock deficits
 
 Status/evidence: ENGINE-VERIFIED; #385, 2026-10-21. Baseline e38871f5 plus
