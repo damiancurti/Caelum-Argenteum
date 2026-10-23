@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 5.7.13 implements #471 Chemistry recipes, shared fermentation batches, partial
 collection, protected water reservations and recipe-derived prices/imports.
 The final package passes 267 native assertions and source/archive comparison.
-CA471-BATCH-01 awaits author acceptance. See [evidence](assets/validation_5713/RESULTS.md).
+CA471-BATCH-01 passed author acceptance on 2026-10-23. See [evidence](assets/validation_5713/RESULTS.md).
 
 5.7.12 adds the Fermentation Barrel infrastructure (#487), connected to Chemistry
 in both workshops, with 3,402 L useful capacity from the approved large-tun model.

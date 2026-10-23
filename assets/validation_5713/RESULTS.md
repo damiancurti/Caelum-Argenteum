@@ -53,3 +53,8 @@ Author check **CA471-BATCH-01** is pending in pending_test.txt. Launch
 `assets/validation_5713/author_terminal.ps1` for reproducible manual checks;
 this report does not imply author acceptance. The original cartridge migration
 and ingredient artwork acceptances remain recorded in their own releases.
+
+Author acceptance: CA471-BATCH-01 passed in full on 2026-10-23, without
+qualifications, following the author's confirmation that every check in the latest
+#471 terminal was correct. This supersedes the pending status above and does not
+change runtime or version. #472 is not covered.

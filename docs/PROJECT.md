@@ -12,8 +12,7 @@ old entries. Prices use approved ingredient costs and imports; identical consuma
 use the cheapest recipe. Approved full-chain renewal replaces finite stock for
 kits and nine consumables without resetting quantities. The final package passes
 267 native assertions and byte-level comparison of all 16,746 entries; five
-captures were inspected. Evidence is in validation_5713. CA471-BATCH-01 awaits
-author acceptance; the historical 53-check foundation remains separate evidence.
+captures were inspected. Evidence is in validation_5713. CA471-BATCH-01 passed author acceptance on 2026-10-23; the historical 53-check foundation remains separate evidence.
 The independent mate implementation remains #472.
 
 ## 5.7.12 - Fermentation Barrel infrastructure (#487)

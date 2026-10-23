@@ -46,6 +46,13 @@ foundation save loaded by the final runtime. All 16,746 members match src.
 Two deterministic generator runs preserve 13 outputs. Five captures were
 inspected. CA471-BATCH-01 is ready for the author; acceptance remains pending.
 
+Author acceptance, 2026-10-23: CA471-BATCH-01 (origin 5.7.13 / #471) passed
+in full without qualifications. The author reported that all tests in the latest
+terminal were correct. The accepted handoff was the dedicated #471 terminal
+(assets/validation_5713/author_terminal.ps1), after the final package and 267
+native assertions. Its pending entry is removed; gameplay and version are unchanged.
+#472 remains an independent implementation, not covered by this acceptance.
+
 ## 5.7.12 - Fermentation Barrel (#487), 2026-10-23
 
 The author approved a barrel connected to Chemistry to operate, exclusive
