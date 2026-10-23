@@ -22,7 +22,9 @@ the combined full package, which matches src. See validation_5710/integration.
 The author subsequently approved one fermentation batch per barrel, ingredient
 consumption at start, discard without refunds on cancellation, and continued
 fermentation after Chemistry disconnection. SYSTEMS records this pending design;
-recipe values and batch implementation remain outstanding.
+finished product may also be collected without Chemistry and in partial amounts,
+keeping the remainder in the occupied barrel. Recipe values and batch
+implementation remain outstanding.
 
 ## 5.7.9 - Water boiling and temperature (#409)
 

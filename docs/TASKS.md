@@ -15,7 +15,7 @@ The completed #409 base is integrated with 31 focused native checks and exact
 source/package identity; CA409-01 passed on that combined build on 2026-10-23.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
-batch ownership/collection access, learning routes and trade/stock data. Preserve the accepted
+batch ownership, learning routes and trade/stock data. Preserve the accepted
 ingredient artwork, product effects and non-operational abstract ammunition
 chain. No new values are inferred from the station change.
 
@@ -28,6 +28,9 @@ including partial fills; it stays occupied until collection or emptying. Inputs
 are consumed at start; cancellation discards the mixture without refunds.
 Fermentation continues after Chemistry disconnection, overriding the proposed
 pause rule. These approvals are documented design, not implemented batch behavior.
+The author also approved withdrawing finished product without Chemistry and
+partial collection. The remainder stays in the barrel; a new batch must wait
+until it is empty. Collection access and partial withdrawals are now defined.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 

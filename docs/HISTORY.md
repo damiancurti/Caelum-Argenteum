@@ -43,6 +43,13 @@ decisions without assigning recipe quantities/yields/durations or implementing
 unattended batches. The #471 documentation commit is separate from the concurrent
 #479 lethal-curse correction. No gameplay or author test completion is claimed.
 
+Later on 2026-10-23, the author answered "Permitir retirar sin química" and
+"Permitir retiradas parciales" for #471. Finished product may be collected
+without a Chemistry connection and in partial amounts. The remainder stays in
+the barrel, occupying it until empty. This resolves those two collection choices;
+the approved start dependency and unresolved recipe data are unchanged. This
+documentation update contains no batch implementation or new engine-test claim.
+
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,
