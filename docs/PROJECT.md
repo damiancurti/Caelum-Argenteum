@@ -14,8 +14,8 @@ automatic consumption; cancellation spends nothing.
 The author approved the remaining glass-density datum (2,500 kg/m3) on
 2026-10-23. Both bottle and canteen cooling now use the approved model; 117
 native assertions pass on the completed package, including saved hot glass,
-dropped bottles and dated waiting. Author check CA409-01 remains separate and
-deferred during the author's renewed absence. Other issues retain their
+dropped bottles and dated waiting. The author passed CA409-01 on 2026-10-23
+without qualifications. Other issues retain their
 existing acceptance state and separate PRs.
 
 Static validation passes. The preserved initial draft contains 91 native assertions,

@@ -1,5 +1,9 @@
 # Water boiling and temperature — issue #409
 
+Author acceptance: CA409-01 (origin 5.7.9 / #409) passed on 2026-10-23,
+without qualifications. HISTORY records the separate combined author-test build.
+The reports below retain their original agent-only evidence and dates.
+
 This is agent evidence for 5.7.9, not author acceptance. The initial draft left
 bottle cooling inactive because glass density was omitted from the proposal.
 The author approved ordinary glass at 2,500 kg/m3 on 2026-10-23; the completed
