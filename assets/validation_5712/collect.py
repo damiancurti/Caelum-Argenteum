@@ -47,6 +47,9 @@ assert sha(OUT/'ca486-original.zds')==sha(rollback/'ca486-original.zds')
 rollback_log=(rollback/'rollback-original01.txt').read_text(encoding='utf-8-sig')
 assert 'CA470 RESULT passed=1 failed=0' in rollback_log
 for suffix in ('.txt','-run.json'):shutil.copyfile(rollback/f'rollback-original01{suffix}',HERE/'native'/f'rollback-original01{suffix}')
+for log_path in (HERE/'native').glob('*.txt'):
+    raw=log_path.read_text(encoding='utf-8-sig')
+    log_path.write_text('\n'.join(line.rstrip() for line in raw.splitlines())+'\n',encoding='utf-8')
 
 sys.path.insert(0,str(ROOT/'assets/generators'))
 import generate_fermentation_station as generator

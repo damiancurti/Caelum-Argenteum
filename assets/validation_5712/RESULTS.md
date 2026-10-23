@@ -34,3 +34,6 @@ workaround was introduced for that test-script issue.
 
 CA487-01 remains pending; author checks are deferred while away. It covers this
 finished infrastructure and its visuals separately from #471 recipes/batches.
+
+Tracked log text normalizes line endings and trailing whitespace. Raw logs stay
+in build/issue487 (rollback: build/issue486 in its worktree); messages are retained.
