@@ -1,3 +1,16 @@
+CA486-01 | Origin: 5.7.11 / issue #486 | Chemistry station terminology
+Status: outstanding.
+Prerequisites: GZDoom 4.14.2 and the full #486 package/fixture prepared by
+assets/validation_5711/prepare.py. Run assets/validation_5711/launch_author.ps1
+with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File; press Enter.
+
+1. Aim at the existing station in MAP01. The target panel must say Química.
+   Press E to confirm ordinary crafting still opens; Q closes it.
+2. F2 opens the MAP03 test position. Repeat the name and interaction checks.
+3. F3 selects English: Chemistry. F4 restores Spanish: Química.
+Expected: both languages use the new name with the accepted station appearance
+and ordinary interaction. The separate Fermentation Barrel is not in this patch.
+
 CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
 Status: gameplay, acquisition and save/load checks remain outstanding.
 Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in

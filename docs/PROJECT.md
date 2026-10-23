@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
+
+## 5.7.11 - Chemistry station terminology (#486)
+
+The existing station is now named Chemistry / Química throughout the shared
+station label and boiling failure feedback. Actor class, capability 12, editor
+ID 18013, roster revision, artwork, placement and recipe requirements remain
+unchanged. Old saves and tasks retain their identities. #487 owns the separate
+Fermentation Barrel request; no barrel or new fermentation recipe is delivered
+by this naming patch. Validation and author acceptance are recorded separately
+in assets/validation_5711 and pending_test.txt. Static checks, full package/source
+identity, two real Use assertions, old-save loading and four inspected native
+captures pass. CA486-01 remains pending.
 
 ## 5.7.10 - Cartridge assembly at Alchemy (#471)
 

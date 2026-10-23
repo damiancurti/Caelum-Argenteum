@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
 
 5.7.8 - Offensive starter continuity (#479)
 
@@ -16,9 +16,13 @@ does not introduce a new NPC support-casting AI. Author tutorial review is pendi
 5.7.5 - Marine scope boundary (#407)
 
 Dried cachiyuyo is imported through MAP03; no marine node, coastline or stock
-is placed in MAP01. The existing connected Alchemy station can execute a
+is placed in MAP01. The existing connected Chemistry station can execute a
 learned iodine recipe when ordinary inventory and tutorial rules allow it.
 Ronnie's finite supplies, gold-only extraction and decorations stay intact.
+
+Current terminology: Chemistry / Química (#486, 5.7.11); existing station
+placement, model and internal identifiers are unchanged. The additional
+Fermentation Barrel (#487) is not part of this naming patch.
 
 5.7.4 - Fixed Alchemy station (#470)
 

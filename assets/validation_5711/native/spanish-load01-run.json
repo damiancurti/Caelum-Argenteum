@@ -1,0 +1,67 @@
+﻿{
+    "label":  "spanish-load01",
+    "runtime":  "current",
+    "started_utc":  "2026-10-23T15:24:47.9414788Z",
+    "visible_requested":  false,
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "C70CC65948D0FE3D9F191577376FE453AE4829E3E65665CD7030D766C36D8F93",
+    "addon_sha256":  "40B42CA1AE6BD846E069F28E562C19FC9EB7B3F60A1B8AF6D87A0AC68293288E",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\\current\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\\checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\\spanish-load01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "486",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\\spanish-load01.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "-loadgame",
+                      "\"ca486-original.zds\"",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue486-work\\build\\issue486\\es.cfg\""
+                  ],
+    "command_script":  "language es; wait 105; netevent ca470_author; wait 35; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue486-work/build/issue486/es-target.png\"; wait 5; +use; wait 2; -use; wait 35; netevent ca470_use; screenshot \"C:/GZDooMProjects/CaelumArgenteum/build/issue486-work/build/issue486/es-menu.png\"; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  9008,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-23T15:25:02.5311308Z"
+}

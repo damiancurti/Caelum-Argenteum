@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
+
+## #486 / 5.7.11 - Chemistry station name
+
+Apply the authored Chemistry / Química name to station UI and boiling feedback;
+retain internal Alchemy keys/classes for saved references. No gameplay or art
+changes. Native presentation evidence: assets/validation_5711. CA486-01 remains
+the author check. #487 separately tracks the new Fermentation Barrel, with its
+dependency meaning, process ownership and placements awaiting author answers.
 
 ## #471 / 5.7.10 - Cartridge station migration
 

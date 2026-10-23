@@ -1,9 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
 
-**5.7.10/#471:** cartridges/Alchemy; old tasks retain Ranged. validation_5710. CA471-AMMO-01 accepted2026-10-23. Other recipes unresolved.
-**5.7.9/#409:** boiling/temperature; glass2500kg/m3 approved2026-10-23. 117nativePASS; validation_579/completion_report.json. CA409-01 accepted2026-10-23.
+**5.7.11/#486:** Chemistry naming; CA486-01 pending. Barrel:#487, design pending.
+**5.7.10/#471:** cartridges; validation_5710. CA471-AMMO-01 accepted2026-10-23; other recipes pending.
+**5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
 
 **5.7.8/#479:**176+2runtime/75sprite/23orbPASS;visual-accepted2026-10-22;CA479-01gameplay-pending.
 **5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.

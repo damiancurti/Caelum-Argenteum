@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.10** — 2026-10-23.
+Documentation version: **5.7.11** — 2026-10-23.
+
+## 5.7.11 - Chemistry station terminology (#486), 2026-10-23
+
+The author requested Chemistry / Química instead of Alchemy / Alquimia.
+The shared bilingual display key and boiling failure text now use that name;
+internal identifiers, capability and editor IDs, visuals and saved references
+are retained. Historical release names and asset provenance keep their original
+wording. #487 separately tracks the requested Fermentation Barrel. Native and
+static evidence are recorded under assets/validation_5711: 16,724 matching source
+entries, two passing real Use assertions, old-save loading and four inspected
+native captures. CA486-01 is pending.
 
 ## 5.7.10 - Cartridge station migration (#471), 2026-10-23
 
