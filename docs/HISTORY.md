@@ -160,6 +160,14 @@ Only the completed lethal-damage check was removed from pending_test.txt; other
 gameplay, ordinary campaign acquisition and save/load checks are not inferred
 accepted. Original agent evidence and version 5.7.8 remain unchanged.
 
+2026-10-23, CA479-01 full acceptance (origin: 5.7.8 / #479): after receiving the
+complete remaining checklist, the author confirmed "Las pruebas del 479 dieron
+bien." Gameplay, campaign acquisition/crafting, save/load and migration checks
+passed without qualifications. Previous visual and lethal-damage approvals remain
+valid. The completed pending_test.txt entry was removed; the file is now empty.
+This acceptance-only update keeps version 5.7.8 and the original native evidence.
+PR review/integration remains separate from manual acceptance.
+
 ## 5.7.7 - Aimed-target information (#481)
 
 2026-10-22: the author requested a centered gameplay version of the #471 gallery

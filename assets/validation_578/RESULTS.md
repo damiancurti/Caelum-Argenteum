@@ -2,8 +2,10 @@
 
 Status: author visual acceptance is complete as of 2026-10-22. After accepting
 the other five designs, the author confirmed the Orb handoff: "Ahora si dio bien
-la prueba." CA479-01 retains gameplay, campaign acquisition and save/load checks
-in root pending_test.txt. The initial procedural rejection remains historical.
+la prueba." The author accepted all remaining CA479-01 gameplay, campaign
+acquisition and save/load checks on 2026-10-23: "Las pruebas del 479 dieron bien."
+The completed entry is removed from pending_test.txt; HISTORY records full
+acceptance. Original machine reports preserve their earlier agent-only status.
 
 ## Lethal support damage correction - 2026-10-23
 
