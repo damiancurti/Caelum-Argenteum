@@ -48,7 +48,7 @@ class CaelumShopProduct : Object play
     int FindRecipe()
     {
         if(Kind==BOOK)return Recipe;
-        if(Kind==MATERIAL)return -1;
+        if(Kind==MATERIAL)return ImportedMaterial?-1:CaelumChemistryData.RecipeForMaterial(ItemType);
         if(Kind==LOCK)
         {for(int r=CaelumLockRules.FIRST_RECIPE;r<CaelumLockRules.FIRST_RECIPE+CaelumLockRules.RECIPE_COUNT;r++)if(CaelumLockRules.RecipeItem(r)==ItemType)return r;return -1;}
         if(Kind==SIMPLE)
@@ -57,7 +57,7 @@ class CaelumShopProduct : Object play
             if(NativeClass=='CaelumBoltAmmo')return CaelumConstants.CRAFTING_BOLT_RECIPE;
             if(NativeClass=='CaelumCarbineAmmo')return CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;
             if(NativeClass=='CaelumShotgunAmmo')return CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE;
-            return -1;
+            return CaelumChemistryEconomy.ConsumableRecipe(NativeClass);
         }
         if(EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.FIRST_RECIPE+ItemType;
         for(int recipe=0;recipe<CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;recipe++)
@@ -95,7 +95,7 @@ class CaelumShopProduct : Object play
         else if(Kind==BOOK)item=vendor.SeedBook(Recipe,Tier,BaseValue);
         else if(Kind==LOCK)item=vendor.SeedLock(ItemType);
         else if(Kind==SIMPLE)item=vendor.SeedSimple(NativeClass,amount);
-        else if(Kind==MATERIAL && ImportedMaterial)
+        else if(Kind==MATERIAL && (ImportedMaterial || Recipe>=0))
         {
             item=user.CreateDetachedMaterialStack(ItemType,Tier,amount);
             if(item!=null)item.AttachToOwner(vendor);
@@ -129,9 +129,9 @@ class CaelumShopRestock : Object play
         if(product.Recipe<0)return 0;
         let quote=new("CaelumRecipeQuote");quote.Build(user,product.Recipe,product.Tier,
             product.Kind==CaelumShopProduct.BOOK ? CaelumConstants.EQUIPMENT_SIZE_XL : product.Size);
-        double seconds=CaelumShopCatalogue.RESTOCK_INCLUDE_COMPONENTS ? quote.CompleteManufactureSeconds : quote.ManufactureSeconds;
-        int divisor=product.Kind==CaelumShopProduct.SIMPLE ? quote.OutputUnits : 1;
-        return seconds*TICRATE/Max(1,divisor);
+        double tics=CaelumShopCatalogue.RESTOCK_INCLUDE_COMPONENTS ? quote.CompleteManufactureTics : quote.ManufactureTics;
+        int divisor=product.Kind==CaelumShopProduct.SIMPLE || product.Kind==CaelumShopProduct.MATERIAL ? quote.OutputUnits : 1;
+        return tics/Max(1,divisor);
     }
     static void Sync(CaelumCityMerchant vendor,CaelumPlayer user,bool changed=false)
     {

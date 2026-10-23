@@ -7,6 +7,7 @@ class CaelumCityMerchant : Actor
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
+    int ChemistryCatalogueRevision;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -68,6 +69,7 @@ class CaelumCityMerchant : Actor
         if(item is "CaelumRecipeOffer")return false;
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);
+        if(material!=null && Category==0 && CaelumChemistryData.IsMaterial(material.GetSpecialType()))return true;
         if(material!=null && CaelumLandImports.Accepts(Category,material.GetSpecialType())) return true;
         if(material!=null && Category==CaelumMarineData.IMPORT_CATEGORY
             && material.GetSpecialType()==CaelumConstants.MATERIAL_DRIED_KELP)return true;
@@ -182,6 +184,7 @@ class CaelumCityMerchant : Actor
         CaelumLandImports.Ensure(self,user);
         CaelumMarineImports.Ensure(self,user);
         CaelumSupportCatalogue.Ensure(self,user);
+        CaelumChemistryCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

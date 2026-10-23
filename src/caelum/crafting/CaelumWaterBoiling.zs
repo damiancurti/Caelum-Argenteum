@@ -20,6 +20,7 @@ class CaelumWaterBoiling : Object
     static clearscope bool Locked(Inventory item)
     {
         if(item==null)return false;
+        if(CaelumChemistryCrafting.Locked(item))return true;
         let user=CaelumPlayer(item.Owner);
         let brew=CaelumWaterBoilingState.Find(user);
         return user!=null && user.CraftingTaskActive

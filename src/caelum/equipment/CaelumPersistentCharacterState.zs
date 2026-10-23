@@ -3,6 +3,7 @@
 // mapas sin convertir los controles temporales en objetos visibles todavia.
 class CaelumPersistentCharacterState : Inventory
 {
+    Array<CaelumFermentationRecord> FermentationBatches;
     CaelumLawfulIdentity LawfulIdentity;
     bool ProfileCommitted;
     // #147: autoridad compartida. Los campos planos se conservan para saves
@@ -10,6 +11,17 @@ class CaelumPersistentCharacterState : Inventory
     int IdentityRevision;
     int LandMaterialSchemaRevision;
     int MarineMaterialSchemaRevision;
+    int ChemistryMaterialSchemaRevision;
+    void EnsureChemistryMaterialSchema()
+    {
+        if(ChemistryMaterialSchemaRevision>=CaelumChemistryData.REVISION)return;
+        for(int i=CaelumChemistryData.FIRST_MATERIAL;i<CaelumChemistryData.FIRST_MATERIAL+CaelumChemistryData.MATERIAL_COUNT;i++)
+        {
+            MainM00RepairSupply[i]=0;MainM00SupplyLimit[i]=0;MainM00SupplyIssued[i]=0;
+            MainM00MazeRepairUnits[i]=0;MainM00StarterRequired[i]=0;
+        }
+        ChemistryMaterialSchemaRevision=CaelumChemistryData.REVISION;
+    }
 
     void EnsureMarineMaterialSchema()
     {
@@ -1494,7 +1506,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 11)
+        if (RecipeBookVersion >= 12)
+        {
+            addedRecipeStart = CaelumChemistryData.FIRST_RECIPE;
+        }
+        else if (RecipeBookVersion >= 11)
         {
             addedRecipeStart = CaelumMarineData.IODINE_RECIPE;
         }

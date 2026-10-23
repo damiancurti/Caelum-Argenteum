@@ -66,6 +66,9 @@ class CaelumRecipeLearning : Object play
     static double WorkSeconds(CaelumPlayer user, int recipe, int tier,
         int employedUnits, int complexityTics, int efficiency, int outputUnits=0, int fixedBatch=-1)
     {
+        if(CaelumChemistryData.IsRecipe(recipe))return CaelumChemistryData.Seconds(recipe)
+            *(CaelumChemistryData.IsFermentation(recipe)?1:Ceil(Max(1,outputUnits)/double(CaelumChemistryData.OutputUnits(recipe))))
+            *(CaelumChemistryData.UsesDexterity(recipe)?100.0/user.GetCraftingDexterityPercent():1);
         let record = user.GetPersistentCharacterState(false);
         int slot = Slot(recipe, tier);
         int readings = record != null && slot >= 0 ? record.RecipeRereadings[slot] : 0;
@@ -243,12 +246,14 @@ class CaelumRecipeBook : CaelumSpecialInventoryItem
 class CaelumRecipeQuote : Object play
 {
     Array<int> Sheets;
-    double Seconds,ManufactureSeconds,CompleteManufactureSeconds;
+    double Seconds,ManufactureSeconds,CompleteManufactureSeconds,ManufactureTics,CompleteManufactureTics;
     int OutputUnits;
     double MasteredNodeSeconds(CaelumPlayer user,int node)
     {
         int recipe=user.CraftingBlueprintNodeRecipe[node];
         if(recipe<0)return 0;
+        if(CaelumChemistryData.IsRecipe(recipe))return user.CraftingBlueprintNodeSeconds[node]
+            *(CaelumChemistryData.UsesDexterity(recipe)?user.GetCraftingDexterityPercent()/100.0:1);
         int tier=node==0 ? user.CraftingSelectionTier : Max(1,user.CraftingBlueprintNodeMaterialTier[node]);
         int slot=CaelumRecipeLearning.Slot(recipe,tier);
         let record=user.GetPersistentCharacterState(false);
@@ -259,9 +264,16 @@ class CaelumRecipeQuote : Object play
         return user.CraftingBlueprintNodeSeconds[node]*user.GetCraftingDexterityPercent()/100.0
             /CaelumRecipeLearning.TimeFactor(readings,practice,recipe,user.CraftingBlueprintNodeEfficiency[node]);
     }
+    double NodeTics(CaelumPlayer user,int node)
+    {
+        // Cada operación conserva su reloj: Química declara segundos del mundo.
+        return MasteredNodeSeconds(user,node)*(CaelumChemistryData.IsRecipe(user.CraftingBlueprintNodeRecipe[node])
+            ?CaelumWorldClock.TicsPerHour()/3600.0:TICRATE);
+    }
     void Build(CaelumPlayer user, int recipe, int tier,int referenceSize=CaelumConstants.EQUIPMENT_SIZE_XL)
     {
         Sheets.Clear(); Seconds = 0;ManufactureSeconds=0;CompleteManufactureSeconds=0;OutputUnits=0;
+        ManufactureTics=0;CompleteManufactureTics=0;
         if (user == null || CaelumRecipeLearning.Slot(recipe, tier) < 0) return;
         int oldRecipe=user.CraftingSelectionRecipe, oldTier=user.CraftingSelectionTier;
         int oldSize=user.CraftingSelectionSize, oldEfficiency=user.CraftingEfficiencyIndex;
@@ -283,12 +295,16 @@ class CaelumRecipeQuote : Object play
         Sheets.Push(CaelumRecipeLearning.Slot(recipe,tier));
         Seconds=user.CraftingBlueprintFullSeconds;
         ManufactureSeconds=MasteredNodeSeconds(user,0);CompleteManufactureSeconds=ManufactureSeconds;
+        ManufactureTics=NodeTics(user,0);CompleteManufactureTics=ManufactureTics;
         OutputUnits=CaelumCraftingRules.GetRecipeAmmunitionBatch(recipe);
         if(OutputUnits<=0)OutputUnits=Max(1,user.CraftingOutputAmount);
         for(int i=1;i<user.CraftingBlueprintNodeCount;i++)
         {
             if(user.CraftingBlueprintNodeKind[i]==CaelumConstants.CRAFTING_BLUEPRINT_NODE_RECIPE)
+            {
                 CompleteManufactureSeconds+=MasteredNodeSeconds(user,i);
+                CompleteManufactureTics+=NodeTics(user,i);
+            }
             int child=user.CraftingBlueprintNodeRecipe[i];
             int childTier=user.CraftingBlueprintNodeMaterialTier[i];
             if(child<0)continue;

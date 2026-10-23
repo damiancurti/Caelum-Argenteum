@@ -5,6 +5,7 @@ param(
     [string]$LoadGame = '',
     [string]$Addon = '',
     [string]$StartMap = 'CABAT1',
+    [string]$Engine = 'C:\Program Files (x86)\GZDoom\gzdoom.exe',
     [int]$TimeoutSeconds = 60,
     [switch]$Checks,
     [switch]$Interactive,
@@ -19,7 +20,7 @@ $work = Join-Path $repo 'build\issue471-batches'
 if ($LoadGame -and [IO.Path]::IsPathRooted($LoadGame)) {
     throw 'LoadGame must be a filename relative to build/issue471-batches; GZDoom prepends savedir.'
 }
-$engine = 'C:\Program Files (x86)\GZDoom\gzdoom.exe'
+$engine = $Engine
 $iwad = 'C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD'
 $package = Join-Path $work "$Runtime\caelum_argenteum_dev.pk3"
 $config = Join-Path $work "$Label.ini"
@@ -81,7 +82,15 @@ Write-Output "Started $Label, PID $($process.Id)"
 if ($Interactive) { return }
 $null = $process.Handle
 $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
-while (!$process.WaitForExit(1000) -and [DateTime]::UtcNow -lt $deadline) { }
+while (!$process.WaitForExit(1000) -and [DateTime]::UtcNow -lt $deadline) {
+    $process.Refresh()
+    if ($process.MainWindowTitle -like 'Fatal Error*') {
+        $record.fatal_window = $process.MainWindowTitle
+        $process.Kill()
+        $process.WaitForExit()
+        break
+    }
+}
 if (!$process.HasExited) {
     $process.Kill()
     $record.timed_out = $true

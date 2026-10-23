@@ -2,14 +2,19 @@
 
 Documentation version: **5.7.13** — 2026-10-23.
 
-## 5.7.13 - Chemistry batches (#471), in progress
+## 5.7.13 - Chemistry batches (#471)
 
-The first focused commit adds a serializable batch model with one occupied lot,
-capacity enforcement, an absolute world-time deadline and exact partial withdrawals.
-Native save/load and map travel pass within 53 assertions. This is a foundation,
-not completed inventory/menu/catalogue integration or author acceptance.
-The author approved shared access and the 72-hour molasses batch in SYSTEMS.
-Recipe/economy proposals remain pending; #472 has its own patch.
+The shared barrel now consumes the approved whole-litre ingredients at start,
+continues by world deadline and permits partial collection without Chemistry.
+Twenty-one attended recipes use protected ingredient/water reservations, fixed
+yields and approved timings. Additive material/recipe/catalogue migrations preserve
+old entries. Prices use approved ingredient costs and imports; identical consumables
+use the cheapest recipe. Approved full-chain renewal replaces finite stock for
+kits and nine consumables without resetting quantities. The final package passes
+267 native assertions and byte-level comparison of all 16,746 entries; five
+captures were inspected. Evidence is in validation_5713. CA471-BATCH-01 awaits
+author acceptance; the historical 53-check foundation remains separate evidence.
+The independent mate implementation remains #472.
 
 ## 5.7.12 - Fermentation Barrel infrastructure (#487)
 

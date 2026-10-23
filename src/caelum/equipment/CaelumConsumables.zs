@@ -53,7 +53,7 @@ class CaelumConsumableItem : PowerupGiver
         }
     }
 
-    static double UnitWeightForType(int consumableType)
+    static clearscope double UnitWeightForType(int consumableType)
     {
         if (consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
             return CaelumConstants.WATER_RATION_LITERS;

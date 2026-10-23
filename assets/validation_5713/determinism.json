@@ -1,0 +1,18 @@
+{
+  "runs": 2,
+  "outputs": {
+    "src/LANGUAGE": "42d149ea752a61b7e1727dbbfa8054d7f38b715496120ac7e7c4c903d0ff813f",
+    "src/caelum/data/CaelumChemistryData.zs": "1596448eb8aa0cfb7287c4d1f152cda4722d124f1b21e55ca09e471bd468c56d",
+    "src/caelum/data/chemistry_resources.modeldef": "6590dac9237115fe35b04ad699d975226572efa38564b4f31267223122bf1855",
+    "src/caelum/data/chemistry_resources.textures": "7c114084c77f82aef0dec1a2101914a1dbbd36984bbe95c082b1f3064ec17677",
+    "assets/generators/chemistry_supplies_art_manifest.json": "ef6a5962939de6c271e63ebae47c2f5f8066720d34a9ac1aa06c884035fa9308",
+    "src/models/caelum/world/alchemy_ingredients/sugar.obj": "1ec45f2bd18ff7d87ed42c20b66db09e46a51b42131bcd499786236a5202ada6",
+    "src/graphics/caelum/icons/materials/ca_material_sugar.png": "5c6b9d174b080094557e0e1ef4ef38bd47d6e443b22eed69e2875a4d190f724f",
+    "src/models/caelum/world/alchemy_ingredients/prepared_reagents.obj": "6af6791e6fa17a00b5de2cdef41823bd0153e145f04f7cd4f3150fa6b508d4fc",
+    "src/graphics/caelum/icons/materials/ca_material_prepared_reagents.png": "93de0a1af7f6d1b8ccd52cc5a10732fec52694e17c8f31aa409dccf6f760f719",
+    "src/models/caelum/world/alchemy_ingredients/sealed_carbine_parts.obj": "b5b06596a5abdb5be4d1350a56c8feb5635e3cb8f41359ef927d4edc358e2eac",
+    "src/graphics/caelum/icons/materials/ca_material_sealed_carbine_parts.png": "943a02c6e5238b765c6fa59285573a18f5e32e649ffdb307fbab8f05e8721baa",
+    "src/models/caelum/world/alchemy_ingredients/sealed_shotgun_parts.obj": "f2245199c5ad7eabeed0ee81785de24eb48fda262987b4179d087b30cffd1ebf",
+    "src/graphics/caelum/icons/materials/ca_material_sealed_shotgun_parts.png": "7b8d08ab64bb0bc2ef5865d0e20336df1c693e5d75b520356966f4f4fea778f8"
+  }
+}

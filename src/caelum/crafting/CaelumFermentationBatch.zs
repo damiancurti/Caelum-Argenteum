@@ -4,6 +4,7 @@ class CaelumFermentationBatch : Object play
 {
     const SCHEMA_REVISION = 1;
     int Revision;
+    int Generation;
     int Recipe, OutputMaterial, OutputTier;
     int OriginalUnits, RemainingUnits;
     double WorkingLiters, StartedAt, ReadyAt;
@@ -18,6 +19,7 @@ class CaelumFermentationBatch : Object play
             || !(liters > 0) || liters > CaelumFermentationData.WORKING_CAPACITY_LITERS
             || !(durationSeconds > 0) || !(now >= 0)) return false;
         Revision = SCHEMA_REVISION;
+        Generation++;
         Recipe = recipe; OutputMaterial = material; OutputTier = tier;
         OriginalUnits = units; RemainingUnits = units;
         WorkingLiters = liters; StartedAt = now; ReadyAt = now + durationSeconds;
@@ -31,7 +33,7 @@ class CaelumFermentationBatch : Object play
     clearscope double SecondsLeft(double now)
     { return Occupied ? Max(0.0, ReadyAt - Max(StartedAt, now)) : 0.0; }
 
-    // Se llama después de entregar exactamente esa cantidad al inventario.
+    // Se llama después del preflight y antes de entregar el inventario.
     // No recorta silenciosamente una petición inválida ni duplica el producto.
     bool Withdraw(int units, double now)
     {
@@ -44,6 +46,7 @@ class CaelumFermentationBatch : Object play
     // Cancelar descarta el contenido; nunca reconstruye ingredientes.
     void Clear()
     {
+        Generation++;
         Revision = SCHEMA_REVISION;
         Occupied = false; Recipe = -1; OutputMaterial = -1; OutputTier = 1;
         OriginalUnits = 0; RemainingUnits = 0;

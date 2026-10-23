@@ -244,7 +244,7 @@ class CaelumCraftingRules : Object
 
     static bool IsSingleTierRecipe(int recipeIndex)
     {
-        return CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)
+        return CaelumChemistryData.IsRecipe(recipeIndex) || CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)
             || recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE;
@@ -252,6 +252,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
         if(CaelumSupportImplementData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if(CaelumSupportImplementData.IsComponentRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
@@ -819,6 +820,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneMaterial(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputMaterial(recipeIndex,0);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_DRIED_KELP;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -855,6 +857,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoMaterial(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputMaterial(recipeIndex,1);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return -1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -869,6 +872,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneTier(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return 1;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         return GetUnifiedProcessingRecipeIndex(recipeIndex)
             == CaelumConstants.CRAFTING_PROCESSING_STEEL_ALLOY ? 2 : 1;
@@ -881,6 +885,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputMaterial(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.OutputMaterial(recipeIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_IODINE;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -913,6 +918,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputTier(int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return 1;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
         {
@@ -931,6 +937,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputUnits(recipeIndex,0)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.INPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -947,6 +954,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputUnits(recipeIndex,1)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 0;
         int units = 0;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -963,6 +971,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.OutputUnits(recipeIndex)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.OUTPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         // Esta es la salida teórica al 100 %. La eficiencia 25/50/100 se
         // aplica después al lote completo; 4 entradas producen 1/2/4 unidades.
@@ -983,6 +992,7 @@ class CaelumCraftingRules : Object
         int recipeIndex, int batchIndex, int efficiencyIndex
     )
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return GetProcessingOutputUnits(recipeIndex,batchIndex);
         return ApplyOutputEfficiency(
             GetProcessingOutputUnits(recipeIndex, batchIndex),
             efficiencyIndex
@@ -993,6 +1003,8 @@ class CaelumCraftingRules : Object
         int materialType, int materialTier
     )
     {
+        int chemistry=CaelumChemistryData.RecipeForMaterial(materialType);
+        if(chemistry>=0)return chemistry;
         if(materialType==CaelumConstants.MATERIAL_IODINE)return CaelumMarineData.IODINE_RECIPE;
         int resolvedTier = CaelumMaterialRules.ResolveTier(
             materialType, materialTier
@@ -1040,6 +1052,8 @@ class CaelumCraftingRules : Object
 
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
     {
+        if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.IsFermentation(recipeIndex)
+            ? GetMissingFermentationStation(capabilities) : GetMissingAlchemyStation(capabilities);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return GetMissingAlchemyStation(capabilities);
         if (!NetworkHasStation(
             capabilities, CaelumConstants.CRAFTING_STATION_WORKBENCH

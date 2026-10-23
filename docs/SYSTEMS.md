@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.13** — 2026-10-23.
 
-## Chemistry batches (#471, 5.7.13 implementation in progress)
+## Chemistry batches (#471, 5.7.13)
 
 On 2026-10-23 the author approved shared barrel access: any character may collect
 or discard its contents. One batch still occupies each barrel; a new batch
@@ -15,20 +15,80 @@ multiples scale ingredients/output/volume, not duration. Dexterity does not
 shorten fermentation. This is a simplified design yield including process losses,
 not an empirical fermentation protocol. Inputs are spent on starting, cancellation
 discards the mixture, and partial collection retains the remainder and occupancy.
-The state model is implemented and tested; production transactions and UI remain
-in progress. Other recipe/economy proposals are not approved by this entry.
+The state model, authoritative transactions and dedicated barrel UI are implemented;
+final integration/presentation verification and author acceptance remain pending.
+
+Additional author approvals (2026-10-23), recorded in chemistry_recipes.json:
+attended Chemistry converts 1 kg wood to 250 g charcoal in 24 world hours (wood
+includes its own fuel), 1 kg cane plus 172 g mineral coal to 100 g molasses in
+20 world minutes, and 1 kg fermented intermediate plus 258 g mineral coal to
+100 g abstract medicinal alcohol in 30 world minutes. These fixed design yields
+and times are not shortened by Dexterity.
+
+Small consumables use: medikit = 5 g cotton + 10 g alcohol + 2 g marcela; energy
+drink = 200 mL potable water + 10 g yerba + 20 g honey or sugar; Anima potion =
+200 mL potable water + 2 g irupe or lirio. Medium/large multiply active inputs
+by 2.25/5, rounded up; water and sweetener stay constant. Preparation takes
+10 minutes per unit before the existing Dexterity reduction, without extra fuel.
+Effects, doses, masses and abstract containers stay unchanged. Intermediate and
+consumable base prices derive from ingredients/fuel plus the existing 25% markup;
+ordinary merchant margins apply afterwards, superseding their older fixed prices.
+
+MAP03 Provisions imports saltpeter/sulfur (1 kg each, 500 copper/100 g), sugar
+(1 kg, 2 copper/100 g) and yeast (100 g, 5 copper/100 g), using existing margins
+and 0.1% target-stock daily recovery. New recipes use existing learning, with ten
+copies each in the library. Ammunition uses the abstract table below; these
+approvals do not define real propellant formulations.
+
+#The author approved recipe-based renewal of the previously finite kits and nine
+consumables on 2026-10-23. Keep existing targets and stock, with future deadlines
+only at additive catalogue migration. Merchant quotes convert each operation to
+the civil calendar using its own clock; Chemistry uses approved world seconds,
+while pre-existing operations retain their original timing. Fixed chemical
+processes ignore Dexterity/practice; preparation quotes remove Dexterity only.
+Food/water rations remain finite.
+
+## Abstract ammunition supplies and transaction rules
+
+A prepared reagent set (10 g, 20 copper) yields one abstract 10 g charge. One
+charge plus a sealed carbine/shotgun component set yields ten compatible kits.
+Sealed sets weigh 390/440 g, preserving 40/45 g kits and ten-cartridge assembly.
+Each preparation takes 10 world minutes per lot before Dexterity reduction.
+Sealed-set anchors equal ten legacy kits; charge cost and the 25% processing
+margin establish new kit values, followed by the existing cartridge markup.
+Provisions supplies these three inputs using existing kit-stock counts and import
+recovery. This is explicitly abstract game accounting, without chemical ratios.
+Identical consumables use their cheapest ingredient recipe for a single market
+price; each crafting variant still consumes its own approved inputs.
+
+Attended tasks reserve materials and potable water in carried containers, spend
+only on successful completion and release reservations on cancellation. The
+reservation prevents drinking, refilling, emptying, dropping, storage or sale of
+the selected water containers. Output and capacity are revalidated atomically.
+Chemical processes are explicit station tasks; direct equipment plans cannot
+silently execute a fermentation or a heating step. Existing kits can still be
+assembled into cartridges through the accepted shared crafting path.
+
+New materials append at 92..103, recipes at 176..197, with recipe-book revision
+13. Earlier knowledge and supplies survive; new recipes begin locked. Imports
+and library entries are appended idempotently without replenishing old stock.
+The fixed barrel's map/position and a shared serializable batch object identify
+its contents. Each participating character retains that same object in its
+travelling ledger; absent-map progress needs only an absolute world deadline.
+Queries are interaction-local or bounded by players/owned inventories, never a
+periodic global actor scan. Existing multiplayer clock restrictions remain;
+shared transaction tests do not establish two-client calendar/session support.
 
 ## Fermentation Barrel (#487, 5.7.12)
 
 The author approved a separate fixed barrel of wood with metal hoops, connected
 to Chemistry in the existing Workbench-backed station network. This is an
-operating dependency, not a construction requirement. The barrel opens the shared
-catalogue only with that network; losing Chemistry closes its active session
-without cancelling or spending an existing task reservation. Other stations
+operating dependency, not a construction requirement. The infrastructure stage required that network to open. The later #471 stage
+opens its dedicated batch panel even while disconnected, so the user can inspect,
+collect or discard contents; starting still requires the network. Other stations
 retain their rules. Fermentation belongs to this barrel; heating, distillation
-and other chemical processes remain at Chemistry. Unattended fermentation and
-collection at the original barrel are approved #471 design, not implemented
-batches in this infrastructure patch. Its recipes, yields and timings remain pending.
+and other chemical processes remain at Chemistry. Unattended fermentation and collection at the original barrel are implemented
+in the separate #471 stage above; they were not part of the infrastructure patch.
 
 Approved dimensions: 60 x 60 x 72 units, fixed, no construction recipe.
 The new barrel explicitly enables solid collision; the inherited station base
@@ -50,7 +110,7 @@ The target panel shows usable capacity. fermentation_station.json is the shared
 authority for approved placements, mesh profile and physical assumptions; the
 generator reads the existing unit conversion rather than duplicating it.
 
-## #471 approved fermentation lifecycle (not implemented)
+## #471 approved fermentation lifecycle
 
 Author decisions of 2026-10-23: one batch per Fermentation Barrel, including a
 partial fill within its approved working capacity (#487). The barrel stays
@@ -64,9 +124,8 @@ it also continues while the player is away or on another map. Starting still
 requires the approved station network. Finished product may be collected even
 without a Chemistry connection. Partial withdrawals are allowed: the remainder
 stays in the barrel, which remains occupied until emptied. These subsequent
-author approvals resolve collection access and partial withdrawal; recipe
-quantities, yields, realistic durations/fuel and economy remain to be authored.
-These decisions do not change cartridge recipes or claim batch implementation.
+author approvals resolve collection access and partial withdrawal; recipe quantities, yields, timings/fuel and economy are now specified above.
+The original cartridge acceptance remains separate from this batch implementation.
 
 ## #479 support implements and 5.7.8 integration
 
@@ -575,8 +634,9 @@ The quote restores the player's crafting selection and does not teach recipes.
 | City consumables/ammunition with a recipe | One unit after full-chain batch duration divided by output count; cap 1,000 per product | Sequential within a product; products run simultaneously |
 | City equipment | One fresh matching tier/size/essence/slot variant after its complete chain; cap one | Exact returned equipment counts as existing stock; no cloning of wear, identity or sold non-catalogue variants |
 | Library | One book after the entire represented recipe batch; cap ten per recipe/tier | XL equipment reference; no ten-unit study-time multiplier; duplicate-page purchase rejection remains |
-| Prepared cartridge kits | No renewal | No manufacturing recipe is defined; finished cartridges do renew |
-| Eleven provisions | No renewal | Small/medium/large life potions, Anima potions and energy drinks, plus food and water rations, have no manufacturing recipe |
+| Prepared cartridge kits | Full-chain recipe renewal, approved in #471 / 5.7.13 | Preserve existing target; new deadlines begin without resetting stock |
+| Nine medikits/Anima potions/energy drinks | Full-chain recipe renewal, approved in #471 / 5.7.13 | Existing target; cheapest approved variant matches the commercial price |
+| Food and water rations | No renewal | No manufacturing recipe is defined |
 | City and Palomo wallets; Palomo stock | No new refill rule | Preserve their existing ownership and balances; city production does not apply to Palomo |
 | Chest/enemy loot and finite salvage | No renewal | Retain #384 one-time delivery and exact native contents |
 | Natural resource nodes | Existing capacity recovery only | Existing world-clock delta, fractional yield, stable per-node calendar entry and first-sync migration; #385 does not retune recovery |

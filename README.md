@@ -9,9 +9,10 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.7.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.7.13 starts the #471 fermentation-batch implementation. Its serializable state
-passes 53 isolated native assertions; inventory/menu/recipe integration is in
-progress. No new author test is ready yet. See [evidence](assets/validation_5713/RESULTS.md).
+5.7.13 implements #471 Chemistry recipes, shared fermentation batches, partial
+collection, protected water reservations and recipe-derived prices/imports.
+The final package passes 267 native assertions and source/archive comparison.
+CA471-BATCH-01 awaits author acceptance. See [evidence](assets/validation_5713/RESULTS.md).
 
 5.7.12 adds the Fermentation Barrel infrastructure (#487), connected to Chemistry
 in both workshops, with 3,402 L useful capacity from the approved large-tun model.
@@ -25,15 +26,14 @@ is tracked separately. See [focused evidence](assets/validation_5711/RESULTS.md)
 The author passed CA486-01 in full on 2026-10-23, without qualifications.
 
 5.7.10 moves existing cartridge assembly to Workbench + Chemistry (#471),
-preserving old in-progress tasks at their original station. Other #471 recipes
-remain undefined. Static checks and 186 native assertions pass; the author
+preserving old in-progress tasks at their original station. The remaining #471 recipes are implemented in the 5.7.13 stage above. Static checks and 186 native assertions pass; the author
 passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
 [Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
 The remaining #471 fermentation design now defines one batch per barrel,
 ingredient consumption at start, discard on cancellation and continued progress
 without Chemistry. Finished product may also be collected without Chemistry,
 in partial withdrawals; the barrel stays occupied until empty. Recipes and
-batch gameplay remain pending.
+batch gameplay are implemented in 5.7.13; author acceptance is pending.
 
 V5.7.9 implements #409 water boiling: atomic station work, biological-only
 purification, temperature and hot-drink guards. The author approved ordinary

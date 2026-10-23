@@ -4,14 +4,15 @@ Documentation version: **5.7.13** — 2026-10-23.
 
 ## #471 / 5.7.13 - Chemistry recipes and fermentation batches
 
-In progress on a separate branch from the accepted cartridge/art/station stages.
-Serializable batch state passes 53 native checks: capacity, occupied-barrel rejection,
-cancellation, exact partial/final withdrawal, save/load and native map travel.
-Shared access and the 72-hour/one-litre recipe are now author-approved in SYSTEMS.
-Implement inventory transactions, network-aware start, collection UI, recipe
-learning/catalogue, migration and merchant acquisition. Other process/consumable
-recipes and economic proposals still need author answers. Do not put development
-backlog into pending_test.txt or label a model-only test as campaign acceptance.
+Implemented on a separate branch from accepted cartridge/art/station stages.
+The author-approved tables in SYSTEMS and chemistry_recipes.json drive twenty-two
+recipes, shared barrel transactions, protected water reservations, cheapest-recipe
+prices and approved full-chain renewal. The final package passes 267 native
+assertions in 13 runs, including shared access, travel, active-task saves and an
+older foundation save. All 16,746 entries match src; deterministic exports and
+five inspected captures pass. Evidence: assets/validation_5713/RESULTS.md.
+CA471-BATCH-01 remains pending in the root author queue. Do not infer acceptance
+from these agent checks or reopen accepted #479 work. #472 remains independent.
 
 ## #487 / 5.7.12 - Fermentation Barrel
 
