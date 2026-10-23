@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.8** — 2026-10-22.
 
-## 5.7.8 - Support implements (#479, awaiting author review)
+## 5.7.8 - Support implements (#479, author accepted)
 
 The approved support roles now connect to native selectors, local targeting,
 health/damage/movement, recipes, merchant catalogues and item migration.
@@ -15,17 +15,16 @@ sprites; four new painted designs cover the other implements and all three tiers
 Old elemental identities/learning survive; active effects resume after saves.
 The correction passes 75 native checks on the 16,721-entry full package;
 18 world/held views, 18 actual inventory rows and six T1 input/return sequences
-were inspected. See assets/validation_578/RESULTS.md and pending_test.txt
-(CA479-01). The author accepted the other five designs and requested only that
+were inspected. See assets/validation_578/RESULTS.md and HISTORY for CA479-01. The author accepted the other five designs and requested only that
 the Orb lose its pedestal and float over the Book's open palm. That correction
 passes 23 focused native checks on the 16,722-entry package. The author accepted
-the Orb retest on 2026-10-22, completing visual approval. Only the outstanding
-gameplay, acquisition and save/load checks remain in CA479-01.
+the Orb retest on 2026-10-22, completing visual approval. The remaining CA479-01
+gameplay, acquisition and save/load checks passed author review on 2026-10-23.
 The 2026-10-23 author run exposed a null-owner read when a curse killed its
 recipient. The support tick now handles native inventory removal during damage.
 Focused regression evidence is in validation_578/owner_death_report.json. The
-author passed the lethal-curse/F2 retest on 2026-10-23. Other CA479-01 gameplay,
-campaign acquisition and save/load checks remain unconfirmed; visuals stay accepted.
+author passed the lethal-curse/F2 retest and subsequently all remaining CA479-01
+checks on 2026-10-23, without qualifications. Review/integration remains separate.
 
 ## 5.7.7 - Centered target information (#481)
 

@@ -18,11 +18,12 @@ checks. The sprite correction passes 75 native checks and includes visible
 inventory row icons. [Evidence](assets/validation_578/RESULTS.md). The author
 accepted five corrected designs and requested a baseless Orb floating above the
 Book's open palm. That focused follow-up passes 23 native checks and the author
-accepted the Orb retest on 2026-10-22, completing visual approval. CA479-01
-retains only outstanding gameplay, acquisition and save/load checks.
+accepted the Orb retest on 2026-10-22, completing visual approval. The author
+passed all remaining CA479-01 checks on 2026-10-23, without qualifications.
 The 2026-10-23 gameplay retest exposed a lethal-curse crash. The corrected
 support tick checks its owner again after native damage. The author passed the
-lethal-curse/F2 retest on 2026-10-23; other CA479-01 checks remain pending.
+lethal-curse/F2 retest and then all gameplay, acquisition and save/load checks.
+Acceptance is recorded in HISTORY; review/integration remains separate.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes
