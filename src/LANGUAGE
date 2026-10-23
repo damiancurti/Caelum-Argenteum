@@ -6375,3 +6375,48 @@ CA_FERMENT_MIN = "Mínimo";
 CA_FERMENT_MAX = "Máximo";
 
 // END GENERATED CHEMISTRY
+
+// BEGIN GENERATED MATE DATA (#472)
+[enu default]
+CA_MATE_DRY_GOURD = "Dry gourd";
+CA_MATE_PREPARE = "Prepare mate";
+CA_MATE_LOAD = "Load yerba";
+CA_MATE_DISCARD = "Discard yerba";
+CA_MATE_FILL = "Pour water";
+CA_MATE_DRINK = "Drink";
+CA_MATE_EMPTY = "Empty water";
+CA_MATE_NO_YERBA = "No yerba";
+CA_MATE_WASHED = "Washed yerba";
+CA_MATE_CONTENT = "Water %.0f / %.0f mL | %.1f C | Yerba %d g | Uses %d / %d";
+CA_MATE_SOURCE = "Source: %s | %.0f mL | %.1f C";
+CA_MATE_NO_SOURCE = "Carry an unlocked bottle or canteen with potable water.";
+CA_MATE_NEEDS_YERBA = "Fresh load: %d g yerba. Empty the water and discard the previous yerba first.";
+CA_MATE_RULES = "60-85 C: hydration and resources. Below 60 C: hydration only. Above 85 C: wait for cooling.";
+CA_MATE_DONE = "Done.";
+CA_MATE_REJECTED = "Check water, yerba, temperature and carrying capacity.";
+CA_MATE_CONFIRM_DISCARD = "Press again to discard this yerba load without recovery.";
+CA_MATE_GOURD = "Gourd mate";
+CA_MATE_SILVER = "Silver mate";
+CA_MATE_GOLD = "Golden mate";
+[es]
+CA_MATE_DRY_GOURD = "Porongo seco";
+CA_MATE_PREPARE = "Preparar mate";
+CA_MATE_LOAD = "Cargar yerba";
+CA_MATE_DISCARD = "Descartar yerba";
+CA_MATE_FILL = "Cebar agua";
+CA_MATE_DRINK = "Beber";
+CA_MATE_EMPTY = "Vaciar agua";
+CA_MATE_NO_YERBA = "Sin yerba";
+CA_MATE_WASHED = "Yerba lavada";
+CA_MATE_CONTENT = "Agua %.0f / %.0f mL | %.1f C | Yerba %d g | Cebados %d / %d";
+CA_MATE_SOURCE = "Origen: %s | %.0f mL | %.1f C";
+CA_MATE_NO_SOURCE = "Lleva una botella o cantimplora con agua potable, sin reserva.";
+CA_MATE_NEEDS_YERBA = "Carga nueva: %d g de yerba. Vacía el agua y descarta la yerba anterior.";
+CA_MATE_RULES = "60-85 C: hidratación y recursos. Menos de 60 C: solo hidratación. Más de 85 C: espera a que enfríe.";
+CA_MATE_DONE = "Hecho.";
+CA_MATE_REJECTED = "Revisa agua, yerba, temperatura y capacidad de carga.";
+CA_MATE_CONFIRM_DISCARD = "Pulsa otra vez para descartar esta carga de yerba sin recuperarla.";
+CA_MATE_GOURD = "Mate de porongo";
+CA_MATE_SILVER = "Mate plateado";
+CA_MATE_GOLD = "Mate dorado";
+// END GENERATED MATE DATA (#472)
