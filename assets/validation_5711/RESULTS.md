@@ -18,3 +18,6 @@ or performance claim is introduced. Exact hashes and launch records: report.json
 and native/. The original save/package remain local for rollback.
 
 CA486-01 remains pending author acceptance; agent checks do not imply acceptance.
+
+Tracked log text normalizes line endings and trailing whitespace; raw native
+logs remain under build/issue486. No native message content is changed.

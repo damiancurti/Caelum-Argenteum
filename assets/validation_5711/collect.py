@@ -29,7 +29,10 @@ for label in ('original-seed01', 'spanish-load01', 'english-city01'):
     assert ('Game saved.' if label=='original-seed01' else 'CA470 RESULT passed=1 failed=0') in log
     for suffix in ('.txt', '-run.json'):
         target=HERE/'native'/f'{label}{suffix}';target.parent.mkdir(exist_ok=True)
-        shutil.copyfile(OUT/f'{label}{suffix}',target)
+        if suffix=='.txt':
+            raw=(OUT/f'{label}{suffix}').read_text(encoding='utf-8-sig')
+            target.write_text('\n'.join(line.rstrip() for line in raw.splitlines())+'\n',encoding='utf-8')
+        else:shutil.copyfile(OUT/f'{label}{suffix}',target)
     records.append({'label':label, 'native_use_assertions':0 if label=='original-seed01' else 1})
 for language in ('es','enu'):
     for view in ('target','menu'):
