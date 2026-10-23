@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## 5.7.13 - Chemistry batches (#471), in progress
+
+The first focused commit adds a serializable batch model with one occupied lot,
+capacity enforcement, an absolute world-time deadline and exact partial withdrawals.
+Native save/load and map travel pass within 53 assertions. This is a foundation,
+not completed inventory/menu/catalogue integration or author acceptance.
+The author approved shared access and the 72-hour molasses batch in SYSTEMS.
+Recipe/economy proposals remain pending; #472 has its own patch.
 
 ## 5.7.12 - Fermentation Barrel infrastructure (#487)
 

@@ -6,8 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.12.** Obtain and update the complete repository, validate
+**Current release: 5.7.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.7.13 starts the #471 fermentation-batch implementation. Its serializable state
+passes 53 isolated native assertions; inventory/menu/recipe integration is in
+progress. No new author test is ready yet. See [evidence](assets/validation_5713/RESULTS.md).
 
 5.7.12 adds the Fermentation Barrel infrastructure (#487), connected to Chemistry
 in both workshops, with 3,402 L useful capacity from the approved large-tun model.

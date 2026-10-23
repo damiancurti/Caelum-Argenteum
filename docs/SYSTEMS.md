@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## Chemistry batches (#471, 5.7.13 implementation in progress)
+
+On 2026-10-23 the author approved shared barrel access: any character may collect
+or discard its contents. One batch still occupies each barrel; a new batch
+requires the approved Chemistry/Workbench network. Losing that network does not
+stop fermentation or prevent finished-product collection.
+
+Approved recipe per litre: 250 g molasses + 800 mL potable water + 5 g yeast yields
+1,000 g fermented intermediate, occupying 1 L for 72 world hours. Whole-litre
+multiples scale ingredients/output/volume, not duration. Dexterity does not
+shorten fermentation. This is a simplified design yield including process losses,
+not an empirical fermentation protocol. Inputs are spent on starting, cancellation
+discards the mixture, and partial collection retains the remainder and occupancy.
+The state model is implemented and tested; production transactions and UI remain
+in progress. Other recipe/economy proposals are not approved by this entry.
 
 ## Fermentation Barrel (#487, 5.7.12)
 

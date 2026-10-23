@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## 5.7.13 - Chemistry batch implementation (#471), 2026-10-23
+
+Initial foundation: CaelumFermentationBatch stores a revisioned lot with capacity,
+original/remaining output and an absolute world-time deadline. It supports exact
+partial withdrawal and clears only when empty or discarded. No per-tic station
+scan or unapproved recipe value is introduced by this model.
+
+The author approved shared access and a simplified one-litre recipe: 250 g molasses,
+800 mL potable water and 5 g yeast produce 1,000 g intermediate in 72 world hours.
+Whole-litre multiples do not change duration; Dexterity does not shorten it.
+
+Evidence: assets/validation_5713/batch_report.json and retained raw logs. Three
+GZDoom 4.14.2 runs pass 53 assertions, including native save/load and transition
+to a second map. The first travel fixture did not reach its destination and is
+retained/excluded; the corrected fixture uses level.ChangeLevel. These synthetic
+model tests do not validate recipe transactions, UI, commerce or multiplayer.
+No author test is ready at this checkpoint. Full #479 acceptance was recorded
+separately in 26af9447 and propagated before this branch; it is not reopened.
 
 ## 5.7.12 - Fermentation Barrel (#487), 2026-10-23
 

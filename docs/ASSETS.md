@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
 
 ## 5.7.12 - Owned Fermentation Barrel (#487)
 

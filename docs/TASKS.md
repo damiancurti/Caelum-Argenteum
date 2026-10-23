@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## #471 / 5.7.13 - Chemistry recipes and fermentation batches
+
+In progress on a separate branch from the accepted cartridge/art/station stages.
+Serializable batch state passes 53 native checks: capacity, occupied-barrel rejection,
+cancellation, exact partial/final withdrawal, save/load and native map travel.
+Shared access and the 72-hour/one-litre recipe are now author-approved in SYSTEMS.
+Implement inventory transactions, network-aware start, collection UI, recipe
+learning/catalogue, migration and merchant acquisition. Other process/consumable
+recipes and economic proposals still need author answers. Do not put development
+backlog into pending_test.txt or label a model-only test as campaign acceptance.
 
 ## #487 / 5.7.12 - Fermentation Barrel
 
