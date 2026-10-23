@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## #472 / 5.7.14 - Reusable mates
+
+Implementation covers the three approved vessel types, yerba/water preparation,
+thermal mixing/cooling, hot/cold/washed behavior, additive ten-second recovery,
+painted world/inventory sprites, native crafting/learning and commerce. The recipe and material
+schemas append identities and preserve older knowledge/stock. Used contents stay
+individual through shop, box, chest, save and map transitions. No design questions
+remain for this first delivery; optional herbs require a future authored scope.
+Agent evidence: assets/validation_5714/RESULTS.md. The author passed functional
+CA472-01 checks on 2026-10-23 and rejected the initial hemispherical rendered art.
+The corrected historical sprites subsequently passed explicit author review on
+the same date. CA472-01 is fully accepted and pending_test.txt is empty. The
+approved V5.7 implementation/test scope is complete; V5.8 follows after GitHub
+integration. Keep the focused issues and their evidence separate.
 
 ## #471 / 5.7.13 - Chemistry recipes and fermentation batches
 

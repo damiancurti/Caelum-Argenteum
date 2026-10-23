@@ -347,6 +347,9 @@ class CaelumPlayerResources : Object play
             / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS
                 * CaelumWorldClock.SecondsPerGameHour(level.MapName))
             * user.DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
+        // Tres identidades acotadas, una vez por segundo; no hay simulación térmica por mate/tic.
+        if(level.Time%TICRATE==0)for(int variant=0;variant<CaelumMateData.COUNT;variant++)
+        {let mate=CaelumMateItem(user.FindInventory(CaelumMateData.ItemClass(variant)));if(mate!=null)mate.SyncTemperature(user);}
         // La piscina hidrata directamente y permite llevar agua en recipientes.
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {

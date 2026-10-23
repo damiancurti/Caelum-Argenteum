@@ -1,6 +1,33 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## 5.7.14 - Mate vessels and inventory sprites (#472)
+
+The author accepted functional tests on 2026-10-23 but rejected the original
+hemispherical procedural vessels/icons. Corrected, originally painted sprites
+show a complete porongo and ornamented silver/gold-clad wooden bodies with
+narrower mouths and fixed bronze bombillas. They follow SPRITE_ART_DIRECTION
+and the accepted owned inventory style. Silver has a central rosette and leafy
+scrolls; gold has an elongated body, oval floral panel and decorated borders.
+
+Sources, exact built-in image_gen prompts, museum references/roles and hashes:
+`assets/art_source/mate_sprites`. San Antonio Museum of Art's Argentine
+nineteenth-century mate (85.1.653.1-2) informed the closed silhouette; USC's
+mate informed vegetal ornament. The Museo de Artes Decorativas documents
+ovoid poros used in Argentina. These are original game interpretations, not
+reproductions of specific artifacts. Museum photographs are not packaged.
+
+`pack_mate_sprites.py` deterministically crops and downsamples generated alpha
+to 128-pixel inventory icons. World TEXTURES registration compensates the 0.25
+actor scale, keeping the former approximately 5.3-unit total height. The three
+mate MODELDEF bindings are removed from the complete package. Legacy meshes,
+generator function, manifest and captures remain recovery evidence; the old
+generator entry point delegates to the painted exporter. Dry-gourd material
+art and accepted #479 weapon art are unchanged. The open-hemisphere mass/thermal
+approximation remains the accepted gameplay model. The author accepted the
+corrected artwork and all CA472-01 checks on 2026-10-23. The contact sheet and
+native correction evidence preserve the accepted presentation.
 
 ## 5.7.13 - Chemistry supply presentation (#471)
 

@@ -1,0 +1,48 @@
+{
+  "issue": 472,
+  "date": "2026-10-23",
+  "mode": "built-in image_gen; original painted art; museum photographs are references only, not packaged",
+  "prompts": {
+    "gourd": "Use case: stylized-concept. Asset type: a single transparent-background painted inventory/world sprite for Caelum Argenteum, a dark fantasy RPG set in nineteenth-century Argentina.\nReference roles: image 1 is the project's OWN accepted inventory sprite sheet and is a STYLE reference only. Images 2 and 3 are museum photographs of nineteenth-century mate vessels, SHAPE/HISTORICAL references only; do not copy their photographic pixels or reproduce the exact museum pieces.\nPaint one modest natural dried calabash mate (100 mL variant) with a fixed bronze bombilla inserted into its small top mouth. The body is a complete upright pear/egg shaped porongo, gently irregular, full belly and shoulders tapering to a narrow short neck; the opening is much narrower than the belly. NOT a hemispherical bowl. A naturally flattened tiny bottom, no pedestal or separate stand. Rich worn ochre/brown dried gourd with subtle mottling and a plain cut rim, dark interior. Plain slim warm bronze straw rises from the mouth toward upper right and has a subtly bent flattened mouthpiece.\nArt direction: hand-painted pixel-oriented late-1990s dark fantasy inventory art, visibly painted crisp clusters and stepped contour, restrained earthy palette, 5-7 deliberate value bands, soft light upper left, dark brown contour, individually painted highlights. Render as a sprite designed to read at 128x128 and 20x20; bold silhouette and purposeful brushwork. Do NOT make a smooth 3D render, photographic object, glossy PBR material, vector icon, modern thermos or low-poly faceted bowl.\nComposition: ONE object centered, full vessel and straw wholly visible, slight three-quarter FRONT view with just a little inside of the opening visible. Body occupies about 60 percent of total height, straw remaining 40 percent. Large object with 8 percent transparent margin on all sides. Transparent background with real alpha, no floor, no cast shadow, no grid, no text, no watermark, no hands, no other objects.",
+    "silver": "Use case: stylized-concept. Asset type: ONE transparent painted inventory/world sprite, silver-clad wooden mate, 250 mL, for Caelum Argenteum.\nReference 1: project's owned inventory sprites, STYLE ONLY. References 2 and 3: museum nineteenth-century mates, HISTORICAL SHAPE AND ORNAMENT vocabulary only. Create an ORIGINAL vessel, do not trace museum photographs.\nPaint a nineteenth-century Argentine mate: upright closed ovoid body with full shoulders curving inward toward a narrow circular mouth and short neck, much narrower than the belly. It is carved dark algarrobo wood with a continuous thin silver exterior cladding, a glimpse of dark wood just inside the lip. Rich hand-chased silver decoration: a boldly readable central flower rosette, sweeping leafy scrolls across the shoulders and belly, a beaded engraved rim, a restrained scalloped lower border. No jewelry gems, no fantasy faces, no crosses, no large pedestal, no handles. The base is slightly flattened so the vessel can rest. The vessel's body must be completely silver rather than bare wood bands. Decoration is shallow relief in the thin cladding.\nOne fixed BRONZE bombilla (warm brown/gold contrasting with cool silver body) inserted, rises toward upper right, slender with flattened gently bent mouthpiece. Body about 60 percent of total height, straw the remaining40percent.\nStyle exactly painted pixel-oriented dark fantasy RPG inventory art with crisp small brush clusters, stepped contour, limited gray/blue silver shading plus off-white highlights and brown patina in engravings. Deliberate legible carved motifs survive at128x128. Soft upper-left light, dark subtle outline, no photoreal chrome, no smooth 3D render, no low-poly facets, no bloom. Front three-quarter view just above mouth level, full object centered, 8 percent margin. Real transparent alpha background, NO floor/castshadow/text/grid/watermark/hands/otheritems. It must unmistakably be a closed egg-shaped historical mate, NOT a hemisphere or wide open bowl.",
+    "gold": "Use case: stylized-concept. Asset type: ONE transparent painted inventory/world sprite, gold-clad wooden mate, 500 mL, for Caelum Argenteum.\nReference 1 is the project's owned inventory sprite sheet: STYLE reference only. Reference 2 is the nineteenth-century Argentine mate at San Antonio Museum of Art: historical CLOSED BODY shape and chased ornament vocabulary only. Reference 3 is the newly painted silver mate: set consistency only; this gold design must have a distinguishable elongated silhouette and different ornament.\nCreate an ORIGINAL nineteenth-century-inspired Argentine mate made from dark algarrobo wood, fully covered externally by thin warm aged GOLD cladding. Closed elongated egg/pear-shaped body, rounded full belly, gently tapering shoulders and a short narrow mouth. Not a wide open bowl, hemisphere, goblet or cup with stem. Dark wooden interior visible just inside the top lip. Slightly flattened low bottom, no pedestal, no handles or legs.\nDecoration: shallow hand-chased golden flowing leafy scrolls across the body, a clear central eight-petal rosette in a slender oval frame, two sweeping leaf sprays, a scalloped shoulder band and small engraved repeating lozenges around the lower border. Ornament should be large and legible, not micro-noise. No jewel, logo, text, heraldry or fantasy faces. Fixed slender BRONZE bombilla, darker reddish brown than the gold body, inserted in the mouth and rising to upper right with flattened bent mouthpiece. Body approximately two thirds of total object height.\nHand-painted pixel-oriented dark-fantasy sprite in the project's style: crisp purposefully grouped paint/pixel marks, stepped contour, bold silhouette, warm ochre gold planes, dark umber engraved recesses and selective pale gold highlights, 6-8 strong value bands, subtle worn surface. Soft upper-left illumination. Must read at128x128 and20x20. Avoid smooth photoreal reflections, 3D/PBR rendering, low-poly facets, photographic detail, comic style or vector graphics.\nFront slight three-quarter view just above opening. One entire object centered,8percent transparent margin, no floor, no castshadow, no hands, no background or grid, no text, no watermark. True transparent alpha."
+  },
+  "references": [
+    {
+      "url": "https://www.samuseum.org/blog/autumn-favorites/",
+      "image_url": "https://15bt3l3suv.ucarecd.net/d2afe6cd-cb1c-4c70-a0c0-45c1b392de37/-/crop/1279x960/1%2C0/-/preview/",
+      "identity": "Mate gourd with bombilla, Argentina, nineteenth century, 85.1.653.1-2",
+      "role": "Ovoid closed body, narrow mouth and chased mounts; photograph inspected locally. Museum photo not redistributed."
+    },
+    {
+      "url": "https://museovirtual.usc.gal/es/bienes/recipiente-de-mate",
+      "image_url": "https://museovirtual.usc.gal/sites/all/files/public/styles/work/public/gallery/matereitoriaz.png?itok=sMn5GqBk",
+      "identity": "Carved gourd and silver mounts, donation 1880-1890",
+      "role": "Vegetal engraving vocabulary; photographed image inspected. No feet/handle copied."
+    },
+    {
+      "url": "https://www.artdec.gob.cl/galeria/mates-de-calabaza",
+      "role": "Museum typology: elongated/ovoid poros particularly used in Argentina; shapes distinguish whole gourds from hemispherical bowls."
+    },
+    {
+      "url": "https://patrimonioargentino.cultura.gob.ar/index.php/Detail/objects/78026",
+      "identity": "Museo Historico Nacional MHNA4882, nineteenth-century silver mate",
+      "role": "Textual corroboration of chased/engraved leaf ornament. Image unavailable (403)."
+    }
+  ],
+  "registration": {
+    "canvas": [
+      128,
+      128
+    ],
+    "fit": [
+      112,
+      112
+    ],
+    "bottom": 120,
+    "world_texture_scale": 5.333333,
+    "actor_scale": 0.25,
+    "alpha": "Preserve generated alpha through crop and Lanczos downsampling. No chroma key, recoloring or repainting."
+  },
+  "scope": "Three mate sprites and world bindings only. Accepted recipe/thermal data unchanged; hemisphere remains a simplified thermal calculation. Legacy procedural vessel source and outputs retained unbound."
+}

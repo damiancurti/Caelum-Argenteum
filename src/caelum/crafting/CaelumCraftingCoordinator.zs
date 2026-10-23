@@ -1470,6 +1470,7 @@ class CaelumCraftingCoordinator : Object play
             }
 
             if(CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))CaelumClothing.Preview(user);
+            if(CaelumMateData.IsRecipe(user.CraftingSelectionRecipe))CaelumMateCrafting.Preview(user);
 
             // El montaje y la reparación producen un objeto indivisible. Una
             // eficiencia menor conserva el resultado completo y aumenta cada

@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
@@ -12,6 +12,19 @@ Author decisions take precedence. [ASSETS](ASSETS.md) owns resource inventories,
 provenance and technical integration evidence; [SYSTEMS](SYSTEMS.md) owns gameplay;
 [MAP01](MAP01.txt) owns story and character canon. This document owns the visual
 requirements and reusable generation brief. Keep those responsibilities separate.
+
+## Mate silhouette correction for #472 (2026-10-23)
+
+The author accepted functional tests but rejected the hemispherical, rendered
+mate appearance. Use painted sprites in inventory, preparation, crafting,
+quick use and the world. Historical nineteenth-century references establish
+closed ovoid/pear-shaped bodies and narrower mouths. Silver/gold-clad wooden
+mates need readable chased vegetal ornament, rosettes and decorated rims;
+the natural gourd stays modest. All retain the fixed bronze bombilla.
+Use the owned painted inventory style, not procedural 3D projections. Record
+museum references and their roles in assets/art_source/mate_sprites/PROMPTS.json.
+The approved hemisphere is a simplified thermal calculation, not a visual brief.
+The author accepted the corrected artwork under CA472-01 on 2026-10-23.
 
 ## Weapon continuity correction for #479 (2026-10-22)
 

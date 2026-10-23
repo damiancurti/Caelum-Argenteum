@@ -7,7 +7,7 @@ class CaelumCityMerchant : Actor
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
-    int ChemistryCatalogueRevision;
+    int ChemistryCatalogueRevision,MateCatalogueRevision;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -69,6 +69,7 @@ class CaelumCityMerchant : Actor
         if(item is "CaelumRecipeOffer")return false;
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);
+        if(material!=null && Category==0 && material.GetSpecialType()==CaelumMateData.DRY_GOURD)return true;
         if(material!=null && Category==0 && CaelumChemistryData.IsMaterial(material.GetSpecialType()))return true;
         if(material!=null && CaelumLandImports.Accepts(Category,material.GetSpecialType())) return true;
         if(material!=null && Category==CaelumMarineData.IMPORT_CATEGORY
@@ -89,6 +90,7 @@ class CaelumCityMerchant : Actor
             return Category==3 && (kind==CaelumConstants.EQUIPMENT_KIND_AMULET || kind==CaelumConstants.EQUIPMENT_KIND_SEAL);
         }
         let consumable=CaelumConsumableItem(item);
+        if(item is 'CaelumMateItem')return Category==0;
         if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
@@ -185,6 +187,7 @@ class CaelumCityMerchant : Actor
         CaelumMarineImports.Ensure(self,user);
         CaelumSupportCatalogue.Ensure(self,user);
         CaelumChemistryCatalogue.Ensure(self,user);
+        CaelumMateCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {
@@ -271,6 +274,7 @@ class CaelumCityMerchant : Actor
         if(Category==0)
             for(int type=CaelumConstants.CONSUMABLE_LIFE_MEDIUM;type<CaelumConstants.CONSUMABLE_TYPE_COUNT;type++)
             {
+                if(CaelumMateData.IsConsumable(type))continue;
                 if(type<CatalogueCursor && !EnumeratingStock)continue;
                 if(SeedSimple(user.GetConsumableClassName(type),CaelumCityData.CONSUMABLE_STOCK)==null && !EnumeratingStock)return;
                 if(!EnumeratingStock)CatalogueCursor=type+1;
@@ -337,6 +341,7 @@ class CaelumCityTradeSession : Object play
     }
     static Inventory Stack(Actor owner,Inventory item)
     {
+        if(item is 'CaelumMateItem' && !(owner is 'CaelumPlayer'))return null;
         if(item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer")return null;
         for(Inventory current=owner.Inv;current!=null;current=current.Inv)
         {
@@ -362,7 +367,7 @@ class CaelumCityTradeSession : Object play
     static double Value(Inventory item)
     {let key=Companion(item);return CaelumEconomyRules.GetInventoryUnitBaseValue(item)+(key==null?0:CaelumEconomyRules.GetInventoryUnitBaseValue(key));}
     static bool Single(Inventory item)
-    {return item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer";}
+    {return item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer" || item is 'CaelumMateItem';}
     void Refresh(CaelumPlayer user)
     {
         CaelumMerchantCoordinator.RefreshCityTrade(self, user);

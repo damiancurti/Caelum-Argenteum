@@ -1,0 +1,80 @@
+{
+  "issue": 472,
+  "exporter": "Pillow 12.0.0",
+  "registration": {
+    "canvas": [
+      128,
+      128
+    ],
+    "fit": [
+      112,
+      112
+    ],
+    "bottom": 120,
+    "world_texture_scale": 5.333333,
+    "actor_scale": 0.25,
+    "alpha": "Preserve generated alpha through crop and Lanczos downsampling. No chroma key, recoloring or repainting."
+  },
+  "inputs": {
+    "assets/generators/pack_mate_sprites.py": "ebabaef1d5be3475e76301ee63450bb7f9235b91566d6c3c8f1cc727a1838bad",
+    "assets/art_source/mate_sprites/PROMPTS.json": "5b3ea3853337d2a6c80d256888d64bd86f282d30b4c477b28baf0dcbafae5bba",
+    "assets/art_source/mate_sprites/gourd-source.png": "f0f6b9ded14507b0c4639ee683a56b11251c868f646726aaf145e2c3393fce0d",
+    "assets/art_source/mate_sprites/silver-source.png": "29fd3284307167144ec5afcbc2c3426c9177b6e6586540db06d29a3590082534",
+    "assets/art_source/mate_sprites/gold-source.png": "67e7035fdcad010e5bebd7c401b4fa6aeac1279aaafb39d552d60b4bd7a0f5a8"
+  },
+  "outputs": {
+    "src/graphics/caelum/icons/mate/gourd.png": "1add7dffcab6b7bcc92337820a624d1d16bd3eda7804863e446253a88f438ef0",
+    "src/graphics/caelum/icons/mate/silver.png": "e1e39bfe6a5c67786d81c3134120dc726499972c9f452143df1c8e2fa617c8fa",
+    "src/graphics/caelum/icons/mate/gold.png": "09b56c5e4a3d8b3a34087b0596ba828d7c662a007323c4930a1a76c911483307",
+    "src/caelum/data/mate.textures": "470c7527f52f4e1ab8f34a2d3645e34b85e9ac34cd11aeac6b26f47d28be46fe",
+    "src/caelum/data/mate.modeldef": "1fbfa4b4228040ce074f0357878ed695b71f30278c157ba82197a72fbb9c13c8",
+    "assets/art_source/mate_sprites/contact-sheet.png": "d64aa4c62cfcd48bccd4a87c78948c93c569df2e03982b10d3561256a4c63d1a"
+  },
+  "assets": [
+    {
+      "key": "gourd",
+      "source_bounds": [
+        65,
+        65,
+        1218,
+        1204
+      ],
+      "icon_bounds": [
+        31,
+        9,
+        105,
+        120
+      ]
+    },
+    {
+      "key": "silver",
+      "source_bounds": [
+        0,
+        17,
+        1193,
+        1312
+      ],
+      "icon_bounds": [
+        33,
+        9,
+        109,
+        118
+      ]
+    },
+    {
+      "key": "gold",
+      "source_bounds": [
+        58,
+        60,
+        1181,
+        1312
+      ],
+      "icon_bounds": [
+        35,
+        8,
+        111,
+        115
+      ]
+    }
+  ]
+}

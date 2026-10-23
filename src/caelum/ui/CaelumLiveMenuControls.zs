@@ -62,6 +62,8 @@ class CaelumLiveMenuControls : Object ui
                 for(int i=0;i<CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT;i++)Region(2000+i,50+i*57,122,40,28);
                 for(int i=0;i<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS;i++)
                     if(user.FormalInventoryRowKind[i]>=0)Region(3000+i,48,168+i*21,360,21);
+                if(CaelumMateSession.Selected(user)!=null)
+                {NextX=414;RowY=146;Button("CA_MATE_PREPARE",0,114,"r",192,!CaelumMateSession.Selected(user).InMagicBox);}
                 int row=user.FormalInventorySelectionIndex-user.FormalInventoryVisibleStart;
                 if(user.FormalInventoryEntryCount>0 && row>=0 && row<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
                     && user.FormalInventoryRowWaterLiters[row]>=0)
@@ -196,6 +198,12 @@ class CaelumLiveMenuControls : Object ui
                 Row(325);Button("CA_UI_NEXT",0,110,"n");
                 Button("CA_CONTAINER_STORAGE",0,100,"d",188);Button("CA_CONTAINER_CARRY",0,99,"c",188);
             }
+        }
+        else if(context==host.CTX_MATE)
+        {
+            Row(248);Button("CA_MATE_LOAD",0,114,"r",180);Button("CA_UI_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_UI_NEXT",InputEvent.Key_RightArrow,0,"",180);
+            Row(274);Button("CA_MATE_FILL",0,102,"f",180);Button("CA_MATE_DRINK",InputEvent.Key_Enter,0,"",180);Button("CA_MATE_EMPTY",0,118,"v",180);
+            Row(326);Button("CA_MATE_DISCARD",0,99,"c",276);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",276);
         }
         else if(context==host.CTX_EQUIPMENT)
         {

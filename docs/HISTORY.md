@@ -1,6 +1,55 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## 5.7.14 - Reusable mates (#472), 2026-10-23
+
+Implements the approved gourd and silver/gold-clad algarrobo vessels, with fixed
+20 g bronze bombillas, owned artwork and physical mass/thermal
+data. Native items retain water, temperature, yerba and remaining hot uses.
+Inventory preparation, quick use, twenty hot uses, cold/washed hydration and
+additive ten-second Health/Anima/Air recovery follow the author's decisions.
+The author explicitly approved washed hydration-only use and ten-second pulses
+on 2026-10-23. Optional herbs remain outside this first delivery.
+
+Adds three learned recipes, dry gourd supply, three mates per Provisions vendor
+and ten recipe copies in the library, with approved materials, station needs and
+existing waste/time/price rules. Schema and catalogue migrations are additive.
+Used mates retain identity through commerce, storage, native saves and travel.
+The legacy consumable seeding loop now excludes the dedicated mate catalogue,
+avoiding an unintended 1,000-unit stock. A stale source selection is rejected
+instead of consuming another bottle after a refresh.
+
+The original functional package passes 163 native assertions in 16 runs, plus three baseline
+seed/rollback assertions. All 16,806 package entries match src; two generator
+reruns preserve 59 outputs. Eight native captures were inspected. Project,
+dialogue/index and whitespace validation pass. Evidence and limitations:
+assets/validation_5714/RESULTS.md. Static analysis, native agent checks and author
+acceptance are separate. No whole-map performance claim is made. #471's
+CA471-BATCH-01 acceptance remains recorded in its own 5.7.13 entry and PR #490.
+
+Author result on 2026-10-23: **CA472-01 (origin 5.7.14 / #472), partial pass**.
+The author confirmed all functional checks passed and explicitly rejected the
+mate sprites: wrong hemispherical silhouette, insufficient silver/gold ornament,
+and an appearance like 3D models. Functional steps leave pending_test.txt;
+visual acceptance remains under the same ID. This does not reopen #471.
+
+The correction uses historical museum references, original painted sources,
+ornamented narrow-mouth vessels and genuine world billboards. The accepted
+physical approximation, recipes, runtime state and resource behavior stay intact.
+Legacy art/source evidence is preserved. Same patch/version; corrected art is
+pending author review, independent of native technical verification. The corrected
+complete package passes 21 assertions in five native runs, including loading the
+pre-correction save. Eight new captures, six deterministic outputs and full
+source/package equality are recorded in assets/validation_5714/RESULTS.md.
+
+Final author confirmation on 2026-10-23: **CA472-01 (origin 5.7.14 / #472),
+passed in full**, including the corrected historical sprites. The author stated
+that all tests now passed, without qualifications. The outstanding visual entry
+is removed and the tracked pending_test.txt is empty. Functional and visual
+acceptance complete the approved V5.7 author-test scope. This documentation-only
+acceptance update preserves the tested runtime/package and release number;
+integration of the focused PRs remains a separate operation.
 
 ## 5.7.13 - Chemistry batch implementation (#471), 2026-10-23
 

@@ -272,6 +272,8 @@ class CaelumInventoryService : Object play
             // Materiales comparten clase: copiar su identidad antes de mover la
             // fracción. Amount y ubicación se aplican después del pago atómico.
             if(item is "CaelumMaterialPickup")for(int i=0;i<5;i++)split.args[i]=item.args[i];
+            let mate=CaelumMateItem(item);
+            if(mate!=null)mate.CopyContents(CaelumMateItem(split));
         }
         Array<CaelumCurrencyItem> coins;
         if (!PrepareMerchantCurrencyObjects(user, coins))
@@ -2461,6 +2463,7 @@ class CaelumInventoryService : Object play
         int kind = user.GetFormalInventoryEntryKind(entry);
         user.FormalInventoryRowKind[row] = kind;
         user.FormalInventoryRowWaterLiters[row] = -1;
+        let mate=CaelumMateItem(entry);if(mate!=null)mate.SyncTemperature(user);
         let water = CaelumWaterContainer(entry);
         if (water != null)
         { water.EnsureWaterQuality(); water.EnsureWaterTemperature(user); user.FormalInventoryRowWaterLiters[row] = water.WaterLiters; user.FormalInventoryRowWaterQuality[row] = water.WaterQuality; user.FormalInventoryRowWaterTemperature[row]=water.WaterTemperatureC; }
@@ -4459,6 +4462,7 @@ class CaelumInventoryService : Object play
 
     static Name GetConsumableClassName(CaelumPlayer user, int consumableType)
     {
+        if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.ItemClass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if(CaelumPotionRules.IsPotion(consumableType))return CaelumPotionRules.ItemClass(consumableType);
         switch (consumableType)
         {

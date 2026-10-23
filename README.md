@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.13.** Obtain and update the complete repository, validate
+**Current release: 5.7.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.7.14 implements reusable gourd, silver-clad and gold-clad mates (#472), with
+individual contents, temperature, twenty hot uses, additive ten-second recovery,
+recipes and commerce. Inventory preparation shows the source and action keys.
+The functional package passed 163 native assertions; the corrected historical
+sprites passed 21 focused checks. CA472-01 passed full author acceptance on
+2026-10-23, completing the approved V5.7 test scope; see
+[evidence](assets/validation_5714/RESULTS.md). #471 is already accepted.
 
 5.7.13 implements #471 Chemistry recipes, shared fermentation batches, partial
 collection, protected water reservations and recipe-derived prices/imports.

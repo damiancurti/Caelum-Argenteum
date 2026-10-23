@@ -1,0 +1,192 @@
+{
+  "issue": 472,
+  "author_approved": "2026-10-23",
+  "schema_revision": 1,
+  "geometry": "open hemisphere",
+  "density_kg_m3": {
+    "gourd": 124,
+    "algarrobo": 760,
+    "silver": 10490,
+    "gold": 19300
+  },
+  "conductivity_w_mk": {
+    "gourd": 0.07,
+    "algarrobo": 0.17,
+    "silver": 429,
+    "gold": 318
+  },
+  "specific_heat_j_kgk": {
+    "gourd": 1500,
+    "algarrobo": 1500,
+    "silver": 235,
+    "gold": 129
+  },
+  "fixed_bronze_straw_kg": 0.02,
+  "hot_minimum_c": 60,
+  "hot_maximum_c": 85,
+  "hot_uses_per_load": 20,
+  "resource_to_nominal_hydration_ratio": 0.1,
+  "optional_herbs": false,
+  "wall_water_absorption": false,
+  "vessels": [
+    {
+      "key": "gourd",
+      "en": "Gourd mate",
+      "es": "Mate de porongo",
+      "capacity_liters": 0.1,
+      "water_liters": 0.06,
+      "yerba_grams": 20,
+      "body": "gourd",
+      "wall_meters": 0.005,
+      "coating": null,
+      "coating_meters": 0,
+      "recipe_grams": {
+        "dry_gourd": 6,
+        "bronze": 20
+      },
+      "jeweler_required": false
+    },
+    {
+      "key": "silver",
+      "en": "Silver mate",
+      "es": "Mate plateado",
+      "capacity_liters": 0.25,
+      "water_liters": 0.15,
+      "yerba_grams": 50,
+      "body": "algarrobo",
+      "wall_meters": 0.006,
+      "coating": "silver",
+      "coating_meters": 0.0001,
+      "recipe_grams": {
+        "wood": 79,
+        "silver": 21,
+        "bronze": 20
+      },
+      "jeweler_required": true
+    },
+    {
+      "key": "gold",
+      "en": "Golden mate",
+      "es": "Mate dorado",
+      "capacity_liters": 0.5,
+      "water_liters": 0.3,
+      "yerba_grams": 100,
+      "body": "algarrobo",
+      "wall_meters": 0.006,
+      "coating": "gold",
+      "coating_meters": 0.0001,
+      "recipe_grams": {
+        "wood": 122,
+        "gold": 57,
+        "bronze": 20
+      },
+      "jeweler_required": true
+    }
+  ],
+  "acquisition": {
+    "purchase_and_fabrication": true,
+    "required_stations": [
+      "workbench",
+      "fine_tools"
+    ],
+    "complexity": "normal",
+    "efficiency_and_time": "existing fabrication rules",
+    "material_price_copper_per_gram": {
+      "dry_gourd": 2
+    },
+    "provisions_dry_gourd_grams": 1000,
+    "provisions_stock_per_mate": 3,
+    "library_copies_per_recipe": 10,
+    "price": "derived from recipe materials and existing margins"
+  },
+  "sources": [
+    {
+      "url": "https://cadamda.org.ar/portal/index.php?Itemid=36&id=49&option=com_content&task=view",
+      "supports": "Prosopis alba density 760 kg/m3 at 15% moisture"
+    },
+    {
+      "url": "https://sedici.unlp.edu.ar/handle/10915/81470",
+      "supports": "Aeberhard et al. 2003: estimated algarrobo conductivity near 0.17 W/(m K), not a direct measurement"
+    },
+    {
+      "url": "https://datjournal.anhembi.br/dat/article/view/108",
+      "supports": "Nejeliski and Duarte 2019: gourd apparent density 124 kg/m3"
+    }
+  ],
+  "limitations": "Gourd conductivity and vegetable specific heat are author-approved design approximations. This simplified model does not simulate wall absorption. No historical specimen measurement is claimed. Fixed bronze straw is included in inventory mass and fabrication; its separate thermal exchange has not been calibrated.",
+  "first_recipe": 198,
+  "first_consumable": 17,
+  "dry_gourd_material": 104,
+  "ui": {
+    "CA_MATE_DRY_GOURD": {
+      "en": "Dry gourd",
+      "es": "Porongo seco"
+    },
+    "CA_MATE_PREPARE": {
+      "en": "Prepare mate",
+      "es": "Preparar mate"
+    },
+    "CA_MATE_LOAD": {
+      "en": "Load yerba",
+      "es": "Cargar yerba"
+    },
+    "CA_MATE_DISCARD": {
+      "en": "Discard yerba",
+      "es": "Descartar yerba"
+    },
+    "CA_MATE_FILL": {
+      "en": "Pour water",
+      "es": "Cebar agua"
+    },
+    "CA_MATE_DRINK": {
+      "en": "Drink",
+      "es": "Beber"
+    },
+    "CA_MATE_EMPTY": {
+      "en": "Empty water",
+      "es": "Vaciar agua"
+    },
+    "CA_MATE_NO_YERBA": {
+      "en": "No yerba",
+      "es": "Sin yerba"
+    },
+    "CA_MATE_WASHED": {
+      "en": "Washed yerba",
+      "es": "Yerba lavada"
+    },
+    "CA_MATE_CONTENT": {
+      "en": "Water %.0f / %.0f mL | %.1f C | Yerba %d g | Uses %d / %d",
+      "es": "Agua %.0f / %.0f mL | %.1f C | Yerba %d g | Cebados %d / %d"
+    },
+    "CA_MATE_SOURCE": {
+      "en": "Source: %s | %.0f mL | %.1f C",
+      "es": "Origen: %s | %.0f mL | %.1f C"
+    },
+    "CA_MATE_NO_SOURCE": {
+      "en": "Carry an unlocked bottle or canteen with potable water.",
+      "es": "Lleva una botella o cantimplora con agua potable, sin reserva."
+    },
+    "CA_MATE_NEEDS_YERBA": {
+      "en": "Fresh load: %d g yerba. Empty the water and discard the previous yerba first.",
+      "es": "Carga nueva: %d g de yerba. Vacía el agua y descarta la yerba anterior."
+    },
+    "CA_MATE_RULES": {
+      "en": "60-85 C: hydration and resources. Below 60 C: hydration only. Above 85 C: wait for cooling.",
+      "es": "60-85 C: hidratación y recursos. Menos de 60 C: solo hidratación. Más de 85 C: espera a que enfríe."
+    },
+    "CA_MATE_DONE": {
+      "en": "Done.",
+      "es": "Hecho."
+    },
+    "CA_MATE_REJECTED": {
+      "en": "Check water, yerba, temperature and carrying capacity.",
+      "es": "Revisa agua, yerba, temperatura y capacidad de carga."
+    },
+    "CA_MATE_CONFIRM_DISCARD": {
+      "en": "Press again to discard this yerba load without recovery.",
+      "es": "Pulsa otra vez para descartar esta carga de yerba sin recuperarla."
+    }
+  },
+  "recovery": "Ten real seconds using existing hydration pulses; each dose adds its own pending pulses without erasing earlier ones.",
+  "washed_out": "Hydration only until yerba is discarded and replaced."
+}
