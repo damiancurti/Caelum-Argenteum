@@ -39,7 +39,14 @@ are retained. Historical release names and asset provenance keep their original
 wording. #487 separately tracks the requested Fermentation Barrel. Native and
 static evidence are recorded under assets/validation_5711: 16,724 matching source
 entries, two passing real Use assertions, old-save loading and four inspected
-native captures. CA486-01 is pending.
+native captures.
+
+On 2026-10-23 the author confirmed "Las pruebas dieron correcto." CA486-01
+(origin: 5.7.11 / #486) passed in full, without qualifications: station naming
+in both languages and maps, preserved appearance and ordinary interaction.
+Its completed entry was removed from pending_test.txt. The separately prepared
+barrel check belongs to #487; unrelated #479 gameplay acceptance remains pending.
+This acceptance update keeps version 5.7.11 and the original runtime evidence.
 
 ## 5.7.10 - Cartridge station migration (#471), 2026-10-23
 

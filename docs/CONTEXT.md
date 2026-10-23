@@ -3,7 +3,7 @@
 Documentation version: **5.7.12** — 2026-10-23.
 
 **5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01pending/away.#471 batches pending.
-**5.7.11/#486:** Chemistry; CA486-01pending.
+**5.7.11/#486:** Chemistry; CA486-01 accepted2026-10-23.
 **5.7.10/#471:** cartridges; validation_5710. CA471-AMMO-01 accepted2026-10-23; other recipes pending.
 **5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
 

@@ -17,9 +17,10 @@ yields or durations are inferred here. CA486-01 naming review remains separate.
 
 Apply the authored Chemistry / Química name to station UI and boiling feedback;
 retain internal Alchemy keys/classes for saved references. No gameplay or art
-changes. Native presentation evidence: assets/validation_5711. CA486-01 remains
-the author check. #487 separately tracks the new Fermentation Barrel, with its
-approved network dependency, process ownership, placements and capacity detailed above.
+changes. Native presentation evidence: assets/validation_5711. The author passed
+CA486-01 in full on 2026-10-23, without qualifications; its pending entry was removed.
+#487 separately tracks the new Fermentation Barrel, with its approved network
+dependency, process ownership, placements and capacity detailed above.
 
 ## #471 / 5.7.10 - Cartridge station migration
 
