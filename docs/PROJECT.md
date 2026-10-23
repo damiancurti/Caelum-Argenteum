@@ -13,8 +13,8 @@ to the travelling record. No new recipe or material IDs are introduced.
 
 Validation: static checks and 186 native assertions pass; source/package bytes
 match across all 16,724 entries. Two UI captures were inspected. Evidence:
-assets/validation_5710. Author check CA471-AMMO-01 is pending and deferred while
-the author is away. This is only the station-migration
+assets/validation_5710. The author passed CA471-AMMO-01 in full on 2026-10-23,
+without qualifications. This is only the station-migration
 part of #471; new consumable/intermediate recipe values remain unresolved.
 #409 remains a separate draft awaiting the portable glass-density datum.
 

@@ -11,9 +11,9 @@ it, then rebuild with `run_dev.bat` as described below.
 
 5.7.10 moves existing cartridge assembly to Workbench + Alchemy (#471),
 preserving old in-progress tasks at their original station. Other #471 recipes
-remain undefined. Static checks and 186 native assertions pass; CA471-AMMO-01
-is pending. [Evidence](assets/validation_5710/RESULTS.md). The author launcher
-waits for Enter; questions and author tests are deferred until the author returns.
+remain undefined. Static checks and 186 native assertions pass; the author
+passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
+[Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
 The inherited #409 draft still awaits the bottle-glass density decision.
 
 V5.7.9 is the #409 water-boiling implementation draft: atomic station work,

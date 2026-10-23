@@ -1,22 +1,3 @@
-CA471-AMMO-01 | Origin: 5.7.10 / issue #471 | Cartridge station migration
-Status: outstanding; deferred until the author returns.
-Prerequisites: GZDoom 4.14.2, full #471 station build and private fixture in
-build/issue471-ammo. No other GZDoom process. Open assets/validation_5710/launch_author.ps1
-with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File, then press Enter
-when ready. The prepared terminal already waits at this prompt.
-
-1. The private scene opens the crafting view with both prepared cartridge kits,
-   learned recipes and maximum practice. Craft one ten-carbine-cartridge batch,
-   then one ten-shotgun-cartridge batch. At 100% efficiency each consumes ten
-   corresponding kits and adds ten corresponding cartridges.
-2. Press F2 to replace Alchemy with Ranged Workshop. New cartridge assembly must
-   be unavailable and show the infrastructure warning, without spending kits.
-3. Press F2 again. Cartridge assembly must be available again at Alchemy.
-Expected: normal crafting controls and both ammo types work without engine/VM
-errors. This checks only the station migration; ingredient recipes/economy and
-#409 boiling are separate. Agent save/cancel/travel checks do not imply author
-acceptance. Report this stable ID when confirming the result.
-
 CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
 Status: gameplay, acquisition and save/load checks remain outstanding.
 Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in

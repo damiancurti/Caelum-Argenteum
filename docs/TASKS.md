@@ -8,9 +8,9 @@ Implemented the independently approved move of existing carbine/shotgun
 cartridge assembly to Workbench + Alchemy. Existing in-progress Ranged Workshop
 tasks retain their original requirements once; new tasks do not inherit that
 exception. Static validation and 186 native assertions pass; two UI captures
-were inspected. Evidence: assets/validation_5710. CA471-AMMO-01 is pending; its
-launcher waits for Enter before opening the private scene. No author acceptance
-is claimed, and questions remain deferred while the author is away.
+were inspected. Evidence: assets/validation_5710. The author passed
+CA471-AMMO-01 in full on 2026-10-23, without qualifications. Its pending entry
+was removed; the original launcher remains available for reproduction.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
 container reuse, learning routes and trade/stock data. Preserve the accepted

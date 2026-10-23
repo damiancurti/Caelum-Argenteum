@@ -15,8 +15,10 @@ prices/stock, arrows/bolts and firearm behavior are preserved.
 Static validation and 186 native assertions pass, including old/current saves,
 native travel, unpaused completion and original-runtime rollback. Source/package
 identity covers 16,724 entries; two final UI captures were inspected. Evidence:
-assets/validation_5710. CA471-AMMO-01 remains pending; no author acceptance is
-claimed. Questions and manual checks are deferred while the author is away. Remaining #471 recipe
+assets/validation_5710. The author explicitly passed CA471-AMMO-01 (origin:
+5.7.10 / #471) in full on 2026-10-23, without qualifications: "La prueba 471
+dio correcto, he vuelto." Its actionable entry was removed from pending_test.txt.
+This confirms the cartridge station migration only; remaining #471 recipe
 parameters and #472 are separate work. The inherited #409 draft remains open.
 
 ## 5.7.9 - Water boiling implementation draft (#409), 2026-10-23
