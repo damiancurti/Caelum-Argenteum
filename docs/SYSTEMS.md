@@ -13,7 +13,10 @@ without returning ingredients; cancelling before starting consumes nothing.
 An already-started batch continues fermenting if the barrel loses its Chemistry
 connection. This explicitly supersedes the proposed pause-on-disconnection rule;
 it also continues while the player is away or on another map. Starting still
-requires the approved station network. Collection/access details, recipe
+requires the approved station network. Finished product may be collected even
+without a Chemistry connection. Partial withdrawals are allowed: the remainder
+stays in the barrel, which remains occupied until emptied. These subsequent
+author approvals resolve collection access and partial withdrawal; recipe
 quantities, yields, realistic durations/fuel and economy remain to be authored.
 These decisions do not change cartridge recipes or claim batch implementation.
 

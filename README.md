@@ -21,7 +21,9 @@ passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
 [Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
 The remaining #471 fermentation design now defines one batch per barrel,
 ingredient consumption at start, discard on cancellation and continued progress
-without Chemistry. Recipes and batch gameplay remain pending.
+without Chemistry. Finished product may also be collected without Chemistry,
+in partial withdrawals; the barrel stays occupied until empty. Recipes and
+batch gameplay remain pending.
 
 V5.7.9 implements #409 water boiling: atomic station work, biological-only
 purification, temperature and hot-drink guards. The author approved ordinary
@@ -42,7 +44,8 @@ Book's open palm. That focused follow-up passes 23 native checks and the author
 accepted the Orb retest on 2026-10-22, completing visual approval. CA479-01
 retains only outstanding gameplay, acquisition and save/load checks.
 The 2026-10-23 gameplay retest exposed a lethal-curse crash. The corrected
-support tick checks its owner again after native damage; CA479-01 remains pending.
+support tick checks its owner again after native damage. The author passed the
+lethal-curse/F2 retest on 2026-10-23; other CA479-01 checks remain pending.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes

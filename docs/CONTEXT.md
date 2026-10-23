@@ -3,10 +3,10 @@
 Documentation version: **5.7.11** — 2026-10-23.
 
 **5.7.11/#486:** Chemistry naming; CA486-01 accepted2026-10-23. Barrel:#487 separate.
-**5.7.10/#471:** cartridges accepted2026-10-23; batch lifecycle approved in SYSTEMS; recipes pending.
+**5.7.10/#471:** cartridges accepted2026-10-23; batch lifecycle/collection approved in SYSTEMS; recipes pending.
 **5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
 
-**5.7.8/#479:** owner_death_report.json:150+4PASS;visual-accepted2026-10-22;CA479-01gameplay-pending.
+**5.7.8/#479:** owner_death_report.json:150+4PASS;visual-accepted2026-10-22;lethal-retest-accepted2026-10-23;CA479-01partial.
 **5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.
 **5.7.6/#471:**ingredient-art;validation_576;CA471-ART-01:accepted2026-10-22;recipes/economy unresolved.
 **5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:accepted2026-10-22.

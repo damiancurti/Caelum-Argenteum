@@ -34,8 +34,13 @@ using Script lethal, lethal-player, lethal-controls, lethal-save/lethal-load,
 gameplay, controls and live-load. Use a fresh Label for each run; LoadGame names
 the corresponding retained save relative to build/issue479. current contains
 the corrected package; pre-owner-death preserves the original for reproduction.
-CA479-01 remains pending, including the failed lethal-damage check and ordinary
-campaign acquisition/save-load checks. Accepted visual checks are not repeated.
+On 2026-10-23 the author confirmed "La prueba dio bien" after the focused
+lethal Book/Effigy and F2 repopulation retest. That portion of CA479-01 (origin:
+5.7.8 / #479) passed without qualifications, using author-combat-20261023-160550
+and the fixed package above. HISTORY records acceptance; only that completed
+check is removed from pending_test.txt. Other gameplay, campaign acquisition and
+save/load checks remain pending. owner_death_report.json retains the original
+agent-run snapshot. Accepted visual checks are not repeated.
 
 ## Current floating-Orb follow-up
 
