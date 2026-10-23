@@ -1,0 +1,4 @@
+Sprite CMA0A0, 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/mate/gourd.png", 0, 0 }
+Sprite CMA1A0, 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/mate/silver.png", 0, 0 }
+Sprite CMA2A0, 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/mate/gold.png", 0, 0 }
+Sprite M104A0, 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/mate/dry_gourd.png", 0, 0 }

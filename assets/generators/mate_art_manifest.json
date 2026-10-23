@@ -1,0 +1,44 @@
+{
+  "issue": 472,
+  "provenance": "Original project-owned procedural meshes/textures; existing owned depth-tested renderer. No external or Doom art.",
+  "inputs": {
+    "assets/generators/generate_mate_art.py": "546060dacbfb0fa9a9b92325030c0800227cc03853524b29e584b90ff80a9d55",
+    "assets/generators/mate_vessels.json": "43193dd7a85a24e4e99dd32a094fbc22641062a807c37245728eb6b89387634f",
+    "assets/generators/generate_alchemy_ingredients.py": "ff7a91e69ad573873c8fde25a898546f47e8edc22ec5a475b2bfb6cad6dc6ca2",
+    "assets/generators/generate_environment_models.py": "ca9440caa509f97a9959ed886c0e3a34e8c4af585b6380b70d369af0e5643c18"
+  },
+  "assets": [
+    {
+      "key": "gourd",
+      "model": "src/models/caelum/world/mate/gourd.obj",
+      "icon": "src/graphics/caelum/icons/mate/gourd.png",
+      "model_sha256": "b5ab41e80d455d11fc80778f3315521d028067b9fd5c74e3939450ac4273142d",
+      "icon_sha256": "0a3d671427988ca3c5ab75f8b7d7839563eeda304124115ee9646da8bc875635",
+      "surfaces": 12
+    },
+    {
+      "key": "silver",
+      "model": "src/models/caelum/world/mate/silver.obj",
+      "icon": "src/graphics/caelum/icons/mate/silver.png",
+      "model_sha256": "18cff0af8e66fabd657361c6a5c8f92084dfb173e5aee1d3073703b5ab6a5bbd",
+      "icon_sha256": "982f778f9ab0c4863f3d50a9733fbd7703b5b832d30fcb1a7136d81d43f874c6",
+      "surfaces": 17
+    },
+    {
+      "key": "gold",
+      "model": "src/models/caelum/world/mate/gold.obj",
+      "icon": "src/graphics/caelum/icons/mate/gold.png",
+      "model_sha256": "e26fef7fe7358e93cf4ea8a3598b3b1eb42ec2c2005eb800bd95089d18bc6d03",
+      "icon_sha256": "26d6fa6628d3a6495b353782073d35f3402c19a0f3f76ede0d7dd18f0c13ee65",
+      "surfaces": 17
+    },
+    {
+      "key": "dry_gourd",
+      "model": "src/models/caelum/world/mate/dry_gourd.obj",
+      "icon": "src/graphics/caelum/icons/mate/dry_gourd.png",
+      "model_sha256": "d7abd46ebb5f06b6298e5e909fb5fdee554629d28ed37a8ca0faced9ddfb6879",
+      "icon_sha256": "f04cbf9f325e65bbb28eeca421e22c9adf238b77784ab2abce8c26c13defe510",
+      "surfaces": 5
+    }
+  ]
+}
