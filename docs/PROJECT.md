@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## 5.7.10 - Cartridge assembly at Alchemy (#471)
+
+New carbine/shotgun cartridge tasks require Workbench + Alchemy. The two
+accepted kit inputs, recipes, quantities, efficiency, work, learning and economy
+remain unchanged. Arrows and bolts keep the Ranged Workshop requirement.
+Revision-1 task migration preserves the original station for an already active
+cartridge task, clears that exception on cancellation/completion, and mirrors it
+to the travelling record. No new recipe or material IDs are introduced.
+
+Validation: static checks and 186 native assertions pass; source/package bytes
+match across all 16,724 entries. Two UI captures were inspected. Evidence:
+assets/validation_5710. Author check CA471-AMMO-01 is pending and deferred while
+the author is away. This is only the station-migration
+part of #471; new consumable/intermediate recipe values remain unresolved.
+#409 remains a separate draft awaiting the portable glass-density datum.
 
 ## 5.7.9 - Water boiling draft (#409)
 

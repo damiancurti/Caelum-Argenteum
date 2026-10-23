@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## 5.7.10 - Cartridge station migration (#471), 2026-10-23
+
+Applied the author's newer Workbench + Alchemy requirement to the existing
+carbine/shotgun kit recipes. The previous Workbench + Ranged Workshop rule from
+#379/#380 is retained only for a task already in progress in an older save.
+Revision-1 migration is additive and idempotent, with the exception preserved
+through the travelling record and cleared after cancellation/completion. New
+tasks always use Alchemy. Kit IDs, recipe IDs, output, mass, time, learning,
+prices/stock, arrows/bolts and firearm behavior are preserved.
+
+Static validation and 186 native assertions pass, including old/current saves,
+native travel, unpaused completion and original-runtime rollback. Source/package
+identity covers 16,724 entries; two final UI captures were inspected. Evidence:
+assets/validation_5710. CA471-AMMO-01 remains pending; no author acceptance is
+claimed. Questions and manual checks are deferred while the author is away. Remaining #471 recipe
+parameters and #472 are separate work. The inherited #409 draft remains open.
 
 ## 5.7.9 - Water boiling implementation draft (#409), 2026-10-23
 

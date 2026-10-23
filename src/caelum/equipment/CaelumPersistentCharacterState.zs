@@ -323,6 +323,8 @@ class CaelumPersistentCharacterState : Inventory
     // serializan al jugador; esta copia adicional conserva el estado durante
     // `changemap` y otros viajes que reconstruyen el pawn.
     bool CraftingTaskActive;
+    int CartridgeStationRevision;
+    bool CraftingTaskLegacyRanged;
     int CraftingTaskKind;
     int CraftingTaskRecipeIndex;
     int CraftingTaskTier;

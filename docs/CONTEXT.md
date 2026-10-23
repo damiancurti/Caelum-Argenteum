@@ -1,8 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
 
-**5.7.9/#409 draft:** transactional boiling, six vessels, hot-drink guards and world-time cooling. Glass density is still unauthored: bottle cooling is incomplete. Native evidence: assets/validation_579. Author away; no CA409 handoff yet. Keep #471/#472 separate.
+**5.7.10/#471:** cartridges move to Alchemy; old tasks retain Ranged. Evidence: validation_5710. Other recipes unresolved.
+**5.7.9/#409 draft:** boiling implemented; glass cooling awaits density. Evidence: validation_579. No author handoff.
 
 **5.7.8/#479:**176+2runtime/75sprite/23orbPASS;visual-accepted2026-10-22;CA479-01gameplay-pending.
 **5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.

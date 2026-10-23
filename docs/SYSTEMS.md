@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
 
 ## #479 support implements and 5.7.8 integration
 
@@ -568,7 +568,12 @@ complex rate is four tics per employed kit, with the 25% common time base and
 reading/practice multipliers. At zero Technical attributes, one batch has a
 40*4/35-second base, before learning multipliers. Recipe-book revision 11 adds
 both recipes locked without changing previous knowledge, pages or progress.
-The existing workbench/ranged network gates start and completion. Native tasks
+As of 5.7.10/#471, Workbench + Alchemy gates new starts and completion. An
+already active cartridge task from an older save retains its original network
+until cancellation/completion. The revision-1 compatibility flag is saved and
+mirrored to the travelling record; repeated migration does not reset time,
+materials, knowledge or practice. The exception cannot start another task.
+Arrows/bolts still use Workbench + Ranged Workshop. Native tasks
 reserve 40/20/10 kits, consume once, and deliver ten existing cartridges. Inputs
 retain their 40/45 g unit mass in capacity and UI calculations; outputs reuse the
 existing ammunition stack's personal/Box location and reject stack overflow.
@@ -599,7 +604,7 @@ Lower efficiencies use the existing material-loss rule: a ten-cartridge output
 requires 40/20/10 indivisible kits at 25%/50%/100% efficiency. The corresponding
 input game masses are 1.600/0.800/0.400 kg for carbine or 1.800/0.900/0.450 kg for
 shotgun; the difference from completed output is the existing crafting loss.
-No fractional kit is consumed. Both types use Workbench plus Ranged Workshop,
+No fractional kit is consumed. Both types now use Workbench plus Alchemy (#471),
 the padlock's existing complex work rate, the common 25%-efficiency time base
 and the accepted reading/practice factors. Recipes are consumables: the existing
 1,000-output practice cap and ten-unit reading/price reference apply.

@@ -1,0 +1,86 @@
+{
+  "issue": 471,
+  "version": "5.7.10",
+  "scope": "Existing cartridge station migration only",
+  "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+  "source_entries": 16724,
+  "source_bytes_match": true,
+  "fixture_sha256": "367ec63f43230b3da80fb897a50cc1fbb1f5e3fbdb32d74351a1a72b40a9a277",
+  "fixture_deterministic": true,
+  "runs": [
+    {
+      "label": "suite01",
+      "passed": 95,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "9d6b70ce2e4e9395ca24a4307f75ba29f763bb28f95ad9283b0acc86fc43a590"
+    },
+    {
+      "label": "station02",
+      "passed": 10,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "4a194b1f7520af17f76eacaf1c897865eb46e48c8be5bd0e47d10481c1dba8e7"
+    },
+    {
+      "label": "upgrade01",
+      "passed": 10,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "9d6b70ce2e4e9395ca24a4307f75ba29f763bb28f95ad9283b0acc86fc43a590"
+    },
+    {
+      "label": "resume01",
+      "passed": 15,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "4a194b1f7520af17f76eacaf1c897865eb46e48c8be5bd0e47d10481c1dba8e7"
+    },
+    {
+      "label": "current-save01",
+      "passed": 8,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "4a194b1f7520af17f76eacaf1c897865eb46e48c8be5bd0e47d10481c1dba8e7"
+    },
+    {
+      "label": "current-load01",
+      "passed": 10,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "4a194b1f7520af17f76eacaf1c897865eb46e48c8be5bd0e47d10481c1dba8e7"
+    },
+    {
+      "label": "travel02",
+      "passed": 18,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "07b19c8c2e943bb02f6d1dae596d051a391b383259313446f2e3c06796fdad3c"
+    },
+    {
+      "label": "live01",
+      "passed": 2,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "4a194b1f7520af17f76eacaf1c897865eb46e48c8be5bd0e47d10481c1dba8e7"
+    },
+    {
+      "label": "ui01",
+      "passed": 2,
+      "package_sha256": "990ce4ad728d0bb25904495b8083d46dd8136aa92a1ba6a4cab3db9c0e1cca72",
+      "fixture_sha256": "367ec63f43230b3da80fb897a50cc1fbb1f5e3fbdb32d74351a1a72b40a9a277"
+    },
+    {
+      "label": "baseline-save01",
+      "passed": 8,
+      "package_sha256": "4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad",
+      "fixture_sha256": "f63460161894c4a1d274583cd8aadfb28089d13ebaadb0a34e0f5f50a9cbee79"
+    },
+    {
+      "label": "baseline-rollback01",
+      "passed": 8,
+      "package_sha256": "4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad",
+      "fixture_sha256": "b8dd8cf7466cc7a39d0b45dfbf8bac2eee953c6e44d3035d5e00ca07d6f0e13c"
+    }
+  ],
+  "native_assertions_passed": 186,
+  "author_acceptance": false,
+  "fixture_revision_notes": "Production source/package is unchanged across every current run. Fixture-only corrections respect the existing one-second station refresh, bypass the test-map intermission and add manual station switching. Earlier process/save checks retain their original fixture hashes.",
+  "remaining": [
+    "CA471-AMMO-01 author acceptance",
+    "Other #471 recipe/economy definitions",
+    "PR review/integration"
+  ]
+}
