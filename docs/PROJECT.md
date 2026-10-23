@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.9** — 2026-10-23.
 
-## 5.7.9 - Water boiling draft (#409)
+## 5.7.9 - Water boiling and temperature (#409)
 
 The approved thermal process is integrated with station reservations, ordinary
 waiting and persistent inventory. All six capacities use the fixed glass
@@ -11,17 +11,19 @@ retains salt/chemicals, removes biological contamination, evaporates the approve
 amount and returns 100 C water. Separate temperature guards cover direct and
 automatic consumption; cancellation spends nothing.
 
-This is an implementation draft, not author acceptance. Glass density was
-omitted from the approved cooling proposal, so bottle cooling is not complete.
-Canteen cooling and the shared thermal clock are implemented; see TASKS for the
-remaining design gate and assets/validation_579 for agent-only evidence. No
-CA409 author test is offered until that dependency is resolved. Other issues
-retain their existing acceptance state and separate PRs.
+The author approved the remaining glass-density datum (2,500 kg/m3) on
+2026-10-23. Both bottle and canteen cooling now use the approved model; 117
+native assertions pass on the completed package, including saved hot glass,
+dropped bottles and dated waiting. Author check CA409-01 remains separate and
+deferred during the author's renewed absence. Other issues retain their
+existing acceptance state and separate PRs.
 
-Static validation passes. The isolated evidence contains 91 native assertions,
+Static validation passes. The preserved initial draft contains 91 native assertions,
 including actual waiting, pause/save/load and original-save rollback. All 16,724
-entries of the final package match src; presentation-only corrections reuse
+entries of that package match src; presentation-only corrections reuse
 server checks after a byte comparison and have fresh visible UI captures.
+The completed package also matches all 16,724 source entries; its exact hashes,
+117 assertions and two inspected final UI captures are in completion_report.json.
 
 ## 5.7.8 - Support implements (#479, awaiting author review)
 

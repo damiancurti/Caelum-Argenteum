@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.9** — 2026-10-23.
 
-## 5.7.9 - Water boiling implementation draft (#409), 2026-10-23
+## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,
 25% efficiency, 28 MJ/kg mineral coal, 1 kg heated glass and a final 60-second
@@ -15,8 +15,10 @@ The cooling proposal was approved on 2026-10-22: ambient/wind, equivalent sphere
 heat-balanced mixing, closed vessels, unchanged provisional empty masses,
 glass k=1.1 W/(m K), cp=830 J/(kg K), leather wall=6 mm, k=0.14 and cp=1500.
 The proposal omitted glass density, required to derive its wall from mass.
-That value remains a design question for the author's return, not an inferred
-approval. Bottle cooling is consequently incomplete in this draft.
+The first draft left bottle cooling inactive pending that datum. On 2026-10-23
+the author approved ordinary glass at 2,500 kg/m3, retaining the other properties
+and provisional empty masses. Bottle cooling was then enabled with that value.
+This design approval is distinct from pending author gameplay acceptance.
 
 Implementation reuses the task coordinator, native material reservations and
 the world's existing thermal clock. Revision-1 temperature fields retain volume,
@@ -27,12 +29,23 @@ assets/validation_579; no author acceptance is claimed or removed from the queue
 The author requested temporary prevention of system sleep while away; the
 local helper has an automatic twelve-hour expiry and a release signal.
 
-Agent results: static validation passes; 91 native assertions pass. Final
-package SHA-256 is 4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad
+Initial draft results: static validation passed; 91 native assertions passed.
+Draft package SHA-256 is 4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad
 and all 16,724 entries match src. The evidence collector records exactly which
 earlier server checks were reused after a presentation-only correction.
 The corrected inventory/task screens and additive old-save migration were
 checked on the final package. No author test has been claimed for #409.
+
+After the explicit 2,500 kg/m3 approval, the completed package passes 117 native
+assertions. They cover three bottle sizes, SI calibration, wind, heat-balance
+mixing, natural inventory/ground cooling, hot-glass save/load, dated cooling
+waits, process/cancellation checks and old-save migration. Its only production
+delta from the draft is CaelumWaterThermalData.zs. SHA-256:
+debbd7dd93486c40d1c17318d67a613effaf2d766a3003986bb85a0680d12110.
+All 16,724 entries match src; completion_report.json preserves the evidence.
+Static validation and two inspected final UI captures pass. CA409-01 is queued,
+with the terminal waiting for Enter because the author left again. No version
+bump or author gameplay acceptance is inferred from completing this same patch.
 
 ## 5.7.8 - Support implements (#479, awaiting author acceptance)
 

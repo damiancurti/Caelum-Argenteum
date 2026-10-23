@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.9** — 2026-10-23.
 
-## #409 / 5.7.9 - Boiling implementation draft
+## #409 / 5.7.9 - Boiling and stored-water temperature
 
 The fixed Alchemy/Workbench process reserves the whole selected water container
 and mineral coal. Completion applies evaporation, 100 C and biological-only
@@ -12,13 +12,12 @@ and ordinary waiting uses the world's thermal time scale. Hot or reserved water
 is unavailable to drinking, travel supplies, automatic servings, selling and
 storage. New temperature fields and the task carrier are additive.
 
-Outstanding before delivery: confirm glass density for the approved
-mass-derived wall calculation (proposed ordinary glass: 2,500 kg/m3). The author
-approved conductivity/specific heat and the model, but the question omitted
-density. Do not infer approval: the current zero sentinel leaves bottle cooling
-inactive. Canteen cooling uses the approved 6 mm wall. Complete glass checks and
-author handoff only after this value is resolved. Author tests/questions are
-deferred while away; add an actionable CA409 entry then, not an unavailable test.
+The author approved ordinary glass density of 2,500 kg/m3 on 2026-10-23,
+completing the mass-derived wall model. Bottle cooling now uses that value;
+canteens retain the approved 6 mm leather wall. The completed full package passes
+117 native assertions, source/package identity and static validation, with two
+inspected UI captures. CA409-01 is queued; its terminal waits for Enter. The
+author is away again; postpone further questions and author-operated checks until return.
 
 Evidence and limitations live in assets/validation_579/RESULTS.md. No source
 geography, consumable recipes, gunpowder balances or mate implementation belong
