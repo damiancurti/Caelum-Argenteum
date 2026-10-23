@@ -99,6 +99,8 @@ class CaelumPlayer : DoomPlayer
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
     transient CaelumCraftingBrowser CraftingBrowser;
+    transient CaelumFermentationMenu FermentationMenu;
+    double ChemistryAvailableWater;
     bool PalomoMerchantMenuOpen;
     CaelumCityTradeSession CityTrade;
     int WorldCarbineShotUntil;
@@ -894,7 +896,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
         if(persistentState != null && CaelumPlayerAuthority.CanMutate(self))
-        {persistentState.EnsureLandMaterialSchema();persistentState.EnsureMarineMaterialSchema();}
+        {persistentState.EnsureLandMaterialSchema();persistentState.EnsureMarineMaterialSchema();persistentState.EnsureChemistryMaterialSchema();}
         return persistentState;
     }
 
@@ -3528,6 +3530,8 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        int potion=CaelumChemistryData.OutputConsumable(CraftingSelectionRecipe);
+        if(potion>=0)return CaelumPotionRules.Icon(potion);
         if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.Icon(CraftingSelectionRecipe-CaelumClothingData.FIRST_RECIPE);
         if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe))
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE

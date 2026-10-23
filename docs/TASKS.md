@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## #471 / 5.7.13 - Chemistry recipes and fermentation batches
+
+Implemented on a separate branch from accepted cartridge/art/station stages.
+The author-approved tables in SYSTEMS and chemistry_recipes.json drive twenty-two
+recipes, shared barrel transactions, protected water reservations, cheapest-recipe
+prices and approved full-chain renewal. The final package passes 267 native
+assertions in 13 runs, including shared access, travel, active-task saves and an
+older foundation save. All 16,746 entries match src; deterministic exports and
+five inspected captures pass. Evidence: assets/validation_5713/RESULTS.md.
+CA471-BATCH-01 passed author acceptance on 2026-10-23 and is removed from the
+author queue. No gameplay/version change; #472 remains independent.
 
 ## #487 / 5.7.12 - Fermentation Barrel
 

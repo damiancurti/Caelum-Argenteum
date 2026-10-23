@@ -4,7 +4,8 @@
 class CaelumJournalOverlay : EventHandler
 {
     const JOURNAL_PAGE_COUNT = 7;
-    ui bool ThermalDetailsOpen, QuestTrackHeld;
+    ui bool ThermalDetailsOpen, QuestTrackHeld, FermentationDiscardHeld;
+    ui int FermentationDiscardScan;
     ui int QuestTrackScan;
 
     Font TitleFont;
@@ -38,6 +39,7 @@ class CaelumJournalOverlay : EventHandler
     ui void SetJournalOpen(bool value)
     {
         QuestTrackHeld=false;
+        FermentationDiscardHeld=false;
         CaelumScheduleCalendar.Close();
         SetQuestDetailOpen(false);
         if (consoleplayer < 0) { return; }
@@ -2569,6 +2571,16 @@ class CaelumJournalOverlay : EventHandler
             }
             return true;
         }
+        if(type==InputEvent.Type_KeyUp && FermentationDiscardHeld && scan==FermentationDiscardScan)
+        {FermentationDiscardHeld=false;return true;}
+        if(GetJournalPage()==3 && localPlayer!=null && CaelumFermentationMenu.Active(localPlayer)
+            && (character==99 || character==67 || keyString~=="c"))
+        {
+            // Una pulsación mantenida no confirma el descarte por repetición.
+            if(type==InputEvent.Type_KeyDown && !FermentationDiscardHeld)
+            {FermentationDiscardHeld=true;FermentationDiscardScan=scan;CaelumFermentationUI.Send(self,localPlayer,2);}
+            return true;
+        }
         bool abandonKey = character == 103 || character == 71 || keyString ~== "g"
             || scan == InputEvent.Key_Pad_X;
         let abandonScan = CVar.GetCVar("ca_journal_quest_abandon_scan", players[consoleplayer]);
@@ -2824,6 +2836,8 @@ class CaelumJournalOverlay : EventHandler
     {
         CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if (requestingPlayer == null) { return; }
+        if(e.Name=="ca_fermentation_action")
+        {CaelumFermentationMenu.Act(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]);return;}
         if (e.Name == "ca_crafting_browser_mode")
         { CaelumCraftingBrowser.Get(requestingPlayer).SetMode(requestingPlayer,e.Args[0]); return; }
         if (e.Name == "ca_crafting_browser_move")

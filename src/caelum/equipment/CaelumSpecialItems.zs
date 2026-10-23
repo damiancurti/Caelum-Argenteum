@@ -237,7 +237,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     // args[0]. Esto evita crear una subclase por componente de crafteo.
     static clearscope String GetMaterialIconPathForType(int materialType)
     {
-        String resourceIcon=CaelumSupportArt.MaterialIcon(materialType);
+        String resourceIcon=CaelumChemistryData.MaterialIcon(materialType);
+        if(resourceIcon=="")resourceIcon=CaelumSupportArt.MaterialIcon(materialType);
         if(resourceIcon=="")resourceIcon = CaelumMarineData.MaterialIcon(materialType);
         if(resourceIcon == "") resourceIcon = CaelumLandResourceData.MaterialIcon(materialType);
         if(resourceIcon != "") return resourceIcon;
@@ -451,6 +452,18 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M086 A 0;
         M087 A 0;
         M088 A 0;
+        M092 A 0;
+        M093 A 0;
+        M094 A 0;
+        M095 A 0;
+        M096 A 0;
+        M097 A 0;
+        M098 A 0;
+        M099 A 0;
+        M100 A 0;
+        M101 A 0;
+        M102 A 0;
+        M103 A 0;
         Stop;
     }
 }
@@ -461,6 +474,7 @@ class CaelumMaterialRules : Object
 {
     static double UnitWeight(int materialType)
     {
+        if(CaelumChemistryData.IsMaterial(materialType))return CaelumChemistryData.UnitWeight(materialType);
         if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT)
             return CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
         if (materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT)

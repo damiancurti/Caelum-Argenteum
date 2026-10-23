@@ -237,6 +237,8 @@ class CaelumCraftingCoordinator : Object play
             CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
                 requiredUnits, efficiencyIndex
             );
+        if(CaelumChemistryData.IsRecipe(recipeIndex))efficiencyAdjustedOutput=int(Ceil(double(requiredUnits)
+            /CaelumChemistryData.OutputUnits(recipeIndex)))*CaelumChemistryData.OutputUnits(recipeIndex);
         if (componentRecipe)
         {
             user.CraftingBlueprintNodeInputUnits[node] +=
@@ -647,7 +649,8 @@ class CaelumCraftingCoordinator : Object play
             CaelumCraftingRules.FindProcessingRecipeForOutput(
                 materialType, resolvedTier
             );
-        if (processingRecipe < 0
+        // Los procesos de Química conservan sus lotes, vasijas y reloj propios.
+        if (processingRecipe < 0 || CaelumChemistryData.IsRecipe(processingRecipe)
             || !user.DirectCraftingRecipeKnown(processingRecipe, 1))
         {
             return false;
@@ -853,6 +856,13 @@ class CaelumCraftingCoordinator : Object play
     static void BeginSelectedCraftingTask(CaelumPlayer user)
     {
         user.RefreshCraftingPreview();
+        if(CaelumChemistryData.IsFermentation(user.CraftingSelectionRecipe))
+        {
+            let barrel=CaelumFermentationStation(user.ActiveCraftingStationActor);
+            bool ok=barrel!=null && CaelumFermentationService.Begin(user,barrel,user.CraftingProcessingBatchMultiplier);
+            user.LastCraftingAction=ok?CaelumConstants.CRAFTING_ACTION_NONE:CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
+            return;
+        }
         if (!user.CanStartCraftingTask()) { return; }
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
@@ -871,6 +881,8 @@ class CaelumCraftingCoordinator : Object play
             return;
         }
 
+        if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
+        {if(!CaelumChemistryCrafting.Begin(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;return;}
         int taskKind = CaelumConstants.CRAFTING_TASK_ASSEMBLY;
         if (user.CraftingSelectedRecipeKind
             == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING)
@@ -1302,7 +1314,10 @@ class CaelumCraftingCoordinator : Object play
                     user.CraftingEfficiencyIndex
                 );
             user.CraftingFinalWeight = user.CraftingOutputAmount
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
+                * (CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe)?CaelumChemistryCrafting.UnitMass(user.CraftingSelectionRecipe)
+                    :CaelumMaterialRules.UnitWeight(user.CraftingOutputMaterialType));
+            if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
+                user.CraftingSilverRequired=CaelumChemistryData.InputUnits(user.CraftingSelectionRecipe,2)*user.CraftingProcessingBatchMultiplier;
             user.CraftingMissingStationType =
                 CaelumCraftingRules.GetMissingProcessingStation(
                     user.CraftingNetworkCapabilities,
@@ -1511,6 +1526,8 @@ class CaelumCraftingCoordinator : Object play
         user.BuildCraftingBlueprint();
         user.RefreshDirectWeaponCraftingPlan();
         user.CraftingPreviewIconPath = user.ResolveCraftingPreviewIconPath();
+        if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
+            user.ChemistryAvailableWater=CaelumFermentationService.AvailableWater(user);
         if (user.CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
             || user.CraftingSelectedRecipeKind
@@ -1551,6 +1568,15 @@ class CaelumCraftingCoordinator : Object play
 
     static void OpenCraftingNetwork(CaelumPlayer user, Actor sourceStation)
     {
+        let barrel=CaelumFermentationStation(sourceStation);
+        if(barrel!=null && CaelumFermentationService.Reachable(user,barrel))
+        {
+            CaelumFermentationService.Bind(user,barrel);
+            CaelumFermentationMenu.Get(user).ConfirmDiscard=false;
+            user.ActiveCraftingStationActor=barrel;user.CraftingSessionValidationTics=0;
+            user.OpenCraftingStation(CaelumConstants.CRAFTING_STATION_WORKBENCH);
+            return;
+        }
         if (!CaelumCraftingRules.NetworkHasStation(
             user.CraftingNetworkCapabilities,
             CaelumConstants.CRAFTING_STATION_WORKBENCH
@@ -1665,6 +1691,8 @@ class CaelumCraftingCoordinator : Object play
         {
             user.CraftingSessionValidationTics--;
         }
+        if(CaelumFermentationMenu.Active(user))
+        {CaelumFermentationMenu.Get(user);return !user.CraftingTaskActive;}
         if(!CaelumCraftingRules.StationAccessAllowed(station.GetCraftingStationType(),
             user.CraftingNetworkCapabilities))
         {
@@ -1865,6 +1893,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskRemainingSeconds = Max(
             0.0,
             user.CraftingTaskRemainingSeconds - (user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL
+                || CaelumChemistryData.IsRecipe(user.CraftingTaskRecipeIndex)
                 ? CaelumThermalRuntime.WorldTicSeconds() : 1.0 / TICRATE)
         );
         if (user.CraftingTaskRemainingSeconds <= 0.0)

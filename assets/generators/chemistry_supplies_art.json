@@ -1,0 +1,11 @@
+{
+  "issue": 471,
+  "brief": "docs/SPRITE_ART_DIRECTION.md: muted owned props, legible silhouettes, matte wood/cloth/minerals. Reuse accepted #471 procedural material shading and icon projection. No text, formulas, modern packaging or Doom pixels.",
+  "provenance": "Original mesh arrangements using project-owned geometry helpers and previously attributed project textures. New transparent inventory icons rasterize these same meshes. Existing accepted ingredient artwork is unchanged.",
+  "assets": [
+    {"key": "sugar", "role": "Broken pale sugar loaf in a folded cloth; distinct from the niter crust"},
+    {"key": "prepared_reagents", "role": "Three opaque closed packets tied together; abstract contents without chemical quantities"},
+    {"key": "sealed_carbine_parts", "role": "Long closed wood case with two dark straps; no exposed ammunition internals"},
+    {"key": "sealed_shotgun_parts", "role": "Wider closed wood case with one cloth band; no exposed ammunition internals"}
+  ]
+}

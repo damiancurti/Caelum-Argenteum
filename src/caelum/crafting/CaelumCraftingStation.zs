@@ -268,6 +268,7 @@ class CaelumAlchemyStation : CaelumCraftingStation
 
 class CaelumFermentationStation : CaelumCraftingStation
 {
+    CaelumFermentationBatch Batch;
     Default { Tag "$CA_CRAFTING_STATION_FERMENTATION"; +SOLID }
     override int GetCraftingStationType()
     {

@@ -1,0 +1,12 @@
+Sprite "M092A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_saltpeter.png", 0, 0 }
+Sprite "M093A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_sulfur.png", 0, 0 }
+Sprite "M094A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_charcoal.png", 0, 0 }
+Sprite "M095A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_molasses.png", 0, 0 }
+Sprite "M096A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_fermented_intermediate.png", 0, 0 }
+Sprite "M097A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_alcohol.png", 0, 0 }
+Sprite "M098A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_yeast.png", 0, 0 }
+Sprite "M099A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_sugar.png", 0, 0 }
+Sprite "M100A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_gunpowder.png", 0, 0 }
+Sprite "M101A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_prepared_reagents.png", 0, 0 }
+Sprite "M102A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_sealed_carbine_parts.png", 0, 0 }
+Sprite "M103A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_sealed_shotgun_parts.png", 0, 0 }

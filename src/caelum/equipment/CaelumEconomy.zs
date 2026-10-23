@@ -393,7 +393,8 @@ class CaelumEconomyRules : Object
     // obtención, no vuelven a sobrescribir estos precios de diseño.
     static double GetRawMaterialUnitValue(int materialType)
     {
-        double resourcePrice = CaelumMarineData.Price(materialType);
+        double resourcePrice = CaelumChemistryData.Price(materialType);
+        if(resourcePrice < 0) resourcePrice = CaelumMarineData.Price(materialType);
         if(resourcePrice < 0) resourcePrice = CaelumLandResourceData.Price(materialType);
         if(resourcePrice >= 0) return resourcePrice;
         switch (materialType)
@@ -449,6 +450,8 @@ class CaelumEconomyRules : Object
             ) * inputTwoUnits;
         }
 
+        if(CaelumChemistryData.IsRecipe(recipeIndex))inputValue += CaelumChemistryData.WaterLiters(recipeIndex)
+            *CaelumConstants.ECONOMY_WATER_RATION_VALUE/CaelumConstants.WATER_RATION_LITERS;
         int outputUnits =
             CaelumCraftingRules.GetProcessingOutputUnitsAtEfficiency(
                 recipeIndex,
@@ -492,7 +495,10 @@ class CaelumEconomyRules : Object
     )
     {
         // El precio explícito aprobado prevalece sobre el valor derivado de receta.
-        double marinePrice=CaelumMarineData.Price(materialType);
+        int chemistry=CaelumChemistryData.RecipeForMaterial(materialType);
+        if(chemistry>=0)return CaelumChemistryEconomy.RecipeUnitValue(chemistry);
+        double marinePrice=CaelumChemistryData.Price(materialType);
+        if(marinePrice<0)marinePrice=CaelumMarineData.Price(materialType);
         if(marinePrice>=0)return marinePrice;
         if (materialType == CaelumConstants.MATERIAL_CARBINE_KIT
             || materialType == CaelumConstants.MATERIAL_SHOTGUN_KIT)
@@ -752,6 +758,8 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
+        double chemistry=CaelumPotionRules.IsPotion(consumableType)?CaelumChemistryEconomy.ConsumableValue(consumableType):-1;
+        if(chemistry>=0)return chemistry;
         if(CaelumPotionRules.IsPotion(consumableType))
             return CaelumConstants.ECONOMY_FOOD_RATION_VALUE*CaelumConstants.ECONOMY_RECOVERY_RATION_MULTIPLIER
                 *CaelumPotionRules.TotalRatio(CaelumPotionRules.Size(consumableType))/CaelumPotionRules.TotalRatio(CaelumPotionRules.SMALL);
@@ -769,7 +777,15 @@ class CaelumEconomyRules : Object
     static double GetAmmunitionUnitBaseValue(int kind)
     {
         if(kind==CaelumConstants.AMMUNITION_CARBINE || kind==CaelumConstants.AMMUNITION_SHOTGUN)
-            return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW)*CaelumConstants.ECONOMY_CARTRIDGE_ARROW_MULTIPLIER;
+            return GetMaterialUnitBaseValue(kind==CaelumConstants.AMMUNITION_CARBINE
+                ?CaelumConstants.MATERIAL_CARBINE_KIT:CaelumConstants.MATERIAL_SHOTGUN_KIT)
+                /CaelumConstants.CARTRIDGE_KIT_VALUE_RATIO;
+        return LegacyAmmunitionUnitBaseValue(kind);
+    }
+    static double LegacyAmmunitionUnitBaseValue(int kind)
+    {
+        if(kind==CaelumConstants.AMMUNITION_CARBINE || kind==CaelumConstants.AMMUNITION_SHOTGUN)
+            return LegacyAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW)*CaelumConstants.ECONOMY_CARTRIDGE_ARROW_MULTIPLIER;
         if(kind!=CaelumConstants.AMMUNITION_ARROW && kind!=CaelumConstants.AMMUNITION_BOLT)return 0;
         int recipe=kind==CaelumConstants.AMMUNITION_ARROW ? CaelumConstants.CRAFTING_ARROW_RECIPE : CaelumConstants.CRAFTING_BOLT_RECIPE;
         int batch=CaelumCraftingRules.GetRecipeAmmunitionBatch(recipe);

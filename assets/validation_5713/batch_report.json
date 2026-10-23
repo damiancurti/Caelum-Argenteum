@@ -1,0 +1,39 @@
+{
+  "issue": 471,
+  "stage": "fermentation-state foundation",
+  "passed": 53,
+  "runs": [
+    {
+      "label": "batch-seed01",
+      "passed": 16,
+      "package_sha256": "05CE2FC24685D77641F96BB52DC758FD98283CDC16FB0BA6AA51C53C072E8461",
+      "addon_sha256": "D700911E81AFF11AA26CA11BEA1550C5DC84259643E307A1E465D53D046CFEB6"
+    },
+    {
+      "label": "batch-load01",
+      "passed": 10,
+      "package_sha256": "05CE2FC24685D77641F96BB52DC758FD98283CDC16FB0BA6AA51C53C072E8461",
+      "addon_sha256": "D700911E81AFF11AA26CA11BEA1550C5DC84259643E307A1E465D53D046CFEB6"
+    },
+    {
+      "label": "batch-travel02",
+      "passed": 27,
+      "package_sha256": "05CE2FC24685D77641F96BB52DC758FD98283CDC16FB0BA6AA51C53C072E8461",
+      "addon_sha256": "C0388CC0CAFC96D1D5D3574B489B938920843FEB6D0C2FFF17A3630382346E15"
+    }
+  ],
+  "package_entries": 16729,
+  "package_sha256": "05ce2fc24685d77641f96bb52dc758fd98283cdc16fb0ba6aa51c53c072e8461",
+  "tested_runtime_files": {
+    "ZSCRIPT": "8e43c7b98c5f7a2cb89cd77513fe650cc441c7262cc128578d04919d027d5c17",
+    "caelum/crafting/CaelumFermentationBatch.zs": "e6559b48342b4cafec389a490a11acdaafacaf66058d0ca8f7721aa16cf1890b"
+  },
+  "author_acceptance": false,
+  "excluded": [
+    {
+      "label": "batch-travel01",
+      "reason": "Console changemap did not reach CABAT2; seed assertions alone are not travel evidence. Fixed fixture uses native level.ChangeLevel."
+    }
+  ],
+  "limits": "Tests use synthetic fixture values, not a gameplay recipe. No menu, transaction, catalogue, merchant or multiplayer validation is claimed."
+}

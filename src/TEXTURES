@@ -5795,3 +5795,5 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "graphics/caelum/bull_model.textures"
 
 #include "caelum/data/support_sprites.textures"
+
+#include "caelum/data/chemistry_resources.textures"

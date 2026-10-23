@@ -442,7 +442,8 @@ class CaelumDebugOverlay : EventHandler
     {
         if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
-            String resourceKey = CaelumMarineData.MaterialKey(specialType);
+            String resourceKey = CaelumChemistryData.MaterialKey(specialType);
+            if(resourceKey == "") resourceKey = CaelumMarineData.MaterialKey(specialType);
             if(resourceKey == "") resourceKey = CaelumLandResourceData.MaterialKey(specialType);
             if(resourceKey != "") return resourceKey;
         }

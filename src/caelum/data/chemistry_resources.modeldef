@@ -1,0 +1,12 @@
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "saltpeter.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M092 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "sulfur.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M093 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "charcoal.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M094 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "molasses.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M095 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "fermented_intermediate.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M096 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "alcohol.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M097 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "yeast.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M098 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "sugar.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M099 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "gunpowder.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M100 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "prepared_reagents.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M101 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "sealed_carbine_parts.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M102 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/world/alchemy_ingredients" Model 0 "sealed_shotgun_parts.obj" Scale 4 4 4 CorrectPixelStretch DontCullBackFaces FrameIndex M103 A 0 0 }

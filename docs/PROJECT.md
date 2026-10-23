@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## 5.7.13 - Chemistry batches (#471)
+
+The shared barrel now consumes the approved whole-litre ingredients at start,
+continues by world deadline and permits partial collection without Chemistry.
+Twenty-one attended recipes use protected ingredient/water reservations, fixed
+yields and approved timings. Additive material/recipe/catalogue migrations preserve
+old entries. Prices use approved ingredient costs and imports; identical consumables
+use the cheapest recipe. Approved full-chain renewal replaces finite stock for
+kits and nine consumables without resetting quantities. The final package passes
+267 native assertions and byte-level comparison of all 16,746 entries; five
+captures were inspected. Evidence is in validation_5713. CA471-BATCH-01 passed author acceptance on 2026-10-23; the historical 53-check foundation remains separate evidence.
+The independent mate implementation remains #472.
 
 ## 5.7.12 - Fermentation Barrel infrastructure (#487)
 

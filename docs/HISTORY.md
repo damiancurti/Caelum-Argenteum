@@ -1,6 +1,57 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## 5.7.13 - Chemistry batch implementation (#471), 2026-10-23
+
+Initial foundation: CaelumFermentationBatch stores a revisioned lot with capacity,
+original/remaining output and an absolute world-time deadline. It supports exact
+partial withdrawal and clears only when empty or discarded. No per-tic station
+scan or unapproved recipe value is introduced by this model.
+
+The author approved shared access and a simplified one-litre recipe: 250 g molasses,
+800 mL potable water and 5 g yeast produce 1,000 g intermediate in 72 world hours.
+Whole-litre multiples do not change duration; Dexterity does not shorten it.
+
+Evidence: assets/validation_5713/batch_report.json and retained raw logs. Three
+GZDoom 4.14.2 runs pass 53 assertions, including native save/load and transition
+to a second map. The first travel fixture did not reach its destination and is
+retained/excluded; the corrected fixture uses level.ChangeLevel. These synthetic
+model tests do not validate recipe transactions, UI, commerce or multiplayer.
+No author test is ready at this checkpoint. Full #479 acceptance was recorded
+separately in 26af9447 and propagated before this branch; it is not reopened.
+
+Integration continuation in the same 5.7.13 patch: the author approved attended
+charcoal/molasses/alcohol processes, all nine consumables with ingredient variants,
+abstract prepared reagent/charge/sealed-kit recipes, derived prices and import/library
+stock. Identical consumables use the cheapest recipe before the 25% markup.
+Production code adds a dedicated barrel panel, shared ledger references, atomic
+withdrawals, fixed-vessel water reservations and additive recipe/material migrations.
+The 21 attended recipes pass 114 native assertions; transaction, catalogue and
+saved-barrel checks pass 30, 21 and 1+6 respectively. Further integration/presentation
+checks remain in progress; these are agent checks, not author acceptance.
+
+A native compiler probe exposed missing sprite registration for M092. The author
+reported the same fatal startup message. All new dynamic material sprites are now
+registered before MODELDEF resolution; subsequent native starts and assertions pass.
+The rejected probes remain local diagnostics, not passing evidence. New supply
+artwork is separate from the accepted 5.7.6 ingredient designs.
+
+The final economy follow-up explicitly approves renewal of kits and nine
+consumables by their complete recipe chains and current targets, without an
+initial refill. Native merchant/calendar checks pass 52 assertions. Water-task
+save/load preserves the exact reservation; native menu keys verify +100 and
+two distinct discard presses. Final packaged verification passes 267 assertions in 13 runs, including an old
+foundation save loaded by the final runtime. All 16,746 members match src.
+Two deterministic generator runs preserve 13 outputs. Five captures were
+inspected. CA471-BATCH-01 is ready for the author; acceptance remains pending.
+
+Author acceptance, 2026-10-23: CA471-BATCH-01 (origin 5.7.13 / #471) passed
+in full without qualifications. The author reported that all tests in the latest
+terminal were correct. The accepted handoff was the dedicated #471 terminal
+(assets/validation_5713/author_terminal.ps1), after the final package and 267
+native assertions. Its pending entry is removed; gameplay and version are unchanged.
+#472 remains an independent implementation, not covered by this acceptance.
 
 ## 5.7.12 - Fermentation Barrel (#487), 2026-10-23
 

@@ -114,7 +114,7 @@ class CaelumTimeSkipState : Inventory
     {
         let reading=CaelumRecipeSession.Get(user);
         if(user.CraftingTaskActive)return user.CraftingTaskRemainingSeconds
-            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
+            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CHEMISTRY?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
         return reading!=null?reading.RemainingSeconds:0;
     }
     static bool IsActive(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active;}

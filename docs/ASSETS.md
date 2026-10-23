@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.12** — 2026-10-23.
+Documentation version: **5.7.13** — 2026-10-23.
+
+## 5.7.13 - Chemistry supply presentation (#471)
+
+Previously accepted ingredient meshes/icons are now bound to appended native
+material IDs. Production MODELDEF scale compensates the existing 0.25 material
+actor scale, preserving the geometry used by the accepted gallery. All dynamic
+sprite names are registered in VisualRegistry before model resolution.
+
+Four new owned props cover sugar, prepared reagent packets and sealed carbine/
+shotgun component cases. chemistry_supplies_art.json owns their bounded brief;
+generate_chemistry_supplies_art.py reuses accepted procedural textures, shading
+and the depth-tested icon renderer without regenerating accepted ingredient art.
+Its manifest records source/model/icon hashes; the contact sheet lives in
+assets/validation_5713. Models use contiguous material surfaces below the native
+32-slot limit. Geometry represents the item identity, not an exposed chemical
+process or real ammunition assembly. Final native presentation passes with five
+inspected captures; two generator runs preserve all 13 data/art outputs. Author
+review passed as part of CA471-BATCH-01 on 2026-10-23, without qualifications.
 
 ## 5.7.12 - Owned Fermentation Barrel (#487)
 
