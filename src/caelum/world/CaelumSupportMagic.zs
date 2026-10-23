@@ -59,7 +59,8 @@ class CaelumSupportStatus : Inventory
                 }
                 if(benefit && Owner.health>=CaelumSupportMagic.MaximumHealth(Owner))HealthFraction[role]=0;
             }
-            if(Owner.health<=0){Destroy();return;}
+            // DamageMobj puede ejecutar OwnerDied y desvincular este inventario antes de volver.
+            if(Owner==null || Owner.health<=0){Destroy();return;}
             AnyActive=AnyActive || effect.Active();
         }
     }

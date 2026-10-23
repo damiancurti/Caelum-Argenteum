@@ -1,0 +1,75 @@
+{
+  "issue": 479,
+  "version": "5.7.8",
+  "date": "2026-10-23",
+  "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6",
+  "original_package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de",
+  "fixture_sha256": "c91090967303cc75ba8d9d086262463192c28aff63b1d3be753b3f5f0e8e6f30",
+  "source_entries": 16722,
+  "source_package_identity": true,
+  "changed_runtime_entries": [
+    "caelum/world/CaelumSupportMagic.zs"
+  ],
+  "original_live_save_sha256_unchanged": "887c191d7063ece7afb137da8d89dfc77d9508d784c8efa468a6c5db252221cb",
+  "pre_fix_lethal_save_sha256": "35e80d59c50a818bec4b90efbff62b052d3e528a993ab2ac4f9206ff63856a31",
+  "cases": {
+    "owner-death-after01": {
+      "assertions": 17,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-player01": {
+      "assertions": 4,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-controls01": {
+      "assertions": 8,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-load01": {
+      "assertions": 13,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-reload01": {
+      "assertions": 13,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-gameplay01": {
+      "assertions": 77,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-input01": {
+      "assertions": 14,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-live-load01": {
+      "assertions": 4,
+      "package_sha256": "a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6"
+    },
+    "owner-death-old-save01": {
+      "assertions": 4,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    }
+  },
+  "fixed_package_assertions": 150,
+  "baseline_save_assertions": 4,
+  "failures_preserved": {
+    "author-combat-20261023-154650": {
+      "expected_vm_reproduction": true,
+      "excluded_from_pass_total": true,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    },
+    "owner-death-before01": {
+      "expected_vm_reproduction": false,
+      "excluded_from_pass_total": true,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    },
+    "owner-death-before02": {
+      "expected_vm_reproduction": true,
+      "excluded_from_pass_total": true,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    }
+  },
+  "save_schema_changed": false,
+  "author_gameplay_accepted": false,
+  "limits": "Functional regression only; accepted artwork is unchanged. No rendering-performance claim."
+}

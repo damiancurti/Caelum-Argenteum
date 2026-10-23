@@ -42,6 +42,9 @@ Support damage factors are integrated before expiry, once, so the last pulse
 keeps its effect. Healing caps at current maximum; effects cannot resurrect.
 No base attribute or speed is rewritten. Receiver inventory state persists
 stacks, duration, fractions and attribution with idempotent revision 1.
+Native lethal damage can synchronously remove that inventory; the tick rechecks
+its owner after damage and stops before processing further roles. No save fields
+or revision numbers change in this lifetime correction.
 Existing Quintessence seals retain 85% of curse intensity, including secondary
 modifiers; duration and benefits are unaffected. No new resistance distribution
 is introduced. Selection is local; no global per-tic actor scan is added.

@@ -44,6 +44,10 @@ the Orb lose its pedestal and float over the Book's open palm. That correction
 passes 23 focused native checks on the 16,722-entry package. The author accepted
 the Orb retest on 2026-10-22, completing visual approval. Only the outstanding
 gameplay, acquisition and save/load checks remain in CA479-01.
+The 2026-10-23 author run exposed a null-owner read when a curse killed its
+recipient. The support tick now handles native inventory removal during damage.
+Focused regression evidence is in validation_578/owner_death_report.json; this
+does not repeat accepted visuals or establish author gameplay acceptance.
 
 ## 5.7.7 - Centered target information (#481)
 
