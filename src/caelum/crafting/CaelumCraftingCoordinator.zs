@@ -823,6 +823,8 @@ class CaelumCraftingCoordinator : Object play
 
     static void StartPreparedCraftingTask(CaelumPlayer user, int taskKind, double durationSeconds)
     {
+        user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
+        user.CraftingTaskLegacyRanged = false;
         user.CraftingTaskUsesLimboMaterials = false;
         for (int slot = 0; slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -1395,8 +1397,10 @@ class CaelumCraftingCoordinator : Object play
                 user.CraftingBasicRequired = CaelumConstants.CRAFTING_CARTRIDGE_BATCH;
                 user.CraftingTierRequired = 0;
             }
-            user.CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
-                user.CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_LONGBOW);
+            user.CraftingMissingStationType = CaelumCraftingRules.GetMissingAmmunitionStation(
+                user.CraftingNetworkCapabilities, user.CraftingSelectionRecipe,
+                user.CraftingTaskCompleting && user.CraftingTaskLegacyRanged
+                && user.CraftingSelectionRecipe == user.CraftingTaskRecipeIndex);
         }
         else if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {

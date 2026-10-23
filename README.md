@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.9.** Obtain and update the complete repository, validate
+**Current release: 5.7.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.7.10 moves existing cartridge assembly to Workbench + Alchemy (#471),
+preserving old in-progress tasks at their original station. Other #471 recipes
+remain undefined. Static checks and 186 native assertions pass; the author
+passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
+[Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
+The remaining #471 fermentation design now defines one batch per barrel,
+ingredient consumption at start, discard on cancellation and continued progress
+without Chemistry. Finished product may also be collected without Chemistry,
+in partial withdrawals; the barrel stays occupied until empty. Recipes and
+batch gameplay remain pending.
 
 V5.7.9 implements #409 water boiling: atomic station work, biological-only
 purification, temperature and hot-drink guards. The author approved ordinary

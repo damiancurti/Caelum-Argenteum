@@ -1,6 +1,36 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## #471 / 5.7.10 - Cartridge station migration
+
+Implemented the independently approved move of existing carbine/shotgun
+cartridge assembly to Workbench + Alchemy. Existing in-progress Ranged Workshop
+tasks retain their original requirements once; new tasks do not inherit that
+exception. Static validation and 186 native assertions pass; two UI captures
+were inspected. Evidence: assets/validation_5710. The author passed
+CA471-AMMO-01 in full on 2026-10-23, without qualifications. Its pending entry
+was removed; the original launcher remains available for reproduction.
+The completed #409 base is integrated with 31 focused native checks and exact
+source/package identity; CA409-01 passed on that combined build on 2026-10-23.
+
+Remaining #471 work still needs quantities, yields, realistic durations/fuel,
+batch ownership, learning routes and trade/stock data. Preserve the accepted
+ingredient artwork, product effects and non-operational abstract ammunition
+chain. No new values are inferred from the station change.
+
+Author-approved on 2026-10-23: fixed Alchemy vessels; source bottles/canteens are
+retained; finished products use existing abstract packaging. Fermentation runs
+while away/across maps and is collected at its original station; heating and
+distillation require attendance. Implement those rules only with the remaining
+authored batch table. The author returned and approved one batch per barrel,
+including partial fills; it stays occupied until collection or emptying. Inputs
+are consumed at start; cancellation discards the mixture without refunds.
+Fermentation continues after Chemistry disconnection, overriding the proposed
+pause rule. These approvals are documented design, not implemented batch behavior.
+The author also approved withdrawing finished product without Chemistry and
+partial collection. The remainder stays in the barrel; a new batch must wait
+until it is empty. Collection access and partial withdrawals are now defined.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 

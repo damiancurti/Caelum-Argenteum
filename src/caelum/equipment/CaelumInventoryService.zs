@@ -3424,6 +3424,8 @@ class CaelumInventoryService : Object play
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
         CaelumWaterBoiling.Clear(user);
         user.CraftingTaskActive = false;
+        user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
+        user.CraftingTaskLegacyRanged = false;
         user.CraftingTaskCompleting = false;
         user.CraftingTaskKind = CaelumConstants.CRAFTING_TASK_NONE;
         user.CraftingTaskRecipeIndex = 0;
@@ -6183,6 +6185,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskActive) { return; }
+        user.EnsureCartridgeStationTask();
         if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE

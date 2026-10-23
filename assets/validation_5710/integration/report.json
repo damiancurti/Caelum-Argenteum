@@ -1,0 +1,22 @@
+{
+  "version": "5.7.10",
+  "scope": "#471 dependency integration of completed #409 base",
+  "package_sha256": "0e4f8766e7399fffcae5211dc7c4628fe67b7cf63c36e569954a4220665a746e",
+  "source_entries": 16724,
+  "source_bytes_match": true,
+  "runs": [
+    {
+      "issue": 409,
+      "label": "integrated-glass01",
+      "passed": 21
+    },
+    {
+      "issue": 471,
+      "label": "integrated-station01",
+      "passed": 10
+    }
+  ],
+  "native_assertions_passed": 31,
+  "author_471_acceptance": "2026-10-23; CA471-AMMO-01, without qualifications",
+  "author_409_acceptance": false
+}

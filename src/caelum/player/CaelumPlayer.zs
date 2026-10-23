@@ -266,6 +266,8 @@ class CaelumPlayer : DoomPlayer
     // datos simples son serializables por GZDoom y además se espejan al
     // registro viajero para cambios de mapa.
     bool CraftingTaskActive;
+    int CartridgeStationRevision;
+    bool CraftingTaskLegacyRanged;
     bool CraftingTaskCompleting;
     int CraftingTaskKind;
     int CraftingTaskRecipeIndex;
@@ -1419,11 +1421,26 @@ class CaelumPlayer : DoomPlayer
         CaelumPlayerCharacter.InitializeDirectMapCharacter(self);
     }
 
+    // Sólo la tarea de cartuchos ya guardada conserva su estación anterior.
+    void EnsureCartridgeStationTask()
+    {
+        if (CartridgeStationRevision >= CaelumConstants.CARTRIDGE_STATION_REVISION) return;
+        CraftingTaskLegacyRanged = CraftingTaskActive
+            && CraftingTaskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY
+            && CaelumCraftingRules.GetRecipeCartridgeKit(CraftingTaskRecipeIndex) >= 0
+            && CaelumCraftingRules.NetworkHasStation(CraftingTaskNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP);
+        CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
+    }
+
     void StoreCraftingTaskState(
         CaelumPersistentCharacterState persistentState
     )
     {
         if (persistentState == null) { return; }
+        EnsureCartridgeStationTask();
+        persistentState.CartridgeStationRevision = CartridgeStationRevision;
+        persistentState.CraftingTaskLegacyRanged = CraftingTaskLegacyRanged;
         persistentState.CraftingTaskActive = CraftingTaskActive;
         persistentState.CraftingTaskKind = CraftingTaskKind;
         persistentState.CraftingTaskRecipeIndex = CraftingTaskRecipeIndex;
@@ -1467,6 +1484,8 @@ class CaelumPlayer : DoomPlayer
     {
         if (persistentState == null) { return; }
         CraftingTaskActive = persistentState.CraftingTaskActive;
+        CartridgeStationRevision = persistentState.CartridgeStationRevision;
+        CraftingTaskLegacyRanged = persistentState.CraftingTaskLegacyRanged;
         CraftingTaskKind = persistentState.CraftingTaskKind;
         CraftingTaskRecipeIndex = persistentState.CraftingTaskRecipeIndex;
         CraftingTaskTier = persistentState.CraftingTaskTier;
@@ -1502,6 +1521,7 @@ class CaelumPlayer : DoomPlayer
                 persistentState.CraftingTaskOutputUnits[slot];
         }
         CraftingTaskCompleting = false;
+        EnsureCartridgeStationTask();
     }
 
     // Copia el perfil y el equipamiento al inventario viajero antes de salir

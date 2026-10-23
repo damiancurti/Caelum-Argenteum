@@ -1,6 +1,30 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## 5.7.10 - Cartridge assembly at Alchemy (#471)
+
+New carbine/shotgun cartridge tasks require Workbench + Alchemy. The two
+accepted kit inputs, recipes, quantities, efficiency, work, learning and economy
+remain unchanged. Arrows and bolts keep the Ranged Workshop requirement.
+Revision-1 task migration preserves the original station for an already active
+cartridge task, clears that exception on cancellation/completion, and mirrors it
+to the travelling record. No new recipe or material IDs are introduced.
+
+Validation: static checks and 186 native assertions pass; source/package bytes
+match across all 16,724 entries. Two UI captures were inspected. Evidence:
+assets/validation_5710. The author passed CA471-AMMO-01 in full on 2026-10-23,
+without qualifications. This is only the station-migration
+part of #471; new consumable/intermediate recipe values remain unresolved.
+#409 is implemented separately; CA409-01 passed author acceptance on 2026-10-23.
+Its completed dependency is integrated here: 31 focused native checks pass on
+the combined full package, which matches src. See validation_5710/integration.
+The author subsequently approved one fermentation batch per barrel, ingredient
+consumption at start, discard without refunds on cancellation, and continued
+fermentation after Chemistry disconnection. SYSTEMS records this pending design;
+finished product may also be collected without Chemistry and in partial amounts,
+keeping the remainder in the occupied barrel. Recipe values and batch
+implementation remain outstanding.
 
 ## 5.7.9 - Water boiling and temperature (#409)
 

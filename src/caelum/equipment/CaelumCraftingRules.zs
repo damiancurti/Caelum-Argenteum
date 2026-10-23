@@ -235,6 +235,13 @@ class CaelumCraftingRules : Object
         return -1;
     }
 
+    static int GetMissingAmmunitionStation(int capabilities, int recipeIndex, bool legacyRanged = false)
+    {
+        if (GetRecipeCartridgeKit(recipeIndex) >= 0 && !legacyRanged)
+            return GetMissingAlchemyStation(capabilities);
+        return GetMissingNetworkStation(capabilities, 1, CaelumConstants.CATALOGUE_WEAPON_LONGBOW);
+    }
+
     static bool IsSingleTierRecipe(int recipeIndex)
     {
         return CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)

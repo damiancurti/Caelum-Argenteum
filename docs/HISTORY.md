@@ -1,6 +1,54 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## 5.7.10 - Cartridge station migration (#471), 2026-10-23
+
+Applied the author's newer Workbench + Alchemy requirement to the existing
+carbine/shotgun kit recipes. The previous Workbench + Ranged Workshop rule from
+#379/#380 is retained only for a task already in progress in an older save.
+Revision-1 migration is additive and idempotent, with the exception preserved
+through the travelling record and cleared after cancellation/completion. New
+tasks always use Alchemy. Kit IDs, recipe IDs, output, mass, time, learning,
+prices/stock, arrows/bolts and firearm behavior are preserved.
+
+Static validation and 186 native assertions pass, including old/current saves,
+native travel, unpaused completion and original-runtime rollback. Source/package
+identity covers 16,724 entries; two final UI captures were inspected. Evidence:
+assets/validation_5710. The author explicitly passed CA471-AMMO-01 (origin:
+5.7.10 / #471) in full on 2026-10-23, without qualifications: "La prueba 471
+dio correcto, he vuelto." Its actionable entry was removed from pending_test.txt.
+This confirms the cartridge station migration only; remaining #471 recipe
+parameters and #472 are separate work. The inherited #409 awaits author acceptance.
+
+The completed #409 dependency (54ab1cb3) was merged without changing cartridge
+rules. The combined full package passes 31 focused native assertions (21 water
+cooling/process and 10 station requirements), source/package identity and static
+validation. Evidence: assets/validation_5710/integration/report.json. The #409
+author terminal uses this combined package; its acceptance remains pending.
+
+The author subsequently approved fixed Alchemy vessels, water withdrawal without
+consuming the source bottle/canteen, and existing abstract finished packaging.
+Fermentation may progress while away or on another map, with collection at the
+original station; heating/distillation require attendance. Exact recipe/batch
+data and unattended cancellation/ownership remain unauthored. These decisions
+are recorded for the remaining #471 scope, without changing the accepted
+cartridge runtime. Questions and author tests are deferred during the new absence.
+
+On returning on 2026-10-23, the author selected "un lote por barril", approved
+consumption at start/discard on cancellation, and explicitly chose "Continuar
+fermentando" if Chemistry disconnects. A partial fill is allowed; the barrel
+remains occupied until collection or emptying. This resolves those lifecycle
+decisions without assigning recipe quantities/yields/durations or implementing
+unattended batches. The #471 documentation commit is separate from the concurrent
+#479 lethal-curse correction. No gameplay or author test completion is claimed.
+
+Later on 2026-10-23, the author answered "Permitir retirar sin química" and
+"Permitir retiradas parciales" for #471. Finished product may be collected
+without a Chemistry connection and in partial amounts. The remainder stays in
+the barrel, occupying it until empty. This resolves those two collection choices;
+the approved start dependency and unresolved recipe data are unchanged. This
+documentation update contains no batch implementation or new engine-test claim.
 
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 

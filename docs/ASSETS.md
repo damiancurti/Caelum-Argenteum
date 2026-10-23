@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.9** — 2026-10-23.
+Documentation version: **5.7.10** — 2026-10-23.
+
+## 5.7.10 - Existing cartridge and station art reused (#471)
+
+The cartridge station migration reuses the accepted kit icons/sprites and
+Alchemy model. No art, provenance, world placement or firearm presentation
+changes. Private test fixtures remain outside src; evidence: validation_5710.
 
 ## 5.7.9 - Existing water/Alchemy art reused (#409)
 
