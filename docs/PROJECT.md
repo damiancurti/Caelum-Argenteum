@@ -43,6 +43,10 @@ part of #471; new consumable/intermediate recipe values remain unresolved.
 #409 is implemented separately; CA409-01 passed author acceptance on 2026-10-23.
 Its completed dependency is integrated here: 31 focused native checks pass on
 the combined full package, which matches src. See validation_5710/integration.
+The author subsequently approved one fermentation batch per barrel, ingredient
+consumption at start, discard without refunds on cancellation, and continued
+fermentation after Chemistry disconnection. SYSTEMS records this pending design;
+recipe values and batch implementation remain outstanding.
 
 ## 5.7.9 - Water boiling and temperature (#409)
 
@@ -86,6 +90,10 @@ the Orb lose its pedestal and float over the Book's open palm. That correction
 passes 23 focused native checks on the 16,722-entry package. The author accepted
 the Orb retest on 2026-10-22, completing visual approval. Only the outstanding
 gameplay, acquisition and save/load checks remain in CA479-01.
+The 2026-10-23 author run exposed a null-owner read when a curse killed its
+recipient. The support tick now handles native inventory removal during damage.
+Focused regression evidence is in validation_578/owner_death_report.json; this
+does not repeat accepted visuals or establish author gameplay acceptance.
 
 ## 5.7.7 - Centered target information (#481)
 

@@ -34,6 +34,21 @@ The target panel shows usable capacity. fermentation_station.json is the shared
 authority for approved placements, mesh profile and physical assumptions; the
 generator reads the existing unit conversion rather than duplicating it.
 
+## #471 approved fermentation lifecycle (not implemented)
+
+Author decisions of 2026-10-23: one batch per Fermentation Barrel, including a
+partial fill within its approved working capacity (#487). The barrel stays
+occupied until the product is collected or the batch is emptied. Starting the
+batch consumes its ingredients. Cancelling after that discards the mixture
+without returning ingredients; cancelling before starting consumes nothing.
+
+An already-started batch continues fermenting if the barrel loses its Chemistry
+connection. This explicitly supersedes the proposed pause-on-disconnection rule;
+it also continues while the player is away or on another map. Starting still
+requires the approved station network. Collection/access details, recipe
+quantities, yields, realistic durations/fuel and economy remain to be authored.
+These decisions do not change cartridge recipes or claim batch implementation.
+
 ## #479 support implements and 5.7.8 integration
 
 Quintessence is exclusively support. Offensive Wand/Bell retain their attacks;
@@ -74,6 +89,9 @@ Support damage factors are integrated before expiry, once, so the last pulse
 keeps its effect. Healing caps at current maximum; effects cannot resurrect.
 No base attribute or speed is rewritten. Receiver inventory state persists
 stacks, duration, fractions and attribution with idempotent revision 1.
+Native lethal damage can synchronously remove that inventory; the tick rechecks
+its owner after damage and stops before processing further roles. No save fields
+or revision numbers change in this lifetime correction.
 Existing Quintessence seals retain 85% of curse intensity, including secondary
 modifiers; duration and benefits are unaffected. No new resistance distribution
 is introduced. Selection is local; no global per-tic actor scan is added.

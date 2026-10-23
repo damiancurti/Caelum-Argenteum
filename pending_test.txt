@@ -1,5 +1,6 @@
 CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
 Status: gameplay, acquisition and save/load checks remain outstanding.
+The 2026-10-23 run failed on lethal curse damage; the corrected build needs retest.
 Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in
 build/issue479. No other GZDoom process. Run assets/validation_578/launch_author.ps1
 with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File.
@@ -11,6 +12,8 @@ with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File.
    secondary does nothing. R must not charge support. Base T1 costs are 70
    Anima for Book/Censer and 100 for Statuette/Effigy at fixture Eloquence 0.
    Natural Anima recovery is disabled only in this private scene; F2 refills it.
+   Continue attacking until the enemy dies: no VM error is expected. F2 must
+   replace the dead enemy with a live target; repeat with both Book and Effigy.
 3. F3 toggles Charisma/Empathy 100 (initial) and 0. At 100 each application adds
    4%/s for 4 s; at 0, 1%/s for 1 s. Repeated casts stack and refresh duration.
    Statuette/Effigy modify movement and damage while active, then restore them.

@@ -87,6 +87,14 @@ data and unattended cancellation/ownership remain unauthored. These decisions
 are recorded for the remaining #471 scope, without changing the accepted
 cartridge runtime. Questions and author tests are deferred during the new absence.
 
+On returning on 2026-10-23, the author selected "un lote por barril", approved
+consumption at start/discard on cancellation, and explicitly chose "Continuar
+fermentando" if Chemistry disconnects. A partial fill is allowed; the barrel
+remains occupied until collection or emptying. This resolves those lifecycle
+decisions without assigning recipe quantities/yields/durations or implementing
+unattended batches. The #471 documentation commit is separate from the concurrent
+#479 lethal-curse correction. No gameplay or author test completion is claimed.
+
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,
@@ -219,6 +227,22 @@ Removed only the confirmed visual retest from pending_test.txt; CA479-01 retains
 its unconfirmed gameplay, campaign acquisition and save/load checks. No new
 runtime change or engine rerun was needed; documentation validation passed.
 The release remains 5.7.8. The author game and instruction terminal remain open.
+
+2026-10-23, CA479-01 gameplay failed (origin: 5.7.8 / #479). The author reported
+an error in the supplied terminal/session. Its native log identifies a null-owner
+read in CaelumSupportStatus.Tick after lethal damage calls OwnerDied and removes
+the status. The old package reproduces the same abort; the corrected tick checks
+Owner again before accessing health or advancing another role. The private F2
+reset now replaces dead recipients with live actors. No balance, art, save schema
+or accepted behavior changes; release 5.7.8 is retained for this patch correction.
+Focused evidence and original failure logs: assets/validation_578/owner_death_report.json.
+150 fixed-package assertions and four original-runtime save-seed assertions pass;
+all 16,722 packaged entries match source, with only the support lifetime guard
+changed at runtime. Old-save loading and repeated native attack/F2 cycles pass.
+The first automated probe set health before deferred PostBeginPlay; its failed
+assertions are retained but excluded from final evidence. The corrected probe
+waits for initialization and reproduces the author's exact VM failure.
+CA479-01 remains pending, including lethal damage, campaign acquisition and saves.
 
 ## 5.7.7 - Aimed-target information (#481)
 
