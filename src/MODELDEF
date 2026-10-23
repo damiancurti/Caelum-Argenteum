@@ -4877,3 +4877,5 @@ Model CaelumFermentationStation
 // #479: rejected model bindings retained in source; active equipment uses sprites.
 
 #include "caelum/data/chemistry_resources.modeldef"
+
+#include "caelum/data/mate.modeldef"

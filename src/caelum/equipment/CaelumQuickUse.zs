@@ -33,6 +33,8 @@ class CaelumQuickUse : Object
         if(!Eligible(user,item) || user.health<=0 || user.player==null
             || user.player.playerstate!=PST_LIVE || user.isFrozen()
             || (user.player.cheats & CF_TOTALLYFROZEN))return false;
+        let mate=CaelumMateItem(item);
+        if(mate!=null)return mate.CanDrink(user);
         let water=CaelumWaterContainer(item);
         return water==null || (user.DerivedStats!=null && user.CurrentThirst<100
             && water.IsDrinkable() && water.WaterLiters>0.000001);

@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## 5.7.14 - Mate vessels and inventory sprites (#472)
+
+Three original project-owned vessel meshes and matching 128-pixel inventory
+sprites represent gourd, silver-clad wood and gold-clad wood, each with a fixed
+bronze bombilla. A fourth mesh/icon represents dry gourd material. The artist
+brief in SPRITE_ART_DIRECTION was consulted: muted materials, readable silhouettes,
+restrained shading and consistency with the existing owned prop/icon family.
+The accepted weapon sprites from #479 are untouched.
+
+`generate_mate_art.py` extends the existing owned mesh and depth-tested icon
+renderer, using the approved geometry table in `mate_vessels.json`. It preserves
+contiguous material surfaces below GZDoom's 32-slot limit. MODELDEF compensates
+the established 0.25 pickup scale. `mate_art_manifest.json` records inputs and
+asset hashes; no external artwork or Doom assets were copied. Data dimensions
+and gameplay quantities remain in the separate approved table. Review captures
+and the contact sheet are in `assets/validation_5714`; author acceptance is
+pending as part of CA472-01.
 
 ## 5.7.13 - Chemistry supply presentation (#471)
 

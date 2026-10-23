@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## 5.7.14 - Reusable mates (#472)
+
+The approved first mate implementation supplies three native vessels, individual
+contents/temperature, inventory and quick-use actions, twenty hot cebados,
+washed/cold hydration, additive ten-second resource recovery, learned recipes
+and purchase. Owned inventory sprites match the new world props and include
+the fixed bronze bombilla. No optional herbs or new herb effects are included.
+Physical, crafting and acquisition data are documented in SYSTEMS and the
+approved generator table. Evidence: assets/validation_5714/RESULTS.md.
+Author check CA472-01 remains pending. #471 has passed CA471-BATCH-01; the issues
+retain independent branches, commits, evidence and PRs.
 
 ## 5.7.13 - Chemistry batches (#471)
 

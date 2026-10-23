@@ -1,6 +1,62 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## Reusable mates (#472, 5.7.14)
+
+The approved table is `assets/generators/mate_vessels.json`; the deterministic
+export is `CaelumMateData`. Three independent native consumable identities
+append at 17-19, recipes at 198-200 and dry gourd material at 104. No old ID is
+renumbered. Recipe-book revision 14 preserves existing knowledge and adds the
+three initially unknown recipes; the new material quota schema is additive.
+
+| Vessel | Nominal / useful water | Yerba | Empty mass with fixed bronze straw | Inputs at 100% efficiency |
+| --- | --- | --- | --- | --- |
+| Gourd | 100 / 60 mL | 20 g | 25.866 g | 6 g dry gourd + 20 g bronze |
+| Silver-clad algarrobo | 250 / 150 mL | 50 g | 118.414 g | 79 g wood + 21 g silver + 20 g bronze |
+| Gold-clad algarrobo | 500 / 300 mL | 100 g | 197.482 g | 122 g wood + 57 g gold + 20 g bronze |
+
+Load only an empty mate with no yerba; loading consumes the listed grams and
+starts twenty hot uses. Pour potable water from an owned, unboxed, unreserved
+bottle/canteen, retaining the source. Water fills only the useful volume and
+never resets the counter. Drinking consumes all current water. At 60-85 C it
+hydrates and supplies 0.1 times the nominal hydration percentage of maximum
+Health, Anima and Air, even at full Thirst. Each such use spends one cebado.
+Below 60 C only hydration applies, without spending a use. Above 85 C drinking
+is blocked. After twenty hot uses, washed yerba still permits hydration but no
+resource recovery. Discarding yerba returns no material; replacing it requires
+emptying any remaining water. No optional herbs are implemented.
+
+Every dose schedules ten one-second native pulses, reusing the existing water
+recovery duration. A new dose adds its remaining pulses without erasing or
+postponing an older dose. All resources cap at their current maximum; fractional
+Health accumulates within the recovery effect. Contents, temperature, remaining
+uses and pending recovery serialize and travel in native inventory. The existing
+single carried item per vessel type convention remains; chests and vendors keep
+used mates individually instead of merging their contents into fresh stock.
+
+The open-hemisphere approximation uses 5 mm gourd, 6 mm algarrobo and 0.1 mm
+exterior metal. Densities are 124/760/10490/19300 kg/m3 (gourd/wood/silver/gold).
+Conductivities are 0.07/0.17/429/318 W/(m K), heat capacities 1500/1500/235/129
+J/(kg K). Botanical heat capacities and gourd density/conductivity are approved
+design approximations, with sources and qualifications retained in the JSON.
+Water and body/coating heat capacity participate in mixing; cooling uses the
+existing ambient/wind film at the open mouth and through the wall. It approaches
+ambient without overshoot. The fixed 20 g bronze straw is included in mass and
+recipe; separate straw heat transfer, evaporation and wall absorption are outside
+this simplified model. Clock gaps use the current sampled environment, without
+reconstructing historical weather. Cooling is lazy at interactions plus one
+bounded lookup per carried mate type per second, with no global actor scan.
+
+Workbench + Fine Tools are required; clad mates also require a Jeweler Bench.
+Normal complexity, existing efficiency waste, Dexterity, learning and practice
+apply. Provisions stocks three of each mate and 1 kg dry gourd at 2 copper/g;
+the library has ten of each recipe. Finished prices and replenishment use the
+existing recipe and merchant rules. Revisioned catalogue addition preserves
+previous stock, wallets and deadlines. Used loaded mates are never a fresh
+restock template. Selecting a mate in Inventory exposes Prepare (R); the panel
+lists load, source selection, pour, drink, empty and two-press discard controls.
+Quick use drinks a ready mate without destroying the vessel.
 
 ## Chemistry batches (#471, 5.7.13)
 
@@ -511,9 +567,9 @@ come from any bottle/canteen; drinking needs no station. At 60-85 C it grants
 ordinary hydration plus one tenth of the nominal hydration percentage of
 maximum Air, Health and Anima, including when Thirst is full. Below 60 C it
 only hydrates and spends no cebado; above 85 C drinking is blocked until cool.
-No optional herb effects are yet approved. Thermal coefficients, vessel
-mass/construction/prices/recipes and cooling still belong to #472; the approved
-6 mm canteen leather wall does not silently revise its provisional 100 g mass.
+No optional herb effects are yet approved. The completed #472 construction,
+thermal, recipe and acquisition contract is in "Reusable mates" above; it does
+not revise the separate canteen mass.
 
 The original #404 data-only patch changed no gameplay or save schema. Its evidence is
 `assets/validation_571/RESULTS.md`; native tests are required when these rows

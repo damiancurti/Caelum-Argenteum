@@ -730,7 +730,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -738,7 +738,7 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 13;
+    const CRAFTING_RECIPE_BOOK_VERSION = 14;
     // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
     const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
     const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;
@@ -1086,7 +1086,7 @@ class CaelumConstants : Object
     const CONSUMABLE_LIFE_LARGE = 14;
     const CONSUMABLE_ANIMA_LARGE = 15;
     const CONSUMABLE_ENERGY_LARGE = 16;
-    const CONSUMABLE_TYPE_COUNT = 17;
+    const CONSUMABLE_TYPE_COUNT = CaelumMateData.FIRST_CONSUMABLE + CaelumMateData.COUNT;
     const CONSUMABLE_POTION_WEIGHT = 0.25;
     const CONSUMABLE_RATION_WEIGHT = 0.20;
     // M corporal de referencia: masa base tier 5 (80 kg), no el perfil debug.
@@ -1206,7 +1206,7 @@ class CaelumConstants : Object
     const MATERIAL_CENSER_BASE = 89;
     const MATERIAL_SCEPTER_BASE = 90;
     const MATERIAL_ORB_BASE = 91;
-    const MATERIAL_TYPE_COUNT = CaelumChemistryData.FIRST_MATERIAL + CaelumChemistryData.MATERIAL_COUNT;
+    const MATERIAL_TYPE_COUNT = CaelumMateData.DRY_GOURD + 1;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

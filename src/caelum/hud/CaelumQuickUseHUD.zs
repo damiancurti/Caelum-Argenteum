@@ -80,6 +80,8 @@ class CaelumQuickUseHUD : Object ui
             String quantity=String.Format(StringTable.Localize("CA_QUICK_QUANTITY",false),item.Amount);
             if(water!=null)quantity=String.Format(StringTable.Localize("CA_QUICK_WATER",false),
                 item.Amount,water.WaterLiters,water.GetCapacityLiters()) .. " · " .. water.WaterLabel() .. String.Format(" · %.1f °C",water.WaterTemperatureC);
+            let mate=CaelumMateItem(item);
+            if(mate!=null)quantity=CaelumMateUI.Contents(mate);
             Text(font,Font.CR_WHITE,WIDTH/2,14,quantity,WIDTH);
             if(!available)Text(font,Font.CR_GRAY,WIDTH/2,74,StringTable.Localize("CA_QUICK_UNAVAILABLE",false),WIDTH);
         }

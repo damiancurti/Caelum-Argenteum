@@ -1,0 +1,136 @@
+{
+  "issue": 472,
+  "release": "5.7.14",
+  "final_package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+  "package_entries": 16806,
+  "source_bytes_match": true,
+  "native_runs": [
+    {
+      "case": "basics",
+      "assertions": 18,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-basics.txt",
+      "launch": "assets/validation_5714/native/final01-basics-run.json"
+    },
+    {
+      "case": "transactions",
+      "assertions": 48,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-transactions.txt",
+      "launch": "assets/validation_5714/native/final01-transactions-run.json"
+    },
+    {
+      "case": "crafting",
+      "assertions": 30,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-crafting.txt",
+      "launch": "assets/validation_5714/native/final01-crafting-run.json"
+    },
+    {
+      "case": "catalogue",
+      "assertions": 9,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-catalogue.txt",
+      "launch": "assets/validation_5714/native/final01-catalogue-run.json"
+    },
+    {
+      "case": "recovery",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-recovery.txt",
+      "launch": "assets/validation_5714/native/final01-recovery-run.json"
+    },
+    {
+      "case": "transfer",
+      "assertions": 7,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-transfer.txt",
+      "launch": "assets/validation_5714/native/final01-transfer-run.json"
+    },
+    {
+      "case": "keys",
+      "assertions": 6,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-keys.txt",
+      "launch": "assets/validation_5714/native/final01-keys-run.json"
+    },
+    {
+      "case": "seed",
+      "assertions": 1,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-seed.txt",
+      "launch": "assets/validation_5714/native/final01-seed-run.json"
+    },
+    {
+      "case": "resume",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-resume.txt",
+      "launch": "assets/validation_5714/native/final01-resume-run.json"
+    },
+    {
+      "case": "travel",
+      "assertions": 6,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-travel.txt",
+      "launch": "assets/validation_5714/native/final01-travel-run.json"
+    },
+    {
+      "case": "old-load",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-old-load.txt",
+      "launch": "assets/validation_5714/native/final01-old-load-run.json"
+    },
+    {
+      "case": "visual0",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-visual0.txt",
+      "launch": "assets/validation_5714/native/final01-visual0-run.json"
+    },
+    {
+      "case": "visual1",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-visual1.txt",
+      "launch": "assets/validation_5714/native/final01-visual1-run.json"
+    },
+    {
+      "case": "visual2",
+      "assertions": 5,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-visual2.txt",
+      "launch": "assets/validation_5714/native/final01-visual2-run.json"
+    },
+    {
+      "case": "workshop",
+      "assertions": 1,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-workshop.txt",
+      "launch": "assets/validation_5714/native/final01-workshop-run.json"
+    },
+    {
+      "case": "map",
+      "assertions": 7,
+      "package_sha256": "a21611f8d57bcc0098a89193f68c019860c0c200a0e3b3861524e691dbcd8a49",
+      "log": "assets/validation_5714/native/final01-map.txt",
+      "launch": "assets/validation_5714/native/final01-map-run.json"
+    }
+  ],
+  "native_assertions": 163,
+  "baseline_assertions": 3,
+  "baseline_package_sha256": "12988169fdcf4823b2c27a5bfa6a39183a92f33eb7130dca956b04565294d8c7",
+  "original_save_sha256": "7f473333a1573847491b0ce57091c25b8c2f47daa92bd5ac76551eb5a4705553",
+  "visual_captures": [
+    "mate-0.png",
+    "mate-1.png",
+    "mate-2.png",
+    "inventory-0.png",
+    "inventory-1.png",
+    "inventory-2.png",
+    "world-1.png",
+    "workshop.png"
+  ],
+  "author_acceptance": false
+}

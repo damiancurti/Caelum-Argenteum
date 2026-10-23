@@ -1257,6 +1257,10 @@ class CaelumJournalOverlay : EventHandler
             if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
                 DrawTexture(CaelumClothingData.Icon(localPlayer.FormalInventoryRowType[row]),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+                && CaelumMateData.IsConsumable(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumMateCrafting.Icon(localPlayer.FormalInventoryRowType[row]-CaelumMateData.FIRST_CONSUMABLE),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
             else if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
                 DrawTexture(CaelumMaterialPickup.GetMaterialIconPathForType(
                     localPlayer.FormalInventoryRowType[row]),
@@ -1363,6 +1367,8 @@ class CaelumJournalOverlay : EventHandler
                             selectedRow
                         ]));
             }
+            let mate=CaelumMateSession.Selected(localPlayer);
+            if(mate!=null)CaelumCraftingUI.Paragraph(self,CaelumMateUI.Contents(mate),414,278,192,3,"ca_journal_inventory_scroll");
             if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] > 0)
                 DrawTextLine(InventoryFont,Font.CR_WHITE,414,246,
                     String.Format(StringTable.Localize("CA_WATER_BOIL_ESTIMATE",false),
@@ -2789,7 +2795,7 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_journal_menu_select_sound");
         }
         else if (currentPage == 0 && (character == 114 || character == 82))
-            SendNetworkEvent("ca_inventory_water", 0);
+            SendNetworkEvent(CaelumMateSession.Selected(localPlayer)!=null?"ca_mate_open":"ca_inventory_water", 0);
         else if (currentPage == 0 && (character == 104 || character == 72))
             SendNetworkEvent("ca_inventory_boil");
         else if (currentPage == 0 && (character == 118 || character == 86))
@@ -2851,6 +2857,8 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_debug_events_report") { CaelumScheduleState.Report(requestingPlayer); }
         else if (e.Name == "ca_debug_events_trial") { CaelumScheduleTrial.Enable(requestingPlayer); }
         else if (e.Name == "ca_debug_cargo_trial") { CaelumScheduleTrial.Cargo(requestingPlayer); }
+        else if(e.Name=="ca_mate_open")CaelumMateSession.OpenSelected(requestingPlayer);
+        else if(e.Name=="ca_mate_action")CaelumMateSession.Act(requestingPlayer,e.Args[0]);
         else if (e.Name == "ca_inventory_refresh")
         {
             requestingPlayer.RefreshFormalInventorySnapshot();

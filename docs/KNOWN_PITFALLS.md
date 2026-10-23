@@ -4,6 +4,21 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-156 - HUBPOWER alone loses pending recovery outside a hub
+
+Status/evidence: ENGINE-VERIFIED; #472, 2026-10-23, GZDoom 4.14.2 / Windows 11.
+Evidence: assets/validation_5714/RESULTS.md and native travel logs. The initial
+cross-map test retained the mate contents but lost its pending recovery Powerup.
+GZDoom's PlayerPawn.FinishLevel removes nonpersistent powers when leaving a hub;
+INVENTORY.HUBPOWER only covers FINISH_SameHub. The new mate recovery explicitly
+uses INVENTORY.PERSISTENTPOWER as well, preserving its remaining timed doses.
+
+Use an actual transition to a different cluster when the item contract promises
+cross-map effects. Same-map saves and same-hub tests cannot establish this case.
+Keep this policy local to the affected power; it does not authorize changing
+unrelated consumables or deathmatch rules. Native save/load and timed expiry
+must still pass after adding persistence.
+
 ## CA-KP-155 - Lethal native damage can detach a ticking inventory
 
 Status/evidence: ENGINE-VERIFIED; #479, 2026-10-23, GZDoom 4.14.2 / Windows 11.

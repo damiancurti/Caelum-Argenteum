@@ -11,6 +11,13 @@ class CaelumPersistentCharacterState : Inventory
     int IdentityRevision;
     int LandMaterialSchemaRevision;
     int MarineMaterialSchemaRevision;
+    int MateMaterialSchemaRevision;
+    void EnsureMateMaterialSchema()
+    {
+        if(MateMaterialSchemaRevision>=CaelumMateData.REVISION)return;
+        int id=CaelumMateData.DRY_GOURD;MainM00RepairSupply[id]=0;MainM00SupplyLimit[id]=0;MainM00SupplyIssued[id]=0;
+        MainM00MazeRepairUnits[id]=0;MainM00StarterRequired[id]=0;MateMaterialSchemaRevision=CaelumMateData.REVISION;
+    }
     int ChemistryMaterialSchemaRevision;
     void EnsureChemistryMaterialSchema()
     {
@@ -1506,7 +1513,8 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 12)
+        if(RecipeBookVersion>=13){addedRecipeStart=CaelumMateData.FIRST_RECIPE;}
+        else if (RecipeBookVersion >= 12)
         {
             addedRecipeStart = CaelumChemistryData.FIRST_RECIPE;
         }

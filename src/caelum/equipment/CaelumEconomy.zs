@@ -393,6 +393,7 @@ class CaelumEconomyRules : Object
     // obtención, no vuelven a sobrescribir estos precios de diseño.
     static double GetRawMaterialUnitValue(int materialType)
     {
+        if(materialType==CaelumMateData.DRY_GOURD)return CaelumMateData.DRY_GOURD_VALUE;
         double resourcePrice = CaelumChemistryData.Price(materialType);
         if(resourcePrice < 0) resourcePrice = CaelumMarineData.Price(materialType);
         if(resourcePrice < 0) resourcePrice = CaelumLandResourceData.Price(materialType);
@@ -495,6 +496,7 @@ class CaelumEconomyRules : Object
     )
     {
         // El precio explícito aprobado prevalece sobre el valor derivado de receta.
+        if(materialType==CaelumMateData.DRY_GOURD)return CaelumMateData.DRY_GOURD_VALUE;
         int chemistry=CaelumChemistryData.RecipeForMaterial(materialType);
         if(chemistry>=0)return CaelumChemistryEconomy.RecipeUnitValue(chemistry);
         double marinePrice=CaelumChemistryData.Price(materialType);
@@ -758,6 +760,7 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
+        if(CaelumMateData.IsConsumable(consumableType))return CaelumMateCrafting.Value(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         double chemistry=CaelumPotionRules.IsPotion(consumableType)?CaelumChemistryEconomy.ConsumableValue(consumableType):-1;
         if(chemistry>=0)return chemistry;
         if(CaelumPotionRules.IsPotion(consumableType))

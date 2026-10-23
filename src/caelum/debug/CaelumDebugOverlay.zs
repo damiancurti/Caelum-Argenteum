@@ -442,6 +442,7 @@ class CaelumDebugOverlay : EventHandler
     {
         if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
+            if(specialType==CaelumMateData.DRY_GOURD)return "CA_MATE_DRY_GOURD";
             String resourceKey = CaelumChemistryData.MaterialKey(specialType);
             if(resourceKey == "") resourceKey = CaelumMarineData.MaterialKey(specialType);
             if(resourceKey == "") resourceKey = CaelumLandResourceData.MaterialKey(specialType);

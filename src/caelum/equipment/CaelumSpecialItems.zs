@@ -237,6 +237,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     // args[0]. Esto evita crear una subclase por componente de crafteo.
     static clearscope String GetMaterialIconPathForType(int materialType)
     {
+        if(materialType==CaelumMateData.DRY_GOURD)return "graphics/caelum/icons/mate/dry_gourd.png";
         String resourceIcon=CaelumChemistryData.MaterialIcon(materialType);
         if(resourceIcon=="")resourceIcon=CaelumSupportArt.MaterialIcon(materialType);
         if(resourceIcon=="")resourceIcon = CaelumMarineData.MaterialIcon(materialType);
@@ -464,6 +465,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M101 A 0;
         M102 A 0;
         M103 A 0;
+        M104 A 0;
         Stop;
     }
 }

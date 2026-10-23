@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.13** — 2026-10-23.
+Documentation version: **5.7.14** — 2026-10-23.
+
+## 5.7.14 - Reusable mates (#472), 2026-10-23
+
+Implements the approved gourd and silver/gold-clad algarrobo vessels, with fixed
+20 g bronze bombillas, owned models/inventory sprites and physical mass/thermal
+data. Native items retain water, temperature, yerba and remaining hot uses.
+Inventory preparation, quick use, twenty hot uses, cold/washed hydration and
+additive ten-second Health/Anima/Air recovery follow the author's decisions.
+The author explicitly approved washed hydration-only use and ten-second pulses
+on 2026-10-23. Optional herbs remain outside this first delivery.
+
+Adds three learned recipes, dry gourd supply, three mates per Provisions vendor
+and ten recipe copies in the library, with approved materials, station needs and
+existing waste/time/price rules. Schema and catalogue migrations are additive.
+Used mates retain identity through commerce, storage, native saves and travel.
+The legacy consumable seeding loop now excludes the dedicated mate catalogue,
+avoiding an unintended 1,000-unit stock. A stale source selection is rejected
+instead of consuming another bottle after a refresh.
+
+Final package passes 163 native assertions in 16 runs, plus three baseline
+seed/rollback assertions. All 16,806 package entries match src; two generator
+reruns preserve 59 outputs. Eight native captures were inspected. Project,
+dialogue/index and whitespace validation pass. Evidence and limitations:
+assets/validation_5714/RESULTS.md. Static analysis, native agent checks and author
+acceptance are separate. CA472-01 is
+pending; no manual acceptance or whole-map performance claim is made. #471's
+CA471-BATCH-01 acceptance remains recorded in its own 5.7.13 entry and PR #490.
 
 ## 5.7.13 - Chemistry batch implementation (#471), 2026-10-23
 

@@ -21,6 +21,8 @@ class CaelumShopProduct : Object play
     }
     bool Matches(Inventory item)
     {
+        let mate=CaelumMateItem(item);
+        if(mate!=null && (mate.YerbaLoaded || mate.WaterLiters>0 || mate.UsesRemaining>0))return false;
         if(Kind==SIMPLE)return item.GetClassName()==NativeClass;
         if(Kind==BOOK)
         {let book=CaelumRecipeOffer(item);return book!=null && book.Recipe==Recipe && book.Tier==Tier;}
@@ -40,7 +42,7 @@ class CaelumShopProduct : Object play
     }
     void FindStock(CaelumCityMerchant vendor)
     {
-        if(Stock!=null && Stock.Owner==vendor)return;
+        if(Stock!=null && Stock.Owner==vendor && Matches(Stock))return;
         Stock=null;
         for(Inventory item=vendor.Inv;item!=null;item=item.Inv)
             if(Matches(item)){Stock=item;return;}
@@ -57,6 +59,8 @@ class CaelumShopProduct : Object play
             if(NativeClass=='CaelumBoltAmmo')return CaelumConstants.CRAFTING_BOLT_RECIPE;
             if(NativeClass=='CaelumCarbineAmmo')return CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;
             if(NativeClass=='CaelumShotgunAmmo')return CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE;
+            for(int variant=0;variant<CaelumMateData.COUNT;variant++)
+                if(NativeClass==CaelumMateData.ItemClass(variant))return CaelumMateData.FIRST_RECIPE+variant;
             return CaelumChemistryEconomy.ConsumableRecipe(NativeClass);
         }
         if(EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)return CaelumClothingData.FIRST_RECIPE+ItemType;

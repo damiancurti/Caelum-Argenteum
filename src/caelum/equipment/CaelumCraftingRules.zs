@@ -576,6 +576,7 @@ class CaelumCraftingRules : Object
 
     static int GetRecipeComplexityTics(int recipeIndex)
     {
+        if(CaelumMateData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_NORMAL_TICS_PER_MATERIAL;
         if (GetRecipeCartridgeKit(recipeIndex) >= 0)
             return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
         if(CaelumClothingData.IsRecipe(recipeIndex))return CaelumClothingData.Complexity(recipeIndex-CaelumClothingData.FIRST_RECIPE);

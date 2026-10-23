@@ -1,13 +1,14 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
     CaelumMenuPointer Pointer;
     CaelumLiveMenuControls Controls;
-    bool OrbitHeld;
+    bool OrbitHeld,MateDiscardHeld;
+    int MateDiscardScan;
     Vector2 OrbitPoint;
 
     static bool InputAllowed() {return menuactive==Menu.Off || CaelumLiveMenu(Menu.GetCurrentMenu())!=null;}
@@ -19,6 +20,7 @@ class CaelumLiveMenu : ListMenu
         let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
         if((truco!=null && truco.Visible) || (trucazo!=null && trucazo.Visible))return 0;
         if(user.CreationWizardOpen)return CTX_CREATION;
+        if(CaelumMateSession.Active(user))return CTX_MATE;
         let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
         if(recipes!=null && recipes.Open)return CaelumJournalInput.SkipOpen(user)?CTX_SKIP:CTX_RECIPES;
         let storage=CaelumContainerSession(user.FindInventory("CaelumContainerSession"));
@@ -49,7 +51,7 @@ class CaelumLiveMenu : ListMenu
     void ResetPointer() {Pointer.Reset();OrbitHeld=false;SetCapture(false);}
     void ResetInput()
     {
-        ResetPointer();
+        ResetPointer();MateDiscardHeld=false;
         let journal=Journal();if(journal!=null){journal.QuestTrackHeld=false;journal.FermentationDiscardHeld=false;}
         CaelumScheduleCalendar.Set("ca_journal_tarot_select_held",0);
         CaelumScheduleCalendar.Set("ca_journal_quest_abandon_held",0);
@@ -100,6 +102,7 @@ class CaelumLiveMenu : ListMenu
         else if(Context==CTX_EQUIPMENT)debug.DrawEquipmentMenu(Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
         else if(Context==CTX_RECIPES)CaelumRecipeEvents.Draw(Subject);
+        else if(Context==CTX_MATE)CaelumMateUI.Draw(Journal(),Subject);
         else Journal().DrawMenu();
         Controls.Layout(self,true);
         CaelumPresentation.End();
@@ -128,6 +131,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_CHEST)
             return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
         if(Context==CTX_RECIPES)return CaelumRecipeEvents.Key(Subject,type,scan,keyString);
+        if(Context==CTX_MATE)return CaelumMateUI.Key(self,type,scan,character,keyString);
         // Las acciones del panel y sus accesos remapeados preceden a la salida
         // por controles de juego: F/G/T pueden compartir +zoom/+user1/+user3.
         bool restAction=keyString~=="f" || keyString~=="g" || keyString~=="t"

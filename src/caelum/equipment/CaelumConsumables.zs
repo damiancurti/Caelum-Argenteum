@@ -55,6 +55,7 @@ class CaelumConsumableItem : PowerupGiver
 
     static clearscope double UnitWeightForType(int consumableType)
     {
+        if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.EmptyMass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
             return CaelumConstants.WATER_RATION_LITERS;
         if (consumableType == CaelumConstants.CONSUMABLE_FOOD_RATION)

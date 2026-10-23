@@ -68,6 +68,7 @@ class CaelumDisplayNames : Object
 
     static clearscope String GetConsumableKey(int consumableType)
     {
+        if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.NameKey(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == 5) return "CA_WATER_BOTTLE_SMALL";
         if (consumableType == 6) return "CA_WATER_BOTTLE_NORMAL";
         if (consumableType == 7) return "CA_WATER_BOTTLE_LARGE";
@@ -117,6 +118,7 @@ class CaelumDisplayNames : Object
     {
         if(specialCategory == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
+            if(specialType==CaelumMateData.DRY_GOURD)return "CA_MATE_DRY_GOURD";
             String resourceKey = CaelumChemistryData.MaterialKey(specialType);
             if(resourceKey == "") resourceKey = CaelumMarineData.MaterialKey(specialType);
             if(resourceKey == "") resourceKey = CaelumLandResourceData.MaterialKey(specialType);

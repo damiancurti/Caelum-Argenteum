@@ -896,7 +896,7 @@ class CaelumPlayer : DoomPlayer
             );
         }
         if(persistentState != null && CaelumPlayerAuthority.CanMutate(self))
-        {persistentState.EnsureLandMaterialSchema();persistentState.EnsureMarineMaterialSchema();persistentState.EnsureChemistryMaterialSchema();}
+        {persistentState.EnsureLandMaterialSchema();persistentState.EnsureMarineMaterialSchema();persistentState.EnsureChemistryMaterialSchema();persistentState.EnsureMateMaterialSchema();}
         return persistentState;
     }
 
@@ -3530,6 +3530,7 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if(CaelumMateData.IsRecipe(CraftingSelectionRecipe))return CaelumMateCrafting.Icon(CraftingSelectionRecipe-CaelumMateData.FIRST_RECIPE);
         int potion=CaelumChemistryData.OutputConsumable(CraftingSelectionRecipe);
         if(potion>=0)return CaelumPotionRules.Icon(potion);
         if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.Icon(CraftingSelectionRecipe-CaelumClothingData.FIRST_RECIPE);
@@ -7176,6 +7177,7 @@ class CaelumPlayer : DoomPlayer
         if(consumable!=null)
         {
             if(!CaelumPlayerAuthority.CanMutate(self) || !CaelumQuickUse.Available(self,item))return false;
+            let mate=CaelumMateItem(item);if(mate!=null)return mate.Drink(self);
             let water=CaelumWaterContainer(item);
             if(water!=null)return water.Drink();
         }
