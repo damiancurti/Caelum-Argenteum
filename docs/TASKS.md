@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.0** — 2026-10-21.
+Documentation version: **5.7.1** — 2026-10-21.
+
+## 5.7.1 - Regional resource contract (#404)
+
+Reviewed existing IDs, eleven mineral families, wood/fiber extraction, clock,
+tutorial restrictions and shop separation. Recorded seven approved source
+profiles, regional import/local access and processing consumers. See SYSTEMS
+and assets/generators/resource_catalog.json; audit: assets/validation_571.
+Next: #405 exact placements and land integration, #406 clock/depletion proof,
+#407 marine trade/iodine, #470 fixed Alchemy, #409 boiling, #471 recipes and
+#472 mate. Missing numeric recipe/economy/thermal data remain author gates.
+New MAP01 plants/hives are decorative; its gold-only rule remains intact.
 
 ## 5.7.0 - Persistent water quality (#408)
 

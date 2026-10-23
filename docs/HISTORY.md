@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.0** — 2026-10-21.
+Documentation version: **5.7.1** — 2026-10-21.
+
+## 5.7.1 - Regional resource data approval (#404), 2026-10-21
+
+The author selected current MAP01/MAP03, the seven useful-source reserves,
+plant slashing at hardness 2.5/abundance 1 without a new skill gate, hive
+interaction up to 50 g, and 0.1%-daily recovery. Marcela/lirio/honey are local;
+yerba/irupe come from the Litoral, cane from the Northwest and cotton from
+the Northeast through MAP03 trade. After reviewing MAP01's gold-only tutorial
+restriction, the author chose decoration there and collection in MAP03.
+Brown algae imports from Patagonia -> abstract Alchemy iodine were approved.
+The existing 11 mineral families/IDs/prices, source clock and shop ownership
+were audited. No gameplay, placements or recipe quantities were implemented
+by this data patch. assets/validation_571 records static evidence; subsequent
+issues retain native and author acceptance requirements. Previously approved
+Alchemy, ingredient-chain and mate decisions are consolidated in SYSTEMS.
 
 ## 5.7.0 - Water quality and conservative mixing (#408), 2026-10-21
 

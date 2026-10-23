@@ -1,0 +1,97 @@
+{
+  "schema_revision": 1,
+  "issue": 404,
+  "approval_date": "2026-10-21",
+  "scope": "Author-approved resource data for the existing MAP01/MAP03 slice. Runtime integration is owned by #405/#406/#407/#471/#472.",
+  "unit_kg": 0.001,
+  "recovery_fraction_per_game_day": 0.001,
+  "plant_hardness": 2.5,
+  "plant_abundance": 1.0,
+  "new_skill_gate": false,
+  "baseline_authorities": {
+    "materials": "src/caelum/core/CaelumConstants.zs",
+    "extraction_and_clock": "src/caelum/world/CaelumEnvironmentProps.zs",
+    "mineral_data": "assets/generators/generate_mineral_veins.py",
+    "tree_biomes": "assets/generators/generate_environment_models.py",
+    "fiber_bush": "src/caelum/quests/CaelumMainM00RonnieTrial.zs",
+    "tutorial_limits": "src/caelum/quests/CaelumMainM00StarterRules.zs",
+    "raw_prices": "src/caelum/equipment/CaelumEconomy.zs",
+    "shop_renewal": "docs/SYSTEMS.md"
+  },
+  "sources": [
+    {
+      "key": "yerba_mate", "name_es": "Yerba mate", "name_en": "Yerba mate",
+      "species": "Ilex paraguariensis", "material_constant": null,
+      "region": "Litoral", "slice_access": "MAP03_import",
+      "capacity_g": 250, "action": "slashing", "depth": "surface_plant",
+      "consumers": [471, 472], "consumer_role": "Energy drink and reusable mate"
+    },
+    {
+      "key": "marcela", "name_es": "Marcela", "name_en": "Marcela",
+      "species": "Achyrocline satureioides", "material_constant": null,
+      "region": "Pampas", "slice_access": "MAP03_local_MAP01_decorative",
+      "capacity_g": 50, "action": "slashing", "depth": "surface_plant",
+      "consumers": [471], "consumer_role": "Existing medikit ingredient; no independent medicinal effect"
+    },
+    {
+      "key": "irupe_flower", "name_es": "Flor de irupé", "name_en": "Irupé flower",
+      "species": "Victoria cruziana", "material_constant": null,
+      "region": "Litoral", "slice_access": "MAP03_import",
+      "capacity_g": 10, "action": "slashing", "depth": "wetland_plant_no_numeric_gate",
+      "consumers": [471], "consumer_role": "Alternative flower for the existing fictional Anima potion"
+    },
+    {
+      "key": "cypella_flower", "name_es": "Flor de lirio del bajo", "name_en": "Lirio del bajo flower",
+      "species": "Cypella herbertii", "material_constant": null,
+      "region": "Pampas", "slice_access": "MAP03_local_MAP01_decorative",
+      "capacity_g": 10, "action": "slashing", "depth": "surface_plant",
+      "consumers": [471], "consumer_role": "Alternative flower for the existing fictional Anima potion"
+    },
+    {
+      "key": "sugarcane", "name_es": "Caña de azúcar", "name_en": "Sugarcane",
+      "species": null, "material_constant": null,
+      "region": "Northwest", "slice_access": "MAP03_import",
+      "capacity_g": 5000, "action": "slashing", "depth": "surface_plant",
+      "consumers": [471], "consumer_role": "Molasses, fermented intermediate, alcohol chain"
+    },
+    {
+      "key": "cotton", "name_es": "Algodón", "name_en": "Cotton",
+      "species": null, "material_constant": "MATERIAL_COTTON",
+      "region": "Northeast", "slice_access": "MAP03_import",
+      "capacity_g": 250, "action": "slashing", "depth": "surface_plant",
+      "consumers": [471], "consumer_role": "Existing fabric processing and new medikit recipe"
+    },
+    {
+      "key": "honey", "name_es": "Miel", "name_en": "Honey",
+      "species": null, "material_constant": null,
+      "region": "Pampas", "slice_access": "MAP03_local_MAP01_decorative",
+      "capacity_g": 500, "action": "interaction", "harvest_g": 50, "depth": "surface_hive",
+      "consumers": [471], "consumer_role": "Alternative sweetener for the energy drink; no wax or bee combat"
+    }
+  ],
+  "processing": [
+    {"key": "charcoal", "source": "wood", "consumer": "Fuel roles pending approval", "issue": 471},
+    {"key": "molasses", "source": "sugarcane", "consumer": "Fermentation", "issue": 471},
+    {"key": "fermented_intermediate", "source": "molasses + yeast + water + elapsed time", "consumer": "Alcohol distillation", "issue": 471},
+    {"key": "alcohol", "source": "fermented_intermediate + fuel", "consumer": "Existing medikit", "issue": 471},
+    {"key": "yeast", "source": null, "consumer": "Fermentation", "issue": 471},
+    {"key": "sugar", "source": null, "consumer": "Energy drink, alternative to honey", "issue": 471},
+    {"key": "gunpowder", "source": null, "consumer": "Abstract compatible carbine/shotgun kit recipes; kits then produce ten cartridges", "issue": 471},
+    {"key": "brown_algae", "source": "Patagonian coast; MAP03 imports", "consumer": "Abstract iodine processing at Workbench + Alchemy", "issue": 407},
+    {"key": "iodine", "source": "brown_algae at Workbench + Alchemy", "consumer": null, "issue": 407}
+  ],
+  "unresolved": {
+    "source_placement": "Exact coordinates and counts in #405; these encode gameplay rarity. Existing nodes remain unchanged.",
+    "tutorial_policy": "Resolved: new plants/hives are decorative in MAP01 and harvestable in MAP03. Preserve the tutorial gold-only rule and all existing quotas.",
+    "imports": "Vendor, prices, stock, transaction lots and renewal must be authored before #405/#407/#471 integration.",
+    "marine": "Specific algae species, traded form, processing quantities/work/yield/fuel/knowledge and iodine consumer remain open in #407.",
+    "processing": "Exact inputs, outputs, work/time, fuel, prices, learning, containers and renewal implications remain open in #471.",
+    "regional_minerals": "No new geological depth, rarity, skill or region restrictions are approved for existing veins.",
+    "cultivation": "No farming simulation, bee combat, wax output or extra herb effects are approved."
+  },
+  "botanical_selection_references": [
+    "https://repositorio.inta.gob.ar/xmlui/handle/20.500.12123/15455",
+    "https://buscador.floraargentina.edu.ar/species/details/25546",
+    "https://sib.gob.ar/especies/cypella-herbertii"
+  ]
+}
