@@ -37,7 +37,8 @@ Book's open palm. That focused follow-up passes 23 native checks and the author
 accepted the Orb retest on 2026-10-22, completing visual approval. CA479-01
 retains only outstanding gameplay, acquisition and save/load checks.
 The 2026-10-23 gameplay retest exposed a lethal-curse crash. The corrected
-support tick checks its owner again after native damage; CA479-01 remains pending.
+support tick checks its owner again after native damage. The author passed the
+lethal-curse/F2 retest on 2026-10-23; other CA479-01 checks remain pending.
 
 V5.7.7 adds the centered target panel (#481): aimed objects, contextual actions
 with current key bindings, and authoritative character resources. Attributes
