@@ -1,0 +1,100 @@
+{
+  "issue": 471,
+  "provenance": "Original mesh arrangements using project-owned geometry helpers and previously attributed project textures. New transparent inventory icons rasterize these same meshes. Existing accepted ingredient artwork is unchanged.",
+  "inputs": {
+    "assets/generators/generate_chemistry_supplies_art.py": "b6488dc56478003ea6e4dbd6b762b808a6c415e7a467debd40624efb991a01b9",
+    "assets/generators/chemistry_supplies_art.json": "2d571d76acc85c5ac792a198077cedbd4355afffa3cda35fc676399d9c9ba883",
+    "assets/generators/generate_alchemy_ingredients.py": "ff7a91e69ad573873c8fde25a898546f47e8edc22ec5a475b2bfb6cad6dc6ca2",
+    "assets/generators/generate_environment_models.py": "ca9440caa509f97a9959ed886c0e3a34e8c4af585b6380b70d369af0e5643c18"
+  },
+  "assets": [
+    {
+      "key": "sugar",
+      "role": "Broken pale sugar loaf in a folded cloth; distinct from the niter crust",
+      "model": "models/caelum/world/alchemy_ingredients/sugar.obj",
+      "icon": "graphics/caelum/icons/materials/ca_material_sugar.png",
+      "model_sha256": "1ec45f2bd18ff7d87ed42c20b66db09e46a51b42131bcd499786236a5202ada6",
+      "icon_sha256": "5c6b9d174b080094557e0e1ef4ef38bd47d6e443b22eed69e2875a4d190f724f",
+      "surfaces": 13,
+      "textures": [
+        "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade2.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade5.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade6.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade0.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade1.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade3.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade4.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade5.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade6.png",
+        "models/caelum/world/alchemy_ingredients/salt_shade7.png"
+      ]
+    },
+    {
+      "key": "prepared_reagents",
+      "role": "Three opaque closed packets tied together; abstract contents without chemical quantities",
+      "model": "models/caelum/world/alchemy_ingredients/prepared_reagents.obj",
+      "icon": "graphics/caelum/icons/materials/ca_material_prepared_reagents.png",
+      "model_sha256": "6af6791e6fa17a00b5de2cdef41823bd0153e145f04f7cd4f3150fa6b508d4fc",
+      "icon_sha256": "93de0a1af7f6d1b8ccd52cc5a10732fec52694e17c8f31aa409dccf6f760f719",
+      "surfaces": 15,
+      "textures": [
+        "models/caelum/world/alchemy_ingredients/charcoal_shade0.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade1.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade3.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade4.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade5.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade6.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade7.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade2.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade5.png",
+        "models/caelum/world/alchemy_ingredients/cork_shade0.png",
+        "models/caelum/world/alchemy_ingredients/cork_shade2.png",
+        "models/caelum/world/alchemy_ingredients/cork_shade3.png",
+        "models/caelum/world/alchemy_ingredients/cork_shade5.png"
+      ]
+    },
+    {
+      "key": "sealed_carbine_parts",
+      "role": "Long closed wood case with two dark straps; no exposed ammunition internals",
+      "model": "models/caelum/world/alchemy_ingredients/sealed_carbine_parts.obj",
+      "icon": "graphics/caelum/icons/materials/ca_material_sealed_carbine_parts.png",
+      "model_sha256": "b5b06596a5abdb5be4d1350a56c8feb5635e3cb8f41359ef927d4edc358e2eac",
+      "icon_sha256": "943a02c6e5238b765c6fa59285573a18f5e32e649ffdb307fbab8f05e8721baa",
+      "surfaces": 8,
+      "textures": [
+        "models/caelum/world/alchemy_ingredients/charcoal_shade0.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade3.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade4.png",
+        "models/caelum/world/alchemy_ingredients/charcoal_shade5.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade0.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade3.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade4.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade5.png"
+      ]
+    },
+    {
+      "key": "sealed_shotgun_parts",
+      "role": "Wider closed wood case with one cloth band; no exposed ammunition internals",
+      "model": "models/caelum/world/alchemy_ingredients/sealed_shotgun_parts.obj",
+      "icon": "graphics/caelum/icons/materials/ca_material_sealed_shotgun_parts.png",
+      "model_sha256": "f2245199c5ad7eabeed0ee81785de24eb48fda262987b4179d087b30cffd1ebf",
+      "icon_sha256": "7b8d08ab64bb0bc2ef5865d0e20336df1c693e5d75b520356966f4f4fea778f8",
+      "surfaces": 8,
+      "textures": [
+        "models/caelum/world/alchemy_ingredients/cloth_shade0.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade5.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade0.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade3.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade4.png",
+        "models/caelum/world/alchemy_ingredients/wood_shade5.png"
+      ]
+    }
+  ]
+}
