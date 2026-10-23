@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
+
+## 5.7.12 - Fermentation Barrel (#487), 2026-10-23
+
+The author approved a barrel connected to Chemistry to operate, exclusive
+fermentation ownership, wooden construction with metal hoops and placement in
+both existing workshops. The subsequent approved proposal sets a 60 x 60 x 72
+footprint/height, MAP01 (1200,448,0) and MAP03 (-584,1472,0), fixed and without a
+construction recipe. At the existing 32 units/metre this is a large tun. The
+author explicitly approved 3 cm walls/lids and 20% headspace; the body-derived
+result is about 4,253 L interior and 3,402 L useful volume, not a small barrel.
+The separate roster and appended capability preserve prior station identities.
+No #471 fermentation recipes or unattended batches are claimed implemented.
+
+The author left for several hours and requested temporary prevention of system
+sleep again. The local helper had a twelve-hour expiry and a release signal;
+author tests/questions were deferred until return. Validation and limitations are
+recorded under assets/validation_5712.
+
+The completed package matches all 16,728 source entries and passes project
+validation plus 93 native assertions. One further assertion checks original-save
+rollback in its original 5.7.10 runtime; the original save is byte-identical.
+Six final captures, deterministic mesh/sprite regeneration and independent capacity
+integration pass. Review found the inherited station base did not enable SOLID;
+the new barrel explicitly enables it without changing existing station flags.
+An initial collision script quit before its queued assertion; the corrected
+collision03 script waits and passes, with the incomplete probe excluded. SHA-256:
+5bf47a785299cee1b66426a5558ee56e150ad71d1d18a7815ac70af0503aeba7.
+On 2026-10-23 the author returned and confirmed "Las pruebas dieron correcto."
+CA487-01 (origin: 5.7.12 / #487) passed in full, without qualifications: visuals,
+capacity display, approach/collision, station dependency, both maps/languages
+and save/load. Its completed entry was removed from pending_test.txt. Actual
+fermentation batches remain #471 work; #479 gameplay acceptance remains pending.
+The temporary keep-awake request was released at 18:39:04 UTC on return.
+This acceptance update keeps version 5.7.12 and the original runtime evidence.
 
 ## 5.7.11 - Chemistry station terminology (#486), 2026-10-23
 

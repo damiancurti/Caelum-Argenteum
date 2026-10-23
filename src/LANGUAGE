@@ -6170,6 +6170,14 @@ CA_SOURCE_HONEY = "Colmena";
 
 // #470 station; #486 renames the display label and preserves the saved key.
 [enu default]
+CA_CRAFTING_STATION_FERMENTATION = "Fermentation Barrel";
+CA_FERMENTATION_MISSING_CHEMISTRY = "The fermentation barrel requires Chemistry in the same station network.";
+CA_FERMENTATION_TITLE = "%s · %.0f L working capacity";
+[es esp]
+CA_CRAFTING_STATION_FERMENTATION = "Barril de fermentación";
+CA_FERMENTATION_MISSING_CHEMISTRY = "El barril de fermentación requiere Química en la misma red de estaciones.";
+CA_FERMENTATION_TITLE = "%s · %.0f L útiles";
+[enu default]
 CA_CRAFTING_STATION_ALCHEMY = "Chemistry";
 [es]
 CA_CRAFTING_STATION_ALCHEMY = "Química";

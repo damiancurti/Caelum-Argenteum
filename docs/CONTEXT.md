@@ -1,8 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
 
-**5.7.11/#486:** Chemistry naming; CA486-01 accepted2026-10-23. Barrel:#487 separate.
+**5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.
+**5.7.11/#486:** Chemistry; CA486-01 accepted2026-10-23.
 **5.7.10/#471:** cartridges accepted2026-10-23; batch lifecycle/collection approved in SYSTEMS; recipes pending.
 **5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
 

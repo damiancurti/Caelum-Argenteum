@@ -265,3 +265,13 @@ class CaelumAlchemyStation : CaelumCraftingStation
     }
     States { Spawn: CALC A -1; Stop; }
 }
+
+class CaelumFermentationStation : CaelumCraftingStation
+{
+    Default { Tag "$CA_CRAFTING_STATION_FERMENTATION"; +SOLID }
+    override int GetCraftingStationType()
+    {
+        return CaelumConstants.CRAFTING_STATION_FERMENTATION;
+    }
+    States { Spawn: CFER A -1; Stop; }
+}

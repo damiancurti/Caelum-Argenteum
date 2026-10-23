@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.11** — 2026-10-23.
+Documentation version: **5.7.12** — 2026-10-23.
+
+## Fermentation Barrel (#487, 5.7.12)
+
+The author approved a separate fixed barrel of wood with metal hoops, connected
+to Chemistry in the existing Workbench-backed station network. This is an
+operating dependency, not a construction requirement. The barrel opens the shared
+catalogue only with that network; losing Chemistry closes its active session
+without cancelling or spending an existing task reservation. Other stations
+retain their rules. Fermentation belongs to this barrel; heating, distillation
+and other chemical processes remain at Chemistry. Unattended fermentation and
+collection at the original barrel are approved #471 design, not implemented
+batches in this infrastructure patch. Its recipes, yields and timings remain pending.
+
+Approved dimensions: 60 x 60 x 72 units, fixed, no construction recipe.
+The new barrel explicitly enables solid collision; the inherited station base
+does not set SOLID. Existing accepted stations retain their original flags.
+Positions: MAP01 (1200,448,0), group 2; MAP03 (-584,1472,0), group 0. Capability 13 and editor
+ID 18014 append after Chemistry without changing old IDs. A separate revision-1
+map roster installs one barrel in new and old saves, retries locally when blocked
+and does not reissue a removed installed barrel. One typed roster lookup per
+map load is the bounded initialization exception; there are no periodic global
+actor scans. Network traversal reuses local blockmap queries.
+
+Capacity is derived from the visible body, not its collision box: the approved
+large tun has 3 cm radial wooden walls and top/bottom lids, with 20% fermentation
+headspace. Using CaelumPhysicsUnits (32 map units/metre), the generated rotational
+body profile gives 4,252.967 L internally and 3,402 usable whole litres after
+rounding down. The faceted model approximates this rotational profile. Its maximum
+body diameter is 1.734375 m and body height 2.15625 m, excluding the top bung.
+The target panel shows usable capacity. fermentation_station.json is the shared
+authority for approved placements, mesh profile and physical assumptions; the
+generator reads the existing unit conversion rather than duplicating it.
 
 ## #471 approved fermentation lifecycle (not implemented)
 
@@ -168,7 +200,7 @@ inventory, Box, chest and task authority apply. Validation status: PROJECT.
 The author renamed this station Chemistry / Química on 2026-10-23 (#486,
 5.7.11). The internal Alchemy class/key/constant names remain compatibility
 identifiers. This changes displayed terminology only; #487 owns the separate
-Fermentation Barrel and its pending operating/placement decisions.
+Fermentation Barrel, whose approved operation, placement and capacity are above.
 
 Adds the fixed Workbench-backed Chemistry station (#470), represented by an
 original 3D fermentation table and still. Approved positions are MAP01

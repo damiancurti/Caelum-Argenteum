@@ -1022,6 +1022,22 @@ class CaelumCraftingRules : Object
         return CaelumConstants.CRAFTING_STATION_NONE;
     }
 
+    // El barril necesita la misma red de Química; no es un requisito de fabricación.
+    static int GetMissingFermentationStation(int capabilities)
+    {
+        int missing=GetMissingAlchemyStation(capabilities);
+        if(missing!=CaelumConstants.CRAFTING_STATION_NONE)return missing;
+        if(!NetworkHasStation(capabilities,CaelumConstants.CRAFTING_STATION_FERMENTATION))
+            return CaelumConstants.CRAFTING_STATION_FERMENTATION;
+        return CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
+    static bool StationAccessAllowed(int stationType, int capabilities)
+    {
+        return stationType!=CaelumConstants.CRAFTING_STATION_FERMENTATION
+            || GetMissingFermentationStation(capabilities)==CaelumConstants.CRAFTING_STATION_NONE;
+    }
+
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
     {
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return GetMissingAlchemyStation(capabilities);
