@@ -6,9 +6,9 @@ Documentation version: **5.7.11** — 2026-10-23.
 
 Apply the authored Chemistry / Química name to station UI and boiling feedback;
 retain internal Alchemy keys/classes for saved references. No gameplay or art
-changes. Native presentation evidence: assets/validation_5711. CA486-01 remains
-the author check. #487 separately tracks the new Fermentation Barrel, with its
-dependency meaning, process ownership and placements awaiting author answers.
+changes. Native presentation evidence: assets/validation_5711. The author passed
+CA486-01 in full on 2026-10-23, without qualifications; its pending entry was removed.
+The new Fermentation Barrel is tracked separately in #487.
 
 ## #471 / 5.7.10 - Cartridge station migration
 

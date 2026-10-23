@@ -2,7 +2,7 @@
 
 Documentation version: **5.7.11** — 2026-10-23.
 
-**5.7.11/#486:** Chemistry naming; CA486-01 pending. Barrel:#487, design pending.
+**5.7.11/#486:** Chemistry naming; CA486-01 accepted2026-10-23. Barrel:#487 separate.
 **5.7.10/#471:** cartridges; validation_5710. CA471-AMMO-01 accepted2026-10-23; other recipes pending.
 **5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
 

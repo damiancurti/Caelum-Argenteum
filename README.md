@@ -12,6 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 5.7.11 renames the existing station to Chemistry / Química (#486), preserving
 its appearance, rules and saved identity. The extra Fermentation Barrel (#487)
 is tracked separately. See [focused evidence](assets/validation_5711/RESULTS.md).
+The author passed CA486-01 in full on 2026-10-23, without qualifications.
 
 5.7.10 moves existing cartridge assembly to Workbench + Chemistry (#471),
 preserving old in-progress tasks at their original station. Other #471 recipes

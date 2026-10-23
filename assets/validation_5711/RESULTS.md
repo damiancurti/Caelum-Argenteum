@@ -17,7 +17,10 @@ is checked through the source/localization indexes. No new gameplay test model
 or performance claim is introduced. Exact hashes and launch records: report.json
 and native/. The original save/package remain local for rollback.
 
-CA486-01 remains pending author acceptance; agent checks do not imply acceptance.
+The author passed CA486-01 (origin: 5.7.11 / #486) in full on 2026-10-23,
+without qualifications: "Las pruebas dieron correcto." Its pending entry was
+removed and acceptance recorded in HISTORY. report.json retains the original
+agent-run snapshot; this later author result is separate from that evidence.
 
 Tracked log text normalizes line endings and trailing whitespace; raw native
 logs remain under build/issue486. No native message content is changed.

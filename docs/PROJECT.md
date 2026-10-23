@@ -10,9 +10,9 @@ ID 18013, roster revision, artwork, placement and recipe requirements remain
 unchanged. Old saves and tasks retain their identities. #487 owns the separate
 Fermentation Barrel request; no barrel or new fermentation recipe is delivered
 by this naming patch. Validation and author acceptance are recorded separately
-in assets/validation_5711 and pending_test.txt. Static checks, full package/source
+in assets/validation_5711 and HISTORY.md. Static checks, full package/source
 identity, two real Use assertions, old-save loading and four inspected native
-captures pass. CA486-01 remains pending.
+captures pass. The author passed CA486-01 in full on 2026-10-23, without qualifications.
 
 ## 5.7.10 - Cartridge assembly at Alchemy (#471)
 
