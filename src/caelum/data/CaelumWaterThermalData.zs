@@ -11,9 +11,8 @@ class CaelumWaterThermalData : Object
     const GLASS_K=1.1;
     const LEATHER_K=0.14;
     const LEATHER_WALL_M=0.006;
-    // Falta la densidad de vidrio en el contrato; cero no inventa ese dato.
-    // Se completa tras confirmación del autor, antes de entregar el enfriamiento.
-    const GLASS_DENSITY_KG_M3=0.0;
+    // Vidrio común aprobado por el autor el 2026-10-23.
+    const GLASS_DENSITY_KG_M3=2500.0;
     const VESSEL_KG=1.0;
     const USEFUL_POWER_W=1000.0;
     const EFFICIENCY=0.25;
@@ -35,7 +34,6 @@ class CaelumWaterThermalData : Object
         double liters,double capacity,bool leather)
     {
         if(seconds<=0 || liters<=0 || capacity<=0)return temperature;
-        if(!leather && GLASS_DENSITY_KG_M3<=0)return temperature;
         double radius=(capacity/1000*3/(4*PI))**(1.0/3.0);
         double area=4*PI*radius*radius;
         double mass=CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT;

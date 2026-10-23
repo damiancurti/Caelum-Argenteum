@@ -1,3 +1,29 @@
+CA409-01 | Origin: 5.7.9 / issue #409 | Boiling and water temperature
+Status: outstanding; deferred until the author returns.
+Prerequisites: full #409 build, GZDoom 4.14.2 and private fixture under
+build/issue409. No other GZDoom process. Open assets/validation_579/launch_author.ps1
+with PowerShell -NoProfile -ExecutionPolicy Bypass -NoExit -File; press Enter
+when ready. The prepared terminal waits for that input.
+
+1. F1 resets the private inputs: one small bottle and canteen, each with 1 L
+   of biologically contaminated water, plus coal and nearby Workbench/Alchemy.
+   In inventory, select water and press H. Cancel with C in the crafting page.
+   Confirm no coal, volume or treatment-induced temperature/quality change.
+2. Start again and finish normally or with the ordinary wait control Y.
+   At 1 L / 20 C the estimate is about 461 world seconds and 66 g coal; real
+   work scales with the game's world clock. Completion yields about 0.973 L
+   at 100 C and removes biological contamination only. Hot drinking is blocked.
+3. Wait to a later date/time after completion, or allow time to pass. Both
+   bottle and canteen must cool gradually; clean water becomes drinkable at
+   85 C or below. Waiting may use automatic supplies under the existing rules.
+4. Without an active task, F2 cycles biological+salt, biological+chemical,
+   all three flags, then biological only. Boiling must retain salt/chemicals;
+   cooling must not purify them. F1 restores the initial test inputs.
+5. Save/load a paused boiling task and resume; confirm one fuel charge and one
+   output. Save/load hot water; its temperature must persist and keep cooling.
+Expected: UI, reservation/cancellation, purity, heat and save/load work without
+engine/VM errors. Confirm CA409-01 explicitly; agent tests do not imply acceptance.
+
 CA479-01 | Origin: 5.7.8 / issue #479 | Support implements
 Status: gameplay, acquisition and save/load checks remain outstanding.
 Prerequisites: GZDoom 4.14.2, the #479 full build and private fixture in

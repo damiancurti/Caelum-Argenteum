@@ -29,6 +29,11 @@ with zipfile.ZipFile(OUT/'fixture.pk3','w',zipfile.ZIP_STORED) as package:
     for name,data in sorted(members.items()):
         package.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
 scripts = {
+    'glass': 'wait 70; netevent ca409_glass; wait 5; quit',
+    'glass-live': 'wait 70; netevent ca409_glass_live; wait 140; netevent ca409_glass_tickcheck; wait 5; quit',
+    'glass-save': 'wait 70; netevent ca409_glass_save; wait 5; save ca409-hot-glass; wait 5; quit',
+    'glass-load': 'wait 70; netevent ca409_glass_load; wait 5; quit',
+    'glass-wait': 'wait 70; netevent ca409_glass_wait; wait 140; netevent ca409_glass_waitcheck; wait 5; quit',
     'smoke': 'wait 70; netevent ca409_checks; wait 5; quit',
     'save': 'wait 70; netevent ca409_save; wait 5; save ca409-state; wait 5; quit',
     'load': 'wait 70; netevent ca409_load; wait 5; quit',
@@ -36,8 +41,8 @@ scripts = {
     'wait': 'wait 70; netevent ca409_wait; wait 140; netevent ca409_waitcheck; wait 5; quit',
     'old-save': 'wait 70; netevent ca409_oldseed; wait 5; save ca409-original-578; wait 5; quit',
     'old-load': 'wait 70; netevent ca409_oldcheck; wait 5; quit',
-    'ui': 'language es; wait 70; netevent ca409_manual; ca_journal_page 0; ca_journal_open true; wait 35; screenshot __RUN__-inventory.png; netevent ca_inventory_boil; wait 15; screenshot __RUN__-task.png; wait 5; quit',
-    'interactive': 'language es; ca_journal_page 0; bind Tab ca_journal_toggle; bind F1 "netevent ca409_manual"; wait 70; netevent ca409_manual',
+    'ui': 'language es; wait 70; netevent ca409_manual; netevent ca409_quality; ca_journal_page 0; ca_journal_open true; wait 35; screenshot __RUN__-inventory.png; netevent ca_inventory_boil; wait 15; screenshot __RUN__-task.png; wait 5; quit',
+    'interactive': 'language es; ca_journal_page 0; bind Tab ca_journal_toggle; bind F1 "netevent ca409_manual"; bind F2 "netevent ca409_quality"; wait 70; netevent ca409_manual; ca_journal_open true',
 }
 for name,data in scripts.items():
     (OUT/f'{name}.cfg').write_text(data+'\n',encoding='utf-8',newline='\n')

@@ -352,13 +352,12 @@ Approved cooling is a closed-vessel, equivalent-capacity sphere with no further
 evaporation. Water mixing uses volume-weighted heat balance. Glass conductivity
 is 1.1 W/(m K), specific heat 830 J/(kg K); leather wall is 6 mm, conductivity
 0.14 and specific heat 1,500. Canteens use the existing provisional empty mass;
-glass wall thickness is derived from empty mass and density. **Glass density
-remains unauthored; the 5.7.9 draft deliberately does not cool bottles until it
-is confirmed.** Air convection and linearized radiation reuse the existing
+glass wall thickness is derived from empty mass and the author-approved ordinary
+glass density of 2,500 kg/m3 (2026-10-23). Air convection and linearized radiation reuse the existing
 thermal rules. Exponential integration approaches ambient without overshoot;
 clock gaps use the current sampled environment, without inventing historical
 weather. This model does not add freezing, pressure or evaporation while stored.
-Author acceptance and the complete glass cooling delivery remain outstanding.
+Author gameplay acceptance remains outstanding.
 
 #472 mate has 100/250/500 mL nominal capacity, respectively 20/50/100 g yerba
 and 60/150/300 mL useful water. Each hot use spends all water and one of twenty

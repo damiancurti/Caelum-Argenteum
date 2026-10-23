@@ -14,12 +14,12 @@ preserving old in-progress tasks at their original station. Other #471 recipes
 remain undefined. Static checks and 186 native assertions pass; the author
 passed CA471-AMMO-01 in full on 2026-10-23, without qualifications.
 [Evidence](assets/validation_5710/RESULTS.md); acceptance is recorded in HISTORY.
-The inherited #409 draft still awaits the bottle-glass density decision.
 
-V5.7.9 is the #409 water-boiling implementation draft: atomic station work,
-biological-only purification, temperature and hot-drink guards. Canteen cooling
-is implemented; bottle cooling still needs the glass-density decision omitted
-from the approved proposal. This draft is not a completed author delivery.
+V5.7.9 implements #409 water boiling: atomic station work, biological-only
+purification, temperature and hot-drink guards. The author approved ordinary
+glass density at 2,500 kg/m3, completing the bottle/canteen cooling model.
+The completed package passes 117 native checks and static validation;
+CA409-01 awaits author gameplay acceptance. Its launcher waits for Enter.
 See [current tasks](docs/TASKS.md) and [agent evidence](assets/validation_579/RESULTS.md).
 
 V5.7.8 integrates the approved support implements (#479): native selectors,

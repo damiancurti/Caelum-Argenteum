@@ -2,14 +2,15 @@
 
 Version 5.7.10 moves only the two existing kit-to-cartridge recipes to Workbench
 + Alchemy. No ingredient quantities, new recipes, economy, art or firearm behavior
-are changed. The independent #409 draft remains incomplete for glass cooling.
+are changed. The completed #409 dependency is now integrated separately below.
 All 186 native assertions pass; final source/package identity and static project
 validation pass. The two UI captures were inspected by the agent.
 
 `report.json` ties every native run to its production-package and fixture hashes.
 The collector verifies every packaged file against src and deterministic fixture
-generation. Static validation and native evidence are separate from outstanding
-author acceptance (CA471-AMMO-01). Tests use GZDoom 4.14.2 on the recorded Windows
+generation. The author passed CA471-AMMO-01 in full on 2026-10-23 without
+qualifications; HISTORY records acceptance. The original report preserves the
+earlier agent-only snapshot. Tests use GZDoom 4.14.2 on the recorded Windows
 11/RTX 3070 Ti environment, sequentially, unpaused, with audio at 5%.
 
 Coverage reuses the accepted #380 native cartridge tests with only the station
@@ -45,4 +46,13 @@ only to this #471 stage. Test PK3s, IWAD and executables are not distributed.
 Author launch: open `launch_author.ps1` with PowerShell `-NoExit -File`. It waits
 for Enter before starting the scene. F2 switches the station so the author can
 compare the two network requirements. Questions and author tests are deferred
-until the author returns; no manual acceptance is inferred from these runs.
+until the author returned and explicitly passed CA471-AMMO-01. No further
+cartridge-station author test is outstanding.
+
+After merging completed #409 commit 54ab1cb3, the combined full package passes
+31 focused native assertions: 21 glass cooling/process and 10 cartridge-station
+requirements. All 16,724 entries match src. `integration/report.json` and
+`collect_integration.py` preserve the combined package hash and separate issue
+logs. This integration does not replace #409's pending CA409-01 author review;
+the water-test launcher uses that combined build so accepted cartridges remain
+available. The author is away again; the new terminal waits for Enter.

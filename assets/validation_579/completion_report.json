@@ -1,0 +1,66 @@
+{
+  "issue": 409,
+  "version": "5.7.9",
+  "status": "implemented; author gameplay acceptance pending",
+  "glass_density_kg_m3": 2500,
+  "density_approved": "2026-10-23",
+  "package_sha256": "debbd7dd93486c40d1c17318d67a613effaf2d766a3003986bb85a0680d12110",
+  "source_entries": 16724,
+  "source_bytes_match": true,
+  "delta_from_preserved_draft": [
+    "caelum/data/CaelumWaterThermalData.zs"
+  ],
+  "fixture_sha256": "19cac96042e1ddc061a0629053cbb080807c17deae1b6b0ef0338d0723330013",
+  "fixture_deterministic": true,
+  "runs": [
+    {
+      "label": "glass01",
+      "passed": 21,
+      "fixture_sha256": "c22c4480c3f23d11152336cdae91cbae89f5ef5cd139f35ecc9d32ee987f2c47"
+    },
+    {
+      "label": "glass-live01",
+      "passed": 3,
+      "fixture_sha256": "c22c4480c3f23d11152336cdae91cbae89f5ef5cd139f35ecc9d32ee987f2c47"
+    },
+    {
+      "label": "glass-save01",
+      "passed": 1,
+      "fixture_sha256": "c22c4480c3f23d11152336cdae91cbae89f5ef5cd139f35ecc9d32ee987f2c47"
+    },
+    {
+      "label": "glass-load01",
+      "passed": 2,
+      "fixture_sha256": "c22c4480c3f23d11152336cdae91cbae89f5ef5cd139f35ecc9d32ee987f2c47"
+    },
+    {
+      "label": "complete-smoke01",
+      "passed": 75,
+      "fixture_sha256": "c22c4480c3f23d11152336cdae91cbae89f5ef5cd139f35ecc9d32ee987f2c47"
+    },
+    {
+      "label": "glass-wait01",
+      "passed": 6,
+      "fixture_sha256": "19cac96042e1ddc061a0629053cbb080807c17deae1b6b0ef0338d0723330013"
+    },
+    {
+      "label": "complete-wait01",
+      "passed": 6,
+      "fixture_sha256": "19cac96042e1ddc061a0629053cbb080807c17deae1b6b0ef0338d0723330013"
+    },
+    {
+      "label": "complete-legacy01",
+      "passed": 2,
+      "fixture_sha256": "486582cf3441b3c66a2342169ffb5384c4877ae5e421b489785cd6158762d6ea"
+    },
+    {
+      "label": "complete-ui01",
+      "passed": 1,
+      "fixture_sha256": "19cac96042e1ddc061a0629053cbb080807c17deae1b6b0ef0338d0723330013"
+    }
+  ],
+  "native_assertions_passed": 117,
+  "author_acceptance": false,
+  "draft_evidence": "report.json retains the original 91 assertions and rollback. The final package changes only the approved glass thermal datum; relevant process/thermal/legacy checks were rerun.",
+  "fixture_revision_notes": "Initial glass checks precede added manual quality controls and the dated-wait scenario; their fixture hash remains recorded and the production package is unchanged."
+}
