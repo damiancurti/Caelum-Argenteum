@@ -68,6 +68,9 @@ the five non-Orb designs, then confirmed the baseless Orb/open-palm retest on
 2026-10-22. All six designs now have author visual approval, including inventory
 sprites. The focused Orb correction passes 23 native checks (floating_orb_report.json).
 Do not repeat accepted visual checks. The temporary keep-awake remains released.
+The 2026-10-23 author run failed on lethal curse damage. The owner-lifetime guard
+and F2 dead-target reset are corrected; owner_death_report.json records focused
+native regression evidence. CA479-01 includes the outstanding lethal-damage retest.
 
 ## 5.7.7 - Target-panel delivery (#481)
 

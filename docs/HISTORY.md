@@ -168,6 +168,22 @@ its unconfirmed gameplay, campaign acquisition and save/load checks. No new
 runtime change or engine rerun was needed; documentation validation passed.
 The release remains 5.7.8. The author game and instruction terminal remain open.
 
+2026-10-23, CA479-01 gameplay failed (origin: 5.7.8 / #479). The author reported
+an error in the supplied terminal/session. Its native log identifies a null-owner
+read in CaelumSupportStatus.Tick after lethal damage calls OwnerDied and removes
+the status. The old package reproduces the same abort; the corrected tick checks
+Owner again before accessing health or advancing another role. The private F2
+reset now replaces dead recipients with live actors. No balance, art, save schema
+or accepted behavior changes; release 5.7.8 is retained for this patch correction.
+Focused evidence and original failure logs: assets/validation_578/owner_death_report.json.
+150 fixed-package assertions and four original-runtime save-seed assertions pass;
+all 16,722 packaged entries match source, with only the support lifetime guard
+changed at runtime. Old-save loading and repeated native attack/F2 cycles pass.
+The first automated probe set health before deferred PostBeginPlay; its failed
+assertions are retained but excluded from final evidence. The corrected probe
+waits for initialization and reproduces the author's exact VM failure.
+CA479-01 remains pending, including lethal damage, campaign acquisition and saves.
+
 ## 5.7.7 - Aimed-target information (#481)
 
 2026-10-22: the author requested a centered gameplay version of the #471 gallery

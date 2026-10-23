@@ -20,8 +20,8 @@ for name, data in [('CSUP479', b''), ('TEXTMAP', '\n'.join(text).encode()), ('EN
     directory += struct.pack('<ii8s', 12 + len(body), len(data), name.encode().ljust(8, b'\0'))
     body += data
 members = {
-    'ZSCRIPT': b'version "4.14"\n' + (HERE / 'fixture.zs').read_bytes()+b'\n'+(HERE / 'gameplay.zs').read_bytes()+b'\n'+(HERE / 'gallery.zs').read_bytes()+b'\n'+(HERE / 'manual_fixture.zs').read_bytes(),
-    'MAPINFO': b'GameInfo { AddEventHandlers="CA479Checks", "CA479Gameplay", "CA479Gallery", "CA479Manual" }\nmap CSUP479 "Support-state checks" { }\n',
+    'ZSCRIPT': b'version "4.14"\n' + (HERE / 'fixture.zs').read_bytes()+b'\n'+(HERE / 'gameplay.zs').read_bytes()+b'\n'+(HERE / 'gallery.zs').read_bytes()+b'\n'+(HERE / 'manual_fixture.zs').read_bytes()+b'\n'+(HERE / 'lethal_fixture.zs').read_bytes(),
+    'MAPINFO': b'GameInfo { AddEventHandlers="CA479Checks", "CA479Gameplay", "CA479Gallery", "CA479Manual", "CA479Lethal" }\nmap CSUP479 "Support-state checks" { }\n',
     'TEXTURES': b'Texture S479FLAT, 64, 64 { Patch "models/caelum/props/stations/ca_station_wood.png", 0, 0 }\n',
     'maps/CSUP479.wad': b'PWAD' + struct.pack('<ii', 3, 12 + len(body)) + body + directory,
 }
@@ -34,6 +34,11 @@ legacy['MAPINFO']=b'GameInfo { AddEventHandlers="CA479Legacy" }\nmap CSUP479 "Le
 with zipfile.ZipFile(OUT/'legacy-fixture.pk3','w',zipfile.ZIP_STORED) as package:
     for name,data in sorted(legacy.items()):package.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
 scripts = {
+    'lethal': 'wait 70; netevent ca479_lethal_seed; wait 5; netevent ca479_lethal_weaken; wait 75; netevent ca479_lethal_verify; wait 5; quit',
+    'lethal-save': 'wait 70; netevent ca479_lethal_seed; wait 5; netevent ca479_lethal_weaken; wait 10; save __RUN__; wait 5; quit',
+    'lethal-load': 'wait 75; netevent ca479_lethal_verify; wait 5; quit',
+    'lethal-player': 'wait 70; netevent ca479_lethal_player; wait 75; netevent ca479_lethal_playercheck; wait 5; quit',
+    'lethal-controls': 'wait 70; netevent ca479_manual; wait 45; netevent ca479_deadseed; +attack; wait 1; -attack; wait 75; netevent ca479_deadcheck; netevent ca479_reset; wait 1; netevent ca479_resetcheck; netevent ca479_deadseed; +attack; wait 1; -attack; wait 75; netevent ca479_deadcheck; netevent ca479_reset; wait 1; netevent ca479_resetcheck; wait 5; quit',
     'legacy-save': 'wait 70; netevent ca479_oldseed; wait 5; save ca479-legacy-v2; wait 5; quit',
     'legacy-load': 'wait 70; netevent ca479_migrated; wait 5; quit',
     'legacy-rollback': 'wait 70; netevent ca479_oldrollback; wait 5; quit',

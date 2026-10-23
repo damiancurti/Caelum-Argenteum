@@ -31,6 +31,17 @@ class CA479Manual : EventHandler
             Actor body=n==0?Actor(user):n==1?Actor(Enemy):Actor(Ally);
             let effect=CaelumSupportMagic.Status(body);if(effect!=null)effect.Destroy();
         }
+        // Reiniciar despues de una muerte requiere un actor vivo, no solo restaurar su salud.
+        if(Enemy==null || Enemy.health<=0)
+        {
+            if(Enemy!=null)Enemy.Destroy();
+            Enemy=CA479Body(Actor.Spawn("CA479Enemy",(48,0,0),NO_REPLACE));Enemy.Live=true;
+        }
+        if(Ally==null || Ally.health<=0)
+        {
+            if(Ally!=null)Ally.Destroy();
+            Ally=CA479Body(Actor.Spawn("CA479Ally",(48,96,0),NO_REPLACE));Ally.Live=true;Ally.bFriendly=true;
+        }
         Enemy.CombatMaximumHealth=1000;Enemy.health=1000;
         Ally.CombatMaximumHealth=1000;Ally.health=500;
         user.health=user.CaelumMaximumHealth;user.player.health=user.health;
@@ -75,6 +86,16 @@ class CA479Manual : EventHandler
         if(!Ready)return;
         if(event.Name=="ca479_choose")Select(user,Selected+1);
         if(event.Name=="ca479_reset")Reset(user);
+        if(event.Name=="ca479_deadseed")Enemy.health=1;
+        if(event.Name=="ca479_deadcheck")
+        {Check(Enemy==null || Enemy.health<=0,"manual native cast kills enemy safely");}
+        if(event.Name=="ca479_resetcheck")
+        {
+            Check(Enemy!=null && Enemy.health==1000 && Enemy.bShootable,"F2 replaces dead enemy with a live target");
+            Check(Ally!=null && Ally.health==500 && Ally.bFriendly,"F2 preserves live friendly target");
+            Check(CaelumSupportMagic.Status(Enemy)==null && CaelumSupportMagic.Status(Ally)==null,"F2 clears previous effects");
+            Console.Printf("CA479 RESULT manual reset passed=%d failed=%d",Passed,Failed);
+        }
         if(event.Name=="ca479_attributes")
         {
             AttributeLevel=AttributeLevel>0?0:100;Configure(user);
