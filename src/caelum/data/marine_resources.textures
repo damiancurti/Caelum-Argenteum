@@ -1,3 +1,3 @@
 // Alias de reserva del material; MODELDEF define su representación 3D.
 Sprite "M087A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_plant_fiber.png", 0, 0 }
-Sprite "M088A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_raw_opal.png", 0, 0 }
+Sprite "M088A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/materials/ca_material_iodine.png", 0, 0 }

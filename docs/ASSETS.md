@@ -1,6 +1,38 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.7.5** — 2026-10-22.
+Documentation version: **5.7.6** — 2026-10-22.
+
+## 5.7.6 - Alchemy ingredient artwork (#471)
+
+`assets/generators/alchemy_ingredients.json` records the bounded art brief and
+owned palette. `generate_alchemy_ingredients.py` produces original textured
+OBJ geometry and matching 128x128 transparent inventory sprites using a depth
+buffer. Baked per-face texture shading preserves volume under native sector
+lighting. Faces are grouped by material into 8?20 surfaces per new mesh to
+stay within GZDoom 4.14.2's 32 surface-skin slots (CA-KP-152). Material inventory rows now draw their authoritative icons using the
+existing clothing-row alignment. The existing #407 iodine mesh stays byte-identical; only its generic
+opal icon/fallback is replaced by a view of that mesh. The marine data source
+owns both inventory and fallback icon paths.
+
+New models represent saltpeter, sulfur, charcoal, molasses, fermented
+intermediate, alcohol, yeast, abstract gunpowder and two regional deposits.
+Pale granular niter crust and yellow native sulfur remain visually distinct;
+charcoal retains wood fractures. Closed or open vessels are visual conventions,
+not approved masses, capacities, prices or container-reuse rules. The abstract
+powder tin conveys no real formulation or manufacturing procedure. Existing
+plant, hive, marine, medikit and potion art remains unchanged.
+
+Runtime assets live under `src/models/caelum/world/alchemy_ingredients/` and
+`src/graphics/caelum/icons/materials/`. The manifest records source, texture,
+model and icon hashes; the review sheet stays outside src. Only iodine is
+bound to an existing live material. The other models/icons are staged assets,
+with private gallery bindings until the remaining #471 data is approved.
+No new catalogue IDs or campaign sources are installed. This follows the
+owned procedural model/icon workflow used for the accepted Alchemy station;
+no external artwork, newly painted raster source or Doom assets are introduced.
+
+Evidence: `assets/validation_576/RESULTS.md`. The author passed visual check
+CA471-ART-01 in full on 2026-10-22, after the corrected gallery handoff.
 
 ## 5.7.5 - Owned marine material models (#407)
 

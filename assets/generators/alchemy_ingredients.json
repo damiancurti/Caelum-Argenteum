@@ -1,0 +1,46 @@
+{
+  "issue": 471,
+  "status": "Artwork accepted by the author: CA471-ART-01, 5.7.6 / #471, 2026-10-22; gameplay integration remains separate",
+  "brief": {
+    "reference": "docs/SPRITE_ART_DIRECTION.md; docs/ASSETS.md",
+    "purpose": "World ingredient models, transparent inventory sprites and regional deposit candidates",
+    "direction": "Owned low-poly, muted pixel-oriented dark fantasy in nineteenth-century Argentina",
+    "references": ["assets/generators/generate_marine_models.py", "assets/generators/generate_alchemy_station.py", "assets/generators/generate_mineral_veins.py"],
+    "protected": "Accepted iodine mesh and all existing resource gameplay; no new gameplay quantities or material IDs",
+    "views": "One 128x128 transparent orthographic icon per model; native gallery supports all-around inspection",
+    "lighting": "Matte mineral crusts, charcoal with woody fractures, worn wood, cork, ceramic and dark glass; no glow",
+    "exclude": "Text labels on artwork, formulas, manufacturing instructions, modern packaging, invented magical or medical effects",
+    "processing": "Deterministic original geometry and procedural textures; icons rasterized from the same textured meshes with a depth buffer",
+    "acceptance": "Inspect every icon, compare native models from multiple sides, inspect real iodine inventory and confirm CA471-ART-01"
+  },
+  "provenance": "Original project geometry and procedural textures. Iodine reuses the unchanged #407 mesh. No external artwork or AI-painted source.",
+  "rules": "Representation only: vessels and model dimensions imply no inventory mass, capacity, recipe or price. Regional deposit candidates are not placed in MAP03. No real propellant formulation is represented.",
+  "baked_shades": [0.55, 0.62, 0.69, 0.76, 0.83, 0.90, 0.97, 1.04],
+  "materials": {
+    "salt": {"rgb": [207, 203, 183], "grain": 13, "pattern": "mineral"},
+    "sulfur": {"rgb": [185, 164, 49], "grain": 16, "pattern": "mineral"},
+    "host": {"rgb": [92, 82, 72], "grain": 14, "pattern": "mineral"},
+    "charcoal": {"rgb": [56, 51, 47], "grain": 10, "pattern": "wood"},
+    "wood": {"rgb": [101, 65, 39], "grain": 12, "pattern": "wood"},
+    "iron": {"rgb": [74, 78, 81], "grain": 7, "pattern": "mineral"},
+    "cork": {"rgb": [138, 101, 58], "grain": 15, "pattern": "mineral"},
+    "ceramic": {"rgb": [104, 58, 36], "grain": 8, "pattern": "mineral"},
+    "glass": {"rgb": [47, 68, 60], "grain": 4, "pattern": "mineral"},
+    "cloth": {"rgb": [174, 151, 109], "grain": 8, "pattern": "cloth"},
+    "yeast": {"rgb": [190, 165, 121], "grain": 10, "pattern": "mineral"},
+    "molasses": {"rgb": [58, 33, 21], "grain": 3, "pattern": "mineral"}
+  },
+  "assets": [
+    {"key": "iodine", "en": "Iodine", "es": "Yodo", "shape": "existing_iodine", "role": "Live material 88: dedicated icon; accepted model preserved"},
+    {"key": "saltpeter", "en": "Saltpeter", "es": "Salitre", "shape": "saltpeter", "role": "Pale granular niter crust, not a gemstone"},
+    {"key": "sulfur", "en": "Sulfur", "es": "Azufre", "shape": "sulfur", "role": "Ochre-yellow irregular native sulfur lump"},
+    {"key": "charcoal", "en": "Charcoal", "es": "Carbon vegetal", "shape": "charcoal", "role": "Charred wood fragments; distinct from mineral coal"},
+    {"key": "molasses", "en": "Molasses", "es": "Melaza", "shape": "molasses", "role": "Open glazed earthenware pot with dark syrup"},
+    {"key": "fermented_intermediate", "en": "Fermented intermediate", "es": "Fermento", "shape": "cask", "role": "Closed wooden cask"},
+    {"key": "alcohol", "en": "Alcohol", "es": "Alcohol", "shape": "alcohol", "role": "Tall dark green bottle with cork and plain neck wrap"},
+    {"key": "yeast", "en": "Yeast", "es": "Levadura", "shape": "yeast", "role": "Beige cake on a folded cloth"},
+    {"key": "gunpowder", "en": "Abstract gunpowder", "es": "Polvora abstracta", "shape": "tin", "role": "Closed squat tin; no recipe or operational information"},
+    {"key": "saltpeter_deposit", "en": "Regional niter deposit", "es": "Yacimiento de salitre", "shape": "saltpeter_deposit", "role": "Pale crust over sheltered host rock; future appropriate region, no MAP03 placement"},
+    {"key": "sulfur_deposit", "en": "Regional sulfur deposit", "es": "Yacimiento de azufre", "shape": "sulfur_deposit", "role": "Yellow deposits within dark volcanic host rock; future appropriate region, no MAP03 placement"}
+  ]
+}

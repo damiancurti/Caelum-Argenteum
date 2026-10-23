@@ -1,6 +1,6 @@
 {
   "issue": 407,
-  "provenance": "Original deterministic project geometry; existing owned project textures. Inventory icons reuse owned material art.",
+  "provenance": "Original deterministic project geometry; existing owned project textures. Icon paths follow marine_resources.json; #471 renders iodine from the accepted mesh.",
   "textures": [
     "models/caelum/props/stations/ca_station_wood.png",
     "models/caelum/props/stations/ca_station_paper.png",

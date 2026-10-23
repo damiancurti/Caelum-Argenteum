@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.7.5.** Obtain and update the complete repository, validate
+**Current release: 5.7.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+V5.7.6 prepares Alchemy ingredient artwork (#471): 11 transparent icons and
+10 new 3D models, including regional saltpeter/sulfur deposit candidates. Iodine
+now uses its own icon from the accepted model. Other assets await approved
+gameplay data; deposits are not placed in MAP03. Static validation and 24 native checks pass; 33 model views were inspected.
+The author passed CA471-ART-01 on 2026-10-22. [Art evidence](assets/validation_576/RESULTS.md).
 
 V5.7.5 adds dried cachiyuyo imports in MAP03 and the abstract iodine recipe
 at Workbench + Alchemy (#407), with owned 3D material models and additive save

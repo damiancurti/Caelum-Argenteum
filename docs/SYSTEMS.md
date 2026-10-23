@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.5** — 2026-10-22.
+Documentation version: **5.7.6** — 2026-10-22.
+
+## Alchemy art and regional source decision (#471, 5.7.6)
+
+The author requested ingredient sprites/models on 2026-10-22. This art stage
+binds a dedicated icon to existing iodine and prepares the other approved
+ingredient families without changing effects, prices, recipes, saves or stock.
+Saltpeter means natural niter (potassium nitrate), distinct from sodium nitrate;
+charcoal remains distinct from mineral coal. The author selected collectible
+saltpeter/sulfur deposits only in appropriate regions, with MAP03 supplied by
+trade meanwhile. Regional placement, extraction/reserve values, trade prices,
+stock and abstract recipe units still require approval. The art stage installs
+neither deposits nor new trade items. Construction at Alchemy remains the
+approved acquisition for abstract gunpowder, followed by compatible kits and
+ten-cartridge batches. No real propellant proportions or procedures are part
+of the data contract. Representation details are documented in ASSETS.
 
 ## Marine imports and iodine (#407, 5.7.5)
 

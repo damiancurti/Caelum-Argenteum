@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-152 - Bound OBJ surface runs when baking material shading
+
+Status/evidence: CODE-VERIFIED and isolated native reproduction; #471,
+2026-10-22, GZDoom 4.14.2 / Windows 11 / Vulkan. Author visual acceptance
+CA471-ART-01 passed on 2026-10-22. Evidence: assets/validation_576/RESULTS.md and
+failure-diagnosis.json; deterministic generator and per-model surface counts
+in assets/generators/alchemy_ingredients_manifest.json.
+
+Every `usemtl` run creates a new OBJ surface, even when its material appeared
+earlier. Per-face baked shading produced 63?232 surfaces in this batch; the
+first isolated saltpeter model had 182. The author reported `Trying to create
+zero size texture` after all setup assertions passed. The failure persisted
+without the gallery overlay and disappeared with the models invisible.
+
+Target-engine sources: [model.h, MD3_MAX_SURFACES=32](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/model.h#L30),
+[OBJ loading and rendering](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/models_obj.cpp#L633),
+[Vulkan texture size guard](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/vulkan/textures/vk_hwtexture.cpp#L138).
+RenderFrame indexes surface skin IDs without the i<32 guard present in AddSkins.
+Do not rely on benign results from an out-of-range read: some earlier runs
+rendered, others terminated. Native process completion and actual visual review
+are required in addition to setup assertions.
+
+Group opaque faces contiguously by material before export; this batch now has
+8?20 surfaces per new mesh with unchanged face/vertex counts. Enforce the limit
+in generation and verification. This also avoids unnecessary surface submissions;
+no frame-rate improvement is claimed without measurement. Keep independent
+accepted meshes untouched. Do not apply a global renderer/backend workaround.
+
 ## CA-KP-151 - Hidden-window screenshots can retain a stale scene
 
 Status/evidence: ENGINE-VERIFIED; #470, 2026-10-22. Baseline 992da877 plus

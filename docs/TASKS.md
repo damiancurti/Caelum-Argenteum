@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.5** — 2026-10-22.
+Documentation version: **5.7.6** — 2026-10-22.
+
+## 5.7.6 - Alchemy art stage (#471)
+
+Art delivered for iodine, saltpeter, sulfur, charcoal, molasses, fermented
+intermediate, alcohol, yeast, abstract gunpowder and two regional deposits.
+Iodine uses its own sprite; the accepted model is preserved. Other assets are
+staged with an isolated native gallery, without invented gameplay values.
+Static validation and 24 native checks pass; 33 model views inspected.
+CA471-ART-01 passed author review on 2026-10-22. Evidence: assets/validation_576/RESULTS.md.
+
+Remaining #471 work: approved quantities, yields, work/fuel, knowledge routes,
+container reuse, prices/stock, new material catalogue and recipe integration;
+cartridge station migration and save checks. Regional deposits belong in
+appropriate future regions, with trade supplying MAP03. Keep #409 boiling and
+#472 mate in their own branches, commits, tests and PRs.
 
 ## 5.7.5 - Marine imports and iodine (#407)
 

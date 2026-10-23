@@ -1255,6 +1255,10 @@ class CaelumJournalOverlay : EventHandler
             if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
                 DrawTexture(CaelumClothingData.Icon(localPlayer.FormalInventoryRowType[row]),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+                DrawTexture(CaelumMaterialPickup.GetMaterialIconPathForType(
+                    localPlayer.FormalInventoryRowType[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
             DrawTextLine(
                 InventoryFont,
                 row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,
