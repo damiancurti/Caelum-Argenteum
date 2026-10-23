@@ -1,0 +1,82 @@
+{
+  "issue": 409,
+  "version": "5.7.9",
+  "status": "implementation draft; glass cooling datum unresolved",
+  "package_sha256": "4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad",
+  "source_entries": 16724,
+  "source_bytes_match": true,
+  "previous_package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201",
+  "presentation_only_delta": [
+    "caelum/hud/CaelumCraftingUI.zs",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "LANGUAGE",
+    "localization/index.json",
+    "localization/INDEX.md"
+  ],
+  "reuse_scope": "Native process/wait/save checks reused after an inspected UI-only correction; server logic and thermal data are byte-identical.",
+  "fixture_sha256": "e02fc00287f0099e154158738eb64e6adc8c3d0126a389ffc53186947fa173d6",
+  "fixture_deterministic": true,
+  "runs": [
+    {
+      "label": "final-smoke",
+      "passed": 75,
+      "failed": 0,
+      "package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201"
+    },
+    {
+      "label": "final-live",
+      "passed": 2,
+      "failed": 0,
+      "package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201"
+    },
+    {
+      "label": "final-wait",
+      "passed": 6,
+      "failed": 0,
+      "package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201"
+    },
+    {
+      "label": "final-save",
+      "passed": 1,
+      "failed": 0,
+      "package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201"
+    },
+    {
+      "label": "final-load",
+      "passed": 4,
+      "failed": 0,
+      "package_sha256": "c1509c8e1ca700c1b44f46b31cbe8105d6e47de420f1ac18790d14af20f2e201"
+    },
+    {
+      "label": "final-ui2",
+      "passed": 0,
+      "failed": 0,
+      "package_sha256": "4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad"
+    },
+    {
+      "label": "final-legacy2",
+      "passed": 2,
+      "failed": 0,
+      "package_sha256": "4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad"
+    },
+    {
+      "label": "old-save01",
+      "passed": 0,
+      "failed": 0,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    },
+    {
+      "label": "old-rollback01",
+      "passed": 1,
+      "failed": 0,
+      "package_sha256": "1531913425f9812230a1126387c68d426ba60a76940369aafab83647321043de"
+    }
+  ],
+  "native_assertions_passed": 91,
+  "author_acceptance": false,
+  "remaining": [
+    "Confirm glass density and complete bottle cooling tests",
+    "Author interaction/acceptance",
+    "PR review/integration"
+  ]
+}

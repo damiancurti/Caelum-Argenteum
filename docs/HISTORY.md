@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.8** — 2026-10-22.
+Documentation version: **5.7.9** — 2026-10-23.
+
+## 5.7.9 - Water boiling implementation draft (#409), 2026-10-23
+
+The author approved the fixed glass station equipment, 1 kW useful power,
+25% efficiency, 28 MJ/kg mineral coal, 1 kg heated glass and a final 60-second
+boil. Dexterity does not shorten thermal work. This supersedes the earlier
+documented 60 s/L, 10 g coal/L and zero evaporation proposal; that proposal had
+not been delivered as runtime boiling. Only biological contamination is removed.
+The author chose atomic cancellation with no material/heat/content changes.
+
+The cooling proposal was approved on 2026-10-22: ambient/wind, equivalent sphere,
+heat-balanced mixing, closed vessels, unchanged provisional empty masses,
+glass k=1.1 W/(m K), cp=830 J/(kg K), leather wall=6 mm, k=0.14 and cp=1500.
+The proposal omitted glass density, required to derive its wall from mass.
+That value remains a design question for the author's return, not an inferred
+approval. Bottle cooling is consequently incomplete in this draft.
+
+Implementation reuses the task coordinator, native material reservations and
+the world's existing thermal clock. Revision-1 temperature fields retain volume,
+quality and placement; the serializable task carrier retains the exact target.
+Inventory H, task cancellation, shared waiting and hot-water supply guards are
+integrated. Agent evidence and exact package hashes are recorded under
+assets/validation_579; no author acceptance is claimed or removed from the queue.
+The author requested temporary prevention of system sleep while away; the
+local helper has an automatic twelve-hour expiry and a release signal.
+
+Agent results: static validation passes; 91 native assertions pass. Final
+package SHA-256 is 4144ef65ec10a3f35cd9b730a23eb95423497b1ac21eff3d8dd07cf7a6050fad
+and all 16,724 entries match src. The evidence collector records exactly which
+earlier server checks were reused after a presentation-only correction.
+The corrected inventory/task screens and additive old-save migration were
+checked on the final package. No author test has been claimed for #409.
 
 ## 5.7.8 - Support implements (#479, awaiting author acceptance)
 

@@ -35,6 +35,6 @@ class CaelumQuickUse : Object
             || (user.player.cheats & CF_TOTALLYFROZEN))return false;
         let water=CaelumWaterContainer(item);
         return water==null || (user.DerivedStats!=null && user.CurrentThirst<100
-            && water.IsPotable() && water.WaterLiters>0.000001);
+            && water.IsDrinkable() && water.WaterLiters>0.000001);
     }
 }

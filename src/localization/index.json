@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "af4d1b2899e978320f337c1b80f0d0e5e8ed3a055849343137522e15e6689f99",
+  "sha256": "cf7b3748da5b9ca2100bd119e97c6dae93e05a9a106d09e6e97d42e17f9bb015",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[428,428]],"default":[[428,428]],"es":[[1123,1123]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[978,978]],"default":[[978,978]],"es":[[1673,1673]]},
@@ -2689,6 +2689,11 @@
     "CA_WATER_ACCEPT": {"default":[[3493,3493]],"es":[[3530,3530]]},
     "CA_WATER_ASK": {"default":[[3492,3492]],"es":[[3529,3529]]},
     "CA_WATER_BIOLOGICAL": {"es":[[6116,6116]],"enu":[[6129,6129]],"default":[[6129,6129]]},
+    "CA_WATER_BOIL": {"enu":[[6237,6237]],"default":[[6237,6237]],"es":[[6242,6242]],"esp":[[6242,6242]]},
+    "CA_WATER_BOILED": {"enu":[[6238,6238]],"default":[[6238,6238]],"es":[[6243,6243]],"esp":[[6243,6243]]},
+    "CA_WATER_BOIL_ESTIMATE": {"enu":[[6248,6248]],"default":[[6248,6248]],"es":[[6250,6250]],"esp":[[6250,6250]]},
+    "CA_WATER_BOIL_FAILED": {"enu":[[6239,6239]],"default":[[6239,6239]],"es":[[6244,6244]],"esp":[[6244,6244]]},
+    "CA_WATER_BOIL_PREVIEW": {"enu":[[6240,6240]],"default":[[6240,6240]],"es":[[6245,6245]],"esp":[[6245,6245]]},
     "CA_WATER_BOTTLE_LARGE": {"default":[[3488,3488]],"es":[[3525,3525]]},
     "CA_WATER_BOTTLE_NORMAL": {"default":[[3487,3487]],"es":[[3524,3524]]},
     "CA_WATER_BOTTLE_SMALL": {"default":[[3486,3486]],"es":[[3523,3523]]},

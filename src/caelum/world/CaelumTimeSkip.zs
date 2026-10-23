@@ -17,7 +17,7 @@ class CaelumTimeSkipRules : Object play
     {
         if (item==null) return 0;
         let water = CaelumWaterContainer(item);
-        if (water != null) return water.IsPotable() ? 3 : 0;
+        if (water != null) return water.IsDrinkable() ? 3 : 0;
         if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION) return 1;
         if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_WATER_RATION) return 2;
         return 0;
@@ -111,7 +111,12 @@ class CaelumTimeSkipState : Inventory
     static Actor TaskAnchor(CaelumPlayer user)
     {let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.ActiveCraftingStationActor:reading!=null?reading.Anchor:null;}
     static double TaskSeconds(CaelumPlayer user)
-    {let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.CraftingTaskRemainingSeconds:reading!=null?reading.RemainingSeconds:0;}
+    {
+        let reading=CaelumRecipeSession.Get(user);
+        if(user.CraftingTaskActive)return user.CraftingTaskRemainingSeconds
+            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
+        return reading!=null?reading.RemainingSeconds:0;
+    }
     static bool IsActive(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active;}
     static bool IsSleeping(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active && s.Sleeping;}
     static bool UsesFurniture(CaelumPlayer user,CaelumRestFurniture item)

@@ -2463,7 +2463,7 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowWaterLiters[row] = -1;
         let water = CaelumWaterContainer(entry);
         if (water != null)
-        { water.EnsureWaterQuality(); user.FormalInventoryRowWaterLiters[row] = water.WaterLiters; user.FormalInventoryRowWaterQuality[row] = water.WaterQuality; }
+        { water.EnsureWaterQuality(); water.EnsureWaterTemperature(user); user.FormalInventoryRowWaterLiters[row] = water.WaterLiters; user.FormalInventoryRowWaterQuality[row] = water.WaterQuality; user.FormalInventoryRowWaterTemperature[row]=water.WaterTemperatureC; }
         user.FormalInventoryRowAmount[row] = Max(1, entry.Amount);
         user.FormalInventoryRowWeight[row] =
             user.GetFormalInventoryEntryWeight(entry);
@@ -2729,6 +2729,8 @@ class CaelumInventoryService : Object play
     static void ToggleFormalInventoryStorage(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if(CaelumWaterBoiling.Locked(user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex)))
+        {user.LastEquipmentAction=CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;return;}
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
@@ -2743,6 +2745,8 @@ class CaelumInventoryService : Object play
     static void DropFormalInventorySelection(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if(CaelumWaterBoiling.Locked(user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex)))
+        {user.LastEquipmentAction=CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;return;}
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
@@ -3418,6 +3422,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
+        CaelumWaterBoiling.Clear(user);
         user.CraftingTaskActive = false;
         user.CraftingTaskCompleting = false;
         user.CraftingTaskKind = CaelumConstants.CRAFTING_TASK_NONE;
@@ -4904,6 +4909,10 @@ class CaelumInventoryService : Object play
 
     static void ToggleSelectedMagicBoxNative(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+            && CaelumWaterBoiling.Locked(user.FindNativeConsumableItem(user.EquipmentSelectionConsumableType)))
+        {user.LastEquipmentAction=CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;return;}
         if(CaelumClassCastView.Active(user)
             && user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)return;
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
@@ -6174,7 +6183,8 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskActive) { return; }
-        if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
+        if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
             && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
         {user.CancelCraftingTask();return;}
@@ -6184,7 +6194,13 @@ class CaelumInventoryService : Object play
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if (completedKind == CaelumConstants.CRAFTING_TASK_REPAIR)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_BOIL)
+        {
+            user.CraftingTaskCompleting=true;
+            if(!CaelumWaterBoiling.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            user.CraftingTaskCompleting=false;
+        }
+        else if (completedKind == CaelumConstants.CRAFTING_TASK_REPAIR)
         {
             user.CraftingTaskCompleting = true;
             user.CompleteRepairTask();
@@ -6214,8 +6230,9 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
-        if(user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
-            || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED)
+        if(completedKind!=CaelumConstants.CRAFTING_TASK_BOIL
+            && (user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
+            || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED))
             CaelumRecipeLearning.CommitPractice(user);
         user.ClearCraftingTaskData();
         user.CraftingMenuOpen = menuWasOpen;

@@ -436,6 +436,75 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool WasSubmerged;
     int WaterQuality;
     int WaterQualityRevision;
+    int WaterTemperatureRevision;
+    double WaterTemperatureC;
+    double CoolingSeconds;
+    bool TemperatureClockReady;
+    double TemperatureStamp;
+    transient CaelumWeatherSample CoolingEnvironment;
+
+    void EnsureWaterTemperature(CaelumPlayer user)
+    {
+        if(WaterTemperatureRevision>=CaelumWaterThermalData.REVISION)return;
+        let thermal=CaelumThermalBody.Get(user);
+        if(thermal==null || !thermal.Available)return;
+        WaterTemperatureC=thermal.AmbientAirC;
+        WaterTemperatureRevision=CaelumWaterThermalData.REVISION;
+        StampTemperature(user);
+    }
+    void StampTemperature(CaelumPlayer user)
+    {
+        let clock=CaelumWorldClock.Get(user);
+        if(clock==null)return;
+        TemperatureStamp=CaelumThermalRuntime.Stamp(clock);TemperatureClockReady=true;
+    }
+    clearscope bool IsDrinkable()
+    {return IsPotable() && !CaelumWaterBoiling.Locked(self)
+        && (WaterTemperatureRevision==0 || WaterTemperatureC<=CaelumWaterThermalData.DRINK_MAX_C);}
+    clearscope bool IsLeather()
+    {return self is 'CaelumCanteenSmall' || self is 'CaelumCanteenNormal' || self is 'CaelumCanteenLarge';}
+    void AdvanceTemperature(CaelumPlayer user,double seconds)
+    {
+        EnsureWaterTemperature(user);
+        let clock=CaelumWorldClock.Get(user);
+        if(clock!=null)
+        {
+            double now=CaelumThermalRuntime.Stamp(clock);
+            if(TemperatureClockReady)seconds=Max(0,now-TemperatureStamp);
+            TemperatureStamp=now;TemperatureClockReady=true;
+        }
+        if(WaterLiters<=0 || WaterTemperatureRevision==0 || CaelumWaterBoiling.Locked(self))return;
+        CoolingSeconds+=seconds;
+        if(CoolingSeconds<1)return;
+        let thermal=CaelumThermalBody.Get(user);
+        if(thermal!=null && thermal.Available)
+            WaterTemperatureC=CaelumWaterThermalData.Cool(WaterTemperatureC,thermal.AmbientAirC,
+                thermal.AmbientWindKmh/3.6,CoolingSeconds,WaterLiters,GetCapacityLiters(),IsLeather());
+        CoolingSeconds=0;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        if(Owner is 'CaelumPlayer' || level.maptime%TICRATE!=0)return;
+        let world=CaelumThermalWorld.Get();
+        if(world==null || world.ReferenceClock==null || world.ReferenceWeather==null)return;
+        let weather=world.ReferenceWeather;
+        if(weather.Outside==null || !weather.Outside.Available)return;
+        Actor body=Owner;if(body==null)body=self;
+        int shelter=CaelumWeatherRules.OPEN;
+        if(weather.Profile==CaelumWeatherRules.PROFILE_LIMBO)shelter=CaelumWeatherRules.LIMBO;
+        else if(CaelumThermalShelter.Roof(body))shelter=weather.Profile>=2 && weather.Profile<=4
+            ?CaelumWeatherRules.UNDERGROUND:CaelumThermalShelter.WindBlocked(body)?CaelumWeatherRules.INDOOR:CaelumWeatherRules.CANOPY;
+        if(CoolingEnvironment==null)CoolingEnvironment=new('CaelumWeatherSample');
+        CoolingEnvironment.ApplyShelter(weather.Outside,shelter,weather.Profile);
+        double now=CaelumThermalRuntime.Stamp(world.ReferenceClock);
+        if(WaterTemperatureRevision==0)
+        {WaterTemperatureC=CoolingEnvironment.AirTemperatureC;WaterTemperatureRevision=CaelumWaterThermalData.REVISION;}
+        else if(TemperatureClockReady && WaterLiters>0)
+            WaterTemperatureC=CaelumWaterThermalData.Cool(WaterTemperatureC,CoolingEnvironment.AirTemperatureC,
+                CoolingEnvironment.WindSpeedKmh/3.6,Max(0,now-TemperatureStamp),WaterLiters,GetCapacityLiters(),IsLeather());
+        TemperatureStamp=now;TemperatureClockReady=true;
+    }
 
     // Los guardados anteriores sólo podían contener agua potable. Cero conserva
     // esa identidad; migrar no rellena, vacía ni modifica una calidad existente.
@@ -444,12 +513,20 @@ class CaelumWaterContainer : CaelumConsumableItem
     clearscope bool IsPotable() { return CaelumWaterQuality.IsSafe(WaterQuality); }
     clearscope String WaterLabel()
     { return WaterLiters <= 0.000001 ? StringTable.Localize("CA_WATER_EMPTY", false) : CaelumWaterQuality.Label(WaterQuality); }
-    bool AddWater(double liters, int quality)
+    bool AddWater(double liters, int quality, double sourceC=0, bool sourceKnown=false)
     {
-        if (liters <= 0 || !CaelumWaterQuality.Valid(quality)
+        if (CaelumWaterBoiling.Locked(self) || liters <= 0 || !CaelumWaterQuality.Valid(quality)
             || WaterLiters < 0 || WaterLiters + liters > GetCapacityLiters() + 0.000001
             || (WaterLiters > 0.000001 && !CaelumWaterQuality.Valid(WaterQuality))) return false;
         EnsureWaterQuality();
+        let user=CaelumPlayer(Owner);EnsureWaterTemperature(user);
+        let thermal=CaelumThermalBody.Get(user);
+        if(!sourceKnown && thermal!=null && thermal.Available){sourceC=thermal.AmbientAirC;sourceKnown=true;}
+        if(sourceKnown)
+        {
+            WaterTemperatureC=CaelumWaterThermalData.Mix(WaterLiters,WaterTemperatureC,liters,sourceC);
+            WaterTemperatureRevision=CaelumWaterThermalData.REVISION;
+        }
         WaterQuality = WaterLiters > 0.000001 ? WaterQuality | quality : quality;
         WaterLiters += liters;
         return true;
@@ -461,7 +538,10 @@ class CaelumWaterContainer : CaelumConsumableItem
         double missing = GetCapacityLiters() - WaterLiters;
         if (missing <= 0.000001 || !CaelumWaterQuality.Valid(quality)
             || !user.CanAddWeightToPersonalInventory(missing + 0.001)) return false;
-        if (!AddWater(missing, quality)) return false;
+        let thermal=CaelumThermalBody.Get(user);
+        bool sourceKnown=thermal!=null && thermal.Available;
+        double sourceC=sourceKnown?thermal.WaterC:0;
+        if (!AddWater(missing, quality,sourceC,sourceKnown)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (IsPotable() && record != null && record.MainM00WaterContainerGiven) record.MainM00WaterFilled = true;
         user.OnNativeInventoryChanged(); user.PersistCharacterState();
@@ -469,7 +549,7 @@ class CaelumWaterContainer : CaelumConsumableItem
     }
     bool EmptyWater(CaelumPlayer user)
     {
-        if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || WaterLiters <= 0) return false;
+        if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || WaterLiters <= 0 || CaelumWaterBoiling.Locked(self)) return false;
         EnsureWaterQuality(); WaterLiters = 0; WaterQuality = CaelumWaterQuality.POTABLE;
         user.OnNativeInventoryChanged(); user.PersistCharacterState();
         return true;
@@ -496,14 +576,15 @@ class CaelumWaterContainer : CaelumConsumableItem
     override Inventory CreateCopy(Actor other)
     {
         let copy = CaelumWaterContainer(Super.CreateCopy(other));
-        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; }
+        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; copy.WaterTemperatureC=WaterTemperatureC; copy.WaterTemperatureRevision=WaterTemperatureRevision; copy.CoolingSeconds=CoolingSeconds; copy.TemperatureClockReady=TemperatureClockReady; copy.TemperatureStamp=TemperatureStamp; }
         CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
     override Inventory CreateTossable(int amount)
     {
+        if(CaelumWaterBoiling.Locked(self))return null;
         let copy = CaelumWaterContainer(Super.CreateTossable(amount));
-        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.InMagicBox = InMagicBox; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; }
+        if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.InMagicBox = InMagicBox; copy.WaterQuality = WaterQuality; copy.WaterQualityRevision = WaterQualityRevision; copy.WaterTemperatureC=WaterTemperatureC; copy.WaterTemperatureRevision=WaterTemperatureRevision; copy.CoolingSeconds=CoolingSeconds; copy.TemperatureClockReady=TemperatureClockReady; copy.TemperatureStamp=TemperatureStamp; }
         CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
@@ -512,7 +593,7 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool Drink()
     {
         let user = CaelumPlayer(Owner);
-        if (user == null || user.health <= 0 || InMagicBox || !IsPotable() || WaterLiters <= 0.000001
+        if (user == null || user.health <= 0 || InMagicBox || !IsDrinkable() || WaterLiters <= 0.000001
             || user.DerivedStats == null || user.CurrentThirst >= 100) return false;
         // Un sorbo cubre diez puntos de Sed según la masa corporal, sin equipo.
         // Si queda menos agua, sólo recupera la proporción realmente bebida.

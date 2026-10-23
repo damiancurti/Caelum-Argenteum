@@ -62,7 +62,7 @@ class CaelumContainerRules : Object play
     }
     static bool Allowed(CaelumPlayer user,Inventory item,bool depositing)
     {
-        if(item==null || item.Amount<=0 || item is "CaelumChestCargo"
+        if(item==null || item.Amount<=0 || CaelumWaterBoiling.Locked(item) || item is "CaelumChestCargo"
             || item is "CaelumMagicBox" || item is "CaelumTarotDeck"
             || user.GetFormalInventoryEntryKind(item)<0)return false;
         let equipment=CaelumEquipmentItem(item);

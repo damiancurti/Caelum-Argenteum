@@ -5,6 +5,8 @@ version "4.14"
 // Keeping each system in a separate file will make the project easier to learn,
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
+#include "caelum/data/CaelumWaterThermalData.zs"
+#include "caelum/crafting/CaelumWaterBoiling.zs"
 #include "caelum/data/CaelumLandResourceData.zs"
 #include "caelum/data/CaelumMarineData.zs"
 #include "caelum/data/CaelumReinforcementData.zs"
