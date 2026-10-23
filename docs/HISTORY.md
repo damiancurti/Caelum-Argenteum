@@ -95,6 +95,13 @@ decisions without assigning recipe quantities/yields/durations or implementing
 unattended batches. The #471 documentation commit is separate from the concurrent
 #479 lethal-curse correction. No gameplay or author test completion is claimed.
 
+Later on 2026-10-23, the author answered "Permitir retirar sin química" and
+"Permitir retiradas parciales" for #471. Finished product may be collected
+without a Chemistry connection and in partial amounts. The remainder stays in
+the barrel, occupying it until empty. This resolves those two collection choices;
+the approved start dependency and unresolved recipe data are unchanged. This
+documentation update contains no batch implementation or new engine-test claim.
+
 ## 5.7.9 - Water boiling and temperature (#409), 2026-10-23
 
 The author approved the fixed glass station equipment, 1 kW useful power,
@@ -243,6 +250,15 @@ The first automated probe set health before deferred PostBeginPlay; its failed
 assertions are retained but excluded from final evidence. The corrected probe
 waits for initialization and reproduces the author's exact VM failure.
 CA479-01 remains pending, including lethal damage, campaign acquisition and saves.
+
+2026-10-23, CA479-01 partial acceptance (origin: 5.7.8 / #479): the author
+confirmed "La prueba dio bien" after the focused lethal Book/Effigy and F2
+repopulation handoff. That retest passes without qualifications within its scope.
+The supplied run was author-combat-20261023-160550, package SHA-256
+a69ec0a39efdeedee036c919a52a7e4deca3bb3db3981bb11adb285ac4e0e5b6.
+Only the completed lethal-damage check was removed from pending_test.txt; other
+gameplay, ordinary campaign acquisition and save/load checks are not inferred
+accepted. Original agent evidence and version 5.7.8 remain unchanged.
 
 ## 5.7.7 - Aimed-target information (#481)
 

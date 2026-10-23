@@ -35,7 +35,7 @@ The completed #409 base is integrated with 31 focused native checks and exact
 source/package identity; CA409-01 passed on that combined build on 2026-10-23.
 
 Remaining #471 work still needs quantities, yields, realistic durations/fuel,
-batch ownership/collection access, learning routes and trade/stock data. Preserve the accepted
+batch ownership, learning routes and trade/stock data. Preserve the accepted
 ingredient artwork, product effects and non-operational abstract ammunition
 chain. No new values are inferred from the station change.
 
@@ -48,6 +48,9 @@ including partial fills; it stays occupied until collection or emptying. Inputs
 are consumed at start; cancellation discards the mixture without refunds.
 Fermentation continues after Chemistry disconnection, overriding the proposed
 pause rule. These approvals are documented design, not implemented batch behavior.
+The author also approved withdrawing finished product without Chemistry and
+partial collection. The remainder stays in the barrel; a new batch must wait
+until it is empty. Collection access and partial withdrawals are now defined.
 
 ## #409 / 5.7.9 - Boiling and stored-water temperature
 
@@ -94,7 +97,9 @@ sprites. The focused Orb correction passes 23 native checks (floating_orb_report
 Do not repeat accepted visual checks. The temporary keep-awake remains released.
 The 2026-10-23 author run failed on lethal curse damage. The owner-lifetime guard
 and F2 dead-target reset are corrected; owner_death_report.json records focused
-native regression evidence. CA479-01 includes the outstanding lethal-damage retest.
+native regression evidence. The author passed the lethal-curse/F2 retest on
+2026-10-23; only that completed check is removed from CA479-01. The other
+gameplay, campaign acquisition and save/load checks remain outstanding.
 
 ## 5.7.7 - Target-panel delivery (#481)
 
