@@ -4,7 +4,7 @@ Documentation version: **5.8.6** — 2026-10-24.
 
 ## 5.8.6 / #411 - Central property access
 
-Implemented prepaid rental/purchase, expiry permissions, identity-preserving resident/chest relocation, native save/load/hub behavior and reversible old-save migration; 142 native PASS, static checks clean. CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Keep original map geometry and combat assignments. Remaining #411: camps, player furniture placement/acquisition and explicit theft conditions; no completion claim for the full issue. Fire/pot physical calibration and purchase/crafting are now approved in SYSTEMS; Tent construction/protection and fire shutdown on map departure are also approved. Prepare concrete acquisition recipes/economy and setup interactions; then implement camps without extending the accepted property scope.
+Implemented prepaid rental/purchase, expiry permissions, identity-preserving resident/chest relocation, native save/load/hub behavior and reversible old-save migration; 142 native PASS, static checks clean. CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Keep original map geometry and combat assignments. Remaining #411: camps, player furniture placement/acquisition and explicit theft conditions; no completion claim for the full issue. Fire/pot physical calibration and purchase/crafting are now approved in SYSTEMS; Tent construction/protection and fire shutdown on map departure are also approved. Camp acquisition recipes/economy, setup durations and land permissions are now approved in SYSTEMS. Implement and validate the camp runtime without extending the accepted property scope. Hold further questions and manual tests while the author is away.
 
 ## 5.8.5 / #415 - Regional discovery
 

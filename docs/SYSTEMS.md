@@ -62,9 +62,22 @@ is assembled on suitable ground with wood. The author then approved approximatel
 blocks direct rain and reduces exterior wind by 90%, retaining exterior air
 temperature with no self-heating or new rest bonus. The fire extinguishes when
 leaving its map and retains the unspent loaded wood; off-map burning was rejected.
-Concrete acquisition recipes/prices/stock and setup interactions remain open.
-These are approvals for upcoming camp implementation, not completed functionality
-in the property stage.
+Approved recipes at 100% efficiency: tent uses 6,000 g cotton fabric (T2),
+3,000 g wood, 600 g iron ingot (T2) and 400 g rope; pot uses 5,500 g iron ingot
+(T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
+Anvil. Existing fabrication duration, Dexterity and waste apply at normal
+complexity. Base prices are ingredient costs plus the existing 25% manufacturing
+margin (53,437.5 / 60,156.25 copper before rounding and store margins). Provisions
+stock three of each; libraries stock ten recipe books each. Replenishment follows
+recipe work time, without resetting existing stock on upgrade. Setup/packing
+takes 10/5 game minutes for the tent; preparing/igniting the fire takes one game
+minute, with abstract manual ignition and no extra tinderbox consumable. The pot
+is placed/removed by interaction. Placement permissions include mansion gardens,
+owned/currently leased land and unowned open countryside. Streets, plazas, docks
+and others' land require express permission. Dry stable soil, complete free
+collision volume and clear doors/stairs/access remain mandatory. Expired rental
+disallows new placement but preserves retrieval. These are approvals for ongoing
+camp implementation; deployment and cooking are not completed by the property stage.
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 
