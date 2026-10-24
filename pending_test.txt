@@ -32,3 +32,19 @@ with PowerShell -NoExit -ExecutionPolicy Bypass. Do not interrupt the absence.
 Expected: readable matching sprites and coherent inventory/trade/persistence.
 Scope: acquisition only; deployed shelter, placement, fire and cooking remain
 pending. This check does not supersede accepted CA411-PROPERTY-01.
+
+CA411-PLACEMENT-01 | Origin: 5.8.8 / #411 | PENDING; author away
+Prerequisites: issue411-camp-work, GZDoom 4.14.2, build/issue411-placement/current
+package and assets/validation_588/prepare.py. Close other GZDoom sessions first.
+On return, launch assets/validation_588/author_terminal.ps1 with PowerShell
+-NoExit -ExecutionPolicy Bypass. Do not open it during the requested absence.
+1. Select 1: a private room starts with a carried small chest and three medikits.
+2. F2 moves to the step, F3 to water, F4 to an open door. At each site F5 must
+   reject placement and leave the chest carried. F6 reports the same three items.
+3. F1 moves to free dry ground; F5 must place the chest. Open it normally and
+   verify the three items remain. Test native save/load while carrying and after
+   placement; no duplicate or missing chest/content and no crash.
+4. Terminal option 2 runs the isolated geometry/storage assertions.
+Expected: invalid locations preserve cargo; valid placement preserves contents.
+Scope: placement geometry only. Camp permissions, tent/fire deployment and cooking
+are not claimed. Existing housing and equipment checks remain separate.

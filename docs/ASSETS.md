@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
 
 ## 5.8.6 - Central property access (#411)
 

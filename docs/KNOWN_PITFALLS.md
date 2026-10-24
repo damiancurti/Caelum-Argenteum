@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-159 - Finish a local line iterator before nested collision queries
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-24 / 2026-10-24
+Issue: #411. Baseline: bf9cb340 plus the placement worktree changes; probe02
+fails and probe03 fixes the traversal. GZDoom 4.14.2 / Windows 11 / Vulkan.
+Scope: CaelumPlacementGeometry.Fits and native BlockLinesIterator.
+
+A four-MU liquid strip inside an otherwise dry footprint passed validation
+when TestMobjLocation ran during an active line iteration. The fixture could
+independently enumerate both strip boundaries and reject an individual liquid
+sample, yet the combined pass skipped those boundaries. Adding a point-sector
+terrain guard alone did not fix it. Snapshotting the local Line references
+before support/collision queries fixes the same reproduction. This establishes
+iterator invalidation by nested native collision traversal; the internal engine
+counter mechanism is not inferred as source-verified from this experiment.
+
+Finish the bounded spatial query before invoking another native collision query
+inside its processing. This snapshot is local to one explicit placement action;
+it is not authorization for routine global scans. Keep the snapshot transient,
+with no simulation yield while its map references are used.
+
+Evidence: assets/validation_588/native/core01, core02, strip03 and core04 logs;
+core05 retains the narrow-strip regression alongside 3D water and dry elevated
+support. Run the core script against probe02/probe03 to compare. Author manual
+acceptance remains pending as CA411-PLACEMENT-01. No FPS claim is made.
+
 ## CA-KP-158 - Saved readiness is not a migration gate; hub identity is not a raw pointer
 
 Status/evidence: ENGINE-VERIFIED; #411 / 5.8.6, 2026-10-24, GZDoom 4.14.2.

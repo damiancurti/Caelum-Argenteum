@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 - Safe placement of carried chests (#411, in progress)
+
+Carried chests now require dry, stable support and a free complete collision
+volume. Placement preserves door/transition access and rejects narrow liquid
+strips, with atomic failure that keeps the actual chest and contents carried.
+46 native assertions cover geometry, real storage, save/hub and original-save
+rollback; see [validation_588](../assets/validation_588/RESULTS.md).
+Camp land permissions, tent deployment, fire and cooking remain pending.
+CA411-PLACEMENT-01 is prepared for the author's return; no terminal was opened.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 

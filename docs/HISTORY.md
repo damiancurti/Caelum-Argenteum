@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
+
+Added local full-volume/support/access validation to actual chest placement,
+including liquid terrain and 3D water. Rejection preserves the original carried
+object and contents. Reused sleeping-bag support tolerance and native player
+clearance, without new balance or ownership policy. A narrow-water failure
+established the nested BlockLinesIterator/collision-query constraint documented
+as CA-KP-159; failed probes are retained. Final evidence: 46 native PASS in
+assets/validation_588, original-save load/rollback and native hub return.
+CA411-PLACEMENT-01 remains pending during the author's requested absence.
+Tent, fire, camp land grants and cooking remain open. README reviewed.
 
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 

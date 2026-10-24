@@ -1,0 +1,66 @@
+﻿{
+    "label":  "legacy-rollback01",
+    "runtime":  "baseline",
+    "started_utc":  "2026-10-24T15:52:55.2083284Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "D7CF59FB96F88BA714B88221405BF790B142CDA44D29B6545E0E9E0214549A7F",
+    "addon_sha256":  "4D451301991E4D01D4CA4BB10805810C0A8319E953AC93C009A486D7BCEC7F61",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\\baseline\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\\rollback/legacy-checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\\legacy-rollback01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "411",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\\legacy-rollback01.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "-loadgame",
+                      "\"ca411p-legacy.zds\"",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-camp-work\\build\\issue411-placement\\legacy-load.cfg\""
+                  ],
+    "command_script":  "wait 5; netevent ca411p_legacy; wait 5; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  22500,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-24T15:53:04.2139185Z"
+}

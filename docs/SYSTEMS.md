@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
 
 ## Central property contracts (#411, 5.8.6 in progress)
 
@@ -87,6 +87,16 @@ stock. Pot cooling uses the approved iron cylinder wall and heat capacity, plus
 convection/radiation at its open top, through the existing water clock. Existing
 glass/leather containers keep their original formulas. Fire fuel/heat helpers
 have isolated numerical evidence; no deployed fire runtime is claimed yet.
+
+The 5.8.8 geometry slice integrates dry/stable support and complete native
+collision-volume checks into existing carried-chest placement. The 1 MU support
+tolerance matches the existing sleeping-bag check. Door/transition clearances
+use the player's radius, and local sliding-door checks preserve the retracted
+leaf's closed position. Narrow liquid sectors and 3D water reject placement;
+a dry solid 3D floor over a liquid basement remains valid. All checks precede
+mutation of the actual carried chest. This service is reusable for camps but
+does not yet implement the approved camp land grants, deployment or cooking.
+
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 

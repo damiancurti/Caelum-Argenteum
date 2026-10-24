@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 / #411 - Placement geometry
+
+Actual carried-chest placement now checks dry/stable support, full volume and
+access clearances before mutation. 46 native PASS, including original-save
+load/rollback. CA411-PLACEMENT-01 awaits author return; keep the terminal closed
+until then. Land grants and deployed tent/fire/cooking remain subsequent work;
+no new placement permission or rest bonus is implied by this geometry slice.
 
 ## 5.8.7 / #410 - Forecast contamination integration
 

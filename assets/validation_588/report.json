@@ -1,0 +1,70 @@
+{
+  "issue": 411,
+  "release": "5.8.8",
+  "package_sha256": "3862041c75c60af08671924b1ac36b5fe93d27bc70c3f50ffb1e6cd647a42739",
+  "package_members": 16851,
+  "all_source_bytes_verified": true,
+  "post_test_changes": {
+    "members": [],
+    "scope": "None; all runtime bytes match the tested probe04."
+  },
+  "pass_assertions": 46,
+  "runs": [
+    {
+      "label": "core07",
+      "pass_assertions": 26,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "2497217f5c1d861e9df198686bdd4084b19de0a258b1af62f9697c557632446a"
+    },
+    {
+      "label": "storage02",
+      "pass_assertions": 7,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "f62a58783de9bd8167f1ebcb27660d56ce383268f9831fbde79817eb1a1947e5"
+    },
+    {
+      "label": "save02",
+      "pass_assertions": 1,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "ee71e09a6d8102a5bb34a490a1d2c8256abcf26265c045dbd44fb401ccbdc2ba"
+    },
+    {
+      "label": "load02",
+      "pass_assertions": 2,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "587147bd67256645704a71be6fa8eefc5c899292782820dc0464c085f2c44f3a"
+    },
+    {
+      "label": "hub02",
+      "pass_assertions": 6,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "0a6c87b35f2334a2bf44b36e8f9603e36c85472ab72b1be914776d47f4b01bfa"
+    },
+    {
+      "label": "legacy-seed02",
+      "pass_assertions": 1,
+      "package_sha256": "D7CF59FB96F88BA714B88221405BF790B142CDA44D29B6545E0E9E0214549A7F",
+      "log_sha256": "c44e0411db3104dd3c8c9ce60e81c084dbe1858dfd9eda378c234f6d375d3ab7"
+    },
+    {
+      "label": "legacy-load02",
+      "pass_assertions": 1,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "bf5ad1eaad8317fb12fcdc9d118cea743089f4379fc5b4aa90d50a3c72a2f12e"
+    },
+    {
+      "label": "legacy-rollback02",
+      "pass_assertions": 1,
+      "package_sha256": "D7CF59FB96F88BA714B88221405BF790B142CDA44D29B6545E0E9E0214549A7F",
+      "log_sha256": "d733b15f38b159f15f08fabccb9f61e66befba3efc5e654a790e681832bee9ea"
+    },
+    {
+      "label": "handoff03",
+      "pass_assertions": 1,
+      "package_sha256": "BC179E8C2D7DC1163672CE354F189B95CECDE986550187D04D2794C884EB1FBF",
+      "log_sha256": "76ec6a007eb563b47cfe033017a34217f6adf4db99cce2562cc5381e422d1d33"
+    }
+  ],
+  "failed_probe": "core01/core02/strip03: nested native collision queries skipped lines in the live block iterator; snapshotting local lines fixes the narrow-liquid regression (core04); bridge06 exposed base-sector support being confused with a continuous 3D floor, fixed in core07. handoff01 was a private Name/String diagnostic typo.",
+  "author_acceptance": "Deferred while author is away; no claim of camp deployment or land-permission acceptance."
+}

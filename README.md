@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.7.** Obtain and update the complete repository, validate
+**Current release: 5.8.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.8 - Safe placement of carried chests (#411, in progress)
+
+Carried chests now require dry, stable support and a free complete collision
+volume. Placement preserves door/transition access and rejects narrow liquid
+strips, with atomic failure that keeps the actual chest and contents carried.
+46 native assertions cover geometry, real storage, save/hub and original-save
+rollback; see [validation_588](assets/validation_588/RESULTS.md).
+Camp land permissions, tent deployment, fire and cooking remain pending.
+CA411-PLACEMENT-01 is prepared for the author's return; no terminal was opened.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 
