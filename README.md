@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.8.** Obtain and update the complete repository, validate
+**Current release: 5.8.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.9 - Severe contamination (#502, in progress)
+
+At contamination 90 or above, the existing disease damage doubles and the
+survival HUD reports Sick. Toughness immunity still prevents damage without
+turning it into healing; natural depuration below 90 removes the multiplier.
+Travel/wait forecasts share the same rule. Existing saved body contamination
+and fractional damage survive updating; wait forecast schema 7 invalidates the
+old cached damage model.
+
+Native checks cover exact boundaries, actual Life loss versus prediction,
+depuration, immunity, saves, hub return and original-package rollback. See
+assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
+Approved environmental/contact and cleaning calculations are shared helpers;
+actor/equipment exposure, soap acquisition, bathing and repair/sleep cleaning
+are not integrated in this slice. The expanded issue and V5.8 remain open.
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

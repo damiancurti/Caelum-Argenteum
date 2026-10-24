@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
+
+The author requested environmental/contact/equipment contamination and hygiene,
+and approved the staged numeric contract recorded in SYSTEMS and issue #502.
+This first slice doubles disease damage from C90, adds Sick/Sick immune labels,
+and reuses that damage in travel/wait forecasts. Provision revision 7 invalidates
+old cached forecasts while body illness revision 1 remains unchanged. Native
+tests preserve old contamination/fractional damage, load current saves, return
+through a hub and restore the original save with its original package.
+Static and native evidence is in assets/validation_589; author acceptance is
+pending as CA502-SEVERE-01. Contact integration and hygiene remain unfinished.
+README reviewed. No art, campaign geometry or existing accepted camp behavior
+is changed by #502.
 
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 

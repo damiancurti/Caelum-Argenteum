@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Severe contamination (#502, in progress)
+
+At contamination 90 or above, the existing disease damage doubles and the
+survival HUD reports Sick. Toughness immunity still prevents damage without
+turning it into healing; natural depuration below 90 removes the multiplier.
+Travel/wait forecasts share the same rule. Existing saved body contamination
+and fractional damage survive updating; wait forecast schema 7 invalidates the
+old cached damage model.
+
+Native checks cover exact boundaries, actual Life loss versus prediction,
+depuration, immunity, saves, hub return and original-package rollback. See
+assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
+Approved environmental/contact and cleaning calculations are shared helpers;
+actor/equipment exposure, soap acquisition, bathing and repair/sleep cleaning
+are not integrated in this slice. The expanded issue and V5.8 remain open.
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

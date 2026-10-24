@@ -28,7 +28,8 @@ class CaelumFoodRules : Object
     static clearscope double DamagePerSecond(double contamination,double maximumLife,double toughness)
     {
         return Max(0.0,contamination-CaelumFoodData.ILLNESS_THRESHOLD)*Max(0.0,maximumLife)
-            *CaelumFoodData.DAMAGE_MAX_LIFE_PER_DEGREE_SECOND*Max(0.0,CaelumToughnessRules.StatusResponse(toughness));
+            *CaelumFoodData.DAMAGE_MAX_LIFE_PER_DEGREE_SECOND*Max(0.0,CaelumToughnessRules.StatusResponse(toughness))
+            *CaelumContaminationRules.DamageFactor(contamination);
     }
 }
 

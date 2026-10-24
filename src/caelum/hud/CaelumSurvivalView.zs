@@ -17,8 +17,12 @@ class CaelumSurvivalView : Object
         double value=CaelumFoodIllness.Value(user);
         if(value<=0)return "CA_FOOD_CLEAN";
         if(value<=CaelumFoodData.ILLNESS_THRESHOLD)return "CA_FOOD_CONTAMINATED";
-        return user.Attributes!=null && CaelumToughnessRules.StatusResponse(user.Attributes.Toughness)<=0
-            ? "CA_FOOD_IMMUNE" : "CA_FOOD_ILLNESS";
+        bool immune=user.Attributes!=null && CaelumToughnessRules.StatusResponse(user.Attributes.Toughness)<=0;
+        if(value>=CaelumContaminationData.SEVERE_THRESHOLD)
+            return immune ? "CA_CONTAMINATION_SICK_IMMUNE" : "CA_CONTAMINATION_SICK";
+        if(immune)
+            return "CA_FOOD_IMMUNE";
+        return "CA_FOOD_CONTAMINATED";
     }
     static clearscope int ContaminationColor(CaelumPlayer user)
     {return CaelumFoodIllness.Value(user)>CaelumFoodData.ILLNESS_THRESHOLD ? Font.CR_RED : Font.CR_GREEN;}

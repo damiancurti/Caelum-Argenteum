@@ -1,6 +1,65 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Contamination and hygiene contract (#502)
+
+Implemented severe disease: C>=90 multiplies the existing Life loss by 2 and
+shows Sick, including an explicit immune qualifier at Toughness>=100. Below
+90 the multiplier is removed immediately. The C50 threshold, potential natural
+regeneration depuration, body-mass intake scaling, food ageing and immunity
+without healing remain unchanged. Existing contamination stays authoritative.
+
+Approved shared calculations, not yet attached to production contact/hygiene:
+transfer 0.1 degree per second per m², multiplied by source/max(recipient,1).
+Only the lower concentration increases, never above the source; equal values
+do not exchange. The source retains its concentration. Continuous integration
+updates the ratio as the recipient rises, so a batch equals subdivided contact.
+Body dose scales 80 kg/body mass. Feet use 0.04 m²; body brushing 0.10 m²;
+bites, scratches and weapon impacts use 0.01 m² for ten contact seconds.
+Immersion uses submerged body area. Biological/chemical water maps to C100,
+clean or salt-only water to C0 for this contact disease; bathing needs potable
+water. The contact clock remains under clarification before integration.
+
+Environmental reference at 20 C/50% humidity: nature/gardens 5, city 15,
+industry 40, sewers 60; multiply by 2^((T-20)/10)*(0.5+humidity/100), clamp
+to 0..100. Clothes/armor receive covered outer exposure first; bare skin receives
+it directly, and equipment/body contact can transfer it. Reuse thermal coverage.
+Box and closed chests shield new contact/environmental exposure, retain prior
+contamination and do not suspend food ageing. New untracked actors, surfaces
+and equipment begin at zero on update, with no retrospective exposure.
+
+Approved M-size weapon areas (m²): dagger .04; hatchet .10; machete .12;
+sword .16; axe/flail/javelin .18; greatsword .24; spear .25; war axe .28;
+halberd .35; gauntlets pair .50; carbine/shotgun .25; bow .20; crossbow .30;
+staves .30; pickaxe .20; bolas .08; scepter/bell/support book/censer .20;
+orb .15; support statuette/effigy .25. Scale area with squared physical size,
+without a tier multiplier. These game references do not implement #315.
+
+Equipment washing needs no station: 1 L potable water/m², 5 g soap/L, reusable
+cloth; a full pass removes all contamination in 60 world seconds/m²/object,
+without Dexterity. Costs and cleaning progress together; cancellation keeps
+completed cleaning and consumed resources. Repair cleans the repaired piece;
+sleep first cleans selected weapon and then equipped clothing/armor in the
+usual slot order. Missing resources skip that piece with notice, never block
+repair/sleep. Other inventory equipment is cleaned manually.
+
+Bathing uses the same body contamination resource, including food/bites:
+0.5 L potable water per removed degree at 80 kg, proportional to body mass,
+plus 5 g soap/L. Ten world seconds/degree, no cloth, at a bathtub or accessible
+potable source. Choose an affordable amount; consume progressively, keeping
+completed cleaning/spent resources on cancellation. At 80 kg, C90 to C0 costs
+45 L and 225 g soap. These are game calibrations, not medical disinfection rates.
+
+Approved soap recipe: 1,000 g animal fat + 135 g caustic soda + 300 mL potable
+water -> 1,000 g finished soap, abstract losses/drying included. Chemistry,
+two attended world hours, no Dexterity reduction; 2 kW useful, 25% efficiency,
+2,058 g mineral coal. Provisions fat maximum 10 kg at 4 copper/100 g, soda
+1 kg at 5 copper/100 g; normal 0.1%-maximum/day import replenishment. Soap
+maximum 3 kg, ingredients/fuel plus 25%, recipe replenishment; ten recipe copies
+in the library. Cloth: 100 g cotton fabric -> reusable 100 g cloth, Workbench
+and normal crafting; Provisions twenty, library ten recipes, cost plus 25%.
+Its rinse is included in washing water, leaving the reusable cloth clean.
 
 ## Central property contracts (#411, 5.8.6 in progress)
 

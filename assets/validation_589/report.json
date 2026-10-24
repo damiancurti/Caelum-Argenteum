@@ -1,0 +1,66 @@
+{
+  "issue": 502,
+  "version": "5.8.9",
+  "scope": "severe illness and pure shared calculations; real contact/hygiene pending",
+  "runs": [
+    {
+      "label": "rules-01",
+      "pass_assertions": 34,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    },
+    {
+      "label": "runtime-01",
+      "pass_assertions": 23,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    },
+    {
+      "label": "save-01",
+      "pass_assertions": 1,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    },
+    {
+      "label": "load-01",
+      "pass_assertions": 2,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    },
+    {
+      "label": "hub-01",
+      "pass_assertions": 6,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    },
+    {
+      "label": "legacy-seed01",
+      "pass_assertions": 1,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "A2C5A25EDDF5A9AC15F0E6302119034D7BFCB1D29237CF34AE39A7B5AC2F62FB"
+    },
+    {
+      "label": "legacy-bridge01",
+      "pass_assertions": 1,
+      "runtime_sha256": "DAB0C61056FF2B4A24BF8E02D08B35A4E63FF6836C5D8848AE4CA2AA7AEE9E33",
+      "addon_sha256": "76D5159D5FFBAC4E3590D522C17F4B29285D51E81042E791524F779A9E6295EF"
+    },
+    {
+      "label": "legacy-rollback01",
+      "pass_assertions": 1,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "6BA2CB46E4E1B452367C3CAA32EDEE62CF1DBA65609BBE0B1460CDAF2129AAB1"
+    },
+    {
+      "label": "final-runtime02",
+      "pass_assertions": 23,
+      "runtime_sha256": "7E3D6DC5717137BB2760203967C41EE5DD679F0109885D0AF2E1EA5DBCD8E39A",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    }
+  ],
+  "pass_assertions": 92,
+  "package_members": 16859,
+  "source_equivalence": true,
+  "package_sha256": "7e3d6dc5717137bb2760203967c41ee5dd679f0109885d0af2e1ea5dbcd8e39a",
+  "author_acceptance": "pending CA502-SEVERE-01"
+}

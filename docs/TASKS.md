@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Contamination expansion (#502, in progress)
+
+Severe threshold/HUD and forecast invalidation are implemented. Retain
+CA502-SEVERE-01 until explicit author confirmation. Next: persistent actor,
+surface and equipment state; local contacts and environment exposure; approved
+soap/cloth acquisition; progressive equipment washing and bathing; repair/sleep
+integration. Do not present pure contact/quote helpers as integrated hygiene.
+Confirm the transmission clock and initial environmental/surface authoring
+before connecting passive exposure. Preserve #410 food scope and #411 camps.
 
 ## 5.8.8 / #411 - Placement and persistent tents
 
