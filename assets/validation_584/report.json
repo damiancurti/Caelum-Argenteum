@@ -1,0 +1,13 @@
+{
+  "issue": 496,
+  "tracks": 19,
+  "repeat_encoding_identical": true,
+  "fully_decoded_tracks": 19,
+  "native_playback_passes": 19,
+  "source_entries_verified": 16836,
+  "package_sha256": "51bc22edd4f661c340398b71df44658ed184063262a075734faf94f6296f3faa",
+  "total_seconds": 3407.24,
+  "source_bytes": 654453060,
+  "runtime_bytes": 73794469,
+  "author_acceptance": "Pending CA496-MUSIC-01; automatic start/decode does not establish listening acceptance."
+}

@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
+
+## 5.8.4 - Second map soundtrack (#496), 2026-10-24
+
+The author supplied nineteen destination-named tracks and confirmed authorship with Suno. Preserved all original WAVs and destination identities, encoded complete recordings for native playback, and retained existing map bindings. Created an independent issue/branch from the ongoing #410 work; the soundtrack does not close any remaining gameplay issue. Native and static evidence lives in `assets/validation_584`; CA496-MUSIC-01 listening acceptance is still pending.
 
 ## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
 

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
 
 ## Food contamination and cooking contract (#410, 5.8.3 in progress)
 
