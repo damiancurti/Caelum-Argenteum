@@ -61,7 +61,10 @@ every packaged source member and records package, engine, IWAD and save hashes.
 No new art, map geometry, external asset or accepted balance outside #411 changes.
 CA-KP-158 records the reusable migration/visibility/identity findings.
 
-CA411-PROPERTY-01 is pending in the single root pending_test.txt. The terminal
-runs a private campaign at the real property. Agent evidence does not establish
-author acceptance. Camp equipment approvals are recorded in SYSTEMS/#411;
-physical calibration, acquisition, placement and remaining V5.8 issues stay open.
+The author explicitly confirmed all checks in the supplied property terminal
+passed on 2026-10-24. CA411-PROPERTY-01 (origin 5.8.6/#411) is fully accepted,
+without qualifications, and removed from pending_test.txt. The original native
+suite and tested runtime are unchanged; no engine tests were rerun for this
+acceptance-only update. The interactive log is retained as supplemental evidence,
+not counted in the 142 automated assertions. Camp equipment approvals are recorded
+in SYSTEMS/#411; camp implementation and remaining V5.8 issues stay open.

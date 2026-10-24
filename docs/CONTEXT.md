@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.6** — 2026-10-24.
 
-**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01pending;camps/placement-WIP;validation_586.
+**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camps/placement-WIP;validation_586.
 **5.8.5/#415:**discovery accepted2026-10-24;unloaded-battles-WIP.
 
 **5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.

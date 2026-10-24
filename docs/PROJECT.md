@@ -4,7 +4,7 @@ Documentation version: **5.8.6** — 2026-10-24.
 
 ## 5.8.6 - Central property access (#411, in progress)
 
-Implements one central dwelling purchase/rental and resident/chest relocation using the approved economy. Save migration and native validation are recorded in `assets/validation_586`; author acceptance remains separate. Camps/player furniture placement and the rest of V5.8 remain open.
+Implements one central dwelling purchase/rental and resident/chest relocation using the approved economy. Save migration and native validation are recorded in `assets/validation_586`; CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Camps/player furniture placement and the rest of V5.8 remain open.
 
 ## 5.8.5 - Regional event discovery (#415, in progress)
 

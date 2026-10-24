@@ -48,8 +48,10 @@ def main():
         rows.append({'label':label,'passes':len(re.findall(r'^CA411 PASS ',log,re.M)),
                      'package_sha256':record['package_sha256'].lower()})
     native=EVIDENCE/'native';native.mkdir(exist_ok=True)
-    for path in WORK.iterdir():
-        if path.suffix=='.txt' or path.name.endswith('-run.json'):shutil.copyfile(path,native/path.name)
+    for record in WORK.glob('*-run.json'):
+        shutil.copyfile(record,native/record.name)
+        log=WORK/(record.name.removesuffix('-run.json')+'.txt')
+        if log.exists():shutil.copyfile(log,native/log.name)
     shutil.copyfile(WORK/'static-validation.json',EVIDENCE/'static-validation.json')
     shutil.copyfile(WORK/'property-preview.png',EVIDENCE/'property-preview-es.png')
     shutil.copyfile(WORK/'property-author.png',EVIDENCE/'property-author.png')
@@ -61,7 +63,7 @@ def main():
             'verification':'All non-comment lines identical; final native core and author fixture repeated after UTF-8 comment cleanup'},
         'one_time_256_chest_migration_ms':float(re.search(r'migration ms=([0-9.]+)',timing)[1]),
         'performance_limit':'Single migration sample, not frame presentation, percentile tails or FPS acceptance.',
-        'author_acceptance':'Pending CA411-PROPERTY-01; no camp acceptance requested yet'}
+        'author_acceptance':json.loads((EVIDENCE/'acceptance.json').read_text(encoding='utf-8'))['result']}
     (EVIDENCE/'report.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print(json.dumps(report,indent=2))
 

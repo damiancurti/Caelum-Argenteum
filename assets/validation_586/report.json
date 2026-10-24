@@ -96,5 +96,5 @@
   },
   "one_time_256_chest_migration_ms": 0.0073,
   "performance_limit": "Single migration sample, not frame presentation, percentile tails or FPS acceptance.",
-  "author_acceptance": "Pending CA411-PROPERTY-01; no camp acceptance requested yet"
+  "author_acceptance": "CA411-PROPERTY-01 fully accepted 2026-10-24, without qualifications; camps and player placement remain pending."
 }

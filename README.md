@@ -11,7 +11,7 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.6 - Central property access (#411, in progress)
 
-One existing central Barracas dwelling supports purchase and prepaid rental. Its previous residents and their chest move to the neighboring dwelling with their real identities and belongings. Expiry blocks residential use while retaining access to retrieve property. Camps and player furniture placement remain pending. Validation and author status: `assets/validation_586/RESULTS.md`.
+One existing central Barracas dwelling supports purchase and prepaid rental. Its previous residents and their chest move to the neighboring dwelling with their real identities and belongings. Expiry blocks residential use while retaining access to retrieve property. Camps and player furniture placement remain pending. CA411-PROPERTY-01 was fully accepted on 2026-10-24. Evidence: `assets/validation_586/RESULTS.md`.
 
 ## 5.8.5 - Regional event discovery (#415, in progress)
 
