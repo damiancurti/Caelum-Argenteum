@@ -56,9 +56,15 @@ meat/fish/puchero durations stay unchanged. The pot is an open cylinder with
 and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
 heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
 Tent and pot use both purchase and fabrication with learned recipes; the fire
-is assembled on suitable ground with wood. Tent mass/materials/protection and
-concrete acquisition recipes/prices/stock remain open. These are approvals for
-upcoming camp implementation, not completed functionality in the property stage.
+is assembled on suitable ground with wood. The author then approved approximately
+10 kg for the tent: 6 kg cotton canvas (about 15.8 m2 at 380 g/m2, floor included),
+3 kg wooden poles, 600 g iron stakes and 400 g plant-fibre ropes. Its interior
+blocks direct rain and reduces exterior wind by 90%, retaining exterior air
+temperature with no self-heating or new rest bonus. The fire extinguishes when
+leaving its map and retains the unspent loaded wood; off-map burning was rejected.
+Concrete acquisition recipes/prices/stock and setup interactions remain open.
+These are approvals for upcoming camp implementation, not completed functionality
+in the property stage.
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 
