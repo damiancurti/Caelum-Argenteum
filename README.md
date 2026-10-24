@@ -16,7 +16,8 @@ resisted illness, natural-regeneration depuration and survival presentation.
 old-save migration and rollback. Food lots, actual food consumption,
 cooking, shop acquisition and the furniture catalogue are still being integrated;
 this is not completed #410 or V5.8. The private core terminal and evidence are
-in [validation_583](assets/validation_583/RESULTS.md).
+in [validation_583](assets/validation_583/RESULTS.md). CA410-CORE-01 passed all
+author checks on 2026-10-24.
 
 5.8.2 integrates connected water into the mansion (#414): two nominal 32,000 L
 deposits east of the pool, a usable gate, service steps, conservative transfer,

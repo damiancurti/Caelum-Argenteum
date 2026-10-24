@@ -11,7 +11,7 @@ migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
 No actual food ingestion currently calls the new illness entry point.
-CA410-CORE-01 covers only the private resource/HUD stage; it cannot accept
+CA410-CORE-01 passed on 2026-10-24; acceptance covers the resource/HUD stage, not
 unimplemented food spoilage, cooking or furniture.
 
 ## #414 / 5.8.2 - Production connected water

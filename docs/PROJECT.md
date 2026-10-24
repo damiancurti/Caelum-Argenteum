@@ -7,7 +7,7 @@ Documentation version: **5.8.3** — 2026-10-24.
 The first slice implements the character's contamination state, approved numeric
 food/illness rules, full-Life natural depuration and survival HUD. Isolated core
 and save/load/migration/hub checks pass: 40 assertions in nine focused runs.
-Author visual/interaction review is separate.
+CA410-CORE-01 passed all author visual/interaction checks on 2026-10-24.
 Food lots, ingestion, cooking/acquisition and the approved furniture catalogue
 remain in progress. The complete approved food contract is in SYSTEMS;
 validation_583 records current evidence and the bounded manual check.

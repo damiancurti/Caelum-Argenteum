@@ -3,7 +3,9 @@
 This is the first slice of the ongoing food/furniture issue. Character illness,
 numeric food rules, natural depuration and HUD are integrated. Actual food
 ingestion, per-lot ageing, cooking, commerce and furniture are not implemented
-by this slice. CA410-CORE-01 remains pending author acceptance.
+by this slice. CA410-CORE-01 passed all author checks on 2026-10-24, without
+qualifications: HUD/icon, damage, immunity, depuration/costs and save/load.
+The accepted runtime is unchanged; this records acceptance of this slice only.
 
 ## Native evidence
 
@@ -48,7 +50,7 @@ prepare.py builds the private addon; regeneration must produce identical bytes.
 food-contamination-hud.png shows the survival column with the new contamination
 bar and icon; Hunger, Hydration, Sleep and thermal exposure remain separate.
 The unchanged generated source and complete prompt/provenance are recorded in
-../manifests/food_contamination_icon_583.json. Author visual acceptance is pending.
+../manifests/food_contamination_icon_583.json. Author visual acceptance passed on 2026-10-24 as part of CA410-CORE-01.
 
 The illness path is constant work on the current player's persistent record;
 it adds no actor census or recurring inventory scan. No rendering performance

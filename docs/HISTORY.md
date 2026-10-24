@@ -13,7 +13,11 @@ accumulator uses the existing status-pulse tolerance. Core and save/load checks
 pass: 40 assertions across nine core/live/save/hub/migration/rollback runs;
 validation_583 retains failures and evidence. Added a generated silver
 skull/withered-leaf icon and survival bar, following SPRITE_ART_DIRECTION.
-CA410-CORE-01 is pending author review. Food-lot ageing, actual ingestion,
+CA410-CORE-01 (origin 5.8.3 / #410) passed author acceptance on 2026-10-24.
+The author confirmed every check from the supplied terminal without qualifications:
+HUD/icon, progressive damage, Toughness immunity, full-Life depuration/costs and
+save/load. Removed only CA410-CORE-01 from the author queue; no runtime change.
+Food-lot ageing, actual ingestion,
 cooking, acquisition and furniture remain unimplemented; this is an ongoing
 issue branch, not completion of #410 or V5.8.
 

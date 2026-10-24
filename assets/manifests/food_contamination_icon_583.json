@@ -1,7 +1,7 @@
 {
   "issue": 410,
   "release": "5.8.3",
-  "status": "Generated and native-previewed; author visual acceptance pending",
+  "status": "Author accepted under CA410-CORE-01 on 2026-10-24",
   "tool": "Built-in image_gen.imagegen",
   "date": "2026-10-24",
   "source": "assets/art_source/food/contamination_icon_v1.png",

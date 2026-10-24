@@ -11,8 +11,8 @@ src/graphics/caelum/ui/hud/icons/ca_hud_icon_contamination.png.
 Both are byte-identical; native scaling uses 18x18 virtual pixels, as the
 accepted thermal icon. Prompt, SHA256, dimensions and provenance are retained
 in assets/manifests/food_contamination_icon_583.json. No external or Doom artwork
-was used. Native preview confirms layout; author appearance acceptance remains
-CA410-CORE-01. Dish/ingredient/furniture artwork is not supplied by this icon.
+was used. Native preview confirms layout; CA410-CORE-01 appearance acceptance
+passed on 2026-10-24. Dish/ingredient/furniture artwork is not supplied by this icon.
 
 ## 5.8.2 - Connected mansion deposits (#414)
 
