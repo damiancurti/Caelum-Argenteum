@@ -6420,3 +6420,17 @@ CA_MATE_GOURD = "Mate de porongo";
 CA_MATE_SILVER = "Mate plateado";
 CA_MATE_GOLD = "Mate dorado";
 // END GENERATED MATE DATA (#472)
+
+[enu default]
+CA_CONNECTED_WATER_GATE = "Water gate";
+CA_CONNECTED_WATER_OPEN = "{bind:+use}: open water gate";
+CA_CONNECTED_WATER_CLOSE = "{bind:+use}: close water gate";
+CA_CONNECTED_WATER_OPENED = "Water gate opened.";
+CA_CONNECTED_WATER_CLOSED = "Water gate closed.";
+
+[es]
+CA_CONNECTED_WATER_GATE = "Compuerta de agua";
+CA_CONNECTED_WATER_OPEN = "{bind:+use}: abrir compuerta";
+CA_CONNECTED_WATER_CLOSE = "{bind:+use}: cerrar compuerta";
+CA_CONNECTED_WATER_OPENED = "Compuerta abierta.";
+CA_CONNECTED_WATER_CLOSED = "Compuerta cerrada.";

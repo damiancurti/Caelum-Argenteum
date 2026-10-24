@@ -535,14 +535,19 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool FillFromSource(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || user.health <= 0) return false;
+        let reservoir=CaelumConnectedWaterMap.Get();
+        if(reservoir!=null)reservoir.Sync(CaelumWorldClock.Get(user));
+        int reservoirIndex=reservoir!=null ? reservoir.Index(CaelumWaterQuality.Model(user)) : -1;
         int quality = CaelumWaterQuality.Source(user);
         double missing = GetCapacityLiters() - WaterLiters;
+        if(reservoirIndex>=0)missing=Min(missing,reservoir.Available(reservoirIndex));
         if (missing <= 0.000001 || !CaelumWaterQuality.Valid(quality)
             || !user.CanAddWeightToPersonalInventory(missing + 0.001)) return false;
         let thermal=CaelumThermalBody.Get(user);
         bool sourceKnown=thermal!=null && thermal.Available;
         double sourceC=sourceKnown?thermal.WaterC:0;
         if (!AddWater(missing, quality,sourceC,sourceKnown)) return false;
+        if(reservoirIndex>=0)reservoir.Withdraw(reservoirIndex,missing);
         let record = user.GetPersistentCharacterState(false);
         if (IsPotable() && record != null && record.MainM00WaterContainerGiven) record.MainM00WaterFilled = true;
         user.OnNativeInventoryChanged(); user.PersistCharacterState();

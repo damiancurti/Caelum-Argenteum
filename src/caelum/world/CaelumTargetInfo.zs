@@ -23,7 +23,7 @@ class CaelumTargetInfo : Object play
     {
         if(object==null || (object is "Inventory" && Inventory(object).Owner!=null))return false;
         // Estas puertas son disparadores invisibles frente a su geometría real.
-        if(object is 'CaelumHousePortal')return true;
+        if(object is 'CaelumHousePortal' || object is 'CaelumWaterGateSwitch')return true;
         if(object.bInvisible || object.GetRenderStyle()==STYLE_None)return false;
         return object.Height>0 && object.Radius>0;
     }

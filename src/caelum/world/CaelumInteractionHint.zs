@@ -13,6 +13,8 @@ class CaelumInteractionHint : Object play
                 && offset.X*Cos(user.Angle)+offset.Y*Sin(user.Angle)>=distance*0.85;
         }
         if(!aimed || !user.CheckSight(object,SF_IGNOREVISIBILITY))return "";
+        let waterGate=CaelumWaterGateSwitch(object);
+        if(waterGate!=null)return StringTable.Localize(waterGate.Spent?"CA_CONNECTED_WATER_CLOSE":"CA_CONNECTED_WATER_OPEN",false);
         if(object is 'CaelumReadingShelf')return StringTable.Localize("CA_RECIPE_SHELF",false);
         if(object is 'CaelumMazeChest')return StringTable.Localize("CA_MAZE_USE_CHEST",false);
         if(object is 'CaelumCupsAceEssence')return StringTable.Localize("CA_MAZE_USE_CARD",false);
