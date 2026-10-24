@@ -29,9 +29,9 @@ Read a selected inclusive line range from the original:
 python build_document_index.py read SYSTEMS.md 3643 3676
 ```
 
-## [ASSETS.md](ASSETS.md) - 34075 words
+## [ASSETS.md](ASSETS.md) - 34111 words
 
-SHA-256: `9778c72215de8d45e99df61b80da011bfc3f43e54446a8c558b5fd11238863ca`
+SHA-256: `649ecfb64f1e2aab8eed0b75a5c00bb09944d44830aaef60d8d12c46d15ad65b`
 
 - Lines 1-4 - [Caelum Argenteum — Audio and art](ASSETS.md#caelum-argenteum--audio-and-art) - context: -
 - Lines 5-10 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Audio and art
@@ -1847,6 +1847,6 @@ SHA-256: `471b68a51e65eede956f1bbdbc7d6cfe03247544d84fe7225cda916f71ae02cd`
 - Lines 3263-3275 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "9778c72215de8d45e99df61b80da011bfc3f43e54446a8c558b5fd11238863ca", "words": 34075}, {"path": "HISTORY.md", "sha256": "99993e2fa6dc98e566c8b51f181518d5a3f4e4aeac0650f7efb5dfc323c70b65", "words": 235710}, {"path": "KNOWN_PITFALLS.md", "sha256": "aac24e4118d65f342612047570ca217024e2063909f23942194fea4730365376", "words": 39292}, {"path": "MAP01.txt", "sha256": "a846bb491885db289d6a7012f92abaf86d9aea18f1d92cfb6d77b9635fdb3718", "words": 35580}, {"path": "PROJECT.md", "sha256": "0237180bff499e590efd3fd2b9dd84eb88c822161b5bcd24bc504bafd9da1da3", "words": 63981}, {"path": "SYSTEMS.md", "sha256": "e881c8a122069dba1d10fcfd69a479af38c2bc5c42a786d156d72c7d4e1c5671", "words": 124181}, {"path": "TASKS.md", "sha256": "471b68a51e65eede956f1bbdbc7d6cfe03247544d84fe7225cda916f71ae02cd", "words": 26923}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "649ecfb64f1e2aab8eed0b75a5c00bb09944d44830aaef60d8d12c46d15ad65b", "words": 34111}, {"path": "HISTORY.md", "sha256": "99993e2fa6dc98e566c8b51f181518d5a3f4e4aeac0650f7efb5dfc323c70b65", "words": 235710}, {"path": "KNOWN_PITFALLS.md", "sha256": "aac24e4118d65f342612047570ca217024e2063909f23942194fea4730365376", "words": 39292}, {"path": "MAP01.txt", "sha256": "a846bb491885db289d6a7012f92abaf86d9aea18f1d92cfb6d77b9635fdb3718", "words": 35580}, {"path": "PROJECT.md", "sha256": "0237180bff499e590efd3fd2b9dd84eb88c822161b5bcd24bc504bafd9da1da3", "words": 63981}, {"path": "SYSTEMS.md", "sha256": "e881c8a122069dba1d10fcfd69a479af38c2bc5c42a786d156d72c7d4e1c5671", "words": 124181}, {"path": "TASKS.md", "sha256": "471b68a51e65eede956f1bbdbc7d6cfe03247544d84fe7225cda916f71ae02cd", "words": 26923}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

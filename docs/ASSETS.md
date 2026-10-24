@@ -3682,7 +3682,7 @@ The fully audited project contains 130 runtime files: 119 OGG, 2 MP3 and 9 WAV, 
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
 music/sound masters. Issue #89 preserves four more audio originals under
-assets/issue89_pickaxe/reference_package. Total catalogued: 137 files.
+assets/issue89_pickaxe/reference_package. The earlier scoped runtime/source tally was 137 files; it is not a current project-wide source count. The nineteen new #496 WAV masters live separately in `assets/source/audio/map_music_496/masters/`, and their nineteen runtime OGGs are included in the current 130-file runtime count above.
 A copy by another name does not imply
 another recording: menu_move and menu_select continue to share content. 14 native
 interface/interruptors aliases also do not add files.
