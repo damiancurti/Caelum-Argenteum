@@ -1,0 +1,66 @@
+﻿{
+    "label":  "feasibility-02",
+    "runtime":  "current",
+    "started_utc":  "2026-10-24T00:39:56.1810328Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+    "addon_sha256":  "DCFCEDE5AC067E01AC3911241F5F5998EB395117CEED0B708E866F0252D5DA3D",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\\current\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\\checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\\feasibility-02.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "414",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\\feasibility-02.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "CAW414",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue414-work\\build\\issue414\\suite.cfg\""
+                  ],
+    "command_script":  "wait 35; netevent ca414_initial; netevent ca414_open; wait 20; netevent ca414_partial; netevent ca414_close; wait 10; netevent ca414_stopped; netevent ca414_open; wait 100; netevent ca414_final; netevent ca414_left; wait 5; netevent ca414_wet; netevent ca414_dry; wait 5; netevent ca414_drycheck; wait 5; quit\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  3300,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-24T00:40:09.2999590Z"
+}

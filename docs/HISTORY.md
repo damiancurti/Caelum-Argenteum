@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.7.14** — 2026-10-23.
+Documentation version: **5.8.0** — 2026-10-23.
+
+## 5.8.0 - Connected-water feasibility (#414), 2026-10-23
+
+Started the required bounded native prototype before designing production water
+transfer. Separate branch feat/issue414-connected-water, fixtures/evidence in
+assets/validation_580. Native horizontal control ceilings move swimmable 3D
+water, preserve the pair's total volume, stop at a closed gate and retain state
+through saves and hub return. Thermal immersion/rest guards follow native water.
+An isolated pool is unchanged. The exact test matrix is recorded in RESULTS.md.
+
+The existing quality reader returns unidentified for metadata on the control
+sector; this is a recorded integration limitation, not a passing mixing test.
+Production gameplay and campaign maps remain unchanged; only two diagnostic release labels are synchronized. The author subsequently approved container-style contaminant union and the
+first campaign location beside the mansion pool, with automatic calendar
+filling/draining. Exact geometry, rates and mechanisms remain to be defined.
+CA414-PROTOTYPE-01 is outstanding; no author acceptance or completed V5.8 claim.
 
 ## 5.7.14 - Reusable mates (#472), 2026-10-23
 
