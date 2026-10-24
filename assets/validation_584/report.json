@@ -9,5 +9,5 @@
   "total_seconds": 3407.24,
   "source_bytes": 654453060,
   "runtime_bytes": 73794469,
-  "author_acceptance": "Pending CA496-MUSIC-01; automatic start/decode does not establish listening acceptance."
+  "author_acceptance": "CA496-MUSIC-01 fully accepted 2026-10-24; author confirmed all terminal checks passed, without qualifications."
 }

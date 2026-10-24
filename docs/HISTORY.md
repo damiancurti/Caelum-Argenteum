@@ -4,7 +4,7 @@ Documentation version: **5.8.4** — 2026-10-24.
 
 ## 5.8.4 - Second map soundtrack (#496), 2026-10-24
 
-The author supplied nineteen destination-named tracks and confirmed authorship with Suno. Preserved all original WAVs and destination identities, encoded complete recordings for native playback, and retained existing map bindings. Created an independent issue/branch from the ongoing #410 work; the soundtrack does not close any remaining gameplay issue. Native and static evidence lives in `assets/validation_584`; CA496-MUSIC-01 listening acceptance is still pending.
+The author supplied nineteen destination-named tracks and confirmed authorship with Suno. Preserved all original WAVs and destination identities, encoded complete recordings for native playback, and retained existing map bindings. Created an independent issue/branch from the ongoing #410 work; the soundtrack does not close any remaining gameplay issue. Native and static evidence lives in `assets/validation_584`; The author explicitly confirmed all checks in both supplied terminals passed on 2026-10-24. This records CA496-MUSIC-01 (origin 5.8.4/#496) fully accepted, without qualifications; its pending entry is removed. The tested music assets and package remain unchanged.
 
 ## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
 
