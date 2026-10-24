@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
+
+## 5.8.4 - Second map soundtrack (#496)
+
+Damián Curti supplied nineteen WAV masters from Música CA - 2 on 2026-10-24 and confirmed he created them using Suno. `assets/source/audio/map_music_496/catalogue.json` is the authoritative destination/name mapping; `PROVENANCE.json` records original and encoded hashes, exact sample counts and the encoder fingerprint. Original WAVs are retained unchanged in `masters/`. Whole stereo 48-kHz Vorbis quality-6 recordings are packaged in `src/music/`; no normalization, cuts, fades or resampling. Credits ship in `src/licenses/MAP_MUSIC_496.txt`. No new public asset license is inferred.
+
+The author explicitly approved preserving destinations from the supplied titles. Campo de Buenos Aires is countryside, not the city; Mar argentino is the sea, not the current coastal town. All nineteen destinations are reserved until their corresponding authored maps exist. Their presence in the PK3 is not a claim that these maps are implemented. Existing MAPINFO music remains unchanged. `assets/validation_584` contains deterministic preparation/playback evidence and a listening terminal; author acceptance remains CA496-MUSIC-01 pending. The inventory below includes these nineteen runtime OGG; their nineteen original WAV masters remain outside the PK3.
 
 ## 5.8.3 - Contamination HUD icon (#410, in progress)
 
@@ -3672,11 +3678,11 @@ third party is not rewritten when reorganizing documents.
 
 ## Physical audio inventory
 
-The fully audited project contains 111 runtime files: 100 OGG, 2 MP3 and 9 WAV, including the
+The fully audited project contains 130 runtime files: 119 OGG, 2 MP3 and 9 WAV, including the
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
 music/sound masters. Issue #89 preserves four more audio originals under
-assets/issue89_pickaxe/reference_package. Total catalogued: 137 files.
+assets/issue89_pickaxe/reference_package. The earlier scoped runtime/source tally was 137 files; it is not a current project-wide source count. The nineteen new #496 WAV masters live separately in `assets/source/audio/map_music_496/masters/`, and their nineteen runtime OGGs are included in the current 130-file runtime count above.
 A copy by another name does not imply
 another recording: menu_move and menu_select continue to share content. 14 native
 interface/interruptors aliases also do not add files.

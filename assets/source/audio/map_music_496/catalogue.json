@@ -1,0 +1,177 @@
+{
+  "issue": 496,
+  "destination_policy": "Use each author-supplied destination; reserve until its map exists. Do not replace unrelated music.",
+  "tracks": [
+    {
+      "title": "Antártida",
+      "original_filename": "Antártida.wav",
+      "destination": "Antártida",
+      "music_name": "CA_MUS_ANTARCTICA",
+      "source": "assets/source/audio/map_music_496/masters/antarctica.wav",
+      "runtime": "src/music/CA_MUS_ANTARCTICA.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Bariloche",
+      "original_filename": "Bariloche.wav",
+      "destination": "Bariloche",
+      "music_name": "CA_MUS_BARILOCHE",
+      "source": "assets/source/audio/map_music_496/masters/bariloche.wav",
+      "runtime": "src/music/CA_MUS_BARILOCHE.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Batalla final contra Selene",
+      "original_filename": "Batalla final contra Selene.wav",
+      "destination": "Batalla final contra Selene",
+      "music_name": "CA_MUS_SELENE_FINAL",
+      "source": "assets/source/audio/map_music_496/masters/selene_final.wav",
+      "runtime": "src/music/CA_MUS_SELENE_FINAL.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Campo de Buenos Aires",
+      "original_filename": "Campo de Buenos Aires.wav",
+      "destination": "Campo de Buenos Aires",
+      "music_name": "CA_MUS_BA_COUNTRYSIDE",
+      "source": "assets/source/audio/map_music_496/masters/ba_countryside.wav",
+      "runtime": "src/music/CA_MUS_BA_COUNTRYSIDE.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Ciudad Caelith bajo el agua",
+      "original_filename": "Ciudad Caelith bajo el agua.wav",
+      "destination": "Ciudad Caelith bajo el agua",
+      "music_name": "CA_MUS_CAELITH_UNDERWATER",
+      "source": "assets/source/audio/map_music_496/masters/caelith_underwater.wav",
+      "runtime": "src/music/CA_MUS_CAELITH_UNDERWATER.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Ciudad Caelith en el aire",
+      "original_filename": "Ciudad Caelith en el aire.wav",
+      "destination": "Ciudad Caelith en el aire",
+      "music_name": "CA_MUS_CAELITH_SKY",
+      "source": "assets/source/audio/map_music_496/masters/caelith_sky.wav",
+      "runtime": "src/music/CA_MUS_CAELITH_SKY.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Ciudad de Córdoba",
+      "original_filename": "Ciudad de Córdoba.wav",
+      "destination": "Ciudad de Córdoba",
+      "music_name": "CA_MUS_CORDOBA_CITY",
+      "source": "assets/source/audio/map_music_496/masters/cordoba_city.wav",
+      "runtime": "src/music/CA_MUS_CORDOBA_CITY.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Desierto del noroeste",
+      "original_filename": "Desierto del noroeste.wav",
+      "destination": "Desierto del noroeste",
+      "music_name": "CA_MUS_NORTHWEST_DESERT",
+      "source": "assets/source/audio/map_music_496/masters/northwest_desert.wav",
+      "runtime": "src/music/CA_MUS_NORTHWEST_DESERT.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "El infierno",
+      "original_filename": "El infierno.wav",
+      "destination": "El infierno",
+      "music_name": "CA_MUS_HELL",
+      "source": "assets/source/audio/map_music_496/masters/hell.wav",
+      "runtime": "src/music/CA_MUS_HELL.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Islas Malvinas",
+      "original_filename": "Islas Malvinas.wav",
+      "destination": "Islas Malvinas",
+      "music_name": "CA_MUS_MALVINAS",
+      "source": "assets/source/audio/map_music_496/masters/malvinas.wav",
+      "runtime": "src/music/CA_MUS_MALVINAS.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Jungla del noreste",
+      "original_filename": "Jungla del noreste.wav",
+      "destination": "Jungla del noreste",
+      "music_name": "CA_MUS_NORTHEAST_JUNGLE",
+      "source": "assets/source/audio/map_music_496/masters/northeast_jungle.wav",
+      "runtime": "src/music/CA_MUS_NORTHEAST_JUNGLE.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "La luna",
+      "original_filename": "La luna.wav",
+      "destination": "La luna",
+      "music_name": "CA_MUS_MOON",
+      "source": "assets/source/audio/map_music_496/masters/moon.wav",
+      "runtime": "src/music/CA_MUS_MOON.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Mar argentino",
+      "original_filename": "Mar argentino.wav",
+      "destination": "Mar argentino",
+      "music_name": "CA_MUS_ARGENTINE_SEA",
+      "source": "assets/source/audio/map_music_496/masters/argentine_sea.wav",
+      "runtime": "src/music/CA_MUS_ARGENTINE_SEA.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Minas de la Pachamama",
+      "original_filename": "Minas de la Pachamama.wav",
+      "destination": "Minas de la Pachamama",
+      "music_name": "CA_MUS_PACHAMAMA_MINES",
+      "source": "assets/source/audio/map_music_496/masters/pachamama_mines.wav",
+      "runtime": "src/music/CA_MUS_PACHAMAMA_MINES.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Sierras de Córdoba",
+      "original_filename": "Sierras de Córdoba.wav",
+      "destination": "Sierras de Córdoba",
+      "music_name": "CA_MUS_CORDOBA_HILLS",
+      "source": "assets/source/audio/map_music_496/masters/cordoba_hills.wav",
+      "runtime": "src/music/CA_MUS_CORDOBA_HILLS.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Termas de Entre Ríos",
+      "original_filename": "Termas de Entre Ríos.wav",
+      "destination": "Termas de Entre Ríos",
+      "music_name": "CA_MUS_ENTRE_RIOS_SPRINGS",
+      "source": "assets/source/audio/map_music_496/masters/entre_rios_springs.wav",
+      "runtime": "src/music/CA_MUS_ENTRE_RIOS_SPRINGS.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Tierra del Fuego",
+      "original_filename": "Tierra del Fuego.wav",
+      "destination": "Tierra del Fuego",
+      "music_name": "CA_MUS_TIERRA_DEL_FUEGO",
+      "source": "assets/source/audio/map_music_496/masters/tierra_del_fuego.wav",
+      "runtime": "src/music/CA_MUS_TIERRA_DEL_FUEGO.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Tren del cielo",
+      "original_filename": "Tren del cielo.wav",
+      "destination": "Tren del cielo",
+      "music_name": "CA_MUS_SKY_TRAIN",
+      "source": "assets/source/audio/map_music_496/masters/sky_train.wav",
+      "runtime": "src/music/CA_MUS_SKY_TRAIN.ogg",
+      "map_binding": null
+    },
+    {
+      "title": "Tundra del sur",
+      "original_filename": "Tundra del sur.wav",
+      "destination": "Tundra del sur",
+      "music_name": "CA_MUS_SOUTHERN_TUNDRA",
+      "source": "assets/source/audio/map_music_496/masters/southern_tundra.wav",
+      "runtime": "src/music/CA_MUS_SOUTHERN_TUNDRA.ogg",
+      "map_binding": null
+    }
+  ]
+}
