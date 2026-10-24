@@ -11,6 +11,10 @@ migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
 No actual food ingestion currently calls the new illness entry point.
+CaelumFoodLots now implements/tested separate ages, exposure, atomic transfers,
+oldest-first consumption and serializable ownership (38 native assertions).
+Wire it into native inventory mutations and environmental time before claiming
+in-game spoilage; keep the accepted core fixture/package separate.
 CA410-CORE-01 passed on 2026-10-24; acceptance covers the resource/HUD stage, not
 unimplemented food spoilage, cooking or furniture.
 

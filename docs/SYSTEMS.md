@@ -25,6 +25,17 @@ food. Previously unaged food migrates as fresh when updating, with quantities
 and locations intact; no invented retroactive spoilage. This food-lot migration
 is approved but not yet implemented in the current slice.
 
+The subsequent metadata model, CaelumFoodLots, stores revisioned lots in native
+serializable Objects. Each lot keeps its creation stamp, units and contamination;
+a shared exposure accumulator makes advancing one stack independent of its lot
+count. Transfer snapshots contamination into the destination's exposure history,
+never shares mutable lot objects, and preserves oldest-first order. Only pieces
+with the same creation stamp and contamination coalesce. Portion contamination
+is mass-weighted across the actually removed units. Invalid identity/capacity/
+overdraw operations leave both sides intact. This model is engine-tested but
+not yet attached to gameplay food inventories or their environmental clock;
+therefore the in-game ageing/migration work above remains open.
+
 Each 100 g adds its food contamination value at the 80 kg body reference:
 dose = foodC * grams/100 * 80/bodyMassKg; cap character contamination at 100.
 Equipment mass does not change the dose. Above 50, each excess degree costs

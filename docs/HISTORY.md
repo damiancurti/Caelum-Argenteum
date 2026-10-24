@@ -21,6 +21,17 @@ Food-lot ageing, actual ingestion,
 cooking, acquisition and furniture remain unimplemented; this is an ongoing
 issue branch, not completion of #410 or V5.8.
 
+Subsequent model work: CaelumFoodLots preserves individual creation stamps and
+contamination through oldest-first consumption, copying, splitting/transfer and
+return of aged reservations. Schema initialization is idempotent and rejects a
+different food kind. Twenty-five model assertions plus thirteen save/hub checks
+pass; lots-report.json retains evidence separately from the accepted core build.
+The first run exposed a case-insensitive parameter shadowing Kind; foodKind fixes
+the assignment and a nine-kind regression now covers it. No new author check is
+requested for this isolated metadata model. Native food adapters/environmental
+clock integration are still outstanding; author acceptance above covers only
+the original contamination/HUD stage.
+
 ## 5.8.2 - Mansion connected water (#414), 2026-10-24
 
 Implemented the approved two 32,000 L deposits, circular 20 cm bottom opening,

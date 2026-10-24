@@ -12,6 +12,8 @@ Food lots, ingestion, cooking/acquisition and the approved furniture catalogue
 remain in progress. The complete approved food contract is in SYSTEMS;
 validation_583 records current evidence and the bounded manual check.
 This does not complete #410 or V5.8 and does not authorize merges.
+The subsequent lot metadata model passes 38 additional isolated native checks,
+including native serialization and hub travel; gameplay adapters remain open.
 
 ## 5.8.2 - Mansion connected water (#414)
 

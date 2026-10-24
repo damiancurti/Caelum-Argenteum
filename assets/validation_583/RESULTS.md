@@ -70,3 +70,27 @@ Open author_terminal.ps1 in an interactive PowerShell using process-local
 ExecutionPolicy Bypass and select 1. It documents F1 damage, F2 immunity,
 F3 full-Life depuration, F4 numeric state and F5 Character. Option 2 resumes a
 private save without reseeding it. The terminal stays open for author review.
+
+## Subsequent food-lot metadata model (not yet a gameplay adapter)
+
+CaelumFoodLots is now a revisioned serializable model with separate creation
+stamps, units and contamination. Native inventory Amount remains the future
+adapter's quantity authority; the model has no autonomous clock or actor scan.
+This supplies ageing under an explicit environment interval, oldest-first
+removal, independent snapshots and atomic type/capacity-checked transfers.
+
+The private lots package/lot-checks.pk3 is separate from the accepted core
+package and controls. Evidence: lots-report.json. Passing runs: lots-core-02
+(25 assertions), lots-save-01 (1), lots-load-01 (3), lots-hub-01 (9): **38 PASS**.
+They cover different food identities, fresh/old separation, mass-weighted dose,
+independent exposure histories, partial transfer, aged return, no mutable-object
+aliasing, saturation, native integer limits, 2,048 mixed lots, exact persistence
+and hub travel. The retained lots-core-01 found case-insensitive `kind` shadowing
+the Kind field; renamed foodKind and added coverage for all nine identities.
+
+prepare_lots.py generates this addon independently. collect_lots.py verifies all
+16,816 package entries against src/ and preserves logs/configs/saves' hashes.
+The final complete packaging pass has the same source bytes as the successful
+native runs; package compression/metadata can differ and exact hashes remain
+recorded. Gameplay inventory/environment integration is still pending, so this
+does not add an author test or extend CA410-CORE-01 acceptance.
