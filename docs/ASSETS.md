@@ -2,6 +2,18 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
+## 5.8.8 - Deployed tent artwork (#411, in progress)
+
+The deterministic `generate_camp_tent.py` builds an original A-frame OBJ from
+the approved 2 x 2 m plan and 1.8 m ridge, using only existing owned canvas,
+wood, iron and leather textures. The closed canvas area is approximately
+15.84 square metres. The entrance remains open between inclined end frames.
+The painted inventory sprite remains unchanged. Sources, material hashes and
+provenance are in `assets/art_source/camp_equipment/TENT_MODEL.json`; native
+four-view inspection and repeat-generation evidence are in
+`assets/validation_588/tent`. Native registration/deployment and author visual
+acceptance remain pending. No new bitmap or external artwork was introduced.
+
 ## 5.8.6 - Central property access (#411)
 
 Reuses existing houses, furnishings, doors and menu artwork; no new art or map geometry. Four residents change home, with routing generated from the existing city geometry by `generate_property_routes.py`. `CaelumPropertyData.zs` owns the selected home IDs and placement coordinates; `assets/validation_586` contains private fixture sources and test evidence.

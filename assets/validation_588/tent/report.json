@@ -1,0 +1,20 @@
+{
+  "issue": 411,
+  "release": "5.8.8",
+  "model_sha256": "bbfdef6195c44540d7223cac33ee4fae15747c10051fc8dac0c67c50a97fa9e8",
+  "deterministic_repeat": true,
+  "engine_run": "gallery03",
+  "native_pass_assertions": 1,
+  "views": {
+    "tent-three-quarter.png": "3d0fcbf2b413725c639ff306bccf8fb47922235853103727418b5f01a15017f1",
+    "tent-front.png": "2352588318919d04131b00c888338a07af52070bb3824e2c06c6655269279ceb",
+    "tent-side.png": "f49333600fba729e7ebb51a1246b19f20bd9b208a9b56098944fe94227353975",
+    "tent-back.png": "faccae0fc3790cd284139164b2141dad989d269b656f0b4999aae3fc60b1a338"
+  },
+  "visual_review": "Four native views inspected: open A-frame entrance, closed back, matte owned canvas/wood/metal textures; inventory artwork unchanged. No deployment or collision acceptance implied.",
+  "author_acceptance": "Deferred until return.",
+  "failed_private_runs": {
+    "gallery01": "Incorrect helper name MetersToUnits; corrected to existing MapUnits.",
+    "gallery02": "Multiline console wait chains ran concurrently; combined into one sequential line."
+  }
+}

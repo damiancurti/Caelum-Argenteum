@@ -14,6 +14,12 @@ assets/validation_588, original-save load/rollback and native hub return.
 CA411-PLACEMENT-01 remains pending during the author's requested absence.
 Tent, fire, camp land grants and cooking remain open. README reviewed.
 
+Artwork continuation: generated the original deployed A-frame tent OBJ from
+approved dimensions, reusing owned environment materials. Repeat generation is
+byte-identical; one native gallery assertion and four visually inspected views
+pass. The private fixture helper/wait-chain failures are retained separately.
+Inventory artwork remains unchanged; deployment and author review are pending.
+
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 
 Travel and waiting previews now copy the existing illness state, preserve its

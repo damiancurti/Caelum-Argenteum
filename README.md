@@ -18,6 +18,8 @@ strips, with atomic failure that keeps the actual chest and contents carried.
 rollback; see [validation_588](assets/validation_588/RESULTS.md).
 Camp land permissions, tent deployment, fire and cooking remain pending.
 CA411-PLACEMENT-01 is prepared for the author's return; no terminal was opened.
+The deployed tent model now has a deterministic source and four inspected
+native views; gameplay registration and author visual review remain pending.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 
