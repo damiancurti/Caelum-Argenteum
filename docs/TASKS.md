@@ -10,6 +10,8 @@ shared environment history for loaded/unloaded storage; approved fresh legacy
 migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
+Cupboard/wardrobe capacities and fountain/cistern water rules were approved
+on 2026-10-24; dimensions, recipes and final placement still need definition.
 No actual food ingestion currently calls the new illness entry point.
 CaelumFoodLots now implements/tested separate ages, exposure, atomic transfers,
 oldest-first consumption and serializable ownership (38 native assertions).
