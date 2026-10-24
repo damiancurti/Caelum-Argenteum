@@ -1,0 +1,17 @@
+{
+  "issue": 410,
+  "release": "5.8.3",
+  "status": "Generated and native-previewed; author visual acceptance pending",
+  "tool": "Built-in image_gen.imagegen",
+  "date": "2026-10-24",
+  "source": "assets/art_source/food/contamination_icon_v1.png",
+  "runtime": "src/graphics/caelum/ui/hud/icons/ca_hud_icon_contamination.png",
+  "sha256": "52efa232fd1ecf648a11184edc1f5867e7bd9a41a445656a8b80c17bcec3435d",
+  "width_height": [
+    1254,
+    1254
+  ],
+  "png_color_type": 6,
+  "processing": "Copied unchanged; native renderer scales to 18x18 virtual pixels, as the accepted thermal icon. No external artwork or Doom asset used.",
+  "prompt": "Create a single transparent-background inventory/HUD icon for Caelum Argenteum, independent dark-fantasy FPS RPG inspired by nineteenth-century Argentina. Asset: biological food contamination status icon, to be displayed at only 18x18 virtual pixels alongside the existing silver-grey hunger/thirst/sleep icons. Depict a compact front-facing small skull with a visibly withered curled leaf tucked behind its lower left edge, one clear unified silhouette. Monochrome silver/grey/charcoal painted engraved-relief sprite look; deliberate pixel-oriented game artwork with bold readable shapes, dark recesses, restrained silver highlights lit softly from upper left. This is hand-painted 2D game sprite art, not a glossy 3D render, photoreal object, vector glyph, or modern biohazard logo. No lettering, no numerals, no frame, no extra objects, no drop shadow, no background. Center the silhouette occupying roughly 85% of a square canvas with generous fully transparent padding. Keep skull eye sockets and leaf readable after small downsampling; do not rely on tiny ornament. Genuine alpha transparency."
+}

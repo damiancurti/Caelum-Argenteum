@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## 5.8.3 - Contamination HUD icon (#410, in progress)
+
+Built-in image_gen generated a monochrome silver/grey skull with a withered
+leaf on genuine alpha, following SPRITE_ART_DIRECTION and existing HUD icons.
+Source: assets/art_source/food/contamination_icon_v1.png; runtime copy:
+src/graphics/caelum/ui/hud/icons/ca_hud_icon_contamination.png.
+Both are byte-identical; native scaling uses 18x18 virtual pixels, as the
+accepted thermal icon. Prompt, SHA256, dimensions and provenance are retained
+in assets/manifests/food_contamination_icon_583.json. No external or Doom artwork
+was used. Native preview confirms layout; author appearance acceptance remains
+CA410-CORE-01. Dish/ingredient/furniture artwork is not supplied by this icon.
 
 ## 5.8.2 - Connected mansion deposits (#414)
 
