@@ -33,6 +33,23 @@ models. This exposes an explicit contact API; automatic environmental/combat
 callers and real hygiene remain pending. Failed probe logs are retained with
 diagnoses in validation_589/RESULTS.md. README reviewed; same patch version.
 
+Environmental continuation: player and carried equipment outside the Box now
+receive local world-time exposure through the thermal update. Armor/clothing
+layers and bare body sources use the approved surfaces and mass scaling. The
+author approved fixed detached clothing/armor areas from the 80 kg/1.75 m thermal
+reference. The World journal shows ambient contamination. Independent wait and
+travel models preserve their own equipment concentrations; wait schema 8 discards
+old caches. Sixty-six additional native assertions cover rules, actual waiting
+with/without clothing, travel commit, current saves/hub return, old-save migration
+and severe-disease regression. The final 16,862 package members match src.
+One typed load census maps industrial station sectors; no routine global scan.
+Measured microcosts and their limits are recorded in validation_589/RESULTS.md;
+these are not frame-presentation/FPS measurements. Native journal capture was
+inspected after correcting overlap and a shell-encoding artifact. Failed probes
+remain with diagnoses. CA502-EXPOSURE-01 awaits the author's return; no manual
+acceptance is inferred. NPC/furniture exposure, surface/combat contact, immersion
+and hygiene remain pending. README reviewed; same issue and patch version.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Added local full-volume/support/access validation to actual chest placement,

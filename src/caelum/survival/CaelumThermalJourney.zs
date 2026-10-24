@@ -89,7 +89,11 @@ class CaelumThermalJourney : Object play
                     // luego provisiones y recuperación. Nunca cobrar dos veces.
                     supplies.Thirst=Result.Hydration;supplies.ThermalExposure=Result.Exposure;
                     supplies.Hunger=Result.ShiveringHunger;
-                    supplies.ThermalToughness=Result.Toughness;supplies.Step(sleeping);
+                    supplies.ThermalToughness=Result.Toughness;
+                    if(supplies.Contamination!=null)
+                        supplies.Contamination.Advance(supplies.FoodIllness,CaelumContaminationRules.Environment(
+                            CaelumContaminationData.NATURAL_REFERENCE,Result.AirC,Result.Humidity),seconds/substeps);
+                    supplies.Step(sleeping);
                     supplies.WalkTics+=int(!sleeping || mode==CaelumJourneyState.MODE_SHIP);
                     supplies.SleepTics+=int(sleeping);Result.Hydration=supplies.Thirst;Result.ShiveringHunger=supplies.Hunger;
                     if(supplies.Health<=0)return true;

@@ -6,13 +6,13 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 Severe threshold/HUD and forecast invalidation are implemented. Retain
 CA502-SEVERE-01 until explicit author confirmation. Actor/equipment state and
-explicit contact API pass 30 native checks. Next: surface state, automatic local
-contacts and environment exposure; approved
-soap/cloth acquisition; progressive equipment washing and bathing; repair/sleep
-integration. Do not present pure contact/quote helpers as integrated hygiene.
-The author approved world-second transmission, environmental classes, generic
-collision-cylinder surfaces and geometric weapon/shield size conversion.
-Connect passive exposure using those rules; preserve #410 food scope/#411 camps.
+explicit contact API pass 30 native checks. Player/carried-equipment environmental
+exposure and independent wait/travel projections pass 66 further native checks.
+CA502-EXPOSURE-01 is queued until the author returns. Next: NPC/furniture exposure,
+surface state, local/combat contacts, immersion; approved soap/cloth acquisition;
+progressive equipment washing/bathing and repair/sleep integration. Do not present
+contact/quote helpers as integrated hygiene. Use approved surfaces, world time
+and classes; preserve #410 food scope/#411 camps.
 
 ## 5.8.8 / #411 - Placement and persistent tents
 

@@ -14,10 +14,11 @@ Actor/equipment state revision 1 is additive and initialized only when needed.
 The existing player illness record remains the body's source of truth. Native
 equipment copy/pickup/storage preserves concentration; copies have independent
 state. Box and closed-chest contents reject explicit contact without resetting
-their value. These storage routes are implemented and tested; automatic ambient,
-surface and combat callers remain pending.
+their value. These storage routes and player/carried-equipment environmental
+exposure are implemented and tested. NPC/furniture environmental exposure,
+surface/combat callers, immersion and real hygiene remain pending.
 
-Approved shared calculations, not yet attached to production contact/hygiene:
+Shared calculations, used by environmental exposure; other contact/hygiene pending:
 transfer 0.1 degree per second per m², multiplied by source/max(recipient,1).
 Only the lower concentration increases, never above the source; equal values
 do not exchange. The source retains its concentration. Continuous integration
@@ -41,6 +42,28 @@ streets/homes as urban, industrial workshops as industrial and sewers as sewer.
 Future maps declare their category. Generic furniture/actors use their collision
 cylinder's exterior area when no dedicated physical surface exists.
 
+Current environmental integration samples the player's thermal environment in
+world time. Outer armor, then clothing, then skin receive covered contact; bare
+areas integrate their sources jointly, stopping each source when reached. A
+dirty body can contaminate the inner garment without cleansing itself. Carried
+unworn equipment outside the Box receives its fixed-area exposure. The World
+journal displays local ambient concentration separately from the body HUD.
+Wait/travel forecasts own independent body/equipment concentrations; confirming
+travel commits the fresh projection once. Wait schema 8 invalidates prior caches.
+Wait forecasts evaluate future weather at the stored location/shelter; changing
+heat/humidity seals use the existing unsupported-effect forecast notice. Journeys
+use the natural route reference with their regional thermal forecast.
+
+Sector `user_ca_contamination_class` declares 1 nature, 2 city, 3 industry or
+4 sewer. Current gardens/countryside reuse existing land metadata; city/mansion
+interiors, sewers and coast use their corresponding map classes. Unknown maps
+without a declaration do not invent a concentration. Forge, sawmill and Chemistry
+station sectors are industrial. A single typed station census rebuilds that
+sector-indexed cache on load; spawn events maintain it. Runtime lookup is O(1),
+and only the player's inventory is cached for carried equipment. No periodic
+whole-map actor scan is introduced. The category belongs to the room, so removing
+a station does not cleanse its environment.
+
 Approved M-size weapon areas (m²): dagger .04; hatchet .10; machete .12;
 sword .16; axe/flail/javelin .18; greatsword .24; spear .25; war axe .28;
 halberd .35; gauntlets pair .50; carbine/shotgun .25; bow .20; crossbow .30;
@@ -50,6 +73,13 @@ magic .32, buckler .25, kite .54, tower 1.44 m². Scale area by the existing
 size mass multiplier to the power 2/3 (geometric similarity), excluding tier:
 XS/S/M/L/XL approximately .630/.825/1/1.160/1.310. These game references
 do not implement #315 or change shield defense/models.
+
+Approved clothing/armor cleaning and detached-area reference: M uses the existing
+thermal body at 80 kg/1.75 m. Head .366 m², body .732, hands/arms .183, feet/legs
+.671 (rounded; runtime retains the thermal calculation's precision). Apply the
+same geometric size factors as weapons, without tier. Stored, sold and dropped
+pieces keep their fixed surface; wearing them uses the actual body's area for
+contact. Transfer to another character therefore does not change cleaning cost.
 
 Equipment washing needs no station: 1 L potable water/m², 5 g soap/L, reusable
 cloth; a full pass removes all contamination in 60 world seconds/m²/object,

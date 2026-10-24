@@ -57,3 +57,49 @@ under storage/native; core04 and the six subsequent persistence runs pass.
 No automatic environmental or combat caller is connected yet. No periodic actor
 scan is introduced. The author's severe-illness package remains unchanged.
 These are functional engine checks, not manual acceptance or FPS measurements.
+
+## Player and carried-equipment environmental exposure continuation
+
+66 additional native PASS in nine selected runs, listed in exposure/report.json:
+finalcore01 (20), wait01 (3), journey01 (3), worn01 (4), save02 (1), hub02 (8),
+mansion02 (3), legacy01 (1), severe01 (23). Counts are new individual assertions,
+not cumulative saved RESULT totals. The final exposure-final2 package has 16,862
+members, each byte-equal to src; its hash and per-run hashes are retained.
+Final UI changes affect only localization/layout; prior selected probe4/probe5
+runs exercise the identical exposure gameplay. Finalcore/severe/legacy run after
+that gameplay was fixed, mansion02 and the inspected capture03 use final2.
+
+Checks cover approved garment areas, jointly integrated bare-body sources,
+layered exposure, mass scaling, Box exclusion and the production thermal hook.
+Actual waiting for 350 personal tics (200 world seconds) matches the independent
+forecast exactly, including minute changes and worn clothing. The native travel
+forecast leaves live state untouched and its confirmation applies the result.
+Save/load and hub return preserve separate body/equipment forecast values linked
+to the original owned item. Old equipment starts clean while old body values
+survive; the unchanged original-save/package rollback evidence above still applies.
+
+Private native microcosts on the recorded Ryzen 5950X environment: 1,000 player
+updates averaged 0.0001502 ms bare / 0.0002355 ms with one garment, maxima 0.0009 /
+0.0006 ms. On actual MAP01, 100 typed workshop-load callbacks averaged 0.004991 ms,
+maximum 0.0291 ms, with eight industrial stations. This is a load-only typed census;
+runtime sector lookup is O(1), equipment loops are limited to the player's cached
+inventory. No routine global actor scan was added. No frame presentation or
+frame-time tail measurement was made here; these numbers establish neither FPS
+nor large-scene acceptance.
+
+Retained failures: exposure-core01 used reserved identifier `until`; changing it
+to `timeToBoundary` fixes native compilation. Exposure-hub01 kept a level-handler
+pointer to a traveling inventory item; that fixture pointer becomes null on hub
+return. The production projection retained the correct item. The fixture now
+resolves its stable equipment ID (CA-KP-160); hub02 passes. Journal captures 01/02
+exposed layout overlap and a non-ASCII PowerShell-to-Python encoding loss. UTF-8
+patching and compact layout fix both; capture03/journal-es.png is the inspected
+final Spanish journal image. Earlier images remain under descriptive names.
+Capturefull01 was obscured by MAP01's native introduction; it is retained as
+fixture interference, not journal evidence. Capturefull02 uses the private room
+and verifies all eight visited-location rows plus the footer without overlap.
+
+CA502-EXPOSURE-01 is queued while the author is away. The prepared terminal is
+exposure/author_terminal.ps1; no manual test window was opened during the absence.
+NPC/furniture exposure, surface/combat contacts, immersion and hygiene transactions
+remain pending. This continuation does not accept or complete those features.

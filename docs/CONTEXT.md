@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.9** — 2026-10-24.
 
-**5.8.9/#502:** C90 double-damage/Sick; actor/equipment state;92+30PASS. Hygiene/automatic-exposure pending; CA502-SEVERE-01; validation_589.
+**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. NPC/contact/hygiene pending;author severe/exposure checks pending;validation_589.
 
 **5.8.8/#411:** placement46PASS/accepted; tents112+125PASS. Original behavior accepted, width rejected;4x3m/18.8kg review pending. Fire/cooking/two-occupant rest pending;validation_588/deploy.
 

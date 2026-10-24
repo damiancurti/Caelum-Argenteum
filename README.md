@@ -15,8 +15,8 @@ At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without
 turning it into healing; natural depuration below 90 removes the multiplier.
 Travel/wait forecasts share the same rule. Existing saved body contamination
-and fractional damage survive updating; wait forecast schema 7 invalidates the
-old cached damage model.
+and fractional damage survive updating; wait forecast schema 8 invalidates old
+cached models after adding environmental exposure.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See
@@ -24,8 +24,13 @@ assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
 Actor and equipment contamination now persists through pickup, storage, saves
 and hub return. Thirty further native checks cover that state, protected storage,
 explicit contact and old-save migration/rollback. Weapon/shield areas use the
-approved size conversion. Automatic environmental/combat exposure, soap
-acquisition, bathing and repair/sleep cleaning are not integrated in this slice. The expanded issue and V5.8 remain open.
+approved size conversion. The player and equipment carried outside the Box now
+accumulate environmental contamination; clothes and armor receive covered
+exposure first. The World journal shows the local index. Sixty-six further native
+assertions cover independent forecasts, actual waiting, travel commit and save/hub
+continuity; see `assets/validation_589/exposure`. CA502-EXPOSURE-01 awaits the author.
+NPC/furniture exposure, surface/combat contact, immersion, soap acquisition and
+washing/bathing remain pending. The expanded issue and V5.8 remain open.
 Four painted hygiene item sources/previews are prepared in
 `assets/art_source/hygiene`; runtime registration and author review are pending.
 

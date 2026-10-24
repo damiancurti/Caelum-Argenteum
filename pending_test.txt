@@ -28,3 +28,18 @@ This private room does not alter campaign saves. Close introduction with Escape.
 4. Option 2 runs isolated rules/runtime comparisons; all checks must PASS.
 Expected: threshold, label and immunity agree. This does not accept environmental
 contacts, soap, bathing or automatic equipment washing, which remain pending.
+
+CA502-EXPOSURE-01 | Origin: 5.8.9 / #502 | PENDING; deferred until author return
+Prerequisites: issue502-work, exposure-final2 package, GZDoom 4.14.2; close other
+GZDoom instances. Run assets/validation_589/exposure/author_terminal.ps1, choose 1.
+This private room does not alter campaign saves. Close introduction with Escape.
+1. Inspect Journal > World: ambient contamination appears beside climate data,
+   without overlapping visited locations or local exits. Spanish/English match.
+2. With the survival HUD visible, F1 resets the private environment and clean
+   body. Body contamination rises gradually toward the local environment value.
+3. F2 compares actual world-time waiting with its projection; F3 adds clothing;
+   F4 checks travel projection/commit. F6 opens the game console to read results.
+   Every check must PASS, with matching predicted/actual contamination.
+Expected: environmental value and body bar remain distinct, and waiting/travel
+do not evade exposure. This does not accept NPC/furniture exposure, floor/body
+contacts, immersion, combat transmission, soap acquisition or washing/bathing.

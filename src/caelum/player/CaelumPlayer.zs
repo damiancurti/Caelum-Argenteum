@@ -6,6 +6,7 @@
 class CaelumPlayer : DoomPlayer
 {
     transient CaelumTargetSubscriptions TargetSubscribers;
+    transient CaelumContaminationExposure ContaminationExposure;
     override Weapon PickWeapon(int slot, bool checkammo)
     {
         // El dispatcher nativo ya resolvió teclas, aliases y doble clic.

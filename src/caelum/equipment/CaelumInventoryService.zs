@@ -2779,6 +2779,7 @@ class CaelumInventoryService : Object play
     static void RefreshEquipmentSelectionPreview(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        user.ContaminationExposure=null;
         CaelumEquipmentItem identifiedItem =
             user.FindNativeEquipmentItemById(user.EquipmentSelectionItemId);
         if (user.EquipmentSelectionItemId > 0 && identifiedItem == null)

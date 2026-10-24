@@ -1,0 +1,66 @@
+﻿{
+    "label":  "exposure-hub01",
+    "runtime":  "exposure-probe5",
+    "started_utc":  "2026-10-24T23:22:14.9042219Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "15CA10DB9A5128126C87B191B3D05AAA147F702A4CE1A60E0531B046A3B9B0FE",
+    "addon_sha256":  "2DE35D5F5B8546A84FE79725D1895156E908E056136723F013ECD97673C282EE",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\\exposure-probe5\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\\exposure/checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\\exposure-hub01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "502",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\\exposure-hub01.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "-loadgame",
+                      "\"ca502-exposure.zds\"",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-work\\build\\issue502\\exposure\\hub.cfg\""
+                  ],
+    "command_script":  "wait 1; netevent ca502_exposure_loaded; changemap CTX502B; wait 35; changemap CTX502; wait 35; netevent ca502_exposure_loaded; wait 5; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  35932,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-24T23:22:25.7775071Z"
+}

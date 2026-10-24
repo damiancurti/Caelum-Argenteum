@@ -1,6 +1,17 @@
 // #502: aritmética sin actores, inventarios ni cambios en el reloj.
 class CaelumContaminationRules : Object
 {
+    static double GarmentArea(int slot,int size)
+    {
+        return CaelumThermalRules.Area(CaelumThermalData.REFERENCE_MASS_KG,CaelumThermalData.REFERENCE_HEIGHT_METERS)
+            *CaelumContaminationData.GarmentCoverage(slot)
+            *(CaelumEquipmentRules.GetSizeWeightMultiplier(size)**(2.0/3.0));
+    }
+    static clearscope double ContactPrimitive(double value)
+    {
+        double floor=CaelumContaminationData.CONTACT_RATIO_FLOOR;
+        return value<floor ? value*floor : 0.5*(value*value+floor*floor);
+    }
     static double WeaponArea(int kind,int size)
     {
         return CaelumContaminationData.WeaponAreaM(kind)

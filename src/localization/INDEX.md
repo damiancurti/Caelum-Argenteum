@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `798602c4287df09a6d6eabefe58e44578ab60ae999eaf58b8729ad92da624d12`. Locations include every definition; the last one per language wins.
+SHA-256: `49bd9dd7e2422fcd143ac63204118ba3cbf93a912991650912ad3aa3ea0e2a69`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -46,7 +46,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONNECTED | 5 | CA_CONNECTED_WATER_CLOSE | CA_CONNECTED_WATER_OPENED |
 | CA_CONSUMABLE | 11 | CA_CONSUMABLE_ANIMA_LARGE | CA_CONSUMABLE_WATER_RATION |
 | CA_CONTAINER | 16 | CA_CONTAINER_CAPACITY | CA_CONTAINER_WITHDRAW |
-| CA_CONTAMINATION | 2 | CA_CONTAMINATION_SICK | CA_CONTAMINATION_SICK_IMMUNE |
+| CA_CONTAMINATION | 4 | CA_CONTAMINATION_ENVIRONMENT | CA_CONTAMINATION_SICK_IMMUNE |
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 74 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_SHOTGUN_CARTRIDGES |

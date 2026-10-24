@@ -25,7 +25,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 7;
+    const PROVISION_REVISION = 8;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -39,12 +39,19 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     bool HasChair;
     int FoodSeatedSubTics, WaterSeatedSubTics;
     double AdrenalineBeforeStep;
+    CaelumContaminationWaitWeather ContaminationWeather;
 
     override void Step(bool sleeping)
     {
         // El jugador calcula rendimiento al comienzo del tic, antes de curar
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
+        if(ContaminationWeather!=null && Contamination!=null)
+        {
+            int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
+            if(nextTick>=CaelumWorldClock.TicsPerDay()){nextTick=0;nextDay++;}
+            Contamination.Advance(FoodIllness,ContaminationWeather.Sample(nextDay,nextTick),AltitudeSecondsPerTic);
+        }
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
     }
@@ -62,6 +69,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     {
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
+        ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
+        if(ContaminationWeather.DynamicClimate){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Scale=CaelumWorldClock.MapTimeScale(level.MapName);
         AltitudeSecondsPerTic*=Scale;
         HungerLoss*=Scale;ThirstLoss*=Scale;SleepLoss*=Scale;

@@ -120,6 +120,7 @@ class CaelumThermalService : Object play
         }
         for(int slot=0;slot<4;slot++)CaelumThermalBody.SetWater(body,thermal,slot,thermal.WorkWaterKg[slot]);
         ApplyDamage(body,thermal,severitySeconds);
+        CaelumContaminationRuntime.PlayerStep(user,thermal,worldSeconds);
     }
 
     // El pronóstico usa una copia independiente. Esta ruta no toca actores,

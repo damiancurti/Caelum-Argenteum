@@ -127,6 +127,7 @@ class CaelumJourneyModel : Object play
     double AltitudeSecondsPerTic;
     CaelumFoodIllness FoodIllness;
     double FoodToughness;
+    CaelumContaminationExposure Contamination;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
@@ -135,6 +136,9 @@ class CaelumJourneyModel : Object play
         FoodIllness=foodRecord!=null && foodRecord.FoodIllness!=null
             ? foodRecord.FoodIllness.Copy() : new('CaelumFoodIllness');
         FoodIllness.Ensure();FoodToughness=user.Attributes.Toughness;
+        let contactThermal=CaelumThermalService.CaptureForecast(user);
+        if(contactThermal!=null)
+        {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);}
         let observedAltitude=CaelumAltitudeService.Update(user);
         Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;
         AltitudeSecondsPerTic=3600.0/CaelumWorldClock.TicsPerHour();
@@ -452,6 +456,8 @@ class CaelumJourneyPlan : Inventory
         // referenciado por la interfaz o por un guardado de ese menú.
         let foodRecord=user.GetPersistentCharacterState(false);
         if(foodRecord!=null && model.FoodIllness!=null)foodRecord.FoodIllness=model.FoodIllness.Copy();
+        if(model.Contamination!=null)model.Contamination.Commit(user);
+        user.ContaminationExposure=null;
         if(ThermalForecast!=null)CaelumThermalService.CommitForecast(user,ThermalForecast.Result);
         double seconds = double(model.ElapsedTics) / TICRATE;
         user.IlluminationRemaining = Max(0.0, user.IlluminationRemaining - seconds);

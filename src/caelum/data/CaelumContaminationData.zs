@@ -17,6 +17,43 @@ class CaelumContaminationData : Object
     const URBAN_REFERENCE = 15.0;
     const INDUSTRIAL_REFERENCE = 40.0;
     const SEWER_REFERENCE = 60.0;
+    const ENV_UNKNOWN = 0;
+    const ENV_NATURAL = 1;
+    const ENV_URBAN = 2;
+    const ENV_INDUSTRIAL = 3;
+    const ENV_SEWER = 4;
+
+    static clearscope double Reference(int category)
+    {
+        switch(category)
+        {
+            case ENV_NATURAL:return NATURAL_REFERENCE;
+            case ENV_URBAN:return URBAN_REFERENCE;
+            case ENV_INDUSTRIAL:return INDUSTRIAL_REFERENCE;
+            case ENV_SEWER:return SEWER_REFERENCE;
+        }
+        return -1;
+    }
+    static clearscope int MapClass(String map)
+    {
+        int location=CaelumWorldCatalogue.LocationForMap(map);
+        if(location==CaelumWorldCatalogue.LOCATION_MANSION || location==CaelumWorldCatalogue.LOCATION_PORT)return ENV_URBAN;
+        if(location==CaelumWorldCatalogue.LOCATION_SEWERS)return ENV_SEWER;
+        if(location==CaelumWorldCatalogue.LOCATION_COAST)return ENV_NATURAL;
+        return ENV_UNKNOWN;
+    }
+    // Muestreo humano 16x16 del sistema térmico, aprobado como referencia M.
+    static clearscope double GarmentCoverage(int slot)
+    {
+        switch(slot)
+        {
+            case CaelumConstants.ARMOR_SLOT_HEAD:return 0.1875;
+            case CaelumConstants.ARMOR_SLOT_BODY:return 0.375;
+            case CaelumConstants.ARMOR_SLOT_HANDS:return 0.09375;
+            case CaelumConstants.ARMOR_SLOT_FEET:return 0.34375;
+        }
+        return 0;
+    }
 
     static clearscope double ShieldAreaM(int kind)
     {

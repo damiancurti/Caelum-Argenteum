@@ -1,0 +1,68 @@
+{
+  "issue": 502,
+  "version": "5.8.9",
+  "scope": "player and carried equipment environmental exposure, independent wait/travel forecasts",
+  "runs": [
+    {
+      "label": "exposure-finalcore01",
+      "pass_assertions": 20,
+      "runtime_sha256": "6EAFCB03A34113BC833273AE31B54649327B3846BCC2CDB4AF9D6EB5A8B631C7",
+      "addon_sha256": "90330C26FE30583B3B2D0272339374F6F12D69255EEA0A5C19442F5A6FE3FB32"
+    },
+    {
+      "label": "exposure-wait01",
+      "pass_assertions": 3,
+      "runtime_sha256": "A131BBC5B73023548B59C32D5FBC647F6D132E5D0DE909F918AA578E303E76F1",
+      "addon_sha256": "369E90815D3B0CE7341EFBD523A325CBFC1F1D91B426BBC4D1621A79F227EE94"
+    },
+    {
+      "label": "exposure-journey01",
+      "pass_assertions": 3,
+      "runtime_sha256": "A131BBC5B73023548B59C32D5FBC647F6D132E5D0DE909F918AA578E303E76F1",
+      "addon_sha256": "369E90815D3B0CE7341EFBD523A325CBFC1F1D91B426BBC4D1621A79F227EE94"
+    },
+    {
+      "label": "exposure-worn01",
+      "pass_assertions": 4,
+      "runtime_sha256": "15CA10DB9A5128126C87B191B3D05AAA147F702A4CE1A60E0531B046A3B9B0FE",
+      "addon_sha256": "2DE35D5F5B8546A84FE79725D1895156E908E056136723F013ECD97673C282EE"
+    },
+    {
+      "label": "exposure-save02",
+      "pass_assertions": 1,
+      "runtime_sha256": "15CA10DB9A5128126C87B191B3D05AAA147F702A4CE1A60E0531B046A3B9B0FE",
+      "addon_sha256": "3D6C8F2C1A5E07E8ED1F111DAA13A7E73689E4C604919B1B7DEF0D682243705F"
+    },
+    {
+      "label": "exposure-hub02",
+      "pass_assertions": 8,
+      "runtime_sha256": "15CA10DB9A5128126C87B191B3D05AAA147F702A4CE1A60E0531B046A3B9B0FE",
+      "addon_sha256": "3D6C8F2C1A5E07E8ED1F111DAA13A7E73689E4C604919B1B7DEF0D682243705F"
+    },
+    {
+      "label": "exposure-mansion02",
+      "pass_assertions": 3,
+      "runtime_sha256": "96C38975500AA8BF76871EEECA5E576C3C6790F36622501D65D07679FD0E4189",
+      "addon_sha256": "EE10D44E6780843A9EF1F6191FBE3AE4B9A9A0B31F389DF69DDA8AC970E962FA"
+    },
+    {
+      "label": "exposure-legacy01",
+      "pass_assertions": 1,
+      "runtime_sha256": "6EAFCB03A34113BC833273AE31B54649327B3846BCC2CDB4AF9D6EB5A8B631C7",
+      "addon_sha256": "43DBF710B999F6FB34F1A1E8812C8C1E43E6234192B150BA5B37BEE6EA6F9593"
+    },
+    {
+      "label": "exposure-severe01",
+      "pass_assertions": 23,
+      "runtime_sha256": "6EAFCB03A34113BC833273AE31B54649327B3846BCC2CDB4AF9D6EB5A8B631C7",
+      "addon_sha256": "4E353C9282708ECC4D8A8D5594DDA576E4FB52D9AE947F787965C7AF27D639B9"
+    }
+  ],
+  "pass_assertions": 66,
+  "package_members": 16862,
+  "source_equivalence": true,
+  "package_sha256": "96c38975500aa8bf76871eeeca5e576c3c6790f36622501d65d07679fd0e4189",
+  "author_acceptance": "CA502-EXPOSURE-01 deferred while author is away; no new acceptance",
+  "performance": "Microcosts only; no frame presentation or frame-time tail measurement, no FPS claim",
+  "pending": "NPC/furniture environmental exposure; surface and combat contact; immersion; hygiene transactions"
+}
