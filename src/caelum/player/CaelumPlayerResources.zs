@@ -358,13 +358,11 @@ class CaelumPlayerResources : Object play
         }
         if (user.IsSubmergedInPotableWater())
         {
-            user.CurrentThirst = Min(
-                CaelumConstants.SURVIVAL_MAXIMUM,
-                user.CurrentThirst
-                    + CaelumConstants.SURVIVAL_MAXIMUM
+            double recovery = Min(CaelumConstants.SURVIVAL_MAXIMUM-user.CurrentThirst,
+                    CaelumConstants.SURVIVAL_MAXIMUM
                     * CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND
-                    / TICRATE
-            );
+                    / TICRATE);
+            user.CurrentThirst += CaelumWaterQuality.DrinkSource(user,recovery);
         }
         else
         {

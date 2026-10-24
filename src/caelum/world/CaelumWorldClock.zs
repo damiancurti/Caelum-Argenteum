@@ -151,10 +151,11 @@ class CaelumWorldClock : Inventory
 class CaelumWorldClockTicker : StaticEventHandler
 {
     CaelumPhysicsMapState AltitudeMap;
+    CaelumConnectedWaterMap WaterMap;
     // El handler ya existe en saves anteriores; su nueva implementación
     // alcanza también esos mapas sin depender de registrar otro handler.
     override void WorldLoaded(WorldEvent e)
-    { CaelumPhysicsWorld.Initialize(); }
+    { CaelumPhysicsWorld.Initialize();CaelumConnectedWaterMap.Initialize(); }
 
     override void WorldTick()
     {
@@ -181,6 +182,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         if (calendar == null || !calendar.EnsureCampaign(clock)) return;
         CaelumTimeSkipState.PrepareStep(user);
         clock.AdvanceOnMap(level.MapName);
+        if(WaterMap!=null)WaterMap.Sync(clock);
         CaelumShopRestock.UpdateActive(user);
         CaelumWeatherState.Sync(user, clock, calendar);
         // WorldTick sigue la simulación nativa. Las conversaciones de Caelum

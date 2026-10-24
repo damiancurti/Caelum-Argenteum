@@ -1,0 +1,98 @@
+{
+  "issue": 414,
+  "release": "5.8.2",
+  "provenance": "Author-approved two 4x4x2 m deposits east of the pool, circular 20 cm bottom connection and fixed service steps. Capacity is nominal, ignoring the small step displacement. Coordinates are the reproducible visual layout within the surveyed free ground, not new balance.",
+  "baseline": "legacy_581/MAP01.wad",
+  "baseline_sha256": "866a25a3adad62a742f3a1e65fa9c029852450b99e372b63caf57321b15f408a",
+  "ground_sector": 0,
+  "walkway": [
+    3600,
+    -176,
+    3808,
+    168
+  ],
+  "rim": [
+    3632,
+    -144,
+    3776,
+    136
+  ],
+  "basins": [
+    [
+      3640,
+      0,
+      3768,
+      128
+    ],
+    [
+      3640,
+      -136,
+      3768,
+      -8
+    ]
+  ],
+  "floor": -64,
+  "rim_height": 0,
+  "ceiling": 30000,
+  "water_tags": [
+    54140,
+    54141
+  ],
+  "water_initial_heights": [
+    -8,
+    -56
+  ],
+  "gate_tag": 54142,
+  "opening": {
+    "center_x": 3704,
+    "diameter": 6.4,
+    "y": [
+      -8,
+      0
+    ],
+    "strips": 12,
+    "first_tag": 54143
+  },
+  "steps": {
+    "x": [
+      3640,
+      3656,
+      3672,
+      3688,
+      3704
+    ],
+    "y_offsets": [
+      72,
+      112
+    ],
+    "tops": [
+      0,
+      -16,
+      -32,
+      -48
+    ],
+    "thickness": 2,
+    "first_tag": 54160
+  },
+  "lever": [
+    3608,
+    -4,
+    0,
+    0
+  ],
+  "controls": {
+    "origin": [
+      -7000,
+      31800
+    ],
+    "spacing": 24,
+    "size": 8
+  },
+  "materials": {
+    "path": "CMST01",
+    "rim": "CMST03",
+    "basin": "CMST02",
+    "water": "CAPOOL01",
+    "gate": "CMST03"
+  }
+}

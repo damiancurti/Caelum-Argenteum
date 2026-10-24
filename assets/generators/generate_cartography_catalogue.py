@@ -39,6 +39,12 @@ def render(root=ROOT):
     for name in ['MAP01', 'MAP02', 'MAP06']:
         current = map_name('port', root) if name=='MAP06' else name
         lines.append(f'    const {name}_CHECKSUM = "{map_checksum(current, root)}";')
+    # The water installation changes only exterior geometry; room IDs/bounds stay valid.
+    legacy_mansion = wad_checksum(root/'assets/map01_mansion/legacy_581/MAP01.wad')
+    lines += [f'    const MAP01_LEGACY_CHECKSUM = "{legacy_mansion}";',
+              '    static bool MatchesMansionGeometry(String checksum)', '    {',
+              '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM;',
+              '    }']
     # Both layouts share exactly the same authored POI coordinates and IDs.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
     lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',

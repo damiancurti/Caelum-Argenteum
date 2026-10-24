@@ -1,7 +1,7 @@
 {
   "issue": 234,
   "revision": 1,
-  "map_checksum": "359c5aa1daa71a0fb91bba6848818f46",
+  "map_checksum": "b9e3c740a85b8532c362d36113f882ae",
   "source": "src/maps/MAP01.wad; REPAIR.json; PRACTICE.json; CaelumMainM00QuestController.PlaceRoomStations; CaelumMansionFurniture.Prepare",
   "discovery": "Player feet inside the room's authored interior and storey; no sight radius. Secret spaces and connections are deliberately absent.",
   "rooms": [
@@ -126,5 +126,6 @@
       "ceiling": 392
     }
   ],
-  "geometry_audit": "Native LineTracer at Z=48 confirms workshop side walls X=32/704 and front walls Y=+/-100; the original sector bounds omit the adjoining side-door strips. Upper-room bounds retain REPAIR.json interiors."
+  "geometry_audit": "Native LineTracer at Z=48 confirms workshop side walls X=32/704 and front walls Y=+/-100; the original sector bounds omit the adjoining side-door strips. Upper-room bounds retain REPAIR.json interiors.",
+  "geometry_review": "Issue #414: exterior basins at x >= 3600 leave all existing room bounds, storeys and IDs unchanged; legacy 5.8.1 mansion remains recognized."
 }

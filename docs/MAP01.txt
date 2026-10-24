@@ -1,6 +1,20 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+5.8.2 - Connected water east of the pool (#414)
+
+Two nominal 32,000 L deposits at x 3640..3768, north y 0..128 and south y -136..-8,
+floor -64 and rim 0. These are 4x4x2 m at 32 MU/m. The lever at (3608,-4,0) faces the
+pool path. Northern/left supply, southern/right drainage, bottom circular gate
+and low-water service steps follow SYSTEMS. The pre-existing pool and all its
+steps remain unchanged. No tree/shrub is moved. Exact layout and geometry
+provenance: assets/map01_mansion/CONNECTED_WATER.json.
+
+New geometry is for new campaigns. An existing campaign containing the former
+MAP01 uses the explicit LegacyMap01 build and retained 5.8.1 WAD. This preserves
+its former mansion rather than migrating it into these new deposits. Native
+active-map/hub save tests and rollback are recorded in validation_582.
 
 5.7.12 - Fermentation Barrel (#487)
 
