@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+## 5.8.5 - Regional event discovery (#415, in progress), 2026-10-24
+
+Separated actual schedule outcomes from observed counts in production. Added idempotent knowledge migration, regional return discovery, calendar/quest-journal projection and protection against charging undisclosed rental periods. Due-series ordering is stable and bounded; existing recurrence counts remain arithmetic. Unloaded battle simulation and remaining #415 integration are still pending. Validation: 39 native PASS across seven final/migration/rollback runs; clean static checks; all 16,836 packaged entries match source bytes. Evidence: `assets/validation_585`. CA415-DISCOVERY-01 remains pending; no unloaded-battle acceptance is claimed.
 
 ## 5.8.4 - Second map soundtrack (#496), 2026-10-24
 

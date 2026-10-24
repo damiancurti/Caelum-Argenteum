@@ -1,0 +1,48 @@
+{
+  "issue": 415,
+  "scope": "Production event discovery; unloaded siege simulation still pending",
+  "runs": [
+    {
+      "label": "final-core-01",
+      "passes": 19,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "final-load-01",
+      "passes": 3,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "final-hub-01",
+      "passes": 9,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "final-legacy-load-01",
+      "passes": 3,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "final-migrated-load-01",
+      "passes": 3,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "legacy-save-01",
+      "passes": 1,
+      "package_sha256": "51bc22edd4f661c340398b71df44658ed184063262a075734faf94f6296f3faa"
+    },
+    {
+      "label": "legacy-rollback-01",
+      "passes": 1,
+      "package_sha256": "51bc22edd4f661c340398b71df44658ed184063262a075734faf94f6296f3faa"
+    }
+  ],
+  "native_passes": 39,
+  "source_entries_verified": 16836,
+  "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10",
+  "original_save_sha256": "309b78214e9d62a2f0f8f11adce97ea98387fc1f247451005bee8d945b4587d1",
+  "maximum_2048_record_sort_ms": 0.967,
+  "performance_limit": "Single native sorting sample; not frame presentation, percentile tails or FPS acceptance.",
+  "author_acceptance": "Pending CA415-DISCOVERY-01"
+}

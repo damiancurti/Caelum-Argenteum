@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+## 5.8.5 - Regional event discovery (#415, in progress)
+
+Production schedule/quest presentation now separates remote outcomes from regional discovery. This is one focused step of #415, not completion of unloaded combat/theft/calendar integration. #410 food/furniture, #411 property, #412 rest and #416-417 travel remain open; #413 altitude and #414 production water retain their accepted status. No V5.8 merges have been authorized.
 
 ## 5.8.4 - Second map soundtrack (#496)
 

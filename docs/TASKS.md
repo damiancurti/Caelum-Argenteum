@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+## 5.8.5 / #415 - Regional discovery
+
+Implement and verify actual/known event separation, return disclosure, bounded due-series ordering and old-save knowledge migration. Keep real quest failure and debt authoritative; prevent remote journal/notification leaks and repeated news. Remaining: summarized unloaded siege combat with real participants/inventories, explicit theft/event adapters and full catch-up integration. Author approvals are recorded in #415; no new content probabilities or deadlines are inferred.
 
 ## 5.8.4 / #496 - Map soundtrack
 

@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+**5.8.5/#415:** actual/known schedule counts, regional disclosure, quest projection, stable due order; unloaded battles/theft still WIP. validation_585;39PASS;CA415-DISCOVERY-01pending.
 
 **5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01 pending. Gameplay #410-417 continues separately.
 
@@ -349,15 +351,7 @@ Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT owns scope/dependencies; HISTORY preserves earlier evidence.
 
-## Repository structure (summarized)
-
-- `src/`: packaged runtime code, maps, media and licenses.
-- `docs/`: canonical/working documents, engineering guides and generated index.
-- `assets/`: sources, generators, manifests and validation; outside runtime.
-- `build/`: regenerable PK3; `archive/`: historical backups.
-- Root: README, build/launch scripts and validators. Map: AGENTS.md.
-
-Use DOCUMENT_INDEX and engineering guides.
+Repository layout and selective-reading policy: AGENTS.md.
 
 ## Critical premises
 
