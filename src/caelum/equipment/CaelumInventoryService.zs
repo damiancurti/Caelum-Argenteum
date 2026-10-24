@@ -1498,6 +1498,7 @@ class CaelumInventoryService : Object play
         CaelumConsumableItem existing = user.FindNativeConsumableItem(
             consumable.GetConsumableType()
         );
+        if(CaelumCampData.IsItem(consumable))existing=null;
         if (existing != null)
         {
             return user.PrepareNativeConsumableStackPickup(
@@ -1564,7 +1565,7 @@ class CaelumInventoryService : Object play
             specialItem.GetSpecialTier()
         );
         // Las llaves emparejadas no son duplicados de una pila ya pesada.
-        if(specialItem is "CaelumLockItem")existing=null;
+        if(specialItem is "CaelumLockItem" || CaelumCampData.IsItem(specialItem))existing=null;
         if (existing != null)
         {
             if (specialItem.GetSpecialCategory()
@@ -2700,6 +2701,7 @@ class CaelumInventoryService : Object play
         if(book!=null){CaelumRecipeSession.OpenBook(user,book);return;}
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
+        if(CaelumCampData.IsItem(entry) && (CaelumContainerRules.Boxed(entry) || entry is 'CaelumCampTent')){CaelumCampInventory.ToggleBox(user,entry);return;}
         user.ApplyFormalInventorySelection(entry);
         let bag = CaelumSleepingBag(entry);
         if (bag != null && !bag.InMagicBox)
@@ -2739,6 +2741,7 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
+        if(CaelumCampData.IsItem(entry)){CaelumCampInventory.ToggleBox(user,entry);return;}
         if(entry is "CaelumChestCargo")return;
         user.ApplyFormalInventorySelection(entry);
         user.ToggleSelectedMagicBox();
@@ -2755,6 +2758,7 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
+        if(CaelumCampData.IsItem(entry)){CaelumCampInventory.Drop(user,entry);return;}
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)
         {
@@ -4462,6 +4466,7 @@ class CaelumInventoryService : Object play
 
     static Name GetConsumableClassName(CaelumPlayer user, int consumableType)
     {
+        if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.ItemClass(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.ItemClass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if(CaelumPotionRules.IsPotion(consumableType))return CaelumPotionRules.ItemClass(consumableType);
         switch (consumableType)
@@ -4543,6 +4548,7 @@ class CaelumInventoryService : Object play
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
+            if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.ItemClass(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
@@ -4564,6 +4570,8 @@ class CaelumInventoryService : Object play
         CaelumConsumableItem consumable = user.FindNativeConsumableItem(
             user.EquipmentSelectionConsumableType
         );
+        if(user.EquipmentSelectionConsumableType==CaelumCampData.POT_CONSUMABLE)
+            consumable=CaelumCampPot(user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex));
         if (consumable == null || consumable.Amount <= 0
             || consumable.InMagicBox)
         {

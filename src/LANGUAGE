@@ -6480,3 +6480,10 @@ CA_PROPERTY_PREPARING = "La vivienda se está preparando. Volvé a intentar en u
 CA_PROPERTY_SUCCESS = "Pago aceptado; acceso residencial actualizado.";
 CA_PROPERTY_REJECTED = "No se pudo completar el pago. Revisá el dinero, el espacio para el cambio y la titularidad.";
 CA_PROPERTY_NO_RESIDENCE = "Comprá o renová esta vivienda antes de usarla como residencia. Podés retirar tus pertenencias.";
+
+[enu default]
+CA_CAMP_TENT = "Two-person canvas tent";
+CA_CAMP_POT = "Iron pot (20 L)";
+[es]
+CA_CAMP_TENT = "Carpa de lona para dos";
+CA_CAMP_POT = "Olla de hierro (20 L)";

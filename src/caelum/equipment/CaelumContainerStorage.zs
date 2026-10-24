@@ -72,7 +72,7 @@ class CaelumContainerRules : Object play
                 || user.IsEquipmentItemCraftingLocked(equipment.ItemId)))return false;
         let special=CaelumSpecialInventoryItem(item);
         if(depositing && special!=null && special.LimboQuestUnits>0)return false;
-        if(!depositing && equipment==null && !(item is "CaelumLockItem") && item.MaxAmount<=1
+        if(!depositing && equipment==null && !CaelumCampData.IsItem(item) && !(item is "CaelumLockItem") && item.MaxAmount<=1
             && user.FindInventory(item.GetClassName())!=null)return false;
         if(depositing && special!=null && special.GetSpecialCategory()==CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && user.GetReservedCraftingMaterialUnits(special.GetSpecialType(),special.GetSpecialTier())>0)return false;

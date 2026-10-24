@@ -6,6 +6,8 @@ Documentation version: **5.8.6** — 2026-10-24.
 
 Implements one central dwelling purchase/rental and resident/chest relocation using the approved economy. Save migration and native validation are recorded in `assets/validation_586`; CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Camps/player furniture placement and the rest of V5.8 remain open.
 
+Camp acquisition continuation adds individually owned canvas tents and 20 L iron pots, learned fabrication recipes, Provisions/library catalogues, recipe-based replenishment, painted inventory icons and pot-specific cooling. Recipe schema 15 appends IDs 201/202; prior knowledge and stock migrate idempotently. Pot volume, contamination and temperature survive pickup, trade, Box/chest transfers, native saves and hub travel. Validation: 72 native PASS in 12 selected runs, 16,850 final package members verified byte-for-byte, original-save migration and rollback, clean static checks, and a native Spanish inventory capture. Housing remains accepted. Camp deployment, fire/cooking integration and author equipment/art acceptance remain pending; questions and manual tests are held until the author returns.
+
 ## 5.8.5 - Regional event discovery (#415, in progress)
 
 Production schedule/quest presentation now separates remote outcomes from regional discovery; CA415-DISCOVERY-01 was fully accepted on 2026-10-24. This is one focused step of #415, not completion of unloaded combat/theft/calendar integration. #410 food/furniture, #411 property, #412 rest and #416-417 travel remain open; #413 altitude and #414 production water retain their accepted status. No V5.8 merges have been authorized.

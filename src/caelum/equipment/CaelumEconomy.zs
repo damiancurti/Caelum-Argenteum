@@ -760,6 +760,7 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
+        if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampCrafting.Value(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateCrafting.Value(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         double chemistry=CaelumPotionRules.IsPotion(consumableType)?CaelumChemistryEconomy.ConsumableValue(consumableType):-1;
         if(chemistry>=0)return chemistry;
@@ -801,6 +802,7 @@ class CaelumEconomyRules : Object
     play static double GetInventoryUnitBaseValue(Inventory item)
     {
         if (item == null) { return 0.0; }
+        if(item is 'CaelumCampTent')return CaelumCampCrafting.Value(0);
         let offer=CaelumRecipeOffer(item);
         if(offer!=null)return offer.BaseValue;
         let lockItem=CaelumLockItem(item);

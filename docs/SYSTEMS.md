@@ -79,6 +79,15 @@ collision volume and clear doors/stairs/access remain mandatory. Expired rental
 disallows new placement but preserves retrieval. These are approvals for ongoing
 camp implementation; deployment and cooking are not completed by the property stage.
 
+The acquisition stage now implements these two recipes and catalogues, preserving
+independent pot/tent instances in inventory, trade, Box and containers. Recipe
+schema 15 appends recipes 201/202 without unlocking them or changing earlier
+knowledge; camp catalogue revision 1 appends missing entries without resetting
+stock. Pot cooling uses the approved iron cylinder wall and heat capacity, plus
+convection/radiation at its open top, through the existing water clock. Existing
+glass/leather containers keep their original formulas. Fire fuel/heat helpers
+have isolated numerical evidence; no deployed fire runtime is claimed yet.
+
 ## Regional event discovery (#415, 5.8.5 in progress)
 
 The author approved learning off-map event results upon returning to the affected region; messengers are deferred. Schedule entries separately persist actual occurrence counts and observed counts. New remote outcomes send no omniscient notification. Known appointments remain in the calendar, with unconfirmed outcomes shown as awaiting news; hidden appointments become visible when their result is discovered. Returning to any map belonging to the same known catalogue region reveals its results once. Unknown maps match only by exact map name; an unscoped event has no foreign-region boundary. Discovery does not require another deadline to become due.

@@ -68,6 +68,7 @@ class CaelumDisplayNames : Object
 
     static clearscope String GetConsumableKey(int consumableType)
     {
+        if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.NameKey(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.NameKey(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == 5) return "CA_WATER_BOTTLE_SMALL";
         if (consumableType == 6) return "CA_WATER_BOTTLE_NORMAL";
@@ -134,6 +135,7 @@ class CaelumDisplayNames : Object
             if(specialType>=CaelumLockRules.FIRST_ITEM && specialType<CaelumLockRules.FIRST_ITEM+8)
                 return CaelumLockRules.NameKey(specialType-CaelumLockRules.FIRST_ITEM);
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
+            if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.NameKey(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK) return "CA_KEY_ITEM_RECIPE_BOOK";
             return specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
