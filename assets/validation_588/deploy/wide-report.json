@@ -1,0 +1,91 @@
+{
+  "issue": 411,
+  "version": "5.8.8",
+  "stage": "author-requested enlarged tent",
+  "pass_assertions": 125,
+  "runs": [
+    {
+      "label": "wide03",
+      "pass_assertions": 15,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "278ED8884D2C71FC1CA178BF45AC107C954CC47151C2FA4980A02DD073E8187D"
+    },
+    {
+      "label": "wide-core01",
+      "pass_assertions": 40,
+      "runtime_sha256": "2A83709C975A1E32F983538174EE2DF80EDC297239D8B17F1E6C2CBE414E2732",
+      "addon_sha256": "8CDA73CFEF530CC0A81C1BDFE9D3044544F9C736350A3C1F96E9706CF6C478B5"
+    },
+    {
+      "label": "wide-handoff01",
+      "pass_assertions": 9,
+      "runtime_sha256": "2A83709C975A1E32F983538174EE2DF80EDC297239D8B17F1E6C2CBE414E2732",
+      "addon_sha256": "8CDA73CFEF530CC0A81C1BDFE9D3044544F9C736350A3C1F96E9706CF6C478B5"
+    },
+    {
+      "label": "wide-climate01",
+      "pass_assertions": 9,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "39FD00413912D53E0193E697D56D7D21FF4130FB71D555F69FA12CBF6CF20266"
+    },
+    {
+      "label": "wide-legacyload01",
+      "pass_assertions": 6,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "278ED8884D2C71FC1CA178BF45AC107C954CC47151C2FA4980A02DD073E8187D"
+    },
+    {
+      "label": "wide-legacytask01",
+      "pass_assertions": 6,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-save01",
+      "pass_assertions": 2,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-load01",
+      "pass_assertions": 6,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-hub01",
+      "pass_assertions": 14,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-land01",
+      "pass_assertions": 4,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-wait01",
+      "pass_assertions": 6,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-measure01",
+      "pass_assertions": 2,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "wide-rollback02",
+      "pass_assertions": 6,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "6C3D7E680F3155D2E719A6BCA2FEA9A6E8DCAAE90966E0BCEF9526283A002108"
+    }
+  ],
+  "package_members": 16857,
+  "package_sha256": "27cc2fef357cfe621d534fc717d1ccacb4c0f372ceafa84501e59007854b2d7c",
+  "source_equivalence": true,
+  "failed_probe": "wide-rollback01 used deploy-legacy.pk3, but the original save requires the basename deploy.pk3; unchanged addon copied into rollback-original/deploy.pk3 passes wide-rollback02.",
+  "author_acceptance": "Previous behavior accepted; enlarged appearance pending CA411-TENT-01."
+}

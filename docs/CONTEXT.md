@@ -2,11 +2,11 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
-**5.8.8/#411:** chest geometry 46PASS; tents 112PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. Author checks deferred; fire/cooking/two-occupant rest pending.
+**5.8.8/#411:** chest geometry 46PASS; tents 112PASS + enlarged 125PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. Placement accepted; tent width rejected, revised4x3m/18.8kg review pending; fire/cooking/two-occupant rest pending.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587. Author away: retain questions/checks until return.
 
-**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/author-deferred;deployment/cooking-WIP;validation_586/camp.
+**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/CA411-EQUIPMENT-01accepted2026-10-24;deployment/cooking-WIP;validation_586/camp.
 **5.8.5/#415:**discovery accepted2026-10-24;unloaded-battles-WIP.
 
 **5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.

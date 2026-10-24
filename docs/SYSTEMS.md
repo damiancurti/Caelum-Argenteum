@@ -45,7 +45,7 @@ remain pending, not inferred from the purchase interface. No random theft or
 real-world offline progression is introduced.
 
 Approved camp scope (2026-10-24): a portable, collapsible canvas tent for two,
-2 x 2 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
+4 x 3 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
 temperature and contamination without automatic refill; and a wood campfire.
 The fire boils water, cooks meat/fish/puchero and emits heat through the existing
 thermal system. Bread requires an oven. The author additionally approved an 8 kW
@@ -57,17 +57,20 @@ and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
 heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
 Tent and pot use both purchase and fabrication with learned recipes; the fire
 is assembled on suitable ground with wood. The author then approved approximately
-10 kg for the tent: 6 kg cotton canvas (about 15.8 m2 at 380 g/m2, floor included),
-3 kg wooden poles, 600 g iron stakes and 400 g plant-fibre ropes. Its interior
+18.8 kg for the resized tent: 13.5 kg cotton canvas (35.34 m2 at 380 g/m2
+rounded up from 13.43 kg, floor and ends included), 4.1 kg wooden frames,
+600 g iron stakes and 600 g plant-fibre ropes. The author rejected the original
+2 x 2 m appearance and approved 4 x 3 x 1.8 m on 2026-10-24. Its interior
 blocks direct rain and reduces exterior wind by 90%, retaining exterior air
 temperature with no self-heating or new rest bonus. The fire extinguishes when
 leaving its map and retains the unspent loaded wood; off-map burning was rejected.
-Approved recipes at 100% efficiency: tent uses 6,000 g cotton fabric (T2),
-3,000 g wood, 600 g iron ingot (T2) and 400 g rope; pot uses 5,500 g iron ingot
+Approved recipes at 100% efficiency: tent uses 13,500 g cotton fabric (T2),
+4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot uses 5,500 g iron ingot
 (T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
 Anvil. Existing fabrication duration, Dexterity and waste apply at normal
 complexity. Base prices are ingredient costs plus the existing 25% manufacturing
-margin (53,437.5 / 60,156.25 copper before rounding and store margins). Provisions
+margin (tent repriced from its enlarged recipe; pot remains 60,156.25 copper
+before rounding and store margins). Provisions
 stock three of each; libraries stock ten recipe books each. Replenishment follows
 recipe work time, without resetting existing stock on upgrade. Setup/packing
 takes 10/5 game minutes for the tent; preparing/igniting the fire takes one game
@@ -111,7 +114,13 @@ skips blockmap queries when no tents exist. Its only typed census runs on
 map/save/hub load; normal updates use spawn/destruction bookkeeping and local
 queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
 Fire deployment, cooking and the remaining furniture work are still pending.
-CA411-TENT-01 is prepared but deferred during the author's absence.
+CA411-TENT-01 passed behavior except the rejected narrow shape; author review
+of the enlarged 4 x 3 m model remains pending. Geometry revision 2 uses a
+rectangular footprint and 224 local solid roof/back pieces. Existing revision-1
+deployed tents and unfinished old assembly tasks retain their original 2 x 2 m
+geometry/model until packed, avoiding expansion into occupied terrain. New
+assembly uses the enlarged design. Catalogue revision 2 reprices existing
+tent/book listings without resetting stock or an in-progress delivery deadline.
 
 Tent assembly reserves the owned unboxed item. Combat, conversation, another
 inventory/trade interface or leaving interaction range pauses attended work.

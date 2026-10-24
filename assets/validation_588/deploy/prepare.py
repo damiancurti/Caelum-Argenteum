@@ -11,7 +11,9 @@ def main():
  'maps/MAP01.wad':w.wad(text,'MAP01'),'maps/CDEP411.wad':w.wad(text,'CDEP411')}
  with zipfile.ZipFile(WORK/'deploy.pk3','w',zipfile.ZIP_STORED) as z:
   for name,blob in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),blob)
- scripts={'deploy-handoff':'wait 35; netevent ca411d_handoff; wait 5; quit',
+ scripts={'deploy-legacytask':'wait 5; netevent ca411d_legacytask; wait 5; quit',
+ 'deploy-wide':'wait 35; netevent ca411d_wide; wait 5; quit',
+ 'deploy-handoff':'wait 35; netevent ca411d_handoff; wait 5; quit',
  'deploy-measure':'wait 35; netevent ca411d_measure; wait 5; quit',
  'deploy-climate':'wait 35; netevent ca411d_climate; wait 5; quit',
  'deploy-land':'wait 35; netevent ca411d_land; wait 5; quit',

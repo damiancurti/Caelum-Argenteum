@@ -41,39 +41,44 @@ class CaelumDeployedTent : Actor
         if(part==null)return false;
         part.Structure=self;part.A_SetSize(radius,height,false);Parts.Push(part);return true;
     }
-    bool Prepare()
+    bool Prepare(bool legacy=false)
     {
         if(Ready)return true;
-        double r=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_WIDTH_M)/2;
+        double r=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_WIDTH_M:CaelumCampData.TENT_WIDTH_M)/2;
+        double l=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_LENGTH_M:CaelumCampData.TENT_LENGTH_M)/2;
         double h=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_HEIGHT_M);
-        A_SetSize(r,h,false);
+        A_SetSize(Max(r,l),h,false);
         // Celdas locales de techo: el mismo ACTLIKEBRIDGE de los vehiculos.
-        // La carpa cuadrada se alinea a los ejes; +X local es la entrada.
-        int cells=8;double cell=2*r/cells;
-        for(int x=0;x<cells;x++)for(int y=0;y<cells;y++)
+        // El rectángulo se alinea a los ejes; +X local es la entrada.
+        double cell=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_COLLISION_CELL_M);
+        int cells=int(Ceil(2*r/cell)),lengthCells=int(Ceil(2*l/cell));
+        for(int x=0;x<lengthCells;x++)for(int y=0;y<cells;y++)
         {
             double across=-r+(y+0.5)*cell;
             double z=h*(1-Min(r,Abs(across)+cell/2)/r);
-            if(!AddPart((-r+(x+0.5)*cell,across,z),cell/2,h/cells))return false;
+            if(!AddPart((-l+(x+0.5)*cell,across,z),cell/2,h/cells))return false;
         }
         for(int y=0;y<cells*2;y++)
         {
             double across=-r+(y+0.5)*cell/2;
             double tall=h*(1-Abs(across)/r);
-            if(!AddPart((-r+cell/4,across,0),cell/4,tall))return false;
+            if(!AddPart((-l+cell/4,across,0),cell/4,tall))return false;
         }
-        Revision=CaelumCampData.REVISION;Ready=true;
+        Revision=legacy?1:CaelumCampData.TENT_GEOMETRY_REVISION;Ready=true;
+        if(!legacy)SetStateLabel('Wide');
         let world=CaelumCampWorld.Get();if(world!=null)world.Track(self);return true;
     }
     bool Covers(Actor body)
     {
         if(!Ready || body==null)return false;
-        double r=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_WIDTH_M)/2;
+        bool legacy=Revision<CaelumCampData.TENT_GEOMETRY_REVISION;
+        double r=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_WIDTH_M:CaelumCampData.TENT_WIDTH_M)/2;
+        double l=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_LENGTH_M:CaelumCampData.TENT_LENGTH_M)/2;
         vector3 worldPoint=body.Pos-Pos;
         vector3 p=(worldPoint.X*Cos(Angle)+worldPoint.Y*Sin(Angle),
             -worldPoint.X*Sin(Angle)+worldPoint.Y*Cos(Angle),worldPoint.Z);
         double top=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_HEIGHT_M)*(1-Abs(p.Y)/r);
-        return Abs(p.X)<r && Abs(p.Y)<r && p.Z>=-CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU
+        return Abs(p.X)<l && Abs(p.Y)<r && p.Z>=-CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU
             && p.Z+body.Height<=top;
     }
     bool Reach(CaelumPlayer user)
@@ -98,7 +103,25 @@ class CaelumDeployedTent : Actor
     {let world=CaelumCampWorld.Get();if(world!=null)world.Forget(self);
         for(int i=0;i<Parts.Size();i++)if(Parts[i]!=null)Parts[i].Destroy();Super.OnDestroy();}
     Default {Radius 1;Height 1;+NOGRAVITY +CANNOTPUSH +DONTTHRUST +NOTARGET Tag "$CA_CAMP_TENT";}
-    States {Spawn:CPTN A -1;Stop;}
+    States {Spawn:CPTN A -1;Stop;Wide:CPTN B -1;Stop;}
+}
+// Dos cuadrados superpuestos cubren exactamente el rectángulo aprobado.
+// Se reutilizan soporte, agua, accesos y permisos sin rechazar un metro extra.
+class CaelumCampFootprint : Object play
+{
+    static bool Fits(CaelumPlayer user,vector3 point,double facing,bool legacy=false)
+    {
+        double r=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_WIDTH_M:CaelumCampData.TENT_WIDTH_M)/2;
+        double l=CaelumPhysicsUnits.MapUnits(legacy?CaelumCampData.TENT_LEGACY_LENGTH_M:CaelumCampData.TENT_LENGTH_M)/2;
+        double h=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_HEIGHT_M);
+        double radius=Min(r,l),offset=Abs(r-l);
+        vector3 delta=r>=l ? (-Sin(facing)*offset,Cos(facing)*offset,0)
+            : (Cos(facing)*offset,Sin(facing)*offset,0);
+        if(!CaelumCampLand.Allows(user,point+delta,radius)
+            || !CaelumPlacementGeometry.Fits(user,point+delta,radius,h))return false;
+        return offset<=0 || (CaelumCampLand.Allows(user,point-delta,radius)
+            && CaelumPlacementGeometry.Fits(user,point-delta,radius,h));
+    }
 }
 class CaelumCampShelter : Object play
 {
@@ -121,6 +144,7 @@ class CaelumCampWorkAnchor : Actor
 class CaelumCampTask : Inventory
 {
     int Revision;
+    int GeometryRevision;
     bool Packing;
     String OriginMap;
     vector3 Point;
@@ -154,23 +178,23 @@ class CaelumCampTask : Inventory
     {
         user.ClearCraftingTaskData();let task=Find(user);
         if(task==null)task=CaelumCampTask(user.GiveInventoryType('CaelumCampTask'));
-        if(task!=null){task.Revision=CaelumCampData.REVISION;task.OriginMap=level.MapName;}
+        if(task!=null){task.Revision=CaelumCampData.REVISION;task.GeometryRevision=CaelumCampData.TENT_GEOMETRY_REVISION;task.OriginMap=level.MapName;}
         return task;
     }
     static bool BeginSetup(CaelumPlayer user,CaelumCampTent item)
     {
         if(!Available(user) || item==null || item.Owner!=user || item.Amount!=1 || item.InMagicBox)return false;
-        double r=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_WIDTH_M)/2;
-        double h=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_HEIGHT_M);
+        double l=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_LENGTH_M)/2;
+        double facing=(int((user.Angle+225)/90)%4)*90;
         // La distancia deriva de los radios nativos; no modifica el alcance Usar.
-        double reach=r+user.Radius+CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU;
-        vector3 point=user.Pos+(Cos(user.Angle)*reach,Sin(user.Angle)*reach,0);
-        if(!CaelumCampLand.Allows(user,point,r) || !CaelumPlacementGeometry.Fits(user,point,r,h))
+        double reach=l+user.Radius+CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU;
+        vector3 point=user.Pos-(Cos(facing)*reach,Sin(facing)*reach,0);
+        if(!CaelumCampFootprint.Fits(user,point,facing))
         {CaelumNotifications.Notify(user,StringTable.Localize("CA_CAMP_SITE_FAILED",false));return false;}
         let task=Allocate(user);if(task==null)return false;
         task.Anchor=Actor.Spawn('CaelumCampWorkAnchor',point,NO_REPLACE);
         if(task.Anchor==null)return false;
-        task.Point=point;task.Facing=(int((user.Angle+225)/90)%4)*90;task.Item=item;task.Packing=false;Start(user,task,CaelumCampData.SETUP_SECONDS);return true;
+        task.Point=point;task.Facing=facing;task.Item=item;task.Packing=false;Start(user,task,CaelumCampData.SETUP_SECONDS);return true;
     }
     static bool BeginPack(CaelumPlayer user,CaelumDeployedTent tent)
     {
@@ -218,13 +242,12 @@ class CaelumCampTask : Inventory
         }
         else
         {
-            double r=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_WIDTH_M)/2;
-            double h=CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_HEIGHT_M);
-            if(!CaelumCampLand.Allows(user,task.Point,r) || !CaelumPlacementGeometry.Fits(user,task.Point,r,h))return false;
+            bool legacy=task.GeometryRevision<CaelumCampData.TENT_GEOMETRY_REVISION;
+            if(!CaelumCampFootprint.Fits(user,task.Point,task.Facing,legacy))return false;
             let tent=CaelumDeployedTent(Actor.Spawn('CaelumDeployedTent',task.Point,NO_REPLACE));
             if(tent==null)return false;
             tent.Angle=task.Facing;
-            if(!tent.Prepare()){tent.Destroy();return false;}
+            if(!tent.Prepare(legacy)){tent.Destroy();return false;}
             tent.Title=CaelumLockRules.Character(user,true);
             user.RemoveInventory(item);item.AttachToOwner(tent);tent.Item=item;
         }

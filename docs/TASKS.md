@@ -6,10 +6,9 @@ Documentation version: **5.8.8** — 2026-10-24.
 
 Actual carried-chest placement now checks dry/stable support, full volume and
 access clearances before mutation. 46 native PASS, including original-save
-load/rollback. CA411-PLACEMENT-01 awaits author return; keep the terminal closed
-until then. Tent deployment, approved land grants, original-item persistence,
+load/rollback. CA411-PLACEMENT-01 was accepted on 2026-10-24. Tent deployment, approved land grants, original-item persistence,
 native waiting/acceleration and rain/wind shelter now have separate evidence in
-validation_588/deploy. CA411-TENT-01 is also deferred. Remaining: deployed fire,
+validation_588/deploy. CA411-TENT-01 needs review of the enlarged 4 x 3 m design; its earlier behavior passed. Remaining: deployed fire,
 heat/cooking, furniture placement and the separate #412 rest integration. No new
 recovery bonus or two-person sleeping layout is claimed.
 
@@ -24,7 +23,7 @@ No author terminal/questions during the requested absence.
 
 ## 5.8.6 / #411 - Central property access
 
-Implemented prepaid rental/purchase, expiry permissions, identity-preserving resident/chest relocation, native save/load/hub behavior and reversible old-save migration; 142 native PASS, static checks clean. CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Keep original map geometry and combat assignments. Remaining #411: camps, player furniture placement/acquisition and explicit theft conditions; no completion claim for the full issue. Fire/pot physical calibration and purchase/crafting are now approved in SYSTEMS; Tent construction/protection and fire shutdown on map departure are also approved. Camp acquisition recipes/economy, setup durations and land permissions are now approved in SYSTEMS. Acquisition/inventory/cooling now pass 72 native checks; CA411-EQUIPMENT-01 awaits author return. Implement deployed tents, placement, fire and camp cooking without extending the accepted property scope. Hold further questions and manual tests while the author is away.
+Implemented prepaid rental/purchase, expiry permissions, identity-preserving resident/chest relocation, native save/load/hub behavior and reversible old-save migration; 142 native PASS, static checks clean. CA411-PROPERTY-01 was fully accepted by the author on 2026-10-24. Keep original map geometry and combat assignments. Remaining #411: camps, player furniture placement/acquisition and explicit theft conditions; no completion claim for the full issue. Fire/pot physical calibration and purchase/crafting are now approved in SYSTEMS; Tent construction/protection and fire shutdown on map departure are also approved. Camp acquisition recipes/economy, setup durations and land permissions are now approved in SYSTEMS. Acquisition/inventory/cooling now pass 72 native checks; CA411-EQUIPMENT-01 was accepted on 2026-10-24; enlarged tent mass/recipe are a subsequent revision. Implement deployed tents, placement, fire and camp cooking without extending the accepted property scope. The author returned on 2026-10-24; resume focused questions and checks.
 
 ## 5.8.5 / #415 - Regional discovery
 

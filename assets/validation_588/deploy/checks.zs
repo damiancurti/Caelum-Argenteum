@@ -55,7 +55,7 @@ class CA411DeployChecks : EventHandler
         let tent=CaelumDeployedTent(item.Owner);
         Check(tent!=null && tent.Ready && tent.Item==item && item.Amount==1,"deployed structure holds same inventory identity");
         if(tent==null){Result();return;}
-        Check(tent.Parts.Size()==80,"bounded local solid structure");
+        Check(tent.Parts.Size()==224,"bounded rectangular solid structure");
         Check(CaelumCampWorld.Get().Tents.Size()==1,"event registry owns one deployed tent");
         let body=Actor.Spawn('CA411DeployObstacle',tent.Pos+tent.LocalOffset((16,0,0)),NO_REPLACE);
         body.A_SetSize(u.Radius,u.Height/2,false);
@@ -106,7 +106,7 @@ class CA411DeployChecks : EventHandler
             Check(tent!=null && tent.Ready && tent.Item!=null && tent.Item.Owner==tent,"deployed ownership survives save or hub");
             if(tent==null)return;
             Check(tent.Item.args[0]==411 && tent.Item.Amount==1,"original item marker and quantity survive");
-            Check(tent.Parts.Size()==80 && tent.Parts[0].Structure==tent,"native parts remain linked");
+            Check(tent.Parts.Size()==(tent.Revision<2?80:224) && tent.Parts[0].Structure==tent,"native parts remain linked for saved geometry revision");
             Check(CaelumCampWorld.Get().Tents.Find(tent)<CaelumCampWorld.Get().Tents.Size(),"load and hub rebuild typed shelter registry");
             Setup(u);Check(CaelumCampTask.BeginPack(u,tent),"packing permitted after return");u.CancelCraftingTask();
         }
@@ -205,7 +205,7 @@ class CA411DeployChecks : EventHandler
         double total=0,worst=0;
         for(int i=0;i<100;i++){double start=MSTimeF();world.Rebuild();double ms=MSTimeF()-start;total+=ms;worst=Max(worst,ms);}
         Check(world.Tents.Size()==20,"one-time census matches twenty diagnostic shelters");
-        Console.Printf("CA411D PERF one-time typed load census: tents=20 parts=1600 repeats=100 mean_ms=%.6f max_ms=%.6f",total/100,worst);
+        Console.Printf("CA411D PERF one-time typed load census: tents=20 parts=4480 repeats=100 mean_ms=%.6f max_ms=%.6f",total/100,worst);
         for(int i=0;i<tents.Size();i++)tents[i].Destroy();
         Check(world.Tents.Size()==0 && CaelumCampShelter.Find(u)==null,"empty map skips shelter block query");Result();
     }
@@ -244,13 +244,69 @@ class CA411DeployChecks : EventHandler
         }
         Result();
     }
+    void LegacyTask(CaelumPlayer u)
+    {
+        Setup(u);let task=CaelumCampTask.Find(u);let original=task!=null?task.Item:null;
+        Check(task!=null && task.GeometryRevision==0 && original!=null,"old unfinished task lacks new geometry revision");
+        if(original==null){Result();return;}
+        Finish(u);let small=CaelumDeployedTent(original.Owner);
+        Check(small!=null && small.Revision==1 && small.Parts.Size()==80,"old task completes original small collision without expanding");
+        if(small==null){Result();return;}
+        Check(CaelumCampTask.BeginPack(u,small),"original small saved tent can be packed");Finish(u);
+        Check(original.Owner==u && original.args[0]==412 && original.Amount==1,"old task retains exact original item once");
+        Check(CaelumCampTask.BeginSetup(u,original),"subsequent assembly uses new dimensions");Finish(u);
+        let wide=CaelumDeployedTent(original.Owner);
+        Check(wide!=null && wide.Revision==2 && wide.Parts.Size()==224,"packed legacy item redeploys enlarged design");Result();
+    }
+    void Wide(CaelumPlayer u)
+    {
+        Setup(u);let item=Give(u);
+        Check(Near(item.GetUnitWeight(),18.8),"approved enlarged inventory mass");
+        Check(CaelumCampData.Grams(0,0)==13500 && CaelumCampData.Grams(0,1)==4100
+            && CaelumCampData.Grams(0,2)==600 && CaelumCampData.Grams(0,3)==600,"approved enlarged recipe");
+        let vendor=CaelumCityMerchant(Actor.Spawn('CaelumCityMerchant',(700,128,0),NO_REPLACE));
+        vendor.Category=0;vendor.StockInitialized=true;vendor.CatalogueRevision=1;vendor.RestockRevision=1;
+        CaelumCampCatalogue.Ensure(vendor,u);Check(vendor.Products.Size()==2,"migration fixture retains two actual camp product rows");
+        for(int i=0;i<vendor.Products.Size();i++)if(vendor.Products[i].Recipe==CaelumCampData.FIRST_RECIPE)
+        {
+            let product=vendor.Products[i];product.BaseValue=53437.5;product.Stock.Amount=1;
+            double deadline=CaelumScheduleState.Now(u)+10000;product.NextDue=deadline;
+            vendor.CampCatalogueRevision=1;CaelumCampCatalogue.Ensure(vendor,u);
+            Check(Near(product.BaseValue,CaelumCampCrafting.Value(0)) && product.BaseValue>53437.5,"existing shop reprices enlarged tent from current recipe");
+            Check(product.Stock.Amount==1 && product.NextDue==deadline,"price migration preserves depleted stock and pending delivery");
+            CaelumCampCatalogue.Ensure(vendor,u);
+            Check(product.Stock.Amount==1 && product.NextDue==deadline && vendor.CampCatalogueRevision==2,"catalogue migration is idempotent");
+            Console.Printf("CA411D PRICE enlarged tent base=%.6f",product.BaseValue);break;
+        }
+        vendor.Destroy();
+        Check(CaelumCampTask.BeginSetup(u,item),"rectangular assembly begins");Finish(u);
+        let tent=CaelumDeployedTent(item.Owner);Check(tent!=null && tent.Revision==2,"new deployment geometry revision2");
+        if(tent==null){Result();return;}
+        Check(Near(tent.Radius,64) && Near(tent.Height,57.6) && tent.Parts.Size()==224,"native extent and bounded rectangular parts");
+        let a=Actor.Spawn('CA411DeployObstacle',tent.Pos+tent.LocalOffset((0,u.Radius,0)),NO_REPLACE);
+        let b=Actor.Spawn('CA411DeployObstacle',tent.Pos+tent.LocalOffset((0,-u.Radius,0)),NO_REPLACE);
+        a.A_SetSize(u.Radius,u.Height/2,false);b.A_SetSize(u.Radius,u.Height/2,false);
+        Check(a.TestMobjLocation() && b.TestMobjLocation() && tent.Covers(a) && tent.Covers(b),"two native crouched bodies fit side by side");
+        a.Destroy();b.Destroy();
+        let probe=Actor.Spawn('CA411DeployObstacle',tent.Pos+tent.LocalOffset((50,0,0)),NO_REPLACE);
+        probe.bSolid=false;probe.A_SetSize(1,1,false);
+        Check(!tent.Covers(probe),"outside three-metre length is not sheltered");
+        probe.SetOrigin(tent.Pos+tent.LocalOffset((0,50,0)),false);
+        Check(tent.Covers(probe),"inside four-metre width is sheltered");probe.Destroy();
+        Check(CaelumCampTask.BeginPack(u,tent),"enlarged tent can be packed");Finish(u);
+        let blocker=Actor.Spawn('CA411DeployObstacle',(184,128,0),NO_REPLACE);blocker.A_SetSize(1,10,false);
+        Check(CaelumCampFootprint.Fits(u,(129,128,0),0),"rectangle permits obstacle beyond length but inside bounding square");
+        blocker.SetOrigin((129,190,0),false);
+        Check(!CaelumCampFootprint.Fits(u,(129,128,0),0),"rectangle rejects obstacle inside wide edge");blocker.Destroy();
+        Result();
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Player<0 || e.Player>=MAXPLAYERS)return;let u=CaelumPlayer(players[e.Player].mo);if(u==null)return;
         if(e.Name=='ca411d_core')Core(u);else if(e.Name=='ca411d_seed')Seed(u);else if(e.Name=='ca411d_loaded')Loaded(u);else if(e.Name=='ca411d_wait')WaitCheck(u);
         else if(e.Name=='ca411d_climate')Climate(u);else if(e.Name=='ca411d_land')LandContracts(u);
         else if(e.Name=='ca411d_taskseed')TaskSeed(u);else if(e.Name=='ca411d_taskload')TaskLoaded(u);else if(e.Name=='ca411d_measure')Measure(u);
-        else if(e.Name=='ca411d_manual')Manual(u);else if(e.Name=='ca411d_handoff')Handoff(u);
+        else if(e.Name=='ca411d_manual')Manual(u);else if(e.Name=='ca411d_handoff')Handoff(u);else if(e.Name=='ca411d_wide')Wide(u);else if(e.Name=='ca411d_legacytask')LegacyTask(u);
         else if(e.Name=='ca411d_fast')CaelumTimeAdvanceState.Toggle(u);
         else if(e.Name=='ca411d_paving'){u.SetOrigin((384,128,16),false);u.Angle=0;}
         else if(e.Name=='ca411d_garden'){u.SetOrigin((64,128,0),false);u.Angle=0;}

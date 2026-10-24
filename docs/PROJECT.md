@@ -16,7 +16,7 @@ checks require mansion garden ground, a held current home contract or the
 authored countryside rectangles; unknown land grants no permission. Existing
 chest placement keeps its separately tested geometry policy. The entrance faces
 the nearest cardinal direction towards the placing character, preserving the
-approved square footprint. Local solid roof/back pieces leave crouched access.
+approved rectangular footprint. Local solid roof/back pieces leave crouched access.
 
 Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
 temperature and humidity are retained. An event-maintained shelter registry
@@ -24,11 +24,13 @@ skips blockmap queries when no tents exist. Its only typed census runs on
 map/save/hub load; normal updates use spawn/destruction bookkeeping and local
 queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
 Fire deployment, cooking and the remaining furniture work are still pending.
-The separate tent stage passes 112 native assertions across 15 selected runs;
-see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 is prepared but
-deferred during the author's absence.
+The original tent stage passed 112 native assertions; the enlarged correction
+passes 125 assertions across 13 selected runs;
+see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 passed behavior except the original narrow shape. The author
+approved an enlarged 4 x 3 x 1.8 m tent, 18.8 kg and revised materials;
+its final visual/fit check remains pending.
 
-CA411-PLACEMENT-01 is prepared for the author's return; no terminal was opened.
+CA411-PLACEMENT-01 was accepted by the author on 2026-10-24.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 

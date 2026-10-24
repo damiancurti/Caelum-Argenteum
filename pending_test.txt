@@ -1,50 +1,17 @@
-CA411-EQUIPMENT-01 | Origin: 5.8.6 / #411 | PENDING; author away
-Prerequisites: issue411-work, GZDoom 4.14.2, build/issue411-camp/current package,
-and assets/validation_586/camp/prepare.py. Close other GZDoom instances first.
-When the author returns, launch assets/validation_586/camp/author_terminal.ps1
-with PowerShell -NoExit -ExecutionPolicy Bypass. Do not interrupt the absence.
-1. Select 1. Open the usual inventory and inspect the painted tent/pot sprites.
-   The tent weighs 10 kg; each empty pot weighs 5.5 kg, plus its own water.
-2. Two pots have 2 L potable and 1 L contaminated water. Select each separately,
-   move into/out of the Box, drop/pick up and deposit/withdraw from the chest.
-   Volumes/quality stay separate, with no clone or accidental transfer of the
-   other pot. Save and reload this private room, retaining all contents.
-3. F1 opens Provisions. Buy more than one tent/pot. Sell/rebuy a filled pot:
-   its water stays with that instance and is not merged into empty shop stock.
-4. Select 2 in the terminal for isolated recipe, catalogue and transfer checks.
-Expected: readable matching sprites and coherent inventory/trade/persistence.
-Scope: acquisition only; deployed shelter, placement, fire and cooking remain
-pending. This check does not supersede accepted CA411-PROPERTY-01.
-
-CA411-PLACEMENT-01 | Origin: 5.8.8 / #411 | PENDING; author away
-Prerequisites: issue411-camp-work, GZDoom 4.14.2, build/issue411-placement/current
-package and assets/validation_588/prepare.py. Close other GZDoom sessions first.
-On return, launch assets/validation_588/author_terminal.ps1 with PowerShell
--NoExit -ExecutionPolicy Bypass. Do not open it during the requested absence.
-1. Select 1: a private room starts with a carried small chest and three medikits.
-2. F2 moves to the step, F3 to water, F4 to an open door. At each site F5 must
-   reject placement and leave the chest carried. F6 reports the same three items.
-3. F1 moves to free dry ground; F5 must place the chest. Open it normally and
-   verify the three items remain. Test native save/load while carrying and after
-   placement; no duplicate or missing chest/content and no crash.
-4. Terminal option 2 runs the isolated geometry/storage assertions.
-Expected: invalid locations preserve cargo; valid placement preserves contents.
-Scope: placement geometry only. Camp permissions, tent/fire deployment and cooking
-are not claimed. Existing housing and equipment checks remain separate.
-
-CA411-TENT-01 | Origin: 5.8.8 / #411 | PENDING; author away
-Prerequisites: issue411-camp-work and build/issue411-placement/camp-final package.
-On return launch assets/validation_588/deploy/author_terminal.ps1 with PowerShell
--NoExit -ExecutionPolicy Bypass; close other GZDoom sessions first.
-1. Choose 1. Close any introduction with Escape. F3 selects paving: activating
-   the inventory tent must reject placement and preserve the same item.
-2. F4 selects the garden. Activate the tent to begin assembly; activate it again
-   to cancel. Restart and press F5 to accelerate the attended ten game minutes.
-3. Inspect the matte model and entrance; crouch to enter. Use the deployed tent
-   to start packing, and F5 to finish its five game minutes. Exactly one original
-   tent must return. Holding Use must not immediately cancel the packing task.
-4. Save/load during assembly and with the tent deployed. Quantities, remaining
-   work, appearance, collision and ownership must persist without a crash.
-5. Option 2 runs native placement/land/climate/interaction checks.
-Expected: coherent placement, model, inventory identity and attended work.
-Scope: deployed tent only. Fire/cooking and two-person rest are separate work.
+CA411-TENT-01 | Origin: 5.8.8 / #411 | PARTIAL; enlarged design pending
+Author confirmation 2026-10-24: behavior passed; original narrow shape rejected.
+Approved replacement: 4 x 3 x 1.8 m, 18.8 kg; recipe and price updated.
+Prerequisites: issue411-camp-work, wide-final package, GZDoom 4.14.2.
+Launch assets/validation_588/deploy/author_terminal.ps1, choose 1; close any
+other GZDoom first. This is a private room, not an existing campaign save.
+1. Inspect the inventory tent: 18.8 kg. Close the introduction with Escape.
+2. F4 returns to the garden. Activate the tent and F5 to finish the ten-minute
+   assembly. Inspect the wider/longer shape and crouched entry/interior space.
+3. F3 selects paving; a new placement must still be rejected without losing
+   the tent. Use a deployed tent and F5 to finish its five-minute packing.
+4. Save/load a deployed enlarged tent. Appearance, collision and the original
+   item must persist; packing returns one tent, with no duplicate or lost item.
+Expected: the enlarged appearance/fit satisfies the author; invalid terrain
+remains rejected. Native checks cover two crouched bodies side by side and
+preservation of original smaller tents/tasks when loading older private saves.
+This does not include fire, cooking or two-person sleeping arrangements.

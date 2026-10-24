@@ -13,7 +13,19 @@ class CaelumCampCatalogue : Object play
     }
     static void Ensure(CaelumCityMerchant vendor,CaelumPlayer user)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || vendor.CampCatalogueRevision>=CaelumCampData.REVISION)return;
+        if(!CaelumPlayerAuthority.CanMutate(user) || vendor.CampCatalogueRevision>=CaelumCampData.CATALOGUE_REVISION)return;
+        // El cambio de tamaño actualiza precios y los próximos ciclos; no
+        // repone stock ni reinicia el plazo de una pieza que ya se fabrica.
+        for(int i=0;i<vendor.Products.Size();i++)
+        {
+            let product=vendor.Products[i];
+            if(product.Recipe!=CaelumCampData.FIRST_RECIPE)continue;
+            bool book=product.Kind==CaelumShopProduct.BOOK;
+            if(!book && (product.Kind!=CaelumShopProduct.SIMPLE || product.NativeClass!=CaelumCampData.ItemClass(0)))continue;
+            product.BaseValue=book?CaelumLibrary.BookValue(user,product.Recipe,product.Tier):CaelumCampCrafting.Value(0);
+            let offer=CaelumRecipeOffer(product.Stock);if(offer!=null)offer.BaseValue=product.BaseValue;
+            product.UnitTics=CaelumShopRestock.Duration(product,user);
+        }
         if(vendor.Category==0 || vendor.Category==CaelumShopCatalogue.LIBRARY)
         {
             bool books=vendor.Category==CaelumShopCatalogue.LIBRARY;
@@ -31,6 +43,6 @@ class CaelumCampCatalogue : Object play
                 product.Recipe=recipe;product.Tier=1;product.BaseValue=value;
             }
         }
-        vendor.CampCatalogueRevision=CaelumCampData.REVISION;CaelumShopRestock.Sync(vendor,user,true);
+        vendor.CampCatalogueRevision=CaelumCampData.CATALOGUE_REVISION;CaelumShopRestock.Sync(vendor,user,true);
     }
 }
