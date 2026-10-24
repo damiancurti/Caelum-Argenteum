@@ -62,6 +62,7 @@ class CaelumCombatActor : Actor
     CaelumArmorModel CombatArmor;
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
+    CaelumAltitudeState AltitudeState;
     CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;
     int MiracleRecoveryRevision;
@@ -1148,7 +1149,7 @@ class CaelumCombatActor : Actor
     {
         if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
         return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
-            : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost)*CaelumThermalEffects.HeatCost(self);
+            : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost)*CaelumThermalEffects.HeatCost(self)*CaelumAltitudeService.Effort(self);
     }
 
     void WaitForAttackResource()
@@ -1254,7 +1255,7 @@ class CaelumCombatActor : Actor
 
     bool TrySpendCombatAir(double requestedAmount)
     {
-        double amount = Max(0.0, requestedAmount)*CaelumThermalEffects.HeatCost(self);
+        double amount = Max(0.0, requestedAmount)*CaelumThermalEffects.HeatCost(self)*CaelumAltitudeService.Effort(self);
         if (CurrentCombatAir < amount) { return false; }
         CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
         return true;
@@ -3884,6 +3885,7 @@ class CaelumCombatActor : Actor
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        CaelumAltitudeService.StopClock(self);
         // OwnerDied/WorldThingDied ocurren antes de KILLED en GZDoom 4.14.2.
         // El guard transitorio cubre esa reentrada; KILLED cubre la repetición.
         if(DispatchingDeath || bKilled)return;
@@ -3961,7 +3963,7 @@ class CaelumCombatActor : Actor
         {
             CurrentCombatAir = Min(
                 MaximumCombatAir,
-                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor * CaelumBreathing.ActorFactor(self) / TICRATE
+                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor * CaelumBreathing.ActorFactor(self) * CaelumAltitudeService.Recovery(self) / TICRATE
             );
         }
         if (health > 0 && !sleeping
@@ -3986,6 +3988,7 @@ class CaelumCombatActor : Actor
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
         CaelumSiegeFocus.ApplyToActor(self);
+        CaelumAltitudeService.Update(self);
         CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();
         CaelumDemonService.UpdateBreath(self);

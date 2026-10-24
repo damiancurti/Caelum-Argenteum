@@ -1,0 +1,11 @@
+Author report, 2026-10-23 22:28:10, GZDoom 4.14.2 / Windows 11.
+Issue413 current package plus bridge/legacy-checks.pk3, migration experiment.
+
+Execution could not continue.
+Fatal: event handler class CaelumAltitudeWorld is not derived from StaticEventHandler
+
+Cause verified locally: the incrementally refreshed archive retained an old
+MAPINFO registration after source MAPINFO returned to its baseline. The class
+had become a plain Object. A complete build removed the stale registration.
+Final migration passed with the existing WorldClockTicker and PhysicsMapState.
+This report is failure evidence, not author acceptance of CA413-01.

@@ -123,10 +123,15 @@ class CaelumJourneyModel : Object play
     double HealthRate, AirRate, AnimaRate, MaxAir, MaxAnima, MaxAdrenaline, HealthPenalty;
     bool Unlimited, Bag;
     double ThermalExposure,ThermalToughness;
+    CaelumAltitudeState Altitude;
+    double AltitudeSecondsPerTic;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
         Unlimited = useUnlimitedSupplies;
+        let observedAltitude=CaelumAltitudeService.Update(user);
+        Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;
+        AltitudeSecondsPerTic=3600.0/CaelumWorldClock.TicsPerHour();
         let thermal=CaelumThermalBody.Get(user);
         ThermalExposure=thermal!=null ? thermal.Exposure : 0;ThermalToughness=thermal!=null ? thermal.Toughness : 0;
         let d = user.DerivedStats;
@@ -215,6 +220,7 @@ class CaelumJourneyModel : Object play
 
     virtual void Step(bool sleeping)
     {
+        if(Altitude!=null && Health>0){Altitude.Advance(AltitudeSecondsPerTic);Altitude.RefreshFactors();}
         if (!sleeping) BeginServings();
         Pulses();
         // Los factores de comodidad coinciden con la bolsa real. No se crean
@@ -264,7 +270,7 @@ class CaelumJourneyModel : Object play
                 ? CaelumConstants.HEALTH_WOUNDED_PERFORMANCE_MULTIPLIER : 1.0;
             double performance = 1.0 - (1.0 - raw) * HealthPenalty;
             performance += (1.0 - performance) * (MaxAdrenaline > 0 ? AirAdrenaline() / MaxAdrenaline : 0.0);
-            double gained = CaelumRecoveryRules.Affordable(Min(AirRate * performance * comfort * CaelumBreathing.Factor(Air/MaxAir,ThermalExposure,ThermalToughness), MaxAir - Air),MaxAir,Hunger,Thirst,costs);
+            double gained = CaelumRecoveryRules.Affordable(Min(AirRate * performance * comfort * (Altitude!=null ? Altitude.RecoveryFactor : 1.0) * CaelumBreathing.Factor(Air/MaxAir,ThermalExposure,ThermalToughness), MaxAir - Air),MaxAir,Hunger,Thirst,costs);
             Air += gained;
             Hunger=Max(0.0,Hunger-gained*CaelumRecoveryRules.HungerCost(MaxAir,costs));
             Thirst=Max(0.0,Thirst-gained*CaelumRecoveryRules.ThirstCost(MaxAir,costs));
@@ -462,6 +468,7 @@ class CaelumJourneyPlan : Inventory
         }
         user.OnNativeInventoryChanged();
         CaelumWorldClock.Get(user, true).AdvanceTics(model.ElapsedTics);
+        CaelumAltitudeService.CommitForecast(user,model.Altitude);
         CaelumWeatherState.Sync(user, CaelumWorldClock.Get(user), CaelumCalendarState.Get(user));
     }
 
