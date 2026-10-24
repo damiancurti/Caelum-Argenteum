@@ -1,6 +1,10 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## 5.8.6 boundary ? Central property (#411)
+
+The property offer uses existing Barracas house CAH069; residents and their chest relocate to adjacent CAH070. This patch changes neither MAP01 nor any map geometry. Mansion furniture/cooking remains under #410.
 
 5.8.2 - Connected water east of the pool (#414)
 

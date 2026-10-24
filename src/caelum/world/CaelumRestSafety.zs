@@ -83,6 +83,7 @@ class CaelumRestSafety : Object play
         if (user == null || user.player == null || user.health <= 0
             || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)) return "CA_REST_UNAVAILABLE";
+        if(!CaelumPropertyRules.ResidenceAllowed(user))return "CA_PROPERTY_NO_RESIDENCE";
         for (int i = 0; i < MAXPLAYERS; i++)
             if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
         let active=CaelumRestState.Get(user);

@@ -1,6 +1,56 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## Central property contracts (#411, 5.8.6 in progress)
+
+The author approved buying for 100,000 copper or renting for 1,000 copper per
+30 game-calendar days, paid in advance. Furnishings are included; buying during
+rental does not refund rent. Renewal extends the current paid interval, or starts
+from the current calendar time after expiry. Synchronization never charges rent,
+creates arrears or confiscates belongings. A purchased title does not expire.
+Payment uses existing denominations, change, inventory-capacity checks and lawful
+character identity; a rejected transaction changes neither funds nor title.
+
+The first offered dwelling is existing CAH069 (MAP03 origin -14208,1024), near the
+central commercial strip. CAH070 next door receives its residents 69/229/389/549
+and their original chest. The author approved relocating residents, keys and all
+belongings together on 2026-10-24. No defenders are deleted or recreated; combat
+assignments, health, inventory and finite census remain authoritative. New visits
+create those residents in CAH070. Existing records migrate once. An existing
+owned chest is relocated when its original map loads, preserving native inventory
+and lock identity. A chest already carried away or retitled is not seized; an
+already missing/destroyed chest is not replenished. The former household's chest
+and contents are excluded from the property sale; table, chairs and bed stay.
+
+Relocation positions use the existing CAH070 living room: (528/656/784,544) and
+(528,672), with chest at (864,1056), relative to its original origin. Collision
+checks defer occupied placements without losing actors or issuing duplicate loot.
+Four deployment routes are regenerated from the existing authored city geometry,
+keeping each defender's original combat destination. No map geometry changes.
+
+Use the house doorway to inspect terms and enter. Contracts are confirmed from
+the inside doorway, after the original contents are reconciled. Entry and exit
+remain available, including after expiry. Without a current title/lease, the
+shared rest/accelerated-time safety gate rejects residential use and containers
+reject new deposits; withdrawal still follows existing reach/lock permissions.
+No new rest, shelter or luxury multiplier is added. Stored contents are not
+confiscated, reset or reassigned on expiry. A former tenant retains their title
+for retrieval; transferring a tenancy to another character is not implemented.
+
+Revision-1 property state is additive to the persistent resident registry. The
+contract array has no artificial ownership cap; this delivery authors one offer.
+Camps, placement/crafting recipes, further offers and explicit theft behavior
+remain pending, not inferred from the purchase interface. No random theft or
+real-world offline progression is introduced.
+
+Approved camp scope (2026-10-24): a portable, collapsible canvas tent for two,
+2 x 2 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
+temperature and contamination without automatic refill; and a wood campfire.
+The fire boils water, cooks meat/fish/puchero and emits heat through the existing
+thermal system. Bread requires an oven. Tent mass/materials/protection, pot
+wall/mass/thermal properties, fire calibration and acquisition recipes remain
+open; these approvals do not authorize invented balance values.
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 

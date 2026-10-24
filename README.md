@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.5.** Obtain and update the complete repository, validate
+**Current release: 5.8.6.** Obtain and update the complete repository, validate
+it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.6 - Central property access (#411, in progress)
+
+One existing central Barracas dwelling supports purchase and prepaid rental. Its previous residents and their chest move to the neighboring dwelling with their real identities and belongings. Expiry blocks residential use while retaining access to retrieve property. Camps and player furniture placement remain pending. Validation and author status: `assets/validation_586/RESULTS.md`.
 
 ## 5.8.5 - Regional event discovery (#415, in progress)
 
@@ -15,8 +20,6 @@ Scheduled outcomes now remain authoritative while remote results wait for discov
 ## 5.8.4 - Second map soundtrack (#496)
 
 Nineteen author-supplied Suno tracks are packaged as complete Ogg Vorbis recordings, with original WAV masters, destination catalogue and reproducible preparation. The author confirmed each filename as its intended destination; future destinations remain reserved. Existing map assignments are unchanged. Native playback and author listening results are recorded in `assets/validation_584`; CA496-MUSIC-01 was fully accepted by the author on 2026-10-24. V5.8 gameplay work (#410-417) remains tracked separately.
-
-it, then rebuild with `run_dev.bat` as described below.
 
 5.8.3 is the ongoing #410 food/furniture patch. Its first implemented slice is
 the persistent contamination resource, mass-scaled intake rules, Toughness-

@@ -65,7 +65,7 @@ def apply(port, city):
     return homes
 
 
-def deployment_routes(port, city, south):
+def deployment_routes(port, city, south, home_overrides=None, identities=None):
     """Ground routes use native empty cells; crew stairs retain their old routes."""
     homes=houses(city)
     cell=port.CELL
@@ -102,10 +102,11 @@ def deployment_routes(port, city, south):
                 turns.append([p[0]+cell//2,p[1]+cell//2,0])
         return turns
     result=[]
-    for soldier in range(south['defenders']):
-        b=homes[soldier%len(homes)]
+    for soldier in range(south['defenders']) if identities is None else identities:
+        home=(home_overrides or {}).get(soldier%len(homes),soldier%len(homes))
+        b=homes[home]
         origin=b['bounds'][:2]
-        road=DATA.get('house_road_overrides',{}).get(str(soldier%len(homes)),DATA['house_road'])
+        road=DATA.get('house_road_overrides',{}).get(str(home),DATA['house_road'])
         start=[origin[i]+road[i] for i in range(2)]
         guard=soldier-2*len(south['defending_guns'])
         goal=south['crew_routes'][soldier//2][0] if guard<0 else DATA['guard_station_corrections'].get(str(guard),south['guard_positions'][guard])

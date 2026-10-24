@@ -65,6 +65,7 @@ class CaelumContainerRules : Object play
         if(item==null || item.Amount<=0 || CaelumWaterBoiling.Locked(item) || item is "CaelumChestCargo"
             || item is "CaelumMagicBox" || item is "CaelumTarotDeck"
             || user.GetFormalInventoryEntryKind(item)<0)return false;
+        if(depositing && !CaelumPropertyRules.ResidenceAllowed(user))return false;
         let equipment=CaelumEquipmentItem(item);
         if(depositing && equipment!=null
             && (equipment.Equipped || equipment.IsLimboTemporary() || equipment.IsLimboFirstWeapon()

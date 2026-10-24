@@ -6446,3 +6446,37 @@ CA_CONNECTED_WATER_OPEN = "{bind:+use}: abrir compuerta";
 CA_CONNECTED_WATER_CLOSE = "{bind:+use}: cerrar compuerta";
 CA_CONNECTED_WATER_OPENED = "Compuerta abierta.";
 CA_CONNECTED_WATER_CLOSED = "Compuerta cerrada.";
+
+[enu default]
+CA_PROPERTY_TITLE = "Central Barracas dwelling";
+CA_PROPERTY_TERMS = "Purchase: 100,000 copper. Rent: 1,000 copper / 30 days in advance. Furnishings included; previous residents keep their belongings. An expired rental permits retrieval, but not residential use.";
+CA_PROPERTY_OWNED = "Purchased";
+CA_PROPERTY_RENTED = "Rental active";
+CA_PROPERTY_INACTIVE = "No residential access";
+CA_PROPERTY_EXPIRY = "Paid until: %s";
+CA_PROPERTY_MONEY = "Available money: %.0f copper";
+CA_PROPERTY_BUY = "Buy";
+CA_PROPERTY_RENT = "Rent / renew";
+CA_PROPERTY_CROSS = "Cross the doorway";
+CA_PROPERTY_INSPECT = "Enter first to inspect the dwelling and arrange the contract at its exit.";
+CA_PROPERTY_PREPARING = "The dwelling is being prepared. Try again shortly.";
+CA_PROPERTY_SUCCESS = "Payment accepted; residential access updated.";
+CA_PROPERTY_REJECTED = "Payment could not be completed. Check funds, change capacity and ownership.";
+CA_PROPERTY_NO_RESIDENCE = "Buy or renew this dwelling before using it as a residence. Retrieval remains available.";
+
+[es]
+CA_PROPERTY_TITLE = "Vivienda céntrica de Barracas";
+CA_PROPERTY_TERMS = "Compra: 100.000 cobres. Alquiler: 1.000 cobres / 30 días por adelantado. Incluye los muebles; los residentes anteriores conservan sus pertenencias. Al vencer, podés retirar tus bienes, pero no usar la residencia.";
+CA_PROPERTY_OWNED = "Comprada";
+CA_PROPERTY_RENTED = "Alquiler vigente";
+CA_PROPERTY_INACTIVE = "Sin acceso residencial";
+CA_PROPERTY_EXPIRY = "Pagado hasta: %s";
+CA_PROPERTY_MONEY = "Dinero disponible: %.0f cobres";
+CA_PROPERTY_BUY = "Comprar";
+CA_PROPERTY_RENT = "Alquilar / renovar";
+CA_PROPERTY_CROSS = "Cruzar la puerta";
+CA_PROPERTY_INSPECT = "Entrá primero para visitar la vivienda y gestionar el contrato junto a su salida.";
+CA_PROPERTY_PREPARING = "La vivienda se está preparando. Volvé a intentar en un momento.";
+CA_PROPERTY_SUCCESS = "Pago aceptado; acceso residencial actualizado.";
+CA_PROPERTY_REJECTED = "No se pudo completar el pago. Revisá el dinero, el espacio para el cambio y la titularidad.";
+CA_PROPERTY_NO_RESIDENCE = "Comprá o renová esta vivienda antes de usarla como residencia. Podés retirar tus pertenencias.";

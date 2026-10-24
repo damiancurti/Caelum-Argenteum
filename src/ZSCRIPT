@@ -387,3 +387,9 @@ version "4.14"
 #include "caelum/world/CaelumHouseHub.zs"
 #include "caelum/world/CaelumHouseResidents.zs"
 #include "caelum/world/CaelumShopSign.zs"
+
+#include "caelum/data/CaelumPropertyData.zs"
+#include "caelum/world/CaelumProperty.zs"
+#include "caelum/ui/CaelumPropertyUI.zs"
+
+#include "caelum/data/CaelumPropertyRoutes.zs"

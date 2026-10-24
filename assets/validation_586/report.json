@@ -1,0 +1,100 @@
+{
+  "issue": 411,
+  "scope": "Central house purchase/rental and relocation; camps/placement remain pending",
+  "runs": [
+    {
+      "label": "final-core-01",
+      "passes": 15,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-load-01",
+      "passes": 3,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-hub-01",
+      "passes": 9,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-house69-01",
+      "passes": 8,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-house70-01",
+      "passes": 7,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-access-01",
+      "passes": 10,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-routes-01",
+      "passes": 6,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-legacy-load-01",
+      "passes": 10,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-legacy-hub-01",
+      "passes": 20,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-legacy-return-01",
+      "passes": 25,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-cross-01",
+      "passes": 2,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "final-preview-es-01",
+      "passes": 1,
+      "package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032"
+    },
+    {
+      "label": "legacy-save-04",
+      "passes": 2,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "legacy-rollback-02",
+      "passes": 7,
+      "package_sha256": "c004425c61625ea8f02c816ca95e0b813e50e933f0ddc5beb0313d48727fac10"
+    },
+    {
+      "label": "final-core-02",
+      "passes": 15,
+      "package_sha256": "9fafbde3aaec234bec1b824d7f2d4b410551fa4ce4cebbae7226f71f7ee700e0"
+    },
+    {
+      "label": "final-author-01",
+      "passes": 2,
+      "package_sha256": "9fafbde3aaec234bec1b824d7f2d4b410551fa4ce4cebbae7226f71f7ee700e0"
+    }
+  ],
+  "native_passes": 142,
+  "source_entries_verified": 16840,
+  "package_sha256": "9fafbde3aaec234bec1b824d7f2d4b410551fa4ce4cebbae7226f71f7ee700e0",
+  "original_save_sha256": "9f32c9e933d38eff2b9adf7504b689c7d323397edc992ab68e5e9bcefc4e5fbf",
+  "evidence_reuse": {
+    "prior_package_sha256": "5e66ba48f852a5003ed7539768346684db66e03bdd6ae4c7e356bfb0b5bd1032",
+    "changed_members": [
+      "caelum/world/CaelumPortDefender.zs"
+    ],
+    "verification": "All non-comment lines identical; final native core and author fixture repeated after UTF-8 comment cleanup"
+  },
+  "one_time_256_chest_migration_ms": 0.0073,
+  "performance_limit": "Single migration sample, not frame presentation, percentile tails or FPS acceptance.",
+  "author_acceptance": "Pending CA411-PROPERTY-01; no camp acceptance requested yet"
+}

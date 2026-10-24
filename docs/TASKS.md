@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## 5.8.6 / #411 - Central property access
+
+Implemented prepaid rental/purchase, expiry permissions, identity-preserving resident/chest relocation, native save/load/hub behavior and reversible old-save migration; 142 native PASS, static checks clean. Await CA411-PROPERTY-01 author acceptance. Keep original map geometry and combat assignments. Remaining #411: camps, player furniture placement/acquisition and explicit theft conditions; no completion claim for the full issue.
 
 ## 5.8.5 / #415 - Regional discovery
 

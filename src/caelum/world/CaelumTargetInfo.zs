@@ -105,6 +105,7 @@ class CaelumTargetInfo : Object play
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
         if(door!=null || house!=null)Title=L(house!=null?"CA_TARGET_TRANSITION":"CA_TARGET_DOOR");
+        if(house!=null && CaelumPropertyData.Offered(house.args[0]))Title=L("CA_PROPERTY_TITLE");
         if(gate!=null)Title=L(CaelumWorldCatalogue.ConnectionNameKey(gate.ConnectionId));
         if(station!=null)Title=L(CaelumCartographyServiceData.StationName(station.GetCraftingStationType()));
         if(Subject is 'CaelumFermentationStation')

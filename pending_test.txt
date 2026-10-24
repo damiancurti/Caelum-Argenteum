@@ -14,3 +14,25 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
+
+CA411-PROPERTY-01 | Origin: 5.8.6 / #411 | PENDING
+Prerequisites: issue411 worktree, current PK3, GZDoom 4.14.2; close other GZDoom.
+Launch assets/validation_586/author_terminal.ps1; select 1 for a fresh private
+campaign at the real central house (CAH069). It supplies diagnostic money and a
+player-owned test chest with two rations; it does not edit existing saves.
+1. Read the Spanish terms at the doorway. Rent with R: deduct 1,000 copper,
+   show a 30-day deadline and permit residence. A held/repeated R must not charge
+   again in the same visit. Close/reopen the door menu to renew deliberately.
+2. Close the panel with Tab. Inspect the bed/table/chairs and use the test chest.
+   F1 advances 31 game days: rest and new deposits are blocked; withdrawal still
+   works and stored contents remain. Renew at the doorway to restore access.
+3. In a fresh run, buy with B (100,000 copper). F1 must not expire ownership.
+   Buy during an active rental: no refund of rent, no repeat purchase charge.
+4. Enter crosses to MAP03; use the same doorway to return. The neighbouring
+   CAH070 house holds the relocated residents and their locked original chest.
+   The offered home has no former residents' belongings.
+5. Save/load with a current rental, an expired rental and purchased ownership.
+   Money, dates, ownership and deposited objects must persist without duplication.
+Expected: readable controls, usable doorway, correct payment/access and persistent
+belongings. Camps, new furniture placement and theft simulation remain outside
+this stage and are not accepted by passing these checks.

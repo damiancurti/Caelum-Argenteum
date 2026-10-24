@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## 5.8.6 - Central property access (#411, in progress), 2026-10-24
+
+The author approved full relocation of the selected central dwelling residents and their chest, preserving characters, keys and inventories. Added prepaid rental/purchase and expiry permissions, revisioned resident/contract migration and delayed physical chest relocation through the native hub. Reused existing furniture and regenerated only the four affected deployment routes. Validation: 142 native PASS across 16 selected runs, clean static checks, 16,840 package entries matched byte-for-byte, old-save migration and original-package rollback verified. `assets/validation_586` retains failures and the narrowly verified reuse after a comment-only encoding correction. CA411-PROPERTY-01 remains pending; camps and player placement remain pending.
 
 ## 5.8.5 - Regional event discovery (#415, in progress), 2026-10-24
 
