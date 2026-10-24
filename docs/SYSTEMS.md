@@ -48,9 +48,17 @@ Approved camp scope (2026-10-24): a portable, collapsible canvas tent for two,
 2 x 2 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
 temperature and contamination without automatic refill; and a wood campfire.
 The fire boils water, cooks meat/fish/puchero and emits heat through the existing
-thermal system. Bread requires an oven. Tent mass/materials/protection, pot
-wall/mass/thermal properties, fire calibration and acquisition recipes remain
-open; these approvals do not authorize invented balance values.
+thermal system. Bread requires an oven. The author additionally approved an 8 kW
+fire with 2 kW useful cooking heat (25% efficiency), wood at 15 MJ/kg and 1.92 kg
+fuel per game hour; flame diameter 0.60 m and height 0.50 m. Existing approved
+meat/fish/puchero durations stay unchanged. The pot is an open cylinder with
+0.36 m inside diameter, approximately 0.196 m depth, 2 mm iron side/base walls
+and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
+heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
+Tent and pot use both purchase and fabrication with learned recipes; the fire
+is assembled on suitable ground with wood. Tent mass/materials/protection and
+concrete acquisition recipes/prices/stock remain open. These are approvals for
+upcoming camp implementation, not completed functionality in the property stage.
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 
