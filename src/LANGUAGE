@@ -1,4 +1,9 @@
 [enu default]
+CA_HUD_CONTAMINATION = "Contamination";
+CA_FOOD_CLEAN = "Clean";
+CA_FOOD_CONTAMINATED = "Contaminated";
+CA_FOOD_ILLNESS = "Illness";
+CA_FOOD_IMMUNE = "Immune";
 CA_LOCK_ITEM_0 = "Small padlock";
 CA_LOCK_ITEM_1 = "Medium padlock";
 CA_LOCK_ITEM_2 = "Large padlock";
@@ -13,6 +18,11 @@ CA_LOCK_NEEDS_KEY = "You need its key, lockpicks or a master key.";
 CA_LOCK_REJECTED = "Only the owner can install or remove a matching lock; check tools and capacity.";
 
 [es]
+CA_HUD_CONTAMINATION = "Contaminación";
+CA_FOOD_CLEAN = "Limpio";
+CA_FOOD_CONTAMINATED = "Contaminado";
+CA_FOOD_ILLNESS = "Enfermedad";
+CA_FOOD_IMMUNE = "Inmune";
 CA_LOCK_ITEM_0 = "Candado pequeño";
 CA_LOCK_ITEM_1 = "Candado mediano";
 CA_LOCK_ITEM_2 = "Candado grande";

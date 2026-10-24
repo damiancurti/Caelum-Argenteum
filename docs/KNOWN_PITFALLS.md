@@ -2987,6 +2987,12 @@ finder with an unchanged zero goal can look like a collision defect. Queue costl
 path queries fairly: actors with synchronized state phases can repeatedly consume
 a naive global per-tic allowance and starve the rest of the roster.
 
+Reverified in #410 / 5.8.3 (ENGINE-VERIFIED, 2026-10-24): `Kind=kind` in the
+food-lot initializer compiled but left the persisted food kind at zero. Distinct
+`foodKind` fixes the assignment; a regression initializes all nine food kinds,
+rejects cross-kind transfers and checks unchanged state after rejected operations.
+Evidence: assets/validation_583/lots-report.json and retained lots-core-01 failure.
+
 Reverified in #195 / 5.2.12 (ENGINE-VERIFIED, 2026-10-11): `Charged=charged`
 and `Secondary=secondary` assigned the parameters to themselves. Distinct
 `useCharged`/`useSecondary` names fixed persisted resident attack choices.

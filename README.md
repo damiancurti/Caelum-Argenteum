@@ -6,8 +6,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.2.** Obtain and update the complete repository, validate
+**Current release: 5.8.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.8.3 is the ongoing #410 food/furniture patch. Its first implemented slice is
+the persistent contamination resource, mass-scaled intake rules, Toughness-
+resisted illness, natural-regeneration depuration and survival presentation.
+40 focused native assertions cover core/live behavior, save/load, hub travel,
+old-save migration and rollback. Food lots, actual food consumption,
+cooking, shop acquisition and the furniture catalogue are still being integrated;
+this is not completed #410 or V5.8. The private core terminal and evidence are
+in [validation_583](assets/validation_583/RESULTS.md). CA410-CORE-01 passed all
+author checks on 2026-10-24.
+The saved food-lot metadata model now also passes 38 isolated native checks;
+its pickup/storage/cooking adapters and environmental clock remain to be wired.
+The author has also approved cupboard/wardrobe capacities and fountain/cistern
+water rules; SYSTEMS records these pending implementation values.
 
 5.8.2 integrates connected water into the mansion (#414): two nominal 32,000 L
 deposits east of the pool, a usable gate, service steps, conservative transfer,

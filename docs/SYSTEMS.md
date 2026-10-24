@@ -1,6 +1,101 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## Food contamination and cooking contract (#410, 5.8.3 in progress)
+
+Approved 2026-10-23/24. The current slice implements the character contamination
+state, shared numeric rules, natural regeneration integration and HUD. Food
+lots, sources/consumption, recipes, trade and furniture integration remain pending.
+
+Food contamination is biological, from 0 to 100. At 20 C / 50% humidity,
+fresh food reaches 100 after: raw fish 6 h; raw beef and roast fish 12 h;
+roast beef/puchero 24 h; bread/vegetable mix 72 h; existing ration 168 h;
+flour 720 h. These approved gameplay references are not food-safety limits.
+Multiply growth by 2^((ambientC-20)/10) * (0.5+humidity/100).
+At <=-18 C or >=60 C growth stops without reducing existing contamination.
+The Box uses its carrier's environment; furniture uses its own location.
+Use game time, including waits/travel. Cooking keeps the mass-weighted average
+contamination of food ingredients; added water and fuel do not dilute it.
+Reheating never resets freshness.
+
+Separate internal food lots retain their own age/contamination and are consumed
+oldest first, even if the UI groups them. Fresh additions do not rejuvenate old
+food. Previously unaged food migrates as fresh when updating, with quantities
+and locations intact; no invented retroactive spoilage. This food-lot migration
+is approved but not yet implemented in the current slice.
+
+The subsequent metadata model, CaelumFoodLots, stores revisioned lots in native
+serializable Objects. Each lot keeps its creation stamp, units and contamination;
+a shared exposure accumulator makes advancing one stack independent of its lot
+count. Transfer snapshots contamination into the destination's exposure history,
+never shares mutable lot objects, and preserves oldest-first order. Only pieces
+with the same creation stamp and contamination coalesce. Portion contamination
+is mass-weighted across the actually removed units. Invalid identity/capacity/
+overdraw operations leave both sides intact. This model is engine-tested but
+not yet attached to gameplay food inventories or their environmental clock;
+therefore the in-game ageing/migration work above remains open.
+
+Each 100 g adds its food contamination value at the 80 kg body reference:
+dose = foodC * grams/100 * 80/bodyMassKg; cap character contamination at 100.
+Equipment mass does not change the dose. Above 50, each excess degree costs
+0.1% current maximum Life per second. Toughness applies the existing status
+response to DPS, clamped at immunity; above 100 never heals from this source.
+No additional Hydration damage is authorized. Natural regeneration removes
+one degree for each 100% maximum-Life-equivalent effort. Potential regeneration
+counts at full Life with existing gates and Hunger/Hydration costs; actual
+healing counts simultaneously without double charging. Existing unrelated
+status effects retain their rules. The persistent character inventory owns the
+revision-1 illness object and accrued fractional damage.
+
+Use complete 100 g portions even when Hunger needs less; discard excess
+nutrition but apply contamination for the entire ingested mass. The existing
+ration keeps its 200 g size and accepted nutrition. New-food Hunger restoration
+is (kcal/240)*(800/bodyMassKg) per 100 g. Approved kcal: bread 268, roast beef
+230, roast white fish 110, puchero 80; raw beef 170, raw white fish 81,
+vegetable mix 60. Raw meat/fish/vegetables may be eaten; flour/yeast/salt are
+preparation-only. The mix is one item representing potato, squash, carrot and
+sweetcorn. Nutrition references and approximations are recorded in issue #410.
+
+Approved finished batches are 1 kg (ten portions), with cooking losses included:
+
+| Dish | Food/water ingredients | Time | Mineral coal |
+| --- | --- | --- | ---: |
+| Bread | 700 g flour, 420 mL potable water, 14 g culinary salt, 7 g yeast | 2 h proofing + 45 min oven | 772 g |
+| Roast beef | 1,250 g raw beef, 10 g salt | 60 min | 1,029 g |
+| Roast fish | 1,330 g raw fish, 10 g salt | 30 min | 515 g |
+| Puchero | 300 g beef, 500 g vegetable mix, 500 mL potable water, 10 g salt | 90 min stove | 1,543 g |
+
+Heat reference: 2 kW useful, 25% efficiency, coal 28 MJ/kg. Proofing/cooking
+do not shorten with Dexterity; existing waiting is allowed. Provisions base
+prices per 100 g / maximum stock: flour 2 copper / 10 kg; beef 8 / 10 kg;
+fish 6 / 5 kg; vegetables 3 / 10 kg; salt 1 / 1 kg. Reuse import replenishment
+of 0.1% maximum per day. Dish base price is ingredients plus fuel, with 25%
+margin, then normal store margin. Existing coal pricing is retained.
+
+Bread proofing is unattended in a fixed counter vessel, including map absence.
+Each vessel holds one batch yielding 1 kg finished bread; transferring it frees
+the vessel for the next batch.
+Transfer the ready batch to the oven for attended baking; other cooking is
+attended too. Cancelling returns reserved ingredients and fuel, retaining the
+food deterioration accumulated while time elapsed. Commercial food stocks
+remain fresh by explicit author choice; purchased food starts ageing when it
+leaves commercial stock. No automatic age discount is added.
+
+Furniture decisions remain part of #410: reading desk reach 96 MU with line
+of sight to accessible books actually stored in a shelf; bathroom fixtures
+decorative until hygiene is defined. Add the functional stove/oven, counter,
+kitchen sink and overhead storage in the mansion false-wall room while keeping
+the secret route accessible. Sink reserve 200 L potable, replenished 1 L/game
+minute, with actual-volume withdrawal and saved/off-map continuity. Exact
+furniture dimensions/recipes and placement layout still need definition.
+
+Additional author approvals on 2026-10-24: cupboards hold 10 stacks / 100 kg;
+wardrobes hold 25 stacks / 1,000 kg, with the current chest lock/permission rules.
+Fountains use a 200-L potable reserve with +1 L/game minute replenishment.
+Cisterns hold 1,000 L without automatic refill; manual water transfers preserve
+contamination. This does not authorize a prefilled cistern or purification.
+These are approved data awaiting furniture implementation, not passed gameplay.
 
 ## Connected-water production (#414, 5.8.2)
 
