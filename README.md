@@ -6,7 +6,11 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.4.** Obtain and update the complete repository, validate
+**Current release: 5.8.5.** Obtain and update the complete repository, validate
+
+## 5.8.5 - Regional event discovery (#415, in progress)
+
+Scheduled outcomes now remain authoritative while remote results wait for discovery in their region. The calendar and quest journal preserve what the character knows; returning reveals outcomes once. This production step does not complete unloaded siege simulation or the remaining V5.8 work. CA415-DISCOVERY-01 was fully accepted on 2026-10-24. Evidence and limitations: `assets/validation_585/RESULTS.md`.
 
 ## 5.8.4 - Second map soundtrack (#496)
 

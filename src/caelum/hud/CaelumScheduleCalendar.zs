@@ -167,7 +167,7 @@ class CaelumScheduleCalendar : Object
                     minutes / 60, minutes % 60, StringTable.Localize(entry.TitleKey, false)), 239));
             view.DrawTextLine(view.SmallFont, Font.CR_GRAY, 367, 129 + row * 32,
                 Clip(view.SmallFont, String.Format("%s | %s", StringTable.Localize(CaelumScheduleRules.KindKey(entry.Kind), false),
-                    StringTable.Localize(index < entry.Processed ? "CA_EVENT_OCCURRED" : "CA_EVENT_PLANNED", false)), 231));
+                    StringTable.Localize(index < entry.ObservedCount() ? "CA_EVENT_OCCURRED" : "CA_EVENT_PLANNED", false)), 231));
         }
         view.DrawCenteredText(view.SmallFont, Font.CR_GRAY, 320, 280, StringTable.Localize("CA_AGENDA_LEGEND", false));
         view.DrawCenteredText(view.SmallFont, Font.CR_GRAY, 320, 301, StringTable.Localize("CA_AGENDA_HELP", false));
@@ -179,15 +179,15 @@ class CaelumScheduleCalendar : Object
             Clip(view.TextFont, StringTable.Localize(entry.TitleKey, false), 548));
         view.DrawTextLine(view.SmallFont, Font.CR_WHITE, 48, 121, String.Format("%s | %s | %s",
             StringTable.Localize(CaelumScheduleRules.KindKey(entry.Kind), false), entry.MapName,
-            StringTable.Localize(entry.StatusKey(), false)));
+            StringTable.Localize(entry.KnownStatusKey(), false)));
         view.DrawTextLine(view.SmallFont, Font.CR_WHITE, 48, 144, String.Format(StringTable.Localize("CA_AGENDA_FIRST", false),
             CaelumScheduleRules.DateText(entry.FirstStamp())));
         view.DrawTextLine(view.SmallFont, Font.CR_WHITE, 48, 163, String.Format(StringTable.Localize("CA_AGENDA_NEXT", false),
-            CaelumScheduleRules.DateText(entry.NextStamp())));
+            CaelumScheduleRules.DateText(entry.KnownNextStamp())));
         view.DrawTextLine(view.SmallFont, Font.CR_GRAY, 48, 182, String.Format(StringTable.Localize("CA_AGENDA_REPEAT", false),
-            entry.RepeatMinutes, entry.Processed));
+            entry.RepeatMinutes, entry.ObservedCount()));
         String info = StringTable.Localize("CA_AGENDA_NOTICE_INFO", false);
-        if (entry.Kind == CaelumScheduleRules.RENT) info = String.Format(StringTable.Localize("CA_AGENDA_RENT_INFO", false), entry.Value, entry.Debt());
+        if (entry.Kind == CaelumScheduleRules.RENT) info = String.Format(StringTable.Localize("CA_AGENDA_RENT_INFO", false), entry.Value, entry.KnownDebt());
         else if (entry.Kind == CaelumScheduleRules.SHIPMENT) info = String.Format(StringTable.Localize("CA_AGENDA_CARGO_INFO", false),
             entry.Value, StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(CaelumConstants.EQUIPMENT_KIND_MATERIAL, entry.CargoMaterial), false), entry.CargoTier, entry.OriginMap, entry.MapName);
         else if (entry.Kind == CaelumScheduleRules.REGROWTH) info = String.Format(StringTable.Localize("CA_AGENDA_RESOURCE_INFO", false), StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(CaelumConstants.EQUIPMENT_KIND_MATERIAL, entry.Value), false));

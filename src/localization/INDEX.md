@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `5c4f249461ee864e9ac23c9b78e7993ac78e82ccf4fb9ff0946718c452dc9ff8`. Locations include every definition; the last one per language wins.
+SHA-256: `653669e7978e2f7e198f065f2217c1471d48f3f3a83b8c3d507e449d1835ee24`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -63,7 +63,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_EQUIPMENT | 84 | CA_EQUIPMENT_ACTION_BROKEN | CA_EQUIPMENT_STORAGE_NONE |
 | CA_ESSENCE | 5 | CA_ESSENCE_EARTH | CA_ESSENCE_WIND |
 | CA_EVASION | 3 | CA_EVASION_FAILED | CA_EVASION_SUCCEEDED |
-| CA_EVENT | 33 | CA_EVENT_ACTION_FAILED | CA_EVENT_WORKER_WORK |
+| CA_EVENT | 34 | CA_EVENT_ACTION_FAILED | CA_EVENT_WORKER_WORK |
 | CA_EXHAUSTION | 3 | CA_EXHAUSTION_LOCK | CA_EXHAUSTION_TITLE |
 | CA_EXIT | 1 | CA_EXIT_CONFIRM | CA_EXIT_CONFIRM |
 | CA_FACTION | 9 | CA_FACTION_CAELITH | CA_FACTION_UNITARIOS |

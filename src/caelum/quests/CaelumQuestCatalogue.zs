@@ -51,7 +51,7 @@ class CaelumQuestCatalogue : Object
             && !record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET))
             return CaelumConstants.QUEST_STATE_UNDISCOVERED;
         if (id < CaelumConstants.QUEST_SEWERS || id == CaelumConstants.QUEST_GUARD_CAPTAIN)
-            return record.QuestState[id];
+            return CaelumScheduleState.KnownQuestState(record,id,record.QuestState[id]);
         if (id == CaelumConstants.QUEST_SEWERS)
         {
             // La carta es evidencia admitida por #33 para guardados antiguos.

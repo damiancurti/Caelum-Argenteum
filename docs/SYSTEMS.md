@@ -1,6 +1,16 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+## Regional event discovery (#415, 5.8.5 in progress)
+
+The author approved learning off-map event results upon returning to the affected region; messengers are deferred. Schedule entries separately persist actual occurrence counts and observed counts. New remote outcomes send no omniscient notification. Known appointments remain in the calendar, with unconfirmed outcomes shown as awaiting news; hidden appointments become visible when their result is discovered. Returning to any map belonging to the same known catalogue region reveals its results once. Unknown maps match only by exact map name; an unscoped event has no foreign-region boundary. Discovery does not require another deadline to become due.
+
+Quest deadlines still fail actual quest state while absent, unless objectives were already complete. Reward/action authority reads that real state. Presentation retains the prior state until the causal deadline is discovered. Rent debt accumulates normally, but displayed debt uses observed periods; payment cannot silently charge undisclosed periods. Legacy processed occurrences were already displayed by the previous implementation, so revision-1 migration preserves that knowledge and never resets actual counts or stock. Migration is idempotent.
+
+Due series are ordered by their first pending timestamp, then stable event ID, using bounded O(n log n) sorting for at most 2,048 definitions. Existing repetition counters reconcile arithmetically rather than replaying every occurrence. These counters have no per-occurrence combat/theft adapter; this is not yet a complete chronological simulation of interacting battles. One-shot quest effects follow due order. Existing resource/shop/weather timestamps remain authoritative and unchanged.
+
+The author also approved an unloaded siege abstraction: one world-second rounds with real participants, Life, attacks, defenses, resistances and mean damage, preserving casualties, finite reserves and inventories without movement/projectiles. That simulation, explicit theft conditions and the remaining catch-up integration are still pending. No new battle outcome, theft probability, quest deadline or offline real-time progression is invented.
 
 ## Food contamination and cooking contract (#410, 5.8.3 in progress)
 

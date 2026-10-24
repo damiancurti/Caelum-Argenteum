@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.4** — 2026-10-24.
+Documentation version: **5.8.5** — 2026-10-24.
+
+## 5.8.5 - Regional event discovery (#415)
+
+No new visual/audio asset or map geometry. Reuse the current calendar and quest journal with ES/EN awaiting-news text. Private native validation rooms are generated locally; they are not campaign maps or packaged fixtures.
 
 ## 5.8.4 - Second map soundtrack (#496)
 

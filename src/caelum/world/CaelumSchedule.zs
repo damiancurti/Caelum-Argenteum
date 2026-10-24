@@ -9,6 +9,15 @@ class CaelumScheduleRules : Object
     const QUEST = 6;
     const NOTICE = 7;
     const MAX_RECORDS = 2048;
+    const KNOWLEDGE_REVISION = 1;
+
+    static clearscope bool SameRegion(String eventMap,String currentMap)
+    {
+        if(eventMap.Length()==0 || eventMap~==currentMap)return true;
+        int region=CaelumWorldCatalogue.LocationForMap(eventMap);
+        return region!=CaelumWorldCatalogue.LOCATION_UNKNOWN
+            && region==CaelumWorldCatalogue.LocationForMap(currentMap);
+    }
 
     static clearscope double Stamp(int day, int tic)
     { return double(day) * CaelumWorldClock.TicsPerDay() + tic; }
@@ -46,6 +55,34 @@ class CaelumScheduledEvent : Object
     String Key, TitleKey, Subject, MapName, OriginMap;
     bool Visible, Cancelled, Claimed, Trial;
     double CancelledAt;
+    // Resultado real y conocimiento se guardan por separado. El contador viejo
+    // ya se mostraba en el diario; migrarlo no borra información conocida.
+    int KnowledgeRevision,KnownProcessed;
+    bool DeadlineFailed;
+    int PreviousQuestState,FailureOccurrence;
+
+    void EnsureKnowledge()
+    {
+        if(KnowledgeRevision>=CaelumScheduleRules.KNOWLEDGE_REVISION)return;
+        KnownProcessed=Processed;KnowledgeRevision=CaelumScheduleRules.KNOWLEDGE_REVISION;
+    }
+    clearscope int ObservedCount()
+    {return KnowledgeRevision==0 ? Processed : KnownProcessed;}
+    clearscope double KnownDebt()
+    {return double(Max(0,ObservedCount()-PaidPeriods))*Max(0,Value);}
+    clearscope double KnownNextStamp()
+    {
+        int known=ObservedCount();
+        if(known>=2147483646 || Cancelled || (Limit>0 && known>=Limit)
+            || (RepeatMinutes==0 && known>0))return -1;
+        double next=OccurrenceStamp(known);
+        return next<CaelumScheduleRules.Stamp(CaelumCalendarRules.MAX_SERIAL+1,0) ? next : -1;
+    }
+    clearscope String KnownStatusKey()
+    {
+        if(ObservedCount()<Processed)return "CA_EVENT_UNCONFIRMED";
+        return StatusKey();
+    }
 
     clearscope double FirstStamp() { return CaelumScheduleRules.Stamp(DueDay, DueTic); }
     clearscope double Period() { return double(RepeatMinutes) * CaelumWorldClock.TicsPerHour() / 60; }
@@ -95,6 +132,8 @@ class CaelumScheduleState : Inventory
     bool TrialEnabled;
     String TrialMap;
     vector3 TrialOrigin;
+    int KnowledgeRevision;
+    String DisclosureMap;
 
     static CaelumScheduleState Get(CaelumPlayer user, bool create = false)
     {
@@ -124,9 +163,84 @@ class CaelumScheduleState : Inventory
     void Changed()
     { CacheValid = false; Revision = Revision == 2147483647 ? 1 : Revision + 1; }
 
+    void EnsureKnowledge()
+    {
+        if(KnowledgeRevision>=CaelumScheduleRules.KNOWLEDGE_REVISION)return;
+        for(int i=0;i<Events.Size();i++)Events[i].EnsureKnowledge();
+        KnowledgeRevision=CaelumScheduleRules.KNOWLEDGE_REVISION;
+        DisclosureMap="";
+    }
+
+    int Discover(String currentMap)
+    {
+        int revealed=0;
+        for(int i=0;i<Events.Size();i++)
+        {
+            let entry=Events[i];
+            if(entry.Processed<=0 || !CaelumScheduleRules.SameRegion(entry.MapName,currentMap))continue;
+            if(entry.KnownProcessed==entry.Processed && entry.Visible)continue;
+            entry.KnownProcessed=entry.Processed;entry.Visible=true;revealed++;
+        }
+        DisclosureMap=currentMap;
+        return revealed;
+    }
+
+    // Sólo la presentación conserva el estado previo al vencimiento no conocido.
+    // La autoridad de recompensas/plazos sigue leyendo QuestState real.
+    static int KnownQuestState(CaelumPersistentCharacterState record,int quest,int actual)
+    {
+        if(record==null || actual!=CaelumConstants.QUEST_STATE_FAILED)return actual;
+        let agenda=Get(CaelumPlayer(record.Owner));if(agenda==null)return actual;
+        for(int i=0;i<agenda.Events.Size();i++)
+        {
+            let entry=agenda.Events[i];
+            if(entry.Kind==CaelumScheduleRules.QUEST && entry.Value==quest && entry.DeadlineFailed
+                && entry.ObservedCount()<entry.FailureOccurrence)return entry.PreviousQuestState;
+        }
+        return actual;
+    }
+
+    void PublishDiscovery(CaelumPlayer user)
+    {
+        int revealed=Discover(level.MapName);
+        if(revealed<=0)return;
+        Revision=Revision==2147483647 ? 1 : Revision+1;
+        Notices=Min(2147483646-revealed,Notices)+revealed;
+        user.RefreshSocialJournalSnapshot();
+        if(user.health>0)CaelumNotifications.Notify(user,
+            String.Format(StringTable.Localize("CA_EVENT_UPDATED",false),revealed));
+    }
+
+    static bool Earlier(CaelumScheduledEvent a,CaelumScheduledEvent b)
+    {
+        double first=a.NextStamp(),second=b.NextStamp();
+        return first<second || (first==second && a.EventId<b.EventId);
+    }
+
+    // Merge iterativo: O(n log n), acotado por MAX_RECORDS, sin búsqueda de
+    // actores ni un paso por cada repetición de una ausencia larga.
+    static void SortDue(out Array<CaelumScheduledEvent> due)
+    {
+        Array<CaelumScheduledEvent> scratch;scratch.Resize(due.Size());
+        int count=due.Size();
+        for(int width=1;width<count;width*=2)
+        {
+            for(int start=0;start<count;start+=2*width)
+            {
+                int middle=Min(start+width,count),end=Min(start+2*width,count);
+                int left=start,right=middle;
+                for(int at=start;at<end;at++)
+                    if(left<middle && (right>=end || Earlier(due[left],due[right])))scratch[at]=due[left++];
+                    else scratch[at]=due[right++];
+            }
+            for(int i=0;i<count;i++)due[i]=scratch[i];
+        }
+    }
+
     CaelumScheduledEvent Add(String stableKey, int eventKind, String title, String targetMap,
         int scheduledDay, int scheduledTic, int repeatMins = 0, int total = 1, String subjectKey = "", bool known = true)
     {
+        EnsureKnowledge();
         if (stableKey.Length() == 0 || eventKind < 1 || eventKind > CaelumScheduleRules.NOTICE
             || !CaelumScheduleRules.ValidDate(scheduledDay, scheduledTic) || repeatMins < 0
             || repeatMins > 525600 || total < 0 || (repeatMins == 0 && total != 1)) return null;
@@ -137,6 +251,7 @@ class CaelumScheduleState : Inventory
         entry.TitleKey = title; entry.MapName = targetMap; entry.Subject = subjectKey;
         entry.DueDay = scheduledDay; entry.DueTic = scheduledTic;
         entry.RepeatMinutes = repeatMins; entry.Limit = total; entry.Visible = known;
+        entry.KnowledgeRevision=CaelumScheduleRules.KNOWLEDGE_REVISION;
         Events.Push(entry); Changed(); return entry;
     }
     CaelumScheduledEvent AddAfter(CaelumPlayer user, String stableKey, int eventKind, String title,
@@ -183,31 +298,53 @@ class CaelumScheduleState : Inventory
     static void Sync(CaelumPlayer user)
     {
         let agenda = Get(user); if (agenda == null) return;
+        agenda.EnsureKnowledge();
         double now = Now(user);
-        if (now < 0 || (agenda.CacheValid && (agenda.NextDue < 0 || now < agenda.NextDue))) return;
-        int updated = 0;
-        for (int i = 0; i < agenda.Events.Size(); i++)
+        if(now<0)return;
+        if(agenda.CacheValid && (agenda.NextDue<0 || now<agenda.NextDue))
         {
-            let entry = agenda.Events[i];
+            // La vuelta a una región debe revelar sus resultados aunque no
+            // haya un nuevo vencimiento desde el último mapa.
+            if(agenda.DisclosureMap!=level.MapName)agenda.PublishDiscovery(user);
+            return;
+        }
+        Array<CaelumScheduledEvent> due;
+        for(int i=0;i<agenda.Events.Size();i++)
+        {
+            let entry=agenda.Events[i];
+            if(entry.CountAt(now)<=entry.Processed)continue;
+            due.Push(entry);
+        }
+        SortDue(due);
+        int updated = 0;
+        for (int i = 0; i < due.Size(); i++)
+        {
+            let entry = due[i];
             int dueCount = entry.CountAt(now);
             if (dueCount <= entry.Processed) continue;
             // La ocurrencia se acredita una sola vez. Los adaptadores reciben
             // el estado final y el contador, sin reproducir años de IA o cobros.
+            int previousCount=entry.Processed;
             entry.Processed = dueCount; updated++;
             if (entry.Kind == CaelumScheduleRules.QUEST)
             {
                 let record = user.GetPersistentCharacterState(false);
                 // Un objetivo ya alcanzado no falla mientras espera ser cobrado.
-                if (!CaelumSideQuestRules.ObjectivesComplete(record, entry.Value))
-                    CaelumSideQuestRules.End(record, entry.Value, false);
+                if(record!=null && CaelumSideQuestRules.IsDefined(entry.Value)
+                    && !CaelumSideQuestRules.ObjectivesComplete(record,entry.Value))
+                {
+                    int previous=record.QuestState[entry.Value];
+                    if(CaelumSideQuestRules.End(record,entry.Value,false))
+                    {
+                        entry.PreviousQuestState=previous;entry.DeadlineFailed=true;
+                        entry.FailureOccurrence=previousCount+1;
+                    }
+                }
             }
         }
         if (updated > 0)
         {
             agenda.Revision = agenda.Revision == 2147483647 ? 1 : agenda.Revision + 1;
-            agenda.Notices = Min(2147483646 - updated, agenda.Notices) + updated;
-            user.RefreshSocialJournalSnapshot();
-            if (user.health > 0) CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_EVENT_UPDATED", false), updated));
             // El asedio detiene el descanso/fabricación acelerados. El viaje
             // ya confirmado se resuelve antes de presentar el estado del destino.
             let journey = CaelumJourneyState.Get(user);
@@ -226,6 +363,7 @@ class CaelumScheduleState : Inventory
             if (next >= 0 && (agenda.NextDue < 0 || next < agenda.NextDue)) agenda.NextDue = next;
         }
         agenda.CacheValid = true;
+        agenda.PublishDiscovery(user);
     }
 
     static bool CanTransact(CaelumPlayer user)
@@ -243,6 +381,7 @@ class CaelumScheduleState : Inventory
     static bool Pay(CaelumPlayer user, CaelumScheduledEvent entry)
     {
         if (!CanTransact(user) || entry == null || entry.Kind != CaelumScheduleRules.RENT
+            || entry.ObservedCount()!=entry.Processed
             || entry.Debt() <= 0 || entry.Debt() > 2147483646.0) return false;
         if (!user.BuildPalomoCurrencyPaymentPlan(int(entry.Debt()))) return false;
         if (!user.PalomoTransactionCapacityFits(user.GetPalomoCurrencyPlanPersonalWeightDelta(),
