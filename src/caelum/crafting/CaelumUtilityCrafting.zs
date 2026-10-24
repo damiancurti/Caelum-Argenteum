@@ -2,15 +2,18 @@
 class CaelumUtilityCrafting : Object
 {
     static bool IsRecipe(int recipe)
-    { return CaelumMateData.IsRecipe(recipe) || CaelumLockRules.IsRecipe(recipe) || recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
+    { return CaelumCampData.IsRecipe(recipe) || CaelumMateData.IsRecipe(recipe) || CaelumLockRules.IsRecipe(recipe) || recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
     static Name ItemClass(int recipe)
-    { if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.ItemClass(recipe-CaelumMateData.FIRST_RECIPE);
+    { if(CaelumCampData.IsRecipe(recipe))return CaelumCampData.ItemClass(recipe-CaelumCampData.FIRST_RECIPE);
+        if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.ItemClass(recipe-CaelumMateData.FIRST_RECIPE);
         return CaelumLockRules.IsRecipe(recipe) ? 'CaelumLockItem' : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? 'CaelumSleepingBag' : 'CaelumCanteenLarge'; }
     static clearscope String NameKey(int recipe)
-    { if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.NameKey(recipe-CaelumMateData.FIRST_RECIPE);
+    { if(CaelumCampData.IsRecipe(recipe))return CaelumCampData.NameKey(recipe-CaelumCampData.FIRST_RECIPE);
+        if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.NameKey(recipe-CaelumMateData.FIRST_RECIPE);
         return CaelumLockRules.IsRecipe(recipe) ? CaelumLockRules.NameKey(CaelumLockRules.RecipeItem(recipe)) : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? "CA_SLEEPING_BAG_NAME" : "CA_WATER_CANTEEN_LARGE"; }
     static play double Weight(int recipe)
     {
+        if(CaelumCampData.IsRecipe(recipe))return CaelumCampData.Mass(recipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.EmptyMass(recipe-CaelumMateData.FIRST_RECIPE);
         if (CaelumLockRules.IsRecipe(recipe)) return CaelumLockRules.RecipeWeight(recipe);
         if (recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE)
@@ -21,7 +24,7 @@ class CaelumUtilityCrafting : Object
     {
         if (CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
         { CaelumLockRules.Complete(user); return; }
-        if (user.FindInventory(ItemClass(user.CraftingSelectionRecipe)) != null)
+        if (!CaelumCampData.IsRecipe(user.CraftingSelectionRecipe) && user.FindInventory(ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!user.CraftingTaskCompleting || !user.CraftingSelectedInfrastructureAvailable
             || !user.ValidateCraftingTaskReservations()) return;

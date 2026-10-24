@@ -199,6 +199,13 @@ class CaelumLiveMenuControls : Object ui
                 Button("CA_CONTAINER_STORAGE",0,100,"d",188);Button("CA_CONTAINER_CARRY",0,99,"c",188);
             }
         }
+        else if(context==host.CTX_PROPERTY)
+        {
+            let property=CaelumPropertySession(user.FindInventory("CaelumPropertySession"));
+            bool available=property!=null && property.Portal!=null && property.Portal.args[1]!=0 && !property.Owned && !property.PaidThisVisit;
+            Row(298);Button("CA_PROPERTY_BUY",0,98,"b",280,available);Button("CA_PROPERTY_RENT",0,114,"r",280,available);
+            Row(326);Button("CA_PROPERTY_CROSS",InputEvent.Key_Enter,0,"",280);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
+        }
         else if(context==host.CTX_MATE)
         {
             Row(248);Button("CA_MATE_LOAD",0,114,"r",180);Button("CA_UI_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_UI_NEXT",InputEvent.Key_RightArrow,0,"",180);

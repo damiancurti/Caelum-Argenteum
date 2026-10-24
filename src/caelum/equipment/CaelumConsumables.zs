@@ -55,6 +55,7 @@ class CaelumConsumableItem : PowerupGiver
 
     static clearscope double UnitWeightForType(int consumableType)
     {
+        if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.POT_KG;
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.EmptyMass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
             return CaelumConstants.WATER_RATION_LITERS;
@@ -464,6 +465,9 @@ class CaelumWaterContainer : CaelumConsumableItem
         && (WaterTemperatureRevision==0 || WaterTemperatureC<=CaelumWaterThermalData.DRINK_MAX_C);}
     clearscope bool IsLeather()
     {return self is 'CaelumCanteenSmall' || self is 'CaelumCanteenNormal' || self is 'CaelumCanteenLarge';}
+    virtual clearscope double CoolWater(double ambient,double wind,double seconds)
+    {return CaelumWaterThermalData.Cool(WaterTemperatureC,ambient,wind,seconds,WaterLiters,GetCapacityLiters(),IsLeather());}
+    virtual clearscope bool IndependentContainers(){return false;}
     void AdvanceTemperature(CaelumPlayer user,double seconds)
     {
         EnsureWaterTemperature(user);
@@ -479,8 +483,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         if(CoolingSeconds<1)return;
         let thermal=CaelumThermalBody.Get(user);
         if(thermal!=null && thermal.Available)
-            WaterTemperatureC=CaelumWaterThermalData.Cool(WaterTemperatureC,thermal.AmbientAirC,
-                thermal.AmbientWindKmh/3.6,CoolingSeconds,WaterLiters,GetCapacityLiters(),IsLeather());
+            WaterTemperatureC=CoolWater(thermal.AmbientAirC,thermal.AmbientWindKmh/3.6,CoolingSeconds);
         CoolingSeconds=0;
     }
     override void Tick()
@@ -502,8 +505,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         if(WaterTemperatureRevision==0)
         {WaterTemperatureC=CoolingEnvironment.AirTemperatureC;WaterTemperatureRevision=CaelumWaterThermalData.REVISION;}
         else if(TemperatureClockReady && WaterLiters>0)
-            WaterTemperatureC=CaelumWaterThermalData.Cool(WaterTemperatureC,CoolingEnvironment.AirTemperatureC,
-                CoolingEnvironment.WindSpeedKmh/3.6,Max(0,now-TemperatureStamp),WaterLiters,GetCapacityLiters(),IsLeather());
+            WaterTemperatureC=CoolWater(CoolingEnvironment.AirTemperatureC,CoolingEnvironment.WindSpeedKmh/3.6,Max(0,now-TemperatureStamp));
         TemperatureStamp=now;TemperatureClockReady=true;
     }
 
@@ -571,12 +573,12 @@ class CaelumWaterContainer : CaelumConsumableItem
     { return CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT + Max(0.0, WaterLiters); }
     override bool HandlePickup(Inventory item)
     {
-        if (item.GetClass() == GetClass()) return true;
+        if (item.GetClass() == GetClass()) return !IndependentContainers();
         return Super.HandlePickup(item);
     }
     override bool TryPickup(in out Actor toucher)
     {
-        if (toucher.FindInventory(GetClassName()) != null) return false;
+        if (!IndependentContainers() && toucher.FindInventory(GetClassName()) != null) return false;
         return Super.TryPickup(toucher);
     }
     override Inventory CreateCopy(Actor other)

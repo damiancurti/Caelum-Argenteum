@@ -23,6 +23,12 @@ class CaelumHouseHub : Object play
 
 class CaelumHouseHubEvents : EventHandler
 {
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca_property_action" || e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
+        let session=CaelumPropertySession.Get(CaelumPlayer(players[e.Player].mo));
+        if(session!=null)session.Act(e.Args[0]);
+    }
     bool Prepared;
     int NextPrepareTic;
     override void WorldLoaded(WorldEvent e){Prepared=false;NextPrepareTic=0;}
@@ -41,13 +47,24 @@ class CaelumHouseChestRules : Object play
     {
         int house=CaelumHouseHubData.HouseForMap(level.MapName);
         if(house<0)return true;
+        let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
+        if(house==CaelumPropertyData.CENTRAL_HOUSE)return roster.RelocatePropertyChest();
+        bool ready=PrepareFor(house,CaelumCityData.ChestPosition(house));
+        if(house==CaelumPropertyData.RELOCATION_HOUSE)
+        {
+            if(!roster.PlaceRelocatedChest())ready=false;
+            if(!PrepareFor(CaelumPropertyData.CENTRAL_HOUSE,CaelumPropertyData.RelocatedChestPosition()))ready=false;
+        }
+        return ready;
+    }
+    static bool PrepareFor(int house,vector3 point)
+    {
         let roster=CaelumHouseResidents.Get(true);
         if(roster!=null && roster.HouseChestIssued[house])return true;
         if(roster==null || !roster.Ready)return false;
         CaelumPortDefender resident=null;
         for(int i=house;i<roster.Residents.Size();i+=CaelumCityData.HOUSE_COUNT)
             if(roster.Residents[i].Body!=null){resident=roster.Residents[i].Body;break;}
-        vector3 point=CaelumCityData.ChestPosition(house);
         let chest=CaelumStashChest(Actor.Spawn("CaelumStashChest",point,NO_REPLACE));
         if(chest==null)return false;
         chest.EnsureStorage();chest.StorageTier=CaelumContainerRules.SMALL;chest.ApplyStorageSize();
@@ -103,8 +120,15 @@ class CaelumHousePortal : Actor
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
             || user.FolkloreInteractionUseLatched || !CaelumUseGeometry.AimedAt(user,self))return false;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
-        let audio=CaelumMenuAudio(StaticEventHandler.Find("CaelumMenuAudio"));
-        if(audio==null || !audio.RequestHouseDoor(user,self))return false;
+        if(CaelumPropertyData.Offered(args[0]))
+        {
+            if(!CaelumPropertySession.Open(user,self))return false;
+        }
+        else
+        {
+            let audio=CaelumMenuAudio(StaticEventHandler.Find("CaelumMenuAudio"));
+            if(audio==null || !audio.RequestHouseDoor(user,self))return false;
+        }
         user.FolkloreInteractionUseLatched=true;
         user.FolkloreInteractionReleaseGuardTics=0;
         return true;

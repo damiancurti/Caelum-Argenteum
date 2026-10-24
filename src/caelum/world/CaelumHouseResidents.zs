@@ -101,6 +101,12 @@ class CaelumHouseResident : Object play
 // Sólo recorre sus residentes conocidos durante una transición, nunca actores globales.
 class CaelumHouseResidents : Inventory
 {
+    Array<CaelumPropertyRecord> Properties;
+    int PropertyRevision;
+    bool PropertyChestScanned;
+    CaelumStashChest RelocatingChest;
+    int PropertyChestTravelTID;
+    Array<int> PropertyContentTravelTIDs;
     bool HouseChestIssued[CaelumCityData.HOUSE_COUNT];
     const PARKED_STAT=Thinker.STAT_FIRST_THINKING-2;
     int Revision, PendingCursor, Unresolved;
@@ -125,6 +131,84 @@ class CaelumHouseResidents : Inventory
         while(Residents.Size()<CaelumHouseHubData.RESIDENT_COUNT)
             Residents.Push(new("CaelumHouseResident"));
         Revision=CaelumHouseHubData.REVISION;
+        MigratePropertyResidents();
+    }
+
+    // Migracion acotada a los cuatro IDs de la vivienda, una vez por registro.
+    void MigratePropertyResidents()
+    {
+        if(PropertyRevision>=CaelumPropertyData.REVISION)return;
+        String oldMap=CaelumHouseHubData.MapName(CaelumPropertyData.CENTRAL_HOUSE);
+        for(int i=CaelumPropertyData.CENTRAL_HOUSE;i<Residents.Size();i+=CaelumCityData.HOUSE_COUNT)
+        {
+            let entry=Residents[i];
+            if(entry.Created && !entry.Emitted && !entry.Delegated && entry.ResidentMap==oldMap)
+            {
+                entry.Suspend();entry.ResidentMap=CaelumHouseHubData.MapName(CaelumPropertyData.RELOCATION_HOUSE);
+                entry.Position=CaelumPropertyData.ResidentPosition(i);
+            }
+        }
+        PropertyRevision=CaelumPropertyData.REVISION;
+    }
+    bool RelocatePropertyChest()
+    {
+        if(!Ready)return false;
+        if(PropertyChestScanned)return true;
+        // Excepcion de migracion: una unica busqueda tipada al cargar la casa
+        // original, necesaria porque el esquema anterior no guardaba su puntero.
+        // No se ejecuta en MAP03, por tic, por residente ni tras marcar el esquema.
+        let iterator=ThinkerIterator.Create("CaelumStashChest");CaelumStashChest chest;
+        String title="house:"..CaelumHouseHubData.MapName(CaelumPropertyData.CENTRAL_HOUSE);
+        while((chest=CaelumStashChest(iterator.Next()))!=null)
+        {
+            if(chest.Cargo!=null || chest.LawfulOwner==null || chest.LawfulOwner.Token!=title)continue;
+            RelocatingChest=chest;chest.ChestOpen=false;chest.HideCarriedStorage();
+            chest.ChangeStatNum(PARKED_STAT);
+            for(Inventory item=chest.Inv;item!=null;item=item.Inv)item.ChangeStatNum(PARKED_STAT);
+            break;
+        }
+        PropertyChestScanned=true;return true;
+    }
+    bool PlaceRelocatedChest()
+    {
+        if(RelocatingChest==null)return true;
+        let chest=RelocatingChest;vector3 point=CaelumPropertyData.RelocatedChestPosition();
+        // Probar el volumen sin activar una copia ni perder el original.
+        let probe=Actor.Spawn("CaelumSummoningProbe",point,NO_REPLACE);
+        if(probe==null)return false;
+        probe.A_SetSize(chest.Radius,chest.Height);bool fits=probe.TestMobjLocation();probe.Destroy();
+        if(!fits)return false;
+        chest.ChangeStatNum(STAT_DEFAULT);
+        for(Inventory item=chest.Inv;item!=null;item=item.Inv)item.ChangeStatNum(STAT_INVENTORY);
+        chest.RestoreWorldStorage(point);RelocatingChest=null;return true;
+    }
+    void TravelPropertyChest(bool arriving)
+    {
+        let chest=RelocatingChest;if(chest==null)return;
+        // Cofre y contenidos reales viajan en el mismo protocolo que los
+        // cuerpos residentes; no es carga utilizable ni peso del personaje.
+        if(!arriving)
+        {
+            PropertyChestTravelTID=chest.TID;chest.ChangeTid(0);PropertyContentTravelTIDs.Clear();
+            chest.UnlinkFromWorld();chest.ChangeStatNum(STAT_TRAVELLING);
+            for(Inventory item=chest.Inv;item!=null;item=item.Inv)
+            {
+                PropertyContentTravelTIDs.Push(item.TID);item.ChangeTid(0);
+                item.UnlinkFromWorld();item.ChangeStatNum(STAT_TRAVELLING);
+            }
+        }
+        else
+        {
+            chest.ChangeStatNum(PARKED_STAT);chest.SetOrigin(Owner.Pos,false);chest.FindFloorCeiling();
+            chest.ChangeTid(PropertyChestTravelTID);PropertyChestTravelTID=0;
+            int index=0;
+            for(Inventory item=chest.Inv;item!=null;item=item.Inv)
+            {
+                item.ChangeStatNum(PARKED_STAT);item.SetOrigin(Owner.Pos,false);
+                if(index<PropertyContentTravelTIDs.Size())item.ChangeTid(PropertyContentTravelTIDs[index++]);
+            }
+            PropertyContentTravelTIDs.Clear();
+        }
     }
 
     bool DelegatesTravel(CaelumHouseResident entry)
@@ -215,10 +299,11 @@ class CaelumHouseResidents : Inventory
     void PrepareHouse(int house)
     {
         EnsureRecords();
-        for(int i=house;i<Residents.Size();i+=CaelumCityData.HOUSE_COUNT)
+        for(int i=0;i<Residents.Size();i++)
         {
+            if(CaelumPropertyData.ResidentHouse(i)!=house)continue;
             let entry=Residents[i];if(entry.Emitted || entry.Delegated || entry.ExcludedFromDeployment)continue;
-            if(!entry.Created)CreateResident(i,CaelumCityData.HomePosition(i));
+            if(!entry.Created)CreateResident(i,CaelumPropertyData.ResidentPosition(i));
         }
         PrepareOtherMap();
     }
@@ -249,6 +334,7 @@ class CaelumHouseResidents : Inventory
     override void Tick()
     {
         Super.Tick();
+        if(PropertyRevision<CaelumPropertyData.REVISION){EnsureRecords();Ready=false;}
         if(PlacementPending.Size()>0)
         {
             int identity=PlacementPending[0];PlacementPending.Delete(0);
@@ -268,6 +354,10 @@ class CaelumHouseResidents : Inventory
             {PrepareCity(port);Ready=true;}
             else if(!CaelumHouseHub.IsCity(port)){PrepareOtherMap();Ready=true;}
         }
+        if(Ready && !PropertyChestScanned && level.MapName==CaelumHouseHubData.MapName(CaelumPropertyData.CENTRAL_HOUSE))
+            RelocatePropertyChest();
+        if(RelocatingChest!=null && level.time%TICRATE==0
+            && level.MapName==CaelumHouseHubData.MapName(CaelumPropertyData.RELOCATION_HOUSE))PlaceRelocatedChest();
         if(!DeploymentPending || level.MapName!="MAP03")return;
         let port=CaelumPortSiege.Get();if(!CaelumHouseHub.IsCity(port) || !port.SiegeStarted)return;
         // Un intento por tic: presupuesto fijo independiente del total de actores.
@@ -276,7 +366,7 @@ class CaelumHouseResidents : Inventory
         if(entry.DeploymentResolved)return;
         if(entry.Created && (entry.Body==null || entry.Body.health<=0))
         {entry.DeploymentResolved=true;DeploymentPending=--Unresolved>0;return;}
-        vector3 point=CaelumCityData.DoorOutside(identity%CaelumCityData.HOUSE_COUNT);
+        vector3 point=CaelumCityData.DoorOutside(CaelumPropertyData.ResidentHouse(identity));
         let probe=Spawn("CaelumSummoningProbe",point,NO_REPLACE);
         probe.A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
         bool free=probe.TestMobjLocation();probe.Destroy();if(!free)return;
@@ -291,6 +381,7 @@ class CaelumHouseResidents : Inventory
 
     override void PreTravelled()
     {
+        TravelPropertyChest(false);
         for(int i=0;i<Residents.Size();i++)
         {
             let entry=Residents[i];let body=entry.Body;if(body==null)continue;
@@ -336,6 +427,7 @@ class CaelumHouseResidents : Inventory
 
     override void Travelled()
     {
+        TravelPropertyChest(true);
         for(int i=0;i<Residents.Size();i++)
         {
             let entry=Residents[i];let body=entry.Body;if(body==null)continue;

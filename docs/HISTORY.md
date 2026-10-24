@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## 5.8.6 - Central property access (#411, in progress), 2026-10-24
+
+The author approved full relocation of the selected central dwelling residents and their chest, preserving characters, keys and inventories. Added prepaid rental/purchase and expiry permissions, revisioned resident/contract migration and delayed physical chest relocation through the native hub. Reused existing furniture and regenerated only the four affected deployment routes. Validation: 142 native PASS across 16 selected runs, clean static checks, 16,840 package entries matched byte-for-byte, old-save migration and original-package rollback verified. `assets/validation_586` retains failures and the narrowly verified reuse after a comment-only encoding correction. The author confirmed all checks in the supplied property terminal passed on 2026-10-24. CA411-PROPERTY-01 (origin 5.8.6/#411) is fully accepted without qualifications and removed from pending_test.txt; camps and player placement remain pending. The author then approved the campfire power/fuel calibration, iron-pot dimensions and thermal properties, and purchase/crafting acquisition for tent/pot; SYSTEMS records the exact values for the upcoming camp work. The subsequent camp decisions approve the 10 kg canvas/wood/iron/rope construction, rain blocking and 90% wind reduction at exterior air temperature, and extinguishing the fire on map departure with remaining wood preserved. The author subsequently approved exact camp fabrication inputs/stations, three items and ten recipe books per catalogue, recipe-derived prices/restocking, 10/5-minute tent setup/packing, one-minute ignition, and land permissions recorded in SYSTEMS. Acquisition integration is in progress; accepted housing evidence remains unchanged.
+
+Camp artwork continuation: generated and retained two painted alpha sources,
+exported inventory/world sprite registrations deterministically, and inspected
+the 128-pixel results. Author visual review is deferred until return.
+
+Camp acquisition continuation adds individually owned canvas tents and 20 L iron pots, learned fabrication recipes, Provisions/library catalogues, recipe-based replenishment, painted inventory icons and pot-specific cooling. Recipe schema 15 appends IDs 201/202; prior knowledge and stock migrate idempotently. Pot volume, contamination and temperature survive pickup, trade, Box/chest transfers, native saves and hub travel. Validation: 72 native PASS in 12 selected runs, 16,850 final package members verified byte-for-byte, original-save migration and rollback, clean static checks, and a native Spanish inventory capture. Housing remains accepted. Camp deployment, fire/cooking integration and author equipment/art acceptance remain pending; questions and manual tests are held until the author returns.
 
 ## 5.8.5 - Regional event discovery (#415, in progress), 2026-10-24
 

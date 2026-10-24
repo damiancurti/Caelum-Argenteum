@@ -1,0 +1,16 @@
+[
+  {
+    "source": "assets/art_source/camp_equipment/tent-source-v1.png",
+    "source_sha256": "44eab6d90cb8e739e3fe8c21c54938a1920702d1e66ab8afb902bfc38dd1b831",
+    "icon": "src/graphics/caelum/icons/camp/tent.png",
+    "icon_sha256": "37aba5e902fd2cb6e3131d660951455a76bbe10e71486b396628af011f357c50",
+    "world_sprite": "CPTNA0.png"
+  },
+  {
+    "source": "assets/art_source/camp_equipment/iron_pot-source-v1.png",
+    "source_sha256": "680232388047bbec8661e68f563e5e375d611ea510684cdd27c69975dbdbd71a",
+    "icon": "src/graphics/caelum/icons/camp/iron_pot.png",
+    "icon_sha256": "0860a89a491ea155298e0e098d5e157b872935fb612b2e6f64bdbabc9f42b3a3",
+    "world_sprite": "CPPTA0.png"
+  }
+]

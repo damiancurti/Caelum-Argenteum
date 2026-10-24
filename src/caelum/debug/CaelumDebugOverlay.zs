@@ -455,6 +455,7 @@ class CaelumDebugOverlay : EventHandler
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
+            if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.NameKey(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK) return "CA_KEY_ITEM_RECIPE_BOOK";
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
@@ -2083,10 +2084,10 @@ class CaelumDebugOverlay : EventHandler
         {
             finishLine = String.Format(
                 "%s: %d / %d | %s: %d / %d",
-                StringTable.Localize("CA_MATERIAL_SILVER_INGOT", false),
+                StringTable.Localize(CaelumCampData.IsRecipe(localPlayer.CraftingSelectionRecipe)?"CA_MATERIAL_IRON_INGOT":"CA_MATERIAL_SILVER_INGOT", false),
                 localPlayer.CraftingSilverOwned,
                 localPlayer.CraftingSilverRequired,
-                StringTable.Localize("CA_MATERIAL_GOLD_INGOT", false),
+                StringTable.Localize(CaelumCampData.IsRecipe(localPlayer.CraftingSelectionRecipe)?"CA_MATERIAL_ROPE":"CA_MATERIAL_GOLD_INGOT", false),
                 localPlayer.CraftingGoldOwned,
                 localPlayer.CraftingGoldRequired
             );

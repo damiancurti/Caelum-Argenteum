@@ -33,7 +33,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             || HomeRevision==0 || HomeIdentity<CaelumCityData.CREW_COUNT)return;
         vector2 inward=CaelumCityData.FormationInward(HomeIdentity-CaelumCityData.CREW_COUNT);
         vector3 arrival=arriving.HomeIdentity<CaelumCityData.CREW_COUNT
-            ? CaelumCityRoutes.Point(arriving.HomeIdentity,CaelumCityRoutes.Count(arriving.HomeIdentity)-1) : arriving.Station;
+            ? CaelumPropertyRoutes.Point(arriving.HomeIdentity,CaelumPropertyRoutes.Count(arriving.HomeIdentity)-1) : arriving.Station;
         vector2 separation=Station.XY-arrival.XY;
         // Un puesto profundo nunca se vacía para llenar otro más superficial.
         // Los últimos en entrar ceden espacio hacia el lado abierto de la ciudad.
@@ -84,21 +84,21 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         if(Carbine==null)Carbine=new("CaelumCityCarbine");Carbine.Initialize(self);
         let it=ThinkerIterator.Create("CaelumHingedDoorLeaf");CaelumHingedDoorLeaf leaf;
         while((leaf=CaelumHingedDoorLeaf(it.Next()))!=null)
-            if(leaf.args[0]==CaelumCityData.DoorGroup(identity%CaelumCityData.HOUSE_COUNT))
+            if(leaf.args[0]==CaelumCityData.DoorGroup(CaelumPropertyData.ResidentHouse(identity)))
             {HomeDoor=leaf;break;}
     }
 
     bool AdvanceDeployment()
     {
         if(HomeRevision==0 || DeploymentComplete)return false;
-        int house=HomeIdentity%CaelumCityData.HOUSE_COUNT;
+        int house=CaelumPropertyData.ResidentHouse(HomeIdentity);
         if(DeploymentStep<=1 && HomeDoor!=null
             && (Pos-CaelumCityData.DoorInside(house)).Length()<=128
             && (!HomeDoor.DoorRequested || HomeDoor.HoldTimer<18))HomeDoor.RequestDoorGroup(self);
-        int count=CaelumCityRoutes.Count(HomeIdentity)+3;
+        int count=CaelumPropertyRoutes.Count(HomeIdentity)+3;
         // El último centro de celda puede caer sobre el puesto de otro guardia.
         // Cerca del destino real, pasar a él y resolver la colisión local allí.
-        vector3 destination=CaelumCityRoutes.Point(HomeIdentity,count-4);
+        vector3 destination=CaelumPropertyRoutes.Point(HomeIdentity,count-4);
         RequestApproachPassage(destination);
         if(DeploymentStep>=3 && (Pos.XY-destination.XY).Length()<=CaelumCityData.TRANSIT_WAYPOINT_REACH*2)
             DeploymentStep=count-1;
@@ -107,7 +107,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             vector3 point=DeploymentStep==0 ? CaelumCityData.DoorInside(house)
                 : DeploymentStep==1 ? CaelumCityData.DoorOutside(house)
                 : DeploymentStep==2 ? CaelumCityData.HouseRoad(house)
-                : CaelumCityRoutes.Point(HomeIdentity,DeploymentStep-3);
+                : CaelumPropertyRoutes.Point(HomeIdentity,DeploymentStep-3);
             // Los puntos compartidos son pasos, no puestos de formación:
             // dos cuerpos pueden cruzarlos sin exigir ocupar el mismo centro.
             double reach=DeploymentStep<=1 ? Radius : Max(Radius,CaelumCityData.TRANSIT_WAYPOINT_REACH);

@@ -14,3 +14,21 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
+
+CA411-EQUIPMENT-01 | Origin: 5.8.6 / #411 | PENDING; author away
+Prerequisites: issue411-work, GZDoom 4.14.2, build/issue411-camp/current package,
+and assets/validation_586/camp/prepare.py. Close other GZDoom instances first.
+When the author returns, launch assets/validation_586/camp/author_terminal.ps1
+with PowerShell -NoExit -ExecutionPolicy Bypass. Do not interrupt the absence.
+1. Select 1. Open the usual inventory and inspect the painted tent/pot sprites.
+   The tent weighs 10 kg; each empty pot weighs 5.5 kg, plus its own water.
+2. Two pots have 2 L potable and 1 L contaminated water. Select each separately,
+   move into/out of the Box, drop/pick up and deposit/withdraw from the chest.
+   Volumes/quality stay separate, with no clone or accidental transfer of the
+   other pot. Save and reload this private room, retaining all contents.
+3. F1 opens Provisions. Buy more than one tent/pot. Sell/rebuy a filled pot:
+   its water stays with that instance and is not merged into empty shop stock.
+4. Select 2 in the terminal for isolated recipe, catalogue and transfer checks.
+Expected: readable matching sprites and coherent inventory/trade/persistence.
+Scope: acquisition only; deployed shelter, placement, fire and cooking remain
+pending. This check does not supersede accepted CA411-PROPERTY-01.

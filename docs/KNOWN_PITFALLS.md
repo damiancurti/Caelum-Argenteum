@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-158 - Saved readiness is not a migration gate; hub identity is not a raw pointer
+
+Status/evidence: ENGINE-VERIFIED; #411 / 5.8.6, 2026-10-24, GZDoom 4.14.2.
+Evidence: assets/validation_586/RESULTS.md and retained legacy-load/return logs.
+
+A save can restore a resident registry with Ready already true. A new migration
+inside its initialization path will then never run unless the saved schema
+revision is checked independently. Run the additive, idempotent revision check
+before that readiness shortcut. Verify an actual pre-patch save loaded directly
+inside an already initialized house, then leave, return and reload migrated state.
+
+Preserve native actor pointers while explicitly transporting bodies, chests and
+inventory. After placing a chest in a native hub map, however, unloading that map
+can clear an external actor pointer. On revisiting the map, verify its stable TID,
+lawful/lock tokens, contents, quantity and uniqueness; pointer equality across
+native hub restoration is not a valid universal identity assertion. The production
+registry should release its pending relocation reference once placement succeeds.
+
+Invisible interaction portals still need sight/reach validation. Use
+SF_IGNOREVISIBILITY when the portal itself is intentionally invisible; default
+CheckSight rejected every payment even though the visible menu opened correctly.
+Test the real session action, not only a direct call to the transaction function.
+
 ## CA-KP-157 - Moving swimmable planes and resolving source identity are separate
 
 Status/evidence: ENGINE-VERIFIED geometry; OPEN quality integration. #414,
