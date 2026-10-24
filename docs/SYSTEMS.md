@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.6** — 2026-10-24.
+Documentation version: **5.8.7** — 2026-10-24.
 
 ## Central property contracts (#411, 5.8.6 in progress)
 
@@ -143,6 +143,14 @@ counts at full Life with existing gates and Hunger/Hydration costs; actual
 healing counts simultaneously without double charging. Existing unrelated
 status effects retain their rules. The persistent character inventory owns the
 revision-1 illness object and accrued fractional damage.
+As of 5.8.7, journey and task-wait forecasts copy this state, share its damage
+arithmetic and include potential depuration with the same resource gates/costs.
+Forecasting does not mutate the live illness. Confirmed travel installs an
+independent resulting state; the native wait still executes the normal player
+path. Wait-preview schema 6 rebuilds older cached previews. Food inventory and
+meal ingestion adapters remain pending; this closes the pre-existing illness
+forecast gap, not the food pipeline.
+
 
 Use complete 100 g portions even when Hunger needs less; discard excess
 nutrition but apply contamination for the entire ingested mass. The existing

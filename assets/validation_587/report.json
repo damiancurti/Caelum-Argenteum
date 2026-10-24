@@ -1,0 +1,67 @@
+{
+  "issue": 410,
+  "release": "5.8.7",
+  "package_sha256": "d7cf59fb96f88ba714b88221405bf790b142cda44d29b6545e0e9e0214549a7f",
+  "package_members": 16850,
+  "all_source_bytes_verified": true,
+  "post_test_changes": {
+    "members": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "scope": "Required diagnostic release labels only; gameplay bytes unchanged."
+  },
+  "pass_assertions": 68,
+  "runs": [
+    {
+      "label": "core02",
+      "pass_assertions": 53,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "2b49d1d96faaa1b10c70c6d48d9eeca2df0c8b033a9ab9b1b8a6ed003514b52b"
+    },
+    {
+      "label": "commit01",
+      "pass_assertions": 3,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "58a3785a177025b9b96d0906432909605d233c40a197f116e68c13f9e3cd4653"
+    },
+    {
+      "label": "save01",
+      "pass_assertions": 1,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "7e3e79355ead98cf40065c8c29dd1343e17beaf9ed7183bbc56ed7e4d49ec94c"
+    },
+    {
+      "label": "load01",
+      "pass_assertions": 2,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "24c103dcec7b63cb80366eb89b415519fa7b3b2347a4e927e78972de325b3b4a"
+    },
+    {
+      "label": "hub01",
+      "pass_assertions": 6,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "72813d426f006bdec2d27c4feeaa2e27aea17848a4b93e8b87d80b9d48b137c6"
+    },
+    {
+      "label": "legacy-seed01",
+      "pass_assertions": 1,
+      "package_sha256": "83741418BC7EF2F18C6BFC709020AA284103033BB8ED78CB423CCA5B2006589F",
+      "log_sha256": "70435e266d83d73bacc60aba7d1aa3740a944a5bdfb991ee12fcb87575d39fe2"
+    },
+    {
+      "label": "legacy-load01",
+      "pass_assertions": 1,
+      "package_sha256": "D408AB54BDED6879AC9CB51FF7CE1D2B60048FC5D9378988CB1A17A20F582700",
+      "log_sha256": "7a89aac1e543a2f475160bb03b5bd485cb73282ccd85d1b6bf7176f38207eb41"
+    },
+    {
+      "label": "legacy-rollback01",
+      "pass_assertions": 1,
+      "package_sha256": "83741418BC7EF2F18C6BFC709020AA284103033BB8ED78CB423CCA5B2006589F",
+      "log_sha256": "3fa31b261d415c23c46a6569526768ab67dd99c4e9e9b326729e14c4bb4b78ce"
+    }
+  ],
+  "failed_probe": "core01: private fixture used the reserved identifier native; no production change required.",
+  "author_acceptance": "Deferred while author is away; no claim of food/cooking acceptance."
+}

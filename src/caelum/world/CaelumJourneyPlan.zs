@@ -125,10 +125,16 @@ class CaelumJourneyModel : Object play
     double ThermalExposure,ThermalToughness;
     CaelumAltitudeState Altitude;
     double AltitudeSecondsPerTic;
+    CaelumFoodIllness FoodIllness;
+    double FoodToughness;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
         Unlimited = useUnlimitedSupplies;
+        let foodRecord=user.GetPersistentCharacterState(false);
+        FoodIllness=foodRecord!=null && foodRecord.FoodIllness!=null
+            ? foodRecord.FoodIllness.Copy() : new('CaelumFoodIllness');
+        FoodIllness.Ensure();FoodToughness=user.Attributes.Toughness;
         let observedAltitude=CaelumAltitudeService.Update(user);
         Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;
         AltitudeSecondsPerTic=3600.0/CaelumWorldClock.TicsPerHour();
@@ -250,16 +256,21 @@ class CaelumJourneyModel : Object play
             DamageFraction += double(MaxHealth) / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS / TICRATE * critical;
             int damage = int(DamageFraction); DamageFraction -= damage; Health = Max(0, Health - damage);
         }
+        if(Health>0 && FoodIllness!=null)
+            Health=Max(0,Health-FoodIllness.Damage(1.0/TICRATE,MaxHealth,FoodToughness));
         if (Health <= 0) { ElapsedTics++; return; }
         double costs = Consumption / (comfort * comfort);
-        if (Health >= MaxHealth || Hunger <= 10 || Thirst <= 10 || Sleep <= 10) HealingFraction = 0;
+        double contamination=FoodIllness!=null ? FoodIllness.Contamination : 0;
+        if ((Health >= MaxHealth && contamination<=0) || Hunger <= 10 || Thirst <= 10 || Sleep <= 10) HealingFraction = 0;
         else
         {
             double foodCost = CaelumConstants.HEALTH_FULL_RECOVERY_HUNGER_COST * costs / MaxHealth, waterCost = CaelumConstants.HEALTH_FULL_RECOVERY_THIRST_COST * costs / MaxHealth;
             double affordable = Min(Hunger / foodCost, Thirst / waterCost);
             HealingFraction += Min(HealthRate * comfort, affordable);
-            int healing = Min(int(HealingFraction), Min(MaxHealth - Health, int(Floor(affordable))));
-            HealingFraction -= healing; Health += healing;
+            int needed=Max(MaxHealth-Health,int(Ceil(contamination*MaxHealth)));
+            int healing = Min(int(HealingFraction), Min(needed, int(Floor(affordable))));
+            HealingFraction -= healing; Health += Min(healing,Max(0,MaxHealth-Health));
+            if(FoodIllness!=null)FoodIllness.Depurate(healing,MaxHealth);
             Hunger = Max(0.0, Hunger - healing * foodCost); Thirst = Max(0.0, Thirst - healing * waterCost);
         }
         if (Air < MaxAir && MaxAir > 0)
@@ -437,6 +448,10 @@ class CaelumJourneyPlan : Inventory
         user.health = CaelumTutorialSafety.HealthAfter(user,model.Health); user.player.health = user.health;
         user.NaturalHealthRegenerationAccumulator = model.HealingFraction;
         user.SurvivalDamageAccumulator = model.DamageFraction;
+        // No prestar al personaje el objeto de una previsión que puede seguir
+        // referenciado por la interfaz o por un guardado de ese menú.
+        let foodRecord=user.GetPersistentCharacterState(false);
+        if(foodRecord!=null && model.FoodIllness!=null)foodRecord.FoodIllness=model.FoodIllness.Copy();
         if(ThermalForecast!=null)CaelumThermalService.CommitForecast(user,ThermalForecast.Result);
         double seconds = double(model.ElapsedTics) / TICRATE;
         user.IlluminationRemaining = Max(0.0, user.IlluminationRemaining - seconds);

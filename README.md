@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.6.** Obtain and update the complete repository, validate
+**Current release: 5.8.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
+
+Forecasts now preserve contamination, fractional damage and natural depuration,
+including its existing costs at full Life. Confirmed travel commits the same
+independent state. Native parity, save/hub and original-save rollback checks
+pass: 68 assertions in eight runs, documented in
+[validation_587](assets/validation_587/RESULTS.md). Actual food ageing, cooking
+and furniture integration remain pending. Author checks are deferred during the
+requested absence; V5.8 is not complete.
 
 ## 5.8.6 - Central property access (#411, in progress)
 
