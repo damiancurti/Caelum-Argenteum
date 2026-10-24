@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.6** — 2026-10-24.
+Documentation version: **5.8.7** — 2026-10-24.
+
+## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
+
+Forecasts now preserve contamination, fractional damage and natural depuration,
+including its existing costs at full Life. Confirmed travel commits the same
+independent state. Native parity, save/hub and original-save rollback checks
+pass: 68 assertions in eight runs, documented in
+[validation_587](../assets/validation_587/RESULTS.md). Actual food ageing, cooking
+and furniture integration remain pending. Author checks are deferred during the
+requested absence; V5.8 is not complete.
 
 ## 5.8.6 - Central property access (#411, in progress)
 

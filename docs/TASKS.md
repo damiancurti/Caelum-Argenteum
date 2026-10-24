@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.6** — 2026-10-24.
+Documentation version: **5.8.7** — 2026-10-24.
+
+## 5.8.7 / #410 - Forecast contamination integration
+
+Implemented shared disease arithmetic, independent forecast/commit records and
+potential depuration with exact native costs. 68 native PASS in eight runs,
+including original-save migration/rollback. Wait preview schema 6 regenerates
+old previews. Food inventories/environmental ageing, ingestion and cooking
+remain next dependencies; this does not complete #410, #412 or V5.8.
+No author terminal/questions during the requested absence.
 
 ## 5.8.6 / #411 - Central property access
 
