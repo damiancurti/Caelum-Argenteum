@@ -261,9 +261,9 @@ SHA-256: `84eead0d9ab8b69ed21453398080bce4258c0749570574e067653b2b6f1f85bc`
 - Lines 4013-4022 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
 - Lines 4023-4044 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
 
-## [HISTORY.md](HISTORY.md) - 235823 words
+## [HISTORY.md](HISTORY.md) - 235850 words
 
-SHA-256: `7e93200de63f477c1546c100c0f24467ccc41bb194f2976ad51c105e8edcdd8d`
+SHA-256: `fa1c7f387505003437e769de4303e52b44e15775152810bf15ed8d9f986847c7`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-8 - [5.8.5 - Regional event discovery (#415, in progress), 2026-10-24](HISTORY.md#585---regional-event-discovery-415-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
@@ -943,9 +943,9 @@ SHA-256: `c274d139e60da7e43f124b35eb72f2eb01908a1c4e088f1448a8e7d2028920ed`
 - Lines 4391-4590 - `Narrative source [part 11]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 - Lines 4591-4631 - `Narrative source [part 12]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 
-## [PROJECT.md](PROJECT.md) - 64043 words
+## [PROJECT.md](PROJECT.md) - 64049 words
 
-SHA-256: `48f98f1d3c6ebd93216a96e1bc37605105221dcf6dca1f13098ade026b289d79`
+SHA-256: `0906bc6acd38e5a2265ff5a30a50343c38069e178103cd3f540c2e3cc7d15ff6`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-8 - [5.8.5 - Regional event discovery (#415, in progress)](PROJECT.md#585---regional-event-discovery-415-in-progress) - context: Caelum Argenteum — Project, status and roadmap
@@ -1623,9 +1623,9 @@ SHA-256: `413d975ec06155f9b21c55e83f04f3cb13741f94cc1a8f828f94252746e3f197`
 - Lines 12689-12713 - [7. Integration with Mission Log](SYSTEMS.md#7-integration-with-mission-log) - context: Caelum Argenteum — Current systems and rules > Economy
 - Lines 12714-12742 - [Native dialogues and audio](SYSTEMS.md#native-dialogues-and-audio) - context: Caelum Argenteum — Current systems and rules
 
-## [TASKS.md](TASKS.md) - 26989 words
+## [TASKS.md](TASKS.md) - 26993 words
 
-SHA-256: `92f5a7a6af63fc62a2e697cf0c4b9737ccb927007e5644558742e6258f529131`
+SHA-256: `add5aae4d69e22a35aeacb3c1b415a91c89289869b9cf67babb18ccfdd44cea6`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-8 - [5.8.5 / #415 - Regional discovery](TASKS.md#585--415---regional-discovery) - context: TASKS.md — Active tasks
@@ -1852,6 +1852,6 @@ SHA-256: `92f5a7a6af63fc62a2e697cf0c4b9737ccb927007e5644558742e6258f529131`
 - Lines 3267-3279 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "84eead0d9ab8b69ed21453398080bce4258c0749570574e067653b2b6f1f85bc", "words": 34153}, {"path": "HISTORY.md", "sha256": "7e93200de63f477c1546c100c0f24467ccc41bb194f2976ad51c105e8edcdd8d", "words": 235823}, {"path": "KNOWN_PITFALLS.md", "sha256": "aac24e4118d65f342612047570ca217024e2063909f23942194fea4730365376", "words": 39292}, {"path": "MAP01.txt", "sha256": "c274d139e60da7e43f124b35eb72f2eb01908a1c4e088f1448a8e7d2028920ed", "words": 35580}, {"path": "PROJECT.md", "sha256": "48f98f1d3c6ebd93216a96e1bc37605105221dcf6dca1f13098ade026b289d79", "words": 64043}, {"path": "SYSTEMS.md", "sha256": "413d975ec06155f9b21c55e83f04f3cb13741f94cc1a8f828f94252746e3f197", "words": 124477}, {"path": "TASKS.md", "sha256": "92f5a7a6af63fc62a2e697cf0c4b9737ccb927007e5644558742e6258f529131", "words": 26989}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "84eead0d9ab8b69ed21453398080bce4258c0749570574e067653b2b6f1f85bc", "words": 34153}, {"path": "HISTORY.md", "sha256": "fa1c7f387505003437e769de4303e52b44e15775152810bf15ed8d9f986847c7", "words": 235850}, {"path": "KNOWN_PITFALLS.md", "sha256": "aac24e4118d65f342612047570ca217024e2063909f23942194fea4730365376", "words": 39292}, {"path": "MAP01.txt", "sha256": "c274d139e60da7e43f124b35eb72f2eb01908a1c4e088f1448a8e7d2028920ed", "words": 35580}, {"path": "PROJECT.md", "sha256": "0906bc6acd38e5a2265ff5a30a50343c38069e178103cd3f540c2e3cc7d15ff6", "words": 64049}, {"path": "SYSTEMS.md", "sha256": "413d975ec06155f9b21c55e83f04f3cb13741f94cc1a8f828f94252746e3f197", "words": 124477}, {"path": "TASKS.md", "sha256": "add5aae4d69e22a35aeacb3c1b415a91c89289869b9cf67babb18ccfdd44cea6", "words": 26993}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

@@ -10,7 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 
 ## 5.8.5 - Regional event discovery (#415, in progress)
 
-Scheduled outcomes now remain authoritative while remote results wait for discovery in their region. The calendar and quest journal preserve what the character knows; returning reveals outcomes once. This production step does not complete unloaded siege simulation or the remaining V5.8 work. Evidence and limitations: `assets/validation_585/RESULTS.md`.
+Scheduled outcomes now remain authoritative while remote results wait for discovery in their region. The calendar and quest journal preserve what the character knows; returning reveals outcomes once. This production step does not complete unloaded siege simulation or the remaining V5.8 work. CA415-DISCOVERY-01 was fully accepted on 2026-10-24. Evidence and limitations: `assets/validation_585/RESULTS.md`.
 
 ## 5.8.4 - Second map soundtrack (#496)
 

@@ -48,8 +48,7 @@ restoring required line endings. The temporary autostash remains preserved.
 
 ## Author acceptance
 
-**CA415-DISCOVERY-01 pending.** Run `prepare.py`, build the package and open
-`author_terminal.ps1`. F1 visits the event region, F2 returns, F3 prints actual/
-known/notice counts. Inspect the Calendar before and after travel and save/load.
-The author has not yet accepted this production step. Battle simulation is
-explicitly outside this manual check and remains open under #415.
+**CA415-DISCOVERY-01 fully accepted on 2026-10-24** (origin 5.8.5/#415).
+The author explicitly confirmed all checks in both supplied terminals passed,
+without qualifications. The tested runtime/package remain unchanged.
+Battle simulation is outside this manual check and remains open under #415.

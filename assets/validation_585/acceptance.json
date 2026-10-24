@@ -1,0 +1,8 @@
+{
+  "test_id": "CA415-DISCOVERY-01",
+  "origin_version": "5.8.5",
+  "issue": 415,
+  "date": "2026-10-24",
+  "result": "CA415-DISCOVERY-01 fully accepted 2026-10-24, without qualifications; unloaded siege simulation remains pending.",
+  "qualifications": []
+}

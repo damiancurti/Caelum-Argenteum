@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.5** — 2026-10-24.
 
-**5.8.5/#415:** actual/known schedule counts, regional disclosure, quest projection, stable due order; unloaded battles/theft still WIP. validation_585;39PASS;CA415-DISCOVERY-01pending.
+**5.8.5/#415:** actual/known schedule counts, regional disclosure, quest projection, stable due order; unloaded battles/theft still WIP. validation_585;39PASS;CA415-DISCOVERY-01accepted2026-10-24.
 
 **5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.
 

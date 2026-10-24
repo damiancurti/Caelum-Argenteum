@@ -14,8 +14,3 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
-
-CA415-DISCOVERY-01 | 5.8.5 | #415 | Pending author acceptance
-Prerequisites: issue415 branch/package; assets/validation_585/prepare.py and author_terminal.ps1; no other GZDoom session. This checks regional discovery, not unloaded battle simulation.
-Steps: start private room; inspect Calendar and F3 before traveling. F1 visits event region; F2 returns. Repeat F1/F2 and save/load.
-Expected: remote actual outcome=1 but known=0 and no notice initially; arrival reveals known=1 with one notice. Repeated return/load never repeats the notice or outcome. Calendar confirms only observed results.

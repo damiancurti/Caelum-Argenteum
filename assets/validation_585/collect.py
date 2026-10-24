@@ -42,7 +42,7 @@ def main():
         'package_sha256':digest(package),'original_save_sha256':digest(WORK/'ca415-original.zds'),
         'maximum_2048_record_sort_ms':float(re.search(r'queue sort ms=([0-9.]+)',core)[1]),
         'performance_limit':'Single native sorting sample; not frame presentation, percentile tails or FPS acceptance.',
-        'author_acceptance':'Pending CA415-DISCOVERY-01'}
+        'author_acceptance':json.loads((ROOT/'assets/validation_585/acceptance.json').read_text(encoding='utf-8'))['result']}
     (EVIDENCE/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2))
 
