@@ -1453,7 +1453,7 @@ class CaelumJournalOverlay : EventHandler
                         localPlayer.HUDHasEquippedSeal ? localPlayer.HUDEquippedSealType : -1,element)) * 100));
         for (int resource = 0; resource < 3; resource++)
         {
-            double y = 132 + resource * 43;
+            double y = 132 + resource * 34;
             int state = CaelumSurvivalView.State(localPlayer, resource);
             DrawTexture(CaelumSurvivalView.Icon(resource), 407, y, 18, 18);
             DrawTextLine(SmallFont, Font.CR_WHITE, 428, y,
@@ -1464,16 +1464,25 @@ class CaelumJournalOverlay : EventHandler
             CaelumSurvivalView.Bar(CaelumSurvivalView.Value(localPlayer, resource), state,
                 428, y + 26, 146, CaelumSurvivalView.BaseColor(resource));
         }
-        DrawTexture(CaelumSurvivalView.Icon(3), 407, 261, 18, 18);
+        DrawTexture(CaelumSurvivalView.Icon(4),407,234,18,18);
+        double contamination=CaelumFoodIllness.Value(localPlayer);
+        DrawTextLine(SmallFont,Font.CR_WHITE,428,234,
+            String.Format("%s: %.1f",StringTable.Localize("CA_HUD_CONTAMINATION",false),contamination));
+        DrawTextLine(SmallFont,CaelumSurvivalView.ContaminationColor(localPlayer),428,246,
+            StringTable.Localize(CaelumSurvivalView.ContaminationStateKey(localPlayer),false));
+        CaelumSurvivalView.Bar(contamination,
+            contamination>CaelumFoodData.ILLNESS_THRESHOLD ? CaelumConstants.SURVIVAL_STATE_CRITICAL : CaelumConstants.SURVIVAL_STATE_NORMAL,
+            428,260,146,0x9F9456);
+        DrawTexture(CaelumSurvivalView.Icon(3), 407, 272, 18, 18);
         String thermalLine; int thermalColor, thermalTint;
         [thermalLine, thermalColor, thermalTint] = CaelumSurvivalView.ThermalLabel(localPlayer);
         let lines = SmallFont.BreakLines(thermalLine, 146);
         for (int line = 0; line < lines.Count(); line++)
-            Screen.DrawText(SmallFont, thermalColor, 428, 261 + line * 12, lines.StringAt(line),
+            Screen.DrawText(SmallFont, thermalColor, 428, 272 + line * 12, lines.StringAt(line),
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true, DTA_COLOR, thermalTint);
         lines.Destroy();
-        CaelumSurvivalView.ThermalBar(localPlayer, 428, 292, 146);
+        CaelumSurvivalView.ThermalBar(localPlayer, 428, 300, 146);
     }
 
     ui void DrawCharacterChance(String key, double y, bool applies, double chance)

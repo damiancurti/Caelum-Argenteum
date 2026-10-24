@@ -543,7 +543,7 @@ class CaelumPlayerResources : Object play
         if (user.player == null
             || user.player.playerstate != PST_LIVE
             || user.health <= 0
-            || user.health >= user.CaelumMaximumHealth
+            || (user.health >= user.CaelumMaximumHealth && CaelumFoodIllness.Value(user)<=0)
             || user.DerivedStats == null)
         {
             user.NaturalHealthRegenerationAccumulator = 0.0;
@@ -579,14 +579,19 @@ class CaelumPlayerResources : Object play
             affordableHealth
         );
         int wholeHealing = int(user.NaturalHealthRegenerationAccumulator);
-        wholeHealing = Min(wholeHealing, Min(user.CaelumMaximumHealth - user.health, int(Floor(affordableHealth))));
+        // El mismo esfuerzo cura y depura. Con vida llena aún debe pagar
+        // alimentos/agua; sin contaminación se conserva el límite anterior.
+        int needed=Max(user.CaelumMaximumHealth-user.health,
+            int(Ceil(CaelumFoodIllness.Value(user)*user.CaelumMaximumHealth)));
+        wholeHealing = Min(wholeHealing, Min(needed, int(Floor(affordableHealth))));
         if (wholeHealing <= 0) return;
 
         user.NaturalHealthRegenerationAccumulator -= wholeHealing;
-        user.health += wholeHealing;
+        user.health += Min(wholeHealing,Max(0,user.CaelumMaximumHealth-user.health));
         user.player.health = user.health;
         user.CurrentHunger = Max(0.0, user.CurrentHunger - wholeHealing * hungerCostPerHealth);
         user.CurrentThirst = Max(0.0, user.CurrentThirst - wholeHealing * thirstCostPerHealth);
+        if(CaelumFoodIllness.Value(user)>0)CaelumFoodIllness.Recover(user,wholeHealing);
         user.UpdateSurvivalStates();
     }
 

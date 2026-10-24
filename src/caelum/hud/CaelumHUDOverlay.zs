@@ -698,7 +698,7 @@ class CaelumHUDOverlay : EventHandler
         let thermal=record!=null ? record.ThermalState : null;
         int row=0;
         double width=36;
-        for(int resource=0;resource<4;resource++)
+        for(int resource=0;resource<5;resource++)
         {
             String label; int textColor, tint=0xFFFFFFFF;
             if(resource<3)
@@ -708,12 +708,19 @@ class CaelumHUDOverlay : EventHandler
                 label=StringTable.Localize(CaelumSurvivalView.StateKey(resource,state),false);
                 textColor=CaelumSurvivalView.TextColor(state);
             }
-            else
+            else if(resource==3)
             {
                 if(thermal==null || thermal.Severity<=0)continue;
                 label=StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false);
                 textColor=Font.CR_WHITE;
                 tint=0xFF000000|CaelumThermalHUD.ExposureColor(thermal.Exposure,thermal.Toughness);
+            }
+            else
+            {
+                if(CaelumFoodIllness.Value(user)<=CaelumFoodData.ILLNESS_THRESHOLD)continue;
+                label=StringTable.Localize("CA_HUD_CONTAMINATION",false)..": "
+                    ..String.Format("%.1f",CaelumFoodIllness.Value(user));
+                textColor=CaelumSurvivalView.ContaminationColor(user);
             }
             double y=16+row*40;
             width=Max(width,36+HUDFont.StringWidth(label));

@@ -14,3 +14,20 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
+
+CA410-CORE-01 | Origin: 5.8.3 / #410 | PENDING
+Prerequisites: issue410 worktree, prepared assets/validation_583 fixture and
+current full package, GZDoom 4.14.2. Close other game instances first.
+Open assets/validation_583/author_terminal.ps1 and select 1.
+1. In Character (F5), inspect the contamination icon, value and bar. Hunger,
+   Hydration, Sleep and thermal exposure must remain legible and separate.
+2. Close the menu; F1 sets 1,000 Life, contamination 60, Toughness 0 and no
+   regeneration. Expect 10 Life lost per second; F4 reports exact values.
+3. F2 sets Toughness 100: damage stops without erasing contamination.
+4. F3 sets full Life, contamination 0.5 and accelerated diagnostic regeneration.
+   The half-degree clears in about one second, consuming Hunger/Hydration;
+   Life must not exceed maximum. These rates are private test aids only.
+5. F1 then F2; save/reload through Escape. Contamination remains; terminal
+   option 2 loads that private save without resetting its values.
+Expected: readable HUD, progressive resisted damage, full-Life depuration and
+save continuity. This does not test food lots/recipes/furniture, still in progress.

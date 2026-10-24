@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## 5.8.3 - Food/furniture work in progress (#410)
+
+The first slice implements the character's contamination state, approved numeric
+food/illness rules, full-Life natural depuration and survival HUD. Isolated core
+and save/load/migration/hub checks pass: 40 assertions in nine focused runs.
+Author visual/interaction review is separate.
+Food lots, ingestion, cooking/acquisition and the approved furniture catalogue
+remain in progress. The complete approved food contract is in SYSTEMS;
+validation_583 records current evidence and the bounded manual check.
+This does not complete #410 or V5.8 and does not authorize merges.
 
 ## 5.8.2 - Mansion connected water (#414)
 

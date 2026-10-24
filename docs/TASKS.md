@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## #410 / 5.8.3 - Food and furniture in progress
+
+Core contamination/illness/depuration/HUD is implemented. Complete lot identity
+and age preservation across pickup, split, storage, Box, trade and crafting;
+shared environment history for loaded/unloaded storage; approved fresh legacy
+migration; ration/raw/dish consumption; four recipes and market integration.
+Then finish the furniture catalogue, desk access and kitchen/sink placement
+without blocking the mansion secret route. Approved values are in SYSTEMS.
+No actual food ingestion currently calls the new illness entry point.
+CA410-CORE-01 covers only the private resource/HUD stage; it cannot accept
+unimplemented food spoilage, cooking or furniture.
 
 ## #414 / 5.8.2 - Production connected water
 

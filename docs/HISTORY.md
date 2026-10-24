@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
+
+Recorded the author's food deterioration, mass-relative dose, illness, nutrition,
+recipe, fuel/time and economy decisions in SYSTEMS. Implemented the persistent
+revision-1 illness resource, Toughness-clamped damage and natural-regeneration
+depuration, including potential recovery at full Life with existing costs.
+The first native trial caught a binary-rounding delay of one Life; the final
+accumulator uses the existing status-pulse tolerance. Core and save/load checks
+pass: 40 assertions across nine core/live/save/hub/migration/rollback runs;
+validation_583 retains failures and evidence. Added a generated silver
+skull/withered-leaf icon and survival bar, following SPRITE_ART_DIRECTION.
+CA410-CORE-01 is pending author review. Food-lot ageing, actual ingestion,
+cooking, acquisition and furniture remain unimplemented; this is an ongoing
+issue branch, not completion of #410 or V5.8.
 
 ## 5.8.2 - Mansion connected water (#414), 2026-10-24
 
