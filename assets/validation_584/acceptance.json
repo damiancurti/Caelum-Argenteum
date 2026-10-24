@@ -1,0 +1,8 @@
+{
+  "test_id": "CA496-MUSIC-01",
+  "origin_version": "5.8.4",
+  "issue": 496,
+  "date": "2026-10-24",
+  "result": "CA496-MUSIC-01 fully accepted 2026-10-24; author confirmed all terminal checks passed, without qualifications.",
+  "qualifications": []
+}

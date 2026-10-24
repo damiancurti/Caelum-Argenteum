@@ -32,10 +32,11 @@ production gameplay defect or music decoding failure was observed.
 
 ## Author check
 
-CA496-MUSIC-01 remains pending. `author_terminal.ps1` opens the listening room;
-F1/F2 select tracks and F3 restarts. Confirm audible quality, complete playback
-and end/repeat transitions. Automatic decoding and native starts do not establish
-author listening acceptance. No performance/FPS claim is made.
+CA496-MUSIC-01 (5.8.4/#496) was fully accepted by the author on 2026-10-24,
+when he explicitly confirmed all checks in both supplied terminals passed.
+No qualifications were supplied. The tested assets/package remain unchanged.
+This is explicit listening acceptance, separate from automated evidence.
+No performance/FPS claim is made.
 
 Rebuild with `build_dev.ps1`, then run `prepare.py`. The soundtrack preparation
 script accepts the explicitly fingerprinted FFmpeg executable. `collect.py`

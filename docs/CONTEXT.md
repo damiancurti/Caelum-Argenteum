@@ -4,7 +4,7 @@ Documentation version: **5.8.5** — 2026-10-24.
 
 **5.8.5/#415:** actual/known schedule counts, regional disclosure, quest projection, stable due order; unloaded battles/theft still WIP. validation_585;39PASS;CA415-DISCOVERY-01pending.
 
-**5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01 pending. Gameplay #410-417 continues separately.
+**5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.
 
 **5.8.3/#410:** core/HUD+isolated-lot-model;inventory/cooking/furniture-WIP. SYSTEMS/validation_583;40+38PASS;CA410-CORE-01accepted2026-10-24.
 **5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.

@@ -37,7 +37,7 @@ def main():
         'package_sha256':digest(package),'total_seconds':sum(t['duration_seconds'] for t in provenance['tracks']),
         'source_bytes':sum(t['source_bytes'] for t in provenance['tracks']),
         'runtime_bytes':sum(t['runtime_bytes'] for t in provenance['tracks']),
-        'author_acceptance':'Pending CA496-MUSIC-01; automatic start/decode does not establish listening acceptance.'}
+        'author_acceptance':json.loads((ROOT/'assets/validation_584/acceptance.json').read_text(encoding='utf-8'))['result']}
     (ROOT/'assets/validation_584/report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2))
 

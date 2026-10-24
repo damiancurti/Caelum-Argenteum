@@ -15,11 +15,6 @@ no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
 
-CA496-MUSIC-01 | 5.8.4 | #496 | Pending author listening
-Prerequisites: build the issue496 branch; run assets/validation_584/prepare.py and author_terminal.ps1. No other GZDoom session may be open.
-Steps: choose 1; F1/F2 move through all 19 tracks, F3 restarts. Confirm each title/destination against the displayed catalogue; listen for unexpected cuts/distortion and let a track finish/repeat.
-Expected: all tracks play in full, cycle/repeat and retain their supplied destination. Existing campaign map music is unchanged. Automatic native playback is not manual acceptance.
-
 CA415-DISCOVERY-01 | 5.8.5 | #415 | Pending author acceptance
 Prerequisites: issue415 branch/package; assets/validation_585/prepare.py and author_terminal.ps1; no other GZDoom session. This checks regional discovery, not unloaded battle simulation.
 Steps: start private room; inspect Calendar and F3 before traveling. F1 visits event region; F2 returns. Repeat F1/F2 and save/load.
