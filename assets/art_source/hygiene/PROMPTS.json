@@ -1,0 +1,32 @@
+{
+  "issue": 502,
+  "method": "Built-in image_gen; original painted sources, no external artwork.",
+  "brief": "docs/SPRITE_ART_DIRECTION.md: Style and setting; sprite continuity. Mechanical crop/resize only; original alpha and artwork retained.",
+  "author_acceptance": "Pending native inventory integration/review",
+  "assets": [
+    {
+      "name": "soap",
+      "prompt": "Use case: game-asset. Create one original inventory sprite for Caelum Argenteum, a dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a single handmade laundry soap bar made of animal fat, pale warm ivory/beige, roughly cut rectangular block with gently uneven edges, faint knife marks and a small dry crack. Unwrapped, no logo, no lettering. Painted pixel-oriented old-school game sprite, bold readable silhouette, modest hand-painted shading and material texture, soft light from upper left, restrained earth palette. Three-quarter view slightly from above, centered, isolated, fills most of the square with safe margins. Must read clearly after scaling to a 128px inventory icon. No glossy 3D-render look, no photographic realism, no black outlines, no bubbles, no hands, no floor or scene, no decorative accessories, no watermark. Actual transparent alpha background.",
+      "generated_source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-7722a113-f2af-4323-8b8f-7199ad901b7b.png",
+      "source": "soap-source-v1.png"
+    },
+    {
+      "name": "cloth",
+      "prompt": "Use case: game-asset. One original inventory sprite for Caelum Argenteum, dark fantasy RPG inspired by nineteenth-century Argentina. Subject: one reusable equipment cleaning rag made of faded unbleached cotton cloth, folded loosely twice, with one hanging corner and slightly frayed edges. Warm grey-beige cloth with sparse visible coarse weave, clean but worn, no pattern, no blood or stains. Painterly pixel-oriented classic game sprite, broad readable silhouette and restrained material shading for 128px inventory display. Three-quarter view from slightly above, centered, full object, generous transparent margins. Soft consistent upper-left light, muted earthy palette. No photorealism, no glossy 3D rendering, no cartoon outline, no symbols, no text, no hands, no extra objects or background. Actual transparent alpha background.",
+      "generated_source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-14f14522-c0f5-4952-b4c5-9476d716cc80.png",
+      "source": "cloth-source-v1.png"
+    },
+    {
+      "name": "fat",
+      "prompt": "Use case: game-asset. One original inventory sprite for Caelum Argenteum, dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a single small irregular piece of raw animal fat (beef suet), ivory cream lobes with a few restrained pale pink connective seams, placed alone without packaging. Clearly organic uneven lobed form, distinct from rectangular finished soap. Hand-painted pixel-oriented classic game item illustration, coarse readable brush planes and matte subtle shading, good silhouette at 128px inventory scale. Slightly elevated three-quarter view, centered, full item with ample safe margins. Soft upper-left light, muted cream and warm-grey palette. No gore, blood, butcher knife, board, container, labels, text, shadows on ground, scenery or extra objects. No glossy 3D-render look or photograph. Actual transparent alpha background.",
+      "generated_source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-7844c3f9-26b9-4380-9be1-57b969297e73.png",
+      "source": "fat-source-v1.png"
+    },
+    {
+      "name": "soda",
+      "prompt": "Use case: game-asset. One original inventory sprite for Caelum Argenteum, dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a modest small apothecary stoneware jar for caustic soda, warm dark-brown glazed pottery with broad mouth and a few visible off-white irregular alkali flakes inside, plain unmarked vessel. One jar only, no separate lid or additional items. Painted pixel-oriented classic game item illustration with broad brush-defined planes, soft matte highlights, a strong readable silhouette and visible pale contents at 128px. Slightly elevated three-quarter view, centered full object with generous transparent margins. Upper-left soft light, subdued earth palette. No modern plastic, no hazard pictograms or text or branding, no stylized magical decoration, no photographic look, no glossy 3D rendering, no floor or scenery or ground shadow. Actual transparent alpha background.",
+      "generated_source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-be2763a6-139d-4b9f-9d85-1ea9df3c5c9f.png",
+      "source": "soda-source-v1.png"
+    }
+  ]
+}

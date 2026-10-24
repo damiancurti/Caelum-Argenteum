@@ -2,6 +2,22 @@
 
 Documentation version: **5.8.9** — 2026-10-24.
 
+## 5.8.9 - Hygiene item artwork (#502, in progress)
+
+Four original painted alpha sources were generated with built-in image_gen:
+animal fat, a plain stoneware alkali jar, handmade soap and a reusable cotton
+rag. The brief follows SPRITE_ART_DIRECTION's restrained nineteenth-century
+materials and painted inventory style. Full prompts, generated provenance and
+saved source paths are in assets/art_source/hygiene/PROMPTS.json. No external
+art or existing accepted sprite was replaced.
+
+export_hygiene_icons.py performs only alpha-bound cropping and proportional
+128-pixel export. All four previews were inspected at actual inventory size;
+repeated exports produced identical source/output hashes in EXPORT.json.
+Sources and previews remain under assets until item integration. Native
+registration, item acquisition and author visual acceptance are still pending;
+the severe-illness fixture does not display or accept these new items.
+
 ## 5.8.8 - Deployed tent artwork (#411, in progress)
 
 The deterministic `generate_camp_tent.py` builds an original A-frame OBJ from

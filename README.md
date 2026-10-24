@@ -24,6 +24,8 @@ assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
 Approved environmental/contact and cleaning calculations are shared helpers;
 actor/equipment exposure, soap acquisition, bathing and repair/sleep cleaning
 are not integrated in this slice. The expanded issue and V5.8 remain open.
+Four painted hygiene item sources/previews are prepared in
+`assets/art_source/hygiene`; runtime registration and author review are pending.
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

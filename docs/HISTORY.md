@@ -16,6 +16,13 @@ pending as CA502-SEVERE-01. Contact integration and hygiene remain unfinished.
 README reviewed. No art, campaign geometry or existing accepted camp behavior
 is changed by #502.
 
+Artwork continuation: generated four original painted alpha sources for fat,
+soda, soap and reusable cloth; retained full prompts/provenance under
+assets/art_source/hygiene. Mechanically exported and inspected their 128-pixel
+previews, with identical repeated hashes. This prepares artwork only: runtime
+registration and author inventory review remain pending. No accepted artwork
+was replaced. The first severe-illness test package remains unchanged.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Added local full-volume/support/access validation to actual chest placement,
