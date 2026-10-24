@@ -2,8 +2,9 @@
 
 The approved mansion installation is implemented. **171 native assertions in
 11 focused runs pass**, including repeated numerical partitions; this is not
-171 distinct gameplay behaviors. Author checks **CA414-01** and the earlier
-**CA414-PROTOTYPE-01** remain pending. No merge or completed V5.8 is claimed.
+171 distinct gameplay behaviors. **CA414-01 passed all author terminal checks
+on 2026-10-24**, without qualifications. The earlier isolated
+**CA414-PROTOTYPE-01** remains pending. No merge or completed V5.8 is claimed.
 
 ## Identity and coverage
 
@@ -41,7 +42,7 @@ zero metadata. Geometry source/report: assets/map01_mansion/CONNECTED_WATER.json
 
 Native step checks query TryMove along both stairs and raise the diagnostic
 pawn to its reported floor. They establish collision clearance; actual walking,
-appearance and usability remain author checks. [Final view](mansion-water.png)
+appearance and usability were separately accepted by the author under CA414-01. [Final view](mansion-water.png)
 shows the reused lever face and both basins. No new artwork was generated.
 
 ## Performance and scan review

@@ -4384,7 +4384,7 @@ of geometry checksums as well as the WAD: the authored room catalogue needed
 both old and new checksums because this exterior-only edit preserves all room
 IDs and bounds. Do not enable an old catalogue without that coordinate audit.
 Native room-discovery/compatibility evidence: assets/validation_582/RESULTS.md.
-Author acceptance CA414-01 remains pending.
+Author acceptance CA414-01 passed all terminal checks on 2026-10-24.
 
 ## CA-KP-009 â€” MODELDEF slots overlay state meshes
 

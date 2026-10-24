@@ -17,7 +17,8 @@ New campaigns use the installation. For campaigns that already visited the
 previous mansion, use `run_dev.bat --legacy-map01` (or `build_dev.ps1 -LegacyMap01`)
 to retain its exact geometry with current code; this is compatibility, not a
 conversion to the new mansion. Keep original saves and their original package.
-Author checks CA414-01 and the earlier CA414-PROTOTYPE-01 remain pending.
+CA414-01 passed all author checks on 2026-10-24. The earlier isolated
+CA414-PROTOTYPE-01 remains pending independently.
 Evidence and the interactive terminal: [validation_582](assets/validation_582/RESULTS.md).
 
 5.8.1 implements altitude and persistent acclimatization (#413). Relative

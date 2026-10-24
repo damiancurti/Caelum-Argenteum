@@ -6,9 +6,10 @@ Documentation version: **5.8.2** — 2026-10-24.
 
 Implemented the approved installation, source quality, finite volume, gate,
 calendar catch-up, persistence and explicit old-mansion compatibility. Retain
-CA414-01 and CA414-PROTOTYPE-01 until author confirmation. Native/static evidence
+CA414-PROTOTYPE-01 until explicit confirmation of that isolated stage.
+CA414-01 passed all terminal checks on 2026-10-24. Native/static evidence
 is in validation_582/RESULTS.md; author terminal is in the same directory.
-Keep #414 open until its outstanding review is completed. Other V5.8 issues
+Keep #414 open while the earlier isolated-stage review remains outstanding. Other V5.8 issues
 remain independent; no merge is authorized by these tests.
 
 ## #413 / 5.8.1 - Altitude and acclimatization

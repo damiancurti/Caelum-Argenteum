@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.2** — 2026-10-24.
 
-**5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 pending.
+**5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
 **5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01 pending;production integration5.8.2;calibration:SYSTEMS.
 

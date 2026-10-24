@@ -18,9 +18,12 @@ assets/validation_582/RESULTS.md: 171 assertions in 11 focused native runs,
 plus original-save/rollback controls. Both full packages match their sources;
 project validation passes. Render callbacks were measured, but PresentMon ETW
 access was denied, so presentation/FPS acceptance is not claimed.
-CA414-01 is pending author review; the earlier
-CA414-PROTOTYPE-01 remains pending independently. No author acceptance, merge,
-closed issue or completed V5.8 is claimed.
+CA414-01 (origin 5.8.2 / #414) passed author acceptance on 2026-10-24: the author
+confirmed all checks from the supplied terminal, without qualifications. This
+includes lever/levels, service steps, finite bottle collection, original pool and
+save/reload. Removed only this confirmed entry from pending_test.txt. The earlier
+CA414-PROTOTYPE-01 remains pending independently. No merge, closed issue or
+completed V5.8 is claimed.
 
 ## 5.8.1 - Altitude and acclimatization (#413), 2026-10-23
 
