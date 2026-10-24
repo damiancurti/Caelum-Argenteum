@@ -9,7 +9,8 @@ retention, racial tolerance, shared Air costs/recovery and numerical forecasts.
 67 native assertions pass, including old-save migration/rollback and saved
 player/NPC hub state. The final package matches all 16,809 src entries. Eight
 matched timing windows retain the measured limits in validation_581/RESULTS.md.
-Only author review CA413-01 remains for this approved delivery.
+CA413-01 passed author review on 2026-10-23; no author checks remain for #413.
+PR #493 is ready for review; integration remains separate from acceptance.
 No unspecified underwater ability or Tarot effect is activated. Future mountain
 route profiles belong to #416; current route reference behavior is in SYSTEMS.
 

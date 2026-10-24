@@ -17,7 +17,13 @@ player/NPC persistence and hub return. The complete final build matches all
 Eight matched timing windows preserve census/callback tails; PresentMon was
 blocked by Windows ETW access, so no presentation/FPS acceptance is claimed.
 The author-reported stale MAPINFO registration failure was corrected by the
-complete rebuild. CA413-01 awaits author acceptance. Technical evidence: assets/validation_581/RESULTS.md.
+complete rebuild. Technical evidence: assets/validation_581/RESULTS.md.
+
+CA413-01 (origin 5.8.1 / #413) passed author acceptance on 2026-10-23.
+The author confirmed the handed-off altitude, adaptation, racial and save/load
+check without qualifications. Its pending entry is removed; runtime and version
+remain unchanged. This acceptance does not include CA414-PROTOTYPE-01 or
+application-presentation/FPS measurement, and does not imply a V5.8 merge.
 
 ## 5.8.0 - Connected-water feasibility (#414), 2026-10-23
 

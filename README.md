@@ -14,7 +14,7 @@ atmospheric pressure modifies Air recovery and exertion for characters and NPCs;
 Caelith halve the penalty and Resilience accelerates the approved adaptation.
 Wait/travel forecasts share the model. Limbo remains atmospherically neutral.
 67 native assertions, old-save rollback and player/NPC save/hub checks pass.
-Author review CA413-01 is pending; see
+CA413-01 passed author review on 2026-10-23; see
 [evidence](assets/validation_581/RESULTS.md). Other V5.8 issues remain open.
 
 5.8.0 begins #414 with an isolated native connected-water feasibility test.

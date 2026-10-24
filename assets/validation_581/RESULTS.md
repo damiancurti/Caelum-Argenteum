@@ -5,7 +5,9 @@ focused runs: the 47-assertion behavior suite, four pre-feature migration checks
 two saved player/NPC seed checks, four reload checks and ten hub checks. Two
 baseline controls confirm creation and rollback of the preserved original save.
 Static validation passes. All **16,809** final PK3 entries equal src byte for byte.
-Author acceptance **CA413-01 remains pending**; no V5.8 completion is claimed.
+**CA413-01 passed author acceptance on 2026-10-23**, without qualifications.
+The author confirmed the handed-off altitude/adaptation/race/save check. This
+does not accept #414, establish presentation/FPS results or complete V5.8.
 
 ## Scope and source identity
 
@@ -87,7 +89,8 @@ the delivery gate. Test-only addon filenames must also match native save headers
 3. Use `assets/validation_581/run_native.ps1 -Label a-unique-label -Checks -Script suite`
    in a PowerShell process with its normal per-process execution-policy bypass.
 4. For author review run `assets/validation_581/author_terminal.ps1`; follow
-   CA413-01 in the single root pending_test.txt. The visible terminal stays open.
+   the accepted CA413-01 controls printed by the script. The visible terminal
+   stays open; the confirmation is recorded in docs/HISTORY.md.
 
 Never overlap native runs or replace a package in use. Baseline migration needs
 the exact base package and private legacy fixture; original saves remain private.

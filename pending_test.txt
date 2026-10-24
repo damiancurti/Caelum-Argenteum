@@ -14,21 +14,3 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
-
-CA413-01 | Origin: 5.8.1 / #413 | PENDING
-Prerequisites: focused issue413 worktree, GZDoom 4.14.2 and prepared private
-package/fixtures. Close any other GZDoom session first. Launch
-assets/validation_581/author_terminal.ps1 and select 1; never load campaign saves.
-1. F1 selects sea level, F2 2,000 m, F3 4,000 m. F5 refills Air and spends a
-   fixed 100-point base effort. F6 prints height, pressure, recovery, effort,
-   adaptation and race. Cost rises and recovery slows as altitude increases.
-2. At 4,000 m, F4 advances five game days of exposure. The penalty shrinks by
-   25% without disappearing. This diagnostic character begins at Resilience 0.
-3. F7 alternates human/Caelith. Caelith halve the remaining altitude penalties.
-   F1 restores neutral recovery/effort (1) irrespective of retained adaptation.
-4. Save at altitude with Escape. Return through terminal option 2 and verify
-   height, race, adaptation and factors remain coherent instead of resetting.
-Expected: no crash, consistent Air effects and saved adaptation. Close the
-console to move and observe recovery; F6/report output is in the console.
-F4/race/altitude controls are fixture-only. Current campaign maps remain coastal
-and the Limbo mansion has neutral atmosphere. This check does not accept #414.

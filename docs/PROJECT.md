@@ -9,7 +9,8 @@ Resilience-scaled adaptation. Players, NPCs and wait/travel projections share
 the same rules; underwater deprivation remains separate. Coastal references
 start at zero and Limbo is neutral. Additive revision-1 state avoids geometry or
 inventory migration. 67 native assertions and static/package checks pass; player/NPC saves, hub
-return and pre-feature rollback are verified. Author acceptance CA413-01 is pending. Evidence: assets/validation_581/RESULTS.md. This does not complete V5.8.
+return and pre-feature rollback are verified. CA413-01 passed author acceptance
+on 2026-10-23. Evidence: assets/validation_581/RESULTS.md. This does not complete V5.8.
 
 ## 5.8.0 - Connected-water feasibility (#414)
 

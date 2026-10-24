@@ -86,7 +86,7 @@ def main():
         "ui_callback_timing": timings,
         "presentation": {"status": "unavailable", "reason": "PresentMon ETW access denied by Windows; no frame presentation/GPU claim"},
         "diagnostic_failures": diagnostics,
-        "author_acceptance": "CA413-01 pending",
+        "author_acceptance": "CA413-01 passed author acceptance 2026-10-23, without qualifications",
         "limits": ["UI callbacks are not application presents or GPU timing.",
                    "Fixed scenes are not whole-map or siege performance acceptance.",
                    "Save/hub checks precede a source-comment-only correction; final suite and timing use the complete final rebuild.",
