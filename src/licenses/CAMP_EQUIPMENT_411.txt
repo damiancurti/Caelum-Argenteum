@@ -1,0 +1,8 @@
+Caelum Argenteum - camp equipment inventory artwork (#411)
+Project author: Damian Curti.
+Tent and iron-pot sources generated for this project with OpenAI image_gen,
+2026-10-24, following docs/SPRITE_ART_DIRECTION.md. No external reference images
+or Doom assets were used. Prompts and unchanged generated sources are retained
+in assets/art_source/camp_equipment. Runtime RGBA exports are deterministically
+cropped/resized by export_camp_icons.py; see EXPORT.json and VALIDATION.json.
+No additional public redistribution license is inferred.

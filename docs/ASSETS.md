@@ -6,6 +6,15 @@ Documentation version: **5.8.6** — 2026-10-24.
 
 Reuses existing houses, furnishings, doors and menu artwork; no new art or map geometry. Four residents change home, with routing generated from the existing city geometry by `generate_property_routes.py`. `CaelumPropertyData.zs` owns the selected home IDs and placement coordinates; `assets/validation_586` contains private fixture sources and test evidence.
 
+Camp acquisition artwork adds two painted 128-pixel RGBA icons: canvas tent and
+open iron pot. Built-in image_gen sources and complete prompts are preserved in
+`assets/art_source/camp_equipment`; `export_camp_icons.py` only crops alpha bounds,
+scales and registers the sprites. No photographs, external images or Doom assets
+were used. `EXPORT.json` and `VALIDATION.json` record provenance/hashes and the
+byte-identical repeat export with Pillow 13.0.0. Both exports were visually
+inspected; author acceptance is pending. These inventory images do not constitute
+a completed deployed tent/fire model or camp runtime.
+
 ## 5.8.5 - Regional event discovery (#415)
 
 No new visual/audio asset or map geometry. Reuse the current calendar and quest journal with ES/EN awaiting-news text. Private native validation rooms are generated locally; they are not campaign maps or packaged fixtures.

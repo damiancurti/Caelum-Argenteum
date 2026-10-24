@@ -1,0 +1,19 @@
+{
+  "issue": 411,
+  "date": "2026-10-24",
+  "tool": "Built-in image_gen.imagegen",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md — Style and setting",
+  "purpose": "Painted inventory sprites; world geometry remains independent from the icon perspective",
+  "assets": [
+    {
+      "file": "tent-source-v1.png",
+      "prompt": "Create one isolated inventory icon for Caelum Argenteum, a dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a practical two-person A-frame camping tent, pale weathered cotton canvas, wooden ridge poles, small dark iron stakes and natural fibre guy ropes. Open front flap showing a simple canvas groundsheet, no occupants or other objects. The proportions represent a 2 by 2 metre floor and a 1.8 metre ridge. View: readable front three-quarter view, entire tent and ropes within the canvas with generous empty margin. Artistic brief: hand-painted pixel-oriented game sprite, restrained earthy palette, clear silhouette, softly shaded canvas folds and visible stitched seams, matte materials, crisp contours and economical brushwork that stays legible at 96x96 pixels. This is a painted inventory sprite, not a photograph or glossy 3D render. No backdrop, landscape, labels, text, watermark, dropped shadow or UI frame. Actual transparent background. Single object centered.",
+      "role": "Generated source, transparent painted inventory tent"
+    },
+    {
+      "file": "iron_pot-source-v1.png",
+      "prompt": "Create one isolated inventory icon for Caelum Argenteum, a dark fantasy RPG inspired by nineteenth-century Argentina. Subject: a plain heavy iron camping pot, OPEN cylindrical vessel, inside diameter 36 cm and depth 19.6 cm, thin 2 mm iron walls and two practical iron loop side handles. Empty dark interior clearly visible, flat circular base, no lid, no tripod, no contents. Front three-quarter view from slightly above, entire object centered with wide clear margin. Hand-painted pixel-oriented game sprite with deliberate paint strokes, crisp readable silhouette, restrained charcoal gray and iron tones, worn matte metal and subtle soot, no bright glossy sheen. Soft neutral lighting from upper left. Must remain readable when reduced to 96x96 pixels, consistent with a nineteenth-century painted RPG item inventory. Not a photo or glossy 3D render. No background gradient, scene, ground plane, cast shadow, text, labels, watermark or UI frame. Genuinely transparent background.",
+      "role": "Generated source, transparent painted inventory iron pot"
+    }
+  ]
+}
