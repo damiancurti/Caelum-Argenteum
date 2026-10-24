@@ -14,3 +14,23 @@ Expected: coherent visible levels, gate collision, immersion and saved state;
 no crash or unrelated flooding. This accepts the private feasibility stage only.
 Quality mixing, campaign placement and calendar evolution are not implemented
 or covered by this check. Existing campaign saves are not used by this fixture.
+
+CA414-01 | Origin: 5.8.2 / #414 | PENDING
+Prerequisites: issue414 runtime worktree, GZDoom 4.14.2, final current PK3 and
+assets/validation_582/prepare.py. Close any other GZDoom session first.
+Launch assets/validation_582/author_terminal.ps1 and select 1.
+1. Use the lever facing the path. Its target hint must offer opening/closing.
+   Initial north/south levels are 1.75/0.25 m; F5 prints litres and heights.
+2. Open, then advance minutes with F4: high water falls and low water rises.
+   Close midway; F4 lets the supply/drain restore the original levels.
+3. F2/F3 enter each basin; walk out using its fixed service steps, without
+   jumping. F1 returns to the path; F6 gives an overview.
+4. Refill the empty 1 L bottle while immersed. The bottle must gain water and
+   the source lose its actual volume. A full bottle must not remove more.
+5. Save/reload through Escape with the gate open and closed in separate saves.
+   Levels and gate must persist. Terminal option 2 reloads a private .zds.
+6. Visit the original pool: appearance, swimming and potable water still work.
+Expected: usable lever and steps, coherent visible water and saved state,
+no crashes or unrelated flooding. F-keys and invulnerability are private aids.
+These checks cover the new campaign installation. LegacyMap01 preserves the
+former mansion for already-visited saves; it does not add basins to those saves.

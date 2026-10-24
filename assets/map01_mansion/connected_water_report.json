@@ -1,0 +1,50 @@
+{
+  "issue": 414,
+  "baseline_sha256": "866a25a3adad62a742f3a1e65fa9c029852450b99e372b63caf57321b15f408a",
+  "output_sha256": "15156f89b6526e72d26a6fe726c4d3f84943fb161061556492e588d1e3b1a334",
+  "original_counts": {
+    "vertex": 5629,
+    "linedef": 13173,
+    "sidedef": 25588,
+    "sector": 7712,
+    "thing": 408
+  },
+  "output_counts": {
+    "vertex": 5945,
+    "linedef": 13510,
+    "sidedef": 26186,
+    "sector": 7749,
+    "thing": 408
+  },
+  "controls": [
+    7736,
+    7737,
+    7738,
+    7739,
+    7740,
+    7741,
+    7742,
+    7743,
+    7744,
+    7744,
+    7743,
+    7742,
+    7741,
+    7740,
+    7739,
+    7745,
+    7746,
+    7747,
+    7748
+  ],
+  "basin_area_m2": [
+    16,
+    16
+  ],
+  "nominal_capacity_liters": [
+    32000,
+    32000
+  ],
+  "opening_geometry": "12-strip native approximation of the approved circular opening; flow uses the circular area",
+  "existing_pool": "All original sector/linedef/vertex/thing values preserved, except installation metadata added to sector zero."
+}

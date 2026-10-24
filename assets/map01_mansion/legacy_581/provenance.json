@@ -1,0 +1,9 @@
+{
+  "issue": 414,
+  "source_commit": "bc668677",
+  "source_release": "5.8.1",
+  "sha256": "866a25a3adad62a742f3a1e65fa9c029852450b99e372b63caf57321b15f408a",
+  "decision": "Author approved an explicit old-mansion build on 2026-10-23. This preserves the prior MAP01 geometry and old saves; it does not migrate visited maps to the new installation.",
+  "builder_switch": "-LegacyMap01",
+  "launcher_switch": "--legacy-map01"
+}

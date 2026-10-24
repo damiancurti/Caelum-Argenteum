@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+## #414 / 5.8.2 - Production connected water
+
+Implemented the approved installation, source quality, finite volume, gate,
+calendar catch-up, persistence and explicit old-mansion compatibility. Retain
+CA414-01 and CA414-PROTOTYPE-01 until author confirmation. Native/static evidence
+is in validation_582/RESULTS.md; author terminal is in the same directory.
+Keep #414 open until its outstanding review is completed. Other V5.8 issues
+remain independent; no merge is authorized by these tests.
 
 ## #413 / 5.8.1 - Altitude and acclimatization
 
@@ -21,11 +30,8 @@ conservation, gate collision/open/close, untouched water, immersion, thermal
 sampling, rest rejection, save/load and hub return. See validation_580/RESULTS.md.
 CA414-PROTOTYPE-01 is pending author review; this is not issue completion.
 
-Remaining #414: control-volume quality lookup, implementation of the approved
-contamination-union mixing rule,
-placement of the approved two 32,000 L deposits beside the mansion pool,
-barrier interaction, the approved fill/drain calibration in SYSTEMS and
-production migration/catch-up. Keep the issue open.
+The former production backlog is implemented in 5.8.2 above; author acceptance
+remains outstanding. Keep the issue open.
 
 V5.8 dependencies remain separate: #410 catalogue -> #411 property/camp -> #412
 rest integration; #413 altitude; #415 unloaded outcomes -> #416 routes/schedules

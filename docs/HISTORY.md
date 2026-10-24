@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+## 5.8.2 - Mansion connected water (#414), 2026-10-24
+
+Implemented the approved two 32,000 L deposits, circular 20 cm bottom opening,
+Cd 0.62 flow and 1 L/s supply/drain limits. The author approved the eastern
+placement, low-water service steps with nominal capacity, and explicit legacy
+mansion compatibility for already-visited saves. Reuses existing owned surfaces
+and lever art. Actual swimmable volume quality, directional contaminant union,
+finite collection/direct hydration, game-clock catch-up and revisioned saved
+state are integrated. The previous pool remains intact. New basin topology is
+reproducible from the retained pre-change source; no old save is overwritten.
+
+Native evidence, static checks, source/package identities and limitations:
+assets/validation_582/RESULTS.md: 171 assertions in 11 focused native runs,
+plus original-save/rollback controls. Both full packages match their sources;
+project validation passes. Render callbacks were measured, but PresentMon ETW
+access was denied, so presentation/FPS acceptance is not claimed.
+CA414-01 is pending author review; the earlier
+CA414-PROTOTYPE-01 remains pending independently. No author acceptance, merge,
+closed issue or completed V5.8 is claimed.
 
 ## 5.8.1 - Altitude and acclimatization (#413), 2026-10-23
 

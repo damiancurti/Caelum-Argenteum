@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.1.** Obtain and update the complete repository, validate
+**Current release: 5.8.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.8.2 integrates connected water into the mansion (#414): two nominal 32,000 L
+deposits east of the pool, a usable gate, service steps, conservative transfer,
+source quality and finite withdrawal. Game time also advances the installation
+while its map is absent. The existing pool retains its geometry and supply.
+New campaigns use the installation. For campaigns that already visited the
+previous mansion, use `run_dev.bat --legacy-map01` (or `build_dev.ps1 -LegacyMap01`)
+to retain its exact geometry with current code; this is compatibility, not a
+conversion to the new mansion. Keep original saves and their original package.
+Author checks CA414-01 and the earlier CA414-PROTOTYPE-01 remain pending.
+Evidence and the interactive terminal: [validation_582](assets/validation_582/RESULTS.md).
 
 5.8.1 implements altitude and persistent acclimatization (#413). Relative
 atmospheric pressure modifies Air recovery and exertion for characters and NPCs;
@@ -21,7 +32,7 @@ CA413-01 passed author review on 2026-10-23; see
 Two swimmable volumes equalize through a gate, stop when it closes, and retain
 levels across save/load and hub return. Production changes only synchronize two diagnostic release labels.
 This is the required technical gate, not completed campaign water simulation;
-quality integration, placement and calendar evolution remain unimplemented.
+its original quality limitation and fixture boundary remain recorded. Production integration is delivered separately in 5.8.2.
 The approved deposit dimensions and fill/drain calibration are recorded in SYSTEMS.
 Author review CA414-PROTOTYPE-01 is pending. See
 [evidence and reproduction](assets/validation_580/RESULTS.md).
