@@ -1610,6 +1610,16 @@ output must fail the runner instead of leaving it waiting for a completion marke
 The completed 5.4.20 seed and 5.4.21 upgrade both passed with the guarded launcher.
 The local ZIP/dump is retained under build and is not a distributed project asset.
 
+#413 follow-up (5.8.1, ENGINE-VERIFIED, 2026-10-23): refreshing only files
+currently in git diff can leave stale archive entries when a changed file is
+reverted to baseline. MAPINFO retained a removed handler registration while its
+class had become a plain Object, causing the author-observed fatal event-handler
+error. The compile helper now remembers previously refreshed paths, including
+reverts. A complete build plus byte comparison of every src/archive entry is
+the delivery gate; final old-save loading passes after reconstruction. See
+assets/validation_581/RESULTS.md. Preserve failed logs as diagnostic evidence.
+
+
 ## CA-KP-106 - Recreate disposable visuals instead of carrying stale world links
 
 - Status: ENGINE-VERIFIED, #251 / 5.4.20, GZDoom 4.14.2 Windows Vulkan,
@@ -4320,6 +4330,17 @@ clear UI references itself. `retained-03` and `replaced-01` distinguish those
 cases in assets/validation_5213. A null retained UI reference after load is not a
 failed invalidation. Never infer successful disposal solely from a zero failure
 counter when a fixture printed a separate FAIL line.
+
+#413 follow-up (5.8.1, ENGINE-VERIFIED, 2026-10-23): a newly added map
+altitude handler was also absent from the genuine pre-feature save. The final
+implementation initializes additive altitude fields on the existing saved
+CaelumPhysicsMapState through the already-existing WorldClockTicker.WorldLoaded.
+The existing one-marker typed lookup is reused once per map load; the ticker
+caches the result for body queries. The independent altitude revision does not
+convert gravity again. Old-save migration, saved player/NPC adaptation and hub
+return pass; the untouched original save still loads with its original runtime.
+Evidence: assets/validation_581/RESULTS.md. Author review remains pending.
+
 
 ## CA-KP-008 â€” Changed map geometry prevents old saves from loading
 

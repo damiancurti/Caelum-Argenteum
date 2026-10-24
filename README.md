@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.0.** Obtain and update the complete repository, validate
+**Current release: 5.8.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.8.1 implements altitude and persistent acclimatization (#413). Relative
+atmospheric pressure modifies Air recovery and exertion for characters and NPCs;
+Caelith halve the penalty and Resilience accelerates the approved adaptation.
+Wait/travel forecasts share the model. Limbo remains atmospherically neutral.
+67 native assertions, old-save rollback and player/NPC save/hub checks pass.
+Author review CA413-01 is pending; see
+[evidence](assets/validation_581/RESULTS.md). Other V5.8 issues remain open.
 
 5.8.0 begins #414 with an isolated native connected-water feasibility test.
 Two swimmable volumes equalize through a gate, stop when it closes, and retain

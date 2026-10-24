@@ -187,7 +187,8 @@ class CaelumBolas : Object play
         double cost=user!=null && user.DerivedStats!=null
             ? CaelumBolasRules.AIR_COST*user.DerivedStats.AirConsumptionMultiplier
             : npc!=null ? npc.GetEffectiveAttackAir(CaelumBolasRules.AIR_COST) : 0;
-        return cost*CaelumThermalEffects.HeatCost(emitter);
+        // El jugador aplica altitud en CaelumAirPayment; el NPC paga aqu?.
+        return cost*CaelumThermalEffects.HeatCost(emitter)*(npc!=null ? CaelumAltitudeService.Effort(npc) : 1.0);
     }
 
     // La activación cambia, pero vuelo, coste y objeto transferido son únicos.

@@ -1,0 +1,304 @@
+{
+  "issue": 413,
+  "release": "5.8.1",
+  "date": "2026-10-23",
+  "package": {
+    "entries": 16809,
+    "all_entries_equal_src": true,
+    "sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d"
+  },
+  "native_runs": [
+    {
+      "label": "final-suite-03",
+      "pass": 47,
+      "package_sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d",
+      "addon_sha256": "f90432858838bc95d6228b4081822cf4ae96ccac0dfe0c32f6933a8b592a1919",
+      "artifacts": [
+        "native/final-suite-03.txt",
+        "native/final-suite-03-run.json"
+      ]
+    },
+    {
+      "label": "final-migrate-01",
+      "pass": 4,
+      "package_sha256": "8b19030c62ba6515c10639dd10424ebd749730ca7b422ec72afedf82eac58abb",
+      "addon_sha256": "feb90f1a78b96ce982b8cf659671f74f0ff3f63c8d7e2fa428e2c91b5cca4c1c",
+      "artifacts": [
+        "native/final-migrate-01.txt",
+        "native/final-migrate-01-run.json"
+      ]
+    },
+    {
+      "label": "final-save-02",
+      "pass": 2,
+      "package_sha256": "8b19030c62ba6515c10639dd10424ebd749730ca7b422ec72afedf82eac58abb",
+      "addon_sha256": "f90432858838bc95d6228b4081822cf4ae96ccac0dfe0c32f6933a8b592a1919",
+      "artifacts": [
+        "native/final-save-02.txt",
+        "native/final-save-02-run.json"
+      ]
+    },
+    {
+      "label": "final-load-02",
+      "pass": 4,
+      "package_sha256": "8b19030c62ba6515c10639dd10424ebd749730ca7b422ec72afedf82eac58abb",
+      "addon_sha256": "f90432858838bc95d6228b4081822cf4ae96ccac0dfe0c32f6933a8b592a1919",
+      "artifacts": [
+        "native/final-load-02.txt",
+        "native/final-load-02-run.json"
+      ]
+    },
+    {
+      "label": "final-hub-02",
+      "pass": 10,
+      "package_sha256": "8b19030c62ba6515c10639dd10424ebd749730ca7b422ec72afedf82eac58abb",
+      "addon_sha256": "f90432858838bc95d6228b4081822cf4ae96ccac0dfe0c32f6933a8b592a1919",
+      "artifacts": [
+        "native/final-hub-02.txt",
+        "native/final-hub-02-run.json"
+      ]
+    },
+    {
+      "label": "legacy-save-01",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "ad3b30653ba79e43fd00c816f4325153a04a8f247d12c298dd19bc905ac95f1e",
+      "artifacts": [
+        "native/legacy-save-01.txt",
+        "native/legacy-save-01-run.json"
+      ]
+    },
+    {
+      "label": "rollback-01",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "ad3b30653ba79e43fd00c816f4325153a04a8f247d12c298dd19bc905ac95f1e",
+      "artifacts": [
+        "native/rollback-01.txt",
+        "native/rollback-01-run.json"
+      ]
+    }
+  ],
+  "native_pass_assertions": 67,
+  "functional_suite_assertions": 47,
+  "old_save_and_original_runtime_rollback": "passed; original save preserved",
+  "ui_callback_timing": [
+    {
+      "label": "perf-baseline-city600-02",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-baseline-city600-02.txt",
+        "native/perf-baseline-city600-02-run.json"
+      ],
+      "samples": 599,
+      "mean_ms": 16.66862587646077,
+      "p95_ms": 18.357,
+      "p99_ms": 19.8329,
+      "worst_ms": 20.7829,
+      "simulation_tics_per_second": 34.999178569278975,
+      "living_combatants": 601,
+      "high_density": true,
+      "presentation_artifacts": [
+        "native/perf-baseline-city600-02-presentmon.txt",
+        "native/perf-baseline-city600-02-presentmon-error.txt",
+        "native/perf-baseline-city600-02-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-current-city600-02",
+      "pass": 0,
+      "package_sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-current-city600-02.txt",
+        "native/perf-current-city600-02-run.json"
+      ],
+      "samples": 599,
+      "mean_ms": 16.66668547579299,
+      "p95_ms": 17.5974,
+      "p99_ms": 19.0289,
+      "worst_ms": 22.3047,
+      "simulation_tics_per_second": 34.99860635549493,
+      "living_combatants": 601,
+      "high_density": true,
+      "presentation_artifacts": [
+        "native/perf-current-city600-02-presentmon.txt",
+        "native/perf-current-city600-02-presentmon-error.txt",
+        "native/perf-current-city600-02-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-baseline-city600-down",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-baseline-city600-down.txt",
+        "native/perf-baseline-city600-down-run.json"
+      ],
+      "samples": 599,
+      "mean_ms": 16.681331886477462,
+      "p95_ms": 17.9988,
+      "p99_ms": 19.7916,
+      "worst_ms": 25.5732,
+      "simulation_tics_per_second": 34.96522463653324,
+      "living_combatants": 601,
+      "high_density": true,
+      "presentation_artifacts": [
+        "native/perf-baseline-city600-down-presentmon.txt",
+        "native/perf-baseline-city600-down-presentmon-error.txt",
+        "native/perf-baseline-city600-down-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-current-city600-down",
+      "pass": 0,
+      "package_sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-current-city600-down.txt",
+        "native/perf-current-city600-down-run.json"
+      ],
+      "samples": 595,
+      "mean_ms": 16.757512268907565,
+      "p95_ms": 18.7101,
+      "p99_ms": 19.9258,
+      "worst_ms": 22.577,
+      "simulation_tics_per_second": 35.0459820807891,
+      "living_combatants": 601,
+      "high_density": true,
+      "presentation_artifacts": [
+        "native/perf-current-city600-down-presentmon.txt",
+        "native/perf-current-city600-down-presentmon-error.txt",
+        "native/perf-current-city600-down-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-baseline-mansion",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-baseline-mansion.txt",
+        "native/perf-baseline-mansion-run.json"
+      ],
+      "samples": 597,
+      "mean_ms": 16.736135343383584,
+      "p95_ms": 18.8523,
+      "p99_ms": 20.1533,
+      "worst_ms": 27.7591,
+      "simulation_tics_per_second": 34.98023861379991,
+      "living_combatants": 6,
+      "high_density": false,
+      "presentation_artifacts": [
+        "native/perf-baseline-mansion-presentmon.txt",
+        "native/perf-baseline-mansion-presentmon-error.txt",
+        "native/perf-baseline-mansion-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-current-mansion",
+      "pass": 0,
+      "package_sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-current-mansion.txt",
+        "native/perf-current-mansion-run.json"
+      ],
+      "samples": 598,
+      "mean_ms": 16.691369565217393,
+      "p95_ms": 19.1999,
+      "p99_ms": 20.8473,
+      "worst_ms": 21.772,
+      "simulation_tics_per_second": 35.00261329510862,
+      "living_combatants": 6,
+      "high_density": false,
+      "presentation_artifacts": [
+        "native/perf-current-mansion-presentmon.txt",
+        "native/perf-current-mansion-presentmon-error.txt",
+        "native/perf-current-mansion-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-baseline-sewer",
+      "pass": 0,
+      "package_sha256": "3101161a5fc47eb1b7f65061081ffbce723aa47d938ef7097a1cca841f10c75b",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-baseline-sewer.txt",
+        "native/perf-baseline-sewer-run.json"
+      ],
+      "samples": 599,
+      "mean_ms": 16.6658429048414,
+      "p95_ms": 17.1817,
+      "p99_ms": 17.6511,
+      "worst_ms": 18.7634,
+      "simulation_tics_per_second": 35.00036505380751,
+      "living_combatants": 294,
+      "high_density": false,
+      "presentation_artifacts": [
+        "native/perf-baseline-sewer-presentmon.txt",
+        "native/perf-baseline-sewer-presentmon-error.txt",
+        "native/perf-baseline-sewer-presentmon.json"
+      ]
+    },
+    {
+      "label": "perf-current-sewer",
+      "pass": 0,
+      "package_sha256": "68620122293cbc7b37cfcfc1486692750fe74fafc9007ea3838e69d59c46986d",
+      "addon_sha256": "a0c16958b4ed2ac8642d1134ad13936e4ff0ab33e6fc54eba73666b25831aa06",
+      "artifacts": [
+        "native/perf-current-sewer.txt",
+        "native/perf-current-sewer-run.json"
+      ],
+      "samples": 599,
+      "mean_ms": 16.66491853088481,
+      "p95_ms": 17.65,
+      "p99_ms": 18.2766,
+      "worst_ms": 19.2824,
+      "simulation_tics_per_second": 35.000028000022404,
+      "living_combatants": 294,
+      "high_density": false,
+      "presentation_artifacts": [
+        "native/perf-current-sewer-presentmon.txt",
+        "native/perf-current-sewer-presentmon-error.txt",
+        "native/perf-current-sewer-presentmon.json"
+      ]
+    }
+  ],
+  "presentation": {
+    "status": "unavailable",
+    "reason": "PresentMon ETW access denied by Windows; no frame presentation/GPU claim"
+  },
+  "diagnostic_failures": [
+    "diagnostics/compile-01.txt",
+    "diagnostics/compile-01-run.json",
+    "diagnostics/compile-02.txt",
+    "diagnostics/compile-02-run.json",
+    "diagnostics/compile-03.txt",
+    "diagnostics/compile-03-run.json",
+    "diagnostics/migrate-01.txt",
+    "diagnostics/migrate-01-run.json",
+    "diagnostics/migrate-02.txt",
+    "diagnostics/migrate-02-run.json",
+    "diagnostics/migrate-03.txt",
+    "diagnostics/migrate-03-run.json",
+    "diagnostics/perf-baseline-city0.txt",
+    "diagnostics/perf-baseline-city0-run.json",
+    "diagnostics/suite-01.txt",
+    "diagnostics/suite-01-run.json",
+    "diagnostics/suite-02.txt",
+    "diagnostics/suite-02-run.json",
+    "diagnostics/suite-03.txt",
+    "diagnostics/suite-03-run.json"
+  ],
+  "author_acceptance": "CA413-01 pending",
+  "limits": [
+    "UI callbacks are not application presents or GPU timing.",
+    "Fixed scenes are not whole-map or siege performance acceptance.",
+    "Save/hub checks precede a source-comment-only correction; final suite and timing use the complete final rebuild.",
+    "No unapproved underwater ability, card effect or mountain route profile is enabled."
+  ]
+}

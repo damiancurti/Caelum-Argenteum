@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
 
-**5.8.0/#414:** water prototype;100 PASS;validation_580;CA414-PROTOTYPE-01 pending.
-Integration pending; approved calibration: SYSTEMS.
+**5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 pending.
+**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01 pending;integration pending;calibration:SYSTEMS.
 
 **5.7.14/#472:**163+21PASS;accepted2026-10-23;validation_5714. V5.7 complete.
 **5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.

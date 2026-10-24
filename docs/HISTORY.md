@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
+
+## 5.8.1 - Altitude and acclimatization (#413), 2026-10-23
+
+Author approved standard pressure modifiers, five-day acquisition with 25%
+maximum compensation, fourteen-day loss of excess adaptation, Resilience's
+existing climate curve, half penalties for Caelith and the full reference for
+humans/Beast Men/goblins, including NPCs. Coastal geographical datum is initially
+zero; the author also approved sea-level behavior below 0 m, without a bonus.
+Limbo's atmosphere remains neutral. Implements those rules in the existing
+Air payment/recovery paths and independent wait/travel forecast state. Save data
+is additive and revisioned. 67 native assertions pass, including old-save migration, preserved-save rollback,
+player/NPC persistence and hub return. The complete final build matches all
+16,809 src entries and repeats the 47-assertion behavior suite successfully.
+Eight matched timing windows preserve census/callback tails; PresentMon was
+blocked by Windows ETW access, so no presentation/FPS acceptance is claimed.
+The author-reported stale MAPINFO registration failure was corrected by the
+complete rebuild. CA413-01 awaits author acceptance. Technical evidence: assets/validation_581/RESULTS.md.
 
 ## 5.8.0 - Connected-water feasibility (#414), 2026-10-23
 

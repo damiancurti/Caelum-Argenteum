@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
+
+## #413 / 5.8.1 - Altitude and acclimatization
+
+Implemented the approved atmospheric model, Resilience acquisition, fourteen-day
+retention, racial tolerance, shared Air costs/recovery and numerical forecasts.
+67 native assertions pass, including old-save migration/rollback and saved
+player/NPC hub state. The final package matches all 16,809 src entries. Eight
+matched timing windows retain the measured limits in validation_581/RESULTS.md.
+Only author review CA413-01 remains for this approved delivery.
+No unspecified underwater ability or Tarot effect is activated. Future mountain
+route profiles belong to #416; current route reference behavior is in SYSTEMS.
 
 ## #414 / 5.8.0 - Native connected-water feasibility
 

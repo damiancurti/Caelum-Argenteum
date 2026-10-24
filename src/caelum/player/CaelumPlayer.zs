@@ -5868,6 +5868,7 @@ class CaelumPlayer : DoomPlayer
     // resucitar cadáveres cargados ni crear un nuevo perfil o cuerpo.
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        CaelumAltitudeService.StopClock(self);
         if(CaelumTutorialSafety.Protects(self))
         {
             health=CaelumTutorialSafety.HealthAfter(self,health);
@@ -7373,6 +7374,7 @@ class CaelumPlayer : DoomPlayer
     // recorre las mismas tasas y umbrales que un tic de juego normal.
     void AdvancePersonalTimeTic(bool realStep=true)
     {
+        CaelumAltitudeService.Update(self);
         CaelumThermalRuntime.PlayerStep(self,realStep);
         if(health<=0)return;
         CaelumTarotService.Advance(self);
