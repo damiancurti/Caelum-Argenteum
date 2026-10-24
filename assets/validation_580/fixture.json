@@ -1,0 +1,14 @@
+{
+  "issue": 414,
+  "scope": "Private engine feasibility fixture; not campaign geometry or approved gameplay rates",
+  "map": "CAW414",
+  "cell_units": 256,
+  "ceiling_units": 384,
+  "gate_line_id": 414,
+  "surface_step_per_tic": 1.0,
+  "volumes": [
+    {"id": 101, "cell": [0, 0], "height": 192.0, "quality": 2},
+    {"id": 102, "cell": [1, 0], "height": 32.0, "quality": 1},
+    {"id": 103, "cell": [3, 0], "height": 64.0, "quality": 0}
+  ]
+}

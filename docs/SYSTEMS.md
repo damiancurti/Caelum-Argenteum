@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.7.14** — 2026-10-23.
+Documentation version: **5.8.0** — 2026-10-23.
+
+## Connected-water feasibility boundary (#414, 5.8.0)
+
+The private validation_580 fixture uses two horizontal swimmable 3D floors of
+equal area. Opening a native blocking line permits a conservative level transfer;
+closing it stops both planes. `Sector.MoveCeiling` receives plane-distance
+coordinates from `SecPlane.PointToDist`, preserving native attached volumes.
+A third unconnected pool and the dry walkway are controls. Its IDs, dimensions,
+levels and rate are diagnostic fixture data, not approved campaign balance.
+The map-local event handler retains a revision-1 binding, gate state and native
+sector references through saves and hub return. Initialization visits the eight
+fixture sectors once; ticking touches only the two connected control sectors.
+
+Production water remains #408/#409: source quality currently reads the actor's
+sector, so metadata on a 3D-floor control sector is unidentified. The prototype
+records this limitation without silently changing quality or claiming mixing.
+The author approved reusing the container contamination union and locating the
+first connected installation beside the mansion pool. No campaign water-volume
+schema, replenishment, drainage, concentration rule,
+new map geometry or real-time offline progression is introduced. A generic
+production controller still needs implementation and explicit save-safe geometry.
+
+Approved campaign calibration (2026-10-23; not yet implemented): two deposits
+beside the mansion pool, each 4 x 4 m and 2 m deep (32,000 L). Preserve the
+existing pool. A 20 cm opening connects them; use a simplified head-difference
+flow model with discharge coefficient 0.62. The left receives potable water at
+1 L/s up to 1.75 m; the right drains at 1 L/s down to 0.25 m. An open gate
+permits transfer; closing it allows those levels to recover. Evolve with game
+time, including map absence, at Limbo's 1:1 rate. Closing the game adds no time.
+Mixtures retain every biological/salt/chemical contaminant; dilution does not
+purify. Exact placement/topology and old visited-map compatibility remain
+engineering work; this approval does not authorize invalidating existing saves.
 
 ## Reusable mates (#472, 5.7.14)
 

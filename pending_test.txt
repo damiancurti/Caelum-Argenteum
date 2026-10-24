@@ -1,0 +1,16 @@
+CA414-PROTOTYPE-01 | Origin: 5.8.0 / #414 | PENDING
+Prerequisites: focused issue414 worktree, GZDoom 4.14.2, built current PK3 and
+assets/validation_580/prepare.py. Close any other GZDoom session first.
+Launch assets/validation_580/author_terminal.ps1 and select 1.
+1. Close the console. From the overview, F1 opens the gate. The high left pool
+   falls and the low right pool rises until both reach 112 units (F6 reports).
+2. Restart the private room. Open with F1, then close with F2 midway: both levels
+   stop; F1 resumes. The dry observation walkway remains dry.
+3. F3/F4 enter either basin; verify swimming/immersion. F5 returns to dry ground.
+4. Save midway using Escape, both with gate open and closed in separate saves.
+   Reload: closed water stays stopped; open water continues without resetting.
+   The terminal's option 2 loads a private .zds without resetting the test state.
+Expected: coherent visible levels, gate collision, immersion and saved state;
+no crash or unrelated flooding. This accepts the private feasibility stage only.
+Quality mixing, campaign placement and calendar evolution are not implemented
+or covered by this check. Existing campaign saves are not used by this fixture.
