@@ -53,8 +53,7 @@ unimplemented food spoilage, cooking or furniture.
 ## #414 / 5.8.2 - Production connected water
 
 Implemented the approved installation, source quality, finite volume, gate,
-calendar catch-up, persistence and explicit old-mansion compatibility. Retain
-CA414-PROTOTYPE-01 until explicit confirmation of that isolated stage.
+calendar catch-up, persistence and explicit old-mansion compatibility. CA414-PROTOTYPE-01 was separately accepted on 2026-10-24.
 CA414-01 passed all terminal checks on 2026-10-24. Native/static evidence
 is in validation_582/RESULTS.md; author terminal is in the same directory.
 Keep #414 open while the earlier isolated-stage review remains outstanding. Other V5.8 issues
@@ -77,7 +76,7 @@ route profiles belong to #416; current route reference behavior is in SYSTEMS.
 Implemented the required bounded private engine prototype. Native tests cover
 conservation, gate collision/open/close, untouched water, immersion, thermal
 sampling, rest rejection, save/load and hub return. See validation_580/RESULTS.md.
-CA414-PROTOTYPE-01 is pending author review; this is not issue completion.
+CA414-PROTOTYPE-01 was accepted on 2026-10-24; this is not issue completion.
 
 The former production backlog is implemented in 5.8.2 above; author acceptance
 remains outstanding. Keep the issue open.

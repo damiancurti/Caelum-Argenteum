@@ -164,7 +164,9 @@ a 20 cm opening with Cd 0.62, left potable inflow 1 L/s to 1.75 m and right drai
 1 L/s down to 0.25 m. The calendar includes map absence at Limbo's 1:1 rate,
 without offline real-time progression. The pool itself must remain unchanged.
 This records the approved contract, not completed production implementation.
-CA414-PROTOTYPE-01 is outstanding; no author acceptance or completed V5.8 claim.
+CA414-PROTOTYPE-01 (origin 5.8.0/#414) was accepted on 2026-10-24 when
+the author confirmed all terminal checks except the separate tent silhouette.
+This confirms the isolated prototype only; V5.8 remains incomplete.
 
 ## 5.7.14 - Reusable mates (#472), 2026-10-23
 

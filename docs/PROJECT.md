@@ -77,7 +77,7 @@ pool geometry and behavior remain unchanged. Explicit `-LegacyMap01` retains
 the byte-identical 5.8.1 mansion for visited-map saves; new geometry is for new
 campaigns. Static/native evidence and limits: assets/validation_582/RESULTS.md.
 CA414-01 passed all author checks on 2026-10-24. The earlier isolated
-CA414-PROTOTYPE-01 remains pending; no merge or completed V5.8 is claimed.
+CA414-PROTOTYPE-01 was accepted on 2026-10-24; no merge or completed V5.8 is claimed.
 #413 remains accepted. Other issues keep their independent scope.
 
 ## 5.8.1 - Altitude and acclimatization (#413)
@@ -108,7 +108,7 @@ a 20 cm connecting opening with discharge coefficient 0.62, potable left inflow
 at 1 L/s to 1.75 m and right drainage at 1 L/s down to 0.25 m, including absence
 at Limbo's 1:1 game-clock rate. Placement, controller and save-safe geometry
 integration remain unimplemented. The author approved the existing container rule:
-mixtures retain every contaminant present, without dilution-based purification. CA414-PROTOTYPE-01 awaits
+mixtures retain every contaminant present, without dilution-based purification. CA414-PROTOTYPE-01 passed on 2026-10-24; the earlier stage awaited
 author acceptance. Evidence: assets/validation_580/RESULTS.md.
 
 ## 5.7.14 - Reusable mates (#472)

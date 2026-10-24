@@ -82,7 +82,7 @@ previous mansion, use `run_dev.bat --legacy-map01` (or `build_dev.ps1 -LegacyMap
 to retain its exact geometry with current code; this is compatibility, not a
 conversion to the new mansion. Keep original saves and their original package.
 CA414-01 passed all author checks on 2026-10-24. The earlier isolated
-CA414-PROTOTYPE-01 remains pending independently.
+CA414-PROTOTYPE-01 was separately accepted on 2026-10-24.
 Evidence and the interactive terminal: [validation_582](assets/validation_582/RESULTS.md).
 
 5.8.1 implements altitude and persistent acclimatization (#413). Relative
@@ -99,7 +99,7 @@ levels across save/load and hub return. Production changes only synchronize two 
 This is the required technical gate, not completed campaign water simulation;
 its original quality limitation and fixture boundary remain recorded. Production integration is delivered separately in 5.8.2.
 The approved deposit dimensions and fill/drain calibration are recorded in SYSTEMS.
-Author review CA414-PROTOTYPE-01 is pending. See
+Author review CA414-PROTOTYPE-01 passed on 2026-10-24. See
 [evidence and reproduction](assets/validation_580/RESULTS.md).
 
 5.7.14 implements reusable gourd, silver-clad and gold-clad mates (#472), with

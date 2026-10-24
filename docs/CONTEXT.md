@@ -14,7 +14,7 @@ Documentation version: **5.8.8** — 2026-10-24.
 **5.8.3/#410:** core/HUD+isolated-lot-model;inventory/cooking/furniture-WIP. SYSTEMS/validation_583;40+38PASS;CA410-CORE-01accepted2026-10-24.
 **5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
-**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01 pending;production integration5.8.2;calibration:SYSTEMS.
+**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
 
 **5.7.14/#472:**163+21PASS;accepted2026-10-23;validation_5714;V5.7-complete.
 **5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.
