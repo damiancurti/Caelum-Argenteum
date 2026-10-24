@@ -843,7 +843,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
         user.CraftingTaskRemainingSeconds = user.CraftingTaskTotalSeconds;
         user.CraftingTaskActive = true;
-        if(taskKind!=CaelumConstants.CRAFTING_TASK_BOIL)CaelumRecipeLearning.CapturePractice(user);
+        if(taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
         user.PersistCharacterState();
         user.RefreshFormalInventorySnapshot();
@@ -1640,6 +1640,13 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumCampTask.Active(user))
+        {
+            let camp=CaelumCampTask.Find(user);
+            if(camp==null || camp.OriginMap!=level.MapName || camp.Anchor==null)
+            {user.CancelCraftingTask();return false;}
+            return CaelumCampTask.Attended(user);
+        }
         CaelumCraftingStation station =
             CaelumCraftingStation(user.ActiveCraftingStationActor);
         if (!user.CraftingMenuOpen)
@@ -1893,6 +1900,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskRemainingSeconds = Max(
             0.0,
             user.CraftingTaskRemainingSeconds - (user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL
+                || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP
                 || CaelumChemistryData.IsRecipe(user.CraftingTaskRecipeIndex)
                 ? CaelumThermalRuntime.WorldTicSeconds() : 1.0 / TICRATE)
         );

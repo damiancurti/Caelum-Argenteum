@@ -37,7 +37,8 @@ class CaelumTimeAdvanceState : Inventory
 
     static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
-        bool crafting=user!=null && user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null;
+        bool crafting=user!=null && user.CraftingTaskActive
+            && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampTask.Attended(user));
         bool reading=CaelumRecipeSession.Working(user);
         String reason=CaelumRestSafety.BlockReason(user,false,crafting || reading,scanWorld);
         if(reason.Length()!=0)return reason;

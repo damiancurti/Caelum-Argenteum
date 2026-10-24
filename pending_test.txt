@@ -48,3 +48,20 @@ On return, launch assets/validation_588/author_terminal.ps1 with PowerShell
 Expected: invalid locations preserve cargo; valid placement preserves contents.
 Scope: placement geometry only. Camp permissions, tent/fire deployment and cooking
 are not claimed. Existing housing and equipment checks remain separate.
+
+CA411-TENT-01 | Origin: 5.8.8 / #411 | PENDING; author away
+Prerequisites: issue411-camp-work and build/issue411-placement/camp-final package.
+On return launch assets/validation_588/deploy/author_terminal.ps1 with PowerShell
+-NoExit -ExecutionPolicy Bypass; close other GZDoom sessions first.
+1. Choose 1. Close any introduction with Escape. F3 selects paving: activating
+   the inventory tent must reject placement and preserve the same item.
+2. F4 selects the garden. Activate the tent to begin assembly; activate it again
+   to cancel. Restart and press F5 to accelerate the attended ten game minutes.
+3. Inspect the matte model and entrance; crouch to enter. Use the deployed tent
+   to start packing, and F5 to finish its five game minutes. Exactly one original
+   tent must return. Holding Use must not immediately cancel the packing task.
+4. Save/load during assembly and with the tent deployed. Quantities, remaining
+   work, appearance, collision and ownership must persist without a crash.
+5. Option 2 runs native placement/land/climate/interaction checks.
+Expected: coherent placement, model, inventory identity and attended work.
+Scope: deployed tent only. Fire/cooking and two-person rest are separate work.

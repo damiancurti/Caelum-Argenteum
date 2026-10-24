@@ -97,7 +97,7 @@ class CaelumRestSafety : Object play
         bool timelessReading=level.MapName=="MAP01" && (CaelumRecipeSession.Working(user)
             || (skip!=null && skip.Open && skip.OriginMap==level.MapName
                 && CaelumRecipeSession.CanReach(user,skip.Station)));
-        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture && !anchored && !timelessCraft && !timelessReading
+        if (CaelumWorldCatalogue.IsLimboMap(level.MapName) && !allowTimelessFurniture && !anchored && !timelessCraft && !timelessReading && !CaelumCampTask.Attended(user)
             && !(active!=null && active.Status==CaelumRestRules.STATUS_ACTIVE && active.Untimed && active.Furniture!=null))
             return "CA_REST_TIMELESS";
         // La nube activa impide tanto descansar como acelerar; decisión #325.

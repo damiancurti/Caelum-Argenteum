@@ -80,7 +80,7 @@ def main():
         'materials':{path:hashlib.sha256((ROOT/'src'/path).read_bytes()).hexdigest() for path in sorted(mat.values())},
         'model':str(output.relative_to(ROOT)).replace('\\','/'),
         'model_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
-        'native_registration':'Pending deployment integration; preview with a private gallery MODELDEF.',
+        'native_registration':'CaelumDeployedTent in src/MODELDEF; private gallery retains independent visual evidence.',
         'author_visual_acceptance':'Pending; author away.'
     }
     MANIFEST.write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')

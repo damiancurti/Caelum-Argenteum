@@ -6487,3 +6487,21 @@ CA_CAMP_POT = "Iron pot (20 L)";
 [es]
 CA_CAMP_TENT = "Carpa de lona para dos";
 CA_CAMP_POT = "Olla de hierro (20 L)";
+
+[enu default]
+CA_CAMP_SITE_FAILED = "The whole tent needs permitted, dry, stable ground and clear access.";
+CA_CAMP_SETTING_UP = "Setting up tent: 10 minutes. You can wait; use the inventory tent again to cancel.";
+CA_CAMP_PACKING = "Packing tent: 5 minutes. You can wait; use the tent again to cancel.";
+CA_CAMP_READY = "Tent ready. Use it to pack it away.";
+CA_CAMP_PACKED = "Tent packed; the original item is in your inventory.";
+[esn]
+CA_CAMP_SITE_FAILED = "La carpa completa necesita terreno permitido, seco, estable y sin bloquear accesos.";
+CA_CAMP_SETTING_UP = "Montando carpa: 10 minutos. Podés esperar; usá otra vez la carpa del inventario para cancelar.";
+CA_CAMP_PACKING = "Desmontando carpa: 5 minutos. Podés esperar; usá otra vez la carpa para cancelar.";
+CA_CAMP_READY = "Carpa lista. Usala para desmontarla.";
+CA_CAMP_PACKED = "Carpa desmontada; el objeto original está en tu inventario.";
+
+[enu default]
+CA_CAMP_PACK_ACTION = "{bind:+use}: Pack tent / cancel packing";
+[esn]
+CA_CAMP_PACK_ACTION = "{bind:+use}: Desmontar carpa / cancelar desmontaje";

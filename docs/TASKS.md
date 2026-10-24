@@ -2,13 +2,16 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
-## 5.8.8 / #411 - Placement geometry
+## 5.8.8 / #411 - Placement and persistent tents
 
 Actual carried-chest placement now checks dry/stable support, full volume and
 access clearances before mutation. 46 native PASS, including original-save
 load/rollback. CA411-PLACEMENT-01 awaits author return; keep the terminal closed
-until then. Land grants and deployed tent/fire/cooking remain subsequent work;
-no new placement permission or rest bonus is implied by this geometry slice.
+until then. Tent deployment, approved land grants, original-item persistence,
+native waiting/acceleration and rain/wind shelter now have separate evidence in
+validation_588/deploy. CA411-TENT-01 is also deferred. Remaining: deployed fire,
+heat/cooking, furniture placement and the separate #412 rest integration. No new
+recovery bonus or two-person sleeping layout is claimed.
 
 ## 5.8.7 / #410 - Forecast contamination integration
 

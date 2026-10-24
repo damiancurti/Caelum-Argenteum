@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "f2d45620297209b85395c36c2a5fe2568bc13df611d7c87c61a048a94720a374",
+  "sha256": "ad568ad2808d2d08147509feefb1c0de054d72eb29eb6d3941aaf9d9dbbcb70f",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[438,438]],"default":[[438,438]],"es":[[1133,1133]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[988,988]],"default":[[988,988]],"es":[[1683,1683]]},
@@ -155,7 +155,13 @@
     "CA_CALENDAR_TRIAL": {"enu":[[3835,3835]],"default":[[3835,3835]],"es":[[3845,3845]]},
     "CA_CALENDAR_UNSET": {"enu":[[3834,3834]],"default":[[3834,3834]],"es":[[3844,3844]]},
     "CA_CALENDAR_WINTER": {"enu":[[3840,3840]],"default":[[3840,3840]],"es":[[3850,3850]]},
+    "CA_CAMP_PACKED": {"enu":[[6496,6496]],"default":[[6496,6496]],"esn":[[6502,6502]]},
+    "CA_CAMP_PACKING": {"enu":[[6494,6494]],"default":[[6494,6494]],"esn":[[6500,6500]]},
+    "CA_CAMP_PACK_ACTION": {"enu":[[6505,6505]],"default":[[6505,6505]],"esn":[[6507,6507]]},
     "CA_CAMP_POT": {"enu":[[6486,6486]],"default":[[6486,6486]],"es":[[6489,6489]]},
+    "CA_CAMP_READY": {"enu":[[6495,6495]],"default":[[6495,6495]],"esn":[[6501,6501]]},
+    "CA_CAMP_SETTING_UP": {"enu":[[6493,6493]],"default":[[6493,6493]],"esn":[[6499,6499]]},
+    "CA_CAMP_SITE_FAILED": {"enu":[[6492,6492]],"default":[[6492,6492]],"esn":[[6498,6498]]},
     "CA_CAMP_TENT": {"enu":[[6485,6485]],"default":[[6485,6485]],"es":[[6488,6488]]},
     "CA_CARAVAN_BACK": {"enu":[[3769,3769]],"default":[[3769,3769]],"es":[[3790,3790]]},
     "CA_CARAVAN_CANCEL": {"enu":[[3767,3767]],"default":[[3767,3767]],"es":[[3788,3788]]},

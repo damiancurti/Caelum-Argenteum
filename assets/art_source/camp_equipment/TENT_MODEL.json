@@ -21,6 +21,6 @@
   },
   "model": "src/models/caelum/world/camp/tent.obj",
   "model_sha256": "bbfdef6195c44540d7223cac33ee4fae15747c10051fc8dac0c67c50a97fa9e8",
-  "native_registration": "Pending deployment integration; preview with a private gallery MODELDEF.",
+  "native_registration": "CaelumDeployedTent in src/MODELDEF; private gallery retains independent visual evidence.",
   "author_visual_acceptance": "Pending; author away."
 }

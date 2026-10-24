@@ -12,13 +12,32 @@ established the nested BlockLinesIterator/collision-query constraint documented
 as CA-KP-159; failed probes are retained. Final evidence: 46 native PASS in
 assets/validation_588, original-save load/rollback and native hub return.
 CA411-PLACEMENT-01 remains pending during the author's requested absence.
-Tent, fire, camp land grants and cooking remain open. README reviewed.
+At that geometry stage, tent/fire/land/cooking remained open. README reviewed.
 
 Artwork continuation: generated the original deployed A-frame tent OBJ from
 approved dimensions, reusing owned environment materials. Repeat generation is
 byte-identical; one native gallery assertion and four visually inspected views
 pass. The private fixture helper/wait-chain failures are retained separately.
 Inventory artwork remains unchanged; deployment and author review are pending.
+
+Tent runtime continuation: preserved the original inventory actor inside a
+persistent deployed structure and implemented approved land permissions,
+ten/five-minute attended assembly/packing, native wait and acceleration,
+cardinal entry orientation, save/hub recovery and rain/wind protection without
+ambient-temperature or recovery bonuses. Original saves remain unchanged and
+load in both the new package and their original package. Departure cancels an
+unfinished attended assembly without consuming the item; deployed structures
+persist. Native identity, geometry, timing, climate, menu actions and registry
+evidence totals 112 PASS across 15 selected runs, recorded separately in
+assets/validation_588/deploy. The exact final
+package is byte-checked against all current source members and tested probe13.
+The original private hub probe incorrectly expected live references into an
+unloaded map; the corrected test verifies the saved original item marker and
+quantity on return. The exact-wait fixture also exposed the existing thermal
+forecast guard: nonzero exposure rejects an exact prediction, while native
+manual waiting/acceleration still runs. That existing guard was preserved.
+CA411-TENT-01 is pending; the author terminal was prepared but not launched.
+No fire, cooking or new two-occupant sleeping implementation is claimed.
 
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 
@@ -221,7 +240,7 @@ abstract prepared reagent/charge/sealed-kit recipes, derived prices and import/l
 stock. Identical consumables use the cheapest recipe before the 25% markup.
 Production code adds a dedicated barrel panel, shared ledger references, atomic
 withdrawals, fixed-vessel water reservations and additive recipe/material migrations.
-The 21 attended recipes pass 114 native assertions; transaction, catalogue and
+The 21 attended recipes pass 112 native assertions; transaction, catalogue and
 saved-barrel checks pass 30, 21 and 1+6 respectively. Further integration/presentation
 checks remain in progress; these are agent checks, not author acceptance.
 

@@ -94,8 +94,36 @@ tolerance matches the existing sleeping-bag check. Door/transition clearances
 use the player's radius, and local sliding-door checks preserve the retracted
 leaf's closed position. Narrow liquid sectors and 3D water reject placement;
 a dry solid 3D floor over a liquid basement remains valid. All checks precede
-mutation of the actual carried chest. This service is reusable for camps but
-does not yet implement the approved camp land grants, deployment or cooking.
+mutation of the actual carried chest.
+
+Tent deployment now uses the approved ten/five game minutes, including native
+waiting and accelerated attended work. It preserves the original inventory
+instance across mounting, packing, save/load and hub return. Complete footprint
+checks require mansion garden ground, a held current home contract or the
+authored countryside rectangles; unknown land grants no permission. Existing
+chest placement keeps its separately tested geometry policy. The entrance faces
+the nearest cardinal direction towards the placing character, preserving the
+approved square footprint. Local solid roof/back pieces leave crouched access.
+
+Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
+temperature and humidity are retained. An event-maintained shelter registry
+skips blockmap queries when no tents exist. Its only typed census runs on
+map/save/hub load; normal updates use spawn/destruction bookkeeping and local
+queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
+Fire deployment, cooking and the remaining furniture work are still pending.
+CA411-TENT-01 is prepared but deferred during the author's absence.
+
+Tent assembly reserves the owned unboxed item. Combat, conversation, another
+inventory/trade interface or leaving interaction range pauses attended work.
+Cancelling returns no fabricated copy: assembly keeps the carried item, packing
+keeps the deployed structure. Travelling to another map cancels unfinished
+attended assembly without consuming it. Completion rechecks land/geometry or
+packing capacity and title; expiry does not prevent the holder from retrieving
+the tent. The additive task/structure schema starts at revision 1; older saves
+contain no deployed camps, and original saves remain available for rollback.
+Explicit permissions for other lands and new sleeping arrangements are not
+inferred from a tent or from a grass texture outside the approved mansion map.
+
 
 
 ## Regional event discovery (#415, 5.8.5 in progress)

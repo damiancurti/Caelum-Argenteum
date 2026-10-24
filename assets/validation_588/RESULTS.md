@@ -7,9 +7,9 @@ map transitions reject placement. A retracted sliding door retains its closed
 access area. Native door clearance uses the player's existing collision radius;
 support tolerance reuses the sleeping-bag check's 1 MU tolerance.
 
-The service is reusable for the approved camp equipment, but this delivery
-only integrates the already playable carried chest. Camp land permissions,
-tent deployment, fire and cooking remain pending. It adds no new ownership
+This report records the initial geometry stage at c27d813e and its original
+complete package. Subsequent tent deployment/artwork has separate evidence in
+the tent and deploy subfolders. The geometry stage itself adds no ownership
 policy, rest bonus, art, map geometry or item balance.
 
 ## Evidence

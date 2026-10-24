@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
-**5.8.8/#411:** carried-chest placement geometry;46 native PASS;local queries/save/hub/legacy rollback;CA411-PLACEMENT-01deferred;land/tent/fire/cooking-WIP;validation_588.
+**5.8.8/#411:** chest geometry 46PASS; tents 112PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. Author checks deferred; fire/cooking/two-occupant rest pending.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587. Author away: retain questions/checks until return.
 

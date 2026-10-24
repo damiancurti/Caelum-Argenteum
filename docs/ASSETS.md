@@ -11,8 +11,8 @@ wood, iron and leather textures. The closed canvas area is approximately
 The painted inventory sprite remains unchanged. Sources, material hashes and
 provenance are in `assets/art_source/camp_equipment/TENT_MODEL.json`; native
 four-view inspection and repeat-generation evidence are in
-`assets/validation_588/tent`. Native registration/deployment and author visual
-acceptance remain pending. No new bitmap or external artwork was introduced.
+`assets/validation_588/tent`. Native registration/deployment is implemented; author visual
+acceptance remains pending. No new bitmap or external artwork was introduced.
 
 ## 5.8.6 - Central property access (#411)
 

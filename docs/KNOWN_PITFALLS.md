@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-160 - Do not retain live actor references into an unloaded hub
+
+**Evidence:** native isolated test, 5.8.8/#411;
+`assets/validation_588/deploy`, failed deployhub01 and passing deployhub04.
+
+A carried test record's pointers to a deployed tent and its inventory become
+null while that map is unloaded. The map's own saved tent, original item and
+collision parts still survive. Do not interpret the absent cross-map pointer
+as lost property or recreate a replacement item. Verify the loaded structure
+locally after returning, using its saved identity data and original quantity.
+Transient typed registries must rebuild once on map/save/hub load and track
+subsequent creation/destruction; they must not own or manufacture the objects.
+The camp registry skips local block queries entirely on maps with no tents.
+
+**Scope/performance:** one typed tent census per load, no periodic global scan.
+The actor population is the loaded map; the output is bounded by actual deployed
+tents, not an invented gameplay cap. The isolated 20-tent/1,600-part diagnostic
+repeats the census 100 times: mean 0.008428 ms, maximum 0.037800 ms on the recorded
+Ryzen 9 5950X/GZDoom 4.14.2 run measure02. This is a load-census cost, not a frame
+presentation or rendering-acceptance claim. Normal shelter sampling uses the
+local blockmap only when that registry is nonempty.
+
 ## CA-KP-159 - Finish a local line iterator before nested collision queries
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED

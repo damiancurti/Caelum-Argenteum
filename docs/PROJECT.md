@@ -2,14 +2,32 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
-## 5.8.8 - Safe placement of carried chests (#411, in progress)
+## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 
 Carried chests now require dry, stable support and a free complete collision
 volume. Placement preserves door/transition access and rejects narrow liquid
 strips, with atomic failure that keeps the actual chest and contents carried.
 46 native assertions cover geometry, real storage, save/hub and original-save
 rollback; see [validation_588](../assets/validation_588/RESULTS.md).
-Camp land permissions, tent deployment, fire and cooking remain pending.
+Tent deployment now uses the approved ten/five game minutes, including native
+waiting and accelerated attended work. It preserves the original inventory
+instance across mounting, packing, save/load and hub return. Complete footprint
+checks require mansion garden ground, a held current home contract or the
+authored countryside rectangles; unknown land grants no permission. Existing
+chest placement keeps its separately tested geometry policy. The entrance faces
+the nearest cardinal direction towards the placing character, preserving the
+approved square footprint. Local solid roof/back pieces leave crouched access.
+
+Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
+temperature and humidity are retained. An event-maintained shelter registry
+skips blockmap queries when no tents exist. Its only typed census runs on
+map/save/hub load; normal updates use spawn/destruction bookkeeping and local
+queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
+Fire deployment, cooking and the remaining furniture work are still pending.
+The separate tent stage passes 112 native assertions across 15 selected runs;
+see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 is prepared but
+deferred during the author's absence.
+
 CA411-PLACEMENT-01 is prepared for the author's return; no terminal was opened.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
