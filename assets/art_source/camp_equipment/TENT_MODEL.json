@@ -5,11 +5,11 @@
   "physical_source": "src/caelum/data/CaelumCampData.zs",
   "units_source": "src/caelum/core/CaelumPhysicsUnits.zs",
   "dimensions_m": {
-    "width": 2.0,
-    "length": 2.0,
+    "width": 4.0,
+    "length": 3.0,
     "ridge_height": 1.8
   },
-  "canvas_area_m2_closed": 15.8365041127896,
+  "canvas_area_m2_closed": 35.34434885648845,
   "vertices": 1705,
   "faces": 518,
   "materials": {
@@ -20,7 +20,7 @@
     "models/caelum/world/alchemy_ingredients/cloth_shade2.png": "cbf8bc8280bd28de0b8443bb3dfa37869fe3e67f3e81f619658bfb7d251c4ae7"
   },
   "model": "src/models/caelum/world/camp/tent.obj",
-  "model_sha256": "bbfdef6195c44540d7223cac33ee4fae15747c10051fc8dac0c67c50a97fa9e8",
+  "model_sha256": "6ff87979ce79892485714f51ad8c9b18d4895fda594c39771131aa904e4bf708",
   "native_registration": "CaelumDeployedTent in src/MODELDEF; private gallery retains independent visual evidence.",
   "author_visual_acceptance": "Pending; author away."
 }

@@ -23,9 +23,10 @@
     "rope": "models/caelum/props/stations/ca_station_leather.png"
   },
   "notes": [
-    "A-frame matches the approved approximately 15.8 square metres of canvas, including floor and triangular ends.",
+    "The revised 4 x 3 x 1.8 m A-frame uses approximately 35.34 square metres of canvas, including floor and triangular ends.",
     "Inclined wooden end frames leave the central entrance open; no central post blocks the native crouched body.",
-    "Guy ropes and stakes remain within the approved two-metre plan; no additional land footprint is introduced.",
+    "Guy ropes and stakes remain within the approved 4 x 3 m plan; no additional land footprint is introduced.",
+    "The original two-metre mesh is retained as tent_legacy.obj for already-deployed structures and unfinished old assembly tasks.",
     "Visual seam, pole and stake dimensions do not alter approved inventory mass or thermal calibration.",
     "Only existing owned textures are referenced; no bitmap is generated or edited."
   ]
