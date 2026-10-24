@@ -1,6 +1,22 @@
 // #502: aritmética sin actores, inventarios ni cambios en el reloj.
 class CaelumContaminationRules : Object
 {
+    static double WeaponArea(int kind,int size)
+    {
+        return CaelumContaminationData.WeaponAreaM(kind)
+            *(CaelumEquipmentRules.GetSizeWeightMultiplier(size)**(2.0/3.0));
+    }
+    static double ShieldArea(int kind,int size)
+    {
+        return CaelumContaminationData.ShieldAreaM(kind)
+            *(CaelumEquipmentRules.GetSizeWeightMultiplier(size)**(2.0/3.0));
+    }
+    static clearscope double CylinderArea(double radius,double height)
+    {
+        double r=Max(0.0,radius)/CaelumJourneyRules.MAP_UNITS_PER_METER;
+        double h=Max(0.0,height)/CaelumJourneyRules.MAP_UNITS_PER_METER;
+        return 2*CaelumThermalData.CIRCLE_PI*r*(r+h);
+    }
     static clearscope double DamageFactor(double contamination)
     {
         return contamination>=CaelumContaminationData.SEVERE_THRESHOLD

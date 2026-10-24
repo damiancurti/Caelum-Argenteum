@@ -23,6 +23,16 @@ previews, with identical repeated hashes. This prepares artwork only: runtime
 registration and author inventory review remain pending. No accepted artwork
 was replaced. The first severe-illness test package remains unchanged.
 
+State continuation: additive revision-1 actor/equipment records retain existing
+body contamination and start previously untracked objects clean. Equipment copy,
+pickup, closed/Box storage, withdrawal, save/load, hub return and original-save
+rollback pass 30 individual native assertions in seven selected runs. Sources and
+all 16,860 tested package members are byte-equivalent. Weapon/shield surfaces use
+the approved table and mass-size multiplier^(2/3), without changing defense or
+models. This exposes an explicit contact API; automatic environmental/combat
+callers and real hygiene remain pending. Failed probe logs are retained with
+diagnoses in validation_589/RESULTS.md. README reviewed; same patch version.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Added local full-volume/support/access validation to actual chest placement,

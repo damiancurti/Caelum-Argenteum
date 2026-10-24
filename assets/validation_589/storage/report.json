@@ -1,0 +1,54 @@
+{
+  "issue": 502,
+  "version": "5.8.9",
+  "scope": "persistent actor/equipment state and explicit contact API; automatic exposure pending",
+  "runs": [
+    {
+      "label": "storage-core04",
+      "pass_assertions": 17,
+      "runtime_sha256": "D84E3BC662CE7045CD0C3D03539507A1763047419BB78E0C910F89E896D19EBB",
+      "addon_sha256": "FB6B7C864ABF44EC23A5FCECAE71573C1C6D1CED2BF08FF5B76337CAAA5F4694"
+    },
+    {
+      "label": "storage-save01",
+      "pass_assertions": 1,
+      "runtime_sha256": "D84E3BC662CE7045CD0C3D03539507A1763047419BB78E0C910F89E896D19EBB",
+      "addon_sha256": "FB6B7C864ABF44EC23A5FCECAE71573C1C6D1CED2BF08FF5B76337CAAA5F4694"
+    },
+    {
+      "label": "storage-load01",
+      "pass_assertions": 3,
+      "runtime_sha256": "D84E3BC662CE7045CD0C3D03539507A1763047419BB78E0C910F89E896D19EBB",
+      "addon_sha256": "FB6B7C864ABF44EC23A5FCECAE71573C1C6D1CED2BF08FF5B76337CAAA5F4694"
+    },
+    {
+      "label": "storage-hub01",
+      "pass_assertions": 6,
+      "runtime_sha256": "D84E3BC662CE7045CD0C3D03539507A1763047419BB78E0C910F89E896D19EBB",
+      "addon_sha256": "FB6B7C864ABF44EC23A5FCECAE71573C1C6D1CED2BF08FF5B76337CAAA5F4694"
+    },
+    {
+      "label": "storage-legacy-seed01",
+      "pass_assertions": 1,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "18AF4E2DCBFB905E10E43C3C0443CF530553FECC09D409A40E0A8021D22C9A2A"
+    },
+    {
+      "label": "storage-legacy-load01",
+      "pass_assertions": 1,
+      "runtime_sha256": "D84E3BC662CE7045CD0C3D03539507A1763047419BB78E0C910F89E896D19EBB",
+      "addon_sha256": "43DBF710B999F6FB34F1A1E8812C8C1E43E6234192B150BA5B37BEE6EA6F9593"
+    },
+    {
+      "label": "storage-legacy-rollback01",
+      "pass_assertions": 1,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "96DCE34A4F7EABCA1FD20FBAA7376D41A12E11E66CF0AA1CD6E48BE86680E840"
+    }
+  ],
+  "pass_assertions": 30,
+  "package_members": 16860,
+  "source_equivalence": true,
+  "package_sha256": "d84e3bc662ce7045cd0c3d03539507a1763047419bb78e0c910f89e896d19ebb",
+  "author_acceptance": "No new author acceptance; CA502-SEVERE-01 remains pending"
+}

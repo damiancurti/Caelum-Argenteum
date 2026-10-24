@@ -10,6 +10,13 @@ shows Sick, including an explicit immune qualifier at Toughness>=100. Below
 regeneration depuration, body-mass intake scaling, food ageing and immunity
 without healing remain unchanged. Existing contamination stays authoritative.
 
+Actor/equipment state revision 1 is additive and initialized only when needed.
+The existing player illness record remains the body's source of truth. Native
+equipment copy/pickup/storage preserves concentration; copies have independent
+state. Box and closed-chest contents reject explicit contact without resetting
+their value. These storage routes are implemented and tested; automatic ambient,
+surface and combat callers remain pending.
+
 Approved shared calculations, not yet attached to production contact/hygiene:
 transfer 0.1 degree per second per m², multiplied by source/max(recipient,1).
 Only the lower concentration increases, never above the source; equal values
@@ -19,7 +26,8 @@ Body dose scales 80 kg/body mass. Feet use 0.04 m²; body brushing 0.10 m²;
 bites, scratches and weapon impacts use 0.01 m² for ten contact seconds.
 Immersion uses submerged body area. Biological/chemical water maps to C100,
 clean or salt-only water to C0 for this contact disease; bathing needs potable
-water. The contact clock remains under clarification before integration.
+water. Transmission uses world seconds, including waits and journeys; disease
+damage retains its existing real-second clock.
 
 Environmental reference at 20 C/50% humidity: nature/gardens 5, city 15,
 industry 40, sewers 60; multiply by 2^((T-20)/10)*(0.5+humidity/100), clamp
@@ -28,13 +36,20 @@ it directly, and equipment/body contact can transfer it. Reuse thermal coverage.
 Box and closed chests shield new contact/environmental exposure, retain prior
 contamination and do not suspend food ageing. New untracked actors, surfaces
 and equipment begin at zero on update, with no retrospective exposure.
+The approved initial classification is gardens/countryside as natural, urban
+streets/homes as urban, industrial workshops as industrial and sewers as sewer.
+Future maps declare their category. Generic furniture/actors use their collision
+cylinder's exterior area when no dedicated physical surface exists.
 
 Approved M-size weapon areas (m²): dagger .04; hatchet .10; machete .12;
 sword .16; axe/flail/javelin .18; greatsword .24; spear .25; war axe .28;
 halberd .35; gauntlets pair .50; carbine/shotgun .25; bow .20; crossbow .30;
 staves .30; pickaxe .20; bolas .08; scepter/bell/support book/censer .20;
-orb .15; support statuette/effigy .25. Scale area with squared physical size,
-without a tier multiplier. These game references do not implement #315.
+orb .15; support statuette/effigy .25. Shield areas at M count both faces:
+magic .32, buckler .25, kite .54, tower 1.44 m². Scale area by the existing
+size mass multiplier to the power 2/3 (geometric similarity), excluding tier:
+XS/S/M/L/XL approximately .630/.825/1/1.160/1.310. These game references
+do not implement #315 or change shield defense/models.
 
 Equipment washing needs no station: 1 L potable water/m², 5 g soap/L, reusable
 cloth; a full pass removes all contamination in 60 world seconds/m²/object,

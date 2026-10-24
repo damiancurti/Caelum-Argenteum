@@ -147,6 +147,7 @@ class CaelumEquipmentItem : Inventory
     int SupportMigrationRevision;
     // La humedad sigue a esta pieza al equiparla, guardarla o soltarla.
     double ThermalWaterKg;
+    CaelumContaminationState ContaminationState;
 
     override void PostBeginPlay()
     {
@@ -450,6 +451,7 @@ class CaelumEquipmentItem : Inventory
             copy.UtilityStaffContactTics = UtilityStaffContactTics;
             copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
+            copy.ContaminationState=ContaminationState!=null ? ContaminationState.Copy() : null;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = Equipped;
@@ -484,6 +486,7 @@ class CaelumEquipmentItem : Inventory
             copy.UtilityStaffContactTics = UtilityStaffContactTics;
             copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
+            copy.ContaminationState=ContaminationState!=null ? ContaminationState.Copy() : null;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = false;

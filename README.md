@@ -21,9 +21,11 @@ old cached damage model.
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See
 assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
-Approved environmental/contact and cleaning calculations are shared helpers;
-actor/equipment exposure, soap acquisition, bathing and repair/sleep cleaning
-are not integrated in this slice. The expanded issue and V5.8 remain open.
+Actor and equipment contamination now persists through pickup, storage, saves
+and hub return. Thirty further native checks cover that state, protected storage,
+explicit contact and old-save migration/rollback. Weapon/shield areas use the
+approved size conversion. Automatic environmental/combat exposure, soap
+acquisition, bathing and repair/sleep cleaning are not integrated in this slice. The expanded issue and V5.8 remain open.
 Four painted hygiene item sources/previews are prepared in
 `assets/art_source/hygiene`; runtime registration and author review are pending.
 

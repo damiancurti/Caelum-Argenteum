@@ -4,6 +4,18 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-161 - Avoid reserved names and State statement ambiguity in ZScript
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-24 / 2026-10-24
+Issue: #502. Baseline: 87dceb9e plus the persistent-state changes.
+Evidence: assets/validation_589/storage/native, core01/core02 and core04.
+GZDoom 4.14.2 rejects a method named Protected. A local named state can also
+misparse at the start of a write statement (`state.Concentration = ...`), where
+the parser expects a State expression. Renaming these to IsShielded and entry
+compiles and passes the same native fixture. Do not infer that every occurrence
+of the identifier state is invalid; the verified failure is this statement form.
+
 ## CA-KP-160 - Do not retain live actor references into an unloaded hub
 
 **Evidence:** native isolated test, 5.8.8/#411;
