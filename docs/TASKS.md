@@ -11,8 +11,9 @@ CA414-PROTOTYPE-01 is pending author review; this is not issue completion.
 
 Remaining #414: control-volume quality lookup, implementation of the approved
 contamination-union mixing rule,
-exact geometry/capacities/rates beside the mansion pool, barrier interaction, per-source
-calendar evolution and production migration/catch-up. Keep the issue open.
+placement of the approved two 32,000 L deposits beside the mansion pool,
+barrier interaction, the approved fill/drain calibration in SYSTEMS and
+production migration/catch-up. Keep the issue open.
 
 V5.8 dependencies remain separate: #410 catalogue -> #411 property/camp -> #412
 rest integration; #413 altitude; #415 unloaded outcomes -> #416 routes/schedules

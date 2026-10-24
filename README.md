@@ -13,7 +13,8 @@ it, then rebuild with `run_dev.bat` as described below.
 Two swimmable volumes equalize through a gate, stop when it closes, and retain
 levels across save/load and hub return. Production changes only synchronize two diagnostic release labels.
 This is the required technical gate, not completed campaign water simulation;
-quality integration, authored geometry and calendar evolution remain open.
+quality integration, placement and calendar evolution remain unimplemented.
+The approved deposit dimensions and fill/drain calibration are recorded in SYSTEMS.
 Author review CA414-PROTOTYPE-01 is pending. See
 [evidence and reproduction](assets/validation_580/RESULTS.md).
 

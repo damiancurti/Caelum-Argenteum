@@ -15,7 +15,11 @@ The existing quality reader returns unidentified for metadata on the control
 sector; this is a recorded integration limitation, not a passing mixing test.
 Production gameplay and campaign maps remain unchanged; only two diagnostic release labels are synchronized. The author subsequently approved container-style contaminant union and the
 first campaign location beside the mansion pool, with automatic calendar
-filling/draining. Exact geometry, rates and mechanisms remain to be defined.
+filling/draining. Subsequent approval fixes two 4 x 4 x 2 m / 32,000 L deposits,
+a 20 cm opening with Cd 0.62, left potable inflow 1 L/s to 1.75 m and right drain
+1 L/s down to 0.25 m. The calendar includes map absence at Limbo's 1:1 rate,
+without offline real-time progression. The pool itself must remain unchanged.
+This records the approved contract, not completed production implementation.
 CA414-PROTOTYPE-01 is outstanding; no author acceptance or completed V5.8 claim.
 
 ## 5.7.14 - Reusable mates (#472), 2026-10-23

@@ -21,7 +21,18 @@ The author approved reusing the container contamination union and locating the
 first connected installation beside the mansion pool. No campaign water-volume
 schema, replenishment, drainage, concentration rule,
 new map geometry or real-time offline progression is introduced. A generic
-production controller needs the author's remaining per-source choices.
+production controller still needs implementation and explicit save-safe geometry.
+
+Approved campaign calibration (2026-10-23; not yet implemented): two deposits
+beside the mansion pool, each 4 x 4 m and 2 m deep (32,000 L). Preserve the
+existing pool. A 20 cm opening connects them; use a simplified head-difference
+flow model with discharge coefficient 0.62. The left receives potable water at
+1 L/s up to 1.75 m; the right drains at 1 L/s down to 0.25 m. An open gate
+permits transfer; closing it allows those levels to recover. Evolve with game
+time, including map absence, at Limbo's 1:1 rate. Closing the game adds no time.
+Mixtures retain every biological/salt/chemical contaminant; dilution does not
+purify. Exact placement/topology and old visited-map compatibility remain
+engineering work; this approval does not authorize invalidating existing saves.
 
 ## Reusable mates (#472, 5.7.14)
 
