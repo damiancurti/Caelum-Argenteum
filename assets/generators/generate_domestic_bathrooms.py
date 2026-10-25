@@ -134,9 +134,21 @@ def main():
     for row in DATA['fixtures'].values():code.append(f'        case {row["id"]}:return "{row["class"]}";')
     code += ['        }return "None";}','}']
     path=ROOT/'src/caelum/data/CaelumDomesticFixtureData.zs';path.write_text('\n'.join(code)+'\n',encoding='utf-8');outputs.append(path)
+    water='''// #410: reservas domésticas aprobadas; cada vivienda conserva la suya.
+class CaelumDomesticWaterData : Object
+{
+    const REVISION=1;
+    const CAPACITY_LITERS=%.1f;
+    const REFILL_LITERS_PER_WORLD_MINUTE=%.1f;
+}
+''' % (DATA['reserve_liters'],DATA['refill_liters_per_world_minute'])
+    path=ROOT/'src/caelum/data/CaelumDomesticWaterData.zs';path.write_text(water,encoding='utf-8');outputs.append(path)
+    # Explicit LF keeps the registered byte hashes stable after a Git checkout.
+    for path in outputs:
+        if path.suffix!='.png':path.write_text(path.read_text(encoding='utf-8'),encoding='utf-8',newline='\n')
     digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
     manifest={'issue':410,'exporter':'Pillow '+Image.__version__,'inputs':{p.relative_to(ROOT).as_posix():digest(p) for p in inputs},'outputs':{p.relative_to(ROOT).as_posix():digest(p) for p in outputs},'assets':records}
-    (ART/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+    (ART/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Registered three bathroom sprites, models and authoritative placement data.')
 
 

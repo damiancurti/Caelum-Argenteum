@@ -1,0 +1,119 @@
+{
+  "passes": 220,
+  "runs": [
+    {
+      "label": "core-final-h",
+      "passes": 14,
+      "runtime": "final07",
+      "sha256": "8B4DB15F947F9CF96EAC7FBA969EB3892231A2D8A57A64C3480E3C338D604625",
+      "addon_sha256": "352EA52DD54EA7722D360F6D3C57FDAD3C7D6CEE65AFC3B516FDF9AF37801D91"
+    },
+    {
+      "label": "fill-final-c",
+      "passes": 15,
+      "runtime": "final03",
+      "sha256": "200833F7B035CBF85674C5834284C21888BEA8281DDD6936766F2A2C5F619B4C",
+      "addon_sha256": "9D03293559D1508AA0AF97EE347C8AB40B57163A7680D9C54B46A3AA478EEBD3"
+    },
+    {
+      "label": "property-b",
+      "passes": 23,
+      "runtime": "probe02",
+      "sha256": "97111FAA9A9B278FA3348D4F1FFC61EF1CE8D581EE39415583258B962022AE75",
+      "addon_sha256": "4DAD1A9A4EB279AD8F09C625F7239149ADC9326D66A094627E1CBE95837765A9"
+    },
+    {
+      "label": "relocated-b",
+      "passes": 23,
+      "runtime": "probe02",
+      "sha256": "97111FAA9A9B278FA3348D4F1FFC61EF1CE8D581EE39415583258B962022AE75",
+      "addon_sha256": "4DAD1A9A4EB279AD8F09C625F7239149ADC9326D66A094627E1CBE95837765A9"
+    },
+    {
+      "label": "last-b",
+      "passes": 23,
+      "runtime": "probe02",
+      "sha256": "97111FAA9A9B278FA3348D4F1FFC61EF1CE8D581EE39415583258B962022AE75",
+      "addon_sha256": "4DAD1A9A4EB279AD8F09C625F7239149ADC9326D66A094627E1CBE95837765A9"
+    },
+    {
+      "label": "save-final-f",
+      "passes": 1,
+      "runtime": "final05",
+      "sha256": "4B9D9072543E30F8C10FA32392933D547367EC05115D4233C66C1279F24E85BF",
+      "addon_sha256": "688D7A56F0AFE74389A7ECD3FD9A989D8407853423F87B214104C05C5AE85664"
+    },
+    {
+      "label": "load-final-f",
+      "passes": 27,
+      "runtime": "final05",
+      "sha256": "4B9D9072543E30F8C10FA32392933D547367EC05115D4233C66C1279F24E85BF",
+      "addon_sha256": "688D7A56F0AFE74389A7ECD3FD9A989D8407853423F87B214104C05C5AE85664"
+    },
+    {
+      "label": "hub-final-c",
+      "passes": 58,
+      "runtime": "final03",
+      "sha256": "200833F7B035CBF85674C5834284C21888BEA8281DDD6936766F2A2C5F619B4C",
+      "addon_sha256": "9D03293559D1508AA0AF97EE347C8AB40B57163A7680D9C54B46A3AA478EEBD3"
+    },
+    {
+      "label": "legacy-final-f",
+      "passes": 26,
+      "runtime": "final05",
+      "sha256": "4B9D9072543E30F8C10FA32392933D547367EC05115D4233C66C1279F24E85BF",
+      "addon_sha256": "688D7A56F0AFE74389A7ECD3FD9A989D8407853423F87B214104C05C5AE85664"
+    },
+    {
+      "label": "rollback-final",
+      "passes": 1,
+      "runtime": "baseline",
+      "sha256": "3D8110804FAF10A709050749C8FFEE93987B5332158ADEFB613F898D998F5DF7",
+      "addon_sha256": "980860F831B432803B13FF2AB203CC66229D009BB7525EB4F57E3B7E311AF7DF"
+    },
+    {
+      "label": "manual-final-h",
+      "passes": 1,
+      "runtime": "final07",
+      "sha256": "8B4DB15F947F9CF96EAC7FBA969EB3892231A2D8A57A64C3480E3C338D604625",
+      "addon_sha256": "352EA52DD54EA7722D360F6D3C57FDAD3C7D6CEE65AFC3B516FDF9AF37801D91"
+    },
+    {
+      "label": "retry-final-g",
+      "passes": 4,
+      "runtime": "final06",
+      "sha256": "8D3BA545D7CA1D39937AE95C745E3AF24053CC6C98E9850CDEDCD558CC0C1501",
+      "addon_sha256": "352EA52DD54EA7722D360F6D3C57FDAD3C7D6CEE65AFC3B516FDF9AF37801D91"
+    },
+    {
+      "label": "capture-final-e",
+      "passes": 4,
+      "runtime": "final05",
+      "sha256": "4B9D9072543E30F8C10FA32392933D547367EC05115D4233C66C1279F24E85BF",
+      "addon_sha256": "688D7A56F0AFE74389A7ECD3FD9A989D8407853423F87B214104C05C5AE85664"
+    }
+  ],
+  "final03_to_final07_members": [
+    "caelum/data/CaelumDomesticFixtureData.zs",
+    "caelum/data/domestic_bathrooms.modeldef",
+    "caelum/data/domestic_bathrooms.textures",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "LANGUAGE",
+    "licenses/DOMESTIC_BATHROOMS_410.txt",
+    "localization/index.json",
+    "localization/INDEX.md",
+    "models/caelum/props/bathrooms/bathtub.obj",
+    "models/caelum/props/bathrooms/sink.obj",
+    "models/caelum/props/bathrooms/toilet.obj"
+  ],
+  "reused_behavior_evidence": "All ZScript behavior identical after normalizing line endings and two diagnostic release labels. Final06 executes blocked-placement retry; final07 executes core/manual smoke. Model/notice changes have final05 captures.",
+  "timing": "CA410B TIMING ready-prepare calls=1000 actors=57 mean_ms=0.000545 worst_ms=0.010200",
+  "failed_probes": [
+    "house-a: delayed PostBeginPlay overwrote House; final sizing and installation flag fix it. Approach test corrected to usable side of fixture; closed doorway test now checks added obstruction.",
+    "legacy-final: old save restores old fixture handler; diagnostic bridge added.",
+    "legacy-final-b: saved Prepared flag skipped new installation; transient BathroomReady now forces idempotent load validation.",
+    "manual-smoke-e: temporary one-line wrapper lacked terminating newline; prepared script now includes newline and directly appends quit."
+  ],
+  "author_test": "CA410-BATH-01 pending; inherited CA502-TREATMENT-01 remains pending."
+}

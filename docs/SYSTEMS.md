@@ -4,7 +4,7 @@ Documentation version: **5.8.11** — 2026-10-25.
 
 ## 5.8.11 - Household bathroom installation (#410)
 
-Approved domestic infrastructure: each of the160 existing house interiors receives a sink, bathtub and toilet. Each house owns one potable200-L reserve shared by sink and bathtub, refilling1L/world-minute. Preserve fractional volume, save identity and elapsed absence. The installation does not alter map geometry. Runtime integration follows the separate art commit. Toilet metabolic use, soap bathing and resident cleaning remain #502.
+Approved domestic infrastructure: each of the160 existing house interiors receives a sink, bathtub and toilet. Each house owns one potable200-L reserve shared by sink and bathtub, refilling1L/world-minute. Preserve fractional volume, save identity and elapsed absence. The installation does not alter map geometry. Runtime integration is implemented in5.8.11. Source amounts are generated from assets/art_source/bathrooms/DATA.json. Each house lazily owns a revision1 water object in the travelling household registry. Installation retains map-local fixture references; a transient load guard revisits already-prepared legacy houses. Use reads available volume; selected water containers collect while facing and reaching an accessible fixture. Partial fill uses available volume and respects existing inventory/thermal/contamination guards. The source temperature follows the existing ambient container-fill rule. A nonpositive/full/blocked request cannot spend water. Native save/hub/rollback and220checks are recorded in validation_5811; author review CA410-BATH-01 is pending. Toilet metabolic use, soap bathing and resident cleaning remain #502.
 
 ## 5.8.9 - Contamination and hygiene contract (#502)
 

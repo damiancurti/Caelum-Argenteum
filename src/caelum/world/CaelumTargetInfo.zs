@@ -105,6 +105,9 @@ class CaelumTargetInfo : Object play
         let house=CaelumHousePortal(Subject);
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
+        let domestic=CaelumDomesticFixture(Subject);
+        if(domestic!=null && domestic.SuppliesWater())
+        {Actions=L(reachable && domestic.CanReach(user)?"CA_DOMESTIC_WATER_HINT":"CA_TARGET_APPROACH");return;}
         if(door!=null || house!=null)Title=L(house!=null?"CA_TARGET_TRANSITION":"CA_TARGET_DOOR");
         if(house!=null && CaelumPropertyData.Offered(house.args[0]))Title=L("CA_PROPERTY_TITLE");
         if(gate!=null)Title=L(CaelumWorldCatalogue.ConnectionNameKey(gate.ConnectionId));

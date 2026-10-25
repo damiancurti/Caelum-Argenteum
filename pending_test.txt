@@ -8,3 +8,13 @@ Launch assets/validation_589/treatment/author_terminal.ps1, option1.
    its Life recovery. F6 toggles the console for test messages.
 3. Optional terminal option2 executes rules/native dose/save/load/hub checks;
    expect only PASS and zero failures. This does not test rain or NPC cleaning.
+
+CA410-BATH-01 | Origin: 5.8.11 / #410 | PENDING
+Prerequisite: isolated final07 bathroom package and assets/validation_5811/author_terminal.ps1; close any other GZDoom session.
+1. Choose manual test. F1/F2/F3 approach sink/bathtub/toilet. Inspect models, materials, target names and clear access.
+2. Use sink or bathtub to read reserve. Select the empty normal bottle in Inventory and collect water while facing the fixture. It receives2.5L potable water; the shared household reserve decreases by2.5L.
+3. F7 empties only the test bottle; collect from the other fixture. Both use the same reserve. Refilling a full bottle or looking away must not spend water.
+4. F4 enters another house; its reserve is independent. F5 returns; original water remains, with only1L/world-minute elapsed refill.
+5. Save and reload in the isolated session. Fixtures remain single, contents/reserve persist, and access stays clear.
+6. Terminal option2 executes the focused automatic checks; all must pass.
+Expected: all above behavior and the new fixture appearance accepted. Toilet metabolism, soap bathing, resident cleaning and mansion kitchen are outside this check.

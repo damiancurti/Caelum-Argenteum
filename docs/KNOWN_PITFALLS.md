@@ -1693,6 +1693,20 @@ channel references, not positions, climate or visibility results; preserve the
 original per-query eligibility and path checks. Native equivalence tests cover
 empty/overlapping channels, ordering, immediate mutations and save/hub lifecycle.
 
+
+Follow-up ENGINE-VERIFIED, #410/5.8.11,2026-10-25 (validation_5811): a fixed
+fixture must retain identity assigned immediately after Spawn, and use its final
+collision size before TestMobjLocation. PostBeginPlay must not overwrite that
+identity later. Saved EventHandler readiness is also persistent: a new transient
+readiness guard is necessary to revisit legacy maps and install additive actors.
+The final legacy load/retry/save tests cover both boundaries. Bathroom lookup
+uses one typed controller scan on load/retry (at most once per second while
+blocked), never per NPC or per tic; owner is HouseHubEvents. The fixture count
+is one controller/three objects. In the recorded57-actor house,1000 ready calls
+averaged0.000545ms, observed worst0.010200ms; this bounds that recorded sample,
+not arbitrary player populations or render performance. Collection uses a local
+blockmap query and water refill performs no periodic household/actor scan.
+
 ## CA-KP-107 - Launch only completed, immutable native test packages
 
 Status/evidence: ENGINE-VERIFIED failure and guarded successful rerun, #252 / 5.4.21,

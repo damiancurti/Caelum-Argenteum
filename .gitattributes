@@ -364,6 +364,9 @@
 /assets/art_source/bathrooms/*.json text eol=lf
 /assets/generators/generate_domestic_bathrooms.py text eol=lf
 /src/caelum/data/CaelumDomesticFixtureData.zs text eol=lf
+/src/caelum/data/CaelumDomesticWaterData.zs text eol=lf
+/src/caelum/world/CaelumDomesticFixture.zs text eol=lf
+/src/caelum/world/CaelumDomesticWater.zs text eol=lf
 /src/caelum/data/domestic_bathrooms.* text eol=lf
 /src/models/caelum/props/bathrooms/*.obj text eol=lf
 /src/licenses/DOMESTIC_BATHROOMS_410.txt text eol=lf

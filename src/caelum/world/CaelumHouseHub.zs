@@ -17,6 +17,7 @@ class CaelumHouseHub : Object play
         bool ready=CaelumDiningWorld.Place(slot,CaelumCityData.TablePosition(house),2,90);
         if(!CaelumMansionFurniture.Bed(slot,CaelumCityData.BedPosition(house),90))ready=false;
         if(!CaelumHouseChestRules.Prepare())ready=false;
+        if(!CaelumBathroomInstallation.Prepare(house))ready=false;
         return ready;
     }
 }
@@ -30,12 +31,15 @@ class CaelumHouseHubEvents : EventHandler
         if(session!=null)session.Act(e.Args[0]);
     }
     bool Prepared;
+    transient bool BathroomReady;
     int NextPrepareTic;
-    override void WorldLoaded(WorldEvent e){Prepared=false;NextPrepareTic=0;}
+    override void WorldLoaded(WorldEvent e){Prepared=false;BathroomReady=false;NextPrepareTic=0;}
     override void WorldTick()
     {
-        if(!Prepared && level.time>=NextPrepareTic)
-        {Prepared=CaelumHouseHub.Prepare();NextPrepareTic=level.time+TICRATE;}
+        // Un guardado anterior puede restaurar Prepared=true. Esta comprobación
+        // transitoria revalida la instalación aditiva al cargar, sin duplicarla.
+        if((!Prepared || !BathroomReady) && level.time>=NextPrepareTic)
+        {Prepared=CaelumHouseHub.Prepare();BathroomReady=Prepared;NextPrepareTic=level.time+TICRATE;}
     }
 }
 

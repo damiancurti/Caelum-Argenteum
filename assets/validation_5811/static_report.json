@@ -1,0 +1,9 @@
+{
+  "package": "build\\issue410-bath\\final07\\caelum_argenteum_dev.pk3",
+  "package_sha256": "8b4db15f947f9cf96eac7fba969eb3892231a2d8a57a64c3480e3c338d604625",
+  "members": 16884,
+  "unchanged_maps": 169,
+  "unchanged_house_maps": 160,
+  "repeated_generator_identical": true,
+  "validator_errors": []
+}

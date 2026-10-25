@@ -540,6 +540,8 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool FillFromSource(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || user.health <= 0) return false;
+        let fixture=CaelumDomesticFixture.SourceFor(user);
+        if(fixture!=null)return fixture.Fill(user,self);
         let reservoir=CaelumConnectedWaterMap.Get();
         if(reservoir!=null)reservoir.Sync(CaelumWorldClock.Get(user));
         int reservoirIndex=reservoir!=null ? reservoir.Index(CaelumWaterQuality.Model(user)) : -1;

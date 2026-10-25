@@ -8,6 +8,32 @@ Original painted sink, bathtub and high-cistern toilet sprites, three determinis
 
 The author delegated dimensions/material calculations for furniture. This asset commit preserves accepted artwork and changes no map geometry. README reviewed. Water/session behavior is not claimed by the art stage.
 
+Runtime continuation: The160 existing house interiors now install one sink, bathtub and toilet each.
+Sink and bathtub share a saved200-L potable household reserve; different houses
+remain independent. Refill is1L/world-minute, evaluated lazily across absence.
+Use shows available water; collect into the selected inventory container while
+facing the fixture. Capacity, carried weight, Box placement, boiling locks,
+contamination mixing and residence permission retain their existing guards.
+
+Revision1 state and a transient load check install missing fixtures in old saves
+without resetting water or duplicating objects. All169 map files, including160
+houses, remain byte-identical. Static validation and repeated art generation
+pass;220 executed native checks cover selected houses, shared/partial collection,
+blocked placement, save/hub, old-save migration and rollback. Final package has
+16,884 source-matched members; evidence: assets/validation_5811.
+
+CA410-BATH-01 is pending author review. The toilet is installed visually; its
+metabolic action, soap bathing and resident cleaning remain#502. Mansion kitchen,
+remaining furniture/crafting and food integration remain unfinished#410 work.
+V5.8 is not complete.
+
+The first native fixture test exposed deferred PostBeginPlay clearing House and
+checking an early default footprint; configure final size before collision and
+preserve assigned identity. Old saves also restore Prepared=true, so the added
+transient BathroomReady flag revalidates the additive installation after loading.
+Failed probes and their corrected evidence remain in validation_5811. The old
+save loads with the original package for rollback. No FPS claim is made.
+
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 
 Author confirmation,2026-10-25: CA502-WASH-01 (origin5.8.9/#502) passed

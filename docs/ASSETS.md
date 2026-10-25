@@ -31,7 +31,7 @@ Mass/recipes and portable versions remain the broader#410 catalogue work.
 MANIFEST.json records input/output hashes, mesh bounds, sprite registration and
 Pillow version. Retained prompts and src/licenses/DOMESTIC_BATHROOMS_410.txt
 record provenance; no extra public redistribution license is inferred.
-Native runtime/visual verification and author acceptance follow separately.
+The world models and target panel were captured natively in validation_5811/captures. The basin cabinet is hollow around its inset bowl; owned station-paper shading separates inner walls from the enamel rim/floor. Inventory PNGs were inspected directly. The attempted runtime r_models toggle retained models in its capture, so it is not claimed as native sprite-fallback validation. Author visual acceptance remains pending as CA410-BATH-01.
 
 ## 5.8.9 - Hygiene item artwork (#502, in progress)
 

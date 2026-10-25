@@ -4,7 +4,24 @@ Documentation version: **5.8.11** — 2026-10-25.
 
 ## 5.8.11 / #410 - Domestic bathrooms
 
-Prepared: three original fixture sprites/models and generated placement data. Next: fixed installation in existing house bathroom rooms, independent200-L reserves,1L/world-minute refill, native save/hub/legacy/collision evidence and author terminal. Toilets/bathing/metabolic effects remain #502; the wider food/furniture catalogue remains unfinished.
+The160 existing house interiors now install one sink, bathtub and toilet each.
+Sink and bathtub share a saved200-L potable household reserve; different houses
+remain independent. Refill is1L/world-minute, evaluated lazily across absence.
+Use shows available water; collect into the selected inventory container while
+facing the fixture. Capacity, carried weight, Box placement, boiling locks,
+contamination mixing and residence permission retain their existing guards.
+
+Revision1 state and a transient load check install missing fixtures in old saves
+without resetting water or duplicating objects. All169 map files, including160
+houses, remain byte-identical. Static validation and repeated art generation
+pass;220 executed native checks cover selected houses, shared/partial collection,
+blocked placement, save/hub, old-save migration and rollback. Final package has
+16,884 source-matched members; evidence: assets/validation_5811.
+
+CA410-BATH-01 is pending author review. The toilet is installed visually; its
+metabolic action, soap bathing and resident cleaning remain#502. Mansion kitchen,
+remaining furniture/crafting and food integration remain unfinished#410 work.
+V5.8 is not complete.
 
 ## 5.8.9 - Contamination expansion (#502, in progress)
 

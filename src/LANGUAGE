@@ -6532,3 +6532,17 @@ CA_HYGIENE_SOAP = "Jabón";
 CA_HYGIENE_CLOTH = "Trapo de limpieza";
 CA_HYGIENE_MAKE_SOAP = "Elaborar jabón";
 // END HYGIENE SUPPLIES
+
+[enu default]
+CA_DOMESTIC_SINK = "Domestic sink";
+CA_DOMESTIC_BATHTUB = "Bathtub";
+CA_DOMESTIC_TOILET = "Toilet";
+CA_DOMESTIC_WATER_HINT = "Use: check water | Inventory: collect into a container";
+CA_DOMESTIC_WATER_AVAILABLE = "Potable household reserve: %.2f L. Select a container in Inventory and collect water while facing this fixture.";
+
+[es]
+CA_DOMESTIC_SINK = "Fregadero doméstico";
+CA_DOMESTIC_BATHTUB = "Bañera";
+CA_DOMESTIC_TOILET = "Inodoro";
+CA_DOMESTIC_WATER_HINT = "Usar: consultar agua | Inventario: recoger en un recipiente";
+CA_DOMESTIC_WATER_AVAILABLE = "Reserva potable de la vivienda: %.2f L. Seleccioná un recipiente en el inventario y recogé agua mirando este sanitario.";
