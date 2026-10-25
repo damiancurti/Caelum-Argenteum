@@ -4,6 +4,20 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
 Clean-water immersion now removes one body-contamination degree per world
 minute per submerged square metre, multiplied by80kg/body mass. The existing
 anatomical water samples distinguish potable, salty, biological, chemical and
@@ -21,7 +35,7 @@ At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without
 turning it into healing; natural depuration below 90 removes the multiplier.
 Travel/wait forecasts share the same rule. Existing saved body contamination
-and fractional damage survive updating; wait forecast schema11 invalidates old
+and fractional damage survive updating; wait forecast schema12 invalidates old
 cached models after adding immersion washing.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,

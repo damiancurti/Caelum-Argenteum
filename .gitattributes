@@ -358,3 +358,4 @@
 /assets/validation_589/treatment/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_589/rain/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_589/immersion_wash/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/metabolism/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

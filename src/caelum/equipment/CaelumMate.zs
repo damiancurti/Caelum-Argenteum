@@ -147,7 +147,9 @@ class CaelumMateRecovery : Powerup
         let user=CaelumPlayer(Owner);
         if(user==null || !CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.DerivedStats==null)return;
         if(hydration<=0 && ratio<=0)return;
+        double thirstBefore=user.CurrentThirst;
         user.CurrentThirst=Min(CaelumConstants.SURVIVAL_MAXIMUM,user.CurrentThirst+hydration);
+        CaelumFoodIllness.Satiate(user,user.CurrentThirst-thirstBefore);
         if(ratio>0)
         {
             HealingFraction+=user.CaelumMaximumHealth*ratio;

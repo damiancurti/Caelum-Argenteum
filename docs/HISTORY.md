@@ -154,6 +154,25 @@ failure is implied. README reviewed; same patch version. The author also approve
 household supply purchases and metabolic toilet limits/time/water, recorded in
 SYSTEMS; those interactions remain pending.
 
+Metabolic-capacity continuation,2026-10-25: Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+The retained failed legacy probe used an addon basename different from the one
+required by the saved game. The repaired fixture preserves checks.pk3 in its own
+legacy directory; production code did not change. The original save remains
+untouched and usable with the prior package. README reviewed; same patch.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

@@ -24,7 +24,7 @@ The ambient rain reduction is integrated into actual player/equipment exposure,
 the World journal and independent waiting forecasts. It subtracts the approved
 0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
 urban ground, clamped at zero. Roofs/tents, natural and industrial references
-retain their prior rules. Waiting schema11 now invalidates earlier cached projections.
+retain their prior rules. Current waiting schema12 invalidates earlier cached projections.
 This does not yet implement persistent floor washing or resident cleaning.
 
 Approved 2026-10-25, remaining surface/domestic integration:
@@ -156,7 +156,21 @@ native waiting parity, water-exposure regression, saves, hub return and a prior
 save. All16,869 wash01 members match src. Evidence:
 assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
 
-Approved metabolic toilet interaction, implementation pending: actual Hunger
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+Approved toilet interaction; session/furniture integration pending: actual Hunger
 and Hydration recovered through food/drink add together, with fractions retained.
 Every20 restored percentage points earns1 cleansing degree; stored capacity
 caps at20. Each effective use lasts60world seconds and spends10L domestic
