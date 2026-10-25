@@ -62,6 +62,7 @@ class CaelumCombatActor : Actor
     CaelumArmorModel CombatArmor;
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
+    transient CaelumContaminationNPC ContaminationExposure;
     CaelumAltitudeState AltitudeState;
     CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;

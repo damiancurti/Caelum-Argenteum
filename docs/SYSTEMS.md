@@ -4,6 +4,38 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
+thermal system now share the player's environmental/equipment/immersion balance.
+The existing staggered thermal clock drives exposure, including accelerated
+world time, without global actor scans. Modeled armor, sidearms, shields and
+native carried equipment retain their existing identities; boxed gear is protected.
+Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
+CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
+continuous actor contact, unloaded-map exposure and resident housekeeping remain
+unfinished; this continuation does not complete #502 or V5.8.
+
+NPC exposure uses the accepted thermal body area, anatomical coverage and actual
+submerged rows. Outer armor receives ambient/water exposure before its contact
+with skin; body dose scales by80/bodyKg. Bare animals use their existing thermal
+body geometry. Potable immersion cleans the submerged body; contaminated water
+exposes it. The same shared balance and constants serve the player and NPCs.
+The cache reuses rows, reads current concentrations on each scheduled interval,
+and visits only the owner's inventory; no new Tick, registry or map census exists.
+Unsupported, dead or unavailable-climate actors do not enter this living-thermal
+adapter. This does not implement NPC illness damage or household cleaning.
+
+Only authoritative body/item/model concentrations serialize. The transient adapter
+rebuilds without resetting them after load/hub return. Current thermal scheduling
+pauses NPC physiology outside the loaded map; historical off-map contamination
+still requires separate integration. This limitation is not acceptance of the
+unfinished off-map behavior. No map, art, recipe or balance value changes.
+
+The native hub crash reported by the author was reproduced twice: contamination
+carriers used AddInventory without BecomeItem, leaving world links active.
+Creation now uses AttachToOwner; attachment revision1 idempotently normalizes
+older owned carriers without altering concentration, state revision1 or ownership.
+The exact prior-save rollback remains available. CA-KP-166 records this lesson.
+
 Combat-contact continuation (2026-10-25, #502): successful native physical melee
 uses the approved0.01m2 impact patch and10 world seconds of contact. The shared
 concentration integration recalculates the ratio throughout that duration;

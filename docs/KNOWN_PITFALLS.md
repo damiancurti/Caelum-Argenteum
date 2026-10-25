@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-166 - Hidden inventory carriers must leave world links before attachment
+
+Status/evidence: ENGINE-VERIFIED, #502, GZDoom4.14.2,2026-10-25.
+Evidence: assets/validation_5812/npc; the author's local CrashReport.zip is
+preserved in ignored build/issue502-hygiene/npc-hub02-author-crash.zip.
+
+Spawning a hidden inventory actor then calling owner.AddInventory alone omits
+Inventory.BecomeItem. The item retains sector/blockmap/thinker-world participation.
+Under repeated NPC contamination, two native hub tests crashed in CAH001 with
+C0000005, write to0xbeefcafe. AttachToOwner invokes BecomeItem before AddInventory;
+using it removes the reproduced crash. Native source reference:
+https://github.com/ZDoom/gzdoom/blob/g4.14.2/wadsrc/static/zscript/actors/inventory/inventory.zs
+
+Use the complete native attachment path for created hidden inventory. Existing
+owned contamination carriers use lazy attachment revision1: BecomeItem once,
+preserving owner and all stored values. Never reset contamination as migration.
+DetachFromOwner is an empty notification by default; removing an inventory item
+requires the owner's removal/drop path. Test fixtures must reacquire hub-owned
+NPC inventory from its owner rather than retaining cross-map player references.
+
+Regression: current save/load and hub return, previous-runtime saves and hub
+return, idempotent migration, original-runtime rollback, real-clock NPC exposure
+and previously accepted melee/calendar behavior. The author accepted CA502-NPC-01 on2026-10-25; this is separate from those
+engine checks.
+
 ## CA-KP-165 - Native melee defaults to None; test the delivery path
 
 Status/evidence: ENGINE-VERIFIED; #502,5.8.12,2026-10-25; author review pending.

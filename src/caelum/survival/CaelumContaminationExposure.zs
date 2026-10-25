@@ -2,6 +2,7 @@
 class CaelumContaminationEquipment : Object play
 {
     CaelumEquipmentItem Item;
+    CaelumContaminationContactPoint Endpoint;
     double Concentration,Area;
     int Slot,Kind;
     bool Worn;
@@ -78,7 +79,8 @@ class CaelumContaminationExposure : Object play
 
     void ReadLive()
     {
-        for(int i=0;i<Items.Size();i++)Items[i].Concentration=CaelumContaminationStorage.Value(Items[i].Item);
+        for(int i=0;i<Items.Size();i++)Items[i].Concentration=Items[i].Endpoint!=null
+            ? Items[i].Endpoint.Value() : CaelumContaminationStorage.Value(Items[i].Item);
     }
     bool Valid(CaelumPlayer user,CaelumThermalState thermal)
     {

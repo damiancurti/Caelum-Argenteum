@@ -4,6 +4,16 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
+thermal system now share the player's environmental/equipment/immersion balance.
+The existing staggered thermal clock drives exposure, including accelerated
+world time, without global actor scans. Modeled armor, sidearms, shields and
+native carried equipment retain their existing identities; boxed gear is protected.
+Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
+CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
+continuous actor contact, unloaded-map exposure and resident housekeeping remain
+unfinished; this continuation does not complete #502 or V5.8.
+
 Combat-contact continuation (2026-10-25, #502): native melee now transfers
 contamination between the actual weapon/natural attacker and the struck exterior
 piece or blocking shield, after evasion. Body dose follows mass; non-contact
