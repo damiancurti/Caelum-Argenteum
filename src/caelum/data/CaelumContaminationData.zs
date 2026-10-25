@@ -4,6 +4,7 @@ class CaelumContaminationData : Object
     const STATE_REVISION = 1;
     const SEVERE_THRESHOLD = 90.0;
     const SEVERE_DAMAGE_FACTOR = 2.0;
+    const TREATMENT_DEGREES_PER_LIFE_RATIO = 10.0;
     const CONTACT_DEGREES_M2_SECOND = 0.1;
     const CONTACT_RATIO_FLOOR = 1.0;
     const IMPACT_CONTACT_SECONDS = 10.0;

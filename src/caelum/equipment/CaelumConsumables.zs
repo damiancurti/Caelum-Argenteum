@@ -249,6 +249,7 @@ class CaelumRegenerationPower : Powerup
             int healing=int(PotionHealingFraction);
             PotionHealingFraction-=healing;
             Owner.health=Min(maximum,Owner.health+healing);
+            if(maximum>0)CaelumContaminationStorage.Treatment(Owner,ratio);
             if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
             else npc.UpdateCombatHealthEffects();
         }

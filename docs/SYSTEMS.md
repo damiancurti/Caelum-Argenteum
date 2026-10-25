@@ -10,6 +10,28 @@ shows Sick, including an explicit immune qualifier at Toughness>=100. Below
 regeneration depuration, body-mass intake scaling, food ageing and immunity
 without healing remain unchanged. Existing contamination stays authoritative.
 
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Modern medkits and mate use the unrounded Life ratio. Legacy medkit effects
+without a stored dose retain their historical rounded Life pulse and cleanse
+proportionally to that pulse. NPC medkits affect their own stored contamination.
+No retrospective credit or new saved fields are added. Active treatment powers
+retain existing travel/forecast guards; an exact date is not fabricated.
+
+Approved 2026-10-25, pending environmental/domestic integration:
+- Uncovered urban streets: ambient rain reduction interpolates (0 mm/h,0),
+  (2 mm/h,10), (10 mm/h,20), capped at20. Exposed floor/surface washing takes
+  30 world minutes, retains completed cleaning when rain stops, and permits
+  later recontamination. Roofs and interiors are excluded.
+- Resident NPCs: one world hour of cleaning per day while home and out of
+  combat, accessible floors/furniture, existing water/soap/time per m2 and
+  reusable cloth. Share household supplies; do not spend player property
+  without permission. Initial household supply acquisition remains a question.
+- Wind/ventilation are proposals only. Existing temperature/humidity already
+  account for cold/dry conditions; no second multiplier is approved.
+
 Actor/equipment state revision 1 is additive and initialized only when needed.
 The existing player illness record remains the body's source of truth. Native
 equipment copy/pickup/storage preserves concentration; copies have independent

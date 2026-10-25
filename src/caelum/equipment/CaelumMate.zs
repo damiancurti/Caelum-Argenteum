@@ -154,6 +154,7 @@ class CaelumMateRecovery : Powerup
             int healing=int(HealingFraction+0.00000001);HealingFraction=Max(0,HealingFraction-healing);
             user.health=Min(user.CaelumMaximumHealth,user.health+healing);user.player.health=user.health;
             if(user.health>=user.CaelumMaximumHealth)HealingFraction=0;
+            if(user.CaelumMaximumHealth>0)CaelumContaminationStorage.Treatment(user,ratio);
             user.CurrentAnima=Min(user.DerivedStats.MaximumAnima,user.CurrentAnima+user.DerivedStats.MaximumAnima*ratio);
             user.CurrentAir=Min(user.DerivedStats.MaximumAir,user.CurrentAir+user.DerivedStats.MaximumAir*ratio);
             user.UpdateHealthStateEffects();user.UpdateAirStateEffects();

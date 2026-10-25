@@ -1,0 +1,38 @@
+{
+  "issue": 502,
+  "version": "5.8.9",
+  "runtime": "treatment01",
+  "members": 16869,
+  "sha256": "8366dceb93f33aad872354d46e5675ace9e26500c6b4da853b7b8a044e1945c0",
+  "runs": [
+    {
+      "label": "treatment01-rules-b",
+      "executed_passes": 16
+    },
+    {
+      "label": "treatment01-runtime",
+      "executed_passes": 3
+    },
+    {
+      "label": "treatment01-drink",
+      "executed_passes": 4
+    },
+    {
+      "label": "treatment01-save-b",
+      "executed_passes": 1
+    },
+    {
+      "label": "treatment01-load-b",
+      "executed_passes": 2
+    },
+    {
+      "label": "treatment01-hub-b",
+      "executed_passes": 3
+    },
+    {
+      "label": "treatment01-legacy",
+      "executed_passes": 2
+    }
+  ],
+  "passes": 31
+}

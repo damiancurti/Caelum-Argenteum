@@ -100,6 +100,9 @@ class CaelumPlayerResources : Object play
                 int healing = Max(1, int(user.CaelumMaximumHealth * pulseRatio + 0.5));
                 user.health = Min(user.CaelumMaximumHealth, user.health + healing);
                 user.player.health = user.health;
+                // Los efectos antiguos conservan su pulso de Vida ya redondeado.
+                if(user.CaelumMaximumHealth>0)CaelumContaminationStorage.Treatment(user,
+                    double(healing)/user.CaelumMaximumHealth);
                 user.UpdateHealthStateEffects();
                 break;
             }

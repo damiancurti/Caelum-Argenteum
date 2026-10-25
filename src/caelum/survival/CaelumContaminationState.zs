@@ -75,6 +75,16 @@ class CaelumContaminationStorage : Object play
         }
         let entry=Get(body,true);if(entry!=null)entry.Concentration=value;
     }
+    // Botiquines y mate cuentan su curación potencial, incluso con Vida llena.
+    // La fracción del máximo evita depender del redondeo de puntos de Vida.
+    static void Treatment(Actor body,double lifeRatio)
+    {
+        if(body==null || body.health<=0 || lifeRatio<=0)return;
+        let user=CaelumPlayer(body);
+        if(user!=null && !CaelumPlayerAuthority.CanMutate(user))return;
+        double current=Value(body);
+        if(current>0)Set(body,current-lifeRatio*CaelumContaminationData.TREATMENT_DEGREES_PER_LIFE_RATIO);
+    }
     static bool IsShielded(Actor body)
     {
         let item=Inventory(body);

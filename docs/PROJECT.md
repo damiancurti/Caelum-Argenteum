@@ -45,6 +45,14 @@ smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
 CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
 NPC/furniture exposure and solid/combat contact remain unfinished.
 
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native treatment checks: 31 executed PASS; save/hub and prior-save
+coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
+acceptance. Rain washing and resident household cleaning are approved backlog.
+
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

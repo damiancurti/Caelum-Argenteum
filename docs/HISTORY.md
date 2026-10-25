@@ -98,6 +98,21 @@ native evidence and runtime 01083ec1 remain unchanged; no repeated engine test
 is required for this acceptance-only update. Washing/bathing and remaining
 contact/NPC scope are still unfinished. README reviewed; same patch version.
 
+Treatment continuation, 2026-10-25: Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native GZDoom4.14.2: 31 executed assertions pass, including full/wounded
+Life, all medkit sizes, overlapping/washed mate, native expiration, NPC state,
+legacy pulses, mid-treatment save/load, hub continuity and prior-save loading.
+No saved schema or existing dosage changes;16,869 treatment01 members match src.
+The two failed probes were fixture-only: a nonexistent NPC class, then an
+expected value held in a map-local handler rather than a travelling proof item.
+Logs and repairs are retained in assets/validation_589/treatment. Existing
+forecast guards for active powers remain. CA502-TREATMENT-01 is newly pending.
+The same request approved rain and resident-cleaning contracts, which remain
+separate pending integration. README reviewed; same patch version.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

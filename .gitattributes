@@ -355,3 +355,4 @@
 /assets/validation_585/** -text whitespace=cr-at-eol
 /assets/validation_585/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_589/supplies/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/treatment/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
