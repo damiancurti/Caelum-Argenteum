@@ -1,6 +1,6 @@
 CA502-IMMERSION-01 | Origin: 5.8.9 / #502 | PENDING
 Prerequisites: issue502-work; immersion02 package; GZDoom 4.14.2.
-Deferred during the author's absence; no author acceptance is inferred.
+Author returned; this check remains unconfirmed.
 Launch assets/validation_589/immersion/author_terminal.ps1 and choose 1.
 1. Close other GZDoom sessions. Escape closes the introduction if present.
 2. F1 places the character partly in biological water. Watch contamination rise.
@@ -11,3 +11,16 @@ Launch assets/validation_589/immersion/author_terminal.ps1 and choose 1.
    equipment/Box/body-area and real-wait comparisons. Expect only PASS/zero failures.
 Expected: exposure follows submerged surface and known water quality, preserves
 the Box, and waiting matches its forecast. This does not test unfinished bathing.
+
+CA502-SUPPLIES-01 | Origin: 5.8.9 / #502 | PENDING
+Prerequisites: issue502-work; supplies02 package; GZDoom 4.14.2.
+Launch assets/validation_589/supplies/author_terminal.ps1 and choose 1.
+1. F4 opens inventory. Inspect fat, soda, soap and cloth icons; scroll as needed.
+2. F2 opens Provisions. Buy/sell supplies; cloth can be bought more than once.
+3. F3 opens crafting. Soap uses 1000 g fat,135 g soda,2058 g coal and300 mL potable
+   water for1000 g soap in2 world hours. Cancel once: nothing is consumed.
+4. Select Cleaning cloth:100 g cotton fabric at100% efficiency gives one100 g
+   cloth; normal learning/Dexterity/waste rules apply. Store it in the Box.
+5. Optional terminal option2 reruns native fabrication/trade checks: only PASS.
+Expected: readable painted sprites, correct inputs/output and persistent stock.
+This tests acquisition only: bathing and manual/automatic washing remain pending.

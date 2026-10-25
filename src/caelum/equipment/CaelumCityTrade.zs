@@ -7,7 +7,7 @@ class CaelumCityMerchant : Actor
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
-    int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision;
+    int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision,HygieneCatalogueRevision;
     bool StockInitialized;
     int RestockRevision;
     bool EnumeratingStock;
@@ -90,7 +90,7 @@ class CaelumCityMerchant : Actor
             return Category==3 && (kind==CaelumConstants.EQUIPMENT_KIND_AMULET || kind==CaelumConstants.EQUIPMENT_KIND_SEAL);
         }
         let consumable=CaelumConsumableItem(item);
-        if(CaelumCampData.IsItem(item) || item is 'CaelumMateItem')return Category==0;
+        if(CaelumCampData.IsItem(item) || item is 'CaelumMateItem' || item is 'CaelumCleaningCloth')return Category==0;
         if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
@@ -189,6 +189,7 @@ class CaelumCityMerchant : Actor
         CaelumChemistryCatalogue.Ensure(self,user);
         CaelumMateCatalogue.Ensure(self,user);
         CaelumCampCatalogue.Ensure(self,user);
+        CaelumHygieneCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

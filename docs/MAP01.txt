@@ -2,6 +2,13 @@ CAELUM ARGENTEUM — STORY AND MAP01
 
 Documentation version: **5.8.9** — 2026-10-24.
 
+5.8.9 - Hygiene supplies (#502)
+
+Existing Chemistry/Workbench networks can manufacture approved soap/cloth after
+learning their recipes. MAP03 Provisions/library add the corresponding supplies
+and books through their persisted catalogues. This adds no mansion geometry,
+fixed furniture or domestic water access; bathing remains pending.
+
 5.8.8 - Portable tents in mansion gardens (#411)
 
 Owned tents can be assembled on dry, stable CMGR01A garden ground with the

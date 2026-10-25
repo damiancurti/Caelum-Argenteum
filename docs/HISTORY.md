@@ -75,6 +75,21 @@ maps, artwork, NPC contact or completed hygiene is implied by this continuation.
 The author also approved local 1 m2 floor/wall zones and a shared 200 L mansion
 bathing/kitchen reserve, recorded as pending contracts in SYSTEMS.
 
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

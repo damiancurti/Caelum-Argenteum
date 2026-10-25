@@ -1,0 +1,57 @@
+{
+  "issue": 502,
+  "version": "5.8.9",
+  "source_members": 16869,
+  "runtime": "supplies02",
+  "sha256": "f2b91392947983c9cfc9c99ebd31971c393814a165e8c875bf1a5f5fab202dbe",
+  "native_executed_assertions": 92,
+  "selected_runs": [
+    {
+      "label": "supplies02-room-craft",
+      "executed_assertions": 26
+    },
+    {
+      "label": "supplies02-room-shop",
+      "executed_assertions": 17
+    },
+    {
+      "label": "supplies02-room-transfer",
+      "executed_assertions": 7
+    },
+    {
+      "label": "supplies02-room-save",
+      "executed_assertions": 1
+    },
+    {
+      "label": "supplies02-room-load",
+      "executed_assertions": 5
+    },
+    {
+      "label": "supplies02-room-hub",
+      "executed_assertions": 5
+    },
+    {
+      "label": "supplies02-room-task-save",
+      "executed_assertions": 1
+    },
+    {
+      "label": "supplies02-room-task-load",
+      "executed_assertions": 3
+    },
+    {
+      "label": "supplies02-legacy",
+      "executed_assertions": 2
+    },
+    {
+      "label": "supplies02-rollback",
+      "executed_assertions": 2
+    },
+    {
+      "label": "supplies02-final-smoke",
+      "executed_assertions": 23
+    }
+  ],
+  "author_acceptance": "Pending CA502-SUPPLIES-01; immersion remains pending separately.",
+  "acquisition_assertions": 65,
+  "regression_assertions": 27
+}

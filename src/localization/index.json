@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "49bd9dd7e2422fcd143ac63204118ba3cbf93a912991650912ad3aa3ea0e2a69",
+  "sha256": "b9efa2bf55012449dfd5137158199887f41bc810c0cff167a5024984250f4108",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[442,442]],"default":[[442,442]],"es":[[1137,1137]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[992,992]],"default":[[992,992]],"es":[[1687,1687]]},
@@ -1014,6 +1014,11 @@
     "CA_HUD_UNARMED": {"enu":[[853,853]],"default":[[853,853]],"es":[[1548,1548]]},
     "CA_HUNGER_STATE_CRITICAL": {"enu":[[1005,1005]],"default":[[1005,1005]],"es":[[1700,1700]]},
     "CA_HUNGER_STATE_LOW": {"enu":[[1004,1004]],"default":[[1004,1004]],"es":[[1699,1699]]},
+    "CA_HYGIENE_CLOTH": {"enu":[[6526,6526]],"default":[[6526,6526]],"es":[[6532,6532]]},
+    "CA_HYGIENE_FAT": {"enu":[[6523,6523]],"default":[[6523,6523]],"es":[[6529,6529]]},
+    "CA_HYGIENE_MAKE_SOAP": {"enu":[[6527,6527]],"default":[[6527,6527]],"es":[[6533,6533]]},
+    "CA_HYGIENE_SOAP": {"enu":[[6525,6525]],"default":[[6525,6525]],"es":[[6531,6531]]},
+    "CA_HYGIENE_SODA": {"enu":[[6524,6524]],"default":[[6524,6524]],"es":[[6530,6530]]},
     "CA_IDENTITY_CREATOR_OWNER": {"enu":[[118,118]],"default":[[118,118]],"es":[[221,221]]},
     "CA_IDENTITY_NETWORK_NAME": {"enu":[[119,119]],"default":[[119,119]],"es":[[222,222]]},
     "CA_INTRO_AWAKENING": {"enu":[[177,177]],"default":[[177,177]],"es":[[278,278]]},

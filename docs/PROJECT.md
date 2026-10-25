@@ -21,8 +21,7 @@ approved size conversion. Player/carried-equipment environmental exposure now
 uses thermal coverage, local temperature/humidity and protected Box storage.
 The World journal displays the local index. Sixty-six further native assertions
 cover independent forecasts, actual waiting, travel commit and save/hub continuity
-(`assets/validation_589/exposure`). CA502-EXPOSURE-01 was accepted on 2026-10-25. NPC/furniture exposure, surface/combat contact, soap
-acquisition and washing/bathing remain pending. The issue and V5.8 remain open.
+(`assets/validation_589/exposure`). CA502-EXPOSURE-01 was accepted on 2026-10-25. NPC/furniture exposure, surface/combat contact and washing/bathing remain pending. The issue and V5.8 remain open.
 
 Immersion now exposes the player's submerged skin, outer garments and carried
 equipment according to known water quality. The Box remains protected; clean or
@@ -31,6 +30,21 @@ salt-only water does not cause this contact disease or wash existing contaminati
 legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 is deferred
 until the author's return. Dynamic reservoir levels retain an explicit exact-wait
 forecast limitation; manual/native waiting remains available.
+
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

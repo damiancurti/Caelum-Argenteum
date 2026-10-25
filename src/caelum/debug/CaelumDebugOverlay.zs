@@ -455,6 +455,7 @@ class CaelumDebugOverlay : EventHandler
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
+            if(specialType==CaelumHygieneData.CLOTH_KEY)return "CA_HYGIENE_CLOTH";
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.NameKey(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_RECIPE_BOOK) return "CA_KEY_ITEM_RECIPE_BOOK";

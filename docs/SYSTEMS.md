@@ -128,6 +128,17 @@ in the library. Cloth: 100 g cotton fabric -> reusable 100 g cloth, Workbench
 and normal crafting; Provisions twenty, library ten recipes, cost plus 25%.
 Its rinse is included in washing water, leaving the reusable cloth clean.
 
+Acquisition/fabrication are now implemented (2026-10-25). Stable appended material
+IDs 105/106/107 identify fat/soda/soap in grams; recipes 203/204 identify soap/cloth,
+and key-item type 13 is the 100 g cloth. Chemistry dispatch is explicit: its old
+contiguous material/recipe ranges remain unchanged across the intervening mate
+and camp IDs. Soap keeps whole batches and its fixed world-time duration; cloth
+uses normal fabrication waste/time and cotton fabric tier 2. Both can be bought,
+stored and learned through existing interfaces. Additive catalogue revision 1
+preserves prior stock/deadlines, and recipe-book revision 16 preserves old recipes
+while locking the new ones. Native acquisition evidence lives in
+assets/validation_589/supplies; the actual washing/bathing action remains pending.
+
 ## Central property contracts (#411, 5.8.6 in progress)
 
 The author approved buying for 100,000 copper or renting for 1,000 copper per

@@ -6517,3 +6517,18 @@ CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Ambient contamination: no defined profil
 [es]
 CA_CONTAMINATION_ENVIRONMENT = "Contaminación ambiental: %.1f / 100";
 CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Contaminación ambiental: sin perfil definido.";
+
+// BEGIN HYGIENE SUPPLIES
+[enu default]
+CA_HYGIENE_FAT = "Animal fat";
+CA_HYGIENE_SODA = "Caustic soda";
+CA_HYGIENE_SOAP = "Soap";
+CA_HYGIENE_CLOTH = "Cleaning cloth";
+CA_HYGIENE_MAKE_SOAP = "Make soap";
+[es]
+CA_HYGIENE_FAT = "Grasa animal";
+CA_HYGIENE_SODA = "Sosa cáustica";
+CA_HYGIENE_SOAP = "Jabón";
+CA_HYGIENE_CLOTH = "Trapo de limpieza";
+CA_HYGIENE_MAKE_SOAP = "Elaborar jabón";
+// END HYGIENE SUPPLIES

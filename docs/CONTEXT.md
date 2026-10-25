@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.9** — 2026-10-24.
 
-**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;author pending. NPC/contact/hygiene pending;severe/exposure accepted2026-10-25;validation_589.
+**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;author pending. Supplies 92PASS;manual pending. NPC/contact/washing pending;severe/exposure accepted;validation_589.
 
 **5.8.8/#411:** placement46PASS; tents112+125PASS. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model binding. Fire/cooking/rest pending;validation_588/deploy.
 
