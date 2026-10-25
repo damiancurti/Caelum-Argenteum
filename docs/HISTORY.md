@@ -90,6 +90,14 @@ CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathin
 NPC/furniture exposure and solid/combat contact remain unfinished.
 
 
+Author acceptance, 2026-10-25: CA502-SUPPLIES-01 and CA502-IMMERSION-01
+(both origin 5.8.9/#502) passed all checks in the supplied terminal, without
+qualifications. This includes the hygiene sprites and acquisition, and the
+immersion comparison. Both entries are removed from pending_test.txt. Existing
+native evidence and runtime 01083ec1 remain unchanged; no repeated engine test
+is required for this acceptance-only update. Washing/bathing and remaining
+contact/NPC scope are still unfinished. README reviewed; same patch version.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

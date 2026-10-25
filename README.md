@@ -37,8 +37,8 @@ Immersion now exposes the player's submerged skin, outer garments and carried
 equipment according to known water quality. The Box remains protected; clean or
 salt-only water does not cause this contact disease or wash existing contamination.
 71 further native assertions cover real water, wait parity, travel, save/hub and
-legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 is deferred
-until the author's return. Dynamic reservoir levels retain an explicit exact-wait
+legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 passed author
+acceptance on 2026-10-25. Dynamic reservoir levels retain an explicit exact-wait
 forecast limitation; manual/native waiting remains available.
 
 Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
@@ -52,7 +52,7 @@ missing supplies without refilling depleted stock or resetting existing deadline
 92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
 current saves/hub, an unfinished soap task, prior saves/rollback and immersion
 smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
-CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathing,
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
 NPC/furniture exposure and solid/combat contact remain unfinished.
 
 

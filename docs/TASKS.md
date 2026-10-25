@@ -15,7 +15,7 @@ contact/quote helpers as integrated hygiene. Use approved surfaces, world time
 and classes; preserve #410 food scope/#411 camps.
 
 Immersion implemented: 71 native assertions, independent forecasts and save/hub
-continuity. CA502-IMMERSION-01 is deferred until return. Connected reservoirs
+continuity. CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Connected reservoirs
 retain an explicit exact-wait forecast limitation; no completed bath is claimed.
 
 Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
@@ -29,7 +29,7 @@ missing supplies without refilling depleted stock or resetting existing deadline
 92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
 current saves/hub, an unfinished soap task, prior saves/rollback and immersion
 smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
-CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathing,
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
 NPC/furniture exposure and solid/combat contact remain unfinished.
 
 

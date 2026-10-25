@@ -18,8 +18,7 @@ The four unchanged previews are now copied byte-for-byte into
 src/graphics/caelum/icons/hygiene; RUNTIME.json records their source/runtime
 hashes. Inventory/crafting use these painted icons; dropped supplies use sprite
 billboards, with no replacement model. Native Spanish inventory and shop captures
-are in assets/validation_589/supplies. Author visual acceptance remains pending
-under CA502-SUPPLIES-01; earlier illness acceptance did not approve these sprites.
+are in assets/validation_589/supplies. The author accepted these sprites under CA502-SUPPLIES-01 on 2026-10-25.
 
 ## 5.8.8 - Deployed tent artwork (#411, in progress)
 
