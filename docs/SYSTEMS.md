@@ -14,7 +14,7 @@ after diagnostic F3 awakening; the existing-wash case retained the same soap
 balance as ordinary preparation, and no-soap sleep preserved weapon contamination80.
 The overlay refreshes five times per second, only in this isolated laboratory.
 Evidence: assets/validation_5812/calendar/controls-report.json. This is agent
-verification, not author acceptance; CA502-CALENDAR-01 remains pending.
+verification; the author subsequently accepted CA502-CALENDAR-01 on2026-10-25.
 
 Calendar-sleep continuation (2026-10-25, #502): the author approved pausing
 crafting/reading, cleaning equipment before automatic calendar sleep, then
@@ -33,7 +33,7 @@ explicitly refuses an exact completion date when pre-sleep cleaning is required;
 manual calendar destinations and ordinary clock progression remain available.
 Evidence: assets/validation_5812/calendar. 160 native assertions across22 serial runs pass, including save migration/rollback
 and previous cleaning regressions; static validation passes.
-CA502-CALENDAR-01 awaits author review;
+CA502-CALENDAR-01 passed author review on2026-10-25;
 CA502-WAKE-01 is accepted. Actor/combat contact and resident housekeeping remain
 unfinished; this continuation does not complete #502 or V5.8.
 

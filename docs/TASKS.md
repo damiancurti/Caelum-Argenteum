@@ -7,14 +7,14 @@ Documentation version: **5.8.12** — 2026-10-25.
 Live demonstration (2026-10-25): the diagnostic menu now handles its F keys and
 shows work/supplies/contamination above the live panel.31 native rechecks pass;
 agent-operated craft/read/existing-wash/no-soap demonstrations pass. The production
-package is unchanged; CA502-CALENDAR-01 still requires author confirmation.
+package is unchanged; CA502-CALENDAR-01 passed author review on2026-10-25.
 
 Calendar-sleep continuation (2026-10-25, #502): approved pause/clean/sleep/resume
 sequence implemented with saved progress and no duplicate charge for an existing
 wash. Rules and compatibility: SYSTEMS; evidence: assets/validation_5812/calendar.
 160 native assertions across22 serial runs pass, including save migration/rollback
 and previous cleaning regressions; static validation passes.
-CA502-CALENDAR-01 awaits author review. Exact-date forecasts explicitly reject
+CA502-CALENDAR-01 passed author review on2026-10-25. Exact-date forecasts explicitly reject
 pre-sleep queues; actor/combat contact and NPC housekeeping remain unfinished.
 
 Author-reported wake-laboratory water shortage corrected (2026-10-25): the

@@ -4,6 +4,12 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-CALENDAR-01 (origin5.8.12/#502, runtime
+0467d34a and live-control correction56d93bbf) passed without qualifications.
+After the agent-operated demonstration, the author confirmed "La prueba dio
+correcto, sigue con lo dem?s." Retire only this ID from pending_test.txt.
+Toilet/treatment author checks and actor/combat/NPC work remain separate.
+
 Calendar laboratory correction (2026-10-25): the production live menu consumed
 the diagnostic F-key bindings. A test-only menu subclass now dispatches the
 laboratory commands and displays actual phase, work, water, soap and weapon
