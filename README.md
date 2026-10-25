@@ -17,7 +17,7 @@ ordinary50 threshold. Waiting before F2 therefore preserves the test water inste
 of automatically drinking it. Seven focused native assertions pass after a
 30-second real-time delay, including supplied cleanup and the no-soap case.
 Evidence: assets/validation_5812/wake/water. Production code/package is unchanged;
-CA502-WAKE-01 remains pending author review of the corrected laboratory.
+CA502-WAKE-01 passed author review on2026-10-25 with the corrected laboratory.
 
 Exhaustion-wake continuation (2026-10-25): the author approved cleaning after
 waking from involuntary exhaustion sleep. Collapse and the existing wake lock
@@ -33,7 +33,7 @@ cached predictions and retains the explicit unsupported exact-date guard for
 multi-piece wake/sleep queues. Ordinary world-clock completion remains available.
 Evidence: assets/validation_5812/wake; 97 native assertions, genuine
 old-save migration/rollback and static validation pass. All169 maps and13,826 art
-members remain unchanged. CA502-WAKE-01 awaits author review in its own terminal.
+members remain unchanged. CA502-WAKE-01 passed author review on2026-10-25.
 Calendar-triggered sleep, other-actor/combat contacts and resident housekeeping
 remain unfinished; this continuation does not complete#502 or V5.8.
 

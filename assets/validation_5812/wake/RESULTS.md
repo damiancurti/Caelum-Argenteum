@@ -57,3 +57,6 @@ native assertions pass after30 real seconds of waiting; the bottle still contain
 capture are retained in water/. This replaces the earlier manual instruction that
 only warned about automatic drinking. Production package/hash and the97 gameplay
 checks remain unchanged. CA502-WAKE-01 is still pending corrected author review.
+
+Author acceptance2026-10-25: CA502-WAKE-01 passed without qualifications after
+the water-supply correction6ff63398. Only this pending ID is retired.

@@ -4,6 +4,11 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-WAKE-01 (origin5.8.12/#502, runtime7c7db211
+and corrected laboratory6ff63398) passed without qualifications. The author
+confirmed "Las pruebas dieron correcto, sigue con el resto." Remove only this ID
+from pending_test.txt; toilet/treatment checks remain independently pending.
+
 Wake-laboratory water correction,2026-10-25 (#502): the author reported no water
 when testing awakening. Their recorded manual session reaches0L without cleaning;
 a matched native30-second delay reproduces automatic drinking from5 to4.25L.
