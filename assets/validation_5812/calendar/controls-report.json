@@ -1,0 +1,66 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "recorded_utc": "2026-10-25T22:50:41.157619+00:00",
+  "production_commit": "0467d34adf749a15cae026bf5bafc2ee2c2042e3",
+  "production_package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+  "addon_sha256": "eef5bae9867b048a2cdfbef3511b6cb2b0e81af38fd955bab9d64b8c7473a998",
+  "native_core_pass": 31,
+  "native_core_fail": 0,
+  "interactive_session_open": true,
+  "author_acceptance": "pending CA502-CALENDAR-01",
+  "control_method": "Native GZDoom UI through computer-use; screenshots visually inspected in the conversation.",
+  "observations": [
+    {
+      "case": "F1 craft, F3 wake",
+      "paused_seconds": 600.0,
+      "first_awake_seconds": 599.54,
+      "later_awake_seconds": 585.14,
+      "soap_after_preparation_g": 89.4425
+    },
+    {
+      "case": "F7 reading, F3 wake",
+      "paused_seconds": 600.0,
+      "awake_seconds": 598.91,
+      "soap_after_preparation_g": 89.4425
+    },
+    {
+      "case": "F4 existing partial wash",
+      "reached_sleep": true,
+      "soap_after_preparation_g": 89.4425,
+      "same_as_normal_preparation": true
+    },
+    {
+      "case": "F5 no soap, F3 wake",
+      "sleep_immediate": true,
+      "weapon_contamination": 80,
+      "soap_g": 0,
+      "awake_work_seconds": 599.51
+    }
+  ],
+  "limitations": [
+    "F3 sets recovered Sleep diagnostically; it is not a complete real-duration sleep.",
+    "Automatic drinking and ambient exposure continue, so water and cleaned contamination can change afterward.",
+    "No new performance, multiplayer or campaign acceptance is claimed."
+  ],
+  "evidence_files": [
+    {
+      "path": "assets/validation_5812/calendar/native/calendar-visible-controls-probe02.txt",
+      "sha256": "d59b5e3c8e7562d3bea0aa80a2ddf3b85113b5d3d988c36fc6bc3a0887bd3d76"
+    },
+    {
+      "path": "assets/validation_5812/calendar/native/calendar-visible-controls-probe02-run.json",
+      "sha256": "51db2dc4a1303e45f54aa1fe818ac67f15aa11acafc92cf7c982218acf2c52d5"
+    },
+    {
+      "path": "assets/validation_5812/calendar/native/author-calendar-visible-controls01.txt",
+      "sha256": "245231af5415765b0df27cf0873eed1ca8e0c9447ff9ca255cbad56878819fd9"
+    },
+    {
+      "path": "assets/validation_5812/calendar/native/author-calendar-visible-controls01-run.json",
+      "sha256": "5ebc3cf1245182c89a5ca1ce94a9221bb9e122bffb1b1e49fa597121ad6b3f26"
+    }
+  ],
+  "overlay_controls": "F6 hides the overlay; F2 restores it. Native UI verified after the four cases.",
+  "deterministic_regeneration_verified": true
+}

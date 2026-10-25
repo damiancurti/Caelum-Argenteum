@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
-**5.8.12/#502:**calendar-sleep integrated;CA502-CALENDAR-01pending. Wake97+7PASS/accepted2026-10-25;surfaces/rain157PASS,clean134PASS,bath121PASS,poses accepted. Toilet/treatmentpending. validation_5812;remaining:actors/combat/NPC.
+**5.8.12/#502:**calendar-sleep/live-controls verified;CA502-CALENDAR-01pending. Wake97+7PASS/accepted2026-10-25;surfaces/rain157PASS,clean134PASS,bath121PASS,poses accepted. Toilet/treatmentpending. validation_5812;remaining:actors/combat/NPC.
 
 **5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 

@@ -4,6 +4,18 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Calendar laboratory correction (2026-10-25): the production live menu consumed
+the diagnostic F-key bindings. A test-only menu subclass now dispatches the
+laboratory commands and displays actual phase, work, water, soap and weapon
+contamination. Production code, maps, balance and package bytes are unchanged.
+31 native rechecks pass. In the agent-operated visible demonstration, fabrication
+and reading remained at600 seconds through preparation/sleep, then progressed
+after diagnostic F3 awakening; the existing-wash case retained the same soap
+balance as ordinary preparation, and no-soap sleep preserved weapon contamination80.
+The overlay refreshes five times per second, only in this isolated laboratory.
+Evidence: assets/validation_5812/calendar/controls-report.json. This is agent
+verification, not author acceptance; CA502-CALENDAR-01 remains pending.
+
 Calendar-sleep continuation (2026-10-25, #502): the author approved pausing
 crafting/reading, cleaning equipment before automatic calendar sleep, then
 resuming the original work after waking. An existing cleaning action finishes

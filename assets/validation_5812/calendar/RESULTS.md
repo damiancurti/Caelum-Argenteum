@@ -57,3 +57,20 @@ CA502-CALENDAR-01 awaits author confirmation in author_calendar_terminal.ps1.
 CA502-WAKE-01 is explicitly accepted in26e1327d. Toilet/treatment author checks
 remain separate. Other-actor/combat transfer and NPC housekeeping are unfinished;
 this continuation does not complete #502 or V5.8.
+
+## Visible control correction,2026-10-25
+
+The author requested an agent-operated demonstration in the open laboratory.
+The production live menu consumes F-key events, preventing ordinary diagnostic
+bindings from reaching the engine. A diagnostic-only menu subclass now routes
+the laboratory shortcuts and shows current values above that menu. It is bundled
+only in calendar-checks.pk3; the legacy-save addon and production package retain
+their previous UI. F2 shows the data overlay; F6 toggles it while the panel is open.
+
+31 native core assertions pass with this addon; the previous160-assertion production
+suite remains applicable to the unchanged runtime. Direct native UI input and
+screenshots confirmed the four cases recorded in controls-report.json. The first
+menu prototype used a reserved identifier and failed to compile; renaming it fixed
+the failure before this successful native run and demonstration. Its failed log
+remains in ignored build evidence. The current interactive log is a snapshot of
+an open session, not an exited run. Agent review does not supply author acceptance.

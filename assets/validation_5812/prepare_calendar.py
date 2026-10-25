@@ -32,7 +32,9 @@ dispatch="""    bool CalendarDispatch(CaelumPlayer u,ConsoleEvent e)
 """
 source=source.replace('    override void NetworkProcess(ConsoleEvent e)',helpers+'\n'+dispatch+'\n    override void NetworkProcess(ConsoleEvent e)',1)
 source=source.replace('        if(WakeDispatch(u,e))return;','        if(CalendarDispatch(u,e))return;\n        if(WakeDispatch(u,e))return;',1)
+source+='\n'+(here/'calendar_menu.zs').read_text(encoding='utf-8')
 members={'ZSCRIPT':b'version "4.14.2"\n#include "checks.zs"\n','checks.zs':source.encode(),'MAPINFO':b'GameInfo {AddEventHandlers="CA502HChecks"}\n'}
+members['MENUDEF']=b'ListMenu CaelumLiveMenu { Class CA502CalendarMenu }\n'
 with zipfile.ZipFile(out/'calendar-checks.pk3','w',zipfile.ZIP_STORED) as z:
     for name,blob in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),blob)
 scripts={
@@ -76,6 +78,7 @@ old='''    bool CalendarHold;
 '''
 legacy=legacy.replace('    override void NetworkProcess(ConsoleEvent e)',common+old+'\n    override void NetworkProcess(ConsoleEvent e)',1)
 legacy=legacy.replace('        if(WakeDispatch(u,e))return;','        if(CalendarLegacy(u,e))return;\n        if(WakeDispatch(u,e))return;',1)
+members.pop('MENUDEF',None)
 members['checks.zs']=legacy.encode()
 with zipfile.ZipFile(out/'calendar-legacy-checks.pk3','w',zipfile.ZIP_STORED) as z:
     for name,blob in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),blob)

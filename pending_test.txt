@@ -3,7 +3,7 @@ Prerequisites: calendar-final01 package; assets/validation_5812/author_calendar_
 close other GZDoom sessions. Terminal option1 opens the native manual laboratory.
 1. F1 prepares a600-second craft, weapon contamination80, water5L, soap100g and cloth.
    The calendar cleans before sleeping; the original craft remains at600 seconds.
-   F2 prints state/supplies in the game console; F6 returns to the game.
+   With the live panel open, F2 shows the top data overlay; F6 hides/shows it.
    After about10 real seconds, sleeping=1 and pre-sleep cleaning=0.
 2. F3 simulates recovered Sleep. The original craft now progresses below600 seconds.
 3. F4 starts with a partly completed manual wash. It finishes before sleeping;

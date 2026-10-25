@@ -1,10 +1,21 @@
     bool CalendarHold;
+    String CalendarLine1,CalendarLine2,CalendarLine3,CalendarLine4;
+    void CalendarObserve(CaelumPlayer u)
+    {
+        let s=CaelumTimeSkipState.Get(u);if(s==null)return;
+        let r=CaelumRecipeSession.Get(u);
+        CalendarLine1=s.SleepCleaning!=null?"LIMPIANDO ANTES DE DORMIR":s.Active && s.Sleeping?"DORMIDO - TRABAJO PAUSADO":s.Active?"DESPIERTO - TRABAJO EN CURSO":"ESPERA CANCELADA";
+        CalendarLine2=String.Format("%s pendiente: %.2f s",r!=null && r.Active?"Lectura":"Fabricacion",r!=null && r.Active?r.RemainingSeconds:u.CraftingTaskRemainingSeconds);
+        CalendarLine3=String.Format("Agua: %.4f L | Jabon: %.4f g",CaelumCleaningSupplies.Water(u),CaelumSoapSupply.Available(u));
+        CalendarLine4=String.Format("Contaminacion arma: %.2f | Durmiendo: %d",CaelumContaminationStorage.Value(u.FindNativeEquipmentItemById(u.ActiveWeaponItemId)),s.Active && s.Sleeping);
+    }
     bool CalendarWatch;
     double CalendarObservedWork;
     override void WorldThingDamaged(WorldEvent e)
     {if(CalendarHold && e.Thing==players[0].mo)Console.Printf("CA502C damage %d type=%s source=%s",e.Damage,e.DamageType,e.DamageSource!=null?e.DamageSource.GetClassName():'none');}
     override void WorldTick()
     {
+        if(CalendarHold && players[0].mo!=null && level.maptime%7==0)CalendarObserve(CaelumPlayer(players[0].mo));
         if(CalendarWatch && players[0].mo!=null)
         {
             let u=CaelumPlayer(players[0].mo);let s=CaelumTimeSkipState.Get(u);
