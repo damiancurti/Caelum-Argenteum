@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `654fdcdd2238b2620efff1de73082b253674e68d3b2f67e3964d748ee50eed6f`. Locations include every definition; the last one per language wins.
+SHA-256: `be2e316d1f18e276d763021c84419872a9aab186760770e4769f2748d80d83a8`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -41,7 +41,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CHEST | 11 | CA_CHEST_MATERIAL_ADAPTIVE | CA_CHEST_TUTORIAL_PLAN |
 | CA_CITY | 9 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_7 |
 | CA_CLASS | 4 | CA_CLASS_EXPLORER | CA_CLASS_WARRIOR |
-| CA_CLEAN | 12 | CA_CLEAN_AREA | CA_CLEAN_TITLE |
+| CA_CLEAN | 13 | CA_CLEAN_AREA | CA_CLEAN_TITLE |
 | CA_CLIMATE | 12 | CA_CLIMATE_CANOPY | CA_CLIMATE_REGION_9 |
 | CA_CLOTHING | 25 | CA_CLOTHING_BC | CA_CLOTHING_RW |
 | CA_COMFORT | 6 | CA_COMFORT_ACTION_HELP | CA_COMFORT_TITLE |

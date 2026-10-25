@@ -11,6 +11,14 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Calendar-sleep continuation (2026-10-25, #502): approved pause/clean/sleep/resume
+sequence implemented with saved progress and no duplicate charge for an existing
+wash. Rules and compatibility: SYSTEMS; evidence: assets/validation_5812/calendar.
+160 native assertions across22 serial runs pass, including save migration/rollback
+and previous cleaning regressions; static validation passes.
+CA502-CALENDAR-01 awaits author review. Exact-date forecasts explicitly reject
+pre-sleep queues; actor/combat contact and NPC housekeeping remain unfinished.
+
 Author-reported wake-laboratory water shortage corrected (2026-10-25): the
 manual fixture pauses the existing rest food/water top-up to100, retaining the
 ordinary50 threshold. Waiting before F2 therefore preserves the test water instead
@@ -34,8 +42,8 @@ multi-piece wake/sleep queues. Ordinary world-clock completion remains available
 Evidence: assets/validation_5812/wake; 97 native assertions, genuine
 old-save migration/rollback and static validation pass. All169 maps and13,826 art
 members remain unchanged. CA502-WAKE-01 passed author review on2026-10-25.
-Calendar-triggered sleep, other-actor/combat contacts and resident housekeeping
-remain unfinished; this continuation does not complete#502 or V5.8.
+Calendar sleep is now integrated above. Other-actor/combat contacts and resident
+housekeeping remain unfinished; this continuation does not complete#502 or V5.8.
 
 Surface-contamination continuation (2026-10-25): player contact now uses saved
 one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches

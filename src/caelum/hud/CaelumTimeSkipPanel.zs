@@ -100,7 +100,7 @@ class CaelumTimeSkipPanel : Object
             view.DrawCenteredText(view.SmallFont,Font.CR_WHITE,320,227,
                 String.Format(StringTable.Localize("CA_SKIP_PROGRESS",false),double(skip.WorkTics)/TICRATE,
                     double(skip.SleepTics)/TICRATE/CaelumWorldClock.SecondsPerGameHour(level.MapName)));
-        String status=skip.Active?(skip.Sleeping?"CA_REST_SLEEP":"CA_SKIP_RUNNING"):skip.LastReason;
+        String status=skip.Active?(skip.SleepCleaning!=null?"CA_CLEAN_CALENDAR":skip.Sleeping?"CA_REST_SLEEP":"CA_SKIP_RUNNING"):skip.LastReason;
         if(status.Length()!=0)view.DrawParagraph(view.SmallFont,Font.CR_GOLD,44,247,552,StringTable.Localize(status,false));
         view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,280,StringTable.Localize("CA_SKIP_HELP",false));
         view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,298,StringTable.Localize("CA_SKIP_POLICY",false));

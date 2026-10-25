@@ -26,7 +26,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 17;
+    const PROVISION_REVISION = 18;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -35,6 +35,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     bool CleaningTask;
     double CleaningRemaining,CleaningSoap;
     int CleaningIndex;
+    bool SleepCleaningCloth;
+    double SleepCleaningSoap;
+    Array<int> SleepCleaningIndices;
+    Array<double> SleepCleaningAreas;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -70,6 +74,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 BathSoap/CaelumContaminationRules.SoapGrams(BathWaterPerDegree))));
             BathRemaining=Max(0.0,BathRemaining-dose);FoodIllness.Contamination=Max(0.0,FoodIllness.Contamination-dose);
             BathWater=Max(0.0,BathWater-dose*BathWaterPerDegree);BathSoap=Max(0.0,BathSoap-CaelumContaminationRules.SoapGrams(dose*BathWaterPerDegree));
+            SleepCleaningSoap=BathSoap;
             if(BathRemaining<0.000000001 || FoodIllness.Contamination<=0)
             {BathTask=false;RequiredTics=ProductiveTics+1;}
             else if(dose<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
@@ -114,10 +119,18 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
     {
         ProvisionRevision=PROVISION_REVISION;
+        SleepCleaningCloth=CaelumCleaningSupplies.Cloth(user);SleepCleaningSoap=CaelumSoapSupply.Available(user);
+        if(CaelumTimeSkipState.IsPreparingSleep(user)){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Capture(user,false);
         let surfaceThermal=CaelumThermalService.CaptureForecast(user);
         if(surfaceThermal!=null && surfaceThermal.Available && CaelumCalendarState.Get(user)!=null && CaelumWorldClock.Get(user)!=null)
         {SurfaceContact=new('CaelumContaminationSurfaceForecast');SurfaceContact.Capture(user,surfaceThermal);}
+        if(Contamination!=null)for(int slot=0;slot<CaelumCleaningSupplies.EQUIPPED_COUNT;slot++)
+        {
+            let item=CaelumCleaningSupplies.EquippedAt(user,slot);if(item==null)continue;
+            for(int index=0;index<Contamination.Items.Size();index++)if(Contamination.Items[index].Item==item)
+            {SleepCleaningIndices.Push(index);SleepCleaningAreas.Push(CaelumCleaningSupplies.Area(item));break;}
+        }
         PotableImmersed=user.IsSubmergedInPotableWater();
         ToiletTask=CaelumHygieneTask.Active(user);
         BathTask=CaelumBathTask.Active(user);
@@ -319,6 +332,19 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         }
         RefreshTriggers();
     }
+    bool NeedsSleepCleaning()
+    {
+        if(CleaningTask)return true;
+        if(!SleepCleaningCloth || Contamination==null)return false;
+        double water=0;for(int i=0;i<Supplies.Size();i++)if(Supplies[i].CleaningWater)water+=Supplies[i].Liters;
+        for(int i=0;i<SleepCleaningIndices.Size();i++)
+        {
+            double liters=CaelumContaminationRules.EquipmentWaterLiters(SleepCleaningAreas[i]);
+            if(Contamination.Items[SleepCleaningIndices[i]].Concentration>0 && liters>0
+                && water+0.000000001>=liters && SleepCleaningSoap+0.000000001>=CaelumContaminationRules.SoapGrams(liters))return true;
+        }
+        return false;
+    }
     void RunBatch()
     {
         for(int i=0;i<CaelumTimeSkipRules.FORECAST_BATCH_TICS && !Done;i++)
@@ -331,7 +357,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             {Reason="CA_CALENDAR_OUT_OF_RANGE";Done=true;break;}
             if(NextThreat>=0 && CaelumScheduleRules.Stamp(EndDay,EndTics)+int(SubTics+1>=Divisor)>=NextThreat)
             {Reason="CA_EVENT_SIEGE_INTERRUPT";Done=true;break;}
-            Sleeping=CaelumTimeSkipRules.SleepingNext(Sleeping,Sleep);
+            bool sleepingNext=CaelumTimeSkipRules.SleepingNext(Sleeping,Sleep);
+            if(!Sleeping && sleepingNext && NeedsSleepCleaning())
+            {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;break;}
+            Sleeping=sleepingNext;
             Step(Sleeping);
             if(Sleeping)SleepTics++;else ProductiveTics++;
             SubTics++;

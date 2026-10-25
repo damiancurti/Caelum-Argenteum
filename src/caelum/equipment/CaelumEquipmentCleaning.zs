@@ -1,6 +1,27 @@
 // Agua propia y superficies ya aprobadas: ninguna estación ni material nuevo.
 class CaelumCleaningSupplies : Object play
 {
+    const EQUIPPED_COUNT=9;
+    static CaelumEquipmentItem EquippedAt(CaelumPlayer user,int index)
+    {
+        if(user==null || index<0 || index>=EQUIPPED_COUNT)return null;
+        if(index==0)return user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);
+        int slot=(index-1)/2;
+        return (index%2)==1?CaelumThermalBody.EquippedPiece(user,slot):CaelumClothing.Equipped(user,slot);
+    }
+    // Una misma dosis progresiva para acciones manuales y sueño por calendario.
+    static double Progress(CaelumPlayer user,CaelumEquipmentItem item,double remaining,double seconds)
+    {
+        double rate=CaelumContaminationRules.EquipmentWaterLiters(1)/CaelumContaminationData.EQUIPMENT_SECONDS_M2;
+        double affordable=Min(Water(user),CaelumSoapSupply.Available(user)/CaelumContaminationData.SOAP_G_L)/rate;
+        double step=Min(Min(remaining,Max(0.0,seconds)),affordable);
+        if(step<=0)return 0;
+        double liters=step*rate;
+        if(!SpendWater(user,liters) || !CaelumSoapSupply.Spend(user,CaelumContaminationRules.SoapGrams(liters)))return -1;
+        double value=CaelumContaminationStorage.Value(item);
+        CaelumContaminationStorage.Set(item,Max(0.0,value*(1-step/remaining)));
+        user.RefreshCarriedInventorySummary();return step;
+    }
     static double Area(CaelumEquipmentItem item)
     {
         if(item==null)return 0;
@@ -131,12 +152,8 @@ class CaelumCleaningTask : Inventory
     }
     void AddEquipped(CaelumPlayer user)
     {
-        let weapon=user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);if(weapon!=null)Queue.Push(weapon);
-        for(int slot=0;slot<4;slot++)
-        {
-            let armor=CaelumThermalBody.EquippedPiece(user,slot);if(armor!=null)Queue.Push(armor);
-            let clothing=CaelumClothing.Equipped(user,slot);if(clothing!=null)Queue.Push(clothing);
-        }
+        for(int i=0;i<CaelumCleaningSupplies.EQUIPPED_COUNT;i++)
+        {let item=CaelumCleaningSupplies.EquippedAt(user,i);if(item!=null)Queue.Push(item);}
     }
     static void AfterExhaustionWake(CaelumPlayer user,bool interrupted)
     {
@@ -162,19 +179,13 @@ class CaelumCleaningTask : Inventory
         if(!Attended(user)){Cancel(user);return;}
         let task=Find(user);
         if(!CaelumCleaningSupplies.Cloth(user)){MissingSupplies(user);return;}
-        double step=Min(task.Remaining,Max(0.0,seconds));
-        double litersPerSecond=CaelumContaminationRules.EquipmentWaterLiters(1)/CaelumContaminationData.EQUIPMENT_SECONDS_M2;
-        double affordable=Min(CaelumCleaningSupplies.Water(user),CaelumSoapSupply.Available(user)/CaelumContaminationData.SOAP_G_L)/litersPerSecond;
-        step=Min(step,affordable);
+        double step=CaelumCleaningSupplies.Progress(user,task.Target,task.Remaining,seconds);
+        if(step<0){Cancel(user);return;}
         if(step<=0){MissingSupplies(user);return;}
-        double liters=step*litersPerSecond,soap=CaelumContaminationRules.SoapGrams(liters);
-        if(!CaelumCleaningSupplies.SpendWater(user,liters) || !CaelumSoapSupply.Spend(user,soap)){Cancel(user);return;}
-        // La fracción del trabajo restante también retira la exposición acumulada durante la limpieza.
-        double value=CaelumContaminationStorage.Value(task.Target);
-        CaelumContaminationStorage.Set(task.Target,Max(0.0,value*(1-step/task.Remaining)));
+        double liters=CaelumContaminationRules.EquipmentWaterLiters(step/CaelumContaminationData.EQUIPMENT_SECONDS_M2);
+        double soap=CaelumContaminationRules.SoapGrams(liters);
         task.Remaining=Max(0.0,task.Remaining-step);task.SpentWater+=liters;task.SpentSoap+=soap;
         user.CraftingTaskRemainingSeconds=task.Remaining;
-        user.RefreshCarriedInventorySummary();
         if(task.Remaining<0.000000001){task.Remaining=0;user.CraftingTaskRemainingSeconds=0;user.CompleteCraftingTask();}
         else if(step<Min(seconds,task.Remaining+step))MissingSupplies(user);
     }
@@ -182,6 +193,7 @@ class CaelumCleaningTask : Inventory
     {
         let task=Find(user);if(!Attended(user) || task.Remaining>0)return false;
         CaelumContaminationStorage.Set(task.Target,0);task.ContinuePlan=true;
+        CaelumTimeSkipState.RecordCleaned(user,task.Target);
         CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_DONE",false));return true;
     }
     static void AfterComplete(CaelumPlayer user)
@@ -190,7 +202,7 @@ class CaelumCleaningTask : Inventory
         if(task.NextPiece(user))return;
         bool sleep=task.SleepAfter;int minutes=task.Minutes;let bed=task.Bed;
         task.ContinuePlan=false;task.Queue.Clear();task.SleepAfter=false;task.WakeQueue=false;task.Bed=null;
-        if(sleep){task.Resuming=true;CaelumRestState.Begin(user,CaelumRestRules.MODE_SLEEP,minutes,bed);task.Resuming=false;}
+        if(sleep && !CaelumTimeSkipState.IsPreparingSleep(user)){task.Resuming=true;CaelumRestState.Begin(user,CaelumRestRules.MODE_SLEEP,minutes,bed);task.Resuming=false;}
     }
     override void PreTravelled(){Cancel(CaelumPlayer(Owner));Super.PreTravelled();}
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR}
@@ -236,4 +248,60 @@ class CaelumCleaningSession : Inventory
     override void PreTravelled(){Open=false;Super.PreTravelled();}
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNTOSSABLE}
     States {Spawn:TNT1 A -1;Stop;}
+}
+
+// Fase del calendario: no ocupa ni reemplaza la tarea de fabricación/lectura.
+class CaelumCalendarCleaning : Object play
+{
+    int Revision,Next;
+    bool WaitingExisting,Done;
+    Array<CaelumEquipmentItem> Queue,AlreadyCleaned;
+    CaelumEquipmentItem Target;
+    double Remaining,SpentWater,SpentSoap;
+    void Capture(CaelumPlayer user)
+    {
+        Revision=1;WaitingExisting=CaelumCleaningTask.Active(user);
+        for(int i=0;i<CaelumCleaningSupplies.EQUIPPED_COUNT;i++)
+        {let item=CaelumCleaningSupplies.EquippedAt(user,i);if(item!=null)Queue.Push(item);}
+    }
+    bool WasCleaned(CaelumEquipmentItem item)
+    {for(int i=0;i<AlreadyCleaned.Size();i++)if(AlreadyCleaned[i]==item)return true;return false;}
+    void NextPiece(CaelumPlayer user)
+    {
+        Target=null;
+        while(Next<Queue.Size())
+        {
+            let item=Queue[Next++];
+            if(item==null || item.Owner!=user || item.Amount<=0 || WasCleaned(item)
+                || CaelumContaminationStorage.Value(item)<=0 || CaelumCleaningSupplies.Area(item)<=0)continue;
+            if(!CaelumCleaningSupplies.CanClean(user,item))
+            {CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));continue;}
+            Target=item;Remaining=CaelumCleaningSupplies.Area(item)*CaelumContaminationData.EQUIPMENT_SECONDS_M2;
+            return;
+        }
+        Done=true;
+    }
+    void Prepare(CaelumPlayer user)
+    {
+        if(Done)return;
+        if(WaitingExisting && CaelumCleaningTask.Active(user))return;
+        WaitingExisting=false;if(Target==null)NextPiece(user);
+    }
+    void Advance(CaelumPlayer user,double seconds)
+    {
+        if(Done || WaitingExisting || Target==null)return;
+        if(Target.Owner!=user || Target.Amount<=0){NextPiece(user);return;}
+        if(!CaelumCleaningSupplies.Cloth(user))
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));NextPiece(user);return;}
+        double wanted=Min(Remaining,Max(0.0,seconds));
+        double step=CaelumCleaningSupplies.Progress(user,Target,Remaining,seconds);
+        if(step<0){Done=true;Target=null;return;}
+        Remaining=Max(0.0,Remaining-step);
+        double liters=CaelumContaminationRules.EquipmentWaterLiters(step/CaelumContaminationData.EQUIPMENT_SECONDS_M2);
+        SpentWater+=liters;SpentSoap+=CaelumContaminationRules.SoapGrams(liters);
+        if(Remaining<0.000000001)
+        {CaelumContaminationStorage.Set(Target,0);CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_DONE",false));NextPiece(user);}
+        else if(step<wanted)
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));NextPiece(user);}
+    }
 }

@@ -3419,8 +3419,9 @@ class CaelumInventoryService : Object play
     static bool IsEquipmentItemCraftingLocked(CaelumPlayer user, int itemId)
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return false;
-        return user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
-            && user.CraftingTaskTargetItemId == itemId;
+        return CaelumTimeSkipState.CleaningLocked(user,itemId)
+            || (user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
+                && user.CraftingTaskTargetItemId == itemId);
     }
 
     static bool IsSelectedMaterialCraftingLocked(CaelumPlayer user)

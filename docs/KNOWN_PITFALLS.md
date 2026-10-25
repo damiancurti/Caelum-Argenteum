@@ -964,6 +964,17 @@ ground contact: native flight takeoff can still be falling. Threat scans belong
 once per physical batch through local queries, never a whole-Actor census for
 every accelerated personal step. These findings do not establish siege FPS gains.
 
+Continuation, ENGINE-VERIFIED, #502/5.8.12,2026-10-25:
+pre-sleep calendar cleaning keeps the player awake briefly below the Sleep
+threshold. Existing fatigue damage writes health directly, bypassing the native
+damage event; isolated queue calls therefore missed a real-clock interruption.
+Account that loss through PeriodicLoss only during the approved preparation and
+when neither Hunger nor Thirst is critical. Do not suppress the damage or broaden
+the exception to attacks. Native ordinary/accelerated clock and critical-Hunger
+checks pass; assets/validation_5812/calendar retains the reproduced failure and
+final evidence. Observe paused-work progress at the exact calendar completion
+boundary: later real-time ticks legitimately resume the original task.
+
 ## CA-KP-126 - Native no-wipe does not clear a custom travel overlay
 
 Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED, #334 /5.4.36,2026-10-18.

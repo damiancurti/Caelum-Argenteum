@@ -1905,7 +1905,7 @@ class CaelumCraftingCoordinator : Object play
     static void UpdateCraftingTask(CaelumPlayer user)
     {
         user.CraftingTaskProgressing = false;
-        if (CaelumSleepRules.IsSleeping(user)
+        if (CaelumSleepRules.IsSleeping(user) || CaelumTimeSkipState.PausesWork(user)
             || (CaelumTimeSkipState.IsActive(user) && CaelumScheduleState.SiegeActive(user,level.MapName))) return;
         if (!user.CraftingTaskActive || user.CraftingTaskCompleting) { return; }
         if (!user.RefreshActiveCraftingStationSession()) { return; }

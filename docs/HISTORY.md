@@ -4,6 +4,27 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Calendar-sleep continuation (2026-10-25, #502): the author approved pausing
+crafting/reading, cleaning equipment before automatic calendar sleep, then
+resuming the original work after waking. An existing cleaning action finishes
+first; pieces it completes are not charged again. The bounded nine-piece plan
+preserves the original station/book, recipe, reserved materials and progress.
+The accepted progressive water/soap costs, missing-supply skips and cancellation
+apply. Fatigue damage continues during preparation and is accounted as periodic
+loss, so it cannot cancel its own sleep sequence; external damage and critical
+Hunger/Thirst retain their interruption rules.
+
+Calendar hygiene revision1 saves the preparation queue independently of work.
+Old sleeping saves continue without retroactive washing; their next sleep cycle
+uses the new preparation. Forecast revision18 invalidates stale caches and
+explicitly refuses an exact completion date when pre-sleep cleaning is required;
+manual calendar destinations and ordinary clock progression remain available.
+Evidence: assets/validation_5812/calendar. 160 native assertions across22 serial runs pass, including save migration/rollback
+and previous cleaning regressions; static validation passes.
+CA502-CALENDAR-01 awaits author review;
+CA502-WAKE-01 is accepted. Actor/combat contact and resident housekeeping remain
+unfinished; this continuation does not complete #502 or V5.8.
+
 Author acceptance,2026-10-25: CA502-WAKE-01 (origin5.8.12/#502, runtime7c7db211
 and corrected laboratory6ff63398) passed without qualifications. The author
 confirmed "Las pruebas dieron correcto, sigue con el resto." Remove only this ID
