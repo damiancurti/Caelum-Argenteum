@@ -50,6 +50,17 @@ remain with diagnoses. CA502-EXPOSURE-01 awaits the author's return; no manual
 acceptance is inferred. NPC/furniture exposure, surface/combat contact, immersion
 and hygiene remain pending. README reviewed; same issue and patch version.
 
+Author acceptance, 2026-10-25: CA502-SEVERE-01 and CA502-EXPOSURE-01
+(both origin 5.8.9/#502) passed all supplied terminal checks without qualifications.
+The author reported only a separate #411 tent-model overlay defect; that does
+not qualify either #502 result. Remove these two accepted entries from the
+single pending queue. Runtime/source and prior evidence are unchanged at
+2d312262; no new native regression run is needed for this documentation update.
+The same reply approved immersion area for carried loose equipment as its
+approved surface multiplied by the character's submerged fraction; worn pieces
+use actual submerged zones. Immersion and the remaining hygiene/contact scope
+are still not implemented. README reviewed; same patch version.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Added local full-volume/support/access validation to actual chest placement,

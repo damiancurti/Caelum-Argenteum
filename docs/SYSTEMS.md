@@ -25,7 +25,10 @@ do not exchange. The source retains its concentration. Continuous integration
 updates the ratio as the recipient rises, so a batch equals subdivided contact.
 Body dose scales 80 kg/body mass. Feet use 0.04 m²; body brushing 0.10 m²;
 bites, scratches and weapon impacts use 0.01 m² for ten contact seconds.
-Immersion uses submerged body area. Biological/chemical water maps to C100,
+Immersion uses submerged body area. On 2026-10-25 the author approved using
+the character's submerged fraction times the approved equipment area for weapons,
+shields and loose equipment carried outside the Box. Worn clothing/armor use
+their actual submerged body zones; the Box/closed chests remain protected. Biological/chemical water maps to C100,
 clean or salt-only water to C0 for this contact disease; bathing needs potable
 water. Transmission uses world seconds, including waits and journeys; disease
 damage retains its existing real-second clock.

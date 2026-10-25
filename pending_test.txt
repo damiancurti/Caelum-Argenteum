@@ -15,31 +15,3 @@ Expected: the enlarged appearance/fit satisfies the author; invalid terrain
 remains rejected. Native checks cover two crouched bodies side by side and
 preservation of original smaller tents/tasks when loading older private saves.
 This does not include fire, cooking or two-person sleeping arrangements.
-
-CA502-SEVERE-01 | Origin: 5.8.9 / #502 | PENDING
-Prerequisites: issue502-work, final-reviewed package, GZDoom 4.14.2; close other
-GZDoom instances. Launch assets/validation_589/author_terminal.ps1, choose 1.
-This private room does not alter campaign saves. Close introduction with Escape.
-1. Show the usual survival HUD. F1 sets C89; F2 sets C90; F3 sets C100.
-   Each key restores test Life. C90/C100 say Sick; C89 says Contaminated.
-2. C90 loses Life at approximately twice the C89 rate. Avoid remaining sick
-   for several seconds: it can kill. F5 clears contamination/restores the test.
-3. F4 sets C90/Toughness100: Sick with damage immunity, no disease Life loss.
-4. Option 2 runs isolated rules/runtime comparisons; all checks must PASS.
-Expected: threshold, label and immunity agree. This does not accept environmental
-contacts, soap, bathing or automatic equipment washing, which remain pending.
-
-CA502-EXPOSURE-01 | Origin: 5.8.9 / #502 | PENDING; deferred until author return
-Prerequisites: issue502-work, exposure-final2 package, GZDoom 4.14.2; close other
-GZDoom instances. Run assets/validation_589/exposure/author_terminal.ps1, choose 1.
-This private room does not alter campaign saves. Close introduction with Escape.
-1. Inspect Journal > World: ambient contamination appears beside climate data,
-   without overlapping visited locations or local exits. Spanish/English match.
-2. With the survival HUD visible, F1 resets the private environment and clean
-   body. Body contamination rises gradually toward the local environment value.
-3. F2 compares actual world-time waiting with its projection; F3 adds clothing;
-   F4 checks travel projection/commit. F6 opens the game console to read results.
-   Every check must PASS, with matching predicted/actual contamination.
-Expected: environmental value and body bar remain distinct, and waiting/travel
-do not evade exposure. This does not accept NPC/furniture exposure, floor/body
-contacts, immersion, combat transmission, soap acquisition or washing/bathing.

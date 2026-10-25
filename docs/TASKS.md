@@ -4,11 +4,11 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 ## 5.8.9 - Contamination expansion (#502, in progress)
 
-Severe threshold/HUD and forecast invalidation are implemented. Retain
-CA502-SEVERE-01 until explicit author confirmation. Actor/equipment state and
+Severe threshold/HUD and forecast invalidation are implemented.
+CA502-SEVERE-01 was accepted on 2026-10-25. Actor/equipment state and
 explicit contact API pass 30 native checks. Player/carried-equipment environmental
 exposure and independent wait/travel projections pass 66 further native checks.
-CA502-EXPOSURE-01 is queued until the author returns. Next: NPC/furniture exposure,
+CA502-EXPOSURE-01 was accepted on 2026-10-25. Next: NPC/furniture exposure,
 surface state, local/combat contacts, immersion; approved soap/cloth acquisition;
 progressive equipment washing/bathing and repair/sleep integration. Do not present
 contact/quote helpers as integrated hygiene. Use approved surfaces, world time

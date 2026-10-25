@@ -20,7 +20,7 @@ cached models after adding environmental exposure.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See
-assets/validation_589/RESULTS.md. CA502-SEVERE-01 remains an author check.
+assets/validation_589/RESULTS.md. CA502-SEVERE-01 was accepted on 2026-10-25.
 Actor and equipment contamination now persists through pickup, storage, saves
 and hub return. Thirty further native checks cover that state, protected storage,
 explicit contact and old-save migration/rollback. Weapon/shield areas use the
@@ -28,7 +28,7 @@ approved size conversion. The player and equipment carried outside the Box now
 accumulate environmental contamination; clothes and armor receive covered
 exposure first. The World journal shows the local index. Sixty-six further native
 assertions cover independent forecasts, actual waiting, travel commit and save/hub
-continuity; see `assets/validation_589/exposure`. CA502-EXPOSURE-01 awaits the author.
+continuity; see `assets/validation_589/exposure`. CA502-EXPOSURE-01 was accepted on 2026-10-25.
 NPC/furniture exposure, surface/combat contact, immersion, soap acquisition and
 washing/bathing remain pending. The expanded issue and V5.8 remain open.
 Four painted hygiene item sources/previews are prepared in
