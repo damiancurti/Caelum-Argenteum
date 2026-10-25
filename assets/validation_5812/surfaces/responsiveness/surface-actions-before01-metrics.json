@@ -1,0 +1,35 @@
+{
+  "label": "surface-actions-before01",
+  "bounded": false,
+  "scope": "Native render-callback intervals, not presentation or GPU timing.",
+  "actions_ms": {
+    "F4": 0.2641,
+    "F5": 52.7491
+  },
+  "windows": {
+    "dry": {
+      "frames": 599,
+      "mean_ms": 16.666277629382304,
+      "p95_ms": 16.9226,
+      "p99_ms": 17.1366,
+      "max_ms": 17.2583,
+      "simulation_tics_s": 35.001350702123595
+    },
+    "rain": {
+      "frames": 600,
+      "mean_ms": 16.6670115,
+      "p95_ms": 16.8375,
+      "p99_ms": 17.0048,
+      "max_ms": 25.6642,
+      "simulation_tics_s": 35.00062756125217
+    },
+    "wait": {
+      "frames": 598,
+      "mean_ms": 16.733534448160537,
+      "p95_ms": 17.0271,
+      "p99_ms": 17.5563,
+      "max_ms": 69.5596,
+      "simulation_tics_s": 35.16435821027483
+    }
+  }
+}

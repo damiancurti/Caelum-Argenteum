@@ -4,6 +4,19 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Laboratory responsiveness/clarity correction, 2026-10-25 (#502): the author
+reported frame drops mainly on F4/F5 and apparent contamination from rain.
+The diagnostic F5 simulated a whole half hour synchronously; repeated F4
+advanced days while retaining old surface epochs and dirty equipment. Manual
+F5 now yields after at most16 personal steps or2ms, counting normal world time
+toward its30-minute target. Duplicate presses do not queue another advance;
+F1/F3/F4 cancel and start independent laboratory scenarios with clean body/equipment
+and fresh surface epochs. Rain still washes exterior surfaces, not the body;
+ambient/contact exposure remains active. The production package is unchanged.
+Focused native checks and matched action timing are recorded under
+assets/validation_5812/surfaces/responsiveness. CA502-SURFACE-01 remains pending;
+the author's performance/clarity report is not a passed test.
+
 Surface-laboratory visibility correction, 2026-10-25 (#502): the author reported
 that F2 did not show body contamination. The saved session log confirms the
 reading executed, but the console remained hidden and notifications were disabled.

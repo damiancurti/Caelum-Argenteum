@@ -31,6 +31,11 @@ and static validation pass. All169 maps and13,826 art members are unchanged.
 CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. F2 now opens
 the in-game console with "Tu contaminacion"; F6 returns to play. The diagnostic
 reading was verified in a native capture after the author's visibility report.
+Following the author's F4/F5 hitch report, manual F5 now yields between short
+batches instead of simulating the whole half hour in one event. F1/F3/F4 reset
+the laboratory's body/equipment and surface history for independent scenarios.
+Rain readings compare exterior/interior surfaces; remaining ambient/contact
+exposure may still raise body contamination. Rain is not a body-bathing action.
 Other-actor
 and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
 cleaning remain follow-up; this does not complete#502 or V5.8.

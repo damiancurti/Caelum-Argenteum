@@ -9,6 +9,10 @@ class CA502SChecks : EventHandler
 {
     int Passed,Failed;
     CaelumContaminationTile RainOpen,RainRoof;
+    CaelumPlayer WaitUser;
+    double WaitTarget,WaitStart,WaitOpenStart,WaitRoofStart,MaxBatchMS;
+    int WaitBatches;
+    bool VerifyWait;
     void Check(bool ok,String label)
     {if(ok)Passed++;else Failed++;Console.Printf("CA502H %s %s",ok?"PASS":"FAIL",label);}
     bool Near(double a,double b,double epsilon=0.00001){return Abs(a-b)<epsilon;}
@@ -131,10 +135,57 @@ class CA502SChecks : EventHandler
     }
     void Manual(CaelumPlayer u)
     {
-        RainOpen=null;RainRoof=null;
-        Reset(u);let tile=CaelumContaminationSurfaceContact.FloorTile(u,CaelumContaminationSurfaces.CurrentMap(u),true);
+        Reset(u);FreshTrial(u);
+        let tile=CaelumContaminationSurfaceContact.FloorTile(u,CaelumContaminationSurfaces.CurrentMap(u),true);
         tile.Concentration=80;tile.Stamp=CaelumContaminationSurfaces.Now(u);
         Console.Printf("CA502S Zona bajo tus pies=80; cuerpo=0. F2 informa. F3 ensucia pared; F4 prepara lluvia. F6 consola.");
+    }
+    void FreshTrial(CaelumPlayer u)
+    {
+        // Sólo el laboratorio reinicia escenarios: no altera partidas de campaña.
+        WaitUser=null;VerifyWait=false;RainOpen=null;RainRoof=null;
+        if(level.MapName!="CAS502")return;
+        for(Inventory item=u.Inv;item!=null;item=item.Inv)
+            if(item is 'CaelumEquipmentItem')CaelumContaminationStorage.Set(item,0);
+        CaelumContaminationStorage.Set(u,0);u.ContaminationExposure=null;
+        let sheet=CaelumContaminationSurfaces.CurrentMap(u);
+        sheet.Tiles.Clear();sheet.Buckets.Clear();sheet.Epoch=CaelumContaminationSurfaces.Now(u);
+    }
+    void StartWait(CaelumPlayer u)
+    {
+        if(WaitUser!=null){Console.Printf("CA502S F5 ya esta avanzando; F2 consulta, F6 vuelve al juego.");return;}
+        WaitUser=u;WaitStart=CaelumContaminationSurfaces.Now(u);WaitTarget=WaitStart+1800;
+        WaitOpenStart=RainOpen==null?0:RainOpen.Concentration;
+        WaitRoofStart=RainRoof==null?0:RainRoof.Concentration;
+        WaitBatches=0;MaxBatchMS=0;
+        Console.Printf("CA502S Avanzando 30 minutos por lotes breves. F1/F3/F4 cancelan; F2 consulta.");
+        CaelumNotifications.Notify(u,"Prueba F5: avanzando 30 minutos. Espera unos segundos.");
+    }
+    override void WorldTick()
+    {
+        if(WaitUser==null)return;
+        let u=WaitUser;
+        if(level.MapName!="CAS502" || u.health<=0){WaitUser=null;VerifyWait=false;return;}
+        // Presupuesto del diagnóstico: conserva cada paso del mundo y deja
+        // renderizar/recibir entrada entre lotes. Nunca un bucle de media hora.
+        double start=MSTimeF();int steps=0;
+        while(CaelumContaminationSurfaces.Now(u)<WaitTarget && steps<16)
+        {
+            CaelumTimeAdvanceState.SimulatePersonalTic(u);steps++;
+            if(MSTimeF()-start>=2)break;
+        }
+        MaxBatchMS=Max(MaxBatchMS,MSTimeF()-start);WaitBatches++;
+        if(CaelumContaminationSurfaces.Now(u)<WaitTarget)return;
+        WaitUser=null;Status(u);
+        Console.Printf("CA502S Avance terminado: %.4f segundos del mundo; lotes=%d; maximo=%.4f ms.",CaelumContaminationSurfaces.Now(u)-WaitStart,WaitBatches,MaxBatchMS);
+        CaelumNotifications.Notify(u,"Prueba F5 terminada. F2 muestra exterior/interior.");
+        if(VerifyWait)
+        {
+            Check(WaitBatches>1,"manual wait yields between bounded batches");
+            Check(CaelumContaminationSurfaces.Now(u)>=WaitTarget && CaelumContaminationSurfaces.Now(u)-WaitTarget<1,"manual wait reaches its world-clock target without duplicate elapsed time");
+            Check(RainOpen!=null && RainOpen.Concentration<WaitOpenStart && Near(RainRoof.Concentration,WaitRoofStart),"bounded wait washes exterior and preserves roofed comparison");
+            VerifyWait=false;Console.Printf("CA502H RESULT passes=%d failures=%d",Passed,Failed);
+        }
     }
     void Status(CaelumPlayer u)
     {
@@ -142,9 +193,11 @@ class CA502SChecks : EventHandler
         let wall=CaelumContaminationSurfaceContact.WallTile(u,sheet,false);
         Console.Printf("CA502S Tu contaminacion=%.4f / 100; suelo=%.4f; pared=%.4f; zonas=%d",CaelumContaminationStorage.Value(u),tile==null?-1:tile.Concentration,wall==null?-1:wall.Concentration,sheet.Tiles.Size());
         Console.Printf("CA502S Contacto pies=%.4f; torso=%.4f",CaelumContaminationStorage.Value(CaelumContaminationSurfaceContact.Outer(u,CaelumConstants.ARMOR_SLOT_FEET)),CaelumContaminationStorage.Value(CaelumContaminationSurfaceContact.Outer(u,CaelumConstants.ARMOR_SLOT_BODY)));
+        if(WaitUser!=null)Console.Printf("CA502S F5 en curso: %.1f de 30 minutos. F6 cierra esta consola y continua.",(CaelumContaminationSurfaces.Now(u)-WaitStart)/60);
         if(RainOpen!=null && RainRoof!=null)
         {sheet.Sync(RainOpen,CaelumContaminationSurfaces.Now(u));sheet.Sync(RainRoof,CaelumContaminationSurfaces.Now(u));
-            Console.Printf("CA502S Lluvia %.2f mm/h; exterior=%.4f; interior=%.4f",CaelumWeatherState.Get(u).Outside.PrecipitationMmPerHour,RainOpen.Concentration,RainRoof.Concentration);}
+            Console.Printf("CA502S Lluvia %.2f mm/h; exterior=%.4f; interior=%.4f",CaelumWeatherState.Get(u).Outside.PrecipitationMmPerHour,RainOpen.Concentration,RainRoof.Concentration);
+            Console.Printf("CA502S Compara exterior/interior: la lluvia lava superficies, no bana al personaje.");}
     }
     void RainSetup(CaelumPlayer u)
     {
@@ -154,7 +207,7 @@ class CA502SChecks : EventHandler
         {outside.EvaluateRegion(1,d,h*CaelumWorldClock.TicsPerHour(),weather.Seed);if(outside.PrecipitationMmPerHour>=2){day=d;hour=h;break;}}
         if(day<0){Check(false,"rain setup found a seeded rainy day");return;}
         clock.AdvanceTics((day-first)*CaelumWorldClock.TicsPerDay()+hour*CaelumWorldClock.TicsPerHour()-calendar.CivilDayTics(clock));
-        CaelumWeatherState.Sync(u,clock,calendar);let thermal=CaelumThermalBody.Get(u,true);
+        CaelumWeatherState.Sync(u,clock,calendar);FreshTrial(u);let thermal=CaelumThermalBody.Get(u,true);
         let sheet=CaelumContaminationSurfaces.CurrentMap(u);
         for(int i=0;i<2;i++)
         {
@@ -164,7 +217,8 @@ class CA502SChecks : EventHandler
             if(i==0)RainOpen=tile;else RainRoof=tile;
         }
         u.SetOrigin((128,128,0),false);CaelumThermalEnvironment.Sample(u,thermal,0);
-        Console.Printf("CA502S Lluvia real preparada. F5 avanza30 minutos; F2 compara exterior/interior sin pisarlos.");Status(u);
+        Console.Printf("CA502S Prueba nueva: cuerpo/equipo limpios. Lluvia real; F5 avanza30 minutos; F2 compara exterior/interior.");
+        Console.Printf("CA502S El ambiente y el contacto siguen activos; la contaminacion corporal puede subir aunque el suelo exterior se lave.");Status(u);
     }
     void RainLive(CaelumPlayer u)
     {
@@ -224,9 +278,20 @@ class CA502SChecks : EventHandler
         else if(e.Name=='ca502s_rain_live')RainLive(u);
         else if(e.Name=='ca502s_forecast')Forecast(u);
         else if(e.Name=='ca502s_wet_floor')WetFloor(u);
-        else if(e.Name=='ca502s_wait'){for(int i=0;i<CaelumWorldClock.TicsPerHour()/2;i++)CaelumTimeAdvanceState.SimulatePersonalTic(u);Status(u);}
+        else if(e.Name=='ca502s_wait')StartWait(u);
+        else if(e.Name=='ca502s_wait_check'){RainSetup(u);StartWait(u);VerifyWait=true;}
+        else if(e.Name=='ca502s_trial_check')
+        {
+            let feet=CaelumContaminationSurfaceContact.Outer(u,CaelumConstants.ARMOR_SLOT_FEET);
+            CaelumContaminationStorage.Set(feet,67);CaelumContaminationStorage.Set(u,70);
+            RainSetup(u);Check(Near(CaelumContaminationStorage.Value(u),0) && Near(CaelumContaminationStorage.Value(feet),0),"rain scenario clears prior body and equipment contamination");
+            let sheet=CaelumContaminationSurfaces.CurrentMap(u);
+            Check(Near(sheet.Epoch,CaelumContaminationSurfaces.Now(u)),"fresh laboratory zones have no artificial skipped-day backlog");
+            StartWait(u);double target=WaitTarget;StartWait(u);Check(WaitTarget==target,"repeated F5 cannot queue duplicate half hours");
+            Manual(u);Check(WaitUser==null && RainOpen==null && RainRoof==null,"F1 cancels pending wait and starts an independent floor scenario");
+        }
         else if(e.Name=='ca502s_wall')
-        {u.SetOrigin((320-u.Radius,64,0),false);let tile=CaelumContaminationSurfaceContact.WallTile(u,CaelumContaminationSurfaces.CurrentMap(u),true);if(tile!=null)tile.Concentration=90;CaelumContaminationStorage.Set(u,0);Status(u);}
+        {Reset(u);FreshTrial(u);u.SetOrigin((320-u.Radius,64,0),false);let tile=CaelumContaminationSurfaceContact.WallTile(u,CaelumContaminationSurfaces.CurrentMap(u),true);if(tile!=null)tile.Concentration=90;Status(u);}
         else if(e.Name=='ca502s_legacy'){Check(CaelumContaminationSurfaces.Get(false)!=null,"old save initializes new ledger on first active tic");Check(CaelumCleaningTask.Attended(u),"pre-surface saved equipment cleaning stays active");}
         else return;
         Console.Printf("CA502H RESULT passes=%d failures=%d",Passed,Failed);

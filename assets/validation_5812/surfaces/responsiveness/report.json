@@ -1,0 +1,231 @@
+{
+  "date": "2026-10-25",
+  "issue": 502,
+  "version": "5.8.12",
+  "scope": "Unshipped laboratory only; production package unchanged.",
+  "records": [
+    {
+      "label": "surface-actions-before01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "CE2A977954789D91254CD18E8ADEE574852A5D938A4FF581B941C8F6C65B54A2",
+      "log_sha256": "4a225ef54a9a216e68fb81938a1f4d0a8a027b1e8adfbf4adb23828cbf5af039"
+    },
+    {
+      "label": "surface-actions-after01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "803D0C0FDF6735F9FBE07B8D448FA209C3B33B5262E628BF92FED863C99EF4A0",
+      "log_sha256": "7c822bf654d57f07006009cd8fa016942268dc6843b0383af12c60933378bdec"
+    },
+    {
+      "label": "surface-actions-before-repeat01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "4893C2D24131262F53CDF5D840263569B575E0DDD1ADA7B0176103C8F7F9B048",
+      "log_sha256": "f1093d88d9e95982f54dcd4db38c531fdc7644874749eac08522b9bc8b6d67a5"
+    },
+    {
+      "label": "surface-actions-after-repeat01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "1BC016DF26BAA954EBBE10350A7581EFB8AE45AADC6155DDBC638354BB86E3F2",
+      "log_sha256": "d8ee914bf3ea2be8364ea03de10e87741ebb49419d47bba2ce186ebe6fa21d64"
+    },
+    {
+      "label": "surface-responsive-trial01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "23E66C6B88E2018A4F1066F1D2BF6F46681E6C471693B63A4A08E207E814A639",
+      "log_sha256": "ba3f64b8e0ffff87b1c1d45d949de3f91ac84609bea2015e9ba1e72a8701bcaa"
+    },
+    {
+      "label": "surface-responsive-wait01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "23E66C6B88E2018A4F1066F1D2BF6F46681E6C471693B63A4A08E207E814A639",
+      "log_sha256": "fefc13918f1e5103d5cfc6ccc6a83b0050f78dfb3e6206d037bf71ac103e1567"
+    },
+    {
+      "label": "surface-responsive-rain01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "23E66C6B88E2018A4F1066F1D2BF6F46681E6C471693B63A4A08E207E814A639",
+      "log_sha256": "54522b6b6733db46c9e7ccaa445650ddf213cc35b155c1536390677d2f77f21a"
+    },
+    {
+      "label": "surface-responsive-capture01",
+      "package_sha256": "2E7D8C6B0C65F17BE568533C6C5B7383905F5C33612DBBE6D624168930614C7B",
+      "addon_sha256": "23E66C6B88E2018A4F1066F1D2BF6F46681E6C471693B63A4A08E207E814A639",
+      "log_sha256": "0382046f30a628026200570ebf6819a483998cd101e3cf2fcf352bc24d708721"
+    }
+  ],
+  "focused_native_assertions": 8,
+  "capture_repeated_assertions": 3,
+  "metrics": [
+    {
+      "label": "surface-actions-before01",
+      "bounded": false,
+      "scope": "Native render-callback intervals, not presentation or GPU timing.",
+      "actions_ms": {
+        "F4": 0.2641,
+        "F5": 52.7491
+      },
+      "windows": {
+        "dry": {
+          "frames": 599,
+          "mean_ms": 16.666277629382304,
+          "p95_ms": 16.9226,
+          "p99_ms": 17.1366,
+          "max_ms": 17.2583,
+          "simulation_tics_s": 35.001350702123595
+        },
+        "rain": {
+          "frames": 600,
+          "mean_ms": 16.6670115,
+          "p95_ms": 16.8375,
+          "p99_ms": 17.0048,
+          "max_ms": 25.6642,
+          "simulation_tics_s": 35.00062756125217
+        },
+        "wait": {
+          "frames": 598,
+          "mean_ms": 16.733534448160537,
+          "p95_ms": 17.0271,
+          "p99_ms": 17.5563,
+          "max_ms": 69.5596,
+          "simulation_tics_s": 35.16435821027483
+        }
+      }
+    },
+    {
+      "label": "surface-actions-after01",
+      "bounded": true,
+      "scope": "Native render-callback intervals, not presentation or GPU timing.",
+      "actions_ms": {
+        "F4": 0.2998,
+        "F5": 0.0236
+      },
+      "windows": {
+        "dry": {
+          "frames": 599,
+          "mean_ms": 16.666115191986645,
+          "p95_ms": 16.8582,
+          "p99_ms": 17.0009,
+          "max_ms": 17.2803,
+          "simulation_tics_s": 35.00114348735773
+        },
+        "rain": {
+          "frames": 600,
+          "mean_ms": 16.666223666666667,
+          "p95_ms": 16.8398,
+          "p99_ms": 16.9375,
+          "max_ms": 17.4781,
+          "simulation_tics_s": 35.0023318553482
+        },
+        "wait": {
+          "frames": 600,
+          "mean_ms": 16.66572083333333,
+          "p95_ms": 16.8831,
+          "p99_ms": 17.0422,
+          "max_ms": 17.2123,
+          "simulation_tics_s": 35.00102307990462
+        }
+      }
+    },
+    {
+      "label": "surface-actions-before-repeat01",
+      "bounded": false,
+      "fixture": "surface-actions-before01.pk3",
+      "repeats": 6,
+      "scope": "Native render-callback intervals, not presentation or GPU timing.",
+      "repeated_f4_ms": [
+        1.3173,
+        0.3554,
+        0.8401,
+        0.4398,
+        0.4697,
+        0.8868
+      ],
+      "actions_ms": {
+        "F4": 0.2553,
+        "F5": 55.2053
+      },
+      "windows": {
+        "dry": {
+          "frames": 599,
+          "mean_ms": 16.66598631051753,
+          "p95_ms": 16.9718,
+          "p99_ms": 17.1822,
+          "max_ms": 17.7179,
+          "simulation_tics_s": 35.00113403674279
+        },
+        "rain": {
+          "frames": 948,
+          "mean_ms": 16.87960358649789,
+          "p95_ms": 17.0458,
+          "p99_ms": 17.6479,
+          "max_ms": 103.0969,
+          "simulation_tics_s": 34.99693558082821
+        },
+        "wait": {
+          "frames": 597,
+          "mean_ms": 16.733331155778895,
+          "p95_ms": 16.9526,
+          "p99_ms": 17.1837,
+          "max_ms": 71.9026,
+          "simulation_tics_s": 35.22927458504872
+        }
+      }
+    },
+    {
+      "label": "surface-actions-after-repeat01",
+      "bounded": true,
+      "fixture": "surface-checks.pk3",
+      "repeats": 6,
+      "scope": "Native render-callback intervals, not presentation or GPU timing.",
+      "repeated_f4_ms": [
+        1.0209,
+        0.301,
+        0.852,
+        0.492,
+        0.6724,
+        0.8284
+      ],
+      "actions_ms": {
+        "F4": 0.3235,
+        "F5": 0.026
+      },
+      "windows": {
+        "dry": {
+          "frames": 599,
+          "mean_ms": 16.669185809682805,
+          "p95_ms": 16.9607,
+          "p99_ms": 17.2167,
+          "max_ms": 22.5049,
+          "simulation_tics_s": 34.995582507620064
+        },
+        "rain": {
+          "frames": 960,
+          "mean_ms": 16.666331666666668,
+          "p95_ms": 17.0267,
+          "p99_ms": 17.4538,
+          "max_ms": 17.8633,
+          "simulation_tics_s": 35.0006192922076
+        },
+        "wait": {
+          "frames": 600,
+          "mean_ms": 16.6661315,
+          "p95_ms": 16.9643,
+          "p99_ms": 17.2086,
+          "max_ms": 17.5273,
+          "simulation_tics_s": 35.00146061095129
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "surface_checks.zs": "8552d499e870fb0a187680c11a9c798293aedb1726d4cc96f84817b0d047959f",
+    "surface_actions_perf.py": "d2af2048651693fcc3d75a69e32294b3b665fb5d8f860a75144cf55a46551f2c",
+    "prepare_surface.py": "1c881bba728bfa7ac93e329571382e947497cbc49af301b6beb1c797f4d59967"
+  },
+  "limitations": [
+    "Native RenderOverlay intervals are not application presents, GPU execution or display refresh.",
+    "Frame samples include action transitions; window tic throughput starts after synchronous commands.",
+    "Short peaceful CAS502 windows do not establish campaign-wide FPS acceptance.",
+    "CA502-SURFACE-01 author acceptance pending."
+  ]
+}

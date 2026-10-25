@@ -65,6 +65,9 @@ scripts={
     'surface-legacy':'wait 1; netevent ca502s_legacy; wait 5; quit',
     'surface-manual':f'wait 70; netevent ca502s_manual; bind F1 "netevent ca502s_manual"; bind F2 "{status_command}"; bind F3 "netevent ca502s_wall"; bind F4 "netevent ca502s_rain"; bind F5 "netevent ca502s_wait"; bind F6 toggleconsole',
     'surface-reading':f'wait 70; netevent ca502s_manual; wait 70; {status_command}; wait 10; screenshot surface-f2-reading.png; wait 5; quit',
+    'surface-bounded-wait':'wait 70; netevent ca502s_wait_check; wait 350; quit',
+    'surface-fresh-trial':'wait 70; netevent ca502s_trial_check; wait 5; quit',
+    'surface-responsive-capture':f'wait 70; netevent ca502s_wait_check; wait 350; {status_command}; wait 10; screenshot surface-responsive-rain.png; wait 5; quit',
 }
 for name,script in scripts.items():(out/(name+'.cfg')).write_text(script+'\n',encoding='utf-8',newline='\n')
 print('Prepared deterministic surface fixtures.')

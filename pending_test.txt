@@ -27,17 +27,25 @@ accepted. This does not test soap bathing, gear cleaning or resident routines.
 CA502-SURFACE-01 | Origin: 5.8.12 / #502 | PENDING
 Prerequisites: issue502-hygiene-work; surface-final05 package; GZDoom4.14.2.
 Launch assets/validation_5812/author_surface_terminal.ps1; close other GZDoom sessions.
-1. Option1 opens the two-room laboratory. F1 sets the floor underfoot to80 and
-   body to0. F2 opens the IN-GAME console and shows "Tu contaminacion", floor,
+1. Option1 opens the two-room laboratory. F1 starts a fresh scenario with the
+   floor underfoot at80 and body/equipment at0. F2 opens the IN-GAME console and shows "Tu contaminacion", floor,
    wall and outer feet/torso contamination; it does not print into PowerShell.
    F6 returns to play. Standing transfers contamination through the outer
    equipment if present. Moving one metre reaches a different floor zone.
-2. F3 places the character against a dirty wall. F2 shows its concentration
+2. F3 starts an independent clean-body/equipment scenario against a dirty wall. F2 shows its concentration
    and transfer to the outer torso layer; moving away ends that contact.
-3. F4 prepares real seeded rainfall and two untouched zones at100, one outside
-   and one roofed. F5 advances30 world minutes; F2 compares them. Rain lowers
+3. F4 starts a fresh rainfall scenario with clean body/equipment and two
+   untouched zones at100, one outside and one roofed. F5 advances30 world minutes
+   in short batches: wait for the completion notice, then compare them with F2.
+   F6 closes the console to resume an unfinished advance. F5 must not cause the
+   prior frame hitch; repeated F5 while busy must not queue another half hour.
+   F1/F3/F4 cancel an unfinished advance. Rain lowers
    the exterior gradually; the roofed zone remains100. Repeating F5 continues
    washing while rain persists. The exact reduction follows current rainfall.
+   Compare exterior/interior, not body contamination: rain washes exposed surfaces
+   and reduces the urban ambient index; it is not a bath. Remaining ambient and
+   contact exposure can still raise body contamination. Repeat F4 several times
+   and confirm old equipment dirt and artificial skipped-day catch-up do not recur.
 4. Save/reload and travel away/back with option2's focused checks. Concentration
    and pending environmental time survive; loading cannot reset or duplicate dirt.
 5. Option2 runs rules, geometry, rain, waiting parity, saves and hub checks.

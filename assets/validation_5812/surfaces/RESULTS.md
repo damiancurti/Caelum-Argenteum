@@ -90,3 +90,59 @@ after the documented retry/reset; no physical F2 key acceptance is claimed.
 Evidence is under native and captures. Fixture generation remains deterministic.
 No src member or production package changed, so the preceding gameplay results
 and package hash remain applicable. CA502-SURFACE-01 remains author-pending.
+
+## Interactive action responsiveness and rain interpretation - 2026-10-25
+
+The author reported hitches mainly on F4/F5 and apparent contamination from rain.
+The previous manual session retained outer-equipment contamination around67 while
+resetting the body to0. Exposure from that equipment and the remaining ambient
+source continued; the exterior control was being washed correctly. F1/F3/F4 now
+start independent CAS502 scenarios with clean body/equipment and a fresh sparse
+surface epoch after the synthetic weather-date jump. This is a diagnostic reset,
+not a change to production save history or cleaning mechanics.
+
+Manual F5 schedules at most16 personal simulation steps or2ms per native tic.
+It advances to a world-clock target30minutes ahead, counting ordinary progress;
+the focused check reaches exactly1800seconds in186 batches. Duplicate presses
+do not queue more time; F1/F3/F4 cancel it. Notifications report start/completion.
+F2 labels exterior/interior separately and explains that rainfall is not bathing.
+The unchanged production package remains surface-final05 with the hash above.
+
+Eight focused native assertions pass: independent clean setup, fresh epoch,
+duplicate-command protection, cancellation, yielding, exact clock target,
+exterior/roofed comparison and synchronous rain regression. The final visual
+capture repeats three assertions and shows exterior100->88.8966, interior100
+after30minutes. Body contamination reaches8.5883 because remaining exposure is
+active. No direct body-washing effect from rainfall was added or approved.
+
+Matched action windows use the same native configuration as the earlier timing
+section. Each run measures dry, rain and F5 phases. Repeated runs add six F4
+commands. Raw logs, configurations, hashes, metrics, capture and manifest are
+under responsiveness. The baseline addon retains the prior fixture source.
+
+| Run / phase | Mean ms | p95 ms | p99 ms | Worst ms |
+| --- | ---: | ---: | ---: | ---: |
+| Before / dry | 16.666 | 16.923 | 17.137 | 17.258 |
+| Before / rain | 16.667 | 16.838 | 17.005 | 25.664 |
+| Before / F5 | 16.734 | 17.027 | 17.556 | 69.560 |
+| After / dry | 16.666 | 16.858 | 17.001 | 17.280 |
+| After / rain | 16.666 | 16.840 | 16.938 | 17.478 |
+| After / F5 | 16.666 | 16.883 | 17.042 | 17.212 |
+| Repeated before / dry | 16.666 | 16.972 | 17.182 | 17.718 |
+| Repeated before / rain | 16.880 | 17.046 | 17.648 | 103.097 |
+| Repeated before / F5 | 16.733 | 16.953 | 17.184 | 71.903 |
+| Repeated after / dry | 16.669 | 16.961 | 17.217 | 22.505 |
+| Repeated after / rain | 16.666 | 17.027 | 17.454 | 17.863 |
+| Repeated after / F5 | 16.666 | 16.964 | 17.209 | 17.527 |
+
+The old F5 command itself takes52.75/55.21ms; new dispatch takes0.024/0.026ms,
+with work performed in later batches. Measured complete-batch maxima are below1ms
+in the retained runs. F4 setup itself remains below1.4ms; the older repeated
+scenario's larger gap includes deferred catch-up after the artificial date jump.
+The22.505ms dry-control maximum remains visible; no uniform60FPS claim is made.
+Simulation averages remain near35tics/s (raw metrics retained), but action-window
+tic throughput starts after synchronous commands whereas frame samples include
+their transitions. Do not use that counter as a presentation-rate measurement.
+These are RenderOverlay intervals, not application presents or GPU/display time;
+the earlier PresentMon access limitation still applies. CA502-SURFACE-01 remains
+pending for author confirmation of the corrected interaction.

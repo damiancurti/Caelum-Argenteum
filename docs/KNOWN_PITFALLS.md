@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-164 - Interactive diagnostics must yield and isolate scenario state
+
+Status/evidence: ENGINE-VERIFIED diagnostic correction; author acceptance pending.
+First recorded / last checked: 2026-10-25 / 2026-10-25.
+Issue: #502,5.8.12. GZDoom4.14.2/Windows11/Vulkan,1280x720,60FPS cap,
+5% audio, unpaused background. Evidence: assets/validation_5812/surfaces/responsiveness.
+
+The surface laboratory advanced30 world minutes in one network event. Native
+timing measured53-55ms inside that command and70-72ms worst render-callback
+intervals. Repeated rain setup also jumped days without resetting the synthetic
+surface epoch, producing a103ms interval while replaying pending exposure.
+Old equipped dirt survived the body reset, making rain seem to contaminate the
+character even though the exterior comparison was being washed.
+
+Interactive F5 now schedules at most16 shared personal steps or2ms per native
+tic, preserving all steps and counting normal clock progress toward the target.
+Duplicate presses cannot queue additional work; scenario resets cancel it.
+The CAS502-only fixture clears body/equipment and sparse surface history after
+its artificial date jump. Production persistence and contamination are unchanged.
+Matched repeated-action maxima are17.86ms for rain setup and17.53ms for wait;
+the dry control retains its22.50ms maximum. These are native callback intervals,
+not application presents or GPU/display timing; prior PresentMon trace access
+was denied. Short diagnostic windows do not establish campaign-wide60FPS.
+
+Keep a diagnostic's untouched controls separate from the player's exposure.
+Label whether a reading measures body, outer equipment, ambient source or
+comparison surface. Test the author-facing action as well as its underlying
+arithmetic, including repeated setup, cancellation and contaminated prior state.
+
 ## CA-KP-163 - Explicit local actor occupancy for sanitary seating
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
