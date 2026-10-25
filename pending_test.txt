@@ -8,3 +8,18 @@ Launch assets/validation_589/treatment/author_terminal.ps1, option1.
    its Life recovery. F6 toggles the console for test messages.
 3. Optional terminal option2 executes rules/native dose/save/load/hub checks;
    expect only PASS and zero failures. This does not test rain or NPC cleaning.
+
+CA502-TOILET-01 | Origin: 5.8.12 / #502 | PENDING
+Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_terminal.ps1; close other GZDoom sessions.
+1. Terminal option1 starts at a real household toilet. F1 resets contamination40,
+   metabolic capacity20 and household water100L. Use the toilet and remain nearby.
+   After one world minute it removes20 contamination, spends20 capacity and10L.
+   Natural depuration and household replenishment continue during this time.
+2. F1 resets; start and use again immediately or step away. No toilet cleansing,
+   water charge or capacity use occurs. The target panel shows action/cancellation.
+3. Use again after capacity is exhausted. It cannot cleanse or spend water.
+   Save/reload during a pending action preserves its progress and charges once.
+4. Terminal option2 runs focused native behavior, real-clock, prediction,
+   save/load and hub checks. Expect PASS with zero failures.
+Expected: interaction, timing, cancellation, resource accounting and persistence
+accepted. This does not test soap bathing, gear cleaning or resident routines.

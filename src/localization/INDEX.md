@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `dab018f8b867b873d6f9a38f0a0ba3bb0e29185bca07de442c2c20d03560295b`. Locations include every definition; the last one per language wins.
+SHA-256: `14a769fedc95b36d6323cae050dcef39a1cdb48a9acd246b58b5fc8b453f9321`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -85,7 +85,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_HIT | 5 | CA_HIT_LOCATION_ARMS | CA_HIT_LOCATION_TORSO |
 | CA_HUD | 30 | CA_HUD_ACTIVE_WEAPON | CA_HUD_UNARMED |
 | CA_HUNGER | 2 | CA_HUNGER_STATE_CRITICAL | CA_HUNGER_STATE_LOW |
-| CA_HYGIENE | 5 | CA_HYGIENE_CLOTH | CA_HYGIENE_SODA |
+| CA_HYGIENE | 6 | CA_HYGIENE_CANCELLED | CA_HYGIENE_SODA |
 | CA_IDENTITY | 2 | CA_IDENTITY_CREATOR_OWNER | CA_IDENTITY_NETWORK_NAME |
 | CA_INTRO | 9 | CA_INTRO_AWAKENING | CA_INTRO_WELCOME |
 | CA_JOURNAL | 44 | CA_JOURNAL_CHARACTER | CA_JOURNAL_WORLD_PENDING |
@@ -170,6 +170,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |
 | CA_THERMAL | 16 | CA_THERMAL_ATTACK | CA_THERMAL_WET |
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |
+| CA_TOILET | 8 | CA_TOILET_CANCEL_HINT | CA_TOILET_UNAVAILABLE |
 | CA_TRACK | 10 | CA_TRACK_FINISHED | CA_TRACK_STOP |
 | CA_TRAP | 1 | CA_TRAP_TELEPORTED | CA_TRAP_TELEPORTED |
 | CA_TRAPS | 4 | CA_TRAPS_RESET_DONE | CA_TRAPS_RESET_OCCUPIED |

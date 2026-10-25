@@ -3436,7 +3436,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
-        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);
+        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);
         user.CraftingTaskActive = false;
         user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
         user.CraftingTaskLegacyRanged = false;
@@ -6208,6 +6208,7 @@ class CaelumInventoryService : Object play
         user.EnsureCartridgeStationTask();
         if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CAMP
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
             && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
@@ -6218,7 +6219,13 @@ class CaelumInventoryService : Object play
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_HYGIENE)
+        {
+            user.CraftingTaskCompleting=true;
+            if(!CaelumHygieneTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            user.CraftingTaskCompleting=false;
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
         {
             user.CraftingTaskCompleting=true;
             if(!CaelumCampTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
@@ -6266,7 +6273,7 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
-        if(completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
+        if(completedKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
             && (user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
             || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED))
             CaelumRecipeLearning.CommitPractice(user);

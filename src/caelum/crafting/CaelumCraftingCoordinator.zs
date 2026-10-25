@@ -843,7 +843,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
         user.CraftingTaskRemainingSeconds = user.CraftingTaskTotalSeconds;
         user.CraftingTaskActive = true;
-        if(taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
+        if(taskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
         user.PersistCharacterState();
         user.RefreshFormalInventorySnapshot();
@@ -1642,6 +1642,11 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumHygieneTask.Active(user))
+        {
+            if(!CaelumHygieneTask.Attended(user)){CaelumHygieneTask.Cancel(user);return false;}
+            return true;
+        }
         if(CaelumCampTask.Active(user))
         {
             let camp=CaelumCampTask.Find(user);
@@ -1903,9 +1908,13 @@ class CaelumCraftingCoordinator : Object play
             0.0,
             user.CraftingTaskRemainingSeconds - (user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL
                 || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP
+                || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE
                 || CaelumChemistryData.IsRecipe(user.CraftingTaskRecipeIndex)
                 ? CaelumThermalRuntime.WorldTicSeconds() : 1.0 / TICRATE)
         );
+        // Compensar sólo el residuo binario del minuto de higiene.
+        if(CaelumHygieneTask.Active(user) && user.CraftingTaskRemainingSeconds<0.0000001)
+            user.CraftingTaskRemainingSeconds=0;
         if (user.CraftingTaskRemainingSeconds <= 0.0)
         {
             user.CompleteCraftingTask();

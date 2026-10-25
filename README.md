@@ -6,8 +6,27 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.11.** Obtain and update the complete repository, validate
+**Current release: 5.8.12.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.12 - Metabolic toilet sessions (#502, in progress)
+
+Household toilets now perform the approved one-world-minute hygiene action.
+Completion removes up to20 contamination, bounded by current contamination and
+metabolic capacity, and spends10L from that house's shared potable reserve.
+Starting spends nothing. Use again, leave reach/map, or take external damage to
+cancel without spending or cleansing. Recheck access, water and capacity at
+completion; insufficient or no-longer-needed cleansing spends nothing.
+Disease damage continues without cancelling the action, as approved2026-10-25.
+
+The action uses ordinary world time and the existing accelerated/wait controls.
+Save/load retains partial progress; map departure cancels it. Independent wait
+forecasts include completion and same-tic nutrition credit without changing live
+resources. Existing unsupported-effect forecast guards remain in force.
+Static validation and55 native checks pass;16,885 package members match src.
+Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
+Soap baths, equipment washing, surface/combat contacts, rain surface washing
+and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Domestic bathrooms (#410, in progress)
 

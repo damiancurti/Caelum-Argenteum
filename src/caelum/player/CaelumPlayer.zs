@@ -5942,6 +5942,7 @@ class CaelumPlayer : DoomPlayer
         RallyDamageFactor=previousRallyFactor;
         RallyPayloadBaseDamage=previousRallyBase;RallyResolvedDamage=previousRallyResolved;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
+        if(health<before && mod!='CaelumDiseaseDOT')CaelumHygieneTask.Cancel(self);
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
     }
@@ -5956,7 +5957,7 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
-        bool periodic=mod=='CaelumElementalDOT' || mod=='CaelumQuintessenceDOT';
+        bool periodic=CaelumToughnessRules.IsSustained(mod);
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
         if (CreationWizardOpen && !CharacterCreationComplete)

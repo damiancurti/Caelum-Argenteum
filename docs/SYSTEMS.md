@@ -1,6 +1,29 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.11** — 2026-10-25.
+Documentation version: **5.8.12** — 2026-10-25.
+
+## 5.8.12 - Metabolic toilet sessions (#502, in progress)
+
+Household toilets now perform the approved one-world-minute hygiene action.
+Completion removes up to20 contamination, bounded by current contamination and
+metabolic capacity, and spends10L from that house's shared potable reserve.
+Starting spends nothing. Use again, leave reach/map, or take external damage to
+cancel without spending or cleansing. Recheck access, water and capacity at
+completion; insufficient or no-longer-needed cleansing spends nothing.
+Disease damage continues without cancelling the action, as approved2026-10-25.
+
+The action uses ordinary world time and the existing accelerated/wait controls.
+Save/load retains partial progress; map departure cancels it. Independent wait
+forecasts include completion and same-tic nutrition credit without changing live
+resources. Existing unsupported-effect forecast guards remain in force.
+Static validation and55 native checks pass;16,885 package members match src.
+Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
+Approved follow-up2026-10-25: retain the unused fraction of the last gram of soap
+with its weight and save state for later cleaning, rather than charging it again.
+Fractional soap consumption is pending implementation, not supplied by toilets.
+
+Soap baths, equipment washing, surface/combat contacts, rain surface washing
+and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Household bathroom installation (#410)
 

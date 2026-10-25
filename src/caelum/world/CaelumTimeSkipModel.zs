@@ -25,9 +25,9 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 12;
+    const PROVISION_REVISION = 13;
     int ProvisionRevision;
-    bool PotableImmersed;
+    bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -47,6 +47,13 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         // El jugador calcula rendimiento al comienzo del tic, antes de curar
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
+        // Los poderes pulsan antes de terminar la tarea en el avance real.
+        if(ToiletTask)
+        {
+            Pulses();ToiletPulsesPrepared=true;
+            if(!sleeping && ProductiveTics+1>=RequiredTics && FoodIllness!=null)
+            {FoodIllness.ToiletDepurate();ToiletTask=false;}
+        }
         if(ContaminationWeather!=null && Contamination!=null)
         {
             int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
@@ -71,6 +78,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
         PotableImmersed=user.IsSubmergedInPotableWater();
+        ToiletTask=CaelumHygieneTask.Active(user);
         ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
         if(ContaminationWeather.DynamicClimate || (Contamination!=null && Contamination.DynamicWater))
         {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
@@ -174,6 +182,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     }
     override void Pulses()
     {
+        if(ToiletPulsesPrepared){ToiletPulsesPrepared=false;return;}
         bool seated=!Sleeping && HasChair;
         if(FoodEffectTics>0)
         {

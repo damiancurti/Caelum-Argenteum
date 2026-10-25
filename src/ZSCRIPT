@@ -407,6 +407,7 @@ version "4.14"
 #include "caelum/data/CaelumDomesticFixtureData.zs"
 #include "caelum/world/CaelumDomesticWater.zs"
 #include "caelum/world/CaelumDomesticFixture.zs"
+#include "caelum/world/CaelumHygieneTask.zs"
 #include "caelum/world/CaelumShopSign.zs"
 
 #include "caelum/data/CaelumPropertyData.zs"

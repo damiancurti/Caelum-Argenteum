@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.11** — 2026-10-25.
+Documentation version: **5.8.12** — 2026-10-25.
+
+## 5.8.12 - Toilet interaction (#502)
+
+Reuse the accepted #410 domestic toilet model/sprite and household placement.
+No artwork or map geometry changes. New interaction text and progress are EN/ES;
+author review CA502-TOILET-01 covers behavior, not replacement art.
 
 ## 5.8.11 - Domestic bathroom artwork (#410)
 

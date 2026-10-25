@@ -6546,3 +6546,24 @@ CA_DOMESTIC_BATHTUB = "Bañera";
 CA_DOMESTIC_TOILET = "Inodoro";
 CA_DOMESTIC_WATER_HINT = "Usar: consultar agua | Inventario: recoger en un recipiente";
 CA_DOMESTIC_WATER_AVAILABLE = "Reserva potable de la vivienda: %.2f L. Seleccioná un recipiente en el inventario y recogé agua mirando este sanitario.";
+
+[enu default]
+CA_TOILET_HINT = "{bind:+use}: Use toilet (1 world minute, 10 L)";
+CA_TOILET_CANCEL_HINT = "{bind:+use}: Cancel";
+CA_TOILET_PROGRESS = "Toilet: %.1f world seconds remaining";
+CA_TOILET_STARTED = "Using toilet. Stay nearby; use again to cancel. Water and cleansing are applied on completion.";
+CA_TOILET_NO_CAPACITY = "No contamination or metabolic cleansing capacity available.";
+CA_TOILET_NO_WATER = "The household reserve needs 10 L of potable water.";
+CA_TOILET_UNAVAILABLE = "Toilet use ended without spending water: no cleansing or water available.";
+CA_TOILET_DONE = "Contamination reduced by %.2f. Used 10 L of household water.";
+CA_HYGIENE_CANCELLED = "Hygiene action cancelled.";
+[es]
+CA_TOILET_HINT = "{bind:+use}: Usar inodoro (1 minuto del mundo, 10 L)";
+CA_TOILET_CANCEL_HINT = "{bind:+use}: Cancelar";
+CA_TOILET_PROGRESS = "Inodoro: quedan %.1f segundos del mundo";
+CA_TOILET_STARTED = "Usando el inodoro. Permanecé cerca; usá otra vez para cancelar. El agua y la limpieza se aplican al terminar.";
+CA_TOILET_NO_CAPACITY = "No hay contaminación o capacidad metabólica disponible para limpiar.";
+CA_TOILET_NO_WATER = "La reserva doméstica necesita 10 L de agua potable.";
+CA_TOILET_UNAVAILABLE = "Uso terminado sin gastar agua: ya no hay contaminación, capacidad o agua disponible.";
+CA_TOILET_DONE = "Contaminación reducida en %.2f. Se usaron 10 L de agua doméstica.";
+CA_HYGIENE_CANCELLED = "Acción de higiene cancelada.";

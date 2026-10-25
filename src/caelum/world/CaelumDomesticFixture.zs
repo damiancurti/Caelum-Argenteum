@@ -65,6 +65,8 @@ class CaelumDomesticToilet : CaelumDomesticFixture
 {
     override int Kind(){return 2;}
     override bool SuppliesWater(){return false;}
+    override bool Used(Actor activator)
+    {let user=CaelumPlayer(activator);return CanReach(user) && CaelumUseGeometry.AimedAt(user,self) && CaelumHygieneTask.Begin(user,self);}
     Default {Tag "$CA_DOMESTIC_TOILET";}
     States {Spawn:CDWC A -1;Stop;}
 }
