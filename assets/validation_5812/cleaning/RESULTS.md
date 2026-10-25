@@ -32,7 +32,7 @@ missing-cloth forecast guard and the independently tested H shortcut routing.
 The collector verifies the exact guard and the pre-shortcut UI source bytes. Earlier failed fixture
 probes remain in ignored build/ and their corrections are recorded in report.json.
 Native Spanish UI captures were inspected. Static project/localization/document
-validation passes. CA502-CLEAN-01 remains pending author review.
+validation passes. CA502-CLEAN-01 passed author review on2026-10-25 without qualifications.
 
 Reproduce with prepare_clean.py and run_native.ps1 using report.json's run metadata;
 collect_clean.py retains selected raw evidence. author_clean_terminal.ps1 offers

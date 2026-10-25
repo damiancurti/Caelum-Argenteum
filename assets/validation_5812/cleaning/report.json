@@ -133,7 +133,7 @@
   "unchanged_maps": 169,
   "unchanged_art_members": 13826,
   "package_sha256": "3d6c680f2efdff12b384c0922b04f695b8ea659a07b32560cf7861c59426780f",
-  "author_test": "CA502-CLEAN-01 pending",
+  "author_test": "CA502-CLEAN-01 accepted 2026-10-25",
   "retained_prior_runs": [
     "clean-dev03-core: superseded by the final missing-cloth core check; excluded from the selected total"
   ],

@@ -59,7 +59,7 @@ for name in ('clean-menu.png', 'clean-live.png'):
 report = {
     'issue': 502, 'version': '5.8.12', 'passes': sum(r['passes'] for r in records), 'runs': records,
     'source_members': count, 'unchanged_maps': len(maps), 'unchanged_art_members': len(art),
-    'package_sha256': digest, 'author_test': 'CA502-CLEAN-01 pending',
+    'package_sha256': digest, 'author_test': 'CA502-CLEAN-01 accepted 2026-10-25',
     'retained_prior_runs': ['clean-dev03-core: superseded by the final missing-cloth core check; excluded from the selected total'],
     'limits': ['Voluntary sleep only; calendar-triggered and exhaustion sleep scheduling remain follow-up.',
                'Exact-date forecast supports one piece; the queue followed by sleep retains the explicit unsupported-effect guard.',

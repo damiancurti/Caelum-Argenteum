@@ -4,6 +4,12 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-CLEAN-01 (origin5.8.12/#502,
+clean-final06, implementation a81ce7f6) passed without qualifications. The author
+confirmed "La prueba dio correcto, sigue con el resto." Only this equipment
+cleaning check is removed from pending_test.txt; toilet/treatment checks remain
+separate. Runtime and version are unchanged by this acceptance.
+
 Equipment-cleaning continuation,2026-10-25: implemented the approved progressive
 inventory action, repair-completion hook and voluntary pre-sleep queue. Charges use
 existing approved item surfaces,60 world seconds/m2,1L/m2 and5g/L; the cloth is
@@ -15,7 +21,7 @@ Calendar/exhaustion automatic sleep scheduling remains follow-up. The inventory 
 other selections retain bathing; native H/J dispatch passes. No maps or art
 were changed.134 native assertions and static validation pass; selected raw logs,
 source hashes and UI captures are in assets/validation_5812/cleaning. Author test
-CA502-CLEAN-01 is pending; prior bath/posture acceptance is preserved. Other#502
+CA502-CLEAN-01 is accepted; prior bath/posture acceptance is preserved. Other#502
 systems and the remaining V5.8 issues are not declared complete.
 
 Author acceptance,2026-10-25: CA502-BATH-01 (origin5.8.12/#502) passed

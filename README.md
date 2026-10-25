@@ -35,8 +35,7 @@ exhaustion sleep scheduling are still follow-up work, not covered by this hook.
 
 Evidence: assets/validation_5812/cleaning;134 executed native assertions and static
 validation pass. The final package has16,892 source-identical members;169 maps
-and13,826 art members remain unchanged. CA502-CLEAN-01 awaits author review in
-assets/validation_5812/author_clean_terminal.ps1. Bath/posture acceptance stands;
+and13,826 art members remain unchanged. CA502-CLEAN-01 passed author review on2026-10-25 without qualifications. Bath/posture acceptance stands;
 this continuation does not close#502 or complete V5.8.
 
 Soap bathing continuation (2026-10-25): use soap or the inventory's **Bathe (H)**
