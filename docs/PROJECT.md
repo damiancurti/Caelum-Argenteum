@@ -15,7 +15,7 @@ water coverage. Waiting schema11 invalidates earlier cached projections.
 Sixty native assertions pass across rules, real geometry, mass/partial contact,
 native waiting parity, water-exposure regression, saves, hub return and a prior
 save. All16,869 wash01 members match src. Evidence:
-assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
 
 At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without

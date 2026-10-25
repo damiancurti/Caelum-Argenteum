@@ -4,6 +4,11 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 
+Author confirmation,2026-10-25: CA502-WASH-01 (origin5.8.9/#502) passed
+all checks in the most recent immersion-washing terminal, without qualifications.
+The confirmed entry was removed from pending_test.txt. Treatment acceptance
+remains pending; this does not approve soap baths or toilets.
+
 The author requested environmental/contact/equipment contamination and hygiene,
 and approved the staged numeric contract recorded in SYSTEMS and issue #502.
 This first slice doubles disease damage from C90, adds Sick/Sick immune labels,
@@ -139,7 +144,7 @@ water coverage. Waiting schema11 invalidates earlier cached projections.
 Sixty native assertions pass across rules, real geometry, mass/partial contact,
 native waiting parity, water-exposure regression, saves, hub return and a prior
 save. All16,869 wash01 members match src. Evidence:
-assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
 
 Two retained hub probes incorrectly asserted valid cached water geometry on a
 fixture map without a climate reference. The production unavailable-climate guard
