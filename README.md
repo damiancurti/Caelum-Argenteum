@@ -21,7 +21,7 @@ Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
 without restarting its timer. Bathtub reclining alone does not wash, charge water
 or consume soap. Progressive soap bathing remains pending.
 Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
-74 native checks pass; static validation passes. Author acceptance is pending.
+74 native checks pass; static validation passes. CA502-POSE-01 was accepted by the author on2026-10-25 without qualifications.
 
 Household toilets now perform the approved one-world-minute hygiene action.
 Completion removes up to20 contamination, bounded by current contamination and

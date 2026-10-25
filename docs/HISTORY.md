@@ -4,6 +4,14 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-POSE-01 (origin5.8.12 / #502) passed
+all checks in the latest sanitary-posture terminal without qualifications.
+The author confirmed "Las pruebas dieron correcto" after delivery05c4cb33,
+using pose-final03. This accepts sitting/reclining, camera, safe release and
+the checks supplied with that terminal. CA502-TOILET-01 and
+CA502-TREATMENT-01 remain separate pending checks; soap bathing remains pending.
+Only CA502-POSE-01 is removed from pending_test.txt. Runtime/artwork are unchanged.
+
 Author-requested posture continuation (2026-10-25): using a toilet seats the
 character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying
 artwork and clipped orbit-camera pattern without starting a rest or sleep session.
@@ -14,7 +22,7 @@ Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
 without restarting its timer. Bathtub reclining alone does not wash, charge water
 or consume soap. Progressive soap bathing remains pending.
 Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
-74 native checks pass; static validation passes. Author acceptance is pending.
+74 native checks pass; static validation passes. CA502-POSE-01 was accepted by the author on2026-10-25 without qualifications.
 
 Author decisions2026-10-25: charge and cleanse only on completion. Cancelling,
 moving away or taking external damage before completion spends nothing. The

@@ -8,8 +8,8 @@ The posture continuation reuses existing RSDO seated/lying artwork, with no imag
 model or map edits. Toilet support derives from the existing wooden seat's0.52m
 height; tub support from its0.22m inner bottom (32MU/m). Center the seated sprite
 on the toilet and align the lying sprite to the tub's long axis. The accepted
-rest-camera distances/angles are reused. Native captures and the pending visual
-check CA502-POSE-01 are in assets/validation_5812/postures.
+rest-camera distances/angles are reused. Native captures are in assets/validation_5812/postures.
+CA502-POSE-01 passed author review on2026-10-25 without qualifications.
 
 Reuse the accepted #410 domestic toilet model/sprite and household placement.
 No artwork or map geometry changes. New interaction text and progress are EN/ES;

@@ -22,7 +22,7 @@ for pattern in ('pose-*.txt','pose-*-run.json'):
 for name in ('pose-toilet.png','pose-tub.png'):shutil.copyfile(work/name,out/'captures'/name)
 report={'issue':502,'version':'5.8.12','passes':sum(r['passes'] for r in records),'selected_runs':records,
  'package_sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'source_members':members,'unchanged_maps':len(maps),'unchanged_art_members':len(art),
- 'author_test':'CA502-POSE-01 pending; CA502-TOILET-01 and CA502-TREATMENT-01 retained',
+ 'author_test':'CA502-POSE-01 accepted2026-10-25 without qualifications; CA502-TOILET-01 and CA502-TREATMENT-01 retained',
  'failed_probes':['pose-core-a used a NOBLOCKMAP obstruction; b/c used a solid blockmap chair and still reproduced accepted overlap. Explicit local overlap checks fix the latter in d and final-core.',
  'pose-capture-a: inherited chair offset/facing placed the seated sprite beside the toilet. Centered registration and the fixture-facing direction fix the final capture.'],
  'limitations':'Isolated native functional/visual checks; no multiplayer network or frame-presentation benchmark. Bathtub posture alone does not implement soap bathing. Existing accepted rest furniture is not changed.'}

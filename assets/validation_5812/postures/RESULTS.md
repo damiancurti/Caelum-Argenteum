@@ -37,8 +37,10 @@ Reproduce from this worktree:
 
 The author terminal is assets/validation_5812/author_pose_terminal.ps1. Option1
 supplies F1 toilet/F2 tub, Use to enter/exit and movement to stand. Option2 runs
-focused regression/save/hub checks. CA502-POSE-01 remains pending; existing
-CA502-TOILET-01 and CA502-TREATMENT-01 are not implicitly accepted.
+focused regression/save/hub checks. CA502-POSE-01 passed author review on2026-10-25
+without qualifications. Existing CA502-TOILET-01 and CA502-TREATMENT-01 remain
+pending separately. Acceptance records the author result; no engine rerun is
+required for this documentation-only change.
 
 These are isolated functional/visual checks, not a network multiplayer or frame
 presentation benchmark. No global actor scan is added. Accepted rest furniture
