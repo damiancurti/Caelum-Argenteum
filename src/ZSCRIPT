@@ -408,6 +408,8 @@ version "4.14"
 #include "caelum/world/CaelumDomesticWater.zs"
 #include "caelum/world/CaelumDomesticFixture.zs"
 #include "caelum/world/CaelumHygieneTask.zs"
+#include "caelum/data/CaelumHygienePoseData.zs"
+#include "caelum/world/CaelumHygienePose.zs"
 #include "caelum/world/CaelumShopSign.zs"
 
 #include "caelum/data/CaelumPropertyData.zs"

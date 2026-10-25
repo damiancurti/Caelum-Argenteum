@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "14a769fedc95b36d6323cae050dcef39a1cdb48a9acd246b58b5fc8b453f9321",
+  "sha256": "8d86f67e5274f63fce9f2d9485fe14095d5904edfb0344b19c7dac32fccef28c",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[442,442]],"default":[[442,442]],"es":[[1137,1137]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[992,992]],"default":[[992,992]],"es":[[1687,1687]]},
@@ -139,6 +139,8 @@
     "CA_ATTRIBUTE_RESILIENCE": {"enu":[[427,427]],"default":[[427,427]],"es":[[1122,1122]]},
     "CA_ATTRIBUTE_STRENGTH": {"enu":[[423,423]],"default":[[423,423]],"es":[[1118,1118]]},
     "CA_ATTRIBUTE_TOUGHNESS": {"enu":[[424,424]],"default":[[424,424]],"es":[[1119,1119]]},
+    "CA_BATHTUB_POSE_HINT": {"enu":[[6572,6572]],"default":[[6572,6572]],"es":[[6574,6574]]},
+    "CA_BATHTUB_POSE_STARTED": {"enu":[[6577,6577]],"default":[[6577,6577]],"es":[[6579,6579]]},
     "CA_BATTLE_CRY_BLOCKED": {"default":[[3990,3990]],"es":[[4027,4027]]},
     "CA_BATTLE_CRY_CAST": {"default":[[3981,3981]],"es":[[4018,4018]]},
     "CA_BULL_NAME": {"enu":[[448,448]],"default":[[448,448]],"es":[[1143,1143]]},

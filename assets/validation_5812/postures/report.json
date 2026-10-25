@@ -1,0 +1,72 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "passes": 74,
+  "selected_runs": [
+    {
+      "label": "pose-v3-pose-core",
+      "passes": 26,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-core",
+      "passes": 23,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-forecast",
+      "passes": 4,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-live",
+      "passes": 4,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-pose-save",
+      "passes": 1,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-pose-load",
+      "passes": 2,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-v3-pose-hub",
+      "passes": 4,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-pre-save",
+      "passes": 2,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "pose-v3-pose-legacy",
+      "passes": 2,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "pose-pre-rollback",
+      "passes": 6,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "pose-v3-pose-capture",
+      "passes": 0,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    }
+  ],
+  "package_sha256": "b0840fb6fe5c4ed749654a47bc0bae56162897210076f0ebc1350ab0ab5e926f",
+  "source_members": 16887,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "author_test": "CA502-POSE-01 pending; CA502-TOILET-01 and CA502-TREATMENT-01 retained",
+  "failed_probes": [
+    "pose-core-a used a NOBLOCKMAP obstruction; b/c used a solid blockmap chair and still reproduced accepted overlap. Explicit local overlap checks fix the latter in d and final-core.",
+    "pose-capture-a: inherited chair offset/facing placed the seated sprite beside the toilet. Centered registration and the fixture-facing direction fix the final capture."
+  ],
+  "limitations": "Isolated native functional/visual checks; no multiplayer network or frame-presentation benchmark. Bathtub posture alone does not implement soap bathing. Existing accepted rest furniture is not changed."
+}

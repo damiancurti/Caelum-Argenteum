@@ -3,6 +3,7 @@ class CaelumDomesticFixture : Actor abstract
 {
     int House;
     bool Installed;
+    CaelumPlayer Occupant;
     virtual int Kind(){return 0;}
     virtual bool SuppliesWater(){return true;}
     override void PostBeginPlay()
@@ -13,9 +14,61 @@ class CaelumDomesticFixture : Actor abstract
     bool CanReach(CaelumPlayer user)
     {
         return Installed && CaelumPlayerAuthority.CanMutate(user) && user.health>0 && !user.isFrozen()
+            && (Occupant==null || Occupant==user)
             && House>=0 && House==CaelumHouseHubData.HouseForMap(level.MapName)
             && user.Distance3D(self)<=user.UseRange+Radius && user.CheckSight(self)
             && CaelumPropertyRules.ResidenceAllowed(user);
+    }
+    bool Seat(CaelumPlayer user)
+    {
+        if(!CanReach(user) || Occupant!=null)return false;
+        vector3 entry=user.Pos;bSolid=false;user.SetOrigin(Pos,false);
+        if(!user.TestMobjLocation() || !ClearOfActors(user) || Abs(user.FloorZ-Pos.Z)>1 || user.WaterLevel!=0)
+        {user.SetOrigin(entry,false);RestoreSolid();return false;}
+        Occupant=user;return true;
+    }
+    bool ExitFits(CaelumPlayer user,vector3 position)
+    {
+        let probe=Actor.Spawn('CaelumRestPlacementProbe',position,NO_REPLACE);if(probe==null)return false;
+        probe.A_SetSize(user.Radius,user.Height,false);
+        bool fits=probe.TestMobjLocation() && ClearOfActors(probe,user) && Abs(probe.FloorZ-position.Z)<=1 && probe.WaterLevel==0
+            && user.CheckSight(probe,SF_IGNOREVISIBILITY) && probe.Distance2D(self)>Radius+user.Radius+1;
+        probe.Destroy();return fits;
+    }
+    void Release(CaelumPlayer user,vector3 entry)
+    {
+        if(Occupant!=user)return;
+        if(user!=null && user.health>0 && user.Distance3D(self)<=4)
+        {
+            bool moved=false;if(ExitFits(user,entry)){user.SetOrigin(entry,false);moved=true;}
+            double distance=Radius+user.Radius+12;
+            for(int i=0;i<8 && !moved;i++)
+            {double direction=Angle+i*45;vector3 candidate=Pos+(Cos(direction)*distance,Sin(direction)*distance,0);
+                if(ExitFits(user,candidate)){user.SetOrigin(candidate,false);moved=true;}}
+        }
+        Occupant=null;RestoreSolid();
+    }
+    bool ClearOfActors(Actor body,CaelumPlayer ignored=null)
+    {
+        // TestMobjLocation verifica geometría; comprobar también los cuerpos
+        // locales antes de prestar/restaurar la colisión. Sin consulta global.
+        let it=BlockThingsIterator.Create(body,body.Radius);
+        while(it.Next())
+        {
+            let other=it.thing;if(other==body || other==self || other==ignored || !other.bSolid || other.bNoBlockmap)continue;
+            double clearance=body.Radius+other.Radius;
+            if(other.Pos.Z<body.Pos.Z+body.Height && other.Pos.Z+other.Height>body.Pos.Z
+                && Abs(other.Pos.X-body.Pos.X)<clearance && Abs(other.Pos.Y-body.Pos.Y)<clearance)return false;
+        }
+        return true;
+    }
+    void RestoreSolid(){if(Occupant!=null)return;bSolid=true;if(!TestMobjLocation() || !ClearOfActors(self))bSolid=false;}
+    override void Tick()
+    {
+        Super.Tick();
+        if(Occupant!=null)
+        {let pose=CaelumHygienePose.Find(Occupant);if(pose==null || pose.Fixture!=self || pose.OriginMap!=level.MapName)Occupant=null;}
+        if(Occupant==null && !bSolid)RestoreSolid();
     }
     override bool Used(Actor activator)
     {
@@ -58,6 +111,15 @@ class CaelumDomesticSink : CaelumDomesticFixture
 class CaelumDomesticBathtub : CaelumDomesticFixture
 {
     override int Kind(){return 1;}
+    override bool Used(Actor activator)
+    {
+        let user=CaelumPlayer(activator);
+        if(CaelumHygienePose.Active(user))
+        {if(CaelumHygienePose.Find(user).Fixture!=self)return false;CaelumHygienePose.Cancel(user);return true;}
+        if(!CaelumCampTask.Available(user) || !CanReach(user) || !CaelumUseGeometry.AimedAt(user,self))return false;
+        if(!CaelumHygienePose.Begin(user,self,true))return false;
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_BATHTUB_POSE_STARTED",false));return true;
+    }
     Default {Tag "$CA_DOMESTIC_BATHTUB";}
     States {Spawn:CDBT A -1;Stop;}
 }
@@ -66,7 +128,9 @@ class CaelumDomesticToilet : CaelumDomesticFixture
     override int Kind(){return 2;}
     override bool SuppliesWater(){return false;}
     override bool Used(Actor activator)
-    {let user=CaelumPlayer(activator);return CanReach(user) && CaelumUseGeometry.AimedAt(user,self) && CaelumHygieneTask.Begin(user,self);}
+    {let user=CaelumPlayer(activator);
+        if(Occupant==user && CaelumHygieneTask.Active(user)){CaelumHygieneTask.Cancel(user);return true;}
+        return CanReach(user) && CaelumUseGeometry.AimedAt(user,self) && CaelumHygieneTask.Begin(user,self);}
     Default {Tag "$CA_DOMESTIC_TOILET";}
     States {Spawn:CDWC A -1;Stop;}
 }

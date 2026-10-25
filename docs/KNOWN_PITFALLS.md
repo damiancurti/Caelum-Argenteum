@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-163 - Explicit local actor occupancy for sanitary seating
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-25 / 2026-10-25
+Issue: #502,5.8.12 posture continuation. GZDoom4.14.2/Windows11/Vulkan.
+Evidence: assets/validation_5812/postures; pose-core-c fails, pose-core-d and
+pose-final-core pass. The production toilet and player remain solid; noclip is off.
+
+In the isolated fixture, SetOrigin plus TestMobjLocation accepted the toilet center
+while a solid CaelumRestChair occupied that same point. Therefore that test alone
+was insufficient for this entry path. Sanitary entry/exit and collision restoration
+now additionally inspect overlapping solid actors with a local BlockThingsIterator,
+using their horizontal extents and vertical overlap. Do not infer an engine-wide
+cause from this reproduction. Keep the native geometry/floor check as well.
+
+The query runs on explicit entry/exit and while one of the three local fixtures
+awaits clearance after release. It does not enumerate the world or run per NPC.
+The blocked-exit fixture verifies no telefrag, no forced movement and delayed
+solid restoration. No new frame-time or campaign-wide performance claim is made.
+
 ## CA-KP-162 - Forecast exposure with the same local shelter as execution
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED

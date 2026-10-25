@@ -11,6 +11,7 @@ class CaelumHygieneTask : Inventory
     {return user!=null && user.CraftingTaskActive && user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE;}
     static void Clear(CaelumPlayer user)
     {
+        CaelumHygienePose.End(user);
         let task=Find(user);if(task==null)return;
         let advance=CaelumTimeAdvanceState.Get(user);
         if(advance!=null && advance.Active && advance.Station==task.Fixture)CaelumTimeAdvanceState.Halt(user);
@@ -26,8 +27,10 @@ class CaelumHygieneTask : Inventory
     static bool Attended(CaelumPlayer user)
     {
         let task=Find(user);
+        let pose=CaelumHygienePose.Find(user);
         return Active(user) && task!=null && task.Revision==CaelumMetabolismData.SESSION_REVISION
             && task.OriginMap==level.MapName && task.Fixture!=null && task.Fixture.CanReach(user)
+            && (pose==null || !pose.Engaged || pose.Valid(user))
             && user.player!=null && user.player.playerstate==PST_LIVE
             && user.CombatTimeRemaining<=0 && !user.HasActiveConversation()
             && !CaelumSleepRules.IsSleeping(user) && !user.PalomoMerchantMenuOpen;
@@ -46,6 +49,7 @@ class CaelumHygieneTask : Inventory
         user.ClearCraftingTaskData();
         let task=Find(user);if(task==null)task=CaelumHygieneTask(user.GiveInventoryType('CaelumHygieneTask'));
         if(task==null)return false;
+        if(!CaelumHygienePose.Begin(user,fixture,false))return false;
         task.Revision=CaelumMetabolismData.SESSION_REVISION;task.OriginMap=level.MapName;task.Fixture=fixture;
         user.ActiveCraftingStationActor=fixture;
         user.StartPreparedCraftingTask(CaelumConstants.CRAFTING_TASK_HYGIENE,CaelumMetabolismData.TOILET_WORLD_SECONDS);

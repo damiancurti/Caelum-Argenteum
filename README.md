@@ -11,6 +11,18 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author-requested posture continuation (2026-10-25): using a toilet seats the
+character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying
+artwork and clipped orbit-camera pattern without starting a rest or sleep session.
+Use/movement/external damage releases the pose; disease damage continues. Toilet
+completion stands up automatically. Safe entry/exit retains the player's actual
+collision volume; blocked exits leave the fixture nonblocking until clear.
+Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
+without restarting its timer. Bathtub reclining alone does not wash, charge water
+or consume soap. Progressive soap bathing remains pending.
+Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
+74 native checks pass; static validation passes. Author acceptance is pending.
+
 Household toilets now perform the approved one-world-minute hygiene action.
 Completion removes up to20 contamination, bounded by current contamination and
 metabolic capacity, and spends10L from that house's shared potable reserve.

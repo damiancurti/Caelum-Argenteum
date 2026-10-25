@@ -1645,6 +1645,9 @@ class CaelumCraftingCoordinator : Object play
         if(CaelumHygieneTask.Active(user))
         {
             if(!CaelumHygieneTask.Attended(user)){CaelumHygieneTask.Cancel(user);return false;}
+            // Sesiones anteriores a las poses: conservar el tiempo y adoptar el asiento.
+            if(!CaelumHygienePose.Active(user) && !CaelumHygienePose.Begin(user,CaelumHygieneTask.Find(user).Fixture,false))
+            {CaelumHygieneTask.Cancel(user);return false;}
             return true;
         }
         if(CaelumCampTask.Active(user))

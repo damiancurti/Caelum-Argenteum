@@ -2,6 +2,11 @@ CAELUM ARGENTEUM — STORY AND MAP01
 
 Documentation version: **5.8.12** — 2026-10-25.
 
+5.8.12 - Household sanitary postures (#502)
+
+Existing house toilets seat their user and tubs support reclining. No mansion
+fixtures or geometry are added by this continuation. Soap bathing remains pending.
+
 5.8.9 - Hygiene supplies (#502)
 
 Existing Chemistry/Workbench networks can manufacture approved soap/cloth after

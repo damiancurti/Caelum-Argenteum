@@ -5942,7 +5942,7 @@ class CaelumPlayer : DoomPlayer
         RallyDamageFactor=previousRallyFactor;
         RallyPayloadBaseDamage=previousRallyBase;RallyResolvedDamage=previousRallyResolved;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
-        if(health<before && mod!='CaelumDiseaseDOT')CaelumHygieneTask.Cancel(self);
+        if(health<before && mod!='CaelumDiseaseDOT')CaelumHygienePose.Cancel(self);
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
     }
@@ -7118,6 +7118,7 @@ class CaelumPlayer : DoomPlayer
         {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
         CaelumRacialAbilityRules.ObserveInput(self);
         CaelumRestState.HandleInput(self);
+        CaelumHygienePose.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
         if(CaelumBattleCry.Active(self) && player!=null)
@@ -7137,7 +7138,7 @@ class CaelumPlayer : DoomPlayer
         }
         if ((readingMenu || CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
-                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0
+                || CombatChannelModeActive || CaelumRestState.IsActive(self) || CaelumHygienePose.Active(self) || ForcedSleepTics > 0
                 || CaelumTelekinesisRules.Held(self))
             && player != null)
         {
@@ -7164,6 +7165,7 @@ class CaelumPlayer : DoomPlayer
 
         Super.PlayerThink();
         CaelumRestState.UpdateViewInput(self);
+        CaelumHygienePose.UpdateViewInput(self);
     }
 
     // Tick runs once per game tic. GZDoom uses 35 tics per second, so dividing
@@ -7488,6 +7490,7 @@ class CaelumPlayer : DoomPlayer
         // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
         crouchsprite = 0;
         if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
+        if(CaelumHygienePose.Active(self)){CaelumHygienePose.Find(self).ApplyState(self);return;}
         if(CaelumArcaneCloud.Active(self))
         {
             // Sólo postura mundial: el arma y el bloqueo siguen usando sus estados.

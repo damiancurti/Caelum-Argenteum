@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
-**5.8.12/#502:** toilet sessions;validation_5812;CA502-TOILET-01pending. Other hygiene unfinished.
+**5.8.12/#502:** toilet/postures;validation_5812;CA502-TOILET-01/CA502-POSE-01pending;other-hygiene-WIP.
 
 **5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 
