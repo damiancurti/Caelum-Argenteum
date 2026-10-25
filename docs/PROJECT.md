@@ -4,6 +4,27 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Surface-contamination continuation (2026-10-25): player contact now uses saved
+one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
+0.10m2. Armor/clothing receives contact before the uncovered body; the cleaner
+side gains contamination, preserving the dirtier source. Adjacent zones, wall
+faces and stacked supports retain separate identities. Slopes use plane distance.
+
+Exposed zones lose the approved10/20 degrees per30 world minutes of light/heavy
+rain, repeatedly while rain persists; temperature/humidity exposure continues.
+Roofed interiors are excluded. Washing survives dry weather, saves and travel;
+regional weather during absence is evaluated lazily by civil minute. Active
+contact uses the actual local microclimate. The sparse revision1 registry starts
+new maps at zero when first observed, with no retroactive old-save dirt. Existing
+body/equipment contamination remains untouched. Waiting copies zone state and
+matches real execution; forecast revision16 invalidates older predictions.
+
+Evidence: assets/validation_5812/surfaces. 157 executed native checks
+and static validation pass. All169 maps and13,826 art members are unchanged.
+CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. Other-actor
+and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
+cleaning remain follow-up; this does not complete#502 or V5.8.
+
 Equipment-cleaning continuation (2026-10-25): select an owned weapon, shield,
 garment or armor piece and choose **Clean (J)** in the inventory. Cleaning uses
 potable water carried outside the Box, soap and a reusable cloth, without a station:
@@ -76,7 +97,7 @@ forecasts include completion and same-tic nutrition credit without changing live
 resources. Existing unsupported-effect forecast guards remain in force.
 Static validation and55 native checks pass;16,885 package members match src.
 Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
-Calendar/exhaustion sleep cleaning, surface/combat contacts, rain surface washing
+Calendar/exhaustion sleep cleaning, other-actor/combat contacts
 and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Domestic bathrooms (#410, in progress)

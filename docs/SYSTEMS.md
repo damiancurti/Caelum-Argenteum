@@ -4,6 +4,27 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Surface-contamination continuation (2026-10-25): player contact now uses saved
+one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
+0.10m2. Armor/clothing receives contact before the uncovered body; the cleaner
+side gains contamination, preserving the dirtier source. Adjacent zones, wall
+faces and stacked supports retain separate identities. Slopes use plane distance.
+
+Exposed zones lose the approved10/20 degrees per30 world minutes of light/heavy
+rain, repeatedly while rain persists; temperature/humidity exposure continues.
+Roofed interiors are excluded. Washing survives dry weather, saves and travel;
+regional weather during absence is evaluated lazily by civil minute. Active
+contact uses the actual local microclimate. The sparse revision1 registry starts
+new maps at zero when first observed, with no retroactive old-save dirt. Existing
+body/equipment contamination remains untouched. Waiting copies zone state and
+matches real execution; forecast revision16 invalidates older predictions.
+
+Evidence: assets/validation_5812/surfaces. 157 executed native checks
+and static validation pass. All169 maps and13,826 art members are unchanged.
+CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. Other-actor
+and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
+cleaning remain follow-up; this does not complete#502 or V5.8.
+
 Equipment-cleaning continuation (2026-10-25): select an owned weapon, shield,
 garment or armor piece and choose **Clean (J)** in the inventory. Cleaning uses
 potable water carried outside the Box, soap and a reusable cloth, without a station:
@@ -80,7 +101,7 @@ Approved follow-up2026-10-25: retain the unused fraction of the last gram of soa
 with its weight and save state for later cleaning, rather than charging it again.
 Fractional soap consumption is implemented by the bath continuation; toilets do not use soap.
 
-Calendar/exhaustion sleep cleaning, surface/combat contacts, rain surface washing
+Calendar/exhaustion sleep cleaning, other-actor/combat contacts
 and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Household bathroom installation (#410)
@@ -110,13 +131,14 @@ the World journal and independent waiting forecasts. It subtracts the approved
 0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
 urban ground, clamped at zero. Roofs/tents, natural and industrial references
 retain their prior rules. Current waiting schema12 invalidates earlier cached projections.
-This does not yet implement persistent floor washing or resident cleaning.
+Persistent floor/wall washing is implemented by the5.8.12 continuation above; resident cleaning remains pending.
 
-Approved 2026-10-25, remaining surface/domestic integration:
+Approved2026-10-25, surface washing and remaining domestic integration:
 - Uncovered urban streets: ambient rain reduction interpolates (0 mm/h,0),
   (2 mm/h,10), (10 mm/h,20), capped at20. Exposed floor/surface washing takes
-  30 world minutes, retains completed cleaning when rain stops, and permits
-  later recontamination. Roofs and interiors are excluded.
+  30 world minutes per10/20-degree reduction, repeatedly while rain persists
+  (author clarification2026-10-25). It retains completed washing after rain stops
+  and permits later recontamination. Roofs and interiors are excluded.
 - Resident NPCs: one world hour of cleaning per day while home and out of
   combat, accessible floors/furniture, existing water/soap/time per m2 and
   reusable cloth. Share household supplies; do not spend player property
@@ -133,7 +155,7 @@ equipment copy/pickup/storage preserves concentration; copies have independent
 state. Box and closed-chest contents reject explicit contact without resetting
 their value. These storage routes and player/carried-equipment environmental
 exposure are implemented and tested. NPC/furniture environmental exposure,
-surface/combat callers, soap bathing and equipment cleaning remain pending. Player/equipment immersion
+Player-to-surface contact, soap baths and equipment cleaning are implemented above; other-actor/combat callers remain pending. Player/equipment immersion
 is integrated through the same thermal update and known water-quality metadata.
 
 Shared calculations, used by environmental exposure; other contact/hygiene pending:

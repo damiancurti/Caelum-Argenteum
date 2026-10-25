@@ -1,0 +1,13 @@
+{
+  "label": "surface-perf04-current-sewer",
+  "map": "MAP02",
+  "pitch": 0,
+  "runtime": "surface-final04",
+  "frames": 598,
+  "mean_ms": 16.689571571906356,
+  "p95_ms": 17.1692,
+  "p99_ms": 17.547,
+  "max_ms": 39.8913,
+  "simulation_tics_s": 35.011507582312156,
+  "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+}

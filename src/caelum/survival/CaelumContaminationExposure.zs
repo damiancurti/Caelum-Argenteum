@@ -189,5 +189,6 @@ class CaelumContaminationRuntime : Object play
         exposure.Advance(CaelumFoodIllness.Get(user),reference>=0 ? CaelumContaminationRules.Ambient(
             reference,thermal.AirC,thermal.Humidity,thermal.RainMmHour,!thermal.Roof) : -1,seconds);
         exposure.Commit(user);
+        CaelumContaminationSurfaceContact.Step(user,thermal,seconds);
     }
 }

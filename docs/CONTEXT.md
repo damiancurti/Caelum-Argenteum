@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
-**5.8.12/#502:** washing134PASS/CA502-CLEAN-01accepted2026-10-25;manual/repair/voluntary-sleep. Baths121PASS/CA502-BATH-01accepted2026-10-25;posesaccepted;CA502-TOILET-01pending. validation_5812;remaining:surfaces/combat/NPC/calendar-sleep.
+**5.8.12/#502:** surfaces/rain 157PASS/CA502-SURFACE-01pending;clean134PASS,bath121PASS,poses accepted2026-10-25;toilet/treatmentpending. validation_5812;remaining:actors/combat/NPC/calendar-sleep.
 
 **5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 

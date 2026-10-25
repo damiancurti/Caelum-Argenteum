@@ -26,7 +26,8 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 15;
+    const PROVISION_REVISION = 16;
+    CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
     bool BathTask,BathDomestic;
@@ -92,7 +93,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         {
             int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
             if(nextTick>=CaelumWorldClock.TicsPerDay()){nextTick=0;nextDay++;}
-            Contamination.Advance(FoodIllness,ContaminationWeather.Sample(nextDay,nextTick),AltitudeSecondsPerTic);
+            double contactAmbient=ContaminationWeather.Sample(nextDay,nextTick);
+            Contamination.Advance(FoodIllness,contactAmbient,AltitudeSecondsPerTic);
+            if(SurfaceContact!=null)SurfaceContact.Advance(Contamination,FoodIllness,AltitudeSecondsPerTic,
+                contactAmbient,ContaminationWeather.RainCovered || ContaminationWeather.Local==null?0:ContaminationWeather.Local.PrecipitationMmPerHour);
         }
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
@@ -111,6 +115,9 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     {
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
+        let surfaceThermal=CaelumThermalService.CaptureForecast(user);
+        if(surfaceThermal!=null && surfaceThermal.Available && CaelumCalendarState.Get(user)!=null && CaelumWorldClock.Get(user)!=null)
+        {SurfaceContact=new('CaelumContaminationSurfaceForecast');SurfaceContact.Capture(user,surfaceThermal);}
         PotableImmersed=user.IsSubmergedInPotableWater();
         ToiletTask=CaelumHygieneTask.Active(user);
         BathTask=CaelumBathTask.Active(user);

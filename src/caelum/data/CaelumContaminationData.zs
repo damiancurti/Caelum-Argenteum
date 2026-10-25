@@ -10,6 +10,9 @@ class CaelumContaminationData : Object
     const RAIN_HEAVY_MM_HOUR = 10.0;
     const RAIN_LIGHT_REDUCTION = 10.0;
     const RAIN_HEAVY_REDUCTION = 20.0;
+    const SURFACE_REVISION = 1;
+    const SURFACE_ZONE_METERS = 1.0;
+    const RAIN_WASH_SECONDS = 1800.0;
     const CONTACT_DEGREES_M2_SECOND = 0.1;
     const CONTACT_RATIO_FLOOR = 1.0;
     const IMPACT_CONTACT_SECONDS = 10.0;

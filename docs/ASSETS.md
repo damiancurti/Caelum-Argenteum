@@ -2,6 +2,10 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
+Surface-contamination continuation (#502): no production art/map changes. The
+two-room diagnostic map is generated only in build; it references the local
+development IWAD and is excluded from runtime packaging. No new sprite is needed.
+
 Equipment-cleaning continuation (#502): reuse the existing inventory/live-menu
 artwork. No sprite, model or map edits; inspected native captures are retained in
 assets/validation_5812/cleaning/captures. CA502-CLEAN-01 passed author review on2026-10-25.

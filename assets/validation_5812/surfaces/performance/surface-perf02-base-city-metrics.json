@@ -1,0 +1,13 @@
+{
+  "label": "surface-perf02-base-city",
+  "map": "MAP03",
+  "pitch": 0,
+  "runtime": "clean-final06",
+  "frames": 599,
+  "mean_ms": 16.665503171953254,
+  "p95_ms": 17.3525,
+  "p99_ms": 18.0099,
+  "max_ms": 19.3148,
+  "simulation_tics_s": 35.0014921136088,
+  "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+}

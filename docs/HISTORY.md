@@ -4,6 +4,19 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Surface continuation,2026-10-25 (#502): the author clarified that rain removes
+its10/20 degrees every30 world minutes for as long as it continues. Implemented
+sparse persistent1m2 floor/wall records, player/outer-equipment exchange, slope
+coordinates, exposed rain washing and lazy regional catch-up across absence.
+Active local microclimate and independent waiting copies are preserved. Old
+saves retain existing contamination and start new zone tracking without backlog.
+157 native assertions and static validation pass. Native evidence,
+source hashes and matched fixed-camera timing samples are retained in
+assets/validation_5812/surfaces. PresentMon denied trace access; render callbacks
+and simulation throughput are reported separately, without display/FPS acceptance.
+All169 production maps and13,826 art members are unchanged. CA502-SURFACE-01
+remains author-pending. Other#502/V5.8 work is not declared complete.
+
 Author acceptance,2026-10-25: CA502-CLEAN-01 (origin5.8.12/#502,
 clean-final06, implementation a81ce7f6) passed without qualifications. The author
 confirmed "La prueba dio correcto, sigue con el resto." Only this equipment
