@@ -14,9 +14,12 @@ art or existing accepted sprite was replaced.
 export_hygiene_icons.py performs only alpha-bound cropping and proportional
 128-pixel export. All four previews were inspected at actual inventory size;
 repeated exports produced identical source/output hashes in EXPORT.json.
-Sources and previews remain under assets until item integration. Native
-registration, item acquisition and author visual acceptance are still pending;
-the severe-illness fixture does not display or accept these new items.
+The four unchanged previews are now copied byte-for-byte into
+src/graphics/caelum/icons/hygiene; RUNTIME.json records their source/runtime
+hashes. Inventory/crafting use these painted icons; dropped supplies use sprite
+billboards, with no replacement model. Native Spanish inventory and shop captures
+are in assets/validation_589/supplies. Author visual acceptance remains pending
+under CA502-SUPPLIES-01; earlier illness acceptance did not approve these sprites.
 
 ## 5.8.8 - Deployed tent artwork (#411, in progress)
 

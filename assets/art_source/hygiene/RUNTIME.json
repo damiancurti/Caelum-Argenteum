@@ -1,0 +1,22 @@
+[
+  {
+    "source": "assets/art_source/hygiene/icons/fat.png",
+    "runtime": "src/graphics/caelum/icons/hygiene/fat.png",
+    "sha256": "470a454f8142082bb9ce240fa5df4b85f203987436d6160eaeb9631c9d1f275f"
+  },
+  {
+    "source": "assets/art_source/hygiene/icons/soda.png",
+    "runtime": "src/graphics/caelum/icons/hygiene/soda.png",
+    "sha256": "645f8bbfee93dd5386b481c94765517a4f8ec71d854c2cc34aa5cc02b4ee8e65"
+  },
+  {
+    "source": "assets/art_source/hygiene/icons/soap.png",
+    "runtime": "src/graphics/caelum/icons/hygiene/soap.png",
+    "sha256": "495b354bd5f4d1eed79460c80567defaad82de20b08bfc052cc5f45681c22ec7"
+  },
+  {
+    "source": "assets/art_source/hygiene/icons/cloth.png",
+    "runtime": "src/graphics/caelum/icons/hygiene/cloth.png",
+    "sha256": "450287d2ab991f2724ffacd249ebb9ab4d7aa677c9add258aea8bd104d502923"
+  }
+]
