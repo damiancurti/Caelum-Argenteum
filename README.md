@@ -28,7 +28,10 @@ matches real execution; forecast revision16 invalidates older predictions.
 
 Evidence: assets/validation_5812/surfaces. 157 executed native checks
 and static validation pass. All169 maps and13,826 art members are unchanged.
-CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. Other-actor
+CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. F2 now opens
+the in-game console with "Tu contaminacion"; F6 returns to play. The diagnostic
+reading was verified in a native capture after the author's visibility report.
+Other-actor
 and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
 cleaning remain follow-up; this does not complete#502 or V5.8.
 

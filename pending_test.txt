@@ -28,8 +28,9 @@ CA502-SURFACE-01 | Origin: 5.8.12 / #502 | PENDING
 Prerequisites: issue502-hygiene-work; surface-final05 package; GZDoom4.14.2.
 Launch assets/validation_5812/author_surface_terminal.ps1; close other GZDoom sessions.
 1. Option1 opens the two-room laboratory. F1 sets the floor underfoot to80 and
-   body to0. F2 shows body, floor, wall and outer feet/torso contamination;
-   F6 toggles the console. Standing transfers contamination through the outer
+   body to0. F2 opens the IN-GAME console and shows "Tu contaminacion", floor,
+   wall and outer feet/torso contamination; it does not print into PowerShell.
+   F6 returns to play. Standing transfers contamination through the outer
    equipment if present. Moving one metre reaches a different floor zone.
 2. F3 places the character against a dirty wall. F2 shows its concentration
    and transfer to the outer torso layer; moving away ends that contact.

@@ -50,6 +50,7 @@ with zipfile.ZipFile(out/'clean-checks.pk3') as archive:
     members['checks.zs']=legacy.encode('utf-8')
 with zipfile.ZipFile(out/'surface-checks.pk3','w',zipfile.ZIP_STORED) as archive:
     for name,blob in sorted(members.items()):archive.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),blob)
+status_command='netevent ca502s_status; wait 2; toggleconsole'
 scripts={
     'surface-rules':'wait 70; netevent ca502s_rules; wait 5; quit',
     'surface-native':'wait 70; netevent ca502s_native; wait 5; quit',
@@ -62,7 +63,8 @@ scripts={
     'surface-load':'wait 1; netevent ca502s_load; wait 5; quit',
     'surface-hub':'wait 1; changemap CAH001; wait 70; netevent ca502s_hub; changemap CAS502; wait 70; netevent ca502s_hub; wait 5; quit',
     'surface-legacy':'wait 1; netevent ca502s_legacy; wait 5; quit',
-    'surface-manual':'wait 70; netevent ca502s_manual; bind F1 "netevent ca502s_manual"; bind F2 "netevent ca502s_status"; bind F3 "netevent ca502s_wall"; bind F4 "netevent ca502s_rain"; bind F5 "netevent ca502s_wait"; bind F6 toggleconsole',
+    'surface-manual':f'wait 70; netevent ca502s_manual; bind F1 "netevent ca502s_manual"; bind F2 "{status_command}"; bind F3 "netevent ca502s_wall"; bind F4 "netevent ca502s_rain"; bind F5 "netevent ca502s_wait"; bind F6 toggleconsole',
+    'surface-reading':f'wait 70; netevent ca502s_manual; wait 70; {status_command}; wait 10; screenshot surface-f2-reading.png; wait 5; quit',
 }
 for name,script in scripts.items():(out/(name+'.cfg')).write_text(script+'\n',encoding='utf-8',newline='\n')
 print('Prepared deterministic surface fixtures.')

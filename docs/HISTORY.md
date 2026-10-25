@@ -4,6 +4,17 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Surface-laboratory visibility correction, 2026-10-25 (#502): the author reported
+that F2 did not show body contamination. The saved session log confirms the
+reading executed, but the console remained hidden and notifications were disabled.
+F2 now prints "Tu contaminacion", waits two command tics for dispatch and opens
+the in-game console. The terminal distinguishes that console from PowerShell.
+The same command sequence passed a native run and visual capture; physical-key
+automation was unavailable because the Computer Use native pipe could not connect.
+Only the unshipped diagnostic fixture/instructions changed. Production package
+and the 157-assertion gameplay evidence remain unchanged; CA502-SURFACE-01 stays
+pending, with no new author acceptance implied.
+
 Surface continuation,2026-10-25 (#502): the author clarified that rain removes
 its10/20 degrees every30 world minutes for as long as it continues. Implemented
 sparse persistent1m2 floor/wall records, player/outer-equipment exchange, slope

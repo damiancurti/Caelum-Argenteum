@@ -140,7 +140,7 @@ class CA502SChecks : EventHandler
     {
         let sheet=CaelumContaminationSurfaces.CurrentMap(u);let tile=CaelumContaminationSurfaceContact.FloorTile(u,sheet,false);
         let wall=CaelumContaminationSurfaceContact.WallTile(u,sheet,false);
-        Console.Printf("CA502S Cuerpo=%.4f; suelo=%.4f; pared=%.4f; zonas=%d",CaelumContaminationStorage.Value(u),tile==null?-1:tile.Concentration,wall==null?-1:wall.Concentration,sheet.Tiles.Size());
+        Console.Printf("CA502S Tu contaminacion=%.4f / 100; suelo=%.4f; pared=%.4f; zonas=%d",CaelumContaminationStorage.Value(u),tile==null?-1:tile.Concentration,wall==null?-1:wall.Concentration,sheet.Tiles.Size());
         Console.Printf("CA502S Contacto pies=%.4f; torso=%.4f",CaelumContaminationStorage.Value(CaelumContaminationSurfaceContact.Outer(u,CaelumConstants.ARMOR_SLOT_FEET)),CaelumContaminationStorage.Value(CaelumContaminationSurfaceContact.Outer(u,CaelumConstants.ARMOR_SLOT_BODY)));
         if(RainOpen!=null && RainRoof!=null)
         {sheet.Sync(RainOpen,CaelumContaminationSurfaces.Now(u));sheet.Sync(RainRoof,CaelumContaminationSurfaces.Now(u));

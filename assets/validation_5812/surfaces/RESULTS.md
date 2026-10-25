@@ -73,3 +73,20 @@ starts at first map observation; no unvisited campaign history is invented.
 CA502-SURFACE-01 remains pending in pending_test.txt. The separate author terminal
 provides F1 floor, F3 wall, F4 real seeded rainfall, F5 thirty-minute advancement,
 F2 readings and F6 console. No issue/release closure is implied.
+
+## F2 visibility correction - 2026-10-25
+
+The author's session logged body readings, but F2 did not open the in-game
+console; the native runner disables transient console notifications. F2 now
+dispatches the reading, waits two command tics and opens the console. Its label
+is "Tu contaminacion". PowerShell instructions identify the correct window.
+
+The generated surface-reading script reuses the exact command assigned to F2.
+Run surface-f2-fix02 completed without errors; its capture visibly shows
+"Tu contaminacion=11.5671 / 100" with floor and outer-equipment values.
+This is a native UI smoke/capture check, not additional gameplay assertions.
+Physical keyboard automation could not connect to the Computer Use native pipe
+after the documented retry/reset; no physical F2 key acceptance is claimed.
+Evidence is under native and captures. Fixture generation remains deterministic.
+No src member or production package changed, so the preceding gameplay results
+and package hash remain applicable. CA502-SURFACE-01 remains author-pending.

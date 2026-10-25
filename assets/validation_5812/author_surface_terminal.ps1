@@ -3,7 +3,9 @@ $repo=(Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 Set-Location -LiteralPath $repo
 $Host.UI.RawUI.WindowTitle='Caelum #502 - Superficies y lluvia'
 Write-Host 'CA502-SURFACE-01: contaminacion del suelo y paredes, lavado por lluvia.'
-Write-Host '1 abre el laboratorio. F1 prepara suelo80/cuerpo0. F2 muestra valores.'
+Write-Host '1 abre el laboratorio. F1 prepara suelo80/cuerpo0.'
+Write-Host 'F2 muestra Tu contaminacion y abre la consola DENTRO del juego.'
+Write-Host 'Los valores no se muestran en esta ventana de PowerShell. F6 vuelve al juego.'
 Write-Host 'F3 prepara contacto con pared. F6 abre/cierra la consola.'
 Write-Host 'F4 prepara lluvia real: una zona exterior y una interior empiezan en100.'
 Write-Host 'F5 avanza30 minutos del mundo; F2 compara ambas zonas.'
