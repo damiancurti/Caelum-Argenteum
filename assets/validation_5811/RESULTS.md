@@ -14,10 +14,15 @@ pass;220 executed native checks cover selected houses, shared/partial collection
 blocked placement, save/hub, old-save migration and rollback. Final package has
 16,884 source-matched members; evidence: assets/validation_5811.
 
-CA410-BATH-01 is pending author review. The toilet is installed visually; its
+CA410-BATH-01 passed author review on 2026-10-25 without qualifications. The toilet is installed visually; its
 metabolic action, soap bathing and resident cleaning remain#502. Mansion kitchen,
 remaining furniture/crafting and food integration remain unfinished#410 work.
 V5.8 is not complete.
+
+Acceptance-only documentation update: the originating 5.8.11 / #410 check
+was confirmed on 2026-10-25 and removed from pending_test.txt. Runtime, art
+and the final07 package are unchanged; previous native evidence still applies.
+Inherited CA502-TREATMENT-01 remains pending.
 
 Reproduction: prepare.py; run_native.ps1 with the label/runtime/scripts in report.json.
 verify.py requires Pillow and the retained final07/baseline packages; it verifies

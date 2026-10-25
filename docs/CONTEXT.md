@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.11** — 2026-10-25.
 
-**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01pending;validation_5811. Hygiene#502 pending.
+**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 
 **5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;supplies 92PASS;both author-accepted2026-10-25. Treatment31PASS;author-pending. Rain22PASS;immersion-wash60PASS/author-accepted. Metabolic-credit36PASS;toilet action/baths/surfaces/NPC/contact pending;validation_589.
 

@@ -115,5 +115,5 @@
     "legacy-final-b: saved Prepared flag skipped new installation; transient BathroomReady now forces idempotent load validation.",
     "manual-smoke-e: temporary one-line wrapper lacked terminating newline; prepared script now includes newline and directly appends quit."
   ],
-  "author_test": "CA410-BATH-01 pending; inherited CA502-TREATMENT-01 remains pending."
+  "author_test": "CA410-BATH-01 accepted without qualifications on 2026-10-25; inherited CA502-TREATMENT-01 remains pending."
 }
