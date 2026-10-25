@@ -4,6 +4,16 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Wake-laboratory water correction,2026-10-25 (#502): the author reported no water
+when testing awakening. Their recorded manual session reaches0L without cleaning;
+a matched native30-second delay reproduces automatic drinking from5 to4.25L.
+The manual fixture now uses the existing food/drink rest toggles to pause top-up
+to100, preserving the ordinary50 threshold. The same delay retains5L, then native
+wake cleanup completes and the missing-soap case remains awake. Seven focused
+assertions pass; console capture inspected and static validation passes. Evidence:
+assets/validation_5812/wake/water. No production code/package change. CA502-WAKE-01
+remains pending; the reported shortage is not acceptance of this test.
+
 Exhaustion-wake continuation,2026-10-25 (#502): the author explicitly chose
 "Limpiar al despertar". Preserve immediate exhaustion collapse and the existing
 wake lock; after eligible awakening, run the shared ordered equipment cleanup

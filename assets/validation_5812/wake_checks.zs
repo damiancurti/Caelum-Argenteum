@@ -97,7 +97,29 @@
     void WakeManual(CaelumPlayer u)
     {
         WakeReset(u);Collapse(u);
-        Console.Printf("CA502W Agotamiento real: aun no gasta agua/jabon. F2 permite despertar; F3 informa; F4 prueba sin jabon; F6 consola.");
+        let rest=CaelumRestState.Get(u);
+        if(rest.AutoDrinking)CaelumDiningSession.Toggle(u,true);
+        if(rest.AutoEating)CaelumDiningSession.Toggle(u,false);
+        Console.Printf("CA502W Prueba preparada: 5 L potables, 100 g de jabon y trapo. Comer/beber hasta100 pausado para reservar el agua; conserva el umbral normal50.");
+        Console.Printf("CA502W F2 despierta y limpia; F3 informa; F4 prueba sin jabon; F6 consola.");
+    }
+    void WakeManualReady(CaelumPlayer u)
+    {
+        let rest=CaelumRestState.Get(u);let bottle=CaelumWaterContainer(u.FindInventory('CaelumBottleLarge'));
+        Check(CaelumRestState.IsSleeping(u) && !CaelumCleaningTask.Active(u),"manual waiting preserves actual exhaustion without premature cleaning");
+        Check(bottle!=null && CaelumCleaningSupplies.WaterUsable(u,bottle) && Near(bottle.WaterLiters,5)
+            && Near(CaelumCleaningSupplies.Water(u),5) && Near(CaelumSoapSupply.Available(u),100),"manual delay preserves five real potable liters and soap for cleaning");
+        Check(!rest.AutoDrinking && !rest.AutoEating && Near(CaelumDiningSession.Target(u,true),50)
+            && Near(CaelumDiningSession.Target(u,false),50),"manual fixture pauses rest top-up using the existing toggle and keeps ordinary thresholds");
+        WakeNow(u);let task=CaelumCleaningTask.Find(u);
+        Check(CaelumCleaningTask.Active(u) && task.WakeQueue && Near(CaelumCleaningSupplies.Water(u),5),"delayed manual awakening still starts supplied equipment cleaning");
+    }
+    void WakeManualMissing(CaelumPlayer u)
+    {
+        WakeManual(u);Soap(u,0);WakeNow(u);
+        Check(!CaelumRestState.IsSleeping(u) && !CaelumCleaningTask.Active(u)
+            && Near(CaelumCleaningSupplies.Water(u),5) && Near(CaelumSoapSupply.Available(u),0),"manual missing-soap case stays awake without spending its water");
+        WakeStatus(u);
     }
     void WakeStatus(CaelumPlayer u)
     {

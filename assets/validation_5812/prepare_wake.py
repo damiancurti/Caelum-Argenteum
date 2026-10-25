@@ -19,7 +19,8 @@ dispatch='''        if(e.Name=='ca502w_core')WakeCore(u);
         else if(e.Name=='ca502w_manual')WakeManual(u);
         else if(e.Name=='ca502w_wake'){WakeNow(u);WakeStatus(u);}
         else if(e.Name=='ca502w_status')WakeStatus(u);
-        else if(e.Name=='ca502w_missing'){WakeManual(u);Soap(u,0);WakeNow(u);WakeStatus(u);}
+        else if(e.Name=='ca502w_manual_ready')WakeManualReady(u);
+        else if(e.Name=='ca502w_missing')WakeManualMissing(u);
         else if(e.Name=='ca_inventory_boil' '''
 legacy=wake[:wake.index('    void WakeNow')]
 legacydispatch='''        if(e.Name=='ca502w_legacyseed'){WakeReset(u);Collapse(u);Check(CaelumExhaustion.Locked(u),"prior runtime saves actual exhaustion sleep");}
@@ -39,6 +40,7 @@ for label,helpers,branches in [('wake-checks',wake,dispatch),('wake-legacy-check
     with zipfile.ZipFile(out/(label+'.pk3'),'w',zipfile.ZIP_STORED) as archive:
         for name,blob in sorted(members.items()):archive.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),blob)
 scripts={
+    'wake-water-fixed':'wait 70; netevent ca502w_manual; netevent ca502w_status; wait 1050; netevent ca502w_status; netevent ca502w_manual_ready; wait 2; toggleconsole; wait 10; screenshot wake-water-ready.png; toggleconsole; wait 350; netevent ca502w_liveend; netevent ca502w_missing; wait 2; quit',
     'wake-core':'wait 70; netevent ca502w_core; wait 5; quit',
     'wake-live':'wait 70; netevent ca502w_seed; wait 350; netevent ca502w_liveend; wait 5; quit',
     'wake-rev1-load':'wait 1; netevent ca502w_rev1load; wait 5; quit',

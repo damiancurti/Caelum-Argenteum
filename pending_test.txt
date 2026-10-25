@@ -34,7 +34,8 @@ Launch assets/validation_5812/author_wake_terminal.ps1, option1.
    Wait several seconds, then F3 opens the readings: cleanup finishes, spending
    water/soap, and the character remains awake. The selected sword goes first,
    followed by clothing. Ambient exposure continues and may dirty cleaned gear again.
-   Existing automatic drinking while asleep can also consume water independently.
+   The corrected fixture pauses automatic rest top-up to100 to preserve the water;
+   the ordinary50 threshold remains. F1 refills5L for a new trial.
 3. F6 closes the console; F4 resets without soap and awakens. Expect no cleanup,
    no soap charge and no blocked awakening. F1 allows repeating the supplied case.
 4. Optional terminal option2 runs core, real-clock, save/load and hub checks.

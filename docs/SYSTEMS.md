@@ -4,6 +4,14 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author-reported wake-laboratory water shortage corrected (2026-10-25): the
+manual fixture pauses the existing rest food/water top-up to100, retaining the
+ordinary50 threshold. Waiting before F2 therefore preserves the test water instead
+of automatically drinking it. Seven focused native assertions pass after a
+30-second real-time delay, including supplied cleanup and the no-soap case.
+Evidence: assets/validation_5812/wake/water. Production code/package is unchanged;
+CA502-WAKE-01 remains pending author review of the corrected laboratory.
+
 Exhaustion-wake continuation (2026-10-25): the author approved cleaning after
 waking from involuntary exhaustion sleep. Collapse and the existing wake lock
 remain immediate. Once awake and safe, clean the selected weapon followed by

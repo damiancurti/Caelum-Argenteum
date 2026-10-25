@@ -48,3 +48,12 @@ multi-piece queues; ordinary world-clock/accelerated work remains available.
 This patch adds no global actor scan: the wake hook visits only the owner's
 existing equipment references and at most nine queued pieces. Functional tests
 do not establish multiplayer behavior or campaign-wide presentation/FPS acceptance.
+
+Manual-laboratory correction (2026-10-25): the author's session later exhausted its
+water through automatic drinking before F2. The corrected manual scenario pauses
+the existing rest top-up to100, retaining the ordinary50 threshold. Seven focused
+native assertions pass after30 real seconds of waiting; the bottle still contains
+5L and post-wake cleanup completes. Baseline observation, author log and inspected
+capture are retained in water/. This replaces the earlier manual instruction that
+only warned about automatic drinking. Production package/hash and the97 gameplay
+checks remain unchanged. CA502-WAKE-01 is still pending corrected author review.
