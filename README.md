@@ -20,6 +20,14 @@ continuity; see assets/validation_5810/RESULTS.md. Full sleeping-bag/two-occupan
 rest integration and #410 furniture remain pending. No author acceptance is claimed.
 
 
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
+
 ## 5.8.9 - Severe contamination (#502, in progress)
 
 At contamination 90 or above, the existing disease damage doubles and the

@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.10** — 2026-10-25.
 
-**5.8.10/#412:** tent rest packing guard;30nativePASS;validation_5810. Bag/two-occupant integration pending.
+**5.8.10/#412:** tent rest packing guard;30nativePASS;validation_5810. Two players/shared-clock consent approved;integration pending.
 
 **5.8.9/#502:** severe/state/ambient accepted;immersion71PASS awaiting author. NPC/contact/hygiene pending;validation_589.
 

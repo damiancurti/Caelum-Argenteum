@@ -14,8 +14,14 @@ rest integration and #410 furniture remain pending. No author acceptance is clai
 
 Next: resolve existing radius-46 bag clearance and the current solo-rest gate.
 The author approved one owned bag per occupant, no new recovery bonuses, and
-no packing during rest. Confirm the second occupant/shared-clock scope after the
-requested absence; do not implicitly remove cooperative time restrictions.
+no packing during rest.
+
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
 
 
 ## 5.8.9 - Contamination expansion (#502, in progress)

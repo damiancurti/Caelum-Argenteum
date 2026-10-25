@@ -15,6 +15,14 @@ Static validation and README review accompany the patch. The author is away;
 full bag/furniture/rest integration and eventual author acceptance remain pending.
 
 
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
+
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 
 The author requested environmental/contact/equipment contamination and hygiene,

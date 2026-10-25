@@ -17,6 +17,14 @@ The existing solo-rest restriction and sleeping-bag room check remain unchanged;
 two-person admission and actual bag fit are not delivered by this guard alone.
 
 
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
+
 ## 5.8.9 - Contamination and hygiene contract (#502)
 
 Implemented severe disease: C>=90 multiplies the existing Life loss by 2 and
