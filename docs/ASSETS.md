@@ -12,7 +12,9 @@ The painted inventory sprite remains unchanged. Sources, material hashes and
 provenance are in `assets/art_source/camp_equipment/TENT_MODEL.json`; native
 four-view inspection and repeat-generation evidence are in
 `assets/validation_588/tent`. Native registration/deployment is implemented; the author rejected the original narrow silhouette and approved the enlarged
-dimensions/materials. Review of the enlarged native model remains pending.
+dimensions/materials. The enlarged shape is accepted (2026-10-25); only the corrected MODELDEF overlay
+needs final visual confirmation. Separate single-slot frame bindings prevent the
+legacy and enlarged meshes rendering together; see validation_588/binding.
 The original model is preserved as tent_legacy.obj for old deployed structures;
 its hash remains bbfdef6195c44540d7223cac33ee4fae15747c10051fc8dac0c67c50a97fa9e8. No new bitmap or external artwork was introduced.
 

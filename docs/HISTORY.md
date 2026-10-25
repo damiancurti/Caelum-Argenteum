@@ -50,6 +50,21 @@ One failed rollback probe used the wrong fixture basename; restoring deploy.pk3
 resolved the loader rejection. Evidence: validation_588/deploy/wide-report.json.
 No fire, cooking or new two-occupant sleeping implementation is claimed.
 
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. Only the corrected visual is pending author review.
+
+CA411-TENT-01 (origin 5.8.8/#411) remains PARTIAL only for the reported model
+overlay; earlier functional/size acceptance is retained. Native verification
+uses the actual production class instead of the earlier substitute gallery.
+README reviewed; this is a continuation of the same patch, not a new balance.
+
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 
 Travel and waiting previews now copy the existing illness state, preserve its

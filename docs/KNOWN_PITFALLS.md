@@ -4488,6 +4488,13 @@ QA addon. Native TryMove checks cross each open preview without noclip.
 The failed intermediate north-wall placement is recorded separately; a clear
 mesh does not imply clear map geometry behind it.
 
+Follow-up #411, 5.8.8, 2026-10-25: the same multi-slot mistake rendered the
+legacy 2x2 m tent inside its enlarged replacement. An isolated gallery subclass
+with its own MODELDEF passed but could not exercise the production binding.
+Use the actual deployed class and both saved geometry states for visual QA.
+Separate single-slot blocks resolve the overlay; before/after native evidence is
+in assets/validation_588/binding. Final author confirmation is still pending.
+
 Regression: `python assets/validation_43614a/check_siege.py` checks exclusive
 state bindings, valid OBJ/material references and two byte-identical generator
 runs. Render affected states in the target engine after binding changes.

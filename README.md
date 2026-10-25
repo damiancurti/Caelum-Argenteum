@@ -41,6 +41,16 @@ CA411-PLACEMENT-01 was accepted by the author on 2026-10-24.
 The deployed tent model has a deterministic source and four inspected native
 views. Gameplay registration is active; author visual review remains pending.
 
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. Only the corrected visual is pending author review.
+
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 
 Forecasts now preserve contamination, fractional damage and natural depuration,
