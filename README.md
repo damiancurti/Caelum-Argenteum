@@ -60,11 +60,21 @@ The original tent stage passed 112 native assertions; the enlarged correction
 passes 125 assertions across 13 selected runs;
 see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 passed behavior except the original narrow shape. The author
 approved an enlarged 4 x 3 x 1.8 m tent, 18.8 kg and revised materials;
-its final visual/fit check remains pending.
+CA411-TENT-01 is fully accepted as of 2026-10-25, including the final model binding correction.
 
 CA411-PLACEMENT-01 was accepted by the author on 2026-10-24.
 The deployed tent model has a deterministic source and four inspected native
-views. Gameplay registration is active; author visual review remains pending.
+views. Gameplay registration is active; final author visual review passed on 2026-10-25.
+
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. The author accepted the corrected visual on 2026-10-25.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 

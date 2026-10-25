@@ -63,6 +63,14 @@ are still not implemented. README reviewed; same patch version.
 
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
+Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)
+passed in full: "Ahora si la carpa quedo bien". This confirms the corrected
+single-model visual in addition to previously accepted behavior and size. Its
+pending entry is removed. Earlier pending/partial notes below record the sequence
+of review, not current status. No runtime changes or repeated native tests are
+needed for this acceptance-only update; README reviewed. Fire and cooking remain
+separate outstanding scope.
+
 Added local full-volume/support/access validation to actual chest placement,
 including liquid terrain and 3D water. Rejection preserves the original carried
 object and contents. Reused sleeping-bag support tolerance and native player
@@ -108,6 +116,21 @@ rollback. All 16,857 final package members match src byte-for-byte.
 One failed rollback probe used the wrong fixture basename; restoring deploy.pk3
 resolved the loader rejection. Evidence: validation_588/deploy/wide-report.json.
 No fire, cooking or new two-occupant sleeping implementation is claimed.
+
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. Only the corrected visual is pending author review.
+
+CA411-TENT-01 (origin 5.8.8/#411) remains PARTIAL only for the reported model
+overlay; earlier functional/size acceptance is retained. Native verification
+uses the actual production class instead of the earlier substitute gallery.
+README reviewed; this is a continuation of the same patch, not a new balance.
 
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 

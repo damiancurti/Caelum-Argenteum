@@ -4,7 +4,7 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 **5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. NPC/contact/hygiene pending;severe/exposure accepted2026-10-25;validation_589.
 
-**5.8.8/#411:** placement46PASS/accepted; tents112+125PASS. Original behavior accepted, width rejected;4x3m/18.8kg review pending. Fire/cooking/two-occupant rest pending;validation_588/deploy.
+**5.8.8/#411:** placement46PASS; tents112+125PASS. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model binding. Fire/cooking/rest pending;validation_588/deploy.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587.
 
