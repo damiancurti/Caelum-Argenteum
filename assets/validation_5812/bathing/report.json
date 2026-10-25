@@ -85,7 +85,7 @@
       "localization/INDEX.md"
     ]
   },
-  "author_test": "CA502-BATH-01 pending",
+  "author_test": "CA502-BATH-01 accepted2026-10-25 without qualifications",
   "limitations": "Functional native checks, not campaign-wide acceptance or frame-time measurements. Gear cleaning, surface/combat contacts and NPC routines remain pending.",
   "resolved_probes": [
     "Initial compile: instance Sync call and explicit Actor assignment.",

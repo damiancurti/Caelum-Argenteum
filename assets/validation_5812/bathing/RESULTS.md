@@ -14,7 +14,7 @@ late shortage, cancellation, disease/external damage,80/160kg calibration,
 full native world-clock completion, independent forecast/native parity, fractional
 save/load, hub departure, real MAP01 potable water, changed quality, pre-feature
 save migration and original-package rollback. Earlier toilet/posture behavior also
-passes. Agent checks do not accept the outstanding manual test CA502-BATH-01.
+passes. CA502-BATH-01 subsequently passed author review on2026-10-25 without qualifications.
 
 The final bath-final05 package has16,890 source-identical members;169 maps and
 13,826 art members match the accepted posture baseline byte for byte. SHA256:
@@ -38,4 +38,4 @@ persistent dirty surfaces, combat contact or NPC domestic cleaning. Existing
 forecast guards still decline changing connected reservoirs or unmodelled effects;
 ordinary live waiting remains available. No global actor scan was added: queries
 use the actor's inventory, current fixture or current water sector. These functional
-checks do not establish campaign-wide rendering performance or author acceptance.
+checks do not establish campaign-wide rendering performance.

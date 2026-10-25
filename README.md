@@ -28,7 +28,7 @@ connected reservoirs lose actual volume. The independent waiting model snapshots
 soap/water and matches accelerated execution without consuming live resources.
 Existing dynamic-water and unsupported-effect forecast guards remain in force.
 Evidence: assets/validation_5812/bathing;121 native assertions and static validation pass.
-CA502-BATH-01 awaits author acceptance.
+CA502-BATH-01 passed author review on2026-10-25 without qualifications.
 
 Author-requested posture continuation (2026-10-25): using a toilet seats the
 character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying

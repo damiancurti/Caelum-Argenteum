@@ -4,6 +4,14 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-BATH-01 (origin5.8.12/#502) passed
+all checks in the latest soap-bath terminal without qualifications. The author
+confirmed "Las pruebas dieron todas bien, sigue con el resto" after c880b2ee,
+using bath-final05. This accepts the bath, progressive costs, fractional soap,
+posture and supplied persistence checks. Only CA502-BATH-01 is removed from
+pending_test.txt; toilet/treatment checks remain separate. Runtime and version
+are unchanged by this acceptance.
+
 Soap-bathing continuation,2026-10-25: implemented the already approved progressive
 body bath, shared domestic and finite connected-water withdrawal, source/access
 revalidation, native inventory menu, reclining pose reuse and cancellation. An opened

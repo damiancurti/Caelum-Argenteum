@@ -40,7 +40,7 @@ for name in ('bath-menu.png','bath-live.png'):shutil.copyfile(work/name,out/'cap
 report={'issue':502,'version':'5.8.12','passes':sum(r['passes'] for r in records),'runs':records,
         'source_members':count,'unchanged_maps':len(maps),'unchanged_art_members':len(art),
         'package_sha256':hashlib.sha256(package.read_bytes()).hexdigest(),
-        'earlier_evidence_runtime_differences':comparisons,'author_test':'CA502-BATH-01 pending',
+        'earlier_evidence_runtime_differences':comparisons,'author_test':'CA502-BATH-01 accepted2026-10-25 without qualifications',
         'limitations':'Functional native checks, not campaign-wide acceptance or frame-time measurements. Gear cleaning, surface/combat contacts and NPC routines remain pending.',
         'resolved_probes':['Initial compile: instance Sync call and explicit Actor assignment.',
          'Fixture pickup: use the native AttachToOwner API, not protected TryPickup.',
