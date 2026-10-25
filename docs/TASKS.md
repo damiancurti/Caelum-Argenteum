@@ -9,10 +9,14 @@ CA502-SEVERE-01 was accepted on 2026-10-25. Actor/equipment state and
 explicit contact API pass 30 native checks. Player/carried-equipment environmental
 exposure and independent wait/travel projections pass 66 further native checks.
 CA502-EXPOSURE-01 was accepted on 2026-10-25. Next: NPC/furniture exposure,
-surface state, local/combat contacts, immersion; approved soap/cloth acquisition;
+surface state, local/combat contacts; approved soap/cloth acquisition;
 progressive equipment washing/bathing and repair/sleep integration. Do not present
 contact/quote helpers as integrated hygiene. Use approved surfaces, world time
 and classes; preserve #410 food scope/#411 camps.
+
+Immersion implemented: 71 native assertions, independent forecasts and save/hub
+continuity. CA502-IMMERSION-01 is deferred until return. Connected reservoirs
+retain an explicit exact-wait forecast limitation; no completed bath is claimed.
 
 ## 5.8.8 / #411 - Placement and persistent tents
 

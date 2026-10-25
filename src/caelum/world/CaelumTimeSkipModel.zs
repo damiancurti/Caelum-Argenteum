@@ -25,7 +25,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 8;
+    const PROVISION_REVISION = 9;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
@@ -70,7 +70,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
         ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
-        if(ContaminationWeather.DynamicClimate){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+        if(ContaminationWeather.DynamicClimate || (Contamination!=null && Contamination.DynamicWater))
+        {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Scale=CaelumWorldClock.MapTimeScale(level.MapName);
         AltitudeSecondsPerTic*=Scale;
         HungerLoss*=Scale;ThirstLoss*=Scale;SleepLoss*=Scale;

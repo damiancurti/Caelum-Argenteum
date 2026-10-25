@@ -12,6 +12,9 @@ class CaelumContaminationExposure : Object play
     Array<CaelumContaminationEquipment> Items;
     double BodyArea[4];
     double ContactSource[4];
+    double WetArea[4],DirtyArea[4],ExcludedBodyArea[4],WaterBodyArea[4];
+    double WetFraction,DirtyFraction;
+    bool DynamicWater;
     double BodyKg;
     int Armor[4],Clothes[4];
 
@@ -20,6 +23,7 @@ class CaelumContaminationExposure : Object play
         Items.Clear();BodyKg=thermal.BodyMassKg;
         for(int slot=0;slot<4;slot++)
         {Armor[slot]=-1;Clothes[slot]=-1;BodyArea[slot]=thermal.SurfaceArea*thermal.Coverage[slot];}
+        Immersion(thermal);
         // Sólo inventario del personaje, una vez por cambio/captura; nunca actores del mapa.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
@@ -45,6 +49,30 @@ class CaelumContaminationExposure : Object play
             }
             Items.Push(row);
         }
+    }
+
+    void Immersion(CaelumThermalState thermal)
+    {
+        double total=0,wet=0,dirty=0;
+        for(int slot=0;slot<4;slot++)
+        {
+            WetArea[slot]=Clamp(thermal.SurfaceArea*thermal.SubmergedCoverage[slot],0,BodyArea[slot]);
+            DirtyArea[slot]=Clamp(thermal.SurfaceArea*thermal.DirtyWaterCoverage[slot],0,WetArea[slot]);
+            total+=BodyArea[slot];wet+=WetArea[slot];dirty+=DirtyArea[slot];
+        }
+        WetFraction=total>0 ? wet/total : 0;DirtyFraction=total>0 ? dirty/total : 0;
+        DynamicWater=thermal.DynamicContactWater;
+    }
+    void ClearImmersion()
+    {
+        for(int slot=0;slot<4;slot++){WetArea[slot]=0;DirtyArea[slot]=0;ExcludedBodyArea[slot]=0;WaterBodyArea[slot]=0;}
+        WetFraction=0;DirtyFraction=0;DynamicWater=false;
+    }
+    void Exterior(int index,double ambient,double area,double wet,double dirty,double seconds)
+    {
+        if(index<0)return;
+        Items[index].Concentration=CaelumContaminationRules.TwoSources(Items[index].Concentration,
+            ambient,Max(0,area-wet),CaelumFoodData.MAX_CONTAMINATION,dirty,seconds);
     }
 
     void ReadLive()
@@ -88,17 +116,20 @@ class CaelumContaminationExposure : Object play
     }
     void Advance(CaelumFoodIllness illness,double ambient,double seconds)
     {
-        if(illness==null || seconds<=0 || ambient<0)return;
+        if(illness==null || seconds<=0)return;
         double body=illness.Contamination;
-        for(int i=0;i<Items.Size();i++)if(!Items[i].Worn)Expose(i,ambient,Items[i].Area,seconds);
+        for(int i=0;i<Items.Size();i++)if(!Items[i].Worn)
+            Exterior(i,ambient,Items[i].Area,Items[i].Area*WetFraction,Items[i].Area*DirtyFraction,seconds);
         for(int slot=0;slot<4;slot++)
         {
             int armor=Armor[slot],cloth=Clothes[slot];
             int outer=armor>=0 ? armor : cloth;
             double area=BodyArea[slot],source=ambient;
+            ExcludedBodyArea[slot]=outer>=0 ? 0 : WetArea[slot];
+            WaterBodyArea[slot]=outer>=0 ? 0 : DirtyArea[slot];
             if(outer>=0)
             {
-                Expose(outer,ambient,area,seconds);
+                Exterior(outer,ambient,area,WetArea[slot],DirtyArea[slot],seconds);
                 Pair(armor,cloth,area,seconds);
                 int inner=cloth>=0 ? cloth : armor;
                 source=Items[inner].Concentration;
@@ -112,11 +143,16 @@ class CaelumContaminationExposure : Object play
     {
         // Integra juntas las zonas que todavía tienen mayor concentración.
         // Cada fuente deja de aportar al alcanzarla; como máximo hay cuatro cortes.
-        for(int pass=0;pass<4 && seconds>0;pass++)
+        for(int pass=0;pass<5 && seconds>0;pass++)
         {
             double weighted=0,boundary=CaelumFoodData.MAX_CONTAMINATION;
-            for(int slot=0;slot<4;slot++)if(ContactSource[slot]>value && BodyArea[slot]>0)
-            {weighted+=BodyArea[slot]*ContactSource[slot];boundary=Min(boundary,ContactSource[slot]);}
+            for(int slot=0;slot<4;slot++)
+            {
+                double area=Max(0,BodyArea[slot]-ExcludedBodyArea[slot]);
+                if(ContactSource[slot]>value && area>0)
+                {weighted+=area*ContactSource[slot];boundary=Min(boundary,ContactSource[slot]);}
+                if(value<CaelumFoodData.MAX_CONTAMINATION)weighted+=WaterBodyArea[slot]*CaelumFoodData.MAX_CONTAMINATION;
+            }
             double rate=CaelumContaminationData.CONTACT_DEGREES_M2_SECOND*weighted
                 *CaelumContaminationRules.BodyDoseFactor(BodyKg);
             if(rate<=0)break;
@@ -138,15 +174,15 @@ class CaelumContaminationRuntime : Object play
     {
         if(user==null || thermal==null || !thermal.Available || user.health<=0 || seconds<=0)return;
         double reference=CaelumContaminationEnvironment.ReferenceAt(user);
-        if(reference<0)return;
         if(user.ContaminationExposure==null || !user.ContaminationExposure.Valid(user,thermal))
         {
             user.ContaminationExposure=new('CaelumContaminationExposure');
             user.ContaminationExposure.Capture(user,thermal);
         }
         let exposure=user.ContaminationExposure;
+        exposure.Immersion(thermal);
         exposure.ReadLive();
-        exposure.Advance(CaelumFoodIllness.Get(user),CaelumContaminationRules.Environment(reference,thermal.AirC,thermal.Humidity),seconds);
+        exposure.Advance(CaelumFoodIllness.Get(user),reference>=0 ? CaelumContaminationRules.Environment(reference,thermal.AirC,thermal.Humidity) : -1,seconds);
         exposure.Commit(user);
     }
 }

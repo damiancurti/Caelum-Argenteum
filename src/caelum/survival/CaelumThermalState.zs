@@ -30,6 +30,10 @@ class CaelumThermalState : Object play
     double SubmergedTemperatureC[4];
     double WaterRowC[16];
     int WaterRowMask,LastWaterRowMask;
+    // #502: proyección del agua actual, reconstruida tras carga; no envejece reservas.
+    transient int DirtyWaterRowMask;
+    transient double DirtyWaterCoverage[4];
+    transient bool WaterContactReady,DynamicContactWater;
     double BodyMassKg,HeightMeters,MovedMassKg,ComfortC,Toughness,LastBodyRadius;
     double LastSubmergedFraction;
     double LastWorldStamp;
@@ -85,6 +89,9 @@ class CaelumThermalState : Object play
         {copy.SubmergedCoverage[i]=SubmergedCoverage[i];copy.SubmergedTemperatureC[i]=SubmergedTemperatureC[i];}
         for(int i=0;i<16;i++)copy.WaterRowC[i]=WaterRowC[i];
         copy.WaterRowMask=WaterRowMask;copy.LastWaterRowMask=LastWaterRowMask;
+        copy.DirtyWaterRowMask=DirtyWaterRowMask;
+        copy.WaterContactReady=WaterContactReady;copy.DynamicContactWater=DynamicContactWater;
+        for(int i=0;i<4;i++)copy.DirtyWaterCoverage[i]=DirtyWaterCoverage[i];
         copy.BodyMassKg=BodyMassKg;
         copy.HeightMeters=HeightMeters;
         copy.MovedMassKg=MovedMassKg;

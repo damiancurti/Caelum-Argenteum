@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-162 - Forecast exposure with the same local shelter as execution
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-25 / 2026-10-25
+Issue: #502, 5.8.9 immersion continuation.
+Evidence: assets/validation_589/immersion, wait01..04 and RESULTS.md.
+
+The weather journal's cached Shelter is not an interchangeable input for the
+thermal exposure model. After moving into the partial 3D water fixture, that
+forecast used ambient contamination 5.572831045166 while native thermal contact
+used 5.759055277581. Both paths now use the same ClimateShelter classification
+with current thermal roof/wind geometry. The 35-personal-tic wait then matches
+exactly at C=21.180438728835. Do not widen tolerances to hide a different physical
+input. Capture independent forecast state, share its classification policy with
+execution, and decline exact predictions for dynamic geometry not yet modeled.
+This evidence is limited to the tested player wait/travel integration; it is not
+a guarantee for every weather, map or future reservoir projection.
+
 ## CA-KP-161 - Avoid reserved names and State statement ambiguity in ZScript
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED

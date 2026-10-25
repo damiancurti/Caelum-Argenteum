@@ -61,6 +61,20 @@ approved surface multiplied by the character's submerged fraction; worn pieces
 use actual submerged zones. Immersion and the remaining hygiene/contact scope
 are still not implemented. README reviewed; same patch version.
 
+Immersion continuation, 2026-10-25: player skin, worn layers and carried loose
+equipment now receive contact using actual submerged body zones and approved
+fixed-area fractions. Known biological/chemical water is C100; clean/salt-only
+water is C0 and does not wash existing contamination. The Box remains protected.
+Wait schema 9 uses independent immersion state and the same current geometric
+shelter as native execution; it explicitly declines exact connected-reservoir
+forecasts. Actual waiting remains supported. Abstract travel clears origin water.
+71 selected native assertions pass, including save/hub and old-save rollback;
+evidence and failed-probe diagnoses: assets/validation_589/immersion. The author
+is away; CA502-IMMERSION-01 remains pending. README reviewed. No new balance,
+maps, artwork, NPC contact or completed hygiene is implied by this continuation.
+The author also approved local 1 m2 floor/wall zones and a shared 200 L mansion
+bathing/kitchen reserve, recorded as pending contracts in SYSTEMS.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

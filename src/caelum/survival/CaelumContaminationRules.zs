@@ -12,6 +12,22 @@ class CaelumContaminationRules : Object
         double floor=CaelumContaminationData.CONTACT_RATIO_FLOOR;
         return value<floor ? value*floor : 0.5*(value*value+floor*floor);
     }
+    // Dos fuentes simultáneas: aire sobre la parte seca y agua sobre la mojada.
+    static clearscope double TwoSources(double value,double first,double firstArea,double second,double secondArea,double seconds)
+    {
+        for(int pass=0;pass<2 && seconds>0;pass++)
+        {
+            double weight=0,boundary=CaelumFoodData.MAX_CONTAMINATION;
+            if(first>value && firstArea>0){weight+=first*firstArea;boundary=Min(boundary,first);}
+            if(second>value && secondArea>0){weight+=second*secondArea;boundary=Min(boundary,second);}
+            if(weight<=0)break;
+            double timeToBoundary=(ContactPrimitive(boundary)-ContactPrimitive(value))
+                /(CaelumContaminationData.CONTACT_DEGREES_M2_SECOND*weight);
+            if(seconds>=timeToBoundary){value=boundary;seconds-=timeToBoundary;}
+            else {value=AfterContact(value,boundary,weight/boundary,seconds);break;}
+        }
+        return value;
+    }
     static double WeaponArea(int kind,int size)
     {
         return CaelumContaminationData.WeaponAreaM(kind)

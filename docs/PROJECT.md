@@ -8,8 +8,8 @@ At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without
 turning it into healing; natural depuration below 90 removes the multiplier.
 Travel/wait forecasts share the same rule. Existing saved body contamination
-and fractional damage survive updating; wait forecast schema 8 invalidates old
-cached models after adding environmental exposure.
+and fractional damage survive updating; wait forecast schema 9 invalidates old
+cached models after adding immersion exposure.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See
@@ -21,8 +21,16 @@ approved size conversion. Player/carried-equipment environmental exposure now
 uses thermal coverage, local temperature/humidity and protected Box storage.
 The World journal displays the local index. Sixty-six further native assertions
 cover independent forecasts, actual waiting, travel commit and save/hub continuity
-(`assets/validation_589/exposure`). CA502-EXPOSURE-01 was accepted on 2026-10-25. NPC/furniture exposure, surface/combat contact, immersion, soap
+(`assets/validation_589/exposure`). CA502-EXPOSURE-01 was accepted on 2026-10-25. NPC/furniture exposure, surface/combat contact, soap
 acquisition and washing/bathing remain pending. The issue and V5.8 remain open.
+
+Immersion now exposes the player's submerged skin, outer garments and carried
+equipment according to known water quality. The Box remains protected; clean or
+salt-only water does not cause this contact disease or wash existing contamination.
+71 further native assertions cover real water, wait parity, travel, save/hub and
+legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 is deferred
+until the author's return. Dynamic reservoir levels retain an explicit exact-wait
+forecast limitation; manual/native waiting remains available.
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

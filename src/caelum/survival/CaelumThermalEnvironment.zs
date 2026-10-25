@@ -145,6 +145,13 @@ class CaelumThermalWorld : StaticEventHandler
 
 class CaelumThermalEnvironment : Object play
 {
+    static int ClimateShelter(int profile,bool roof,bool windSheltered)
+    {
+        if(profile==CaelumWeatherRules.PROFILE_LIMBO)return CaelumWeatherRules.LIMBO;
+        if(roof && profile>=2 && profile<=4)return CaelumWeatherRules.UNDERGROUND;
+        if(roof)return windSheltered ? CaelumWeatherRules.INDOOR : CaelumWeatherRules.CANOPY;
+        return CaelumWeatherRules.OPEN;
+    }
     // Propiedades UDMF del volumen/modelo: user_ca_water_temperature_defined=1
     // y user_ca_water_temperature_c. Permiten expresar también cero grados.
     static double WaterTemperature(Sector volume,double fallback)
@@ -156,17 +163,22 @@ class CaelumThermalEnvironment : Object play
     static double SampleWater(Actor body,CaelumThermalState thermal,double fallback)
     {
         thermal.WaterC=fallback;thermal.WaterRowMask=0;
+        thermal.DirtyWaterRowMask=0;thermal.DynamicContactWater=false;thermal.WaterContactReady=true;
         if(body.CurSector==null)return 0;
         Sector sector=body.CurSector;
         let height=sector.GetHeightSec();
         if(height==null && sector.Get3DFloorCount()==0 && body.WaterLevel<=0)return 0;
         int count=CaelumThermalData.SURFACE_SAMPLES,wetRows=0;
         double totalTemperature=0;
+        bool contaminationSupported=CaelumPlayer(body)!=null;
+        let connected=contaminationSupported ? CaelumConnectedWaterMap.Get() : null;
         for(int row=0;row<count;row++)
         {
             double z=body.Pos.Z+body.Height*(row+0.5)/count;
             bool wet=height!=null && z<=height.floorplane.ZatPoint(body.Pos.XY);
             double temperature=wet ? WaterTemperature(height,fallback) : fallback;
+            Sector waterSource=wet ? height : sector;
+            if(connected!=null && height!=null && connected.Index(height)>=0)thermal.DynamicContactWater=true;
             bool described=height!=null;
             for(int i=0;i<sector.Get3DFloorCount();i++)
             {
@@ -174,13 +186,20 @@ class CaelumThermalEnvironment : Object play
                 if(volume==null || (volume.flags&(F3DFloor.FF_EXISTS|F3DFloor.FF_SWIMMABLE))
                     !=(F3DFloor.FF_EXISTS|F3DFloor.FF_SWIMMABLE))continue;
                 described=true;
+                if(connected!=null && connected.Index(volume.model)>=0)thermal.DynamicContactWater=true;
                 if(z>=volume.bottom.ZatPoint(body.Pos.XY) && z<=volume.top.ZatPoint(body.Pos.XY))
-                {wet=true;temperature=WaterTemperature(volume.model,fallback);}
+                {wet=true;temperature=WaterTemperature(volume.model,fallback);waterSource=volume.model;}
             }
             // Sólo una inmersión sin geometría de volumen usa el respaldo total.
             if(!described && body.WaterLevel>=3)wet=true;
             thermal.WaterRowC[row]=temperature;
-            if(wet){thermal.WaterRowMask|=1<<row;wetRows++;totalTemperature+=temperature;}
+            if(wet)
+            {
+                thermal.WaterRowMask|=1<<row;wetRows++;totalTemperature+=temperature;
+                int quality=contaminationSupported ? CaelumWaterQuality.Volume(waterSource,sector) : CaelumWaterQuality.UNIDENTIFIED;
+                if(CaelumWaterQuality.Valid(quality) && (quality&(CaelumWaterQuality.BIOLOGICAL|CaelumWaterQuality.CHEMICAL))!=0)
+                    thermal.DirtyWaterRowMask|=1<<row;
+            }
         }
         if(wetRows>0)thermal.WaterC=totalTemperature/wetRows;
         return double(wetRows)/count;
@@ -196,10 +215,7 @@ class CaelumThermalEnvironment : Object play
         {thermal.Available=false;return false;}
         thermal.Roof=CaelumThermalShelter.Roof(body);
         thermal.WindSheltered=CaelumThermalShelter.WindBlocked(body);
-        int shelter=CaelumWeatherRules.OPEN;
-        if(weather.Profile==CaelumWeatherRules.PROFILE_LIMBO)shelter=CaelumWeatherRules.LIMBO;
-        else if(thermal.Roof && weather.Profile>=2 && weather.Profile<=4)shelter=CaelumWeatherRules.UNDERGROUND;
-        else if(thermal.Roof)shelter=thermal.WindSheltered ? CaelumWeatherRules.INDOOR : CaelumWeatherRules.CANOPY;
+        int shelter=ClimateShelter(weather.Profile,thermal.Roof,thermal.WindSheltered);
         CaelumWeatherSample local;
         if(world!=null)local=world.LocalSample(weather,shelter);
         else {local=new("CaelumWeatherSample");local.ApplyShelter(weather.Outside,shelter,weather.Profile);}

@@ -22,7 +22,7 @@ class CaelumThermalRuntime : Object play
         let surfaceWorld=CaelumThermalWorld.Get();
         bool surfaceChanged=surfaceWorld!=null && surfaceWorld.HasThermalSurfaces
             && thermal.SurfaceKind!=CaelumThermalSurface.KindAt(user);
-        bool changed=thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || thermal.LastEnvironmentTic>level.maptime
+        bool changed=!thermal.WaterContactReady || thermal.SealClimateRevision<CaelumSealClimateData.REVISION || thermal.SourceMap!=level.MapName || thermal.LastEnvironmentTic>level.maptime
             || level.maptime-thermal.LastEnvironmentTic>=CaelumThermalData.ENVIRONMENT_SAMPLE_TICS
             || thermal.LastWaterLevel!=user.WaterLevel || thermal.EnvironmentDate!=weather.SampleDate
             || thermal.EnvironmentMinute!=weather.SampleMinute || surfaceChanged;

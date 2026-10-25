@@ -56,7 +56,10 @@ class CaelumContaminationWaitWeather : Object play
         Reference=CaelumContaminationEnvironment.ReferenceAt(user);SampleDay=-1;SampleMinute=-1;
         let weather=CaelumWeatherState.Get(user);
         if(weather==null || weather.Current==null || !weather.Current.Available){Reference=-1;return;}
-        Profile=weather.Profile;Region=weather.Region;Seed=weather.Seed;Shelter=weather.Shelter;
+        Profile=weather.Profile;Region=weather.Region;Seed=weather.Seed;
+        // Usa el mismo abrigo geométrico que el contacto térmico, no la muestra
+        // anterior del diario, que puede pertenecer al lugar previo al movimiento.
+        Shelter=CaelumThermalEnvironment.ClimateShelter(Profile,CaelumThermalShelter.Roof(user),CaelumThermalShelter.WindBlocked(user));
         double heat,humidity,wind,direction;
         [heat,humidity,wind,direction]=CaelumSealClimate.Delta(user,0,0);
         DynamicClimate=heat!=0 || humidity!=0;

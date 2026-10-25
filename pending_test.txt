@@ -1,0 +1,13 @@
+CA502-IMMERSION-01 | Origin: 5.8.9 / #502 | PENDING
+Prerequisites: issue502-work; immersion02 package; GZDoom 4.14.2.
+Deferred during the author's absence; no author acceptance is inferred.
+Launch assets/validation_589/immersion/author_terminal.ps1 and choose 1.
+1. Close other GZDoom sessions. Escape closes the introduction if present.
+2. F1 places the character partly in biological water. Watch contamination rise.
+3. F2 resets the comparison in salt-only water; F3 uses potable water.
+   These sources cause no biological/contact illness. Respiratory rules remain.
+4. F4 resets in chemically contaminated water: contamination rises again.
+5. F5 returns to dry ground. F6 toggles console; terminal option 2 runs the
+   equipment/Box/body-area and real-wait comparisons. Expect only PASS/zero failures.
+Expected: exposure follows submerged surface and known water quality, preserves
+the Box, and waiting matches its forecast. This does not test unfinished bathing.

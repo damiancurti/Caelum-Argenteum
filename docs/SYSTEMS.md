@@ -16,7 +16,8 @@ equipment copy/pickup/storage preserves concentration; copies have independent
 state. Box and closed-chest contents reject explicit contact without resetting
 their value. These storage routes and player/carried-equipment environmental
 exposure are implemented and tested. NPC/furniture environmental exposure,
-surface/combat callers, immersion and real hygiene remain pending.
+surface/combat callers and real hygiene remain pending. Player/equipment immersion
+is integrated through the same thermal update and known water-quality metadata.
 
 Shared calculations, used by environmental exposure; other contact/hygiene pending:
 transfer 0.1 degree per second per m², multiplied by source/max(recipient,1).
@@ -52,10 +53,28 @@ dirty body can contaminate the inner garment without cleansing itself. Carried
 unworn equipment outside the Box receives its fixed-area exposure. The World
 journal displays local ambient concentration separately from the body HUD.
 Wait/travel forecasts own independent body/equipment concentrations; confirming
-travel commits the fresh projection once. Wait schema 8 invalidates prior caches.
+travel commits the fresh projection once. Wait schema 9 invalidates prior caches, including earlier dry-only projections.
 Wait forecasts evaluate future weather at the stored location/shelter; changing
 heat/humidity seals use the existing unsupported-effect forecast notice. Journeys
 use the natural route reference with their regional thermal forecast.
+
+Immersion samples the actual height-transfer or swimmable 3D-floor volume in
+the existing sixteen anatomical rows. Dirty rows contribute C100; submerged
+area is excluded from airborne contact. Worn outer pieces receive their actual
+submerged zone area; loose items use their fixed area times the submerged body
+area fraction. Air/water integrate jointly with each source stopping at its own
+concentration. Clean water never removes existing contamination. Saved water
+coverage is derived/transient and rebuilt; abstract journeys clear origin water.
+Stationary forecasts reuse an independent fixed immersion snapshot. Connected
+reservoirs can change level/quality during waiting, so an exact date prediction
+is explicitly unavailable there until a reservoir projection is implemented.
+Native/manual waiting retains real exposure and water calendar progression.
+
+Approved 2026-10-25, still pending: floor/wall contamination uses persistent
+localized 1 m2 zones receiving ambient/contact exposure; feet retain 0.04 m2
+contact rather than contaminating the entire room. Mansion bathtubs share the
+kitchen domestic potable 200 L reserve replenished at 1 L/world minute. Bathing
+and filling spend the same reserve; fountains/cisterns retain separate reserves.
 
 Sector `user_ca_contamination_class` declares 1 nature, 2 city, 3 industry or
 4 sewer. Current gardens/countryside reuse existing land metadata; city/mansion

@@ -38,13 +38,18 @@ class CaelumWaterQuality : Object
     static clearscope int Source(CaelumPlayer user)
     {
         let source=Model(user);if(source==null)return UNIDENTIFIED;
+        return Volume(source,user.CurSector);
+    }
+    static clearscope int Volume(Sector source,Sector host)
+    {
+        if(source==null)return UNIDENTIFIED;
         let water=CaelumConnectedWaterMap.Get();
         int index=water!=null ? water.Index(source) : -1;
         if(index>=0)return water.Quality(index);
         // Una calidad explícita del volumen prevalece. Las piscinas anteriores
         // sin metadatos en el modelo conservan la identidad de su sector huésped.
         if(source.GetUDMFInt('user_ca_water_quality')!=0 || source.GetUDMFInt('user_ca_potable_water')!=0)return Metadata(source);
-        return Metadata(user.CurSector);
+        return Metadata(host);
     }
     static clearscope String Label(int quality)
     {

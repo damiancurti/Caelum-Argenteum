@@ -45,6 +45,9 @@ class CaelumThermalJourney : Object play
         int moving=CaelumJourneyRules.MovingTics(elapsedTics,mode);
         Result.Roof=sheltered;Result.WindSheltered=sheltered;Result.Available=true;
         for(int i=0;i<4;i++)Result.SubmergedCoverage[i]=0;
+        Result.DirtyWaterRowMask=0;Result.DynamicContactWater=false;Result.WaterRowMask=0;
+        for(int i=0;i<4;i++)Result.DirtyWaterCoverage[i]=0;
+        if(supplies!=null && supplies.Contamination!=null)supplies.Contamination.ClearImmersion();
         int elapsed=0;
         while(elapsed<elapsedTics)
         {
