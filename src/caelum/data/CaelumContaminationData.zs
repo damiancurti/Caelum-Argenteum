@@ -17,6 +17,7 @@ class CaelumContaminationData : Object
     const BODY_CONTACT_M2 = 0.10;
     const IMPACT_CONTACT_M2 = 0.01;
     const EQUIPMENT_WATER_L_M2 = 1.0;
+    const EQUIPMENT_SECONDS_M2 = 60.0;
     const SOAP_G_L = 5.0;
     const BATH_WATER_L_DEGREE = 0.5;
     const BATH_SECONDS_DEGREE = 10.0;

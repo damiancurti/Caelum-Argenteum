@@ -4,6 +4,34 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Equipment-cleaning continuation (2026-10-25): select an owned weapon, shield,
+garment or armor piece and choose **Clean (J)** in the inventory. Cleaning uses
+potable water carried outside the Box, soap and a reusable cloth, without a station:
+1L and5g per square metre, over60 world seconds/m2. The approved fixed surface
+by type/size determines cost, independent of tier and current wearer. Costs and
+cleansing progress together; cancelling retains both. A full piece's budget is
+required to start; a later shortage retains only the affordable progress.
+
+The shared H shortcut preserves boiling for selected water; other selections
+retain bathing. Native UI dispatch is tested.
+
+Successful repair starts cleaning the repaired piece when supplied. Voluntary
+sleep first cleans the selected weapon, then equipped armor/clothing in slot order;
+unaffordable pieces are skipped with notice and do not prevent sleep or repair.
+Sleeping-bag support survives the queue. Explicit cancellation discards queued
+sleep; partial work saves/loads and map departure cancels without refund. Existing
+soap fractions retain their mass and identity. The independent wait forecast
+matches single-piece execution; its revision15 invalidates older cached forecasts.
+The multi-piece queue followed by sleep keeps the unsupported exact-date guard,
+while ordinary/accelerated live time remains available. Calendar-triggered and
+exhaustion sleep scheduling are still follow-up work, not covered by this hook.
+
+Evidence: assets/validation_5812/cleaning;134 executed native assertions and static
+validation pass. The final package has16,892 source-identical members;169 maps
+and13,826 art members remain unchanged. CA502-CLEAN-01 awaits author review in
+assets/validation_5812/author_clean_terminal.ps1. Bath/posture acceptance stands;
+this continuation does not close#502 or complete V5.8.
+
 Soap bathing continuation (2026-10-25): use soap or the inventory's **Bathe (H)**
 action while reclining in a bathtub, facing an accessible potable fixture, or
 immersed in potable water. Select the desired contamination reduction; the menu
@@ -53,7 +81,7 @@ Approved follow-up2026-10-25: retain the unused fraction of the last gram of soa
 with its weight and save state for later cleaning, rather than charging it again.
 Fractional soap consumption is implemented by the bath continuation; toilets do not use soap.
 
-Equipment washing, surface/combat contacts, rain surface washing
+Calendar/exhaustion sleep cleaning, surface/combat contacts, rain surface washing
 and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Household bathroom installation (#410)

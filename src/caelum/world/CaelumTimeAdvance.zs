@@ -38,9 +38,9 @@ class CaelumTimeAdvanceState : Inventory
     static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
         bool crafting=user!=null && user.CraftingTaskActive
-            && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampTask.Attended(user) || CaelumHygieneTask.Attended(user) || CaelumBathTask.Attended(user));
+            && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampTask.Attended(user) || CaelumHygieneTask.Attended(user) || CaelumBathTask.Attended(user) || CaelumCleaningTask.Attended(user));
         bool reading=CaelumRecipeSession.Working(user);
-        String reason=CaelumRestSafety.BlockReason(user,false,crafting || reading,scanWorld);
+        String reason=CaelumRestSafety.BlockReason(user,CaelumCleaningTask.Timeless(user),crafting || reading,scanWorld);
         if(reason.Length()!=0)return reason;
         if(!CaelumRestState.IsActive(user) && !crafting && !reading && !skipping)return "CA_FAST_ACTIVITY";
         if(crafting && !user.RefreshActiveCraftingStationSession())return "CA_FAST_ACTIVITY";

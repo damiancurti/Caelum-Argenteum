@@ -3,7 +3,7 @@ class CaelumSkipSupply : Object play
 {
     int Kind, Count, WaterQuality;
     double Liters, CapacityLiters;
-    bool Reserved,Hot;
+    bool Reserved,Hot,CleaningWater;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
@@ -13,6 +13,7 @@ class CaelumSkipSupply : Object play
         {
             Kind=3;WaterQuality=bottle.WaterQuality;Reserved=CaelumWaterBoiling.Locked(bottle);
             Hot=bottle.WaterTemperatureRevision>0 && bottle.WaterTemperatureC>CaelumWaterThermalData.DRINK_MAX_C;
+            CleaningWater=bottle.Owner is 'CaelumPlayer' && !bottle.InMagicBox && Count==1 && !Reserved && bottle.IsPotable();
         }
         CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
@@ -25,11 +26,14 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 14;
+    const PROVISION_REVISION = 15;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
     bool BathTask,BathDomestic;
     double BathRemaining,BathWater,BathSoap,BathWaterPerDegree;
+    bool CleaningTask;
+    double CleaningRemaining,CleaningSoap;
+    int CleaningIndex;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -50,7 +54,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
         // Los poderes pulsan antes de terminar la tarea en el avance real.
-        if(ToiletTask || BathTask)
+        if(ToiletTask || BathTask || CleaningTask)
         {
             Pulses();ToiletPulsesPrepared=true;
             if(ToiletTask && !sleeping && ProductiveTics+1>=RequiredTics && FoodIllness!=null)
@@ -68,6 +72,21 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(BathRemaining<0.000000001 || FoodIllness.Contamination<=0)
             {BathTask=false;RequiredTics=ProductiveTics+1;}
             else if(dose<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
+        }
+        if(CleaningTask && !sleeping)
+        {
+            double water=0;for(int i=0;i<Supplies.Size();i++)if(Supplies[i].CleaningWater)water+=Supplies[i].Liters;
+            double rate=CaelumContaminationData.EQUIPMENT_WATER_L_M2/CaelumContaminationData.EQUIPMENT_SECONDS_M2;
+            double wanted=Min(CleaningRemaining,AltitudeSecondsPerTic);
+            double step=Min(wanted,Min(water,CleaningSoap/CaelumContaminationData.SOAP_G_L)/rate);
+            double liters=step*rate;CleaningSoap=Max(0.0,CleaningSoap-CaelumContaminationRules.SoapGrams(liters));
+            for(int i=0;i<Supplies.Size() && liters>0;i++)if(Supplies[i].CleaningWater)
+            {double take=Min(liters,Supplies[i].Liters);Supplies[i].Liters-=take;liters-=take;}
+            if(Contamination!=null && CleaningIndex>=0)
+                Contamination.Items[CleaningIndex].Concentration*=Max(0.0,1-step/CleaningRemaining);
+            CleaningRemaining=Max(0.0,CleaningRemaining-step);
+            if(CleaningRemaining<0.000000001){CleaningTask=false;RequiredTics=ProductiveTics+1;}
+            else if(step<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
         }
         if(ContaminationWeather!=null && Contamination!=null)
         {
@@ -95,6 +114,16 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         PotableImmersed=user.IsSubmergedInPotableWater();
         ToiletTask=CaelumHygieneTask.Active(user);
         BathTask=CaelumBathTask.Active(user);
+        CleaningTask=CaelumCleaningTask.Active(user);CleaningIndex=-1;
+        if(CleaningTask)
+        {
+            let cleaning=CaelumCleaningTask.Find(user);CleaningRemaining=cleaning.Remaining;CleaningSoap=CaelumSoapSupply.Available(user);
+            if(Contamination!=null)for(int i=0;i<Contamination.Items.Size();i++)
+                if(Contamination.Items[i].Item==cleaning.Target){CleaningIndex=i;break;}
+            // La cola de varias piezas seguida del sueño aún no promete una fecha exacta.
+            if(cleaning.SleepAfter){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+            if(!CaelumCleaningSupplies.Cloth(user)){Reason="CA_SKIP_PROVISIONS";Done=true;}
+        }
         if(BathTask)
         {
             let bath=CaelumBathTask.Find(user);BathRemaining=bath.RemainingDegrees;BathDomestic=bath.Fixture!=null;

@@ -2,6 +2,10 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
+Equipment-cleaning continuation (#502): reuse the existing inventory/live-menu
+artwork. No sprite, model or map edits; inspected native captures are retained in
+assets/validation_5812/cleaning/captures. CA502-CLEAN-01 remains author-pending.
+
 Soap-bathing continuation (#502): existing painted soap icon, bathroom artwork,
 RestLying sprites and live-menu controls are reused. No art or map assets change.
 Native UI captures: assets/validation_5812/bathing/captures.

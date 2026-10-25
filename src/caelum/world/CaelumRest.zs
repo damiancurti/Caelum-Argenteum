@@ -149,6 +149,7 @@ class CaelumRestState : Inventory
         }
         if (furniture != null && (furniture.RestMode() != mode || !furniture.CanReach(user)))
         { CaelumNotifications.Notify(user,StringTable.Localize("CA_REST_FURNITURE_UNAVAILABLE", false)); return false; }
+        if(mode==CaelumRestRules.MODE_SLEEP && CaelumCleaningTask.BeforeSleep(user,minutes,furniture))return true;
         let rest = Get(user, true);
         if (rest == null) return false;
         vector3 entry = user.Pos;

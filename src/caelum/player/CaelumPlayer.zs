@@ -7119,6 +7119,7 @@ class CaelumPlayer : DoomPlayer
         CaelumRacialAbilityRules.ObserveInput(self);
         CaelumRestState.HandleInput(self);
         CaelumHygienePose.HandleInput(self);
+        if(CaelumCleaningTask.Active(self) && player!=null && (player.cmd.buttons&(BT_ATTACK|BT_ALTATTACK))!=0)CaelumCleaningTask.Cancel(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
         if(CaelumBattleCry.Active(self) && player!=null)

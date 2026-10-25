@@ -64,7 +64,7 @@ class CaelumHygienePose : Inventory
         if(user.health>0 && (user.CurState==user.FindState("RestSeated") || user.CurState==user.FindState("RestLying")))user.SetState(user.SpawnState);
     }
     static void Cancel(CaelumPlayer user)
-    {if(CaelumHygieneTask.Active(user))CaelumHygieneTask.Cancel(user);if(CaelumBathTask.Active(user))CaelumBathTask.Cancel(user);End(user);}
+    {if(CaelumHygieneTask.Active(user))CaelumHygieneTask.Cancel(user);if(CaelumBathTask.Active(user))CaelumBathTask.Cancel(user);if(CaelumCleaningTask.Active(user))CaelumCleaningTask.Cancel(user);End(user);}
     static void HandleInput(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user))return;

@@ -23,3 +23,23 @@ Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_t
    save/load and hub checks. Expect PASS with zero failures.
 Expected: interaction, timing, cancellation, resource accounting and persistence
 accepted. This does not test soap bathing, gear cleaning or resident routines.
+
+CA502-CLEAN-01 | Origin: 5.8.12 / #502 | PENDING
+Prerequisites: issue502-hygiene-work; clean-final06 package; GZDoom4.14.2.
+Launch assets/validation_5812/author_clean_terminal.ps1; close other GZDoom sessions.
+1. Option1 prepares a dirty XL tower shield,5L potable water,100g soap and a cloth.
+   F2 opens its selector; the real inventory offers Clean/J for the selected item.
+   Check its displayed surface, water/soap costs and world duration; Enter starts.
+2. F2 during work cancels. F3/F6 show remaining contamination, water and soap;
+   already completed cleaning/spending must remain. F1 resets this test setup.
+3. Start again and let it finish. The item reaches zero at completion; subsequent
+   ambient exposure may dirty it again. The cloth remains and fractional soap
+   remains usable. Save/reload a partial task; departure cancels without refunds.
+4. F4 prepares a dirty selected sword and requests voluntary sleep. Cleaning runs
+   first, then sleep starts. Movement can wake the character; F1 resets the setup.
+5. Option2 runs focused manual/repair-completion/queue/bag/live/save/hub checks;
+   expect only PASS and zero failures, including missing resources not blocking
+   repair or sleep. It does not test the earlier repair-recipe selection UI.
+Expected: manual cleaning, progressive accounting, voluntary sleep integration
+and the supplied focused checks accepted. Calendar/exhaustion sleep, surface
+contacts and NPC cleaning remain outside this delivery.

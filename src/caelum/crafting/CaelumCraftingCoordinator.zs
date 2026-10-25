@@ -843,7 +843,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
         user.CraftingTaskRemainingSeconds = user.CraftingTaskTotalSeconds;
         user.CraftingTaskActive = true;
-        if(taskKind!=CaelumConstants.CRAFTING_TASK_BATH && taskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
+        if(taskKind!=CaelumConstants.CRAFTING_TASK_CLEAN && taskKind!=CaelumConstants.CRAFTING_TASK_BATH && taskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
         user.PersistCharacterState();
         user.RefreshFormalInventorySnapshot();
@@ -1642,6 +1642,8 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumCleaningTask.Active(user))
+        {if(!CaelumCleaningTask.Attended(user)){CaelumCleaningTask.Cancel(user);return false;}return true;}
         if(CaelumBathTask.Active(user))
         {if(!CaelumBathTask.Attended(user)){CaelumBathTask.Cancel(user);return false;}return true;}
         if(CaelumHygieneTask.Active(user))
@@ -1909,6 +1911,7 @@ class CaelumCraftingCoordinator : Object play
         if (!user.RefreshActiveCraftingStationSession()) { return; }
         user.CraftingTaskProgressing = true;
         CaelumTimeSkipState.RecordWork(user);
+        if(CaelumCleaningTask.Active(user)){CaelumCleaningTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         if(CaelumBathTask.Active(user)){CaelumBathTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         user.CraftingTaskRemainingSeconds = Max(
             0.0,

@@ -4,6 +4,20 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Equipment-cleaning continuation,2026-10-25: implemented the approved progressive
+inventory action, repair-completion hook and voluntary pre-sleep queue. Charges use
+existing approved item surfaces,60 world seconds/m2,1L/m2 and5g/L; the cloth is
+reusable and soap credit is preserved. Missing supplies skip automatic cleaning
+without blocking repair/sleep. Save/hub/cancellation preserve completed spending;
+sleeping bags retain their original identity. Independent single-piece forecasts
+match accelerated execution; the sleep queue retains an explicit exact-date guard.
+Calendar/exhaustion automatic sleep scheduling remains follow-up. The inventory H conflict was corrected: selected water retains boiling, while
+other selections retain bathing; native H/J dispatch passes. No maps or art
+were changed.134 native assertions and static validation pass; selected raw logs,
+source hashes and UI captures are in assets/validation_5812/cleaning. Author test
+CA502-CLEAN-01 is pending; prior bath/posture acceptance is preserved. Other#502
+systems and the remaining V5.8 issues are not declared complete.
+
 Author acceptance,2026-10-25: CA502-BATH-01 (origin5.8.12/#502) passed
 all checks in the latest soap-bath terminal without qualifications. The author
 confirmed "Las pruebas dieron todas bien, sigue con el resto" after c880b2ee,
