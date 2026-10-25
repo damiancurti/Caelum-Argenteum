@@ -113,6 +113,21 @@ forecast guards for active powers remain. CA502-TREATMENT-01 is newly pending.
 The same request approved rain and resident-cleaning contracts, which remain
 separate pending integration. README reviewed; same patch version.
 
+Ambient-rain continuation, 2026-10-25: The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+22 native assertions pass: rain boundaries/interpolation, coverage/category
+exclusions, real player exposure, no automatic body washing, journal agreement,
+independent rainy-weather prediction/native parity and prior-save continuity.
+All16,869 rain01 members match src. The retained failed first probe called a
+missing fixture result helper; corrected without a production-code change.
+Static/native evidence: assets/validation_589/rain. No surface-washing, resident
+cleaning, manual acceptance or FPS claim is implied. README reviewed; same patch.
+
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

@@ -38,7 +38,16 @@ follows recovery pulses and preserves fractional doses; washed/cold mate and
 Anima/energy items do not cleanse. Natural regeneration retains its own rate.
 Native treatment checks: 31 executed PASS; save/hub and prior-save
 coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
-acceptance. Rain washing and resident household cleaning are approved backlog.
+acceptance.
+
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+Native evidence:22 assertions in assets/validation_589/rain, including an
+actual rainy-hour wait and prior-save loading. Author acceptance is not implied.
 
 
 ## 5.8.8 / #411 - Placement and persistent tents

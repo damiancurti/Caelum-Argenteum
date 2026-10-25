@@ -49,7 +49,7 @@ class CaelumContaminationWaitWeather : Object play
 {
     int Profile,Region,Seed,Shelter,SampleDay,SampleMinute;
     double Reference,Value;
-    bool DynamicClimate;
+    bool DynamicClimate,RainCovered;
     CaelumWeatherSample Outside,Local;
     void Capture(CaelumPlayer user)
     {
@@ -59,7 +59,9 @@ class CaelumContaminationWaitWeather : Object play
         Profile=weather.Profile;Region=weather.Region;Seed=weather.Seed;
         // Usa el mismo abrigo geométrico que el contacto térmico, no la muestra
         // anterior del diario, que puede pertenecer al lugar previo al movimiento.
-        Shelter=CaelumThermalEnvironment.ClimateShelter(Profile,CaelumThermalShelter.Roof(user),CaelumThermalShelter.WindBlocked(user));
+        bool roof=CaelumThermalShelter.Roof(user);
+        Shelter=CaelumThermalEnvironment.ClimateShelter(Profile,roof,CaelumThermalShelter.WindBlocked(user));
+        RainCovered=roof || CaelumCampShelter.Find(user)!=null;
         double heat,humidity,wind,direction;
         [heat,humidity,wind,direction]=CaelumSealClimate.Delta(user,0,0);
         DynamicClimate=heat!=0 || humidity!=0;
@@ -74,7 +76,8 @@ class CaelumContaminationWaitWeather : Object play
             if(Profile==CaelumWeatherRules.PROFILE_LIMBO)Outside.Evaluate(Profile,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
             else Outside.EvaluateRegion(Region,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
             Local.ApplyShelter(Outside,Shelter,Profile);
-            Value=Local.Available ? CaelumContaminationRules.Environment(Reference,Local.AirTemperatureC,Local.RelativeHumidityPercent) : -1;
+            Value=Local.Available ? CaelumContaminationRules.Ambient(Reference,Local.AirTemperatureC,
+                Local.RelativeHumidityPercent,Local.PrecipitationMmPerHour,!RainCovered) : -1;
             SampleDay=day;SampleMinute=minute;
         }
         return Value;

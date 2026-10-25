@@ -56,6 +56,23 @@ class CaelumContaminationRules : Object
             *(CaelumFoodData.HUMIDITY_BASE_FACTOR+Clamp(humidity,0.0,100.0)/100.0),
             0.0,CaelumFoodData.MAX_CONTAMINATION);
     }
+    static clearscope double RainReduction(double mmHour)
+    {
+        if(mmHour<=0)return 0;
+        if(mmHour<=CaelumContaminationData.RAIN_LIGHT_MM_HOUR)
+            return mmHour/CaelumContaminationData.RAIN_LIGHT_MM_HOUR*CaelumContaminationData.RAIN_LIGHT_REDUCTION;
+        double blend=Clamp((mmHour-CaelumContaminationData.RAIN_LIGHT_MM_HOUR)
+            /(CaelumContaminationData.RAIN_HEAVY_MM_HOUR-CaelumContaminationData.RAIN_LIGHT_MM_HOUR),0.0,1.0);
+        return CaelumContaminationData.RAIN_LIGHT_REDUCTION+blend
+            *(CaelumContaminationData.RAIN_HEAVY_REDUCTION-CaelumContaminationData.RAIN_LIGHT_REDUCTION);
+    }
+    static clearscope double Ambient(double reference,double celsius,double humidity,double rain,bool uncovered)
+    {
+        double value=Environment(reference,celsius,humidity);
+        if(uncovered && reference==CaelumContaminationData.URBAN_REFERENCE)
+            value=Max(0.0,value-RainReduction(rain));
+        return value;
+    }
     // Integra dC/dt=k*fuente/max(C,1), recalculando la proporción durante
     // el contacto. Así diez segundos producen lo mismo juntos o por tics.
     // La fuente mantiene su concentración; nunca se sobrepasa ni se limpia.

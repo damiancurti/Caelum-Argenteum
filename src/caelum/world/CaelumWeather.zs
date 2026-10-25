@@ -306,8 +306,9 @@ class CaelumWeatherState : Inventory
         CaelumSealClimate.ApplyWeather(user,weather.Current);
         double contaminationReference=CaelumContaminationEnvironment.ReferenceAt(user);
         weather.ContaminationAvailable=contaminationReference>=0 && weather.Current.Available;
-        weather.Contamination=weather.ContaminationAvailable ? CaelumContaminationRules.Environment(
-            contaminationReference,weather.Current.AirTemperatureC,weather.Current.RelativeHumidityPercent) : 0;
+        weather.Contamination=weather.ContaminationAvailable ? CaelumContaminationRules.Ambient(
+            contaminationReference,weather.Current.AirTemperatureC,weather.Current.RelativeHumidityPercent,
+            weather.Current.PrecipitationMmPerHour,weather.Shelter==CaelumWeatherRules.OPEN) : 0;
         weather.SourceMap=level.MapName;weather.LocationId=location;weather.Profile=profile;weather.Region=region;
         weather.SampleDate=serial;weather.SampleMinute=minute;weather.Revision=CaelumWeatherRules.REVISION;
     }

@@ -20,7 +20,14 @@ proportionally to that pulse. NPC medkits affect their own stored contamination.
 No retrospective credit or new saved fields are added. Active treatment powers
 retain existing travel/forecast guards; an exact date is not fabricated.
 
-Approved 2026-10-25, pending environmental/domestic integration:
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+
+Approved 2026-10-25, remaining surface/domestic integration:
 - Uncovered urban streets: ambient rain reduction interpolates (0 mm/h,0),
   (2 mm/h,10), (10 mm/h,20), capped at20. Exposed floor/surface washing takes
   30 world minutes, retains completed cleaning when rain stops, and permits
@@ -75,7 +82,7 @@ dirty body can contaminate the inner garment without cleansing itself. Carried
 unworn equipment outside the Box receives its fixed-area exposure. The World
 journal displays local ambient concentration separately from the body HUD.
 Wait/travel forecasts own independent body/equipment concentrations; confirming
-travel commits the fresh projection once. Wait schema 9 invalidates prior caches, including earlier dry-only projections.
+travel commits the fresh projection once. Wait schema 10 invalidates prior caches, including pre-rain projections.
 Wait forecasts evaluate future weather at the stored location/shelter; changing
 heat/humidity seals use the existing unsupported-effect forecast notice. Journeys
 use the natural route reference with their regional thermal forecast.

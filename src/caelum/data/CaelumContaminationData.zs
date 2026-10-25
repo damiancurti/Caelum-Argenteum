@@ -5,6 +5,10 @@ class CaelumContaminationData : Object
     const SEVERE_THRESHOLD = 90.0;
     const SEVERE_DAMAGE_FACTOR = 2.0;
     const TREATMENT_DEGREES_PER_LIFE_RATIO = 10.0;
+    const RAIN_LIGHT_MM_HOUR = 2.0;
+    const RAIN_HEAVY_MM_HOUR = 10.0;
+    const RAIN_LIGHT_REDUCTION = 10.0;
+    const RAIN_HEAVY_REDUCTION = 20.0;
     const CONTACT_DEGREES_M2_SECOND = 0.1;
     const CONTACT_RATIO_FLOOR = 1.0;
     const IMPACT_CONTACT_SECONDS = 10.0;
