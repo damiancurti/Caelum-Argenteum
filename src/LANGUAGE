@@ -6577,3 +6577,37 @@ CA_BATHTUB_POSE_HINT = "{bind:+use}: Acostarse en la bañera | Usar o moverse pa
 CA_BATHTUB_POSE_STARTED = "Lying in the bathtub. Use again or move to stand up.";
 [es]
 CA_BATHTUB_POSE_STARTED = "Acostado en la bañera. Usa de nuevo o muévete para levantarte.";
+
+[enu default]
+CA_BATH_TITLE = "Bathing";
+CA_BATH_TERMS = "Choose how much contamination to remove. Water and soap are consumed progressively; cancelling keeps the cleaning already done.";
+CA_BATH_SELECTED = "Cleanse %.2f points (available: %.2f)";
+CA_BATH_COST = "Water: %.3f L | Soap: %.3f g | Time: %.1f world s";
+CA_BATH_STOCK = "Soap available: %.3f g (opened remainder: %.3f g)";
+CA_BATH_MINUS = "-1 point";
+CA_BATH_PLUS = "+1 point";
+CA_BATH_MINUS10 = "-10 points";
+CA_BATH_PLUS10 = "+10 points";
+CA_BATH_MAX = "Maximum";
+CA_BATH_START = "Bathe";
+CA_BATH_NEED_SOURCE = "Use soap while lying in a bathtub, facing an accessible water fixture, or immersed in potable water.";
+CA_BATH_STARTED = "Bathing. Use soap again, leave the water or stand up to cancel.";
+CA_BATH_CANCELLED = "Bath cancelled. Cleaning and resources already spent are retained.";
+CA_BATH_DONE = "Bath complete: %.2f contamination removed; %.3f L water and %.3f g soap used.";
+
+[es]
+CA_BATH_TITLE = "Baño";
+CA_BATH_TERMS = "Elegí cuánta contaminación quitar. El agua y el jabón se gastan progresivamente; cancelar conserva lo ya limpiado.";
+CA_BATH_SELECTED = "Limpiar %.2f puntos (disponible: %.2f)";
+CA_BATH_COST = "Agua: %.3f L | Jabón: %.3f g | Tiempo: %.1f s del mundo";
+CA_BATH_STOCK = "Jabón disponible: %.3f g (sobrante abierto: %.3f g)";
+CA_BATH_MINUS = "-1 punto";
+CA_BATH_PLUS = "+1 punto";
+CA_BATH_MINUS10 = "-10 puntos";
+CA_BATH_PLUS10 = "+10 puntos";
+CA_BATH_MAX = "Máximo";
+CA_BATH_START = "Bañarse";
+CA_BATH_NEED_SOURCE = "Usá el jabón acostado en una bañera, mirando una fuente accesible o sumergido en agua potable.";
+CA_BATH_STARTED = "Bañándose. Usá el jabón otra vez, salí del agua o levantate para cancelar.";
+CA_BATH_CANCELLED = "Baño cancelado. Se conserva lo ya limpiado y gastado.";
+CA_BATH_DONE = "Baño terminado: %.2f de contaminación eliminada; %.3f L de agua y %.3f g de jabón usados.";

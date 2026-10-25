@@ -2231,6 +2231,9 @@ class CaelumInventoryService : Object play
             carriedItemWeight += keyWeight;
         }
 
+        double soapCreditWeight=CaelumSoapSupply.Credit(user)*CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        personalInventoryWeight+=soapCreditWeight;carriedItemWeight+=soapCreditWeight;
+
         // Los cofres cargados no reciben la compresión de la Caja Mágica.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
@@ -3436,7 +3439,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
-        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);
+        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);CaelumBathTask.Clear(user);
         user.CraftingTaskActive = false;
         user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
         user.CraftingTaskLegacyRanged = false;
@@ -4732,6 +4735,8 @@ class CaelumInventoryService : Object play
         }
         if (user.IsSpecialInventoryKind(user.EquipmentSelectionKind))
         {
+            if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                && user.EquipmentSelectionSpecialType==CaelumHygieneData.SOAP)CaelumBathSession.Show(user);
             return;
         }
         if (!user.EquipmentSelectionSizeCompatible)
@@ -6209,6 +6214,7 @@ class CaelumInventoryService : Object play
         if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CAMP
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BATH
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
             && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
@@ -6219,7 +6225,15 @@ class CaelumInventoryService : Object play
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if(completedKind==CaelumConstants.CRAFTING_TASK_HYGIENE)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_BATH)
+        {
+            let bath=CaelumBathTask.Find(user);
+            bool done=CaelumBathTask.Attended(user) && bath!=null
+                && (bath.RemainingDegrees<0.000000001 || CaelumFoodIllness.Value(user)<=0);
+            user.LastCraftingAction=done?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            if(done)CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_BATH_DONE",false),bath.RemovedDegrees,bath.SpentWater,bath.SpentSoap));
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_HYGIENE)
         {
             user.CraftingTaskCompleting=true;
             if(!CaelumHygieneTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
@@ -6273,7 +6287,7 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
-        if(completedKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
+        if(completedKind!=CaelumConstants.CRAFTING_TASK_BATH && completedKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
             && (user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
             || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED))
             CaelumRecipeLearning.CommitPractice(user);

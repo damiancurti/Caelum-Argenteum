@@ -23,3 +23,22 @@ Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_t
    save/load and hub checks. Expect PASS with zero failures.
 Expected: interaction, timing, cancellation, resource accounting and persistence
 accepted. This does not test soap bathing, gear cleaning or resident routines.
+
+CA502-BATH-01 | Origin: 5.8.12 / #502 | PENDING
+Prerequisites: bath-final05 package; assets/validation_5812/author_bath_terminal.ps1;
+close other GZDoom sessions. This is separate from accepted CA502-POSE-01.
+1. Terminal option1 starts reclining in a real household bathtub. Inventory H
+   (or F2 in this fixture) opens the bath selector. Choose a small amount and
+   check that water/soap/time reflect the displayed amount and body mass.
+2. Start the bath. The character remains reclining, contamination falls gradually,
+   and resources are spent progressively. Each degree takes10 world seconds.
+3. F1 resets. Start again and move to cancel partway through. Reopen with F2 while
+   facing the bathtub: the opened soap remainder remains available. F3 prints
+   the current amounts in the console (F6). Restarting
+   spends that remainder first, rather than charging a new gram again.
+4. Save/load during a bath retains progress and resources. Leave the house during
+   a bath: the bath cancels, with no refund of already spent water/soap.
+5. Terminal option2 runs native accounting, world-clock, prediction, save/load,
+   map-travel and potable-source checks. Expect PASS and zero failures.
+Expected: progressive real bathing, mass-scaled costs, usable fractional soap,
+posture and persistence. Equipment washing/NPC cleaning are not covered.

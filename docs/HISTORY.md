@@ -4,6 +4,18 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Soap-bathing continuation,2026-10-25: implemented the already approved progressive
+body bath, shared domestic and finite connected-water withdrawal, source/access
+revalidation, native inventory menu, reclining pose reuse and cancellation. An opened
+gram's fractional remainder retains mass/save identity and is spent before opening
+another gram. Independent wait projection includes the same progressive costs.
+No new balance or artwork; maps retain their accepted bytes. Existing saves lazily
+start with no bath and no soap remainder; existing contamination is preserved.
+121 native assertions and static validation pass; evidence is retained in
+assets/validation_5812/bathing. Author check
+CA502-BATH-01 is pending, independently of earlier posture/toilet/treatment checks.
+Equipment cleaning and the other #502 integrations remain unfinished.
+
 Author acceptance,2026-10-25: CA502-POSE-01 (origin5.8.12 / #502) passed
 all checks in the latest sanitary-posture terminal without qualifications.
 The author confirmed "Las pruebas dieron correcto" after delivery05c4cb33,

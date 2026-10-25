@@ -1,0 +1,96 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "passes": 121,
+  "runs": [
+    {
+      "label": "bath-core04",
+      "passes": 35,
+      "package_sha256": "5339E86B80714651B3E132E7110E0D21D8D487961CF5D406932F4FC70402AA92"
+    },
+    {
+      "label": "bath-save03",
+      "passes": 1,
+      "package_sha256": "B655F4B6EC81E64CA9BD41BF34DB285842DB79A3CD09C8E04E3CBA2EAF9C3266"
+    },
+    {
+      "label": "bath-load03",
+      "passes": 6,
+      "package_sha256": "B655F4B6EC81E64CA9BD41BF34DB285842DB79A3CD09C8E04E3CBA2EAF9C3266"
+    },
+    {
+      "label": "bath-hub03",
+      "passes": 12,
+      "package_sha256": "B655F4B6EC81E64CA9BD41BF34DB285842DB79A3CD09C8E04E3CBA2EAF9C3266"
+    },
+    {
+      "label": "bath-water04e",
+      "passes": 9,
+      "package_sha256": "5339E86B80714651B3E132E7110E0D21D8D487961CF5D406932F4FC70402AA92"
+    },
+    {
+      "label": "bath-live04",
+      "passes": 2,
+      "package_sha256": "5339E86B80714651B3E132E7110E0D21D8D487961CF5D406932F4FC70402AA92"
+    },
+    {
+      "label": "bath-final-capture05",
+      "passes": 0,
+      "package_sha256": "8EAC2129E6A519EDE8E347216C19C6AC8667C8975E42438719A4C9FBF0C78F35"
+    },
+    {
+      "label": "bath-final-toilet05",
+      "passes": 23,
+      "package_sha256": "8EAC2129E6A519EDE8E347216C19C6AC8667C8975E42438719A4C9FBF0C78F35"
+    },
+    {
+      "label": "bath-final-pose05",
+      "passes": 26,
+      "package_sha256": "8EAC2129E6A519EDE8E347216C19C6AC8667C8975E42438719A4C9FBF0C78F35"
+    },
+    {
+      "label": "bath-final-oldpose05",
+      "passes": 2,
+      "package_sha256": "8EAC2129E6A519EDE8E347216C19C6AC8667C8975E42438719A4C9FBF0C78F35"
+    },
+    {
+      "label": "bath-final-rollback05",
+      "passes": 2,
+      "package_sha256": "B0840FB6FE5C4ED749654A47BC0BAE56162897210076F0EBC1350AB0AB5E926F"
+    },
+    {
+      "label": "bath-final-legacy05b",
+      "passes": 3,
+      "package_sha256": "8EAC2129E6A519EDE8E347216C19C6AC8667C8975E42438719A4C9FBF0C78F35"
+    }
+  ],
+  "source_members": 16890,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "package_sha256": "8eac2129e6a519ede8e347216c19c6ac8667c8975e42438719a4c9fbf0c78f35",
+  "earlier_evidence_runtime_differences": {
+    "bath-dev03": [
+      "caelum/ui/CaelumBathUI.zs",
+      "caelum/ui/CaelumLiveMenu.zs",
+      "caelum/ui/CaelumLiveMenuControls.zs",
+      "caelum/world/CaelumTimeSkipModel.zs",
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md"
+    ],
+    "bath-dev04": [
+      "caelum/ui/CaelumBathUI.zs",
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md"
+    ]
+  },
+  "author_test": "CA502-BATH-01 pending",
+  "limitations": "Functional native checks, not campaign-wide acceptance or frame-time measurements. Gear cleaning, surface/combat contacts and NPC routines remain pending.",
+  "resolved_probes": [
+    "Initial compile: instance Sync call and explicit Actor assignment.",
+    "Fixture pickup: use the native AttachToOwner API, not protected TryPickup.",
+    "Campaign water fixture: arrival conversation correctly blocked bathing; end it explicitly before interaction.",
+    "Campaign water fixture: MAP01 restores its actual100kg body; expected costs must use current mass rather than assume80kg."
+  ]
+}

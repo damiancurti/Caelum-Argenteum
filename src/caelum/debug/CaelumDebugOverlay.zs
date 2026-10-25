@@ -2357,7 +2357,8 @@ class CaelumDebugOverlay : EventHandler
             // KeyChar resulta estable para letras en GZDoom 4.14.2; KeyString
             // puede llegar vacio segun el teclado o la ruta de entrada.
             int menuCharacter = character;
-            if (menuCharacter == 113 || menuCharacter == 81)
+            if(menuCharacter==104 || menuCharacter==72)SendNetworkEvent("ca_bath_open");
+            else if (menuCharacter == 113 || menuCharacter == 81)
             {
                 SendNetworkEvent("ca_equipment_toggle");
             }

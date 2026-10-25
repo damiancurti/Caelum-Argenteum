@@ -1403,7 +1403,7 @@ class CaelumJournalOverlay : EventHandler
                 InventoryFont, Font.CR_CYAN, 414.0, 298.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
-                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
                     localPlayer.CraftingTaskRemainingSeconds,
                     localPlayer.CraftingTaskTotalSeconds
                 )
@@ -1793,7 +1793,7 @@ class CaelumJournalOverlay : EventHandler
                 SmallFont, Font.CR_CYAN, 320.0, 282.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
-                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
                     localPlayer.CraftingTaskRemainingSeconds,
                     localPlayer.CraftingTaskTotalSeconds
                 )

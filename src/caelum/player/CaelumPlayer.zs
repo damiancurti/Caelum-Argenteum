@@ -7174,6 +7174,9 @@ class CaelumPlayer : DoomPlayer
     override bool UseInventory(Inventory item)
     {
         // La bolsa abre su interacción existente sin consumir el Inventory.
+        let soap=CaelumMaterialPickup(item);
+        if(soap!=null && soap.Owner==self && soap.GetSpecialType()==CaelumHygieneData.SOAP)
+            return CaelumBathSession.Show(self);
         let bag=CaelumSleepingBag(item);
         if(bag!=null)
             return CaelumPlayerAuthority.CanMutate(self)

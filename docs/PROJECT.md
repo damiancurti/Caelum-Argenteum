@@ -4,6 +4,25 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Soap bathing continuation (2026-10-25): use soap or the inventory's **Bathe (H)**
+action while reclining in a bathtub, facing an accessible potable fixture, or
+immersed in potable water. Select the desired contamination reduction; the menu
+shows the current resource limit and actual mass-scaled costs. Each degree takes
+10 world seconds and uses0.5L at80kg, scaled by body mass, with5g soap/L.
+Consumption and cleansing are progressive. Cancellation, loss of access or source
+quality, external damage and map departure retain completed work and spent
+resources. Disease damage continues; a bathtub bath retains the accepted lying
+pose and releases it on completion/cancellation. Merely reclining still does not wash.
+
+The opened gram's unused fraction persists with its mass and is spent first next
+time, including when no whole soap grams remain. It follows the carrier separately
+from unopened integer material stacks. Household bathing draws the shared reserve;
+connected reservoirs lose actual volume. The independent waiting model snapshots
+soap/water and matches accelerated execution without consuming live resources.
+Existing dynamic-water and unsupported-effect forecast guards remain in force.
+Evidence: assets/validation_5812/bathing;121 native assertions and static validation pass.
+CA502-BATH-01 awaits author acceptance.
+
 Author-requested posture continuation (2026-10-25): using a toilet seats the
 character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying
 artwork and clipped orbit-camera pattern without starting a rest or sleep session.
@@ -12,7 +31,7 @@ completion stands up automatically. Safe entry/exit retains the player's actual
 collision volume; blocked exits leave the fixture nonblocking until clear.
 Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
 without restarting its timer. Bathtub reclining alone does not wash, charge water
-or consume soap. Progressive soap bathing remains pending.
+or consume soap. Progressive soap bathing is supplied by the continuation above.
 Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
 74 native checks pass; static validation passes. CA502-POSE-01 was accepted by the author on2026-10-25 without qualifications.
 
@@ -30,7 +49,7 @@ forecasts include completion and same-tic nutrition credit without changing live
 resources. Existing unsupported-effect forecast guards remain in force.
 Static validation and55 native checks pass;16,885 package members match src.
 Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
-Soap baths, equipment washing, surface/combat contacts, rain surface washing
+Equipment washing, surface/combat contacts, rain surface washing
 and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Domestic bathrooms (#410, in progress)

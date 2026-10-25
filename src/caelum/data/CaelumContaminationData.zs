@@ -19,6 +19,7 @@ class CaelumContaminationData : Object
     const EQUIPMENT_WATER_L_M2 = 1.0;
     const SOAP_G_L = 5.0;
     const BATH_WATER_L_DEGREE = 0.5;
+    const BATH_SECONDS_DEGREE = 10.0;
     const NATURAL_REFERENCE = 5.0;
     const URBAN_REFERENCE = 15.0;
     const INDUSTRIAL_REFERENCE = 40.0;

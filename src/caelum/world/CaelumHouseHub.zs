@@ -26,6 +26,10 @@ class CaelumHouseHubEvents : EventHandler
 {
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_bath_open" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
+        {CaelumBathSession.Show(CaelumPlayer(players[e.Player].mo));return;}
+        if(e.Name=="ca_bath_action" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
+        {let user=CaelumPlayer(players[e.Player].mo);let bath=CaelumBathSession.Find(user);if(bath!=null)bath.Act(user,e.Args[0]);return;}
         if(e.Name!="ca_property_action" || e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
         let session=CaelumPropertySession.Get(CaelumPlayer(players[e.Player].mo));
         if(session!=null)session.Act(e.Args[0]);

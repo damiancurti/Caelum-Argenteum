@@ -2,6 +2,10 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
+Soap-bathing continuation (#502): existing painted soap icon, bathroom artwork,
+RestLying sprites and live-menu controls are reused. No art or map assets change.
+Native UI captures: assets/validation_5812/bathing/captures.
+
 ## 5.8.12 - Toilet interaction (#502)
 
 The posture continuation reuses existing RSDO seated/lying artwork, with no image,

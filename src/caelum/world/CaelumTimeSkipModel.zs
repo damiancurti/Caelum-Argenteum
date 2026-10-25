@@ -25,9 +25,11 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 13;
+    const PROVISION_REVISION = 14;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
+    bool BathTask,BathDomestic;
+    double BathRemaining,BathWater,BathSoap,BathWaterPerDegree;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -48,11 +50,24 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
         // Los poderes pulsan antes de terminar la tarea en el avance real.
-        if(ToiletTask)
+        if(ToiletTask || BathTask)
         {
             Pulses();ToiletPulsesPrepared=true;
-            if(!sleeping && ProductiveTics+1>=RequiredTics && FoodIllness!=null)
+            if(ToiletTask && !sleeping && ProductiveTics+1>=RequiredTics && FoodIllness!=null)
             {FoodIllness.ToiletDepurate();ToiletTask=false;}
+        }
+        if(BathTask && !sleeping && FoodIllness!=null)
+        {
+            if(BathDomestic)BathWater=Min(CaelumDomesticWaterData.CAPACITY_LITERS,BathWater
+                +AltitudeSecondsPerTic*CaelumDomesticWaterData.REFILL_LITERS_PER_WORLD_MINUTE/60.0);
+            double wanted=Min(BathRemaining,AltitudeSecondsPerTic/CaelumContaminationData.BATH_SECONDS_DEGREE);
+            double dose=Min(wanted,Min(FoodIllness.Contamination,Min(BathWater/BathWaterPerDegree,
+                BathSoap/CaelumContaminationRules.SoapGrams(BathWaterPerDegree))));
+            BathRemaining=Max(0.0,BathRemaining-dose);FoodIllness.Contamination=Max(0.0,FoodIllness.Contamination-dose);
+            BathWater=Max(0.0,BathWater-dose*BathWaterPerDegree);BathSoap=Max(0.0,BathSoap-CaelumContaminationRules.SoapGrams(dose*BathWaterPerDegree));
+            if(BathRemaining<0.000000001 || FoodIllness.Contamination<=0)
+            {BathTask=false;RequiredTics=ProductiveTics+1;}
+            else if(dose<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
         }
         if(ContaminationWeather!=null && Contamination!=null)
         {
@@ -79,6 +94,13 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         Capture(user,false);
         PotableImmersed=user.IsSubmergedInPotableWater();
         ToiletTask=CaelumHygieneTask.Active(user);
+        BathTask=CaelumBathTask.Active(user);
+        if(BathTask)
+        {
+            let bath=CaelumBathTask.Find(user);BathRemaining=bath.RemainingDegrees;BathDomestic=bath.Fixture!=null;
+            BathWater=CaelumBathTask.WaterAvailable(user,bath.Fixture,bath.WaterModel);BathSoap=CaelumSoapSupply.Available(user);
+            BathWaterPerDegree=CaelumContaminationRules.BathWaterLiters(1,user.DerivedStats.BaseMass);
+        }
         ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
         if(ContaminationWeather.DynamicClimate || (Contamination!=null && Contamination.DynamicWater))
         {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
