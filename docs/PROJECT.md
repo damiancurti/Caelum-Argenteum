@@ -4,12 +4,25 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+
 At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without
 turning it into healing; natural depuration below 90 removes the multiplier.
 Travel/wait forecasts share the same rule. Existing saved body contamination
-and fractional damage survive updating; wait forecast schema 9 invalidates old
-cached models after adding immersion exposure.
+and fractional damage survive updating; wait forecast schema11 invalidates old
+cached models after adding immersion washing.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See

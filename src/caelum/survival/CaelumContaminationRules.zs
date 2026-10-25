@@ -96,6 +96,11 @@ class CaelumContaminationRules : Object
     }
     static clearscope double BodyDoseFactor(double bodyKg)
     {return bodyKg>0 ? CaelumFoodData.REFERENCE_BODY_KG/bodyKg : 0;}
+    static clearscope double ImmersionWash(double value,double potableAreaM2,double seconds,double bodyKg)
+    {
+        return Max(0.0,value-Max(0.0,potableAreaM2)*Max(0.0,seconds)/60.0
+            *CaelumContaminationData.IMMERSION_WASH_DEGREES_M2_MINUTE*BodyDoseFactor(bodyKg));
+    }
     static clearscope double EquipmentWaterLiters(double areaM2)
     {return Max(0.0,areaM2)*CaelumContaminationData.EQUIPMENT_WATER_L_M2;}
     static clearscope double SoapGrams(double waterLiters)

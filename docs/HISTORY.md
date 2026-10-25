@@ -128,6 +128,27 @@ Static/native evidence: assets/validation_589/rain. No surface-washing, resident
 cleaning, manual acceptance or FPS claim is implied. README reviewed; same patch.
 
 
+Immersion-washing continuation,2026-10-25: Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+
+Two retained hub probes incorrectly asserted valid cached water geometry on a
+fixture map without a climate reference. The production unavailable-climate guard
+already prevents exposure/washing there. The corrected fixture checks that guard
+and samples actual geometry directly; no production fix or claim of a runtime
+failure is implied. README reviewed; same patch version. The author also approved
+household supply purchases and metabolic toilet limits/time/water, recorded in
+SYSTEMS; those interactions remain pending.
+
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
 Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)

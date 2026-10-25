@@ -24,7 +24,7 @@ The ambient rain reduction is integrated into actual player/equipment exposure,
 the World journal and independent waiting forecasts. It subtracts the approved
 0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
 urban ground, clamped at zero. Roofs/tents, natural and industrial references
-retain their prior rules. Waiting schema10 invalidates old cached projections.
+retain their prior rules. Waiting schema11 now invalidates earlier cached projections.
 This does not yet implement persistent floor washing or resident cleaning.
 
 Approved 2026-10-25, remaining surface/domestic integration:
@@ -35,7 +35,10 @@ Approved 2026-10-25, remaining surface/domestic integration:
 - Resident NPCs: one world hour of cleaning per day while home and out of
   combat, accessible floors/furniture, existing water/soap/time per m2 and
   reusable cloth. Share household supplies; do not spend player property
-  without permission. Initial household supply acquisition remains a question.
+  without permission. Each household buys one reusable cloth and up to300g soap
+  using its own funds and actual Provisions stock/prices; lack of money or stock
+  prevents cleaning. Each dwelling receives its own200L potable domestic reserve,
+  shared sink/bathtub, replenishing1L/world minute (#410).
 - Wind/ventilation are proposals only. Existing temperature/humidity already
   account for cold/dry conditions; no second multiplier is approved.
 
@@ -45,7 +48,7 @@ equipment copy/pickup/storage preserves concentration; copies have independent
 state. Box and closed-chest contents reject explicit contact without resetting
 their value. These storage routes and player/carried-equipment environmental
 exposure are implemented and tested. NPC/furniture environmental exposure,
-surface/combat callers and real hygiene remain pending. Player/equipment immersion
+surface/combat callers, soap bathing and equipment cleaning remain pending. Player/equipment immersion
 is integrated through the same thermal update and known water-quality metadata.
 
 Shared calculations, used by environmental exposure; other contact/hygiene pending:
@@ -139,6 +142,28 @@ completed cleaning and consumed resources. Repair cleans the repaired piece;
 sleep first cleans selected weapon and then equipped clothing/armor in the
 usual slot order. Missing resources skip that piece with notice, never block
 repair/sleep. Other inventory equipment is cleaned manually.
+
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+
+Approved metabolic toilet interaction, implementation pending: actual Hunger
+and Hydration recovered through food/drink add together, with fractions retained.
+Every20 restored percentage points earns1 cleansing degree; stored capacity
+caps at20. Each effective use lasts60world seconds and spends10L domestic
+water, no soap or cloth. Remove at most20 body-contamination degrees, bounded
+by contamination and earned capacity; spend only the capacity actually used.
+A clean body or zero capacity cannot consume water. Old saves earn no retroactive
+capacity. This can remove contamination from any source, not only ingested food.
 
 Bathing uses the same body contamination resource, including food/bites:
 0.5 L potable water per removed degree at 80 kg, proportional to body mass,

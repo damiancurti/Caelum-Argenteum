@@ -12,7 +12,7 @@ class CaelumContaminationExposure : Object play
     Array<CaelumContaminationEquipment> Items;
     double BodyArea[4];
     double ContactSource[4];
-    double WetArea[4],DirtyArea[4],ExcludedBodyArea[4],WaterBodyArea[4];
+    double WetArea[4],DirtyArea[4],CleanArea[4],ExcludedBodyArea[4],WaterBodyArea[4];
     double WetFraction,DirtyFraction;
     bool DynamicWater;
     double BodyKg;
@@ -58,6 +58,7 @@ class CaelumContaminationExposure : Object play
         {
             WetArea[slot]=Clamp(thermal.SurfaceArea*thermal.SubmergedCoverage[slot],0,BodyArea[slot]);
             DirtyArea[slot]=Clamp(thermal.SurfaceArea*thermal.DirtyWaterCoverage[slot],0,WetArea[slot]);
+            CleanArea[slot]=Clamp(thermal.SurfaceArea*thermal.CleanWaterCoverage[slot],0,WetArea[slot]);
             total+=BodyArea[slot];wet+=WetArea[slot];dirty+=DirtyArea[slot];
         }
         WetFraction=total>0 ? wet/total : 0;DirtyFraction=total>0 ? dirty/total : 0;
@@ -65,7 +66,7 @@ class CaelumContaminationExposure : Object play
     }
     void ClearImmersion()
     {
-        for(int slot=0;slot<4;slot++){WetArea[slot]=0;DirtyArea[slot]=0;ExcludedBodyArea[slot]=0;WaterBodyArea[slot]=0;}
+        for(int slot=0;slot<4;slot++){WetArea[slot]=0;DirtyArea[slot]=0;CleanArea[slot]=0;ExcludedBodyArea[slot]=0;WaterBodyArea[slot]=0;}
         WetFraction=0;DirtyFraction=0;DynamicWater=false;
     }
     void Exterior(int index,double ambient,double area,double wet,double dirty,double seconds)
@@ -137,7 +138,10 @@ class CaelumContaminationExposure : Object play
             }
             ContactSource[slot]=source;
         }
-        illness.Contamination=BodyContact(body,seconds);
+        double clean=0;for(int slot=0;slot<4;slot++)clean+=CleanArea[slot];
+        // El lavado corporal no sustituye la limpieza del equipo: éste conserva
+        // su concentración y puede volver a transmitirla por contacto.
+        illness.Contamination=CaelumContaminationRules.ImmersionWash(BodyContact(body,seconds),clean,seconds,BodyKg);
     }
     double BodyContact(double value,double seconds)
     {

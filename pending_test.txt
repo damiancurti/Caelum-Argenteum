@@ -8,3 +8,15 @@ Launch assets/validation_589/treatment/author_terminal.ps1, option1.
    its Life recovery. F6 toggles the console for test messages.
 3. Optional terminal option2 executes rules/native dose/save/load/hub checks;
    expect only PASS and zero failures. This does not test rain or NPC cleaning.
+
+CA502-WASH-01 | Origin: 5.8.9 / #502 | PENDING
+Prerequisites: issue502-work; wash01 package; GZDoom4.14.2.
+Launch assets/validation_589/immersion_wash/author_terminal.ps1, option1.
+1. F1 starts at contamination40 in full potable immersion: observe gradual loss.
+2. F2 starts at40 in partial potable immersion: removal is slower.
+3. F3 moves out, retaining contamination: immersion removal stops.
+4. F4 starts at40 in salt water: no cleansing. F5 biological water contaminates.
+5. Optional option2 checks rules, waiting, exposure regression, save/load and hub;
+   expect only PASS and zero failures. F6 toggles the console.
+Only this private manual fixture protects against drowning death. Production
+breathing remains unchanged. This check does not cover soap baths or toilets.

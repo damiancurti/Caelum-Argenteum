@@ -163,7 +163,7 @@ class CaelumThermalEnvironment : Object play
     static double SampleWater(Actor body,CaelumThermalState thermal,double fallback)
     {
         thermal.WaterC=fallback;thermal.WaterRowMask=0;
-        thermal.DirtyWaterRowMask=0;thermal.DynamicContactWater=false;thermal.WaterContactReady=true;
+        thermal.DirtyWaterRowMask=0;thermal.CleanWaterRowMask=0;thermal.DynamicContactWater=false;thermal.WaterContactReady=true;
         if(body.CurSector==null)return 0;
         Sector sector=body.CurSector;
         let height=sector.GetHeightSec();
@@ -199,6 +199,7 @@ class CaelumThermalEnvironment : Object play
                 int quality=contaminationSupported ? CaelumWaterQuality.Volume(waterSource,sector) : CaelumWaterQuality.UNIDENTIFIED;
                 if(CaelumWaterQuality.Valid(quality) && (quality&(CaelumWaterQuality.BIOLOGICAL|CaelumWaterQuality.CHEMICAL))!=0)
                     thermal.DirtyWaterRowMask|=1<<row;
+                if(quality==CaelumWaterQuality.POTABLE)thermal.CleanWaterRowMask|=1<<row;
             }
         }
         if(wetRows>0)thermal.WaterC=totalTemperature/wetRows;

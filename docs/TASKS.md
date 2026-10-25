@@ -4,6 +4,19 @@ Documentation version: **5.8.9** — 2026-10-24.
 
 ## 5.8.9 - Contamination expansion (#502, in progress)
 
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 awaits author acceptance.
+
 Severe threshold/HUD and forecast invalidation are implemented.
 CA502-SEVERE-01 was accepted on 2026-10-25. Actor/equipment state and
 explicit contact API pass 30 native checks. Player/carried-equipment environmental
