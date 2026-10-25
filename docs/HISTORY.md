@@ -4,6 +4,13 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance, 2026-10-25: CA502-SURFACE-01 (origin5.8.12/#502, surface-final05
+with diagnostic correction0c9cb53a) passed without qualifications. The author
+confirmed that the tests passed and requested continuation. This accepts the
+floor/wall/rain checks and corrected F2/F4/F5 interaction; it does not establish
+campaign-wide FPS acceptance. Removed only this ID from pending_test.txt;
+CA502-TOILET-01 and CA502-TREATMENT-01 remain separate outstanding checks.
+
 Laboratory responsiveness/clarity correction, 2026-10-25 (#502): the author
 reported frame drops mainly on F4/F5 and apparent contamination from rain.
 The diagnostic F5 simulated a whole half hour synchronously; repeated F4

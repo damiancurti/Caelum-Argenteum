@@ -146,3 +146,10 @@ their transitions. Do not use that counter as a presentation-rate measurement.
 These are RenderOverlay intervals, not application presents or GPU/display time;
 the earlier PresentMon access limitation still applies. CA502-SURFACE-01 remains
 pending for author confirmation of the corrected interaction.
+
+## Author acceptance - 2026-10-25
+
+CA502-SURFACE-01 passed without qualifications after the F2 visibility and F4/F5
+responsiveness corrections (0c9cb53a). Earlier pending statements above record
+the status at each delivery and are superseded by this explicit confirmation.
+This does not imply campaign-wide FPS acceptance or completion of #502.

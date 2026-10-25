@@ -21,7 +21,7 @@ matches real execution; forecast revision16 invalidates older predictions.
 
 Evidence: assets/validation_5812/surfaces. 157 executed native checks
 and static validation pass. All169 maps and13,826 art members are unchanged.
-CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. Other-actor
+CA502-SURFACE-01 passed author review on2026-10-25, including the corrected F2/F4/F5 laboratory. Other-actor
 and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
 cleaning remain follow-up; this does not complete#502 or V5.8.
 

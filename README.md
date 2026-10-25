@@ -28,7 +28,7 @@ matches real execution; forecast revision16 invalidates older predictions.
 
 Evidence: assets/validation_5812/surfaces. 157 executed native checks
 and static validation pass. All169 maps and13,826 art members are unchanged.
-CA502-SURFACE-01 awaits author review in author_surface_terminal.ps1. F2 now opens
+CA502-SURFACE-01 passed author review on2026-10-25, including the corrected F2/F4/F5 laboratory. F2 now opens
 the in-game console with "Tu contaminacion"; F6 returns to play. The diagnostic
 reading was verified in a native capture after the author's visibility report.
 Following the author's F4/F5 hitch report, manual F5 now yields between short
