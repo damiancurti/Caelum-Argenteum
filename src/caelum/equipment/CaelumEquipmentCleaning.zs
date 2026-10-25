@@ -49,8 +49,14 @@ class CaelumCleaningTask : Inventory
     CaelumEquipmentItem Target;
     Array<CaelumEquipmentItem> Queue;
     double Area,Remaining,SpentWater,SpentSoap;
-    bool ContinuePlan,SleepAfter,Resuming;
+    bool ContinuePlan,SleepAfter,Resuming,WakeQueue;
     CaelumRestFurniture Bed;
+    void EnsureRevision()
+    {
+        // Las colas anteriores conservan destino, costes y progreso; no eran
+        // limpiezas posteriores a un desmayo. La migración es idempotente.
+        if(Revision<2){WakeQueue=false;Revision=2;}
+    }
     static clearscope CaelumCleaningTask Find(CaelumPlayer user)
     {return user==null?null:CaelumCleaningTask(user.FindInventory('CaelumCleaningTask'));}
     static clearscope bool Active(CaelumPlayer user)
@@ -64,7 +70,7 @@ class CaelumCleaningTask : Inventory
         let task=Find(user);if(task==null)return;
         if(Active(user))CaelumTimeAdvanceState.Halt(user);
         task.Target=null;
-        if(!task.ContinuePlan){task.Queue.Clear();task.Next=0;task.SleepAfter=false;task.Bed=null;}
+        if(!task.ContinuePlan){task.Queue.Clear();task.Next=0;task.SleepAfter=false;task.WakeQueue=false;task.Bed=null;}
     }
     static void Cancel(CaelumPlayer user)
     {
@@ -75,7 +81,7 @@ class CaelumCleaningTask : Inventory
     static void MissingSupplies(CaelumPlayer user)
     {
         let task=Find(user);
-        if(task==null || !task.SleepAfter){Cancel(user);return;}
+        if(task==null || (!task.SleepAfter && !task.WakeQueue)){Cancel(user);return;}
         // Una falta tardía no impide dormir ni devuelve la parte ya gastada.
         task.ContinuePlan=true;user.CancelCraftingTask();
         CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));AfterComplete(user);
@@ -83,7 +89,8 @@ class CaelumCleaningTask : Inventory
     static bool Attended(CaelumPlayer user)
     {
         let task=Find(user);
-        return Active(user) && task!=null && task.Revision==1 && task.OriginMap==level.MapName
+        if(task!=null)task.EnsureRevision();
+        return Active(user) && task!=null && task.Revision==2 && task.OriginMap==level.MapName
             && task.Target!=null && task.Target.Owner==user && task.Target.Amount>0 && user.health>0
             && user.player!=null && user.player.playerstate==PST_LIVE && !user.isFrozen()
             && user.CombatTimeRemaining<=0 && !user.HasActiveConversation() && !CaelumSleepRules.IsSleeping(user)
@@ -94,7 +101,7 @@ class CaelumCleaningTask : Inventory
         if(!CaelumCampTask.Available(user))return null;
         user.ClearCraftingTaskData();let task=Find(user);
         if(task==null)task=CaelumCleaningTask(user.GiveInventoryType('CaelumCleaningTask'));
-        if(task!=null){task.Revision=1;task.OriginMap=level.MapName;task.Next=0;task.Queue.Clear();task.SleepAfter=false;task.Bed=null;task.ContinuePlan=false;task.Resuming=false;}
+        if(task!=null){task.Revision=2;task.OriginMap=level.MapName;task.Next=0;task.Queue.Clear();task.SleepAfter=false;task.WakeQueue=false;task.Bed=null;task.ContinuePlan=false;task.Resuming=false;}
         return task;
     }
     bool NextPiece(CaelumPlayer user)
@@ -122,17 +129,31 @@ class CaelumCleaningTask : Inventory
         {if(automatic && item!=null && CaelumContaminationStorage.Value(item)>0)CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));return false;}
         let task=Allocate(user);if(task==null)return false;task.Queue.Push(item);return task.NextPiece(user);
     }
+    void AddEquipped(CaelumPlayer user)
+    {
+        let weapon=user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);if(weapon!=null)Queue.Push(weapon);
+        for(int slot=0;slot<4;slot++)
+        {
+            let armor=CaelumThermalBody.EquippedPiece(user,slot);if(armor!=null)Queue.Push(armor);
+            let clothing=CaelumClothing.Equipped(user,slot);if(clothing!=null)Queue.Push(clothing);
+        }
+    }
+    static void AfterExhaustionWake(CaelumPlayer user,bool interrupted)
+    {
+        // El desmayo no se retrasa: este punto sólo se alcanza al despertar.
+        // Daño/peligro no abre una tarea nueva ni consume suministros.
+        if(interrupted || !CaelumCampTask.Available(user))
+        {if(user!=null && user.health>0)CaelumNotifications.Notify(user,StringTable.Localize("CA_CLEAN_SKIPPED",false));return;}
+        let task=Allocate(user);if(task==null)return;
+        task.WakeQueue=true;task.AddEquipped(user);
+        if(task.NextPiece(user))return;
+        task.Queue.Clear();task.WakeQueue=false;
+    }
     static bool BeforeSleep(CaelumPlayer user,int minutes,CaelumRestFurniture bed)
     {
         let existing=Find(user);if(existing!=null && existing.Resuming)return false;
         let task=Allocate(user);if(task==null)return false;
-        task.SleepAfter=true;task.Minutes=minutes;task.Bed=bed;
-        let weapon=user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);if(weapon!=null)task.Queue.Push(weapon);
-        for(int slot=0;slot<4;slot++)
-        {
-            let armor=CaelumThermalBody.EquippedPiece(user,slot);if(armor!=null)task.Queue.Push(armor);
-            let clothing=CaelumClothing.Equipped(user,slot);if(clothing!=null)task.Queue.Push(clothing);
-        }
+        task.SleepAfter=true;task.Minutes=minutes;task.Bed=bed;task.AddEquipped(user);
         if(task.NextPiece(user))return true;
         task.Queue.Clear();task.SleepAfter=false;task.Bed=null;return false;
     }
@@ -168,7 +189,7 @@ class CaelumCleaningTask : Inventory
         let task=Find(user);if(task==null || !task.ContinuePlan)return;
         if(task.NextPiece(user))return;
         bool sleep=task.SleepAfter;int minutes=task.Minutes;let bed=task.Bed;
-        task.ContinuePlan=false;task.Queue.Clear();task.SleepAfter=false;task.Bed=null;
+        task.ContinuePlan=false;task.Queue.Clear();task.SleepAfter=false;task.WakeQueue=false;task.Bed=null;
         if(sleep){task.Resuming=true;CaelumRestState.Begin(user,CaelumRestRules.MODE_SLEEP,minutes,bed);task.Resuming=false;}
     }
     override void PreTravelled(){Cancel(CaelumPlayer(Owner));Super.PreTravelled();}

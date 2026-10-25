@@ -23,3 +23,21 @@ Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_t
    save/load and hub checks. Expect PASS with zero failures.
 Expected: interaction, timing, cancellation, resource accounting and persistence
 accepted. This does not test soap bathing, gear cleaning or resident routines.
+
+CA502-WAKE-01 | Origin: 5.8.12 / #502 | PENDING
+Prerequisites: issue502-hygiene-work; wake-final01 package; close other GZDoom sessions.
+Launch assets/validation_5812/author_wake_terminal.ps1, option1.
+1. The character immediately lies down from exhaustion; equipment is not cleaned
+   while asleep. F1 resets the scenario (sword80, water5L, soap100g, reusable cloth).
+2. F2 supplies the minimum sleep recovery and requests awakening. The in-game
+   console shows Dormido=0, limpieza=1 and the remaining work. F6 closes it.
+   Wait several seconds, then F3 opens the readings: cleanup finishes, spending
+   water/soap, and the character remains awake. The selected sword goes first,
+   followed by clothing. Ambient exposure continues and may dirty cleaned gear again.
+   Existing automatic drinking while asleep can also consume water independently.
+3. F6 closes the console; F4 resets without soap and awakens. Expect no cleanup,
+   no soap charge and no blocked awakening. F1 allows repeating the supplied case.
+4. Optional terminal option2 runs core, real-clock, save/load and hub checks.
+   Expect only PASS and zero failures. Close GZDoom before selecting another option.
+Expected: immediate collapse, post-wake cleanup, missing-resource behavior and
+remaining awake accepted. Calendar-triggered sleep and NPC housekeeping are separate.

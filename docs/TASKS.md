@@ -4,6 +4,24 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Exhaustion-wake continuation (2026-10-25): the author approved cleaning after
+waking from involuntary exhaustion sleep. Collapse and the existing wake lock
+remain immediate. Once awake and safe, clean the selected weapon followed by
+equipped armor/clothing, using the accepted progressive costs and queue. Missing
+supplies skip pieces without blocking awakening; external damage/combat awakening
+does not begin a new cleanup. Completion leaves the character awake. Cancelling
+or travelling keeps paid progress and discards the remaining queue.
+
+Cleaning task revision2 preserves old targets, remaining work, soap and water;
+old exhaustion saves start no cleanup until waking. Forecast revision17 invalidates
+cached predictions and retains the explicit unsupported exact-date guard for
+multi-piece wake/sleep queues. Ordinary world-clock completion remains available.
+Evidence: assets/validation_5812/wake; 97 native assertions, genuine
+old-save migration/rollback and static validation pass. All169 maps and13,826 art
+members remain unchanged. CA502-WAKE-01 awaits author review in its own terminal.
+Calendar-triggered sleep, other-actor/combat contacts and resident housekeeping
+remain unfinished; this continuation does not complete#502 or V5.8.
+
 Surface-contamination continuation (2026-10-25): player contact now uses saved
 one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
 0.10m2. Armor/clothing receives contact before the uncovered body; the cleaner
@@ -22,7 +40,7 @@ matches real execution; forecast revision16 invalidates older predictions.
 Evidence: assets/validation_5812/surfaces. 157 executed native checks
 and static validation pass. All169 maps and13,826 art members are unchanged.
 CA502-SURFACE-01 passed author review on2026-10-25, including the corrected F2/F4/F5 laboratory. Other-actor
-and combat contact, resident housekeeping and calendar/exhaustion pre-sleep
+and combat contact, resident housekeeping and calendar-triggered pre-sleep
 cleaning remain follow-up; this does not complete#502 or V5.8.
 
 Equipment-cleaning continuation (2026-10-25): select an owned weapon, shield,
@@ -44,8 +62,8 @@ sleep; partial work saves/loads and map departure cancels without refund. Existi
 soap fractions retain their mass and identity. The independent wait forecast
 matches single-piece execution; its revision15 invalidates older cached forecasts.
 The multi-piece queue followed by sleep keeps the unsupported exact-date guard,
-while ordinary/accelerated live time remains available. Calendar-triggered and
-exhaustion sleep scheduling are still follow-up work, not covered by this hook.
+while ordinary/accelerated live time remains available. Calendar-triggered sleep remains follow-up; exhaustion cleanup is now covered
+by the separate post-wake continuation above.
 
 Evidence: assets/validation_5812/cleaning;134 executed native assertions and static
 validation pass. The final package has16,892 source-identical members;169 maps
@@ -97,7 +115,7 @@ forecasts include completion and same-tic nutrition credit without changing live
 resources. Existing unsupported-effect forecast guards remain in force.
 Static validation and55 native checks pass;16,885 package members match src.
 Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
-Calendar/exhaustion sleep cleaning, other-actor/combat contacts
+Calendar-triggered sleep cleaning, other-actor/combat contacts
 and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 / #410 - Domestic bathrooms

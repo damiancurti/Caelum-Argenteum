@@ -4,6 +4,20 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Exhaustion-wake continuation,2026-10-25 (#502): the author explicitly chose
+"Limpiar al despertar". Preserve immediate exhaustion collapse and the existing
+wake lock; after eligible awakening, run the shared ordered equipment cleanup
+without returning to sleep. Missing supplies and external-damage/combat awakening
+cannot hold the player asleep or clean for free. Revision2 migrates prior cleaning
+state idempotently; forecast revision17 rejects unsupported multi-piece dates.
+97 native assertions and static validation pass, including actual
+world-clock progression, current and genuine prior-runtime saves, rollback,
+travel cancellation and voluntary-sleep/repair/bag regressions. Captures and raw
+logs: assets/validation_5812/wake. Test-fixture corrections and evidence limits
+are recorded there. No production art/maps or approved balance changed.
+CA502-WAKE-01 is pending; earlier accepted checks remain accepted. Calendar
+sleep, actor/combat contact and NPC housekeeping remain separate follow-up.
+
 Author acceptance, 2026-10-25: CA502-SURFACE-01 (origin5.8.12/#502, surface-final05
 with diagnostic correction0c9cb53a) passed without qualifications. The author
 confirmed that the tests passed and requested continuation. This accepts the

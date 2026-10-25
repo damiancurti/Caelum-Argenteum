@@ -207,7 +207,7 @@ class CaelumRestState : Inventory
             if(result==CaelumRestRules.STATUS_CANCELLED)CaelumExhaustion.NotifyLocked(user);
             return;
         }
-        Exhaustion=false;
+        bool exhaustedWake=Exhaustion;Exhaustion=false;
         CaelumTimeAdvanceState.Halt(user);
         AutoEating=false;AutoDrinking=false;DiningTable=null;
         Status = result;
@@ -226,6 +226,8 @@ class CaelumRestState : Inventory
             user.SetState(user.SpawnState);
         user.PersistCharacterState();
         if (key.Length() != 0) CaelumNotifications.Notify(user,StringTable.Localize(key, false));
+        if(exhaustedWake && user.health>0)
+            CaelumCleaningTask.AfterExhaustionWake(user,result==CaelumRestRules.STATUS_INTERRUPTED);
     }
 
     static void Interrupt(CaelumPlayer user, String key)

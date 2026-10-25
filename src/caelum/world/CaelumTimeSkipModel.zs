@@ -26,7 +26,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 16;
+    const PROVISION_REVISION = 17;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -128,7 +128,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(Contamination!=null)for(int i=0;i<Contamination.Items.Size();i++)
                 if(Contamination.Items[i].Item==cleaning.Target){CleaningIndex=i;break;}
             // La cola de varias piezas seguida del sueño aún no promete una fecha exacta.
-            if(cleaning.SleepAfter){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+            if(cleaning.SleepAfter || cleaning.WakeQueue){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
             if(!CaelumCleaningSupplies.Cloth(user)){Reason="CA_SKIP_PROVISIONS";Done=true;}
         }
         if(BathTask)
