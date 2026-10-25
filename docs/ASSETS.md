@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.10** — 2026-10-25.
 
 ## 5.8.9 - Hygiene item artwork (#502, in progress)
 

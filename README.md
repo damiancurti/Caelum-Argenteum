@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.9.** Obtain and update the complete repository, validate
+**Current release: 5.8.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.10 - Protect resting tent occupants (#412, in progress)
+
+Tent packing now rejects a resting occupant and rechecks occupancy throughout
+packing and at completion. A late rest pauses work without losing progress or
+the deployed inventory item; packing can resume once the rest ends. The check
+uses bounded player slots and preserves existing recovery, shelter and clock
+restrictions. 30 native assertions cover the guard and old-save/rollback
+continuity; see assets/validation_5810/RESULTS.md. Full sleeping-bag/two-occupant
+rest integration and #410 furniture remain pending. No author acceptance is claimed.
+
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 

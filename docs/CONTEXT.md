@@ -1,8 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.10** — 2026-10-25.
 
-**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;author pending. NPC/contact/hygiene pending;severe/exposure accepted2026-10-25;validation_589.
+**5.8.10/#412:** tent rest packing guard;30nativePASS;validation_5810. Bag/two-occupant integration pending.
+
+**5.8.9/#502:** severe/state/ambient accepted;immersion71PASS awaiting author. NPC/contact/hygiene pending;validation_589.
 
 **5.8.8/#411:** placement46PASS; tents112+125PASS. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model binding. Fire/cooking/rest pending;validation_588/deploy.
 

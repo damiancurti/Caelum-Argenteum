@@ -1,0 +1,26 @@
+{
+  "issue": 412,
+  "version": "5.8.10",
+  "assertions": 30,
+  "runs": [
+    {
+      "label": "final01",
+      "assertions": 18,
+      "runtime_sha256": "8004894ABC22391CD6DA09D6284909D861C6CA3EC99989E16ABB6C8373983B0A",
+      "addon_sha256": "C084794524ADB3E1FC06927AFB7080177712406E5913436CC540572847449BB5"
+    },
+    {
+      "label": "legacy01",
+      "assertions": 6,
+      "runtime_sha256": "EB8485356D4407BB2F885E7EE6B87FF1BA5826F58BDD038159EA6508D01C9BF3",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    },
+    {
+      "label": "rollback01",
+      "assertions": 6,
+      "runtime_sha256": "105A75FD7A86A74D73EE5B2D9A14522F105450AD05CC89C351779E3744EA51BE",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    }
+  ],
+  "final_delta_from_guard01": "Only two diagnostic release labels (5.8.9 to 5.8.10) and CRLF-to-LF normalization of those two files. Gameplay logic unchanged; every other member byte-identical."
+}

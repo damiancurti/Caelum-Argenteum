@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.10** — 2026-10-25.
+
+## 5.8.10 - Tent rest integration (#412)
+
+Author approval, 2026-10-25: each of two occupants uses their own sleeping bag.
+The tent supplies its already-approved shelter without beds or extra recovery
+bonuses. A tent may not be packed while anyone rests inside.
+
+Implemented first stage: packing checks living local player occupants in normal
+or accelerated rest, both at start and during/at the end of the attended work.
+Stale sessions belonging to another map do not reserve it. Late occupancy pauses
+remaining work; the original deployed tent/item stay intact until safe completion.
+This introduces no saved fields, map geometry, extra comfort or world-clock rules.
+The existing solo-rest restriction and sleeping-bag room check remain unchanged;
+two-person admission and actual bag fit are not delivered by this guard alone.
+
 
 ## 5.8.9 - Contamination and hygiene contract (#502)
 

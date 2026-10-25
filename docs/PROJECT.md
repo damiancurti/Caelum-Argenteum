@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.10** — 2026-10-25.
+
+## 5.8.10 - Protect resting tent occupants (#412, in progress)
+
+Tent packing now rejects a resting occupant and rechecks occupancy throughout
+packing and at completion. A late rest pauses work without losing progress or
+the deployed inventory item; packing can resume once the rest ends. The check
+uses bounded player slots and preserves existing recovery, shelter and clock
+restrictions. 30 native assertions cover the guard and old-save/rollback
+continuity; see assets/validation_5810/RESULTS.md. Full sleeping-bag/two-occupant
+rest integration and #410 furniture remain pending. No author acceptance is claimed.
+
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 

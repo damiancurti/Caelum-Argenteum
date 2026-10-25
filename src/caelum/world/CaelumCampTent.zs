@@ -81,6 +81,21 @@ class CaelumDeployedTent : Actor
         return Abs(p.X)<l && Abs(p.Y)<r && p.Z>=-CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU
             && p.Z+body.Height<=top;
     }
+    bool HasRestingOccupant()
+    {
+        // Consulta acotada a las plazas de jugador, también en descanso acelerado.
+        // No recorre actores ni cambia quién tiene permiso para compartir el reloj.
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            if(!playeringame[i])continue;
+            let user=CaelumPlayer(players[i].mo);
+            if(user==null || user.health<=0 || !Covers(user))continue;
+            let rest=CaelumRestState.Get(user);let skip=CaelumTimeSkipState.Get(user);
+            if((rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.OriginMap==level.MapName)
+                || (skip!=null && skip.Active && skip.OriginMap==level.MapName))return true;
+        }
+        return false;
+    }
     bool Reach(CaelumPlayer user)
     {return user!=null && user.Distance3D(self)<=user.UseRange+Radius && user.CheckSight(self,SF_IGNOREVISIBILITY);}
     override bool Used(Actor activator)
@@ -200,6 +215,8 @@ class CaelumCampTask : Inventory
     {
         if(!Available(user) || tent==null || !tent.Ready || !tent.Reach(user) || tent.Item==null
             || !CaelumLockRules.SameTitle(tent.Title,CaelumLockRules.Character(user)))return false;
+        if(tent.HasRestingOccupant())
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_CAMP_REST_OCCUPIED",false));return false;}
         if(!user.CanAddWeightToPersonalInventory(tent.Item.GetUnitWeight()))return false;
         let task=Allocate(user);if(task==null)return false;
         task.Tent=tent;task.Item=tent.Item;task.Anchor=tent;task.Point=tent.Pos;task.Packing=true;
@@ -224,7 +241,7 @@ class CaelumCampTask : Inventory
             && !user.EquipmentMenuOpen && !user.PalomoMerchantMenuOpen
             && user.Distance3D(task.Anchor)<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE
             && user.CheckSight(task.Anchor,SF_IGNOREVISIBILITY)
-            && (task.Packing?task.Tent!=null && task.Item.Owner==task.Tent:
+            && (task.Packing?task.Tent!=null && task.Item.Owner==task.Tent && !task.Tent.HasRestingOccupant():
                 task.Item.Owner==user && !task.Item.InMagicBox && task.Item.Amount==1);
     }
     static bool Complete(CaelumPlayer user)

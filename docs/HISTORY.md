@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.10** — 2026-10-25.
+
+## 5.8.10 - Tent packing occupancy guard (#412), 2026-10-25
+
+Implemented the approved prohibition on dismantling an occupied resting tent.
+Normal and accelerated rest are checked through bounded player slots. Packing
+rejects atomically, pauses for late occupancy and rechecks before returning the
+original item. No saved state, geometry, mass, comfort or clock policy changes.
+30 native assertions pass in assets/validation_5810, including a retained
+enlarged-tent save and rollback with the original package. The race fixture
+injects native rest records; it is not proof of two-player rest admission.
+Static validation and README review accompany the patch. The author is away;
+full bag/furniture/rest integration and eventual author acceptance remain pending.
+
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 

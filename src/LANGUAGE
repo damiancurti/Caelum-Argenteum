@@ -6517,3 +6517,8 @@ CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Ambient contamination: no defined profil
 [es]
 CA_CONTAMINATION_ENVIRONMENT = "Contaminación ambiental: %.1f / 100";
 CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Contaminación ambiental: sin perfil definido.";
+
+[enu default]
+CA_CAMP_REST_OCCUPIED = "Someone is resting inside this tent. Wait until they finish before packing it.";
+[es]
+CA_CAMP_REST_OCCUPIED = "Hay alguien descansando dentro de la carpa. Esperá a que termine antes de desmontarla.";
