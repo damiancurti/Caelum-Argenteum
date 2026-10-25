@@ -102,6 +102,8 @@ class CaelumCombatActor : Actor
     virtual int GetApprovedPersonality(){return -1;}
     virtual int GetApprovedPersonalityRevision(){return CaelumResidentData.REVISION;}
     transient CaelumMixedMeleeDamage PendingMixedMelee;
+    transient CaelumContaminationContactPoint ContaminationBlocker;
+    transient bool ContaminationMeleeActive;
     virtual CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage){return null;}
 
     void EnsureCombatPersonality()
@@ -1497,6 +1499,15 @@ class CaelumCombatActor : Actor
         }
     }
 
+    // El ataque nativo conserva su tipo None; la marca identifica sólo este
+    // contacto síncrono sin reclasificar daño, esquivas ni defensas anteriores.
+    void DeliverContactMelee(int damage,Sound hitSound="")
+    {
+        bool previous=ContaminationMeleeActive;ContaminationMeleeActive=true;
+        A_CustomMeleeAttack(damage,hitSound);
+        ContaminationMeleeActive=previous;
+    }
+
     action void A_CaelumMeleeAttack(int baseDamage,Sound hitSound="weapons/swordhit")
     {
         // Las acciones sin alcance explicito son invocables desde estados de
@@ -1522,7 +1533,7 @@ class CaelumCombatActor : Actor
         { combatActor.PendingCombatCriticalDelivery=false; return; }
         Actor meleeVictim = combatActor.Target;
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
-        combatActor.A_CustomMeleeAttack(
+        combatActor.DeliverContactMelee(
             calculatedDamage,
             hitSound
         );
@@ -1577,7 +1588,7 @@ class CaelumCombatActor : Actor
         Actor meleeVictim = combatActor.Target;
         int victimHealthBefore = meleeVictim != null ? meleeVictim.health : 0;
         combatActor.PendingMixedMelee=combatActor.PrepareMixedMelee(meleeVictim,authoredBaseDamage);
-        combatActor.A_CustomMeleeAttack(
+        combatActor.DeliverContactMelee(
             calculatedDamage,
             "weapons/swordhit"
         );
@@ -3064,7 +3075,12 @@ class CaelumCombatActor : Actor
         damage=CaelumThermalEffects.Incoming(self,inflictor,source,damage,mod);
         let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
         if(mixed!=null)mixed.PrepareFire(self);
+        ContaminationBlocker=null;
         double shieldRetained=ResolveActorShieldDamage(inflictor,source,damage,mod,flags);
+        CaelumContaminationCombat.Hit(self,inflictor,source,mod,flags,
+            PendingLocalizedImpact ? GetArmorSlotForLocation(LastAnatomyLocation) : CaelumConstants.ARMOR_SLOT_BODY,
+            ContaminationBlocker);
+        ContaminationBlocker=null;
 
         if (flags & DMG_EXPLOSION)
         {

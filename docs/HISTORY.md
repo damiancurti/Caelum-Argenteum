@@ -4,6 +4,45 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Combat-contact continuation (2026-10-25, #502): successful native physical melee
+uses the approved0.01m2 impact patch and10 world seconds of contact. The shared
+concentration integration recalculates the ratio throughout that duration;
+the dirtier side remains unchanged and the receiving body scales by80/bodyKg.
+Transfer happens after evasion, before equipment wear, even when defense prevents
+Life loss. A blocking shield/gauntlet receives the contact; otherwise the actual
+struck armor or clothing does, falling back to skin. Player punches use the hands;
+natural NPC melee uses the attacker body; carried NPC weapons retain their native
+item identity. Bullets, missiles, magical damage, explosions, illness, misses and
+successful evasions do not create this melee contact.
+
+Native-delivery detail: GZDoom4.14.2 defaults A_CustomMeleeAttack to None.
+The three authored call sites now mark only their synchronous delivery; receiver
+hooks recognize that mark without changing damage type, costs or existing defense
+routing. Unmarked None damage cannot contaminate. The pre-existing player None
+route does not use directed shield/evasion/armor handling; this patch preserves
+that behavior rather than silently changing combat balance. The shield laboratory
+case explicitly uses directed Melee, while the bite uses the native None route.
+
+Combatants with modeled equipment retain optional contamination states in their
+weapon, shield and four armor slots. These use shared state revision1: absent
+states begin at0 on first use; Ensure is idempotent and preserves recorded values.
+Native items keep their existing authoritative state/copy behavior. No Tick,
+world scan, new damage coefficient, map or art change is introduced. Exact native
+receiver checks, actual sword/natural-attack paths, current saves/hub travel,
+previous-runtime saves/rollback and hygiene regressions are recorded under
+assets/validation_5812/combat. CA502-COMBAT-01 passed author review on2026-10-25.
+This completes this combat slice only: generic actor ambient exposure, continuous
+actor brushing and resident housekeeping remain separate implementation work.
+
+
+Author acceptance,2026-10-25: CA502-COMBAT-01 (origin5.8.12/#502,
+combat-final01, SHA256337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec)
+passed all supplied terminal checks. The author confirmed the results after
+clarification that F2 resets concentrations for each impact and the bite changes
+the receiving body. Retire only this ID; toilet/treatment and unfinished actor
+exposure/household work remain separate.
+
+
 Author acceptance,2026-10-25: CA502-CALENDAR-01 (origin5.8.12/#502, runtime
 0467d34a and live-control correction56d93bbf) passed without qualifications.
 After the agent-operated demonstration, the author confirmed "La prueba dio

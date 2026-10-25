@@ -6115,6 +6115,8 @@ class CaelumPlayer : DoomPlayer
             );
         }
 
+        // Los ataques nativos None no pasan por la defensa dirigida actual.
+        CaelumContaminationCombat.Hit(self,inflictor,source,mod,flags,ResolveIncomingArmorSlot(inflictor,source));
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = 0.0;
         if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
@@ -6504,6 +6506,7 @@ class CaelumPlayer : DoomPlayer
             source
         );
         LastIncomingArmorSlot = ResolveIncomingArmorSlot(inflictor, source);
+        CaelumContaminationCombat.PlayerHit(self,inflictor,source,mod,flags);
         double thermalShield=LastShieldBlockedAttack
             ? 1-Clamp(GetActiveBlockDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL)/100.0,0.0,1.0) : 1;
         CaelumThermalMagic.Impact(self,inflictor,thermalShield*CaelumThermalMagic.ArmorRetention(self,LastIncomingArmorSlot));

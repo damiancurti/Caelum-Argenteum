@@ -11,6 +11,14 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Combat-contact continuation (2026-10-25, #502): native melee now transfers
+contamination between the actual weapon/natural attacker and the struck exterior
+piece or blocking shield, after evasion. Body dose follows mass; non-contact
+attacks do not transmit. NPC modeled gear saves its own clean-start states.
+Evidence: assets/validation_5812/combat. CA502-CALENDAR-01 is author-accepted;
+CA502-COMBAT-01 passed author review on2026-10-25. Actor ambient/solid contact and household cleaning
+remain unfinished; this does not complete #502 or V5.8.
+
 Live demonstration (2026-10-25): the diagnostic menu now handles its F keys and
 shows work/supplies/contamination above the live panel.31 native rechecks pass;
 agent-operated craft/read/existing-wash/no-soap demonstrations pass. The production

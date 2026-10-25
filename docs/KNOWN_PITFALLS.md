@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-165 - Native melee defaults to None; test the delivery path
+
+Status/evidence: ENGINE-VERIFIED; #502,5.8.12,2026-10-25; author review pending.
+Environment: GZDoom4.14.2/Windows11/Vulkan. Evidence: assets/validation_5812/combat.
+
+The engine declaration of A_CustomMeleeAttack defaults its damage type to None.
+Direct diagnostic DamageMobj(...,'Melee') calls therefore do not establish that
+an authored attack follows the same route. Three production NPC call sites omit
+that argument. Existing player None damage bypasses directed defenses; changing
+the argument would also change shield/evasion/armor behavior and needs its own
+review. The contamination adapter instead marks the synchronous native delivery,
+restores its previous mark afterward and rejects unrelated None damage.
+
+Regressions cover a native sword LineAttack, A_CustomMeleeAttack with its original
+None type, explicitly directed shield contact, evasion and unmarked generic damage.
+A friendly diagnostic attacker can fail native melee-range checks against the
+player despite a manually assigned target: use a hostile fixture with autonomous
+AI disabled, rather than replacing the actual attack with direct damage. Wait for
+native PostBeginPlay before testing modeled NPC loadouts (CA-KP-160).
+
 ## CA-KP-164 - Interactive diagnostics must yield and isolate scenario state
 
 Status/evidence: ENGINE-VERIFIED diagnostic correction; author acceptance pending.

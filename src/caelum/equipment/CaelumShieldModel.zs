@@ -2,6 +2,7 @@
 // tier 2; tier 1 subtracts ten points and tier 3 adds ten points.
 class CaelumShieldModel : Object
 {
+    CaelumContaminationState ContaminationState;
     int ShieldType;
     int Tier;
     int Size;
