@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.8** — 2026-10-24.
 
-**5.8.8/#411:** chest geometry 46PASS; tents 112PASS + enlarged 125PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. Placement/4x3m size accepted; model overlay fixed, visual recheck pending; fire/cooking/two-occupant rest pending.
+**5.8.8/#411:** chest geometry 46PASS; tents 112PASS + enlarged 125PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model overlay fix; fire/cooking/two-occupant rest pending.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587. Author away: retain questions/checks until return.
 

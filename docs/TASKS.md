@@ -8,8 +8,7 @@ Actual carried-chest placement now checks dry/stable support, full volume and
 access clearances before mutation. 46 native PASS, including original-save
 load/rollback. CA411-PLACEMENT-01 was accepted on 2026-10-24. Tent deployment, approved land grants, original-item persistence,
 native waiting/acceleration and rain/wind shelter now have separate evidence in
-validation_588/deploy. CA411-TENT-01: enlarged size and behavior accepted2026-10-25;
-legacy/new MODELDEF overlay fixed, only that visual confirmation remains. Remaining: deployed fire,
+validation_588/deploy. CA411-TENT-01 fully accepted2026-10-25: behavior, enlarged size and corrected legacy/new model binding. Remaining: deployed fire,
 heat/cooking, furniture placement and the separate #412 rest integration. No new
 recovery bonus or two-person sleeping layout is claimed.
 

@@ -4,6 +4,14 @@ Documentation version: **5.8.8** — 2026-10-24.
 
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 
+Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)
+passed in full: "Ahora si la carpa quedo bien". This confirms the corrected
+single-model visual in addition to previously accepted behavior and size. Its
+pending entry is removed. Earlier pending/partial notes below record the sequence
+of review, not current status. No runtime changes or repeated native tests are
+needed for this acceptance-only update; README reviewed. Fire and cooking remain
+separate outstanding scope.
+
 Added local full-volume/support/access validation to actual chest placement,
 including liquid terrain and 3D water. Rejection preserves the original carried
 object and contents. Reused sleeping-bag support tolerance and native player
