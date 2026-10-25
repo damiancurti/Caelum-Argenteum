@@ -1,0 +1,3 @@
+Model CaelumDomesticSink { Path "models/caelum/props/bathrooms" Model 0 "sink.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CDSK A 0 0 }
+Model CaelumDomesticBathtub { Path "models/caelum/props/bathrooms" Model 0 "bathtub.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CDBT A 0 0 }
+Model CaelumDomesticToilet { Path "models/caelum/props/bathrooms" Model 0 "toilet.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CDWC A 0 0 }

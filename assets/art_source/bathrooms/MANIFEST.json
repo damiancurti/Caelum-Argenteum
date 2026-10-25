@@ -1,0 +1,122 @@
+{
+  "issue": 410,
+  "exporter": "Pillow 13.0.0",
+  "inputs": {
+    "assets/generators/generate_domestic_bathrooms.py": "6394567b361d3e5b25f33a9765bab33d442e042644df03460c35a1342313859b",
+    "assets/art_source/bathrooms/DATA.json": "dbade2161f955f3a6b7f4972261ab4810584895fc8570ff7a84576623b0bdfe0",
+    "assets/art_source/bathrooms/PROMPTS.json": "ed4b8b7c5b3b5586286f99b060559283713699448836d5635259c095607742bb",
+    "assets/generators/generate_stash_models.py": "c4b31cdcb7293e6a6c40d7ed43a2dc57d71029ddcf194146abf34a4b3cadb77a",
+    "src/models/caelum/props/stash/ca_stash_wood.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "src/models/caelum/props/stash/ca_stash_metal.png": "12dcce7259db39be5b52583c63ec66f24240841b33ae70d985ca416bc158b9fe",
+    "src/models/caelum/props/stash/ca_stash_lock.png": "b5b64919fd56f032ba18c3faab18bbb8be52d411cf7182492f0a056173811ca2",
+    "src/models/caelum/props/stations/ca_station_paper.png": "57f9c8bc7ac9a161b8513abb5c30e28c4d7c300d3a254f5cbf365119d828f8e8",
+    "assets/art_source/bathrooms/enamel-source-v1.png": "3c8913ece0c17abbbaf946b86952ea7d19689a8b767f26e3837a957eff5b8859",
+    "assets/art_source/bathrooms/sink-source-v1.png": "cb77d09ddbeccca759acb95ef62706e0f93898b32e39f5d9899303adc139d647",
+    "assets/art_source/bathrooms/bathtub-source-v2.png": "bba0e77218838e53120b3e532e933f69ca191eaeab4d7a020411ef78bc5bc4b3",
+    "assets/art_source/bathrooms/toilet-source-v1.png": "22be27560a0a9ec0bacb6dcebc01eb7cd9fd0e02e542a416a547f341e138307e"
+  },
+  "outputs": {
+    "src/models/caelum/props/bathrooms/enamel.png": "ecaaeedba39b96f126bcacb14675bed19a46be39371f6b697ffc6ea119ca5df7",
+    "src/models/caelum/props/bathrooms/sink.obj": "d42e6c9f7be6e194f0687bbe19b599cc6670ed84073577c92fb4159bf1b592dd",
+    "src/graphics/caelum/icons/bathrooms/sink.png": "70862ec9f7e26d39a267c3f5e7a77837e52c0f6491ba01965ac51759e8031d46",
+    "src/models/caelum/props/bathrooms/bathtub.obj": "2488f965c71f0723671fd440feca38d565fc5e6f274b42878c27b031bf55c164",
+    "src/graphics/caelum/icons/bathrooms/bathtub.png": "1a02565ec1ebe6e4c2b0b8bbba83afcd20d14696e68adcb72f7e3c2093adfebb",
+    "src/models/caelum/props/bathrooms/toilet.obj": "edafc8d0c0172db13bcd44cd744cd9950829c8dfada350f6367253023d2d7ef6",
+    "src/graphics/caelum/icons/bathrooms/toilet.png": "ebd79fd3a730a5b02944afc75da6bf17fa7cb8c2f9ad42194fb61bc14563a488",
+    "src/caelum/data/domestic_bathrooms.textures": "a6940db2f949e69f70ae249b4373d6cf1de21a32ddf7d4856f7730c5e7fc548f",
+    "src/caelum/data/domestic_bathrooms.modeldef": "ce1532f2d9c1562cc5260fcc2be8b0130f09b227be13b87e97627de9f7948ebe",
+    "src/caelum/data/CaelumDomesticFixtureData.zs": "2b48253d4b9d957599804dd5b1d5b3d65a8b8c377ef9c33d485bdf26bbdb9f7b"
+  },
+  "assets": {
+    "sink": {
+      "vertices": 888,
+      "sprite_scale": 3.7109375,
+      "source_alpha_bounds": [
+        99,
+        23,
+        1266,
+        1183
+      ],
+      "registered_alpha_bounds": [
+        14,
+        10,
+        109,
+        120
+      ],
+      "mesh_bounds_mu": [
+        [
+          -12.8,
+          12.8
+        ],
+        [
+          0.0,
+          32.0
+        ],
+        [
+          -9.120000000000001,
+          9.616
+        ]
+      ]
+    },
+    "bathtub": {
+      "vertices": 1200,
+      "sprite_scale": 3.2083333333333335,
+      "source_alpha_bounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "registered_alpha_bounds": [
+        6,
+        45,
+        122,
+        122
+      ],
+      "mesh_bounds_mu": [
+        [
+          -28.8,
+          28.8
+        ],
+        [
+          0.0,
+          23.552
+        ],
+        [
+          -12.8,
+          12.8
+        ]
+      ]
+    },
+    "toilet": {
+      "vertices": 1368,
+      "sprite_scale": 2.410714285714286,
+      "source_alpha_bounds": [
+        23,
+        24,
+        1024,
+        1496
+      ],
+      "registered_alpha_bounds": [
+        38,
+        6,
+        92,
+        122
+      ],
+      "mesh_bounds_mu": [
+        [
+          -8.32,
+          8.4
+        ],
+        [
+          0,
+          60.8
+        ],
+        [
+          -11.52,
+          10.4
+        ]
+      ]
+    }
+  }
+}

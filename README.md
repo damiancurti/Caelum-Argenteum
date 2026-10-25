@@ -6,8 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.9.** Obtain and update the complete repository, validate
+**Current release: 5.8.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.11 - Domestic bathroom assets (#410, in progress)
+
+Original painted sink, bathtub and high-cistern toilet sprites, three deterministic world meshes and an ivory enamel material are prepared for the existing house bathrooms. Sources, exact prompts and generated hashes are retained. Runtime household-water integration and author visual acceptance follow separately; #410 and V5.8 remain incomplete.
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 

@@ -1,6 +1,12 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.11** — 2026-10-25.
+
+## 5.8.11 - Domestic bathrooms (#410, in progress), 2026-10-25
+
+Original painted sink, bathtub and high-cistern toilet sprites, three deterministic world meshes and an ivory enamel material are prepared for the existing house bathrooms. Sources, exact prompts and generated hashes are retained. Runtime household-water integration and author visual acceptance follow separately; #410 and V5.8 remain incomplete.
+
+The author delegated dimensions/material calculations for furniture. This asset commit preserves accepted artwork and changes no map geometry. README reviewed. Water/session behavior is not claimed by the art stage.
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 

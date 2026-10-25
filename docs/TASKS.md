@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.11** — 2026-10-25.
+
+## 5.8.11 / #410 - Domestic bathrooms
+
+Prepared: three original fixture sprites/models and generated placement data. Next: fixed installation in existing house bathroom rooms, independent200-L reserves,1L/world-minute refill, native save/hub/legacy/collision evidence and author terminal. Toilets/bathing/metabolic effects remain #502; the wider food/furniture catalogue remains unfinished.
 
 ## 5.8.9 - Contamination expansion (#502, in progress)
 
