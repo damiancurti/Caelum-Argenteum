@@ -21,6 +21,12 @@ Engine checks remain separate from author acceptance; #410 and V5.8 stay open.
 
 ## 5.8.17 - Kitchen ingredients (#410)
 
+Final author acceptance, 2026-10-26: CA410-INGREDIENTS-01 (origin 5.8.17/#410)
+passed in full. The author confirmed the three supplied checks passed,
+without qualifications. This entry is retired from pending_test.txt.
+Runtime and release are unchanged; no new native run is claimed for this
+acceptance-only update. The remaining issue scope is still open.
+
 The approved flour, raw beef, raw white fish, vegetable mix and culinary salt
 are integrated into Provisions as gram-based materials. Raw meat, fish
 and vegetables use full 100-g portions and the approved distinct nutrition.
@@ -31,11 +37,18 @@ sources and exact built-in imagegen prompts retained. Technical packing only
 crops/masks/resizes the retained sources; no existing art is replaced.
 Native checks: 174 executed PASS / zero FAIL in 21 selected runs; paired
 digestion, old-save rollback and 500-stack timing also pass within their recorded
-limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 awaits author
-corroboration. Cooking/proofing, finished dishes and remaining furniture are
+limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 passed author
+acceptance on 2026-10-26, without qualifications. Cooking/proofing, finished
+dishes and remaining furniture were
 still unfinished #410 work.
 
 ## 5.8.16 - Non-solid physical scenery exposure (#502)
+
+Final author acceptance, 2026-10-26: CA502-SCENERY-01 (origin 5.8.16/#502)
+passed in full. The author confirmed the three supplied checks passed,
+without qualifications. This entry is retired from pending_test.txt.
+Runtime and release are unchanged; no new native run is claimed for this
+acceptance-only update. The remaining issue scope is still open.
 
 Mansion shrubs, decorative cave gems and shop signs now use an explicit physical
 scenery type. They receive the existing ambient exposure and rain washing without
@@ -49,8 +62,8 @@ All 16,919 current03 package members match source. With 1,000 peaceful non-solid
 objects, callback p99 was 17.2022 ms before and 18.1962 ms after; 700 simulation
 tics completed in about 20 s. These callbacks are not measured displayed frames;
 PresentMon capture was unavailable. See assets/validation_5816/RESULTS.md.
-CA502-SCENERY-01 remains pending; manual handoff is deferred while the author is
-away. Other adapters, stackable items and unloaded history remain open in #502.
+CA502-SCENERY-01 passed author acceptance on 2026-10-26, without qualifications.
+Other adapters, stackable items and unloaded history remain open in #502.
 This patch does not complete V5.8.
 
 ## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26

@@ -15,7 +15,7 @@ The dishes' depicted plates/bowl are presentation, not additional container item
 Agent visual review is recorded in assets/validation_5818; author acceptance
 remains CA410-MEALS-01. No accepted ration/ingredient artwork was replaced.
 
-## 5.8.17 - Painted kitchen ingredient candidates (#410)
+## 5.8.17 - Accepted painted kitchen ingredients (#410)
 
 Five original built-in imagegen sources: flour, raw beef, raw hake fillet,
 vegetable mix (potato, squash, carrot, sweetcorn), and culinary salt. Prompts,
@@ -28,7 +28,7 @@ sprites. This is authorized technical processing under SPRITE_ART_DIRECTION.
 The unselected fish edit remains as source evidence. Model art is not introduced.
 The deterministic exporter produced identical bytes twice. Agent review of the
 contact sheet and native Spanish/English inventory/quick-use captures passes;
-author visual corroboration remains pending as CA410-INGREDIENTS-01.
+author visual check CA410-INGREDIENTS-01 passed on 2026-10-26, without qualifications.
 
 
 ## 5.8.14 - Ration lot presentation (#410)

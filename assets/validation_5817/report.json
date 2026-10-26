@@ -219,5 +219,14 @@
     "control_drain": -0.30048254,
     "passed": true
   },
-  "author_acceptance": "Pending CA410-INGREDIENTS-01; physical key receipt and art await author"
+  "author_acceptance": "Passed CA410-INGREDIENTS-01 on 2026-10-26 without qualifications; runtime unchanged.",
+  "author_confirmation": {
+    "date": "2026-10-26",
+    "check": "CA410-INGREDIENTS-01",
+    "origin_version": "5.8.17",
+    "issue": 410,
+    "result": "passed",
+    "qualifications": [],
+    "new_native_runs": 0
+  }
 }
