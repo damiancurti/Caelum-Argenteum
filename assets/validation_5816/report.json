@@ -1,0 +1,63 @@
+{
+  "version": "5.8.16",
+  "runtime": "current03",
+  "sha256": "55fd9270df6d696d22113496aa53fbc3d83fabb8f628fa34c2e6d35a28439ef2",
+  "source_matching_members": 16919,
+  "runs": [
+    {
+      "label": "scenery-core-final01",
+      "executed_pass": 65,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-before-01",
+      "executed_pass": 30,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-seed-01",
+      "executed_pass": 1,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-load-01",
+      "executed_pass": 25,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-oldseed-01",
+      "executed_pass": 1,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-load-final01",
+      "executed_pass": 25,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-rollback-01",
+      "executed_pass": 18,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-regression-01",
+      "executed_pass": 42,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-city-census01",
+      "executed_pass": 1,
+      "executed_fail": 0
+    },
+    {
+      "label": "scenery-manual-check02",
+      "executed_pass": 24,
+      "executed_fail": 0
+    }
+  ],
+  "executed_pass": 232,
+  "executed_fail": 0,
+  "author_acceptance": "pending",
+  "ui_input": "Direct native commands and rendered readings pass. Desktop key injection did not establish receipt; no physical-key acceptance claimed.",
+  "production_delta_from_behavior_and_performance_runtime": "current02 to current03 changes only Spanish comment encoding in the fieldless CaelumPhysicalScenery type."
+}

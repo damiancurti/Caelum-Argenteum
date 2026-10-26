@@ -1,4 +1,4 @@
-// Decoraci?n f?sica persistente sin exigir SOLID. Esta identidad tipada evita
-// tratar c?maras, marcadores, chispas y efectos gr?ficos como objetos sucios.
-// No a?ade radio, altura, colisi?n, Tick ni estado nuevo a sus descendientes.
+// Decoración física persistente sin exigir SOLID. Esta identidad tipada evita
+// tratar cámaras, marcadores, chispas y efectos gráficos como objetos sucios.
+// No añade radio, altura, colisión, Tick ni estado nuevo a sus descendientes.
 class CaelumPhysicalScenery : Actor abstract {}

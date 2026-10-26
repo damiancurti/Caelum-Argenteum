@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.16** - 2026-10-26.
 
-**5.8.16/#502:**non-solid-scenery exposure;validation_5816;native-WIP.
+**5.8.16/#502:**scenery exposure;232PASS;validation_5816;CA502-SCENERY-01pending.
 
 **5.8.15/#412:**outside-Use/rest/exit;73PASS;validation_5815;accepted2026-10-26. Co-op:V5.12. #410lots/#411trivet/#502checks:accepted;PR508/507/506.
 
