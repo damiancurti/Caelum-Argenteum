@@ -59,3 +59,36 @@ fresh immutable runtime, then use `run_native.ps1` with the named scripts from
 `prepare.py`. Legacy checks use `legacy-checks.pk3`; the previous complete
 runtime is needed for the genuine save/rollback. `performance.py` accepts the
 runtime directory and a new label; add `--camp` for the new rendered fire.
+
+## Author-launch correction, 2026-10-26
+
+The original exact manual script failed to seed and retained engine defaults. The corrected manual script queries all six intended bindings and seeds 20 kg wood plus the original filled pot.
+
+Native startup evidence: `native/bindings-fixed-smoke-05.txt` and
+`native/bindings-ready-live-06.txt`, with separate command/environment records.
+The exact interactive entry reaches the readiness marker; the launcher now
+waits for it and reports failure instead of silently handing off an unseeded
+scene. The frozen gameplay package is unchanged. This startup evidence is
+separate from the original gameplay assertion counts.
+
+Remote desktop key injection did not reach GZDoom. Native binding queries and
+scripted commands are agent evidence; physical-key author check CA411-FIRE-01
+remains pending. No author pass is inferred from fixing the launcher.
+
+## Integral trivet correction, 2026-10-26
+
+Author approved the original functional checks, requesting a support beneath the
+pot. Approved support: 32 cm ring, three 50 cm legs, 10 mm iron rod, 1.6 kg
+including joints. Empty carried/recipe mass becomes 7.1 kg. Catalogue revision3
+updates both pot and recipe prices idempotently, without replenishing sold stock
+or resetting current production. The vessel retains its own 5.5 kg thermal mass.
+
+Runtime trivet01 SHA256:
+`d274e94ed25febbee3885c5b17b3c5833de35f88a76e33630e8c00e9655f600d`.
+All 16,914 members match source. Pot checks16 PASS; catalogue3 PASS;
+previous native pot save6 PASS; original-package rollback6 PASS; zero FAIL.
+Capture initialization3 PASS is separate from these31 behavior assertions.
+The ten regenerated meshes are byte-identical. Agent inspected the native
+mounted-pot capture: pot supported above the wood, original owned textures.
+Original functional acceptance is recorded; corrected visual/mass/recipe remain
+for author corroboration. No map geometry or persisted pot fields changed.

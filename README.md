@@ -37,7 +37,10 @@ Only biological contamination is removed by a completed boil. Camp cooking
 recipes still depend on the unfinished #410 food/cooking integration.
 
 Native checks, persistence and rendering evidence: assets/validation_5813.
-CA411-FIRE-01 is pending author review; this does not complete #411 or V5.8.
+CA411-FIRE-01 functions passed author review; integral-trivet correction remains
+pending. The approved empty pot and support weigh 7.1 kg. #411/V5.8 stay open.
+The author launcher now verifies that its scenario and diagnostic controls load.
+F1-F4 and the normal Tab/T controls are recorded in the native startup log.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
@@ -226,7 +229,7 @@ Save/load retains partial progress; map departure cancels it. Independent wait
 forecasts include completion and same-tic nutrition credit without changing live
 resources. Existing unsupported-effect forecast guards remain in force.
 Static validation and55 native checks pass;16,885 package members match src.
-Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
+Evidence: assets/validation_5812. CA502-TOILET-01 passed author review on 2026-10-26.
 Calendar-triggered sleep cleaning, supported contacts and loaded-house cleaning
 are delivered by the continuations above; remaining #502 scope stays in TASKS. V5.8 remains incomplete.
 
@@ -329,8 +332,7 @@ Medkits and hot, active-yerba mate now remove one contamination degree per
 follows recovery pulses and preserves fractional doses; washed/cold mate and
 Anima/energy items do not cleanse. Natural regeneration retains its own rate.
 Native treatment checks: 31 executed PASS; save/hub and prior-save
-coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
-acceptance.
+coverage in assets/validation_589/treatment. CA502-TREATMENT-01 passed author review on 2026-10-26.
 
 The ambient rain reduction is integrated into actual player/equipment exposure,
 the World journal and independent waiting forecasts. It subtracts the approved

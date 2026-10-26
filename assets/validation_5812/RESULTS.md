@@ -33,3 +33,7 @@ household state. These functional tests do not establish presentation FPS.
 
 Soap baths, equipment cleaning, solid/combat contamination contacts, surface rain
 washing and NPC domestic routines remain outside this delivered interaction.
+
+Author confirmation, 2026-10-26: CA502-TOILET-01 and inherited
+CA502-TREATMENT-01 both passed all supplied checks without qualifications.
+Their originating releases/results are recorded in HISTORY. Runtime unchanged.

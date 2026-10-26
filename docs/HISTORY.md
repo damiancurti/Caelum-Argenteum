@@ -43,6 +43,12 @@ Remaining #410: new food catalogue, recipes/proofing/cooking and furniture.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 
+Author result, 2026-10-26: CA411-FIRE-01 passed the supplied functional checks;
+the author requested an integral trivet beneath the pot. Approved ring diameter
+0.32 m, three 0.50 m legs, 0.010 m iron rod and 1.6 kg support: 7.1 kg total
+empty pot/recipe mass, price derived normally. The corrected visual, carried
+mass and catalogue migration remain pending author confirmation.
+
 Implemented the author's approved 10 kg wood capacity, one-minute assembly and
 dismantling, immediate extinguishing, recovery of unburned wood and departure
 extinguishing without off-map fuel consumption. Native pot identity, volume,
@@ -60,9 +66,20 @@ Art is delivered separately in the same focused issue: original log/iron-pot
 meshes and flame variations reuse owned textures; no campaign map changes.
 Evidence: assets/validation_5813/RESULTS.md. Static/native checks and agent visual
 inspection are distinct from CA411-FIRE-01, still pending author confirmation.
-The author is away; no author pass, issue closure or V5.8 completion is inferred.
+On return, the author reported inactive diagnostic keys. The original manual
+startup reproduced missing fixture setup and default engine bindings. Flattening
+the canonical control commands into the manual script, before its delayed setup,
+restored both. The launcher now checks readiness before handing off. Native
+binding queries and a manual-script smoke run pass; remote desktop key injection
+did not reach GZDoom. CA411-FIRE-01 remains pending physical-key author review.
+No gameplay package, balance, artwork or save format changed in this correction.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
+
+Author acceptance, 2026-10-26: CA502-TOILET-01 (origin 5.8.12/#502)
+passed every supplied author-terminal check, without qualifications. The author
+confirmed all #502 checks passed. The entry is retired; the tested runtime is
+unchanged. Remaining unloaded-world and object/contact integrations stay open.
 
 Author acceptance,2026-10-25: CA502-HOUSEKEEPING-01 (origin5.8.12/#502,
 domestic-final02) passed without reported qualifications: "La prueba dio correcta,
@@ -452,6 +469,10 @@ Failed probes and their corrected evidence remain in validation_5811. The old
 save loads with the original package for rollback. No FPS claim is made.
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
+
+Author acceptance, 2026-10-26: CA502-TREATMENT-01 (origin 5.8.9/#502)
+passed all supplied medkit/mate checks, including cleansing at full Life. No
+qualifications were reported. The entry is retired; treatment01 is unchanged.
 
 Author confirmation,2026-10-25: CA502-WASH-01 (origin5.8.9/#502) passed
 all checks in the most recent immersion-washing terminal, without qualifications.
