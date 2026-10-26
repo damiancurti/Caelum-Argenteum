@@ -8,7 +8,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25, baseline c6508075.
 Environment: GZDoom4.14.2/Windows11/Vulkan,1280x720; evidence:
-assets/validation_5812/contact. Author check CA502-CONTACT-01 pending.
+assets/validation_5812/contact. Author check CA502-CONTACT-01 accepted2026-10-25.
 
 Active/passive native collision callbacks can report the same pair repeatedly.
 Create one shared saved link and update it once from elapsed world time; a brief

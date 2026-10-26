@@ -36,6 +36,6 @@ for label in ['contact-core01','contact-core02','contact-core03','contact-core04
 report={'runtime':'contact-final01','runtime_sha256':digest(runtime),'source_identical_members':members,
         'unchanged_maps':len(maps),'unchanged_art_members':len(art),'runs':runs,
         'executed_passes':sum(r['passed'] for r in runs),'failures':0,'performance':perf,
-        'author_acceptance':'CA502-CONTACT-01 pending; NPC, combat and calendar author acceptance retained.'}
+        'author_acceptance':'CA502-CONTACT-01 accepted 2026-10-25; NPC, combat and calendar acceptance retained.'}
 (out/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({k:report[k] for k in ['executed_passes','failures','runtime_sha256','source_identical_members','unchanged_maps','unchanged_art_members']}))

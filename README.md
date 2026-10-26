@@ -16,7 +16,7 @@ now create one shared, saved contact per touching pair. Brushing exposes the
 outer garment/armor or bare body, using the approved contact areas and world
 clock. Separation stops transfer; repeated active/passive callbacks cannot
 charge twice. Generic solid objects retain received contamination. Evidence:
-assets/validation_5812/contact; author check CA502-CONTACT-01 remains pending.
+assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
 Generic ambient exposure, unloaded-map history and resident housekeeping remain
 unfinished; this is not completion of #502 or V5.8.
 

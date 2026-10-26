@@ -236,5 +236,5 @@
       "note": "Peaceful 1,000-body / 500 native contact pairs. AI, thermal and movement disabled; contact Thinkers remain active. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges."
     }
   ],
-  "author_acceptance": "CA502-CONTACT-01 pending; NPC, combat and calendar author acceptance retained."
+  "author_acceptance": "CA502-CONTACT-01 accepted 2026-10-25; NPC, combat and calendar acceptance retained."
 }

@@ -2,7 +2,8 @@
 
 2026-10-25. Branch feat/issue502-hygiene-actions, PR506, baseline c6508075.
 This delivers collision-driven continuous contact; it does not complete #502.
-Author acceptance: CA502-CONTACT-01 pending. NPC/combat/calendar acceptance stands.
+Author acceptance: CA502-CONTACT-01 accepted2026-10-25 without reported qualifications.
+NPC/combat/calendar acceptance stands.
 
 Runtime contact-final01 SHA256:
 `47cac19a6c1604633ff6e20ab8b81041836d657617d6ba65320343d5d7bc4bb9`.
