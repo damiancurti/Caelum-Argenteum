@@ -63,3 +63,18 @@ the final bilingual two-line version was inspected and fits.
 Reproduce with `prepare.py`, `run_native.ps1` and `collect.py`. Run native
 sessions serially and never rewrite an open fixture PK3. Runtime/fixtures,
 engine and IWAD hashes, commands, machine and configuration are in `native/`.
+
+## Author-launch correction, 2026-10-26
+
+The corrected manual script queries all six intended bindings, seeds six portions in two lots, consumes the oldest portion (six to five; 48-point reference dose at the fixture mass) and advances oldest food contamination from 30 to 45.
+
+Native startup evidence: `native/bindings-fixed-smoke-01.txt` and
+`native/bindings-ready-live-02.txt`, with separate command/environment records.
+The exact interactive entry reaches the readiness marker; the launcher now
+waits for it and reports failure instead of silently handing off an unseeded
+scene. The frozen gameplay package is unchanged. This startup evidence is
+separate from the original gameplay assertion counts.
+
+Remote desktop key injection did not reach GZDoom. Native binding queries and
+scripted commands are agent evidence; physical-key author check CA410-FOOD-01
+remains pending. No author pass is inferred from fixing the launcher.

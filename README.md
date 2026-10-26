@@ -11,6 +11,9 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.14 - Native ration lots (#410, in progress)
 
+The author launcher verifies scenario/control readiness; F1-F4 and Tab/T are
+loaded directly from the canonical controls and recorded in its native log.
+
 Existing 200 g rations now retain separate contamination lots in native
 inventories, the Box, dropped items, tables and coffers. World time ages them
 with storage temperature/humidity, including unloaded-storage climate replay;

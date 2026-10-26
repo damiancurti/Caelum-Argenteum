@@ -4,6 +4,13 @@ Documentation version: **5.8.14** - 2026-10-26.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 
+The author reported inactive test keys on return. The manual launcher now
+inlines canonical controls before delayed setup, avoiding its nested exec,
+and checks readiness before handoff. Native queries verify F1-F4 and Tab/T;
+the same script seeds six rations, consumes the oldest and advances food age.
+Remote key injection did not reach GZDoom; CA410-FOOD-01 still needs the author's
+physical-key check. This correction changes no gameplay package or save format.
+
 Connected the accepted lot model to native ration quantities, pickup/toss/copy,
 container transactions, table meals, commercial transactions, journey commits
 and wait forecasts. Old quantities and Box placement migrate fresh without
