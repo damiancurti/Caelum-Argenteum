@@ -3,6 +3,7 @@ class CaelumContaminationState : Object play
 {
     int Revision;
     double Concentration;
+    CaelumContaminationObject Exposure;
 
     void Ensure()
     {

@@ -4,14 +4,23 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Object-exposure continuation (2026-10-25, #502): physical scenery and loose
+native equipment now receive ambient contamination and repeating rain washing.
+Objects retain their concentration through pickup, storage, saves and hub travel;
+occupied chairs remain exposed when temporarily lending their collision. Spawn
+registration and staggered per-object clocks replace any routine world scan.
+Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
+Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+remain unfinished; this continuation does not complete #502 or V5.8.
+
 Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
 now create one shared, saved contact per touching pair. Brushing exposes the
 outer garment/armor or bare body, using the approved contact areas and world
 clock. Separation stops transfer; repeated active/passive callbacks cannot
 charge twice. Generic solid objects retain received contamination. Evidence:
 assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
-Generic ambient exposure, unloaded-map history and resident housekeeping remain
-unfinished; this is not completion of #502 or V5.8.
+Object ambient exposure is delivered above; unloaded-map history and resident
+housekeeping remain unfinished. This is not completion of #502 or V5.8.
 
 NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
 thermal system now share the player's environmental/equipment/immersion balance.
@@ -19,7 +28,7 @@ The existing staggered thermal clock drives exposure, including accelerated
 world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
-CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
+CA502-NPC-01 passed author review on2026-10-25. Generic solid-object/loose-equipment exposure is delivered above;
 unloaded-map exposure and resident housekeeping remain
 unfinished; this continuation does not complete #502 or V5.8.
 

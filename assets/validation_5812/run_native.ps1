@@ -100,6 +100,6 @@ $record.finished_utc = [DateTime]::UtcNow.ToString('o')
 $record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
 if ($record.exit_code -ne 0 -or $record.timed_out) { throw "Native run failed: $Label" }
 $log = Get-Content -LiteralPath "$work\$Label.txt"
-$log | Select-String 'CA502[HMNC] (FAIL|RESULT|PERSIST|LEGACY|CARDINAL)|Script error|Error|Warning|VM execution aborted'
-if ($log | Select-String 'CA502[HMNC] FAIL|Script error|VM execution aborted|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game') { throw "Native assertions, VM or save loading failed: $Label" }
-if ($Checks -and !($log | Select-String 'CA502[HMNC] (RESULT|LEGACY)')) { throw "Expected native checks did not execute: $Label" }
+$log | Select-String 'CA502[HMNCO] (FAIL|RESULT|PERSIST|LEGACY|CARDINAL)|Script error|Error|Warning|VM execution aborted'
+if ($log | Select-String 'CA502[HMNCO] FAIL|Script error|VM execution aborted|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game') { throw "Native assertions, VM or save loading failed: $Label" }
+if ($Checks -and !($log | Select-String 'CA502[HMNCO] (RESULT|LEGACY)')) { throw "Expected native checks did not execute: $Label" }

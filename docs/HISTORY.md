@@ -4,6 +4,31 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance, 2026-10-25: CA502-OBJECTS-01 (origin 5.8.12/#502,
+objects-final02, SHA256 01cf3d99bd62b2ba27906448d092b168707ce382e0f0c04a55f572d64328e2bf)
+passed without reported qualifications. The author confirmed "La prueba dio
+correcto, sigue con el resto." Only this check is retired; treatment/toilet
+remain separately pending. The later objects-final03 repairs Spanish comment
+encoding only; executable text and all other package members match the accepted
+build, and its separate native startup passes. No version increment is required
+for this continuation/acceptance of the same patch.
+
+Object verification: 165 executed PASS/0 FAIL across 15 selected native runs,
+including current/prior saves, hub return, rollback and contact/NPC/melee/calendar
+regressions. All 16,897 delivered members match source, with maps/art unchanged.
+The peaceful 1,000-object comparison and MAP03 census are documented with their
+measurement limits in assets/validation_5812/objects/RESULTS.md and CA-KP-168.
+Renderer callbacks do not establish displayed-frame or campaign FPS acceptance.
+
+Object-exposure continuation (2026-10-25, #502): physical scenery and loose
+native equipment now receive ambient contamination and repeating rain washing.
+Objects retain their concentration through pickup, storage, saves and hub travel;
+occupied chairs remain exposed when temporarily lending their collision. Spawn
+registration and staggered per-object clocks replace any routine world scan.
+Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
+Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+remain unfinished; this continuation does not complete #502 or V5.8.
+
 Author acceptance,2026-10-25: CA502-CONTACT-01 (origin5.8.12/#502,
 contact-final01, commit14924f65) passed without reported qualifications. The
 author confirmed "La prueba dio correcto, sigue con el resto." Retire only

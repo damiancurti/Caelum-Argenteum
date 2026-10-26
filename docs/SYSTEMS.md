@@ -4,14 +4,54 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Object-exposure continuation (2026-10-25, #502): physical scenery and loose
+native equipment now receive ambient contamination and repeating rain washing.
+Objects retain their concentration through pickup, storage, saves and hub travel;
+occupied chairs remain exposed when temporarily lending their collision. Spawn
+registration and staggered per-object clocks replace any routine world scan.
+Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
+Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+remain unfinished; this continuation does not complete #502 or V5.8.
+
+Physical objects use their collision-cylinder exterior; native weapons, shields,
+armor and clothing use the approved type/size surfaces. Current or default solid
+actors qualify, excluding players, combat actors, missiles and inventory owned
+by another actor. Bodies retain their accepted thermal adapter. Non-solid
+scenery and stackable pickups still require their own identity/storage handling.
+Rain affects uncovered objects, with the same approved10-20 degrees per30 world
+minutes; exposure and washing are integrated simultaneously. Small objects may
+converge below ambient when washing exceeds exposure. The ratio floor, bounds,
+source retention and repeated washing remain unchanged. Shelter, weather and
+active climate seals are sampled through the existing shared climate service.
+
+Each eligible object has one revision1 map-local Thinker referenced by its
+persistent concentration record. Creation is event-driven, with one idempotent
+actor census per WorldLoaded for previous maps/saves. That exception is owned by
+CaelumContaminationWorld, bounded by the loaded native actor population, and
+measured in the evidence; it is never a routine per-tic or per-recipient scan.
+Updates are staggered at the existing one-real-second NPC cadence and integrate
+elapsed world seconds with coefficients held over that interval. Visibility
+never suspends exposure. Ownership transfer closes the remaining exposed interval
+and releases the map scheduler; owned inventory uses its existing body/storage
+rules. Tossing preserves dirt and registers a new local clock. Copies do not
+share schedulers. Destroyed actors release their nodes without accessing dead
+inventories; occupied furniture retains its physical classification.
+
+Concentration schema1 remains additive; missing object schedulers initialize
+clean only when no prior concentration exists. New optional node revision1 and
+transient clock caches rebase on load/hub return without charging unobserved map
+absence. The original save/package remains usable for rollback. Historical
+unloaded-map exposure and continuous contact without native collision registration
+remain separate unfinished work. No recipe, balance value, map or art changes.
+
 Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
 now create one shared, saved contact per touching pair. Brushing exposes the
 outer garment/armor or bare body, using the approved contact areas and world
 clock. Separation stops transfer; repeated active/passive callbacks cannot
 charge twice. Generic solid objects retain received contamination. Evidence:
 assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
-Generic ambient exposure, unloaded-map history and resident housekeeping remain
-unfinished; this is not completion of #502 or V5.8.
+Object ambient exposure is delivered above; unloaded-map history and resident
+housekeeping remain unfinished. This is not completion of #502 or V5.8.
 
 Contact pairs are registered by native CollidedWith callbacks, shared by both
 participating player/NPC lists, and updated only while active. There is no world
@@ -42,7 +82,7 @@ The existing staggered thermal clock drives exposure, including accelerated
 world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
-CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
+CA502-NPC-01 passed author review on2026-10-25. Generic solid-object/loose-equipment exposure is delivered above;
 unloaded-map exposure and resident housekeeping remain
 unfinished; this continuation does not complete #502 or V5.8.
 

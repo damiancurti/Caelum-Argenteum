@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-168 - World-object exposure must follow native inventory ownership
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.
+Environment: GZDoom 4.14.2/Windows 11/Vulkan, 1280x720; evidence:
+assets/validation_5812/objects. CA502-OBJECTS-01 accepted on 2026-10-25.
+
+A map-local exposure node must close elapsed time before CreateCopy or
+AttachToOwner, leave owned/Box storage, and re-register on native tossing.
+Copy concentration without copying its scheduler. Guard bDestroyed before
+inventory lookup during teardown. A seated chair temporarily loses collision,
+so its current solid flag alone cannot define physical exposure eligibility;
+use its native class default as well. Test these native transitions rather
+than only calling the mathematical model or assigning Owner in fixtures.
+
+Spawn events and a shared weather service maintain staggered local nodes.
+One CaelumContaminationWorld census at WorldLoaded repairs legacy/map actors;
+its correctness need is attaching previously unregistered physical objects.
+The bound is the loaded native actor population, not each visible subset.
+Measured initial registration: 1,019 actors/1,000 nodes, 0.9535 ms; idempotent
+MAP03 census: 3,738 actors/1,518 nodes, 0.7785 ms. This exception does not
+authorize recurrent per-tic/per-recipient scans or imply a universal cost bound.
+
+The matched peaceful 1,000-object renderer comparison recorded baseline/final
+p95 17.157/17.385 ms, p99 17.443/17.892 ms, worst 17.747/18.883 ms; both samples
+contain 1,199 callbacks and 700 tics. PresentMon trace access was denied.
+Do not infer displayed-frame or whole-campaign performance from those callbacks.
+Elapsed clocks rebase on load/hub return: preserving concentration does not
+implement historical exposure in unloaded maps. Keep that limitation explicit.
+
 ## CA-KP-167 - Continuous native contacts need shared ownership and elapsed clocks
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25, baseline c6508075.
