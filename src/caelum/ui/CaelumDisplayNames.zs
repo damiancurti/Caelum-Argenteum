@@ -68,6 +68,7 @@ class CaelumDisplayNames : Object
 
     static clearscope String GetConsumableKey(int consumableType)
     {
+        if(CaelumMealData.IsMeal(consumableType))return CaelumMealData.NameKey(consumableType);
         if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.NameKey(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.NameKey(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == 5) return "CA_WATER_BOTTLE_SMALL";

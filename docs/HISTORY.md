@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.17** - 2026-10-26.
+Documentation version: **5.8.18** - 2026-10-26.
+
+## 5.8.18 - Prepared meal items and consumption (#410)
+
+Bread, roast beef, roast white fish and puchero now have distinct 100-g native
+portions, painted inventory/world sprites, approved nutrition and food-lot
+ageing. Inventory use, dining tables, waiting and travel preserve the selected
+meal's dose; travel water intake retains its independent existing calculation.
+The four items retain their identity and contamination through transfers,
+saves and hub travel. Their prices use approved ingredients and fuel plus 25%.
+
+This is the consumable integration slice: kitchen stations, attended cooking,
+proofing and campaign acquisition remain unfinished. No prepared-meal stock or
+recipe access was invented. Evidence: assets/validation_5818. Author visual and
+interaction corroboration is pending as CA410-MEALS-01; earlier outstanding
+checks remain in pending_test.txt. Native evidence: 291 executed PASS / zero FAIL in 21 selected runs; four
+matched-control nutrition comparisons also pass. Static validation passes.
+Engine checks remain separate from author acceptance; #410 and V5.8 stay open.
 
 ## 5.8.17 - Kitchen ingredients (#410)
 

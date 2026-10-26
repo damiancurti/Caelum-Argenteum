@@ -6726,3 +6726,14 @@ CA_KITCHEN_FISH = "Pescado blanco crudo";
 CA_KITCHEN_VEGETABLES = "Mezcla de verduras";
 CA_KITCHEN_SALT = "Sal de cocina";
 CA_QUICK_INGREDIENT_GRAMS = "%d g · %d g por uso";
+
+[enu default]
+CA_MEAL_BREAD = "Bread";
+CA_MEAL_ROAST_BEEF = "Roast beef";
+CA_MEAL_ROAST_FISH = "Roast white fish";
+CA_MEAL_PUCHERO = "Puchero";
+[es]
+CA_MEAL_BREAD = "Pan";
+CA_MEAL_ROAST_BEEF = "Carne asada";
+CA_MEAL_ROAST_FISH = "Pescado asado";
+CA_MEAL_PUCHERO = "Puchero";

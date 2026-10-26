@@ -1267,6 +1267,10 @@ class CaelumJournalOverlay : EventHandler
                 && CaelumMateData.IsConsumable(localPlayer.FormalInventoryRowType[row]))
                 DrawTexture(CaelumMateCrafting.Icon(localPlayer.FormalInventoryRowType[row]-CaelumMateData.FIRST_CONSUMABLE),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+                && CaelumMealData.IsMeal(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumMealData.Icon(localPlayer.FormalInventoryRowType[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
             else if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
                 DrawTexture(CaelumMaterialPickup.GetMaterialIconPathForType(
                     localPlayer.FormalInventoryRowType[row]),

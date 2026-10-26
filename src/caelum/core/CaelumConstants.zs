@@ -1090,7 +1090,7 @@ class CaelumConstants : Object
     const CONSUMABLE_LIFE_LARGE = 14;
     const CONSUMABLE_ANIMA_LARGE = 15;
     const CONSUMABLE_ENERGY_LARGE = 16;
-    const CONSUMABLE_TYPE_COUNT = CaelumCampData.POT_CONSUMABLE + 1;
+    const CONSUMABLE_TYPE_COUNT = CaelumMealData.FIRST_CONSUMABLE + CaelumMealData.COUNT;
     const CONSUMABLE_POTION_WEIGHT = 0.25;
     const CONSUMABLE_RATION_WEIGHT = 0.20;
     // M corporal de referencia: masa base tier 5 (80 kg), no el perfil debug.

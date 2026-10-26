@@ -47,6 +47,7 @@ class CaelumConsumableItem : PowerupGiver
 
     Name GetPowerClassName()
     {
+        if(CaelumMealData.IsMeal(GetConsumableType()))return 'CaelumHungerRegeneration';
         switch (CaelumPotionRules.Family(GetConsumableType()))
         {
             case CaelumConstants.CONSUMABLE_ANIMA_POTION:
@@ -64,6 +65,7 @@ class CaelumConsumableItem : PowerupGiver
 
     static clearscope double UnitWeightForType(int consumableType)
     {
+        if(CaelumMealData.IsMeal(consumableType))return CaelumMealData.PORTION_KG;
         if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.POT_KG;
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.EmptyMass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if (consumableType == CaelumConstants.CONSUMABLE_WATER_RATION)
@@ -121,6 +123,13 @@ class CaelumConsumableItem : PowerupGiver
                         power.FoodRecoveryPerPulse = CaelumConstants.SURVIVAL_MAXIMUM
                             * CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND
                             * CaelumConstants.RATION_REFERENCE_MASS / Max(1, user.DerivedStats.BaseMass);
+                }
+                if(CaelumMealData.IsMeal(GetConsumableType()))
+                {
+                    let user=CaelumPlayer(Owner);
+                    if(user!=null && user.DerivedStats!=null)
+                        power.FoodRecoveryPerPulse=CaelumFoodRules.Hunger(CaelumMealData.FoodKind(GetConsumableType()),
+                            GetUnitWeight()*1000,user.DerivedStats.BaseMass)/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;
                 }
                 if (GetConsumableType() == CaelumConstants.CONSUMABLE_WATER_RATION)
                 {

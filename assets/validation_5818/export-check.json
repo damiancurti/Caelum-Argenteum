@@ -1,0 +1,13 @@
+{
+  "ingredient_outputs_unchanged": true,
+  "meal_outputs_repeatable": true,
+  "hashes": {
+    "src\\graphics\\caelum\\icons\\meals\\bread.png": "de1176bce9ec38a507a706ca7e9925f26cede260bea1982d057dc5ee4d2d6b87",
+    "src\\graphics\\caelum\\icons\\meals\\puchero.png": "ccf575b0cce0a8f4a84ef0b18afd17962219140bbf4b0b4a43f2013fdfff7b34",
+    "src\\graphics\\caelum\\icons\\meals\\roast_beef.png": "060c7276159eeb445144844abf4161eadfa174955a5dc1882ddbd184f4f163d3",
+    "src\\graphics\\caelum\\icons\\meals\\roast_fish.png": "b6a6b988a16d43f7887e80b20320aeb95309dfcf0977ebe0467d2892f13d34d1",
+    "src\\caelum\\data\\cooked_meals.textures": "8676ef76edbefb79fb94fcf6dd916f17e1ca6af6a4960013b433761f46296f75",
+    "assets\\art_source\\cooked_meals\\EXPORT.json": "b1ba5006e297fdf914583a257d8ea0a097ab88456eaaa5352ac5bba662c9f67a",
+    "assets\\art_source\\cooked_meals\\contact-sheet.png": "1b22e43ca43db9c40ad65e817aa07faebfbc6505f92eb4833fd19b8af77abd59"
+  }
+}

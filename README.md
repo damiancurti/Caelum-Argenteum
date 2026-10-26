@@ -6,8 +6,25 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.17.** Obtain and update the complete repository, validate
+**Current release: 5.8.18.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.18 - Prepared meal items and consumption (#410)
+
+Bread, roast beef, roast white fish and puchero now have distinct 100-g native
+portions, painted inventory/world sprites, approved nutrition and food-lot
+ageing. Inventory use, dining tables, waiting and travel preserve the selected
+meal's dose; travel water intake retains its independent existing calculation.
+The four items retain their identity and contamination through transfers,
+saves and hub travel. Their prices use approved ingredients and fuel plus 25%.
+
+This is the consumable integration slice: kitchen stations, attended cooking,
+proofing and campaign acquisition remain unfinished. No prepared-meal stock or
+recipe access was invented. Evidence: assets/validation_5818. Author visual and
+interaction corroboration is pending as CA410-MEALS-01; earlier outstanding
+checks remain in pending_test.txt. Native evidence: 291 executed PASS / zero FAIL in 21 selected runs; four
+matched-control nutrition comparisons also pass. Static validation passes.
+Engine checks remain separate from author acceptance; #410 and V5.8 stay open.
 
 ## 5.8.17 - Kitchen ingredients (#410)
 

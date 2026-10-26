@@ -282,7 +282,7 @@ class CaelumCityMerchant : Actor
         if(Category==0)
             for(int type=CaelumConstants.CONSUMABLE_LIFE_MEDIUM;type<CaelumConstants.CONSUMABLE_TYPE_COUNT;type++)
             {
-                if(type==CaelumCampData.POT_CONSUMABLE || CaelumMateData.IsConsumable(type))continue;
+                if(type==CaelumCampData.POT_CONSUMABLE || CaelumMateData.IsConsumable(type) || CaelumMealData.IsMeal(type))continue;
                 if(type<CatalogueCursor && !EnumeratingStock)continue;
                 if(SeedSimple(user.GetConsumableClassName(type),CaelumCityData.CONSUMABLE_STOCK)==null && !EnumeratingStock)return;
                 if(!EnumeratingStock)CatalogueCursor=type+1;

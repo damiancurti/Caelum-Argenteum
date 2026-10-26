@@ -1,6 +1,40 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.17** - 2026-10-26.
+Documentation version: **5.8.18** - 2026-10-26.
+
+## 5.8.18 - Prepared meal items and consumption (#410)
+
+Bread, roast beef, roast white fish and puchero now have distinct 100-g native
+portions, painted inventory/world sprites, approved nutrition and food-lot
+ageing. Inventory use, dining tables, waiting and travel preserve the selected
+meal's dose; travel water intake retains its independent existing calculation.
+The four items retain their identity and contamination through transfers,
+saves and hub travel. Their prices use approved ingredients and fuel plus 25%.
+
+This is the consumable integration slice: kitchen stations, attended cooking,
+proofing and campaign acquisition remain unfinished. No prepared-meal stock or
+recipe access was invented. Evidence: assets/validation_5818. Author visual and
+interaction corroboration is pending as CA410-MEALS-01; earlier outstanding
+checks remain in pending_test.txt. The native evidence separates engine checks
+from author acceptance; #410 and V5.8 remain open.
+
+The new consumable IDs are 21?24; previous IDs and food-lot revision 1 remain
+unchanged. A use consumes all 100 g and their contamination even at full Hunger;
+excess nutrition is lost. Bread/beef/fish/puchero respectively provide
+268/230/110/80 kcal per 100 g, converted by `(kcal / 240) * (800 / body kg)`
+into Hunger across the existing ten pulses (slower when seated, as before).
+Their reference spoilage times are 72/24/12/24 hours at 20 C and 50% humidity.
+The existing temperature/humidity, mass-scaled ingestion and illness rules apply.
+
+Prepared servings join the existing automatic food paths; raw ingredients are
+still preparation materials and are not silently eaten as journey rations.
+Forecast copies consume their own ledgers, and a confirmed journey commits each
+portion once. Waiting forecast provision revision 23 invalidates stale cached
+doses. Tables use each prepared meal's sprite and keep real native inventory;
+the mansion's existing ration replenishment does not create new dishes.
+Meal recipe data records the author's approved 1-kg batches, water, coal,
+proofing/cooking times and ingredient-derived prices. IDs 205?208 are reserved
+for the forthcoming cooking workflow, not yet registered as usable recipes.
 
 ## 5.8.17 - Kitchen ingredients (#410)
 

@@ -1,0 +1,29 @@
+{
+  "matched_control": {
+    "net": -0.30048254,
+    "expected_gross": 0.0
+  },
+  "meals": {
+    "21": {
+      "net": 8.6328508,
+      "expected_gross": 8.93333333,
+      "measured_gross": 8.93333334
+    },
+    "22": {
+      "net": 7.36618413,
+      "expected_gross": 7.66666667,
+      "measured_gross": 7.66666667
+    },
+    "23": {
+      "net": 3.36618413,
+      "expected_gross": 3.66666667,
+      "measured_gross": 3.66666667
+    },
+    "24": {
+      "net": 2.36618413,
+      "expected_gross": 2.66666667,
+      "measured_gross": 2.66666667
+    }
+  },
+  "note": "Natural regeneration and contamination cleanup retain their approved Hunger cost."
+}

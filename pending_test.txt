@@ -33,3 +33,25 @@ Select 1 and wait for INPUT ready. This uses the recorded current03 package.
 Expected: working controls, readable painted art, exact gram consumption,
 independent food lots and no crash. Physical keys and visual acceptance await
 explicit author confirmation; native commands, storage and commerce passed.
+
+CA410-MEALS-01 | Version 5.8.18 | Issue #410
+Prerequisites: author has returned; close other GZDoom sessions. From
+build/issue410-cooking-work run:
+powershell -NoProfile -NoExit -ExecutionPolicy Bypass -File assets/validation_5818/author_terminal.ps1
+Select 1; wait for INPUT ready. This checks prepared items, not cooking stations.
+1. Review bread, roast beef, roast fish and puchero. F5 hides the gallery; T opens
+   the real inventory. Each dish must have its own painted icon and correct name.
+2. F1 resets five portions of each dish, Hunger 90 and body contamination 0.
+   F3 consumes one 100-g bread portion; nutrition arrives during ten pulses.
+   Enter in the journal consumes the selected meal. The Box blocks direct use.
+3. F1 then F4 advances only food ageing by six hours at 20 C / 50% humidity:
+   bread approximately 8.33, beef/puchero 25, fish 50. F2 reads the results.
+   Eating a portion applies its full mass-adjusted contamination. Natural
+   environmental exposure and cleanup remain active; F4 does not skip other AI.
+4. Terminal option 3 opens a small table with the four real meal portions.
+   Inspect their sprites, use the table to withdraw a portion and place it back;
+   quantity, identity and food contamination must be retained.
+Expected: distinct painted sprites in the quick-use bar, inventory and table;
+correct portions/food ageing; responsive controls and no crash. Physical keys
+and visual acceptance await explicit author confirmation. Kitchen preparation,
+proofing and campaign acquisition are not included in this check.

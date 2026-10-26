@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.17** - 2026-10-26.
+Documentation version: **5.8.18** - 2026-10-26.
+
+5.8.18 - Prepared meals on existing dining tables (#410)
+
+Players may place and withdraw their actual prepared meal portions on existing
+tables, keeping food lots and the correct painted sprite. Mansion replenishment
+still supplies its existing rations; it does not introduce new dish stock.
+The kitchen installation and its production workflow remain pending. Map geometry,
+secret passages and existing water reserves are unchanged by this slice.
 
 5.8.14 - Stored and table rations (#410)
 
