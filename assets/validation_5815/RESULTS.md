@@ -96,3 +96,8 @@ Entry/exit performs bounded event-time probes; there is no new recurring actor
 scan. No new rendering-performance or multiplayer claim follows from these
 functional checks. CA412-BAG-01 remains pending until the author corroborates
 this interaction correction. Tests/questions are held while the author is away.
+
+Final author acceptance, 2026-10-26: CA412-BAG-01 passed, including outside
+interaction and the original sleeping bag inside the tent. The pending entry
+is retired; no new native execution is claimed for this acceptance update.
+Multiplayer verification remains deferred to V5.12.

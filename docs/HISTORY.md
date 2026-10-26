@@ -14,6 +14,12 @@ corrections. This draft does not complete #502 or V5.8.
 
 ## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26
 
+Final author acceptance, 2026-10-26: CA412-BAG-01 (origin5.8.15/#412)
+passed including ordinary outside Use, original sleeping bag placement, rest
+and safe exit. The author confirmed both return-terminal corrections passed
+without qualifications. The pending entry is retired; no new native run is
+claimed for this acceptance-only update. Multiplayer remains deferred to V5.12.
+
 The author accepted the supplied tests except the pot and tent, then reported
 that the tent could not be entered and Use did nothing. CA412-BAG-01 remains
 pending with that specific correction; no full acceptance is inferred. The
@@ -84,6 +90,16 @@ manual tests were deferred while the author was away, as instructed.
 Remaining #410: new food catalogue, recipes/proofing/cooking and furniture.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
+
+Final author acceptance, 2026-10-26: CA411-FIRE-01 (origin5.8.13/#411)
+passed including the integral-trivet visual, mass and recipe correction. The
+author explicitly confirmed both return-terminal corrections passed without
+qualifications. The pending entry is retired; camp cooking remains unfinished.
+No native rerun is attributed to this acceptance-only update.
+
+The author launcher now opens trivet01 with the pot already mounted and only
+the outstanding visual/mass/recipe correction listed. Its readiness check also
+covers trivet-manual; previously accepted fire/water actions are not reopened.
 
 Author result, 2026-10-26: CA411-FIRE-01 passed the supplied functional checks;
 the author requested an integral trivet beneath the pot. Approved ring diameter
