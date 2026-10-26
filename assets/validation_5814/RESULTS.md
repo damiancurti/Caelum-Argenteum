@@ -78,3 +78,6 @@ separate from the original gameplay assertion counts.
 Remote desktop key injection did not reach GZDoom. Native binding queries and
 scripted commands are agent evidence; physical-key author check CA410-FOOD-01
 remains pending. No author pass is inferred from fixing the launcher.
+
+Author acceptance, 2026-10-26: CA410-FOOD-01 passed all supplied checks.
+Original final01 package is unchanged; new food/cooking/furniture remain open.

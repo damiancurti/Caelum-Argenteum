@@ -23,7 +23,7 @@ and wait previews use independent lots; confirming a journey installs the
 aged remainder once. Inventory details show the next portion and lot count.
 
 Evidence: assets/validation_5814; 57 native PASS, no failures, clean static checks.
-CA410-FOOD-01 awaits author corroboration.
+CA410-FOOD-01 passed author review on 2026-10-26.
 New food catalogue/recipes, cooking and the remaining furniture are still open;
 this delivery does not complete #410 or V5.8. No art or map geometry changed.
 

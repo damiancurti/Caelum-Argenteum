@@ -4,6 +4,11 @@ Documentation version: **5.8.14** - 2026-10-26.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 
+Author acceptance, 2026-10-26: CA410-FOOD-01 (origin 5.8.14/#410) passed
+all supplied ration-lot checks. The only exceptions named by the author were
+the #411 pot support and #412 tent interaction. This confirmed entry is retired;
+new dishes, cooking and remaining furniture are still implementation work.
+
 The author reported inactive test keys on return. The manual launcher now
 inlines canonical controls before delayed setup, avoiding its nested exec,
 and checks readiness before handoff. Native queries verify F1-F4 and Tab/T;
