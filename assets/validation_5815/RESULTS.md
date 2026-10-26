@@ -50,3 +50,18 @@ terminal was not opened while the author was away.
 Author scheduling update, 2026-10-26: two-player rest verification is deferred
 to V5.12. The individual CA412-BAG-01 remains unconfirmed; no native tests were
 rerun for this documentation-only scheduling change.
+
+## Author-launch correction, 2026-10-26
+
+The corrected manual script queries all six intended bindings, including T=+user3. Eleven solo-rest assertions pass with no failures. The author terminal now regenerates its fixture before launching. Multiplayer checks remain deferred to V5.12.
+
+Native startup evidence: `native/bindings-fixed-smoke-01.txt` and
+`native/bindings-ready-live-02.txt`, with separate command/environment records.
+The exact interactive entry reaches the readiness marker; the launcher now
+waits for it and reports failure instead of silently handing off an unseeded
+scene. The frozen gameplay package is unchanged. This startup evidence is
+separate from the original gameplay assertion counts.
+
+Remote desktop key injection did not reach GZDoom. Native binding queries and
+scripted commands are agent evidence; physical-key author check CA412-BAG-01
+remains pending. No author pass is inferred from fixing the launcher.

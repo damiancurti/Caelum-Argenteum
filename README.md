@@ -11,6 +11,9 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.15 - Sleeping-bag clearance (#412, in progress)
 
+The individual author launcher verifies scenario/control readiness and loads
+the canonical Tab/T controls before setup. F1-F4 bindings are logged at startup.
+
 Bag placement now checks the unchanged model's oriented rectangular footprint
 and the player's own collision volume separately. Two footprints fit under the
 approved tent without resizing its art, the bags or the characters. Local solids,

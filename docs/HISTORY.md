@@ -9,6 +9,12 @@ the roadmap release dedicated to multiplayer. No cooperative-rest test is
 required for V5.8 author acceptance. CA412-BAG-01 remains an individual pending
 check; no result is inferred from this scheduling decision.
 
+The author subsequently reported inactive test keys. The individual launcher
+now regenerates its fixture, installs canonical controls (including T to advance
+rest) before setup and verifies readiness. Native binding queries and 11 actual
+solo-rest assertions pass. Remote key injection did not reach GZDoom, so the
+physical-key check remains pending. No runtime, art or save format changed.
+
 Integrated the original #412 packing-guard branch by ancestry onto the validated
 #410/#411/#502 runtime. Replaced the oversized circular bag clearance with the
 existing model's oriented footprint and a separate unchanged player capsule.
@@ -17,9 +23,9 @@ No recovery multipliers, art, collision dimensions or map geometry were changed.
 
 Native evidence and exact runtime digest are retained in assets/validation_5815.
 Normal/solo accelerated tent rest, original bag ownership, waking, obstructions,
-packing guards and old/new save loads are checked. The author is away; no manual
-acceptance is inferred. CA412-BAG-01 is prepared for the return, without launching
-a user terminal. Shared-clock/two-client integration and #410 furniture remain open.
+packing guards and old/new save loads are checked. The author has returned;
+CA412-BAG-01 remains pending in the corrected individual author launcher.
+Shared-clock/two-client integration and #410 furniture remain open.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 

@@ -30,6 +30,7 @@ def main():
     with zipfile.ZipFile(WORK/'checks.pk3','w',zipfile.ZIP_STORED) as out:
         for name,data in sorted(members.items()):out.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
     start='wait 35; netevent ca412b_setup; +crouch; wait 16; netevent ca412b_inside; -crouch; wait 8; '
+    controls='; '.join(line.strip() for line in (ROOT/'assets/playtest/default_controls.cfg').read_text(encoding='utf-8').splitlines() if line.strip() and not line.lstrip().startswith('//'))
     commands={
         'core':'wait 35; netevent ca412b_setup; +crouch; wait 16; netevent ca412b_inside; wait 3; netevent ca412b_core; -crouch; wait 3; quit',
         'rest':start+'netevent ca412b_rest; wait 70; netevent ca412b_follow; wait 3; quit',
@@ -38,8 +39,10 @@ def main():
         'load':'wait 35; netevent ca412b_follow; wait 3; quit',
         'guard':'wait 35; netevent ca412_guard; wait 3; quit',
         'capture':start+'netevent ca412b_rest; wait 35; netevent ca412b_preview; wait 5; screenshot tent-bag.png; wait 3; quit',
-        'manual':start+'bind F1 "netevent ca412b_inside"; bind F2 "netevent ca412b_rest"; bind F3 "netevent ca412b_cancel"; bind F4 "netevent ca412b_read; toggleconsole";',
+        'manual':controls+'; bind F1 "netevent ca412b_inside"; bind F2 "netevent ca412b_rest"; bind F3 "netevent ca412b_cancel"; bind F4 "netevent ca412b_read; toggleconsole"; '+start,
     }
+    commands['manual'] += 'bind F1; bind F2; bind F3; bind F4; bind Tab; bind T; echo CA412B INPUT ready'
+    commands['manual-smoke'] = commands['manual']+'; netevent ca412b_rest; wait 70; netevent ca412b_follow; netevent ca412b_cancel; wait 3; quit'
     for name,text in commands.items():(WORK/(name+'.cfg')).write_text(text+'\n',encoding='utf-8')
     with zipfile.ZipFile(WORK/'legacy-checks.pk3','w',zipfile.ZIP_STORED) as out:
         for name,data in sorted({'ZSCRIPT':b'version "4.14"\n#include "legacy.zs"\n',
