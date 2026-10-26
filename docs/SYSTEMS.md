@@ -1,6 +1,30 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
+
+## 5.8.15 - Bag footprint and tent clearance (#412)
+
+The existing open-bag model is 88 units long and 40.4 units wide including its
+zipper, with an 8-unit high envelope. Clearance uses the conservative symmetric
+half-width 20.4 and the model's facing, rather than a radius-46 upright cylinder.
+`CaelumAppearanceRegistry` stores these art-derived dimensions; no balance or
+model scale changes. The native player capsule is checked independently and is
+never resized by placement. Entering the tent may still require native crouching.
+
+A 11-by-5 cover of circumscribed probe circles checks the entire floor footprint;
+its small conservative edge overhang can reject very tight gaps. Local blockmap
+solids use rectangle/circle overlap plus the actual body volume. Other players'
+normal-rest, active-calendar and pending pre-sleep-cleaning bag models are checked
+through MAXPLAYERS slots with separating axes. No routine global actor scan or
+new saved state is introduced. The existing 5.8.10 packing guard is retained.
+
+The query runs on placement and existing calendar-support/forecast refreshes,
+not on every actor. Native evidence includes a worst-frequency one-query-per-tic
+peaceful comparison; frame callbacks are a cadence proxy, not GPU presentation.
+Tests establish two model footprints and two crouched collision bodies, plus
+real single-player normal/accelerated sleep. They do not establish two connected
+players or shared accelerated time. The approved cooperative rule remains pending;
+the existing solo gate and world-clock ownership are unchanged in this stage.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 

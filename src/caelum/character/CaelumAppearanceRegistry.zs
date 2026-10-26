@@ -5,6 +5,10 @@ class CaelumAppearanceRegistry : Actor
     static clearscope double ChairSurface() {return 20;}
     static clearscope double BedSurface() {return 12;}
     static clearscope double BagSurface() {return 4;}
+    // Envolvente del modelo existente ca_rest_bag_open.obj (incluye el cierre).
+    static clearscope double BagHalfLength() {return 44;}
+    static clearscope double BagHalfWidth() {return 20.4;}
+    static clearscope double BagHeight() {return 8;}
     static clearscope double StandingHeight(int identity,bool gloved)
     {
         static const double heights[] = {170, 170, 170, 170, 172, 172, 172, 172, 171, 171, 171, 171, 175, 175, 175, 175, 175, 175, 175, 175, 173, 173, 173, 173, 173, 173, 173, 173};

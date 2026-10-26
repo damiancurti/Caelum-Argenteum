@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
+
+## 5.8.15 - Sleeping-bag clearance (#412), 2026-10-26
+
+Integrated the original #412 packing-guard branch by ancestry onto the validated
+#410/#411/#502 runtime. Replaced the oversized circular bag clearance with the
+existing model's oriented footprint and a separate unchanged player capsule.
+Added bounded reserved-bag overlap checks for resting/cleaning player slots.
+No recovery multipliers, art, collision dimensions or map geometry were changed.
+
+Native evidence and exact runtime digest are retained in assets/validation_5815.
+Normal/solo accelerated tent rest, original bag ownership, waking, obstructions,
+packing guards and old/new save loads are checked. The author is away; no manual
+acceptance is inferred. CA412-BAG-01 is prepared for the return, without launching
+a user terminal. Shared-clock/two-client integration and #410 furniture remain open.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 

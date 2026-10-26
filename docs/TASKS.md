@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
+
+## 5.8.15 - Sleeping-bag clearance (#412, in progress)
+
+Bag placement now checks the unchanged model's oriented rectangular footprint
+and the player's own collision volume separately. Two footprints fit under the
+approved tent without resizing its art, the bags or the characters. Local solids,
+floor support and other players' reserved bag footprints still block placement.
+The earlier packing guard is included with its original branch ancestry.
+
+Native checks cover normal and solo accelerated rest, wake-up/ownership,
+obstructions, guard regression and save compatibility. Evidence and limits:
+assets/validation_5815/RESULTS.md. CA412-BAG-01 awaits author corroboration.
+The multiplayer admission gate/shared clock and the remaining #410 furniture
+integration are still pending; this is not two-client cooperative acceptance.
 
 ## 5.8.14 - Native ration lots (#410, in progress)
 

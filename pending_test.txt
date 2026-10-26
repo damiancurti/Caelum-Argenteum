@@ -60,3 +60,16 @@ Launch assets/validation_5814/author_terminal.ps1, option1.
 Optional terminal option2 runs native core/clock/travel/container assertions.
 Expected: correct lot order, dose, persistence and legible inventory details.
 This does not test new dish recipes, cooking or the remaining furniture.
+CA412-BAG-01 | Origin: 5.8.15 / #412 | PENDING
+Prerequisites: issue412-coop-work; final02 runtime; GZDoom4.14.2; close other sessions.
+Launch assets/validation_5815/author_terminal.ps1, option1, after returning.
+1. The private room places the accepted tent and your original sleeping bag.
+   F1 returns to the first berth; F2 begins a five-world-minute rest using the bag.
+2. Sleep remains active inside the tent. T uses existing solo acceleration;
+   F3 wakes you. The original bag remains in inventory exactly once.
+3. Step toward a wall/obstruction and try the bag normally: occupied ground is
+   rejected. Entering below the tent roof can require crouching; dimensions stay unchanged.
+4. Optional terminal option2 checks both rectangular footprints, low/head obstacles,
+   normal/solo accelerated rest and the earlier packing guard. Expect PASS only.
+Expected: usable single-player bag clearance and unchanged tent/model/body sizes.
+This does not test two connected players or their shared acceleration, still pending.

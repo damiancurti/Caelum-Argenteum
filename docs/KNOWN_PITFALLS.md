@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-172 - Separate a low furniture footprint from the user's capsule
+
+Status/evidence: RESOLVED-VERIFIED for bag clearance, #412, 2026-10-26.
+Affected baseline: fcee0384; GZDoom 4.14.2, Windows 11/Vulkan.
+Scope: CaelumRestBag.HasRoom; assets/validation_5815/RESULTS.md.
+
+The radius-46 bag probe extended to the player's height. It rejected an accepted
+tent berth even though the existing 88-by-40.4-unit model and a crouched body
+fit. Native original-repro/final-repro runs retain the before/after result.
+Check the real body separately, then a low oriented envelope derived from the
+existing model. Include small off-center obstacles and floor support throughout
+the footprint; a few perimeter points do not cover its interior. The circumscribed
+grid used here deliberately permits a small conservative edge overhang.
+
+Bag models are outside the blockmap. Obtain active reservations from the bounded
+player table, including pending pre-sleep cleaning, and use separating axes for
+bag/bag overlap. Do not resize accepted characters, art or tents to make a probe
+pass. Native crouching must be held during a crouched-body fixture; releasing
+the input can restore standing height before the assertion. A helper body sized
+from that later height is not evidence for a crouched second occupant.
+
+The selected comparison calls clearance every native tic in the same peaceful
+tent scene. Frame callbacks remain near the 60-FPS cap; this is not GPU/display
+presentation or large-map acceptance. Two footprint/body checks and a real solo
+sleep are not a two-client network test. Author check CA412-BAG-01 and shared
+cooperative clock integration remain pending.
+
 ## CA-KP-171 - Native food quantities, copies and forecast isolation
 
 Status/evidence: ENGINE-VERIFIED, #410, 2026-10-26; assets/validation_5814.
