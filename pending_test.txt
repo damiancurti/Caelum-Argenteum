@@ -23,3 +23,20 @@ Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_t
    save/load and hub checks. Expect PASS with zero failures.
 Expected: interaction, timing, cancellation, resource accounting and persistence
 accepted. This does not test soap bathing, gear cleaning or resident routines.
+
+CA411-FIRE-01 | Origin: 5.8.13 / #411 | PENDING
+Prerequisites: issue411-fire-work; final05 runtime; GZDoom4.14.2; close other sessions.
+Launch assets/validation_5813/author_terminal.ps1, option1, after the author returns.
+1. F1 opens assembly with supplied wood. Enter starts one world minute of work;
+   waiting/accelerated work is allowed. Cancel and repeat: wood is charged once.
+2. Use the fire. Load with R, extinguish/ignite with Enter, recover unburned wood
+   with V. Capacity is10kg. F2 reports; F3 simulates60seconds for this fire only.
+   A minute burns32g; an extinguished fire burns nothing. F3 is a test shortcut.
+3. P mounts the supplied original pot; N selects another carried pot if present.
+   F4 simulates heating and a full boil. Biological contamination disappears,
+   salt/chemical remain, temperature reaches100C and some water evaporates.
+   Extinguish and use F3: water cools. P retrieves the same pot and contents.
+4. Remove the pot, extinguish and dismantle with D: one minute and remaining
+   wood returned. Saving/loading retains state; leaving the map extinguishes.
+5. Review the log pile, flames, resting iron pot, handles and readable controls.
+Expected: native behavior and world artwork accepted. No food recipes are tested.

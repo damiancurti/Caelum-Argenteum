@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
 
-**5.8.12/#502:**NPC/contact/objectsaccepted2026-10-25;loaded-house-cleaning/nativeverified,accepted2026-10-25. validation_5812/domestic;queue:pending_test.
+**5.8.13/#411:**fire/pot runtime;native evidence validation_5813;CA411-FIRE-01pending. #502domestic accepted/pushed79c4c60d/PR506;validation_5812/domestic.
 
 **5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 

@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
+
+5.8.13 - Campfire in permitted garden ground (#411)
+
+The existing garden/owned-property placement rules also apply to the new portable
+campfire. No fixed campaign fixture, map geometry or mansion water reserve is
+changed. The mounted pot retains the water the player supplied and never refills
+automatically. Leaving the map extinguishes the fire and retains unspent wood.
+Camp food recipes and additional furniture remain separate pending work.
 
 5.8.12 - Household sanitary postures (#502)
 

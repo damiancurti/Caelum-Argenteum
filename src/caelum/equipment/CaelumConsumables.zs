@@ -492,7 +492,7 @@ class CaelumWaterContainer : CaelumConsumableItem
     override void Tick()
     {
         Super.Tick();
-        if(Owner is 'CaelumPlayer' || level.maptime%TICRATE!=0)return;
+        if(Owner is 'CaelumPlayer' || Owner is 'CaelumCampFire' || level.maptime%TICRATE!=0)return;
         let world=CaelumThermalWorld.Get();
         if(world==null || world.ReferenceClock==null || world.ReferenceWeather==null)return;
         let weather=world.ReferenceWeather;

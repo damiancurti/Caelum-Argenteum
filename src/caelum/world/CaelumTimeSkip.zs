@@ -362,7 +362,7 @@ class CaelumTimeSkipState : Inventory
         s.Pumping=true;
         // El trabajo doméstico mueve un cuerpo con colisión nativa. Repartir
         // esos pasos entre fotogramas evita una ráfaga larga sin presentar UI.
-        int batch=CaelumHousekeepingWork.Pending()?TICRATE:CaelumTimeSkipRules.BATCH_TICS;
+        int batch=CaelumHousekeepingWork.Pending() || CaelumCampWorld.Burning()?TICRATE:CaelumTimeSkipRules.BATCH_TICS;
         for(int i=0;i<batch && s.Active;i++)
         {
             PrepareStep(user);if(!s.Active)break;

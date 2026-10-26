@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `be2e316d1f18e276d763021c84419872a9aab186760770e4769f2748d80d83a8`. Locations include every definition; the last one per language wins.
+SHA-256: `7d4de76fa6a7f7002f32d8ca1434242e1af2bec2e72d1c72a2157999ea8bb165`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -33,7 +33,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_BULL | 1 | CA_BULL_NAME | CA_BULL_NAME |
 | CA_CAELLA | 5 | CA_CAELLA_NAME | CA_CAELLA_NECKLACE_TEACH |
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
-| CA_CAMP | 8 | CA_CAMP_PACKED | CA_CAMP_TENT |
+| CA_CAMP | 29 | CA_CAMP_FIRE | CA_CAMP_TENT |
 | CA_CARAVAN | 18 | CA_CARAVAN_BACK | CA_CARAVAN_WORLD_HELP |
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
 | CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |

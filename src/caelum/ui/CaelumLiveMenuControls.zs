@@ -220,6 +220,14 @@ class CaelumLiveMenuControls : Object ui
             let bath=CaelumBathSession.Find(user);
             Row(326);Button("CA_BATH_START",InputEvent.Key_Enter,0,"",280,bath!=null && bath.Selected>0);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
         }
+        else if(context==host.CTX_CAMP_FIRE)
+        {
+            Row(206);Button("CA_CAMP_FIRE_MINUS",InputEvent.Key_LeftArrow,0,"",138);Button("CA_CAMP_FIRE_PLUS",InputEvent.Key_RightArrow,0,"",138);
+            Button("CA_CAMP_FIRE_MINUS_KG",InputEvent.Key_PgDn,0,"",138);Button("CA_CAMP_FIRE_PLUS_KG",InputEvent.Key_PgUp,0,"",138);
+            Row(246);Button("CA_CAMP_FIRE_MAX",0,109,"m",180);Button("CA_CAMP_FIRE_LOAD",0,114,"r",180);Button("CA_CAMP_FIRE_RECOVER",0,118,"v",180);
+            Row(286);Button("CA_CAMP_FIRE_TOGGLE",InputEvent.Key_Enter,0,"",276);Button("CA_CAMP_FIRE_REMOVE",0,100,"d",276);
+            Row(326);Button("CA_CAMP_FIRE_POT",0,112,"p",180);Button("CA_CAMP_FIRE_NEXT_POT",0,110,"n",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+        }
         else if(context==host.CTX_MATE)
         {
             Row(248);Button("CA_MATE_LOAD",0,114,"r",180);Button("CA_UI_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_UI_NEXT",InputEvent.Key_RightArrow,0,"",180);

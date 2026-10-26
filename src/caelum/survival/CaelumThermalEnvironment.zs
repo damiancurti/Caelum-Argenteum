@@ -74,6 +74,9 @@ class CaelumThermalWorld : StaticEventHandler
     override void WorldLoaded(WorldEvent e)
     {
         ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;NextPhase=0;FireSources.Clear();Ranches.Clear();FireSampleTic=-TICRATE;
+        // Censo tipado sólo al cargar; las fuentes nuevas usan eventos nativos.
+        let fires=ThinkerIterator.Create('CaelumThermalFireSource');CaelumThermalFireSource fire;
+        while((fire=CaelumThermalFireSource(fires.Next()))!=null)RegisterFire(fire);
         SampleSource=null;for(int i=0;i<5;i++)Samples[i]=null;
         // Una lectura de los sectores al cargar identifica mapas con catálogo
         // térmico. No recorre actores ni agrega consultas por tic a mapas ajenos.
@@ -109,17 +112,18 @@ class CaelumThermalWorld : StaticEventHandler
         }
         return Samples[Clamp(shelter,0,4)];
     }
+    void RegisterFire(CaelumThermalFireSource fire)
+    {if(fire!=null && FireSources.Find(fire)==FireSources.Size())FireSources.Push(fire);}
+    void ForgetFire(CaelumThermalFireSource fire)
+    {int i=FireSources.Find(fire);if(i<FireSources.Size())FireSources.Delete(i);}
     override void WorldTick()
     {
         ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;
         if(level.maptime-FireSampleTic>=TICRATE || FireSampleTic>level.maptime)
         {
-            FireSources.Clear();FireSampleTic=level.maptime;
+            FireSampleTic=level.maptime;
             Ranches.Clear();let roofs=ThinkerIterator.Create("CaelumVehicleRanch");CaelumVehicleRanch ranch;
             while((ranch=CaelumVehicleRanch(roofs.Next()))!=null)Ranches.Push(ranch);
-            let fires=ThinkerIterator.Create("CaelumThermalFireSource");
-            CaelumThermalFireSource source;
-            while((source=CaelumThermalFireSource(fires.Next()))!=null)if(source.Watts()>0)FireSources.Push(source);
         }
         for(int i=0;i<MAXPLAYERS;i++)
         {

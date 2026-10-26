@@ -124,6 +124,8 @@ class CaelumTargetInfo : Object play
             Title=String.Format(L("CA_FERMENTATION_TITLE"),Title,double(CaelumFermentationData.WORKING_CAPACITY_LITERS));
         if(Subject is 'CaelumDeployedTent')
         {Actions=L(reachable?"CA_CAMP_PACK_ACTION":"CA_TARGET_APPROACH");return;}
+        if(Subject is 'CaelumCampFire')
+        {Actions=L(reachable?"CA_CAMP_FIRE_HINT":"CA_TARGET_APPROACH");return;}
         if(chest!=null)
         {
             if(reachable && chest.CanReachStorage(user))

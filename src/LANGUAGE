@@ -6641,3 +6641,52 @@ CA_CLEAN_STARTED = "Limpiando equipo. Abrí el inventario y pulsá J para cancel
 CA_CLEAN_CANCELLED = "Limpieza cancelada. Se conserva lo ya limpiado y gastado.";
 CA_CLEAN_SKIPPED = "Limpieza omitida: falta agua potable, jabón o trapo.";
 CA_CLEAN_DONE = "Limpieza del equipo terminada.";
+
+[enu default]
+CA_CAMP_FIRE = "Campfire";
+CA_CAMP_FIRE_WORK = "Camp work: 1 minute. You can wait or cancel the task.";
+CA_CAMP_FIRE_TERMS = "Choose wood for the fire. Capacity: 10 kg. Consumption: 1.92 kg/hour. Lighting and dismantling take 1 minute.";
+CA_CAMP_FIRE_SELECTED = "Wood: %d g (available: %d g)";
+CA_CAMP_FIRE_STOCK = "In the fire: %.3f kg | %s";
+CA_CAMP_FIRE_LIT = "Lit";
+CA_CAMP_FIRE_OUT = "Out";
+CA_CAMP_FIRE_MINUS = "Left: -1 g";
+CA_CAMP_FIRE_PLUS = "Right: +1 g";
+CA_CAMP_FIRE_MINUS_KG = "PgDn: -1 kg";
+CA_CAMP_FIRE_PLUS_KG = "PgUp: +1 kg";
+CA_CAMP_FIRE_MAX = "M: Maximum";
+CA_CAMP_FIRE_LOAD = "R: Add wood";
+CA_CAMP_FIRE_RECOVER = "V: Recover wood";
+CA_CAMP_FIRE_TOGGLE = "Enter: Light / put out";
+CA_CAMP_FIRE_REMOVE = "D: Dismantle";
+CA_CAMP_FIRE_HINT = "{bind:+use}: Manage fire / cancel work";
+CA_CAMP_FIRE_FAILED = "Action unavailable: check permitted clear ground, ownership, fuel and carrying capacity.";
+
+[es]
+CA_CAMP_FIRE = "Fogata";
+CA_CAMP_FIRE_WORK = "Trabajo de campamento: 1 minuto. Podés esperar o cancelar la tarea.";
+CA_CAMP_FIRE_TERMS = "Elegí la leña de la fogata. Capacidad: 10 kg. Consumo: 1,92 kg/hora. Encender y desmontar llevan 1 minuto.";
+CA_CAMP_FIRE_SELECTED = "Leña: %d g (disponible: %d g)";
+CA_CAMP_FIRE_STOCK = "En la fogata: %.3f kg | %s";
+CA_CAMP_FIRE_LIT = "Encendida";
+CA_CAMP_FIRE_OUT = "Apagada";
+CA_CAMP_FIRE_MINUS = "Izq.: -1 g";
+CA_CAMP_FIRE_PLUS = "Der.: +1 g";
+CA_CAMP_FIRE_MINUS_KG = "AvPág: -1 kg";
+CA_CAMP_FIRE_PLUS_KG = "RePág: +1 kg";
+CA_CAMP_FIRE_MAX = "M: Máximo";
+CA_CAMP_FIRE_LOAD = "R: Añadir leña";
+CA_CAMP_FIRE_RECOVER = "V: Recuperar leña";
+CA_CAMP_FIRE_TOGGLE = "Enter: Encender / apagar";
+CA_CAMP_FIRE_REMOVE = "D: Desmontar";
+CA_CAMP_FIRE_HINT = "{bind:+use}: Gestionar fogata / cancelar trabajo";
+CA_CAMP_FIRE_FAILED = "Acción no disponible: comprobá el terreno permitido y libre, la propiedad, la leña y tu capacidad de carga.";
+
+[enu default]
+CA_CAMP_FIRE_POT = "P: Place / take pot";
+CA_CAMP_FIRE_NEXT_POT = "N: Next carried pot";
+CA_CAMP_FIRE_POT_STATUS = "Pot: %.3f L | %.1f C | %s";
+[es]
+CA_CAMP_FIRE_POT = "P: Colocar / retirar olla";
+CA_CAMP_FIRE_NEXT_POT = "N: Otra olla del inventario";
+CA_CAMP_FIRE_POT_STATUS = "Olla: %.3f L | %.1f C | %s";

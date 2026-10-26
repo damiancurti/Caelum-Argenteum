@@ -12,6 +12,7 @@ class CaelumCampTent : CaelumSpecialInventoryItem
 
 class CaelumCampPot : CaelumWaterContainer
 {
+    double CampBoilSeconds;
     Default { Tag "$CA_CAMP_POT"; Inventory.Icon "graphics/caelum/icons/camp/iron_pot.png"; }
     override int GetConsumableType(){return CaelumCampData.POT_CONSUMABLE;}
     override double GetCapacityLiters(){return CaelumCampData.POT_LITERS;}

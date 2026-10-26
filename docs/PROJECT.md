@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
+
+## 5.8.13 - Campfire and mounted pot (#411, in progress)
+
+Carried wood opens campfire assembly on permitted clear ground. The fire stores
+10 kg, burns 1.92 kg per world hour, supplies the approved thermal power and
+extinguishes on map departure while retaining fuel. A mounted original pot
+heats, boils and cools without losing its identity, water quality or volume.
+Only biological contamination is removed by a completed boil. Camp cooking
+recipes still depend on the unfinished #410 food/cooking integration.
+
+Native checks, persistence and rendering evidence: assets/validation_5813.
+CA411-FIRE-01 is pending author review; this does not complete #411 or V5.8.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 

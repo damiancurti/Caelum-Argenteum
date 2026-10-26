@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
+
+## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
+
+Implemented the author's approved 10 kg wood capacity, one-minute assembly and
+dismantling, immediate extinguishing, recovery of unburned wood and departure
+extinguishing without off-map fuel consumption. Native pot identity, volume,
+quality and temperature survive mounting, retrieval and persistence. Boiling
+reuses 60 seconds and removes only the biological flag; heat/evaporation derive
+from the already-approved 2 kW useful heat and existing water constants.
+Exact fractional wood is saved with its carried mass and reused on refilling;
+recovery merges into the established material stack instead of hiding a second
+stack from recipe consumers. Thermal sources now register on creation/destruction
+and use one typed census on load instead of scanning every real second.
+
+The private fixture exposed a prologue dialogue overlay; its early test-only
+quest marker now prevents that overlay without changing campaign dialogue.
+Art is delivered separately in the same focused issue: original log/iron-pot
+meshes and flame variations reuse owned textures; no campaign map changes.
+Evidence: assets/validation_5813/RESULTS.md. Static/native checks and agent visual
+inspection are distinct from CA411-FIRE-01, still pending author confirmation.
+The author is away; no author pass, issue closure or V5.8 completion is inferred.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
