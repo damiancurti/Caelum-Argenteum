@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
+
+## 5.8.14 - Native ration lots (#410, in progress)
+
+Existing 200 g rations now retain separate contamination lots in native
+inventories, the Box, dropped items, tables and coffers. World time ages them
+with storage temperature/humidity, including unloaded-storage climate replay;
+eating consumes the oldest lot and applies the approved body-mass dose.
+Commercial stock stays fresh and shops reject contaminated resale. Journey
+and wait previews use independent lots; confirming a journey installs the
+aged remainder once. Inventory details show the next portion and lot count.
+
+Evidence: assets/validation_5814; 57 native PASS, no failures, clean static checks.
+CA410-FOOD-01 awaits author corroboration.
+New food catalogue/recipes, cooking and the remaining furniture are still open;
+this delivery does not complete #410 or V5.8. No art or map geometry changed.
 
 ## 5.8.13 / #411 - Campfire and mounted pot
 
@@ -306,7 +321,7 @@ recovery bonus or two-person sleeping layout is claimed.
 Implemented shared disease arithmetic, independent forecast/commit records and
 potential depuration with exact native costs. 68 native PASS in eight runs,
 including original-save migration/rollback. Wait preview schema 6 regenerates
-old previews. Food inventories/environmental ageing, ingestion and cooking
+old previews. New food catalogue and cooking
 remain next dependencies; this does not complete #410, #412 or V5.8.
 No author terminal/questions during the requested absence.
 
@@ -330,7 +345,7 @@ shared environment history for loaded/unloaded storage; approved fresh legacy
 migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
-No actual food ingestion currently calls the new illness entry point.
+The original 5.8.3 slice had no ingestion adapter; native rations now call it in 5.8.14.
 CaelumFoodLots now implements/tested separate ages, exposure, atomic transfers,
 oldest-first consumption and serializable ownership (38 native assertions).
 Wire it into native inventory mutations and environmental time before claiming

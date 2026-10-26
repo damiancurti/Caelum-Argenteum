@@ -410,6 +410,8 @@ class CaelumPlayer : DoomPlayer
     double FormalInventoryRowWaterLiters[FORMAL_INVENTORY_VISIBLE_ROWS];
     double FormalInventoryRowWaterTemperature[FORMAL_INVENTORY_VISIBLE_ROWS];
     int FormalInventoryRowWaterQuality[FORMAL_INVENTORY_VISIBLE_ROWS];
+    double FormalInventoryRowFoodContamination[FORMAL_INVENTORY_VISIBLE_ROWS];
+    int FormalInventoryRowFoodLots[FORMAL_INVENTORY_VISIBLE_ROWS];
     int MainM00ArmorTypeSnapshot;
     int MainM00ArmorPiecesSnapshot;
     int MainM00StarterOptionSnapshot;

@@ -121,6 +121,9 @@ class CaelumInventoryService : Object play
         int questUnits=special!=null ? Min(quantity,special.LimboQuestUnits) : 0;
         int supplyUnits=special!=null ? Min(quantity,special.LimboSupplyUnits) : 0;
         Inventory result=receiving!=null ? receiving : split!=null ? split : item;
+        CaelumFoodInventory.Reconcile(item);
+        if(receiving!=null)CaelumFoodInventory.Reconcile(receiving);
+        if(result!=item)CaelumFoodInventory.Transfer(item,result,quantity,split!=null);
         let resultSpecial=CaelumSpecialInventoryItem(result);
         if(result!=item && special!=null && resultSpecial!=null)
         {
@@ -143,6 +146,7 @@ class CaelumInventoryService : Object play
             source.RemoveInventory(item);item.AttachToOwner(receiver);
         }
         CaelumContainerRules.SetBoxed(result,destinationBox);
+        CaelumFoodInventory.Relocate(result);
         if(limitedSupply)
         {
             let received=CaelumSpecialInventoryItem(result);
@@ -205,6 +209,7 @@ class CaelumInventoryService : Object play
         Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
         if (existing != null && existing.Owner != user) return false;
         if (selling && (existing == null || existing.Amount < quantity)) return false;
+        if (selling && !CaelumFoodInventory.CanSell(existing)) return false;
         if (!selling && existing != null && existing.Amount > existing.MaxAmount - quantity) return false;
         Inventory prepared = null;
         if (!selling && existing == null)
@@ -262,6 +267,7 @@ class CaelumInventoryService : Object play
         Actor owner = session.Selling ? Actor(user) : Actor(session.Vendor);
         Actor receiver = session.Selling ? Actor(session.Vendor) : Actor(user);
         if (item.Owner != owner || (receiving != null && receiving.Owner != receiver)) return null;
+        if(session.Selling && !CaelumFoodInventory.CanSell(item))return null;
         if(companion!=null && (session.Selling || companion.Owner!=owner || companion.Amount!=1
             || CaelumCityTradeSession.Companion(item)!=companion))return null;
         Inventory split = null;
@@ -283,6 +289,10 @@ class CaelumInventoryService : Object play
         }
         AttachMerchantCurrencyObjects(user, coins);
         user.ApplyPalomoCurrencyPlan();
+        CaelumFoodInventory.Reconcile(item);
+        if(receiving!=null)CaelumFoodInventory.Reconcile(receiving);
+        if(receiving!=null || split!=null)
+            CaelumFoodInventory.Transfer(item,receiving!=null?receiving:split,quantity,split!=null);
         if (receiving != null)
         {
             receiving.Amount += quantity; item.Amount -= quantity;
@@ -298,6 +308,7 @@ class CaelumInventoryService : Object play
             item.Owner.RemoveInventory(item); item.AttachToOwner(receiver); receiving = item;
         }
         CaelumCityTradeSession.SetBoxed(receiving, !session.Selling && user.PalomoIncomingItemInMagicBox);
+        CaelumFoodInventory.Relocate(receiving);
         if(companion!=null)
         {
             companion.Owner.RemoveInventory(companion);companion.AttachToOwner(receiver);
@@ -1342,7 +1353,9 @@ class CaelumInventoryService : Object play
         Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
         if (existing != null)
         {
+            CaelumFoodInventory.Reconcile(existing);
             existing.Amount += quantity;
+            CaelumFoodInventory.Reconcile(existing);
             CaelumConsumableItem consumable = CaelumConsumableItem(existing);
             if (consumable != null)
             { consumable.InMagicBox = user.PalomoIncomingItemInMagicBox; }
@@ -1383,6 +1396,8 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory product = user.FindPalomoMerchantProduct(merchantItem);
         if (product == null || product.Amount < quantity) { return false; }
+        if(!CaelumFoodInventory.CanSell(product))return false;
+        CaelumFoodInventory.Remove(product,quantity);
         product.Amount -= quantity;
         if (product.Amount <= 0) { product.Destroy(); }
         return true;
@@ -2457,6 +2472,7 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowReservedUnits[row] = 0;
         user.FormalInventoryRowWaterLiters[row] = -1;
         user.FormalInventoryRowWaterQuality[row] = CaelumWaterQuality.UNIDENTIFIED;
+        user.FormalInventoryRowFoodContamination[row]=-1;user.FormalInventoryRowFoodLots[row]=0;
     }
 
     static void FillFormalInventoryRow(CaelumPlayer user, int row, Inventory entry)
@@ -2508,6 +2524,12 @@ class CaelumInventoryService : Object play
         if (consumable != null)
         {
             user.FormalInventoryRowType[row] = consumable.GetConsumableType();
+            if(CaelumFoodInventory.IsFood(consumable))
+            {
+                CaelumFoodInventory.Reconcile(consumable);
+                user.FormalInventoryRowFoodContamination[row]=consumable.FoodLots.OldestContamination();
+                user.FormalInventoryRowFoodLots[row]=consumable.FoodLots.Lots.Size();
+            }
             user.FormalInventoryRowInMagicBox[row] = consumable.InMagicBox;
             return;
         }

@@ -69,6 +69,7 @@ class CaelumCityMerchant : Actor
         // La conversión aprobada conserva la mercancía previa, incluso agotada
         // parcialmente. Nunca se vacía un inventario para imponer el rubro nuevo.
         if(item.Owner==self)return CaelumEconomyRules.GetInventoryUnitBaseValue(item)>0;
+        if(!CaelumFoodInventory.CanSell(item))return false;
         if(item is "CaelumRecipeOffer")return false;
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);

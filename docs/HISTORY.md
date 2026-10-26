@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
+
+## 5.8.14 - Native ration lots (#410), 2026-10-26
+
+Connected the accepted lot model to native ration quantities, pickup/toss/copy,
+container transactions, table meals, commercial transactions, journey commits
+and wait forecasts. Old quantities and Box placement migrate fresh without
+retroactive ageing; already-aged new saves preserve their exact lots.
+Source environment is captured before transfers; destination exposure resumes
+without sharing mutable lot objects. GZDoom's self-returning capped CreateCopy
+requires retaining only the oldest native quantity, found by a native check.
+
+The actor event/typed-load census creates one saved clock per food stack.
+Clocks stagger one-second updates and integrate the approved climate rate at
+civil-minute boundaries. Saved region/profile/seed/shelter retain storage
+location through map absence. Limbo integration is constant-time; saturation
+skips the rest once all lots are at 100. Existing local climate modifiers are
+sampled with the stored context. Closing the application adds no calendar time.
+No new catalogue IDs, art, balance values or recipes were introduced.
+
+Food-related disease now applies on native ingestion and copied forecasts.
+Fresh commercial stock is exempt from ageing; any contaminated resale is
+rejected, including the final transaction preflight. Existing regeneration,
+meal nutrition and full 200 g ration consumption remain intact.
+
+Static validation clean; 57 native PASS across 11 runs, no failures. Persistence
+and frame-callback evidence: assets/validation_5814. The 500-stack comparison
+records p95/p99/worst 17.007/17.2587/17.7563 ms versus prior
+16.9479/17.2368/17.9859 ms. These callback measurements are not GPU/display
+presentation or full-map performance acceptance.
+CA410-FOOD-01 is pending, with no author acceptance inferred. Questions and
+manual tests were deferred while the author was away, as instructed.
+Remaining #410: new food catalogue, recipes/proofing/cooking and furniture.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 

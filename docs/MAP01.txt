@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
+
+5.8.14 - Stored and table rations (#410)
+
+The mansion's existing rations now age in their actual inventories. Daily/table
+replenishment supplies fresh new portions without refreshing food already on
+the table. Boxed rations still age. Stored coffer food replays the mansion's
+constant climate when the player returns; there is no geometry change.
 
 5.8.13 - Campfire in permitted garden ground (#411)
 

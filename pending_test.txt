@@ -40,3 +40,23 @@ Launch assets/validation_5813/author_terminal.ps1, option1, after the author ret
    wood returned. Saving/loading retains state; leaving the map extinguishes.
 5. Review the log pile, flames, resting iron pot, handles and readable controls.
 Expected: native behavior and world artwork accepted. No food recipes are tested.
+
+CA410-FOOD-01 | Origin: 5.8.14 / #410 | PENDING
+Prerequisites: issue410-lots-work, final01 package, no other GZDoom running.
+Launch assets/validation_5814/author_terminal.ps1, option1.
+1. F1 supplies three old rations at30 contamination and three fresh portions.
+   Open the inventory with Tab; the selected ration shows next-portion
+   contamination and two lots. F2 prints quantity, lots, body contamination,
+   body mass and next dose, and toggles the console.
+2. F3 uses one native 200g ration. Quantity decreases once; body contamination
+   increases by foodC*2*80/bodyKg, capped100. The three old portions go first;
+   the next fresh portion contributes only its age accumulated since creation.
+3. F4 advances ONLY food exposure by24h using its stored climate, without
+   advancing character survival. This is a diagnostic shortcut. Normal game
+   time/waits/travel age food automatically; the Box does not stop spoilage.
+4. Save/reload and deposit/withdraw rations in a coffer. Quantity, lot identity
+   and contamination survive. Shops reject contaminated resale; stock bought
+   from the shop is fresh and does not refresh any older portions already owned.
+Optional terminal option2 runs native core/clock/travel/container assertions.
+Expected: correct lot order, dose, persistence and legible inventory details.
+This does not test new dish recipes, cooking or the remaining furniture.

@@ -4,10 +4,17 @@ class CaelumSkipSupply : Object play
     int Kind, Count, WaterQuality;
     double Liters, CapacityLiters;
     bool Reserved,Hot,CleaningWater;
+    CaelumFoodLots FoodLots;
+    CaelumFoodClimate FoodClimate;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
         Count=item!=null?item.Amount:0;
+        if(Kind==1)
+        {
+            CaelumFoodInventory.Reconcile(item);FoodLots=item.FoodLots.Copy();
+            let climate=CaelumFoodClock.Get(item).Climate;FoodClimate=climate!=null?climate.Copy():null;
+        }
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
         if (bottle != null)
         {
@@ -26,7 +33,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 21;
+    const PROVISION_REVISION = 22;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -103,6 +110,11 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(SurfaceContact!=null)SurfaceContact.Advance(Contamination,FoodIllness,AltitudeSecondsPerTic,
                 contactAmbient,ContaminationWeather.RainCovered || ContaminationWeather.Local==null?0:ContaminationWeather.Local.PrecipitationMmPerHour);
         }
+        for(int i=0;i<Supplies.Size();i++)
+        {
+            let row=Supplies[i];
+            if(row.FoodClimate!=null)row.FoodClimate.Advance(row.Kind==1?row.FoodLots:null,AltitudeSecondsPerTic);
+        }
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
     }
@@ -174,7 +186,15 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(!CaelumTimeSkipRules.Accessible(user,table))continue;
             let stock=new("CaelumSkipTableStock");stock.First=Supplies.Size();stock.Capacity=table.Capacity();
             stock.Target=table.ForecastDailyTarget();Tables.Push(stock);
-            for(int i=0;i<table.Capacity();i++)AddSupply(table.Items[i]);
+            for(int i=0;i<table.Capacity();i++)
+            {
+                AddSupply(table.Items[i]);let row=Supplies[Supplies.Size()-1];
+                if(row.FoodClimate==null)
+                {
+                    row.FoodClimate=new('CaelumFoodClimate');
+                    row.FoodClimate.Capture(table,CaelumWorldClock.Get(user),CaelumCalendarState.Get(user),CaelumWeatherState.Get(user));
+                }
+            }
         }
         for(int source=0;source<2;source++)
             for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
@@ -245,7 +265,12 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(row.Kind==3)row.Liters=Max(0,row.Liters-Min(row.Liters,Mass/CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE));
             else row.Count--;
             if(food)
-            {FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
+            {
+                double contamination;
+                if(row.FoodLots!=null && row.FoodLots.Consume(1,contamination) && FoodIllness!=null)
+                    FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
+                        contamination,CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000,Mass));
+                FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
                 FoodPulseTics=0;FoodSeatedSubTics=0;FoodPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
             else
             {WaterSpent++;WaterEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
@@ -322,7 +347,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             for(int j=table.First;j<table.First+table.Capacity;j++)
             {
                 let row=Supplies[j];if(row.Count>0)continue;
-                if(food<table.Target){row.Kind=1;row.Count=1;food++;}
+                if(food<table.Target)
+                {row.Kind=1;row.Count=1;row.FoodLots=new('CaelumFoodLots');row.FoodLots.Ensure(CaelumFoodData.RATION,1,0);food++;}
                 // Capacidad del mismo objeto usado al reponer las mesas.
                 else if(water<table.Target)
                 {
