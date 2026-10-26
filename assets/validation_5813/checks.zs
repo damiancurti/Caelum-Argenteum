@@ -103,6 +103,8 @@ class CA411FireChecks : EventHandler
     void PotChecks(CaelumPlayer u)
     {
         Seed(u,false);let fire=Fire();if(fire==null)return;let pot=Pot(u);
+        Check(Near(pot.GetUnitWeight(),8.1) && CaelumCampData.Grams(1,0)==7100,"integral trivet adds 1.6 kg to pot and recipe");
+        Check(Near(CaelumCampPhysics.HeatCapacity(0),2475),"separate support does not change the vessel thermal mass");
         Check(fire.MountPot(u,pot) && fire.Pot==pot && pot.Owner==fire,"mount keeps original pot identity");
         Check(!CaelumCampFireWork.Begin(u,fire,3),"cannot dismantle with attached pot");
         double total=CaelumCampPhysics.BoilingSeconds(1,20);
@@ -124,6 +126,18 @@ class CA411FireChecks : EventHandler
     {Seed(u,false);Check(Fire().MountPot(u,Pot(u)),"persistent pot mounted");Fire().Extinguish();Result();}
     void PotLoad(CaelumPlayer u)
     {Setup(u);let fire=Fire();Check(fire!=null && fire.Pot!=null && fire.Pot.Owner==fire,"native save preserves mounted pot ownership");if(fire!=null && fire.Pot!=null){Check(Near(fire.Pot.WaterLiters,1) && fire.Pot.WaterQuality==7,"native save preserves volume and contamination");Check(fire.TakePot(u),"native saved pot can be retrieved");}Result();}
+    void TrivetShop(CaelumPlayer u)
+    {
+        Setup(u);let vendor=CaelumCityMerchant(Actor.Spawn('CaelumCityMerchant',(0,0,0),NO_REPLACE));
+        vendor.Category=0;vendor.StockInitialized=true;vendor.CatalogueRevision=1;vendor.RestockRevision=1;
+        CaelumCampCatalogue.Ensure(vendor,u);let product=vendor.Products[1];
+        product.Stock.Amount=1;product.BaseValue=60157;vendor.CampCatalogueRevision=2;
+        CaelumCampCatalogue.Ensure(vendor,u);
+        Check(product.Stock.Amount==1 && vendor.Products.Size()==2,"trivet migration preserves sold stock and catalogue identity");
+        Check(Near(product.BaseValue,CaelumCampCrafting.Value(1)) && product.BaseValue>60157,"trivet migration derives updated pot price");
+        double price=product.BaseValue;CaelumCampCatalogue.Ensure(vendor,u);
+        Check(product.Stock.Amount==1 && Near(product.BaseValue,price),"trivet catalogue revision is idempotent");Result();
+    }
     void WaitCheck(CaelumPlayer u)
     {
         Seed(u,false);let fire=Fire();if(fire==null)return;double before=fire.Fuel.FuelGrams;
@@ -171,6 +185,7 @@ class CA411FireChecks : EventHandler
         else if(e.Name=="ca411f_potseed")PotSeed(u);
         else if(e.Name=="ca411f_potload")PotLoad(u);
         else if(e.Name=="ca411f_wait")WaitCheck(u);
+        else if(e.Name=="ca411f_trivetshop")TrivetShop(u);
         else if(e.Name=="ca411f_ui_start")UIStart(u);
         else if(e.Name=="ca411f_ui_complete")UIComplete(u);
         else if(e.Name=="ca411f_manual"){Setup(u);GiveWood(u,20000);Pot(u);Console.Printf("CA411F RESULT manual ready: wood and full pot supplied");}

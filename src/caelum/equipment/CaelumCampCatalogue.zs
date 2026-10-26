@@ -19,10 +19,11 @@ class CaelumCampCatalogue : Object play
         for(int i=0;i<vendor.Products.Size();i++)
         {
             let product=vendor.Products[i];
-            if(product.Recipe!=CaelumCampData.FIRST_RECIPE)continue;
+            if(!CaelumCampData.IsRecipe(product.Recipe))continue;
+            int variant=product.Recipe-CaelumCampData.FIRST_RECIPE;
             bool book=product.Kind==CaelumShopProduct.BOOK;
-            if(!book && (product.Kind!=CaelumShopProduct.SIMPLE || product.NativeClass!=CaelumCampData.ItemClass(0)))continue;
-            product.BaseValue=book?CaelumLibrary.BookValue(user,product.Recipe,product.Tier):CaelumCampCrafting.Value(0);
+            if(!book && (product.Kind!=CaelumShopProduct.SIMPLE || product.NativeClass!=CaelumCampData.ItemClass(variant)))continue;
+            product.BaseValue=book?CaelumLibrary.BookValue(user,product.Recipe,product.Tier):CaelumCampCrafting.Value(variant);
             let offer=CaelumRecipeOffer(product.Stock);if(offer!=null)offer.BaseValue=product.BaseValue;
             product.UnitTics=CaelumShopRestock.Duration(product,user);
         }

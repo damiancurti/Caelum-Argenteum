@@ -77,7 +77,25 @@ $process = Start-Process -FilePath $engine -ArgumentList $arguments -WorkingDire
 $record.pid = $process.Id
 $record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
 Write-Output "Started $Label, PID $($process.Id)"
-if ($Interactive) { return }
+if ($Interactive) {
+    if ($Script -eq 'manual') {
+        $ready = $false
+        $deadline = [DateTime]::UtcNow.AddSeconds(30)
+        $taskManualLog = Join-Path $work "$Label.txt"
+        while (!$process.HasExited -and [DateTime]::UtcNow -lt $deadline) {
+            if (Test-Path -LiteralPath $taskManualLog) {
+                $ready = Select-String -LiteralPath $taskManualLog -Quiet -SimpleMatch 'CA411F INPUT ready'
+                if ($ready) { break }
+                if (Select-String -LiteralPath $taskManualLog -Quiet -Pattern 'Script error|VM execution aborted|Fatal:') { break }
+            }
+            Start-Sleep -Milliseconds 250
+            $process.Refresh()
+        }
+        if (!$ready) { throw "Manual controls did not finish loading. See $taskManualLog" }
+        Write-Output 'Manual controls and scenario ready.'
+    }
+    return
+}
 $null = $process.Handle
 $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
 while (!$process.WaitForExit(250) -and [DateTime]::UtcNow -lt $deadline) {

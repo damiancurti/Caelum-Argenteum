@@ -661,7 +661,11 @@ fire with 2 kW useful cooking heat (25% efficiency), wood at 15 MJ/kg and 1.92 k
 fuel per game hour; flame diameter 0.60 m and height 0.50 m. Existing approved
 meat/fish/puchero durations stay unchanged. The pot is an open cylinder with
 0.36 m inside diameter, approximately 0.196 m depth, 2 mm iron side/base walls
-and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
+and handles, 5.5 kg vessel mass. The inseparable trivet approved on 2026-10-26
+adds 1.6 kg, for 7.1 kg empty carried mass: a 0.32 m iron ring, three
+0.50 m legs and 0.010 m rod. Ideal rod mass is about 1.55 kg; the approved
+rounding includes joints. The support sits outside the water/vessel thermal
+mass, so accepted heating/cooling uses the original 5.5 kg vessel. Iron density is 7,870 kg/m3, specific
 heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
 Tent and pot use both purchase and fabrication with learned recipes; the fire
 is assembled on suitable ground with wood. The author then approved approximately
@@ -673,7 +677,7 @@ blocks direct rain and reduces exterior wind by 90%, retaining exterior air
 temperature with no self-heating or new rest bonus. The fire extinguishes when
 leaving its map and retains the unspent loaded wood; off-map burning was rejected.
 Approved recipes at 100% efficiency: tent uses 13,500 g cotton fabric (T2),
-4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot uses 5,500 g iron ingot
+4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot with integral trivet uses 7,100 g iron ingot
 (T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
 Anvil. Existing fabrication duration, Dexterity and waste apply at normal
 complexity. Base prices are ingredient costs plus the existing 25% manufacturing

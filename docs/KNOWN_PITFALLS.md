@@ -56,6 +56,27 @@ staggered, climate samples cache the civil minute, and constant Limbo exposure
 integrates directly. The 500-stack peaceful callback comparison is recorded;
 it establishes neither an unbounded stack limit nor city/siege performance.
 
+## CA-KP-173 - Verify manual fixture startup, not only automated checks
+
+Status/evidence: ENGINE-VERIFIED; #411 / PR507; 2026-10-26.
+Affected baseline: 50e3e27d; GZDoom 4.14.2, Windows 11/Vulkan, final05.
+Scope: assets/validation_5813/prepare.py and run_native.ps1.
+
+The author's original manual script began with a nested exec of the canonical
+controls, followed by wait/setup/binds. Running that exact script left default
+engine bindings and never seeded the fixture. Adding unrelated trailing echo
+commands made a separate probe pass: the precise engine scheduling cause remains
+UNCONFIRMED. Passing automated scenarios did not establish a working author menu.
+
+Inline the owned control-file commands, install diagnostic bindings before the
+delayed setup, query them natively, and check a readiness marker before handoff.
+The exact corrected manual entry and its smoke extension both initialize. Retain
+the failed original local log; selected passing evidence is in validation_5813.
+Remote key injection did not reach this game window. Binding queries and scripted
+commands are not proof of physical-key acceptance; CA411-FIRE-01 remains pending.
+Regression: prepare.py, then run_native.ps1 -Script manual-smoke -Runtime final05
+-Checks with a fresh label; also verify the unchanged manual interactive entry.
+
 ## CA-KP-170 - Camp fuel stacks and immutable native test archives
 
 Status/evidence: ENGINE-VERIFIED, #411, 2026-10-26; assets/validation_5813.

@@ -50,8 +50,11 @@ def main():
                 archive.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
     (WORK/'old-seed.cfg').write_text('wait 70; netevent ca410f_old_seed; save ca410f-old; wait 5; quit\n',encoding='utf-8')
     (WORK/'old-check.cfg').write_text('wait 70; netevent ca410f_old_check; wait 5; quit\n',encoding='utf-8')
-    manual='exec ../../assets/playtest/default_controls.cfg; wait 35; netevent ca410f_manual; bind F1 "netevent ca410f_manual"; bind F2 "netevent ca410f_read; toggleconsole"; bind F3 "netevent ca410f_eat"; bind F4 "netevent ca410f_day"'
+    controls='; '.join(line.strip() for line in (ROOT/'assets/playtest/default_controls.cfg').read_text(encoding='utf-8').splitlines() if line.strip() and not line.lstrip().startswith('//'))
+    manual=controls+'; bind F1 "netevent ca410f_manual"; bind F2 "netevent ca410f_read; toggleconsole"; bind F3 "netevent ca410f_eat"; bind F4 "netevent ca410f_day"; wait 35; netevent ca410f_manual'
+    manual+='; wait 5; bind F1; bind F2; bind F3; bind F4; bind Tab; bind T; echo CA410F INPUT ready'
     (WORK/'manual.cfg').write_text(manual+'\n',encoding='utf-8')
+    (WORK/'manual-smoke.cfg').write_text(manual+'; netevent ca410f_read; netevent ca410f_eat; wait 5; netevent ca410f_day; wait 5; quit\n',encoding='utf-8')
     (WORK/'capture.cfg').write_text('wait 70; netevent ca410f_manual; wait 5; ca_journal_page 0; ca_journal_open true; wait 5; screenshot food-lots.png; ca_journal_open false; wait 5; quit\n',encoding='utf-8')
 
 if __name__ == '__main__':
