@@ -1,15 +1,3 @@
-CA411-FIRE-01 | Origin: 5.8.13 / #411 | PARTIAL: original functional checks accepted 2026-10-26
-Remaining correction: integral iron trivet approved 2026-10-26.
-Prerequisites: issue411-fire-work; trivet01 package; close other GZDoom sessions.
-Run assets/validation_5813/run_native.ps1 -Label author-trivet-NEW -Runtime trivet01 -Script trivet-manual -Checks -Interactive -Language es.
-1. The mounted pot sits on an iron ring and three legs, clear of the wood.
-   F1 restores the observation point. Inspect it from several sides.
-2. Retrieve the pot through the fire panel. Empty mass is 7.1 kg; the supplied
-   1 L brings it to 8.1 kg. The trivet travels with it, without a separate item.
-3. The pot recipe needs 7,100 g iron at 100% efficiency. Existing purchased stock
-   stays consumed after updating, with the new recipe-derived price.
-Prior boil/fuel/cooling/save checks were accepted; do not repeat them for approval.
-
 CA412-BAG-01 | Origin: 5.8.15 / #412 | PENDING: outside interaction correction
 Prerequisites: issue412-coop-work; entry03 runtime; GZDoom4.14.2; close other sessions.
 Launch assets/validation_5815/author_terminal.ps1, option1, after returning.

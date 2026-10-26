@@ -41,7 +41,7 @@ this delivery does not complete #410 or V5.8. No art or map geometry changed.
 Implemented: one-minute assembly/ignition/dismantling, 10 kg capacity, exact
 wood recovery, ownership/placement, world-time burning and thermal radiation,
 native save/hub retention, mounted pot heating/boiling/cooling and live controls.
-CA411-FIRE-01 awaits the author's return. Tests: assets/validation_5813.
+CA411-FIRE-01 passed author review in full on2026-10-26, including the integral trivet correction. Tests: assets/validation_5813.
 Remaining #411: meat/fish/puchero preparation, coupled to #410 cooked food lots.
 Remaining V5.8 implementation issues: #410, #411, #412, #415, #416, #417, #502.
 Keep their scopes and PRs separate; no release closure is claimed.

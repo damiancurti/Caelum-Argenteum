@@ -92,3 +92,7 @@ The ten regenerated meshes are byte-identical. Agent inspected the native
 mounted-pot capture: pot supported above the wood, original owned textures.
 Original functional acceptance is recorded; corrected visual/mass/recipe remain
 for author corroboration. No map geometry or persisted pot fields changed.
+
+Final author acceptance, 2026-10-26: CA411-FIRE-01 passed in full, including
+the integral trivet, carried mass and recipe correction. The pending entry is
+retired. No new native execution is claimed for this documentation-only update.
