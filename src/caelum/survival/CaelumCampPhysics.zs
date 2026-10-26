@@ -6,7 +6,7 @@ class CaelumCampPhysics : Object
     static clearscope double SecondsFromFuel(double grams)
     {return Max(0,grams)*CaelumConstants.MATERIAL_UNIT_WEIGHT*CaelumCampData.WOOD_J_KG/CaelumCampData.FIRE_WATTS;}
     static clearscope double HeatCapacity(double liters)
-    {return Max(0,liters)*CaelumWaterThermalData.WATER_CP+CaelumCampData.POT_KG*CaelumCampData.IRON_CP;}
+    {return Max(0,liters)*CaelumWaterThermalData.WATER_CP+CaelumCampData.POT_BODY_KG*CaelumCampData.IRON_CP;}
     static clearscope double BoilingSeconds(double liters,double temperature)
     {return HeatCapacity(liters)*Max(0,CaelumWaterThermalData.BOILING_C-temperature)/CaelumCampData.USEFUL_WATTS+CaelumWaterThermalData.BOIL_SECONDS;}
     static clearscope double Cool(double temperature,double ambient,double wind,double seconds,double liters)

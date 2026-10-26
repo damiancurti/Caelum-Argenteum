@@ -4,6 +4,12 @@ Documentation version: **5.8.13** - 2026-10-26.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 
+Author result, 2026-10-26: CA411-FIRE-01 passed the supplied functional checks;
+the author requested an integral trivet beneath the pot. Approved ring diameter
+0.32 m, three 0.50 m legs, 0.010 m iron rod and 1.6 kg support: 7.1 kg total
+empty pot/recipe mass, price derived normally. The corrected visual, carried
+mass and catalogue migration remain pending author confirmation.
+
 Implemented the author's approved 10 kg wood capacity, one-minute assembly and
 dismantling, immediate extinguishing, recovery of unburned wood and departure
 extinguishing without off-map fuel consumption. Native pot identity, volume,

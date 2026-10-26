@@ -42,6 +42,7 @@ def main():
         'taskseed': 'wait 35; netevent ca411f_taskseed; save ca411f-task; wait 5; quit',
         'taskload': 'wait 5; netevent ca411f_taskload; wait 5; quit',
         'pot': 'wait 35; netevent ca411f_pot; wait 5; quit',
+        'trivetshop': 'wait 35; netevent ca411f_trivetshop; wait 5; quit',
         'potseed': 'wait 35; netevent ca411f_potseed; save ca411f-pot; wait 5; quit',
         'potload': 'wait 5; netevent ca411f_potload; wait 5; quit',
         'capture': 'wait 35; netevent ca411f_potseed; wait 35; netevent ca411f_camera; wait 5; screenshot fire-world.png; netevent ca411f_visual_lit; wait 10; screenshot fire-lit.png; netevent ca411f_menu; wait 10; screenshot fire-menu.png; wait 5; quit',
@@ -51,6 +52,7 @@ def main():
     }
     scripts['manual'] += '; wait 5; bind F1; bind F2; bind F3; bind F4; bind Tab; bind T; echo CA411F INPUT ready'
     scripts['manual-smoke'] = scripts['manual']+'; netevent ca411f_read; wait 5; quit'
+    scripts['trivet-manual'] = controls+'; bind F1 "netevent ca411f_camera"; bind F2 "netevent ca411f_read; toggleconsole"; wait 35; netevent ca411f_potseed; wait 35; netevent ca411f_camera; echo CA411F INPUT ready'
     for name, script in scripts.items():
         (WORK/(name+'.cfg')).write_text(script+'\n', encoding='utf-8')
     with zipfile.ZipFile(WORK/'legacy-checks.pk3','w',zipfile.ZIP_STORED) as archive:
