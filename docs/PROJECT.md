@@ -14,8 +14,9 @@ sources and exact built-in imagegen prompts retained. Technical packing only
 crops/masks/resizes the retained sources; no existing art is replaced.
 Native checks: 174 executed PASS / zero FAIL in 21 selected runs; paired
 digestion, old-save rollback and 500-stack timing also pass within their recorded
-limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 awaits author
-corroboration. Cooking/proofing, finished dishes and remaining furniture are
+limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 passed author
+acceptance on 2026-10-26, without qualifications. Cooking/proofing, finished
+dishes and remaining furniture were
 still unfinished #410 work.
 
 ## 5.8.16 - Non-solid physical scenery exposure (#502)

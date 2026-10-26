@@ -4,6 +4,12 @@ Documentation version: **5.8.17** - 2026-10-26.
 
 ## 5.8.17 - Kitchen ingredients (#410)
 
+Final author acceptance, 2026-10-26: CA410-INGREDIENTS-01 (origin 5.8.17/#410)
+passed in full. The author confirmed the three supplied checks passed,
+without qualifications. This entry is retired from pending_test.txt.
+Runtime and release are unchanged; no new native run is claimed for this
+acceptance-only update. The remaining issue scope is still open.
+
 The approved flour, raw beef, raw white fish, vegetable mix and culinary salt
 are integrated into Provisions as gram-based materials. Raw meat, fish
 and vegetables use full 100-g portions and the approved distinct nutrition.
@@ -14,8 +20,9 @@ sources and exact built-in imagegen prompts retained. Technical packing only
 crops/masks/resizes the retained sources; no existing art is replaced.
 Native checks: 174 executed PASS / zero FAIL in 21 selected runs; paired
 digestion, old-save rollback and 500-stack timing also pass within their recorded
-limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 awaits author
-corroboration. Cooking/proofing, finished dishes and remaining furniture are
+limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 passed author
+acceptance on 2026-10-26, without qualifications. Cooking/proofing, finished
+dishes and remaining furniture were
 still unfinished #410 work.
 
 ## 5.8.16 - Non-solid physical scenery exposure (#502)

@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.17** - 2026-10-26.
 
-**5.8.17/#410:**5ingredients/grams/raw-eating;174PASS;validation_5817;CA410-INGREDIENTS-01pending. Cooking/dishes/furniture-WIP.
+**5.8.17/#410:**5ingredients/grams/raw-eating;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26. Cooking/dishes/furniture-WIP.
 
 **5.8.16/#502:**232PASS;CA502-SCENERY-01accepted2026-10-26;validation_5816.
 

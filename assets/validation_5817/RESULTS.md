@@ -12,7 +12,9 @@ All 16,927 members match `src` exactly. Static validation passes with zero
 errors, current indexes and a 2,497-word context. Native evidence: **174 newly executed
 PASS / zero FAIL in 21 selected runs**, plus the paired digestion comparison.
 Counts use actual executed log lines, not serialized cumulative counters.
-Author corroboration and physical key receipt remain **CA410-INGREDIENTS-01**.
+**CA410-INGREDIENTS-01 passed author corroboration on 2026-10-26**, including
+controls and painted sprites, without qualifications. The pending entry is
+retired; no new native run is claimed for this acceptance-only update.
 
 Coverage: exact grams, distinct nutrition, full-Hunger intake, Box and partial
 portion rejection; native pickup/capped copy/toss/merge; coffer splits and hub
@@ -33,8 +35,8 @@ Native Spanish/English captures were visually inspected. Five owned painted
 sources, one retained unselected variant and exact imagegen prompts are stored
 under `assets/art_source/cooking_ingredients`. Technical masking/cropping/resize
 follows SPRITE_ART_DIRECTION. Two exports were byte-identical. Existing art and
-map geometry are unchanged. The author terminal is prepared but not opened
-while the author is away.
+map geometry are unchanged. The author reviewed the supplied terminal after
+returning and accepted the ingredient check on 2026-10-26.
 
 ## Performance boundary
 
