@@ -63,6 +63,7 @@ class CaelumCombatActor : Actor
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
     transient CaelumContaminationNPC ContaminationExposure;
+    CaelumContaminationContacts ContaminationContacts;
     CaelumAltitudeState AltitudeState;
     CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;
@@ -2761,6 +2762,7 @@ class CaelumCombatActor : Actor
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
+        CaelumContaminationContacts.Collision(self,other);
 
         // Las caras que sólo se tocan verticalmente pertenecen al aterrizaje.
         if (other!=null && (Pos.Z>=other.Pos.Z+other.Height-0.001

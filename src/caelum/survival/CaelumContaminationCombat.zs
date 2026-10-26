@@ -15,16 +15,16 @@ class CaelumContaminationContactPoint : Object play
 
 class CaelumContaminationCombat : Object play
 {
-    static CaelumContaminationContactPoint ActorPoint(Actor body)
+    static CaelumContaminationContactPoint ActorPoint(Actor body,CaelumContaminationContactPoint reuse=null)
     {
         if(body==null || CaelumContaminationStorage.IsShielded(body))return null;
-        let point=new('CaelumContaminationContactPoint');point.Body=body;
+        let point=reuse!=null?reuse:new('CaelumContaminationContactPoint');point.Body=body;point.Record=null;
         point.Dose=CaelumContaminationStorage.Dose(body);return point;
     }
-    static CaelumContaminationContactPoint ModelPoint(CaelumContaminationState entry)
+    static CaelumContaminationContactPoint ModelPoint(CaelumContaminationState entry,CaelumContaminationContactPoint reuse=null)
     {
         if(entry==null)return null;
-        entry.Ensure();let point=new('CaelumContaminationContactPoint');point.Record=entry;point.Dose=1;return point;
+        entry.Ensure();let point=reuse!=null?reuse:new('CaelumContaminationContactPoint');point.Body=null;point.Record=entry;point.Dose=1;return point;
     }
     static CaelumContaminationContactPoint WeaponPoint(CaelumWeaponModel model)
     {
@@ -38,18 +38,18 @@ class CaelumContaminationCombat : Object play
         if(model.ContaminationState==null)model.ContaminationState=new('CaelumContaminationState');
         return ModelPoint(model.ContaminationState);
     }
-    static CaelumContaminationContactPoint Exterior(Actor body,int slot)
+    static CaelumContaminationContactPoint Exterior(Actor body,int slot,CaelumContaminationContactPoint reuse=null)
     {
         let user=CaelumPlayer(body);
-        if(user!=null)return ActorPoint(CaelumContaminationSurfaceContact.Outer(user,slot));
+        if(user!=null)return ActorPoint(CaelumContaminationSurfaceContact.Outer(user,slot),reuse);
         let npc=CaelumCombatActor(body);
         if(npc!=null && npc.CombatArmor!=null && !CaelumThermalBody.FurryAnimal(body))
         {
             if(npc.CombatArmor.ContaminationState[slot]==null)
                 npc.CombatArmor.ContaminationState[slot]=new('CaelumContaminationState');
-            return ModelPoint(npc.CombatArmor.ContaminationState[slot]);
+            return ModelPoint(npc.CombatArmor.ContaminationState[slot],reuse);
         }
-        return ActorPoint(body);
+        return ActorPoint(body,reuse);
     }
     static bool Physical(Actor victim,Actor inflictor,Actor source,Name mod,int flags)
     {
@@ -81,14 +81,15 @@ class CaelumContaminationCombat : Object play
         }
         return ActorPoint(source);
     }
-    static void Exchange(CaelumContaminationContactPoint first,CaelumContaminationContactPoint second)
+    static void Transfer(CaelumContaminationContactPoint first,CaelumContaminationContactPoint second,double area,double seconds)
     {
         if(first==null || second==null)return;
         double a=first.Value(),b=second.Value();
-        double area=CaelumContaminationData.IMPACT_CONTACT_M2,seconds=CaelumContaminationData.IMPACT_CONTACT_SECONDS;
         if(a>b)second.Set(CaelumContaminationRules.AfterContact(b,a,area,seconds,second.Dose));
         else if(b>a)first.Set(CaelumContaminationRules.AfterContact(a,b,area,seconds,first.Dose));
     }
+    static void Exchange(CaelumContaminationContactPoint first,CaelumContaminationContactPoint second)
+    {Transfer(first,second,CaelumContaminationData.IMPACT_CONTACT_M2,CaelumContaminationData.IMPACT_CONTACT_SECONDS);}
     // Se llama después de la esquiva y de decidir el bloqueo, antes del desgaste.
     static void Hit(Actor victim,Actor inflictor,Actor source,Name mod,int flags,int slot,
         CaelumContaminationContactPoint blocker=null)

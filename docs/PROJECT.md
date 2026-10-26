@@ -4,6 +4,15 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
+now create one shared, saved contact per touching pair. Brushing exposes the
+outer garment/armor or bare body, using the approved contact areas and world
+clock. Separation stops transfer; repeated active/passive callbacks cannot
+charge twice. Generic solid objects retain received contamination. Evidence:
+assets/validation_5812/contact; author check CA502-CONTACT-01 remains pending.
+Generic ambient exposure, unloaded-map history and resident housekeeping remain
+unfinished; this is not completion of #502 or V5.8.
+
 NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
 thermal system now share the player's environmental/equipment/immersion balance.
 The existing staggered thermal clock drives exposure, including accelerated
@@ -11,7 +20,7 @@ world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
 CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
-continuous actor contact, unloaded-map exposure and resident housekeeping remain
+unloaded-map exposure and resident housekeeping remain
 unfinished; this continuation does not complete #502 or V5.8.
 
 Combat-contact continuation (2026-10-25, #502): native melee now transfers

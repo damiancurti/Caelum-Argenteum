@@ -26,7 +26,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 18;
+    const PROVISION_REVISION = 19;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -119,6 +119,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
     {
         ProvisionRevision=PROVISION_REVISION;
+        // Otro cuerpo puede moverse o cambiar de equipo durante la espera.
+        if(CaelumContaminationContacts.Active(user)){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         SleepCleaningCloth=CaelumCleaningSupplies.Cloth(user);SleepCleaningSoap=CaelumSoapSupply.Available(user);
         if(CaelumTimeSkipState.IsPreparingSleep(user)){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Capture(user,false);

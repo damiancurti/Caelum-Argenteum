@@ -23,3 +23,17 @@ Prerequisites: isolated final01 hygiene package; assets/validation_5812/author_t
    save/load and hub checks. Expect PASS with zero failures.
 Expected: interaction, timing, cancellation, resource accounting and persistence
 accepted. This does not test soap bathing, gear cleaning or resident routines.
+
+CA502-CONTACT-01 | Origin: 5.8.12 / #502 | PENDING
+Prerequisites: contact-final01; GZDoom4.14.2; close other engine sessions.
+Launch assets/validation_5812/author_contact_terminal.ps1, option1.
+1. F1 resets the two actors to80/20. They remain in physical contact.
+   The receiver increases gradually; the source remains80. Read the live panel.
+2. F3 separates them. Contact becomes NO and the receiver stops increasing.
+3. F4 brings them together. Contact becomes SI and transfer resumes from the
+   retained value, without resetting either actor. F2 only reports; F6 console.
+4. Optional terminal option2 runs core/native clock/save/load/hub checks:
+   expect PASS with zero failures. The isolated actors suppress AI and ambient
+   exposure to show contact alone; production NPC exposure remains enabled.
+Expected: continuous contact, separation and recontact accepted. This does not
+approve household cleaning, generic ambient exposure or off-map simulation.

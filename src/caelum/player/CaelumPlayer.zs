@@ -7,6 +7,7 @@ class CaelumPlayer : DoomPlayer
 {
     transient CaelumTargetSubscriptions TargetSubscribers;
     transient CaelumContaminationExposure ContaminationExposure;
+    CaelumContaminationContacts ContaminationContacts;
     override Weapon PickWeapon(int slot, bool checkammo)
     {
         // El dispatcher nativo ya resolvió teclas, aliases y doble clic.
@@ -5670,6 +5671,7 @@ class CaelumPlayer : DoomPlayer
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
+        CaelumContaminationContacts.Collision(self,other);
 
         // Las caras que sólo se tocan verticalmente pertenecen al aterrizaje.
         if (other!=null && (Pos.Z>=other.Pos.Z+other.Height-0.001

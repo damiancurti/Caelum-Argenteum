@@ -2,6 +2,10 @@
 
 Documentation version: **5.8.12** — 2026-10-25.
 
+Solid-contact continuation (#502): no production art or map changes. The
+unshipped contact laboratory reuses existing rat sprites and local development
+IWAD texture references; its map/PK3 are generated under build, never distributed.
+
 Surface-contamination continuation (#502): no production art/map changes. The
 two-room diagnostic map is generated only in build; it references the local
 development IWAD and is excluded from runtime packaging. No new sprite is needed.

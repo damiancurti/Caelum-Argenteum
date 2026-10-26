@@ -4,6 +4,23 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
+now create one shared, saved contact per touching pair. Brushing exposes the
+outer garment/armor or bare body, using the approved contact areas and world
+clock. Separation stops transfer; repeated active/passive callbacks cannot
+charge twice. Generic solid objects retain received contamination. Evidence:
+assets/validation_5812/contact; author check CA502-CONTACT-01 remains pending.
+Generic ambient exposure, unloaded-map history and resident housekeeping remain
+unfinished; this is not completion of #502 or V5.8.
+
+Native contact verification:124 executed PASS/0FAIL across12 runs, including
+previous-runtime save/rollback; current save/hub, native clock and NPC/melee/
+calendar regressions. Package47cac19a6c1604633ff6e20ab8b81041836d657617d6ba65320343d5d7bc4bb9
+matches16,896 source members; maps/art unchanged. The500-pair performance
+comparison retained similar renderer callback cadence; display/GPU timing was
+unavailable. Results and development failures are preserved in validation_5812/contact.
+CA502-CONTACT-01 is pending; native verification is not author acceptance.
+
 Author acceptance,2026-10-25: CA502-NPC-01 (origin5.8.12/#502,
 npc-final02, SHA25638651311bd4d89888a378cedbfd204a48d2d9b2edc7fd73f95327fccc351b29b)
 passed the supplied live test without qualifications. The author confirmed

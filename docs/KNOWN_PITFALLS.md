@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-167 - Continuous native contacts need shared ownership and elapsed clocks
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25, baseline c6508075.
+Environment: GZDoom4.14.2/Windows11/Vulkan,1280x720; evidence:
+assets/validation_5812/contact. Author check CA502-CONTACT-01 pending.
+
+Active/passive native collision callbacks can report the same pair repeatedly.
+Create one shared saved link and update it once from elapsed world time; a brief
+blocked movement still needs its first world-tic dose even if native collision
+leaves a gap. End contact on separation/invalid ownership rather than preserving
+an old collision forever. Rebase transient time after hub/load so map absence
+cannot become retroactive physical contact. Rebind cached outer equipment
+endpoints without per-tic allocation. Native TryMove, stationary clock, brief
+contact, separation, current/old saves, hub and rollback tests cover these paths.
+
+A peaceful1,000-body/500-pair native comparison retained similar callback cadence:
+mean16.667/16.668ms, p9517.366/17.391, p9918.103/18.082, worst22.949/19.611.
+Both ran700tics with1,000 survivors; only the final500 receivers gained exposure.
+No global actor scan is introduced: registration searches only local pair lists,
+and only active pairs tick. No population cutoff or offscreen suspension exists.
+AI/thermal/movement were equally disabled for this isolated cost comparison.
+PresentMon access failed; callback timing is not displayed-frame or campaign
+performance acceptance. Follow CA-KP-110/115 rather than claiming FPS from35Hz.
+
 ## CA-KP-166 - Hidden inventory carriers must leave world links before attachment
 
 Status/evidence: ENGINE-VERIFIED, #502, GZDoom4.14.2,2026-10-25.

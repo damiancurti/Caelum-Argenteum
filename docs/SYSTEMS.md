@@ -4,6 +4,38 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
+now create one shared, saved contact per touching pair. Brushing exposes the
+outer garment/armor or bare body, using the approved contact areas and world
+clock. Separation stops transfer; repeated active/passive callbacks cannot
+charge twice. Generic solid objects retain received contamination. Evidence:
+assets/validation_5812/contact; author check CA502-CONTACT-01 remains pending.
+Generic ambient exposure, unloaded-map history and resident housekeeping remain
+unfinished; this is not completion of #502 or V5.8.
+
+Contact pairs are registered by native CollidedWith callbacks, shared by both
+participating player/NPC lists, and updated only while active. There is no world
+actor scan. Native collision contributes one world tic, including a brief blocked
+movement; repeated callbacks reuse the pair. Continued overlap of the native
+horizontal collision boxes integrates elapsed world-clock seconds. Side contact
+uses0.10m2; vertical support uses0.04m2 between feet and the supporting body's
+head/top. Body receivers use80/kg; object receivers use the existing dose1.
+The existing exterior resolver selects armor, clothing or skin. Cached endpoints
+are rebound without per-tic allocation, so changing equipment changes the real
+recipient. Concentration is neither depleted at the source nor created by equal
+values. Missing/destroyed bodies, noclip, missiles and carried/protected inventory
+cannot sustain a solid contact. Map walls/floors retain their separate tile path.
+
+Pair schema revision1 is additive: earlier saves have no historical links. A
+native collision creates the new state; saved pairs restore one identity and both
+endpoints. Transient clock caches rebase after load/hub return, avoiding charges
+for unobserved map absence. Existing concentration/ownership survives. The
+calendar forecast revision19 refuses an exact date while touching a mutable
+actor; ordinary world-time contact continues. Unloaded-map contact simulation,
+initial overlaps that have never triggered native collision, and non-solid
+objects remain outside this collision-driven slice. No new balance values,
+physics impulses, maps or art are introduced.
+
 NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
 thermal system now share the player's environmental/equipment/immersion balance.
 The existing staggered thermal clock drives exposure, including accelerated
@@ -11,7 +43,7 @@ world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
 CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
-continuous actor contact, unloaded-map exposure and resident housekeeping remain
+unloaded-map exposure and resident housekeeping remain
 unfinished; this continuation does not complete #502 or V5.8.
 
 NPC exposure uses the accepted thermal body area, anatomical coverage and actual
