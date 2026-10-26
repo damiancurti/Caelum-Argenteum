@@ -57,7 +57,16 @@
   ],
   "executed_pass": 232,
   "executed_fail": 0,
-  "author_acceptance": "pending",
-  "ui_input": "Direct native commands and rendered readings pass. Desktop key injection did not establish receipt; no physical-key acceptance claimed.",
-  "production_delta_from_behavior_and_performance_runtime": "current02 to current03 changes only Spanish comment encoding in the fieldless CaelumPhysicalScenery type."
+  "author_acceptance": "Passed CA502-SCENERY-01 on 2026-10-26 without qualifications; runtime unchanged.",
+  "ui_input": "Direct native commands and rendered readings pass. Earlier desktop key injection did not establish receipt; the author subsequently accepted the supplied controls on 2026-10-26.",
+  "production_delta_from_behavior_and_performance_runtime": "current02 to current03 changes only Spanish comment encoding in the fieldless CaelumPhysicalScenery type.",
+  "author_confirmation": {
+    "date": "2026-10-26",
+    "check": "CA502-SCENERY-01",
+    "origin_version": "5.8.16",
+    "issue": 502,
+    "result": "passed",
+    "qualifications": [],
+    "new_native_runs": 0
+  }
 }

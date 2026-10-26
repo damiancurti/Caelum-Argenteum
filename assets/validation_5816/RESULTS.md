@@ -55,11 +55,14 @@ starts at 20 and applies ten seconds of ambient 80 exposure.
 Desktop keyboard automation did not establish key receipt. The old Sky helper
 pipe was unavailable; an alternative window controller captured the live scene
 but F2/F4/Escape produced no confirmed input. That agent-owned session was
-stopped. No physical-key or author acceptance is claimed. The fixture's native
+stopped. That agent run did not establish physical-key acceptance. The fixture's native
 live-menu adapter also routes its own F1-F4 commands, so opening a live journal
 does not accidentally route to the older object fixture's uninitialized data.
-The author terminal is prepared, not opened during absence; CA502-SCENERY-01
-remains in pending_test.txt. Original #411/#412 corrections are already accepted.
+CA502-SCENERY-01 passed author corroboration on 2026-10-26, including
+controls, scenery readings, appearance and collision behavior, without
+qualifications. The pending entry is retired; the earlier agent input limitation
+remains recorded above. No new native run is claimed for this acceptance update.
+Original #411/#412 corrections are already accepted.
 
 ## Reproduce
 
