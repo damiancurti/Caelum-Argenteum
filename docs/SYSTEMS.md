@@ -4,13 +4,62 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Domestic-cleaning continuation (2026-10-25, #502): available residents clean
+accessible floors and furniture in the loaded home, sharing one world hour per
+household/day. Household coffers buy a reusable cloth and up to300g soap from
+real Provisions stock with their own coins; player supplies are not used.
+Cleaning spends the approved water/soap per area and preserves partial soap,
+daily quota and actual merchant stock through saves and hub travel. Native
+walking and calendar acceleration are integrated. Evidence:
+assets/validation_5812/domestic; CA502-HOUSEKEEPING-01 passed author review on2026-10-25.
+Unloaded-house history and the remaining #502 adapters are still unfinished.
+
+Domestic runtime contract:
+
+- Revision1 records own the shared daily3600-world-second quota. Only actual
+  cleaning consumes it; walking, missing resources, combat/sleep or a locked
+  coffer without a resident key do not. Forward civil dates reset it once;
+  reloading or moving the clock backward cannot create another allowance.
+- The loaded home derives1m2 floor targets from its existing geometry and uses
+  the approved collision-cylinder area for furniture. It selects a free resident
+  from the existing household registry, using native collision movement and
+  line of sight. Blocked targets are skipped for that day. No new route-finding
+  or scrubbing animation is claimed. One setup-local spatial query and a static
+  geometry grid replace any repeated global actor census.
+- Cleaning takes60 world seconds/m2,1L potable water/m2 and5g soap/L. The cloth
+  is reusable. The home's shared200L reserve continues its1L/min refill. Work
+  and consumption are progressive; saved fractional soap remains in the coffer
+  and counts toward its weight and the300g purchase target. An unfinished target
+  retains paid progress across daily reset/save/hub. Storage capacity still
+  applies; the hidden concentration record is not a stored item or a slot.
+- Automatic purchases need the lawful household coffer and an available key
+  holder. They debit its actual coins with normal denominations/change, transfer
+  actual Provisions inventory and credit the merchant. Normal prices, stock
+  limits and restocking apply; an unaffordable full soap lot may be smaller.
+  A failed transaction changes neither wallet nor stock. No player-owned coffer
+  or central offered property is used. Residents relocated to the approved
+  neighboring home retain their lawful coffer access.
+- A revision1 registry carries the original Provisions merchant bodies and
+  inventory parked during hub travel; it never fabricates shops or replenishes
+  stock on return. An idempotent typed merchant census runs once after travel
+  on MAP03 to adopt older saves. Automatic purchasing is available after the
+  city's actual shops have been initialized; pre-visit/off-map trade history is
+  not synthesized.
+- Ordinary and accelerated personal time run the loaded-home controller. Native
+  See-state movement cadence is preserved during acceleration. Calendar pump
+  batches use35 tics in a loaded cleaning home to keep collision work bounded
+  between UI frames. Exact-date resource forecasts conservatively refuse this
+  mutable household scene (forecast revision20); ordinary waiting still works.
+  Unloaded household simulation belongs to the remaining #415/#502 integration.
+  Elapsed work clocks rebase on load/hub return instead of inventing past work.
+
 Object-exposure continuation (2026-10-25, #502): physical scenery and loose
 native equipment now receive ambient contamination and repeating rain washing.
 Objects retain their concentration through pickup, storage, saves and hub travel;
 occupied chairs remain exposed when temporarily lending their collision. Spawn
 registration and staggered per-object clocks replace any routine world scan.
 Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
-Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+Unloaded-map history and non-solid/stackable object coverage
 remain unfinished; this continuation does not complete #502 or V5.8.
 
 Physical objects use their collision-cylinder exterior; native weapons, shields,
@@ -50,8 +99,8 @@ outer garment/armor or bare body, using the approved contact areas and world
 clock. Separation stops transfer; repeated active/passive callbacks cannot
 charge twice. Generic solid objects retain received contamination. Evidence:
 assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
-Object ambient exposure is delivered above; unloaded-map history and resident
-housekeeping remain unfinished. This is not completion of #502 or V5.8.
+Object ambient exposure and loaded-home housekeeping are delivered above;
+unloaded-map history remains unfinished. This is not completion of #502 or V5.8.
 
 Contact pairs are registered by native CollidedWith callbacks, shared by both
 participating player/NPC lists, and updated only while active. There is no world
@@ -83,7 +132,7 @@ world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
 CA502-NPC-01 passed author review on2026-10-25. Generic solid-object/loose-equipment exposure is delivered above;
-unloaded-map exposure and resident housekeeping remain
+loaded-home housekeeping is delivered above; unloaded-map exposure remains
 unfinished; this continuation does not complete #502 or V5.8.
 
 NPC exposure uses the accepted thermal body area, anatomical coverage and actual
@@ -135,8 +184,8 @@ world scan, new damage coefficient, map or art change is introduced. Exact nativ
 receiver checks, actual sword/natural-attack paths, current saves/hub travel,
 previous-runtime saves/rollback and hygiene regressions are recorded under
 assets/validation_5812/combat. CA502-COMBAT-01 passed author review on2026-10-25.
-This completes this combat slice only: generic actor ambient exposure, continuous
-actor brushing and resident housekeeping remain separate implementation work.
+This completes this combat slice only: actor ambient exposure, continuous
+brushing and loaded-home housekeeping are delivered by later continuations above.
 
 
 Calendar laboratory correction (2026-10-25): the production live menu consumed
@@ -169,7 +218,7 @@ manual calendar destinations and ordinary clock progression remain available.
 Evidence: assets/validation_5812/calendar. 160 native assertions across22 serial runs pass, including save migration/rollback
 and previous cleaning regressions; static validation passes.
 CA502-CALENDAR-01 passed author review on2026-10-25;
-CA502-WAKE-01 is accepted. Actor/combat contact and resident housekeeping remain
+CA502-WAKE-01 is accepted. Contacts and loaded-home housekeeping are delivered above; unloaded-house history remains
 unfinished; this continuation does not complete #502 or V5.8.
 
 Author-reported wake-laboratory water shortage corrected (2026-10-25): the
@@ -195,8 +244,8 @@ multi-piece wake/sleep queues. Ordinary world-clock completion remains available
 Evidence: assets/validation_5812/wake; 97 native assertions, genuine
 old-save migration/rollback and static validation pass. All169 maps and13,826 art
 members remain unchanged. CA502-WAKE-01 passed author review on2026-10-25.
-Calendar sleep is now integrated above. Other-actor/combat contacts and resident
-housekeeping remain unfinished; this continuation does not complete#502 or V5.8.
+Calendar sleep is now integrated above. Contacts and loaded-home housekeeping are delivered above; unloaded-house
+history remains unfinished; this continuation does not complete#502 or V5.8.
 
 Surface-contamination continuation (2026-10-25): player contact now uses saved
 one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
@@ -295,8 +344,8 @@ Approved follow-up2026-10-25: retain the unused fraction of the last gram of soa
 with its weight and save state for later cleaning, rather than charging it again.
 Fractional soap consumption is implemented by the bath continuation; toilets do not use soap.
 
-Calendar-triggered sleep cleaning, other-actor/combat contacts
-and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
+Calendar-triggered sleep cleaning, supported contacts and loaded-house cleaning
+are delivered by the continuations above; remaining #502 scope stays in TASKS. V5.8 remains incomplete.
 
 ## 5.8.11 - Household bathroom installation (#410)
 

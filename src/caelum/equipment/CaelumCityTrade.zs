@@ -9,6 +9,7 @@ class CaelumCityMerchant : Actor
     int SupportCatalogueRevision;
     int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision,HygieneCatalogueRevision;
     bool StockInitialized;
+    bool DomesticMarketParked;
     int RestockRevision;
     bool EnumeratingStock;
     double RestockLastSeen,RestockNextDue;
@@ -18,6 +19,7 @@ class CaelumCityMerchant : Actor
 
     static CaelumCityMerchant Find(int identity)
     {
+        let shared=CaelumDomesticMarket.Find(identity);if(shared!=null)return shared;
         let it=ThinkerIterator.Create("CaelumCityMerchant");CaelumCityMerchant vendor;
         while((vendor=CaelumCityMerchant(it.Next()))!=null)
             if(vendor.ShopIdentity==identity)return vendor;
@@ -37,6 +39,7 @@ class CaelumCityMerchant : Actor
             }
             vendor.Category=CaelumShopCatalogue.Category(i);
             vendor.TradesClothing=vendor.Category==CaelumShopCatalogue.CLOTHING;
+            CaelumDomesticMarket.Register(vendor);
         }
         CaelumShopSign.RefreshAuthored();
         return true;

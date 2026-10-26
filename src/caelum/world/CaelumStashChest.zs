@@ -69,6 +69,7 @@ class CaelumStashChest : Actor
     CaelumLawfulIdentity LawfulOwner;
     CaelumLockItem InstalledPadlock;
     bool PadlockReleased;
+    double DomesticSoapRemainderG;
 
     void EnsureLawfulAccess()
     {
@@ -149,7 +150,10 @@ class CaelumStashChest : Actor
     }
     virtual bool IsStorageItem(Inventory item)
     {
-        return item!=null && item!=InstalledPadlock && item.Owner==self && item.Amount>0;
+        // El registro oculto de suciedad pertenece al mueble; no es mercancía
+        // guardada y no debe consumir una pila ni impedir recibir el cambio.
+        return item!=null && item!=InstalledPadlock && !(item is 'CaelumContaminationCarrier')
+            && item.Owner==self && item.Amount>0;
     }
     virtual int StorageSlots()
     {
@@ -160,7 +164,7 @@ class CaelumStashChest : Actor
     }
     virtual double StorageWeight(CaelumPlayer user)
     {
-        double weight=0;
+        double weight=Max(0.0,DomesticSoapRemainderG)/1000.0;
         for(Inventory item=Inv;item!=null;item=item.Inv)
             if(IsStorageItem(item))weight+=CaelumContainerRules.Weight(user,item);
         return weight;

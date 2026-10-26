@@ -102,6 +102,7 @@ class CaelumHouseResident : Object play
 class CaelumHouseResidents : Inventory
 {
     Array<CaelumDomesticWaterState> HouseWater;
+    Array<CaelumHouseCleaningRecord> HouseCleaning;
     Array<CaelumPropertyRecord> Properties;
     int PropertyRevision;
     bool PropertyChestScanned;

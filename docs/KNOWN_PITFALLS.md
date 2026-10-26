@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-169 - Household work must preserve native stock and hidden metadata
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25; baseline eedb1b87.
+Environment: GZDoom4.14.2/Windows11/Vulkan1280x720; evidence:
+assets/validation_5812/domestic. Author check CA502-HOUSEKEEPING-01 passed2026-10-25.
+
+ZScript names are case-insensitive: local `chest`/`day` shadowed saved `Chest`/
+`Day`, silently losing the selected coffer and repeatedly zeroing elapsed work.
+Use distinct candidate/civil-date identifiers and test the actual scheduler,
+not only direct arithmetic calls. Household targets are initialized after the
+spawned fixtures receive their native initialization/linking.
+
+Parked traveling merchants are not found by the normal actor iterator. Restore
+the explicit saved registry after Travelled, then perform one typed legacy
+adoption census on MAP03. Preserve the actual body, inventory, identity and
+wallet; test return to the original map for duplicates and reset stock. This
+one load/travel census is bounded by the city's64 authored shops, not a routine
+per-tic scan. Household membership uses existing resident records (4, or8 after
+the approved relocation); targets use one map-local spatial query/static grid.
+
+Hidden contamination-carrier Inventory is metadata, not stored merchandise.
+Exclude it from coffer slots and cargo weight. Otherwise a legitimate exact
+payment can fail because its change and soap require the slot occupied by an
+invisible record. Keep capacity rejection atomic and test ordinary repurchase,
+fractional soap, wallet/stock conservation and the original save rollback.
+
+Accelerated personal time must also drive the loaded household's native steps;
+merely updating its WorldTick omits waiting/rest. Bound collision batches between
+rendered frames and reject an exact-date forecast that cannot model shared water
+mutations. This does not implement history for unloaded households.
+
 ## CA-KP-168 - World-object exposure must follow native inventory ownership
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.

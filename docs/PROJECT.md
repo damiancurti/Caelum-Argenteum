@@ -4,13 +4,23 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Domestic-cleaning continuation (2026-10-25, #502): available residents clean
+accessible floors and furniture in the loaded home, sharing one world hour per
+household/day. Household coffers buy a reusable cloth and up to300g soap from
+real Provisions stock with their own coins; player supplies are not used.
+Cleaning spends the approved water/soap per area and preserves partial soap,
+daily quota and actual merchant stock through saves and hub travel. Native
+walking and calendar acceleration are integrated. Evidence:
+assets/validation_5812/domestic; CA502-HOUSEKEEPING-01 passed author review on2026-10-25.
+Unloaded-house history and the remaining #502 adapters are still unfinished.
+
 Object-exposure continuation (2026-10-25, #502): physical scenery and loose
 native equipment now receive ambient contamination and repeating rain washing.
 Objects retain their concentration through pickup, storage, saves and hub travel;
 occupied chairs remain exposed when temporarily lending their collision. Spawn
 registration and staggered per-object clocks replace any routine world scan.
 Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
-Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+Unloaded-map history and non-solid/stackable object coverage
 remain unfinished; this continuation does not complete #502 or V5.8.
 
 Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
@@ -19,8 +29,8 @@ outer garment/armor or bare body, using the approved contact areas and world
 clock. Separation stops transfer; repeated active/passive callbacks cannot
 charge twice. Generic solid objects retain received contamination. Evidence:
 assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
-Object ambient exposure is delivered above; unloaded-map history and resident
-housekeeping remain unfinished. This is not completion of #502 or V5.8.
+Object ambient exposure and loaded-home housekeeping are delivered above;
+unloaded-map history remains unfinished. This is not completion of #502 or V5.8.
 
 NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
 thermal system now share the player's environmental/equipment/immersion balance.
@@ -29,7 +39,7 @@ world time, without global actor scans. Modeled armor, sidearms, shields and
 native carried equipment retain their existing identities; boxed gear is protected.
 Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
 CA502-NPC-01 passed author review on2026-10-25. Generic solid-object/loose-equipment exposure is delivered above;
-unloaded-map exposure and resident housekeeping remain
+loaded-home housekeeping is delivered above; unloaded-map exposure remains
 unfinished; this continuation does not complete #502 or V5.8.
 
 Combat-contact continuation (2026-10-25, #502): native melee now transfers
@@ -37,8 +47,8 @@ contamination between the actual weapon/natural attacker and the struck exterior
 piece or blocking shield, after evasion. Body dose follows mass; non-contact
 attacks do not transmit. NPC modeled gear saves its own clean-start states.
 Evidence: assets/validation_5812/combat. CA502-CALENDAR-01 is author-accepted;
-CA502-COMBAT-01 passed author review on2026-10-25. Actor ambient/solid contact and household cleaning
-remain unfinished; this does not complete #502 or V5.8.
+CA502-COMBAT-01 passed author review on2026-10-25. Actor ambient/solid contact and loaded-home cleaning are delivered above;
+unloaded-house history remains unfinished; this does not complete #502 or V5.8.
 
 Live demonstration (2026-10-25): the diagnostic menu now handles its F keys and
 shows work/supplies/contamination above the live panel.31 native rechecks pass;
@@ -51,7 +61,7 @@ wash. Rules and compatibility: SYSTEMS; evidence: assets/validation_5812/calenda
 160 native assertions across22 serial runs pass, including save migration/rollback
 and previous cleaning regressions; static validation passes.
 CA502-CALENDAR-01 passed author review on2026-10-25. Exact-date forecasts explicitly reject
-pre-sleep queues; actor/combat contact and NPC housekeeping remain unfinished.
+pre-sleep queues. Contacts and loaded-home housekeeping are delivered above.
 
 Author-reported wake-laboratory water shortage corrected (2026-10-25): the
 manual fixture pauses the existing rest food/water top-up to100, retaining the
@@ -76,8 +86,8 @@ multi-piece wake/sleep queues. Ordinary world-clock completion remains available
 Evidence: assets/validation_5812/wake; 97 native assertions, genuine
 old-save migration/rollback and static validation pass. All169 maps and13,826 art
 members remain unchanged. CA502-WAKE-01 passed author review on2026-10-25.
-Calendar sleep is now integrated above. Other-actor/combat contacts and resident
-housekeeping remain unfinished; this continuation does not complete#502 or V5.8.
+Calendar sleep is now integrated above. Contacts and loaded-home housekeeping are delivered above; unloaded-house
+history remains unfinished; this continuation does not complete#502 or V5.8.
 
 Surface-contamination continuation (2026-10-25): player contact now uses saved
 one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
@@ -172,8 +182,8 @@ forecasts include completion and same-tic nutrition credit without changing live
 resources. Existing unsupported-effect forecast guards remain in force.
 Static validation and55 native checks pass;16,885 package members match src.
 Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
-Calendar-triggered sleep cleaning, other-actor/combat contacts
-and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
+Calendar-triggered sleep cleaning, supported contacts and loaded-house cleaning
+are delivered by the continuations above; remaining #502 scope stays in TASKS. V5.8 remains incomplete.
 
 ## 5.8.11 - Domestic bathrooms (#410, in progress)
 

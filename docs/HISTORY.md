@@ -4,6 +4,32 @@ Documentation version: **5.8.12** — 2026-10-25.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
+Author acceptance,2026-10-25: CA502-HOUSEKEEPING-01 (origin5.8.12/#502,
+domestic-final02) passed without reported qualifications: "La prueba dio correcta,
+sigue con el resto." Only that entry is retired. Native evidence records193
+executed PASS/zero FAIL; static validation and source/package equality pass.
+Treatment/toilet author checks remain pending.
+
+Domestic-cleaning continuation (2026-10-25, #502): available residents clean
+accessible floors and furniture in the loaded home, sharing one world hour per
+household/day. Household coffers buy a reusable cloth and up to300g soap from
+real Provisions stock with their own coins; player supplies are not used.
+Cleaning spends the approved water/soap per area and preserves partial soap,
+daily quota and actual merchant stock through saves and hub travel. Native
+walking and calendar acceleration are integrated. Evidence:
+assets/validation_5812/domestic; CA502-HOUSEKEEPING-01 passed author review on2026-10-25.
+Unloaded-house history and the remaining #502 adapters are still unfinished.
+
+Author decisions,2026-10-25: one total cleaning hour per household/day,
+shared between residents, and automatic purchases from the household coffer
+without a staged shopping walk. This continues5.8.12/#502 without a new version.
+No author acceptance is inferred from native checks. Earlier object/contact/NPC
+acceptances remain unchanged; treatment/toilet checks remain separately pending.
+Current/prior saves, hub return, original-runtime rollback, real/accelerated
+clocks, shortages, actual payment and representative rendering measurements are
+recorded in assets/validation_5812/domestic/RESULTS.md. The new routine also
+exposed and fixed hidden contamination metadata consuming a coffer slot.
+
 Author acceptance, 2026-10-25: CA502-OBJECTS-01 (origin 5.8.12/#502,
 objects-final02, SHA256 01cf3d99bd62b2ba27906448d092b168707ce382e0f0c04a55f572d64328e2bf)
 passed without reported qualifications. The author confirmed "La prueba dio

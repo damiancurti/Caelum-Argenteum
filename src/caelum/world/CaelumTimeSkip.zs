@@ -360,7 +360,10 @@ class CaelumTimeSkipState : Inventory
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
         s.RefreshSupports(user);
         s.Pumping=true;
-        for(int i=0;i<CaelumTimeSkipRules.BATCH_TICS && s.Active;i++)
+        // El trabajo doméstico mueve un cuerpo con colisión nativa. Repartir
+        // esos pasos entre fotogramas evita una ráfaga larga sin presentar UI.
+        int batch=CaelumHousekeepingWork.Pending()?TICRATE:CaelumTimeSkipRules.BATCH_TICS;
+        for(int i=0;i<batch && s.Active;i++)
         {
             PrepareStep(user);if(!s.Active)break;
             CaelumTimeAdvanceState.SimulatePersonalTic(user);

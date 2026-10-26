@@ -11,6 +11,7 @@ class CaelumContaminationObject : Thinker
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        let vendor=CaelumCityMerchant(body);if(vendor!=null && vendor.DomesticMarketParked)return false;
         let item=Inventory(body);
         if(item!=null)return item is 'CaelumEquipmentItem' && item.Owner==null;
         // Una silla ocupada presta su colisión al jugador, pero sigue siendo

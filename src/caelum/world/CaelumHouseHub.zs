@@ -40,14 +40,34 @@ class CaelumHouseHubEvents : EventHandler
     }
     bool Prepared;
     transient bool BathroomReady;
+    transient bool MarketReady;
     int NextPrepareTic;
-    override void WorldLoaded(WorldEvent e){Prepared=false;BathroomReady=false;NextPrepareTic=0;}
+    CaelumHousekeepingWork Housekeeping;
+    override void WorldLoaded(WorldEvent e)
+    {
+        Prepared=false;BathroomReady=false;MarketReady=false;NextPrepareTic=0;
+        if(Housekeeping!=null)Housekeeping.ClockReady=false;
+    }
     override void WorldTick()
     {
+        // Travelled debe retirar los viajeros del estado nativo antes de
+        // restaurarlos; la migración acotada sólo se hace una vez por carga.
+        if(!MarketReady && level.MapName=="MAP03" && CaelumHouseResidents.Get()!=null)
+        {CaelumDomesticMarket.RebindLoaded();MarketReady=true;}
         // Un guardado anterior puede restaurar Prepared=true. Esta comprobación
         // transitoria revalida la instalación aditiva al cargar, sin duplicarla.
         if((!Prepared || !BathroomReady) && level.time>=NextPrepareTic)
-        {Prepared=CaelumHouseHub.Prepare();BathroomReady=Prepared;NextPrepareTic=level.time+TICRATE;}
+        {
+            Prepared=CaelumHouseHub.Prepare();BathroomReady=Prepared;NextPrepareTic=level.time+TICRATE;
+            // Los muebles recién creados reciben PostBeginPlay/enlace nativo
+            // al terminar el tic antes de censar el interior para limpiarlo.
+            return;
+        }
+        if(Prepared && CaelumHouseHubData.HouseForMap(level.MapName)>=0)
+        {
+            if(Housekeeping==null)Housekeeping=new('CaelumHousekeepingWork');
+            Housekeeping.Tick();
+        }
     }
 }
 
