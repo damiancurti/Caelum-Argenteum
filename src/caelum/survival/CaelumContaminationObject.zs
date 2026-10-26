@@ -16,7 +16,8 @@ class CaelumContaminationObject : Thinker
         if(item!=null)return item is 'CaelumEquipmentItem' && item.Owner==null;
         // Una silla ocupada presta su colisión al jugador, pero sigue siendo
         // un mueble expuesto. Su configuración física de clase no desaparece.
-        return (body.bSolid || GetDefaultByType(body.GetClass()).bSolid) && body.Radius>0 && body.Height>0;
+        return (body is 'CaelumPhysicalScenery' || body.bSolid || GetDefaultByType(body.GetClass()).bSolid)
+            && body.Radius>0 && body.Height>0;
     }
     static double Area(Actor body)
     {

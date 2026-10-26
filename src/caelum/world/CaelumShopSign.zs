@@ -1,5 +1,5 @@
 // El rubro se deriva del mismo índice que el comerciante, sin inventario ni Tick.
-class CaelumShopSign : Actor
+class CaelumShopSign : CaelumPhysicalScenery
 {
     void RefreshCategory()
     {frame=level.MapName=="MAP03" ? CaelumShopCatalogue.SignCategory(Pos,args[0]) : args[0];}

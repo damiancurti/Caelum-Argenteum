@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.15.** Obtain and update the complete repository, validate
+**Current release: 5.8.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.16 - Non-solid physical scenery exposure (#502, in progress)
+
+Mansion shrubs, decorative cave gems and shop signs now identify themselves as
+persistent physical scenery. The existing ambient/rain scheduler includes them
+without adding collision, changing art or registering cameras and transient
+visual effects. Cylinder area and the approved exposure/washing formulas remain
+unchanged. Static validation passes. Native parsing, migration and performance
+checks remain pending while the author corroborates the separate tent/trivet
+corrections. This draft does not complete #502 or V5.8.
 
 ## 5.8.15 - Usable sleeping bag inside the tent (#412, in progress)
 

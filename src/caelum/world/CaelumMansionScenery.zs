@@ -1,6 +1,6 @@
 // Decoración de #61: reutiliza sólo la representación de los ceibos y arbustos.
 // No hereda nodos de recursos ni modifica las reservas del jardín del tutorial.
-class CaelumMansionSceneryTree : Actor
+class CaelumMansionSceneryTree : CaelumPhysicalScenery
 {
     Default
     {
@@ -19,7 +19,7 @@ class CaelumMansionSceneryTree3 : CaelumMansionSceneryTree
 {
     Default { Radius 30; Height 197.5; }
 }
-class CaelumMansionSceneryShrub : Actor
+class CaelumMansionSceneryShrub : CaelumPhysicalScenery
 {
     Default
     {

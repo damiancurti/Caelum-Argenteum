@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.15** - 2026-10-26.
+Documentation version: **5.8.16** - 2026-10-26.
+
+## 5.8.16 - Non-solid physical scenery exposure (#502, in progress)
+
+Mansion shrubs, decorative cave gems and shop signs now identify themselves as
+persistent physical scenery. The existing ambient/rain scheduler includes them
+without adding collision, changing art or registering cameras and transient
+visual effects. Cylinder area and the approved exposure/washing formulas remain
+unchanged. Static validation passes. Native parsing, migration and performance
+checks remain pending while the author corroborates the separate tent/trivet
+corrections. This draft does not complete #502 or V5.8.
 
 ## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26
 
