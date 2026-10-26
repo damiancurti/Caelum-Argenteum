@@ -21,7 +21,13 @@ Art is delivered separately in the same focused issue: original log/iron-pot
 meshes and flame variations reuse owned textures; no campaign map changes.
 Evidence: assets/validation_5813/RESULTS.md. Static/native checks and agent visual
 inspection are distinct from CA411-FIRE-01, still pending author confirmation.
-The author is away; no author pass, issue closure or V5.8 completion is inferred.
+On return, the author reported inactive diagnostic keys. The original manual
+startup reproduced missing fixture setup and default engine bindings. Flattening
+the canonical control commands into the manual script, before its delayed setup,
+restored both. The launcher now checks readiness before handing off. Native
+binding queries and a manual-script smoke run pass; remote desktop key injection
+did not reach GZDoom. CA411-FIRE-01 remains pending physical-key author review.
+No gameplay package, balance, artwork or save format changed in this correction.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 

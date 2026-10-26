@@ -20,6 +20,8 @@ recipes still depend on the unfinished #410 food/cooking integration.
 
 Native checks, persistence and rendering evidence: assets/validation_5813.
 CA411-FIRE-01 is pending author review; this does not complete #411 or V5.8.
+The author launcher now verifies that its scenario and diagnostic controls load.
+F1-F4 and the normal Tab/T controls are recorded in the native startup log.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
