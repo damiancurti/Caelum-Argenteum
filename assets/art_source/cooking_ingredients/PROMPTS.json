@@ -1,0 +1,60 @@
+{
+  "issue": 410,
+  "brief": "docs/SPRITE_ART_DIRECTION.md",
+  "entries": [
+    {
+      "id": "flour",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-6398a85e-122d-4724-a377-2dc43eeba831.png",
+      "prompt": "Use case: historical-scene. Asset type: one transparent inventory/world pickup sprite for Caelum Argenteum, independent dark-fantasy RPG in nineteenth-century Argentina. Subject: a small open rustic linen sack full of off-white wheat flour, folded fabric rim and a few flour grains at its foot. Single compact centered silhouette, three-quarter view slightly from above. Painted pixel-oriented late-1990s RPG item sprite, crisp irregular pixel clusters, modeled volume, restrained soft upper-left lighting, warm beige linen, ivory flour, deep brown shadows. Designed to remain clearly legible when reduced to a 128x128 pixel inventory icon. No glossy modern 3D rendering, photograph, cartoon outlines, text, labels, logos, utensils, background scene or cast shadow beyond the object. Complete silhouette with generous transparent margins, genuine transparent alpha. One item only.",
+      "tool": "image_gen.imagegen",
+      "status": "Technical export and native visual review passed; author acceptance pending",
+      "local_source": "assets/art_source/cooking_ingredients/flour.png",
+      "sha256": "9e43730d2b862bf5ee672f6e11d701ebd5312660cd2748621c23157675ab7da9"
+    },
+    {
+      "id": "beef",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-cd9a852a-a789-411d-aeda-e4a65b8fb1d0.png",
+      "prompt": "Use case: historical-scene. Asset type: one transparent inventory/world pickup sprite for Caelum Argenteum, an independent dark-fantasy RPG inspired by nineteenth-century Argentina. Subject: one compact boneless cut of uncooked beef, deep muted crimson flesh and narrow ivory fat edge, resting directly as an isolated game item. No blood spill, no butcher tools, no plate. Three-quarter view slightly from above, readable complete silhouette, centered with generous transparent margins. Painted pixel-oriented late-1990s RPG inventory art; crisp irregular pixel clusters, warm brown shadow edges, modeled volume, restrained soft upper-left lighting, clear at 128x128 pixels. Match rustic painted provisions, not a photograph or glossy 3D render. No cartoon outlines, text, labels, logos, background scene, modern packaging or external cast shadow. Genuine transparent alpha. One item only.",
+      "tool": "image_gen.imagegen",
+      "status": "Technical export and native visual review passed; author acceptance pending",
+      "local_source": "assets/art_source/cooking_ingredients/beef.png",
+      "sha256": "6f25dd4e295d96ff6c14f9c15fc3e31c96654ba3a72b48b77a3e2e92b08e884f"
+    },
+    {
+      "id": "fish",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-83fbe3ce-ae3e-4bee-96b5-1d110b4624d4.png",
+      "prompt": "Use case: historical-scene. Asset type: one transparent inventory and world-pickup sprite for Caelum Argenteum, independent dark-fantasy RPG inspired by nineteenth-century Argentina. Subject: a raw white-fish fillet of hake, creamy ivory flesh with a slim muted gray-silver skin edge, one clear tapered boneless cut. No whole fish head, no blood, plate, garnish, tools or wrapping. Single compact centered complete silhouette, three-quarter view slightly from above with generous transparent margins. Painted pixel-oriented late-1990s RPG item art; crisp irregular pixel clusters, muted natural palette, modeled volume and restrained soft upper-left lighting, legible at 128x128 pixels. Not photographic, not a glossy 3D render, no comic outlines. No text, labels, logos, background scene or external shadow. Genuine transparent alpha. One item only.",
+      "tool": "image_gen.imagegen",
+      "status": "Technical export and native visual review passed; author acceptance pending",
+      "local_source": "assets/art_source/cooking_ingredients/fish.png",
+      "sha256": "acb807dfaae913b3233b7b19a2c1dea2837eb12e67e3f64d7a2cf16a6d715fac"
+    },
+    {
+      "id": "fishedited",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-66147828-3106-4a32-ba57-7dc754f42ca1.png",
+      "prompt": "Edit this exact fish inventory sprite. Preserve the painted fillet, composition, colors, pixel clusters and complete outline. Remove every glow, halo, haze, shadow or backdrop outside the physical fish. The exterior must be genuinely transparent alpha immediately beyond the crisp physical edge, with no surrounding soft gradient. Do not add objects, lettering or scenery.",
+      "tool": "image_gen.imagegen",
+      "status": "Retained unselected variant",
+      "local_source": "assets/art_source/cooking_ingredients/fishedited.png",
+      "sha256": "a698f918e0dd9a983443dbde60ff408cdf06707f62426e2a43afcf56efa6c42b"
+    },
+    {
+      "id": "vegetables",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-5f414f7b-f937-4159-bb13-0d002fd9f929.png",
+      "prompt": "Use case: historical-scene. Asset type: one transparent inventory/world-pickup icon for Caelum Argenteum, independent dark-fantasy RPG inspired by nineteenth-century Argentina. Subject: one small compact heap of uncooked mixed vegetables: one potato, a squat wedge of pumpkin with dark rind, one short carrot and a small ear of yellow sweetcorn. These four ingredients touch as one clear inventory-item silhouette. No plate, basket, knife, packaging, other vegetables or garnish. Three-quarter slightly elevated view, centered with clear transparent margins. Painted pixel-oriented late-1990s RPG sprite, warm earthy colors, crisp deliberate irregular pixel clusters, brown crevice shadows, modest soft upper-left light, legible reduced to 128x128 pixels. No glossy 3D rendering, photography, comic outlines, text or logos. NO GLOW, NO HALO, NO GROUND SHADOW, no backdrop. Genuine transparent alpha immediately outside the items.",
+      "tool": "image_gen.imagegen",
+      "status": "Technical export and native visual review passed; author acceptance pending",
+      "local_source": "assets/art_source/cooking_ingredients/vegetables.png",
+      "sha256": "7fe007e94b88272e28933b8c84ab174273f446bdb10c8ba806e7cbee26bcb898"
+    },
+    {
+      "id": "salt",
+      "source": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-72dd25ba-4055-4698-9b2e-27dead57808f.png",
+      "prompt": "Use case: historical-scene. Asset type: one transparent inventory/world-pickup sprite for Caelum Argenteum, independent dark-fantasy RPG in nineteenth-century Argentina. Subject: coarse culinary salt in a small plain open beige-paper packet, folded edges revealing a mound of off-white angular grains. Distinct from a tall fabric flour sack: the paper packet is low, squat and open. One compact centered complete silhouette, three-quarter slightly elevated view, generous transparent margins. Painted pixel-oriented late-1990s RPG item style, crisp irregular pixel clusters, earthy tan paper, pale ivory salt and brown shadows, modeled volume with soft upper-left lighting, legible at 128x128 pixels. No glossy modern 3D, photo, comic outlines, logos, text, labels, spoon, dish or scenery. No glow, no halo or external ground shadow. Genuine transparent alpha immediately outside the physical item.",
+      "tool": "image_gen.imagegen",
+      "status": "Technical export and native visual review passed; author acceptance pending",
+      "local_source": "assets/art_source/cooking_ingredients/salt.png",
+      "sha256": "655582191cf2c39b286edbd33cba71a4cf4e0d8a10a38682eea9e17d999e2f2a"
+    }
+  ]
+}

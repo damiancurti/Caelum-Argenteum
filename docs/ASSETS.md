@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.16** - 2026-10-26.
+Documentation version: **5.8.17** - 2026-10-26.
+
+## 5.8.17 - Painted kitchen ingredient candidates (#410)
+
+Five original built-in imagegen sources: flour, raw beef, raw hake fillet,
+vegetable mix (potato, squash, carrot, sweetcorn), and culinary salt. Prompts,
+source hashes, retained variants and technical export hashes are in
+assets/art_source/cooking_ingredients. The accepted ration icon is the observed
+style reference; none of its pixels or other existing art were replaced.
+The exporter applies a 128/255 alpha mask to remove the generated matte fringe,
+fits the silhouette within 116 x 116 pixels and packs 128px inventory/world
+sprites. This is authorized technical processing under SPRITE_ART_DIRECTION.
+The unselected fish edit remains as source evidence. Model art is not introduced.
+The deterministic exporter produced identical bytes twice. Agent review of the
+contact sheet and native Spanish/English inventory/quick-use captures passes;
+author visual corroboration remains pending as CA410-INGREDIENTS-01.
+
 
 ## 5.8.14 - Ration lot presentation (#410)
 

@@ -1,0 +1,5 @@
+Sprite "M108A0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/kitchen/flour.png", 0, 0 }
+Sprite "M109A0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/kitchen/beef.png", 0, 0 }
+Sprite "M110A0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/kitchen/fish.png", 0, 0 }
+Sprite "M111A0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/kitchen/vegetables.png", 0, 0 }
+Sprite "M112A0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/kitchen/salt.png", 0, 0 }
