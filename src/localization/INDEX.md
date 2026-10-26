@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `504bde3337e9d0048a079756485402037b79038b050272a8b92c631b20cabe74`. Locations include every definition; the last one per language wins.
+SHA-256: `6b2684a7c93080aa3128530ed54307142a164e703b9b6e7e7ab314d8d7c81a3e`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -171,6 +171,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
 | CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |
+| CA_TENT | 4 | CA_TENT_PACK | CA_TENT_USE_HINT |
 | CA_THERMAL | 16 | CA_THERMAL_ATTACK | CA_THERMAL_WET |
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |
 | CA_TOILET | 8 | CA_TOILET_CANCEL_HINT | CA_TOILET_UNAVAILABLE |

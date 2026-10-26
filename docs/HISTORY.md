@@ -2,30 +2,32 @@
 
 Documentation version: **5.8.15** - 2026-10-26.
 
-## 5.8.15 - Sleeping-bag clearance (#412), 2026-10-26
+## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26
 
-Author returned on 2026-10-26 and deferred the multiplayer-rest test to V5.12,
-the roadmap release dedicated to multiplayer. No cooperative-rest test is
-required for V5.8 author acceptance. CA412-BAG-01 remains an individual pending
-check; no result is inferred from this scheduling decision.
+The author accepted the supplied tests except the pot and tent, then reported
+that the tent could not be entered and Use did nothing. CA412-BAG-01 remains
+pending with that specific correction; no full acceptance is inferred. The
+multiplayer test/authority work is deferred to V5.12 by explicit author decision.
 
-The author subsequently reported inactive test keys. The individual launcher
-now regenerates its fixture, installs canonical controls (including T to advance
-rest) before setup and verifies readiness. Native binding queries and 11 actual
-solo-rest assertions pass. Remote key injection did not reach GZDoom, so the
-physical-key check remains pending. No runtime, art or save format changed.
+The initial patch retained the original #412 packing-guard ancestry and fixed
+oriented bag clearance without resizing the accepted assets. Its 80 native
+checks remain historical evidence. The first author launcher was corrected to
+load canonical bindings and verify readiness after an inactive-key report.
 
-Integrated the original #412 packing-guard branch by ancestry onto the validated
-#410/#411/#502 runtime. Replaced the oversized circular bag clearance with the
-existing model's oriented footprint and a separate unchanged player capsule.
-Added bounded reserved-bag overlap checks for resting/cleaning player slots.
-No recovery multipliers, art, collision dimensions or map geometry were changed.
+The follow-up now exposes Rest / Pack on actual Use from outside. Rest uses the
+native duration dialogue, original bag and native crouch. Revision1 entry data
+returns the sleeper to the clear original entrance or a checked fallback;
+revision0 preserves legacy bags. Pre-sleep equipment washing retains the same
+reservation, costs and packing guard. No art, recovery or map geometry changed.
 
-Native evidence and exact runtime digest are retained in assets/validation_5815.
-Normal/solo accelerated tent rest, original bag ownership, waking, obstructions,
-packing guards and old/new save loads are checked. The author has returned;
-CA412-BAG-01 remains pending in the corrected individual author launcher.
-Shared-clock/two-client integration and #410 furniture remain open.
+Follow-up evidence: 73 executed PASS/0 FAIL in 11 selected native runs, including
+native menu replies, Limbo, solo acceleration, blocked berths/exits, pre-sleep
+cleaning/cancellation, new-save return, old-save load and original-save rollback.
+The package matches all16,918 source members. Static validation passes; exact
+commands/digests and unchanged-roof captures are in assets/validation_5815.
+Only this individual interaction correction awaits author corroboration. The
+terminal is prepared but was not opened while the author was away. Remaining
+#410 furniture integration and V5.12 shared-clock work are not completed here.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 

@@ -78,7 +78,7 @@ $record.pid = $process.Id
 $record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
 Write-Output "Started $Label, PID $($process.Id)"
 if ($Interactive) {
-    if ($Script -eq 'manual') {
+    if ($Script -in @('manual','entry-manual')) {
         $ready = $false
         $deadline = [DateTime]::UtcNow.AddSeconds(30)
         $taskManualLog = Join-Path $work "$Label.txt"

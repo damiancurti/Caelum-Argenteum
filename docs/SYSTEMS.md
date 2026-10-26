@@ -9,14 +9,15 @@ zipper, with an 8-unit high envelope. Clearance uses the conservative symmetric
 half-width 20.4 and the model's facing, rather than a radius-46 upright cylinder.
 `CaelumAppearanceRegistry` stores these art-derived dimensions; no balance or
 model scale changes. The native player capsule is checked independently and is
-never resized by placement. Entering the tent may still require native crouching.
+never assigned a new full height or radius. Tent interaction applies native
+crouching before checking the berth, then restores the prior crouch on exit.
 
 A 11-by-5 cover of circumscribed probe circles checks the entire floor footprint;
 its small conservative edge overhang can reject very tight gaps. Local blockmap
 solids use rectangle/circle overlap plus the actual body volume. Other players'
 normal-rest, active-calendar and pending pre-sleep-cleaning bag models are checked
 through MAXPLAYERS slots with separating axes. No routine global actor scan or
-new saved state is introduced. The existing 5.8.10 packing guard is retained.
+per-tic full-world search is introduced. The existing 5.8.10 packing guard is retained.
 
 The query runs on placement and existing calendar-support/forecast refreshes,
 not on every actor. Native evidence includes a worst-frequency one-query-per-tic
@@ -31,6 +32,23 @@ V5.12 (cooperative/PvP foundation). The previously approved cooperative rules
 remain recorded, but no two-client author check gates V5.8. This decision is
 not acceptance of the separate individual bag-clearance check. Shared-clock
 implementation remains subject to that dedicated multiplayer authority scope.
+
+Interactive tent correction, 2026-10-26:
+- Use from outside opens Rest / Pack; Rest requires the owner's original,
+  accessible sleeping bag and follows existing safety and duration checks.
+- Placement checks two berths along the roof axis. Native crouching uses the
+  engine's crouch factor; its deferred Height update is projected immediately
+  for the placement probe. No FullHeight/radius/model adjustment is made.
+- Bag entry revision1 saves the tent, original entrance/map and crouch posture.
+  Old bag actors default to revision0 and retain their original behavior.
+  Loading is idempotent; no item is recreated or duplicated.
+- Wake-up and pre-sleep cleaning cancellation return to a clear saved entrance
+  or a native-checked local fallback. A newly blocked exit is never telefragged;
+  external displacement is not undone. If all exits are blocked, retain the
+  current safe position and let native crouch clearance prevent standing.
+- The same bag remains reserved through automatic equipment cleaning. Packing
+  is refused while the berth is reserved; resources follow the accepted #502
+  cleaning flow. Limbo uses the existing untimed furniture rest rule.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 

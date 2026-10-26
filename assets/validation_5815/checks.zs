@@ -26,6 +26,124 @@ class CA412BagChecks : CA411DeployChecks
         CaelumRestState.Cancel(u);u.SetOrigin(Slot(),false);u.Angle=Tent.Angle+90;u.Vel=(0,0,0);
         Console.Printf("CA412B native body radius=%.3f height=%.3f crouch=%.3f",u.Radius,u.Height,u.player.crouchfactor);
     }
+    vector3 Outside(CaelumPlayer u)
+    {return Tent.Pos+Tent.LocalOffset((CaelumPhysicsUnits.MapUnits(CaelumCampData.TENT_LENGTH_M)/2+u.Radius+CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU,0,0));}
+    void EntrySetup(CaelumPlayer u)
+    {
+        Seed(u);Tent.Title=CaelumLockRules.Character(u,true);
+        u.SetOrigin(Outside(u),false);u.Angle=Tent.Angle+180;u.Pitch=0;u.Vel=(0,0,0);
+    }
+    void EntryMenu(CaelumPlayer u)
+    {
+        let menu=CaelumTentSession.Find(u);
+        Assert(menu!=null && menu.Open && menu.Tent==Tent,"native Use from outside opens tent actions");
+        if(menu!=null)menu.Act(u,0);Summary();
+    }
+    void EntryCore(CaelumPlayer u)
+    {
+        Console.Printf("CA412B ENTRY reach=%d available=%d title=%d bag=%d radius=%g height=%g pos=%g,%g,%g combat=%g talk=%d frozen=%d",Tent.Reach(u),CaelumCampTask.Available(u),CaelumLockRules.SameTitle(Tent.Title,CaelumLockRules.Character(u)),Bag.AvailableTo(u),u.Radius,u.Height,u.Pos.X,u.Pos.Y,u.Pos.Z,u.CombatTimeRemaining,u.HasActiveConversation(),u.isFrozen());
+        vector3 entry=u.Pos;double original=u.player.crouchfactor;
+        Assert(CaelumTentRest.Begin(u,Tent,Bag,5),"tent interaction places original bag and starts sleep");
+        let rest=CaelumRestState.Get(u);let mat=rest==null?null:CaelumRestBag(rest.Furniture);
+        Assert(mat!=null && mat.Bag==Bag && mat.Tent==Tent && Bag.Owner==u && Bag.Amount==1,"sleep keeps original bag and saved tent entry");
+        Assert(CaelumRestState.IsSleeping(u) && Tent.Covers(u) && u.TestMobjLocation(),"native crouched body fits inside without walking through roof");
+        Assert(Tent.HasRestingOccupant() && !CaelumCampTask.BeginPack(u,Tent),"occupied interactive tent refuses packing");
+        CaelumRestState.Cancel(u);
+        Assert((u.Pos-entry).Length()<0.01 && Abs(u.player.crouchfactor-original)<0.001,"wake restores clear entrance and prior native posture");
+        Assert(Bag.Owner==u && Bag.Amount==1 && !Tent.HasRestingOccupant(),"wake does not duplicate bag and releases tent");
+        Bag.InMagicBox=true;
+        Assert(!CaelumTentRest.Begin(u,Tent,Bag,5) && (u.Pos-entry).Length()<0.01,"boxed bag cannot place sleeper or consume items");
+        Bag.InMagicBox=false;
+        let obstacle=Actor.Spawn('CA411DeployObstacle',Tent.Pos,NO_REPLACE);obstacle.A_SetSize(44,28,false);
+        Assert(!CaelumTentRest.Begin(u,Tent,Bag,5) && (u.Pos-entry).Length()<0.01,"blocked berths retain original position and bag");
+        obstacle.Destroy();Summary();
+    }
+    void EntrySeed(CaelumPlayer u)
+    {EntrySetup(u);Assert(CaelumTentRest.Begin(u,Tent,Bag,5),"save interactive tent sleep begins");Summary();}
+    void EntryLoad(CaelumPlayer u)
+    {
+        let rest=CaelumRestState.Get(u);let mat=rest==null?null:CaelumRestBag(rest.Furniture);
+        Assert(mat!=null && mat.TentEntryRevision==1 && mat.Tent==Tent,"save retains original tent entry and bag identity");
+        vector3 entry=mat==null?u.Pos:mat.TentEntry;
+        Assert(CaelumRestState.IsSleeping(u) && u.TestMobjLocation(),"saved native sleep remains supported");
+        CaelumRestState.Cancel(u);Assert((u.Pos-entry).Length()<0.01 && Bag.Owner==u && Bag.Amount==1,"saved wake returns to original entrance once");Summary();
+    }
+    int EntryMinutes(){return CaelumWorldCatalogue.IsLimboMap(level.MapName)?0:5;}
+    void EntryOffer(CaelumPlayer u)
+    {
+        Assert(CaelumTentSession.Show(u,Tent),"outside action menu accepts owned tent");
+        CaelumTentSession.Find(u).Act(u,1);
+        let guide=CaelumRestGuide(u.player.ConversationNPC);
+        Assert(guide!=null && guide.Tent==Tent && guide.Bag==Bag && guide.UsesTent && guide.bInConversation,
+            "rest choice opens actual native duration conversation bound to original bag and tent");Summary();
+    }
+    void EntryChoice(CaelumPlayer u)
+    {
+        let guide=CaelumRestGuide(u.player.ConversationNPC);
+        Assert(guide!=null,"native dialogue guide exists before reply");if(guide==null){Summary();return;}
+        let replyItem=CaelumRestAction(u.GiveInventoryType(EntryMinutes()==0?'CaelumRestSleepUntimedAction':'CaelumRestSleep5Action'));
+        Assert(guide.QueuedMode==CaelumRestRules.MODE_SLEEP && guide.QueuedMinutes==EntryMinutes(),"native autoactivated USDF inventory reply queues rest choice once");
+        // S?lo se simula el cierre de USDF; el Tick productivo resuelve la elecci?n.
+        guide.bInConversation=false;Summary();
+    }
+    void EntryAfterChoice(CaelumPlayer u)
+    {
+        let rest=CaelumRestState.Get(u);
+        Assert(CaelumRestState.IsSleeping(u) && rest.ElapsedTics>0,"dialogue choice reaches actual sleeping session on normal tics");
+        Assert(rest!=null && CaelumRestBag(rest.Furniture)!=null && u.TestMobjLocation(),"dialogue sleep retains original bag and valid native body");
+        if(EntryMinutes()==0)Assert(rest.Untimed,"Limbo tent uses approved untimed rest");
+        else Fast(u);
+        CaelumRestState.Cancel(u);Assert((u.Pos-Outside(u)).Length()<0.01,"dialogue wake returns to outside entrance");Summary();
+    }
+    CaelumEquipmentItem EntrySupplies(CaelumPlayer u)
+    {
+        for(Inventory cur=u.Inv;cur!=null;cur=cur.Inv)
+        {if(cur is 'CaelumEquipmentItem')CaelumContaminationStorage.Set(cur,0);if(cur is 'CaelumWaterContainer')CaelumWaterContainer(cur).WaterLiters=0;}
+        let water=CaelumWaterContainer(u.GiveInventoryType('CaelumBottleLarge'));water.WaterLiters=5;
+        water.WaterQuality=CaelumWaterQuality.POTABLE;water.InMagicBox=false;
+        u.GiveInventoryType('CaelumCleaningCloth');
+        let soap=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',u.Pos,NO_REPLACE));
+        soap.args[0]=CaelumHygieneData.SOAP;soap.args[1]=1;soap.Amount=100;soap.AttachToOwner(u);
+        let item=CaelumEquipmentItem(Actor.Spawn('CaelumWeaponPickup',u.Pos,NO_REPLACE));
+        item.ItemId=912412;item.AcquisitionResolved=true;item.PickupDataInitialized=true;item.Amount=1;
+        item.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_WEAPON;item.ItemType=CaelumConstants.WEAPON_TYPE_SWORD;
+        item.EquipmentSize=CaelumConstants.EQUIPMENT_SIZE_M;item.Tier=1;item.Durability=100;
+        item.AttachToOwner(u);item.Equipped=true;item.InMagicBox=false;u.ActiveWeaponItemId=item.ItemId;
+        CaelumContaminationStorage.Set(item,80);return item;
+    }
+    void EntryClean(CaelumPlayer u)
+    {
+        EntrySetup(u);let item=EntrySupplies(u);vector3 entry=u.Pos;
+        double water=CaelumCleaningSupplies.Water(u),soap=CaelumSoapSupply.Available(u);
+        Assert(CaelumTentRest.Begin(u,Tent,Bag,EntryMinutes()),"tent accepts pre-sleep cleaning with resources");
+        let task=CaelumCleaningTask.Find(u);
+        Assert(CaelumCleaningTask.Active(u) && !CaelumRestState.IsSleeping(u) && task.Target==item && CaelumRestBag.ReservedBag(u)!=null,
+            "original bag remains reserved while selected weapon is washed");
+        Assert(Tent.HasRestingOccupant() && !CaelumCampTask.BeginPack(u,Tent),"cleaning reservation also prevents packing");
+        CaelumCleaningTask.Advance(u,100);
+        Assert(CaelumRestState.IsSleeping(u) && !CaelumCleaningTask.Active(u),"finished cleaning resumes sleep in same tent");
+        Assert(Abs(CaelumCleaningSupplies.Water(u)-(water-0.16))<0.000001 && Abs(CaelumSoapSupply.Available(u)-(soap-0.8))<0.000001,
+            "pre-sleep cleaning charges sword water and soap exactly once");
+        CaelumRestState.Cancel(u);Assert((u.Pos-entry).Length()<0.01,"wake after cleaning restores entrance");
+        CaelumContaminationStorage.Set(item,80);
+        Assert(CaelumTentRest.Begin(u,Tent,Bag,EntryMinutes()) && CaelumCleaningTask.Active(u),"second pre-sleep cleaning starts");
+        CaelumCleaningTask.Cancel(u);Summary();
+    }
+    void EntryAfterCleanCancel(CaelumPlayer u)
+    {
+        Assert((u.Pos-Outside(u)).Length()<0.01 && !CaelumRestState.IsSleeping(u) && !Tent.HasRestingOccupant(),
+            "cancelled pre-sleep cleaning returns outside and releases tent");
+        Assert(Bag.Owner==u && Bag.Amount==1 && u.TestMobjLocation(),"cancelled preparation preserves one bag and clear body");Summary();
+    }
+    void EntryBlockedExit(CaelumPlayer u)
+    {
+        EntrySetup(u);vector3 entry=u.Pos;
+        Assert(CaelumTentRest.Begin(u,Tent,Bag,EntryMinutes()),"blocked-exit setup begins actual sleep");
+        let block=Actor.Spawn('CA411DeployObstacle',entry,NO_REPLACE);block.A_SetSize(u.Radius,u.FullHeight,false);
+        CaelumRestState.Cancel(u);
+        Assert((u.Pos-entry).Length()>u.Radius && u.TestMobjLocation(),"new entrance obstacle chooses clear fallback without overlap");
+        Assert(Bag.Owner==u && Bag.Amount==1,"fallback returns same owned bag");block.Destroy();Summary();
+    }
     void Core(CaelumPlayer u)
     {
         double height=u.Height,radius=u.Radius;
@@ -101,10 +219,28 @@ class CA412BagChecks : CA411DeployChecks
         Assert(CaelumRestState.ResourceFactor(u)==3 && Tent.Covers(u),"existing bag recovery factor and tent shelter retained");
         CaelumTimeAdvanceState.Halt(u);Summary();
     }
+    override void ConsoleProcess(ConsoleEvent e)
+    {
+        if(e.Name=='ca412b_menu_enter')
+        {let menu=Menu.GetCurrentMenu();if(menu!=null)menu.MenuEvent(Menu.MKEY_Enter,false);}
+        else if(e.Name=='ca412b_reply')
+        {let menu=ConversationMenu(Menu.GetCurrentMenu());if(menu!=null)menu.MenuEvent(Menu.MKEY_Enter,false);}
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         let u=CaelumPlayer(players[e.Player].mo);if(u==null)return;
         if(e.Name=='ca412b_setup')Seed(u);
+        else if(e.Name=='ca412b_entrysetup')EntrySetup(u);
+        else if(e.Name=='ca412b_entrymenu')EntryMenu(u);
+        else if(e.Name=='ca412b_entrycore')EntryCore(u);
+        else if(e.Name=='ca412b_entryseed')EntrySeed(u);
+        else if(e.Name=='ca412b_entryload')EntryLoad(u);
+        else if(e.Name=='ca412b_entryoffer')EntryOffer(u);
+        else if(e.Name=='ca412b_entrychoice')EntryChoice(u);
+        else if(e.Name=='ca412b_entryafterchoice')EntryAfterChoice(u);
+        else if(e.Name=='ca412b_entryclean')EntryClean(u);
+        else if(e.Name=='ca412b_entryafterclean')EntryAfterCleanCancel(u);
+        else if(e.Name=='ca412b_entryblockedexit')EntryBlockedExit(u);
         else if(e.Name=='ca412b_inside')Inside(u);
         else if(e.Name=='ca412b_core')Core(u);
         else if(e.Name=='ca412b_rest')StartRest(u);

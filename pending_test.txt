@@ -10,16 +10,16 @@ Run assets/validation_5813/run_native.ps1 -Label author-trivet-NEW -Runtime triv
    stays consumed after updating, with the new recipe-derived price.
 Prior boil/fuel/cooling/save checks were accepted; do not repeat them for approval.
 
-CA412-BAG-01 | Origin: 5.8.15 / #412 | PENDING
-Prerequisites: issue412-coop-work; final02 runtime; GZDoom4.14.2; close other sessions.
+CA412-BAG-01 | Origin: 5.8.15 / #412 | PENDING: outside interaction correction
+Prerequisites: issue412-coop-work; entry03 runtime; GZDoom4.14.2; close other sessions.
 Launch assets/validation_5815/author_terminal.ps1, option1, after returning.
-1. The private room places the accepted tent and your original sleeping bag.
-   F1 returns to the first berth; F2 begins a five-world-minute rest using the bag.
-2. Sleep remains active inside the tent. T uses existing solo acceleration;
-   F3 wakes you. The original bag remains in inventory exactly once.
-3. Step toward a wall/obstruction and try the bag normally: occupied ground is
-   rejected. Entering below the tent roof can require crouching; dimensions stay unchanged.
-4. Optional terminal option2 checks both rectangular footprints, low/head obstacles,
-   normal/solo accelerated rest and the earlier packing guard. Expect PASS only.
-Expected: usable single-player bag clearance and unchanged tent/model/body sizes.
+1. Start outside the accepted tent carrying your original sleeping bag. Aim at
+   the tent and press E (Use). Its panel offers Rest / Pack.
+2. Enter selects Rest. Choose five minutes in the existing duration menu.
+   The character and original bag move into a clear berth; the tent keeps its roof.
+3. T enables existing solo acceleration. Q wakes you and returns to the entrance.
+   The original bag remains in inventory once. F1 reports rest outside active menus.
+4. Use again; D selects packing only when no one is resting/preparing sleep inside.
+Expected: ordinary Use reaches tent sleep without walking through its roof or
+using fixture teleport keys. Waking restores a clear exit and original bag.
 Two-player rest verification is deferred to V5.12 by the author (2026-10-26).

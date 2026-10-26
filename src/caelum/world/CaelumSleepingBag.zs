@@ -95,6 +95,12 @@ class CaelumSleepingBagProbe : Actor
 class CaelumRestBag : CaelumRestFurniture
 {
     CaelumSleepingBag Bag;
+    // Cero conserva el comportamiento de los sacos de partidas anteriores.
+    int TentEntryRevision,EntryCrouchToggle;
+    CaelumDeployedTent Tent;
+    vector3 TentEntry;
+    String TentEntryMap;
+    double EntryCrouch;
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
     override int ComfortFactor() { return 3; }
     override vector3 PoseOffset() { return (0, 0, 2); }
@@ -182,6 +188,7 @@ class CaelumRestBag : CaelumRestFurniture
     override void Release(CaelumPlayer user, vector3 entry)
     {
         if (Occupant != user) return;
+        CaelumTentRest.Leave(self,user);
         Occupant = null;
         Destroy();
     }
@@ -190,7 +197,8 @@ class CaelumRestBag : CaelumRestFurniture
     {
         Super.Tick();
         // Incluye restos de un hub previo: la referencia de sesión manda.
-        if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self)) Destroy();
+        if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self))
+        {CaelumTentRest.Leave(self,Bag==null?null:CaelumPlayer(Bag.Owner));Destroy();}
     }
 
     Default { Radius 46; Height 8; -SOLID +NOBLOCKMAP Tag "$CA_SLEEPING_BAG_NAME"; }

@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-174 - Native crouch and safe exits during tent rest
+
+Status/evidence: ENGINE-VERIFIED, #412, 2026-10-26; GZDoom4.14.2/Windows11.
+Affected implementation: CaelumTentRest; assets/validation_5815/entry-report.json.
+
+PlayerPawn.CrouchMove changes the factor/view but restores the old Height until
+PlayerPawn.Tick applies FullHeight*crouchfactor. An immediate placement probe
+must project that same native Height after CrouchMove; changing FullHeight or
+Radius is neither necessary nor accepted. Restore the saved factor through
+native CrouchMove, so a new ceiling can prevent standing.
+
+The old generic furniture exit uses the furniture radius as a distance gate.
+For an elongated sleeping bag that rejects a clear tent entrance. Check the
+actual player capsule at the saved entrance and local fallback candidates;
+include floor, water and sight. Never teleport into a newly occupied entrance.
+Reserve the same bag during pre-sleep equipment cleaning, and release its
+entry state on cancellation as well as normal waking.
+
+Regression: entry-core-05, entry-clean-02, entry-exit-02 and native UI/save runs.
+No per-tic full-world scan is added: tent entry/exit is event-driven, placement
+uses a local blockmap and MAXPLAYERS reservations. Native menu events validate
+routing; they are not a claim of physical-key or multiplayer author acceptance.
+
 ## CA-KP-172 - Separate a low furniture footprint from the user's capsule
 
 Status/evidence: RESOLVED-VERIFIED for bag clearance, #412, 2026-10-26.

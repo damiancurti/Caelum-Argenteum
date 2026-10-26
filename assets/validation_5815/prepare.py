@@ -43,6 +43,18 @@ def main():
     }
     commands['manual'] += 'bind F1; bind F2; bind F3; bind F4; bind Tab; bind T; echo CA412B INPUT ready'
     commands['manual-smoke'] = commands['manual']+'; netevent ca412b_rest; wait 70; netevent ca412b_follow; netevent ca412b_cancel; wait 3; quit'
+    commands['entry'] = 'wait 35; netevent ca412b_entrysetup; wait 3; +use; wait 3; -use; wait 3; netevent ca412b_entrymenu; wait 3; netevent ca412b_entrycore; wait 3; quit'
+    commands['entryseed'] = 'wait 35; netevent ca412b_entryseed; wait 35; save ca412b-entry; wait 3; quit'
+    commands['entryload'] = 'wait 35; netevent ca412b_entryload; wait 3; quit'
+    commands['entry-manual'] = controls+'; bind F1 "netevent ca412b_read; toggleconsole"; wait 35; netevent ca412b_entrysetup; wait 5; echo CA412B INPUT ready'
+    commands['entry-flow']='wait 35; netevent ca412b_entrysetup; wait 3; netevent ca412b_entryoffer; wait 10; netevent ca412b_entrychoice; wait 70; netevent ca412b_entryafterchoice; wait 3; quit'
+    commands['entry-clean']='wait 35; netevent ca412b_entryclean; wait 5; netevent ca412b_entryafterclean; wait 3; quit'
+    commands['entry-exit']='wait 35; netevent ca412b_entryblockedexit; wait 3; quit'
+    commands['entry-capture']='wait 35; netevent ca412b_entrysetup; wait 3; +use; wait 3; -use; wait 3; screenshot tent-entry-menu.png; netevent ca412b_entrymenu; netevent ca412b_entryoffer; wait 10; screenshot tent-entry-dialogue.png; netevent ca412b_entrychoice; wait 35; screenshot tent-entry-sleep.png; netevent ca412b_entryafterchoice; wait 3; quit'
+    commands['entry-native-reply'] = commands['entry-flow'].replace('netevent ca412b_entrychoice','event ca412b_reply')
+    commands['entry-native-capture'] = commands['entry-capture'].replace('netevent ca412b_entrychoice','event ca412b_reply').replace('tent-entry-', 'tent-native-')
+    commands['entry-full-ui']='wait 35; netevent ca412b_entrysetup; wait 3; +use; wait 3; -use; wait 3; event ca412b_menu_enter; wait 10; event ca412b_reply; wait 70; netevent ca412b_entryafterchoice; wait 3; quit'
+    commands['entry-manual-smoke']=commands['entry-manual']+'; bind F1; bind e; bind Tab; bind T; +use; wait 3; -use; wait 3; netevent ca412b_entrymenu; wait 3; quit'
     for name,text in commands.items():(WORK/(name+'.cfg')).write_text(text+'\n',encoding='utf-8')
     with zipfile.ZipFile(WORK/'legacy-checks.pk3','w',zipfile.ZIP_STORED) as out:
         for name,data in sorted({'ZSCRIPT':b'version "4.14"\n#include "legacy.zs"\n',

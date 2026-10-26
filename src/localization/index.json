@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "504bde3337e9d0048a079756485402037b79038b050272a8b92c631b20cabe74",
+  "sha256": "6b2684a7c93080aa3128530ed54307142a164e703b9b6e7e7ab314d8d7c81a3e",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[442,442]],"default":[[442,442]],"es":[[1137,1137]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[992,992]],"default":[[992,992]],"es":[[1687,1687]]},
@@ -2679,6 +2679,10 @@
     "CA_TC_YOUR_HAND": {"enu":[[4983,4983]],"default":[[4983,4983]],"es":[[5065,5065]]},
     "CA_TELEKINESIS_TARGET": {"enu":[[5962,5962]],"default":[[5962,5962]],"es":[[5974,5974]]},
     "CA_TELEPORT_TRAP": {"default":[[4394,4394]],"es":[[4399,4399]]},
+    "CA_TENT_PACK": {"enu":[[6707,6707]],"default":[[6707,6707]],"es":[[6712,6712]]},
+    "CA_TENT_REST": {"enu":[[6706,6706]],"default":[[6706,6706]],"es":[[6711,6711]]},
+    "CA_TENT_REST_TERMS": {"enu":[[6708,6708]],"default":[[6708,6708]],"es":[[6713,6713]]},
+    "CA_TENT_USE_HINT": {"enu":[[6705,6705]],"default":[[6705,6705]],"es":[[6710,6710]]},
     "CA_THERMAL_ATTACK": {"enu":[[157,157]],"default":[[157,157]],"es":[[260,260]]},
     "CA_THERMAL_COLD": {"enu":[[146,146]],"default":[[146,146]],"es":[[249,249]]},
     "CA_THERMAL_COST": {"enu":[[156,156]],"default":[[156,156]],"es":[[259,259]]},

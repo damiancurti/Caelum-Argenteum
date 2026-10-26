@@ -65,3 +65,34 @@ separate from the original gameplay assertion counts.
 Remote desktop key injection did not reach GZDoom. Native binding queries and
 scripted commands are agent evidence; physical-key author check CA412-BAG-01
 remains pending. No author pass is inferred from fixing the launcher.
+
+## Outside tent interaction correction, 2026-10-26
+
+The author reported that entering the tent and ordinary Use did not work.
+The pending individual check now covers production Use -> Rest/Pack -> native
+USDF duration selection -> owned bag inside -> safe return outside. It no longer
+requires fixture-only teleport/rest keys. No tent, bag or character art changed.
+
+73 newly executed assertions pass in 11 selected native runs; persisted cumulative
+counters are not counted twice. `entry-report.json` lists each run and digest.
+Coverage includes native Use and MenuEvent/USDF reply routing, ordinary/solo
+accelerated rest, Limbo untimed rest, cleaning reservation/cancellation and exact
+costs, blocked berth/exit, new save/load, genuine prior active-bag save and original
+runtime/original-save rollback. Entry revision0 preserves old behavior; revision1
+saves the entrance and native crouch. All16,918 package members match current src.
+Runtime entry03 SHA256: `ee9fb082ac2259d80c770f6b4995099801f86985dab5bd4a04eb231538e17407`.
+Static validation passes. Captures `tent-native-*` retain the production roof;
+the canvas can occlude the resting camera. The camera can orbit through the
+existing rest controls; no diagnostic roof hiding is used for this delivery.
+
+Resolved local attempts are retained: missing fixture title, deferred native
+crouch Height and overlarge furniture exit distance gate. A fixture variable
+used a reserved identifier; a repeated inventory action was already autoactivated;
+renaming the rollback addon violated the save's required basename. The selected
+runs resolve those errors. Early direct-action captures left the USDF UI open;
+the submitted native menu-event captures use the real reply/closure path.
+
+Entry/exit performs bounded event-time probes; there is no new recurring actor
+scan. No new rendering-performance or multiplayer claim follows from these
+functional checks. CA412-BAG-01 remains pending until the author corroborates
+this interaction correction. Tests/questions are held while the author is away.

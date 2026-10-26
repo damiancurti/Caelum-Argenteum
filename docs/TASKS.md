@@ -2,22 +2,24 @@
 
 Documentation version: **5.8.15** - 2026-10-26.
 
-## 5.8.15 - Sleeping-bag clearance (#412, in progress)
+## 5.8.15 - Usable sleeping bag inside the tent (#412, in progress)
 
-Bag placement now checks the unchanged model's oriented rectangular footprint
-and the player's own collision volume separately. Two footprints fit under the
-approved tent without resizing its art, the bags or the characters. Local solids,
-floor support and other players' reserved bag footprints still block placement.
-The earlier packing guard is included with its original branch ancestry.
+Using the owned deployed tent from outside opens Rest / Pack actions. Rest
+uses the existing duration menu and places the character's original unboxed
+sleeping bag in a clear berth. Native crouching fits the approved roof; body
+radius, full height, tent art and recovery rules are unchanged. Waking returns
+to the recorded entrance, with native collision checks and safe fallbacks.
+Pre-sleep cleaning reserves the same berth and cannot be bypassed by packing.
 
-Native checks cover normal and solo accelerated rest, wake-up/ownership,
-obstructions, guard regression and save compatibility. Evidence and limits:
-assets/validation_5815/RESULTS.md. CA412-BAG-01 awaits author corroboration.
-The multiplayer admission gate/shared clock and the remaining #410 furniture
-integration are still pending; this is not two-client cooperative acceptance.
-Author decision, 2026-10-26: cooperative-rest author testing is deferred to
-V5.12, the multiplayer foundation release. It is not a V5.8 acceptance gate;
-the individual sleeping-bag check remains pending.
+The corrected flow passes 73 executed assertions in 11 native runs, including
+actual Use/menu reply routing, normal and solo accelerated rest, Limbo untimed
+rest, cancellation, blocked exit, exact cleaning costs and old/new save loads.
+Static checks and the package/source comparison pass. Evidence and limits:
+assets/validation_5815/RESULTS.md. CA412-BAG-01 remains pending after the author's
+reported interaction failure; the prepared launcher starts outside the tent.
+The existing cooperative admission/shared-clock implementation and author test
+are deferred to V5.12. Remaining #410 furniture integration is still open.
+
 
 ## 5.8.14 - Native ration lots (#410, in progress)
 
