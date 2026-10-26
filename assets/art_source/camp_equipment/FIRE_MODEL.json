@@ -1,0 +1,29 @@
+{
+  "issue": 411,
+  "generator": "assets/generators/generate_camp_fire.py",
+  "configuration": "assets/generators/camp_fire_art.json",
+  "dimensions_m": {
+    "diameter": 0.6,
+    "flame_height": 0.5
+  },
+  "physical_source": "src/caelum/data/CaelumCampData.zs",
+  "materials": {
+    "models/caelum/props/stash/ca_stash_wood.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "models/caelum/projectiles/breath.png": "a86077432f80b853d805a2581f3f439a9a7303ce73190c49dae8ee9da7da5601",
+    "models/caelum/props/stations/ca_station_iron.png": "02312891cf9b5fcd5be597cbf77877f919f5a86a478a6d45efad751a3e75325f"
+  },
+  "models": {
+    "src/models/caelum/world/camp/fire_0.obj": "6fbfa2b353b9afa82e4ebca150c3c4b7ef167f3df9c415d00f19a8831636dd67",
+    "src/models/caelum/world/camp/fire_1.obj": "9ac0ee0c881f79db062e49ebbf0ce95f3f764782bac42ee576738718db501d6e",
+    "src/models/caelum/world/camp/fire_2.obj": "02731f8cedb83e1f49f55a8cd371a5342823e832884740ee0d388e84b801f77f",
+    "src/models/caelum/world/camp/fire_3.obj": "26e61ab610b6b122f26fc8354a5bed0b07c26f7219b5315cfabf87d7edc38444",
+    "src/models/caelum/world/camp/fire_4.obj": "8e0aaf47e672bf57714ec6fcaeeacbf6e9dab1a8c0eb18d4f907dbd04cdb934a",
+    "src/models/caelum/world/camp/fire_5.obj": "5393cc445c04f99414f64c6ecdce12eca81a1a617d69fc7070224e96ac2945d3",
+    "src/models/caelum/world/camp/fire_6.obj": "8bf1273d87709443113b0bb113e067d99839c0958c639524de0f47c706f64a51",
+    "src/models/caelum/world/camp/fire_7.obj": "f2f0969d5be309c5005188bf8bdbb01bbcee5bb43de070f338efdc6744e73eff",
+    "src/models/caelum/world/camp/fire_8.obj": "e5369cfbdb17fbb8f5b644e380d02818ccb1977ca766debd690e63bea5c0e326",
+    "src/models/caelum/world/camp/fire_9.obj": "128d39298898bf5410cbe2cc2ab96897ef190f973e54413c73c4409f17f5b4a4"
+  },
+  "provenance": "Original procedural geometry; existing project-owned station/stash textures and author-accepted #137 breath atlas, unchanged pixels and measured row boundaries. Visual segmentation has no balance effect.",
+  "author_visual_acceptance": "Pending; author away."
+}
