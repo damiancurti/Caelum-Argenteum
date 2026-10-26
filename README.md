@@ -23,8 +23,8 @@ All 16,919 current03 package members match source. With 1,000 peaceful non-solid
 objects, callback p99 was 17.2022 ms before and 18.1962 ms after; 700 simulation
 tics completed in about 20 s. These callbacks are not measured displayed frames;
 PresentMon capture was unavailable. See assets/validation_5816/RESULTS.md.
-CA502-SCENERY-01 remains pending; manual handoff is deferred while the author is
-away. Other adapters, stackable items and unloaded history remain open in #502.
+CA502-SCENERY-01 passed author acceptance on 2026-10-26, without qualifications.
+Other adapters, stackable items and unloaded history remain open in #502.
 This patch does not complete V5.8.
 
 ## 5.8.15 - Usable sleeping bag inside the tent (#412, in progress)
