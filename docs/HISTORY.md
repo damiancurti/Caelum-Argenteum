@@ -4,6 +4,10 @@ Documentation version: **5.8.13** - 2026-10-26.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 
+The author launcher now opens trivet01 with the pot already mounted and only
+the outstanding visual/mass/recipe correction listed. Its readiness check also
+covers trivet-manual; previously accepted fire/water actions are not reopened.
+
 Author result, 2026-10-26: CA411-FIRE-01 passed the supplied functional checks;
 the author requested an integral trivet beneath the pot. Approved ring diameter
 0.32 m, three 0.50 m legs, 0.010 m iron rod and 1.6 kg support: 7.1 kg total

@@ -7,7 +7,7 @@ Documentation version: **5.8.13** - 2026-10-26.
 Implemented: one-minute assembly/ignition/dismantling, 10 kg capacity, exact
 wood recovery, ownership/placement, world-time burning and thermal radiation,
 native save/hub retention, mounted pot heating/boiling/cooling and live controls.
-CA411-FIRE-01 awaits the author's return. Tests: assets/validation_5813.
+CA411-FIRE-01: original functional checks passed author review on2026-10-26; only the approved trivet correction awaits visual corroboration. Tests: assets/validation_5813.
 Remaining #411: meat/fish/puchero preparation, coupled to #410 cooked food lots.
 Remaining V5.8 implementation issues: #410, #411, #412, #415, #416, #417, #502.
 Keep their scopes and PRs separate; no release closure is claimed.
