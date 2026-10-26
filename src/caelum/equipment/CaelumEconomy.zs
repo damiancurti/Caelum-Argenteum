@@ -393,6 +393,7 @@ class CaelumEconomyRules : Object
     // obtención, no vuelven a sobrescribir estos precios de diseño.
     static double GetRawMaterialUnitValue(int materialType)
     {
+        if(CaelumKitchenData.IsMaterial(materialType))return CaelumKitchenData.Price(materialType);
         if(materialType==CaelumMateData.DRY_GOURD)return CaelumMateData.DRY_GOURD_VALUE;
         double resourcePrice = CaelumChemistryData.Price(materialType);
         if(resourcePrice < 0) resourcePrice = CaelumMarineData.Price(materialType);
@@ -496,6 +497,7 @@ class CaelumEconomyRules : Object
     )
     {
         // El precio explícito aprobado prevalece sobre el valor derivado de receta.
+        if(CaelumKitchenData.IsMaterial(materialType))return CaelumKitchenData.Price(materialType);
         if(materialType==CaelumMateData.DRY_GOURD)return CaelumMateData.DRY_GOURD_VALUE;
         int chemistry=CaelumChemistryData.RecipeForMaterial(materialType);
         if(chemistry>=0)return CaelumChemistryEconomy.RecipeUnitValue(chemistry);

@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.16** - 2026-10-26.
+Documentation version: **5.8.17** - 2026-10-26.
 
 5.8.14 - Stored and table rations (#410)
 

@@ -78,17 +78,22 @@ class CaelumFoodClimate : Object play
 // Un nodo por pila real, incluso guardada. No explora actores ni inventarios.
 class CaelumFoodClock : Thinker
 {
-    CaelumConsumableItem Item;
+    Inventory Item;
     CaelumFoodClimate Climate;
     bool Ready;
     double Stamp;
     transient int NextUpdate;
-    static CaelumFoodClock Get(CaelumConsumableItem food)
+    static CaelumFoodClock Get(Inventory item)
     {
-        if(food==null || !CaelumFoodInventory.IsFood(food))return null;
-        if(food.FoodClock==null)
-        {food.FoodClock=new('CaelumFoodClock');food.FoodClock.Item=food;}
-        return food.FoodClock;
+        if(!CaelumFoodInventory.IsFood(item))return null;
+        let food=CaelumConsumableItem(item);let material=CaelumMaterialPickup(item);
+        let clock=food!=null?food.FoodClock:material.FoodClock;
+        if(clock==null)
+        {
+            clock=new('CaelumFoodClock');clock.Item=item;
+            if(food!=null)food.FoodClock=clock;else material.FoodClock=clock;
+        }
+        return clock;
     }
     Actor Location()
     {
@@ -130,7 +135,7 @@ class CaelumFoodWorld : StaticEventHandler
 {
     int NextPhase;
     override void WorldThingSpawned(WorldEvent e)
-    {CaelumFoodClock.Get(CaelumConsumableItem(e.Thing));}
+    {CaelumFoodClock.Get(Inventory(e.Thing));}
     override void WorldLoaded(WorldEvent e)
     {
         NextPhase=0;
@@ -139,5 +144,7 @@ class CaelumFoodWorld : StaticEventHandler
         CaelumConsumableItem food;
         let ground=ThinkerIterator.Create('CaelumConsumableItem');
         while((food=CaelumConsumableItem(ground.Next()))!=null)CaelumFoodClock.Get(food);
+        let ingredients=ThinkerIterator.Create('CaelumMaterialPickup');Inventory material;
+        while((material=Inventory(ingredients.Next()))!=null)CaelumFoodClock.Get(material);
     }
 }

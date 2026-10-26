@@ -7,6 +7,9 @@ class CaelumQuickUse : Object
             || item.Amount<=0 || item.bDestroyed)return false;
         let consumable=CaelumConsumableItem(item);
         let bag=CaelumSleepingBag(item);
+        let ingredient=CaelumMaterialPickup(item);
+        if(ingredient!=null && CaelumKitchenData.Edible(ingredient.args[0]))
+            return !ingredient.InMagicBox && ingredient.Amount>=CaelumKitchenData.PORTION_GRAMS;
         return (consumable!=null && !consumable.InMagicBox)
             || (bag!=null && bag.Amount==1 && !bag.InMagicBox);
     }
@@ -20,7 +23,7 @@ class CaelumQuickUse : Object
             // La munición no tiene una acción Use. No alterar otros objetos
             // nativos ni convertir llaves, documentos o equipo en consumibles.
             if(item is "CaelumCarbineAmmo")item.bInvBar=false;
-            if(item is "CaelumConsumableItem" || item is "CaelumSleepingBag")
+            if(item is "CaelumConsumableItem" || item is "CaelumSleepingBag" || item is "CaelumMaterialPickup")
                 item.bInvBar=Eligible(user,item);
             if(first==null && Eligible(user,item))first=item;
         }

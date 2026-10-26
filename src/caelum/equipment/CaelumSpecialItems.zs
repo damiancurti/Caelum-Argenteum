@@ -136,6 +136,26 @@ class CaelumSpecialInventoryItem : Inventory
 // su tipo y tier en args. HandlePickup solo combina pilas identicas.
 class CaelumMaterialPickup : CaelumSpecialInventoryItem
 {
+    CaelumFoodLots FoodLots;
+    CaelumFoodClock FoodClock;
+    int FoodSchemaRevision;
+
+    override Inventory CreateCopy(Actor other)
+    {
+        CaelumFoodInventory.Reconcile(self);
+        let copy=CaelumMaterialPickup(Super.CreateCopy(other));
+        if(copy==self && FoodLots!=null && Amount<FoodLots.Units())FoodLots=FoodLots.CopyOldest(Amount);
+        if(copy!=null && copy!=self)CaelumFoodInventory.Transfer(self,copy,copy.Amount,true);
+        return copy;
+    }
+    override Inventory CreateTossable(int quantity)
+    {
+        CaelumFoodInventory.Reconcile(self);let previousOwner=Owner;
+        let copy=Super.CreateTossable(quantity);
+        if(copy!=null && copy!=self)CaelumFoodInventory.Transfer(self,copy,copy.Amount,true);
+        if(copy!=null)CaelumFoodInventory.Relocate(copy);
+        CaelumActorMaintenance.InventoryChanged(previousOwner);return copy;
+    }
     override bool TryPickup(in out Actor toucher)
     {
         UpdateMaterialVisuals();
@@ -237,6 +257,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     // args[0]. Esto evita crear una subclase por componente de crafteo.
     static clearscope String GetMaterialIconPathForType(int materialType)
     {
+        if(CaelumKitchenData.IsMaterial(materialType))return CaelumKitchenData.Icon(materialType);
         if(materialType==CaelumMateData.DRY_GOURD)return "graphics/caelum/icons/mate/dry_gourd.png";
         String resourceIcon=CaelumChemistryData.MaterialIcon(materialType);
         if(resourceIcon=="")resourceIcon=CaelumSupportArt.MaterialIcon(materialType);
@@ -349,6 +370,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     void UpdateMaterialVisuals()
     {
+        if(FoodClock==null && CaelumKitchenData.FoodKind(GetSpecialType())>=0)CaelumFoodClock.Get(self);
         Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
         if (Owner == null)
         {
@@ -376,6 +398,8 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         {
             return false;
         }
+        bool food=CaelumFoodInventory.IsFood(self);int before=Amount;
+        if(food){CaelumFoodInventory.Reconcile(self);CaelumFoodInventory.Reconcile(material);}
         if (Amount < MaxAmount
             || (sv_unlimited_pickup && !incoming.ShouldStay()))
         {
@@ -395,6 +419,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
             LimboSupplyUnits = Min(LimboQuestUnits, LimboSupplyUnits + material.LimboSupplyUnits);
             incoming.bPickupGood = true;
         }
+        if(food && Amount>before)CaelumFoodInventory.Transfer(material,self,Amount-before);
         return true;
     }
 
@@ -407,6 +432,11 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     // Catálogo no ejecutado: fuerza a GZDoom a registrar los nombres de
     // sprite que luego seleccionamos dinámicamente con GetSpriteIndex().
     VisualRegistry:
+        M108 A 0;
+        M109 A 0;
+        M110 A 0;
+        M111 A 0;
+        M112 A 0;
         M043 A 0;
         M044 A 0;
         M045 A 0;

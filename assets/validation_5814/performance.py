@@ -4,11 +4,15 @@ import argparse,hashlib,json,re,statistics,subprocess,time,zipfile
 import prepare
 
 root=prepare.ROOT;work=prepare.WORK
-parser=argparse.ArgumentParser();parser.add_argument('runtime');parser.add_argument('label');parser.add_argument('--stacks',type=int,default=1);args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('runtime');parser.add_argument('label');parser.add_argument('--stacks',type=int,default=1)
+parser.add_argument('--material',type=int);parser.add_argument('--work',type=Path);args=parser.parse_args()
+if args.work:work=args.work.resolve()
 assert not (work/(args.label+'.json')).exists()
 assert not subprocess.run(['powershell','-NoProfile','-Command','(Get-Process gzdoom -ErrorAction SilentlyContinue).Id'],capture_output=True,text=True).stdout.strip()
 placement=prepare.module('placement',root/'assets/validation_588/prepare.py');wad=prepare.module('water',root/'assets/validation_580/prepare.py')
 spawn="for(int i=0;i<STACKS;i++){let food=CaelumConsumableItem(Actor.Spawn('CaelumFoodRation',(200+(i%20)*8,200+(i/20)*8,0),NO_REPLACE));food.Amount=100;food.bInvisible=true;}".replace('STACKS',str(args.stacks))
+if args.material is not None:
+    spawn=f"for(int i=0;i<{args.stacks};i++){{let food=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',(200+(i%20)*8,200+(i/20)*8,0),NO_REPLACE));food.args[0]={args.material};food.args[1]=1;food.Amount=1000;food.bInvisible=true;}}"
 source='''class CA410Perf : EventHandler {
 ui Array<double> Frames;ui double Previous;ui bool Printed;
 override void RenderOverlay(RenderEvent e){
@@ -17,6 +21,7 @@ override void RenderOverlay(RenderEvent e){
 override void WorldTick(){let u=CaelumPlayer(players[0].mo);if(u==null)return;
  if(level.maptime<3){u.GetPersistentCharacterState(true).SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD);u.A_SetBlend("Black",0,1);}
  if(level.maptime==100){u.CharacterCreationComplete=true;u.CreationWizardOpen=false;u.bInvulnerable=true;u.SetOrigin((30,92,0),false);u.Angle=30;u.Pitch=30;SPAWN}
+ if(level.maptime==170){let census=ThinkerIterator.Create('CaelumFoodClock');int count=0;while(census.Next()!=null)count++;Console.Printf("CA410P CLOCKS %d",count);}
  if(level.maptime==175)Console.Printf("CA410P START");
  if(level.maptime==875)Console.Printf("CA410P END");}}
 '''.replace('SPAWN',spawn)
@@ -43,4 +48,6 @@ finally:
 log=prefix.with_suffix('.txt').read_text(encoding='utf-8',errors='replace');values=sorted(float(x) for x in re.findall(r'^CA410P FRAME ([0-9.]+)',log,re.M));assert len(values)>100 and start is not None and end is not None
 digest=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();quantile=lambda p:values[int((len(values)-1)*p)]
 result={'label':args.label,'runtime_sha256':digest(package),'addon_sha256':digest(addon),'engine_sha256':digest(engine),'arguments':command,'config':config,'simulation_tics':700,'phase_elapsed_ms':(end-start)*1000,'phase_bound_uncertainty_ms':100,'frames':len(values),'mean_callback_ms':statistics.mean(values),'p95_callback_ms':quantile(.95),'p99_callback_ms':quantile(.99),'worst_callback_ms':max(values),'stacks':args.stacks,'note':'1280x720 Vulkan, 60 FPS cap, one player. Same food stack population before/after; invisible actors isolate food scheduling from sprite overdraw. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance.'}
+result['material_id']=args.material
+result['food_clocks']=int(re.search(r'CA410P CLOCKS (\d+)',log).group(1))
 prefix.with_suffix('.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k not in ('arguments','config')}))
