@@ -48,6 +48,16 @@ Remaining #410: new food catalogue, recipes/proofing/cooking and furniture.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 
+Final author acceptance, 2026-10-26: CA411-FIRE-01 (origin5.8.13/#411)
+passed including the integral-trivet visual, mass and recipe correction. The
+author explicitly confirmed both return-terminal corrections passed without
+qualifications. The pending entry is retired; camp cooking remains unfinished.
+No native rerun is attributed to this acceptance-only update.
+
+The author launcher now opens trivet01 with the pot already mounted and only
+the outstanding visual/mass/recipe correction listed. Its readiness check also
+covers trivet-manual; previously accepted fire/water actions are not reopened.
+
 Author result, 2026-10-26: CA411-FIRE-01 passed the supplied functional checks;
 the author requested an integral trivet beneath the pot. Approved ring diameter
 0.32 m, three 0.50 m legs, 0.010 m iron rod and 1.6 kg support: 7.1 kg total

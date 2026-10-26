@@ -37,8 +37,8 @@ Only biological contamination is removed by a completed boil. Camp cooking
 recipes still depend on the unfinished #410 food/cooking integration.
 
 Native checks, persistence and rendering evidence: assets/validation_5813.
-CA411-FIRE-01 functions passed author review; integral-trivet correction remains
-pending. The approved empty pot and support weigh 7.1 kg. #411/V5.8 stay open.
+CA411-FIRE-01 passed author review in full on2026-10-26, including the integral
+trivet correction. The approved empty pot and support weigh 7.1 kg. #411/V5.8 stay open.
 The author launcher now verifies that its scenario and diagnostic controls load.
 F1-F4 and the normal Tab/T controls are recorded in the native startup log.
 
