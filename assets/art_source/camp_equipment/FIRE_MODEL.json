@@ -4,7 +4,10 @@
   "configuration": "assets/generators/camp_fire_art.json",
   "dimensions_m": {
     "diameter": 0.6,
-    "flame_height": 0.5
+    "flame_height": 0.5,
+    "trivet_diameter": 0.32,
+    "trivet_height": 0.5,
+    "trivet_rod": 0.01
   },
   "physical_source": "src/caelum/data/CaelumCampData.zs",
   "materials": {
@@ -18,12 +21,12 @@
     "src/models/caelum/world/camp/fire_2.obj": "02731f8cedb83e1f49f55a8cd371a5342823e832884740ee0d388e84b801f77f",
     "src/models/caelum/world/camp/fire_3.obj": "26e61ab610b6b122f26fc8354a5bed0b07c26f7219b5315cfabf87d7edc38444",
     "src/models/caelum/world/camp/fire_4.obj": "8e0aaf47e672bf57714ec6fcaeeacbf6e9dab1a8c0eb18d4f907dbd04cdb934a",
-    "src/models/caelum/world/camp/fire_5.obj": "5393cc445c04f99414f64c6ecdce12eca81a1a617d69fc7070224e96ac2945d3",
-    "src/models/caelum/world/camp/fire_6.obj": "8bf1273d87709443113b0bb113e067d99839c0958c639524de0f47c706f64a51",
-    "src/models/caelum/world/camp/fire_7.obj": "f2f0969d5be309c5005188bf8bdbb01bbcee5bb43de070f338efdc6744e73eff",
-    "src/models/caelum/world/camp/fire_8.obj": "e5369cfbdb17fbb8f5b644e380d02818ccb1977ca766debd690e63bea5c0e326",
-    "src/models/caelum/world/camp/fire_9.obj": "128d39298898bf5410cbe2cc2ab96897ef190f973e54413c73c4409f17f5b4a4"
+    "src/models/caelum/world/camp/fire_5.obj": "d4dfbc03f6e013be4d5a70a6de83fae6e95a903163733d729ed5a51e68a2ae7b",
+    "src/models/caelum/world/camp/fire_6.obj": "454eea801eba92cf7d8028453fe0fbee4636fdf1b91a20676498ce1523b199e7",
+    "src/models/caelum/world/camp/fire_7.obj": "571a065a40230f70506377945e60f3e2eae5d3c51cc89cfd21ebe8b4eea23057",
+    "src/models/caelum/world/camp/fire_8.obj": "9bfeb25ee0182f54d57213ee4d880d15005dfc34214f0568004b857050785f4b",
+    "src/models/caelum/world/camp/fire_9.obj": "eccbe14c2822ce507bb99283041f3b78ffa470c5a056896e2a5d497c5829caac"
   },
   "provenance": "Original procedural geometry; existing project-owned station/stash textures and author-accepted #137 breath atlas, unchanged pixels and measured row boundaries. Visual segmentation has no balance effect.",
-  "author_visual_acceptance": "Pending; author away."
+  "author_visual_acceptance": "Fire/water behavior accepted 2026-10-26; integral trivet correction pending visual acceptance."
 }

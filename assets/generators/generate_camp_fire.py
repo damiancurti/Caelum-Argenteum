@@ -47,7 +47,17 @@ def main():
             r=constant(data['physical_source'],'POT_DIAMETER_M')/2
             wall=constant(data['physical_source'],'POT_WALL_M')
             depth=constant(data['physical_source'],'POT_LITERS')/1000/(math.pi*r*r)
-            bottom=3*radius;top=bottom+depth+wall
+            support=constant(data['physical_source'],'TRIVET_HEIGHT_M')
+            ring=constant(data['physical_source'],'TRIVET_DIAMETER_M')/2
+            rod=constant(data['physical_source'],'TRIVET_ROD_M')/2
+            legs=int(constant(data['physical_source'],'TRIVET_LEGS'))
+            for i in range(32):
+                a=i*math.tau/32;b=(i+1)*math.tau/32
+                mesh.add_frustum(materials['iron'],(math.cos(a)*ring,support-rod,math.sin(a)*ring),(math.cos(b)*ring,support-rod,math.sin(b)*ring),rod,rod,6)
+            for i in range(legs):
+                a=i*math.tau/legs
+                mesh.add_frustum(materials['iron'],(math.cos(a)*ring,0,math.sin(a)*ring),(math.cos(a)*ring,support-rod,math.sin(a)*ring),rod,rod,6)
+            bottom=support;top=bottom+depth+wall
             mesh.add_frustum(materials['iron'],(0,bottom,0),(0,top,0),r+wall,r+wall,16,True,False)
             mesh.add_frustum(materials['iron'],(0,bottom+wall,0),(0,top,0),r,r,16,True,False)
             for i in range(16):
@@ -64,11 +74,11 @@ def main():
     manifest={
         'issue':411,'generator':str(Path(__file__).relative_to(ROOT)).replace('\\','/'),
         'configuration':str(CONFIG.relative_to(ROOT)).replace('\\','/'),
-        'dimensions_m':{'diameter':diameter,'flame_height':height},
+        'dimensions_m':{'diameter':diameter,'flame_height':height,'trivet_diameter':constant(data['physical_source'],'TRIVET_DIAMETER_M'),'trivet_height':constant(data['physical_source'],'TRIVET_HEIGHT_M'),'trivet_rod':constant(data['physical_source'],'TRIVET_ROD_M')},
         'physical_source':data['physical_source'],
         'materials':{path:hashlib.sha256((ROOT/'src'/path).read_bytes()).hexdigest() for path in materials.values()},
         'models':result,'provenance':'Original procedural geometry; existing project-owned station/stash textures and author-accepted #137 breath atlas, unchanged pixels and measured row boundaries. Visual segmentation has no balance effect.',
-        'author_visual_acceptance':'Pending; author away.'
+        'author_visual_acceptance':'Fire/water behavior accepted 2026-10-26; integral trivet correction pending visual acceptance.'
     }
     (ROOT/'assets/art_source/camp_equipment/FIRE_MODEL.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))
