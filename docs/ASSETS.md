@@ -1,6 +1,19 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.17** - 2026-10-26.
+Documentation version: **5.8.18** - 2026-10-26.
+
+## 5.8.18 - Painted prepared-meal candidates (#410)
+
+Four new owned built-in imagegen sources show bread, roast beef, roast hake and
+puchero in the project's painted inventory style. Original sources, exact
+prompts and SHA256 provenance remain in assets/art_source/cooked_meals.
+The existing deterministic kitchen exporter gains a --meals mode; authorized
+alpha masking/cropping/resizing produces 128px sprites and FBRD/FRBF/FRFS/FPCH
+aliases. Repeated exports match byte-for-byte; default ingredient outputs are
+unchanged. Native quick-use, inventory and table presentation reuse those sprites.
+The dishes' depicted plates/bowl are presentation, not additional container items.
+Agent visual review is recorded in assets/validation_5818; author acceptance
+remains CA410-MEALS-01. No accepted ration/ingredient artwork was replaced.
 
 ## 5.8.17 - Painted kitchen ingredient candidates (#410)
 

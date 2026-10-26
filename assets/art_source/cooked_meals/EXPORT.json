@@ -1,0 +1,26 @@
+[
+  {
+    "name": "bread",
+    "source_sha256": "074124a0a28ac160073d2b10e787c64a853b2939c6e7c1bc4f8eb751dff0d615",
+    "runtime": "src/graphics/caelum/icons/meals/bread.png",
+    "runtime_sha256": "de1176bce9ec38a507a706ca7e9925f26cede260bea1982d057dc5ee4d2d6b87"
+  },
+  {
+    "name": "roast_beef",
+    "source_sha256": "b7f54cac8bd8c36655863e64bc8bec94848fdaa7d577ce0b1c47428d8ed8dd59",
+    "runtime": "src/graphics/caelum/icons/meals/roast_beef.png",
+    "runtime_sha256": "060c7276159eeb445144844abf4161eadfa174955a5dc1882ddbd184f4f163d3"
+  },
+  {
+    "name": "roast_fish",
+    "source_sha256": "dcf675d7e9a9a37d9c4a17765322bdb5a2f15bb5fcfdd93c3f394518c230eabe",
+    "runtime": "src/graphics/caelum/icons/meals/roast_fish.png",
+    "runtime_sha256": "b6a6b988a16d43f7887e80b20320aeb95309dfcf0977ebe0467d2892f13d34d1"
+  },
+  {
+    "name": "puchero",
+    "source_sha256": "6a381f3a77630ca34b0b2b36a298a7af0f2c324be71a3b798710f7b781a88162",
+    "runtime": "src/graphics/caelum/icons/meals/puchero.png",
+    "runtime_sha256": "ccf575b0cce0a8f4a84ef0b18afd17962219140bbf4b0b4a43f2013fdfff7b34"
+  }
+]

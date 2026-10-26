@@ -1,0 +1,42 @@
+{
+  "issue": 410,
+  "brief": "docs/SPRITE_ART_DIRECTION.md",
+  "entries": [
+    {
+      "id": "bread",
+      "source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-7770afd6-46f3-42d9-bfa1-a798cb5072c6.png",
+      "prompt": "Asset type: a single transparent inventory and world pickup sprite for Caelum Argenteum, a dark fantasy RPG set in nineteenth-century Argentina. Subject: one modest rustic wheat bread loaf, golden-brown crust, one cut slice leaning against it showing the soft ivory crumb. Compact recognizable silhouette, three-quarter view slightly from above. Painted pixel-oriented late-1990s RPG item artwork with crisp irregular pixel clusters, restrained upper-left lighting and deep warm-brown shadows, subtle handmade imperfections. Designed to stay legible reduced to 128 by 128 pixels, matching painted sacks and food inventory items. No photorealism, glossy 3D render, studio product lighting, outlines, text, labels, logos, table, dish, cutlery or decorative background. Complete object with generous transparent margins and true transparent alpha; no rectangular backdrop or large cast shadow. Only bread and its slice.",
+      "tool": "image_gen.imagegen",
+      "status": "candidate; technical and native review pending",
+      "local_source": "assets/art_source/cooked_meals/bread.png",
+      "sha256": "074124a0a28ac160073d2b10e787c64a853b2939c6e7c1bc4f8eb751dff0d615"
+    },
+    {
+      "id": "roast_beef",
+      "source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-b56d782b-a910-4133-831b-125525036d84.png",
+      "prompt": "Asset type: one transparent inventory/world pickup sprite for Caelum Argenteum, dark fantasy RPG in nineteenth-century Argentina. Subject: a small serving of roast beef, one browned piece and two slices with cooked warm-brown interior resting together, on a simple plain earthenware plate. Meat is clearly cooked rather than bloody; no garnish. Compact centered silhouette, three-quarter view from slightly above. Painted pixel-oriented late-1990s RPG item art, readable irregular pixel clusters, modeled volumes without photographic detail, restrained upper-left light and deep warm-brown shadows. Must remain readable at 128x128 pixels, matching rustic food inventory sprites. No glossy 3D render, photograph, restaurant styling, cutlery, labels, logo, text, scenery or background surface. True transparent alpha and ample transparent margins around the entire plate. No glow or cast shadow beyond the silhouette.",
+      "tool": "image_gen.imagegen",
+      "status": "candidate; technical and native review pending",
+      "local_source": "assets/art_source/cooked_meals/roast_beef.png",
+      "sha256": "b7f54cac8bd8c36655863e64bc8bec94848fdaa7d577ce0b1c47428d8ed8dd59"
+    },
+    {
+      "id": "roast_fish",
+      "source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-2cd2a6da-218f-4309-b829-317c3a1c0779.png",
+      "prompt": "Asset type: one transparent inventory/world pickup sprite for Caelum Argenteum, a dark fantasy RPG in nineteenth-century Argentina. Subject: a serving of roasted white fish, a single modest hake fillet with ivory flaky cooked flesh, toasted golden edges and a few small brown roasting marks, on a plain rustic earthenware plate. No lemon, herbs or other garnish. Compact distinct silhouette, three-quarter view from slightly above. Painted pixel-oriented late-1990s RPG item art, crisp irregular pixel clusters, restrained upper-left illumination and warm deep shadows; no glossy 3D render or photographic surface. Readable when reduced to a 128x128 inventory icon. Complete centered plate with generous genuinely transparent margins. No text, labels, cutlery, table, background, glow or shadow outside the object.",
+      "tool": "image_gen.imagegen",
+      "status": "candidate; technical and native review pending",
+      "local_source": "assets/art_source/cooked_meals/roast_fish.png",
+      "sha256": "dcf675d7e9a9a37d9c4a17765322bdb5a2f15bb5fcfdd93c3f394518c230eabe"
+    },
+    {
+      "id": "puchero",
+      "source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-79d908f5-5735-4028-8902-68e27be57807.png",
+      "prompt": "Asset type: a single transparent inventory/world pickup sprite for Caelum Argenteum, dark fantasy RPG in nineteenth-century Argentina. Subject: a small rustic earthenware bowl of Argentine puchero stew. Visible cooked beef chunks, pale potato, golden squash, orange carrot and a short segment of sweetcorn in brown-gold broth. Ingredients look stewed and handmade, not decorative restaurant plating. No beans, noodles, utensils or garnish. Compact round bowl silhouette, three-quarter view slightly from above. Painted pixel-oriented late-1990s RPG item art with clear irregular pixel clusters and muted earthy colors, upper-left light and deep brown shadows; designed to be readable at 128x128 pixels. No photorealism, glossy 3D render, outlines, text or logos. Complete centered bowl, generous truly transparent alpha margins; no background scene, table, glow or cast shadow beyond the bowl.",
+      "tool": "image_gen.imagegen",
+      "status": "candidate; technical and native review pending",
+      "local_source": "assets/art_source/cooked_meals/puchero.png",
+      "sha256": "6a381f3a77630ca34b0b2b36a298a7af0f2c324be71a3b798710f7b781a88162"
+    }
+  ]
+}

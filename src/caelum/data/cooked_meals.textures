@@ -1,0 +1,4 @@
+Sprite "FBRDA0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/meals/bread.png", 0, 0 }
+Sprite "FRBFA0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/meals/roast_beef.png", 0, 0 }
+Sprite "FRFSA0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/meals/roast_fish.png", 0, 0 }
+Sprite "FPCHA0", 128, 128 { Offset 64, 122 Patch "graphics/caelum/icons/meals/puchero.png", 0, 0 }
