@@ -19,6 +19,8 @@ class CaelumCampData : Object
     const SETUP_SECONDS=600.0;
     const PACK_SECONDS=300.0;
     const IGNITE_SECONDS=60.0;
+    const DISMANTLE_SECONDS=60.0;
+    const FIRE_CAPACITY_G=10000;
     const POT_KG=5.5;
     const POT_LITERS=20.0;
     const POT_DIAMETER_M=0.36;

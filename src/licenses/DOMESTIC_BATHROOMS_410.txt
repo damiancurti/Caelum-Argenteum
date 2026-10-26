@@ -1,0 +1,13 @@
+Caelum Argenteum - domestic bathroom artwork (#410), 2026-10-25
+Project author: Damian Curti (Damián Curti).
+Original sink, bathtub, toilet and enamel sources generated for this project
+with OpenAI image_gen following docs/SPRITE_ART_DIRECTION.md. Retained sources,
+exact prompts and selection history: assets/art_source/bathrooms/PROMPTS.json.
+No museum image, third-party mesh or Doom artwork is incorporated. The V&A
+Burges washstand O8362 supplies a written period-material/dimension reference;
+these original fixtures are not replicas. See DATA.json for design dimensions.
+The deterministic original meshes reuse owned stash wood, metal and brass
+textures, the owned station-paper shade and the newly generated enamel material.
+The generator performs only
+mechanical registration/resizing of painted bitmap sources; see MANIFEST.json.
+No additional public redistribution license is inferred.

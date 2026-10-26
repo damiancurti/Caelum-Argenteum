@@ -2,6 +2,10 @@
 // Sin las tres magnitudes declaradas no se inventa potencia desde el sprite.
 class CaelumThermalFireSource : Actor
 {
+    override void PostBeginPlay()
+    {Super.PostBeginPlay();let world=CaelumThermalWorld.Get();if(world!=null)world.RegisterFire(self);}
+    override void OnDestroy()
+    {let world=CaelumThermalWorld.Get();if(world!=null)world.ForgetFire(self);Super.OnDestroy();}
     Default
     {
         +NOBLOCKMAP
@@ -11,7 +15,7 @@ class CaelumThermalFireSource : Actor
         Radius 1;
         Height 1;
     }
-    double Watts()
+    virtual double Watts()
     {
         if(args[0]<1 || args[0]>4 || args[1]<=0 || args[2]<=0)return 0;
         return CaelumThermalData.FireWatts(args[0]);

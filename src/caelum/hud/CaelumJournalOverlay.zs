@@ -1258,6 +1258,8 @@ class CaelumJournalOverlay : EventHandler
                 || (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE && localPlayer.FormalInventoryRowType[row]==CaelumCampData.POT_CONSUMABLE))
                 DrawTexture(CaelumCampData.Icon(kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE?1:0),
                     30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumHygieneData.CLOTH_KEY)
+                DrawTexture("graphics/caelum/icons/hygiene/cloth.png",30.0,165.0+row*21.0,20.0,20.0);
             else if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
                 DrawTexture(CaelumClothingData.Icon(localPlayer.FormalInventoryRowType[row]),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
@@ -1372,6 +1374,10 @@ class CaelumJournalOverlay : EventHandler
                         ]));
             }
             let mate=CaelumMateSession.Selected(localPlayer);
+            if(localPlayer.FormalInventoryRowFoodContamination[selectedRow]>=0)
+                CaelumCraftingUI.Paragraph(self,String.Format(StringTable.Localize("CA_FOOD_LOTS_DETAIL",false),
+                    localPlayer.FormalInventoryRowFoodContamination[selectedRow],localPlayer.FormalInventoryRowFoodLots[selectedRow]),
+                    414,270,192,2,"ca_journal_inventory_scroll");
             if(mate!=null)CaelumCraftingUI.Paragraph(self,CaelumMateUI.Contents(mate),414,278,192,3,"ca_journal_inventory_scroll");
             if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] > 0)
                 DrawTextLine(InventoryFont,Font.CR_WHITE,414,246,
@@ -1401,7 +1407,7 @@ class CaelumJournalOverlay : EventHandler
                 InventoryFont, Font.CR_CYAN, 414.0, 298.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
-                    StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?"CA_CLEAN_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
                     localPlayer.CraftingTaskRemainingSeconds,
                     localPlayer.CraftingTaskTotalSeconds
                 )
@@ -1791,7 +1797,7 @@ class CaelumJournalOverlay : EventHandler
                 SmallFont, Font.CR_CYAN, 320.0, 282.0,
                 String.Format(
                     "%s: %.1f / %.1f s",
-                    StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?"CA_CLEAN_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
                     localPlayer.CraftingTaskRemainingSeconds,
                     localPlayer.CraftingTaskTotalSeconds
                 )

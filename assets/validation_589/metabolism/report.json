@@ -1,0 +1,12 @@
+{
+  "metabolism01-core": 19,
+  "metabolism01-forecast": 5,
+  "metabolism01-pool": 3,
+  "metabolism01-save": 1,
+  "metabolism01-load": 1,
+  "metabolism01-hub": 3,
+  "metabolism01-legacy-b": 4,
+  "total_pass": 36,
+  "members": 16870,
+  "sha256": "3d8110804faf10a709050749c8ffee93987b5332158adefb613f898d998f5df7"
+}

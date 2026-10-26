@@ -1,0 +1,268 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+  "source_members": 16893,
+  "passes": 157,
+  "runs": [
+    {
+      "label": "surface-final03-surface-rules",
+      "passes": 20,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-weather",
+      "passes": 5,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-rain-live",
+      "passes": 1,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-save",
+      "passes": 1,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-load",
+      "passes": 4,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-hub",
+      "passes": 6,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-surface-legacy",
+      "passes": 2,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final03-clean-core",
+      "passes": 33,
+      "runtime": "surface-final03",
+      "package_sha256": "2bee3cf7b3dc98a40f273cb5121bf030cbb416325d69011bd5211c2d44a1dd98",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final05-native",
+      "passes": 11,
+      "runtime": "surface-final05",
+      "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+      "source_differences": []
+    },
+    {
+      "label": "surface-final05-forecast",
+      "passes": 6,
+      "runtime": "surface-final05",
+      "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+      "source_differences": []
+    },
+    {
+      "label": "surface-final04-wet-floor",
+      "passes": 4,
+      "runtime": "surface-final04",
+      "package_sha256": "89bba4e04f9e94a55403a5ce232b866cf3a48d15ef245bf20fbc6e70b31e2153",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final04-bath",
+      "passes": 35,
+      "runtime": "surface-final04",
+      "package_sha256": "89bba4e04f9e94a55403a5ce232b866cf3a48d15ef245bf20fbc6e70b31e2153",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final04-toilet",
+      "passes": 23,
+      "runtime": "surface-final04",
+      "package_sha256": "89bba4e04f9e94a55403a5ce232b866cf3a48d15ef245bf20fbc6e70b31e2153",
+      "source_differences": [
+        "caelum/survival/CaelumContaminationSurface.zs"
+      ]
+    },
+    {
+      "label": "surface-final05-capture",
+      "passes": 1,
+      "runtime": "surface-final05",
+      "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+      "source_differences": []
+    },
+    {
+      "label": "surface-original-rollback",
+      "passes": 5,
+      "runtime": "clean-final06",
+      "package_sha256": "3d6c680f2efdff12b384c0922b04f695b8ea659a07b32560cf7861c59426780f",
+      "source_differences": [
+        "caelum/data/CaelumContaminationData.zs",
+        "caelum/survival/CaelumContaminationExposure.zs",
+        "caelum/survival/CaelumContaminationSurface.zs",
+        "caelum/world/CaelumTimeSkipModel.zs",
+        "ZSCRIPT"
+      ]
+    }
+  ],
+  "performance": [
+    {
+      "label": "surface-perf02-base-mansion",
+      "map": "MAP01",
+      "pitch": 0,
+      "runtime": "clean-final06",
+      "frames": 593,
+      "mean_ms": 16.834428161888702,
+      "p95_ms": 19.1948,
+      "p99_ms": 20.5504,
+      "max_ms": 22.6426,
+      "simulation_tics_s": 35.00825354585597,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf04-current-mansion",
+      "map": "MAP01",
+      "pitch": 0,
+      "runtime": "surface-final04",
+      "frames": 598,
+      "mean_ms": 16.687986622073577,
+      "p95_ms": 18.4992,
+      "p99_ms": 19.5739,
+      "max_ms": 21.2879,
+      "simulation_tics_s": 35.00307151952584,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf02-base-sewer",
+      "map": "MAP02",
+      "pitch": 0,
+      "runtime": "clean-final06",
+      "frames": 598,
+      "mean_ms": 16.689894983277593,
+      "p95_ms": 17.3725,
+      "p99_ms": 17.7234,
+      "max_ms": 34.7693,
+      "simulation_tics_s": 35.01231242978906,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf04-current-sewer",
+      "map": "MAP02",
+      "pitch": 0,
+      "runtime": "surface-final04",
+      "frames": 598,
+      "mean_ms": 16.689571571906356,
+      "p95_ms": 17.1692,
+      "p99_ms": 17.547,
+      "max_ms": 39.8913,
+      "simulation_tics_s": 35.011507582312156,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf02-base-city",
+      "map": "MAP03",
+      "pitch": 0,
+      "runtime": "clean-final06",
+      "frames": 599,
+      "mean_ms": 16.665503171953254,
+      "p95_ms": 17.3525,
+      "p99_ms": 18.0099,
+      "max_ms": 19.3148,
+      "simulation_tics_s": 35.0014921136088,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf04-current-city",
+      "map": "MAP03",
+      "pitch": 0,
+      "runtime": "surface-final04",
+      "frames": 599,
+      "mean_ms": 16.669400333889815,
+      "p95_ms": 17.0968,
+      "p99_ms": 17.4341,
+      "max_ms": 17.7958,
+      "simulation_tics_s": 34.99553806889622,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf02-base-ground",
+      "map": "MAP03",
+      "pitch": 75,
+      "runtime": "clean-final06",
+      "frames": 599,
+      "mean_ms": 16.667233555926543,
+      "p95_ms": 17.5993,
+      "p99_ms": 18.4317,
+      "max_ms": 20.1259,
+      "simulation_tics_s": 34.99986070055441,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    },
+    {
+      "label": "surface-perf04-current-ground",
+      "map": "MAP03",
+      "pitch": 75,
+      "runtime": "surface-final04",
+      "frames": 599,
+      "mean_ms": 16.668108848080134,
+      "p95_ms": 17.4686,
+      "p99_ms": 18.1677,
+      "max_ms": 19.7771,
+      "simulation_tics_s": 35.00096427656582,
+      "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+    }
+  ],
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "author_test": "CA502-SURFACE-01 pending",
+  "reuse": "Verified byte deltas: final04 adds immersed support; final05 initializes unseen forecast climate before catch-up. Both changed paths have focused native checks; final03 arithmetic/save/hub/cleaning and final04 wet/bath/toilet remain applicable. Performance uses final04: final05 only changes forecast capture, outside those idle windows.",
+  "limits": [
+    "Player-to-floor/wall and outer equipment only; other actors, combat and housekeeping remain unfinished.",
+    "One representative foot zone and nearest torso wall; no physical contact mesh is invented.",
+    "Unloaded catch-up uses saved regional climate/shelter; transient magical emitters are not reconstructed while absent.",
+    "No multiplayer acceptance. Fixed-camera render callbacks are not application presentation or whole-map FPS acceptance."
+  ],
+  "resolved_probes": [
+    "Reserved ZScript local/method names corrected before native checks.",
+    "Diagnostic climate marker initially collided with HousePortal editor number; production number30950 is reused.",
+    "Fixture hub uses campaign cluster434/nointermission; saved proof zone is away from arrival spawn.",
+    "Old-save diagnostics dispatch through an already-saved event handler.",
+    "Near-zero drizzle uses a stable integral series; missing forecast weather is null-safe.",
+    "Bath regression runs the accepted bath addon, rather than the surface diagnostic dispatch.",
+    "New forecast zones configure climate before replaying elapsed time, without creating live tiles.",
+    "Native pool-bottom contact remains active while immersed."
+  ]
+}

@@ -2,6 +2,7 @@
 // Es independiente de la armadura nativa de Doom para facilitar la futura UI.
 class CaelumArmorModel : Object
 {
+    CaelumContaminationState ContaminationState[4];
     int ArmorType[4];
     int Tier[4];
     int Size[4];

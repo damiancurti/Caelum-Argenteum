@@ -3,17 +3,26 @@
 class CaelumConsumableItem : PowerupGiver
 {
     bool InMagicBox;
+    CaelumFoodLots FoodLots;
+    CaelumFoodClock FoodClock;
 
     override bool HandlePickup(Inventory item)
     {
+        bool food=CaelumFoodInventory.IsFood(self) && item.GetClass()==GetClass();
+        int before=Amount;
+        if(food){CaelumFoodInventory.Reconcile(self);CaelumFoodInventory.Reconcile(item);}
         bool result=Super.HandlePickup(item);
+        if(food && Amount>before)CaelumFoodInventory.Transfer(item,self,Amount-before);
         CaelumActorMaintenance.InventoryChanged(Owner);
         return result;
     }
     override Inventory CreateTossable(int amount)
     {
+        CaelumFoodInventory.Reconcile(self);
         let previousOwner=Owner;
         let result=Super.CreateTossable(amount);
+        if(result!=null && result!=self)CaelumFoodInventory.Transfer(self,result,result.Amount,true);
+        if(result!=null)CaelumFoodInventory.Relocate(result);
         CaelumActorMaintenance.InventoryChanged(previousOwner);
         return result;
     }
@@ -79,6 +88,7 @@ class CaelumConsumableItem : PowerupGiver
     {
         // El contenido de la Caja Magica no puede usarse hasta recuperarlo.
         if (InMagicBox) { return false; }
+        CaelumFoodInventory.Reconcile(self);
         // Permitir el refresco nativo también antes del parpadeo del efecto.
         // Se limita al uso, sin alterar la recogida ni los objetos de guardados.
         bool previousAlwaysPickup = bAlwaysPickup;
@@ -123,7 +133,11 @@ class CaelumConsumableItem : PowerupGiver
         }
         // Sólo un uso nativo aceptado acredita la práctica; recoger, mirar o
         // intentar consumir desde la Caja no llega a este observador.
-        if (used) CaelumMainM00RonnieTrial.RecordNeedsUse(CaelumPlayer(Owner), GetConsumableType());
+        if (used)
+        {
+            CaelumFoodInventory.Ingest(self);
+            CaelumMainM00RonnieTrial.RecordNeedsUse(CaelumPlayer(Owner), GetConsumableType());
+        }
         CaelumActorMaintenance.InventoryChanged(Owner);
         return used;
     }
@@ -141,6 +155,7 @@ class CaelumConsumableItem : PowerupGiver
         bool pickedUp = Super.TryPickup(toucher);
         if (pickedUp)
         {
+            CaelumFoodInventory.Relocate(caelumPlayer.FindInventory(GetClass()));
             int gained = CaelumNotifications.OwnedQuantity(caelumPlayer, self) - before;
             CaelumNotifications.AcquiredDescription(caelumPlayer, received, gained);
             caelumPlayer.OnNativeInventoryChanged();
@@ -150,8 +165,15 @@ class CaelumConsumableItem : PowerupGiver
 
     override Inventory CreateCopy(Actor other)
     {
+        CaelumFoodInventory.Reconcile(self);
         CaelumConsumableItem copy = CaelumConsumableItem(Super.CreateCopy(other));
-        if (copy != null && copy != self) { copy.InMagicBox = InMagicBox; }
+        if(copy==self && FoodLots!=null && Amount<FoodLots.Units())
+            FoodLots=FoodLots.CopyOldest(Amount);
+        if (copy != null && copy != self)
+        {
+            copy.InMagicBox = InMagicBox;
+            CaelumFoodInventory.Transfer(self,copy,copy.Amount,true);
+        }
         return copy;
     }
 }
@@ -211,7 +233,9 @@ class CaelumRegenerationPower : Powerup
             if (GetRegenerationType() == CaelumConstants.CONSUMABLE_WATER_RATION)
             {
                 double recovery = WaterRecoveryPerPulse > 0 ? WaterRecoveryPerPulse : 1.0;
+                double before=caelumPlayer.CurrentThirst;
                 caelumPlayer.CurrentThirst = Min(100.0, caelumPlayer.CurrentThirst + recovery);
+                CaelumFoodIllness.Satiate(caelumPlayer,caelumPlayer.CurrentThirst-before);
                 if(caelumPlayer.CurrentThirst>=100)CaelumDiningSession.Sated(caelumPlayer,true);
                 caelumPlayer.UpdateSurvivalStates();
                 return;
@@ -249,6 +273,7 @@ class CaelumRegenerationPower : Powerup
             int healing=int(PotionHealingFraction);
             PotionHealingFraction-=healing;
             Owner.health=Min(maximum,Owner.health+healing);
+            if(maximum>0)CaelumContaminationStorage.Treatment(Owner,ratio);
             if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
             else npc.UpdateCombatHealthEffects();
         }
@@ -489,7 +514,7 @@ class CaelumWaterContainer : CaelumConsumableItem
     override void Tick()
     {
         Super.Tick();
-        if(Owner is 'CaelumPlayer' || level.maptime%TICRATE!=0)return;
+        if(Owner is 'CaelumPlayer' || Owner is 'CaelumCampFire' || level.maptime%TICRATE!=0)return;
         let world=CaelumThermalWorld.Get();
         if(world==null || world.ReferenceClock==null || world.ReferenceWeather==null)return;
         let weather=world.ReferenceWeather;
@@ -537,6 +562,8 @@ class CaelumWaterContainer : CaelumConsumableItem
     bool FillFromSource(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user) || Owner != user || InMagicBox || user.health <= 0) return false;
+        let fixture=CaelumDomesticFixture.SourceFor(user);
+        if(fixture!=null)return fixture.Fill(user,self);
         let reservoir=CaelumConnectedWaterMap.Get();
         if(reservoir!=null)reservoir.Sync(CaelumWorldClock.Get(user));
         int reservoirIndex=reservoir!=null ? reservoir.Index(CaelumWaterQuality.Model(user)) : -1;

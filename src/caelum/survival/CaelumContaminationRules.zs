@@ -56,6 +56,23 @@ class CaelumContaminationRules : Object
             *(CaelumFoodData.HUMIDITY_BASE_FACTOR+Clamp(humidity,0.0,100.0)/100.0),
             0.0,CaelumFoodData.MAX_CONTAMINATION);
     }
+    static clearscope double RainReduction(double mmHour)
+    {
+        if(mmHour<=0)return 0;
+        if(mmHour<=CaelumContaminationData.RAIN_LIGHT_MM_HOUR)
+            return mmHour/CaelumContaminationData.RAIN_LIGHT_MM_HOUR*CaelumContaminationData.RAIN_LIGHT_REDUCTION;
+        double blend=Clamp((mmHour-CaelumContaminationData.RAIN_LIGHT_MM_HOUR)
+            /(CaelumContaminationData.RAIN_HEAVY_MM_HOUR-CaelumContaminationData.RAIN_LIGHT_MM_HOUR),0.0,1.0);
+        return CaelumContaminationData.RAIN_LIGHT_REDUCTION+blend
+            *(CaelumContaminationData.RAIN_HEAVY_REDUCTION-CaelumContaminationData.RAIN_LIGHT_REDUCTION);
+    }
+    static clearscope double Ambient(double reference,double celsius,double humidity,double rain,bool uncovered)
+    {
+        double value=Environment(reference,celsius,humidity);
+        if(uncovered && reference==CaelumContaminationData.URBAN_REFERENCE)
+            value=Max(0.0,value-RainReduction(rain));
+        return value;
+    }
     // Integra dC/dt=k*fuente/max(C,1), recalculando la proporción durante
     // el contacto. Así diez segundos producen lo mismo juntos o por tics.
     // La fuente mantiene su concentración; nunca se sobrepasa ni se limpia.
@@ -79,6 +96,11 @@ class CaelumContaminationRules : Object
     }
     static clearscope double BodyDoseFactor(double bodyKg)
     {return bodyKg>0 ? CaelumFoodData.REFERENCE_BODY_KG/bodyKg : 0;}
+    static clearscope double ImmersionWash(double value,double potableAreaM2,double seconds,double bodyKg)
+    {
+        return Max(0.0,value-Max(0.0,potableAreaM2)*Max(0.0,seconds)/60.0
+            *CaelumContaminationData.IMMERSION_WASH_DEGREES_M2_MINUTE*BodyDoseFactor(bodyKg));
+    }
     static clearscope double EquipmentWaterLiters(double areaM2)
     {return Max(0.0,areaM2)*CaelumContaminationData.EQUIPMENT_WATER_L_M2;}
     static clearscope double SoapGrams(double waterLiters)

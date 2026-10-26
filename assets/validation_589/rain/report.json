@@ -1,0 +1,16 @@
+{
+  "runtime": "rain01",
+  "members": 16869,
+  "sha256": "991910476ff82030918f7d86337eb93419fee94f856ff33c9e880635b8cdb05f",
+  "runs": [
+    {
+      "label": "rain01-core-b",
+      "executed_passes": 20
+    },
+    {
+      "label": "rain01-legacy",
+      "executed_passes": 2
+    }
+  ],
+  "passes": 22
+}

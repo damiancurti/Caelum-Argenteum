@@ -843,7 +843,7 @@ class CaelumCraftingCoordinator : Object play
         user.CraftingTaskTotalSeconds = Max(0.001, durationSeconds);
         user.CraftingTaskRemainingSeconds = user.CraftingTaskTotalSeconds;
         user.CraftingTaskActive = true;
-        if(taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
+        if(taskKind!=CaelumConstants.CRAFTING_TASK_CLEAN && taskKind!=CaelumConstants.CRAFTING_TASK_BATH && taskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && taskKind!=CaelumConstants.CRAFTING_TASK_BOIL && taskKind!=CaelumConstants.CRAFTING_TASK_CAMP)CaelumRecipeLearning.CapturePractice(user);
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_TASK_STARTED;
         user.PersistCharacterState();
         user.RefreshFormalInventorySnapshot();
@@ -864,6 +864,7 @@ class CaelumCraftingCoordinator : Object play
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)
+            && user.CraftingSelectionRecipe!=CaelumHygieneData.CLOTH_RECIPE
             && user.FindInventory(CaelumUtilityCrafting.ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!user.CraftingSelectedRecipeKnown)
@@ -1470,6 +1471,7 @@ class CaelumCraftingCoordinator : Object play
             if(CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))CaelumClothing.Preview(user);
             if(CaelumMateData.IsRecipe(user.CraftingSelectionRecipe))CaelumMateCrafting.Preview(user);
             if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))CaelumCampCrafting.Preview(user);
+            if(user.CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)CaelumHygieneCrafting.Preview(user);
 
             // El montaje y la reparación producen un objeto indivisible. Una
             // eficiencia menor conserva el resultado completo y aumenta cada
@@ -1640,6 +1642,18 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumCleaningTask.Active(user))
+        {if(!CaelumCleaningTask.Attended(user)){CaelumCleaningTask.Cancel(user);return false;}return true;}
+        if(CaelumBathTask.Active(user))
+        {if(!CaelumBathTask.Attended(user)){CaelumBathTask.Cancel(user);return false;}return true;}
+        if(CaelumHygieneTask.Active(user))
+        {
+            if(!CaelumHygieneTask.Attended(user)){CaelumHygieneTask.Cancel(user);return false;}
+            // Sesiones anteriores a las poses: conservar el tiempo y adoptar el asiento.
+            if(!CaelumHygienePose.Active(user) && !CaelumHygienePose.Begin(user,CaelumHygieneTask.Find(user).Fixture,false))
+            {CaelumHygieneTask.Cancel(user);return false;}
+            return true;
+        }
         if(CaelumCampTask.Active(user))
         {
             let camp=CaelumCampTask.Find(user);
@@ -1891,19 +1905,25 @@ class CaelumCraftingCoordinator : Object play
     static void UpdateCraftingTask(CaelumPlayer user)
     {
         user.CraftingTaskProgressing = false;
-        if (CaelumSleepRules.IsSleeping(user)
+        if (CaelumSleepRules.IsSleeping(user) || CaelumTimeSkipState.PausesWork(user)
             || (CaelumTimeSkipState.IsActive(user) && CaelumScheduleState.SiegeActive(user,level.MapName))) return;
         if (!user.CraftingTaskActive || user.CraftingTaskCompleting) { return; }
         if (!user.RefreshActiveCraftingStationSession()) { return; }
         user.CraftingTaskProgressing = true;
         CaelumTimeSkipState.RecordWork(user);
+        if(CaelumCleaningTask.Active(user)){CaelumCleaningTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
+        if(CaelumBathTask.Active(user)){CaelumBathTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         user.CraftingTaskRemainingSeconds = Max(
             0.0,
             user.CraftingTaskRemainingSeconds - (user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL
                 || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP
+                || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE
                 || CaelumChemistryData.IsRecipe(user.CraftingTaskRecipeIndex)
                 ? CaelumThermalRuntime.WorldTicSeconds() : 1.0 / TICRATE)
         );
+        // Compensar sólo el residuo binario del minuto de higiene.
+        if(CaelumHygieneTask.Active(user) && user.CraftingTaskRemainingSeconds<0.0000001)
+            user.CraftingTaskRemainingSeconds=0;
         if (user.CraftingTaskRemainingSeconds <= 0.0)
         {
             user.CompleteCraftingTask();

@@ -5799,3 +5799,6 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "caelum/data/chemistry_resources.textures"
 
 #include "caelum/data/mate.textures"
+
+#include "caelum/data/hygiene_resources.textures"
+#include "caelum/data/domestic_bathrooms.textures"

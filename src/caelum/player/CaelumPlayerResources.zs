@@ -100,6 +100,9 @@ class CaelumPlayerResources : Object play
                 int healing = Max(1, int(user.CaelumMaximumHealth * pulseRatio + 0.5));
                 user.health = Min(user.CaelumMaximumHealth, user.health + healing);
                 user.player.health = user.health;
+                // Los efectos antiguos conservan su pulso de Vida ya redondeado.
+                if(user.CaelumMaximumHealth>0)CaelumContaminationStorage.Treatment(user,
+                    double(healing)/user.CaelumMaximumHealth);
                 user.UpdateHealthStateEffects();
                 break;
             }
@@ -132,6 +135,7 @@ class CaelumPlayerResources : Object play
                     foodRecovery);
                 recovered=Max(0.0,recovered);
                 user.CurrentHunger+=recovered;
+                CaelumFoodIllness.Satiate(user,recovered);
                 // Digestión: sólo el hambre efectivamente saciada tiene coste.
                 user.CurrentSleep=Max(0.0,user.CurrentSleep-recovered/4.0);
                 CaelumExhaustion.Sync(user);
@@ -140,13 +144,17 @@ class CaelumPlayerResources : Object play
                 break;
             }
             case CaelumConstants.CONSUMABLE_WATER_RATION:
+            {
+                double before=user.CurrentThirst;
                 user.CurrentThirst = Min(
                     CaelumConstants.SURVIVAL_MAXIMUM,
                     user.CurrentThirst
                         + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
                 );
+                CaelumFoodIllness.Satiate(user,user.CurrentThirst-before);
                 user.UpdateSurvivalStates();
                 break;
+            }
         }
         user.PersistCharacterState();
     }
@@ -362,7 +370,8 @@ class CaelumPlayerResources : Object play
                     CaelumConstants.SURVIVAL_MAXIMUM
                     * CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND
                     / TICRATE);
-            user.CurrentThirst += CaelumWaterQuality.DrinkSource(user,recovery);
+            double gained=CaelumWaterQuality.DrinkSource(user,recovery);
+            user.CurrentThirst += gained;CaelumFoodIllness.Satiate(user,gained);
         }
         else
         {
@@ -525,6 +534,12 @@ class CaelumPlayerResources : Object play
         wholeDamage = CaelumTutorialSafety.HealthLoss(user, wholeDamage);
         user.health -= wholeDamage;
         user.player.health = user.health;
+        // El cansancio sigue dañando al limpiar antes del sueño automático,
+        // pero no se interpreta como un golpe que cancele esa preparación.
+        if(CaelumTimeSkipState.IsPreparingSleep(user)
+            && user.HungerState!=CaelumConstants.SURVIVAL_STATE_CRITICAL
+            && user.ThirstState!=CaelumConstants.SURVIVAL_STATE_CRITICAL)
+            CaelumRestSafety.PeriodicLoss(user,wholeDamage);
         CaelumRestState.Interrupt(user, "CA_REST_NEEDS");
 
         // Direct health loss deliberately bypasses armor and this class's

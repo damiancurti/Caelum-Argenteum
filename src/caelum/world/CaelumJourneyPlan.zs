@@ -126,6 +126,7 @@ class CaelumJourneyModel : Object play
     CaelumAltitudeState Altitude;
     double AltitudeSecondsPerTic;
     CaelumFoodIllness FoodIllness;
+    CaelumJourneyFood FoodInventory;
     double FoodToughness;
     CaelumContaminationExposure Contamination;
 
@@ -136,6 +137,7 @@ class CaelumJourneyModel : Object play
         FoodIllness=foodRecord!=null && foodRecord.FoodIllness!=null
             ? foodRecord.FoodIllness.Copy() : new('CaelumFoodIllness');
         FoodIllness.Ensure();FoodToughness=user.Attributes.Toughness;
+        FoodInventory=new('CaelumJourneyFood');FoodInventory.Capture(user);
         let contactThermal=CaelumThermalService.CaptureForecast(user);
         if(contactThermal!=null)
         {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);}
@@ -186,7 +188,12 @@ class CaelumJourneyModel : Object play
         // la marcha y antes/después de acampar; no se empieza a comer dormido.
         if (FoodEffectTics == 0 && Hunger <= 100.0 - Min(100.0, FoodPulse * 10)
             && (Unlimited || FoodSpent < FoodStock))
-        { FoodSpent++; FoodEffectTics = 10 * TICRATE; FoodPulseTics = 0; }
+        {
+            if(FoodInventory!=null && FoodIllness!=null)
+                FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
+                    FoodInventory.Consume(),CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000,Mass));
+            FoodSpent++; FoodEffectTics = 10 * TICRATE; FoodPulseTics = 0;
+        }
         if (WaterEffectTics != 0) return;
         double dose = FoodPulse * 10;
         bool ration = Unlimited || WaterSpent < WaterStock;
@@ -208,6 +215,7 @@ class CaelumJourneyModel : Object play
                 FoodPulseTics = 0;
                 double gained = Min(FoodPulse, 100.0 - Hunger);
                 Hunger += gained; Sleep = Max(0.0, Sleep - gained / 4.0);
+                if(FoodIllness!=null)FoodIllness.Satiation(gained);
             }
             FoodEffectTics--;
         }
@@ -215,7 +223,10 @@ class CaelumJourneyModel : Object play
         {
             WaterPulseTics++;
             if (WaterPulseTics >= TICRATE)
-            { WaterPulseTics = 0; Thirst = Min(100.0, Thirst + WaterPulse); }
+            {
+                WaterPulseTics = 0; double before=Thirst;Thirst = Min(100.0, Thirst + WaterPulse);
+                if(FoodIllness!=null)FoodIllness.Satiation(Thirst-before);
+            }
             WaterEffectTics--;
         }
     }
@@ -227,6 +238,8 @@ class CaelumJourneyModel : Object play
     virtual double AnimaComfort(bool sleeping) { return 1.0; }
     virtual int AirHealth() { return Health; }
     virtual double AirAdrenaline() { return Adrenaline; }
+    virtual void ThirstStep(double comfort)
+    {Thirst=Max(0.0,Thirst-ThirstLoss/comfort);}
 
     virtual void Step(bool sleeping)
     {
@@ -237,7 +250,7 @@ class CaelumJourneyModel : Object play
         // camas ni suministros: sin bolsa se duerme en el suelo (factor 1).
         double comfort = Comfort(sleeping);
         Hunger = Max(0.0, Hunger - HungerLoss / comfort);
-        Thirst = Max(0.0, Thirst - ThirstLoss / comfort);
+        ThirstStep(comfort);
         Sleep = sleeping ? CaelumRestRules.RecoverSleep(Sleep, SleepRecoveryScale())
             : Max(0.0, Sleep - SleepLoss);
         Stun = Max(0.0, Stun - 1.0 / TICRATE);
@@ -437,7 +450,7 @@ class CaelumJourneyPlan : Inventory
                 else
                 {
                     int kind = ration.GetConsumableType();
-                    int count = kind == CaelumConstants.CONSUMABLE_FOOD_RATION ? Min(food, ration.Amount)
+                    int count = kind == CaelumConstants.CONSUMABLE_FOOD_RATION ? (model.FoodInventory==null?Min(food, ration.Amount):0)
                         : kind == CaelumConstants.CONSUMABLE_WATER_RATION ? Min(water, ration.Amount) : 0;
                     if (kind == CaelumConstants.CONSUMABLE_FOOD_RATION) food -= count;
                     if (kind == CaelumConstants.CONSUMABLE_WATER_RATION) water -= count;
@@ -489,6 +502,7 @@ class CaelumJourneyPlan : Inventory
         }
         user.OnNativeInventoryChanged();
         CaelumWorldClock.Get(user, true).AdvanceTics(model.ElapsedTics);
+        if(model.FoodInventory!=null){model.FoodInventory.Commit(user);user.OnNativeInventoryChanged();}
         CaelumAltitudeService.CommitForecast(user,model.Altitude);
         CaelumWeatherState.Sync(user, CaelumWorldClock.Get(user), CaelumCalendarState.Get(user));
     }

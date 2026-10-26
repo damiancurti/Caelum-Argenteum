@@ -354,3 +354,33 @@
 # Preserve #415 native discovery evidence.
 /assets/validation_585/** -text whitespace=cr-at-eol
 /assets/validation_585/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/supplies/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/treatment/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/rain/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/immersion_wash/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_589/metabolism/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve deterministic bathroom asset inputs/outputs and native evidence.
+/assets/art_source/bathrooms/*.json text eol=lf
+/assets/generators/generate_domestic_bathrooms.py text eol=lf
+/src/caelum/data/CaelumDomesticFixtureData.zs text eol=lf
+/src/caelum/data/CaelumDomesticWaterData.zs text eol=lf
+/src/caelum/world/CaelumDomesticFixture.zs text eol=lf
+/src/caelum/world/CaelumDomesticWater.zs text eol=lf
+/src/caelum/data/domestic_bathrooms.* text eol=lf
+/src/models/caelum/props/bathrooms/*.obj text eol=lf
+/src/licenses/DOMESTIC_BATHROOMS_410.txt text eol=lf
+/assets/validation_5811/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve issue502 hygiene native evidence.
+/assets/validation_5812/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/calendar/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/combat/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/npc/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/contact/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/contact/development-failures/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/objects/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/objects/development-failures/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

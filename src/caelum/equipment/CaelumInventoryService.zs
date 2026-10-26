@@ -121,6 +121,9 @@ class CaelumInventoryService : Object play
         int questUnits=special!=null ? Min(quantity,special.LimboQuestUnits) : 0;
         int supplyUnits=special!=null ? Min(quantity,special.LimboSupplyUnits) : 0;
         Inventory result=receiving!=null ? receiving : split!=null ? split : item;
+        CaelumFoodInventory.Reconcile(item);
+        if(receiving!=null)CaelumFoodInventory.Reconcile(receiving);
+        if(result!=item)CaelumFoodInventory.Transfer(item,result,quantity,split!=null);
         let resultSpecial=CaelumSpecialInventoryItem(result);
         if(result!=item && special!=null && resultSpecial!=null)
         {
@@ -143,6 +146,7 @@ class CaelumInventoryService : Object play
             source.RemoveInventory(item);item.AttachToOwner(receiver);
         }
         CaelumContainerRules.SetBoxed(result,destinationBox);
+        CaelumFoodInventory.Relocate(result);
         if(limitedSupply)
         {
             let received=CaelumSpecialInventoryItem(result);
@@ -205,6 +209,7 @@ class CaelumInventoryService : Object play
         Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
         if (existing != null && existing.Owner != user) return false;
         if (selling && (existing == null || existing.Amount < quantity)) return false;
+        if (selling && !CaelumFoodInventory.CanSell(existing)) return false;
         if (!selling && existing != null && existing.Amount > existing.MaxAmount - quantity) return false;
         Inventory prepared = null;
         if (!selling && existing == null)
@@ -262,6 +267,7 @@ class CaelumInventoryService : Object play
         Actor owner = session.Selling ? Actor(user) : Actor(session.Vendor);
         Actor receiver = session.Selling ? Actor(session.Vendor) : Actor(user);
         if (item.Owner != owner || (receiving != null && receiving.Owner != receiver)) return null;
+        if(session.Selling && !CaelumFoodInventory.CanSell(item))return null;
         if(companion!=null && (session.Selling || companion.Owner!=owner || companion.Amount!=1
             || CaelumCityTradeSession.Companion(item)!=companion))return null;
         Inventory split = null;
@@ -283,6 +289,10 @@ class CaelumInventoryService : Object play
         }
         AttachMerchantCurrencyObjects(user, coins);
         user.ApplyPalomoCurrencyPlan();
+        CaelumFoodInventory.Reconcile(item);
+        if(receiving!=null)CaelumFoodInventory.Reconcile(receiving);
+        if(receiving!=null || split!=null)
+            CaelumFoodInventory.Transfer(item,receiving!=null?receiving:split,quantity,split!=null);
         if (receiving != null)
         {
             receiving.Amount += quantity; item.Amount -= quantity;
@@ -298,6 +308,7 @@ class CaelumInventoryService : Object play
             item.Owner.RemoveInventory(item); item.AttachToOwner(receiver); receiving = item;
         }
         CaelumCityTradeSession.SetBoxed(receiving, !session.Selling && user.PalomoIncomingItemInMagicBox);
+        CaelumFoodInventory.Relocate(receiving);
         if(companion!=null)
         {
             companion.Owner.RemoveInventory(companion);companion.AttachToOwner(receiver);
@@ -1342,7 +1353,9 @@ class CaelumInventoryService : Object play
         Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
         if (existing != null)
         {
+            CaelumFoodInventory.Reconcile(existing);
             existing.Amount += quantity;
+            CaelumFoodInventory.Reconcile(existing);
             CaelumConsumableItem consumable = CaelumConsumableItem(existing);
             if (consumable != null)
             { consumable.InMagicBox = user.PalomoIncomingItemInMagicBox; }
@@ -1383,6 +1396,8 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory product = user.FindPalomoMerchantProduct(merchantItem);
         if (product == null || product.Amount < quantity) { return false; }
+        if(!CaelumFoodInventory.CanSell(product))return false;
+        CaelumFoodInventory.Remove(product,quantity);
         product.Amount -= quantity;
         if (product.Amount <= 0) { product.Destroy(); }
         return true;
@@ -2231,6 +2246,10 @@ class CaelumInventoryService : Object play
             carriedItemWeight += keyWeight;
         }
 
+        double soapCreditWeight=CaelumSoapSupply.Credit(user)*CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        soapCreditWeight+=CaelumCampFuelCredit.Weight(user);
+        personalInventoryWeight+=soapCreditWeight;carriedItemWeight+=soapCreditWeight;
+
         // Los cofres cargados no reciben la compresión de la Caja Mágica.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
@@ -2453,6 +2472,7 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowReservedUnits[row] = 0;
         user.FormalInventoryRowWaterLiters[row] = -1;
         user.FormalInventoryRowWaterQuality[row] = CaelumWaterQuality.UNIDENTIFIED;
+        user.FormalInventoryRowFoodContamination[row]=-1;user.FormalInventoryRowFoodLots[row]=0;
     }
 
     static void FillFormalInventoryRow(CaelumPlayer user, int row, Inventory entry)
@@ -2504,6 +2524,12 @@ class CaelumInventoryService : Object play
         if (consumable != null)
         {
             user.FormalInventoryRowType[row] = consumable.GetConsumableType();
+            if(CaelumFoodInventory.IsFood(consumable))
+            {
+                CaelumFoodInventory.Reconcile(consumable);
+                user.FormalInventoryRowFoodContamination[row]=consumable.FoodLots.OldestContamination();
+                user.FormalInventoryRowFoodLots[row]=consumable.FoodLots.Lots.Size();
+            }
             user.FormalInventoryRowInMagicBox[row] = consumable.InMagicBox;
             return;
         }
@@ -2706,6 +2732,14 @@ class CaelumInventoryService : Object play
         {
             if(CaelumCampTask.Locked(entry))user.CancelCraftingTask();
             else CaelumCampTask.BeginSetup(user,CaelumCampTent(entry));
+            user.RefreshFormalInventorySnapshot();return;
+        }
+        let firewood=CaelumMaterialPickup(entry);
+        if(firewood!=null && !firewood.InMagicBox && firewood.GetSpecialType()==CaelumConstants.MATERIAL_WOOD && firewood.GetSpecialTier()==1)
+        {
+            let task=CaelumCampTask.Find(user);
+            if(CaelumCampTask.Active(user) && task!=null && task.FireAction>0)user.CancelCraftingTask();
+            else CaelumCampFireSession.Show(user,null);
             user.RefreshFormalInventorySnapshot();return;
         }
         user.ApplyFormalInventorySelection(entry);
@@ -3416,8 +3450,9 @@ class CaelumInventoryService : Object play
     static bool IsEquipmentItemCraftingLocked(CaelumPlayer user, int itemId)
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return false;
-        return user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
-            && user.CraftingTaskTargetItemId == itemId;
+        return CaelumTimeSkipState.CleaningLocked(user,itemId)
+            || (user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
+                && user.CraftingTaskTargetItemId == itemId);
     }
 
     static bool IsSelectedMaterialCraftingLocked(CaelumPlayer user)
@@ -3436,7 +3471,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
-        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);
+        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);CaelumBathTask.Clear(user);CaelumCleaningTask.Clear(user);
         user.CraftingTaskActive = false;
         user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
         user.CraftingTaskLegacyRanged = false;
@@ -4555,6 +4590,7 @@ class CaelumInventoryService : Object play
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
+            if(specialType==CaelumHygieneData.CLOTH_KEY)return 'CaelumCleaningCloth';
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.ItemClass(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
@@ -4731,6 +4767,8 @@ class CaelumInventoryService : Object play
         }
         if (user.IsSpecialInventoryKind(user.EquipmentSelectionKind))
         {
+            if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                && user.EquipmentSelectionSpecialType==CaelumHygieneData.SOAP)CaelumBathSession.Show(user);
             return;
         }
         if (!user.EquipmentSelectionSizeCompatible)
@@ -6207,17 +6245,37 @@ class CaelumInventoryService : Object play
         user.EnsureCartridgeStationTask();
         if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CAMP
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CLEAN
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BATH
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
             && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
         {user.CancelCraftingTask();return;}
         int completedKind = user.CraftingTaskKind;
+        let repairedTarget=completedKind==CaelumConstants.CRAFTING_TASK_REPAIR?user.FindNativeEquipmentItemById(user.CraftingTaskTargetItemId):null;
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         int oldStation = user.ActiveCraftingStationType;
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)
+        {user.LastCraftingAction=CaelumCleaningTask.Complete(user)?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;}
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_BATH)
+        {
+            let bath=CaelumBathTask.Find(user);
+            bool done=CaelumBathTask.Attended(user) && bath!=null
+                && (bath.RemainingDegrees<0.000000001 || CaelumFoodIllness.Value(user)<=0);
+            user.LastCraftingAction=done?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            if(done)CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_BATH_DONE",false),bath.RemovedDegrees,bath.SpentWater,bath.SpentSoap));
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_HYGIENE)
+        {
+            user.CraftingTaskCompleting=true;
+            if(!CaelumHygieneTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            user.CraftingTaskCompleting=false;
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
         {
             user.CraftingTaskCompleting=true;
             if(!CaelumCampTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
@@ -6265,7 +6323,7 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
-        if(completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
+        if(completedKind!=CaelumConstants.CRAFTING_TASK_CLEAN && completedKind!=CaelumConstants.CRAFTING_TASK_BATH && completedKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
             && (user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
             || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED))
             CaelumRecipeLearning.CommitPractice(user);
@@ -6277,6 +6335,9 @@ class CaelumInventoryService : Object play
         user.RefreshEquipmentSelectionPreview();
         user.RefreshFormalInventorySnapshot();
         if (user.CraftingMenuOpen) { user.RefreshCraftingPreview(); }
+        if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)CaelumCleaningTask.AfterComplete(user);
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_REPAIR && user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_REPAIRED)
+            CaelumCleaningTask.Begin(user,repairedTarget,true);
     }
 
     static void BreakSelectedNativeEquipment(CaelumPlayer user)

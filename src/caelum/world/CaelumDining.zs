@@ -528,6 +528,7 @@ class CaelumDiningSession : Object play
         if(table!=null)
         {
             if(item.Owner!=table || !TableAvailable(user,table))return false;
+            CaelumFoodInventory.Reconcile(item);
             table.RemoveInventory(item);item.AttachToOwner(user);
         }
         else if(!CaelumTimeSkipRules.OwnedAvailable(user,item))return false;
@@ -542,7 +543,7 @@ class CaelumDiningSession : Object play
                 for(int i=0;i<table.Capacity();i++)if(table.Items[i]==item)table.Items[i]=null;
             item.Destroy();
         }
-        else if(table!=null)item.AttachToOwner(table);
+        else if(table!=null){item.AttachToOwner(table);CaelumFoodInventory.Relocate(item);}
         if(table!=null && accepted){table.RestockMansion();table.RefreshDisplays();}
         if(accepted){user.OnNativeInventoryChanged();user.PersistCharacterState();}
         return accepted;

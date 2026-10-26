@@ -1,0 +1,12 @@
+{
+  "wash01-core": 19,
+  "wash01-wait": 4,
+  "wash01-regression": 23,
+  "wash01-save": 1,
+  "wash01-load": 2,
+  "wash01-hub-c": 9,
+  "wash01-legacy": 2,
+  "total_pass": 60,
+  "members": 16869,
+  "sha256": "a9e25949f41e8a4f1f275354aa3633a138e1b6aab295a463b0ecfe929f005fe3"
+}

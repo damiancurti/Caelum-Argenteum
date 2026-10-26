@@ -1,12 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.10** — 2026-10-25.
+Documentation version: **5.8.14** - 2026-10-26.
 
-**5.8.10/#412:** tent rest packing guard;30nativePASS;validation_5810. Two players/shared-clock consent approved;integration pending.
+**5.8.14/#410:**native ration lots/age/ingestion/trade/forecasts;validation_5814;author pending. #411fire:50e3e27d/PR507;#502domestic:79c4c60d/PR506.
 
-**5.8.9/#502:** severe/state/ambient accepted;immersion71PASS awaiting author. NPC/contact/hygiene pending;validation_589.
+**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
 
-**5.8.8/#411:** placement46PASS; tents112+125PASS. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model binding. Fire/cooking/rest pending;validation_588/deploy.
+**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;supplies 92PASS;both author-accepted2026-10-25. Treatment31PASS;author-pending. Rain22PASS;immersion-wash60PASS/author-accepted. Metabolic-credit36PASS;toilet action/baths/surfaces/NPC/contact pending;validation_589.
+
+**5.8.8/#411:** placement46PASS;tents112+125PASS. CA411-TENT-01 accepted2026-10-25,4x3m/model included. Fire/cooking/rest pending;validation_588/deploy.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587.
 

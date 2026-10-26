@@ -1,6 +1,86 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.10** — 2026-10-25.
+Documentation version: **5.8.14** - 2026-10-26.
+
+## 5.8.14 - Ration lot presentation (#410)
+
+Existing ration world/inventory sprites are retained. Added bilingual numeric
+lot/next-portion details only; no raster, model, provenance or map art changes.
+Native UI capture and author terminal: assets/validation_5814.
+
+## 5.8.13 - Campfire world artwork (#411)
+
+Original deterministic OBJ log piles, flame variations and mounted iron pot:
+assets/generators/generate_camp_fire.py with camp_fire_art.json. Dimensions
+derive from CaelumCampData and CaelumPhysicsUnits. The author-accepted #137 flame atlas,
+station iron and stash wood textures are reused with their existing provenance.
+Flame UVs use the atlas measured row boundaries; its pixels remain unchanged.
+No raster is edited and existing painted tent/pot inventory sprites are retained.
+One model slot per actor frame avoids the earlier overlapping-model defect.
+The mounted pot rests on the logs; handles/rim and flame tessellation are visual
+details, not extra crafting ingredients or hidden balance constants.
+Manifest: assets/art_source/camp_equipment/FIRE_MODEL.json. Native captures and
+determinism results: assets/validation_5813. Author visual acceptance is pending.
+
+Solid-contact continuation (#502): no production art or map changes. The
+unshipped contact laboratory reuses existing rat sprites and local development
+IWAD texture references; its map/PK3 are generated under build, never distributed.
+
+Surface-contamination continuation (#502): no production art/map changes. The
+two-room diagnostic map is generated only in build; it references the local
+development IWAD and is excluded from runtime packaging. No new sprite is needed.
+
+Equipment-cleaning continuation (#502): reuse the existing inventory/live-menu
+artwork. No sprite, model or map edits; inspected native captures are retained in
+assets/validation_5812/cleaning/captures. CA502-CLEAN-01 passed author review on2026-10-25.
+
+Soap-bathing continuation (#502): existing painted soap icon, bathroom artwork,
+RestLying sprites and live-menu controls are reused. No art or map assets change.
+Native UI captures: assets/validation_5812/bathing/captures.
+
+## 5.8.12 - Toilet interaction (#502)
+
+The posture continuation reuses existing RSDO seated/lying artwork, with no image,
+model or map edits. Toilet support derives from the existing wooden seat's0.52m
+height; tub support from its0.22m inner bottom (32MU/m). Center the seated sprite
+on the toilet and align the lying sprite to the tub's long axis. The accepted
+rest-camera distances/angles are reused. Native captures are in assets/validation_5812/postures.
+CA502-POSE-01 passed author review on2026-10-25 without qualifications.
+
+Reuse the accepted #410 domestic toilet model/sprite and household placement.
+No artwork or map geometry changes. New interaction text and progress are EN/ES;
+author review CA502-TOILET-01 covers behavior, not replacement art.
+
+## 5.8.11 - Domestic bathroom artwork (#410)
+
+Original image_gen sources and complete prompts: assets/art_source/bathrooms.
+The selected bathtub is v2; v1 remains as provenance. Sink/toilet are v1.
+The enamel source is a separate opaque tile. Transparent sprites are registered
+as128x128 inventory/world images; alpha is preserved. World fallback scale fits
+the declared physical envelope without modifying the original painted aspect.
+The deterministic generator creates three original OBJ meshes and mechanically
+registers the images; it does not synthesize their painted shapes in Python.
+
+| Fixture | Width x depth x height (m) | Materials |
+| --- | --- | --- |
+| Washstand/sink |0.80 x0.57 x1.00|wood cabinet, ivory enamel basin, brass tap|
+| Bathtub |1.80 x0.80 x0.75|iron body/feet, ivory enamel, brass taps|
+| High-cistern toilet |0.55 x0.70 x1.90|ceramic bowl, wood seat, iron cistern/pipe, brass pull|
+
+Dimensions are the author's delegated design calculations, not historical
+universal sizes. The V&A1880 Burges washstand O8362 documents a wood/inset-basin
+combination and79.5x56.7cm footprint; this simpler washstand reinterprets it.
+The tub/toilet are original period-inspired designs, not museum replicas.
+DATA.json records the reference, physical dimensions,32MU/m conversion and
+positions inside the already-existing bathroom. No external museum bitmap is
+copied. Model materials reuse owned stash wood/metal/brass and the new enamel.
+The visible toilet cistern is not the abstract200-L household reserve.
+Mass/recipes and portable versions remain the broader#410 catalogue work.
+
+MANIFEST.json records input/output hashes, mesh bounds, sprite registration and
+Pillow version. Retained prompts and src/licenses/DOMESTIC_BATHROOMS_410.txt
+record provenance; no extra public redistribution license is inferred.
+The world models and target panel were captured natively in validation_5811/captures. The basin cabinet is hollow around its inset bowl; owned station-paper shading separates inner walls from the enamel rim/floor. Inventory PNGs were inspected directly. The attempted runtime r_models toggle retained models in its capture, so it is not claimed as native sprite-fallback validation. Author visual acceptance passed as CA410-BATH-01 on 2026-10-25 without qualifications.
 
 ## 5.8.9 - Hygiene item artwork (#502, in progress)
 
@@ -14,9 +94,11 @@ art or existing accepted sprite was replaced.
 export_hygiene_icons.py performs only alpha-bound cropping and proportional
 128-pixel export. All four previews were inspected at actual inventory size;
 repeated exports produced identical source/output hashes in EXPORT.json.
-Sources and previews remain under assets until item integration. Native
-registration, item acquisition and author visual acceptance are still pending;
-the severe-illness fixture does not display or accept these new items.
+The four unchanged previews are now copied byte-for-byte into
+src/graphics/caelum/icons/hygiene; RUNTIME.json records their source/runtime
+hashes. Inventory/crafting use these painted icons; dropped supplies use sprite
+billboards, with no replacement model. Native Spanish inventory and shop captures
+are in assets/validation_589/supplies. The author accepted these sprites under CA502-SUPPLIES-01 on 2026-10-25.
 
 ## 5.8.8 - Deployed tent artwork (#411, in progress)
 

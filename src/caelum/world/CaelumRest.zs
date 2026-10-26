@@ -149,6 +149,7 @@ class CaelumRestState : Inventory
         }
         if (furniture != null && (furniture.RestMode() != mode || !furniture.CanReach(user)))
         { CaelumNotifications.Notify(user,StringTable.Localize("CA_REST_FURNITURE_UNAVAILABLE", false)); return false; }
+        if(mode==CaelumRestRules.MODE_SLEEP && CaelumCleaningTask.BeforeSleep(user,minutes,furniture))return true;
         let rest = Get(user, true);
         if (rest == null) return false;
         vector3 entry = user.Pos;
@@ -206,7 +207,7 @@ class CaelumRestState : Inventory
             if(result==CaelumRestRules.STATUS_CANCELLED)CaelumExhaustion.NotifyLocked(user);
             return;
         }
-        Exhaustion=false;
+        bool exhaustedWake=Exhaustion;Exhaustion=false;
         CaelumTimeAdvanceState.Halt(user);
         AutoEating=false;AutoDrinking=false;DiningTable=null;
         Status = result;
@@ -225,6 +226,8 @@ class CaelumRestState : Inventory
             user.SetState(user.SpawnState);
         user.PersistCharacterState();
         if (key.Length() != 0) CaelumNotifications.Notify(user,StringTable.Localize(key, false));
+        if(exhaustedWake && user.health>0)
+            CaelumCleaningTask.AfterExhaustionWake(user,result==CaelumRestRules.STATUS_INTERRUPTED);
     }
 
     static void Interrupt(CaelumPlayer user, String key)

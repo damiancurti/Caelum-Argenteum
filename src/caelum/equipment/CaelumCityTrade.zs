@@ -7,8 +7,9 @@ class CaelumCityMerchant : Actor
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
-    int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision;
+    int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision,HygieneCatalogueRevision;
     bool StockInitialized;
+    bool DomesticMarketParked;
     int RestockRevision;
     bool EnumeratingStock;
     double RestockLastSeen,RestockNextDue;
@@ -18,6 +19,7 @@ class CaelumCityMerchant : Actor
 
     static CaelumCityMerchant Find(int identity)
     {
+        let shared=CaelumDomesticMarket.Find(identity);if(shared!=null)return shared;
         let it=ThinkerIterator.Create("CaelumCityMerchant");CaelumCityMerchant vendor;
         while((vendor=CaelumCityMerchant(it.Next()))!=null)
             if(vendor.ShopIdentity==identity)return vendor;
@@ -37,6 +39,7 @@ class CaelumCityMerchant : Actor
             }
             vendor.Category=CaelumShopCatalogue.Category(i);
             vendor.TradesClothing=vendor.Category==CaelumShopCatalogue.CLOTHING;
+            CaelumDomesticMarket.Register(vendor);
         }
         CaelumShopSign.RefreshAuthored();
         return true;
@@ -66,6 +69,7 @@ class CaelumCityMerchant : Actor
         // La conversión aprobada conserva la mercancía previa, incluso agotada
         // parcialmente. Nunca se vacía un inventario para imponer el rubro nuevo.
         if(item.Owner==self)return CaelumEconomyRules.GetInventoryUnitBaseValue(item)>0;
+        if(!CaelumFoodInventory.CanSell(item))return false;
         if(item is "CaelumRecipeOffer")return false;
         if(lock!=null)return Category==1;
         let material=CaelumMaterialPickup(item);
@@ -90,7 +94,7 @@ class CaelumCityMerchant : Actor
             return Category==3 && (kind==CaelumConstants.EQUIPMENT_KIND_AMULET || kind==CaelumConstants.EQUIPMENT_KIND_SEAL);
         }
         let consumable=CaelumConsumableItem(item);
-        if(CaelumCampData.IsItem(item) || item is 'CaelumMateItem')return Category==0;
+        if(CaelumCampData.IsItem(item) || item is 'CaelumMateItem' || item is 'CaelumCleaningCloth')return Category==0;
         if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
@@ -189,6 +193,7 @@ class CaelumCityMerchant : Actor
         CaelumChemistryCatalogue.Ensure(self,user);
         CaelumMateCatalogue.Ensure(self,user);
         CaelumCampCatalogue.Ensure(self,user);
+        CaelumHygieneCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

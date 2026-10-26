@@ -6,8 +6,247 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.10.** Obtain and update the complete repository, validate
+**Current release: 5.8.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.14 - Native ration lots (#410, in progress)
+
+Existing 200 g rations now retain separate contamination lots in native
+inventories, the Box, dropped items, tables and coffers. World time ages them
+with storage temperature/humidity, including unloaded-storage climate replay;
+eating consumes the oldest lot and applies the approved body-mass dose.
+Commercial stock stays fresh and shops reject contaminated resale. Journey
+and wait previews use independent lots; confirming a journey installs the
+aged remainder once. Inventory details show the next portion and lot count.
+
+Evidence: assets/validation_5814; 57 native PASS, no failures, clean static checks.
+CA410-FOOD-01 awaits author corroboration.
+New food catalogue/recipes, cooking and the remaining furniture are still open;
+this delivery does not complete #410 or V5.8. No art or map geometry changed.
+
+## 5.8.13 - Campfire and mounted pot (#411, in progress)
+
+Carried wood opens campfire assembly on permitted clear ground. The fire stores
+10 kg, burns 1.92 kg per world hour, supplies the approved thermal power and
+extinguishes on map departure while retaining fuel. A mounted original pot
+heats, boils and cools without losing its identity, water quality or volume.
+Only biological contamination is removed by a completed boil. Camp cooking
+recipes still depend on the unfinished #410 food/cooking integration.
+
+Native checks, persistence and rendering evidence: assets/validation_5813.
+CA411-FIRE-01 is pending author review; this does not complete #411 or V5.8.
+
+## 5.8.12 - Metabolic toilet sessions (#502, in progress)
+
+Domestic-cleaning continuation (2026-10-25, #502): available residents clean
+accessible floors and furniture in the loaded home, sharing one world hour per
+household/day. Household coffers buy a reusable cloth and up to300g soap from
+real Provisions stock with their own coins; player supplies are not used.
+Cleaning spends the approved water/soap per area and preserves partial soap,
+daily quota and actual merchant stock through saves and hub travel. Native
+walking and calendar acceleration are integrated. Evidence:
+assets/validation_5812/domestic; CA502-HOUSEKEEPING-01 passed author review on2026-10-25.
+Unloaded-house history and the remaining #502 adapters are still unfinished.
+
+Object-exposure continuation (2026-10-25, #502): physical scenery and loose
+native equipment now receive ambient contamination and repeating rain washing.
+Objects retain their concentration through pickup, storage, saves and hub travel;
+occupied chairs remain exposed when temporarily lending their collision. Spawn
+registration and staggered per-object clocks replace any routine world scan.
+Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
+Unloaded-map history and non-solid/stackable object coverage
+remain unfinished; this continuation does not complete #502 or V5.8.
+
+Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
+now create one shared, saved contact per touching pair. Brushing exposes the
+outer garment/armor or bare body, using the approved contact areas and world
+clock. Separation stops transfer; repeated active/passive callbacks cannot
+charge twice. Generic solid objects retain received contamination. Evidence:
+assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
+Object ambient exposure and loaded-home housekeeping are delivered above;
+unloaded-map history remains unfinished. This is not completion of #502 or V5.8.
+
+NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
+thermal system now share the player's environmental/equipment/immersion balance.
+The existing staggered thermal clock drives exposure, including accelerated
+world time, without global actor scans. Modeled armor, sidearms, shields and
+native carried equipment retain their existing identities; boxed gear is protected.
+Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
+CA502-NPC-01 passed author review on2026-10-25. Generic solid-object/loose-equipment exposure is delivered above;
+loaded-home housekeeping is delivered above; unloaded-map exposure remains
+unfinished; this continuation does not complete #502 or V5.8.
+
+Combat-contact continuation (2026-10-25, #502): native melee now transfers
+contamination between the actual weapon/natural attacker and the struck exterior
+piece or blocking shield, after evasion. Body dose follows mass; non-contact
+attacks do not transmit. NPC modeled gear saves its own clean-start states.
+Evidence: assets/validation_5812/combat. CA502-CALENDAR-01 is author-accepted;
+CA502-COMBAT-01 passed author review on2026-10-25. Actor ambient/solid contact and loaded-home cleaning are delivered above;
+unloaded-house history remains unfinished; this does not complete #502 or V5.8.
+
+Live demonstration (2026-10-25): the diagnostic menu now handles its F keys and
+shows work/supplies/contamination above the live panel.31 native rechecks pass;
+agent-operated craft/read/existing-wash/no-soap demonstrations pass. The production
+package is unchanged; CA502-CALENDAR-01 passed author review on2026-10-25.
+
+Calendar-sleep continuation (2026-10-25, #502): approved pause/clean/sleep/resume
+sequence implemented with saved progress and no duplicate charge for an existing
+wash. Rules and compatibility: SYSTEMS; evidence: assets/validation_5812/calendar.
+160 native assertions across22 serial runs pass, including save migration/rollback
+and previous cleaning regressions; static validation passes.
+CA502-CALENDAR-01 passed author review on2026-10-25. Exact-date forecasts explicitly reject
+pre-sleep queues. Contacts and loaded-home housekeeping are delivered above.
+
+Author-reported wake-laboratory water shortage corrected (2026-10-25): the
+manual fixture pauses the existing rest food/water top-up to100, retaining the
+ordinary50 threshold. Waiting before F2 therefore preserves the test water instead
+of automatically drinking it. Seven focused native assertions pass after a
+30-second real-time delay, including supplied cleanup and the no-soap case.
+Evidence: assets/validation_5812/wake/water. Production code/package is unchanged;
+CA502-WAKE-01 passed author review on2026-10-25 with the corrected laboratory.
+
+Exhaustion-wake continuation (2026-10-25): the author approved cleaning after
+waking from involuntary exhaustion sleep. Collapse and the existing wake lock
+remain immediate. Once awake and safe, clean the selected weapon followed by
+equipped armor/clothing, using the accepted progressive costs and queue. Missing
+supplies skip pieces without blocking awakening; external damage/combat awakening
+does not begin a new cleanup. Completion leaves the character awake. Cancelling
+or travelling keeps paid progress and discards the remaining queue.
+
+Cleaning task revision2 preserves old targets, remaining work, soap and water;
+old exhaustion saves start no cleanup until waking. Forecast revision17 invalidates
+cached predictions and retains the explicit unsupported exact-date guard for
+multi-piece wake/sleep queues. Ordinary world-clock completion remains available.
+Evidence: assets/validation_5812/wake; 97 native assertions, genuine
+old-save migration/rollback and static validation pass. All169 maps and13,826 art
+members remain unchanged. CA502-WAKE-01 passed author review on2026-10-25.
+Calendar sleep is now integrated above. Contacts and loaded-home housekeeping are delivered above; unloaded-house
+history remains unfinished; this continuation does not complete#502 or V5.8.
+
+Surface-contamination continuation (2026-10-25): player contact now uses saved
+one-square-metre floor and wall zones. Feet touch0.04m2; torso brushing touches
+0.10m2. Armor/clothing receives contact before the uncovered body; the cleaner
+side gains contamination, preserving the dirtier source. Adjacent zones, wall
+faces and stacked supports retain separate identities. Slopes use plane distance.
+
+Exposed zones lose the approved10/20 degrees per30 world minutes of light/heavy
+rain, repeatedly while rain persists; temperature/humidity exposure continues.
+Roofed interiors are excluded. Washing survives dry weather, saves and travel;
+regional weather during absence is evaluated lazily by civil minute. Active
+contact uses the actual local microclimate. The sparse revision1 registry starts
+new maps at zero when first observed, with no retroactive old-save dirt. Existing
+body/equipment contamination remains untouched. Waiting copies zone state and
+matches real execution; forecast revision16 invalidates older predictions.
+
+Evidence: assets/validation_5812/surfaces. 157 executed native checks
+and static validation pass. All169 maps and13,826 art members are unchanged.
+CA502-SURFACE-01 passed author review on2026-10-25, including the corrected F2/F4/F5 laboratory. F2 now opens
+the in-game console with "Tu contaminacion"; F6 returns to play. The diagnostic
+reading was verified in a native capture after the author's visibility report.
+Following the author's F4/F5 hitch report, manual F5 now yields between short
+batches instead of simulating the whole half hour in one event. F1/F3/F4 reset
+the laboratory's body/equipment and surface history for independent scenarios.
+Rain readings compare exterior/interior surfaces; remaining ambient/contact
+exposure may still raise body contamination. Rain is not a body-bathing action.
+Other-actor
+and combat contact, resident housekeeping and calendar-triggered pre-sleep
+cleaning remain follow-up; this does not complete#502 or V5.8.
+
+Equipment-cleaning continuation (2026-10-25): select an owned weapon, shield,
+garment or armor piece and choose **Clean (J)** in the inventory. Cleaning uses
+potable water carried outside the Box, soap and a reusable cloth, without a station:
+1L and5g per square metre, over60 world seconds/m2. The approved fixed surface
+by type/size determines cost, independent of tier and current wearer. Costs and
+cleansing progress together; cancelling retains both. A full piece's budget is
+required to start; a later shortage retains only the affordable progress.
+
+The shared H shortcut preserves boiling for selected water; other selections
+retain bathing. Native UI dispatch is tested.
+
+Successful repair starts cleaning the repaired piece when supplied. Voluntary
+sleep first cleans the selected weapon, then equipped armor/clothing in slot order;
+unaffordable pieces are skipped with notice and do not prevent sleep or repair.
+Sleeping-bag support survives the queue. Explicit cancellation discards queued
+sleep; partial work saves/loads and map departure cancels without refund. Existing
+soap fractions retain their mass and identity. The independent wait forecast
+matches single-piece execution; its revision15 invalidates older cached forecasts.
+The multi-piece queue followed by sleep keeps the unsupported exact-date guard,
+while ordinary/accelerated live time remains available. Calendar-triggered sleep remains follow-up; exhaustion cleanup is now covered
+by the separate post-wake continuation above.
+
+Evidence: assets/validation_5812/cleaning;134 executed native assertions and static
+validation pass. The final package has16,892 source-identical members;169 maps
+and13,826 art members remain unchanged. CA502-CLEAN-01 passed author review on2026-10-25 without qualifications. Bath/posture acceptance stands;
+this continuation does not close#502 or complete V5.8.
+
+Soap bathing continuation (2026-10-25): use soap or the inventory's **Bathe (H)**
+action while reclining in a bathtub, facing an accessible potable fixture, or
+immersed in potable water. Select the desired contamination reduction; the menu
+shows the current resource limit and actual mass-scaled costs. Each degree takes
+10 world seconds and uses0.5L at80kg, scaled by body mass, with5g soap/L.
+Consumption and cleansing are progressive. Cancellation, loss of access or source
+quality, external damage and map departure retain completed work and spent
+resources. Disease damage continues; a bathtub bath retains the accepted lying
+pose and releases it on completion/cancellation. Merely reclining still does not wash.
+
+The opened gram's unused fraction persists with its mass and is spent first next
+time, including when no whole soap grams remain. It follows the carrier separately
+from unopened integer material stacks. Household bathing draws the shared reserve;
+connected reservoirs lose actual volume. The independent waiting model snapshots
+soap/water and matches accelerated execution without consuming live resources.
+Existing dynamic-water and unsupported-effect forecast guards remain in force.
+Evidence: assets/validation_5812/bathing;121 native assertions and static validation pass.
+CA502-BATH-01 passed author review on2026-10-25 without qualifications.
+
+Author-requested posture continuation (2026-10-25): using a toilet seats the
+character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying
+artwork and clipped orbit-camera pattern without starting a rest or sleep session.
+Use/movement/external damage releases the pose; disease damage continues. Toilet
+completion stands up automatically. Safe entry/exit retains the player's actual
+collision volume; blocked exits leave the fixture nonblocking until clear.
+Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
+without restarting its timer. Bathtub reclining alone does not wash, charge water
+or consume soap. Progressive soap bathing is supplied by the continuation above.
+Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
+74 native checks pass; static validation passes. CA502-POSE-01 was accepted by the author on2026-10-25 without qualifications.
+
+Household toilets now perform the approved one-world-minute hygiene action.
+Completion removes up to20 contamination, bounded by current contamination and
+metabolic capacity, and spends10L from that house's shared potable reserve.
+Starting spends nothing. Use again, leave reach/map, or take external damage to
+cancel without spending or cleansing. Recheck access, water and capacity at
+completion; insufficient or no-longer-needed cleansing spends nothing.
+Disease damage continues without cancelling the action, as approved2026-10-25.
+
+The action uses ordinary world time and the existing accelerated/wait controls.
+Save/load retains partial progress; map departure cancels it. Independent wait
+forecasts include completion and same-tic nutrition credit without changing live
+resources. Existing unsupported-effect forecast guards remain in force.
+Static validation and55 native checks pass;16,885 package members match src.
+Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
+Calendar-triggered sleep cleaning, supported contacts and loaded-house cleaning
+are delivered by the continuations above; remaining #502 scope stays in TASKS. V5.8 remains incomplete.
+
+## 5.8.11 - Domestic bathrooms (#410, in progress)
+
+The160 existing house interiors now install one sink, bathtub and toilet each.
+Sink and bathtub share a saved200-L potable household reserve; different houses
+remain independent. Refill is1L/world-minute, evaluated lazily across absence.
+Use shows available water; collect into the selected inventory container while
+facing the fixture. Capacity, carried weight, Box placement, boiling locks,
+contamination mixing and residence permission retain their existing guards.
+
+Revision1 state and a transient load check install missing fixtures in old saves
+without resetting water or duplicating objects. All169 map files, including160
+houses, remain byte-identical. Static validation and repeated art generation
+pass;220 executed native checks cover selected houses, shared/partial collection,
+blocked placement, save/hub, old-save migration and rollback. Final package has
+16,884 source-matched members; evidence: assets/validation_5811.
+
+CA410-BATH-01 passed author review on 2026-10-25 without qualifications. The toilet is installed visually; its
+metabolic action, soap bathing and resident cleaning remain#502. Mansion kitchen,
+remaining furniture/crafting and food integration remain unfinished#410 work.
+V5.8 is not complete.
 
 ## 5.8.10 - Protect resting tent occupants (#412, in progress)
 
@@ -30,12 +269,39 @@ implementation; the packing guard does not provide two-player admission.
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
+
 At contamination 90 or above, the existing disease damage doubles and the
 survival HUD reports Sick. Toughness immunity still prevents damage without
 turning it into healing; natural depuration below 90 removes the multiplier.
 Travel/wait forecasts share the same rule. Existing saved body contamination
-and fractional damage survive updating; wait forecast schema 9 invalidates old
-cached models after adding immersion exposure.
+and fractional damage survive updating; wait forecast schema12 invalidates old
+cached models after adding immersion washing.
 
 Native checks cover exact boundaries, actual Life loss versus prediction,
 depuration, immunity, saves, hub return and original-package rollback. See
@@ -48,8 +314,7 @@ accumulate environmental contamination; clothes and armor receive covered
 exposure first. The World journal shows the local index. Sixty-six further native
 assertions cover independent forecasts, actual waiting, travel commit and save/hub
 continuity; see `assets/validation_589/exposure`. CA502-EXPOSURE-01 was accepted on 2026-10-25.
-NPC/furniture exposure, surface/combat contact, soap acquisition and
-washing/bathing remain pending. The expanded issue and V5.8 remain open.
+NPC/furniture exposure, surface/combat contact and washing/bathing remain pending. The expanded issue and V5.8 remain open.
 Four painted hygiene item sources/previews are prepared in
 `assets/art_source/hygiene`; runtime registration and author review are pending.
 
@@ -57,9 +322,41 @@ Immersion now exposes the player's submerged skin, outer garments and carried
 equipment according to known water quality. The Box remains protected; clean or
 salt-only water does not cause this contact disease or wash existing contamination.
 71 further native assertions cover real water, wait parity, travel, save/hub and
-legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 is deferred
-until the author's return. Dynamic reservoir levels retain an explicit exact-wait
+legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 passed author
+acceptance on 2026-10-25. Dynamic reservoir levels retain an explicit exact-wait
 forecast limitation; manual/native waiting remains available.
+
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native treatment checks: 31 executed PASS; save/hub and prior-save
+coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
+acceptance.
+
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+Native evidence:22 assertions in assets/validation_589/rain, including an
+actual rainy-hour wait and prior-save loading. Author acceptance is not implied.
+
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

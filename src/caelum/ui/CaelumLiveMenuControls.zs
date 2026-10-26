@@ -64,6 +64,7 @@ class CaelumLiveMenuControls : Object ui
                     if(user.FormalInventoryRowKind[i]>=0)Region(3000+i,48,168+i*21,360,21);
                 if(CaelumMateSession.Selected(user)!=null)
                 {NextX=414;RowY=146;Button("CA_MATE_PREPARE",0,114,"r",192,!CaelumMateSession.Selected(user).InMagicBox);}
+                NextX=414;RowY=302;Button("CA_BATH_START",0,104,"h",94);Button("CA_CLEAN_START",0,106,"j",94);
                 int row=user.FormalInventorySelectionIndex-user.FormalInventoryVisibleStart;
                 if(user.FormalInventoryEntryCount>0 && row>=0 && row<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
                     && user.FormalInventoryRowWaterLiters[row]>=0)
@@ -71,7 +72,7 @@ class CaelumLiveMenuControls : Object ui
                     NextX=414;RowY=146;
                     Button("CA_WATER_COLLECT",0,114,"r",104,!user.FormalInventoryRowInMagicBox[row]);
                     Button("CA_WATER_EMPTY_ACTION",0,118,"v",84,!user.FormalInventoryRowInMagicBox[row]);
-                    if(!user.CraftingTaskActive)
+                    if(CaelumLiveMenu.InventoryHAction(user)=="ca_inventory_boil")
                     { NextX=414;RowY=302;Button("CA_WATER_BOIL",0,104,"h",192,!user.FormalInventoryRowInMagicBox[row]); }
                 }
             }
@@ -206,6 +207,27 @@ class CaelumLiveMenuControls : Object ui
             Row(298);Button("CA_PROPERTY_BUY",0,98,"b",280,available);Button("CA_PROPERTY_RENT",0,114,"r",280,available);
             Row(326);Button("CA_PROPERTY_CROSS",InputEvent.Key_Enter,0,"",280);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
         }
+        else if(context==host.CTX_CLEAN)
+        {
+            let session=CaelumCleaningSession.Find(user);
+            Row(326);Button("CA_CLEAN_START",InputEvent.Key_Enter,0,"",280,session!=null && session.Ready);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
+        }
+        else if(context==host.CTX_BATH)
+        {
+            Row(250);Button("CA_BATH_MINUS",InputEvent.Key_LeftArrow,0,"",138);Button("CA_BATH_PLUS",InputEvent.Key_RightArrow,0,"",138);
+            Button("CA_BATH_MINUS10",InputEvent.Key_PgDn,0,"",138);Button("CA_BATH_PLUS10",InputEvent.Key_PgUp,0,"",138);
+            Row(282);Button("CA_BATH_MAX",0,109,"m",560);
+            let bath=CaelumBathSession.Find(user);
+            Row(326);Button("CA_BATH_START",InputEvent.Key_Enter,0,"",280,bath!=null && bath.Selected>0);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
+        }
+        else if(context==host.CTX_CAMP_FIRE)
+        {
+            Row(206);Button("CA_CAMP_FIRE_MINUS",InputEvent.Key_LeftArrow,0,"",138);Button("CA_CAMP_FIRE_PLUS",InputEvent.Key_RightArrow,0,"",138);
+            Button("CA_CAMP_FIRE_MINUS_KG",InputEvent.Key_PgDn,0,"",138);Button("CA_CAMP_FIRE_PLUS_KG",InputEvent.Key_PgUp,0,"",138);
+            Row(246);Button("CA_CAMP_FIRE_MAX",0,109,"m",180);Button("CA_CAMP_FIRE_LOAD",0,114,"r",180);Button("CA_CAMP_FIRE_RECOVER",0,118,"v",180);
+            Row(286);Button("CA_CAMP_FIRE_TOGGLE",InputEvent.Key_Enter,0,"",276);Button("CA_CAMP_FIRE_REMOVE",0,100,"d",276);
+            Row(326);Button("CA_CAMP_FIRE_POT",0,112,"p",180);Button("CA_CAMP_FIRE_NEXT_POT",0,110,"n",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+        }
         else if(context==host.CTX_MATE)
         {
             Row(248);Button("CA_MATE_LOAD",0,114,"r",180);Button("CA_UI_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_UI_NEXT",InputEvent.Key_RightArrow,0,"",180);
@@ -219,7 +241,7 @@ class CaelumLiveMenuControls : Object ui
             Button("CA_UI_SIZE",0,114,"r");Button("CA_UI_BACK",0,113,"q");
             Row(300);Button("CA_UI_USE",InputEvent.Key_Enter);Button("CA_UI_UNEQUIP",InputEvent.Key_Backspace);
             Button("CA_UI_BOX",0,99,"c");Button("CA_UI_DROP",0,100,"d");Button("CA_UI_BREAK",0,98,"b");Button("CA_UI_SPAWN",0,112,"p");
-            Row(322);Button("CA_UI_SLOT_PREV",InputEvent.Key_UpArrow);Button("CA_UI_SLOT_NEXT",InputEvent.Key_DownArrow);
+            Row(322);Button("CA_UI_SLOT_PREV",InputEvent.Key_UpArrow);Button("CA_UI_SLOT_NEXT",InputEvent.Key_DownArrow);Button("CA_BATH_START",0,104,"h");Button("CA_CLEAN_START",0,106,"j");
         }
         else if(context==host.CTX_CREATION)
         {

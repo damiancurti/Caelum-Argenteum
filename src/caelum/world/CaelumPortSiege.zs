@@ -600,7 +600,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         // El menú nativo no pausa el mundo; sólo este guardia detiene su ruta.
         if(soldier!=null && soldier.bInConversation)return true;
         if(soldier!=null && soldier.HomeRevision>0 && CaelumHouseHubData.HouseForMap(level.MapName)>=0
-            && !CaelumCityWorld.SiegeDue())return true;
+            && !CaelumCityWorld.SiegeDue()){CaelumHousekeepingWork.Drive(soldier);return true;}
         if(soldier!=null && soldier.HomeRevision>0 && soldier.Port!=null && !soldier.Port.SiegeStarted)return true;
         CaelumPortSiege port=soldier!=null ? soldier.Port : entry!=null ? CaelumPortSiege(entry.Encounter) : null;
         if(port==null || !port.RosterSealed)return false;

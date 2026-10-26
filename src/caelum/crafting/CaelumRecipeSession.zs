@@ -146,7 +146,7 @@ class CaelumRecipeSession : Inventory
         {Open=false;Active=false;Anchor=null;TaskSheets.Clear();return;}
         if(!Open || !Active || user.health<=0 || user.HasActiveConversation() || user.CraftingTaskActive
             || user.CraftingMenuOpen || user.EquipmentMenuOpen || user.PalomoMerchantMenuOpen
-            || CaelumSleepRules.IsSleeping(user) || !CanReach(user,Anchor))return;
+            || CaelumSleepRules.IsSleeping(user) || CaelumTimeSkipState.PausesWork(user) || !CanReach(user,Anchor))return;
         RemainingSeconds=Max(0.0,RemainingSeconds-1.0/TICRATE);
         CaelumTimeSkipState.RecordWork(user);
         if(RemainingSeconds<=0)Complete();

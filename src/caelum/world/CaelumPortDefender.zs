@@ -242,6 +242,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             && Abs(DeltaAngle(Angle,AngleTo(attacker)))<=Shield.GetCoverageDegrees()/2.0;
         if(blocking)
         {
+            if(CaelumContaminationCombat.Physical(self,inflictor,source,mod,flags))
+                ContaminationBlocker=CaelumContaminationCombat.ShieldPoint(Shield);
             bool magic=CaelumArmorRules.IsMagical(inflictor,mod);
             int kind=magic ? CaelumConstants.SHIELD_DAMAGE_MAGICAL : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
             double absorption=Shield.GetDefense(kind)/100.0*CaelumPersonalityRules.Absorption(self,magic)
@@ -275,7 +277,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         if(damage<=0 || !soldier.WeaponMeleeAimHits(soldier.Sword))
         {soldier.PendingCombatCriticalDelivery=false;return;}
         int before=soldier.target.health;
-        soldier.A_CustomMeleeAttack(damage,"weapons/swordhit");
+        soldier.DeliverContactMelee(damage,"weapons/swordhit");
         if(soldier.target.health<before)
         {
             double wear=before-soldier.target.health;

@@ -1,0 +1,14 @@
+{
+  "fixture_hashes": {
+    "object-checks.pk3": "d410a3b21fdb7f56d73d43e6f43f9502f59ff6bffe7dc7ef80aeffa944047e84",
+    "object-legacy-checks.pk3": "2f94524b52226124d40548045d6edac88bf764ed7707777be899de9fedc793c9",
+    "object-bridge\\object-legacy-checks.pk3": "d410a3b21fdb7f56d73d43e6f43f9502f59ff6bffe7dc7ef80aeffa944047e84"
+  },
+  "two_regenerations_match_tested_fixtures": true,
+  "python_syntax_files": [
+    "assets\\validation_5812\\collect_objects.py",
+    "assets\\validation_5812\\object_performance.py",
+    "assets\\validation_5812\\object_reference.py",
+    "assets\\validation_5812\\prepare_objects.py"
+  ]
+}

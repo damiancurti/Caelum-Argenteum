@@ -1,0 +1,26 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "passes": 7,
+  "runs": [
+    {
+      "label": "wake-water-baseline01",
+      "passes": 0,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "script": "wait 70; netevent ca502w_manual; netevent ca502w_status; wait 1050; netevent ca502w_status; netevent ca502w_wake; wait 2; quit\n"
+    },
+    {
+      "label": "wake-water-fixed01",
+      "passes": 7,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "script": "wait 70; netevent ca502w_manual; netevent ca502w_status; wait 1050; netevent ca502w_status; netevent ca502w_manual_ready; wait 2; toggleconsole; wait 10; screenshot wake-water-ready.png; toggleconsole; wait 350; netevent ca502w_liveend; netevent ca502w_missing; wait 2; quit\n"
+    }
+  ],
+  "production_unchanged": true,
+  "baseline_observation": "5 to4.25L during30 seconds of native waiting; author session later reached0L without cleaning.",
+  "corrected_observation": "5L after the same delay; eligible awakening cleans with real supplies and missing-soap case remains awake.",
+  "mechanism": "Manual fixture uses existing rest provision toggles; ordinary50 threshold retained.",
+  "author_test": "CA502-WAKE-01 remains pending after reported water shortage; repeat corrected fixture."
+}

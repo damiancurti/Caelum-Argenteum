@@ -3,16 +3,24 @@ class CaelumSkipSupply : Object play
 {
     int Kind, Count, WaterQuality;
     double Liters, CapacityLiters;
-    bool Reserved,Hot;
+    bool Reserved,Hot,CleaningWater;
+    CaelumFoodLots FoodLots;
+    CaelumFoodClimate FoodClimate;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
         Count=item!=null?item.Amount:0;
+        if(Kind==1)
+        {
+            CaelumFoodInventory.Reconcile(item);FoodLots=item.FoodLots.Copy();
+            let climate=CaelumFoodClock.Get(item).Climate;FoodClimate=climate!=null?climate.Copy():null;
+        }
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
         if (bottle != null)
         {
             Kind=3;WaterQuality=bottle.WaterQuality;Reserved=CaelumWaterBoiling.Locked(bottle);
             Hot=bottle.WaterTemperatureRevision>0 && bottle.WaterTemperatureC>CaelumWaterThermalData.DRINK_MAX_C;
+            CleaningWater=bottle.Owner is 'CaelumPlayer' && !bottle.InMagicBox && Count==1 && !Reserved && bottle.IsPotable();
         }
         CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
@@ -25,8 +33,19 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 9;
+    const PROVISION_REVISION = 22;
+    CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
+    bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
+    bool BathTask,BathDomestic;
+    double BathRemaining,BathWater,BathSoap,BathWaterPerDegree;
+    bool CleaningTask;
+    double CleaningRemaining,CleaningSoap;
+    int CleaningIndex;
+    bool SleepCleaningCloth;
+    double SleepCleaningSoap;
+    Array<int> SleepCleaningIndices;
+    Array<double> SleepCleaningAreas;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -46,11 +65,55 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         // El jugador calcula rendimiento al comienzo del tic, antes de curar
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
+        // Los poderes pulsan antes de terminar la tarea en el avance real.
+        if(ToiletTask || BathTask || CleaningTask)
+        {
+            Pulses();ToiletPulsesPrepared=true;
+            if(ToiletTask && !sleeping && ProductiveTics+1>=RequiredTics && FoodIllness!=null)
+            {FoodIllness.ToiletDepurate();ToiletTask=false;}
+        }
+        if(BathTask && !sleeping && FoodIllness!=null)
+        {
+            if(BathDomestic)BathWater=Min(CaelumDomesticWaterData.CAPACITY_LITERS,BathWater
+                +AltitudeSecondsPerTic*CaelumDomesticWaterData.REFILL_LITERS_PER_WORLD_MINUTE/60.0);
+            double wanted=Min(BathRemaining,AltitudeSecondsPerTic/CaelumContaminationData.BATH_SECONDS_DEGREE);
+            double dose=Min(wanted,Min(FoodIllness.Contamination,Min(BathWater/BathWaterPerDegree,
+                BathSoap/CaelumContaminationRules.SoapGrams(BathWaterPerDegree))));
+            BathRemaining=Max(0.0,BathRemaining-dose);FoodIllness.Contamination=Max(0.0,FoodIllness.Contamination-dose);
+            BathWater=Max(0.0,BathWater-dose*BathWaterPerDegree);BathSoap=Max(0.0,BathSoap-CaelumContaminationRules.SoapGrams(dose*BathWaterPerDegree));
+            SleepCleaningSoap=BathSoap;
+            if(BathRemaining<0.000000001 || FoodIllness.Contamination<=0)
+            {BathTask=false;RequiredTics=ProductiveTics+1;}
+            else if(dose<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
+        }
+        if(CleaningTask && !sleeping)
+        {
+            double water=0;for(int i=0;i<Supplies.Size();i++)if(Supplies[i].CleaningWater)water+=Supplies[i].Liters;
+            double rate=CaelumContaminationData.EQUIPMENT_WATER_L_M2/CaelumContaminationData.EQUIPMENT_SECONDS_M2;
+            double wanted=Min(CleaningRemaining,AltitudeSecondsPerTic);
+            double step=Min(wanted,Min(water,CleaningSoap/CaelumContaminationData.SOAP_G_L)/rate);
+            double liters=step*rate;CleaningSoap=Max(0.0,CleaningSoap-CaelumContaminationRules.SoapGrams(liters));
+            for(int i=0;i<Supplies.Size() && liters>0;i++)if(Supplies[i].CleaningWater)
+            {double take=Min(liters,Supplies[i].Liters);Supplies[i].Liters-=take;liters-=take;}
+            if(Contamination!=null && CleaningIndex>=0)
+                Contamination.Items[CleaningIndex].Concentration*=Max(0.0,1-step/CleaningRemaining);
+            CleaningRemaining=Max(0.0,CleaningRemaining-step);
+            if(CleaningRemaining<0.000000001){CleaningTask=false;RequiredTics=ProductiveTics+1;}
+            else if(step<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
+        }
         if(ContaminationWeather!=null && Contamination!=null)
         {
             int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
             if(nextTick>=CaelumWorldClock.TicsPerDay()){nextTick=0;nextDay++;}
-            Contamination.Advance(FoodIllness,ContaminationWeather.Sample(nextDay,nextTick),AltitudeSecondsPerTic);
+            double contactAmbient=ContaminationWeather.Sample(nextDay,nextTick);
+            Contamination.Advance(FoodIllness,contactAmbient,AltitudeSecondsPerTic);
+            if(SurfaceContact!=null)SurfaceContact.Advance(Contamination,FoodIllness,AltitudeSecondsPerTic,
+                contactAmbient,ContaminationWeather.RainCovered || ContaminationWeather.Local==null?0:ContaminationWeather.Local.PrecipitationMmPerHour);
+        }
+        for(int i=0;i<Supplies.Size();i++)
+        {
+            let row=Supplies[i];
+            if(row.FoodClimate!=null)row.FoodClimate.Advance(row.Kind==1?row.FoodLots:null,AltitudeSecondsPerTic);
         }
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
@@ -68,7 +131,39 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
     {
         ProvisionRevision=PROVISION_REVISION;
+        // Otro cuerpo puede moverse o cambiar de equipo durante la espera.
+        if(CaelumContaminationContacts.Active(user) || CaelumHousekeepingWork.Pending() || CaelumCampWorld.Burning()){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+        SleepCleaningCloth=CaelumCleaningSupplies.Cloth(user);SleepCleaningSoap=CaelumSoapSupply.Available(user);
+        if(CaelumTimeSkipState.IsPreparingSleep(user)){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Capture(user,false);
+        let surfaceThermal=CaelumThermalService.CaptureForecast(user);
+        if(surfaceThermal!=null && surfaceThermal.Available && CaelumCalendarState.Get(user)!=null && CaelumWorldClock.Get(user)!=null)
+        {SurfaceContact=new('CaelumContaminationSurfaceForecast');SurfaceContact.Capture(user,surfaceThermal);}
+        if(Contamination!=null)for(int slot=0;slot<CaelumCleaningSupplies.EQUIPPED_COUNT;slot++)
+        {
+            let item=CaelumCleaningSupplies.EquippedAt(user,slot);if(item==null)continue;
+            for(int index=0;index<Contamination.Items.Size();index++)if(Contamination.Items[index].Item==item)
+            {SleepCleaningIndices.Push(index);SleepCleaningAreas.Push(CaelumCleaningSupplies.Area(item));break;}
+        }
+        PotableImmersed=user.IsSubmergedInPotableWater();
+        ToiletTask=CaelumHygieneTask.Active(user);
+        BathTask=CaelumBathTask.Active(user);
+        CleaningTask=CaelumCleaningTask.Active(user);CleaningIndex=-1;
+        if(CleaningTask)
+        {
+            let cleaning=CaelumCleaningTask.Find(user);CleaningRemaining=cleaning.Remaining;CleaningSoap=CaelumSoapSupply.Available(user);
+            if(Contamination!=null)for(int i=0;i<Contamination.Items.Size();i++)
+                if(Contamination.Items[i].Item==cleaning.Target){CleaningIndex=i;break;}
+            // La cola de varias piezas seguida del sueño aún no promete una fecha exacta.
+            if(cleaning.SleepAfter || cleaning.WakeQueue){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+            if(!CaelumCleaningSupplies.Cloth(user)){Reason="CA_SKIP_PROVISIONS";Done=true;}
+        }
+        if(BathTask)
+        {
+            let bath=CaelumBathTask.Find(user);BathRemaining=bath.RemainingDegrees;BathDomestic=bath.Fixture!=null;
+            BathWater=CaelumBathTask.WaterAvailable(user,bath.Fixture,bath.WaterModel);BathSoap=CaelumSoapSupply.Available(user);
+            BathWaterPerDegree=CaelumContaminationRules.BathWaterLiters(1,user.DerivedStats.BaseMass);
+        }
         ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
         if(ContaminationWeather.DynamicClimate || (Contamination!=null && Contamination.DynamicWater))
         {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
@@ -91,7 +186,15 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(!CaelumTimeSkipRules.Accessible(user,table))continue;
             let stock=new("CaelumSkipTableStock");stock.First=Supplies.Size();stock.Capacity=table.Capacity();
             stock.Target=table.ForecastDailyTarget();Tables.Push(stock);
-            for(int i=0;i<table.Capacity();i++)AddSupply(table.Items[i]);
+            for(int i=0;i<table.Capacity();i++)
+            {
+                AddSupply(table.Items[i]);let row=Supplies[Supplies.Size()-1];
+                if(row.FoodClimate==null)
+                {
+                    row.FoodClimate=new('CaelumFoodClimate');
+                    row.FoodClimate.Capture(table,CaelumWorldClock.Get(user),CaelumCalendarState.Get(user),CaelumWeatherState.Get(user));
+                }
+            }
         }
         for(int source=0;source<2;source++)
             for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
@@ -162,7 +265,12 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(row.Kind==3)row.Liters=Max(0,row.Liters-Min(row.Liters,Mass/CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE));
             else row.Count--;
             if(food)
-            {FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
+            {
+                double contamination;
+                if(row.FoodLots!=null && row.FoodLots.Consume(1,contamination) && FoodIllness!=null)
+                    FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
+                        contamination,CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000,Mass));
+                FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
                 FoodPulseTics=0;FoodSeatedSubTics=0;FoodPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
             else
             {WaterSpent++;WaterEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
@@ -172,6 +280,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     }
     override void Pulses()
     {
+        if(ToiletPulsesPrepared){ToiletPulsesPrepared=false;return;}
         bool seated=!Sleeping && HasChair;
         if(FoodEffectTics>0)
         {
@@ -185,6 +294,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                     FoodPulseTics-=TICRATE;
                     double gained=Min(FoodPulse,100-Hunger);
                     Hunger+=gained;Sleep=Max(0,Sleep-gained/4);
+                    if(FoodIllness!=null)FoodIllness.Satiation(gained);
                 }
                 FoodEffectTics--;
             }
@@ -197,10 +307,20 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 if(seated)WaterSeatedSubTics=0;
                 WaterPulseTics++;
                 if(WaterPulseTics>=TICRATE)
-                {WaterPulseTics-=TICRATE;Thirst=Min(100,Thirst+WaterPulse);}
+                {
+                    WaterPulseTics-=TICRATE;double before=Thirst;Thirst=Min(100,Thirst+WaterPulse);
+                    if(FoodIllness!=null)FoodIllness.Satiation(Thirst-before);
+                }
                 WaterEffectTics--;
             }
         }
+    }
+    override void ThirstStep(double comfort)
+    {
+        if(!PotableImmersed){Super.ThirstStep(comfort);return;}
+        double gained=Max(0.0,Min(CaelumConstants.SURVIVAL_MAXIMUM-Thirst,
+            CaelumConstants.SURVIVAL_MAXIMUM*CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND/TICRATE));
+        Thirst+=gained;if(FoodIllness!=null)FoodIllness.Satiation(gained);
     }
     override double Comfort(bool sleeping)
     {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:HasChair?ChairFactor:1;}
@@ -227,7 +347,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             for(int j=table.First;j<table.First+table.Capacity;j++)
             {
                 let row=Supplies[j];if(row.Count>0)continue;
-                if(food<table.Target){row.Kind=1;row.Count=1;food++;}
+                if(food<table.Target)
+                {row.Kind=1;row.Count=1;row.FoodLots=new('CaelumFoodLots');row.FoodLots.Ensure(CaelumFoodData.RATION,1,0);food++;}
                 // Capacidad del mismo objeto usado al reponer las mesas.
                 else if(water<table.Target)
                 {
@@ -238,6 +359,19 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             }
         }
         RefreshTriggers();
+    }
+    bool NeedsSleepCleaning()
+    {
+        if(CleaningTask)return true;
+        if(!SleepCleaningCloth || Contamination==null)return false;
+        double water=0;for(int i=0;i<Supplies.Size();i++)if(Supplies[i].CleaningWater)water+=Supplies[i].Liters;
+        for(int i=0;i<SleepCleaningIndices.Size();i++)
+        {
+            double liters=CaelumContaminationRules.EquipmentWaterLiters(SleepCleaningAreas[i]);
+            if(Contamination.Items[SleepCleaningIndices[i]].Concentration>0 && liters>0
+                && water+0.000000001>=liters && SleepCleaningSoap+0.000000001>=CaelumContaminationRules.SoapGrams(liters))return true;
+        }
+        return false;
     }
     void RunBatch()
     {
@@ -251,7 +385,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             {Reason="CA_CALENDAR_OUT_OF_RANGE";Done=true;break;}
             if(NextThreat>=0 && CaelumScheduleRules.Stamp(EndDay,EndTics)+int(SubTics+1>=Divisor)>=NextThreat)
             {Reason="CA_EVENT_SIEGE_INTERRUPT";Done=true;break;}
-            Sleeping=CaelumTimeSkipRules.SleepingNext(Sleeping,Sleep);
+            bool sleepingNext=CaelumTimeSkipRules.SleepingNext(Sleeping,Sleep);
+            if(!Sleeping && sleepingNext && NeedsSleepCleaning())
+            {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;break;}
+            Sleeping=sleepingNext;
             Step(Sleeping);
             if(Sleeping)SleepTics++;else ProductiveTics++;
             SubTics++;

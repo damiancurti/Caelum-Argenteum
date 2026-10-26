@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -13,6 +13,16 @@ class CaelumLiveMenu : ListMenu
 
     static bool InputAllowed() {return menuactive==Menu.Off || CaelumLiveMenu(Menu.GetCurrentMenu())!=null;}
     static CaelumJournalOverlay Journal() {return CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));}
+    static clearscope String InventoryHAction(CaelumPlayer user)
+    {
+        if(user!=null && !user.CraftingTaskActive && user.FormalInventoryEntryCount>0)
+        {
+            int row=user.FormalInventorySelectionIndex-user.FormalInventoryVisibleStart;
+            if(row>=0 && row<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS && user.FormalInventoryRowWaterLiters[row]>=0)
+                return "ca_inventory_boil";
+        }
+        return "ca_bath_open";
+    }
     static int Wanted(CaelumPlayer user)
     {
         if(gamestate!=GS_LEVEL || user==null || user.health<=0 || user.player==null || (user.player.ConversationNPC!=null && user.player.ConversationNPC.bInConversation))return 0;
@@ -22,6 +32,9 @@ class CaelumLiveMenu : ListMenu
         if(user.CreationWizardOpen)return CTX_CREATION;
         let property=CaelumPropertySession(user.FindInventory("CaelumPropertySession"));
         if(property!=null && property.Portal!=null)return CTX_PROPERTY;
+        let cleaning=CaelumCleaningSession.Find(user);if(cleaning!=null && cleaning.Open)return CTX_CLEAN;
+        let bath=CaelumBathSession.Find(user);if(bath!=null && bath.Open)return CTX_BATH;
+        let fire=CaelumCampFireSession.Find(user);if(fire!=null && fire.Open)return CTX_CAMP_FIRE;
         if(CaelumMateSession.Active(user))return CTX_MATE;
         let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
         if(recipes!=null && recipes.Open)return CaelumJournalInput.SkipOpen(user)?CTX_SKIP:CTX_RECIPES;
@@ -103,6 +116,9 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_CREATION)debug.DrawCreationWizard(Subject);
         else if(Context==CTX_EQUIPMENT)debug.DrawEquipmentMenu(Subject);
         else if(Context==CTX_PROPERTY)CaelumPropertyUI.Draw(Journal(),Subject);
+        else if(Context==CTX_CLEAN)CaelumCleaningUI.Draw(Journal(),Subject);
+        else if(Context==CTX_BATH)CaelumBathUI.Draw(Journal(),Subject);
+        else if(Context==CTX_CAMP_FIRE)CaelumCampFireUI.Draw(Journal(),Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
         else if(Context==CTX_RECIPES)CaelumRecipeEvents.Draw(Subject);
         else if(Context==CTX_MATE)CaelumMateUI.Draw(Journal(),Subject);
@@ -129,9 +145,14 @@ class CaelumLiveMenu : ListMenu
             if(type==InputEvent.Type_KeyDown){ResetInput();menuactive=Menu.On;Menu.SetMenu("MainMenu");}
             return true;
         }
+        if(Context==1 && keyString~=="j"){if(type==InputEvent.Type_KeyDown)EventHandler.SendNetworkEvent("ca_clean_open");return true;}
+        if(Context==1 && keyString~=="h"){if(type==InputEvent.Type_KeyDown)EventHandler.SendNetworkEvent(InventoryHAction(Subject));return true;}
         if(Context==CTX_EQUIPMENT || Context==CTX_CREATION)
             return CaelumDebugOverlay(EventHandler.Find("CaelumDebugOverlay")).PanelKey(type,scan,character,keyString);
         if(Context==CTX_PROPERTY)return CaelumPropertyUI.Key(Subject,type,scan,keyString);
+        if(Context==CTX_CLEAN)return CaelumCleaningUI.Key(type,scan,keyString);
+        if(Context==CTX_BATH)return CaelumBathUI.Key(Subject,type,scan,keyString);
+        if(Context==CTX_CAMP_FIRE)return CaelumCampFireUI.Key(type,scan,keyString);
         if(Context==CTX_CHEST)
             return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
         if(Context==CTX_RECIPES)return CaelumRecipeEvents.Key(Subject,type,scan,keyString);

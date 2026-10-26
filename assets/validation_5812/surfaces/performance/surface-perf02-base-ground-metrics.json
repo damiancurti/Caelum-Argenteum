@@ -1,0 +1,13 @@
+{
+  "label": "surface-perf02-base-ground",
+  "map": "MAP03",
+  "pitch": 75,
+  "runtime": "clean-final06",
+  "frames": 599,
+  "mean_ms": 16.667233555926543,
+  "p95_ms": 17.5993,
+  "p99_ms": 18.4317,
+  "max_ms": 20.1259,
+  "simulation_tics_s": 34.99986070055441,
+  "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+}

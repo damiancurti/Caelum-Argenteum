@@ -1,0 +1,152 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "passes": 134,
+  "runs": [
+    {
+      "label": "clean-final05-core-b",
+      "passes": 33,
+      "package_sha256": "564dc85070369125212ea36f765cd582c7cd9f0b182d84eb9b1ae1144de75d55",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-sleep-b",
+      "passes": 13,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-final04-repair",
+      "passes": 3,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-bag",
+      "passes": 4,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-save",
+      "passes": 1,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-load",
+      "passes": 5,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-live",
+      "passes": 3,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-hub",
+      "passes": 6,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-dev03-legacy",
+      "passes": 2,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-final04-capture",
+      "passes": 0,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-final04-bath",
+      "passes": 35,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-final04-toilet",
+      "passes": 23,
+      "package_sha256": "0dfec9e07a963e1f5459415f560caf983964ab54e7b2798701dcf221f7729d92",
+      "final_runtime_differences": [
+        "caelum/ui/CaelumLiveMenu.zs",
+        "caelum/ui/CaelumLiveMenuControls.zs",
+        "caelum/world/CaelumTimeSkipModel.zs"
+      ]
+    },
+    {
+      "label": "clean-final06-keys",
+      "passes": 6,
+      "package_sha256": "3d6c680f2efdff12b384c0922b04f695b8ea659a07b32560cf7861c59426780f",
+      "final_runtime_differences": []
+    }
+  ],
+  "source_members": 16892,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "package_sha256": "3d6c680f2efdff12b384c0922b04f695b8ea659a07b32560cf7861c59426780f",
+  "author_test": "CA502-CLEAN-01 accepted 2026-10-25",
+  "retained_prior_runs": [
+    "clean-dev03-core: superseded by the final missing-cloth core check; excluded from the selected total"
+  ],
+  "limits": [
+    "Voluntary sleep only; calendar-triggered and exhaustion sleep scheduling remain follow-up.",
+    "Exact-date forecast supports one piece; the queue followed by sleep retains the explicit unsupported-effect guard.",
+    "Repair tests seed a native repair-completion state; they validate the completion hook, not the earlier recipe UI.",
+    "Functional native checks, not multiplayer or frame-presentation acceptance."
+  ],
+  "resolved_probes": [
+    "Test fixture passed an actor where the item-lock API requires ItemId.",
+    "Box-preservation fixture initially lacked ownership of the Box; use the actual grant API.",
+    "Repeated sleep fixture must restore its synthetic armor equipment slot after profile reconciliation.",
+    "Late-cloth forecast fixture also clears accumulated thermal exposure to isolate the supply guard."
+  ]
+}

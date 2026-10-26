@@ -13,6 +13,9 @@ def quoted(value):
 
 def switch_function(name, kind, rows, fallback):
     result = [f"    static clearscope {kind} {name}(int id)", "    {", "        switch(id)", "        {"]
+    material_methods = {"MaterialKey", "MaterialIcon", "UnitWeight", "Price", "ImportStock", "RecipeForMaterial"}
+    predicate = "IsMaterial" if name in material_methods else "IsChemistryRecipe"
+    result.insert(2, f"        if(CaelumHygieneData.{predicate}(id))return CaelumHygieneData.{name}(id);")
     for item_id, value in rows:
         result.append(f"            case {item_id}: return {value};")
     result.extend([f"            default: return {fallback};", "        }", "    }"])
@@ -31,9 +34,9 @@ def main():
              f"    const FIRST_RECIPE={DATA['first_recipe']};",
              f"    const RECIPE_COUNT={len(recipes)};",
              "    static clearscope bool IsRecipe(int id)",
-             "    {return id>=FIRST_RECIPE && id<FIRST_RECIPE+RECIPE_COUNT;}",
+             "    {return CaelumHygieneData.IsChemistryRecipe(id) || (id>=FIRST_RECIPE && id<FIRST_RECIPE+RECIPE_COUNT);}",
              "    static clearscope bool IsMaterial(int id)",
-             "    {return id>=FIRST_MATERIAL && id<FIRST_MATERIAL+MATERIAL_COUNT;}"]
+             "    {return CaelumHygieneData.IsMaterial(id) || (id>=FIRST_MATERIAL && id<FIRST_MATERIAL+MATERIAL_COUNT);}"]
     lines += switch_function("MaterialKey", "String", [(m["id"], quoted("CA_MATERIAL_" + m["key"].upper())) for m in materials], '""')
     lines += switch_function("MaterialIcon", "String", [(m["id"], quoted("graphics/caelum/icons/materials/ca_material_" + m.get("icon_key", m["key"]) + ".png")) for m in materials], '""')
     lines += switch_function("UnitWeight", "double", [(m["id"], m.get("unit_weight_kg", 0.001)) for m in materials], "CaelumConstants.MATERIAL_UNIT_WEIGHT")
@@ -54,6 +57,7 @@ def main():
         lines += switch_function(method, kind, [(r["id"], r.get(key, default)) for r in recipes], default)
     for method, column in (("InputMaterial", 0), ("InputUnits", 1)):
         lines.extend([f"    static clearscope int {method}(int id,int slot)", "    {"])
+        lines.append(f"        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.{method}(id,slot);")
         for recipe in recipes:
             for slot, pair in enumerate(recipe["inputs"]):
                 lines.append(f"        if(id=={recipe['id']} && slot=={slot})return {pair[column]};")

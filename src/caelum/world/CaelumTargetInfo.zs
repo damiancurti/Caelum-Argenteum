@@ -105,6 +105,17 @@ class CaelumTargetInfo : Object play
         let house=CaelumHousePortal(Subject);
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
+        let domestic=CaelumDomesticFixture(Subject);
+        if(domestic is 'CaelumDomesticToilet')
+        {
+            Actions=L(!reachable || !domestic.CanReach(user)?"CA_TARGET_APPROACH":CaelumHygieneTask.Active(user)?"CA_TOILET_CANCEL_HINT":"CA_TOILET_HINT");
+            if(CaelumHygieneTask.Active(user))Actions=String.Format(L("CA_TOILET_PROGRESS"),user.CraftingTaskRemainingSeconds).."  |  "..Actions;
+            return;
+        }
+        if(domestic is 'CaelumDomesticBathtub')
+        {Actions=L(reachable && domestic.CanReach(user)?"CA_BATHTUB_POSE_HINT":"CA_TARGET_APPROACH");return;}
+        if(domestic!=null && domestic.SuppliesWater())
+        {Actions=L(reachable && domestic.CanReach(user)?"CA_DOMESTIC_WATER_HINT":"CA_TARGET_APPROACH");return;}
         if(door!=null || house!=null)Title=L(house!=null?"CA_TARGET_TRANSITION":"CA_TARGET_DOOR");
         if(house!=null && CaelumPropertyData.Offered(house.args[0]))Title=L("CA_PROPERTY_TITLE");
         if(gate!=null)Title=L(CaelumWorldCatalogue.ConnectionNameKey(gate.ConnectionId));
@@ -113,6 +124,8 @@ class CaelumTargetInfo : Object play
             Title=String.Format(L("CA_FERMENTATION_TITLE"),Title,double(CaelumFermentationData.WORKING_CAPACITY_LITERS));
         if(Subject is 'CaelumDeployedTent')
         {Actions=L(reachable?"CA_CAMP_PACK_ACTION":"CA_TARGET_APPROACH");return;}
+        if(Subject is 'CaelumCampFire')
+        {Actions=L(reachable?"CA_CAMP_FIRE_HINT":"CA_TARGET_APPROACH");return;}
         if(chest!=null)
         {
             if(reachable && chest.CanReachStorage(user))

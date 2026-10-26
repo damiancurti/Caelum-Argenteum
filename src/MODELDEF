@@ -4879,6 +4879,19 @@ Model CaelumFermentationStation
 #include "caelum/data/chemistry_resources.modeldef"
 
 #include "caelum/data/mate.modeldef"
+#include "caelum/data/domestic_bathrooms.modeldef"
 
 Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent_legacy.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
 Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN B 0 0 }
+
+// #411 original campfire models
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_0.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_1.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN B 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_2.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN C 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_3.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN D 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_4.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN E 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_5.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN F 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_6.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN G 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_7.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN H 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_8.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN I 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_9.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN J 0 0 }

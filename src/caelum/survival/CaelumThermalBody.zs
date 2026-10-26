@@ -175,7 +175,7 @@ class CaelumThermalBody : Object play
         let coefficients=CaelumThermalCoefficients.Get(thermal);
         coefficients.PrepareCoverage(anatomy);
         thermal.LastSubmergedFraction=waterHeight;thermal.LastWaterRowMask=rowMask;
-        for(int slot=0;slot<4;slot++){thermal.Coverage[slot]=0;thermal.SubmergedCoverage[slot]=0;thermal.SubmergedTemperatureC[slot]=0;thermal.DirtyWaterCoverage[slot]=0;}
+        for(int slot=0;slot<4;slot++){thermal.Coverage[slot]=0;thermal.SubmergedCoverage[slot]=0;thermal.SubmergedTemperatureC[slot]=0;thermal.DirtyWaterCoverage[slot]=0;thermal.CleanWaterCoverage[slot]=0;}
         int count=CaelumThermalData.SURFACE_SAMPLES;
         for(int z=0;z<count;z++)for(int slot=0;slot<4;slot++)
         {
@@ -185,6 +185,7 @@ class CaelumThermalBody : Object play
             {
                 thermal.SubmergedCoverage[slot]+=weight;
                 if((thermal.DirtyWaterRowMask&(1<<z))!=0)thermal.DirtyWaterCoverage[slot]+=weight;
+                if((thermal.CleanWaterRowMask&(1<<z))!=0)thermal.CleanWaterCoverage[slot]+=weight;
                 thermal.SubmergedTemperatureC[slot]+=weight*(rowMask>=0 ? thermal.WaterRowC[z] : thermal.WaterC);
             }
         }

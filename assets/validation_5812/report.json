@@ -1,0 +1,63 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "passes": 55,
+  "selected_runs": [
+    {
+      "label": "final-core-b",
+      "passes": 23,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "final-forecast",
+      "passes": 4,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "final-capture-b",
+      "passes": 4,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "save-a",
+      "passes": 2,
+      "package_sha256": "A6145E834801CF351ECC3C841D89FB2FC7F753127778430F54657B360D9D7D76"
+    },
+    {
+      "label": "final-load",
+      "passes": 6,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "final-hub",
+      "passes": 8,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "old-save-a",
+      "passes": 1,
+      "package_sha256": "8B4DB15F947F9CF96EAC7FBA969EB3892231A2D8A57A64C3480E3C338D604625"
+    },
+    {
+      "label": "final-legacy",
+      "passes": 6,
+      "package_sha256": "C959CDDF819625BBD351DB005D347BF460EE92A2FE6EE4F8FBD1B88B642C5A14"
+    },
+    {
+      "label": "old-load-a",
+      "passes": 1,
+      "package_sha256": "8B4DB15F947F9CF96EAC7FBA969EB3892231A2D8A57A64C3480E3C338D604625"
+    }
+  ],
+  "package_sha256": "c959cddf819625bbd351db005d347bf460ee92a2fe6ee4f8fbd1b88b642c5a14",
+  "source_members": 16885,
+  "unchanged_maps": 169,
+  "author_test": "CA502-TOILET-01 pending",
+  "failed_probes": [
+    "core-a/b: binary residue after105 world tics deferred completion; hygiene-only epsilon clamp fixes it.",
+    "forecast-a/b/c: fixture retained thermal exposure; existing unsupported-effect guard correctly rejected exact prediction. Adapter tests isolate thermal exposure without changing production guards.",
+    "final-capture first attempt: screenshot before camera/target interpolation settled; retained raw evidence, subsequent15-tic view captured actual progress."
+  ],
+  "reused_evidence": "save-a prepares a partial session with probe02; final01 loads and completes that saved session and verifies hub cancellation. Original final07 bathroom runtime creates/rolls back its own pre-feature save.",
+  "limitations": "Native isolated functional checks; no campaign-wide or frame-presentation performance claim. No new global actor scan. Soap bathing/gear cleaning/NPC routines are not implemented by this patch."
+}

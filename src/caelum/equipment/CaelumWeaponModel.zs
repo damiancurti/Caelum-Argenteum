@@ -2,6 +2,7 @@
 // escudo y determina si AltFire bloquea o queda disponible para el arma.
 class CaelumWeaponModel : Object
 {
+    CaelumContaminationState ContaminationState;
     int WeaponType;
     int Tier;
     int Size;
