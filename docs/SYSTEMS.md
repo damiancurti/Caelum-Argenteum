@@ -26,6 +26,12 @@ real single-player normal/accelerated sleep. They do not establish two connected
 players or shared accelerated time. The approved cooperative rule remains pending;
 the existing solo gate and world-clock ownership are unchanged in this stage.
 
+Author decision, 2026-10-26: defer author verification of multiplayer rest to
+V5.12 (cooperative/PvP foundation). The previously approved cooperative rules
+remain recorded, but no two-client author check gates V5.8. This decision is
+not acceptance of the separate individual bag-clearance check. Shared-clock
+implementation remains subject to that dedicated multiplayer authority scope.
+
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
 Domestic-cleaning continuation (2026-10-25, #502): available residents clean

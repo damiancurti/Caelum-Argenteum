@@ -15,6 +15,9 @@ obstructions, guard regression and save compatibility. Evidence and limits:
 assets/validation_5815/RESULTS.md. CA412-BAG-01 awaits author corroboration.
 The multiplayer admission gate/shared clock and the remaining #410 furniture
 integration are still pending; this is not two-client cooperative acceptance.
+Author decision, 2026-10-26: cooperative-rest author testing is deferred to
+V5.12, the multiplayer foundation release. It is not a V5.8 acceptance gate;
+the individual sleeping-bag check remains pending.
 
 ## 5.8.14 - Native ration lots (#410, in progress)
 

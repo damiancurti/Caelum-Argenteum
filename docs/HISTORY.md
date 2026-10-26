@@ -4,6 +4,11 @@ Documentation version: **5.8.15** - 2026-10-26.
 
 ## 5.8.15 - Sleeping-bag clearance (#412), 2026-10-26
 
+Author returned on 2026-10-26 and deferred the multiplayer-rest test to V5.12,
+the roadmap release dedicated to multiplayer. No cooperative-rest test is
+required for V5.8 author acceptance. CA412-BAG-01 remains an individual pending
+check; no result is inferred from this scheduling decision.
+
 Integrated the original #412 packing-guard branch by ancestry onto the validated
 #410/#411/#502 runtime. Replaced the oversized circular bag clearance with the
 existing model's oriented footprint and a separate unchanged player capsule.

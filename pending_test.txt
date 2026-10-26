@@ -72,4 +72,4 @@ Launch assets/validation_5815/author_terminal.ps1, option1, after returning.
 4. Optional terminal option2 checks both rectangular footprints, low/head obstacles,
    normal/solo accelerated rest and the earlier packing guard. Expect PASS only.
 Expected: usable single-player bag clearance and unchanged tent/model/body sizes.
-This does not test two connected players or their shared acceleration, still pending.
+Two-player rest verification is deferred to V5.12 by the author (2026-10-26).

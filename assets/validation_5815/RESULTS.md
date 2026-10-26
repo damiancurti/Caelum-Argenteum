@@ -46,3 +46,7 @@ world-clock ownership. Two-client normal/rest-calendar consensus, and the
 remaining #410 furniture integration, remain unfinished. CA412-BAG-01 awaits
 the author's return; no manual acceptance is inferred. The prepared author
 terminal was not opened while the author was away.
+
+Author scheduling update, 2026-10-26: two-player rest verification is deferred
+to V5.12. The individual CA412-BAG-01 remains unconfirmed; no native tests were
+rerun for this documentation-only scheduling change.
