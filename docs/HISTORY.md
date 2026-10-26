@@ -4,6 +4,12 @@ Documentation version: **5.8.15** - 2026-10-26.
 
 ## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26
 
+Final author acceptance, 2026-10-26: CA412-BAG-01 (origin5.8.15/#412)
+passed including ordinary outside Use, original sleeping bag placement, rest
+and safe exit. The author confirmed both return-terminal corrections passed
+without qualifications. The pending entry is retired; no new native run is
+claimed for this acceptance-only update. Multiplayer remains deferred to V5.12.
+
 The author accepted the supplied tests except the pot and tent, then reported
 that the tent could not be entered and Use did nothing. CA412-BAG-01 remains
 pending with that specific correction; no full acceptance is inferred. The

@@ -15,8 +15,8 @@ The corrected flow passes 73 executed assertions in 11 native runs, including
 actual Use/menu reply routing, normal and solo accelerated rest, Limbo untimed
 rest, cancellation, blocked exit, exact cleaning costs and old/new save loads.
 Static checks and the package/source comparison pass. Evidence and limits:
-assets/validation_5815/RESULTS.md. CA412-BAG-01 remains pending after the author's
-reported interaction failure; the prepared launcher starts outside the tent.
+assets/validation_5815/RESULTS.md. CA412-BAG-01 passed author review on2026-10-26, including the outside
+interaction correction. The retained launcher starts outside the tent.
 The existing cooperative admission/shared-clock implementation and author test
 are deferred to V5.12. Remaining #410 furniture integration is still open.
 
