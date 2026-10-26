@@ -14,8 +14,7 @@ saves and hub travel. Their prices use approved ingredients and fuel plus 25%.
 This is the consumable integration slice: kitchen stations, attended cooking,
 proofing and campaign acquisition remain unfinished. No prepared-meal stock or
 recipe access was invented. Evidence: assets/validation_5818. Author visual and
-interaction corroboration is pending as CA410-MEALS-01; earlier outstanding
-checks remain in pending_test.txt. The native evidence separates engine checks
+interaction check CA410-MEALS-01 passed on 2026-10-26, without qualifications. The native evidence separates engine checks
 from author acceptance; #410 and V5.8 remain open.
 
 The new consumable IDs are 21?24; previous IDs and food-lot revision 1 remain

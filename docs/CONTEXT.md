@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.18** - 2026-10-26.
 
-**5.8.18/#410:**4meals/100g/nutrition/tables/forecasts;CA410-MEALS-01pending;validation_5818;cooking/acquisition-WIP.
+**5.8.18/#410:**4meals/100g/nutrition/tables/forecasts;CA410-MEALS-01accepted2026-10-26;validation_5818;cooking/acquisition-WIP.
 
 **5.8.17/#410:**5ingredients/grams/raw-eating;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26. Cooking/dishes/furniture-WIP.
 

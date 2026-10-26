@@ -113,5 +113,15 @@
     }
   ],
   "author_check": "CA410-MEALS-01",
-  "status": "Prepared items integrated; kitchen production/acquisition still pending."
+  "status": "Prepared items integrated; kitchen production/acquisition still pending.",
+  "author_acceptance": "Passed CA410-MEALS-01 on 2026-10-26 without qualifications; runtime unchanged.",
+  "author_confirmation": {
+    "date": "2026-10-26",
+    "check": "CA410-MEALS-01",
+    "origin_version": "5.8.18",
+    "issue": 410,
+    "result": "passed",
+    "qualifications": [],
+    "new_native_runs": 0
+  }
 }

@@ -31,7 +31,8 @@ captures the rendered table. The fixture's no-restock subclass includes a copy
 of the existing small-table MODELDEF under its private class name.
 Evidence: table-final-services02 (21 PASS/0 FAIL), table-final-capture02 and
 captures/meals-table.png in assets/validation_5818. Failed probes stay in build.
-Author acceptance: CA410-MEALS-01 PENDING. Existing ration models are unchanged.
+Author acceptance: CA410-MEALS-01 passed on 2026-10-26, without qualifications.
+Existing ration models are unchanged.
 Limitations: painted world sprites remain billboards at the existing consumable
 scale; visual acceptance is independent of successful inventory assertions.
 

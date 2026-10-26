@@ -13,9 +13,11 @@ All 16,934 members match src exactly. Static validation: zero errors; current
 localization/document indexes; CONTEXT 2,498 words. **291 literal newly executed
 PASS / zero FAIL across 21 selected native runs**, plus four matched-control
 nutrition comparisons. `report.json` lists package hashes and per-run counts;
-serialized cumulative counters are not summed. Author corroboration remains
-**CA410-MEALS-01**. The author terminal is prepared, not opened while the author
-is away. Physical F-key receipt has not been independently confirmed.
+serialized cumulative counters are not summed. **CA410-MEALS-01 passed
+author corroboration on 2026-10-26**, including controls, painted sprites and
+table interactions, without qualifications. The pending entry is retired;
+no new native run is claimed for this acceptance-only update. Cooking, proofing
+and campaign acquisition were outside this check and remain unfinished.
 
 Coverage includes full 100-g doses at full Hunger, native Box rejection,
 independent oldest/fresh lots, real coffer transfers, saved items/clocks, hub

@@ -2,7 +2,7 @@
 
 Documentation version: **5.8.18** - 2026-10-26.
 
-## 5.8.18 - Painted prepared-meal candidates (#410)
+## 5.8.18 - Accepted painted prepared meals (#410)
 
 Four new owned built-in imagegen sources show bread, roast beef, roast hake and
 puchero in the project's painted inventory style. Original sources, exact
@@ -12,8 +12,9 @@ alpha masking/cropping/resizing produces 128px sprites and FBRD/FRBF/FRFS/FPCH
 aliases. Repeated exports match byte-for-byte; default ingredient outputs are
 unchanged. Native quick-use, inventory and table presentation reuse those sprites.
 The dishes' depicted plates/bowl are presentation, not additional container items.
-Agent visual review is recorded in assets/validation_5818; author acceptance
-remains CA410-MEALS-01. No accepted ration/ingredient artwork was replaced.
+Agent visual review is recorded in assets/validation_5818. Author visual
+check CA410-MEALS-01 passed on 2026-10-26, without qualifications. No accepted
+ration/ingredient artwork was replaced.
 
 ## 5.8.17 - Accepted painted kitchen ingredients (#410)
 
