@@ -1,0 +1,3 @@
+Model CaelumWardrobeClosedVisual { Path "models/caelum/props/wardrobe" Model 0 "closed.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWRD A 0 0 }
+Model CaelumWardrobeOpenVisual { Path "models/caelum/props/wardrobe" Model 0 "open.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWRD B 0 0 }
+Model CaelumWardrobeLockedVisual { Path "models/caelum/props/wardrobe" Model 0 "locked.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWRD C 0 0 }

@@ -2,6 +2,25 @@
 
 Documentation version: **5.8.23** - 2026-10-27.
 
+## Wardrobe artwork candidate (#410; integration follows in5.8.24)
+
+Read SPRITE_ART_DIRECTION before creating the new asset. Original painted source
+created with built-in OpenAI image_gen; exact prompt, reference roles and preserved
+RGBA source are in assets/art_source/wardrobe/PROMPT.txt, BRIEF.json and
+wardrobe-source-v1.png. No museum image pixels were copied. Source SHA256:
+2a2ef38658c0a9e545a096bac3c3d5b60232ed6a37a8da82f9ce602dc428d9fa.
+The [Parliament Pugin/Gillows record](https://heritagecollections.parliament.uk/collections/getrecord/HOP_POW_09440)
+supplies nineteenth-century dimensions and six-panel construction context.
+
+assets/generators/generate_wardrobe.py deterministically builds three original
+OBJ states using the existing owned chest wood/iron/lock textures. It crops,
+resizes and thresholds the preserved generated alpha for a painted128px
+inventory/fallback icon; it does not replace the icon with a3D render. MODELDEF
+and TEXTURES registrations use distinct CWRD frames. Physical fallback scale,
+component volumes, masses and output hashes are in MANIFEST.json. Native
+captures include the closed/open/locked states and inventory-size legibility;
+agent review is separate from pending author visual acceptance.
+
 5.8.23 / #502 changes exposure persistence only; no artwork, audio or map bytes change. Native evidence is in assets/validation_5823.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)

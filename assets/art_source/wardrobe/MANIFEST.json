@@ -1,0 +1,21 @@
+{
+  "issue": 410,
+  "wood_kg": 152.90436960000002,
+  "iron_kg": 0.9912265,
+  "empty_kg": 153.89559610000003,
+  "bill_grams": {
+    "wood": 152905,
+    "iron": 992
+  },
+  "mass_policy": "Fittings included; installed padlock remains a separate native item.",
+  "source_sha256": "2a2ef38658c0a9e545a096bac3c3d5b60232ed6a37a8da82f9ce602dc428d9fa",
+  "sha256": {
+    "src/models/caelum/props/wardrobe/closed.obj": "e509ca5a2bbc5b3401b6e0aa60f5952ff5c85263f1cbb865a1d9499240af0951",
+    "src/models/caelum/props/wardrobe/open.obj": "20303e302ea320cafa2eff1dd9b9b7784c5575c201dad200ca4f44fb379c8b04",
+    "src/models/caelum/props/wardrobe/locked.obj": "192491da7ca9d262af9a5f2e9d0ac77f3d8f60c926b6db0a6ab61e14cf154296",
+    "src/graphics/caelum/icons/furniture/wardrobe.png": "94258275a713bfc8e69707fbef888f70fc01fcb3084d8966e00747aae9f87258",
+    "src/caelum/data/wardrobe.modeldef": "6cb1d6dcea8ef1192aaee32bdf25c757ed48ea9854ad10d1e9376759dd1f797e",
+    "src/caelum/data/wardrobe.textures": "37003942ab143f68e0970fa8e0f18a174335a1fbd57d56b3b13a0bb8784ff6a4",
+    "src/caelum/data/CaelumWardrobeData.zs": "da2fb127e3087ec8c90220f68773872fea6a1f709e3b4f277e90b7dd5305043b"
+  }
+}

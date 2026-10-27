@@ -1,0 +1,41 @@
+{
+  "issue": 410,
+  "authority": "Author delegated historical furniture dimensions, materials, mass and manufacturing calculations. Wardrobe capacity is explicitly approved at25 stacks/1000kg; reuse chest permissions and transport.",
+  "reference_url": "https://heritagecollections.parliament.uk/collections/getrecord/HOP_POW_09440",
+  "reference_role": "1851-1857 wardrobe envelope1321x640x2070mm and wood/iron construction, not a replica or copied image. Own algarrobo-density wood, ordinary panels and simplified hardware are delegated design calculations.",
+  "map_units_per_meter": 32,
+  "width_m": 1.321,
+  "depth_m": 0.64,
+  "height_m": 2.07,
+  "board_m": 0.018,
+  "back_m": 0.012,
+  "shelf_m": 0.018,
+  "wood_density_kg_m3": 760,
+  "iron_density_kg_m3": 7870,
+  "panel_frame_m": 0.045,
+  "panel_projection_m": 0.012,
+  "hinge_size_m": [
+    0.035,
+    0.1,
+    0.003
+  ],
+  "knob_size_m": [
+    0.025,
+    0.025,
+    0.035
+  ],
+  "latch_size_m": [
+    0.04,
+    0.12,
+    0.004
+  ],
+  "mansion_position": [
+    -304,
+    488,
+    136
+  ],
+  "mansion_facing": 90,
+  "storage_stacks": 25,
+  "storage_kg": 1000,
+  "construction_note": "Bill counts modeled non-hollow solid panels, raised door frames, cornice/plinth, two shelves and iron fittings. Optional padlock mass belongs to the existing installed item and is not counted twice. No food-preservation or rest bonus. Manufacturing and commercial distribution remain separate integrations."
+}
