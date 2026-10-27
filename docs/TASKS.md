@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
+
+## 5.8.30 / #410 - Luxury furniture catalogue
+
+Three functional original models and calculated physical bills; native gallery
+checks and captures in assets/validation_5830. CA410-LUXURY-01 remains pending.
+Next: normal purchase/fabrication, movable ownership/placement and inventory
+sprites for this and the remaining furniture catalogue. Approved stock: three
+per type in Provisions, ten recipes in library, cost plus25%, manufacturing
+restock. Do not count a diagnostic spawn as campaign acquisition/completion.
+
+Validation:96 executed native PASS across fourteen runs against one immutable
+final30c runtime/addon; zero native failures and zero static errors. Current
+save/load, hub return, the original5.8.26 save, actual item transfers, ordinary
+furniture regressions and English/Spanish presentation pass. No author
+acceptance is inferred; exact hashes and line-ending qualifications are recorded
+in assets/validation_5830/RESULTS.md and report.json.
 
 ## 5.8.29 - Sofa seating stage (#410)
 

@@ -4933,3 +4933,36 @@ Model CaelumThreeSeatSofa
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumLuxuryChair
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_chair.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLuxuryBed
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_bed.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLuxuryTable
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_table.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

@@ -1,0 +1,106 @@
+{
+  "version": "5.8.30",
+  "issue": 410,
+  "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+  "runs": [
+    {
+      "label": "release-core",
+      "executed_passes": 50,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-input",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-seed",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 5,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-hub",
+      "executed_passes": 7,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-migration",
+      "executed_passes": 3,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-transactions",
+      "executed_passes": 10,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view0",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view1",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view2",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view3",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view4",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-view5",
+      "executed_passes": 2,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    },
+    {
+      "label": "release-spanish",
+      "executed_passes": 5,
+      "runtime_sha256": "2dffdd3460eacd08cd20293202092042c49ba10702d1df83ca850694fe9732cb",
+      "addon_sha256": "507451bf3dfadfe6d5a3b2b2caeac2cdbc11d9887c5385b81e56dc18892e1bc3"
+    }
+  ],
+  "native_passes": 96,
+  "native_failures": 0,
+  "source_matching_package_members": 16989,
+  "preserved_map_art_members": 14034,
+  "prior_obj_line_endings_only": [
+    "models/caelum/props/sofas/ca_sofa_2.obj",
+    "models/caelum/props/sofas/ca_sofa_3.obj"
+  ],
+  "deterministic_generated_outputs": 5,
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "migration": "Original 5.8.26 partial-library save retains321.75s and existing mansion table. Native current save and hub retain real table items, six seats and contamination.",
+  "evidence_reuse": "Final native assertions all execute against one final30c package and one unchanged addon. Original-runtime rollback for the identical untouched legacy save is reused from validation_5826/5829, not counted as new execution.",
+  "performance_scope": "New table initializes at most six blocks and six existing rest chairs once; later ticks only check its revision. No new global actor scan. No measured display-FPS or multiplayer claim.",
+  "remaining": "Campaign acquisition, portable-item inventory sprites and broader placement remain a separate #410 integration. Gallery access is not campaign completion.",
+  "author_acceptance": "Pending CA410-LUXURY-01; manual handoff deferred until the complete V5.8 implementation."
+}

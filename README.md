@@ -6,8 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.29.** Obtain and update the complete repository, validate
+**Current release: 5.8.30.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.30 - Functional luxury furniture catalogue (#410)
+
+Original period armchair, four-post bed and dining table models now have native
+rest/seating, collision and item ownership. Their bills follow delegated physical
+calculations and documented museum envelopes; luxury adds no rest bonus.
+This catalogue stage is available in the isolated native gallery. Campaign
+purchase/fabrication, portable inventory artwork and broader furniture placement
+remain the next #410 integration; they are not delivered by spawning diagnostics.
+V5.8 remains incomplete. Native/static evidence: assets/validation_5830.
+Author checks remain grouped for the final V5.8 handoff, as requested.
+
+Validation:96 executed native PASS across fourteen runs against one immutable
+final30c runtime/addon; zero native failures and zero static errors. Current
+save/load, hub return, the original5.8.26 save, actual item transfers, ordinary
+furniture regressions and English/Spanish presentation pass. No author
+acceptance is inferred; exact hashes and line-ending qualifications are recorded
+in assets/validation_5830/RESULTS.md and report.json.
 
 ## 5.8.29 - Two- and three-seat sofas (#410)
 

@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
+
+## 5.8.30 - Luxury furniture catalogue (#410, integration in progress)
+
+Three original models bind to ordinary rest/dining behavior. The six-seat table
+retains eighteen real item slots and adapts its serving presentation to its
+narrower historical envelope; it does not seed food or water. Existing furniture,
+map geometry and authored layouts remain unchanged. Exact physical bills and
+references: SYSTEMS/ASSETS and assets/art_source/luxury_furniture.
+This stage supplies native-testable catalogue classes, not campaign acquisition.
+Three-per-type Provisions stock, ten recipe copies and manufacturing restock were
+approved on 2026-10-27 for all movable furniture; that integration is pending.
+Evidence: assets/validation_5830; CA410-LUXURY-01 author corroboration pending.
+The V5.8 release and #410/#415/#416/#417/#502 remaining scopes are not complete.
+
+Validation:96 executed native PASS across fourteen runs against one immutable
+final30c runtime/addon; zero native failures and zero static errors. Current
+save/load, hub return, the original5.8.26 save, actual item transfers, ordinary
+furniture regressions and English/Spanish presentation pass. No author
+acceptance is inferred; exact hashes and line-ending qualifications are recorded
+in assets/validation_5830/RESULTS.md and report.json.
 
 ## 5.8.29 - Usable sofas (#410)
 

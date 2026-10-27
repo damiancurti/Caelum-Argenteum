@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
+
+## 5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)
+
+Original armchair, four-post bed and table models were added without replacing
+accepted furniture or map geometry. Museum dimensional references and delegated
+construction calculations are retained under assets/art_source/luxury_furniture.
+Native rest/dining uses existing comfort, safety and real item ownership. A shared
+serving-scale extension preserves the large-canteen's initialized scale and avoids
+compounding refreshes. Author-approved sale/recipe stock was recorded; its normal
+campaign acquisition and portable-item art remain a later #410 integration.
+
+Static/native evidence and package hashes: assets/validation_5830. Failed early
+fixture runs remain local evidence (reserved identifier, typed ternary, temporary
+vector member access, unsupported one-minute rest and an unlinked blocker).
+Final checks use supported five-minute rest and an actual linked blocking actor.
+These fixture corrections do not change rest rules. Author acceptance is not
+claimed; CA410-LUXURY-01 is outstanding with the final grouped V5.8 handoff.
+
+Validation:96 executed native PASS across fourteen runs against one immutable
+final30c runtime/addon; zero native failures and zero static errors. Current
+save/load, hub return, the original5.8.26 save, actual item transfers, ordinary
+furniture regressions and English/Spanish presentation pass. No author
+acceptance is inferred; exact hashes and line-ending qualifications are recorded
+in assets/validation_5830/RESULTS.md and report.json.
 
 ## 5.8.29 - Period sofa seating (#410, 2026-10-27)
 
