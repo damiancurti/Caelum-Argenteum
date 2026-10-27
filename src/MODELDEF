@@ -4911,3 +4911,25 @@ Model CaelumReadingDesk
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumTwoSeatSofa
+{
+    Path "models/caelum/props/sofas"
+    Model 0 "ca_sofa_2.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumThreeSeatSofa
+{
+    Path "models/caelum/props/sofas"
+    Model 0 "ca_sofa_3.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

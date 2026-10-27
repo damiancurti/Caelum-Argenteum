@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Sofa seating stage (#410)
+
+Implemented: two authored sofas, five independent native seats, ordinary Use
+interaction, shared contamination, saved rest and old-save installation. Evidence:
+assets/validation_5829. Pending author check: CA410-SOFAS-01, deferred with the
+other away-period checks until all V5.8 implementation is ready. Complete the
+remaining catalogue and its approved crafting/placement integration separately;
+this stage does not close #410 or claim V5.8 complete.
+
+Validation:113 executed native PASS, zero static errors; current/old saves, hub,
+all five seats, shared contamination, native Use and bilingual aim text. The
+101-assertion seating suite is reused after target normalization and a Spanish
+encoding correction;12 further assertions cover those changes. Package hashes
+and reuse boundaries are recorded in assets/validation_5829/RESULTS.md.
 
 ## 5.8.28 - Regional weather history for objects (#502)
 

@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Period sofa seating (#410, 2026-10-27)
+
+Added two original sofas to the mansion reading room, with five native seats and
+shared furniture contamination. Reused ordinary chair rest, unchanged player
+collision and the accepted map/library. The author's delegated historical/material
+calculations are stored with source meshes; no new comfort/balance was invented.
+A hidden proxy originally failed native visibility checks; sight now targets its
+visible parent. Native Use forwards to the nearest free seat. The diagnostic input
+pulse was lengthened to cross a real game tic instead of relying on two console
+frames. No author result is inferred from engine tests.
+
+Validation evidence: assets/validation_5829. CA410-SOFAS-01 remains pending;
+questions and manual delivery are deferred while the author is away. V5.8 remains
+unfinished, including remaining #410 catalogue/acquisition and other active issues.
+
+The shared chair/bed seating path now validates occupancy with an equal-sized
+non-player probe before SetOrigin; the player's native same-position unblocking
+exception cannot admit a second solid occupant. The probe excludes only that
+same user. Existing clear seats and exits retain their rules (CA-KP-180).
+
+Validation:113 executed native PASS, zero static errors; current/old saves, hub,
+all five seats, shared contamination, native Use and bilingual aim text. The
+101-assertion seating suite is reused after target normalization and a Spanish
+encoding correction;12 further assertions cover those changes. Package hashes
+and reuse boundaries are recorded in assets/validation_5829/RESULTS.md.
 
 ## 5.8.28 - Regional weather history for objects (#502)
 

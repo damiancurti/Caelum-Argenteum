@@ -24,13 +24,15 @@ class CaelumRestFurniture : Actor abstract
         return offset;
     }
 
-    bool CanReach(CaelumPlayer user)
+    virtual Actor SightTarget() { return self; }
+
+    virtual bool CanReach(CaelumPlayer user)
     {
         return user != null && user.player != null && user.health > 0
             && (Occupant == null || Occupant == user)
             && user.Distance2D(self) <= user.UseRange + Radius
             && Abs(user.Pos.Z - Pos.Z) <= 8
-            && user.CheckSight(self);
+            && user.CheckSight(SightTarget());
     }
 
     override bool Used(Actor activator)
@@ -46,6 +48,20 @@ class CaelumRestFurniture : Actor abstract
         if (!CanReach(user) || Occupant != null) return false;
         vector3 entry = user.Pos;
         bSolid = false;
+        // TestMobjLocation sobre un jugador ya trasladado permite solapamientos
+        // para destrabarlo (PIT_CheckThing). Comprobar antes con un volumen no
+        // jugador del mismo tamaño; no mover ni achicar al ocupante para probar.
+        let probe = CaelumRestSeatProbe(Actor.Spawn("CaelumRestSeatProbe", Pos, NO_REPLACE));
+        bool fits = false;
+        if (probe != null)
+        {
+            probe.Subject = user;
+            probe.A_SetSize(user.Radius, user.Height, false);
+            fits = probe.TestMobjLocation() && Abs(probe.FloorZ-Pos.Z) <= 1
+                && probe.WaterLevel == 0;
+            probe.Destroy();
+        }
+        if (!fits) { RestoreSolid(); return false; }
         user.SetOrigin(Pos, false);
         // Se comprueba el volumen REAL del personaje, sin telefrag ni cambio
         // de altura/radio. Un mueble cerca de una pared puede no ser apto.
@@ -152,6 +168,14 @@ class CaelumRestPlacementProbe : Actor
 {
     Default { Radius 16; Height 56; +NOGRAVITY +NOBLOCKMAP +SOLID +CANPASS RenderStyle "None"; }
     States { Spawn: TNT1 A -1; Stop; }
+}
+
+// La comprobación previa puede solaparse con quien se está sentando;
+// sólo se excluye a ese actor, nunca a otros ocupantes u objetos.
+class CaelumRestSeatProbe : CaelumRestPlacementProbe
+{
+    Actor Subject;
+    override bool CanCollideWith(Actor other,bool passive){return other!=Subject;}
 }
 
 // Una pareja por alcantarilla; no modifica los WAD ni entrega recursos.

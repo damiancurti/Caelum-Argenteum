@@ -15,6 +15,7 @@ class CaelumTargetInfo : Object play
     {
         if(object is 'CaelumSlidingDoorBlocker' || object is 'CaelumGateBlocker')return object.master;
         let block=CaelumDiningBlock(object);if(block!=null)return block.Table;
+        let seat=CaelumSofaSeat(object);if(seat!=null)return seat.Sofa;
         let campPart=CaelumCampTentPart(object);if(campPart!=null)return campPart.Structure;
         let part=CaelumVehiclePart(object);if(part!=null)return part.Vehicle;
         return object;

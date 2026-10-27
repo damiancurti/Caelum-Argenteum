@@ -45,6 +45,8 @@ class CaelumContaminationStorage : Object play
     static CaelumContaminationState Get(Actor body,bool create=false)
     {
         if(body==null || body is 'CaelumPlayer')return null;
+        let seat=CaelumSofaSeat(body);
+        if(seat!=null)return seat.Sofa==null || seat.Sofa.bDestroyed?null:Get(seat.Sofa,create);
         let equipment=CaelumEquipmentItem(body);
         if(equipment!=null)
         {

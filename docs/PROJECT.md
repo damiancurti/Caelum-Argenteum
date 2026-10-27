@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Usable sofas (#410)
+
+The authored mansion now has two- and three-seat sofas, reusing ordinary chair
+comfort and native rest sessions. Their new actors install idempotently in old
+saves without replacing maps or accepted furniture. Original models and physical
+calculations have independent provenance. Acquisition/movable-sofa integration,
+the rest of the furniture catalogue and other V5.8 issues remain open.
+CA410-SOFAS-01 is pending; isolated engine success is not author acceptance.
+
+Validation:113 executed native PASS, zero static errors; current/old saves, hub,
+all five seats, shared contamination, native Use and bilingual aim text. The
+101-assertion seating suite is reused after target normalization and a Spanish
+encoding correction;12 further assertions cover those changes. Package hashes
+and reuse boundaries are recorded in assets/validation_5829/RESULTS.md.
 
 ## 5.8.28 - Regional weather history for objects (#502)
 

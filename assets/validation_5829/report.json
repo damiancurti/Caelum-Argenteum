@@ -1,0 +1,107 @@
+{
+  "version": "5.8.29",
+  "issue": 410,
+  "runtime_sha256": "79b497d2bff96cedb4ac6bdbb50efde7225b0d5f816bdc05e89304988a3ce3a3",
+  "runs": [
+    {
+      "label": "delivery-core",
+      "executed_passes": 59,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-input",
+      "executed_passes": 4,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-lifecycle",
+      "executed_passes": 12,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-seed",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-resume",
+      "executed_passes": 5,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-hub",
+      "executed_passes": 6,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-migration",
+      "executed_passes": 3,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-view0-0",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-view0-1",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-view1-0",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-view1-1",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "delivery-view1-2",
+      "executed_passes": 2,
+      "runtime_sha256": "9c66d4adf7d84ea48610e08fa19c09b7f19f888c3d5743df03a8fedb5e6e07a8",
+      "addon_sha256": "b0f0116533f90afd7bf4bb8f8fb480307707d62f9579d61efb86a665b6da3aff"
+    },
+    {
+      "label": "final-target-en",
+      "executed_passes": 4,
+      "runtime_sha256": "89b04dd80db1a5467076a9a16b5855072ffd7de02bf28e8551db9815382c1db4",
+      "addon_sha256": "802a1223a4f2bda06a6c02725ce529b3b3cb83ff2a402863deb825cb4c161e6f"
+    },
+    {
+      "label": "final-localized-es",
+      "executed_passes": 4,
+      "runtime_sha256": "79b497d2bff96cedb4ac6bdbb50efde7225b0d5f816bdc05e89304988a3ce3a3",
+      "addon_sha256": "802a1223a4f2bda06a6c02725ce529b3b3cb83ff2a402863deb825cb4c161e6f"
+    },
+    {
+      "label": "final-input",
+      "executed_passes": 4,
+      "runtime_sha256": "89b04dd80db1a5467076a9a16b5855072ffd7de02bf28e8551db9815382c1db4",
+      "addon_sha256": "802a1223a4f2bda06a6c02725ce529b3b3cb83ff2a402863deb825cb4c161e6f"
+    }
+  ],
+  "native_passes": 113,
+  "native_failures": 0,
+  "source_matching_package_members": 16984,
+  "preserved_map_art_members": 14034,
+  "deterministic_generated_outputs": 4,
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "migration": "Original5.8.26 partial-library save loads unchanged; new sofa revision adds five seat proxies once. Current occupied-seat save and hub return tested.",
+  "evidence_reuse": "101 executed assertions against final29b remain applicable: final29c adds only one CanonicalActor mapping and executes8 retained input/EN assertions. Final29d corrects only Spanish text/index encoding, executing4 additional ES target assertions. Prior original-runtime rollback is reused for the identical untouched old save; not counted as newly executed.",
+  "performance_scope": "Two visual owners/five proxies; at-most-three seat references; one on-demand native collision probe. Typed sofa installation census runs once/second until the two owners fit, then stops. No frame-presentation or multiplayer acceptance claim.",
+  "author_acceptance": "Pending CA410-SOFAS-01. Manual delivery deferred until the fullV5.8 implementation is ready."
+}

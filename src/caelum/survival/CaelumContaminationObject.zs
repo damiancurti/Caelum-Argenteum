@@ -19,6 +19,7 @@ class CaelumContaminationObject : Thinker
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        if(body is 'CaelumSofaSeat')return false;
         let vendor=CaelumCityMerchant(body);if(vendor!=null && vendor.DomesticMarketParked)return false;
         let item=Inventory(body);
         if(item!=null)return item is 'CaelumEquipmentItem' && item.Owner==null;
@@ -29,6 +30,7 @@ class CaelumContaminationObject : Thinker
     }
     static double Area(Actor body)
     {
+        let seat=CaelumSofaSeat(body);if(seat!=null && seat.Sofa!=null)return Area(seat.Sofa);
         let item=CaelumEquipmentItem(body);
         if(item==null)return CaelumContaminationRules.CylinderArea(body.Radius,body.Height);
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
