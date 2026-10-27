@@ -1,0 +1,131 @@
+{
+  "version": "5.8.33",
+  "issue": 410,
+  "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+  "runs": [
+    {
+      "case": "core",
+      "executed_passes": 35,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "seed",
+      "executed_passes": 2,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "resume",
+      "executed_passes": 6,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "hub",
+      "executed_passes": 8,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "legacyresume",
+      "executed_passes": 9,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "migration",
+      "executed_passes": 3,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "view0",
+      "executed_passes": 2,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "view1",
+      "executed_passes": 2,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "side3",
+      "executed_passes": 4,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "side4",
+      "executed_passes": 4,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "side5",
+      "executed_passes": 4,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "input0",
+      "executed_passes": 3,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "input1",
+      "executed_passes": 3,
+      "runtime_sha256": "ab3fee15ccde27eb3c1c1f0b85b5dbfb7e5a0000bc1eaa67706fe496621d5591",
+      "addon_sha256": "f532d0efcae5d8ca22b8250e315c7689e57b7b67ca8cf71a41550e46414d5f96",
+      "role": "final runtime"
+    },
+    {
+      "case": "legacyseed",
+      "executed_passes": 4,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "ae94b9f121d78f3375d2b01bc7385ce910364929a0a0a9091079a1699c1e51b6",
+      "role": "original-runtime compatibility"
+    },
+    {
+      "case": "legacyrollback",
+      "executed_passes": 5,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "ae94b9f121d78f3375d2b01bc7385ce910364929a0a0a9091079a1699c1e51b6",
+      "role": "original-runtime compatibility"
+    }
+  ],
+  "native_final_passes": 85,
+  "native_baseline_passes": 9,
+  "native_failures": 0,
+  "source_matching_package_members": 17000,
+  "preserved_map_art_members": 14039,
+  "prior_obj_line_endings_only": [],
+  "modified_art": [
+    "models/caelum/props/rest/ca_rest_bed.obj",
+    "models/caelum/props/rest/ca_rest_chair.obj"
+  ],
+  "legacy_occupied_save_sha256": "1665ac5ec0a58b5025e40139770be80c474f7ef893cc09faf11e1bc277dab1a6",
+  "original_reading_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "migration": "5.8.32 generates an occupied cot save with actual inventory and dirt. The untouched save loads in both original32 and final33b; new code retains occupant/inventory and migrates collision, support height and headboard facing. Separate current save/hub and original5.8.26 campaign checks pass.",
+  "reproduction": "Prepare diagnostics; run legacyseed then legacyrollback against the retained5.8.32 package to create basic-old.zds. Copy original5.8.26 reading-progress.zds from its validation work. Run run_suite.ps1 on final33b with a fresh Prefix. Neither engine/IWAD nor save fixtures are distributed.",
+  "visual_review": "Native Spanish views inspected: human-scale chair, raised four-leg cot, centered sitting, headboard-aligned lying and unchanged floor bag. Side diagnostic camera changes only the view; actual native rest remains active.",
+  "early_probes": "Retained locally: reserved Stop identifier/incompatible fixture ternaries; fixture failed to explicitly create dining seats. Fixed fixtures. Visual review then corrected chair horizontal offset and cot headboard facing; all final selected runtime cases follow those corrections.",
+  "scope": "No map geometry, character art, inventory sprites, recovery rules, luxury/sofa dimensions or bag meshes changed. Furniture acquisition remains subsequent work.",
+  "performance": "One revision comparison in each existing rest-furniture Tick; exact-class initialization/migration, no new recurring global scan. No display-FPS claim.",
+  "author_acceptance": "CA410-BASIC-REST-01 pending; grouped V5.8 handoff remains deferred."
+}

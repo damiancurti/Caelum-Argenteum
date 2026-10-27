@@ -1,0 +1,10 @@
+{
+  "two_runs_byte_identical": true,
+  "sleeping_bag_meshes_unchanged": true,
+  "sha256": {
+    "src\\models\\caelum\\props\\rest\\ca_rest_chair.obj": "afcaaa467c5dc2c04ca7e85d52d5dbf0013947c25709f098a606036bef1a3e6f",
+    "src\\models\\caelum\\props\\rest\\ca_rest_bed.obj": "a3c535ab417854b151251349b45674cde4a8c3763f82b51993dc51b17fbd9700",
+    "src\\caelum\\data\\CaelumBasicRestData.zs": "645f24e3ecfcfc240c9eea261e4985ed506167f9771458a0f791a5833bae35f0",
+    "assets\\art_source\\basic_rest_furniture\\GENERATED.json": "49043085afe87d88f2fe39444d4efae646c06ea5b8dd1f122b2871942d9869dd"
+  }
+}

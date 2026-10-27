@@ -210,3 +210,10 @@ place, Use to rest, then stand and crouch + Use to carry. Retry blocked placemen
 Store the carried item in the Box, save/load, travel, retrieve and place again.
 Expected: one real piece; no occupied pickup, duplication, lost title/contamination
 or extra comfort bonus. Materials, stock, weight and prices match SYSTEMS.
+
+CA410-BASIC-REST-01 | originating version5.8.33 | issue#410 | pending
+Prerequisites: final5.8.33 package and validation_5833 diagnostics; include in the grouped V5.8 handoff, not an immediate separate terminal.
+1. View ordinary chair, cot and sleeping bag beside the character. Expect a human-scale chair/cot, four visible cot legs, cot sleeping surface at chair-seat height, bag on floor.
+2. Sit, lie down, cancel and inspect from both sides. Expect alignment with the support, no trapped exit and unchanged comfort/resources.
+3. Load the retained occupied5.8.32 cot save in the new runtime; exit normally. Expect the same cot, occupant, contents and contamination, adjusted pose. Keep the original save for rollback.
+4. Check mansion dining chairs and luxury/sofa furniture. Expect ordinary chairs resized and functional; luxury/sofas unchanged.

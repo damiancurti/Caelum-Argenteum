@@ -7,6 +7,29 @@ class CaelumRestFurniture : Actor abstract
     int TrialSlot;
     CaelumDiningTable DiningTable;
     int DiningSeat;
+    int BasicDimensionsRevision;
+
+    // Sólo las dos clases comunes: lujo, sofá y bolsa conservan sus medidas.
+    void PrepareBasicDimensions()
+    {
+        if(BasicDimensionsRevision>=CaelumBasicRestData.REVISION)return;
+        bool chair=GetClassName()=='CaelumRestChair';
+        bool bed=GetClassName()=='CaelumRestBed';
+        if(chair || bed)
+        {
+            A_SetSize(chair?CaelumBasicRestData.CHAIR_RADIUS:CaelumBasicRestData.BED_RADIUS,
+                chair?CaelumBasicRestData.CHAIR_HEIGHT:CaelumBasicRestData.BED_HEIGHT,false);
+            Mass=int(Ceil(chair?CaelumBasicRestData.CHAIR_MASS:CaelumBasicRestData.BED_MASS));
+            let rest=CaelumRestState.Get(Occupant);
+            if(bed && Occupant!=null && rest!=null && rest.Furniture==self
+                && rest.Status==CaelumRestRules.STATUS_ACTIVE)
+            {Occupant.Angle=PoseAngle();rest.FacingAngle=Occupant.Angle;}
+        }
+        BasicDimensionsRevision=CaelumBasicRestData.REVISION;
+    }
+
+    override void PostBeginPlay()
+    {Super.PostBeginPlay();PrepareBasicDimensions();}
 
     virtual double PoseAngle() { return Angle + 180; }
     virtual int RestMode() { return CaelumRestRules.MODE_WAIT; }
@@ -123,6 +146,8 @@ class CaelumRestFurniture : Actor abstract
     override void Tick()
     {
         Super.Tick();
+        // Migración de la misma instancia, sin recrear inventario ni ocupante.
+        PrepareBasicDimensions();
         if (Occupant != null)
         {
             let rest = CaelumRestState.Get(Occupant);
@@ -144,12 +169,21 @@ class CaelumRestFurniture : Actor abstract
 
 class CaelumRestChair : CaelumRestFurniture
 {
+    override vector3 PoseOffsetFor(CaelumPlayer user)
+    {
+        vector3 offset=(0,0,0);
+        offset.Z=CaelumBasicRestData.CHAIR_SURFACE*Scale.Y/Max(.001,level.pixelstretch)
+            -CaelumAppearanceRegistry.SeatSupportPixels()*user.Scale.Y;
+        return offset;
+    }
     Default { Tag "$CA_REST_CHAIR_TITLE"; }
     States { Spawn: CAHC A -1; Stop; }
 }
 
 class CaelumRestBed : CaelumRestFurniture
 {
+    // El cabecero común queda al lado de la cabeza; lujo conserva su pose.
+    override double PoseAngle(){return GetClassName()=='CaelumRestBed'?Angle:Super.PoseAngle();}
     override void Tick()
     {
         Super.Tick();
@@ -161,7 +195,7 @@ class CaelumRestBed : CaelumRestFurniture
     override int ComfortFactor() { return 4; }
     override vector3 PoseOffset() { return (0, 0, 10); }
     override vector3 PoseOffsetFor(CaelumPlayer user)
-    { return (0,0,CaelumAppearanceRegistry.BedSurface()*Scale.Y/Max(.001,level.pixelstretch)); }
+    { return (0,0,CaelumBasicRestData.BED_SURFACE*Scale.Y/Max(.001,level.pixelstretch)); }
     Default { Radius 56; Height 24; Tag "$CA_REST_BED_TITLE"; }
     States { Spawn: CAHC A -1; Stop; }
 }

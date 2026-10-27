@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.32** - 2026-10-27.
+Documentation version: **5.8.33** - 2026-10-27.
+
+## 5.8.33 / #410 - Ordinary rest furniture correction
+
+The author-requested chair/cot rescaling preserves owned artwork while raising
+the cot on legs to the chair-seat height. Physical collision, active-rest pose,
+construction bill and idempotent old-actor migration follow the same source.
+Evidence: assets/validation_5833. CA410-BASIC-REST-01 remains author-pending.
+Other furniture acquisition, #415-417 and remaining #502 integration are unfinished;
+this delivery does not complete V5.8.
 
 ## 5.8.32 - Luxury rest furniture acquisition (#410)
 
