@@ -92,7 +92,8 @@ The prepared private fixture grants2000kg carrying capacity solely for testing.
    Save/load or change maps with it; no replacement wardrobe appears in the room.
 5. Place it on clear dry mansion garden ground or permitted property/countryside.
    Invalid space or unauthorized terrain must retain it and its contents.
-   Current permissions cover mansion gardens,not indoor bedroom rearrangement.
+   In5.8.27+, the author-approved extension also permits clear mansion interiors;
+   corroborate that extension separately under CA411-INTERIOR-01.
 Expected: all listed storage,persistence and visual checks pass. Author review
 is pending; do not reuse acceptance of the earlier kitchen/bathroom/camp tests.
 CA410-WATER-FURNITURE-01 | Origin:5.8.25 | Issue:#410
@@ -132,3 +133,18 @@ Deliver this check only when the full V5.8 implementation is ready, as requested
 5. Inspect the existing shelf and reused table artwork, target hints and menu.
    Retrieve the book and verify ordinary personal-book reading still works.
 Expected: usable collision/access, correct storage/learning/persistence and clear UI.
+
+CA411-INTERIOR-01 | Origin: 5.8.27 | Issue: #411
+Prerequisites: final5.8.27 or later, disposable mansion campaign, wardrobe or
+carried chest, sufficient real carrying capacity for its mass and contents.
+Deliver this check when the wholeV5.8 implementation is ready, as requested.
+1. Store a recognizable item in the wardrobe, then carry the loaded wardrobe.
+   In a clear part of the bedroom use the existing inventory placement action.
+   Expect the same wardrobe and contents at the chosen location, with no duplicate.
+2. Try placing in another actor, a doorway, a staircase or wet/unsupported ground.
+   Expect rejection with the original cargo and contents still carried.
+3. Save/load and travel away/back after a successful indoor placement.
+   Expect the same position, ownership, content quantity and food deterioration.
+4. Check that tents/fires still require their approved land and that the kitchen
+   cupboard, water and cooking installations have not become portable.
+Expected: accepted furniture relocation and persistence; no blocked access or loss.

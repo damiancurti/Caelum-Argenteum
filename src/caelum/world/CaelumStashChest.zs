@@ -205,7 +205,8 @@ class CaelumStashChest : Actor
         A_ChangeLinkFlags(0,0);SetOrigin(position,false);
         RefreshChestVisual();
     }
-    virtual bool StoragePlacementAllowed(CaelumPlayer user,vector3 point){return true;}
+    virtual bool StoragePlacementAllowed(CaelumPlayer user,vector3 point)
+    {return CaelumCampLand.AllowsFurniture(user,point,Radius);}
     bool TryPlaceStorage(CaelumPlayer user)
     {
         if(Cargo==null || Cargo.Owner!=user)return false;

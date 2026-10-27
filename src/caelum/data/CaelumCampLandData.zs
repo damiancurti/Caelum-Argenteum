@@ -2,6 +2,8 @@
 class CaelumCampLandData : Object
 {
     const REVISION=1;
+    static clearscope bool FurnitureInterior(String map)
+    {return map=="MAP01";}
     static clearscope bool Garden(String map,String flat)
     {return map=="MAP01" && flat=="CMGR01A";}
     static clearscope bool Countryside(String map,vector3 p)

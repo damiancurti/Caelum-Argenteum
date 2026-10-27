@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.26.** Obtain and update the complete repository, validate
+**Current release: 5.8.27.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.27 - Indoor furniture placement (#411)
+
+Movable storage furniture can now be rearranged inside the mansion, under the
+approved land permission. Wardrobes and ordinary carried chests use the same
+land checks; city streets and expired/unacquired property do not grant placement.
+Campfire/tent permissions remain separate. All placements still require the
+complete dry, stable, clear footprint, preserving doors, stairs and passages.
+Moving a filled object preserves its native contents, title and physical mass;
+existing fixed kitchen/water installations remain fixed. No new saved fields,
+map geometry, artwork, recipe or economic values are introduced.
+
+Validation in assets/validation_5827 records96 executed native PASS,
+zero failures/static errors, and16,980 source-matching package members. CA411-INTERIOR-01
+awaits author corroboration; all earlier outstanding checks remain pending.
+This permission patch does not finish the wider furniture catalogue or V5.8.
 
 ## 5.8.26 - Stored-book reading (#410)
 

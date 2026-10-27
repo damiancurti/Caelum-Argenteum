@@ -12,8 +12,6 @@ class CaelumWardrobe : CaelumStashChest
     override double EmptyStorageWeight(){return CaelumWardrobeData.EMPTY_KG;}
     override double StorageVisualScale(){return 1;}
     override int StorageDisplayType(){return CaelumWardrobeData.DISPLAY_TYPE;}
-    override bool StoragePlacementAllowed(CaelumPlayer user,vector3 point)
-    {return CaelumCampLand.Allows(user,point,Radius);}
     override String StorageVisualClass()
     {return IsChestLocked()?"CaelumWardrobeLockedVisual":ChestOpen?"CaelumWardrobeOpenVisual":"CaelumWardrobeClosedVisual";}
     override void PostBeginPlay()

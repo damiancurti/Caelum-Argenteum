@@ -1,0 +1,69 @@
+{
+  "version": "5.8.27",
+  "issue": 411,
+  "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+  "runs": [
+    {
+      "label": "interior-delivery-core",
+      "executed_passes": 17,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "e236a241e2641f0a4622df02a24471d4f2c1916398081d0dbaccf984c99811a9"
+    },
+    {
+      "label": "interior-delivery-property",
+      "executed_passes": 7,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "e236a241e2641f0a4622df02a24471d4f2c1916398081d0dbaccf984c99811a9"
+    },
+    {
+      "label": "interior-delivery-seed",
+      "executed_passes": 17,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "e236a241e2641f0a4622df02a24471d4f2c1916398081d0dbaccf984c99811a9"
+    },
+    {
+      "label": "interior-delivery-resume",
+      "executed_passes": 4,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "e236a241e2641f0a4622df02a24471d4f2c1916398081d0dbaccf984c99811a9"
+    },
+    {
+      "label": "interior-delivery-hub",
+      "executed_passes": 21,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "e236a241e2641f0a4622df02a24471d4f2c1916398081d0dbaccf984c99811a9"
+    },
+    {
+      "label": "interior-delivery-migration02",
+      "executed_passes": 3,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "d7ce66ec810cbb534e358a87b2733d25ad1f4ab3e3f5786ca7bafaf56e8c8365"
+    },
+    {
+      "label": "interior-delivery-city",
+      "executed_passes": 5,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "d7ce66ec810cbb534e358a87b2733d25ad1f4ab3e3f5786ca7bafaf56e8c8365"
+    },
+    {
+      "label": "interior-target07",
+      "executed_passes": 19,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "a77b5a8535bd087f1d7bc07edcbb1ed554c19b77acec2d81cac182b6944085aa"
+    },
+    {
+      "label": "reading-interior-rollback",
+      "executed_passes": 3,
+      "runtime_sha256": "4ba0d2a0e550b453b10e22fc7ec7dc22904a7b4f54ee862996be528250427503",
+      "addon_sha256": "6d9c5ddf4e8451fceb2a01f902b9bad701bc5b7a6931cb5f130c67db3dc8d3d6"
+    }
+  ],
+  "native_passes": 96,
+  "native_failures": 0,
+  "source_matching_package_members": 16980,
+  "preserved_map_art_members": 14034,
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "migration": "No production schema changes. Original5.8.26 save forward-loaded and its untouched source reopened by original final26c runtime.",
+  "performance_scope": "Only on-demand local placement permission changed; no new tick work, global census, render or physical dimensions. No new display/frame-rate claim.",
+  "author_acceptance": "Pending CA411-INTERIOR-01; do not offer manual tests until allV5.8 is implemented."
+}
