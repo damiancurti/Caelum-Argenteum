@@ -18,7 +18,8 @@ with zipfile.ZipFile(package) as archive:
     for name,path in files.items():assert archive.read(name)==path.read_bytes(),name
     with zipfile.ZipFile(WORK/'fixtures05/caelum_argenteum_dev.pk3') as earlier:
         changed=[name for name in files if earlier.read(name)!=archive.read(name)]
-expected={'LANGUAGE','caelum/data/CaelumKitchenFixtureData.zs','caelum/data/kitchen_fixtures.textures',
+expected={'LANGUAGE','localization/index.json','localization/INDEX.md',
+          'caelum/data/CaelumKitchenFixtureData.zs','caelum/data/kitchen_fixtures.textures',
           'caelum/world/CaelumPhysicalHazards.zs','caelum/world/CaelumSewerMaze.zs',
           'models/caelum/props/kitchen_fixtures/locked.obj'}
 assert set(changed)<=expected,changed
