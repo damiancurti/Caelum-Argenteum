@@ -71,9 +71,8 @@ class CaelumContaminationStorage : Object play
         if(user!=null)return CaelumFoodIllness.Value(user);
         let entry=Get(body);
         // Contacto/recogida pueden ocurrir antes del primer tic tras cargar.
-        // Cerrar primero el intervalo constante guardado, sin buscar otros actores.
-        if(entry!=null && entry.Exposure!=null && !entry.Exposure.Ready && entry.Exposure.HistoryReady)
-            entry.Exposure.Advance();
+        // Cerrar primero el intervalo guardado o cargado, sin buscar otros actores.
+        if(entry!=null && entry.Exposure!=null)entry.Exposure.SettleNow();
         return entry!=null && entry.Revision>=CaelumContaminationData.STATE_REVISION
             ? entry.Concentration : 0;
     }
@@ -88,8 +87,7 @@ class CaelumContaminationStorage : Object play
             return;
         }
         let entry=Get(body,true);
-        if(entry!=null && entry.Exposure!=null && !entry.Exposure.Ready && entry.Exposure.HistoryReady)
-            entry.Exposure.Advance();
+        if(entry!=null && entry.Exposure!=null)entry.Exposure.SettleNow();
         if(entry!=null)entry.Concentration=value;
     }
     // Botiquines y mate cuentan su curación potencial, incluso con Vida llena.

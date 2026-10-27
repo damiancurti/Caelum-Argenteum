@@ -1,0 +1,238 @@
+{
+  "version": "5.8.28",
+  "issue": 502,
+  "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+  "previous_runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+  "runs": [
+    {
+      "label": "weather-delivery-core",
+      "executed_passes": 20,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-resume",
+      "executed_passes": 3,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-hub",
+      "executed_passes": 4,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-perf",
+      "executed_passes": 0,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-legacy",
+      "executed_passes": 3,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "2e2874bb3409e21b9bea1bca92757a3ea6fa3355c67bd0ea16ce6cb008796c66"
+    },
+    {
+      "label": "weather-delivery-objects",
+      "executed_passes": 19,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "c58cbe35e78570ffa7b7907c8d4740046e7c87f388198d65405370a72b57061d"
+    },
+    {
+      "label": "weather-delivery-storage",
+      "executed_passes": 2,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "c58cbe35e78570ffa7b7907c8d4740046e7c87f388198d65405370a72b57061d"
+    },
+    {
+      "label": "weather-delivery-limbo",
+      "executed_passes": 13,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "87fd65218c0969f92a760d6c3517bf39cbabcfc88e38e7e816e4e32c351b436b"
+    },
+    {
+      "label": "weather-delivery-limbohub",
+      "executed_passes": 4,
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "addon_sha256": "87fd65218c0969f92a760d6c3517bf39cbabcfc88e38e7e816e4e32c351b436b"
+    },
+    {
+      "label": "weather-old-seed27",
+      "executed_passes": 1,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "7a5be2e5fe952557a0632869b8036731fe99864b68741113772fccd3338015a8"
+    },
+    {
+      "label": "weather-old-rollback27",
+      "executed_passes": 1,
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "addon_sha256": "7a5be2e5fe952557a0632869b8036731fe99864b68741113772fccd3338015a8"
+    }
+  ],
+  "native_passes": 71,
+  "native_failures": 0,
+  "static_errors": 0,
+  "source_matching_package_members": 16980,
+  "preserved_map_art_members": 14034,
+  "original_save_sha256": "b0f583c14b4e7b051e5c931a80234886eca6b59ad3a4927c36b2169fd323487a",
+  "performance": [
+    {
+      "label": "weather-perf-base27",
+      "utc": "2026-10-27T11:43:36.133307+00:00",
+      "runtime_sha256": "6a0e364e4a5c509c68b4ab728b608034450e54daf67036e4bf2841c342b46fe7",
+      "fixture_sha256": "6f4e64d03b9b2b11253c0cfceb5ae2da4cce0ccdc2adad9c81221913a4e4cead",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-interior-work\\build\\issue411-interior\\final27\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-base27.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-base27.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "CAP502",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-base27.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-base27.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 1000,
+      "spawned_objects": 1000,
+      "census_population": 1019,
+      "census_ms": 1.0204,
+      "phase_elapsed_ms": 19934.41539990902,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66643219349458,
+      "p95_callback_ms": 17.0629,
+      "p99_callback_ms": 17.4808,
+      "worst_callback_ms": 18.0083,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 solid objects; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "solid actor"
+    },
+    {
+      "label": "weather-perf-final28b",
+      "utc": "2026-10-27T11:47:51.352146+00:00",
+      "runtime_sha256": "4defc45874b4e3a9e5ac6e50cf1f2e07cd5f6a91b7508678dfcca79f08f67d1e",
+      "fixture_sha256": "6f4e64d03b9b2b11253c0cfceb5ae2da4cce0ccdc2adad9c81221913a4e4cead",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-weather\\final28b\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-final28b.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-final28b.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "CAP502",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-final28b.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-weather-work\\build\\issue502-hygiene\\weather-perf-final28b.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 1000,
+      "spawned_objects": 1000,
+      "census_population": 1019,
+      "census_ms": 1.1128,
+      "phase_elapsed_ms": 20033.206499934196,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666965804837364,
+      "p95_callback_ms": 17.0365,
+      "p99_callback_ms": 17.4962,
+      "worst_callback_ms": 17.8921,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 solid objects; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "solid actor"
+    }
+  ],
+  "replay_comparison": {
+    "uncached": {
+      "milliseconds": 9868.688,
+      "checksum": 19610.57252
+    },
+    "shared_cache": {
+      "milliseconds": 86.9435,
+      "checksum": 19610.57252
+    },
+    "uncached_runtime_sha256": "68721642b02d53c30235d4507f2c8b47d9f3c1054207e03525c36f511c934b58"
+  },
+  "migration": "Revision1/2 dirt preserved; revision2 constant intervals still settled; exterior history starts at migration. Original native save forward-loaded and reopened in unchanged original runtime.",
+  "limitations": "Natural weather for existing physical-object nodes only. Temporary seals, NPC physiology, unloaded housekeeping and remaining contact/stackable adapters still pending. Replay remains linear in elapsed civil minutes; the cache bounds memory, not historical time. No displayed-frame/GPU FPS claim.",
+  "author_acceptance": "CA502-WEATHER-HISTORY-01 pending; defer all manual checks/questions until allV5.8 implementation is ready."
+}

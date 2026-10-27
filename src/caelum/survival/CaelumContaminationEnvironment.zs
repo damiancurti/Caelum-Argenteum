@@ -2,6 +2,7 @@
 class CaelumContaminationWorld : StaticEventHandler
 {
     Array<bool> Industrial;
+    transient CaelumContaminationWeatherCache HistoryWeather;
 
     void Observe(Actor actor)
     {
@@ -15,6 +16,7 @@ class CaelumContaminationWorld : StaticEventHandler
     }
     override void WorldLoaded(WorldEvent e)
     {
+        HistoryWeather=null;
         Industrial.Clear();Industrial.Resize(level.Sectors.Size());
         // Censo tipado único al cargar: reconstruye sectores de talleres ya existentes.
         let stations=ThinkerIterator.Create('CaelumCraftingStation');Actor station;

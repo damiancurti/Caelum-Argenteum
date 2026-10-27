@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.27** - 2026-10-27.
+Documentation version: **5.8.28** - 2026-10-27.
+
+## 5.8.28 - Regional weather history for objects (#502)
+
+Exposed physical objects now reconstruct natural temperature, humidity and rain
+for elapsed civil minutes after save/hub restoration or a loaded clock jump.
+Their recorded region, weather seed, shelter, environmental category and surface
+area drive the existing exposure/washing rules. Cleaning settles prior exposure
+before replacing dirt. Revision-2 exterior saves retain their concentration and
+begin history now; their existing constant Limbo intervals remain valid.
+
+A transient shared cache holds at most32 date/location weather pages. Eviction
+only recomputes deterministic samples; it never truncates elapsed time or merges
+object concentrations. No recurring actor scan, new balance, map or artwork.
+Temporary climate-seal history, NPC physiology, unloaded household routines and
+remaining stackable/contact adapters are still open in #502; V5.8 is unfinished.
+
+Validation in assets/validation_5828 records71 executed native PASS, zero
+failures/static errors, current/prior saves and hub return, preserved storage
+ownership, and a matched1,000-object callback comparison. Shared weather reduces
+the measured1,000-receiver/day replay from9,868.688 to86.9435ms with identical
+results; this is not a displayed-frame/GPU FPS claim.
+CA502-WEATHER-HISTORY-01 awaits author corroboration. The author requested that
+manual checks and questions wait until the entire V5.8 implementation is ready.
 
 ## 5.8.27 - Indoor furniture placement (#411)
 

@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-179 - Share historical weather and settle before changing dirt
+Status/evidence: RESOLVED-VERIFIED (native engine)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #502; regional object history delivery
+Affected baseline: ecdea2b9 plus5.8.28 working tree; validation_5828
+Environment: GZDoom4.14.2, Windows11, Vulkan,1280x720/60cap
+Scope: CaelumContaminationObject, CaelumContaminationStorage, weather cache
+
+Independently evaluating each elapsed weather minute for1,000 receivers cost
+9,868.688ms for a day. A shared transient cache keyed by date and complete
+climate/location metadata reduced it to86.9435ms with identical results. Keep
+receiver concentration/area integration individual. The32-page memory bound
+only controls cached weather; eviction must never truncate elapsed time.
+
+A storage regression also exposed dirt accruing after cleaning from the loaded
+interval preceding it. Settle pending history before every read/write/contact,
+including normal loaded intervals. Do not resample expensive geometry for each
+read: retain staggered sampling and advance only the known interval anchor.
+Native pickup, storage/toss, current/old saves, hub, roof/rain, tiny areas,
+partial-minute reference integration and cache eviction regress this behavior.
+
+Evidence: assets/validation_5828/RESULTS.md and report.json;71 native PASS,
+zero final failures/static errors. Matched1,000-object P99 renderer callbacks
+17.4808/17.4962ms; PresentMon denied, so no displayed-frame/FPS claim. Replay
+remains linear in elapsed minutes; no arbitrary-year scalability claim.
+Author acceptance: PENDING CA502-WEATHER-HISTORY-01. Natural object climate only;
+unrecorded temporary seals and other unfinished #502 adapters remain separate.
+
 ## CA-KP-178 - Check existing furniture after adding a new installation
 Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27
