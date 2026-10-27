@@ -2981,6 +2981,16 @@ closed collision, Use, hinge completion and passage in both doorway orientations
 See assets/validation_5120 (city-04 reproducer; city-05 passing results). This
 lesson concerns the initialization order, not a general ban on runtime Spawn.
 
+
+Follow-up, #410 /5.8.31 (2026-10-27): immediate furniture placement reproduced
+the same deferred-initialization boundary. A fresh wardrobe/cupboard still had
+the generic chest's32-MU radius and60-MU height before its first PostBeginPlay.
+The acquisition transaction now sets the approved storage tier, calls the
+idempotent EnsureStorage and applies documented physical dimensions before
+checking placement; it never calls PostBeginPlay manually. Native failed/clear
+placement and later save/hub checks are in assets/validation_5831. This preserves
+blocked-attempt rollback and the ordinary fixed kitchen installation.
+
 ## CA-KP-074 - Native autosave requests are queued before the save is written
 
 Status/evidence: ENGINE-VERIFIED, #164 / 5.1.18, 2026-10-10.

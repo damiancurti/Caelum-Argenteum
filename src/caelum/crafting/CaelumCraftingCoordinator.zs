@@ -864,6 +864,7 @@ class CaelumCraftingCoordinator : Object play
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)
+            && !CaelumStorageFurnitureData.IsRecipe(user.CraftingSelectionRecipe)
             && user.CraftingSelectionRecipe!=CaelumHygieneData.CLOTH_RECIPE
             && user.FindInventory(CaelumUtilityCrafting.ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
@@ -1478,6 +1479,7 @@ class CaelumCraftingCoordinator : Object play
 
             if(CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))CaelumClothing.Preview(user);
             if(CaelumMateData.IsRecipe(user.CraftingSelectionRecipe))CaelumMateCrafting.Preview(user);
+            if(CaelumStorageFurnitureData.IsRecipe(user.CraftingSelectionRecipe))CaelumStorageFurnitureCrafting.Preview(user);
             if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))CaelumCampCrafting.Preview(user);
             if(user.CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)CaelumHygieneCrafting.Preview(user);
 

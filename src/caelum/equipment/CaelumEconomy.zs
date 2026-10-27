@@ -807,6 +807,7 @@ class CaelumEconomyRules : Object
     play static double GetInventoryUnitBaseValue(Inventory item)
     {
         if (item == null) { return 0.0; }
+        let furniture=CaelumStorageFurnitureItem(item);if(furniture!=null)return CaelumStorageFurnitureCrafting.Value(furniture.Variant());
         if(item is 'CaelumCleaningCloth')return CaelumHygieneCrafting.ClothValue();
         if(item is 'CaelumCampTent')return CaelumCampCrafting.Value(0);
         let offer=CaelumRecipeOffer(item);

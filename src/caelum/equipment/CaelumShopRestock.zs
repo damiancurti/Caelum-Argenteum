@@ -21,6 +21,7 @@ class CaelumShopProduct : Object play
     }
     bool Matches(Inventory item)
     {
+        if(CaelumStorageFurnitureData.IsItem(item) && CaelumContaminationStorage.Value(item)>0)return false;
         if(item is 'CaelumCampPot' && CaelumCampPot(item).WaterLiters>0)return false;
         let mate=CaelumMateItem(item);
         if(mate!=null && (mate.YerbaLoaded || mate.WaterLiters>0 || mate.UsesRemaining>0))return false;
@@ -56,6 +57,8 @@ class CaelumShopProduct : Object play
         {for(int r=CaelumLockRules.FIRST_RECIPE;r<CaelumLockRules.FIRST_RECIPE+CaelumLockRules.RECIPE_COUNT;r++)if(CaelumLockRules.RecipeItem(r)==ItemType)return r;return -1;}
         if(Kind==SIMPLE)
         {
+            for(int furniture=0;furniture<CaelumStorageFurnitureData.COUNT;furniture++)
+                if(NativeClass==CaelumStorageFurnitureData.ItemClass(furniture))return CaelumStorageFurnitureData.FIRST_RECIPE+furniture;
             if(NativeClass=='CaelumCleaningCloth')return CaelumHygieneData.CLOTH_RECIPE;
             if(NativeClass=='CaelumArrowAmmo')return CaelumConstants.CRAFTING_ARROW_RECIPE;
             if(NativeClass=='CaelumBoltAmmo')return CaelumConstants.CRAFTING_BOLT_RECIPE;

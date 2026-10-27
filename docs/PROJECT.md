@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.30** - 2026-10-27.
+Documentation version: **5.8.31** - 2026-10-27.
+
+## 5.8.31 - Storage furniture acquisition (#410)
+
+The approved wardrobe/cupboard supply is integrated with normal learned recipes,
+Provisions, manufacturing restock and native placement/storage. No map, model or
+inventory-icon replacement. New recipe IDs append after meals; revision18 keeps
+old learning and starts these recipes unknown. Movable cupboards reuse the
+accepted ten-stack/100kg construction separately from the fixed kitchen fixture.
+Static validation and 107 selected native checks passed, including final icon
+review. Other furniture acquisition and #415/#416/#417/#502 remain open. Evidence:
+assets/validation_5831; CA410-STORAGE-ACQUISITION-01 author corroboration pending.
 
 ## 5.8.30 - Luxury furniture catalogue (#410, integration in progress)
 

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.30** - 2026-10-27.
+Documentation version: **5.8.31** - 2026-10-27.
+
+## 5.8.31 / #410 - Storage furniture acquisition
+
+Implemented and verified learned wardrobe/cupboard recipes, three Provisions units,
+ten recipe copies, manufacturing restock, exact native payment/materials, failed
+placement rollback, real contents/locks/title/dirt and prior-save migration.
+Accepted art/icons and the fixed kitchen installation are retained. Static checks
+and 107 selected native assertions pass in assets/validation_5831. Remaining
+chairs/beds/tables/sofas/library/desk supply
+and broader V5.8 work remain open. Do not infer author acceptance.
 
 ## 5.8.30 / #410 - Luxury furniture catalogue
 

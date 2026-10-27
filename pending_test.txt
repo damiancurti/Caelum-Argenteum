@@ -188,3 +188,15 @@ from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interacti
 Expected: original period furniture, ordinary rest bonuses, no duplicated items,
 no overlapping seated bodies or missing serving/canteen visuals. Repeat after save.
 Outstanding; author corroboration is deferred until all V5.8 implementation is ready.
+
+[CA410-STORAGE-ACQUISITION-01] Version5.8.31 / #410 - Furniture acquisition
+Prerequisites: final grouped V5.8 handoff; keep original saves for rollback.
+1. In Provisions, buy a wardrobe and a cupboard. Check the price, mass and icons;
+   buy another of the same type and confirm separate objects and decreasing stock.
+2. Read each recipe from the library and craft it with Workbench + Fine Tools.
+   Cancel once, then finish; cancellation keeps ingredients, completion spends them.
+3. Activate a furniture item from inventory on a clear permitted floor. Try an
+   occupied spot first: the item must remain. Store food/water, carry and replace it.
+4. Save/load and leave/return with a carried piece. Contents, lock, title and dirt
+   must persist. The existing fixed kitchen cupboard must remain fixed.
+Expected: no duplicated items, free stock resets, lost contents or changed limits.

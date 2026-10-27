@@ -36,6 +36,7 @@ class CaelumContainerRules : Object play
     }
     static clearscope String NameKey(int tier)
     {
+        if(tier==CaelumStorageFurnitureData.CUPBOARD_DISPLAY)return "CA_KITCHEN_CUPBOARD";
         if(tier==CaelumStoredReadingData.DISPLAY_TYPE)return "CA_RECIPE_SHELF";
         if(tier==CaelumWardrobeData.DISPLAY_TYPE)return "CA_FURNITURE_WARDROBE";
         switch(Clamp(tier,SMALL,LARGE))
@@ -74,7 +75,7 @@ class CaelumContainerRules : Object play
                 || user.IsEquipmentItemCraftingLocked(equipment.ItemId)))return false;
         let special=CaelumSpecialInventoryItem(item);
         if(depositing && special!=null && special.LimboQuestUnits>0)return false;
-        if(!depositing && equipment==null && !CaelumCampData.IsItem(item) && !(item is "CaelumLockItem") && item.MaxAmount<=1
+        if(!depositing && equipment==null && !CaelumCampData.IsItem(item) && !CaelumStorageFurnitureData.IsItem(item) && !(item is "CaelumLockItem") && item.MaxAmount<=1
             && user.FindInventory(item.GetClassName())!=null)return false;
         if(depositing && special!=null && special.GetSpecialCategory()==CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && user.GetReservedCraftingMaterialUnits(special.GetSpecialType(),special.GetSpecialTier())>0)return false;

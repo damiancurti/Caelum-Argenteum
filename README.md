@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.30.** Obtain and update the complete repository, validate
+**Current release: 5.8.31.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.31 - Storage furniture purchase and fabrication (#410)
+
+Wardrobes and movable cupboards can be learned, crafted and bought through the
+existing workshop, library and Provisions systems. Three units per type and ten
+recipe copies use material-derived prices and manufacturing replenishment.
+The inventory representation places one real storage owner, then uses native
+chest transport for its actual contents, locks, title and contamination. The
+mansion kitchen installation remains fixed. Existing art/icons are reused.
+Other furniture acquisition and V5.8 issues remain unfinished. Static validation
+and 107 selected native checks passed; evidence and its presentation-only retest
+are recorded in assets/validation_5831. Author checks remain pending until the
+final grouped V5.8 handoff.
 
 ## 5.8.30 - Functional luxury furniture catalogue (#410)
 

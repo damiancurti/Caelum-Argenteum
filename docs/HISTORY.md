@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.30** - 2026-10-27.
+Documentation version: **5.8.31** - 2026-10-27.
+
+## 5.8.31 - Storage furniture acquisition (#410, 2026-10-27)
+
+The author's three-per-type/ten-recipe-copy approval is applied to wardrobes and
+movable cupboards using their delegated existing construction bills. Normal
+manufacturing, efficiency, price margins, stock and native inventory/cargo are
+retained. Failed placement leaves the original item; successful placement creates
+one titled storage owner and transfers its contamination. Fixed mansion kitchen
+cupboards retain their existing placement restrictions. No artwork is replaced.
+Appended recipes use knowledge revision 18; earlier knowledge is preserved.
+Static validation and 107 selected native assertions passed. Visual review found
+and corrected the legacy panel's fallback icon; both furniture sprites and their
+crafting previews were rechecked in the final build. Package/source identity and
+the presentation-only evidence reuse are recorded in assets/validation_5831.
+Manual corroboration remains
+pending CA410-STORAGE-ACQUISITION-01, grouped for the full V5.8 handoff.
 
 ## 5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)
 

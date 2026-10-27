@@ -3534,6 +3534,8 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if(CaelumStorageFurnitureData.IsRecipe(CraftingSelectionRecipe))
+            return CaelumStorageFurnitureData.Icon(CraftingSelectionRecipe-CaelumStorageFurnitureData.FIRST_RECIPE);
         if(CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)return "graphics/caelum/icons/hygiene/cloth.png";
         if(CaelumCampData.IsRecipe(CraftingSelectionRecipe))return CaelumCampData.Icon(CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(CraftingSelectionRecipe))return CaelumMateCrafting.Icon(CraftingSelectionRecipe-CaelumMateData.FIRST_RECIPE);

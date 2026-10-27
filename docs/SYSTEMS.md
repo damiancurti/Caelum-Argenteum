@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.30** - 2026-10-27.
+Documentation version: **5.8.31** - 2026-10-27.
+
+## Storage furniture supply - 5.8.31 (#410)
+
+The author approved three movable furniture units per type in Provisions, ten
+copies of each recipe in the library, material cost plus25% before ordinary shop
+margins, and restock by actual manufacturing time (2026-10-27). This integration
+covers wardrobes and cupboards; other furniture supply is still pending.
+
+| Piece | Empty mass | Wood at100% efficiency | Iron ingot, tier2 | Storage |
+| --- | ---: | ---: | ---: | --- |
+| Wardrobe |153.8955961kg |152,905g |992g |25 stacks /1,000kg |
+| Movable cupboard |62.633kg |62,333g |300g |10 stacks /100kg |
+
+The wardrobe bill reuses CaelumWardrobeData and its museum-based generator.
+Cupboard wood is62.633kg total minus0.300kg hardware from the already delegated
+kitchen-fixture construction. Both use Workbench + Fine Tools Bench, normal
+complexity and existing Dexterity/efficiency/waste rules. No new work rate or
+price margin is introduced. Ingredients, empty masses and images are reused;
+there is no invented new container capacity.
+
+The inventory action places the item in front of the character under #411's
+full footprint, stable/dry ground, property and access checks. A blocked attempt
+retains the original item and resources. Successful placement transfers dirt and
+assigns lawful title, then uses the existing actual chest owner/cargo for contents,
+locks and future movement. The two types have independent inventory instances,
+can use the existing Box capacity rules before placement, and never merge dirty
+resale stock into newly manufactured stock. The authored wall-hung kitchen
+cupboard remains fixed; the purchased/fabricated variant is floor-placed.
+
+Recipes append after meals, without renumbering accepted IDs. Knowledge revision18
+preserves earlier learning and initializes only the new entries as unknown.
+Merchant revision1 adds missing products once, preserving sold quantities and
+existing restock deadlines. No retroactive stock reset is performed.
 
 ## 5.8.30 - Luxury furniture and movable supply decision (#410)
 

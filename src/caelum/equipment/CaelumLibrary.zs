@@ -17,6 +17,7 @@ class CaelumLibrary : Object play
     // ni recorrer el inventario cientos de veces al abrir el catálogo completo.
     static double ProductValue(CaelumPlayer user,int recipe,int requestedTier)
     {
+        if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureCrafting.Value(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
         if(recipe==CaelumHygieneData.CLOTH_RECIPE)return CaelumHygieneCrafting.ClothValue();
         if(CaelumCampData.IsRecipe(recipe))return CaelumCampCrafting.Value(recipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(recipe))return CaelumMateCrafting.Value(recipe-CaelumMateData.FIRST_RECIPE);
