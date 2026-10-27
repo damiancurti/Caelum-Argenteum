@@ -3537,6 +3537,7 @@ class CaelumPlayer : DoomPlayer
         if(CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)return "graphics/caelum/icons/hygiene/cloth.png";
         if(CaelumCampData.IsRecipe(CraftingSelectionRecipe))return CaelumCampData.Icon(CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(CraftingSelectionRecipe))return CaelumMateCrafting.Icon(CraftingSelectionRecipe-CaelumMateData.FIRST_RECIPE);
+        if(CaelumMealData.IsRecipe(CraftingSelectionRecipe))return CaelumMealData.Icon(CaelumCookingData.Meal(CraftingSelectionRecipe));
         int potion=CaelumChemistryData.OutputConsumable(CraftingSelectionRecipe);
         if(potion>=0)return CaelumPotionRules.Icon(potion);
         if(CaelumClothingData.IsRecipe(CraftingSelectionRecipe))return CaelumClothingData.Icon(CraftingSelectionRecipe-CaelumClothingData.FIRST_RECIPE);

@@ -92,7 +92,7 @@ class CaelumRestSafety : Object play
             && skip.AnchorFurniture!=null && skip.AnchorFurniture.CanReach(user);
         let station=CaelumCraftingStation(user.ActiveCraftingStationActor);
         bool timelessCraft=crafting && level.MapName=="MAP01" && station!=null
-            && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5
+            && ((station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5) || station is 'CaelumKitchenStation')
             && station.CanReachFrom(user) && (user.Pos-station.Pos).Length()<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
         bool timelessReading=level.MapName=="MAP01" && (CaelumRecipeSession.Working(user)
             || (skip!=null && skip.Open && skip.OriginMap==level.MapName

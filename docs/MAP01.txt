@@ -1,6 +1,22 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.18** - 2026-10-26.
+Documentation version: **5.8.19** - 2026-10-26.
+
+5.8.19 - Attended cooking and shared bread proofing (#410)
+
+Three fixed kitchen actors are installed in the mansion's false-wall room:
+stove (1460,336,0), oven (1532,336,0), counter (1652,336,0), all facing 90 degrees.
+Their nominal sizes are 0.70 x 0.65 x 1.08m, 0.70 x 0.65 x 1.08m and
+1.80 x 0.70 x 1.05m; the iron bodies are 0.80m high before the flue.
+Placement and physical masses come from the documented delegated calculations
+in assets/art_source/kitchen_stations/DATA.json, generated into one runtime table.
+
+Installation uses bounded local occupancy queries, actual collision validation
+and an idempotent mansion-controller flag. It adds actors to existing geometry;
+no WAD, secret passage or water reserve is replaced. Native approach/use checks
+pass at each actor. The sink, overhead cupboard and broader furniture work remain
+separate unfinished scope. The fixed counter has one shared unattended batch;
+stove/oven use the attended cooking rules in SYSTEMS. CA410-COOKING-01 is pending.
 
 5.8.18 - Prepared meals on existing dining tables (#410)
 

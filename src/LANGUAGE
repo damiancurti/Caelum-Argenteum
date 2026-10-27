@@ -6737,3 +6737,26 @@ CA_MEAL_BREAD = "Pan";
 CA_MEAL_ROAST_BEEF = "Carne asada";
 CA_MEAL_ROAST_FISH = "Pescado asado";
 CA_MEAL_PUCHERO = "Puchero";
+
+[enu default]
+CA_KITCHEN_DOUGH = "Proofed bread dough";
+CA_KITCHEN_STOVE = "Kitchen stove";
+CA_KITCHEN_OVEN = "Kitchen oven";
+CA_KITCHEN_COUNTER = "Kitchen counter";
+CA_PROOF_TITLE = "Bread proofing";
+CA_PROOF_BEGIN = "Start proofing";
+CA_PROOF_COLLECT = "Take dough";
+CA_PROOF_INPUTS = "One shared batch: 700 g flour, 14 g salt, 7 g yeast and 0.420 L potable water. Requires the bread recipe.\nProofing takes 2 world hours unattended. Collect 1.141 kg of dough, then take it to the oven with 772 g coal. Collection frees this vessel. Dough keeps its contamination.";
+CA_PROOF_PROGRESS = "Time remaining: %.1f world minutes.\nDough contamination: %.2f.\nThe batch keeps proofing while you are away. Collect it here when ready.";
+CA_COOKING_CANCEL = "One batch makes ten 100-g portions. Attend the station; waiting is allowed. Dexterity does not shorten cooking. Cancel to keep reserved ingredients and fuel with their current age.";
+[es]
+CA_KITCHEN_DOUGH = "Masa leudada de pan";
+CA_KITCHEN_STOVE = "Cocina";
+CA_KITCHEN_OVEN = "Horno de cocina";
+CA_KITCHEN_COUNTER = "Mesada de cocina";
+CA_PROOF_TITLE = "Leudado del pan";
+CA_PROOF_BEGIN = "Iniciar leudado";
+CA_PROOF_COLLECT = "Retirar masa";
+CA_PROOF_INPUTS = "Un lote compartido: 700 g de harina, 14 g de sal, 7 g de levadura y 0,420 L de agua potable. Requiere la receta de pan.\nLeuda durante 2 horas del mundo sin atención. Retirá 1,141 kg de masa y llevala al horno con 772 g de carbón. Retirarla libera el recipiente. La masa conserva su contaminación.";
+CA_PROOF_PROGRESS = "Tiempo restante: %.1f minutos del mundo.\nContaminación de la masa: %.2f.\nEl lote sigue leudando cuando te vas. Retiralo aquí cuando esté listo.";
+CA_COOKING_CANCEL = "Cada lote produce diez porciones de 100 g. Atendé la estación; podés usar la espera. La Destreza no acorta la cocción. Cancelar conserva los ingredientes y el combustible reservados con su edad actual.";

@@ -33,6 +33,9 @@ class CaelumCartographyServiceData : Object
                 return "CA_CRAFTING_STATION_ALCHEMY";
             case CaelumConstants.CRAFTING_STATION_FERMENTATION:
                 return "CA_CRAFTING_STATION_FERMENTATION";
+            case CaelumConstants.CRAFTING_STATION_STOVE:return "CA_KITCHEN_STOVE";
+            case CaelumConstants.CRAFTING_STATION_OVEN:return "CA_KITCHEN_OVEN";
+            case CaelumConstants.CRAFTING_STATION_COUNTER:return "CA_KITCHEN_COUNTER";
             default:
                 return "CA_CRAFTING_STATION_NONE";
         }

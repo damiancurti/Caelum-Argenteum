@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.18** - 2026-10-26.
+Documentation version: **5.8.19** - 2026-10-26.
 
 ## 5.8.19 - Kitchen process artwork (#410, author review pending)
 

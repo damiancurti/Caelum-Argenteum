@@ -37,8 +37,12 @@ class CaelumTimeAdvanceState : Inventory
 
     static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
+        let counter=user!=null?CaelumKitchenCounterStation(user.ActiveCraftingStationActor):null;
+        bool proofing=skipping && CaelumProofingUI.Active(user) && counter.Batch!=null && counter.Batch.Occupied
+            && CaelumProofing.Reachable(user,counter);
         bool crafting=user!=null && user.CraftingTaskActive
             && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampTask.Attended(user) || CaelumHygieneTask.Attended(user) || CaelumBathTask.Attended(user) || CaelumCleaningTask.Attended(user));
+        crafting=crafting || proofing;
         bool reading=CaelumRecipeSession.Working(user);
         String reason=CaelumRestSafety.BlockReason(user,CaelumCleaningTask.Timeless(user),crafting || reading,scanWorld);
         if(reason.Length()!=0)return reason;

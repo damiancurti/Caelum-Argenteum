@@ -437,6 +437,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         M110 A 0;
         M111 A 0;
         M112 A 0;
+        M113 A 0;
         M043 A 0;
         M044 A 0;
         M045 A 0;

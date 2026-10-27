@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.18** - 2026-10-26.
+Documentation version: **5.8.19** - 2026-10-26.
+
+## 5.8.19 - Attended cooking and shared bread proofing (#410)
+
+The mansion kitchen now supplies a stove, oven and shared proofing counter.
+The four learned recipes make ten 100-g portions using the approved ingredients,
+fuel and world time. Bread first proofs unattended for two hours; the collected
+1.141-kg dough retains its age when carried to the oven. Cancelling attended
+cooking releases reserved supplies without rejuvenating them.
+
+Native engine evidence, save migration/rollback and export checks are recorded
+in assets/validation_5819. CA410-COOKING-01 awaits author corroboration; no prior
+acceptance is extended to this new workflow or artwork. Remaining #410 work
+includes the broader furnishing catalogue, remaining kitchen fixtures and
+acquisition. The #411 campfire adapter and #412 furniture/rest integration stay
+in separate patches. V5.8 also retains #415, #416, #417 and #502 work; multiplayer
+corroboration remains deferred to V5.12.
 
 ## 5.8.18 - Prepared meal items and consumption (#410)
 

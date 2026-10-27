@@ -21,7 +21,7 @@ class CaelumWaterBoiling : Object
     {
         if(item==null)return false;
         if(CaelumCampTask.Locked(item))return true;
-        if(CaelumChemistryCrafting.Locked(item))return true;
+        if(CaelumChemistryCrafting.Locked(item) || CaelumCookingCrafting.Locked(item))return true;
         let user=CaelumPlayer(item.Owner);
         let brew=CaelumWaterBoilingState.Find(user);
         return user!=null && user.CraftingTaskActive

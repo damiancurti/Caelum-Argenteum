@@ -682,7 +682,10 @@ class CaelumConstants : Object
     const CRAFTING_STATION_MASTER_BENCH = 11;
     const CRAFTING_STATION_ALCHEMY = 12;
     const CRAFTING_STATION_FERMENTATION = 13;
-    const CRAFTING_STATION_COUNT = 14;
+    const CRAFTING_STATION_STOVE = 14;
+    const CRAFTING_STATION_OVEN = 15;
+    const CRAFTING_STATION_COUNTER = 16;
+    const CRAFTING_STATION_COUNT = 17;
 
     // Dos metros exactos en la escala de desarrollo (32 unidades = 1 m).
     // Las estaciones forman una red transitiva: cada enlace individual debe
@@ -730,7 +733,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT + CaelumMealData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -738,7 +741,7 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 16;
+    const CRAFTING_RECIPE_BOOK_VERSION = 17;
     // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
     const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
     const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;
@@ -824,6 +827,7 @@ class CaelumConstants : Object
     const CRAFTING_TASK_HYGIENE = 9;
     const CRAFTING_TASK_BATH = 10;
     const CRAFTING_TASK_CLEAN = 11;
+    const CRAFTING_TASK_COOKING = 12;
     const CARTRIDGE_STATION_REVISION = 1;
     const CRAFTING_ACTIVE_STATION_DISTANCE = 96.0;
     const CRAFTING_SIMPLE_TICS_PER_MATERIAL = 1;
@@ -1210,7 +1214,7 @@ class CaelumConstants : Object
     const MATERIAL_CENSER_BASE = 89;
     const MATERIAL_SCEPTER_BASE = 90;
     const MATERIAL_ORB_BASE = 91;
-    const MATERIAL_TYPE_COUNT = CaelumKitchenData.SALT + 1;
+    const MATERIAL_TYPE_COUNT = CaelumCookingData.DOUGH + 1;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;
