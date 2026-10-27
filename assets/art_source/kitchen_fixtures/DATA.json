@@ -1,0 +1,18 @@
+{
+  "issue": 410,
+  "authority": "Author delegated furniture dimensions/material calculations; cupboard10 stacks/100kg and domestic200L/+1L per world minute already approved.",
+  "references": [
+    {"url": "https://inmuseums.pl/all-objects/5mQHgw43t52ec7lBBT0v_hanging-cupboard-", "title": "National Museum in Szczecin, hanging food cupboard MNS/E/4432,1880-1910", "use": "Period wall-hung wooden food-storage construction only. Our two solid doors and dimensions are an original interpretation, not a replica or a claimed exact1889 object."},
+    {"url": "https://api.vam.ac.uk/v2/museumobject/O8362", "title": "Burges washstand,1880", "use": "Reuse the already accepted owned wood/inset-basin domestic sink model and its documented dimensions; do not copy museum pixels."}
+  ],
+  "map_units_per_meter": 32,
+  "cupboard": {
+    "width_m": 1.35, "depth_m": 0.45, "height_m": 0.70,
+    "board_m": 0.020, "back_m": 0.012, "shelf_m": 0.018,
+    "wood_density_kg_m3": 760, "hardware_kg": 0.3,
+    "position": [1652,360,48], "facing": 90,
+    "model_back_offset_m": 0.45,
+    "note": "The conservative square collision contains the wall-offset mesh; the visual back sits against the existing north wall. Hardware mass is a delegated design allowance for hinges, knobs and lock plate."
+  },
+  "sink": {"position": [1740,368,0], "facing": 90, "reuse": "CaelumDomesticSink dimensions/model/physical defaults"}
+}

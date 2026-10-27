@@ -1,0 +1,7 @@
+{
+  "issue": 410,
+  "tool": "Built-in imagegen",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "source": "cupboard-source-v1.png",
+  "prompt": "Create one original inventory sprite for Caelum Argenteum, a painted pixel-oriented dark-fantasy RPG inspired by nineteenth-century Argentina. A broad wall-hanging kitchen cupboard, roughly 1.35 m wide, 0.45 m deep and 0.70 m high, dark honey-brown wood, two closed framed and recessed panel doors, discreet moulded top and bottom cornices, small worn brass knobs and a simple central lock escutcheon. No legs or floor base: this cabinet is mounted above a kitchen preparation table. Restrained nineteenth-century joinery, visible woodgrain, readable door divisions and bevels, broad hand-painted brush clusters, umber shadows and ochre highlights, soft consistent upper-left light. Show the complete object centered in front three-quarter view with generous clear margins. Transparent background, clean silhouette, no wall, no table, no other objects, no scenery, no floor shadows, no labels or lettering. No glossy 3D render, no photography, no cartoon outlines. Keep it clearly legible at 128 pixels. Original local interpretation of period hanging food cupboards, not a replica of a museum object."
+}
