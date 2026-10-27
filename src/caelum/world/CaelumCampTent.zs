@@ -15,7 +15,17 @@ class CaelumCampWorld : StaticEventHandler
         while((fire=CaelumCampFire(fires.Next()))!=null){fire.Prepare();fire.ClockReady=false;}
     }
     override void WorldLoaded(WorldEvent e){Rebuild();}
-    override void WorldUnloaded(WorldEvent e){for(int i=0;i<Fires.Size();i++)Fires[i].Extinguish();Tents.Clear();Fires.Clear();}
+    override void WorldUnloaded(WorldEvent e)
+    {
+        for(int i=0;i<Fires.Size();i++)
+        {
+            // Soltar la reserva antes de guardar el hub; el mapa siguiente
+            // no puede liberar una referencia que ya quedó en su instantánea.
+            if(CaelumCampCooking.HoldsHeat(Fires[i]))Fires[i].Busy.CancelCraftingTask();
+            Fires[i].Extinguish();
+        }
+        Tents.Clear();Fires.Clear();
+    }
     override void OnUnregister(){Tents.Clear();Fires.Clear();}
     override void NetworkProcess(ConsoleEvent e)
     {

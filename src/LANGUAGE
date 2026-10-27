@@ -6767,3 +6767,26 @@ CA_KITCHEN_CUPBOARD = "Kitchen cupboard";
 [es]
 CA_KITCHEN_SINK = "Fregadero de cocina";
 CA_KITCHEN_CUPBOARD = "Alacena de cocina";
+
+[enu default]
+CA_CAMP_COOK_MENU = "Cook";
+CA_CAMP_COOK_FIRE = "Fire and fuel";
+CA_CAMP_COOK_RESUME = "Continue / relight";
+CA_CAMP_COOK_CANCEL = "Cancel cooking";
+CA_CAMP_COOK_TERMS = "Ten portions per batch. Beef/fish need no pot; puchero needs the empty mounted pot. Cooking uses the fire's wood and cannot heat extra water.";
+CA_CAMP_COOK_WATER = "; %.2f L potable water";
+CA_CAMP_COOK_RECIPE_TIME = " | %.0f min, %.2f kg wood";
+CA_CAMP_COOK_UNLEARNED = "Recipe not learned.";
+CA_CAMP_COOK_PROGRESS = "%s: %.1f min cooking left. Lighting: %.0f s. Wood: %.2f kg.";
+CA_CAMP_COOK_PAUSE = "Without fire, progress is retained. Return to Fire and fuel to load wood, then continue; relighting takes one minute. Ingredients keep ageing. Cancel returns no burned wood.";
+[es]
+CA_CAMP_COOK_MENU = "Cocinar";
+CA_CAMP_COOK_FIRE = "Fogata y leña";
+CA_CAMP_COOK_RESUME = "Continuar / encender";
+CA_CAMP_COOK_CANCEL = "Cancelar cocción";
+CA_CAMP_COOK_TERMS = "Diez porciones por lote. Carne/pescado sin olla; puchero con olla montada y vacía. Cocinar consume la leña de la fogata y no calienta agua adicional.";
+CA_CAMP_COOK_WATER = "; %.2f L agua potable";
+CA_CAMP_COOK_RECIPE_TIME = " | %.0f min, %.2f kg leña";
+CA_CAMP_COOK_UNLEARNED = "Receta sin aprender.";
+CA_CAMP_COOK_PROGRESS = "%s: faltan %.1f min de cocción. Encendido: %.0f s. Leña: %.2f kg.";
+CA_CAMP_COOK_PAUSE = "Sin fuego se conserva el progreso. Volvé a Fogata y leña para recargar y después continuar; encender lleva un minuto. Los ingredientes siguen deteriorándose. Cancelar no devuelve la leña quemada.";

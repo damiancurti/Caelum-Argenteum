@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.20** - 2026-10-26.
+Documentation version: **5.8.21** - 2026-10-26.
+
+## 5.8.21 - Attended camp cooking and fuel interruption (#411)
+
+Implemented the #411 adapter separately from #410 kitchen recipes and fixtures.
+The latest author decision preserves batch progress on fuel interruption, with
+refilling and one-minute relighting. Cancellation retains aged ingredients but
+not consumed wood. Puchero uses a mounted empty pot and carried potable water;
+all useful heat goes to food while cooking. Existing fire/pot/trivet artwork,
+placement, thermal emission, recipe costs and portion art are unchanged.
+
+Evidence and its exact scope are recorded in assets/validation_5821/RESULTS.md
+and report.json: native recipe/reservation/fuel/pot guards, uninterrupted full
+world-clock acceleration, interruption/refill/ignition, save/resume, original
+stove-task forward loading/rollback and live bilingual controls. Private failure
+logs remain available; the first Spanish UI probe exposed a wrong locale header
+and damaged accents in the newly added labels, corrected before delivery.
+The hub probe also exposed a retained busy fire after cancellation on arrival;
+release now happens in the departing map before its snapshot (CA-KP-177).
+
+The checks distinguish injected elapsed-fire integration probes from full clock
+execution. They run unpaused at 5% audio; they are not a rendering benchmark.
+CA411-COOKING-01(origin5.8.21/#411) remains pending, along with the two #410 checks.
+No author acceptance, issue closure or merge is inferred.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

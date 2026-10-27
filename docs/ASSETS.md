@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.20** - 2026-10-26.
+Documentation version: **5.8.21** - 2026-10-26.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

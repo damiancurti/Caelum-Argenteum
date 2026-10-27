@@ -32,3 +32,23 @@ carried empty bottle/canteen, several stored items, and a small padlock/key pair
    A matching small padlock/key uses normal lock rules; no portable-carry action
    is offered for this wall fixture. Ordinary portable chests still work.
 Expected: readable artwork, reachable fixtures and persistent finite resources.
+
+CA411-COOKING-01 | Origin: 5.8.21 | Issue: #411
+Prerequisites: final 5.8.21 package, GZDoom 4.14.2, disposable campaign;
+owned deployed fire, wood, learned recipes206-208, their food ingredients,
+carried potable water and a camp pot. Existing #410 checks remain separate.
+1. Use the fire, select Cook (C), and inspect the three recipes in Spanish.
+   Beef/fish need no pot. Puchero requires a mounted empty pot; bread is absent.
+2. Cook fish using wood and no coal. Thirty attended world minutes produce ten
+   100-g portions. Existing automatic eating may consume a portion afterwards.
+3. Start with little wood. At exhaustion, record remaining time. Refill through
+   Fire and fuel, then Continue/relight. The one-minute ignition does not cook;
+   remaining food time resumes afterward, including across save/load.
+4. Cancel after some burning: ingredients/water remain with their current age;
+   burned wood stays spent. Extinguish and recover the unburned remainder.
+5. Try puchero with no pot or a nonempty pot: reject without consuming food.
+   Mount an empty pot and complete it: ten portions and exactly500mL carried
+   water consumed. Beef/fish may cook beside a mounted water pot, but that water
+   must not heat simultaneously. Cancelling restores its ordinary heating.
+Expected: readable working controls, retained progress, exact resources and no
+duplicate portions. Report the failed step, if any; do not reuse prior acceptance.

@@ -1656,6 +1656,14 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumCampCooking.Active(user))
+        {
+            let task=CaelumCookingTaskState.FindCooking(user);
+            if(task.OriginMap!=level.MapName || task.Fire==null || task.Fire.bDestroyed)
+            {user.CancelCraftingTask();return false;}
+            user.ActiveCraftingStationActor=task.Fire;task.Fire.Advance();
+            return CaelumCampCooking.Attended(user);
+        }
         if(CaelumCleaningTask.Active(user))
         {if(!CaelumCleaningTask.Attended(user)){CaelumCleaningTask.Cancel(user);return false;}return true;}
         if(CaelumBathTask.Active(user))
@@ -1934,6 +1942,7 @@ class CaelumCraftingCoordinator : Object play
         if (!user.RefreshActiveCraftingStationSession()) { return; }
         user.CraftingTaskProgressing = true;
         CaelumTimeSkipState.RecordWork(user);
+        if(CaelumCampCooking.Active(user)){CaelumCampCooking.Advance(user);return;}
         if(CaelumCleaningTask.Active(user)){CaelumCleaningTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         if(CaelumBathTask.Active(user)){CaelumBathTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         user.CraftingTaskRemainingSeconds = Max(
