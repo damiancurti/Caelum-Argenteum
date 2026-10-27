@@ -1,0 +1,30 @@
+{
+  "issue": 410,
+  "version": "5.8.35",
+  "date": "2026-10-27",
+  "tool": "Built-in image_gen",
+  "sources": [
+    {
+      "source": "two-seat.png",
+      "sha256": "031c2e16d2bd4ababe5c5564fca3041d4278e2d59afc7a67da43ef4bd335a073",
+      "runtime": "src/sprites/caelum/rest_furniture/CSF2A0.png"
+    },
+    {
+      "source": "three-seat-v1.png",
+      "sha256": "d6a78a48f7d80758117dd5735de9b61e7bfa53708ba2bb75c6875c27d08ecc08",
+      "runtime": null
+    },
+    {
+      "source": "three-seat.png",
+      "sha256": "2fdbb6e23672c5ebc66700e4076797742a9412260458807be60060b633a18457",
+      "runtime": "src/sprites/caelum/rest_furniture/CSF3A0.png"
+    }
+  ],
+  "prompts": "PROMPTS.json",
+  "references": {
+    "shape": "Owned sofa-target.png, validation_5829, adapted to documented two/three seat construction.",
+    "style": "Owned CLICA0.png and generated two-seat sibling, painted pixel-oriented shading only."
+  },
+  "processing": "Byte-for-byte source copies, generated alpha preserved; no raster edits. Earlier three-seat output retained as provenance.",
+  "rights": "Original project-directed generation; no external images or Doom pixels."
+}
