@@ -1,26 +1,51 @@
 {
   "issue": 411,
   "version": "5.8.21",
-  "runtime": "final21",
-  "runtime_sha256": "f1b732d59d9a2b2aa842a016402a1e9af3bb12d4ffec9cd02d9ee2796cb60415",
+  "runtime": "final21b",
+  "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17",
   "source_matching_members": 16960,
-  "native_passes": 156,
+  "native_passes": 160,
   "native_failures": 0,
   "earlier_probe_differences": {
     "camp01": [
       "LANGUAGE",
       "localization/index.json",
       "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
       "caelum/world/CaelumCampTent.zs",
       "caelum/world/CaelumPhysicalHazards.zs",
       "caelum/world/CaelumSewerMaze.zs"
     ],
     "camp03": [
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
       "caelum/world/CaelumCampTent.zs",
       "caelum/world/CaelumPhysicalHazards.zs",
       "caelum/world/CaelumSewerMaze.zs"
     ],
-    "final21": []
+    "final21": [
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ]
+  },
+  "line_ending_only_differences": {
+    "camp01": [
+      "caelum/crafting/CaelumCampCooking.zs"
+    ],
+    "camp03": [
+      "caelum/crafting/CaelumCampCooking.zs"
+    ],
+    "final21": [
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ]
   },
   "runs": [
     {
@@ -82,6 +107,11 @@
       "label": "camp-stove-core03",
       "executed_passes": 55,
       "runtime_sha256": "d353169cbdfb105cd65a755d52dbabbf07f4566707a2cb3aa2327ef26d38ad0b"
+    },
+    {
+      "label": "camp-finalb-hub",
+      "executed_passes": 4,
+      "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17"
     }
   ],
   "author_check": "CA411-COOKING-01",

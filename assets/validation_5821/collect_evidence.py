@@ -23,17 +23,18 @@ with zipfile.ZipFile(package) as archive:
     allowed={'LANGUAGE','localization/INDEX.md','localization/index.json',
              'caelum/world/CaelumPhysicalHazards.zs','caelum/world/CaelumSewerMaze.zs',
              'caelum/world/CaelumCampTent.zs'}
-    differences={}
+    differences={};line_endings={}
     for earlier in ('camp01','camp03','final21'):
         with zipfile.ZipFile(WORK/earlier/'caelum_argenteum_dev.pk3') as old:
             assert set(old.namelist())==set(files)
             changed=[name for name in files if old.read(name)!=archive.read(name)]
-            assert set(changed)<=allowed,(earlier,changed)
+            line_endings[earlier]=[name for name in changed if old.read(name).replace(b'\r\n',b'\n')==archive.read(name).replace(b'\r\n',b'\n')]
+            assert set(changed)-set(line_endings[earlier])<=allowed,(earlier,changed)
             differences[earlier]=changed
 report={'issue':411,'version':'5.8.21','runtime':runtime,
         'runtime_sha256':hashlib.sha256(package.read_bytes()).hexdigest(),
         'source_matching_members':len(files),'native_passes':0,'native_failures':0,
-        'earlier_probe_differences':differences,'runs':[],
+        'earlier_probe_differences':differences,'line_ending_only_differences':line_endings,'runs':[],
         'author_check':'CA411-COOKING-01','author_acceptance':'pending'}
 (HERE/'native').mkdir(exist_ok=True)
 for label in labels:
