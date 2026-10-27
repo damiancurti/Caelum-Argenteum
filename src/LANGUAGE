@@ -6863,3 +6863,10 @@ CA_LUXURY_TABLE = "Luxury dining table";
 CA_LUXURY_CHAIR = "Sillón de lujo";
 CA_LUXURY_BED = "Cama de lujo";
 CA_LUXURY_TABLE = "Mesa de lujo";
+
+[enu default]
+CA_BASIC_CHAIR = "Wooden chair";
+CA_BASIC_BED = "Wooden cot";
+[es]
+CA_BASIC_CHAIR = "Silla de madera";
+CA_BASIC_BED = "Catre de madera";

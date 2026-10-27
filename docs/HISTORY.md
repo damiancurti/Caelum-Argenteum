@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.33** - 2026-10-27.
+Documentation version: **5.8.34** - 2026-10-27.
+
+## 5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)
+
+The author's approved supply rules are extended to the corrected wooden chair
+and raised cot using their existing calculated construction bills. The wooden
+chair needs no sewing machine, fabric or iron; the cot retains its real textile
+and hardware inputs. Recipe revision20 and merchant revision2 preserve prior
+knowledge and depleted stock. Native transport retains the same body/title/dirt.
+Original painted inventory sprites follow the canonical art direction.
+Validation:206 literal native PASS on final34a plus12 original-runtime checks,
+zero failures and zero static errors; all17,002 packaged members match source.
+Prior map/art bytes are preserved. New/current saves and hub travel retain both
+ordinary bodies; an actual5.8.33 save retains depleted shop stock, learned luxury
+recipes, the original body and dirt after migration and original-runtime rollback.
+Spanish inventory sprites were inspected. Evidence: assets/validation_5834. Author check
+CA410-BASIC-ACQUISITION-01 remains pending; no complete V5.8 claim.
 
 ## 5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)
 

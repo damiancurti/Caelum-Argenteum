@@ -46,6 +46,8 @@ def generate():
                             ('HEIGHT', row['height']*DATA['units_per_meter']),
                             ('SURFACE', row['surface']*DATA['units_per_meter']), ('MASS', row['empty_kg'])]:
             lines.append(f"    const {row['kind'].upper()}_{name}={value:.9f};")
+    for material in MATERIALS:
+        lines.append(f"    static clearscope int {material.title()}(int kind){{return kind==0?{rows[0]['recipe_grams'][material]}:{rows[1]['recipe_grams'][material]};}}")
     lines += ['}', '']
     (ROOT/'src/caelum/data/CaelumBasicRestData.zs').write_text('\n'.join(lines), encoding='utf-8', newline='\n')
     print(json.dumps(rows))

@@ -16,7 +16,7 @@ class CaelumRestFurnitureCrafting : Object
         u.CraftingBasicRequired=CaelumRestFurnitureData.Grams(v,0);u.CraftingTierRequired=CaelumRestFurnitureData.Grams(v,1);
         u.CraftingSilverRequired=CaelumRestFurnitureData.Grams(v,2);u.CraftingGoldRequired=0;
         u.CraftingMissingStationType=CaelumConstants.CRAFTING_STATION_NONE;
-        for(int s=0;s<3;s++)if(!CaelumCraftingRules.NetworkHasStation(u.CraftingNetworkCapabilities,CaelumRestFurnitureData.Station(s)))
+        for(int s=0;s<3;s++)if(CaelumRestFurnitureData.NeedsStation(v,s) && !CaelumCraftingRules.NetworkHasStation(u.CraftingNetworkCapabilities,CaelumRestFurnitureData.Station(s)))
         {u.CraftingMissingStationType=CaelumRestFurnitureData.Station(s);break;}
     }
 }
