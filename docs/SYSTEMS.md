@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
+
+## 5.8.24 - Wardrobe storage and delegated physical specification (#410)
+
+The author approved 25 stacks and1,000kg of stored contents, using existing
+chest locks/access. Wardrobe display identity3 is separate from the MEDIUM
+capacity tier1. The same native Actor.Inv owns the contents both in the world
+and while carried. A medium padlock remains a separate item with its own mass;
+carrying includes furniture, contents and installed lock. Food lots retain age.
+
+The author delegated historically referenced furniture calculations. Reference:
+[Pugin/Gillows wardrobe,1851-1857](https://heritagecollections.parliament.uk/collections/getrecord/HOP_POW_09440),
+1.321m wide ?0.640m deep ?2.070m high, wooden body with iron fittings. The original
+game interpretation uses the project's algarrobo reference760kg/m3 and iron7870kg/m3;
+it does not claim that the museum's oak is algarrobo. Boards18mm, back12mm,
+shelves18mm and modeled frames/cornice/plinth give152.9043696kg wood; modeled
+hinges/knobs/latch give0.9912265kg iron. Gross component volumes include joints,
+without subtracting joinery. Total153.8955961kg. Rounded material bill152905g
+wood +992g iron is recorded for later recipe integration; no craft time, recipe,
+price or shop stock is introduced by this storage stage.
+
+Physical data and dimensions live in assets/art_source/wardrobe/DATA.json and
+generated CaelumWardrobeData. The collision envelope covers the closed model;
+opening the visual doors does not add movable blocking actors. Carry requires
+actual capacity. Repositioning uses the already-approved garden/current-property/
+unowned-countryside permissions and full dry/stable/access checks; unauthorized
+land retains the cargo without loss. Existing generic chests keep their behavior.
+
+The mansion installer has revision1 and runs after beds/tables and bathrooms.
+Its typed lookup occurs only during initialization/retry at most once per world
+second, normally over zero or one wardrobe; after success the saved revision
+prevents any lookup, including when the object is carried away. Old saves add
+one empty wardrobe without changing their previous chests, contents or geometry.
 
 ## 5.8.23 - Constant Limbo exposure across absence (#502)
 

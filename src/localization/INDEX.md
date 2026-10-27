@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `07befe2d9a8ab7ddb60de22a5ea568328d4c8fec23145718c387252b938deb6c`. Locations include every definition; the last one per language wins.
+SHA-256: `cdad57c6b955c2ca3c3a8334d62a2f17318edaf5ee0997354c3ff8b612cd2f26`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -79,6 +79,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FERMENTATION | 2 | CA_FERMENTATION_MISSING_CHEMISTRY | CA_FERMENTATION_TITLE |
 | CA_FOOD | 5 | CA_FOOD_CLEAN | CA_FOOD_LOTS_DETAIL |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
+| CA_FURNITURE | 1 | CA_FURNITURE_WARDROBE | CA_FURNITURE_WARDROBE |
 | CA_GATHERING | 1 | CA_GATHERING_EXTRACTED | CA_GATHERING_EXTRACTED |
 | CA_GIANT | 1 | CA_GIANT_RAT_NAME | CA_GIANT_RAT_NAME |
 | CA_GUARD | 5 | CA_GUARD_CAPTAIN_ANSWER | CA_GUARD_CAPTAIN_REPEAT_RESPONSE |
@@ -170,7 +171,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SUMMON | 3 | CA_SUMMON_CAST | CA_SUMMON_ZUPAY_NAME |
 | CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
-| CA_TARGET | 21 | CA_TARGET_APPROACH | CA_TARGET_USE |
+| CA_TARGET | 22 | CA_TARGET_APPROACH | CA_TARGET_USE |
 | CA_TAROT | 66 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
 | CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |

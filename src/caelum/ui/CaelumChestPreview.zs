@@ -251,7 +251,7 @@ class CaelumChestPreview : StaticEventHandler
         let font=Font.GetFont("CaelumSmall");
         CaelumPresentation.MenuBackground(0x05070A,0.94);
         DrawLine(Font.GetFont("CaelumDisplay"),Font.CR_GOLD,28,
-            StringTable.Localize(CaelumContainerRules.NameKey(storage.Chest.StorageTier),false));
+            StringTable.Localize(CaelumContainerRules.NameKey(storage.Chest.StorageDisplayType()),false));
         DrawLine(font,Font.CR_GRAY,58,String.Format(StringTable.Localize("CA_CONTAINER_CAPACITY",false),
             storage.UsedSlots,storage.MaximumSlots,storage.UsedWeight,storage.MaximumWeight,storage.TotalWeight));
         DrawLine(font,Font.CR_WHITE,79,StringTable.Localize(storage.Depositing ? "CA_CONTAINER_DEPOSIT"

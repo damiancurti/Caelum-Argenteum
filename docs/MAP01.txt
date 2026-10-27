@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
+
+## 5.8.24 - Northwest bedroom wardrobe (#410)
+
+One empty wardrobe stands at(-304,488,136),facing90, in the existing northwest
+first-floor bedroom. Installation follows the accepted beds/tables and twelve
+bathroom fixtures, with complete native collision checks. No WAD geometry,
+resident identity, belongings or accepted furnishing position changes. Revision1
+and the retained actor prevent respawn when transported; old saves keep their
+original map geometry and receive this actor idempotently.
+
+Storage uses the approved25 stacks/1000kg limit and native locks. Transport and
+mass details belong to SYSTEMS; original artwork/provenance belongs to ASSETS.
+CA410-WARDROBE-01 remains outstanding while the author is away.
 
 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

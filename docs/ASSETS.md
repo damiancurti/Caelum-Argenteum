@@ -1,8 +1,8 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
 
-## Wardrobe artwork candidate (#410; integration follows in5.8.24)
+## 5.8.24 - Wardrobe models and painted icon (#410)
 
 Read SPRITE_ART_DIRECTION before creating the new asset. Original painted source
 created with built-in OpenAI image_gen; exact prompt, reference roles and preserved

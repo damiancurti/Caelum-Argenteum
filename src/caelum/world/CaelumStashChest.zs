@@ -71,6 +71,7 @@ class CaelumStashChest : Actor
     bool PadlockReleased;
     double DomesticSoapRemainderG;
     virtual clearscope bool CanCarryAsStorage(){return true;}
+    virtual clearscope int StorageDisplayType(){return StorageTier;}
     virtual double EmptyStorageWeight()
     {return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;}
     virtual double StorageVisualScale(){return CaelumContainerRules.ScaleFor(StorageTier);}
@@ -202,13 +203,14 @@ class CaelumStashChest : Actor
         A_ChangeLinkFlags(0,0);SetOrigin(position,false);
         RefreshChestVisual();
     }
+    virtual bool StoragePlacementAllowed(CaelumPlayer user,vector3 point){return true;}
     bool TryPlaceStorage(CaelumPlayer user)
     {
         if(Cargo==null || Cargo.Owner!=user)return false;
         vector3 original=Pos;
         double offset=user.Radius+Radius+1.0;
         vector3 destination=user.Pos+(Cos(user.Angle)*offset,Sin(user.Angle)*offset,0);
-        if(!CaelumPlacementGeometry.Fits(user,destination,Radius,Height,self))return false;
+        if(!StoragePlacementAllowed(user,destination) || !CaelumPlacementGeometry.Fits(user,destination,Radius,Height,self))return false;
         bSolid=true;A_ChangeLinkFlags(0,0);SetOrigin(destination,false);
         if(!TestMobjLocation() || !user.CheckSight(self,SF_IGNOREVISIBILITY))
         {SetOrigin(original,false);HideCarriedStorage();return false;}

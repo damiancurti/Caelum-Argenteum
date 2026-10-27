@@ -1,0 +1,262 @@
+{
+  "version": "5.8.24",
+  "issue": 410,
+  "runtime_sha256": "78a40afd14147ffb543afe51b1ff047f0d06d0dd0d521372db1a913ab427c5bc",
+  "previous_runtime_sha256": "d139789ce6aec44d9c4bd05a96d104344ee87e8c183df51a5adbf5d3b9a9c0b6",
+  "source_matching_members": 16970,
+  "preserved_existing_map_art_members": 14026,
+  "tested_variants": {
+    "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b": {
+      "variant": "final24-probe",
+      "different_members": [
+        "LANGUAGE",
+        "localization/index.json",
+        "localization/INDEX.md",
+        "models/caelum/props/wardrobe/open.obj"
+      ]
+    },
+    "31644ed57ed469f097eee4c6aa04fa19f021233f3d224996a18a0d085847e5b6": {
+      "variant": "final24",
+      "different_members": [
+        "LANGUAGE",
+        "localization/index.json",
+        "localization/INDEX.md",
+        "models/caelum/props/wardrobe/open.obj"
+      ]
+    },
+    "edc002b61d75d3c2d866d2edcf89ff67b5df7230923e6350869eff76fe76a2eb": {
+      "variant": "final24b",
+      "different_members": [
+        "LANGUAGE",
+        "localization/index.json",
+        "localization/INDEX.md",
+        "models/caelum/props/wardrobe/open.obj"
+      ]
+    },
+    "8fc1cc09295f6170e7c6b32de6c10337302e3aff86741c439e43a90caa568a48": {
+      "variant": "final24c-probe",
+      "different_members": [
+        "LANGUAGE",
+        "localization/index.json",
+        "localization/INDEX.md"
+      ]
+    },
+    "e8f875d9c93f20904078f8ca0eb407b638f570fc17517ae5c8d35b10922d11c1": {
+      "variant": "final24c",
+      "different_members": [
+        "LANGUAGE",
+        "localization/index.json",
+        "localization/INDEX.md"
+      ]
+    },
+    "78a40afd14147ffb543afe51b1ff047f0d06d0dd0d521372db1a913ab427c5bc": {
+      "variant": "final24d",
+      "different_members": []
+    }
+  },
+  "native_passes": 145,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "wardrobe-final-core",
+      "executed_passes": 48,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "6f3817b2fe4037ce8547bc378254b5a01fbf2142bf2d8e52a09b62ee01a0b2b2"
+    },
+    {
+      "label": "wardrobe-final-mansion",
+      "executed_passes": 19,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "6f3817b2fe4037ce8547bc378254b5a01fbf2142bf2d8e52a09b62ee01a0b2b2"
+    },
+    {
+      "label": "wardrobe-final-placement",
+      "executed_passes": 5,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "6f3817b2fe4037ce8547bc378254b5a01fbf2142bf2d8e52a09b62ee01a0b2b2"
+    },
+    {
+      "label": "wardrobe-final-seed",
+      "executed_passes": 2,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "6f3817b2fe4037ce8547bc378254b5a01fbf2142bf2d8e52a09b62ee01a0b2b2"
+    },
+    {
+      "label": "wardrobe-finalb-carryseed",
+      "executed_passes": 3,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "ffbdf2883abc67ffe692ebc92e3e2f05a27b3ee58099c1b26c5139e35c12905a"
+    },
+    {
+      "label": "wardrobe-finalb-hub",
+      "executed_passes": 7,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "ffbdf2883abc67ffe692ebc92e3e2f05a27b3ee58099c1b26c5139e35c12905a"
+    },
+    {
+      "label": "wardrobe-finalc-carryhub",
+      "executed_passes": 8,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "9debc341d8a6cb799e0cb83e9924962755c52239e9c846a5a17a9eb4385ef7a1"
+    },
+    {
+      "label": "wardrobe-final-load",
+      "executed_passes": 5,
+      "runtime_sha256": "31644ed57ed469f097eee4c6aa04fa19f021233f3d224996a18a0d085847e5b6",
+      "addon_sha256": "9debc341d8a6cb799e0cb83e9924962755c52239e9c846a5a17a9eb4385ef7a1"
+    },
+    {
+      "label": "wardrobe-final-carryload",
+      "executed_passes": 5,
+      "runtime_sha256": "31644ed57ed469f097eee4c6aa04fa19f021233f3d224996a18a0d085847e5b6",
+      "addon_sha256": "bd5b49615556711ea2bd31728c7b91e7661d2d308310ded020ec27eb5fb6aeb5"
+    },
+    {
+      "label": "wardrobe-delivery-legacyresume",
+      "executed_passes": 22,
+      "runtime_sha256": "edc002b61d75d3c2d866d2edcf89ff67b5df7230923e6350869eff76fe76a2eb",
+      "addon_sha256": "b5ceb91dc9d6397daaf06a2173bc43439e2903f6aace9056917d71f23ff5fb8d"
+    },
+    {
+      "label": "wardrobe-finalc-view0",
+      "executed_passes": 2,
+      "runtime_sha256": "eb4d358318417428f4fb90345aadf505b20e060dd1a46e66a9cdc5ca230ab89b",
+      "addon_sha256": "9debc341d8a6cb799e0cb83e9924962755c52239e9c846a5a17a9eb4385ef7a1"
+    },
+    {
+      "label": "wardrobe-finalc2-view1",
+      "executed_passes": 4,
+      "runtime_sha256": "8fc1cc09295f6170e7c6b32de6c10337302e3aff86741c439e43a90caa568a48",
+      "addon_sha256": "cfa119e355af7c988c8bbaf1beeb4641128cbe6ef56534d15d41aa4543441255"
+    },
+    {
+      "label": "wardrobe-delivery-view2",
+      "executed_passes": 4,
+      "runtime_sha256": "edc002b61d75d3c2d866d2edcf89ff67b5df7230923e6350869eff76fe76a2eb",
+      "addon_sha256": "b5ceb91dc9d6397daaf06a2173bc43439e2903f6aace9056917d71f23ff5fb8d"
+    },
+    {
+      "label": "wardrobe-finalc2-view3",
+      "executed_passes": 5,
+      "runtime_sha256": "8fc1cc09295f6170e7c6b32de6c10337302e3aff86741c439e43a90caa568a48",
+      "addon_sha256": "cfa119e355af7c988c8bbaf1beeb4641128cbe6ef56534d15d41aa4543441255"
+    },
+    {
+      "label": "wardrobe-oldseed23",
+      "executed_passes": 1,
+      "runtime_sha256": "d139789ce6aec44d9c4bd05a96d104344ee87e8c183df51a5adbf5d3b9a9c0b6",
+      "addon_sha256": "9da87d8aefca10ce9feaefab30d04487d3305a54781c72e936ad3a3240a364db"
+    },
+    {
+      "label": "wardrobe-rollback23",
+      "executed_passes": 1,
+      "runtime_sha256": "d139789ce6aec44d9c4bd05a96d104344ee87e8c183df51a5adbf5d3b9a9c0b6",
+      "addon_sha256": "9da87d8aefca10ce9feaefab30d04487d3305a54781c72e936ad3a3240a364db"
+    },
+    {
+      "label": "wardrobe-delivery-spanish2",
+      "executed_passes": 4,
+      "runtime_sha256": "78a40afd14147ffb543afe51b1ff047f0d06d0dd0d521372db1a913ab427c5bc",
+      "addon_sha256": "1f32c60f071c60eb3a90b2cd491d1701328a2618eb0a83b9f2a13de03fde09a3"
+    }
+  ],
+  "author_check": "CA410-WARDROBE-01",
+  "author_acceptance": "pending",
+  "static_errors": 0,
+  "performance": [
+    {
+      "label": "wardrobe-perf-base",
+      "runtime_sha256": "d139789ce6aec44d9c4bd05a96d104344ee87e8c183df51a5adbf5d3b9a9c0b6",
+      "addon_sha256": "9673c57c280a4415ef496e945009cb64e02f657ff33df0579c72c38ecec1ab82",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\legacy23\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-base.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-base.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-base.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-base.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19953.49509990774,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.664995246038366,
+      "p95_callback_ms": 17.657,
+      "p99_callback_ms": 18.4448,
+      "worst_callback_ms": 22.2927,
+      "scene": "Unchanged campaign MAP01, northwest bedroom; matched viewpoint, RNG410,1280x720 Vulkan,60FPS cap; one wardrobe visual added; one revision-gated initialization lookup, no new periodic actor scan.",
+      "limits": "Render-callback cadence is not GPU/display presentation; no60FPS or whole-map/sewer/army acceptance claim. No added per-tic diagnostic scan."
+    },
+    {
+      "label": "wardrobe-perf-final",
+      "runtime_sha256": "e8f875d9c93f20904078f8ca0eb407b638f570fc17517ae5c8d35b10922d11c1",
+      "addon_sha256": "9673c57c280a4415ef496e945009cb64e02f657ff33df0579c72c38ecec1ab82",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\final24c\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-final.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-final.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-final.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-wardrobe-work\\build\\issue410-cooking\\wardrobe-perf-final.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19955.995799973607,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666802585487908,
+      "p95_callback_ms": 17.6648,
+      "p99_callback_ms": 18.4054,
+      "worst_callback_ms": 19.7108,
+      "scene": "Unchanged campaign MAP01, northwest bedroom; matched viewpoint, RNG410,1280x720 Vulkan,60FPS cap; one wardrobe visual added; one revision-gated initialization lookup, no new periodic actor scan.",
+      "limits": "Render-callback cadence is not GPU/display presentation; no60FPS or whole-map/sewer/army acceptance claim. No added per-tic diagnostic scan."
+    }
+  ],
+  "save_sha256": {
+    "wardrobe-stored.zds": "39ae26e64b3e628c51c3fa31d41a45faf24f418605c8fd60e613c9c7a38bb11a",
+    "wardrobe-carried24b.zds": "7f1bb5398aef7d45db25c582e7ba7c8fb8e2b36592fba47b6fac7218c3a40b84",
+    "wardrobe-legacy23.zds": "b12caaf22ca6eb5f88b489fb7d717b44b7c49622a97e0ac3c2e62dd480fbbf48"
+  },
+  "generator_manifest_sha256": "6e827190dafcd2c2ab1abfe7fc8ff4d92c0ecd08ab4582e2acdfa9e3eefce380"
+}

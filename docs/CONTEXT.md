@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
+
+**5.8.24/#410:**wardrobe;25stacks/1000kg;153.896kg;validation_5824;CA410-WARDROBE-01-pending.
 
 **5.8.22-23:**mansion-fixtures/Limbo-history;validation_5822-23;author-pending.
 **5.8.19–21:**cooking/fixtures;validation_5819–21;three-checks-pending.
