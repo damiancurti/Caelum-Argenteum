@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-178 - Check existing furniture after adding a new installation
+Status/evidence: RESOLVED-VERIFIED (native engine)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #410; mansion bathroom delivery
+Affected baseline: 2a67b934 plus5.8.22 working tree; validation_5822
+Environment: GZDoom4.14.2, Windows11, unchanged campaign mansion
+Scope: CaelumMansionBathrooms and quest preparation ordering
+
+Checking only new fixture collision and use was insufficient. The first layout
+could fit its twelve actors while preventing later creation of existing tables
+101/103: their south chairs collided with new tubs. Native access probes reported
+the tables missing. A separate visual review caught a basin at a door approach.
+
+Prepare the accepted furnishing layout before installing additions, validate
+the additions against actual local solids and check the combined final layout:
+new approaches/postures/exits, old beds/tables/chairs and full door sweeps.
+Inspect the actual posture camera in every orientation: successful seating
+alone did not detect six wall-facing views; changing fixture angles corrected them.
+The final twelve placements pass those checks without moving accepted furniture
+or changing map geometry. Failed bath-layout/access logs remain private evidence.
+This is an installation-order/collision lesson, not authorization to remove or
+hide existing furniture. Author placement corroboration remains pending.
+
+
 ## CA-KP-177 - Release map-owned reservations before the hub snapshot
 Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-26 / 2026-10-26

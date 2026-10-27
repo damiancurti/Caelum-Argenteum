@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
+
+## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+Added the mansion's twelve domestic fixtures using accepted art and #502
+interactions, sharing the finite kitchen water reserve. The initial native
+placement probe found blocked approaches. Visual inspection also caught a
+lavabo in front of a doorway. Wider checks then found that installing new
+fixtures first could prevent two accepted bedroom tables from appearing.
+The final placement/order preserves those tables, chairs and all door sweeps.
+Posture captures exposed six fixture orientations that placed the existing
+camera against a wall; final angles retain a clear seated/lying view in each room.
+The failed private probes remain evidence, not accepted checks.
+
+assets/validation_5822/RESULTS.md and report.json record final native checks,
+save/hub persistence, original-save forward load and original-package rollback,
+unchanged asset/map hashes, static validation and render-callback timing limits.
+CA410-MANSION-BATH-01 is pending while the author is away. Existing pending
+kitchen/camp checks remain untouched. This is a focused #410 delivery; broader
+V5.8 completion, issue closure and merges are not claimed.
 
 ## 5.8.21 - Attended camp cooking and fuel interruption (#411)
 

@@ -1,6 +1,41 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
+
+## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+The mansion uses the existing domestic sink, bathtub and toilet classes,
+dimensions and interactions. Each of the four first-floor bedrooms receives
+one of each. Positions/facing are defined in assets/map01_mansion/BATHROOMS.json
+and exported deterministically by generate_mansion_bathrooms.py. The layouts
+use the existing bedroom bounds, floor at 136 MU and unchanged map geometry.
+
+All bathroom fixtures use the same MANSION reserve as the kitchen sink:
+200 L potable capacity, 1 L per world minute. A new bedroom does not create a
+new reserve. Existing water, elapsed refill and contamination/soap/metabolic
+credit persist. City-house reserves remain independent. Filling deducts actual
+volume and preserves receiving contamination. Bathing uses the approved soap,
+water, progressive cleaning and lying pose; toilet use keeps its seated pose,
+one-minute completion, 10-L charge and metabolic-credit rules. This delivery
+adds access to those accepted #502 mechanics, not new hygiene balance.
+
+The revision-1 CaelumMansionBathrooms controller belongs to MAP01 and stores
+twelve fixture references. The quest controller adds a false-by-default ready
+flag for old saves. Installation follows accepted bedroom furniture so a new
+fixture cannot silently prevent a pre-existing table or chair from being placed.
+Each placement validates its full final volume, actual floor and local solid
+actors; an occupied spot retries at the existing one-second preparation cadence.
+Completed positions are retained. After all twelve fit, no installation scan
+runs in normal play. The only census is a typed lookup of the single installation
+controller during initialization/retry; twelve local collision queries are the
+fixed upper bound per unsuccessful preparation call, not per NPC or tic.
+
+Migration is additive and idempotent. It does not modify map bytes or refill
+saved water. Original5.8.21 saves were loaded in the new runtime; unchanged
+copies also reloaded in their original package. Keep the original save/package
+for rollback; loading newly saved data in an older engine package is not promised.
+Furniture manufacturing, portable placement, desks and the remaining catalogue
+are separate unfinished #410 work.
 
 ## 5.8.21 - Attended camp cooking and fuel interruption (#411)
 

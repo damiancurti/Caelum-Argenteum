@@ -1,0 +1,174 @@
+{
+  "issue": 410,
+  "version": "5.8.22",
+  "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564",
+  "source_matching_members": 16962,
+  "unchanged_map_art_members": 14028,
+  "native_passes": 303,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "bath-final-shared",
+      "executed_passes": 17,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-final-access",
+      "executed_passes": 34,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-final-hub",
+      "executed_passes": 100,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-finalc-manual",
+      "executed_passes": 1,
+      "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564"
+    },
+    {
+      "label": "bath-finalc-layout",
+      "executed_passes": 96,
+      "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564"
+    },
+    {
+      "label": "bath-finalc-access",
+      "executed_passes": 34,
+      "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564"
+    },
+    {
+      "label": "bath-finalc-capture2",
+      "executed_passes": 12,
+      "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564"
+    },
+    {
+      "label": "bath-final-oldload",
+      "executed_passes": 3,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-final-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-final-resume",
+      "executed_passes": 3,
+      "runtime_sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4"
+    },
+    {
+      "label": "bath-oldseed21",
+      "executed_passes": 1,
+      "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17"
+    },
+    {
+      "label": "bath-rollback21",
+      "executed_passes": 1,
+      "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17"
+    }
+  ],
+  "previous_package": {
+    "sha256": "ebe352cdad4a09772ccb96fceeeaa5dec9bb07cdf6ddff88b66c80c6150cf3d4",
+    "differences": [
+      "caelum/data/CaelumMansionBathroomData.zs"
+    ],
+    "scope": "Only six fixture angles; all approaches/postures, retained layouts and captures rechecked."
+  },
+  "author_check": "CA410-MANSION-BATH-01",
+  "author_acceptance": "pending",
+  "static_errors": 0,
+  "deterministic_outputs": {
+    "src/caelum/data/CaelumMansionBathroomData.zs": "1fc38aa654437b0ea349782be3fe7ee81e70d1c89f66ed8a42b3f4f16a1ae1e3"
+  },
+  "performance": [
+    {
+      "label": "bath-perf-old",
+      "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17",
+      "addon_sha256": "8560fa38f476c89144ee5b8b956a04837d8d7da28b8368792f18c19fb63c1dab",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\legacy21\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-old.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-old.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-old.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-old.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19960.073200054467,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666691326105088,
+      "p95_callback_ms": 17.6638,
+      "p99_callback_ms": 18.5615,
+      "worst_callback_ms": 19.8151,
+      "scene": "Unchanged campaign MAP01, northwest bedroom; matched viewpoint, RNG410,1280x720 Vulkan,60FPS cap; added12 bathroom fixtures and one nonthinking installation controller.",
+      "limits": "Render-callback cadence is not GPU/display presentation; no60FPS or whole-map/sewer/army acceptance claim. No added per-tic diagnostic scan."
+    },
+    {
+      "label": "bath-perf-finalc",
+      "runtime_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564",
+      "addon_sha256": "8560fa38f476c89144ee5b8b956a04837d8d7da28b8368792f18c19fb63c1dab",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\final22c\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-finalc.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-finalc.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-finalc.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-mansion-baths-work\\build\\issue410-cooking\\bath-perf-finalc.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20067.67769996077,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66438098415346,
+      "p95_callback_ms": 17.6394,
+      "p99_callback_ms": 18.6085,
+      "worst_callback_ms": 19.7417,
+      "scene": "Unchanged campaign MAP01, northwest bedroom; matched viewpoint, RNG410,1280x720 Vulkan,60FPS cap; added12 bathroom fixtures and one installation controller without a custom Tick.",
+      "limits": "Render-callback cadence is not GPU/display presentation; no60FPS or whole-map/sewer/army acceptance claim. No added per-tic diagnostic scan."
+    }
+  ]
+}

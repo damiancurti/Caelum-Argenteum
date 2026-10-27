@@ -1,8 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
 
-**5.8.21/#411:**camp-cooking;validation_5821;CA411-COOKING-01pending. **5.8.20/#410:**sink/cupboard;validation_5820;CA410-FIXTURES-01pending. **5.8.19:**cooking/proofing;validation_5819;CA410-COOKING-01pending.
+**5.8.22/#410:**mansion bathrooms;validation_5822;CA410-MANSION-BATH-01pending.
+**5.8.19–21:**cooking/fixtures;validation_5819–21;three-checks-pending.
 
 **5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
 
