@@ -1,0 +1,76 @@
+{
+  "issue": 410,
+  "authority": "Author delegated documented furniture geometry/material calculations; approved cooking recipes remain in CaelumMealData.",
+  "references": [
+    {
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co48606/cast-iron-cooking-range",
+      "title": "Temple and Reynolds cooking range,1848-1860",
+      "use": "Period iron front/hotplate construction; recorded1390mm length and800mm height. Two independent700mm modules reinterpret this scale; depth and shell thickness are design calculations, not museum measurements."
+    },
+    {
+      "url": "https://www.nationaltrustcollections.org.uk/object/1297639",
+      "title": "Nineteenth-century pine kitchen table, Tatton Park",
+      "use": "Period wooden preparation-table construction only; our dimensions and materials are delegated design calculations, not a replica."
+    }
+  ],
+  "map_units_per_meter": 32,
+  "wood_density_kg_m3": 760,
+  "iron_density_kg_m3": 7870,
+  "wood_note": "Reuse approved algarrobo density; original local reinterpretation rather than imported pine identity.",
+  "iron_shell_m": 0.006,
+  "wood_top_m": 0.04,
+  "wood_board_m": 0.02,
+  "stations": [
+    {
+      "id": 0,
+      "key": "stove",
+      "class": "CaelumKitchenStoveStation",
+      "sprite": "CKSV",
+      "size_m": [
+        0.7,
+        0.65,
+        1.08
+      ],
+      "position": [
+        1460,
+        336,
+        0
+      ],
+      "facing": 90
+    },
+    {
+      "id": 1,
+      "key": "oven",
+      "class": "CaelumKitchenOvenStation",
+      "sprite": "CKOV",
+      "size_m": [
+        0.7,
+        0.65,
+        1.08
+      ],
+      "position": [
+        1532,
+        336,
+        0
+      ],
+      "facing": 90
+    },
+    {
+      "id": 2,
+      "key": "counter",
+      "class": "CaelumKitchenCounterStation",
+      "sprite": "CKCT",
+      "size_m": [
+        1.8,
+        0.7,
+        1.05
+      ],
+      "position": [
+        1652,
+        336,
+        0
+      ],
+      "facing": 90
+    }
+  ]
+}

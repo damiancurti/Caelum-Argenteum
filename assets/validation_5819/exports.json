@@ -1,0 +1,21 @@
+{
+  "previous_outputs_unchanged": 11,
+  "repeat_outputs_equal": 15,
+  "sha256": {
+    "src/models/caelum/props/kitchen/counter.obj": "6837246ad826a2cbfc9a193d972f77af7c4022057564dd8cabc74ac28a8b4856",
+    "src/models/caelum/props/kitchen/iron-painted-v1.png": "4948dc4dc13b930c7cab4461d5ea764332add932488b32fcf46675b0ac8ba65b",
+    "src/models/caelum/props/kitchen/oven.obj": "9e5788ff29e2c043d3f33de1dd6f28c45e79b0891d8a03a9167b2671f3ad975c",
+    "src/models/caelum/props/kitchen/stove.obj": "25bf355ee3b89b52695ebeb6051c38d41e8cf0dc1ba1c4d13620a160a1643f9b",
+    "src/graphics/caelum/icons/kitchen_stations/counter.png": "ce171ef87f623efcd9928b964af113c1fc8879d5dbcf236b0acc3f7adfd011af",
+    "src/graphics/caelum/icons/kitchen_stations/oven.png": "bfbaa897f7c213065def6334c7fe7b579db742d3385aab262e42b805ecbaf86e",
+    "src/graphics/caelum/icons/kitchen_stations/stove.png": "00e765547827c7cac47dfa6fd5b6fb5c54f7d2ac105dd08121e37733b2af43b7",
+    "src/graphics/caelum/icons/kitchen/dough.png": "af11f95c33cd354a6a9dde681d062c6fbef96d1ba935f84c1cf0db069514beb9",
+    "src/caelum/data/CaelumKitchenFurnitureData.zs": "2ac72e498ea24aca6549cf3a3e489957f7cb37bbaa18f094faf0423e7a514a39",
+    "src/caelum/data/kitchen_stations.modeldef": "90ac2d562d802675996cc5163a54f88547e285d9dbf2deb8b78f57e7215ba943",
+    "src/caelum/data/kitchen_stations.textures": "f5bddb750fccee62822476f0283c93b84f8e6fd42fa3c96751dbca677f299b9b",
+    "src/caelum/data/kitchen_dough.textures": "7dbcb29bf89551e3e39b4c25604604cb48e38c51290ff281e4a22549c17047ce",
+    "assets/art_source/kitchen_stations/MANIFEST.json": "e2616588e551b59d7a0c4eea5e63310c02af4eb40c24d88edc4219c1572d4e7d",
+    "assets/art_source/kitchen_dough/EXPORT.json": "728471f7e2c44b6a595c201e9216b1e94c7d5acc31c15cc32ca8975ed1d9575f",
+    "assets/art_source/kitchen_dough/contact-sheet.png": "43fa8cfbdd9bcb423a79fe110e9462b81babee5c9cc0ad3de8f4bab717cf5c11"
+  }
+}

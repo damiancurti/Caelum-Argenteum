@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dough",
+    "source_sha256": "2f943563130b818e50fb0847a04a8e5f89a52d5dc8904c74f97a4e6d2c594d59",
+    "runtime": "src/graphics/caelum/icons/kitchen/dough.png",
+    "runtime_sha256": "af11f95c33cd354a6a9dde681d062c6fbef96d1ba935f84c1cf0db069514beb9"
+  }
+]

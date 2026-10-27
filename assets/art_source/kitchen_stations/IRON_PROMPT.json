@@ -1,0 +1,8 @@
+{
+  "issue": 410,
+  "tool": "Built-in imagegen",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "source": "iron-painted-v1.png",
+  "prompt": "A single square seamless material texture for a nineteenth-century cast-iron cooking stove in Caelum Argenteum, a painted pixel-oriented dark-fantasy RPG inspired by 1889 Argentina. Flat orthographic surface swatch only, filling the entire square edge to edge. Soot-dark matte charcoal iron with restrained warm umber patina, softly rubbed graphite highlights, tiny irregular cast-metal pits and a few broad subtle worn brush clusters. Dark but legible medium-dark values, intentionally painted game texture, no horizontal banding, no regular stripes, no directional glossy reflections, no dramatic illumination. No object silhouette, no perspective, no borders, no panel seams, no knobs, no bolts, no text, no symbols, no transparency. Low-contrast details so it can repeat on several mesh faces. Surface material, not a photograph or a 3D render.",
+  "role": "Original painted cast iron surface for the kitchen meshes."
+}

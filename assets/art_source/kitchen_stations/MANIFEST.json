@@ -1,0 +1,74 @@
+{
+  "issue": 410,
+  "records": [
+    {
+      "key": "stove",
+      "mass_kg": 175.997,
+      "vertices": 1136,
+      "bounds_mu": [
+        [
+          -11.2,
+          11.2
+        ],
+        [
+          0.0,
+          34.56
+        ],
+        [
+          -10.4,
+          11.584
+        ]
+      ]
+    },
+    {
+      "key": "oven",
+      "mass_kg": 175.997,
+      "vertices": 608,
+      "bounds_mu": [
+        [
+          -11.2,
+          11.2
+        ],
+        [
+          0.0,
+          34.56
+        ],
+        [
+          -10.4,
+          11.92
+        ]
+      ]
+    },
+    {
+      "key": "counter",
+      "mass_kg": 89.295,
+      "vertices": 456,
+      "bounds_mu": [
+        [
+          -28.8,
+          28.8
+        ],
+        [
+          0.0,
+          33.6
+        ],
+        [
+          -11.2,
+          11.280000000000001
+        ]
+      ]
+    }
+  ],
+  "sha256": {
+    "src/models/caelum/props/kitchen/iron-painted-v1.png": "4948dc4dc13b930c7cab4461d5ea764332add932488b32fcf46675b0ac8ba65b",
+    "src/models/caelum/props/kitchen/stove.obj": "25bf355ee3b89b52695ebeb6051c38d41e8cf0dc1ba1c4d13620a160a1643f9b",
+    "src/graphics/caelum/icons/kitchen_stations/stove.png": "00e765547827c7cac47dfa6fd5b6fb5c54f7d2ac105dd08121e37733b2af43b7",
+    "src/models/caelum/props/kitchen/oven.obj": "9e5788ff29e2c043d3f33de1dd6f28c45e79b0891d8a03a9167b2671f3ad975c",
+    "src/graphics/caelum/icons/kitchen_stations/oven.png": "bfbaa897f7c213065def6334c7fe7b579db742d3385aab262e42b805ecbaf86e",
+    "src/models/caelum/props/kitchen/counter.obj": "6837246ad826a2cbfc9a193d972f77af7c4022057564dd8cabc74ac28a8b4856",
+    "src/graphics/caelum/icons/kitchen_stations/counter.png": "ce171ef87f623efcd9928b964af113c1fc8879d5dbcf236b0acc3f7adfd011af",
+    "src/caelum/data/kitchen_stations.modeldef": "90ac2d562d802675996cc5163a54f88547e285d9dbf2deb8b78f57e7215ba943",
+    "src/caelum/data/kitchen_stations.textures": "f5bddb750fccee62822476f0283c93b84f8e6fd42fa3c96751dbca677f299b9b",
+    "src/caelum/data/CaelumKitchenFurnitureData.zs": "2ac72e498ea24aca6549cf3a3e489957f7cb37bbaa18f094faf0423e7a514a39"
+  }
+}

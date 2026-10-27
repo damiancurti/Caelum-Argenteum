@@ -2,6 +2,33 @@
 
 Documentation version: **5.8.18** - 2026-10-26.
 
+## 5.8.19 - Kitchen process artwork (#410, author review pending)
+
+Original painted stove, oven, preparation counter and proofed-dough sources
+were generated with built-in imagegen under SPRITE_ART_DIRECTION. Exact prompts,
+retained variants and export hashes are in assets/art_source/kitchen_stations
+and kitchen_dough. A separate painted matte-iron texture avoids the striped
+appearance found in the first native review. No previously accepted art changes.
+
+The deterministic kitchen generator supplies original simple meshes, painted
+128px inventory/fallback sprites, registrations and the dimension/placement table.
+It reuses owned wood, brass and trim textures; the iron source is retained at
+full resolution and exported at 256px. Dough uses the existing packer's --dough
+mode. Previous ingredient and meal exports are byte-identical; repeated new
+exports also match. Evidence and native captures: assets/validation_5819.
+
+DATA.json records the author's delegated geometry calculations and references:
+[Temple and Reynolds range, 1848-1860](https://collection.sciencemuseumgroup.org.uk/objects/co48606/cast-iron-cooking-range)
+for period iron construction and its 1390mm-wide/800mm-high body;
+[Tatton Park kitchen table](https://www.nationaltrustcollections.org.uk/object/1297639)
+for nineteenth-century wooden construction. No museum images are copied.
+Our two 700mm modules, depths, 6mm iron shell, algarrobo boards and fixed trough
+are original design approximations, not replicas or claimed museum dimensions.
+The source table documents all assumptions; nominal masses are 175.997kg per
+iron module and 89.295kg for the counter. These fixed actors do not yet establish
+portable furniture recipes or prices. Native appearance remains subject to
+CA410-COOKING-01; technical review is not author acceptance.
+
 ## 5.8.18 - Accepted painted prepared meals (#410)
 
 Four new owned built-in imagegen sources show bread, roast beef, roast hake and

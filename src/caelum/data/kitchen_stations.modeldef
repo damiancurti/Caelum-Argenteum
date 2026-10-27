@@ -1,0 +1,3 @@
+Model CaelumKitchenStoveStation { Path "models/caelum/props/kitchen" Model 0 "stove.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKSV A 0 0 }
+Model CaelumKitchenOvenStation { Path "models/caelum/props/kitchen" Model 0 "oven.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKOV A 0 0 }
+Model CaelumKitchenCounterStation { Path "models/caelum/props/kitchen" Model 0 "counter.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKCT A 0 0 }
