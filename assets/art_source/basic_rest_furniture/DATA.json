@@ -1,0 +1,401 @@
+{
+  "issue": 410,
+  "revision": 1,
+  "authority": "Author requested historical human scale on 2026-10-27, cot legs and sleeping surface at chair-seat height, sleeping bag unchanged at floor level. Construction calculations delegated earlier under #410.",
+  "units_per_meter": 32,
+  "wood_density": 760,
+  "iron_density": 7870,
+  "cloth_kg_m2": 0.38,
+  "references": [
+    {
+      "url": "https://www.antik-heymann.de/en/antiquitaeten/stuehle/biedermeier-stuhl-kirschbaum-619.html",
+      "object": "AH-263, circa1840 Biedermeier wooden side chair",
+      "role": "Published dimensions only: width0.43m, depth0.44m, height0.88m, seat0.46m. Keep owned three-rail silhouette; no external imagery."
+    },
+    {
+      "url": "https://emuseum.colonialwilliamsburg.org/objects/23/cot-folding",
+      "object": "1952-658,1780-1820",
+      "role": "Published footprint only:41x77.5in=1.0414x1.9685m. Author overrides20in historical height with0.46m sleeping surface. Keep owned four straight legs/low headboard, not the external folding mechanism."
+    }
+  ],
+  "chair": {
+    "width": 0.43,
+    "depth": 0.44,
+    "height": 0.88,
+    "surface": 0.46,
+    "members": [
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.448,
+          0
+        ],
+        "size": [
+          0.43,
+          0.024,
+          0.44
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.191,
+          0.218,
+          -0.196
+        ],
+        "size": [
+          0.038,
+          0.436,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.191,
+          0.218,
+          0.196
+        ],
+        "size": [
+          0.038,
+          0.436,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.191,
+          0.67,
+          -0.196
+        ],
+        "size": [
+          0.038,
+          0.42,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.191,
+          0.17,
+          0
+        ],
+        "size": [
+          0.022,
+          0.022,
+          0.39
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.191,
+          0.218,
+          -0.196
+        ],
+        "size": [
+          0.038,
+          0.436,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.191,
+          0.218,
+          0.196
+        ],
+        "size": [
+          0.038,
+          0.436,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.191,
+          0.67,
+          -0.196
+        ],
+        "size": [
+          0.038,
+          0.42,
+          0.038
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.191,
+          0.17,
+          0
+        ],
+        "size": [
+          0.022,
+          0.022,
+          0.39
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.57,
+          -0.196
+        ],
+        "size": [
+          0.385,
+          0.055,
+          0.02
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.7,
+          -0.196
+        ],
+        "size": [
+          0.385,
+          0.055,
+          0.02
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.85,
+          -0.196
+        ],
+        "size": [
+          0.385,
+          0.055,
+          0.02
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.17,
+          -0.196
+        ],
+        "size": [
+          0.38,
+          0.022,
+          0.022
+        ]
+      }
+    ]
+  },
+  "bed": {
+    "width": 1.0414,
+    "depth": 1.9685,
+    "height": 0.68,
+    "surface": 0.46,
+    "members": [
+      {
+        "material": "wood",
+        "center": [
+          -0.49570000000000003,
+          0.41300000000000003,
+          0
+        ],
+        "size": [
+          0.05,
+          0.09,
+          1.9685
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.49570000000000003,
+          0.227,
+          -0.9442499999999999
+        ],
+        "size": [
+          0.05,
+          0.454,
+          0.055
+        ]
+      },
+      {
+        "material": "iron",
+        "center": [
+          -0.49570000000000003,
+          0.41500000000000004,
+          -0.9442499999999999
+        ],
+        "size": [
+          0.055,
+          0.006,
+          0.06
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          -0.49570000000000003,
+          0.227,
+          0.9442499999999999
+        ],
+        "size": [
+          0.05,
+          0.454,
+          0.055
+        ]
+      },
+      {
+        "material": "iron",
+        "center": [
+          -0.49570000000000003,
+          0.41500000000000004,
+          0.9442499999999999
+        ],
+        "size": [
+          0.055,
+          0.006,
+          0.06
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.49570000000000003,
+          0.41300000000000003,
+          0
+        ],
+        "size": [
+          0.05,
+          0.09,
+          1.9685
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.49570000000000003,
+          0.227,
+          -0.9442499999999999
+        ],
+        "size": [
+          0.05,
+          0.454,
+          0.055
+        ]
+      },
+      {
+        "material": "iron",
+        "center": [
+          0.49570000000000003,
+          0.41500000000000004,
+          -0.9442499999999999
+        ],
+        "size": [
+          0.055,
+          0.006,
+          0.06
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0.49570000000000003,
+          0.227,
+          0.9442499999999999
+        ],
+        "size": [
+          0.05,
+          0.454,
+          0.055
+        ]
+      },
+      {
+        "material": "iron",
+        "center": [
+          0.49570000000000003,
+          0.41500000000000004,
+          0.9442499999999999
+        ],
+        "size": [
+          0.055,
+          0.006,
+          0.06
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.41300000000000003,
+          -0.9592499999999999
+        ],
+        "size": [
+          0.9414000000000001,
+          0.09,
+          0.05
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.41300000000000003,
+          0.9592499999999999
+        ],
+        "size": [
+          0.9414000000000001,
+          0.09,
+          0.05
+        ]
+      },
+      {
+        "material": "cloth",
+        "center": [
+          0,
+          0.457,
+          0
+        ],
+        "size": [
+          0.9414000000000001,
+          0.006,
+          1.8684999999999998
+        ]
+      },
+      {
+        "material": "cloth",
+        "center": [
+          0,
+          0.48000000000000004,
+          -0.73425
+        ],
+        "size": [
+          0.5,
+          0.04,
+          0.26
+        ]
+      },
+      {
+        "material": "wood",
+        "center": [
+          0,
+          0.5700000000000001,
+          -0.97175
+        ],
+        "size": [
+          0.9414000000000001,
+          0.22000000000000003,
+          0.025
+        ]
+      }
+    ]
+  }
+}
