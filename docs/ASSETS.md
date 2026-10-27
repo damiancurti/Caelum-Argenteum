@@ -1,6 +1,8 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.22** - 2026-10-27.
+Documentation version: **5.8.23** - 2026-10-27.
+
+5.8.23 / #502 changes exposure persistence only; no artwork, audio or map bytes change. Native evidence is in assets/validation_5823.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
 

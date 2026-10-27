@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.22** - 2026-10-27.
+Documentation version: **5.8.23** - 2026-10-27.
+
+## 5.8.23 - Constant Limbo exposure across absence (#502)
+
+Physical objects now preserve their constant mansion exposure interval across
+save/load and hub absence. The first query or cleaning operation settles it
+before reading or replacing contamination. Previous saves retain their dirt
+and start history at migration, without retroactive exposure. Existing geometry,
+art, transmission rates and normal loaded-world behavior remain unchanged.
+
+This delivery handles the established constant Limbo climate only. Variable
+exterior weather, temporary climate seals, NPC physiology and unloaded household
+cleaning still require their own historical adapters. Evidence is recorded in
+assets/validation_5823: 78 executed native PASS, zero static errors, current/prior
+save and hub checks, and a matched 1,000-object callback-timing comparison.
+CA502-LIMBO-HISTORY-01 awaits author corroboration.
+
+Initial private probes attempted to inspect a spawned node before the native
+spawn event and compared a stale one-second reading with the current clock.
+The fixture now waits for registration and explicitly settles before comparison;
+failed logs remain evidence. No author acceptance is inferred.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
 

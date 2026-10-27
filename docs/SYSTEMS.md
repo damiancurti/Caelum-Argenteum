@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.22** - 2026-10-27.
+Documentation version: **5.8.23** - 2026-10-27.
+
+## 5.8.23 - Constant Limbo exposure across absence (#502)
+
+Physical objects now preserve their constant mansion exposure interval across
+save/load and hub absence. The first query or cleaning operation settles it
+before reading or replacing contamination. Previous saves retain their dirt
+and start history at migration, without retroactive exposure. Existing geometry,
+art, transmission rates and normal loaded-world behavior remain unchanged.
+
+This delivery handles the established constant Limbo climate only. Variable
+exterior weather, temporary climate seals, NPC physiology and unloaded household
+cleaning still require their own historical adapters. Evidence is recorded in
+assets/validation_5823: 78 executed native PASS, zero static errors, current/prior
+save and hub checks, and a matched 1,000-object callback-timing comparison.
+CA502-LIMBO-HISTORY-01 awaits author corroboration.
+
+The revision-2 object exposure node saves its timestamp, source concentration,
+and physical area only when the Limbo profile has no temporary heat/humidity
+seal delta and no rain. After restoring, the existing analytical exposure solver
+closes that interval in constant time. Read and write entry points settle the
+pending history first; direct writes cannot make a recent cleaning retroactive.
+A backward clock leaves the saved anchor intact. Schema-1 nodes preserve their
+concentration and begin their first valid snapshot at the current timestamp.
+No new actor census or per-tic global scan is introduced; existing nodes and
+initialization own the state. The scope does not freeze variable weather at its
+last sample or pretend that unrecorded temporary effects continued off-map.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
 

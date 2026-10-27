@@ -6,8 +6,23 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.22.** Obtain and update the complete repository, validate
+**Current release: 5.8.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.23 - Constant Limbo exposure across absence (#502)
+
+Physical objects now preserve their constant mansion exposure interval across
+save/load and hub absence. The first query or cleaning operation settles it
+before reading or replacing contamination. Previous saves retain their dirt
+and start history at migration, without retroactive exposure. Existing geometry,
+art, transmission rates and normal loaded-world behavior remain unchanged.
+
+This delivery handles the established constant Limbo climate only. Variable
+exterior weather, temporary climate seals, NPC physiology and unloaded household
+cleaning still require their own historical adapters. Evidence is recorded in
+assets/validation_5823: 78 executed native PASS, zero static errors, current/prior
+save and hub checks, and a matched 1,000-object callback-timing comparison.
+CA502-LIMBO-HISTORY-01 awaits author corroboration.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
 
