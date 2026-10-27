@@ -1,0 +1,13 @@
+{
+  "repeat_outputs_equal": 7,
+  "existing_maps_and_bathroom_files_unchanged": 176,
+  "sha256": {
+    "src/models/caelum/props/kitchen_fixtures/closed.obj": "1dc7c23127d125f0044d83b43e786a04d60f38f1ddcc2ebfec91ceb5881f8a8f",
+    "src/models/caelum/props/kitchen_fixtures/open.obj": "cb0f53db8ccd55be635b642ff98a3b60675e57e0e4c4485c9ccc0e3144ab9fce",
+    "src/models/caelum/props/kitchen_fixtures/locked.obj": "24e7d3ae701b5bf96576b771f9942652b0c94db102274e93b11e37651e7e10c2",
+    "src/graphics/caelum/icons/kitchen_stations/cupboard.png": "be8fb29bdffbc48b8d929cb24307db899570c255ff72f51ef1d211c22168e64e",
+    "src/caelum/data/kitchen_fixtures.modeldef": "dbde30a000db1d3d67a19c94e0c9e683d89e85d76ed8bc355df7ad53852ed1b9",
+    "src/caelum/data/kitchen_fixtures.textures": "51ac3062bdc43bb7959907753c6c5d3fd525e018cf28d00a56e83760edbfd142",
+    "src/caelum/data/CaelumKitchenFixtureData.zs": "77956fe3e58638f324e023cd9de7d9a61eab09dc61463a0582f62cf7a482aa39"
+  }
+}

@@ -4897,3 +4897,4 @@ Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_8.obj" Scal
 Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_9.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN J 0 0 }
 
 #include "caelum/data/kitchen_stations.modeldef"
+#include "caelum/data/kitchen_fixtures.modeldef"

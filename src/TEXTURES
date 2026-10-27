@@ -5807,3 +5807,4 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "caelum/data/cooked_meals.textures"
 #include "caelum/data/kitchen_dough.textures"
 #include "caelum/data/kitchen_stations.textures"
+#include "caelum/data/kitchen_fixtures.textures"

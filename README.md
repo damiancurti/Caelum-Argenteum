@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.19.** Obtain and update the complete repository, validate
+**Current release: 5.8.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+The kitchen now has a usable sink and an overhead cupboard. The potable
+200-L mansion reserve replenishes 1 L per world minute and persists across
+saves and travel. The cupboard uses native storage, ten stacks / 100 kg,
+real food lots and existing padlocks/keys. These fixed actors preserve map
+geometry and the kitchen approach. Portable furniture acquisition remains open.
+
+Evidence: assets/validation_5820. Static validation, deterministic exports and
+selected native storage/water/save/hub/previous-save checks pass. Author checks
+CA410-FIXTURES-01 and the inherited CA410-COOKING-01 remain pending. This is a
+focused #410 delivery; neither #410 nor V5.8 is complete.
 
 ## 5.8.19 - Attended cooking and shared bread proofing (#410)
 

@@ -70,6 +70,12 @@ class CaelumStashChest : Actor
     CaelumLockItem InstalledPadlock;
     bool PadlockReleased;
     double DomesticSoapRemainderG;
+    virtual clearscope bool CanCarryAsStorage(){return true;}
+    virtual double EmptyStorageWeight()
+    {return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;}
+    virtual double StorageVisualScale(){return CaelumContainerRules.ScaleFor(StorageTier);}
+    virtual String StorageVisualClass()
+    {return IsChestLocked()?"CaelumStashChestLockedVisual":ChestOpen?"CaelumStashChestOpenVisual":"CaelumStashChestClosedVisual";}
 
     void EnsureLawfulAccess()
     {
@@ -138,14 +144,14 @@ class CaelumStashChest : Actor
         StorageRevision=CaelumContainerRules.REVISION;
         // El cofre anterior sigue siendo mediano; no se cambia su geometría.
         if(StorageTier!=CaelumContainerRules.MEDIUM)ApplyStorageSize();
-        Mass=CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;
+        Mass=EmptyStorageWeight();
     }
     void ApplyStorageSize()
     {
         double factor=CaelumContainerRules.ScaleFor(StorageTier);
         let defaults=GetDefaultByType("CaelumStashChest");
         A_SetSize(defaults.Radius*factor,defaults.Height*factor,false);
-        Mass=CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;
+        Mass=EmptyStorageWeight();
         RefreshChestVisual();
     }
     virtual bool IsStorageItem(Inventory item)
@@ -171,10 +177,10 @@ class CaelumStashChest : Actor
     }
     double TotalStorageWeight(CaelumPlayer user)
     {
-        return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION
+        return EmptyStorageWeight()
             +StorageWeight(user)+(InstalledPadlock!=null ? InstalledPadlock.GetUnitWeight() : 0.0);
     }
-    bool CanReachStorage(CaelumPlayer user)
+    virtual bool CanReachStorage(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.CreationWizardOpen)return false;
         if(Cargo!=null)return Cargo.Owner==user;
@@ -255,15 +261,7 @@ class CaelumStashChest : Actor
         }
         if(Cargo!=null)return;
 
-        String visualClass = "CaelumStashChestClosedVisual";
-        if (IsChestLocked())
-        {
-            visualClass = "CaelumStashChestLockedVisual";
-        }
-        else if (ChestOpen)
-        {
-            visualClass = "CaelumStashChestOpenVisual";
-        }
+        String visualClass = StorageVisualClass();
 
         ChestVisual = CaelumStashChestVisual(Spawn(
             visualClass,
@@ -274,7 +272,7 @@ class CaelumStashChest : Actor
         {
             ChestVisual.master = self;
             ChestVisual.Angle = Angle;
-            double factor=CaelumContainerRules.ScaleFor(StorageTier);
+            double factor=StorageVisualScale();
             ChestVisual.Scale=(factor,factor);
         }
     }

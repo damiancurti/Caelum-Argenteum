@@ -181,7 +181,7 @@ class CaelumLiveMenuControls : Object ui
                 Button("CA_UI_PLUS",InputEvent.Key_RightArrow,0,"",140);
                 Row(300);Button("CA_CONTAINER_MODE",InputEvent.Key_Space,0,"",188);
                 Button("CA_CONTAINER_TRANSFER",InputEvent.Key_Enter,0,"",188);
-                Button("CA_CONTAINER_CARRY",0,99,"c",188);
+                if(storage.Chest.CanCarryAsStorage())Button("CA_CONTAINER_CARRY",0,99,"c",188);
                 Row(322);Button("CA_LOCK_TOGGLE",0,108,"l",188);
                 Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",188);
                 int first=storage.Selection/4*4;double y=104;

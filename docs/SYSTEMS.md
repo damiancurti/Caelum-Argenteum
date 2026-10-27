@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
+
+## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+The mansion kitchen sink reuses the accepted domestic-water interaction:
+Use reports remaining water; inventory collection fills a carried bottle or
+canteen by the actual available volume. The shared mansion source is potable,
+has 200-L capacity and gains 1 L per world minute up to that cap. Existing
+contamination in a receiving container is retained; a Box-contained recipient
+cannot collect water. Empty reserves cannot create water. Mansion state is
+separate from every numbered city household, and is available for the approved
+future mansion-bath connection without installing those additional fixtures here.
+
+The overhead cupboard is a small native storage container: ten item stacks,
+100 kg of contents, native food ageing/ownership, and matching small padlocks
+and keys. Its nominal empty mass is 62.633 kg; this does not reduce the contents
+limit. It is a fixed wall installation in this slice, so the portable-chest
+action is absent. Ordinary chests keep their carry behavior, mass and visuals.
+The elevated cupboard uses the existing reach from the character's eye to its
+centre, with line of sight; it can be reached from in front of the counter.
+No additional storage permission or public-key privilege is granted.
+
+Persistence is additive: MansionWater starts null in an older household roster;
+first access initializes the existing revision-1 water state exactly once. The
+new mansion-controller installation flag defaults false, checks two bounded
+local positions and retries occupied placement. Subsequent queries/entries do
+not reset water or contents. No map WAD changes. Keep an original save when
+rolling back: the prior runtime is not promised to load new furniture classes.
+Native original-save forward loading and original-package rollback are verified.
+
+This supersedes the earlier statement that the mansion sink/cupboard were still
+unimplemented. Fountain/cistern/wardrobe/desk and the broader craftable catalogue
+remain open. Author visual and functional corroboration remains pending.
 
 ## 5.8.19 - Attended cooking and shared bread proofing (#410)
 

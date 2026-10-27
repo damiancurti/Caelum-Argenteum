@@ -129,7 +129,8 @@ class CaelumTargetInfo : Object play
         if(chest!=null)
         {
             if(reachable && chest.CanReachStorage(user))
-                Actions=L(chest.IsChestLocked()?"CA_TARGET_UNLOCK":"CA_TARGET_OPEN").."  |  "..L("CA_TARGET_CARRY_CHEST");
+                Actions=L(chest.IsChestLocked()?"CA_TARGET_UNLOCK":"CA_TARGET_OPEN")
+                    ..(chest.CanCarryAsStorage()?"  |  "..L("CA_TARGET_CARRY_CHEST"):"");
             else Actions=L("CA_TARGET_APPROACH");
             return;
         }

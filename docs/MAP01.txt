@@ -1,6 +1,22 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
+
+5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+The existing false-wall kitchen gains a sink at (1740,368,0) and a wall
+cupboard at (1652,360,48), both facing 90 degrees. Existing stove, oven, counter
+and secret-passage geometry remain unchanged. The cupboard's model is offset
+toward the north wall; its collision radius is 21.6 MU and height 22.4 MU.
+CANPASS allows vertical separation from the counter below. Its body is
+1.35 x 0.45 x 0.70 m, with bottom at 1.5 m above the floor. The sink reuses
+the accepted domestic fixture's 0.80 x 0.57 x 1.00 m construction.
+
+Installation uses two bounded local queries and a persistent controller flag,
+with collision validation/retry. The cupboard is fixed and the sink draws from
+the independent persistent mansion reserve. Existing map bytes and city-house
+bathrooms are preserved. Native approach, inventory-source lookup and cupboard
+access pass. Artwork/placement still require CA410-FIXTURES-01 author review.
 
 5.8.19 - Attended cooking and shared bread proofing (#410)
 

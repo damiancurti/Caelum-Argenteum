@@ -1,7 +1,7 @@
 CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
 Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
 the prepared #410 process fixture, with the four learned cooking recipes,
-approved ingredients, potable water and coal. Author review is deferred until return.
+approved ingredients, potable water and coal. Author corroboration remains pending.
 1. In the mansion false-wall room, inspect and use stove, oven and counter.
    Expect readable period artwork, clear approaches, no obstruction of the secret access.
 2. At the counter start one bread batch (700g flour, 14g salt, 7g yeast, 420mL water).
@@ -18,3 +18,17 @@ approved ingredients, potable water and coal. Author review is deferred until re
 6. Verify library access to the four learned recipes and one saved/resumed cooking
    session. No duplicate products or refilled sold recipe stock on repeated use.
 Expected: all process, persistence and visual checks pass. Report any failed step.
+
+CA410-FIXTURES-01 | Origin: 5.8.20 | Issue: #410
+Prerequisites: final5.8.20 package, GZDoom4.14.2, disposable mansion campaign;
+carried empty bottle/canteen, several stored items, and a small padlock/key pair.
+1. Inspect the sink and overhead cupboard in the false-wall kitchen. Approach
+   from in front of the counter and use both; passage and nearby stations stay clear.
+2. Use the sink to inspect its200L reserve. Fill a carried container through
+   inventory: deduct only the volume supplied. Wait one world minute: gain1L,
+   capped at200. Save/load and leave/return: preserve water plus elapsed refill.
+3. Put items/food in the cupboard, close/reopen, save/load and travel/return.
+   Preserve quantities and food age. Limits are ten stacks and100kg of contents.
+   A matching small padlock/key uses normal lock rules; no portable-carry action
+   is offered for this wall fixture. Ordinary portable chests still work.
+Expected: readable artwork, reachable fixtures and persistent finite resources.

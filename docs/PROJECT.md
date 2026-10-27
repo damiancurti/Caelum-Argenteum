@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
+
+## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+The kitchen now has a usable sink and an overhead cupboard. The potable
+200-L mansion reserve replenishes 1 L per world minute and persists across
+saves and travel. The cupboard uses native storage, ten stacks / 100 kg,
+real food lots and existing padlocks/keys. These fixed actors preserve map
+geometry and the kitchen approach. Portable furniture acquisition remains open.
+
+Evidence: assets/validation_5820. Static validation, deterministic exports and
+selected native storage/water/save/hub/previous-save checks pass. Author checks
+CA410-FIXTURES-01 and the inherited CA410-COOKING-01 remain pending. This is a
+focused #410 delivery; neither #410 nor V5.8 is complete.
 
 ## 5.8.19 - Attended cooking and shared bread proofing (#410)
 
