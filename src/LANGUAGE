@@ -6764,6 +6764,6 @@ CA_COOKING_CANCEL = "Cada lote produce diez porciones de 100 g. Atendé la estac
 [enu default]
 CA_KITCHEN_SINK = "Kitchen sink";
 CA_KITCHEN_CUPBOARD = "Kitchen cupboard";
-[esp]
+[es]
 CA_KITCHEN_SINK = "Fregadero de cocina";
 CA_KITCHEN_CUPBOARD = "Alacena de cocina";

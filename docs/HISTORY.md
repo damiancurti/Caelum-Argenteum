@@ -4,6 +4,10 @@ Documentation version: **5.8.20** - 2026-10-26.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 
+Delivery correction: the two fixture names now use the established `es` language
+section. Native Spanish lookup is checked separately; gameplay and models are
+unchanged. This is the same unaccepted5.8.20 patch, not a new release.
+
 Implemented the approved fixed kitchen sink and overhead storage in a focused
 #410 branch, with art and runtime commits kept separate. The finite mansion
 source persists independently from numbered city households. Cupboard storage,

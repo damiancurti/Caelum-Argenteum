@@ -10,15 +10,15 @@ ROOT=Path(__file__).resolve().parents[2]
 WORK=ROOT/'build/issue410-cooking'
 HERE=Path(__file__).resolve().parent
 LABELS=('fixtures-final-core','fixtures-final-mansion-c','fixtures-resume05',
-        'fixtures-hub05','fixtures-house05','fixtures-oldsave05','fixtures-original19')
-package=WORK/'final20/caelum_argenteum_dev.pk3'
+        'fixtures-hub05','fixtures-house05','fixtures-oldsave05','fixtures-original19','fixtures-locale20b')
+package=WORK/'final20b/caelum_argenteum_dev.pk3'
 files={p.relative_to(ROOT/'src').as_posix():p for p in (ROOT/'src').rglob('*') if p.is_file()}
 with zipfile.ZipFile(package) as archive:
     assert set(archive.namelist())==set(files)
     for name,path in files.items():assert archive.read(name)==path.read_bytes(),name
     with zipfile.ZipFile(WORK/'fixtures05/caelum_argenteum_dev.pk3') as earlier:
         changed=[name for name in files if earlier.read(name)!=archive.read(name)]
-expected={'caelum/data/CaelumKitchenFixtureData.zs','caelum/data/kitchen_fixtures.textures',
+expected={'LANGUAGE','caelum/data/CaelumKitchenFixtureData.zs','caelum/data/kitchen_fixtures.textures',
           'caelum/world/CaelumPhysicalHazards.zs','caelum/world/CaelumSewerMaze.zs',
           'models/caelum/props/kitchen_fixtures/locked.obj'}
 assert set(changed)<=expected,changed
@@ -37,7 +37,7 @@ for label in LABELS:
     for suffix in ('.txt','-run.json'):shutil.copy2(WORK/(label+suffix),HERE/'native'/(label+suffix))
 (HERE/'captures').mkdir(exist_ok=True)
 for name in ('kitchen-fixtures.png','kitchen-fixtures-sprites.png'):shutil.copy2(WORK/name,HERE/'captures'/name)
-blob=(WORK/'final20-static.json').read_bytes()
+blob=(WORK/'static20b.json').read_bytes()
 static=json.loads(blob.decode('utf-16' if blob.startswith((b'\xff\xfe',b'\xfe\xff')) else 'utf-8-sig'))
 assert not static['errors'],static['errors'];report['static_errors']=static['errors']
 (HERE/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

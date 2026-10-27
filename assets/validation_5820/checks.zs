@@ -110,6 +110,11 @@ class CA410FixtureChecks : CA410FoodChecks
         else if(e.Name=="ca410k_resume")Resume(u);
         else if(e.Name=="ca410k_away")CaelumWorldClock.Get(u).AdvanceTics(CaelumWorldClock.TicsPerHour()/2);
         else if(e.Name=="ca410k_mansion")Mansion(u);
+        else if(e.Name=="ca410k_locale")
+        {
+            Check(StringTable.Localize("CA_KITCHEN_SINK",false)=="Fregadero de cocina","Spanish locale resolves kitchen sink");
+            Check(StringTable.Localize("CA_KITCHEN_CUPBOARD",false)=="Alacena de cocina","Spanish locale resolves cupboard");Result();
+        }
         else if(e.Name=="ca410k_sprites")
         {
             for(int id=0;id<2;id++)

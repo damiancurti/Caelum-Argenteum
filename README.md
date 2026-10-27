@@ -11,6 +11,9 @@ it, then rebuild with `run_dev.bat` as described below.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 
+The sink and cupboard names use the game's Spanish locale; the focused native
+language check accompanies the fixture evidence below.
+
 The kitchen now has a usable sink and an overhead cupboard. The potable
 200-L mansion reserve replenishes 1 L per world minute and persists across
 saves and travel. The cupboard uses native storage, ten stacks / 100 kg,
