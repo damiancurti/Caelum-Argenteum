@@ -1,0 +1,180 @@
+{
+  "version": "5.8.35",
+  "issue": 410,
+  "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+  "runs": [
+    {
+      "label": "release-catalogue",
+      "executed_passes": 23,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-craft",
+      "executed_passes": 50,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-trade",
+      "executed_passes": 37,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-items",
+      "executed_passes": 42,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-placement",
+      "executed_passes": 52,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-seed",
+      "executed_passes": 4,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 8,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-hub",
+      "executed_passes": 12,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-legacy",
+      "executed_passes": 2,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofaplace",
+      "executed_passes": 48,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofaseed",
+      "executed_passes": 5,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofaresume",
+      "executed_passes": 24,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofahub",
+      "executed_passes": 29,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofaupgrade",
+      "executed_passes": 10,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-view4",
+      "executed_passes": 2,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-view5",
+      "executed_passes": 2,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    },
+    {
+      "label": "release-sofainput",
+      "executed_passes": 7,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727",
+      "addon_sha256": "af36bec20d5aeae33ef45ae8220b57a598dedf6df97fa6052e5a3da86343e9d6"
+    }
+  ],
+  "native_passes": 357,
+  "original_runtime_runs": [
+    {
+      "label": "prior-seed",
+      "executed_passes": 5,
+      "runtime_sha256": "28817e2c30ea79f3b2b10d606cfe81adf5d9a04714b145a72ac98c7b2c0cbc4d"
+    },
+    {
+      "label": "prior-rollback",
+      "executed_passes": 12,
+      "runtime_sha256": "28817e2c30ea79f3b2b10d606cfe81adf5d9a04714b145a72ac98c7b2c0cbc4d"
+    }
+  ],
+  "original_runtime_passes": 17,
+  "native_failures": 0,
+  "source_matching_package_members": 17005,
+  "preserved_map_art_members": 14039,
+  "prior_obj_line_endings_only": [
+    "models/caelum/props/rest/ca_rest_bed.obj",
+    "models/caelum/props/rest/ca_rest_chair.obj",
+    "models/caelum/props/sofas/ca_sofa_2.obj",
+    "models/caelum/props/sofas/ca_sofa_3.obj"
+  ],
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "artwork": {
+    "issue": 410,
+    "version": "5.8.35",
+    "date": "2026-10-27",
+    "tool": "Built-in image_gen",
+    "sources": [
+      {
+        "source": "two-seat.png",
+        "sha256": "031c2e16d2bd4ababe5c5564fca3041d4278e2d59afc7a67da43ef4bd335a073",
+        "runtime": "src/sprites/caelum/rest_furniture/CSF2A0.png",
+        "pixel_size": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "source": "three-seat-v1.png",
+        "sha256": "d6a78a48f7d80758117dd5735de9b61e7bfa53708ba2bb75c6875c27d08ecc08",
+        "runtime": null,
+        "pixel_size": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "source": "three-seat.png",
+        "sha256": "2fdbb6e23672c5ebc66700e4076797742a9412260458807be60060b633a18457",
+        "runtime": "src/sprites/caelum/rest_furniture/CSF3A0.png",
+        "pixel_size": [
+          1536,
+          1024
+        ]
+      }
+    ],
+    "prompts": "PROMPTS.json",
+    "references": {
+      "shape": "Owned sofa-target.png, validation_5829, adapted to documented two/three seat construction.",
+      "style": "Owned CLICA0.png and generated two-seat sibling, painted pixel-oriented shading only."
+    },
+    "processing": "Byte-for-byte source copies, generated alpha preserved; no raster edits. Earlier three-seat output retained as provenance.",
+    "rights": "Original project-directed generation; no external images or Doom pixels."
+  },
+  "evidence_reuse": "All selected current-runtime assertions execute on final35a with one identical addon. Native revision20 save is newly generated and reloaded unchanged in original5.8.34; 17 original-runtime assertions are counted separately. Older stored-book rollback evidence is reused, not counted as new execution.",
+  "migration": "Recipe revision21 appends two unknown sofa recipes, retaining all four learned rest-furniture recipes and depleted stock. Both sofa bodies and all five seats, their native inventories/TIDs, title, dirt and Box location persist across save/hub travel. Native Use/crouch carrying is tested. Original5.8.26 stored-book progress and original book remain unchanged.",
+  "performance_scope": "Only bounded interaction/merchant/inventory loops; parked physical body does not tick or receive duplicate world exposure. No new recurring global scan. No display-FPS or multiplayer claim.",
+  "remaining": "Table and study furniture acquisition and broader V5.8 remain open.",
+  "author_acceptance": "CA410-SOFA-ACQUISITION-01 pending; grouped handoff after all V5.8 implementation."
+}

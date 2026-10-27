@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.34** - 2026-10-27.
+Documentation version: **5.8.35** - 2026-10-27.
+
+## 5.8.35 / #410 - Painted sofa item views
+
+Built-in image generation supplies owned painted pixel-oriented two-/three-seat
+inventory and dropped-item sprites. The native validation_5829 sofa view defines
+physical identity; the owned luxury-chair item defines timber/cloth shading.
+The three-seat drawing is corrected to one central front support, matching its
+six-leg construction. Full prompts, intermediate source, reference roles and
+hashes remain in assets/art_source/sofa_items. CSF2A0/CSF3A0 are exact copies of
+the generated source PNGs with alpha preserved. No external images, Doom pixels
+or model-render projections are used. Deployed world meshes remain unchanged.
+The sofa generator now also exports its existing material bill to runtime data.
+Agent native inventory review confirms both icons and their transparent
+backgrounds; captures remain in assets/validation_5835. Author acceptance is
+still pending. Repeated deterministic sofa exports are byte-identical.
 
 ## 5.8.34 / #410 - Painted ordinary chair and cot items
 

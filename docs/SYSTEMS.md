@@ -1,6 +1,30 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.34** - 2026-10-27.
+Documentation version: **5.8.35** - 2026-10-27.
+
+## 5.8.35 / #410 - Sofa acquisition and assembly transport
+
+Recipes215/216 append two- and three-seat sofas. Recipe revision21 preserves all
+previous learning and starts these recipes unknown. Merchant revision3 adds
+three sofas of each kind in Provisions and ten copies of each recipe in the
+library, retaining depleted earlier stock. Prices remain actual material cost
+plus25% before merchant margins, with normal recipe-based replenishment.
+
+Existing delegated construction bills remain unchanged: two-seat sofa35.37387888kg,
+34,467g wood+407g iron ingot+502g cotton fabric; three-seat sofa43.881812348kg,
+42,797g wood+407g iron ingot+679g cotton fabric. Workbench, fine tools and sewing
+machine use normal complexity, efficiency/waste and Dexterity. The source
+construction generator supplies the runtime bill; no new dimensions or rest
+bonus are introduced.
+
+Activate an unboxed sofa to place it; Use selects a free ordinary rest seat;
+crouch+Use carries the owned, unoccupied complete assembly. Weight, land rights,
+dry/stable support, full body/seat clearance and access checks apply. Any occupied
+seat blocks movement. Each native seat retains its identity, placement and parent;
+carrying parks the body and seats without collision or active environmental work.
+Native save/hub transfer retains body/seat inventories and TIDs, title, item dirt
+and Box location. The original mansion sofas remain fixed; acquisition does not
+silently grant ownership of map-authored furniture.
 
 ## 5.8.34 / #410 - Ordinary furniture acquisition
 

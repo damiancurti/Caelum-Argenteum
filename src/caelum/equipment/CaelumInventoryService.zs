@@ -2808,7 +2808,7 @@ class CaelumInventoryService : Object play
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
         let restItem=CaelumRestFurnitureItem(entry);
-        if(restItem!=null && restItem.Body!=null){restItem.Place(user);return;}
+        if(restItem!=null && restItem.HasBody()){restItem.Place(user);return;}
         if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.Drop(user,entry);return;}
         if(CaelumCampData.IsItem(entry)){CaelumCampInventory.Drop(user,entry);return;}
         let cargo=CaelumChestCargo(entry);

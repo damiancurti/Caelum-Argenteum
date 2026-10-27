@@ -107,6 +107,9 @@ class CaelumTargetInfo : Object play
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
         let rest=CaelumRestFurniture(Subject);
+        let sofa=CaelumSofa(Subject);
+        if(sofa!=null && sofa.PackedItem!=null)
+        {Actions=L(reachable?"CA_FURNITURE_REST_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         if(rest!=null && rest.PackedItem!=null)
         {Actions=L(reachable?"CA_FURNITURE_REST_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         let domestic=CaelumDomesticFixture(Subject);
