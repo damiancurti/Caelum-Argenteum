@@ -1,0 +1,59 @@
+{
+  "issue": 410,
+  "models": [
+    {
+      "id": 0,
+      "seats": 2,
+      "width_m": 1.88,
+      "depth_m": 0.61,
+      "height_m": 0.752,
+      "mansion_position": [
+        280,
+        -548,
+        0
+      ],
+      "facing": 180,
+      "wood_kg": 34.46630856,
+      "iron_kg": 0.40653272000000007,
+      "cotton_cloth_kg": 0.5010376000000001,
+      "empty_kg": 35.37387888000001,
+      "recipe_grams": {
+        "wood": 34467,
+        "iron": 407,
+        "cotton_cloth": 502
+      },
+      "model": "ca_sofa_2.obj",
+      "sha256": "044ad5b37b4f1d6e96f32dbdc2a6e49d84b7d15f1482f60ed60bd4c433aefdec"
+    },
+    {
+      "id": 1,
+      "seats": 3,
+      "width_m": 2.121,
+      "depth_m": 0.635,
+      "height_m": 0.876,
+      "mansion_position": [
+        280,
+        -400,
+        0
+      ],
+      "facing": 180,
+      "wood_kg": 42.79674364800001,
+      "iron_kg": 0.40653272000000007,
+      "cotton_cloth_kg": 0.6785359800000001,
+      "empty_kg": 43.88181234800001,
+      "recipe_grams": {
+        "wood": 42797,
+        "iron": 407,
+        "cotton_cloth": 679
+      },
+      "model": "ca_sofa_3.obj",
+      "sha256": "3104e05111ae53cd00f256274ae3c45b4dfd86dc7badfce11b7ccaa4e5f361d1"
+    }
+  ],
+  "textures_reused": [
+    "models/caelum/props/stash/ca_stash_wood.png",
+    "models/caelum/props/stash/ca_stash_metal.png",
+    "models/caelum/props/stash/ca_stash_inside.png"
+  ],
+  "ownership": "Original deterministic mesh; existing project-owned textures. References supply dimensions only; no copied image pixels."
+}

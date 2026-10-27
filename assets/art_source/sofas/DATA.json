@@ -1,0 +1,27 @@
+{
+  "issue": 410,
+  "authority": "Author delegated historical furniture dimensions, material, mass and recipe calculations on2026-10-25; approved two- and three-seat sofas, existing chair rest rules and no luxury/rest bonus.",
+  "references": [
+    {"url": "https://www.metmuseum.org/art/collection/search/7594", "object": "59.197", "date": "1810-1820", "role": "Two-seat version envelope1.88x0.61x0.752m; dimensional reference only, not a replica or imported image."},
+    {"url": "https://www.metmuseum.org/art/collection/search/7578", "object": "39.148.1", "date": "circa1820", "role": "Three-seat version envelope2.121x0.635x0.876m; dimensional reference only, not a replica or imported image."}
+  ],
+  "map_units_per_meter": 32,
+  "wood_density_kg_m3": 760,
+  "iron_density_kg_m3": 7870,
+  "cloth_kg_m2": 0.38,
+  "seat_top_m": 0.42,
+  "seat_board_m": 0.018,
+  "back_board_m": 0.012,
+  "leg_m": 0.05,
+  "frame_m": 0.04,
+  "arm_width_m": 0.08,
+  "cover_thickness_m": 0.001,
+  "native_seat_stride_m": 1.0,
+  "native_seat_radius_m": 0.5,
+  "native_geometry_note": "Logical seat anchors retain the existing reference pawn's1m collision diameter. Presentation offsets align the unchanged seated pose with narrower visual seat centers, as existing chair poses already separate the native capsule from their drawing. Larger bodies still require real free space; no capsule is shrunk or made intangible.",
+  "construction_note": "Own wood frame and solid slatted seat/back with a thin fitted cotton cover; no unsupported foam, spring, feather or hair ingredient is invented. Bill sums modeled solid wood/iron members and exposed cloth area, using existing algarrobo/iron density and the approved380g/m2 cotton cloth reference. Ordinary chair comfort only. Crafting/distribution are separate integrations.",
+  "versions": [
+    {"id": 0, "seats": 2, "width_m": 1.88, "depth_m": 0.61, "height_m": 0.752, "mansion_position": [280, -548, 0], "facing": 180},
+    {"id": 1, "seats": 3, "width_m": 2.121, "depth_m": 0.635, "height_m": 0.876, "mansion_position": [280, -400, 0], "facing": 180}
+  ]
+}
