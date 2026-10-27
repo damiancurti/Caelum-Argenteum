@@ -1,0 +1,15 @@
+{
+  "issue": 410,
+  "authority": "The author delegated historical furniture dimensions, materials, masses and recipes. Fountain200L/+1L per world minute, initially potable; cistern1000L, initially empty, manual transfer and retained quality are explicit approvals.",
+  "references": [
+    {"url":"https://collection.sciencemuseumgroup.org.uk/objects/co8018571/cast-iron-drinking-fountain-midland-railway","role":"1875 cast-iron fountain construction and raised back/basin silhouette; no borrowed image pixels or inscription."},
+    {"url":"https://prcno.org/rise-fall-new-orleans-cistern/","role":"Historical rectangular cast-iron cistern dated1831 at Hermann-Grima house. The1000L envelope below is an original delegated calculation, not the museum object's measured dimensions."}
+  ],
+  "map_units_per_meter": 32,
+  "iron_density_kg_m3": 7870,
+  "wall_m": 0.006,
+  "lid_m": 0.003,
+  "fountain": {"inner_width_m":0.6,"inner_depth_m":0.6,"liters":200,"refill_liters_minute":1,"position":[1024,-768,0],"facing":90},
+  "cistern": {"inner_width_m":1,"inner_depth_m":1,"liters":1000,"refill_liters_minute":0,"position":[896,-768,0],"facing":90},
+  "construction_note":"Closed iron tank panels and lid, iron supports, decorative beads and spigot are counted from the generated geometry. Source layouts sit in the mansion south garden, clear of the accepted pool/connected reservoirs and existing kitchen. Fixed installation in this patch; player manufacture/placement remains a separate catalogue integration. No rain collector or purification effect. Source water cooling reuses approved iron properties from the camp pot and the existing convection/radiation model."
+}

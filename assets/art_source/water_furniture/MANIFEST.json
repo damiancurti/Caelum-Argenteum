@@ -1,0 +1,33 @@
+{
+  "issue": 410,
+  "calculations": {
+    "fountain": {
+      "empty_kg": 240.44763326918007,
+      "iron_grams": 240448,
+      "radius_mu": 16.96,
+      "height_mu": 41.487466446580434,
+      "inner_height_m": 0.5555555555555556,
+      "thermal_area_m2": 2.0533333333333332,
+      "thermal_wall_m": 0.006
+    },
+    "cistern": {
+      "empty_kg": 342.97653395688593,
+      "iron_grams": 342977,
+      "radius_mu": 23.871924932857844,
+      "height_mu": 36.352000000000004,
+      "inner_height_m": 1.0,
+      "thermal_area_m2": 6.0,
+      "thermal_wall_m": 0.006
+    }
+  },
+  "note": "Iron stock volume includes small overlaps at decorative fittings; body panel joints are non-overlapping. No source image pixels reused as model textures.",
+  "sha256": {
+    "src/models/caelum/props/water_furniture/fountain.obj": "0bfa76c9c21ba5534ee50058a72d06a14cdf9c32a998f415c52588a501bb55c8",
+    "src/graphics/caelum/icons/furniture/fountain.png": "60e7fcba19bf6ea2a4a65d033cf26877c1dbae9519ddff3db40733f7299a7df5",
+    "src/models/caelum/props/water_furniture/cistern.obj": "2d1e179f829f9dd765fdcdd1de332feac478431a5321dd857437c833bf51e317",
+    "src/graphics/caelum/icons/furniture/cistern.png": "330f7d7d0f58a90e373893d32da96b0f7a049f45cdee0b6126c044ab0c591280",
+    "src/caelum/data/water_furniture.modeldef": "a349c9cf6e58eb63a94575998f7a753506c902a6e8cf326db2edef160129014e",
+    "src/caelum/data/water_furniture.textures": "b82efce4562fad005993ae0e4e927cae820a2348b757b16f6bbeac8c0a15491b",
+    "src/caelum/data/CaelumWaterFurnitureData.zs": "bbe7a90e44fbf9efce28a21a61ddaef25d76614a235172a606f0ad1ca325204f"
+  }
+}

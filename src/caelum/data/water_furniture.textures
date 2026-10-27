@@ -1,0 +1,2 @@
+Sprite CWFNA0,128,128 { XScale 2.796025160 YScale 2.796025160 Offset 64,122 Patch "graphics/caelum/icons/furniture/fountain.png",0,0 }
+Sprite CWCTA0,128,128 { XScale 3.191021127 YScale 3.191021127 Offset 64,122 Patch "graphics/caelum/icons/furniture/cistern.png",0,0 }
