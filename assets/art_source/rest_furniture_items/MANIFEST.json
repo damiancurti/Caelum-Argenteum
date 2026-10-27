@@ -1,0 +1,34 @@
+{
+  "issue": 410,
+  "version": "5.8.32",
+  "tool": "built-in image_gen",
+  "purpose": "Original painted inventory sprites; existing world models unchanged",
+  "references": {
+    "physical_identity": [
+      "assets/validation_5830/luxury-0.png",
+      "assets/validation_5830/luxury-1.png"
+    ],
+    "style": "src/graphics/caelum/icons/furniture/wardrobe.png"
+  },
+  "shared_prompt": "Single standalone full furniture sprite, transparent alpha, painted pixel-oriented dark-fantasy RPG style inspired by nineteenth-century Argentina, warm restrained browns, soft upper-left light, no background, floor, cast shadow, HUD, labels, photographic or glossy rendering. Preserve reference physical design and legibility at about 100 pixels tall.",
+  "specific_prompts": {
+    "chair": "Medium brown narrow wooden frame, rectangular upright back, two arms, four legs with modest turned collars, thin dark-brown textile seat and back; three-quarter view slightly from above. No plush cushions.",
+    "bed": "Rectangular wooden frame, four tall slender turned corner posts with finials, medium headboard and low footboard, thin dark-brown textile over slats, open above with no canopy or overhead frame; three-quarter view from above foot. No pillows or plush mattress."
+  },
+  "sources": {
+    "luxury-chair-source.png": {
+      "sha256": "c4315085a295661397a414588ee4a1ffa978dee93ee771e9aedb61ab2bd0d8b3",
+      "runtime": "src/sprites/caelum/rest_furniture/CLICA0.png",
+      "processing": "Byte-for-byte copy; no image modification."
+    },
+    "luxury-bed-source.png": {
+      "sha256": "ed1a3df4904b2fc074fe69fc03670de209f08663d1921fa18c9b87193451a990",
+      "runtime": "src/sprites/caelum/rest_furniture/CLIBA0.png",
+      "processing": "Byte-for-byte copy; no image modification."
+    }
+  },
+  "generation_date": "2026-10-27",
+  "transparent_background": true,
+  "rights": "Original project-directed generation; only owned screenshots and owned sprite style reference. No museum image or Doom resource used.",
+  "reference_roles": "Physical silhouette/design only from native furniture captures; painted pixel-oriented shading/style only from wardrobe icon."
+}

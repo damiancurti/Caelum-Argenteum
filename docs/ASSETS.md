@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.31** - 2026-10-27.
+Documentation version: **5.8.32** - 2026-10-27.
+
+## 5.8.32 / #410 - Painted luxury furniture inventory items
+
+Two original transparent PNG sprites are generated with the built-in image tool,
+following SPRITE_ART_DIRECTION: existing native chair/bed captures define physical
+identity; the owned wardrobe icon defines painted pixel-oriented style. World
+models are unchanged. Sources, prompt specification and SHA-256 provenance remain
+in assets/art_source/rest_furniture_items. The packaged sprite is an exact copy
+of its source; GZDoom scales it in inventory and as a dropped item. No rendered
+model projection, external museum image or Doom pixels enter the output.
+Author visual acceptance remains pending with the final grouped V5.8 handoff.
 
 ## 5.8.31 storage furniture acquisition
 
