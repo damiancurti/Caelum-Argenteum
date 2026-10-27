@@ -1,4 +1,9 @@
 [enu default]
+CA_FURNITURE_REST_PORTABLE_HINT = "{bind:+use}: rest | {bind:+crouch}+{bind:+use}: carry your furniture";
+[es]
+CA_FURNITURE_REST_PORTABLE_HINT = "{bind:+use}: descansar | {bind:+crouch}+{bind:+use}: recoger tu mueble";
+
+[enu default]
 CA_SOFAS_TWO = "Two-seat sofa";
 CA_SOFAS_THREE = "Three-seat sofa";
 

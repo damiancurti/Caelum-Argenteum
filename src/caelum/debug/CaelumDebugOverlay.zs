@@ -455,6 +455,7 @@ class CaelumDebugOverlay : EventHandler
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
+            if(CaelumRestFurnitureData.IsKey(specialType))return CaelumRestFurnitureData.NameKey(specialType-CaelumRestFurnitureData.FIRST_KEY);
             if(CaelumStorageFurnitureData.IsKey(specialType))return CaelumStorageFurnitureData.NameKey(specialType-CaelumStorageFurnitureData.FIRST_KEY);
             if(specialType==CaelumHygieneData.CLOTH_KEY)return "CA_HYGIENE_CLOTH";
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.NameKey(0);
@@ -1176,6 +1177,8 @@ class CaelumDebugOverlay : EventHandler
     ui String GetEquipmentSelectionIcon(CaelumPlayer localPlayer)
     {
         int selectedKind = localPlayer.EquipmentSelectionKind;
+        if(selectedKind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumRestFurnitureData.IsKey(localPlayer.EquipmentSelectionSpecialType))
+            return CaelumRestFurnitureData.Icon(localPlayer.EquipmentSelectionSpecialType-CaelumRestFurnitureData.FIRST_KEY);
         if(selectedKind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
             && CaelumStorageFurnitureData.IsKey(localPlayer.EquipmentSelectionSpecialType))
             return CaelumStorageFurnitureData.Icon(localPlayer.EquipmentSelectionSpecialType-CaelumStorageFurnitureData.FIRST_KEY);

@@ -3,6 +3,7 @@
 class CaelumRestFurniture : Actor abstract
 {
     CaelumPlayer Occupant;
+    CaelumRestFurnitureItem PackedItem;
     int TrialSlot;
     CaelumDiningTable DiningTable;
     int DiningSeat;
@@ -40,6 +41,7 @@ class CaelumRestFurniture : Actor abstract
         let user = CaelumPlayer(activator);
         if (!CanReach(user) || !CaelumUseGeometry.AimedAt(user, self)
             || (user.player.cmd.buttons & BT_USE) == 0) return false;
+        if(PackedItem!=null && (user.player.cmd.buttons & BT_CROUCH)!=0)return PackedItem.Carry(user);
         return CaelumRestTrial.Open(user, self);
     }
 

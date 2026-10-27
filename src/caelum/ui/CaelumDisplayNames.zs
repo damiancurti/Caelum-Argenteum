@@ -137,6 +137,7 @@ class CaelumDisplayNames : Object
             if(specialType>=CaelumLockRules.FIRST_ITEM && specialType<CaelumLockRules.FIRST_ITEM+8)
                 return CaelumLockRules.NameKey(specialType-CaelumLockRules.FIRST_ITEM);
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
+            if(CaelumRestFurnitureData.IsKey(specialType))return CaelumRestFurnitureData.NameKey(specialType-CaelumRestFurnitureData.FIRST_KEY);
             if(CaelumStorageFurnitureData.IsKey(specialType))return CaelumStorageFurnitureData.NameKey(specialType-CaelumStorageFurnitureData.FIRST_KEY);
             if(specialType==CaelumHygieneData.CLOTH_KEY)return "CA_HYGIENE_CLOTH";
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.NameKey(0);

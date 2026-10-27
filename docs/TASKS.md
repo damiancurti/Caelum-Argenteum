@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.31** - 2026-10-27.
+Documentation version: **5.8.32** - 2026-10-27.
+
+## 5.8.32 / #410 - Luxury rest furniture supply and transport
+
+Implemented and verified two learned recipes, merchant supply/restock, exact payment
+and three-material consumption, original painted inventory icons, blocked/clear
+placement, occupied-piece protection, actual-body identity through Box/save/hub
+and original-save migration. Evidence: assets/validation_5832. Ordinary furniture,
+sofas, tables, desk/bookcase acquisition and broader V5.8 remain unfinished.
 
 ## 5.8.31 / #410 - Storage furniture acquisition
 

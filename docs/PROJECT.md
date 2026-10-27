@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.31** - 2026-10-27.
+Documentation version: **5.8.32** - 2026-10-27.
+
+## 5.8.32 - Luxury rest furniture acquisition (#410)
+
+Two existing catalogue pieces gain normal purchase/fabrication, manufacturing
+restock, original painted icons and reversible placement/carrying. Revision 19
+appends recipes without changing previous learning; merchant supply revision 1
+does not refill sold stock on migration. Static validation and 107 native assertions passed under
+assets/validation_5832, with Spanish icon review and actual crouch + Use input. No author acceptance or complete V5.8 claim.
 
 ## 5.8.31 - Storage furniture acquisition (#410)
 

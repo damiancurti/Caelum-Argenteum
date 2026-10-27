@@ -1254,7 +1254,9 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.FormalInventoryRowReservedUnits[row]
                 );
             }
-            if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumStorageFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+            if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumRestFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumRestFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumRestFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumStorageFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
                 DrawTexture(CaelumStorageFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumStorageFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
             else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumStorageFurnitureData.CUPBOARD_DISPLAY)
                 DrawTexture(CaelumStorageFurnitureData.Icon(1),30.0,165.0+row*21.0,20.0,20.0);

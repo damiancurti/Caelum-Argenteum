@@ -19,6 +19,8 @@ class CaelumContaminationObject : Thinker
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        let rest=CaelumRestFurniture(body);
+        if(rest!=null && rest.PackedItem!=null && rest.PackedItem.Owner!=body)return false;
         if(body is 'CaelumSofaSeat')return false;
         let vendor=CaelumCityMerchant(body);if(vendor!=null && vendor.DomesticMarketParked)return false;
         let item=Inventory(body);
