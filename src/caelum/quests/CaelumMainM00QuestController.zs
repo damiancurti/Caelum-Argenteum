@@ -38,6 +38,7 @@ class CaelumMainM00QuestController : EventHandler
     bool MansionBathroomsPrepared;
     int MansionWardrobeRevision;
     int MansionWaterFurnitureRevision;
+    int MansionStoredReadingRevision;
     bool StationAccessPrepared;
     bool MansionAccessPrepared;
     int MansionDiningRevision;
@@ -548,6 +549,8 @@ class CaelumMainM00QuestController : EventHandler
                 MansionBathroomsPrepared=CaelumMansionBathrooms.Prepare();
             if(MansionFurniturePrepared && MansionBathroomsPrepared && MansionWardrobeRevision<CaelumWardrobeData.REVISION)
                 if(CaelumMansionWardrobe.Prepare())MansionWardrobeRevision=CaelumWardrobeData.REVISION;
+            if(MansionFurniturePrepared && MansionStoredReadingRevision<CaelumStoredReadingData.REVISION)
+                if(CaelumStoredReading.Prepare())MansionStoredReadingRevision=CaelumStoredReadingData.REVISION;
             if(MansionFurniturePrepared && MansionWaterFurnitureRevision<CaelumWaterFurnitureData.REVISION)
                 if(CaelumMansionWaterFurniture.Prepare())MansionWaterFurnitureRevision=CaelumWaterFurnitureData.REVISION;
             RuloWorldPrepared=CaelumMainM00RuloTrial.EnsurePracticeTarget()!=null;

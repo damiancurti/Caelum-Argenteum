@@ -169,7 +169,7 @@ class CaelumLiveMenuControls : Object ui
                 for(int i=first;i<Min(first+5,int(recipes.Rows.Size()));i++)Region(10000+i,40,80+(i-first)*21,560,21);
             }
             Row(294);Button("CA_RECIPE_READ",InputEvent.Key_Enter,0,"",136);
-            Button("CA_RECIPE_CATEGORY",0,103,"g",136);Button("CA_RECIPE_CANCEL",0,99,"c",136);
+            Button("CA_RECIPE_CATEGORY",0,103,"g",136,recipes!=null && !recipes.BrowsingLibrary);Button("CA_RECIPE_CANCEL",0,99,"c",136);
             Row(326);PrevNext();Back();Button("CA_UI_FAST",0,116,"t",130);Button("CA_UI_SKIP",0,121,"y",130);
         }
         else if(context==host.CTX_CHEST)

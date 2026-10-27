@@ -116,3 +116,19 @@ an empty bottle/pot,a1-L contaminated canteen,100g soap and contamination30. No 
    bathrooms, cupboard and wardrobe remain usable.
 Expected: all listed behavior/visual checks pass. Author acceptance is pending;
 the successful earlier kitchen, camp and contamination checks do not cover this.
+
+CA410-READING-01 | Origin: 5.8.26 | Issue: #410
+Prerequisites: final 5.8.26 package or later; disposable mansion campaign,
+a recipe book with at least one page, and access to the existing library.
+Deliver this check only when the full V5.8 implementation is ready, as requested.
+1. Use the shelf for storage; deposit a recipe book. Expect25 stacks/100kg,
+   preserved pages and quantity. Excess capacity must not remove an item.
+2. Use the adjacent reading desk, select the stored book and start one recipe.
+   Expect the actual book to remain in the shelf, with existing reading duration.
+3. Close/reopen the menu; move beyond desk reach, return and resume. Expect pause
+   and unchanged progress while unavailable. A locked shelf requires its own key.
+4. Save/load a paused reading. Travel away and return; reopen the same stored book.
+   Expect preserved progress, one shelf/desk, no duplicate book or learned recipe.
+5. Inspect the existing shelf and reused table artwork, target hints and menu.
+   Retrieve the book and verify ordinary personal-book reading still works.
+Expected: usable collision/access, correct storage/learning/persistence and clear UI.

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.25** - 2026-10-27.
+Documentation version: **5.8.26** - 2026-10-27.
+
+## 5.8.26 - Reused owned reading furniture (#410)
+
+The reading desk reuses models/caelum/props/rest/ca_table_small.obj and its existing
+owned texture/registration transform. The accepted reading shelf's model, sprites
+and provenance remain unchanged. No image generation, replacement artwork or
+third-party pixels were introduced. MODELDEF adds only the new desk class binding.
+Native screenshots in assets/validation_5826 verify placement and bilingual menus;
+visual author corroboration is still outstanding.
 
 ## 5.8.25 - Original garden water furniture (#410)
 

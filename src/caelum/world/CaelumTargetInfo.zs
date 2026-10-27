@@ -106,6 +106,10 @@ class CaelumTargetInfo : Object play
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
         let domestic=CaelumDomesticFixture(Subject);
+        if(Subject is 'CaelumReadingShelf')
+        {Actions=L(reachable?"CA_STORED_READING_SHELF_HINT":"CA_TARGET_APPROACH");return;}
+        if(Subject is 'CaelumReadingDesk')
+        {Actions=L(reachable?"CA_STORED_READING_DESK_HINT":"CA_TARGET_APPROACH");return;}
         if(domestic is 'CaelumWaterFurniture')
         {Actions=L(!reachable || !domestic.CanReach(user)?"CA_TARGET_APPROACH":domestic is 'CaelumCistern'?"CA_CISTERN_HINT":"CA_FOUNTAIN_HINT");return;}
         if(domestic is 'CaelumDomesticToilet')

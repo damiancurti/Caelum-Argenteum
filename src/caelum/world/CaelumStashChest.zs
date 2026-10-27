@@ -72,6 +72,8 @@ class CaelumStashChest : Actor
     double DomesticSoapRemainderG;
     virtual clearscope bool CanCarryAsStorage(){return true;}
     virtual clearscope int StorageDisplayType(){return StorageTier;}
+    virtual clearscope int StorageSlotLimit(){return CaelumContainerRules.Slots(StorageTier);}
+    virtual clearscope double StorageWeightLimit(){return CaelumContainerRules.Capacity(StorageTier);}
     virtual double EmptyStorageWeight()
     {return CaelumContainerRules.Capacity(StorageTier)*CaelumContainerRules.EMPTY_WEIGHT_FRACTION;}
     virtual double StorageVisualScale(){return CaelumContainerRules.ScaleFor(StorageTier);}
@@ -254,7 +256,7 @@ class CaelumStashChest : Actor
         return (GetChestLockNumber() > 0 && !ChestUnlocked) || (InstalledPadlock!=null && !PadlockReleased);
     }
 
-    void RefreshChestVisual()
+    virtual void RefreshChestVisual()
     {
         if (ChestVisual != null)
         {

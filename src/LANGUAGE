@@ -1,4 +1,13 @@
 [enu default]
+
+CA_READING_DESK = "Reading desk";
+CA_STORED_READING_TITLE = "Nearby library";
+CA_STORED_READING_STORED = "Read the stored original without withdrawing it";
+CA_STORED_READING_EMPTY = "No accessible stored books within reach of this desk";
+CA_STORED_READING_BOOK = "Book %d / %d recipe pages / %.3f kg";
+CA_STORED_READING_SHELF_HINT = "{bind:+use}: storage | {bind:+speed}+{bind:+use}: carried recipe book";
+CA_STORED_READING_DESK_HINT = "{bind:+use}: read nearby stored books";
+
 CA_HUD_CONTAMINATION = "Contamination";
 CA_FOOD_CLEAN = "Clean";
 CA_FOOD_CONTAMINATED = "Contaminated";
@@ -20,6 +29,15 @@ CA_LOCK_NEEDS_KEY = "You need its key, lockpicks or a master key.";
 CA_LOCK_REJECTED = "Only the owner can install or remove a matching lock; check tools and capacity.";
 
 [es]
+
+CA_READING_DESK = "Escritorio de lectura";
+CA_STORED_READING_TITLE = "Biblioteca cercana";
+CA_STORED_READING_STORED = "Leer el original guardado sin retirarlo";
+CA_STORED_READING_EMPTY = "No hay libros guardados accesibles junto al escritorio";
+CA_STORED_READING_BOOK = "Libro %d / %d recetas / %.3f kg";
+CA_STORED_READING_SHELF_HINT = "{bind:+use}: guardar/retirar | {bind:+speed}+{bind:+use}: recetario llevado";
+CA_STORED_READING_DESK_HINT = "{bind:+use}: leer libros guardados cercanos";
+
 CA_HUD_CONTAMINATION = "Contaminación";
 CA_FOOD_CLEAN = "Limpio";
 CA_FOOD_CONTAMINATED = "Contaminado";

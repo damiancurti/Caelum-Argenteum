@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.25** - 2026-10-27.
+Documentation version: **5.8.26** - 2026-10-27.
+
+## 5.8.26 - Existing library and adjacent reading desk (#410)
+
+The accepted shelf remains at(368,-576,0), facing270, with its original model and
+collision. Revision1 adds a reading desk at(368,-496,0), facing270, reusing the
+owned small dining-table mesh with radius40/height34. It has no dining/chair or
+rest bonus. Installation tests its full volume and retries blocked placement;
+no WAD geometry changes. Storage uses one hidden component paired to the shelf,
+never an extra visible chest. Prior saves begin with empty bookcase storage and
+retain existing carried books and personal reading tasks.
 
 ## 5.8.25 - South garden water installation (#410)
 

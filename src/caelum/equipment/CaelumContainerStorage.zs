@@ -36,6 +36,7 @@ class CaelumContainerRules : Object play
     }
     static clearscope String NameKey(int tier)
     {
+        if(tier==CaelumStoredReadingData.DISPLAY_TYPE)return "CA_RECIPE_SHELF";
         if(tier==CaelumWardrobeData.DISPLAY_TYPE)return "CA_FURNITURE_WARDROBE";
         switch(Clamp(tier,SMALL,LARGE))
         {
@@ -255,8 +256,8 @@ class CaelumContainerSession : Inventory
             if(item==selected)Selection=Rows.Size()-1;
         }
         Selection=Clamp(Selection,0,Max(0,Rows.Size()-1));
-        UsedSlots=Chest.StorageSlots();MaximumSlots=CaelumContainerRules.Slots(Chest.StorageTier);
-        UsedWeight=Chest.StorageWeight(user);MaximumWeight=CaelumContainerRules.Capacity(Chest.StorageTier);
+        UsedSlots=Chest.StorageSlots();MaximumSlots=Chest.StorageSlotLimit();
+        UsedWeight=Chest.StorageWeight(user);MaximumWeight=Chest.StorageWeightLimit();
         TotalWeight=Chest.TotalStorageWeight(user);
     }
     void Execute()

@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.25** - 2026-10-27.
+Documentation version: **5.8.26** - 2026-10-27.
+
+## 5.8.26 - Bookcase storage and desk reading (#410)
+
+2026-10-27: the author approved25 stacks/100kg and separately allowed movable
+furniture indoors under existing placement checks. This patch implements only
+stored-book reading. Native inventory ownership, existing learning, real locks,
+96-unit adjacency and line of sight are shared; new revision1 installation leaves
+map bytes and accepted art intact. Personal-book save migration is reversible
+by retaining the original save/runtime. Hub reading progress uses persistent
+reader identity rather than reconstructed Object pointer equality.
+
+Validation in assets/validation_5826 records113 executed native PASS, zero failures,
+zero static errors, and16,980 source-matching package members. Native checks include exact capacity, keys, actual menu commands, save/hub,
+old-save migration and original-version rollback. Existing map/art preservation
+covers14,034 members. Matched library callback P95 is17.9345/18.0215 ms, P99
+18.5998/18.8255 ms;700 tics take19.9516/20.0626 s with100-ms observation uncertainty.
+Callbacks do not establish display/GPU performance. The final naming fix retains
+legacy shared IDs and distinguishes the recipe-book class from the sleeping bag.
+CA410-READING-01
+remains pending author corroboration. No issue closure or V5.8 completion is
+claimed, and all earlier outstanding checks are carried forward. Questions and
+manual test delivery are deferred at the author's request while away.
 
 ## 5.8.25 - Finite garden water furniture (#410)
 
