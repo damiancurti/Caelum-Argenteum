@@ -64,14 +64,16 @@ class CaelumLiveMenuControls : Object ui
                     if(user.FormalInventoryRowKind[i]>=0)Region(3000+i,48,168+i*21,360,21);
                 if(CaelumMateSession.Selected(user)!=null)
                 {NextX=414;RowY=146;Button("CA_MATE_PREPARE",0,114,"r",192,!CaelumMateSession.Selected(user).InMagicBox);}
-                NextX=414;RowY=302;Button("CA_BATH_START",0,104,"h",94);Button("CA_CLEAN_START",0,106,"j",94);
+                if(CaelumLiveMenu.InventoryHAction(user)!="ca_inventory_boil")
+                {NextX=414;RowY=302;Button("CA_BATH_START",0,104,"h",94);Button("CA_CLEAN_START",0,106,"j",94);}
                 int row=user.FormalInventorySelectionIndex-user.FormalInventoryVisibleStart;
                 if(user.FormalInventoryEntryCount>0 && row>=0 && row<CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
                     && user.FormalInventoryRowWaterLiters[row]>=0)
                 {
                     NextX=414;RowY=146;
-                    Button("CA_WATER_COLLECT",0,114,"r",104,!user.FormalInventoryRowInMagicBox[row]);
-                    Button("CA_WATER_EMPTY_ACTION",0,118,"v",84,!user.FormalInventoryRowInMagicBox[row]);
+                    Button("CA_WATER_COLLECT_SHORT",0,114,"r",64,!user.FormalInventoryRowInMagicBox[row]);
+                    Button("CA_WATER_EMPTY_ACTION",0,118,"v",58,!user.FormalInventoryRowInMagicBox[row]);
+                    Button("CA_WATER_DEPOSIT_ACTION",0,103,"g",62,!user.FormalInventoryRowInMagicBox[row]);
                     if(CaelumLiveMenu.InventoryHAction(user)=="ca_inventory_boil")
                     { NextX=414;RowY=302;Button("CA_WATER_BOIL",0,104,"h",192,!user.FormalInventoryRowInMagicBox[row]); }
                 }

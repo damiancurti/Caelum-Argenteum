@@ -33,12 +33,13 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 23;
+    const PROVISION_REVISION = 24;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
     bool BathTask,BathDomestic;
     double BathRemaining,BathWater,BathSoap,BathWaterPerDegree;
+    double BathCapacity,BathRefill;
     bool CleaningTask;
     double CleaningRemaining,CleaningSoap;
     int CleaningIndex;
@@ -74,8 +75,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         }
         if(BathTask && !sleeping && FoodIllness!=null)
         {
-            if(BathDomestic)BathWater=Min(CaelumDomesticWaterData.CAPACITY_LITERS,BathWater
-                +AltitudeSecondsPerTic*CaelumDomesticWaterData.REFILL_LITERS_PER_WORLD_MINUTE/60.0);
+            if(BathDomestic)BathWater=Min(BathCapacity,BathWater+AltitudeSecondsPerTic*BathRefill/60.0);
             double wanted=Min(BathRemaining,AltitudeSecondsPerTic/CaelumContaminationData.BATH_SECONDS_DEGREE);
             double dose=Min(wanted,Min(FoodIllness.Contamination,Min(BathWater/BathWaterPerDegree,
                 BathSoap/CaelumContaminationRules.SoapGrams(BathWaterPerDegree))));
@@ -161,6 +161,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         if(BathTask)
         {
             let bath=CaelumBathTask.Find(user);BathRemaining=bath.RemainingDegrees;BathDomestic=bath.Fixture!=null;
+            BathCapacity=BathDomestic?bath.Fixture.WaterCapacity():0;BathRefill=BathDomestic?bath.Fixture.WaterRefillPerMinute():0;
             BathWater=CaelumBathTask.WaterAvailable(user,bath.Fixture,bath.WaterModel);BathSoap=CaelumSoapSupply.Available(user);
             BathWaterPerDegree=CaelumContaminationRules.BathWaterLiters(1,user.DerivedStats.BaseMass);
         }

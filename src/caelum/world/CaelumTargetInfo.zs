@@ -106,6 +106,8 @@ class CaelumTargetInfo : Object play
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
         let domestic=CaelumDomesticFixture(Subject);
+        if(domestic is 'CaelumWaterFurniture')
+        {Actions=L(!reachable || !domestic.CanReach(user)?"CA_TARGET_APPROACH":domestic is 'CaelumCistern'?"CA_CISTERN_HINT":"CA_FOUNTAIN_HINT");return;}
         if(domestic is 'CaelumDomesticToilet')
         {
             Actions=L(!reachable || !domestic.CanReach(user)?"CA_TARGET_APPROACH":CaelumHygieneTask.Active(user)?"CA_TOILET_CANCEL_HINT":"CA_TOILET_HINT");

@@ -23,13 +23,13 @@ class CaelumBathTask : Inventory
     static bool SourceValid(CaelumPlayer user,CaelumDomesticFixture fixture,Sector waterModel)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.isFrozen())return false;
-        if(fixture!=null)return fixture.SuppliesWater() && fixture.CanReach(user);
+        if(fixture!=null)return fixture.SuppliesWater() && fixture.CanReach(user) && fixture.WaterSafe(user);
         return waterModel!=null && CaelumWaterQuality.Model(user)==waterModel && CaelumWaterQuality.Source(user)==CaelumWaterQuality.POTABLE;
     }
     static double WaterAvailable(CaelumPlayer user,CaelumDomesticFixture fixture,Sector waterModel)
     {
         if(!SourceValid(user,fixture,waterModel))return 0;
-        if(fixture!=null){let water=CaelumDomesticWater.Get(fixture.House);return water==null?0:water.Liters;}
+        if(fixture!=null)return fixture.AvailableWater(user);
         let installation=CaelumConnectedWaterMap.Get();if(installation!=null)installation.Sync(CaelumWorldClock.Get(user));
         int index=installation==null?-1:installation.Index(waterModel);
         return index<0?double.max:installation.Available(index);
@@ -37,7 +37,7 @@ class CaelumBathTask : Inventory
     static bool SpendWater(CaelumPlayer user,CaelumDomesticFixture fixture,Sector waterModel,double liters)
     {
         if(liters<0 || WaterAvailable(user,fixture,waterModel)+0.000000001<liters)return false;
-        if(fixture!=null)return CaelumDomesticWater.Get(fixture.House).Spend(liters);
+        if(fixture!=null)return fixture.SpendWater(user,liters);
         let installation=CaelumConnectedWaterMap.Get();int index=installation==null?-1:installation.Index(waterModel);
         return index<0 || installation.Withdraw(index,liters)+0.000000001>=liters;
     }

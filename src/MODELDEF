@@ -4899,3 +4899,4 @@ Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_9.obj" Scal
 #include "caelum/data/kitchen_stations.modeldef"
 #include "caelum/data/kitchen_fixtures.modeldef"
 #include "caelum/data/wardrobe.modeldef"
+#include "caelum/data/water_furniture.modeldef"

@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
+
+## 5.8.25 - Garden water furniture (#410)
+
+Implemented fixed fountain/cistern actors, original period-reference models and
+painted icons, independent200/1000-L reserves, actual-volume inventory transfers,
+quality/temperature conservation, and the existing bath/forecast adapters.
+Initial cistern water is zero; only the fountain replenishes at1 L/world-minute.
+Revision1 installation leaves existing mansion geometry and furniture intact.
+Validation in assets/validation_5825: 96 native assertions pass; static checks
+report zero errors; all 16,978 packaged files match source. Save migration,
+original-version rollback, hub persistence and native visuals were checked.
+CA410-WATER-FURNITURE-01 is pending author review. Keep #410 and V5.8 open:
+reading desks/bookcase access, remaining furnishing variants and acquisition/
+player placement still require implementation; other issues remain separate.
 
 ## 5.8.24 - Native wardrobe storage (#410)
 

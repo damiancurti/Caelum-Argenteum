@@ -6801,3 +6801,24 @@ CA_FURNITURE_WARDROBE = "Armario";
 CA_TARGET_CARRY_WARDROBE = "{bind:+speed} + {bind:+use}: carry wardrobe";
 [es]
 CA_TARGET_CARRY_WARDROBE = "{bind:+speed} + {bind:+use}: recoger armario";
+[enu default]
+CA_FURNITURE_FOUNTAIN = "Drinking fountain";
+CA_FURNITURE_CISTERN = "Cistern";
+CA_WATER_FURNITURE_STATUS = "Reserve: %.2f / %.0f L | %s";
+CA_WATER_COLLECT_SHORT = "Collect";
+CA_WATER_DEPOSIT_ACTION = "Store";
+CA_WATER_DEPOSITED = "Water transferred to the cistern.";
+CA_WATER_DEPOSIT_REJECTED = "Aim at an accessible cistern with free space and select a filled carried container.";
+CA_CISTERN_HINT = "{bind:+use}: reserve | {bind:+speed}+{bind:+use}: bathe | Inventory: R collect / G deposit";
+CA_FOUNTAIN_HINT = "{bind:+use}: reserve | {bind:+speed}+{bind:+use}: bathe | Inventory: R collect";
+
+[es]
+CA_FURNITURE_FOUNTAIN = "Fuente de agua";
+CA_FURNITURE_CISTERN = "Cisterna";
+CA_WATER_FURNITURE_STATUS = "Reserva: %.2f / %.0f L | %s";
+CA_WATER_COLLECT_SHORT = "Recoger";
+CA_WATER_DEPOSIT_ACTION = "Guardar";
+CA_WATER_DEPOSITED = "Agua trasladada a la cisterna.";
+CA_WATER_DEPOSIT_REJECTED = "Apuntá a una cisterna accesible con espacio y seleccioná un recipiente con agua fuera de la Caja.";
+CA_CISTERN_HINT = "{bind:+use}: reserva | {bind:+speed}+{bind:+use}: bañarse | Inventario: R recoger / G depositar";
+CA_FOUNTAIN_HINT = "{bind:+use}: reserva | {bind:+speed}+{bind:+use}: bañarse | Inventario: R recoger";

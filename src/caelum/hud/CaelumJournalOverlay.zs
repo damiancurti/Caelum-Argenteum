@@ -2828,6 +2828,8 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_inventory_boil");
         else if (currentPage == 0 && (character == 118 || character == 86))
             SendNetworkEvent("ca_inventory_water", 1);
+        else if (currentPage == 0 && (character == 103 || character == 71))
+            SendNetworkEvent("ca_inventory_water_deposit");
         return true;
     }
 
@@ -3059,6 +3061,8 @@ class CaelumJournalOverlay : EventHandler
         { CaelumWaterBoiling.InventoryAction(requestingPlayer); }
         else if (e.Name == "ca_inventory_water")
         { CaelumWaterQuality.InventoryAction(requestingPlayer, e.Args[0] == 1); }
+        else if (e.Name == "ca_inventory_water_deposit")
+        { CaelumWaterFurniture.InventoryDeposit(requestingPlayer); }
         else if (e.Name == "ca_inventory_drop")
         {
             requestingPlayer.DropFormalInventorySelection();

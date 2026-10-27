@@ -1,15 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
 
-**5.8.24/#410:**wardrobe;25stacks/1000kg;153.896kg;validation_5824;CA410-WARDROBE-01-pending.
+**5.8.24-25/#410:** wardrobe/fountain/cistern; validation_5824-25; author-pending.
 
-**5.8.22-23:**mansion-fixtures/Limbo-history;validation_5822-23;author-pending.
-**5.8.19–21:**cooking/fixtures;validation_5819–21;three-checks-pending.
+**5.8.19-23:** integration; validation_5819-23; author-pending.
 
 **5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
-
-**5.8.16/#502:**232PASS;CA502-SCENERY-01accepted2026-10-26.
 
 **5.8.15/#412:**outside-Use/rest/exit;73PASS;validation_5815;accepted2026-10-26. Co-op:V5.12. #410lots/#411trivet/#502checks:accepted;PR508/507/506.
 
@@ -31,20 +28,7 @@ Documentation version: **5.8.24** - 2026-10-27.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
 **5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
 
-**5.7.14/#472:**163+21PASS;accepted2026-10-23;validation_5714;V5.7-complete.
-**5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.
-**5.7.11/#486:** Chemistry; CA486-01 accepted2026-10-23.
-**5.7.13/#471:**22recipes/batches/imports/renewal;267finalnativePASS;validation_5713;CA471-BATCH-01accepted2026-10-23.
-**5.7.9/#409:** boiling;117nativePASS;validation_579. CA409-01 accepted2026-10-23.
-
-**5.7.8/#479:** owner_death_report.json:150+4PASS;visual-accepted2026-10-22;CA479-01accepted2026-10-23.
-**5.7.7/#481:**target-panel;validation_577;CA481-01:accepted2026-10-22;#479 separate.
-**5.7.6/#471:**ingredient-art;validation_576;CA471-ART-01:accepted2026-10-22;recipes/economy unresolved.
-**5.7.5/#407:**kelp/iodine;263+19PASS;80PASS live recheck;validation_575;CA407-01:accepted2026-10-22.
-**5.7.4/#470:**Alchemy;validation_574;CA470-01:accepted2026-10-22.
-**5.7.3/#406:**recovery;validation_573;CA406-01:accepted2026-10-22.
-**5.7.2/#405:**3D/imports;validation_572;CA405-01:accepted2026-10-22.
-**#404:**resource-contract;validation_571.
+**V5.7:** complete; issue-specific approvals and validation remain in HISTORY.
 
 **5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 
