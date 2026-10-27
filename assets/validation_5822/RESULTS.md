@@ -5,7 +5,10 @@ each, using accepted art and dimensions. All twelve fixtures share the kitchen
 sink's existing 200-L reserve. The source map and all model/sprite/graphic bytes
 remain unchanged. No old pending author check is retired.
 
-Final build: `build/issue410-cooking/final22c/caelum_argenteum_dev.pk3`.
+Native test package: `build/issue410-cooking/final22c/caelum_argenteum_dev.pk3`.
+Official delivery uses `build_dev.ps1` output `final22d` in the same directory.
+`official-package.json` verifies all 16,962 member bytes equal the tested package;
+only archive compression/container bytes differ. The author helper uses that build.
 `report.json` records its exact SHA256, source comparison, unchanged asset count,
 executed literal PASS count and original-version rollback evidence. The
 collector rejects assertion, VM, static and native-exit failures; it counts

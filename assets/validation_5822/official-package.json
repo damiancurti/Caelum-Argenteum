@@ -1,0 +1,7 @@
+{
+  "official_sha256": "25aa90f844284616391b3b1fa497d485ce8e7160edf00c02f9495316bfcc31dd",
+  "tested_source_identical_sha256": "77cd808b96f916f9f42d519b7f91aea729a27bf54b221d9b8891e4048c42f564",
+  "identical_members": 16962,
+  "build_command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1 -Destination build/issue410-cooking/final22d/caelum_argenteum_dev.pk3",
+  "validation": "All official package member bytes equal tested final22c. Compression/container differs only."
+}
