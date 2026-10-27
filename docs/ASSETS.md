@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.33** - 2026-10-27.
+Documentation version: **5.8.34** - 2026-10-27.
+
+## 5.8.34 / #410 - Painted ordinary chair and cot items
+
+The built-in image generator supplies two painted transparent inventory/dropped
+sprites. Owned validation_5833 captures provide chair/cot shape; the owned luxury
+chair sprite supplies pixel-oriented wood shading only. Source PNGs, all prompts,
+reference roles and hashes are retained in assets/art_source/basic_rest_items.
+Runtime CBICA0/CBIBA0 PNGs are exact copies with generated alpha preserved.
+The earlier cot generation is retained as provenance. No external/Doom pixels,
+procedural model projection or replacement of world models is involved.
+Native inventory review and author corroboration remain separate evidence levels.
 
 ## 5.8.33 / #410 - Human-scale chair and raised cot
 
