@@ -1,6 +1,36 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.43** - 2026-10-28.
+Documentation version: **5.8.44** - 2026-10-28.
+
+## 5.8.44 - Decorative paintings and statues (#410)
+
+Movable River Plate landscape paintings and carved botanical statues use the
+existing learned furniture recipes, native inventory, title, Box and commerce.
+The author approved decorative-only behavior and three items of each type in
+Provisions, ten books of each recipe in the library, ingredient cost plus the
+existing 25% manufacture margin and replenishment by actual recipe duration.
+No rest, combat, learning or survival bonus is granted.
+
+Delegated construction bills at 100% efficiency: painting 4,184 g wood +4 g iron
++92 g cotton fabric, empty mass4.278195893 kg; statue27,063 g wood, empty
+mass27.062258043 kg. Width/height: painting0.72/0.52 m, depth0.04 m; statue
+0.35/0.85 m on a0.35-m square base. Normal fabrication time, Destreza and waste
+remain. Workbench and Fine tools apply; the painting's textile uses Sewing.
+DATA.json/GENERATED.json retain the physical calculation and its approximations.
+
+Inventory activation places a statue on dry supported permitted ground with
+full free volume and access checks. To hang the picture, aim at a plain static
+one-sided wall within native Use reach. The whole frame must fit on that wall
+and below its ceiling; special/moving walls, windows, overlapping objects and
+doors are rejected. It does not block movement. Both use the existing mansion,
+property and land permissions, with no additional universal building right.
+Crouch+Use carries an aimed owned decoration when weight capacity permits.
+Neither carrying nor Box storage copies its body, title, TID or contamination.
+
+Furniture catalogue revision6 and recipe revision24 append the two entries
+without refilling sold merchandise or erasing any of the twelve earlier
+furniture recipes. Existing fixed furniture/maps stay unchanged. Original saves
+remain available for rollback; native evidence is in assets/validation_5844.
 
 ## 5.8.43 - Unloaded household cleaning (#502)
 
