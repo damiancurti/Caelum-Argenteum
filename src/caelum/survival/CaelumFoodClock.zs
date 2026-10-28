@@ -117,7 +117,7 @@ class CaelumFoodClock : Thinker
         if(Ready && now>Stamp && !commercial)Climate.Advance(lots,now-Stamp);
         Stamp=now;Ready=true;
         // No inicializar con datos climáticos inventados cuando no hay muestra.
-        Climate.Capture(body,clock,calendar,weather);
+        if(CaelumHouseStorageEntry.Remote(body)==null)Climate.Capture(body,clock,calendar,weather);
         NextUpdate=level.maptime+TICRATE;
     }
     override void Tick()

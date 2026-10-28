@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.40** - 2026-10-28.
+Documentation version: **5.8.41** - 2026-10-28.
 
 ## 5.8.40 - Dining set artwork (#410)
 

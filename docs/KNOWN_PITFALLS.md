@@ -455,6 +455,19 @@ merely updating its WorldTick omits waiting/rest. Bound collision batches betwee
 rendered frames and reject an exact-date forecast that cannot model shared water
 mutations. This does not implement history for unloaded households.
 
+Extension, #502/5.8.41 (2026-10-28), isolated native evidence in
+assets/validation_5841: MAP01 is outside hub434. Returning through Limbo recreates
+fixed house fixtures, so actor-only cleaning target IDs are insufficient.
+Preserve the declared installation identity and floor-zone key, plus scalar work
+progress; never use enumeration order. Adopt the real coffer on older-save load,
+carry its actual inventory, clear native contacts/floor references across travel,
+and reconstruct food-clock Thinkers from saved source climate. Always use
+`self.Item = item` for case-insensitive field/parameter collisions. Tests must
+include both same-hub returns and the actual cross-hub campaign boundary.
+The inherited skipped-time fixture failed on the unchanged prior runtime too:
+its visible floor target was blocked by a native actor. Verify a collision-safe
+route before asserting movement/cleaning; sight alone does not establish access.
+
 ## CA-KP-168 - World-object exposure must follow native inventory ownership
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.

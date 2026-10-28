@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.40** - 2026-10-28.
+Documentation version: **5.8.41** - 2026-10-28.
+
+## 5.8.41 - Household storage persistence (#502, 2026-10-28)
+
+Added the actual-coffer travelling registry and source-home food/water/exposure
+catch-up without making household stock player cargo. Partial work survives
+both native hub returns and recreated fixed installations after a Limbo visit.
+The initial probe exposed two genuine persistence errors: a case-insensitive
+parameter shadow discarded food-clock ownership, and actor-only target keys
+failed across the non-hub MAP01 boundary. Both were corrected and the failing
+runs remain private development evidence. Final native/static evidence, package
+hashes, migration and original-runtime rollback are recorded in
+assets/validation_5841/report.json: 164 current native PASS and 40 original-runtime
+checks, zero final failures/static errors. All 17,022 package members match source;
+14,053 prior map/art members are byte-identical. Three existing dining OBJ texts
+changed only checkout line endings; their normalized geometry matches exactly.
+The 856-target persistence callback measured 1.068 ms mean, 1.093 ms p95 and
+1.420 ms maximum; this is not displayed-frame/FPS evidence. The inherited
+accelerated-clock fixture also failed on the original runtime because its merely
+visible destination was physically blocked. Its scoped adapter verifies native
+walkability first; both runtimes then pass. No author acceptance is inferred.
+CA502-HOME-STORAGE-01 remains pending with all earlier checks. Automatic absent
+housework, remaining #502 adapters and full V5.8 completion are not claimed.
 
 ## 5.8.40 - Portable dining sets (#410, 2026-10-28)
 

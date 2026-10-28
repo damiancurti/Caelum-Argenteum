@@ -16,7 +16,7 @@ class CaelumDomesticCleanTarget : Object play
     CaelumContaminationTile Tile;
     vector3 Position;
     double Area,Progress,Initial;
-    bool Done;
+    bool Done,DomesticCoffer;
 }
 
 class CaelumDomesticCleaningProbe : Actor
@@ -139,6 +139,7 @@ class CaelumHousekeepingWork : Object play
             target.Area=CaelumContaminationObject.Area(body);Targets.Push(target);
         }
         if(Chest==null){Targets.Clear();return false;}
+        CaelumHouseStorage.Register(Chest,House);
         for(int y=CaelumContaminationSurfaceContact.Cell(low.Y);y<=CaelumContaminationSurfaceContact.Cell(high.Y);y++)
             for(int x=CaelumContaminationSurfaceContact.Cell(low.X);x<=CaelumContaminationSurfaceContact.Cell(high.X);x++)
         {
@@ -148,7 +149,9 @@ class CaelumHousekeepingWork : Object play
             let target=new('CaelumDomesticCleanTarget');target.Position=Goal.Pos;target.Area=1;
             target.Tile=Sheet.Find(0,sector.Index(),0,x,y,true);Configure(user,target.Tile);Targets.Push(target);
         }
-        Initialized=true;Active=-1;Day=-1;return true;
+        Initialized=true;Active=-1;Day=-1;
+        if(Chest.DomesticStorage!=null)Chest.DomesticStorage.RestoreProgress(self);
+        return true;
     }
     void SelectWorker()
     {
@@ -236,6 +239,8 @@ class CaelumHousekeepingWork : Object play
         let roster=CaelumHouseResidents.Get();if(roster==null)return;
         let user=CaelumPlayer(roster.Owner);if(!CaelumPlayerAuthority.CanMutate(user))return;
         if(!Initialized){Setup(user);return;}
+        if(Chest!=null && Chest.DomesticStorage==null)
+        {CaelumHouseStorage.Register(Chest,House);if(Chest.DomesticStorage!=null)Chest.DomesticStorage.RestoreProgress(self);}
         double now=CaelumContaminationSurfaces.Now(user),elapsed=ClockReady?Max(0.0,now-Stamp):0;
         Stamp=now;ClockReady=true;
         let clock=CaelumWorldClock.Get(user);let calendar=CaelumCalendarState.Get(user);

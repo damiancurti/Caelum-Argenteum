@@ -13,6 +13,13 @@ class CaelumHouseHub : Object play
         int house=CaelumHouseHubData.HouseForMap(level.MapName);
         if(house<0)return true;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
+        // Migración única al preparar/cargar; no depende del próximo turno
+        // del trabajador ni cambia el contenido de los cofres existentes.
+        let events=CaelumHouseHubEvents(EventHandler.Find('CaelumHouseHubEvents'));
+        if(events!=null && events.Housekeeping!=null && events.Housekeeping.Initialized
+            && events.Housekeeping.Chest!=null && events.Housekeeping.Chest.DomesticStorage==null)
+        {CaelumHouseStorage.Register(events.Housekeeping.Chest,house);}
+        CaelumHouseStorage.RestoreCurrent();
         int slot=CaelumCityData.FURNITURE_SLOT_BASE+house;
         bool ready=CaelumDiningWorld.Place(slot,CaelumCityData.TablePosition(house),2,90);
         if(!CaelumMansionFurniture.Bed(slot,CaelumCityData.BedPosition(house),90))ready=false;
@@ -43,6 +50,13 @@ class CaelumHouseHubEvents : EventHandler
     transient bool MarketReady;
     int NextPrepareTic;
     CaelumHousekeepingWork Housekeeping;
+    override void WorldUnloaded(WorldEvent e)
+    {
+        if(Housekeeping==null || Housekeeping.Chest==null)return;
+        CaelumHouseStorage.Register(Housekeeping.Chest,Housekeeping.House);
+        let entry=Housekeeping.Chest.DomesticStorage;
+        if(entry!=null)entry.CaptureProgress(Housekeeping);
+    }
     override void WorldLoaded(WorldEvent e)
     {
         Prepared=false;BathroomReady=false;MarketReady=false;NextPrepareTic=0;

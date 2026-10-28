@@ -1,0 +1,8 @@
+{
+  "fixture_sha256": {
+    "checks.pk3": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a",
+    "domestic-checks.pk3": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67",
+    "legacy-checks.pk3": "ebf0fe29479f2547336a3bf34c61004c9ed0fd39ebed32ee5e703416021d5dc5"
+  },
+  "same_inputs_same_bytes": true
+}

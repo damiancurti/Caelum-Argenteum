@@ -1,6 +1,41 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.40** - 2026-10-28.
+Documentation version: **5.8.41** - 2026-10-28.
+
+## 5.8.41 - Household storage persistence (#502)
+
+A revision-1 registry adopts the actual coffer selected by the existing domestic
+ownership/access rules when its house is visited or an older house save loads.
+It does not seed replacement money, supplies, food or historical cleaning.
+The original actor and inventory survive map travel, preserving TIDs, ownership,
+locks, fractional soap and native contents. While absent, the coffer is hidden,
+non-solid and inaccessible; it is not carried weight or usable player storage.
+Returning restores the same coffer at its recorded location. Acquisition still
+uses the actual registered Provisions stock, wallet, household payment and
+capacity checks; this patch does not trigger new automatic purchases while away.
+
+Stored food continues to age and stored water to cool against the source home's
+natural regional climate. Temporary climate-seal offsets end at departure.
+The coffer's own exposure uses the same source climate and approved area/rain
+rules, settled lazily before reads or writes. Contents stay protected from new
+contact; no contamination, cooling or cleaning rates change.
+
+Partial work, its initial contamination and the active target use stable keys:
+map floor zones retain their declared surface coordinates, fixed bathroom/table/
+chair/bed installations retain their declared identities, and other actual
+objects acquire an additive identity. MAP01 is outside hub434, so fixed domestic
+installations may be recreated after a Limbo crossing; actor enumeration order
+must not determine restored effort. The existing per-house daily quota remains
+in its authoritative resident record. This does not preserve every other
+non-travelling furnishing property across hub resets, or run workers while
+unloaded; those remaining absence adapters and scheduling are still pending.
+
+Only event-registered visited coffers are transported. Departure/catch-up work
+is bounded by their actual inventory and the existing local housekeeping target
+set; no recurring global actor census is introduced. Native inventory collision
+references are cleared before travel and recomputed at the destination. Additive
+save migration preserves existing objects and does not invalidate old saves;
+retain the original save for rollback in its original runtime.
 
 ## 5.8.40 - Portable complete dining sets (#410)
 

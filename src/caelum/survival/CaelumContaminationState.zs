@@ -6,6 +6,7 @@ class CaelumContaminationState : Object play
     CaelumContaminationObject Exposure;
     int PhysiologyRevision;
     double DiseaseFraction;
+    int DomesticTargetKey;
 
     void EnsurePhysiology()
     {
@@ -103,6 +104,7 @@ class CaelumContaminationStorage : Object play
     }
     static double Value(Actor body)
     {
+        let remote=CaelumHouseStorageEntry.Remote(body);if(remote!=null)remote.SyncDirt();
         let user=CaelumPlayer(body);
         if(user!=null)return CaelumFoodIllness.Value(user);
         let entry=Get(body);
@@ -114,6 +116,7 @@ class CaelumContaminationStorage : Object play
     }
     static void Set(Actor body,double value)
     {
+        let remote=CaelumHouseStorageEntry.Remote(body);if(remote!=null)remote.SyncDirt();
         value=Clamp(value,0.0,CaelumFoodData.MAX_CONTAMINATION);
         let user=CaelumPlayer(body);
         if(user!=null)
