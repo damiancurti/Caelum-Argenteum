@@ -16,6 +16,8 @@ class CaelumCityMerchant : Actor
     int RestockRevision;
     bool EnumeratingStock;
     double RestockLastSeen,RestockNextDue;
+    transient bool HistoricalStockClock;
+    transient double HistoricalStockStamp;
     Array<CaelumShopProduct> Products;
     // Capacidad explícita para #383; ningún comercio actual se convierte aquí.
     bool TradesClothing;
@@ -199,6 +201,14 @@ class CaelumCityMerchant : Actor
         CaelumStorageFurnitureCatalogue.Ensure(self,user);CaelumRestFurnitureCatalogue.Ensure(self,user);
         CaelumHygieneCatalogue.Ensure(self,user);
         CaelumKitchenCatalogue.Ensure(self,user);CaelumKitchenCatalogue.EnsureRecipes(self,user);
+    }
+    // Una compra histórica usa su propio instante en todos los adaptadores
+    // del catálogo, sin desplazar el reloj civil ni el inventario del jugador.
+    void EnsureStockAt(CaelumPlayer user,double at)
+    {
+        bool previous=HistoricalStockClock;double previousStamp=HistoricalStockStamp;
+        HistoricalStockClock=true;HistoricalStockStamp=at;EnsureStock(user);
+        HistoricalStockClock=previous;HistoricalStockStamp=previousStamp;
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

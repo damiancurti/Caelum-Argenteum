@@ -51,7 +51,16 @@ class CaelumDomesticWater : Object play
         while(roster.HouseWater.Size()<=house)roster.HouseWater.Push(null);
         if(roster.HouseWater[house]==null)roster.HouseWater[house]=new('CaelumDomesticWaterState');
         let reserve=roster.HouseWater[house];
-        reserve.Sync(CaelumConnectedWaterMap.ClockStamp(clock));
+        CaelumHouseAway.Sync(user);
+        double now=CaelumConnectedWaterMap.ClockStamp(clock);let store=CaelumHouseStorage.Get();
+        if(store!=null)for(int i=0;i<store.Houses.Size();i++)if(store.Houses[i].House==house && store.Houses[i].Parked)
+        {now=store.Houses[i].SourceNow(user);break;}
+        reserve.Sync(now);
         return reserve;
+    }
+    static CaelumDomesticWaterState Raw(int house)
+    {
+        let roster=CaelumHouseResidents.Get();
+        return roster!=null && house>=0 && house<roster.HouseWater.Size()?roster.HouseWater[house]:null;
     }
 }

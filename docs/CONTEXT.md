@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+**5.8.43/#502:** housekeeping; validation_5843.
 
 **5.8.42/#502:**furnishing dirt/history persistence;validation_5842;unloaded-work-pending.
 **5.8.41/#502:**home-coffer persistence;validation_5841;unloaded-work-pending.
@@ -364,7 +366,7 @@ Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT owns scope/dependencies; HISTORY preserves earlier evidence.
 
-Repository layout and selective-reading policy: AGENTS.md.
+Layout/reading: AGENTS.md.
 
 ## Critical premises
 

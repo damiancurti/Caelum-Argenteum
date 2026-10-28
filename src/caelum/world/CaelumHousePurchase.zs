@@ -97,10 +97,12 @@ class CaelumHousePurchase : Object play
                 && title==("house:"..CaelumHouseHubData.MapName(CaelumPropertyData.CENTRAL_HOUSE)));
     }
     static bool Buy(CaelumPlayer user,CaelumStashChest chest,int house,CaelumCityMerchant vendor,Inventory stock,int quantity)
+    {return BuyAt(user,chest,house,vendor,stock,quantity,CaelumScheduleState.Now(user));}
+    static bool BuyAt(CaelumPlayer user,CaelumStashChest chest,int house,CaelumCityMerchant vendor,Inventory stock,int quantity,double at)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || !OwnChest(chest,house) || vendor==null
             || vendor.bDestroyed || vendor.Category!=0 || stock==null || stock.Owner!=vendor
-            || quantity<=0 || quantity>stock.Amount || Supply(stock)==0)return false;
+            || quantity<=0 || quantity>stock.Amount || Supply(stock)==0 || at<0 || at<vendor.RestockLastSeen)return false;
         int price=CaelumEconomyRules.GetPriceChargedByMerchant(CaelumEconomyRules.GetInventoryUnitBaseValue(stock),quantity);
         if(price<=0 || vendor.WalletCopper>2147483647-price)return false;
         let payment=new('CaelumHousePayment');if(!payment.Plan(chest,price))return false;
@@ -120,17 +122,19 @@ class CaelumHousePurchase : Object play
         if(receiving!=null)receiving.Amount+=quantity;
         else{split.Amount=quantity;split.AttachToOwner(chest);}
         stock.Amount-=quantity;if(stock.Amount==0)stock.Destroy();
-        vendor.WalletCopper+=price;CaelumShopRestock.Sync(vendor,user,true);return true;
+        vendor.WalletCopper+=price;CaelumShopRestock.SyncAt(vendor,user,at,true);return true;
     }
     static void Replenish(CaelumPlayer user,CaelumStashChest chest,int house)
+    {ReplenishAt(user,chest,house,CaelumScheduleState.Now(user));}
+    static void ReplenishAt(CaelumPlayer user,CaelumStashChest chest,int house,double at)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || !OwnChest(chest,house))return;
+        if(!CaelumPlayerAuthority.CanMutate(user) || !OwnChest(chest,house) || at<0)return;
         let market=CaelumDomesticMarket.Get();if(market==null)return;
         // El orden persistente es el de los comercios, sin escaneos de actores.
         for(int i=0;i<market.Vendors.Size();i++)
         {
-            let vendor=market.Vendors[i].Body;if(vendor==null || vendor.bDestroyed)continue;
-            vendor.EnsureStock(user);
+            let vendor=market.Vendors[i].Body;if(vendor==null || vendor.bDestroyed || at<vendor.RestockLastSeen)continue;
+            vendor.EnsureStockAt(user,at);
             for(int kind=1;kind<=2;kind++)
             {
                 int target=kind==1?CaelumHousekeepingData.CLOTH_TARGET:CaelumHousekeepingData.SOAP_TARGET_GRAMS;
@@ -147,7 +151,7 @@ class CaelumHousePurchase : Object play
                     int price=CaelumEconomyRules.GetPriceChargedByMerchant(CaelumEconomyRules.GetInventoryUnitBaseValue(stock),mid);
                     let plan=new('CaelumHousePayment');if(plan.Plan(chest,price))lo=mid;else hi=mid-1;
                 }
-                if(lo>0)Buy(user,chest,house,vendor,stock,lo);
+                if(lo>0)BuyAt(user,chest,house,vendor,stock,lo,at);
             }
             if(Count(chest,1)>=CaelumHousekeepingData.CLOTH_TARGET && Count(chest,2)>=CaelumHousekeepingData.SOAP_TARGET_GRAMS)return;
         }

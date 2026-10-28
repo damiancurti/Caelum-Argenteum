@@ -1,0 +1,66 @@
+﻿{
+    "label":  "frames02-current",
+    "runtime":  "final43b",
+    "started_utc":  "2026-10-28T13:15:02.9408086Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "F0D9AAB75D729FEF7EA66E9C94586F296ACF4E628DA4A1E57CB15A551B2BFCFB",
+    "addon_sha256":  "27D20506FDCF3C9EE773DBC577ABDF7C5FAE4A3D249308C2A126A78DE96417FC",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\\final43b\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\\frames.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\\frames02-current.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "410",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\\frames02-current.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "-loadgame",
+                      "\"home-prior42.zds\"",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-housekeeping-work\\build\\issue502-housekeeping\\frames.cfg\""
+                  ],
+    "command_script":  "wait 70; changemap MAP03; wait 885; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  30880,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-28T13:15:40.1306977Z"
+}

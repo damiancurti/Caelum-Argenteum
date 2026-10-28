@@ -50,6 +50,33 @@ class CaelumHouseStorageEntry : Object play
     int FurnishingRevision;
     bool FurnishingsPending;
     Array<CaelumHouseStoredFurnishing> Furnishings;
+    CaelumHouseAwayWork Away;
+
+    double SourceAt(double civil)
+    {return Climate!=null && Climate.Ready?ClimateStamp+Max(0.0,civil-Climate.CivilSeconds):ClimateStamp;}
+    double SourceNow(CaelumPlayer user)
+    {return Climate!=null && Climate.Ready?SourceAt(CaelumHouseAwayWork.Civil(user)):CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(user));}
+    void Rebase(CaelumPlayer user)
+    {
+        if(!Parked || Climate==null || !Climate.Ready)return;
+        double shift=CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(user))-SourceNow(user);
+        if(Abs(shift)<.000000001)return;
+        ClimateStamp+=shift;DirtStamp+=shift;
+        for(int i=0;i<Furnishings.Size();i++){Furnishings[i].Stamp+=shift;Furnishings[i].CivilOffset-=shift;}
+        let ledger=CaelumContaminationSurfaces.Get();
+        if(ledger!=null)for(int i=0;i<ledger.Maps.Size();i++)if(ledger.Maps[i].Map==CaelumHouseHubData.MapName(House))
+        {
+            let sheet=ledger.Maps[i];sheet.Epoch+=shift;sheet.CivilOffset-=shift;
+            for(int j=0;j<sheet.Tiles.Size();j++)sheet.Tiles[j].Stamp+=shift;
+        }
+        let reserve=CaelumDomesticWater.Raw(House);if(reserve!=null)reserve.Stamp+=shift;
+        for(Inventory item=Chest.Inv;item!=null;item=item.Inv)
+        {
+            let food=CaelumFoodClock.Get(item);if(food!=null && food.Ready)food.Stamp+=shift;
+            let water=CaelumWaterContainer(item);if(water!=null && water.TemperatureClockReady)water.TemperatureStamp+=shift;
+        }
+        for(int i=0;i<Foods.Size();i++)if(Foods[i].Ready)Foods[i].Stamp+=shift;
+    }
 
     void CaptureFurnishings(CaelumHousekeepingWork work,CaelumPlayer user)
     {
@@ -154,7 +181,11 @@ class CaelumHouseStorageEntry : Object play
     {
         if(!Parked || Chest==null || Climate==null || !Climate.Ready)return;
         let store=CaelumHouseStorage.Get();if(store==null)return;
-        double now=CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(CaelumPlayer(store.Owner)));
+        let user=CaelumPlayer(store.Owner);CaelumHouseAway.Sync(user);SyncDirtTo(SourceNow(user));
+    }
+    void SyncDirtTo(double now)
+    {
+        if(!Parked || Chest==null || Climate==null || !Climate.Ready)return;
         let record=CaelumContaminationStorage.Get(Chest,true);if(record==null || now<=DirtStamp)return;
         if(EnvironmentReference<0 || EnvironmentArea<=0){DirtStamp=now;return;}
         while(DirtStamp<now)
@@ -220,7 +251,7 @@ class CaelumHouseStorageEntry : Object play
         if(events!=null && events.Housekeeping!=null && events.Housekeeping.Chest==Chest)
         {
             let work=events.Housekeeping;
-            CaptureProgress(work);
+            if(Away==null)CaptureProgress(work);
             for(int i=0;i<work.Targets.Size();i++)if(work.Targets[i].Furniture==Chest)
             {work.Targets[i].DomesticCoffer=true;work.Targets[i].Furniture=null;}
             work.Chest=null;work.Worker=null;
@@ -244,7 +275,7 @@ class CaelumHouseStorageEntry : Object play
     void Restore(CaelumPlayer user)
     {
         if(!Parked || !Valid() || level.MapName!=CaelumHouseHubData.MapName(House))return;
-        SyncDirt();
+        CaelumHouseAway.Sync(user,true);SyncDirt();Rebase(user);
         double now=CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(user));
         for(Inventory item=Chest.Inv;item!=null;item=item.Inv)
         {
@@ -253,11 +284,13 @@ class CaelumHouseStorageEntry : Object play
         }
         Chest.ChangeStatNum(Thinker.STAT_DEFAULT);Chest.RestoreWorldStorage(Position);Chest.FindFloorCeiling();
         Parked=false;CaelumContaminationObject.Register(Chest);
+        let store=CaelumHouseStorage.Get();if(store!=null)store.AwayCacheReady=false;
         let events=CaelumHouseHubEvents(EventHandler.Find('CaelumHouseHubEvents'));
         if(events!=null && events.Housekeeping!=null && events.Housekeeping.House==House)
         {
             let work=events.Housekeeping;work.Chest=Chest;
             for(int i=0;i<work.Targets.Size();i++)if(work.Targets[i].DomesticCoffer)work.Targets[i].Furniture=Chest;
+            RestoreProgress(work);
         }
     }
 }
@@ -265,6 +298,8 @@ class CaelumHouseStorageEntry : Object play
 class CaelumHouseStorage : Inventory
 {
     int Revision,LastTargetKey;
+    transient bool AwayBusy,AwayCacheReady;
+    transient double AwayNextDue;
     Array<CaelumHouseStorageEntry> Houses;
     static CaelumHouseStorage Get(bool create=false)
     {
@@ -289,7 +324,7 @@ class CaelumHouseStorage : Inventory
         for(int i=0;i<store.Houses.Size();i++)store.Houses[i].Restore(user);
     }
     override void PreTravelled()
-    {let user=CaelumPlayer(Owner);if(user!=null)for(int i=0;i<Houses.Size();i++)Houses[i].Depart(user);}
+    {AwayCacheReady=false;let user=CaelumPlayer(Owner);if(user!=null)for(int i=0;i<Houses.Size();i++)Houses[i].Depart(user);}
     override void Travelled()
     {let user=CaelumPlayer(Owner);if(user!=null)for(int i=0;i<Houses.Size();i++)Houses[i].Arrive(user);}
     override Inventory CreateTossable(int amount){return null;}

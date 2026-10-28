@@ -327,3 +327,21 @@ contaminated fixed furniture and partial cleaning progress; retain an old save.
    current values and begin this persistence at their first updated departure.
 Expected: no free cleaning, duplicate exposure or reassignment between furniture.
 This check does not claim automatic unloaded household work or author acceptance.
+
+CA502-HOME-AWAY-01 | Origin: 5.8.43 | Issue: #502
+Prerequisites: final integrated V5.8 build, GZDoom4.14.2, disposable household
+fixture with real residents/coffer, potable domestic water and a visited
+Provisions merchant. Keep original saves before updating. Group with final handoff.
+1. Inspect a dirty visited household and its water/soap/money. Leave for another
+   exterior map and let two world hours pass. Return: reachable surfaces were
+   cleaned within one shared hour; water/soap and household money reflect real
+   consumption and purchases. The player's money is untouched.
+2. Save while away, load and return again. No duplicate work, spending, stock,
+   or reset of partial cleaning; inaccessible targets remain inaccessible.
+3. Repeat after removing the home's cloth and money, or while its residents
+   are unavailable: no unsupported work or use of the player's supplies.
+4. Spend an hour inside the Limbo, then return. Exterior household cleaning,
+   refill and food aging count only exterior time, not that Limbo hour.
+5. Visit a second household and repeat across a civil midnight. Each home has
+   its own single-hour quota, but both use the same actual Provisions stock.
+Expected: persistent results, no duplicate resources or purchases, no new crash.

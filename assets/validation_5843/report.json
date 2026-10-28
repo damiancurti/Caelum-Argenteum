@@ -1,0 +1,132 @@
+{
+  "version": "5.8.43",
+  "issue": 502,
+  "base": "931bee7c6a7dacbb8e031a4f1edabfaff717d7af",
+  "runtime_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+  "source_matching_package_members": 17024,
+  "unchanged_map_art_members": 14056,
+  "native_passes": 78,
+  "original_runtime_passes": 11,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "release-seed",
+      "executed_passes": 18,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-reload",
+      "executed_passes": 4,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 7,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-limbo",
+      "executed_passes": 12,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-core",
+      "executed_passes": 12,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-shortages",
+      "executed_passes": 4,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-multiple",
+      "executed_passes": 10,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "release-migration",
+      "executed_passes": 11,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "prior43a",
+      "executed_passes": 7,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "979e2dc8f0465479144db1aa06929dc64def1f7b2a12a1946ecc47f03cf1ed08"
+    },
+    {
+      "label": "release-rollback",
+      "executed_passes": 4,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "2ef75757d0e59ed733cda10c8d1240926a5d248a5f463dd3c2a0b40ccdcb784d"
+    }
+  ],
+  "prior_save_sha256": "009eba9d0d41f55b4a0d7e90634669d2940a39647154208435a745a53396ed19",
+  "fixture_repeat_sha256": {
+    "checks.pk3": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8",
+    "legacy-checks.pk3": "2ef75757d0e59ed733cda10c8d1240926a5d248a5f463dd3c2a0b40ccdcb784d",
+    "frames.pk3": "27d20506fdcf3c9ee773dbc577abdf7c5fae4a3d249308c2a126a78de96417fc",
+    "legacy-frames.pk3": "f1fc08e0909e124d42627ad9b5dcb81d3d8b49ed700d9be5c376b9fdb00b16d5"
+  },
+  "access_capture": {
+    "targets": 856,
+    "mean_ms": 3.19032,
+    "p95_ms": 3.3262,
+    "max_ms": 3.3832,
+    "iterations": 20
+  },
+  "catchup_ms": {
+    "seed": 20.9148,
+    "multiple": 66.0738
+  },
+  "renderer_callbacks": [
+    {
+      "label": "frames02-prior",
+      "executed_passes": 0,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "f1fc08e0909e124d42627ad9b5dcb81d3d8b49ed700d9be5c376b9fdb00b16d5",
+      "callback_intervals_ms": {
+        "samples": 855,
+        "mean": 16.988250643274853,
+        "p50": 16.6949,
+        "p95": 17.9882,
+        "p99": 18.6763,
+        "max": 124.734
+      }
+    },
+    {
+      "label": "frames02-current",
+      "executed_passes": 0,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "27d20506fdcf3c9ee773dbc577abdf7c5fae4a3d249308c2a126a78de96417fc",
+      "callback_intervals_ms": {
+        "samples": 852,
+        "mean": 17.021995187793426,
+        "p50": 16.6497,
+        "p95": 17.8271,
+        "p99": 21.4213,
+        "max": 128.936
+      }
+    }
+  ],
+  "presentation_attempt": {
+    "presentmon.txt": "",
+    "presentmon-error.txt": "warning: PresentMon requires elevated privilege in order to query processes that are\r\n         short-running or started on another account.  Without it, those processes will\r\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\r\n         --terminate_on_proc_exit.\r\nerror: failed to start trace session: access denied.\r\n       PresentMon requires either administrative privileges or to be run by a user in the\r\n       \"Performance Log Users\" user group.  View the readme for more details.\r\n"
+  },
+  "scope": "Real reachable-house snapshots, chronological shared shop purchases, daily per-home quota, partial progress, real supplies, shortage handling, suspended residents, persistent return/save, original-runtime upgrade/rollback, Limbo exterior-calendar freeze and six direct-versus-cached floor-history comparisons.",
+  "performance_limits": "RenderOverlay cadence is not displayed FPS. PresentMon ETW availability is recorded separately. Native access/catch-up callbacks are synchronous execution timings. No whole-campaign rendering acceptance is inferred.",
+  "probe_findings": "Early fixture/compiler mistakes were corrected and retained privately. A loaded old save omits newly added local EventHandlers; the frame meter uses a StaticEventHandler so the same old save can be compared on both runtimes. The release-frames-prior attempt with no samples is not counted.",
+  "limits": "Visited homes only; captures native straight-line/sight/floor access matching loaded housekeeping. Unloaded NPC physiology, remaining contact adapters and the other V5.8 issues remain separate. No new balance, map or art changes.",
+  "author_acceptance": "CA502-HOME-AWAY-01 remains pending the grouped final V5.8 handoff."
+}

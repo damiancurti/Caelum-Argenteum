@@ -30,6 +30,21 @@ class CaelumHouseStoredFurnishing : Object play
         Concentration=record.Concentration;
     }
 
+    void Fill(CaelumContaminationObject node)
+    {
+        node.Revision=4;node.Ready=false;node.HistoryReady=Ready;
+        node.HistoryStamp=Stamp;node.HistoryArea=Area;node.HistoryAmbient=Ambient;node.HistoryRain=Rain;
+        node.HistoryVariable=Variable;node.HistoryCovered=Covered;
+        node.HistoryProfile=Profile;node.HistoryRegion=Region;node.HistorySeed=Seed;
+        node.HistoryShelter=Shelter;node.HistoryReference=Reference;node.HistoryCivilOffset=CivilOffset;
+        node.HistoryTemporaryClimate=false;node.HistoryNaturalVariable=Variable;node.HistoryNaturalAmbient=Ambient;
+    }
+    void Advance(double now)
+    {
+        if(!Ready || now<=Stamp)return;
+        let node=new('CaelumContaminationObject');Fill(node);
+        Concentration=node.Replay(Concentration,now);Stamp=now;node.Destroy();
+    }
     void Restore(Actor body,double now)
     {
         if(Revision!=1 || body==null || body.bDestroyed || body.GetClass()!=BodyType)return;
@@ -37,12 +52,7 @@ class CaelumHouseStoredFurnishing : Object play
         CaelumContaminationObject.Register(body);let node=record.Exposure;
         record.Concentration=Concentration;
         if(node==null)return;
-        node.Revision=4;node.Ready=false;node.HistoryReady=Ready;
-        node.HistoryStamp=Stamp;node.HistoryArea=Area;node.HistoryAmbient=Ambient;node.HistoryRain=Rain;
-        node.HistoryVariable=Variable;node.HistoryCovered=Covered;
-        node.HistoryProfile=Profile;node.HistoryRegion=Region;node.HistorySeed=Seed;
-        node.HistoryShelter=Shelter;node.HistoryReference=Reference;node.HistoryCivilOffset=CivilOffset;
-        node.HistoryTemporaryClimate=false;node.HistoryNaturalVariable=Variable;node.HistoryNaturalAmbient=Ambient;
+        Fill(node);
         // Reusar el integrador y la caché regional compartidos. Después se
         // toma una muestra local nueva, sin cobrar otra vez el tiempo ausente.
         node.Settle(now);node.Advance();

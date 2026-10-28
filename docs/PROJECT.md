@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+## 5.8.43 / #502 - Household cleaning during absence
+
+Visited homes now use captured physical access, shared daily quotas, actual
+resources and chronologically ordered purchases while unloaded. Exterior home
+histories respect the civil-calendar freeze during Limbo stays. Native evidence:
+assets/validation_5843. CA502-HOME-AWAY-01 joins the final grouped author handoff.
+Remaining V5.8 work: #410 paintings/statues and final integration, #502 unloaded
+NPC physiology/contact coverage, #415 combat/theft, #416 historical routes and
+Buenos Aires, #417 travel events. Multiplayer rest remains deferred to V5.12.
 
 ## 5.8.42 / #502 - Furnishing history across map absence
 

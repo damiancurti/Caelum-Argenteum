@@ -64,7 +64,12 @@ class CaelumHouseHubEvents : EventHandler
         {
             entry.CaptureProgress(Housekeeping);
             let store=CaelumHouseStorage.Get();
-            if(store!=null)entry.CaptureFurnishings(Housekeeping,CaelumPlayer(store.Owner));
+            if(store!=null)
+            {
+                let user=CaelumPlayer(store.Owner);entry.CaptureFurnishings(Housekeeping,user);
+                if(entry.Away==null)entry.Away=new('CaelumHouseAwayWork');
+                entry.Away.Capture(entry,Housekeeping,user);store.AwayCacheReady=false;
+            }
         }
     }
     override void WorldLoaded(WorldEvent e)

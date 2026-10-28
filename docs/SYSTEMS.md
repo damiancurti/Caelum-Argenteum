@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+## 5.8.43 - Unloaded household cleaning (#502)
+
+The author approved summarized access on 2026-10-28. Departure records which
+living, available residents have the household's actual key/access and which
+existing targets they can reach. Native sight, collision, floor clearance,
+step/drop limits and the loaded controller's straight approach are checked
+without moving a resident or opening doors. Closed/obstructed approaches are
+excluded; access is captured again on the next departure. This is conservative
+snapshot access, not a new pathfinding or simulated-walking system.
+
+While the visited home is absent, reachable targets receive the approved
+progressive cleaning with one shared hour per civil day, 60 seconds/m2,
+1 L/m2 and 5 g soap/L. The existing reusable cloth, partial progress, fractional
+soap, real coffer money/capacity, resident identity and shared domestic reserve
+remain authoritative. No supplies are created for an unvisited home. Dead,
+delegated, unavailable or inaccessible captured residents cannot work.
+
+A single typed household scheduler orders minute boundaries and day changes
+by civil date, then household identity. Work spends resources already available
+at interval start; an automatic purchase at its end is available only to the
+next interval. All homes buy from the actual registered Provisions merchants.
+Stock replenishment is evaluated at each purchase date, including catalogue
+adapters; future stock cannot be sold into an earlier date. Normal clock and
+trade hooks reconcile due work before advancing stock. Returning settles the
+remaining partial interval, restores progress and rechecks loaded geometry.
+Repeated reads, save/load and travel never charge the same interval again.
+
+Exterior household time follows the civil calendar. A stay in the Limbo does
+not advance its cleaning, purchases, water refill, food aging, water cooling or
+coffer/furnishing exposure. Source stamps rebase to the local legacy clock on
+return without discarding elapsed exterior time. Personal carried food and
+Limbo installations retain their own existing local-clock rules. This corrects
+the legacy-clock assumption in the 5.8.41-42 absence adapters; it does not erase
+contamination that older builds already applied.
+
+Away-work schema revision1 is additive: old saves retain contents, money,
+concentrations and quotas, and capture access on the first subsequent departure.
+Only registered homes are inspected; there are no routine global actor scans.
+Native evidence, original-runtime rollback and callback timing are retained in
+assets/validation_5843. Author corroboration remains in CA502-HOME-AWAY-01.
+Unloaded NPC physiology and the remaining object/contact adapters are separate
+remaining work; this patch does not complete #502 or V5.8.
 
 ## 5.8.42 - Household furnishing contamination across absence (#502)
 

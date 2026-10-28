@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.42.** Obtain and update the complete repository, validate
+**Current release: 5.8.43.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.43 - Household work during absence (#502)
+
+Visited households clean reachable surfaces while unloaded, share one daily
+hour and pay from their own real inventories against actual shop stock.
+Source-home clocks respect the Limbo's frozen exterior calendar. 78 current and
+11 prior-runtime native checks pass; static validation is clean. Native evidence
+and recovery checks: assets/validation_5843. Author checks remain grouped until
+all V5.8 issues are implemented; the version is not complete yet.
 
 ## 5.8.42 - Persistent household furnishing contamination (#502)
 

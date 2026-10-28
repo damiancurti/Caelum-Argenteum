@@ -535,7 +535,7 @@ class CaelumWaterContainer : CaelumConsumableItem
         Actor body=Owner;if(body==null)body=self;
         let table=CaelumDiningTable(body);if(table!=null)body=table.ContentLocation();
         let remote=CaelumHouseStorageEntry.Remote(body);
-        if(remote!=null){remote.Cool(self,CaelumThermalRuntime.Stamp(world.ReferenceClock));return;}
+        if(remote!=null){let store=CaelumHouseStorage.Get();if(store!=null)remote.Cool(self,remote.SourceNow(CaelumPlayer(store.Owner)));return;}
         let carrier=CaelumPlayer(body);
         if(carrier!=null){AdvanceTemperature(carrier,0);return;}
         int shelter=CaelumWeatherRules.OPEN;

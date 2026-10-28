@@ -480,6 +480,19 @@ rules; preserving their value is distinct from adding new exposure coverage.
 335 current native PASS plus18 prior-runtime checks include actual Limbo/hub
 returns, later cleaning/save/load, legacy adoption and original-save rollback.
 
+Extension, #502/5.8.43 (2026-10-28), assets/validation_5843: household
+absence must use exterior civil elapsed time. Advancing the legacy world clock
+inside Limbo is not exterior time; rebase source food/water/coffer/furniture
+stamps when returning, without erasing past contamination. Test the real
+AdvanceOnMap/ExcludeLimboTic path, not a direct DayTics increase labelled Limbo.
+Historical purchases need a scoped vendor timestamp through every catalogue
+adapter, shared date ordering and a guard against selling future stock. Work
+uses earlier resources; purchases at interval end fund the following interval.
+Native access capture for856 targets measured about3.2ms; two-house24h catch-up
+fell from874.6ms to66.1ms in final validation by reusing the weather-day cache. Direct and
+cached floor integration are compared separately; callback costs are not
+presented-frame/FPS evidence. Source paths and final measurements: validation_5843.
+
 ## CA-KP-168 - World-object exposure must follow native inventory ownership
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.
