@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.41** - 2026-10-28.
+Documentation version: **5.8.42** - 2026-10-28.
+
+## 5.8.42 - Household furnishing contamination persistence (#502, 2026-10-28)
+
+Added scalar, revision-1 furnishing records to visited-house storage. Actual
+housekeeping targets retain concentration, source exposure and stable identity
+through native hub and Limbo travel. Restoration consumes the snapshot once;
+subsequent cleaning and contacts remain authoritative. Existing regional replay
+and its cache handle absence; temporary climate seals end at departure. No
+furniture actor is transported or duplicated by this change.
+
+Validation in assets/validation_5842/report.json: 335 current native PASS plus
+18 original-runtime checks, zero failures/static errors. Tests cover eleven
+real furnishings, current save/load, same-hub and Limbo returns, a save while
+absent, cleaning after return, actual 5.8.41 migration and original-save rollback.
+Loaded-house purchase, resource shortage and accelerated-clock regressions pass.
+All 17,023 package members match source and all 14,056 prior map/art members
+remain byte-identical. The twenty snapshot/restore samples measured 0.193 ms
+mean, 0.236 ms p95 and 0.286 ms maximum over 856 existing targets; this measures
+the synchronous boundary callback, not presented frames or FPS.
+
+Initial probes caught the reserved `state` identifier and case-insensitive
+`Key`/`key` shadowing; both are corrected. Non-solid table bodies do not have an
+exposure node under the existing eligibility rules. Their stored concentration
+is preserved, but extending exposure eligibility remains a separate open scope.
+CA502-HOME-FURNISHINGS-01 joins the unchanged prior author queue for the final
+grouped V5.8 handoff. Automatic unloaded housekeeping/purchases, unloaded NPC
+physiology, remaining contact adapters and other V5.8 issues are not complete.
 
 ## 5.8.41 - Household storage persistence (#502, 2026-10-28)
 

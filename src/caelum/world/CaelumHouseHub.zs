@@ -25,6 +25,11 @@ class CaelumHouseHub : Object play
         if(!CaelumMansionFurniture.Bed(slot,CaelumCityData.BedPosition(house),90))ready=false;
         if(!CaelumHouseChestRules.Prepare())ready=false;
         if(!CaelumBathroomInstallation.Prepare(house))ready=false;
+        if(ready && events!=null && events.Housekeeping!=null && events.Housekeeping.Chest!=null)
+        {
+            let entry=events.Housekeeping.Chest.DomesticStorage;
+            if(entry!=null)entry.RestoreFurnishings(events.Housekeeping,CaelumPlayer(roster.Owner));
+        }
         return ready;
     }
 }
@@ -55,7 +60,12 @@ class CaelumHouseHubEvents : EventHandler
         if(Housekeeping==null || Housekeeping.Chest==null)return;
         CaelumHouseStorage.Register(Housekeeping.Chest,Housekeeping.House);
         let entry=Housekeeping.Chest.DomesticStorage;
-        if(entry!=null)entry.CaptureProgress(Housekeeping);
+        if(entry!=null)
+        {
+            entry.CaptureProgress(Housekeeping);
+            let store=CaelumHouseStorage.Get();
+            if(store!=null)entry.CaptureFurnishings(Housekeeping,CaelumPlayer(store.Owner));
+        }
     }
     override void WorldLoaded(WorldEvent e)
     {

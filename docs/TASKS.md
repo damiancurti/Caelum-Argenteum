@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.41** - 2026-10-28.
+Documentation version: **5.8.42** - 2026-10-28.
+
+## 5.8.42 / #502 - Furnishing contamination persistence
+
+Preserve visited-house furnishing contamination/history across same-hub and
+Limbo returns, alongside the existing stable partial-work keys. Native migration,
+rollback, current saves and boundary timing: assets/validation_5842, 335 current
+native PASS plus18 original-runtime checks, zero failures/static errors. Retain
+CA502-HOME-FURNISHINGS-01 for the grouped author handoff; no acceptance inferred.
+Next: capture real resident/access availability and coordinate chronological
+unloaded housekeeping with actual shop restock and purchases. Unloaded NPC
+physiology, remaining non-solid/contact adapters, #415 combat/theft, #416 routes
+and #417 events are still unfinished. Multiplayer rest stays deferred to V5.12.
 
 ## 5.8.41 / #502 - Household persistence prerequisite
 

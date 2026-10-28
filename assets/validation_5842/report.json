@@ -1,0 +1,106 @@
+{
+  "version": "5.8.42",
+  "issue": 502,
+  "base": "6544753fce7d436ca7c25be0269c54647d3ff54d",
+  "runtime_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+  "source_matching_package_members": 17023,
+  "unchanged_map_art_members": 14056,
+  "native_passes": 335,
+  "original_runtime_passes": 18,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "release-seed",
+      "executed_passes": 58,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-reload",
+      "executed_passes": 47,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-away-load",
+      "executed_passes": 52,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-samehub",
+      "executed_passes": 52,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-core",
+      "executed_passes": 8,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-clean",
+      "executed_passes": 1,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-clean-load",
+      "executed_passes": 4,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-migration",
+      "executed_passes": 65,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b"
+    },
+    {
+      "label": "release-reg-core",
+      "executed_passes": 32,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "release-reg-shortages",
+      "executed_passes": 11,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "release-reg-skipped",
+      "executed_passes": 5,
+      "package_sha256": "b01d4382590ae6d9e305e3f4e02649c7ea7e1092970ec436913c91cf8dbd10a3",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "prior01-seed",
+      "executed_passes": 6,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "95bea5e83171f7175a9439ffdc34bfafda5ca188cdb1f53348a9861aa49755fd"
+    },
+    {
+      "label": "prior01-rollback",
+      "executed_passes": 12,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "95bea5e83171f7175a9439ffdc34bfafda5ca188cdb1f53348a9861aa49755fd"
+    }
+  ],
+  "prior_save_sha256": "63fb19eaca2cb3f4c9671343c5e622452dbfcfc1058b5f68983eb2b057232097",
+  "timing": {
+    "furnishings": 11,
+    "targets": 856,
+    "mean_ms": 0.192795,
+    "p95_ms": 0.2356,
+    "max_ms": 0.2859,
+    "scope": "20 synchronous real-house capture/restore callbacks, not displayed frames or FPS evidence."
+  },
+  "scope": "Automatic departure capture and once-only restoration of furnishing contamination and natural exposure. Native same-hub/cross-hub returns, save while absent, later cleaning/save/return, actual5.8.41 migration and original-save rollback. Exact fields, source climate/seal termination, missing history and class mismatch checked.",
+  "limits": "Only existing housekeeping furniture targets; this does not add exposure eligibility to non-solid table bodies, preserve other furnishing properties, or implement automatic unloaded purchases/work, NPC physiology or remaining contact adapters. No balance/art/maps changed.",
+  "probe_findings": "A reserved state identifier and case-insensitive Key/key shadow were caught before final validation and corrected. An overbroad fixture requirement that every body have an exposure node was narrowed to existing exposed types; non-solid eligibility remains explicitly pending. Failed probes are retained under private build, never counted as final passes.",
+  "author_acceptance": "Pending CA502-HOME-FURNISHINGS-01, held for grouped final V5.8 handoff. Earlier pending entries retained."
+}
