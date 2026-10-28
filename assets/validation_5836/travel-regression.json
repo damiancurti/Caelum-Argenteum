@@ -1,0 +1,12 @@
+{
+  "issue": 410,
+  "version": "5.8.36",
+  "baseline": "d9f561f953a53dbe48d43480fd5f331a529b659a plus initial study patch",
+  "native_crash": "FSerializer::WriteObjects / RecurseWriteFields during the away-map snapshot on return",
+  "debugger": "Windows debugging API, matching official GZDoom4.14.2 PDB; no executable/PDB distributed",
+  "symbols_url": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom-4-14-2-windows-pdb.7z",
+  "reproduction": "StudySetup tests same-height obstruction then destroys its temporary blocker; carrying the desk and taking a hub round trip retained the native BlockingMobj contact. First final36a rejected. Shelf-only and desk-only without obstruction pass; full setup without the obstruction test passes.",
+  "fix": "Clear obsolete native blocking object/line/sector contacts when parking/travelling new study furniture and companions. Recompute floor/ceiling references on destination arrival. Keep the obstructed-placement regression in the final test.",
+  "isolated_corrected": "probe20-cleared:33 cumulative hub assertions, exit0, no VM/crash or out-of-bounds serialization warning; final release suite recorded separately",
+  "limits": "This evidence identifies the retained contact in this transport path; it does not claim every engine collision cache or every legacy portable actor was reviewed."
+}

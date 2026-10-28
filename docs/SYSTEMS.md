@@ -1,6 +1,40 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.35** - 2026-10-27.
+Documentation version: **5.8.36** - 2026-10-27.
+
+## 5.8.36 - Study furniture acquisition (#410)
+
+The author delegated construction calculations and approved three units per type
+in Provisions, ten recipe books in the library, material+25% pricing and normal
+recipe-based restocking. Append desk/bookcase as recipes217/218 and keys22/23;
+recipe revision22 and furniture catalogue revision4 never reset older learning
+or sold stock. Both require Workbench and Fine tools, normal Dexterity/efficiency,
+reservation/cancellation rules, no sewing or cloth because neither contains it.
+
+| Piece | Outer dimensions | Empty mass | Wood / iron at100% efficiency |
+| --- | --- | --- | --- |
+| Writing desk |1.784x0.902x0.775m|48.313559840kg|48,294g /21g|
+| Empty bookcase |1.875x0.625x2.25m|175.990188800kg|175,910g /81g|
+
+The owned member bill is explicit in assets/art_source/study_furniture/DATA.json:
+volume times existing wood760/iron7,870kg/m3, each ingredient rounded up to grams.
+Met211381 supplies desk dimensions; the bookshelf keeps the old shelf envelope,
+with a new empty original model. Panel/pin construction is a declared design
+approximation under delegated calculations, not a recovered historical bill.
+Fixed mansion furniture/models/capacity are unchanged.
+
+Use opens the reading desk or bookcase; crouch+Use carries an owned inactive
+piece. Bookcase transport uses the existing native storage cargo, including real
+contents/lock mass, owner, pages, dirt and reading progress. It retains25 piles
+and100kg capacity. Occupied reading prevents packing either connected piece.
+Packed shelves cannot serve a reading session or receive duplicate exposure.
+When redeployed, the same physical shelf/storage/book instances are reused.
+An unused item and a desk can use the Box; deployed bookcase cargo retains the
+existing chest restriction against Box nesting. No new storage rule is implied.
+The existing96-unit/LOS and actual stored-book access rules remain authoritative.
+Furniture placement preserves land, clearance, doors and passages. Runtime
+migrations append only missing stock and unknown recipes; unchanged saves can
+be reopened with their original runtime for rollback.
 
 ## 5.8.35 / #410 - Sofa acquisition and assembly transport
 

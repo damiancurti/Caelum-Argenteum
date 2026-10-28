@@ -1,0 +1,20 @@
+Access violation address=0x7ff6d4faafc1 first=1 thread=9212
+Symbol initialization=True error=0
+RIP=0x7ff6d4faafc1 RecurseWriteFields+0x21 RSP=0x9c71f5e4c0
+#0 0x7ff6d4faafc1 RecurseWriteFields+0x21
+#1 0x7ff6d4faafc9 RecurseWriteFields+0x29
+#2 0x7ff6d4fa5990 FSerializer::WriteObjects+0xe0
+#3 0x7ff6d4fa2057 FSerializer::GetCompressedOutput+0x67
+#4 0x7ff6d4d9b370 FLevelLocals::SnapshotLevel+0xd0
+#5 0x7ff6d4d10404 FLevelLocals::DoCompleted+0x884
+#6 0x7ff6d4d11783 G_DoCompleted+0xb3
+#7 0x7ff6d4d0b231 G_Ticker+0x4c1
+#8 0x7ff6d4cffdc6 TryRunTics+0x3a6
+#9 0x7ff6d4cf2d2e D_DoomLoop+0x1be
+#10 0x7ff6d4cf363c D_DoomMain_Internal+0x8bc
+#11 0x7ff6d4cf5f1a GameMain+0x7a
+#12 0x7ff6d4ba2e80 DoMain+0x430
+#13 0x7ff6d4ba327c wWinMain+0xec
+#14 0x7ff6d5233b2e __scrt_common_main_seh+0x106
+#15 0x7ffe6dcadda7 BaseThreadInitThunk+0x17
+#16 0x7ffe6fe1ee4c RtlUserThreadStart+0x2c

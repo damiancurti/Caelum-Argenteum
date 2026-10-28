@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `3b333496bd2f982191623f95e0c309f8b5d551906325a4cbffba745913cb437d`. Locations include every definition; the last one per language wins.
+SHA-256: `4c3416ae4ef32a792a0c87664277bf9a88bd2ce985e89e119df12912a8f9948d`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -175,6 +175,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |
 | CA_STORED | 6 | CA_STORED_READING_BOOK | CA_STORED_READING_TITLE |
+| CA_STUDY | 1 | CA_STUDY_PORTABLE_HINT | CA_STUDY_PORTABLE_HINT |
 | CA_SUMMON | 3 | CA_SUMMON_CAST | CA_SUMMON_ZUPAY_NAME |
 | CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |

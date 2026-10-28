@@ -52,7 +52,7 @@ class CaelumBookcaseStorage : CaelumStashChest
     {return Shelf!=null && !Shelf.bDestroyed && CaelumPlayerAuthority.CanMutate(user)
         && user.health>0 && !user.CreationWizardOpen && user.Distance3D(Shelf)<=user.UseRange+Shelf.Radius
         && user.CheckSight(Shelf);}
-    bool Accessible(CaelumPlayer user)
+    virtual bool Accessible(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || Shelf==null || Shelf.bDestroyed || user.health<=0)return false;
         if(GetChestLockNumber()>0 && !ChestUnlocked && !user.CheckKeys(GetChestLockNumber(),false))return false;
@@ -91,6 +91,7 @@ class CaelumStoredReading : Object play
     {
         return desk!=null && shelf!=null && !desk.bDestroyed && !shelf.bDestroyed
             && (desk is 'CaelumReadingDesk' || desk is 'CaelumDiningTable')
+            && (shelf.Storage==null || shelf.Storage.Cargo==null)
             && desk.Distance3D(shelf)<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE
             && desk.CheckSight(shelf,SF_IGNOREVISIBILITY);
     }
@@ -104,7 +105,8 @@ class CaelumStoredReading : Object play
     {
         if(level.MapName!='MAP01')return true;
         // Una consulta tipada durante la instalacion, nunca durante cada lectura.
-        if(ThinkerIterator.Create('CaelumReadingDesk').Next()!=null)return true;
+        let desks=ThinkerIterator.Create('CaelumReadingDesk');Actor deskBody;
+        while((deskBody=Actor(desks.Next()))!=null)if(deskBody.GetClassName()=='CaelumReadingDesk')return true;
         let desk=Actor.Spawn('CaelumReadingDesk',CaelumStoredReadingData.DeskPosition(),NO_REPLACE);
         if(desk==null)return false;
         desk.A_SetSize(CaelumStoredReadingData.DESK_RADIUS,CaelumStoredReadingData.DESK_HEIGHT,false);

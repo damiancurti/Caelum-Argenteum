@@ -244,11 +244,12 @@ class CaelumReadingShelf : Actor
 {
     int LibraryRevision;
     CaelumBookcaseStorage Storage;
+    virtual Name StorageClass(){return 'CaelumBookcaseStorage';}
     CaelumBookcaseStorage GetStorage()
     {
         if(Storage==null)
         {
-            Storage=CaelumBookcaseStorage(Actor.Spawn('CaelumBookcaseStorage',Pos,NO_REPLACE));
+            Storage=CaelumBookcaseStorage(Actor.Spawn(StorageClass(),Pos,NO_REPLACE));
             if(Storage==null)return null;
             Storage.Shelf=self;Storage.EnsureStorage();
         }

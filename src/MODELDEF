@@ -4966,3 +4966,25 @@ Model CaelumLuxuryTable
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumPortableReadingDesk
+{
+    Path "models/caelum/props/study"
+    Model 0 "ca_study_desk.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableReadingShelf
+{
+    Path "models/caelum/props/study"
+    Model 0 "ca_study_bookcase.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CBOO A 0 0
+}

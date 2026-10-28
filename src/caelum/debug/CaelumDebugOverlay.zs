@@ -1184,6 +1184,8 @@ class CaelumDebugOverlay : EventHandler
             return CaelumStorageFurnitureData.Icon(localPlayer.EquipmentSelectionSpecialType-CaelumStorageFurnitureData.FIRST_KEY);
         if(selectedKind==CaelumConstants.EQUIPMENT_KIND_CONTAINER)
         {
+            if(localPlayer.EquipmentSelectionSpecialType==CaelumStoredReadingData.DISPLAY_TYPE)
+                return CaelumRestFurnitureData.Icon(CaelumRestFurnitureData.FIRST_STUDY_VARIANT+1);
             if(localPlayer.EquipmentSelectionSpecialType==CaelumWardrobeData.DISPLAY_TYPE)
                 return CaelumStorageFurnitureData.Icon(0);
             if(localPlayer.EquipmentSelectionSpecialType==CaelumStorageFurnitureData.CUPBOARD_DISPLAY)

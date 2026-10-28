@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.35** - 2026-10-27.
+Documentation version: **5.8.36** - 2026-10-27.
+
+## 5.8.36 / #410 - Portable study furniture
+
+Writing-desk/bookcase fabrication, supply, sprites and complete native transport
+pass 468 current native assertions plus 19 original-runtime checks, with zero
+failures/static errors; assets/validation_5836. Native visual review passes.
+The original mansion fixtures and stored-reading rules remain intact. Table acquisition,
+#415-417 and remaining#502 adapters/history are still open. Manual handoff stays
+grouped after allV5.8 implementation; no author acceptance is inferred.
 
 ## 5.8.35 / #410 - Sofa supply and transport
 

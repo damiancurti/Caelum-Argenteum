@@ -7,11 +7,12 @@ class CaelumInventoryService : Object play
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || chest==null
             || !chest.CanReachStorage(user) || chest.Cargo!=null || !chest.CanCarryAsStorage())return false;
+        if(chest is 'CaelumPortableBookcaseStorage' && (!chest.IsLawfulOwner(user) || CaelumStudyUse.Busy(CaelumBookcaseStorage(chest).Shelf)))return false;
         chest.EnsureStorage();user.RefreshCarriedInventorySummary();
         let maze=CaelumMazeChest(chest);
         if(maze!=null)maze.UsesMaterialStoragePolicy();
         if(!user.CanAddWeightToPersonalInventory(chest.TotalStorageWeight(user)))return false;
-        let cargo=CaelumChestCargo(Actor.Spawn("CaelumChestCargo",user.Pos,NO_REPLACE));
+        let cargo=CaelumChestCargo(Actor.Spawn(chest.CargoClass(),user.Pos,NO_REPLACE));
         if(cargo==null)return false;
         let session=CaelumContainerSession.Get(user);if(session!=null)session.Close();
         let preview=CaelumChestPreviewState.Get(user);if(preview!=null)preview.Close();

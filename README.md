@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.35.** Obtain and update the complete repository, validate
+**Current release: 5.8.36.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.36 - Portable study furniture (#410)
+
+A writing desk and empty bookcase gain approved learned fabrication and supply.
+The bookcase holds25 piles/100kg and travels as the same physical storage with
+its books, lock, owner, contamination and saved reading progress. The desk keeps
+its original body. Reading still requires accessible books within96 units/LOS;
+active readers block packing. Used bookcase cargo follows the existing chest
+rule and stays outside the Box; unused furniture items and the desk may enter it.
+Original mansion library/desk stay fixed. Validation: 468 current native PASS
+plus 19 original-runtime checks, zero failures and zero static errors, recorded
+in assets/validation_5836. Table acquisition and wider V5.8 remain unfinished.
+Author checks stay grouped until implementation of the whole version.
 
 ## 5.8.35 - Portable sofas (#410)
 

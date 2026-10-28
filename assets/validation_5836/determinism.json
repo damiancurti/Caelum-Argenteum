@@ -1,0 +1,9 @@
+{
+  "three_identical_snapshots": true,
+  "sha256": {
+    "src/caelum/data/CaelumStudyData.zs": "ac72d296be05660e597fff094872b9bd99d91ced6538427c248df2d2cc0a16da",
+    "assets/art_source/study_furniture/GENERATED.json": "6b9147027101651273258ec1e0555ff378bbd1aa53bcaa96fe7a38a2a87402d0",
+    "src/models/caelum/props/study/ca_study_desk.obj": "d214e628e35e238ee22834e26226c5d7dd1d0add7c3b0aefb50c912d615ea38a",
+    "src/models/caelum/props/study/ca_study_bookcase.obj": "294cd55a3a3b6af247df4c941cbbee8143f096dad98546a52210c95040fb1efe"
+  }
+}

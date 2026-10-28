@@ -6870,3 +6870,8 @@ CA_BASIC_BED = "Wooden cot";
 [es]
 CA_BASIC_CHAIR = "Silla de madera";
 CA_BASIC_BED = "Catre de madera";
+
+[enu default]
+CA_STUDY_PORTABLE_HINT = "Use: open/read | Crouch + Use: carry furniture";
+[es]
+CA_STUDY_PORTABLE_HINT = "Usar: abrir/leer | Agacharse + Usar: transportar mueble";

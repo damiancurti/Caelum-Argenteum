@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.35** - 2026-10-27.
+Documentation version: **5.8.36** - 2026-10-27.
+
+## 5.8.36 - Study furniture acquisition (#410, 2026-10-27)
+
+Implemented approved learned fabrication and supply for an original portable
+writing desk and empty bookcase. Explicit delegated construction calculations
+and museum dimension references determine recipe inputs/empty mass. Native
+transport preserves actual storage contents, lock, title, contamination and
+stored reading progress; active readers block packing. The original mansion
+library/desk remain fixed. Recipe22/catalogue4 append without resetting prior
+state. Validation under assets/validation_5836: 468 current native PASS plus
+19 original-runtime checks, zero failures and zero static errors. Native icons
+and isolated world views were visually reviewed. All 17,011 packaged members
+match source; previous art/maps are preserved, allowing only recorded OBJ line
+ending normalization. Existing saved reading and prior furniture/stock/learning
+survive migration, with original-runtime rollback checked separately.
+A native hub-snapshot crash found during testing is fixed by clearing obsolete
+map contacts and rebasing floor/ceiling references for transported companions;
+CA-KP-182 retains the reproduction and stack. The obstructed-placement test
+remains in the final suite. CA410-STUDY-ACQUISITION-01 remains pending; no author
+acceptance or complete V5.8 claim is inferred.
 
 ## 5.8.35 - Sofa acquisition (#410, 2026-10-27)
 
