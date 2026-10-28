@@ -50,6 +50,8 @@ class CaelumDiningTable : Actor
     CaelumRestChair Chairs[12];
     CaelumDiningBlock Blocks[32];
     int LayoutSlot;
+    int ContaminationProxyRevision;
+    transient bool ContaminationMigrating;
     bool PresentationReady;
     bool MansionFullFoodPrepared;
     int MansionFoodToSeed;

@@ -23,6 +23,8 @@ class CaelumContaminationObject : Thinker
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        let proxy=CaelumDiningBlock(body);
+        if(proxy!=null)return proxy.Table!=null && proxy.Table.ContaminationMigrating;
         if(CaelumHouseStorageEntry.Remote(body)!=null)return false;
         let table=CaelumPortableDiningTable(body);
         let block=CaelumDiningBlock(body);if(block!=null)table=CaelumPortableDiningTable(block.Table);
@@ -45,11 +47,20 @@ class CaelumContaminationObject : Thinker
         if(item!=null)return item is 'CaelumEquipmentItem' && item.Owner==null;
         // Una silla ocupada presta su colisión al jugador, pero sigue siendo
         // un mueble expuesto. Su configuración física de clase no desaparece.
-        return (body is 'CaelumPhysicalScenery' || body.bSolid || GetDefaultByType(body.GetClass()).bSolid)
+        return (body is 'CaelumDiningTable' || body is 'CaelumPhysicalScenery' || body.bSolid || GetDefaultByType(body.GetClass()).bSolid)
             && body.Radius>0 && body.Height>0;
     }
     static double Area(Actor body)
     {
+        let proxy=CaelumDiningBlock(body);
+        if(proxy!=null && proxy.Table!=null && proxy.Table.ContaminationMigrating)
+            return CaelumContaminationRules.CylinderArea(body.Radius,body.Height);
+        body=CaelumDiningContamination.Owner(body);
+        let table=CaelumDiningTable(body);
+        if(table!=null && !table.ContaminationMigrating)
+            return CaelumContaminationRules.CylinderArea(
+                table.RoundTop()?Max(table.LengthMU(),table.WidthMU())/2
+                    :Sqrt(table.LengthMU()*table.LengthMU()+table.WidthMU()*table.WidthMU())/2,table.Height);
         let seat=CaelumSofaSeat(body);if(seat!=null && seat.Sofa!=null)return Area(seat.Sofa);
         let item=CaelumEquipmentItem(body);
         if(item==null)return CaelumContaminationRules.CylinderArea(body.Radius,body.Height);
@@ -63,6 +74,8 @@ class CaelumContaminationObject : Thinker
     }
     static void Register(Actor body)
     {
+        body=CaelumDiningContamination.Owner(body);
+        CaelumDiningContamination.Ensure(CaelumDiningTable(body));
         if(!Eligible(body))return;
         let entry=CaelumContaminationStorage.Get(body,true);if(entry==null || entry.Exposure!=null)return;
         let node=new('CaelumContaminationObject');node.Body=body;node.Revision=4;entry.Exposure=node;

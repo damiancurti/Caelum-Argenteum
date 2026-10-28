@@ -1,0 +1,82 @@
+{
+  "version": "5.8.45",
+  "issue": 502,
+  "base": "666328b5515a906a45294df49c15bb5c6b9fc8e3",
+  "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+  "source_matching_package_members": 17034,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 104,
+  "original_runtime_passes": 8,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "release-core",
+      "executed_passes": 43,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    },
+    {
+      "label": "release-input",
+      "executed_passes": 3,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    },
+    {
+      "label": "release-seed",
+      "executed_passes": 9,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    },
+    {
+      "label": "release-hub",
+      "executed_passes": 15,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 6,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    },
+    {
+      "label": "release-upgrade",
+      "executed_passes": 12,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "cb5f328ba6357c089f468aeba7da1ad0db86956246657e337382068fb01c2a47"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "dining-reg-core",
+      "executed_passes": 12,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "dining-reg-shortages",
+      "executed_passes": 4,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original44-seed",
+      "executed_passes": 4,
+      "runtime_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "11a6490cf262bc97d895f0bbd6942ea1a4f01e3911fc9df64d0dd30169170d4d"
+    },
+    {
+      "label": "release-rollback",
+      "executed_passes": 4,
+      "runtime_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "11a6490cf262bc97d895f0bbd6942ea1a4f01e3911fc9df64d0dd30169170d4d"
+    }
+  ],
+  "prior_save_sha256": "da5422d1f9a0d2825a45212b77fe07bd10688330ecd9efa34757112c55a941ff",
+  "scope": "Logical dining contamination, physical native support contact, adjacent-cell dose deduplication, saved duplicate links, full collision-envelope exposure, distinct chairs, real packing/redeployment, native save/hub, genuine prior-runtime migration and rollback; household access/resources regressions.",
+  "probe_findings": "Native compiler rejected a subclass/base-class ternary; explicit return corrected it. The fixture initially used an obsolete mansion slot, then selected an actual table. Array.Find missing-value semantics were corrected to a size assertion. Failed private probes are retained, excluded from final evidence.",
+  "performance": "No new routine global scans. Migration touches at most 32 owned cells once per table. Native home access regression: 856 targets, mean3.095135/p953.128900/max3.357000ms over20 runs. This is a subsystem timing, not displayed-FPS acceptance; no art/map/geometry changes.",
+  "author_acceptance": "CA502-DINING-CONTACT-01 remains pending the requested grouped final V5.8 handoff. No prior pending entry removed."
+}

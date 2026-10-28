@@ -1,6 +1,29 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.44** - 2026-10-28.
+Documentation version: **5.8.45** - 2026-10-28.
+
+## 5.8.45 - Dining-table contact ownership (#502)
+
+Collision cells belong to their table: all contacts and cleaning resolve to the
+same table/item contamination record. Chairs remain distinct real furnishings.
+A non-solid table controller now receives environmental exposure. The approved
+collision-cylinder approximation uses the complete table envelope: half the
+width/depth diagonal for rectangular tables, half the larger diameter for round
+tables, and the existing collision height. This avoids measuring a one-unit
+controller or summing overlapping helper surfaces. No physical geometry changes.
+
+The additive dining-proxy revision1 adopts the highest existing concentration
+from the table and its cells, after settling their recorded exposure, without
+summing concentrations or making any formerly dirty source clean. Old carrier
+records remain retained. Adoption runs once; subsequent washing is authoritative.
+Only the table keeps an environmental scheduler. Native contact callbacks use
+one link per logical table/person; duplicate saved links retire before another
+dose. These operations use the existing fixed 32-cell table roster and the
+body's contact links; no new global actor scan is introduced.
+
+Packed portable tables stop exposure, preserve state and restart on placement.
+They continue to transport their original contents and separate chairs. The
+food's ageing and all existing equipment/contact rates remain unchanged.
 
 ## 5.8.44 - Decorative paintings and statues (#410)
 

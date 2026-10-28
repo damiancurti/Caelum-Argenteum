@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.44.** Obtain and update the complete repository, validate
+**Current release: 5.8.45.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.45 - Dining contamination ownership (#502)
+
+Dining tables now share one contamination state with their collision helpers.
+Exposure uses the complete table envelope, and contact with adjacent helpers is
+counted once. Packing, cleaning, saving and migration preserve the real state.
+Validation passes 104 current native assertions and 8 original-runtime checks,
+with zero failures/static errors (assets/validation_5845); author checks stay grouped until
+all remaining V5.8 implementation is ready. This does not complete V5.8.
 
 ## 5.8.44 - Decorative furniture (#410)
 

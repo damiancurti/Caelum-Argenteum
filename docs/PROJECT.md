@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.44** - 2026-10-28.
+Documentation version: **5.8.45** - 2026-10-28.
+
+## 5.8.45 / #502 - Canonical dining-table contamination
+
+Corrected the ownership gap between visible tables and their physical collision
+cells, including duplicate contacts, environmental area and additive migration.
+Evidence: assets/validation_5845. No new art, maps or balance rates. Author tests
+remain reserved for the final grouped V5.8 handoff. Remaining implementation:
+unloaded NPC physiology/other contact adapters (#502), actual unloaded combat
+and theft (#415), documented transport/Buenos Aires (#416), encounters (#417).
 
 ## 5.8.44 / #410 - Decorative catalogue completion
 

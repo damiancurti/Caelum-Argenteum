@@ -51,9 +51,16 @@ class CaelumContaminationCarrier : Inventory
 
 class CaelumContaminationStorage : Object play
 {
-    static CaelumContaminationState Get(Actor body,bool create=false)
+    static CaelumContaminationState Get(Actor body,bool create=false,bool raw=false)
     {
         if(body==null || body is 'CaelumPlayer')return null;
+        let proxy=CaelumDiningBlock(body);
+        let dining=proxy!=null?proxy.Table:CaelumDiningTable(body);
+        if(!raw && dining!=null && !dining.ContaminationMigrating)
+        {
+            CaelumDiningContamination.Ensure(dining);
+            if(proxy!=null)return Get(dining,create,true);
+        }
         let furniture=CaelumStorageFurnitureItem(body);
         if(furniture!=null)
         {
@@ -163,5 +170,35 @@ class CaelumContaminationStorage : Object play
         double a=Value(first),b=Value(second);
         if(a>b)Set(second,CaelumContaminationRules.AfterContact(b,a,areaM2,worldSeconds,Dose(second)));
         else if(b>a)Set(first,CaelumContaminationRules.AfterContact(a,b,areaM2,worldSeconds,Dose(first)));
+    }
+}
+
+// La mesa es un objeto; sus bloques sólo representan su colisión. La migración
+// conserva el foco anterior más sucio, sin sumar concentraciones ni lavar nada.
+class CaelumDiningContamination : Object play
+{
+    static Actor Owner(Actor body)
+    {
+        let proxy=CaelumDiningBlock(body);
+        if(proxy!=null && proxy.Table!=null)return proxy.Table;
+        return body;
+    }
+    static void Ensure(CaelumDiningTable table)
+    {
+        if(table==null || table.ContaminationMigrating
+            || table.ContaminationProxyRevision>=CaelumContaminationData.DINING_PROXY_REVISION)return;
+        table.ContaminationMigrating=true;
+        let main=CaelumContaminationStorage.Get(table,true,true);
+        if(main!=null && main.Exposure!=null)main.Exposure.SettleNow();
+        for(int i=0;i<32;i++)
+        {
+            let block=table.Blocks[i];if(block==null)continue;
+            let old=CaelumContaminationStorage.Get(block,false,true);if(old==null)continue;
+            if(old.Exposure!=null){old.Exposure.SettleNow();old.Exposure.Release();}
+            if(main!=null && old.Revision>=CaelumContaminationData.STATE_REVISION)
+                main.Concentration=Max(main.Concentration,old.Concentration);
+        }
+        table.ContaminationProxyRevision=CaelumContaminationData.DINING_PROXY_REVISION;
+        table.ContaminationMigrating=false;
     }
 }

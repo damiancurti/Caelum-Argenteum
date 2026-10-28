@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.44** - 2026-10-28.
+Documentation version: **5.8.45** - 2026-10-28.
+
+## 5.8.45 / #502 - Dining contact integration
+
+Implement one contamination owner/scheduler for each table, preserve old cell
+values once, keep chairs distinct and prevent adjacent-cell duplicate contact.
+Verify native support/collision, full-area exposure, packing/redeployment,
+current saves/hub travel and genuine 5.8.44 migration/rollback. Evidence:
+assets/validation_5845:104 current and8 original native PASS, zero failures/static
+errors. Author checks remain grouped with outstanding entries.
+Next: unloaded NPC physiology and remaining contact coverage, #415 combat/theft,
+#416 historical routes/urban map and #417 encounters. #412 co-op stays in V5.12.
 
 ## 5.8.44 / #410 - Landscapes and ornamental statues
 
