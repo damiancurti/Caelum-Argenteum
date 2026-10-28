@@ -1,0 +1,24 @@
+{
+  "issue":410,
+  "authority":"Author delegated historical dimensions/construction calculations; approved complete table-and-chair sets and transport of real contents on2026-10-27.",
+  "units_per_meter":32,
+  "wood_density":760,
+  "iron_density":7870,
+  "construction":"Original owned simple table silhouettes at documented envelopes; dimensions are references, not copied meshes. Wood top35mm; rectangular legs55mm, aprons20mm thick/100mm high; round square pedestal110mm and crossed feet. Iron joint pins6mm diameter/80mm long. Sum modeled solids without subtracting small join overlaps, as existing furniture bills. Use existing basic chairs and luxury set unchanged.",
+  "top_thickness":0.035,
+  "leg_width":0.055,
+  "leg_inset":0.060,
+  "apron_thickness":0.020,
+  "apron_height":0.100,
+  "pin_radius":0.003,
+  "pin_length":0.080,
+  "round_pedestal_width":0.110,
+  "round_foot_length":0.700,
+  "round_foot_height":0.060,
+  "tables":[
+    {"kind":"small","seats":2,"capacity":4,"round":true,"width":1.040,"depth":1.040,"height":0.740,"reference":"https://www.thakehamfurniture.co.uk/antique-tables/dining-table-breakfast-table/william-iv-mahogany-centre-table-antique-round-table-3-56-refno-1851/","object":"Stock3340, circa1840; published104cm diameter/74cm height; envelope only"},
+    {"kind":"normal","seats":6,"capacity":18,"round":false,"width":1.702,"depth":0.883,"height":0.711,"reference":"https://www.metmuseum.org/art/collection/search/205696","object":"1974.28.218, circa1840; published170.2x88.3x71.1cm; envelope only"},
+    {"kind":"large","seats":12,"capacity":60,"round":false,"width":3.105,"depth":0.845,"height":0.699,"reference":"https://www.metmuseum.org/art/collection/search/3181","object":"67.243.1,1825-1850; published310.5x84.5x69.9cm; museum explicitly describes12 diners; envelope/capacity reference only"},
+    {"kind":"luxury","seats":6,"capacity":18,"round":false,"reuse":"luxury_furniture/table","reference":"https://www.metmuseum.org/art/collection/search/3184","object":"11.60.157a-c,1810-1820; reuse previously documented mesh/bill and six luxury chairs"}
+  ]
+}

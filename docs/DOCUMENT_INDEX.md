@@ -29,265 +29,266 @@ Read a selected inclusive line range from the original:
 python build_document_index.py read SYSTEMS.md 3643 3676
 ```
 
-## [ASSETS.md](ASSETS.md) - 37317 words
+## [ASSETS.md](ASSETS.md) - 37474 words
 
-SHA-256: `2faa720baa2e509778924c0e68b94c98cedede713083606def4f3b61f2091208`
+SHA-256: `e6d73e404cce58e6724c184407454255a94a5f2dc183ff643b70f4c93b0075d1`
 
 - Lines 1-4 - [Caelum Argenteum — Audio and art](ASSETS.md#caelum-argenteum--audio-and-art) - context: -
-- Lines 5-12 - [5.8.39 - Aim validation evidence (#415)](ASSETS.md#5839---aim-validation-evidence-415) - context: Caelum Argenteum — Audio and art
-- Lines 13-27 - [5.8.36 - Portable study artwork (#410)](ASSETS.md#5836---portable-study-artwork-410) - context: Caelum Argenteum — Audio and art
-- Lines 28-42 - [5.8.35 / #410 - Painted sofa item views](ASSETS.md#5835--410---painted-sofa-item-views) - context: Caelum Argenteum — Audio and art
-- Lines 43-53 - [5.8.34 / #410 - Painted ordinary chair and cot items](ASSETS.md#5834--410---painted-ordinary-chair-and-cot-items) - context: Caelum Argenteum — Audio and art
-- Lines 54-71 - [5.8.33 / #410 - Human-scale chair and raised cot](ASSETS.md#5833--410---human-scale-chair-and-raised-cot) - context: Caelum Argenteum — Audio and art
-- Lines 72-82 - [5.8.32 / #410 - Painted luxury furniture inventory items](ASSETS.md#5832--410---painted-luxury-furniture-inventory-items) - context: Caelum Argenteum — Audio and art
-- Lines 83-91 - [5.8.31 storage furniture acquisition](ASSETS.md#5831-storage-furniture-acquisition) - context: Caelum Argenteum — Audio and art
-- Lines 92-110 - [5.8.30 - Original luxury furniture models (#410)](ASSETS.md#5830---original-luxury-furniture-models-410) - context: Caelum Argenteum — Audio and art
-- Lines 111-129 - [5.8.29 - Original period sofa models (#410)](ASSETS.md#5829---original-period-sofa-models-410) - context: Caelum Argenteum — Audio and art
-- Lines 130-138 - [5.8.26 - Reused owned reading furniture (#410)](ASSETS.md#5826---reused-owned-reading-furniture-410) - context: Caelum Argenteum — Audio and art
-- Lines 139-161 - [5.8.25 - Original garden water furniture (#410)](ASSETS.md#5825---original-garden-water-furniture-410) - context: Caelum Argenteum — Audio and art
-- Lines 162-182 - [5.8.24 - Wardrobe models and painted icon (#410)](ASSETS.md#5824---wardrobe-models-and-painted-icon-410) - context: Caelum Argenteum — Audio and art
-- Lines 183-192 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Audio and art
-- Lines 193-220 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Audio and art
-- Lines 221-247 - [5.8.19 - Kitchen process artwork (#410, author review pending)](ASSETS.md#5819---kitchen-process-artwork-410-author-review-pending) - context: Caelum Argenteum — Audio and art
-- Lines 248-261 - [5.8.18 - Accepted painted prepared meals (#410)](ASSETS.md#5818---accepted-painted-prepared-meals-410) - context: Caelum Argenteum — Audio and art
-- Lines 262-277 - [5.8.17 - Accepted painted kitchen ingredients (#410)](ASSETS.md#5817---accepted-painted-kitchen-ingredients-410) - context: Caelum Argenteum — Audio and art
-- Lines 278-283 - [5.8.14 - Ration lot presentation (#410)](ASSETS.md#5814---ration-lot-presentation-410) - context: Caelum Argenteum — Audio and art
-- Lines 284-314 - [5.8.13 - Campfire world artwork (#411)](ASSETS.md#5813---campfire-world-artwork-411) - context: Caelum Argenteum — Audio and art
-- Lines 315-327 - [5.8.12 - Toilet interaction (#502)](ASSETS.md#5812---toilet-interaction-502) - context: Caelum Argenteum — Audio and art
-- Lines 328-358 - [5.8.11 - Domestic bathroom artwork (#410)](ASSETS.md#5811---domestic-bathroom-artwork-410) - context: Caelum Argenteum — Audio and art
-- Lines 359-376 - [5.8.9 - Hygiene item artwork (#502, in progress)](ASSETS.md#589---hygiene-item-artwork-502-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 377-391 - [5.8.8 - Deployed tent artwork (#411, in progress)](ASSETS.md#588---deployed-tent-artwork-411-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 392-404 - [5.8.6 - Central property access (#411)](ASSETS.md#586---central-property-access-411) - context: Caelum Argenteum — Audio and art
-- Lines 405-408 - [5.8.5 - Regional event discovery (#415)](ASSETS.md#585---regional-event-discovery-415) - context: Caelum Argenteum — Audio and art
-- Lines 409-414 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Audio and art
-- Lines 415-426 - [5.8.3 - Contamination HUD icon (#410, in progress)](ASSETS.md#583---contamination-hud-icon-410-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 427-437 - [5.8.2 - Connected mansion deposits (#414)](ASSETS.md#582---connected-mansion-deposits-414) - context: Caelum Argenteum — Audio and art
-- Lines 438-464 - [5.7.14 - Mate vessels and inventory sprites (#472)](ASSETS.md#5714---mate-vessels-and-inventory-sprites-472) - context: Caelum Argenteum — Audio and art
-- Lines 465-482 - [5.7.13 - Chemistry supply presentation (#471)](ASSETS.md#5713---chemistry-supply-presentation-471) - context: Caelum Argenteum — Audio and art
-- Lines 483-493 - [5.7.12 - Owned Fermentation Barrel (#487)](ASSETS.md#5712---owned-fermentation-barrel-487) - context: Caelum Argenteum — Audio and art
-- Lines 494-499 - [5.7.11 - Station terminology (#486)](ASSETS.md#5711---station-terminology-486) - context: Caelum Argenteum — Audio and art
-- Lines 500-505 - [5.7.10 - Existing cartridge and station art reused (#471)](ASSETS.md#5710---existing-cartridge-and-station-art-reused-471) - context: Caelum Argenteum — Audio and art
-- Lines 506-512 - [5.7.9 - Existing water/Alchemy art reused (#409)](ASSETS.md#579---existing-wateralchemy-art-reused-409) - context: Caelum Argenteum — Audio and art
-- Lines 513-558 - [5.7.8 - Painted support implement correction (#479)](ASSETS.md#578---painted-support-implement-correction-479) - context: Caelum Argenteum — Audio and art
-- Lines 559-567 - [5.7.7 - Target-panel presentation (#481)](ASSETS.md#577---target-panel-presentation-481) - context: Caelum Argenteum — Audio and art
-- Lines 568-599 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Audio and art
-- Lines 600-611 - [5.7.5 - Owned marine material models (#407)](ASSETS.md#575---owned-marine-material-models-407) - context: Caelum Argenteum — Audio and art
-- Lines 612-623 - [5.7.4 - Owned Alchemy station (#470)](ASSETS.md#574---owned-alchemy-station-470) - context: Caelum Argenteum — Audio and art
-- Lines 624-630 - [5.7.3 - Recovery validation (#406)](ASSETS.md#573---recovery-validation-406) - context: Caelum Argenteum — Audio and art
-- Lines 631-644 - [5.7.2 - Owned 3D land resources (#405)](ASSETS.md#572---owned-3d-land-resources-405) - context: Caelum Argenteum — Audio and art
-- Lines 645-654 - [5.6.10 — library and clothing shop signs (#383)](ASSETS.md#5610--library-and-clothing-shop-signs-383) - context: Caelum Argenteum — Audio and art
-- Lines 655-667 - [5.6.9 - Prepared cartridge-kit sprites (#380)](ASSETS.md#569---prepared-cartridge-kit-sprites-380) - context: Caelum Argenteum — Audio and art
-- Lines 668-695 - [5.6.7 - Distinct garment object artwork (#387)](ASSETS.md#567---distinct-garment-object-artwork-387) - context: Caelum Argenteum — Audio and art
-- Lines 696-702 - [5.6.6 - Clothing gameplay representation (#386)](ASSETS.md#566---clothing-gameplay-representation-386) - context: Caelum Argenteum — Audio and art
-- Lines 703-713 - [5.6.3 - Original reading bookshelf (#378)](ASSETS.md#563---original-reading-bookshelf-378) - context: Caelum Argenteum — Audio and art
-- Lines 714-787 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Audio and art
-- Lines 788-797 - [5.5.6 - Thermal surface fixture (#314)](ASSETS.md#556---thermal-surface-fixture-314) - context: Caelum Argenteum — Audio and art
-- Lines 798-804 - [5.5.5 - Unarmed input evidence (#363)](ASSETS.md#555---unarmed-input-evidence-363) - context: Caelum Argenteum — Audio and art
-- Lines 805-814 - [5.4.46 - House-transition evidence (#334)](ASSETS.md#5446---house-transition-evidence-334) - context: Caelum Argenteum — Audio and art
-- Lines 815-821 - [5.4.45 - Private breath regression evidence (#357)](ASSETS.md#5445---private-breath-regression-evidence-357) - context: Caelum Argenteum — Audio and art
-- Lines 822-832 - [5.4.42 - Distributed update evidence (#318)](ASSETS.md#5442---distributed-update-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 833-841 - [5.4.41 - Isolated workload evidence (#318)](ASSETS.md#5441---isolated-workload-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 842-848 - [5.4.40 - Rest and acceleration evidence (#325)](ASSETS.md#5440---rest-and-acceleration-evidence-325) - context: Caelum Argenteum — Audio and art
-- Lines 849-855 - [5.4.39 - Jump-wall diagnostic evidence (#339)](ASSETS.md#5439---jump-wall-diagnostic-evidence-339) - context: Caelum Argenteum — Audio and art
-- Lines 856-861 - [5.4.38 - Map-legend presentation evidence (#321)](ASSETS.md#5438---map-legend-presentation-evidence-321) - context: Caelum Argenteum — Audio and art
-- Lines 862-869 - [5.4.37 - Current MAP03 attribution evidence (#318)](ASSETS.md#5437---current-map03-attribution-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 870-875 - [5.4.36 - House-door presentation checks (#334)](ASSETS.md#5436---house-door-presentation-checks-334) - context: Caelum Argenteum — Audio and art
-- Lines 876-883 - [5.4.35 - Prisoner escort test sources (#322)](ASSETS.md#5435---prisoner-escort-test-sources-322) - context: Caelum Argenteum — Audio and art
-- Lines 884-891 - [5.4.34 - Native autosave verification (#324)](ASSETS.md#5434---native-autosave-verification-324) - context: Caelum Argenteum — Audio and art
-- Lines 892-899 - [5.4.33 - MAP02 crusher geometry provenance (#323)](ASSETS.md#5433---map02-crusher-geometry-provenance-323) - context: Caelum Argenteum — Audio and art
-- Lines 900-914 - [5.4.29 - Map catalogue and exact geometry provenance (#327)](ASSETS.md#5429---map-catalogue-and-exact-geometry-provenance-327) - context: Caelum Argenteum — Audio and art
-- Lines 915-938 - [5.4.28 - House signs and performance evidence (#318)](ASSETS.md#5428---house-signs-and-performance-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 939-950 - [5.4.25 - Soldier representation benchmark (#304)](ASSETS.md#5425---soldier-representation-benchmark-304) - context: Caelum Argenteum — Audio and art
-- Lines 951-968 - [5.4.24 - Zupay cosmetic rock projectile (#284)](ASSETS.md#5424---zupay-cosmetic-rock-projectile-284) - context: Caelum Argenteum — Audio and art
-- Lines 969-1070 - [5.4.23 - Editable Domingo 3D prototype (#283, accepted)](ASSETS.md#5423---editable-domingo-3d-prototype-283-accepted) - context: Caelum Argenteum — Audio and art
-- Lines 1071-1078 - [5.4.22 - Quick-use HUD artwork (#282)](ASSETS.md#5422---quick-use-hud-artwork-282) - context: Caelum Argenteum — Audio and art
-- Lines 1079-1108 - [5.4.21 - Channel Seal presentation (#252)](ASSETS.md#5421---channel-seal-presentation-252) - context: Caelum Argenteum — Audio and art
-- Lines 1109-1121 - [5.4.20 - Mounted Arcane Cloud presentation (#251)](ASSETS.md#5420---mounted-arcane-cloud-presentation-251) - context: Caelum Argenteum — Audio and art
-- Lines 1122-1130 - [5.4.19 - Redemption asset reuse (#250)](ASSETS.md#5419---redemption-asset-reuse-250) - context: Caelum Argenteum — Audio and art
-- Lines 1131-1140 - [5.4.18 - Summoning asset reuse (#249)](ASSETS.md#5418---summoning-asset-reuse-249) - context: Caelum Argenteum — Audio and art
-- Lines 1141-1152 - [5.4.17 - Rally integration and isolated evidence (#248)](ASSETS.md#5417---rally-integration-and-isolated-evidence-248) - context: Caelum Argenteum — Audio and art
-- Lines 1153-1164 - [5.4.16 - Formation Breaker residual appearance (#247)](ASSETS.md#5416---formation-breaker-residual-appearance-247) - context: Caelum Argenteum — Audio and art
-- Lines 1165-1170 - [5.4.15 - Movement validation fixtures (#260)](ASSETS.md#5415---movement-validation-fixtures-260) - context: Caelum Argenteum — Audio and art
-- Lines 1171-1176 - [5.4.7 - Telekinesis validation fixtures (#241)](ASSETS.md#547---telekinesis-validation-fixtures-241) - context: Caelum Argenteum — Audio and art
-- Lines 1177-1204 - [5.4.5 - Reusable dark rain cloud (#251, in progress)](ASSETS.md#545---reusable-dark-rain-cloud-251-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 1205-1248 - [5.4.4 - Class preparation hands (#238)](ASSETS.md#544---class-preparation-hands-238) - context: Caelum Argenteum — Audio and art
-- Lines 1249-1264 - [5.4.3 - Original procedural rat audio (#254)](ASSETS.md#543---original-procedural-rat-audio-254) - context: Caelum Argenteum — Audio and art
-- Lines 1265-1278 - [5.3.8 - Existing quest text and known-place links (#235)](ASSETS.md#538---existing-quest-text-and-known-place-links-235) - context: Caelum Argenteum — Audio and art
-- Lines 1279-1316 - [5.3.7 - Authored cartographic data and symbols (#234)](ASSETS.md#537---authored-cartographic-data-and-symbols-234) - context: Caelum Argenteum — Audio and art
-- Lines 1317-1326 - [5.3.6 - Manual note presentation (#233)](ASSETS.md#536---manual-note-presentation-233) - context: Caelum Argenteum — Audio and art
-- Lines 1327-1337 - [5.3.5 - Known-service map icons (#232)](ASSETS.md#535---known-service-map-icons-232) - context: Caelum Argenteum — Audio and art
-- Lines 1338-1348 - [5.3.4 - Local cartographic presentation (#231)](ASSETS.md#534---local-cartographic-presentation-231) - context: Caelum Argenteum — Audio and art
-- Lines 1349-1355 - [5.3.1 - Survival and Character presentation (#256)](ASSETS.md#531---survival-and-character-presentation-256) - context: Caelum Argenteum — Audio and art
-- Lines 1356-1362 - [5.3.0 - Power indicator presentation (#255)](ASSETS.md#530---power-indicator-presentation-255) - context: Caelum Argenteum — Audio and art
-- Lines 1363-1368 - [5.2.27 - Magic Box weight evidence (#229)](ASSETS.md#5227---magic-box-weight-evidence-229) - context: Caelum Argenteum — Audio and art
-- Lines 1369-1376 - [5.2.26 - Rest feedback validation (#227)](ASSETS.md#5226---rest-feedback-validation-227) - context: Caelum Argenteum — Audio and art
-- Lines 1377-1383 - [5.2.23 - Sewer bag sleep (#219)](ASSETS.md#5223---sewer-bag-sleep-219) - context: Caelum Argenteum — Audio and art
-- Lines 1384-1391 - [5.2.22 - Menu control captions (#215)](ASSETS.md#5222---menu-control-captions-215) - context: Caelum Argenteum — Audio and art
-- Lines 1392-1399 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Audio and art
-- Lines 1400-1408 - [5.2.20 - Resource HUD layout (#213)](ASSETS.md#5220---resource-hud-layout-213) - context: Caelum Argenteum — Audio and art
-- Lines 1409-1416 - [5.2.19 - Horizontal impact diagnostics (#211)](ASSETS.md#5219---horizontal-impact-diagnostics-211) - context: Caelum Argenteum — Audio and art
-- Lines 1417-1465 - [5.2.18 - Authored poses, female hands and dining model (#209)](ASSETS.md#5218---authored-poses-female-hands-and-dining-model-209) - context: Caelum Argenteum — Audio and art
-- Lines 1466-1473 - [5.2.17 - Preserve the living tutorial appearance (#207)](ASSETS.md#5217---preserve-the-living-tutorial-appearance-207) - context: Caelum Argenteum — Audio and art
-- Lines 1474-1481 - [5.2.16 - Fullscreen cursor evidence (#204)](ASSETS.md#5216---fullscreen-cursor-evidence-204) - context: Caelum Argenteum — Audio and art
-- Lines 1482-1493 - [5.2.15 - Presentation scaling and native feedback (#150)](ASSETS.md#5215---presentation-scaling-and-native-feedback-150) - context: Caelum Argenteum — Audio and art
-- Lines 1494-1504 - [5.2.14 - Native control presentation and test sources (#149)](ASSETS.md#5214---native-control-presentation-and-test-sources-149) - context: Caelum Argenteum — Audio and art
-- Lines 1505-1577 - [5.2.13 - Modular saved appearance and first-person hands (#148)](ASSETS.md#5213---modular-saved-appearance-and-first-person-hands-148) - context: Caelum Argenteum — Audio and art
-- Lines 1578-1585 - [5.2.12 - Bull and resident diagnostics (#195)](ASSETS.md#5212---bull-and-resident-diagnostics-195) - context: Caelum Argenteum — Audio and art
-- Lines 1586-1592 - [5.2.11 - Collision energy diagnostics (#194)](ASSETS.md#5211---collision-energy-diagnostics-194) - context: Caelum Argenteum — Audio and art
-- Lines 1593-1602 - [5.2.10 - Ranged descriptions and shotgun resource names (#192)](ASSETS.md#5210---ranged-descriptions-and-shotgun-resource-names-192) - context: Caelum Argenteum — Audio and art
-- Lines 1603-1611 - [5.2.9 - Personality descriptions and creator layout (#192)](ASSETS.md#529---personality-descriptions-and-creator-layout-192) - context: Caelum Argenteum — Audio and art
-- Lines 1612-1618 - [5.2.8 - Toughness evidence and existing status visuals (#188)](ASSETS.md#528---toughness-evidence-and-existing-status-visuals-188) - context: Caelum Argenteum — Audio and art
-- Lines 1619-1629 - [5.2.7 - Existing artwork inside native menus (#189)](ASSETS.md#527---existing-artwork-inside-native-menus-189) - context: Caelum Argenteum — Audio and art
-- Lines 1630-1638 - [5.2.6 - Menu pointer evidence (#184)](ASSETS.md#526---menu-pointer-evidence-184) - context: Caelum Argenteum — Audio and art
-- Lines 1639-1649 - [5.2.5 - Dialogue source provenance and evidence (#185)](ASSETS.md#525---dialogue-source-provenance-and-evidence-185) - context: Caelum Argenteum — Audio and art
-- Lines 1650-1660 - [5.2.4 - Reused onboarding assets and MAP02 generation (#183)](ASSETS.md#524---reused-onboarding-assets-and-map02-generation-183) - context: Caelum Argenteum — Audio and art
-- Lines 1661-1666 - [5.2.3 - Mandinga targeting evidence (#180)](ASSETS.md#523---mandinga-targeting-evidence-180) - context: Caelum Argenteum — Audio and art
-- Lines 1667-1672 - [5.2.2 - Time-skip performance evidence (#178)](ASSETS.md#522---time-skip-performance-evidence-178) - context: Caelum Argenteum — Audio and art
-- Lines 1673-1682 - [5.2.1 - Reused tutorial and provision presentation (#177)](ASSETS.md#521---reused-tutorial-and-provision-presentation-177) - context: Caelum Argenteum — Audio and art
-- Lines 1683-1693 - [5.2.0 - Saved identity presentation boundary (#147)](ASSETS.md#520---saved-identity-presentation-boundary-147) - context: Caelum Argenteum — Audio and art
-- Lines 1694-1700 - [5.1.20 - Existing native door art in MAP06 (#173)](ASSETS.md#5120---existing-native-door-art-in-map06-173) - context: Caelum Argenteum — Audio and art
-- Lines 1701-1707 - [5.1.19 - Shared dialogue history (#172)](ASSETS.md#5119---shared-dialogue-history-172) - context: Caelum Argenteum — Audio and art
-- Lines 1708-1714 - [5.1.18 - MAP01 gift presentation (#164)](ASSETS.md#5118---map01-gift-presentation-164) - context: Caelum Argenteum — Audio and art
-- Lines 1715-1722 - [5.1.17 - Medikit labels (#169)](ASSETS.md#5117---medikit-labels-169) - context: Caelum Argenteum — Audio and art
-- Lines 1723-1750 - [5.1.16 - Original bolas atlas (#163)](ASSETS.md#5116---original-bolas-atlas-163) - context: Caelum Argenteum — Audio and art
-- Lines 1751-1774 - [5.1.15 - Bronze utility staff (#162)](ASSETS.md#5115---bronze-utility-staff-162) - context: Caelum Argenteum — Audio and art
-- Lines 1775-1781 - [5.1.14 - Damage-flash travel validation (#165)](ASSETS.md#5114---damage-flash-travel-validation-165) - context: Caelum Argenteum — Audio and art
-- Lines 1782-1788 - [5.1.13 - Silver-key validation (#160)](ASSETS.md#5113---silver-key-validation-160) - context: Caelum Argenteum — Audio and art
-- Lines 1789-1795 - [5.1.12 - Crafting-size validation (#158)](ASSETS.md#5112---crafting-size-validation-158) - context: Caelum Argenteum — Audio and art
-- Lines 1796-1803 - [5.1.11 - Time-skip input validation (#156)](ASSETS.md#5111---time-skip-input-validation-156) - context: Caelum Argenteum — Audio and art
-- Lines 1804-1812 - [5.1.10 — Physics validation assets (#154)](ASSETS.md#5110--physics-validation-assets-154) - context: Caelum Argenteum — Audio and art
-- Lines 1813-1838 - [5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)](ASSETS.md#519---shotgun-grip-occlusion-and-cartridge-world-scale-152) - context: Caelum Argenteum — Audio and art
-- Lines 1839-1885 - [5.1.8 - Original elemental atlases and projectile meshes (#137)](ASSETS.md#518---original-elemental-atlases-and-projectile-meshes-137) - context: Caelum Argenteum — Audio and art
-- Lines 1886-1923 - [5.1.7 - Modular shotgun artwork and evidence (#136)](ASSETS.md#517---modular-shotgun-artwork-and-evidence-136) - context: Caelum Argenteum — Audio and art
-- Lines 1924-1944 - [5.1.6 - Crouched Domingo carbine poses (#143)](ASSETS.md#516---crouched-domingo-carbine-poses-143) - context: Caelum Argenteum — Audio and art
-- Lines 1945-1976 - [5.1.5 - Demon breath and potion tiers (#135)](ASSETS.md#515---demon-breath-and-potion-tiers-135) - context: Caelum Argenteum — Audio and art
-- Lines 1977-2003 - [5.1.4 - Breathing recordings and native evidence (#140)](ASSETS.md#514---breathing-recordings-and-native-evidence-140) - context: Caelum Argenteum — Audio and art
-- Lines 2004-2024 - [5.1.3 - City interiors and world carbine artwork (#133)](ASSETS.md#513---city-interiors-and-world-carbine-artwork-133) - context: Caelum Argenteum — Audio and art
-- Lines 2025-2033 - [5.1.2 - Siege reinforcement evidence (#132)](ASSETS.md#512---siege-reinforcement-evidence-132) - context: Caelum Argenteum — Audio and art
-- Lines 2034-2052 - [5.1.1 - Thermal HUD verification sources (#131)](ASSETS.md#511---thermal-hud-verification-sources-131) - context: Caelum Argenteum — Audio and art
-- Lines 2053-2064 - [5.1.0 — Thermal validation sources (#130)](ASSETS.md#510--thermal-validation-sources-130) - context: Caelum Argenteum — Audio and art
-- Lines 2065-2073 - [5.0.6 — Normal high-density AI evidence (#128)](ASSETS.md#506--normal-high-density-ai-evidence-128) - context: Caelum Argenteum — Audio and art
-- Lines 2074-2083 - [5.0.5 — Siege profiling evidence (#121)](ASSETS.md#505--siege-profiling-evidence-121) - context: Caelum Argenteum — Audio and art
-- Lines 2084-2097 - [4.37.24 — Reproducible closing export (#82)](ASSETS.md#43724--reproducible-closing-export-82) - context: Caelum Argenteum — Audio and art
-- Lines 2098-2115 - [4.37.23 - Character-creation text and layout (#112)](ASSETS.md#43723---character-creation-text-and-layout-112) - context: Caelum Argenteum — Audio and art
-- Lines 2116-2188 - [4.37.22 - Equipped first-person shield artwork (#106)](ASSETS.md#43722---equipped-first-person-shield-artwork-106) - context: Caelum Argenteum — Audio and art
-- Lines 2189-2227 - [4.37.21 - Approved narrative artwork sources and presentation (#103)](ASSETS.md#43721---approved-narrative-artwork-sources-and-presentation-103) - context: Caelum Argenteum — Audio and art
-- Lines 2228-2264 - [4.37.20 - Original training mannequin model (#98)](ASSETS.md#43720---original-training-mannequin-model-98) - context: Caelum Argenteum — Audio and art
-- Lines 2265-2274 - [4.37.19 - Existing necklace assets and shield localization (#96)](ASSETS.md#43719---existing-necklace-assets-and-shield-localization-96) - context: Caelum Argenteum — Audio and art
-- Lines 2275-2284 - [4.37.18 - Journal subsection presentation (#91)](ASSETS.md#43718---journal-subsection-presentation-91) - context: Caelum Argenteum — Audio and art
-- Lines 2285-2308 - [4.37.17 - Pickaxe art and gathering audio (#89)](ASSETS.md#43717---pickaxe-art-and-gathering-audio-89) - context: Caelum Argenteum — Audio and art
-- Lines 2309-2339 - [4.37.16 - Compass, Sun of May and C moon (#87)](ASSETS.md#43716---compass-sun-of-may-and-c-moon-87) - context: Caelum Argenteum — Audio and art
-- Lines 2340-2346 - [4.37.15 - Traditional Truco card reuse (#101)](ASSETS.md#43715---traditional-truco-card-reuse-101) - context: Caelum Argenteum — Audio and art
-- Lines 2347-2365 - [4.37.13 — Trucazo source and existing card presentation (#81)](ASSETS.md#43713--trucazo-source-and-existing-card-presentation-81) - context: Caelum Argenteum — Audio and art
-- Lines 2366-2374 - [4.37.11 — Existing guard presentation and bilingual recognition (#79)](ASSETS.md#43711--existing-guard-presentation-and-bilingual-recognition-79) - context: Caelum Argenteum — Audio and art
-- Lines 2375-2383 - [4.37.10 — Existing prisoner dialogue presentation (#78)](ASSETS.md#43710--existing-prisoner-dialogue-presentation-78) - context: Caelum Argenteum — Audio and art
-- Lines 2384-2425 - [4.37.9 — Expanded urban geometry and save-layout provenance (#77)](ASSETS.md#4379--expanded-urban-geometry-and-save-layout-provenance-77) - context: Caelum Argenteum — Audio and art
-- Lines 2426-2449 - [4.37.8 — Supply ledger provenance and verification (#75)](ASSETS.md#4378--supply-ledger-provenance-and-verification-75) - context: Caelum Argenteum — Audio and art
-- Lines 2450-2473 - [4.37.7 — Layered sewer return geometry (#74)](ASSETS.md#4377--layered-sewer-return-geometry-74) - context: Caelum Argenteum — Audio and art
-- Lines 2474-2486 - [4.37.6 — Cardinal sewer data and supply ledger (#73/#75)](ASSETS.md#4376--cardinal-sewer-data-and-supply-ledger-7375) - context: Caelum Argenteum — Audio and art
-- Lines 2487-2495 - [4.37.5 — Existing food plates and water cups (#65)](ASSETS.md#4375--existing-food-plates-and-water-cups-65) - context: Caelum Argenteum — Audio and art
-- Lines 2496-2504 - [4.37.4 — Existing Journal assets for time skipping (#64)](ASSETS.md#4374--existing-journal-assets-for-time-skipping-64) - context: Caelum Argenteum — Audio and art
-- Lines 2505-2515 - [4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)](ASSETS.md#4373--existing-equipment-catalogue-and-bilingual-palomo-dialogue-63) - context: Caelum Argenteum — Audio and art
-- Lines 2516-2522 - [4.37.2 — Magic-cost balance data and evidence (#68)](ASSETS.md#4372--magic-cost-balance-data-and-evidence-68) - context: Caelum Argenteum — Audio and art
-- Lines 2523-2531 - [4.37.1 — Reused practice target and bilingual directions (#62)](ASSETS.md#4371--reused-practice-target-and-bilingual-directions-62) - context: Caelum Argenteum — Audio and art
-- Lines 2532-2589 - [4.37.0 — Mansion landscape and filled tympana (#61)](ASSETS.md#4370--mansion-landscape-and-filled-tympana-61) - context: Caelum Argenteum — Audio and art
-- Lines 2590-2609 - [4.36.28 — Playtest resource packaging (#17)](ASSETS.md#43628--playtest-resource-packaging-17) - context: Caelum Argenteum — Audio and art
-- Lines 2610-2629 - [4.36.27 — Port battlefield and reused defenders (#16)](ASSETS.md#43627--port-battlefield-and-reused-defenders-16) - context: Caelum Argenteum — Audio and art
-- Lines 2630-2649 - [4.36.26 — Grip-centered thrust motion (#37)](ASSETS.md#43626--grip-centered-thrust-motion-37) - context: Caelum Argenteum — Audio and art
-- Lines 2650-2704 - [4.36.25 — Mansion architectural finishes (#36)](ASSETS.md#43625--mansion-architectural-finishes-36) - context: Caelum Argenteum — Audio and art
-- Lines 2705-2712 - [4.36.24a — Rights and attribution (#55)](ASSETS.md#43624a--rights-and-attribution-55) - context: Caelum Argenteum — Audio and art
-- Lines 2713-2721 - [4.36.24 — Quest journal labels (#35)](ASSETS.md#43624--quest-journal-labels-35) - context: Caelum Argenteum — Audio and art
-- Lines 2722-2731 - [4.36.23 — Armor presentation (#52)](ASSETS.md#43623--armor-presentation-52) - context: Caelum Argenteum — Audio and art
-- Lines 2732-2746 - [4.36.22 — Existing dialogue presentation (#34)](ASSETS.md#43622--existing-dialogue-presentation-34) - context: Caelum Argenteum — Audio and art
-- Lines 2747-2758 - [4.36.20 — Shared Arcana presentation (#33)](ASSETS.md#43620--shared-arcana-presentation-33) - context: Caelum Argenteum — Audio and art
-- Lines 2759-2809 - [4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)](ASSETS.md#43617--approximate-argentine-1884-cannon-reconstruction-21) - context: Caelum Argenteum — Audio and art
-- Lines 2810-2856 - [4.36.16 — Ram components and reference-based estimates (#20)](ASSETS.md#43616--ram-components-and-reference-based-estimates-20) - context: Caelum Argenteum — Audio and art
-- Lines 2857-2866 - [4.36.15 — Gate mechanics reuse accepted art (#19)](ASSETS.md#43615--gate-mechanics-reuse-accepted-art-19) - context: Caelum Argenteum — Audio and art
-- Lines 2867-2916 - [4.36.14a — Siege silhouettes and gate materials (#18 correction)](ASSETS.md#43614a--siege-silhouettes-and-gate-materials-18-correction) - context: Caelum Argenteum — Audio and art
-- Lines 2917-2941 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Audio and art
-- Lines 2942-2948 - [4.36.8 — No new runtime assets (#14)](ASSETS.md#4368--no-new-runtime-assets-14) - context: Caelum Argenteum — Audio and art
-- Lines 2949-2966 - [4.36.7 — Recolored prisoner sprites (#13)](ASSETS.md#4367--recolored-prisoner-sprites-13) - context: Caelum Argenteum — Audio and art
-- Lines 2967-2987 - [4.36.5 — Wider sewer and barred gates (#11)](ASSETS.md#4365--wider-sewer-and-barred-gates-11) - context: Caelum Argenteum — Audio and art
-- Lines 2988-2998 - [4.36.4 — T1 maze catalogue](ASSETS.md#4364--t1-maze-catalogue) - context: Caelum Argenteum — Audio and art
-- Lines 2999-3016 - [4.36.3 — Additional flail-handle rotation](ASSETS.md#4363--additional-flail-handle-rotation) - context: Caelum Argenteum — Audio and art
-- Lines 3017-3031 - [4.36.2 — Deterministic bow crop caches](ASSETS.md#4362--deterministic-bow-crop-caches) - context: Caelum Argenteum — Audio and art
-- Lines 3032-3046 - [4.36.1 — Documentation and provenance](ASSETS.md#4361--documentation-and-provenance) - context: Caelum Argenteum — Audio and art
-- Lines 3047-3086 - [4.36.0i — native composition and MAP02](ASSETS.md#4360i--native-composition-and-map02) - context: Caelum Argenteum — Audio and art
-- Lines 3087-3106 - [History 4.36.0h — adjustment to the capture marked by the author](ASSETS.md#history-4360h--adjustment-to-the-capture-marked-by-the-author) - context: Caelum Argenteum — Audio and art
-- Lines 3107-3128 - [4.36.0g — parts, fingers and muted colors](ASSETS.md#4360g--parts-fingers-and-muted-colors) - context: Caelum Argenteum — Audio and art
-- Lines 3129-3157 - [4.36.0f — broad blade and corrected native composition](ASSETS.md#4360f--broad-blade-and-corrected-native-composition) - context: Caelum Argenteum — Audio and art
-- Lines 3158-3185 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Audio and art
-- Lines 3186-3215 - [Revised first-person view — 4.36.0d](ASSETS.md#revised-first-person-view--4360d) - context: Caelum Argenteum — Audio and art
-- Lines 3216-3253 - [Resources contributed and integrated — 4.36.0c](ASSETS.md#resources-contributed-and-integrated--4360c) - context: Caelum Argenteum — Audio and art
-- Lines 3254-3282 - [4.36.0b — lever, sphere and bull scale](ASSETS.md#4360b--lever-sphere-and-bull-scale) - context: Caelum Argenteum — Audio and art
-- Lines 3283-3296 - [4.36.0a — physical gallery resources](ASSETS.md#4360a--physical-gallery-resources) - context: Caelum Argenteum — Audio and art
-- Lines 3297-3333 - [4.35.0q — author v4 sprites and icons](ASSETS.md#4350q--author-v4-sprites-and-icons) - context: Caelum Argenteum — Audio and art
-- Lines 3334-3367 - [4.35.0p — original carriage and merchant ship](ASSETS.md#4350p--original-carriage-and-merchant-ship) - context: Caelum Argenteum — Audio and art
-- Lines 3368-3374 - [4.35.0o — monthly calendar](ASSETS.md#4350o--monthly-calendar) - context: Caelum Argenteum — Audio and art
-- Lines 3375-3382 - [4.35.0n — travel budget](ASSETS.md#4350n--travel-budget) - context: Caelum Argenteum — Audio and art
-- Lines 3383-3414 - [4.35.0m — author materials and coastal maps](ASSETS.md#4350m--author-materials-and-coastal-maps) - context: Caelum Argenteum — Audio and art
-- Lines 3415-3437 - [4.35.0l — attributed climate data and furniture](ASSETS.md#4350l--attributed-climate-data-and-furniture) - context: Caelum Argenteum — Audio and art
-- Lines 3438-3456 - [4.35.0k — Journal environmental reading](ASSETS.md#4350k--journal-environmental-reading) - context: Caelum Argenteum — Audio and art
-- Lines 3457-3475 - [4.35.0j — Limbo clock, station scale and text](ASSETS.md#4350j--limbo-clock-station-scale-and-text) - context: Caelum Argenteum — Audio and art
-- Lines 3476-3492 - [4.35.0i — serving placement on tabletops](ASSETS.md#4350i--serving-placement-on-tabletops) - context: Caelum Argenteum — Audio and art
-- Lines 3493-3515 - [4.35.0h — MAP01 plates, cups and furniture](ASSETS.md#4350h--map01-plates-cups-and-furniture) - context: Caelum Argenteum — Audio and art
-- Lines 3516-3535 - [4.35.0g — tables and view-direction mapping](ASSETS.md#4350g--tables-and-view-direction-mapping) - context: Caelum Argenteum — Audio and art
-- Lines 3536-3558 - [4.35.0f — portable sleeping bag and comfort reading](ASSETS.md#4350f--portable-sleeping-bag-and-comfort-reading) - context: Caelum Argenteum — Audio and art
-- Lines 3559-3588 - [4.35.0e — original furniture and rest view](ASSETS.md#4350e--original-furniture-and-rest-view) - context: Caelum Argenteum — Audio and art
-- Lines 3589-3595 - [4.35.0d1 — resolution of existing poses](ASSETS.md#4350d1--resolution-of-existing-poses) - context: Caelum Argenteum — Audio and art
-- Lines 3596-3617 - [4.35.0d — interface and rest poses](ASSETS.md#4350d--interface-and-rest-poses) - context: Caelum Argenteum — Audio and art
-- Lines 3618-3631 - [4.35.0c — Presentation of Stopped Time](ASSETS.md#4350c--presentation-of-stopped-time) - context: Caelum Argenteum — Audio and art
-- Lines 3632-3645 - [4.35.0b — schedule on the existing presentation](ASSETS.md#4350b--schedule-on-the-existing-presentation) - context: Caelum Argenteum — Audio and art
-- Lines 3646-3659 - [4.35.0a — presentation of the recorded time](ASSETS.md#4350a--presentation-of-the-recorded-time) - context: Caelum Argenteum — Audio and art
-- Lines 3660-3673 - [4.34.0e — test sites in sewers](ASSETS.md#4340e--test-sites-in-sewers) - context: Caelum Argenteum — Audio and art
-- Lines 3674-3760 - [4.34.0d — travel service resources](ASSETS.md#4340d--travel-service-resources) - context: Caelum Argenteum — Audio and art
-- Lines 3761-3783 - [New containers — 4.33.0af](ASSETS.md#new-containers--4330af) - context: Caelum Argenteum — Audio and art
-- Lines 3784-3790 - [4.33.0ae Review](ASSETS.md#4330ae-review) - context: Caelum Argenteum — Audio and art
-- Lines 3791-3797 - [4.33.0ad Review](ASSETS.md#4330ad-review) - context: Caelum Argenteum — Audio and art
-- Lines 3798-3804 - [4.33.0ac Review](ASSETS.md#4330ac-review) - context: Caelum Argenteum — Audio and art
-- Lines 3805-3811 - [4.33.0ab Review](ASSETS.md#4330ab-review) - context: Caelum Argenteum — Audio and art
-- Lines 3812-3819 - [4.33.0aa Review](ASSETS.md#4330aa-review) - context: Caelum Argenteum — Audio and art
-- Lines 3820-3825 - [4.33.0z Review](ASSETS.md#4330z-review) - context: Caelum Argenteum — Audio and art
-- Lines 3826-3831 - [4.33.0y Review](ASSETS.md#4330y-review) - context: Caelum Argenteum — Audio and art
-- Lines 3832-3840 - [4.33.0x Review](ASSETS.md#4330x-review) - context: Caelum Argenteum — Audio and art
-- Lines 3841-3846 - [4.33.0w Review](ASSETS.md#4330w-review) - context: Caelum Argenteum — Audio and art
-- Lines 3847-3862 - [Return and arrival gate to sewers (4.33.0v)](ASSETS.md#return-and-arrival-gate-to-sewers-4330v) - context: Caelum Argenteum — Audio and art
-- Lines 3863-3870 - [Sword view (4.33.0u)](ASSETS.md#sword-view-4330u) - context: Caelum Argenteum — Audio and art
-- Lines 3871-3887 - [Pampas El Loco (4.33.0t)](ASSETS.md#pampas-el-loco-4330t) - context: Caelum Argenteum — Audio and art
-- Lines 3888-3896 - [Reuse in 4.33.0s](ASSETS.md#reuse-in-4330s) - context: Caelum Argenteum — Audio and art
-- Lines 3897-3905 - [Reuse in 4.33.0r](ASSETS.md#reuse-in-4330r) - context: Caelum Argenteum — Audio and art
-- Lines 3906-3913 - [Reuse in 4.33.0q](ASSETS.md#reuse-in-4330q) - context: Caelum Argenteum — Audio and art
-- Lines 3914-3921 - [Reuse in 4.33.0p](ASSETS.md#reuse-in-4330p) - context: Caelum Argenteum — Audio and art
-- Lines 3922-3927 - [4.33.0o Review](ASSETS.md#4330o-review) - context: Caelum Argenteum — Audio and art
-- Lines 3928-3937 - [Resources reused in 4.33.0n](ASSETS.md#resources-reused-in-4330n) - context: Caelum Argenteum — Audio and art
-- Lines 3938-3962 - [Fiber shrub 2D (4.33.0l)](ASSETS.md#fiber-shrub-2d-4330l) - context: Caelum Argenteum — Audio and art
-- Lines 3963-3991 - [Poses delivered by the author (4.33.0m)](ASSETS.md#poses-delivered-by-the-author-4330m) - context: Caelum Argenteum — Audio and art
-- Lines 3992-4011 - [Current interface audio](ASSETS.md#current-interface-audio) - context: Caelum Argenteum — Audio and art
-- Lines 4012-4023 - [Current designations and emblems (4.33.0j)](ASSETS.md#current-designations-and-emblems-4330j) - context: Caelum Argenteum — Audio and art > Current interface audio
-- Lines 4024-4067 - [Simple station models (4.33.0j)](ASSETS.md#simple-station-models-4330j) - context: Caelum Argenteum — Audio and art
-- Lines 4068-4082 - [Terms of reference for interface resources](ASSETS.md#terms-of-reference-for-interface-resources) - context: Caelum Argenteum — Audio and art
-- Lines 4083-4189 - [Physical audio inventory](ASSETS.md#physical-audio-inventory) - context: Caelum Argenteum — Audio and art
-- Lines 4190-4209 - [External 05 package reserve](ASSETS.md#external-05-package-reserve) - context: Caelum Argenteum — Audio and art > Physical audio inventory
-- Lines 4210-4211 - [First person: accepted sword reference](ASSETS.md#first-person-accepted-sword-reference) - context: Caelum Argenteum — Audio and art
-- Lines 4212-4232 - [Scope](ASSETS.md#scope) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4233-4243 - [Framing by state](ASSETS.md#framing-by-state) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4244-4255 - [Frontal block, close and held](ASSETS.md#frontal-block-close-and-held) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4256-4267 - [Full Thumb in front of Handle](ASSETS.md#full-thumb-in-front-of-handle) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4268-4306 - [Synchronised turn without duplication](ASSETS.md#synchronised-turn-without-duplication) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4307-4327 - [Attack curve and straight return](ASSETS.md#attack-curve-and-straight-return) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4328-4345 - [Panoramic sleeve, depth and equipment](ASSETS.md#panoramic-sleeve-depth-and-equipment) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4346-4354 - [State of evidence](ASSETS.md#state-of-evidence) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4355-4375 - [Equipment icons](ASSETS.md#equipment-icons) - context: Caelum Argenteum — Audio and art
-- Lines 4376-4388 - [Typography and artistic direction](ASSETS.md#typography-and-artistic-direction) - context: Caelum Argenteum — Audio and art
-- Lines 4389-4396 - [Traceability and Next Assets](ASSETS.md#traceability-and-next-assets) - context: Caelum Argenteum — Audio and art
-- Lines 4397-4402 - [Historical source material](ASSETS.md#historical-source-material) - context: Caelum Argenteum — Audio and art
-- Lines 4403-4412 - [`assets/source/art/domingo_fp_4_32_0h|0i|0j|0n/`](ASSETS.md#assetssourceartdomingo_fp_4_32_0h0i0j0n) - context: Caelum Argenteum — Audio and art > Historical source material
-- Lines 4413-4422 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
-- Lines 4423-4444 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
+- Lines 5-22 - [Dining set artwork (#410, prepared for 5.8.40)](ASSETS.md#dining-set-artwork-410-prepared-for-5840) - context: Caelum Argenteum — Audio and art
+- Lines 23-30 - [5.8.39 - Aim validation evidence (#415)](ASSETS.md#5839---aim-validation-evidence-415) - context: Caelum Argenteum — Audio and art
+- Lines 31-45 - [5.8.36 - Portable study artwork (#410)](ASSETS.md#5836---portable-study-artwork-410) - context: Caelum Argenteum — Audio and art
+- Lines 46-60 - [5.8.35 / #410 - Painted sofa item views](ASSETS.md#5835--410---painted-sofa-item-views) - context: Caelum Argenteum — Audio and art
+- Lines 61-71 - [5.8.34 / #410 - Painted ordinary chair and cot items](ASSETS.md#5834--410---painted-ordinary-chair-and-cot-items) - context: Caelum Argenteum — Audio and art
+- Lines 72-89 - [5.8.33 / #410 - Human-scale chair and raised cot](ASSETS.md#5833--410---human-scale-chair-and-raised-cot) - context: Caelum Argenteum — Audio and art
+- Lines 90-100 - [5.8.32 / #410 - Painted luxury furniture inventory items](ASSETS.md#5832--410---painted-luxury-furniture-inventory-items) - context: Caelum Argenteum — Audio and art
+- Lines 101-109 - [5.8.31 storage furniture acquisition](ASSETS.md#5831-storage-furniture-acquisition) - context: Caelum Argenteum — Audio and art
+- Lines 110-128 - [5.8.30 - Original luxury furniture models (#410)](ASSETS.md#5830---original-luxury-furniture-models-410) - context: Caelum Argenteum — Audio and art
+- Lines 129-147 - [5.8.29 - Original period sofa models (#410)](ASSETS.md#5829---original-period-sofa-models-410) - context: Caelum Argenteum — Audio and art
+- Lines 148-156 - [5.8.26 - Reused owned reading furniture (#410)](ASSETS.md#5826---reused-owned-reading-furniture-410) - context: Caelum Argenteum — Audio and art
+- Lines 157-179 - [5.8.25 - Original garden water furniture (#410)](ASSETS.md#5825---original-garden-water-furniture-410) - context: Caelum Argenteum — Audio and art
+- Lines 180-200 - [5.8.24 - Wardrobe models and painted icon (#410)](ASSETS.md#5824---wardrobe-models-and-painted-icon-410) - context: Caelum Argenteum — Audio and art
+- Lines 201-210 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Audio and art
+- Lines 211-238 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Audio and art
+- Lines 239-265 - [5.8.19 - Kitchen process artwork (#410, author review pending)](ASSETS.md#5819---kitchen-process-artwork-410-author-review-pending) - context: Caelum Argenteum — Audio and art
+- Lines 266-279 - [5.8.18 - Accepted painted prepared meals (#410)](ASSETS.md#5818---accepted-painted-prepared-meals-410) - context: Caelum Argenteum — Audio and art
+- Lines 280-295 - [5.8.17 - Accepted painted kitchen ingredients (#410)](ASSETS.md#5817---accepted-painted-kitchen-ingredients-410) - context: Caelum Argenteum — Audio and art
+- Lines 296-301 - [5.8.14 - Ration lot presentation (#410)](ASSETS.md#5814---ration-lot-presentation-410) - context: Caelum Argenteum — Audio and art
+- Lines 302-332 - [5.8.13 - Campfire world artwork (#411)](ASSETS.md#5813---campfire-world-artwork-411) - context: Caelum Argenteum — Audio and art
+- Lines 333-345 - [5.8.12 - Toilet interaction (#502)](ASSETS.md#5812---toilet-interaction-502) - context: Caelum Argenteum — Audio and art
+- Lines 346-376 - [5.8.11 - Domestic bathroom artwork (#410)](ASSETS.md#5811---domestic-bathroom-artwork-410) - context: Caelum Argenteum — Audio and art
+- Lines 377-394 - [5.8.9 - Hygiene item artwork (#502, in progress)](ASSETS.md#589---hygiene-item-artwork-502-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 395-409 - [5.8.8 - Deployed tent artwork (#411, in progress)](ASSETS.md#588---deployed-tent-artwork-411-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 410-422 - [5.8.6 - Central property access (#411)](ASSETS.md#586---central-property-access-411) - context: Caelum Argenteum — Audio and art
+- Lines 423-426 - [5.8.5 - Regional event discovery (#415)](ASSETS.md#585---regional-event-discovery-415) - context: Caelum Argenteum — Audio and art
+- Lines 427-432 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Audio and art
+- Lines 433-444 - [5.8.3 - Contamination HUD icon (#410, in progress)](ASSETS.md#583---contamination-hud-icon-410-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 445-455 - [5.8.2 - Connected mansion deposits (#414)](ASSETS.md#582---connected-mansion-deposits-414) - context: Caelum Argenteum — Audio and art
+- Lines 456-482 - [5.7.14 - Mate vessels and inventory sprites (#472)](ASSETS.md#5714---mate-vessels-and-inventory-sprites-472) - context: Caelum Argenteum — Audio and art
+- Lines 483-500 - [5.7.13 - Chemistry supply presentation (#471)](ASSETS.md#5713---chemistry-supply-presentation-471) - context: Caelum Argenteum — Audio and art
+- Lines 501-511 - [5.7.12 - Owned Fermentation Barrel (#487)](ASSETS.md#5712---owned-fermentation-barrel-487) - context: Caelum Argenteum — Audio and art
+- Lines 512-517 - [5.7.11 - Station terminology (#486)](ASSETS.md#5711---station-terminology-486) - context: Caelum Argenteum — Audio and art
+- Lines 518-523 - [5.7.10 - Existing cartridge and station art reused (#471)](ASSETS.md#5710---existing-cartridge-and-station-art-reused-471) - context: Caelum Argenteum — Audio and art
+- Lines 524-530 - [5.7.9 - Existing water/Alchemy art reused (#409)](ASSETS.md#579---existing-wateralchemy-art-reused-409) - context: Caelum Argenteum — Audio and art
+- Lines 531-576 - [5.7.8 - Painted support implement correction (#479)](ASSETS.md#578---painted-support-implement-correction-479) - context: Caelum Argenteum — Audio and art
+- Lines 577-585 - [5.7.7 - Target-panel presentation (#481)](ASSETS.md#577---target-panel-presentation-481) - context: Caelum Argenteum — Audio and art
+- Lines 586-617 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Audio and art
+- Lines 618-629 - [5.7.5 - Owned marine material models (#407)](ASSETS.md#575---owned-marine-material-models-407) - context: Caelum Argenteum — Audio and art
+- Lines 630-641 - [5.7.4 - Owned Alchemy station (#470)](ASSETS.md#574---owned-alchemy-station-470) - context: Caelum Argenteum — Audio and art
+- Lines 642-648 - [5.7.3 - Recovery validation (#406)](ASSETS.md#573---recovery-validation-406) - context: Caelum Argenteum — Audio and art
+- Lines 649-662 - [5.7.2 - Owned 3D land resources (#405)](ASSETS.md#572---owned-3d-land-resources-405) - context: Caelum Argenteum — Audio and art
+- Lines 663-672 - [5.6.10 — library and clothing shop signs (#383)](ASSETS.md#5610--library-and-clothing-shop-signs-383) - context: Caelum Argenteum — Audio and art
+- Lines 673-685 - [5.6.9 - Prepared cartridge-kit sprites (#380)](ASSETS.md#569---prepared-cartridge-kit-sprites-380) - context: Caelum Argenteum — Audio and art
+- Lines 686-713 - [5.6.7 - Distinct garment object artwork (#387)](ASSETS.md#567---distinct-garment-object-artwork-387) - context: Caelum Argenteum — Audio and art
+- Lines 714-720 - [5.6.6 - Clothing gameplay representation (#386)](ASSETS.md#566---clothing-gameplay-representation-386) - context: Caelum Argenteum — Audio and art
+- Lines 721-731 - [5.6.3 - Original reading bookshelf (#378)](ASSETS.md#563---original-reading-bookshelf-378) - context: Caelum Argenteum — Audio and art
+- Lines 732-805 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Audio and art
+- Lines 806-815 - [5.5.6 - Thermal surface fixture (#314)](ASSETS.md#556---thermal-surface-fixture-314) - context: Caelum Argenteum — Audio and art
+- Lines 816-822 - [5.5.5 - Unarmed input evidence (#363)](ASSETS.md#555---unarmed-input-evidence-363) - context: Caelum Argenteum — Audio and art
+- Lines 823-832 - [5.4.46 - House-transition evidence (#334)](ASSETS.md#5446---house-transition-evidence-334) - context: Caelum Argenteum — Audio and art
+- Lines 833-839 - [5.4.45 - Private breath regression evidence (#357)](ASSETS.md#5445---private-breath-regression-evidence-357) - context: Caelum Argenteum — Audio and art
+- Lines 840-850 - [5.4.42 - Distributed update evidence (#318)](ASSETS.md#5442---distributed-update-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 851-859 - [5.4.41 - Isolated workload evidence (#318)](ASSETS.md#5441---isolated-workload-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 860-866 - [5.4.40 - Rest and acceleration evidence (#325)](ASSETS.md#5440---rest-and-acceleration-evidence-325) - context: Caelum Argenteum — Audio and art
+- Lines 867-873 - [5.4.39 - Jump-wall diagnostic evidence (#339)](ASSETS.md#5439---jump-wall-diagnostic-evidence-339) - context: Caelum Argenteum — Audio and art
+- Lines 874-879 - [5.4.38 - Map-legend presentation evidence (#321)](ASSETS.md#5438---map-legend-presentation-evidence-321) - context: Caelum Argenteum — Audio and art
+- Lines 880-887 - [5.4.37 - Current MAP03 attribution evidence (#318)](ASSETS.md#5437---current-map03-attribution-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 888-893 - [5.4.36 - House-door presentation checks (#334)](ASSETS.md#5436---house-door-presentation-checks-334) - context: Caelum Argenteum — Audio and art
+- Lines 894-901 - [5.4.35 - Prisoner escort test sources (#322)](ASSETS.md#5435---prisoner-escort-test-sources-322) - context: Caelum Argenteum — Audio and art
+- Lines 902-909 - [5.4.34 - Native autosave verification (#324)](ASSETS.md#5434---native-autosave-verification-324) - context: Caelum Argenteum — Audio and art
+- Lines 910-917 - [5.4.33 - MAP02 crusher geometry provenance (#323)](ASSETS.md#5433---map02-crusher-geometry-provenance-323) - context: Caelum Argenteum — Audio and art
+- Lines 918-932 - [5.4.29 - Map catalogue and exact geometry provenance (#327)](ASSETS.md#5429---map-catalogue-and-exact-geometry-provenance-327) - context: Caelum Argenteum — Audio and art
+- Lines 933-956 - [5.4.28 - House signs and performance evidence (#318)](ASSETS.md#5428---house-signs-and-performance-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 957-968 - [5.4.25 - Soldier representation benchmark (#304)](ASSETS.md#5425---soldier-representation-benchmark-304) - context: Caelum Argenteum — Audio and art
+- Lines 969-986 - [5.4.24 - Zupay cosmetic rock projectile (#284)](ASSETS.md#5424---zupay-cosmetic-rock-projectile-284) - context: Caelum Argenteum — Audio and art
+- Lines 987-1088 - [5.4.23 - Editable Domingo 3D prototype (#283, accepted)](ASSETS.md#5423---editable-domingo-3d-prototype-283-accepted) - context: Caelum Argenteum — Audio and art
+- Lines 1089-1096 - [5.4.22 - Quick-use HUD artwork (#282)](ASSETS.md#5422---quick-use-hud-artwork-282) - context: Caelum Argenteum — Audio and art
+- Lines 1097-1126 - [5.4.21 - Channel Seal presentation (#252)](ASSETS.md#5421---channel-seal-presentation-252) - context: Caelum Argenteum — Audio and art
+- Lines 1127-1139 - [5.4.20 - Mounted Arcane Cloud presentation (#251)](ASSETS.md#5420---mounted-arcane-cloud-presentation-251) - context: Caelum Argenteum — Audio and art
+- Lines 1140-1148 - [5.4.19 - Redemption asset reuse (#250)](ASSETS.md#5419---redemption-asset-reuse-250) - context: Caelum Argenteum — Audio and art
+- Lines 1149-1158 - [5.4.18 - Summoning asset reuse (#249)](ASSETS.md#5418---summoning-asset-reuse-249) - context: Caelum Argenteum — Audio and art
+- Lines 1159-1170 - [5.4.17 - Rally integration and isolated evidence (#248)](ASSETS.md#5417---rally-integration-and-isolated-evidence-248) - context: Caelum Argenteum — Audio and art
+- Lines 1171-1182 - [5.4.16 - Formation Breaker residual appearance (#247)](ASSETS.md#5416---formation-breaker-residual-appearance-247) - context: Caelum Argenteum — Audio and art
+- Lines 1183-1188 - [5.4.15 - Movement validation fixtures (#260)](ASSETS.md#5415---movement-validation-fixtures-260) - context: Caelum Argenteum — Audio and art
+- Lines 1189-1194 - [5.4.7 - Telekinesis validation fixtures (#241)](ASSETS.md#547---telekinesis-validation-fixtures-241) - context: Caelum Argenteum — Audio and art
+- Lines 1195-1222 - [5.4.5 - Reusable dark rain cloud (#251, in progress)](ASSETS.md#545---reusable-dark-rain-cloud-251-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 1223-1266 - [5.4.4 - Class preparation hands (#238)](ASSETS.md#544---class-preparation-hands-238) - context: Caelum Argenteum — Audio and art
+- Lines 1267-1282 - [5.4.3 - Original procedural rat audio (#254)](ASSETS.md#543---original-procedural-rat-audio-254) - context: Caelum Argenteum — Audio and art
+- Lines 1283-1296 - [5.3.8 - Existing quest text and known-place links (#235)](ASSETS.md#538---existing-quest-text-and-known-place-links-235) - context: Caelum Argenteum — Audio and art
+- Lines 1297-1334 - [5.3.7 - Authored cartographic data and symbols (#234)](ASSETS.md#537---authored-cartographic-data-and-symbols-234) - context: Caelum Argenteum — Audio and art
+- Lines 1335-1344 - [5.3.6 - Manual note presentation (#233)](ASSETS.md#536---manual-note-presentation-233) - context: Caelum Argenteum — Audio and art
+- Lines 1345-1355 - [5.3.5 - Known-service map icons (#232)](ASSETS.md#535---known-service-map-icons-232) - context: Caelum Argenteum — Audio and art
+- Lines 1356-1366 - [5.3.4 - Local cartographic presentation (#231)](ASSETS.md#534---local-cartographic-presentation-231) - context: Caelum Argenteum — Audio and art
+- Lines 1367-1373 - [5.3.1 - Survival and Character presentation (#256)](ASSETS.md#531---survival-and-character-presentation-256) - context: Caelum Argenteum — Audio and art
+- Lines 1374-1380 - [5.3.0 - Power indicator presentation (#255)](ASSETS.md#530---power-indicator-presentation-255) - context: Caelum Argenteum — Audio and art
+- Lines 1381-1386 - [5.2.27 - Magic Box weight evidence (#229)](ASSETS.md#5227---magic-box-weight-evidence-229) - context: Caelum Argenteum — Audio and art
+- Lines 1387-1394 - [5.2.26 - Rest feedback validation (#227)](ASSETS.md#5226---rest-feedback-validation-227) - context: Caelum Argenteum — Audio and art
+- Lines 1395-1401 - [5.2.23 - Sewer bag sleep (#219)](ASSETS.md#5223---sewer-bag-sleep-219) - context: Caelum Argenteum — Audio and art
+- Lines 1402-1409 - [5.2.22 - Menu control captions (#215)](ASSETS.md#5222---menu-control-captions-215) - context: Caelum Argenteum — Audio and art
+- Lines 1410-1417 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Audio and art
+- Lines 1418-1426 - [5.2.20 - Resource HUD layout (#213)](ASSETS.md#5220---resource-hud-layout-213) - context: Caelum Argenteum — Audio and art
+- Lines 1427-1434 - [5.2.19 - Horizontal impact diagnostics (#211)](ASSETS.md#5219---horizontal-impact-diagnostics-211) - context: Caelum Argenteum — Audio and art
+- Lines 1435-1483 - [5.2.18 - Authored poses, female hands and dining model (#209)](ASSETS.md#5218---authored-poses-female-hands-and-dining-model-209) - context: Caelum Argenteum — Audio and art
+- Lines 1484-1491 - [5.2.17 - Preserve the living tutorial appearance (#207)](ASSETS.md#5217---preserve-the-living-tutorial-appearance-207) - context: Caelum Argenteum — Audio and art
+- Lines 1492-1499 - [5.2.16 - Fullscreen cursor evidence (#204)](ASSETS.md#5216---fullscreen-cursor-evidence-204) - context: Caelum Argenteum — Audio and art
+- Lines 1500-1511 - [5.2.15 - Presentation scaling and native feedback (#150)](ASSETS.md#5215---presentation-scaling-and-native-feedback-150) - context: Caelum Argenteum — Audio and art
+- Lines 1512-1522 - [5.2.14 - Native control presentation and test sources (#149)](ASSETS.md#5214---native-control-presentation-and-test-sources-149) - context: Caelum Argenteum — Audio and art
+- Lines 1523-1595 - [5.2.13 - Modular saved appearance and first-person hands (#148)](ASSETS.md#5213---modular-saved-appearance-and-first-person-hands-148) - context: Caelum Argenteum — Audio and art
+- Lines 1596-1603 - [5.2.12 - Bull and resident diagnostics (#195)](ASSETS.md#5212---bull-and-resident-diagnostics-195) - context: Caelum Argenteum — Audio and art
+- Lines 1604-1610 - [5.2.11 - Collision energy diagnostics (#194)](ASSETS.md#5211---collision-energy-diagnostics-194) - context: Caelum Argenteum — Audio and art
+- Lines 1611-1620 - [5.2.10 - Ranged descriptions and shotgun resource names (#192)](ASSETS.md#5210---ranged-descriptions-and-shotgun-resource-names-192) - context: Caelum Argenteum — Audio and art
+- Lines 1621-1629 - [5.2.9 - Personality descriptions and creator layout (#192)](ASSETS.md#529---personality-descriptions-and-creator-layout-192) - context: Caelum Argenteum — Audio and art
+- Lines 1630-1636 - [5.2.8 - Toughness evidence and existing status visuals (#188)](ASSETS.md#528---toughness-evidence-and-existing-status-visuals-188) - context: Caelum Argenteum — Audio and art
+- Lines 1637-1647 - [5.2.7 - Existing artwork inside native menus (#189)](ASSETS.md#527---existing-artwork-inside-native-menus-189) - context: Caelum Argenteum — Audio and art
+- Lines 1648-1656 - [5.2.6 - Menu pointer evidence (#184)](ASSETS.md#526---menu-pointer-evidence-184) - context: Caelum Argenteum — Audio and art
+- Lines 1657-1667 - [5.2.5 - Dialogue source provenance and evidence (#185)](ASSETS.md#525---dialogue-source-provenance-and-evidence-185) - context: Caelum Argenteum — Audio and art
+- Lines 1668-1678 - [5.2.4 - Reused onboarding assets and MAP02 generation (#183)](ASSETS.md#524---reused-onboarding-assets-and-map02-generation-183) - context: Caelum Argenteum — Audio and art
+- Lines 1679-1684 - [5.2.3 - Mandinga targeting evidence (#180)](ASSETS.md#523---mandinga-targeting-evidence-180) - context: Caelum Argenteum — Audio and art
+- Lines 1685-1690 - [5.2.2 - Time-skip performance evidence (#178)](ASSETS.md#522---time-skip-performance-evidence-178) - context: Caelum Argenteum — Audio and art
+- Lines 1691-1700 - [5.2.1 - Reused tutorial and provision presentation (#177)](ASSETS.md#521---reused-tutorial-and-provision-presentation-177) - context: Caelum Argenteum — Audio and art
+- Lines 1701-1711 - [5.2.0 - Saved identity presentation boundary (#147)](ASSETS.md#520---saved-identity-presentation-boundary-147) - context: Caelum Argenteum — Audio and art
+- Lines 1712-1718 - [5.1.20 - Existing native door art in MAP06 (#173)](ASSETS.md#5120---existing-native-door-art-in-map06-173) - context: Caelum Argenteum — Audio and art
+- Lines 1719-1725 - [5.1.19 - Shared dialogue history (#172)](ASSETS.md#5119---shared-dialogue-history-172) - context: Caelum Argenteum — Audio and art
+- Lines 1726-1732 - [5.1.18 - MAP01 gift presentation (#164)](ASSETS.md#5118---map01-gift-presentation-164) - context: Caelum Argenteum — Audio and art
+- Lines 1733-1740 - [5.1.17 - Medikit labels (#169)](ASSETS.md#5117---medikit-labels-169) - context: Caelum Argenteum — Audio and art
+- Lines 1741-1768 - [5.1.16 - Original bolas atlas (#163)](ASSETS.md#5116---original-bolas-atlas-163) - context: Caelum Argenteum — Audio and art
+- Lines 1769-1792 - [5.1.15 - Bronze utility staff (#162)](ASSETS.md#5115---bronze-utility-staff-162) - context: Caelum Argenteum — Audio and art
+- Lines 1793-1799 - [5.1.14 - Damage-flash travel validation (#165)](ASSETS.md#5114---damage-flash-travel-validation-165) - context: Caelum Argenteum — Audio and art
+- Lines 1800-1806 - [5.1.13 - Silver-key validation (#160)](ASSETS.md#5113---silver-key-validation-160) - context: Caelum Argenteum — Audio and art
+- Lines 1807-1813 - [5.1.12 - Crafting-size validation (#158)](ASSETS.md#5112---crafting-size-validation-158) - context: Caelum Argenteum — Audio and art
+- Lines 1814-1821 - [5.1.11 - Time-skip input validation (#156)](ASSETS.md#5111---time-skip-input-validation-156) - context: Caelum Argenteum — Audio and art
+- Lines 1822-1830 - [5.1.10 — Physics validation assets (#154)](ASSETS.md#5110--physics-validation-assets-154) - context: Caelum Argenteum — Audio and art
+- Lines 1831-1856 - [5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)](ASSETS.md#519---shotgun-grip-occlusion-and-cartridge-world-scale-152) - context: Caelum Argenteum — Audio and art
+- Lines 1857-1903 - [5.1.8 - Original elemental atlases and projectile meshes (#137)](ASSETS.md#518---original-elemental-atlases-and-projectile-meshes-137) - context: Caelum Argenteum — Audio and art
+- Lines 1904-1941 - [5.1.7 - Modular shotgun artwork and evidence (#136)](ASSETS.md#517---modular-shotgun-artwork-and-evidence-136) - context: Caelum Argenteum — Audio and art
+- Lines 1942-1962 - [5.1.6 - Crouched Domingo carbine poses (#143)](ASSETS.md#516---crouched-domingo-carbine-poses-143) - context: Caelum Argenteum — Audio and art
+- Lines 1963-1994 - [5.1.5 - Demon breath and potion tiers (#135)](ASSETS.md#515---demon-breath-and-potion-tiers-135) - context: Caelum Argenteum — Audio and art
+- Lines 1995-2021 - [5.1.4 - Breathing recordings and native evidence (#140)](ASSETS.md#514---breathing-recordings-and-native-evidence-140) - context: Caelum Argenteum — Audio and art
+- Lines 2022-2042 - [5.1.3 - City interiors and world carbine artwork (#133)](ASSETS.md#513---city-interiors-and-world-carbine-artwork-133) - context: Caelum Argenteum — Audio and art
+- Lines 2043-2051 - [5.1.2 - Siege reinforcement evidence (#132)](ASSETS.md#512---siege-reinforcement-evidence-132) - context: Caelum Argenteum — Audio and art
+- Lines 2052-2070 - [5.1.1 - Thermal HUD verification sources (#131)](ASSETS.md#511---thermal-hud-verification-sources-131) - context: Caelum Argenteum — Audio and art
+- Lines 2071-2082 - [5.1.0 — Thermal validation sources (#130)](ASSETS.md#510--thermal-validation-sources-130) - context: Caelum Argenteum — Audio and art
+- Lines 2083-2091 - [5.0.6 — Normal high-density AI evidence (#128)](ASSETS.md#506--normal-high-density-ai-evidence-128) - context: Caelum Argenteum — Audio and art
+- Lines 2092-2101 - [5.0.5 — Siege profiling evidence (#121)](ASSETS.md#505--siege-profiling-evidence-121) - context: Caelum Argenteum — Audio and art
+- Lines 2102-2115 - [4.37.24 — Reproducible closing export (#82)](ASSETS.md#43724--reproducible-closing-export-82) - context: Caelum Argenteum — Audio and art
+- Lines 2116-2133 - [4.37.23 - Character-creation text and layout (#112)](ASSETS.md#43723---character-creation-text-and-layout-112) - context: Caelum Argenteum — Audio and art
+- Lines 2134-2206 - [4.37.22 - Equipped first-person shield artwork (#106)](ASSETS.md#43722---equipped-first-person-shield-artwork-106) - context: Caelum Argenteum — Audio and art
+- Lines 2207-2245 - [4.37.21 - Approved narrative artwork sources and presentation (#103)](ASSETS.md#43721---approved-narrative-artwork-sources-and-presentation-103) - context: Caelum Argenteum — Audio and art
+- Lines 2246-2282 - [4.37.20 - Original training mannequin model (#98)](ASSETS.md#43720---original-training-mannequin-model-98) - context: Caelum Argenteum — Audio and art
+- Lines 2283-2292 - [4.37.19 - Existing necklace assets and shield localization (#96)](ASSETS.md#43719---existing-necklace-assets-and-shield-localization-96) - context: Caelum Argenteum — Audio and art
+- Lines 2293-2302 - [4.37.18 - Journal subsection presentation (#91)](ASSETS.md#43718---journal-subsection-presentation-91) - context: Caelum Argenteum — Audio and art
+- Lines 2303-2326 - [4.37.17 - Pickaxe art and gathering audio (#89)](ASSETS.md#43717---pickaxe-art-and-gathering-audio-89) - context: Caelum Argenteum — Audio and art
+- Lines 2327-2357 - [4.37.16 - Compass, Sun of May and C moon (#87)](ASSETS.md#43716---compass-sun-of-may-and-c-moon-87) - context: Caelum Argenteum — Audio and art
+- Lines 2358-2364 - [4.37.15 - Traditional Truco card reuse (#101)](ASSETS.md#43715---traditional-truco-card-reuse-101) - context: Caelum Argenteum — Audio and art
+- Lines 2365-2383 - [4.37.13 — Trucazo source and existing card presentation (#81)](ASSETS.md#43713--trucazo-source-and-existing-card-presentation-81) - context: Caelum Argenteum — Audio and art
+- Lines 2384-2392 - [4.37.11 — Existing guard presentation and bilingual recognition (#79)](ASSETS.md#43711--existing-guard-presentation-and-bilingual-recognition-79) - context: Caelum Argenteum — Audio and art
+- Lines 2393-2401 - [4.37.10 — Existing prisoner dialogue presentation (#78)](ASSETS.md#43710--existing-prisoner-dialogue-presentation-78) - context: Caelum Argenteum — Audio and art
+- Lines 2402-2443 - [4.37.9 — Expanded urban geometry and save-layout provenance (#77)](ASSETS.md#4379--expanded-urban-geometry-and-save-layout-provenance-77) - context: Caelum Argenteum — Audio and art
+- Lines 2444-2467 - [4.37.8 — Supply ledger provenance and verification (#75)](ASSETS.md#4378--supply-ledger-provenance-and-verification-75) - context: Caelum Argenteum — Audio and art
+- Lines 2468-2491 - [4.37.7 — Layered sewer return geometry (#74)](ASSETS.md#4377--layered-sewer-return-geometry-74) - context: Caelum Argenteum — Audio and art
+- Lines 2492-2504 - [4.37.6 — Cardinal sewer data and supply ledger (#73/#75)](ASSETS.md#4376--cardinal-sewer-data-and-supply-ledger-7375) - context: Caelum Argenteum — Audio and art
+- Lines 2505-2513 - [4.37.5 — Existing food plates and water cups (#65)](ASSETS.md#4375--existing-food-plates-and-water-cups-65) - context: Caelum Argenteum — Audio and art
+- Lines 2514-2522 - [4.37.4 — Existing Journal assets for time skipping (#64)](ASSETS.md#4374--existing-journal-assets-for-time-skipping-64) - context: Caelum Argenteum — Audio and art
+- Lines 2523-2533 - [4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)](ASSETS.md#4373--existing-equipment-catalogue-and-bilingual-palomo-dialogue-63) - context: Caelum Argenteum — Audio and art
+- Lines 2534-2540 - [4.37.2 — Magic-cost balance data and evidence (#68)](ASSETS.md#4372--magic-cost-balance-data-and-evidence-68) - context: Caelum Argenteum — Audio and art
+- Lines 2541-2549 - [4.37.1 — Reused practice target and bilingual directions (#62)](ASSETS.md#4371--reused-practice-target-and-bilingual-directions-62) - context: Caelum Argenteum — Audio and art
+- Lines 2550-2607 - [4.37.0 — Mansion landscape and filled tympana (#61)](ASSETS.md#4370--mansion-landscape-and-filled-tympana-61) - context: Caelum Argenteum — Audio and art
+- Lines 2608-2627 - [4.36.28 — Playtest resource packaging (#17)](ASSETS.md#43628--playtest-resource-packaging-17) - context: Caelum Argenteum — Audio and art
+- Lines 2628-2647 - [4.36.27 — Port battlefield and reused defenders (#16)](ASSETS.md#43627--port-battlefield-and-reused-defenders-16) - context: Caelum Argenteum — Audio and art
+- Lines 2648-2667 - [4.36.26 — Grip-centered thrust motion (#37)](ASSETS.md#43626--grip-centered-thrust-motion-37) - context: Caelum Argenteum — Audio and art
+- Lines 2668-2722 - [4.36.25 — Mansion architectural finishes (#36)](ASSETS.md#43625--mansion-architectural-finishes-36) - context: Caelum Argenteum — Audio and art
+- Lines 2723-2730 - [4.36.24a — Rights and attribution (#55)](ASSETS.md#43624a--rights-and-attribution-55) - context: Caelum Argenteum — Audio and art
+- Lines 2731-2739 - [4.36.24 — Quest journal labels (#35)](ASSETS.md#43624--quest-journal-labels-35) - context: Caelum Argenteum — Audio and art
+- Lines 2740-2749 - [4.36.23 — Armor presentation (#52)](ASSETS.md#43623--armor-presentation-52) - context: Caelum Argenteum — Audio and art
+- Lines 2750-2764 - [4.36.22 — Existing dialogue presentation (#34)](ASSETS.md#43622--existing-dialogue-presentation-34) - context: Caelum Argenteum — Audio and art
+- Lines 2765-2776 - [4.36.20 — Shared Arcana presentation (#33)](ASSETS.md#43620--shared-arcana-presentation-33) - context: Caelum Argenteum — Audio and art
+- Lines 2777-2827 - [4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)](ASSETS.md#43617--approximate-argentine-1884-cannon-reconstruction-21) - context: Caelum Argenteum — Audio and art
+- Lines 2828-2874 - [4.36.16 — Ram components and reference-based estimates (#20)](ASSETS.md#43616--ram-components-and-reference-based-estimates-20) - context: Caelum Argenteum — Audio and art
+- Lines 2875-2884 - [4.36.15 — Gate mechanics reuse accepted art (#19)](ASSETS.md#43615--gate-mechanics-reuse-accepted-art-19) - context: Caelum Argenteum — Audio and art
+- Lines 2885-2934 - [4.36.14a — Siege silhouettes and gate materials (#18 correction)](ASSETS.md#43614a--siege-silhouettes-and-gate-materials-18-correction) - context: Caelum Argenteum — Audio and art
+- Lines 2935-2959 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Audio and art
+- Lines 2960-2966 - [4.36.8 — No new runtime assets (#14)](ASSETS.md#4368--no-new-runtime-assets-14) - context: Caelum Argenteum — Audio and art
+- Lines 2967-2984 - [4.36.7 — Recolored prisoner sprites (#13)](ASSETS.md#4367--recolored-prisoner-sprites-13) - context: Caelum Argenteum — Audio and art
+- Lines 2985-3005 - [4.36.5 — Wider sewer and barred gates (#11)](ASSETS.md#4365--wider-sewer-and-barred-gates-11) - context: Caelum Argenteum — Audio and art
+- Lines 3006-3016 - [4.36.4 — T1 maze catalogue](ASSETS.md#4364--t1-maze-catalogue) - context: Caelum Argenteum — Audio and art
+- Lines 3017-3034 - [4.36.3 — Additional flail-handle rotation](ASSETS.md#4363--additional-flail-handle-rotation) - context: Caelum Argenteum — Audio and art
+- Lines 3035-3049 - [4.36.2 — Deterministic bow crop caches](ASSETS.md#4362--deterministic-bow-crop-caches) - context: Caelum Argenteum — Audio and art
+- Lines 3050-3064 - [4.36.1 — Documentation and provenance](ASSETS.md#4361--documentation-and-provenance) - context: Caelum Argenteum — Audio and art
+- Lines 3065-3104 - [4.36.0i — native composition and MAP02](ASSETS.md#4360i--native-composition-and-map02) - context: Caelum Argenteum — Audio and art
+- Lines 3105-3124 - [History 4.36.0h — adjustment to the capture marked by the author](ASSETS.md#history-4360h--adjustment-to-the-capture-marked-by-the-author) - context: Caelum Argenteum — Audio and art
+- Lines 3125-3146 - [4.36.0g — parts, fingers and muted colors](ASSETS.md#4360g--parts-fingers-and-muted-colors) - context: Caelum Argenteum — Audio and art
+- Lines 3147-3175 - [4.36.0f — broad blade and corrected native composition](ASSETS.md#4360f--broad-blade-and-corrected-native-composition) - context: Caelum Argenteum — Audio and art
+- Lines 3176-3203 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Audio and art
+- Lines 3204-3233 - [Revised first-person view — 4.36.0d](ASSETS.md#revised-first-person-view--4360d) - context: Caelum Argenteum — Audio and art
+- Lines 3234-3271 - [Resources contributed and integrated — 4.36.0c](ASSETS.md#resources-contributed-and-integrated--4360c) - context: Caelum Argenteum — Audio and art
+- Lines 3272-3300 - [4.36.0b — lever, sphere and bull scale](ASSETS.md#4360b--lever-sphere-and-bull-scale) - context: Caelum Argenteum — Audio and art
+- Lines 3301-3314 - [4.36.0a — physical gallery resources](ASSETS.md#4360a--physical-gallery-resources) - context: Caelum Argenteum — Audio and art
+- Lines 3315-3351 - [4.35.0q — author v4 sprites and icons](ASSETS.md#4350q--author-v4-sprites-and-icons) - context: Caelum Argenteum — Audio and art
+- Lines 3352-3385 - [4.35.0p — original carriage and merchant ship](ASSETS.md#4350p--original-carriage-and-merchant-ship) - context: Caelum Argenteum — Audio and art
+- Lines 3386-3392 - [4.35.0o — monthly calendar](ASSETS.md#4350o--monthly-calendar) - context: Caelum Argenteum — Audio and art
+- Lines 3393-3400 - [4.35.0n — travel budget](ASSETS.md#4350n--travel-budget) - context: Caelum Argenteum — Audio and art
+- Lines 3401-3432 - [4.35.0m — author materials and coastal maps](ASSETS.md#4350m--author-materials-and-coastal-maps) - context: Caelum Argenteum — Audio and art
+- Lines 3433-3455 - [4.35.0l — attributed climate data and furniture](ASSETS.md#4350l--attributed-climate-data-and-furniture) - context: Caelum Argenteum — Audio and art
+- Lines 3456-3474 - [4.35.0k — Journal environmental reading](ASSETS.md#4350k--journal-environmental-reading) - context: Caelum Argenteum — Audio and art
+- Lines 3475-3493 - [4.35.0j — Limbo clock, station scale and text](ASSETS.md#4350j--limbo-clock-station-scale-and-text) - context: Caelum Argenteum — Audio and art
+- Lines 3494-3510 - [4.35.0i — serving placement on tabletops](ASSETS.md#4350i--serving-placement-on-tabletops) - context: Caelum Argenteum — Audio and art
+- Lines 3511-3533 - [4.35.0h — MAP01 plates, cups and furniture](ASSETS.md#4350h--map01-plates-cups-and-furniture) - context: Caelum Argenteum — Audio and art
+- Lines 3534-3553 - [4.35.0g — tables and view-direction mapping](ASSETS.md#4350g--tables-and-view-direction-mapping) - context: Caelum Argenteum — Audio and art
+- Lines 3554-3576 - [4.35.0f — portable sleeping bag and comfort reading](ASSETS.md#4350f--portable-sleeping-bag-and-comfort-reading) - context: Caelum Argenteum — Audio and art
+- Lines 3577-3606 - [4.35.0e — original furniture and rest view](ASSETS.md#4350e--original-furniture-and-rest-view) - context: Caelum Argenteum — Audio and art
+- Lines 3607-3613 - [4.35.0d1 — resolution of existing poses](ASSETS.md#4350d1--resolution-of-existing-poses) - context: Caelum Argenteum — Audio and art
+- Lines 3614-3635 - [4.35.0d — interface and rest poses](ASSETS.md#4350d--interface-and-rest-poses) - context: Caelum Argenteum — Audio and art
+- Lines 3636-3649 - [4.35.0c — Presentation of Stopped Time](ASSETS.md#4350c--presentation-of-stopped-time) - context: Caelum Argenteum — Audio and art
+- Lines 3650-3663 - [4.35.0b — schedule on the existing presentation](ASSETS.md#4350b--schedule-on-the-existing-presentation) - context: Caelum Argenteum — Audio and art
+- Lines 3664-3677 - [4.35.0a — presentation of the recorded time](ASSETS.md#4350a--presentation-of-the-recorded-time) - context: Caelum Argenteum — Audio and art
+- Lines 3678-3691 - [4.34.0e — test sites in sewers](ASSETS.md#4340e--test-sites-in-sewers) - context: Caelum Argenteum — Audio and art
+- Lines 3692-3778 - [4.34.0d — travel service resources](ASSETS.md#4340d--travel-service-resources) - context: Caelum Argenteum — Audio and art
+- Lines 3779-3801 - [New containers — 4.33.0af](ASSETS.md#new-containers--4330af) - context: Caelum Argenteum — Audio and art
+- Lines 3802-3808 - [4.33.0ae Review](ASSETS.md#4330ae-review) - context: Caelum Argenteum — Audio and art
+- Lines 3809-3815 - [4.33.0ad Review](ASSETS.md#4330ad-review) - context: Caelum Argenteum — Audio and art
+- Lines 3816-3822 - [4.33.0ac Review](ASSETS.md#4330ac-review) - context: Caelum Argenteum — Audio and art
+- Lines 3823-3829 - [4.33.0ab Review](ASSETS.md#4330ab-review) - context: Caelum Argenteum — Audio and art
+- Lines 3830-3837 - [4.33.0aa Review](ASSETS.md#4330aa-review) - context: Caelum Argenteum — Audio and art
+- Lines 3838-3843 - [4.33.0z Review](ASSETS.md#4330z-review) - context: Caelum Argenteum — Audio and art
+- Lines 3844-3849 - [4.33.0y Review](ASSETS.md#4330y-review) - context: Caelum Argenteum — Audio and art
+- Lines 3850-3858 - [4.33.0x Review](ASSETS.md#4330x-review) - context: Caelum Argenteum — Audio and art
+- Lines 3859-3864 - [4.33.0w Review](ASSETS.md#4330w-review) - context: Caelum Argenteum — Audio and art
+- Lines 3865-3880 - [Return and arrival gate to sewers (4.33.0v)](ASSETS.md#return-and-arrival-gate-to-sewers-4330v) - context: Caelum Argenteum — Audio and art
+- Lines 3881-3888 - [Sword view (4.33.0u)](ASSETS.md#sword-view-4330u) - context: Caelum Argenteum — Audio and art
+- Lines 3889-3905 - [Pampas El Loco (4.33.0t)](ASSETS.md#pampas-el-loco-4330t) - context: Caelum Argenteum — Audio and art
+- Lines 3906-3914 - [Reuse in 4.33.0s](ASSETS.md#reuse-in-4330s) - context: Caelum Argenteum — Audio and art
+- Lines 3915-3923 - [Reuse in 4.33.0r](ASSETS.md#reuse-in-4330r) - context: Caelum Argenteum — Audio and art
+- Lines 3924-3931 - [Reuse in 4.33.0q](ASSETS.md#reuse-in-4330q) - context: Caelum Argenteum — Audio and art
+- Lines 3932-3939 - [Reuse in 4.33.0p](ASSETS.md#reuse-in-4330p) - context: Caelum Argenteum — Audio and art
+- Lines 3940-3945 - [4.33.0o Review](ASSETS.md#4330o-review) - context: Caelum Argenteum — Audio and art
+- Lines 3946-3955 - [Resources reused in 4.33.0n](ASSETS.md#resources-reused-in-4330n) - context: Caelum Argenteum — Audio and art
+- Lines 3956-3980 - [Fiber shrub 2D (4.33.0l)](ASSETS.md#fiber-shrub-2d-4330l) - context: Caelum Argenteum — Audio and art
+- Lines 3981-4009 - [Poses delivered by the author (4.33.0m)](ASSETS.md#poses-delivered-by-the-author-4330m) - context: Caelum Argenteum — Audio and art
+- Lines 4010-4029 - [Current interface audio](ASSETS.md#current-interface-audio) - context: Caelum Argenteum — Audio and art
+- Lines 4030-4041 - [Current designations and emblems (4.33.0j)](ASSETS.md#current-designations-and-emblems-4330j) - context: Caelum Argenteum — Audio and art > Current interface audio
+- Lines 4042-4085 - [Simple station models (4.33.0j)](ASSETS.md#simple-station-models-4330j) - context: Caelum Argenteum — Audio and art
+- Lines 4086-4100 - [Terms of reference for interface resources](ASSETS.md#terms-of-reference-for-interface-resources) - context: Caelum Argenteum — Audio and art
+- Lines 4101-4207 - [Physical audio inventory](ASSETS.md#physical-audio-inventory) - context: Caelum Argenteum — Audio and art
+- Lines 4208-4227 - [External 05 package reserve](ASSETS.md#external-05-package-reserve) - context: Caelum Argenteum — Audio and art > Physical audio inventory
+- Lines 4228-4229 - [First person: accepted sword reference](ASSETS.md#first-person-accepted-sword-reference) - context: Caelum Argenteum — Audio and art
+- Lines 4230-4250 - [Scope](ASSETS.md#scope) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4251-4261 - [Framing by state](ASSETS.md#framing-by-state) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4262-4273 - [Frontal block, close and held](ASSETS.md#frontal-block-close-and-held) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4274-4285 - [Full Thumb in front of Handle](ASSETS.md#full-thumb-in-front-of-handle) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4286-4324 - [Synchronised turn without duplication](ASSETS.md#synchronised-turn-without-duplication) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4325-4345 - [Attack curve and straight return](ASSETS.md#attack-curve-and-straight-return) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4346-4363 - [Panoramic sleeve, depth and equipment](ASSETS.md#panoramic-sleeve-depth-and-equipment) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4364-4372 - [State of evidence](ASSETS.md#state-of-evidence) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4373-4393 - [Equipment icons](ASSETS.md#equipment-icons) - context: Caelum Argenteum — Audio and art
+- Lines 4394-4406 - [Typography and artistic direction](ASSETS.md#typography-and-artistic-direction) - context: Caelum Argenteum — Audio and art
+- Lines 4407-4414 - [Traceability and Next Assets](ASSETS.md#traceability-and-next-assets) - context: Caelum Argenteum — Audio and art
+- Lines 4415-4420 - [Historical source material](ASSETS.md#historical-source-material) - context: Caelum Argenteum — Audio and art
+- Lines 4421-4430 - [`assets/source/art/domingo_fp_4_32_0h|0i|0j|0n/`](ASSETS.md#assetssourceartdomingo_fp_4_32_0h0i0j0n) - context: Caelum Argenteum — Audio and art > Historical source material
+- Lines 4431-4440 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
+- Lines 4441-4462 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
 
 ## [HISTORY.md](HISTORY.md) - 247075 words
 
-SHA-256: `b4602c5e6270741aa4bd7294e0a25fcce8593d8463d951fcf9eeaa9156a9d4ac`
+SHA-256: `a0b228227a3673326b3ac8e106973bd1636f4842c65fd5de6bb15d93b8c265ec`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-17 - [5.8.39 - Shared aim prerequisite (#415, 2026-10-27)](HISTORY.md#5839---shared-aim-prerequisite-415-2026-10-27) - context: Caelum Argenteum — Consolidated history
@@ -735,7 +736,7 @@ SHA-256: `b4602c5e6270741aa4bd7294e0a25fcce8593d8463d951fcf9eeaa9156a9d4ac`
 
 ## [KNOWN_PITFALLS.md](KNOWN_PITFALLS.md) - 45232 words
 
-SHA-256: `af67d8bf3120e5385ee058641146fbf9bc7f69252e6d884e7d54081e351d0e38`
+SHA-256: `22e370be0284460c696198c10ea3588a98d7ba6d65dfbad6c5ffab891a750338`
 
 - Lines 1-6 - [Known pitfalls and verified lessons â€” Caelum Argenteum](KNOWN_PITFALLS.md#known-pitfalls-and-verified-lessons-â-caelum-argenteum) - context: -
 - Lines 7-26 - [CA-KP-185 - Mean aim must preserve the joint dispersion distribution](KNOWN_PITFALLS.md#ca-kp-185---mean-aim-must-preserve-the-joint-dispersion-distribution) - context: Known pitfalls and verified lessons â€” Caelum Argenteum
@@ -932,7 +933,7 @@ SHA-256: `af67d8bf3120e5385ee058641146fbf9bc7f69252e6d884e7d54081e351d0e38`
 
 ## [MAP01.txt](MAP01.txt) - 36692 words
 
-SHA-256: `7ea2e568b4a1f07079f3a488f1fc7250b041222de4d37c6220bbb0ddd38532a5`
+SHA-256: `fd5a2d2061d295e0ebf6a42e56b941a5b2344a32a95053e1186fde51542c6b78`
 
 - Lines 1-4 - [(Preamble)](MAP01.txt#preamble) - context: -
 - Lines 5-15 - [5.8.29 - Reading-room sofas (#410)](MAP01.txt#5829---reading-room-sofas-410) - context: -
@@ -1038,7 +1039,7 @@ SHA-256: `7ea2e568b4a1f07079f3a488f1fc7250b041222de4d37c6220bbb0ddd38532a5`
 
 ## [PROJECT.md](PROJECT.md) - 70277 words
 
-SHA-256: `596bc620e50130de1dc38d118065ebd0965a6fd7c72597f8a6b7e59cb622ac74`
+SHA-256: `00f8b4796c9e2eaea02c134864ecba4856ac6de6dad12b482b8d6878c1d1900a`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-13 - [5.8.39 / #415 - Mean-hit prerequisite](PROJECT.md#5839--415---mean-hit-prerequisite) - context: Caelum Argenteum — Project, status and roadmap
@@ -1401,7 +1402,7 @@ SHA-256: `596bc620e50130de1dc38d118065ebd0965a6fd7c72597f8a6b7e59cb622ac74`
 
 ## [SYSTEMS.md](SYSTEMS.md) - 138804 words
 
-SHA-256: `d7a684b6fcf7721ba2b910fecf447202a63dec5d93b155be5a69136a21acb3b6`
+SHA-256: `c86a224ffe2990353ef88ca1fd8aecee58a1bf9b30f82b2648d9d5176a9df00c`
 
 - Lines 1-4 - [Caelum Argenteum — Current systems and rules](SYSTEMS.md#caelum-argenteum--current-systems-and-rules) - context: -
 - Lines 5-31 - [5.8.39 - Shared aim and mean-hit estimates (#415)](SYSTEMS.md#5839---shared-aim-and-mean-hit-estimates-415) - context: Caelum Argenteum — Current systems and rules
@@ -1784,7 +1785,7 @@ SHA-256: `d7a684b6fcf7721ba2b910fecf447202a63dec5d93b155be5a69136a21acb3b6`
 
 ## [TASKS.md](TASKS.md) - 32897 words
 
-SHA-256: `bcf6bca22c16f5008dbb667e0b95901bf17f258bf34e042dd3e4c6fe28df12ff`
+SHA-256: `9d9175a40dfc4d74ad1262172a4b6fe5f6ee512d4decb5b9c3926716f0d17ac9`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-18 - [5.8.39 / #415 - Shared aim and mean-hit calculation](TASKS.md#5839--415---shared-aim-and-mean-hit-calculation) - context: TASKS.md — Active tasks
@@ -2045,6 +2046,6 @@ SHA-256: `bcf6bca22c16f5008dbb667e0b95901bf17f258bf34e042dd3e4c6fe28df12ff`
 - Lines 3979-3991 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "2faa720baa2e509778924c0e68b94c98cedede713083606def4f3b61f2091208", "words": 37317}, {"path": "HISTORY.md", "sha256": "b4602c5e6270741aa4bd7294e0a25fcce8593d8463d951fcf9eeaa9156a9d4ac", "words": 247075}, {"path": "KNOWN_PITFALLS.md", "sha256": "af67d8bf3120e5385ee058641146fbf9bc7f69252e6d884e7d54081e351d0e38", "words": 45232}, {"path": "MAP01.txt", "sha256": "7ea2e568b4a1f07079f3a488f1fc7250b041222de4d37c6220bbb0ddd38532a5", "words": 36692}, {"path": "PROJECT.md", "sha256": "596bc620e50130de1dc38d118065ebd0965a6fd7c72597f8a6b7e59cb622ac74", "words": 70277}, {"path": "SYSTEMS.md", "sha256": "d7a684b6fcf7721ba2b910fecf447202a63dec5d93b155be5a69136a21acb3b6", "words": 138804}, {"path": "TASKS.md", "sha256": "bcf6bca22c16f5008dbb667e0b95901bf17f258bf34e042dd3e4c6fe28df12ff", "words": 32897}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "e6d73e404cce58e6724c184407454255a94a5f2dc183ff643b70f4c93b0075d1", "words": 37474}, {"path": "HISTORY.md", "sha256": "a0b228227a3673326b3ac8e106973bd1636f4842c65fd5de6bb15d93b8c265ec", "words": 247075}, {"path": "KNOWN_PITFALLS.md", "sha256": "22e370be0284460c696198c10ea3588a98d7ba6d65dfbad6c5ffab891a750338", "words": 45232}, {"path": "MAP01.txt", "sha256": "fd5a2d2061d295e0ebf6a42e56b941a5b2344a32a95053e1186fde51542c6b78", "words": 36692}, {"path": "PROJECT.md", "sha256": "00f8b4796c9e2eaea02c134864ecba4856ac6de6dad12b482b8d6878c1d1900a", "words": 70277}, {"path": "SYSTEMS.md", "sha256": "c86a224ffe2990353ef88ca1fd8aecee58a1bf9b30f82b2648d9d5176a9df00c", "words": 138804}, {"path": "TASKS.md", "sha256": "9d9175a40dfc4d74ad1262172a4b6fe5f6ee512d4decb5b9c3926716f0d17ac9", "words": 32897}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

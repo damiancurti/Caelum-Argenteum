@@ -2,6 +2,24 @@
 
 Documentation version: **5.8.39** - 2026-10-27.
 
+## Dining set artwork (#410, prepared for 5.8.40)
+
+Three original deterministic wooden table meshes use documented nineteenth-century
+envelopes: round 1.04 m diameter / 0.74 m high; ordinary 1.702 x 0.883 x 0.711 m;
+long 3.105 x 0.845 x 0.699 m. The existing luxury table and all existing chair
+models/textures are reused. DATA.json and GENERATED.json under
+assets/art_source/dining_sets retain historical sources, member construction,
+wood/iron volumes and complete-set bills. Reference photographs and meshes are
+not copied. Fixed mansion tables are not replaced by these portable variants.
+
+Four built-in imagegen painted inventory sprites show complete 2/6/12/6-chair
+sets, using the owned ordinary/luxury chair palette and the current art direction.
+Source PNGs, exact prompts/edit prompts and provenance are retained in that same
+directory; CDS2A0/CDS6A0/CD12A0/CDLXA0 copy the selected pixels and alpha unchanged.
+The twelve-chair image was corrected from an initial ten-chair draft before use.
+Native inventory inspection confirms transparent silhouettes, localized labels
+and mass displays. This is agent visual review; author acceptance stays pending.
+
 ## 5.8.39 - Aim validation evidence (#415)
 
 assets/validation_5839 retains deterministic private native fixtures, independent
