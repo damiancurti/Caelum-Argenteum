@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.36** - 2026-10-27.
+Documentation version: **5.8.37** - 2026-10-27.
+
+## 5.8.37 / #502 - Seal object history
+
+Completed loaded Fire/Water surface exposure, stop/departure boundaries, saved
+rain intervals, current saves/hub returns and actual previous-runtime migration.
+Validation: 53 current native PASS plus four original-runtime checks, zero
+failures/static errors. The final 1,000-object unload callback took 0.4211 ms;
+this measures boundary work, not displayed FPS. Natural-weather regressions pass.
+Evidence: assets/validation_5837. Wider #502
+and the other V5.8 issues remain open; no author handoff before the whole version.
 
 ## 5.8.36 / #410 - Study acquisition
 

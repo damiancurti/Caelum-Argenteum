@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.36** - 2026-10-27.
+Documentation version: **5.8.37** - 2026-10-27.
+
+## 5.8.37 - Seal object history (#502, 2026-10-27)
+
+Added revision4 object-history intervals for temporary climate seals and rain,
+with natural-weather handoff on map departure. Surface sampling skips only the
+receiver; legacy trace behavior remains the default. Missing legacy intervals
+start now without changing saved contamination. Validation in assets/validation_5837:
+53 current native PASS plus four original-runtime checks, zero failures/static
+errors; all 17,011 packaged members match source. Existing maps/art are unchanged
+apart from two recorded OBJ line-ending conversions. A dense 1,000-object unload
+probe fell from 1,999.4711 ms with geometry resampling to 0.4211 ms in the final
+package by retaining the natural descriptor (CA-KP-183). This is callback timing,
+not presented-frame/FPS evidence. CA502-SEAL-HISTORY-01 remains author-pending
+for the grouped V5.8 handoff; no issue completion is inferred.
 
 ## 5.8.36 - Study furniture acquisition (#410, 2026-10-27)
 

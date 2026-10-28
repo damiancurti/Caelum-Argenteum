@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.36** - 2026-10-27.
+Documentation version: **5.8.37** - 2026-10-27.
+
+## 5.8.37 / #502 - Temporary climate history
+
+Temporary seal exposure and natural-weather handoff on departure are implemented
+and pass 53 current native assertions plus four original-runtime checks, with
+zero failures/static errors in assets/validation_5837. This preserves current
+rates and save concentrations, including rain washing. Remaining table supply,
+#415-417 and broader #502 adapters/housekeeping remain open. Author checks are
+grouped for completion of all V5.8 implementation.
 
 ## 5.8.36 / #410 - Portable study furniture
 

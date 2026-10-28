@@ -57,12 +57,14 @@ class CaelumSealRegistry : StaticEventHandler
 class CaelumSealPath : LineTracer
 {
     double Length;
+    Actor SampleSurface;
     override ETraceStatus TraceCallback()
     {
         if(Results.Distance>=Length-0.0001)return TRACE_Skip;
         if(Results.HitType==TRACE_HitActor)
         {
             let body=Results.HitActor;
+            if(body==SampleSurface)return TRACE_Skip;
             if(body==null || !body.bSolid || body.player!=null || body is "CaelumCombatActor"
                 || body is "Inventory" || body is "CaelumMovableProp")return TRACE_Skip;
         }
@@ -80,20 +82,21 @@ class CaelumSealClimate : Object play
             && effect.ChannelSeal.Equipped && user.GetEquippedSeal()==effect.ChannelSeal;
     }
 
-    static bool ClearPath(CaelumChannelEffect effect,Actor body)
+    static bool ClearPath(CaelumChannelEffect effect,Actor body,bool surface=false)
     {
         if(body==effect.ChannelOwner)return true;
         vector3 start=effect.ChannelOwner.Pos+(0,0,effect.ChannelOwner.Height*0.5);
         vector3 delta=body.Pos+(0,0,body.Height*0.5)-start;
         if(delta.Length()==0)return true;
         if(effect.ClimatePath==null)effect.ClimatePath=new("CaelumSealPath");
+        effect.ClimatePath.SampleSurface=surface?body:null;
         effect.ClimatePath.Length=delta.Length();
         return !effect.ClimatePath.Trace(start,level.PointInSector(start.XY),delta/delta.Length(),
             delta.Length(),TRACE_PortalRestrict,Line.ML_BLOCKING|Line.ML_BLOCKEVERYTHING,
             false,effect.ChannelOwner);
     }
 
-    static double,double,double,double Delta(Actor body,double baseWind,double baseDirection)
+    static double,double,double,double Delta(Actor body,double baseWind,double baseDirection,bool surface=false)
     {
         double heat=0,humidity=0,wind=0,direction=baseDirection;
         bool calm=baseWind<=0;
@@ -109,7 +112,7 @@ class CaelumSealClimate : Object play
             else {effect=CaelumChannelEffect(it.Next());if(effect==null)break;}
             if(!Active(effect) || effect.ClimateTotal<=0
                 || !effect.IsInside(body,effect.ChannelOwner.Pos,effect.EffectRadius)
-                || !ClearPath(effect,body))continue;
+                || !ClearPath(effect,body,surface))continue;
             if(effect.SealType==CaelumConstants.SEAL_FIRE)
                 heat+=effect.ClimateTotal*CaelumSealClimateData.FIRE_C;
             else if(effect.SealType==CaelumConstants.SEAL_WATER)

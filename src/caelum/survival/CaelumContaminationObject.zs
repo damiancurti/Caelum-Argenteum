@@ -7,14 +7,18 @@ class CaelumContaminationObject : Thinker
     transient bool Ready;
     transient int NextUpdate;
     transient double Stamp,Ambient,Rain;
-    // Revisión 2 conserva el Limbo; revisión 3 registra el clima natural por
-    // minuto civil. Nunca prolonga un sello temporal fuera del mapa.
+    // Revisión 4 conserva el intervalo de un sello y lo cierra al salir;
+    // el mapa ausente continúa sólo con su clima natural.
     bool HistoryReady;
     double HistoryStamp,HistoryAmbient,HistoryArea;
     bool HistoryVariable,HistoryCovered;
     int HistoryProfile,HistoryRegion,HistorySeed,HistoryShelter;
     double HistoryReference,HistoryCivilOffset;
-    transient bool SampleReady;
+    double HistoryRain;
+    double HistoryNaturalAmbient;
+    bool HistoryTemporaryClimate,HistoryNaturalVariable;
+    transient double NaturalAmbient;
+    transient bool SampleReady,SampleTemporaryClimate,SampleNaturalVariable;
 
     static bool Eligible(Actor body)
     {
@@ -54,7 +58,7 @@ class CaelumContaminationObject : Thinker
     {
         if(!Eligible(body))return;
         let entry=CaelumContaminationStorage.Get(body,true);if(entry==null || entry.Exposure!=null)return;
-        let node=new('CaelumContaminationObject');node.Body=body;node.Revision=3;entry.Exposure=node;
+        let node=new('CaelumContaminationObject');node.Body=body;node.Revision=4;entry.Exposure=node;
     }
     static void LeavingWorld(Actor body)
     {
@@ -70,7 +74,7 @@ class CaelumContaminationObject : Thinker
     }
     void Sample(CaelumThermalWorld world)
     {
-        Ambient=-1;Rain=0;SampleReady=false;HistoryVariable=false;
+        Ambient=NaturalAmbient=-1;Rain=0;SampleReady=false;SampleTemporaryClimate=false;SampleNaturalVariable=false;HistoryVariable=false;
         let weather=world.ReferenceWeather;
         if(weather==null || weather.Outside==null || !weather.Outside.Available)return;
         bool roof=CaelumThermalShelter.Roof(Body);
@@ -78,17 +82,22 @@ class CaelumContaminationObject : Thinker
         let local=world.LocalSample(weather,shelter);if(local==null || !local.Available)return;
         roof=roof || CaelumCampShelter.Find(Body)!=null;
         Rain=roof?0:local.PrecipitationMmPerHour;
-        double heat,humidity,wind,direction;
-        [heat,humidity,wind,direction]=CaelumSealClimate.Delta(Body,0,0);
+        double heat=0,humidity=0,wind=0,direction=0;
+        [heat,humidity,wind,direction]=CaelumSealClimate.Delta(Body,0,0,true);
+        SampleTemporaryClimate=heat!=0 || humidity!=0;
         double reference=CaelumContaminationEnvironment.ReferenceAt(Body);
-        if(reference>=0)Ambient=CaelumContaminationRules.Ambient(reference,local.AirTemperatureC+heat,
-            Clamp(local.RelativeHumidityPercent+humidity,0.0,100.0),Rain,!roof);
-        SampleReady=Ambient>=0 && heat==0 && humidity==0;
+        if(reference>=0)
+        {
+            NaturalAmbient=CaelumContaminationRules.Ambient(reference,local.AirTemperatureC,local.RelativeHumidityPercent,Rain,!roof);
+            Ambient=SampleTemporaryClimate?CaelumContaminationRules.Ambient(reference,local.AirTemperatureC+heat,
+                Clamp(local.RelativeHumidityPercent+humidity,0.0,100.0),Rain,!roof):NaturalAmbient;
+        }
+        SampleReady=Ambient>=0;
         if(!SampleReady || weather.Profile==CaelumWeatherRules.PROFILE_LIMBO)return;
         let calendar=world.ReferenceCalendar;let clock=world.ReferenceClock;
         if(calendar==null || clock==null || calendar.DateSerial(clock)<0)
         {SampleReady=false;return;}
-        HistoryVariable=true;HistoryCovered=roof;
+        SampleNaturalVariable=true;HistoryVariable=!SampleTemporaryClimate;HistoryCovered=roof;
         HistoryProfile=weather.Profile;HistoryRegion=weather.Region;HistorySeed=weather.Seed;
         HistoryShelter=shelter;HistoryReference=reference;
         HistoryCivilOffset=double(calendar.DateSerial(clock))*86400
@@ -98,7 +107,7 @@ class CaelumContaminationObject : Thinker
     double Replay(double value,double now)
     {
         if(Revision<3 || !HistoryVariable)
-            return CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,0,HistoryArea,now-HistoryStamp);
+            return CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,Revision>=4?HistoryRain:0,HistoryArea,now-HistoryStamp);
         let world=CaelumContaminationWorld.Get();
         if(world==null)return value;
         if(world.HistoryWeather==null)world.HistoryWeather=new('CaelumContaminationWeatherCache');
@@ -158,11 +167,29 @@ class CaelumContaminationObject : Thinker
         Sample(world);
         // Las partidas previas empiezan aquí: no se inventa una fecha histórica
         // ni se borra la concentración ya guardada. Repetir no cobra dos veces.
-        Revision=3;HistoryReady=SampleReady;HistoryStamp=now;
-        HistoryAmbient=Ambient;HistoryArea=Area(Body);
+        RecordSample(now);
         if(!Ready)NextUpdate=level.maptime+1+world.NextPhase++%TICRATE;
         else NextUpdate=level.maptime+TICRATE;
         Ready=true;
+    }
+    void RecordSample(double now)
+    {
+        Revision=4;HistoryReady=SampleReady;HistoryStamp=now;
+        HistoryAmbient=Ambient;HistoryRain=Rain;HistoryArea=Area(Body);
+        HistoryTemporaryClimate=SampleTemporaryClimate;
+        HistoryNaturalAmbient=NaturalAmbient;HistoryNaturalVariable=SampleNaturalVariable;
+    }
+    void Depart()
+    {
+        if(!HistoryTemporaryClimate || !Eligible(Body))return;
+        let world=CaelumThermalWorld.Get();if(world==null || world.ReferenceClock==null)return;
+        double now=CaelumThermalRuntime.Stamp(world.ReferenceClock);
+        if(!Settle(now))return;
+        // La muestra ya conserva abrigo, región y clima base. No repetir mil
+        // trazas geométricas durante la transición ni prolongar el sello.
+        HistoryTemporaryClimate=false;HistoryVariable=HistoryNaturalVariable;
+        HistoryAmbient=HistoryNaturalAmbient;HistoryStamp=now;
+        Ambient=HistoryAmbient;SampleTemporaryClimate=false;Ready=true;
     }
     override void Tick()
     {

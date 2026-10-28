@@ -261,3 +261,16 @@ Prerequisites: final groupedV5.8 author build and a new/compatible campaign; lea
 5. Confirm blocked doorways/obstacles reject placement and the existing mansion library/desk remain present.
 Expected: original bodies/books/progress persist, no duplication, free books, silent stock reset or access through a locked/packed library.
 Status: pending author corroboration, held for the completeV5.8 handoff.
+
+CA502-SEAL-HISTORY-01 | Origin: 5.8.37 | Issue: #502
+Prerequisites: grouped final V5.8 build; disposable scene with physical objects,
+Fire/Water seals, a normal regional climate and a nearby map transition.
+1. Channel near a physical object, then stop. Its exposure responds to the
+   changed heat/humidity while active and returns to natural climate afterward.
+2. Place a solid obstacle between the seal and the object; the climate effect
+   must not pass through it. The object's own surface must receive an unobstructed seal.
+3. Save/load while channeling and compare the saved contamination; loading must
+   not reset dirt or charge elapsed exposure twice.
+4. Leave while channeling, wait elsewhere and return. Contamination follows the
+   original region's natural weather and rain while absent, without retaining
+   the departed seal. Repeat return/load to check idempotence.
