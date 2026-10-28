@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.38.** Obtain and update the complete repository, validate
+**Current release: 5.8.39.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.39 - Shared aim estimates (#415)
+
+Native carbine/spell attacks now share their existing accuracy parameters with
+an analytic estimator for unloaded combat. The estimator preserves the different
+carbine and signed-offset distributions without creating projectiles or drawing
+random numbers. Validation:194 current native assertions and16 original-runtime
+checks pass;36 logged shot samples match the prior runtime exactly. See
+assets/validation_5839. Unloaded rounds, casualties and transport remain unfinished.
 
 ## 5.8.38 - NPC illness (#502)
 

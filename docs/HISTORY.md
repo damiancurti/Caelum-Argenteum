@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
+
+## 5.8.39 - Shared aim prerequisite (#415, 2026-10-27)
+
+The author approved retaining dispersion for unloaded mean damage and complete
+2/6/12-chair dining sets under the separate #410 scope. Shared carbine/spell aim
+parameters and analytic angular probability calculations were added under #415.
+Final evidence in assets/validation_5839:194 current native assertions and16
+original-runtime checks pass, with zero failures/static errors. All36 logged
+shot samples match the original runtime, including after consulting estimates.
+Current saves/hub return and original-runtime rollback pass;17,012 package
+members match source and14,049 prior map/art members are byte-identical.
+The1600-estimate callback measured0.738ms, not a frame/FPS claim. No author
+acceptance or completed unloaded simulation is claimed; pending tests are kept.
 
 ## 5.8.38 - Loaded NPC illness (#502, 2026-10-27)
 

@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
+
+## 5.8.39 - Aim validation evidence (#415)
+
+assets/validation_5839 retains deterministic private native fixtures, independent
+numerical quadrature, exact prior/current shot samples, save/hub/rollback logs,
+package/environment hashes and a reproducible report. Maps, models, sprites and
+textures are unchanged; no game artwork or distributable engine/IWAD is added.
+The fixture room reuses validation_588/580 and stays outside packaged src.
 
 ## 5.8.36 - Portable study artwork (#410)
 

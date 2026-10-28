@@ -1698,10 +1698,7 @@ class CaelumCombatActor : Actor
     void ApplyWeaponProjectileDispersion(CaelumActorProjectile missile,int weaponType)
     {
         if(missile==null || !UsesWeaponProjectileDispersion())return;
-        double accuracy=Max(1.0,CombatMagicalAccuracyPercent
-            *(ElementalStatus!=null ? ElementalStatus.GetAccuracyMultiplier() : 1.0));
-        double minimum=CaelumDispersionRules.EffectiveTier(
-            CaelumDispersionRules.MagicBase(weaponType),1,CurrentCombatLucidity)*100.0/accuracy;
+        double minimum=CaelumCombatAim.MagicMinimum(self,weaponType);
         double speed=missile.Vel.Length();
         double yaw=missile.Angle+WeaponAimOffset(minimum,minimum*10.0);
         double pitch=VectorAngle(missile.Vel.XY.Length(),-missile.Vel.Z)
