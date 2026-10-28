@@ -63,6 +63,8 @@ class CaelumCombatActor : Actor
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
     transient CaelumContaminationNPC ContaminationExposure;
+    transient CaelumContaminationState ContaminationBody;
+    transient bool ContaminationBodyReady;
     CaelumContaminationContacts ContaminationContacts;
     CaelumAltitudeState AltitudeState;
     CaelumDemonBreath DemonBreath;
@@ -3952,6 +3954,7 @@ class CaelumCombatActor : Actor
         if(cache!=null)
         {
             if(level.maptime<cache.ResourceDue && health>=CombatMaximumHealth
+                && !CaelumContaminationNPC.NeedsRecovery(self)
                 && CurrentCombatAnima>=MaximumCombatAnima && CurrentCombatAir>=MaximumCombatAir
                 && CurrentCombatLucidity>=CaelumConstants.MAXIMUM_LUCIDITY)return;
             cache.ResourceDue=cache.NextDue();
@@ -3962,12 +3965,15 @@ class CaelumCombatActor : Actor
     void CalculateCombatResourceRecovery(bool sleeping)
     {
         double idleFactor=IsCombatIdle() ? CaelumRestRules.CHAIR_RESOURCE_FACTOR : 1;
-        if (idleFactor>1 && health>0 && health<CombatMaximumHealth)
+        if (idleFactor>1 && health>0 && (health<CombatMaximumHealth || CaelumContaminationNPC.NeedsRecovery(self)))
         {
             IdleHealthAccumulator+=CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
                 *CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;
             int recovered=int(IdleHealthAccumulator);
             IdleHealthAccumulator-=recovered;health=Min(CombatMaximumHealth,health+recovered);
+            // El mismo esfuerzo natural depura incluso con Vida llena; se
+            // conservan las condiciones y el presupuesto de recuperación NPC.
+            CaelumContaminationNPC.Recover(self,recovered);
         }
         if (health > 0 && CurrentCombatAnima < MaximumCombatAnima)
         {
@@ -4018,6 +4024,7 @@ class CaelumCombatActor : Actor
             LastCombatArmorDefenseExactPercent = LastCombatArmorDefensePercent;
             ArmorBalanceRevision = 1;
         }
+        CaelumContaminationNPC.IllnessStep(self);
         if (!CaelumRedemption.PreviouslyRaised(self)
             && !(CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
         {

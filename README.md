@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.37.** Obtain and update the complete repository, validate
+**Current release: 5.8.38.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.38 - NPC illness (#502)
+
+Living NPCs now take contamination illness damage through the existing native
+combat pipeline and depurate through their current idle health recovery, including
+potential recovery at full Life. Body concentration remains authoritative; saved
+fractional damage starts at migration without retroactive injury. Validation passes
+71 current native assertions and two original-runtime checks, with zero failures
+or static errors (assets/validation_5838). All V5.8 author checks remain grouped.
 
 ## 5.8.37 - Climate-seal object history (#502)
 

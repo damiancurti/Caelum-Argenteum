@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-184 - Full-resource shortcuts must include potential depuration
+Status/evidence: RESOLVED-VERIFIED (71 current native assertions plus two original-runtime checks)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #502; loaded NPC illness5.8.38
+Affected baseline: 39adda1c plus NPC illness integration
+Environment: GZDoom4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
+Scope: combat NPC recovery, canonical contamination carrier and active ticks
+
+Full Life/Anima/Air/Lucidity does not make recovery idle when contamination still
+needs the approved potential health effort. Include that need in the existing
+high-density recovery shortcut while retaining its actual idle eligibility and
+rate. Share each integral health effort between healing and depuration; do not
+create a second recovery budget. Keep environmental world seconds separate from
+active-time disease ticks. Native checks cover a calendar jump and ordinary ticks.
+
+Resolve the body carrier once per transient owner cache, including clean absence;
+later contact must still be able to create and install the canonical state. Current
+save/hub restoration and actual prior-runtime migration verify one owned carrier,
+preserved contamination and persisted fractional damage. No global scan is needed.
+
+The final diagnostic's 1,000 contaminated bodies retain independent native damage
+handling. Across35 callbacks, cost was3.2977ms mean,12.0958ms p95 and12.4485ms max.
+These are synchronous callback tails, not frame-presentation/FPS measurements;
+they do not establish campaign rendering acceptance. Exact package/log evidence:
+assets/validation_5838. CA502-NPC-ILLNESS-01 remains author-pending. Unloaded NPC
+physiology and household work remain separate unfinished scopes.
+
 ## CA-KP-183 - Retain natural climate beside temporary object samples
 Status/evidence: RESOLVED-VERIFIED (53 current native assertions plus four original-runtime checks)
 First recorded / last checked: 2026-10-27 / 2026-10-27

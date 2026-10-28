@@ -4,6 +4,14 @@ class CaelumContaminationState : Object play
     int Revision;
     double Concentration;
     CaelumContaminationObject Exposure;
+    int PhysiologyRevision;
+    double DiseaseFraction;
+
+    void EnsurePhysiology()
+    {
+        if(PhysiologyRevision>=CaelumContaminationData.NPC_PHYSIOLOGY_REVISION)return;
+        DiseaseFraction=0;PhysiologyRevision=CaelumContaminationData.NPC_PHYSIOLOGY_REVISION;
+    }
 
     void Ensure()
     {
@@ -68,16 +76,27 @@ class CaelumContaminationStorage : Object play
             if(equipment.ContaminationState!=null && create)equipment.ContaminationState.Ensure();
             return equipment.ContaminationState;
         }
+        let npc=CaelumCombatActor(body);
+        if(npc!=null && npc.ContaminationBodyReady && (npc.ContaminationBody!=null || !create))
+        {
+            if(create)npc.ContaminationBody.Ensure();
+            return npc.ContaminationBody;
+        }
         let carrier=CaelumContaminationCarrier(body.FindInventory('CaelumContaminationCarrier'));
         if(carrier==null && create)
         {
             carrier=CaelumContaminationCarrier(Actor.Spawn('CaelumContaminationCarrier',body.Pos,NO_REPLACE));
             if(carrier!=null){carrier.AttachToOwner(body);carrier.AttachmentRevision=1;}
         }
-        if(carrier==null)return null;
+        if(carrier==null)
+        {
+            if(npc!=null)npc.ContaminationBodyReady=true;
+            return null;
+        }
         carrier.EnsureAttachment();
         if(carrier.State==null && create)carrier.State=new('CaelumContaminationState');
         if(carrier.State!=null && create)carrier.State.Ensure();
+        if(npc!=null){npc.ContaminationBody=carrier.State;npc.ContaminationBodyReady=true;}
         return carrier.State;
     }
     static double Value(Actor body)

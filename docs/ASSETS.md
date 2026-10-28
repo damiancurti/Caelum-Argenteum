@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
 
 ## 5.8.36 - Portable study artwork (#410)
 

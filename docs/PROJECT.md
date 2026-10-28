@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
+
+## 5.8.38 / #502 - Loaded NPC illness
+
+NPC illness damage and natural recovery depuration are implemented using the
+existing shared formulas and NPC recovery rules. Validation:71 current native PASS
+plus two original-runtime checks, zero failures/static errors; assets/validation_5838.
+NPC absence history, household absence routines,
+remaining contact adapters, table supply and #415-417 remain open. No full V5.8
+completion or author acceptance is inferred.
 
 ## 5.8.37 / #502 - Temporary climate history
 
