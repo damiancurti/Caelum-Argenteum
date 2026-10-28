@@ -378,3 +378,15 @@ Steps:
 Expected: body, packed item and collision cells share one value; chairs remain
 separate; packing/returning never cleans it, and old cell values never undo a
 later cleaning. Corroborate only at the final grouped V5.8 handoff.
+
+CA502-NPC-ABSENCE-01 | Origin:5.8.46 | Issue:#502
+Prerequisites: grouped final V5.8 terminal with the native NPC absence scenario;
+original author saves kept separately. Do not run before the requested grouped
+handoff is ready.
+Steps: observe a contaminated NPC's Life/equipment; leave for an exterior wait
+and return; repeat with time spent in the Limbo; save/reload while away. Observe
+an infected household worker that dies while absent and return to its house.
+Expected: exterior elapsed time advances exposure/disease and potential natural
+recovery using20:1; Limbo does not advance exterior time; health/equipment and
+fractional progress persist without replay. A dead worker cannot clean/deploy;
+its native corpse and original loot appear once in its restored map.

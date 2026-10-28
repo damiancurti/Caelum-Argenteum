@@ -6,6 +6,12 @@ class CaelumContaminationNPC : Object play
     CaelumFoodIllness Body;
     int Count;
 
+    static double HealthRate(CaelumCombatActor npc)
+    {
+        return npc.CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+            *npc.CalculateActorType4Percent(npc.CombatResilience)/100.0*CaelumRestRules.CHAIR_RESOURCE_FACTOR;
+    }
+
     // El daño usa segundos activos, como el jugador; la exposición conserva
     // su reloj mundial separado. El registro del cuerpo es la única autoridad.
     static void IllnessStep(CaelumCombatActor npc)
@@ -105,7 +111,16 @@ class CaelumContaminationNPC : Object play
     }
     void Advance(CaelumCombatActor npc,CaelumThermalState thermal,double seconds,double ambient)
     {
-        Capture(npc,thermal);Frame.Advance(Body,ambient,seconds);
+        Capture(npc,thermal);AdvanceCaptured(npc,seconds,ambient);
+    }
+    void AdvanceCaptured(CaelumCombatActor npc,double seconds,double ambient)
+    {
+        Frame.ReadLive();Body.Contamination=CaelumContaminationStorage.Value(npc);
+        Frame.Advance(Body,ambient,seconds);
+        CommitCaptured(npc);
+    }
+    void CommitCaptured(CaelumCombatActor npc)
+    {
         if(Body.Contamination!=CaelumContaminationStorage.Value(npc))
             CaelumContaminationStorage.Set(npc,Body.Contamination);
         for(int i=0;i<Frame.Items.Size();i++)

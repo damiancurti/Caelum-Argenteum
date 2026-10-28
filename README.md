@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.45.** Obtain and update the complete repository, validate
+**Current release: 5.8.46.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.46 - Native NPC absence physiology (#502)
+
+Preserved NPC bodies continue contamination exposure, disease and natural
+recovery using their source-map clock and climate. Household workers that die
+while absent cannot continue cleaning or deploy to the siege. Native death and
+loot occur once in the body's restored map. Validation passes155 current native
+checks and4 original-runtime checks, with zero failures/static errors. Evidence
+and pending author status are recorded in assets/validation_5846 and HISTORY;
+V5.8 remains in progress.
 
 ## 5.8.45 - Dining contamination ownership (#502)
 

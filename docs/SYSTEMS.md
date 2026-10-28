@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.45** - 2026-10-28.
+Documentation version: **5.8.46** - 2026-10-28.
+
+## 5.8.46 - NPC physiology during map absence (#502)
+
+The author approved the source-clock equivalence on2026-10-28:20 exterior world
+seconds equal one active physiology second. The separate Limbo clock retains
+its1:1 rate; staying there freezes the civil exterior date. No operating-system
+elapsed time is added. An original save without an absence record starts at its
+first subsequent departure, preserving Life, contamination and damage fractions.
+
+Each preserved native NPC captures its actual body, last idle-recovery gate,
+existing Resilience rate, clothing/armor/weapon surfaces and immersion. Regional
+weather, shelter and local climate offsets belong to the departure location.
+Exposure uses world seconds; disease/recovery use converted active seconds.
+The existing source climate model and thermal one-active-second subdivision
+remain in use. No new movement or contact between distant bodies is inferred.
+The #415 battle resolver must update combat eligibility when its rounds change
+it; other combat/status simulation is not supplied by this patch.
+
+The integrator skips tics without integer Life events, retaining the existing
+illness-before-recovery order, Toughness immunity, damage modifiers, fractional
+Life damage and potential full-Life depuration. Natural recovery now uses the
+same small floating-point boundary tolerance as disease so exact integer Life
+boundaries do not differ between repeated and grouped additions. This changes
+no rates or thresholds. Equipment is read once per catch-up and committed once.
+
+The outcome belongs to the original body. Hub loading resolves it before normal
+NPC ticks; resident Resume restores travelling bodies after native placement.
+An absent dead household worker cannot clean or join deployment. Native Die and
+loot run only at restoration, with the existing once-only guard. Native hub
+persistence and resident travel are retained; this does not introduce a general
+replacement-actor ledger across reset maps. No new routine global scans exist:
+one typed STAT_DEFAULT NPC census captures a departure; hub return reuses the
+existing thermal load census; housekeeping uses its captured resident IDs.
+
+The author also authorized physical surface calculations for stackables from
+documented masses/dimensions/densities, with distinct contamination lots and
+additive area under split/merge. Those adapters remain separate pending work.
+
+Native damage admission is captured before resident suspension changes flags.
+Invulnerability, spectral/non-shootable protection, NODAMAGE, redemption and
+protected-story residents keep their existing disease protections. Integer
+disease pulses retain native inventory modifiers, typed damage factors and
+TakeSpecialDamage; Buddha protection retains one Life.
 
 ## 5.8.45 - Dining-table contact ownership (#502)
 
@@ -7692,9 +7735,10 @@ continuous spell energy and drink expiry follow simulation ticks. Extra personal
 time steps advance world response with zero extra real damage or action energy.
 Paused simulation advances neither. Limbo retains local 1:1 time and a frozen
 civil calendar; ordinary maps retain 20:1. Harmful thermal states interrupt
-safe accelerated rest/crafting/sleep. Unloaded hub maps do not simulate NPC
-physiology; reopening resets local sampling clocks while preserving E, water,
-acclimatization and damage fractions. Offscreen actors on a loaded map remain
+safe accelerated rest/crafting/sleep. Unloaded hub maps preserve NPC thermal
+E, water and acclimatization without simulating those thermal quantities;
+reopening resets their local sampling clocks. The5.8.46/#502 absence service
+separately advances contamination exposure, disease and natural Life effort. Offscreen actors on a loaded map remain
 fully supported, with staggered one-second updates and actual elapsed time.
 
 Journey previews integrate minute-sized weather/activity steps on an isolated

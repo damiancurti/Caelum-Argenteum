@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.45** - 2026-10-28.
+Documentation version: **5.8.46** - 2026-10-28.
+
+## 5.8.46 / #502 - Native NPC absence physiology
+
+Implemented source-map contamination/exposure and Life recovery for native hub
+bodies and the existing travelling resident roster. Departures capture the last
+recovery gate, body and real equipment; loading resolves the elapsed source
+clock before ordinary NPC ticks. No movement, battle decisions or replacements
+are simulated here. Remaining work includes #502 stackable/contact adapters,
+#415 combat/theft, #416 documented routes/urban map and #417 encounters. #412
+multiplayer rest remains deferred to V5.12. Evidence: assets/validation_5846,
+155 current/4 original native PASS and clean static validation. Author tests
+stay grouped; no issue or whole-version completion is inferred.
 
 ## 5.8.45 / #502 - Canonical dining-table contamination
 

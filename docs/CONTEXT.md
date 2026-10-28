@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.45** - 2026-10-28.
+Documentation version: **5.8.46** - 2026-10-28.
 
-**5.8.43-45:**housekeeping/decor/dining-contact;validation_5843-45.
+**5.8.43-46:**housekeeping/decor/dining-contact/absent-NPC;validation_5843-46.
 
 **5.8.42/#502:**furnishing dirt/history persistence;validation_5842;unloaded-work-pending.
 **5.8.41/#502:**home-coffer persistence;validation_5841;unloaded-work-pending.

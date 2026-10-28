@@ -3,6 +3,7 @@ class CaelumContaminationData : Object
 {
     const STATE_REVISION = 1;
     const NPC_PHYSIOLOGY_REVISION = 1;
+    const NPC_ABSENCE_REVISION = 1;
     const DINING_PROXY_REVISION = 1;
     const SEVERE_THRESHOLD = 90.0;
     const SEVERE_DAMAGE_FACTOR = 2.0;

@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.45** - 2026-10-28.
+Documentation version: **5.8.46** - 2026-10-28.
+
+## 5.8.46 / #502 - Absent native NPC physiology
+
+Implement source-clock disease/depuration and source-climate body/equipment
+exposure, original save migration, native hub restoration, once-only death and
+household/deployment eligibility. Validate event integration, current saves,
+original5.8.45 load/rollback, integer boundaries and long-absence costs.
+Evidence: assets/validation_5846;155 current/4 original native PASS, zero failures
+or static errors. Author checks remain grouped; do not close#502
+or claim V5.8 complete. Next: stackable surfaces/lots and remaining contact
+adapters, #415 combat/theft, #416 routes/city, #417 encounters.
 
 ## 5.8.45 / #502 - Dining contact integration
 

@@ -703,6 +703,18 @@ Ryzen 9 5950X/GZDoom 4.14.2 run measure02. This is a load-census cost, not a fra
 presentation or rendering-acceptance claim. Normal shelter sampling uses the
 local blockmap only when that registry is nonempty.
 
+**5.8.46/#502 extension:** keep absence physiology on the original native NPC,
+not in a travelling global object that points into an unloaded hub. Captured
+climate and scalar outcomes have no native sector/line references; retained
+equipment endpoints refer only to that body's owned inventory. Household
+travellers use the existing roster/statnum protocol. Native travel does not
+preserve arbitrary diagnostic TIDs: recover residents through their roster
+identity, not a TID lookup. The native fixture verifies both ownership paths.
+Defer Die until the body is placed in its loaded map, and reuse the existing
+hub-load census to resolve ordinary bodies before their first playable tick.
+Evidence: assets/validation_5846 production/resident/lethal/save cases. This
+is native isolated evidence, not author acceptance or a displayed-FPS claim.
+
 ## CA-KP-159 - Finish a local line iterator before nested collision queries
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
