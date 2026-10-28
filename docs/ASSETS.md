@@ -1,6 +1,28 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.43** - 2026-10-28.
+Documentation version: **5.8.44** - 2026-10-28.
+
+## 5.8.44 - Original landscapes and ornamental sculpture (#410)
+
+The author approved River Plate landscapes and ornamental subjects, plus the
+same three-item/ten-recipe furniture supply. Original built-in imagegen sources,
+exact prompts and hashes are retained in assets/art_source/ornamental_decor.
+The landscape texture and both transparent painted inventory sprites follow
+SPRITE_ART_DIRECTION; no inventory sprite is rendered from a 3D model.
+
+generate_ornamental_decor.py registers those sources and builds original world
+meshes. The 72x52-cm wooden painting has a 60x40-cm canvas, stepped mouldings and
+no glass/easel. The 85-cm botanical wood carving stands on a 35-cm square plinth.
+DATA.json distinguishes delegated construction approximations from museum
+references: The Met's early nineteenth-century carved-wood ornaments (189470)
+and the Argentine museum's Pueyrredon River Plate landscape genre (308). No
+external pixels, mesh, composition or historical person's likeness are copied.
+Existing project-owned stash wood/iron textures are reused with provenance;
+the statue's continuous carved surfaces use an original painted wood texture.
+
+GENERATED.json records geometry-derived wood/iron/canvas masses, rounded recipe
+grams and deterministic output hashes. Development fixtures and evidence live
+in assets/validation_5844; private packages/IWADs/engine remain untracked.
 
 ## 5.8.43 - Household absence evidence (#502)
 

@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.43.** Obtain and update the complete repository, validate
+**Current release: 5.8.44.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.44 - Decorative furniture (#410)
+
+Wall-mounted River Plate landscape paintings and freestanding carved botanical
+statues now use the approved furniture crafting, commerce and transport rules.
+Original painted inventory sprites and world models retain source provenance.
+Validation: 186 current native checks and 30 prior-runtime checks pass, with
+zero final failures/static errors (assets/validation_5844). Author tests remain
+grouped until the remaining
+V5.8 issues are implemented; this is not a complete-version acceptance claim.
 
 ## 5.8.43 - Household work during absence (#502)
 

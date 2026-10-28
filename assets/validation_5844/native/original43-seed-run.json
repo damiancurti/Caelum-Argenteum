@@ -1,0 +1,66 @@
+﻿{
+    "label":  "original43-seed",
+    "runtime":  "prior43",
+    "started_utc":  "2026-10-28T13:54:09.8512351Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "F0D9AAB75D729FEF7EA66E9C94586F296ACF4E628DA4A1E57CB15A551B2BFCFB",
+    "addon_sha256":  "F2BA9A18F8C6CBFC33FC3C7489FF9D668458925B6DBA3FB434C9B00D91CCDB0D",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\\prior43\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\\legacy-checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\\original43-seed.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "410",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\\original43-seed.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "MAP01",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-decor-work\\build\\issue410-decor\\priorseed.cfg\""
+                  ],
+    "command_script":  "wait 210; netevent ca410ds_priorseed; wait 10; save decor-prior43; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  43684,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-28T13:54:24.9618780Z"
+}

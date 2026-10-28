@@ -101,6 +101,7 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        if(Subject is 'CaelumDecorBody'){Actions=L(reachable?"CA_DECOR_HINT":"CA_TARGET_APPROACH");return;}
         let chest=CaelumStashChest(Subject);
         let door=CaelumSlidingDoorLeaf(Subject);
         let house=CaelumHousePortal(Subject);

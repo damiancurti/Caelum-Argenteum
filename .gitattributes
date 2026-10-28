@@ -1,9 +1,10 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
 # Preserve #410 decorative source/output hashes and native evidence.
 /assets/art_source/ornamental_decor/*.json text eol=lf
+/assets/art_source/ornamental_decor/GENERATED.json -text whitespace=cr-at-eol
 /assets/generators/generate_ornamental_decor.py text eol=lf
 /src/models/caelum/props/ornamental/*.obj text eol=lf
-/src/caelum/data/CaelumDecorData.zs text eol=lf
+/src/caelum/data/CaelumDecorData.zs -text whitespace=cr-at-eol
 /assets/validation_5844/** -text whitespace=cr-at-eol
 /assets/validation_5844/native/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 
