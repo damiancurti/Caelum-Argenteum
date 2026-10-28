@@ -1,0 +1,17 @@
+{
+  "issue": 410,
+  "tool": "Built-in image_gen",
+  "date": "2026-10-28",
+  "painting": "Create ONE transparent-background inventory game sprite for Caelum Argenteum, a dark fantasy FPS set in nineteenth-century Argentina. A rectangular landscape oil painting inside a carved dark warm wooden frame. Outer frame 72 cm wide by52 cm high,6cm moulding borders,3.5cm thickness; inner canvas60x40cm. Show front almost square-on, very slightly from above-right so its slim depth is readable, whole object centered with transparent margins. The painting must preserve the attached original reference composition: willow at LEFT, broad silvery Rio de la Plata water, low distant land and grey warm cloudy sky. The second reference chair is STYLE ONLY: readable hand-painted pixel-oriented timber shading, soft upper-left light, crisp broad pixel clusters, restrained earthy colors. Frame has stepped wooden mouldings and modest carved leaf accents, NO gold, NO easel or stand, NO glass glare, NO hooks outside silhouette. NOT a 3D render or photo, no cartoon outlines, no lettering, no floor/drop shadow, no background or checkerboard. Complete framed painting, genuine transparent alpha.",
+  "statue": "Asset type: ONE transparent-background inventory sprite for Caelum Argenteum, a hand-painted pixel-oriented dark fantasy game set in nineteenth-century Argentina. Original all-wood ornamental sculpture, no people, animals, heraldry or story symbols. Entire statue and square pedestal 85cm tall,35cm wide,35cm deep. Design: low stepped square plinth6cm tall; a turned narrow baluster stalk with simple rings supports a carved closed pinecone-shaped botanical finial, pointed and deeply layered acanthus leaves. Warm dark timber throughout, NO metal or gold, NO flowers of different colors, NO vase opening. Upper botanical ornament about34cm high and26cm wide; short square stepped cap below it and wood baluster base below that. Modest nineteenth-century decorative woodwork, crisp recognizable silhouette. Front-right slightly elevated three-quarter view, one full piece, wide transparent margins. Use attached chair as painted pixel-cluster wood STYLE and soft upper-left lighting reference ONLY, do not copy its chair shape. Broad carefully painted tonal clusters, muted warm wood, detailed carving understandable at small size, NOT a glossy 3D render or photograph, no contour outlines, no floor or cast shadow, no text, no checkerboard, genuine transparent alpha.",
+  "references": [
+    {
+      "path": "src/sprites/caelum/rest_furniture/CLICA0.png",
+      "role": "Owned painted pixel-oriented wood style only"
+    },
+    {
+      "path": "assets/art_source/ornamental_decor/river_landscape_source.png",
+      "role": "Original landscape composition for framed sprite"
+    }
+  ]
+}

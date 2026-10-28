@@ -1,0 +1,56 @@
+{
+  "issue": 410,
+  "variants": [
+    {
+      "name": "painting",
+      "mass_kg": 4.278195893469401,
+      "materials_kg": [
+        4.183040000000001,
+        0.003955893469400267,
+        0.0912
+      ],
+      "recipe_grams": [
+        4184,
+        4,
+        92
+      ],
+      "width_units": 23.04,
+      "height_units": 16.64,
+      "radius_units": 11.537764081484765
+    },
+    {
+      "name": "statue",
+      "mass_kg": 27.062258043038607,
+      "materials_kg": [
+        27.062258043038607,
+        0,
+        0
+      ],
+      "recipe_grams": [
+        27063,
+        0,
+        0
+      ],
+      "width_units": 11.2,
+      "height_units": 27.2,
+      "radius_units": 7.919595949289332
+    }
+  ],
+  "outputs": {
+    "src/models/caelum/props/ornamental/carved_wood.png": "467d97247a5f612e20bf15cdb539b26ff4eafaba48ce26a886c3c906e7f1f1b4",
+    "src/models/caelum/props/ornamental/ca_botanical_statue.obj": "e5bd86fd058d3071192a3f20f867579a71d3f5c9249e7577b642127dd7b9df8a",
+    "src/models/caelum/props/ornamental/ca_river_painting.obj": "03f9d296e54f6c1351020992f8bc7b790a31ebc703cc123f8889f560737f8200",
+    "src/models/caelum/props/ornamental/river_landscape.png": "d8b2c712ad38af0fbc1cbc8c770fc14f4520f71279698f3244237d3e822e3f67",
+    "src/sprites/caelum/ornamental/COAPA0.png": "c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f",
+    "src/sprites/caelum/ornamental/COASA0.png": "c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f",
+    "src/sprites/caelum/ornamental/COTPA0.png": "d8a9375033985104b26e3698c9d972735630242f4959878727f57d0d416fc839",
+    "src/sprites/caelum/ornamental/COTSA0.png": "4ccf8aafc50672af42db56f1d01197f30441f9a71f3fd6349e2e9a65b263f99f",
+    "src/caelum/data/CaelumDecorData.zs": "986c20cf4d1eadb33c5dc7538dd160181591f3173e565319a6f9f35a011e1078"
+  },
+  "sources": {
+    "painting_sprite_source.png": "61a6a7f7f3a9a69d8342b624782171f3546a0bf413f13ef8c9fa07b76c73ebb4",
+    "river_landscape_source.png": "77d7ab46949a44a43d94f7077377f85793b7fe925094e831d64b628dddfae73a",
+    "statue_sprite_source.png": "c463e984eab42d92826ce08deee1df9c2fde029aa45259202dfd1cf55fb7217f",
+    "wood_texture_source.png": "b3688233147a350d88709baa6304a341f9048e67dafd975c1dd7fc03ddb6b4d8"
+  }
+}
