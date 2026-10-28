@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.39** - 2026-10-27.
+Documentation version: **5.8.40** - 2026-10-28.
+
+## 5.8.40 - Portable dining sets (#410, 2026-10-28)
+
+Implemented the author's complete-set and real-content transport decisions.
+Four sets reuse accepted chairs/luxury geometry, add three documented table
+envelopes and painted inventory sprites, and enter normal crafting/trade.
+Native tests cover every seat, cargo ageing/cooling, ownership/weight, Box,
+nested chest travel and actual preceding-runtime saves/rollback. Detailed final
+counts and package provenance are retained in assets/validation_5840/report.json:
+1,201 current native assertions and22 original-runtime checks pass, with zero
+failures/static errors. All17,021 package files match source and14,049 earlier
+map/art members are unchanged. All26 chairs support the unchanged player body;
+native world/inventory captures passed agent visual inspection.
+The nested-chest probe exposed stale native floor/ceiling references; those
+warnings were rejected and the focused transport path corrected (CA-KP-182).
+Static, isolated engine and agent visual evidence do not imply author acceptance.
+CA410-DINING-SETS-01 remains pending with all earlier author checks; no full V5.8
+completion or manual handoff is claimed.
 
 ## 5.8.39 - Shared aim prerequisite (#415, 2026-10-27)
 

@@ -37,7 +37,7 @@ class CaelumDiningBlock : Actor
     CaelumDiningTable Table;
     override bool Used(Actor activator)
     { return Table!=null && CaelumUseGeometry.AimedAt(CaelumPlayer(activator), self)
-        && Table.OpenForUser(CaelumPlayer(activator)); }
+        && Table.Interact(CaelumPlayer(activator)); }
     override void Tick() { Super.Tick(); if(Table==null)Destroy(); }
     Default { Radius 24; Height 34; +SOLID +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE +CANPASS RenderStyle "None"; }
     States { Spawn: TNT1 A -1; Stop; }
@@ -65,7 +65,7 @@ class CaelumDiningTable : Actor
         RestockMansion();
     }
 
-    void RestockMansion()
+    virtual void RestockMansion()
     {
         if(level.MapName!="MAP01")return;
         MansionProvisionRevision=2;
@@ -105,6 +105,8 @@ class CaelumDiningTable : Actor
     virtual clearscope double WidthMU() { return 96; }
     virtual clearscope bool RoundTop() { return false; }
     virtual class<CaelumRestChair> ChairClass() { return 'CaelumRestChair'; }
+    virtual Actor ContentLocation(){return self;}
+    virtual bool Interact(CaelumPlayer user){return OpenForUser(user);}
     virtual double DisplayMargin() { return 40; }
     virtual double ServingScale() { return 1; }
 
@@ -159,7 +161,7 @@ class CaelumDiningTable : Actor
         return Sqrt(x*x+y*y);
     }
 
-    bool CanReach(CaelumPlayer user)
+    virtual bool CanReach(CaelumPlayer user)
     {
         return user!=null && user.player!=null && user.health>0 && user.CharacterCreationComplete
             && !user.CreationWizardOpen && Abs(user.Pos.Z-Pos.Z)<=8
@@ -197,7 +199,7 @@ class CaelumDiningTable : Actor
         return required>0 && available>=required;
     }
 
-    void RefreshDisplays()
+    virtual void RefreshDisplays()
     {
         // Un cambio real de stock permite reintentar los canales agotados.
         for(int p=0;p<MAXPLAYERS;p++)
@@ -298,7 +300,7 @@ class CaelumDiningTable : Actor
     override bool Used(Actor activator)
     {
         let user=CaelumPlayer(activator);
-        return CaelumUseGeometry.AimedAt(user, self) && OpenForUser(user);
+        return CaelumUseGeometry.AimedAt(user, self) && Interact(user);
     }
 
     bool OpenForUser(CaelumPlayer user)

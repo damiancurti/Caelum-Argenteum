@@ -1,0 +1,15 @@
+{
+  "generator_outputs": {
+    "src\\models\\caelum\\props\\dining_sets\\ca_dining_large.obj": "85e07db7ff2227483793636827ec6636955ab4a843a391b21f9e94845588e370",
+    "src\\models\\caelum\\props\\dining_sets\\ca_dining_normal.obj": "5b398f4144cb8b68a5fb23f6d97fceaa6b2eac86c9ab5a932c0e459b6be89920",
+    "src\\models\\caelum\\props\\dining_sets\\ca_dining_small.obj": "57b6fd96fe60c60b3b6062a471522b2272c10d9c8e1d22e97f98e1f819bd1596",
+    "src\\caelum\\data\\CaelumDiningSetData.zs": "f7d12d28441395fc28c25e10e086c3413baacabc452b913fb6e4f289620d5abe",
+    "assets\\art_source\\dining_sets\\GENERATED.json": "56acabf858d3106e02f82b24eda5ce1fb9b6bad144c375f690feea64c66a5070"
+  },
+  "sprite_hashes": {
+    "CD12.png": "133bdb4b0d1cc0380b863d9e761d8ea0e4ce9dd7c00da06789172c885700b456",
+    "CDLX.png": "8c5c4c4f67e88c0ad8b5ba2ebcb08d63245e776174dac0c8c1c01b1d967ebe52",
+    "CDS2.png": "42dc71b76d5b4c78e7df24890aa4784792373be1c0dc9c3eae39f8692ac3ec79",
+    "CDS6.png": "9c86c85cd58e7d2e8193ab137e3dbd5880cdc5739b375a1872815ea3db4fcb84"
+  }
+}

@@ -114,6 +114,14 @@ redistributed. Author acceptance remains pending under
 CA410-STUDY-ACQUISITION-01. This is scoped transport evidence, not a claim that
 all legacy collision caches or portable actors were audited.
 
+5.8.40 extends the same evidence to an ordinary carried chest containing a
+complete table assembly. Probe trial04-nestedhub reached its assertions but
+reported four out-of-bounds floor/ceiling-sector references. Clearing contacts
+and recomputing floor/ceiling references for the chest and each carried native
+inventory fixed that path; subsequent focused hub runs are warning-free.
+The previous desk/bookcase hub fixture is retained as an affected-path regression.
+See assets/validation_5840; this does not broaden the claim to unrelated actors.
+
 ## CA-KP-181 - Match vertical collision flags to furniture placement probes
 Status/evidence: RESOLVED-VERIFIED (isolated native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27

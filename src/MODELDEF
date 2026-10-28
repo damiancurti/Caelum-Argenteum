@@ -4988,3 +4988,47 @@ Model CaelumPortableReadingShelf
     DontCullBackFaces
     FrameIndex CBOO A 0 0
 }
+
+Model CaelumPortableSmallTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_small.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableNormalTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_normal.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableLargeTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_large.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableLuxuryTable
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_table.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}

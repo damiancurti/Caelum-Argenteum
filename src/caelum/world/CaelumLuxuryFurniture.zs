@@ -46,6 +46,7 @@ class CaelumLuxuryTable : CaelumDiningTable
     override double DisplayMargin(){return CaelumLuxuryData.SERVING_DIAMETER*ServingScale();}
     // Una pieza fabricada no crea provisiones ni agua al aparecer en la mansión.
     override void SyncLocalDay(int localDay){}
+    override void RestockMansion(){}
     override int ForecastDailyTarget(){return 0;}
     override void PostBeginPlay()
     {

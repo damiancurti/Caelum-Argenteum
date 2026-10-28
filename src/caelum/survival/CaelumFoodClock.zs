@@ -98,6 +98,7 @@ class CaelumFoodClock : Thinker
     Actor Location()
     {
         Actor body=Item.Owner!=null?Item.Owner:Actor(Item);
+        let table=CaelumDiningTable(body);if(table!=null)body=table.ContentLocation();
         let chest=CaelumStashChest(body);
         if(chest!=null && chest.Cargo!=null && chest.Cargo.Owner!=null)body=chest.Cargo.Owner;
         return body;

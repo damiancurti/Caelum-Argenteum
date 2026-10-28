@@ -1,8 +1,8 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.39** - 2026-10-27.
+Documentation version: **5.8.40** - 2026-10-28.
 
-## Dining set artwork (#410, prepared for 5.8.40)
+## 5.8.40 - Dining set artwork (#410)
 
 Three original deterministic wooden table meshes use documented nineteenth-century
 envelopes: round 1.04 m diameter / 0.74 m high; ordinary 1.702 x 0.883 x 0.711 m;
@@ -19,6 +19,11 @@ directory; CDS2A0/CDS6A0/CD12A0/CDLXA0 copy the selected pixels and alpha unchan
 The twelve-chair image was corrected from an initial ten-chair draft before use.
 Native inventory inspection confirms transparent silhouettes, localized labels
 and mass displays. This is agent visual review; author acceptance stays pending.
+
+assets/validation_5840 retains native world/inventory views,1,201 current PASS
+and22 original-runtime checks, deterministic model/data hashes and exact source
+packaging checks. No engine binaries, IWADs or compiled diagnostic packages are
+included in the delivery. See report.json for boundaries and rollback evidence.
 
 ## 5.8.39 - Aim validation evidence (#415)
 

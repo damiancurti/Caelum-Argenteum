@@ -524,11 +524,18 @@ class CaelumWaterContainer : CaelumConsumableItem
     {
         Super.Tick();
         if(Owner is 'CaelumPlayer' || Owner is 'CaelumCampFire' || level.maptime%TICRATE!=0)return;
+        SyncAmbientTemperature();
+    }
+    void SyncAmbientTemperature()
+    {
         let world=CaelumThermalWorld.Get();
         if(world==null || world.ReferenceClock==null || world.ReferenceWeather==null)return;
         let weather=world.ReferenceWeather;
         if(weather.Outside==null || !weather.Outside.Available)return;
         Actor body=Owner;if(body==null)body=self;
+        let table=CaelumDiningTable(body);if(table!=null)body=table.ContentLocation();
+        let carrier=CaelumPlayer(body);
+        if(carrier!=null){AdvanceTemperature(carrier,0);return;}
         int shelter=CaelumWeatherRules.OPEN;
         if(weather.Profile==CaelumWeatherRules.PROFILE_LIMBO)shelter=CaelumWeatherRules.LIMBO;
         else if(CaelumThermalShelter.Roof(body))shelter=weather.Profile>=2 && weather.Profile<=4

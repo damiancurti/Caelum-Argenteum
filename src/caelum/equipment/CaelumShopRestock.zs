@@ -21,6 +21,7 @@ class CaelumShopProduct : Object play
     }
     bool Matches(Inventory item)
     {
+        let dining=CaelumDiningSetItem(item);if(dining!=null && dining.HasBody())return false;
         if(CaelumStorageFurnitureData.IsItem(item) && CaelumContaminationStorage.Value(item)>0)return false;
         if(item is 'CaelumCampPot' && CaelumCampPot(item).WaterLiters>0)return false;
         let mate=CaelumMateItem(item);

@@ -1,6 +1,58 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.39** - 2026-10-27.
+Documentation version: **5.8.40** - 2026-10-28.
+
+## 5.8.40 - Portable complete dining sets (#410)
+
+The author approved complete table-and-chair sets and transporting actual food
+and containers on the tabletop. Four new variants preserve the existing table
+capacities and the existing chair rest/recovery rules:
+
+| Set | Chairs | Item piles | Empty set kg | Wood / iron / cotton-cloth grams |
+| --- | ---: | ---: | ---: | --- |
+| Small round | 2 | 4 | 51.315146 | 51,318 / 0 / 0 |
+| Ordinary | 6 | 18 | 99.531929 | 99,402 / 136 / 0 |
+| Long | 12 | 60 | 179.460431 | 179,336 / 136 / 0 |
+| Luxury | 6 | 18 | 366.236540 | 361,936 / 3,002 / 1,308 |
+
+These are calculated complete-set masses, not storage limits. Ingredient grams
+round each constructed component upward; physical weight retains unrounded
+volumes. DATA/GENERATED.json in assets/art_source/dining_sets document period
+envelopes, constructed members, densities and reused chairs. The author delegated
+these calculations. Small/ordinary/long table envelopes are respectively
+1.04 m diameter x 0.74 m high, 1.702 x 0.883 x 0.711 m and
+3.105 x 0.845 x 0.699 m; the existing luxury model is reused. Runtime collision
+and seat spacing allow the unchanged full-size player body and face each sitter
+toward the tabletop. They do not alter the character's physical dimensions.
+
+Use places the inventory set on permitted stable, clear ground. Existing
+furniture permissions, ownership, reach, doorway checks and full assembly
+collision apply. Normal table use opens its existing menu; crouch+Use carries
+the owned set only when all seats are unoccupied and total weight fits. Failed
+placement preserves the item. New sets are empty and receive no mansion food
+or bottle replenishment. The existing luxury table's no-provision rule also
+applies to withdrawal-triggered restocking.
+
+Packing preserves the actual actors, chairs and per-pile inventories, rather
+than reconstructing copies. Item weight includes contents; food lot age and
+water volume, quality and temperature remain authoritative. Food ages even in
+the Box and follows its carrier/storage climate. Packed water continues cooling
+against that location. Environmental exposure closes before packing and resumes
+when deployed; packed companion geometry has no world collision or exposure.
+Objects carried inside an ordinary chest follow the same native hub transport.
+Obsolete map contacts are cleared and floor/ceiling references recomputed after
+travel. Used assemblies retain their own shop identity instead of merging with
+anonymous newly manufactured stock.
+
+The existing furniture crafting rules apply: learned recipes, normal complexity,
+current stations, Dexterity/waste and material-derived price plus25% before shop
+margins. Provisions stocks three of each set; the library stocks ten of each
+recipe; restocking follows manufacture. Furniture revision5 appends four stock
+entries without refilling earlier ones. Recipe-book revision23 preserves the
+eight earlier furniture recipes and initializes only the four additions as
+unknown; migration is idempotent. Existing map geometry and fixed tables keep
+their classes. The prior runtime/save remains a reversible rollback option;
+newly saved data containing these classes requires this version or later.
 
 ## 5.8.39 - Shared aim and mean-hit estimates (#415)
 
