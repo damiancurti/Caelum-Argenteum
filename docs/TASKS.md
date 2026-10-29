@@ -91,6 +91,13 @@ catch-up latency or complete the remaining world/event adapters.
 No author handoff or released 5.8.51 is claimed for this checkpoint.
 Continue this issue to completion; #502 patch50 is already delivered in PR544.
 
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. Production chronological dispatch and #417 registration remain
+pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
 The theft transfer and saved-clock foundation now passes 37 native assertions:
 highest-value fitting whole stacks, actual owner transfer, native/paired keys,
 failed/replayed transfers, retained food lots/liquids/equipment, hourly deadlines,

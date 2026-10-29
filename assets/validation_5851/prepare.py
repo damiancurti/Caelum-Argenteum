@@ -88,3 +88,4 @@ for case in ["quiet", "quietsave", "weather"]:
 (W/"theftload.cfg").write_text("wait 1; netevent ca415t_load; wait 1; quit\n")
 (W/"theftplan.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_plan; save theft-plan; wait 10; quit\n")
 (W/"theftplanload.cfg").write_text("wait 1; netevent ca415t_planload; wait 1; quit\n")
+(W/"theftaccess.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_access; wait 10; quit\n")

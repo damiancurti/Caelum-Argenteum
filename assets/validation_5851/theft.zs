@@ -1,3 +1,8 @@
+class CA415TheftObstacle : Actor
+{
+    Default { Radius 48; Height 128; +SOLID +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
 class CA415TheftChecks : EventHandler
 {
     CaelumCombatActor Thief;
@@ -110,13 +115,61 @@ class CA415TheftChecks : EventHandler
         Check(Plan.Step(11800) && Plan.Attempts==2 && Plan.Receipts.Size()==1,"death before the next hour prevents another theft without replaying time");
         Check(Plan.Finish(11801),"dead thief finishes reconciliation without losing prior stolen possessions");
     }
+    void Access()
+    {
+        let query=new('CaelumTheftAccess');query.Prepare(Thief);
+        vector3 original=Thief.Pos;int count=Thief.Inv!=null?Thief.Inv.Amount:0;
+        double started=MSTimeF();
+        Check(query.Reachable(FirstChest),"native floor and collision query finds an unobstructed container");
+        FirstChest.SetOrigin(Thief.Pos+(256,0,0),false);FirstChest.FindFloorCeiling();
+        let obstruction=Actor.Spawn('CA415TheftObstacle',Thief.Pos+(128,0,0),NO_REPLACE);
+        Check(query.Reachable(FirstChest),"bounded native search finds a route around a blocking furnishing");
+        FirstChest.SetOrigin(Thief.Pos+(256,0,512),false);
+        Check(!query.Reachable(FirstChest),"an unreachable elevated container is not authorized through XY distance");
+        FirstChest.SetOrigin(Thief.Pos+(256,0,0),false);
+        obstruction.A_SetSize(96,256);obstruction.SetOrigin(FirstChest.Pos,false);
+        Check(!query.Reachable(FirstChest),"solid enclosure blocks both body access and the final reach trace");
+        Check(Thief.Pos==original && (Thief.Inv==null || Thief.Inv.Amount==count),"route queries neither move the thief nor consume inventory");
+        let leaf=CaelumSlidingDoorLeaf(Actor.Spawn('CaelumSlidingDoorLeaf',Thief.Pos+(0,256,0),NO_REPLACE));
+        leaf.args[3]=CaelumConstants.LOCK_CAELUM_SILVER_STASH;query.Doors.Push(leaf);
+        Check(!query.DoorAllowed(leaf),"missing native door key denies virtual opening");
+        Put('CaelumSilverKey',Thief,1);
+        Check(query.DoorAllowed(leaf) && !leaf.DoorRequested,"matching native key allows querying without opening the real door");
+        leaf.RuloArenaLocked=true;
+        Check(!query.DoorAllowed(leaf),"arena/story door restrictions remain authoritative despite owning the key");
+        Console.Printf("CA415T TIMING access_ms=%.6f native_points=%d",MSTimeF()-started,query.Checks);
+        query.Close();
+        Check(query.Probe==null && query.FloorProbe==null,"temporary access probes are released after the query");
+    }
+    void NativeDoors()
+    {
+        let events=CaelumPolyDoorEvents.Get();let leaf=events!=null && events.Leaves.Size()>1?events.Leaves[1]:null;
+        Check(leaf!=null && leaf.NativeFaces.Size()==4,"owned diagnostic fixture has the real four native PolyObject faces");
+        if(leaf==null)return;
+        Thief.SetOrigin((0,-96,0),false);Thief.FindFloorCeiling();FirstChest.SetOrigin((0,96,0),false);
+        leaf.args[3]=CaelumConstants.LOCK_CAELUM_SILVER_STASH;
+        let query=new('CaelumTheftAccess');query.Prepare(Thief);double floor;
+        Check(!query.Point((0,-32,0),(0,0),floor),"native closed face rejects passage without its actual key");
+        Put('CaelumSilverKey',Thief,1);
+        Check(query.OpenableFace(leaf.NativeFaces[0]),"native face identity resolves to the authorized leaf");
+        Check(query.Point((0,-32,0),(0,0),floor) && floor==0,"keyed native doorway admits a virtual body using the actual floor");
+        FCheckPosition fit;
+        Check(!Thief.CheckPosition((0,0),false,fit) && leaf.SlideProgress==0 && !leaf.DoorRequested,
+            "virtual passage does not mutate the closed native geometry or start its motor");
+        leaf.RuloArenaLocked=true;
+        Check(!query.Point((0,-32,0),(0,0),floor),"native arena restriction blocks virtual passage even with its key");
+        leaf.RuloArenaLocked=false;
+        Check(!query.Point((-480,-100,0),(-512,-100),floor),"ordinary world walls cannot use the door exception");
+        query.Close();
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=="ca415t_prepare"){Prepare(CaelumPlayer(players[consoleplayer].mo));return;}
         Passed=Failed=0;
         if(e.Name=="ca415t_transfer")Transfers();else if(e.Name=="ca415t_load")Loaded();
         else if(e.Name=="ca415t_plan")Planned(CaelumPlayer(players[consoleplayer].mo));
-        else if(e.Name=="ca415t_planload")PlanLoaded();else return;
+        else if(e.Name=="ca415t_planload")PlanLoaded();else if(e.Name=="ca415t_access")Access();
+        else if(e.Name=="ca415t_doors")NativeDoors();else return;
         Console.Printf("CA415T RESULT passed=%d failed=%d",Passed,Failed);
     }
 }

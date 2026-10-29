@@ -11,6 +11,13 @@ existing event is due at that tracking boundary. The one-time unvisited-city
 flag defaults false for these saves. The original file remains a reversible
 input; a new file stores the upgraded state.
 
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. Production chronological dispatch and #417 registration remain
+pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
 The theft transaction retains actual whole inventory instances, including food
 lots, liquid volume/temperature/quality, equipment identity and wear. It selects
 the highest positive commercial stack value that fits the thief's existing

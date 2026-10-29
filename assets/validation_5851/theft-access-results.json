@@ -1,0 +1,24 @@
+{
+  "issue": 415,
+  "date": "2026-10-29",
+  "runs": [
+    {
+      "label": "theft-access04",
+      "assertions": 9,
+      "runtime_sha256": "30329607150590158c96a5f879d30ca212a4c462da04f77762cf33f1c96ae87c"
+    },
+    {
+      "label": "theft-native-doors01",
+      "assertions": 7,
+      "runtime_sha256": "30329607150590158c96a5f879d30ca212a4c462da04f77762cf33f1c96ae87c"
+    }
+  ],
+  "assertions": 16,
+  "qualification": "Bounded physical-access helper, not completed theft dispatch. Ordinary walls, actor obstacles, elevations, native/paired door permission and native PolyObject geometry tested without moving the thief or opening the real door. Exhausted or unproved paths deny access. No author acceptance.",
+  "measurement": {
+    "fixture": "theft-access04",
+    "queries": 1679,
+    "elapsed_ms": 1.4367,
+    "population": "single thief and isolated obstacles; not a whole-region performance claim"
+  }
+}

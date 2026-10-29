@@ -14,6 +14,13 @@ runtime. Evidence: `assets/validation_5851/legacy-results.json`. The author has
 returned; temporary keep-awake was released. Manual checks remain grouped for
 the completed version, and no acceptance entry was removed.
 
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. Production chronological dispatch and #417 registration remain
+pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
 Added actual whole-stack theft transactions and a saved explicit hourly plan;
 37 native assertions cover commercial selection/capacity, native and paired
 locks, ownership, food/water/equipment state, saved deadlines and victim-only
