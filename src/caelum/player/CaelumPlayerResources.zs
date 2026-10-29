@@ -622,7 +622,7 @@ class CaelumPlayerResources : Object play
 
         double recoveredAir = Min(
             user.DerivedStats.AirRegenerationPerSecond
-                * user.HealthPerformanceMultiplier * restFactor * CaelumBreathing.ActorFactor(user) / TICRATE,
+                * user.HealthPerformanceMultiplier * restFactor * CaelumBreathing.ActorFactor(user) * CaelumAltitudeService.Recovery(user) / TICRATE,
             user.DerivedStats.MaximumAir - user.CurrentAir
         );
         recoveredAir = Min(recoveredAir, affordableAir);

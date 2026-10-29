@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
 
 ## 5.7.14 - Mate vessels and inventory sprites (#472)
 

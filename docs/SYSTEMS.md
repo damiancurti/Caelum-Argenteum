@@ -1,6 +1,56 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
+
+## Altitude and acclimatization (#413, 5.8.1)
+
+Author-approved on 2026-10-23. Use NASA Glenn's piecewise standard atmosphere
+(metric equations), normalized to sea-level pressure: R = P(h)/P(0). Below the
+reference sea level R remains 1; there is no altitude bonus. Initial coastal map
+datum is 0 m for Barracas al Sud, Buenos Aires and Mar del Plata. Add body Z / 32
+map units per metre. The mansion's Limbo atmosphere stays neutral irrespective
+of physical height. Future elevated maps declare `user_ca_altitude_base_m` on
+sector zero; a saved map-local controller reads that geographical datum once.
+This metadata avoids GZDoom's +/-32,768-unit UDMF coordinate limit; it does not
+move any geometry or change existing campaign sectors.
+
+Unadapted humans, Beast Men and goblins recover Air at R times their ordinary
+rate and pay 1/R times exertion. Caelith halve each penalty relative to 1, also
+for NPCs. At 2,000 m the reference is approximately 79% / 1.27x; at 4,000 m,
+61% / 1.64x. Apply the effort modifier exactly once after existing load/heat/
+charge modifiers, before Supernatural Breathing's existing Anima substitution.
+Underwater deprivation, surfacing debt, reserve capacities and consumable
+recovery retain their accepted rules. Atmospheric tolerance does not grant
+underwater immunity. No new Tarot/equipment/breathing ability is enabled.
+
+Persistent adaptation A approaches the current pressure deficit D = 1-R.
+At a stable altitude acquisition interpolates linearly over five game days,
+divided by the existing climate Resilience multiplier
+`1 + CalculateType2Percent(Resilience)/100` (1 at zero, 2 at 100: 2.5 days). The method has a historical name; its current
+implementation uses GrowthRules.Bonus family 1, exactly as climate does. Excess after
+descent decays over fourteen days. Resilience accelerates acquisition without
+increasing the approved cap or shortening retention. Changing altitude or
+Resilience starts interpolation from the current A. Compensation is
+`c = 0.25 * clamp(A/D, 0, 1)`, zero when D is zero. With racial penalty scale S
+(0.5 for Caelith, otherwise 1), recovery is `1-D*S*(1-c)` and effort is
+`1+(1/R-1)*S*(1-c)`. Thus no amount of residence removes more than 25% of the
+racial altitude penalty.
+
+Game-clock advancement, including waiting and travel, counts once. Closing the
+game adds no time. Players carry revision-1 adaptation in their existing
+persistent record; NPCs own the same state and use the shared reference clock,
+including elapsed hub absence at their last altitude. Death stops the exposure
+clock until the body resumes. Older saves begin with zero adaptation and no
+retroactive exposure; initialization is idempotent. Forecasts own independent
+copies and commit only elapsed accepted travel. Existing routes use the origin
+reference during their projection; future mountain routes need authored altitude
+profiles under #416. The altitude service performs no global actor scans;
+stationary bodies reuse pressure and attribute samples.
+
+Physical sources: [NASA Glenn metric atmosphere](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/earth-atmosphere-equation-metric/)
+and [CDC high-altitude travel](https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html).
+The five-day/25%/fourteen-day and fantasy-race values are approved game design,
+not medical predictions. Evidence and limitations: assets/validation_581/RESULTS.md.
 
 ## Connected-water feasibility boundary (#414, 5.8.0)
 

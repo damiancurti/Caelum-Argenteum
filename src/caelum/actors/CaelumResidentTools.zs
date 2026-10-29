@@ -166,7 +166,7 @@ class CaelumResidentTools : Object play
         int catalogue=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(Melee.ItemType);
         double cost=secondary ? CaelumWeaponCatalogue.GetSecondaryAirCost(catalogue)
             : CaelumWeaponCatalogue.GetPrimaryAirCost(catalogue);
-        return Owner.GetEffectiveAttackAir(cost)*CaelumThermalEffects.HeatCost(Owner)
+        return Owner.GetEffectiveAttackAir(cost)*CaelumThermalEffects.HeatCost(Owner)*CaelumAltitudeService.Effort(Owner)
             *(charged ? CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER : 1);
     }
 

@@ -28,7 +28,10 @@ class CaelumAirPayment : Object play
     }
 
     static bool CanAfford(CaelumPlayer user,double airCost)
-    {return CanSubstitute(user,airCost) || user.CurrentAir>=Max(0.0,airCost);}
+    {
+        airCost=Max(0.0,airCost)*CaelumAltitudeService.Effort(user);
+        return CanSubstitute(user,airCost) || user.CurrentAir>=airCost;
+    }
 
     static bool PayWithAnima(CaelumPlayer user,double airCost)
     {
@@ -41,6 +44,7 @@ class CaelumAirPayment : Object play
     // Devuelve solamente el Aire retirado; la deuda submarina no incluye Ánima.
     static double Spend(CaelumPlayer user,double airCost)
     {
+        airCost=Max(0.0,airCost)*CaelumAltitudeService.Effort(user);
         if(PayWithAnima(user,airCost))return 0;
         double removed=Min(Max(0.0,user.CurrentAir),Max(0.0,airCost));
         user.CurrentAir=Max(0.0,user.CurrentAir-removed);

@@ -56,6 +56,7 @@ class CaelumPersistentCharacterState : Inventory
     CaelumCharacterAllocation IdentityAllocation;
     // #130: estado aditivo y viajero; no sustituye recursos ni equipo aceptado.
     CaelumThermalState ThermalState;
+    CaelumAltitudeState AltitudeState;
     // V4.32.0b convierte la Caja Magica en una recompensa persistente. Los
     // perfiles confirmados anteriores a esta version la conservan durante la
     // migracion; los personajes nuevos quedan marcados explicitamente sin ella.

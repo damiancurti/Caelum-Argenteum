@@ -150,6 +150,7 @@ class CaelumWorldClock : Inventory
 // No conserva una copia del reloj: siempre consulta el Inventory viajero.
 class CaelumWorldClockTicker : StaticEventHandler
 {
+    CaelumPhysicsMapState AltitudeMap;
     // El handler ya existe en saves anteriores; su nueva implementación
     // alcanza también esos mapas sin depender de registrar otro handler.
     override void WorldLoaded(WorldEvent e)

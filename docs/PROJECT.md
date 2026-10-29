@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.0** — 2026-10-23.
+Documentation version: **5.8.1** — 2026-10-23.
+
+## 5.8.1 - Altitude and acclimatization (#413)
+
+Implements the approved pressure/Air model, racial tolerance and persistent
+Resilience-scaled adaptation. Players, NPCs and wait/travel projections share
+the same rules; underwater deprivation remains separate. Coastal references
+start at zero and Limbo is neutral. Additive revision-1 state avoids geometry or
+inventory migration. 67 native assertions and static/package checks pass; player/NPC saves, hub
+return and pre-feature rollback are verified. CA413-01 passed author acceptance
+on 2026-10-23. Evidence: assets/validation_581/RESULTS.md. This does not complete V5.8.
 
 ## 5.8.0 - Connected-water feasibility (#414)
 

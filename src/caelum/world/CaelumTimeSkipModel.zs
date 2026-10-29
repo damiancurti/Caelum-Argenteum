@@ -63,6 +63,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
         Scale=CaelumWorldClock.MapTimeScale(level.MapName);
+        AltitudeSecondsPerTic*=Scale;
         HungerLoss*=Scale;ThirstLoss*=Scale;SleepLoss*=Scale;
         Limbo=CaelumWorldCatalogue.IsLimboMap(level.MapName);Divisor=Limbo?20:1;
         let clock=CaelumWorldClock.Get(user);
