@@ -33,13 +33,14 @@ if args.probe:
     print(f'Probe: {len(changed)} current source members')
 arena = (R / 'assets/validation_5826/away.wad').read_bytes()
 pack(W / 'checks.pk3', {
-    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n#include "calendar.zs"\n#include "work.zs"\n#include "arrival.zs"\n',
+    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n#include "calendar.zs"\n#include "work.zs"\n#include "arrival.zs"\n#include "quiet.zs"\n',
     'checks.zs': (H / 'checks.zs').read_bytes(),
     'flights.zs': (H / 'flights.zs').read_bytes(),
     'calendar.zs': (H / 'calendar.zs').read_bytes(),
     'work.zs': (H / 'work.zs').read_bytes(),
     'arrival.zs': (H / 'arrival.zs').read_bytes(),
-    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks","CA415CalendarChecks","CA415WorkChecks","CA415ArrivalHarness"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap MAP03 "Scheduled city" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
+    'quiet.zs': (H / 'quiet.zs').read_bytes(),
+    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks","CA415CalendarChecks","CA415WorkChecks","CA415ArrivalHarness","CA415QuietChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap MAP03 "Scheduled city" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
     'maps/MAP01.wad': arena,
     'maps/CABS415B.wad': arena,
 })
@@ -59,6 +60,7 @@ print('Prepared private fixtures')
 (W/'flightsave.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flightsave; save flight-pending; wait 10; quit\n')
 (W/'flightload.cfg').write_text('wait 1; netevent ca415r_flightload; wait 10; quit\n')
 (W/'area.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_area; wait 10; quit\n')
+(W/'spatial.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_spatial; wait 10; quit\n')
 (W/'flighttravel.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flighttravel; netevent ca415r_away; wait 35; netevent ca415r_home; wait 2; netevent ca415_await 4\n')
 (W/'terminal.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_terminal; wait 10; quit\n')
 (W/'sleep.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_sleep; wait 10; quit\n')
@@ -76,3 +78,8 @@ print('Prepared private fixtures')
 (W/'hub.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_persistence; netevent ca415r_away; wait 35; netevent ca415r_home; wait 2; netevent ca415_await 1\n')
 (W/'resident.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_residentsetup; netevent ca415r_away; wait 35; netevent ca415r_home; wait 2; netevent ca415_await 2\n')
 (W/'residentdeath.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_residentweak; netevent ca415r_away; wait 35; netevent ca415r_home; wait 2; netevent ca415_await 3\n')
+
+for case in ["quiet", "quietsave", "weather"]:
+    suffix="save quiet-partial; " if case=="quietsave" else ""
+    (W/(case+".cfg")).write_text(f"wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; {suffix}wait 10; quit\n")
+(W/"quietload.cfg").write_text("wait 1; netevent ca415r_quietload; wait 10; quit\n")

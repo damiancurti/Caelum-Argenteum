@@ -53,6 +53,7 @@ pack(WORK / ('flightperformance.pk3' if args.flights else 'performance.pk3'), {
 })
 (WORK / 'perf.cfg').write_text('wait 200; quit\n', encoding='ascii')
 (WORK / 'perfstaged.cfg').write_text('wait 1; netevent ca415perf_staged\n', encoding='ascii')
+(WORK / 'perfarea.cfg').write_text('wait 1; netevent ca415perf_area; wait 199; quit\n', encoding='ascii')
 if args.baseline:
     changed = subprocess.check_output(['git', 'diff', args.baseline,
         '--name-only', '--', 'src'], cwd=ROOT, text=True).splitlines()

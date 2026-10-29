@@ -11,6 +11,12 @@ clean static validation and all 17,040 package members matching source. Evidence
 assets/validation_5850. No new art or balance calibration. Manual corroboration
 stays grouped until all V5.8 work is ready; #415-417 remain unfinished.
 
+The unreleased #415 branch has 335 distinct native scenario assertions. Quiet
+physiology, spatial area queries, shared weather and pipelined loading requests
+reduce catch-up work while preserving native clocks. Real city-day loading still
+takes about 132 seconds including startup; legacy history, theft and final
+performance validation remain open. See TASKS and validation_5851.
+
 ## 5.8.49 / #502 - Physical materials and food integration
 
 Documented surfaces cover the physical material catalogue and prepared food.

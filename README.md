@@ -23,8 +23,13 @@ Reopening a region now uses saved, bounded round phases behind a paused loading
 menu. Partial save/load preserves pending simultaneous damage and resources;
 native clocks remain paused until the work finishes. This prevents long single
 callbacks, but total processing latency for long absences still needs reduction.
-The catch-up performance diagnostic and its remaining stalls are documented in
-the same evidence directory; this checkpoint is not a playability claim.
+Quiet intervals now use the existing NPC physiology boundary, and the loading
+menu pipelines validated requests. The 1,000/600 diagnostic's quiet hour falls
+from about 52 seconds to 1.45 seconds of loading, with matching recorded outcomes.
+Regional weather samples are shared without sharing private inventory forecasts.
+An actual one-day city return still takes about 132 seconds including startup;
+further long-absence work remains. Evidence is in the same directory; PresentMon
+capture was denied by Windows, so this checkpoint is not a presentation-FPS claim.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 

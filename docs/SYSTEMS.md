@@ -26,6 +26,17 @@ ground slam requests circular distance between actor origins. Both retain native
 radius-damage factors and immunity. Active gameplay formulas are unchanged.
 An encounter with no active bodies, available reserves, pending flights or
 machine work can advance empty time directly; quiet living bodies still progress.
+When no opponent, pending flight, machine action, reserve admission or transient
+combat effect can interact, quiet bodies use the existing absent-NPC boundary of
+one active second (twenty world seconds outdoors), limited by remaining elapsed
+time and weather-minute boundaries. The final sub-second remainder is retained.
+Elemental/support/healing doses, sleep, restraint and racial breath keep fine
+ordering. The shared thermal integrator retains its own internal steps. This
+does not lengthen the approved one-world-second combat rounds.
+Regional weather is cached by profile, region, seed and shelter; personal seal
+deltas remain individual. This transient cache is rebuilt after loading and
+never aliases private food forecasts. Area candidate queries retain the native
+square versus circular footprint before exact vertical/falloff evaluation.
 Sleep and bolas retain their current active-time expiry and cutting rules.
 Sleep drains Lucidity only while asleep; the awake remainder uses normal
 recovery. Mean damaging-hit probabilities accumulate toward the existing wake
@@ -42,8 +53,8 @@ original Life/inventory, remains parked at its recorded door during the summary,
 and resumes native movement only after safe placement. Bodies are not rebuilt
 from equipment templates when they already exist. The victory journal event
 uses the actual concluding round timestamp; discovery remains regional.
-This is unreleased work; first-arrival/legacy scheduling, theft and V5.8 are
-still incomplete.
+Fresh first arrival also starts at the authored deadline. This is unreleased
+work; legacy history without a recorded snapshot, theft and V5.8 remain incomplete.
 
 ## 5.8.50 - Physical contact coverage (#502)
 

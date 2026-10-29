@@ -7,30 +7,38 @@ class CA415Performance : EventHandler
     ui Array<double> Frames;
     ui double Previous;
     ui bool Reported;
-    bool Staged,Running,WorkPending;
+    bool Staged,Running,WorkPending,AreaOnly;
     double Deadline,Started,Duration;
     int Pulses,Serial;
+    double PhaseMillis[21];
+    int PhaseCount[21];
     void Stage(double seconds)
     {
         Deadline=Encounter.AbsentBattle.Stamp+seconds;Duration=seconds;Started=MSTimeF();
         Running=true;WorkPending=false;Pulses=0;Serial++;Menu.SetMenu('CA415PerformanceMenu');
+        for(int i=0;i<21;i++){PhaseMillis[i]=0;PhaseCount[i]=0;}
     }
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=="ca415perf_staged"){Staged=true;return;}
+        if(e.Name=="ca415perf_area"){AreaOnly=true;return;}
         if(e.Name!="ca415perf_step" || !Running || e.Args[0]!=Serial || e.Args[1]!=Pulses)return;
         let battle=Encounter.AbsentBattle;double pulse=MSTimeF();Pulses++;
         do
         {
             if(WorkPending)
             {
-                if(battle.Work.Advance(CaelumAbsentArrival.ROW_SLICE))
+                int phase=battle.Work.Phase;double begin=MSTimeF();
+                bool complete=battle.Work.Advance(CaelumAbsentArrival.ROW_SLICE);
+                PhaseMillis[phase]+=MSTimeF()-begin;PhaseCount[phase]++;
+                if(complete)
                 {battle.Stamp=battle.Work.End;WorkPending=false;}
             }
             else if(battle.Stamp<Deadline && !battle.Terminal())
             {
                 if(battle.Work==null)battle.Work=new('CaelumAbsentWork');
-                battle.Work.Begin(battle,battle.Stamp+1,1,true);WorkPending=true;
+                double span=battle.NextSpan(battle.Stamp,Deadline-battle.Stamp);
+                battle.Work.Begin(battle,battle.Stamp+span,span,true);WorkPending=true;
             }
             else {battle.Stamp=Deadline;battle.SimulationTime=Deadline;Running=false;break;}
         }while(MSTimeF()-pulse<CaelumAbsentArrival.PULSE_BUDGET_MS);
@@ -39,6 +47,8 @@ class CA415Performance : EventHandler
         {
             Console.Printf("CA415P TIMING staged_seconds=%.0f elapsed_ms=%.6f pulses=%d",Duration,MSTimeF()-Started,Pulses);
             Outcome(Duration==1?"first":Duration==60?"combat":"quiet");
+            for(int i=0;i<21;i++)if(PhaseCount[i]>0)
+                Console.Printf("CA415P PHASE seconds=%.0f phase=%d calls=%d elapsed_ms=%.6f",Duration,i,PhaseCount[i],PhaseMillis[i]);
         }
         EventHandler.SendInterfaceEvent(0,"ca415perf_ack");
     }
@@ -61,6 +71,27 @@ class CA415Performance : EventHandler
             shots+=row.Shots;
         }
         Console.Printf("CA415P OUTCOME %s life=%.9f anima=%.9f air=%.9f dirt=%.9f heat=%.9f shots=%d",stage,life,anima,air,dirt,heat,shots);
+    }
+    void AreaTiming()
+    {
+        let battle=Encounter.AbsentBattle;
+        let source=battle.Rows[0].Body;
+        let attack=new('CaelumAbsentAttack');attack.Kind=CaelumAbsentAttack.EXPLOSIVE;
+        attack.Area=128;attack.Damage=100;attack.Accuracy=1;attack.Critical=0;
+        attack.Essence=CaelumConstants.ESSENCE_EARTH;
+        vector3 origin=battle.Rows[800].Body.Pos+(0,0,32);
+        double expected=0,actual=0,begin=MSTimeF();
+        for(int repetition=0;repetition<128;repetition++)for(int i=0;i<battle.Rows.Size();i++)
+            expected+=attack.Splash(source,battle.Rows[i].Body,origin).Life;
+        double full=MSTimeF()-begin;begin=MSTimeF();int count=0;
+        for(int repetition=0;repetition<128;repetition++)
+        {
+            Array<CaelumAbsentCombatant> nearby;battle.Nearby(origin,attack.Area,nearby,true);count=nearby.Size();
+            for(int i=0;i<nearby.Size();i++)actual+=attack.Splash(source,nearby[i].Body,origin).Life;
+        }
+        Console.Printf("CA415P AREA rows=%d candidates=%d repeats=128 full_ms=%.6f local_ms=%.6f expected=%.9f actual=%.9f",
+            battle.Rows.Size(),count,full,MSTimeF()-begin,expected,actual);
+        Console.Printf("CA415P %s area query preserves total damage",Abs(expected-actual)<0.000001?"PASS":"FAIL");
     }
     override void RenderOverlay(RenderEvent e)
     {
@@ -98,8 +129,9 @@ class CA415Performance : EventHandler
             double begin=MSTimeF();
             Encounter.AbsentBattle=new('CaelumAbsentBattle');Encounter.AbsentBattle.Capture(Encounter,user);
             Console.Printf("CA415P TIMING capture_ms=%.6f rows=%d",MSTimeF()-begin,Encounter.AbsentBattle.Rows.Size());
+            if(AreaOnly)AreaTiming();
         }
-        if(level.maptime==106 || level.maptime==107)
+        if(!AreaOnly && (level.maptime==106 || level.maptime==107))
         {
             let battle=Encounter.AbsentBattle;
             double seconds=level.maptime==106?1:60;
@@ -109,7 +141,7 @@ class CA415Performance : EventHandler
             Console.Printf("CA415P TIMING world_seconds=%.0f active_scale=%.6f elapsed_ms=%.6f alive=%d rounds=%d",seconds,battle.ActiveScale,MSTimeF()-begin,alive,battle.Rounds);
             Outcome(level.maptime==106?"first":"combat");
         }
-        if(level.maptime==108)
+        if(!AreaOnly && level.maptime==108)
         {
             let battle=Encounter.AbsentBattle;
             // Diagnostic terminal state: retain only the surviving defending
@@ -126,13 +158,20 @@ class CA415Performance : EventHandler
 
 class CA415PerformanceMenu : ListMenu
 {
+    int RequestSerial,NextPulse;
+    bool RequestReady;
     override void Init(Menu parent,ListMenuDescriptor desc)
     {Super.Init(parent,desc);mParentMenu=null;menuactive=Menu.On;}
     override void Ticker()
     {
         menuactive=Menu.On;
         let test=CA415Performance(EventHandler.Find('CA415Performance'));
-        if(test!=null && test.Running)EventHandler.SendNetworkEvent("ca415perf_step",test.Serial,test.Pulses);
+        if(test==null || !test.Running)return;
+        if(!RequestReady || RequestSerial!=test.Serial)
+        {RequestReady=true;RequestSerial=test.Serial;NextPulse=test.Pulses;}
+        NextPulse=Max(NextPulse,test.Pulses);
+        if(NextPulse<=test.Pulses+1)
+        {EventHandler.SendNetworkEvent("ca415perf_step",test.Serial,NextPulse);NextPulse++;}
     }
     override void Drawer(){}
     override bool MenuEvent(int key,bool controller){return true;}

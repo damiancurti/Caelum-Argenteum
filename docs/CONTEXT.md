@@ -2,7 +2,9 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
-**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850;415-WIP255checks/416-417-pending.
+**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850;415-WIP335checks/416-417-pending.
+
+**#415:**WIP;quiet52->1.45s;city-day132s/slow;PR545/catchup-performance.json;author-deferred.
 
 **5.8.47-49/#502:** stack/vessel/physical-food exposure;validation_5847-49;49:1190+2PASS;generic-adapters/#415-417-pending.
 

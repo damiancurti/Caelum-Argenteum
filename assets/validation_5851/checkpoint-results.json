@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased eighth integration checkpoint; #415 NOT complete",
+  "status": "Unreleased ninth integration checkpoint; #415 NOT complete",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 255,
+  "native_distinct_assertions": 335,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -37,9 +37,14 @@
     "arrivalload": 6,
     "arrival": 1,
     "firstvisit": 5,
-    "arrivalguards": 3
+    "arrivalguards": 3,
+    "spatial": 25,
+    "quiet": 15,
+    "quietsave": 1,
+    "quietload": 4,
+    "weather": 35
   },
-  "runtime_sha256": "e6ec80b03ce8046b2574a21a8be5e22d686468e75f76b3610bbcc2112e11168e",
+  "runtime_sha256": "3a3a6b2dd5ad14a6f2a7c13282aab479ebde82d6013f717695d305d152428217",
   "source_overlay_members_verified": 32,
   "fixtures": [
     "checks.zs",
@@ -48,9 +53,11 @@
     "work.zs",
     "arrival.zs",
     "prepare.py",
-    "run_native.ps1"
+    "run_native.ps1",
+    "quiet.zs",
+    "report_catchup.py"
   ],
-  "batch": "integrated10 + firstvisit",
+  "batch": "integrated10 + firstvisit + quiet/weather focused regressions",
   "static_errors": 0,
   "remaining": [
     "Legacy/observed-household states without an earlier encounter snapshot; fresh unvisited cities now reconcile from the authored deadline",
@@ -59,6 +66,6 @@
     "Original-save regressions and completed canonical delivery; draft PR545 tracks ongoing work"
   ],
   "author": "Deferred until all V5.8 implementation is complete",
-  "performance": "arrival-performance.json: exact outcome parity and bounded renderer callbacks, separate total-latency limitation; prior comparisons retained",
-  "validation_reuse": "d602c3189 integrated10 remains applicable to the unchanged round/physiology kernel; firstvisit01, firstvisit-guards01, firstvisit-oldsave01 and firstvisit-calendarhub01 test the changed initialization and original field-default migration."
+  "performance": "catchup-performance.json: quiet and pipeline gains; actual city-day remains slow. PresentMon denied; no presented-FPS claim.",
+  "validation_reuse": "Prior native matrix remains applicable to unchanged damage/control/reserve implementations. quiet-regression01 repeats affected damage, physiology, spatial/native area, flight, calendar and pre-change partial-save scenarios; weather-final01 verifies quiet/current and older staged saves; first-hour/day tests exercise the final production queue and shared-weather integration."
 }

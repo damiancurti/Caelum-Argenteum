@@ -62,7 +62,7 @@ class CaelumAbsentArrival : Actor
         if((battle.ScheduleWaiting && battle.Rows.Size()==0) || battle.Terminal())
         {battle.Stamp=limit;battle.Fraction=elapsed-Floor(elapsed+0.000000001);}
         else if(elapsed+0.000000001>=1)
-        {StartInterval(battle,first+1,1);return false;}
+        {double span=battle.NextSpan(first,elapsed);StartInterval(battle,first+span,span);return false;}
         else {battle.Stamp=limit;battle.Fraction=elapsed;}
         battle.SimulationTime=limit;
         if(battle.ScheduleWaiting && TargetTime>=battle.ScheduledCivil)
@@ -165,6 +165,8 @@ class CaelumAbsentArrivalEvents : StaticEventHandler
 
 class CaelumAbsentArrivalMenu : ListMenu
 {
+    int RequestSerial,NextPulse;
+    bool RequestReady;
     override void Init(Menu parent,ListMenuDescriptor desc)
     {Super.Init(parent,desc);mParentMenu=null;menuactive=Menu.On;}
     override void Ticker()
@@ -173,9 +175,14 @@ class CaelumAbsentArrivalMenu : ListMenu
         let events=CaelumAbsentArrivalEvents(StaticEventHandler.Find('CaelumAbsentArrivalEvents'));
         let job=events!=null?events.Job:null;
         if(job==null || !job.Running){Close();return;}
-        // El par serial/pulso rechaza mensajes repetidos sin esperar otro
-        // viaje de confirmacion UI->play->UI para enviar el siguiente bloque.
-        EventHandler.SendNetworkEvent("ca_absent_arrival",job.Serial,job.Pulses);
+        if(!RequestReady || RequestSerial!=job.Serial)
+        {RequestReady=true;RequestSerial=job.Serial;NextPulse=job.Pulses;}
+        NextPulse=Max(NextPulse,job.Pulses);
+        // UI puede correr antes de que play procese el mensaje previo. Un
+        // contador propio evita reenviar ese mismo pulso cada segundo tic.
+        // Como maximo quedan dos peticiones en vuelo; play sigue validandolas.
+        if(NextPulse<=job.Pulses+1)
+        {EventHandler.SendNetworkEvent("ca_absent_arrival",job.Serial,NextPulse);NextPulse++;}
     }
     override void Drawer()
     {

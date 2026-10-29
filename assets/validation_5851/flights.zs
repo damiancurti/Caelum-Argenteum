@@ -154,6 +154,46 @@ class CA415FlightChecks : EventHandler
         }
     }
 
+    void SpatialChecks(CaelumPlayer user)
+    {
+        Setup(user);
+        Soldier.CombatArmor=null;Soldier.Shield=null;Soldier.CombatToughness=0;
+        Soldier.EffectiveCombatEvasionChance=0;
+        Boss.SetOrigin((-128,-128,0),false);Demon.SetOrigin((-4000,-4000,0),false);
+        let source=Boss.AbsentCombatant;
+        source.Opponent=Demon.AbsentCombatant;
+        vector3 offsets[]={(0,0,0),(80,80,0),(140,140,0),(160,0,0),(0,0,300),(-140,-140,0)};
+        for(int kind=0;kind<2;kind++)for(int i=0;i<offsets.Size();i++)
+        {
+            let attack=new('CaelumAbsentAttack');attack.Configure(Boss,kind==1);
+            attack.Area=128;attack.Damage=100;attack.Accuracy=1;attack.Critical=0;
+            source.Attack=attack;
+            vector3 origin=kind==0?Boss.Pos:Demon.Pos+(0,0,Demon.Height/2);
+            Soldier.SetOrigin(origin+offsets[i],false);Battle.SpatialDirty=true;
+            Array<CaelumAbsentCombatant> candidates;
+            Battle.Nearby(origin,attack.Area,candidates,kind==1);
+            bool found=false,duplicate=false;
+            for(int n=0;n<candidates.Size();n++)if(candidates[n]==Soldier.AbsentCombatant)
+            {if(found)duplicate=true;found=true;}
+            double expectedDistance=kind==1?Max(Abs(offsets[i].X),Abs(offsets[i].Y)):offsets[i].XY.Length();
+            Check(found==(expectedDistance<=attack.Area+Soldier.Radius) && !duplicate,
+                "local candidate query preserves box corners, negative cells and cylinder bounds");
+            for(int n=0;n<Battle.Rows.Size();n++)Battle.Rows[n].ClearPending();
+            double probability=kind==1?CaelumMeanAim.BodyProbability(attack.Origin,Demon.Pos,Demon.Radius,
+                Demon.Height,attack.ProjectileRadius,attack.Minimum,attack.Maximum,attack.SignedOffsets):1;
+            let expected=attack.Splash(Boss,Soldier,origin,probability,Soldier.AbsentCombatant.Blocking(Boss));
+            source.Release();
+            Check(Near(Soldier.AbsentCombatant.PendingLife,expected.Life)
+                && Near(Soldier.AbsentCombatant.PendingLucidity,expected.Lucidity),
+                "spatial release matches the full encounter reference including vertical exclusion");
+        }
+        Soldier.AbsentCombatant.Participating=false;Battle.SpatialDirty=true;
+        Array<CaelumAbsentCombatant> dead;
+        Battle.Nearby(Soldier.Pos,128,dead,true);
+        bool excluded=true;for(int n=0;n<dead.Size();n++)if(dead[n]==Soldier.AbsentCombatant)excluded=false;
+        Check(excluded,"area query excludes inactive rows");
+    }
+
     void TerminalChecks(CaelumPlayer user)
     {
         Setup(user);let shot=Bullet();CaelumAbsentShot.Capture(Battle);
@@ -340,6 +380,7 @@ class CA415FlightChecks : EventHandler
         else if(e.Name=="ca415r_flightload")LoadChecks();
         else if(e.Name=="ca415r_flights"){SaveChecks(user);LoadChecks();MoreChecks();}
         else if(e.Name=="ca415r_area")AreaChecks(user);
+        else if(e.Name=="ca415r_spatial")SpatialChecks(user);
         else if(e.Name=="ca415r_flighttravel")TravelingSetup(user);
         else if(e.Name=="ca415r_flighthome")TravelingHome(user);
         else if(e.Name=="ca415r_terminal")TerminalChecks(user);

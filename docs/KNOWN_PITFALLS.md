@@ -31,6 +31,20 @@ may tear down only its isolated test process after an explicit terminal record.
 The 1,000/600 diagnostic preserves all recorded outcomes but still needs faster
 long-absence processing. Callback intervals do not establish presented FPS.
 
+Follow-up, 2026-10-29: sending job.Pulses directly from each menu Ticker still
+repeats the prior request when UI runs before play processes it. Keep a UI-owned
+next-request sequence, bounded to two in-flight requests, while validating the
+actual job serial and pulse in play. This removes alternating stale requests
+without replaying work. Native saved-job/city returns pass; the staged combat
+minute falls from 17.857 to 8.910 s. Quiet periods can use the existing NPC
+physiology boundary when no combat interaction requires fine ordering. Never
+generalize that shortcut to active damage rounds or unexpired effects.
+Regional weather evaluation can be shared by its complete input key, with
+personal deltas applied afterward; do not alias mutable private forecasts.
+Evidence: validation_5851/catchup-performance.json and quiet/weather fixtures.
+The actual city-day workload still needs improvement; PresentMon ETW was denied
+by Windows and no presentation result is inferred from these callback timings.
+
 ## CA-KP-188 - Frozen poses and absolute attack clocks are different state
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,

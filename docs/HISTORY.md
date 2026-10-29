@@ -86,6 +86,25 @@ fixture item directly. These are isolated harness corrections, not gameplay
 changes. First-arrival/legacy scheduling, bounded catch-up and theft remain open;
 no author test was removed and no release or acceptance is claimed.
 
+The ninth checkpoint adds local area candidate selection, quiet-interval
+physiology, bounded UI request pipelining and shared regional weather. The
+1,000/600 diagnostic retains exact recorded outcomes: its quiet hour falls from
+5.951 to 0.317 s CPU and about 52 to 1.454 s of staged wall time. Combat remains
+one-world-second rounds; its staged minute takes 8.910 s. Area queries preserve
+square explosion corners and native falloff. An anatomical probability cache
+was measured but discarded because it did not materially improve throughput.
+
+The focused regressions and new cases total 335 distinct scenario assertions;
+they include pre-change partial saves, quiet-span save/load, independent native
+thermal/weather comparisons and real scheduled city arrivals. The one-day city
+case still takes 131.892 s including startup, down from 155.011 s before shared
+weather, with the same registered/active/victory/reserve totals. No unrecorded
+per-body final parity is claimed for that city timing pair. Raw evidence and
+callback tails are in validation_5851/catchup-performance.json. Windows rejected
+PresentMon's unelevated trace; displayed FPS remains unmeasured. This is another
+intermediate checkpoint, not a complete issue or author acceptance. No pending
+author entry was removed; the author remains away and tests stay grouped.
+
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
 The author requested completion without further small partial handoffs. Added

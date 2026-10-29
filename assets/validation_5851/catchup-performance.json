@@ -1,0 +1,420 @@
+{
+  "issue": 415,
+  "status": "Unreleased catch-up improvement; issue remains incomplete",
+  "runs": {
+    "spatial-area01": {
+      "runtime_sha256": "A8CADEA88C91877D63326A7F378A434415653E766BB650079FAC7672DC93D2AE",
+      "addon_sha256": "A47569DF855B69588637EA59FBE2CFB249C137D320C50BB7E41F136037ED2065",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "spatial-perf01": {
+      "runtime_sha256": "A8CADEA88C91877D63326A7F378A434415653E766BB650079FAC7672DC93D2AE",
+      "addon_sha256": "3683D222478B975F8AFC6E27054E5F303361B8B5CA73BF497FC5C8820C62209B",
+      "timing": [
+        "capture_ms=21.255300 rows=1600"
+      ],
+      "outcomes": {},
+      "render_callback_intervals": {
+        "n": 137,
+        "mean_ms": 18.723533576642335,
+        "p95_ms": 17.5471,
+        "p99_ms": 42.0468,
+        "max_ms": 283.6587
+      },
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-guards01": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-span-sync01": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "1B815AC9242000AB2502D6A4C530638D7601F8026908E43001C91C5CE289633C",
+      "timing": [
+        "capture_ms=20.460200 rows=1600",
+        "world_seconds=1 active_scale=0.050000 elapsed_ms=16.945700 alive=1600 rounds=1",
+        "world_seconds=60 active_scale=0.050000 elapsed_ms=2328.901400 alive=1593 rounds=61",
+        "quiet_world_seconds=3600 elapsed_ms=316.655900"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      },
+      "render_callback_intervals": {
+        "n": 102,
+        "mean_ms": 43.9223362745098,
+        "p95_ms": 18.477,
+        "p99_ms": 367.3747,
+        "max_ms": 2398.4327
+      },
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-span-staged01": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "1B815AC9242000AB2502D6A4C530638D7601F8026908E43001C91C5CE289633C",
+      "timing": [
+        "capture_ms=20.026800 rows=1600",
+        "staged_seconds=1 elapsed_ms=172.171600 pulses=3",
+        "staged_seconds=60 elapsed_ms=17853.514700 pulses=312",
+        "staged_seconds=3600 elapsed_ms=2740.142200 pulses=48"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      },
+      "render_callback_intervals": {
+        "n": 878,
+        "mean_ms": 26.469582460136674,
+        "p95_ms": 37.6958,
+        "p99_ms": 38.3777,
+        "max_ms": 96.5066
+      },
+      "pulse_execution": {
+        "n": 363,
+        "mean_ms": 8.415185399449037,
+        "p95_ms": 9.1702,
+        "p99_ms": 11.1959,
+        "max_ms": 11.648
+      },
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-present-before": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "1B815AC9242000AB2502D6A4C530638D7601F8026908E43001C91C5CE289633C",
+      "timing": [
+        "capture_ms=20.726200 rows=1600",
+        "staged_seconds=1 elapsed_ms=157.509500 pulses=3",
+        "staged_seconds=60 elapsed_ms=17856.775800 pulses=312",
+        "staged_seconds=3600 elapsed_ms=2796.365000 pulses=49"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      },
+      "render_callback_intervals": {
+        "n": 880,
+        "mean_ms": 26.481582727272727,
+        "p95_ms": 37.6347,
+        "p99_ms": 38.9733,
+        "max_ms": 95.3322
+      },
+      "pulse_execution": {
+        "n": 364,
+        "mean_ms": 8.476596428571428,
+        "p95_ms": 9.1735,
+        "p99_ms": 11.0115,
+        "max_ms": 11.7122
+      },
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-pipeline01": {
+      "runtime_sha256": "2BEE4EA57B5D75809BCD017FF5947DEAF34C011CE878B479F5689D42D47E06BC",
+      "addon_sha256": "27BBEF0BF8A1858661CAA4532855F3A3CD3129E73CCEFBF486D713BE345429AF",
+      "timing": [
+        "capture_ms=21.815600 rows=1600",
+        "staged_seconds=1 elapsed_ms=134.630200 pulses=4",
+        "staged_seconds=60 elapsed_ms=8910.381500 pulses=310",
+        "staged_seconds=3600 elapsed_ms=1453.939600 pulses=50"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      },
+      "render_callback_intervals": {
+        "n": 520,
+        "mean_ms": 24.963663846153846,
+        "p95_ms": 29.4603,
+        "p99_ms": 31.7447,
+        "max_ms": 89.065
+      },
+      "pulse_execution": {
+        "n": 364,
+        "mean_ms": 8.453996978021978,
+        "p95_ms": 9.5635,
+        "p99_ms": 10.4008,
+        "max_ms": 11.6779
+      },
+      "city_result": [],
+      "arrival_result": []
+    },
+    "pipeline-firsthour01": {
+      "runtime_sha256": "2BEE4EA57B5D75809BCD017FF5947DEAF34C011CE878B479F5689D42D47E06BC",
+      "addon_sha256": "3A7340D79A7F50B436452AA27D20DE95E0740A1E9AD825FE77A30DA0C7F94C87",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": [
+        "observedRunning=1 pulses=422 native=107/144"
+      ]
+    },
+    "pipeline-firstday01": {
+      "runtime_sha256": "2BEE4EA57B5D75809BCD017FF5947DEAF34C011CE878B479F5689D42D47E06BC",
+      "addon_sha256": "96C77FE7CD9DFC2034F47603FBDFAD286A2412AE1D501EA3C0C7A49E9B768F8E",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [
+        "world_seconds=86401.143 rounds=86 rows=701 alive=589 victory=1 reserve=6500"
+      ],
+      "arrival_result": [
+        "observedRunning=1 pulses=4972 native=107/144"
+      ]
+    },
+    "shared-weather01": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "weather-firstday01": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [
+        "world_seconds=86401.143 rounds=86 rows=701 alive=589 victory=1 reserve=6500"
+      ],
+      "arrival_result": [
+        "observedRunning=1 pulses=4171 native=107/145"
+      ]
+    },
+    "quiet-regression01-math": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-rounds": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-physiology": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-area": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-spatial": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-flights": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-flightload": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-flighttravel": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": [
+        "observedRunning=1 pulses=1 native=145/181"
+      ]
+    },
+    "quiet-regression01-calendarhub": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [
+        "emitted=1 suspended=0 same=1 life=0 ready=1 placement=0 rows=206 rounds=61 unresolved=454 cursor=146"
+      ],
+      "arrival_result": [
+        "observedRunning=1 pulses=123 native=142/183"
+      ]
+    },
+    "quiet-regression01-workload": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-arrivalload": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": [
+        "observedRunning=1 pulses=1 native=110/146"
+      ]
+    },
+    "quiet-regression01-firstvisit": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": [
+        "observedRunning=1 pulses=109 native=107/145"
+      ]
+    },
+    "quiet-regression01-quietsave": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "quiet-regression01-quietload": {
+      "runtime_sha256": "9B2B8789F173CD6A951C555762746B7D2C28F2AB9387E76F443F2C43172B013B",
+      "addon_sha256": "A49EB85DF1FFFD345DBB1FAC94A36F8B33A9C350B0321D7C671E38F659A41D29",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "weather-final01-quiet": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "weather-final01-quietsave": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "weather-final01-quietload": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": []
+    },
+    "weather-final01-arrivalload": {
+      "runtime_sha256": "3A3A6B2DD5AD14A6F2A7C13282AAB479EBDE82D6013F717695D305D152428217",
+      "addon_sha256": "A218CFE0459CCF4438D6EEA4A5955D82D1ADBDAEA06B81205C8C699FDBAD6175",
+      "timing": [],
+      "outcomes": {},
+      "render_callback_intervals": null,
+      "pulse_execution": null,
+      "city_result": [],
+      "arrival_result": [
+        "observedRunning=1 pulses=1 native=110/146"
+      ]
+    }
+  },
+  "presentation": {
+    "status": "Unavailable: Windows denied the unelevated PresentMon ETW session",
+    "qualification": "Renderer callbacks below are not displayed FPS or presentation intervals"
+  },
+  "exact_recorded_diagnostic_outcomes": true,
+  "area_comparison": [
+    "rows=1600 candidates=6 repeats=128 full_ms=136.738400 local_ms=106.764700 expected=71808.000000000 actual=71808.000000000"
+  ],
+  "city_comparison_qualification": "One-day original/cached-weather runs retain identical round, row, living-body, victory and reserve totals. Independent native weather checks verify the sample values; no unrecorded per-body final-value comparison is claimed.",
+  "limits": [
+    "Combat remains in one-world-second simultaneous rounds; quiet physiological work uses its existing one-active-second boundary.",
+    "Native one-day city arrival still takes over two minutes including startup; further long-absence work remains.",
+    "These are isolated agent checks, not author acceptance or presentation-FPS validation."
+  ],
+  "source_members_verified": 32,
+  "runtime_sha256": "3a3a6b2dd5ad14a6f2a7c13282aab479ebde82d6013f717695d305d152428217"
+}

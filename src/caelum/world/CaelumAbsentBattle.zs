@@ -229,8 +229,7 @@ class CaelumAbsentCombatant : Object play
         let climate=absent.Climate;
         if(climate!=null && climate.Ready)
         {
-            climate.Rate(absent.Civil+worldSeconds/2);
-            let sample=climate.Local;
+            let sample=Battle.WeatherSample(climate,absent.Civil+worldSeconds/2);
             if(sample!=null && sample.Available)
             {
                 Thermal.AirC=sample.AirTemperatureC+climate.HeatDelta;Thermal.ClimateC=Thermal.AirC;
@@ -403,9 +402,11 @@ class CaelumAbsentCombatant : Object play
             if(Attack.Kind==CaelumAbsentAttack.EXPLOSIVE)
                 probability=CaelumMeanAim.BodyProbability(Attack.Origin,Opponent.Body.Pos,Opponent.Body.Radius,
                     Opponent.Body.Height,Attack.ProjectileRadius,Attack.Minimum,Attack.Maximum,Attack.SignedOffsets);
-            for(int i=0;i<Battle.Rows.Size();i++)
+            Array<CaelumAbsentCombatant> nearby;
+            Battle.Nearby(origin,Attack.Area,nearby,Attack.Kind==CaelumAbsentAttack.EXPLOSIVE);
+            for(int i=0;i<nearby.Size();i++)
             {
-                let row=Battle.Rows[i];
+                let row=nearby[i];
                 if(row==self || !row.Alive() || (Attack.Kind==CaelumAbsentAttack.SLAM && !Enemy(row)))continue;
                 row.Queue(self,Attack.Splash(Body,row.Body,origin,probability,row.Blocking(Body)));
             }
@@ -546,6 +547,28 @@ class CaelumAbsentBattle : Object play
     bool TargetCacheReady;
     bool ScheduleWaiting;
     double ScheduledCivil,DeploymentTicFraction;
+    transient Array<CaelumFoodClimate> Weather;
+
+    CaelumWeatherSample WeatherSample(CaelumFoodClimate climate,double when)
+    {
+        if(climate==null || !climate.Ready)return null;
+        CaelumFoodClimate cached;
+        for(int i=0;i<Weather.Size();i++)
+        {
+            let candidate=Weather[i];
+            if(candidate.Profile==climate.Profile && candidate.Region==climate.Region
+                && candidate.Seed==climate.Seed && candidate.Shelter==climate.Shelter)
+            {cached=candidate;break;}
+        }
+        if(cached==null)
+        {
+            cached=climate.Copy();cached.HeatDelta=cached.HumidityDelta=0;Weather.Push(cached);
+        }
+        // La muestra regional es identica para los cuerpos con el mismo
+        // abrigo. Los deltas personales se aplican despues, sin compartir
+        // objetos mutables con los pronosticos privados de cada inventario.
+        cached.Rate(when);return cached.Local;
+    }
     CaelumAbsentWork Work;
 
     void RefreshFirstTargets()
@@ -587,7 +610,7 @@ class CaelumAbsentBattle : Object play
         SpatialDirty=false;
     }
 
-    void Nearby(vector3 origin,double reach,out Array<CaelumAbsentCombatant> result)
+    void Nearby(vector3 origin,double reach,out Array<CaelumAbsentCombatant> result,bool square=false)
     {
         result.Clear();RebuildSpatial();
         double radius=reach+LargestRadius;
@@ -597,8 +620,12 @@ class CaelumAbsentBattle : Object play
             for(int i=SpatialHeads[SpatialHash(x,y)];i>=0;i=Rows[i].SpatialNext)
             {
                 let row=Rows[i];
-                if(row.SpatialX==x && row.SpatialY==y && row.Alive()
-                    && (row.Body.Pos.XY-origin.XY).Length()<=reach+row.Body.Radius)result.Push(row);
+                if(row.SpatialX!=x || row.SpatialY!=y || !row.Alive())continue;
+                vector2 delta=row.Body.Pos.XY-origin.XY;
+                // La explosion nativa usa una caja en XY; el filtro circular
+                // descartaria sus esquinas. Splash conserva el corte 3D exacto.
+                double distance=square?Max(Abs(delta.X),Abs(delta.Y)):delta.Length();
+                if(distance<=reach+row.Body.Radius)result.Push(row);
             }
     }
 
@@ -620,6 +647,7 @@ class CaelumAbsentBattle : Object play
     {
         if(Away || encounter==null || user==null)return;
         self.Encounter=encounter;SourceMap=level.MapName;Stamp=at>=0?at:CaelumContaminationAbsence.Clock(user,SourceMap);
+        Weather.Clear();
         Observer=user;
         if(Stamp<0)return;
         ActiveScale=CaelumWorldClock.SecondsPerGameHour(SourceMap)/3600.0;SchemaRevision=REVISION;
@@ -733,13 +761,44 @@ class CaelumAbsentBattle : Object play
         int whole=int(Floor(elapsed+0.000000001));
         double first=Stamp-Fraction;
         Fraction=Max(0,elapsed-whole);
-        for(int second=0;second<whole;second++)
+        for(int second=0;second<whole;)
         {
             if(Terminal())break;
-            Interval(first+second+1,1);
+            int span=int(NextSpan(first+second,whole-second));
+            Interval(first+second+span,span);second+=span;
         }
         SimulationTime=end;
         Stamp=end;
+    }
+
+    // El combate mantiene rondas de un segundo del mundo. Sin interacciones,
+    // usar el mismo limite de un segundo activo de la fisiologia ausente y
+    // cortar en cada minuto meteorologico. Nunca atravesar una nueva llegada,
+    // aliento, dosis o estado temporal que pueda afectar a otro participante.
+    double NextSpan(double start,double remaining)
+    {
+        double span=Min(Floor(remaining+0.000000001),Floor(1/Max(0.000001,ActiveScale)));
+        if(span<=1 || Opposed() || MachineWork())return 1;
+        let port=CaelumPortSiege(Encounter);
+        let reserve=port!=null?port.Reinforcements:null;
+        if(reserve!=null && reserve.Enabled && !reserve.Stopped && reserve.Remaining>0 && !port.Victory)return 1;
+        let roster=CaelumHouseResidents.Get();
+        if(CaelumHouseHub.IsCity(port) && roster!=null && roster.DeploymentPending)return 1;
+        for(int i=0;i<Rows.Size();i++)
+        {
+            let row=Rows[i];if(!row.Alive())continue;
+            let body=row.Body;let effects=body.ElementalStatus;
+            if(CaelumDemonService.Supports(body) || body.ForcedSleepTics>0
+                || row.PainRemaining>0 || body.CombatLucidityPhysicalStunRemaining>0
+                || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body)
+                || CaelumBattleCry.Active(body))return 1;
+            if(effects!=null && (effects.HasBurnHeat() || effects.BurnRemaining>0 || effects.CutRemaining>0
+                || effects.PoisonRemaining>0 || effects.DiseaseRemaining>0 || effects.FreezeRemaining>0
+                || effects.DazzleRemaining>0 || effects.EarthPenaltyRemaining>0 || effects.LightningStunRemaining>0))return 1;
+            let support=CaelumSupportMagic.Status(body);if(support!=null && support.AnyActive)return 1;
+            for(Inventory item=body.Inv;item!=null;item=item.Inv)if(item is 'CaelumRegenerationPower')return 1;
+        }
+        return Max(1,Min(span,Floor((Floor(start/60)+1)*60-start+0.000000001)));
     }
 
     void StartScheduled()

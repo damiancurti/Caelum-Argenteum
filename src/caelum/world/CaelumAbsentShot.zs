@@ -99,9 +99,11 @@ class CaelumAbsentShot : Object play
                 double p=CaelumMeanAim.BodyProbability(Attack.Origin,Recipient.Body.Pos,Recipient.Body.Radius,
                     Recipient.Body.Height,Attack.ProjectileRadius,Attack.Minimum,Attack.Maximum,Attack.SignedOffsets);
                 let battle=Source.Battle;
-                for(int i=0;i<battle.Rows.Size();i++)
+                Array<CaelumAbsentCombatant> nearby;
+                battle.Nearby(origin,Attack.Area,nearby,true);
+                for(int i=0;i<nearby.Size();i++)
                 {
-                    let row=battle.Rows[i];
+                    let row=nearby[i];
                     if(row==Source || !row.Alive() || Shot.PreventSummoningFriendlyFire(row.Body))continue;
                     Shot.ResolveCaelumCritical(row.Body);Attack.Critical=Shot.CaelumCriticalHit?1:0;
                     Queue(row,Attack.Splash(Source.Body,row.Body,origin,p,row.Blocking(Source.Body)));

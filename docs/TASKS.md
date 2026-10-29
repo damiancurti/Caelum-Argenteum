@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-255 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+335 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -87,6 +87,29 @@ Draft PR545 tracks this branch. The calendar tests do not establish safe long
 catch-up latency or complete the remaining world/event adapters.
 No author handoff or released 5.8.51 is claimed for this checkpoint.
 Continue this issue to completion; #502 patch50 is already delivered in PR544.
+
+The latest catch-up checkpoint reduces the synthetic quiet hour from 5.951 s
+CPU / 51.591 s staged wall time to 0.317 s CPU / 1.454 s staged wall time. It
+uses the existing one-active-second NPC boundary only when no transient combat
+interaction needs the finer rounds. The loading UI now sends distinct validated
+sequence numbers with at most two requests in flight, removing alternating
+duplicate requests; the combat-minute loading interval falls to 8.910 s.
+All previously recorded diagnostic Life/Anima/Air/contamination/heat/shot totals
+match. The remaining active-combat cost is not described as solved.
+
+Area impacts use the encounter's local spatial index with the native square
+footprint where required. A 1,600-body diagnostic reduces 128 area calculations
+from 136.738 to 106.765 ms with identical total damage. Private anatomical-cache
+experiments showed no useful speedup and were not adopted.
+
+Shared weather contexts retain independent seal deltas and inventory forecasts;
+36 checks compare native samples and identity, with cache rebuilding verified
+through save/load. Actual first arrival after one hour and one day passes. The
+city-day run retains 86 combat rounds, 701 registered rows, 589 active survivors
+and native victory/reserve state; weather sharing reduces end-to-end runtime
+from 155.011 to 131.892 s. This remains too slow for an unrestricted long skip.
+`catchup-performance.json` archives the 29 focused runs and callback tails.
+Windows denied the unelevated PresentMon trace, so presented FPS is unmeasured.
 
 ## 5.8.50 / #502 - Contact adapters verified
 

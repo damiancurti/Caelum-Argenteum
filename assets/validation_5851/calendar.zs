@@ -124,10 +124,11 @@ class CA415CalendarChecks : EventHandler
         Check(Port.Attackers.Size()==serial && !Battle.Away,"second native restore cannot redeploy the calendar event");
     }
 
-    void EnterUnvisited(CaelumPlayer user)
+    void EnterUnvisited(CaelumPlayer user,int seconds=60)
     {
         let calendar=CaelumCalendarState.Get(user,true);let clock=CaelumWorldClock.Get(user,true);
-        calendar.SetAnchor(clock,CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour()+CaelumWorldClock.TicsPerHour()/60,false);
+        int tics=CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour()+seconds*CaelumWorldClock.TicsPerHour()/3600;
+        calendar.SetAnchor(clock,CaelumCityWorld.SiegeDay()+tics/CaelumWorldClock.TicsPerDay(),tics%CaelumWorldClock.TicsPerDay(),false);
         level.ChangeLevel("MAP03",0,CHANGELEVEL_NOINTERMISSION,-1);
     }
     void ArrivalGuards(CaelumPlayer user)
@@ -151,6 +152,10 @@ class CA415CalendarChecks : EventHandler
         Port=CaelumPortSiege.Get();Battle=Port!=null?Port.AbsentBattle:null;
         Check(Port!=null && Port.SiegeStarted && Battle!=null && !Battle.Away,"first visit after the scheduled date resolves the unseen city's real encounter");
         if(Battle==null)return;
+        int alive=0;for(int i=0;i<Battle.Rows.Size();i++)if(Battle.Rows[i].Alive())alive++;
+        Console.Printf("CA415C ARRIVAL world_seconds=%.3f rounds=%d rows=%d alive=%d victory=%d reserve=%d",
+            Battle.Stamp-CaelumCityWorld.SiegeCivilSeconds(),Battle.Rounds,Battle.Rows.Size(),alive,Port.Victory,
+            Port.Reinforcements!=null?Port.Reinforcements.Remaining:-1);
         Check(Battle.Rounds>=60 && Battle.Stamp>=CaelumCityWorld.SiegeCivilSeconds()+60,"first-arrival summary begins at the authored date rather than the arrival date");
         Check(Port.Boss!=null && Port.Boss.Body.CombatProfileInitialized && Port.RosterSealed,"first-arrival summary uses the guarded native boss and sealed roster");
         let roster=CaelumHouseResidents.Get();int admitted=0;
@@ -169,7 +174,7 @@ class CA415CalendarChecks : EventHandler
         else if(e.Name=="ca415r_calendardepart")Depart(user);
         else if(e.Name=="ca415r_calendarreturn")ReturnCity(user);
         else if(e.Name=="ca415r_calendarhome")Home();
-        else if(e.Name=="ca415r_firstvisit")EnterUnvisited(user);
+        else if(e.Name=="ca415r_firstvisit")EnterUnvisited(user,e.Args[0]>0?e.Args[0]:60);
         else if(e.Name=="ca415r_firsthome")FirstHome(user);
         else if(e.Name=="ca415r_arrivalguards")ArrivalGuards(user);
         else return;
