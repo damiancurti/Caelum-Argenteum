@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+## Connected-water production (#414, 5.8.2)
+
+The mansion installation has two 4x4x2 m basins, nominal 32,000 L each. The
+north/left basin receives potable 1 L/s until 1.75 m; south/right drains 1 L/s
+until 0.25 m. A circular 20 cm connection at the bottom of their common wall
+uses Cd 0.62 and gravity 9.81 m/s2. For a submerged opening,
+`Q=Cd*pi*(diameter/2)^2*sqrt(2*g*abs(headA-headB))`; direction follows the head.
+A partially wetted opening uses its circular segment area and centroid as an
+explicit approximation. A native 12-strip opening visualizes that circle.
+The lever opens/closes its barrier and the transfer. Supply/drain continue with
+the gate shut. Fixed service steps preserve exit access at low water; by author
+approval their small displacement is ignored in nominal capacity.
+
+Advance by the existing saved game clock, including waits/travel and map
+absence. Limbo runs 1:1; no operating-system/offline time is counted. One saved
+revision 1 controller owns volumes, qualities, gate state, timestamp and any
+pending solver interval. Initialization is idempotent. RK4 step-doubling uses
+1e-6 L local tolerance and a 256-attempt limit per sync; unfinished time remains
+saved and rejects withdrawals/gate changes until settled. Closed-gate evolution
+and settled long intervals are analytic. No elapsed interval is silently dropped.
+
+Water quality comes from the actual swimmable 3D-floor control sector, with the
+legacy host-sector metadata fallback retained. Transfer unions biological,
+salt and chemical contamination in its actual direction; potable dilution does
+not purify. The source carries its current quality into bottles. Actual refill
+volume is deducted; full/boxed/overweight/locked containers cannot withdraw.
+Direct potable hydration also deducts litres using the existing container
+hydration-per-litre rule, without changing that rule or the pool's unlimited
+supply. Empty water cannot be collected.
+
+Only marked maps initialize this controller. Their sector metadata is examined
+once and a typed controller lookup (one expected actor) restores its identity;
+the existing world-clock ticker then uses its cached reference and two known
+control sectors. No new routine global actor scan is introduced.
+
+MAP01 geometry changed. GZDoom validates a visited map before ZScript can migrate
+it: the author-approved `-LegacyMap01`/`--legacy-map01` build substitutes the exact
+preserved 5.8.1 WAD under the same map/package names. It preserves the former
+mansion, without the installation; it does not convert existing visited geometry.
+The original save/package remain rollback evidence. New campaigns use the new
+installation. Room discovery accepts both reviewed geometry checksums; existing room IDs and bounds are unchanged. Native/manual evidence is tracked separately in validation_582
+and pending_test.txt.
 
 ## Altitude and acclimatization (#413, 5.8.1)
 
@@ -64,16 +107,15 @@ The map-local event handler retains a revision-1 binding, gate state and native
 sector references through saves and hub return. Initialization visits the eight
 fixture sectors once; ticking touches only the two connected control sectors.
 
-Production water remains #408/#409: source quality currently reads the actor's
+At the 5.8.0 feasibility stage, production water remained #408/#409: source quality read the actor's
 sector, so metadata on a 3D-floor control sector is unidentified. The prototype
 records this limitation without silently changing quality or claiming mixing.
 The author approved reusing the container contamination union and locating the
 first connected installation beside the mansion pool. No campaign water-volume
 schema, replenishment, drainage, concentration rule,
-new map geometry or real-time offline progression is introduced. A generic
-production controller still needs implementation and explicit save-safe geometry.
+new map geometry or real-time offline progression is introduced. That prototype does not include the production controller; see 5.8.2 above.
 
-Approved campaign calibration (2026-10-23; not yet implemented): two deposits
+Approved campaign calibration (2026-10-23; implemented by 5.8.2 above): two deposits
 beside the mansion pool, each 4 x 4 m and 2 m deep (32,000 L). Preserve the
 existing pool. A 20 cm opening connects them; use a simplified head-difference
 flow model with discharge coefficient 0.62. The left receives potable water at

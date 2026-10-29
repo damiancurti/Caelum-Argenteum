@@ -4377,6 +4377,15 @@ Loading with its exact archived WAD passed and kept the current room catalogue
 disabled. Evidence: assets/validation_537/legacy-reload-01.txt (rejection) and
 legacy-reload-02.txt (matching geometry); this patch changes no production WAD.
 
+Rechecked for #414 / 5.8.2 on 2026-10-24: explicit LegacyMap01 keeps the
+pre-installation mansion and both active-map/hub saves playable with current
+code; original packages/saves also remain usable for rollback. Review consumers
+of geometry checksums as well as the WAD: the authored room catalogue needed
+both old and new checksums because this exterior-only edit preserves all room
+IDs and bounds. Do not enable an old catalogue without that coordinate audit.
+Native room-discovery/compatibility evidence: assets/validation_582/RESULTS.md.
+Author acceptance CA414-01 passed all terminal checks on 2026-10-24.
+
 ## CA-KP-009 â€” MODELDEF slots overlay state meshes
 
 Status/evidence: ENGINE-VERIFIED, 2026-09-26; #18 follow-up, 4.36.14a.

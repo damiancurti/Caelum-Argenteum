@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+## 5.8.2 - Connected mansion deposits (#414)
+
+The deterministic standard-library generator `assets/generators/build_connected_water.py`
+uses `assets/map01_mansion/CONNECTED_WATER.json` and the preserved `legacy_581`
+WAD. It appends native basin, service-step, circular-opening and gate geometry;
+existing records remain intact apart from sector-zero installation metadata.
+Uses owned CMST01/02/03 masonry, CAPOOL01 water and the existing lever column/
+face/sound. No new external artwork or runtime IWAD asset is introduced.
+The 12-strip circle is a native visual approximation; hydraulic area uses the
+approved circle. The manifest/report preserve layout, hashes and provenance.
 
 ## 5.7.14 - Mate vessels and inventory sprites (#472)
 

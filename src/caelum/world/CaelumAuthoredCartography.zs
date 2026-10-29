@@ -89,7 +89,7 @@ class CaelumAuthoredCartography : Object play
         bool first=record.CartographyMap!=level.MapName;
         if(first)
         {record.CartographyMap=level.MapName;record.CartographyChecksum=level.GetChecksum();}
-        if(level.MapName=="MAP01" && record.CartographyChecksum==CaelumCartographyCatalogueData.MAP01_CHECKSUM)
+        if(level.MapName=="MAP01" && CaelumCartographyCatalogueData.MatchesMansionGeometry(record.CartographyChecksum))
         {
             for(int i=0;i<CaelumCartographyCatalogueData.MANSION_ROOMS;i++)
                 if(CaelumCartographyCatalogueData.MansionContains(i,user.Pos))

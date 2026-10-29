@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.1** — 2026-10-23.
+Documentation version: **5.8.2** — 2026-10-24.
+
+## 5.8.2 - Mansion connected water (#414)
+
+Implements the approved two deposits east of the pool, Torricelli head-dependent
+flow, native gate/level geometry, service steps, automatic supply/drainage,
+contaminant union and finite bottle/direct-drinking withdrawals. Persisted
+revision 1 state resumes game-calendar elapsed time on hub return. Existing
+pool geometry and behavior remain unchanged. Explicit `-LegacyMap01` retains
+the byte-identical 5.8.1 mansion for visited-map saves; new geometry is for new
+campaigns. Static/native evidence and limits: assets/validation_582/RESULTS.md.
+CA414-01 passed all author checks on 2026-10-24. The earlier isolated
+CA414-PROTOTYPE-01 remains pending; no merge or completed V5.8 is claimed.
+#413 remains accepted. Other issues keep their independent scope.
 
 ## 5.8.1 - Altitude and acclimatization (#413)
 

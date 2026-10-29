@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "93b758d38857a4021f733e901483bab66cfe643b8ba6b023d3cddac27b769d5d",
+  "sha256": "634887c6c7703308dc9261f4fdc560bbc54fa6491e78db74eea51ae3798e1182",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[428,428]],"default":[[428,428]],"es":[[1123,1123]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[978,978]],"default":[[978,978]],"es":[[1673,1673]]},
@@ -289,6 +289,11 @@
     "CA_COMPASS_SE": {"enu":[[5093,5093]],"default":[[5093,5093]],"es":[[5103,5103]]},
     "CA_COMPASS_SW": {"enu":[[5095,5095]],"default":[[5095,5095]],"es":[[5105,5105]]},
     "CA_COMPASS_W": {"enu":[[5096,5096]],"default":[[5096,5096]],"es":[[5106,5106]]},
+    "CA_CONNECTED_WATER_CLOSE": {"enu":[[6427,6427]],"default":[[6427,6427]],"es":[[6434,6434]]},
+    "CA_CONNECTED_WATER_CLOSED": {"enu":[[6429,6429]],"default":[[6429,6429]],"es":[[6436,6436]]},
+    "CA_CONNECTED_WATER_GATE": {"enu":[[6425,6425]],"default":[[6425,6425]],"es":[[6432,6432]]},
+    "CA_CONNECTED_WATER_OPEN": {"enu":[[6426,6426]],"default":[[6426,6426]],"es":[[6433,6433]]},
+    "CA_CONNECTED_WATER_OPENED": {"enu":[[6428,6428]],"default":[[6428,6428]],"es":[[6435,6435]]},
     "CA_CONSUMABLE_ANIMA_LARGE": {"enu":[[673,673]],"default":[[673,673]],"es":[[1368,1368]]},
     "CA_CONSUMABLE_ANIMA_MEDIUM": {"enu":[[670,670]],"default":[[670,670]],"es":[[1365,1365]]},
     "CA_CONSUMABLE_ANIMA_POTION": {"enu":[[675,675]],"default":[[675,675]],"es":[[1370,1370]]},

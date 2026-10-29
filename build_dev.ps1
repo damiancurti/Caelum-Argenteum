@@ -1,6 +1,7 @@
 param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
+    [switch]$LegacyMap01,
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap06,
@@ -43,6 +44,14 @@ if ($Files.Count -eq 0) {
 
 # Keep the established package name so GZDoom can restore existing saves.
 # Compatibility replaces only selected map lumps; runtime code stays current.
+$LegacyMap01Bytes = $null
+if ($LegacyMap01) {
+    $LegacyMansionPath = Join-Path $ProjectRoot 'assets/map01_mansion/legacy_581/MAP01.wad'
+    if ((Get-FileHash -LiteralPath $LegacyMansionPath -Algorithm SHA256).Hash -ne '866A25A3ADAD62A742F3A1E65FA9C029852450B99E372B63CAF57321B15F408A') {
+        throw 'Legacy MAP01 checksum mismatch; refusing to replace the existing PK3.'
+    }
+    $LegacyMap01Bytes = [IO.File]::ReadAllBytes($LegacyMansionPath)
+}
 $LegacyMap02Bytes = $null
 if ($LegacyMap02 -or $LegacyMap02Revision4) {
     if ($LegacyMap02Revision4) {
@@ -168,6 +177,7 @@ try {
         )
         try {
             $LegacyReplacementCount = 0
+            $LegacyMansionReplacementCount = 0
             $LegacyPortReplacementCount = 0
             foreach ($File in $Files) {
                 $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
@@ -180,7 +190,11 @@ try {
                 )
                 $EntryStream = $Entry.Open()
                 try {
-                    if (($LegacyMap02 -or $LegacyMap02Revision4) -and $EntryName -ieq "maps/MAP02.wad") {
+                    if ($LegacyMap01 -and $EntryName -ieq 'maps/MAP01.wad') {
+                        $EntryStream.Write($LegacyMap01Bytes, 0, $LegacyMap01Bytes.Length)
+                        $LegacyMansionReplacementCount++
+                    }
+                    elseif (($LegacyMap02 -or $LegacyMap02Revision4) -and $EntryName -ieq "maps/MAP02.wad") {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
                     }
@@ -204,6 +218,9 @@ try {
             }
             if (($LegacyMap02 -or $LegacyMap02Revision4) -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
+            }
+            if ($LegacyMap01 -and $LegacyMansionReplacementCount -ne 1) {
+                throw 'Legacy compatibility requires exactly one maps/MAP01.wad entry in the source.'
             }
             if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $LegacyPortReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP06.wad entry in the source.'
@@ -249,6 +266,12 @@ try {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
     Write-Host "PK3 created successfully: $DestinationPath"
+    if ($LegacyMap01) {
+        Write-Host 'MAP01 layout: byte-identical pre-5.8.2 mansion for existing campaigns; connected deposits inactive.'
+    }
+    else {
+        Write-Host 'MAP01 layout: current source. Saves that visited the pre-5.8.2 mansion need -LegacyMap01.'
+    }
     if ($LegacyMap02Revision4) {
         Write-Host "MAP02 compatibility: exact pre-5.4.33 revision 4 for existing visited-map saves."
         Write-Host "The old western crusher defect remains in that geometry. Rebuild without -LegacyMap02Revision4 and start a fresh MAP02 to use the corrected panel."

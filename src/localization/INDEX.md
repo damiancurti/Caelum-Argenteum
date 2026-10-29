@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `93b758d38857a4021f733e901483bab66cfe643b8ba6b023d3cddac27b769d5d`. Locations include every definition; the last one per language wins.
+SHA-256: `634887c6c7703308dc9261f4fdc560bbc54fa6491e78db74eea51ae3798e1182`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -42,6 +42,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CLOTHING | 25 | CA_CLOTHING_BC | CA_CLOTHING_RW |
 | CA_COMFORT | 6 | CA_COMFORT_ACTION_HELP | CA_COMFORT_TITLE |
 | CA_COMPASS | 8 | CA_COMPASS_E | CA_COMPASS_W |
+| CA_CONNECTED | 5 | CA_CONNECTED_WATER_CLOSE | CA_CONNECTED_WATER_OPENED |
 | CA_CONSUMABLE | 11 | CA_CONSUMABLE_ANIMA_LARGE | CA_CONSUMABLE_WATER_RATION |
 | CA_CONTAINER | 16 | CA_CONTAINER_CAPACITY | CA_CONTAINER_WITHDRAW |
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |

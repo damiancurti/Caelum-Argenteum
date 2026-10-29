@@ -327,3 +327,11 @@
 /assets/validation_578/** -text whitespace=cr-at-eol
 /assets/validation_578/native/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_578/diagnostics/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #414 raw native evidence and deterministic generated source bytes.
+/assets/validation_582/** -text whitespace=cr-at-eol
+/assets/validation_582/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/generators/build_connected_water.py text eol=lf
+/src/caelum/data/CaelumConnectedWaterData.zs text eol=lf
+/src/caelum/world/CaelumConnectedWaterState.zs text eol=lf
+/src/caelum/world/CaelumConnectedWaterWorld.zs text eol=lf
