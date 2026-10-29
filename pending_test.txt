@@ -67,3 +67,11 @@ prepared terminal supplies a private character; previous pending checks remain s
 5. Save/load and leave/return. No duplicate fixtures or refilled reserve; preserve
    previously stored water plus elapsed replenishment. Report any blocked approach.
 Expected: usable placement and existing accepted hygiene behavior throughout.
+
+ID: CA502-LIMBO-HISTORY-01
+Origin: 5.8.23 / issue #502
+Prerequisites: final23 package and assets/validation_5823 fixtures; close other GZDoom sessions.
+1. Run assets/validation_5823/author_terminal.ps1. It loads normal controls and an existing bedroom sink in a private mansion campaign.
+2. Observe the initial CA502H MANUAL reading at zero, the private half-hour absence, and the return reading at the recorded ambient value.
+3. The final console and game remain open. Confirm there is no VM error, duplicate object or repeated catch-up when continuing.
+Expected: the same sink gains the approved constant Limbo exposure while absent. Returning/reading again does not charge the same interval twice. No exterior-history claim.

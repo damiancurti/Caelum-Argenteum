@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.22** - 2026-10-27.
+Documentation version: **5.8.23** - 2026-10-27.
 
-**5.8.22/#410:**mansion bathrooms;validation_5822;CA410-MANSION-BATH-01pending.
+**5.8.22-23:**mansion-fixtures/Limbo-history;validation_5822-23;author-pending.
 **5.8.19–21:**cooking/fixtures;validation_5819–21;three-checks-pending.
 
 **5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
