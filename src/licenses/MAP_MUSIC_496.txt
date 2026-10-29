@@ -1,0 +1,17 @@
+Caelum Argenteum - Second map soundtrack collection (#496)
+
+Creator and supplier: Damian Curti (Damián Curti).
+Creation tool: Suno, confirmed by the author on 2026-10-24.
+The author supplied nineteen WAV recordings and requested their integration
+as map music. Each recording retains the destination in its supplied title.
+This notice records provenance; it does not grant a new public asset license.
+
+Original WAV masters and SHA-256 fingerprints are retained outside the runtime
+package in assets/source/audio/map_music_496. The catalogue records original
+titles, source names, intended destinations and packaged names. Future-map
+reservations do not imply that those maps are currently playable.
+
+Runtime treatment: complete recordings encoded as stereo 48-kHz Ogg Vorbis,
+quality 6. No cuts, fades, normalization, resampling or synthetic audio added.
+The preparation script and exact encoder fingerprint accompany the sources.
+Existing accepted map music is unchanged.

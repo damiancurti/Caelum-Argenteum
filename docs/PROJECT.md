@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
+
+## 5.8.4 - Second map soundtrack (#496)
+
+Nineteen author-supplied tracks are packaged and catalogued for their named destinations, with intact masters and provenance. Existing maps retain accepted music. Reserved soundtrack destinations are not new playable maps. Native playback evidence is separate from author listening CA496-MUSIC-01, fully accepted on 2026-10-24. Continue #410 food/furniture and the remaining V5.8 property/calendar/travel work on focused branches.
 
 ## 5.8.3 - Food/furniture work in progress (#410)
 

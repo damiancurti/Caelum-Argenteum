@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
+
+## 5.8.4 / #496 - Map soundtrack
+
+Deliver the nineteen supplied tracks, preserve masters/provenance and filename destinations, verify deterministic conversion and native playback. The author confirmed Suno creation and destination mapping on 2026-10-24. The author fully accepted CA496-MUSIC-01 on 2026-10-24, separately from automatic decoding/startup evidence. No unrelated map music replacement or gameplay change. Dependencies on unbuilt destination maps remain explicit reservations.
 
 ## #410 / 5.8.3 - Food and furniture in progress
 

@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.3.** Obtain and update the complete repository, validate
+**Current release: 5.8.4.** Obtain and update the complete repository, validate
+
+## 5.8.4 - Second map soundtrack (#496)
+
+Nineteen author-supplied Suno tracks are packaged as complete Ogg Vorbis recordings, with original WAV masters, destination catalogue and reproducible preparation. The author confirmed each filename as its intended destination; future destinations remain reserved. Existing map assignments are unchanged. Native playback and author listening results are recorded in `assets/validation_584`; CA496-MUSIC-01 was fully accepted by the author on 2026-10-24. V5.8 gameplay work (#410-417) remains tracked separately.
+
 it, then rebuild with `run_dev.bat` as described below.
 
 5.8.3 is the ongoing #410 food/furniture patch. Its first implemented slice is

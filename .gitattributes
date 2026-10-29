@@ -342,3 +342,11 @@
 /src/caelum/data/CaelumFoodData.zs text eol=lf
 /src/caelum/survival/CaelumFoodRules.zs text eol=lf
 /src/caelum/survival/CaelumFoodLots.zs text eol=lf
+
+# Preserve #496 original audio and native evidence fingerprints.
+/assets/source/audio/map_music_496/masters/*.wav -text
+/assets/source/audio/map_music_496/*.json text eol=lf
+/assets/validation_584/** -text whitespace=cr-at-eol
+/assets/validation_584/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/generators/prepare_map_music_496.py text eol=lf
+/src/music/CA_MUS_*.ogg -text

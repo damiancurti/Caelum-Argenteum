@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.3** — 2026-10-24.
+Documentation version: **5.8.4** — 2026-10-24.
+
+**5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.
 
 **5.8.3/#410:** core/HUD+isolated-lot-model;inventory/cooking/furniture-WIP. SYSTEMS/validation_583;40+38PASS;CA410-CORE-01accepted2026-10-24.
 **5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.
@@ -355,11 +357,10 @@ PROJECT owns scope/dependencies; HISTORY preserves earlier evidence.
 - `build/`: regenerable PK3; `archive/`: historical backups.
 - Root: README, build/launch scripts and validators. Map: AGENTS.md.
 
-Use DOCUMENT_INDEX for long documents; follow the engineering guides.
+Use DOCUMENT_INDEX and engineering guides.
 
 ## Critical premises
 
-Follow AGENTS.md and PROJECT.md. Keep outstanding author checks in
-[pending_test.txt](../pending_test.txt); only explicit acceptance permits removal,
-with ID, origin, date and qualifications recorded in [HISTORY.md](HISTORY.md).
-Failed, partial and unconfirmed checks remain.
+Follow AGENTS/PROJECT. Outstanding checks:
+[pending_test.txt](../pending_test.txt); remove only after explicit acceptance, recording ID/origin/date/qualifications in [HISTORY.md](HISTORY.md).
+Unconfirmed/failed checks remain.
