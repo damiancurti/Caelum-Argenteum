@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `06e49ddc9f3deb6fcafd2d1d6172305ecb179a8283ae174c748f7f77b468ae94`. Locations include every definition; the last one per language wins.
+SHA-256: `f932f0c2b6f00b2a4966abc30e269756c83962c58ae6bfd45e2ea05a96b072e2`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -65,7 +65,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
 | CA_CURRENCY | 15 | CA_CURRENCY_COPPER_COIN | CA_CURRENCY_SILVER_COIN_50 |
 | CA_DEBUG | 13 | CA_DEBUG_ATTRIBUTES_TITLE | CA_DEBUG_PAGE_RESOURCES |
-| CA_DECOR | 3 | CA_DECOR_HINT | CA_DECOR_STATUE |
+| CA_DECOR | 4 | CA_DECOR_HINT | CA_DECOR_STATUE |
 | CA_DEMO | 36 | CA_DEMO_BULL_0_1 | CA_DEMO_VOICE_9 |
 | CA_DEV | 1 | CA_DEV_BUILD_NAME | CA_DEV_BUILD_NAME |
 | CA_DIALOGUE | 3 | CA_DIALOGUE_MORE | CA_DIALOGUE_RETURN |

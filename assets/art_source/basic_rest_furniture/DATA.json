@@ -397,5 +397,16 @@
         ]
       }
     ]
+  },
+  "bedding": {
+    "mattress_thickness_m": 0.1,
+    "pillow_m": [
+      0.55,
+      0.12,
+      0.34
+    ],
+    "pillows": 1,
+    "cotton_fill_kg_m3": 30,
+    "calculation_authority": "2026-10-29 author requests mattresses/pillows and delegates furniture construction estimates. Sewn cotton shell and loose textile filling use the existing cotton-fabric recipe ingredient; 30 kg/m3 is an explicit design estimate, not a measured historical density. Sleeping surface and footprint stay unchanged."
   }
 }

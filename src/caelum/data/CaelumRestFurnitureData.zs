@@ -1,7 +1,7 @@
 // #410: recetas derivadas de la construcción histórica ya documentada.
 class CaelumRestFurnitureData : Object
 {
-    const REVISION=6;
+    const REVISION=7;
     const FIRST_RECIPE=CaelumStorageFurnitureData.FIRST_RECIPE+CaelumStorageFurnitureData.COUNT;
     const FIRST_KEY=CaelumStorageFurnitureData.FIRST_KEY+CaelumStorageFurnitureData.COUNT;
     const FIRST_BASIC_VARIANT=2;
@@ -9,7 +9,7 @@ class CaelumRestFurnitureData : Object
     const FIRST_STUDY_VARIANT=6;
     const FIRST_DINING_VARIANT=8;
     const FIRST_DECOR_VARIANT=12;
-    const COUNT=14;
+    const COUNT=15;
     const SHOP_STOCK=CaelumStorageFurnitureData.SHOP_STOCK;
     const BOOK_STOCK=CaelumStorageFurnitureData.BOOK_STOCK;
     const PARKED_STAT=Thinker.STAT_FIRST_THINKING-2;

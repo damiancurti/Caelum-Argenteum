@@ -30,16 +30,16 @@
       "reference": "https://www.metmuseum.org/art/collection/search/19766",
       "object": "2021.109a-vv",
       "date": "1815-1825",
-      "wood_kg": 132.88621280000015,
+      "wood_kg": 151.10432480000017,
       "iron_kg": 1.142724,
-      "cotton_cloth_kg": 1.0624572000000003,
-      "empty_kg": 135.09139400000015,
+      "cotton_cloth_kg": 18.2803456,
+      "empty_kg": 170.52739440000016,
       "recipe_grams": {
-        "wood": 132887,
+        "wood": 151105,
         "iron": 1143,
-        "cotton_cloth": 1063
+        "cotton_cloth": 18281
       },
-      "sha256": "857151a16e2caf3ac02af39e369d80d3d089f6289a9cf5e46ce77db4d3768e40"
+      "sha256": "2563b270d9e781d7c2a1e013b1cabf676bda2ff1b880557a80258db4c501fd98"
     },
     {
       "kind": "table",

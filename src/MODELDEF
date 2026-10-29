@@ -5054,4 +5054,14 @@ Model CaelumOrnamentalStatue
     FrameIndex COAS A 0 0
 }
 // #416 uses owned vehicle materials; the riding horse remains a sprite.
+Model CaelumLargeLandscapePainting
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_large_river_painting.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAL A 0 0
+}
 #include "caelum/data/transport_vehicles.modeldef"

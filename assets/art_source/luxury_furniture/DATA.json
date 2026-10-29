@@ -9,7 +9,51 @@
   "collision_cell_mu": 48,
   "layout_reference": "Existing ca_food_plate.obj spans 21 MU. Existing CaelumDiningBlock uses radius 24, hence a 48 MU cell. These inherited presentation/collision measurements are not new balances.",
   "construction": "Original carved wood furniture with iron fasteners and fitted cotton over solid wooden seating/slats. Sum modeled solid members for the bill, without subtracting small join overlaps. No unapproved foam, springs or upholstery filling. Museum metadata supplies envelopes and period context only; no copied photographs or mesh.",
-  "chair": {"width": 0.699, "depth": 0.699, "height": 0.940, "surface": 0.420, "reference": "https://www.metmuseum.org/art/collection/search/237", "object": "1970.35.1", "date": "circa 1870-1875"},
-  "bed": {"width": 1.600, "depth": 2.032, "height": 2.134, "surface": 0.450, "reference": "https://www.metmuseum.org/art/collection/search/19766", "object": "2021.109a-vv", "date": "1815-1825"},
-  "table": {"width": 4.159, "depth": 1.530, "height": 0.737, "surface": 0.737, "reference": "https://www.metmuseum.org/art/collection/search/3184", "object": "11.60.157a-c", "date": "1810-1820"}
+  "chair": {
+    "width": 0.699,
+    "depth": 0.699,
+    "height": 0.94,
+    "surface": 0.42,
+    "reference": "https://www.metmuseum.org/art/collection/search/237",
+    "object": "1970.35.1",
+    "date": "circa 1870-1875"
+  },
+  "bed": {
+    "width": 1.6,
+    "depth": 2.032,
+    "height": 2.134,
+    "surface": 0.45,
+    "reference": "https://www.metmuseum.org/art/collection/search/19766",
+    "object": "2021.109a-vv",
+    "date": "1815-1825"
+  },
+  "table": {
+    "width": 4.159,
+    "depth": 1.53,
+    "height": 0.737,
+    "surface": 0.737,
+    "reference": "https://www.metmuseum.org/art/collection/search/3184",
+    "object": "11.60.157a-c",
+    "date": "1810-1820"
+  },
+  "bedding": {
+    "mattress_thickness_m": 0.14,
+    "pillow_m": [
+      0.55,
+      0.12,
+      0.34
+    ],
+    "pillows": 2,
+    "cotton_fill_kg_m3": 30,
+    "calculation_authority": "2026-10-29 author requests mattresses/pillows and delegates furniture construction estimates. Sewn cotton shell and loose textile filling use the existing cotton-fabric recipe ingredient; 30 kg/m3 is an explicit design estimate, not a measured historical density. Sleeping surface and footprint stay unchanged."
+  },
+  "canopy": {
+    "rail_m": [
+      0.055,
+      0.06
+    ],
+    "valance_m": 0.22,
+    "curtain_width_m": 0.25,
+    "curtain_drop_m": 1.1
+  }
 }

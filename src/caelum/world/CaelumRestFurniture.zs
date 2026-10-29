@@ -25,6 +25,7 @@ class CaelumRestFurniture : Actor abstract
                 && rest.Status==CaelumRestRules.STATUS_ACTIVE)
             {Occupant.Angle=PoseAngle();rest.FacingAngle=Occupant.Angle;}
         }
+        if(GetClassName()=='CaelumLuxuryBed')Mass=int(Ceil(CaelumLuxuryData.Weight(1)));
         BasicDimensionsRevision=CaelumBasicRestData.REVISION;
     }
 

@@ -86,6 +86,10 @@ for sx in [-1,1]:
 frame.add_quad(TEXTURE,[(-cw/2*U,(h-ch)/2*U,d/2*U), (cw/2*U,(h-ch)/2*U,d/2*U),
     (cw/2*U,(h+ch)/2*U,d/2*U),(-cw/2*U,(h+ch)/2*U,d/2*U)])
 save(frame,'river_painting')
+large=Mesh();large.vertices=list(frame.vertices);large.uvs=list(frame.uvs);large.faces=frame.faces.copy()
+ps=DATA['large_painting']['planar_scale'];ds=DATA['large_painting']['depth_scale']
+large.vertices=[(x*ps,y*ps,z*ds) for x,y,z in large.vertices]
+save(large,'large_river_painting')
 wood=(w*h-cw*ch)*d+2*(cw+ch)*p['stretcher_section']**2
 iron=p['nails']*math.pi*p['nail_radius']**2*p['nail_length']*DATA['iron_density_kg_m3']
 painting_mass=[wood*DATA['wood_density_kg_m3'],iron,cw*ch*DATA['canvas_kg_m2']]
@@ -105,27 +109,32 @@ for name,code in [('painting','COTP'),('statue','COTS')]:
     source.save(SPRITES/(code+'A0.png'))
 Image.open(ART/'river_landscape_source.png').convert('RGB').resize((768,512),Image.Resampling.LANCZOS).save(OUT/'river_landscape.png')
 Image.open(ART/'wood_texture_source.png').convert('RGB').resize((512,512),Image.Resampling.LANCZOS).save(OUT/'carved_wood.png')
-for code in ['COAP','COAS']:
+for code in ['COAP','COAS','COAL']:
     Image.new('RGBA',(1,1)).save(SPRITES/(code+'A0.png'))
 rows=[]
 for name,masses in [('painting',painting_mass),('statue',statue_mass)]:
     row=DATA[name]
     rows.append({'name':name,'mass_kg':sum(masses),'materials_kg':masses,'recipe_grams':[math.ceil(v*1000) for v in masses],
         'width_units':row['width']*U,'height_units':row['height']*U,'radius_units':math.hypot(row['width'],row['depth'])*U/2})
+large_mass=[painting_mass[0]*ps*ps*ds,painting_mass[1]*ds**3,painting_mass[2]*ps*ps]
+rows.append({'name':'large_painting','mass_kg':sum(large_mass),'materials_kg':large_mass,'recipe_grams':[math.ceil(v*1000) for v in large_mass],
+    'width_units':p['width']*ps*U,'height_units':p['height']*ps*U,'radius_units':math.hypot(p['width']*ps,p['depth']*ds)*U/2})
 lines=['// #410: medidas y masas calculadas por generate_ornamental_decor.py.',
-       'class CaelumDecorData : Object','{','    const COUNT=2;']
-for k,name in enumerate(['PICTURE','STATUE']):
+       'class CaelumDecorData : Object','{','    const COUNT=3;']
+for k,name in enumerate(['PICTURE','STATUE','LARGE_PICTURE']):
     for key,field in [('RADIUS','radius_units'),('HEIGHT','height_units')]:
         lines.append(f"    const {name}_{key}={rows[k][field]:.9f};")
 for method,key in [('Mass','mass_kg'),('Width','width_units'),('Height','height_units'),('Radius','radius_units')]:
-    lines.append(f"    static clearscope double {method}(int k){{return k==0?{rows[0][key]:.9f}:{rows[1][key]:.9f};}}")
+    lines.append(f"    static clearscope double {method}(int k){{return k==0?{rows[0][key]:.9f}:k==1?{rows[1][key]:.9f}:{rows[2][key]:.9f};}}")
 lines += ['    const PICTURE_DEPTH='+str(p['depth']*U)+';',
-    '    static clearscope Name ItemClass(int k){return k==0?\'CaelumPaintingItem\':\'CaelumStatueItem\';}',
-    '    static clearscope Name BodyClass(int k){return k==0?\'CaelumLandscapePainting\':\'CaelumOrnamentalStatue\';}',
-    '    static clearscope String NameKey(int k){return k==0?"CA_DECOR_PAINTING":"CA_DECOR_STATUE";}',
-    '    static clearscope String Icon(int k){return k==0?"sprites/caelum/ornamental/COTPA0.png":"sprites/caelum/ornamental/COTSA0.png";}']
+    f'    static clearscope double Depth(int k){{return PICTURE_DEPTH*(k==2?{ds}:1);}}',
+    '    static clearscope bool WallMounted(int k){return k!=1;}',
+    '    static clearscope Name ItemClass(int k){return k==0?\'CaelumPaintingItem\':k==1?\'CaelumStatueItem\':\'CaelumLargePaintingItem\';}',
+    '    static clearscope Name BodyClass(int k){return k==0?\'CaelumLandscapePainting\':k==1?\'CaelumOrnamentalStatue\':\'CaelumLargeLandscapePainting\';}',
+    '    static clearscope String NameKey(int k){return k==0?"CA_DECOR_PAINTING":k==1?"CA_DECOR_STATUE":"CA_DECOR_PAINTING_LARGE";}',
+    '    static clearscope String Icon(int k){return k==1?"sprites/caelum/ornamental/COTSA0.png":"sprites/caelum/ornamental/COTPA0.png";}']
 for slot,method in enumerate(['Wood','Iron','Cloth']):
-    lines.append(f"    static clearscope int {method}(int k){{return k==0?{rows[0]['recipe_grams'][slot]}:{rows[1]['recipe_grams'][slot]};}}")
+    lines.append(f"    static clearscope int {method}(int k){{return k==0?{rows[0]['recipe_grams'][slot]}:k==1?{rows[1]['recipe_grams'][slot]}:{rows[2]['recipe_grams'][slot]};}}")
 lines.append('}')
 (ROOT/'src/caelum/data/CaelumDecorData.zs').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 paths=[*OUT.iterdir(),*SPRITES.iterdir(),ROOT/'src/caelum/data/CaelumDecorData.zs']
