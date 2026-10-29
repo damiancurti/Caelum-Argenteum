@@ -9,6 +9,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.56.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author-confirmed grouped #411 checks are recorded in HISTORY and removed from the outstanding queue.
 
 Author-confirmed grouped #502 checks are recorded in HISTORY and removed from the outstanding queue.
@@ -952,6 +954,8 @@ in [validation_583](assets/validation_583/RESULTS.md). CA410-CORE-01 passed all
 author checks on 2026-10-24.
 The saved food-lot metadata model now also passes 38 isolated native checks;
 its pickup/storage/cooking adapters and environmental clock remain to be wired.
+The author has also approved cupboard/wardrobe capacities and fountain/cistern
+water rules; SYSTEMS records these pending implementation values.
 
 5.8.2 integrates connected water into the mansion (#414): two nominal 32,000 L
 deposits east of the pool, a usable gate, service steps, conservative transfer,

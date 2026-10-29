@@ -2276,7 +2276,14 @@ decorative until hygiene is defined. Add the functional stove/oven, counter,
 kitchen sink and overhead storage in the mansion false-wall room while keeping
 the secret route accessible. Sink reserve 200 L potable, replenished 1 L/game
 minute, with actual-volume withdrawal and saved/off-map continuity. Exact
-furniture dimensions/capacities/recipes and placement layout still need definition.
+furniture dimensions/recipes and placement layout still need definition.
+
+Additional author approvals on 2026-10-24: cupboards hold 10 stacks / 100 kg;
+wardrobes hold 25 stacks / 1,000 kg, with the current chest lock/permission rules.
+Fountains use a 200-L potable reserve with +1 L/game minute replenishment.
+Cisterns hold 1,000 L without automatic refill; manual water transfers preserve
+contamination. This does not authorize a prefilled cistern or purification.
+These are approved data awaiting furniture implementation, not passed gameplay.
 
 ## Connected-water production (#414, 5.8.2)
 

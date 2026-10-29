@@ -22,3 +22,9 @@ The deterministic generators reuse owned textures/art. Padding uses explicit
 the DATA/GENERATED records. Sleeping surfaces/collision/recovery are retained.
 Author corroboration of these corrections remains pending. Other issue acceptances
 are recorded in their own patches.
+
+Final 5.8.56 handoff: the prepared manual canteen scene passed a native `invuse`
+check (one additional assertion). `prepare_author.py` builds the private helpers;
+`review_terminal.ps1` opens six separated correction scenes, preserving the
+previously accepted scenarios without requiring repeat author checks. The runtime
+water/decor source bytes match the tested 5.8.54 package exactly.

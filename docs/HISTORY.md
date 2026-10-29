@@ -16,6 +16,8 @@ Rally damage queries now inspect active player inventories; recovery pulses use 
 
 ## 5.8.54 - Furniture review corrections (#410, 2026-10-29)
 
+Final author acceptance, 2026-10-29: **CA410-REVIEW-01** (origin 5.8.54 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Corrections still require author corroboration.
 
 Author requested direct use of selected water containers at sources while retaining R; canopy, visible mattresses/pillows, large museum-like paintings and a visible statue in410/16. Original410/16 called only the single-picture view; the corrected review presents all three decorations. Source and model bills are updated; native evidence and author corroboration are recorded separately. Other issues remain isolated.
@@ -481,6 +483,10 @@ excluded from final counts. CA502-DINING-CONTACT-01 remains author-pending.
 
 ## 5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)
 
+Final author acceptance, 2026-10-29: **CA410-DECOR-01** (origin 5.8.44 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
+Partial author acceptance 2026-10-29: **CA410-DECOR-01**, originating 5.8.44 / #410. Grouped checks passed with the reported decoration fixture exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author approved the same movable-furniture acquisition for paintings and
 statues: three each in Provisions, ten recipe books, materials+25% and normal
 manufacturing restock. Motifs remain River Plate landscapes/ornamental carving,
@@ -699,6 +705,10 @@ No complete V5.8 claim or multiplayer validation is inferred.
 
 ## 5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)
 
+Final author acceptance, 2026-10-29: **CA410-BASIC-ACQUISITION-01** (origin 5.8.34 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
+Partial author acceptance 2026-10-29: **CA410-BASIC-ACQUISITION-01**, originating 5.8.34 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author's approved supply rules are extended to the corrected wooden chair
 and raised cot using their existing calculated construction bills. The wooden
 chair needs no sewing machine, fabric or iron; the cot retains its real textile
@@ -715,6 +725,10 @@ CA410-BASIC-ACQUISITION-01 remains pending; no complete V5.8 claim.
 
 ## 5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)
 
+Final author acceptance, 2026-10-29: **CA410-BASIC-REST-01** (origin 5.8.33 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
+Partial author acceptance 2026-10-29: **CA410-BASIC-REST-01**, originating 5.8.33 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author approved correcting the old oversized ordinary chair/cot and specified
 legs supporting the cot at chair-seat height, while sleeping bags stay on the floor.
 The correction uses documented nineteenth-century dimensions, owned construction
@@ -730,6 +744,10 @@ inspected, including the corrected seat center/headboard direction. Evidence:
 assets/validation_5833. No author acceptance or display-FPS result is inferred. CA410-BASIC-REST-01 is pending the grouped V5.8 handoff.
 
 ## 5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)
+
+Final author acceptance, 2026-10-29: **CA410-REST-ACQUISITION-01** (origin 5.8.32 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
+Partial author acceptance 2026-10-29: **CA410-REST-ACQUISITION-01**, originating 5.8.32 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 The approved three-per-type/ten-recipe-copy supply is extended to the luxury chair
 and bed using their existing delegated construction bills. Workbench, fine tools
@@ -764,6 +782,10 @@ Manual corroboration remains
 pending CA410-STORAGE-ACQUISITION-01, grouped for the full V5.8 handoff.
 
 ## 5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)
+
+Final author acceptance, 2026-10-29: **CA410-LUXURY-01** (origin 5.8.30 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
+Partial author acceptance 2026-10-29: **CA410-LUXURY-01**, originating 5.8.30 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 Original armchair, four-post bed and table models were added without replacing
 accepted furniture or map geometry. Museum dimensional references and delegated
@@ -1941,6 +1963,12 @@ Separated actual schedule outcomes from observed counts in production. Added ide
 The author supplied nineteen destination-named tracks and confirmed authorship with Suno. Preserved all original WAVs and destination identities, encoded complete recordings for native playback, and retained existing map bindings. Created an independent issue/branch from the ongoing #410 work; the soundtrack does not close any remaining gameplay issue. Native and static evidence lives in `assets/validation_584`; The author explicitly confirmed all checks in both supplied terminals passed on 2026-10-24. This records CA496-MUSIC-01 (origin 5.8.4/#496) fully accepted, without qualifications; its pending entry is removed. The tested music assets and package remain unchanged.
 
 ## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
+
+Further author decisions: cupboards 10 stacks/100 kg; wardrobes 25 stacks/
+1,000 kg with existing lock/permission rules; potable fountains 200 L replenished
+at 1 L/game minute; cisterns 1,000 L with manual filling and preserved water
+quality, no automatic replenishment. This records design approval only;
+furniture implementation and acceptance remain pending.
 
 Recorded the author's food deterioration, mass-relative dose, illness, nutrition,
 recipe, fuel/time and economy decisions in SYSTEMS. Implemented the persistent

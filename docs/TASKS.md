@@ -2,6 +2,8 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author review 2026-10-29 / #417: all remaining grouped scenarios passed without an issue-specific exception. Their stable IDs and original releases are recorded in HISTORY; only those accepted entries were removed from pending_test.txt. No runtime change or release increment.
 
 
@@ -25,7 +27,7 @@ Rally damage queries now inspect active player inventories; recovery pulses use 
 
 ## 5.8.54 / #410 - Author review corrections
 
-Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Corrections still require author corroboration.
+Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Author corroboration passed on 2026-10-29.
 
 Implement selected-container refill, mattresses/pillows/luxury canopy, and museum-size landscape. Keep the original statue visible in the author gallery. Verify changed interactions/art and migration; accepted unrelated checks are not reopened. City frame-time regression belongs to #415; Buenos Aires uses the author-selected original Ciudad track under #416. No merge or closure yet.
 
@@ -1095,6 +1097,9 @@ migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
 The original 5.8.3 slice had no ingestion adapter; native rations now call it in 5.8.14.
+Cupboard/wardrobe capacities and fountain/cistern water rules were approved
+on 2026-10-24; dimensions, recipes and placement were defined by the later
+furniture deliveries above.
 CaelumFoodLots now implements/tested separate ages, exposure, atomic transfers,
 oldest-first consumption and serializable ownership (38 native assertions).
 Wire it into native inventory mutations and environmental time before claiming
