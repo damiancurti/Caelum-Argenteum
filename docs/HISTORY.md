@@ -306,6 +306,8 @@ author entry was removed; the author remains away and tests stay grouped.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
+Author confirmation2026-10-29: **CA502-ADAPTERS-01**, originating 5.8.50 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 The author requested completion without further small partial handoffs. Added
 common inventory/coin FIFO adapters, single-unit cloth rinsing, carried furniture
 exposure, sleeping-bag/tent state boundaries, NPC floor/wall contact and an
@@ -325,6 +327,8 @@ the next tic could remove a separated pair; deferred native phases pass.
 Author checks remain grouped. No complete V5.8 or displayed-FPS claim.
 
 ## 5.8.49 - Physical material and food contact (#502)
+
+Author confirmation2026-10-29: **CA502-PHYSICAL-STACKS-01**, originating 5.8.49 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 The author approved generic ore2500, hide860 and unspecified food-mixture1000
 kg/m^3 references during implementation. Added documented additive material
@@ -347,6 +351,8 @@ assets/validation_5849/report.json. CA-KP-186 records the ownership trap.
 Author acceptance remains pending, grouped for completion of the whole V5.8.
 
 ## 5.8.48 - Vessel exterior contamination (#502, 2026-10-28)
+
+Author confirmation2026-10-29: **CA502-VESSELS-01**, originating 5.8.48 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Extended the existing contamination ledger to bottles, canteens, mates and the
 camp pot, using already approved geometry. Native pickup/storage, owner changes,
@@ -376,6 +382,8 @@ Evidence: assets/validation_5848. CA502-VESSELS-01 remains reserved for the fina
 grouped author handoff. No earlier author entry is removed; V5.8 remains open.
 
 ## 5.8.47 - Abstract stack contamination (#502, 2026-10-28)
+
+Author confirmation2026-10-29: **CA502-ABSTRACT-STACKS-01**, originating 5.8.47 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 The author approved equivalent spheres per native unit at a reference density
 of 1,000 kg/m^3, with existing masses and additive surface across split/merge.
@@ -410,6 +418,8 @@ exteriors and remaining contact discovery still need their own adapters;
 
 ## 5.8.46 - Native NPC absence physiology (#502, 2026-10-28)
 
+Author confirmation2026-10-29: **CA502-NPC-ABSENCE-01**, originating 5.8.46 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Author decisions: source-clock physiology uses20 world seconds per exterior
 active second and the existing Limbo clock; documented physical calculations
 are authorized for remaining stackable surfaces, preserving separate lots and
@@ -443,6 +453,8 @@ Author acceptance remains pending under CA502-NPC-ABSENCE-01, grouped with
 earlier outstanding tests. No existing author result was removed or reclassified.
 
 ## 5.8.45 - Shared dining contamination (#502, 2026-10-28)
+
+Author confirmation2026-10-29: **CA502-DINING-CONTACT-01**, originating 5.8.45 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Inspection found separate contamination records on a table's invisible collision
 cells, while non-solid controllers missed exposure. Corrected the physical-to-
@@ -492,6 +504,8 @@ requires return-map completion; an intermission-only run is not counted.
 
 ## 5.8.43 - Unloaded household cleaning (#502, 2026-10-28)
 
+Author confirmation2026-10-29: **CA502-HOME-AWAY-01**, originating 5.8.43 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Author decision: summarized off-map cleaning uses actual physical access captured
 at departure, rather than simulating every walking step. Implemented native
 access snapshots, shared civil-day work quotas and progressive cleaning through
@@ -523,6 +537,8 @@ The remaining V5.8 work is recorded in TASKS; multiplayer rest stays in V5.12.
 
 ## 5.8.42 - Household furnishing contamination persistence (#502, 2026-10-28)
 
+Author confirmation2026-10-29: **CA502-HOME-FURNISHINGS-01**, originating 5.8.42 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Added scalar, revision-1 furnishing records to visited-house storage. Actual
 housekeeping targets retain concentration, source exposure and stable identity
 through native hub and Limbo travel. Restoration consumes the snapshot once;
@@ -549,6 +565,8 @@ grouped V5.8 handoff. Automatic unloaded housekeeping/purchases, unloaded NPC
 physiology, remaining contact adapters and other V5.8 issues are not complete.
 
 ## 5.8.41 - Household storage persistence (#502, 2026-10-28)
+
+Author confirmation2026-10-29: **CA502-HOME-STORAGE-01**, originating 5.8.41 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Added the actual-coffer travelling registry and source-home food/water/exposure
 catch-up without making household stock player cargo. Partial work survives
@@ -605,6 +623,8 @@ acceptance or completed unloaded simulation is claimed; pending tests are kept.
 
 ## 5.8.38 - Loaded NPC illness (#502, 2026-10-27)
 
+Author confirmation2026-10-29: **CA502-NPC-ILLNESS-01**, originating 5.8.38 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Connected the approved illness formula to native NPC ticks and sustained damage;
 added saved fractional damage without retroactive injury. Existing idle recovery
 also depurates at full Life. A per-owner transient cache retains the canonical body
@@ -618,6 +638,8 @@ CA502-NPC-ILLNESS-01 remains author-pending for the grouped V5.8 handoff. Unload
 physiology, household work and other issue scopes remain open.
 
 ## 5.8.37 - Seal object history (#502, 2026-10-27)
+
+Author confirmation2026-10-29: **CA502-SEAL-HISTORY-01**, originating 5.8.37 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Added revision4 object-history intervals for temporary climate seals and rain,
 with natural-weather handoff on map departure. Surface sampling skips only the
@@ -791,6 +813,8 @@ and reuse boundaries are recorded in assets/validation_5829/RESULTS.md.
 
 ## 5.8.28 - Regional weather history for objects (#502)
 
+Author confirmation2026-10-29: **CA502-WEATHER-HISTORY-01**, originating 5.8.28 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Exposed physical objects now reconstruct natural temperature, humidity and rain
 for elapsed civil minutes after save/hub restoration or a loaded clock jump.
 Their recorded region, weather seed, shelter, environmental category and surface
@@ -896,6 +920,8 @@ open. Current land permissions do not yet grant bedroom rearrangement. Multiplay
 rest review remains explicitly deferred to V5.12.
 
 ## 5.8.23 - Constant Limbo exposure across absence (#502)
+
+Author confirmation2026-10-29: **CA502-LIMBO-HISTORY-01**, originating 5.8.23 / #502, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Physical objects now preserve their constant mansion exposure interval across
 save/load and hub absence. The first query or cleaning operation settles it
