@@ -140,7 +140,7 @@ class CaelumJourneyModel : Object play
         FoodInventory=new('CaelumJourneyFood');FoodInventory.Capture(user);
         let contactThermal=CaelumThermalService.CaptureForecast(user);
         if(contactThermal!=null)
-        {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);}
+        {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);Contamination.BindFood(FoodInventory);}
         let observedAltitude=CaelumAltitudeService.Update(user);
         Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;
         AltitudeSecondsPerTic=3600.0/CaelumWorldClock.TicsPerHour();

@@ -412,3 +412,17 @@ campaign, bottles/canteens/mates/pot, actual Magic Box, loaded dining set.
    Expect no crash, lost objects, duplicated doses or reset contamination.
 Expected: existing artwork/contents and persistent exterior dirt remain correct.
 Author handoff is deferred until all V5.8 implementation is complete.
+
+CA502-PHYSICAL-STACKS-01 | Origin: 5.8.49 | Issue: #502
+Prerequisites: final grouped V5.8 build and prepared physical-contact fixture;
+GZDoom4.14.2, separate native food/material lots and the actual Magic Box.
+1. Expose food and physical materials; split, drop, collect and store them.
+   Expect retained quantities and distinct contamination, with no freshening.
+2. Compare exposed food with boxed food after waiting: both age, while only
+   exposed food receives new environmental contact. Inspect before eating.
+3. Save/load and travel/return with food and materials; expect retained identity,
+   contamination and quantities. Rejected journey previews must not consume food.
+4. Let an NPC carry exposed and shielded food while absent, then return.
+   Both age using that region; protected stock avoids new contact exposure.
+Expected: all native quantity, contact and persistence checks pass. Report
+specific failures; this remains part of the final grouped handoff.

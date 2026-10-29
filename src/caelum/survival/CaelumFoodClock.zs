@@ -83,6 +83,8 @@ class CaelumFoodClock : Thinker
     bool Ready;
     double Stamp;
     transient int NextUpdate;
+    transient Actor SampleOwner;
+    transient String SampleMap;
     static CaelumFoodClock Get(Inventory item)
     {
         if(!CaelumFoodInventory.IsFood(item))return null;
@@ -106,6 +108,8 @@ class CaelumFoodClock : Thinker
     void Advance()
     {
         if(Item==null || Item.bDestroyed)return;
+        let npc=CaelumCombatActor(CaelumContaminationStack.Carrier(Item));
+        if(npc!=null && npc.ContaminationAbsence!=null && npc.ContaminationAbsence.Away)return;
         let body=Location();let user=CaelumPlayer(body);let world=CaelumThermalWorld.Get();
         let clock=user!=null?CaelumWorldClock.Get(user):world!=null?world.ReferenceClock:null;
         let calendar=user!=null?CaelumCalendarState.Get(user):world!=null?world.ReferenceCalendar:null;
@@ -118,10 +122,14 @@ class CaelumFoodClock : Thinker
         if(Climate==null)Climate=new('CaelumFoodClimate');
         bool commercial=Item.Owner is 'CaelumCityMerchant';
         if(Ready && now>Stamp && !commercial)Climate.Advance(lots,now-Stamp);
+        bool sampleDue=!Ready || level.maptime>=NextUpdate || body!=SampleOwner || SampleMap!=level.MapName;
         Stamp=now;Ready=true;
         // No inicializar con datos climáticos inventados cuando no hay muestra.
-        if(remote==null)Climate.Capture(body,clock,calendar,weather);
-        NextUpdate=level.maptime+TICRATE;
+        if(sampleDue)
+        {
+            if(remote==null)Climate.Capture(body,clock,calendar,weather);
+            SampleOwner=body;SampleMap=level.MapName;NextUpdate=level.maptime+TICRATE;
+        }
     }
     override void Tick()
     {

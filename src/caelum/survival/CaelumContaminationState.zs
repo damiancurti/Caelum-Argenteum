@@ -8,7 +8,9 @@ class CaelumContaminationState : Object play
     double DiseaseFraction;
     int DomesticTargetKey;
     int StackRevision;
+    Inventory StackOwner;
     CaelumFoodLots StackLots;
+    CaelumContaminationContacts Contacts;
 
     void EnsurePhysiology()
     {

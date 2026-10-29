@@ -67,6 +67,7 @@ class CaelumFoodInventory : Object play
         if(emptyTarget){let empty=new('CaelumFoodLots');empty.Ensure(from.Kind,0,Stamp(source));SetLots(target,empty);}
         else Prepare(target);
         bool moved=from.TransferTo(GetLots(target),count);
+        if(moved){CaelumContaminationStack.Clock(source).ResetBoundary();CaelumContaminationStack.Clock(target).ResetBoundary();}
         if(moved && emptyTarget)
         {
             let sourceClock=CaelumFoodClock.Get(source);

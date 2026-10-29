@@ -15,6 +15,7 @@ class CaelumContaminationObject : Thinker
     int HistoryProfile,HistoryRegion,HistorySeed,HistoryShelter;
     double HistoryReference,HistoryCivilOffset;
     double HistoryRain;
+    bool HistoryNoWash;
     double HistoryNaturalAmbient;
     bool HistoryTemporaryClimate,HistoryNaturalVariable;
     transient double NaturalAmbient;
@@ -127,7 +128,7 @@ class CaelumContaminationObject : Thinker
     double Replay(double value,double now)
     {
         if(Revision<3 || !HistoryVariable)
-            return CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,Revision>=4?HistoryRain:0,HistoryArea,now-HistoryStamp);
+            return CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,Revision>=4 && !HistoryNoWash?HistoryRain:0,HistoryArea,now-HistoryStamp);
         let world=CaelumContaminationWorld.Get();
         if(world==null)return value;
         if(world.HistoryWeather==null)world.HistoryWeather=new('CaelumContaminationWeatherCache');
@@ -143,7 +144,7 @@ class CaelumContaminationObject : Thinker
             if(sample==null || sample.Day!=day)sample=world.HistoryWeather.GetDay(self,day);
             sample.Sample(minute);
             if(sample.Ambient[minute]>=0)value=CaelumContaminationObjectBalance.Evolve(
-                value,sample.Ambient[minute],sample.Rain[minute],HistoryArea,end-stamp);
+                value,sample.Ambient[minute],HistoryNoWash?0:sample.Rain[minute],HistoryArea,end-stamp);
             stamp=end;
         }
         return value;

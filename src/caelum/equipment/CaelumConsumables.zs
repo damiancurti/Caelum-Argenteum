@@ -155,6 +155,7 @@ class CaelumConsumableItem : PowerupGiver
 
     override bool TryPickup(in out Actor toucher)
     {
+        CaelumContaminationContacts.PickupContact(self,toucher);
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
         if (caelumPlayer == null
             || !caelumPlayer.PrepareNativeConsumablePickup(self))

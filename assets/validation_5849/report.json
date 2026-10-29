@@ -1,0 +1,273 @@
+{
+  "version": "5.8.49",
+  "issue": 502,
+  "base": "874d038d9ccf38328da78073be0740c6ff3559c4",
+  "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+  "source_matching_package_members": 17039,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 1190,
+  "original_runtime_passes": 2,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "ready49-catalogue",
+      "passes": 1030,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-food",
+      "passes": 14,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-forecast",
+      "passes": 9,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-contact",
+      "passes": 6,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-support",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-absent",
+      "passes": 6,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-seed",
+      "passes": 1,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-resume",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-hub",
+      "passes": 6,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    },
+    {
+      "label": "ready49-upgrade",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "10744cbe03c5860b267fee6a1abab018fa07bffcabd6e23e43fc6e0629229750"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "ready49-k-transfer",
+      "passes": 9,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready49-k-pickup",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready49-k-market",
+      "passes": 16,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready49-f-clock",
+      "passes": 8,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready49-process-core",
+      "passes": 55,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "5cd2ab5850c8d5fa3d93c81a582b61caedcad4fdb6e544df72698b96d6af3241"
+    },
+    {
+      "label": "ready49-process-guards",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "5cd2ab5850c8d5fa3d93c81a582b61caedcad4fdb6e544df72698b96d6af3241"
+    },
+    {
+      "label": "ready49-process-fast",
+      "passes": 5,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "5cd2ab5850c8d5fa3d93c81a582b61caedcad4fdb6e544df72698b96d6af3241"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original48-seed03",
+      "passes": 1,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "292008dace689ec9b495ed8830a9592ad8e1b98128364bddc3b49249e9f3d01b"
+    },
+    {
+      "label": "ready49-rollback",
+      "passes": 1,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "292008dace689ec9b495ed8830a9592ad8e1b98128364bddc3b49249e9f3d01b"
+    }
+  ],
+  "prior_save_sha256": "32e986694c1410bfa299cd59d6d72096c229c1cd3629bb747ec2d7198d4b28ce",
+  "performance": [
+    {
+      "label": "perf49-baseline",
+      "utc": "2026-10-29T01:46:40.152999+00:00",
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "fixture_sha256": "5c263451ed6d5a8e7c00db48cefedb3861dfe5f9fc2209e78314c8696636640c",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\original48\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-baseline.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-baseline.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-baseline.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-baseline.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 0,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.1892,
+      "phase_elapsed_ms": 20038.50869989395,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66836663886572,
+      "p95_callback_ms": 17.0387,
+      "p99_callback_ms": 17.2458,
+      "worst_callback_ms": 18.0245,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 physical material piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "physical material pile"
+    },
+    {
+      "label": "perf49-current",
+      "utc": "2026-10-29T01:47:17.873141+00:00",
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "fixture_sha256": "5c263451ed6d5a8e7c00db48cefedb3861dfe5f9fc2209e78314c8696636640c",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\final49a\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-current.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-current.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-current.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-physical\\perf49-current.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 1000,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.2465,
+      "phase_elapsed_ms": 20041.37919998169,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666481067556298,
+      "p95_callback_ms": 17.1857,
+      "p99_callback_ms": 17.5523,
+      "worst_callback_ms": 19.0377,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 physical material piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "physical material pile"
+    }
+  ],
+  "scope": "Physical material/food surfaces; authoritative food ageing/contact ledger; independent forecasts; absent NPC food climate; local non-solid contact and floor support; actual prior runtime migration/rollback.",
+  "limits": "Documented reference densities and gameplay proxies, not mesh surfaces. Other generic physical inventory/contact adapters and issues415-417 remain open. No displayed-frame or campaign FPS acceptance.",
+  "author_acceptance": "CA502-PHYSICAL-STACKS-01 pending grouped final V5.8 handoff; no author check removed."
+}

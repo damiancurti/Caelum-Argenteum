@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.48** - 2026-10-28.
+Documentation version: **5.8.49** - 2026-10-28.
+
+## 5.8.49 - Physical material and food contact (#502)
+
+The author approved generic ore2500, hide860 and unspecified food-mixture1000
+kg/m^3 references during implementation. Added documented additive material
+surfaces; a single authoritative food lot ledger for exposure/age/intake;
+source-climate absent NPC food, non-solid contact observation and floor support.
+Existing mass, recipes, artwork and game rates are unchanged.
+
+Native migration exposed an old inventory-chain trap: FindInventory on an
+Inventory actor can reach a neighbouring item's generic carrier. Adoption now
+requires actual ownership; old aliased stack records separate per native item.
+The first migration fixture itself overwrote its material record through this
+old path while seeding food; the corrected original-runtime fixture proves
+independently owned records before saving. Probe floor placement and NPC
+initialization also needed native floor refresh/deferred initialization.
+Private failed logs are retained and excluded. Final native verification:
+1190 current assertions plus2 actual original-runtime assertions, zero failures;
+current save/hub, prior-runtime upgrade/rollback and kitchen regressions pass.
+Source/package identity, static checks and performance are recorded in
+assets/validation_5849/report.json. CA-KP-186 records the ownership trap.
+Author acceptance remains pending, grouped for completion of the whole V5.8.
 
 ## 5.8.48 - Vessel exterior contamination (#502, 2026-10-28)
 

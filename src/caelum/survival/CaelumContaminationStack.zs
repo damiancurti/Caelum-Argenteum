@@ -13,9 +13,9 @@ class CaelumContaminationStack : Object play
     {
         if(CaelumVesselSurfaceData.Eligible(item))return true;
         let material=CaelumMaterialPickup(item);
-        if(material!=null)return CaelumStackSurfaceData.AbstractMaterial(material.GetSpecialType());
+        if(material!=null)return material.GetSpecialType()>=0 && material.GetSpecialType()<CaelumConstants.MATERIAL_TYPE_COUNT;
         let prepared=CaelumConsumableItem(item);
-        return prepared!=null && CaelumPotionRules.IsPotion(prepared.GetConsumableType());
+        return prepared!=null && (CaelumPotionRules.IsPotion(prepared.GetConsumableType()) || CaelumFoodInventory.IsFood(prepared) || prepared.GetConsumableType()==CaelumConstants.CONSUMABLE_WATER_RATION);
     }
     static CaelumContaminationState Record(Inventory item,bool create=true)
     {
@@ -25,7 +25,17 @@ class CaelumContaminationStack : Object play
         if(result==null && create)
         {
             let old=CaelumContaminationCarrier(item.FindInventory('CaelumContaminationCarrier'));
-            result=old!=null && old.State!=null?old.State:new('CaelumContaminationState');result.Ensure();
+            result=old!=null && old.Owner==item && old.State!=null?old.State:new('CaelumContaminationState');result.Ensure();
+            if(material!=null)material.ContaminationState=result;else prepared.ContaminationState=result;
+        }
+        if(result!=null && create && result.StackOwner!=item)
+        {
+            // Inv tambi?n enlaza los objetos vecinos del due?o. Un portador
+            // antiguo ajeno no pertenece a esta unidad; separar alias guardados.
+            let owned=result.Copy();owned.StackOwner=item;owned.StackRevision=result.StackRevision;
+            if(result.StackLots!=null)owned.StackLots=result.StackLots.Copy();
+            if(result.Exposure!=null && result.Exposure.Body==item)owned.Exposure=result.Exposure;
+            result=owned;
             if(material!=null)material.ContaminationState=result;else prepared.ContaminationState=result;
         }
         return result;
@@ -33,6 +43,14 @@ class CaelumContaminationStack : Object play
     static CaelumFoodLots Prepare(Inventory item)
     {
         let record=Record(item);if(record==null)return null;
+        if(CaelumFoodInventory.IsFood(item))
+        {
+            let food=CaelumFoodInventory.Prepare(item);
+            if(record.StackRevision<CaelumStackSurfaceData.REVISION)
+                for(int i=0;i<food.Lots.Size();i++)
+                {food.Lots[i].BaseContamination=Max(food.Contamination(i),record.Concentration);food.Lots[i].ExposureAtEntry=food.Exposure;}
+            record.StackRevision=CaelumStackSurfaceData.REVISION;return food;
+        }
         if(record.StackLots==null)
         {
             record.StackLots=new('CaelumFoodLots');
@@ -41,6 +59,11 @@ class CaelumContaminationStack : Object play
         }
         record.StackRevision=CaelumStackSurfaceData.REVISION;
         return record.StackLots;
+    }
+    static void SetLots(Inventory item,CaelumFoodLots lots)
+    {
+        if(CaelumFoodInventory.IsFood(item))CaelumFoodInventory.SetLots(item,lots);
+        else Record(item).StackLots=lots;
     }
     static CaelumStackExposure Clock(Inventory item)
     {
@@ -62,7 +85,7 @@ class CaelumContaminationStack : Object play
     }
     static bool Transfer(Inventory source,Inventory target,int count,bool emptyTarget)
     {
-        if(!Eligible(source))return true;
+        if(!Eligible(source) || CaelumFoodInventory.IsFood(source))return true;
         if(source==target)return true;
         if(!Eligible(target) || source.GetClass()!=target.GetClass())return false;
         let sm=CaelumMaterialPickup(source);let tm=CaelumMaterialPickup(target);
@@ -77,16 +100,18 @@ class CaelumContaminationStack : Object play
     }
     static void KeepOldest(Inventory item)
     {
+        if(CaelumFoodInventory.IsFood(item))return;
         let lots=Prepare(item);
         if(lots!=null && item.Amount>0 && item.Amount<lots.Units())Record(item).StackLots=lots.CopyOldest(item.Amount);
     }
     static void Remove(Inventory item,int count)
     {
+        if(CaelumFoodInventory.IsFood(item))return;
         let lots=Prepare(item);if(lots==null)return;
         double ignored;lots.Consume(count,ignored);
     }
     static void Relocate(Inventory item)
-    {if(Eligible(item) && !item.bDestroyed)Clock(item).Sync();}
+    {if(Eligible(item) && !item.bDestroyed){if(item.Owner!=null)CaelumContaminationContacts.Detach(item);Clock(item).Sync();}}
     static void Rebase(Inventory item,double shift)
     {
         let record=Record(item,false);if(record==null)return;
@@ -174,8 +199,8 @@ class CaelumContaminationStack : Object play
         if(b)area=Min(area,CaelumStackSurfaceData.UnitArea(Inventory(second.Body))*originalB.Units());
         let resultA=ContactResult(originalA,originalB,area,seconds,first.Dose);
         let resultB=ContactResult(originalB,originalA,area,seconds,second.Dose);
-        if(a)Record(Inventory(first.Body)).StackLots=resultA;else first.Set(Mean(resultA));
-        if(b)Record(Inventory(second.Body)).StackLots=resultB;else second.Set(Mean(resultB));
+        if(a)SetLots(Inventory(first.Body),resultA);else first.Set(Mean(resultA));
+        if(b)SetLots(Inventory(second.Body),resultB);else second.Set(Mean(resultB));
         return true;
     }
 }
@@ -185,6 +210,9 @@ class CaelumContaminationStack : Object play
 class CaelumStackExposure : CaelumContaminationObject
 {
     transient bool Syncing;
+    bool SupportReady;
+    double SupportStamp;
+    vector3 SupportPosition;
     static bool Carried(Inventory item)
     {return CaelumContaminationStack.Carrier(item)!=null;}
     Actor Location()
@@ -208,7 +236,10 @@ class CaelumStackExposure : CaelumContaminationObject
     {
         let item=Inventory(Body);
         if(Syncing || item==null || item.bDestroyed || !CaelumContaminationStack.Eligible(item))return;
-        Syncing=true;
+        let npc=CaelumCombatActor(CaelumContaminationStack.Carrier(item));
+        if(npc!=null && npc.ContaminationAbsence!=null && npc.ContaminationAbsence.Away)return;
+        Syncing=true;HistoryNoWash=CaelumFoodInventory.IsFood(item);
+        let foodClock=CaelumFoodClock.Get(item);if(foodClock!=null)foodClock.Advance();
         let lots=CaelumContaminationStack.Prepare(item);
         let world=CaelumThermalWorld.Get();let location=Location();
         let user=CaelumPlayer(location);
@@ -241,7 +272,9 @@ class CaelumStackExposure : CaelumContaminationObject
         {
             Actor original=Body;Body=location;Sample(world);Body=original;
             RecordSample(sampleStamp);Stamp=sampleStamp;HistoryArea=CaelumStackSurfaceData.UnitArea(item);
-            if(Carried(item) || CaelumContaminationStorage.IsShielded(item))HistoryArea=0;
+            if(CaelumFoodInventory.IsFood(item))HistoryRain=0;
+            if(Carried(item) || CaelumContaminationStorage.IsShielded(item)
+                || (CaelumFoodInventory.IsFood(item) && vendor!=null))HistoryArea=0;
         }
         Ready=true;NextUpdate=level.maptime+TICRATE;Syncing=false;
     }
@@ -251,7 +284,18 @@ class CaelumStackExposure : CaelumContaminationObject
         if(!CaelumContaminationStack.Eligible(Inventory(Body)))return;
         if(NextUpdate==0)
         {let world=CaelumThermalWorld.Get();NextUpdate=level.maptime+1+(world!=null?world.NextPhase++%TICRATE:0);}
-        if(level.maptime>=NextUpdate)CaelumContaminationStack.Reconcile(Inventory(Body));
+        if(level.maptime>=NextUpdate)
+        {
+            let item=Inventory(Body);CaelumContaminationStack.Reconcile(item);
+            if(item.Owner==null)
+            {
+                if(SupportReady && SupportPosition==Body.Pos && Stamp>SupportStamp)
+                    CaelumContaminationSurfaceContact.StackSupport(item,Stamp-SupportStamp);
+                SupportReady=true;SupportStamp=Stamp;SupportPosition=Body.Pos;
+                CaelumContaminationContacts.Observe(item);
+            }
+            else SupportReady=false;
+        }
     }
 }
 

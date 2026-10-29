@@ -99,6 +99,13 @@ class CaelumContaminationTile : Object play
     void Contact(Actor body,double area,double seconds)
     {
         if(body==null || CaelumContaminationStorage.IsShielded(body))return;
+        if(CaelumContaminationStack.Eligible(Inventory(body)))
+        {
+            let source=new('CaelumContaminationState');source.Ensure();source.Concentration=Concentration;
+            CaelumContaminationCombat.Transfer(CaelumContaminationCombat.ActorPoint(body),
+                CaelumContaminationCombat.ModelPoint(source),area,seconds);
+            Concentration=source.Concentration;return;
+        }
         double other=CaelumContaminationStorage.Value(body);
         if(Concentration>other)CaelumContaminationStorage.Set(body,CaelumContaminationRules.AfterContact(
             other,Concentration,area,seconds,CaelumContaminationStorage.Dose(body)));
@@ -245,10 +252,10 @@ class CaelumContaminationSurfaceContact : Object play
         return ((point.X*uphill.X+point.Y*uphill.Y)*Sqrt(1+grade*grade),
             -point.X*uphill.Y+point.Y*uphill.X);
     }
-    static bool Grounded(CaelumPlayer user)
+    static bool Grounded(Actor user)
     {return user!=null && user.CurSector!=null && !user.bNoClip && !user.bNoGravity
         && user.Vel.Z<=0 && Abs(user.Pos.Z-user.FloorZ)<0.01;}
-    static CaelumContaminationTile FloorTile(CaelumPlayer user,CaelumContaminationMap sheet,bool create)
+    static CaelumContaminationTile FloorTile(Actor user,CaelumContaminationMap sheet,bool create)
     {
         if(!Grounded(user) || sheet==null)return null;
         let support=CaelumThermalMotion.Support(user);
@@ -260,7 +267,7 @@ class CaelumContaminationSurfaceContact : Object play
         vector2 point=PlaneCoordinates(user.Pos.XY,slope);
         return sheet.Find(support==null?0:1,sector.Index(),0,Cell(point.X),Cell(point.Y),create);
     }
-    static CaelumContaminationTile WallTile(CaelumPlayer user,CaelumContaminationMap sheet,bool create)
+    static CaelumContaminationTile WallTile(Actor user,CaelumContaminationMap sheet,bool create)
     {
         if(user==null || user.bNoClip || sheet==null)return null;
         let lines=BlockLinesIterator.Create(user,user.Radius+0.01);
@@ -292,6 +299,32 @@ class CaelumContaminationSurfaceContact : Object play
         tile.Region=weather.Region;tile.Seed=weather.Seed;
         tile.Covered=thermal.Roof;
         tile.Shelter=shelter;
+    }
+    static void ConfigureObject(Actor body,CaelumContaminationTile tile)
+    {
+        let world=CaelumThermalWorld.Get();if(tile==null || world==null)return;
+        let weather=world.ReferenceWeather;if(weather==null)return;
+        bool roof=CaelumThermalShelter.Roof(body);
+        int shelter=CaelumThermalEnvironment.ClimateShelter(weather.Profile,roof,CaelumThermalShelter.WindBlocked(body));
+        double reference=CaelumContaminationEnvironment.ReferenceAt(body);
+        if(tile.Reference!=reference || tile.Profile!=weather.Profile || tile.Region!=weather.Region
+            || tile.Seed!=weather.Seed || tile.Covered!=roof || tile.Shelter!=shelter)tile.WeatherReady=false;
+        tile.Reference=reference;tile.Profile=weather.Profile;tile.Region=weather.Region;
+        tile.Seed=weather.Seed;tile.Covered=roof;tile.Shelter=shelter;
+    }
+    static void StackSupport(Inventory item,double seconds)
+    {
+        if(item==null || item.Owner!=null || item.bDestroyed || seconds<=0
+            || !CaelumContaminationStack.Eligible(item) || CaelumContaminationStorage.IsShielded(item))return;
+        let world=CaelumThermalWorld.Get();if(world==null || world.ReferenceClock==null)return;
+        let user=CaelumPlayer(world.ReferenceClock.Owner);if(user==null)return;
+        let sheet=CaelumContaminationSurfaces.CurrentMap(user);if(sheet==null)return;
+        let tile=FloorTile(item,sheet,true);if(tile==null)return;
+        double now=CaelumContaminationSurfaces.Now(user);
+        if(tile.Profile==0)ConfigureObject(item,tile);sheet.Sync(tile,now);ConfigureObject(item,tile);
+        double r=CaelumPhysicsUnits.Meters(item.Radius);
+        double area=Min(CaelumStackSurfaceData.PI*r*r,CaelumStackSurfaceData.UnitArea(item)*item.Amount);
+        tile.Contact(item,area,seconds);
     }
     static Actor Outer(CaelumPlayer user,int slot)
     {

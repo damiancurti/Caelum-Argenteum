@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.48** - 2026-10-28.
+Documentation version: **5.8.49** - 2026-10-28.
+
+## 5.8.49 / #502 - Physical materials and food integration
+
+Documented surfaces cover the physical material catalogue and prepared food.
+Native quantity operations, shared food ageing/exposure, source-climate NPC
+absence, non-solid ground contact and independent record migration pass1190
+current native assertions plus2 original-runtime checks. Evidence is retained
+in assets/validation_5849. Author checks stay grouped.
+This does not close V5.8: audit the remaining generic physical-item adapters,
+then complete #415 absent encounters/theft and #416/#417 transport/incidents.
 
 ## 5.8.48 / #502 - Vessel exposure and interrupted test recovery
 

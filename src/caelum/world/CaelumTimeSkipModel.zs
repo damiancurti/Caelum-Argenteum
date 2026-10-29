@@ -1,4 +1,4 @@
-// La previsión sólo guarda valores; nunca presta, consume ni genera Inventory.
+// La previsiÃ³n sÃ³lo guarda valores; nunca presta, consume ni genera Inventory.
 class CaelumSkipSupply : Object play
 {
     int Kind, Count, WaterQuality;
@@ -33,7 +33,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 26;
+    const PROVISION_REVISION = 27;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -101,6 +101,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(CleaningRemaining<0.000000001){CleaningTask=false;RequiredTics=ProductiveTics+1;}
             else if(step<wanted){Reason="CA_SKIP_PROVISIONS";Done=true;}
         }
+        if(FoodInventory!=null)FoodInventory.AdvanceClimate(AltitudeSecondsPerTic);
         if(ContaminationWeather!=null && Contamination!=null)
         {
             int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
@@ -123,9 +124,12 @@ class CaelumTimeSkipModel : CaelumJourneyModel
 
     void AddSupply(CaelumConsumableItem item)
     {
-        let row=new("CaelumSkipSupply");row.Capture(item);Supplies.Push(row);
-        // No prometer una fecha exacta con una provisión que se enfría durante
-        // el pronóstico. La espera manual sigue integrando el agua real.
+        let row=new("CaelumSkipSupply");row.Capture(item);
+        let food=FoodInventory!=null?FoodInventory.Find(item):null;
+        if(food!=null){row.FoodLots=food.Lots;row.FoodClimate=null;}
+        Supplies.Push(row);
+        // No prometer una fecha exacta con una provisiÃ³n que se enfrÃ­a durante
+        // el pronÃ³stico. La espera manual sigue integrando el agua real.
         if(row.Hot && !row.Reserved){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
     }
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
@@ -154,7 +158,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             let cleaning=CaelumCleaningTask.Find(user);CleaningRemaining=cleaning.Remaining;CleaningSoap=CaelumSoapSupply.Available(user);
             if(Contamination!=null)for(int i=0;i<Contamination.Items.Size();i++)
                 if(Contamination.Items[i].Item==cleaning.Target){CleaningIndex=i;break;}
-            // La cola de varias piezas seguida del sueño aún no promete una fecha exacta.
+            // La cola de varias piezas seguida del sueÃ±o aÃºn no promete una fecha exacta.
             if(cleaning.SleepAfter || cleaning.WakeQueue){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
             if(!CaelumCleaningSupplies.Cloth(user)){Reason="CA_SKIP_PROVISIONS";Done=true;}
         }
@@ -211,15 +215,15 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         if(water!=null)
         {WaterEffectTics=water.EffectTics;WaterPulseTics=water.PulseTics;WaterSeatedSubTics=water.SeatedMealSubTics;
             WaterPulse=water.WaterRecoveryPerPulse>0?water.WaterRecoveryPerPulse:1;}
-        // Otros poderes cambian el pronóstico de curación/consumo. El salto
+        // Otros poderes cambian el pronÃ³stico de curaciÃ³n/consumo. El salto
         // puede ejecutarlos, pero no promete una fecha de tarea sin adaptador.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
             if(Powerup(cursor)!=null && cursor!=food && cursor!=water)
             {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         let status=user.ElementalStatus;
         let thermal=CaelumThermalBody.Get(user);
-        // La ejecución integra estos estados; el modelo de fecha todavía no.
-        // No presentar como exacta una previsión que omite daño o penalizaciones.
+        // La ejecuciÃ³n integra estos estados; el modelo de fecha todavÃ­a no.
+        // No presentar como exacta una previsiÃ³n que omite daÃ±o o penalizaciones.
         if((status!=null && (status.HasBurnHeat() || status.BurnRemaining>0
             || status.PoisonRemaining>0 || status.DiseaseRemaining>0 || status.CutRemaining>0
             || status.FreezeRemaining>0 || status.DazzleRemaining>0 || status.EarthPenaltyRemaining>0))
@@ -248,8 +252,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             else WaterTrigger=CaelumDiningSession.REST_TARGET;
         }
     }
-    // El motor sirve después de consumir recursos y avanzar los poderes.
-    // El viaje conserva su propio orden; sólo este modelo cambia de fase.
+    // El motor sirve despuÃ©s de consumir recursos y avanzar los poderes.
+    // El viaje conserva su propio orden; sÃ³lo este modelo cambia de fase.
     override void BeginServings() {}
     void ServeSupplies()
     {
@@ -331,8 +335,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
 
     void LocalDay()
     {
-        // La mansión repone los huecos tras cada consumo, además del cambio
-        // de día. Los objetos depositados y las otras ubicaciones se conservan.
+        // La mansiÃ³n repone los huecos tras cada consumo, ademÃ¡s del cambio
+        // de dÃ­a. Los objetos depositados y las otras ubicaciones se conservan.
         for(int i=0;i<Tables.Size();i++)
         {
             let table=Tables[i];if(table.Target<=0)continue;
@@ -401,7 +405,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(ProductiveTics>=RequiredTics)
             {
                 // El selector muestra minutos; redondea hacia adelante para
-                // no ofrecer un destino anterior al último tic productivo.
+                // no ofrecer un destino anterior al Ãºltimo tic productivo.
                 int minute=CaelumWorldClock.TicsPerHour()/60;
                 EndTics=((EndTics+int(SubTics>0)+minute-1)/minute)*minute;
                 if(EndTics>=CaelumWorldClock.TicsPerDay()){EndTics=0;EndDay++;}
