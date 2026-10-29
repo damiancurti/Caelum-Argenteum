@@ -3,6 +3,9 @@ class CaelumContaminationWorld : StaticEventHandler
 {
     Array<bool> Industrial;
     transient CaelumContaminationWeatherCache HistoryWeather;
+    transient CaelumContaminationGrid Grid;
+    CaelumContaminationGrid ContactGrid()
+    {if(Grid==null)Grid=new('CaelumContaminationGrid');return Grid;}
 
     void Observe(Actor actor)
     {
@@ -16,7 +19,7 @@ class CaelumContaminationWorld : StaticEventHandler
     }
     override void WorldLoaded(WorldEvent e)
     {
-        HistoryWeather=null;
+        HistoryWeather=null;Grid=null;
         Industrial.Clear();Industrial.Resize(level.Sectors.Size());
         // Censo tipado único al cargar: reconstruye sectores de talleres ya existentes.
         let stations=ThinkerIterator.Create('CaelumCraftingStation');Actor station;
@@ -25,9 +28,11 @@ class CaelumContaminationWorld : StaticEventHandler
         // conjunto está acotado a actores nativos del mapa cargado; sólo los
         // objetos físicos elegibles reciben un nodo, nunca jugadores ni NPC.
         let objects=ThinkerIterator.Create('Actor');Actor object;
-        while((object=Actor(objects.Next()))!=null)CaelumContaminationObject.Register(object);
+        while((object=Actor(objects.Next()))!=null){CaelumContaminationObject.Register(object);ContactGrid().Track(object);}
     }
-    override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);}
+    override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);ContactGrid().Track(e.Thing);}
+    override void WorldThingDestroyed(WorldEvent e)
+    {let row=CaelumContaminationContacts.Get(e.Thing);if(row!=null && row.Grid!=null)row.Grid.Remove(row);}
     void DepartObjects()
     {
         // Una consulta tipada por salida de mapa, nunca por tic/actor. Sólo

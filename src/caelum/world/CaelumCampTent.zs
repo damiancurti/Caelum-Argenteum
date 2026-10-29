@@ -288,7 +288,9 @@ class CaelumCampTask : Inventory
                 || !CaelumLockRules.SameTitle(task.Tent.Title,CaelumLockRules.Character(user)))return false;
             let advance=CaelumTimeAdvanceState.Get(user);
             if(advance!=null && advance.Active && advance.Station==task.Anchor)CaelumTimeAdvanceState.Halt(user);
-            let tent=task.Tent;tent.RemoveInventory(item);item.AttachToOwner(user);tent.Item=null;
+            let tent=task.Tent;double dirt=CaelumContaminationStorage.Value(tent);
+            tent.RemoveInventory(item);item.AttachToOwner(user);tent.Item=null;
+            CaelumContaminationStorage.Set(item,dirt);CaelumContaminationStack.Relocate(item);
             task.Anchor=null;task.Tent=null;tent.Destroy();
         }
         else
@@ -300,7 +302,9 @@ class CaelumCampTask : Inventory
             tent.Angle=task.Facing;
             if(!tent.Prepare(legacy)){tent.Destroy();return false;}
             tent.Title=CaelumLockRules.Character(user,true);
+            double dirt=CaelumContaminationStorage.Value(item);
             user.RemoveInventory(item);item.AttachToOwner(tent);tent.Item=item;
+            CaelumContaminationStorage.Set(tent,dirt);CaelumContaminationStack.Relocate(item);
         }
         user.OnNativeInventoryChanged();user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_PROCESSED;
         CaelumNotifications.Notify(user,StringTable.Localize(task.Packing?"CA_CAMP_PACKED":"CA_CAMP_READY",false));return true;

@@ -3,6 +3,10 @@
 class CaelumContaminationContacts : Object play
 {
     Array<CaelumContaminationContact> Pairs;
+    transient CaelumContaminationGrid Grid;
+    transient CaelumContaminationContacts GridNext;
+    transient Actor GridBody;
+    transient int GridX,GridY;
 
     static CaelumContaminationContacts Get(Actor body,bool create=false)
     {
@@ -26,7 +30,8 @@ class CaelumContaminationContacts : Object play
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body.bNoClip || body.bMissile || body.Radius<=0 || body.Height<=0)return false;
-        if(!body.bSolid && !CaelumContaminationStack.Eligible(Inventory(body)))return false;
+        if(!body.bSolid && !CaelumContaminationStack.Eligible(Inventory(body))
+            && !CaelumContaminationObject.Eligible(body))return false;
         let user=CaelumPlayer(body);if(user!=null && !CaelumPlayerAuthority.CanMutate(user))return false;
         let item=Inventory(body);
         return item==null || (item.Owner==null && !CaelumContaminationStorage.IsShielded(item));
@@ -43,18 +48,18 @@ class CaelumContaminationContacts : Object play
         // Las transferencias remotas (cofres/comercio) no son contacto corporal.
         if(item!=null && item.Owner==null && Overlap(item,toucher))Collision(toucher,item);
     }
-    static void Observe(Inventory item)
+    static void Observe(Actor item)
     {
-        if(item==null || item.Owner!=null || !Eligible(item))return;
-        // Consulta local escalonada una vez por segundo activo por pila en suelo.
-        // Las parejas reales contin?an por eventos/enlaces; no hay censo global.
+        let inventory=Inventory(item);
+        if(item==null || (inventory!=null && inventory.Owner!=null) || !Eligible(item))return;
         let nearby=BlockThingsIterator.Create(item,item.Radius);
         while(nearby.Next())
         {
             let other=nearby.thing;
-            if(other==item || !Eligible(other) || !Overlap(item,other) || !item.CheckSight(other))continue;
-            Collision(other,item);
+            if(other!=item && Eligible(other) && Overlap(item,other) && item.CheckSight(other))Collision(item,other);
         }
+        let world=CaelumContaminationWorld.Get();
+        if(world!=null)world.ContactGrid().Observe(item);
     }
     static void Collision(Actor body,Actor other)
     {
@@ -85,6 +90,7 @@ class CaelumContaminationContacts : Object play
     static void Detach(Actor body)
     {
         let links=Get(body);if(links==null)return;
+        if(links.Grid!=null)links.Grid.Remove(links);
         while(links.Pairs.Size()>0)
         {
             let pair=links.Pairs[links.Pairs.Size()-1];links.Pairs.Delete(links.Pairs.Size()-1);

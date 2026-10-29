@@ -6,6 +6,7 @@ class CaelumSkipSupply : Object play
     bool Reserved,Hot,CleaningWater;
     CaelumFoodLots FoodLots;
     CaelumFoodClimate FoodClimate;
+    double FoodArea,FoodReference;bool FoodCovered;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
@@ -14,6 +15,9 @@ class CaelumSkipSupply : Object play
         {
             CaelumFoodInventory.Reconcile(item);FoodLots=item.FoodLots.Copy();
             let climate=CaelumFoodClock.Get(item).Climate;FoodClimate=climate!=null?climate.Copy():null;
+            let table=CaelumDiningTable(item.Owner);
+            if(table!=null && !CaelumContaminationStorage.IsShielded(item))
+            {FoodArea=CaelumStackSurfaceData.UnitArea(item);FoodReference=CaelumContaminationEnvironment.ReferenceAt(table);FoodCovered=CaelumThermalShelter.Roof(table);}
         }
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
         if (bottle != null)
@@ -24,6 +28,20 @@ class CaelumSkipSupply : Object play
         }
         CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
+    void AdvanceFood(double seconds)
+    {
+        if(FoodClimate==null || seconds<=0)return;
+        FoodClimate.Advance(Kind==1?FoodLots:null,seconds);
+        if(FoodArea>0 && FoodReference>=0 && FoodClimate.Ready)
+        {
+            FoodClimate.Rate(FoodClimate.CivilSeconds-seconds);
+            let local=FoodClimate.Local;
+            if(local!=null && local.Available)CaelumContaminationStack.Expose(FoodLots,
+                CaelumContaminationRules.Ambient(FoodReference,local.AirTemperatureC+FoodClimate.HeatDelta,
+                    Clamp(local.RelativeHumidityPercent+FoodClimate.HumidityDelta,0,100),
+                    FoodCovered?0:local.PrecipitationMmPerHour,!FoodCovered),FoodArea,0,0,seconds);
+        }
+    }
     bool Usable() { return Count>0 && Kind!=0 && !Reserved && !Hot && (Kind!=3 || CaelumWaterQuality.IsSafe(WaterQuality)); }
 }
 class CaelumSkipTableStock : Object play
@@ -33,7 +51,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 27;
+    const PROVISION_REVISION = 28;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -111,11 +129,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             if(SurfaceContact!=null)SurfaceContact.Advance(Contamination,FoodIllness,AltitudeSecondsPerTic,
                 contactAmbient,ContaminationWeather.RainCovered || ContaminationWeather.Local==null?0:ContaminationWeather.Local.PrecipitationMmPerHour);
         }
-        for(int i=0;i<Supplies.Size();i++)
-        {
-            let row=Supplies[i];
-            if(row.FoodClimate!=null)row.FoodClimate.Advance(row.Kind==1?row.FoodLots:null,AltitudeSecondsPerTic);
-        }
+        for(int i=0;i<Supplies.Size();i++)Supplies[i].AdvanceFood(AltitudeSecondsPerTic);
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
     }

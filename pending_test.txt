@@ -426,3 +426,13 @@ GZDoom4.14.2, separate native food/material lots and the actual Magic Box.
    Both age using that region; protected stock avoids new contact exposure.
 Expected: all native quantity, contact and persistence checks pass. Report
 specific failures; this remains part of the final grouped handoff.
+
+CA502-ADAPTERS-01 | 5.8.50 | #502
+Prerequisites: final grouped V5.8 package; accessible cloth/coins, furniture,
+carpa/sleeping bag and contaminated ground/NPC diagnostic scene.
+Steps: split/rejoin physical items, inspect separate dirt; expose carried
+furniture, deploy/pack tent and sleeping bag; observe NPC outer footwear touching
+contaminated ground; save/reload and revisit. Clean equipment with stacked cloths.
+Expected: native quantities/dirt survive; only the used cloth is rinsed; deployed
+states retain their concentration; protected storage stays protected; NPC and
+unlinked physical contacts work without duplicate pair dosing.

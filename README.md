@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.49.** Obtain and update the complete repository, validate
+**Current release: 5.8.50.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.50 - Remaining physical contact adapters (#502)
+
+Common physical inventory retains contamination through native quantity changes,
+including currency and reusable cloths. Carried furnishings, deployed sleeping
+bags and tent packing preserve their existing dirt. NPC outer equipment now
+contacts the same floor/wall tiles as players; exposed table food has an isolated
+contact forecast. Unlinked physical actors use a local spatial index beside the
+native blockmap. Final native checks: 136 current PASS plus 2 original-runtime
+checks; static validation clean. Evidence: assets/validation_5850.
+The whole V5.8 handoff remains grouped; #415-417 are still being implemented.
 
 ## 5.8.49 - Physical inventory contamination (#502)
 

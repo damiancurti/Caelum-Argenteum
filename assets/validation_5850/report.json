@@ -1,0 +1,244 @@
+{
+  "version": "5.8.50",
+  "issue": 502,
+  "base": "35c5ff4ec1675ae7448233b6df53df4a0b705b4d",
+  "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+  "source_matching_package_members": 17040,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 136,
+  "original_runtime_passes": 2,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "ready50-catalogue",
+      "passes": 55,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-tent",
+      "passes": 5,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-contact",
+      "passes": 9,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-seed",
+      "passes": 1,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-resume",
+      "passes": 5,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-hub",
+      "passes": 6,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    },
+    {
+      "label": "ready50-upgrade",
+      "passes": 5,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "af0d115d4bcc360464434d41b64a693bc635dd533854bc31b261f73f68b55dc5"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "ready50-r49-food",
+      "passes": 14,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "c662bd53c7ff7562c6213327eac9b6dea392266569fea229530dd5e98b366791"
+    },
+    {
+      "label": "ready50-r49-forecast",
+      "passes": 9,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "c662bd53c7ff7562c6213327eac9b6dea392266569fea229530dd5e98b366791"
+    },
+    {
+      "label": "ready50-r49-support",
+      "passes": 5,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "c662bd53c7ff7562c6213327eac9b6dea392266569fea229530dd5e98b366791"
+    },
+    {
+      "label": "ready50-r15-entry02",
+      "passes": 11,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "05db410348b89162e8496170b26b3d0eb6a7d09cede45a8a03e42e299a3e1155"
+    },
+    {
+      "label": "ready50-r15-entry-clean",
+      "passes": 11,
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "addon_sha256": "05db410348b89162e8496170b26b3d0eb6a7d09cede45a8a03e42e299a3e1155"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original49-seed",
+      "passes": 1,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "79266890b986d079ac9440dbd7fc5199e757f13485a3797b8d6b7d9c8dcbd70f"
+    },
+    {
+      "label": "ready50-rollback",
+      "passes": 1,
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "addon_sha256": "79266890b986d079ac9440dbd7fc5199e757f13485a3797b8d6b7d9c8dcbd70f"
+    }
+  ],
+  "prior_save_sha256": "639ad040971dc9a1c347335ad71f4e622a93c3254ad686220dc4ca45737f57fc",
+  "performance": [
+    {
+      "label": "perf50-baseline",
+      "utc": "2026-10-29T02:38:58.391723+00:00",
+      "runtime_sha256": "e5472c4b4939d642a8f6ba24eb0c92debf4f1b4282df61af85dd636e83785468",
+      "fixture_sha256": "b648fa5c106436c561eaee659bf583a811cf1b6bb640fa67a0b0883916f1b285",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\original49\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-baseline.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-baseline.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-baseline.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-baseline.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 0,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.1898,
+      "phase_elapsed_ms": 20053.648000240326,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66659007506255,
+      "p95_callback_ms": 17.1397,
+      "p99_callback_ms": 17.4418,
+      "worst_callback_ms": 19.0853,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 unlinked generic inventory piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "unlinked generic inventory pile"
+    },
+    {
+      "label": "perf50-current",
+      "utc": "2026-10-29T02:39:31.815814+00:00",
+      "runtime_sha256": "b713cdf358963eb1b4f0b8ee0aa4093d82a9c2b755c1da86e8b629dd1a04396d",
+      "fixture_sha256": "b648fa5c106436c561eaee659bf583a811cf1b6bb640fa67a0b0883916f1b285",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\final50b\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-current.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-current.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-current.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-physical-work\\build\\issue502-adapters\\perf50-current.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 1000,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.9637,
+      "phase_elapsed_ms": 20056.916300058365,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66674745621351,
+      "p95_callback_ms": 17.2665,
+      "p99_callback_ms": 18.0088,
+      "worst_callback_ms": 21.4389,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 unlinked generic inventory piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "unlinked generic inventory pile"
+    }
+  ],
+  "scope": "Generic native quantity transfer, independent furniture/table forecasts, reusable cloth, deployment boundaries, NPC floor/wall contacts and unlinked local grid; original 5.8.49 migration/rollback.",
+  "limits": "Approved collision-cylinder proxies, not mesh surfaces. Unloaded encounter integration remains in415; transport/incidents416-417 remain open. No displayed-frame or whole-campaign FPS acceptance.",
+  "fixture_correction": "The inherited 5815 timed entry case requires CDEP411, as its original evidence records. MAP01 rejects timed Limbo rest in both 5.8.49 and 5.8.50; corrected launch passes without production changes.",
+  "author_acceptance": "CA502-ADAPTERS-01 pending grouped final V5.8 handoff; no author check removed."
+}

@@ -56,6 +56,7 @@ class CaelumCurrencyItem : CaelumSpecialInventoryItem
         {
             return false;
         }
+        CaelumContaminationStack.Reconcile(self);CaelumContaminationStack.Reconcile(incoming);int before=Amount;
         if (Amount < MaxAmount
             || (sv_unlimited_pickup && !incoming.ShouldStay()))
         {
@@ -73,6 +74,7 @@ class CaelumCurrencyItem : CaelumSpecialInventoryItem
             }
             incoming.bPickupGood = true;
         }
+        if(Amount>before)CaelumContaminationStack.Transfer(incoming,self,Amount-before,false);
         return true;
     }
 }

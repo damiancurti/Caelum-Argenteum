@@ -7,6 +7,7 @@ class CaelumContaminationObject : Thinker
     transient bool Ready;
     transient int NextUpdate;
     transient double Stamp,Ambient,Rain;
+    bool SupportReady;double SupportStamp;vector3 SupportPosition;
     // Revisión 4 conserva el intervalo de un sello y lo cierra al salir;
     // el mapa ausente continúa sólo con su clima natural.
     bool HistoryReady;
@@ -45,7 +46,7 @@ class CaelumContaminationObject : Thinker
         if(body is 'CaelumSofaSeat')return false;
         let vendor=CaelumCityMerchant(body);if(vendor!=null && vendor.DomesticMarketParked)return false;
         let item=Inventory(body);
-        if(item!=null)return item is 'CaelumEquipmentItem' && item.Owner==null;
+        if(item!=null)return (item is 'CaelumEquipmentItem' || item is 'CaelumStorageFurnitureItem') && item.Owner==null;
         // Una silla ocupada presta su colisión al jugador, pero sigue siendo
         // un mueble expuesto. Su configuración física de clase no desaparece.
         return (body is 'CaelumDiningTable' || body is 'CaelumPhysicalScenery' || body.bSolid || GetDefaultByType(body.GetClass()).bSolid)
@@ -75,6 +76,7 @@ class CaelumContaminationObject : Thinker
     }
     static void Register(Actor body)
     {
+        if(CaelumContaminationStack.Eligible(Inventory(body))){CaelumContaminationStack.Clock(Inventory(body));return;}
         body=CaelumDiningContamination.Owner(body);
         CaelumDiningContamination.Ensure(CaelumDiningTable(body));
         if(!Eligible(body))return;
@@ -215,7 +217,14 @@ class CaelumContaminationObject : Thinker
     override void Tick()
     {
         if(!Eligible(Body)){Release();return;}
-        if(!Ready || level.maptime>=NextUpdate)Advance();
+        if(!Ready || level.maptime>=NextUpdate)
+        {
+            Advance();
+            if(SupportReady && SupportPosition==Body.Pos && Stamp>SupportStamp)
+                CaelumContaminationSurfaceContact.ObjectSupport(Body,Stamp-SupportStamp);
+            SupportReady=true;SupportPosition=Body.Pos;SupportStamp=Stamp;
+            CaelumContaminationContacts.Observe(Body);
+        }
     }
 }
 

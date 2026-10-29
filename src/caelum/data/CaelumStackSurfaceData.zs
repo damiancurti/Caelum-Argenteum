@@ -3,7 +3,8 @@
 class CaelumStackSurfaceData : Object play
 {
     const PI=3.141592653589793;
-    const REVISION=2;
+    const REVISION=3;
+    const FOOD_LEDGER_REVISION=2;
     const ABSTRACT_DENSITY_KG_M3=1000.0;
     static bool AbstractMaterial(int kind)
     {
@@ -14,6 +15,8 @@ class CaelumStackSurfaceData : Object play
     static double UnitArea(Inventory item)
     {
         if(CaelumVesselSurfaceData.Eligible(item))return CaelumVesselSurfaceData.Area(item);
+        if(CaelumContaminationStack.Generic(item))
+            return CaelumContaminationRules.CylinderArea(item.Radius,item.Height);
         let material=CaelumMaterialPickup(item);
         double mass=0,density=0;
         if(material!=null)

@@ -1,5 +1,5 @@
-// #502: libro de unidades, separado de Amount y de la contaminación de comida.
-// Reutiliza la transferencia FIFO probada; este libro nunca envejece alimentos.
+// #502: Amount conserva las unidades; comida comparte su libro de deterioro.
+// Los otros objetos usan lotes FIFO sin envejecimiento alimentario.
 class CaelumContaminationStack : Object play
 {
     static Actor Carrier(Inventory item)
@@ -9,8 +9,11 @@ class CaelumContaminationStack : Object play
         if(table!=null && table.Packed())owner=table.PackedItem.Owner;
         return owner is 'CaelumPlayer' || owner is 'CaelumCombatActor'?owner:null;
     }
+    static bool Generic(Inventory item)
+    {return item is 'CaelumSpecialInventoryItem' && !(item is 'CaelumMaterialPickup') && !(item is 'CaelumStorageFurnitureItem');}
     static bool Eligible(Inventory item)
     {
+        if(Generic(item))return true;
         if(CaelumVesselSurfaceData.Eligible(item))return true;
         let material=CaelumMaterialPickup(item);
         if(material!=null)return material.GetSpecialType()>=0 && material.GetSpecialType()<CaelumConstants.MATERIAL_TYPE_COUNT;
@@ -21,24 +24,35 @@ class CaelumContaminationStack : Object play
     {
         if(!Eligible(item))return null;
         let material=CaelumMaterialPickup(item);let prepared=CaelumConsumableItem(item);
-        let result=material!=null?material.ContaminationState:prepared.ContaminationState;
+        let special=CaelumSpecialInventoryItem(item);let furniture=CaelumStorageFurnitureItem(item);
+        let result=material!=null?material.ContaminationState:prepared!=null?prepared.ContaminationState
+            :furniture!=null?furniture.ContaminationState:special.GenericContamination;
         if(result==null && create)
         {
             let old=CaelumContaminationCarrier(item.FindInventory('CaelumContaminationCarrier'));
             result=old!=null && old.Owner==item && old.State!=null?old.State:new('CaelumContaminationState');result.Ensure();
-            if(material!=null)material.ContaminationState=result;else prepared.ContaminationState=result;
+            StoreRecord(item,result);
         }
         if(result!=null && create && result.StackOwner!=item)
         {
-            // Inv tambi?n enlaza los objetos vecinos del due?o. Un portador
+            // Inv tambien enlaza los objetos vecinos del propietario. Un portador
             // antiguo ajeno no pertenece a esta unidad; separar alias guardados.
             let owned=result.Copy();owned.StackOwner=item;owned.StackRevision=result.StackRevision;
             if(result.StackLots!=null)owned.StackLots=result.StackLots.Copy();
             if(result.Exposure!=null && result.Exposure.Body==item)owned.Exposure=result.Exposure;
             result=owned;
-            if(material!=null)material.ContaminationState=result;else prepared.ContaminationState=result;
+            StoreRecord(item,result);
         }
         return result;
+    }
+    static void StoreRecord(Inventory item,CaelumContaminationState state)
+    {
+        let material=CaelumMaterialPickup(item);let prepared=CaelumConsumableItem(item);
+        let furniture=CaelumStorageFurnitureItem(item);let special=CaelumSpecialInventoryItem(item);
+        if(material!=null)material.ContaminationState=state;
+        else if(prepared!=null)prepared.ContaminationState=state;
+        else if(furniture!=null)furniture.ContaminationState=state;
+        else if(special!=null)special.GenericContamination=state;
     }
     static CaelumFoodLots Prepare(Inventory item)
     {
@@ -46,7 +60,7 @@ class CaelumContaminationStack : Object play
         if(CaelumFoodInventory.IsFood(item))
         {
             let food=CaelumFoodInventory.Prepare(item);
-            if(record.StackRevision<CaelumStackSurfaceData.REVISION)
+            if(record.StackRevision<CaelumStackSurfaceData.FOOD_LEDGER_REVISION)
                 for(int i=0;i<food.Lots.Size();i++)
                 {food.Lots[i].BaseContamination=Max(food.Contamination(i),record.Concentration);food.Lots[i].ExposureAtEntry=food.Exposure;}
             record.StackRevision=CaelumStackSurfaceData.REVISION;return food;
@@ -210,9 +224,6 @@ class CaelumContaminationStack : Object play
 class CaelumStackExposure : CaelumContaminationObject
 {
     transient bool Syncing;
-    bool SupportReady;
-    double SupportStamp;
-    vector3 SupportPosition;
     static bool Carried(Inventory item)
     {return CaelumContaminationStack.Carrier(item)!=null;}
     Actor Location()

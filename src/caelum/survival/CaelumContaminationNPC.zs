@@ -95,6 +95,8 @@ class CaelumContaminationNPC : Object play
         // Los objetos nativos guardan identidad; no se copian a los modelos.
         for(Inventory cursor=npc.Inv;cursor!=null;cursor=cursor.Inv)
         {
+            if(cursor is 'CaelumStorageFurnitureItem' && cursor.Owner==npc && cursor.Amount>0 && !CaelumContaminationStorage.IsShielded(cursor))
+            {let row=Row();row.Item=cursor;row.Endpoint.Body=cursor;row.Area=CaelumContaminationObject.Area(cursor);row.Kind=-1;continue;}
             let item=CaelumEquipmentItem(cursor);
             if(item==null || item.Owner!=npc || item.Amount<=0 || CaelumContaminationStorage.IsShielded(item))continue;
             int kind=item.EquipmentKind;double area;
@@ -139,5 +141,7 @@ class CaelumContaminationNPC : Object play
         double ambient=reference>=0?CaelumContaminationRules.Ambient(reference,thermal.AirC,
             thermal.Humidity,thermal.RainMmHour,!thermal.Roof):-1;
         npc.ContaminationExposure.Advance(npc,thermal,seconds,ambient);
+        CaelumContaminationSurfaceContact.NPCContact(npc,thermal,seconds);
+        CaelumContaminationContacts.Observe(npc);
     }
 }

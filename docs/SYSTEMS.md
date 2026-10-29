@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+## 5.8.50 - Physical contact coverage (#502)
+
+Physical special inventory without a dedicated geometry uses the approved
+collision-cylinder approximation per native unit. The fallback preserves class
+mass, recipe, price and appearance; unit surfaces add rather than enclosing the
+combined stack. Dedicated food/material/vessel/equipment geometry takes priority.
+Currency and generic native split/merge operations retain distinct FIFO lots.
+Food ledger migration remains revision 2 independently of generic revision 3;
+wait forecasts move to revision 28 and table food exposes only its private copy.
+A cleaning action rinses one reusable cloth; other units in its stack keep their
+own contamination. Household cleaning applies the same rinse after using soap.
+
+Carried furniture retains its existing scalar record and uses the exterior
+cylinder; it is not converted into consumable lots. Tent setup/packing and sleeping
+bag deployment/return retain their actual exterior concentration. A deployed
+item is represented by its world body, preventing duplicate inventory exposure.
+NPC floor/wall contacts use real outer armor/model endpoints, approved foot/body
+areas and existing world seconds. Map support also exposes fixed physical props.
+
+Native local queries handle blockmap actors. A transient hashed spatial index
+covers eligible unlinked actors; spawn/load register them and existing staggered
+exposure callbacks update locations. Query bounds use actual radii and candidate
+pairs still require overlap/line of sight. There is no per-tic global population
+scan. The 128-map-unit indexing cell and 2048 buckets are engineering constants,
+not contact distances or population caps. Migration preserves old concentrations
+and creates missing records without retrospective dirt. The existing #415
+unloaded encounter coordinator remains separate from loaded contact geometry.
 
 ## 5.8.49 - Physical inventory surfaces and shared food lots (#502)
 

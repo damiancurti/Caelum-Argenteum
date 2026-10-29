@@ -95,6 +95,20 @@ class CaelumSleepingBagProbe : Actor
 class CaelumRestBag : CaelumRestFurniture
 {
     CaelumSleepingBag Bag;
+    int ContaminationRevision;
+    void SyncContamination()
+    {
+        if(ContaminationRevision>=1 || Bag==null)return;
+        double value=Max(CaelumContaminationStorage.Value(self),CaelumContaminationStorage.Value(Bag));
+        CaelumContaminationStorage.Set(self,value);ContaminationRevision=1;
+    }
+    void RetainContamination()
+    {
+        if(Bag==null || Bag.bDestroyed)return;SyncContamination();
+        CaelumContaminationStorage.Set(Bag,CaelumContaminationStorage.Value(self));
+        CaelumContaminationStack.Clock(Bag).ResetBoundary();
+    }
+    override void OnDestroy(){RetainContamination();Super.OnDestroy();}
     // Cero conserva el comportamiento de los sacos de partidas anteriores.
     int TentEntryRevision,EntryCrouchToggle;
     CaelumDeployedTent Tent;
@@ -188,14 +202,14 @@ class CaelumRestBag : CaelumRestFurniture
     override void Release(CaelumPlayer user, vector3 entry)
     {
         if (Occupant != user) return;
-        CaelumTentRest.Leave(self,user);
+        RetainContamination();CaelumTentRest.Leave(self,user);
         Occupant = null;
         Destroy();
     }
 
     override void Tick()
     {
-        Super.Tick();
+        SyncContamination();Super.Tick();
         // Incluye restos de un hub previo: la referencia de sesión manda.
         if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self))
         {CaelumTentRest.Leave(self,Bag==null?null:CaelumPlayer(Bag.Owner));Destroy();}
