@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.47** - 2026-10-28.
+Documentation version: **5.8.48** - 2026-10-28.
+
+## 5.8.48 - Vessel exterior contamination (#502, 2026-10-28)
+
+Extended the existing contamination ledger to bottles, canteens, mates and the
+camp pot, using already approved geometry. Native pickup/storage, owner changes,
+packed dining contents and independent forecasts preserve actual vessel state.
+Model-only contact endpoints now retain separate source lots and cap touched
+area. No artwork, water quality, capacities, mass, recipes or prices changed.
+
+The author supplied CrashReport.zip after private probe04-packedtravel. Its
+C0000005 write to0xbeefcafe occurred on CVS502B entry: the synthetic table had
+not run the existing Park path before travel. Correcting that fixture removes
+the reproduced crash without modifying native dining travel. The subsequent
+load error was a missing vessel-packed.zds, never produced by the crashed run.
+The runner now checks the save before launching and dependent batches stop on
+failure. The incomplete fixture also lacked the actual Magic Box acquisition;
+that prerequisite is now granted normally. A separate dining regression initially
+used a diagnostic map without furniture-placement permission; it was rerun in
+the mansion using the established production-placement fixture.
+
+Final48b passes 674 current native assertions and 2 original-runtime checks,
+with zero failures/static errors. All 17,038 runtime members match source;
+14,064 existing art/map members remain byte-identical. Current saved/away
+loads, real dining and nested-coffer hub travel, original5.8.47 migration/rollback
+and abstract-stack regressions pass. The missing-save launcher guard passes.
+SHA256: dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce.
+
+Evidence: assets/validation_5848. CA502-VESSELS-01 remains reserved for the final
+grouped author handoff. No earlier author entry is removed; V5.8 remains open.
 
 ## 5.8.47 - Abstract stack contamination (#502, 2026-10-28)
 

@@ -2,8 +2,16 @@
 // Reutiliza la transferencia FIFO probada; este libro nunca envejece alimentos.
 class CaelumContaminationStack : Object play
 {
+    static Actor Carrier(Inventory item)
+    {
+        if(item==null)return null;
+        Actor owner=item.Owner;let table=CaelumPortableDiningTable(owner);
+        if(table!=null && table.Packed())owner=table.PackedItem.Owner;
+        return owner is 'CaelumPlayer' || owner is 'CaelumCombatActor'?owner:null;
+    }
     static bool Eligible(Inventory item)
     {
+        if(CaelumVesselSurfaceData.Eligible(item))return true;
         let material=CaelumMaterialPickup(item);
         if(material!=null)return CaelumStackSurfaceData.AbstractMaterial(material.GetSpecialType());
         let prepared=CaelumConsumableItem(item);
@@ -148,13 +156,26 @@ class CaelumContaminationStack : Object play
     static bool Touch(Actor first,Actor second,double area,double seconds)
     {
         bool a=Eligible(Inventory(first)),b=Eligible(Inventory(second));if(!a && !b)return false;
-        let originalA=ContactSnapshot(first);let originalB=ContactSnapshot(second);
-        if(a)area=Min(area,CaelumStackSurfaceData.UnitArea(Inventory(first))*originalA.Units());
-        if(b)area=Min(area,CaelumStackSurfaceData.UnitArea(Inventory(second))*originalB.Units());
-        let resultA=ContactResult(originalA,originalB,area,seconds,CaelumContaminationStorage.Dose(first));
-        let resultB=ContactResult(originalB,originalA,area,seconds,CaelumContaminationStorage.Dose(second));
-        if(a)Record(Inventory(first)).StackLots=resultA;else CaelumContaminationStorage.Set(first,Mean(resultA));
-        if(b)Record(Inventory(second)).StackLots=resultB;else CaelumContaminationStorage.Set(second,Mean(resultB));
+        return TouchPoints(CaelumContaminationCombat.ActorPoint(first),CaelumContaminationCombat.ActorPoint(second),area,seconds);
+    }
+    static CaelumFoodLots PointSnapshot(CaelumContaminationContactPoint point)
+    {
+        if(point.Body!=null)return ContactSnapshot(point.Body);
+        let lots=new('CaelumFoodLots');lots.Ensure(CaelumFoodData.RATION,0,0);
+        lots.Add(1,point.Value(),0);return lots;
+    }
+    static bool TouchPoints(CaelumContaminationContactPoint first,CaelumContaminationContactPoint second,double area,double seconds)
+    {
+        if(first==null || second==null)return false;
+        bool a=Eligible(Inventory(first.Body)),b=Eligible(Inventory(second.Body));if(!a && !b)return false;
+        if(CaelumContaminationStorage.IsShielded(first.Body) || CaelumContaminationStorage.IsShielded(second.Body))return true;
+        let originalA=PointSnapshot(first);let originalB=PointSnapshot(second);
+        if(a)area=Min(area,CaelumStackSurfaceData.UnitArea(Inventory(first.Body))*originalA.Units());
+        if(b)area=Min(area,CaelumStackSurfaceData.UnitArea(Inventory(second.Body))*originalB.Units());
+        let resultA=ContactResult(originalA,originalB,area,seconds,first.Dose);
+        let resultB=ContactResult(originalB,originalA,area,seconds,second.Dose);
+        if(a)Record(Inventory(first.Body)).StackLots=resultA;else first.Set(Mean(resultA));
+        if(b)Record(Inventory(second.Body)).StackLots=resultB;else second.Set(Mean(resultB));
         return true;
     }
 }
@@ -165,7 +186,7 @@ class CaelumStackExposure : CaelumContaminationObject
 {
     transient bool Syncing;
     static bool Carried(Inventory item)
-    {return item!=null && (item.Owner is 'CaelumPlayer' || item.Owner is 'CaelumCombatActor');}
+    {return CaelumContaminationStack.Carrier(item)!=null;}
     Actor Location()
     {
         let item=Inventory(Body);if(item==null)return null;

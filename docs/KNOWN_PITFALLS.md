@@ -599,6 +599,15 @@ return, idempotent migration, original-runtime rollback, real-clock NPC exposure
 and previously accepted melee/calendar behavior. The author accepted CA502-NPC-01 on2026-10-25; this is separate from those
 engine checks.
 
+Extension, #502/5.8.48: private fixtures must perform the same parking step as
+production before carrying furniture across maps. An unparked synthetic dining
+table followed by manual STAT_TRAVELLING reproduced C0000005/write0xbeefcafe.
+Calling the existing set.Park() before travel removes that reproduction; real
+Place/Carry and nested-coffer transport are checked separately. Do not replace
+stateful native bodies with visuals to mask an invalid fixture. Check that a
+requested save exists before launching GZDoom, and stop dependent test batches
+when the producing run fails. Evidence: assets/validation_5848.
+
 ## CA-KP-165 - Native melee defaults to None; test the delivery path
 
 Status/evidence: ENGINE-VERIFIED; #502,5.8.12,2026-10-25; author review pending.

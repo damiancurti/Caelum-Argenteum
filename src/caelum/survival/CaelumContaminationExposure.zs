@@ -20,15 +20,23 @@ class CaelumContaminationExposure : Object play
     double BodyKg;
     int Armor[4],Clothes[4];
 
+    void CaptureStack(Actor owner,Inventory item)
+    {
+        if(item==null || !CaelumContaminationStack.Eligible(item) || item.Amount<=0
+            || CaelumContaminationStack.Carrier(item)!=owner || CaelumContaminationStorage.IsShielded(item))return;
+        CaelumContaminationStack.Reconcile(item);let row=new('CaelumStackExposureRow');
+        row.Item=item;row.Area=CaelumStackSurfaceData.UnitArea(item);
+        row.Lots=CaelumContaminationStack.Prepare(item).Copy();Stacks.Push(row);
+    }
     void CaptureStacks(Actor owner)
     {
         Stacks.Clear();
         for(Inventory item=owner.Inv;item!=null;item=item.Inv)
         {
-            if(!CaelumContaminationStack.Eligible(item) || item.Amount<=0 || CaelumContaminationStorage.IsShielded(item))continue;
-            CaelumContaminationStack.Reconcile(item);let row=new('CaelumStackExposureRow');
-            row.Item=item;row.Area=CaelumStackSurfaceData.UnitArea(item);
-            row.Lots=CaelumContaminationStack.Prepare(item).Copy();Stacks.Push(row);
+            CaptureStack(owner,item);
+            let set=CaelumDiningSetItem(item);
+            if(set!=null && set.Table!=null && set.Table.Packed())
+                for(int i=0;i<set.Table.Capacity();i++)CaptureStack(owner,set.Table.Items[i]);
         }
     }
     void CommitStacks(Actor owner)
@@ -36,7 +44,7 @@ class CaelumContaminationExposure : Object play
         for(int i=0;i<Stacks.Size();i++)
         {
             let row=Stacks[i];let item=row.Item;
-            if(item==null || item.bDestroyed || item.Owner!=owner || CaelumContaminationStorage.IsShielded(item))continue;
+            if(item==null || item.bDestroyed || CaelumContaminationStack.Carrier(item)!=owner || CaelumContaminationStorage.IsShielded(item))continue;
             CaelumContaminationStack.Record(item).StackLots=row.Lots.Copy();
         }
     }
@@ -113,7 +121,7 @@ class CaelumContaminationExposure : Object play
     bool Valid(CaelumPlayer user,CaelumThermalState thermal)
     {
         for(int i=0;i<Stacks.Size();i++)
-            if(Stacks[i].Item==null || Stacks[i].Item.bDestroyed || Stacks[i].Item.Owner!=user
+            if(Stacks[i].Item==null || Stacks[i].Item.bDestroyed || CaelumContaminationStack.Carrier(Stacks[i].Item)!=user
                 || CaelumContaminationStorage.IsShielded(Stacks[i].Item))return false;
         if(BodyKg!=thermal.BodyMassKg)return false;
         for(int slot=0;slot<4;slot++)if(BodyArea[slot]!=thermal.SurfaceArea*thermal.Coverage[slot])return false;

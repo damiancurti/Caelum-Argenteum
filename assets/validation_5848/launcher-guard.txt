@@ -1,0 +1,1 @@
+﻿PASS: absent save rejected before config creation or native launch

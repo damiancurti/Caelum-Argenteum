@@ -1,0 +1,163 @@
+{
+  "version": "5.8.48",
+  "issue": 502,
+  "base": "1d58a455085b46823dbf22db669c7f4cfa95b899",
+  "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+  "source_matching_package_members": 17038,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 674,
+  "original_runtime_passes": 2,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "ready48-catalogue",
+      "executed_passes": 100,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-storage",
+      "executed_passes": 4,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-immersion",
+      "executed_passes": 2,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-camp",
+      "executed_passes": 5,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-packed",
+      "executed_passes": 3,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-contact",
+      "executed_passes": 5,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-resume",
+      "executed_passes": 31,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-hub",
+      "executed_passes": 32,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-awaysave",
+      "executed_passes": 1,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-packedtravel",
+      "executed_passes": 5,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-awayload",
+      "executed_passes": 31,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-packedload",
+      "executed_passes": 4,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    },
+    {
+      "label": "ready48-upgrade",
+      "executed_passes": 10,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "664735575d065be2a76d7b6aa4be5c5421a6da9d16bb5e5084926b549a38947f"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "ready48-dining-hub",
+      "executed_passes": 205,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "6c3100e269b87cf003a7689f35e7de27f1fbefa69dee1a723575e19f54d859f3"
+    },
+    {
+      "label": "ready48-dining-nestedhub",
+      "executed_passes": 211,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "6c3100e269b87cf003a7689f35e7de27f1fbefa69dee1a723575e19f54d859f3"
+    },
+    {
+      "label": "ready48-stacks-native",
+      "executed_passes": 5,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "7f4121ae986e96ec038dd387c9809bda98feea781c3baabd537ad029e172aed4"
+    },
+    {
+      "label": "ready48-stacks-contact",
+      "executed_passes": 4,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "7f4121ae986e96ec038dd387c9809bda98feea781c3baabd537ad029e172aed4"
+    },
+    {
+      "label": "ready48-stacks-storage",
+      "executed_passes": 8,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "7f4121ae986e96ec038dd387c9809bda98feea781c3baabd537ad029e172aed4"
+    },
+    {
+      "label": "ready48-stacks-exposure",
+      "executed_passes": 5,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "7f4121ae986e96ec038dd387c9809bda98feea781c3baabd537ad029e172aed4"
+    },
+    {
+      "label": "ready48-stacks-npc",
+      "executed_passes": 2,
+      "runtime_sha256": "dbe2d20e04b43f689d6cff094a48831a0e6af8f912bea5d0024c976845986cce",
+      "addon_sha256": "7f4121ae986e96ec038dd387c9809bda98feea781c3baabd537ad029e172aed4"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original47-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "1db0c893b0972a4a2d62321f4bebbc0efd7e3440dd533a103905138d43b2b4b0"
+    },
+    {
+      "label": "original47-rollback",
+      "executed_passes": 1,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "1db0c893b0972a4a2d62321f4bebbc0efd7e3440dd533a103905138d43b2b4b0"
+    }
+  ],
+  "prior_save_sha256": "0b8397c943dd9b96b8aaf738477086bf44dc32162ba9e8d41cf40036a1643820",
+  "crash_archive_sha256": "7fb734011d746c70e7aa45138d9c23b0f7b8be7b16ae98ec64edde9444f0b427",
+  "crash_diagnosis": "probe04 synthetic table skipped existing Park before native travel; C0000005/write0xbeefcafe on CVS502B. Corrected setup uses Park and real Box acquisition. Subsequent vessel-packed.zds load failed because the crashed run never saved it. New runner rejects absent saves before native launch; batches stop on failure. Real production dining hub and nested coffer transport pass without altering native dining travel.",
+  "probe_findings": "Preserved private probe02/03 camp fixture used a wall location, fixed to clear geometry. Probe04 contact assertion inserted an older timestamp and expected the opposite FIFO order, fixed to the current stamp. Probe06 lacked actual Magic Box acquisition, corrected. Probe48 dining regression used an unmapped placement-permission diagnostic level; rerun on the mansion with established fixture. Failed probes are excluded.",
+  "scope": "Ten native vessel exteriors, retained contents, camp owner boundary, nested carrier exposure and shielding, model-only contact endpoints, real current save/load/hub, actual 5.8.47 migration and original-runtime rollback.",
+  "limits": "Thermal equivalent geometry, not mesh surface. No separate uncalibrated handles/straw area. No water-content, ingestion, recipe, mass, price or artwork change. Other physical-material/food/contact adapters remain pending.",
+  "performance": "No global or per-unit scan added. Existing per-lot exposure scheduler reused; nested contents inspect only the owned fixed-capacity dining roster. No new FPS or presentation claim; prior matched stack timing remains scoped to 5.8.47.",
+  "author_acceptance": "CA502-VESSELS-01 pending final grouped V5.8 handoff; no author check removed."
+}

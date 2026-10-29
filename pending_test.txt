@@ -400,3 +400,15 @@ Compare an exposed pile with a fragment and with a Box/closed-chest sample.
 Expected: quantity, individual concentrations and oldest-first ordering persist;
 splitting never changes per-unit exposure, and protected storage stays shielded.
 This entry is reserved for the grouped handoff, not an immediate test request.
+
+CA502-VESSELS-01 | Origin: 5.8.48 | Issue: #502
+Prerequisites: final grouped V5.8 package/terminal, GZDoom4.14.2, disposable
+campaign, bottles/canteens/mates/pot, actual Magic Box, loaded dining set.
+1. Expose carried vessels, then inspect exterior contamination; their fill,
+   water quality, temperature and mate uses retain their own existing rules.
+2. Box/unbox the loaded set. Closed storage prevents new exterior exposure
+   without resetting existing dirt; food ageing continues separately.
+3. Mount/retrieve the same pot, then save/load and travel with the loaded set.
+   Expect no crash, lost objects, duplicated doses or reset contamination.
+Expected: existing artwork/contents and persistent exterior dirt remain correct.
+Author handoff is deferred until all V5.8 implementation is complete.

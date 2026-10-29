@@ -89,7 +89,8 @@ class CaelumCampFire : CaelumThermalFireSource
         if(!CanManage(user) || Busy!=null || Pot!=null || item==null || item.Owner!=user || item.InMagicBox
             || item.Amount!=1 || CaelumWaterBoiling.Locked(item))return false;
         if(!CaelumPlacementGeometry.Fits(user,Pos,Radius,CaelumPhysicsUnits.MapUnits(CaelumCampData.FIRE_HEIGHT_M+CaelumCampData.PotDepth()+CaelumCampData.POT_WALL_M),self))return false;
-        Advance();item.AdvanceTemperature(user,0);user.RemoveInventory(item);item.AttachToOwner(self);Pot=item;
+        Advance();item.AdvanceTemperature(user,0);CaelumContaminationStack.Reconcile(item);
+        user.RemoveInventory(item);item.AttachToOwner(self);Pot=item;CaelumContaminationStack.Relocate(item);
         Pot.CampBoilSeconds=0;Pot.TemperatureStamp=Stamp;Pot.TemperatureClockReady=true;
         Prepare();RefreshVisual();user.OnNativeInventoryChanged();return true;
     }
@@ -97,7 +98,9 @@ class CaelumCampFire : CaelumThermalFireSource
     {
         if(!CanManage(user) || Busy!=null || Pot==null)return false;
         Advance();if(!user.CanAddWeightToPersonalInventory(Pot.GetUnitWeight()))return false;
-        let item=Pot;RemoveInventory(item);item.AttachToOwner(user);Pot=null;item.StampTemperature(user);
+        let item=Pot;CaelumContaminationStack.Reconcile(item);
+        RemoveInventory(item);item.AttachToOwner(user);Pot=null;item.StampTemperature(user);
+        CaelumContaminationStack.Relocate(item);
         Prepare();RefreshVisual();user.OnNativeInventoryChanged();return true;
     }
     void RefreshVisual()

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.47** - 2026-10-28.
+Documentation version: **5.8.48** - 2026-10-28.
+
+## 5.8.48 / #502 - Vessel exposure and test lifecycle
+
+Deliver existing-geometry vessel areas, native contamination migration,
+independent exposure and contact endpoints, packed dining and camp ownership.
+Verify current saves/hubs, actual previous-runtime saves/rollback and native
+production dining transport. Preserve the failed CrashReport and missing-save
+log; reject missing saves before engine launch and stop dependent test batches
+on failure. Evidence: assets/validation_5848. Author confirmation remains pending;
+continue physical-material/food adapters, #415, #416 and #417 separately.
+Native validation: 674 current and 2 original-runtime checks pass;
+zero failures/static errors.
 
 ## 5.8.47 / #502 - Abstract stack contact
 

@@ -13,6 +13,7 @@ class CaelumStackSurfaceData : Object play
     }
     static double UnitArea(Inventory item)
     {
+        if(CaelumVesselSurfaceData.Eligible(item))return CaelumVesselSurfaceData.Area(item);
         let material=CaelumMaterialPickup(item);
         double mass=0;
         if(material!=null && AbstractMaterial(material.GetSpecialType()))mass=material.GetUnitWeight();

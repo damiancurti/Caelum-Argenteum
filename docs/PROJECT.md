@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.47** - 2026-10-28.
+Documentation version: **5.8.48** - 2026-10-28.
+
+## 5.8.48 / #502 - Vessel exposure and interrupted test recovery
+
+Implemented bottle/canteen/mate/pot exterior areas and persistent exposure,
+including packed dining ownership and mounted pots. Evidence is recorded in
+assets/validation_5848. The reported native crash came from an incompletely
+parked private table fixture; corrected fixtures use the existing production
+parking path and the launcher checks save existence before starting the engine.
+Native validation: 674 current and 2 original-runtime checks pass;
+zero failures/static errors.
+Remaining V5.8: physical-material/food contact adapters (#502), absent combat
+and theft (#415), documented routes/Buenos Aires (#416), travel encounters
+(#417). Co-op rest is deferred to V5.12. Author checks stay grouped.
 
 ## 5.8.47 / #502 - Abstract stack contamination
 

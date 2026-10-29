@@ -84,6 +84,7 @@ class CaelumContaminationCombat : Object play
     static void Transfer(CaelumContaminationContactPoint first,CaelumContaminationContactPoint second,double area,double seconds)
     {
         if(first==null || second==null)return;
+        if(CaelumContaminationStack.TouchPoints(first,second,area,seconds))return;
         double a=first.Value(),b=second.Value();
         if(a>b)second.Set(CaelumContaminationRules.AfterContact(b,a,area,seconds,second.Dose));
         else if(b>a)first.Set(CaelumContaminationRules.AfterContact(a,b,area,seconds,first.Dose));

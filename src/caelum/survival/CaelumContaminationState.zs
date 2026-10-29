@@ -158,6 +158,8 @@ class CaelumContaminationStorage : Object play
         let item=Inventory(body);
         if(item==null)return false;
         if(CaelumContainerRules.Boxed(item))return true;
+        let table=CaelumPortableDiningTable(item.Owner);
+        if(table!=null && table.Packed())return IsShielded(table.PackedItem);
         let chest=CaelumStashChest(item.Owner);
         return chest!=null && !chest.ChestOpen;
     }
