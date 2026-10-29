@@ -1,0 +1,72 @@
+{
+  "issue": 502,
+  "version": "5.8.48",
+  "units": "m2 per real inventory vessel",
+  "basis_sources": [
+    "src/caelum/data/CaelumWaterThermalData.zs",
+    "src/caelum/data/CaelumMateData.zs",
+    "src/caelum/data/CaelumCampData.zs",
+    "src/caelum/core/CaelumConstants.zs"
+  ],
+  "limits": "Equivalent approved thermal body geometries, not mesh measurements. Straw and handle details are not separately estimated; no invented dimensions. Unchanged sprites/models. Water, herbs and contents do not increase exterior surface.",
+  "rows": [
+    {
+      "kind": 0,
+      "area_m2": 0.04964090426015572,
+      "basis": "thermal sphere; 0.1 kg glass at 2500 kg/m3",
+      "capacity_liters": 1
+    },
+    {
+      "kind": 1,
+      "area_m2": 0.09002710171048393,
+      "basis": "thermal sphere; 0.1 kg glass at 2500 kg/m3",
+      "capacity_liters": 2.5
+    },
+    {
+      "kind": 2,
+      "area_m2": 0.14215794892628936,
+      "basis": "thermal sphere; 0.1 kg glass at 2500 kg/m3",
+      "capacity_liters": 5
+    },
+    {
+      "kind": 3,
+      "area_m2": 0.058166812977940845,
+      "basis": "thermal sphere; 6 mm leather",
+      "capacity_liters": 1
+    },
+    {
+      "kind": 4,
+      "area_m2": 0.1022280601118677,
+      "basis": "thermal sphere; 6 mm leather",
+      "capacity_liters": 2.5
+    },
+    {
+      "kind": 5,
+      "area_m2": 0.1578534335295662,
+      "basis": "thermal sphere; 6 mm leather",
+      "capacity_liters": 5
+    },
+    {
+      "kind": 6,
+      "area_m2": 0.01192417265681579,
+      "basis": "approved thermal hemisphere shell and open rim; not the artwork silhouette"
+    },
+    {
+      "kind": 7,
+      "area_m2": 0.021244477390461747,
+      "basis": "approved thermal hemisphere shell and open rim; not the artwork silhouette"
+    },
+    {
+      "kind": 8,
+      "area_m2": 0.03166350737235625,
+      "basis": "approved thermal hemisphere shell and open rim; not the artwork silhouette"
+    },
+    {
+      "kind": 9,
+      "area_m2": 0.412021689502545,
+      "body_m2": 0.3333150656152121,
+      "trivet_m2": 0.07870662388733285,
+      "basis": "20 L open cylinder exterior and rim plus integral iron trivet rods"
+    }
+  ]
+}
