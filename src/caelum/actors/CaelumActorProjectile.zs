@@ -90,6 +90,21 @@ class CaelumActorProjectile : Actor
     int CaelumRockVisualRevision;
     bool CaelumZupayRockVisual;
     bool CaelumVFXImpactShown;
+    // #415: identidad y dispersion al lanzar; consultar no consume azar.
+    // Revision cero identifica vuelos anteriores a esta captura.
+    int CaelumSummaryRevision,CaelumSummaryWeapon,CaelumSummaryTier;
+    Actor CaelumSummaryTarget;
+    vector3 CaelumSummaryOrigin;
+    double CaelumSummaryMinimum,CaelumSummaryMaximum;
+    bool CaelumSummarySigned;
+    CaelumAbsentShot CaelumSummaryPending;
+
+    void StoreSummaryAim(Actor victim,int weapon,int tier,double minimum,double maximum,bool signedOffsets)
+    {
+        CaelumSummaryRevision=1;CaelumSummaryTarget=victim;CaelumSummaryOrigin=Pos;
+        CaelumSummaryWeapon=weapon;CaelumSummaryTier=tier;
+        CaelumSummaryMinimum=minimum;CaelumSummaryMaximum=maximum;CaelumSummarySigned=signedOffsets;
+    }
     // #249/#250 conservan la protección aliada aunque expire su invocación/conversión.
     bool CaelumSummonShot;
     CaelumPlayer CaelumSummonOwner;

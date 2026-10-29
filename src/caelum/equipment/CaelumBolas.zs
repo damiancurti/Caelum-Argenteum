@@ -335,16 +335,15 @@ class CaelumBolasFlight : Actor
         Destroy();
     }
 
-    override void Tick()
+    void AdvanceRestraint(bool interrupted)
     {
         if(Phase==1)
         {
             if(Victim==null || Victim.bDestroyed || Victim.health<=0){Resolve(false);return;}
-            UpdateVisuals();
-            if(CaelumBolas.Interrupted(Victim)){Cutting=false;CutProgress=0;}
+            if(interrupted){Cutting=false;CutProgress=0;}
             else
             {
-                if(Victim is "CaelumCombatActor" && !Cutting)CaelumBolas.RequestCut(Victim);
+                if(Victim is "CaelumCombatActor" && !Cutting && CaelumBolas.CuttingDuration(Victim)>0)Cutting=true;
                 if(Cutting)
                 {
                     double duration=CaelumBolas.CuttingDuration(Victim);
@@ -360,6 +359,16 @@ class CaelumBolasFlight : Actor
                 ExpiryRolls++;
                 Resolve(CaelumBolasRules.Breaks(strength,Random[CaelumBolasBreak](0,999999)));return;
             }
+        }
+    }
+
+    override void Tick()
+    {
+        if(Phase==1)
+        {
+            if(Victim==null || Victim.bDestroyed || Victim.health<=0){Resolve(false);return;}
+            UpdateVisuals();AdvanceRestraint(CaelumBolas.Interrupted(Victim));
+            if(Phase==2)return;
         }
         Super.Tick();
     }

@@ -28,6 +28,9 @@ class CaelumCityWorld : Object play
     static int SiegeDay()
     {return CaelumCalendarRules.ToSerial(CaelumCityData.SIEGE_YEAR,CaelumCityData.SIEGE_MONTH,CaelumCityData.SIEGE_DAY);}
 
+    static double SiegeCivilSeconds()
+    {return double(SiegeDay())*86400+CaelumCityData.SIEGE_HOUR*3600;}
+
     static bool SiegeDue()
     {
         double due=CaelumScheduleRules.Stamp(SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour());

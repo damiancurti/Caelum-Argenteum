@@ -27,6 +27,12 @@ class CaelumSupportStatus : Inventory
     override void Tick()
     {
         Super.Tick();
+        Advance(1.0/TICRATE);
+    }
+
+    // #415: conserva acumuladores y fuentes al avanzar el reloj del mapa.
+    void Advance(double seconds)
+    {
         if(Owner==null || Owner.health<=0){Destroy();return;}
         if(!AnyActive || Revision!=CaelumSupportImplementData.MIGRATION_REVISION)return;
         AnyActive=false;
@@ -34,7 +40,7 @@ class CaelumSupportStatus : Inventory
         {
             let effect=Effects[role];if(effect==null || !effect.Active())continue;
             bool benefit=CaelumSupportImplementData.Beneficial(role);
-            double step=Min(1.0/TICRATE,effect.RemainingSeconds);
+            double step=Min(seconds,effect.RemainingSeconds);
             double retention=benefit?1:CaelumSupportMagic.CurseRetention(Owner);
             // Integrar la intensidad antes de vencer evita perder el modificador en el ?ltimo pulso.
             double damageFactor=benefit?1:CaelumSupportMagic.DamageFactor(Owner,Sources[role]);

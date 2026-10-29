@@ -1,0 +1,36 @@
+{
+  "issue": 415,
+  "date": "2026-10-29",
+  "runtime_sha256": "448ca9b6f9632f3a5c00c3189a13a96ba175aa5ca1349f9bed3a39a69d0b98ba",
+  "verified_source_members": [
+    "ZSCRIPT",
+    "caelum/data/CaelumTheftData.zs",
+    "caelum/world/CaelumTheftTransfer.zs",
+    "caelum/world/CaelumTheftPlan.zs"
+  ],
+  "runs": [
+    {
+      "label": "theft-transfer03",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "label": "theft-load02",
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "label": "theft-plan02",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "label": "theft-planload01",
+      "passed": 4,
+      "failed": 0
+    }
+  ],
+  "assertions": 37,
+  "qualification": "Native transaction and saved-clock checks. Real route capture, chronological combat integration and #417 thief registration remain pending. No author acceptance.",
+  "harness_fix": "Anchor CA diagnostic prefixes: unanchored case-insensitive matching misread 'capacity failure' inside a PASS label as a failed assertion."
+}

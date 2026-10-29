@@ -1,6 +1,163 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
+
+## 5.8.51 / #415 - Implementation ready for grouped corroboration
+
+Calendar-ordered siege/theft integration is complete for the approved authored
+actors, attacks, physical access and event rules. Earlier pending checkpoint
+statements below are superseded. #417 separately registers actual surviving
+bandits and tests their accessible rural camps; no cross-map NPC travel route
+or unproved private-interior access is invented by this infrastructure.
+
+Final checks preserve a partially prepared inventory frame through native save,
+reload earlier combat/theft jobs, and compare actual city-day outcomes. Loading
+falls from 124.07 to 77.45 s with identical recorded results; p95 rendering callback
+interval rises from 29.35 to 50.80 ms in the paused loading menu. The bounded
+three-request pipeline does not alter the active simulation. Long absences remain
+an engineering limitation, not a dropped individual-world rule.
+
+Author checks remain deferred to the complete V5.8 handoff. Continue #416/#417
+in separate focused branches, with final integration and save tests before handoff.
+
+## Unreleased #415 integration work
+
+The focused `feat/issue415-absent-rounds` worktree contains an intermediate
+checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
+335 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+actual magazines/Anima, statuses, healing consumables, structural/cannon
+impacts, finite reserve admission, save identity and native load/unload hooks.
+The hub check resolves ten rounds, thirteen shots and one reload without
+repeating effects on a second synchronization. State aliases preserve existing
+indices. Existing preparation, artillery work and recovery are retained.
+Racial breath now retains native contact/heat and Anima, with deferred contacts
+and a per-encounter local spatial index that includes unlinked participants.
+Final fractional absence time resolves once before native resume; victory
+withdrawals retain parked bodies and real gear. Traveling deployed residents
+are captured before suspension and rebound through their household identity
+after return, including native death and collision flags.
+The authorized 1,000/600 isolated diagnostic found a repeated per-survivor
+target search after combat ended. Shared first-valid-target results and direct
+clearing of unopposed targets reduce its quiet-hour catch-up from 46.712 s to
+5.989 s (87.18%), with exactly matching Life, Anima, Air, contamination, thermal
+exposure and shot totals at three checkpoints. The remaining synchronous
+stalls are still unacceptable for delivery: about 2.4 s per combat minute and
+6 s per quiet hour in that fixture. Renderer callback tails are recorded in
+performance-comparison.json; they are not presentation/FPS acceptance.
+
+Paid in-flight carbine/spell attacks now retain launch target, damage, critical
+and dispersion. They resolve once in the first absent round, including saved
+flights, dead launchers and traveling resident sources. A typed departure-only
+census of 1,600 pending shots takes 0.791 ms; resolving that volley still costs
+568 ms. Native comparisons exposed and corrected distinct explosion-box versus
+circular-ground-slam falloff. Terminal encounters with no active bodies,
+reserves, pending flights or machine work skip empty time: one absent year
+takes 0.011 ms in the isolated terminal fixture. This does not accelerate quiet
+survivors or active combat, which still need bounded catch-up.
+
+Sleep and bolas use the same native progression helpers while absent: Lucidity,
+expiry, cutting, the existing one-time break roll, death and returned item are
+retained. Probabilistic damaging hits accumulate toward the existing sleep wake
+threshold without new random rolls. Save/load preserves the fractional wake
+budget. Capturing a sleeping attacker reads its saved prepared pose and tics;
+absolute wind/recovery deadlines continue, as in native play. Early wake and
+return between wind frames neither replay preparation nor charge twice.
+
+Revisited peaceful cities now retain the authored siege deadline. Empty peace
+advances directly to that date; new attackers receive their guarded native
+profiles and machines use the existing activation path. Residents are admitted
+through the shared one-attempt-per-active-tic routine, carrying its fractional
+budget. They keep actual inventory/Life, use their authored door coordinates,
+and remain parked until collision-safe native placement after return. A victory
+records the actual summary-round date independently of discovery on return.
+The native MAP03 checks cover the exact boundary, retained residents, save/load,
+actual hub departure/return, placement and repeated reconciliation.
+
+Round execution is now shared by synchronous checks and a saved phase/cursor
+worker. Production map reopening queues that worker behind a native paused
+menu, preserving the arrival timestamp and completing pending simultaneous
+commits before native actors resume. A short native freeze bridges the load
+callback to the menu pause; resident inventory ticks also wait for completion.
+Save/load reopens the same job and does not replay attacks or pay resources
+twice. Noncombat physiology uses its existing integration boundaries in the
+same queue. No population is removed from gameplay.
+
+The authorized 1,000/600 comparison retains exact recorded outcomes after one
+world second, a combat minute and a quiet hour. Bounded pulses remove the
+multi-second renderer callback stalls, but quiet-hour wall time is still about
+52 seconds in this diagnostic. This is not completed performance acceptance;
+`arrival-performance.json` records both callback tails and total duration.
+
+Fresh first arrival after the siege deadline now initializes the actual city
+installation and captures its encounter at the authored date before queuing
+absent rounds. Its original roster/household bodies and inventories remain
+authoritative. A saved one-time flag is set only for a newly loaded map and
+consumed during setup; old saves default false. Native checks cover first
+arrival, peaceful arrival, repeated reconciliation and loading the prior
+checkpoint's save. A previously observed household is never reset to fabricate
+an unrecorded past. Original 5.8.50 save, upgrade, reload and original-save rollback
+now pass 21 scenario assertions (including repeated identity invariants).
+Under the existing preservation contract, the first departure starts tracking
+at its actual date; no missing past combat is invented. An overdue existing
+event remains due at that boundary. See `legacy-results.json`.
+
+Still required before delivery: efficient long combat/quiet processing,
+theft/access with real inventory transfers, performance regressions and final
+canonical rules/version.
+Draft PR545 tracks this branch. The calendar tests do not establish safe long
+catch-up latency or complete the remaining world/event adapters.
+No author handoff or released 5.8.51 is claimed for this checkpoint.
+Continue this issue to completion; #502 patch50 is already delivered in PR544.
+
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. Production chronological dispatch and #417 registration remain
+pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
+
+The theft transfer and saved-clock foundation now passes 37 native assertions:
+highest-value fitting whole stacks, actual owner transfer, native/paired keys,
+failed/replayed transfers, retained food lots/liquids/equipment, hourly deadlines,
+partial progress, death and regional victim discovery. No current NPC is marked
+as a thief. Physical access and chronological dispatch are connected in the
+subsequent checkpoint above; #417 survivors and regional access still need
+integration to complete campaign theft. Evidence: `assets/validation_5851/theft-results.json`.
+
+The latest catch-up checkpoint reduces the synthetic quiet hour from 5.951 s
+CPU / 51.591 s staged wall time to 0.317 s CPU / 1.454 s staged wall time. It
+uses the existing one-active-second NPC boundary only when no transient combat
+interaction needs the finer rounds. The loading UI now sends distinct validated
+sequence numbers with at most two requests in flight, removing alternating
+duplicate requests; the combat-minute loading interval falls to 8.910 s.
+All previously recorded diagnostic Life/Anima/Air/contamination/heat/shot totals
+match. The remaining active-combat cost is not described as solved.
+
+Area impacts use the encounter's local spatial index with the native square
+footprint where required. A 1,600-body diagnostic reduces 128 area calculations
+from 136.738 to 106.765 ms with identical total damage. Private anatomical-cache
+experiments showed no useful speedup and were not adopted.
+
+Shared weather contexts retain independent seal deltas and inventory forecasts;
+36 checks compare native samples and identity, with cache rebuilding verified
+through save/load. Actual first arrival after one hour and one day passes. The
+city-day run retains 86 combat rounds, 701 registered rows, 589 active survivors
+and native victory/reserve state; weather sharing reduces end-to-end runtime
+from 155.011 to 131.892 s. This remains too slow for an unrestricted long skip.
+`catchup-performance.json` archives the 29 focused runs and callback tails.
+Windows denied the unelevated PresentMon trace, so presented FPS is unmeasured.
 
 ## 5.8.50 / #502 - Contact adapters verified
 

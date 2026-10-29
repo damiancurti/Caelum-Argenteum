@@ -6894,3 +6894,13 @@ CA_DECOR_HINT = "{bind:+crouch} + {bind:+use}: carry decoration";
 CA_DECOR_PAINTING = "Cuadro de paisaje rioplatense";
 CA_DECOR_STATUE = "Estatua vegetal tallada";
 CA_DECOR_HINT = "{bind:+crouch} + {bind:+use}: transportar decoración";
+
+[enu default]
+CA_REGION_PREPARING = "Preparing the region...";
+[es]
+CA_REGION_PREPARING = "Preparando la región...";
+
+[enu default]
+CA_ABSENT_THEFT_FOUND = "On returning, you discover %d missing inventory stacks from your storage.";
+[es]
+CA_ABSENT_THEFT_FOUND = "Al regresar, descubres que faltan %d pilas de objetos de tus contenedores.";

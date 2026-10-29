@@ -1,0 +1,38 @@
+{
+  "issue": 415,
+  "date": "2026-10-29",
+  "runs": [
+    {
+      "label": "legacy-original03",
+      "purpose": "original 5.8.50 seed",
+      "passed": 2,
+      "failed": 0
+    },
+    {
+      "label": "legacy-upgrade03",
+      "purpose": "current upgrade",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "label": "legacy-resume01",
+      "purpose": "current reload",
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "label": "legacy-rollback01",
+      "purpose": "original-save rollback in 5.8.50",
+      "passed": 4,
+      "failed": 0
+    }
+  ],
+  "assertions": 21,
+  "qualification": "21 scenario assertions, including repeated identity invariants; separate from the 335-check combat matrix. No author acceptance.",
+  "saves": {
+    "original50-city.zds": "b66414f16862e20c2b095a2114a19dc1de76f80bcbd1d555b6c35f4249153157",
+    "upgraded51-city.zds": "0f2b5772d5b90f746ad4f8fb981d424a0b93cd5754c2c39ab52b7a4eb8d51bd8"
+  },
+  "policy": "Preserve recorded bodies and inventory; first departure starts tracking at its actual date, with no invented historical combat. An overdue existing event is due at that boundary.",
+  "runtime_changed": false
+}

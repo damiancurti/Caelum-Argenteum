@@ -208,6 +208,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override void PostBeginPlay()
     {
+        if(DefenderBirthInitialized)return;
+        DefenderBirthInitialized=true;
         Super.PostBeginPlay();
         Mass=CaelumPortData.DEFENDER_MASS_KG;
         A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
@@ -221,6 +223,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         Sword.Tier=CaelumPortData.EQUIPMENT_TIER;Sword.Durability=Sword.GetMaximumDurability();
         MeleeRange=CaelumWeaponCatalogue.GetPrimaryRange(CaelumConstants.CATALOGUE_WEAPON_SWORD);
     }
+
+    bool DefenderBirthInitialized;
 
     override double GetAttackCarriedWeight()
     {
@@ -312,8 +316,11 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         DOWK AB 4 A_CaelumBudgetedChase;
         Loop;
     Melee:
-        DOMI K 7 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD),CaelumConstants.WEAPON_TYPE_SWORD,false,0.5);
+    AbsentMeleePrepare:
+        DOMI K 7 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD),CaelumConstants.WEAPON_TYPE_SWORD,false,CaelumAttackRules.SWING_IMPACT);
+    AbsentMeleeRelease:
         DOMI L 0 A_PortSword;
+    AbsentMeleeRecovery:
         DOMI Q 7 A_CaelumWeaponRecovery;
         Goto See;
     Pain:

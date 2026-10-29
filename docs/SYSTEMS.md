@@ -1,6 +1,121 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
+
+## 5.8.51 - Final absent-dispatch contract (#415)
+
+The paused arrival dispatcher may queue at most three validated 8-ms work pulses
+per UI tic. Serial/cursor checks reject duplicate requests; native/world clocks
+remain frozen until chronological work completes. This is a technical loading
+budget, not a changed combat, recovery, weather or theft interval.
+
+Standalone absent bodies retain their own food/exposure working frame between
+pulses and serialize that ownership. They commit it before the next theft boundary
+or native restoration. Old saved jobs default to an unprepared frame; they continue
+from their recorded stamp without replay. Combat retains its existing per-round
+commits. Physical access is proved in the source geometry; an unproved path or
+unloaded interior does not grant access. #417 explicitly registers its surviving
+bandits for accessible camps/properties; it does not turn other residents into thieves.
+
+The recorded city-day comparison has identical Life/Anima/Air/contamination/thermal
+exposure/shot totals. Loading takes 77.45 s versus 124.07 s previously; callback p95
+is 50.80 versus 29.35 ms. This is a paused-loading tradeoff, not a gameplay-FPS claim.
+Native evidence: assets/validation_5851/loading-results.json. Earlier integration
+checkpoints below retain their original evidence and implementation chronology.
+
+## Unreleased #415 integration
+
+Existing saves without an absent-encounter snapshot retain their actual bodies,
+Life, contamination and inventories. The first departure records its actual
+calendar time. Missing historical combat is not fabricated; an already overdue
+existing event is due at that tracking boundary. The one-time unvisited-city
+flag defaults false for these saves. The original file remains a reversible
+input; a new file stores the upgraded state.
+
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. The subsequent chronological integration is described below;
+#417 registration remains pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
+
+The theft transaction retains actual whole inventory instances, including food
+lots, liquid volume/temperature/quality, equipment identity and wear. It selects
+the highest positive commercial stack value that fits the thief's existing
+Strength/mass carrying limit among access-validated containers. It rechecks
+native keys and paired padlocks before transfer; installed locks, quest stock,
+reserved temporary supplies and carried containers are excluded. Keys are not
+consumed. Equal-value ties keep stable container/inventory order.
+The saved explicit theft plan tracks one opportunity per absent world hour,
+retaining partial progress across returns without counting observed map time.
+Receipts retain the actual source region, victim, item and timestamp. Discovery
+is per victim on regional return, independent of any later thief travel. No
+existing resident is marked as a thief. The approved #417 survivors and regional
+access still need integration before campaign content can exercise this service.
+
+The pending round implementation follows the approved one-world-second,
+simultaneous mean-damage model and converts active durations through the source
+map clock. An already-launched native carbine or elemental projectile joins the
+first absent round without another resource payment, launch or random roll.
+It retains its launch target, origin, dispersion, prepared damage, critical and
+elemental payload. If that target has died, the pending shot does not acquire a
+new one. The launcher's subsequent death does not cancel an existing shot.
+Native flight is consumed without executing a second explosion on return.
+Traveling resident references resolve to their actual household body.
+
+Launch metadata has revision 1. Earlier shots retain their saved damage and
+critical; on first capture only, missing aim metadata uses the shooter's last
+recorded target and current aim parameters. The old save cannot recover a target
+identity it never stored. The typed projectile census occurs at departure,
+once per encounter, and deduplicates through each projectile's pending record.
+
+Area damage preserves GZDoom 4.14.2's two existing metrics: ordinary explosive
+spells use the XY collision-box distance plus vertical separation, while the
+ground slam requests circular distance between actor origins. Both retain native
+radius-damage factors and immunity. Active gameplay formulas are unchanged.
+An encounter with no active bodies, available reserves, pending flights or
+machine work can advance empty time directly; quiet living bodies still progress.
+When no opponent, pending flight, machine action, reserve admission or transient
+combat effect can interact, quiet bodies use the existing absent-NPC boundary of
+one active second (twenty world seconds outdoors), limited by remaining elapsed
+time and weather-minute boundaries. The final sub-second remainder is retained.
+Elemental/support/healing doses, sleep, restraint and racial breath keep fine
+ordering. The shared thermal integrator retains its own internal steps. This
+does not lengthen the approved one-world-second combat rounds.
+Regional weather is cached by profile, region, seed and shelter; personal seal
+deltas remain individual. This transient cache is rebuilt after loading and
+never aliases private food forecasts. Area candidate queries retain the native
+square versus circular footprint before exact vertical/falloff evaluation.
+Sleep and bolas retain their current active-time expiry and cutting rules.
+Sleep drains Lucidity only while asleep; the awake remainder uses normal
+recovery. Mean damaging-hit probabilities accumulate toward the existing wake
+threshold, preserving the fraction through saves; immune branches add nothing.
+Death releases the actual unbroken bolas item through its native lifecycle.
+A frozen attack keeps its saved pose and remaining tics separately from the
+absolute cycle clock, whose later wind/recovery boundaries continue to age.
+Returning does not replay that pose's entry action or spend preparation twice.
+A peaceful-city departure records the existing authored siege date. On return,
+the summary starts at that date and uses actual native attackers and finite
+reserves. Household admission retains the existing one-attempt-per-active-tic
+cadence, including its fractional remainder. A returning resident carries its
+original Life/inventory, remains parked at its recorded door during the summary,
+and resumes native movement only after safe placement. Bodies are not rebuilt
+from equipment templates when they already exist. The victory journal event
+uses the actual concluding round timestamp; discovery remains regional.
+Fresh first arrival also starts at the authored deadline. This is unreleased
+work; legacy history without a recorded snapshot, theft and V5.8 remain incomplete.
 
 ## 5.8.50 - Physical contact coverage (#502)
 
@@ -1914,7 +2029,7 @@ Quest deadlines still fail actual quest state while absent, unless objectives we
 
 Due series are ordered by their first pending timestamp, then stable event ID, using bounded O(n log n) sorting for at most 2,048 definitions. Existing repetition counters reconcile arithmetically rather than replaying every occurrence. These counters have no per-occurrence combat/theft adapter; this is not yet a complete chronological simulation of interacting battles. One-shot quest effects follow due order. Existing resource/shop/weather timestamps remain authoritative and unchanged.
 
-The author also approved an unloaded siege abstraction: one world-second rounds with real participants, Life, attacks, defenses, resistances and mean damage, preserving casualties, finite reserves and inventories without movement/projectiles. That simulation, explicit theft conditions and the remaining catch-up integration are still pending. No new battle outcome, theft probability, quest deadline or offline real-time progression is invented.
+The author also approved an unloaded siege abstraction: one world-second rounds with real participants, Life, attacks, defenses, resistances and mean damage, preserving casualties, finite reserves and inventories without movement/projectiles. The unreleased #415 branch implements simultaneous rounds, stable retained targets, existing attack preparation, physical/magical expected damage, artillery/ram work, finite reserve admission and native physiology. Outside the Limbo, twenty world seconds retain one active combat second; the Limbo keeps 1:1. Existing unlimited defender/carbine and cannon reserve policies are preserved. Withdrawal happens after the round's casualties, retaining the survivor and equipment. Racial breath retains its native contact cone, cost, burn and absorbed thermal power; it does not interrupt an already prepared attack. Fractional final absence time resolves once before native state restoration. Already deployed household residents retain their actual traveling body and inventory through their saved household identity. This is incomplete integration: scheduled starts/undeployed residents, remaining projectile/control handling, theft and bounded catch-up performance still require completion and validation. No new battle outcome, theft probability, quest deadline or offline real-time progression is invented.
 
 ## Food contamination and cooking contract (#410, 5.8.3 in progress)
 

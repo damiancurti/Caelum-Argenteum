@@ -90,6 +90,9 @@ class CaelumSiegeReinforcements : Object play
             if(!Fits(body)){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
         }
         Registering=true;
+        // #415: Spawn difiere PostBeginPlay hasta volver al motor. La admision
+        // resumida necesita el mismo perfil ahora; la guarda impide repetirlo.
+        if(port.AbsentBattle!=null && port.AbsentBattle.Busy && !body.CombatProfileInitialized)body.PostBeginPlay();
         let entry=port.RegisterAttacker(body);
         Registering=false;
         if(entry==null){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
@@ -117,6 +120,18 @@ class CaelumSiegeReinforcements : Object play
         RefreshLiving(port);
         // No se acumulan oportunidades, tampoco después de cargar o viajar.
         NextOpportunity=level.time+CaelumReinforcementData.INTERVAL;Opportunities++;
+        Admit(port);
+    }
+
+    void Opportunity(CaelumPortSiege port)
+    {
+        if(!Enabled || Stopped || Remaining==0)return;
+        if(port.Victory){Stopped=true;return;}
+        RefreshLiving(port);Opportunities++;Admit(port);
+    }
+
+    void Admit(CaelumPortSiege port)
+    {
         if(Pending==0)
         {
             if(Living>CaelumReinforcementData.LIVING_CAP-CaelumReinforcementData.GROUP_SIZE

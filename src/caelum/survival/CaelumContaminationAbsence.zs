@@ -10,6 +10,7 @@ class CaelumContaminationAbsence : Object play
     CaelumFoodClimate Climate;
     CaelumContaminationNPC Exposure;
     CaelumJourneyFood Foods;
+    bool SyncPrepared;
     transient CaelumContaminationWeatherDay WeatherDay;
 
     static double Clock(CaelumPlayer user,String map)
@@ -43,7 +44,7 @@ class CaelumContaminationAbsence : Object play
         row.Climate=new('CaelumFoodClimate');
         row.Climate.Capture(npc,CaelumWorldClock.Get(user),CaelumCalendarState.Get(user),CaelumWeatherState.Get(user));
         row.Civil=row.Climate.CivilSeconds;
-        row.Exposure=null;row.WeatherDay=null;
+        row.Exposure=null;row.WeatherDay=null;row.SyncPrepared=false;
         if(thermal!=null && thermal.Available)
         {row.Exposure=new('CaelumContaminationNPC');row.Exposure.Capture(npc,thermal);}
         row.Foods=new('CaelumJourneyFood');row.Foods.Capture(npc);
@@ -104,13 +105,28 @@ class CaelumContaminationAbsence : Object play
             if(npc.CombatMaximumHealth>0)body.Concentration=Max(0,body.Concentration-double(recovered)/npc.CombatMaximumHealth);
         }
     }
-    void SyncTo(CaelumCombatActor npc,double end)
+    void CommitSync(CaelumCombatActor npc)
     {
-        if(!Away || Revision!=CaelumContaminationData.NPC_ABSENCE_REVISION || npc==null || end<=Stamp)return;
+        if(!SyncPrepared || npc==null)return;
+        if(Exposure!=null)Exposure.CommitCaptured(npc);
+        if(Foods!=null)Foods.Commit(npc);
+        SyncPrepared=false;
+    }
+    void SyncTo(CaelumCombatActor npc,double end,bool retain=false)
+    {
+        if(!Away || Revision!=CaelumContaminationData.NPC_ABSENCE_REVISION || npc==null)return;
+        if(end<=Stamp){if(!retain)CommitSync(npc);return;}
         double scale=CaelumWorldClock.SecondsPerGameHour(Map)/3600.0;
         let body=CaelumContaminationStorage.Get(npc,true);body.EnsurePhysiology();
-        if(Foods==null){Foods=new('CaelumJourneyFood');Foods.Capture(npc);}else Foods.Refresh(npc);
-        if(Exposure!=null){Exposure.Frame.ReadLive();Exposure.Frame.BindFood(Foods);Exposure.Body.Contamination=body.Concentration;}
+        // La carga pausada mantiene este cuerpo bajo un unico propietario.
+        // Conservar el marco entre pulsos evita releer/aplicar el inventario
+        // cada segundo activo. Antes de robos o de reanudar, se confirma todo.
+        if(!SyncPrepared)
+        {
+            if(Foods==null){Foods=new('CaelumJourneyFood');Foods.Capture(npc);}else Foods.Refresh(npc);
+            if(Exposure!=null){Exposure.Frame.ReadLive();Exposure.Frame.BindFood(Foods);Exposure.Body.Contamination=body.Concentration;}
+            SyncPrepared=true;
+        }
         while(Stamp<end && Life>0)
         {
             // La misma resoluciÃ³n ambiental de un segundo activo del servicio
@@ -149,8 +165,7 @@ class CaelumContaminationAbsence : Object play
             if(Exposure!=null)Exposure.Body.Contamination=body.Concentration;
             Stamp+=step;Civil+=step;
         }
-        if(Exposure!=null)Exposure.CommitCaptured(npc);
-        Foods.Commit(npc);
+        if(!retain)CommitSync(npc);
         // Un fallecido no recibe exposiciÃ³n ni recuperaciÃ³n retroactiva.
         if(Stamp<end){Civil+=end-Stamp;Stamp=end;}
     }
@@ -161,10 +176,10 @@ class CaelumContaminationAbsence : Object play
         if(row==null || !row.Away)return true;
         row.SyncTo(npc,civil);return row.Life>0;
     }
-    static void Restore(CaelumCombatActor npc,CaelumPlayer user)
+    static void Restore(CaelumCombatActor npc,CaelumPlayer user,double at=-1)
     {
         let row=npc.ContaminationAbsence;if(row==null || !row.Away)return;
-        double now=Clock(user,row.Map);if(now<0)return;
+        double now=at>=0?at:Clock(user,row.Map);if(now<0)return;
         row.SyncTo(npc,now);row.Away=false;
         if(npc.health<=0)return;
         npc.health=row.Life;

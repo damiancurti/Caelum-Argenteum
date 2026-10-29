@@ -4,6 +4,80 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-189 - Pause resumed-world work before native actors can run
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+arrival-calendar03, arrival-save01/load01 and arrival-performance.json.
+No author acceptance or presentation-FPS claim.
+
+Level.setFrozen stops actor simulation but still advances native level clocks.
+A ListMenu with menuactive=Menu.On pauses those clocks while NetworkProcess
+can mutate saved work state. Set the native freeze at WorldLoaded as a bridge:
+the current loading tic can finish before the menu pause is active. Inventory
+controllers that place residents must also defer their Tick. Snapshot the
+arrival date in WorldLoaded, not at the first later work pulse. Otherwise
+residents can occupy their own deployment probes before absent admission.
+Restore the prior freeze flag when complete, and reopen the work menu when a
+save contains an unfinished job. Keep phase, cursor and pending damage in play
+state; reject stale/duplicate network pulses. Never finalize a busy encounter
+through a second restore call. A soft slice budget bounds callbacks, not total
+processing duration or every indivisible native operation.
+
+Console wait commands continue during menu pause. Native fixtures must wait
+for the actual job and subsequent placement tics before asserting results;
+a fixed console wait can inspect an incomplete simultaneous round. The runner
+may tear down only its isolated test process after an explicit terminal record.
+The 1,000/600 diagnostic preserves all recorded outcomes but still needs faster
+long-absence processing. Callback intervals do not establish presented FPS.
+
+Follow-up, 2026-10-29: sending job.Pulses directly from each menu Ticker still
+repeats the prior request when UI runs before play processes it. Keep a UI-owned
+next-request sequence, bounded to two in-flight requests, while validating the
+actual job serial and pulse in play. This removes alternating stale requests
+without replaying work. Native saved-job/city returns pass; the staged combat
+minute falls from 17.857 to 8.910 s. Quiet periods can use the existing NPC
+physiology boundary when no combat interaction requires fine ordering. Never
+generalize that shortcut to active damage rounds or unexpired effects.
+Regional weather evaluation can be shared by its complete input key, with
+personal deltas applied afterward; do not alias mutable private forecasts.
+Evidence: validation_5851/catchup-performance.json and quiet/weather fixtures.
+The actual city-day workload still needs improvement; PresentMon ETW was denied
+by Windows and no presentation result is inferred from these callback timings.
+
+## CA-KP-188 - Frozen poses and absolute attack clocks are different state
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+preparedsleep03 and integrated08 native scenarios. Author review pending.
+
+Spell sleep replaces CurState with a lying pose and saves the interrupted pose
+and its remaining tics. It does not shift WeaponCycleStartTic. Capturing only
+CurState loses a prepared attack; subtracting elapsed cycle time alone releases
+it too early. Preserve the frozen frame and absolute deadline separately.
+Later Zupay wind frames can immediately skip expired boundaries; recovery can
+also already be over. Restore poses with no entry action replay, and test early
+wake, partial intervals and return before the next wind boundary. Native
+telekinesis already deactivates on player travel; do not invent an absent timer.
+
+## CA-KP-187 - Native explosion distance depends on its flags
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+area01 reproduction and corrected area/native batch logs. Author review pending.
+
+An apparently reasonable cylindrical distance underestimates diagonal hits from
+ordinary A_Explode. The engine's default GetRadiusDamage uses the maximum XY
+offset, subtracts collision radius, then includes vertical separation. With
+XF_CIRCULAR it instead uses actor-origin Distance3D, without subtracting radius.
+The current elemental explosion uses the first path; the Zupay slam explicitly
+uses the second. Preserve RadiusDamageFactor and NORADIUSDMG as well.
+
+Reference: [GZDoom g4.14.2 p_map.cpp](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp),
+GetRadiusDamage and P_RadiusAttack. Eight deterministic native comparisons per
+attack cover axial, diagonal and vertical separation, with and without criticals.
+They validate this damage abstraction, not movement or projectile trajectories.
+
 ## CA-KP-186 - Inventory-owned records need an explicit owner guard
 
 - **Status/evidence:** native reproduction and migration verification, 5.8.49/#502;
@@ -453,6 +527,16 @@ ZScript names are case-insensitive: local `chest`/`day` shadowed saved `Chest`/
 Use distinct candidate/civil-date identifiers and test the actual scheduler,
 not only direct arithmetic calls. Household targets are initialized after the
 spawned fixtures receive their native initialization/linking.
+
+Unreleased #415 checkpoint (2026-10-29), `assets/validation_5851`: a parameter
+`encounter` likewise shadowed `Encounter`, leaving the actual controller null
+while isolated damage arithmetic still passed. Qualify `self.Encounter` and
+assert controller/roster identity in native save and travel tests. Capture
+deployed household combatants before PreTravelled suspends them; detach their
+map-local combat reference during travel and rebind the same body through its
+household ID on return. Reapply native attack timing only after Resume has
+finished its clock adjustment and collision placement. A dead traveling body
+must retain its post-death collision flags, never the saved living flags.
 
 Parked traveling merchants are not found by the normal actor iterator. Restore
 the explicit saved registry after Travelled, then perform one typed legacy
@@ -2204,6 +2288,28 @@ Code review must identify traversal callers and multiplicative nesting, then
 test cost and behavior at representative populations. Scan count alone is not
 an exact CPU cost: measure recipient work, native calls and frame-time stalls.
 The source of this policy is the author's instruction, recorded also in AGENTS.
+
+Unreleased #415 checkpoint, 2026-10-29: a typed encounter registry still caused
+quadratic work when every unopposed survivor called Choose each world second.
+The 1,000/600 isolated native diagnostic spent 46.712 s advancing its quiet
+defending cohort by one hour. Removing that redundant search and sharing the
+first valid opponent reduced it to 5.989 s without changing the time steps;
+Life, Anima, Air, contamination, exposure and shots match exactly at three
+checkpoints. Invalidate the shared result on admission, capture, faction changes
+or head death/withdrawal; retain each already-valid individual target. Native
+load/leave capture with 1,600 rows costs approximately 21 ms in this fixture.
+This does not validate arbitrary populations or frame presentation: synchronous
+remaining stalls still require bounded catch-up. Raw callback tails and timers
+are in assets/validation_5851/performance-comparison.json and native logs.
+
+The same unreleased issue requires a departure-only typed projectile census to
+capture already-paid flights, including dead launchers. Ownership is the saved
+encounter row; each projectile stores its pending record for constant-time
+deduplication, cleared on resolution. The measured population is one volley of
+1,600 actual projectiles on the authorized 1,000/600 scene. Capture costs
+0.791 ms and repeated capture 0.288 ms; resolution costs 567.886 ms and remains
+a separate latency concern. This is neither a per-tic global scan nor a claim
+that arbitrary projectile counts or active rendering have been validated.
 
 ## CA-KP-110 - Simulation throughput does not establish playable frame presentation
 

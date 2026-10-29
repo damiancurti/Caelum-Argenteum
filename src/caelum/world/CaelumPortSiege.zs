@@ -46,6 +46,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     Actor AttackingTarget[6];
     Actor DefendingTarget[6];
     int SetupRevision, SetupTick, Groups;
+    bool UnvisitedCalendarPending;
     int TargetingRevision;
     // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
     bool SiegeStarted;
@@ -78,7 +79,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         return entry;
     }
 
-    void Deploy(bool attackOnly=false)
+    void Deploy(bool attackOnly=false,double civil=-1)
     {
         bool city=CaelumCityData.Enabled();
         bool peaceful=city && !attackOnly;
@@ -170,7 +171,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             return;
         }
         SiegeStarted=true;
-        if(separateHomes)CaelumHouseResidents.Get(true).BeginDeployment(self);
+        if(separateHomes)CaelumHouseResidents.Get(true).BeginDeployment(self,civil);
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
         Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
         if(Reinforcements.Enabled)Reinforcements.Tick(self);
@@ -694,7 +695,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(level.time%4==entry.StableIdentity%4)WalkTo(body,entry.NavigationTarget,destination);
     }
 
-    void Calendar(CaelumPlayer user)
+    void Calendar(CaelumPlayer user,double actualCivil=-1)
     {
         let agenda=CaelumScheduleState.Get(user,true);if(agenda==null)return;
         if(CaelumCityData.Enabled() && !Victory)
@@ -706,7 +707,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         String key=Victory ? "port16_siege_end" : "port16_siege_start";
         if(agenda.FindKey(key)!=null)return;
-        let e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",0,0,1,"port16_siege");
+        CaelumScheduledEvent e;
+        if(actualCivil<0)e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",0,0,1,"port16_siege");
+        else
+        {
+            int day=int(Floor(actualCivil/86400));
+            int tic=int((actualCivil-double(day)*86400)*CaelumWorldClock.TicsPerHour()/3600);
+            e=agenda.Add(key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",day,tic,0,1,"port16_siege",false);
+        }
         if(e!=null)e.Value=Victory ? 0 : 1;
         CaelumScheduleState.Sync(user);
     }
@@ -725,7 +733,15 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 if(waiting.health>0 && (!waiting.DeploymentComplete || waiting.ReturningFromYield || waiting.FollowingCrewRoute))waiting.CityNavigation.Build(waiting);
             }
         }
-        if(SetupRevision==0){if(CaelumCityWorld.Prepare())Deploy();return;}
+        if(SetupRevision==0)
+        {
+            if(CaelumCityWorld.Prepare())
+            {
+                Deploy();
+                if(UnvisitedCalendarPending)CaelumAbsentBattles.FirstArrival(self);
+            }
+            return;
+        }
         if(CaelumCityData.Enabled() && !SiegeStarted)
         {
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));
@@ -735,15 +751,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         EnsureReinforcements();
         RefreshDensity();
-        if(!RosterSealed)
-        {
-            if(level.time<=SetupTick)return;
-            SealRoster();
-            for(int i=0;i<Machines.Size();i++)if(Machines[i] is "CaelumBatteringRam")CaelumBatteringRam(Machines[i]).ActivateRam();
-            for(int i=0;i<Guns.Size();i++)if(CaelumPortData.ActiveGun(i))Guns[i].ActivateCannon(0);
-            CommandDirty=true;
-            let zone=Spawn("CaelumTimeAdvanceZone",CaelumPortData.BedPosition());
-        }
+        if(!RosterSealed && !ActivateDeployment())return;
         Super.Tick();
         Reinforcements.Tick(self);
         if(Victory && !Aftermath)
@@ -758,6 +766,18 @@ class CaelumPortSiege : CaelumSiegeEncounter
             OrderGuns();
         }
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));
+    }
+
+    bool ActivateDeployment(bool summarized=false)
+    {
+        if(RosterSealed)return true;
+        if(!summarized && level.time<=SetupTick)return false;
+        SealRoster();
+        for(int i=0;i<Machines.Size();i++)if(Machines[i] is "CaelumBatteringRam")CaelumBatteringRam(Machines[i]).ActivateRam();
+        for(int i=0;i<Guns.Size();i++)if(CaelumPortData.ActiveGun(i))Guns[i].ActivateCannon(0);
+        CommandDirty=true;
+        let zone=Spawn("CaelumTimeAdvanceZone",CaelumPortData.BedPosition());
+        return true;
     }
 }
 

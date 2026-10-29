@@ -102,7 +102,9 @@ class CaelumHouseResident : Object play
             for(Inventory item=Binding.Inv;item!=null;item=item.Inv)
                 item.ChangeStatNum(Thinker.STAT_INVENTORY);
         }
-        Suspended=false;CaelumContaminationAbsence.Restore(Body,user);return true;
+        Suspended=false;CaelumContaminationAbsence.Restore(Body,user);
+        if(Body.AbsentCombatant!=null && Body.AbsentCombatant.NativeResumePending)Body.AbsentCombatant.ResumeNative();
+        return true;
     }
 }
 
@@ -330,14 +332,15 @@ class CaelumHouseResidents : Inventory
         }
     }
 
-    void BeginDeployment(CaelumPortSiege port)
+    void BeginDeployment(CaelumPortSiege port,double civil=-1)
     {
+        if(civil<0)civil=CaelumHouseAwayWork.Civil(CaelumPlayer(Owner));
         EnsureRecords();PendingCursor=0;Unresolved=0;
         for(int i=0;i<Residents.Size();i++)
         {
             let entry=Residents[i];DelegatesTravel(entry);
             entry.DeploymentResolved=entry.Emitted || entry.ExcludedFromDeployment
-                || (entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,CaelumHouseAwayWork.Civil(CaelumPlayer(Owner))));
+                || (entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,civil));
             if(!entry.DeploymentResolved)Unresolved++;
         }
         DeploymentPending=Unresolved>0;
@@ -345,6 +348,7 @@ class CaelumHouseResidents : Inventory
 
     override void Tick()
     {
+        if(CaelumAbsentArrivalEvents.Active())return;
         Super.Tick();
         if(PropertyRevision<CaelumPropertyData.REVISION){EnsureRecords();Ready=false;}
         if(PlacementPending.Size()>0)
@@ -372,27 +376,63 @@ class CaelumHouseResidents : Inventory
             && level.MapName==CaelumHouseHubData.MapName(CaelumPropertyData.RELOCATION_HOUSE))PlaceRelocatedChest();
         if(!DeploymentPending || level.MapName!="MAP03")return;
         let port=CaelumPortSiege.Get();if(!CaelumHouseHub.IsCity(port) || !port.SiegeStarted)return;
+        DeploymentOpportunity(port,CaelumHouseAwayWork.Civil(CaelumPlayer(Owner)));
+    }
+
+    CaelumPortDefender DeploymentOpportunity(CaelumPortSiege port,double civil,bool summarized=false)
+    {
+        if(!DeploymentPending || Residents.Size()==0 || port==null)return null;
         // Un intento por tic: presupuesto fijo independiente del total de actores.
         int identity=PendingCursor;PendingCursor=(PendingCursor+1)%Residents.Size();
         let entry=Residents[identity];
-        if(entry.DeploymentResolved)return;
-        if(entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,CaelumHouseAwayWork.Civil(CaelumPlayer(Owner))))
-        {entry.DeploymentResolved=true;DeploymentPending=--Unresolved>0;return;}
+        if(entry.DeploymentResolved)return null;
+        if(entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,civil))
+        {entry.DeploymentResolved=true;DeploymentPending=--Unresolved>0;return null;}
         vector3 point=CaelumCityData.DoorOutside(CaelumPropertyData.ResidentHouse(identity));
         let probe=Spawn("CaelumSummoningProbe",point,NO_REPLACE);
         probe.A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
-        bool free=probe.TestMobjLocation();probe.Destroy();if(!free)return;
+        bool free=probe.TestMobjLocation();probe.Destroy();if(!free)return null;
         let body=entry.Body;
         if(!entry.Created)body=CreateResident(identity,point);
-        else if(!entry.Resume(point))return;
-        if(body==null)return;
+        else if(!summarized && !entry.Resume(point))return null;
+        if(body==null)return null;
+        if(summarized)
+        {
+            if(!body.CombatProfileInitialized)body.PostBeginPlay();
+            if(body.Carbine==null){body.Carbine=new('CaelumCityCarbine');body.Carbine.Initialize(body);}
+            let absence=body.ContaminationAbsence;
+            if(absence!=null && absence.Away)
+            {body.health=absence.Life;absence.Away=false;}
+            body.SetOrigin(point,false);body.FindFloorCeiling();
+            // El cuerpo real queda aparcado en su puerta registrada. No ocupa
+            // el acceso durante rondas sin movimiento ni toca otro mapa.
+            if(entry.Suspended)
+            {
+                int elapsed=level.time-entry.ParkTic;
+                body.WeaponCycleStartTic+=elapsed;
+                if(body.Carbine!=null)
+                {body.Carbine.NextShotTic+=elapsed;body.Carbine.LastAimTic+=elapsed;}
+                entry.ParkTic=level.time;
+                body.bShootable=entry.Shootable;
+                body.bNoInteraction=entry.NoInteraction;
+            }
+            CaelumContaminationAbsence.Capture(body,CaelumPlayer(Owner));
+            absence=body.ContaminationAbsence;
+            if(absence!=null){absence.Stamp=civil;absence.Civil=civil;}
+            entry.Suspend();body.bShootable=entry.Shootable;
+        }
         entry.Emitted=true;entry.ResidentMap=level.MapName;entry.Position=point;
         entry.DeploymentResolved=true;DeploymentPending=--Unresolved>0;
         body.DeploymentStep=2;Bind(port,identity);
+        return body;
     }
 
     override void PreTravelled()
     {
+        // Capturar el encuentro antes de suspender sus residentes reales.
+        // El snapshot local conserva identidad y estado de ataque; el cuerpo
+        // viajero no arrastra referencias a enemigos ni geometria del mapa.
+        CaelumAbsentBattles.Capture(CaelumPlayer(Owner));
         TravelPropertyChest(false);
         for(int i=0;i<Residents.Size();i++)
         {
@@ -415,6 +455,7 @@ class CaelumHouseResidents : Inventory
                 }
             }
             entry.Suspend();
+            body.AbsentCombatant=null;
             body.Port=null;body.Gun=null;body.HomeDoor=null;body.target=null;body.LastEnemy=null;
             if(body.NavigationTarget!=null){body.NavigationTarget.Destroy();body.NavigationTarget=null;}
             if(body.RecoveryGoal!=null){body.RecoveryGoal.Destroy();body.RecoveryGoal=null;}

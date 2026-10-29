@@ -6,8 +6,27 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.50.** Obtain and update the complete repository, validate
+**Current release: 5.8.51.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.8.51 completes the #415 calendar/combat/theft infrastructure. Unloaded sieges
+retain actual combatants, resources, casualties, prepared attacks and loot.
+Explicit thieves require proven physical access and transfer real owned stacks
+at chronological hourly boundaries. The #417 bandit content is delivered separately.
+
+Original 5.8.50 saves remain reversible inputs; native upgrade/reload checks and
+paused partial-work saves are retained in `assets/validation_5851`. Tests distinguish
+335 combat assertions, 21 original-save checks, ownership/access/dispatch evidence
+and the final loading comparison. Author checks remain grouped for the final V5.8
+handoff; #416/#417 continue on their own branches.
+
+One actual city-day catch-up takes 77.45 seconds versus 124.07 seconds in the
+preceding checkpoint, with identical recorded Life, Anima, Air, contamination,
+thermal exposure and shots. Three validated 8-ms pulses can run per paused UI tic.
+This trades smoother loading-screen callbacks for shorter loading: p95 rises from
+29.35 to 50.80 ms; it does not change active gameplay cadence. These are renderer
+callback intervals, not presented-frame/FPS measurements. Long absences remain
+computationally expensive; individual simulation and resources are retained.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 

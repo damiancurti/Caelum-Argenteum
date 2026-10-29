@@ -210,3 +210,8 @@ ListMenu "CaelumMapNoteMenu"
 {
     Class "CaelumMapNoteMenu"
 }
+
+ListMenu "CaelumAbsentArrivalMenu"
+{
+    Class "CaelumAbsentArrivalMenu"
+}

@@ -1,6 +1,169 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
+
+## 5.8.51 - Unloaded-world implementation (#415) - 2026-10-29
+
+Completed the previously recorded calendar/combat/theft infrastructure without
+changing authored balance, quantities or native ownership. Standalone arrival
+bodies retain their prepared food/exposure frame until a chronological boundary;
+native save/reload preserves partially advanced work. Earlier pending combat and
+theft snapshots still resume. Three validated 8-ms requests per UI tic shorten
+paused loading while leaving the world clock and each actor's calculation intact.
+
+An actual city-day takes 77.45 s versus 124.07 s in the preceding pushed checkpoint,
+with identical recorded Life, Anima, Air, contamination, exposure and shot totals.
+Renderer callback p95 changes from 29.35 to 50.80 ms; p99 from 30.18 to 51.83 ms.
+This trades loading-screen smoothness for lower total latency and is not presented
+FPS acceptance. A thermal memoization prototype passed 60 equivalence assertions
+but reused only 7,614 of 202,263 computations; its small gain did not justify
+production complexity. It is preserved solely in the isolated validation assets.
+
+Evidence: assets/validation_5851/loading-results.json. The author remains away;
+no manual entry was removed. #417 owns the surviving bandits and their live camp
+integration; #416/#417 delivery and final grouped author corroboration remain.
+
+## Unreleased #415 checkpoint - 2026-10-29
+
+Original 5.8.50 compatibility was checked with a city save created by its exact
+released package. Upgrade, current reload and rollback of the untouched input
+pass 21 scenario assertions, including repeated identity checks. Existing Life,
+contamination, household identity and the actual inventory object survive; the
+new tracking boundary is the first actual departure, without invented prior
+combat. This verifies the preservation contract and changes no production
+runtime. Evidence: `assets/validation_5851/legacy-results.json`. The author has
+returned; temporary keep-awake was released. Manual checks remain grouped for
+the completed version, and no acceptance entry was removed.
+
+Physical theft access now passes 16 additional native checks, including actual
+PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
+collision query proves the route without moving actors or opening real doors;
+unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
+point queries. Production chronological dispatch and #417 registration remain
+pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
+
+Added actual whole-stack theft transactions and a saved explicit hourly plan;
+37 native assertions cover commercial selection/capacity, native and paired
+locks, ownership, food/water/equipment state, saved deadlines and victim-only
+regional discovery. Routes and chronological dispatch remain unfinished; no
+resident was made a thief. Evidence: `assets/validation_5851/theft-results.json`.
+The runner now anchors CA diagnostic prefixes: its previous case-insensitive
+substring search misread "capacity failure" inside a PASS label. The original
+log is retained; final selected runs pass the corrected check. No manual check
+was removed or claimed accepted.
+
+Continued the planned 5.8.51 implementation on its focused branch. Mean combat
+now owns actual encounter rows, simultaneous casualties, preparation/recovery,
+magazines, Anima, statuses, healing doses, artillery/ram work and finite reserve
+admission. Current integration passes 87 distinct native assertions, including
+native cannon/direct-spell damage parity and actual save/hub restoration.
+This is intermediate evidence, not full issue completion, release validation
+or author acceptance; scheduled starts, theft and remaining combat/performance
+coverage are still tracked in TASKS. The author is away; manual checks remain
+grouped for the completed V5.8 handoff, and none were removed.
+
+The second checkpoint extends the same work to 116 distinct native assertions
+on the integrated03 source package. It adds native racial-breath parity,
+fractional return boundaries, explicit withdrawal, and traveling resident
+identity/death. The restored controller is explicitly assigned through
+`self.Encounter`; a case-insensitive parameter previously left that field null
+despite passing isolated arithmetic cases. Tests now assert actual controller
+ownership and use the household registry for traveling bodies. The original
+87-check checkpoint remains historical evidence, not additional unique tests.
+
+Follow-up performance work on the same unreleased issue removed a quadratic
+target search: unopposed survivors no longer each rescan the whole encounter,
+and valid first opponents are shared while retaining existing targets. The
+authorized 1,000-attacker/600-defender diagnostic preserves native profiles and
+inventory, freezes regular AI to isolate catch-up, then excludes attacker rows
+for its quiet phase without deleting actors. Matched runs reduce that phase
+from 46.712 s to 5.989 s, with exact aggregate outcome parity at all three
+checkpoints. Callback maximum falls from 49.280 s to 6.040 s; p95/p99 remain
+reported separately and neither run establishes playable frame presentation.
+Bounded processing is still required. Evidence: validation_5851 performance
+source, builder, comparison and raw reference/current logs. The integrated04
+native regression batch retains 116 distinct passing assertions.
+
+The fourth checkpoint covers saved in-flight attacks, dead launchers and real
+traveling resident sources, plus 16 native area comparisons. Total scenario
+assertions rise to 163, excluding repeated setup. The launch census is typed
+and departure-only: 1,600 existing flights register in 0.791 ms and deduplicate
+in 0.288 ms; their simultaneous resolution still takes 567.886 ms. The terminal
+fixture skips one empty year in 0.011 ms after consuming its remaining flight.
+It does not skip living-body physiology or available reinforcements. The broad
+quiet/combat latency remains unresolved. No manual test or release is claimed.
+
+The area comparison found an implementation discrepancy, not a balance change:
+native ordinary explosions use a square XY distance, whereas the existing slam
+explicitly requests circular distance. The summary now mirrors both. Saved
+flight fixture checks run before the native carbine projectile's 24-tic lifetime;
+the earlier 70-tic wait had allowed that test projectile to expire. Raw failures
+and corrected runs are retained alongside the current evidence.
+
+Fixture corrections preserved in the private logs: cannon parity must use a
+projectile after its native PostBeginPlay sets its calibre; a manual Life edit
+after capturing absence must also update that saved Life, exactly as the
+production round commit does. These failures did not require a new gameplay
+rule. Intermediate data/version markers remain at the last completed release.
+
+The fifth checkpoint retains native sleep/bolas progression, the saved mean-hit
+wake remainder and attacks frozen by sleep. The shared active helpers preserve
+Lucidity, restraint expiry/cutting and the actual item returned at death.
+Capturing only CurState lost the prepared attack behind a lying pose; capture
+now reads the saved pose/tics and separately advances its absolute cycle clock.
+Tests cover full/partial sleep, early wake, exact wind-frame return, pain-pose
+restoration, native wake-count parity, zero-damage immunity and saved fractions.
+The integrated08 regression batch passes 203 distinct scenario assertions on one
+22-member source overlay. Raw fixture failures are retained: a nonexistent
+damage type applied ordinary armor instead of the intended disease path, and
+floating-point residue initially delayed an exact-tic release. Neither required
+a new balance rule. Draft PR545 remains incomplete, with scheduling, theft and
+bounded catch-up tracked above; author checks are still deferred.
+
+The sixth checkpoint adds calendar-driven siege starts for revisited peaceful
+cities and shares native household admission/activation. The actual MAP03
+fixture preserves an existing resident and its finite possession, crosses the
+exact authored date, saves/loads the deployment fraction, and performs a real
+hub round trip with collision-safe placement. It also verifies victory dating
+and exactly-once reconciliation. The integrated09 package passes 228 distinct
+scenario assertions, with all 24 changed source members byte-verified. A private
+save fixture initially quit before the engine wrote its file; the runner refused
+the missing-file load, and the corrected fixture waits for completion. Native
+NPC ammo rejects player-only pickup, so the identity test attaches the actual
+fixture item directly. These are isolated harness corrections, not gameplay
+changes. First-arrival/legacy scheduling, bounded catch-up and theft remain open;
+no author test was removed and no release or acceptance is claimed.
+
+The ninth checkpoint adds local area candidate selection, quiet-interval
+physiology, bounded UI request pipelining and shared regional weather. The
+1,000/600 diagnostic retains exact recorded outcomes: its quiet hour falls from
+5.951 to 0.317 s CPU and about 52 to 1.454 s of staged wall time. Combat remains
+one-world-second rounds; its staged minute takes 8.910 s. Area queries preserve
+square explosion corners and native falloff. An anatomical probability cache
+was measured but discarded because it did not materially improve throughput.
+
+The focused regressions and new cases total 335 distinct scenario assertions;
+they include pre-change partial saves, quiet-span save/load, independent native
+thermal/weather comparisons and real scheduled city arrivals. The one-day city
+case still takes 131.892 s including startup, down from 155.011 s before shared
+weather, with the same registered/active/victory/reserve totals. No unrecorded
+per-body final parity is claimed for that city timing pair. Raw evidence and
+callback tails are in validation_5851/catchup-performance.json. Windows rejected
+PresentMon's unelevated trace; displayed FPS remains unmeasured. This is another
+intermediate checkpoint, not a complete issue or author acceptance. No pending
+author entry was removed; the author remains away and tests stay grouped.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
