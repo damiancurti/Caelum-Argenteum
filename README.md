@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.28.** Obtain and update the complete repository, validate
+**Current release: 5.8.29.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.29 - Two- and three-seat sofas (#410)
+
+The mansion reading room gains two period sofas with independent usable seats.
+Each uses the existing seated-rest rules, preserves the player's physical size,
+and shares one saved furniture contamination value. Historical museum dimensions
+and delegated material calculations are recorded with the original owned meshes.
+The wider furniture catalogue/acquisition and other V5.8 issues remain unfinished.
+Native evidence is in assets/validation_5829; CA410-SOFAS-01 remains author-pending.
+Manual checks stay deferred until the full V5.8 implementation is ready.
+
+Validation:113 executed native PASS, zero static errors; current/old saves, hub,
+all five seats, shared contamination, native Use and bilingual aim text. The
+101-assertion seating suite is reused after target normalization and a Spanish
+encoding correction;12 further assertions cover those changes. Package hashes
+and reuse boundaries are recorded in assets/validation_5829/RESULTS.md.
 
 ## 5.8.28 - Regional weather history for objects (#502)
 

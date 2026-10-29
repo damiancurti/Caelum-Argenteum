@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Sofa seats (#410)
+
+Two/three seats share one furniture owner and contamination record. Use chooses
+the nearest reachable free seat. Each seat uses ordinary chair rest/comfort,
+including existing safety and cancellation; no luxury bonus, smaller player
+capsule or automatic resource grant. Logical anchors are1m apart for the native
+reference capsule; graphical pose offsets align each occupant to the actual seat.
+Bodies that do not fit are rejected by the existing native collision test.
+
+Author-delegated construction calculations use documented nineteenth-century
+museum envelopes:1.88x0.61x0.752m and2.121x0.635x0.876m. Original solid wood frames,
+seat/back boards, thin cotton coverings and iron fittings yield35.37387888kg and
+43.881812348kg. Calculated material inputs rounded up to grams are respectively
+34,467/407/502g and42,797/407/679g of wood/iron/cotton cloth. These are design bills,
+not measurements or reproductions of museum construction. Acquisition is still
+pending; no undocumented shop stock or learning quantities are introduced.
+
+Only the owner receives environmental exposure; proxy contact and cleaning share
+its state and full cylinder-derived surface. Save links preserve identity and
+occupied seats. Installation revision1 checks clearance, retries a blocked site
+once per second and stops scanning once both owners are present. Runtime seating
+uses only the owner's at-most-three references; no recurring actor census.
+
+The shared chair/bed seating path now validates occupancy with an equal-sized
+non-player probe before SetOrigin; the player's native same-position unblocking
+exception cannot admit a second solid occupant. The probe excludes only that
+same user. Existing clear seats and exits retain their rules (CA-KP-180).
 
 ## 5.8.28 - Regional weather history for objects (#502)
 

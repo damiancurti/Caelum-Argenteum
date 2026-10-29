@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Reading-room sofas (#410)
+
+Revision1 adds a two-seat sofa at(280,-548,0) and a three-seat sofa at(280,-400,0),
+both facing180. Parent collision envelopes use their documented width/depth;
+each seat has a separate native16MU-radius proxy with32MU anchor spacing.
+Installation validates the parent envelope and every seat against native geometry.
+The shelf(368,-576), desk(368,-496), doors, existing furniture and WAD remain intact.
+Current and older saves install once when the locations are free. Owned original
+models reuse the existing stash wood, metal and inside textures. No inventory
+objects or recipes are silently granted by map installation.
 
 ## 5.8.26 - Existing library and adjacent reading desk (#410)
 

@@ -161,3 +161,19 @@ is ready; do not infer author acceptance from agent-run native assertions.
    undo that cleaning on the next inspection. Ordinary new exposure can recur.
 4. Continue an original pre5.8.28 save: existing concentration is retained;
    missing exterior history starts at migration, without retroactive dirt.
+
+CA410-SOFAS-01 | Origin: 5.8.29 | Issue: #410
+Prerequisites: complete final V5.8 review build; GZDoom4.14.2; new mansion or
+an older compatible save. Deferred until all V5.8 implementation is ready.
+1. Inspect the two- and three-seat sofas in the mansion reading room, beside the
+   existing shelf/desk. Expect original period wood/cloth furniture, readable
+   seats and clear doors/library access; no replacement of accepted furnishings.
+2. Approach each visible seat and press Use. Choose seated waiting; stand up.
+   Expect the nearest free seat, the ordinary chair posture and safe exit.
+3. Save while seated, reload and stand. Expect the same seat/posture and intact
+   furniture. Leave/return to the mansion: no duplicate sofas or seat blockers.
+4. Inspect each sofa's contamination before/after saved exposure or cleaning.
+   All its seats represent the same object; no duplicated or free cleaning.
+Expected: all five individual seats work with the reference character, ordinary
+chair benefits only. Larger characters still need their full physical clearance.
+Multiplayer author checks remain deferred to V5.12.

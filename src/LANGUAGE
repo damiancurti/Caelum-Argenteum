@@ -1,4 +1,12 @@
 [enu default]
+CA_SOFAS_TWO = "Two-seat sofa";
+CA_SOFAS_THREE = "Three-seat sofa";
+
+[es]
+CA_SOFAS_TWO = "Sofá de dos plazas";
+CA_SOFAS_THREE = "Sofá de tres plazas";
+
+[enu default]
 
 CA_READING_DESK = "Reading desk";
 CA_STORED_READING_TITLE = "Nearby library";

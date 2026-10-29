@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.28** - 2026-10-27.
+Documentation version: **5.8.29** - 2026-10-27.
+
+## 5.8.29 - Original period sofa models (#410)
+
+assets/art_source/sofas/DATA.json records the author's delegated calculations and
+museum dimensional references: Metropolitan Museum59.197(1810-1820),
+https://www.metmuseum.org/art/collection/search/7594 ; and39.148.1(circa1820),
+https://www.metmuseum.org/art/collection/search/7578 . They inform envelopes only;
+no photographs, pixels or museum mesh are imported. Seating counts are the game's
+interpretation, not an asserted catalogue description.
+
+assets/generators/generate_sofas.py deterministically creates two original wood
+frame/solid seat/back meshes with thin cotton covers and iron trim. Existing owned
+stash wood/metal/inside textures are reused without editing. DATA/GENERATED retain
+member-volume mass calculations and output hashes; join overlap and thin-cover
+construction are design approximations, not a museum replica. Mesh axes and
+MODELDEF follow existing furniture conventions. No new raster sprite is generated
+in this fixed-furniture stage; inventory acquisition/art remains separate.
+Native frontal/occupied views are recorded in assets/validation_5829. Author visual
+corroboration remains outstanding under CA410-SOFAS-01.
 
 ## 5.8.26 - Reused owned reading furniture (#410)
 

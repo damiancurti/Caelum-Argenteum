@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `8e9e6cc2fbf7d1176ba98ef7204f69f83e7d54c2cd264ad8d345ab6e0f23fd77`. Locations include every definition; the last one per language wins.
+SHA-256: `b8649fb9d61f533387aeb4ea7bdf6934ca8f13419e85659237cd26568ec5dd54`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -167,6 +167,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SKIP | 25 | CA_SKIP_ACTIVE_HELP | CA_SKIP_TITLE |
 | CA_SLEEP | 4 | CA_SLEEP_CAST | CA_SLEEP_STATE_LOW |
 | CA_SLEEPING | 8 | CA_SLEEPING_BAG_CARRY | CA_SLEEPING_BAG_UNAVAILABLE |
+| CA_SOFAS | 2 | CA_SOFAS_THREE | CA_SOFAS_TWO |
 | CA_SOURCE | 7 | CA_SOURCE_COTTON | CA_SOURCE_YERBA_MATE |
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |

@@ -28,6 +28,8 @@ class CaelumInteractionHint : Object play
         let table=block!=null?block.Table:CaelumDiningTable(object);
         if(table!=null && table.CanReach(user))return StringTable.Localize("CA_USE_TABLE",false);
         let seat=CaelumRestFurniture(object);
+        let sofa=CaelumSofa(object);
+        if(sofa!=null && sofa.AvailableSeat(user)!=null)return StringTable.Localize("CA_USE_CHAIR",false);
         if(seat!=null && seat.CanReach(user))
             return StringTable.Localize(seat is 'CaelumRestChair'?"CA_USE_CHAIR":"CA_USE_BED",false);
         let reset=CaelumHazardResetSwitch(object);

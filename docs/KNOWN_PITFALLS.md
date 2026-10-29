@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-180 - Check seating occupancy before moving a player
+Status/evidence: RESOLVED-VERIFIED (native engine and upstream source)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #410; sofa seating delivery5.8.29
+Affected baseline: 28e4cd65 plus initial5.8.29 working tree
+Environment: GZDoom4.14.2, Windows11, Vulkan,1280x720/60cap
+Scope: CaelumRestFurniture.Seat; chairs, beds and sofa proxies
+
+SetOrigin followed by the player's TestMobjLocation does not prove that another
+solid actor is absent. GZDoom's PIT_CheckThing enables its unblocking exception
+when testing a player at its already-current XY. The native lifecycle reproducer
+therefore seated through a solid chair despite unchanged player collision flags.
+Upstream g4.14.2 src/playsim/p_map.cpp, P_TestMobjLocation and PIT_CheckThing,
+https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp establish the cause.
+
+Validate the destination first with a non-player probe carrying the prospective
+occupant's full radius/height. Ignore only that same occupant through the probe's
+CanCollideWith callback; all other objects and map geometry remain blockers.
+The furniture lends its own collision as before. Only a successful preflight
+moves the player. No tick scan or persistent probe is introduced.
+
+Evidence: assets/validation_5829 lifecycle4 reproduces three failures; lifecycle7
+passes12 checks including blocked/clear sofas, existing chairs/beds, standing,
+owner destruction and a nearby occupant. Final delivery checks repeat the fixture.
+Hidden seat proxies additionally use their visible parent's sight target; testing
+visibility of a RenderStyle None proxy is not equivalent to testing the sofa.
+Author corroboration: pending CA410-SOFAS-01. This does not audit unrelated
+teleport/placement callers or establish multiplayer acceptance.
+
 ## CA-KP-179 - Share historical weather and settle before changing dirt
 Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27
