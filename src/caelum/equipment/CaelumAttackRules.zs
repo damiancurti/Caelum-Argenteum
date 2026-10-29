@@ -12,6 +12,11 @@ class CaelumAttackRules : Object
     const THRUST_TURN_END = 0.32;
     const THRUST_IMPACT = 0.80;
     const SWING_IMPACT = 0.50;
+    const MANDINGA_MELEE_RELEASE = 0.6;
+    const MANDINGA_MAGIC_RELEASE = 14.0/18.0;
+    const ZUPAY_MAGIC_RELEASE = 15.0/20.0;
+    const ZUPAY_MAGIC_WIND_STEP = 3.0/20.0;
+    const NPC_MAGIC_LAUNCH_HEIGHT = 0.65;
 
     static clearscope double CriticalChance(double baseChance, double derivedChance,
         double posture, double personality)

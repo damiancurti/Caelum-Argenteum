@@ -491,6 +491,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     }
 
     CaelumWeaponModel PossessedMachete;
+    bool MandingaBirthInitialized;
     int SidearmRevision;
     override CaelumWeaponModel GetPossessedSidearm()
     {
@@ -519,6 +520,8 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
     override void PostBeginPlay()
     {
+        if(MandingaBirthInitialized)return;
+        MandingaBirthInitialized=true;
         Super.PostBeginPlay();
         InitializeUniformFolkloreProfile(6);
         ConfigureCombatMagicalRange();
@@ -556,22 +559,28 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         MNDG A 1;
         Goto See;
     Melee:
-        MNDG D 6 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE), CaelumConstants.WEAPON_TYPE_MACHETE, false, 0.6);
+    AbsentMeleePrepare:
+        MNDG D 6 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE), CaelumConstants.WEAPON_TYPE_MACHETE, false, CaelumAttackRules.MANDINGA_MELEE_RELEASE);
+    AbsentMeleeRelease:
         MNDG E 0 A_CaelumProfiledMeleeAttack(
             CaelumConstants.MANDINGA_MACHETE_BASE_DAMAGE
         );
+    AbsentMeleeRecovery:
         MNDG E 4 A_CaelumWeaponRecovery;
         Goto See;
     Missile:
         // Conserva el punto proporcional del lanzamiento; duración común #37.
-        MNDG D 14 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STAFF, true, 14.0/18.0);
+    AbsentMagicPrepare:
+        MNDG D 14 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STAFF, true, CaelumAttackRules.MANDINGA_MAGIC_RELEASE);
+    AbsentMagicRelease:
         MNDG E 0 A_CaelumSpawnTierOneMagicProjectile(
             "CaelumActorSimpleElementalProjectile",
-            0.65,
+            CaelumAttackRules.NPC_MAGIC_LAUNCH_HEIGHT,
             CaelumConstants.WEAPON_TYPE_STAFF,
             CaelumConstants.ESSENCE_FIRE,
             false
         );
+    AbsentMagicRecovery:
         MNDG E 4 A_CaelumWeaponRecovery;
         Goto See;
     Attack:
@@ -769,27 +778,33 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         TNT1 A 0 A_StopSound(CHAN_7);
         // El golpe conserva el mismo punto proporcional de impacto, pero su
         // ciclo completo aprobado por #37 pasa de 20 a 80 tics.
+    AbsentMeleePrepare:
         ZUPY D 48 A_CaelumBeginResourceAttack(CaelumAttackRules.SlamAir(), -1, false, 0, true);
+    AbsentMeleeRelease:
         ZUPY E 0 A_CaelumGroundSlam(
             CaelumConstants.ZUPAY_SLAM_BASE_DAMAGE,
             CaelumConstants.ZUPAY_SLAM_RADIUS_MAP_UNITS,
             CaelumConstants.ZUPAY_SLAM_VERTICAL_SPEED
         );
+    AbsentMeleeRecovery:
         ZUPY E 32 A_CaelumThermalAttackFrame;
         Goto See;
     Missile:
         TNT1 A 0 A_StopSound(CHAN_7);
         // Las poses conservan límites proporcionales sobre la duración #37.
-        ZUPY M 3 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STATUETTE, true, 3.0/20.0);
+    AbsentMagicPrepare:
+        ZUPY M 3 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STATUETTE, true, CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP);
         ZUPY NOPQ 3 A_CaelumMagicWindFrame;
         // El proyectil nace al pasar de throw_release a throw_recover.
+    AbsentMagicRelease:
         ZUPY R 0 A_CaelumSpawnTierOneMagicProjectile(
             "CaelumActorExplosiveElementalProjectile",
-            0.65,
+            CaelumAttackRules.NPC_MAGIC_LAUNCH_HEIGHT,
             CaelumConstants.WEAPON_TYPE_STATUETTE,
             CaelumConstants.ESSENCE_EARTH,
             true
         );
+    AbsentMagicRecovery:
         ZUPY R 5 A_CaelumMagicLastFrame;
         Goto See;
     Attack:

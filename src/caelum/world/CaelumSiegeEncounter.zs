@@ -95,6 +95,7 @@ class CaelumSiegeEncounter : Actor
     bool Victory;
     bool BossRetreated;
     int DefeatStateRevision;
+    CaelumAbsentBattle AbsentBattle;
     int VictoryCount;
     int NeutralizedCount;
 
@@ -177,6 +178,11 @@ class CaelumSiegeEncounter : Actor
     override void Tick()
     {
         Super.Tick();
+        ResolveVictory();
+    }
+
+    void ResolveVictory(bool summarized=false)
+    {
         EnsureDefeatRevision();
         if (!RosterSealed || Victory) return;
         NeutralizedCount = 0;
@@ -193,7 +199,7 @@ class CaelumSiegeEncounter : Actor
             if (entry.ConfirmedDead || entry.Exited || entry.Body == null || entry.Body.health <= 0) continue;
             entry.Withdrawing = true;
             entry.Body.target = null;
-            entry.Body.SetStateLabel("SiegeWithdrawal");
+            if(!summarized)entry.Body.SetStateLabel("SiegeWithdrawal");
         }
     }
 
@@ -204,6 +210,7 @@ class CaelumSiegeEncounter : Actor
 // Base reutilizable por los seis arietes y los seis cañones atacantes (#21).
 class CaelumHostileMachine : Actor
 {
+    CaelumAbsentMachine AbsentMachine;
     virtual bool CountsAsHostileObjective() { return true; }
     CaelumSiegeEncounter Encounter;
     Array<CaelumSiegeCombatant> LocalGuards;

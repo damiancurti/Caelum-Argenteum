@@ -312,8 +312,11 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         DOWK AB 4 A_CaelumBudgetedChase;
         Loop;
     Melee:
-        DOMI K 7 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD),CaelumConstants.WEAPON_TYPE_SWORD,false,0.5);
+    AbsentMeleePrepare:
+        DOMI K 7 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD),CaelumConstants.WEAPON_TYPE_SWORD,false,CaelumAttackRules.SWING_IMPACT);
+    AbsentMeleeRelease:
         DOMI L 0 A_PortSword;
+    AbsentMeleeRecovery:
         DOMI Q 7 A_CaelumWeaponRecovery;
         Goto See;
     Pain:

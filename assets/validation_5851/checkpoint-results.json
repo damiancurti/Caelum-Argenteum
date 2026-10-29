@@ -1,0 +1,24 @@
+{
+  "issue": 415,
+  "status": "Unreleased partial integration checkpoint; NOT complete or author accepted",
+  "planned_version": "5.8.51",
+  "native_distinct_assertions": 87,
+  "cases": {
+    "math": 29,
+    "rounds": 10,
+    "physiology": 8,
+    "machines": 10,
+    "reserve": 8,
+    "potions": 6,
+    "persistence": 6,
+    "saved": 4,
+    "hub": 6
+  },
+  "runtime_sha256": "8757048040a830dae64be7e017d9a8f60ad438c3c15986c5c28021405fbeafb1",
+  "fixtures": [
+    "checks.zs",
+    "prepare.py",
+    "run_native.ps1"
+  ],
+  "author": "Deferred until all V5.8 implementation is complete"
+}

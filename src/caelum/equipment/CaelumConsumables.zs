@@ -215,6 +215,22 @@ class CaelumRegenerationPower : Powerup
 
     virtual int GetRegenerationType() { return -1; }
 
+    // #415: pulsos y vencimiento nativos, sin repetir el Powerup.Tick del
+    // inventario que pertenece al mapa suspendido.
+    void AdvanceAbsent(int ticks)
+    {
+        if(Owner==null || Owner.health<=0 || EffectTics<=0 || ticks<=0)return;
+        int used=Min(ticks,EffectTics);EffectTics-=used;
+        PulseTics+=used;
+        while(PulseTics>=TICRATE)
+        {
+            PulseTics-=TICRATE;
+            if(PotionTotalRatio>0 && CaelumPotionRules.IsPotion(GetRegenerationType()))
+            {ApplyPotionPulse(GetRegenerationType(),PotionTotalRatio/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS);PotionPulsesGiven++;}
+        }
+        if(EffectTics==0){EndEffect();Destroy();}
+    }
+
     override void DoEffect()
     {
         Super.DoEffect();

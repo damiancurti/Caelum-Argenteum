@@ -1,0 +1,587 @@
+// #415: una fila por participante real, guardada con su encuentro de mapa.
+// Las fracciones de dano y desgaste sobreviven a viajes y guardados.
+class CaelumAbsentCombatant : Object play
+{
+    CaelumAbsentBattle Battle;
+    CaelumCombatActor Body;
+    CaelumAbsentCombatant Opponent;
+    CaelumAbsentAttack Attack;
+    CaelumThermalState Thermal;
+    Actor Killer;
+    int Identity,Shots;
+    bool Friendly,Retreated,Preparing,Recovering,RoundShield,Participating;
+    double RoundFacing,NextFacing;
+    double Remaining,LifeFraction,ArmorFraction[4],ShieldFraction,SwordFraction,GunFraction,ActiveTicFraction;
+    double PendingLife,PendingArmor[4],PendingShield,PendingSword,PendingGun,PendingLucidity;
+    double PendingFire,PendingFirePower;
+    double PendingHeat,PendingActionHeat;
+    CaelumCombatActor FireSource;
+
+    bool Alive(){return Participating && Body!=null && !Body.bDestroyed && Body.health>0 && !Retreated;}
+    bool Enemy(CaelumAbsentCombatant other)
+    {return other!=null && other!=self && other.Battle==Battle && other.Alive() && other.Friendly!=Friendly;}
+
+    void Capture()
+    {
+        Participating=true;
+        Friendly=Body.bFriendly;Recovering=Body.RecoveryPhase!=0;
+        let entry=Body.SiegeCombatant;
+        Retreated=entry!=null && (entry.Exited || entry.Withdrawing);
+        bool melee=Body.MeleeState!=null && Body.InStateSequence(Body.CurState,Body.MeleeState);
+        bool ranged=Body.MissileState!=null && Body.InStateSequence(Body.CurState,Body.MissileState);
+        if(Attack==null)Attack=new('CaelumAbsentAttack');
+        Thermal=CaelumThermalService.CaptureForecast(Body);
+        Preparing=false;Remaining=0;
+        let soldier=CaelumPortDefender(Body);
+        if(soldier!=null && soldier.Carbine!=null && soldier.Carbine.Held && soldier.Carbine.NextShotTic>level.time)
+            Remaining=double(soldier.Carbine.NextShotTic-level.time)/TICRATE;
+        else if((melee || ranged) && Attack.Configure(Body,ranged))
+        {
+            State recovery=(ranged?Body.FindState('AbsentMagicRecovery'):Body.FindState('AbsentMeleeRecovery'));
+            if(Attack.Kind==CaelumAbsentAttack.SLAM)
+            {Preparing=Body.CurState!=recovery;Remaining=Max(0,Body.tics)/double(TICRATE);ClearPending();return;}
+            int elapsed=Max(0,level.time-Body.WeaponCycleStartTic);
+            Preparing=Body.CurState!=recovery;
+            double fraction=Attack.Kind==CaelumAbsentAttack.EXPLOSIVE?CaelumAttackRules.ZUPAY_MAGIC_RELEASE
+                :Attack.Kind==CaelumAbsentAttack.MAGIC?CaelumAttackRules.MANDINGA_MAGIC_RELEASE
+                :Body is 'CaelumMandinga'?CaelumAttackRules.MANDINGA_MELEE_RELEASE:CaelumAttackRules.SWING_IMPACT;
+            Attack.NativeCycleTics=Body.WeaponCycleTics;Attack.Cycle=Ceil(Body.WeaponCycleTics)/TICRATE;
+            Attack.Preparation=Ceil(Body.WeaponCycleTics*fraction)/TICRATE;
+            Remaining=Preparing?Max(0,Attack.Preparation-double(elapsed)/TICRATE):Max(0,Body.tics)/double(TICRATE);
+        }
+        ClearPending();
+    }
+
+    void ClearPending()
+    {
+        PendingLife=PendingShield=PendingSword=PendingGun=PendingLucidity=PendingFire=PendingFirePower=0;
+        Killer=null;FireSource=null;PendingHeat=PendingActionHeat=0;
+        for(int i=0;i<4;i++)PendingArmor[i]=0;
+    }
+
+    void Choose()
+    {
+        if(Enemy(Opponent))return;
+        Opponent=null;
+        for(int i=0;i<Battle.Rows.Size();i++)if(Enemy(Battle.Rows[i]))
+        {Opponent=Battle.Rows[i];return;}
+    }
+
+    bool Blocking(CaelumCombatActor source)
+    {
+        let soldier=CaelumPortDefender(Body);
+        if(soldier==null || soldier.Shield==null || soldier.Shield.Durability<=0 || source==null)return false;
+        return RoundShield
+            && Abs(Body.DeltaAngle(RoundFacing,Body.AngleTo(source)))<=soldier.Shield.GetCoverageDegrees()/2;
+    }
+
+    void BeginRound()
+    {
+        if(!Alive())return;
+        let soldier=CaelumPortDefender(Body);
+        RoundFacing=NextFacing=Body.Angle;
+        RoundShield=!Preparing && (soldier==null || soldier.Carbine==null || !soldier.Carbine.Held);
+    }
+
+    void Queue(CaelumAbsentCombatant source,CaelumAbsentDamage result)
+    {
+        if(result==null)return;
+        PendingLife+=result.Life;PendingShield+=result.ShieldWear;PendingLucidity+=result.Lucidity;
+        PendingHeat+=result.ThermalJoules;
+        for(int i=0;i<4;i++)PendingArmor[i]+=result.ArmorWear[i];
+        if(source!=null)
+        {
+            if(Killer==null && LifeFraction+PendingLife>=Body.health)Killer=source.Body;
+            if(source.Attack.Kind==CaelumAbsentAttack.CARBINE)source.PendingGun+=result.WeaponWear;
+            else source.PendingSword+=result.WeaponWear;
+            if(result.FireDose>0 && (PendingFire<=0 || source.Attack.Debuff>PendingFirePower))
+            {PendingFire=result.FireDose;PendingFirePower=source.Attack.Debuff;FireSource=source.Body;}
+        }
+    }
+
+    void QueueMachine(Actor source,CaelumAbsentDamage result)
+    {
+        Queue(null,result);
+        if(Killer==null && LifeFraction+PendingLife>=Body.health)Killer=source;
+    }
+
+    void Recover(double seconds)
+    {
+        if(!Alive())return;
+        bool idle=Recovering && Body.RecoveryPhase==2;
+        double factor=idle?CaelumRestRules.CHAIR_RESOURCE_FACTOR:1;
+        Body.CurrentCombatAnima=Min(Body.MaximumCombatAnima,Body.CurrentCombatAnima+Body.CombatAnimaRegenerationPerSecond*factor*seconds);
+        if(!Body.CombatAirSpending)
+            Body.CurrentCombatAir=Min(Body.MaximumCombatAir,Body.CurrentCombatAir+Body.CombatAirRegenerationPerSecond*factor
+                *CaelumBreathing.ActorFactor(Body)*CaelumAltitudeService.Recovery(Body)*seconds);
+        if(Body.ForcedSleepTics<=0)
+            Body.CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,Body.CurrentCombatLucidity
+                +CaelumConstants.MAXIMUM_LUCIDITY/CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS*seconds);
+        Body.UpdateActorLucidityState();
+        if(Recovering && Body.CurrentCombatAir>=Body.MaximumCombatAir && Body.CurrentCombatAnima>=Body.MaximumCombatAnima)
+        {Recovering=false;Body.EndResourceRecovery();}
+        let soldier=CaelumPortDefender(Body);
+        if(soldier!=null && soldier.Carbine!=null && soldier.Carbine.ReloadRemaining>0)
+        {
+            let gun=soldier.Carbine;
+            CaelumThermalEffects.RecordReloadProgress(Body,Min(gun.ReloadRemaining,seconds),gun.ReloadTotal);
+            gun.ReloadRemaining=Max(0,gun.ReloadRemaining-seconds);
+            if(gun.ReloadRemaining<=0)
+            {gun.Magazine=CaelumRangedRules.MagazineCapacity(gun.Weapon.WeaponType);gun.ReloadCount++;}
+        }
+    }
+
+    void Physiology(double worldEnd,double activeSeconds)
+    {
+        if(!Alive())return;
+        let absent=Body.ContaminationAbsence;
+        if(Thermal!=null && absent!=null && absent.Away)
+        {
+            ThermalStep(Max(0,worldEnd-absent.Stamp),activeSeconds,absent);
+            if(Body.health<=0){absent.Life=Body.health;FinishRound();return;}
+        }
+        if(absent!=null && absent.Away)
+        {
+            absent.Idle=!Battle.Engaged || (Recovering && Body.RecoveryPhase==2);
+            absent.Life=Body.health;absent.SyncTo(Body,worldEnd);Body.health=absent.Life;
+        }
+        if(Body.health<=0){FinishRound();return;}
+        let effects=Body.ElementalStatus;
+        if(effects!=null)
+        {
+            effects.Advance(Body,activeSeconds);
+        }
+        let support=CaelumSupportMagic.Status(Body);
+        if(support!=null && Body.health>0)support.Advance(activeSeconds);
+        if(Body.health<=0){FinishRound();return;}
+        Body.CombatLucidityPhysicalStunRemaining=Max(0,Body.CombatLucidityPhysicalStunRemaining-activeSeconds);
+        if(Body.CombatTimeRemaining>0)Body.CombatTimeRemaining=Max(0,Body.CombatTimeRemaining-activeSeconds);
+        else if(!CaelumSiegeFocus.ApplyToActor(Body))
+            Body.CurrentCombatAdrenaline=Max(0,Body.CurrentCombatAdrenaline-CaelumConstants.ADRENALINE_DECAY_PER_SECOND*activeSeconds);
+        ActiveTicFraction+=activeSeconds*TICRATE;
+        int ticks=int(ActiveTicFraction+0.000000001);ActiveTicFraction=Max(0,ActiveTicFraction-ticks);
+        Body.ForcedSleepTics=Max(0,Body.ForcedSleepTics-ticks);
+        // Recorre solamente el inventario propio; las dosis y sus tres
+        // familias siguen siendo los Powerup originales, no otro contador.
+        for(Inventory item=Body.Inv;item!=null;)
+        {
+            Inventory next=item.Inv;
+            let dose=CaelumRegenerationPower(item);if(dose!=null)dose.AdvanceAbsent(ticks);
+            item=next;
+        }
+        CaelumDemonService.UpdatePotions(Body);
+        if(absent!=null)absent.Life=Body.health;
+    }
+
+    void ThermalStep(double worldSeconds,double activeSeconds,CaelumContaminationAbsence absent)
+    {
+        if(Thermal==null || worldSeconds<=0 || activeSeconds<=0)return;
+        let live=CaelumThermalBody.Get(Body,true);
+        if(live==null)return;
+        Thermal.Exposure=live.Exposure;
+        CaelumThermalBody.Refresh(Body,Thermal);
+        let climate=absent.Climate;
+        if(climate!=null && climate.Ready)
+        {
+            climate.Rate(absent.Civil+worldSeconds/2);
+            let sample=climate.Local;
+            if(sample!=null && sample.Available)
+            {
+                Thermal.AirC=sample.AirTemperatureC+climate.HeatDelta;Thermal.ClimateC=Thermal.AirC;
+                Thermal.Humidity=Clamp(sample.RelativeHumidityPercent+climate.HumidityDelta,0.0,100.0);
+                Thermal.RainMmHour=Thermal.Roof?0:sample.PrecipitationMmPerHour;
+                Thermal.WindMps=sample.WindSpeedKmh/3.6;
+            }
+        }
+        for(int slot=0;slot<4;slot++)Thermal.Material[slot]=CaelumThermalBody.Material(Body,slot);
+        double burn=Body.ElementalStatus!=null?Body.ElementalStatus.TakeBurnHeat()/activeSeconds:0;
+        double dose=CaelumThermalService.Integrate(Thermal,worldSeconds,activeSeconds,
+            live.PendingActivityJoules/activeSeconds,burn,Thermal.FireWatts,0,live.PendingFirearmJoules/activeSeconds);
+        live.PendingActivityJoules=live.PendingFirearmJoules=0;
+        CaelumThermalService.ApplyDamage(Body,Thermal,dose);
+        CaelumThermalService.CommitForecast(Body,Thermal);
+        live.DamageRemainder=Thermal.DamageRemainder;live.DrinkRemaining=Thermal.DrinkRemaining;
+    }
+
+    void ResumeNative()
+    {
+        if(!Alive())return;
+        Choose();Body.target=Opponent!=null?Opponent.Body:null;
+        if(Recovering)
+        {Body.SetState(Body.RecoveryPhase==2?Body.SpawnState:Body.FindState('ResourceRetreat'),true);return;}
+        if(Attack==null || Attack.Kind==CaelumAbsentAttack.NONE || Remaining<=0)
+        {Body.SetState(Body.SeeState,true);return;}
+        let soldier=CaelumPortDefender(Body);
+        if(Attack.Kind==CaelumAbsentAttack.CARBINE && soldier!=null && soldier.Carbine!=null)
+        {
+            soldier.Carbine.NextShotTic=level.time+int(Ceil(Remaining*TICRATE));
+            Body.SetState(Body.SeeState,true);return;
+        }
+        bool magic=Attack.Kind==CaelumAbsentAttack.MAGIC || Attack.Kind==CaelumAbsentAttack.EXPLOSIVE;
+        State next=Preparing?(magic?Body.FindState('AbsentMagicPrepare'):Body.FindState('AbsentMeleePrepare'))
+            :(magic?Body.FindState('AbsentMagicRecovery'):Body.FindState('AbsentMeleeRecovery'));
+        if(next==null){Body.SetState(Body.SeeState,true);return;}
+        double elapsed=(Preparing?Attack.Preparation:Attack.Cycle)-Remaining;
+        Body.WeaponCycleTics=Attack.NativeCycleTics;
+        Body.WeaponCycleStartTic=level.time-int(elapsed*TICRATE);
+        Body.WeaponCyclePreparationTics=int(Ceil(Attack.Preparation*TICRATE));
+        Body.WeaponCycleWindFrame=1;
+        double rest=Remaining;
+        if(Preparing && Attack.Kind==CaelumAbsentAttack.EXPLOSIVE)
+        {
+            // Reanuda la pose correspondiente sin repetir su accion de entrada.
+            while(Body.WeaponCycleWindFrame<5 && elapsed*TICRATE>=Ceil(Body.WeaponCycleTics
+                *Body.WeaponCycleWindFrame*CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP))
+            {next=next.NextState;Body.WeaponCycleWindFrame++;}
+            rest=(Ceil(Body.WeaponCycleTics*Body.WeaponCycleWindFrame*CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP)-elapsed*TICRATE)/TICRATE;
+        }
+        Body.SetState(next,true);Body.tics=Max(1,int(Ceil(rest*TICRATE)));
+    }
+
+    bool Incapacitated()
+    {
+        return Body.ForcedSleepTics>0 || Body.CombatLucidityPhysicalStunRemaining>0
+            || (Body.ElementalStatus!=null && Body.ElementalStatus.IsLightningStunned())
+            || CaelumBolas.Restrained(Body) || CaelumTelekinesisRules.Held(Body) || CaelumBattleCry.Active(Body);
+    }
+
+    void Act(double seconds)
+    {
+        if(!Alive())return;
+        Choose();if(Opponent==null)return;
+        if(Recovering || Incapacitated())return;
+        double budget=seconds;
+        while(budget>0 && Enemy(Opponent))
+        {
+            if(Remaining>budget){Remaining-=budget;return;}
+            budget-=Remaining;Remaining=0;
+            if(!Preparing)
+            {
+                bool distant=(Body.Pos.XY-Opponent.Body.Pos.XY).Length()>Body.MeleeRange+Opponent.Body.Radius
+                    || Opponent.Body.Pos.Z>Body.Pos.Z+Body.Height || Opponent.Body.Pos.Z+Opponent.Body.Height<Body.Pos.Z;
+                if(!Attack.Configure(Body,distant))return;
+                NextFacing=Body.AngleTo(Opponent.Body);
+                let soldier=CaelumPortDefender(Body);
+                if(soldier!=null && soldier.Carbine!=null)
+                {
+                    bool ranged=Attack.Kind==CaelumAbsentAttack.CARBINE;
+                    // Cambia la seleccion logica sin mover ni redimensionar el cuerpo.
+                    soldier.Carbine.Held=ranged;if(soldier.Carbine.Weapon!=null)soldier.Carbine.Weapon.Equipped=ranged;
+                    if(ranged)
+                    {
+                        let gun=soldier.Carbine;
+                        if(gun.ReloadRemaining>0)return;
+                        if(gun.Magazine<=0)
+                        {
+                            int dexterity=Body.CombatDexterity+Body.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
+                            gun.ReloadTotal=CaelumRangedRules.BaseReloadSeconds(gun.Weapon.WeaponType)
+                                *100/Max(1.0,Body.CalculateActorType4Percent(dexterity));
+                            gun.ReloadRemaining=gun.ReloadTotal;return;
+                        }
+                    }
+                }
+                if(!Attack.CanPay(Body)){StartRecovery();return;}
+                Preparing=true;Remaining=Attack.Preparation;
+                if(Remaining>0)continue;
+            }
+            Attack.Refresh(Body);
+            if(!Attack.Pay(Body)){StartRecovery();return;}
+            Release();Shots++;Preparing=false;
+            Remaining=Max(1.0/TICRATE,Attack.Cycle-Attack.Preparation);
+        }
+    }
+
+    void StartRecovery()
+    {
+        Preparing=false;Recovering=true;Body.AttackResourceWaiting=true;
+        Body.AttackResourceWeapon=Attack.Weapon;Body.AttackResourceMagical=Attack.Kind==CaelumAbsentAttack.MAGIC || Attack.Kind==CaelumAbsentAttack.EXPLOSIVE;
+        Body.AttackResourceBaseCost=Attack.Air;Body.RecoveryThreat=Opponent!=null?Opponent.Body:null;
+        Body.RecoveryPhase=1;Body.CombatAirSpending=false;
+        if(Body.RecoveryThreat==null || Body.Distance2D(Body.RecoveryThreat)>Body.RecoveryThreatRange()+Body.Radius)Body.RecoveryPhase=2;
+    }
+
+    void Release()
+    {
+        if(Attack.Kind==CaelumAbsentAttack.CARBINE)CaelumThermalEffects.RecordFirearmShot(Body);
+        else if(Attack.Kind==CaelumAbsentAttack.MELEE || Attack.Kind==CaelumAbsentAttack.SLAM)
+        {
+            double work=Attack.Kind==CaelumAbsentAttack.SLAM?CaelumThermalData.GROUND_SLAM_WORK_JOULES
+                :Body is 'CaelumPortDefender'?CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_SWORD):CaelumThermalData.NATURAL_ATTACK_WORK_JOULES;
+            PendingActionHeat+=CaelumThermalRules.PositiveWorkHeat(work,CaelumThermalBody.Efficiency(Body));
+        }
+        let direct=Attack.Direct(Body,Opponent.Body,Opponent.Blocking(Body));Opponent.Queue(self,direct);
+        if(Attack.Area>0)
+        {
+            vector3 origin=Attack.Kind==CaelumAbsentAttack.SLAM?Body.Pos:Opponent.Body.Pos+(0,0,Opponent.Body.Height/2);
+            double probability=1;
+            if(Attack.Kind==CaelumAbsentAttack.EXPLOSIVE)
+                probability=CaelumMeanAim.BodyProbability(Attack.Origin,Opponent.Body.Pos,Opponent.Body.Radius,
+                    Opponent.Body.Height,Attack.ProjectileRadius,Attack.Minimum,Attack.Maximum,Attack.SignedOffsets);
+            for(int i=0;i<Battle.Rows.Size();i++)
+            {
+                let row=Battle.Rows[i];
+                if(row==self || !row.Alive() || (Attack.Kind==CaelumAbsentAttack.SLAM && !Enemy(row)))continue;
+                row.Queue(self,Attack.Splash(Body,row.Body,origin,probability,row.Blocking(Body)));
+            }
+        }
+        let soldier=CaelumPortDefender(Body);
+        if(Attack.Kind==CaelumAbsentAttack.CARBINE && soldier!=null && soldier.Carbine!=null)
+        {soldier.Carbine.Magazine--;soldier.Carbine.ShotCount++;}
+    }
+
+    void Commit()
+    {
+        if(!Alive())return;
+        Body.Angle=NextFacing;
+        LifeFraction+=PendingLife;
+        int loss=int(LifeFraction+0.000000001);LifeFraction=Max(0,LifeFraction-loss);
+        int old=Body.health;Body.health=Max(Body.bBuddha?1:0,Body.health-loss);
+        bool armorBroken=false;
+        if(Body.CombatArmor!=null)for(int i=0;i<4;i++)
+        {
+            ArmorFraction[i]+=PendingArmor[i];int wear=int(ArmorFraction[i]+0.000000001);
+            ArmorFraction[i]=Max(0,ArmorFraction[i]-wear);
+            int oldDurability=Body.CombatArmor.Durability[i];
+            Body.CombatArmor.Durability[i]=Max(0,oldDurability-wear);
+            armorBroken=armorBroken || (oldDurability>0 && Body.CombatArmor.Durability[i]<=0);
+        }
+        if(armorBroken)Body.RecalculateCombatStatistics();
+        let soldier=CaelumPortDefender(Body);
+        if(soldier!=null)
+        {
+            ShieldFraction+=PendingShield;SwordFraction+=PendingSword;GunFraction+=PendingGun;
+            if(soldier.Shield!=null)soldier.Shield.Durability=Max(0,soldier.Shield.Durability-int(ShieldFraction));
+            if(soldier.Sword!=null)soldier.Sword.Durability=Max(0,soldier.Sword.Durability-int(SwordFraction));
+            if(soldier.Carbine!=null && soldier.Carbine.Weapon!=null)
+                soldier.Carbine.Weapon.Durability=Max(0,soldier.Carbine.Weapon.Durability-int(GunFraction));
+            ShieldFraction-=int(ShieldFraction);SwordFraction-=int(SwordFraction);GunFraction-=int(GunFraction);
+        }
+        Body.CurrentCombatLucidity=Max(0,Body.CurrentCombatLucidity-PendingLucidity);
+        if(Body.health<old && Body.health>0)
+        {
+            Body.AddActorCombatAdrenaline(CaelumConstants.ADRENALINE_GAIN_ON_DAMAGE);
+            if(PendingFire>0 && Body.ElementalStatus!=null)
+                Body.ElementalStatus.ApplyDamageOverTime(CaelumConstants.ELEMENTAL_EFFECT_BURN,
+                    CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*PendingFirePower,PendingFirePower,
+                    Max(1,int(PendingFire*CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO*PendingFirePower+0.5)),FireSource,Body);
+        }
+        if(Body.ContaminationAbsence!=null)Body.ContaminationAbsence.Life=Body.health;
+        let thermal=CaelumThermalBody.Get(Body,true);
+        if(thermal!=null && thermal.Inertia>0)
+        {
+            thermal.Exposure+=(PendingHeat+PendingActionHeat)/thermal.Inertia;
+            thermal.AbsorbedImpactJoules+=PendingHeat;thermal.ActionJoules+=PendingActionHeat;
+            thermal.Severity=CaelumThermalRules.Severity(thermal.Exposure,thermal.Toughness);
+        }
+        if(Body.health>0){Body.UpdateCombatHealthEffects();Body.UpdateActorLucidityState();}
+    }
+
+    void FinishRound()
+    {
+        if(!Participating || Body==null || Body.bDestroyed || Retreated)return;
+        if(Body.health<=0)
+        {
+            if(!Body.bCorpse)Body.Die(null,Killer,DMG_NO_ARMOR,'CaelumRangedTest');
+            return;
+        }
+        let boss=CaelumZupayColossus(Body);
+        if(boss!=null && boss.IsRetreatBoss() && !CaelumRedemption.PreviouslyRaised(Body)
+            && double(Body.health)/Max(1,Body.CombatMaximumHealth)<=CaelumConstants.HEALTH_WOUNDED_THRESHOLD
+            && !CaelumBolas.Restrained(Body) && !CaelumTelekinesisRules.Held(Body))
+        {
+            Retreated=true;boss.SewerFleeing=true;
+            let entry=Body.SiegeCombatant;
+            if(entry!=null)
+            {
+                entry.Exited=true;entry.Withdrawing=true;
+                if(entry.Encounter!=null && entry.Encounter.Boss==entry)entry.Encounter.BossRetreated=true;
+            }
+            // Retiene cuerpo e inventario en el grafo del mapa; no genera botin.
+            Body.target=null;Body.Vel=(0,0,0);Body.bDormant=true;Body.bInvisible=true;
+            Body.bSolid=false;Body.bShootable=false;
+        }
+    }
+}
+
+class CaelumAbsentBattle : Object play
+{
+    const REVISION=1;
+    int SchemaRevision,Rounds;
+    bool Away,Busy,Engaged;
+    String SourceMap;
+    double Stamp,Fraction,ActiveScale,ReinforcementDelay,SimulationTime;
+    CaelumPlayer Observer;
+    CaelumSiegeEncounter Encounter;
+    Array<CaelumAbsentCombatant> Rows;
+    Array<CaelumAbsentMachine> Machines;
+    Array<CaelumAbsentStructureHit> StructureHits;
+
+    CaelumAbsentCombatant Add(CaelumCombatActor body)
+    {
+        if(body==null || body.health<=0 || !body.CombatProfileInitialized)return null;
+        let resident=CaelumPortDefender(body);
+        if(resident!=null && resident.Residence!=null && resident.Residence.Suspended)return null;
+        let row=body.AbsentCombatant;
+        if(row==null || row.Battle!=self)
+        {
+            row=new('CaelumAbsentCombatant');row.Battle=self;row.Body=body;row.Identity=Rows.Size();
+            body.AbsentCombatant=row;Rows.Push(row);
+        }
+        row.Capture();return row;
+    }
+
+    void Capture(CaelumSiegeEncounter encounter,CaelumPlayer user)
+    {
+        if(Away || encounter==null || user==null)return;
+        Encounter=encounter;SourceMap=level.MapName;Stamp=CaelumContaminationAbsence.Clock(user,SourceMap);
+        Observer=user;
+        if(Stamp<0)return;
+        ActiveScale=CaelumWorldClock.SecondsPerGameHour(SourceMap)/3600.0;SchemaRevision=REVISION;
+        for(int i=0;i<Rows.Size();i++)Rows[i].Participating=false;
+        for(int i=0;i<encounter.Attackers.Size();i++)
+        {let e=encounter.Attackers[i];if(e!=null && !e.Exited && !e.ConfirmedDead)Add(e.Body);}
+        let port=CaelumPortSiege(encounter);
+        if(port!=null)for(int i=0;i<port.Defenders.Size();i++)Add(port.Defenders[i]);
+        if(port!=null && port.Reinforcements!=null)
+            ReinforcementDelay=Max(0,port.Reinforcements.NextOpportunity-level.time)/double(TICRATE);
+        Machines.Clear();
+        for(int i=0;i<encounter.Machines.Size();i++)AddMachine(encounter.Machines[i]);
+        if(port!=null)for(int i=0;i<port.Guns.Size();i++)AddMachine(port.Guns[i]);
+        for(int i=0;i<Rows.Size();i++)
+        {
+            let row=Rows[i];let target=row.Body!=null?CaelumCombatActor(row.Body.target):null;
+            row.Opponent=target!=null?target.AbsentCombatant:null;
+            if(!row.Enemy(row.Opponent))row.Opponent=null;
+        }
+        Away=true;
+    }
+
+    void Round()
+    {
+        for(int i=0;i<Rows.Size();i++)Rows[i].ClearPending();
+        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Recover(ActiveScale);
+        for(int i=0;i<Rows.Size();i++)Rows[i].BeginRound();
+        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Act(ActiveScale);
+        for(int i=0;i<Machines.Size();i++)Machines[i].Advance(ActiveScale);
+        // Ninguna baja ni desgaste modifica las acciones de la misma ronda.
+        for(int i=0;i<Rows.Size();i++)Rows[i].Commit();
+        for(int i=0;i<StructureHits.Size();i++)StructureHits[i].Commit();
+        StructureHits.Clear();
+        for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
+        for(int i=0;i<Machines.Size();i++)Machines[i].Observe();
+        if(Encounter!=null)Encounter.ResolveVictory(true);
+        let port=CaelumPortSiege(Encounter);
+        if(port!=null && !port.Victory)port.RefillCrews();
+        let corpses=CaelumCorpseArchive.Get(true);if(corpses!=null)corpses.Tick();
+        Rounds++;
+    }
+
+    void AddMachine(CaelumHostileMachine machine)
+    {
+        if(machine==null)return;
+        for(int i=0;i<Machines.Size();i++)if(Machines[i].Machine==machine)return;
+        let row=machine.AbsentMachine;
+        if(row==null){row=new('CaelumAbsentMachine');machine.AbsentMachine=row;}
+        row.Battle=self;row.Machine=machine;row.Capture();Machines.Push(row);
+    }
+
+    bool Opposed()
+    {
+        bool ally=false,enemy=false;
+        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())
+        {if(Rows[i].Friendly)ally=true;else enemy=true;}
+        return ally && enemy;
+    }
+
+    bool MachineWork()
+    {
+        for(int i=0;i<Machines.Size();i++)if(Machines[i].CanWork())return true;
+        return false;
+    }
+
+    void Reinforce(double seconds)
+    {
+        let port=CaelumPortSiege(Encounter);
+        if(port==null || port.Reinforcements==null)return;
+        let reserve=port.Reinforcements;
+        if(!reserve.Enabled || reserve.Stopped || reserve.Remaining==0)return;
+        if(port.Victory){reserve.Stopped=true;return;}
+        ReinforcementDelay-=seconds;
+        if(ReinforcementDelay>0)return;
+        int first=port.Attackers.Size();reserve.Opportunity(port);
+        ReinforcementDelay+=double(CaelumReinforcementData.INTERVAL)/TICRATE;
+        for(int i=first;i<port.Attackers.Size();i++)
+        {
+            let entry=port.Attackers[i];let body=entry.Body;if(body==null)continue;
+            Add(body);CaelumContaminationAbsence.Capture(body,Observer);
+            let absent=body.ContaminationAbsence;
+            if(absent!=null){absent.Civil+=SimulationTime-absent.Stamp;absent.Stamp=SimulationTime;}
+            for(int m=0;m<port.Machines.Size();m++)if(port.Machines[m].IsNearby(entry))port.Machines[m].RememberGuard(entry);
+        }
+    }
+
+    void SyncTo(double end)
+    {
+        if(!Away || Busy || SchemaRevision!=REVISION || end<=Stamp)return;
+        Busy=true;
+        double elapsed=end-Stamp+Fraction;
+        int whole=int(Floor(elapsed+0.000000001));
+        double first=Stamp-Fraction;
+        Fraction=Max(0,elapsed-whole);
+        for(int second=0;second<whole;second++)
+        {
+            double now=first+second+1;
+            SimulationTime=now;
+            Reinforce(ActiveScale);
+            Engaged=Opposed();
+            for(int i=0;i<Rows.Size();i++)Rows[i].Physiology(now,ActiveScale);
+            if(Opposed() || MachineWork())Round();
+            else
+            {
+                for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())
+                {
+                    Rows[i].Choose();Rows[i].Recover(ActiveScale);
+                    Rows[i].Body.target=null;
+                    if(Rows[i].Body.ContaminationAbsence!=null)Rows[i].Body.ContaminationAbsence.Idle=true;
+                }
+            }
+        }
+        Stamp=end;Busy=false;
+    }
+
+    void Restore(CaelumPlayer user)
+    {
+        if(!Away || user==null || SourceMap!=level.MapName)return;
+        double end=CaelumContaminationAbsence.Clock(user,SourceMap);if(end<0)return;
+        SyncTo(end);Away=false;
+        let port=CaelumPortSiege(Encounter);
+        if(port!=null && port.Reinforcements!=null)
+            port.Reinforcements.NextOpportunity=level.time+int(Ceil(Max(0,ReinforcementDelay)*TICRATE));
+        for(int i=0;i<Rows.Size();i++)Rows[i].ResumeNative();
+    }
+}
+
+// Censo solo en las fronteras de carga del mapa, acotado a controladores de
+// encuentros. Ningun NPC busca adversarios recorriendo actores globales.
+class CaelumAbsentBattles : Object play
+{
+    static void Capture(CaelumPlayer user)
+    {
+        if(user==null)return;
+        let iterator=ThinkerIterator.Create('CaelumSiegeEncounter');CaelumSiegeEncounter encounter;
+        while((encounter=CaelumSiegeEncounter(iterator.Next()))!=null)
+        {
+            let port=CaelumPortSiege(encounter);
+            if(port!=null && !port.SiegeStarted)continue;
+            if(encounter.AbsentBattle==null)encounter.AbsentBattle=new('CaelumAbsentBattle');
+            encounter.AbsentBattle.Capture(encounter,user);
+        }
+    }
+    static void Restore(CaelumPlayer user)
+    {
+        if(user==null)return;
+        let iterator=ThinkerIterator.Create('CaelumSiegeEncounter');CaelumSiegeEncounter encounter;
+        while((encounter=CaelumSiegeEncounter(iterator.Next()))!=null)
+            if(encounter.AbsentBattle!=null)encounter.AbsentBattle.Restore(user);
+    }
+}

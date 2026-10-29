@@ -33,12 +33,12 @@ class CaelumElementalStatus : Object
         BurnHeatRemaining=duration;BurnHeatPower=power;BurnHeatWatts=absorbedWatts;
     }
 
-    play void TickBurnHeat(Actor owner)
+    play void TickBurnHeat(Actor owner,double seconds=1.0/TICRATE)
     {
         EnsureBurnHeat();
         if(owner==null || owner.health<=0){ClearBurnHeat();return;}
         if(BurnHeatRemaining<=0)return;
-        double step=Min(1.0/TICRATE,BurnHeatRemaining);
+        double step=Min(Max(0,seconds),BurnHeatRemaining);
         // El receptor es el único dueño del calor. La integración térmica normal
         // consume estos julios, sin forzar NPCStep ni repetir armadura por tic.
         PendingBurnHeatJoules+=BurnHeatWatts*step;
@@ -285,10 +285,9 @@ class CaelumElementalStatus : Object
         if(GetRemaining(index)<0.0000001){BaseRemaining[index]=0;SetRemaining(index,0);PulseSeconds[index]=0;}
     }
 
-    play void TickDamageOverTime(Actor owner)
+    play void TickDamageOverTime(Actor owner,double ticSeconds=1.0/TICRATE)
     {
         RefreshResistance(owner);
-        double ticSeconds=1.0/TICRATE;
         for(int i=0;i<3;i++)TickResistantEffect(owner,i,ticSeconds);
         BurnVisualRemaining=Max(0.0,BurnVisualRemaining-ticSeconds);
         PoisonVisualRemaining=Max(0.0,PoisonVisualRemaining-ticSeconds);
@@ -297,7 +296,7 @@ class CaelumElementalStatus : Object
         if(DiseaseRemaining<=0)DiseasePower=0;
         if(CutRemaining>0)
         {
-            CutTickAccumulator+=ticSeconds;
+            CutTickAccumulator+=Min(ticSeconds,CutRemaining);
             if(CutTickAccumulator>=1.0)
             {CutTickAccumulator-=1.0;DealStatusDamage(owner,CutSource,CutDamagePerSecond);}
             CutRemaining=Max(0.0,CutRemaining-ticSeconds);
@@ -346,11 +345,12 @@ class CaelumElementalStatus : Object
         );
     }
 
-    play void Tick(Actor owner,bool realStep=true)
+    // #415: comparte las reglas de estado sin ejecutar actores visuales ni
+    // proyectiles durante la resolucion del intervalo ausente.
+    play void Advance(Actor owner,double ticSeconds)
     {
-        TickBurnHeat(owner);
-        TickDamageOverTime(owner);
-        double ticSeconds = 1.0 / TICRATE;
+        TickBurnHeat(owner,ticSeconds);
+        TickDamageOverTime(owner,ticSeconds);
         FreezeRemaining = Max(0.0, FreezeRemaining - ticSeconds);
         DazzleRemaining = Max(0.0, DazzleRemaining - ticSeconds);
         EarthPenaltyRemaining = Max(
@@ -363,6 +363,11 @@ class CaelumElementalStatus : Object
         if (DazzleRemaining <= 0.0) { DazzlePowerPercent = 0.0; }
         if (EarthPenaltyRemaining <= 0.0)
             EarthPenaltyPowerPercent = 0.0;
+    }
+
+    play void Tick(Actor owner,bool realStep=true)
+    {
+        Advance(owner,1.0/TICRATE);
         UpdateVisualEffects(owner);
     }
 

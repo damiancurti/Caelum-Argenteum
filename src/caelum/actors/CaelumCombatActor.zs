@@ -139,6 +139,8 @@ class CaelumCombatActor : Actor
     double CombatAirRegenerationPerSecond;
     bool CombatAirSpending;
     bool CombatProfileInitialized;
+    bool CombatBirthInitialized;
+    CaelumAbsentCombatant AbsentCombatant;
     int GrowthRevision;
     double CombatBaseSpeed;
     double CombatPhysicalPowerMultiplier;
@@ -310,6 +312,8 @@ class CaelumCombatActor : Actor
 
     override void PostBeginPlay()
     {
+        if(CombatBirthInitialized)return;
+        CombatBirthInitialized=true;
         Super.PostBeginPlay();
         NativeDeathLootRevision = NATIVE_DEATH_LOOT_REVISION;
         CollisionDamageMultiplier = 1.0;
@@ -1226,7 +1230,7 @@ class CaelumCombatActor : Actor
         if(actor!=null)
         {
             actor.WeaponCycleWindFrame++;
-            actor.SetWeaponPhaseBoundary(actor.WeaponCycleWindFrame*3.0/20.0);
+            actor.SetWeaponPhaseBoundary(actor.WeaponCycleWindFrame*CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP);
         }
     }
 
@@ -4004,6 +4008,11 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        if(AbsentCombatant!=null && AbsentCombatant.Battle!=null && AbsentCombatant.Battle.Away)
+        {
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+            {AbsentCombatant.Battle.Restore(CaelumPlayer(players[i].mo));break;}
+        }
         if(ContaminationAbsence!=null && ContaminationAbsence.Away)
         {
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)

@@ -2,6 +2,24 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #415 checkpoint - 2026-10-29
+
+Continued the planned 5.8.51 implementation on its focused branch. Mean combat
+now owns actual encounter rows, simultaneous casualties, preparation/recovery,
+magazines, Anima, statuses, healing doses, artillery/ram work and finite reserve
+admission. Current integration passes 87 distinct native assertions, including
+native cannon/direct-spell damage parity and actual save/hub restoration.
+This is intermediate evidence, not full issue completion, release validation
+or author acceptance; scheduled starts, theft and remaining combat/performance
+coverage are still tracked in TASKS. The author is away; manual checks remain
+grouped for the completed V5.8 handoff, and none were removed.
+
+Fixture corrections preserved in the private logs: cannon parity must use a
+projectile after its native PostBeginPlay sets its calibre; a manual Life edit
+after capturing absence must also update that saved Life, exactly as the
+production round commit does. These failures did not require a new gameplay
+rule. Intermediate data/version markers remain at the last completed release.
+
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
 The author requested completion without further small partial handoffs. Added

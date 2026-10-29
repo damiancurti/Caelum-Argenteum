@@ -9,6 +9,10 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.50.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+This focused branch also contains an **unreleased #415 checkpoint**, planned
+for 5.8.51. Its partial combat integration is not a completed release; see
+`docs/TASKS.md` for remaining work and `assets/validation_5851` for evidence.
+
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
 Common physical inventory retains contamination through native quantity changes,
