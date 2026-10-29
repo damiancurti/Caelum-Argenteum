@@ -2483,6 +2483,12 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         int kind = user.GetFormalInventoryEntryKind(entry);
         user.FormalInventoryRowKind[row] = kind;
+        if(CaelumFoodInventory.IsFood(entry))
+        {
+            CaelumFoodInventory.Reconcile(entry);let lots=CaelumFoodInventory.GetLots(entry);
+            user.FormalInventoryRowFoodContamination[row]=lots.OldestContamination();
+            user.FormalInventoryRowFoodLots[row]=lots.Lots.Size();
+        }
         user.FormalInventoryRowWaterLiters[row] = -1;
         let mate=CaelumMateItem(entry);if(mate!=null)mate.SyncTemperature(user);
         let water = CaelumWaterContainer(entry);
@@ -2524,12 +2530,6 @@ class CaelumInventoryService : Object play
         if (consumable != null)
         {
             user.FormalInventoryRowType[row] = consumable.GetConsumableType();
-            if(CaelumFoodInventory.IsFood(consumable))
-            {
-                CaelumFoodInventory.Reconcile(consumable);
-                user.FormalInventoryRowFoodContamination[row]=consumable.FoodLots.OldestContamination();
-                user.FormalInventoryRowFoodLots[row]=consumable.FoodLots.Lots.Size();
-            }
             user.FormalInventoryRowInMagicBox[row] = consumable.InMagicBox;
             return;
         }
@@ -2763,6 +2763,10 @@ class CaelumInventoryService : Object play
             && !CaelumConsumableItem(entry).InMagicBox)
         {
             user.UseSelectedConsumable();
+        }
+        else if(firewood!=null && !firewood.InMagicBox && CaelumKitchenData.Edible(firewood.GetSpecialType()))
+        {
+            user.UseInventory(firewood);
         }
         else
         {
@@ -4769,6 +4773,9 @@ class CaelumInventoryService : Object play
         {
             if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_MATERIAL
                 && user.EquipmentSelectionSpecialType==CaelumHygieneData.SOAP)CaelumBathSession.Show(user);
+            if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                && CaelumKitchenData.Edible(user.EquipmentSelectionSpecialType))
+                user.UseInventory(user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex));
             return;
         }
         if (!user.EquipmentSelectionSizeCompatible)

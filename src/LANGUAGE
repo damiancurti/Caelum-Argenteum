@@ -6711,3 +6711,18 @@ CA_TENT_USE_HINT = "{bind:+use}: Descansar en la carpa / desmontar";
 CA_TENT_REST = "Descansar con mi bolsa";
 CA_TENT_PACK = "Desmontar carpa";
 CA_TENT_REST_TERMS = "Al descansar se coloca tu propia bolsa dentro. Al despertar volvés a una salida libre. No se puede desmontar mientras haya alguien descansando dentro.";
+
+[enu default]
+CA_KITCHEN_FLOUR = "Wheat flour";
+CA_KITCHEN_BEEF = "Raw beef";
+CA_KITCHEN_FISH = "Raw white fish";
+CA_KITCHEN_VEGETABLES = "Mixed vegetables";
+CA_KITCHEN_SALT = "Culinary salt";
+CA_QUICK_INGREDIENT_GRAMS = "%d g · %d g per use";
+[es]
+CA_KITCHEN_FLOUR = "Harina de trigo";
+CA_KITCHEN_BEEF = "Carne vacuna cruda";
+CA_KITCHEN_FISH = "Pescado blanco crudo";
+CA_KITCHEN_VEGETABLES = "Mezcla de verduras";
+CA_KITCHEN_SALT = "Sal de cocina";
+CA_QUICK_INGREDIENT_GRAMS = "%d g · %d g por uso";

@@ -75,9 +75,14 @@ class CaelumQuickUseHUD : Object ui
             Icon(user,Neighbor(user,item,true),WIDTH/6,NEIGHBOR_SIZE);
             Icon(user,item,WIDTH/2,ICON_SIZE);
             Icon(user,Neighbor(user,item,false),WIDTH*5/6,NEIGHBOR_SIZE);
-            Text(font,available?Font.CR_GOLD:Font.CR_GRAY,WIDTH/2,0,item.GetTag(),WIDTH);
+            let ingredient=CaelumMaterialPickup(item);
+            String label=ingredient!=null && CaelumKitchenData.Edible(ingredient.args[0])
+                ?StringTable.Localize(CaelumKitchenData.NameKey(ingredient.args[0]),false):item.GetTag();
+            Text(font,available?Font.CR_GOLD:Font.CR_GRAY,WIDTH/2,0,label,WIDTH);
             let water=CaelumWaterContainer(item);
             String quantity=String.Format(StringTable.Localize("CA_QUICK_QUANTITY",false),item.Amount);
+            if(ingredient!=null && CaelumKitchenData.Edible(ingredient.args[0]))
+                quantity=String.Format(StringTable.Localize("CA_QUICK_INGREDIENT_GRAMS",false),item.Amount,CaelumKitchenData.PORTION_GRAMS);
             if(water!=null)quantity=String.Format(StringTable.Localize("CA_QUICK_WATER",false),
                 item.Amount,water.WaterLiters,water.GetCapacityLiters()) .. " · " .. water.WaterLabel() .. String.Format(" · %.1f °C",water.WaterTemperatureC);
             let mate=CaelumMateItem(item);

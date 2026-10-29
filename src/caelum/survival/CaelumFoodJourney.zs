@@ -1,6 +1,6 @@
 class CaelumJourneyFoodStack : Object play
 {
-    CaelumConsumableItem Item;
+    Inventory Item;
     CaelumFoodLots Lots;
     bool Boxed;
 }
@@ -16,8 +16,8 @@ class CaelumJourneyFood : Object play
         {
             if(!CaelumFoodInventory.IsFood(cursor))continue;
             CaelumFoodInventory.Reconcile(cursor);
-            let food=CaelumConsumableItem(cursor);let row=new('CaelumJourneyFoodStack');
-            row.Item=food;row.Boxed=food.InMagicBox;row.Lots=food.FoodLots.Copy();Stacks.Push(row);
+            let food=cursor;let row=new('CaelumJourneyFoodStack');
+            row.Item=food;row.Boxed=CaelumFoodInventory.Boxed(food);row.Lots=CaelumFoodInventory.GetLots(food).Copy();Stacks.Push(row);
         }
     }
     void Advance(double seconds,double celsius,double humidity)
@@ -27,7 +27,7 @@ class CaelumJourneyFood : Object play
         int selected=-1;double oldest=0;
         for(int i=0;i<Stacks.Size();i++)
         {
-            let row=Stacks[i];if(row.Boxed || row.Lots.Lots.Size()==0)continue;
+            let row=Stacks[i];if(row.Boxed || row.Lots.Kind!=CaelumFoodData.RATION || row.Lots.Lots.Size()==0)continue;
             double created=row.Lots.Lots[0].CreatedStamp;
             if(selected<0 || created<oldest){selected=i;oldest=created;}
         }
@@ -40,7 +40,7 @@ class CaelumJourneyFood : Object play
         {
             let row=Stacks[i];let food=row.Item;
             if(food==null || food.bDestroyed || food.Owner!=user)continue;
-            food.FoodLots=row.Lots.Copy();food.Amount=food.FoodLots.Units();
+            CaelumFoodInventory.SetLots(food,row.Lots.Copy());food.Amount=row.Lots.Units();
             if(food.Amount==0){food.Destroy();continue;}
             let clock=CaelumFoodClock.Get(food);clock.Ready=false;clock.Advance();
         }

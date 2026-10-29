@@ -1,6 +1,46 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.16** - 2026-10-26.
+Documentation version: **5.8.17** - 2026-10-26.
+
+## 5.8.17 - Kitchen ingredients (#410)
+
+The approved flour, raw beef, raw white fish, vegetable mix and culinary salt
+are integrated into Provisions as gram-based materials. Raw meat, fish
+and vegetables use full 100-g portions and the approved distinct nutrition.
+Food lots retain age through storage and native transfers; flour remains a
+preparation ingredient and salt does not acquire biological spoilage.
+Painted inventory/world sprites follow SPRITE_ART_DIRECTION, with original
+sources and exact built-in imagegen prompts retained. Technical packing only
+crops/masks/resizes the retained sources; no existing art is replaced.
+Native checks: 174 executed PASS / zero FAIL in 21 selected runs; paired
+digestion, old-save rollback and 500-stack timing also pass within their recorded
+limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 passed author
+acceptance on 2026-10-26, without qualifications. Cooking/proofing, finished
+dishes and remaining furniture were
+still unfinished #410 work.
+
+The ingredient catalogue owns material IDs 108–112. Native quantities are grams,
+with 0.001 kg per unit; no new container objects are consumed. Provisions adds
+these products once without refilling previous stocks. Its existing import
+rule replenishes 0.1% of maximum stock per world day. Commercial stock stays
+fresh; purchase starts the buyer's ageing, and contaminated resale is rejected.
+
+| Ingredient | Base copper / 100 g | Stock maximum | Raw kcal / 100 g | Reference spoilage |
+| --- | ---: | ---: | ---: | --- |
+| Wheat flour | 2 | 10 kg | preparation only | 30 days |
+| Raw beef | 8 | 10 kg | 170 | 12 hours |
+| Raw white fish | 6 | 5 kg | 81 | 6 hours |
+| Mixed vegetables | 3 | 10 kg | 60 | 3 days |
+| Culinary salt | 1 | 1 kg | preparation only | no biological ageing |
+
+Vegetables represent potato, squash, carrot and sweetcorn. Reference spoilage
+reaches contamination 100 at 20 °C and 50% humidity; the approved temperature,
+humidity, storage and mass-scaled illness rules remain authoritative. Eating
+spends a complete 100 g portion, even with full Hunger, and applies the whole
+contamination dose. Hunger recovery is kcal/240 × 800/body-mass-kg, delivered
+through the existing ten digestion pulses; excess recovery is lost. Boxed food
+and quantities below 100 g cannot be eaten. The quick-use bar labels grams and
+portion size; journal Enter consumes carried food and retrieves boxed food.
 
 ## 5.8.16 - Non-solid physical scenery exposure (#502)
 

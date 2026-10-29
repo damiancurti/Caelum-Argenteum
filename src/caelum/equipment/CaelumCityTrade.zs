@@ -8,6 +8,7 @@ class CaelumCityMerchant : Actor
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
     int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision,HygieneCatalogueRevision;
+    int KitchenCatalogueRevision;
     bool StockInitialized;
     bool DomesticMarketParked;
     int RestockRevision;
@@ -194,6 +195,7 @@ class CaelumCityMerchant : Actor
         CaelumMateCatalogue.Ensure(self,user);
         CaelumCampCatalogue.Ensure(self,user);
         CaelumHygieneCatalogue.Ensure(self,user);
+        CaelumKitchenCatalogue.Ensure(self,user);
     }
     void PopulateBaseStock(CaelumPlayer user)
     {

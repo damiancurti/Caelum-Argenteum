@@ -7185,6 +7185,8 @@ class CaelumPlayer : DoomPlayer
         let soap=CaelumMaterialPickup(item);
         if(soap!=null && soap.Owner==self && soap.GetSpecialType()==CaelumHygieneData.SOAP)
             return CaelumBathSession.Show(self);
+        if(soap!=null && CaelumKitchenData.Edible(soap.GetSpecialType()))
+            return CaelumQuickUse.Available(self,soap) && CaelumFoodInventory.EatRaw(self,soap);
         let bag=CaelumSleepingBag(item);
         if(bag!=null)
             return CaelumPlayerAuthority.CanMutate(self)

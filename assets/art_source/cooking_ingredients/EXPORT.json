@@ -1,0 +1,32 @@
+[
+  {
+    "name": "flour",
+    "source_sha256": "9e43730d2b862bf5ee672f6e11d701ebd5312660cd2748621c23157675ab7da9",
+    "runtime": "src/graphics/caelum/icons/kitchen/flour.png",
+    "runtime_sha256": "c6416ed7786f7e246dd2a17ac75ee24285dd45e585320e5ce7fcedb35ba8fb4d"
+  },
+  {
+    "name": "beef",
+    "source_sha256": "6f25dd4e295d96ff6c14f9c15fc3e31c96654ba3a72b48b77a3e2e92b08e884f",
+    "runtime": "src/graphics/caelum/icons/kitchen/beef.png",
+    "runtime_sha256": "9a3db9cdc181a8d53693839a1d9ccb34152065e4264146865e46af1b2fa67a0f"
+  },
+  {
+    "name": "fish",
+    "source_sha256": "acb807dfaae913b3233b7b19a2c1dea2837eb12e67e3f64d7a2cf16a6d715fac",
+    "runtime": "src/graphics/caelum/icons/kitchen/fish.png",
+    "runtime_sha256": "a39d4fd7f83d8055cc2e45fa3188a4abe56657f0ff0914d6cc6a54f35034a8d9"
+  },
+  {
+    "name": "vegetables",
+    "source_sha256": "7fe007e94b88272e28933b8c84ab174273f446bdb10c8ba806e7cbee26bcb898",
+    "runtime": "src/graphics/caelum/icons/kitchen/vegetables.png",
+    "runtime_sha256": "d658753a05cb84736ee774164f9d53589e9776e6094e99117d126220afa730a2"
+  },
+  {
+    "name": "salt",
+    "source_sha256": "655582191cf2c39b286edbd33cba71a4cf4e0d8a10a38682eea9e17d999e2f2a",
+    "runtime": "src/graphics/caelum/icons/kitchen/salt.png",
+    "runtime_sha256": "0d34f55bcdddc490f9afeda4ce0d8856f847f1956a81777fa81cd5cbe91ad520"
+  }
+]

@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `cb7c99cb7116f6aca3390e135b933667fa310fe333f530b9f2880c2cf167f228`. Locations include every definition; the last one per language wins.
+SHA-256: `147b5e7e81c9669fc7246ed115d2d672d4f35823094b05f1b031fd404cd33ed7`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -94,6 +94,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_JOURNAL | 44 | CA_JOURNAL_CHARACTER | CA_JOURNAL_WORLD_PENDING |
 | CA_JOURNEY | 36 | CA_JOURNEY_ARRIVED | CA_JOURNEY_WATER_LINE |
 | CA_KEY | 4 | CA_KEY_ITEM_PROCESSING_MANUAL | CA_KEY_SILVER |
+| CA_KITCHEN | 5 | CA_KITCHEN_BEEF | CA_KITCHEN_VEGETABLES |
 | CA_LAYER | 4 | CA_LAYER_MENTAL | CA_LAYER_TECHNICAL |
 | CA_LIBRARY | 4 | CA_LIBRARY_ALREADY_OWNED | CA_LIBRARY_HELP |
 | CA_LOAD | 3 | CA_LOAD_CAPACITY_EXCEEDED | CA_LOAD_OVERLOAD |
@@ -138,7 +139,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_PROPERTY | 15 | CA_PROPERTY_BUY | CA_PROPERTY_TITLE |
 | CA_Q | 97 | CA_Q_DETAIL_ABOUT | CA_Q_SIDE_WAIT_TITLE |
 | CA_QUEST | 12 | CA_QUEST_FOUNDATION_NOTE | CA_QUEST_STATUS_OFFERED |
-| CA_QUICK | 7 | CA_QUICK_EMPTY | CA_QUICK_WATER |
+| CA_QUICK | 8 | CA_QUICK_EMPTY | CA_QUICK_WATER |
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
 | CA_RACIAL | 2 | CA_RACIAL_ANIMA | CA_RACIAL_UNAVAILABLE |
 | CA_RALLY | 1 | CA_RALLY_CAST | CA_RALLY_CAST |

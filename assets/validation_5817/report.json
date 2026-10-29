@@ -1,0 +1,232 @@
+{
+  "issue": 410,
+  "version": "5.8.17",
+  "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381",
+  "source_matching_members": 16927,
+  "native_passes": 174,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "final-census",
+      "executed_passes": 1,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "final-core",
+      "executed_passes": 46,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "final-formal",
+      "executed_passes": 3,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "final-hub",
+      "executed_passes": 13,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "kitchen-clock-01",
+      "executed_passes": 6,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "kitchen-pickup-03",
+      "executed_passes": 5,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "kitchen-purchase-03",
+      "executed_passes": 20,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "kitchen-seed-01",
+      "executed_passes": 25,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "final-existing-save",
+      "executed_passes": 3,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "ration-core-01",
+      "executed_passes": 17,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "ration-clock-01",
+      "executed_passes": 8,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "ration-travel-01",
+      "executed_passes": 11,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "ration-container-01",
+      "executed_passes": 8,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "old-food-seed01",
+      "executed_passes": 1,
+      "runtime_sha256": "55fd9270df6d696d22113496aa53fbc3d83fabb8f628fa34c2e6d35a28439ef2"
+    },
+    {
+      "label": "final-old-save",
+      "executed_passes": 2,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "old-food-rollback01",
+      "executed_passes": 2,
+      "runtime_sha256": "55fd9270df6d696d22113496aa53fbc3d83fabb8f628fa34c2e6d35a28439ef2"
+    },
+    {
+      "label": "kitchen-digestion-03",
+      "executed_passes": 2,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "kitchen-digestion-control-03",
+      "executed_passes": 1,
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3"
+    },
+    {
+      "label": "kitchen-capture-es04",
+      "executed_passes": 0,
+      "runtime_sha256": "d6fdbbfabe4aa18da0bd3ce6e8f68f9de7376aa0273629a528085b0b0922c149"
+    },
+    {
+      "label": "kitchen-capture-en04",
+      "executed_passes": 0,
+      "runtime_sha256": "d6fdbbfabe4aa18da0bd3ce6e8f68f9de7376aa0273629a528085b0b0922c149"
+    },
+    {
+      "label": "final-manual-smoke",
+      "executed_passes": 0,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    }
+  ],
+  "performance": [
+    {
+      "label": "kitchen-perf-old500",
+      "runtime_sha256": "55fd9270df6d696d22113496aa53fbc3d83fabb8f628fa34c2e6d35a28439ef2",
+      "addon_sha256": "70190f27b0f3c3ae878848c383f6c253f0b51ae6cbcab17ea819683b7da48b91",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\baseline\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-old500.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-old500.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-old500.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-old500.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20045.754299964756,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666473394495412,
+      "p95_callback_ms": 16.9743,
+      "p99_callback_ms": 17.1968,
+      "worst_callback_ms": 17.6496,
+      "stacks": 500,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. Same food stack population before/after; invisible actors isolate food scheduling from sprite overdraw. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance.",
+      "material_id": 109,
+      "food_clocks": 0
+    },
+    {
+      "label": "kitchen-perf-new500",
+      "runtime_sha256": "6444d46931d6d6ad255377ecd20c6e43e2ed9ad9cff61952a5306894867806d3",
+      "addon_sha256": "70190f27b0f3c3ae878848c383f6c253f0b51ae6cbcab17ea819683b7da48b91",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\current01\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-new500.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-new500.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-new500.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-catalogue-work\\build\\issue410-kitchen\\kitchen-perf-new500.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19948.599499999546,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666658298582153,
+      "p95_callback_ms": 17.0481,
+      "p99_callback_ms": 17.2514,
+      "worst_callback_ms": 17.8219,
+      "stacks": 500,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. Same food stack population before/after; invisible actors isolate food scheduling from sprite overdraw. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance.",
+      "material_id": 109,
+      "food_clocks": 500
+    }
+  ],
+  "current01_to_current03_changed_members": [
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/hud/CaelumQuickUseHUD.zs",
+    "LANGUAGE",
+    "localization/index.json",
+    "localization/INDEX.md"
+  ],
+  "digestion": {
+    "gross_recovery": 5.66666667,
+    "approved_recovery": 5.66666667,
+    "control_drain": -0.30048254,
+    "passed": true
+  },
+  "author_acceptance": "Passed CA410-INGREDIENTS-01 on 2026-10-26 without qualifications; runtime unchanged.",
+  "author_confirmation": {
+    "date": "2026-10-26",
+    "check": "CA410-INGREDIENTS-01",
+    "origin_version": "5.8.17",
+    "issue": 410,
+    "result": "passed",
+    "qualifications": [],
+    "new_native_runs": 0
+  }
+}

@@ -1210,7 +1210,7 @@ class CaelumConstants : Object
     const MATERIAL_CENSER_BASE = 89;
     const MATERIAL_SCEPTER_BASE = 90;
     const MATERIAL_ORB_BASE = 91;
-    const MATERIAL_TYPE_COUNT = CaelumHygieneData.SOAP + 1;
+    const MATERIAL_TYPE_COUNT = CaelumKitchenData.SALT + 1;
     const MATERIAL_FAMILY_NONE = 0;
     const MATERIAL_FAMILY_METAL = 1;
     const MATERIAL_FAMILY_WOOD = 2;

@@ -6,8 +6,25 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.16.** Obtain and update the complete repository, validate
+**Current release: 5.8.17.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.17 - Kitchen ingredients (#410)
+
+The approved flour, raw beef, raw white fish, vegetable mix and culinary salt
+are integrated into Provisions as gram-based materials. Raw meat, fish
+and vegetables use full 100-g portions and the approved distinct nutrition.
+Food lots retain age through storage and native transfers; flour remains a
+preparation ingredient and salt does not acquire biological spoilage.
+Painted inventory/world sprites follow SPRITE_ART_DIRECTION, with original
+sources and exact built-in imagegen prompts retained. Technical packing only
+crops/masks/resizes the retained sources; no existing art is replaced.
+Native checks: 174 executed PASS / zero FAIL in 21 selected runs; paired
+digestion, old-save rollback and 500-stack timing also pass within their recorded
+limits. Evidence: assets/validation_5817. CA410-INGREDIENTS-01 passed author
+acceptance on 2026-10-26, without qualifications. Cooking/proofing, finished
+dishes and remaining furniture were
+still unfinished #410 work.
 
 ## 5.8.16 - Non-solid physical scenery exposure (#502)
 
