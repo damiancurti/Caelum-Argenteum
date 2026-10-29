@@ -9,6 +9,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.56.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author-confirmed grouped #411 checks are recorded in HISTORY and removed from the outstanding queue.
 
 Author-confirmed grouped #502 checks are recorded in HISTORY and removed from the outstanding queue.

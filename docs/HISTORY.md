@@ -16,6 +16,8 @@ Rally damage queries now inspect active player inventories; recovery pulses use 
 
 ## 5.8.54 - Furniture review corrections (#410, 2026-10-29)
 
+Final author acceptance, 2026-10-29: **CA410-REVIEW-01** (origin 5.8.54 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Corrections still require author corroboration.
 
 Author requested direct use of selected water containers at sources while retaining R; canopy, visible mattresses/pillows, large museum-like paintings and a visible statue in410/16. Original410/16 called only the single-picture view; the corrected review presents all three decorations. Source and model bills are updated; native evidence and author corroboration are recorded separately. Other issues remain isolated.
@@ -481,6 +483,8 @@ excluded from final counts. CA502-DINING-CONTACT-01 remains author-pending.
 
 ## 5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)
 
+Final author acceptance, 2026-10-29: **CA410-DECOR-01** (origin 5.8.44 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Partial author acceptance 2026-10-29: **CA410-DECOR-01**, originating 5.8.44 / #410. Grouped checks passed with the reported decoration fixture exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 The author approved the same movable-furniture acquisition for paintings and
@@ -701,6 +705,8 @@ No complete V5.8 claim or multiplayer validation is inferred.
 
 ## 5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)
 
+Final author acceptance, 2026-10-29: **CA410-BASIC-ACQUISITION-01** (origin 5.8.34 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Partial author acceptance 2026-10-29: **CA410-BASIC-ACQUISITION-01**, originating 5.8.34 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 The author's approved supply rules are extended to the corrected wooden chair
@@ -719,6 +725,8 @@ CA410-BASIC-ACQUISITION-01 remains pending; no complete V5.8 claim.
 
 ## 5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)
 
+Final author acceptance, 2026-10-29: **CA410-BASIC-REST-01** (origin 5.8.33 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Partial author acceptance 2026-10-29: **CA410-BASIC-REST-01**, originating 5.8.33 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 The author approved correcting the old oversized ordinary chair/cot and specified
@@ -736,6 +744,8 @@ inspected, including the corrected seat center/headboard direction. Evidence:
 assets/validation_5833. No author acceptance or display-FPS result is inferred. CA410-BASIC-REST-01 is pending the grouped V5.8 handoff.
 
 ## 5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)
+
+Final author acceptance, 2026-10-29: **CA410-REST-ACQUISITION-01** (origin 5.8.32 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
 
 Partial author acceptance 2026-10-29: **CA410-REST-ACQUISITION-01**, originating 5.8.32 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
@@ -772,6 +782,8 @@ Manual corroboration remains
 pending CA410-STORAGE-ACQUISITION-01, grouped for the full V5.8 handoff.
 
 ## 5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)
+
+Final author acceptance, 2026-10-29: **CA410-LUXURY-01** (origin 5.8.30 / #410) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
 
 Partial author acceptance 2026-10-29: **CA410-LUXURY-01**, originating 5.8.30 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
