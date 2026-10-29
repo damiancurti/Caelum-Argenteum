@@ -814,6 +814,8 @@ manual checks and questions wait until the entire V5.8 implementation is ready.
 
 ## 5.8.27 - Indoor furniture placement (#411)
 
+Author confirmation2026-10-29: **CA411-INTERIOR-01**, originating 5.8.27 / #411, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 Movable storage furniture can now be rearranged inside the mansion, under the
 approved land permission. Wardrobes and ordinary carried chests use the same
 land checks; city streets and expired/unacquired property do not grant placement.
@@ -935,6 +937,8 @@ kitchen/camp checks remain untouched. This is a focused #410 delivery; broader
 V5.8 completion, issue closure and merges are not claimed.
 
 ## 5.8.21 - Attended camp cooking and fuel interruption (#411)
+
+Author confirmation2026-10-29: **CA411-COOKING-01**, originating 5.8.21 / #411, passed the grouped review. Requested changes and exceptions remain separately pending.
 
 Implemented the #411 adapter separately from #410 kitchen recipes and fixtures.
 The latest author decision preserves batch progress on fuel interruption, with

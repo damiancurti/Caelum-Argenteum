@@ -33,25 +33,6 @@ Expected: chronological resources/ownership and saved progress survive. A city-d
 may require about 77 seconds of paused preparation on the recorded machine; this
 is a known limitation, not claimed rendering-FPS acceptance. #417 bandits separate.
 
-CA411-COOKING-01 | Origin: 5.8.21 | Issue: #411
-Prerequisites: final 5.8.21 package, GZDoom 4.14.2, disposable campaign;
-owned deployed fire, wood, learned recipes206-208, their food ingredients,
-carried potable water and a camp pot. Existing #410 checks remain separate.
-1. Use the fire, select Cook (C), and inspect the three recipes in Spanish.
-   Beef/fish need no pot. Puchero requires a mounted empty pot; bread is absent.
-2. Cook fish using wood and no coal. Thirty attended world minutes produce ten
-   100-g portions. Existing automatic eating may consume a portion afterwards.
-3. Start with little wood. At exhaustion, record remaining time. Refill through
-   Fire and fuel, then Continue/relight. The one-minute ignition does not cook;
-   remaining food time resumes afterward, including across save/load.
-4. Cancel after some burning: ingredients/water remain with their current age;
-   burned wood stays spent. Extinguish and recover the unburned remainder.
-5. Try puchero with no pot or a nonempty pot: reject without consuming food.
-   Mount an empty pot and complete it: ten portions and exactly500mL carried
-   water consumed. Beef/fish may cook beside a mounted water pot, but that water
-   must not heat simultaneously. Cancelling restores its ordinary heating.
-Expected: readable working controls, retained progress, exact resources and no
-duplicate portions. Report the failed step, if any; do not reuse prior acceptance.
 ID: CA502-LIMBO-HISTORY-01
 Origin: 5.8.23 / issue #502
 Prerequisites: final23 package and assets/validation_5823 fixtures; close other GZDoom sessions.
@@ -59,21 +40,6 @@ Prerequisites: final23 package and assets/validation_5823 fixtures; close other 
 2. Observe the initial CA502H MANUAL reading at zero, the private half-hour absence, and the return reading at the recorded ambient value.
 3. The final console and game remain open. Confirm there is no VM error, duplicate object or repeated catch-up when continuing.
 Expected: the same sink gains the approved constant Limbo exposure while absent. Returning/reading again does not charge the same interval twice. No exterior-history claim.
-
-CA411-INTERIOR-01 | Origin: 5.8.27 | Issue: #411
-Prerequisites: final5.8.27 or later, disposable mansion campaign, wardrobe or
-carried chest, sufficient real carrying capacity for its mass and contents.
-Deliver this check when the wholeV5.8 implementation is ready, as requested.
-1. Store a recognizable item in the wardrobe, then carry the loaded wardrobe.
-   In a clear part of the bedroom use the existing inventory placement action.
-   Expect the same wardrobe and contents at the chosen location, with no duplicate.
-2. Try placing in another actor, a doorway, a staircase or wet/unsupported ground.
-   Expect rejection with the original cargo and contents still carried.
-3. Save/load and travel away/back after a successful indoor placement.
-   Expect the same position, ownership, content quantity and food deterioration.
-4. Check that tents/fires still require their approved land and that the kitchen
-   cupboard, water and cooking installations have not become portable.
-Expected: accepted furniture relocation and persistence; no blocked access or loss.
 
 CA502-WEATHER-HISTORY-01 | Origin: 5.8.28 | Issue: #502
 Prerequisites: final5.8.28+ package, disposable regional-weather campaign and
