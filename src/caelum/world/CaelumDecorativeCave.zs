@@ -1,25 +1,25 @@
 // Gemas decorativas: Actor puro, sin recursos, inventario ni extracción.
-class CaelumCaveSceneryRuby : Actor
+class CaelumCaveSceneryRuby : CaelumPhysicalScenery
 {
     Default { +NOGRAVITY }
     States { Spawn: CAVE J -1; Stop; }
 }
-class CaelumCaveScenerySapphire : Actor
+class CaelumCaveScenerySapphire : CaelumPhysicalScenery
 {
     Default { +NOGRAVITY }
     States { Spawn: CAVE I -1; Stop; }
 }
-class CaelumCaveSceneryEmerald : Actor
+class CaelumCaveSceneryEmerald : CaelumPhysicalScenery
 {
     Default { +NOGRAVITY }
     States { Spawn: CAVE K -1; Stop; }
 }
-class CaelumCaveSceneryTopaz : Actor
+class CaelumCaveSceneryTopaz : CaelumPhysicalScenery
 {
     Default { +NOGRAVITY }
     States { Spawn: CAVE H -1; Stop; }
 }
-class CaelumCaveSceneryOpal : Actor
+class CaelumCaveSceneryOpal : CaelumPhysicalScenery
 {
     Default { +NOGRAVITY }
     States { Spawn: CAVE G -1; Stop; }

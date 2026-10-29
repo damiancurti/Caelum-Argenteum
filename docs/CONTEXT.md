@@ -1,10 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.15** - 2026-10-26.
+Documentation version: **5.8.16** - 2026-10-26.
+
+**5.8.16/#502:**scenery exposure;232PASS;validation_5816;CA502-SCENERY-01accepted2026-10-26.
 
 **5.8.15/#412:**outside-Use/rest/exit;73PASS;validation_5815;accepted2026-10-26. Co-op:V5.12. #410lots/#411trivet/#502checks:accepted;PR508/507/506.
 
-**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811. Hygiene#502 pending.
+**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811.
 
 **5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;supplies 92PASS;both author-accepted2026-10-25. Treatment31PASS;accepted2026-10-26. Rain22PASS;immersion-wash60PASS/author-accepted. Metabolic-credit36PASS;toilet action/baths/surfaces/NPC/contact pending;validation_589.
 

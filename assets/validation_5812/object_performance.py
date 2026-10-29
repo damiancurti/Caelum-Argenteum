@@ -1,9 +1,11 @@
-"""Compare renderer cadence and initialization cost with 1,000 solid objects."""
+"""Compare renderer cadence and initialization cost with 1,000 physical objects."""
 import argparse,csv,ctypes,hashlib,json,re,statistics,subprocess,time,zipfile
 from pathlib import Path
 from datetime import datetime,timezone
 root=Path(__file__).resolve().parents[2];work=root/'build/issue502-hygiene'
-parser=argparse.ArgumentParser();parser.add_argument('runtime');parser.add_argument('label');a=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('runtime');parser.add_argument('label')
+parser.add_argument('--scenery',action='store_true',help='Use non-solid scenery membership with the same diagnostic appearance.')
+a=parser.parse_args()
 assert not (work/(a.label+'.json')).exists()
 assert not subprocess.run(['powershell','-NoProfile','-Command','(Get-Process gzdoom -ErrorAction SilentlyContinue).Id'],capture_output=True,text=True).stdout.strip()
 engine=Path(r'C:/Program Files (x86)/GZDoom/gzdoom.exe');iwad=Path(r'C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
@@ -32,6 +34,8 @@ Console.Printf("CA502P CONTACT receivers_exposed=%d",exposed);
 Console.Printf("CA502P END tics=700 bodies=%d intact=%d",Bodies.Size(),intact);}
 }}
 """
+if a.scenery:
+ source=source.replace('class CA502PerfProp : Actor','class CA502PerfProp : CaelumMansionSceneryShrub').replace('+SOLID +NOGRAVITY','-SOLID +NOGRAVITY')
 # Rebuild only the diagnostic arena size; no production map is modified.
 import struct
 with zipfile.ZipFile(work/'contact-checks.pk3') as z: wad=z.read('maps/CAC502.wad')
@@ -79,4 +83,6 @@ assert len(values)>100, len(values)
 values.sort();percentile=lambda p:values[min(len(values)-1,int((len(values)-1)*p))]
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 report={'label':a.label,'utc':datetime.now(timezone.utc).isoformat(),'runtime_sha256':digest(package),'fixture_sha256':digest(addon),'engine_sha256':digest(engine),'presentmon_sha256':digest(pm),'arguments':args,'presentmon_arguments':pmargs,'config':config,'simulation_tics':700,'receivers_exposed':int(re.search(r'CA502P CONTACT receivers_exposed=(\d+)',data).group(1)),'spawned_objects':1000,'census_population':int(re.search(r'CA502P CENSUS actors=(\d+)',data).group(1)),'census_ms':float(re.search(r'elapsed_ms=([0-9.]+)',data).group(1)),'phase_elapsed_ms':end-start,'phase_bound_uncertainty_ms':100,'frames':len(values),'mean_callback_ms':statistics.mean(values),'p95_callback_ms':percentile(.95),'p99_callback_ms':percentile(.99),'worst_callback_ms':max(values),'present_modes':sorted({r.get('PresentMode','') for r in rows}),'presentmon_available':bool(rows),'presentmon_result':(work/(a.label+'-presentmon.txt')).read_text(encoding='utf-16'),'note':'Peaceful 1,000 solid objects; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.'}
+report['object_kind']='non-solid scenery' if a.scenery else 'solid actor'
+if a.scenery:report['note']=report['note'].replace('1,000 solid objects','1,000 non-solid scenery objects with identical diagnostic appearance')
 (work/(a.label+'.json')).write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:report[k] for k in ['label','census_population','census_ms','receivers_exposed','frames','mean_callback_ms','p95_callback_ms','p99_callback_ms','worst_callback_ms','phase_elapsed_ms']}),flush=True)

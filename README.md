@@ -6,8 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.15.** Obtain and update the complete repository, validate
+**Current release: 5.8.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.16 - Non-solid physical scenery exposure (#502)
+
+Mansion shrubs, decorative cave gems and shop signs now use an explicit physical
+scenery type. They receive the existing ambient exposure and rain washing without
+new collision, art or balance rules; cameras and transient effects stay excluded.
+The fieldless base preserves native actors and saved contamination. Registration
+uses existing spawn events and one load census; there is no recurring global scan.
+
+Validation: 232 executed native PASS / zero FAIL in ten selected runs, including
+old-save migration, rollback, original solid-object regression and MAP03 census.
+All 16,919 current03 package members match source. With 1,000 peaceful non-solid
+objects, callback p99 was 17.2022 ms before and 18.1962 ms after; 700 simulation
+tics completed in about 20 s. These callbacks are not measured displayed frames;
+PresentMon capture was unavailable. See assets/validation_5816/RESULTS.md.
+CA502-SCENERY-01 passed author acceptance on 2026-10-26, without qualifications.
+Other adapters, stackable items and unloaded history remain open in #502.
+This patch does not complete V5.8.
 
 ## 5.8.15 - Usable sleeping bag inside the tent (#412, in progress)
 
