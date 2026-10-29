@@ -2,6 +2,9 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author review 2026-10-29 / #411: all remaining grouped scenarios passed without an issue-specific exception. Their stable IDs and original releases are recorded in HISTORY; only those accepted entries were removed from pending_test.txt. No runtime change or release increment.
+
+
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 
 Native validation: CABAIRES automatically selects the encoded track, PASS. See `assets/validation_5856/RESULTS.md`. Author listening remains pending.
