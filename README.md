@@ -9,6 +9,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.56.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
 
 Author-confirmed grouped #411 checks are recorded in HISTORY and removed from the outstanding queue.
@@ -19,7 +21,7 @@ Author-confirmed grouped #417 checks are recorded in HISTORY and removed from th
 
 5.8.56 assigns the author-selected original **Ciudad** theme to Buenos Aires. The correction terminal groups only the outstanding water, furniture, city performance and music checks.
 
-5.8.55 removes repeated global Rally lookups causing the city slowdown. Effect and save tests pass; city corroboration remains pending. See `assets/validation_5855/RESULTS.md` for measurements and the ETW limitation.
+5.8.55 removes repeated global Rally lookups causing the city slowdown. Effect and save tests pass; city corroboration passed on 2026-10-29. See `assets/validation_5855/RESULTS.md` for measurements and the ETW limitation.
 
 5.8.54 addresses the furniture review: direct selected-container refilling,
 visible bedding and canopy, and a museum-size landscape. The corrected review
