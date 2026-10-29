@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `1e1ccc5ca707e6c2b16200a59306c6dca2749cd13aad1838b6df29d052365b56`. Locations include every definition; the last one per language wins.
+SHA-256: `0d53574778d7beee182a4c593d0befca9c78e14d2dc07b3c713703e6802ac866`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -149,6 +149,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
 | CA_RACIAL | 2 | CA_RACIAL_ANIMA | CA_RACIAL_UNAVAILABLE |
 | CA_RALLY | 1 | CA_RALLY_CAST | CA_RALLY_CAST |
+| CA_READING | 1 | CA_READING_DESK | CA_READING_DESK |
 | CA_RECIPE | 18 | CA_RECIPE_CANCEL | CA_RECIPE_UNREAD |
 | CA_REDEMPTION | 1 | CA_REDEMPTION_CAST | CA_REDEMPTION_CAST |
 | CA_REP | 29 | CA_REP_NEEDS_MEMBER | CA_REP_UNKNOWN_FACTION |
@@ -170,6 +171,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |
+| CA_STORED | 6 | CA_STORED_READING_BOOK | CA_STORED_READING_TITLE |
 | CA_SUMMON | 3 | CA_SUMMON_CAST | CA_SUMMON_ZUPAY_NAME |
 | CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |

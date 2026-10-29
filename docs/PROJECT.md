@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.25** - 2026-10-27.
+Documentation version: **5.8.26** - 2026-10-27.
+
+## 5.8.26 - Stored-book reading (#410)
+
+The mansion library now stores actual objects in 25 stacks / 100 kg. Its adjacent
+reading desk opens the stored recipe books without transferring or copying them.
+Reading requires the approved 96-unit desk/shelf distance, line of sight and
+actual access. Existing recipe learning and personal-book reading remain shared.
+Closing the menu pauses; saving or returning from hub travel preserves progress.
+Existing owned shelf/table artwork and all map geometry are retained.
+
+Validation in assets/validation_5826 records113 executed native PASS, zero failures,
+zero static errors, and16,980 source-matching package members. Author corroboration
+is pending; manual tests remain deferred until the whole V5.8 implementation is
+ready. Remaining furniture/acquisition and other V5.8 issues stay open.
 
 ## 5.8.25 - Garden water furniture (#410)
 

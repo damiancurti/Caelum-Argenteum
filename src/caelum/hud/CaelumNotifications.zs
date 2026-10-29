@@ -233,6 +233,10 @@ class CaelumNotifications : Object
             let ammunition = CaelumCarbineAmmo(item);
             if (item is "CaelumMagicBox")
                 label = StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false);
+            // Recetario y saco conservan su ID historico compartido; la clase
+            // fisica distingue el nombre sin renumerar objetos de partidas.
+            else if (item is "CaelumRecipeBook")
+                label = StringTable.Localize("CA_KEY_ITEM_RECIPE_BOOK", false);
             else if (consumable != null)
                 label = StringTable.Localize(CaelumDisplayNames.GetConsumableKey(consumable.GetConsumableType()), false);
             else if (special != null)

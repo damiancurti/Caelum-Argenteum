@@ -57,8 +57,8 @@ class CaelumInventoryService : Object play
         if(depositing)
         {
             int newSlots=slots+int(receiving==null);
-            if(newSlots>CaelumContainerRules.Slots(chest.StorageTier) && newSlots>slots)return false;
-            if(content+weight>CaelumContainerRules.Capacity(chest.StorageTier))return false;
+            if(newSlots>chest.StorageSlotLimit() && newSlots>slots)return false;
+            if(content+weight>chest.StorageWeightLimit())return false;
         }
         user.RefreshCarriedInventorySummary();
         bool carried=chest.Cargo!=null && chest.Cargo.Owner==user;
