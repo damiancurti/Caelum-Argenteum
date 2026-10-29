@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.33** - 2026-10-27.
+Documentation version: **5.8.34** - 2026-10-27.
+
+## 5.8.34 / #410 - Ordinary rest furniture acquisition
+
+Chair/cot fabrication, three-unit Provisions stock, ten recipe books per type,
+painted item views and real-body transport are implemented. Native
+crafting/trade/placement/Box/save/hub and actual revision19 migration pass:
+206 current-runtime assertions plus12 original-runtime checks; zero static errors.
+Keep CA410-BASIC-ACQUISITION-01 for the final grouped author handoff.
+Remaining: table/sofa/study acquisition and the independently scoped V5.8 issues.
 
 ## 5.8.33 / #410 - Ordinary rest furniture scale
 

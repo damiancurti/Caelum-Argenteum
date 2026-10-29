@@ -1,0 +1,30 @@
+{
+  "issue": 410,
+  "version": "5.8.34",
+  "tool": "Built-in image_gen",
+  "date": "2026-10-27",
+  "prompt_file": "PROMPTS.json",
+  "sources": [
+    {
+      "source": "chair.png",
+      "sha256": "03187ff2fd9df3d837cc1cc743d6519f3aac2112ab62151518842e85c210f39e",
+      "runtime": "src/sprites/caelum/rest_furniture/CBICA0.png"
+    },
+    {
+      "source": "cot-v1.png",
+      "sha256": "8f8a1644f88e68f1ba08a101b0690d4cb7cb3df5d1498d69bba72698e6fefb0b",
+      "runtime": null
+    },
+    {
+      "source": "cot.png",
+      "sha256": "f7e20c6aa9a3b9821ebc3ee3114499f13745bc93e137325a3f49f9b8a8bc6fbe",
+      "runtime": "src/sprites/caelum/rest_furniture/CBIBA0.png"
+    }
+  ],
+  "references": {
+    "shape": "Owned native basic-rest-0/1.png in validation_5833; corrected ordinary chair/cot.",
+    "style": "Owned luxury chair sprite CLICA0.png, painted pixel-oriented wood only."
+  },
+  "processing": "Byte-for-byte copies; generated transparency retained. No raster modification. cot-v1 retained as generation source.",
+  "rights": "Original project-directed generated art. No external or Doom pixels."
+}

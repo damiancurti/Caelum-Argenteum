@@ -217,3 +217,19 @@ Prerequisites: final5.8.33 package and validation_5833 diagnostics; include in t
 2. Sit, lie down, cancel and inspect from both sides. Expect alignment with the support, no trapped exit and unchanged comfort/resources.
 3. Load the retained occupied5.8.32 cot save in the new runtime; exit normally. Expect the same cot, occupant, contents and contamination, adjusted pose. Keep the original save for rollback.
 4. Check mansion dining chairs and luxury/sofa furniture. Expect ordinary chairs resized and functional; luxury/sofas unchanged.
+
+CA410-BASIC-ACQUISITION-01 | Origin: 5.8.34 | Issue: #410
+Prerequisites: final5.8.34 runtime or later; normal-controls disposable furniture
+fixture, learned chair/cot recipes, materials, money and sufficient carrying space.
+Deliver together with the remaining V5.8 checks, not before implementation is complete.
+1. Inspect the ordinary chair/cot in inventory, crafting and Provisions. Expect
+   painted sprites matching the wooden chair and four-legged raised cot.
+2. Buy/craft one of each. Expect three initial shop units, ten recipe books each,
+   actual construction mass and recipe inputs. The wooden chair requires no sewing.
+3. Place on permitted clear ground; sit/sleep; end rest and crouch+Use to carry.
+   Expect unchanged dimensions/support, no pickup while occupied and no duplicates.
+4. Store in the Box, retrieve, save/load and travel with the item; place again.
+   Expect the same contamination/title and usable furniture. Failed placement keeps it.
+5. Update a preceding save: learned luxury recipes and sold stock remain unchanged;
+   the two ordinary recipes start unknown until learned.
+Expected: all checks pass. Author corroboration is pending.

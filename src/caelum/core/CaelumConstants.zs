@@ -741,7 +741,7 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 19;
+    const CRAFTING_RECIPE_BOOK_VERSION = 20;
     // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
     const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
     const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;

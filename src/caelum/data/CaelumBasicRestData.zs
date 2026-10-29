@@ -10,4 +10,7 @@ class CaelumBasicRestData : Object
     const BED_HEIGHT=21.760000000;
     const BED_SURFACE=14.720000000;
     const BED_MASS=28.975334242;
+    static clearscope int Wood(int kind){return kind==0?7680:27635;}
+    static clearscope int Iron(int kind){return kind==0?0:624;}
+    static clearscope int Cloth(int kind){return kind==0?0:718;}
 }

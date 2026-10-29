@@ -76,3 +76,15 @@ class CaelumLuxuryBedItem : CaelumRestFurnitureItem
     Default {Tag "$CA_LUXURY_BED";Inventory.Icon "sprites/caelum/rest_furniture/CLIBA0.png";Scale 0.025;}
     States {Spawn:CLIB A -1;Stop;}
 }
+class CaelumBasicChairItem : CaelumRestFurnitureItem
+{
+    override int Variant(){return 2;}
+    Default {Tag "$CA_BASIC_CHAIR";Inventory.Icon "sprites/caelum/rest_furniture/CBICA0.png";Scale 0.025;}
+    States {Spawn:CBIC A -1;Stop;}
+}
+class CaelumBasicBedItem : CaelumRestFurnitureItem
+{
+    override int Variant(){return 3;}
+    Default {Tag "$CA_BASIC_BED";Inventory.Icon "sprites/caelum/rest_furniture/CBIBA0.png";Scale 0.025;}
+    States {Spawn:CBIB A -1;Stop;}
+}

@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.33** - 2026-10-27.
+Documentation version: **5.8.34** - 2026-10-27.
+
+## 5.8.34 / #410 - Ordinary furniture acquisition
+
+Recipes213/214 append the corrected ordinary chair/cot after the luxury items.
+Recipe-book revision20 preserves previous knowledge; new recipes start unknown.
+Merchant rest-furniture revision2 appends three of each item in Provisions and
+ten copies of each recipe in the library, without refilling existing sold stock.
+Normal fabrication restock, complexity, efficiency, Dexterity and material cost
+plus25% apply, followed by the existing merchant margins.
+
+The generated construction bill remains authoritative: chair7.67906736kg,
+7,680g wood; cot28.975334242kg,27,635g wood+624g iron ingot+718g cotton fabric.
+Workbench and fine tools are required for both; only the cot needs a sewing
+machine. The all-wood chair consumes no fictitious metal or fabric.
+
+The existing real-body transport model applies: activate an unboxed item to
+place, Use to rest, crouch+Use to carry an owned unoccupied piece. Land, full
+clearance and weight checks apply. Title, contamination, native identity and
+rest benefits persist. Existing fixed/map-authored chairs/cots are unchanged.
+No new recipe, price multiplier, rest bonus or world geometry is inferred.
 
 ## 5.8.33 / #410 - Ordinary chair and raised cot scale
 

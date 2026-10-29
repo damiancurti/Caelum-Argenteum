@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.33** - 2026-10-27.
+Documentation version: **5.8.34** - 2026-10-27.
+
+## 5.8.34 / #410 - Ordinary rest furniture acquisition
+
+The corrected ordinary chair/cot gain normal fabrication, supply and physical
+transport, with appended recipe/merchant migrations and painted inventory sprites.
+Evidence: assets/validation_5834; 206 final native assertions plus 12 original-runtime checks and static validation pass. This does
+not complete remaining table/sofa/study acquisition, #415-417 or #502, and does
+not extend author acceptance. Manual checks remain grouped for completed V5.8.
 
 ## 5.8.33 / #410 - Ordinary rest furniture correction
 

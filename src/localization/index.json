@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "2a5dc7741686c743671d8f5e376025ca0dbcf31938c9c914a4f7e45e87684196",
+  "sha256": "3b333496bd2f982191623f95e0c309f8b5d551906325a4cbffba745913cb437d",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[473,473]],"default":[[473,473]],"es":[[1168,1168]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[1023,1023]],"default":[[1023,1023]],"es":[[1718,1718]]},
@@ -139,6 +139,8 @@
     "CA_ATTRIBUTE_RESILIENCE": {"enu":[[458,458]],"default":[[458,458]],"es":[[1153,1153]]},
     "CA_ATTRIBUTE_STRENGTH": {"enu":[[454,454]],"default":[[454,454]],"es":[[1149,1149]]},
     "CA_ATTRIBUTE_TOUGHNESS": {"enu":[[455,455]],"default":[[455,455]],"es":[[1150,1150]]},
+    "CA_BASIC_BED": {"enu":[[6869,6869]],"default":[[6869,6869]],"es":[[6872,6872]]},
+    "CA_BASIC_CHAIR": {"enu":[[6868,6868]],"default":[[6868,6868]],"es":[[6871,6871]]},
     "CA_BATHTUB_POSE_HINT": {"enu":[[6603,6603]],"default":[[6603,6603]],"es":[[6605,6605]]},
     "CA_BATHTUB_POSE_STARTED": {"enu":[[6608,6608]],"default":[[6608,6608]],"es":[[6610,6610]]},
     "CA_BATH_CANCELLED": {"enu":[[6626,6626]],"default":[[6626,6626]],"es":[[6643,6643]]},
