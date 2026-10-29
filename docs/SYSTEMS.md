@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.47** - 2026-10-28.
+Documentation version: **5.8.48** - 2026-10-28.
+
+## 5.8.48 - Vessel exterior surfaces (#502)
+
+The six bottle/canteen classes, three mates and 20 L camp pot now use the same
+persistent contamination ledger as prepared inventory, one native vessel per
+unit. Existing generic contamination is adopted once, without resetting its
+value, water quality, temperature, fill, herbs or remaining mate uses.
+
+CaelumVesselSurfaceData derives exterior areas from already approved thermal
+geometry: sphere and wall thickness for bottles/canteens; outer hemisphere
+and rim for mates; open cylindrical pot exterior/rim plus integral trivet rods.
+The thermal hemisphere is a computational proxy, not a change to the accepted
+nineteenth-century mate sprites. Straw/handle details have no separate new
+physical dimensions and are not estimated separately. Values and derivations
+are recorded in assets/validation_5848/geometry.json. Filled/empty vessels have
+the same exterior surface. This patch adds no transfer from exterior dirt into
+drinking water or food and no new ingestion or cleaning calibration.
+
+Carried vessels use their owner's independent exposure/immersion forecast.
+A dining set's real nested vessels use that carrier while retaining their
+native table owner; boxing the complete set or closing its coffer shields them.
+Mounted pots settle the old exposure interval before changing owner and use the
+camp location until retrieved. Ground/accessible stored vessels reuse the source
+weather history. Model-only contact endpoints preserve heterogeneous stack lots
+and cap the touched area to the available vessel/stack surface. Provision
+revision26 invalidates older cached forecasts. No per-unit/global scan is added.
 
 ## 5.8.47 - Abstract stack surfaces and exposure (#502)
 

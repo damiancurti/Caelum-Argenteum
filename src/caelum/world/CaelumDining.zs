@@ -256,6 +256,7 @@ class CaelumDiningTable : Actor
         let placed=CaelumConsumableItem(selected.CreateTossable(1));
         if(placed==null)return false;
         placed.AttachToOwner(self);placed.InMagicBox=false;Items[slot]=placed;
+        CaelumContaminationStack.Relocate(placed);
         RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return true;
     }
 

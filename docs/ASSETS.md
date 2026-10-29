@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.47** - 2026-10-28.
+Documentation version: **5.8.48** - 2026-10-28.
+
+## 5.8.48 - Vessel geometry and crash reproduction evidence (#502)
+
+assets/validation_5848 records the existing thermal/physical geometry used for
+vessel exterior exposure and isolated native fixtures. No sprite, model, map,
+music or attribution changes. The author-provided CrashReport is retained in
+ignored build/issue502-vessels/probe04-packedtravel-author-crash.zip; published
+evidence records its hash and diagnosis, without distributing the minidump,
+engine, development IWAD or private saves. The corrected fixture parks its real
+table before travel; failed probes are retained and excluded from passing totals.
 
 ## 5.8.47 - Stack contamination evidence (#502)
 
