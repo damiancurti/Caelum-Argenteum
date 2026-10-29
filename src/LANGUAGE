@@ -6790,3 +6790,14 @@ CA_CAMP_COOK_RECIPE_TIME = " | %.0f min, %.2f kg leña";
 CA_CAMP_COOK_UNLEARNED = "Receta sin aprender.";
 CA_CAMP_COOK_PROGRESS = "%s: faltan %.1f min de cocción. Encendido: %.0f s. Leña: %.2f kg.";
 CA_CAMP_COOK_PAUSE = "Sin fuego se conserva el progreso. Volvé a Fogata y leña para recargar y después continuar; encender lleva un minuto. Los ingredientes siguen deteriorándose. Cancelar no devuelve la leña quemada.";
+
+[enu default]
+CA_FURNITURE_WARDROBE = "Wardrobe";
+
+[es]
+CA_FURNITURE_WARDROBE = "Armario";
+
+[enu default]
+CA_TARGET_CARRY_WARDROBE = "{bind:+speed} + {bind:+use}: carry wardrobe";
+[es]
+CA_TARGET_CARRY_WARDROBE = "{bind:+speed} + {bind:+use}: recoger armario";

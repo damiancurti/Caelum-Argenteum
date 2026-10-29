@@ -1254,7 +1254,9 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.FormalInventoryRowReservedUnits[row]
                 );
             }
-            if ((kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumCampData.TENT_KEY)
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumWardrobeData.DISPLAY_TYPE)
+                DrawTexture("graphics/caelum/icons/furniture/wardrobe.png",30.0,165.0+row*21.0,20.0,20.0);
+            else if ((kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumCampData.TENT_KEY)
                 || (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE && localPlayer.FormalInventoryRowType[row]==CaelumCampData.POT_CONSUMABLE))
                 DrawTexture(CaelumCampData.Icon(kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE?1:0),
                     30.0,165.0+row*21.0,20.0,20.0);

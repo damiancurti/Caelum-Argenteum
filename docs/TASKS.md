@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
+
+## 5.8.24 - Native wardrobe storage (#410)
+
+The northwest first-floor mansion bedroom now contains a period wardrobe,
+with original closed/open/locked models and a painted inventory icon. Native
+storage preserves the approved 25 stacks/1,000 kg of contents, food lots,
+locks, ownership and carried contents. Empty mass is153.8955961 kg, calculated
+from the delegated historical construction, rather than from storage capacity.
+
+Revision1 installs one actor without changing map geometry or replacing the
+accepted beds, tables and bathroom fixtures. Moving it does not spawn a duplicate.
+Placement reuses the approved camp/property land permissions and complete dry,
+stable, clear footprint checks. The current mansion permission covers gardens;
+it does not yet authorize rearrangement inside bedrooms. Ordinary chest placement
+and capacity remain unchanged. Acquisition/crafting and other furniture are still
+open work; this patch does not close #410 or V5.8.
+
+Agent evidence:145 executed native PASS,zero static errors. Original artwork provenance and scoped evidence are in assets/validation_5824
+and assets/art_source/wardrobe. CA410-WARDROBE-01 awaits author corroboration.
 
 ## 5.8.23 - Constant Limbo exposure across absence (#502)
 

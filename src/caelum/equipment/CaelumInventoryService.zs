@@ -2500,7 +2500,7 @@ class CaelumInventoryService : Object play
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)
         {
-            user.FormalInventoryRowType[row]=cargo.Chest!=null ? cargo.Chest.StorageTier : CaelumContainerRules.MEDIUM;
+            user.FormalInventoryRowType[row]=cargo.Chest!=null ? cargo.Chest.StorageDisplayType() : CaelumContainerRules.MEDIUM;
             user.FormalInventoryRowAmount[row]=1;return;
         }
 

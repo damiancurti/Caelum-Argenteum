@@ -1,0 +1,27 @@
+{
+  "issue": 410,
+  "asset_id": "wardrobe",
+  "status": "candidate",
+  "purpose": "inventory/world fallback icon plus original model geometry",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "reference_roles": [
+    {
+      "url": "https://heritagecollections.parliament.uk/collections/getrecord/HOP_POW_09440",
+      "role": "period wardrobe dimensions and oak/iron construction; no borrowed image pixels",
+      "date": "1851-1857",
+      "dimensions_m": [
+        1.321,
+        0.64,
+        2.07
+      ]
+    },
+    {
+      "path": "src/graphics/caelum/icons/kitchen_stations/cupboard.png",
+      "role": "painted project palette and inventory readability, viewed for comparison only"
+    }
+  ],
+  "tool": "built-in image_gen",
+  "prompt_file": "PROMPT.txt",
+  "processing": "Deterministic crop/resize/alpha threshold for engine inventory, no artistic redraw by script",
+  "acceptance": "Agent native/visual checks and author review pending"
+}

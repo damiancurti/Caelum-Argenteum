@@ -75,3 +75,23 @@ Prerequisites: final23 package and assets/validation_5823 fixtures; close other 
 2. Observe the initial CA502H MANUAL reading at zero, the private half-hour absence, and the return reading at the recorded ambient value.
 3. The final console and game remain open. Confirm there is no VM error, duplicate object or repeated catch-up when continuing.
 Expected: the same sink gains the approved constant Limbo exposure while absent. Returning/reading again does not charge the same interval twice. No exterior-history claim.
+
+CA410-WARDROBE-01 | Origin:5.8.24 | Issue:#410
+Prerequisites: final5.8.24 package,GZDoom4.14.2,disposable mansion campaign;
+normal inventory controls and a character able to carry153.896kg plus contents.
+The prepared private fixture grants2000kg carrying capacity solely for testing.
+1. In the northwest first-floor bedroom, inspect the closed wardrobe. Check
+   proportions, painted inventory icon, open doors and locked state. Existing
+   bed,table/chair and bathroom fixtures must remain present and reachable.
+2. Use it to deposit/withdraw objects and food; close/reopen and save/load.
+   Expect original quantities and food age; limit25 stacks/1000kg contents.
+3. Install/remove a matching medium padlock using a lawful owner and carried key.
+   A boxed key must not open it. Ordinary chest behavior remains unchanged.
+4. With sufficient capacity, Shift+Use carries the same full wardrobe. Its
+   inventory name/icon and weight include furniture,contents and installed lock.
+   Save/load or change maps with it; no replacement wardrobe appears in the room.
+5. Place it on clear dry mansion garden ground or permitted property/countryside.
+   Invalid space or unauthorized terrain must retain it and its contents.
+   Current permissions cover mansion gardens,not indoor bedroom rearrangement.
+Expected: all listed storage,persistence and visual checks pass. Author review
+is pending; do not reuse acceptance of the earlier kitchen/bathroom/camp tests.

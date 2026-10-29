@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.23** - 2026-10-27.
+Documentation version: **5.8.24** - 2026-10-27.
+
+## 5.8.24 - Wardrobe storage (#410)
+
+2026-10-27: implemented one original period wardrobe in the northwest mansion
+bedroom, using native contents, food lots, locks, ownership and cargo. Applied
+the author's25-stack/1000kg approval and delegated historical mass calculation.
+Kept ordinary chest behavior, accepted furnishing positions and map bytes.
+Recorded source prompt, source image, physical inputs and deterministic outputs.
+
+145 executed native PASS and zero static errors; matched render-callback P95/P99 show no material regression. Native evidence distinguishes agent checks from pending CA410-WARDROBE-01.
+Earlier private fixtures queried newly spawned actors before PostBeginPlay,
+assumed diagnostic carry capacity survived inventory recalculation, and tried
+positions outside the bedroom/garden. Corrected the fixtures, retained their
+failed logs locally, and reran affected checks. The production installer sets
+the full collision size before testing its position. No failed trial counts as
+acceptance. Existing pending author checks were not retired; no issue was closed.
+
+Manufacturing/acquisition, remaining furniture and other V5.8 integration remain
+open. Current land permissions do not yet grant bedroom rearrangement. Multiplayer
+rest review remains explicitly deferred to V5.12.
 
 ## 5.8.23 - Constant Limbo exposure across absence (#502)
 

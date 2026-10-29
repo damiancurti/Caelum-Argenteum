@@ -36,6 +36,7 @@ class CaelumContainerRules : Object play
     }
     static clearscope String NameKey(int tier)
     {
+        if(tier==CaelumWardrobeData.DISPLAY_TYPE)return "CA_FURNITURE_WARDROBE";
         switch(Clamp(tier,SMALL,LARGE))
         {
             case SMALL:return "CA_CONTAINER_SMALL";

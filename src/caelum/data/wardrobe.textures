@@ -1,0 +1,3 @@
+Sprite CWRDA0,128,128 { XScale 1.774224 YScale 1.774224 Offset 64,122 Patch "graphics/caelum/icons/furniture/wardrobe.png",0,0 }
+Sprite CWRDB0,128,128 { XScale 1.774224 YScale 1.774224 Offset 64,122 Patch "graphics/caelum/icons/furniture/wardrobe.png",0,0 }
+Sprite CWRDC0,128,128 { XScale 1.774224 YScale 1.774224 Offset 64,122 Patch "graphics/caelum/icons/furniture/wardrobe.png",0,0 }
