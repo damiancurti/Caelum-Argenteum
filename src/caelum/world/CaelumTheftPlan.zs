@@ -15,6 +15,7 @@ class CaelumTheftPlan : Object play
 {
     int Revision,Attempts;
     CaelumCombatActor Body;
+    CaelumTheftWorld World;
     String SourceMap;
     bool Away;
     double Stamp,NextDue,Remaining;
@@ -45,7 +46,9 @@ class CaelumTheftPlan : Object play
         let item=CaelumTheftTransfer.Select(Body,Accessible);
         if(item==null)return true;
         let chest=CaelumStashChest(item.Owner);
-        if(!CaelumTheftTransfer.Move(Body,chest,item))return true;
+        if(World!=null)World.BeforeTransfer(item,at);
+        if(!CaelumTheftTransfer.Move(Body,chest,item,World!=null))return true;
+        if(World!=null)World.AfterTransfer(Body,item);
         let receipt=new('CaelumTheftReceipt');receipt.Item=item;receipt.Source=chest;
         receipt.Victim=chest.LawfulOwner;receipt.SourceMap=SourceMap;receipt.When=at;receipt.Units=item.Amount;
         Receipts.Push(receipt);return true;

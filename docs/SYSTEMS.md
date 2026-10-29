@@ -15,8 +15,20 @@ Physical theft access now passes 16 additional native checks, including actual
 PolyObject door faces, keys, arena restrictions, obstacles and height. A bounded
 collision query proves the route without moving actors or opening real doors;
 unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
-point queries. Production chronological dispatch and #417 registration remain
-pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+point queries. The subsequent chronological integration is described below;
+#417 registration remains pending. Evidence: `assets/validation_5851/theft-access-results.json`.
+
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
 
 The theft transaction retains actual whole inventory instances, including food
 lots, liquid volume/temperature/quality, equipment identity and wear. It selects
@@ -29,8 +41,8 @@ The saved explicit theft plan tracks one opportunity per absent world hour,
 retaining partial progress across returns without counting observed map time.
 Receipts retain the actual source region, victim, item and timestamp. Discovery
 is per victim on regional return, independent of any later thief travel. No
-existing resident is marked as a thief. Route capture, chronological dispatch
-and the approved #417 survivors still need integration before this is gameplay.
+existing resident is marked as a thief. The approved #417 survivors and regional
+access still need integration before campaign content can exercise this service.
 
 The pending round implementation follows the approved one-world-second,
 simultaneous mean-damage model and converts active durations through the source

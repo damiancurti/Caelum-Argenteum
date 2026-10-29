@@ -89,3 +89,13 @@ for case in ["quiet", "quietsave", "weather"]:
 (W/"theftplan.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_plan; save theft-plan; wait 10; quit\n")
 (W/"theftplanload.cfg").write_text("wait 1; netevent ca415t_planload; wait 1; quit\n")
 (W/"theftaccess.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_access; wait 10; quit\n")
+
+for scenario in ["dispatch", "deathdispatch"]:
+    (W / ("theft" + scenario + ".cfg")).write_text(f"wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_{scenario}; wait 10; quit\n")
+
+(W/"thefthub.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_depart; wait 35; netevent ca415t_return; wait 2; netevent ca415_await 8\n")
+
+(W/"theftdispatchsave.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_dispatchsave; save theft-arrival-partial; wait 10; quit\n")
+(W/"theftdispatchload.cfg").write_text("wait 1; netevent ca415_await 9\n")
+
+(W/"theftcombatdispatch.cfg").write_text("wait 105; netevent ca415t_prepare; netevent ca415t_enemy; wait 3; netevent ca415t_combatdispatch; wait 10; quit\n")

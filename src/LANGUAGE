@@ -6899,3 +6899,8 @@ CA_DECOR_HINT = "{bind:+crouch} + {bind:+use}: transportar decoración";
 CA_REGION_PREPARING = "Preparing the region...";
 [es]
 CA_REGION_PREPARING = "Preparando la región...";
+
+[enu default]
+CA_ABSENT_THEFT_FOUND = "On returning, you discover %d missing inventory stacks from your storage.";
+[es]
+CA_ABSENT_THEFT_FOUND = "Al regresar, descubres que faltan %d pilas de objetos de tus contenedores.";

@@ -1,9 +1,10 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "674a0f8e92626e6e0109ddc2c7394496dd2580934aff3e4191d922dff1d66810",
+  "sha256": "b704e5a0c2e907c7a89d57e223be0fe61793ea9152f260093e3dc91a8acdd292",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
+    "CA_ABSENT_THEFT_FOUND": {"enu":[[6904,6904]],"default":[[6904,6904]],"es":[[6906,6906]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[1033,1033]],"default":[[1033,1033]],"es":[[1728,1728]]},
     "CA_ADRENALINE_EVENT_DAMAGE": {"enu":[[1028,1028]],"default":[[1028,1028]],"es":[[1723,1723]]},
     "CA_ADRENALINE_EVENT_ENEMY_KILL": {"enu":[[1032,1032]],"default":[[1032,1032]],"es":[[1727,1727]]},

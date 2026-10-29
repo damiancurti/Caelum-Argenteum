@@ -21,6 +21,18 @@ unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
 point queries. Production chronological dispatch and #417 registration remain
 pending. Evidence: `assets/validation_5851/theft-access-results.json`.
 
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
+
 Added actual whole-stack theft transactions and a saved explicit hourly plan;
 37 native assertions cover commercial selection/capacity, native and paired
 locks, ownership, food/water/equipment state, saved deadlines and victim-only

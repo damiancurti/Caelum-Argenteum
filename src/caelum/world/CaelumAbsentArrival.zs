@@ -7,9 +7,13 @@ class CaelumAbsentArrival : Actor
     CaelumPlayer Observer;
     Array<CaelumAbsentBattle> Battles;
     Array<CaelumCombatActor> Bodies;
+    CaelumTheftWorld Theft;
     int BattleCursor,BodyCursor,Serial,Pulses;
+    int DispatchRevision;
     bool Running,Prepared,IntervalPending,WasFrozen;
     double TargetTime,CivilEnd,LimboEnd;
+    double TheftBoundary;
+    bool FinalBoundary;
 
     static CaelumAbsentArrival Find()
     {
@@ -34,6 +38,7 @@ class CaelumAbsentArrival : Actor
             {encounter.AbsentBattle.Reanchor(encounter,user);job.Battles.Push(encounter.AbsentBattle);}
         let actors=ThinkerIterator.Create('CaelumCombatActor');CaelumCombatActor body;
         while((body=CaelumCombatActor(actors.Next()))!=null)job.Bodies.Push(body);
+        job.Theft=CaelumTheftWorld.Find();job.NextBoundary();job.DispatchRevision=1;
         job.Running=true;job.WasFrozen=level.isFrozen();level.setFrozen(true);
         let events=CaelumAbsentArrivalEvents.Get();if(events!=null)events.Job=job;
         Menu.SetMenu('CaelumAbsentArrivalMenu');
@@ -45,7 +50,7 @@ class CaelumAbsentArrival : Actor
         let battle=Battles[BattleCursor];
         if(!Prepared)
         {
-            TargetTime=EndFor(battle.SourceMap);
+            TargetTime=StageEnd(battle.SourceMap);
             if(!battle.Away || battle.SourceMap!=level.MapName || TargetTime<0
                 || battle.SchemaRevision!=CaelumAbsentBattle.REVISION || !battle.RebindResidents())return true;
             Prepared=true;battle.Busy=true;
@@ -69,7 +74,9 @@ class CaelumAbsentArrival : Actor
         {battle.StartScheduled();return false;}
         if(battle.Fraction>0.000000001)
         {StartInterval(battle,TargetTime,battle.Fraction);return false;}
-        battle.Fraction=0;battle.SimulationTime=TargetTime;battle.FinishRestore();return true;
+        battle.Fraction=0;battle.SimulationTime=TargetTime;
+        if(FinalBoundary)battle.FinishRestore();else battle.Busy=false;
+        return true;
     }
     void StartInterval(CaelumAbsentBattle battle,double end,double seconds)
     {
@@ -78,6 +85,15 @@ class CaelumAbsentArrival : Actor
     }
     double EndFor(String map)
     {return CaelumWorldCatalogue.IsLimboMap(map)?LimboEnd:CivilEnd;}
+    void NextBoundary()
+    {
+        FinalBoundary=true;
+        if(Theft==null || !Theft.Away)return;
+        double end=EndFor(Theft.SourceMap);TheftBoundary=Theft.Boundary(end);
+        FinalBoundary=TheftBoundary>=end;
+    }
+    double StageEnd(String map)
+    {return !FinalBoundary && Theft!=null && map==Theft.SourceMap?Min(EndFor(map),TheftBoundary):EndFor(map);}
     bool BodyStep()
     {
         let body=Bodies[BodyCursor];if(body==null || body.bDestroyed)return true;
@@ -88,7 +104,7 @@ class CaelumAbsentArrival : Actor
             let absent=body.ContaminationAbsence;
             if(absent!=null && absent.Away)
             {
-                double end=EndFor(absent.Map);
+                double end=StageEnd(absent.Map);
                 if(end>absent.Stamp && absent.Life>0
                     && absent.Revision==CaelumContaminationData.NPC_ABSENCE_REVISION)
                 {
@@ -98,10 +114,10 @@ class CaelumAbsentArrival : Actor
                     double step=Min(1/scale,(Floor(absent.Civil/60)+1)*60-absent.Civil);
                     absent.SyncTo(body,Min(end,absent.Stamp+step));return false;
                 }
-                CaelumContaminationAbsence.Restore(body,Observer,end);
+                if(FinalBoundary)CaelumContaminationAbsence.Restore(body,Observer,end);
             }
         }
-        if(body.ThermalState!=null)
+        if(FinalBoundary && body.ThermalState!=null)
         {
             body.ThermalState.RuntimeReady=false;body.ThermalState.SourceMap="";
             body.ThermalState.PendingActivityJoules=0;body.ThermalState.PropelledVelocity=(0,0);
@@ -111,6 +127,9 @@ class CaelumAbsentArrival : Actor
     void Advance()
     {
         if(!Running)return;
+        // Los trabajos guardados antes de conectar robos ya apuntaban a su
+        // fecha final. Conservar cursores y trabajo pendiente sin reiniciarlos.
+        if(DispatchRevision==0){DispatchRevision=1;FinalBoundary=true;}
         Pulses++;double started=MSTimeF();
         do
         {
@@ -118,7 +137,18 @@ class CaelumAbsentArrival : Actor
             {if(BattleStep()){BattleCursor++;Prepared=false;IntervalPending=false;}}
             else if(BodyCursor<Bodies.Size())
             {if(BodyStep())BodyCursor++;}
-            else {Running=false;level.setFrozen(WasFrozen);return;}
+            else
+            {
+                if(Theft!=null && Theft.Away)
+                {
+                    double end=FinalBoundary?EndFor(Theft.SourceMap):TheftBoundary;
+                    if(!Theft.Step(end))continue;
+                    if(!FinalBoundary)
+                    {NextBoundary();BattleCursor=BodyCursor=0;Prepared=IntervalPending=false;continue;}
+                    Theft.Finish(Observer,end);
+                }
+                Running=false;level.setFrozen(WasFrozen);return;
+            }
         }while(MSTimeF()-started<PULSE_BUDGET_MS);
     }
     Default { +NOGRAVITY +NOBLOCKMAP +NOSECTOR +INVISIBLE Radius 0; Height 0; }

@@ -45,11 +45,14 @@ class CaelumTheftAccess : Object play
     CaelumTheftTrace Sight;
     int Checks;
 
-    void Prepare(CaelumCombatActor body)
+    void Prepare(CaelumCombatActor body,bool census=true)
     {
-        self.Body=body;Checks=0;Doors.Clear();
-        let search=ThinkerIterator.Create('CaelumSlidingDoorLeaf');CaelumSlidingDoorLeaf leaf;
-        while((leaf=CaelumSlidingDoorLeaf(search.Next()))!=null)Doors.Push(leaf);
+        self.Body=body;Checks=0;
+        if(census)
+        {
+            Doors.Clear();let search=ThinkerIterator.Create('CaelumSlidingDoorLeaf');CaelumSlidingDoorLeaf leaf;
+            while((leaf=CaelumSlidingDoorLeaf(search.Next()))!=null)Doors.Push(leaf);
+        }
         Probe=CaelumTheftProbe(Actor.Spawn('CaelumTheftProbe',body.Pos,NO_REPLACE));
         FloorProbe=CaelumTheftFloorProbe(Actor.Spawn('CaelumTheftFloorProbe',body.Pos,NO_REPLACE));
         Probe.Query=self;Probe.Subject=body;Probe.A_SetSize(body.Radius,body.Height);

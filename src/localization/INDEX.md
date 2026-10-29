@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `674a0f8e92626e6e0109ddc2c7394496dd2580934aff3e4191d922dff1d66810`. Locations include every definition; the last one per language wins.
+SHA-256: `b704e5a0c2e907c7a89d57e223be0fe61793ea9152f260093e3dc91a8acdd292`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -14,6 +14,7 @@ including shared UI/system keys and dynamically selected text.
 | Key group | Keys | First key | Last key |
 | --- | ---: | --- | --- |
 | CA_ABILITY | 1 | CA_ABILITY_USED_SUCCESSFULLY | CA_ABILITY_USED_SUCCESSFULLY |
+| CA_ABSENT | 1 | CA_ABSENT_THEFT_FOUND | CA_ABSENT_THEFT_FOUND |
 | CA_ADRENALINE | 9 | CA_ADRENALINE_EVENT_ALLY_DEATH | CA_ADRENALINE_EVENT_SHIELD_BLOCK |
 | CA_AF | 25 | CA_AF_ACCESSORY_DETAIL | CA_AF_TAKE_SILVER |
 | CA_AGENDA | 20 | CA_AGENDA_CARGO_INFO | CA_AGENDA_TRIAL |

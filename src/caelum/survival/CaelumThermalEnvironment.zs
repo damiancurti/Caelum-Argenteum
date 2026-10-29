@@ -79,10 +79,15 @@ class CaelumThermalWorld : StaticEventHandler
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
         {user=CaelumPlayer(players[i].mo);break;}
         if(user==null)return;
+        Array<CaelumCombatActor> thieves;
         let actors=ThinkerIterator.Create('CaelumCombatActor',Thinker.STAT_DEFAULT);CaelumCombatActor body;
         while((body=CaelumCombatActor(actors.Next()))!=null)
+        {
             CaelumContaminationAbsence.Capture(body,user);
+            if(body.AbsentTheft!=null)thieves.Push(body);
+        }
         CaelumAbsentBattles.Capture(user);
+        CaelumTheftWorld.Capture(user,thieves);
     }
     override void WorldLoaded(WorldEvent e)
     {

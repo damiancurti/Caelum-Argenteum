@@ -105,16 +105,17 @@ class CaelumTheftTransfer : Object play
         }
         return best;
     }
-    static bool Move(CaelumCombatActor thief,CaelumStashChest chest,Inventory item)
+    static bool Move(CaelumCombatActor thief,CaelumStashChest chest,Inventory item,bool historical=false)
     {
         if(thief==null || thief.bDestroyed || thief.health<=0 || !KeyAccess(chest,thief)
             || !Eligible(chest,item) || Weight(item)>Max(0,Capacity(thief)-Carried(thief)))return false;
         // Conservar la instancia completa conserva lotes, agua, temperatura,
         // suciedad, desgaste e identidad. No fusionar ni generar reemplazos.
-        CaelumFoodInventory.Reconcile(item);
+        if(!historical)CaelumFoodInventory.Reconcile(item);
         ResolveEquipment(CaelumEquipmentItem(item));
         chest.RemoveInventory(item);item.AttachToOwner(thief);
-        CaelumContainerRules.SetBoxed(item,false);CaelumFoodInventory.Relocate(item);
+        CaelumContainerRules.SetBoxed(item,false);
+        if(!historical)CaelumFoodInventory.Relocate(item);
         let maintenance=thief.GetActorMaintenance();if(maintenance!=null)maintenance.WeightReady=false;
         return item.Owner==thief;
     }

@@ -64,6 +64,7 @@ class CaelumCombatActor : Actor
     CaelumThermalState ThermalState;
     transient CaelumContaminationNPC ContaminationExposure;
     CaelumContaminationAbsence ContaminationAbsence;
+    CaelumTheftPlan AbsentTheft;
     transient CaelumContaminationState ContaminationBody;
     transient bool ContaminationBodyReady;
     CaelumContaminationContacts ContaminationContacts;
@@ -1125,6 +1126,7 @@ class CaelumCombatActor : Actor
 
     double CalculateAttackCarriedWeight()
     {
+        if(AbsentTheft!=null)return CaelumTheftTransfer.Carried(self);
         double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
         for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
         {

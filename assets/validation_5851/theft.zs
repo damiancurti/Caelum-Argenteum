@@ -5,11 +5,12 @@ class CA415TheftObstacle : Actor
 }
 class CA415TheftChecks : EventHandler
 {
-    CaelumCombatActor Thief;
+    CaelumCombatActor Thief,Enemy;
     CaelumStashChest FirstChest,SecondChest;
     Inventory Taken;
     CaelumEquipmentItem Gear;
     CaelumTheftPlan Plan;
+    CaelumAbsentArrival SavedJob;
     int Passed,Failed;
     void Check(bool value,String label)
     {if(value)Passed++;else Failed++;Console.Printf("CA415T %s %s",value?"PASS":"FAIL",label);}
@@ -162,14 +163,145 @@ class CA415TheftChecks : EventHandler
         Check(!query.Point((-480,-100,0),(-512,-100),floor),"ordinary world walls cannot use the door exception");
         query.Close();
     }
+    void Dispatch(CaelumPlayer user,bool fatal,bool partial=false,bool combat=false)
+    {
+        Check(Thief.AbsentTheft==null,"ordinary actor has no absent theft behavior");
+        CaelumTheftWorld.Register(Thief);CaelumTheftWorld.Register(Thief);
+        Thief.CombatToughness=fatal?0:100;
+        Thief.CombatMaximumHealth=100;Thief.health=fatal?1:100;
+        CaelumContaminationStorage.Set(Thief,fatal && !combat?100:0);
+        FirstChest.GrantLawfulTitle(user);SecondChest.GrantLawfulTitle(user);
+        user.SetOrigin((128,128,0),false);
+        Thief.SetOrigin((384,128,0),false);FirstChest.SetOrigin((480,128,0),false);SecondChest.SetOrigin((384,208,0),false);
+        let gold=Material(FirstChest,CaelumConstants.MATERIAL_GOLD_INGOT,100);
+        let food=CaelumConsumableItem(Put('CaelumFoodRation',SecondChest,2));
+        let lots=CaelumFoodInventory.Prepare(food);lots.Lots.Clear();lots.Add(1,20,1);lots.Add(1,40,2);
+        CaelumContaminationAbsence.Capture(Thief,user);
+        let absent=Thief.ContaminationAbsence;double start=absent.Stamp;
+        absent.Exposure=null;
+        if(fatal){absent.Life=1;absent.Idle=false;}
+        Array<CaelumCombatActor> thieves;thieves.Push(Thief);
+        CaelumTheftWorld.Capture(user,thieves);let world=CaelumTheftWorld.Find();
+        Check(world!=null && world.Away && world.Plans.Size()==1,"explicit registration is captured by the production map authority");
+        let expected=CaelumFoodInventory.GetLots(food).Copy();
+        let originalClimate=CaelumFoodClock.Get(food).Climate.Copy();originalClimate.Advance(expected,7200);
+        let carriedClimate=absent.Climate.Copy();carriedClimate.CivilSeconds+=7200;carriedClimate.Advance(expected,17);
+        Check(Thief.AbsentTheft.Accessible.Find(FirstChest)<Thief.AbsentTheft.Accessible.Size()
+            && Thief.AbsentTheft.Accessible.Find(SecondChest)<Thief.AbsentTheft.Accessible.Size(),"departure proves actual reachable container routes");
+        let job=CaelumAbsentArrival(Actor.Spawn('CaelumAbsentArrival',(0,0,0),NO_REPLACE));
+        job.Observer=user;job.Theft=world;job.Bodies.Push(Thief);
+        job.CivilEnd=start+7217;job.LimboEnd=start+7217;job.Running=true;job.DispatchRevision=1;job.NextBoundary();
+        if(combat)
+        {
+            Enemy.SetOrigin(Thief.Pos+(0,-64,0),false);
+            Thief.bFriendly=true;Enemy.bFriendly=false;Thief.target=Enemy;Enemy.target=Thief;
+            Thief.CombatArmor=null;Thief.EffectiveCombatEvasionChance=0;
+            Enemy.health=Enemy.CombatMaximumHealth=1000000;
+            Enemy.CurrentCombatAnima=Enemy.MaximumCombatAnima;Enemy.CurrentCombatAir=Enemy.MaximumCombatAir;
+            CaelumContaminationAbsence.Capture(Enemy,user);
+            let battle=new('CaelumAbsentBattle');battle.SourceMap=level.MapName;battle.Stamp=start;
+            battle.SimulationTime=start;battle.ActiveScale=.05;battle.Observer=user;
+            battle.SchemaRevision=CaelumAbsentBattle.REVISION;battle.Away=true;
+            let first=battle.Add(Thief);let second=battle.Add(Enemy);first.Opponent=second;second.Opponent=first;
+            job.Battles.Push(battle);job.Bodies.Push(Enemy);
+        }
+        if(partial)
+        {
+            int limit=0;while(!job.BodyStep() && limit++<10000){}
+            job.BodyCursor=1;SavedJob=job;Taken=gold;
+            Check(job.Running && Thief.AbsentTheft.Attempts==0 && Thief.AbsentTheft.Due(absent.Stamp)
+                && gold.Owner==FirstChest,"saved arrival stops after physiology and before the due ownership transaction");
+            return;
+        }
+        int limit=0;while(job.Running && limit++<10000)job.Advance();
+        Check(!job.Running && !world.Away && !Thief.AbsentTheft.Away,"production dispatcher finishes all boundaries and restores native bodies");
+        Check(Thief.AbsentTheft.Attempts==2 && Abs(Thief.AbsentTheft.Remaining-3583)<.001,"two hours produce two opportunities and preserve the partial third hour");
+        if(fatal)
+        {
+            Check(Thief.health<=0 && gold.Owner==FirstChest && food.Owner==SecondChest,combat?"combat death before the deadline prevents every later theft":"illness death before the deadline prevents every later theft");
+            Check(Thief.AbsentTheft.Receipts.Size()==0,"no loss receipt is fabricated for a deceased thief");
+        }
+        else
+        {
+            Check(gold.Owner==Thief && food.Owner==Thief,"chronological dispatch transfers both actual inventory instances");
+            Check(Thief.AbsentTheft.Receipts.Size()==2 && Thief.AbsentTheft.Receipts[0].Item==gold
+                && Thief.AbsentTheft.Receipts[0].When==start+3600 && Thief.AbsentTheft.Receipts[1].When==start+7200,
+                "value order and actual hourly loss dates survive dispatch");
+            let retained=CaelumFoodInventory.GetLots(food);
+            Check(retained.Lots.Size()==2 && retained.Contamination(0)>=20 && retained.Contamination(1)>=40
+                && retained.Lots[0].CreatedStamp==1 && retained.Lots[1].CreatedStamp==2,"food keeps distinct age and contamination through historical ownership changes");
+            Check(Abs(retained.Contamination(0)-expected.Contamination(0))<.000001
+                && Abs(retained.Contamination(1)-expected.Contamination(1))<.000001,"food ages once in its original climate until theft and in the carrier climate afterward");
+            Check(Thief.AbsentTheft.Receipts.Size()==2 && Thief.AbsentTheft.Receipts[0].Known && Thief.AbsentTheft.Receipts[1].Known,
+                "the returning owner discovers actual losses at completion");
+            Check(Abs(Thief.CalculateAttackCarriedWeight()-CaelumTheftTransfer.Carried(Thief))<.000001,
+                "stolen materials contribute to the native attack load");
+        }
+        int attempts=Thief.AbsentTheft.Attempts;job.Advance();
+        Check(Thief.AbsentTheft.Attempts==attempts,"repeating a completed arrival cannot replay theft");
+    }
+    void DispatchLoaded()
+    {
+        Check(SavedJob!=null && !SavedJob.Running && SavedJob.Theft!=null && !SavedJob.Theft.Away,
+            "saved partial chronological dispatcher resumes to completion");
+        Check(Thief.AbsentTheft.Attempts==2 && Taken.Owner==Thief && Taken.Amount==100,
+            "saved pending ownership transaction commits exactly once");
+        Check(Thief.AbsentTheft.Receipts.Size()==2 && Thief.AbsentTheft.Receipts[0].Item==Taken,
+            "saved pending dispatcher retains receipt and item identity");
+        Check(Abs(Thief.AbsentTheft.Remaining-3583)<.001 && !Thief.ContaminationAbsence.Away,
+            "saved dispatcher retains partial next hour and restores physiology");
+        Check(!CaelumAbsentArrivalEvents.Active() && !level.isFrozen(),"saved theft arrival releases the temporary native freeze");
+    }
+    void HubStart(CaelumPlayer user)
+    {
+        user.SetOrigin((128,128,0),false);
+        Thief.SetOrigin((384,128,0),false);FirstChest.SetOrigin((480,128,0),false);SecondChest.SetOrigin((384,208,0),false);
+        Thief.ChangeTID(915415);FirstChest.ChangeTID(915416);SecondChest.ChangeTID(915417);
+        Thief.CombatToughness=100;Thief.CombatMaximumHealth=Thief.health=100;
+        CaelumTheftWorld.Register(Thief);FirstChest.GrantLawfulTitle(user);SecondChest.GrantLawfulTitle(user);
+        Taken=Material(FirstChest,CaelumConstants.MATERIAL_GOLD_INGOT,100);
+        Material(SecondChest,CaelumConstants.MATERIAL_WOOD,100);
+        level.ChangeLevel("MAP01",0,CHANGELEVEL_NOINTERMISSION,-1);
+    }
+    void HubReturn(CaelumPlayer user)
+    {
+        let clock=CaelumWorldClock.Get(user);let calendar=CaelumCalendarState.Get(user,true);
+        int day=calendar.DateSerial(clock),ticks=calendar.CivilDayTics(clock)+2*CaelumWorldClock.TicsPerHour();
+        calendar.SetAnchor(clock,day+ticks/CaelumWorldClock.TicsPerDay(),ticks%CaelumWorldClock.TicsPerDay(),false);
+        level.ChangeLevel("CABS415B",0,CHANGELEVEL_NOINTERMISSION,-1);
+    }
+    void HubDone()
+    {
+        let thief=CaelumCombatActor(ActorIterator.Create(915415).Next());
+        let first=CaelumStashChest(ActorIterator.Create(915416).Next());
+        let world=CaelumTheftWorld.Find();
+        Check(thief!=null && thief==Thief && world!=null && !world.Away,"native hub return keeps the actual thief and completed map authority");
+        Check(thief!=null && thief.AbsentTheft!=null && thief.AbsentTheft.Attempts==2,"departure and arrival hooks resolve two absent world hours");
+        if(thief==null || thief.AbsentTheft==null)return;
+        Check(thief.AbsentTheft.Receipts.Size()==2 && Taken.Owner==thief && Taken.Amount==100,
+            "actual native hub transfer retains the stolen inventory object and quantity");
+        Check(first==FirstChest && !thief.ContaminationAbsence.Away,"actual chest and physiology resume without duplicate owners");
+        Check(thief.AbsentTheft.Receipts.Size()==2 && thief.AbsentTheft.Receipts[0].Known
+            && thief.AbsentTheft.Receipts[1].Known,"native return discloses each actual loss to its owner");
+        Check(!CaelumAbsentArrivalEvents.Active() && !level.isFrozen(),"arrival restores play after chronological theft");
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=="ca415t_prepare"){Prepare(CaelumPlayer(players[consoleplayer].mo));return;}
+        if(e.Name=="ca415t_enemy"){Enemy=CaelumCombatActor(Actor.Spawn('CA415RoundDemon',(1400,128,0),NO_REPLACE));return;}
+        if(e.Name=="ca415t_depart"){HubStart(CaelumPlayer(players[consoleplayer].mo));return;}
+        if(e.Name=="ca415t_return"){HubReturn(CaelumPlayer(players[consoleplayer].mo));return;}
         Passed=Failed=0;
         if(e.Name=="ca415t_transfer")Transfers();else if(e.Name=="ca415t_load")Loaded();
         else if(e.Name=="ca415t_plan")Planned(CaelumPlayer(players[consoleplayer].mo));
         else if(e.Name=="ca415t_planload")PlanLoaded();else if(e.Name=="ca415t_access")Access();
-        else if(e.Name=="ca415t_doors")NativeDoors();else return;
+        else if(e.Name=="ca415t_doors")NativeDoors();
+        else if(e.Name=="ca415t_dispatch")Dispatch(CaelumPlayer(players[consoleplayer].mo),false);
+        else if(e.Name=="ca415t_deathdispatch")Dispatch(CaelumPlayer(players[consoleplayer].mo),true);
+        else if(e.Name=="ca415t_hubdone")HubDone();
+        else if(e.Name=="ca415t_dispatchsave")Dispatch(CaelumPlayer(players[consoleplayer].mo),false,true);
+        else if(e.Name=="ca415t_dispatchloaded")DispatchLoaded();
+        else if(e.Name=="ca415t_combatdispatch")Dispatch(CaelumPlayer(players[consoleplayer].mo),true,false,true);else return;
         Console.Printf("CA415T RESULT passed=%d failed=%d",Passed,Failed);
     }
 }

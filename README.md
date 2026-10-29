@@ -22,7 +22,8 @@ start the siege at its authored calendar boundary and admit real residents;
 First arrival after the deadline also resolves a previously unvisited city.
 Original-save preservation passes 21 scenario checks. Theft transactions and
 saved deadlines pass 37 native checks; physical access passes another 16.
-Chronological dispatch remains unfinished. See `assets/validation_5851/legacy-results.json` and `theft-results.json`.
+Native chronological dispatch passes 58 further scenario assertions; #417
+survivor registration and regional access remain pending. See `assets/validation_5851/legacy-results.json` and `theft-results.json`.
 Reopening a region now uses saved, bounded round phases behind a paused loading
 menu. Partial save/load preserves pending simultaneous damage and resources;
 native clocks remain paused until the work finishes. This prevents long single

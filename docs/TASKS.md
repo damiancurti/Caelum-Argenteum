@@ -98,13 +98,25 @@ unproved paths deny access. The isolated route fixture takes 1.437 ms for 1,679
 point queries. Production chronological dispatch and #417 registration remain
 pending. Evidence: `assets/validation_5851/theft-access-results.json`.
 
+Explicitly registered thieves now connect to native departure and staged arrival.
+All encounters and NPC physiology advance to each due theft boundary before
+actual ownership changes; deaths prevent later theft. A shared departure-only
+container/door census proves physical access. Food keeps its source climate up
+to the theft and its carrier climate afterward, without duplicate aging.
+Stolen materials count toward native attack load. The saved job resumes across
+an ownership boundary and accepts the preceding arrival schema. Native hub,
+illness/combat death, exact food aging, partial save/load and prior arrival-save
+checks pass 58 assertions (including repeated setup and harness assertions).
+Evidence: `assets/validation_5851/theft-dispatch-results.json`. Existing residents
+are unchanged; #417 survivor registration and regional access remain pending.
+
 The theft transfer and saved-clock foundation now passes 37 native assertions:
 highest-value fitting whole stacks, actual owner transfer, native/paired keys,
 failed/replayed transfers, retained food lots/liquids/equipment, hourly deadlines,
 partial progress, death and regional victim discovery. No current NPC is marked
-as a thief. Still connect validated physical access, chronological encounter/
-physiology dispatch and #417 survivors; these helper checks do not complete the
-theft feature. Evidence: `assets/validation_5851/theft-results.json`.
+as a thief. Physical access and chronological dispatch are connected in the
+subsequent checkpoint above; #417 survivors and regional access still need
+integration to complete campaign theft. Evidence: `assets/validation_5851/theft-results.json`.
 
 The latest catch-up checkpoint reduces the synthetic quiet hour from 5.951 s
 CPU / 51.591 s staged wall time to 0.317 s CPU / 1.454 s staged wall time. It
