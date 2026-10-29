@@ -2,6 +2,33 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+## V5.8 completion - 2026-10-29 (#403)
+
+V5.8 is complete at **5.8.56**. The author confirmed every remaining correction
+test and explicitly authorized integration and issue closure. Issues #410-417,
+#496 and #502 are completed; their focused commits and PR ancestry are retained
+in main. Stable acceptance IDs, original versions and dates are recorded in
+HISTORY; the tracked pending_test.txt is empty.
+
+Cooperative rest authority, shared-clock integration and multi-client verification
+remain deferred by the author to V5.12 (#435-437). They are not claimed as tested
+or delivered by this single-player release. The documented long-absence loading
+cost and unavailable ETW presentation measurements remain limitations; author
+acceptance of the corrected city slowdown is not a claim of 60 displayed FPS.
+
+Earlier delivery checkpoints below are historical. Their pending statements are
+superseded by this completion record and the per-test confirmations in HISTORY.
+Next implementation follows the existing V5.9 roadmap; no new scope is opened
+by this release consolidation.
+
+Closure validation: the static project validator passes, documentation indexes
+are fresh, and the final source runtime is identical to the author-approved
+5.8.56 correction package. This acceptance/integration change adds no gameplay
+and does not repeat already accepted native tests. The original documentation-only
+#410 side commit2997cf66f is retained through a real ancestry merge, preserving its
+approved capacities and water-reserve decisions. Local uncommitted files are
+preserved; consolidation removes branch references only, not auxiliary files.
+
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 
 Native validation: CABAIRES automatically selects the encoded track, PASS. See `assets/validation_5856/RESULTS.md`. Author listening remains pending.

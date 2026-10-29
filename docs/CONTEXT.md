@@ -2,51 +2,25 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
-**5.8.56/#416:**Ciudad-bound;author-pending.
+**V5.8 complete at5.8.56 (2026-10-29):** author accepted all corrections;
+#410-417/#496/#502 integrated into main. pending_test.txt is empty;
+acceptance IDs/origins/dates remain in HISTORY. Older pending checkpoints are
+historical.
 
-**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850.
+Final corrections: #410 Use refill plus R, bedding/canopy, large landscape/statue;
+#415 bounded Rally queries; #416 Ciudad on CABAIRES. Evidence:validation_5854-56.
 
-**5.8.51/#415:**ready;PR545;city-day77.45s;author-pending.
-**5.8.52-53/#416-417:**network/BA/incidents;validation_5852-53;author-pending.
+Scope: furniture/food/cooking#410, property/camp#411, solo-rest#412, altitude#413,
+connected-water#414, absent-world#415, transport/Buenos-Aires#416, incidents#417,
+music#496, hygiene#502. Evidence:assets/validation_580 through validation_5856.
 
-**5.8.47-49/#502:** stack/vessel/physical-food exposure;validation_5847-49;49:1190+2PASS;generic-adapters/#415-417-pending.
+Multiplayer authority/shared-clock work and verification: deferred toV5.12
+(#435-437). Long-absence loading remains expensive; city render-callback
+mean1125.93→28.34ms. ETW denied; no60-displayed-FPS claim. Preserve local queries
+and typed registries; no routine global scans.
 
-**5.8.43-46:**housekeeping/decor/dining-contact/absent-NPC;validation_5843-46.
-
-**5.8.42/#502:**furnishing dirt/history persistence;validation_5842;unloaded-work-pending.
-**5.8.41/#502:**home-coffer persistence;validation_5841;unloaded-work-pending.
-
-**5.8.40/#410:**dining/cargo;validation_5840;author-pending.
-**5.8.39/#415:**aim;194+16PASS;validation_5839;unloaded-rounds-pending.
-**5.8.37-38/#502:** seals53+4PASS; NPC illness71+2PASS; validation_5837-38.
-**5.8.30-36:** furniture acquisition/scale;validation_5830-36;36:468+19PASS;author-pending.
-**5.8.26-29:** stored books/interior placement/weather history/sofa seating; validation_5826-29; author-pending.
-
-**5.8.24-25/#410:** wardrobe/fountain/cistern; validation_5824-25; author-pending.
-
-**5.8.19-23:**integration;validation_5819-23;author-pending.
-
-**5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
-
-**5.8.15/#412:**outside-Use/rest/exit;73PASS;validation_5815;accepted2026-10-26. Co-op:V5.12. #410lots/#411trivet/#502checks:accepted;PR508/507/506.
-
-**5.8.11/#410:**160 house bathrooms,200L/reserve;220PASS;CA410-BATH-01accepted2026-10-25;validation_5811.
-
-**5.8.9/#502:** C90/Sick; persistent state; player/equipment ambient exposure;92+30+66PASS. Immersion 71PASS;supplies 92PASS;both author-accepted2026-10-25. Treatment31PASS;accepted2026-10-26. Rain22PASS;immersion-wash60PASS/author-accepted. Metabolic-credit36PASS;toilet action/baths/surfaces/NPC/contact pending;validation_589.
-
-**5.8.8/#411:** placement46PASS;tents112+125PASS. CA411-TENT-01 accepted2026-10-25,4x3m/model included. Fire/cooking/rest pending;validation_588/deploy.
-
-**5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587.
-
-**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/CA411-EQUIPMENT-01accepted2026-10-24;deployment/cooking-WIP;validation_586/camp.
-**5.8.5/#415:**discovery accepted2026-10-24;unloaded-battles-WIP.
-
-**5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.
-
-**5.8.3/#410:** core/HUD+isolated-lot-model;inventory/cooking/furniture-WIP. SYSTEMS/validation_583;40+38PASS;CA410-CORE-01accepted2026-10-24.
-**5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.
-**5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
-**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
+Next: existing V5.9 roadmap. Main is consolidated; auxiliary worktrees retained
+detached, local files preserved.
 
 **V5.7:**complete;HISTORY.
 
