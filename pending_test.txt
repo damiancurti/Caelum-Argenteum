@@ -274,3 +274,15 @@ Fire/Water seals, a normal regional climate and a nearby map transition.
 4. Leave while channeling, wait elsewhere and return. Contamination follows the
    original region's natural weather and rain while absent, without retaining
    the departed seal. Repeat return/load to check idempotence.
+
+CA502-NPC-ILLNESS-01 | 5.8.38 | #502
+Prerequisites: grouped V5.8 handoff build; native NPC illness scenario; existing
+NPC exposure acceptance is retained. Do not hand off before full implementation.
+1. Observe a living NPC at50/60/90 contamination: no illness at50, progressive
+   Life loss above50, doubled rate from90. Toughness100 grants immunity.
+2. Observe an idle contaminated NPC with full Life: contamination decreases from
+   natural potential recovery. A busy NPC retains its existing recovery gate.
+3. Save during fractional damage and reload, then leave and return through the
+   diagnostic hub: Life, contamination and fractional damage retain their values;
+   the next active tic resumes once. No offline physiology is claimed by this test.
+Expected: shared illness rules, no physical armor wear, no duplicate body record.

@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
+
+## 5.8.38 / #502 - Loaded NPC physiology
+
+Completed thresholds, effective Toughness/immunity, active-time damage, native death,
+full-Life natural depuration, canonical carrier caching, current/prior saves and
+hub restoration. Accepted NPC exposure regressions pass. Evidence:71 current native
+PASS plus two original-runtime checks, zero failures/static errors. The 1,000-body
+illness callback measured3.298ms mean/12.096ms p95/12.449ms max; these are callback
+costs, not displayed-frame measurements. Unloaded physiology and household work
+remain separate scopes.
+Keep author checks grouped until all V5.8 implementation is complete.
 
 ## 5.8.37 / #502 - Seal object history
 

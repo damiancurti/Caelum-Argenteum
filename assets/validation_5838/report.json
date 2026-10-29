@@ -1,0 +1,96 @@
+{
+  "version": "5.8.38",
+  "issue": 502,
+  "runtime_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+  "native_passes": 71,
+  "original_runtime_passes": 2,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "releaseb-core",
+      "executed_passes": 14,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-recovery",
+      "executed_passes": 12,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-exposure",
+      "executed_passes": 20,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-seed",
+      "executed_passes": 1,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-load",
+      "executed_passes": 5,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-hub",
+      "executed_passes": 6,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-legacy",
+      "executed_passes": 6,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-live",
+      "executed_passes": 3,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-clock",
+      "executed_passes": 3,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "releaseb-perf",
+      "executed_passes": 1,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "prior-oldseed",
+      "executed_passes": 1,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5"
+    },
+    {
+      "label": "prior-oldcheck",
+      "executed_passes": 1,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5"
+    }
+  ],
+  "source_matching_package_members": 17011,
+  "preserved_map_art_members": 14049,
+  "prior_obj_line_endings_only": [],
+  "original_save_sha256": "394e564d69aae31577193f38545af4b6b08d8fa0c1cf36ced066df4be1e4f185",
+  "thousand_bodies_35_callbacks_ms": 115.4195,
+  "per_thousand_body_callback": {
+    "mean_ms": 3.2977,
+    "p95_ms": 12.0958,
+    "max_ms": 12.4485
+  },
+  "migration": "Original5.8.37 NPC save reopens unchanged in its original runtime; final38a retains body concentration/Life and initializes only new fractional damage. Current native save and real hub round trip preserve fractional damage and original carrier identity.",
+  "scope": "Loaded NPC illness, Toughness/immunity, active-time clock, native death/armor bypass, full-Life/wounded/busy natural recovery, medicine distinction, late carrier/cache rebuild and accepted exposure regressions.",
+  "performance_limit": "Measured1000 individual contaminated peaceful diagnostic bodies across35 direct per-body illness callbacks. Includes ordinary native damage handling, without new population scans. Callback tails are not frame-presentation tails or a displayed-FPS claim; unloaded physiology is outside this patch.",
+  "author_acceptance": "CA502-NPC-ILLNESS-01 pending grouped V5.8 handoff. Unloaded NPC physiology, household work, remaining adapters and other issues remain open."
+}

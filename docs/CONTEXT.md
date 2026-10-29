@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
 
-**5.8.37/#502:**seal-history;validation_5837;53+4PASS.
+**5.8.37-38/#502:** seals53+4PASS; NPC illness71+2PASS; validation_5837-38.
 **5.8.30-36:** furniture acquisition/scale;validation_5830-36;36:468+19PASS;author-pending.
 **5.8.26-29:** stored books/interior placement/weather history/sofa seating; validation_5826-29; author-pending.
 

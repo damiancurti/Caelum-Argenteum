@@ -2,6 +2,7 @@
 class CaelumContaminationData : Object
 {
     const STATE_REVISION = 1;
+    const NPC_PHYSIOLOGY_REVISION = 1;
     const SEVERE_THRESHOLD = 90.0;
     const SEVERE_DAMAGE_FACTOR = 2.0;
     const TREATMENT_DEGREES_PER_LIFE_RATIO = 10.0;

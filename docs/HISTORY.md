@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
+
+## 5.8.38 - Loaded NPC illness (#502, 2026-10-27)
+
+Connected the approved illness formula to native NPC ticks and sustained damage;
+added saved fractional damage without retroactive injury. Existing idle recovery
+also depurates at full Life. A per-owner transient cache retains the canonical body
+carrier and avoids repeated inventory searches. Validation in assets/validation_5838:
+71 current native PASS plus two original-runtime checks, zero failures/static errors.
+Actual prior-save migration/rollback, current save/hub restoration and native active
+ticks across an accelerated calendar pass. The 1,000-body illness callback measured
+3.298ms mean/12.096ms p95/12.449ms max across35 calls, including native individual
+damage handling. These are callback costs, not presented-frame/FPS evidence.
+CA502-NPC-ILLNESS-01 remains author-pending for the grouped V5.8 handoff. Unloaded
+physiology, household work and other issue scopes remain open.
 
 ## 5.8.37 - Seal object history (#502, 2026-10-27)
 

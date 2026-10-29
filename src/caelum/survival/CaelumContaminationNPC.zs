@@ -6,6 +6,36 @@ class CaelumContaminationNPC : Object play
     CaelumFoodIllness Body;
     int Count;
 
+    // El daño usa segundos activos, como el jugador; la exposición conserva
+    // su reloj mundial separado. El registro del cuerpo es la única autoridad.
+    static void IllnessStep(CaelumCombatActor npc)
+    {
+        if(npc==null || npc.health<=0 || !npc.CombatProfileInitialized)return;
+        let entry=CaelumContaminationStorage.Get(npc);if(entry==null)return;
+        entry.EnsurePhysiology();
+        if(entry.Revision<CaelumContaminationData.STATE_REVISION
+            || entry.Concentration<=CaelumFoodData.ILLNESS_THRESHOLD)return;
+        entry.DiseaseFraction+=CaelumFoodRules.DamagePerSecond(entry.Concentration,
+            npc.CombatMaximumHealth,CaelumToughnessRules.Effective(npc))/TICRATE;
+        int damage=int(entry.DiseaseFraction+0.0000001);
+        if(damage<=0)return;
+        entry.DiseaseFraction=Max(0.0,entry.DiseaseFraction-damage);
+        npc.DamageMobj(null,null,damage,'CaelumDiseaseDOT',DMG_NO_ARMOR,0.0);
+    }
+    static bool NeedsRecovery(CaelumCombatActor npc)
+    {
+        let entry=CaelumContaminationStorage.Get(npc);
+        return entry!=null && entry.Revision>=CaelumContaminationData.STATE_REVISION
+            && entry.Concentration>0;
+    }
+    static void Recover(CaelumCombatActor npc,double effort)
+    {
+        if(npc==null || npc.health<=0 || npc.CombatMaximumHealth<=0 || effort<=0)return;
+        let entry=CaelumContaminationStorage.Get(npc);
+        if(entry!=null && entry.Revision>=CaelumContaminationData.STATE_REVISION)
+            entry.Concentration=Max(0.0,entry.Concentration-effort/npc.CombatMaximumHealth);
+    }
+
     CaelumContaminationEquipment Row()
     {
         if(Count==Frame.Items.Size())

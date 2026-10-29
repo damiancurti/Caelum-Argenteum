@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.37** - 2026-10-27.
+Documentation version: **5.8.38** - 2026-10-27.
+
+## 5.8.38 - Loaded NPC illness and natural depuration (#502)
+
+Living combat NPCs use the same disease formula as the player: contamination above
+50 costs 0.1% of maximum Life per excess degree and active second; at90 the result
+doubles. Effective Toughness applies the existing status curve, clamped at immunity.
+Damage enters the existing sustained-damage/native death pipeline, so physical
+armor/evasion do not subtract it or wear. Existing magical/support damage modifiers
+remain intact. Exposure still uses world seconds; accelerating the calendar does
+not multiply the active-time illness clock.
+
+The existing NPC idle-recovery gate, chair factor, Resilience curve and resource
+budget remain authoritative. The same integral Life effort heals and removes one
+contamination degree per100% maximum Life, including potential recovery when full.
+No new hunger/thirst inventory or idle eligibility is invented. Combat-busy NPCs
+retain their existing lack of natural health effort. Medicine treatment keeps its
+separate10%-Life-per-degree rule.
+
+Body concentration and physiology revision1/fractional damage serialize in the
+original body carrier. A transient per-owner cache avoids inventory lookup every
+tic; late contact can create the carrier after a cached clean absence. Migration
+preserves old concentration and Life, initializes only the new fraction, and is
+idempotent. Normal NPC ticks own illness, independently of climate availability;
+there is no new Thinker, population census or global scan. Existing off-map NPC
+physiology remains a separate unfinished integration, as do unloaded household
+routines and other adapters. Native evidence:71 current PASS plus two original-runtime
+checks, zero failures/static errors, assets/validation_5838; author-pending.
 
 ## 5.8.37 - Temporary climate and object exposure (#502)
 
@@ -857,7 +884,8 @@ exposes it. The same shared balance and constants serve the player and NPCs.
 The cache reuses rows, reads current concentrations on each scheduled interval,
 and visits only the owner's inventory; no new Tick, registry or map census exists.
 Unsupported, dead or unavailable-climate actors do not enter this living-thermal
-adapter. This does not implement NPC illness damage or household cleaning.
+adapter. That exposure continuation did not implement illness damage; loaded NPC
+illness is delivered in5.8.38 above. Household cleaning has its separate scope.
 
 Only authoritative body/item/model concentrations serialize. The transient adapter
 rebuilds without resetting them after load/hub return. Current thermal scheduling
