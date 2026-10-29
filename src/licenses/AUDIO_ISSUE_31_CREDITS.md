@@ -16,9 +16,17 @@ project has not verified.
 | `CA_MUS05_COAST` | `assets/audio_stock/music/Costa - Caelum Argenteum.wav` | MAP07 coast background music | WAV converted to stereo 48 kHz Ogg Vorbis. |
 
 The local MP3 files in `assets/audio_stock/music/`, the unused WAV tracks
-`Ciudad`, `Cueva`, `Playa` and `Puerto Buenos Aires`, and the entire
+`Cueva`, `Playa` and `Puerto Buenos Aires`, and the entire
 `assets/audio_stock/sounds/` source set are preserved as stock. They are not
 packaged as runtime audio and remain unbound.
+
+On 2026-10-29, under #416, the author selected the original `Ciudad - Caelum
+Argenteum.wav` for CABAIRES (Buenos Aires). It is now packaged as
+`music/CA_MUS_CIUDAD.ogg`, complete stereo 48 kHz Vorbis quality 6, without
+filters or trimming. Author: Damián Curti, created using Suno; embedded source
+ID `3a1fceb7-138e-4064-bf5d-4eb554c6bb77`, created 2026-09-24T19:57:15Z.
+The original WAV remains intact; hashes and encoding details are recorded in
+`assets/validation_5856/PROVENANCE.json` in the source repository.
 
 ## Author-created Suno music
 

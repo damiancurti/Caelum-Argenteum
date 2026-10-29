@@ -1,0 +1,19 @@
+{
+  "issue": 416,
+  "source": "assets/audio_stock/music/Ciudad - Caelum Argenteum.wav",
+  "runtime": "src/music/CA_MUS_CIUDAD.ogg",
+  "author": "Damián Curti",
+  "tool": "Suno",
+  "suno_id": "3a1fceb7-138e-4064-bf5d-4eb554c6bb77",
+  "created": "2026-09-24T19:57:15Z",
+  "assignment": "CABAIRES; explicitly selected by author 2026-10-29",
+  "processing": "Complete stereo 48 kHz master; Vorbis quality 6; no filters, trimming or normalization.",
+  "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+  "master_sha256": "110f3c817c33a32f4c9daf3695f683c5cf54cd3d4706f40744acc7a3e84b8dfa",
+  "runtime_sha256": "3e02eddc4ecce0ca63395055b39fe3fd174cdc17989faf006c90f9b59d067922",
+  "source_frames": 9062400,
+  "decoded_frames": 9062400,
+  "duration_seconds": 188.8,
+  "channels": 2,
+  "sample_rate": 48000
+}
