@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
+
+## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+Each existing first-floor mansion bedroom now contains a washstand, bathtub
+and toilet. All twelve fixtures share the kitchen sink's existing 200-L reserve,
+replenished at 1 L per world minute. Native filling, bathing, toilet use and
+seated/lying poses reuse the accepted systems. There are no new map walls,
+room identities, artwork or hygiene costs.
+
+The installation follows the existing beds/tables, retries occupied positions,
+and retains its actors across save/hub return. Native evidence, visual captures
+and the matched render-callback comparison are in assets/validation_5822.
+CA410-MANSION-BATH-01 awaits author corroboration, separately from the previous
+kitchen and camp-cooking checks. Other furniture/acquisition and V5.8 issues
+remain open; multiplayer rest corroboration stays deferred to V5.12.
 
 ## 5.8.21 - Attended camp cooking and fuel interruption (#411)
 

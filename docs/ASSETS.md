@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
+
+## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+This patch reuses the accepted domestic bathroom models, painted sprites,
+textures and provenance from assets/art_source/bathrooms. No bitmap, mesh or
+map geometry is regenerated or edited. Only placement data is new; the twelve
+first-floor mansion fixtures use the existing physical sizes. Their own artwork
+and the other furnishing catalogue remain traceable to their earlier deliveries.
+Current mansion placement captures and provenance/hash checks are recorded in
+assets/validation_5822; author placement review remains pending.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

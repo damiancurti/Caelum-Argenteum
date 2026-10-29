@@ -1,0 +1,130 @@
+{
+  "issue": 410,
+  "revision": 1,
+  "scope": "Fixed washstand, bathtub and toilet in each of the four existing first-floor bedrooms; no new walls or room identities.",
+  "authority": "Approved mansion bathroom furniture and shared200L domestic reserve; author delegated furniture calculations/placement. Reuse accepted issue410 domestic fixture geometry and issue502 interactions.",
+  "basis": "CARTOGRAPHY.json bedroom bounds and CaelumMansionFurniture existing beds/tables; source geometry and all accepted artwork unchanged.",
+  "water": "All twelve fixtures and the kitchen sink share the existing mansion reserve:200L, +1L/world-minute. No additional per-bedroom supply.",
+  "fixtures": [
+    {
+      "room": "bedroom-rulo",
+      "kind": 0,
+      "position": [
+        -160,
+        344,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-rulo",
+      "kind": 1,
+      "position": [
+        -424,
+        240,
+        136
+      ],
+      "facing": 0
+    },
+    {
+      "room": "bedroom-rulo",
+      "kind": 2,
+      "position": [
+        -176,
+        248,
+        136
+      ],
+      "facing": 270
+    },
+    {
+      "room": "bedroom-ronnie",
+      "kind": 0,
+      "position": [
+        1184,
+        416,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-ronnie",
+      "kind": 1,
+      "position": [
+        1160,
+        280,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-ronnie",
+      "kind": 2,
+      "position": [
+        912,
+        248,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-caella",
+      "kind": 0,
+      "position": [
+        -160,
+        -344,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-caella",
+      "kind": 1,
+      "position": [
+        -424,
+        -240,
+        136
+      ],
+      "facing": 0
+    },
+    {
+      "room": "bedroom-caella",
+      "kind": 2,
+      "position": [
+        -176,
+        -248,
+        136
+      ],
+      "facing": 0
+    },
+    {
+      "room": "bedroom-argento",
+      "kind": 0,
+      "position": [
+        1184,
+        -416,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-argento",
+      "kind": 1,
+      "position": [
+        1160,
+        -280,
+        136
+      ],
+      "facing": 180
+    },
+    {
+      "room": "bedroom-argento",
+      "kind": 2,
+      "position": [
+        912,
+        -248,
+        136
+      ],
+      "facing": 90
+    }
+  ]
+}

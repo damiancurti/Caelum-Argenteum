@@ -52,3 +52,18 @@ carried potable water and a camp pot. Existing #410 checks remain separate.
    must not heat simultaneously. Cancelling restores its ordinary heating.
 Expected: readable working controls, retained progress, exact resources and no
 duplicate portions. Report the failed step, if any; do not reuse prior acceptance.
+CA410-MANSION-BATH-01 | Origin: 5.8.22 | Issue: #410
+Prerequisites: final5.8.22 package, GZDoom4.14.2, disposable mansion campaign;
+carried bottle/canteen, soap, contamination and metabolic toilet credit. The
+prepared terminal supplies a private character; previous pending checks remain separate.
+1. Visit the four first-floor bedrooms. Inspect washstand, tub and toilet;
+   existing beds, tables/chairs and doors must remain accessible.
+2. Fill a canteen at a bedroom sink, then inspect another bedroom or the kitchen.
+   They share one finite200-L reserve, replenished only1L/world-minute in total.
+3. Use a bathtub, lie down, and bathe with carried soap. Confirm contamination
+   decreases and water/soap are spent; stand up into a clear space.
+4. Use a toilet with contamination/credit. Confirm the seated pose; completion
+   spends10L and removes only available credit. Cancelling spends nothing.
+5. Save/load and leave/return. No duplicate fixtures or refilled reserve; preserve
+   previously stored water plus elapsed replenishment. Report any blocked approach.
+Expected: usable placement and existing accepted hygiene behavior throughout.

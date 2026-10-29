@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.21** - 2026-10-26.
+Documentation version: **5.8.22** - 2026-10-27.
 
 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 
@@ -76,6 +76,20 @@ complete approved footprint clear. They retain their original inventory item,
 save/hub state and existing ambient temperature while blocking rain and
 reducing wind. No mansion geometry or fixed furnishing is replaced. Campfires,
 cooking and new two-person rest arrangements remain separate pending work.
+
+## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+The four existing first-floor bedrooms receive a washstand, bathtub and
+toilet each. Placement data lives in assets/map01_mansion/BATHROOMS.json, based
+on CARTOGRAPHY.json and the accepted beds/tables. The installation creates no
+new room partitions and does not move residents or their existing furniture.
+The twelve new fixtures share the kitchen sink's existing200-L reserve.
+
+Native checks cover all twelve approaches, seating/lying and exit, first-floor
+door sweeps, existing dining layouts/beds, occupied-placement retry, shared
+water and old-save/hub persistence. Existing map, OBJ and sprite bytes are
+unchanged. Visual review uses the actual mansion; author acceptance remains
+CA410-MANSION-BATH-01, not an extension of previous bathroom acceptance.
 
 ## 5.8.6 boundary ? Central property (#411)
 
