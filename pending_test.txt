@@ -148,3 +148,16 @@ Deliver this check when the wholeV5.8 implementation is ready, as requested.
 4. Check that tents/fires still require their approved land and that the kitchen
    cupboard, water and cooking installations have not become portable.
 Expected: accepted furniture relocation and persistence; no blocked access or loss.
+
+CA502-WEATHER-HISTORY-01 | Origin: 5.8.28 | Issue: #502
+Prerequisites: final5.8.28+ package, disposable regional-weather campaign and
+prepared #502 weather-history fixture. Deferred until allV5.8 implementation
+is ready; do not infer author acceptance from agent-run native assertions.
+1. Inspect exposed outdoor furniture/equipment before leaving the region and
+   after returning across a rainy interval. Historical weather changes dirt;
+   covered objects do not receive outdoor rain washing.
+2. Repeat across a save/load. Inspect twice: no duplicate elapsed exposure.
+3. Clean an object on return. Earlier exposure is settled first and cannot
+   undo that cleaning on the next inspection. Ordinary new exposure can recur.
+4. Continue an original pre5.8.28 save: existing concentration is retained;
+   missing exterior history starts at migration, without retroactive dirt.

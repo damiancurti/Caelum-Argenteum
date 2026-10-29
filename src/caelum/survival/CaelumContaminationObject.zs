@@ -7,11 +7,14 @@ class CaelumContaminationObject : Thinker
     transient bool Ready;
     transient int NextUpdate;
     transient double Stamp,Ambient,Rain;
-    // Revisión 2: sólo el clima constante del Limbo permite cerrar la ausencia
-    // exactamente con una integración. No prolonga sellos temporales fuera del mapa.
+    // Revisión 2 conserva el Limbo; revisión 3 registra el clima natural por
+    // minuto civil. Nunca prolonga un sello temporal fuera del mapa.
     bool HistoryReady;
     double HistoryStamp,HistoryAmbient,HistoryArea;
-    transient bool ConstantSample;
+    bool HistoryVariable,HistoryCovered;
+    int HistoryProfile,HistoryRegion,HistorySeed,HistoryShelter;
+    double HistoryReference,HistoryCivilOffset;
+    transient bool SampleReady;
 
     static bool Eligible(Actor body)
     {
@@ -40,7 +43,7 @@ class CaelumContaminationObject : Thinker
     {
         if(!Eligible(body))return;
         let entry=CaelumContaminationStorage.Get(body,true);if(entry==null || entry.Exposure!=null)return;
-        let node=new('CaelumContaminationObject');node.Body=body;node.Revision=2;entry.Exposure=node;
+        let node=new('CaelumContaminationObject');node.Body=body;node.Revision=3;entry.Exposure=node;
     }
     static void LeavingWorld(Actor body)
     {
@@ -56,7 +59,7 @@ class CaelumContaminationObject : Thinker
     }
     void Sample(CaelumThermalWorld world)
     {
-        Ambient=-1;Rain=0;ConstantSample=false;
+        Ambient=-1;Rain=0;SampleReady=false;HistoryVariable=false;
         let weather=world.ReferenceWeather;
         if(weather==null || weather.Outside==null || !weather.Outside.Available)return;
         bool roof=CaelumThermalShelter.Roof(Body);
@@ -69,8 +72,70 @@ class CaelumContaminationObject : Thinker
         double reference=CaelumContaminationEnvironment.ReferenceAt(Body);
         if(reference>=0)Ambient=CaelumContaminationRules.Ambient(reference,local.AirTemperatureC+heat,
             Clamp(local.RelativeHumidityPercent+humidity,0.0,100.0),Rain,!roof);
-        ConstantSample=Ambient>=0 && weather.Profile==CaelumWeatherRules.PROFILE_LIMBO
-            && heat==0 && humidity==0 && Rain==0;
+        SampleReady=Ambient>=0 && heat==0 && humidity==0;
+        if(!SampleReady || weather.Profile==CaelumWeatherRules.PROFILE_LIMBO)return;
+        let calendar=world.ReferenceCalendar;let clock=world.ReferenceClock;
+        if(calendar==null || clock==null || calendar.DateSerial(clock)<0)
+        {SampleReady=false;return;}
+        HistoryVariable=true;HistoryCovered=roof;
+        HistoryProfile=weather.Profile;HistoryRegion=weather.Region;HistorySeed=weather.Seed;
+        HistoryShelter=shelter;HistoryReference=reference;
+        HistoryCivilOffset=double(calendar.DateSerial(clock))*86400
+            +double(calendar.CivilDayTics(clock))*3600/CaelumWorldClock.TicsPerHour()
+            -CaelumThermalRuntime.Stamp(clock);
+    }
+    double Replay(double value,double now)
+    {
+        if(Revision<3 || !HistoryVariable)
+            return CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,0,HistoryArea,now-HistoryStamp);
+        let world=CaelumContaminationWorld.Get();
+        if(world==null)return value;
+        if(world.HistoryWeather==null)world.HistoryWeather=new('CaelumContaminationWeatherCache');
+        CaelumContaminationWeatherDay sample;
+        double stamp=HistoryStamp;
+        while(stamp<now)
+        {
+            double civil=stamp+HistoryCivilOffset;
+            int day=int(Floor(civil/86400.0));
+            int minute=int(Floor((civil-double(day)*86400.0)/60.0));
+            double end=Min(now,double(day)*86400+(minute+1)*60.0-HistoryCivilOffset);
+            if(end<=stamp)end=now;
+            if(sample==null || sample.Day!=day)sample=world.HistoryWeather.GetDay(self,day);
+            sample.Sample(minute);
+            if(sample.Ambient[minute]>=0)value=CaelumContaminationObjectBalance.Evolve(
+                value,sample.Ambient[minute],sample.Rain[minute],HistoryArea,end-stamp);
+            stamp=end;
+        }
+        return value;
+    }
+    void SettleNow()
+    {
+        if(!Eligible(Body))return;
+        if(!Ready){if(HistoryReady)Advance();return;}
+        let world=CaelumThermalWorld.Get();
+        if(world!=null && world.ReferenceClock!=null)Settle(CaelumThermalRuntime.Stamp(world.ReferenceClock));
+    }
+    // Lecturas/contactos cierran sólo el intervalo: la geometría/clima actuales
+    // siguen muestreándose a la cadencia escalonada, no por cada consulta.
+    bool Settle(double now)
+    {
+        if(Revision>=2 && HistoryReady && now<HistoryStamp)return false;
+        if(Revision>=2 && HistoryReady && now>HistoryStamp)
+        {
+            let stored=CaelumContaminationStorage.Get(Body);
+            double value=stored!=null?stored.Concentration:0;
+            double next=Replay(value,now);
+            if(stored!=null && next!=value)stored.Concentration=Clamp(next,0.0,CaelumFoodData.MAX_CONTAMINATION);
+        }
+        else if(Ready && now>Stamp && Ambient>=0)
+        {
+            let stored=CaelumContaminationStorage.Get(Body);
+            double value=stored!=null?stored.Concentration:0;
+            double next=CaelumContaminationObjectBalance.Evolve(value,Ambient,Rain,Area(Body),now-Stamp);
+            if(stored!=null && next!=value)stored.Concentration=Clamp(next,0.0,CaelumFoodData.MAX_CONTAMINATION);
+        }
+        Stamp=now;if(HistoryReady)HistoryStamp=now;
+        return true;
     }
     void Advance()
     {
@@ -78,25 +143,11 @@ class CaelumContaminationObject : Thinker
         let world=CaelumThermalWorld.Get();
         if(world==null || world.ReferenceClock==null){Ready=false;return;}
         double now=CaelumThermalRuntime.Stamp(world.ReferenceClock);
-        if(Revision>=2 && HistoryReady && now<HistoryStamp){Ready=false;return;}
-        if(Ready && now>Stamp && Ambient>=0)
-        {
-            let stored=CaelumContaminationStorage.Get(Body);
-            double value=stored!=null?stored.Concentration:0;
-            double next=CaelumContaminationObjectBalance.Evolve(value,Ambient,Rain,Area(Body),now-Stamp);
-            if(stored!=null && next!=value)stored.Concentration=Clamp(next,0.0,CaelumFoodData.MAX_CONTAMINATION);
-        }
-        else if(!Ready && Revision>=2 && HistoryReady && now>HistoryStamp)
-        {
-            let stored=CaelumContaminationStorage.Get(Body);
-            double value=stored!=null?stored.Concentration:0;
-            double next=CaelumContaminationObjectBalance.Evolve(value,HistoryAmbient,0,HistoryArea,now-HistoryStamp);
-            if(stored!=null && next!=value)stored.Concentration=Clamp(next,0.0,CaelumFoodData.MAX_CONTAMINATION);
-        }
-        Stamp=now;Sample(world);
+        if(!Settle(now)){Ready=false;return;}
+        Sample(world);
         // Las partidas previas empiezan aquí: no se inventa una fecha histórica
         // ni se borra la concentración ya guardada. Repetir no cobra dos veces.
-        Revision=2;HistoryReady=ConstantSample;HistoryStamp=now;
+        Revision=3;HistoryReady=SampleReady;HistoryStamp=now;
         HistoryAmbient=Ambient;HistoryArea=Area(Body);
         if(!Ready)NextUpdate=level.maptime+1+world.NextPhase++%TICRATE;
         else NextUpdate=level.maptime+TICRATE;
@@ -106,6 +157,54 @@ class CaelumContaminationObject : Thinker
     {
         if(!Eligible(Body)){Release();return;}
         if(!Ready || level.maptime>=NextUpdate)Advance();
+    }
+}
+
+// Caché transitoria por fecha y lugar; no contiene concentraciones ni modifica
+// los intervalos. La cota sólo limita memoria: una expulsión vuelve a calcular
+// el mismo clima determinista y jamás descarta tiempo de exposición.
+class CaelumContaminationWeatherCache : Object play
+{
+    const MAX_DAYS=32;
+    Array<CaelumContaminationWeatherDay> Days;
+    double Sequence;
+    CaelumContaminationWeatherDay GetDay(CaelumContaminationObject n,int date)
+    {
+        int oldest=0;
+        for(int i=0;i<Days.Size();i++)
+        {
+            let d=Days[i];
+            if(d.Day==date && d.Profile==n.HistoryProfile && d.Region==n.HistoryRegion
+                && d.Seed==n.HistorySeed && d.Shelter==n.HistoryShelter
+                && d.Reference==n.HistoryReference && d.Covered==n.HistoryCovered)
+            {d.Used=++Sequence;return d;}
+            if(d.Used<Days[oldest].Used)oldest=i;
+        }
+        let d=new('CaelumContaminationWeatherDay');
+        d.Day=date;d.Profile=n.HistoryProfile;d.Region=n.HistoryRegion;d.Seed=n.HistorySeed;
+        d.Shelter=n.HistoryShelter;d.Reference=n.HistoryReference;d.Covered=n.HistoryCovered;
+        d.Used=++Sequence;d.Outside=new('CaelumWeatherSample');d.Local=new('CaelumWeatherSample');
+        if(Days.Size()<MAX_DAYS)Days.Push(d);else Days[oldest]=d;
+        return d;
+    }
+}
+class CaelumContaminationWeatherDay : Object play
+{
+    int Day,Profile,Region,Seed,Shelter;
+    double Reference,Used;
+    bool Covered;
+    bool Ready[1440];
+    double Ambient[1440],Rain[1440];
+    CaelumWeatherSample Outside,Local;
+    void Sample(int minute)
+    {
+        if(Ready[minute])return;
+        Outside.EvaluateRegion(Region,Day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
+        Local.ApplyShelter(Outside,Shelter,Profile);
+        Rain[minute]=Covered?0:Local.PrecipitationMmPerHour;
+        Ambient[minute]=Local.Available?CaelumContaminationRules.Ambient(Reference,
+            Local.AirTemperatureC,Local.RelativeHumidityPercent,Rain[minute],!Covered):-1;
+        Ready[minute]=true;
     }
 }
 
