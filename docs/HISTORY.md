@@ -20,6 +20,11 @@ performance limitation; individual simulation and resources are preserved.
 
 ## 5.8.52 / #416 - Network implementation ready - 2026-10-29
 
+Final native visual review found the actual interaction subclass falling back to
+the inherited shop sprite instead of the owned transport-sign model. Registering
+CaelumTransportAccess explicitly in MODELDEF corrects that binding; the model,
+collision, map geometry, resources and saved fields remain unchanged.
+
 The four vehicle types, documented/estimated route catalogue, six-block Buenos
 Aires, native services, paid travel and persistent stops are complete. Earlier
 checkpoint notes below are historical and superseded. Existing map geometry
