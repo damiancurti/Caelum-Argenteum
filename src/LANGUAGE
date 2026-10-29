@@ -6904,3 +6904,22 @@ CA_REGION_PREPARING = "Preparando la región...";
 CA_ABSENT_THEFT_FOUND = "On returning, you discover %d missing inventory stacks from your storage.";
 [es]
 CA_ABSENT_THEFT_FOUND = "Al regresar, descubres que faltan %d pilas de objetos de tus contenedores.";
+
+[enu default]
+CA_BUENOS_AIRES_NAME = "Buenos Aires";
+CA_MAR_DEL_PLATA_NAME = "Mar del Plata";
+CA_BA_STATION = "Railway station";
+CA_BA_PLAZA = "Public square";
+CA_BA_DOCK = "Embarkation quay";
+CA_BA_MARKET = "Market";
+CA_BA_HOMES = "Residential block";
+CA_BA_WORKSHOPS = "Workshops";
+[es]
+CA_BUENOS_AIRES_NAME = "Buenos Aires";
+CA_MAR_DEL_PLATA_NAME = "Mar del Plata";
+CA_BA_STATION = "Estacion de ferrocarril";
+CA_BA_PLAZA = "Plaza";
+CA_BA_DOCK = "Embarcadero";
+CA_BA_MARKET = "Mercado";
+CA_BA_HOMES = "Manzana residencial";
+CA_BA_WORKSHOPS = "Talleres";

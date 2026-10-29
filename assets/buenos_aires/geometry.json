@@ -1,0 +1,13 @@
+{
+  "issue": 416,
+  "map": "CABAIRES",
+  "blocks": 6,
+  "buildings": 9,
+  "cells": 6448,
+  "geometry_reduction": {
+    "open_boundary_merges": 546,
+    "invisible_redundant_lines": 28,
+    "control_sectors_preserved": 19
+  },
+  "qualification": "Geometry only; gameplay services and author visual acceptance remain pending."
+}

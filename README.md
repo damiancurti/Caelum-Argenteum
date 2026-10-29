@@ -10,8 +10,9 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 Unreleased #416 route calibration is now reproducible from `assets/transport/network.json`.
-Its 34 native catalogue checks pass; destination, ticket and interruption integration
-remain pending. Historical references and explicit estimates are distinguished in SYSTEMS.
+Its 34 native catalogue checks and 27 new-map access checks pass. The six-block
+Buenos Aires layout preserves previous map geometry. Services, tickets and interruption
+integration remain pending. Historical references and explicit estimates are distinguished in SYSTEMS.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see
 `assets/validation_5851/legacy-results.json` for the preservation boundary.

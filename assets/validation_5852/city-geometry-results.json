@@ -1,0 +1,9 @@
+{
+  "issue": 416,
+  "date": "2026-10-29",
+  "native_assertions": 27,
+  "runtime_sha256": "F6D680F9C48FC56B47CC7DDFE66188F81661291A468548AA53A6E996B518E6D1",
+  "wad_sha256": "17c011b6f08938a887750b3a3249223da0a0ae3921e84b29a33bd8a97907f6d2",
+  "deterministic_generation": true,
+  "qualification": "New map geometry only. Native full-cylinder access checks and agent visual review; services, travel integration and author acceptance pending."
+}

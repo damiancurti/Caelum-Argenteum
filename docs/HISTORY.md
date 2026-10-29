@@ -11,6 +11,14 @@ checks. SYSTEMS and assets/transport/network.json retain the calculations.
 This is unreleased #416 groundwork, not destination/ticket integration or author
 acceptance. No manual check was removed.
 
+
+The new CABAIRES map has six connected blocks, nine accessible buildings and
+a quay/pier, generated deterministically from owned city textures and profiles.
+Twenty-seven native cylinder/door/street checks pass; geometry screenshots and
+hashes are retained in assets/validation_5852/city-geometry-results.json. No old
+map geometry changes. This is a geometry checkpoint; services, vehicle content
+and author visual acceptance remain pending.
+
 ## Unreleased #415 checkpoint - 2026-10-29
 
 Original 5.8.50 compatibility was checked with a city save created by its exact

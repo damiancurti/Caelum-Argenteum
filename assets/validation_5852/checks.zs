@@ -40,9 +40,42 @@ class CA416Checks : EventHandler
             && CaelumTransportRules.NextDeparture(10,5,12345,0)==12345,"cart and horse require no fixed departure schedule");
         Check(CaelumTransportRules.NextDeparture(0,6,12345,0)<0,"invalid service cannot create a timetable");
     }
+    void City(CaelumPlayer user)
+    {
+        Check(level.MapName=="CABAIRES","new map loads under its own save-safe lump identity");
+        vector2 doors[]={(896,512),(3968,512),(896,2240),(896,3008),(2176,2176),(2816,2176),(2176,2944),(2816,2944),(4352,2496)};
+        let probe=CaelumRestPlacementProbe(Actor.Spawn('CaelumRestPlacementProbe',user.Pos,NO_REPLACE));
+        probe.A_SetSize(user.Radius,user.Height);
+        for(int i=0;i<9;i++)
+        {
+            vector2 door=doors[i];FCheckPosition fit;
+            probe.SetOrigin((door.X-128,door.Y,0),false);
+            Check(probe.CheckPosition(probe.Pos.XY,false,fit) && fit.floorz==0 && fit.ceilingz==(i==8?256:160),
+                "full player cylinder fits the native interior below its solid roof");
+            bool clear=true;
+            for(int x=96;x>=-128;x-=16)
+            {probe.SetOrigin((door.X+x,door.Y,0),false);if(!probe.CheckPosition(probe.Pos.XY,false,fit) || fit.floorz!=0)clear=false;}
+            Check(clear,"service entrance connects actual street and interior without a step or collision obstruction");
+        }
+        vector2 routes[]={(1408,768),(2944,768),(1216,1600),(2944,1600),(4544,1600),(1216,3400),(2816,3400),(5632,1024)};
+        for(int i=0;i<routes.Size();i++)
+        {FCheckPosition fit;probe.SetOrigin((routes[i].X,routes[i].Y,0),false);
+         Check(probe.CheckPosition(probe.Pos.XY,false,fit) && fit.floorz==0,"connecting street or pier retains dry, unobstructed player footing");}
+        probe.Destroy();
+    }
+    void Camera(CaelumPlayer user,int id)
+    {
+        vector3 positions[]={(4544,-128,384),(1216,768,0),(4096,1024,0),(2688,2176,0)};
+        double angles[]={145,0,0,180};double pitches[]={18,0,0,0};
+        if(id<0 || id>=4)return;
+        user.bNoGravity=true;user.bNoClip=true;user.Vel=(0,0,0);user.SetOrigin(positions[id],false);
+        user.Angle=angles[id];user.Pitch=pitches[id];
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
-        if(e.Name!="ca416_catalogue")return;
-        Passed=Failed=0;Catalogue();Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
+        let user=CaelumPlayer(players[consoleplayer].mo);
+        if(e.Name=="ca416_camera"){Camera(user,e.Args[0]);return;}
+        Passed=Failed=0;
+        if(e.Name=="ca416_catalogue")Catalogue();else if(e.Name=="ca416_city")City(user);else return;Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
     }
 }

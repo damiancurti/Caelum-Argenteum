@@ -2,6 +2,12 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+Unreleased #416: `assets/buenos_aires/CITY.json` and
+`assets/generators/generate_buenos_aires.py` generate the original schematic
+six-block CABAIRES map from owned city profiles/textures. It is not a historical
+street reconstruction. Native access/visual evidence: `assets/validation_5852`.
+Destination music is unassigned; the author's field track is not reused as city music.
+
 ## 5.8.50 - Contact adapter evidence (#502)
 
 No art/audio/map source changes. Existing collision cylinders supply generic

@@ -10,6 +10,14 @@ the values and source limits. Thirty-four native catalogue checks pass. Continue
 with boarding, ticket payment/progress, six-block Buenos Aires and interrupted
 travel before delivery; #417 incidents stay separate. No author handoff yet.
 
+
+The new CABAIRES map has six connected blocks, nine accessible buildings and
+a quay/pier, generated deterministically from owned city textures and profiles.
+Twenty-seven native cylinder/door/street checks pass; geometry screenshots and
+hashes are retained in assets/validation_5852/city-geometry-results.json. No old
+map geometry changes. This is a geometry checkpoint; services, vehicle content
+and author visual acceptance remain pending.
+
 ## Unreleased #415 integration work
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
