@@ -1,3 +1,17 @@
+CA416-NETWORK-01 | Origin: 5.8.52 | Issue: #416
+Prerequisites: grouped final V5.8 review build, disposable character with fare,
+food and potable water. Existing author saves remain untouched.
+1. Inspect all four services in Barracas, Buenos Aires and Mar del Plata; walk
+   the six Buenos Aires blocks and enter its market/workshops and residence.
+2. Buy a ticket and board; check destination, fare, timetable and real resource
+   use. Inspect horse/cart/train/ship appearance and ordinary boarding controls.
+3. Stop and leave safely: rural ground for horse/cart, stopped train, reachable
+   port for ship. Save/load, resume the same ticket and confirm no second charge.
+4. Leave a recognizable item at a rural stop and revisit it. Finish a journey:
+   correct destination, exactly one arrival and preserved belongings.
+Expected: usable scenery, truthful schedules, retained paid progress and actual
+survival costs. Abandoning a ticket gives no refund. Incident checks are #417.
+
 CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
 Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
 the prepared #410 process fixture, with the four learned cooking recipes,
