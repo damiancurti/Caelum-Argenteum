@@ -11,7 +11,8 @@ it, then rebuild with `run_dev.bat` as described below.
 
 Unreleased #416 route calibration is now reproducible from `assets/transport/network.json`.
 Its 34 native catalogue checks and 27 new-map access checks pass. The six-block
-Buenos Aires layout preserves previous map geometry. Services, tickets and interruption
+Buenos Aires layout preserves previous map geometry. Its shops, connected workshop
+and independent domestic water pass 38 native/save checks. Tickets and interruption
 integration remain pending. Historical references and explicit estimates are distinguished in SYSTEMS.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see

@@ -35,10 +35,11 @@ class CaelumDomesticWaterState : Object play
 class CaelumDomesticWater : Object play
 {
     static bool InCurrentMap(int house)
-    {return house==CaelumDomesticWaterData.MANSION?level.MapName=="MAP01":house>=0 && house==CaelumHouseHubData.HouseForMap(level.MapName);}
+    {if(CaelumBuenosAiresData.IsHouse(house))return CaelumBuenosAiresData.IsMap(level.MapName);
+     return house==CaelumDomesticWaterData.MANSION?level.MapName=="MAP01":house>=0 && house==CaelumHouseHubData.HouseForMap(level.MapName);}
     static CaelumDomesticWaterState Get(int house)
     {
-        if(house!=CaelumDomesticWaterData.MANSION && (house<0 || house>=CaelumCityData.HOUSE_COUNT))return null;
+        if(house!=CaelumDomesticWaterData.MANSION && (house<0 || house>=CaelumCityData.HOUSE_COUNT) && !CaelumBuenosAiresData.IsHouse(house))return null;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return null;
         let user=CaelumPlayer(roster.Owner);
         if(!CaelumPlayerAuthority.CanMutate(user))return null;
@@ -51,7 +52,7 @@ class CaelumDomesticWater : Object play
         while(roster.HouseWater.Size()<=house)roster.HouseWater.Push(null);
         if(roster.HouseWater[house]==null)roster.HouseWater[house]=new('CaelumDomesticWaterState');
         let reserve=roster.HouseWater[house];
-        CaelumHouseAway.Sync(user);
+        if(!CaelumBuenosAiresData.IsHouse(house))CaelumHouseAway.Sync(user);
         double now=CaelumConnectedWaterMap.ClockStamp(clock);let store=CaelumHouseStorage.Get();
         if(store!=null)for(int i=0;i<store.Houses.Size();i++)if(store.Houses[i].House==house && store.Houses[i].Parked)
         {now=store.Houses[i].SourceNow(user);break;}

@@ -63,6 +63,55 @@ class CA416Checks : EventHandler
          Check(probe.CheckPosition(probe.Pos.XY,false,fit) && fit.floorz==0,"connecting street or pier retains dry, unobstructed player footing");}
         probe.Destroy();
     }
+    void Services(CaelumPlayer user,bool reload=false)
+    {
+        let content=CaelumBuenosAiresContent.Find();
+        Check(content!=null && content.Cursor==CaelumBuenosAiresData.COUNT,"all authored service slots installed");
+        if(content==null)return;
+        Check(CaelumWorldCatalogue.LocationForMap(level.MapName)==CaelumWorldCatalogue.LOCATION_BUENOS_AIRES
+            && CaelumWeatherRules.ProfileForLocation(CaelumWorldCatalogue.LOCATION_BUENOS_AIRES)==CaelumWeatherRules.PROFILE_TEMPERATE_TRIAL,"city identity has coastal weather and normal calendar");
+        Check(CaelumContaminationData.MapClass(level.MapName)==CaelumContaminationData.ENV_URBAN,"streets use approved urban contamination");
+        Check(!CaelumCampLand.Allows(user,(1408,768,0),64),"urban streets do not grant camping permission");
+        int merchants=0,stations=0,fixtures=0;bool shopIdentity=true,connected=true,water=true;
+        CaelumCraftingStation first=null;
+        for(int i=0;i<content.Services.Size();i++)
+        {
+            let body=content.Services[i];let merchant=CaelumCityMerchant(body);
+            if(merchant!=null)
+            {
+                merchants++;shopIdentity=shopIdentity && CaelumCityMerchant.Find(merchant.ShopIdentity)==merchant;
+                merchant.EnsureStock(user);
+                Check(merchant.StockInitialized && merchant.Products.Size()>0,"merchant uses the production catalogue and actual inventory owner");
+            }
+            let station=CaelumCraftingStation(body);
+            if(station!=null){stations++;if(first==null)first=station;}
+            let fixture=CaelumDomesticFixture(body);
+            if(fixture!=null && !(fixture is 'CaelumWaterFurniture'))
+            {fixtures++;water=water && CaelumDomesticWater.InCurrentMap(fixture.House) && fixture.AvailableWater(user)>0;}
+        }
+        Check(merchants==8 && shopIdentity,"eight vendors retain disjoint identities beyond Barracas");
+        Check(stations==14,"all fourteen existing workshop stations are present");
+        if(first!=null)
+        {
+            int token=user.BeginCraftingNetworkScan();first.CollectCraftingNetwork(user,token);
+            for(int i=0;i<content.Services.Size();i++)
+            {let station=CaelumCraftingStation(content.Services[i]);if(station!=null)
+                connected=connected && (user.CraftingNetworkCapabilities & CaelumCraftingRules.GetStationCapabilityBit(station.GetCraftingStationType()))!=0;}
+        }
+        Check(connected,"native proximity network reaches all stations including Chemistry and fermentation");
+        Check(fixtures==12 && water,"four homes have three usable fixtures with independent water");
+        let one=CaelumDomesticWater.Get(160);let two=CaelumDomesticWater.Get(161);
+        Check(one!=null && two!=null && one!=two,"adjacent homes do not share one reservoir");
+        if(one!=null && two!=null)
+        {
+            if(reload)Check(one.Liters<195 && two.Liters==200,"saved household withdrawal survives reload without refilling another home");
+            else{double before=two.Liters;Check(one.Spend(10) && two.Liters==before,"spending household water only debits that house");}
+        }
+        let vendor=CaelumCityMerchant.Find(64);int cursor=content.Cursor;int size=content.Services.Size();
+        if(!reload)vendor.WalletCopper=123;
+        Check(CaelumBuenosAiresContent.Prepare() && content.Cursor==cursor && content.Services.Size()==size
+            && CaelumCityMerchant.Find(64)==vendor && vendor.WalletCopper==123,"repeat installation/save reload preserves actual vendor money and service identities");
+    }
     void Camera(CaelumPlayer user,int id)
     {
         vector3 positions[]={(4544,-128,384),(1216,768,0),(4096,1024,0),(2688,2176,0)};
@@ -76,6 +125,6 @@ class CA416Checks : EventHandler
         let user=CaelumPlayer(players[consoleplayer].mo);
         if(e.Name=="ca416_camera"){Camera(user,e.Args[0]);return;}
         Passed=Failed=0;
-        if(e.Name=="ca416_catalogue")Catalogue();else if(e.Name=="ca416_city")City(user);else return;Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
+        if(e.Name=="ca416_catalogue")Catalogue();else if(e.Name=="ca416_city")City(user);else if(e.Name=="ca416_services")Services(user,e.Args[0]!=0);else return;Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
     }
 }

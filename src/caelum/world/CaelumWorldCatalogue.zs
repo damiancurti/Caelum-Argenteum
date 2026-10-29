@@ -13,7 +13,8 @@ class CaelumWorldCatalogue : Object
     const LOCATION_PORT = 6;
     const LOCATION_COAST = 7;
     const LOCATION_HAZARD_GALLERY = 8;
-    const LOCATION_DEFINED_COUNT = 9;
+    const LOCATION_BUENOS_AIRES = 9;
+    const LOCATION_DEFINED_COUNT = 10;
     const CONNECTION_NONE = 0;
     const CONNECTION_RETURN = 1;
     // Cada sentido tiene su identidad: recorrer la ida no inventa la vuelta.
@@ -56,6 +57,7 @@ class CaelumWorldCatalogue : Object
         if (mapName ~== "MAP03") return LOCATION_PORT;
         if (CaelumHouseHubData.HouseForMap(mapName)>=0) return LOCATION_PORT;
         if (mapName ~== "TCOAST") return LOCATION_COAST;
+        if (CaelumBuenosAiresData.IsMap(mapName)) return LOCATION_BUENOS_AIRES;
         if (mapName ~== "THAZARD") return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;
     }
@@ -70,6 +72,7 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_PORT) return "MAP03";
         if (id == LOCATION_COAST) return "TCOAST";
         if (id == LOCATION_HAZARD_GALLERY) return "THAZARD";
+        if (id == LOCATION_BUENOS_AIRES) return "CABAIRES";
         return "";
     }
 
@@ -90,6 +93,7 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_PORT) return "CA_MAP06_NAME";
         if (id == LOCATION_COAST) return "CA_MAP07_NAME";
         if (id == LOCATION_HAZARD_GALLERY) return "CA_MAP08_NAME";
+        if (id == LOCATION_BUENOS_AIRES) return "CA_BUENOS_AIRES_NAME";
         return "CA_WORLD_UNREGISTERED";
     }
 

@@ -37,6 +37,16 @@ Runtime boarding/payment/progress, six-block Buenos Aires, interruption placemen
 and #417 encounters remain unfinished. Current release stays 5.8.50; this is a
 focused unreleased #416 checkpoint, not a completed version or manual acceptance.
 
+
+Buenos Aires services now reuse eight merchant categories with identities beyond
+Barracas, fourteen connected crafting stations and four homes with separate
+200-L domestic water reserves. The saved installation cursor never recreates
+moved/destroyed furnishings or refills shop stock. City weather and urban
+contamination reuse the approved coastal/urban rules; streets grant no camping
+permission. Thirty-eight native assertions include save/reload of actual vendor
+money and household water. Evidence: validation_5852/city-services-results.json.
+Vehicles, paid progress and safe interruption remain pending.
+
 ## Unreleased #415 integration
 
 Existing saves without an absent-encounter snapshot retain their actual bodies,

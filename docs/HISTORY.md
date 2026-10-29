@@ -19,6 +19,16 @@ hashes are retained in assets/validation_5852/city-geometry-results.json. No old
 map geometry changes. This is a geometry checkpoint; services, vehicle content
 and author visual acceptance remain pending.
 
+
+Buenos Aires services now reuse eight merchant categories with identities beyond
+Barracas, fourteen connected crafting stations and four homes with separate
+200-L domestic water reserves. The saved installation cursor never recreates
+moved/destroyed furnishings or refills shop stock. City weather and urban
+contamination reuse the approved coastal/urban rules; streets grant no camping
+permission. Thirty-eight native assertions include save/reload of actual vendor
+money and household water. Evidence: validation_5852/city-services-results.json.
+Vehicles, paid progress and safe interruption remain pending.
+
 ## Unreleased #415 checkpoint - 2026-10-29
 
 Original 5.8.50 compatibility was checked with a city save created by its exact

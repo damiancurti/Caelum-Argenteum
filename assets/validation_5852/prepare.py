@@ -36,3 +36,6 @@ print(f"Prepared #416 overlay: {len(changed)} source members")
 
 (W/"city.cfg").write_text("wait 105; netevent ca416_city; wait 10; quit\n", encoding="utf-8")
 (W/"cityvisual.cfg").write_text("wait 105; netevent ca416_city; netevent ca416_camera 0; wait 10; screenshot "+(W/"city-overview.png").as_posix()+"; netevent ca416_camera 1; wait 10; screenshot "+(W/"city-street.png").as_posix()+"; netevent ca416_camera 2; wait 10; screenshot "+(W/"city-dock.png").as_posix()+"; netevent ca416_camera 3; wait 10; screenshot "+(W/"city-interior.png").as_posix()+"; wait 10; quit\n",encoding="utf-8")
+
+(W/"services.cfg").write_text("wait 105; netevent ca416_services; wait 10; save city-services; wait 10; quit\n",encoding="utf-8")
+(W/"services-load.cfg").write_text("wait 10; netevent ca416_services 1; wait 10; quit\n",encoding="utf-8")
