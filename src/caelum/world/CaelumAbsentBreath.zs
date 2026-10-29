@@ -43,7 +43,9 @@ class CaelumAbsentBreath : Object play
         body.CurrentCombatAnima=Max(0.0,body.CurrentCombatAnima-cost*paid);
         flame.SetOrigin(CaelumDemonBreath.Mouth(body),false);
         flame.Direction=(Cos(body.Angle),Sin(body.Angle),0);
-        if(combat)
+        // PaidTick apunta tambien durante el calentamiento por frio, aunque
+        // el emisor este descansando y no haya elegido un aliento ofensivo.
+        if(row.Enemy(row.Opponent) && CaelumDemonBreath.CanReach(body,row.Opponent.Body))
         {
             vector3 ray=row.Opponent.Body.Pos+(0,0,row.Opponent.Body.Height/2)-flame.Pos;
             if(ray.Length()>0)flame.Direction=ray/ray.Length();

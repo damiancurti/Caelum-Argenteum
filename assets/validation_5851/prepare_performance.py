@@ -10,6 +10,7 @@ HOME = Path(__file__).resolve().parent
 WORK = ROOT / 'build/issue415-rounds'
 parser = argparse.ArgumentParser()
 parser.add_argument('--baseline', help='Git revision to reconstruct in baseline51')
+parser.add_argument('--flights', action='store_true', help='Measure one pending volley on the authorized same population')
 args = parser.parse_args()
 running = subprocess.run(['powershell', '-NoProfile', '-Command',
     '(Get-Process gzdoom -ErrorAction SilentlyContinue).Id'], capture_output=True, text=True)
@@ -42,10 +43,10 @@ offset = len(wad)
 for row in directory:
     wad.extend(struct.pack('<ii8s', *row))
 struct.pack_into('<i', wad, 8, offset)
-pack(WORK / 'performance.pk3', {
+pack(WORK / ('flightperformance.pk3' if args.flights else 'performance.pk3'), {
     'ZSCRIPT': b'version "4.14.2"\n#include "checks.zs"\n#include "performance.zs"\n',
     'checks.zs': (HOME / 'checks.zs').read_bytes(),
-    'performance.zs': (HOME / 'performance.zs').read_bytes(),
+    'performance.zs': (HOME / ('flightperformance.zs' if args.flights else 'performance.zs')).read_bytes(),
     'maps/CABS415P.wad': bytes(wad),
     'MAPINFO': b'GameInfo {AddEventHandlers="CA415Performance"}\nmap CABS415P "Absent combat performance" {cluster=8551 sky1="SKY1"}\n',
 })

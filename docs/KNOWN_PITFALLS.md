@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-187 - Native explosion distance depends on its flags
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+area01 reproduction and corrected area/native batch logs. Author review pending.
+
+An apparently reasonable cylindrical distance underestimates diagonal hits from
+ordinary A_Explode. The engine's default GetRadiusDamage uses the maximum XY
+offset, subtracts collision radius, then includes vertical separation. With
+XF_CIRCULAR it instead uses actor-origin Distance3D, without subtracting radius.
+The current elemental explosion uses the first path; the Zupay slam explicitly
+uses the second. Preserve RadiusDamageFactor and NORADIUSDMG as well.
+
+Reference: [GZDoom g4.14.2 p_map.cpp](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_map.cpp),
+GetRadiusDamage and P_RadiusAttack. Eight deterministic native comparisons per
+attack cover axial, diagonal and vertical separation, with and without criticals.
+They validate this damage abstraction, not movement or projectile trajectories.
+
 ## CA-KP-186 - Inventory-owned records need an explicit owner guard
 
 - **Status/evidence:** native reproduction and migration verification, 5.8.49/#502;
@@ -2227,6 +2245,15 @@ load/leave capture with 1,600 rows costs approximately 21 ms in this fixture.
 This does not validate arbitrary populations or frame presentation: synchronous
 remaining stalls still require bounded catch-up. Raw callback tails and timers
 are in assets/validation_5851/performance-comparison.json and native logs.
+
+The same unreleased issue requires a departure-only typed projectile census to
+capture already-paid flights, including dead launchers. Ownership is the saved
+encounter row; each projectile stores its pending record for constant-time
+deduplication, cleared on resolution. The measured population is one volley of
+1,600 actual projectiles on the authorized 1,000/600 scene. Capture costs
+0.791 ms and repeated capture 0.288 ms; resolution costs 567.886 ms and remains
+a separate latency concern. This is neither a per-tic global scan nor a claim
+that arbitrary projectile counts or active rendering have been validated.
 
 ## CA-KP-110 - Simulation throughput does not establish playable frame presentation
 

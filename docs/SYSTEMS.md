@@ -2,6 +2,32 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #415 integration
+
+The pending round implementation follows the approved one-world-second,
+simultaneous mean-damage model and converts active durations through the source
+map clock. An already-launched native carbine or elemental projectile joins the
+first absent round without another resource payment, launch or random roll.
+It retains its launch target, origin, dispersion, prepared damage, critical and
+elemental payload. If that target has died, the pending shot does not acquire a
+new one. The launcher's subsequent death does not cancel an existing shot.
+Native flight is consumed without executing a second explosion on return.
+Traveling resident references resolve to their actual household body.
+
+Launch metadata has revision 1. Earlier shots retain their saved damage and
+critical; on first capture only, missing aim metadata uses the shooter's last
+recorded target and current aim parameters. The old save cannot recover a target
+identity it never stored. The typed projectile census occurs at departure,
+once per encounter, and deduplicates through each projectile's pending record.
+
+Area damage preserves GZDoom 4.14.2's two existing metrics: ordinary explosive
+spells use the XY collision-box distance plus vertical separation, while the
+ground slam requests circular distance between actor origins. Both retain native
+radius-damage factors and immunity. Active gameplay formulas are unchanged.
+An encounter with no active bodies, available reserves, pending flights or
+machine work can advance empty time directly; quiet living bodies still progress.
+This is unreleased work, not completion of scheduled siege starts, theft or V5.8.
+
 ## 5.8.50 - Physical contact coverage (#502)
 
 Physical special inventory without a dedicated geometry uses the approved

@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-116 distinct native assertions: damage/dispersion, simultaneous casualties,
+163 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -27,7 +27,17 @@ stalls are still unacceptable for delivery: about 2.4 s per combat minute and
 6 s per quiet hour in that fixture. Renderer callback tails are recorded in
 performance-comparison.json; they are not presentation/FPS acceptance.
 
-Still required before delivery: pending projectile and remaining control coverage,
+Paid in-flight carbine/spell attacks now retain launch target, damage, critical
+and dispersion. They resolve once in the first absent round, including saved
+flights, dead launchers and traveling resident sources. A typed departure-only
+census of 1,600 pending shots takes 0.791 ms; resolving that volley still costs
+568 ms. Native comparisons exposed and corrected distinct explosion-box versus
+circular-ground-slam falloff. Terminal encounters with no active bodies,
+reserves, pending flights or machine work skip empty time: one absent year
+takes 0.011 ms in the isolated terminal fixture. This does not accelerate quiet
+survivors or active combat, which still need bounded catch-up.
+
+Still required before delivery: remaining control coverage,
 terminal/quiet performance review, scheduled starts/deployment while
 absent, theft/access with real inventory transfers, performance and original-save
 regressions, final canonical rules/version and linked PR. In particular, the

@@ -454,6 +454,7 @@ class CaelumAbsentBattle : Object play
     CaelumSiegeEncounter Encounter;
     Array<CaelumAbsentCombatant> Rows;
     Array<CaelumAbsentMachine> Machines;
+    Array<CaelumAbsentShot> Flights;
     Array<CaelumAbsentStructureHit> StructureHits;
     Array<int> SpatialHeads;
     bool SpatialDirty;
@@ -555,6 +556,7 @@ class CaelumAbsentBattle : Object play
             if(!row.Enemy(row.Opponent))row.Opponent=null;
             if(row.Participating)CaelumContaminationAbsence.Capture(row.Body,user);
         }
+        CaelumAbsentShot.Capture(self);
         Away=true;
     }
 
@@ -565,9 +567,12 @@ class CaelumAbsentBattle : Object play
         for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Recover(seconds);
         for(int i=0;i<Rows.Size();i++)Rows[i].BeginRound();
         for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Act(seconds);
+        for(int i=0;i<Flights.Size();i++)Flights[i].Resolve();
         for(int i=0;i<Machines.Size();i++)Machines[i].Advance(seconds);
         // Ninguna baja ni desgaste modifica las acciones de la misma ronda.
         for(int i=0;i<Rows.Size();i++)Rows[i].Commit();
+        for(int i=0;i<Flights.Size();i++)Flights[i].CommitWear();
+        Flights.Clear();
         for(int i=0;i<StructureHits.Size();i++)StructureHits[i].Commit();
         StructureHits.Clear();
         for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
@@ -599,6 +604,7 @@ class CaelumAbsentBattle : Object play
 
     bool MachineWork()
     {
+        if(Flights.Size()>0)return true;
         for(int i=0;i<Machines.Size();i++)if(Machines[i].CanWork())return true;
         for(int i=0;i<Rows.Size();i++)if(CaelumAbsentBreath.Needed(Rows[i]))return true;
         return false;
@@ -655,8 +661,25 @@ class CaelumAbsentBattle : Object play
         double first=Stamp-Fraction;
         Fraction=Max(0,elapsed-whole);
         for(int second=0;second<whole;second++)
+        {
+            if(Terminal())break;
             Interval(first+second+1,1);
+        }
+        SimulationTime=end;
         Stamp=end;Busy=false;
+    }
+
+    bool Terminal()
+    {
+        FirstOpponent(true);
+        if(FirstFriendly!=null || FirstHostile!=null || Flights.Size()>0)return false;
+        let port=CaelumPortSiege(Encounter);
+        let reserve=port!=null?port.Reinforcements:null;
+        if(reserve!=null && reserve.Enabled && !reserve.Stopped && reserve.Remaining>0 && !port.Victory)return false;
+        if(port!=null && port.Victory && reserve!=null)reserve.Stopped=true;
+        // Sin vivos, reservas ni trabajo de maquinas no queda una accion que
+        // resolver. No iterar los segundos vacios de semanas o meses ausentes.
+        return !MachineWork();
     }
 
     bool RebindResidents()

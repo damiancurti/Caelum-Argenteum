@@ -5,7 +5,7 @@ class CaelumAbsentAttack : Object play
     enum AttackKind { NONE, MELEE, MAGIC, EXPLOSIVE, SLAM, CARBINE }
     int Kind,Weapon,Tier,Essence;
     double BaseDamage,Damage,Fire,Air,Anima,Preparation,Cycle,NativeCycleTics,Area,Accuracy,Critical;
-    double Minimum,Maximum,ProjectileRadius,Penetration,Debuff;
+    double Minimum,Maximum,ProjectileRadius,Penetration,Debuff,Push;
     bool SignedOffsets;
     vector3 Origin;
 
@@ -111,6 +111,7 @@ class CaelumAbsentAttack : Object play
             }
         }
         Debuff=CaelumElementalStream.Power(body);
+        Push=magic?body.CombatMagicalPushMultiplier:body.CombatPhysicalPushMultiplier;
     }
 
     bool CanPay(CaelumCombatActor body)
@@ -150,7 +151,7 @@ class CaelumAbsentAttack : Object play
                 CaelumConstants.VULNERABILITY_SENSITIVE_POINT,false,true,Essence,Weapon,Tier,
                 Penetration,total*hit,blocking);
             if(Essence==CaelumConstants.ESSENCE_FIRE)
-                result.ThermalJoules=100*body.CombatMagicalPushMultiplier
+                result.ThermalJoules=100*Push
                     *CaelumThermalMagic.ArmorRetention(victim,CaelumConstants.ARMOR_SLOT_BODY)*total*hit;
             result.WeaponWear=0;return result;
         }
@@ -171,12 +172,18 @@ class CaelumAbsentAttack : Object play
     {
         let result=new('CaelumAbsentDamage');
         if(Area<=0 || victim==null || (Kind!=SLAM && Kind!=EXPLOSIVE))return result;
-        double horizontal=Max(0,(victim.Pos.XY-origin.XY).Length()-victim.Radius);
+        // A_Explode sin RADF_CIRCULAR usa la distancia al cuadrado de colision
+        // en XY (GZDoom 4.14.2 GetRadiusDamage), no al cilindro circular.
+        vector2 delta=victim.Pos.XY-origin.XY;
+        double horizontal=Max(0,Max(Abs(delta.X),Abs(delta.Y))-victim.Radius);
         double vertical=Max(0,Max(victim.Pos.Z-origin.Z,origin.Z-victim.Pos.Z-victim.Height));
-        double distance=Sqrt(horizontal*horizontal+vertical*vertical);
+        // El golpe de suelo existente si pide XF_CIRCULAR: Distance3D entre
+        // los origenes, sin descontar el radio del receptor.
+        double distance=Kind==SLAM?(victim.Pos-origin).Length():Sqrt(horizontal*horizontal+vertical*vertical);
         if(distance>=Area)return result;
         bool magic=Kind==EXPLOSIVE;
-        double damage=Max(0,int(Damage*(1-distance/Area)));
+        if(victim.bNoRadiusDmg)return result;
+        double damage=Max(0,int(Damage*(1-distance/Area)*victim.RadiusDamageFactor));
         let thermal=CaelumThermalBody.Get(victim);
         if(thermal!=null)damage=int(damage*CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,Kind==SLAM)+0.5);
         double probability=Accuracy*impactProbability;

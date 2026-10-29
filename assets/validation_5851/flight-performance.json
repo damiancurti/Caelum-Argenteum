@@ -1,0 +1,12 @@
+{
+  "issue": 415,
+  "scope": "Authorized 1000 attackers / 600 defenders, one pending native projectile per body; native profiles and inventories, frozen regular AI",
+  "runtime_sha256": "3ce061285b768503fe2289dc48bc5a7b4bd81aae9c231cf44081fe213c5b4585",
+  "capture_ms": 0.7907,
+  "duplicate_capture_ms": 0.2878,
+  "resolve_round_ms": 567.8862,
+  "terminal_year_ms": 0.0102,
+  "terminal_runtime_sha256": "d802bad3b07c6f836bb20630417b3b5252d532b776e95e3194034c5e051cc1d8",
+  "native_frame_presentation": "Not measured in this census diagnostic; not FPS acceptance",
+  "remaining": "Bounded combat and quiet-living catch-up"
+}

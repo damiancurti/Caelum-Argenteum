@@ -333,6 +333,12 @@ class CA415RoundChecks : EventHandler
         target.CurrentCombatAnima=10000;source.Opponent=null;
         let thermal=CaelumThermalBody.Get(target,true);thermal.Exposure=-1;thermal.Severity=1;
         Check(CaelumAbsentBreath.Needed(source) && CaelumAbsentBreath.Advance(source,0.2),"unopposed cold retains existing racial use");
+        source.Opponent=recipient;target.target=soldier;target.RecoveryPhase=2;
+        soldier.SetOrigin((192,160,0),false);recipient.ClearPending();
+        CaelumAbsentBreath.Advance(source,0.2);vector3 aimed=target.DemonBreath.Direction;
+        target.DemonBreath.PaidTick();
+        Check((aimed-target.DemonBreath.Direction).Length()<0.000001,"cold breath during recovery retains native targeting direction");
+        target.RecoveryPhase=0;source.Opponent=null;
         thermal.Exposure=thermal.Severity=0;
         Check(!CaelumAbsentBreath.Advance(source,0.2) && target.DemonBreath==null,"breath stops when all native reasons cease");
     }

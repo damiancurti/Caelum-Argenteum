@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased third integration checkpoint; #415 NOT complete",
+  "status": "Unreleased fourth integration checkpoint; #415 NOT complete",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 116,
+  "native_distinct_assertions": 163,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -14,25 +14,31 @@
     "saved": 4,
     "hub": 6,
     "boundaries": 8,
-    "breath": 12,
+    "breath": 13,
     "resident": 5,
-    "residentdeath": 3
+    "residentdeath": 3,
+    "flights": 16,
+    "area": 16,
+    "flightload": 5,
+    "flighttravel": 4,
+    "terminal": 5
   },
-  "runtime_sha256": "73da6aae16be756ef5d1dcafa2d4b11a035d6db68c63f511291fc877d2619f9c",
-  "source_overlay_members_verified": 17,
+  "runtime_sha256": "d802bad3b07c6f836bb20630417b3b5252d532b776e95e3194034c5e051cc1d8",
+  "source_overlay_members_verified": 20,
   "fixtures": [
     "checks.zs",
+    "flights.zs",
     "prepare.py",
     "run_native.ps1"
   ],
-  "batch": "integrated04",
+  "batch": "integrated07",
   "static_errors": 0,
   "remaining": [
     "Scheduled starts and not-yet-deployed residents",
-    "Pending projectiles, remaining controls and bounded catch-up performance",
+    "Remaining controls, quiet/live catch-up latency and bounded processing",
     "Theft and access integration",
     "Original-save regressions, completed canonical delivery and PR"
   ],
   "author": "Deferred until all V5.8 implementation is complete",
-  "performance": "performance-comparison.json: exact outcome parity, quiet catch-up87.18% faster; remaining synchronous stalls pending"
+  "performance": "performance-comparison.json retains prior exact outcome parity; flight-performance.json records departure census and terminal-year measurement; remaining synchronous stalls pending"
 }

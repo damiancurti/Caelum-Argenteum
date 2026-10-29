@@ -36,6 +36,22 @@ Bounded processing is still required. Evidence: validation_5851 performance
 source, builder, comparison and raw reference/current logs. The integrated04
 native regression batch retains 116 distinct passing assertions.
 
+The fourth checkpoint covers saved in-flight attacks, dead launchers and real
+traveling resident sources, plus 16 native area comparisons. Total scenario
+assertions rise to 163, excluding repeated setup. The launch census is typed
+and departure-only: 1,600 existing flights register in 0.791 ms and deduplicate
+in 0.288 ms; their simultaneous resolution still takes 567.886 ms. The terminal
+fixture skips one empty year in 0.011 ms after consuming its remaining flight.
+It does not skip living-body physiology or available reinforcements. The broad
+quiet/combat latency remains unresolved. No manual test or release is claimed.
+
+The area comparison found an implementation discrepancy, not a balance change:
+native ordinary explosions use a square XY distance, whereas the existing slam
+explicitly requests circular distance. The summary now mirrors both. Saved
+flight fixture checks run before the native carbine projectile's 24-tic lifetime;
+the earlier 70-tic wait had allowed that test projectile to expire. Raw failures
+and corrected runs are retained alongside the current evidence.
+
 Fixture corrections preserved in the private logs: cannon parity must use a
 projectile after its native PostBeginPlay sets its calibre; a manual Life edit
 after capturing absence must also update that saved Life, exactly as the

@@ -206,6 +206,7 @@ class CaelumCityCarbine : Object play
         bool critical=Random[CaelumCarbineCritical](0,999999)/10000.0<chance;
         let projectile=CaelumRangedRules.Fire(owner,Weapon,Weapon.GetDamage()*owner.CombatHealthPerformanceMultiplier,critical,owner.CombatPhysicalPushMultiplier,yaw,pitch);
         if(projectile==null)return true;
+        projectile.StoreSummaryAim(victim,Weapon.WeaponType,Weapon.Tier,minimum,maximum,false);
         CaelumBallistics.AimProjectile(projectile,victim.Pos+(0,0,victim.Height/2),yawOffset,pitchOffset);
         double cost=owner.GetEffectiveAttackAir(owner.AttackResourceBaseCost);
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}

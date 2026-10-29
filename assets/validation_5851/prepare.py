@@ -33,15 +33,22 @@ if args.probe:
     print(f'Probe: {len(changed)} current source members')
 arena = (R / 'assets/validation_5826/away.wad').read_bytes()
 pack(W / 'checks.pk3', {
-    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n',
+    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n',
     'checks.zs': (H / 'checks.zs').read_bytes(),
-    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
+    'flights.zs': (H / 'flights.zs').read_bytes(),
+    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
     'maps/MAP01.wad': arena,
     'maps/CABS415B.wad': arena,
 })
 for case in ['math', 'rounds', 'physiology', 'potions', 'boundaries', 'breath']:
     (W / (case + '.cfg')).write_text(f'wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; wait 10; quit\n')
 print('Prepared private fixtures')
+(W/'flights.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flights; wait 10; quit\n')
+(W/'flightsave.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flightsave; save flight-pending; wait 10; quit\n')
+(W/'flightload.cfg').write_text('wait 1; netevent ca415r_flightload; wait 10; quit\n')
+(W/'area.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_area; wait 10; quit\n')
+(W/'flighttravel.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flighttravel; netevent ca415r_away; wait 35; netevent ca415r_home; wait 35; netevent ca415r_flighthome; wait 10; quit\n')
+(W/'terminal.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_terminal; wait 10; quit\n')
 (W/'machines.cfg').write_text('wait 105; netevent ca415r_machineprepare; wait 3; netevent ca415r_machines; wait 10; quit\n')
 (W/'reserve.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_reserve; wait 3; netevent ca415r_reserveafter; wait 10; quit\n')
 
