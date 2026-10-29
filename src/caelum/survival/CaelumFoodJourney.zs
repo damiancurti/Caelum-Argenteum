@@ -22,16 +22,21 @@ class CaelumJourneyFood : Object play
     }
     void Advance(double seconds,double celsius,double humidity)
     {for(int i=0;i<Stacks.Size();i++)Stacks[i].Lots.Advance(seconds,celsius,humidity);}
-    double Consume()
+    int OldestServing()
     {
         int selected=-1;double oldest=0;
         for(int i=0;i<Stacks.Size();i++)
         {
-            let row=Stacks[i];if(row.Boxed || row.Lots.Kind!=CaelumFoodData.RATION || row.Lots.Lots.Size()==0)continue;
+            let row=Stacks[i];if(row.Boxed || !CaelumFoodData.Prepared(row.Lots.Kind) || row.Lots.Lots.Size()==0)continue;
             double created=row.Lots.Lots[0].CreatedStamp;
             if(selected<0 || created<oldest){selected=i;oldest=created;}
         }
-        if(selected<0)return 0;
+        return selected;
+    }
+    int NextKind(){int selected=OldestServing();return selected>=0?Stacks[selected].Lots.Kind:-1;}
+    double Consume()
+    {
+        int selected=OldestServing();if(selected<0)return 0;
         double contamination;Stacks[selected].Lots.Consume(1,contamination);return contamination;
     }
     void Commit(CaelumPlayer user)

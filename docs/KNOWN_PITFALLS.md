@@ -4,6 +4,38 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-175 - A carried Inventory sprite is not its visible Spawn artwork
+Status/evidence: RESOLVED-VERIFIED (native engine and visual capture)
+First recorded / last checked: 2026-10-26 / 2026-10-26
+Issue / PR: #410; delivery PR links this prepared-meal slice
+Affected baseline: 09b96c41 plus V5.8.18 working tree; final package in validation_5818
+Environment: GZDoom 4.14.2, Windows 11, Vulkan 1280x720, private peaceful fixture
+Scope: CaelumDiningTable.RefreshDisplays; CaelumDiningPreparedMeal descendants
+
+Symptom: the real meal remained in table inventory, while a display actor copying
+that Inventory's Sprite appeared invisible. Quantity assertions alone passed.
+Native evidence records held and default-object Sprite values of 0, while the
+four declared Spawn aliases resolve to visible indices 4798/4799/4800/613 in the
+recorded package. Sprite indices are package-local, not production identifiers.
+
+Cause: held inventory and actor defaults do not supply the visible Spawn-frame
+property needed by a separate scene actor. GetDefaultByType also requires a
+class, not the Name returned by an item-class lookup.
+Fix: dedicated display subclasses declare the actual FBRD/FRBF/FRFS/FPCH Spawn
+states; obtain existing scale from GetDefaultByType(item.GetClass()). Keep the
+real Inventory as the table's authoritative item. Do not copy its hidden Sprite.
+
+Reproduction/regression: validation_5818 m-services checks real placement,
+withdrawal, native journal use and explicit non-TNT1 display aliases; tableview
+captures the rendered table. The fixture's no-restock subclass includes a copy
+of the existing small-table MODELDEF under its private class name.
+Evidence: table-final-services02 (21 PASS/0 FAIL), table-final-capture02 and
+captures/meals-table.png in assets/validation_5818. Failed probes stay in build.
+Author acceptance: CA410-MEALS-01 passed on 2026-10-26, without qualifications.
+Existing ration models are unchanged.
+Limitations: painted world sprites remain billboards at the existing consumable
+scale; visual acceptance is independent of successful inventory assertions.
+
 ## CA-KP-174 - Native crouch and safe exits during tent rest
 
 Status/evidence: ENGINE-VERIFIED, #412, 2026-10-26; GZDoom4.14.2/Windows11.

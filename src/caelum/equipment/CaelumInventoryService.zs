@@ -4512,6 +4512,7 @@ class CaelumInventoryService : Object play
 
     static Name GetConsumableClassName(CaelumPlayer user, int consumableType)
     {
+        if(CaelumMealData.IsMeal(consumableType))return CaelumMealData.ItemClass(consumableType);
         if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampData.ItemClass(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateData.ItemClass(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         if(CaelumPotionRules.IsPotion(consumableType))return CaelumPotionRules.ItemClass(consumableType);

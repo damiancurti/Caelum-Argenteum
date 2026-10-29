@@ -762,6 +762,7 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
+        if(CaelumMealData.IsMeal(consumableType))return CaelumMealData.UnitValue(consumableType);
         if(consumableType==CaelumCampData.POT_CONSUMABLE)return CaelumCampCrafting.Value(1);
         if(CaelumMateData.IsConsumable(consumableType))return CaelumMateCrafting.Value(consumableType-CaelumMateData.FIRST_CONSUMABLE);
         double chemistry=CaelumPotionRules.IsPotion(consumableType)?CaelumChemistryEconomy.ConsumableValue(consumableType):-1;

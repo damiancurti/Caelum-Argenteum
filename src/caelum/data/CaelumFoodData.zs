@@ -24,6 +24,10 @@ class CaelumFoodData : Object
     const RATION = 7;
     const FLOUR = 8;
     const KIND_COUNT = 9;
+    static clearscope bool Prepared(int kind)
+    {return kind==RATION || (kind>=ROAST_FISH && kind<=BREAD);}
+    static clearscope double ServingGrams(int kind)
+    {return kind==RATION?CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000:Prepared(kind)?REFERENCE_PORTION_G:0;}
 
     static clearscope double FreshHours(int kind)
     {

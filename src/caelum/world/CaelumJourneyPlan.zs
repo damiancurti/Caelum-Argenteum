@@ -172,7 +172,7 @@ class CaelumJourneyModel : Object play
             {
                 let container = CaelumWaterContainer(ration);
                 if (container != null) { if (container.IsDrinkable()) ContainerStock += Max(0.0, container.WaterLiters); }
-                else if (ration.GetConsumableType() == CaelumConstants.CONSUMABLE_FOOD_RATION)
+                else if (CaelumFoodData.Prepared(CaelumFoodInventory.Kind(ration)))
                     FoodStock += Min(ration.Amount, 1000000000 - FoodStock);
                 else if (ration.GetConsumableType() == CaelumConstants.CONSUMABLE_WATER_RATION)
                     WaterStock += Min(ration.Amount, 1000000000 - WaterStock);
@@ -186,16 +186,22 @@ class CaelumJourneyModel : Object play
     {
         // No desperdiciar una porción por encima del máximo. Se come durante
         // la marcha y antes/después de acampar; no se empieza a comer dormido.
-        if (FoodEffectTics == 0 && Hunger <= 100.0 - Min(100.0, FoodPulse * 10)
-            && (Unlimited || FoodSpent < FoodStock))
+        if (FoodEffectTics == 0 && (Unlimited || FoodSpent < FoodStock))
         {
-            if(FoodInventory!=null && FoodIllness!=null)
-                FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
-                    FoodInventory.Consume(),CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000,Mass));
-            FoodSpent++; FoodEffectTics = 10 * TICRATE; FoodPulseTics = 0;
+            int kind=FoodInventory!=null?FoodInventory.NextKind():-1;
+            double portion=CaelumFoodRules.ServingHunger(kind>=0?kind:CaelumFoodData.RATION,Mass);
+            if(Hunger<=100.0-Min(100.0,portion))
+            {
+                if(FoodInventory!=null && FoodIllness!=null && kind>=0)
+                    FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
+                        FoodInventory.Consume(),CaelumFoodData.ServingGrams(kind),Mass));
+                FoodPulse=portion/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;
+                FoodSpent++; FoodEffectTics = 10 * TICRATE; FoodPulseTics = 0;
+            }
         }
         if (WaterEffectTics != 0) return;
-        double dose = FoodPulse * 10;
+        // La dosis histórica de agua no depende del plato servido en el viaje.
+        double dose = CaelumFoodRules.ServingHunger(CaelumFoodData.RATION,Mass);
         bool ration = Unlimited || WaterSpent < WaterStock;
         double liters = ration ? 0 : Min(Mass / 500.0, ContainerStock - ContainerSpent);
         if (!ration) dose = liters * 5000.0 / Mass;

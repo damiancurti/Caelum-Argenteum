@@ -25,6 +25,13 @@ class CaelumFoodRules : Object
         return CaelumFoodData.PortionKcal(kind)/CaelumFoodData.REFERENCE_KCAL
             *(CaelumFoodData.HUNGER_MASS_FACTOR/bodyKg)*Max(0.0,grams)/CaelumFoodData.REFERENCE_PORTION_G;
     }
+    static clearscope double ServingHunger(int kind,double bodyKg)
+    {
+        if(kind==CaelumFoodData.RATION)return CaelumConstants.SURVIVAL_MAXIMUM
+            *CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND
+            *CaelumConstants.RATION_REFERENCE_MASS/Max(1.0,bodyKg)*CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;
+        return Hunger(kind,CaelumFoodData.ServingGrams(kind),bodyKg);
+    }
     static clearscope double DamagePerSecond(double contamination,double maximumLife,double toughness)
     {
         return Max(0.0,contamination-CaelumFoodData.ILLNESS_THRESHOLD)*Max(0.0,maximumLife)

@@ -1,13 +1,17 @@
 """Pack painted ingredient sources using the authorized deterministic art pipeline."""
 from pathlib import Path
+import argparse
 import hashlib
 import json
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / 'assets/art_source/cooking_ingredients'
-DESTINATION = ROOT / 'src/graphics/caelum/icons/kitchen'
-ASSETS = ('flour', 'beef', 'fish', 'vegetables', 'salt')
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--meals',action='store_true',help='Pack cooked dishes instead of raw ingredients.')
+args=parser.parse_args()
+SOURCE = ROOT / ('assets/art_source/cooked_meals' if args.meals else 'assets/art_source/cooking_ingredients')
+DESTINATION = ROOT / ('src/graphics/caelum/icons/meals' if args.meals else 'src/graphics/caelum/icons/kitchen')
+ASSETS = ('bread','roast_beef','roast_fish','puchero') if args.meals else ('flour', 'beef', 'fish', 'vegetables', 'salt')
 
 
 def main():
@@ -33,9 +37,11 @@ def main():
                         'runtime_sha256': hashlib.sha256(destination.read_bytes()).hexdigest()})
     board.save(SOURCE / 'contact-sheet.png', optimize=False)
     (SOURCE / 'EXPORT.json').write_text(json.dumps(records, indent=2) + '\n', encoding='utf-8')
-    aliases = '\n'.join(f'Sprite "M{108 + i:03d}A0", 128, 128 {{ Offset 64, 122 Patch "graphics/caelum/icons/kitchen/{name}.png", 0, 0 }}' for i, name in enumerate(ASSETS))
-    (ROOT / 'src/caelum/data/kitchen_ingredients.textures').write_text(aliases + '\n', encoding='utf-8')
-    print('Packed five 128px ingredient sprites and texture aliases.')
+    sprites=("FBRD","FRBF","FRFS","FPCH") if args.meals else tuple(f"M{108+i:03d}" for i in range(len(ASSETS)))
+    folder="meals" if args.meals else "kitchen"
+    aliases = '\n'.join(f'Sprite "{sprites[i]}A0", 128, 128 {{ Offset 64, 122 Patch "graphics/caelum/icons/{folder}/{name}.png", 0, 0 }}' for i,name in enumerate(ASSETS))
+    (ROOT / ('src/caelum/data/cooked_meals.textures' if args.meals else 'src/caelum/data/kitchen_ingredients.textures')).write_text(aliases + '\n', encoding='utf-8')
+    print(f'Packed {len(ASSETS)} 128px food sprites and texture aliases.')
 
 
 if __name__ == '__main__':

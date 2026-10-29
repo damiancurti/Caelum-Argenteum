@@ -1,0 +1,127 @@
+{
+  "issue": 410,
+  "version": "5.8.18",
+  "runtime_sha256": "9a243426e2647b7573e593766a862004ccf3b7683254cfe07dbb028f5cc0cf2f",
+  "source_matching_members": 16934,
+  "native_passes": 291,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "meals-core-01",
+      "executed_passes": 40,
+      "runtime_sha256": "8a8e485e36f594568c01702ccaaba0fc6c96c87a22ae4e1d55890ddf5d7a01ba"
+    },
+    {
+      "label": "meals-forecast-01",
+      "executed_passes": 32,
+      "runtime_sha256": "8a8e485e36f594568c01702ccaaba0fc6c96c87a22ae4e1d55890ddf5d7a01ba"
+    },
+    {
+      "label": "meals-mixed-03",
+      "executed_passes": 5,
+      "runtime_sha256": "8a8e485e36f594568c01702ccaaba0fc6c96c87a22ae4e1d55890ddf5d7a01ba"
+    },
+    {
+      "label": "meals-seed-05",
+      "executed_passes": 20,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-load-05",
+      "executed_passes": 17,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-hub-06",
+      "executed_passes": 42,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-digest-0-06",
+      "executed_passes": 1,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-digest-21-06",
+      "executed_passes": 2,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-digest-22-06",
+      "executed_passes": 2,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-digest-23-06",
+      "executed_passes": 2,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "meals-digest-24-06",
+      "executed_passes": 2,
+      "runtime_sha256": "606f55262c5b6c7f1dc316fe483496a063df901cff6191887b5d85ad1ffbd1f1"
+    },
+    {
+      "label": "final-capture-es",
+      "executed_passes": 0,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "final-manual-smoke-es",
+      "executed_passes": 0,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "final-ration-core",
+      "executed_passes": 17,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "final-ration-travel",
+      "executed_passes": 11,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "legacy17-seed",
+      "executed_passes": 25,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "legacy17-load",
+      "executed_passes": 3,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "legacy17-rollback",
+      "executed_passes": 3,
+      "runtime_sha256": "be54e94db05128edffa7df957e6405ce68739785f1d11ac80c745b463b1cb381"
+    },
+    {
+      "label": "legacy17-core",
+      "executed_passes": 46,
+      "runtime_sha256": "d0da9c41aebfcc2d547b748e0932ef2e021d1bec05072037a5184ce70b202c17"
+    },
+    {
+      "label": "table-final-services02",
+      "executed_passes": 21,
+      "runtime_sha256": "9a243426e2647b7573e593766a862004ccf3b7683254cfe07dbb028f5cc0cf2f"
+    },
+    {
+      "label": "table-final-capture02",
+      "executed_passes": 0,
+      "runtime_sha256": "9a243426e2647b7573e593766a862004ccf3b7683254cfe07dbb028f5cc0cf2f"
+    }
+  ],
+  "author_check": "CA410-MEALS-01",
+  "status": "Prepared items integrated; kitchen production/acquisition still pending.",
+  "author_acceptance": "Passed CA410-MEALS-01 on 2026-10-26 without qualifications; runtime unchanged.",
+  "author_confirmation": {
+    "date": "2026-10-26",
+    "check": "CA410-MEALS-01",
+    "origin_version": "5.8.18",
+    "issue": 410,
+    "result": "passed",
+    "qualifications": [],
+    "new_native_runs": 0
+  }
+}

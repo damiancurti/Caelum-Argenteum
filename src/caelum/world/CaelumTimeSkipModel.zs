@@ -33,7 +33,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 22;
+    const PROVISION_REVISION = 23;
     CaelumContaminationSurfaceForecast SurfaceContact;
     int ProvisionRevision;
     bool PotableImmersed, ToiletTask, ToiletPulsesPrepared;
@@ -242,7 +242,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         for(int i=0;i<Supplies.Size();i++)
         {
             let row=Supplies[i];if(!row.Usable())continue;
-            double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);if(dose<=0.000001)continue;
+            double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters,row.FoodLots!=null?row.FoodLots.Kind:CaelumFoodData.RATION);if(dose<=0.000001)continue;
             if(row.Kind==1)FoodTrigger=CaelumDiningSession.REST_TARGET;
             else WaterTrigger=CaelumDiningSession.REST_TARGET;
         }
@@ -260,7 +260,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             let row=Supplies[i];if(!row.Usable())continue;
             bool food=row.Kind==1;
             if(food?FoodEffectTics>0:WaterEffectTics>0)continue;
-            double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters);
+            double dose=CaelumTimeSkipRules.Dose(row.Kind,Mass,row.Liters,row.FoodLots!=null?row.FoodLots.Kind:CaelumFoodData.RATION);
             if(dose<=0.000001 || (food?Hunger:Thirst)>=target)continue;
             if(row.Kind==3)row.Liters=Max(0,row.Liters-Min(row.Liters,Mass/CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE));
             else row.Count--;
@@ -269,7 +269,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 double contamination;
                 if(row.FoodLots!=null && row.FoodLots.Consume(1,contamination) && FoodIllness!=null)
                     FoodIllness.Contamination=Min(100.0,FoodIllness.Contamination+CaelumFoodRules.Intake(
-                        contamination,CaelumConstants.CONSUMABLE_RATION_WEIGHT*1000,Mass));
+                        contamination,CaelumFoodData.ServingGrams(row.FoodLots.Kind),Mass));
                 FoodSpent++;FoodEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
                 FoodPulseTics=0;FoodSeatedSubTics=0;FoodPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
             else

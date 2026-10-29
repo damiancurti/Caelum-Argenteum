@@ -19,6 +19,11 @@ class CaelumDiningDisplay : Actor
 
 // Los platos son presentación; la ración real sigue perteneciendo a la mesa.
 class CaelumDiningFoodPlate : CaelumDiningDisplay {}
+class CaelumDiningPreparedMeal : CaelumDiningDisplay {}
+class CaelumDiningBread : CaelumDiningPreparedMeal {States {Spawn: FBRD A -1;Stop;}}
+class CaelumDiningRoastBeef : CaelumDiningPreparedMeal {States {Spawn: FRBF A -1;Stop;}}
+class CaelumDiningRoastFish : CaelumDiningPreparedMeal {States {Spawn: FRFS A -1;Stop;}}
+class CaelumDiningPuchero : CaelumDiningPreparedMeal {States {Spawn: FPCH A -1;Stop;}}
 class CaelumDiningWaterCup : CaelumDiningDisplay {}
 class CaelumDiningLargeCanteen : CaelumDiningDisplay
 {
@@ -73,7 +78,7 @@ class CaelumDiningTable : Actor
         {
             let item=Items[i];if(item==null)continue;
             int kind=item.GetConsumableType();
-            if(kind==CaelumConstants.CONSUMABLE_FOOD_RATION)food+=item.Amount;
+            if(CaelumFoodData.Prepared(CaelumFoodInventory.Kind(item)))food+=item.Amount;
             else if(kind==CaelumConstants.CONSUMABLE_WATER_RATION)water+=item.Amount;
             let container=CaelumWaterContainer(item);
             if(container!=null)
@@ -203,11 +208,14 @@ class CaelumDiningTable : Actor
                 Displays[i]=null;continue;
             }
             class<CaelumDiningDisplay> kind=IsDrink(Items[i])?"CaelumDiningWaterCup":"CaelumDiningFoodPlate";
+            if(CaelumMealData.IsMeal(Items[i].GetConsumableType()))kind=CaelumMealData.TableDisplay(Items[i].GetConsumableType());
             if(Items[i] is "CaelumCanteenLarge")kind="CaelumDiningLargeCanteen";
             if(Displays[i]!=null && Displays[i].GetClass()!=kind) {Displays[i].Destroy();Displays[i]=null;}
             if(Displays[i]==null)Displays[i]=CaelumDiningDisplay(Spawn(kind,Pos,NO_REPLACE));
             let visual=Displays[i];if(visual==null)continue;
             visual.Table=self;visual.Item=Items[i];visual.Angle=Angle;
+            if(visual is 'CaelumDiningPreparedMeal')
+                visual.Scale=GetDefaultByType(Items[i].GetClass()).Scale;
             int columns=RoundTop()?2:SeatCount()==12?10:6;
             int rows=Capacity()/columns;
             double x=(i%columns-(columns-1)*0.5)*(LengthMU()-40)/Max(1,columns-1);
@@ -230,7 +238,7 @@ class CaelumDiningTable : Actor
         {
             let item=CaelumConsumableItem(cursor);
             if(item==null || item.InMagicBox || item.Amount<=0)continue;
-            bool match=drink?IsDrink(item):item.GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION;
+            bool match=drink?IsDrink(item):CaelumFoodData.Prepared(CaelumFoodInventory.Kind(item));
             if(match) {selected=item;break;}
         }
         if(selected==null)return false;

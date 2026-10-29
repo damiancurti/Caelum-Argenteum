@@ -9,6 +9,7 @@ class CaelumFoodInventory : Object play
         let material=CaelumMaterialPickup(item);
         if(material!=null)return CaelumKitchenData.FoodKind(material.GetSpecialType());
         let food=CaelumConsumableItem(item);
+        if(food!=null && CaelumMealData.IsMeal(food.GetConsumableType()))return CaelumMealData.FoodKind(food.GetConsumableType());
         return food!=null && food.GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION?CaelumFoodData.RATION:-1;
     }
     static CaelumFoodLots GetLots(Inventory item)

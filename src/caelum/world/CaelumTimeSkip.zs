@@ -18,18 +18,15 @@ class CaelumTimeSkipRules : Object play
         if (item==null) return 0;
         let water = CaelumWaterContainer(item);
         if (water != null) return water.IsDrinkable() ? 3 : 0;
-        if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION) return 1;
+        if (CaelumFoodData.Prepared(CaelumFoodInventory.Kind(item))) return 1;
         if (item.GetConsumableType()==CaelumConstants.CONSUMABLE_WATER_RATION) return 2;
         return 0;
     }
 
-    static double Dose(int kind, double mass, double liters=0)
+    static double Dose(int kind, double mass, double liters=0,int foodKind=CaelumFoodData.RATION)
     {
         mass=Max(1,mass);
-        if (kind==1) return CaelumConstants.SURVIVAL_MAXIMUM
-            * CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND
-            * CaelumConstants.RATION_REFERENCE_MASS / mass
-            * CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;
+        if (kind==1) return CaelumFoodRules.ServingHunger(foodKind,mass);
         double volume=kind==2 ? CaelumConstants.WATER_RATION_LITERS
             : Min(liters,mass/CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE);
         return volume*CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE/mass
@@ -177,7 +174,7 @@ class CaelumTimeSkipState : Inventory
         if(item==null || item.Amount<=0)return;
         int kind=CaelumTimeSkipRules.Kind(item);if(kind==0)return;
         let bottle=CaelumWaterContainer(item);
-        double dose=CaelumTimeSkipRules.Dose(kind,user.DerivedStats.BaseMass,bottle!=null?bottle.WaterLiters:0);
+        double dose=CaelumTimeSkipRules.Dose(kind,user.DerivedStats.BaseMass,bottle!=null?bottle.WaterLiters:0,CaelumFoodInventory.Kind(item));
         if(dose<=0.000001)return;
         if(kind==1)FoodTrigger=Max(FoodTrigger,100-Min(100,dose));
         else WaterTrigger=Max(WaterTrigger,100-Min(100,dose));
