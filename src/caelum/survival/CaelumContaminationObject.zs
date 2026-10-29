@@ -19,6 +19,11 @@ class CaelumContaminationObject : Thinker
     static bool Eligible(Actor body)
     {
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        let desk=CaelumPortableReadingDesk(body);
+        if(desk!=null && desk.PackedItem!=null && desk.PackedItem.Owner!=body)return false;
+        let shelf=CaelumPortableReadingShelf(body);
+        if(shelf!=null && shelf.Storage!=null && shelf.Storage.Cargo!=null)return false;
+        if(body is 'CaelumPortableBookcaseStorage')return false;
         let rest=CaelumRestFurniture(body);
         if(rest!=null && rest.PackedItem!=null && rest.PackedItem.Owner!=body)return false;
         let sofa=CaelumSofa(body);

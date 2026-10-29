@@ -1,0 +1,180 @@
+{
+  "version": "5.8.36",
+  "issue": 410,
+  "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+  "runs": [
+    {
+      "label": "releaseb-catalogue",
+      "executed_passes": 27,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-craft",
+      "executed_passes": 66,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-trade",
+      "executed_passes": 49,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-items",
+      "executed_passes": 56,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-placement",
+      "executed_passes": 52,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-sofaplace",
+      "executed_passes": 48,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyseed",
+      "executed_passes": 20,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyresume",
+      "executed_passes": 14,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyhub",
+      "executed_passes": 34,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyinput",
+      "executed_passes": 14,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyinstall",
+      "executed_passes": 16,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studyupgrade",
+      "executed_passes": 12,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-sofamigration",
+      "executed_passes": 24,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-legacy",
+      "executed_passes": 2,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-view6",
+      "executed_passes": 2,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-view7",
+      "executed_passes": 2,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studygallery0",
+      "executed_passes": 13,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releaseb-studygallery1",
+      "executed_passes": 13,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ced7a0404f2416d3ec3a39de0268254aa3bf363789857f093b0e0e4426a98e02"
+    },
+    {
+      "label": "releasec-visual0",
+      "executed_passes": 2,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ba0e9a78c8a187f80e503e3f4cf62e439fe518743a9d7470f1652d4da8e4a418"
+    },
+    {
+      "label": "releasec-visual1",
+      "executed_passes": 2,
+      "runtime_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb",
+      "addon_sha256": "ba0e9a78c8a187f80e503e3f4cf62e439fe518743a9d7470f1652d4da8e4a418"
+    }
+  ],
+  "native_passes": 468,
+  "original_runtime_runs": [
+    {
+      "label": "prior-seed",
+      "executed_passes": 5,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727"
+    },
+    {
+      "label": "prior-rollback",
+      "executed_passes": 14,
+      "runtime_sha256": "b619a2e997aa12928f493ee6b1a57e8c07d18571553aadb1bad14d4fdd98e727"
+    }
+  ],
+  "original_runtime_passes": 19,
+  "native_failures": 0,
+  "source_matching_package_members": 17011,
+  "preserved_map_art_members": 14043,
+  "prior_obj_line_endings_only": [
+    "models/caelum/props/sofas/ca_sofa_2.obj",
+    "models/caelum/props/sofas/ca_sofa_3.obj"
+  ],
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "artwork": {
+    "issue": 410,
+    "method": "Built-in image generation; exact generated PNG copies, no raster edits.",
+    "sources": [
+      {
+        "source": "desk.png",
+        "runtime": "src/sprites/caelum/rest_furniture/CSDKA0.png",
+        "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-2867128d-3ced-43e0-83d4-32bfb3bf2235.png",
+        "sha256": "89818f40b5bf3b8ccdf1ec64cc19d17857ed725177bebd19135e646e0613b0e2",
+        "pixel_size": [
+          1536,
+          1024
+        ]
+      },
+      {
+        "source": "bookcase.png",
+        "runtime": "src/sprites/caelum/rest_furniture/CSBKA0.png",
+        "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-eea9f868-5781-4e2f-8766-76c0904c48c0.png",
+        "sha256": "6bf85b8fe264f8e1012f4904db796c485bfe58254b48dfa7586986ba4130be86",
+        "pixel_size": [
+          1254,
+          1254
+        ]
+      }
+    ]
+  },
+  "evidence_reuse": "All selected current assertions execute on final36b; eighteen functional cases share the same unchanged addon. Two additional isolated visual cases use gallery.pk3 because the original MAP01 gallery capture was obscured by its introduction dialogue. Actual revision21 save is newly created and reopened unchanged in original5.8.35; 19 original-runtime checks are counted separately. Original5.8.26 reading and5.8.35 sofa saves are loaded without rewriting their source files.",
+  "migration": "Revision22 appends two unknown study recipes while preserving six learned recipes and depleted stock; merchant revision4 is idempotent. Desk/body and library/shelf/storage/books/lock/TIDs/title/dirt/reading identity survive native save and hub travel. Original storage-cargo Box restriction is preserved. Fixed mansion fixtures are not suppressed by portable subclasses.",
+  "performance_scope": "Only bounded interaction/merchant/inventory loops; parked physical body does not tick or receive duplicate world exposure. No new recurring global scan. No display-FPS or multiplayer claim.",
+  "remaining": "Dining-table acquisition and broader V5.8 remain open.",
+  "author_acceptance": "CA410-STUDY-ACQUISITION-01 pending; grouped handoff after all V5.8 implementation."
+}

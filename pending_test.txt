@@ -251,3 +251,13 @@ with the final grouped V5.8 manual handoff.
 6. Upgrade a preceding save. Existing furniture knowledge and shop stock remain;
    new sofa recipes must be learned normally.
 Expected: all checks pass. Author corroboration remains pending.
+
+CA410-STUDY-ACQUISITION-01 | Origin5.8.36 | Issue#410
+Prerequisites: final groupedV5.8 author build and a new/compatible campaign; learned desk/bookcase recipes, material supply, sufficient carrying capacity. Fixed mansion library is unchanged.
+1. Buy or craft a writing desk and bookcase; inspect painted inventory icons and material-derived mass/price. Place in permitted clear space within96 units and line of sight.
+2. Store a recipe book in the bookcase, use the desk and begin reading. The book stays stored. While reading, neither connected piece can be carried.
+3. Pause reading, carry each piece (crouch+Use), save/load and travel. Place them again and resume the same book/progress; inspect contents, lock, ownership and contamination.
+4. Check25-pile/100kg limits and real content weight. Deployed bookcase cargo stays outside the Box like other storage; unused bookcase item and desk support the Box.
+5. Confirm blocked doorways/obstacles reject placement and the existing mansion library/desk remain present.
+Expected: original bodies/books/progress persist, no duplication, free books, silent stock reset or access through a locked/packed library.
+Status: pending author corroboration, held for the completeV5.8 handoff.

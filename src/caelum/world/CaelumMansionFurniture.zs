@@ -36,7 +36,7 @@ class CaelumMansionFurniture : Object play
     {
         // Consulta tipada s?lo durante instalaci?n/migraci?n del mobiliario.
         let it=ThinkerIterator.Create("CaelumReadingShelf");
-        if(it.Next()!=null)return true;
+        Actor shelfBody;while((shelfBody=Actor(it.Next()))!=null)if(shelfBody.GetClassName()=='CaelumReadingShelf')return true;
         vector3 position=CaelumReadingFurnitureData.Position();
         let shelf=CaelumReadingShelf(Actor.Spawn("CaelumReadingShelf",position,NO_REPLACE));
         if(shelf==null)return false;

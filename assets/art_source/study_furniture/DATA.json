@@ -1,0 +1,527 @@
+{
+  "issue": 410,
+  "revision": 1,
+  "authority": "Author delegated historical construction/material calculations and approved purchase/fabrication; fixed mansion furniture remains unchanged.",
+  "units_per_meter": 32,
+  "wood_density": 760,
+  "iron_density": 7870,
+  "variants": [
+    {
+      "name": "desk",
+      "width": 1.784,
+      "depth": 0.902,
+      "height": 0.775,
+      "members": [
+        {
+          "material": "wood",
+          "center": [
+            0,
+            0.761,
+            0
+          ],
+          "size": [
+            1.784,
+            0.028,
+            0.902
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            -0.8170000000000001,
+            0.3735,
+            -0.376
+          ],
+          "size": [
+            0.055,
+            0.747,
+            0.055
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            -0.8170000000000001,
+            0.3735,
+            0.376
+          ],
+          "size": [
+            0.055,
+            0.747,
+            0.055
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0.8170000000000001,
+            0.3735,
+            -0.376
+          ],
+          "size": [
+            0.055,
+            0.747,
+            0.055
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0.8170000000000001,
+            0.3735,
+            0.376
+          ],
+          "size": [
+            0.055,
+            0.747,
+            0.055
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            0.702,
+            -0.376
+          ],
+          "size": [
+            1.6340000000000001,
+            0.09,
+            0.022
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            0.702,
+            0.376
+          ],
+          "size": [
+            1.6340000000000001,
+            0.09,
+            0.022
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            -0.8170000000000001,
+            0.702,
+            0
+          ],
+          "size": [
+            0.022,
+            0.09,
+            0.752
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0.8170000000000001,
+            0.702,
+            0
+          ],
+          "size": [
+            0.022,
+            0.09,
+            0.752
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.8170000000000001,
+            0.727,
+            -0.376
+          ],
+          "size": [
+            0.004,
+            0.04,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.8170000000000001,
+            0.727,
+            0.376
+          ],
+          "size": [
+            0.004,
+            0.04,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.8170000000000001,
+            0.727,
+            -0.376
+          ],
+          "size": [
+            0.004,
+            0.04,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.8170000000000001,
+            0.727,
+            0.376
+          ],
+          "size": [
+            0.004,
+            0.04,
+            0.004
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bookcase",
+      "width": 1.875,
+      "depth": 0.625,
+      "height": 2.25,
+      "members": [
+        {
+          "material": "wood",
+          "center": [
+            0,
+            1.125,
+            -0.3065
+          ],
+          "size": [
+            1.875,
+            2.25,
+            0.012
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            -0.925,
+            1.125,
+            0.006
+          ],
+          "size": [
+            0.025,
+            2.25,
+            0.613
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0.925,
+            1.125,
+            0.006
+          ],
+          "size": [
+            0.025,
+            2.25,
+            0.613
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            0.025,
+            0.006
+          ],
+          "size": [
+            1.825,
+            0.025,
+            0.613
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            0.75,
+            0.006
+          ],
+          "size": [
+            1.825,
+            0.025,
+            0.613
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            1.475,
+            0.006
+          ],
+          "size": [
+            1.825,
+            0.025,
+            0.613
+          ]
+        },
+        {
+          "material": "wood",
+          "center": [
+            0,
+            2.2375,
+            0.006
+          ],
+          "size": [
+            1.825,
+            0.025,
+            0.613
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            0.025,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            0.025,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            0.75,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            0.75,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            1.475,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            1.475,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            2.2375,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            -0.925,
+            2.2375,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            0.025,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            0.025,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            0.75,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            0.75,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            1.475,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            1.475,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            2.2375,
+            -0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        },
+        {
+          "material": "iron",
+          "center": [
+            0.925,
+            2.2375,
+            0.2525
+          ],
+          "size": [
+            0.04,
+            0.004,
+            0.004
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.metmuseum.org/art/collection/search/211381",
+      "object": "French writing table, mid-19th century",
+      "dimensions_m": [
+        0.775,
+        1.784,
+        0.902
+      ],
+      "role": "Published outer dimensions only. Original plain wooden frame; no copied ornament, images, bronze gilding or leather."
+    },
+    {
+      "url": "https://www.metmuseum.org/art/collection/search/559",
+      "object": "American bookcase,1835-50",
+      "dimensions_m": [
+        2.318,
+        1.245,
+        0.695
+      ],
+      "role": "Nineteenth-century freestanding wood-bookcase reference only; portable footprint retains the existing mansion bookshelf1.875x.625x2.25m."
+    },
+    {
+      "url": "https://www.metmuseum.org/art/collection/search/561",
+      "object": "American bookcase,ca1855",
+      "dimensions_m": [
+        2.426,
+        1.524,
+        0.546
+      ],
+      "role": "Wood-panel construction and approximate period scale only; no external pixels or mesh."
+    }
+  ],
+  "construction_note": "Member thicknesses and simple iron pins are declared design approximations under delegated calculations. Mass sums member volumes times existing game material densities; overlapping joints are included, recipe grams round each material upward. New bookcase has empty shelves, retaining25 stacks/100kg; no free decorative books become inventory."
+}

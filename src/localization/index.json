@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "3b333496bd2f982191623f95e0c309f8b5d551906325a4cbffba745913cb437d",
+  "sha256": "4c3416ae4ef32a792a0c87664277bf9a88bd2ce985e89e119df12912a8f9948d",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[473,473]],"default":[[473,473]],"es":[[1168,1168]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[1023,1023]],"default":[[1023,1023]],"es":[[1718,1718]]},
@@ -2532,6 +2532,7 @@
     "CA_STORED_READING_SHELF_HINT": {"enu":[[21,21]],"default":[[21,21]],"es":[[51,51]]},
     "CA_STORED_READING_STORED": {"enu":[[18,18]],"default":[[18,18]],"es":[[48,48]]},
     "CA_STORED_READING_TITLE": {"enu":[[17,17]],"default":[[17,17]],"es":[[47,47]]},
+    "CA_STUDY_PORTABLE_HINT": {"enu":[[6875,6875]],"default":[[6875,6875]],"es":[[6877,6877]]},
     "CA_SUMMON_CAST": {"enu":[[6012,6012]],"default":[[6012,6012]],"es":[[6019,6019]]},
     "CA_SUMMON_INVALID": {"enu":[[6014,6014]],"default":[[6014,6014]],"es":[[6021,6021]]},
     "CA_SUMMON_ZUPAY_NAME": {"enu":[[6011,6011]],"default":[[6011,6011]],"es":[[6018,6018]]},

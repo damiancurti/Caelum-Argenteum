@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.35** - 2026-10-27.
+Documentation version: **5.8.36** - 2026-10-27.
+
+## 5.8.36 / #410 - Study acquisition
+
+Implemented desk/bookcase normal input, storage contents/weight/locks and stored
+reading across carry, placement, save, hub travel and earlier-runtime migration.
+Validation: 468 current native PASS plus 19 original-runtime checks, zero failures
+and static errors, including original fixed-library installation when portable
+pieces arrive. Native inventory/world views pass agent visual review. Obsolete
+map contacts are cleared before transport; the crash regression remains tested.
+Keep the author check grouped for the completeV5.8 handoff. Remaining furniture
+scope includes dining tables; other issue scopes retain separate branches/tests.
 
 ## 5.8.35 / #410 - Sofa acquisition
 

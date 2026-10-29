@@ -113,6 +113,8 @@ class CaelumTargetInfo : Object play
         if(rest!=null && rest.PackedItem!=null)
         {Actions=L(reachable?"CA_FURNITURE_REST_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         let domestic=CaelumDomesticFixture(Subject);
+        if(Subject is 'CaelumPortableReadingShelf' || Subject is 'CaelumPortableReadingDesk')
+        {Actions=L(reachable?"CA_STUDY_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         if(Subject is 'CaelumReadingShelf')
         {Actions=L(reachable?"CA_STORED_READING_SHELF_HINT":"CA_TARGET_APPROACH");return;}
         if(Subject is 'CaelumReadingDesk')

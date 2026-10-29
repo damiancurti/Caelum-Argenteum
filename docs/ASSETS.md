@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.35** - 2026-10-27.
+Documentation version: **5.8.36** - 2026-10-27.
+
+## 5.8.36 - Portable study artwork (#410)
+
+Original deterministic desk and empty-bookcase meshes reuse owned wood/iron
+textures. assets/art_source/study_furniture contains dimensional references,
+explicit member construction and reproducible mass/material bills. No external
+pixels/meshes are copied; museum pages provide dimensional context only. The
+existing mansion desk and filled decorative library model are unchanged.
+Two built-in imagegen painted pixel-oriented inventory sprites follow the owned
+luxury-chair wood shading, with plain four-leg desk and three empty bookcase bays.
+Exact source PNGs, prompts, reference roles and hashes remain under
+assets/art_source/study_items; runtime CSDKA0/CSBKA0 preserve generated alpha.
+Agent review confirms both painted icons in the Spanish native inventory and
+both deployed models in an isolated native scene. Captures are retained in
+assets/validation_5836; author acceptance remains separate and pending.
 
 ## 5.8.35 / #410 - Painted sofa item views
 

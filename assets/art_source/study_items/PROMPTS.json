@@ -1,0 +1,12 @@
+{
+  "issue": 410,
+  "method": "Built-in image_gen, transparent PNG, no raster editing",
+  "references": [
+    {
+      "path": "src/sprites/caelum/rest_furniture/CLICA0.png",
+      "role": "Owned painted wood style only; not chair silhouette/upholstery"
+    }
+  ],
+  "desk": "Use case: historical-scene. Asset type: single inventory and dropped-item sprite for Caelum Argenteum, a dark fantasy FPS set in nineteenth-century Argentina. Create ONE plain wooden writing desk/table, isolated on a genuinely transparent background, fully visible with generous transparent margins. Shape: a broad rectangular flat all-wood top 1.784m wide by0.902m deep, overall height0.775m, top2.8cm thick; four straight square wooden legs5.5cm thick, thin shallow wooden apron rails just under the top. NO drawers, books, objects, chair, leather, upholstery, gold, carving, extra feet or decorations. Front-right elevated three-quarter view, all four legs understandable, warm worn dark timber, soft upper-left light. Reference image is STYLE ONLY: owned painted pixel-oriented wood shading and restrained palette. Do not copy its chair shape, cloth or ornate legs. Hand-painted game sprite with readable broad pixel clusters, crisp silhouette and subdued highlights, NOT a 3D render or photograph, no outlines, no backdrop, no shadow outside the object, no checkerboard, no text. One complete desk only.",
+  "bookcase": "Use case: historical-scene. Asset type: ONE inventory/dropped-item sprite for Caelum Argenteum, nineteenth-century Argentine dark fantasy FPS. Paint a tall freestanding rectangular EMPTY wooden bookcase, width1.875m, height2.25m, depth0.625m, plain sides and solid wooden back. Three generous open storage bays vertically, formed by bottom shelf, TWO internal shelves and top cap. No vertical dividers, doors, books, contents, legs, drawers, gilt or ornaments. Straight plain wooden cabinet grounded on its full base. Front-right slightly elevated three-quarter view, entire object within generous transparent margins. Use the attached owned chair reference for painted pixel-oriented wood material, soft upper-left light and palette ONLY, not its shape or cloth. Hand-painted game sprite with restrained earthy warm timber, readable broad pixel clusters and crisp silhouette, not a 3D render or photograph, no cartoon outlines, text, floor shadow, glowing halo or background; genuine transparent alpha around the object. ONE complete empty bookcase only."
+}

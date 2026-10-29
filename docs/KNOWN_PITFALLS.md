@@ -4,6 +4,57 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-182 - Discard map contacts when transporting parked furniture
+Status/evidence: RESOLVED-VERIFIED (isolated native engine and crash stack)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #410; study acquisition5.8.36
+Affected baseline: d9f561f9 plus initial5.8.36 implementation
+Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Scope: new desk/bookcase transport, their companions and native inventories
+
+TestMobjLocation records BlockingMobj on an obstructed placement. A parked
+travelling desk retained that old contact after the temporary blocker was
+removed. The next hub snapshot crashed in FSerializer::WriteObjects /
+RecurseWriteFields; a matching official engine PDB resolves the native stack.
+The complete fixture without that obstruction, and the shelf-only fixture,
+passed. Clearing obsolete blocking object/line/sector contacts before transport
+restored the complete obstructed-placement/hub test. Keep the regression;
+removing its collision check would conceal the failure.
+
+Recompute native floor/ceiling references after moving companions and inventory
+to the destination map. An earlier probe otherwise emitted out-of-bounds sector
+serialization warnings even when it reached its final assertion. Treat these
+warnings as validation failures. Test runners must also detect native crash
+dialog timeouts; a final log line is not proof of completion.
+
+Evidence: assets/validation_5836/travel-regression.json, native crash stack,
+corrected probe20 and final release runs. No engine binary, PDB or IWAD is
+redistributed. Author acceptance remains pending under
+CA410-STUDY-ACQUISITION-01. This is scoped transport evidence, not a claim that
+all legacy collision caches or portable actors were audited.
+
+## CA-KP-181 - Match vertical collision flags to furniture placement probes
+Status/evidence: RESOLVED-VERIFIED (isolated native engine)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #410; portable study furniture5.8.36
+Affected baseline: d9f561f9 plus initial5.8.36 study implementation
+Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Scope: new writing desk, library companion and its placement storage proxy
+
+The placement probe permits vertically separated solid actors. A new scenery
+class without CANPASS can pass that preflight and then fail its own
+TestMobjLocation because another solid occupies the sameXY at a differentZ.
+In the native hub-return fixture, the same clear desk destination passed the
+probe but failed the body's test; both carried bodies and contents were intact.
+Give these new bodies/proxy CANPASS, matching the existing rest-furniture rule.
+Do not remove actual volume checks or change unrelated chest collision flags.
+
+Evidence: assets/validation_5836. Probe9 reproduced the failed body-location test
+with successful sight/floor checks; probe10 completed the30-assertion hub chain.
+The final fixture explicitly checks an elevated solid, reproduces rejection by
+temporarily disabling CANPASS, then confirms a same-height solid still blocks.
+The temporary flags/obstacle are diagnostic only. No renderer/FPS claim.
+
 ## CA-KP-180 - Check seating occupancy before moving a player
 Status/evidence: RESOLVED-VERIFIED (native engine and upstream source)
 First recorded / last checked: 2026-10-27 / 2026-10-27

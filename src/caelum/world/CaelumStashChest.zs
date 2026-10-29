@@ -193,13 +193,14 @@ class CaelumStashChest : Actor
     {
         return CanReachStorage(user) && !IsChestLocked();
     }
-    void HideCarriedStorage()
+    virtual Name CargoClass(){return 'CaelumChestCargo';}
+    virtual void HideCarriedStorage()
     {
         bSolid=false;bNoGravity=true;bInvisible=true;
         A_ChangeLinkFlags(1,1);
         if(ChestVisual!=null){ChestVisual.Destroy();ChestVisual=null;}
     }
-    void RestoreWorldStorage(vector3 position)
+    virtual void RestoreWorldStorage(vector3 position)
     {
         bNoGravity=false;bInvisible=false;bSolid=true;
         A_ChangeLinkFlags(0,0);SetOrigin(position,false);

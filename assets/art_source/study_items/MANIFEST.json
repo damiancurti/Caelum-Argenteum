@@ -1,0 +1,18 @@
+{
+  "issue": 410,
+  "method": "Built-in image generation; exact generated PNG copies, no raster edits.",
+  "sources": [
+    {
+      "source": "desk.png",
+      "runtime": "src/sprites/caelum/rest_furniture/CSDKA0.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-2867128d-3ced-43e0-83d4-32bfb3bf2235.png",
+      "sha256": "89818f40b5bf3b8ccdf1ec64cc19d17857ed725177bebd19135e646e0613b0e2"
+    },
+    {
+      "source": "bookcase.png",
+      "runtime": "src/sprites/caelum/rest_furniture/CSBKA0.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a163e9-52c8-7551-86d9-f4a1d49a50d1\\exec-eea9f868-5781-4e2f-8766-76c0904c48c0.png",
+      "sha256": "6bf85b8fe264f8e1012f4904db796c485bfe58254b48dfa7586986ba4130be86"
+    }
+  ]
+}
