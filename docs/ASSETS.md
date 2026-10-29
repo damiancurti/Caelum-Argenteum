@@ -1,6 +1,29 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
+
+## 5.8.25 - Original garden water furniture (#410)
+
+assets/art_source/water_furniture retains DATA.json, PROMPT.txt, the original
+transparent imagegen sheet and deterministic output hashes. Its two painted128px
+icons are crop/resize/alpha registrations, not rendered mesh projections.
+assets/generators/generate_water_furniture.py creates original iron geometry,
+physical quantities, MODELDEF and TEXTURES registrations. Existing owned painted
+kitchen iron and stash hardware textures are reused; no historical image pixels
+or Doom art enter the package.
+
+The [Science Museum Group's1875 Handyside fountain](https://collection.sciencemuseumgroup.org.uk/objects/co8018571/cast-iron-drinking-fountain-midland-railway)
+provides period material and basin/backplate construction context.
+The [Preservation Resource Center's cistern history](https://prcno.org/rise-fall-new-orleans-cistern/)
+records the rectangular1831 iron cistern at Hermann-Grima House. Our tank sizes,
+panel thicknesses, motifs and fittings are delegated original game designs; the
+sources are not evidence for their exact measurements. The native models use
+physical tank capacities200/1000 L and calculated dry masses240.4476333/342.9765340kg.
+Small decorative fitting overlaps count as stock allowance in the material bill.
+
+Native visual and interaction review is recorded separately from pending author
+acceptance CA410-WATER-FURNITURE-01. Future furnishing catalogue/manufacturing
+integration remains open; final visual refinement also retains its roadmap scope.
 
 ## 5.8.24 - Wardrobe models and painted icon (#410)
 

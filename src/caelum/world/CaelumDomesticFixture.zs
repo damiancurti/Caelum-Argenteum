@@ -11,7 +11,14 @@ class CaelumDomesticFixture : Actor abstract
         Super.PostBeginPlay();
         A_SetSize(CaelumDomesticFixtureData.Radius(Kind()),CaelumDomesticFixtureData.Height(Kind()));
     }
-    bool CanReach(CaelumPlayer user)
+    virtual double WaterCapacity(){return CaelumDomesticWaterData.CAPACITY_LITERS;}
+    virtual double WaterRefillPerMinute(){return CaelumDomesticWaterData.REFILL_LITERS_PER_WORLD_MINUTE;}
+    virtual bool WaterSafe(CaelumPlayer user){return true;}
+    virtual double AvailableWater(CaelumPlayer user)
+    {let reserve=CaelumDomesticWater.Get(House);return reserve==null?0:reserve.Liters;}
+    virtual bool SpendWater(CaelumPlayer user,double liters)
+    {let reserve=CaelumDomesticWater.Get(House);return reserve!=null && reserve.Spend(liters);}
+    virtual bool CanReach(CaelumPlayer user)
     {
         return Installed && CaelumPlayerAuthority.CanMutate(user) && user.health>0 && !user.isFrozen()
             && (Occupant==null || Occupant==user)
@@ -78,7 +85,7 @@ class CaelumDomesticFixture : Actor abstract
         CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_DOMESTIC_WATER_AVAILABLE",false),reserve.Liters));
         return true;
     }
-    bool Fill(CaelumPlayer user,CaelumWaterContainer container)
+    virtual bool Fill(CaelumPlayer user,CaelumWaterContainer container)
     {
         if(!SuppliesWater() || !CanReach(user) || container==null || container.Owner!=user || container.InMagicBox)return false;
         let reserve=CaelumDomesticWater.Get(House);if(reserve==null)return false;

@@ -1,6 +1,52 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
+
+## 5.8.25 - Independent fountain and cistern (#410)
+
+Approved reserves are implemented as native, map-owned water-container inventories:
+fountain200 L, initially potable, replenishing1 L/world-minute; cistern1000 L,
+initially empty, no replenishment. The two garden actors at(1024,-768,0) and
+(896,-768,0), facing90, have their own reserves; neither borrows domestic water.
+
+Use reports quantity/capacity/quality. A carried selected bottle, canteen or camp
+pot uses existing inventory R to collect. New inventory G transfers its available
+water into the aimed cistern, stopping at capacity and retaining the remainder.
+V still empties/discards normally. Transfers require ownership, accessible source,
+line of sight, carried rather than boxed water, and available receiving capacity;
+collection also respects carry weight. Rejected actions spend nothing. Mixing
+retains the union of biological, salt and chemical flags; dilution does not purify.
+A completely emptied vessel resets only the absent water's flags. No rain collection
+or new purification mechanism is inferred. Player input/actions remain authoritative.
+
+Shift+Use opens the existing bath selector at potable fountain/cistern water, spends the
+actual reserve and uses the already-approved soap/time/dose/cancellation rules.
+Contamination introduced into a cistern during bathing cancels further cleaning.
+Wait forecasts use each fixture's own capacity/refill; provision schema24 invalidates
+older forecasts. Ordinary household fixtures retain200 L/+1 L/minute behavior.
+
+Water temperatures mix by volume. Native source containers reuse existing water
+cooling with the approved iron reference properties7870 kg/m3,450 J/(kg K),80 W/(m K),
+convection and radiation. The source's6mm walls and rectangular tank heat-exchange
+area come from its geometry. Cooling settles before transfer; elapsed source
+replenishment is capped and cannot be earned twice after a backward clock step.
+These fixed sources currently live in constant-climate Limbo; this patch does not
+claim historical exterior-weather replay for water containers.
+
+Delegated original geometry: fountain inner tank0.6x0.6x0.555555556m,200 L;
+cistern inner1x1x1m,1000 L.6mm iron panels,3mm lid and counted supports/relief/tap
+produce240.4476333/342.9765340kg dry mass. Native rounded actor mass adds actual
+stored liters. Future material bills round up to240448/342977g iron; no shop stock,
+recipe stations or new manufacturing time are silently assigned by this stage.
+Historical records establish period iron construction, not these exact dimensions.
+
+Revision1 creates each fixture once; native inventories retain water, temperature,
+quality and timestamps through save/load and hub travel. Installation checks the
+complete envelope and existing actors, retrying occupied sites at the existing1Hz
+controller cadence. No geometry/IWAD edit or routine global actor scan is added.
+The one-time player-slot lookup only initializes a new reserve. Container cooling
+uses its existing1Hz path; refill remains lazy. Player fabrication/placement and
+other furniture are still separate unfinished #410 integrations.
 
 ## 5.8.24 - Wardrobe storage and delegated physical specification (#410)
 

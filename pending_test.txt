@@ -95,3 +95,24 @@ The prepared private fixture grants2000kg carrying capacity solely for testing.
    Current permissions cover mansion gardens,not indoor bedroom rearrangement.
 Expected: all listed storage,persistence and visual checks pass. Author review
 is pending; do not reuse acceptance of the earlier kitchen/bathroom/camp tests.
+CA410-WATER-FURNITURE-01 | Origin:5.8.25 | Issue:#410
+Prerequisites: final25c package, GZDoom4.14.2 and assets/validation_5825 fixtures.
+Use a disposable mansion campaign; author_terminal.ps1 supplies ordinary controls,
+an empty bottle/pot,a1-L contaminated canteen,100g soap and contamination30. No F-key macros are required.
+1. Inspect fountain and cistern in the south garden, including basin/tap/lid,
+   proportions and clear approach. Use reports each independent reserve.
+2. Aim at fountain, select a carried container in Inventory and press R/click
+   collect. Its actual liters leave the200-L reserve. Wait one world minute:
+   replenish1L, capped200L. Domestic kitchen/bathroom water stays separate.
+3. Aim at cistern and press G/click Store. It begins empty, accepts only
+   the carried water, caps1000L and retains any remainder in the container.
+   R withdraws from it. V still discards water. Boxed/unowned/out-of-reach
+   transfers must not spend resources. Waiting does not refill the cistern.
+4. Shift+Use at a potable source opens bathing; select affordable degrees.
+   Water and soap decrease as contamination decreases. Cancel retains only
+   the partial progress/costs. Contaminated cistern water cannot be used to bathe.
+5. Save/load and travel away/back: source volumes and contamination persist;
+   only elapsed fountain replenishment is added, once. Existing beds, tables,
+   bathrooms, cupboard and wardrobe remain usable.
+Expected: all listed behavior/visual checks pass. Author acceptance is pending;
+the successful earlier kitchen, camp and contamination checks do not cover this.

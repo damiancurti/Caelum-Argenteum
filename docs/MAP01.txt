@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
+
+## 5.8.25 - South garden water installation (#410)
+
+An iron drinking fountain stands at(1024,-768,0), with an independent cistern at
+(896,-768,0); both face90. The first candidate sites were rejected by native slope
+checks; these positions retain the full flat collision envelope and accessible
+fronts. No map geometry or existing furniture is replaced. The fountain has its
+own potable200-L/+1-L-per-world-minute reserve. The1000-L cistern begins empty and
+only gains transferred water. Kitchen and bedroom sources retain the shared
+mansion domestic reserve. Quality, temperatures and native ownership persist.
+No new narrative, automatic rain collection or free cistern filling is introduced.
 
 ## 5.8.24 - Northwest bedroom wardrobe (#410)
 

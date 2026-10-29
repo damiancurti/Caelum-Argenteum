@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.24** - 2026-10-27.
+Documentation version: **5.8.25** - 2026-10-27.
+
+## 5.8.25 - Finite garden water furniture (#410)
+
+The author delegated physical furniture calculations and had approved fountain
+200 L/+1 L per world minute, and an initially empty1000-L manually filled cistern.
+Implemented independent native reserves, container transfer controls, preserved
+quality/temperature, finite bathing and source-aware wait forecasts. Source art
+and runtime are separate commits. Existing mansion geometry is preserved.
+Evidence in assets/validation_5825: 96 executed native assertions across 13
+selected runs, zero static errors, 16,978 source-matching package members,
+and 14,030 existing map/art members preserved byte-for-byte. Current save/load,
+hub absence, old-save migration and untouched original-version rollback pass.
+Matched garden render callbacks: baseline/final P95 17.9366/17.9311 ms,
+P99 18.9998/19.1631 ms; 700 tics take 19.9629/20.0586 s with 100-ms observation
+uncertainty. These callbacks do not measure GPU/display frame presentation.
+CA410-WATER-FURNITURE-01 remains outstanding: no author acceptance was supplied
+while the author was away. Existing pending author tests are carried forward.
 
 ## 5.8.24 - Wardrobe storage (#410)
 

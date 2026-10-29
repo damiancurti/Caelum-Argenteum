@@ -1,0 +1,2 @@
+Model CaelumFountain { Path "models/caelum/props/water_furniture" Model 0 "fountain.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWFN A 0 0 }
+Model CaelumCistern { Path "models/caelum/props/water_furniture" Model 0 "cistern.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWCT A 0 0 }

@@ -6,8 +6,23 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.24.** Obtain and update the complete repository, validate
+**Current release: 5.8.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.25 - Finite garden water sources (#410)
+
+The mansion garden now contains an iron drinking fountain and a cistern.
+The fountain holds200 L of potable water and replenishes1 L/world-minute;
+the1000-L cistern starts empty and accepts manual transfers, preserving water
+quality and temperature. Both support ordinary container filling and the
+existing soap bath when potable. The kitchen/bathroom reserve remains separate.
+
+Original meshes and painted icons follow nineteenth-century construction
+references. Revision1 preserves source identity and reserves across saves and
+hub travel without changing map geometry. Validation: 96 native assertions pass,
+static validation reports zero errors, and all 16,978 packaged files match source.
+Evidence is in assets/validation_5825; CA410-WATER-FURNITURE-01 awaits author review.
+Other #410 furniture/acquisition and the remaining V5.8 issues stay open.
 
 ## 5.8.24 - Native wardrobe storage (#410)
 
