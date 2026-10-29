@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.52** - 2026-10-29.
+
+## 5.8.52 / #416 - Network implementation ready - 2026-10-29
+
+The four vehicle types, documented/estimated route catalogue, six-block Buenos
+Aires, native services, paid travel and persistent stops are complete. Earlier
+checkpoint notes below are historical and superseded. Existing map geometry
+remains compatible; newly added destinations have their own maps. The final #415
+bounded arrival work is integrated without modifying #416 route or fare data.
+Native trip, resource, service, arrival and save evidence remains under
+assets/validation_5852. #417 incidents and final grouped author corroboration
+are separate; multiplayer remains deferred to V5.12 as requested.
+
+## 5.8.51 - Unloaded-world implementation (#415) - 2026-10-29
+
+Completed the previously recorded calendar/combat/theft infrastructure without
+changing authored balance, quantities or native ownership. Standalone arrival
+bodies retain their prepared food/exposure frame until a chronological boundary;
+native save/reload preserves partially advanced work. Earlier pending combat and
+theft snapshots still resume. Three validated 8-ms requests per UI tic shorten
+paused loading while leaving the world clock and each actor's calculation intact.
+
+An actual city-day takes 77.45 s versus 124.07 s in the preceding pushed checkpoint,
+with identical recorded Life, Anima, Air, contamination, exposure and shot totals.
+Renderer callback p95 changes from 29.35 to 50.80 ms; p99 from 30.18 to 51.83 ms.
+This trades loading-screen smoothness for lower total latency and is not presented
+FPS acceptance. A thermal memoization prototype passed 60 equivalence assertions
+but reused only 7,614 of 202,263 computations; its small gain did not justify
+production complexity. It is preserved solely in the isolated validation assets.
+
+Evidence: assets/validation_5851/loading-results.json. The author remains away;
+no manual entry was removed. #417 owns the surviving bandits and their live camp
+integration; #416/#417 delivery and final grouped author corroboration remain.
 
 ## Unreleased #416 transport catalogue - 2026-10-29
 

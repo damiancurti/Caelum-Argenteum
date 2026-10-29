@@ -6,45 +6,36 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.50.** Obtain and update the complete repository, validate
+**Current release: 5.8.52.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Unreleased #416 now connects cart, ship, horse and train services to Buenos Aires,
-Barracas al Sud and Mar del Plata. Actual boarding, paid tickets, live resource
-costs, scheduled departure, safe interruption and saved resumption are implemented.
-Buenos Aires has six playable blocks with shops, workshops and domestic water.
-Historical references and estimates are distinguished in SYSTEMS; native evidence
-is retained in `assets/validation_5852`. Original horse sprites and steam-train
-models retain their provenance in ASSETS. Author checks remain deferred until
-all V5.8 implementation is ready; #415 regional work and #417 incidents continue
-separately. This branch is still an unreleased integration checkpoint.
+5.8.52 completes the four-mode transport network (#416): Buenos Aires,
+Barracas al Sud and Mar del Plata, with six playable Buenos Aires blocks,
+shops, workshops and domestic water. Paid tickets retain progress through
+scheduled departures, interruption and save/resume. Real travel time consumes
+personal resources. Historical references and authorized estimates are explicit
+in SYSTEMS; native evidence is in `assets/validation_5852`. Original horse and
+steam-train artwork retains provenance in ASSETS. #417 incidents are separate;
+author corroboration remains grouped for the complete V5.8 handoff.
 
-Original 5.8.50 save/upgrade/reload/rollback checks pass; see
-`assets/validation_5851/legacy-results.json` for the preservation boundary.
-This focused branch also contains an **unreleased #415 checkpoint**, planned
-for 5.8.51. Its partial combat integration is not a completed release; see
-`docs/TASKS.md` for remaining work and `assets/validation_5851` for evidence.
-Its native checks include returning household combatants, fractional clock
-boundaries, racial breath and saved in-flight attacks. Native explosion and
-ground-slam falloff are checked separately. Sleep, restraint and frozen attack
-preparations also retain their native clocks and saved identity. Revisited cities
-start the siege at its authored calendar boundary and admit real residents;
-First arrival after the deadline also resolves a previously unvisited city.
-Original-save preservation passes 21 scenario checks. Theft transactions and
-saved deadlines pass 37 native checks; physical access passes another 16.
-Native chronological dispatch passes 58 further scenario assertions; #417
-survivor registration and regional access remain pending. See `assets/validation_5851/legacy-results.json` and `theft-results.json`.
-Reopening a region now uses saved, bounded round phases behind a paused loading
-menu. Partial save/load preserves pending simultaneous damage and resources;
-native clocks remain paused until the work finishes. This prevents long single
-callbacks, but total processing latency for long absences still needs reduction.
-Quiet intervals now use the existing NPC physiology boundary, and the loading
-menu pipelines validated requests. The 1,000/600 diagnostic's quiet hour falls
-from about 52 seconds to 1.45 seconds of loading, with matching recorded outcomes.
-Regional weather samples are shared without sharing private inventory forecasts.
-An actual one-day city return still takes about 132 seconds including startup;
-further long-absence work remains. Evidence is in the same directory; PresentMon
-capture was denied by Windows, so this checkpoint is not a presentation-FPS claim.
+5.8.51 completes the #415 calendar/combat/theft infrastructure. Unloaded sieges
+retain actual combatants, resources, casualties, prepared attacks and loot.
+Explicit thieves require proven physical access and transfer real owned stacks
+at chronological hourly boundaries. The #417 bandit content is delivered separately.
+
+Original 5.8.50 saves remain reversible inputs; native upgrade/reload checks and
+paused partial-work saves are retained in `assets/validation_5851`. Tests distinguish
+335 combat assertions, 21 original-save checks, ownership/access/dispatch evidence
+and the final loading comparison. Author checks remain grouped for the final V5.8
+handoff; #417 continues on its own branch.
+
+One actual city-day catch-up takes 77.45 seconds versus 124.07 seconds in the
+preceding checkpoint, with identical recorded Life, Anima, Air, contamination,
+thermal exposure and shots. Three validated 8-ms pulses can run per paused UI tic.
+This trades smoother loading-screen callbacks for shorter loading: p95 rises from
+29.35 to 50.80 ms; it does not change active gameplay cadence. These are renderer
+callback intervals, not presented-frame/FPS measurements. Long absences remain
+computationally expensive; individual simulation and resources are retained.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 

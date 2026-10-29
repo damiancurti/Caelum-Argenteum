@@ -47,6 +47,17 @@ pack(W / 'checks.pk3', {
 })
 for case in ['math', 'rounds', 'physiology', 'potions', 'boundaries', 'breath']:
     (W / (case + '.cfg')).write_text(f'wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; wait 10; quit\n')
+with zipfile.ZipFile(W / 'checks.pk3') as archive:
+    fixture = {name: archive.read(name) for name in archive.namelist()}
+fixture['ZSCRIPT'] += b'#include "thermal_cache_prototype.zs"\n#include "cache.zs"\n'
+fixture['thermal_cache_prototype.zs'] = (H / 'thermal_cache_prototype.zs').read_bytes()
+fixture['cache.zs'] = (H / 'cache.zs').read_bytes()
+fixture['MAPINFO'] += b'GameInfo {AddEventHandlers="CA415CacheChecks"}\n'
+pack(W / 'checks.pk3', fixture)
+(W / 'cache.cfg').write_text('wait 105; netevent ca415c_prepare; wait 5; netevent ca415c_compare; wait 10; quit\n')
+(W / 'thermalcache.cfg').write_text('wait 105; netevent ca415c_prepare; wait 5; netevent ca415c_thermal; wait 10; quit\n')
+(W / 'cache-save.cfg').write_text('wait 105; netevent ca415c_prepare; wait 5; netevent ca415c_partial; save retained-frame; wait 10; quit\n')
+(W / 'cache-load.cfg').write_text('wait 1; netevent ca415c_reload; wait 10; quit\n')
 print('Prepared private fixtures')
 (W/'calendar.cfg').write_text('wait 105; netevent ca415r_calendar; save calendar-started; wait 10; quit\n')
 (W/'calendarload.cfg').write_text('wait 1; netevent ca415r_calendarload; wait 1; quit\n')
