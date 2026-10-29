@@ -47,6 +47,53 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     int EscortPrisonerThreatScanTics;
     double EscortPrisonerHealthRegenAccumulator;
     CaelumPrisonerEscort EscortControl;
+    CaelumPlayer FactionTarget;
+    bool FactionHostilityActive;
+
+    bool CanBeFactionTarget(CaelumPlayer user)
+    {
+        return EscortPrisonerPort && user != null && user.player != null
+            && user.health > 0 && user.bShootable
+            && CaelumFactionRules.HostileReputation(user.GetPersistentCharacterState(false),
+                CaelumFactionData.ConfirmedPrisonerFaction(EscortPrisonerId));
+    }
+
+    void UpdatePortFactionHostility()
+    {
+        if (!EscortPrisonerPort || health <= 0
+            || CaelumFactionData.ConfirmedPrisonerFaction(EscortPrisonerId) < 0) return;
+        if (!CanBeFactionTarget(FactionTarget)) FactionTarget = null;
+        // Sólo tres representantes canónicos y MAXPLAYERS; cadencia de su
+        // locomoción existente. Nunca recorrer actores ni inferir facción visual.
+        if (FactionTarget == null && level.time % CaelumConstants.PRISONER_WALK_STATE_TICS == 0)
+        {
+            for (int p = 0; p < MAXPLAYERS; p++)
+            {
+                if (!playeringame[p]) continue;
+                let user = CaelumPlayer(players[p].mo);
+                if (CanBeFactionTarget(user) && CheckSight(user))
+                { FactionTarget = user; break; }
+            }
+        }
+        // La reacción ante robo tiene su propia autoridad y conserva prioridad.
+        if (TheftTarget != null) return;
+        if (FactionTarget == null)
+        {
+            if (FactionHostilityActive)
+            {
+                FactionHostilityActive = false;
+                ClearStoryCombatState(); bFriendly = true; bInvulnerable = true;
+                SetStateLabel("Spawn");
+            }
+            return;
+        }
+        FactionHostilityActive = true; bFriendly = false; bInvulnerable = false;
+        Target = FactionTarget; LastEnemy = FactionTarget;
+        if (bInConversation) InterruptEscortConversation();
+        if (!bInConversation && ForcedSleepTics <= 0
+            && CombatLucidityPhysicalStunRemaining <= 0 && !ResourceRecoveryActive()
+            && !InEscortCombatState()) SetStateLabel("See");
+    }
 
     bool IsProtectedStoryResident()
     {
@@ -634,6 +681,13 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
         if(resident!=null && resident.PulseResourceRecovery())return;
+        if (resident != null && resident.FactionHostilityActive && resident.TheftTarget == null)
+        {
+            resident.UpdatePortFactionHostility();
+            if (resident.FactionTarget != null)
+            { resident.Target = resident.FactionTarget; resident.ThermalChase(); }
+            return;
+        }
         if (resident != null && resident.StoryAnchored)
         {
             if (resident.IsRuloPartyFighting())
@@ -659,6 +713,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         {Super.Tick();return;}
         if (IsEscortPrisoner())
         {
+            UpdatePortFactionHostility();
             UpdateEscortPrisoner();
             Super.Tick();
             return;

@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.9.0** - 2026-10-29.
+Documentation version: **5.9.1** - 2026-10-29.
+
+## 5.9.1 / #420 - Confirmed representatives after rescue
+
+Leonor Benitez, Rufino Acosta and Santos Barrera may react with faction
+hostility after arriving in Barracas. Captive/escorted protection remains intact.
+Leandro Farias remains tempted, not a confirmed Cult member; his existing
+reward does not prove membership. The approved enemy matrix establishes neither
+signed peace nor additional biography. The protagonist's amnesia and the
+implanted-soul secret are unchanged.
 
 ## 5.8.29 - Reading-room sofas (#410)
 

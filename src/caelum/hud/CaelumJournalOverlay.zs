@@ -1717,7 +1717,7 @@ class CaelumJournalOverlay : EventHandler
             DrawTextLine(
                 SmallFont, Font.CR_WHITE, 250.0, rowY + 4.0,
                 String.Format(
-                    "%s: %s  |  %s: %d",
+                    "%s: %s  |  %s: %d (%s)",
                     StringTable.Localize(
                         "CA_FACTION_MEMBERSHIP_LABEL", false
                     ),
@@ -1730,7 +1730,9 @@ class CaelumJournalOverlay : EventHandler
                     StringTable.Localize(
                         "CA_REPUTATION_VALUE_LABEL", false
                     ),
-                    localPlayer.JournalFactionReputation[factionId]
+                    localPlayer.JournalFactionReputation[factionId],
+                    StringTable.Localize(CaelumFactionData.RankKey(
+                        localPlayer.JournalFactionReputation[factionId]), false)
                 )
             );
         }

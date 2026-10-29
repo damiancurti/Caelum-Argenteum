@@ -1,12 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.0** - 2026-10-29.
+Documentation version: **5.9.1** - 2026-10-29.
 
-**V5.9 in progress, 5.9.0/#418:** shared composite quest requirements,
-compared transitions and port encounter registry. Existing save arrays/owners
-remain; native checks: assets/validation_590. #418-424 remain open. Complete new
-quest/reward integration and the six companion issues before the grouped author
-terminal. Separate branches/PRs/evidence; GitHub issues retain current approvals.
+**V5.9 in progress, 5.9.1/#420:** approved faction ranks, relationships,
+recorded aid/disclosure consequences and post-arrival hostility implemented.
+#418 coordination is the dependency. Evidence: assets/validation_590/591.
+#418-424 stay open: finish #419 private readings/reports, #421 story, #422
+quests, #423 guard/prisoner art and #424 service integration. The two #422
+quests still complete #418 integration. Grouped author terminal only after the
+whole version. Separate branches/PRs/evidence; GitHub issues retain approvals.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

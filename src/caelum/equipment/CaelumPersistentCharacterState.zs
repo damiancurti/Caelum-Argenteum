@@ -255,6 +255,10 @@ class CaelumPersistentCharacterState : Inventory
     int FactionStateVersion;
     bool FactionMember[CaelumConstants.FACTION_SAVE_SLOTS];
     int FactionReputation[CaelumConstants.FACTION_SAVE_SLOTS];
+    int FactionConsequencesRevision;
+    int FactionMembershipEpoch[CaelumConstants.FACTION_COUNT];
+    int FactionMembershipKnownEpoch[CaelumConstants.FACTION_COUNT * CaelumConstants.FACTION_COUNT];
+    Array<CaelumFactionAidEvent> FactionAidEvents;
     int PrisonerRescueStateVersion;
     int PrisonerRescueState[CaelumConstants.PRISONER_COUNT];
     bool PrisonerRewardClaimed[CaelumConstants.PRISONER_COUNT];
@@ -1205,6 +1209,12 @@ class CaelumPersistentCharacterState : Inventory
             FactionMember[factionId] = false;
             FactionReputation[factionId] = 0;
         }
+        FactionConsequencesRevision = 0;
+        FactionAidEvents.Clear();
+        for (int faction = 0; faction < CaelumConstants.FACTION_COUNT; faction++)
+            FactionMembershipEpoch[faction] = 0;
+        for (int slot = 0; slot < CaelumConstants.FACTION_COUNT * CaelumConstants.FACTION_COUNT; slot++)
+            FactionMembershipKnownEpoch[slot] = 0;
         FactionStateVersion = 3;
     }
 
@@ -1240,12 +1250,14 @@ class CaelumPersistentCharacterState : Inventory
     bool SetFactionMembership(int factionId, bool isMember)
     {
         EnsureFactionStateInitialized();
+        CaelumFactionConsequences.Ensure(self);
         if (!IsValidFactionId(factionId)
             || FactionMember[factionId] == isMember)
         {
             return false;
         }
         FactionMember[factionId] = isMember;
+        if (isMember) FactionMembershipEpoch[factionId]++;
         return true;
     }
 
@@ -1273,8 +1285,7 @@ class CaelumPersistentCharacterState : Inventory
         return FactionReputation[factionId] != previous;
     }
 
-    // Consulta O(1): una facción siempre se reconoce como propia y las
-    // relaciones cruzadas quedan neutrales hasta que el autor defina la tabla.
+    // Consulta O(1): los identificadores de rescate conservan su dominio propio.
     bool IsValidPrisonerId(int prisonerId)
     {
         return prisonerId >= 0

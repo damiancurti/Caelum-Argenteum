@@ -6,14 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.9.0.** Obtain and update the complete repository, validate
+**Current release: 5.9.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.9 is in progress.** This #418 checkpoint adds shared quest requirements,
-idempotent narrative observations and an encounter registry over the existing
-character/world state. Native evidence: `assets/validation_590/RESULTS.md`.
-Issues #418-424 remain open; new story content, faction integration and the
-grouped author review are still pending. This is not a completed V5.9 release.
+**V5.9 is in progress.** #418 supplies shared quest coordination; #420 now
+adds the approved faction ranks, relationships, once-only aid/disclosure
+consequences and post-arrival hostility for confirmed representatives.
+Evidence: `assets/validation_590/RESULTS.md` and `assets/validation_591/RESULTS.md`.
+Dialogue/reporting choices (#419), authored quests/story, service wiring and
+visuals remain in progress. Issues #418-424 stay open; grouped author review
+waits for the complete version. This is not a completed V5.9 release.
 
 **V5.8 remains complete and author-accepted (2026-10-29).** Its issues #410-417,
 #496 and #502 are integrated into main; acceptance records remain in HISTORY.

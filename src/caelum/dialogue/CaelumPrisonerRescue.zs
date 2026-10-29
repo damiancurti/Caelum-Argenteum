@@ -119,7 +119,7 @@ class CaelumPrisonerRescue : Object play
     static bool OpenDialogue(CaelumPlayer user, CaelumAnchoredResident speaker)
     {
         if (user == null || user.player == null || speaker == null
-            || !speaker.IsEscortPrisoner())
+            || !speaker.IsEscortPrisoner() || speaker.CanBeFactionTarget(user))
         {
             return false;
         }
